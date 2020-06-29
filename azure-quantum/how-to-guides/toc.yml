@@ -1,0 +1,10 @@
+-name: Prepare your environment to use Azure Quantum 
+-href: prepare-your-environment.md
+-name: Create quantum workspaces with the Azure Portal 
+-href: create-quantum-workspaces-with-the-azure-portal.md
+-name: Submit jobs to Azure Quantum
+-href: submit-jobs-to-azure-quantum.md
+-name: Use the Python SDK for QIO
+-href: use-the-python-SDK.md
+-name: Use the Python SDK for QIO (Advanced)
+-href: use-the-python-SDK-advanced.md
