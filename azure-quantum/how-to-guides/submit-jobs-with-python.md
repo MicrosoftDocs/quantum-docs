@@ -35,7 +35,7 @@ IQ# kernel, which powers the Q# Jupyter Notebook and Python experiences.
    installation and populate your local package cache with all required QDK
    components.
 
-Now you're set up to use both Q# Jupyter Notebooks and Q# integration to execute
+Now you're set up to use Python and Q# integration to execute
 quantum programs on Azure Quantum.
 
 **NOTE:** You'll want to have the resource ID of your Azure Quantum workspace
