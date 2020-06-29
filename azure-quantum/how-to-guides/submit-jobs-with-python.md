@@ -9,10 +9,6 @@ Quantum using Q# Jupyter Notebooks.
   one, follow the guide [Create an Azure Quantum
   workspace](Create-quantum-workspaces-with-the-Azure-portal.md).
 
-- Install the [Quantum Development
-  Kit](https://docs.microsoft.com/quantum/install-guide/standalone), if you
-  haven't already.
-
 ## Installation
 
 Follow these steps to install Jupyter Notebook and the current version of the
@@ -102,6 +98,6 @@ top-right corner of your Quantum Workspace page in Azure Portal.
 
 ## Next steps
 
-Now that you know how to submit jobs to Azure quantum you can try to run the
+Now that you know how to submit jobs to Azure Quantum you can try to run the
 [different samples we have available](xref:TODO) or try to submit your own
 projects. 
