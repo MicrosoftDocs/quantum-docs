@@ -8,7 +8,7 @@ ms.topic: article
 uid: microsoft.azure.quantum.qio.python-sdk
 ---
 
-# Use the Python SDK for Quantum Inspired optimization
+# Use the Python SDK for Quantum Inspired Optimization
 
 This documents provides a basic usage overview of the Python SDK for Quantum Inspired Optimization. It assumes you have already completed the [Creating an Azure Quantum Workspace guide](xref:azure.quantum.workspaces-portal).
 
