@@ -1,3 +1,13 @@
+---
+title: Create quantum workspaces with the Azure portal
+description: This guide will show you how to create resource groups and quantum workspaces with the Azure portal to start executing your quantum applications in Azure Quantum.
+author: KittyYeungQ
+ms.author: kitty
+ms.date: 06/29/2020
+ms.topic: article
+uid: microsoft.azure.quantum.workspaces-portal
+---
+
 # Create quantum workspaces with the Azure portal
 
 This guide will show you how to create resource groups and quantum workspaces
@@ -65,4 +75,4 @@ is correct click on "Create" to create your quantum workspace.
 
 ## Next steps
 
-Now that you created a workspace, learn about the different [targets to execute quantum algorithms in Azure Quantum](Targets-in-Azure-Quantum.md).
+Now that you created a workspace, learn about the different [targets to execute quantum algorithms in Azure Quantum](xref:microsoft.azure.quantum.concepts.targets).

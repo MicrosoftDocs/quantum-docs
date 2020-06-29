@@ -1,11 +1,23 @@
-[[_TOC_]]
+---
+title: Advanced usage of the Python SDK for Quantum Inspired Optimization
+description: This document provides an overview of some advanced usage patterns for the Python SDK for Quantum Inspired Optimization.
+author: KittyYeungQ
+ms.author: kitty
+ms.date: 06/29/2020
+ms.topic: article
+uid: microsoft.azure.quantum.qio.python-sdk.advanced
+---
+
+# Advanced usage of the Python SDK for Quantum Inspired Optimization
 
 This document provides an overview of some advanced usage patterns for the Python SDK for Quantum Inspired Optimization.
 
-# Asynchronous problem solving
-In the [basic usage example](/Guides/Using-the-Python-SDK) a problem was created, submitted to Azure Quantum, and solved synchronously. This is convenient for certain environments, but unsuitable for others where there's a need to either submit a problem and check on it later, or submit many problems and compare the results.
+## Asynchronous problem solving
 
-## Submit the problem
+In the [basic usage example](microsoft.azure.quantum.qio.python-sdk) a problem was created, submitted to Azure Quantum, and solved synchronously. This is convenient for certain environments, but unsuitable for others where there's a need to either submit a problem and check on it later, or submit many problems and compare the results.
+
+### Submit the problem
+
 To submit a problem asynchronously, use the `submit` method on the `solver`:
 ```py
 solver = ParallelTempering(workspace, timeout=100, seed=11)
@@ -15,7 +27,8 @@ print(job.id)
 > ea81bb40-682f-11ea-8271-c49dede60d7c
 ```
 
-## Refresh job status
+### Refresh job status
+
 After submitting, you can check on the status of the job by calling the `refresh` method. Each time `refresh` is called the job metadata gets refreshed.
 ```py
 job.refresh()
@@ -24,7 +37,8 @@ print(job.details.status)
 > Succeeded
 ```
 
-## Get the job output
+### Get the job output
+
 Once the job is in a [final state](/Azure-Quantum-Overview#Job-Lifecycle) such as `Succeeded` you may download the job output using `get_results`:
 ```py
 jobId = "ea81bb40-682f-11ea-8271-c49dede60d7c"
@@ -35,7 +49,8 @@ print(result)
 > {'energy': -32.0, 'solution': [1, 1, -1, 1]}
 ```
 
-# Reusing problem definitions
+## Reusing problem definitions
+
 Sometimes it is more efficient to upload a problem definition once and find its solution using different algorithms (solvers) or with different parameters. You can upload a problem definition using the `upload` method, which returns a URL, then provide this URL to a solver's `submit` or `optimize` methods:
 
 ```py
@@ -46,7 +61,7 @@ print(job.id)
 > 9228ea88-6832-11ea-8271-c49dede60d7c
 ```
 
-# Job Management
+## Job Management
 The `Workspace` provides methods for managing jobs:
   * **submit_job**: submits a new job, it can accept a `Job` structure itself, a `Problem` (for Quantum-Inspired Problems), or `QsharpOperation` (for Quantum Hardware or Simulators).
   * **get_job**: returns the `Job` metadata and results for a specific job (based on job `id`)
@@ -87,10 +102,12 @@ print(results)
 > {'energy': -17.0, 'solution': [1, 1, -1]}
 ```
 
-# Methods for supplying problem terms
+## Methods for supplying problem terms
+
 There are three ways to supply terms for a [`Problem`](/Reference/Python-SDK/Azure.Quantum.Optimization): in the constructor, individually, and as a list of `Term` objects.
 
-## In the constructor
+### In the constructor
+
 You can supply an array of `Term` objects in the constructor of a `Problem`:
 
 ```py
@@ -103,7 +120,8 @@ terms = [
 problem = Problem(name="My Difficult Problem", terms=terms)
 ```
 
-## Individually
+### Individually
+
 You can supply each term individually by calling the `add_term` method on the `Problem`.
 
 ```py
@@ -113,7 +131,8 @@ problem.add_term(w=-3, indices=[1,0])
 problem.add_term(w=5, indices=[2,0])
 ```
 
-## A list of terms
+### A list of terms
+
 You can also supply a list of `Term` objects:
 
 ```py
@@ -131,10 +150,12 @@ terms = [
 problem.add_terms(terms=terms)
 ```
 
-# Using a Service Principal to Authenticate
+## Using a Service Principal to Authenticate
+
 Sometimes it is unsuitable to use interactive authentication or to authenticate as a user account. These cases may arrive when you want to submit jobs from a web service or other worker role or automated system. In this cases you typically want to authenticate using a [Service Principal](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals).
 
-## Prerequisite: Create a service principal and application secret
+### Prerequisite: Create a service principal and application secret
+
 In order to authenticate as a service principal you must first [create a service principal](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal).
 
 Steps to create a service principal, assign access, and generate a credential:
@@ -156,7 +177,7 @@ Steps to create a service principal, assign access, and generate a credential:
     1. Search for and select the service principal
     1. Assign either the Contributor or Owner role
 
-## Authenticate as the service principal
+### Authenticate as the service principal
 
 **Step 1**: Install the `azure-common` python package:
 ```bash
