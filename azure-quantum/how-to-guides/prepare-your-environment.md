@@ -12,7 +12,7 @@ In this guide you will find the information about how to install the necessary t
 Install the extension using the following command:
 
 ```bash
-    az extension add --source https://msquantumpublic.blob.core.windows.net/az-quantum-cli/quantum-0.11.2906.3-py3-none-any.whl
+    az extension add --source https://msquantumpublic.blob.core.windows.net/az-quantum-cli/quantum-0.11.2006.4-py3-none-any.whl
 ```
 
 ## Update the extension

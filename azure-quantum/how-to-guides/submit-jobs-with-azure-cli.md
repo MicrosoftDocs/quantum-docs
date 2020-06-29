@@ -193,4 +193,6 @@ In this case we get that each state has equal 50% probabilty of being measured.
 
 ## Next steps
 
-Now that you know how to submit jobs to Azure quantum you can try to run the [different samples we have available](/samples) or try to submit your own projects. 
+Now that you know how to submit jobs to Azure quantum you can try to run the
+[different samples we have available](xref:TODO) or try to submit your own
+projects. 
