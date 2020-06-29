@@ -1,9 +1,21 @@
+---
+title: Azure Quantum reference
+description: Index for the Azure Quantum reference.
+author: KittyYeungQ
+ms.author: kitty
+ms.date: 06/29/2020
+ms.topic: article
+uid: microsoft.azure.quantum.reference.index
+---
+
+# Azure quantum reference
+
 The following reference documentation is available:
 
 - Providers
-    - [Azure Quantum](./providers/Azure-Quantum.md) by Microsoft
-    - [IonQ](./providers/IonQ.md)
+    - [Azure Quantum](xref:microsoft.azure.quantum.providers.azure-quantum) by Microsoft
+    - [IonQ](xref:microsoft.azure.quantum.providers.ionq)
 
 - Python SDK
-    - [Azure.Quantum](./Python-SDK/Azure.Quantum.md)
-    - [Azure.Quantum.Optimization](./Python-SDK/Azure.Quantum.Optimization.md)
+    - [Azure.Quantum](xref:microsoft.azure.quantum.python-sdk.azure.quantum)
+    - [Azure.Quantum.Optimization](xref:microsoft.azure.quantum.python-sdk.azure.quantum.optimization)

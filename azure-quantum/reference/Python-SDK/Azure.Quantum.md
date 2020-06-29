@@ -1,11 +1,21 @@
-[[_TOC_]]
+---
+title: Azure.Quantum
+description: Reference for azure.quantum
+author: KittyYeungQ
+ms.author: kitty
+ms.date: 06/29/2020
+ms.topic: article
+uid: microsoft.azure.quantum.reference.python-sdk.azure.quantum
+---
 
-# Workspace
+# Azure.Quantum
+
 ```python
 from azure.quantum import Workspace
 ```
 
 ## Constructor
+
 To create a `Workspace` object, you must supply the following arguments in order to connect. If you have not already created a workspace, please follow the [Creating an Azure Quantum Workspace guide](/Guides/Creating-an-Azure-Quantum-Workspace).
 - `subscription_id`: The subscription id the `Workspace` is deployed in
 - `resource_group`: The name of the resource group the `Workspace` is deployed in
@@ -15,6 +25,7 @@ To create a `Workspace` object, you must supply the following arguments in order
 All of the above values are output when you use the [`quantum-workspace` script](https://dev.azure.com/AzureQuantum-PreviewCustomers/PrivatePreview/_git/Documentation?path=%2Fscripts) with either the `create` or `show` commands.
 
 ## Workspace.get_job
+
 Retrieves information about a job.
 
 ```py
@@ -29,6 +40,7 @@ print(job.details.status)
 
 
 ## Workspace.list_jobs
+
 Returns the list of existing jobs in the workspace.
 ```py
 from azure.quantum import Workspace
@@ -45,6 +57,7 @@ for job in jobs:
 ```
 
 ## Workspace.cancel_job
+
 Cancels a job that was previously submitted.
 
 ```py
@@ -60,6 +73,7 @@ print(job.details.status)
 ```
 
 ## Workspace.login
+
 Logs in the local user to Azure. It will first attempt to use cached credentials from a secure local cache. An optional `refresh` argument can be used to bypass the cache and force authentication.
 
 ```python

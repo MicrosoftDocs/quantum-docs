@@ -1,3 +1,13 @@
+---
+title: Submit jobs to Azure Quantum with Q# Jupyter Notebooks
+description: This document provides a basic guide to submit and run Q# applications in Azure Quantum using Q# Jupyter Notebooks.
+author: KittyYeungQ
+ms.author: kitty
+ms.date: 06/29/2020
+ms.topic: article
+uid: microsoft.azure.quantum.submit-jobs.jupyter
+---
+
 # Submit jobs to Azure Quantum with Q# Jupyter Notebooks
 
 This document provides a basic guide to submit and run Q# applications in Azure
@@ -7,7 +17,7 @@ Quantum using Q# Jupyter Notebooks.
 
 - You need to have an Azure Quantum workspace in your subscription. To create
   one, follow the guide [Create an Azure Quantum
-  workspace](Create-quantum-workspaces-with-the-Azure-portal.md).
+  workspace](xref:microsoft.azure.quantum.workspaces-portal).
 
 ## Installation
 
@@ -44,7 +54,7 @@ top-right corner of your Quantum Workspace page in Azure Portal.
    activated. This starts the notebook server and opens Jupyter in a browser.
 1. Create your Q# notebook (via **New** → **Q#**) and write your Q# program.
 1.  If you've never used Q# with Jupyter, read this first: [Create your first Q#
-    notebook](https://docs.microsoft.com/quantum/quickstarts/install-jupyter?tabs=tabid-conda#create-your-first-q-notebook).
+    notebook](xref:microsoft.quantum.install.jupyter).
 1. Write your Q# operations directly in the notebook. Executing the cells will
    compile the Q# code and report whether there are any errors. 
     - For example, you could write a Q# operation that looks like this:
@@ -96,6 +106,6 @@ Some helpful tips while using Q# Jupyter Notebooks:
 ## Next steps
 
 Now that you know how to submit jobs to Azure Quantum you can try to run the
-[different samples we have available](xref:TODO) or try to submit your own
+[different samples we have available](../samples) or try to submit your own
 projects. In particular, you can take a look to a [sample written entirely in a 
 Q# Jupyter notebook](../samples/qsharp/parallel-qrng/ParallelQrng.ipynb).

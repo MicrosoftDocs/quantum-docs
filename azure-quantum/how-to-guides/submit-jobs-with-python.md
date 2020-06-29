@@ -1,3 +1,13 @@
+---
+title: Submit jobs to Azure Quantum with Python
+description: This document provides a basic guide to submit and run Q# applications in Azure Quantum using Q# Jupyter Notebooks.
+author: KittyYeungQ
+ms.author: kitty
+ms.date: 06/29/2020
+ms.topic: article
+uid: microsoft.azure.quantum.submit-jobs.python
+---
+
 # Submit jobs to Azure Quantum with Python
 
 This document provides a basic guide to submit and run Q# applications in Azure
@@ -7,7 +17,7 @@ Quantum using Q# Jupyter Notebooks.
 
 - You need to have an Azure Quantum workspace in your subscription. To create
   one, follow the guide [Create an Azure Quantum
-  workspace](Create-quantum-workspaces-with-the-Azure-portal.md).
+  workspace](xref:microsoft.azure.quantum.workspaces-portal).
 
 ## Installation
 
@@ -99,5 +109,5 @@ top-right corner of your Quantum Workspace page in Azure Portal.
 ## Next steps
 
 Now that you know how to submit jobs to Azure Quantum you can try to run the
-[different samples we have available](xref:TODO) or try to submit your own
+[different samples we have available](../samples) or try to submit your own
 projects. 

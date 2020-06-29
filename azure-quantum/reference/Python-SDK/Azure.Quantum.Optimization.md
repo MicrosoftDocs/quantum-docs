@@ -1,6 +1,15 @@
-[[_TOC_]]
+---
+title: Azure.Quantum.Optimization
+description: Reference for azure.quantum.optimization
+author: KittyYeungQ
+ms.author: kitty
+ms.date: 06/29/2020
+ms.topic: article
+uid: microsoft.azure.quantum.reference.python-sdk.azure.quantum.optimization
+---
 
-# Job
+# Azure.Quantum.Optimizaiton
+
 ```py
 from azure.quantum.optimization import Job
 ```

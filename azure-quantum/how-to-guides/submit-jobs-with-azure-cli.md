@@ -1,3 +1,13 @@
+---
+title: Submit jobs to Azure Quantum with the Command Line Interface 
+description: This guide will show you how to submit jobs to Azure Quantum using the command line interface (CLI).
+author: KittyYeungQ
+ms.author: kitty
+ms.date: 06/29/2020
+ms.topic: article
+uid: microsoft.azure.quantum.submit-jobs.azcli
+---
+
 # Submit jobs to Azure Quantum with the Command Line Interface 
 
 This guide will show you how to submit jobs to Azure Quantum using the command
@@ -12,7 +22,7 @@ subscription. To create one, follow the guide
 - Install the [Quantum Development
   Kit](https://docs.microsoft.com/quantum/install-guide/standalone), if you haven't already.
 - Install the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).
-- Install the [necessary utilities to use Azure Quantum](Installation-guide.md), this includes the `quantum` extension for the Azure CLI.
+- Install the [necessary utilities to use Azure Quantum](xref:microsoft.azure.quantum.setup.cli), this includes the `quantum` extension for the Azure CLI.
 
 ## Submit a job to Azure Quantum with the Azure CLI
 
@@ -194,5 +204,5 @@ In this case we get that each state has equal 50% probabilty of being measured.
 ## Next steps
 
 Now that you know how to submit jobs to Azure quantum you can try to run the
-[different samples we have available](xref:TODO) or try to submit your own
+[different samples we have available](../samples) or try to submit your own
 projects. 

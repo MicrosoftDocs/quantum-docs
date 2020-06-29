@@ -1,16 +1,31 @@
+---
+title: Azure Quantum provider 
+description: This document provides the technical details of the Azure Quantum provider
+author: KittyYeungQ
+ms.author: kitty
+ms.date: 06/29/2020
+ms.topic: article
+uid: microsoft.azure.quantum.providers.azure-quantum
+---
+
+# Azure Quantum provider
+
 The Azure Quantum provider is enabled in every Quantum Workspace.
 
 - Publisher: [Microsoft](https://microsoft.com)
 - Provider ID: `microsoft`
 
-# Targets
+## Targets
+
 The following targets are available from this provider:
+
 - [Solver: Simulated Annealing (Parameter Free)](#Parameter-Free-Simulated-Annealing)
 - [Solver: Simulated Annealing](#Simulated-Annealing)
 - [Solver: Parallel Tempering (Parameter Free)](#Parameter-Free-Parallel-Tempering)
 - [Solver: Parallel Tempering](#Parallel-Tempering)
 
-## Parameter Free Simulated Annealing
+### Parameter Free Simulated Annealing
+
 Parameter-free (up to a time out) solver for binary optimization problems with k-local interactions on an all-to-all graph topology with double precision support for the coupler weights. To use the parameter-free simulated annealing solver, specify only the `timeout` and/or `seed` parameters when instantiating the `SimulatedAnnealing` class.
 
 - Job type: `Quantum-Inspired Optimization Problem`
@@ -27,7 +42,8 @@ Monthly quota: **50 hours per month**
 | `timeout`      | int      | Required | Maximum number of seconds to run the core solver loop. Initialization time does not respect this value, so the solver may run longer than the value specified. |
 | `seed`         | int      | Optional | Seed value  |
 
-## Simulated Annealing 
+### Simulated Annealing
+
 Solver for binary optimization problems with k-local interactions on an all-to-all graph topology with double precision support for the coupler weights. To use the parameterized simulated annealing solver, specify one or more of the below parameters when instantiating the `SimulatedAnnealing` class.
 
 - Job type: `Quantum-Inspired Optimization Problem`
@@ -46,7 +62,8 @@ Monthly quota: **50 hours per month**
 | `sweeps`       | int      | Required | Number of sweeps to run. |
 | `restarts`     | int      | Required | Number of restarts. |
 
-## Parameter Free Parallel Tempering
+### Parameter Free Parallel Tempering
+
 Parameter-free solver for binary optimization problems with k-local interactions on an all-to-all graph topology with double precision support for the coupler weights. To use the parameter-free parallel tempering solver, specify only the `timeout` and/or `seed` parameters when instantiating the `ParallelTempering` class.
 
 - Job type: `Quantum-Inspired Optimization Problem`
@@ -64,7 +81,8 @@ Monthly quota: **50 hours per month**
 | `seed`         | int      | Optional | Seed value  |
 
 
-## Parallel Tempering
+### Parallel Tempering
+
 Solver for binary optimization problems with k-local interactions on an all-to-all graph topology with double precision support for the coupler weights. To use the parameterized parallel tempering solver, specify one or more of the below parameters when instantiating the `ParallelTempering` class.
 
 - Job type: `Quantum-Inspired Optimization Problem`

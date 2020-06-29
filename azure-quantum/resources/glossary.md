@@ -1,3 +1,13 @@
+---
+title: Glossary for Azure Quantum 
+description: List of common terms of the Azure Quantum service.
+author: geduardo
+ms.author: v-edsanc@microsoft.com
+ms.date: 06/25/2020
+ms.topic: article
+uid: microsoft.azure.quantum.glossary
+---
+
 **Azure Active Directory (AAD) / Microsoft Identity Platform** - Azure’s identity service, used to implement access control and authentication to resources. The names Azure Active Directory and Microsoft Identity Platform are interchangeable ([link](https://azure.microsoft.com/en-us/services/active-directory/)).
 
 **Azure Managed Application (AMA) / Managed Application** – A type of application offered to end-customers in Azure through the Azure Marketplace ([link](https://docs.microsoft.com/en-us/azure/managed-applications/overview)).
