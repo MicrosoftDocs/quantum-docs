@@ -101,5 +101,5 @@ Some helpful tips while using Q# Jupyter Notebooks:
 
 Now that you know how to submit jobs to Azure quantum you can try to run the
 [different samples we have available](xref:TODO) or try to submit your own
-projects. In particular, you can take a look to a [sample written entirely in a
+projects. In particular, you can take a look to a [sample written entirely in a 
 Q# Jupyter notebook](..\samples\qsharp\parallel-qrng).
