@@ -15,7 +15,7 @@ Your feedback is invaluable to us in the early stages of the Azure Quantum Produ
 
 ## Documentation
 
-[You can find documentation for Azure Quantum and our SDKs in our Azure DevOps wiki](https://dev.azure.com/AzureQuantum-PreviewCustomers/PrivatePreview/_wiki/wikis). We recommend reading through the overview documents to familiarize yourself with Azure Quantum, then checking out the Guides to get started.
+You can find documentation for Azure Quantum and our SDKs in this Microsoft Quantum documentation repoisitory. We recommend reading through the overview documents to familiarize yourself with Azure Quantum, then checking out the Guides to get started.
 
 ## Microsoft Open Source Code of Conduct
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
