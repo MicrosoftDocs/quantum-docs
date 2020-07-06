@@ -19,7 +19,7 @@ and run it on the different targets available in Azure Quantum.
 ## Different types of targets in Azure Quantum
 
 Azure Quantum is a platform that offers different quantum solutions such as
-different hardware devices and different quantum simulators and resource estimators. 
+different hardware devices and different quantum simulators. 
 For the moment, each of these devices has its own limitations and requirements 
 for the programs to run. The Quantum Development Kit and Azure Quantum take care 
 of everything in the background so that your Q# code can run seamlessly on all 
@@ -52,7 +52,8 @@ Full profile targets are able to run any Q# program, so you can
 program without functionality restrictions. Azure Quantum does not provide yet
 any target with this profile, but you can try locally any Q# program using the
 [full state simulator of the Quantum Development
-Kit](xref:microsoft.quantum.machines.full-state-simulator). 
+Kit](xref:microsoft.quantum.machines.full-state-simulator) and the
+[resources estimator](https://docs.microsoft.com/quantum/user-guide/machines/resources-estimator?view=qsharp-preview). 
 
 If you need help setting up your environment to run Q# programs locally, you can
 start by our article on [Getting started with the Quantum Development
