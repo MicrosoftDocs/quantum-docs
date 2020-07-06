@@ -3,19 +3,6 @@
 This guide will outline of the process to create a Q# application
 and run it on the different targets available in Azure Quantum.
 
-## Prerequisites
-
-- You need to have an Azure Quantum workspace in your subscription. To create
-  one, follow the guide [Create an Azure Quantum
-  workspace](Create-quantum-workspaces-with-the-Azure-portal.md).
-- Install the [Quantum Development
-  Kit](https://docs.microsoft.com/quantum/install-guide/standalone), if you
-  haven't already.
-- Install the [Azure
-  CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).
-- Install the [necessary utilities to use Azure Quantum](prepare-your-environment.md),
-  this includes the `quantum` extension for the Azure CLI.
-
 ## Different types of targets in Azure Quantum
 
 Azure Quantum is a platform that offers different quantum solutions such as
