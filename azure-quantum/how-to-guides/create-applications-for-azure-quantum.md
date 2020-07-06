@@ -166,3 +166,9 @@ some limitations.
 
 For the moment, Azure Quantum doesn't host yet any target with this profile,
 but some targets will become available soon during the Limited Review.
+
+## Next steps
+
+Now that you know how to submit jobs to Azure quantum you can try to run the
+[different samples we have available](../samples) or try to submit your own
+projects. 
