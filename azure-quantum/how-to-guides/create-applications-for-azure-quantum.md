@@ -1,7 +1,7 @@
 # Create and run Q# applications in Azure Quantum
 
 This guide will outline of the process to create a Q# application
-and run it in the different targets available in Azure Quantum.
+and run it on the different targets available in Azure Quantum.
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ Azure Quantum is a platform that offers different quantum solutions such as
 different hardware devices and different quantum simulators. For the moment,
 each of these devices has its own limitations and requirements for the programs
 to run. The Quantum Development Kit and Azure Quantum take care of everything in
-the background so that your Q# code can run seamlessly in all targets of Azure
+the background so that your Q# code can run seamlessly on all targets of Azure
 Quantum.
 
 However, quantum computers are still devices under development and not all of
@@ -69,7 +69,7 @@ the constraint that they can't use results from qubit measurements to control
 the execution flow. More specifically, values of type `Result` do not support
 equality comparison.
 
-For example, this operation can NOT be run in a No Control Flow target:
+For example, this operation can NOT be run on a No Control Flow target:
 
 ```qsharp
     operation SetQubitState(desired : Result, q : Qubit) : Result {
