@@ -19,11 +19,11 @@ and run it on the different targets available in Azure Quantum.
 ## Different types of targets in Azure Quantum
 
 Azure Quantum is a platform that offers different quantum solutions such as
-different hardware devices and different quantum simulators. For the moment,
-each of these devices has its own limitations and requirements for the programs
-to run. The Quantum Development Kit and Azure Quantum take care of everything in
-the background so that your Q# code can run seamlessly on all targets of Azure
-Quantum.
+different hardware devices and different quantum simulators and resource estimators. 
+For the moment, each of these devices has its own limitations and requirements 
+for the programs to run. The Quantum Development Kit and Azure Quantum take care 
+of everything in the background so that your Q# code can run seamlessly on all 
+targets of Azure Quantum.
 
 However, quantum computers are still devices under development and not all of
 them have yet the ability to run every Q# code. So you will need to keep some
