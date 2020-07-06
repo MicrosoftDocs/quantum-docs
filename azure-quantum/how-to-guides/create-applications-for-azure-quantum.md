@@ -144,9 +144,7 @@ To create an application to be run in IonQ targets follow the next guide:
      not compatible with the No Control Flow profile.
    - You can use the
      [`ResourcesEstimator`](https://docs.microsoft.com/quantum/user-guide/machines/resources-estimator?view=qsharp-preview)
-     to estimate what resources your Q# program needs to be run. To do it you
-     need to modify again the `*.csproj` file to add the following line to the `<PropertyGroup>`:
-     `<DefaultSimulator>ResourcesEstimator</DefaultSimulator>`. Then you can
+     to estimate what resources your Q# program needs to be run. You can
      invoke the resource estimator with the command: `dotnet run --simulator
      ResourcesEstimator`.
 1. Once you have your Q# program ready, you can submit the job to Azure Quantum
