@@ -133,7 +133,7 @@ To create an application to be run in IonQ targets follow the next guide:
     ```
    where `X.XX.XXXXXXXX` is a place holder for the number of the latest version.
 1. Write your Q# program, reminding that you cannot compare measurement results
-  control the execution flow. 
+ to control the execution flow. 
 1. Build and run your program locally using the Quantum Development Kit local
    targets. This will let you know if your Q# application can be run in IonQ's
    targets by checking the fulfillement of the No Control Flow restrictions and calculating the
