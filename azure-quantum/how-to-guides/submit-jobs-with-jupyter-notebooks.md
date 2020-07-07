@@ -32,17 +32,19 @@ IQ# kernel, which powers the Q# Jupyter Notebook and Python experiences.
 1. Create and activate a new conda environment named `qsharp-env` with the
    required packages (including Jupyter Notebook and IQ#) by running the
    following commands:
-    ```
+
+    ```bash
     conda create -n qsharp-env -c quantum-engineering qsharp notebook
 
     conda activate qsharp-env
     ```
+
 1. Run `python -c "import qsharp"` from the same terminal to verify your
    installation and populate your local package cache with all required QDK
    components.
 
-Now you're set up to use Q# Jupyter Notebooks and Q# integration to
-execute quantum programs on Azure Quantum.
+Now you're set up to use Q# Jupyter Notebooks and Q# integration to execute
+quantum programs on Azure Quantum.
 
 **NOTE:** You'll want to have the resource ID of your Azure Quantum workspace
 handy, as you'll need it for the steps below. You can copy/paste this from the
@@ -53,12 +55,13 @@ top-right corner of your Quantum Workspace page in Azure Portal.
 1. Run `jupyter notebook` from the terminal where your conda environment is
    activated. This starts the notebook server and opens Jupyter in a browser.
 1. Create your Q# notebook (via **New** → **Q#**) and write your Q# program.
-1.  If you've never used Q# with Jupyter, read this first: [Create your first Q#
+1. If you've never used Q# with Jupyter, read this first: [Create your first Q#
     notebook](xref:microsoft.quantum.install.jupyter).
 1. Write your Q# operations directly in the notebook. Executing the cells will
-   compile the Q# code and report whether there are any errors. 
+   compile the Q# code and report whether there are any errors.
     - For example, you could write a Q# operation that looks like this:
-        ```
+
+        ```qsharp
         operation GenerateRandomBit() : Result {
             using (q = Qubit())  {
                 H(q);
@@ -68,19 +71,22 @@ top-right corner of your Quantum Workspace page in Azure Portal.
             }
         }
         ```
+
 1. Once you have your Q# operations defined, use the `%azure.*` magic commands
    to connect and submit jobs to Azure Quantum. You'll use the resource ID of
    your Azure Quantum workspace in order to connect.
 
     - For example, the following commands will connect to an Azure Quantum
       workspace and execute an operation on the `ionq.simulator` target:
-        ```
+
+        ```py
         %azure.connect "/subscriptions/.../Microsoft.Quantum/Workspaces/WORKSPACE_NAME"
 
         %azure.target ionq.simulator
 
         %azure.execute GenerateRandomBit
         ```
+
         where `GenerateRandomBit` is the Q# operation that you have already
         defined in the notebook.
 
@@ -89,6 +95,7 @@ top-right corner of your Quantum Workspace page in Azure Portal.
    running `%azure.jobs`.
 
 Some helpful tips while using Q# Jupyter Notebooks:
+
 - You can run `%lsmagic` to see all of the available magic commands, including
   the Azure Quantum ones.
 - Detailed usage information for any magic command can be displayed by simply
@@ -107,5 +114,5 @@ Some helpful tips while using Q# Jupyter Notebooks:
 
 Now that you know how to submit jobs to Azure Quantum you can try to run the
 [different samples we have available](../samples) or try to submit your own
-projects. In particular, you can take a look to a [sample written entirely in a 
+projects. In particular, you can take a look to a [sample written entirely in a
 Q# Jupyter notebook](../samples/qsharp/parallel-qrng/ParallelQrng.ipynb).

@@ -13,7 +13,7 @@ uid: microsoft.azure.quantum.submit-jobs.python
 This document provides a basic guide to submit and run Q# applications in Azure
 Quantum using Q# Jupyter Notebooks.
 
-## Prerequisites 
+## Prerequisites
 
 - You need to have an Azure Quantum workspace in your subscription. To create
   one, follow the guide [Create an Azure Quantum
@@ -32,11 +32,13 @@ IQ# kernel, which powers the Q# Jupyter Notebook and Python experiences.
 1. Create and activate a new conda environment named `qsharp-env` with the
    required packages (including Jupyter Notebook and IQ#) by running the
    following commands:
+
     ```
     conda create -n qsharp-env -c quantum-engineering qsharp notebook
 
     conda activate qsharp-env
     ```
+
 1. Run `python -c "import qsharp"` from the same terminal to verify your
    installation and populate your local package cache with all required QDK
    components.
@@ -65,7 +67,7 @@ top-right corner of your Quantum Workspace page in Azure Portal.
    Python.
     - For example, the contents of your .qs file could look something like this:
 
-        ```
+        ```qsharp
         namespace Test {
             open Microsoft.Quantum.Intrinsic;
 
@@ -88,7 +90,7 @@ top-right corner of your Quantum Workspace page in Azure Portal.
    You'll use the resource ID of your Azure Quantum workspace in order to
    connect. For example, your Python script could look like this:
 
-    ```
+    ```py
     import qsharp
     import qsharp.azure
     from Test import GenerateRandomBit
@@ -110,4 +112,4 @@ top-right corner of your Quantum Workspace page in Azure Portal.
 
 Now that you know how to submit jobs to Azure Quantum you can try to run the
 [different samples we have available](../samples) or try to submit your own
-projects. 
+projects.

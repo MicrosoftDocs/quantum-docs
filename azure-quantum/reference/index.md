@@ -13,9 +13,9 @@ uid: microsoft.azure.quantum.reference.index
 The following reference documentation is available:
 
 - Providers
-    - [Azure Quantum](xref:microsoft.azure.quantum.providers.azure-quantum) by Microsoft
-    - [IonQ](xref:microsoft.azure.quantum.providers.ionq)
+  - [Azure Quantum](xref:microsoft.azure.quantum.providers.azure-quantum) by Microsoft
+  - [IonQ](xref:microsoft.azure.quantum.providers.ionq)
 
 - Python SDK
-    - [Azure.Quantum](xref:microsoft.azure.quantum.python-sdk.azure.quantum)
-    - [Azure.Quantum.Optimization](xref:microsoft.azure.quantum.python-sdk.azure.quantum.optimization)
+  - [Azure.Quantum](xref:microsoft.azure.quantum.python-sdk.azure.quantum)
+  - [Azure.Quantum.Optimization](xref:microsoft.azure.quantum.python-sdk.azure.quantum.optimization)

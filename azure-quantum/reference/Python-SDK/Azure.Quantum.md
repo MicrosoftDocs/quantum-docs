@@ -16,13 +16,21 @@ from azure.quantum import Workspace
 
 ## Constructor
 
-To create a `Workspace` object, you must supply the following arguments in order to connect. If you have not already created a workspace, please follow the [Creating an Azure Quantum Workspace guide](/Guides/Creating-an-Azure-Quantum-Workspace).
-- `subscription_id`: The subscription id the `Workspace` is deployed in
-- `resource_group`: The name of the resource group the `Workspace` is deployed in
-- `name`: The name of the `Workspace`
-- `storage`: The connection string of the storage account provisioned for your `Workspace`
+To create a `Workspace` object, you must supply the following arguments in order
+to connect. If you have not already created a workspace, please follow the
+[Creating an Azure Quantum Workspace
+guide](/Guides/Creating-an-Azure-Quantum-Workspace).
 
-All of the above values are output when you use the [`quantum-workspace` script](https://dev.azure.com/AzureQuantum-PreviewCustomers/PrivatePreview/_git/Documentation?path=%2Fscripts) with either the `create` or `show` commands.
+- `subscription_id`: The subscription id the `Workspace` is deployed in
+- `resource_group`: The name of the resource group the `Workspace` is deployed
+  in
+- `name`: The name of the `Workspace`
+- `storage`: The connection string of the storage account provisioned for your
+  `Workspace`
+
+All of the above values are output when you use the [`quantum-workspace`
+script](https://dev.azure.com/AzureQuantum-PreviewCustomers/PrivatePreview/_git/Documentation?path=%2Fscripts)
+with either the `create` or `show` commands.
 
 ## Workspace.get_job
 
@@ -74,7 +82,9 @@ print(job.details.status)
 
 ## Workspace.login
 
-Logs in the local user to Azure. It will first attempt to use cached credentials from a secure local cache. An optional `refresh` argument can be used to bypass the cache and force authentication.
+Logs in the local user to Azure. It will first attempt to use cached credentials
+from a secure local cache. An optional `refresh` argument can be used to bypass
+the cache and force authentication.
 
 ```python
 workspace = Workspace(...)
@@ -83,8 +93,9 @@ workspace.login()
 
 When you call login you will see the following printed in your console:
 
-```
+```output
 To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code <CODE> to authenticate.
 ```
 
-Once logged in, the credentials will be cached locally. The location of the cache may be specified via the `AZURE_QUANTUM_TOKEN_CACHE` environment variable.
+Once logged in, the credentials will be cached locally. The location of the
+cache may be specified via the `AZURE_QUANTUM_TOKEN_CACHE` environment variable.
