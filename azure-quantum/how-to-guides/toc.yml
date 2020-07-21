@@ -1,14 +1,19 @@
--name: Prepare your environment to use Azure Quantum 
--href: prepare-your-environment.md
--name: Create quantum workspaces with the Azure Portal 
--href: create-quantum-workspaces-with-the-azure-portal.md
--name: Submit jobs with the Azure CLI
--href: submit-jobs-with-azure-cli.md
--name: Submit jobs with Q# Jupyter Notebooks
--href: submit-jobs-with-jupyter-notebooks.md
--name: Submit jobs with Python
--href: submit-jobs-with-python.md
--name: Use the Python SDK for QIO
--href: use-the-python-SDK.md
--name: Use the Python SDK for QIO (Advanced)
--href: use-the-python-SDK-advanced.md
+expanded: true
+items:
+- name: Prepare your environment to use Azure Quantum 
+- href: prepare-your-environment.md
+- name: Create quantum workspaces with the Azure Portal 
+- href: create-quantum-workspaces-with-the-azure-portal.md
+- name: Quantum Execution
+  items:
+  - name: Submit jobs with the Azure CLI
+    href: submit-jobs-with-azure-cli.md
+  - name: Submit jobs with Q# Jupyter Notebooks
+    href: submit-jobs-with-jupyter-notebooks.md
+  - name: Submit jobs with Python
+    href: submit-jobs-with-python.md
+- name: Quantum Inspired Optimization
+  - name: Use the Python SDK for QIO
+    href: use-the-python-SDK.md
+  - name: Use the Python SDK for QIO (Advanced)
+    href: use-the-python-SDK-advanced.md
