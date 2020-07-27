@@ -1,3 +1,13 @@
+---
+title: Targets in Azure Quantum
+description: Article describing the different types of targets existing in Azure Quantum
+author: KittyYeungQ
+ms.author: kitty
+ms.date: 06/29/2020
+ms.topic: article
+uid: microsoft.azure.quantum.concepts.targets
+---
+
 # Targets in Azure Quantum
 
 In this article we will introduce the different type of targets available in
@@ -47,6 +57,6 @@ profiles for QPUs:
 
 ## Next steps
 
-Before learning how to submit jobs to execute in Azure Quantum targets, install
-the necessary tools to use Azure Quantum following the [Installation
-guide](Installation-guide.md)
+Before learning how to submit jobs to execute in Azure Quantum targets, prepare
+your environment to use Azure Quantum following the [Prepare your environment
+guide](xref:microsoft.azure.quantum.setup.cli)

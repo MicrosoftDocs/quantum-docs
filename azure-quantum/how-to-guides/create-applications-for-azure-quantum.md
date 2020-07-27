@@ -1,3 +1,13 @@
+---
+title: Create applications for Azure Quantum
+description: Explanation of how to create applications for the different targets of Azure-Quantum
+author: KittyYeungQ
+ms.author: kitty
+ms.date: 06/29/2020
+ms.topic: article
+uid: microsoft.azure.quantum.create-applications
+---
+
 # Create and run Q# applications in Azure Quantum
 
 This guide will outline of the process to create a Q# application
@@ -48,7 +58,7 @@ Kit](xref:microsoft.quantum.welcome).
 
 You can also explore different Q# code samples to be run locally with the
 [Quantum Development
-Kit](https://docs.microsoft.com/en-us/samples/browse/?languages=qsharp&view=qsharp-preview).
+Kit](https://docs.microsoft.com/samples/browse/?languages=qsharp&view=qsharp-preview).
 
 ## Create and run applications for No Control Flow profile targets
 
@@ -78,7 +88,7 @@ to control the execution flow with an `if` statement.
 
 Presently, the list of No Control Flow targets for Azure Quantum is:
 
-- **Provider:** IonQ 
+- **Provider:** IonQ
     - IonQ simulator (`ìonq.simulator`)
     - IonQ QPU: (`ionq.qpu`)
 
@@ -157,5 +167,5 @@ but some targets will become available soon during the Limited Review.
 ## Next steps
 
 Now that you know how to create Q# applications to Azure quantum you can try to run the
-[different samples we have available](../samples) or try to submit your own
-projects. 
+[different samples we have available](https://github.com/MicrosoftDocs/quantum-docs-private/tree/feature/onboarding-azure-quantum/azure-quantum/samples) or try to submit your own
+projects.
