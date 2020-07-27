@@ -70,13 +70,12 @@ top-right corner of your Quantum Workspace page in Azure Portal.
         ```qsharp
         namespace Test {
             open Microsoft.Quantum.Intrinsic;
+            open Microsoft.Quantum.Measurement;
 
-            operation GenerateRandomBit() : Result {
-                using (q = Qubit())  {
-                    H(q);
-                    let r = M(q);
-                    Reset(q);
-                    return r;
+            operation GenerateRandomBits(n : Int) : Result[] {
+                using (qubits = Qubit[n])  {
+                    ApplyToEach(H, qubits);
+                    return MultiM(qubits);
                 }
             }
         }
@@ -97,16 +96,41 @@ top-right corner of your Quantum Workspace page in Azure Portal.
 
     qsharp.azure.connect(resourceId="/subscriptions/.../Microsoft.Quantum/Workspaces/WORKSPACE_NAME")
     qsharp.azure.target("ionq.simulator")
-    result = qsharp.azure.execute(GenerateRandomBit)
+    result = qsharp.azure.execute(GenerateRandomBits, n=3, shots=1000, jobName="Generate three random bits")
     print(result)
     ```
 
-    where `GenerateRandomBit` is the Q# operation in a namespace `Test` that is
-    defined in your `*.qs` file.
+    where `GenerateRandomBits` is the Q# operation in a namespace `Test` that is
+    defined in your `*.qs` file, `n=3` is the parameter to be passed to
+    that operation, `shots=1000` (optional) specifies the number of repetitions
+    to perform, and `jobName="Generate three random bits"` (optional) is a custom
+    job name to identify the job in the Azure Quantum workspace.
 
 1. Execute your Python script by running `python test.py`, where `test.py` is
    the name of your Python file. If successful, you should see your job results
-   printed to the terminal.
+   printed to the terminal. For example:
+
+   ```output
+   {'[0,0,0]': 0.125, '[1,0,0]': 0.125, '[0,1,0]': 0.125, '[1,1,0]': 0.125, '[0,0,1]': 0.125, '[1,0,1]': 0.125, '[0,1,1]': 0.125, '[1,1,1]': 0.125}
+   ```
+
+1. To view the details of all jobs in your Azure Quantum workspace, run `qsharp.azure.jobs()`:
+
+   ```dotnetcli
+   >>> qsharp.azure.jobs()
+   [{'id': 'f4781db6-c41b-4402-8d7c-5cfce7f3cde4', 'name': 'GenerateRandomNumber 3 qubits', 'status': 'Succeeded', 'provider': 'ionq', 'target': 'ionq.simulator', 'creation_time': '2020-07-17T21:45:43.4405253Z', 'begin_execution_time': '2020-07-17T21:45:54.09Z', 'end_execution_time': '2020-07-17T21:45:54.101Z'}, {'id': '1b03cc74-b5d5-4ffa-81db-465f08ae6cd0', 'name': 'GenerateRandomBit', 'status': 'Succeeded', 'provider': 'ionq', 'target': 'ionq.simulator', 'creation_time': '2020-07-21T19:44:17.1065156Z', 'begin_execution_time': '2020-07-21T19:44:25.85Z', 'end_execution_time': '2020-07-21T19:44:25.858Z'}]
+   ```
+
+1. To view the detailed status of a particular job, pass the job ID to `qsharp.azure.status()` or `qsharp.azure.output()`, e.g.:
+
+   ```dotnetcli
+   >>> qsharp.azure.status('1b03cc74-b5d5-4ffa-81db-465f08ae6cd0')
+   {'id': '1b03cc74-b5d5-4ffa-81db-465f08ae6cd0', 'name': 'GenerateRandomBit', 'status': 'Succeeded', 'provider': 'ionq', 'target': 'ionq.simulator', 
+   'creation_time': '2020-07-21T19:44:17.1065156Z', 'begin_execution_time': '2020-07-21T19:44:25.85Z', 'end_execution_time': '2020-07-21T19:44:25.858Z'}
+
+   >>> qsharp.azure.output('1b03cc74-b5d5-4ffa-81db-465f08ae6cd0')
+   {'0': 0.5, '1': 0.5}
+   ```
 
 ## Next steps
 
