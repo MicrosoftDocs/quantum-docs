@@ -80,11 +80,12 @@ For example, this operation can NOT be run on a No Control Flow target:
 It can't be run because it evaluates a comparison between two results (`desired != M(q)`)
 to control the execution flow with an `if` statement.
 
->[!NOTE] Currently, for the targets of this profile there exists an additional
->limitation: *you can't apply operations on qubits that have been measured even
->if you don't use the results to control the execution flow.* This limitation is
->not intrinsic of this profile but circumstantial to the situation of Limited
->Preview.
+> [!NOTE]
+> Currently, for the targets of this profile there exists an additional
+> limitation: *you can't apply operations on qubits that have been measured even
+> if you don't use the results to control the execution flow.* This limitation is
+> not intrinsic of this profile but circumstantial to the situation of Limited
+> Preview.
 
 Presently, the list of No Control Flow targets for Azure Quantum is:
 
@@ -99,7 +100,7 @@ To create an application to be run in IonQ targets follow the next guide:
 #### Prerequisites
 
 - Install the [Quantum Development Kit](xref:microsoft.quantum.install.standalone).
-- Install the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).
+- Install the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 - Install the [necessary utilities to use Azure Quantum](./prepare-your-environment.md), this includes the `quantum` extension for the Azure CLI.
 - A quantum workspace with IonQ listed as a provider. To create one, follow the
   guide [Create an Azure Quantum

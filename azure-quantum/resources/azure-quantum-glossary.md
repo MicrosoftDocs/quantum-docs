@@ -8,11 +8,13 @@ ms.topic: article
 uid: microsoft.azure.quantum.glossary
 ---
 
-**Azure Active Directory (AAD) / Microsoft Identity Platform** - Azure’s identity service, used to implement access control and authentication to resources. The names Azure Active Directory and Microsoft Identity Platform are interchangeable ([link](https://azure.microsoft.com/en-us/services/active-directory/)).
+# Glossary for Azure Quantum
 
-**Azure Managed Application (AMA) / Managed Application** – A type of application offered to end-customers in Azure through the Azure Marketplace ([link](https://docs.microsoft.com/en-us/azure/managed-applications/overview)).
+**Azure Active Directory (AAD) / Microsoft Identity Platform** - Azure’s identity service, used to implement access control and authentication to resources. The names Azure Active Directory and Microsoft Identity Platform are interchangeable ([link](https://azure.microsoft.com/services/active-directory/)).
 
-**Azure Marketplace** – A storefront for cloud-based software in Azure ([link](https://azuremarketplace.microsoft.com/en-us/marketplace/)).
+**Azure Managed Application (AMA) / Managed Application** – A type of application offered to end-customers in Azure through the Azure Marketplace ([link](https://docs.microsoft.com/azure/managed-applications/overview)).
+
+**Azure Marketplace** – A storefront for cloud-based software in Azure ([link](https://azuremarketplace.microsoft.com/marketplace/)).
 
 **Azure Quantum Job (Job)** – A program, problem, or application, submitted to Azure Quantum for processing by an Azure Quantum Provider.
 
@@ -22,7 +24,7 @@ uid: microsoft.azure.quantum.glossary
 
 **Azure Quantum (AQ)** – Microsoft’s quantum service in Azure, enabling customers access to quantum solutions from various providers, both Microsoft providers and partner providers.
 
-**Azure Resource Manager (ARM)** – Azure’s deployment and management service ([link](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview)).
+**Azure Resource Manager (ARM)** – Azure’s deployment and management service ([link](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)).
 
 **Quantum Development Kit (QDK)** - Microsoft’s software development kit for developing quantum applications in the Azure Quantum service. The QDK contains Q\#, our programming language for quantum computing, Q\# libraries, samples and tutorials. It also contains developer APIs for executing jobs on the Azure Quantum.
 
@@ -30,4 +32,4 @@ uid: microsoft.azure.quantum.glossary
 
 **Quantum Program** - In the scope of Azure Quantum, a program written in Q# targeted towards a provider in Azure Quantum.
 
-_You may also benefit from the [Azure glossary](https://docs.microsoft.com/en-us/azure/azure-glossary-cloud-terminology)._
+_You may also benefit from the [Azure glossary](https://docs.microsoft.com/azure/azure-glossary-cloud-terminology)._

@@ -54,4 +54,4 @@ folder (or one of its parents) where your Q# project is located.
 ## Next steps
 
 Now that you have installed the tools to use Azure Quantum, learn how to [submit
-jobs to Azure Quantum](xref:microsoft.azure.quantum.submit-jobs.cli).
+jobs to Azure Quantum](xref:microsoft.azure.quantum.submit-jobs.azcli).

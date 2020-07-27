@@ -38,6 +38,9 @@
     ],
     "overwrite": [],
     "externalReference": [],
+    "xref":[
+      "https://docs.microsoft.com/quantum/xrefmap.yml"
+    ],
     "globalMetadata": {
       "breadcrumb_path": "/azure-quantum/breadcrumb/toc.json",
       "extendBreadcrumb": true,

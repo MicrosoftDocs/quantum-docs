@@ -1,5 +1,5 @@
 - name: Reference documentaiton
-- href: index.md
+  href: index.md
 - name: Providers
   href: providers/toc.yml
 - name: Python-SDK

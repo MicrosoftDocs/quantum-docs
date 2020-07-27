@@ -12,7 +12,7 @@ uid: microsoft.azure.quantum.qio.python-sdk
 
 This documents provides a basic usage overview of the Python SDK for Quantum
 Inspired Optimization. It assumes you have already completed the [Creating an
-Azure Quantum Workspace guide](xref:azure.quantum.workspaces-portal).
+Azure Quantum Workspace guide](xref:microsoft.azure.quantum.workspaces-portal).
 
 ## Installation
 
@@ -33,7 +33,7 @@ install it from the private Azure Quantum feed:
 ## Connecting to a Quantum Workspace
 
 A `Workspace` represents the Quantum Workspace you [previously
-created](xref:azure.quantum.workspaces-portal) and is the main interface for
+created](xref:microsoft.azure.quantum.workspaces-portal) and is the main interface for
 interacting with the service.
 
 ```python
@@ -63,7 +63,7 @@ cached so that you do not have to repeat this process for future runs.
 
 To express a simple problem to be solved, create an instance of a `Problem` and
 set the [`problem_type` to either `ProblemType.ising` or
-`ProblemType.pubo`](../resources/Azure.Quantum.Optimization#ProblemType):
+`ProblemType.pubo`](xref:microsoft.azure.quantum.reference.python-sdk.azure.quantum.optimization):
 
 ```py
 from azure.quantum.optimization import Problem, ProblemType, Term, ParallelTempering
@@ -87,13 +87,13 @@ terms = [
 problem.add_terms(terms=terms)
 ```
 
-> Note that there are [multiple ways](xref:azure.quantum.qio.python-sdk.advanced#Methods-for-supplying-problem-terms)
+> Note that there are [multiple ways](xref:microsoft.azure.quantum.qio.python-sdk.advanced#Methods-for-supplying-problem-terms)
 > to supply terms to the problem, and not all terms must be added at once.
 
 Next, we're ready to solve by applying a solver. In this example we'll use a
 parameter-free version of parallel tempering. You can find documentation on this
 solver and the other available solvers in the [Azure Quantum Provider
-Reference](xref:azure.quantum.providers.azure-quantum).
+Reference](xref:microsoft.azure.quantum.providers.azure-quantum).
 
 ```py
 solver = ParallelTempering(workspace, timeout=100)
@@ -102,7 +102,7 @@ solver = ParallelTempering(workspace, timeout=100)
 The solver takes as arguments the `workspace` created previously, plus a single
 parameter which is the maximum amount of time (in seconds) to run the solver.
 Detailed documentation on parameters is available in the [Azure Quantum Provider
-Reference](xref:azure.quantum.providers.azure-quantum).
+Reference](xref:microsoft.azure.quantum.providers.azure-quantum).
 
 Solvers provide an `optimize` method that expects a `Problem` which uploads the
 problem definition, submits a job, and polls until the job has completed
@@ -134,4 +134,4 @@ SDK](xref:microsoft.azure.quantum.qio.python-sdk.advanced).
 ## Common issues
 
 Refer to this document for common issues you may run into: [Common
-issues](Common-issues.md)
+issues](xref:microsoft.azure.quantum.common-issues)

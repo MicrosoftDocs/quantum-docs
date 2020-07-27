@@ -1,12 +1,13 @@
 ---
-title: Create quantum workspaces with the Azure portal
-description: This guide will show you how to create resource groups and quantum workspaces with the Azure portal to start executing your quantum applications in Azure Quantum.
+title: Introduction to Azure Quantum
+description: Introductory article for the Azure Quantum platform.
 author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: overview
 uid: microsoft.azure.quantum.overview
 ---
+
 # Introduction to Azure Quantum
 
 Azure Quantum allows you to run Quantum Programs and solve Quantum-Inspired
@@ -33,7 +34,7 @@ instructions.
 Once you create a Workspace, you'll be able to select which third party
 providers you would like to be able to use in that Workspace. Every Workspace
 also comes with the Microsoft provider always enabled. For more information
-about providers, see [Providers and Targets](#Providers-and-Targets) below. If
+about providers, see [Providers and Targets](#providers-and-targets) below. If
 you haven't enabled a particular provider for execution in your Workspace, you
 will not be able to run jobs against that provider later. You may change the
 enabled providers in your Workspace after creating it.
@@ -54,7 +55,7 @@ single Workspace, you may deploy multiple Workspaces in your Azure subscription.
 Whenever you execute a Quantum Program or solve a QIO problem in Azure Quantum,
 you are creating and running a job. The way to create and run a job depends on
 the type of the job and the target (see below for a list of [providers and
-targets](#Providers-and-Targets)), however all jobs have the following
+targets](#providers-and-targets)), however all jobs have the following
 properties:
 
 - **ID**: A unique identifier for a job. Unique within your Workspace.
@@ -72,7 +73,7 @@ your job and its execution history.
 ### Job Lifecycle
 
 Jobs are typically created using one of our SDKs (e.g. the [Python
-SDK](microsoft.azure.quantum.qio.python-sdk)) or the QDK. Once you've written
+SDK](xref:microsoft.azure.quantum.qio.python-sdk)) or the QDK. Once you've written
 your Quantum Program or expressed your QIO problem, you may pick a target and
 run the job.
 
@@ -86,13 +87,11 @@ the following possible states:
 - `succeeded` - _[Final]_ the job has succeeded and output is available.
 - `failed` - _[Final]_ the job has failed and error information is available.
 - `cancelled` - _[Final]_ the user requested the job execution be cancelled -
-  see [Job Cancellation](#Job-Cancellation).
+  see [Job Cancellation](#job-cancellation).
 
 The diagram below shows the possible state transitions.
 
-::: mermaid graph LR waiting --> executing waiting --> failed waiting -.->
-cancelled executing --> succeeded executing --> failed executing -.-> cancelled
-:::
+[Job submission diagram](../media/aq-diagram.png)
 
 The `succeeded`, `failed`, and `cancelled` states are considered **final
 states** - once in one of these states, no more updates will occur. It also

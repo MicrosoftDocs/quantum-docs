@@ -20,11 +20,11 @@ The Azure Quantum provider is enabled in every Quantum Workspace.
 The following targets are available from this provider:
 
 - [Solver: Simulated Annealing (Parameter
-  Free)](#Parameter-Free-Simulated-Annealing)
-- [Solver: Simulated Annealing](#Simulated-Annealing)
+  Free)](#parameter-free-simulated-annealing)
+- [Solver: Simulated Annealing](#simulated-annealing)
 - [Solver: Parallel Tempering (Parameter
-  Free)](#Parameter-Free-Parallel-Tempering)
-- [Solver: Parallel Tempering](#Parallel-Tempering)
+  Free)](#parameter-free-parallel-tempering)
+- [Solver: Parallel Tempering](#parallel-tempering)
 
 ### Parameter Free Simulated Annealing
 

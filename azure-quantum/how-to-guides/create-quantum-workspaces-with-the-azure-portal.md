@@ -19,9 +19,10 @@ Quantum.
 Azure Quantum is very similar to other Azure services. This means that to deploy
 resources you need an Azure subscription in order to use the service. 
 
->[!NOTE] If you don't have an Azure subscription and you want to learn how to
->create an Azure account, check out our Microsoft Learn module [Create an Azure
->account](https://docs.microsoft.com/en-us/learn/modules/create-an-azure-account/).
+> [!NOTE]
+> If you don't have an Azure subscription and you want to learn how to
+> create an Azure account, check out our Microsoft Learn module [Create an Azure
+> account](https://docs.microsoft.com/learn/modules/create-an-azure-account/).
 
 ## Create a quantum workspace
 
@@ -53,15 +54,17 @@ https://aka.ms/quantum-workspaces and follow the next steps:
      one by clicking in **Create a new storage account** and filling the small
      form. We recommend you to use the default values for this guide.
 
->[!NOTE] A resource group is a collection of resources that share the same
->lifecycle, permissions, and policies. If you want to learn more about how
->resources groups work in Azure check out the Microsoft Learn module [Control
->and organize Azure resources with Azure Resource
->Manager](https://docs.microsoft.com/en-us/learn/modules/control-and-organize-with-azure-resource-manager/).
+> [!NOTE] 
+> A resource group is a collection of resources that share the same
+> lifecycle, permissions, and policies. If you want to learn more about how
+> resources groups work in Azure check out the Microsoft Learn module [Control
+> and organize Azure resources with Azure Resource
+> Manager](https://docs.microsoft.com/learn/modules/control-and-organize-with-azure-resource-manager/).
 
->[!NOTE] While we are not charging for usage of Azure Quantum during the private
->preview, your jobs will be uploaded to the Azure storage account created above,
->and will be subject to storage charges.
+> [!NOTE] 
+> While we are not charging for usage of Azure Quantum during the private
+> preview, your jobs will be uploaded to the Azure storage account created above,
+> and will be subject to storage charges.
 
 1. After filling the information, click on the "Providers" tab to add providers
    to your workspace. A provider gives you access to a quantum service, that can

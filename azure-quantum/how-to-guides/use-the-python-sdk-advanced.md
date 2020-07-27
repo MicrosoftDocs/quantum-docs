@@ -15,7 +15,7 @@ Python SDK for Quantum Inspired Optimization.
 
 ## Asynchronous problem solving
 
-In the [basic usage example](microsoft.azure.quantum.qio.python-sdk) a problem
+In the [basic usage example](xref:microsoft.azure.quantum.qio.python-sdk) a problem
 was created, submitted to Azure Quantum, and solved synchronously. This is
 convenient for certain environments, but unsuitable for others where there's a
 need to either submit a problem and check on it later, or submit many problems
@@ -178,12 +178,12 @@ Sometimes it is unsuitable to use interactive authentication or to authenticate
 as a user account. These cases may arrive when you want to submit jobs from a
 web service or other worker role or automated system. In this cases you
 typically want to authenticate using a [Service
-Principal](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals).
+Principal](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals).
 
 ### Prerequisite: Create a service principal and application secret
 
 In order to authenticate as a service principal you must first [create a service
-principal](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal).
+principal](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
 
 Steps to create a service principal, assign access, and generate a credential:
 
@@ -194,7 +194,7 @@ Steps to create a service principal, assign access, and generate a credential:
        (tenant) ID`
 
 1. [Create a
-   credential](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret)
+   credential](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret)
    to login as the application
     1. In the settings for your application, select "Certificates & secrets"
     1. Under Client Secrets, select "Create New Secret"
@@ -224,7 +224,7 @@ principal and provide it to the workspace:
 
 ```python
 from azure.common.credentials import ServicePrincipalCredentials
-workspace.credentials = ServicePrincipalCredentials( 
+workspace.credentials = ServicePrincipalCredentials(
     tenant    = "", # From service principal creation, your Directory (tenant) ID
     client_id = "", # From service principal creation, your Application (client) ID
     secret    = "", # From service principal creation, your secret

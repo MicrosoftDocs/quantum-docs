@@ -21,12 +21,12 @@ Azure Quantum ecosystem.
 
 The following targets are available from this provider:
 
-- [QPU: Trapped ion quantum device](#Tapped-Ion-Quantum-Device)
-- [Simulator: IonQ quantum simulator](#IonQ-Quantum-Simulator)
+- [QPU: Trapped ion quantum device](#ionq-trapped-ion-quantum-device)
+- [Simulator: IonQ quantum simulator](#ionq-quantum-simulator)
 
-### QPU: Trapped Ion Quantum Device
+### IonQ Trapped Ion Quantum Device
 
-IonQ’s trapped ion quantum computers perform calculations by manipulating
+IonQ’s QPU trapped ion quantum computers perform calculations by manipulating
 charged atoms held in a vacuum with lasers. This target operates in a **No
 control flow** profile, meaning that it can't use results from qubit
 measurements to control the execution flow.
