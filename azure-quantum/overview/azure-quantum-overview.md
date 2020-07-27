@@ -91,7 +91,7 @@ the following possible states:
 
 The diagram below shows the possible state transitions.
 
-[Job submission diagram](../media/aq-diagram.png)
+![Job submission diagram](../media/aq-diagram.png)
 
 The `succeeded`, `failed`, and `cancelled` states are considered **final
 states** - once in one of these states, no more updates will occur. It also
