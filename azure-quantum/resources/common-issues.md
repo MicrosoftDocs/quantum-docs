@@ -28,7 +28,7 @@ Steps to resolve this issue:
 9.You should see your account set with the 'Owner' (or 'Contributor') role
 10.Create your Quantum workspace again and submit a job against this new Quantum workspace
 
-### "Failed to compile program` when attempting to submit a Q# program through the CLI
+### "Failed to compile program" when attempting to submit a Q# program through the CLI
 
 When attempting to submit a job with `az quantum submit` you may encounter the following error message:
 ```
