@@ -28,6 +28,17 @@ Steps to resolve this issue:
 9.You should see your account set with the 'Owner' (or 'Contributor') role
 10.Create your Quantum workspace again and submit a job against this new Quantum workspace
 
+### "Failed to compile program` when attempting to submit a Q# program through the CLI
+
+When attempting to submit a job with `az quantum submit` you may encounter the following error message:
+```
+> az quantum job submit ...
+Failed to compile program.
+Command ran in 21.181 seconds (init: 0.457, invoke: 20.724)
+```
+
+This occurs when there is a problem with the Q# program that causes compilation to fail. To see the specific error that is causing the failure, run `dotnet build` in the same folder.
+
 ## Creating workspace
 
 ### ERROR: The resource type could not be found in the namespace 'Microsoft.Quantum' for api version '2019-11-04-preview'
