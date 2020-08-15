@@ -15,9 +15,8 @@ Quantum using Q# Jupyter Notebooks.
 
 ## Prerequisites
 
-- You need to have an Azure Quantum workspace in your subscription. To create
-  one, follow the guide [Create an Azure Quantum
-  workspace](xref:microsoft.azure.quantum.workspaces-portal).
+- An Azure Quantum Workspace in your Azure subscription. To create
+  a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.azure.quantum.workspaces-portal).
 
 ## Installation
 
@@ -40,23 +39,23 @@ IQ# kernel, which powers the Q# Jupyter Notebook and Python experiences.
     ```
 
 1. Run `python -c "import qsharp"` from the same terminal to verify your
-   installation and populate your local package cache with all required QDK
+   installation and populate your local package cache with all of the required QDK
    components.
 
-Now you're set up to use Python and Q# integration to execute
+You are now set up to use Python and Q# integration to run
 quantum programs on Azure Quantum.
 
-**NOTE:** You'll want to have the resource ID of your Azure Quantum workspace
-handy, as you'll need it for the steps below. You can copy/paste this from the
+**NOTE:** Be sure to have the resource ID of your Azure Quantum Workspace
+handy, as you'll need it for the following steps. You can copy and paste this from the
 top-right corner of your Quantum Workspace page in Azure Portal.
 
 ## Quantum Execution with Q# and Python
 
-1. The Python environment in the conda environment you created above already
+1. The Python environment in the conda environment that you created earlier already
    includes the `qsharp` Python package. Make sure you are running your Python
    script from a terminal where this conda environment is activated.
 
-1. If you've never used Q# with Python, read this first: [Create your first Q#
+1. If you've never used Q# with Python, follow the steps in [Create your first Q#
    program with
    Python](https://docs.microsoft.com/quantum/quickstarts/install-python?tabs=tabid-conda#write-your-first-q-program).
 
@@ -83,10 +82,8 @@ top-right corner of your Quantum Workspace page in Azure Portal.
 
 1. Create a Python script in the same folder as your `*.qs` file. Azure Quantum
    functionality is available by running `import qsharp.azure` and then calling
-   the Python commands to interact with Azure Quantum. Here you can find the
-   [complete list of Python
-   commands](https://docs.microsoft.com/python/qsharp/qsharp.azure).
-   You'll use the resource ID of your Azure Quantum workspace in order to
+   the Python commands to interact with Azure Quantum. For reference, see the [complete list of Python commands](https://docs.microsoft.com/python/qsharp/qsharp.azure).
+   You'll need the resource ID of your Azure Quantum Workspace in order to
    connect. For example, your Python script could look like this:
 
     ```py
@@ -106,15 +103,15 @@ top-right corner of your Quantum Workspace page in Azure Portal.
     to perform, and `jobName="Generate three random bits"` (optional) is a custom
     job name to identify the job in the Azure Quantum workspace.
 
-1. Execute your Python script by running `python test.py`, where `test.py` is
+1. Run your Python script by running the command `python test.py`, where `test.py` is
    the name of your Python file. If successful, you should see your job results
-   printed to the terminal. For example:
+   displayed to the terminal. For example:
 
    ```output
    {'[0,0,0]': 0.125, '[1,0,0]': 0.125, '[0,1,0]': 0.125, '[1,1,0]': 0.125, '[0,0,1]': 0.125, '[1,0,1]': 0.125, '[0,1,1]': 0.125, '[1,1,1]': 0.125}
    ```
 
-1. To view the details of all jobs in your Azure Quantum workspace, run `qsharp.azure.jobs()`:
+1. To view the details of all jobs in your Azure Quantum workspace, run the command `qsharp.azure.jobs()`:
 
    ```dotnetcli
    >>> qsharp.azure.jobs()
@@ -134,6 +131,5 @@ top-right corner of your Quantum Workspace page in Azure Portal.
 
 ## Next steps
 
-Now that you know how to submit jobs to Azure Quantum you can try to run the
-[different samples we have available](https://github.com/MicrosoftDocs/quantum-docs-private/tree/feature/onboarding-azure-quantum/azure-quantum/samples) or try to submit your own
-projects.
+Now that you know how to submit jobs to Azure quantum, you can try to run the different [samples](https://github.com/MicrosoftDocs/quantum-docs-private/tree/feature/onboarding-azure-quantum/azure-quantum/samples) we have
+available or try to submit your own projects.

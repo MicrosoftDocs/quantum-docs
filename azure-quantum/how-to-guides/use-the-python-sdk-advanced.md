@@ -8,16 +8,16 @@ ms.topic: article
 uid: microsoft.azure.quantum.qio.python-sdk.advanced
 ---
 
-# Advanced usage of the Python SDK for Quantum Inspired Optimization
+# Advanced usage of the Python SDK for Quantum-Inspired Optimization
 
 This document provides an overview of some advanced usage patterns for the
-Python SDK for Quantum Inspired Optimization.
+Python SDK for Quantum-Inspired Optimization.
 
 ## Asynchronous problem solving
 
-In the [basic usage example](xref:microsoft.azure.quantum.qio.python-sdk) a problem
+In the [basic usage example](xref:microsoft.azure.quantum.qio.python-sdk), a problem
 was created, submitted to Azure Quantum, and solved synchronously. This is
-convenient for certain environments, but unsuitable for others where there's a
+convenient for certain environments, but unsuitable for others where there is a
 need to either submit a problem and check on it later, or submit many problems
 and compare the results.
 
@@ -35,8 +35,8 @@ print(job.id)
 
 ### Refresh job status
 
-After submitting, you can check on the status of the job by calling the
-`refresh` method. Each time `refresh` is called the job metadata gets refreshed.
+After submitting the job, you can check on the status of the job by calling the
+`refresh` method. Each time `refresh` is called, the job metadata gets refreshed.
 
 ```py
 job.refresh()
@@ -47,8 +47,8 @@ print(job.details.status)
 
 ### Get the job output
 
-Once the job is in a [final state](/Azure-Quantum-Overview#Job-Lifecycle) such
-as `Succeeded` you may download the job output using `get_results`:
+Once the job is in a [final state](/Azure-Quantum-Overview#Job-Lifecycle), such
+as `Succeeded`, you may download the job output using `get_results`:
 
 ```py
 jobId = "ea81bb40-682f-11ea-8271-c49dede60d7c"
@@ -80,15 +80,15 @@ The `Workspace` provides methods for managing jobs:
 
 - `Problem` (for Quantum-Inspired Problems), or `QsharpOperation` (for Quantum
     Hardware or Simulators).
-- **get_job**: returns the `Job` metadata and results for a specific job
-    (based on job `id`)
-- **list_jobs**: returns a list of all jobs in the workspace
-- **cancel_job**: cancels a specific job
+- **get_job**: Returns the `Job` metadata and results for a specific job
+    (based on job `id`).
+- **list_jobs**: Returns a list of all jobs in the Workspace.
+- **cancel_job**: Cancels a specific job.
 
 See [Job Cancellation](/Azure-Quantum-Overview#Job-Cancellation) for more
 information on how cancellation requests are processed.
 
-You can use the `list_jobs` method to get a list of all jobs in the workspace:
+You can use the `list_jobs` method to get a list of all jobs in the Workspace:
 
 ```py
 jobs = [job.id for job in workspace.list_jobs()]
@@ -175,17 +175,17 @@ problem.add_terms(terms=terms)
 ## Using a Service Principal to Authenticate
 
 Sometimes it is unsuitable to use interactive authentication or to authenticate
-as a user account. These cases may arrive when you want to submit jobs from a
-web service or other worker role or automated system. In this cases you
+as a user account. These cases may arise when you want to submit jobs from a
+web service, another worker role, or an automated system. In this case you
 typically want to authenticate using a [Service
 Principal](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals).
 
 ### Prerequisite: Create a service principal and application secret
 
-In order to authenticate as a service principal you must first [create a service
+To authenticate as a service principal, you must first [create a service
 principal](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
 
-Steps to create a service principal, assign access, and generate a credential:
+To create a service principal, assign access, and generate a credential:
 
 1. [Create an Azure AAD application](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal):
 
@@ -196,20 +196,20 @@ Steps to create a service principal, assign access, and generate a credential:
 1. [Create a
    credential](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret)
    to login as the application
-    1. In the settings for your application, select "Certificates & secrets"
-    1. Under Client Secrets, select "Create New Secret"
-    1. Provide a description and duration, then select Add
+    1. In the settings for your application, select **Certificates & secrets**.
+    1. Under **Client Secrets**, select **Create New Secret**.
+    1. Provide a description and duration, then select **Add**.
     1. Copy the value of the secret to a safe place immediately - you won't be
        able to see it again!
 
 1. Give your service principal permissions to access your workspace:
-    1. Open the Azure Portal
+    1. Open the Azure Portal.
     1. In the search bar, enter the name of the resource group you created your
-       workspace in. Select the resource group when it comes up in the results.
-    1. On the resource group overview, select "Access control (IAM)".
-    1. Click "Add Role Assignment"
-    1. Search for and select the service principal
-    1. Assign either the Contributor or Owner role
+       Workspace in. Select the resource group when it comes up in the results.
+    1. On the resource group overview, select **Access control (IAM)**.
+    1. Click **Add Role Assignment**.
+    1. Search for and select the service principal.
+    1. Assign either the **Contributor** or **Owner** role.
 
 ### Authenticate as the service principal
 
