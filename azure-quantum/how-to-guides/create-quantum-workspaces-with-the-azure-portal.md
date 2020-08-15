@@ -46,10 +46,10 @@ To open the Azure Portal, go to https://aka.ms/quantum-workspaces and then follo
 
    ![Properties for the Azure Quantum Workspace](../media/azure-quantum-preview-properties.png)
 
-        > [!NOTE] 
-        > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](https://docs.microsoft.com/learn/modules/control-and-organize-with-azure-resource-manager/).
+   > [!NOTE]
+   > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](https://docs.microsoft.com/learn/modules/control-and-organize-with-azure-resource-manager/).
 
-4. After completing the information, click the **Providers** tab to add providers to your Workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or a quantum-inspired optimization service.
+1. After completing the information, click the **Providers** tab to add providers to your Workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or a quantum-inspired optimization service.
 
    ![Providers for Azure Quantum](../media/azure-quantum-preview-providers.png)
 

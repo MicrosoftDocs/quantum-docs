@@ -58,7 +58,7 @@ Once you create a job, you'll also find various metadata available about its sta
 
 ## Job lifecycle
 
-You typically create jobs using one of the quantum SDKs (for example, the [Python SDK](microsoft.azure.quantum.qio.python-sdk) or the [Quantum Development Kit (QDK)](https://docs.microsoft.com/quantum/)). Once you've written
+You typically create jobs using one of the quantum SDKs (for example, the [Python SDK](xref:microsoft.azure.quantum.qio.python-sdk) or the [Quantum Development Kit (QDK)](https://docs.microsoft.com/quantum/)). Once you've written
 your quantum program or expressed your QIO problem, you can select a target and
 submit your job.
 
@@ -79,7 +79,7 @@ the following possible states:
 |*executing*|The target is currently running the job.   |
 |*succeeded*|The job has succeeded, and output is available. This is a *final* state. |
 |*failed*|The job has failed, and error information is available. This is a *final* state.|
-|*cancelled*|The user requested to cancel the job run. This is a *final* state. For more information, see [Job Cancellation](#Job-Cancellation) in this article.|
+|*cancelled*|The user requested to cancel the job run. This is a *final* state. For more information, see [Job Cancellation](#job-cancellation) in this article.|
 
 The `succeeded`, `failed`, and `cancelled` states are considered **final
 states**. Once a job is in one of these states, no more updates will occur, and the corresponding job output data will not change.
