@@ -27,7 +27,7 @@ install it from the private Azure Quantum feed:
    open a link in your browser and enter a code in order to authenticate.
 
    ```bash
-   pip install --upgrade azure-quantum --pre --extra-index-url https://pkgs.dev.azure.com/ms-quantum-public/9af4e09e-a436-4aca-9559-2094cfe8d80c/_packaging/alpha/pypi/simple/
+   pip install --upgrade azure-quantum
    ```
 
 ## Connecting to a Quantum Workspace
