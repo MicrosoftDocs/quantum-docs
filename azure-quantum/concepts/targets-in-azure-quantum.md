@@ -29,9 +29,9 @@ devices.
 
 For the moment, Azure Quantum includes the following types of targets:
 
-#### Quantum Inspired Optimization solver
+#### Optimization solver
 
-Platform to run algorithms inspired by quantum physics on classical CPUs, or
+Platform to solve binary optimization problems on classical CPUs, or
 hardware accelerated on FPGAs, GPUs or hardware annealers.
 
 #### Quantum Processing Unit (QPU): different profiles

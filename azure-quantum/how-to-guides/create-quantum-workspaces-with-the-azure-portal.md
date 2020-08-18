@@ -62,9 +62,10 @@ https://aka.ms/quantum-workspaces and follow the next steps:
 > Manager](https://docs.microsoft.com/learn/modules/control-and-organize-with-azure-resource-manager/).
 
 > [!NOTE] 
-> While we are not charging for usage of Azure Quantum during the private
-> preview, your jobs will be uploaded to the Azure storage account created above,
-> and will be subject to storage charges.
+> The Microsoft Optimization provider is available to all users free of charge during
+> the preview, however third-party providers may charge for usage. For all providers,
+> your jobs will be uploaded to the Azure storage account created above, and will be
+> subject to [storage charges](https://azure.microsoft.com/pricing/details/storage/).
 
 1. After filling the information, click on the "Providers" tab to add providers
    to your workspace. A provider gives you access to a quantum service, that can

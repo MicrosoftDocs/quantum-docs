@@ -27,7 +27,7 @@ install it from the private Azure Quantum feed:
    open a link in your browser and enter a code in order to authenticate.
 
    ```bash
-   pip3 install --upgrade azure-quantum --pre --extra-index-url https://pkgs.dev.azure.com/ms-quantum-public/9af4e09e-a436-4aca-9559-2094cfe8d80c/_packaging/alpha/pypi/simple/
+   pip install --upgrade azure-quantum --pre --extra-index-url https://pkgs.dev.azure.com/ms-quantum-public/9af4e09e-a436-4aca-9559-2094cfe8d80c/_packaging/alpha/pypi/simple/
    ```
 
 ## Connecting to a Quantum Workspace
@@ -39,16 +39,16 @@ interacting with the service.
 ```python
 from azure.quantum import Workspace
 
-workspace = Workspace(subscription_id="<subscription-id>", resource_group="<resource-group>", name="<workspace-name>", storage="<storage_connection_string>")
+workspace = Workspace(
+    subscription_id = "", # The Subscription ID for your Azure Subscription
+    resource_group  = "", # The resource group your Quantum Workspace is deployed in
+    name            = ""  # The name of the Quantum Workspace
+)
 workspace.login()
 ```
 
-The values for `subscription_id`, `resource_group`, `name`, and `storage` are
-output by the
-[`quantum-workspace`](https://dev.azure.com/AzureQuantum-PreviewCustomers/PrivatePreview/_git/scripts)
-script used while creating the Quantum Workspace. If you lose these values you
-run the `quantum-workspace show` with the same arguments you passed during
-creation time and it will print out the required values.
+The values for `subscription_id`, `resource_group`, and `name` are from the [Quantum Workspace you created].
+You may get these values for an existing workspace by running `az quantum workspace show`.
 
 When you call `login`, the SDK will see the following printed in your console:
 
@@ -124,12 +124,18 @@ your terminal:
 
 ## Next Steps
 
+Ready to learn more about creating and solving optimization problems? Check out our samples:
+- [Solving a simple shipping optimization problem](https://github.com/MicrosoftDocs/quantum-docs-private/blob/feature/onboarding-azure-quantum/azure-quantum/samples/shipping-sample.ipynb) (Jupyter Notebook)
+- `[Coming Soon]` Job Shop Scheduling
+
 This guide provides an overview of a simple use case. `Problem` also provides
 individual methods for `upload` and `submit`; `submit` returns an instance of
 the `Job` which exposes the job metadata and `fetch`, `get_output` and `cancel`
 methods. These provide more fine grain control for the execution, and are
-covered in the next section: [Advanced Usage of the Python
+covered in: [Advanced Usage of the Python
 SDK](xref:microsoft.azure.quantum.qio.python-sdk.advanced).
+
+You may also want to review the [solvers reference for Microsoft Optimization Solvers](Azure-Quantum-provider).
 
 ## Common issues
 
