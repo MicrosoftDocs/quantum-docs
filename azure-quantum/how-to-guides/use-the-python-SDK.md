@@ -27,7 +27,7 @@ install it from the private Azure Quantum feed:
    open a link in your browser and enter a code in order to authenticate.
 
    ```bash
-   pip install --upgrade azure-quantum
+   pip install --upgrade azure-quantum -pre
    ```
 
 ## Connecting to a Quantum Workspace
