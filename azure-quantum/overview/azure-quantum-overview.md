@@ -10,117 +10,93 @@ uid: microsoft.azure.quantum.overview
 
 # Introduction to Azure Quantum
 
-Azure Quantum allows you to run Quantum Programs and solve Quantum-Inspired
-Optimization (QIO) problems in the cloud. Azure Quantum takes these jobs and
-schedules them with the desired provider for execution. Using our SDKs and tools
-you can easily run a job against multiple providers and targets to find the one
-that will work best for your scenario.
+Azure Quantum is a Microsoft Azure service that you can use to run quantum programs and solve [quantum-inspired optimization](#quantum-inspired-optimization) (QIO) problems in the cloud. Using the Azure Quantum SDKs and tools, you can create quantum programs and run them against different quantum simulators and machines.
 
-> Note that in limited preview not all providers are available to all users.
+> [!NOTE]
+> In this limited preview, not all providers are available to all users.
 
-![Azure Quantum Overview](../media/azure-quantum-flow-diagram.png)
+## Quantum-inspired optimization
+
+Quantum-inspired optimization uses algorithms that are based on quantum principles for increased speed and accuracy but are implemented on classical computer systems. Azure Quantum supports QIO to help developers leverage the power of new quantum techniques today without waiting for quantum hardware.
 
 ## Quantum Workspace
 
-Azure Quantum is a service provided by Azure. Like other Azure services, you
-need to deploy an Azure Quantum resource into your Azure subscription in order
-to use the service. This resource is called an **Azure Quantum Workspace** - or
-**Workspace** for short. Please see [Creating an Azure Quantum
-Workspace](xref:microsoft.azure.quantum.workspaces-portal) for detailed
-instructions.
+You use the Azure Quantum service by adding a **Quantum Workspace** resource to your Azure subscription in the Azure portal. A Quantum Workspace resource, or Workspace for short, is a collection of assets associated with running quantum or quantum-inspired applications. One of the properties configured in a Workspace is an Azure Storage Account resource, where Azure Quantum stores your quantum programs and QIO problems for access. 
 
-Once you create a Workspace, you'll be able to select which third party
-providers you would like to be able to use in that Workspace. Every Workspace
-also comes with the Microsoft provider always enabled. For more information
-about providers, see [Providers and Targets](#providers-and-targets) below. If
-you haven't enabled a particular provider for execution in your Workspace, you
-will not be able to run jobs against that provider later. You may change the
-enabled providers in your Workspace after creating it.
-> In the current private preview, only the first party Microsoft provider is
-> available.
+## Providers and targets
 
-When you enable a provider in your Workspace you also select the billing plan
-for that provider, which defines how you're billed for jobs against that
-provider. Each provider may have different billing plans and methods available.
-For more information, see the documentation on the provider you would like to
-enable.
+Another property configured in the Workspace is the **provider** that you want to use to run programs in that Workspace. A single provider may expose one or more **targets**, which can be quantum hardware or simulators, and are ultimately responsible for running your program. 
 
-While you may only select a single billing plan for a specific provider in a
-single Workspace, you may deploy multiple Workspaces in your Azure subscription.
+By default, Azure Quantum adds the Microsoft Quantum Solution provider to every Workspace, and you can add other providers when you create the Workspace or any time afterward. To see a list of available providers, see [Providers](/Reference).
 
-## Jobs in Azure Quantum
+> [!NOTE]
+> Only the Microsoft Quantum Solution provider is available in this private preview.
 
-Whenever you execute a Quantum Program or solve a QIO problem in Azure Quantum,
-you are creating and running a job. The way to create and run a job depends on
-the type of the job and the target (see below for a list of [providers and
-targets](#providers-and-targets)), however all jobs have the following
-properties:
+### Provider billing
 
-- **ID**: A unique identifier for a job. Unique within your Workspace.
-- **Provider**: _who_ you want to execute your job - e.g. Microsoft or a 3rd
-  party
-- **Target**: _what_ you want to execute your job on - e.g. the exact quantum
-  hardware or solver offered by the provider
-- **Name**: a name, chosen by you, to help you organize your jobs
-- **Parameters**: some targets take input parameters. See your chosen target for
-  a definition of available parameters.
+Each additional provider you add to a Workspace requires a billing plan, which defines how that provider bills for usage. Each provider may have different billing plans and methods available. For more information, see the documentation on the provider you would like to add.
 
-Once created, you'll also find various metadata available about the state of
-your job and its execution history.
+You can only select one billing plan for each provider in a single Workspace; however, you can add multiple Workspaces to your Azure subscription.
 
-### Job Lifecycle
+## Jobs
 
-Jobs are typically created using one of our SDKs (e.g. the [Python
-SDK](xref:microsoft.azure.quantum.qio.python-sdk)) or the QDK. Once you've written
-your Quantum Program or expressed your QIO problem, you may pick a target and
-run the job.
+When you run a quantum program or solve a QIO problem in Azure Quantum,
+you create and run a **job**. The steps to create and run a job depend on
+the job type and the provider and target that you configure for the Workspace.  All jobs, however, have the following properties in common:
 
-Once a job has been submitted you must poll for the status of the job. Jobs have
+|Property |Description|
+|-----|----|
+|**ID**|A unique identifier for the job. It must be unique within the Workspace.    |
+|**Provider**|_Who_ you want to run your job. For example, the Microsoft Quantum Solution provider, or a third-party provider. |
+|**Target**| _What_ you want to run your job on. For example, the exact quantum hardware or quantum simulator offered by the provider. |
+|**Name**|A user-defined name to help organize your jobs.|
+|**Parameters**|Optional input parameters for targets. See the documentation for the selected target for a definition of available parameters.|
+
+Once you create a job, you'll also find various metadata available about its state and run history.
+
+## Job lifecycle
+
+You typically create jobs using one of the quantum SDKs (for example, the [Python SDK](xref:microsoft.azure.quantum.qio.python-sdk) or the [Quantum Development Kit (QDK)](https://docs.microsoft.com/quantum/)). Once you've written
+your quantum program or expressed your QIO problem, you can select a target and
+submit your job.
+
+This diagram shows the basic workflow after you submit your job:
+
+![Azure Quantum Overview](../media/azure-quantum-flow-diagram.png)
+
+First, Azure Quantum uploads the job to the Azure Storage account that you configured in the Workspace. Then, the job is added to the job queue for the provider that you specified in the job. Azure Quantum then downloads your program and translates it for the provider. The provider processes the job and returns the output to Azure Storage, where it is available for download. 
+
+### Monitoring jobs
+
+Once you submit a job, you must poll for the status of the job. Jobs have
 the following possible states:
 
-- `waiting` - the job is waiting to be executed. Some jobs will perform
-  pre-processing in the waiting state. `waiting` is always the first state,
-  however a job may move to `executing` before you observe it in `waiting`.
-- `executing` - the job is currently being executed by the target.
-- `succeeded` - _[Final]_ the job has succeeded and output is available.
-- `failed` - _[Final]_ the job has failed and error information is available.
-- `cancelled` - _[Final]_ the user requested the job execution be cancelled -
-  see [Job Cancellation](#job-cancellation).
+|Status|Description|
+|---|---|
+|*waiting*|The job is waiting to run. Some jobs will perform  pre-processing tasks in the waiting state. `waiting` is always the first state, however, a job may move to the `executing` state before you can observe it in `waiting`.   |
+|*executing*|The target is currently running the job.   |
+|*succeeded*|The job has succeeded, and output is available. This is a *final* state. |
+|*failed*|The job has failed, and error information is available. This is a *final* state.|
+|*cancelled*|The user requested to cancel the job run. This is a *final* state. For more information, see [Job Cancellation](#job-cancellation) in this article.|
 
-The diagram below shows the possible state transitions.
+The `succeeded`, `failed`, and `cancelled` states are considered **final
+states**. Once a job is in one of these states, no more updates will occur, and the corresponding job output data will not change.
+
+This diagram shows the possible job state transitions:
 
 ![Job submission diagram](../media/aq-diagram.png)
 
-The `succeeded`, `failed`, and `cancelled` states are considered **final
-states** - once in one of these states, no more updates will occur. It also
-means that the corresponding job output data will not change.
-
-After a job completes successfully, it will have a link to your Azure Storage
-account where you can find the output data. How you access this data depends on
-the SDK or tool you used to submit the job.
+After a job completes successfully, it displays a link to the output data in your Azure Storage account. How you access this data depends on the SDK or tool you used to submit the job.
 
 ### Job Cancellation
 
-When a job is not in a final state, you may _request_ for the job to be
-cancelled. Not all providers support job cancellation in all states. All
-providers will cancel your job if it is in the `waiting` state, however if your
-job is `executing` the provider may not support cancellation.
+When a job is not yet in a final state (for example, `succeeded`, `failed`, or `cancelled`), you can request to cancel the job. All providers will cancel your job if it is in the `waiting` state. However, not all providers support cancellation if your job is in the `executing` state.
 
-If you cancel a job after it has started executing you may still be billed a
+> [!NOTE]
+>If you cancel a job after it has started running, your account may still be billed a
 partial or full amount for that job. Please see the billing documentation for
 your selected provider.
 
-## Providers and Targets
+## Next steps
 
-In Azure Quantum, the ability to execute a job is given by **Providers**. A
-single Provider may expose one or more **Targets** for execution. A Target is
-what is ultimately executing your job.
-
-### Available Providers and Targets
-
-To see a list of available providers, see [Providers](/Reference/Providers).
-
-## Getting Started
-
-When you're ready to get started, please see our guide for [Creating an Azure
-Quantum Workspace](xref:microsoft.azure.quantum.workspaces-portal).
+When you're ready to get started, begin by [creating an Azure Quantum Workspace](xref:microsoft.azure.quantum.workspaces-portal).

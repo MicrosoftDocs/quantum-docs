@@ -8,32 +8,30 @@ ms.topic: article
 uid: microsoft.azure.quantum.submit-jobs.azcli
 ---
 
-# Submit jobs to Azure Quantum with the Command Line Interface
+# Submit jobs to Azure Quantum using the Command-line Interface
 
-This guide will show you how to submit jobs to Azure Quantum using the command
+This guide shows you how to submit jobs to Azure Quantum using the command
 line interface (CLI).
 
 ## Prerequisites
 
-- You need to have an Azure Quantum workspace in your subscription. To create
-  one, follow the guide [Create an Azure Quantum
-  workspace](Create-quantum-workspaces-with-the-Azure-portal.md).
-- Install the [Quantum Development
-  Kit](https://docs.microsoft.com/quantum/install-guide/standalone), if you
-  haven't already.
-- Install the [Azure
-  CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
-- Install the [necessary utilities to use Azure
-  Quantum](xref:microsoft.azure.quantum.setup.cli), this includes the `quantum`
-  extension for the Azure CLI.
+Ensure that the following items are installed on your computer:
+
+- An Azure Quantum Workspace in your Azure subscription. To create
+  a Workspace, see [Create an Azure Quantum workspace](Create-quantum-workspaces-with-the-Azure-portal.md).
+- The latest version of the [Quantum Development Kit](https://docs.microsoft.com/quantum/install-guide/standalone).
+- The [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+- The [necessary utilities to use Azure Quantum](xref:microsoft.azure.quantum.setup.cli) (includes the `quantum`
+  extension for the Azure CLI).
 
 ## Submit a job to Azure Quantum with the Azure CLI
 
-You will now use the Azure CLI to run a Q# application and choose a target from
-the different providers of your Azure Quantum workspace.
+These steps show how to use the Azure CLI to run a Q# application and select a target from
+the different providers of your Azure Quantum Workspace.
+
 > [!NOTE]
-> A provider is a partner quantum service, consisting of quantum
-> hardware, a simulator or a quantum inspired optimization service.
+> A provider is a partner quantum service consisting of quantum
+> hardware, a simulator, or a quantum-inspired optimization service.
 
 1. Log in to Azure using your credentials.
 
@@ -43,19 +41,19 @@ the different providers of your Azure Quantum workspace.
 
 > [!NOTE]
 > In case you have more than one subscription associated with your Azure
-> account you must specify the subscription you want to use. You can do this with
+> account, you must specify the subscription you want to use. You can do this with
 > the command `az account set -s <Your subscription ID>`.
 
-1. You can see all the Azure Quantum workspaces in your subscription with the
+1. You can see all the Azure Quantum Workspaces in your subscription with the
    following command:
 
    ```dotnetcli
    az quantum workspace list
    ```
 
-1. You can use `quantum workspace set` to select a default workspace you want to
+1. You can use `quantum workspace set` to select a default Workspace that you want to
    use to list and submit jobs. Note that you also need to specify the resource
-   group.
+   group, for example:
 
    ```dotnetcli
    az quantum workspace set -g MyResourceGroup -w MyWorkspace -o table
@@ -67,12 +65,11 @@ the different providers of your Azure Quantum workspace.
    ```
 
 > [!TIP]
-> You can check the current workspace with the command `az quantum
->workspace show -o table`.
+> You can check the current workspace with the command `az quantum workspace show -o table`.
 
-1. In your quantum workspace you will have different targets available from the
-   providers you added when creating the workspace. You can get a list of all
-   the available targets with `az quantum target list -o table`:
+1. In your quantum workspace, there are different targets available from the
+   providers that you added when you created the workspace. You can display a list of all
+   the available targets with the command `az quantum target list -o table`:
 
    ```dotnetcli
    az quantum target list -o table
@@ -96,8 +93,7 @@ the different providers of your Azure Quantum workspace.
    ```
 
 1. To submit a new job, navigate to the directory containing your project using
-   the command line and submit your job. You can use the command `az quantum job
-   submit`. You need to specify the target where you want to run your job.:
+   the command line and submit your job. Use the command `az quantum job submit`. You need to specify the target where you want to run your job, for example:
 
    ```dotnetcli
    az quantum job submit --target-id MyProvider.MyTarget
@@ -106,10 +102,9 @@ the different providers of your Azure Quantum workspace.
    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy  Waiting  MyProvider.MyTarget  2020-06-12T14:20:18.6109317+00:00
    ```
 
-   The console will output the information about the job, including the ID of
-   the job.
+   The console will output the job information, including the job ID.
 
-1. You can use the ID of the job to track its status:
+1. You can use the job ID to track its status:
 
    ```dotnetcli
    az quantum job show -id yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
@@ -119,10 +114,10 @@ the different providers of your Azure Quantum workspace.
    ```
 
 > [!TIP]
-> You can see all the jobs of the workspace with the command `az quantum
+> To see all the jobs in the workspace, use the command `az quantum
 > job list -o table`.
 
-1. Once the job finishes you can visualize the job's results with `az quantum
+1. Once the job finishes, display the job's results with the command `az quantum
    job output`:
 
    ```dotnetcli
@@ -137,23 +132,22 @@ the different providers of your Azure Quantum workspace.
    ```
 
 > [!TIP]
-> To submit a job synchronously, i.e. waiting for the job to complete and
-> showing results you can use `az quantum execute --target-id
+> To submit a job synchronously, for example, waiting for the job to complete and
+> showing results, use the command `az quantum execute --target-id
 > MyProvider.MyTarget`.
 
 ## Example
 
 ### Write your quantum application
 
-First you need to have the Q# quantum application that you want to execute in
+First, you need the Q# quantum application that you want to run in
 Azure Quantum.
 
 > [!TIP]
-> If this is the first time for you to create Q# quantum applications, you
-> can learn how in our [Microsoft Learn
+> If this is your first time creating Q# quantum applications, see our [Microsoft Learn
 > module](https://docs.microsoft.com/learn/modules/qsharp-create-first-quantum-development-kit/).
 
-In this case we will use a simple quantum random bit generator. We create a Q#
+In this case, we will use a simple quantum random bit generator. Create a Q#
 project and substitute the content of `Program.qs` with the following code:
 
 ```qsharp
@@ -178,13 +172,13 @@ program starts.
 
 ### Submit the job
 
-In this example we are going to use IonQ as the provider and the
-`ionq.simulator` as target. To submit the job to the currently selected default
-quantum workspace `az quantum job submit`:
+In this example, we are going to use IonQ as the provider and the
+`ionq.simulator` as the target. To submit the job to the currently selected default
+quantum workspace, use the command `az quantum job submit`:
 
-> [!NOTE]
-> Check that the Quantum SDK version of the `*.csproj` file is
-> `0.11.2006.403` or higher. If not it could lead to a compilation error.
+> [!IMPORTANT]
+> Verify that the Quantum SDK version of the `*.csproj` file is
+> `0.11.2006.403` or higher. If not, it could cause a compilation error.
 
 ```output
 az quantum job submit --target-id ionq.simulator --job-name ExampleJob -o table
@@ -195,8 +189,8 @@ ExampleJob   yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy  Waiting   ionq.simulator  202
 
 ```
 
-Once the job completes (i.e. it's in a **Successful** state), use `az quantum
-job output` to see the results:
+Once the job completes (i.e. it's in a **Successful** state), use the command `az quantum
+job output` to view the results:
 
 ```output
 az quantum job output -id yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
@@ -207,11 +201,11 @@ Result    Frequency
 [0,1]     0.50000000   ▐███████████            |
 ```
 
-The output shows a histogram with the frequency a specific results was measured.
-In the example above the result `[0,1]` was observed 50% of the times.
+The output displays a histogram with the frequency that a specific result was measured.
+In the example above, the result `[0,1]` was observed 50% of the times.
 
-Finally, you can use `az quantum execute` as a shortcut for both, submitting and
-getting the results of execution.
+Optionally, you can use the command `az quantum execute` as a shortcut for both submitting and
+returning the results of a run.
 
 ```output
 az quantum execute --target-id ionq.simulator --job-name ExampleJob2 -o table
@@ -222,16 +216,13 @@ Result    Frequency
 [0,1]     0.50000000   ▐███████████            |
 ```
 
-Note that the IonQ simulator gives the probabilies of obtaining each output if
-we ran the algorithm infinite times. In this case we get that each state has
-equal 50% probabilty of being measured.
+Note that the IonQ simulator gives the probabilities of obtaining each output if we run the algorithm an infinite number of times. In this case, we see that each state has a 50% probability of being measured.
 
 > [!TIP]
 > You can also check the status of your jobs from your Azure portal.
 
 ## Next steps
 
-Now that you know how to submit jobs to Azure quantum you can try to run the
-[different samples we have
-available](https://github.com/MicrosoftDocs/quantum-docs-private/tree/feature/onboarding-azure-quantum/azure-quantum/samples)
-or try to submit your own projects.
+Now that you know how to submit jobs to Azure quantum, you can try to run the
+different [samples](https://github.com/MicrosoftDocs/quantum-docs-private/tree/feature/onboarding-azure-quantum/azure-quantum/samples) we have
+available or try to submit your own projects.
