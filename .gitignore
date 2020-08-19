@@ -12,3 +12,4 @@ tex2pdf.*/
 *.orig
 .vs/
 .DS_Store
+azure-quantum/samples/.ipynb_checkpoints/*
