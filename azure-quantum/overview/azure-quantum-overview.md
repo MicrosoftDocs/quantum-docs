@@ -13,9 +13,7 @@ uid: microsoft.azure.quantum.overview
 Azure Quantum is a Microsoft Azure service that you can use to run quantum programs and solve [quantum-inspired optimization](#quantum-inspired-optimization) (QIO) problems in the cloud. Using the Azure Quantum SDKs and tools, you can create quantum programs and run them against different quantum simulators and machines.
 
 > [!NOTE]
-> This private preview only provides access to quantum-inspired
-> optimization. Contact your business development manager if you are
-> interested in trying out other Azure Quantum features as they are available.
+> In this limited preview, not all providers are available to all users.
 
 ## Quantum-inspired optimization
 

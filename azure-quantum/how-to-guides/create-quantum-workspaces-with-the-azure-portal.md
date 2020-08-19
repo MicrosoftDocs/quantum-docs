@@ -46,6 +46,7 @@ To open the Azure Portal, go to https://aka.ms/quantum-workspaces and then follo
 
    ![Properties for the Azure Quantum Workspace](../media/azure-quantum-preview-properties.png)
 
+
    > [!NOTE]
    > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](https://docs.microsoft.com/learn/modules/control-and-organize-with-azure-resource-manager/).
 

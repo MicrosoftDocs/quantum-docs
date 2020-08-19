@@ -52,12 +52,12 @@ To enable access:
 
 ## Next steps
 
-Now that you have installed the tools to use Azure Quantum, you can start submitting jobs. Depending on your private preview status, you will only have access to certain targets of the Azure Quantum platform. 
+Now that you have installed the tools to use Azure Quantum you can learn to submit jobs. Depending on your private preview status, you only will have access to certain targets of the Azure Quantum platform.
 
-### For Quantum Inspired Optimization users
+### For Optimization users
 
-Learn how to [submit jobs to Azure Quantum](xref:microsoft.azure.quantum.qio.python-sdk) to solve optimization problems with QIO.
+Learn how to [submit jobs to Azure Quantum](Use-the-Python-SDK-for-Quantum-Inspired-Optimization) to solve optimization problems.
 
 ### For Quantum Execution users
 
-Learn how to [submit jobs to Azure Quantum](xref:microsoft.azure.quantum.submit-jobs.azcli) to run on quantum hardware and quantum simulators.
+Learn how to [submit jobs to Azure Quantum](Submit-jobs-to-Azure-Quantum-with-the-Comand-Line-Interface) to quantum hardware and quantum simulators.
