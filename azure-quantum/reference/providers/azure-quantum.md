@@ -15,6 +15,10 @@ The Azure Quantum provider is enabled in every Quantum Workspace.
 - Publisher: [Microsoft](https://microsoft.com)
 - Provider ID: `microsoft`
 
+Private preview customers will be provided the following usage limits for free during the preview:
+- 5 hours of solver time per month
+- Up to 5 concurrent optimization jobs
+
 ## Targets
 
 The following targets are available from this provider:
@@ -35,13 +39,11 @@ solver, specify only the `timeout` and/or `seed` parameters when instantiating
 the `SimulatedAnnealing` class.
 
 - Job type: `Quantum-Inspired Optimization Problem`
-- Data Format: `microsoft.qio.v1`
-- Target ID: `microsoft.simulatedannealing-parameterfree`
+- Data Format: `microsoft.qio.v2`
+- Target ID: `microsoft.simulatedannealing-parameterfree.cpu`
 - Python Solver class name: `SimulatedAnnealing`
 
 Billing information: **Free in Private Preview**
-
-Monthly quota: **50 hours per month**
 
 | Parameter Name | Type     | Required | Description |
 |----------------|----------|----------|-------------|
@@ -56,13 +58,11 @@ To use the parameterized simulated annealing solver, specify one or more of the
 below parameters when instantiating the `SimulatedAnnealing` class.
 
 - Job type: `Quantum-Inspired Optimization Problem`
-- Data Format: `microsoft.qio.v1`
-- Target ID: `microsoft.simulatedannealing`
+- Data Format: `microsoft.qio.v2`
+- Target ID: `microsoft.simulatedannealing.cpu`
 - Python Solver class name: `SimulatedAnnealing`
 
 Billing information: **Free in Private Preview**
-
-Monthly quota: **50 hours per month**
 
 | Parameter Name | Type     | Required | Description |
 |----------------|----------|----------|-------------|
@@ -80,13 +80,11 @@ weights. To use the parameter-free parallel tempering solver, specify only the
 class.
 
 - Job type: `Quantum-Inspired Optimization Problem`
-- Data Format: `microsoft.qio.v1`
-- Target ID: `microsoft.paralleltempering-parameterfree`
+- Data Format: `microsoft.qio.v2`
+- Target ID: `microsoft.paralleltempering-parameterfree.cpu`
 - Python Solver class name: `ParallelTempering`
 
 Billing information: **Free in Private Preview**
-
-Monthly quota: **50 hours per month**
 
 | Parameter Name | Type     | Required | Description |
 |----------------|----------|----------|-------------|
@@ -101,13 +99,11 @@ To use the parameterized parallel tempering solver, specify one or more of the
 below parameters when instantiating the `ParallelTempering` class.
 
 - Job type: `Quantum-Inspired Optimization Problem`
-- Data Format: `microsoft.qio.v1`
-- Target ID: `microsoft.paralleltempering`
+- Data Format: `microsoft.qio.v2`
+- Target ID: `microsoft.paralleltempering.cpu`
 - Python Solver class name: `ParallelTempering`
 
 Billing information: **Free in Private Preview**
-
-Monthly quota: **50 hours per month**
 
 | Parameter Name | Type        | Required | Description |
 |----------------|-------------|----------|-------------|

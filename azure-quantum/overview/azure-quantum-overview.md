@@ -16,9 +16,7 @@ schedules them with the desired provider for execution. Using our SDKs and tools
 you can easily run a job against multiple providers and targets to find the one
 that will work best for your scenario.
 
-> Note that the current private preview only provides access to quantum-inspired
-> optimization. Please contact your business development manager if you are
-> interested in trying out other Azure Quantum features in the future.
+> Note that in limited preview not all providers are available to all users.
 
 ![Azure Quantum Overview](../media/azure-quantum-flow-diagram.png)
 

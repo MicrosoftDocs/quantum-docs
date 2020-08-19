@@ -53,5 +53,12 @@ folder (or one of its parents) where your Q# project is located.
 
 ## Next steps
 
-Now that you have installed the tools to use Azure Quantum, learn how to [submit
-jobs to Azure Quantum](xref:microsoft.azure.quantum.submit-jobs.azcli).
+Now that you have installed the tools to use Azure Quantum you can learn to submit jobs. Depending on your private preview status, you only will have access to certain targets of the Azure Quantum platform.
+
+### For Optimization users
+
+Learn how to [submit jobs to Azure Quantum](Use-the-Python-SDK-for-Quantum-Inspired-Optimization) to solve optimization problems.
+
+### For Quantum Execution users
+
+Learn how to [submit jobs to Azure Quantum](Submit-jobs-to-Azure-Quantum-with-the-Comand-Line-Interface) to quantum hardware and quantum simulators.
