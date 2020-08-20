@@ -22,11 +22,10 @@ install it from the private Azure Quantum feed:
 1. Install [Python](https://www.python.org/downloads/) 3.6 or later.
 1. Install [PIP](https://pip.pypa.io/en/stable/), the Python Package Installer,
    and ensure you have **version 19.2 or higher**
-1. Install the `azure-quantum` python package. Note that you will be prompted to
-   open a link in your browser and enter a code in order to authenticate.
+1. Install the `azure-quantum` python package.
 
    ```bash
-   pip install --upgrade azure-quantum -pre
+   pip install --upgrade azure-quantum --pre
    ```
 
 ## Connecting to a Quantum Workspace
