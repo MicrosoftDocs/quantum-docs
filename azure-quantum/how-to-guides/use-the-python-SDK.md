@@ -113,6 +113,8 @@ result = solver.optimize(problem)
 print(result)
 ```
 
+> Note: If you receive an `Unauthorized` error when calling `solver.optimize()`, please see [this guide](Common-issues#error-operation-returned-an-invalid-status-code-unauthorized).
+
 This method will submit the problem to Azure Quantum for optimization and
 synchronously wait for it to be solved. You'll see output like the following in
 your terminal:
