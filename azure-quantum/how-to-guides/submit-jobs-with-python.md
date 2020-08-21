@@ -1,6 +1,6 @@
 ---
 title: Submit jobs to Azure Quantum with Python
-description: This document provides a basic guide to submit and run Q# applications in Azure Quantum using Q# Jupyter Notebooks.
+description: This document provides a basic guide to submit and run Q# applications in Azure Quantum using Python.
 author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
@@ -11,7 +11,7 @@ uid: microsoft.azure.quantum.submit-jobs.python
 # Submit jobs to Azure Quantum with Python
 
 This document provides a basic guide to submit and run Q# applications in Azure
-Quantum using Q# Jupyter Notebooks.
+Quantum using Python.
 
 ## Prerequisites
 
