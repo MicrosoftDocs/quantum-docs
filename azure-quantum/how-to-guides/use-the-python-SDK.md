@@ -22,17 +22,15 @@ install it from the private Azure Quantum feed:
 1. Install [Python](https://www.python.org/downloads/) 3.6 or later.
 1. Install [PIP](https://pip.pypa.io/en/stable/), the Python Package Installer,
    and ensure you have **version 19.2 or higher**
-1. Install the `azure-quantum` python package. Note that you will be prompted to
-   open a link in your browser and enter a code in order to authenticate.
+1. Install the `azure-quantum` python package.
 
    ```bash
-   pip install --upgrade azure-quantum -pre
+   pip install --upgrade azure-quantum --pre
    ```
 
 ## Connecting to a Quantum Workspace
 
-A `Workspace` represents the Quantum Workspace you [previously
-created](xref:microsoft.azure.quantum.workspaces-portal) and is the main interface for
+A `Workspace` represents the Quantum Workspace you [previously created](xref:microsoft.azure.quantum.workspaces-portal) and is the main interface for
 interacting with the service.
 
 ```python
@@ -46,7 +44,7 @@ workspace = Workspace(
 workspace.login()
 ```
 
-The values for `subscription_id`, `resource_group`, and `name` are from the [Quantum Workspace you created].
+The values for `subscription_id`, `resource_group`, and `name` are from the [Quantum Workspace you created](xref:microsoft.azure.quantum.workspaces-portal).
 You may get these values for an existing workspace by running `az quantum workspace show`.
 
 
@@ -114,6 +112,8 @@ result = solver.optimize(problem)
 print(result)
 ```
 
+> Note: If you receive an `Unauthorized` error when calling `solver.optimize()`, please see [this guide](Common-issues#error-operation-returned-an-invalid-status-code-unauthorized).
+
 This method will submit the problem to Azure Quantum for optimization and
 synchronously wait for it to be solved. You'll see output like the following in
 your terminal:
@@ -132,11 +132,9 @@ This guide provides an overview of a simple use case. `Problem` also provides
 individual methods for `upload` and `submit`; `submit` returns an instance of
 the `Job` which exposes the job metadata and `fetch`, `get_output` and `cancel`
 methods. These provide more fine-grain control for the run, and are
-covered in [Advanced Usage of the Python
+covered in [Advanced Usage of the Python SDK](xref:microsoft.azure.quantum.qio.python-sdk.advanced).
 
-SDK](xref:microsoft.azure.quantum.qio.python-sdk.advanced).
-
-You may also want to review the [solvers reference for Microsoft Optimization Solvers](Azure-Quantum-provider).
+You may also want to review the [solvers reference for Microsoft Optimization Solvers](xref:microsoft.azure.quantum.providers.azure-quantum).
 
 ## Common issues
 

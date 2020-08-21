@@ -16,7 +16,7 @@ This document contains a list of known issues that we are working to address in 
 
 Currently, you must manually create a storage account for your job input/output data (although the bash script does this for you) and then pass the account to the `Workspace` constructor. We are working on removing the requirement for both steps soon.
 
-## Job error data oOmissions
+## Job error data omissions
 
 Job Error data is not always populated when a job fails.
 
@@ -25,6 +25,7 @@ Job Error data is not always populated when a job fails.
 Currently, jobs are placed in the `Executing` state when they are passed to the provider for processing. However, the provider may still have the job in a queue. In the future, jobs will show as `Executing` only when they are being actively run by the provider.
 
 In the meantime, you can determine the runtime of a job by running the commands `Job.details.begin_execution_time` and `Job.details.end_execution_time`.
+
 
 ## List Jobs API returns all jobs
 

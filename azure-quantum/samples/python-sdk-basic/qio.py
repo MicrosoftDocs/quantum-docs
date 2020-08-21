@@ -6,7 +6,6 @@ workspace = Workspace(
     subscription_id=    "", # add your subscription_id
     resource_group=     "", # add your resource_group
     name=               "", # add your workspace name
-    storage=            "", # add your storage connection string
 )
 
 # Login
