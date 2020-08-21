@@ -45,10 +45,6 @@ IQ# kernel, which powers the Q# Jupyter Notebook and Python experiences.
 You are now set up to use Python and Q# integration to run
 quantum programs on Azure Quantum.
 
-**NOTE:** Be sure to have the resource ID of your Azure Quantum Workspace
-handy, as you'll need it for the following steps. You can copy and paste this from the
-top-right corner of your Quantum Workspace page in Azure Portal.
-
 ## Quantum Execution with Q# and Python
 
 1. The Python environment in the conda environment that you created earlier already
@@ -82,14 +78,16 @@ top-right corner of your Quantum Workspace page in Azure Portal.
 
 1. Create a Python script in the same folder as your `*.qs` file. Azure Quantum
    functionality is available by running `import qsharp.azure` and then calling
-   the Python commands to interact with Azure Quantum. For reference, see the [list of `%azure.*` IQ# magic commands](https://docs.microsoft.com/qsharp/api/iqsharp-magic/), which have identical usage to the `qsharp.azure.*` Python APIs (to translate from magic command name to Python API, just replace the `%azure.` with `qsharp.azure.`).
+   the Python commands to interact with Azure Quantum. For reference, see the
+   [complete list of `qsharp.azure` Python commands](https://docs.microsoft.com/python/qsharp/qsharp.azure).
    You'll need the resource ID of your Azure Quantum Workspace in order to
-   connect. For example, your Python script could look like this:
+   connect. (The resource ID can be found on your Quantum Workspace
+   page in Azure Portal.) For example, your Python script could look like this:
 
     ```py
     import qsharp
     import qsharp.azure
-    from Test import GenerateRandomBit
+    from Test import GenerateRandomBits
 
     qsharp.azure.connect(resourceId="/subscriptions/.../Microsoft.Quantum/Workspaces/WORKSPACE_NAME")
     qsharp.azure.target("ionq.simulator")
