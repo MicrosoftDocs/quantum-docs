@@ -18,17 +18,17 @@ When calling an Azure Quantum API like submitting an Optimization job or a Q# pr
 
 Steps to resolve this issue:
 
-1. Open the Azure Portal: https://portal.azure.com
-2. Click Subscriptions and select your subscription
+1. Open the [Azure Portal](https://portal.azure.com).
+2. Click **Subscriptions** and select your subscription.
     > This will create a role assignment for your whole subscription. You may also do this for a single resource group or for the workspace itself.
-3. Click Access control (IAM)
-4. Under 'Check access', enter your email address and select the account
-5. Notice that an 'Owner' or 'Contributor' role is missing
-6. Click on ‘Role assignments’ tab
-7. Select Role > 'Owner' (or 'Contributor'), enter your email address and select your account
-8. Click Save
-9. You should see your account set with the 'Owner' (or 'Contributor') role
-10. Wait up to 15 minutes and try again
+3. Click **Access control (IAM)**.
+4. Under **Check access**, enter your email address and select the account.
+5. Notice that an **Owner** or **Contributor** role is missing.
+6. Click on **Role assignments** tab.
+7. Select **Role** > **Owner** (or **Contributor**), enter your email address and select your account
+8. Click **Save**.
+9. You should see your account set with the **Owner** (or **Contributor**) role.
+10. Wait up to 15 minutes and try again.
 
 ### "Failed to compile program" when attempting to submit a Q# program through the CLI
 
