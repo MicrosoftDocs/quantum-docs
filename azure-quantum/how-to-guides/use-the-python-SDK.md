@@ -22,11 +22,10 @@ install it from the private Azure Quantum feed:
 1. Install [Python](https://www.python.org/downloads/) 3.6 or later.
 1. Install [PIP](https://pip.pypa.io/en/stable/), the Python Package Installer,
    and ensure you have **version 19.2 or higher**
-1. Install the `azure-quantum` python package. Note that you will be prompted to
-   open a link in your browser and enter a code in order to authenticate.
+1. Install the `azure-quantum` python package.
 
    ```bash
-   pip install --upgrade azure-quantum -pre
+   pip install --upgrade azure-quantum --pre
    ```
 
 ## Connecting to a Quantum Workspace
@@ -112,6 +111,8 @@ running. It returns a `JobOutput` object with the job ID and results.
 result = solver.optimize(problem)
 print(result)
 ```
+
+> Note: If you receive an `Unauthorized` error when calling `solver.optimize()`, please see [this guide](Common-issues#error-operation-returned-an-invalid-status-code-unauthorized).
 
 This method will submit the problem to Azure Quantum for optimization and
 synchronously wait for it to be solved. You'll see output like the following in
