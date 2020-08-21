@@ -31,8 +31,7 @@ install it from the private Azure Quantum feed:
 
 ## Connecting to a Quantum Workspace
 
-A `Workspace` represents the Quantum Workspace you [previously
-created](xref:microsoft.azure.quantum.workspaces-portal) and is the main interface for
+A `Workspace` represents the Quantum Workspace you [previously created](xref:microsoft.azure.quantum.workspaces-portal) and is the main interface for
 interacting with the service.
 
 ```python
@@ -46,7 +45,7 @@ workspace = Workspace(
 workspace.login()
 ```
 
-The values for `subscription_id`, `resource_group`, and `name` are from the [Quantum Workspace you created].
+The values for `subscription_id`, `resource_group`, and `name` are from the [Quantum Workspace you created](xref:microsoft.azure.quantum.workspaces-portal).
 You may get these values for an existing workspace by running `az quantum workspace show`.
 
 
@@ -132,11 +131,9 @@ This guide provides an overview of a simple use case. `Problem` also provides
 individual methods for `upload` and `submit`; `submit` returns an instance of
 the `Job` which exposes the job metadata and `fetch`, `get_output` and `cancel`
 methods. These provide more fine-grain control for the run, and are
-covered in [Advanced Usage of the Python
+covered in [Advanced Usage of the Python SDK](xref:microsoft.azure.quantum.qio.python-sdk.advanced).
 
-SDK](xref:microsoft.azure.quantum.qio.python-sdk.advanced).
-
-You may also want to review the [solvers reference for Microsoft Optimization Solvers](Azure-Quantum-provider).
+You may also want to review the [solvers reference for Microsoft Optimization Solvers](xref:microsoft.azure.quantum.providers.azure-quantum).
 
 ## Common issues
 

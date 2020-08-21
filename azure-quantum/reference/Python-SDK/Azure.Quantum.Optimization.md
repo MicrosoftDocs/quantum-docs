@@ -21,8 +21,7 @@ yet finished, blocks until it has.
 
 ## Job.has_completed
 
-Returns a boolean indicating whether the job has finished (e.g. the job is in a
-[final state](/Azure-Quantum-Overview#Job-Lifecycle)).
+Returns a boolean indicating whether the job has finished (e.g. the job is in a[final state](xref:microsoft.azure.quantum.overview#Job-Lifecycle)).
 
 ```py
 job = workspace.get_job(jobId)
@@ -65,7 +64,7 @@ from azure.quantum.optimization import Problem
 
 ### Constructor
 
-To create a `Problem` object, you must specify the followinbg information:
+To create a `Problem` object, you must specify the following information:
 
 - `name`: A friendly name for your problem. No uniqueness constraints.
 - [optional] `terms`: A list of `Term` objects to add to the problem.
