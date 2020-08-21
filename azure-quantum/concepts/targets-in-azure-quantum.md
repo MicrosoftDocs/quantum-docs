@@ -25,38 +25,36 @@ to test your quantum algorithms in real quantum computers, and quantum
 simulators and validators to test your algorithm in noise-free simulated quantum
 devices.
 
-### Different types of targets
+## Different types of targets in Azure Quantum
 
-For the moment, Azure Quantum includes the following types of targets:
+Currently, Azure Quantum includes the following types of targets:
 
-#### Optimization solver
+### Optimization solver
 
-Platform to solve binary optimization problems on classical CPUs, or
-hardware accelerated on FPGAs, GPUs or hardware annealers.
+A platform to solve binary optimization problems on classical CPUs, or
+hardware accelerated on field-programmable gate arrays (FPGA), GPUs or hardware annealers.
 
-#### Quantum Processing Unit (QPU): different profiles
+### Quantum Processing Unit (QPU): different profiles
 
 A quantum processing unit (QPU) is a physical or simulated processor that
 contains a number of interconnected qubits that can be manipulated to execute
-quantum algorithms. It's the central component of a quantum computer. For the
-moment, Azure Quantum and the Quantum Development Kit manage three different
+quantum algorithms. It's the central component of a quantum computer. Currently, Azure Quantum and the QDK manage three different
 profiles for QPUs:
 
-- **Full:** this profile has the ability to execute any Q# program within the
-  limits of memory for simulated QPUs or the number of qubtis for physical
+- **Full:** This profile can run any Q# program within the
+  limits of memory for simulated quantum processing units (QPU) or the number of qubits of the physical
   quantum hardware.
-- **No Control Flow:** this profile can execute any Q# program that doesn't
+- **No Control Flow:** This profile can run any Q# program that doesn't
   require the use of the results from qubit measurements to control the
-  execution flow. Within a Q# program targeted for this kind of QPU, values of
+  program flow. Within a Q# program targeted for this kind of QPU, values of
   type `Result` do not support equality comparison.
-- **Basic Measurement Feedback:** this profile has limited ability to use the
-  results from qubit measurements to control the execution. Within a Q# program
-  targeted for this kind of QPU, values of type `Result` can only be compared as
-  part of conditions within if-statements in operations. The corresponding
-  conditional blocks may not contain return- or set-statements.
+- **Basic Measurement Feedback:** This profile has limited ability to use the
+  results from qubit measurements to control the program flow. Within a Q# program
+  targeted for this kind of QPU, you can only compare values of type `Result` as
+  part of conditions within `if` statements in operations. The corresponding
+  conditional blocks may not contain `return` or `set` statements.
 
 ## Next steps
 
-Before learning how to submit jobs to execute in Azure Quantum targets, prepare
-your environment to use Azure Quantum following the [Prepare your environment
-guide](xref:microsoft.azure.quantum.setup.cli)
+Before learning how to submit jobs to run on Azure Quantum targets, you need to [prepare
+your environment](xref:microsoft.azure.quantum.setup.cli) to use Azure Quantum.

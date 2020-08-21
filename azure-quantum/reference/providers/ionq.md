@@ -11,7 +11,7 @@ uid: microsoft.azure.quantum.providers.ionq
 # IonQ provider
 
 IonQ is a quantum computing hardware and software company. They are developing a
-general-purpose trapped ion quantum computer and they are a provider of the
+general-purpose trapped ion quantum computer and are a provider of the
 Azure Quantum ecosystem.
 
 - Publisher: [Microsoft](https://microsoft.com)
@@ -19,7 +19,7 @@ Azure Quantum ecosystem.
 
 ## Targets
 
-The following targets are available from this provider:
+The IonQ provider makes the following targets available:
 
 - [QPU: Trapped ion quantum device](#ionq-trapped-ion-quantum-device)
 - [Simulator: IonQ quantum simulator](#ionq-quantum-simulator)
@@ -29,7 +29,7 @@ The following targets are available from this provider:
 IonQ’s QPU trapped ion quantum computers perform calculations by manipulating
 charged atoms held in a vacuum with lasers. This target operates in a **No
 control flow** profile, meaning that it can't use results from qubit
-measurements to control the execution flow.
+measurements to control the execution flow. For more information, see [Targets in Azure Quantum](xref:microsoft.azure.quantum.concepts.targets).
 
 - Job type: `Q# Quantum Application`
 - Data Format: ``

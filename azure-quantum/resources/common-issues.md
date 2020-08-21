@@ -9,38 +9,43 @@ uid: microsoft.azure.quantum.common-issues
 ---
 # Azure Quantum common issues
 
-When submitting jobs for the first time to Azure Quantum, you may run into common issues
+When you first start working with Azure Quantum, you may run into these common issues.
 
 ## Submitting jobs
 
-### ERROR: Operation returned an invalid status code 'Unauthorized'
+### Issue: Operation returns an invalid status code 'Unauthorized'
 
 Steps to resolve this issue:
 
-1.https://portal.azure.com and authenticate
-2.Click Subscriptions and select your subscription
-3.Click Access control (IAM)
-4.Under 'Check access', enter your email address and select the account
-5.Notice that an 'Owner' or 'Contributor' role is missing
-6.Click on ‘Role assignments’ tab
-7.Select Role > 'Owner' (or 'Contributor'), enter your email address and select your account
-8.Click Save
-9.You should see your account set with the 'Owner' (or 'Contributor') role
-10.Create your Quantum workspace again and submit a job against this new Quantum workspace
+1. Open your Azure portal (https://portal.azure.com) and authenticate your account. 
+2. Under **Navigate**, click **Subscriptions** and select your subscription.
+3. Click **Access control (IAM)**.
+4. Under **Check access**, search for your email address and select the account.
+5. You should not see an **Owner** or a **Contributor** role listed.
+6. Click the **Role assignments** tab.
 
-### "Failed to compile program" when attempting to submit a Q# program through the CLI
+    > [!NOTE]
+    > If you don't see the **Role assignments** tab, you may need to expand the portal to full screen or close the **\<your name\> assignments** pane. 
 
-When attempting to submit a job with `az quantum submit` you may encounter the following error message:
+7. Click the **Role** dropdown, select either **Owner** or **Contributor**, then enter your email address and select your account.
+8. Click **Save**.
+9. You should now see your account set configured with either the **Owner** or **Contributor** role.
+10. Create your Quantum Workspace again and then submit a job against this new Quantum Workspace.
+
+### Issue: "Failed to compile program" when attempting to submit a Q# program through the CLI
+
+When attempting to submit a job at the command prompt using the  `az quantum submit` command, you may encounter the following error message:
+
 ```
 > az quantum job submit ...
 Failed to compile program.
 Command ran in 21.181 seconds (init: 0.457, invoke: 20.724)
 ```
 
-This occurs when there is a problem with the Q# program that causes compilation to fail. To see the specific error that is causing the failure, run `dotnet build` in the same folder.
+This error occurs when there is a problem with the Q# program that causes the compilation to fail. To see the specific error that is causing the failure, run `dotnet build` in the same folder.
 
-## Creating workspace
+## Creating a Quantum Workspace
 
-### ERROR: The resource type could not be found in the namespace 'Microsoft.Quantum' for api version '2019-11-04-preview'
+### Issue: The resource type could not be found in the namespace 'Microsoft.Quantum' for api version '2019-11-04-preview'
 
-Documentation under construction for this issue.
+Documentation for this issue is under construction.
