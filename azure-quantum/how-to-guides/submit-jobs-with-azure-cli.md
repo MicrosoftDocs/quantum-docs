@@ -18,7 +18,7 @@ line interface (CLI).
 Ensure that the following items are installed on your computer:
 
 - An Azure Quantum Workspace in your Azure subscription. To create
-  a Workspace, see [Create an Azure Quantum workspace](Create-quantum-workspaces-with-the-Azure-portal.md).
+  a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.azure.quantum.workspaces-portal).
 - The latest version of the [Quantum Development Kit](https://docs.microsoft.com/quantum/install-guide/standalone).
 - The [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 - The [necessary utilities to use Azure Quantum](xref:microsoft.azure.quantum.setup.cli) (includes the `quantum`
