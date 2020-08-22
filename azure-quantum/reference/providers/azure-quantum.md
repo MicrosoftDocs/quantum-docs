@@ -53,7 +53,7 @@ Monthly quota: **50 hours per month**
 | `timeout`      | int      | Required | Maximum number of seconds to run the core solver loop. Initialization time does not respect this value, so the solver may run longer than the value specified. |
 | `seed`         | int      | Optional | Seed value  |
 
-### Simulated Annealing
+### Simulated annealing
 
 A solver for binary optimization problems with k-local interactions on an
 all-to-all graph topology with double precision support for the coupler weights.
@@ -76,7 +76,7 @@ Monthly quota: **50 hours per month**
 | `sweeps`       | int      | Required | Number of sweeps to run. |
 | `restarts`     | int      | Required | Number of restarts. |
 
-### Parameter Free Parallel Tempering
+### Parameter-free parallel tempering
 
 A parameter-free solver for binary optimization problems with k-local interactions
 on an all-to-all graph topology with double precision support for the coupler
@@ -98,7 +98,7 @@ Monthly quota: **50 hours per month**
 | `timeout`      | int      | Required | Maximum number of seconds to run the core solver loop. Initialization time does not respect this value, so the solver may run longer than the value specified. |
 | `seed`         | int      | Optional | Seed value  |
 
-### Parallel Tempering
+### Parallel tempering
 
 A solver for binary optimization problems with k-local interactions on an
 all-to-all graph topology with double precision support for the coupler weights.
