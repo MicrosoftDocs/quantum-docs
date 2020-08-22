@@ -16,12 +16,13 @@ from azure.quantum.optimization import Job
 
 ## Job.get_results
 
-Retrieves the job result (the computed solution and energy). If the job has not
+Retrieves the job result (that is, the computed solution and energy). If the job has not
 yet finished, blocks until it has.
 
 ## Job.has_completed
 
-Returns a boolean indicating whether the job has finished (e.g. the job is in a[final state](xref:microsoft.azure.quantum.overview#Job-Lifecycle)).
+Returns a boolean value indicating whether the job has finished (for example, the job is in a
+[final state](xref:microsoft.azure.quantum.overview#Job-Lifecycle)).
 
 ```py
 job = workspace.get_job(jobId)
@@ -33,7 +34,7 @@ print(job.has_completed())
 
 ## Job.refresh
 
-Refreshes the Job's details by querying the workspace.
+Refreshes the job's details by querying the Workspace.
 
 ```py
 job = workspace.get_job(jobId)
@@ -45,8 +46,7 @@ print(job.id)
 
 ## Job.wait_until_completed
 
-Keeps refreshing the Job's details until it reaches a [final
-state](/Azure-Quantum-Overview#Job-Lifecycle).
+Keeps refreshing the job's details until it reaches a final state. For more information on job states, see [Azure Quantum Overview](xref:microsoft.azure.quantum.overview).
 
 ```py
 job = workspace.get_job(jobId)
@@ -73,7 +73,7 @@ To create a `Problem` object, you must specify the following information:
 
 ### Problem.add_term
 
-Adds a single term to the problem. Takes a weight for the term, and the indices
+Adds a single term to the problem. It takes a weight for the term and the indices
 of variables that appear in the term.
 ```py
 weight = 0.13
@@ -115,7 +115,7 @@ Problem data can be explicitly uploaded to an Azure storage account using its
 problem.upload(workspace=workspace)
 ```
 
-Once a Problem is explicitly uploaded, it will not be automatically uploaded
+Once a problem is explicitly uploaded, it will not be automatically uploaded
 during submission unless its terms change.
 
 ## ProblemType
@@ -142,6 +142,7 @@ Where *H* is the cost function, also known as the Hamiltonian. It is called
 ### ProblemType.ising
 
 An Ising Model is a cost function of the form:
+
 $$H = \sum_{i} c_{i} s_{i} + \sum_{i,j} c_{i,j} s_{i} s_{j} + \sum_{i,j,k}
 c_{i,j,k} s_{i} s_{j} s_{k} \text{ where } c_{i,j,k} \in R \text{ and }
 s_{i,j,k} \in [-1, 1]$$
