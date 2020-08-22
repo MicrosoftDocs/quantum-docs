@@ -24,12 +24,12 @@ The IonQ provider makes the following targets available:
 - [QPU: Trapped ion quantum device](#ionq-trapped-ion-quantum-device)
 - [Simulator: IonQ quantum simulator](#ionq-quantum-simulator)
 
-### IonQ Trapped Ion Quantum Device
+### IonQ trapped ion quantum device
 
 IonQ’s QPU trapped ion quantum computers perform calculations by manipulating
 charged atoms held in a vacuum with lasers. This target operates in a **No
 control flow** profile, meaning that it can't use results from qubit
-measurements to control the execution flow. For more information, see [Targets in Azure Quantum](xref:microsoft.azure.quantum.concepts.targets).
+measurements to control the run flow. For more information, see [Targets in Azure Quantum](xref:microsoft.azure.quantum.concepts.targets).
 
 - Job type: `Q# Quantum Application`
 - Data Format: ``
@@ -39,7 +39,7 @@ Billing information: **Free in Private Preview**
 
 Monthly quota: **50 hours per month**
 
-### IonQ Quantum Simulator
+### IonQ quantum simulator
 
 GPU-accelerated idealized simulator using the same gates IonQ provides on its
 quantum devices.
