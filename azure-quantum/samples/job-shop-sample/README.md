@@ -1,5 +1,7 @@
 # Job Shop Scheduling Sample
 
+## Introduction
+
 This sample provides a comprehensive walkthrough of the job shop scheduling problem, from problem definition to formulation of penalty functions and finally solving the problem using the Azure Quantum Optimization Service.
 
 By working through this sample, you will learn:
