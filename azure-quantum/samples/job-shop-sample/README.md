@@ -1,3 +1,9 @@
+---
+title: Job Shop Scheduling Sample
+description: Learn how to solve the job shop scheduling problem using Azure Quantum
+author: anraman
+---
+
 # Job Shop Scheduling Sample
 
 ## Introduction
