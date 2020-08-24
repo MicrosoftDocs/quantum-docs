@@ -12,3 +12,5 @@ tex2pdf.*/
 *.orig
 .vs/
 .DS_Store
+azure-quantum/samples/shipping-sample/.ipynb_checkpoints/*
+azure-quantum/samples/job-shop-sample/.ipynb_checkpoints/*
