@@ -26,6 +26,8 @@ You use the Azure Quantum service by adding a **Quantum Workspace** resource to 
 
 To open the Azure Portal, go to https://aka.ms/quantum-workspaces and then follow these steps:
 
+> Note: This is a special link that allows you to create a Quantum Workspace in the Azure Portal. Without using the link you will be able to see existing workspaces but not create new ones.
+
 1. Click **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
 
    ![Tile for the Azure Quantum (preview)
@@ -41,7 +43,7 @@ To open the Azure Portal, go to https://aka.ms/quantum-workspaces and then follo
      Workspace. 
    - **Resource group:** The resource group that you want to assign this Workspace to.
    - **Name:** The name of your Quantum Workspace.
-   - **Region:** The region for the Workspace. For this private preview, select  **(US) East US 2 EUAP**.
+   - **Region:** The region for the Workspace. For this private preview, select  **(US) West US**.
    - **Storage Account**: The Azure storage account to store your jobs and results. If you don't have an existing storage account, click **Create a new storage account** and complete the necessary fields. For this preview, we recommend using the default values.
 
    ![Properties for the Azure Quantum Workspace](../media/azure-quantum-preview-properties.png)
