@@ -79,7 +79,7 @@ quantum programs on Azure Quantum.
 1. Create a Python script in the same folder as your `*.qs` file. Azure Quantum
    functionality is available by running `import qsharp.azure` and then calling
    the Python commands to interact with Azure Quantum. For reference, see the
-   [complete list of `qsharp.azure` Python commands](https://docs.microsoft.com/python/qsharp/qsharp.azure).
+   [complete list of `qsharp.azure` Python commands](https://docs.microsoft.com/python/qsharp-core/qsharp.azure).
    You'll need the resource ID of your Azure Quantum Workspace in order to
    connect. (The resource ID can be found on your Quantum Workspace
    page in Azure Portal.) For example, your Python script could look like this:
