@@ -12,21 +12,6 @@ uid: microsoft.azure.quantum.known-issues
 
 This document contains a list of known issues that we are working to address in the private preview.
 
-## Manually creating storage accounts
-
-Currently, you must manually create a storage account for your job input/output data (although the bash script does this for you) and then pass the account to the `Workspace` constructor. We are working on removing the requirement for both steps soon.
-
-## Job error data omissions
-
-Job Error data is not always populated when a job fails.
-
-## Jobs marked as `Executing` while still queued
-
-Currently, jobs are placed in the `Executing` state when they are passed to the provider for processing. However, the provider may still have the job in a queue. In the future, jobs will show as `Executing` only when they are being actively run by the provider.
-
-In the meantime, you can determine the runtime of a job by running the commands `Job.details.begin_execution_time` and `Job.details.end_execution_time`.
-
-
 ## List Jobs API returns all jobs
 
 The List Jobs API currently returns all jobs and does not support pagination, which can make it very slow for Workspaces with a large number of jobs. This API will soon support pagination.
