@@ -10,26 +10,39 @@ uid: microsoft.azure.quantum.relnotes
 
 # Azure Quantum Release Notes
 
-This article contains information on each Quantum Development Kit release affecting Azure Quantum.
+## 2020-08-31: Bug Fixes & Job Scheduling Perf Improvements
+- Fixed a bug where the `all_betas` parameter returned from parameter-free solvers was named `betas`
 
-For installation instructions, please refer to the [install guide](xref:microsoft.quantum.install).
+## 2020-08-25: Job Shop Optimization Sample now Available
+[The sample for job shop optimization is now available in the Samples folder](https://github.com/MicrosoftDocs/quantum-docs-private/blob/feature/onboarding-azure-quantum/azure-quantum/samples/job-shop-sample/). This complete sample teaches:
+- What the job shop scheduling problem is and why it is important
+- How to represent problem terms mathematically
+- How to build penalty functions to represent problem constraints
+- How to transform these mathematical functions into code using the Azure Quantum Optimization Python SDK
+- How to submit problem terms to Azure Quantum
+- How to interpret the results
 
-For update instructions, please refer to the [update guide](xref:microsoft.quantum.update).
+## 2020-08-24: Parameter-free solvers now return parameters
+A highly requested feature – the ability to see the parameters chosen by parameter-free solvers – is now available. When running a problem against a parameter-free solver you will now see a “parameters” object returned in the job result. These parameters were used to generate the returned configuration.
 
-*Release date: July 1st, 2020*
+```json
+{
+    "configuration": {
+        "0": 1,
+        "1": -1,
+        "2": 1
+    },
+    "cost": 0.4,
+    "parameters": {
+        "all_betas": [
+            0.1,
+            0.2,
+            0.3
+        ],
+        "replicas": 3,
+        "sweeps": 100
+    }
+}
+```
 
-This release contains the following:
-
-- IQ# support for Azure Quantum to [submit jobs from Q# Jupyter Notebooks](xref:microsoft.azure.quantum.submit-jobs.jupyter) & [Python](xref:microsoft.azure.quantum.submit-jobs.python) with Q#
-- Support for initial design-time diagnostics to determine whether a program can execute on the set target
-- New support for executing a targeted Q# application on quantum simulators & resource estimator
-- New `qdk-chem` tool for converting legacy electronic structure problem serialization formats (e.g.: FCIDUMP) to [Broombridge](xref:todo)
-- New functions and operations in the [`Microsoft.Quantum.Synthesis` namespace](xref:microsoft.quantum.synthesis) for coherently applying classical oracles using transformation- and decomposition-based synthesis algorithms.
-- IQ# now allows arguments to the `%simulate`, `%estimate`, and other magic commands. See the [`%simulate` magic command reference](xref:microsoft.quantum.iqsharp.magic-ref.simulate) for more details.
-- New phase display options in IQ#. See the [`%config` magic command reference](xref:microsoft.quantum.iqsharp.magic-ref.config) for more details.
-- IQ# is now provided as a [`conda` package](https://anaconda.org/quantum-engineering/iqsharp) for IQ# installation to support local installation to a conda environment.
-- When using the simulator, qubits no longer need to be in the |0⟩ state upon release, but can be automatically reset if they were measured immediately before releasing.
-- Updates to make it easier for IQ# users to consume library packages with different QDK versions, requiring only major & minor version numbers match rather than the exact same version
-- Bug fixes 
-
-See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
+No SDK updates are needed to take advantage of this update.
