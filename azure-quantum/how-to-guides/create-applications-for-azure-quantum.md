@@ -69,7 +69,7 @@ For example, this operation can NOT be run on a No Control Flow target:
 ```
 
 Trying to run this operation on a No Control Flow target will fail because it evaluates a comparison between two results (`desired != M(q)`)
-to control the execution flow with an `if` statement.
+to control the computation flow with an `if` statement.
 
 > [!NOTE]
 > Currently, there is an additional limitation for this type of profile target: *you can't apply operations on qubits that have been measured, even

@@ -58,6 +58,6 @@ Now that you have installed the tools to use Azure Quantum you can learn to subm
 
 Learn how to [submit jobs to Azure Quantum](Use-the-Python-SDK-for-Quantum-Inspired-Optimization) to solve optimization problems.
 
-### For Quantum Execution users
+### For Quantum Computing users
 
 Learn how to [submit jobs to Azure Quantum](Submit-jobs-to-Azure-Quantum-with-the-Comand-Line-Interface) to quantum hardware and quantum simulators.

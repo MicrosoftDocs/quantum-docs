@@ -46,7 +46,7 @@ IQ# kernel, which powers the Q# Jupyter Notebook and Python experiences.
 You are now set up to use Q# Jupyter Notebooks and Q# integration to run
 quantum programs on Azure Quantum.
 
-## Quantum Execution with Q# Jupyter Notebooks
+## Quantum Computing with Q# Jupyter Notebooks
 
 1. Run `jupyter notebook` from the terminal where your conda environment is
    activated. This starts the notebook server and opens Jupyter in a browser.

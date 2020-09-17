@@ -45,7 +45,7 @@ IQ# kernel, which powers the Q# Jupyter Notebook and Python experiences.
 You are now set up to use Python and Q# integration to run
 quantum programs on Azure Quantum.
 
-## Quantum Execution with Q# and Python
+## Quantum Computing with Q# and Python
 
 1. The Python environment in the conda environment that you created earlier already
    includes the `qsharp` Python package. Make sure you are running your Python

@@ -4,7 +4,7 @@ items:
   href: prepare-your-environment.md
 - name: Create quantum workspaces with the Azure Portal 
   href: create-quantum-workspaces-with-the-azure-portal.md
-- name: Quantum Execution
+- name: Quantum Computing
   items:
   - name: Submit jobs with the Azure CLI
     href: submit-jobs-with-azure-cli.md
