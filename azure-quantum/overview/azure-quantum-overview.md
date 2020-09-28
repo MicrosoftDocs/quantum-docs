@@ -10,22 +10,23 @@ uid: microsoft.azure.quantum.overview
 
 # Introduction to Azure Quantum
 
-Azure Quantum is a Microsoft Azure service that you can use to run quantum programs and solve [quantum-inspired optimization](#quantum-inspired-optimization) (QIO) problems in the cloud. Using the Azure Quantum SDKs and tools, you can create quantum programs and run them against different quantum simulators and machines.
+Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs and solve [optimization](#Optimization-Algorithms) problems in the cloud. Using the Azure Quantum SDKs and tools, you can create quantum programs and run them against different [providers and targets](#Providers-and-targets).
 
 > [!NOTE]
-> In this limited preview, not all providers are available to all users.
+> During this limited preview, not all providers are available to all users.
 
-## Quantum-inspired optimization
+## Optimization algorithms
 
-Quantum-inspired optimization uses algorithms that are based on quantum principles for increased speed and accuracy but are implemented on classical computer systems. Azure Quantum supports QIO to help developers leverage the power of new quantum techniques today without waiting for quantum hardware.
+As you may be familiar, a critical element to optimizing problems is to select the right algorithm. Azure Quantum gives you access to a broad set of state of the art optimization algorithms developed by Microsoft and its partners. You will find classic optimization algorithms, included some inspired by standard physics, as well as quantum-inspired algorithms (QIO). 
+Quantum-inspired optimization uses algorithms that are based on quantum principles for increased speed and accuracy. Azure Quantum supports QIO to help developers leverage the power of new quantum techniques today without waiting for quantum hardware. Optimization algorithms are available on a variety of silicon solutions (CPU, FPGA, GPU, custom silicon)
 
 ## Quantum Workspace
 
-You use the Azure Quantum service by adding a **Quantum Workspace** resource to your Azure subscription in the Azure portal. A Quantum Workspace resource, or Workspace for short, is a collection of assets associated with running quantum or quantum-inspired applications. One of the properties configured in a Workspace is an Azure Storage Account resource, where Azure Quantum stores your quantum programs and QIO problems for access. 
+You use the Azure Quantum service by adding a **Quantum Workspace** resource to your Azure subscription in the Azure portal. A Quantum Workspace resource, or Workspace for short, is a collection of assets associated with running quantum computing or optimization applications. One of the properties configured in a Workspace is an Azure Storage Account resource, where Azure Quantum stores your quantum programs and optimization problems for access. 
 
 ## Providers and targets
 
-Another property configured in the Workspace is the **provider** that you want to use to run programs in that Workspace. A single provider may expose one or more **targets**, which can be quantum hardware or simulators, and are ultimately responsible for running your program. 
+Another property configured in the Workspace is the **provider** that you want to use to run [jobs](#jobs) in that Workspace. A single provider may expose one or more **targets**, which can be quantum computing or optimization resources, and are ultimately responsible for running your job. 
 
 By default, Azure Quantum adds the Microsoft Quantum Solution provider to every Workspace, and you can add other providers when you create the Workspace or any time afterward. To see a list of available providers, see [Providers](xref:microsoft.azure.quantum.reference.index).
 
@@ -40,7 +41,7 @@ You can only select one billing plan for each provider in a single Workspace; ho
 
 ## Jobs
 
-When you run a quantum program or solve a QIO problem in Azure Quantum,
+When you run a quantum program or solve an optimization problem in Azure Quantum,
 you create and run a **job**. The steps to create and run a job depend on
 the job type and the provider and target that you configure for the Workspace.  All jobs, however, have the following properties in common:
 
