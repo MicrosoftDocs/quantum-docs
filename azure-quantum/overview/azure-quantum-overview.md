@@ -19,7 +19,7 @@ Azure Quantum is a Microsoft Azure service that you can use to run quantum compu
 
 Azure Quantum gives you access to a broad set of state of the art optimization algorithms developed by Microsoft and its partners. You will find classic optimization algorithms, included some inspired by standard physics, as well as quantum-inspired algorithms (QIO). 
 
-Quantum-inspired optimization uses algorithms that are based on quantum principles for increased speed and accuracy. Azure Quantum supports QIO to help developers leverage the power of new quantum techniques today without waiting for quantum hardware.
+QIO uses algorithms that are based on quantum principles for increased speed and accuracy. Azure Quantum supports QIO to help developers leverage the power of new quantum techniques today without waiting for quantum hardware.
 
 Optimization algorithms are available on a variety of silicon solutions (CPU, FPGA, GPU, custom silicon)
 
