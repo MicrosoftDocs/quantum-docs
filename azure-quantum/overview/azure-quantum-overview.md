@@ -29,7 +29,7 @@ You use the Azure Quantum service by adding a **Quantum Workspace** resource to 
 
 ## Providers and targets
 
-Another property configured in the Workspace is the **provider** that you want to use to run [jobs](#jobs) in that Workspace. A single provider may expose one or more **targets**, which can be quantum computing or optimization resources, and are ultimately responsible for running your job. 
+Another property configured in the Workspace is the **provider** that you want to use to run [jobs](#jobs) in that Workspace. A single provider may expose one or more quantum computing or optimization **targets** which are ultimately responsible for running your job. 
 
 By default, Azure Quantum adds the Microsoft Quantum Solution provider to every Workspace, and you can add other providers when you create the Workspace or any time afterward. To see a list of available providers, see [Providers](xref:microsoft.azure.quantum.reference.index).
 
