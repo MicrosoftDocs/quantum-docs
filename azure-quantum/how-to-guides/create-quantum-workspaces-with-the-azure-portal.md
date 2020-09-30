@@ -54,10 +54,16 @@ To open the Azure Portal, go to https://aka.ms/quantum-workspaces and then follo
 
 1. After completing the information, click the **Providers** tab to add providers to your Workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or a quantum-inspired optimization service.
 
+   > [!NOTE]
+   > During the Limited Preview, you'll be able to see only certain providers
+   > depending on your user status. For example, optimization users only can 
+   > select `Microsoft Quantum Solutions`, that is the provider for the 
+   > optimization service. 
+
    ![Providers for Azure Quantum](../media/azure-quantum-preview-providers.png)
 
-    > [!NOTE] 
-    > By default, the Azure Quantum service adds the Microsoft Quantum Solution provider to every Workspace.
+   > [!NOTE]
+   > By default, the Azure Quantum service adds the Microsoft Quantum Solution provider to every Workspace.
 
 1. After adding the providers that you want to use, click **Review + create**.
 
