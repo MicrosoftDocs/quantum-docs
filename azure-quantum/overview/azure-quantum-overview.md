@@ -10,7 +10,7 @@ uid: microsoft.azure.quantum.overview
 
 # Introduction to Azure Quantum
 
-Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs and solve [optimization](#Optimization-Algorithms) problems in the cloud. Using the Azure Quantum SDKs and tools, you can create quantum programs and run them against different [providers and targets](#Providers-and-targets).
+Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs and solve [optimization](#Optimization-Algorithms) problems in the cloud. Using the Azure Quantum tools and SDKs, you can create quantum programs and run them against different [providers and targets](#Providers-and-targets).
 
 > [!NOTE]
 > During this limited preview, not all providers are available to all users.
@@ -21,7 +21,7 @@ Azure Quantum gives you access to a broad set of state of the art optimization a
 
 QIO uses algorithms that are based on quantum principles for increased speed and accuracy. Azure Quantum supports QIO to help developers leverage the power of new quantum techniques today without waiting for quantum hardware.
 
-Optimization algorithms are available on a variety of silicon solutions (CPU, FPGA, GPU, custom silicon)
+Optimization algorithms are available on a variety of silicon solutions (e.g. CPU, FPGA, GPU or custom silicon)
 
 ## Quantum Workspace
 
