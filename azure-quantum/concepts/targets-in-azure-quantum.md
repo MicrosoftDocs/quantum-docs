@@ -15,7 +15,7 @@ Azure Quantum and the Quantum Development Kit.
 
 ## Targets as quantum devices
 
-Targets in Azure Quantum can be solvers for quantum inspired optimization (QIO)
+Targets in Azure Quantum can be solvers for optimization
 problems or quantum devices (either physical or simulated) that you can use to
 run Q# quantum applications.
 

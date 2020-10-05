@@ -13,7 +13,7 @@ uid: microsoft.azure.quantum.reference.index
 The following reference documentation is available:
 
 - Providers
-  - [Azure Quantum](xref:microsoft.azure.quantum.providers.azure-quantum) by Microsoft
+  - [Microsoft Quantum Solution](xref:microsoft.azure.quantum.providers.microsoft-quantum-solution) by Microsoft
   - [IonQ](xref:microsoft.azure.quantum.providers.ionq)
 
 - Python SDK

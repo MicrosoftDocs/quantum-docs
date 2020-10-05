@@ -4,6 +4,8 @@
   href: overview/toc.yml
 - name: How-to guides
   href: how-to-guides/toc.yml
+- name: Quickstarts
+  href: quickstarts/toc.yml  
 - name: Concepts
   href: concepts/toc.yml
 - name: Resources 

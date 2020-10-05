@@ -42,10 +42,12 @@
       "https://docs.microsoft.com/quantum/xrefmap.yml"
     ],
     "globalMetadata": {
+      "show_latex": true,
       "breadcrumb_path": "/azure-quantum/breadcrumb/toc.json",
       "extendBreadcrumb": true,
       "feedback_system": "GitHub",
-      "feedback_github_repo": "MicrosoftDocs/quantum-docs"
+      "feedback_github_repo": "MicrosoftDocs/quantum-docs",
+      "ms.prod": "quantum"
     },
     "fileMetadata": {},
     "template": [],

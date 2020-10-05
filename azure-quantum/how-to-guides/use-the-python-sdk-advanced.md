@@ -1,6 +1,6 @@
 ---
-title: Advanced usage of the Python SDK for Quantum Inspired Optimization
-description: This document provides an overview of some advanced usage patterns for the Python SDK for Quantum Inspired Optimization.
+title: Advanced usage of the Python SDK for optimization
+description: This document provides an overview of some advanced usage patterns for the Python SDK for optimization.
 author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
@@ -8,10 +8,10 @@ ms.topic: article
 uid: microsoft.azure.quantum.qio.python-sdk.advanced
 ---
 
-# Advanced usage of the Python SDK for Quantum-Inspired Optimization
+# Advanced usage of the Python SDK for optimization
 
 This document provides an overview of some advanced usage patterns for the
-Python SDK for Quantum-Inspired Optimization.
+Python SDK for optimization.
 
 ## Asynchronous problem solving
 
@@ -78,7 +78,7 @@ print(job.id)
 
 The `Workspace` provides methods for managing jobs:
 
-- `Problem` (for Quantum-Inspired Problems), or `QsharpOperation` (for Quantum
+- `Problem` (for optimization problems), or `QsharpOperation` (for Quantum
     Hardware or Simulators).
 - **get_job**: Returns the `Job` metadata and results for a specific job
     (based on job `id`).
@@ -121,7 +121,7 @@ print(results)
 > {'energy': -17.0, 'solution': [1, 1, -1]}
 ```
 
-## Methods for supplying problem terms
+## Ways to supply problem terms
 
 There are three ways to supply terms for a
 [`Problem`](/Reference/Python-SDK/Azure.Quantum.Optimization): in the

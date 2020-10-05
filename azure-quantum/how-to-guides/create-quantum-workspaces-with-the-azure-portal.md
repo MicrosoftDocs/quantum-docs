@@ -22,7 +22,7 @@ In order to use the Azure Quantum service, you will need an active Azure subscri
 
 ## Create a quantum workspace
 
-You use the Azure Quantum service by adding a **Quantum Workspace** resource to your Azure subscription in the Azure portal. A Quantum Workspace resource, or Workspace for short, is a collection of assets associated with running quantum or quantum-inspired applications. Because this is a private preview of Azure Quantum, the service is currently hidden from the view of the general public.
+You use the Azure Quantum service by adding a **Quantum Workspace** resource to your Azure subscription in the Azure portal. A Quantum Workspace resource, or Workspace for short, is a collection of assets associated with running quantum or optimization applications. Because this is a private preview of Azure Quantum, the service is currently hidden from the view of the general public.
 
 To open the Azure Portal, go to https://aka.ms/quantum-workspaces and then follow these steps:
 
@@ -52,7 +52,7 @@ To open the Azure Portal, go to https://aka.ms/quantum-workspaces and then follo
    > [!NOTE]
    > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](https://docs.microsoft.com/learn/modules/control-and-organize-with-azure-resource-manager/).
 
-1. After completing the information, click the **Providers** tab to add providers to your Workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or a quantum-inspired optimization service.
+1. After completing the information, click the **Providers** tab to add providers to your Workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
 
    > [!NOTE]
    > During the Limited Preview, you'll be able to see only certain providers

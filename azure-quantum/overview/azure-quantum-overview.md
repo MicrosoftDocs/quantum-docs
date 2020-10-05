@@ -10,26 +10,27 @@ uid: microsoft.azure.quantum.overview
 
 # Introduction to Azure Quantum
 
-Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs and solve [optimization](#Optimization-Algorithms) problems in the cloud. Using the Azure Quantum tools and SDKs, you can create quantum programs and run them against different [providers and targets](#Providers-and-targets).
+Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs or solve [optimization](#optimization) problems in the cloud. Using the Azure Quantum tools and SDKs, you can create quantum programs and run them against different quantum simulators and machines.
 
 > [!NOTE]
-> During this limited preview, not all providers are available to all users.
+> In this limited preview, not all providers are available to all users.
 
-## Optimization algorithms
+## Optimization
 
-Azure Quantum gives you access to a broad set of state of the art optimization algorithms developed by Microsoft and its partners. You will find classic optimization algorithms, included some inspired by standard physics, as well as quantum-inspired algorithms (QIO). 
+Azure Quantum gives you access to a broad set of state of the art optimization algorithms developed by Microsoft and its partners. You will find classic optimization algorithms, included some inspired by standard physics, as well as quantum-inspired optimization algorithms (QIO). 
 
 QIO uses algorithms that are based on quantum principles for increased speed and accuracy. Azure Quantum supports QIO to help developers leverage the power of new quantum techniques today without waiting for quantum hardware.
 
-Optimization algorithms are available on a variety of silicon solutions (e.g. CPU, FPGA, GPU or custom silicon)
+Optimization algorithms are available on a variety of silicon solutions (e.g. CPU, FPGA, GPU or custom silicon).
+
 
 ## Quantum Workspace
 
-You use the Azure Quantum service by adding a **Quantum Workspace** resource to your Azure subscription in the Azure portal. A Quantum Workspace resource, or Workspace for short, is a collection of assets associated with running quantum computing or optimization applications. One of the properties configured in a Workspace is an Azure Storage Account resource, where Azure Quantum stores your quantum programs and optimization problems for access. 
+You use the Azure Quantum service by adding a **Quantum Workspace** resource to your Azure subscription in the Azure portal. A Quantum Workspace resource, or Workspace for short, is a collection of assets associated with running quantum or optimization applications. One of the properties configured in a Workspace is an Azure Storage Account resource, where Azure Quantum stores your quantum programs and optimization problems for access.
 
 ## Providers and targets
 
-Another property configured in the Workspace is the **provider** that you want to use to run [jobs](#jobs) in that Workspace. A single provider may expose one or more quantum computing or optimization **targets** which are ultimately responsible for running your job. 
+Another property configured in the Workspace is the **provider** that you want to use to run programs in that Workspace. A single provider may expose one or more **targets**, which can be quantum hardware or simulators, and are ultimately responsible for running your program. 
 
 By default, Azure Quantum adds the Microsoft Quantum Solution provider to every Workspace, and you can add other providers when you create the Workspace or any time afterward. To see a list of available providers, see [Providers](xref:microsoft.azure.quantum.reference.index).
 

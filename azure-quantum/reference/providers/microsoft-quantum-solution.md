@@ -1,16 +1,16 @@
 ---
-title: Azure Quantum provider 
-description: This document provides the technical details of the Azure Quantum provider
+title: Microsoft Quantum Solution 
+description: This document provides the technical details of the Microsoft Quantum Solution provider
 author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: article
-uid: microsoft.azure.quantum.providers.azure-quantum
+uid: microsoft.azure.quantum.providers.microsoft-quantum-solution
 ---
 
-# Azure Quantum provider
+# Microsoft Quantum Solution provider
 
-The Azure Quantum provider is enabled in every Quantum Workspace.
+The Microsoft Quantum Solution provider is enabled in every Quantum Workspace.
 
 - Publisher: [Microsoft](https://microsoft.com)
 - Provider ID: `microsoft`
@@ -22,7 +22,7 @@ During the private preview, customers get the following usage for free:
 
 ## Targets
 
-The Azure Quantum provider makes the following targets available:
+The Microsoft Quantum Solution provider makes the following targets available:
 
 - [Solver: Simulated Annealing (Parameter
   Free)](#parameter-free-simulated-annealing)

@@ -1,5 +1,5 @@
 ---
-title: Create applications for Azure Quantum
+title: Create and run Q# applications in Azure Quantum
 description: Explanation of how to create applications for the different targets of Azure-Quantum
 author: KittyYeungQ
 ms.author: kitty
@@ -49,7 +49,7 @@ any target with this profile yet, but you can try any Q# program locally using t
 
 If you need help setting up your environment to run Q# programs locally, see [Getting started with the QDK](xref:microsoft.quantum.welcome).
 
-You can also explore different [Q# code samples](https://docs.microsoft.com/samples/browse/?languages=qsharp&view=qsharp-preview) to run locally with the QDK.
+You can also explore different [Q# code samples](https://docs.microsoft.com/samples/browse/?languages=qsharp) to run locally with the QDK.
 
 ## Create and run applications for No Control Flow profile targets
 
@@ -90,7 +90,7 @@ Follow these steps in this section to create an application to run in IonQ targe
 #### Prerequisites
 
 - Install the [QDK](xref:microsoft.quantum.install.standalone).
-- Install the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+- Install the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 - Install the [necessary utilities to use Azure Quantum](xref:microsoft.azure.quantum.setup.cli) (includes the `quantum` extension for the Azure CLI).
 - A Quantum Workspace with IonQ listed as a provider. To create a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.azure.quantum.workspaces-portal).
 
@@ -125,7 +125,7 @@ Follow these steps in this section to create an application to run in IonQ targe
      using the command `dotnet run`. Since you selected the `ExecutionTarget` in
      the `*.csproj` file, the console output will warn you if you created a file that is not compatible with the No Control Flow profile.
    - You can use the
-     [`resources estimator`](https://docs.microsoft.com/quantum/user-guide/machines/resources-estimator?view=qsharp-preview)
+     [`resources estimator`](https://docs.microsoft.com/quantum/user-guide/machines/resources-estimator)
      to estimate what resources your Q# program requires to run. You invoke the resources estimator with the command: `dotnet run --simulator
      ResourcesEstimator`.
 1. Once your Q# program is ready, submit the job to Azure Quantum

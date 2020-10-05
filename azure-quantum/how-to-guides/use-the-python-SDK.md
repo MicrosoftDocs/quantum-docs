@@ -1,6 +1,6 @@
 ---
-title: Use the Python SDK for Quantum Inspired Optimization
-description: This documents provides a basic usage overview of the Python SDK for Quantum Inspired Optimization.
+title: Use the Python SDK for optimization
+description: This documents provides a basic usage overview of the Python SDK for optimization.
 author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
@@ -8,9 +8,9 @@ ms.topic: article
 uid: microsoft.azure.quantum.qio.python-sdk
 ---
 
-# Use the Python SDK for Quantum-Inspired Optimization
+# Use the Python SDK for optimization
 
-This guide provides a basic overview of how to use the Python SDK for Quantum-Inspired Optimization. It assumes you have already completed the [Creating an
+This guide provides a basic overview of how to use the Python SDK for optimization. It assumes you have already completed the [Creating an
 Azure Quantum Workspace guide](xref:microsoft.azure.quantum.workspaces-portal).
 
 ## Installation
@@ -30,8 +30,7 @@ install it from the private Azure Quantum feed:
 
 ## Connecting to a Quantum Workspace
 
-A `Workspace` represents the Quantum Workspace you [previously created](xref:microsoft.azure.quantum.workspaces-portal) and is the main interface for
-interacting with the service.
+A `Workspace` represents the Quantum Workspace you [previously created](xref:microsoft.azure.quantum.workspaces-portal) and is the main interface for interacting with the service.
 
 ```python
 from azure.quantum import Workspace
@@ -61,7 +60,7 @@ cached so that you do not have to repeat this process for future runs.
 
 To express a simple problem to be solved, create an instance of a `Problem` and
 set the `problem_type` to either `ProblemType.ising` or
-`ProblemType.pubo`. For more information, see [`ProblemType`](xref:microsoft.azure.quantum.reference.python-sdk.azure.quantum.optimization).
+`ProblemType.pubo`. For more information, see [`ProblemType`](xref:microsoft.azure.quantum.reference.python-sdk.azure.quantum.optimization#problemtype).
 
 ```py
 from azure.quantum.optimization import Problem, ProblemType, Term, ParallelTempering
@@ -84,14 +83,15 @@ terms = [
 
 problem.add_terms(terms=terms)
 ```
-![NOTE]
+
+>![NOTE]
 > There are [multiple ways](xref:microsoft.azure.quantum.qio.python-sdk.advanced#Methods-for-supplying-problem-terms)
 > to supply terms to the problem, and not all terms must be added at once.
 
 Next, we're ready to solve by applying a **solver**. In this example we'll use a
 parameter-free version of parallel tempering. You can find documentation on this
-solver and the other available solvers in the [Azure Quantum Provider
-Reference](xref:microsoft.azure.quantum.providers.azure-quantum).
+solver and the other available solvers in the [Microsoft Quantum Solution provider
+reference](xref:microsoft.azure.quantum.providers.microsoft-quantum-solution).
 
 ```py
 solver = ParallelTempering(workspace, timeout=100)
@@ -100,7 +100,7 @@ solver = ParallelTempering(workspace, timeout=100)
 For arguments, the solver takes the `workspace` created previously, plus a single
 parameter which is the maximum amount of time (in seconds) to run the solver.
 Detailed documentation on parameters is available in the [Azure Quantum Provider
-Reference](xref:microsoft.azure.quantum.providers.azure-quantum).
+reference](xref:microsoft.azure.quantum.providers.microsoft-quantum-solution).
 
 Solvers provide an `optimize` method that expects a `Problem` which uploads the
 problem definition, submits a job, and polls the status until the job has completed
@@ -112,7 +112,8 @@ result = solver.optimize(problem)
 print(result)
 ```
 
-> Note: If you receive an `Unauthorized` error when calling `solver.optimize()`, please see [this guide](Common-issues#error-operation-returned-an-invalid-status-code-unauthorized).
+> [!NOTE] 
+> If you receive an `Unauthorized` error when calling `solver.optimize()`, please see [this guide](xref:microsoft.azure.quantum.common-issues#issue-operation-returns-an-invalid-status-code-unauthorized).
 
 This method will submit the problem to Azure Quantum for optimization and
 synchronously wait for it to be solved. You'll see output like the following in
@@ -134,7 +135,7 @@ the `Job` which exposes the job metadata and `fetch`, `get_output` and `cancel`
 methods. These provide more fine-grain control for the run, and are
 covered in [Advanced Usage of the Python SDK](xref:microsoft.azure.quantum.qio.python-sdk.advanced).
 
-You may also want to review the [solvers reference for Microsoft Optimization Solvers](xref:microsoft.azure.quantum.providers.azure-quantum).
+You may also want to review the [solvers reference for Microsoft Optimization Solvers](xref:microsoft.azure.quantum.providers.microsoft-quantum-solution).
 
 ## Common issues
 

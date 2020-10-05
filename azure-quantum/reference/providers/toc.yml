@@ -1,4 +1,4 @@
-- name: Azure Quantum 
-  href: azure-quantum.md
+- name: Microsoft Quantum Solution
+  href: microsoft-quantum-solution.md
 - name: IonQ
   href: ionq.md
