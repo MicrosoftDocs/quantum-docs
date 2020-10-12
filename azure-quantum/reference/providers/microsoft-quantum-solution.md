@@ -48,7 +48,7 @@ the `SimulatedAnnealing` class.
 
 Billing information: **Free in Private Preview**
 
-Quota: There is no quota per solver since it's a quota at the provider level. There is a 5 hours quota per workspace, with a maximum of 10 hours per subscription.
+Monthly quota: **50 hours per month**
 
 | Parameter Name | Type     | Required | Description |
 |----------------|----------|----------|-------------|
@@ -93,8 +93,7 @@ class.
 
 Billing information: **Free in Private Preview**
 
-Quota: There is no quota per solver since it's a quota at the provider level. There is a 5 hours quota per workspace, with a maximum of 10 hours per subscription.
-
+Monthly quota: **50 hours per month**
 
 | Parameter Name | Type     | Required | Description |
 |----------------|----------|----------|-------------|
@@ -136,8 +135,7 @@ the `Tabu` class.
 
 Billing information: **Free in Private Preview**
 
-Quota: There is no quota per solver since it's a quota at the provider level. There is a 5 hours quota per workspace, with a maximum of 10 hours per subscription.
-
+Monthly quota: **50 hours per month**
 
 | Parameter Name | Type     | Required | Description |
 |----------------|----------|----------|-------------|
@@ -157,7 +155,7 @@ below parameters when instantiating the `Tabu` class.
 
 Billing information: **Free in Private Preview**
 
-Quota: There is no quota per solver since it's a quota at the provider level. There is a 5 hours quota per workspace, with a maximum of 10 hours per subscription.
+Monthly quota: **50 hours per month**
 
 | Parameter Name | Type        | Required | Description |
 |----------------|-------------|----------|-------------|
