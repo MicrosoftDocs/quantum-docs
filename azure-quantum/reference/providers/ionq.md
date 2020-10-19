@@ -17,6 +17,8 @@ Azure Quantum ecosystem.
 - Publisher: [Microsoft](https://microsoft.com)
 - Provider ID: `ionq`
 
+Billing information: **Free in Private Preview** 
+
 ## Targets
 
 The IonQ provider makes the following targets available:
@@ -35,10 +37,6 @@ measurements to control the run flow. For more information, see [Targets in Azur
 - Data Format: ``
 - Target ID: `ionq.qpu`
 
-Billing information: **Free in Private Preview**
-
-Monthly quota: **50 hours per month**
-
 ### IonQ quantum simulator
 
 GPU-accelerated idealized simulator using the same gates IonQ provides on its
@@ -47,7 +45,3 @@ quantum devices.
 - Job type: `Q# Quantum Application`
 - Data Format: ``
 - Target ID: `ionq.simulator`
-
-Billing information: **Free in Private Preview**
-
-Monthly quota: **50 hours per month**
