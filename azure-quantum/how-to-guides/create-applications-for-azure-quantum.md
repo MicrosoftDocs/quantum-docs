@@ -80,7 +80,7 @@ to control the computation flow with an `if` statement.
 Presently, these No Control Flow targets are available for Azure Quantum:
 
 - **Provider:** IonQ
-  - IonQ simulator (`ìonq.simulator`)
+  - IonQ simulator (`ionq.simulator`)
   - IonQ QPU: (`ionq.qpu`)
 
 ### Create applications for IonQ targets
@@ -90,8 +90,6 @@ Follow these steps in this section to create an application to run in IonQ targe
 #### Prerequisites
 
 - Install the [QDK](xref:microsoft.quantum.install.standalone).
-- Install the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
-- Install the [necessary utilities to use Azure Quantum](xref:microsoft.azure.quantum.setup.cli) (includes the `quantum` extension for the Azure CLI).
 - A Quantum Workspace with IonQ listed as a provider. To create a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.azure.quantum.workspaces-portal).
 
 #### Steps 
@@ -129,10 +127,13 @@ Follow these steps in this section to create an application to run in IonQ targe
      to estimate what resources your Q# program requires to run. You invoke the resources estimator with the command: `dotnet run --simulator
      ResourcesEstimator`.
 1. Once your Q# program is ready, submit the job to Azure Quantum
-   using the command: `az quantum job submit --target-id ionq.qpu` (or
-   `ionq.simulator` to use the simulator).
+   using your preferred environment by using the target ID `ionq.qpu` for the QPU and `ionq.simulator` for the simulator.
 
-For more information on how to submit jobs to Azure Quantum, see [Submit jobs to Azure Quantum using the Azure CLI](xref:microsoft.azure.quantum.submit-jobs.azcli).
+For more information on how to submit jobs to Azure Quantum, see:
+
+- [Submit jobs to Azure Quantum using the Azure CLI](xref:microsoft.azure.quantum.submit-jobs.azcli).
+- [Submit jobs to Azure Quantum using Python](xref:microsoft.azure.quantum.submit-jobs.python).
+- [Submit jobs to Azure Quantum using Q# Jupyter Notebooks](xref:microsoft.azure.quantum.submit-jobs.jupyter)
 
 ## Create and run applications for Basic Measurement Feedback targets
 
@@ -146,5 +147,5 @@ however, we are planning to make some available during the Limited Review.
 
 ## Next steps
 
-- Now that you know how to create Q# applications, you can learn more detalis about [how to submit jobs to Azure Quantum](xref:xref:microsoft.azure.quantum.submit-jobs.azcli). 
+- Now that you know how to create Q# applications, you can learn more detalis about [how to submit jobs to Azure Quantum](xref:microsoft.azure.quantum.submit-jobs.azcli). 
 - You can also  try the different [samples](https://github.com/MicrosoftDocs/quantum-docs-private/tree/feature/onboarding-azure-quantum/azure-quantum/samples) we have available or try to submit your own projects.
