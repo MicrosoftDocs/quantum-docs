@@ -5,7 +5,7 @@ author: danielstocker
 ms.author: dasto
 ms.date: 10/27/2020
 ms.topic: article
-uid: microsoft.azure.quantum.providers.ionq.ionq-support
+uid: microsoft.azure.quantum.providers.ionq.support
 ---
 
 # Support Policy for IonQ in Azure Quantum
