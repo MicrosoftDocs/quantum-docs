@@ -19,6 +19,3 @@ The following reference documentation is available:
 - Python SDK
   - [Azure.Quantum](xref:microsoft.azure.quantum.reference.python-sdk.azure.quantum)
   - [Azure.Quantum.Optimization](xref:microsoft.azure.quantum.reference.python-sdk.azure.quantum.optimization)
-
-- Support Policy
-  - [Support Policy for IonQ in Azure Quantum](xref:microsoft.azure.quantum.reference.support.ionq-support)
