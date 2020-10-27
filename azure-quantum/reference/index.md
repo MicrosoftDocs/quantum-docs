@@ -14,7 +14,7 @@ The following reference documentation is available:
 
 - Providers
   - [Microsoft Quantum Solution](xref:microsoft.azure.quantum.providers.microsoft-quantum-solution) by Microsoft
-  - [IonQ](xref:microsoft.azure.quantum.providers.ionq)
+  - [IonQ](xref:microsoft.azure.quantum.providers.ionq.ionq)
 
 - Python SDK
   - [Azure.Quantum](xref:microsoft.azure.quantum.reference.python-sdk.azure.quantum)
