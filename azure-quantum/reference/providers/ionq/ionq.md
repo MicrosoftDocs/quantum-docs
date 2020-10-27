@@ -1,11 +1,11 @@
 ---
-title: IonQ provider 
+title: IonQ provider
 description: This document provides the technical details of the IonQ provider
 author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: article
-uid: microsoft.azure.quantum.providers.ionq
+uid: microsoft.azure.quantum.providers.ionq.ionq
 ---
 
 # IonQ provider
@@ -23,8 +23,10 @@ Billing information: **Free in Private Preview**
 
 The IonQ provider makes the following targets available:
 
-- [QPU: Trapped ion quantum device](#ionq-trapped-ion-quantum-device)
-- [Simulator: IonQ quantum simulator](#ionq-quantum-simulator)
+- [IonQ provider](#ionq-provider)
+  - [Targets](#targets)
+    - [IonQ trapped ion quantum device](#ionq-trapped-ion-quantum-device)
+    - [IonQ quantum simulator](#ionq-quantum-simulator)
 
 ### IonQ trapped ion quantum device
 
