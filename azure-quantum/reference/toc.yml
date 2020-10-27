@@ -4,5 +4,3 @@
   href: providers/toc.yml
 - name: Python-SDK
   href: python-sdk/toc.yml
-- name: Support
-  href: support/toc.yml
