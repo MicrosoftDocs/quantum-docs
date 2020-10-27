@@ -5,7 +5,7 @@ author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: article
-uid: microsoft.azure.quantum.providers.ionq.ionq
+uid: microsoft.azure.quantum.providers.ionq
 ---
 
 # IonQ provider
