@@ -1,4 +1,4 @@
 - name: Microsoft Quantum Solution
   href: microsoft-quantum-solution.md
 - name: IonQ
-  href: ionq.md
+  href: ionq/toc.yml
