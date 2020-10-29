@@ -76,19 +76,13 @@ the different providers of your Azure Quantum Workspace.
 
       Provider    Target-id                                       Status     Average Queue Time
    ----------  ----------------------------------------------  ---------  --------------------
-   Microsoft   p2                                              Available  0
-   Microsoft   p3                                              Available  0
-   Microsoft   s2                                              Available  0
-   Microsoft   s3                                              Available  0
-   Microsoft   a_s                                             Available  0
-   Microsoft   a_p                                             Available  0
    Microsoft   microsoft.paralleltempering-parameterfree.cpu   Available  0
    Microsoft   microsoft.paralleltempering.cpu                 Available  0
    Microsoft   microsoft.simulatedannealing-parameterfree.cpu  Available  0
    Microsoft   microsoft.simulatedannealing.cpu                Available  0
    Microsoft   microsoft.paralleltempering.fpga                Available  0
    Microsoft   microsoft.simulatedannealing.fpga               Available  0
-   ionq        ionq.qpu                                        Available  135
+   ionq        ionq.qpu                                        Available  0
    ionq        ionq.simulator                                  Available  0
    ```
 

@@ -1,2 +1,4 @@
 - name: Optimization quickstart
   href: optimization-quickstart.md
+- name: IonQ quickstart
+  href: ionq-quickstart.md
