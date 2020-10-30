@@ -10,14 +10,10 @@ uid: microsoft.azure.quantum.providers.ionq
 
 # IonQ provider
 
-IonQ is a quantum computing hardware and software company. They are developing a
-general-purpose trapped ion quantum computer and are a provider of the
-Azure Quantum ecosystem.
+IonQ’s quantum computers perform calculations by manipulating the hyperfine energy states of Ytterbium ions with lasers. Atoms are nature's qubits — every qubit is identical within and between programs. Logical operations can also be performed on any arbitrary pair of qubits, enabling complex quantum programs unhindered by physical connectivity. Want to learn more? Read IonQ’s [trapped ion quantum computer technology overview](https://ionq.com/technology).
 
-- Publisher: [Microsoft](https://microsoft.com)
+- Publisher: [IonQ](https://ionq.com)
 - Provider ID: `ionq`
-
-Billing information: **Free in Private Preview** 
 
 ## Targets
 
@@ -25,25 +21,54 @@ The IonQ provider makes the following targets available:
 
 - [IonQ provider](#ionq-provider)
   - [Targets](#targets)
-    - [IonQ trapped ion quantum device](#ionq-trapped-ion-quantum-device)
-    - [IonQ quantum simulator](#ionq-quantum-simulator)
+    - [IonQ Quantum Simulator](#quantum-simulator)
+    - [IonQ Quantum Computer](#quantum-computer)
 
-### IonQ trapped ion quantum device
+## Quantum Simulator
+GPU-accelerated idealized simulator supporting up to 29 qubits, using the same set of gates IonQ provide on its quantum hardware—a great place to preflight jobs before running them on an actual quantum computer.
 
-IonQ’s QPU trapped ion quantum computers perform calculations by manipulating
-charged atoms held in a vacuum with lasers. This target operates in a **No
-control flow** profile, meaning that it can't use results from qubit
-measurements to control the run flow. For more information, see [Targets in Azure Quantum](xref:microsoft.azure.quantum.concepts.targets).
-
-- Job type: `Q# Quantum Application`
-- Data Format: ``
-- Target ID: `ionq.qpu`
-
-### IonQ quantum simulator
-
-GPU-accelerated idealized simulator using the same gates IonQ provides on its
-quantum devices.
-
-- Job type: `Q# Quantum Application`
-- Data Format: ``
+- Job type: `Simulation`
+- Data Format: `ionq.circuit.v1`
 - Target ID: `ionq.simulator`
+- Q# Profile: `No Control Flow`
+
+## Quantum Computer
+Trapped ion quantum computer. Dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair.
+
+- Job type: `Quantum Program`
+- Data Format: `ionq.circuit.v1`
+- Target ID: `ionq.qpu`
+- Q# Profile: `No Control Flow`
+
+| Parameter Name | Type     | Required | Description |
+|----------------|----------|----------|-------------|
+| `shots`   | int    | No | Number of experimental shots. Defaults to 500. |
+
+IonQ charges per **gate-shot**: the number of gates in your circuit, multiplied by the number of shots.
+
+Multi-controlled two-qubit gates are billed as _(6N - 6)_ two-qubit gates, where N is the number of qubits involved in the gate (i.e., a NOT gate with three controls would be billed as _(6 * 4 - 6)_ or 8 two-qubit gates).
+
+### System timing
+
+| Measure | Average time duration (µs) |
+|---------|----------------------------|
+| T1 | >10^7 |
+| T2 | 200,000 | 
+| Single-qubit gate | 10 | 
+| Two-qubit gate | 210 | 
+| Readout | 100 | 
+| Register reset | 25 | 
+| Coherence time / gate duration | 1667 | 
+
+### System fidelity
+
+| Operation | Average fidelity |
+|-----------|------------------|
+| Single-qubit gate | 99.35% (SPAM corrected) |
+| Two-qubit gate | 96.02% (not SPAM corrected) |
+| SPAM | 99.3 - 99.8% |
+| Geometric mean op | 98.34% |
+
+## IonQ Best Practices & Connectivity Graph
+
+To see recommended best practices for the IonQ QPU, we recommend reading their [best practices](https://ionq.com/best-practices).
