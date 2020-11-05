@@ -30,24 +30,27 @@ install it from the private Azure Quantum feed:
 
 ## Connecting to a Quantum Workspace
 
-A `Workspace` represents the Quantum Workspace you [previously created](xref:microsoft.azure.quantum.workspaces-portal) and is the main interface for interacting with the service.
+A `Workspace` represents the Quantum Workspace you [previously created](xref:microsoft.azure.quantum.workspaces-portal) and is the main interface for interacting with the service. The value for `resource_id` can be found on the Azure Portal page for the [Quantum Workspace you created](xref:microsoft.azure.quantum.workspaces-portal).
 
 ```python
 from azure.quantum import Workspace
 
 workspace = Workspace(
-    subscription_id = "", # The Subscription ID for your Azure Subscription
-    resource_group  = "", # The resource group your Quantum Workspace is deployed in
-    name            = ""  # The name of the Quantum Workspace
+    resource_id = "" # The Resource ID for your Azure Quantum Workspace
 )
 workspace.login()
 ```
 
-The values for `subscription_id`, `resource_group`, and `name` are from the [Quantum Workspace you created](xref:microsoft.azure.quantum.workspaces-portal).
-You may get these values for an existing workspace by running `az quantum workspace show`.
+> [!TIP]
+> Alternatively, you can create the `Workspace` using `subscription_id`, `resource_group`, and `name`. These values may be obtained by running `az quantum workspace show`.
+>
+>      workspace = Workspace(
+>          subscription_id = "", # The Subscription ID for your Azure Subscription
+>          resource_group  = "", # The resource group your Quantum Workspace is deployed in
+>          name            = ""  # The name of the Quantum Workspace
+>      )
 
-
-When you call the command `login`, the SDK will see the following displayed in your console:
+When you call the command `workspace.login()`, the SDK will see the following displayed in your console:
 
 ```output
 To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code [RANDOM-CODE] to authenticate.

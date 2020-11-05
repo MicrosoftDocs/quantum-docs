@@ -63,7 +63,7 @@ To use Azure Quantum Optimization services you need a Azure Quantum workspace wi
 
 ## Create a `Workspace` object in your Python code and log in
 
-Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to the Azure Quantum Optimization service.
+Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to the Azure Quantum Optimization service. The value for `resource_id` can be found on the Azure Portal page for the [Quantum Workspace you created](xref:microsoft.azure.quantum.workspaces-portal).
 
 Once the `Workspace` object is created, you log in using the `workspace.login()` command.
 
@@ -72,11 +72,8 @@ from azure.quantum import Workspace
 
 # Copy the settings for your workspace below
 workspace = Workspace(
-    subscription_id=    "", # add your subscription id
-    resource_group=     "", # add the name of your resource group
-    name=               "", # add the name of the Azure Quantum workspace from Step 2
+    resource_id = ""   # add the Resource ID of the Azure Quantum workspace you created
 )
-
 workspace.login()
 ```
 
