@@ -2,8 +2,12 @@ expanded: true
 items:
 - name: Prepare your environment to use Azure Quantum 
   href: prepare-your-environment.md
-- name: Create quantum workspaces with the Azure Portal 
-  href: create-quantum-workspaces-with-the-azure-portal.md
+- name: Manage quantum workspaces
+  items:
+  - name: Create quantum workspaces with the Azure Portal 
+    href: create-quantum-workspaces-with-the-azure-portal.md
+  - name: Manage quantum workspaces with the Azure CLI 
+    href: manage-quantum-workspaces-with-the-azure-cli.md
 - name: Quantum Computing
   items:
   - name: Submit jobs with the Azure CLI
