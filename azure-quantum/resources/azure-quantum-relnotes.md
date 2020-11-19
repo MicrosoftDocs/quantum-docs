@@ -10,6 +10,8 @@ uid: microsoft.azure.quantum.relnotes
 
 # Azure Quantum Release Notes
 
+## 2020-11-23: Added `create` and `delete` commands for `az quantum workspace` group? 
+
 ## 2020-10-26: Adapted QCI translation to the latest spec 
 - Added support for latest conditional syntax, reset patterns, and gate instructions.
 
