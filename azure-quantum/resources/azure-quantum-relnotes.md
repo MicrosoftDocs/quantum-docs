@@ -10,13 +10,16 @@ uid: microsoft.azure.quantum.relnotes
 
 # Azure Quantum Release Notes
 
+## 2020-11-23: Added `create` and `delete` commands for `az quantum workspace` group
+- The create command is currently limited because it doesn't add providers to a new quantum workspace, and those need to be added from the portal. The limitation will be removed in a future update.
+
 ## 2020-10-26: Adapted QCI translation to the latest spec 
 - Added support for latest conditional syntax, reset patterns, and gate instructions.
 
 ## 2020-10-26: Capability verification for references
 Each error is linked to a piece of source code, so that users can adapt their code in a way that eliminates the issue without significant effort.
 
-## 2020-10-26: Added `create` and `delete` commands for `az quantum workspace` group
+## 2020-10-26: Added `delete` commands for `az quantum workspace` group
 
 ## 2020-10-26: Improved Python SDK `Workspace` constructor 
 The constructor of the `Workspace` in the Python SDK now has an option to take the resource ID of the Azure Quantum workspace, which is shown on the workspace page in the Azure Portal, rather than requiring the subscription ID, resource group name, and workspace name.
@@ -56,4 +59,4 @@ A highly requested feature – the ability to see the parameters chosen by param
 }
 ```
 
-No SDK updates are needed to take advantage of this update.
+No SDK updates are needed to take advantage of this update. 
