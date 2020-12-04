@@ -44,10 +44,6 @@ Trapped ion quantum computer. Dynamically reconfigurable in software to use up t
 |----------------|----------|----------|-------------|
 | `shots`   | int    | No | Number of experimental shots. Defaults to 500. |
 
-IonQ charges per **gate-shot**: the number of gates in your circuit, multiplied by the number of shots.
-
-Multi-controlled two-qubit gates are billed as _(6N - 6)_ two-qubit gates, where N is the number of qubits involved in the gate (i.e., a NOT gate with three controls would be billed as _(6 * 4 - 6)_ or 8 two-qubit gates).
-
 ### System timing
 
 | Measure | Average time duration (µs) |
@@ -68,6 +64,17 @@ Multi-controlled two-qubit gates are billed as _(6N - 6)_ two-qubit gates, where
 | Two-qubit gate | 96.02% (not SPAM corrected) |
 | SPAM | 99.3 - 99.8% |
 | Geometric mean op | 98.34% |
+
+## Pricing
+
+IonQ charges per **gate-shot**: the number of gates in your circuit, multiplied by the number of shots.
+
+Multi-controlled two-qubit gates are billed as _(6N - 6)_ two-qubit gates, where N is the number of qubits involved in the gate (i.e., a NOT gate with three controls would be billed as _(6 * 4 - 6)_ or 8 two-qubit gates).
+
+The prices are variable during the Limited Preview. To see the pricing options:
+
+1. Go to the Azure Portal and create a new workspace.
+1. In the **Providers** pane, click in the **Add** button of the IonQ tile and in the description you will find the current pricing options.
 
 ## IonQ Best Practices & Connectivity Graph
 
