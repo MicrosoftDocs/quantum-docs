@@ -123,7 +123,7 @@ synchronously wait for it to be solved. You'll see output like the following in
 your terminal:
 
 ```
-> {'energy': -32.0, 'solution': [1, 1, -1, 1]}
+> {'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0}
 ```
 
 ## Next Steps
