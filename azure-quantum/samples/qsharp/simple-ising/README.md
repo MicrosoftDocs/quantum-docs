@@ -1,8 +1,8 @@
-﻿---
+---
 title: Ising Model Simulation
 author: geduardo
 description: Sample for Ising model simulation in Azure Quantum.
-ms.author: v-edsanc@microsoft.com
+ms.author: v-edsanc
 ms.date: 06/25/2020
 ms.topic: article
 ---
