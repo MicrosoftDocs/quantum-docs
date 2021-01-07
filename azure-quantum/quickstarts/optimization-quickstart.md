@@ -16,6 +16,50 @@ Learn how to use Azure Quantum to solve a simple binary optimization problem.
 - To complete this tutorial you need an Azure subscription. If you don't have
   an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
 
+## Create a quantum workspace
+
+You use the Azure Quantum service by adding a **Quantum Workspace** resource to your Azure subscription in the Azure portal. A Quantum Workspace resource, or Workspace for short, is a collection of assets associated with running quantum or optimization applications. Because this is a private preview of Azure Quantum, the service is currently hidden from the view of the general public.
+
+To open the Azure Portal, go to https://aka.ms/quantum-workspaces and then follow these steps:
+
+> Note: This is a special link that allows you to create a Quantum Workspace in the Azure Portal. Without using the link you will be able to see existing workspaces but not create new ones.
+
+1. Click **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
+
+   ![Tile for the Azure Quantum (preview)
+   service](../media/azure-quantum-preview-search.png)
+
+1. Click **Azure Quantum (preview)** and then click  **Create**. This opens a form to create a Quantum Workspace.
+
+   ![Create resource for the Azure Quantum (preview)
+   service](../media/azure-quantum-preview-create.png)
+
+1. Fill out the details of your Workspace:
+   - **Subscription:** The subscription that you want to associate with this
+     Workspace. 
+   - **Resource group:** The resource group that you want to assign this Workspace to.
+   - **Name:** The name of your Quantum Workspace.
+   - **Region:** The region for the Workspace. For this private preview, select  **(US) West US**.
+   - **Storage Account**: The Azure storage account to store your jobs and results. If you don't have an existing storage account, click **Create a new storage account** and complete the necessary fields. For this preview, we recommend using the default values.
+
+   ![Properties for the Azure Quantum Workspace](../media/azure-quantum-preview-properties.png)
+
+
+   > [!NOTE]
+   > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](https://docs.microsoft.com/learn/modules/control-and-organize-with-azure-resource-manager/).
+
+1. After completing the information, click the **Providers** tab to add providers to your Workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
+
+1. Ensure the Microsoft Quantum Solution provider is enabled (it is by default), then click **Review + create**.
+
+1. Review the setting you've selected and if everything is correct, click on **Create** to create your Quantum Workspace.
+
+   ![Review and create the Workspace](../media/azure-quantum-preview-terms.png)
+
+> [!NOTE] 
+> While we are not charging for usage of Azure Quantum during the private
+> preview, your jobs will be uploaded to the Azure storage account created above and will be subject to storage charges.
+
 ## Define your optimization problem
 
 In this guide, you will solve a simple optimization example to get started with the optimization services of Azure Quantum. This quickstart is based on the [ship loading sample](https://github.com/microsoftdocs/quantum-docs-private/blob/feature/onboarding-azure-quantum/azure-quantum/samples/shipping-sample/). 
@@ -48,18 +92,6 @@ installed the Optimization Python SDK already, follow these steps:
    ```bash
    pip install --upgrade azure-quantum --pre
    ```
-
-## Create a quantum workspace
-
-To use Azure Quantum Optimization services you need a Azure Quantum workspace with access to the
-**Microsoft Quantum Solution** provider. If you don't have one, you can create one following our guide to [Create an Azure Quantum workspace](xref:microsoft.azure.quantum.workspaces-portal).
-
-> [!NOTE]
-> Make sure you add a 'Microsoft Quantum Solution' Optimization provider
-> to the workspace. You can add one to an already existing workspace by
-> navigating to the **Providers** tab for your workspace in the Azure portal, as
-> shown in the screenshot below: ![Adding providers in the
-> portal](../media/add-provider.png)
 
 ## Create a `Workspace` object in your Python code and log in
 
