@@ -103,7 +103,7 @@ Next, we'll open up Visual Studio Code and get create a Q# Project.
 1. Start by opening the `QuantumRNG.csproj` file and adding the `ExecutionTarget` property, which will give you design-time feedback on the compatibility of your program for IonQ's hardware.
 
 ```xml
-<Project Sdk="Microsoft.Quantum.Sdk/0.12.20100504">
+<Project Sdk="Microsoft.Quantum.Sdk/0.14.2011120240">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -257,7 +257,7 @@ The histogram you receive may be slightly different than the one above, but you 
 
 ## Next steps
 
-This quickstart guide demonstrated how to get started running Q# programs against IonQ's simulator and QPU.
+This quickstart guide demonstrated how to get started running Q# programs against IonQ's simulator and QPU. For more information on the IonQ offering, please see the [IonQ Provider](xref:microsoft.azure.quantum.providers.ionq).
 
 We recommend you continue your journey by learning more about the [different types of targets in Azure Quantum](xref:microsoft.azure.quantum.concepts.targets), which will dictate which Q# programs you may run against a given provider. You might also be interested in learning how to submit Q# jobs with [Jupyter Notebooks](xref:microsoft.azure.quantum.submit-jobs.jupyter) or with [Python](xref:microsoft.azure.quantum.submit-jobs.python).
 
