@@ -1,4 +1,6 @@
 - name: Microsoft Quantum Solution
   href: microsoft-quantum-solution.md
+- name: Honeywell
+  href: honeywell/toc.yml
 - name: IonQ
   href: ionq/toc.yml
