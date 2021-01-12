@@ -2,3 +2,5 @@
   href: optimization-quickstart.md
 - name: IonQ quickstart
   href: ionq-quickstart.md
+- name: 1QBit quickstart
+  href: 1qbit-quickstart.md
