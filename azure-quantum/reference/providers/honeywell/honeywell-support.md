@@ -21,7 +21,7 @@ There are however some situations, where the Azure Support team will need to red
 #### Q: What is the support policy for using Honeywell offerings through Azure Quantum?
 
 Microsoft will provide support for the Azure Platform and the Azure Quantum service only. Support for Honeywell hardware, simulators, and other products and targets will be provided directly by Honeywell. For more information about Azure support, [see Azure support plans](https://azure.microsoft.com/support/plans/).
-For information about Honeywell support, please [visit the Honeywell Support website](TBD).
+For information about Honeywell support, please [visit the Honeywell Support website](TODO).
 
 #### Q: What happens if I raise a support issue with the Azure support team and it turns out that a third party provider (like Honeywell) needs to troubleshoot the issue further?
 

@@ -21,14 +21,13 @@ The following targets are available from this provider:
 - [Honeywell System Model H1](#Honeywell-System-Model-H1)
 
 ## API Validator
-Tool to verify proper syntax and compilation completion.  Full stack is exercised with the exception of the actual quantum operations.  Assuming no bugs, all zeros are returned in the proper data structure.
+Tool to verify proper syntax and compilation completion. Full stack is exercised with the exception of the actual quantum operations. Assuming no bugs, all zeros are returned in the proper data structure.
 
 - Job type: `Simulation`
 - Data Format: `honeywell.openqasm.v1`
 - Target ID: `honeywell.hqs-lt-1.0-apival`
 
-Billing information:
-    No charge for usage. 
+Billing information:  No charge for usage. 
 
 ## Honeywell System Model H0
 Honeywell Quantum Solutions' Quantum Computer, System Model H0
@@ -39,7 +38,8 @@ Honeywell Quantum Solutions' Quantum Computer, System Model H0
 
 Billing information:
 
-> ⚠⚠⚠ TBD Need a Link to billing information
+- Priced by Honeywell Quantum Credits (see below).
+- Fee per hour for reserved (exclusive use) time.
 
 | Parameter Name | Type     | Required | Description |
 |----------------|----------|----------|-------------|
@@ -53,18 +53,17 @@ HQC = 5 + C(N_{1q} + 10 N_{2q} + 5 N_m)/5000
 $$
 
 where:
-- $N_{1q}$ is the number of one-qubit operations in a circuit  
+- $N_{1q}$ is the number of one-qubit operations in a circuit. 
 - $N_{2q}$ is the number of native two-qubit operations in a circuit. Native gate is equivalent to CNOT up to several one-qubit gates.  
 - $N_{m}$ is the number of state preparation and measurement (SPAM) operations in a circuit including initial implicit state preparation and any intermediate and final measurements and state resets.  
-- $C$ is the shot count. 
 
 ### Technical Specifications
 
 - Trapped-ion based quantum computer with laser based gates
 - QCCD architecture with linear trap and two parallel operation zones
 - 6 physical qubits, fully connected  
-- Typical limiting fidelity >99\.2% (two-qubit fidelity)  
-- Coherence Time (T2) &geq;2 sec
+- Typical limiting fidelity >99.2% (two-qubit fidelity)  
+- Coherence Time (T2) ~2 sec
 - Ability to perform mid-circuit measurement and qubit reuse
 - High-resolution rotations (> $\pi$/500)
 - Native Gate set: 
@@ -80,19 +79,21 @@ Honeywell Quantum Solutions' Quantum Computer, System Model H1
 
 Billing information:
 
-> ⚠⚠⚠ TBD Need a Link to billing information
-> ⚠⚠⚠ TBD Need a Link to request access
+- Standard Subscription:  
+Subscription plan with two 4-hour sessions of dedicated access, with unrestricted, queued access for the remainder of the month, based on system availability.  
+- Premium Subscription:  
+Subscription plan with four 4-hour sessions of dedicated access, with unrestricted, queued access for the remainder of the month, based on system availability.  
 
 ### Technical Specifications
 - Trapped-ion based quantum computer with laser based gates
 - QCCD architecture with linear trap and three parallel operational zones
 - 10 physical qubits, fully connected
 - Typical limiting fidelity >99.5% (two-qubit fidelity)
-- Coherence Time (T2) >2 sec
+- Coherence Time (T2) ~3 sec
 - Ability to perform mid-circuit measurement and qubit reuse
 - High-resolution rotations (> $\pi$/500)
 - Native Gate set: 
     - single-qubit rotations
     - two-qubit ZZ-gates   
 
-More details available under NDA.
+More details available under NDA
