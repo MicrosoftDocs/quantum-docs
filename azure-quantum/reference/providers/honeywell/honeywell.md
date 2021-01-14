@@ -13,28 +13,30 @@ uid: microsoft.azure.quantum.providers.honeywell
 - Publisher: [Honeywell](https://www.honeywell.com)
 - Provider ID: `honeywell`
 
-# Targets
+## Targets
 The following targets are available from this provider:
 
 - [API Validator](#API-Validator)
 - [Honeywell System Model H0](#Honeywell-System-Model-H0)
 - [Honeywell System Model H1](#Honeywell-System-Model-H1)
 
-## API Validator
+### API Validator
 Tool to verify proper syntax and compilation completion. Full stack is exercised with the exception of the actual quantum operations. Assuming no bugs, all zeros are returned in the proper data structure.
 
 - Job type: `Simulation`
 - Data Format: `honeywell.openqasm.v1`
 - Target ID: `honeywell.hqs-lt-1.0-apival`
+- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.azure.quantum.concepts.targets)
 
 Billing information:  No charge for usage. 
 
-## Honeywell System Model H0
+### Honeywell System Model H0
 Honeywell Quantum Solutions' Quantum Computer, System Model H0
 
 - Job type: `Quantum Program`
 - Data Format: `honeywell.openqasm.v1`
 - Target ID: `honeywell.hqs-lt-1.0`
+- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.azure.quantum.concepts.targets)
 
 Billing information:
 
@@ -57,7 +59,7 @@ where:
 - $N_{2q}$ is the number of native two-qubit operations in a circuit. Native gate is equivalent to CNOT up to several one-qubit gates.  
 - $N_{m}$ is the number of state preparation and measurement (SPAM) operations in a circuit including initial implicit state preparation and any intermediate and final measurements and state resets.  
 
-### Technical Specifications
+#### Technical Specifications
 
 - Trapped-ion based quantum computer with laser based gates
 - QCCD architecture with linear trap and two parallel operation zones
@@ -70,12 +72,13 @@ where:
     - single-qubit rotations
     - two-qubit ZZ-gates   
 
-## Honeywell System Model H1
+### Honeywell System Model H1
 Honeywell Quantum Solutions' Quantum Computer, System Model H1   
 
 - Job type: `Quantum Program`
 - Data Format: `honeywell.openqasm.v1`
 - Target ID: `honeywell.hqs-lt-s1`
+- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.azure.quantum.concepts.targets)
 
 Billing information:
 
@@ -84,7 +87,7 @@ Subscription plan with two 4-hour sessions of dedicated access, with unrestricte
 - Premium Subscription:  
 Subscription plan with four 4-hour sessions of dedicated access, with unrestricted, queued access for the remainder of the month, based on system availability.  
 
-### Technical Specifications
+#### Technical Specifications
 - Trapped-ion based quantum computer with laser based gates
 - QCCD architecture with linear trap and three parallel operational zones
 - 10 physical qubits, fully connected

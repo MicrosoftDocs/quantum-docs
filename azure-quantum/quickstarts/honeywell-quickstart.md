@@ -78,7 +78,7 @@ To open the Azure Portal, go to https://aka.ms/quantum-workspaces and then follo
 1. Review the settings and approve the *Terms and Conditions of Use* of
    the selected providers. If everything is correct, click on **Create** to create your Quantum Workspace.
 
-   ![Review and create the Workspace](../media/azure-quantum-preview-terms.png)
+   ![Review and create the Workspace](../media/azure-quantum-preview-terms-honeywell.png)
 
 > [!NOTE] 
 > While we are not charging for usage of Azure Quantum during the private
