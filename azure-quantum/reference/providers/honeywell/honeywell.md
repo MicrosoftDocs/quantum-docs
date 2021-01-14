@@ -16,9 +16,9 @@ uid: microsoft.azure.quantum.providers.honeywell
 ## Targets
 The following targets are available from this provider:
 
-- [API Validator](#API-Validator)
-- [Honeywell System Model H0](#Honeywell-System-Model-H0)
-- [Honeywell System Model H1](#Honeywell-System-Model-H1)
+- [API Validator](#api-validator)
+- [Honeywell System Model H0](#honeywell-system-model-h0)
+- [Honeywell System Model H1](#honeywell-system-model-h1)
 
 ### API Validator
 Tool to verify proper syntax and compilation completion. Full stack is exercised with the exception of the actual quantum operations. Assuming no bugs, all zeros are returned in the proper data structure.
@@ -82,9 +82,9 @@ Honeywell Quantum Solutions' Quantum Computer, System Model H1
 
 Billing information:
 
-- Standard Subscription:  
+- **Standard Subscription:**  
 Subscription plan with two 4-hour sessions of dedicated access, with unrestricted, queued access for the remainder of the month, based on system availability.  
-- Premium Subscription:  
+- **Premium Subscription:**  
 Subscription plan with four 4-hour sessions of dedicated access, with unrestricted, queued access for the remainder of the month, based on system availability.  
 
 #### Technical Specifications
