@@ -17,7 +17,7 @@ uid: microsoft.azure.quantum.providers.honeywell
 The following targets are available from this provider:
 
 - [API Validator](#api-validator)
-- [Honeywell System Model H0](#Honeywell-System-Model-H0)
+- [Honeywell System Model H0](#honeywell-system-model-h0)
 - [Honeywell System Model H1](#honeywell-system-model-h1)
 
 ## API Validator
