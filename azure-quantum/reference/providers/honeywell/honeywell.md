@@ -81,7 +81,7 @@ Billing information:
 
 - **Standard Subscription:**  
 Subscription plan with two 4-hour sessions of dedicated access, with unrestricted, queued access for the remainder of the month, based on system availability.  
-- Premium Subscription:  
+- **Premium Subscription:**  
 Subscription plan with four 4-hour sessions of dedicated access, with unrestricted, queued access for the remainder of the month, based on system availability.  
 
 ### Technical Specifications
