@@ -18,7 +18,7 @@ The following targets are available from this provider:
 
 - [API Validator](#api-validator)
 - [Honeywell System Model H0](#Honeywell-System-Model-H0)
-- [Honeywell System Model H1](#Honeywell-System-Model-H1)
+- [Honeywell System Model H1](#honeywell-system-model-h1)
 
 ## API Validator
 Tool to verify proper syntax and compilation completion. Full stack is exercised with the exception of the actual quantum operations. Assuming no bugs, all zeros are returned in the proper data structure.
