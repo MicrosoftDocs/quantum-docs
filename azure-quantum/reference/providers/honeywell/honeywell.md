@@ -79,7 +79,7 @@ Honeywell Quantum Solutions' Quantum Computer, System Model H1
 
 Billing information:
 
-- Standard Subscription:  
+- **Standard Subscription:**  
 Subscription plan with two 4-hour sessions of dedicated access, with unrestricted, queued access for the remainder of the month, based on system availability.  
 - Premium Subscription:  
 Subscription plan with four 4-hour sessions of dedicated access, with unrestricted, queued access for the remainder of the month, based on system availability.  
