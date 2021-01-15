@@ -21,7 +21,7 @@ There are however some situations, where the Azure Support team will need to red
 #### Q: What is the support policy for using 1QBit offerings through Azure Quantum?
 
 Microsoft will provide support for the Azure Platform and the Azure Quantum service only. Support for 1QBit hardware, simulators, and other products and targets will be provided directly by 1QBit. For more information about Azure support, [see Azure support plans](https://azure.microsoft.com/support/plans/).
-For information about 1QBit support, please [visit the 1QBit Support website](TBD).
+For information about 1QBit support, please [visit the 1QBit Support website](https://1qbit.zendesk.com/).
 
 #### Q: What happens if I raise a support issue with the Azure support team and it turns out that a third party provider (like 1QBit) needs to troubleshoot the issue further?
 

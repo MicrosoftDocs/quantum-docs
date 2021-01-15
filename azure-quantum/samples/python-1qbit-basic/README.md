@@ -2,7 +2,7 @@
 title: 1QBit Python SDK Basic Sample
 description: Sample for using the Python SDK to target 1QBit solvers
 author: mobius5150
-ms.author: mblouin@microsoft.com
+ms.author: mblouin
 ms.date: 08/19/2020
 ms.topic: article
 ---
