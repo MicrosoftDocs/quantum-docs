@@ -185,7 +185,7 @@ Next, you will submit the `Problem` instance defined to the Azure Quantum Optimi
 from azure.quantum.optimization.oneqbit import PathRelinkingSolver
 
 # Instantiate a solver instance to solve the problem
-solver = PathRelinkingSolver(workspace, timeout=100) # timeout in seconds
+solver = PathRelinkingSolver(workspace)
 
 # Optimize the problem
 result = solver.optimize(problem)
@@ -219,7 +219,7 @@ def printResultSummary(result):
 
     print(f'\nTotal weights: \n\tShip A: {shipAWeight} tonnes \n\tShip B: {shipBWeight} tonnes')
 
-printResultSummary(result)
+printResultSummary(result['solutions'][0])
 ```
 
 The output should look something like this:
