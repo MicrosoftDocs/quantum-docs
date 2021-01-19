@@ -1,15 +1,15 @@
 ---
-title: Optimization quickstart for Azure Quantum
-description: This document provides a step-by-step guide to get you started with the Azure Quantum Optimization service
-author: anraman
-ms.author: anraman
+title: 1QBit quickstart for Azure Quantum
+description: This document provides a step-by-step guide to get you started with 1QBit on Azure Quantum
+author: mblouin
+ms.author: mblouin
 ms.topic: article
-uid: microsoft.azure.quantum.qio.optimization-quickstart
+uid: microsoft.azure.quantum.qio.1qbit-quickstart
 ---
 
-# Optimization quickstart for Azure Quantum
+# 1QBit quickstart for Azure Quantum
 
-Learn how to use Azure Quantum to solve a simple binary optimization problem.
+Learn how to use 1QBit in Azure Quantum to solve complex optimization problems.
 
 ## Prerequisites
 
@@ -18,11 +18,9 @@ Learn how to use Azure Quantum to solve a simple binary optimization problem.
 
 ## Create a quantum workspace
 
-You use the Azure Quantum service by adding a **Quantum Workspace** resource to your Azure subscription in the Azure portal. A Quantum Workspace resource, or Workspace for short, is a collection of assets associated with running quantum or optimization applications. Because this is a private preview of Azure Quantum, the service is currently hidden from the view of the general public.
+You use the Azure Quantum service by adding a **Quantum Workspace** resource to your Azure subscription in the Azure portal. A Quantum Workspace resource, or Workspace for short, is a collection of assets associated with running quantum or optimization applications.
 
-To open the Azure Portal, go to https://aka.ms/quantum-workspaces and then follow these steps:
-
-> Note: This is a special link that allows you to create a Quantum Workspace in the Azure Portal. Without using the link you will be able to see existing workspaces but not create new ones.
+To open the Azure Portal, go to https://portal.azure.com and then follow these steps:
 
 1. Click **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
 
@@ -39,18 +37,22 @@ To open the Azure Portal, go to https://aka.ms/quantum-workspaces and then follo
      Workspace. 
    - **Resource group:** The resource group that you want to assign this Workspace to.
    - **Name:** The name of your Quantum Workspace.
-   - **Region:** The region for the Workspace. For this private preview, select  **(US) West US**.
+   - **Region:** The region for the Workspace. Select  **(US) West US** or any other preferred region.
    - **Storage Account**: The Azure storage account to store your jobs and results. If you don't have an existing storage account, click **Create a new storage account** and complete the necessary fields. For this preview, we recommend using the default values.
 
    ![Properties for the Azure Quantum Workspace](../media/azure-quantum-preview-properties.png)
-
 
    > [!NOTE]
    > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](https://docs.microsoft.com/learn/modules/control-and-organize-with-azure-resource-manager/).
 
 1. After completing the information, click the **Providers** tab to add providers to your Workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
 
-1. Ensure the Microsoft Quantum Solution provider is enabled (it is by default), then click **Review + create**.
+   ![Providers for Azure Quantum](../media/azure-quantum-preview-providers.png)
+
+   > [!NOTE]
+   > By default, the Azure Quantum service adds the Microsoft Quantum Solution provider to every Workspace.
+
+1. Add at least the 1Qloud Optimization Platform provider, then click **Review + create**.
 
 1. Review the setting you've selected and if everything is correct, click on **Create** to create your Quantum Workspace.
 
@@ -90,7 +92,7 @@ installed the Optimization Python SDK already, follow these steps:
 1. Install the `azure-quantum` python package.
 
    ```bash
-   pip install --upgrade azure-quantum --pre
+   pip install --upgrade azure-quantum
    ```
 
 ## Create a `Workspace` object in your Python code and log in
@@ -180,21 +182,18 @@ Above, you can see that you have provided the following parameters:
 Next, you will submit the `Problem` instance defined to the Azure Quantum Optimization service.
 
 ```python
-from azure.quantum.optimization import ParallelTempering
+from azure.quantum.optimization.oneqbit import PathRelinkingSolver
 
 # Instantiate a solver instance to solve the problem
-solver = ParallelTempering(workspace, timeout=100) # timeout in seconds
+solver = PathRelinkingSolver(workspace)
 
 # Optimize the problem
 result = solver.optimize(problem)
 ```
 
-Here you created an instance of a `ParallelTempering` solver for the problem. You could have chosen other Azure Quantum Optimization solvers (e.g. `SimulatedAnnealing`) without needing to change more lines of code. The type `Problem` is the common parameter for all the solvers of Azure Quantum.
+Here you created an instance of a `PathRelinkingSolver` solver for the problem. You could also have chosen other 1QBit solvers (e.g. `TabuSearch`) without needing to change more lines of code. The type `Problem` is the common parameter for all the solvers of Azure Quantum.
 
 You then call `solver.optimize()` and supply the `problem` as the argument. This submits the problem synchronously to Azure Quantum and returns a Python dictionary of values to save the `result` variable for parsing in the next step.
-
-> [!NOTE]
-> You can also submit problems asynchronously. For more info, you can go to the guide for [advanced usage of the Optimizaiton Python SDK](xref:microsoft.azure.quantum.qio.python-sdk.advanced#asynchronous-problem-solving).
 
 ## Results readout
 
@@ -220,7 +219,7 @@ def printResultSummary(result):
 
     print(f'\nTotal weights: \n\tShip A: {shipAWeight} tonnes \n\tShip B: {shipBWeight} tonnes')
 
-printResultSummary(result)
+printResultSummary(result['solutions'][0])
 ```
 
 The output should look something like this:
@@ -244,7 +243,7 @@ Total weights:
 
 ## Next steps
 
-During this quick-start guide, you have seen an end-to-end example of how to take a mathematical cost function, represent it in code, submit it to the Azure Quantum Optimization service and parse the results.
+During this quick-start guide, you have seen an end-to-end example of how to take a mathematical cost function, represent it in code, submit it to the Azure Quantum Optimization service and parse the results. To learn more about the 1QBit offering in Azure Quantum, please see the [1QBit Provider documentation](xref:microsoft.azure.quantum.providers.1qbit).
 
 For more detailed information on the shipping optimization problem please refer to the following resources:
 
