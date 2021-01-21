@@ -39,6 +39,18 @@
       "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
       "branch": "master",
       "branch_mapping": {}
+    },
+    {
+      "path_to_root": "articles/quantum",
+      "url": "https://github.com/microsoft/quantum",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "articles/includes/qsharp-language",
+      "url": "https://github.com/microsoft/qsharp-language",
+      "branch": "⭐Docs",
+      "branch_mapping": {}  
     }
   ],
   "branch_target_mapping": {
