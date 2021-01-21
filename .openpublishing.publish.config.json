@@ -2,7 +2,7 @@
   "docsets_to_publish": [
     {
       "docset_name": "azure-quantum",
-      "build_source_folder": "azure-quantum",
+      "build_source_folder": "articles",
       "build_output_subfolder": "azure-quantum",
       "locale": "en-us",
       "monikers": [],
