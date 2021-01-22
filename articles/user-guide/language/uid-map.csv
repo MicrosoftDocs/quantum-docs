@@ -5,11 +5,11 @@
 1_ProgramStructure/5_Attributes.md,microsoft.quantum.qsharp.attributes
 1_ProgramStructure/6_AccessModifiers.md,microsoft.quantum.qsharp.accessmodifiers
 1_ProgramStructure/7_Comments.md,microsoft.quantum.qsharp.comments
-1_ProgramStructure/README.md,microsoft.quantum.qsharp.programstructure-index
+1_ProgramStructure/README.md,microsoft.quantum.qsharp.programstructure-overview
 2_Statements/VariableDeclarationsAndReassignments.md,microsoft.quantum.qsharp.variabledeclarationsandreassignments
 2_Statements/ReturnsAndTermination.md,microsoft.quantum.qsharp.returnsandtermination
 2_Statements/QuantumMemoryManagement.md,microsoft.quantum.qsharp.quantummemorymanagement
-2_Statements/README.md,microsoft.quantum.qsharp.statements-index
+2_Statements/README.md,microsoft.quantum.qsharp.statements-overview
 2_Statements/Iterations.md,microsoft.quantum.qsharp.iterations
 2_Statements/Conjugations.md,microsoft.quantum.qsharp.conjugations
 2_Statements/ConditionalLoops.md,microsoft.quantum.qsharp.conditionalloops
@@ -21,7 +21,7 @@
 3_Expressions/PartialApplication.md,microsoft.quantum.qsharp.partialapplication
 3_Expressions/LogicalExpressions.md,microsoft.quantum.qsharp.logicalexpressions
 3_Expressions/ItemAccessExpressions.md,microsoft.quantum.qsharp.itemaccessexpression
-3_Expressions/README.md,microsoft.quantum.qsharp.expressions-index
+3_Expressions/README.md,microsoft.quantum.qsharp.expressions-overview
 3_Expressions/Identifiers.md,microsoft.quantum.qsharp.identifiers
 3_Expressions/FunctorApplication.md,microsoft.quantum.qsharp.functorapplication
 3_Expressions/CopyAndUpdateExpressions.md,microsoft.quantum.qsharp.copyandupdateexpressions
@@ -37,6 +37,6 @@
 4_TypeSystem/SingletonTupleEquivalence.md,microsoft.quantum.qsharp.singletontupleequivalence
 4_TypeSystem/QuantumDataTypes.md,microsoft.quantum.qsharp.quantumdatatypes
 4_TypeSystem/OperationsAndFunctions.md,microsoft.quantum.qsharp.operationsandfunctions
-4_TypeSystem/README.md,microsoft.quantum.qsharp.typesystem-index
+4_TypeSystem/README.md,microsoft.quantum.qsharp.typesystem-overview
 4_TypeSystem/Immutability.md,microsoft.quantum.qsharp.immutability
 5_Grammar/README.md,microsoft.quantum.qsharp.grammar
