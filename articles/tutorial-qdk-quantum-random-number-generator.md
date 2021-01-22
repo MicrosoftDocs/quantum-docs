@@ -5,7 +5,7 @@ author: bromeg
 ms.author: megbrow
 ms.date: 10/25/2019
 ms.topic: tutorial
-uid: microsoft.quantum.quickstarts.qrng
+uid: microsoft.quantum.tutorial-qdk.random-number
 no-loc: ['Q#', '$$v']
 ---
 
@@ -15,8 +15,8 @@ A simple example of a quantum algorithm written in Q# is a quantum random number
 
 ## Prerequisites
 
-- The Microsoft [Quantum Development Kit](xref:microsoft.quantum.install).
-- Create a Q# project for either a [Q# application](xref:microsoft.quantum.install.standalone), with a [Python host program](xref:microsoft.quantum.install.python), or a [C# host program](xref:microsoft.quantum.install.cs).
+- The Microsoft [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+- Create a Q# project for either a [Q# application](xref:microsoft.quantum.install-qdk.overview.standalone), with a [Python host program](xref:microsoft.quantum.install-qdk.overview.python), or a [C# host program](xref:microsoft.quantum.install-qdk.overview.cs).
 
 ## Write a Q# operation
 

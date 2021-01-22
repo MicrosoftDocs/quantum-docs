@@ -5,7 +5,7 @@ author: cgranade
 ms.author: chgranad
 ms.date: 3/9/2020
 ms.topic: contributor-guide
-uid: microsoft.quantum.contributing.api-design
+uid: microsoft.quantum.contributing-qdk.overview.api-design
 no-loc: ['Q#', '$$v']
 ---
 
@@ -21,8 +21,8 @@ This article lists these principles, and gives examples to help guide how to app
 > This is a fairly detailed document that's intended to help guide library development and in-depth library contributions.
 > You'll probably find it most useful if you're writing your own libraries in Q#, or if you're contributing larger features to the [Q# libraries repository](https://github.com/microsoft/QuantumLibraries).
 >
-> On the other hand, if you're looking to learn how to contribute to the Quantum Development Kit more generally, we suggest starting with the [contribution guide](xref:microsoft.quantum.contributing).
-> If you're looking for more general information about how we recommend formatting your Q# code, you may be interested in checking out the [style guide](xref:microsoft.quantum.contributing.style).
+> On the other hand, if you're looking to learn how to contribute to the Quantum Development Kit more generally, we suggest starting with the [contribution guide](xref:microsoft.quantum.contributing-qdk.overview).
+> If you're looking for more general information about how we recommend formatting your Q# code, you may be interested in checking out the [style guide](xref:microsoft.quantum.contributing-qdk.overview.style).
 
 ## General Principles
 
@@ -65,7 +65,7 @@ This article lists these principles, and gives examples to help guide how to app
 - ✅ **DO** place the focus on the effects of each operation and
     function within the high-level algorithm, using documentation to
     delve into implementation details as appropriate.
-- ✅ **DO** follow the common [Q\# style guide](xref:microsoft.quantum.contributing.style)
+- ✅ **DO** follow the common [Q\# style guide](xref:microsoft.quantum.contributing-qdk.overview.style)
     whenever applicable.
 
 **Key principle:** Design APIs to be stable and to provide forward

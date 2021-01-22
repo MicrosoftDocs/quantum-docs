@@ -5,7 +5,7 @@ author: QuantumWriter
 ms.author: ageller
 ms.date: 12/11/2017
 ms.topic: conceptual
-uid: microsoft.quantum.chemistry.concepts.intro
+uid: microsoft.quantum.libraries.overview-chemistry.concepts.overview
 no-loc: ['Q#', '$$v']
 ---
 

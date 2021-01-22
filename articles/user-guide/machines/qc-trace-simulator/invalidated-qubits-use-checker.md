@@ -5,13 +5,13 @@ author: vadym-kl
 ms.author: vadym
 ms.date: 06/25/2020
 ms.topic: conceptual
-uid: microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits
+uid: microsoft.quantum.machines.overview.qc-trace-simulator.invalidated-qubits
 no-loc: ['Q#', '$$v']
 ---
 
 # Quantum trace simulator: invalidated qubits use checker
 
-The invalidated qubits use checker is a part of the Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro). You can use it to detect potential bugs in the code caused by invalid qubits. 
+The invalidated qubits use checker is a part of the Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro). You can use it to detect potential bugs in the code caused by invalid qubits. 
 
 ## Invalid qubits
 
@@ -68,7 +68,7 @@ namespace Quantum.MyProgram
 
 ## See also
 
-- The Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) overview.
+- The Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro) overview.
 - The <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> API reference.
 - The <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> API reference.
 - The <xref:Microsoft.Quantum.Simulation.QCTraceSimulatorRuntime.InvalidatedQubitsUseCheckerException> API reference.

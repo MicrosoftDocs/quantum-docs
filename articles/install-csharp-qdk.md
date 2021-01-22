@@ -5,7 +5,7 @@ author: bradben
 ms.author: v-benbra
 ms.date: 8/20/2020
 ms.topic: quickstart
-uid: microsoft.quantum.install.cs
+uid: microsoft.quantum.install-qdk.overview.cs
 no-loc: ['Q#', '$$v']
 ---
 
@@ -18,7 +18,7 @@ First we create the Q# application and .NET host, and then demonstrate how to ca
 
 ## Prerequisites
 
-- Install the Quantum Development Kit [for use with Q# projects](xref:microsoft.quantum.install.standalone).
+- Install the Quantum Development Kit [for use with Q# projects](xref:microsoft.quantum.install-qdk.overview.standalone).
 
 ## Creating a Q# library and a .NET host
 
@@ -99,4 +99,4 @@ To call this operation from .NET on a quantum simulator, you can use the `Run` m
     
 ## Next steps
 
-Now that you have the Quantum Development Kit set up for both Q# applications and interoperability with .NET, you can write and run [your first quantum program](xref:microsoft.quantum.quickstarts.qrng).
+Now that you have the Quantum Development Kit set up for both Q# applications and interoperability with .NET, you can write and run [your first quantum program](xref:microsoft.quantum.tutorial-qdk.random-number).

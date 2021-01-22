@@ -5,7 +5,7 @@ author: bradben
 ms.author: v-benbra
 ms.date: 9/03/2020
 ms.topic: quickstart
-uid: microsoft.quantum.install.binder
+uid: microsoft.quantum.install-qdk.overview.binder
 no-loc: ['Q#', '$$v']
 ---
 # Develop with Q# and Binder
@@ -38,7 +38,7 @@ If you already have notebooks in a GitHub repository, you can configure Binder t
     ```
 
     > [!NOTE]
-    > You can verify the most current version of IQ# in the [Release Notes](xref:microsoft.quantum.relnotes).
+    > You can verify the most current version of IQ# in the [Release Notes](xref:microsoft.quantum.relnotes-qdk).
 
     For more information about creating a Dockerfile, see the [Dockerfile reference](https://docs.docker.com/engine/reference/builder/).
 
@@ -49,4 +49,4 @@ If you already have notebooks in a GitHub repository, you can configure Binder t
     
 ## Next steps
 
-Now that you have set up your Binder environment, you can write and run [your first quantum program](xref:microsoft.quantum.quickstarts.qrng).
+Now that you have set up your Binder environment, you can write and run [your first quantum program](xref:microsoft.quantum.tutorial-qdk.random-number).

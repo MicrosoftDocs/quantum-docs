@@ -5,7 +5,7 @@ author: bradben
 ms.author: v-benbra 
 ms.date: 06/02/2020
 ms.topic: overview
-uid: microsoft.quantum.overview.katas
+uid: microsoft.quantum.tutorial-qdk.katas
 no-loc: ['Q#', '$$v']
 ---
 

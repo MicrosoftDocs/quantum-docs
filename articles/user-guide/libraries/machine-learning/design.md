@@ -5,7 +5,7 @@ author: geduardo
 ms.author: v-edsanc
 ms.date: 02/17/2020
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.machine-learning.design
+uid: microsoft.quantum.libraries.overview.machine-learning.design
 no-loc: ['Q#', '$$v']
 ---
 
@@ -58,4 +58,4 @@ We recommend you explore the [API reference of the Quantum Machine Learning libr
 
 ## Next steps
 
- Try different structures in the examples provided by the samples. Do you see any changes in the performance of the model? In the next tutorial, [`Load your own datasets`](xref:microsoft.quantum.libraries.machine-learning.load), you will learn how to load datasets to try and explore new architectures of classifiers.
+ Try different structures in the examples provided by the samples. Do you see any changes in the performance of the model? In the next tutorial, [`Load your own datasets`](xref:microsoft.quantum.libraries.overview.machine-learning.load), you will learn how to load datasets to try and explore new architectures of classifiers.

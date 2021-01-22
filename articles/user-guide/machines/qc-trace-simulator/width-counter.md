@@ -5,13 +5,13 @@ author: vadym-kl
 ms.author: vadym
 ms.date: 06/25/2020
 ms.topic: conceptual
-uid: microsoft.quantum.machines.qc-trace-simulator.width-counter
+uid: microsoft.quantum.machines.overview.qc-trace-simulator.width-counter
 no-loc: ['Q#', '$$v']
 ---
 
 # Quantum trace simulator: width counter
 
-The width counter is a part of the Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro). You can use it to count the number of qubits allocated and borrowed by each operation in a Q# program. Some primitive operations can allocate extra qubits, for example, multiply controlled `X` operations or controlled `T` operations.
+The width counter is a part of the Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro). You can use it to count the number of qubits allocated and borrowed by each operation in a Q# program. Some primitive operations can allocate extra qubits, for example, multiply controlled `X` operations or controlled `T` operations.
 
 ## Invoking the width counter
 
@@ -37,7 +37,7 @@ operation ApplyMultiControlledX( numberOfQubits : Int ) : Unit {
 }
 ```
 
-The multiply controlled <xref:Microsoft.Quantum.Intrinsic.X> operation acts on a total of five qubits, allocates two [ancillary qubits](xref:microsoft.quantum.glossary#ancilla), and has an input width of **5**. Use the following C# program to verify the counts:
+The multiply controlled <xref:Microsoft.Quantum.Intrinsic.X> operation acts on a total of five qubits, allocates two [ancillary qubits](xref:microsoft.quantum.glossary-qdk#ancilla), and has an input width of **5**. Use the following C# program to verify the counts:
 
 ```csharp 
 var config = new QCTraceSimulatorConfiguration();
@@ -66,7 +66,7 @@ string csvSummary = sim.ToCSV()[MetricsCountersNames.widthCounter];
 
 ## See also
 
-- The Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) overview.
+- The Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro) overview.
 - The <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> API reference.
 - The <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> API reference.
 - The <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.MetricsNames.WidthCounter> API reference.

@@ -5,13 +5,13 @@ author: guanghaolow
 ms.author: gulow
 ms.date: 05/28/2019
 ms.topic: conceptual
-uid: microsoft.quantum.chemistry.concepts.multireference
+uid: microsoft.quantum.libraries.overview-chemistry.concepts.multireference
 no-loc: ['Q#', '$$v']
 ---
 
 # Correlated wavefunctions
 
-For many systems, particularly those near the equilibrium geometry, [Hartree–Fock](xref:microsoft.quantum.chemistry.concepts.hartreefock) theory provides a qualitative description of molecular properties through a single-determinant reference state. 
+For many systems, particularly those near the equilibrium geometry, [Hartree–Fock](xref:microsoft.quantum.libraries.overview-chemistry.concepts.hartreefock) theory provides a qualitative description of molecular properties through a single-determinant reference state. 
 However, in order to achieve quantitative accuracy, one must also consider correlation effects. 
 
 In this context, it is important to dinstinguish between dynamic and non-dynamic correlations.
@@ -22,7 +22,7 @@ This necessitates a superposition of determinants and is an example of a multire
 
 The chemistry library provides a way to specify a zeroth order wavefunction for the multireference problem as a superposition of determinants. 
 This approach, which we call sparse multireference wavefunctions, is effective when only a few components suffice to specify the superposition. 
-The library also provides a method to include dynamic correlations on top of a single-determinant reference via the generalized unitary coupled-cluster ansatz. Furthermore, it also constructs quantum circuits that generate these states on a quantum computer. These states may be specified in the [Broombridge schema](xref:microsoft.quantum.libraries.chemistry.schema.broombridge), and we also provide the functionality to manually specify these states through the chemistry
+The library also provides a method to include dynamic correlations on top of a single-determinant reference via the generalized unitary coupled-cluster ansatz. Furthermore, it also constructs quantum circuits that generate these states on a quantum computer. These states may be specified in the [Broombridge schema](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge), and we also provide the functionality to manually specify these states through the chemistry
 library.
 
 ## Sparse multi-reference wavefunction

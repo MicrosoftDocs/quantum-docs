@@ -5,7 +5,7 @@ author: bradben
 ms.author: v-benbra
 ms.date: 5/8/2020
 ms.topic: quickstart
-uid: microsoft.quantum.install
+uid: microsoft.quantum.install-qdk.overview
 no-loc: ['Q#', '$$v']
 ---
 
@@ -52,26 +52,26 @@ You can develop Q# code in most of your favorites IDEs, as well as integrate Q# 
     <tr>
         <td align="right"><img src="~/media/quantum-wht.png" alt="QDK" width="60"/></td>
         <td align="left"><b>Q# standalone</b></td>
-        <td align="center"><a href="xref:microsoft.quantum.install.standalone">Install</a></td>
-        <td align="center"><a href="xref:microsoft.quantum.install.standalone">Install</a></td>
-        <td align="center"><a href="xref:microsoft.quantum.install.jupyter">Install</a></td>
-        <td align="center"><a href="xref:microsoft.quantum.install.standalone">Install</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.standalone">Install</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.standalone">Install</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.jupyter">Install</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.standalone">Install</a></td>
     </tr>
     <tr>
         <td align="right"><img src="~/media/python.png" alt="python install" width="50"/></td>
         <td align="left"><b>Q# and Python</b></td>
-        <td align="center"><a href="xref:microsoft.quantum.install.python">Install</a></td>
-        <td align="center"><a href="xref:microsoft.quantum.install.python">Install</a></td>
-        <td align="center"><a href="xref:microsoft.quantum.install.python">Install</a></td>
-        <td align="center"><a href="xref:microsoft.quantum.install.python">Install</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.python">Install</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.python">Install</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.python">Install</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.python">Install</a></td>
     </tr>
     <tr>
         <td align="right"><img src="~/media/dot_net.png" alt="dotnet install" width="50"/></td>
         <td align="left"><b>Q# and .NET (C#, F#)</b></td> 
-        <td align="center"><a href="xref:microsoft.quantum.install.cs">Install</a></td>
-        <td align="center"><a href="xref:microsoft.quantum.install.cs">Install</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.cs">Install</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.cs">Install</a></td>
         <td align="center">&#10006;</td>
-        <td align="center"><a href="xref:microsoft.quantum.install.cs">Install</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.cs">Install</a></td>
    </tr>
 </table>
 
@@ -81,8 +81,8 @@ You can also develop Q# code without installing anything locally with these opti
 
 |Resource|Advantages|Limitations|
 |---|---|---|
-|[**Visual Studio Codespaces**](xref:microsoft.quantum.install.standalone)|A rich online development environment  |Requires an Azure subscription and plan |
-|[**Binder**](xref:microsoft.quantum.install.binder) | Free online notebook experience |No persistence |
+|[**Visual Studio Codespaces**](xref:microsoft.quantum.install-qdk.overview.standalone)|A rich online development environment  |Requires an Azure subscription and plan |
+|[**Binder**](xref:microsoft.quantum.install-qdk.overview.binder) | Free online notebook experience |No persistence |
 
 ## Use the QDK with Docker
 
@@ -94,4 +94,4 @@ You can also use Docker with a Visual Studio Code Remote Development Container t
 
 ## Next steps
 
-The workflows for each of these setups are described and compared at [Ways to run a Q# program](xref:microsoft.quantum.guide.host-programs).
+The workflows for each of these setups are described and compared at [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).

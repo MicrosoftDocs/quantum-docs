@@ -5,7 +5,7 @@ author: bradben
 ms.author: v-benbra
 ms.date: 5/30/2020
 ms.topic: quickstart
-uid: microsoft.quantum.update
+uid: microsoft.quantum.update-qdk
 no-loc: ['Q#', '$$v']
 ---
 
@@ -13,7 +13,7 @@ no-loc: ['Q#', '$$v']
 
 Learn how to update the Microsoft Quantum Development Kit (QDK) to the latest version.
 
-This article assumes that you already have the QDK installed. If you are installing for the first time, then please refer to the [installation guide](xref:microsoft.quantum.install).
+This article assumes that you already have the QDK installed. If you are installing for the first time, then please refer to the [installation guide](xref:microsoft.quantum.install-qdk.overview).
 
 We recommend keeping up to date with the latest QDK release. Follow this update guide to upgrade to the most recent QDK version. 
 The process consists of two parts:
@@ -194,7 +194,7 @@ The update procedure depends on whether you originally installed using conda or 
     Jupyter Core: 1.4.0.0
     ```
 
-    Don't worry if your `iqsharp` version is higher. It should match the [latest release](xref:microsoft.quantum.relnotes).
+    Don't worry if your `iqsharp` version is higher. It should match the [latest release](xref:microsoft.quantum.relnotes-qdk).
 
 1. Update the `qsharp` package:
 
@@ -267,7 +267,7 @@ The update procedure depends on whether you originally installed using conda or 
     Jupyter Core: 1.4.0.0
     ```
 
-    Don't worry if your `iqsharp` version is higher. It should match the [latest release](xref:microsoft.quantum.relnotes).
+    Don't worry if your `iqsharp` version is higher. It should match the [latest release](xref:microsoft.quantum.relnotes-qdk).
 
 1. Run the following command from a cell in each of your existing Q# Jupyter Notebooks:
 

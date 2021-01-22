@@ -104,7 +104,7 @@ Specifically, such a subcircuit looks like:
 ![Symbol representing a measurement operation](~/media/7.svg)
 
 Q# implements a [Measure operator](xref:Microsoft.Quantum.Intrinsic.Measure) for this purpose.
-See the [section on measurements](xref:microsoft.quantum.libraries.standard.prelude#measurements) for more information.
+See the [section on measurements](xref:microsoft.quantum.libraries.overview.standard.prelude#measurements) for more information.
 
 Similarly, the subcircuit
 
@@ -116,7 +116,7 @@ gives a classically controlled gate, where $G$ is applied conditioned on the cla
 
 ## Teleportation circuit diagram
 Quantum teleportation is perhaps the best quantum algorithm for illustrating these components.
-You can learn hands-on with the corresponding [Quantum Kata](xref:microsoft.quantum.overview.katas)
+You can learn hands-on with the corresponding [Quantum Kata](xref:microsoft.quantum.tutorial-qdk.katas)
 Quantum teleportation is a method for moving data within a quantum computer (or even between distant quantum computers in a quantum network) through the use of entanglement and measurement.
 Interestingly, it is actually capable of moving a quantum state, say the value in a given qubit, from one qubit to another, without even knowing what the qubit's value is!
 This is necessary for the protocol to work according to the laws of quantum mechanics.

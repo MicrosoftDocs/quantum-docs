@@ -5,18 +5,18 @@ author: bradben
 ms.author: v-benbra
 ms.date: 10/09/2017
 ms.topic: conceptual
-uid: microsoft.quantum.chemistry.concepts.symmetries
+uid: microsoft.quantum.libraries.overview-chemistry.concepts.symmetries
 no-loc: ['Q#', '$$v']
 ---
 
 # Symmetries of Molecular Integrals
 
-The inherent symmetry of the Coulomb Hamiltonian, which is the Hamiltonian given in [Quantum Models for Electronic Systems](xref:microsoft.quantum.chemistry.concepts.quantummodels), that describes electrons interacting electrically with each other and with the nuclei, leads to a number of symmetries that can be exploited to compress the terms in the Hamiltonian.
+The inherent symmetry of the Coulomb Hamiltonian, which is the Hamiltonian given in [Quantum Models for Electronic Systems](xref:microsoft.quantum.libraries.overview-chemistry.concepts.quantummodels), that describes electrons interacting electrically with each other and with the nuclei, leads to a number of symmetries that can be exploited to compress the terms in the Hamiltonian.
 In general if no further assumptions are made about the basis functions $\psi_j$ then we only have that
 \begin{equation}
 h_{pqrs}= h_{qpsr},\tag{★}\label{eq:hpqrs}
 \end{equation}
-which can be immediately seen from the integrals in [Quantum Models for Electronic Systems](xref:microsoft.quantum.chemistry.concepts.quantummodels) upon noting that their values remain identical if $p,q$ and $r,s$ are interchanged from anti-commutation.
+which can be immediately seen from the integrals in [Quantum Models for Electronic Systems](xref:microsoft.quantum.libraries.overview-chemistry.concepts.quantummodels) upon noting that their values remain identical if $p,q$ and $r,s$ are interchanged from anti-commutation.
 
 If we assume that the spin-orbitals are real-valued (as they are for Gaussian orbital bases) then we further have that 
 \begin{equation}

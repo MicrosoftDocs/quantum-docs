@@ -5,12 +5,12 @@ author: beheim
 ms.author: beheim
 ms.date: 11/08/2020
 ms.topic: article
-uid: microsoft.quantum.guide.programs
+uid: microsoft.quantum.user-guide-qdk.overview.programs
 ---
 
 # Q# Quantum Programming Language
 
-Everything you need to know about the Q# programming language is detailed in the [Q# language guide](xref:microsoft.quantum.qsharp.index). 
+Everything you need to know about the Q# programming language is detailed in the [Q# language guide](xref:microsoft.quantum.qsharp.overview). 
 Like anything else, our [language design process](https://github.com/microsoft/qsharp-language#q-language-and-core-libraries-design) is open source and we welcome contributions.
 For more background about the foundations and motivation behind Q#, see [Why do we need Q#?](https://devblogs.microsoft.com/qsharp/why-do-we-need-q/).  
 Q# is shipped as part of the Quantum Development Kit (QDK) For a quick overview, check out [What is the QDK?](xref:microsoft.quantum.overview.q-sharp). 
@@ -25,7 +25,7 @@ Instead, a program can call operations such as [`Measure`](xref:Microsoft.Quantu
 
 Once allocated, a qubit can be passed to operations and functions, also referred to as *callables*. In some sense, this is all that a Q# program can do with a qubit; Any direct actions on state of a qubit are all defined by *intrinsic* callables such as [`X`](xref:Microsoft.Quantum.Intrinsic.X) and [`H`](xref:Microsoft.Quantum.Intrinsic.H) - i.e. callables whose implementations are not defined within Q# but are instead defined by the target machine. What these operations actually *do* is only made concrete by the target machine we use to run the particular Q# program.
 
-For example, if running the program on our [full-state simulator](xref:microsoft.quantum.machines.full-state-simulator), the simulator performs the corresponding mathematical operations to the simulated quantum system.
+For example, if running the program on our [full-state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), the simulator performs the corresponding mathematical operations to the simulated quantum system.
 But looking toward the future, when the target machine is a real quantum computer, calling such operations in Q# will direct the quantum computer to perform the corresponding *real* operations on the *real* quantum system (e.g. precisely timed laser pulses).
 
 A Q# program recombines these operations as defined by a target machine to create new, higher-level operations to express quantum computation.
@@ -54,7 +54,7 @@ operation MeasureOneQubit() : Result {
 ```
 
 Our [Quantum Katas](https://github.com/microsoft/QuantumKatas#introduction) give a good introduction on [Quantum Computing Concepts](https://github.com/microsoft/QuantumKatas#quantum-computing-concepts-qubits-and-gates) such as common quantum operations and how to manipulate qubits. 
-More examples can also be found in [Intrinsic Operations and Functions](xref:microsoft.quantum.libraries.standard.prelude).
+More examples can also be found in [Intrinsic Operations and Functions](xref:microsoft.quantum.libraries.overview.standard.prelude).
 
 
 

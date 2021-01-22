@@ -5,7 +5,7 @@ author: bradben
 ms.author: v-benbra
 ms.date: 8/20/2020
 ms.topic: quickstart
-uid: microsoft.quantum.install.standalone
+uid: microsoft.quantum.install-qdk.overview.standalone
 no-loc: ['Q#', '$$v']
 ---
 
@@ -120,4 +120,4 @@ Verify your installation by creating a Q# `Hello World` application.
 
 ## Next steps
 
-Now that you have installed the Quantum Development Kit in your preferred environment, you can write and run [your first quantum program](xref:microsoft.quantum.quickstarts.qrng).
+Now that you have installed the Quantum Development Kit in your preferred environment, you can write and run [your first quantum program](xref:microsoft.quantum.tutorial-qdk.random-number).

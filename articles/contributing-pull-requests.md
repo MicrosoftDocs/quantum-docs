@@ -5,7 +5,7 @@ author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: contributor-guide
-uid: microsoft.quantum.contributing.pulls
+uid: microsoft.quantum.contributing-qdk.overview.pulls
 no-loc: ['Q#', '$$v']
 ---
 
@@ -86,4 +86,4 @@ Congratulations on using Git to help out the Quantum Development Kit community!
 To learn more about how to contribute code, please continue with the following guide.
 
 > [!div class="nextstepaction"]
-> [Learn how to contribute code](xref:microsoft.quantum.contributing.code)
+> [Learn how to contribute code](xref:microsoft.quantum.contributing-qdk.overview.code)

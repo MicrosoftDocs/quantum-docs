@@ -5,7 +5,7 @@ author: QuantumWriter
 ms.author: v-benbra 
 ms.date: 6/17/2020
 ms.topic: conceptual
-uid: microsoft.quantum.machines
+uid: microsoft.quantum.machines.overview
 no-loc: ['Q#', '$$v']
 ---
 
@@ -20,7 +20,7 @@ Quantum simulators are software programs that run on classical computers and act
 The quantum simulator is responsible for providing implementations of quantum primitives for an algorithm. This includes primitive operations such as `H`, `CNOT`, and `Measure`, as well as qubit management and tracking. The QDK includes different classes of quantum simulators representing different ways of simulating the same quantum algorithm. 
 
 
-Each type of quantum simulator can provide different implementations of these primitives. For example, the [full state simulator](xref:microsoft.quantum.machines.full-state-simulator) runs the quantum algorithm by fully simulating the [quantum state vector](xref:microsoft.quantum.glossary#quantum-state), whereas the [quantum computer trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) 
+Each type of quantum simulator can provide different implementations of these primitives. For example, the [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) runs the quantum algorithm by fully simulating the [quantum state vector](xref:microsoft.quantum.glossary-qdk#quantum-state), whereas the [quantum computer trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro) 
 doesn't consider the actual quantum state at all. Rather, it tracks gate, qubit, and other resource usage for the algorithm.
 
 ### Quantum machine classes
@@ -32,14 +32,14 @@ The QDK includes several quantum machine classes, all defined in the `Microsoft.
 
 |Simulator |Class|Description|
 |-----|------|---|
-|[Full state simulator](xref:microsoft.quantum.machines.full-state-simulator)| `QuantumSimulator` | Runs and debugs quantum algorithms, and is limited to about 30 qubits. |
-|[Simple resources estimator](xref:microsoft.quantum.machines.resources-estimator)| `ResourcesEstimator` | Performs a top level analysis of the resources needed to run a quantum algorithm, and supports thousands of qubits.|
-|[Trace-based resource estimator](xref:microsoft.quantum.machines.qc-trace-simulator.intro)|  `QCTraceSimulator` |Runs advanced analysis of resources consumptions for the algorithm's entire call-graph, and supports thousands of qubits.|
-|[Toffoli simulator](xref:microsoft.quantum.machines.toffoli-simulator)| `ToffoliSimulator` |Simulates quantum algorithms that are limited to `X`, `CNOT`, and multi-controlled `X` quantum operations, and supports million of qubits. |
+|[Full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)| `QuantumSimulator` | Runs and debugs quantum algorithms, and is limited to about 30 qubits. |
+|[Simple resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)| `ResourcesEstimator` | Performs a top level analysis of the resources needed to run a quantum algorithm, and supports thousands of qubits.|
+|[Trace-based resource estimator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)|  `QCTraceSimulator` |Runs advanced analysis of resources consumptions for the algorithm's entire call-graph, and supports thousands of qubits.|
+|[Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)| `ToffoliSimulator` |Simulates quantum algorithms that are limited to `X`, `CNOT`, and multi-controlled `X` quantum operations, and supports million of qubits. |
 
 ## Invoking the quantum simulator
 
-In [Ways to run a Q# program](xref:microsoft.quantum.guide.host-programs), three ways of passing the Q# code to the quantum simulator are demonstrated: 
+In [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs), three ways of passing the Q# code to the quantum simulator are demonstrated: 
 
 * Using the command line
 * Using a Python host program
@@ -49,4 +49,4 @@ Quantum machines are instances of normal .NET classes, so they are created by in
 
 ## Next steps
 
-* For details about how to invoke target machines for Q# programs in different environments, see [Ways to run a Q# program](xref:microsoft.quantum.guide.host-programs).
+* For details about how to invoke target machines for Q# programs in different environments, see [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).

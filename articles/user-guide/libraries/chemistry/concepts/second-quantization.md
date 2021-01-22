@@ -5,7 +5,7 @@ author: bradben
 ms.author: v-benbra
 ms.date: 10/09/2017
 ms.topic: conceptual
-uid: microsoft.quantum.chemistry.concepts.secondquantization
+uid: microsoft.quantum.libraries.overview-chemistry.concepts.secondquantization
 no-loc: ['Q#', '$$v']
 ---
 
@@ -242,7 +242,7 @@ Any `FermionTerm` is automatically put into canonical order as follows.
 
 ## Second-Quantized Fermionic Hamiltonian
 
-It is perhaps unsurprising that the Hamiltonian in [Quantum Models for Electronic Systems](xref:microsoft.quantum.chemistry.concepts.quantummodels) can be written in terms of creation and annihilation operators.
+It is perhaps unsurprising that the Hamiltonian in [Quantum Models for Electronic Systems](xref:microsoft.quantum.libraries.overview-chemistry.concepts.quantummodels) can be written in terms of creation and annihilation operators.
 In particular, if $\psi\_j$ are the spin orbitals that form the basis then
 
 \begin{equation}

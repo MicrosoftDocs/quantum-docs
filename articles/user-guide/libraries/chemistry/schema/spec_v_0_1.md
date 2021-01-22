@@ -5,7 +5,7 @@ author: cgranade
 ms.author: chgranad
 ms.date: 10/17/2018
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.chemistry.schema.spec_v_0_1
+uid: microsoft.quantum.libraries.overview.chemistry.schema.spec_v_0_1
 no-loc: ['Q#', '$$v']
 ---
 

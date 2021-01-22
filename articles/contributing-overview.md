@@ -5,7 +5,7 @@ author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: contributor-guide
-uid: microsoft.quantum.contributing
+uid: microsoft.quantum.contributing-qdk.overview
 no-loc: ['Q#', '$$v']
 ---
 
@@ -69,10 +69,10 @@ Thanks for being a part of the Quantum Development Kit community, we're excited 
 If you'd like to learn more about contributing, please continue with one of the following guides.
 
 > [!div class="nextstepaction"]
-> [Learn how to report bugs](xref:microsoft.quantum.contributing.reporting)
+> [Learn how to report bugs](xref:microsoft.quantum.contributing-qdk.overview.reporting)
 
 > [!div class="nextstepaction"]
-> [Learn how to contribute documentation](xref:microsoft.quantum.contributing.docs)
+> [Learn how to contribute documentation](xref:microsoft.quantum.contributing-qdk.overview.docs)
 
 > [!div class="nextstepaction"]
-> [Learn how to open pull requests](xref:microsoft.quantum.contributing.pulls)
+> [Learn how to open pull requests](xref:microsoft.quantum.contributing-qdk.overview.pulls)

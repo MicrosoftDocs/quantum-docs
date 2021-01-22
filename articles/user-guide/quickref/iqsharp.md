@@ -5,7 +5,7 @@ author: gillenhaalb
 ms.author:  a-gibec
 ms.date: 03/05/2020
 ms.topic: reference
-uid: microsoft.quantum.guide.quickref.iqsharp
+uid: microsoft.quantum.user-guide-qdk.overview.quickref.iqsharp
 no-loc: ['Q#', '$$v']
 ---
 

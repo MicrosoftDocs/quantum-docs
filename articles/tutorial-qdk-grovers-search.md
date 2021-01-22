@@ -5,7 +5,7 @@ author: cgranade
 ms.author: chgranad
 ms.date: 10/19/2019
 ms.topic: tutorial
-uid: microsoft.quantum.quickstarts.search
+uid: microsoft.quantum.tutorial-qdk.grovers
 no-loc: ['Q#', '$$v']
 ---
 
@@ -35,7 +35,7 @@ The number of incremental boosts is fewer than the number of items in the list. 
 
 ## Write the code
 
-1. Using the Quantum Development Kit, [create a new Q# project for the application](xref:microsoft.quantum.install.standalone). Title the project `Grover`.
+1. Using the Quantum Development Kit, [create a new Q# project for the application](xref:microsoft.quantum.install-qdk.overview.standalone). Title the project `Grover`.
 
 1. Add the following code to the `Program.qs` file in your new project:
 
@@ -104,14 +104,14 @@ Reflecting about marked state...
 
 If you enjoyed this tutorial, check out some of the resources below to learn more about how you can use Q# to write your own quantum applications:
 
-- [Back to the Getting Started with QDK guide](xref:microsoft.quantum.welcome)
+- [Back to the Getting Started with QDK guide](xref:microsoft.quantum.get-started-qdk)
 - Try a more general Grover's search algorithm [sample](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/database-search)
-- [Learn more about Grover's search with the Quantum Katas](xref:microsoft.quantum.overview.katas)
+- [Learn more about Grover's search with the Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas)
 - Read more about [Amplitude amplification][amplitude-amplification], the quantum computing technique behind Grover's search algorithm
 - [Quantum computing concepts](xref:microsoft.quantum.concepts.intro)
 - [Quantum Development Kit Samples](https://docs.microsoft.com/samples/browse/?products=qdk)
 
 <!-- LINKS -->
 
-[install]: xref:microsoft.quantum.install
-[amplitude-amplification]: xref:microsoft.quantum.libraries.standard.algorithms#amplitude-amplification
+[install]: xref:microsoft.quantum.install-qdk.overview
+[amplitude-amplification]: xref:microsoft.quantum.libraries.overview.standard.algorithms#amplitude-amplification

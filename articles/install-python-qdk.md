@@ -5,7 +5,7 @@ author: bradben
 ms.author: v-benbra
 ms.date: 8/20/2020
 ms.topic: quickstart
-uid: microsoft.quantum.install.python
+uid: microsoft.quantum.install-qdk.overview.python
 no-loc: ['Q#', '$$v']
 ---
 
@@ -109,4 +109,4 @@ Now you are ready to verify your `qsharp` Python package installation by writing
 
 ## Next steps
 
-Now that you have tested the Quantum Development Kit in your preferred environment, you can follow this tutorial to write and run [your first quantum program](xref:microsoft.quantum.quickstarts.qrng).
+Now that you have tested the Quantum Development Kit in your preferred environment, you can follow this tutorial to write and run [your first quantum program](xref:microsoft.quantum.tutorial-qdk.random-number).

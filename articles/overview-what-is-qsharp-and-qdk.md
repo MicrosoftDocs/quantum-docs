@@ -11,7 +11,7 @@ no-loc: ['Q#', '$$v']
 
 # What are the Q# programming language and QDK?
 
-Q# is Microsoft’s open-source programming language for developing and running quantum algorithms. It’s part of the Quantum Development Kit (QDK), which includes [Q# libraries](xref:microsoft.quantum.libraries), [quantum simulators](xref:microsoft.quantum.machines), [extensions for other programming environments](xref:microsoft.quantum.install), and [API documentation](xref:microsoft.quantum.apiref-intro). In addition to the Standard Q# library, the QDK includes Chemistry, Machine Learning, and Numeric libraries.
+Q# is Microsoft’s open-source programming language for developing and running quantum algorithms. It’s part of the Quantum Development Kit (QDK), which includes [Q# libraries](xref:microsoft.quantum.libraries.overview), [quantum simulators](xref:microsoft.quantum.machines.overview), [extensions for other programming environments](xref:microsoft.quantum.install-qdk.overview), and [API documentation](xref:microsoft.quantum.apiref-intro). In addition to the Standard Q# library, the QDK includes Chemistry, Machine Learning, and Numeric libraries.
 
 As a programming language, Q# draws familiar elements from Python, C#, and F# and supports a basic procedural model for writing programs with loops, if/then statements, and common data types. It also introduces new quantum-specific data structures and operations.
 
@@ -21,7 +21,7 @@ The QDK is a full-featured development kit for Q# that you can use with common t
 
 ### Develop in common tools and environments
 
-Integrate your quantum development with [Visual Studio, Visual Studio Code](xref:microsoft.quantum.install.standalone), and [Jupyter Notebooks](xref:microsoft.quantum.install.jupyter). Use the built-in APIs for pairing your programs with [Python](xref:microsoft.quantum.install.python) and [.NET](xref:microsoft.quantum.install.cs) host languages.
+Integrate your quantum development with [Visual Studio, Visual Studio Code](xref:microsoft.quantum.install-qdk.overview.standalone), and [Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.jupyter). Use the built-in APIs for pairing your programs with [Python](xref:microsoft.quantum.install-qdk.overview.python) and [.NET](xref:microsoft.quantum.install-qdk.overview.cs) host languages.
 
 ### Try quantum operations and domain-specific libraries
 
@@ -36,8 +36,8 @@ Run your quantum programs on a full-state quantum simulator, a limited-scope Tof
 |||
 | ---- | ---- |
 | **I'm new to quantum computing** | Review some basics of quantum physics and quantum computing in [Key Concepts](xref:microsoft.quantum.overview.understanding).|
-| **I want to dive deeper into the Q# language** | Explore types, expressions, variables, and quantum program structure in the [Q# User Guide](xref:microsoft.quantum.guide).|
-| **I just want to start writing quantum programs** | Set up your Q# environment and start writing quantum programs in [QuickStarts](xref:microsoft.quantum.install).|
+| **I want to dive deeper into the Q# language** | Explore types, expressions, variables, and quantum program structure in the [Q# User Guide](xref:microsoft.quantum.user-guide-qdk.overview).|
+| **I just want to start writing quantum programs** | Set up your Q# environment and start writing quantum programs in [QuickStarts](xref:microsoft.quantum.install-qdk.overview).|
 
 ## How does Q# work?
 
@@ -53,13 +53,13 @@ Isolating the Q# code in the simulator ensures that the algorithms follow the la
 
 Everything you need to write and run Q# programs, including the Q# compiler, the Q# libraries, and the quantum simulators, can be installed and run from your local computer. Eventually you will be able to run your Q# programs remotely on an actual quantum computer, but until then the quantum simulators provided with the QDK provide accurate and reliable results.
 
-- Developing [Q# applications](xref:microsoft.quantum.install.standalone) is the quickest way to get started.
+- Developing [Q# applications](xref:microsoft.quantum.install-qdk.overview.standalone) is the quickest way to get started.
 
-- Run standalone [Jupyter Notebooks with IQ#](xref:microsoft.quantum.install.jupyter), a Jupyter extension for compiling, simulating, and visualizing Q# programs.
+- Run standalone [Jupyter Notebooks with IQ#](xref:microsoft.quantum.install-qdk.overview.jupyter), a Jupyter extension for compiling, simulating, and visualizing Q# programs.
 
-- If you are familiar with [Python](xref:microsoft.quantum.install.python), you can use it as a host programming platform to get started. Python enjoys widespread use not only among developers, but also scientists, researchers and teachers.
+- If you are familiar with [Python](xref:microsoft.quantum.install-qdk.overview.python), you can use it as a host programming platform to get started. Python enjoys widespread use not only among developers, but also scientists, researchers and teachers.
 
-- If you already have experience with [C#, F#, or VB.NET](xref:microsoft.quantum.install.cs) and are familiar with the Visual Studio development environment, there are just a few extensions you need to add to Visual Studio to prepare it for Q#.  
+- If you already have experience with [C#, F#, or VB.NET](xref:microsoft.quantum.install-qdk.overview.cs) and are familiar with the Visual Studio development environment, there are just a few extensions you need to add to Visual Studio to prepare it for Q#.  
 
 ## Summary
 

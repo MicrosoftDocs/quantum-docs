@@ -6,7 +6,7 @@ author: vadym-kl
 ms.author: vadym 
 ms.date: 06/25/2020 
 ms.topic: conceptual
-uid: microsoft.quantum.machines.qc-trace-simulator.intro
+uid: microsoft.quantum.machines.overview.qc-trace-simulator.intro
 no-loc: ['Q#', '$$v']
 ---
 
@@ -16,7 +16,7 @@ The QDK <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceS
 
 * Debugging classical code that is part of a quantum program. 
 * Estimating the resources required to run a given instance of a quantum program
-  on a quantum computer. In fact, the [Resources estimator](xref:microsoft.quantum.machines.resources-estimator), which provides a more limited set of metrics, is built upon the trace simulator.
+  on a quantum computer. In fact, the [Resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator), which provides a more limited set of metrics, is built upon the trace simulator.
 
 ## Invoking the quantum trace simulator
 
@@ -79,20 +79,20 @@ The QDK includes five tools that you can use with the quantum trace simulator to
 
 |Tool | Description |
 |-----| -----|
-|[Distinct inputs checker](xref:microsoft.quantum.machines.qc-trace-simulator.distinct-inputs) |Checks for potential conflicts with shared qubits |
-|[Invalidated qubits use checker](xref:microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits)  |Checks if the program applies an operation to a qubit that is already released |
-|[Primitive operations counter](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter)  | Counts the number of primitives used by every operation invoked in a quantum program  |
-|[Depth counter](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter)  |Gathers counts that represent the lower bound of the depth of every operation invoked in a quantum program   |
-|[Width counter](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter)  |Counts the number of qubits allocated and borrowed by each operation in a quantum program |
+|[Distinct inputs checker](xref:microsoft.quantum.machines.overview.qc-trace-simulator.distinct-inputs) |Checks for potential conflicts with shared qubits |
+|[Invalidated qubits use checker](xref:microsoft.quantum.machines.overview.qc-trace-simulator.invalidated-qubits)  |Checks if the program applies an operation to a qubit that is already released |
+|[Primitive operations counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.primitive-counter)  | Counts the number of primitives used by every operation invoked in a quantum program  |
+|[Depth counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.depth-counter)  |Gathers counts that represent the lower bound of the depth of every operation invoked in a quantum program   |
+|[Width counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.width-counter)  |Counts the number of qubits allocated and borrowed by each operation in a quantum program |
 
 Each of these tools is enabled by setting appropriate flags in `QCTraceSimulatorConfiguration` and then passing the configuration to the `QCTraceSimulator` declaration. For information on using each of these tools, see the links in the preceding list. For more information about configuring `QCTraceSimulator`, see [QCTraceSimulatorConfiguration](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration).
 
 ## QCTraceSimulator methods
 
-`QCTraceSimulator` has several built-in methods to retrieve the values of the metrics tracked during a quantum operation. Examples of the [QCTraceSimulator.GetMetric](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) and the [QCTraceSimulator.ToCSV](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.tocsv) methods can be found in the [Primitive operations counter](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter), [Depth counter](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter), and [Width counter](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter) articles. For more information on all available methods, see [QCTraceSimulator](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) in the Q# API reference.  
+`QCTraceSimulator` has several built-in methods to retrieve the values of the metrics tracked during a quantum operation. Examples of the [QCTraceSimulator.GetMetric](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) and the [QCTraceSimulator.ToCSV](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.tocsv) methods can be found in the [Primitive operations counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.primitive-counter), [Depth counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.depth-counter), and [Width counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.width-counter) articles. For more information on all available methods, see [QCTraceSimulator](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) in the Q# API reference.  
 
 ## See also
 
-- [Quantum resources estimator](xref:microsoft.quantum.machines.resources-estimator)
-- [Quantum Toffoli simulator](xref:microsoft.quantum.machines.toffoli-simulator)
-- [Quantum full state simulator](xref:microsoft.quantum.machines.full-state-simulator) 
+- [Quantum resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)
+- [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
+- [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) 

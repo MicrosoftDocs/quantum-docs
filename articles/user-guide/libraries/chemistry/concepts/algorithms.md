@@ -5,7 +5,7 @@ author: bradben
 ms.author: v-benbra
 ms.date: 10/09/2017
 ms.topic: conceptual
-uid: microsoft.quantum.chemistry.concepts.simulationalgorithms
+uid: microsoft.quantum.libraries.overview-chemistry.concepts.simulationalgorithms
 no-loc: ['Q#', '$$v']
 ---
 
@@ -88,10 +88,10 @@ Exponentials of Pauli operators can be implemented directly in Q# using the <xre
     }
 ```
 
-For Fermionic Hamiltonians, the [Jordan–Wigner decomposition](xref:microsoft.quantum.chemistry.concepts.jordanwigner) conveniently maps the Hamiltonian into a sum of Pauli operators.
+For Fermionic Hamiltonians, the [Jordan–Wigner decomposition](xref:microsoft.quantum.libraries.overview-chemistry.concepts.jordanwigner) conveniently maps the Hamiltonian into a sum of Pauli operators.
 This means that the above approach can easily be adapted to simulating chemistry.
 Rather than manually looping over all Pauli terms in the Jordan-Wigner representation, below is a simple example of how running such a simulation within the chemistry would look.
-Our starting point is a [Jordan–Wigner encoding](xref:microsoft.quantum.chemistry.concepts.jordanwigner) of the Fermionic Hamiltonian, expressed in code as an instance of the `JordanWignerEncoding` class.
+Our starting point is a [Jordan–Wigner encoding](xref:microsoft.quantum.libraries.overview-chemistry.concepts.jordanwigner) of the Fermionic Hamiltonian, expressed in code as an instance of the `JordanWignerEncoding` class.
 
 ```csharp
     // This example uses the following namespaces:
@@ -159,7 +159,7 @@ where $|h|_1 = \sum_j |h_j|$.
 The next step involves transforming the eigenvalues of the walk operator from $e^{i\pm \cos^{-1}(E_k/|h|_1)}$, where $E_k$ are the eigenvalues of $H$ to $e^{-iE_k t}$.
 This can be achieved using a variety of quantum singular value transformation methods including [quantum signal processing](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.010501).
 
-Alternatively, if only static quantities are desired (such as the ground state energy of the Hamiltonian) then it suffices to apply [phase estimation](xref:microsoft.quantum.libraries.characterization) directly to $W$ to estimate the ground state energy from the result by taking the cosine of the result.
+Alternatively, if only static quantities are desired (such as the ground state energy of the Hamiltonian) then it suffices to apply [phase estimation](xref:microsoft.quantum.libraries.overview.characterization) directly to $W$ to estimate the ground state energy from the result by taking the cosine of the result.
 This is significant because it allows the spectral transformation to be performed classically rather than using a quantum singular value transformation method.
 
 On a more detailed level, the implementation of qubitization requires two subroutines that provide the interfaces for the Hamiltonian.

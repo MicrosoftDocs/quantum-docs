@@ -5,7 +5,7 @@ author: geduardo
 ms.author: v-edsanc
 ms.date: 05/29/2020
 ms.topic: tutorial
-uid: microsoft.quantum.write-program
+uid: microsoft.quantum.tutorial-qdk.entanglement
 no-loc: ['Q#', '$$v']
 ---
 
@@ -23,10 +23,10 @@ and quantum entanglement.
 
 If you are ready to start coding, follow these steps before proceeding:
 
-* [Install](xref:microsoft.quantum.install) the Quantum Development Kit using
+* [Install](xref:microsoft.quantum.install-qdk.overview) the Quantum Development Kit using
   your  preferred language and development environment. 
 * If you already have the QDK installed, make sure you have
-  [updated](xref:microsoft.quantum.update) to the latest version
+  [updated](xref:microsoft.quantum.update-qdk) to the latest version
 
 You can also follow along with the narrative without installing the QDK,
 reviewing  the overviews of the Q# programming language and the first concepts
@@ -42,7 +42,7 @@ of quantum computing.
 ## Demonstrating qubit behavior with the QDK
 
 Where classical bits hold a single binary value such as a 0 or 1, the state of a
-[qubit](xref:microsoft.quantum.glossary#qubit) can be in a **superposition** of
+[qubit](xref:microsoft.quantum.glossary-qdk#qubit) can be in a **superposition** of
 0 and 1.  Conceptually, the state of a qubit can be thought of as a direction in an abstract
 space (also known as a vector).  A qubit state can be in any of the possible
 directions. The two **classical states** are the two directions; representing
@@ -55,7 +55,7 @@ repeating the same measurement without any intervening operations produces the
 same binary result.  
 
 Multiple qubits can be
-[**entangled**](xref:microsoft.quantum.glossary#entanglement).  When we make a
+[**entangled**](xref:microsoft.quantum.glossary-qdk#entanglement).  When we make a
 measurement of one entangled qubit, our knowledge of the state of the other(s)
 is updated as well.
 
@@ -67,7 +67,7 @@ superposition and quantum entanglement.
 
 The first thing we have to do is to create a new Q# project. In this tutorial
 we are going to use the environment based on [Q# applications with
-VS Code](xref:microsoft.quantum.install.standalone).
+VS Code](xref:microsoft.quantum.install-qdk.overview.standalone).
 
 To create a new project, in VS Code: 
 
@@ -528,10 +528,10 @@ entangled!
 
 ## Next steps
 
-The tutorial [Grover’s search](xref:microsoft.quantum.quickstarts.search) shows
+The tutorial [Grover’s search](xref:microsoft.quantum.tutorial-qdk.grovers) shows
 you how to build and run Grover search, one of the most popular quantum
 computing algorithms and offers a nice example of a Q# program that can be used
 to solve real problems with quantum computing.  
 
-[Get Started with the Quantum Development Kit](xref:microsoft.quantum.welcome)
+[Get Started with the Quantum Development Kit](xref:microsoft.quantum.get-started-qdk)
 recommends more ways to learn Q# and quantum programming.

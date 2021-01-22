@@ -5,20 +5,20 @@ author: cgranade
 ms.author: chgranad
 ms.date: 10/23/2018
 ms.topic: sample
-uid: microsoft.quantum.chemistry.examples.endtoend
+uid: microsoft.quantum.libraries.overview-chemistry.examples.overview.endtoend
 no-loc: ['Q#', '$$v']
 ---
 
 # End-to-end with NWChem #
 
 In this article, you will walk through an example of getting gate counts for quantum chemistry simulation, starting from an [NWChem](http://www.nwchem-sw.org/index.php/Main_Page) input deck.
-Before proceeding with this example, make sure that you've installed Docker, following the [installation and validation guide](xref:microsoft.quantum.chemistry.concepts.installation).
+Before proceeding with this example, make sure that you've installed Docker, following the [installation and validation guide](xref:microsoft.quantum.libraries.overview-chemistry.concepts.installation).
 
 For more information:
 - [Structure of NWChem input decks](https://github.com/nwchemgit/nwchem/wiki/Getting-Started#input-file-structure)
     - [Input deck commands for use with the Quantum Development Kit](https://github.com/nwchemgit/nwchem/tree/main/contrib/quasar)
-- [Installing the chemistry library and dependencies](xref:microsoft.quantum.chemistry.concepts.installation)
-- [Resource counting](xref:microsoft.quantum.chemistry.examples.resourcecounts)
+- [Installing the chemistry library and dependencies](xref:microsoft.quantum.libraries.overview-chemistry.concepts.installation)
+- [Resource counting](xref:microsoft.quantum.libraries.overview-chemistry.examples.overview.resourcecounts)
 
 > [!NOTE]
 > This example requires Windows PowerShell Core to run.

@@ -5,7 +5,7 @@ author: bettinaheim
 ms.author: beheim
 ms.date: 10/07/2020
 ms.topic: reference
-uid: microsoft.quantum.qsharp.statements-index
+uid: microsoft.quantum.qsharp.statements-overview
 no-loc: ['Q#', '$$v']
 ---
 

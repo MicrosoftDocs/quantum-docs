@@ -5,7 +5,7 @@ author: geduardo
 ms.author: v-edsanc
 ms.date: 02/16/2020
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.machine-learning.load
+uid: microsoft.quantum.libraries.overview.machine-learning.load
 no-loc: ['Q#', '$$v']
 ---
 

@@ -5,7 +5,7 @@ author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: contributor-guide
-uid: microsoft.quantum.contributing.code
+uid: microsoft.quantum.contributing-qdk.overview.code
 no-loc: ['Q#', '$$v']
 ---
 
@@ -50,7 +50,7 @@ function PairTest () : Unit {
 }
 ```
 
-More complicated conditions can be checked using the techniques in the [testing section](xref:microsoft.quantum.libraries.diagnostics) of the standard libraries guide.
+More complicated conditions can be checked using the techniques in the [testing section](xref:microsoft.quantum.libraries.overview.diagnostics) of the standard libraries guide.
 For instance, the following test checks that `H(q); X(q); H(q);` as called by <xref:Microsoft.Quantum.Canon.ApplyWith> does the same thing as `Z(q)`.
 
 ```Q#
@@ -107,9 +107,9 @@ Thanks for helping to make the Quantum Development Kit a great resource for the 
 To learn more, please continue with the following guide on Q# style.
 
 > [!div class="nextstepaction"]
-> [Learn about Q# style guidelines](xref:microsoft.quantum.contributing.style)
+> [Learn about Q# style guidelines](xref:microsoft.quantum.contributing-qdk.overview.style)
 
 Depending on what kind of code you're contributing, there may be additional things to keep in mind that can help you make your contribution do as much good for the community as possible.
 
 > [!div class="nextstepaction"]
-> [Learn about contributing samples](xref:microsoft.quantum.contributing.samples)
+> [Learn about contributing samples](xref:microsoft.quantum.contributing-qdk.overview.samples)

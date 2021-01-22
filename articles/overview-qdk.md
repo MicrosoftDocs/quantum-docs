@@ -5,7 +5,7 @@ author: bradben
 ms.author:  v-benbra
 ms.date: 05/05/2020
 ms.topic: overview
-uid: microsoft.quantum.overview.introduction
+uid: microsoft.quantum.overview.qdk-overview
 no-loc: ['Q#', '$$v']
 ---
 
@@ -25,11 +25,11 @@ Harnessing the unique behavior of quantum physics and applying it to computing, 
 
 A quantum computer isn't a supercomputer that can do everything faster, but there are a few areas where quantum computers do exceptionally well.
 
-- [Quantum simulation](xref:microsoft.quantum.overview.introduction#quantum-simulation)
-- [Cryptography](xref:microsoft.quantum.overview.introduction#cryptography-and-shors-algorithm)
-- [Search](xref:microsoft.quantum.overview.introduction#search-and-grovers-algorithm)
-- [Optimization](xref:microsoft.quantum.overview.introduction#quantum-inspired-computing-and-optimization)
-- [Machine learning](xref:microsoft.quantum.overview.introduction#quantum-machine-learning)
+- [Quantum simulation](xref:microsoft.quantum.overview.qdk-overview#quantum-simulation)
+- [Cryptography](xref:microsoft.quantum.overview.qdk-overview#cryptography-and-shors-algorithm)
+- [Search](xref:microsoft.quantum.overview.qdk-overview#search-and-grovers-algorithm)
+- [Optimization](xref:microsoft.quantum.overview.qdk-overview#quantum-inspired-computing-and-optimization)
+- [Machine learning](xref:microsoft.quantum.overview.qdk-overview#quantum-machine-learning)
 
 ## Quantum simulation
 
@@ -56,7 +56,7 @@ Optimization is the process of finding the best solution to a problem, given its
 
 Machine learning on classical computers is revolutionizing the world of science and business. However, the high computational cost of training the models hinders the development and scope of the field. The area of quantum machine learning explores how to devise and implement quantum software that enables machine learning that runs faster than classical computers.
 
-The Quantum Development Kit comes with the [quantum machine learning library](xref:microsoft.quantum.machine-learning.concepts.intro) that gives you the ability to run hybrid quantum/classical machine learning experiments. The library includes samples and tutorials, and provides the necessary tools to implement a new hybrid quantum–classical algorithm, the circuit-centric quantum classifier, to solve supervised classification problems.
+The Quantum Development Kit comes with the [quantum machine learning library](xref:microsoft.quantum.libraries-machine-learning.overview) that gives you the ability to run hybrid quantum/classical machine learning experiments. The library includes samples and tutorials, and provides the necessary tools to implement a new hybrid quantum–classical algorithm, the circuit-centric quantum classifier, to solve supervised classification problems.
 
 ## Q# and the Microsoft Quantum Development Kit (QDK)
 
@@ -77,4 +77,4 @@ Microsoft is partnering with quantum hardware companies to provide developers wi
 ## Next steps
 
 [Key concepts for quantum computing](xref:microsoft.quantum.overview.understanding)
-[Quickstarts](xref:microsoft.quantum.welcome)
+[Quickstarts](xref:microsoft.quantum.get-started-qdk)

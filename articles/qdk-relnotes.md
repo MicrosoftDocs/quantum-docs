@@ -5,7 +5,7 @@ author: bradben
 ms.author: v-benbra
 ms.date: 8/30/2020
 ms.topic: conceptual
-uid: microsoft.quantum.relnotes
+uid: microsoft.quantum.relnotes-qdk
 no-loc: ['Q#', '$$v']
 ---
 
@@ -13,9 +13,9 @@ no-loc: ['Q#', '$$v']
 
 This article contains information on each Quantum Development Kit release.
 
-For installation instructions, please refer to the [install guide](xref:microsoft.quantum.install).
+For installation instructions, please refer to the [install guide](xref:microsoft.quantum.install-qdk.overview).
 
-For update instructions, please refer to the [update guide](xref:microsoft.quantum.update).
+For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
 ## Version 0.14.2011120240
 
@@ -43,7 +43,7 @@ working after adding a new Q# file to a project (see [qsharp-compiler#720](https
 
 This release contains the following:
 
-- Resource estimation now emits simultaneously achievable depth and width estimates in addition to the qubit count. See [here](xref:microsoft.quantum.machines.resources-estimator#metrics-reported) for details.
+- Resource estimation now emits simultaneously achievable depth and width estimates in addition to the qubit count. See [here](xref:microsoft.quantum.machines.overview.resources-estimator#metrics-reported) for details.
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22).
 
@@ -80,7 +80,7 @@ This release contains the following:
 - New [Microsoft.Quantum.Random namespace](xref:Microsoft.Quantum.Random), providing a more convenient way to sample random values from within Q# programs. ([QuantumLibraries#311](https://github.com/microsoft/QuantumLibraries/pull/311), [qsharp-runtime#328](https://github.com/microsoft/qsharp-runtime/pull/328))
 - Improved [Microsoft.Quantum.Diagnostics namespace](xref:Microsoft.Quantum.Diagnostics) with new [`DumpOperation` operation](xref:Microsoft.Quantum.Diagnostics.DumpOperation), and new operations for restricting qubit allocation and oracle calls. ([QuantumLibraries#302](https://github.com/microsoft/QuantumLibraries/pull/302))
 - New [`%project` magic command](xref:microsoft.quantum.iqsharp.magic-ref.project) in IQ# and [`qsharp.projects` API](https://docs.microsoft.com/python/qsharp-core/qsharp.projects.projects) in Python to support references to Q# projects outside the current workspace folder. See [iqsharp#277](https://github.com/microsoft/iqsharp/issues/277) for the current limitations of this feature. 
-- Support for automatically loading `.csproj` files for IQ#/Python hosts, which allows external project or package references to be loaded at initialization time. See the guide for using [Q# with Python and Jupyter Notebooks](xref:microsoft.quantum.guide.host-programs) for more details.
+- Support for automatically loading `.csproj` files for IQ#/Python hosts, which allows external project or package references to be loaded at initialization time. See the guide for using [Q# with Python and Jupyter Notebooks](xref:microsoft.quantum.user-guide-qdk.overview.host-programs) for more details.
 - Added ErrorCorrection.Syndrome sample.
 - Added tunable coupling to SimpleIsing.
 - Updated HiddenShift sample.
@@ -105,11 +105,11 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 This release contains the following:
 
-- New `qdk-chem` tool for converting legacy electronic structure problem serialization formats (e.g.: FCIDUMP) to [Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge)
+- New `qdk-chem` tool for converting legacy electronic structure problem serialization formats (e.g.: FCIDUMP) to [Broombridge](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge)
 - New functions and operations in the [`Microsoft.Quantum.Synthesis`](xref:Microsoft.Quantum.Synthesis) namespace for coherently applying classical oracles using transformation- and decomposition-based synthesis algorithms.
 - IQ# now allows arguments to the `%simulate`, `%estimate`, and other magic commands. See the [`%simulate` magic command reference](xref:microsoft.quantum.iqsharp.magic-ref.simulate) for more details.
 - New phase display options in IQ#. See the [`%config` magic command reference](xref:microsoft.quantum.iqsharp.magic-ref.config) for more details.
-- IQ# and the `qsharp` Python package are now provided via conda packages ([qsharp](https://anaconda.org/quantum-engineering/qsharp) and [iqsharp](https://anaconda.org/quantum-engineering/iqsharp)) to simplify local installation of Q# Jupyter and Python functionality to a conda environment. See the [Q# Jupyter Notebooks](xref:microsoft.quantum.install.jupyter) and [Q# with Python](xref:microsoft.quantum.install.python) installation guides for more details.
+- IQ# and the `qsharp` Python package are now provided via conda packages ([qsharp](https://anaconda.org/quantum-engineering/qsharp) and [iqsharp](https://anaconda.org/quantum-engineering/iqsharp)) to simplify local installation of Q# Jupyter and Python functionality to a conda environment. See the [Q# Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.jupyter) and [Q# with Python](xref:microsoft.quantum.install-qdk.overview.python) installation guides for more details.
 - When using the simulator, qubits no longer need to be in the |0⟩ state upon release, but can be automatically reset if they were measured immediately before releasing.
 - Updates to make it easier for IQ# users to consume library packages with different QDK versions, requiring only major & minor version numbers match rather than the exact same version
 - Removed deprecated `Microsoft.Quantum.Primitive.*` namespace
@@ -133,9 +133,9 @@ This release fixes a bug affecting compilation of Q# projects.
 This release contains the following:
 
 - Q# notebooks and Python host programs will no longer fail when a Q# entry point is present
-- Updates to [Standard library](xref:microsoft.quantum.libraries.standard.intro) to use access modifiers
+- Updates to [Standard library](xref:microsoft.quantum.libraries.overview.standard.intro) to use access modifiers
 - Compiler now allows plug-in of rewrite steps between built-in rewrite steps
-- Several deprecated functions and operations have been removed following the schedule described in our [API principles](xref:microsoft.quantum.contributing.api-design). Q# programs and libraries that build without warnings in version 0.11.2004.2825 will continue to work unmodified.
+- Several deprecated functions and operations have been removed following the schedule described in our [API principles](xref:microsoft.quantum.contributing-qdk.overview.api-design). Q# programs and libraries that build without warnings in version 0.11.2004.2825 will continue to work unmodified.
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
@@ -148,13 +148,13 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 This release contains the following:
 
-- New support for Q# applications, which no longer require a C# or Python host file. For more information on getting started with Q# applications, see [here](xref:microsoft.quantum.install.standalone).
-- Updated quantum random number generator quickstart to no longer require a C# or Python host file. See the updated  [Quickstart](xref:microsoft.quantum.quickstarts.qrng)
+- New support for Q# applications, which no longer require a C# or Python host file. For more information on getting started with Q# applications, see [here](xref:microsoft.quantum.install-qdk.overview.standalone).
+- Updated quantum random number generator quickstart to no longer require a C# or Python host file. See the updated  [Quickstart](xref:microsoft.quantum.tutorial-qdk.random-number)
 - Performance improvements to IQ# Docker images
 
 > [!NOTE]
 > Q# applications using the new [`@EntryPoint()`](xref:Microsoft.Quantum.Core.EntryPoint) attribute currently cannot be called from Python or .NET host programs.
-> See the [Python](xref:microsoft.quantum.install.python) and [.NET interoperability](xref:microsoft.quantum.install.cs) guides for more information.
+> See the [Python](xref:microsoft.quantum.install-qdk.overview.python) and [.NET interoperability](xref:microsoft.quantum.install-qdk.overview.cs) guides for more information.
 
 ## Version 0.11.2003.3107
 
@@ -179,7 +179,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 This release contains the following:
 
-- New Quantum Machine Learning library, for more information go to our [QML docs page](xref:microsoft.quantum.machine-learning.concepts.intro)
+- New Quantum Machine Learning library, for more information go to our [QML docs page](xref:microsoft.quantum.libraries-machine-learning.overview)
 - IQ# bug fixes, resulting in up to a 10-20x performance increase when loading NuGet packages
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
@@ -206,7 +206,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 This release contains the following:
 
-- New Test attribute for Q# unit testing, see updated API documentation [here](xref:Microsoft.Quantum.Diagnostics.Test) and updated testing & debugging guide [here](xref:microsoft.quantum.guide.testingdebugging)
+- New Test attribute for Q# unit testing, see updated API documentation [here](xref:Microsoft.Quantum.Diagnostics.Test) and updated testing & debugging guide [here](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging)
 - Added stack trace in the case of a Q# program run error
 - Support for breakpoints in Visual Studio Code due to an update in the [OmniSharp C# Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 
@@ -272,7 +272,7 @@ This release contains the following:
 
 - New indexing for slicing arrays, [see the language reference](xref:microsoft.quantum.qsharp.contextualexpressions#contextual-and-omitted-expressions) for more information.
 - Added Dockerfile hosted on the [Microsoft Container Registry](https://github.com/microsoft/ContainerRegistry), see the [IQ# repository for more information](https://github.com/microsoft/iqsharp/blob/main/README.md)
-- Breaking change for [the trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro), update to configuration settings, name changes; see the [.NET API Browser for the updated names](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulatorconfiguration).
+- Breaking change for [the trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro), update to configuration settings, name changes; see the [.NET API Browser for the updated names](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulatorconfiguration).
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed) and [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed).  
 
@@ -299,13 +299,13 @@ This release adds new Q# language syntax:
 
 ### Library 
 
-This release adds a numerics library: Learn more about how to [use the new numerics library](xref:microsoft.quantum.numerics.usage) and try out the [new samples](https://github.com/microsoft/quantum/tree/main/Numerics).  [PR #102](https://github.com/Microsoft/QuantumLibraries/pull/102).  
+This release adds a numerics library: Learn more about how to [use the new numerics library](xref:microsoft.quantum.libraries-numerics.usage) and try out the [new samples](https://github.com/microsoft/quantum/tree/main/Numerics).  [PR #102](https://github.com/Microsoft/QuantumLibraries/pull/102).  
 
 This release reorganizes extends and updates the chemistry library:
 * Improves modularity of components, extensibility, general code cleanup.  [PR #58](https://github.com/microsoft/QuantumLibraries/pull/58).
-* Add support for [multi-reference wavefunctions](xref:microsoft.quantum.chemistry.concepts.multireference), both sparse multi-reference wavefunctions and unitary coupled cluster.  [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
+* Add support for [multi-reference wavefunctions](xref:microsoft.quantum.libraries.overview-chemistry.concepts.multireference), both sparse multi-reference wavefunctions and unitary coupled cluster.  [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 * (Thank you!) [1QBit](https://1qbit.com) contributor ([@valentinS4t1qbit](https://github.com/ValentinS4t1qbit)): Energy evaluation using variational ansatz. [PR #120](https://github.com/Microsoft/QuantumLibraries/pull/120).
-* Updating [Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge) schema to new [version 0.2](xref:microsoft.quantum.libraries.chemistry.schema.spec_v_0_2), adding unitary coupled cluster specification. [Issue #65](https://github.com/microsoft/QuantumLibraries/issues/65).
+* Updating [Broombridge](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge) schema to new [version 0.2](xref:microsoft.quantum.libraries.overview.chemistry.schema.spec_v_0_2), adding unitary coupled cluster specification. [Issue #65](https://github.com/microsoft/QuantumLibraries/issues/65).
 * Adding Python interoperability to chemistry library functions. Try out this [sample](https://github.com/microsoft/Quantum/tree/main/Chemistry/PythonIntegration). [Issue #53](https://github.com/microsoft/QuantumLibraries/issues/53) [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 
 ## Version 0.6.1905
@@ -345,7 +345,7 @@ With this change, programs that include a single "open" statement for the namesp
 
 * The Microsoft.Quantum.Arithmetic namespace has been normalized to use the <xref:Microsoft.Quantum.Arithmetic.LittleEndian> user-defined type. Use the function [BigEndianAsLittleEndian](xref:Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian) when needed to convert to little endian.  
 
-* The names of several callables (functions and operations) have been changed to conform to the [Q# Style Guide](xref:microsoft.quantum.contributing.style).  The old callable names are deprecated.  Programs that use the old callables will continue to work with a compile time warning. 
+* The names of several callables (functions and operations) have been changed to conform to the [Q# Style Guide](xref:microsoft.quantum.contributing-qdk.overview.style).  The old callable names are deprecated.  Programs that use the old callables will continue to work with a compile time warning. 
 
 ### New Samples
 
@@ -357,7 +357,7 @@ We added a [sample of using Q# with F# driver](https://github.com/Microsoft/Quan
 
 ### Migrating existing projects to 0.6.1905.
 
-See the [install guide](xref:microsoft.quantum.install) to update the QDK.
+See the [install guide](xref:microsoft.quantum.install-qdk.overview) to update the QDK.
   
 If you have existing Q# projects from version 0.5 of the Quantum Development Kit, the following are the steps to migrate those projects to the newest version.
 
@@ -394,7 +394,7 @@ This release contains bug fixes.
 
 This release contains the following:
 
-- Adds support for Jupyter Notebook, which offers a great way to learn about Q#.  [Check out new Jupyter Notebook samples and learn how to write your own Notebooks](xref:microsoft.quantum.install). 
+- Adds support for Jupyter Notebook, which offers a great way to learn about Q#.  [Check out new Jupyter Notebook samples and learn how to write your own Notebooks](xref:microsoft.quantum.install-qdk.overview). 
 
 - Adds integer adder arithmetic to the Quantum Canon library.  See also a Jupyter Notebook that [describes how to use the new integer adders](https://github.com/microsoft/Quantum/blob/main/samples/arithmetic/AdderExample.ipynb).
 
@@ -402,7 +402,7 @@ This release contains the following:
 
 - Added ability to return from within a [using- and borrowing-statement](xref:microsoft.quantum.qsharp.quantummemorymanagement#quantum-memory-management).
 
-- Revamped [getting started guide](xref:microsoft.quantum.install).
+- Revamped [getting started guide](xref:microsoft.quantum.install-qdk.overview).
 
 
 ## Version 0.5.1902
@@ -411,7 +411,7 @@ This release contains the following:
 
 This release contains the following:
 
-- Adds support for a cross-platform Python host.  The `qsharp` package for Python makes it easy to simulate Q# operations and functions from within Python. Learn more about [Python interoperability](xref:microsoft.quantum.install). 
+- Adds support for a cross-platform Python host.  The `qsharp` package for Python makes it easy to simulate Q# operations and functions from within Python. Learn more about [Python interoperability](xref:microsoft.quantum.install-qdk.overview). 
 
 - The Visual Studio and Visual Studio Code extensions now support renaming of symbols (e.g., functions and operations).
 
@@ -424,8 +424,8 @@ This release contains the following:
 This release contains the following:
 
 - adds support for a new primitive type, BigInt, which represents a signed integer of arbitrary size.  Learn more about [BigInt](xref:microsoft.quantum.qsharp.valueliterals#bigint-literals).
-- adds new Toffoli simulator, a special purpose fast simulator that can simulate X, CNOT and multi-controlled X quantum operations with very large numbers of qubits.  Learn more about [Toffoli simulator](xref:microsoft.quantum.machines.toffoli-simulator).
-- adds a simple resource estimator that estimates the resources required to run a given instancee of a Q# operation on a quantum computer.  Learn more about the [Resource Estimator](xref:microsoft.quantum.machines.resources-estimator).
+- adds new Toffoli simulator, a special purpose fast simulator that can simulate X, CNOT and multi-controlled X quantum operations with very large numbers of qubits.  Learn more about [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator).
+- adds a simple resource estimator that estimates the resources required to run a given instancee of a Q# operation on a quantum computer.  Learn more about the [Resource Estimator](xref:microsoft.quantum.machines.overview.resources-estimator).
 
 
 ## Version 0.3.1811.2802
@@ -481,7 +481,7 @@ This release also includes a new quantum chemistry library:
     - Estimate energy levels of molecules represented by the Broombridge schema.
 * Documentation describes how to use NWChem to generate additional chemical models for quantum simulation with Q#.
 
-Learn more about the [Quantum Development Kit chemistry library](xref:microsoft.quantum.chemistry.concepts.intro).
+Learn more about the [Quantum Development Kit chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview).
 
 With the new chemistry library, we are separating out the libraries into a new GitHub repo, [Microsoft/QuantumLibraries](https://github.com/Microsoft/QuantumLibraries).  The samples remain in the repo [Microsoft/Quantum](https://github.com/Microsoft/Quantum).  We welcome contributions to both!
 
@@ -530,7 +530,7 @@ This update adds new debugging functionality:
 * In Visual Studio, the probability of measuring a $\ket{1}$ on a single qubit is now automatically shown in the debugging window for the QuantumSimulator target machine.
 * In Visual Studio, improved the display of variable properties in the **Autos** and **Locals** debug windows. 
 
-Learn more about [Testing and Debugging](xref:microsoft.quantum.guide.testingdebugging).
+Learn more about [Testing and Debugging](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging).
 
 ### Community Contributions
 

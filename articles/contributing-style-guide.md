@@ -5,7 +5,7 @@ author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: contributor-guide
-uid: microsoft.quantum.contributing.style
+uid: microsoft.quantum.contributing-qdk.overview.style
 no-loc: ['Q#', '$$v']
 ---
 

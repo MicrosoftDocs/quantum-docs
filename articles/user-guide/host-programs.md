@@ -5,14 +5,14 @@ author: gillenhaalb
 ms.author: a-gibec
 ms.date: 05/15/2020
 ms.topic: article
-uid: microsoft.quantum.guide.host-programs
+uid: microsoft.quantum.user-guide-qdk.overview.host-programs
 no-loc: ['Q#', '$$v']
 ---
 
 # Ways to run a Q# program
 
 One of the Quantum Development Kit's greatest strengths is its flexibility across platforms and development environments.
-However, this also means that new Q# users may find themselves confused or overwhelmed by the numerous options found in the [install guide](xref:microsoft.quantum.install).
+However, this also means that new Q# users may find themselves confused or overwhelmed by the numerous options found in the [install guide](xref:microsoft.quantum.install-qdk.overview).
 On this page, we explain what happens when a Q# program is run, and compare the different ways in which users can do so.
 
 A primary distinction is that Q# can be run:
@@ -26,7 +26,7 @@ To best understand these processes and their differences, we consider a simple Q
 ## Basic Q# program
 
 A basic quantum program might consist of preparing a qubit in an equal superposition of states $\ket{0}$ and $\ket{1}$, measuring it, and returning the result, which will be randomly either one of these two states with equal probability.
-Indeed, this process is at the core of the [quantum random number generator](xref:microsoft.quantum.quickstarts.qrng) quickstart.
+Indeed, this process is at the core of the [quantum random number generator](xref:microsoft.quantum.tutorial-qdk.random-number) quickstart.
 
 In Q#, this would be performed by the following code:
 
@@ -48,7 +48,7 @@ Hence, you can write an operation of the following form:
         }
     }
 ```
-You have defined an operation, `MeasureSuperposition`, which takes no inputs and returns a value of type [Result](xref:microsoft.quantum.qsharp.typesystem-index#available-types).
+You have defined an operation, `MeasureSuperposition`, which takes no inputs and returns a value of type [Result](xref:microsoft.quantum.qsharp.typesystem-overview#available-types).
 
 In addition to operations, Q# also allows to encapsulate deterministic computations into functions. Aside from the determinism guarantee that implies that computations that act on qubits need to be encapsulated into operations rather than functions, there is little difference between operations and function. We refer to them collectively as *callables*.
 
@@ -59,7 +59,7 @@ However, it requires a few more additions to comprise a full `*.qs` Q# file.
 
 All Q# types and callables (both those you define and those intrinsic to the language) are defined within *namespaces*, which provide each a full name that can then be referenced.
 
-For example, the [`H`](xref:Microsoft.Quantum.Intrinsic.H) and [`MResetZ`](xref:Microsoft.Quantum.Measurement.MResetZ) operations are found in the [`Microsoft.Quantum.Instrinsic`](xref:Microsoft.Quantum.Intrinsic) and [`Microsoft.Quantum.Measurement`](xref:Microsoft.Quantum.Measurement) namespaces (part of the [Q# Standard Libraries](xref:microsoft.quantum.libraries.standard.intro)).
+For example, the [`H`](xref:Microsoft.Quantum.Intrinsic.H) and [`MResetZ`](xref:Microsoft.Quantum.Measurement.MResetZ) operations are found in the [`Microsoft.Quantum.Instrinsic`](xref:Microsoft.Quantum.Intrinsic) and [`Microsoft.Quantum.Measurement`](xref:Microsoft.Quantum.Measurement) namespaces (part of the [Q# Standard Libraries](xref:microsoft.quantum.libraries.overview.standard.intro)).
 As such, they can always be called via their *full* names, `Microsoft.Quantum.Intrinsic.H(<qubit>)` and `Microsoft.Quantum.Measurement.MResetZ(<qubit>)`, but always doing this would lead to very cluttered code.
 
 Instead, `open` statements allow callables to be referenced with more concise shorthand, as we've done in the operation body above.
@@ -95,11 +95,11 @@ Now the general run model of a Q# program becomes clear.
 <img src="../media/hostprograms_general_execution_model.png" alt="Q# program execution diagram" width="400">
 
 Firstly, the specific callable to be run has access to any other callables and types defined in the same namespace.
-It also access those from any of the [Q# libraries](xref:microsoft.quantum.libraries), but those must be referenced either via their full name, or through the use of `open` statements described above.
+It also access those from any of the [Q# libraries](xref:microsoft.quantum.libraries.overview), but those must be referenced either via their full name, or through the use of `open` statements described above.
 
-The callable itself is then run on a *[target machine](xref:microsoft.quantum.machines)*.
+The callable itself is then run on a *[target machine](xref:microsoft.quantum.machines.overview)*.
 Such target machines can be actual quantum hardware or the multiple simulators available as part of the QDK.
-For our purposes here, the most useful target machine is an instance of the [full-state simulator](xref:microsoft.quantum.machines.full-state-simulator), `QuantumSimulator`, which calculates the program's behavior as if it were being run on a noise-free quantum computer.
+For our purposes here, the most useful target machine is an instance of the [full-state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), `QuantumSimulator`, which calculates the program's behavior as if it were being run on a noise-free quantum computer.
 
 So far, we've described what happens when a specific Q# callable is being run.
 Regardless of whether Q# is used in a standalone application or with a host program, this general process is more or less the same---hence the QDK's flexibility.
@@ -205,7 +205,7 @@ The error message also provides other options which can be used, including how t
 As the outputs from our operations thus far have been the expected results of their action on real qubits, it's clear that the default target machine from the command line is the full-state quantum simulator, `QuantumSimulator`.
 However, we can instruct callables to be run on a specific target machine with the option `--simulator` (or the shorthand `-s`).
 
-For example, we could run it on [`ResourcesEstimator`](xref:microsoft.quantum.machines.resources-estimator):
+For example, we could run it on [`ResourcesEstimator`](xref:microsoft.quantum.machines.overview.resources-estimator):
 
 ```dotnetcli
 dotnet run -n 4 -s ResourcesEstimator
@@ -225,7 +225,7 @@ Width           4
 BorrowedWidth   0
 ```
 
-For details on what these metrics indicate, see [Resource estimator: metrics reported](xref:microsoft.quantum.machines.resources-estimator#metrics-reported).
+For details on what these metrics indicate, see [Resource estimator: metrics reported](xref:microsoft.quantum.machines.overview.resources-estimator#metrics-reported).
 
 ### Command line run summary
 <br/>
@@ -241,7 +241,7 @@ For example, specifying a path along with a number qubits for the operation abov
 
 With our Q# file in hand, an alternative to calling an operation or function directly from the command prompt is to use a *host program* in another classical language. 
 Specifically, this can be done with either Python or a .NET language such as C# or F# (for the sake of brevity we will only detail C# here).
-A little more setup is required to enable the interoperability, but those details can be found in the [install guides](xref:microsoft.quantum.install).
+A little more setup is required to enable the interoperability, but those details can be found in the [install guides](xref:microsoft.quantum.install-qdk.overview).
 
 In a nutshell, the situation now includes a host program file (for example, `*.py` or `*.cs`) in the same location as our Q# file.
 It's now the *host* program that gets run, and while it is running, it can call specific Q# operations and functions from the Q# file.
@@ -433,7 +433,7 @@ Getting back to Q#, we must create an instance of whatever target machine we wil
 ```
 
 Using other target machines is as simple as instantiating a different one, although the manner of doing so and processing the returns can be slightly different.
-For brevity, we stick to the [`QuantumSimulator`](xref:microsoft.quantum.machines.full-state-simulator) for now, and include the [`ResourcesEstimator`](xref:microsoft.quantum.machines.resources-estimator) [below](#including-the-resources-estimator).
+For brevity, we stick to the [`QuantumSimulator`](xref:microsoft.quantum.machines.overview.full-state-simulator) for now, and include the [`ResourcesEstimator`](xref:microsoft.quantum.machines.overview.resources-estimator) [below](#including-the-resources-estimator).
 
 Each C# class generated from the Q# operations have a `Run` method, the first argument of which must be the target machine instance.
 So, to run `MeasureSuperposition` on the `QuantumSimulator`, we use `MeasureSuperposition.Run(sim)`.
@@ -503,7 +503,7 @@ Multiple qubit result: [One,One,Zero,Zero]
 
 #### Including the resources estimator
 
-The [`ResourcesEstimator`](xref:microsoft.quantum.machines.resources-estimator) requires a slightly different implementation to retrieve the output.
+The [`ResourcesEstimator`](xref:microsoft.quantum.machines.overview.resources-estimator) requires a slightly different implementation to retrieve the output.
 
 Firstly, instead of instantiating them as a variable with a `using` statement (as we do with the `QuantumSimulator`), we more directly instantiate objects of the class via
 
@@ -600,7 +600,7 @@ Here, we will detail how to run the Q# operations defined above, but a more broa
 
 In a Q# Jupyter Notebook, you enter Q# code just as we would from inside the namespace of a Q# file.
 
-So, we can enable access to callables from the [Q# standard libraries](xref:microsoft.quantum.libraries.standard.intro) with `open` statements for their respective namespaces.
+So, we can enable access to callables from the [Q# standard libraries](xref:microsoft.quantum.libraries.overview.standard.intro) with `open` statements for their respective namespaces.
 Upon running a cell with such a statement, the definitions from those namespaces are available throughout the workspace.
 
 > [!NOTE]
@@ -616,7 +616,7 @@ The output then lists those operations, which can then be called from future cel
 
 ### Target machines
 
-The functionality to run operations on specific target machines is provided via [IQ# Magic Commands](xref:microsoft.quantum.guide.quickref.iqsharp).
+The functionality to run operations on specific target machines is provided via [IQ# Magic Commands](xref:microsoft.quantum.user-guide-qdk.overview.quickref.iqsharp).
 For example, `%simulate` makes use of the `QuantumSimulator`, and `%estimate` uses the `ResourcesEstimator`:
 
 <img src="../media/hostprograms_jupyter_no_args_sim_est_crop.png" alt="Jupyter cell simulating a Q# operation and running resource estimation" width="773">

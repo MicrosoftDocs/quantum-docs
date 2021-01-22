@@ -4,7 +4,7 @@ description: Step-by-step tutorial on writing and simulating a quantum program w
 author: gillenhaalb
 ms.author: a-gibec
 ms.date: 10/06/2019
-uid: microsoft.quantum.circuit-tutorial
+uid: microsoft.quantum.tutorial-qdk.circuit
 ms.topic: tutorial
 no-loc: ['Q#', '$$v']
 ---
@@ -28,8 +28,8 @@ In our case, we will define a Q# operation to perform the full three-qubit quant
 
 ## Prerequisites
 
-* [Install](xref:microsoft.quantum.install) the Quantum Development Kit using your preferred language and development environment.
-* If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update) to the latest version
+* [Install](xref:microsoft.quantum.install-qdk.overview) the Quantum Development Kit using your preferred language and development environment.
+* If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update-qdk) to the latest version
 
 
 ## In this tutorial, you'll learn how to:
@@ -55,7 +55,7 @@ The first part of this tutorial consists of defining the Q# operation `Perform3q
 In addition, we will use the [`DumpMachine`](xref:Microsoft.Quantum.Diagnostics.DumpMachine) function to observe how the simulated wavefunction of our three qubit system evolves across the operation.
 
 The first step is creating your Q# project and file.
-The steps for this depend on the environment you will use to call the program, and you can find the details in the respective [installation guides](xref:microsoft.quantum.install).
+The steps for this depend on the environment you will use to call the program, and you can find the details in the respective [installation guides](xref:microsoft.quantum.install-qdk.overview).
 
 We will walk you through the components of the file step-by-step, but the code is also available as a full block below.
 
@@ -301,7 +301,7 @@ Run the Python file, and printed in your console you should see the `Message` an
 
 #### [C#](#tab/tabid-csharp)
 
-Following the same instructions as in the [install guide](xref:microsoft.quantum.install.cs), create a C# host file, and rename it to `host.cs`.
+Following the same instructions as in the [install guide](xref:microsoft.quantum.install-qdk.overview.cs), create a C# host file, and rename it to `host.cs`.
 
 The C# host has four parts:
 1. Construct a quantum simulator.
@@ -387,7 +387,7 @@ In detail for the first row of our input state $\ket{000}$:
 * **`    ---`**: A graphical representation of the amplitude's phase.
 * **`[ 0.0000 rad ]`**: the numeric value of the phase (in radians).
 
-Both the magnitude and the phase are displayed with a graphical representation. The magnitude representation is straightforward: it shows a bar of `*`, and the higher the probability, the larger the bar will be. For the phase, see [Testing and debugging: dump functions](xref:microsoft.quantum.guide.testingdebugging#dump-functions) for the possible symbol representations based on angle ranges.
+Both the magnitude and the phase are displayed with a graphical representation. The magnitude representation is straightforward: it shows a bar of `*`, and the higher the probability, the larger the bar will be. For the phase, see [Testing and debugging: dump functions](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging#dump-functions) for the possible symbol representations based on angle ranges.
 
 
 So, the printed output is illustrating that our programmed gates transformed our state from

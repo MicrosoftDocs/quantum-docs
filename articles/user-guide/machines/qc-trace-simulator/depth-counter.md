@@ -5,12 +5,12 @@ author: vadym-kl
 ms.author: vadym
 ms.date: 06/25/2020
 ms.topic: conceptual
-uid: microsoft.quantum.machines.qc-trace-simulator.depth-counter
+uid: microsoft.quantum.machines.overview.qc-trace-simulator.depth-counter
 no-loc: ['Q#', '$$v']
 ---
 # Quantum trace simulator: depth counter
 
-The depth counter is a part of the Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro).
+The depth counter is a part of the Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro).
 You can use it to gather counts that represent the lower bound of the depth of every operation invoked in a quantum program. 
 
 ## Depth values
@@ -67,7 +67,7 @@ string csvSummary = sim.ToCSV()[MetricsCountersNames.depthCounter];
 
 ## See also
 
-- The Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) overview.
+- The Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro) overview.
 - The <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> API reference.
 - The <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> API reference.
 - The <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.MetricsNames.DepthCounter> API reference.
