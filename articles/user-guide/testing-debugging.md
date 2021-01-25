@@ -5,7 +5,7 @@ author: tcNickolas
 ms.author: mamykhai
 ms.date: 06/01/2020
 ms.topic: article
-uid: microsoft.quantum.guide.testingdebugging
+uid: microsoft.quantum.user-guide-qdk.overview.testingdebugging
 no-loc: ['Q#', '$$v']
 ---
 
@@ -176,7 +176,7 @@ Here, we are using the operation <xref:Microsoft.Quantum.Environment.GetQubitsAv
 As this depends on the global state of the program and its run environment, our definition of `AssertQubitsAreAvailable` must be an operation as well.
 However, we can use that global state to yield a simple `Bool` value as input to the `Fact` function.
 
-[The prelude](xref:microsoft.quantum.libraries.standard.prelude), building on these ideas, offers two especially useful assertions, <xref:Microsoft.Quantum.Diagnostics.AssertMeasurement> and <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> both modeled as operations onto `()`. These assertions each take a Pauli operator describing a particular measurement of interest, a quantum register on which a measurement is performed, and a hypothetical outcome.
+[The prelude](xref:microsoft.quantum.libraries.overview.standard.prelude), building on these ideas, offers two especially useful assertions, <xref:Microsoft.Quantum.Diagnostics.AssertMeasurement> and <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> both modeled as operations onto `()`. These assertions each take a Pauli operator describing a particular measurement of interest, a quantum register on which a measurement is performed, and a hypothetical outcome.
 Target machines which work by simulation are not bound by [the no-cloning theorem](https://en.wikipedia.org/wiki/No-cloning_theorem), and can perform such measurements without disturbing the register that passes to such assertions.
 A simulator can then, similar to the `PositivityFact` function previous, stop computation if the hypothetical outcome is not observed in practice:
 

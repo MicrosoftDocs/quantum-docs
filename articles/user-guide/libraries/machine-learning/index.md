@@ -5,7 +5,7 @@ author: QuantumWriter
 ms.author: alexeib
 ms.date: 12/5/2019
 ms.topic: conceptual
-uid: microsoft.quantum.machine-learning.concepts.intro
+uid: microsoft.quantum.libraries-machine-learning.overview
 no-loc: ['Q#', '$$v']
 ---
 

@@ -2,7 +2,7 @@
 title: Quantum characterization and statistics 
 description: Learn how measurement statistics from phase estimations are used to estimate result values in quantum programming. 
 author: bradben
-uid: microsoft.quantum.libraries.characterization
+uid: microsoft.quantum.libraries.overview.characterization
 ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: conceptual
@@ -33,7 +33,7 @@ This has the advantage that we only require a single additional qubit to perform
 Each of the methods proposed below uses a different strategy for designing experiments and different data processing methods to learn the phase.  They each have unique advantage ranging from having rigorous error bounds, to the abilities to incorporate prior information, tolerate errors or run on memory limitted classical computers.
 
 In discussing iterative phase estimation, we will consider a unitary $U$ given as a black-box operation.
-As described in the section on oracles in [data structures](xref:microsoft.quantum.libraries.data-structures), the Q# canon models such operations by the <xref:Microsoft.Quantum.Oracles.DiscreteOracle> user-defined type, defined by the tuple type `((Int, Qubit[]) => Unit : Adjoint, Controlled)`.
+As described in the section on oracles in [data structures](xref:microsoft.quantum.libraries.overview.data-structures), the Q# canon models such operations by the <xref:Microsoft.Quantum.Oracles.DiscreteOracle> user-defined type, defined by the tuple type `((Int, Qubit[]) => Unit : Adjoint, Controlled)`.
 Concretely, if `U : DiscreteOracle`, then `U(m)` implements $U^m$ for `m : Int`.
 
 With this definition in place, each step of iterative phase estimation proceeds by preparing an auxiliary qubit in the $\ket{+}$ state along with the initial state $\ket{\phi}$ that we assume is an [eigenvector](xref:microsoft.quantum.concepts.matrix-advanced) of $U(m)$, i.e. $U(m)\ket{\phi}= e^{im\phi}\ket{\phi}$.  
@@ -161,7 +161,7 @@ The exact same analysis discussed for [Bayesian phase estimation](#bayesian-phas
 $$
 \Pr(\texttt{Zero} | \phi; t,\theta)=\cos^2\left(\frac{t[\phi -\theta]}{2}\right).
 $$
-Moreover, if $U$ is a simulation of a dynamical generator, as is the case for [Hamiltonian simulation](xref:microsoft.quantum.libraries.applications#hamiltonian-simulation), we interpret $\phi$ as an energy.
+Moreover, if $U$ is a simulation of a dynamical generator, as is the case for [Hamiltonian simulation](xref:microsoft.quantum.libraries.overview.applications#hamiltonian-simulation), we interpret $\phi$ as an energy.
 Thus, using phase estimation with continuous queries allows us to learn the simulated [energy spectrum of molecules](https://arxiv.org/abs/quant-ph/0604193), [materials](https://arxiv.org/abs/1510.03859) or [field theories](https://arxiv.org/abs/1111.3633v2) without having to compromise our choice of experiments by requiring $t$ to be an integer.
 
 ### Random Walk Phase Estimation ###

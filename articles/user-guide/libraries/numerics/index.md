@@ -5,7 +5,7 @@ author: thomashaener
 ms.author: thhaner
 ms.date: 5/14/2019
 ms.topic: conceptual
-uid: microsoft.quantum.numerics.intro
+uid: microsoft.quantum.libraries-numerics.overview
 no-loc: ['Q#', '$$v']
 ---
 
@@ -35,4 +35,4 @@ Besides the integer arithmetic mentioned thus far, the numerics library provides
 ## Getting started
 
 > [!div class="nextstepaction"]
-> [Learn about using the numerics library](xref:microsoft.quantum.numerics.usage)
+> [Learn about using the numerics library](xref:microsoft.quantum.libraries-numerics.usage)

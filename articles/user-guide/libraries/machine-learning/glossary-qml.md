@@ -5,7 +5,7 @@ author: alexeib2
 ms.author: alexeib
 ms.date: 2/27/2020
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.machine-learning.training
+uid: microsoft.quantum.libraries.overview.machine-learning.training
 no-loc: ['Q#', '$$v']
 ---
 

@@ -5,7 +5,7 @@ author: QuantumWriter
 ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.standard.prelude
+uid: microsoft.quantum.libraries.overview.standard.prelude
 no-loc: ['Q#', '$$v']
 ---
 
@@ -150,7 +150,7 @@ For example, `R(PauliZ, PI() / 4, _)` has type `(Qubit => Unit is Adj + Ctl)`.
 > $\ket{1}$ eigenstate is rotated by $\phi / 2$, so that the $\ket{1}$ eigenstate is rotated by $\phi$
 > relative to the $\ket{0}$ eigenstate.
 >
-> In particular, this means that `T` and `R(PauliZ, PI() / 8, _)` differ only by an irrelevant [global phase](xref:microsoft.quantum.glossary#global-phase).
+> In particular, this means that `T` and `R(PauliZ, PI() / 8, _)` differ only by an irrelevant [global phase](xref:microsoft.quantum.glossary-qdk#global-phase).
 > For this reason, $T$ is sometimes known as the $\frac{\pi}{8}$-gate.
 >
 > Note also that rotating around `PauliI` simply applies a global phase of $\phi / 2$. While such phases are irrelevant, as argued in [the conceptual documents](xref:microsoft.quantum.concepts.qubit), they are relevant for controlled `PauliI` rotations.

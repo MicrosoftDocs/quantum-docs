@@ -5,7 +5,7 @@ author: anpaz
 ms.author: anpaz 
 ms.date: 06/26/2020
 ms.topic: conceptual
-uid: microsoft.quantum.machines.resources-estimator
+uid: microsoft.quantum.machines.overview.resources-estimator
 no-loc: ['Q#', '$$v']
 ---
 
@@ -13,11 +13,11 @@ no-loc: ['Q#', '$$v']
 
 As the name implies, the `ResourcesEstimator` class estimates the resources required to run a given instance of a Q# operation on a quantum computer. It accomplishes this by running the quantum operation without actually simulating the state of a quantum computer; for this reason, it estimates resources for Q# operations that use thousands of qubits, provided that the classical part of the code runs in a reasonable time.
 
-The resources estimator is built on top of the [Quantum trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro), which provides a richer set of metrics and tools to help debug Q# programs.
+The resources estimator is built on top of the [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro), which provides a richer set of metrics and tools to help debug Q# programs.
 
 ## Invoking and running the resources estimator
 
-You can use the resources estimator to run any Q# operation. For additional details, see [Ways to run a Q# program](xref:microsoft.quantum.guide.host-programs).
+You can use the resources estimator to run any Q# operation. For additional details, see [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
 
 ### Invoking the resources estimator from C# 
 
@@ -123,8 +123,8 @@ The resources estimator tracks the following metrics:
 |__Measure__    |The run count of any measurements.  |
 |__R__    |The run count of any single-qubit rotations, excluding `T`, Clifford and Pauli operations.  |
 |__T__    |The run count of `T` operations and their conjugates, including the `T` operations, T_x = H.T.H, and T_y = Hy.T.Hy.  |
-|__Depth__|Depth of the quantum circuit run by the Q# operation (see [below](#depth-width-and-qubitcount)). By default, the depth metric only counts `T` gates. For more details, see [Depth Counter](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
-|__Width__|Width of the quantum circuit run by the Q# operation (see [below](#depth-width-and-qubitcount)). By default, the depth metric only counts `T` gates. For more details, see [Width Counter](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter).   |
+|__Depth__|Depth of the quantum circuit run by the Q# operation (see [below](#depth-width-and-qubitcount)). By default, the depth metric only counts `T` gates. For more details, see [Depth Counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.depth-counter).   |
+|__Width__|Width of the quantum circuit run by the Q# operation (see [below](#depth-width-and-qubitcount)). By default, the depth metric only counts `T` gates. For more details, see [Width Counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.width-counter).   |
 |__QubitCount__    |The lower bound for the maximum number of qubits allocated during the run of the Q# operation. This metric might not be compatible with __Depth__ (see below).  |
 |__BorrowedWidth__    |The maximum number of qubits borrowed inside the Q# operation.  |
 
@@ -162,10 +162,10 @@ QubitManager is encouraged to reuse qubits and will reuse released qubits before
 
 ## Providing the probability of measurement outcomes
 
-You can use <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> from the <xref:Microsoft.Quantum.Diagnostics> namespace to provide information about the expected probability of a measurement operation. For more information, see [Quantum Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
+You can use <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> from the <xref:Microsoft.Quantum.Diagnostics> namespace to provide information about the expected probability of a measurement operation. For more information, see [Quantum Trace Simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)
 
 ## See also
 
-- [Quantum trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
-- [Quantum Toffoli simulator](xref:microsoft.quantum.machines.toffoli-simulator)
-- [Quantum full state simulator](xref:microsoft.quantum.machines.full-state-simulator) 
+- [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)
+- [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
+- [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) 

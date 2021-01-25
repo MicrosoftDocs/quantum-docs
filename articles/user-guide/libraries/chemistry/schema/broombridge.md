@@ -5,7 +5,7 @@ author: martinro
 ms.author: martinro
 ms.date: 10/17/2018
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.chemistry.schema.broombridge
+uid: microsoft.quantum.libraries.overview.chemistry.schema.broombridge
 no-loc: ['Q#', '$$v']
 ---
 

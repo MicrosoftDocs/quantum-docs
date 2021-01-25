@@ -3,7 +3,7 @@
 title: Flow controls in the Q# standard libararies
 description: Learn about the flow control operations and functions in the Microsoft Q# standard library. 
 author: QuantumWriter
-uid: microsoft.quantum.concepts.control-flow
+uid: microsoft.quantum.libraries.overview-standard.control-flow
 ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: conceptual
@@ -153,7 +153,7 @@ This analogy is made precise by the recognition that unitary operators correspon
 Under this view, `Bound` is precisely the representation of the matrix product, since `Bound([A, B])(target)` is equivalent to `A(target); B(target);`, which in turn is the calling sequence corresponding to $BA$.
 
 A more sophisticated example is the [Trotter–Suzuki expansion](https://arxiv.org/abs/math-ph/0506007v1).
-As discussed in the Dynamical Generator Representation section of [data structures](xref:microsoft.quantum.libraries.data-structures), the Trotter–Suzuki expansion provides a particularly useful way of expressing matrix exponentials.
+As discussed in the Dynamical Generator Representation section of [data structures](xref:microsoft.quantum.libraries.overview.data-structures), the Trotter–Suzuki expansion provides a particularly useful way of expressing matrix exponentials.
 For instance, applying the expansion at its lowest order yields that for any operators $A$ and $B$ such that $A = A^\dagger$ and $B = B^\dagger$,
 \begin{align}
     \tag{★} \label{eq:trotter-suzuki-0}

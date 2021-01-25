@@ -5,7 +5,7 @@ author: bradben
 ms.author: v-benbra
 ms.date: 10/09/2017
 ms.topic: conceptual
-uid: microsoft.quantum.chemistry.concepts.quantumdynamics
+uid: microsoft.quantum.libraries.overview-chemistry.concepts.quantumdynamics
 no-loc: ['Q#', '$$v']
 ---
 

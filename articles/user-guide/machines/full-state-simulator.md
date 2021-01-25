@@ -5,7 +5,7 @@ author: anpaz
 ms.author: anpaz
 ms.date: 06/26/2020 
 ms.topic: conceptual
-uid: microsoft.quantum.machines.full-state-simulator
+uid: microsoft.quantum.machines.overview.full-state-simulator
 no-loc: ['Q#', '$$v']
 ---
 
@@ -15,7 +15,7 @@ The QDK provides a full state simulator that simulates a quantum machine on your
 
 ## Invoking and running the full state simulator
 
-You expose the full state simulator via the `QuantumSimulator` class. For additional details, see [Ways to run a Q# program](xref:microsoft.quantum.guide.host-programs).
+You expose the full state simulator via the `QuantumSimulator` class. For additional details, see [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
 
 ### Invoking the simulator from C#
 
@@ -73,6 +73,6 @@ The full state simulator uses [OpenMP](http://www.openmp.org/) to parallelize th
 
 ## See also
 
-- [Quantum resources estimator](xref:microsoft.quantum.machines.resources-estimator)
-- [Quantum Toffoli simulator](xref:microsoft.quantum.machines.toffoli-simulator)
-- [Quantum trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
+- [Quantum resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)
+- [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
+- [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)

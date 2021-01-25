@@ -5,7 +5,7 @@ author: QuantumWriter
 ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.standard.algorithms
+uid: microsoft.quantum.libraries.overview.standard.algorithms
 no-loc: ['Q#', '$$v']
 ---
 

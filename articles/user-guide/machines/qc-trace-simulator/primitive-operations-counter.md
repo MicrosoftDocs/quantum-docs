@@ -5,13 +5,13 @@ author: vadym-kl
 ms.author: vadym
 ms.date: 06/25/2020
 ms.topic: conceptual
-uid: microsoft.quantum.machines.qc-trace-simulator.primitive-counter
+uid: microsoft.quantum.machines.overview.qc-trace-simulator.primitive-counter
 no-loc: ['Q#', '$$v']
 ---
 
 # Quantum trace simulator: primitive operations counter
 
-The primitive operation counter is a part of the Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro). It counts the number of primitive processes used by every operation invoked in a quantum program. 
+The primitive operation counter is a part of the Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro). It counts the number of primitive processes used by every operation invoked in a quantum program. 
 
 All <xref:Microsoft.Quantum.Intrinsic> operations are expressed in terms of single-qubit rotations, T operations, single-qubit Clifford operations, CNOT operations, and measurements of multi-qubit Pauli observables. The Primitive Operations Counter aggregates and collects statistics over all the edges of the operation's [call graph](https://en.wikipedia.org/wiki/Call_graph).
 
@@ -70,7 +70,7 @@ string csvSummary = sim.ToCSV()[MetricsCountersNames.primitiveOperationsCounter]
 
 ## See also
 
-- The Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) overview.
+- The Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro) overview.
 - The <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> API reference.
 - The <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> API reference.
 - The <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.PrimitiveOperationsGroupsNames> API reference.

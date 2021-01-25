@@ -5,7 +5,7 @@ author: cgranade
 ms.author: chgranad
 ms.date: 06/30/2020
 ms.topic: article
-uid: microsoft.quantum.libraries.using
+uid: microsoft.quantum.libraries.overview.using
 no-loc: ['Q#', '$$v']
 ---
 
@@ -15,16 +15,16 @@ The Quantum Development Kit provides additional domain-specific functionality th
 
 | Q# Library  | NuGet package | Notes |
 |---------|---------|--------|
-| [Q# standard library](xref:microsoft.quantum.libraries.standard.intro) | [**Microsoft.Quantum.Standard**](https://www.nuget.org/packages/Microsoft.Quantum.Standard) | Included by default |
-| [Quantum chemistry library](xref:microsoft.quantum.chemistry.concepts.intro) | [**Microsoft.Quantum.Chemistry**](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) | |
-| [Quantum numerics library](xref:microsoft.quantum.numerics.intro) | [**Microsoft.Quantum.Numerics**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) | |
-| [Quantum machine learning library](xref:microsoft.quantum.libraries.machine-learning.intro) | [**Microsoft.Quantum.MachineLearning**](https://www.nuget.org/packages/Microsoft.Quantum.MachineLearning) | |
+| [Q# standard library](xref:microsoft.quantum.libraries.overview.standard.intro) | [**Microsoft.Quantum.Standard**](https://www.nuget.org/packages/Microsoft.Quantum.Standard) | Included by default |
+| [Quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview) | [**Microsoft.Quantum.Chemistry**](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) | |
+| [Quantum numerics library](xref:microsoft.quantum.libraries-numerics.overview) | [**Microsoft.Quantum.Numerics**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) | |
+| [Quantum machine learning library](xref:microsoft.quantum.libraries.overview.machine-learning.intro) | [**Microsoft.Quantum.MachineLearning**](https://www.nuget.org/packages/Microsoft.Quantum.MachineLearning) | |
 
 Once you have installed the Quantum Development Kit for use with your preferred environment and host language, you can easily add libraries to individual Q# projects without any further installation.
 
 > [!NOTE]
 > Some Q# libraries may work well with additional tools that work alongside your Q# programs, or that integrate with your host applications.
-> For example, the [chemistry library installation instructions](xref:microsoft.quantum.chemistry.concepts.installation) describe how to use the [**Microsoft.Quantum.Chemistry** package](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) together with the NWChem computational chemistry platform, and how to install the `qdk-chem` command-line tools for working with quantum chemistry data.
+> For example, the [chemistry library installation instructions](xref:microsoft.quantum.libraries.overview-chemistry.concepts.installation) describe how to use the [**Microsoft.Quantum.Chemistry** package](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) together with the NWChem computational chemistry platform, and how to install the `qdk-chem` command-line tools for working with quantum chemistry data.
 
 ## [Q# applications or .NET interopability](#tab/tabid-csproj)
 

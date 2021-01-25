@@ -5,15 +5,15 @@ author: guanghaolow
 ms.author: gulow
 ms.date: 10/23/2018
 ms.topic: sample
-uid: microsoft.quantum.chemistry.examples.resourcecounts
+uid: microsoft.quantum.libraries.overview-chemistry.examples.overview.resourcecounts
 no-loc: ['Q#', '$$v']
 ---
 
 # Obtaining resource counts
 
-The cost of simulating $n$ qubits on classical computers scales exponentially with $n$. This greatly limits the size of a quantum chemistry simulation we may perform with the full-state simulator. For large instances of chemistry, we may nevertheless obtain useful information. Here, we examine how resource costs, such as the number of T-gates or CNOT gates, for simulating chemistry may be obtained in an automated fashion using the [trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro). Such information informs us of when quantum computers might be large enough to run these quantum chemistry algorithms. For reference, see the provided `GetGateCount` sample.
+The cost of simulating $n$ qubits on classical computers scales exponentially with $n$. This greatly limits the size of a quantum chemistry simulation we may perform with the full-state simulator. For large instances of chemistry, we may nevertheless obtain useful information. Here, we examine how resource costs, such as the number of T-gates or CNOT gates, for simulating chemistry may be obtained in an automated fashion using the [trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro). Such information informs us of when quantum computers might be large enough to run these quantum chemistry algorithms. For reference, see the provided `GetGateCount` sample.
 
-Let us assume that we already have a `FermionHamiltonian` instance, say, loaded from the Broombridge schema as discussed in the [loading-from-file](xref:microsoft.quantum.chemistry.examples.loadhamiltonian) example. 
+Let us assume that we already have a `FermionHamiltonian` instance, say, loaded from the Broombridge schema as discussed in the [loading-from-file](xref:microsoft.quantum.libraries.overview-chemistry.examples.overview.loadhamiltonian) example. 
 
 ```csharp
     // Filename of Hamiltonian to be loaded.

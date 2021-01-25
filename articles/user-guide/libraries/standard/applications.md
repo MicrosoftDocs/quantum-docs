@@ -3,7 +3,7 @@
 title: Applications in the Q# standard libraries
 description: Learn about two fundamental applications in quantum computing - Hamiltonian simulation and Shor's search algorithm. 
 author: QuantumWriter
-uid: microsoft.quantum.libraries.applications
+uid: microsoft.quantum.libraries.overview.applications
 ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: conceptual
@@ -53,7 +53,7 @@ $$
 Moreover, it is assumed that each part, a Hamiltonian $H\_j$, is easy to simulate. This means that the unitary $e^{-iH\_j t}$ for any time $t$ may be implemented exactly using $\mathcal{O}(1)$ primitive quantum gates. For instance, this is true in the special case where each $H\_j$ are local Pauli operators, meaning that they are of tensor products of $\mathcal{O}(1)$ non-identity Pauli operators that act on spatially close qubits. This model is particularly applicable to physical systems with bounded and local interaction, as the number of terms is $d=\mathcal{O}(\text{polylog}(N))$, and may clearly be written down, i.e. classically described, in polynomial time.
 
 > [!TIP]
-> Hamiltonians that decompose into a sum of parts may be described using the Dynamical Generator Representation library. For more information, see the Dynamical Generator Representation section in [data structures](xref:microsoft.quantum.libraries.data-structures).
+> Hamiltonians that decompose into a sum of parts may be described using the Dynamical Generator Representation library. For more information, see the Dynamical Generator Representation section in [data structures](xref:microsoft.quantum.libraries.overview.data-structures).
 
 ### Simulation Algorithms ###
 
@@ -88,7 +88,7 @@ using a product of $2rd$ terms. Larger orders will involve even more terms and o
 newtype SimulationAlgorithm = ((Double, EvolutionGenerator, Qubit[]) => Unit is Adj + Ctl);
 ```
 
-The first parameter `Double` is the time of simulation, the second parameter `EvolutionGenerator`, covered in the Dynamical Generator Representation section of [data-structures](xref:microsoft.quantum.libraries.data-structures), is a classical description of a time-independent Hamiltonian packaged with instructions on how each term in the Hamiltonian may be simulated by a quantum circuit. Types of this form approximate the unitary operation $e^{-iHt}$ on the third parameter `Qubit[]`, which is the register storing the quantum state of the simulated system. Similarly for the time-dependent case, we define a user-defined type with an `EvolutionSchedule` type instead, which is a classical description of a time-dependent Hamiltonian.
+The first parameter `Double` is the time of simulation, the second parameter `EvolutionGenerator`, covered in the Dynamical Generator Representation section of [data-structures](xref:microsoft.quantum.libraries.overview.data-structures), is a classical description of a time-independent Hamiltonian packaged with instructions on how each term in the Hamiltonian may be simulated by a quantum circuit. Types of this form approximate the unitary operation $e^{-iHt}$ on the third parameter `Qubit[]`, which is the register storing the quantum state of the simulated system. Similarly for the time-dependent case, we define a user-defined type with an `EvolutionSchedule` type instead, which is a classical description of a time-dependent Hamiltonian.
 
 ```qsharp
 newtype TimeDependentSimulationAlgorithm = ((Double, EvolutionSchedule, Qubit[]) => Unit : Adjoint, Controlled);
@@ -179,7 +179,7 @@ We review these two steps below.
 
 ### Period Finding ###
 
-Having seen how the quantum Fourier transform and phase estimation work (see [Quantum algorithms](xref:microsoft.quantum.libraries.standard.algorithms)), we can use these tools to solve a classically hard computational problem called *period finding*.  In the next section, we will see how to apply period finding to factoring.
+Having seen how the quantum Fourier transform and phase estimation work (see [Quantum algorithms](xref:microsoft.quantum.libraries.overview.standard.algorithms)), we can use these tools to solve a classically hard computational problem called *period finding*.  In the next section, we will see how to apply period finding to factoring.
 
 Given two integers $a$ and $N$, where $a<N$, the goal of period finding, also called order finding, is to find the _order_ $r$ of $a$ modulo $N$, where $r$ is defined to be the least positive integer such that $a^r \equiv 1 \text{ mod } N$.  
 
@@ -205,7 +205,7 @@ We don't need to actually prepare $\ket{x}$!
 We can just prepare a quantum register of $n$ qubits in state $\ket{1}$. 
 
 The circuit contains the QFT and several controlled gates.
-The QFT gate has been described [previously](xref:microsoft.quantum.libraries.standard.algorithms).
+The QFT gate has been described [previously](xref:microsoft.quantum.libraries.overview.standard.algorithms).
 The controlled-$U_a$ gate maps $\ket{x}$ to $\ket{(ax)\text{ mod } N}$ if the control qubit is $\ket{1}$, and maps $\ket{x}$ to $\ket{x}$ otherwise.
 
 To achieve $(a^nx)\text{ mod } N$,  we can simply apply controlled-$U_{a^n}$, where we calculate $a^n \text{ mod } N$ classically to plug into the quantum circuit.  

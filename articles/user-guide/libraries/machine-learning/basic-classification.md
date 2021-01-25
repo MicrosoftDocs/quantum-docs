@@ -5,7 +5,7 @@ author: geduardo
 ms.author: v-edsanc
 ms.date: 02/16/2020
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.machine-learning.basics
+uid: microsoft.quantum.libraries.overview.machine-learning.basics
 no-loc: ['Q#', '$$v']
 ---
 
@@ -17,8 +17,8 @@ In this guide we will use the half-moon dataset, using a classifier structure de
 
 ## Prerequisites
 
-- The Microsoft [Quantum Development Kit](xref:microsoft.quantum.install).
-- Create a Q# project for either a [Python host program](xref:microsoft.quantum.install.python) or a [C# host program](xref:microsoft.quantum.install.cs).
+- The Microsoft [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+- Create a Q# project for either a [Python host program](xref:microsoft.quantum.install-qdk.overview.python) or a [C# host program](xref:microsoft.quantum.install-qdk.overview.cs).
 
 ## Host program
 
@@ -87,4 +87,4 @@ The most important functions and operations defined in the code above are:
 
 ## Next steps
 
-First, you can play with the code and try to change some parameters to see how it affects the training. Then, in the next tutorial, [Design your own classifier](xref:microsoft.quantum.libraries.machine-learning.design),  you will learn how to define the structure of the classifier.
+First, you can play with the code and try to change some parameters to see how it affects the training. Then, in the next tutorial, [Design your own classifier](xref:microsoft.quantum.libraries.overview.machine-learning.design),  you will learn how to define the structure of the classifier.

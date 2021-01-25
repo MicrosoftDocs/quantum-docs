@@ -5,7 +5,7 @@ author: alan-geller
 ms.author: ageller 
 ms.date: 6/25/2020
 ms.topic: conceptual
-uid: microsoft.quantum.machines.toffoli-simulator
+uid: microsoft.quantum.machines.overview.toffoli-simulator
 no-loc: ['Q#', '$$v']
 ---
 
@@ -13,11 +13,11 @@ no-loc: ['Q#', '$$v']
 
 The QDK Toffoli simulator is a special-purpose simulator with a limited scope and only supports `X`, `CNOT`, and multi-controlled `X` quantum operations. All classical logic and computations are available.
 
-While the Toffoli simulator is more restricted in functionality than the [full state simulator](xref:microsoft.quantum.machines.full-state-simulator), it has the advantage of being able to simulate far more qubits. The Toffoli simulator can be used with millions of qubits, while the full state simulator is limited to about 30 qubits. This is useful, for example, with oracles that evaluate Boolean functions - they can be implemented using the limited set of supported algorithms and tested on a large number of qubits.
+While the Toffoli simulator is more restricted in functionality than the [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), it has the advantage of being able to simulate far more qubits. The Toffoli simulator can be used with millions of qubits, while the full state simulator is limited to about 30 qubits. This is useful, for example, with oracles that evaluate Boolean functions - they can be implemented using the limited set of supported algorithms and tested on a large number of qubits.
 
 ## Invoking the Toffoli simulator
 
-You expose the Toffoli simulator via the `ToffoliSimulator` class. For additional details, see [Ways to run a Q# program](xref:microsoft.quantum.guide.host-programs).
+You expose the Toffoli simulator via the `ToffoliSimulator` class. For additional details, see [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
 
 ### Invoking the Toffoli simulator from C#
 
@@ -83,6 +83,6 @@ For example:
 
 ## See also
 
-- [Quantum Resources Estimator](xref:microsoft.quantum.machines.resources-estimator)
-- [Quantum Trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
-- [Quantum Full State simulator](xref:microsoft.quantum.machines.full-state-simulator) 
+- [Quantum Resources Estimator](xref:microsoft.quantum.machines.overview.resources-estimator)
+- [Quantum Trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)
+- [Quantum Full State simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) 

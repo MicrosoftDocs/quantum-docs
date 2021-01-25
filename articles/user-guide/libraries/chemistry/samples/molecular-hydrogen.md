@@ -5,7 +5,7 @@ author: guanghaolow
 ms.author: gulow
 ms.date: 07/02/2020
 ms.topic: sample
-uid: microsoft.quantum.chemistry.examples.energyestimate
+uid: microsoft.quantum.libraries.overview-chemistry.examples.overview.energyestimate
 no-loc: ['Q#', '$$v']
 ---
 
@@ -58,7 +58,7 @@ Simulating the Hamiltonian requires converting the fermion operators to qubit op
     var qSharpData = QSharpFormat.Convert.ToQSharpFormat(qSharpHamiltonianData, qSharpWavefunctionData);
 ```
 
-Next, pass `qSharpData`, which represents the Hamiltonian, to the `TrotterStepOracle` function. `TrotterStepOracle` returns a quantum operation that approximates the real-time evolution of the Hamiltonian. For more information, see [Simulating Hamiltonian dynamics](xref:microsoft.quantum.chemistry.concepts.simulationalgorithms).
+Next, pass `qSharpData`, which represents the Hamiltonian, to the `TrotterStepOracle` function. `TrotterStepOracle` returns a quantum operation that approximates the real-time evolution of the Hamiltonian. For more information, see [Simulating Hamiltonian dynamics](xref:microsoft.quantum.libraries.overview-chemistry.concepts.simulationalgorithms).
 
 ```qsharp
 // qSharpData passed from driver
@@ -76,7 +76,7 @@ let integratorOrder = 4;
 let (nQubits, (rescale, oracle)) =  TrotterStepOracle (qSharpData, stepSize, integratorOrder);
 ```
 
-At this point, you can use the standard library's [phase estimation algorithms](xref:microsoft.quantum.libraries.characterization) to learn the ground state energy using the previous simulation. This requires preparing a good approximation to the quantum ground state. Suggestions for such approximations are provided in the [`Broombridge`](xref:microsoft.quantum.libraries.chemistry.schema.broombridge) schema. However, absent these suggestions, the default approach adds a number of `hamiltonian.NElectrons` electrons to greedily minimize the diagonal one-electron term energies. The phase estimation functions and operations are provided in DocFX notation in the [Microsoft.Quantum.Characterization](xref:Microsoft.Quantum.Characterization) namespace.
+At this point, you can use the standard library's [phase estimation algorithms](xref:microsoft.quantum.libraries.overview.characterization) to learn the ground state energy using the previous simulation. This requires preparing a good approximation to the quantum ground state. Suggestions for such approximations are provided in the [`Broombridge`](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge) schema. However, absent these suggestions, the default approach adds a number of `hamiltonian.NElectrons` electrons to greedily minimize the diagonal one-electron term energies. The phase estimation functions and operations are provided in DocFX notation in the [Microsoft.Quantum.Characterization](xref:Microsoft.Quantum.Characterization) namespace.
 
 The following snippet shows how the real-time evolution output by the chemistry simulation library integrates with quantum phase estimation.
 

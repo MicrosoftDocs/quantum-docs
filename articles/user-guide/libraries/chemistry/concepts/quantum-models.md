@@ -5,7 +5,7 @@ author: bradben
 ms.author: v-benbra
 ms.date: 10/09/2017
 ms.topic: conceptual
-uid: microsoft.quantum.chemistry.concepts.quantummodels
+uid: microsoft.quantum.libraries.overview-chemistry.concepts.quantummodels
 no-loc: ['Q#', '$$v']
 ---
 
@@ -19,7 +19,7 @@ Specifically, for $N_e$ electrons with momenta $p_i$ (in three dimensions) and m
 The momenta operators $\hat{p}\_i^2$ can be viewed in real space as Laplacian operators, i.e. $\hat{p}\_i^2 = -\partial\_{x\_i}^2 - \partial\_{y\_i}^2 - \partial\_{z\_i}^2$.
 Here we have made the simplifying assumption that the nuclei are at rest for the molecule.
 This is known as the Born-Oppenheimer approximation and it tends to be valid for the low-energy energy spectrum of $\hat{H}$ since the electron mass is about $1/1836$ the mass of a proton.
-This Hamiltonian operator can be easily found by writing out the energy for a system of $N\_e$ electrons and applying the canonical quantization process described in [Quantum Dynamics](xref:microsoft.quantum.chemistry.concepts.quantumdynamics).
+This Hamiltonian operator can be easily found by writing out the energy for a system of $N\_e$ electrons and applying the canonical quantization process described in [Quantum Dynamics](xref:microsoft.quantum.libraries.overview-chemistry.concepts.quantumdynamics).
 
 In order to construct the unitary matrix representation for $e^{-i\hat{H} t}$ we need to represent the operator $\hat{H}$ as a matrix.
 For this, we need to choose a coordinate system or basis to represent the problem in.
