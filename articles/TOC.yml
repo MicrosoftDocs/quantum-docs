@@ -19,7 +19,7 @@ items:
       href: workspaces.md
       items:
       - name: Prepare your environment
-        href: prepare-your-environment.md
+        href: how-to-prepare-your-environment.md
         items:
         - name: Azure CLI Azure Quantum extension
           href: azure-cli-quantum-extension.md
@@ -33,12 +33,12 @@ items:
       - name: Create and manage quantum workspaces
         items:    
         - name: Create quantum workspaces with the Azure Portal 
-          href: create-quantum-workspaces-with-the-azure-portal.md
+          href: how-to-create-quantum-workspaces-with-the-azure-portal.md
         - name: Manage quantum workspaces with the Azure CLI 
           href: manage-quantum-workspaces-with-the-azure-cli.md 
   
     - name: Targets
-      href: targets-in-azure-quantum.md
+      href: concepts-targets-in-azure-quantum.md
       items: 
         - name: Simulator
           href: simulator.md
@@ -67,15 +67,15 @@ items:
         - name: Quantum Computing 
           items:
             - name: IonQ  
-              href: ionq.md
+              href: provider-ionq.md
             - name: Honeywell
-              href: honeywell.md
+              href: provider-honeywell.md
         - name: Optimization
           items:
             - name: Microsoft Quantum Solution
               href: microsoft-quantum-solution.md
             - name: 1QBit
-              href: 1qbit.md
+              href: provider-1qbit.md
     - name: Enterprise readiness and security
       items:
         - name: Enterprise security overview
@@ -91,11 +91,11 @@ items:
       - name: Submit jobs
         items:
           - name: Submit jobs with the Azure CLI
-            href: submit-jobs-with-azure-cli.md
+            href: how-to-submit-jobs-with-azure-cli.md
           - name: Submit jobs with Q# Jupyter Notebooks
-            href: submit-jobs-with-jupyter-notebooks.md
+            href: how-to-submit-jobs-with-jupyter-notebooks.md
           - name: Submit jobs with Python
-            href: submit-jobs-with-python.md
+            href: how-to-submit-jobs-with-python.md
       - name: Use IonQ
         href: use-ionq.md
       - name: Use Honeywell
@@ -113,15 +113,15 @@ items:
   - name: Quickstarts
     items:
     - name: Optimization quickstart
-      href: optimization-quickstart.md
+      href: quickstart-qio.md
     - name: IonQ quickstart
-      href: ionq-quickstart.md
+      href: quickstart-ionq.md
   - name: Resources 
     items:
     - name: Glossary (Azure Quantum)
       href: azure-quantum-glossary.md
     - name: Common issues
-      href: common-issues.md
+      href: azure-quantum-common-issues.md
     - name: Preview known issues
       href: preview-known-issues.md
     - name: Azure Quantum Release Notes
@@ -137,9 +137,9 @@ items:
       - name: IonQ
         items:
         - name: IonQ provider & targets
-          href: ionq.md
+          href: provider-ionq.md
         - name: IonQ support policy
-          href: ionq-support.md
+          href: provider-support-ionq.md
     - name: Python-SDK
       items:
       - name: Azure.Quantum
@@ -155,21 +155,21 @@ items:
     - name: What is the Quantum Development Kit?
       href: what-quantum-development-kit.md 
     - name: Introduction to quantum computing
-      href: overview.md
+      href: overview-qdk.md
     - name: Key concepts
       items: 
       - name: Understanding quantum computing
-        href: understanding-quantum-computing.md
+        href: overview-understanding-quantum-computing.md
       - name: Quantum computers and simulators
-        href: quantum-computers-and-simulators.md
+        href: overview-quantum-computers-and-simulators.md
       - name: What are Q# and the QDK?
-        href: what-is-qsharp-and-qdk.md
+        href: overview-what-is-qsharp-and-qdk.md
       - name: Linear algebra for quantum computing
-        href: algebra-for-quantum-computing.md
+        href: overview-algebra-for-quantum-computing.md
   - name: Get started
     items:
     - name: Get started with the QDK
-      href: get-started.md
+      href: install-get-started-qdk.md
     - name: Set up the QDK
       href: install-index.md
     - name: Quantum Computing
@@ -177,29 +177,29 @@ items:
       - name: Getting started 
         items:
         - name: Q# applications
-          href: install-command-line.md
+          href: install-command-line-qdk.md
         - name: Q# with Jupyter Notebooks
-          href: install-jupyter.md
+          href: install-jupyter-qkd.md
         - name: Q# with Binder
           href: install-binder.md      
         - name: Q# with Python
-          href: install-python.md
+          href: install-python-qdk.md
         - name: Q# with .NET
-          href: install-cs.md
+          href: install-csharp-qdk.md
       - name: Update the QDK
-        href: update.md
+        href: install-update-qdk.md
       - name: Tutorials
         items:
         - name: Quantum random number generator
-          href: quantum-random-number-generator.md
+          href: tutorial-qdk-quantum-random-number-generator.md
         - name: Explore entanglement with Q#
-          href: explore-entanglement.md
+          href: tutorial-qdk-explore-entanglement.md
         - name: Implement Grover's search algorithm
-          href: search.md
+          href: tutorial-qdk-grovers-search.md
         - name: Qubit-level programming
-          href: qubit-level.md
+          href: tutorial-qdk-qubit-level-program.md
         - name: Learn Q# with the Quantum Katas
-          href: intro-to-katas.md
+          href: tutorial-qdk-intro-to-katas.md
         - name: Q# code samples
           href: https://docs.microsoft.com/samples/browse/?languages=qsharp
       - name: Concepts
@@ -207,21 +207,21 @@ items:
         - name: "Quantum computing history & background"
           href: concepts-index.md
         - name: Vectors and matrices
-          href: vectors-and-matrices.md
+          href: concepts-vectors-and-matrices.md
         - name: Advanced matrix concepts
-          href: advanced-matrices.md
+          href: concepts-advanced-matrices.md
         - name: The qubit
-          href: the-qubit.md
+          href: concepts-the-qubit.md
         - name: Multiple qubits
-          href: multiple-qubits.md
+          href: concepts-multiple-qubits.md
         - name: Dirac notation
-          href: dirac-notation.md
+          href: concepts-dirac-notation.md
         - name: Pauli measurements
-          href: pauli-measurements.md
+          href: concepts-pauli-measurements.md
         - name: Quantum circuits
-          href: circuits.md
+          href: concepts-circuits.md
         - name: Quantum oracles
-          href: oracles.md
+          href: concepts-oracles.md
       - name: Examples
         items:
         - name: Use local simulator
@@ -267,7 +267,7 @@ items:
           - name: Ising model
             href: optimization-ising-model.md
           - name: Binary optimization
-            href: binary-optimization.md
+            href: optimization-binary-optimization.md
           - name: Example
             href: optimization-example.md
       - name: Tutorials
@@ -281,27 +281,27 @@ items:
     - name: Build your skills with MS Learn
       href: https://docs.microsoft.com/learn/paths/quantum-computing-fundamentals/
     - name: Glossary
-      href: glossary.md
+      href: qdk-glossary.md
     - name: Contributing to the QDK
       items:
       - name: Reporting Bugs
-        href: reporting-bugs.md
+        href: contributing-reporting-bugs.md
       - name: Improving Documentation
-        href: docs.md
+        href: contributing-docs.md
       - name: Opening Pull Requests
-        href: pull-requests.md
+        href: contributing-pull-requests.md
       - name: Contributing Code
-        href: code.md
+        href: contributing-code.md
       - name: Contributing Samples
-        href: samples.md
+        href: contributing-samples.md
       - name: Style Guide
-        href: style-guide.md
+        href: contributing-style-guide.md
       - name: API Design Principles
-        href: api-design-principles.md
+        href: contributing-api-design-principles.md
       topicHref: contributing-index.md
     - name: QDK Release Notes
-      href: relnotes.md
+      href: qdk-relnotes.md
     - name: Further reading
-      href: further-reading.md
+      href: further-reading-qdk.md
 - name: Q# user guide
   href: qsharp-user-guide/toc.yml
