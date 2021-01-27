@@ -6,7 +6,7 @@ items:
   - name: Overview
     items:
     - name: Introduction to Azure Quantum
-      href: azure-quantum-overview.md
+      href: overview-azure-quantum.md
   - name: Get started
     items:
     - name: Workspaces
@@ -14,7 +14,7 @@ items:
       - name: Create quantum workspaces with the Azure Portal 
         href: how-to-create-quantum-workspaces-with-the-azure-portal.md
       - name: Manage quantum workspaces with the Azure CLI 
-        href: manage-quantum-workspaces-with-the-azure-cli.m
+        href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
     - name: Prepare your environment
       href: how-to-prepare-your-environment.md
     - name: Targets
@@ -37,8 +37,8 @@ items:
         href: quickstart-honeywell.md
     - name: Optimization
       items:
-      - name: Use Microsoft Quantum Solution solvers
-        href: use-microsoft-solvers.md
+      - name: Use Microsoft QIO
+        href: quickstart-qio.md
       - name: Use 1QBit solvers
         href: quickstart-1qbit.md  
       - name: Use the Python SDK for optimization
@@ -69,8 +69,6 @@ items:
       href: azure-quantum-relnotes.md
   - name: Reference
     items:
-    - name: Reference documentation
-      href: reference-index.md
     - name: Providers
       items:
       - name: Microsoft Quantum Solution
@@ -112,7 +110,7 @@ items:
     - name: Get started with the QDK
       href: install-get-started-qdk.md
     - name: Set up the QDK
-      href: install-index.md
+      href: install-overview-qdk.md
     - name: Quantum Computing
       items:
       - name: Getting started 
@@ -121,8 +119,6 @@ items:
           href: install-command-line-qdk.md
         - name: Q# with Jupyter Notebooks
           href: install-jupyter-qkd.md
-        - name: Q# with Binder
-          href: install-binder.md      
         - name: Q# with Python
           href: install-python-qdk.md
         - name: Q# with .NET
@@ -146,7 +142,7 @@ items:
       - name: Concepts
         items:
         - name: "Quantum computing history & background"
-          href: concepts-index.md
+          href: concepts-overview.md
         - name: Vectors and matrices
           href: concepts-vectors-and-matrices.md
         - name: Advanced matrix concepts
@@ -163,22 +159,16 @@ items:
           href: concepts-circuits.md
         - name: Quantum oracles
           href: concepts-oracles.md
-      - name: Examples
-        items:
-        - name: Use local simulator
-          href: use-local-simulator.md
-        - name: Use Azure Quantum
-          href: use-azure-quantum.md
     - name: Optimization
       items:
       - name: Introduction to optimization
         items:
         - name: Introduction to optimization
-          href: optimization-introduction.md
+          href: optimization-overview-introduction.md
         - name: What is quantum inspired optimization (QIO)?
-          href: what-quantum-inspired-optimization
+          href: optimization-what-is-quantum-optimization.md
         - name: Key concepts
-          href:
+          href: optimization-oveview-key-concepts.md
       - name: Optimization user guide 
         items:
         - name: Usage
