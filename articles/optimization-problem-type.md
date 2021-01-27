@@ -8,7 +8,7 @@ ms.topic: article
 uid: microsoft.quantum.optimization.problem-type
 ---
 
-# Azure.Quantum.Optimization
+# Azure.Quantum.Optimization.ProblemType
 
 ## Quantum Optimization Problem Type
 
