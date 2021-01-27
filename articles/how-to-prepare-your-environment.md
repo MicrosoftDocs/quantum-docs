@@ -42,14 +42,6 @@ If you need to update the Azure CLI `quantum` extension:
 
 1. Run the previous [installation](#installation) command.
 
-## Enable access to the pre-release feed (private review only)
-
-The Q# samples in this repository require access to the packages
-in the [public Microsoft Quantum pre-release feed](https://dev.azure.com/ms-quantum-public/Microsoft%20Quantum%20(public)/_packaging?_a=feed&feed=alpha).
-
-To enable access:
-1. Copy the [NuGet.config](~/samples/qsharp/NuGet.Config) file from the **qsharp** sample folder to your Q# project folder, or one of its parents. 
-
 ## Next steps
 
 Now that you have installed the tools to use Azure Quantum you can learn to submit jobs.
