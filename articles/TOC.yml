@@ -245,9 +245,9 @@ items:
           - name: Express a problem
             href: optimization-express-problem.md
           - name: Apply a solver
-            href: optimization-apply-solver.md
+            href: optimization-usage-problem-apply-solver.md
           - name: Understand solver results
-            href: optimization-understand-results.md
+            href: optimization-understand-solver-results.md
           - name: Re-use problem definitions
             href: optimization-reuse-problem-definitions.md
           - name: Job management
@@ -256,20 +256,16 @@ items:
         items:
         - name: Optimization methods
           items:
-          - name: Optimization methods overview
-            href: optimization-methods-overview.md
           - name: Which solve should you use?
-            href: which-optimization-solver-should-use.md
+            href: optimization-which-solver-i-should-use.md
         - name: Problem formulation
           items:
           - name: Cost functions
-            href: optimization-cost-functions.md
+            href: optimization-concepts-cost-functions.md
           - name: Ising model
-            href: optimization-ising-model.md
+            href: optimization-concepts-ising-model-for-optimization.md
           - name: Binary optimization
             href: optimization-binary-optimization.md
-          - name: Example
-            href: optimization-example.md
       - name: Tutorials
         items:
         - name: Ship loading problem
@@ -298,7 +294,7 @@ items:
         href: contributing-style-guide.md
       - name: API Design Principles
         href: contributing-api-design-principles.md
-      topicHref: contributing-index.md
+      topicHref: contributing-overview.md
     - name: QDK Release Notes
       href: qdk-relnotes.md
     - name: Further reading
