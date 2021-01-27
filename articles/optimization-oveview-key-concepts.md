@@ -27,14 +27,14 @@ Let's explore a few different optimization landscapes and see which are good can
 
 Consider the following plot of a cost function that looks like a single smooth valley:
 
-![An optimization landscape showing a smooth valley](./media/key-concepts/plot_simple.png)
+![An optimization landscape showing a smooth valley](./media/plot_simple.png)
 
 This kind of problem is easily solved with techniques such as gradient descent, where you begin from an initial starting point and greedily move to any solution with a lower cost. After a few moves, the solution converges to the *global minimum*. The global minimum is the lowest point in the optimization landscape. Azure Quantum optimization solvers offer no advantages over other techniques with these straightforward problems.
 
 ### A structured, rugged landscape
 Azure Quantum works best with problems where the landscape is rugged, with many hills and valleys. Here's an example that considers two continuous variables.
 
-![An optimization landscape showing many hills and valleys](./media/key-concepts/plot_rugged.png)
+![An optimization landscape showing many hills and valleys](./media/plot_rugged.png)
 
 In this scenario, one of the greatest challenges is to avoid getting stuck at any of the sub-optimal *local minima*. A rugged landscape can have multiple valleys. Each of these valleys will have a lowest point, which is the local minimum. One of these points will be the lowest overall, and that point is the global minimum. These rugged landscapes present situations where Azure Quantum optimization solvers can outperform other techniques.
 
@@ -42,7 +42,7 @@ In this scenario, one of the greatest challenges is to avoid getting stuck at an
 
 So far we have discussed smooth and rugged cost functions, but what if there is no structure at all? The following diagram shows such a landscape:
 
-![An optimization landscape showing scattered points with no pattern](./media/key-concepts/plot_random.png)
+![An optimization landscape showing scattered points with no pattern](./media/plot_random.png)
 
 In these cases, where the solutions are completely random, then no algorithm can improve on a brute force search.
 
