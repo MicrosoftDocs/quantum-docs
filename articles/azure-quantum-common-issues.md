@@ -2,7 +2,7 @@
 title: Azure Quantum common issues
 description: List of common issues of the Azure Quantum service.
 author: geduardo
-ms.author: v-edsanc@microsoft.com
+ms.author: v-edsanc
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.azure.common-issues
