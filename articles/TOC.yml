@@ -7,65 +7,18 @@ items:
     items:
     - name: Introduction to Azure Quantum
       href: azure-quantum-overview.md
-    - name: Quantum computing vs. Optimization
-      href: quantum-computing-vs-optimization.md
   - name: Get started
     items:
-    - name: Architecture
-      href: architecture.md
-    - name: Plan and manage costs
-      href: plan-manage-costs-azure-quantum.md
     - name: Workspaces
-      href: workspaces.md
       items:
-      - name: Prepare your environment
-        href: how-to-prepare-your-environment.md
-        items:
-        - name: Azure CLI Azure Quantum extension
-          href: azure-cli-quantum-extension.md
-        - name: Additional Azure Quantum SDKs
-          href: additional-azure-quantum-sdk.md 
-          items:
-          - name: Java
-            href: java.md
-          - name: JavaScript
-            href: javascript.md
-      - name: Create and manage quantum workspaces
-        items:    
-        - name: Create quantum workspaces with the Azure Portal 
-          href: how-to-create-quantum-workspaces-with-the-azure-portal.md
-        - name: Manage quantum workspaces with the Azure CLI 
-          href: manage-quantum-workspaces-with-the-azure-cli.md 
-  
+      - name: Create quantum workspaces with the Azure Portal 
+        href: how-to-create-quantum-workspaces-with-the-azure-portal.md
+      - name: Manage quantum workspaces with the Azure CLI 
+        href: manage-quantum-workspaces-with-the-azure-cli.m
+    - name: Prepare your environment
+      href: how-to-prepare-your-environment.md
     - name: Targets
       href: concepts-targets-in-azure-quantum.md
-      items: 
-        - name: Simulator
-          href: simulator.md
-        - name: Hardware
-          href: hardware.md
-        - name: Resources Estimator
-          href: resources-estimator.md
-        - name: Solver
-          href: solver.md
-        - name: Which target should I use? 
-          href: which-target-should-use.md
-   
-    - name: Providers
-      items:
-        - name: Quantum Computing 
-          items:
-            - name: IonQ  
-              href: provider-ionq.md
-            - name: Honeywell
-              href: provider-honeywell.md
-        - name: Optimization
-          items:
-            - name: Microsoft QIO
-              href: provider-microsoft-qio.md
-            - name: 1QBit
-              href: provider-1qbit.md
-              
   - name: How-to guides
     items:
     - name: Quantum Computing
@@ -94,10 +47,16 @@ items:
         href: how-to-use-the-python-SDK-advanced.md
   - name: Quickstarts
     items:
-    - name: Optimization quickstart
-      href: quickstart-qio.md
-    - name: IonQ quickstart
-      href: quickstart-ionq.md
+    - name: Optimization
+      items:
+        name: Microsoft QIO quickstart
+        href: quickstart-microsoft-qio.md
+    - name: Quantum computing
+      items:
+      - name: IonQ quickstart
+        href: quickstart-ionq.md
+      - name: Honeywell quickstart
+        href: quickstart-honeywell.md  
   - name: Resources 
     items:
     - name: Glossary (Azure Quantum)
