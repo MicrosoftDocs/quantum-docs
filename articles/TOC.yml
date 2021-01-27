@@ -50,19 +50,8 @@ items:
           href: solver.md
         - name: Which target should I use? 
           href: which-target-should-use.md
-    - name: Jobs 
-      href: azure-quantum-jobs.md 
-      items:
-        - name: Properties
-          href: properties.md
-        - name: Lifecycle
-          href: lifecycle.md
-        - name: Cancellation
-          href: cancellation.md
-        - name: Storage
-          href: storage.md    
+   
     - name: Providers
-      href: providers-index.md
       items:
         - name: Quantum Computing 
           items:
@@ -72,18 +61,11 @@ items:
               href: provider-honeywell.md
         - name: Optimization
           items:
-            - name: Microsoft Quantum Solution
-              href: microsoft-quantum-solution.md
+            - name: Microsoft QIO
+              href: provider-microsoft-qio.md
             - name: 1QBit
               href: provider-1qbit.md
-    - name: Enterprise readiness and security
-      items:
-        - name: Enterprise security overview
-          href: enterprise-security-overview.md
-        - name: Manage users and roles 
-          href: manage-users-roles.md
-        - name: Monitor Azure Quantum
-          href: monitor-azure-quantum.md  
+              
   - name: How-to guides
     items:
     - name: Quantum Computing
@@ -97,19 +79,19 @@ items:
           - name: Submit jobs with Python
             href: how-to-submit-jobs-with-python.md
       - name: Use IonQ
-        href: use-ionq.md
+        href: quickstart-ionq.md
       - name: Use Honeywell
-        href: use-honeywell.md
+        href: quickstart-honeywell.md
     - name: Optimization
       items:
       - name: Use Microsoft Quantum Solution solvers
         href: use-microsoft-solvers.md
       - name: Use 1QBit solvers
-        href: use-1qbit-solvers.md  
+        href: quickstart-1qbit.md  
       - name: Use the Python SDK for optimization
-        href: use-the-python-SDK.md
+        href: how-to-use-the-python-SDK.md
       - name: Use the Python SDK for optimization (Advanced)
-        href: use-the-python-SDK-advanced.md
+        href: how-to-use-the-python-SDK-advanced.md
   - name: Quickstarts
     items:
     - name: Optimization quickstart
