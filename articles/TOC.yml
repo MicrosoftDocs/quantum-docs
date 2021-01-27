@@ -38,7 +38,7 @@ items:
     - name: Optimization
       items:
       - name: Use Microsoft QIO
-        href: quickstart-qio.md
+        href: quickstart-microsoft-qio.md
       - name: Use 1QBit solvers
         href: quickstart-1qbit.md  
       - name: Use the Python SDK for optimization
