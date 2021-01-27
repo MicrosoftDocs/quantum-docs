@@ -1,8 +1,7 @@
 items:
 - name: Azure Quantum
+  href: index.yml
   items:
-  - name: Documentation
-    href: azure-quantum-index.yml
   - name: Overview
     items:
     - name: Introduction to Azure Quantum
@@ -87,8 +86,6 @@ items:
         href: Azure.Quantum.Optimization.md
 - name: Quantum Development Kit
   items:
-  - name: Documentation
-    href: index-qdk.yml
   - name: Overview
     items:
     - name: Introduction to quantum computing
