@@ -138,8 +138,8 @@ This method will submit the problem to Azure Quantum for optimization and synchr
 ### Samples and end-to-end learning
 
 - Ship loading sample problem
-  - [End-to-end Microsoft Learn Module](https://docs.microsoft.com/en-gb/learn/modules/solve-quantum-inspired-optimization-problems/)
+  - [End-to-end Microsoft Learn Module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/)
   - [Sample code](https://github.com/MicrosoftDocs/quantum-docs-private/blob/feature/onboarding-azure-quantum/azure-quantum/samples/shipping-sample/shipping-sample.ipynb) (Jupyter Notebook)
 - Job shop scheduling sample problem
-  - [End-to-end Microsoft Learn Module](https://docs.microsoft.com/en-gb/learn/modules/solve-job-shop-scheduling-optimization-problem/)
+  - [End-to-end Microsoft Learn Module](https://docs.microsoft.com/learn/modules/solve-job-shop-scheduling-optimization-problem/)
   - [Sample code](https://github.com/MicrosoftDocs/quantum-docs-private/blob/feature/onboarding-azure-quantum/azure-quantum/samples/job-shop-sample/) (Jupyter Notebook)
