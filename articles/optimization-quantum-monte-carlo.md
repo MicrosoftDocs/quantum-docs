@@ -1,7 +1,7 @@
 ---
 title: Quantum Monte Carlo 
 description: This document provides a basic guide about how to use the Quantum Monte Carlo solver.
-author: Sanjana Gupta
+author: irunknee
 ms.author: sanjgupt
 ms.date: 01/21/2021
 ms.topic: article
