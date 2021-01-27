@@ -71,8 +71,8 @@ items:
     items:
     - name: Providers
       items:
-      - name: Microsoft Quantum Solution
-        href: microsoft-quantum-solution.md
+      - name: Microsoft QIO
+        href: provider-microsoft-qio.md
       - name: IonQ
         items:
         - name: IonQ provider & targets
@@ -88,11 +88,9 @@ items:
 - name: Quantum Development Kit
   items:
   - name: Documentation
-    href: qdk-index.yml
+    href: overview-qdk.yml
   - name: Overview
     items:
-    - name: What is the Quantum Development Kit?
-      href: what-quantum-development-kit.md 
     - name: Introduction to quantum computing
       href: overview-qdk.md
     - name: Key concepts
@@ -174,9 +172,9 @@ items:
         - name: Usage
           items:
           - name: Express a problem
-            href: optimization-express-problem.md
+            href: optimization-express-optimization-problem.md
           - name: Apply a solver
-            href: optimization-usage-problem-apply-solver.md
+            href: optimization-usage-problem-apply-solver-to-optimization.md
           - name: Understand solver results
             href: optimization-understand-solver-results.md
           - name: Re-use problem definitions
@@ -196,13 +194,7 @@ items:
           - name: Ising model
             href: optimization-concepts-ising-model-for-optimization.md
           - name: Binary optimization
-            href: optimization-binary-optimization.md
-      - name: Tutorials
-        items:
-        - name: Ship loading problem
-          href: ship-loading-problem.md
-        - name: Job shop scheduling problem
-          href: job-shop-scheduling-problem.md      
+            href: optimization-binary-optimization.md  
   - name: Resources
     items:
     - name: Build your skills with MS Learn
