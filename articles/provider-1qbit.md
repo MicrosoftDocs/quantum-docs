@@ -5,7 +5,7 @@ author: Mobius5150
 ms.author: mblouin
 ms.date: 1/12/2021
 ms.topic: article
-uid: microsoft.azure.quantum.providers.1qbit
+uid: microsoft.quantum.providers.optimization.1qbit
 ---
 
 # 1QBit provider

@@ -5,7 +5,7 @@ author: danielstocker
 ms.author: dasto
 ms.date: 10/27/2020
 ms.topic: article
-uid: microsoft.azure.quantum.providers.1qbit.support
+uid: microsoft.quantum.providers.optimization.1qbit.support
 ---
 
 # Support Policy for 1QBit in Azure Quantum

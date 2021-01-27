@@ -5,7 +5,7 @@ author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: article
-uid: azure.quantum.reuse-problem-definitions.python
+uid: microsoft.quantum.optimization.reuse-problem-definitions
 ---
 
 # Reusing problem definitions

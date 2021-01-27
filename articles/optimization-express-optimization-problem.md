@@ -5,7 +5,7 @@ author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: article
-uid: azure.quantum.usage.express-problem.python
+uid: microsoft.quantum.optimization.express-problem
 ---
 
 # Express an optimization problem

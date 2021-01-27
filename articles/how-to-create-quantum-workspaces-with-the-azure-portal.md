@@ -5,7 +5,7 @@ author: KittyYeungQ
 ms.author: kitty
 ms.date: 8/7/2020
 ms.topic: article
-uid: microsoft.azure.quantum.workspaces-portal
+uid: microsoft.quantum.workspaces-portal
 ---
 
 # Create quantum workspaces with the Azure portal
@@ -72,4 +72,4 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 
 Now that you created a Workspace, learn about the different [targets to run
 quantum algorithms in Azure
-Quantum](xref:microsoft.azure.quantum.concepts.targets).
+Quantum](xref:microsoft.quantum.concepts.targets).

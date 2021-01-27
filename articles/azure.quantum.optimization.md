@@ -5,7 +5,7 @@ author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: article
-uid: microsoft.azure.quantum.reference.python-sdk.azure.quantum.optimization
+uid: microsoft.quantum.reference.python-sdk.azure.quantum.optimization
 ---
 
 # Azure.Quantum.Optimization
@@ -46,7 +46,7 @@ print(job.id)
 
 ## Job.wait_until_completed
 
-Keeps refreshing the job's details until it reaches a final state. For more information on job states, see [Azure Quantum Overview](xref:microsoft.azure.quantum.overview).
+Keeps refreshing the job's details until it reaches a final state. For more information on job states, see [Azure Quantum Overview](xref:microsoft.quantum.azure-quantum-overview).
 
 ```py
 job = workspace.get_job(jobId)

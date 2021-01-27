@@ -5,17 +5,17 @@ author: anraman
 ms.author: anraman
 ms.date: 01/21/2021
 ms.topic: article
-uid: azure.quantum.optimization.install-use-optimization-sdk
+uid: microsoft.quantum.optimization.install-sdk
 ---
 
 # Install and use the Python SDK for optimization
 
 This guide provides a basic overview of how to install and use the Python SDK for optimization. It assumes you have already completed the [Creating an
-Azure Quantum Workspace guide](xref:microsoft.azure.quantum.workspaces-portal).
+Azure Quantum Workspace guide](xref:microsoft.quantum.workspaces-portal).
 
 ## Prerequisites
 
-- An Azure Quantum Workspace created in your Azure subscription. To create a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.azure.quantum.workspaces-portal).
+- An Azure Quantum Workspace created in your Azure subscription. To create a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
 
 ## Python SDK Installation
 
@@ -53,7 +53,7 @@ Whether you choose to solve optimization problems using Jupyter Notebooks or a P
 
 ## Connecting to a Quantum Workspace
 
-A `Workspace` represents the Quantum Workspace you [previously created](xref:microsoft.azure.quantum.workspaces-portal) and is the main interface for interacting with the service.
+A `Workspace` represents the Quantum Workspace you [previously created](xref:microsoft.quantum.workspaces-portal) and is the main interface for interacting with the service.
 
 ```py
 from typing import List
@@ -126,9 +126,9 @@ This method will submit the problem to Azure Quantum for optimization and synchr
 
 ### Documentation
 
-- [Solver overview](xref:azure.quantum.solver-overview.python)
-- [Expressing problems & supplying terms](xref:azure.quantum.usage.express-problem.python)
-- [Interpreting solver results](xref:azure.quantum.understand-solver-results.python)
+- [Solver overview](xref:microsoft.quantum.optimization.solver-overview)
+- [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)
+- [Interpreting solver results](xref:microsoft.quantum.optimization.understand-solver-results)
 - [Job management](azure.quantum.job-management.python)
 - [Solve long-running problems (async problem submission)](azure.quantum.solve-long-running-problems.python)
 - [Reuse problem defintions](azure.quantum.reuse-problem-definitions.python)

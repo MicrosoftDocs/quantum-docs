@@ -5,7 +5,7 @@ author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: article
-uid: azure.quantum.understand-solver-results.python
+uid: microsoft.quantum.optimization.understand-solver-results
 ---
 
 # Understand solver results

@@ -5,7 +5,7 @@ author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: article
-uid: microsoft.azure.quantum.setup.cli
+uid: microsoft.quantum.setup.cli
 ---
 
 # Prepare your environment to use Azure Quantum from the command prompt
@@ -56,9 +56,9 @@ Now that you have installed the tools to use Azure Quantum you can learn to subm
 
 ### For Optimization users
 
-Learn how to [submit jobs to Azure Quantum](xref:microsoft.azure.quantum.qio.python-sdk) to solve optimization problems.
+Learn how to [submit jobs to Azure Quantum](xref:microsoft.quantum.optimization.python-sdk) to solve optimization problems.
 
 ### For Quantum Computing users
 
-Learn how to [create Q# applications and run them on Azure Quantum](xref:microsoft.azure.quantum.create-applications).
+Learn how to [create Q# applications and run them on Azure Quantum](xref:microsoft.quantum.create-applications).
 

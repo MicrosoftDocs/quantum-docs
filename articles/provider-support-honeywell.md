@@ -5,7 +5,7 @@ author: Mobius5150
 ms.author: mblouin
 ms.date: 1/12/2021
 ms.topic: article
-uid: microsoft.azure.quantum.providers.honeywell.support
+uid: microsoft.quantum.providers.honeywell.support
 ---
 
 # Support Policy for Honeywell in Azure Quantum

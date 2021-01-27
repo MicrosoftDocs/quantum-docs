@@ -5,7 +5,7 @@ author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: article
-uid: microsoft.azure.quantum.submit-jobs.jupyter
+uid: microsoft.quantum.submit-jobs.jupyter
 ---
 
 # Submit jobs to Azure Quantum with Q# Jupyter Notebooks
@@ -17,7 +17,7 @@ Quantum using Q# Jupyter Notebooks.
 
 - An Azure Quantum Workspace in your Azure subscription. To create
   a Workspace, see [Create an Azure Quantum
-  workspace](xref:microsoft.azure.quantum.workspaces-portal).
+  workspace](xref:microsoft.quantum.workspaces-portal).
 
 ## Installation
 

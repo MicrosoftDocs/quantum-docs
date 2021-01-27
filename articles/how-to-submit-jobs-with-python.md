@@ -5,7 +5,7 @@ author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: article
-uid: microsoft.azure.quantum.submit-jobs.python
+uid: microsoft.quantum.submit-jobs.python
 ---
 
 # Submit jobs to Azure Quantum with Python
@@ -16,7 +16,7 @@ Quantum using Python.
 ## Prerequisites
 
 - An Azure Quantum Workspace in your Azure subscription. To create
-  a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.azure.quantum.workspaces-portal).
+  a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
 
 ## Installation
 

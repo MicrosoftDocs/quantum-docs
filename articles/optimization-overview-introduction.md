@@ -5,7 +5,7 @@ author: anraman
 ms.author: anraman
 ms.date: 08/19/2020
 ms.topic: article
-uid: azure.quantum.overview.introduction
+uid: microsoft.quantum.optimization.concepts.overview.introduction
 ---
 
 # Introduction to Optimization

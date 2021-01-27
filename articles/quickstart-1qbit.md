@@ -4,7 +4,7 @@ description: This document provides a step-by-step guide to get you started with
 author: mblouin
 ms.author: mblouin
 ms.topic: article
-uid: microsoft.azure.quantum.qio.1qbit-quickstart
+uid: microsoft.quantum.quickstarts.optimization.1qbit
 ---
 
 # 1QBit quickstart for Azure Quantum
@@ -97,7 +97,7 @@ installed the Optimization Python SDK already, follow these steps:
 
 ## Create a `Workspace` object in your Python code and log in
 
-Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to the Azure Quantum Optimization service. The value for `resource_id` can be found on the Azure Portal page for the [Quantum Workspace you created](xref:microsoft.azure.quantum.workspaces-portal).
+Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to the Azure Quantum Optimization service. The value for `resource_id` can be found on the Azure Portal page for the [Quantum Workspace you created](xref:microsoft.quantum.workspaces-portal).
 
 Once the `Workspace` object is created, you log in using the `workspace.login()` command.
 
@@ -243,7 +243,7 @@ Total weights:
 
 ## Next steps
 
-During this quick-start guide, you have seen an end-to-end example of how to take a mathematical cost function, represent it in code, submit it to the Azure Quantum Optimization service and parse the results. To learn more about the 1QBit offering in Azure Quantum, please see the [1QBit Provider documentation](xref:microsoft.azure.quantum.providers.1qbit).
+During this quick-start guide, you have seen an end-to-end example of how to take a mathematical cost function, represent it in code, submit it to the Azure Quantum Optimization service and parse the results. To learn more about the 1QBit offering in Azure Quantum, please see the [1QBit Provider documentation](xref:microsoft.quantum.providers.optimization.1qbit).
 
 For more detailed information on the shipping optimization problem please refer to the following resources:
 

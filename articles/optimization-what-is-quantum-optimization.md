@@ -5,7 +5,7 @@ author: frtibble
 ms.author: frtibble
 ms.date: 08/18/2020
 ms.topic: article
-uid: azure.quantum.overview.what-is-qio
+uid: microsoft.quantum.optimization.overview.what-is-qio
 ---
 
 # What are quantum-inspired algorithms?

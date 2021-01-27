@@ -5,7 +5,7 @@ author: geduardo
 ms.author: v-edsanc@microsoft.com
 ms.date: 06/25/2020
 ms.topic: article
-uid: microsoft.azure.quantum.known-issues
+uid: microsoft.quantum.known-issues
 ---
 
 # Azure Quantum preview - Known issues

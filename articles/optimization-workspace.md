@@ -5,7 +5,7 @@ author: george-moussa
 ms.author: georgenm
 ms.date: 1/8/2021
 ms.topic: article
-uid: azure.quantum.reference.workspace.python
+uid: microsoft.quantum.optimization.workspace
 ---
 
 # Quantum Workspace
@@ -19,7 +19,7 @@ from azure.quantum import Workspace
 To create a Workspace object, you must supply the following arguments in order
 to connect. If you have not already created a Workspace, follow the steps in
 [Creating an Azure Quantum Workspace
-guide](xref:microsoft.azure.quantum.workspaces-portal) using the following values:
+guide](xref:microsoft.quantum.workspaces-portal) using the following values:
 
 - `subscription_id`: The subscription ID where the Workspace is deployed.
 - `resource_group`: The name of the resource group where the Workspace is deployed.

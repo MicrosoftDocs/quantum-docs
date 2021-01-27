@@ -5,7 +5,7 @@ author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: article
-uid: azure.quantum.job-management.python
+uid: microsoft.quantum.optimization.job-management
 ---
 
 # Job Management

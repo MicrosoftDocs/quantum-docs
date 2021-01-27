@@ -5,7 +5,7 @@ author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: overview
-uid: microsoft.azure.quantum.overview
+uid: microsoft.quantum.azure-quantum-overview
 ---
 
 # Introduction to Azure Quantum
@@ -35,7 +35,7 @@ You use the Azure Quantum service by adding a **Quantum Workspace** resource to 
 
 Another property configured in the Workspace is the **provider** that you want to use to run programs in that Workspace. A single provider may expose one or more **targets**, which can be quantum hardware or simulators, and are ultimately responsible for running your program. 
 
-By default, Azure Quantum adds the Microsoft QIO provider to every Workspace, and you can add other providers when you create the Workspace or any time afterward. To see a list of available providers, see [Providers](xref:microsoft.azure.quantum.reference.index).
+By default, Azure Quantum adds the Microsoft QIO provider to every Workspace, and you can add other providers when you create the Workspace or any time afterward. To see a list of available providers, see [Providers](xref:microsoft.quantum.reference.overview).
 
 ### Provider billing
 
@@ -61,7 +61,7 @@ Once you create a job, you'll also find various metadata available about its sta
 
 ## Job lifecycle
 
-You typically create jobs using one of the quantum SDKs (for example, the [Python SDK](xref:microsoft.azure.quantum.qio.python-sdk) or the [Quantum Development Kit (QDK)](https://docs.microsoft.com/quantum/)). Once you've written
+You typically create jobs using one of the quantum SDKs (for example, the [Python SDK](xref:microsoft.quantum.optimization.python-sdk) or the [Quantum Development Kit (QDK)](https://docs.microsoft.com/quantum/)). Once you've written
 your quantum program or expressed your QIO problem, you can select a target and
 submit your job.
 
@@ -104,4 +104,4 @@ your selected provider.
 
 ## Next steps
 
-When you're ready to get started, begin by [creating an Azure Quantum Workspace](xref:microsoft.azure.quantum.workspaces-portal).
+When you're ready to get started, begin by [creating an Azure Quantum Workspace](xref:microsoft.quantum.workspaces-portal).

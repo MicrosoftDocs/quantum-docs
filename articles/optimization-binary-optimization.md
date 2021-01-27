@@ -5,7 +5,7 @@ author: aminbarzegar
 ms.author: ambarzeg
 ms.date: 1/21/2021
 ms.topic: article
-uid: azure.quantum.how-to-guides.optimization.concepts.problem-formulation.binary-optimization
+uid: microsoft.quantum.optimization.concepts.binary-optimization
 ---
 
 # Binary Optimization

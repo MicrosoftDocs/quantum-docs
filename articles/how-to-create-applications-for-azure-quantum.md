@@ -5,7 +5,7 @@ author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: article
-uid: microsoft.azure.quantum.create-applications
+uid: microsoft.quantum.create-applications
 ---
 
 # Create and run Q# applications in Azure Quantum
@@ -47,7 +47,7 @@ write programs without functionality restrictions. Azure Quantum does not provid
 any target with this profile yet, but you can try any Q# program locally using the
 [full state simulator](xref:microsoft.quantum.machines.full-state-simulator) or the [resources estimator](xref:microsoft.quantum.machines.resources-estimator) from the QDK. 
 
-If you need help setting up your environment to run Q# programs locally, see [Getting started with the QDK](xref:microsoft.quantum.welcome).
+If you need help setting up your environment to run Q# programs locally, see [Getting started with the QDK](xref:microsoft.quantum.get-started-qdk).
 
 You can also explore different [Q# code samples](https://docs.microsoft.com/samples/browse/?languages=qsharp) to run locally with the QDK.
 
@@ -89,14 +89,14 @@ Follow these steps in this section to create an application to run in IonQ targe
 
 #### Prerequisites
 
-- Install the [QDK](xref:microsoft.quantum.install.standalone).
-- A Quantum Workspace with IonQ listed as a provider. To create a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.azure.quantum.workspaces-portal).
+- Install the [QDK](xref:microsoft.quantum.install-qdk.standalone).
+- A Quantum Workspace with IonQ listed as a provider. To create a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
 
 #### Steps 
 
 1. [Create a Q# application using the Q# project template.](https://docs.microsoft.com/quantum/quickstarts/install-command-line?tabs=tabid-vscode#develop-with-q)
 1. Open the `*.csproj` file in a text editor (for example, VS Code) and edit the file to:
-    - Make sure the project points to the latest version of the QDK. You can verify the latest version in the official [QDK Release Notes](xref:microsoft.quantum.relnotes).
+    - Make sure the project points to the latest version of the QDK. You can verify the latest version in the official [QDK Release Notes](xref:microsoft.quantum.relnotes-qdk).
     - Add a line specifying the target:
       - IonQ QPU: `<ExecutionTarget>ionq.qpu</ExecutionTarget>`
       - IonQ simulator: `<ExecutionTarget>ionq.simulator</ExecutionTarget>`
@@ -131,9 +131,9 @@ Follow these steps in this section to create an application to run in IonQ targe
 
 For more information on how to submit jobs to Azure Quantum, see:
 
-- [Submit jobs to Azure Quantum using the Azure CLI](xref:microsoft.azure.quantum.submit-jobs.azcli).
-- [Submit jobs to Azure Quantum using Python](xref:microsoft.azure.quantum.submit-jobs.python).
-- [Submit jobs to Azure Quantum using Q# Jupyter Notebooks](xref:microsoft.azure.quantum.submit-jobs.jupyter)
+- [Submit jobs to Azure Quantum using the Azure CLI](xref:microsoft.quantum.submit-jobs.azcli).
+- [Submit jobs to Azure Quantum using Python](xref:microsoft.quantum.submit-jobs.python).
+- [Submit jobs to Azure Quantum using Q# Jupyter Notebooks](xref:microsoft.quantum.submit-jobs.jupyter)
 
 ## Create and run applications for Basic Measurement Feedback targets
 
@@ -147,5 +147,5 @@ however, we are planning to make some available during the Limited Review.
 
 ## Next steps
 
-- Now that you know how to create Q# applications, you can learn more detalis about [how to submit jobs to Azure Quantum](xref:microsoft.azure.quantum.submit-jobs.azcli). 
+- Now that you know how to create Q# applications, you can learn more detalis about [how to submit jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs.azcli). 
 - You can also  try the different [samples](https://github.com/MicrosoftDocs/quantum-docs-private/tree/feature/onboarding-azure-quantum/azure-quantum/samples) we have available or try to submit your own projects.

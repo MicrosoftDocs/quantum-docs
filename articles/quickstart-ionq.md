@@ -4,7 +4,7 @@ description: This document provides a step-by-step guide to get you started with
 author: mblouin
 ms.author: mblouin
 ms.topic: article
-uid: microsoft.azure.quantum.qio.ionq-quickstart
+uid: microsoft.quantum.quickstarts.computing.ionq
 ---
 
 # IonQ quickstart for Azure Quantum
@@ -257,9 +257,9 @@ The histogram you receive may be slightly different than the one above, but you 
 
 ## Next steps
 
-This quickstart guide demonstrated how to get started running Q# programs against IonQ's simulator and QPU. For more information on the IonQ offering, please see the [IonQ Provider](xref:microsoft.azure.quantum.providers.ionq).
+This quickstart guide demonstrated how to get started running Q# programs against IonQ's simulator and QPU. For more information on the IonQ offering, please see the [IonQ Provider](xref:microsoft.quantum.providers.ionq).
 
-We recommend you continue your journey by learning more about the [different types of targets in Azure Quantum](xref:microsoft.azure.quantum.concepts.targets), which will dictate which Q# programs you may run against a given provider. You might also be interested in learning how to submit Q# jobs with [Jupyter Notebooks](xref:microsoft.azure.quantum.submit-jobs.jupyter) or with [Python](xref:microsoft.azure.quantum.submit-jobs.python).
+We recommend you continue your journey by learning more about the [different types of targets in Azure Quantum](xref:microsoft.quantum.concepts.targets), which will dictate which Q# programs you may run against a given provider. You might also be interested in learning how to submit Q# jobs with [Jupyter Notebooks](xref:microsoft.quantum.submit-jobs.jupyter) or with [Python](xref:microsoft.quantum.submit-jobs.python).
 
 Looking for more samples to run? Check out the [samples directory](https://github.com/MicrosoftDocs/quantum-docs-private/tree/feature/onboarding-azure-quantum/azure-quantum/samples)
 

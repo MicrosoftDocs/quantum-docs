@@ -5,7 +5,7 @@ author: geduardo
 ms.author: v-edsanc@microsoft.com
 ms.date: 07/27/2020
 ms.topic: article
-uid: microsoft.azure.quantum.relnotes
+uid: microsoft.quantum.azure.relnotes
 ---
 
 # Azure Quantum Release Notes

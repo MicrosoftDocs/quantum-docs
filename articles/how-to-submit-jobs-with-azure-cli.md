@@ -5,7 +5,7 @@ author: KittyYeungQ
 ms.author: kitty 
 ms.date: 06/29/2020
 ms.topic: article 
-uid: microsoft.azure.quantum.submit-jobs.azcli
+uid: microsoft.quantum.submit-jobs.azcli
 ---
 
 # Submit jobs to Azure Quantum using the Command-line Interface
@@ -18,10 +18,10 @@ line interface (CLI).
 Ensure that the following items are installed on your computer:
 
 - An Azure Quantum Workspace in your Azure subscription. To create
-  a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.azure.quantum.workspaces-portal).
+  a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
 - The latest version of the [Quantum Development Kit](https://docs.microsoft.com/quantum/install-guide/standalone).
 - The [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
-- The [necessary utilities to use Azure Quantum](xref:microsoft.azure.quantum.setup.cli) (includes the `quantum`
+- The [necessary utilities to use Azure Quantum](xref:microsoft.quantum.setup.cli) (includes the `quantum`
   extension for the Azure CLI).
 
 ## Submit a job to Azure Quantum with the Azure CLI

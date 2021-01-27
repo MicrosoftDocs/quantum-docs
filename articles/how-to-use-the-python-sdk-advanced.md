@@ -5,7 +5,7 @@ author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: article
-uid: microsoft.azure.quantum.qio.python-sdk.advanced
+uid: microsoft.quantum.optimization.python-sdk.advanced
 ---
 
 # Advanced usage of the Python SDK for optimization
@@ -15,7 +15,7 @@ Python SDK for optimization.
 
 ## Asynchronous problem solving
 
-In the [basic usage example](xref:microsoft.azure.quantum.qio.python-sdk), a problem
+In the [basic usage example](xref:microsoft.quantum.optimization.python-sdk), a problem
 was created, submitted to Azure Quantum, and solved synchronously. This is
 convenient for certain environments, but unsuitable for others where there is a
 need to either submit a problem and check on it later, or submit many problems

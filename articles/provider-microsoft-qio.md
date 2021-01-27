@@ -5,7 +5,7 @@ author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: article
-uid: microsoft.azure.quantum.providers.microsoft-qio
+uid: microsoft.quantum.optimization.providers.microsoft.qio
 ---
 
 # Microsoft QIO provider

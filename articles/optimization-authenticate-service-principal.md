@@ -5,7 +5,7 @@ author: anraman
 ms.author: anraman
 ms.date: 01/21/2021
 ms.topic: article
-uid: azure.quantum.usage.authenticate-service-principal
+uid: microsoft.quantum.optimization.authenticate-service-principal
 ---
 
 # Using a Service Principal to Authenticate

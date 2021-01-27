@@ -5,7 +5,7 @@ author: haohaiyu
 ms.author: hay
 ms.date: 01/12/2021
 ms.topic: article
-uid: azure.quantum.optimization.paralleltempering
+uid: microsoft.quantum.optimization.parallel-tempering
 ---
 
 # Parallel Tempering

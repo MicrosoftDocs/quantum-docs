@@ -5,7 +5,7 @@ author: ricardo-espinoza
 ms.author: ricardoe
 ms.date: 11/01/2020
 ms.topic: article
-uid: microsoft.azure.quantum.workspaces-cli
+uid: microsoft.quantum.workspaces-cli
 ---
 
 # Manage quantum workspaces with the Azure CLI
@@ -18,7 +18,7 @@ In order to use the Azure Quantum service, you will need:
 
 - An active Azure account and subscription. For more information, see the Microsoft Learn module [Create an Azure account](https://docs.microsoft.com/learn/modules/create-an-azure-account/).
 - The [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
-- The [necessary utilities to use Azure Quantum](xref:microsoft.azure.quantum.setup.cli) (includes the `quantum` extension for the Azure CLI).
+- The [necessary utilities to use Azure Quantum](xref:microsoft.quantum.setup.cli) (includes the `quantum` extension for the Azure CLI).
 - An Azure resource group where the quantum workspace will live.
 - A storage account in the resource group to be associated with the quantum workspace. Multiple workspaces can be associated with the same account.
 
@@ -59,7 +59,7 @@ az quantum workspace create -l westus -g MyResourceGroup -w MyQuantumWorkspace -
 ```
 
 > [!NOTE]
-> Adding/removing Providers from a quantum workspace using the Az CLI is still not supported. For now, you'll need to [use the Azure portal](xref:microsoft.azure.quantum.workspaces-portal) to do this part.
+> Adding/removing Providers from a quantum workspace using the Az CLI is still not supported. For now, you'll need to [use the Azure portal](xref:microsoft.quantum.workspaces-portal) to do this part.
 
 ## Delete a quantum workspace
 
@@ -88,4 +88,4 @@ After you delete a workspace, you will still see it listed while it's being dele
 ## Next steps
 
 Now that you can created and delete workspaces, you can learn about the different [targets to run quantum algorithms in Azure
-Quantum](xref:microsoft.azure.quantum.concepts.targets).
+Quantum](xref:microsoft.quantum.concepts.targets).

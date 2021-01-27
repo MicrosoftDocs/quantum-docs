@@ -5,12 +5,12 @@ author: Sanjana Gupta
 ms.author: sanjgupt
 ms.date: 01/21/2021
 ms.topic: article
-uid: azure.quantum.optimization.quantummontecarlo
+uid: microsoft.quantum.optimization.quantum-monte-carlo
 ---
 
 # Quantum Monte Carlo
 
-[Quantum Monte Carlo](https://en.wikipedia.org/wiki/Quantum_Monte_Carlo) is a Metropolis annealing algorithm, similar in concept to [Simulated Annealing](xref:azure.quantum.optimization.simulatedannealing) that starts at a low temperature and improves the solution by searching across barriers with some probability as an external perturbation is applied to the system.
+[Quantum Monte Carlo](https://en.wikipedia.org/wiki/Quantum_Monte_Carlo) is a Metropolis annealing algorithm, similar in concept to [Simulated Annealing](xref:microsoft.quantum.optimization.simulated-annealing) that starts at a low temperature and improves the solution by searching across barriers with some probability as an external perturbation is applied to the system.
 As this external field is varied over every Monte Carlo step, the configuration may be able to tunnel through energy barriers and evolve towards a desired ground state (without possessing the thermal energy needed to climb the barriers, as would be required in Simulated Annealing).
 
 In Azure Quantum the core of algorithmic approach to our QMC implementation is based on the [Wolff algorithm](https://en.wikipedia.org/wiki/Wolff_algorithm) for annealing and we extended this approach with various improvement in our computational efficiency.

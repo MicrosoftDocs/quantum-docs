@@ -4,7 +4,7 @@ description: This document provides a step-by-step guide to get you started with
 author: anraman
 ms.author: anraman
 ms.topic: article
-uid: microsoft.azure.quantum.qio.optimization-quickstart
+uid: microsoft.quantum.quickstarts.optimization.qio
 ---
 
 # Optimization quickstart for Azure Quantum
@@ -95,7 +95,7 @@ installed the Optimization Python SDK already, follow these steps:
 
 ## Create a `Workspace` object in your Python code and log in
 
-Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to the Azure Quantum Optimization service. The value for `resource_id` can be found on the Azure Portal page for the [Quantum Workspace you created](xref:microsoft.azure.quantum.workspaces-portal).
+Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to the Azure Quantum Optimization service. The value for `resource_id` can be found on the Azure Portal page for the [Quantum Workspace you created](xref:microsoft.quantum.workspaces-portal).
 
 Once the `Workspace` object is created, you log in using the `workspace.login()` command.
 

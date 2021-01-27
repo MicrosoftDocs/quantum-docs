@@ -5,7 +5,7 @@ author: george-moussa
 ms.author: georgenm
 ms.date: 1/8/2021
 ms.topic: article
-uid: azure.quantum.reference.problem.python
+uid: microsoft.quantum.optimization.problem
 ---
 
 # Quantum Optimization Problem

@@ -5,7 +5,7 @@ author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
 ms.topic: article
-uid: microsoft.azure.quantum.concepts.targets
+uid: microsoft.quantum.concepts.targets
 ---
 
 # Targets in Azure Quantum
@@ -57,4 +57,4 @@ profiles for QPUs:
 ## Next steps
 
 Before learning how to submit jobs to run on Azure Quantum targets, you need to [prepare
-your environment](xref:microsoft.azure.quantum.setup.cli) to use Azure Quantum.
+your environment](xref:microsoft.quantum.setup.cli) to use Azure Quantum.

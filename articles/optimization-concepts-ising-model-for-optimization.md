@@ -5,7 +5,7 @@ author: andrist
 ms.author: ruandris
 ms.date: 1/13/2021
 ms.topic: article
-uid: azure.quantum.how-to-guides.optimization.concepts.problem-formulation.ising-model
+uid: microsoft.quantum.optimization.concepts.ising-model
 ---
 
 # Ising Model

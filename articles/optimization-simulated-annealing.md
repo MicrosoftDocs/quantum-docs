@@ -5,7 +5,7 @@ author: adelebai
 ms.author: adbai
 ms.date: 01/13/2021
 ms.topic: article
-uid: azure.quantum.optimization.simulatedannealing
+uid: microsoft.quantum.optimization.simulated-annealing
 ---
 
 # Simulated Annealing 

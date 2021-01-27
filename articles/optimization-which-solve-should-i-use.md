@@ -5,7 +5,7 @@ author: quantumrandom
 ms.author: dasteige
 ms.date: 11/27/2020
 ms.topic: article
-uid: azure.quantum.optimization.choose-solver
+uid: microsoft.quantum.optimization.choose-solver
 ---
 
 # Which optimization solver should I use?

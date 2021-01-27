@@ -5,7 +5,7 @@ author: andrist
 ms.author: ruandris
 ms.date: 1/13/2021
 ms.topic: article
-uid: azure.quantum.how-to-guides.optimization.concepts.problem-formulation.cost-functions
+uid: microsoft.quantum.optimization.concepts.cost-function
 ---
 
 # Cost Functions
