@@ -43,11 +43,11 @@ workspace.login()
 > [!TIP]
 > Alternatively, you can create the `Workspace` using `subscription_id`, `resource_group`, and `name`. These values may be obtained by running `az quantum workspace show`.
 >
->      workspace = Workspace(
->          subscription_id = "", # The Subscription ID for your Azure Subscription
->          resource_group  = "", # The resource group your Quantum Workspace is deployed in
->          name            = ""  # The name of the Quantum Workspace
->      )
+> workspace = Workspace(
+>     subscription_id = "", # The Subscription ID for your Azure Subscription
+>     resource_group  = "", # The resource group your Quantum Workspace is deployed in
+>     name            = ""  # The name of the Quantum Workspace
+> )
 
 When you call the command `workspace.login()`, the SDK will see the following displayed in your console:
 
