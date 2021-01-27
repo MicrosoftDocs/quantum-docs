@@ -49,7 +49,7 @@ items:
     items:
     - name: Optimization
       items:
-        name: Microsoft QIO quickstart
+      - name: Microsoft QIO quickstart
         href: quickstart-microsoft-qio.md
     - name: Quantum computing
       items:
