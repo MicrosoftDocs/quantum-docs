@@ -88,7 +88,7 @@ items:
 - name: Quantum Development Kit
   items:
   - name: Documentation
-    href: overview-qdk.yml
+    href: index-qdk.yml
   - name: Overview
     items:
     - name: Introduction to quantum computing
