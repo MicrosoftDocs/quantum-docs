@@ -185,8 +185,8 @@ items:
         items:
         - name: Optimization methods
           items:
-          - name: Which solve should you use?
-            href: optimization-which-solver-i-should-use.md
+          - name: Which solver should you use?
+            href: optimization-which-solver-should-you-use.md
         - name: Problem formulation
           items:
           - name: Cost functions
@@ -223,4 +223,4 @@ items:
     - name: Further reading
       href: further-reading-qdk.md
 - name: Q# user guide
-  href: qsharp-user-guide/toc.yml
+  href: user-guide/toc.yml
