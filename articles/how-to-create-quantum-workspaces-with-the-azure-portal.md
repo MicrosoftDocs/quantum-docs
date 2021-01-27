@@ -29,12 +29,12 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 1. Click **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
 
    ![Tile for the Azure Quantum (preview)
-   service](../media/azure-quantum-preview-search.png)
+   service](./media/azure-quantum-preview-search.png)
 
 1. Click **Azure Quantum (preview)** and then click  **Create**. This opens a form to create a Quantum Workspace.
 
    ![Create resource for the Azure Quantum (preview)
-   service](../media/azure-quantum-preview-create.png)
+   service](./media/azure-quantum-preview-create.png)
 
 1. Fill out the details of your Workspace:
    - **Subscription:** The subscription that you want to associate with this
@@ -44,7 +44,7 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
    - **Region:** The region for the Workspace.
    - **Storage Account**: The Azure storage account to store your jobs and results. If you don't have an existing storage account, click **Create a new storage account** and complete the necessary fields. For this preview, we recommend using the default values.
 
-   ![Properties for the Azure Quantum Workspace](../media/azure-quantum-preview-properties.png)
+   ![Properties for the Azure Quantum Workspace](./media/azure-quantum-preview-properties.png)
 
 
    > [!NOTE]
@@ -52,7 +52,7 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 
 1. After completing the information, click the **Providers** tab to add providers to your Workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
 
-   ![Providers for Azure Quantum](../media/azure-quantum-preview-providers.png)
+   ![Providers for Azure Quantum](./media/azure-quantum-preview-providers.png)
 
    > [!NOTE]
    > By default, Azure Quantum adds the Microsoft QIO provider to every Workspace.
@@ -62,7 +62,7 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 1. Review the settings and approve the *Terms and Conditions of Use* of
    the selected providers. If everything is correct, click on **Create** to create your Quantum Workspace.
 
-   ![Review and create the Workspace](../media/azure-quantum-preview-terms.png)
+   ![Review and create the Workspace](./media/azure-quantum-preview-terms.png)
 
 > [!NOTE] 
 > While we are not charging for usage of Azure Quantum during the private

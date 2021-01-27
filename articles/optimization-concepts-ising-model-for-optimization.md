@@ -16,7 +16,7 @@ substance (for example, a fridge magnet). These moments, called *spins*, are pre
 point either "up" ($+1$) or "down" ($-1$) and interact with other spins
 depending on their relative position.
 
-![2D Ising model states at different temperatures](../../../../media/optimization-ising-model.png)
+![2D Ising model states at different temperatures](../../.././media/optimization-ising-model.png)
 
 The behavior of such a magnetic material is temperature-dependent:
 
