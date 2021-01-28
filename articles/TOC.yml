@@ -1,15 +1,225 @@
-- name: Microsoft Quantum Documentation
+items:
+- name: Azure Quantum
   href: index.yml
-- name: Overview
-  href: overview/toc.yml
-- name: Quickstarts
-  href: quickstarts/toc.yml
-- name: Tutorials
-  href: tutorials/toc.yml
+  items:
+  - name: Overview
+    items:
+    - name: Introduction to Azure Quantum
+      href: overview-azure-quantum.md
+  - name: Get started
+    items:
+    - name: Workspaces
+      items:
+      - name: Create quantum workspaces with the Azure Portal 
+        href: how-to-create-quantum-workspaces-with-the-azure-portal.md
+      - name: Manage quantum workspaces with the Azure CLI 
+        href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
+    - name: Prepare your environment
+      href: how-to-prepare-your-environment.md
+    - name: Targets
+      href: concepts-targets-in-azure-quantum.md
+  - name: How-to guides
+    items:
+    - name: Quantum Computing
+      items:
+      - name: Submit jobs
+        items:
+          - name: Submit jobs with the Azure CLI
+            href: how-to-submit-jobs-with-azure-cli.md
+          - name: Submit jobs with Q# Jupyter Notebooks
+            href: how-to-submit-jobs-with-jupyter-notebooks.md
+          - name: Submit jobs with Python
+            href: how-to-submit-jobs-with-python.md
+      - name: Use IonQ
+        href: quickstart-ionq.md
+      - name: Use Honeywell
+        href: quickstart-honeywell.md
+    - name: Optimization
+      items:
+      - name: Use Microsoft QIO
+        href: quickstart-microsoft-qio.md
+      - name: Use 1QBit solvers
+        href: quickstart-1qbit.md  
+      - name: Use the Python SDK for optimization
+        href: how-to-use-the-python-SDK.md
+      - name: Use the Python SDK for optimization (Advanced)
+        href: how-to-use-the-python-SDK-advanced.md
+  - name: Quickstarts
+    items:
+    - name: Optimization
+      items:
+      - name: Microsoft QIO quickstart
+        href: quickstart-microsoft-qio.md
+    - name: Quantum computing
+      items:
+      - name: IonQ quickstart
+        href: quickstart-ionq.md
+      - name: Honeywell quickstart
+        href: quickstart-honeywell.md  
+  - name: Resources 
+    items:
+    - name: Glossary (Azure Quantum)
+      href: azure-quantum-glossary.md
+    - name: Common issues
+      href: azure-quantum-common-issues.md
+    - name: Preview known issues
+      href: preview-known-issues.md
+    - name: Azure Quantum Release Notes
+      href: azure-quantum-relnotes.md
+  - name: Reference
+    items:
+    - name: Providers
+      items:
+      - name: Providers
+        href: quantum-reference-overview.md
+      - name: Microsoft QIO
+        href: provider-microsoft-qio.md
+      - name: IonQ
+        items:
+        - name: IonQ provider & targets
+          href: provider-ionq.md
+        - name: IonQ support policy
+          href: provider-support-ionq.md
+    - name: Python-SDK
+      items:
+      - name: Azure.Quantum
+        href: Azure.Quantum.md
+      - name: Azure.Quantum.Optimization
+        href: Azure.Quantum.Optimization.md
+- name: Quantum Development Kit
+  items:
+  - name: Overview
+    items:
+    - name: Introduction to quantum computing
+      href: overview-qdk.md
+    - name: Key concepts
+      items: 
+      - name: Understanding quantum computing
+        href: overview-understanding-quantum-computing.md
+      - name: Quantum computers and simulators
+        href: overview-quantum-computers-and-simulators.md
+      - name: What are Q# and the QDK?
+        href: overview-what-is-qsharp-and-qdk.md
+      - name: Linear algebra for quantum computing
+        href: overview-algebra-for-quantum-computing.md
+  - name: Get started
+    items:
+    - name: Get started with the QDK
+      href: install-get-started-qdk.md
+    - name: Set up the QDK
+      href: install-overview-qdk.md
+    - name: Quantum Computing
+      items:
+      - name: Getting started 
+        items:
+        - name: Q# applications
+          href: install-command-line-qdk.md
+        - name: Q# with Jupyter Notebooks
+          href: install-jupyter-qkd.md
+        - name: Q# with Python
+          href: install-python-qdk.md
+        - name: Q# with .NET
+          href: install-csharp-qdk.md
+      - name: Update the QDK
+        href: install-update-qdk.md
+      - name: Tutorials
+        items:
+        - name: Quantum random number generator
+          href: tutorial-qdk-quantum-random-number-generator.md
+        - name: Explore entanglement with Q#
+          href: tutorial-qdk-explore-entanglement.md
+        - name: Implement Grover's search algorithm
+          href: tutorial-qdk-grovers-search.md
+        - name: Qubit-level programming
+          href: tutorial-qdk-qubit-level-program.md
+        - name: Learn Q# with the Quantum Katas
+          href: tutorial-qdk-intro-to-katas.md
+        - name: Q# code samples
+          href: https://docs.microsoft.com/samples/browse/?languages=qsharp
+      - name: Concepts
+        items:
+        - name: "Quantum computing history & background"
+          href: concepts-overview.md
+        - name: Vectors and matrices
+          href: concepts-vectors-and-matrices.md
+        - name: Advanced matrix concepts
+          href: concepts-advanced-matrices.md
+        - name: The qubit
+          href: concepts-the-qubit.md
+        - name: Multiple qubits
+          href: concepts-multiple-qubits.md
+        - name: Dirac notation
+          href: concepts-dirac-notation.md
+        - name: Pauli measurements
+          href: concepts-pauli-measurements.md
+        - name: Quantum circuits
+          href: concepts-circuits.md
+        - name: Quantum oracles
+          href: concepts-oracles.md
+    - name: Optimization
+      items:
+      - name: Introduction to optimization
+        items:
+        - name: Introduction to optimization
+          href: optimization-overview-introduction.md
+        - name: What is quantum inspired optimization (QIO)?
+          href: optimization-what-is-quantum-optimization.md
+        - name: Key concepts
+          href: optimization-oveview-key-concepts.md
+      - name: Optimization user guide 
+        items:
+        - name: Usage
+          items:
+          - name: Express a problem
+            href: optimization-express-optimization-problem.md
+          - name: Apply a solver
+            href: optimization-usage-problem-apply-solver-to-optimization.md
+          - name: Understand solver results
+            href: optimization-understand-solver-results.md
+          - name: Re-use problem definitions
+            href: optimization-reuse-problem-definitions.md
+          - name: Job management
+            href: optimization-job-management.md
+      - name: Concepts
+        items:
+        - name: Optimization methods
+          items:
+          - name: Which solver should you use?
+            href: optimization-which-solver-should-you-use.md
+        - name: Problem formulation
+          items:
+          - name: Cost functions
+            href: optimization-concepts-cost-functions.md
+          - name: Ising model
+            href: optimization-concepts-ising-model-for-optimization.md
+          - name: Binary optimization
+            href: optimization-binary-optimization.md  
+  - name: Resources
+    items:
+    - name: Build your skills with MS Learn
+      href: https://docs.microsoft.com/learn/paths/quantum-computing-fundamentals/
+    - name: Glossary
+      href: qdk-glossary.md
+    - name: Contributing to the QDK
+      items:
+      - name: Reporting Bugs
+        href: contributing-reporting-bugs.md
+      - name: Improving Documentation
+        href: contributing-docs.md
+      - name: Opening Pull Requests
+        href: contributing-pull-requests.md
+      - name: Contributing Code
+        href: contributing-code.md
+      - name: Contributing Samples
+        href: contributing-samples.md
+      - name: Style Guide
+        href: contributing-style-guide.md
+      - name: API Design Principles
+        href: contributing-api-design-principles.md
+      topicHref: contributing-overview.md
+    - name: QDK Release Notes
+      href: qdk-relnotes.md
+    - name: Further reading
+      href: further-reading-qdk.md
 - name: Q# user guide
   href: user-guide/toc.yml
-- name: Concepts 
-  href: concepts/toc.yml
-- name: Resources
-  href: resources/toc.yml
-
