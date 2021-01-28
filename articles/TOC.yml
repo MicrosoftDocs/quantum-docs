@@ -70,6 +70,8 @@ items:
     items:
     - name: Providers
       items:
+      - name: Providers
+        href: quantum-reference-overview.md
       - name: Microsoft QIO
         href: provider-microsoft-qio.md
       - name: IonQ
