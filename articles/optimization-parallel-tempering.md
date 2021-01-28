@@ -10,7 +10,7 @@ uid: microsoft.quantum.optimization.parallel-tempering
 
 # Parallel Tempering
 
-Parallel Tempering can be regarded as a variant of the [Simulated Annealing](xref:microsoft.azure.quantum.optimization.simulatedannealing) algorithm, or more generally Monte Carlo Markov Chain methods. Azure Quantum's Parallel Tempering solvers are designed to solve binary optimization problems through random sampling.
+Parallel Tempering can be regarded as a variant of the [Simulated Annealing](xref:microsoft.quantum.optimization.simulated-annealing) algorithm, or more generally Monte Carlo Markov Chain methods. Azure Quantum's Parallel Tempering solvers are designed to solve binary optimization problems through random sampling.
 
 As with Simulated Annealing, the cost function is explored through thermal jumps. Unlike simulated annealing, a cooling temperature is not used.
 
@@ -29,12 +29,12 @@ Parallel Tempering in Azure Quantum supports:
 
 ## When To Use Parallel Tempering
 
-Parallel Tempering generally outperforms [Simulated Annealing](xref:microsoft.azure.quantum.optimization.simulatedannealing) on hard problems with rugged landscapes.
+Parallel Tempering generally outperforms [Simulated Annealing](xref:microsoft.quantum.optimization.simulated-annealing) on hard problems with rugged landscapes.
 
 It is also very good at solving Ising problems, or problems that are equivalent (such as min-cut problems).
 
 > [!NOTE]
-> For further information on choosing which solver to use, please refer to [this document](xref:microsoft.azure.quantum.optimization.choose-solver).
+> For further information on determining which solver to use, please to [Which optimization solver should I use?](xref:microsoft.quantum.optimization.choose-solver).
 
 ## Parameter Free Parallel Tempering
 
