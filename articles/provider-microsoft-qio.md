@@ -24,8 +24,7 @@ The Microsoft QIO provider makes the following targets available:
 - [Solver: Simulated Annealing (Parameter Free - FPGA)](#parameter-free-simulated-annealing-fpga)
 - [Solver: Simulated Annealing](#simulated-annealing)
 - [Solver: Simulated Annealing (FPGA)](#simulated-annealing-fpga)
-- [Solver: Parallel Tempering (Parameter
-  Free)](#parameter-free-parallel-tempering)
+- [Solver: Parallel Tempering (Parameter Free)](#parameter-free-parallel-tempering)
 - [Solver: Parallel Tempering](#parallel-tempering)
 - [Solver: Tabu Search (Parameter Free)](#parameter-free-tabu-search)
 - [Solver: Tabu Search](#tabu-search)
@@ -48,7 +47,7 @@ For some solvers we offer two versions: an unlabeled version that runs on tradit
 | Pros | <ul><li>Highly parallel optimized, compared with CPU solvers, we witnessed about 100-200 times performance gain when the simulated annealing parameters settings are the same (restarts and sweeps).</li><li>FPGA solver use very condensed memory representation, so for problem with a large number of terms may fail CPU solver for OOM, but not for FPGA solver.</li></ul> |
 | Cons | <ul><li>FPGA solver support upto 8192 variables, this is a hard limitation.</li><li>For best performance, FPGA solvers use 32 bits float point operations, because of this, the computation accuracy of FPGA solvers is a little lower than CPU solvers'.</li></ul>                                                                                                                 |
 
-#### Recommendations for FPGA solvers 
+#### Recommendations for FPGA solvers
 
 FPGA solvers use the same parameters as their corresponding CPU solvers, but for the best performance, please tune the parameters of FPGA solvers, instead of just directly using CPU solvers' parameters. For example, in FPGA solvers, we build about 200 parallel pipelines, and each pipeline can handle one restart, so the restarts of FPGA shall be no less than 200.
 
@@ -71,6 +70,16 @@ the `SimulatedAnnealing` class.
 |----------------|----------|----------|-------------|
 | `timeout`      | int      | Required | Maximum number of seconds to run the core solver loop. Initialization time does not respect this value, so the solver may run longer than the value specified. |
 | `seed`         | int      | Optional | Seed value  |
+
+#### How to select FPGA solvers
+
+To use a the FPGA version of a solver you need to specify the platform parameter
+when creating an instance of the solver class. For example, if you want to
+create an instance of the FPGA version of `SimulatedAnnealing` you need to write:
+
+```python
+solver = SimulatedAnnealing(workspace, timeout=100, platform=HardwarePlatform.FPGA)
+```
 
 ### Parameter-free simulated annealing (FPGA)
 
