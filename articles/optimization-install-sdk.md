@@ -80,7 +80,7 @@ Once you sign into your Azure account, your credentials will be cached so that y
 
 ## Expressing and solving a simple problem
 
-To express a simple problem to be solved, create an instance of a `Problem` and set the `problem_type` to either `ProblemType.ising` or `ProblemType.pubo`. For more information, see [`ProblemType`](xref:azure.quantum.optimization.reference.problem-type.python).
+To express a simple problem to be solved, create an instance of a `Problem` and set the `problem_type` to either `ProblemType.ising` or `ProblemType.pubo`. For more information, see [`ProblemType`](xref:microsoft.quantum.optimization.problem-type).
 
 ```py
 from azure.quantum.optimization import Problem, ProblemType, Term, ParallelTempering
@@ -105,9 +105,9 @@ problem.add_terms(terms=terms)
 ```
 
 > ![NOTE]
-> There are [multiple ways](xref:azure.quantum.usage.express-problem.python#Ways-to-supply-problem-terms) to supply terms to the problem, and not all terms must be added at once.
+> There are [multiple ways](xref:microsoft.quantum.optimization.express-problem#Ways-to-supply-problem-terms) to supply terms to the problem, and not all terms must be added at once.
 
-Next, we're ready to apply a **solver**. In this example we'll use a parameter-free version of parallel tempering. You can find documentation on this solver and the other available solvers in the [Microsoft Quantum Solution provider reference](xref:microsoft.azure.quantum.providers.microsoft-quantum-solution).
+Next, we're ready to apply a **solver**. In this example we'll use a parameter-free version of parallel tempering. You can find documentation on this solver and the other available solvers in the [Microsoft QIO provider reference](xref:microsoft.quantum.optimization.providers.microsoft.qio).
 
 ```py
 solver = ParallelTempering(workspace, timeout=100)
@@ -129,11 +129,11 @@ This method will submit the problem to Azure Quantum for optimization and synchr
 - [Solver overview](xref:microsoft.quantum.optimization.solver-overview)
 - [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)
 - [Interpreting solver results](xref:microsoft.quantum.optimization.understand-solver-results)
-- [Job management](azure.quantum.job-management.python)
-- [Solve long-running problems (async problem submission)](azure.quantum.solve-long-running-problems.python)
-- [Reuse problem defintions](azure.quantum.reuse-problem-definitions.python)
-- [Authenticating with a service principal](azure.quantum.usage.authenticate-service-principal)
-- [Solvers reference for Microsoft Optimization Solvers](xref:microsoft.azure.quantum.providers.microsoft-quantum-solution)
+- [Job management](xref:microsoft.quantum.optimization.job-management)
+- [Solve long-running problems (async problem submission)](xref:microsoft.quantum.optimization.solve-long-running-problems)
+- [Reuse problem defintions](xref:microsoft.quantum.optimization.reuse-problem-definitions)
+- [Authenticating with a service principal](xref:microsoft.quantum.optimization.authenticate-service-principal)
+- [Solvers reference for Microsoft Optimization Solvers](xref:microsoft.quantum.optimization.providers.microsoft.qio)
 
 ### Samples and end-to-end learning
 
