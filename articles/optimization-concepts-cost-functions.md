@@ -106,9 +106,9 @@ $$ \mathrm{cost} = \left| 18x_0 + 19x_1 + 36x_2 + 84x_3 + 163x_4 + 165x_5 + 243x
 ## Supported Models
 
 Models implemented in our optimizers include the
-[Ising Model](xref:microsoft.azure.quantum.how-to-guides.optimization.concepts.problem-formulation.ising-model),
+[Ising Model](xref:microsoft.quantum.optimization.concepts.ising-model),
 and Quadratic/Polynomial unconstrained
-[binary optimization](xref:microsoft.azure.quantum.how-to-guides.optimization.concepts.problem-formulation.binary-optimization)
+[binary optimization](xref:microsoft.quantum.optimization.concepts.binary-optimization)
 problems. These support versatile applications because several other
 optimization problems can be mapped to them.
 
