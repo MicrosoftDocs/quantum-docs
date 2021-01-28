@@ -92,7 +92,7 @@ namespace NamespaceName {
 Now the general run model of a Q# program becomes clear.
 
 <br/>
-<img src="../media/hostprograms_general_execution_model.png" alt="Q# program execution diagram" width="400">
+<img src="~/media/hostprograms_general_execution_model.png" alt="Q# program execution diagram" width="400">
 
 Firstly, the specific callable to be run has access to any other callables and types defined in the same namespace.
 It also access those from any of the [Q# libraries](xref:microsoft.quantum.libraries.overview), but those must be referenced either via their full name, or through the use of `open` statements described above.
@@ -229,7 +229,7 @@ For details on what these metrics indicate, see [Resource estimator: metrics rep
 
 ### Command line run summary
 <br/>
-<img src="../media/hostprograms_command_line_diagram.png" alt="Q# program from command line" width="700">
+<img src="~/media/hostprograms_command_line_diagram.png" alt="Q# program from command line" width="700">
 
 ### Non-Q# `dotnet run` options
 
@@ -254,7 +254,7 @@ The general scheme is shown here, and we discuss the specific implementations fo
 A sample using an F# host program can be found at the [.NET interoperability samples](https://github.com/microsoft/Quantum/tree/main/samples/interoperability/dotnet).
 
 <br/>
-<img src="../media/hostprograms_host_program_diagram.png" alt="Q# program from a host program" width="700">
+<img src="~/media/hostprograms_host_program_diagram.png" alt="Q# program from a host program" width="700">
 
 > [!NOTE]
 > The `@EntryPoint()` attribute used for Q# applications cannot be used with host programs.
@@ -610,7 +610,7 @@ Upon running a cell with such a statement, the definitions from those namespaces
 
 Similarly, defining operations requires only writing the Q# code and running the cell.
 
-<img src="../media/hostprograms_jupyter_op_def_crop.png" alt="Jupyter cell defining Q# operations" width="773">
+<img src="~/media/hostprograms_jupyter_op_def_crop.png" alt="Jupyter cell defining Q# operations" width="773">
 
 The output then lists those operations, which can then be called from future cells.
 
@@ -619,14 +619,14 @@ The output then lists those operations, which can then be called from future cel
 The functionality to run operations on specific target machines is provided via [IQ# Magic Commands](xref:microsoft.quantum.user-guide-qdk.overview.quickref.iqsharp).
 For example, `%simulate` makes use of the `QuantumSimulator`, and `%estimate` uses the `ResourcesEstimator`:
 
-<img src="../media/hostprograms_jupyter_no_args_sim_est_crop.png" alt="Jupyter cell simulating a Q# operation and running resource estimation" width="773">
+<img src="~/media/hostprograms_jupyter_no_args_sim_est_crop.png" alt="Jupyter cell simulating a Q# operation and running resource estimation" width="773">
 
 ### Passing inputs to functions and operations
 
 To pass inputs to the Q# operations, the arguments can be passed as `key=value` pairs to the run magic command.
 So, to run `MeasureSuperpositionArray` with four qubits, we can run `%simulate MeasureSuperpositionArray n=4`:
 
-<img src="../media/hostprograms_jupyter_args_sim_crop.png" alt="Jupyter cell simulating a Q# operation with arguments" width="773">
+<img src="~/media/hostprograms_jupyter_args_sim_crop.png" alt="Jupyter cell simulating a Q# operation with arguments" width="773">
 
 This pattern can be used similarly with `%estimate` and other run commands.
 
@@ -643,7 +643,7 @@ referenced via `PackageReference` or Q# projects referenced via `ProjectReferenc
 
 As an example, the following cells simulate a Q# operation from an external project, where the project path is referenced relative to the current folder:
 
-<img src="../media/hostprograms_jupyter_project_crop.png" alt="Jupyter cell simulating a Q# operation from an external project" width="773">
+<img src="~/media/hostprograms_jupyter_project_crop.png" alt="Jupyter cell simulating a Q# operation from an external project" width="773">
 
 To load external packages containing Q# code, use the [`%package` magic command](xref:microsoft.quantum.iqsharp.magic-ref.package).
 Loading a package will also make available any custom magic commands or display encoders that are contained in any assemblies
