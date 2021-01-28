@@ -153,10 +153,9 @@ namespace RandomBit {
 
     @EntryPoint()
     operation GenerateRandomBit() : Result {
-        using (q = Qubit())  {
-            H(q);
-            return MResetZ(q);
-        }
+        use q = Qubit();
+        H(q);
+        return MResetZ(q);
     }
 }
 ```

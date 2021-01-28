@@ -27,20 +27,27 @@ Before installing the Azure CLI `quantum` extension, ensure that the following p
 To install the Azure CLI `quantum` extension, open a command prompt, and then run the following command:
 
 ```bash
-    az extension add --source https://msquantumpublic.blob.core.windows.net/az-quantum-cli/quantum-latest-py3-none-any.whl
+    az extension add -n quantum
+```
+
+## Uninstall the extension
+
+To uninstall the Azure CLI `quantum` extension, run the following command:
+
+```bash
+    az extension remove -n quantum
 ```
 
 ## Update the extension
 
-If you need to update the Azure CLI `quantum` extension:
+If you need to update an existing installation of the the Azure CLI `quantum` extension, you can run:
 
-1. Remove the existing version:
+```bash
+    az extension update -n quantum
+```
 
-    ```bash
-    az extension remove -n quantum
-    ```
-
-1. Run the previous [installation](#installation) command.
+> [!NOTE]
+> If you have previously installed a pre-release version of this extension, or you are not sure about your current installation you can uninstall it and then install it again using the instructions above.
 
 ## Next steps
 

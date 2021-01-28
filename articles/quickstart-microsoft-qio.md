@@ -104,7 +104,8 @@ from azure.quantum import Workspace
 
 # Copy the settings for your workspace below
 workspace = Workspace(
-    resource_id = ""   # add the Resource ID of the Azure Quantum workspace you created
+    resource_id = "", # add the Resource ID of the Azure Quantum workspace you created
+    location    = ""  # add the Azure region in which the Azure Quantum workspace was created (optional, defaults to "West US")
 )
 workspace.login()
 ```

@@ -66,12 +66,12 @@ quantum programs on Azure Quantum.
         namespace Test {
             open Microsoft.Quantum.Intrinsic;
             open Microsoft.Quantum.Measurement;
+            open Microsoft.Quantum.Canon;
 
             operation GenerateRandomBits(n : Int) : Result[] {
-                using (qubits = Qubit[n])  {
-                    ApplyToEach(H, qubits);
-                    return MultiM(qubits);
-                }
+                use qubits = Qubit[n];
+                ApplyToEach(H, qubits);
+                return MultiM(qubits);
             }
         }
         ```
@@ -82,14 +82,21 @@ quantum programs on Azure Quantum.
    [complete list of `qsharp.azure` Python commands](https://docs.microsoft.com/python/qsharp-core/qsharp.azure).
    You'll need the resource ID of your Azure Quantum Workspace in order to
    connect. (The resource ID can be found on your Quantum Workspace
-   page in Azure Portal.) For example, your Python script could look like this:
+   page in Azure Portal.)
+
+   If your workspace was created in an Azure region other than \"West US\", you also
+   need to specify this as the `location` parameter to `qsharp.azure.connect()`.
+
+   For example, your Python script could look like this:
 
     ```py
     import qsharp
     import qsharp.azure
     from Test import GenerateRandomBits
 
-    qsharp.azure.connect(resourceId="/subscriptions/.../Microsoft.Quantum/Workspaces/WORKSPACE_NAME")
+    qsharp.azure.connect(
+       resourceId="/subscriptions/.../Microsoft.Quantum/Workspaces/WORKSPACE_NAME",
+       location="West US")
     qsharp.azure.target("ionq.simulator")
     result = qsharp.azure.execute(GenerateRandomBits, n=3, shots=1000, jobName="Generate three random bits")
     print(result)

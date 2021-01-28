@@ -35,7 +35,8 @@ A `Workspace` represents the Quantum Workspace you [previously created](xref:mic
 from azure.quantum import Workspace
 
 workspace = Workspace(
-    resource_id = "" # The Resource ID for your Azure Quantum Workspace
+    resource_id = "", # The Resource ID for your Azure Quantum Workspace
+    location    = ""  # The Azure region in which the Azure Quantum Workspace was created (optional, defaults to "West US")
 )
 workspace.login()
 ```
@@ -46,7 +47,8 @@ workspace.login()
 > workspace = Workspace(
 >     subscription_id = "", # The Subscription ID for your Azure Subscription
 >     resource_group  = "", # The resource group your Quantum Workspace is deployed in
->     name            = ""  # The name of the Quantum Workspace
+>     name            = "", # The name of the Quantum Workspace
+>     location        = ""  # The Azure region in which the Quantum Workspace was created (optional, defaults to "West US")
 > )
 
 When you call the command `workspace.login()`, the SDK will see the following displayed in your console:

@@ -120,10 +120,9 @@ namespace QuantumRNG {
 
     @EntryPoint()
     operation GenerateRandomBits() : Result[] {
-        using (qubits = Qubit[4])  {
-            ApplyToEach(H, qubits);
-            return MultiM(qubits);
-        }
+        use qubits = Qubit[4];
+        ApplyToEach(H, qubits);
+        return MultiM(qubits);
     }
 }
 ```

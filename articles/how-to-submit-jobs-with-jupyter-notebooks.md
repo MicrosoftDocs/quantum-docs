@@ -59,12 +59,11 @@ quantum programs on Azure Quantum.
 
         ```qsharp
         operation GenerateRandomBit() : Result {
-            using (q = Qubit())  {
-                H(q);
-                let r = M(q);
-                Reset(q);
-                return r;
-            }
+            use q = Qubit();
+            H(q);
+            let r = M(q);
+            Reset(q);
+            return r;
         }
         ```
 
@@ -73,11 +72,14 @@ quantum programs on Azure Quantum.
    your Azure Quantum Workspace in order to connect. (The resource ID can be found
    on your Quantum Workspace page in Azure Portal.)
 
+   If your workspace was created in an Azure region other than \"West US\", you also
+   need to specify this as the `location` parameter to `%azure.connect`.
+
     - For example, the following commands will connect to an Azure Quantum
       Workspace and run an operation on the `ionq.simulator` target:
 
         ```py
-        %azure.connect "/subscriptions/.../Microsoft.Quantum/Workspaces/WORKSPACE_NAME"
+        %azure.connect "/subscriptions/.../Microsoft.Quantum/Workspaces/WORKSPACE_NAME" location="West US"
 
         %azure.target ionq.simulator
 
