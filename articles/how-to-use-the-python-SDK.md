@@ -62,7 +62,7 @@ cached so that you do not have to repeat this process for future runs.
 
 To express a simple problem to be solved, create an instance of a `Problem` and
 set the `problem_type` to either `ProblemType.ising` or
-`ProblemType.pubo`. For more information, see [`ProblemType`](xref:microsoft.azure.quantum.reference.python-sdk.azure.quantum.optimization#problemtype).
+`ProblemType.pubo`. For more information, see [`ProblemType`](xref:microsoft.quantum.optimization.problem-type).
 
 ```py
 from azure.quantum.optimization import Problem, ProblemType, Term, ParallelTempering
@@ -87,7 +87,7 @@ problem.add_terms(terms=terms)
 ```
 
 >![NOTE]
-> There are [multiple ways](xref:microsoft.azure.quantum.qio.python-sdk.advanced#Methods-for-supplying-problem-terms)
+> There are [multiple ways](xref:microsoft.quantum.optimization.python-sdk.advanced#ways-to-supply-problem-terms)
 > to supply terms to the problem, and not all terms must be added at once.
 
 Next, we're ready to solve by applying a **solver**. In this example we'll use a
@@ -115,7 +115,7 @@ print(result)
 ```
 
 > [!NOTE] 
-> If you receive an `Unauthorized` error when calling `solver.optimize()`, please see [this guide](xref:microsoft.azure.quantum.common-issues#issue-operation-returns-an-invalid-status-code-unauthorized).
+> If you receive an `Unauthorized` error when calling `solver.optimize()`, please see [Azure Quantum common issues](xref:microsoft.quantum.azure.common-issues#issue-operation-returns-an-invalid-status-code-unauthorized).
 
 This method will submit the problem to Azure Quantum for optimization and
 synchronously wait for it to be solved. You'll see output like the following in
