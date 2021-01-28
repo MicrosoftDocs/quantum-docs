@@ -1,6 +1,6 @@
 ---
 title: Operations on multiple qubits
-description: Learn how to perform operations on two or more qubits.
+description: Learn the rules used to build multi-qubit states out of single-qubit states. Also learn about gate operations needed to form a many-qubit quantum computer.
 author: bradben
 uid: microsoft.quantum.concepts.multiple-qubits
 ms.author: v-benbra
@@ -11,7 +11,7 @@ no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots'
 
 # Operations on multiple qubits
 
-This article reviews the rules used to build multi-qubit states out of single-qubit states as well as discuss the gate operations needed to include in a gate set to form a universal many-qubit quantum computer. These tools are absolutely necessary to understand the gate sets that are commonly used in Q# code, and also to gain intuition about why quantum effects such as entanglement or interference render quantum computing more powerful than classical computing.
+This article reviews the rules used to build multi-qubit states out of single-qubit states and discusses the gate operations needed to include in a gate set to form a universal many-qubit quantum computer. These tools are absolutely necessary to understand the gate sets that are commonly used in Q# code, and also to gain intuition about why quantum effects such as entanglement or interference render quantum computing more powerful than classical computing.
 
 ## Single-qubit vs. multi-qubit gates
 

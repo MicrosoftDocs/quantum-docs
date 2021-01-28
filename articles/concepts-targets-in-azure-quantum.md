@@ -3,15 +3,14 @@ title: Targets in Azure Quantum
 description: Article describing the different types of targets existing in Azure Quantum
 author: KittyYeungQ
 ms.author: kitty
-ms.date: 06/29/2020
+ms.date: 02/01/2021
 ms.topic: article
 uid: microsoft.quantum.concepts.targets
 ---
 
 # Targets in Azure Quantum
 
-In this article we will introduce the different type of targets available in
-Azure Quantum and the Quantum Development Kit.
+This article introduces the different type of targets available in Azure Quantum and the Quantum Development Kit (QDK).
 
 ## Targets as quantum devices
 
