@@ -45,7 +45,7 @@ target profiles and submit them to run on Azure Quantum hardware.
 **Full** profile targets can run any Q# program, meaning you can
 write programs without functionality restrictions. Azure Quantum does not provide
 any target with this profile yet, but you can try any Q# program locally using the
-[full state simulator](xref:microsoft.quantum.machines.full-state-simulator) or the [resources estimator](xref:microsoft.quantum.machines.resources-estimator) from the QDK. 
+[full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) or the [resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator) from the QDK. 
 
 If you need help setting up your environment to run Q# programs locally, see [Getting started with the QDK](xref:microsoft.quantum.get-started-qdk).
 
@@ -89,7 +89,7 @@ Follow these steps in this section to create an application to run in IonQ targe
 
 #### Prerequisites
 
-- Install the [QDK](xref:microsoft.quantum.install-qdk.standalone).
+- Install the [QDK](xref:microsoft.quantum.install-qdk.overview.standalone).
 - A Quantum Workspace with IonQ listed as a provider. To create a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
 
 #### Steps 
