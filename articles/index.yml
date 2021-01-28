@@ -24,15 +24,13 @@ landingContent:
       - linkListType: overview
         links:
           - text: What is Azure Quantum?
-            url: overview/azure-quantum-overview.md
-          - text: Quantum computing and optimization
-            url: overview/azure-quantum-overview.md
+            url: overview-azure-quantum.md
       - linkListType: get-started
         links:
           - text: Prepare your Azure Quantum environment 
-            url: overview/azure-quantum-overview.md
+            url: how-to-prepare-your-environment.md
           - text: Create applications for Azure
-            url: overview/azure-quantum-overview.md
+            url: how-to-create-applications-for-azure-quantum.md
 
   # Computing
   - title: Quantum computing
@@ -40,19 +38,19 @@ landingContent:
       - linkListType: overview
         links:
           - text: Introduction to quantum computing
-            url: overview/azure-quantum-overview.md
+            url: overview-qdk.md
       - linkListType: learn
         links:
           - text: Understanding quantum computing
-            url: overview/azure-quantum-overview.md
+            url: overview-understanding-quantum-computing.md
           - text: Quantum computers and quantum simulators
-            url: overview/azure-quantum-overview.md
+            url: overview-quantum-computers-and-simulators.md
           - text: Microsoft Learn modules for quantum computing
-            url: https://docs.microsoft.com/users/buildcollections2020-6557/collections/1o2iogrmn8x4r
+            url: https://docs.microsoft.com/en-us/learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
       - linkListType: concept
         links:
           - text: Quantum computing concepts
-            url: overview/azure-quantum-overview.md
+            url: concepts-overview.md
 
   # OPTIMIZATION
   - title: Optimization
@@ -60,21 +58,21 @@ landingContent:
       - linkListType: overview
         links:
         - text: Introduction to optimization
-          url: overview/azure-quantum-overview.md
+          url: optimization-overview-introduction.md
         - text: Key concepts for optimization
-          url: overview/azure-quantum-overview.md
+          url: optimization-oveview-key-concepts.md
         - text: What are quantum-inspired algorithms?
-          url: overview/azure-quantum-overview.md
+          url: optimization-what-is-quantum-optimization.md
       - linkListType: how-to-guide 
         links:
           - text: Install the Python SDK for optimization
-            url: overview/azure-quantum-overview.md
+            url: how-to-use-the-python-SDK.md
       - linkListType: learn
         links:
           - text: Overview of optimization solvers
-            url: overview/azure-quantum-overview.md
+            url: optimization-solver-overview.md
           - text: Microsoft Learn modules for optimization
-            url: https://docs.microsoft.com/users/buildcollections2020-6557/collections/1o2iogrmn8x4r
+            url: https://docs.microsoft.com/en-us/learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
 
   # QDK
   - title: Develop with the Quantum Development Kit
@@ -82,17 +80,17 @@ landingContent:
       - linkListType: overview
         links:
           - text: What are Q# and the QDK?
-            url: overview/azure-quantum-overview.md
+            url: overview-what-is-qsharp-and-qdk.md
       - linkListType: get-started
         links:
           - text: The Quantum Development Kit
-            url: overview/azure-quantum-overview.md
+            url: install-get-started-qdk.md
       - linkListType: download
         links:
           - text: Install the QDK
-            url: overview/azure-quantum-overview.md
+            url: install-overview-qdk.md
           - text: Update the QDK
-            url: overview/azure-quantum-overview.md
+            url: install-update-qdk.md
   # Q#
   - title: Q# programming language
     linkLists:
@@ -113,7 +111,7 @@ landingContent:
       - linkListType: learn
         links:
           - text: Learn with the Quantum Katas
-            url: overview/azure-quantum-overview.md
+            url: tutorial-qdk-intro-to-katas.md
           - text: Browse Q# code samples
             url: https://docs.microsoft.com/samples/browse/?languages=qsharp
 
@@ -123,13 +121,13 @@ landingContent:
       - linkListType: reference
         links:
           - text: Standard libraries
-            url: overview/azure-quantum-overview.md
+            url: user-guide\libraries\standard\index.md
           - text: Chemistry library
-            url: overview/azure-quantum-overview.md
+            url: ovuser-guide\libraries\chemistry\index.md
           - text: Machine learning library
-            url: overview/azure-quantum-overview.md
+            url: user-guide\libraries\machine-learning\index.md
           - text: Numerics library
-            url: overview/azure-quantum-overview.md
+            url: user-guide\libraries\numerics\index.md
 
   #  Community
   - title: Community & contribution
@@ -137,6 +135,6 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Contribute to the QDK
-            url: overview/azure-quantum-overview.md
+            url: contributing-overview.md
           - text: Read the Microsoft Quantum blog
-            url: overview/azure-quantum-overview.md
+            url: https://cloudblogs.microsoft.com/quantum
