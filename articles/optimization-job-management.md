@@ -17,7 +17,7 @@ When a problem is submitted to a solver, a `Job` is created in Azure Quantum. Th
 - **list_jobs**: Returns a list of all jobs in the Workspace.
 - **cancel_job**: Cancels a specific job.
 
-See [Job Cancellation](xref:microsoft.azure.quantum.overview#Job-Cancellation) for more information on how cancellation requests are processed.
+See [Job Cancellation](xref:microsoft.quantum.azure-quantum-overview#Job-Cancellation) for more information on how cancellation requests are processed.
 
 You can use the `list_jobs` method to get a list of all jobs in the Workspace:
 
