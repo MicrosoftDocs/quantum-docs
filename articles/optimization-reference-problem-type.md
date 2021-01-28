@@ -34,7 +34,7 @@ Tabu is expected to perform very well on problem landscapes with the following f
 - Smaller problems (although there is no limit on the number of variables accepted). Because only one move is made per sweep, this algorithm will naturally take longer for larger problems.
 
 > [!NOTE]
-> For further information on choosing which solver to use, please refer to [this document](xref:microsoft.azure.quantum.optimization.choose-solver).
+> For further information on determining which solver to use, refer to [Which optimization solver should I use?](xref:microsoft.quantum.optimization.choose-solver).
 
 ## Parameter Free Tabu Search
 
