@@ -22,7 +22,7 @@ yet finished, blocks until it has.
 ## Job.has_completed
 
 Returns a boolean value indicating whether the job has finished (for example, the job is in a
-[final state](xref:microsoft.azure.quantum.overview#Job-Lifecycle)).
+[final state](xref:microsoft.quantum.azure-quantum-overview#job-lifecycle)).
 
 ```py
 job = workspace.get_job(jobId)
