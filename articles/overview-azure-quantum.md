@@ -27,7 +27,7 @@ QIO uses algorithms that are based on quantum principles for increased speed and
 Optimization algorithms are available to run on a variety of classical computing silicon solutions, such as CPU, FPGA, GPU or custom silicon.
 
 
-## Quantum Workspace
+## Quantum workspace
 
 You use the Azure Quantum service by adding a **Quantum workspace** resource to your Azure subscription in the Azure portal. A Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications. One of the properties configured in a workspace is an Azure Storage Account resource, where Azure Quantum stores your quantum programs and optimization problems for access.
 
@@ -35,7 +35,7 @@ You use the Azure Quantum service by adding a **Quantum workspace** resource to 
 
 Another property configured in the workspace is the **provider** that you want to use to run programs in that workspace. A single provider may expose one or more **targets**, which can be quantum hardware or simulators, and are ultimately responsible for running your program. 
 
-By default, Azure Quantum adds the Microsoft QIO provider to every workspace, and you can add other providers when you create the workspace or any time afterward. To see a list of available providers, see [Providers](xref:microsoft.quantum.reference.overview).
+By default, Azure Quantum adds the Microsoft QIO provider to every workspace, and you can add other providers when you create the workspace or any time afterward. [See a list of available providers](xref:microsoft.quantum.reference.overview).
 
 ### Provider billing
 
