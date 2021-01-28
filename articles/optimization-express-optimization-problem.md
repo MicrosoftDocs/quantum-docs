@@ -11,7 +11,7 @@ uid: microsoft.quantum.optimization.express-problem
 # Express an optimization problem
 
 To express a simple problem to be solved, create an instance of a `Problem` and set the `problem_type` to either `ProblemType.ising` or
-`ProblemType.pubo`. For more information, see [`ProblemType`](xref:microsoft.azure.quantum.reference.problemtype.python).
+`ProblemType.pubo`. For more information, see [`ProblemType`](xref:microsoft.quantum.optimization.problem-type).
 
 ```py
 from azure.quantum.optimization import Problem, ProblemType, Term, ParallelTempering
@@ -40,7 +40,7 @@ problem.add_terms(terms=terms)
 
 ## Ways to supply problem terms
 
-There are three ways to supply terms for a [`Problem`](xref:microsoft.azure.quantum.reference.problem.python): in the
+There are three ways to supply terms for a [`Problem`](xref:microsoft.quantum.optimization.problem): in the
 constructor, individually, and as a list of `Term` objects.
 
 ### In the constructor
