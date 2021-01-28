@@ -17,7 +17,7 @@ from azure.quantum.optimization import Job
 ## Job.get_results
 
 Retrieves the job result (that is, the computed solution and energy). If the job has not
-yet finished, blocks until it has.
+yet finished, blocks until it has. 
 
 ## Job.has_completed
 
