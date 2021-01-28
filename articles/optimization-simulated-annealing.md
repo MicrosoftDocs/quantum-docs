@@ -31,7 +31,7 @@ Simulated Annealing is a standard jack-of-all-trades algorithm that performs wel
 It is also a good algorithm for larger problems (thousands of variables).
 
 > [!NOTE]
-> For further information on choosing which solver to use, please refer to [this document](xref:microsoft.azure.quantum.optimization.choose-solver).
+> For further information on determining which solver to use, refer to [Which optimization solver should I use?](xref:microsoft.quantum.optimization.choose-solver).
 
 ## Parameter Free Simulated Annealing (CPU)
 
