@@ -10,7 +10,7 @@ uid: microsoft.quantum.optimization.solve-long-running-problems
 
 # Solve long running problems
 
-In the example in [Apply Solver](xref:microsoft.azure.quantum.apply-solver.python), a problem was submitted to Azure Quantum and solved synchronously. This is convenient for certain environments, but unsuitable for others where there is a need to either submit a problem and check on it later, or submit many problems and compare the results.
+In the example in [Apply solvers to solve optimization problems](xref:microsoft.quantum.optimization.apply-solver), a problem was submitted to Azure Quantum and solved synchronously. This is convenient for certain environments, but unsuitable for others where there is a need to either submit a problem and check on it later, or submit many problems and compare the results.
 
 ### Submit the problem
 
