@@ -70,7 +70,7 @@ landingContent:
       - linkListType: learn
         links:
           - text: Overview of optimization solvers
-            url: optimization-solver-overview.md
+            url: optimization-solvers-overview.md
           - text: Microsoft Learn modules for optimization
             url: https://docs.microsoft.com/en-us/learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
 
@@ -97,17 +97,17 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Q# user guide
-            url: overview/azure-quantum-overview.md
+            url: user-guide\index.md
           - text: "Quantum simulators and host applications"
-            url: overview/azure-quantum-overview.md
+            url: user-guide\host-programs.md
       - linkListType: tutorial
         links:
           - text: Build a quantum random number generator
-            url: overview/azure-quantum-overview.md
+            url: tutorial-qdk-quantum-random-number-generator.md
           - text: Explore entanglement with Q#
-            url: overview/azure-quantum-overview.md
+            url: tutorial-qdk-explore-entanglement.md
           - text: "Quantum speedup: Grover's search algorithm"
-            url: overview/azure-quantum-overview.md
+            url: tutorial-qdk-grovers-search.md
       - linkListType: learn
         links:
           - text: Learn with the Quantum Katas
@@ -123,7 +123,7 @@ landingContent:
           - text: Standard libraries
             url: user-guide\libraries\standard\index.md
           - text: Chemistry library
-            url: ovuser-guide\libraries\chemistry\index.md
+            url: user-guide\libraries\chemistry\index.md
           - text: Machine learning library
             url: user-guide\libraries\machine-learning\index.md
           - text: Numerics library
