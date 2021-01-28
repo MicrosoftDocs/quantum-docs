@@ -1,0 +1,4 @@
+- name: Honeywell provider & targets
+  href: honeywell.md
+- name: Honeywell support policy
+  href: honeywell-support.md

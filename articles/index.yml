@@ -1,140 +1,105 @@
 ### YamlMime:Landing
 
-title: Azure Quantum Documentation
-summary: Learn about quantum computing and optimization with the Azure Quantum service.  Use the Microsoft Quantum Development Kit (QDK) and Q#, a language for quantum programming, to write your first quantum program. 
+title: Microsoft Quantum Documentation
+summary: Learn how to use the Microsoft Quantum Development Kit and Q#, a language for quantum programming. Learn key concepts and write your first quantum program. Explore the rich tools and libraries of the QDK.
 metadata:
 
-  title: Azure Quantum Documentation, Quantum Development Kit and Q# API Reference
+  title: Microsoft Quantum Documentation and Q# API Reference
   description: Explore the concepts of quantum computing and how to use the Microsoft Quantum Development Kit (QDK) and Q#, an open source quantum programming language.
   ms.prod: quantum
   ms.topic: landing-page
   ms.collection: collection
-  author: bradben
-  ms.author: v-benbra
-  ms.date: 1/22/2021
+  author: cjgronlund
+  ms.author: cgronlun
+  ms.date: 5/10/2020
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
 
 landingContent:
 
-  # Azure Quantum
-  - title: Azure Quantum
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: What is Azure Quantum?
-            url: overview-azure-quantum.md
-      - linkListType: get-started
-        links:
-          - text: Prepare your Azure Quantum environment 
-            url: how-to-prepare-your-environment.md
-          - text: Create applications for Azure
-            url: how-to-create-applications-for-azure-quantum.md
-
-  # Computing
+  # Card (optional)
   - title: Quantum computing
     linkLists:
-      - linkListType: overview
-        links:
-          - text: Introduction to quantum computing
-            url: overview-qdk.md
       - linkListType: learn
         links:
           - text: Understanding quantum computing
-            url: overview-understanding-quantum-computing.md
+            url: overview/understanding-quantum-computing.md
           - text: Quantum computers and quantum simulators
-            url: overview-quantum-computers-and-simulators.md
+            url: overview/quantum-computers-and-simulators.md
+          - text: What are Q# and the QDK?
+            url: overview/what-is-qsharp-and-qdk.md
+          - text: Linear algebra for quantum computing
+            url: overview/algebra-for-quantum-computing.md
           - text: Microsoft Learn modules for quantum computing
-            url: https://docs.microsoft.com/en-us/learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
+            url: https://docs.microsoft.com/learn/paths/quantum-computing-fundamentals/
       - linkListType: concept
         links:
           - text: Quantum computing concepts
-            url: concepts-overview.md
+            url: concepts/index.md
 
-  # OPTIMIZATION
-  - title: Optimization
-    linkLists:
-      - linkListType: overview
-        links:
-        - text: Introduction to optimization
-          url: optimization-overview-introduction.md
-        - text: Key concepts for optimization
-          url: optimization-oveview-key-concepts.md
-        - text: What are quantum-inspired algorithms?
-          url: optimization-what-is-quantum-optimization.md
-      - linkListType: how-to-guide 
-        links:
-          - text: Install the Python SDK for optimization
-            url: how-to-use-the-python-SDK.md
-      - linkListType: learn
-        links:
-          - text: Overview of optimization solvers
-            url: optimization-solvers-overview.md
-          - text: Microsoft Learn modules for optimization
-            url: https://docs.microsoft.com/en-us/learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
 
-  # QDK
-  - title: Develop with the Quantum Development Kit
+  # Develop
+  - title: Start with the Quantum Development Kit
     linkLists:
-      - linkListType: overview
-        links:
-          - text: What are Q# and the QDK?
-            url: overview-what-is-qsharp-and-qdk.md
       - linkListType: get-started
         links:
           - text: The Quantum Development Kit
-            url: install-get-started-qdk.md
+            url: quickstarts/get-started.md
       - linkListType: download
         links:
           - text: Install the QDK
-            url: install-overview-qdk.md
+            url: quickstarts/index.md
           - text: Update the QDK
-            url: install-update-qdk.md
-  # Q#
+            url: quickstarts/update.md
+
+
+  # Development
   - title: Q# programming language
     linkLists:
       - linkListType: how-to-guide
         links:
           - text: Q# user guide
-            url: user-guide\index.md
+            url: user-guide/index.md
           - text: "Quantum simulators and host applications"
-            url: user-guide\host-programs.md
+            url: user-guide/machines/index.md
       - linkListType: tutorial
         links:
           - text: Build a quantum random number generator
-            url: tutorial-qdk-quantum-random-number-generator.md
+            url: tutorials/quantum-random-number-generator.md
           - text: Explore entanglement with Q#
-            url: tutorial-qdk-explore-entanglement.md
+            url: tutorials/explore-entanglement.md
           - text: "Quantum speedup: Grover's search algorithm"
-            url: tutorial-qdk-grovers-search.md
+            url: tutorials/search.md
       - linkListType: learn
         links:
           - text: Learn with the Quantum Katas
-            url: tutorial-qdk-intro-to-katas.md
+            url: tutorials/intro-to-katas.md
           - text: Browse Q# code samples
             url: https://docs.microsoft.com/samples/browse/?languages=qsharp
 
-  #  API
+
+  # Community and contribution
+  - title: "Community & contribution"
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Contribute to the QDK
+            url: resources/contributing/index.md
+          - text: Read the Microsoft Quantum blog
+            url: https://cloudblogs.microsoft.com/quantum
+
+
+  # Library card
   - title: Q# libraries
     linkLists:
       - linkListType: reference
         links:
           - text: Standard libraries
-            url: user-guide\libraries\standard\index.md
+            url: user-guide/libraries/standard/index.md
           - text: Chemistry library
-            url: user-guide\libraries\chemistry\index.md
+            url: user-guide/libraries/chemistry/index.md
           - text: Machine learning library
-            url: user-guide\libraries\machine-learning\index.md
+            url: user-guide/libraries/machine-learning/index.md
           - text: Numerics library
-            url: user-guide\libraries\numerics\index.md
-
-  #  Community
-  - title: Community & contribution
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Contribute to the QDK
-            url: contributing-overview.md
-          - text: Read the Microsoft Quantum blog
-            url: https://cloudblogs.microsoft.com/quantum
+            url: user-guide/libraries/numerics/index.md
