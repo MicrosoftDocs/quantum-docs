@@ -10,7 +10,7 @@ uid: microsoft.quantum.optimization.apply-solver
 
 # Apply solvers to solve optimization problems
 
-Once we have a `Problem`, we're ready to solve it by applying a **solver**. In this example we'll use a parameter-free version of parallel tempering. You can find documentation on this solver and the other available solvers in the [Solver overview](xref:microsoft.azure.quantum.solver-overview.python).
+Once we have a `Problem`, we're ready to solve it by applying a **solver**. In this example we'll use a parameter-free version of parallel tempering. You can find documentation on this solver and the other available solvers in the [Solver overview](xref:microsoft.quantum.optimization.solver-overview).
 
 ```py
 solver = ParallelTempering(workspace, timeout=100)
@@ -21,7 +21,7 @@ For arguments, the solver takes the `Workspace` created previously, plus a singl
 > [!NOTE]
 > See [Use the Python SDK](xref:microsoft.quantum.optimization.python-sdk) for details on connecting to a Workspace and getting a `Workspace` object for it.
 
-Solvers provide an `optimize` method that expects a `Problem`. The `optimize` method uploads the problem definition, submits a job to solve the problem, and polls the status until the job has completed running. Once the job has completed, it returns a `JobOutput` object which contains the results. See [Understand Solver results](xref:microsoft.azure.quantum.understand-solver-results.python) for interpreting the results.
+Solvers provide an `optimize` method that expects a `Problem`. The `optimize` method uploads the problem definition, submits a job to solve the problem, and polls the status until the job has completed running. Once the job has completed, it returns a `JobOutput` object which contains the results. See [Understand Solver results](xref:microsoft.quantum.optimization.understand-solver-results) for interpreting the results.
 
 ```py
 result = solver.optimize(problem)
@@ -34,7 +34,7 @@ This method will submit the problem to Azure Quantum for optimization and synchr
 > {'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0}
 ```
 
-See [Solve long running problems](xref:microsoft.azure.quantum.solve-long-running-problems.python) for solving problems asynchronously.
+See [Solve long running problems](xref:microsoft.quantum.optimization.solve-long-running-problems) for solving problems asynchronously.
 
 ### Using CPU vs FPGA solvers
 
