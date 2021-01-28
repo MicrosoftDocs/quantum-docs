@@ -70,16 +70,26 @@ items:
     items:
     - name: Providers
       items:
-      - name: Providers
-        href: quantum-reference-overview.md
-      - name: Microsoft QIO
-        href: provider-microsoft-qio.md
       - name: IonQ
         items:
         - name: IonQ provider & targets
           href: provider-ionq.md
         - name: IonQ support policy
           href: provider-support-ionq.md
+      - name: Honeywell
+        items:
+        - name: Honeywell provider & targets
+          href: provider-honeywell.md
+        - name: Honeywell support policy
+          href: provider-support-honeywell.md
+      - name: 1QBit
+        items:
+        - name: 1QBit provider & targets
+          href: provider-1qbit.md
+        - name: 1QBit support policy
+          href: provider-support-1qbit.md
+      - name: Microsoft QIO
+        href: provider-microsoft-qio.md
     - name: Python-SDK
       items:
       - name: Azure.Quantum
