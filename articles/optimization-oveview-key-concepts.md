@@ -82,7 +82,7 @@ x_{0} = 1, x_{1} = 1, x_{2} = 0, x_{3} = 0, x_{4} = 1
 $$
 
 > [!NOTE]
-> More information about cost functions and binary optimization models such as Ising and PUBO can be found [here](xref:microsoft.azure.quantum.how-to-guides.optimization.concepts.problem-formulation.cost-functions).
+> More information about cost functions and binary optimization models such as Ising and PUBO can be found in the article [Cost functions](xref:microsoft.quantum.optimization.concepts.cost-function).
 
 ### Weights
 
