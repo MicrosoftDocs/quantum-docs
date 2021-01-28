@@ -52,7 +52,7 @@ quantum programs on Azure Quantum.
    activated. This starts the notebook server and opens Jupyter in a browser.
 1. Create your Q# notebook (via **New** → **Q#**) and write your Q# program.
 1. If you've never used Q# with Jupyter, follow the steps in [Create your first Q#
-    notebook](xref:microsoft.quantum.install.jupyter).
+    notebook](xref:microsoft.quantum.install-qdk.overview.jupyter).
 1. Write your Q# operations directly in the notebook. Running the cells will
    compile the Q# code and report whether there are any errors.
     - For example, you could write a Q# operation that looks like this:
