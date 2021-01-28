@@ -194,7 +194,7 @@ Here you created an instance of a `ParallelTempering` solver for the problem. Yo
 You then call `solver.optimize()` and supply the `problem` as the argument. This submits the problem synchronously to Azure Quantum and returns a Python dictionary of values to save the `result` variable for parsing in the next step.
 
 > [!NOTE]
-> You can also submit problems asynchronously. For more info, you can go to the guide for [advanced usage of the Optimizaiton Python SDK](xref:microsoft.azure.quantum.qio.python-sdk.advanced#asynchronous-problem-solving).
+> You can also submit problems asynchronously. For more info, you can go to the guide for [advanced usage of the Optimizaiton Python SDK](xref:microsoft.quantum.optimization.python-sdk.advanced#asynchronous-problem-solving).
 
 ## Results readout
 
