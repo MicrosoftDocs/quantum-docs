@@ -1,27 +1,26 @@
 ---
-title: Pauli Measurements
+title: Pauli measurements
 description: Learn how to work with single- and multi-qubit Pauli measurement operations. 
 author: bradben
 uid: microsoft.quantum.concepts.pauli
 ms.author: v-benbra
-ms.date: 12/11/2017
+ms.date: 02/01/2021
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 ---
 
-# Pauli Measurements
+# Single- and multi-qubit Pauli measurement operations
 
-In the previous discussions, we have focused on computational basis measurements.
-In fact, there are other common measurements that occur in quantum computing that, from a notational perspective, are convenient to express in terms of computational basis measurements.
-As you work with Q#, the most common kind of measurements that you'll run into will likely be *Pauli measurements*, which generalize computational basis measurements to include measurements in other bases, and of parity between different qubits.
-In such cases, it is common to discuss measuring a Pauli operator, in general an operator such as $X,Y,Z$ or $Z\otimes Z, X\otimes X, X\otimes Y$, and so forth. 
+As you work with Q#, *Pauli measurements* are a common kind of measurement, which generalize computational basis measurements to include measurements in other bases and of parity between different qubits. In such cases, it is common to discuss measuring a Pauli operator, in general an operator such as $X,Y,Z$ or $Z\otimes Z, X\otimes X, X\otimes Y$, and so forth. 
+
+Discussing measurement in terms of Pauli operators is especially common in the subfield of quantum error correction. 
+In Q#, we follow a similar convention; we now explain this alternative view of measurements.
+
 
 > [!TIP]
 > In Q#, multi-qubit Pauli operators are generally represented by arrays of type `Pauli[]`.
 > For example, to represent $X \otimes Z \otimes Y$, you can use the array `[PauliX, PauliZ, PauliY]`.
 
-Discussing measurement in terms of Pauli operators is especially common in the subfield of quantum error correction.
-In Q#, we follow a similar convention; we now explain this alternative view of measurements.
 
 Before delving into the details of how to think of a Pauli measurement, it is useful to think about what measuring a single qubit inside a quantum computer does to the quantum state.
 Imagine that we have an $n$-qubit quantum state; then measuring one qubit immediately rules out half of the $2^n$ possibilities that state could be in.

@@ -63,7 +63,7 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 
 ## Define your optimization problem
 
-In this guide, you will solve a simple optimization example to get started with the optimization services of Azure Quantum. This quickstart is based on the [ship loading sample](https://github.com/microsoftdocs/quantum-docs-private/blob/feature/onboarding-azure-quantum/azure-quantum/samples/shipping-sample/). 
+In this guide, you will solve a simple optimization example to get started with the optimization services of Azure Quantum. This quickstart is based on the [ship loading sample](https://github.com/microsoft/qio-samples/samples/ship-loading/). 
 
 Suppose there are two ships ready to be loaded with containers and a list of containers of varying weights to be assigned to each ship. The aim of the optimization problem is to assign containers to each ship in such a way that the weight is distributed as evenly as possible between both ships.
 
@@ -79,7 +79,7 @@ This cost function has the following properties:
 The goal is to find the configuration that yields the lowest possible value of $H^2$.
 
 > [!NOTE]
-> For a detailed walkthrough of the problem scenario and how the cost function is constructed, please refer to the [sample](https://github.com/microsoftdocs/quantum-docs-private/blob/feature/onboarding-azure-quantum/azure-quantum/samples/shipping-sample/) and/or the associated [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/).
+> For a detailed walkthrough of the problem scenario and how the cost function is constructed, please refer to the [sample](https://github.com/microsoft/qio-samples/samples/ship-loading/) and/or the associated [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/).
 
 ## Install the Python SDK for optimization
 
@@ -104,9 +104,11 @@ Once the `Workspace` object is created, you log in using the `workspace.login()`
 from azure.quantum import Workspace
 
 # Copy the settings for your workspace below
-workspace = Workspace(
-    resource_id = "", # add the Resource ID of the Azure Quantum workspace you created
-    location    = ""  # add the Azure region in which the Azure Quantum workspace was created (optional, defaults to "West US")
+workspace = Workspace (
+    subscription_id = "",  # Add your subscription_id
+    resource_group = "",   # Add your resource_group
+    name = "",             # Add your workspace name
+    location = ""          # Add your workspace location (for example, "westus")
 )
 workspace.login()
 ```
@@ -141,7 +143,7 @@ def createProblemForContainerWeights(containerWeights: List[int]) -> List[Term]:
 
             terms.append(
                 Term(
-                    w = containerWeights[i] * containerWeights[j],
+                    c = containerWeights[i] * containerWeights[j],
                     indices = [i, j]
                 )
             )
@@ -150,7 +152,7 @@ def createProblemForContainerWeights(containerWeights: List[int]) -> List[Term]:
 ```
 
 > [!NOTE]
-> For a detailed explanation of how this function is derived, please refer to the [shipping sample](https://github.com/microsoftdocs/quantum-docs-private/blob/feature/onboarding-azure-quantum/azure-quantum/samples/shipping-sample/) or the [Microsoft Learn module for optimization](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/).
+> For a detailed explanation of how this function is derived, please refer to the [shipping sample](https://github.com/microsoft/qio-samples/samples/ship-loading/) or the [Microsoft Learn module for optimization](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/).
 
 ## Create a `Problem` instance
 
@@ -195,8 +197,9 @@ Here you created an instance of a `ParallelTempering` solver for the problem. Yo
 
 You then call `solver.optimize()` and supply the `problem` as the argument. This submits the problem synchronously to Azure Quantum and returns a Python dictionary of values to save the `result` variable for parsing in the next step.
 
-> [!NOTE]
+
 > You can also submit problems asynchronously. For more info, you can go to the guide for [advanced usage of the Python SDK for optimization](xref:microsoft.quantum.optimization.python-sdk.advanced#asynchronous-problem-solving).
+
 
 ## Results readout
 
@@ -250,7 +253,7 @@ During this quick-start guide, you have seen an end-to-end example of how to tak
 
 For more detailed information on the shipping optimization problem, please refer to the following resources:
 
-- [Ship loading sample](https://github.com/microsoftdocs/quantum-docs-private/blob/feature/onboarding-azure-quantum/azure-quantum/samples/shipping-sample/README.md)
+- [Ship loading sample](https://github.com/microsoft/qio-samples/samples/ship-loading/)
 - [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/)
 
-Once you have explored the ship loading sample in more detail, you may find it useful to tackle the more complex [job shop scheduling sample](https://github.com/microsoftdocs/quantum-docs-private/blob/feature/onboarding-azure-quantum/azure-quantum/samples/job-shop-sample/).
+Once you have explored the ship loading sample in more detail, you may find it useful to tackle the more complex [job shop scheduling sample](https://github.com/microsoft/qio-samples/samples/job-shop-scheduling/).

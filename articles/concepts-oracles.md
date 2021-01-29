@@ -5,11 +5,11 @@ description: Learn how to work with and define quantum oracles, black box operat
 author: cgranade
 uid: microsoft.quantum.concepts.oracles
 ms.author: chgranad
-ms.date: 07/11/2018
+ms.date: 02/01/2021
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 ---
-# Quantum Oracles
+# Work with and define quantum oracles
 
 An oracle $O$ is a "black box" operation that is used as input to another algorithm.
 Often, such operations are defined using a classical function $f : \\{0, 1\\}^n \to \\{0, 1\\}^m$ which takes an $n$-bit binary input and produces an $m$-bit binary output.
@@ -22,7 +22,7 @@ Second, even if $n = m$, the function may not be invertible:
 if $f(x) = f(y)$ for some $x \ne y$, then $O\ket{x} = O\ket{y}$ but $O^\dagger O\ket{x} \ne O^\dagger O\ket{y}$.
 This means we won't be able to construct the adjoint operation $O^\dagger$, and oracles have to have an adjoint defined for them.
 
-## Defining an oracle by its effect on computational basis states
+## Define an oracle by its effect on computational basis states
 We can deal with both of these problems by introducing a second register of $m$ qubits to hold our answer.
 Then we will define the effect of the oracle on all computational basis states: for all $x \in \\{0, 1\\}^n$ and $y \in \\{0, 1\\}^m$,
 

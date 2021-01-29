@@ -1,18 +1,18 @@
 ---
 title: The qubit in quantum computing
-description: Learn about qubits, the fundamental unit of information in quantum computing.
+description: Learn about qubits, the fundamental unit of information in quantum computing. This article examines the single qubit.
 author: QuantumWriter
 uid: microsoft.quantum.concepts.qubit
 ms.author: v-benbra
-ms.date: 12/11/2017
+ms.date: 02/01/2021
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 ---
-# The Qubit
+# The qubit in quantum computing
 
-Just as bits are the fundamental object of information in classical computing, [*qubits*](https://en.wikipedia.org/wiki/Qubit) (quantum bits) are the fundamental object of information in quantum computing.  To understand this correspondence, let's look at the simplest example: a single qubit.
+Just as bits are the fundamental object of information in classical computing, [*qubits*](https://en.wikipedia.org/wiki/Qubit) (quantum bits) are the fundamental object of information in quantum computing.  To understand this correspondence, this article looks at the simplest example: a single qubit.
 
-## Representing a Qubit
+## Representing a qubit
 
 While a bit, or binary digit, can have value either $0$ or $1$, a qubit can have a value that is either of these or a quantum superposition of $0$ and $1$.
 
@@ -30,7 +30,7 @@ $$0\equiv \begin{bmatrix} 1 \\\\  0 \end{bmatrix}, \qquad 1 \equiv \begin{bmatri
 
 although the opposite choice could equally well be taken. Thus, out of the infinite number of possible single-qubit quantum state vectors, only two correspond to states of classical bits; all other quantum states do not.
 
-## Measuring a Qubit
+## Measuring a qubit
 
 Now that we know how to represent a qubit, we can gain some intuition for what these states represent by discussing the concept of [*measurement*](https://en.wikipedia.org/wiki/Measurement_in_quantum_mechanics). A measurement corresponds to the informal idea of “looking” at a qubit, which immediately collapses the quantum state to one of the two classical states  $\begin{bmatrix} 1 \\\\  0 \end{bmatrix}$ or  $\begin{bmatrix} 0 \\\\  1 \end{bmatrix}$. When a qubit given by the quantum state vector  $\begin{bmatrix} \alpha \\\\  \beta \end{bmatrix}$ is measured, we obtain the outcome $0$ with probability $|\alpha|^2$ and the outcome $1$  with probability $|\beta|^2$. On outcome $0$, the qubit's new state is $\begin{bmatrix} 1 \\\\  0 \end{bmatrix}$; on outcome $1$ its state is $\begin{bmatrix} 0 \\\\  1 \end{bmatrix}$. Note that these probabilities sum up to $1$ because of the normalization condition $|\alpha|^2 + |\beta|^2 = 1$.
 
@@ -38,7 +38,7 @@ The properties of measurement also mean that the overall sign of the quantum sta
 
 A final important property of measurement is that it does not necessarily damage all quantum state vectors. If we start with a qubit in the state $\begin{bmatrix} 1 \\\\  0 \end{bmatrix}$, which corresponds to the classical state $0$, measuring this state will always yield the outcome $0$ and leave the quantum state unchanged. In this sense, if we only have classical bits (i.e., qubits that are either $\begin{bmatrix}1 \\\\  0 \end{bmatrix}$ or $\begin{bmatrix}0 \\\\  1 \end{bmatrix}$) then measurement does not damage the system. This means that we can replicate classical data and manipulate it on a quantum computer just as one could do on a classical computer. The ability, however, to store information in both states at once is what elevates quantum computing beyond what is possible classically and further robs quantum computers of the ability to copy quantum data indiscriminately, see also [the no-cloning theorem](https://en.wikipedia.org/wiki/No-cloning_theorem).
 
-## Visualizing Qubits and Transformations using the Bloch Sphere
+## Visualizing qubits and transformations using the bloch sphere
 
 Qubits may also be pictured in $3$D using the [*Bloch sphere*](https://en.wikipedia.org/wiki/Bloch_sphere) representation.  The Bloch sphere gives a way of describing a single-qubit quantum state (which is a two-dimensional complex vector) as a three-dimensional real-valued vector.  This is important because it allows us to visualize single-qubit states and thereby develop reasoning that can be invaluable in understanding multi-qubit states (where sadly the Bloch sphere representation breaks down).  The Bloch sphere can be visualized as follows:
 
@@ -48,7 +48,7 @@ Qubits may also be pictured in $3$D using the [*Bloch sphere*](https://en.wikipe
 The arrows in this diagram show the direction in which the quantum state vector is pointing and each transformation of the arrow can be thought of as a rotation about one of the cardinal axes.
 While thinking about a quantum computation as a sequence of rotations is a powerful intuition, it is challenging to use this intuition to design and describe algorithms. Q# alleviates this issue by providing a language for describing such rotations.
 
-## Single-Qubit Operations
+## Single-qubit operations
 
 Quantum computers process data by applying a universal set of quantum gates that can emulate any rotation of the quantum state vector.
 This notion of universality is akin to the notion of universality for traditional (i.e., classical) computing where a gate set is considered to be universal if every transformation of the input bits can be performed using a finite length circuit.

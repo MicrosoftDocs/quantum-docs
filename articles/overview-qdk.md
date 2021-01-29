@@ -1,25 +1,21 @@
 ---
-title: Introduction to quantum computing
+title: What is quantum computing?
 description: Learn what quantum computing is, what quantum computers can do, and how you can learn quantum computing.
 author: bradben
 ms.author:  v-benbra
-ms.date: 05/05/2020
+ms.date: 02/01/2021
 ms.topic: overview
 uid: microsoft.quantum.overview.qdk-overview
 no-loc: ['Q#', '$$v']
 ---
 
-# Introduction to quantum computing and the Quantum Development Kit
+# What is quantum computing?
 
-The Microsoft Quantum Development Kit (QDK) is a set of open-source tools designed to help developers learn quantum algorithms and write quantum programs. Quantum computing holds the promise to solve some of our planet's biggest challenges - in the areas of environment, agriculture, health, energy, climate, materials science, and others we haven't encountered yet.  
+Harnessing the unique behavior of quantum physics and applying it to computing, quantum computers introduce new concepts to traditional programming methods, making use of quantum physics behaviors such as superposition, entanglement, and quantum interference. 
 
-For some of these problems, even our most powerful computers run into problems. While quantum technology is just beginning to impact the computing world, it could be far-reaching and change the way we think about computing.
-
-## What is quantum computing?
+Quantum computing holds the promise to solve some of our planet's biggest challenges - in the areas of environment, agriculture, health, energy, climate, materials science, and others we haven't encountered yet. For some of these problems, even our most powerful computers run into problems. While quantum technology is just beginning to impact the computing world, it could be far-reaching and change the way we think about computing.
 
 In modern usage, the word quantum means the smallest possible discrete unit of any physical property, usually referring to properties of atomic or subatomic particles. Quantum computers use actual quantum particles, artificial atoms, or collective properties of quantum particles as processing units, and are large, complex, and expensive devices.
-
-Harnessing the unique behavior of quantum physics and applying it to computing, quantum computers introduce new concepts to traditional programming methods, making use of quantum physics behaviors such as superposition, entanglement, and quantum interference.
 
 ## What can a quantum computer do?
 

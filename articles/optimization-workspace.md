@@ -32,7 +32,7 @@ workspace = Workspace (
     subscription_id = "",  # Add your subscription_id
     resource_group = "",   # Add your resource_group
     name = ""              # Add your workspace name
-    location= ""           # Add the workspace location
+    location= ""           # Add the workspace location e.g. westus
 )
 ```
 

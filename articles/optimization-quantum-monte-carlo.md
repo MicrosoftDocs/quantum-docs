@@ -45,5 +45,5 @@ To create a parameterized Quantum Monte Carlo solver using the SDK:
 ```python
 from azure.quantum.optimization import QuantumMonteCarlo
 # Requires a workspace to be already created
-solver = QuantumMonteCarlo(workspace, sweeps = 2, trotter_number = 10, restarts = 72, seed = 22, beta_start = 0.1, transverse_field_start = 10, transverse_field_ebd = 0.1)
+solver = QuantumMonteCarlo(workspace, sweeps = 2, trotter_number = 10, restarts = 72, seed = 22, beta_start = 0.1, transverse_field_start = 10, transverse_field_stop = 0.1)
 ```

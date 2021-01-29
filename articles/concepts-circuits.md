@@ -1,21 +1,27 @@
 ---
-title: Quantum circuits
+title: Quantum circuit diagrams
 description: Learn how to visually represent simple and complex quantum operations with quantum circuit diagrams. 
 author: QuantumWriter
 uid: microsoft.quantum.concepts.circuits
 ms.author: v-benbra
-ms.date: 12/11/2017
+ms.date: 02/01/2021
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 ---
 
-# Quantum Circuits
+# Quantum circuit diagrams 
+
+This article covers conventions for quantum circuit diagrams. Quantum operations are easier to understand in a diagram than in the equivalent written matrix once you understand the visual conventions.
+
+## Example: Unitary transformation
+
 Consider for a moment the unitary transformation $\text{ CNOT}_{01}(H\otimes 1)$.
 This gate sequence is of fundamental significance to quantum computing because it creates a maximally entangled two-qubit state:
 
 $$\mathrm{CNOT}_{01}(H\otimes 1)\ket{00} = \frac{1}{\sqrt{2}} \left(\ket{00} + \ket{11} \right),$$
 
-Operations with this or greater complexity are ubiquitous in quantum algorithms and quantum error correction, so it should come as a great relief that there is a simple method for their visualization called a *quantum circuit diagram*.
+Operations with this or greater complexity are ubiquitous in quantum algorithms and quantum error correction. A quantum circuit diagram is a convenient tool for illustrating the operations.
+
 The circuit diagram for preparing this maximally entangled quantum state is:
 
 <!--- ![](.\media\1.svg) --->
@@ -23,8 +29,6 @@ The circuit diagram for preparing this maximally entangled quantum state is:
 ![Circuit diagram for a maximally entangled two-qubit state](~/media/1.svg)
 
 ## Quantum circuit diagram conventions
-This visual language for quantum operations can be more readily digestible than writing down its equivalent matrix once you understand the conventions for expressing a quantum circuit.
-We review these conventions below.
 
 In a circuit diagram, each solid line depicts a qubit or more generally a qubit register.
 By convention, the top line is qubit register $0$ and the remainder are labeled sequentially. The above example circuit is depicted as acting on two qubits (or equivalently two registers consisting of one qubit).

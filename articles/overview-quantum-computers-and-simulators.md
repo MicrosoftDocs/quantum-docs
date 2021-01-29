@@ -3,7 +3,7 @@ title: Quantum computers and quantum simulators
 description: Learn about quantum hardware, quantum simulators, and how quantum operations work.
 author: bradben
 ms.author:  v-benbra
-ms.date: 5/5/2020
+ms.date: 02/01/2021
 ms.topic: overview
 uid: microsoft.quantum.overview.simulators
 no-loc: ['Q#', '$$v']
@@ -13,7 +13,7 @@ no-loc: ['Q#', '$$v']
 
 Quantum computers are still in the infancy of their development. The hardware and maintenance are expensive, and most systems are located in universities and research labs. The technology is advancing, though, and limited public access to some systems is available.
 
-Quantum simulators are software programs that run on classical computers and make it possible to run and test quantum programs in an environment that predicts how qubits will react to different operations.
+Quantum simulators are software programs that run on classical computers and make it possible to run and test quantum programs in an environment that predicts how qubits react to different operations.
 
 ## Quantum hardware
 
@@ -30,17 +30,17 @@ Quantum simulators that run on classical computers allow you to simulate the run
 
 ## Topological qubit
 
-Microsoft is developing a quantum computer based on topological qubits. A topological qubit will be less impacted by changes in its environment, therefore reducing the degree of external error correction required.
+Microsoft is developing a quantum computer based on topological qubits. A topological qubit is less impacted by changes in its environment, therefore reducing the degree of external error correction required.
 
 Topological qubits feature increased stability and resistance to environmental noise, which means they can more readily scale and remain reliable longer.
 
 ## Microsoft and quantum hardware partnerships
 
-Microsoft is partnering with quantum hardware manufacturers IonQ, Honeywell, and QCI to make quantum computers accessible to developers in the future. Leveraging the Azure Quantum platform, developers will be able to use Microsoft’s Quantum Development Kit (QDK) and Q# to write quantum programs and run them remotely.
+Microsoft is partnering with quantum hardware manufacturers IonQ, Honeywell, and QCI to make quantum computers accessible to developers in the future. Leveraging the Azure Quantum platform, developers can use Microsoft’s Quantum Development Kit (QDK) and Q# to write quantum programs and run them remotely.
 
 ## Quantum computations
 
-Performing computations on a quantum computer or quantum simulator follow a basic process:
+Performing computations on a quantum computer or quantum simulator follows a basic process:
 
 - Access the qubits
 - Initialize the qubits to the desired state
