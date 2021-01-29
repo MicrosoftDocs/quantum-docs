@@ -3,7 +3,7 @@ title: Linear algebra for quantum computing
 description: Learn what basic linear algebra concepts are needed to understand quantum computing
 author: bradben
 ms.author:  v-benbra
-ms.date: 5/5/2020
+ms.date: 02/01/2021
 ms.topic: overview
 uid: microsoft.quantum.overview.algebra
 no-loc: ['Q#', '$$v']
@@ -11,7 +11,7 @@ no-loc: ['Q#', '$$v']
 
 # Linear algebra for quantum computing
 
-Linear algebra is the language of quantum computing. Although you don’t need to know it to implement or write quantum programs, it is widely used to describe qubit states, quantum operations, and to predict what a quantum computer will do in response to a sequence of instructions.
+Linear algebra is the language of quantum computing. Although you don’t need to know it to implement or write quantum programs, it is widely used to describe qubit states, quantum operations, and to predict what a quantum computer does in response to a sequence of instructions.
 
 Just like being familiar with the [basic concepts of quantum physics](xref:microsoft.quantum.overview.understanding) can help you understand quantum computing, knowing some basic linear algebra can help you understand how quantum algorithms work. At the least, you’ll want to be familiar with **vectors** and **matrix multiplication**. If you need to refresh your knowledge of these algebra concepts, here are some tutorials that cover the basics:
 
@@ -69,7 +69,7 @@ Just as a single qubit state $\begin{bmatrix} a \\\\  b \end{bmatrix}$ must meet
 
 ## Summary
 
-Linear algebra is the standard language for describing quantum computing and quantum physics. Even though the [libraries](xref:microsoft.quantum.libraries.overview) included with the Microsoft Quantum Development Kit will help you run advanced quantum algorithms without diving into the underlying math, understanding the basics will help you get started quickly and provide a solid foundation to build on.
+Linear algebra is the standard language for describing quantum computing and quantum physics. Even though the [libraries](xref:microsoft.quantum.libraries.overview) included with the Microsoft Quantum Development Kit helps you run advanced quantum algorithms without diving into the underlying math, understanding the basics helps you get started quickly and provide a solid foundation to build on.
 
 ## Next steps
 
