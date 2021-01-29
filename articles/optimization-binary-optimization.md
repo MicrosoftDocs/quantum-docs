@@ -42,7 +42,7 @@ in which $J_{i_1i_2\ldots i_n}$ represents the $n$-point interactions
 between variables $x_{i_1},x_{i_2},\ldots,x_{i_n}$. We can interpret 
 the variables to be (on) the nodes and their interactions as the edges of
 an underlying graph. Note that each of $J_{i_1i_2\ldots i_n}$ is a
-symmetric tensor since any permutaion of the indices will leave the 
+symmetric tensor since any permutation of the indices will leave the 
 corresponding term in the above objective function unchanged, the reason
 being that such a permutation is equivalent to a reshuffling of the $x_i$
 values. In terms with an even number of variables, the diagonal terms 
@@ -95,4 +95,4 @@ above expression is simply the length of the path, whereas the last two terms
 enforce the requirements that every site in $\mathcal{S}$ appears in the
 path and no site is visited more than once, respectively. 
 Note that the penalty coefficient $\lambda$ must be a large positive number
-so that any deviation form the constraints is heavily supressed.
+so that any deviation form the constraints is heavily suppressed.
