@@ -1,6 +1,6 @@
 ---
-title: Parallel Tempering
-description: This document provides a basic guide about how to use Parallel Tempering solver in Azure Quantum.
+title: Parallel tempering
+description: This document provides a basic guide about how to use parallel tempering solver in Azure Quantum.
 author: haohaiyu
 ms.author: hay
 ms.date: 01/12/2021
@@ -8,46 +8,46 @@ ms.topic: article
 uid: microsoft.quantum.optimization.parallel-tempering
 ---
 
-# Parallel Tempering
+# Parallel tempering
 
-Parallel Tempering can be regarded as a variant of the [Simulated Annealing](xref:microsoft.quantum.optimization.simulated-annealing) algorithm, or more generally Monte Carlo Markov Chain methods. Azure Quantum's Parallel Tempering solvers are designed to solve binary optimization problems through random sampling.
+Parallel tempering can be regarded as a variant of the [simulated annealing](xref:microsoft.quantum.optimization.simulated-annealing) algorithm, or more generally Monte Carlo Markov Chain methods. Azure Quantum's Parallel Tempering solvers are designed to solve binary optimization problems through random sampling.
 
-As with Simulated Annealing, the cost function is explored through thermal jumps. Unlike simulated annealing, a cooling temperature is not used.
+As with simulated annealing, the cost function is explored through thermal jumps. Unlike simulated annealing, a cooling temperature is not used.
 
-Instead of running a single copy of the system, Parallel Tempering creates multiple copies of a system, called replicas, that are randomly initialized and run at different temperatures. Then the same process is followed as in Simulated Annealing, but based on a specific protocol two replicas can be exchanged between different temperatures. This change can enable walkers that were previously stuck in local optima to be bumped out of them, and thus encourages a wider exploration of the problem space.
+Instead of running a single copy of the system, Parallel Tempering creates multiple copies of a system, called replicas, that are randomly initialized and run at different temperatures. Then the same process is followed as in simulated annealing, but based on a specific protocol two replicas can be exchanged between different temperatures. This change can enable walkers that were previously stuck in local optima to be bumped out of them, and thus encourages a wider exploration of the problem space.
 
 > [!NOTE]
-> You can find further information on the Parallel Tempering algorithm in [Marinari and Parisi 1992 - Simulated Tempering: A New Monte Carlo Scheme](https://iopscience.iop.org/article/10.1209/0295-5075/19/6/002/pdf)
+> You can find further information on the parallel tempering algorithm in [Marinari and Parisi 1992 - Simulated Tempering: A New Monte Carlo Scheme](https://iopscience.iop.org/article/10.1209/0295-5075/19/6/002/pdf)
 
-## Features of Parallel Tempering on Azure Quantum
+## Features of parallel tempering on Azure Quantum
 
-Parallel Tempering in Azure Quantum supports:
+Parallel tempering in Azure Quantum supports:
 
 - Parameter-free mode and parametrized mode (with parameters)
 - Ising and PUBO input formats
 - CPU only
 
-## When To Use Parallel Tempering
+## When to use parallel temperinging
 
-Parallel Tempering generally outperforms [Simulated Annealing](xref:microsoft.quantum.optimization.simulated-annealing) on hard problems with rugged landscapes.
+Parallel tempering generally outperforms [simulated annealing](xref:microsoft.quantum.optimization.simulated-annealing) on hard problems with rugged landscapes.
 
 It is also very good at solving Ising problems, or problems that are equivalent (such as min-cut problems).
 
 > [!NOTE]
 > For further information on determining which solver to use, please to [Which optimization solver should I use?](xref:microsoft.quantum.optimization.choose-solver).
 
-## Parameter Free Parallel Tempering
+## Parameter-free parallel tempering
 
-The parameter free version of Parallel Tempering is recommended for new users, those who don't want to manually tune parameters, and even as a starting point for further manual tuning. The main parameters to be tuned for this solver are the number of `sweeps`, `replicas` and `all_betas` (described in the next section).
+The parameter-free version of parallel tempering is recommended for new users, those who don't want to manually tune parameters, and even as a starting point for further manual tuning. The main parameters to be tuned for this solver are the number of `sweeps`, `replicas` and `all_betas` (described in the next section).
 
-The parameter free solver will halt either on `timeout` (specified in seconds) or when there is sufficient convergence on a solution.
+The parameter-free solver will halt either on `timeout` (specified in seconds) or when there is sufficient convergence on a solution.
 
 | Parameter Name | Description |
 |----------------|-------------|
 | `timeout` | Max execution time for the solver (in seconds). This is a best effort mechnism, so the solver may not stop immediately when the timeout is reached.|
 | `seed (optional)` | Seed value - used for reproducing results. |
 
-To create a parameter free Parallel Tempering solver using the SDK:
+To create a parameter-free parallel tempering solver using the SDK:
 
 ```python
 from azure.quantum.optimization import ParallelTempering
@@ -55,13 +55,13 @@ from azure.quantum.optimization import ParallelTempering
 solver = ParallelTempering(workspace, timeout=100, seed=22)
 ```
 
-The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar numer of variables, terms, locality and similar coefficient scale) using the parametrized Parallel Tempering solver.
+The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar numer of variables, terms, locality and similar coefficient scale) using the parametrized parallel tempering solver.
 
-## Parametrized Parallel Tempering
+## Parametrized parallel tempering
 
-Parallel Tempering with specified parameters is best used if you are already familiar with Parallel Tempering terminology (sweeps, betas) and/or have an idea of which parameter values you intend to use. **If this is your first time using Parallel Tempering for a problem, the parameter free version is recommended.** Some of the parameters like `beta_start` and `beta_stop` are hard to estimate without a good starting point.
+Parallel tempering with specified parameters is best used if you are already familiar with parallel tempering terminology (sweeps, betas) and/or have an idea of which parameter values you intend to use. **If this is your first time using parallel tempering for a problem, the parameter-free version is recommended.** Some of the parameters like `beta_start` and `beta_stop` are hard to estimate without a good starting point.
 
-Parallel Tempering supports the following parameters:
+Parallel tempering supports the following parameters:
 
 | Parameter Name | Description |
 |----------------|-------------|
@@ -70,9 +70,9 @@ Parallel Tempering supports the following parameters:
 | `all_betas` | The list of beta values used in each replica for sampling. The number of beta values must equal the number of replicas, as each replica will be assigned one beta value from the list. These beta values control how the solver escapes optimization saddle points - the larger the beta values, the less likely the sampling process will be to jump out of a local optimum.|
 | `seed (optional)` | Seed value - used for reproducing results |
 
-The larger the number of sweeps and replicas, the more likely the Parallel Tempering solver will be to find an optimal or near-optimal solution, however the solver will take longer to run.
+The larger the number of sweeps and replicas, the more likely the parallel tempering solver will be to find an optimal or near-optimal solution, however the solver will take longer to run.
 
-To create a parametrized Parallel Tempering solver using the SDK:
+To create a parametrized parallel tempering solver using the SDK:
 
 ```python
 from azure.quantum.optimization import ParallelTempering

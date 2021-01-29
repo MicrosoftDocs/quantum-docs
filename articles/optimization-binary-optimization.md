@@ -1,6 +1,6 @@
 ---
-title: Binary Optimization
-description: This document describes Binary Optimization and its use in formulating optimization problems.
+title: Binary optimization
+description: This document describes binary optimization and its use in formulating optimization problems.
 author: aminbarzegar
 ms.author: ambarzeg
 ms.date: 1/21/2021
@@ -8,7 +8,7 @@ ms.topic: article
 uid: microsoft.quantum.optimization.concepts.binary-optimization
 ---
 
-# Binary Optimization
+# Binary optimization
 
 Binary optimization is a subclass of more general combinatorial optimization
 problems in which the variables are restricted to a finite set of values, in
@@ -21,13 +21,12 @@ $f(\vec{x})$ and $g(\vec{x})$ are included below.
 
 $$
 \min_{\vec{x}}\left\\{H(\vec{x}) \quad | \quad \vec{x}\in\\{0,1\\}^N\right\\},$$
-$$f(\vec{x}) = 0, \\\ g(\vec{x}) > 0.$$                           
+$$f(\vec{x}) = 0, \\\ g(\vec{x}) > 0.$$
 
 Binary optimization constitutes a broad range of important problems of both 
 scientific and industrial nature such as social network analysis, portfolio
 optimization in finance, traffic management and scheduling in transportation, 
 lead optimization in pharmaceutical drug discovery, and many more.
-
 
 ## Polynomial Unconstrained Binary Optimization (PUBO)
 
@@ -42,7 +41,7 @@ in which $J_{i_1i_2\ldots i_n}$ represents the $n$-point interactions
 between variables $x_{i_1},x_{i_2},\ldots,x_{i_n}$. We can interpret 
 the variables to be (on) the nodes and their interactions as the edges of
 an underlying graph. Note that each of $J_{i_1i_2\ldots i_n}$ is a
-symmetric tensor since any permutaion of the indices will leave the 
+symmetric tensor since any permutation of the indices will leave the 
 corresponding term in the above objective function unchanged, the reason
 being that such a permutation is equivalent to a reshuffling of the $x_i$
 values. In terms with an even number of variables, the diagonal terms 
@@ -95,4 +94,4 @@ above expression is simply the length of the path, whereas the last two terms
 enforce the requirements that every site in $\mathcal{S}$ appears in the
 path and no site is visited more than once, respectively. 
 Note that the penalty coefficient $\lambda$ must be a large positive number
-so that any deviation form the constraints is heavily supressed.
+so that any deviation form the constraints is heavily suppressed.

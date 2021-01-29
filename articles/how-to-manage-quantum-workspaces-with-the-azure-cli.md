@@ -10,7 +10,7 @@ uid: microsoft.quantum.workspaces-cli
 
 # Manage quantum workspaces with the Azure CLI
 
-In this guide, learn to create Quantum Workspaces and the required Resource Groups and Storage Accounts using the Azure Command-Line Interface (Azure CLI) and start running your quantum applications in Azure Quantum.
+In this guide, learn to create Azure Quantum workspaces and the required Resource Groups and Storage Accounts using the Azure Command-Line Interface (Azure CLI) and start running your quantum applications in Azure Quantum.
 
 ## Prerequisites
 
@@ -43,23 +43,23 @@ In order to use the Azure Quantum service, you will need:
    ```
 
 
-## Create a quantum workspace
+## Create an Azure Quantum workspace
 
-In order to create a new quantum workspace, you'll need to know:
+In order to create a new Azure Quantum workspace, you'll need to know:
 
-- The location or Azure region name where the resource will live. You can use the [list of regions and their resource manager codes](https://github.com/Azure/azure-extensions-cli#regions) supported by the Azure CLI tool. (e.g. "westus")
-- The resource group associated with the new workspace. (e.g. "MyResourceGroup").
-- An storage account on the same resource group and subscription than the quantum workspace. It's possible to [create a new storage account from the Az CLI tool](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest&preserve-view=true#az_storage_account_create). (e.g. "MyStorageAccount")
-- The name of the quantum workspace to create. (e.g. "MyQuantumWorkspace")
+- The location or Azure region name where the resource will live. You can use the [list of regions and their resource manager codes](https://github.com/Azure/azure-extensions-cli#regions) supported by the Azure CLI tool (for example, **westus**).
+- The resource group associated with the new workspace. (for example, **MyResourceGroup**).
+- An storage account on the same resource group and subscription than the quantum workspace. It's possible to [create a new storage account from the Az CLI tool](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest&preserve-view=true#az_storage_account_create). (for example, **MyStorageAccount**)
+- The name of the quantum workspace to create. (for example, **MyQuantumWorkspace**)
 
-And then you can create it using the following command, using the previuos examples:
+And then you can create it using the following command, using the previous examples:
 
 ```dotnetcli
 az quantum workspace create -l westus -g MyResourceGroup -w MyQuantumWorkspace -sa MyStorageAccount
 ```
 
 > [!NOTE]
-> Adding/removing Providers from a quantum workspace using the Az CLI is still not supported. For now, you'll need to [use the Azure portal](xref:microsoft.quantum.workspaces-portal) to do this part.
+> Adding or removing providers from a workspace using the Az CLI is not currenly supported. For now, you'll need to [use the Azure portal](xref:microsoft.quantum.workspaces-portal) to modify a workspace.
 
 ## Delete a quantum workspace
 

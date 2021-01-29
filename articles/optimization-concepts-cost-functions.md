@@ -8,7 +8,7 @@ ms.topic: article
 uid: microsoft.quantum.optimization.concepts.cost-function
 ---
 
-# Cost Functions
+# Cost functions
 
 An *optimization problem* is described by a set of *variables*, each having a set
 (or range) of possible values. They describe the decisions that the optimizer
@@ -74,7 +74,7 @@ the optimal solution, $22/7$, is unique.
 > Constraints on individual variables are typically incorporated into their
 > respective set of allowed values rather than a constraint.
 
-## Parameterized Models
+## Parameterized models
 
 Typical optimization problems consist of many variables and several terms
 constituting the cost function. It is therefore pertinent to select a
@@ -103,7 +103,7 @@ $$ \mathrm{cost} = \left| 18x_0 + 19x_1 + 36x_2 + 84x_3 + 163x_4 + 165x_5 + 243x
 > This instance has only two solutions with $\mathrm{cost}=0$ (one mirroring
 > the other). Can you find them?
 
-## Supported Models
+## Supported models
 
 Models implemented in our optimizers include the
 [Ising Model](xref:microsoft.quantum.optimization.concepts.ising-model),
@@ -122,7 +122,7 @@ When multiplied out, this cost function has more terms than the previous one,
 but it happens to be in the (polynomial) form supported by our optimizers
 (namely, an Ising cost function).
 
-### Ising Cost Function
+### Ising cost function
 
 Ising variables take the values $x_i\in\\{\pm1\\}$ and the parameterized Ising
 cost function has the form:
@@ -144,7 +144,7 @@ For instance, the input:
   ]
 }
 ```
-describes the an Ising cost function with 3 terms:
+describes the an Ising cost function with three terms:
 $$ \mathrm{cost} = 3x_0x_1x_2 -2x_0x_3 + x_2x_3\text{ .} $$
 
 > [!NOTE]
@@ -158,13 +158,14 @@ $$ \mathrm{cost} = 3x_0x_1x_2 -2x_0x_3 + x_2x_3\text{ .} $$
 > *negative* term constants $c_k$ result in *ferromagnetic* interaction between
 > two variables.
 
-### PUBO Cost Function
+### PUBO cost function
 
 For binary optimization problems, variables take the values $x_i\in\\{0,1\\}$ and the cost function has the form:
 
 $$ \mathrm{cost} = \sum_k \mathrm{term}_k = \sum_k c_k\prod_i x_i\text{ .} $$
 
 For instance, the input:
+
 ```json
 "cost_function" {
   "type": "pubo",
@@ -176,6 +177,7 @@ For instance, the input:
   ]
 }
 ```
+
 describes a PUBO cost function with 3 terms:
 $$ \mathrm{cost} = 3x_0x_1x_2 -2x_0x_3 + x_2x_3\text{ .} $$
 

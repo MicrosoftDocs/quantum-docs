@@ -94,7 +94,7 @@ Follow these steps in this section to create an application to run in IonQ targe
 
 #### Steps 
 
-1. [Create a Q# application using the Q# project template.](https://docs.microsoft.com/quantum/quickstarts/install-command-line?tabs=tabid-vscode#develop-with-q)
+1. [Create a Q# application using the Q# project template.](xref:microsoft.quantum.install-qdk.overview.standalone)
 1. Open the `*.csproj` file in a text editor (for example, VS Code) and edit the file to:
     - Make sure the project points to the latest version of the QDK. You can verify the latest version in the official [QDK Release Notes](xref:microsoft.quantum.relnotes-qdk).
     - Add a line specifying the target:
@@ -114,6 +114,7 @@ Follow these steps in this section to create an application to run in IonQ targe
     
     </Project>
     ```
+
    where `X.XX.XXXXXXXX` is a place holder for the number of the latest version of the QDK.
 1. Write your Q# program, keeping in mind that you cannot compare measurement results to control the program flow. 
 1. Build and run your program locally using the QDK local
@@ -123,7 +124,7 @@ Follow these steps in this section to create an application to run in IonQ targe
      using the command `dotnet run`. Since you selected the `ExecutionTarget` in
      the `*.csproj` file, the console output will warn you if you created a file that is not compatible with the No Control Flow profile.
    - You can use the
-     [`resources estimator`](https://docs.microsoft.com/quantum/user-guide/machines/resources-estimator)
+     [`resources estimator`](xref:microsoft.quantum.machines.overview.resources-estimator)
      to estimate what resources your Q# program requires to run. You invoke the resources estimator with the command: `dotnet run --simulator
      ResourcesEstimator`.
 1. Once your Q# program is ready, submit the job to Azure Quantum
@@ -147,5 +148,5 @@ however, we are planning to make some available during the Limited Review.
 
 ## Next steps
 
-- Now that you know how to create Q# applications, you can learn more detalis about [how to submit jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs.azcli). 
+- Now that you know how to create Q# applications, you can learn more details about [how to submit jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs.azcli). 
 - You can also  try the different [samples](https://github.com/MicrosoftDocs/quantum-docs-private/tree/feature/onboarding-azure-quantum/azure-quantum/samples) we have available or try to submit your own projects.

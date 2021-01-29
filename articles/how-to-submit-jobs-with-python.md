@@ -15,8 +15,8 @@ Quantum using Python.
 
 ## Prerequisites
 
-- An Azure Quantum Workspace in your Azure subscription. To create
-  a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
+- An Azure Quantum workspace in your Azure subscription. To create
+  a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
 
 ## Installation
 
@@ -45,7 +45,7 @@ IQ# kernel, which powers the Q# Jupyter Notebook and Python experiences.
 You are now set up to use Python and Q# integration to run
 quantum programs on Azure Quantum.
 
-## Quantum Computing with Q# and Python
+## Quantum computing with Q# and Python
 
 1. The Python environment in the conda environment that you created earlier already
    includes the `qsharp` Python package. Make sure you are running your Python
@@ -53,7 +53,7 @@ quantum programs on Azure Quantum.
 
 1. If you've never used Q# with Python, follow the steps in [Create your first Q#
    program with
-   Python](https://docs.microsoft.com/quantum/quickstarts/install-python?tabs=tabid-conda#write-your-first-q-program).
+   Python](xref:microsoft.quantum.install-qdk.overview.python).
 
 1. Write your Q# operations in a `*.qs` file. When running `import qsharp` in
    Python, the IQ# kernel will automatically detect any .qs files in the same
@@ -80,9 +80,9 @@ quantum programs on Azure Quantum.
    functionality is available by running `import qsharp.azure` and then calling
    the Python commands to interact with Azure Quantum. For reference, see the
    [complete list of `qsharp.azure` Python commands](https://docs.microsoft.com/python/qsharp-core/qsharp.azure).
-   You'll need the resource ID of your Azure Quantum Workspace in order to
-   connect. (The resource ID can be found on your Quantum Workspace
-   page in Azure Portal.)
+   You'll need the resource ID of your Azure Quantum workspace in order to
+   connect. (The resource ID can be found on your workspace
+   page in the Azure Portal.)
 
    If your workspace was created in an Azure region other than \"West US\", you also
    need to specify this as the `location` parameter to `qsharp.azure.connect()`.

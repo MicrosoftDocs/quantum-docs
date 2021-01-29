@@ -74,7 +74,7 @@ print(job.id)
 > 9228ea88-6832-11ea-8271-c49dede60d7c
 ```
 
-## Job Management
+## Job management
 
 The `Workspace` provides methods for managing jobs:
 
@@ -82,13 +82,13 @@ The `Workspace` provides methods for managing jobs:
     Hardware or Simulators).
 - **get_job**: Returns the `Job` metadata and results for a specific job
     (based on job `id`).
-- **list_jobs**: Returns a list of all jobs in the Workspace.
+- **list_jobs**: Returns a list of all jobs in the workspace.
 - **cancel_job**: Cancels a specific job.
 
-See [Job Cancellation](/Azure-Quantum-Overview#Job-Cancellation) for more
+See [Job cancellation](xref:microsoft.quantum.azure-quantum-overview) for more
 information on how cancellation requests are processed.
 
-You can use the `list_jobs` method to get a list of all jobs in the Workspace:
+You can use the `list_jobs` method to get a list of all jobs in the workspace:
 
 ```py
 jobs = [job.id for job in workspace.list_jobs()]
@@ -124,7 +124,7 @@ print(results)
 ## Ways to supply problem terms
 
 There are three ways to supply terms for a
-[`Problem`](/Reference/Python-SDK/Azure.Quantum.Optimization): in the
+[`Problem`](xref:microsoft.quantum.optimization.problem): in the
 constructor, individually, and as a list of `Term` objects.
 
 ### In the constructor
@@ -205,7 +205,7 @@ To create a service principal, assign access, and generate a credential:
 1. Give your service principal permissions to access your workspace:
     1. Open the Azure Portal.
     1. In the search bar, enter the name of the resource group you created your
-       Workspace in. Select the resource group when it comes up in the results.
+       workspace in. Select the resource group when it comes up in the results.
     1. On the resource group overview, select **Access control (IAM)**.
     1. Click **Add Role Assignment**.
     1. Search for and select the service principal.

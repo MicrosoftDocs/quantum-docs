@@ -19,7 +19,7 @@ solver = ParallelTempering(workspace, timeout=100)
 For arguments, the solver takes the `Workspace` created previously, plus a single parameter which is the maximum amount of time (in seconds) to run the solver. Detailed documentation on parameters is available in the reference for each solver.
 
 > [!NOTE]
-> See [Use the Python SDK](xref:microsoft.quantum.optimization.python-sdk) for details on connecting to a Workspace and getting a `Workspace` object for it.
+> See [Use the Python SDK](xref:microsoft.quantum.optimization.python-sdk) for details on connecting to a workspace and getting a `Workspace` object for it.
 
 Solvers provide an `optimize` method that expects a `Problem`. The `optimize` method uploads the problem definition, submits a job to solve the problem, and polls the status until the job has completed running. Once the job has completed, it returns a `JobOutput` object which contains the results. See [Understand Solver results](xref:microsoft.quantum.optimization.understand-solver-results) for interpreting the results.
 

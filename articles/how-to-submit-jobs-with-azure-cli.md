@@ -8,18 +8,17 @@ ms.topic: article
 uid: microsoft.quantum.submit-jobs.azcli
 ---
 
-# Submit jobs to Azure Quantum using the Command-line Interface
+# Submit jobs to Azure Quantum with the command-line interface
 
-This guide shows you how to submit jobs to Azure Quantum using the command
-line interface (CLI).
+This guide shows you how to submit jobs to Azure Quantum using the command-line interface (CLI).
 
 ## Prerequisites
 
 Ensure that the following items are installed on your computer:
 
-- An Azure Quantum Workspace in your Azure subscription. To create
-  a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
-- The latest version of the [Quantum Development Kit](https://docs.microsoft.com/quantum/install-guide/standalone).
+- An Azure Quantum workspace in your Azure subscription. To create
+  a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
+- The latest version of the [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview.standalone).
 - The [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 - The [necessary utilities to use Azure Quantum](xref:microsoft.quantum.setup.cli) (includes the `quantum`
   extension for the Azure CLI).
@@ -27,7 +26,7 @@ Ensure that the following items are installed on your computer:
 ## Submit a job to Azure Quantum with the Azure CLI
 
 These steps show how to use the Azure CLI to run a Q# application and select a target from
-the different providers of your Azure Quantum Workspace.
+the different providers of your Azure Quantum workspace.
 
 > [!NOTE]
 > A provider is a partner quantum service consisting of quantum
@@ -44,14 +43,14 @@ the different providers of your Azure Quantum Workspace.
 > account, you must specify the subscription you want to use. You can do this with
 > the command `az account set -s <Your subscription ID>`.
 
-1. You can see all the Azure Quantum Workspaces in your subscription with the
+1. You can see all the Azure Quantum workspaces in your subscription with the
    following command:
 
    ```dotnetcli
    az quantum workspace list
    ```
 
-1. You can use `quantum workspace set` to select a default Workspace that you want to
+1. You can use `quantum workspace set` to select a default workspace that you want to
    use to list and submit jobs. Note that you also need to specify the resource
    group, for example:
 
@@ -67,7 +66,7 @@ the different providers of your Azure Quantum Workspace.
 > [!TIP]
 > You can check the current workspace with the command `az quantum workspace show -o table`.
 
-1. In your quantum workspace, there are different targets available from the
+1. In your Azure Quantum workspace, there are different targets available from the
    providers that you added when you created the workspace. You can display a list of all
    the available targets with the command `az quantum target list -o table`:
 
@@ -167,7 +166,7 @@ program starts.
 
 In this example, we are going to use IonQ as the provider and the
 `ionq.simulator` as the target. To submit the job to the currently selected default
-quantum workspace, use the command `az quantum job submit`:
+workspace, use the command `az quantum job submit`:
 
 > [!IMPORTANT]
 > Verify that the Quantum SDK version of the `*.csproj` file is

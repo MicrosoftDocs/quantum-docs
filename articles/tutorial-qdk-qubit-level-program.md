@@ -12,7 +12,7 @@ no-loc: ['Q#', '$$v']
 
 # Tutorial: Write and simulate qubit-level programs in Q\#
 
-Welcome to the Quantum Development Kit tutorial on writing and simulating a basic quantum program that operates on individual qubits. 
+Welcome to the Quantum Development Kit (QDK) tutorial on writing and simulating a basic quantum program that operates on individual qubits. 
 
 Although Q# was primarily created as a high-level programming language for large-scale quantum programs, it can just as easily be used to explore the lower level of quantum programs: directly addressing specific qubits.
 The flexibility of Q# allows users to approach quantum systems from any such level of abstraction, and in this tutorial we dive into the qubits themselves.
@@ -28,7 +28,7 @@ In our case, we will define a Q# operation to perform the full three-qubit quant
 
 ## Prerequisites
 
-* [Install](xref:microsoft.quantum.install-qdk.overview) the Quantum Development Kit using your preferred language and development environment.
+* [Install](xref:microsoft.quantum.install-qdk.overview) the QDK using your preferred language and development environment.
 * If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update-qdk) to the latest version
 
 
@@ -40,7 +40,7 @@ In our case, we will define a Q# operation to perform the full three-qubit quant
 > * Simulate a quantum operation from qubit allocation to measurement output
 > * Observe how the quantum system's simulated wavefunction evolves throughout the operation
 
-Running a quantum program with Microsoft's Quantum Development Kit typically consists of two parts:
+Running a quantum program with the QDK typically consists of two parts:
 1. The program itself, which is implemented using the Q# quantum programming language, and then invoked to run on a quantum computer or quantum simulator. These consist of 
     - Q# operations: subroutines acting on quantum registers, and 
     - Q# functions: classical subroutines used within the quantum algorithm.

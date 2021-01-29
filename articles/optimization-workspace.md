@@ -1,5 +1,5 @@
 ---
-title: Quantum Workspace
+title: Azure Quantum Workspace
 description: Reference for azure.quantum.Workspace
 author: george-moussa
 ms.author: georgenm
@@ -17,14 +17,14 @@ from azure.quantum import Workspace
 ## Constructor
 
 To create a Workspace object, you must supply the following arguments in order
-to connect. If you have not already created a Workspace, follow the steps in
-[Creating an Azure Quantum Workspace
+to connect. If you have not already created a workspace, follow the steps in
+[Creating an Azure Quantum workspace
 guide](xref:microsoft.quantum.workspaces-portal) using the following values:
 
-- `subscription_id`: The subscription ID where the Workspace is deployed.
-- `resource_group`: The name of the resource group where the Workspace is deployed.
-- `name`: The name of the Workspace.
-- `location`: The location where the workspace is deployed e.g. 'West US'
+- `subscription_id`: The subscription ID where the workspace is deployed.
+- `resource_group`: The name of the resource group where the workspace is deployed.
+- `name`: The name of the workspace.
+- `location`: The location where the workspace is deployed, for example **West US**,
 with either the `create` or `show` commands.
 
 ```py
@@ -53,7 +53,7 @@ print(job.details.status)
 
 ## Workspace.list_jobs
 
-Returns the list of existing jobs in the Workspace.
+Returns the list of existing jobs in the workspace.
 ```py
 from azure.quantum import Workspace
 

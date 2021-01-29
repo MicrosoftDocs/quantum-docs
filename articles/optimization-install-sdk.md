@@ -10,32 +10,31 @@ uid: microsoft.quantum.optimization.install-sdk
 
 # Install and use the Python SDK for optimization
 
-This guide provides a basic overview of how to install and use the Python SDK for optimization. It assumes you have already completed the [Creating an
-Azure Quantum Workspace guide](xref:microsoft.quantum.workspaces-portal).
+This guide provides a basic overview of how to install and use the Python SDK for optimization. It assumes you have already completed the [Creating an Azure Quantum workspace guide](xref:microsoft.quantum.workspaces-portal).
 
 ## Prerequisites
 
-- An Azure Quantum Workspace created in your Azure subscription. To create a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
+- An Azure Quantum workspace created in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
 
-## Python SDK Installation
+## Python SDK for optimization installation
 
 The Python SDK is distributed as the `azure-quantum` [PyPI](https://pypi.org)
-package. During this private preview, you'll need to follow these instructions to
+package. During this preview, you'll need to follow these instructions to
 install it from the private Azure Quantum feed:
 
 1. Install [Python](https://www.python.org/downloads/) 3.6 or later.
 2. Install [PIP](https://pip.pypa.io/en/stable/), the Python Package Installer, and ensure you have **version 19.2 or higher**
-3. Install the `azure-quantum` python package:
+3. Install the `azure-quantum` Python package:
 
    ```bash
    pip install azure-quantum
    ```
 
-## Jupyter Notebooks Installation
+## Jupyter Notebooks installation
 
-You can also choose to interact with the Azure Quantum Optimization service using Jupyter Notebooks. In order to do this, you will need to:
+You can also choose to interact with Azure Quantum optimization using Jupyter Notebooks. In order to do this, you will need to:
 
-1. Install the Python Optimization SDK (as described in the previous section)
+1. Install the Python SDK for optimization (as described in the previous section)
 2. [Install Jupyter Notebooks](https://jupyter.org/install)
 3. In your terminal of choice, use the following command to launch a new Jupyter Notebook:
 
@@ -47,13 +46,13 @@ You can also choose to interact with the Azure Quantum Optimization service usin
 
 4. In the browser view, select the dropdown button on the right hand top corner and select ```Python 3``` from the list. This should create a new notebook.
 
-## Usage Example
+## Usage example
 
 Whether you choose to solve optimization problems using Jupyter Notebooks or a Python script, once you have installed the prerequisites from the previous sections you can follow the instructions below to run a test problem.
 
-## Connecting to a Quantum Workspace
+## Connecting to an Azure Quantum workspace
 
-A `Workspace` represents the Quantum Workspace you [previously created](xref:microsoft.quantum.workspaces-portal) and is the main interface for interacting with the service.
+A `Workspace` represents the Azure Quantum workspace you [previously created](xref:microsoft.quantum.workspaces-portal) and is the main interface for interacting with the service.
 
 ```py
 from typing import List
@@ -131,9 +130,9 @@ This method will submit the problem to Azure Quantum for optimization and synchr
 - [Interpreting solver results](xref:microsoft.quantum.optimization.understand-solver-results)
 - [Job management](xref:microsoft.quantum.optimization.job-management)
 - [Solve long-running problems (async problem submission)](xref:microsoft.quantum.optimization.solve-long-running-problems)
-- [Reuse problem defintions](xref:microsoft.quantum.optimization.reuse-problem-definitions)
+- [Reuse problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions)
 - [Authenticating with a service principal](xref:microsoft.quantum.optimization.authenticate-service-principal)
-- [Solvers reference for Microsoft Optimization Solvers](xref:microsoft.quantum.optimization.providers.microsoft.qio)
+- [Solvers reference for Microsoft QIO solvers](xref:microsoft.quantum.optimization.providers.microsoft.qio)
 
 ### Samples and end-to-end learning
 
