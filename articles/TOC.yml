@@ -36,20 +36,20 @@ items:
         href: quickstart-honeywell.md
     - name: Optimization
       items:
+      - name: Install and use the Python SDK for optimization
+        href: optimization-install-sdk.md
       - name: Use Microsoft QIO
         href: quickstart-microsoft-qio.md
       - name: Use 1QBit solvers
         href: quickstart-1qbit.md  
-      - name: Use the Python SDK for optimization
-        href: how-to-use-the-python-SDK.md
-      - name: Use the Python SDK for optimization (Advanced)
-        href: how-to-use-the-python-SDK-advanced.md
   - name: Quickstarts
     items:
     - name: Optimization
       items:
       - name: Microsoft QIO quickstart
         href: quickstart-microsoft-qio.md
+      - name: 1QBit quickstart
+        href: quickstart-1qbit.md  
     - name: Quantum computing
       items:
       - name: IonQ quickstart
@@ -89,13 +89,49 @@ items:
         - name: 1QBit support policy
           href: provider-support-1qbit.md
       - name: Microsoft QIO
-        href: provider-microsoft-qio.md
+        items:
+        - name: Overview
+          href: provider-microsoft-qio.md
+        - name: Simulated Annealing
+          href: optimization-simulated-annealing.md        
+        - name: Parallel Tempering
+          href: optimization-parallel-tempering.md
+        - name: Tabu Search
+          href: optimization-tabu-search.md
+        - name: Quantum Monte Carlo
+          href: optimization-quantum-monte-carlo.md
     - name: Python-SDK
       items:
       - name: Azure.Quantum
-        href: Azure.Quantum.md
+        items:
+        - name: Workspace
+          href: optimization-workspace.md
       - name: Azure.Quantum.Optimization
-        href: Azure.Quantum.Optimization.md
+        items:
+        - name: Reference
+          items:
+          - name: Job
+            href: optimization-job-reference.md
+          - name: Problem
+            href: optimization-problem.md
+          - name: ProblemType
+            href: optimization-problem-type.md
+        - name: Usage
+          items:
+          - name: Express a problem
+            href: optimization-express-optimization-problem.md
+          - name: Apply a solver
+            href: optimization-usage-problem-apply-solver-to-optimization.md
+          - name: Understand solver results
+            href: optimization-understand-solver-results.md
+          - name: Job management
+            href: optimization-job-management.md
+          - name: Re-use problem definitions
+            href: optimization-reuse-problem-definitions.md
+          - name: Solve long-running problems
+            href: optimization-solve-long-running-problems.md
+          - name: Authenticate using a service principal
+            href: optimization-authenticate-service-principal.md
 - name: Quantum Development Kit
   items:
   - name: Overview
@@ -168,7 +204,7 @@ items:
           href: concepts-oracles.md
     - name: Optimization
       items:
-      - name: Introduction to optimization
+      - name: Introduction
         items:
         - name: Introduction to optimization
           href: optimization-overview-introduction.md
@@ -176,34 +212,16 @@ items:
           href: optimization-what-is-quantum-optimization.md
         - name: Key concepts
           href: optimization-oveview-key-concepts.md
-      - name: Optimization user guide 
-        items:
-        - name: Usage
-          items:
-          - name: Express a problem
-            href: optimization-express-optimization-problem.md
-          - name: Apply a solver
-            href: optimization-usage-problem-apply-solver-to-optimization.md
-          - name: Understand solver results
-            href: optimization-understand-solver-results.md
-          - name: Re-use problem definitions
-            href: optimization-reuse-problem-definitions.md
-          - name: Job management
-            href: optimization-job-management.md
       - name: Concepts
         items:
-        - name: Optimization methods
-          items:
-          - name: Which solver should you use?
-            href: optimization-which-solver-should-you-use.md
-        - name: Problem formulation
-          items:
-          - name: Cost functions
-            href: optimization-concepts-cost-functions.md
-          - name: Ising model
-            href: optimization-concepts-ising-model-for-optimization.md
-          - name: Binary optimization
-            href: optimization-binary-optimization.md  
+        - name: Which solver should you use?
+          href: optimization-which-solver-should-you-use.md
+        - name: Cost functions
+          href: optimization-concepts-cost-functions.md
+        - name: Ising model
+          href: optimization-concepts-ising-model-for-optimization.md
+        - name: Binary optimization (QUBOs & PUBOs)
+          href: optimization-binary-optimization.md  
   - name: Resources
     items:
     - name: Build your skills with MS Learn
