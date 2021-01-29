@@ -8,7 +8,7 @@ ms.topic: overview
 uid: microsoft.quantum.azure-quantum-overview
 ---
 
-# Introduction to Azure Quantum
+# Introduction to Azure Quantum (preview)
 
 Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs or solve optimization problems in the cloud. Using the Azure Quantum tools and SDKs, you can create quantum programs and run them against different quantum simulators and machines.
 
