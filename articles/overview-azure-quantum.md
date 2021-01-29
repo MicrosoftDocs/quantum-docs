@@ -16,7 +16,7 @@ Azure Quantum is a Microsoft Azure service that you can use to run quantum compu
 
 Azure Quantum service offers you access to different providers of quantum computing devices and enables you to run your Q# quantum programs in real hardware. Azure Quantum also offers the option to run algorithms in simulated quantum computers to test your code.
 
-Currently, Azure Quantum provides access to trapped ion devices through the provider **IonQ**. Soon, you also will have access to superconducting devices with the addition of new providers. 
+Azure Quantum provides access to trapped ion devices through the provider **IonQ** and **Honeywell.** 
 
 ## Optimization
 
