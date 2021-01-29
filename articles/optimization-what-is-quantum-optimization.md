@@ -1,6 +1,6 @@
 ---
 title: What is quantum-inspired optimization?
-description: Learn what quantum-inspired optimization techniques are
+description: Learn about quantum-inspired optimization techniques.
 author: frtibble
 ms.author: frtibble
 ms.date: 08/18/2020
@@ -20,6 +20,7 @@ A good analogy of this is to imagine you have a glass of water. If you move that
 Adiabatic quantum computation is an area of active research that's already being used in the industry. A number of techniques have been developed to simulate this type of physics. These kinds of classical algorithms, which we can run on classical computers today, are also known as *quantum-inspired optimization*.
 
 ## What is quantum-inspired optimization (QIO)?
+
 Optimization problems are found in every industry, such as manufacturing, finance, and transportation. In fact, industries such as logistics are dedicated entirely to solving optimization problems. To solve these problems, we search through feasible solutions. The best solution is the one with the lowest cost. Adiabatic quantum algorithms are well-suited to solving many optimization problems.
 
 Today, we can emulate adiabatic quantum algorithms by using quantum-inspired techniques on classical hardware, an approach which is known as quantum-inspired optimization (QIO). These techniques often perform better than state-of-the-art classical optimization techniques.

@@ -23,7 +23,7 @@ and quantum entanglement.
 
 If you are ready to start coding, follow these steps before proceeding:
 
-* [Install](xref:microsoft.quantum.install-qdk.overview) the Quantum Development Kit using
+* [Install](xref:microsoft.quantum.install-qdk.overview) the Quantum Development Kit (QDK) using
   your  preferred language and development environment. 
 * If you already have the QDK installed, make sure you have
   [updated](xref:microsoft.quantum.update-qdk) to the latest version
@@ -316,7 +316,7 @@ and 1.  We’ll use the `Hadamard` operation to accomplish this. If the qubit is
 in either of the classical states (where a measurement returns `Zero` always or
 `One` always), then the `Hadamard` or `H` operation will put the qubit in a
 state where a measurement of the qubit will return `Zero` 50% of the time and
-return `One` 50% of the time.  Conceputually, the qubit can be thought of as
+return `One` 50% of the time.  Conceptually, the qubit can be thought of as
 halfway between the `Zero` and `One`.  Now, when we simulate the `TestBellState`
 operation, we will see the results will return roughly an equal number of `Zero`
 and `One` after measurement.  

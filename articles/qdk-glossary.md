@@ -29,7 +29,7 @@ A graphical representation of a single-[qubit](xref:microsoft.quantum.glossary-q
 
 ## Callable
 
-An [operation](xref:microsoft.quantum.glossary-qdk#operation) or [function](xref:microsoft.quantum.glossary-qdk#function) in the [Q# language](https://github.com/microsoft/qsharp-language/tree/main/Specifications/Language#q-language).
+An [operation](xref:microsoft.quantum.glossary-qdk#operation) or [function](xref:microsoft.quantum.glossary-qdk#function) in the [Q# language](xref:microsoft.quantum.user-guide-qdk.overview).
 For more information, see [Q# programs](xref:microsoft.quantum.user-guide-qdk.overview.programs)
 
 ## Clifford group

@@ -16,9 +16,9 @@ Learn how to use 1QBit in Azure Quantum to solve complex optimization problems.
 - To complete this tutorial you need an Azure subscription. If you don't have
   an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
 
-## Create a quantum workspace
+## Create an Azure Quantum workspace
 
-You use the Azure Quantum service by adding a **Quantum Workspace** resource to your Azure subscription in the Azure portal. A Quantum Workspace resource, or Workspace for short, is a collection of assets associated with running quantum or optimization applications.
+You use the Azure Quantum service by adding a **Quantum Workspace** resource to your Azure subscription in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
 
 To open the Azure Portal, go to https://portal.azure.com and then follow these steps:
 
@@ -27,39 +27,39 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
    ![Tile for the Azure Quantum (preview)
    service](./media/azure-quantum-preview-search.png)
 
-1. Click **Azure Quantum (preview)** and then click  **Create**. This opens a form to create a Quantum Workspace.
+1. Click **Azure Quantum (preview)** and then click  **Create**. This opens a form to create a workspace.
 
    ![Create resource for the Azure Quantum (preview)
    service](./media/azure-quantum-preview-create.png)
 
-1. Fill out the details of your Workspace:
+1. Fill out the details of your workspace:
    - **Subscription:** The subscription that you want to associate with this
-     Workspace. 
-   - **Resource group:** The resource group that you want to assign this Workspace to.
-   - **Name:** The name of your Quantum Workspace.
-   - **Region:** The region for the Workspace. Select  **(US) West US** or any other preferred region.
+     workspace. 
+   - **Resource group:** The resource group that you want to assign this workspace to.
+   - **Name:** The name of your workspace.
+   - **Region:** The region for the workspace.
    - **Storage Account**: The Azure storage account to store your jobs and results. If you don't have an existing storage account, click **Create a new storage account** and complete the necessary fields. For this preview, we recommend using the default values.
 
-   ![Properties for the Azure Quantum Workspace](./media/azure-quantum-preview-properties.png)
+   ![Properties for the Azure Quantum workspace](./media/azure-quantum-preview-properties.png)
 
    > [!NOTE]
    > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](https://docs.microsoft.com/learn/modules/control-and-organize-with-azure-resource-manager/).
 
-1. After completing the information, click the **Providers** tab to add providers to your Workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
+1. After completing the information, click the **Providers** tab to add providers to your workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
 
    ![Providers for Azure Quantum](./media/azure-quantum-preview-providers.png)
 
    > [!NOTE]
-   > By default, the Azure Quantum service adds the Microsoft QIO provider to every Workspace.
+   > By default, the Azure Quantum service adds the Microsoft QIO provider to every workspace.
 
 1. Add at least the 1Qloud Optimization Platform provider, then click **Review + create**.
 
-1. Review the setting you've selected and if everything is correct, click on **Create** to create your Quantum Workspace.
+1. Review the setting you've selected and if everything is correct, click on **Create** to create your workspace.
 
-   ![Review and create the Workspace](./media/azure-quantum-preview-terms.png)
+   ![Review and create the workspace](./media/azure-quantum-preview-terms.png)
 
 > [!NOTE] 
-> While we are not charging for usage of Azure Quantum during the private
+> While we are not charging for usage of Azure Quantum during this
 > preview, your jobs will be uploaded to the Azure storage account created above and will be subject to storage charges.
 
 ## Define your optimization problem
@@ -243,7 +243,7 @@ Total weights:
 
 ## Next steps
 
-During this quick-start guide, you have seen an end-to-end example of how to take a mathematical cost function, represent it in code, submit it to the Azure Quantum Optimization service and parse the results. To learn more about the 1QBit offering in Azure Quantum, please see the [1QBit Provider documentation](xref:microsoft.quantum.providers.optimization.1qbit).
+During this quick-start guide, you have seen an end-to-end example of how to take a mathematical cost function, represent it in code, submit it to Azure Quantum and parse the results. To learn more about the 1QBit offering in Azure Quantum, please see the [1QBit Provider documentation](xref:microsoft.quantum.providers.optimization.1qbit).
 
 For more detailed information on the shipping optimization problem please refer to the following resources:
 

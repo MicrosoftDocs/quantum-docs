@@ -1,5 +1,5 @@
 ---
-title: Ising Model
+title: Ising model
 description: This document describes the Ising model and its use in formulating optimization problems.
 author: andrist
 ms.author: ruandris
@@ -8,7 +8,7 @@ ms.topic: article
 uid: microsoft.quantum.optimization.concepts.ising-model
 ---
 
-# Ising Model
+# Ising model
 
 In statistical mechanics, the *Ising model* is a simplified representation of
 the interaction between individual magnetic moments in a ferromagnetic
@@ -43,9 +43,9 @@ which are aligned, we get a contribution of $-J$ to the overall energy.
 > The Ising Model has no disorder in the interaction; at low temperature
 > all spins have a tendency to align with their respective neighbors and
 > the lowest-energy state ("ground state") is attained when all spin
-> variables have the same value (i.e, they are either all $+1$ or all $-1$).
+> variables have the same value (for example, they are either all $+1$ or all $-1$).
 
-## Dynamics of the System
+## Dynamics of the system
 
 The probability of finding statistical-mechanical system in a specific state is
 given by the Boltzmann distribution. It depends on the energy of this state
@@ -64,11 +64,11 @@ expressed as the inverse temperature $\beta = 1/T$).
 > of finding the system in this ground state tends to
 > $p(\vec\sigma_{\mathrm{GS}})\to 1$.
 
-## Disordered Ising Systems
+## Disordered Ising systems
 
 While the (ferromagnetic) Ising model offers some interesting dynamics,
 the system becomes more complex if the interaction constants $J$ are
-allowed to be bond-dependent (i.e., we use a different constant for
+allowed to be bond-dependent (for example, we use a different constant for
 each set of interacting spins).
 
 $$ \mathcal{H} = -\sum_{\langle i,j\rangle} J_{ij} \sigma_i\sigma_j. $$
@@ -84,7 +84,7 @@ For these so-called *Ising Spin Glasses*,
   (this is known as *frustration*).
 
 * When finding the ground state, the choice of *how* to assign variables
-  with competing interactions can have a ripple effect accross the system
+  with competing interactions can have a ripple effect across the system
   (by changing how adjacent spins must be arranged, in turn impacting
   their respective neighbors).
 

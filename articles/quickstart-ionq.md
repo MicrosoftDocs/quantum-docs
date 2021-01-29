@@ -17,7 +17,7 @@ Learn how to use Azure Quantum to run Q# problems against the IonQ simulator or 
   an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
 - In this guide we'll use [Visual Studio Code](https://code.visualstudio.com/download) which you can download and use for free.
 
-## Install the Quantum Development Kit and other resources
+## Install the Quantum Development Kit (QDK) and other resources
 
 Before you can write a Q# program and run it with IonQ, you'll need a few resources installed:
 
@@ -29,39 +29,39 @@ Before you can write a Q# program and run it with IonQ, you'll need a few resour
    az extension add --source https://msquantumpublic.blob.core.windows.net/az-quantum-cli/quantum-latest-py3-none-any.whl
    ```
 
-## Create a quantum workspace
+## Create an Azure Quantum workspace
 
-You use the Azure Quantum service by adding a **Quantum Workspace** resource to your Azure subscription in the Azure portal. A Quantum Workspace resource, or Workspace for short, is a collection of assets associated with running quantum or optimization applications.
+You use the Azure Quantum service by adding a **Quantum Workspace** resource to your Azure subscription in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
 
 To open the Azure Portal, go to https://portal.azure.com and then follow these steps:
 
-> Note: This is a special link that allows you to create a Quantum Workspace in the Azure Portal. Without using the link you will be able to see existing workspaces but not create new ones.
+> Note: This is a special link that allows you to create a workspace in the Azure Portal. Without using the link you will be able to see existing workspaces but not create new ones.
 
 1. Click **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
 
    ![Tile for the Azure Quantum (preview)
    service](./media/azure-quantum-preview-search.png)
 
-1. Click **Azure Quantum (preview)** and then click  **Create**. This opens a form to create a Quantum Workspace.
+1. Click **Azure Quantum (preview)** and then click  **Create**. This opens a form to create a workspace.
 
    ![Create resource for the Azure Quantum (preview)
    service](./media/azure-quantum-preview-create.png)
 
-1. Fill out the details of your Workspace:
+1. Fill out the details of your workspace:
    - **Subscription:** The subscription that you want to associate with this
-     Workspace. 
-   - **Resource group:** The resource group that you want to assign this Workspace to.
-   - **Name:** The name of your Quantum Workspace.
-   - **Region:** The region for the Workspace.
+     workspace. 
+   - **Resource group:** The resource group that you want to assign this workspace to.
+   - **Name:** The name of your workspace.
+   - **Region:** The region for the workspace.
    - **Storage Account**: The Azure storage account to store your jobs and results. If you don't have an existing storage account, click **Create a new storage account** and complete the necessary fields. For this preview, we recommend using the default values.
 
-   ![Properties for the Azure Quantum Workspace](./media/azure-quantum-preview-properties.png)
+   ![Properties for the Azure Quantum workspace](./media/azure-quantum-preview-properties.png)
 
 
    > [!NOTE]
    > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](https://docs.microsoft.com/learn/modules/control-and-organize-with-azure-resource-manager/).
 
-1. After completing the information, click the **Providers** tab to add providers to your Workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
+1. After completing the information, click the **Providers** tab to add providers to your workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
 
    > [!NOTE]
    > If you do not see the IonQ provider, you may not have access to their
@@ -71,14 +71,14 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
    ![Providers for Azure Quantum](./media/azure-quantum-preview-providers.png)
 
    > [!NOTE]
-   > By default, the Azure Quantum service adds the Microsoft QIO provider to every Workspace.
+   > By default, the Azure Quantum service adds the Microsoft QIO provider to every workspace.
 
 1. Add at least the IonQ provider, then click **Review + create**.
 
 1. Review the settings and approve the *Terms and Conditions of Use* of
-   the selected providers. If everything is correct, click on **Create** to create your Quantum Workspace.
+   the selected providers. If everything is correct, click on **Create** to create your workspace.
 
-   ![Review and create the Workspace](./media/azure-quantum-preview-terms.png)
+   ![Review and create the workspace](./media/azure-quantum-preview-terms.png)
 
 > [!NOTE] 
 > While we are not charging for usage of Azure Quantum during the private
@@ -88,19 +88,19 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 
 Next, we'll open up Visual Studio Code and get create a Q# Project.
 
-1. In VS Code open the View menu, and select Command Palette.
+1. In VS Code open the **View** menu and select **Command Palette**.
 
-1. Type `Q#: Create New Project`.
+1. Type **Q#: Create New Project**.
 
-1. Select Standalone console application.
+1. Select **Standalone console application**.
 
-1. Select a directory to hold your project, such as your home directory. Enter QuantumRNG as the project name, then select Create Project.
+1. Select a directory to hold your project, such as your home directory. Enter **QuantumRNG** as the project name, then select **Create Project**.
 
-1. From the window that appears at the bottom, select Open new project.
+1. From the window that appears at the bottom, select **Open new project**.
 
-1. You should see two files: the project file and Program.qs, which contains starter code. Open `Program.qs`.
+1. You should see two files: the project file and **Program.qs**, which contains starter code. Open **Program.qs**.
 
-1. Start by opening the `QuantumRNG.csproj` file and adding the `ExecutionTarget` property, which will give you design-time feedback on the compatibility of your program for IonQ's hardware.
+1. Start by opening the **QuantumRNG.csproj** file and adding the `ExecutionTarget` property, which will give you design-time feedback on the compatibility of your program for IonQ's hardware.
 
 ```xml
 <Project Sdk="Microsoft.Quantum.Sdk/0.14.2011120240">
@@ -112,7 +112,7 @@ Next, we'll open up Visual Studio Code and get create a Q# Project.
 </Project>
 ```
 
-1. Replace the contents of `Program.qs` with the program:
+1. Replace the contents of **Program.qs** with the program:
 
 ```qsharp
 namespace QuantumRNG {
@@ -129,8 +129,8 @@ namespace QuantumRNG {
 }
 ```
 
-> [!NOTE] 
-> If you would like to learn more about this program code, we recommend checking out how to [Create your first Q# program by using the Quantum Development Kit](https://docs.microsoft.com/learn/modules/qsharp-create-first-quantum-development-kit/).
+> [!NOTE]
+> If you would like to learn more about this program code, we recommend [Create your first Q# program by using the Quantum Development Kit](https://docs.microsoft.com/learn/modules/qsharp-create-first-quantum-development-kit/).
 
 ## Prepare the AZ CLI
 
@@ -149,7 +149,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
 
    ```
 
-1. In your quantum workspace, there are different targets available from the
+1. In your workspace, there are different targets available from the
    providers that you added when you created the workspace. You can display a list of all
    the available targets with the command `az quantum target list -o table`:
 
@@ -164,9 +164,8 @@ Next, we'll prepare your environment to run the program against the workspace yo
 
     > [!NOTE]
     > When you submit a job in Azure Quantum it will wait in a queue until the
-    > provider is ready to run your program. The `Average Queue Time` column of
-    > the target list command shows you how long other jobs which have been run
-    > recently waited to be execute. This can give you an idea of how long you
+    > provider is ready to run your program. The **Average Queue Time** column of
+    > the target list command shows you how long recently run jobs waited in the queue. This can give you an idea of how long you
     > might have to wait.
 
 ## Simulate the program
@@ -174,7 +173,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
 Before you run a program against real hardware, we recommend simulating it first (if possible, based on the number of qubits required) to help ensure that your algorithm is doing what you want. Fortunately, IonQ provides an idealized simulator that you can use.
 
 > [!NOTE]
-> You can also simulate Q# programs locally using the (Full State Simulator)[https://docs.microsoft.com/en-us/quantum/user-guide/machines/full-state-simulator].
+> You can also simulate Q# programs locally using the [Full State Simulator](xref:microsoft.quantum.machines.overview.full-state-simulator).
 
 Run your program with `az quantum execute --target-id ionq.simulator -o table`. This command will compile your program, submit it to Azure Quantum, and wait until IonQ has finished simulating the program. Once it's done it will output a histogram which should look like the one below:
 
@@ -262,4 +261,4 @@ We recommend you continue your journey by learning more about the [different typ
 
 Looking for more samples to run? Check out the [samples directory](https://github.com/MicrosoftDocs/quantum-docs-private/tree/feature/onboarding-azure-quantum/azure-quantum/samples)
 
-Lastly, if you would like to learn more about writing Q# programs please see the [Microsoft Quantum Documentation](https://docs.microsoft.com/quantum/).
+Lastly, if you would like to learn more about writing Q# programs please see the [Microsoft Quantum Documentation](xref:microsoft.quantum.overview.qdk-overview).

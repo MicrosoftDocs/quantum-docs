@@ -1,6 +1,6 @@
 ---
 title: Which optimization solver should I use?
-description: This document provides a basic guide on which solvers to use.
+description: This document provides a basic guide on which solvers to use in Azure Quantum.
 author: quantumrandom
 ms.author: dasteige
 ms.date: 11/27/2020

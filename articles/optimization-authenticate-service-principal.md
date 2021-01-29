@@ -1,5 +1,5 @@
 ---
-title: Using a Service Principal to Authenticate
+title: Using a service principal to authenticate
 description: This document provides instructions on how to authenticate using a service principal.
 author: anraman
 ms.author: anraman
@@ -8,7 +8,7 @@ ms.topic: article
 uid: microsoft.quantum.optimization.authenticate-service-principal
 ---
 
-# Using a Service Principal to Authenticate
+# Using a service principal to authenticate
 
 Sometimes it is unsuitable to use interactive authentication or to authenticate
 as a user account. These cases may arise when you want to submit jobs from a
@@ -24,14 +24,14 @@ principal](https://docs.microsoft.com/azure/active-directory/develop/howto-creat
 To create a service principal, assign access, and generate a credential:
 
 1. [Create an Azure AAD application](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal):
-
+    >[!NOTE]
     > You do not need to set a redirect URI
-    1. Once created, write down the `Application (client) ID` and the `Directory
-       (tenant) ID`
+
+    1. Once created, write down the *Application (client) ID* and the *Directory (tenant) ID*.
 
 1. [Create a
    credential](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret)
-   to login as the application
+   to login as the application:
     1. In the settings for your application, select **Certificates & secrets**.
     1. Under **Client Secrets**, select **Create New Secret**.
     1. Provide a description and duration, then select **Add**.
@@ -41,7 +41,7 @@ To create a service principal, assign access, and generate a credential:
 1. Give your service principal permissions to access your workspace:
     1. Open the Azure Portal.
     1. In the search bar, enter the name of the resource group you created your
-       Workspace in. Select the resource group when it comes up in the results.
+       workspace in. Select the resource group when it comes up in the results.
     1. On the resource group overview, select **Access control (IAM)**.
     1. Click **Add Role Assignment**.
     1. Search for and select the service principal.

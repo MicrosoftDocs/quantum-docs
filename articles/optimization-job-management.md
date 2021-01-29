@@ -8,18 +8,18 @@ ms.topic: article
 uid: microsoft.quantum.optimization.job-management
 ---
 
-# Job Management
+# Job management
 
 When a problem is submitted to a solver, a `Job` is created in Azure Quantum. The `Workspace` provides the following methods for managing jobs:
 
 - **get_job**: Returns the `Job` metadata and results for a specific job
     (based on job `id`).
-- **list_jobs**: Returns a list of all jobs in the Workspace.
+- **list_jobs**: Returns a list of all jobs in the workspace.
 - **cancel_job**: Cancels a specific job.
 
 See [Job Cancellation](xref:microsoft.quantum.azure-quantum-overview#Job-Cancellation) for more information on how cancellation requests are processed.
 
-You can use the `list_jobs` method to get a list of all jobs in the Workspace:
+You can use the `list_jobs` method to get a list of all jobs in the workspace:
 
 ```py
 jobs = [job.id for job in workspace.list_jobs()]

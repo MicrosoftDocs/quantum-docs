@@ -1,6 +1,6 @@
 ---
-title: Binary Optimization
-description: This document describes Binary Optimization and its use in formulating optimization problems.
+title: Binary optimization
+description: This document describes binary optimization and its use in formulating optimization problems.
 author: aminbarzegar
 ms.author: ambarzeg
 ms.date: 1/21/2021
@@ -8,7 +8,7 @@ ms.topic: article
 uid: microsoft.quantum.optimization.concepts.binary-optimization
 ---
 
-# Binary Optimization
+# Binary optimization
 
 Binary optimization is a subclass of more general combinatorial optimization
 problems in which the variables are restricted to a finite set of values, in
@@ -21,13 +21,12 @@ $f(\vec{x})$ and $g(\vec{x})$ are included below.
 
 $$
 \min_{\vec{x}}\left\\{H(\vec{x}) \quad | \quad \vec{x}\in\\{0,1\\}^N\right\\},$$
-$$f(\vec{x}) = 0, \\\ g(\vec{x}) > 0.$$                           
+$$f(\vec{x}) = 0, \\\ g(\vec{x}) > 0.$$
 
 Binary optimization constitutes a broad range of important problems of both 
 scientific and industrial nature such as social network analysis, portfolio
 optimization in finance, traffic management and scheduling in transportation, 
 lead optimization in pharmaceutical drug discovery, and many more.
-
 
 ## Polynomial Unconstrained Binary Optimization (PUBO)
 

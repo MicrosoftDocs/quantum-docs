@@ -1,5 +1,5 @@
 ---
-title: Quantum Optimization Job
+title: Quantum optimization job
 description: Reference for azure.quantum.optimization.Job
 author: george-moussa
 ms.author: georgenm
@@ -8,7 +8,7 @@ ms.topic: article
 uid: microsoft.quantum.optimization.job-reference
 ---
 
-# Quantum Optimization Job
+# Quantum optimization Job
 
 ```py
 from azure.quantum.optimization import Job
@@ -28,7 +28,7 @@ print(results)
 
 ## Job.refresh
 
-Refreshes the job's details by querying the Workspace.
+Refreshes the job's details by querying the workspace.
 
 ```py
 job = workspace.get_job(jobId)
