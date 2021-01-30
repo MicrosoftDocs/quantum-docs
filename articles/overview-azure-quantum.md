@@ -28,7 +28,7 @@ Optimization algorithms are available to run on a variety of classical computing
 
 ## Quantum workspace
 
-You use the Azure Quantum service by adding a **Quantum workspace** resource to your Azure subscription in the Azure portal. A Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications. One of the properties configured in a workspace is an Azure Storage Account resource, where Azure Quantum stores your quantum programs and optimization problems for access.
+You use the Azure Quantum service by adding an Azure Quantum workspace resource to your Azure subscription in the Azure portal. A Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications. One of the properties configured in a workspace is an Azure Storage Account resource, where Azure Quantum stores your quantum programs and optimization problems for access.
 
 ## Providers and targets
 

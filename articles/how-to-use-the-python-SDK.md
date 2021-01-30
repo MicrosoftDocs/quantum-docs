@@ -130,8 +130,9 @@ your terminal:
 ## Next Steps
 
 Ready to learn more about creating and solving optimization problems? Check out our samples:
-- [Solving a simple shipping optimization problem](https://github.com/MicrosoftDocs/quantum-docs-private/blob/feature/onboarding-azure-quantum/azure-quantum/samples/shipping-sample/shipping-sample.ipynb)
-- [Job shop scheduling sample problem](https://github.com/MicrosoftDocs/quantum-docs-private/blob/feature/onboarding-azure-quantum/azure-quantum/samples/job-shop-sample/)
+
+- [Solving a simple shipping optimization problem](https://github.com/microsoft/qio-samples)
+- [Job shop scheduling sample problem](https://github.com/microsoft/qio-samples/job-shop-sample/)
 This guide provides an overview of a simple use case. `Problem` also provides
 individual methods for `upload` and `submit`; `submit` returns an instance of
 the `Job` which exposes the job metadata and `fetch`, `get_output` and `cancel`

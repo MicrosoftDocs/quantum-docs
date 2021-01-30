@@ -9,8 +9,8 @@ uid: microsoft.quantum.contributing-qdk.overview.style
 no-loc: ['Q#', '$$v']
 ---
 
-# Q# Style Guide #
-## General Conventions ##
+# Q# style guide #
+## General conventions ##
 
 The conventions suggested in this guide are intended to help make programs and libraries written in Q# easier to read and understand.
 
@@ -20,14 +20,14 @@ We suggest:
 
 - Never disregard a convention unless you’re doing so intentionally in order to provide more readable and understandable code for your users.
 
-## Naming Conventions ##
+## Naming conventions ##
 
 In offering the Quantum Development Kit, we strive for function and operation names that help quantum developers write programs that are easy to read and that minimize surprise.
 An important part of that is that when we choose names for functions, operations, and types, we are establishing the *vocabulary* that programmers use to express quantum concepts; with our choices, we either help or hinder them in their effort to clearly communicate.
 This places a responsibility on us to make sure that the names we introduce offer clarity rather than obscurity.
 In this section, we detail how we meet this obligation in terms of explicit guidance that helps us do the best by the Q# development community.
 
-### Operations and Functions ###
+### Operations and functions ###
 
 One of the first things that a name should establish is whether a given symbol represents a function or an operation.
 The difference between functions and operations is critical to understanding how a block of code behaves.
@@ -104,7 +104,7 @@ We suggest:
 
 ***
 
-### Entry Points
+### Entry points
 
 When defining an entry point into a Q# program, the Q# compiler recognizes the [`@EntryPoint()` attribute](xref:Microsoft.Quantum.Core.EntryPoint) rather requiring that entry points have a particular name (e.g.: `main`, `Main`, or `__main__`).
 That is, from the perspective of a Q# developer, entry points are ordinary operations annotated with `@EntryPoint()`.
@@ -129,7 +129,7 @@ We suggest:
 
 ***
 
-### Shorthand and Abbreviations ###
+### Shorthand and abbreviations ###
 
 The above advice notwithstanding, there are many forms of shorthand that see common and pervasive use in quantum computing.
 We suggest using existing and common shorthand where it exists, especially for operations that are intrinsic to the operation of a target machine.
@@ -177,7 +177,7 @@ We suggest:
 ***
 
 
-### Proper Nouns in Names ###
+### Proper nouns in names ###
 
 While in physics it is common to name things after the first person to publish about them, most non-physicists aren’t familiar with everyone’s names and all of the history.
 Relying too heavily on naming conventions from physics can thus put up a substantial barrier to entry, as users from other backgrounds must learn a large number of seemingly opaque names in order to use common operations and concepts.
@@ -203,7 +203,7 @@ We suggest:
 
 ***
 
-### Type Conversions ###
+### Type conversions ###
 
 Since Q# is a strongly and staticly typed language, a value of one type can only be used as a value of another type by using an explicit call to a type conversion function.
 This is in contrast to languages which allow for values to change types implicitly (e.g.: type promotion), or through casting.
@@ -230,7 +230,7 @@ We suggest:
 
 ***
 
-### Private or Internal Names ###
+### Private or internal names ###
 
 In many cases, a name is intended strictly for use internal to a library or project, and is not a guaranteed part of the API offered by a library.
 It is helpful to clearly indicate that this is the case when naming functions and operations so that accidental dependencies on internal-only code are made obvious.
@@ -275,7 +275,7 @@ We suggest:
 
 ***
 
-### Arguments and Variables ###
+### Arguments and variables ###
 
 A key goal of the Q# code for a function or operation is for it to be easily read and understood.
 Similarly, the names of inputs and type arguments should communicate how a function or argument will be used once provided.
@@ -300,7 +300,7 @@ We suggest:
 
 ***
 
-### User-Defined Type Named Items ###
+### User-defined type named items ###
 
 Named items in user-defined types should be named as `CamelCase`, even in input to UDT constructors.
 This helps in order to clearly separate named items from references to locally scoped variables when using accessor notation (e.g.: `callable::Apply`) or copy-and-update notation (`set arr w/= Data <- newData`).
@@ -324,7 +324,7 @@ We suggest:
 
 ***
 
-## Input Conventions ##
+## Input conventions ##
 
 When a developer calls into an operation or function, the various inputs to that operation or function must be specified in a particular order, increasing the cognitive load that a developer faces in order to make use of a library.
 In particular, the task of remembering input orderings is often a distraction from the task at hand: programming an implementation of a quantum algorithm.
@@ -374,11 +374,11 @@ We suggest:
 
 ***
 
-## Documentation Conventions ##
+## Documentation conventions ##
 
 The Q# language allows for attaching documentation to operations, functions, and user-defined types through the use of specially formatted documentation comments.
 Denoted by triple-slashes (`///`), these documentation comments are small [DocFX-flavored Markdown](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html) documents that can be used to describing the purpose of each operation, function, and user-defined type, what inputs each expects, and so forth.
-The compiler provided with the Quantum Development Kit extracts these comments and uses them to help typeset documentation similar to that at https://docs.microsoft.com/quantum.
+The compiler provided with the Quantum Development Kit extracts these comments and uses them to help typeset documentation similar to that at [docs.microsoft.com](xref:microsoft.quantum.overview.qdk-overview).
 Similarly, the language server provided with the Quantum Development Kit uses these comments to provide help to users when they hover over symbols in their Q# code.
 Making use of documentation comments can thus help users to make sense of code by providing a useful reference for details that are not easily expressed using the other conventions in this document.
 
@@ -446,7 +446,7 @@ is Adj + Ctl {
 
 ***
 
-## Formatting Conventions ##
+## Formatting conventions ##
 
 In addition to the preceding suggestions, it is helpful to help make code as legible as possible to use consistent formatting rules.
 Such formatting rules by nature tend to be somewhat arbitrary and strongly up to personal aesthetics.
