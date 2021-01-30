@@ -10,7 +10,7 @@ uid: microsoft.quantum.optimization.providers.microsoft.qio
 
 # Microsoft QIO provider
 
-The Microsoft QIO provider is enabled in every Quantum Workspace.
+The Microsoft QIO provider is enabled in every Quantum workspace.
 
 - Publisher: [Microsoft](https://microsoft.com)
 - Provider ID: `microsoft`
@@ -21,15 +21,15 @@ The Microsoft QIO provider makes the following targets available:
 
 - [Solver: Simulated Annealing (Parameter
   Free)](#parameter-free-simulated-annealing)
-- [Solver: Simulated Annealing (Parameter Free - FPGA)](#parameter-free-simulated-annealing-fpga)
+- [Solver: Simulated Annealing (Parameter-free - FPGA)](#parameter-free-simulated-annealing-fpga)
 - [Solver: Simulated Annealing](#simulated-annealing)
 - [Solver: Simulated Annealing (FPGA)](#simulated-annealing-fpga)
-- [Solver: Parallel Tempering (Parameter Free)](#parameter-free-parallel-tempering)
+- [Solver: Parallel Tempering (Parameter-free)](#parameter-free-parallel-tempering)
 - [Solver: Parallel Tempering](#parallel-tempering)
-- [Solver: Tabu Search (Parameter Free)](#parameter-free-tabu-search)
+- [Solver: Tabu Search (Parameter-free)](#parameter-free-tabu-search)
 - [Solver: Tabu Search](#tabu-search)
 
-In the following table you can find a brief comparision between them:
+In the following table you can find a brief comparison between them:
 
 | **Name**                     | **Description**                                                                                                                                                                                                                                                                | **Best applicable scenario**                                                                                                                        |
 |------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|

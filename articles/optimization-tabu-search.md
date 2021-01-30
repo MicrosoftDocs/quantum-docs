@@ -36,18 +36,18 @@ Tabu is expected to perform very well on problem landscapes with the following f
 > [!NOTE]
 > For further information on determining which solver to use, refer to [Which optimization solver should I use?](xref:microsoft.quantum.optimization.choose-solver).
 
-## Parameter free tabu search
+## Parameter-free tabu search
 
-The parameter free version of tabu search is recommended for new users, those who don't want to manually tune parameters, and even as a starting point for further manual tuning. The main parameters to be tuned for this solver are the number of `sweeps` and the `tabu_tenure` (described in the next section).
+The parameter-free version of tabu search is recommended for new users, those who don't want to manually tune parameters, and even as a starting point for further manual tuning. The main parameters to be tuned for this solver are the number of `sweeps` and the `tabu_tenure` (described in the next section).
 
-The parameter free solver will halt either on `timeout` (specified in seconds) or when there is sufficient convergence on a solution.
+The parameter-free solver will halt either on `timeout` (specified in seconds) or when there is sufficient convergence on a solution.
 
 | Parameter Name | Description |
 |----------------|-------------|
 | `timeout` | Max execution time for the solver (in seconds). This is a best effort mechanism, so the solver may not stop immediately when the timeout is reached.|
 | `seed (optional)` | Seed value - used for reproducing results. |
 
-To create a parameter free Tabu solver using the SDK:
+To create a parameter-free Tabu solver using the SDK:
 
 ```python
 from azure.quantum.optimization import Tabu
@@ -59,7 +59,7 @@ The parameter-free solver will return the parameters used in the result JSON. Yo
 
 ## Parametrized tabu search
 
-Tabu search with specified parameters is best used if you are already familiar with tabu search terminology (iterations, tenure etc.) and/or have an idea of which parameters you intend to use. If this is your first time using tabu search for a problem, the parameter free version (described below) is recommended.
+Tabu search with specified parameters is best used if you are already familiar with tabu search terminology (iterations, tenure etc.) and/or have an idea of which parameters you intend to use. If this is your first time using tabu search for a problem, the parameter-free version (described below) is recommended.
 
 Tabu search supports the following parameters:
 

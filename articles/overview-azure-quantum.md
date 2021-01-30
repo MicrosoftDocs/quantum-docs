@@ -34,7 +34,7 @@ You use the Azure Quantum service by adding an Azure Quantum workspace resource 
 
 Another property configured in the workspace is the **provider** that you want to use to run programs in that workspace. A single provider may expose one or more **targets**, which can be quantum hardware or simulators, and are ultimately responsible for running your program. 
 
-By default, Azure Quantum adds the Microsoft QIO provider to every workspace, and you can add other providers when you create the workspace or any time afterward. [See a list of available providers](xref:microsoft.quantum.reference.overview).
+By default, Azure Quantum adds the Microsoft QIO provider to every workspace, and you can add other providers when you create the workspace or any time afterward. For more information, see the [Microsoft QIO provider](xref:microsoft.quantum.optimization.providers.microsoft.qio).
 
 ### Provider billing
 
