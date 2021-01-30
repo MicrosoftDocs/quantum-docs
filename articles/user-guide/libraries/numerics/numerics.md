@@ -66,7 +66,7 @@ For each of the three types above, a variety of operations is available:
     - Reciprocal (1/x)
     - Measurement (classical Double)
 
-For more information and detailed documentation for each of these operations, see the Q# library reference docs at [docs.microsoft.com](https://docs.microsoft.com/quantum)
+For more information and detailed documentation for each of these operations, see the Q# library reference docs at [docs.microsoft.com](xref:microsoft.quantum.overview.qdk-overview).
 
 ## Sample: Integer addition
 
@@ -79,6 +79,7 @@ register $y$ as input, the latter of which it maps to the sum $(x+y)$. Note that
 sum is computed modulo $2^n$ if $y$ is stored in an $n$-bit register.
 
 Using the Quantum Development Kit, this operation can be applied as follows:
+
 ```qsharp
 operation TestMyAddition(xValue : Int, yValue : Int, n : Int) : Unit {
     using ((xQubits, yQubits) = (Qubit[n], Qubit[n]))
