@@ -1,6 +1,6 @@
 ---
 title: The Q# User Guide
-description: Overview of the User Guide's purpose and contents
+description: See an overview of the Q# User Guide purpose and an index of its contents. 
 author: gillenhaalb
 ms.author: a-gibec
 ms.date: 03/05/2020

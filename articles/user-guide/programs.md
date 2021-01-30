@@ -1,6 +1,6 @@
 ---
-title: Q# Introdution
-description: Quick introduction into quantum programs in Q#
+title: Q# programming language introdution
+description: Quick introduction into quantum programs in the Q# programming language. 
 author: beheim
 ms.author: beheim
 ms.date: 11/08/2020
