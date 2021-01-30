@@ -1,9 +1,9 @@
 ---
 title: Develop with Q# applications in an IDE
-description: Learn how to create a Q# application that runs from the command prompt.
+description: Learn how to develop Q# applications in an editor/IDE and run applications from the .NET console
 author: bradben
 ms.author: v-benbra
-ms.date: 8/20/2020
+ms.date: 02/01/2021
 ms.topic: quickstart
 uid: microsoft.quantum.install-qdk.overview.standalone
 no-loc: ['Q#', '$$v']
@@ -11,7 +11,7 @@ no-loc: ['Q#', '$$v']
 
 # Develop with Q# applications in an IDE
 
-Q# programs can run on their own, without a driver in a host language like C#, F#, or Python. You can develop Q# applications in Visual Studio Code (VS Code), Visual Studio, Visual Studio Codespaces, or with any editor/IDE and run applications from the .NET console. 
+Learn how to develop Q# applications in Visual Studio Code (VS Code), Visual Studio, Visual Studio Codespaces, or with any editor/IDE and run applications from the .NET console. Q# programs can run on their own, without a driver in a host language like C#, F#, or Python. 
 
 ## Prerequisites for all environments
 

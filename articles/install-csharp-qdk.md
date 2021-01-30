@@ -1,9 +1,9 @@
 ---
 title: Develop with Q# and .NET
-description: Learn how to create a Q# application using .NET languages.
+description: Learn how to create a Q# application using .NET languages. Q# is built to work well with .NET languages such as C# and F#.
 author: bradben
 ms.author: v-benbra
-ms.date: 8/20/2020
+ms.date: 02/01/2021
 ms.topic: quickstart
 uid: microsoft.quantum.install-qdk.overview.cs
 no-loc: ['Q#', '$$v']
@@ -11,14 +11,13 @@ no-loc: ['Q#', '$$v']
 
 # Develop with Q# and .NET
 
-Q# is built to play well with .NET languages such as C# and F#.
-In this guide, we demonstrate how to use Q# with a host program written in a .NET language.
+The Q# programming language is built to work well with .NET languages such as C# and F#. In this guide, we demonstrate how to use Q# with a host program written in a .NET language.
 
 First we create the Q# application and .NET host, and then demonstrate how to call to Q# from the host.
 
 ## Prerequisites
 
-- Install the Quantum Development Kit [for use with Q# projects](xref:microsoft.quantum.install-qdk.overview.standalone).
+- Install the Quantum Development Kit [for use with Q# projects](xref:microsoft.quantum.install-qdk.overview.standalone) (QDK).
 
 ## Creating a Q# library and a .NET host
 

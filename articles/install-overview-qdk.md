@@ -1,17 +1,19 @@
 ---
-title: Setting up the Microsoft Quantum Development Kit (QDK)
-description: Learn how to set up the Microsoft Quantum Development Kit for different environments.
+title: Set up the Quantum Development Kit (QDK)
+description: Learn how to set up the Quantum Development Kit for different environments.
 author: bradben
 ms.author: v-benbra
-ms.date: 5/8/2020
+ms.date: 02/01/2021
 ms.topic: quickstart
 uid: microsoft.quantum.install-qdk.overview
 no-loc: ['Q#', '$$v']
 ---
 
-# Setting up the Microsoft Quantum Development Kit (QDK)
+# Set up the Quantum Development Kit (QDK)
 
-Learn how to set up the Microsoft Quantum Development Kit (QDK) for your environment, so that you can get started with quantum programming. The QDK consists of:
+Learn how to set up the Quantum Development Kit (QDK) for your environment, so that you can get started with quantum programming. 
+
+The QDK consists of:
 
 - The Q# programming language
 - A set of libraries that abstract complex functionality in Q#

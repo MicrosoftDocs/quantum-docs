@@ -1,9 +1,9 @@
 ---
-title: Develop with Q# Jupyter Notebooks
-description: Learn how to create a Q# application using Jupyter Notebooks.
+title: Develop with Q# Jupyter notebooks
+description: This article shows you how to install the Quantum Developer Kit (QDK) and develop your own Q# notebooks.
 author: bradben
 ms.author: v-benbra
-ms.date: 8/20/2020
+ms.date: 02/01/2021
 ms.topic: quickstart
 uid: microsoft.quantum.install-qdk.overview.jupyter
 no-loc: ['Q#', '$$v']
@@ -11,9 +11,9 @@ no-loc: ['Q#', '$$v']
 
 # Develop with Q# Jupyter Notebooks
 
-Install the QDK for developing Q# operations on Q# Jupyter Notebooks.
+This article shows you how to install the Quantum Developer Kit (QDK) for developing Q# operations on Q# Jupyter Notebooks. Then, learn how to start developing your own Q# notebooks. 
 
-Jupyter Notebooks allow running code in-place alongside instructions, notes, and other content. This environment is ideal for writing Q# code with embedded explanations or quantum computing interactive tutorials. Here's what you need to do to start creating your own Q# notebooks.
+Jupyter Notebooks allow running code in-place alongside instructions, notes, and other content. This environment is ideal for writing Q# code with embedded explanations or quantum computing interactive tutorials. 
 
 ## Install the IQ# Jupyter kernel
 

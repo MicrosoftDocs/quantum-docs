@@ -1,17 +1,17 @@
 ---
 title: Update the Quantum Development Kit (QDK)
-description: Describes how to update your Q# projects and the Microsoft Quantum Development Kit to the current version.  
+description: Describes how to update your Q# programming language projects and the Quantum Development Kit (QDK) to the current version.  
 author: bradben
 ms.author: v-benbra
-ms.date: 5/30/2020
+ms.date: 02/01/2021
 ms.topic: quickstart
 uid: microsoft.quantum.update-qdk
 no-loc: ['Q#', '$$v']
 ---
 
-# Update the Microsoft Quantum Development Kit (QDK)
+# Update the Quantum Development Kit (QDK) to the latest version
 
-Learn how to update the Microsoft Quantum Development Kit (QDK) to the latest version.
+Learn how to update the Quantum Development Kit (QDK) to the latest version.
 
 This article assumes that you already have the QDK installed. If you are installing for the first time, then please refer to the [installation guide](xref:microsoft.quantum.install-qdk.overview).
 
@@ -20,7 +20,7 @@ The process consists of two parts:
 1. Updating your existing Q# files and projects to align your code with any updated syntax.
 2. Updating the QDK itself for your chosen development environment.
 
-## Updating Q# Projects 
+## Update Q# projects 
 
 Regardless of whether you are using C# or Python to host Q# operations, follow these instructions to update your Q# projects.
 
@@ -142,7 +142,7 @@ You can now skip ahead to [update your Visual Studio QDK extension](#update-visu
 
 With your Q# projects now updated, follow the instructions below to update the QDK itself.
 
-## Updating the QDK
+## Update the QDK
 
 The process to update the QDK varies depending on your development language and environment.
 Select your development environment below.
@@ -154,11 +154,11 @@ Select your development environment below.
 * [Command line and C#: update project templates](#c-using-the-dotnet-command-line-tool)
 
 
-### Update the `qsharp` Python package
+## Update the `qsharp` Python package
 
 The update procedure depends on whether you originally installed using conda or using the .NET CLI and pip.
 
-#### [Update using conda (recommended)](#tab/tabid-conda)
+### [Update using conda (recommended)](#tab/tabid-conda)
 
 1. Activate the conda environment where you installed the `qsharp` package, and then run this command to update it:
 
@@ -172,7 +172,7 @@ The update procedure depends on whether you originally installed using conda or 
     python -c "import qsharp; qsharp.reload()"
     ```
 
-#### [Update using .NET CLI and pip (advanced)](#tab/tabid-dotnetcli)
+### [Update using .NET CLI and pip (advanced)](#tab/tabid-dotnetcli)
 
 1. Update the `iqsharp` kernel 
 
@@ -227,11 +227,11 @@ The update procedure depends on whether you originally installed using conda or 
 
 You can now use the updated `qsharp` Python package to run your existing quantum programs.
 
-### Update the IQ# Jupyter kernel
+## Update the IQ# Jupyter kernel
 
 The update procedure depends on whether you originally installed using conda or using the .NET CLI and pip.
 
-#### [Update using conda (recommended)](#tab/tabid-conda)
+### [Update using conda (recommended)](#tab/tabid-conda)
 
 1. Activate the conda environment where you installed the `qsharp` package, and then run this command to update it:
 
@@ -245,7 +245,7 @@ The update procedure depends on whether you originally installed using conda or 
     %workspace reload
     ```
 
-#### [Update using .NET CLI and pip (advanced)](#tab/tabid-dotnetcli)
+### [Update using .NET CLI and pip (advanced)](#tab/tabid-dotnetcli)
 
 1. Update the `Microsoft.Quantum.IQSharp` package:
 
@@ -279,7 +279,7 @@ The update procedure depends on whether you originally installed using conda or 
 
 You can now use the updated IQ# kernel to run your existing Q# Jupyter Notebooks.
 
-### Update Visual Studio QDK extension
+## Update the Visual Studio QDK extension
 
 1. Update the Q# Visual Studio extension
 
@@ -289,7 +289,7 @@ You can now use the updated IQ# kernel to run your existing Q# Jupyter Notebooks
     > [!NOTE]
     > The project templates are updated with the extension. The updated templates apply to newly created projects only. The code for your existing projects is not updated when the extension is updated.
 
-### Update VS Code QDK extension
+## Update the VS Code QDK extension
 
 1. Update the Quantum VS Code extension
 
@@ -298,7 +298,7 @@ You can now use the updated IQ# kernel to run your existing Q# Jupyter Notebooks
     - Select the **Microsoft Quantum Development Kit for Visual Studio Code** extension
     - Reload the extension
 
-### C#, using the `dotnet` command-line tool
+## C# using the `dotnet` command-line tool
 
 1. Update the Quantum project templates for .NET
 
