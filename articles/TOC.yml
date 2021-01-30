@@ -211,7 +211,7 @@
         - name: What is quantum inspired optimization (QIO)?
           href: optimization-what-is-quantum-optimization.md
         - name: Key concepts
-          href: optimization-oveview-key-concepts.md
+          href: optimization-overview-key-concepts.md
       - name: Concepts
         items:
         - name: Which solver should you use?
