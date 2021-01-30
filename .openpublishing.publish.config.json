@@ -7,6 +7,10 @@
       "locale": "en-us",
       "monikers": [],
       "moniker_ranges": [],
+      "xref_query_tags": [
+        "/quantum"
+      ],
+      "enable_xrefmap_share": true,
       "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content"
