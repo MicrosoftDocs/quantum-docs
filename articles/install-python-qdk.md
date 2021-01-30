@@ -1,17 +1,17 @@
 ---
 title: Develop with Q# and Python
-description: Learn how to create a Q# application using Python.
+description: Learn how to install the Quantum Development Kit (QDK) to develop Python host programs that call Q# operations.
 author: bradben
 ms.author: v-benbra
-ms.date: 8/20/2020
+ms.date: 02/01/2021
 ms.topic: quickstart
 uid: microsoft.quantum.install-qdk.overview.python
 no-loc: ['Q#', '$$v']
 ---
 
-# Develop with Q# and Python
+# Use the QDK to develop with Q# and Python
 
-Install the QDK to develop Python host programs to call Q# operations.
+Learn how to install the Quantum Development Kit (QDK) to develop Python host programs that call Q# operations.
 
 ## Install the `qsharp` Python package
 

@@ -1,6 +1,6 @@
-items:
-- name: Azure Quantum
+- name: Azure Quantum Documentation
   href: index.yml
+- name: Azure Quantum (preview)
   items:
   - name: Overview
     items:

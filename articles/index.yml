@@ -1,17 +1,17 @@
 ### YamlMime:Landing
 
-title: Azure Quantum Documentation
-summary: Learn about quantum computing and optimization with the Azure Quantum service.  Use the Microsoft Quantum Development Kit (QDK) and Q#, a language for quantum programming, to write your first quantum program. 
+title: Azure Quantum Documentation (preview)
+summary: Learn about quantum computing and optimization with the Azure Quantum service.  Use the Quantum Development Kit (QDK) and Q#, a language for quantum programming, to write your first quantum program. 
 metadata:
 
-  title: Azure Quantum Documentation, Quantum Development Kit and Q# API Reference
-  description: Explore the concepts of quantum computing and how to use the Microsoft Quantum Development Kit (QDK) and Q#, an open source quantum programming language.
+  title: Azure Quantum Documentation, QDK & Q# API Reference
+  description: Explore the concepts of quantum computing and how to use the Quantum Development Kit (QDK) and Q#, an open source quantum programming language.
   ms.prod: quantum
   ms.topic: landing-page
   ms.collection: collection
   author: bradben
   ms.author: v-benbra
-  ms.date: 1/22/2021
+  ms.date: 02/01/2021
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -19,7 +19,7 @@ metadata:
 landingContent:
 
   # Azure Quantum
-  - title: Azure Quantum
+  - title: Azure Quantum (preview)
     linkLists:
       - linkListType: overview
         links:
