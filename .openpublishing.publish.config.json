@@ -14,7 +14,10 @@
       "enable_xrefmap_share": true,
       "open_to_public_contributors": false,
       "type_mapping": {
-        "Conceptual": "Content"
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "Odata": "Content",
+        "ZonePivotGroups": "Toc"
       },
       "build_entry_point": "docs",
       "template_folder": "_themes"
