@@ -1,6 +1,6 @@
 ---
-title: Contributing to the Microsoft Quantum Development Kit
-description: Learn how to contribute to the Microsoft Quantum Development Kit and the quantum development community. 
+title: Contributing to the Quantum Development Kit
+description: Learn how to contribute to the Quantum Development Kit (QDK) and the quantum development community. 
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
@@ -9,7 +9,7 @@ uid: microsoft.quantum.contributing-qdk.overview
 no-loc: ['Q#', '$$v']
 ---
 
-# Contributing to the Quantum Development Kit
+# Contributing to the Quantum Development Kit (QDK)
 
 The Quantum Development Kit is more than a collection of tools for writing quantum programs.
 It's part of a broad community of people discovering quantum computing, performing research in quantum algorithms, developing new applications for quantum devices, and otherwise working to make the most out of the quantum programming.

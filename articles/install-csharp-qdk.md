@@ -17,7 +17,7 @@ First we create the Q# application and .NET host, and then demonstrate how to ca
 
 ## Prerequisites
 
-- Install the Quantum Development Kit [for use with Q# projects](xref:microsoft.quantum.install-qdk.overview.standalone) (QDK).
+- Install the Quantum Development Kit (QDK) [for use with Q# projects](xref:microsoft.quantum.install-qdk.overview.standalone).
 
 ## Creating a Q# library and a .NET host
 

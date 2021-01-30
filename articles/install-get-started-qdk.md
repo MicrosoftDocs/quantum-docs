@@ -13,7 +13,7 @@ no-loc: ['Q#', '$$v']
 
 The Quantum Development Kit (QDK) contains all the tools you'll need to build your own quantum programs and experiments with Q#, a programming language designed specifically for quantum application development.
 
-To jump right in, start with the [QDK set up guide](xref:microsoft.quantum.install-qdk.overview).
+To jump right in, start with the [QDK setup guide](xref:microsoft.quantum.install-qdk.overview).
 You'll be guided through setting up the Quantum Development Kit on Windows, Linux, or MacOS machines so that you can write your own quantum programs.
 
 If you're new to quantum computing, review the [Overview](xref:microsoft.quantum.overview.qdk-overview) section to learn what quantum computers can do and the fundamentals of quantum computing.

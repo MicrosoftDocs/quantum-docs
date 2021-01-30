@@ -12,9 +12,9 @@ no-loc: ['Q#', '$$v']
 
 Learn how to create a Q# application using Binder. You can use Binder to run and share Jupyter Notebooks online. 
 
-## Use Binder with the Microsoft QDK samples
+## Use Binder with the QDK samples
 
-To configure Binder automatically to use the Microsoft QDK samples:
+To configure Binder automatically to use the Quantum Development Kit (QDK) samples:
 
 1. Open a browser and run https://aka.ms/try-qsharp.
 1. On the **Quantum Development Kit Samples** landing page, click **Q# notebook** to learn how to use IQ# to write your own quantum application notebooks.

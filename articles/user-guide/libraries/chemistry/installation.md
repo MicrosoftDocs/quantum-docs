@@ -1,6 +1,6 @@
 ---
-title: Microsoft Q# Chemistry Library Installation
-description: Learn how to install the Microsoft Quantum chemistry library and use it with the NWChem computational chemistry platform. 
+title: Q# Chemistry Library Installation
+description: Learn how to install the Quantum chemistry library and use it with the NWChem computational chemistry platform. 
 author: guanghaolow
 ms.author: gulow
 ms.date: 10/12/2018
@@ -27,7 +27,7 @@ This section details how to use the Quantum Development Kit with either NWChem a
 To get up and running using NWChem together with the Quantum Development Kit, use one of the following methods:
 
 - Get started using existing Broombridge files provided with the samples at [IntegralData/YAML](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/IntegralData/YAML).
-- Use the [EMSL Arrows Builder for the Microsoft Quantum Development Kit](https://arrows.emsl.pnnl.gov/api/qsharp_chem) which is a web-based frontend to NWChem, to generate new Broombridge-formated molecular input files.  
+- Use the [EMSL Arrows Builder for the Quantum Development Kit](https://arrows.emsl.pnnl.gov/api/qsharp_chem) which is a web-based frontend to NWChem, to generate new Broombridge-formated molecular input files.  
 - Use the [Docker image](https://hub.docker.com/r/nwchemorg/nwchem-qc/) provided by PNNL to run NWChem, or
 - [Compile NWChem](http://www.nwchem-sw.org/index.php/Compiling_NWChem) for your platform.
 
@@ -50,7 +50,7 @@ See [Obtaining resource counts](xref:microsoft.quantum.libraries.overview-chemis
 
 ### Getting started using the EMSL Arrows Builder
 
-EMSL Arrows is a tool that uses NWChem and chemical computational databases to generate molecule data.  [EMSL Arrows Builder for the Microsoft Quantum Development Kit](https://arrows.emsl.pnnl.gov/api/qsharp_chem) allows you to enter your model using multiple molecular model builders and generate the Broombridge datafile to be used by the Quantum Development Kit.  
+EMSL Arrows is a tool that uses NWChem and chemical computational databases to generate molecule data.  [EMSL Arrows Builder for the Quantum Development Kit](https://arrows.emsl.pnnl.gov/api/qsharp_chem) allows you to enter your model using multiple molecular model builders and generate the Broombridge datafile to be used by the Quantum Development Kit.  
 
 From the EMSL page, click on the ['Instuctions'] tab, and follow the ['Simple Examples'] instructions to generate Broombridge files.  Then try running the ['GetGateCount'] to see the quantum resource estimates for these molecules.
 
