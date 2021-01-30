@@ -1,6 +1,6 @@
 ---
-title: Contributing samples to the Microsoft QDK
-description: Learn how to contribute sample code to the Microsoft Quantum Development Kit (QDK).
+title: Contributing samples to the QDK
+description: Learn how to contribute sample code to the Quantum Development Kit (QDK).
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018

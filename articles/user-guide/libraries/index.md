@@ -1,6 +1,6 @@
 ---
 title: Quantum Development Kit Libraries
-description: Overview of the standard, chemistry, and numerics libraries included in the Microsoft Quantum Development Kit.
+description: Overview of the standard, chemistry, and numerics libraries included in the Quantum Development Kit (QDK).
 author: cgranade
 ms.author: chgranad
 ms.date: 10/17/2018
@@ -10,7 +10,7 @@ no-loc: ['Q#', '$$v']
 ---
 
 # Overview of Q# Libraries
-The Quantum Development Kit is provided with several libraries to make it easier to develop quantum applications in Q#.
+The Quantum Development Kit (QDK) is provided with several libraries to make it easier to develop quantum applications in Q#.
 In this section of the documentation, we describe these libraries and how to use them in your programs.
 
 - [**Standard libraries**](xref:microsoft.quantum.libraries.overview.standard.intro):

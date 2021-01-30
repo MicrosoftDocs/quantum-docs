@@ -11,7 +11,7 @@ no-loc: ['Q#', '$$v']
 
 # Using Additional Q# Libraries
 
-The Quantum Development Kit provides additional domain-specific functionality through _NuGet packages_ that can be added to your Q# projects.
+The Quantum Development Kit (QDK) provides additional domain-specific functionality through _NuGet packages_ that can be added to your Q# projects.
 
 | Q# Library  | NuGet package | Notes |
 |---------|---------|--------|

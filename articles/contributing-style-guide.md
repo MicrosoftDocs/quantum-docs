@@ -1,6 +1,6 @@
 ---
-title: Microsoft Q# Style Guide
-description: Learn the naming, input, documentation and formatting conventions for Q# programs and libraries.
+title: Q# Style Guide
+description: Learn the naming, input, documentation and formatting conventions for Q# programming language applications and libraries.
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
@@ -9,10 +9,10 @@ uid: microsoft.quantum.contributing-qdk.overview.style
 no-loc: ['Q#', '$$v']
 ---
 
-# Q# Style Guide #
-## General Conventions ##
+# Q# style guide #
+## General conventions ##
 
-The conventions suggested in this guide are intended to help make programs and libraries written in Q# easier to read and understand.
+The conventions suggested in this guide are intended to help make programs and libraries written in Q# programming language easier to read and understand.
 
 ## Guidance
 

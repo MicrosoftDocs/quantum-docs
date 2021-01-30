@@ -1,5 +1,5 @@
 ﻿---
-title: Testing and debugging
+title: Test and debug quantum programs
 description: Learn how to use unit tests, facts and assertions, and dump functions to test and debug quantum programs. 
 author: tcNickolas
 ms.author: mamykhai

@@ -1,5 +1,5 @@
 ---
-title: Expressions in Q# - operators, combinators, and modifiers. 
+title: Expressions in Q# - operators, combinators, & modifiers 
 description: Learn about the different types of expressions in the Q# programming language.
 author: bettinaheim
 ms.author: beheim

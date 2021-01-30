@@ -1,5 +1,5 @@
 ---
-title: The Q# language
+title: The Q# programming language
 description: Learn about the Q# programming language.
 author: bettinaheim
 ms.author: beheim
