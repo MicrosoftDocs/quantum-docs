@@ -10,8 +10,8 @@ uid: microsoft.quantum.azure.relnotes
 
 # Azure Quantum release notes
 
-### 2021-02-01: New public repository for document and code contributions
-- Document and code sample contributions can now made to our new public GitHub repository, https://github.com/MicrosoftDocs/quantum-docs. 
+### 2021-02-01: New public repository for document contributions
+- Document contributions can now made to our new public GitHub repository, https://github.com/MicrosoftDocs/quantum-docs. 
 
 ### 2020-11-23: Added `create` and `delete` commands for `az quantum workspace` group
 - The create command is currently limited because it doesn't add providers to a new quantum workspace, and those need to be added from the portal. The limitation will be removed in a future update.
