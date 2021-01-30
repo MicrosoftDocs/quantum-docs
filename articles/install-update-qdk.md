@@ -46,7 +46,7 @@ Regardless of whether you are using C# or Python to host Q# operations, follow t
 
     You can find more details on specifying target frameworks [here](https://docs.microsoft.com/dotnet/standard/frameworks#how-to-specify-target-frameworks).
 
-5. In each of the .csproj files, set the SDK to `Microsoft.Quantum.Sdk`, as indicated in the line below. Please notice that the version number should be the latest available, and you can determine it by reviewing the [release notes](https://docs.microsoft.com/quantum/relnotes/).
+5. In each of the .csproj files, set the SDK to `Microsoft.Quantum.Sdk`, as indicated in the line below. Please notice that the version number should be the latest available, and you can determine it by reviewing the [release notes](xref:microsoft.quantum.relnotes-qdk).
 
     ```xml
     <Project Sdk="Microsoft.Quantum.Sdk/0.12.20072031">
@@ -89,7 +89,7 @@ You can now skip ahead to [update your Visual Studio QDK extension](#update-the-
     dotnet clean [project_name].csproj
     ```
 
-3. Determine the current version of the QDK. To find it, you can review the [release notes](https://docs.microsoft.com/quantum/relnotes/). The version will be in a format similar to `0.12.20072031`.
+3. Determine the current version of the QDK. To find it, you can review the [release notes](xref:microsoft.quantum.relnotes-qdk). The version will be in a format similar to `0.12.20072031`.
 
 4. In each of your `.csproj` files, go through the following steps:
 

@@ -136,5 +136,5 @@ quantum programs on Azure Quantum.
 
 ## Next steps
 
-Now that you know how to submit jobs to Azure Quantum, you can try to run the different [samples](https://github.com/MicrosoftDocs/quantum-docs-private/tree/feature/onboarding-azure-quantum/azure-quantum/samples) we have
+Now that you know how to submit jobs to Azure Quantum, you can try to run the different [samples](https://github.com/microsoft/qio-samples) we have
 available or try to submit your own projects.

@@ -31,7 +31,7 @@ Before you can write a Q# program and run it with IonQ, you'll need a few resour
 
 ## Create an Azure Quantum workspace
 
-You use the Azure Quantum service by adding a **Quantum Workspace** resource to your Azure subscription in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
+You use the Azure Quantum service by adding an Azure Quantum workspace resource to your Azure subscription in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
 
 To open the Azure Portal, go to https://portal.azure.com and then follow these steps:
 
@@ -81,7 +81,7 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
    ![Review and create the workspace](./media/azure-quantum-preview-terms.png)
 
 > [!NOTE] 
-> While we are not charging for usage of Azure Quantum during the private
+> While we are not charging for usage of Azure Quantum during this
 > preview, your jobs will be uploaded to the Azure storage account created above and will be subject to storage charges.
 
 ## Setup your project and write your program
@@ -259,6 +259,6 @@ This quickstart guide demonstrated how to get started running Q# programs agains
 
 We recommend you continue your journey by learning more about the [different types of targets in Azure Quantum](xref:microsoft.quantum.concepts.targets), which will dictate which Q# programs you may run against a given provider. You might also be interested in learning how to submit Q# jobs with [Jupyter Notebooks](xref:microsoft.quantum.submit-jobs.jupyter) or with [Python](xref:microsoft.quantum.submit-jobs.python).
 
-Looking for more samples to run? Check out the [samples directory](https://github.com/MicrosoftDocs/quantum-docs-private/tree/feature/onboarding-azure-quantum/azure-quantum/samples)
+Looking for more samples to run? Check out the [samples directory](https://github.com/microsoft/qio-samples).
 
 Lastly, if you would like to learn more about writing Q# programs please see the [Microsoft Quantum Documentation](xref:microsoft.quantum.overview.qdk-overview).

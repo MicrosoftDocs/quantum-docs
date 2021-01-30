@@ -111,5 +111,5 @@ Some helpful tips while using Q# Jupyter Notebooks:
 ## Next steps
 
 Now that you know how to submit jobs to Azure Quantum, you can try to run the
-different [samples](https://github.com/MicrosoftDocs/quantum-docs-private/tree/feature/onboarding-azure-quantum/azure-quantum/samples) we have
-available or try to submit your own projects. In particular, you can view a [sample written entirely in a Q# Jupyter notebook](https://github.com/MicrosoftDocs/quantum-docs-private/blob/feature/onboarding-azure-quantum/azure-quantum/samples/qsharp/parallel-qrng/ParallelQrng.ipynb).
+different [samples](https://github.com/microsoft/qio-samples) we have
+available or try to submit your own projects. In particular, you can view a sample written entirely in a Q# Jupyter notebook.

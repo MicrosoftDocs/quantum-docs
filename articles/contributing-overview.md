@@ -19,7 +19,7 @@ We're very thankful for your kind contributions, and for the opportunity to work
 
 In this guide, we provide some advice on how to make your contribution as useful as possible to the broader quantum programming community.
 
-## Building Community
+## Building community
 
 The very first thing about making a contribution is to always keep in mind the community that you are contributing to.
 By acting respectfully and professionally towards your peers in the quantum programming community and more broadly, you can help to make sure that your efforts build the best and most welcoming community possible.
@@ -28,7 +28,7 @@ As a part of that effort, all Quantum Development Kit projects have adopted the 
 For more information, please see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-## What Kinds of Contributions Help the Community?
+## What kinds of contributions help the community?
 
 There are lots of different ways to help the quantum programming community through your contributions.
 In this guide, we'll focus on three ways that are especially relevant to the Quantum Development Kit.
@@ -42,7 +42,7 @@ That said, this is definitely not an exhaustive list — we encourage you to exp
 These different kinds of contributions are all immensely valuable, and are greatly appreciated.
 In the rest of the guide, we'll offer advice on how to make each kind of contribution.
 
-## Where Do Contributions Go?
+## Where do contributions go?
 
 The Quantum Development Kit includes a number of different pieces that all work together to realize a platform for writing quantum programs.
 Each of these different pieces finds its home on a different repository, so the one of the earlier things to sort out is where each contribution best belongs.
@@ -54,7 +54,7 @@ Each of these different pieces finds its home on a different repository, so the 
 - [**microsoft/qsharp-runtime**](https://github.com/microsoft/qsharp-runtime): Simulation framework, code generation, and simulation target machines for the Quantum Development Kit.
 - [**microsoft/iqsharp**](https://github.com/microsoft/iqsharp): Jupyter kernel and Python host functionality for Q#, as well as Docker images for using IQ# in cloud environments.
 - [**microsoft/qsharp-language**](https://github.com/microsoft/qsharp-language): This is where new Q# features are developed and specified, and where you can share ideas and suggestions about the future evolution of the Q# language and core libraries.
-- [**MicrosoftDocs/quantum-docs-pr**](https://github.com/MicrosoftDocs/quantum-docs-pr): Source code for the documentation published at https://docs.microsoft.com/quantum.
+- [**MicrosoftDocs/quantum-docs**](https://github.com/MicrosoftDocs/quantum-docs): Source code for the documentation published at [docs.microsoft.com](xref:microsoft.quantum.overview.qdk-overview).
 
 > [!NOTE]
 > We unfortunately cannot accept code and documentation contributions on the [**microsoft/Quantum-NC**](https://github.com/microsoft/Quantum-NC) repository at this time, but we still very much appreciate bug reports.

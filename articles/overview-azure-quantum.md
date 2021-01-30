@@ -28,13 +28,13 @@ Optimization algorithms are available to run on a variety of classical computing
 
 ## Quantum workspace
 
-You use the Azure Quantum service by adding a **Quantum workspace** resource to your Azure subscription in the Azure portal. A Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications. One of the properties configured in a workspace is an Azure Storage Account resource, where Azure Quantum stores your quantum programs and optimization problems for access.
+You use the Azure Quantum service by adding an Azure Quantum workspace resource to your Azure subscription in the Azure portal. A Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications. One of the properties configured in a workspace is an Azure Storage Account resource, where Azure Quantum stores your quantum programs and optimization problems for access.
 
 ## Providers and targets
 
 Another property configured in the workspace is the **provider** that you want to use to run programs in that workspace. A single provider may expose one or more **targets**, which can be quantum hardware or simulators, and are ultimately responsible for running your program. 
 
-By default, Azure Quantum adds the Microsoft QIO provider to every workspace, and you can add other providers when you create the workspace or any time afterward. [See a list of available providers](xref:microsoft.quantum.reference.overview).
+By default, Azure Quantum adds the Microsoft QIO provider to every workspace, and you can add other providers when you create the workspace or any time afterward. For more information, see the [Microsoft QIO provider](xref:microsoft.quantum.optimization.providers.microsoft.qio).
 
 ### Provider billing
 
@@ -60,7 +60,7 @@ Once you create a job, various metadata is available about its state and run his
 
 ## Job lifecycle
 
-You typically create jobs using one of the quantum SDKs (for example, the [Python SDK](xref:microsoft.quantum.optimization.python-sdk) or the [Quantum Development Kit (QDK)](https://docs.microsoft.com/quantum/)). Once you've written
+You typically create jobs using one of the quantum SDKs (for example, the [Python SDK](xref:microsoft.quantum.optimization.python-sdk) or the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.qdk-overview)). Once you've written
 your quantum program or expressed your QIO problem, you can select a target and
 submit your job.
 

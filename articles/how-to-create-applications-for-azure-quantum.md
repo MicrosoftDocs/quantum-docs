@@ -149,4 +149,4 @@ however, we are planning to make some available during the Limited Review.
 ## Next steps
 
 - Now that you know how to create Q# applications, you can learn more details about [how to submit jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs.azcli). 
-- You can also  try the different [samples](https://github.com/MicrosoftDocs/quantum-docs-private/tree/feature/onboarding-azure-quantum/azure-quantum/samples) we have available or try to submit your own projects.
+- You can also  try the different [samples](https://github.com/microsoft/qio-samples) we have available or try to submit your own projects.

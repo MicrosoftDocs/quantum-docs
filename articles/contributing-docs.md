@@ -9,7 +9,7 @@ uid: microsoft.quantum.contributing-qdk.overview.docs
 no-loc: ['Q#', '$$v']
 ---
 
-# Improving Documentation
+# Improving documentation
 
 The documentation for the Quantum Development Kit takes on several different forms, such that information is readily available to quantum developers.
 
@@ -20,14 +20,13 @@ We similarly adopt the [MathJax](https://www.mathjax.org/) library to allow for 
 
 That said, each form of documentation does vary somewhat in the details:
 
-- The **conceptual documentation** consists of a set of articles that are published to https://docs.microsoft.com/quantum, and that describe everything from the basics of quantum computing to the technical specifications for interchange formats. These articles are written in [DocFX-Flavored Markdown (DFM)](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html), a Markdown variant used for creating rich documentation sets.
+- The **conceptual documentation** consists of a set of articles that are published to [docs.microsoft.com](xref:microsoft.quantum.overview.qdk-overview), and that describe everything from the basics of quantum computing to the technical specifications for interchange formats. These articles are written in [DocFX-Flavored Markdown (DFM)](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html), a Markdown variant used for creating rich documentation sets.
 - The **API reference** is a set of pages for each Q# function, operation, and user-defined type, published to https://docs.microsoft.com/qsharp/api/. These pages document the inputs and operations to each callable, along with examples and links to more information. The API reference is automatically extracted from small DFM documents in Q# source code as a part of each release.
 - The **README<!---->.md** files included with each sample and kata describe how to use that sample or kata is used, what it covers, and how it relates to the rest of the Quantum Development Kit. These files are written using [GitHub Flavored Markdown (GFM)](https://github.github.com/gfm/), a more lightweight alternative to DFM that's popular for attaching documentation directly to code repositories.
 
-## Contributing to the Conceptual Documentation
+## Contributing to the conceptual documentation
 
-To contribute an improvement to the conceptual or README documentation, then, starts with a pull request onto either [**MicrosoftDocs/quantum-docs-pr**](https://github.com/MicrosoftDocs/quantum-docs-pr/
-), [**Microsoft/Quantum**](https://github.com/Microsoft/Quantum), or [**Microsoft/QuantumKatas**](https://github.com/Microsoft/QuantumKatas), as is appropriate.
+To contribute an improvement to the conceptual or README documentation, then, starts with a pull request onto either [**MicrosoftDocs/quantum-docs**](https://github.com/MicrosoftDocs/quantum-docs/), [**Microsoft/Quantum**](https://github.com/Microsoft/Quantum), or [**Microsoft/QuantumKatas**](https://github.com/Microsoft/QuantumKatas), as is appropriate.
 We'll describe more about pull requests below, but for now there's a few things that are good to keep in mind as you improve documentation:
 
 - Readers come to the Quantum Development Kit documentation from a very wide range of backgrounds. Everyone from high school students looking to learn something new and exciting through to tenured faculty performing quantum computing research should be able to get something out of reading the documentation. To the extent that's possible, please don't assume extensive knowledge on the part of your readers, as they may just be starting out. It's most helpful if you can provide clear and accessible descriptions, or can provide links to other resources for more information.
@@ -37,7 +36,7 @@ We'll describe more about pull requests below, but for now there's a few things 
 - Many members of the quantum programming community are academic researchers, and are recognized mainly through citations for their contributions to the community. In addition to helping readers find additional materials, making sure to properly cite academic outputs such as papers, talks, blog posts, and software tools can help academic contributors to keep doing their best work to improve the community.
 - The quantum programming community is a broad and wonderfully diverse community. The use of gendered pronouns in third-person examples (e.g.: "if a user ..., they will ...") can work to exclude rather than include. Being cognizant of people's names in citations and links, and of the correct inclusion of non-ASCII characters can serve the diversity of the community by showing respect to its members. Similarly, many words in the English language are often used in a hateful manner, such that their use in technical documentation can cause harm both to individual readers and to the community at large.
 
-### Referencing Sample Code from Conceptual Articles
+### Referencing sample code from conceptual articles
 
 If you want to include code from the [samples repository](https://github.com/Microsoft/Quantum), you can do so using a special DocFX-Flavored Markdown command:
 
@@ -61,7 +60,7 @@ Using this command, you can avoid duplicating code between conceptual articles a
   1. While having the rectangle selected, click the toolbar element **Lower selection to bottom (End)**.
   1. Adjust the rectangle with your mouse or the arrow keys.
 
-## Contributing to the API References
+## Contributing to the API references
 
 To contribute an improvement to the API references, it's most helpful to open a pull request directly on the code being documented.
 Each function, operation, or user-defined type supports a documentation comment (denoted with `///` instead of `//`).
