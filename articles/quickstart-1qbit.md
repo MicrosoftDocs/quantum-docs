@@ -97,7 +97,7 @@ installed the Optimization Python SDK already, follow these steps:
 
 ## Create a `Workspace` object in your Python code and log in
 
-Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to the Azure Quantum Optimization service. The value for `resource_id` can be found on the Azure Portal page for the [Quantum Workspace you created](xref:microsoft.quantum.workspaces-portal).
+Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to Azure Quantum. The value for `resource_id` can be found on the Azure Portal page for the [Quantum Workspace you created](xref:microsoft.quantum.workspaces-portal).
 
 Once the `Workspace` object is created, you log in using the `workspace.login()` command.
 
@@ -179,7 +179,7 @@ Above, you can see that you have provided the following parameters:
 
 ## Submit your problem to Azure Quantum
 
-Next, you will submit the `Problem` instance defined to the Azure Quantum Optimization service.
+Next, you will submit the `Problem` instance defined to Azure Quantum.
 
 ```python
 from azure.quantum.optimization.oneqbit import PathRelinkingSolver

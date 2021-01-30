@@ -24,7 +24,7 @@ The **search space** contains all the feasible solutions to an optimization prob
 
 Together, the search space and the cost function are often referred to as an **optimization landscape**. In the case of a problem that involves two continuous variables, the analogy to a landscape is quite direct.
 
-Let's explore a few different optimization landscapes and see which are good candidates for the Azure Quantum Optimization service.
+Let's explore a few different optimization landscapes and see which are good candidates for Azure Quantum optimization.
 
 ### A smooth, convex landscape
 

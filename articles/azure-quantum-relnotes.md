@@ -36,7 +36,7 @@ uid: microsoft.quantum.azure.relnotes
 - What the job shop scheduling problem is and why it is important
 - How to represent problem terms mathematically
 - How to build penalty functions to represent problem constraints
-- How to transform these mathematical functions into code using the Azure Quantum Optimization Python SDK
+- How to transform these mathematical functions into code using the Python SDK for optimization
 - How to submit problem terms to Azure Quantum
 - How to interpret the results
 
