@@ -41,9 +41,9 @@
       "ms.topic": "conceptual",
       "searchScope": ["quantum", "q#", "qsharp"],
       "feedback_system": "GitHub",
-      "feedback_github_repo": "MicrosoftDocs/quantum-docs-pr",
+      "feedback_github_repo": "MicrosoftDocs/quantum-docs",
       "feedback_product_url": "https://github.com/Microsoft/quantum/issues",
-      "titleSuffix": "Microsoft Quantum",
+      "titleSuffix": "Azure Quantum",
       "breadcrumb_path": "/quantum/breadcrumb/toc.json",
       "extendBreadcrumb": true
     },
