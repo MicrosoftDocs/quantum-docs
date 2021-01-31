@@ -2,7 +2,7 @@
 author: bradben
 description: A glossary of common terms, actions and objects used in quantum computing.
 ms.author: v-benbra
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: reference

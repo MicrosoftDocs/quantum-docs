@@ -2,7 +2,7 @@
 author: guanghaolow
 description: Learn how to automatically generate a large Hamiltonian using the Broombridge schema.
 ms.author: gulow
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: sample

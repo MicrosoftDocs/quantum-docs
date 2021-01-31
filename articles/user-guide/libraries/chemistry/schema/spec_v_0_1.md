@@ -2,7 +2,7 @@
 author: cgranade
 description: Details the specifications for the Broombridge quantum chemistry schema v0.1 for the Microsoft quantum chemistry library.
 ms.author: chgranad
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual

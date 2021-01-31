@@ -2,7 +2,7 @@
 author: cgranade
 description: Build a Q# project that demonstrates Grover's algorithm, one of the canonical quantum algorithms.
 ms.author: chgranad
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial

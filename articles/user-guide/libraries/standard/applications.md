@@ -2,7 +2,7 @@
 author: QuantumWriter
 description: Learn about two fundamental applications in quantum computing - Hamiltonian simulation and Shor's search algorithm.
 ms.author: martinro
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual

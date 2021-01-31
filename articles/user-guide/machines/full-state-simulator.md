@@ -2,7 +2,7 @@
 author: anpaz
 description: Learn how to run your Q# programs on the Microsoft Quantum Development Kit full state simulator.
 ms.author: anpaz
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual

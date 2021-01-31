@@ -2,7 +2,7 @@
 author: geduardo
 description: Learn the basic concepts of designing circuit models for the quantum circuit centric classifier.
 ms.author: v-edsanc
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual

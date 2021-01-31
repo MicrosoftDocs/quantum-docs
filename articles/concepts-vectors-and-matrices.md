@@ -2,7 +2,7 @@
 author: QuantumWriter
 description: Learn the basics of how to work with vectors and matrices.
 ms.author: v-benbra
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual

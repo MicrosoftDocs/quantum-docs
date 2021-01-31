@@ -2,7 +2,7 @@
 author: cgranade
 description: Learn how to work with and define quantum oracles, black box operations that are used as input to another algorithm.
 ms.author: chgranad
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual

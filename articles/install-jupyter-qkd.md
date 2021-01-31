@@ -2,7 +2,7 @@
 author: bradben
 description: This article shows you how to install the Quantum Developer Kit (QDK) and develop your own Q# notebooks.
 ms.author: v-benbra
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart

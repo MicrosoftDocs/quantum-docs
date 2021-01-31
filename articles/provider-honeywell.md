@@ -2,7 +2,7 @@
 author: Mobius5150
 description: This document provides the technical details of the Honeywell quantum provider
 ms.author: mblouin
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: article

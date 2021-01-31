@@ -2,7 +2,7 @@
 author: KittyYeungQ
 description: This document provides a basic guide to applying a optimization solver in Azure Quantum using Python.
 ms.author: kitty
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: article

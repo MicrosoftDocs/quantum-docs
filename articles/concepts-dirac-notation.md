@@ -2,7 +2,7 @@
 author: QuantumWriter
 description: Learn about using Dirac notation to represent quantum states and to simulate quantum operations.
 ms.author: v-benbra
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual

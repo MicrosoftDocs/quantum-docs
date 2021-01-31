@@ -2,7 +2,7 @@
 author: cgranade
 description: Overview of the standard, chemistry, and numerics libraries included in the Quantum Development Kit (QDK).
 ms.author: chgranad
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: article

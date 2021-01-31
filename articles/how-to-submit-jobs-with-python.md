@@ -2,7 +2,7 @@
 author: KittyYeungQ
 description: This document provides a basic guide to submit and run Q# applications in Azure Quantum using Python.
 ms.author: kitty
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: article

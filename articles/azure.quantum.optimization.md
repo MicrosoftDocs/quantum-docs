@@ -2,7 +2,7 @@
 author: KittyYeungQ
 description: Reference for azure.quantum.optimization
 ms.author: kitty
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: article

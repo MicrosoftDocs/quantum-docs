@@ -2,7 +2,7 @@
 author: mblouin
 description: This document provides a step-by-step guide to get you started with 1QBit on Azure Quantum
 ms.author: mblouin
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: article

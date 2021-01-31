@@ -2,7 +2,7 @@
 author: KittyYeungQ
 description: This guide will show you how to submit jobs to Azure Quantum using the command line interface (CLI).
 ms.author: kitty
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: article

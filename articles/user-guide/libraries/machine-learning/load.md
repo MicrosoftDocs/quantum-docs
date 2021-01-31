@@ -2,7 +2,7 @@
 author: geduardo
 description: Learn how to load your own dataset to train a classifier model with the Microsoft Quantum Development Kit (QDK).
 ms.author: v-edsanc
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual

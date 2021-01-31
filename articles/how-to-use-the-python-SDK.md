@@ -2,7 +2,7 @@
 author: KittyYeungQ
 description: This documents provides a basic usage overview of the Python SDK for optimization.
 ms.author: kitty
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: article

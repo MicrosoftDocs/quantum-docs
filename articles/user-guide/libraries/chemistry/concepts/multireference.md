@@ -2,7 +2,7 @@
 author: guanghaolow
 description: Learn about dynamic and non-dynamic correlations in wavefunctions using the Microsoft Quantum chemistry library.
 ms.author: gulow
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual

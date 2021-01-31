@@ -2,7 +2,7 @@
 author: george-moussa
 description: Reference for azure.quantum.optimization.Job
 ms.author: georgenm
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: article

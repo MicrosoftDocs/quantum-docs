@@ -2,7 +2,7 @@
 author: QuantumWriter
 description: Learn about the flow control operations and functions in the Microsoft Q# standard library.
 ms.author: martinro
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual

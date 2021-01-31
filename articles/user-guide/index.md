@@ -2,7 +2,7 @@
 author: gillenhaalb
 description: See an overview of the Q# User Guide purpose and an index of its contents.
 ms.author: a-gibec
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: article

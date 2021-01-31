@@ -2,7 +2,7 @@
 author: cgranade
 description: Learn how to add additional Q# libraries to your quantum applications.
 ms.author: chgranad
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: article

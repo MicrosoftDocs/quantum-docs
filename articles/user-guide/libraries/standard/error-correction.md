@@ -2,7 +2,7 @@
 author: QuantumWriter
 description: Learn how to use error correcting codes in your Q# programs while protecting the state of the qubits.
 ms.author: martinro
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual

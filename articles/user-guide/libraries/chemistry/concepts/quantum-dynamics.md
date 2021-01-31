@@ -2,7 +2,7 @@
 author: bradben
 description: Learn the similarities and differences between quantum dynamics and classical dynamics.
 ms.author: v-benbra
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual

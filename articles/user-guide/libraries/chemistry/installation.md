@@ -2,7 +2,7 @@
 author: guanghaolow
 description: Learn how to install the Quantum chemistry library and use it with the NWChem computational chemistry platform.
 ms.author: gulow
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual

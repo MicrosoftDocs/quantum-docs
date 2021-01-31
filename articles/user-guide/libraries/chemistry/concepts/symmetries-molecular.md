@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about using the Q# OrbitalIntegral type to enumerate molecular symmetries.
 ms.author: v-benbra
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual

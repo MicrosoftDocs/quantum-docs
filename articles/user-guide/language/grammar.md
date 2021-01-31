@@ -2,7 +2,7 @@
 author: bettinaheim
 description: Learn how the Q# programming language grammar uses actions and semantic predicates.
 ms.author: beheim
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference

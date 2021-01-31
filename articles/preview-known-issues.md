@@ -2,7 +2,7 @@
 author: geduardo
 description: his document contains a list of known issues that we are working to address in preview.
 ms.author: v-edsanc
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: article

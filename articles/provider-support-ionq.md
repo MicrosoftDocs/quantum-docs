@@ -2,7 +2,7 @@
 author: danielstocker
 description: This document provides details on the support policy for the IonQ provider in Azure Quantum
 ms.author: dasto
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: article

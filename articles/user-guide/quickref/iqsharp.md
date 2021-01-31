@@ -2,7 +2,7 @@
 author: gillenhaalb
 description: Quick reference page for IQ# magic commands with Q# Jupyter Notebooks
 ms.author: a-gibec
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference

@@ -2,7 +2,7 @@
 author: thomashaener
 description: Introduction to the Quantum Numerics Library
 ms.author: thhaner
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual

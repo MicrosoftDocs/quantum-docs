@@ -2,7 +2,7 @@
 author: ricardo-espinoza
 description: This guide shows you how to create and delete quantum workspaces using the Azure command line tool.
 ms.author: ricardoe
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: article

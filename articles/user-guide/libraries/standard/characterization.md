@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how measurement statistics from phase estimations are used to estimate result values in quantum programming.
 ms.author: martinro
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual

@@ -2,7 +2,7 @@
 author: bettinaheim
 description: Learn about array item access and array slicing in Q#.
 ms.author: beheim
-ms.date: 02/01/21
+ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
