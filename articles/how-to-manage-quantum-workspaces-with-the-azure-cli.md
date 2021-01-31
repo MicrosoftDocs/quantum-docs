@@ -87,5 +87,5 @@ After you delete a workspace, you will still see it listed while it's being dele
 
 ## Next steps
 
-Now that you can created and delete workspaces, you can learn about the different [targets to run quantum algorithms in Azure
+Now that you can create and delete workspaces, you can learn about the different [targets to run quantum algorithms in Azure
 Quantum](xref:microsoft.quantum.concepts.targets).
