@@ -148,7 +148,7 @@ We call these with
             Controlled R1([qs[2]], (PI()/4.0, qs[0]));
 ```
 
-Note that we use the [`PI()`](xref:Microsoft.Quantum.Math.PI) function from the [`Microsoft.Quantum.Math`](xref:microsoft.quantum.math) namespace to define the rotations in terms of pi radians.
+Note that we use the [`PI()`](xref:Microsoft.Quantum.Math.PI) function from the [`Microsoft.Quantum.Math`](xref:Microsoft.Quantum.Math) namespace to define the rotations in terms of pi radians.
 Additionally, we divide by a `Double` (for example, `2.0`) because dividing by an integer `2` would throw a type error. 
 
 > [!TIP]
@@ -183,7 +183,7 @@ Our qubits were in state $\ket{0}$ when we allocated them, and much like in life
 
 ### Deallocate qubits
 
-We call [`DumpMachine()`](xref:Microsoft.Quantum.Diagnostics.DumpMachine) again to see the post-operation state, and finally apply [`ResetAll`](xref:Microsoft.Quantum.Intrinsic.resetall) to the qubit register to reset our qubits to $\ket{0}$ before completing the operation:
+We call [`DumpMachine()`](xref:Microsoft.Quantum.Diagnostics.DumpMachine) again to see the post-operation state, and finally apply [`ResetAll`](xref:Microsoft.Quantum.Intrinsic.Resetall) to the qubit register to reset our qubits to $\ket{0}$ before completing the operation:
 
 ```qsharp
             Message("After:");
