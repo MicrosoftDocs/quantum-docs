@@ -4,7 +4,7 @@ description: This document provides a basic guide to solving long-running proble
 author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
-ms.topic: article
+ms.topic: reference
 uid: microsoft.quantum.optimization.solve-long-running-problems
 ---
 

@@ -4,7 +4,7 @@ description: This document provides details on the support policy for the IonQ p
 author: danielstocker
 ms.author: dasto
 ms.date: 10/27/2020
-ms.topic: article
+ms.topic: reference
 uid: microsoft.quantum.providers.computing.ionq.support
 ---
 

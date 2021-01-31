@@ -4,7 +4,7 @@ description: This document provides a basic guide to re-using a problem definiti
 author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
-ms.topic: article
+ms.topic: reference
 uid: microsoft.quantum.optimization.reuse-problem-definitions
 ---
 

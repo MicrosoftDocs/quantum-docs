@@ -4,7 +4,7 @@ description: Learn about the key concepts of optimization, including cost functi
 author: frtibble
 ms.author: frtibble
 ms.date: 08/18/2020
-ms.topic: article
+ms.topic: overview
 uid: microsoft.quantum.optimization.concepts.overview.key-concepts
 ---
 

@@ -3,7 +3,7 @@ title: IonQ quickstart for Azure Quantum
 description: This document provides a step-by-step guide to get you started with IonQ on Azure Quantum
 author: mblouin
 ms.author: mblouin
-ms.topic: article
+ms.topic: quickstart
 uid: microsoft.quantum.quickstarts.computing.ionq
 ---
 

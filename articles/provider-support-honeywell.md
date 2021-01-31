@@ -4,7 +4,7 @@ description: This document provides details on the support policy for the Honeyw
 author: Mobius5150
 ms.author: mblouin
 ms.date: 1/12/2021
-ms.topic: article
+ms.topic: reference
 uid: microsoft.quantum.providers.honeywell.support
 ---
 
