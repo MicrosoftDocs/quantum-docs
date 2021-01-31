@@ -1,7 +1,6 @@
 - name: Azure Quantum Documentation
   href: index.yml
 - name: Azure Quantum (preview)
-  expanded: true
   items:
   - name: Overview
     items:
@@ -44,6 +43,7 @@
       - name: Use 1QBit solvers
         href: quickstart-1qbit.md  
   - name: Quickstarts
+    expanded: true
     items:
     - name: Optimization
       items:
