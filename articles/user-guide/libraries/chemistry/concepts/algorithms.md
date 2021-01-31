@@ -27,7 +27,7 @@ $$
 $$
 which is to say that, if $t\ll 1$, then the error in this approximation becomes negligible.
 Note that if $e^{-i H t}$ were an ordinary exponential then the error in this approximation would not be $O(m^2 t^2)$: it would be zero.
-This error occurs because $e^{-iHt}$ is an operator exponential and as a result there is an error incurred when using this formula due to the fact that the $H_j$ terms do not commute (*i.e.*, $H_j H_k \ne H_k H_j$ in general).
+This error occurs because $e^{-iHt}$ is an operator exponential and as a result there is an error incurred when using this formula due to the fact that the $H_j$ terms do not commute (for example, $H_j H_k \ne H_k H_j$ in general).
 
 If $t$ is large, Trotter–Suzuki formulas can still be used to simulate the dynamics accurately by breaking it up into a sequence of short time-steps.
 Let $r$ be the number of steps taken in the time evolution, so each time step runs for time $t/r$. 

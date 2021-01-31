@@ -405,7 +405,7 @@ The documentation in the Doc folder is licensed under the Creative Commons Attri
 Unported License. This Creative Commons license does not allow you to use the documentation for commercial 
 purposes without permission. This means, for example, that you cannot sell the documentation in book form 
 for profit or put it on a web content farm in order to earn money with ads. However, you can of course use the 
-documentation in a commercial context (e.g. put it on the intranet of a commercial corporation), as long as 
+documentation in a commercial context (for example, put it on the intranet of a commercial corporation), as long as 
 you’re not trying to directly earn money from the text of the documentation. 
 
 2.1 Simplified BSD License

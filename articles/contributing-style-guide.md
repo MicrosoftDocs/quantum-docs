@@ -106,9 +106,9 @@ We suggest:
 
 ### Entry points
 
-When defining an entry point into a Q# program, the Q# compiler recognizes the [`@EntryPoint()` attribute](xref:Microsoft.Quantum.Core.EntryPoint) rather requiring that entry points have a particular name (e.g.: `main`, `Main`, or `__main__`).
+When defining an entry point into a Q# program, the Q# compiler recognizes the [`@EntryPoint()` attribute](xref:Microsoft.Quantum.Core.EntryPoint) rather requiring that entry points have a particular name (for example: `main`, `Main`, or `__main__`).
 That is, from the perspective of a Q# developer, entry points are ordinary operations annotated with `@EntryPoint()`.
-Moreover, Q# entry points may be entry points for an entire application (for example, in Q# standalone executable programs), or may be an interface between a Q# program and the host program for an application (i.e.: when using Q# with Python or .NET), such that the name "main" could be misleading when applied to a Q# entry point.
+Moreover, Q# entry points may be entry points for an entire application (for example, in Q# standalone executable programs), or may be an interface between a Q# program and the host program for an application (for example, when using Q# with Python or .NET), such that the name "main" could be misleading when applied to a Q# entry point.
 
 We suggest using naming entry points to reflect the use of the `@EntryPoint()` attribute by using the general advice for naming operations listed above.
 
@@ -134,13 +134,13 @@ We suggest:
 The above advice notwithstanding, there are many forms of shorthand that see common and pervasive use in quantum computing.
 We suggest using existing and common shorthand where it exists, especially for operations that are intrinsic to the operation of a target machine.
 For example, we choose the name `X` instead of `ApplyX`, and `Rz` instead of `RotateAboutZ`.
-When using such shorthand, operation names should be all uppercase (e.g.: `MAJ`).
+When using such shorthand, operation names should be all uppercase (for example, `MAJ`).
 
 Some care is required when applying this convention in the case of commonly used acronyms and initialisms such as "QFT" for "quantum Fourier transform."
 We suggest following general .NET conventions for the use of acronyms and initialisms in full names, which prescribe that:
 
-- two-letter acronyms and initialisms are named in upper case (e.g.: `BE` for "big-endian"),
-- all longer acronyms and initialisms are named in `CamelCase` (e.g.: `Qft` for "quantum Fourier transform")
+- two-letter acronyms and initialisms are named in upper case (for example, `BE` for "big-endian"),
+- all longer acronyms and initialisms are named in `CamelCase` (for example, `Qft` for "quantum Fourier transform")
 
 Thus, an operation implementing the QFT could either be called `QFT` as shorthand, or written out as `ApplyQft`.
 
@@ -205,11 +205,11 @@ We suggest:
 
 ### Type conversions ###
 
-Since Q# is a strongly and staticly typed language, a value of one type can only be used as a value of another type by using an explicit call to a type conversion function.
-This is in contrast to languages which allow for values to change types implicitly (e.g.: type promotion), or through casting.
+Since Q# is a strongly and statically typed language, a value of one type can only be used as a value of another type by using an explicit call to a type conversion function.
+This is in contrast to languages which allow for values to change types implicitly (for example, type promotion), or through casting.
 As a result, type conversion functions play an important role in Q# library development, and comprise one of the more commonly encountered decisions about naming.
 We note, however, that since type conversions are always _deterministic_, they can be written as functions and thus fall under the advice above.
-In particular, we suggest that type conversion functions should never be named as verbs (e.g.: `ConvertToX`) or adverb prepositional phrases (`ToX`), but should be named as adjective prepositional phrases that indicate the source and destination types (`XAsY`).
+In particular, we suggest that type conversion functions should never be named as verbs (for example, `ConvertToX`) or adverb prepositional phrases (`ToX`), but should be named as adjective prepositional phrases that indicate the source and destination types (`XAsY`).
 When listing array types in type conversion function names, we recommend the shorthand `Arr`.
 Barring exceptional circumstances, we recommend that all type conversion functions be named using `As` so that they can be quickly identified.
 
@@ -288,13 +288,13 @@ We suggest:
 - For all variable and input names, use `pascalCase` in strong preference to `CamelCase`, `snake_case`, or `ANGRY_CASE`.
 - Input names should be descriptive; avoid one or two letter names where possible.
 - Operations and functions accepting exactly one type argument should denote that type argument by `T` when its role is obvious.
-- If a function or operation takes multiple type arguments, or if the role of a single type argument is not obvious, consider using a short capitalized word prefaced by `T` (e.g.: `TOutput`) for each type.
+- If a function or operation takes multiple type arguments, or if the role of a single type argument is not obvious, consider using a short capitalized word prefaced by `T` (for example, `TOutput`) for each type.
 - Do not include type names in argument and variable names; this information can and should be provided by your development environment.
 - Denote scalar types by their literal names (`flagQubit`), and array types by a plural (`measResults`).
   For arrays of qubits in particular, consider denoting such types by `Register` where the name refers to a sequence of qubits that are closely related in some way.
-- Variables used as indices into arrays should begin with `idx` and should be singular (e.g.: `things[idxThing]`).
+- Variables used as indices into arrays should begin with `idx` and should be singular (for example, `things[idxThing]`).
   In particular, strongly avoid using single-letter variable names as indices; consider using `idx` at a minimum.
-- Variables used to hold lengths of arrays should begin with `n` and should be pluralized (e.g.: `nThings`).
+- Variables used to hold lengths of arrays should begin with `n` and should be pluralized (for example, `nThings`).
 
 # [Examples](#tab/examples)
 
@@ -303,7 +303,7 @@ We suggest:
 ### User-defined type named items ###
 
 Named items in user-defined types should be named as `CamelCase`, even in input to UDT constructors.
-This helps in order to clearly separate named items from references to locally scoped variables when using accessor notation (e.g.: `callable::Apply`) or copy-and-update notation (`set arr w/= Data <- newData`).
+This helps in order to clearly separate named items from references to locally scoped variables when using accessor notation (for example, `callable::Apply`) or copy-and-update notation (`set arr w/= Data <- newData`).
 
 # [Guidance](#tab/guidance)
 
@@ -397,12 +397,12 @@ We suggest:
     - Input
     - Output (if applicable)
 - Ensure that all summaries are two sentences or less. If more room is needed, provide a `# Description` section immediately following `# Summary` with complete details.
-- Where reasonable, do not include math in summaries, as not all clients support TeX notation in summaries. Note that when writing prose documents (e.g. TeX or Markdown), it may be preferable to use longer line lengths.
+- Where reasonable, do not include math in summaries, as not all clients support TeX notation in summaries. Note that when writing prose documents (for example, TeX or Markdown), it may be preferable to use longer line lengths.
 - Provide all relevant mathematical expressions in the `# Description` section.
 - When describing inputs, do not repeat the types of each input as these can be inferred by the compiler and risk introducing inconsistency.
 - Provide examples as appropriate, each in their own `# Example` section.
 - Briefly describe each example before listing code.
-- Cite all relevant academic publications (e.g.: papers, proceedings, blog posts, and alternative implementations) in a `# References` section as a bulleted list of links.
+- Cite all relevant academic publications (for example: papers, proceedings, blog posts, and alternative implementations) in a `# References` section as a bulleted list of links.
 - Ensure that, where possible, all citation links are to permanent and immutable identifiers (DOIs or versioned arXiv numbers).
 - When an operation or function is related to other operations or functions by functor variants, list other variants as bullets in the `# See Also` section.
 - Leave a blank comment line between level-1 (`/// #`) sections, but do not leave a blank line between level-2 (`/// ##`) sections.
@@ -466,7 +466,7 @@ We suggest:
 - Line wrap at 79 characters where reasonable.
 - Use spaces around binary operators.
 - Use spaces on either side of colons used for type annotations.
-- Use a single space after commas used in array and tuple literals (e.g.: in inputs to functions and operations).
+- Use a single space after commas used in array and tuple literals (for example, in inputs to functions and operations).
 - Do not use spaces after function, operation, or UDT names, or after the `@` in attribute declarations.
 - Each attribute declaration should be on its own line.
 

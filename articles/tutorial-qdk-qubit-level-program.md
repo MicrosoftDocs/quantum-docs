@@ -117,7 +117,7 @@ Hence, the first gate to apply is the [`H`](xref:Microsoft.Quantum.Intrinsic.H) 
 <br/>
 <img src="./media/qft_firstH.PNG" alt="Circuit diagram for three qubit QFT through first Hadamard" width="120">
 
-To apply an operation to a specific qubit from a register (i.e. a single `Qubit` from an array `Qubit[]`) we use standard index notation.
+To apply an operation to a specific qubit from a register (for example, a single `Qubit` from an array `Qubit[]`) we use standard index notation.
 So, applying the [`H`](xref:Microsoft.Quantum.Intrinsic.H) to the first qubit of our register `qs` takes the form:
 
 ```qsharp
@@ -149,7 +149,7 @@ We call these with
 ```
 
 Note that we use the [`PI()`](xref:Microsoft.Quantum.Math.PI) function from the [`Microsoft.Quantum.Math`](xref:microsoft.quantum.math) namespace to define the rotations in terms of pi radians.
-Additionally, we divide by a `Double` (e.g. `2.0`) because dividing by an integer `2` would throw a type error. 
+Additionally, we divide by a `Double` (for example, `2.0`) because dividing by an integer `2` would throw a type error. 
 
 > [!TIP]
 > `R1(π/2)` and `R1(π/4)` are equivalent to the `S` and `T` operations (also in `Microsoft.Quantum.Intrinsic`).
@@ -274,9 +274,9 @@ Create a Python host file: `host.py`.
 
 The host file is constructed as follows: 
 1. First, we import the `qsharp` module, which registers the module loader for Q# interoperability. 
-    This allows Q# namespaces (e.g. the `NamespaceQFT` we defined in our Q# file) to appear as Python modules, from which we can import Q# operations.
+    This allows Q# namespaces (for example, the `NamespaceQFT` we defined in our Q# file) to appear as Python modules, from which we can import Q# operations.
 2. Then, import the Q# operations which we will directly invoke---in this case, `Perform3qubitQFT`.
-    We need only import the entry point into a Q# program (i.e. _not_ operations like `H` and `R1`, which are called by other Q# operations but never by the classical host).
+    We need only import the entry point into a Q# program (for example, _not_ operations like `H` and `R1`, which are called by other Q# operations but never by the classical host).
 3. In simulating Q# operations or functions, use the form `<Q#callable>.simulate(<args>)` to run them on the `QuantumSimulator()` target machine. 
 
 > [!NOTE]
@@ -414,7 +414,7 @@ If you are curious about how other input states are affected, we encourage you t
 Unfortunately, a cornerstone of quantum mechanics tells us that a real quantum system cannot have such a `DumpMachine` function. 
 Instead, we're forced to extract information through measurements, which in general not only fail to provide us the full quantum state, but can also drastically alter the system itself.
 There are many sorts of quantum measurements, but we will focus on the most basic: projective measurements on single qubits.
-Upon measurement in a given basis (e.g. the computational basis $ \{ \ket{0}, \ket{1} \} $), the qubit state is projected onto whichever basis state was measured---hence destroying any superposition between the two.
+Upon measurement in a given basis (for example, the computational basis $ \{ \ket{0}, \ket{1} \} $), the qubit state is projected onto whichever basis state was measured---hence destroying any superposition between the two.
 
 To implement measurements within a Q# program, we use the `M` operation (from `Microsoft.Quantum.Intrinsic`), which returns a `Result` type.
 
@@ -426,7 +426,7 @@ First, we modify our `Perform3QubitQFT` operation to return an array of measurem
 
 #### Define and initialize `Result[]` array
 
-Before even allocating qubits (i.e. before the `using` statement), we declare and bind this length-3 array (one `Result` for each qubit): 
+Before even allocating qubits (for example, before the `using` statement), we declare and bind this length-3 array (one `Result` for each qubit): 
 
 ```qsharp
         mutable resultArray = new Result[3];
@@ -443,7 +443,7 @@ After the Fourier transform operations inside the `using` block, insert the foll
                 set resultArray w/= i <- M(qs[i]);
             }
 ```
-The [`IndexRange`](xref:Microsoft.Quantum.Arrays.IndexRange) function called on an array (e.g. our array of qubits, `qs`) returns a range over the indices of the array. 
+The [`IndexRange`](xref:Microsoft.Quantum.Arrays.IndexRange) function called on an array (for example, our array of qubits, `qs`) returns a range over the indices of the array. 
 Here, we use it in our `for` loop to sequentially measure each qubit using the `M(qs[i])` statement.
 Each measured `Result` type (either `Zero` or `One`) is then added to the corresponding index position in `resultArray` with an update-and-reassign statement.
 

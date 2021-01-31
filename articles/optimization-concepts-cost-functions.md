@@ -61,7 +61,7 @@ Solutions which violate constraints can either be assigned a very high cost
 the optimizer.
 
 **Example**: In the above problem of finding a fraction close to $\pi$, multiplying
-both $x$ and $y$ with the same number yields an equally optimal solution (e.g., $44/14$).
+both $x$ and $y$ with the same number yields an equally optimal solution (for example, $44/14$).
 We can avoid this by adding a penalty term for non-simplified fractions:
 
 $$ \mathrm{cost} = \left| \frac{x}{y} - \pi \right| + \underbrace{100(\gcd(x,y)-1)}_{\mathrm{penalty}}, $$

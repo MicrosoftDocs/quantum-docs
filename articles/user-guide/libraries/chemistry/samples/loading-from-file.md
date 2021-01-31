@@ -36,7 +36,7 @@ var fermionHamiltonian = orbitalIntegralHamiltonian.ToFermionHamiltonian(IndexCo
 var jordanWignerEncoding = fermionHamiltonian.ToPauliHamiltonian(Pauli.QubitEncoding.JordanWigner);
 ```
 
-The Broombridge schema also contains suggestions for the initial state to be prepared. The labels, e.g. `"|G⟩"` or `"|E1⟩"`, for these states may be seen by inspecting the file. In order to prepare these initial states, the `qSharpData` consumed by the Q# quantum algorithms is obtained similar to the [previous section](xref:microsoft.quantum.libraries.overview-chemistry.examples.overview.energyestimate), but with an additional parameter selecting the desired initial state. For instance,
+The Broombridge schema also contains suggestions for the initial state to be prepared. The labels, for example, `"|G⟩"` or `"|E1⟩"`, for these states may be seen by inspecting the file. In order to prepare these initial states, the `qSharpData` consumed by the Q# quantum algorithms is obtained similar to the [previous section](xref:microsoft.quantum.libraries.overview-chemistry.examples.overview.energyestimate), but with an additional parameter selecting the desired initial state. For instance,
 ```csharp
 // The desired initial state, assuming that a description of it is present in the
 // Broombridge schema.

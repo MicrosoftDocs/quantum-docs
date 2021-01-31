@@ -69,7 +69,7 @@ That's it! You now have the IQ# kernel for Jupyter, which provides the core func
 
 Now you are ready to verify your Q# Jupyter Notebook installation by writing and running a simple Q# operation.
 
-1. From the environment you created during installation (i.e., either the conda environment you created, or the Python environment where you installed Jupyter), run the following command to start the Jupyter Notebook server:
+1. From the environment you created during installation (that is, either the conda environment you created, or the Python environment where you installed Jupyter), run the following command to start the Jupyter Notebook server:
 
     ```
     jupyter notebook
