@@ -1,14 +1,16 @@
 ---
-title: Tabu search
+title: Tabu search optimization solver
 description: This document provides a basic guide about how to use the Tabu  search optimization solver in Azure Quantum.
 author: adelebai
 ms.author: adbai
-ms.date: 01/13/2021
-ms.topic: reference
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: optimization
+ms.topic: how-to
 uid: azure.quantum.optimization.tabu
 ---
 
-# Tabu search 
+# Tabu search optimization solver
 
 Tabu Search is a neighborhood search algorithm that employs a tabu list. A tabu list represents a set of potential solutions that the search is forbidden to visit for a number of steps (tabu tenure). The decision making process per step is similar to that of a greedy algorithm, but with a list of forbidden moves (usually moves that were recently visited). On every sweep, the move that results in the best objective function improvement and is not on the tabu list, is performed.
 

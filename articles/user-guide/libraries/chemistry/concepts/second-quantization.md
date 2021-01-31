@@ -1,12 +1,14 @@
 ---
-title: Second Quantization
-description: Learn about the Second Quantization approach to modeling electronic structures in quantum programming. 
 author: bradben
+description: Learn about the Second Quantization approach to modeling electronic structures in quantum programming.
 ms.author: v-benbra
-ms.date: 10/09/2017
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview-chemistry.concepts.secondquantization
 no-loc: ['Q#', '$$v']
+title: Second Quantization
+uid: microsoft.quantum.libraries.overview-chemistry.concepts.secondquantization
 ---
 
 # Second Quantization
@@ -376,4 +378,3 @@ H=\sum\_{(p,q)\in S\_{1,1}}h'\_{pq}\frac{a^\dagger\_{p}a\_{q}+a^\dagger\_{q}a\_{
 \end{align}
 $$
 with suitably adapted one- and two-electron integrals $h'\_{pq}$ and $h'\_{pqrs}$, respectively.
-

@@ -1,12 +1,14 @@
 ---
-title: Obtaining energy level estimates
-description: Walk through a sample Q# program that estimates the energy level values of molecular hydrogen. 
 author: guanghaolow
+description: Walk through a sample Q# program that estimates the energy level values of molecular hydrogen.
 ms.author: gulow
-ms.date: 07/02/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: sample
-uid: microsoft.quantum.libraries.overview-chemistry.examples.overview.energyestimate
 no-loc: ['Q#', '$$v']
+title: Obtaining energy level estimates
+uid: microsoft.quantum.libraries.overview-chemistry.examples.overview.energyestimate
 ---
 
 # Obtaining energy level estimates

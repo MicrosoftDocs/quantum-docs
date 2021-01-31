@@ -1,12 +1,14 @@
 ---
-title: Introduction to the Quantum Chemistry Library
-description: Learn about the Microsoft Quantum Chemistry Library and how it is used to simulate electronic structure problems on quantum computers.  
 author: QuantumWriter
+description: Learn about the Microsoft Quantum Chemistry Library and how it is used to simulate electronic structure problems on quantum computers.
 ms.author: ageller
-ms.date: 12/11/2017
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview-chemistry.concepts.overview
 no-loc: ['Q#', '$$v']
+title: Introduction to the Quantum Chemistry Library
+uid: microsoft.quantum.libraries.overview-chemistry.concepts.overview
 ---
 
 # Introduction to the Quantum Chemistry Library

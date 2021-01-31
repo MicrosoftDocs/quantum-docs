@@ -1,12 +1,14 @@
 ---
-title: Sample NWChem quantum program
-description: Using an NWChem input deck, walk through an example of getting gate counts for quantum chemistry simulation.
 author: cgranade
+description: Using an NWChem input deck, walk through an example of getting gate counts for quantum chemistry simulation.
 ms.author: chgranad
-ms.date: 10/23/2018
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: sample
-uid: microsoft.quantum.libraries.overview-chemistry.examples.overview.endtoend
 no-loc: ['Q#', '$$v']
+title: Sample NWChem quantum program
+uid: microsoft.quantum.libraries.overview-chemistry.examples.overview.endtoend
 ---
 
 # End-to-end with NWChem #

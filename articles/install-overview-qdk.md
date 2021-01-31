@@ -1,12 +1,14 @@
 ---
-title: Set up the Quantum Development Kit (QDK)
-description: Learn how to set up the Quantum Development Kit for different environments.
 author: bradben
+description: Learn how to set up the Quantum Development Kit for different environments.
 ms.author: v-benbra
 ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: quickstart
-uid: microsoft.quantum.install-qdk.overview
 no-loc: ['Q#', '$$v']
+title: Set up the Quantum Development Kit (QDK)
+uid: microsoft.quantum.install-qdk.overview
 ---
 
 # Set up the Quantum Development Kit (QDK)

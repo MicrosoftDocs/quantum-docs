@@ -1,12 +1,14 @@
 ---
-title: Understanding quantum computing
-description: Learn how quantum computing works, how it compares to classical computing, and how it uses the principles of quantum mechanics.
 author: bradben
-ms.author:  v-benbra
+description: Learn how quantum computing works, how it compares to classical computing, and how it uses the principles of quantum mechanics.
+ms.author: v-benbra
 ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: overview
-uid: microsoft.quantum.overview.understanding
 no-loc: ['Q#', '$$v']
+title: Understanding quantum computing
+uid: microsoft.quantum.overview.understanding
 ---
 
 # Understanding quantum computing

@@ -1,10 +1,12 @@
 ---
-title: Create quantum workspaces with the Azure portal
-description: This guide shows you how to create quantum workspaces with the Azure portal to start running your quantum applications in Azure Quantum.
 author: KittyYeungQ
+description: This guide shows you how to create quantum workspaces with the Azure portal to start running your quantum applications in Azure Quantum.
 ms.author: kitty
-ms.date: 8/7/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: core
 ms.topic: article
+title: Create quantum workspaces with the Azure portal
 uid: microsoft.quantum.workspaces-portal
 ---
 

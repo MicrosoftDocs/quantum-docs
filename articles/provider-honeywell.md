@@ -1,10 +1,12 @@
 ---
-title: Honeywell provider
-description: This document provides the technical details of the Honeywell quantum provider
 author: Mobius5150
+description: This document provides the technical details of the Honeywell quantum provider
 ms.author: mblouin
-ms.date: 1/12/2021
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: computing
 ms.topic: reference
+title: Honeywell provider
 uid: microsoft.quantum.providers.honeywell
 ---
 

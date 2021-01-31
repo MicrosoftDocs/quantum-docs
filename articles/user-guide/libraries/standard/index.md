@@ -1,12 +1,14 @@
 ---
-title: Introduction to Microsoft Q# standard libraries
-description: Learn about the Microsoft Q# standard libraries that define the operations, functions and data types used in quantum programs. 
 author: QuantumWriter
+description: Learn about the Microsoft Q# standard libraries that define the operations, functions and data types used in quantum programs.
 ms.author: martinro
-ms.date: 12/11/2017
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview.standard.intro
 no-loc: ['Q#', '$$v']
+title: Introduction to Microsoft Q# standard libraries
+uid: microsoft.quantum.libraries.overview.standard.intro
 ---
 
 # Introduction to the Q# Standard Libraries

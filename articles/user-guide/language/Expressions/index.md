@@ -1,12 +1,14 @@
 ---
-title: Expressions in Q# - operators, combinators, & modifiers 
-description: Learn about the different types of expressions in the Q# programming language.
 author: bettinaheim
+description: Learn about the different types of expressions in the Q# programming language.
 ms.author: beheim
-ms.date: 10/07/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: reference
-uid: microsoft.quantum.qsharp.expressions-overview
 no-loc: ['Q#', '$$v']
+title: Expressions in Q# - operators, combinators, & modifiers
+uid: microsoft.quantum.qsharp.expressions-overview
 ---
 
 <!---
@@ -14,4 +16,3 @@ no-loc: ['Q#', '$$v']
 -->
 
 [!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/3_Expressions/README.md)]
-

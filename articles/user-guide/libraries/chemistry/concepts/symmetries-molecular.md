@@ -1,12 +1,14 @@
 ---
-title: Symmetries of Molecular Integrals
-description: Learn about using the Q# OrbitalIntegral type to enumerate molecular symmetries. 
-author: bradben    
+author: bradben
+description: Learn about using the Q# OrbitalIntegral type to enumerate molecular symmetries.
 ms.author: v-benbra
-ms.date: 10/09/2017
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview-chemistry.concepts.symmetries
 no-loc: ['Q#', '$$v']
+title: Symmetries of Molecular Integrals
+uid: microsoft.quantum.libraries.overview-chemistry.concepts.symmetries
 ---
 
 # Symmetries of Molecular Integrals

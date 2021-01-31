@@ -1,12 +1,14 @@
 ---
-title: Contributing samples to the QDK
-description: Learn how to contribute sample code to the Quantum Development Kit (QDK).
 author: cgranade
+description: Learn how to contribute sample code to the Quantum Development Kit (QDK).
 ms.author: chgranad
-ms.date: 10/12/2018
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: contributor-guide
-uid: microsoft.quantum.contributing-qdk.overview.samples
 no-loc: ['Q#', '$$v']
+title: Contributing samples to the QDK
+uid: microsoft.quantum.contributing-qdk.overview.samples
 ---
 
 # Contributing Samples to the Quantum Development Kit

@@ -1,10 +1,12 @@
 ---
-title: Install and use the Python SDK for optimization
-description: This document provides a basic installation and usage overview of the Python SDK for optimization.
 author: anraman
+description: This document provides a basic installation and usage overview of the Python SDK for optimization.
 ms.author: anraman
-ms.date: 01/21/2021
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: article
+title: Install and use the Python SDK for optimization
 uid: microsoft.quantum.optimization.install-sdk
 ---
 

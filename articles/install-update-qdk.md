@@ -1,12 +1,14 @@
 ---
-title: Update the Quantum Development Kit (QDK)
-description: Describes how to update your Q# programming language projects and the Quantum Development Kit (QDK) to the current version.  
 author: bradben
+description: Describes how to update your Q# programming language projects and the Quantum Development Kit (QDK) to the current version.
 ms.author: v-benbra
 ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: quickstart
-uid: microsoft.quantum.update-qdk
 no-loc: ['Q#', '$$v']
+title: Update the Quantum Development Kit (QDK)
+uid: microsoft.quantum.update-qdk
 ---
 
 # Update the Quantum Development Kit (QDK) to the latest version

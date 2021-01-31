@@ -1,10 +1,12 @@
 ---
-title: Support Policy for 1QBit in Azure Quantum
-description: This document provides details on the support policy for the 1QBit provider in Azure Quantum
 author: danielstocker
+description: This document provides details on the support policy for the 1QBit provider in Azure Quantum
 ms.author: dasto
-ms.date: 10/27/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: reference
+title: Support Policy for 1QBit in Azure Quantum
 uid: microsoft.quantum.providers.optimization.1qbit.support
 ---
 
@@ -39,4 +41,3 @@ The third-party products that this article discusses are manufactured by compani
 ### Third-party contact disclaimer
 
 Microsoft provides third-party contact information to help you find additional information about this topic. This contact information may change without notice. Microsoft does not guarantee the accuracy of third-party contact information.
-

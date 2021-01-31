@@ -1,12 +1,14 @@
 ---
-title: The Q# User Guide
-description: See an overview of the Q# User Guide purpose and an index of its contents. 
 author: gillenhaalb
+description: See an overview of the Q# User Guide purpose and an index of its contents.
 ms.author: a-gibec
-ms.date: 03/05/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: article
-uid: microsoft.quantum.user-guide-qdk.overview
 no-loc: ['Q#', '$$v']
+title: The Q# User Guide
+uid: microsoft.quantum.user-guide-qdk.overview
 ---
 
 # The Q# User Guide

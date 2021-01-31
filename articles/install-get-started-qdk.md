@@ -1,12 +1,14 @@
 ---
-uid: microsoft.quantum.get-started-qdk
-title: Get started with the Quantum Development Kit (QDK)
-description: Learn how to start programming quantum projects in the Q# programming language with the Quantum Development Kit (QDK). 
 author: bradben
+description: Learn how to start programming quantum projects in the Q# programming language with the Quantum Development Kit (QDK).
 ms.author: v-benbra
 ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Q#', '$$v']
+title: Get started with the Quantum Development Kit (QDK)
+uid: microsoft.quantum.get-started-qdk
 ---
 
 # Get started with the Quantum Development Kit (QDK)

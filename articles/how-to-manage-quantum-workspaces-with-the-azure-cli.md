@@ -1,10 +1,12 @@
 ---
-title: Manage quantum workspaces with the Azure CLI
-description: This guide shows you how to create and delete quantum workspaces using the Azure command line tool.
 author: ricardo-espinoza
+description: This guide shows you how to create and delete quantum workspaces using the Azure command line tool.
 ms.author: ricardoe
-ms.date: 11/01/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: core
 ms.topic: article
+title: Manage quantum workspaces with the Azure CLI
 uid: microsoft.quantum.workspaces-cli
 ---
 
@@ -87,5 +89,5 @@ After you delete a workspace, you will still see it listed while it's being dele
 
 ## Next steps
 
-Now that you can create and delete workspaces, you can learn about the different [targets to run quantum algorithms in Azure
+Now that you can created and delete workspaces, you can learn about the different [targets to run quantum algorithms in Azure
 Quantum](xref:microsoft.quantum.concepts.targets).

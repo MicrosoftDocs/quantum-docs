@@ -1,12 +1,14 @@
 ---
-title: Introduction to the Quantum Numerics Library | Microsoft Docs
-description: Introduction to the Quantum Numerics Library
 author: thomashaener
+description: Introduction to the Quantum Numerics Library
 ms.author: thhaner
-ms.date: 5/14/2019
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries-numerics.overview
 no-loc: ['Q#', '$$v']
+title: Introduction to the Quantum Numerics Library | Microsoft Docs
+uid: microsoft.quantum.libraries-numerics.overview
 ---
 
 # Introduction to the Quantum Numerics Library

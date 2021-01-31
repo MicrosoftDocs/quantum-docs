@@ -1,12 +1,14 @@
 ---
-title: Quantum Development Kit Libraries
-description: Overview of the standard, chemistry, and numerics libraries included in the Quantum Development Kit (QDK).
 author: cgranade
+description: Overview of the standard, chemistry, and numerics libraries included in the Quantum Development Kit (QDK).
 ms.author: chgranad
-ms.date: 10/17/2018
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: article
-uid: microsoft.quantum.libraries.overview
 no-loc: ['Q#', '$$v']
+title: Quantum Development Kit Libraries
+uid: microsoft.quantum.libraries.overview
 ---
 
 # Overview of Q# Libraries

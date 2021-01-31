@@ -1,12 +1,14 @@
 ---
-title: What is quantum computing?
-description: Learn what quantum computing is, what quantum computers can do, and how you can learn quantum computing.
 author: bradben
-ms.author:  v-benbra
+description: Learn what quantum computing is, what quantum computers can do, and how you can learn quantum computing.
+ms.author: v-benbra
 ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: overview
-uid: microsoft.quantum.overview.qdk-overview
 no-loc: ['Q#', '$$v']
+title: What is quantum computing?
+uid: microsoft.quantum.overview.qdk-overview
 ---
 
 # What is quantum computing?

@@ -6,7 +6,7 @@ metadata:
 
   title: Azure Quantum Documentation, QDK & Q# API Reference
   description: Explore the concepts of quantum computing and how to use the Quantum Development Kit (QDK) and Q#, an open source quantum programming language.
-  ms.prod: quantum
+  ms.service: azure-quantum
   ms.topic: landing-page
   ms.collection: collection
   author: bradben

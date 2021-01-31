@@ -1,15 +1,16 @@
 ---
-title: Access modifiers in Q#
-description: Learn about access modifiers in the Q# programming language.
 author: bettinaheim
+description: Learn about access modifiers in the Q# programming language.
 ms.author: beheim
-ms.date: 10/07/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: reference
-uid: microsoft.quantum.qsharp.accessmodifiers
 no-loc: ['Q#', '$$v']
+title: Access modifiers in Q#
+uid: microsoft.quantum.qsharp.accessmodifiers
 ---
 
 # Access modifiers in Q#
 
 [!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/1_ProgramStructure/6_AccessModifiers.md)]
-

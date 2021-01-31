@@ -1,12 +1,14 @@
 ---
-title: Immutability in Q#
-description: Learn about immutability and Q# types.
 author: bettinaheim
+description: Learn about immutability and Q# types.
 ms.author: beheim
-ms.date: 10/07/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: reference
-uid: microsoft.quantum.qsharp.immutability
 no-loc: ['Q#', '$$v']
+title: Immutability in Q#
+uid: microsoft.quantum.qsharp.immutability
 ---
 
 <!---
@@ -14,4 +16,3 @@ no-loc: ['Q#', '$$v']
 -->
 
 [!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/4_TypeSystem/Immutability.md)]
-

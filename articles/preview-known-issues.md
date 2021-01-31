@@ -1,10 +1,12 @@
 ---
-title: Azure Quantum preview known issues
-description: his document contains a list of known issues that we are working to address in preview.
 author: geduardo
+description: his document contains a list of known issues that we are working to address in preview.
 ms.author: v-edsanc
-ms.date: 06/25/2020
-ms.topic: article
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: core
+ms.topic: troubleshooting
+title: Azure Quantum preview known issues
 uid: microsoft.quantum.known-issues
 ---
 

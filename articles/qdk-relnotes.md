@@ -1,12 +1,14 @@
 ---
-title: Quantum Development Kit Release Notes
-description: Learn about the latest updates to the Microsoft Quantum Development Kit preview.
 author: bradben
+description: Learn about the latest updates to the Microsoft Quantum Development Kit preview.
 ms.author: v-benbra
-ms.date: 8/30/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: conceptual
-uid: microsoft.quantum.relnotes-qdk
 no-loc: ['Q#', '$$v']
+title: Quantum Development Kit Release Notes
+uid: microsoft.quantum.relnotes-qdk
 ---
 
 # Microsoft Quantum Development Kit Release Notes

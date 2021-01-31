@@ -1,12 +1,14 @@
 ---
-title: Variable declarations and reassignments in Q#
-description: Learn about using the 'let' and 'mutable' statements to bind variables in Q#.
 author: bettinaheim
+description: Learn about using the 'let' and 'mutable' statements to bind variables in Q#.
 ms.author: beheim
-ms.date: 10/07/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: reference
-uid: microsoft.quantum.qsharp.variabledeclarationsandreassignments
 no-loc: ['Q#', '$$v']
+title: Variable declarations and reassignments in Q#
+uid: microsoft.quantum.qsharp.variabledeclarationsandreassignments
 ---
 
 <!---
@@ -14,4 +16,3 @@ no-loc: ['Q#', '$$v']
 -->
 
 [!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/2_Statements/VariableDeclarationsAndReassignments.md)]
-

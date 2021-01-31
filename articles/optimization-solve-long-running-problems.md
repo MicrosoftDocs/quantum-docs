@@ -1,10 +1,12 @@
 ---
-title: Solve long-running problems
-description: This document provides a basic guide to solving long-running problems in Azure Quantum using Python.
 author: KittyYeungQ
+description: This document provides a basic guide to solving long-running problems in Azure Quantum using Python.
 ms.author: kitty
-ms.date: 06/29/2020
-ms.topic: reference
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: optimization
+ms.topic: how-to
+title: Solve long-running problems
 uid: microsoft.quantum.optimization.solve-long-running-problems
 ---
 

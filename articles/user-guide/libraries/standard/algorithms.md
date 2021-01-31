@@ -1,12 +1,14 @@
 ---
-title: Quantum algorithms in Q#
-description: Learn about fundamental quantum computing algorithms, including amplitude amplification, Fourier transform, Draper and Beauregard adders, and phase estimation. 
 author: QuantumWriter
+description: Learn about fundamental quantum computing algorithms, including amplitude amplification, Fourier transform, Draper and Beauregard adders, and phase estimation.
 ms.author: martinro
-ms.date: 12/11/2017
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview.standard.algorithms
 no-loc: ['Q#', '$$v']
+title: Quantum algorithms in Q#
+uid: microsoft.quantum.libraries.overview.standard.algorithms
 ---
 
 # Quantum Algorithms #

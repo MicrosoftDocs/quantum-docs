@@ -1,12 +1,14 @@
 ---
-title:  Quantum chemistry sample applications
-description: Explore sample applications of the Microsoft Quantum chemistry library. 
 author: guanghaolow
+description: Explore sample applications of the Microsoft Quantum chemistry library.
 ms.author: gulow
-ms.date: 10/23/2018
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview-chemistry.examples.overview
 no-loc: ['Q#', '$$v']
+title: Quantum chemistry sample applications
+uid: microsoft.quantum.libraries.overview-chemistry.examples.overview
 ---
 
 # Quantum chemistry examples

@@ -1,11 +1,14 @@
 ---
-title: Math in the Q# standard libraries
-description: Learn about the classical math functions in the Q# standard libraries that are used with the built-in data types. 
 author: cgranade
-uid: microsoft.quantum.libraries.overview.math
+description: Learn about the classical math functions in the Q# standard libraries that are used with the built-in data types.
 ms.author: chgranad
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
+title: Math in the Q# standard libraries
+uid: microsoft.quantum.libraries.overview.math
 ---
 
 # Classical Mathematical Functions #

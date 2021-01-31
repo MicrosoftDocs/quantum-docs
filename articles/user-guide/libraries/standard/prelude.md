@@ -1,12 +1,14 @@
 ---
-title: Intrinsic operations and functions in the QDK
-description: Learn about the intrinsic operations and functions in the QDK, including classical functions and unitary, rotation and measurement operations. 
 author: QuantumWriter
+description: Learn about the intrinsic operations and functions in the QDK, including classical functions and unitary, rotation and measurement operations.
 ms.author: martinro
-ms.date: 12/11/2017
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview.standard.prelude
 no-loc: ['Q#', '$$v']
+title: Intrinsic operations and functions in the QDK
+uid: microsoft.quantum.libraries.overview.standard.prelude
 ---
 
 # The Prelude #

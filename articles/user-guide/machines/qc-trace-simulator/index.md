@@ -1,13 +1,14 @@
 ---
-# Mandatory fields. 
-title: Quantum trace simulator - Quantum Development Kit
-description: Learn how to use the Microsoft quantum computer trace simulator to debug classical code and to estimate resource requirements of a Q# program. 
-author: vadym-kl 
-ms.author: vadym 
-ms.date: 06/25/2020 
+author: vadym-kl
+description: Learn how to use the Microsoft quantum computer trace simulator to debug classical code and to estimate resource requirements of a Q# program.
+ms.author: vadym
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.machines.overview.qc-trace-simulator.intro
 no-loc: ['Q#', '$$v']
+title: Quantum trace simulator - Quantum Development Kit
+uid: microsoft.quantum.machines.overview.qc-trace-simulator.intro
 ---
 
 # Microsoft Quantum Development Kit (QDK) quantum trace simulator
@@ -95,4 +96,4 @@ Each of these tools is enabled by setting appropriate flags in `QCTraceSimulator
 
 - [Quantum resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)
 - [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
-- [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) 
+- [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)

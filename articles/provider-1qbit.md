@@ -1,10 +1,12 @@
 ---
-title: 1QBit provider
-description: This document provides the technical details of the 1QBit provider
 author: Mobius5150
+description: This document provides the technical details of the 1QBit provider
 ms.author: mblouin
-ms.date: 1/12/2021
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: reference
+title: 1QBit provider
 uid: microsoft.quantum.providers.optimization.1qbit
 ---
 

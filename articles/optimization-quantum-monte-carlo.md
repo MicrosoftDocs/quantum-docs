@@ -1,10 +1,12 @@
 ---
-title: Quantum Monte Carlo 
-description: This document provides a basic guide about how to use the Quantum Monte Carlo solver.
 author: irunknee
+description: This document provides a basic guide about how to use the Quantum Monte Carlo solver.
 ms.author: sanjgupt
-ms.date: 01/21/2021
-ms.topic: reference
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: optimization
+ms.topic: how-to
+title: Quantum Monte Carlo
 uid: microsoft.quantum.optimization.quantum-monte-carlo
 ---
 

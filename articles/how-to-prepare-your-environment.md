@@ -1,10 +1,12 @@
 ---
-title: Prepare your environment to use Azure Quantum
-description: This document provides the information about how to install the necessary tools on your computer to submit Q# programs to Azure Quantum from the command line.
 author: KittyYeungQ
+description: This document provides the information about how to install the necessary tools on your computer to submit Q# programs to Azure Quantum from the command line.
 ms.author: kitty
-ms.date: 06/29/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: core
 ms.topic: article
+title: Prepare your environment to use Azure Quantum
 uid: microsoft.quantum.setup.cli
 ---
 
@@ -17,7 +19,7 @@ Azure Quantum uses the Azure CLI `quantum` extension to enable submitting Q# pro
 Before installing the Azure CLI `quantum` extension, ensure that the following packages are installed:
 
 - The Microsoft [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview.standalone)
-- The latest version of [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
+- The latest version of [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true)
   (version 2.5.0 or higher)
 
 ## Installation
@@ -58,4 +60,3 @@ Learn how to [submit jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs.p
 ### For quantum computing users
 
 Learn how to [create Q# applications and run them on Azure Quantum](xref:microsoft.quantum.create-applications).
-
