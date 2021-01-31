@@ -36,7 +36,7 @@
     "externalReference": [],
     "globalMetadata": {
       "show_latex": true,
-      "ms.prod": "quantum",
+      "ms.service": "azure-quantum",
       "ms.devlang": "qsharp",
       "ms.topic": "conceptual",
       "searchScope": ["quantum", "q#", "qsharp"],
