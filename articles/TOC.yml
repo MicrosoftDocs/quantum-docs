@@ -45,18 +45,18 @@
         href: quickstart-1qbit.md  
   - name: Quickstarts
     items:
-    - name: Optimization
-      items:
-      - name: Microsoft QIO quickstart
-        href: quickstart-microsoft-qio.md
-      - name: 1QBit quickstart
-        href: quickstart-1qbit.md  
     - name: Quantum computing
       items:
       - name: IonQ quickstart
         href: quickstart-ionq.md
       - name: Honeywell quickstart
         href: quickstart-honeywell.md  
+    - name: Optimization
+      items:
+      - name: Microsoft QIO quickstart
+        href: quickstart-microsoft-qio.md
+      - name: 1QBit quickstart
+        href: quickstart-1qbit.md 
   - name: Resources 
     items:
     - name: Glossary (Azure Quantum)
