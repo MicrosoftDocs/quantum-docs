@@ -1,16 +1,16 @@
 ---
+description: Learn about the key concepts of optimization, including cost functions, search spaces, and landscapes. 
 author: frtibble
-description: Learn some key optimization concepts
 ms.author: frtibble
 ms.date: 02/01/21
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: article
-title: Key concepts
+title: Key concepts for optimization
 uid: microsoft.quantum.optimization.concepts.overview.key-concepts
 ---
 
-# Key concepts
+# Key concepts for optimization
 
 To understand optimization problems, you first need to learn some some key terms and concepts.
 
@@ -26,7 +26,7 @@ The **search space** contains all the feasible solutions to an optimization prob
 
 Together, the search space and the cost function are often referred to as an **optimization landscape**. In the case of a problem that involves two continuous variables, the analogy to a landscape is quite direct.
 
-Let's explore a few different optimization landscapes and see which are good candidates for the Azure Quantum Optimization service.
+Let's explore a few different optimization landscapes and see which are good candidates for Azure Quantum optimization.
 
 ### A smooth, convex landscape
 

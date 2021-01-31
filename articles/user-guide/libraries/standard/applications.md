@@ -13,7 +13,7 @@ uid: microsoft.quantum.libraries.overview.applications
 
 # Applications #
 
-## Hamiltonian Simulation ##
+## Hamiltonian simulation ##
 
 The simulation of quantum systems is one of the most exciting applications of quantum computation.
 On a classical computer, the difficulty of simulating quantum mechanics, in general, scales with the dimension $N$ of its state-vector representation.
@@ -51,12 +51,12 @@ $$
     H & = \sum^{d-1}_{j=0} H_j.
 \end{align}
 $$
-Moreover, it is assumed that each part, a Hamiltonian $H\_j$, is easy to simulate. This means that the unitary $e^{-iH\_j t}$ for any time $t$ may be implemented exactly using $\mathcal{O}(1)$ primitive quantum gates. For instance, this is true in the special case where each $H\_j$ are local Pauli operators, meaning that they are of tensor products of $\mathcal{O}(1)$ non-identity Pauli operators that act on spatially close qubits. This model is particularly applicable to physical systems with bounded and local interaction, as the number of terms is $d=\mathcal{O}(\text{polylog}(N))$, and may clearly be written down, i.e. classically described, in polynomial time.
+Moreover, it is assumed that each part, a Hamiltonian $H\_j$, is easy to simulate. This means that the unitary $e^{-iH\_j t}$ for any time $t$ may be implemented exactly using $\mathcal{O}(1)$ primitive quantum gates. For instance, this is true in the special case where each $H\_j$ are local Pauli operators, meaning that they are of tensor products of $\mathcal{O}(1)$ non-identity Pauli operators that act on spatially close qubits. This model is particularly applicable to physical systems with bounded and local interaction, as the number of terms is $d=\mathcal{O}(\text{polylog}(N))$, and may clearly be written down, that is, classically described, in polynomial time.
 
 > [!TIP]
 > Hamiltonians that decompose into a sum of parts may be described using the Dynamical Generator Representation library. For more information, see the Dynamical Generator Representation section in [data structures](xref:microsoft.quantum.libraries.overview.data-structures).
 
-### Simulation Algorithms ###
+### Simulation algorithms ###
 
 A quantum simulation algorithm converts a given description of a Hamiltonian into a sequence of primitive quantum gates that, as a whole, approximate time-evolution by said Hamiltonian.
 
@@ -119,7 +119,7 @@ function TimeDependentTrotterSimulationAlgorithm(
 > For adiabatic state preparation in the Ising model using `TimeDependentSimulationAlgorithm`, please see the [**AdiabaticIsing** sample](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
 
 
-### Adiabatic State Preparation & Phase Estimation ###
+### Adiabatic state preparation & phase estimation ###
 
 One common application of Hamiltonian simulation is adiabatic state preparation. Here, one is provided with two Hamiltonians $H\_{\text{start}}$ and $H\_{\text{end}}$, and a quantum state $\ket{\psi(0)}$ that is a ground state of the start Hamiltonian $H\_{\text{start}}$. Typically, $H\_{\text{start}}$ is chosen such that $\ket{\psi(0)}$ is easy to prepare from a computational basis state $\ket{0\cdots 0}$. By interpolating between these Hamiltonians in the time-dependent simulation problem sufficiently slowly, it is possible to end up, with high probability, in a ground state of the final Hamiltonian $H\_{\text{end}}$. Though preparing good approximations to Hamiltonian ground states could proceed in this manner by calling upon on time-dependent Hamiltonian simulation algorithms as a subroutine, other conceptually different approaches such as the variational quantum eigensolver are possible.
 
@@ -167,7 +167,7 @@ operation EstimateAdiabaticStateEnergy(
 > [!TIP]
 > The [simulation of molecular Hydrogen](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line) is an interesting and brief sample. The model and experimental results reported in [O'Malley et. al.](https://arxiv.org/abs/1512.06860) only requires Pauli matrices and takes the form $\hat H = g\_{0}I\_0I\_1+g\_1{Z\_0}+g\_2{Z\_1}+g\_3{Z\_0}{Z\_1}+g\_4{Y\_0}{Y\_1}+g\_5{X\_0}{X\_1}$. This is an effective Hamiltonian only requiring only 2 qubits, where the constants $g$ are computed from the distance $R$ between the two Hydrogen atoms. Using canon functions, the Paulis are converted to unitaries and then evolved over short periods of time using the Trotter-Suzuki decomposition. A good approximation to the $H_2$ ground state can be created without using adiabatic state preparation, and so the ground state energy may be found directly by utilizing phase estimation from the canon.
 
-## Shor's Algorithm ##
+## Shor's algorithm ##
 Shor's algorithm remains one of the most significant developments in quantum computing because it showed that quantum computers could be used to solve important, currently classically intractable problems.
 Shor's algorithm provides a fast way to factor large numbers using a quantum computer, a problem called *factoring*.
 The security of many present-day cryptosystems is based on the assumption that no fast algorithm exists for factoring.
@@ -178,7 +178,7 @@ The quantum computer is used to perform a computationally hard task known as per
 The results from period finding are then classically processed to estimate the factors.
 We review these two steps below.
 
-### Period Finding ###
+### Period finding ###
 
 Having seen how the quantum Fourier transform and phase estimation work (see [Quantum algorithms](xref:microsoft.quantum.libraries.overview.standard.algorithms)), we can use these tools to solve a classically hard computational problem called *period finding*.  In the next section, we will see how to apply period finding to factoring.
 

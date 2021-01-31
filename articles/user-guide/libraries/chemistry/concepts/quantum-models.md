@@ -18,7 +18,7 @@ Specifically, for $N_e$ electrons with momenta $p_i$ (in three dimensions) and m
 \begin{equation}
 \hat{H}= \sum\_{i=1}^{N\_e} \frac{\hat{p}\_i^2}{2m\_e} + \frac{1}{2}\sum\_{i\ne j} \frac{e^2}{|\hat{x}\_i - \hat{x}\_j|} -\sum\_{i,k} \frac{Z\_ke^2}{|\hat{x}\_i - {y}\_k|}+\frac{1}{2} \sum_{k\ne k'} \frac{Z\_kZ\_{k'}e^2}{|y\_k - y\_k'|}. \label{eq:Ham}
 \end{equation}
-The momenta operators $\hat{p}\_i^2$ can be viewed in real space as Laplacian operators, i.e. $\hat{p}\_i^2 = -\partial\_{x\_i}^2 - \partial\_{y\_i}^2 - \partial\_{z\_i}^2$.
+The momenta operators $\hat{p}\_i^2$ can be viewed in real space as Laplacian operators, for example, $\hat{p}\_i^2 = -\partial\_{x\_i}^2 - \partial\_{y\_i}^2 - \partial\_{z\_i}^2$.
 Here we have made the simplifying assumption that the nuclei are at rest for the molecule.
 This is known as the Born-Oppenheimer approximation and it tends to be valid for the low-energy energy spectrum of $\hat{H}$ since the electron mass is about $1/1836$ the mass of a proton.
 This Hamiltonian operator can be easily found by writing out the energy for a system of $N\_e$ electrons and applying the canonical quantization process described in [Quantum Dynamics](xref:microsoft.quantum.libraries.overview-chemistry.concepts.quantumdynamics).
@@ -36,7 +36,7 @@ This means that errors are incurred by picking too small of a basis set; however
 For this reason, choosing a basis that can concisely represent the problem is vital for solving the electronic structure problem.
 
 There are many appropriate bases that can be used and the choice of a good basis to fit the problem is much of the art of quantum chemistry.
-Perhaps the simplest such basis sets are Slater-Type-Orbitals (STO) which are (orthogonalized) solutions to the Schrödinger equation (i.e. eigenfunctions of $\hat{H}$) for hydrogen-like atoms.
+Perhaps the simplest such basis sets are Slater-Type-Orbitals (STO) which are (orthogonalized) solutions to the Schrödinger equation (for example, eigenfunctions of $\hat{H}$) for hydrogen-like atoms.
 Other basis sets, such as plane-waves or real-space orbitals, can be used and for more detail we refer the curious reader to the standard text ['Molecular Electronic-Structure Theory'](https://onlinelibrary.wiley.com/doi/book/10.1002/9781119019572) by Helgaker.
 
 While the states used in the above model may seem arbitrary, quantum mechanics places restrictions on the states that can be found in nature.

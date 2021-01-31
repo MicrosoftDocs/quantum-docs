@@ -10,8 +10,7 @@ no-loc: ['Q#', '$$v']
 title: Quantum characterization and statistics
 uid: microsoft.quantum.libraries.overview.characterization
 ---
-
-# Quantum Characterization and Statistics #
+# Quantum characterization and statistics #
 
 It is critical to be able to characterize the effects of operations in order to develop useful quantum algorithms.
 This is challenging because every measurement of a quantum system yields at most one bit of information.
@@ -25,7 +24,7 @@ The aim here is less to learn classical information about the system, rather tha
 These libraries must therefore blend both classical and quantum information processing.
 
 
-## Iterative Phase Estimation ##
+## Iterative phase estimation ##
 
 Viewing quantum programming in terms of quantum characterization suggests a useful alternative to quantum phase estimation.
 That is, instead of preparing an $n$-qubit register to contain a binary representation of the phase as in quantum phase estimation, we can view phase estimation as the process by which a *classical* agent learns properties of a quantum system through measurements.
@@ -37,7 +36,7 @@ In discussing iterative phase estimation, we will consider a unitary $U$ given a
 As described in the section on oracles in [data structures](xref:microsoft.quantum.libraries.overview.data-structures), the Q# canon models such operations by the <xref:Microsoft.Quantum.Oracles.DiscreteOracle> user-defined type, defined by the tuple type `((Int, Qubit[]) => Unit : Adjoint, Controlled)`.
 Concretely, if `U : DiscreteOracle`, then `U(m)` implements $U^m$ for `m : Int`.
 
-With this definition in place, each step of iterative phase estimation proceeds by preparing an auxiliary qubit in the $\ket{+}$ state along with the initial state $\ket{\phi}$ that we assume is an [eigenvector](xref:microsoft.quantum.concepts.matrix-advanced) of $U(m)$, i.e. $U(m)\ket{\phi}= e^{im\phi}\ket{\phi}$.  
+With this definition in place, each step of iterative phase estimation proceeds by preparing an auxiliary qubit in the $\ket{+}$ state along with the initial state $\ket{\phi}$ that we assume is an [eigenvector](xref:microsoft.quantum.concepts.matrix-advanced) of $U(m)$, for example, $U(m)\ket{\phi}= e^{im\phi}\ket{\phi}$.  
 A controlled application of `U(m)` is then used which prepares the state $\left(R\_1(m \phi) \ket{+}\right)\ket{\phi}$.
 As in the quantum case, the effect of a controlled application of the oracle `U(m)` is precisely the same as the effect of applying $R_1$ for the unknown phase on $\ket{+}$, such that we can describe the effects of $U$ in this simpler fashion.
 Optionally, the algorithm then rotates the control qubit by applying $R_1(-m\theta)$ to obtain a state $\ket{\psi}=\left(R\_1(m [\phi-\theta]) \ket{+}\right)\ket{\phi}$$.
@@ -47,7 +46,7 @@ At this point, reconstructing the phase from the `Result` values obtained throug
 Finding the value of $m$ that maximizes the information gained, given a fixed inference method, is simply a problem in statistics.
 We emphasize this by briefly describing iterative phase estimation at a theoretical level in the Bayesian parameter estimation formalism before proceeding to describe the statistical algorithms provided in the Q# canon for solving this classical inference problem.
 
-### Iterative Phase Estimation Without Eigenstates ###
+### Iterative phase estimation without eigenstates ###
 
 If an input state is provided that is not an eigenstate, which is to say that if $U(m)\ket{\phi\_j} = e^{im\phi\_j}$ then the process of phase estimation non-deterministically guides the quantum state towards a single energy eigenstate.  The eigenstate it ultimately converges to is the eigenstate that is most likely to produce the observed `Result`.
 
@@ -72,7 +71,7 @@ Learning these three things is often exponentially hard on a classical computer.
 The utility of phase estimation arises, to no small extent, from the fact that it can perform such a quantum learning task without knowing any of them.
 Phase estimation for this reason appears within a number of quantum algorithms that provide exponential speedups.
 
-### Bayesian Phase Estimation ###
+### Bayesian phase estimation ###
 
 > [!TIP]
 > For more details on Bayesian phase estimation in practice, please see the [**PhaseEstimation**](https://github.com/microsoft/Quantum/tree/main/samples/characterization/phase-estimation) sample.
@@ -120,17 +119,17 @@ Exact Bayesian inference is in practice intractable.
 To see this imagine we wish to learn an $n$-bit variable $x$.
 The prior distribution $\Pr(x)$ has support over $2^n$ hypothetical values of $x$.
 This means that if we need a highly accurate estimate of $x$ then Bayesian phase estimation may need prohibitive memory and processing time.
-While for some applications, such as quantum simulation, the limitted accuracy required does not preclude such methods other applications,
+While for some applications, such as quantum simulation, the limited accuracy required does not preclude such methods other applications,
 such as Shor's algorithm, cannot use exact Bayesian inference within its phase estimation step.  For this reason, we also provide implementations
 for approximate Bayesian methods such as [random walk phase estimation (RWPE)](xref:Microsoft.Quantum.Research.Characterization.RandomWalkPhaseEstimation) and also non-Bayesian approaches such as [robust phase estimation](xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation).
 
-### Robust Phase Estimation ###
+### Robust phase estimation ###
 
 A maximum *a posteriori* Bayesian reconstruction of a phase estimate from measurement results is exponentially hard in the worst-case. Thus most practical phase estimation algorithms sacrifice some quality in the reconstruction, in exchange for an amount of classical post-processing that instead scales polynomially with the number of measurements made.
 
 One such example with an efficient classical post-processing step is the [robust phase estimation algorithm](https://arxiv.org/abs/1502.02677), with its signature and inputs mentioned above. It assumes that input unitary black-boxes $U$ are packaged as `DiscreteOracle` type, and therefore only queries integer powers of controlled-$U$. If the input state in the `Qubit[]` register is an eigenstate $U\ket{\psi}=e^{i\phi}\ket{\psi}$, the robust phase estimation algorithm returns an estimate $\hat{\phi}\in[-\pi,\pi)$ of $\phi$ as a `Double`.
 
-The most important feature of robust phase estimation, which is shared with most other useful variants, is that the reconstruction quality of $\hat{\phi}$ is in some sense Heisenberg-limited. This means that if the deviation of $\hat{\phi}$ from the true value is $\sigma$, then $\sigma$ scales inversely-proportional to the total number of queries $Q$ made to controlled-$U$, i.e. $\sigma=\mathcal{O}(1/Q)$. Now, the definition of deviation varies between different estimation algorithms. In some cases, it may mean that with at least $\mathcal{O}(1)$ probability, the estimation error $|\hat{\phi}-\phi|\_\circ\le \sigma$ on some circular measure $\circ$. For robust phase estimation, deviation is precisely the variance $\sigma^2 = \mathbb{E}\_\hat{\phi}[(\mod\_{2\pi}(\hat{\phi}-\phi +\pi)-\pi)^2]$ if we unwrap periodic phases onto a single finite interval $(-\pi,\pi]$. More precisely, the standard deviation in robust phase estimation satisfies the inequalities
+The most important feature of robust phase estimation, which is shared with most other useful variants, is that the reconstruction quality of $\hat{\phi}$ is in some sense Heisenberg-limited. This means that if the deviation of $\hat{\phi}$ from the true value is $\sigma$, then $\sigma$ scales inversely-proportional to the total number of queries $Q$ made to controlled-$U$, for example, $\sigma=\mathcal{O}(1/Q)$. Now, the definition of deviation varies between different estimation algorithms. In some cases, it may mean that with at least $\mathcal{O}(1)$ probability, the estimation error $|\hat{\phi}-\phi|\_\circ\le \sigma$ on some circular measure $\circ$. For robust phase estimation, deviation is precisely the variance $\sigma^2 = \mathbb{E}\_\hat{\phi}[(\mod\_{2\pi}(\hat{\phi}-\phi +\pi)-\pi)^2]$ if we unwrap periodic phases onto a single finite interval $(-\pi,\pi]$. More precisely, the standard deviation in robust phase estimation satisfies the inequalities
 $$
 \begin{align}
 2.0 \pi / Q \le \sigma \le 2\pi / 2^{n} \le 10.7\pi / Q,
@@ -147,7 +146,7 @@ Other relevant details include, say, the small space overhead of just $1$ ancill
 > and the [**Hubbard model** sample](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
 
 
-### Continuous Oracles ###
+### Continuous oracles ###
 
 We can also generalize from the oracle model used above to allow for continuous-time oracles, modeled by the canon type <xref:Microsoft.Quantum.Oracles.ContinuousOracle>.
 Consider that instead of a single unitary operator $U$, we have a family of unitary operators $U(t)$ for $t \in \mathbb{R}$ such that $U(t) U(s)$ = $U(t + s)$.
@@ -165,7 +164,7 @@ $$
 Moreover, if $U$ is a simulation of a dynamical generator, as is the case for [Hamiltonian simulation](xref:microsoft.quantum.libraries.overview.applications#hamiltonian-simulation), we interpret $\phi$ as an energy.
 Thus, using phase estimation with continuous queries allows us to learn the simulated [energy spectrum of molecules](https://arxiv.org/abs/quant-ph/0604193), [materials](https://arxiv.org/abs/1510.03859) or [field theories](https://arxiv.org/abs/1111.3633v2) without having to compromise our choice of experiments by requiring $t$ to be an integer.
 
-### Random Walk Phase Estimation ###
+### Random walk phase estimation ###
 
 Q# provides a useful approximation of Bayesian phase estimation designed for use close to quantum devices that operates by conditioning a random walk on the data record obtained from iterative phase estimation.
 This method is both adaptive and entirely deterministic, allowing for near-optimal scaling of errors in the estimated phase $\hat{\phi}$ with very low memory overheads.
@@ -179,7 +178,7 @@ It recovers from failure by performing experiments to test whether the current m
 If they are not, then the algorithm does an inverse step of the walk and the process continues.
 The ability to step backwards also allows the algorithm to learn even if the initial prior standard deviation is inapropriately small.
 
-## Calling Phase Estimation Algorithms ##
+## Calling phase estimation algorithms ##
 
 Each phase estimation operation provided with the Q# canon takes a different set of inputs parameterizing the quality that we demand out of the final estimate $\hat{\phi}$.
 These various inputs, however, all share several inputs in common, such that partial application over the quality parameters results in a common signature.

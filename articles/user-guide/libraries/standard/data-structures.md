@@ -90,7 +90,7 @@ If this were not true then amplitude amplification would have no effect so we ne
 
 We will denote the first oracle that we need for amplitude amplification to be $P\_0$, defined to have the following action.  For all states $\ket{x}$ in the "initial" subspace $P\_0 \ket{x} = -\ket{x}$ and for all states $\ket{y}$ that are not in this subspace we have $P\_0 \ket{y} = \ket{y}$.
 The oracle that marks the target subspace, $P_1$, takes exactly the same form.
-For all states $\ket{x}$ in the target subspace (i.e., for all states that you'd like the algorithm to output), $P_1\ket{x} = -\ket{x}$.
+For all states $\ket{x}$ in the target subspace (that is, for all states that you'd like the algorithm to output), $P_1\ket{x} = -\ket{x}$.
 Similarly, for all states $\ket{y}$ that are not in the target subspace $P_1\ket{y} = \ket{y}$.
 These two reflections are then combined to form an operator that enacts a single step of amplitude amplification, $Q = -P_0 P_1$, where the overall minus sign is only important to consider in controlled applications.
 Amplitude amplification then proceeds by taking an initial state, $\ket{\psi}$ that is in the initial subspace and then performs $\ket{\psi} \mapsto Q^m \ket{\psi}$.
@@ -304,7 +304,7 @@ where the generator $\hat H(t)$ is now time-dependent. The extension from the ti
 newtype GeneratorSystemTimeDependent = (Double -> GeneratorSystem);
 ```
 
-The first parameter is a continuous schedule parameter $s\in [0,1]$, and functions of this type return a `GeneratorSystem` for that schedule. Note that the schedule parameter may be linearly related to the physical time parameter e.g. $s = t / T$, for some total time of simulation $T$. In general however, this need not be the case.
+The first parameter is a continuous schedule parameter $s\in [0,1]$, and functions of this type return a `GeneratorSystem` for that schedule. Note that the schedule parameter may be linearly related to the physical time parameter, for example, $s = t / T$, for some total time of simulation $T$. In general however, this need not be the case.
 
 Similarly, a complete description of this generator requires an `EvolutionSet`, and so we define an `EvolutionSchedule` user-defined type.
 

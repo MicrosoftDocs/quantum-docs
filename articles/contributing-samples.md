@@ -51,7 +51,7 @@ Looking at the files that make up each folder, let's dive into the [`algorithms/
 | `host.py`         | Python host program used to run the sample                 |
 | `README.md`       | Documentation on what the sample does and how to use it    |
 
-Not all samples will have the exact same set of files (e.g.: some samples may be C#-only, others may not have a Python host, or some samples may require auxillary data files to work).
+Not all samples will have the exact same set of files (for example, some samples may be C#-only, others may not have a Python host, or some samples may require auxillary data files to work).
 
 ## Anatomy of a Helpful README File
 
@@ -74,7 +74,7 @@ After that, it's helpful to give a short intro that says what your new sample do
 
 :::code language="markdown" source="~/quantum/samples/algorithms/chsh-game/README.md" range="13-21":::
 
-Users of your sample will also appreciate knowing what they need to run it (e.g.: do users just need the Quantum Development Kit itself, or do they need additional software such as node.js?):
+Users of your sample will also appreciate knowing what they need to run it (for example, do users just need the Quantum Development Kit itself, or do they need additional software such as node.js?):
 
 :::code language="markdown" source="~/quantum/samples/algorithms/chsh-game/README.md" range="23-25":::
 

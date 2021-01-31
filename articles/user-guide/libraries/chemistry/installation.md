@@ -11,7 +11,7 @@ title: Q# Chemistry Library Installation
 uid: microsoft.quantum.libraries.overview-chemistry.concepts.installation
 ---
 
-# Chemistry Library Installation
+# Chemistry library installation
 
 The [**MolecularHydrogen** sample](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogen) uses molecular input data that is manually configured.
 While this is fine for small examples, quantum chemistry at scale requires Hamiltonians with millions or billions of terms.
@@ -54,15 +54,15 @@ See [Obtaining resource counts](xref:microsoft.quantum.libraries.overview-chemis
 
 EMSL Arrows is a tool that uses NWChem and chemical computational databases to generate molecule data.  [EMSL Arrows Builder for the Quantum Development Kit](https://arrows.emsl.pnnl.gov/api/qsharp_chem) allows you to enter your model using multiple molecular model builders and generate the Broombridge datafile to be used by the Quantum Development Kit.  
 
-From the EMSL page, click on the ['Instuctions'] tab, and follow the ['Simple Examples'] instructions to generate Broombridge files.  Then try running the ['GetGateCount'] to see the quantum resource estimates for these molecules.
+From the EMSL page, click the ['Instuctions'] tab, and follow the ['Simple Examples'] instructions to generate Broombridge files.  Then try running the ['GetGateCount'] to see the quantum resource estimates for these molecules.
 
-### Installing NWChem from Source
+### Installing NWChem from source
 
 Full instructions on how to install NWChem from source [are provided by PNNL](http://www.nwchem-sw.org/index.php/Compiling_NWChem).
 
 > [!TIP]
 > If you wish to use NWChem from Windows 10, the Windows Subsystem for Linux is a great option.
-> Once you have installed [Ubuntu 18.04 LTS for Windows](https://www.microsoft.com/en-us/p/ubuntu-1804-lts/9n9tngvndl3q#activetab=pivot:overviewtab), run `ubuntu18.04` from your favorite terminal and follow the instructions above to install NWChem from source.
+> Once you have installed [Ubuntu 18.04 LTS for Windows](https://www.microsoft.com/p/ubuntu-1804-lts/9n9tngvndl3q#activetab=pivot:overviewtab), run `ubuntu18.04` from your favorite terminal and follow the instructions above to install NWChem from source.
 
 Once you have compiled NWChem from source, you can run the `yaml_driver` script provided with NWChem to quickly produce Broombridge instances from NWChem input decks:
 

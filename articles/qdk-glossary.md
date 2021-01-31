@@ -96,7 +96,7 @@ A variable whose value may be changed after it is created. A mutable variable in
 
 ## Namespace
 
-A label for a collection of related names (i.e., [operations](xref:microsoft.quantum.glossary-qdk#operation), [functions](xref:microsoft.quantum.glossary-qdk#function), and [user-defined types](xref:microsoft.quantum.glossary-qdk#user-defined-type)). For instance the namespace [Microsoft.Quantum.Preparation](xref:Microsoft.Quantum.Preparation) labels all of the symbols defined in the standard library that help with preparing initial states.
+A label for a collection of related names (for example, [operations](xref:microsoft.quantum.glossary-qdk#operation), [functions](xref:microsoft.quantum.glossary-qdk#function), and [user-defined types](xref:microsoft.quantum.glossary-qdk#user-defined-type)). For instance the namespace [Microsoft.Quantum.Preparation](xref:Microsoft.Quantum.Preparation) labels all of the symbols defined in the standard library that help with preparing initial states.
 
 ## Operation
 
@@ -160,7 +160,7 @@ A collection of comma-separated values that acts as a single value. The *type* o
 
 ## Unitary operator
 
-An operator whose inverse is equal to its [adjoint](xref:microsoft.quantum.glossary-qdk#adjoint), i.e., $UU^{\dagger} = \id$.
+An operator whose inverse is equal to its [adjoint](xref:microsoft.quantum.glossary-qdk#adjoint), for example, $UU^{\dagger} = \id$.
 
 ## User-defined type
 

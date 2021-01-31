@@ -26,6 +26,6 @@ When creating a new issue, you'll be prompted with a template that suggests some
 - Steps to reproduce the problem
 - What you expected to happen
 - What actually happened
-- Information about your software environment (e.g.: OS, .NET Core, and Quantum Development Kit versions)
+- Information about your software environment (for example: OS, .NET Core, and Quantum Development Kit versions)
 
 You can also [create a pull request](https://help.github.com/articles/about-pull-requests/) to fix the bug directly, if it's very straightforward and is not worth the discussion (for example, a typo).

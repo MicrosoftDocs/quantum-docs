@@ -57,7 +57,7 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 
 1. Add at least the 1Qloud Optimization Platform provider, then click **Review + create**.
 
-1. Review the setting you've selected and if everything is correct, click on **Create** to create your workspace.
+1. Review the setting you've selected and if everything is correct, click **Create** to create your workspace.
 
    ![Review and create the workspace](./media/azure-quantum-preview-terms.png)
 
@@ -100,7 +100,7 @@ installed the Optimization Python SDK already, follow these steps:
 
 ## Create a `Workspace` object in your Python code and log in
 
-Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to the Azure Quantum Optimization service. The value for `resource_id` can be found on the Azure Portal page for the [Quantum Workspace you created](xref:microsoft.quantum.workspaces-portal).
+Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to Azure Quantum. The value for `resource_id` can be found on the Azure Portal page for the [Quantum Workspace you created](xref:microsoft.quantum.workspaces-portal).
 
 Once the `Workspace` object is created, you log in using the `workspace.login()` command.
 
@@ -182,7 +182,7 @@ Above, you can see that you have provided the following parameters:
 
 ## Submit your problem to Azure Quantum
 
-Next, you will submit the `Problem` instance defined to the Azure Quantum Optimization service.
+Next, you will submit the `Problem` instance defined to Azure Quantum.
 
 ```python
 from azure.quantum.optimization.oneqbit import PathRelinkingSolver
@@ -194,7 +194,7 @@ solver = PathRelinkingSolver(workspace)
 result = solver.optimize(problem)
 ```
 
-Here you created an instance of a `PathRelinkingSolver` solver for the problem. You could also have chosen other 1QBit solvers (e.g. `TabuSearch`) without needing to change more lines of code. The type `Problem` is the common parameter for all the solvers of Azure Quantum.
+Here you created an instance of a `PathRelinkingSolver` solver for the problem. You could also have chosen other 1QBit solvers (for example, `TabuSearch`) without needing to change more lines of code. The type `Problem` is the common parameter for all the solvers of Azure Quantum.
 
 You then call `solver.optimize()` and supply the `problem` as the argument. This submits the problem synchronously to Azure Quantum and returns a Python dictionary of values to save the `result` variable for parsing in the next step.
 

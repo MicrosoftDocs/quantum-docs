@@ -98,7 +98,7 @@ Now you are ready to verify your `qsharp` Python package installation by writing
     print(SampleQuantumRandomNumberGenerator.simulate())
     ```
 
-1. From the environment you created during installation (i.e., the conda or Python environment where you installed `qsharp`), run the program:
+1. From the environment you created during installation (that is, the conda or Python environment where you installed `qsharp`), run the program:
 
     ```
     python host.py

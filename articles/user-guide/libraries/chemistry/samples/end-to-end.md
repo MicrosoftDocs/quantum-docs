@@ -26,7 +26,7 @@ For more information:
 > This example requires Windows PowerShell Core to run.
 > Download PowerShell Core for Windows, macOS, or Linux at https://github.com/PowerShell/PowerShell.
 
-## Importing Required PowerShell Modules ##
+## Importing required PowerShell modules ##
 
 If you haven't already done so, clone the [Microsoft/Quantum repository](https://github.com/Microsoft/Quantum), which contains samples and utilities for working with the Quantum Development Kit:
 
@@ -76,7 +76,7 @@ You should now have the `Get-GateCount` command available:
 Get-Command Get-GateCount
 ```
 
-## Input Decks ##
+## Input decks ##
 
 The NWChem package takes a text file called an _input deck_ which specifies a quantum chemistry problem to be solved, along with other parameters such as memory allocation settings.
 For this example, we'll use one of the pre-made input decks that comes with NWChem.
@@ -109,7 +109,7 @@ set tce:qela  9
 set tce:qelb  9
 ```
 
-## Producing and Consuming Broombridge Output from NWChem ##
+## Producing and consuming Broombridge output from NWChem ##
 
 You now have everything you need to produce and consume Broombridge documents.
 To run NWChem and produce a Broombridge document for the `h4_sto6g_0.000.nw` input deck, run `Convert-NWChemToBroombridge`:
@@ -160,31 +160,32 @@ ElapsedMilliseconds : 721
 ```
 
 There are many things to go do from here: 
-- Try out different predefined input decks, e.g., by varying the parameter `alpha` in `h4_sto6g_alpha.nw`, 
-- Try modifying the decks by editing the NWChem decks directly, e.g., exploring `STO-nG` models for various choices of n, 
+
+- Try out different predefined input decks, for example, by varying the parameter `alpha` in `h4_sto6g_alpha.nw`, 
+- Try modifying the decks by editing the NWChem decks directly, for example, exploring `STO-nG` models for various choices of n, 
 - Try other predefined NWChem input decks that are available at `nwchem/qa/chem_library_tests`,
 - Try out a suite of predefined Broombridge YAML benchmarks that were generated from NWChem and are available as part of the [Microsoft/Quantum repository](https://github.com/Microsoft/Quantum/tree/main/samples/chemistry/IntegralData/YAML). These benchmarks include: 
     - small molecules such as molecular hydrogen (H2), Beryllium (Be), Lithium hydride (LiH),
     - larger molecules such as ozone (O3), beta-carotene, cytosine, and many more. 
 - Try out the graphical front-end [EMSL Arrows](https://arrows.emsl.pnnl.gov/api/qsharp_chem) that features an interface to the Microsoft Quantum Development Kit. 
 
-
-## Producing Broombridge Output from EMSL Arrows ##
+## Producing Broombridge output from EMSL Arrows ##
 
 To get started with web-based front end EMSL Arrows, navigate a browser [here](https://arrows.emsl.pnnl.gov/api/qsharp_chem). 
 
 > [!NOTE]
-> Running EMSL Arrows in a web browser requires JavaScript to be enabled. Please refer to these [instructions](https://www.enable-javascript.com/) on how to enable JavaScript in your browser. 
+> Running EMSL Arrows in a web browser requires JavaScript to be enabled. Please refer to these [instructions](https://www.enable-javascript.com/) on how to enable JavaScript in your browser.
 
-First, enter a molecule in the query box that says ``Enter an esmiles, esmiles reaction, or other Arrows input, then push the "Run Arrows" button.`` 
+First, enter a molecule in the query box **Enter an esmiles, esmiles reaction, or other Arrows input, then push the "Run Arrows" button**.
 
 You can enter many molecules by their colloquial name, such as "caffeine" instead of "1,3,7-Trimethylxanthine". 
 
-Next, click the button that says ``theory{qsharp_chem}``. This will populate the query box further with an instruction that will tell the run to export output in the Broombridge YAML format. 
+Next, click **theory{qsharp_chem}**. This will populate the query box further with an instruction that will tell the run to export output in the Broombridge YAML format. 
 
-Now, clock on ``Run Arrows``. Depending on the size of the input, this might take a while. Or, in case the particular model has already been computed before, it can be done extremely fast as it will only amount to a lookup in a database. In either case, you will be taken to a new page that contains a plethora of information about the particular run of NWChem against the deck specified by your input. 
+Now, click **Run Arrows**. Depending on the size of the input, this might take a while. Or, in case the particular model has already been computed before, it can be done extremely fast as it will only amount to a lookup in a database. In either case, you will be taken to a new page that contains a plethora of information about the particular run of NWChem against the deck specified by your input. 
 
 You can download and save the Broombridge YAML file from the section that starts with the following header: 
+
 ```powershell
 +==================================================+
 ||              Molecular Calculation             ||
@@ -199,10 +200,11 @@ qsharp_chem.yaml-2018-10-23-14:37:42 (download)
 ...
 ```
 
-Click on ``download``, which saves a local copy with a unique file name such as ``qsharp_chem48443.yaml`` (the particular name will be different for each run). You can then further process this file as above, e.g., with 
+Click **download**, which saves a local copy with a unique file name, for example *qsharp_chem48443.yaml* (the particular name will be different for each run). You can then further process this file as above, for example, with 
+
 ```powershell
 Get-GateCount -Format YAML qsharp_chem48443.yaml
 ```
 to get resource counts. 
 
-You might enjoy the 3D molecule builder that can be accessed from the ``Arrows Entry - 3D Builder`` tab on the EMSL Arrows start page. Clicking the [JSMol](http://wiki.jmol.org/index.php/JSmol) 3D picture of the shown molecule will let you allow to edit it. You can move atoms around, drag atoms apart so that their inter-molecular distances change, add/remove atoms, etc. For each of these choices, once you added ``theory{qsharp_chem}`` in the query box, you can then generate an instance of the Broombridge YAML schema and further explore it using the Quantum Chemistry Library.
+You might enjoy the 3D molecule builder that can be accessed from the **Arrows Entry - 3D Builder** tab on the EMSL Arrows start page. Clicking the [JSMol](http://wiki.jmol.org/index.php/JSmol) 3D picture of the shown molecule will let you allow to edit it. You can move atoms around, drag atoms apart so that their inter-molecular distances change, add/remove atoms, etc. For each of these choices, once you added **theory{qsharp_chem}** in the query box, you can then generate an instance of the Broombridge YAML schema and further explore it using the Quantum chemistry library. 

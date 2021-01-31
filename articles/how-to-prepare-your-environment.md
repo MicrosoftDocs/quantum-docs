@@ -53,10 +53,10 @@ If you need to update an existing installation of the the Azure CLI `quantum` ex
 
 Now that you have installed the tools to use Azure Quantum you can learn to submit jobs.
 
-### For Optimization users
+### For optimization users
 
-Learn how to [submit jobs to Azure Quantum](xref:microsoft.quantum.optimization.python-sdk) to solve optimization problems.
+Learn how to [submit jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs.python) to solve optimization problems.
 
-### For Quantum Computing users
+### For quantum computing users
 
 Learn how to [create Q# applications and run them on Azure Quantum](xref:microsoft.quantum.create-applications).

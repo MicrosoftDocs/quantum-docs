@@ -10,7 +10,7 @@ Development Kit. This directory contains:
     in the main Table Of Contents (TOC).
   - Markdown articles that contain the documentation. These articles
     should follow the guidelines of the [Microsoft Docs contributor
-    guide](https://docs.microsoft.com/en-us/contribute/).
+    guide](xref:microsoft.quantum.contributing-qdk.overview).
   - Articles sub-directories. These
     sub-directories should also contain their own `toc.yml` file.
 

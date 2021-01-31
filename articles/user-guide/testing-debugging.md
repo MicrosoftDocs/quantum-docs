@@ -125,7 +125,7 @@ The intrinsic function <xref:Microsoft.Quantum.Intrinsic.Message> has type `(Str
 
 #### [Visual Studio 2019](#tab/tabid-vs2019)
 
-After you run a test in Test Explorer and click on the test, a panel displays with information about test run: Pass/fail status, elapsed time, and a link to the output. Click **Output** to open the test output in a new window.
+After you run a test in Test Explorer and click the test name, a panel displays with information about test run: Pass/fail status, elapsed time, and a link to the output. Click **Output** to open the test output in a new window.
 
 ![test output](~/media/unit-test-output.png)
 

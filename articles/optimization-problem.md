@@ -6,11 +6,11 @@ ms.date: 02/01/21
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: article
-title: Quantum Optimization Problem
+title: Quantum optimization problem
 uid: microsoft.quantum.optimization.problem
 ---
 
-# Quantum Optimization Problem
+# Quantum optimization problem
 
 ## Problem
 

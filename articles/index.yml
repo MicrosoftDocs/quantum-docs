@@ -46,7 +46,7 @@ landingContent:
           - text: Quantum computers and quantum simulators
             url: overview-quantum-computers-and-simulators.md
           - text: Microsoft Learn modules for quantum computing
-            url: https://docs.microsoft.com/en-us/learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
+            url: https://docs.microsoft.com/learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
       - linkListType: concept
         links:
           - text: Quantum computing concepts
@@ -60,19 +60,19 @@ landingContent:
         - text: Introduction to optimization
           url: optimization-overview-introduction.md
         - text: Key concepts for optimization
-          url: optimization-oveview-key-concepts.md
+          url: optimization-overview-key-concepts.md
         - text: What are quantum-inspired algorithms?
           url: optimization-what-is-quantum-optimization.md
       - linkListType: how-to-guide 
         links:
           - text: Install the Python SDK for optimization
-            url: how-to-use-the-python-SDK.md
+            url: optimization-install-sdk.md
       - linkListType: learn
         links:
           - text: Overview of optimization solvers
             url: optimization-solvers-overview.md
           - text: Microsoft Learn modules for optimization
-            url: https://docs.microsoft.com/en-us/learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
+            url: https://docs.microsoft.com/learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
 
   # QDK
   - title: Develop with the Quantum Development Kit
@@ -99,7 +99,7 @@ landingContent:
           - text: Q# user guide
             url: user-guide\index.md
           - text: "Quantum simulators and host applications"
-            url: user-guide\host-programs.md
+            url: user-guide\machines\index.md
       - linkListType: tutorial
         links:
           - text: Build a quantum random number generator

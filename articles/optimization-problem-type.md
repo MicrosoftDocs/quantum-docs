@@ -6,13 +6,13 @@ ms.date: 02/01/21
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: article
-title: Quantum Optimization Problem Type
+title: Quantum optimization problem type
 uid: microsoft.quantum.optimization.problem-type
 ---
 
 # Azure.Quantum.Optimization.ProblemType
 
-## Quantum Optimization Problem Type
+## Quantum optimization problem type
 
 ```py
 from azure.quantum.optimization import ProblemType

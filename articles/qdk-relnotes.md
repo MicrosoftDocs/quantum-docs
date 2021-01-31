@@ -107,7 +107,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 This release contains the following:
 
-- New `qdk-chem` tool for converting legacy electronic structure problem serialization formats (e.g.: FCIDUMP) to [Broombridge](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge)
+- New `qdk-chem` tool for converting legacy electronic structure problem serialization formats (for example, FCIDUMP) to [Broombridge](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge)
 - New functions and operations in the [`Microsoft.Quantum.Synthesis`](xref:Microsoft.Quantum.Synthesis) namespace for coherently applying classical oracles using transformation- and decomposition-based synthesis algorithms.
 - IQ# now allows arguments to the `%simulate`, `%estimate`, and other magic commands. See the [`%simulate` magic command reference](xref:microsoft.quantum.iqsharp.magic-ref.simulate) for more details.
 - New phase display options in IQ#. See the [`%config` magic command reference](xref:microsoft.quantum.iqsharp.magic-ref.config) for more details.
@@ -324,9 +324,9 @@ The changes are summarized here as well as instructions for upgrading your exist
 
 ### Q# language syntax
 This release adds new Q# language syntax:
-* Add a [shorthand way to express specializations of quantum operations](xref:microsoft.quantum.qsharp.specializationdeclarations) (control and adjoints) with `+` operators.  The old syntax is deprecated.  Programs that use the old syntax (e.g., `: adjoint`) will continue to work, but a compile time warning will be generated.  
+* Add a [shorthand way to express specializations of quantum operations](xref:microsoft.quantum.qsharp.specializationdeclarations) (control and adjoints) with `+` operators.  The old syntax is deprecated.  Programs that use the old syntax (for example, `: adjoint`) will continue to work, but a compile time warning will be generated.  
 * Add a new ternary operator for [copy-and-update](xref:microsoft.quantum.qsharp.copyandupdateexpressions#copy-and-update-expressions), `w/` `<-`, can be used to express array creation as a modification of an existing array.
-* Add the common [apply-and-reassign statement](xref:microsoft.quantum.qsharp.variabledeclarationsandreassignments#evaluate-and-reassign-statements), e.g., `+=`, `w/=`.
+* Add the common [apply-and-reassign statement](xref:microsoft.quantum.qsharp.variabledeclarationsandreassignments#evaluate-and-reassign-statements), for example, `+=`, `w/=`.
 * Add a way to specify a short name for namespaces in [open directives](xref:microsoft.quantum.qsharp.namespaces#open-directives).
 
 With this release, we no longer allow an array element to be specified on the left side of a set statement.  This is because that syntax implies that arrays are mutable when in fact, the result of the operation has always been the creation of a new array with the modification.  Instead, a compiler error will be generated with a suggestion to use the new copy-and-update operator, `w/`, to accomplish the same result.  
@@ -415,7 +415,7 @@ This release contains the following:
 
 - Adds support for a cross-platform Python host.  The `qsharp` package for Python makes it easy to simulate Q# operations and functions from within Python. Learn more about [Python interoperability](xref:microsoft.quantum.install-qdk.overview). 
 
-- The Visual Studio and Visual Studio Code extensions now support renaming of symbols (e.g., functions and operations).
+- The Visual Studio and Visual Studio Code extensions now support renaming of symbols (for example, functions and operations).
 
 - The Visual Studio extension can now be installed on Visual Studio 2019.
 
@@ -427,7 +427,7 @@ This release contains the following:
 
 - adds support for a new primitive type, BigInt, which represents a signed integer of arbitrary size.  Learn more about [BigInt](xref:microsoft.quantum.qsharp.valueliterals#bigint-literals).
 - adds new Toffoli simulator, a special purpose fast simulator that can simulate X, CNOT and multi-controlled X quantum operations with very large numbers of qubits.  Learn more about [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator).
-- adds a simple resource estimator that estimates the resources required to run a given instancee of a Q# operation on a quantum computer.  Learn more about the [Resource Estimator](xref:microsoft.quantum.machines.overview.resources-estimator).
+- adds a simple resource estimator that estimates the resources required to run a given instance of a Q# operation on a quantum computer.  Learn more about the [Resource Estimator](xref:microsoft.quantum.machines.overview.resources-estimator).
 
 
 ## Version 0.3.1811.2802

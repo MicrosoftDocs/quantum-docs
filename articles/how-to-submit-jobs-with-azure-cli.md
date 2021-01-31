@@ -183,7 +183,7 @@ ExampleJob   yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy  Waiting   ionq.simulator  202
 
 ```
 
-Once the job completes (i.e. it's in a **Successful** state), use the command `az quantum
+Once the job completes (that is, when it's in a **Successful** state), use the command `az quantum
 job output` to view the results:
 
 ```output

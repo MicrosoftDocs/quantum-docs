@@ -58,7 +58,7 @@ The Quantum Development Kit comes with the [quantum machine learning library](xr
 
 ## Q# and the Microsoft Quantum Development Kit (QDK)
 
-Q# is Microsoft's open-source programming language for developing and running quantum algorithms. It is part of the [QDK](xref:microsoft.quantum.overview.qdk-overview), a full-featured development kit for Q# that you can use with standard tools and languages to develop quantum applications that you can run in various environments, including the built-in full-state quantum simulator.
+Q# is Microsoft's open-source programming language for developing and running quantum algorithms. It is part of the [QDK](xref:microsoft.quantum.get-started-qdk), a full-featured development kit for Q# that you can use with standard tools and languages to develop quantum applications that you can run in various environments, including the built-in full-state quantum simulator.
 
 There are extensions for Visual Studio and VS Code, and packages for use with Python and Jupyter Notebook.
 
@@ -70,7 +70,7 @@ The documentation includes a Q# language guide, tutorials, and sample code to ge
 
 Microsoft is partnering with quantum hardware companies to provide developers with cloud access to quantum hardware. Leveraging the [Azure Quantum](https://azure.microsoft.com/services/quantum/) platform and the Q# language, developers will be able to explore quantum algorithms and run their quantum programs on different types of quantum hardware.
 
-[IonQ](https://ionq.com/news/november-4-2019-microsoft-partnership) and [Honeywell](https://www.honeywell.com/en-us/newsroom/news/2019/11/the-future-of-quantum-computing) both use **trapped ion-based** processors, utilizing individual ions trapped in an electronic field, whereas [QCI](https://quantumcircuits.com/news-and-publications/quantum-circuits-partners-with-microsoft-on-azure-quantum) uses superconducting circuits.
+[IonQ](https://ionq.com/news/november-4-2019-microsoft-partnership) and [Honeywell](https://www.honeywell.com/newsroom/news/2019/11/the-future-of-quantum-computing) both use **trapped ion-based** processors, utilizing individual ions trapped in an electronic field, whereas [QCI](https://quantumcircuits.com/news-and-publications/quantum-circuits-partners-with-microsoft-on-azure-quantum) uses superconducting circuits.
 
 ## Next steps
 

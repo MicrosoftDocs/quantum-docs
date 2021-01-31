@@ -6,11 +6,11 @@ ms.date: 02/01/21
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: article
-title: Overview of solvers
+title: Overview of optimization solvers
 uid: microsoft.quantum.optimization.solver-overview
 ---
 
-# Overview of solvers
+# Overview of optimization solvers
 
 The Microsoft QIO provider comes with a variety of optimization solvers. These solvers solve problems on classical CPUs or on field-programmable gate arrays (FPGA). The following table lists the solvers and provides a brief comparison between them.
 
