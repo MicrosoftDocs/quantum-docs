@@ -31,7 +31,7 @@ Currently, Azure Quantum includes the following types of targets:
 ### Optimization solver
 
 A platform to solve binary optimization problems on classical CPUs, or
-hardware accelerated on field-programmable gate arrays (FPGA), GPUs or hardware annealers.
+hardware accelerated on field-programmable gate arrays (FPGA), GPUs or hardware annealers. For more information, see [Optimization solvers](xref:microsoft.quantum.optimization.install-sdk).
 
 ### Quantum Processing Unit (QPU): different profiles
 

@@ -15,7 +15,7 @@ Python SDK for optimization.
 
 ## Asynchronous problem solving
 
-In the [basic usage example](xref:microsoft.quantum.optimization.python-sdk), a problem
+In the [basic usage example](xref:microsoft.quantum.optimization.install-sdk), a problem
 was created, submitted to Azure Quantum, and solved synchronously. This is
 convenient for certain environments, but unsuitable for others where there is a
 need to either submit a problem and check on it later, or submit many problems

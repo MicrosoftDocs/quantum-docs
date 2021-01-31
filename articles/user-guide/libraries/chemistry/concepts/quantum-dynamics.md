@@ -47,7 +47,7 @@ This guarantees that the eigenvalues of the matrices are real-valued; a conditio
 Just as the analogues of position and momentum in quantum mechanics need to be replaced by operators, the Hamiltonian function needs to be similarly replaced by an operator.
 For example, for a particle in free space we have that $H(x,p) = p^2/2m$ whereas in quantum mechanics the Hamiltonian operator $\hat{H}$ is $\hat{H}= \hat{p}^2/2m$ where $\hat{p}$ is the momentum operator.
 From this perspective, going from classical to quantum dynamics merely involves replacing the variables used in ordinary dynamics with operators.
-Once we have constructed the Hamiltonian operator by translating the ordinary classical Hamiltonian over to quantum language, we can express the dynamics of an arbitrary quantum mechanical quantity (i.e. quantum mechanical operator) $\hat{f}(t)$ via
+Once we have constructed the Hamiltonian operator by translating the ordinary classical Hamiltonian over to quantum language, we can express the dynamics of an arbitrary quantum mechanical quantity (for example, quantum mechanical operator) $\hat{f}(t)$ via
 \begin{align}
 \frac{d}{dt} \hat{f} = \partial_t \hat{f} + [\hat{f},\hat{H}],
 \end{align}

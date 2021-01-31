@@ -60,7 +60,7 @@ Once you create a job, various metadata is available about its state and run his
 
 ## Job lifecycle
 
-You typically create jobs using one of the quantum SDKs (for example, the [Python SDK](xref:microsoft.quantum.optimization.python-sdk) or the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.qdk-overview)). Once you've written
+You typically create jobs using one of the quantum SDKs (for example, the [Python SDK](xref:microsoft.quantum.optimization.install-sdk) or the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp)). Once you've written
 your quantum program or expressed your QIO problem, you can select a target and
 submit your job.
 

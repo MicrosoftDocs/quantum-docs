@@ -97,7 +97,7 @@ Some helpful tips while using Q# Jupyter Notebooks:
 - Use the command `%lsmagic` to see all of the available magic commands, including
   the ones for Azure Quantum.
 - Detailed usage information for any magic command can be displayed by simply
-  appending a `?` to the command, e.g. `%azure.connect?`.
+  appending a `?` to the command, for example, `%azure.connect?`.
 
 - Documentation for magic commands is also available online:
   [%azure.connect](https://docs.microsoft.com/qsharp/api/iqsharp-magic/azure.connect),

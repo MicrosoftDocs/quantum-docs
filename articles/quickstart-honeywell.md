@@ -74,7 +74,7 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 1. Add at least the Honeywell provider, then click **Review + create**.
 
 1. Review the settings and approve the *Terms and Conditions of Use* of
-   the selected providers. If everything is correct, click on **Create** to create your workspace.
+   the selected providers. If everything is correct, click **Create** to create your workspace.
 
    ![Review and create the workspace](./media/azure-quantum-preview-terms-honeywell.png)
 

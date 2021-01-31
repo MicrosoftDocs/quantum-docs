@@ -62,7 +62,7 @@ Regardless of whether you are using C# or Python to host Q# operations, follow t
     dotnet remove [project_name].csproj package Microsoft.Quantum.Development.Kit
     ```
 
-   If your projects use any other Microsoft.Quantum or Microsoft.Azure.Quantum packages (e.g. Microsoft.Quantum.Numerics), run the **add** command for these to update the version used.
+   If your projects use any other Microsoft.Quantum or Microsoft.Azure.Quantum packages (for example, Microsoft.Quantum.Numerics), run the `add` command for these to update the version used.
 
     ```dotnetcli
     dotnet add [project_name].csproj package [package_name]

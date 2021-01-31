@@ -120,7 +120,7 @@ This article lists these principles, and gives examples to help guide how to app
       written deterministically, and so should be exposed to the
       user as `Squared : Double -> Double` rather than as an
       operation `Square : Double => Double`. This allows for the
-      subroutine to be called in more places (e.g.: inside of
+      subroutine to be called in more places (for example: inside of
       other functions), and provides useful optimization
       information to the compiler that can affect performance and
       optimizations.
@@ -178,7 +178,7 @@ This article lists these principles, and gives examples to help guide how to app
 **Key principle:** design functions and operations to work well with Q\# language features such as partial application.
 
 - ✅ **DO** order items in input tuples such that the most commonly
-    applied inputs occur first (i.e.: so that partial application
+    applied inputs occur first (for example, so that partial application
     acts similarly to currying).
 
   *Examples:*
@@ -217,7 +217,7 @@ This article lists these principles, and gives examples to help guide how to app
       type `newtype InputEncoder = (Apply : (Qubit[] => Unit))`.
 
 - ✅ **DO** introduce new user-defined types with named items that
-    allow for future extensibility (e.g.: a results structure that
+    allow for future extensibility (for example: a results structure that
     may contain additional named items in the future).
 
   *Examples:*

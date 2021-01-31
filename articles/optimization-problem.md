@@ -1,5 +1,5 @@
 ---
-title: Quantum Optimization Problem
+title: Quantum optimization problem
 description: Reference for azure.quantum.optimization.Problem
 author: george-moussa
 ms.author: georgenm
@@ -8,7 +8,7 @@ ms.topic: article
 uid: microsoft.quantum.optimization.problem
 ---
 
-# Quantum Optimization Problem
+# Quantum optimization problem
 
 ## Problem
 

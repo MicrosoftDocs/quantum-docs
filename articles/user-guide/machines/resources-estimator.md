@@ -146,7 +146,7 @@ For the root operation - number of qubits actually used to execute it (and opera
 For operations called or subsequent operations - how many more qubits were used in addition to the qubits already used at the beginning of the operation.
 
 Please note, that reused qubits do not contribute to this number.
-I.e. if a few qubits have been released before operation A starts, and all qubit demanded by this operation A (and operations called from A) were satisfied by reusing previously release qubits, the Width of operation A is reported as 0. Successfully borrowed qubits do not contribute to the Width either.
+For example, if a few qubits have been released before operation *A* starts, and all qubit demanded by this operation *A* (and operations called from *A*) were satisfied by reusing previously release qubits, the __Width__ of operation *A* is reported as 0. Successfully borrowed qubits do not contribute to the Width either.
 
 __QubitCount:__
 For the root operation - minimum number of qubits that would be sufficient to execute this operation (and operations called from it).
@@ -155,7 +155,7 @@ For operations called or subsequent operations - minimum number of qubits that w
 Two modes of operation are supported. Mode is selected by setting QCTraceSimulatorConfiguration.OptimizeDepth.
 
 __OptimizeDepth=true:__
-QubitManager is discouraged from qubit reuse and allocates new qubit every time it is asked for a qubit. For the root operation __Depth__ becomes the minimum depth (lower bound). Compatible __Width__ is reported for this depth (both can be achieved at the same time). Note, that this width will likely be not optimal given this depth. __QubitCount__ may be lower than Width for the root operation because it assumes reuse.
+QubitManager is discouraged from qubit reuse and allocates new qubit every time it is asked for a qubit. For the root operation __Depth__ becomes the minimum depth (lower bound). Compatible __Width__ is reported for this depth (both can be achieved at the same time). Note that this width will likely be not optimal given this depth. __QubitCount__ may be lower than __Width__ for the root operation because it assumes reuse.
 
 __OptimizeDepth=false:__
 QubitManager is encouraged to reuse qubits and will reuse released qubits before allocating new ones. For the root operation __Width__ becomes the minimal width (lower bound). Compatible __Depth__ is reported on which it can be achieved. __QubitCount__ will be the same as __Width__ for the root operation assuming no borrowing.

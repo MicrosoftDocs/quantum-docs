@@ -1,5 +1,5 @@
 ---
-title: Quantum Optimization Problem Type
+title: Quantum optimization problem type
 description: Reference for azure.quantum.optimization.ProblemType
 author: george-moussa
 ms.author: georgenm
@@ -10,7 +10,7 @@ uid: microsoft.quantum.optimization.problem-type
 
 # Azure.Quantum.Optimization.ProblemType
 
-## Quantum Optimization Problem Type
+## Quantum optimization problem type
 
 ```py
 from azure.quantum.optimization import ProblemType

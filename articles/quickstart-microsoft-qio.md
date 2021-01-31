@@ -53,7 +53,7 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 
 1. Ensure the Microsoft QIO provider is enabled (it is by default), then click **Review + create**.
 
-1. Review the setting you've selected and if everything is correct, click on **Create** to create your workspace.
+1. Review the setting you've selected and if everything is correct, click **Create** to create your workspace.
 
    ![Review and create the workspace](./media/azure-quantum-preview-terms.png)
 
@@ -193,7 +193,7 @@ solver = ParallelTempering(workspace, timeout=100) # timeout in seconds
 result = solver.optimize(problem)
 ```
 
-Here you created an instance of a `ParallelTempering` solver for the problem. You could have chosen other Azure Quantum optimization solvers (e.g. `SimulatedAnnealing`) without needing to change more lines of code. The type `Problem` is the common parameter for all the solvers of Azure Quantum.
+Here you created an instance of a `ParallelTempering` solver for the problem. You could have chosen other Azure Quantum optimization solvers (for example, `SimulatedAnnealing`) without needing to change more lines of code. The type `Problem` is the common parameter for all the solvers of Azure Quantum.
 
 You then call `solver.optimize()` and supply the `problem` as the argument. This submits the problem synchronously to Azure Quantum and returns a Python dictionary of values to save the `result` variable for parsing in the next step.
 
