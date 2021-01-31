@@ -5,7 +5,7 @@
   items:
   - name: Overview
     items:
-    - name: Introduction to Azure Quantum
+    - name: Introduction to Azure Quantum 
       href: overview-azure-quantum.md
   - name: Get started
     items:
