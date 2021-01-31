@@ -183,7 +183,7 @@ Our qubits were in state $\ket{0}$ when we allocated them, and much like in life
 
 ### Deallocate qubits
 
-We call [`DumpMachine()`](xref:Microsoft.Quantum.Diagnostics.DumpMachine) again to see the post-operation state, and finally apply [`ResetAll`](xref:Microsoft.Quantum.Intrinsic.Resetall) to the qubit register to reset our qubits to $\ket{0}$ before completing the operation:
+We call [`DumpMachine()`](xref:Microsoft.Quantum.Diagnostics.DumpMachine) again to see the post-operation state, and finally apply [`ResetAll`](xref:Microsoft.Quantum.Intrinsic.ResetAll) to the qubit register to reset our qubits to $\ket{0}$ before completing the operation:
 
 ```qsharp
             Message("After:");
