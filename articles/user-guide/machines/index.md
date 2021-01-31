@@ -1,12 +1,14 @@
 ---
-title: Quantum simulators and Q# programs
-description: Describes the quantum simulators available as target machines for Q# programs.
 author: QuantumWriter
-ms.author: v-benbra 
-ms.date: 6/17/2020
+description: Describes the quantum simulators available as target machines for Q# programs.
+ms.author: v-benbra
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.machines.overview
 no-loc: ['Q#', '$$v']
+title: Quantum simulators and Q# programs
+uid: microsoft.quantum.machines.overview
 ---
 
 # Quantum simulators

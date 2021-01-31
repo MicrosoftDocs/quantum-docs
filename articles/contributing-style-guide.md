@@ -1,12 +1,14 @@
 ---
-title: Q# Style Guide
-description: Learn the naming, input, documentation and formatting conventions for Q# programming language applications and libraries.
 author: cgranade
+description: Learn the naming, input, documentation and formatting conventions for Q# programming language applications and libraries.
 ms.author: chgranad
-ms.date: 10/12/2018
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: contributor-guide
-uid: microsoft.quantum.contributing-qdk.overview.style
 no-loc: ['Q#', '$$v']
+title: Q# Style Guide
+uid: microsoft.quantum.contributing-qdk.overview.style
 ---
 
 # Q# style guide #

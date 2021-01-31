@@ -1,12 +1,14 @@
 ---
-title: Design your own classifier with the QDK
-description: Learn the basic concepts of designing circuit models for the quantum circuit centric classifier.
 author: geduardo
+description: Learn the basic concepts of designing circuit models for the quantum circuit centric classifier.
 ms.author: v-edsanc
-ms.date: 02/17/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview.machine-learning.design
 no-loc: ['Q#', '$$v']
+title: Design your own classifier with the QDK
+uid: microsoft.quantum.libraries.overview.machine-learning.design
 ---
 
 # Design your own classifier

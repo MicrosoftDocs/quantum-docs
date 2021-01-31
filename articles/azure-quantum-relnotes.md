@@ -1,10 +1,12 @@
 ---
-title: Azure Quantum Release Notes
-description: Learn about the latest updates of the Azure Quantum service. 
 author: geduardo
+description: Learn about the latest updates of the Azure Quantum service.
 ms.author: v-edsanc
-ms.date: 07/27/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: core
 ms.topic: article
+title: Azure Quantum Release Notes
 uid: microsoft.quantum.azure.relnotes
 ---
 
@@ -63,4 +65,4 @@ A highly requested feature – the ability to see the parameters chosen by param
 }
 ```
 
-No SDK updates are needed to take advantage of this update. 
+No SDK updates are needed to take advantage of this update.

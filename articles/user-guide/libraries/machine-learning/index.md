@@ -1,12 +1,14 @@
 ---
-title: Introduction to the Quantum Machine Learning Package | Microsoft Docs
-description: Introduction to the Quantum Machine Learning Package
 author: QuantumWriter
+description: Introduction to the Quantum Machine Learning Package
 ms.author: alexeib
-ms.date: 12/5/2019
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries-machine-learning.overview
 no-loc: ['Q#', '$$v']
+title: Introduction to the Quantum Machine Learning Package | Microsoft Docs
+uid: microsoft.quantum.libraries-machine-learning.overview
 ---
 
 # Introduction to the Quantum Machine Learning Library

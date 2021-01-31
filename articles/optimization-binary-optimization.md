@@ -1,10 +1,12 @@
 ---
-title: Binary optimization
-description: This document describes binary optimization and its use in formulating optimization problems.
 author: aminbarzegar
+description: This document describes binary optimization and its use in formulating optimization problems.
 ms.author: ambarzeg
-ms.date: 1/21/2021
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: article
+title: Binary optimization
 uid: microsoft.quantum.optimization.concepts.binary-optimization
 ---
 

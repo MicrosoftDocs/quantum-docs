@@ -1,12 +1,14 @@
 ---
-title: Conditional expressions in Q#
-description: Learn about conditional expressions in the Q# programming language.
 author: bettinaheim
+description: Learn about conditional expressions in the Q# programming language.
 ms.author: beheim
-ms.date: 10/07/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: reference
-uid: microsoft.quantum.qsharp.conditionalexpressions
 no-loc: ['Q#', '$$v']
+title: Conditional expressions in Q#
+uid: microsoft.quantum.qsharp.conditionalexpressions
 ---
 
 <!---
@@ -14,4 +16,3 @@ no-loc: ['Q#', '$$v']
 -->
 
 [!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/3_Expressions/ConditionalExpressions.md)]
-

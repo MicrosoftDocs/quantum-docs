@@ -1,10 +1,12 @@
 ---
-title: Create and run Q# applications in Azure Quantum
-description: Explanation of how to create applications for the different targets of Azure-Quantum
 author: KittyYeungQ
+description: Explanation of how to create applications for the different targets of Azure-Quantum
 ms.author: kitty
-ms.date: 06/29/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: core
 ms.topic: article
+title: Create and run Q# applications in Azure Quantum
 uid: microsoft.quantum.create-applications
 ---
 

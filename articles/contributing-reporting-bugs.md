@@ -1,12 +1,14 @@
 ---
-title: Reporting Quantum Development Kit bugs
-description: Learn how to report bugs or issues with the Quantum Development Kit (QDK). 
 author: cgranade
+description: Learn how to report bugs or issues with the Quantum Development Kit (QDK).
 ms.author: chgranad
-ms.date: 10/12/2018
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: contributor-guide
-uid: microsoft.quantum.contributing-qdk.overview.reporting
 no-loc: ['Q#', '$$v']
+title: Reporting Quantum Development Kit bugs
+uid: microsoft.quantum.contributing-qdk.overview.reporting
 ---
 
 # Reporting Bugs #
@@ -27,4 +29,3 @@ When creating a new issue, you'll be prompted with a template that suggests some
 - Information about your software environment (for example: OS, .NET Core, and Quantum Development Kit versions)
 
 You can also [create a pull request](https://help.github.com/articles/about-pull-requests/) to fix the bug directly, if it's very straightforward and is not worth the discussion (for example, a typo).
-

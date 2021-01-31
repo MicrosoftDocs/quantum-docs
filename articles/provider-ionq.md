@@ -1,10 +1,12 @@
 ---
-title: IonQ provider
-description: This document provides the technical details of the IonQ provider
 author: KittyYeungQ
+description: This document provides the technical details of the IonQ provider
 ms.author: kitty
-ms.date: 06/29/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: computing
 ms.topic: reference
+title: IonQ provider
 uid: microsoft.quantum.providers.ionq
 ---
 

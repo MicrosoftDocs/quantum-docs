@@ -1,10 +1,12 @@
 ---
-title: Key concepts for optimization
 description: Learn about the key concepts of optimization, including cost functions, search spaces, and landscapes. 
 author: frtibble
 ms.author: frtibble
-ms.date: 08/18/2020
-ms.topic: overview
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: optimization
+ms.topic: conceptual
+title: Key concepts for optimization
 uid: microsoft.quantum.optimization.concepts.overview.key-concepts
 ---
 

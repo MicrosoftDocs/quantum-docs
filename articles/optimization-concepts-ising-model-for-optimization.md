@@ -1,10 +1,12 @@
 ---
-title: Ising model
-description: This document describes the Ising model and its use in formulating optimization problems.
 author: andrist
+description: This document describes the Ising model and its use in formulating optimization problems.
 ms.author: ruandris
-ms.date: 1/13/2021
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: article
+title: Ising model
 uid: microsoft.quantum.optimization.concepts.ising-model
 ---
 

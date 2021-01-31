@@ -1,12 +1,14 @@
 ---
-title: Operator precedence in Q#
-description: Learn about operator precedence in Q#.
 author: bettinaheim
+description: Learn about operator precedence in Q#.
 ms.author: beheim
-ms.date: 10/07/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: reference
-uid: microsoft.quantum.qsharp.precedenceandassociativity
 no-loc: ['Q#', '$$v']
+title: Operator precedence in Q#
+uid: microsoft.quantum.qsharp.precedenceandassociativity
 ---
 
 <!---
@@ -14,4 +16,3 @@ no-loc: ['Q#', '$$v']
 -->
 
 [!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/3_Expressions/PrecedenceAndAssociativity.md)]
-

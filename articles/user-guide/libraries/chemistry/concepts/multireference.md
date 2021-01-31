@@ -1,12 +1,14 @@
 ---
-title: Correlated wavefunctions
-description: Learn about dynamic and non-dynamic correlations in wavefunctions using the Microsoft Quantum chemistry library. 
 author: guanghaolow
+description: Learn about dynamic and non-dynamic correlations in wavefunctions using the Microsoft Quantum chemistry library.
 ms.author: gulow
-ms.date: 05/28/2019
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview-chemistry.concepts.multireference
 no-loc: ['Q#', '$$v']
+title: Correlated wavefunctions
+uid: microsoft.quantum.libraries.overview-chemistry.concepts.multireference
 ---
 
 # Correlated wavefunctions

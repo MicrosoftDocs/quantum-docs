@@ -1,12 +1,14 @@
 ---
-title: Using additional Q# libraries
-description: Learn how to add additional Q# libraries to your quantum applications.
 author: cgranade
+description: Learn how to add additional Q# libraries to your quantum applications.
 ms.author: chgranad
-ms.date: 06/30/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: article
-uid: microsoft.quantum.libraries.overview.using
 no-loc: ['Q#', '$$v']
+title: Using additional Q# libraries
+uid: microsoft.quantum.libraries.overview.using
 ---
 
 # Using Additional Q# Libraries

@@ -1,12 +1,14 @@
 ---
-title: Broombridge Quantum Chemistry Schema
-description: Overview of the Broombridge quantum chemistry schema, used to model real-world chemistry problems with the Microsoft Quantum Development Kit. 
 author: martinro
+description: Overview of the Broombridge quantum chemistry schema, used to model real-world chemistry problems with the Microsoft Quantum Development Kit.
 ms.author: martinro
-ms.date: 10/17/2018
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview.chemistry.schema.broombridge
 no-loc: ['Q#', '$$v']
+title: Broombridge Quantum Chemistry Schema
+uid: microsoft.quantum.libraries.overview.chemistry.schema.broombridge
 ---
 
 # Broombridge Quantum Chemistry Schema # 

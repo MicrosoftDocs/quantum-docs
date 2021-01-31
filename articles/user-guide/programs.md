@@ -1,10 +1,12 @@
 ---
-title: Q# programming language introdution
-description: Quick introduction into quantum programs in the Q# programming language. 
 author: beheim
+description: Quick introduction into quantum programs in the Q# programming language.
 ms.author: beheim
-ms.date: 11/08/2020
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: article
+title: Q# programming language introdution
 uid: microsoft.quantum.user-guide-qdk.overview.programs
 ---
 
@@ -55,6 +57,3 @@ operation MeasureOneQubit() : Result {
 
 Our [Quantum Katas](https://github.com/microsoft/QuantumKatas#introduction) give a good introduction on [Quantum Computing Concepts](https://github.com/microsoft/QuantumKatas#quantum-computing-concepts-qubits-and-gates) such as common quantum operations and how to manipulate qubits. 
 More examples can also be found in [Intrinsic Operations and Functions](xref:microsoft.quantum.libraries.overview.standard.prelude).
-
-
-

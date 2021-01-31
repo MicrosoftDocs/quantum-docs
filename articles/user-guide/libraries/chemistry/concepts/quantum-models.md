@@ -1,12 +1,14 @@
 ---
-title: Quantum Models for Electronic Systems
-description: Learn how molecular electronic systems are simulated using quantum modeling. 
 author: bradben
+description: Learn how molecular electronic systems are simulated using quantum modeling.
 ms.author: v-benbra
-ms.date: 10/09/2017
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview-chemistry.concepts.quantummodels
 no-loc: ['Q#', '$$v']
+title: Quantum Models for Electronic Systems
+uid: microsoft.quantum.libraries.overview-chemistry.concepts.quantummodels
 ---
 
 # Quantum Models for Electronic Systems

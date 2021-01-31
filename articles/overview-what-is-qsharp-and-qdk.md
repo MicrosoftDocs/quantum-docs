@@ -1,12 +1,14 @@
 ---
-title: What are the Q# programming language & QDK?
-description: Learn about the Quantum Development Kit (QDK), the Q# programming language, and how you can create quantum programs.
 author: bradben
-ms.author:  v-benbra
+description: Learn about the Quantum Development Kit (QDK), the Q# programming language, and how you can create quantum programs.
+ms.author: v-benbra
 ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: overview
-uid: microsoft.quantum.overview.q-sharp
 no-loc: ['Q#', '$$v']
+title: What are the Q# programming language & QDK?
+uid: microsoft.quantum.overview.q-sharp
 ---
 
 # What are the Q# programming language and Quantum Development Kit (QDK)?

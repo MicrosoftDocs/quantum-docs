@@ -1,14 +1,16 @@
 ---
-# Mandatory fields. See more on aka.ms/skyeye/meta.
-title: Open source licensing for the QDK
-description: Learn about the licensing for using and contributing to the Microsoft Q# standard libraries - licensing and contributing.
 author: martinro
+description: Learn about the licensing for using and contributing to the Microsoft Q# standard libraries - licensing and contributing.
 ms.author: martinro
-ms.date: 2/16/2018
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview.licensing
 no-loc: ['Q#', '$$v']
+title: Open source licensing for the QDK
+uid: microsoft.quantum.libraries.overview.licensing
 ---
+
 # Licensing #
 
 The Quantum Development Kit is provided with an extensive collection of open-source functions and operations, licensed under the [MIT license](https://github.com/Microsoft/Quantum/blob/main/LICENSE.txt).

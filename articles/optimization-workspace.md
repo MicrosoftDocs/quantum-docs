@@ -1,10 +1,12 @@
 ---
-title: Azure Quantum Workspace
-description: Reference for azure.quantum.Workspace
 author: george-moussa
+description: Reference for azure.quantum.Workspace
 ms.author: georgenm
-ms.date: 1/8/2021
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: reference
+title: Azure Quantum Workspace
 uid: microsoft.quantum.optimization.workspace
 ---
 

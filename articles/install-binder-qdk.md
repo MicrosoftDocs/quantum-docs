@@ -1,13 +1,16 @@
 ---
-title: Develop with Q# and Binder
-description: Learn how to create a Q# application using Binder. You can use Binder to run and share Jupyter Notebooks online. 
 author: bradben
+description: Learn how to create a Q# application using Binder. You can use Binder to run and share Jupyter Notebooks online.
 ms.author: v-benbra
 ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: quickstart
-uid: microsoft.quantum.install-qdk.overview.binder
 no-loc: ['Q#', '$$v']
+title: Develop with Q# and Binder
+uid: microsoft.quantum.install-qdk.overview.binder
 ---
+
 # Develop with Q# and Binder
 
 Learn how to create a Q# application using Binder. You can use Binder to run and share Jupyter Notebooks online. 

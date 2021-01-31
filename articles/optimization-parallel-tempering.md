@@ -1,10 +1,13 @@
 ---
-title: Parallel tempering
-description: This document provides a basic guide about how to use parallel tempering solver in Azure Quantum.
 author: haohaiyu
+description: This document provides a basic guide about how to use parallel tempering
+  solver in Azure Quantum.
 ms.author: hay
-ms.date: 01/12/2021
-ms.topic: reference
+ms.date: 02/01/2021
+ms.service: azure-quantum
+ms.subservice: optimization
+ms.topic: how-to
+title: Parallel tempering
 uid: microsoft.quantum.optimization.parallel-tempering
 ---
 
