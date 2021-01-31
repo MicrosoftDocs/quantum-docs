@@ -155,76 +155,76 @@
       href: install-get-started-qdk.md
     - name: Set up the QDK
       href: install-overview-qdk.md
-    - name: Quantum Computing
+  - name: Quantum Computing
+    items:
+    - name: Getting started 
       items:
-      - name: Getting started 
-        items:
-        - name: Q# applications
-          href: install-command-line-qdk.md
-        - name: Q# with Jupyter Notebooks
-          href: install-jupyter-qkd.md
-        - name: Q# with Python
-          href: install-python-qdk.md
-        - name: Q# with .NET
-          href: install-csharp-qdk.md
-      - name: Update the QDK
-        href: install-update-qdk.md
-      - name: Tutorials
-        items:
-        - name: Quantum random number generator
-          href: tutorial-qdk-quantum-random-number-generator.md
-        - name: Explore entanglement with Q#
-          href: tutorial-qdk-explore-entanglement.md
-        - name: Implement Grover's search algorithm
-          href: tutorial-qdk-grovers-search.md
-        - name: Qubit-level programming
-          href: tutorial-qdk-qubit-level-program.md
-        - name: Learn Q# with the Quantum Katas
-          href: tutorial-qdk-intro-to-katas.md
-        - name: Q# code samples
-          href: https://docs.microsoft.com/samples/browse/?languages=qsharp
-      - name: Concepts
-        items:
-        - name: "Quantum computing history & background"
-          href: concepts-overview.md
-        - name: Vectors and matrices
-          href: concepts-vectors-and-matrices.md
-        - name: Advanced matrix concepts
-          href: concepts-advanced-matrices.md
-        - name: The qubit
-          href: concepts-the-qubit.md
-        - name: Multiple qubits
-          href: concepts-multiple-qubits.md
-        - name: Dirac notation
-          href: concepts-dirac-notation.md
-        - name: Pauli measurements
-          href: concepts-pauli-measurements.md
-        - name: Quantum circuits
-          href: concepts-circuits.md
-        - name: Quantum oracles
-          href: concepts-oracles.md
-    - name: Optimization
+      - name: Q# applications
+        href: install-command-line-qdk.md
+      - name: Q# with Jupyter Notebooks
+        href: install-jupyter-qkd.md
+      - name: Q# with Python
+        href: install-python-qdk.md
+      - name: Q# with .NET
+        href: install-csharp-qdk.md
+    - name: Update the QDK
+      href: install-update-qdk.md
+    - name: Tutorials
       items:
-      - name: Introduction
-        items:
-        - name: Introduction to optimization
-          href: optimization-overview-introduction.md
-        - name: What is quantum inspired optimization (QIO)?
-          href: optimization-what-is-quantum-optimization.md
-        - name: Key concepts
-          href: optimization-overview-key-concepts.md
-      - name: Concepts
-        items:
-        - name: Which solver should you use?
-          href: optimization-which-solver-should-you-use.md
-        - name: Cost functions
-          href: optimization-concepts-cost-functions.md
-        - name: Ising model
-          href: optimization-concepts-ising-model-for-optimization.md
-        - name: Binary optimization (QUBOs & PUBOs)
-          href: optimization-binary-optimization.md  
-        - name: Samples for using Azure Quantum optimization solvers 
-          href: https://github.com/microsoft/qio-samples
+      - name: Quantum random number generator
+        href: tutorial-qdk-quantum-random-number-generator.md
+      - name: Explore entanglement with Q#
+        href: tutorial-qdk-explore-entanglement.md
+      - name: Implement Grover's search algorithm
+        href: tutorial-qdk-grovers-search.md
+      - name: Qubit-level programming
+        href: tutorial-qdk-qubit-level-program.md
+      - name: Learn Q# with the Quantum Katas
+        href: tutorial-qdk-intro-to-katas.md
+      - name: Q# code samples
+        href: https://docs.microsoft.com/samples/browse/?languages=qsharp
+    - name: Concepts
+      items:
+      - name: "Quantum computing history & background"
+        href: concepts-overview.md
+      - name: Vectors and matrices
+        href: concepts-vectors-and-matrices.md
+      - name: Advanced matrix concepts
+        href: concepts-advanced-matrices.md
+      - name: The qubit
+        href: concepts-the-qubit.md
+      - name: Multiple qubits
+        href: concepts-multiple-qubits.md
+      - name: Dirac notation
+        href: concepts-dirac-notation.md
+      - name: Pauli measurements
+        href: concepts-pauli-measurements.md
+      - name: Quantum circuits
+        href: concepts-circuits.md
+      - name: Quantum oracles
+        href: concepts-oracles.md
+  - name: Optimization
+    items:
+    - name: Introduction
+      items:
+      - name: Introduction to optimization
+        href: optimization-overview-introduction.md
+      - name: What is quantum inspired optimization (QIO)?
+        href: optimization-what-is-quantum-optimization.md
+      - name: Key concepts
+        href: optimization-overview-key-concepts.md
+    - name: Concepts
+      items:
+      - name: Which solver should you use?
+        href: optimization-which-solver-should-you-use.md
+      - name: Cost functions
+        href: optimization-concepts-cost-functions.md
+      - name: Ising model
+        href: optimization-concepts-ising-model-for-optimization.md
+      - name: Binary optimization (QUBOs & PUBOs)
+        href: optimization-binary-optimization.md  
+      - name: Samples for using Azure Quantum optimization solvers 
+        href: https://github.com/microsoft/qio-samples
   - name: Resources
     items:
     - name: Build your skills with MS Learn
