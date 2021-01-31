@@ -1,10 +1,12 @@
 ---
-title: Quantum Optimization Problem Type
-description: Reference for azure.quantum.optimization.ProblemType
 author: george-moussa
+description: Reference for azure.quantum.optimization.ProblemType
 ms.author: georgenm
-ms.date: 1/8/2021
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: article
+title: Quantum Optimization Problem Type
 uid: microsoft.quantum.optimization.problem-type
 ---
 

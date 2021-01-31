@@ -1,10 +1,12 @@
 ---
-title: Azure.Quantum
-description: Reference for azure.quantum
 author: KittyYeungQ
+description: Reference for azure.quantum
 ms.author: kitty
-ms.date: 06/29/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: computing
 ms.topic: article
+title: Azure.Quantum
 uid: microsoft.quantum.reference.python-sdk.azure.quantum
 ---
 

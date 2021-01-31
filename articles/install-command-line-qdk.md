@@ -1,12 +1,14 @@
 ---
-title: Develop with Q# applications in an IDE
-description: Learn how to develop Q# applications in an editor/IDE and run applications from the .NET console
 author: bradben
+description: Learn how to develop Q# applications in an editor/IDE and run applications from the .NET console
 ms.author: v-benbra
-ms.date: 02/01/2021
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: quickstart
-uid: microsoft.quantum.install-qdk.overview.standalone
 no-loc: ['Q#', '$$v']
+title: Develop with Q# applications in an IDE
+uid: microsoft.quantum.install-qdk.overview.standalone
 ---
 
 # Develop with Q# applications in an IDE

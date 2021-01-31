@@ -1,12 +1,14 @@
 ---
-title: Quantum Dynamics 
-description: Learn the similarities and differences between quantum dynamics and classical dynamics. 
 author: bradben
+description: Learn the similarities and differences between quantum dynamics and classical dynamics.
 ms.author: v-benbra
-ms.date: 10/09/2017
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview-chemistry.concepts.quantumdynamics
 no-loc: ['Q#', '$$v']
+title: Quantum Dynamics
+uid: microsoft.quantum.libraries.overview-chemistry.concepts.quantumdynamics
 ---
 
 # Quantum Dynamics

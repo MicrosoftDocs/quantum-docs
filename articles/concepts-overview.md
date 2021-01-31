@@ -1,12 +1,14 @@
 ---
-title: Quantum computing history and background
-description: Learn about the history of quantum computing, some background describing how it works, and about the Quantum Development Kit (QDK). 
 author: QuantumWriter
+description: Learn about the history of quantum computing, some background describing how it works, and about the Quantum Development Kit (QDK).
 ms.author: v-benbra
-uid: microsoft.quantum.concepts.intro
-ms.date: 02/01/2021
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
+title: Quantum computing history and background
+uid: microsoft.quantum.concepts.intro
 ---
 
 # Quantum computing history and background

@@ -1,11 +1,14 @@
 ---
-title: Type conversions in the Q# standard libraries
-description: Learn about common and user-defined type conversion functions in the Q# standard libraries. 
 author: cgranade
-uid: microsoft.quantum.libraries.overview.convert
-ms.author: chgranad 
+description: Learn about common and user-defined type conversion functions in the Q# standard libraries.
+ms.author: chgranad
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
+title: Type conversions in the Q# standard libraries
+uid: microsoft.quantum.libraries.overview.convert
 ---
 
 # Type Conversions #

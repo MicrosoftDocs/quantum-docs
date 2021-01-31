@@ -1,12 +1,14 @@
 ---
-title: Specialization declarations in Q#
-description: Learn how to declare specialization to support certain functors in Q# operations.
 author: bettinaheim
+description: Learn how to declare specialization to support certain functors in Q# operations.
 ms.author: beheim
-ms.date: 10/07/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: reference
-uid: microsoft.quantum.qsharp.specializationdeclarations
 no-loc: ['Q#', '$$v']
+title: Specialization declarations in Q#
+uid: microsoft.quantum.qsharp.specializationdeclarations
 ---
 
 <!-- 
@@ -14,4 +16,3 @@ no-loc: ['Q#', '$$v']
 -->
 
 [!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/1_ProgramStructure/4_SpecializationDeclarations.md)]
-

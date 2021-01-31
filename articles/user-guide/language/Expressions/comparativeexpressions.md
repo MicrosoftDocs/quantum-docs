@@ -1,12 +1,14 @@
 ---
-title: Comparative expressions in Q#
-description: Learn about equality comparison expressions in the Q# programming language.
 author: bettinaheim
+description: Learn about equality comparison expressions in the Q# programming language.
 ms.author: beheim
-ms.date: 10/07/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: reference
-uid: microsoft.quantum.qsharp.comparativeexpressions
 no-loc: ['Q#', '$$v']
+title: Comparative expressions in Q#
+uid: microsoft.quantum.qsharp.comparativeexpressions
 ---
 
 <!---
@@ -14,4 +16,3 @@ no-loc: ['Q#', '$$v']
 -->
 
 [!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/3_Expressions/ComparativeExpressions.md)]
-

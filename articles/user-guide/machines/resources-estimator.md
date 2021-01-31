@@ -1,12 +1,14 @@
 ---
-title: Quantum resources estimator - Quantum Development Kit
-description: Learn about the Microsoft QDK resources estimator, which estimates the resources required to run a given instance of a Q# operation on a quantum computer.
 author: anpaz
-ms.author: anpaz 
-ms.date: 06/26/2020
+description: Learn about the Microsoft QDK resources estimator, which estimates the resources required to run a given instance of a Q# operation on a quantum computer.
+ms.author: anpaz
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.machines.overview.resources-estimator
 no-loc: ['Q#', '$$v']
+title: Quantum resources estimator - Quantum Development Kit
+uid: microsoft.quantum.machines.overview.resources-estimator
 ---
 
 # Quantum Development Kit (QDK) resources estimator
@@ -168,4 +170,4 @@ You can use <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> fr
 
 - [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)
 - [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
-- [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) 
+- [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)

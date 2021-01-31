@@ -1,12 +1,14 @@
 ---
-title: Contributing documentation to the Microsoft QDK
-description: Learn how to contribute conceptual or API content to the Microsoft Quantum documentation set. 
 author: cgranade
+description: Learn how to contribute conceptual or API content to the Microsoft Quantum documentation set.
 ms.author: chgranad
-ms.date: 10/12/2018
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: contributor-guide
-uid: microsoft.quantum.contributing-qdk.overview.docs
 no-loc: ['Q#', '$$v']
+title: Contributing documentation to the Microsoft QDK
+uid: microsoft.quantum.contributing-qdk.overview.docs
 ---
 
 # Improving documentation

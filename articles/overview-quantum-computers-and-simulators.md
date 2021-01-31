@@ -1,12 +1,14 @@
 ---
-title: Quantum computers and quantum simulators
-description: Learn about quantum hardware, quantum simulators, and how quantum operations work.
 author: bradben
-ms.author:  v-benbra
-ms.date: 02/01/2021
+description: Learn about quantum hardware, quantum simulators, and how quantum operations work.
+ms.author: v-benbra
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: overview
-uid: microsoft.quantum.overview.simulators
 no-loc: ['Q#', '$$v']
+title: Quantum computers and quantum simulators
+uid: microsoft.quantum.overview.simulators
 ---
 
 # Quantum computers and quantum simulators

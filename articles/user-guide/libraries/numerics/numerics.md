@@ -1,12 +1,14 @@
 ---
-title: Using the Microsoft Q# Numerics Library
-description: Learn about the types and operations available in the Microsoft Quantum Numerics library.
 author: thomashaener
+description: Learn about the types and operations available in the Microsoft Quantum Numerics library.
 ms.author: thhaner
-ms.date: 5/14/2019
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries-numerics.usage
 no-loc: ['Q#', '$$v']
+title: Using the Microsoft Q# Numerics Library
+uid: microsoft.quantum.libraries-numerics.usage
 ---
 
 # Using the Numerics library

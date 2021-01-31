@@ -1,12 +1,14 @@
 ---
-title: The return and fail statements in Q#
-description: Learn about using the 'return' and 'fail' statements in Q# to end a subroutine or program.
 author: bettinaheim
+description: Learn about using the 'return' and 'fail' statements in Q# to end a subroutine or program.
 ms.author: beheim
-ms.date: 10/07/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: reference
-uid: microsoft.quantum.qsharp.returnsandtermination
 no-loc: ['Q#', '$$v']
+title: The return and fail statements in Q#
+uid: microsoft.quantum.qsharp.returnsandtermination
 ---
 
 <!---
@@ -14,4 +16,3 @@ no-loc: ['Q#', '$$v']
 -->
 
 [!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/2_Statements/ReturnsAndTermination.md)]
-

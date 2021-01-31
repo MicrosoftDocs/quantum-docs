@@ -1,12 +1,14 @@
 ---
-title: Item access in Q#
-description: Learn about array item access and array slicing in Q#.
 author: bettinaheim
+description: Learn about array item access and array slicing in Q#.
 ms.author: beheim
-ms.date: 10/07/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: reference
-uid: microsoft.quantum.qsharp.itemaccessexpression
 no-loc: ['Q#', '$$v']
+title: Item access in Q#
+uid: microsoft.quantum.qsharp.itemaccessexpression
 ---
 
 <!---
@@ -14,4 +16,3 @@ no-loc: ['Q#', '$$v']
 -->
 
 [!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/3_Expressions/ItemAccessExpressions.md)]
-

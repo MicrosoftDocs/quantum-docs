@@ -1,12 +1,14 @@
 ---
-title: IQ# Magic Commands
-description: Quick reference page for IQ# magic commands with Q# Jupyter Notebooks
 author: gillenhaalb
-ms.author:  a-gibec
-ms.date: 03/05/2020
+description: Quick reference page for IQ# magic commands with Q# Jupyter Notebooks
+ms.author: a-gibec
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: reference
-uid: microsoft.quantum.user-guide-qdk.overview.quickref.iqsharp
 no-loc: ['Q#', '$$v']
+title: IQ# Magic Commands
+uid: microsoft.quantum.user-guide-qdk.overview.quickref.iqsharp
 ---
 
 # IQ# Magic Commands

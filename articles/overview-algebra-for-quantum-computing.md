@@ -1,12 +1,14 @@
 ---
-title: Linear algebra for quantum computing
-description: Learn what basic linear algebra concepts are needed to understand quantum computing
 author: bradben
-ms.author:  v-benbra
-ms.date: 02/01/2021
+description: Learn what basic linear algebra concepts are needed to understand quantum computing
+ms.author: v-benbra
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: overview
-uid: microsoft.quantum.overview.algebra
 no-loc: ['Q#', '$$v']
+title: Linear algebra for quantum computing
+uid: microsoft.quantum.overview.algebra
 ---
 
 # Linear algebra for quantum computing

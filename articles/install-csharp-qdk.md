@@ -1,12 +1,14 @@
 ---
-title: Develop with Q# and .NET
-description: Learn how to create a Q# application using .NET languages. Q# is built to work well with .NET languages such as C# and F#.
 author: bradben
+description: Learn how to create a Q# application using .NET languages. Q# is built to work well with .NET languages such as C# and F#.
 ms.author: v-benbra
-ms.date: 02/01/2021
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: quickstart
-uid: microsoft.quantum.install-qdk.overview.cs
 no-loc: ['Q#', '$$v']
+title: Develop with Q# and .NET
+uid: microsoft.quantum.install-qdk.overview.cs
 ---
 
 # Develop with Q# and .NET

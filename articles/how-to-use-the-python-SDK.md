@@ -1,10 +1,12 @@
 ---
-title: Use the Python SDK for optimization
-description: This documents provides a basic usage overview of the Python SDK for optimization.
 author: KittyYeungQ
+description: This documents provides a basic usage overview of the Python SDK for optimization.
 ms.author: kitty
-ms.date: 06/29/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: article
+title: Use the Python SDK for optimization
 uid: microsoft.quantum.optimization.python-sdk
 ---
 

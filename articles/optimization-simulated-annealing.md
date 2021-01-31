@@ -1,10 +1,12 @@
 ---
-title: Simulated annealing
-description: This document provides a basic guide about how to use the simulated annealing solver in Azure Quantum.
 author: adelebai
+description: This document provides a basic guide about how to use the simulated annealing solver in Azure Quantum.
 ms.author: adbai
-ms.date: 01/13/2021
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: article
+title: Simulated annealing
 uid: microsoft.quantum.optimization.simulated-annealing
 ---
 

@@ -1,10 +1,12 @@
 ---
-title: Azure.Quantum.Optimization
-description: Reference for azure.quantum.optimization
 author: KittyYeungQ
+description: Reference for azure.quantum.optimization
 ms.author: kitty
-ms.date: 06/29/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: article
+title: Azure.Quantum.Optimization
 uid: microsoft.quantum.reference.python-sdk.azure.quantum.optimization
 ---
 

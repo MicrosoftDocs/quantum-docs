@@ -1,10 +1,12 @@
 ---
-title: Introduction to optimization
-description: Learn about optimization and key terms
 author: anraman
+description: Learn about optimization and key terms
 ms.author: anraman
-ms.date: 08/19/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: article
+title: Introduction to optimization
 uid: microsoft.quantum.optimization.concepts.overview.introduction
 ---
 

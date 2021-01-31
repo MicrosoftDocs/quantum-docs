@@ -1,10 +1,12 @@
 ---
-title: Using a service principal to authenticate
-description: This document provides instructions on how to authenticate using a service principal.
 author: anraman
+description: This document provides instructions on how to authenticate using a service principal.
 ms.author: anraman
-ms.date: 01/21/2021
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: core
 ms.topic: article
+title: Using a service principal to authenticate
 uid: microsoft.quantum.optimization.authenticate-service-principal
 ---
 

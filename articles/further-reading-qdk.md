@@ -1,12 +1,14 @@
 ---
-title: Quantum computing learning resources | Microsoft Docs
-description: A reference list with deep coverage of quantum computing topics if you want to learn more about quantum computer programming.
 author: bradben
-uid: microsoft.quantum.more-information
+description: A reference list with deep coverage of quantum computing topics if you want to learn more about quantum computer programming.
 ms.author: v-benbra
-ms.date: 12/11/2017
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
+title: Quantum computing learning resources | Microsoft Docs
+uid: microsoft.quantum.more-information
 ---
 
 # More quantum computing learning resources

@@ -1,12 +1,14 @@
 ---
-title: Broombridge Schema Specification (ver 0.2)
-description: Details the specifications for the Broombridge quantum chemistry schema v0.2 for the Microsoft quantum chemistry library. 
 author: guanghaolow
+description: Details the specifications for the Broombridge quantum chemistry schema v0.2 for the Microsoft quantum chemistry library.
 ms.author: gulow
-ms.date: 05/28/2019
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview.chemistry.schema.spec_v_0_2
 no-loc: ['Q#', '$$v']
+title: Broombridge Schema Specification (ver 0.2)
+uid: microsoft.quantum.libraries.overview.chemistry.schema.spec_v_0_2
 ---
 
 # Broombridge Specification v0.2 #

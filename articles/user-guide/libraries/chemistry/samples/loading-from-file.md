@@ -1,12 +1,14 @@
 ---
-title: Loading a Hamiltonian from file
-description: Learn how to automatically generate a large Hamiltonian using the Broombridge schema. 
 author: guanghaolow
+description: Learn how to automatically generate a large Hamiltonian using the Broombridge schema.
 ms.author: gulow
-ms.date: 10/23/2018
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: sample
-uid: microsoft.quantum.libraries.overview-chemistry.examples.overview.loadhamiltonian
 no-loc: ['Q#', '$$v']
+title: Loading a Hamiltonian from file
+uid: microsoft.quantum.libraries.overview-chemistry.examples.overview.loadhamiltonian
 ---
 
 # Loading a Hamiltonian from file

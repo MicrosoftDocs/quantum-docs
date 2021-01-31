@@ -1,12 +1,14 @@
 ---
-title: Partial application in Q#
-description: Learn about using partial application with callables in Q#.
 author: bettinaheim
+description: Learn about using partial application with callables in Q#.
 ms.author: beheim
-ms.date: 10/07/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: reference
-uid: microsoft.quantum.qsharp.partialapplication
 no-loc: ['Q#', '$$v']
+title: Partial application in Q#
+uid: microsoft.quantum.qsharp.partialapplication
 ---
 
 <!---
@@ -14,4 +16,3 @@ no-loc: ['Q#', '$$v']
 -->
 
 [!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/3_Expressions/PartialApplication.md)]
-

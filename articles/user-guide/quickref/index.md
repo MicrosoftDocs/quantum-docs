@@ -1,12 +1,14 @@
 ---
-title: Quick reference pages
-description: Quick reference pages for Q#
 author: gillenhaalb
-ms.author:  a-gibec
-ms.date: 03/05/2020
+description: Quick reference pages for Q#
+ms.author: a-gibec
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: reference
-uid: microsoft.quantum.user-guide-qdk.overview.quickref
 no-loc: ['Q#', '$$v']
+title: Quick reference pages
+uid: microsoft.quantum.user-guide-qdk.overview.quickref
 ---
 
 # Quick reference pages

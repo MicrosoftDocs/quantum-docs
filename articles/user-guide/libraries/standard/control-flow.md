@@ -1,13 +1,14 @@
 ---
-# Mandatory fields. See more on aka.ms/skyeye/meta.
-title: Flow controls in the Q# standard libararies
-description: Learn about the flow control operations and functions in the Microsoft Q# standard library. 
 author: QuantumWriter
-uid: microsoft.quantum.libraries.overview-standard.control-flow
+description: Learn about the flow control operations and functions in the Microsoft Q# standard library.
 ms.author: martinro
-ms.date: 12/11/2017
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
+title: Flow controls in the Q# standard libararies
+uid: microsoft.quantum.libraries.overview-standard.control-flow
 ---
 
 # Higher-Order Control Flow #

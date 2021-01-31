@@ -1,11 +1,14 @@
 ---
-title: Diagnostics in the Q# standard libraries
-description: Learn about the diagnostic functions and operations in the Q# standard libraries used to catch mistakes or errors in quantum programs. 
 author: cgranade
-uid: microsoft.quantum.libraries.overview.diagnostics
-ms.author: chgranad 
+description: Learn about the diagnostic functions and operations in the Q# standard libraries used to catch mistakes or errors in quantum programs.
+ms.author: chgranad
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
+title: Diagnostics in the Q# standard libraries
+uid: microsoft.quantum.libraries.overview.diagnostics
 ---
 
 # Diagnostics #

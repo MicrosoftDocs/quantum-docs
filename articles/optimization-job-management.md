@@ -1,10 +1,12 @@
 ---
-title: Manage optimization jobs
-description: This document provides a basic guide to managing jobs submitted for solving optimization problems in Azure Quantum using Python.
 author: KittyYeungQ
+description: This document provides a basic guide to managing jobs submitted for solving optimization problems in Azure Quantum using Python.
 ms.author: kitty
-ms.date: 06/29/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: article
+title: Manage optimization jobs
 uid: microsoft.quantum.optimization.job-management
 ---
 

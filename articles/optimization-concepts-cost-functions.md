@@ -1,10 +1,12 @@
 ---
-title: Cost Functions
-description: This document describes the definition and purpose of the cost function for optimization problems.
 author: andrist
+description: This document describes the definition and purpose of the cost function for optimization problems.
 ms.author: ruandris
-ms.date: 1/13/2021
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: article
+title: Cost Functions
 uid: microsoft.quantum.optimization.concepts.cost-function
 ---
 
@@ -189,4 +191,3 @@ values is different: $\\{0,1\\}$ vs $\\{\pm1\\}$).
 > PUBO and QUBO are handled by the same cost function; there is no separate
 > `"qubo"` identifier. Quadratic binary optimization problems are a special
 > case of a PUBO where each `ids` array has length at most 2.
-

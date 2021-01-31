@@ -1,12 +1,14 @@
 ---
-title: Quantum machine learning library glossary
-description: Glossary of quantum machine learning terms
 author: alexeib2
+description: Glossary of quantum machine learning terms
 ms.author: alexeib
-ms.date: 2/27/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview.machine-learning.training
 no-loc: ['Q#', '$$v']
+title: Quantum machine learning library glossary
+uid: microsoft.quantum.libraries.overview.machine-learning.training
 ---
 
 # Quantum Machine Learning glossary

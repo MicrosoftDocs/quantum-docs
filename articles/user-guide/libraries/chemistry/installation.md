@@ -1,12 +1,14 @@
 ---
-title: Q# Chemistry Library Installation
-description: Learn how to install the Quantum chemistry library and use it with the NWChem computational chemistry platform. 
 author: guanghaolow
+description: Learn how to install the Quantum chemistry library and use it with the NWChem computational chemistry platform.
 ms.author: gulow
-ms.date: 10/12/2018
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview-chemistry.concepts.installation
 no-loc: ['Q#', '$$v']
+title: Q# Chemistry Library Installation
+uid: microsoft.quantum.libraries.overview-chemistry.concepts.installation
 ---
 
 # Chemistry Library Installation

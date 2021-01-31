@@ -1,12 +1,14 @@
 ---
-title: Hartree-Fock Theory
-description: Learn about the Hartree–Fock theory, a simple way to construct the initial state for quantum systems.
 author: bradben
+description: Learn about the Hartree–Fock theory, a simple way to construct the initial state for quantum systems.
 ms.author: v-benbra
-ms.date: 10/09/2017
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview-chemistry.concepts.hartreefock
 no-loc: ['Q#', '$$v']
+title: Hartree-Fock Theory
+uid: microsoft.quantum.libraries.overview-chemistry.concepts.hartreefock
 ---
 
 # Hartree–Fock Theory

@@ -1,15 +1,16 @@
 ---
-title: Jordan-Wigner Representation
-description: Learn about the Jordan-Wigner Representation, which maps Hamiltonian operators to unitary matrices that can more easily implemented on a quantum computer. 
 author: bradben
+description: Learn about the Jordan-Wigner Representation, which maps Hamiltonian operators to unitary matrices that can more easily implemented on a quantum computer.
 ms.author: v-benbra
-ms.date: 10/09/2017
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
-uid: microsoft.quantum.libraries.overview-chemistry.concepts.jordanwigner
 no-loc: ['Q#', '$$v']
+title: Jordan-Wigner Representation
+uid: microsoft.quantum.libraries.overview-chemistry.concepts.jordanwigner
 ---
 
- 
 # Jordan-Wigner Representation
 
 While second quantized Hamiltonians are conveniently represented in terms of $a^\dagger$ (creation) and $a$ (annihilation), these operations are not fundamental operations in quantum computers.

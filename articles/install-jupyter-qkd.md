@@ -1,12 +1,14 @@
 ---
-title: Develop with Q# Jupyter notebooks
-description: This article shows you how to install the Quantum Developer Kit (QDK) and develop your own Q# notebooks.
 author: bradben
+description: This article shows you how to install the Quantum Developer Kit (QDK) and develop your own Q# notebooks.
 ms.author: v-benbra
-ms.date: 02/01/2021
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: quickstart
-uid: microsoft.quantum.install-qdk.overview.jupyter
 no-loc: ['Q#', '$$v']
+title: Develop with Q# Jupyter notebooks
+uid: microsoft.quantum.install-qdk.overview.jupyter
 ---
 
 # Develop with Q# Jupyter Notebooks

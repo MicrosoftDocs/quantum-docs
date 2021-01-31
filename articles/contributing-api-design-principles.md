@@ -1,12 +1,14 @@
 ---
-title: Q# API Design Principles
-description: Q# API Design Principles
 author: cgranade
+description: Q# API Design Principles
 ms.author: chgranad
-ms.date: 3/9/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: contributor-guide
-uid: microsoft.quantum.contributing-qdk.overview.api-design
 no-loc: ['Q#', '$$v']
+title: Q# API Design Principles
+uid: microsoft.quantum.contributing-qdk.overview.api-design
 ---
 
 # Q# API Design Principles

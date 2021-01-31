@@ -1,10 +1,12 @@
 ---
-title: Microsoft QIO 
-description: This document provides the technical details of the Microsoft QIO provider
 author: KittyYeungQ
+description: This document provides the technical details of the Microsoft QIO provider
 ms.author: kitty
-ms.date: 06/29/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: computingoptimization
 ms.topic: article
+title: Microsoft QIO
 uid: microsoft.quantum.optimization.providers.microsoft.qio
 ---
 

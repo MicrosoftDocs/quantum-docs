@@ -1,10 +1,12 @@
 ---
-title: Understand solver results
-description: This document provides a basic guide to interpreting results of optimizations problems solved in Azure Quantum using Python.
 author: KittyYeungQ
+description: This document provides a basic guide to interpreting results of optimizations problems solved in Azure Quantum using Python.
 ms.author: kitty
-ms.date: 06/29/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: article
+title: Understand solver results
 uid: microsoft.quantum.optimization.understand-solver-results
 ---
 

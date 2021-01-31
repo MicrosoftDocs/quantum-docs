@@ -1,12 +1,14 @@
 ---
-title: Singleton tuple equivalence in Q#
-description: Learn about singleton tuple equivalence in the Q# programming language.
 author: bettinaheim
+description: Learn about singleton tuple equivalence in the Q# programming language.
 ms.author: beheim
-ms.date: 10/07/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: reference
-uid: microsoft.quantum.qsharp.singletontupleequivalence
 no-loc: ['Q#', '$$v']
+title: Singleton tuple equivalence in Q#
+uid: microsoft.quantum.qsharp.singletontupleequivalence
 ---
 
 <!---
@@ -14,4 +16,3 @@ no-loc: ['Q#', '$$v']
 -->
 
 [!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/4_TypeSystem/SingletonTupleEquivalence.md)]
-

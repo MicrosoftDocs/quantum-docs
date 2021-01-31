@@ -1,12 +1,14 @@
 ---
-title: Introduction to the Quantum Katas
-description: Learn about the katas (training exercises) provided with the Microsoft Quantum Development Kit (QDK)
 author: bradben
-ms.author: v-benbra 
-ms.date: 06/02/2020
+description: Learn about the katas (training exercises) provided with the Microsoft Quantum Development Kit (QDK)
+ms.author: v-benbra
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: overview
-uid: microsoft.quantum.tutorial-qdk.katas
 no-loc: ['Q#', '$$v']
+title: Introduction to the Quantum Katas
+uid: microsoft.quantum.tutorial-qdk.katas
 ---
 
 # Learn quantum computing with the Quantum Katas

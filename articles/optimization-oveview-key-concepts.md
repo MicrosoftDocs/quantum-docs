@@ -1,10 +1,12 @@
 ---
-title: Key concepts
-description: Learn some key optimization concepts
 author: frtibble
+description: Learn some key optimization concepts
 ms.author: frtibble
-ms.date: 08/18/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: article
+title: Key concepts
 uid: microsoft.quantum.optimization.concepts.overview.key-concepts
 ---
 

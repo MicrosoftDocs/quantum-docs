@@ -1,12 +1,14 @@
 ---
-title: Create a Quantum Random Number Generator
-description: Build a Q# project that demonstrates fundamental quantum concepts like superposition by creating a quantum random number generator.
 author: bromeg
+description: Build a Q# project that demonstrates fundamental quantum concepts like superposition by creating a quantum random number generator.
 ms.author: megbrow
-ms.date: 10/25/2019
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qdk
 ms.topic: tutorial
-uid: microsoft.quantum.tutorial-qdk.random-number
 no-loc: ['Q#', '$$v']
+title: Create a Quantum Random Number Generator
+uid: microsoft.quantum.tutorial-qdk.random-number
 ---
 
 # Tutorial: Implement a Quantum Random Number Generator in Q\#

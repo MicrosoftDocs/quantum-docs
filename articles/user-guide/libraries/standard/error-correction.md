@@ -1,13 +1,14 @@
 ---
-# Mandatory fields. See more on aka.ms/skyeye/meta.
-title: Error correction in the Q# standard libraries
-description: Learn how to use error correcting codes in your Q# programs while protecting the state of the qubits.  
 author: QuantumWriter
-uid: microsoft.quantum.libraries.overview.error-correction
+description: Learn how to use error correcting codes in your Q# programs while protecting the state of the qubits.
 ms.author: martinro
-ms.date: 12/11/2017
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
+title: Error correction in the Q# standard libraries
+uid: microsoft.quantum.libraries.overview.error-correction
 ---
 
 # Error Correction #

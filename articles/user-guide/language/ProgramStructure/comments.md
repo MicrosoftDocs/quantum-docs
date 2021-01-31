@@ -1,12 +1,14 @@
 ---
-title: Comments in Q#
-description: Learn how to use comments in the Q# programming language.
 author: bettinaheim
+description: Learn how to use comments in the Q# programming language.
 ms.author: beheim
-ms.date: 10/07/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: reference
-uid: microsoft.quantum.qsharp.comments
 no-loc: ['Q#', '$$v']
+title: Comments in Q#
+uid: microsoft.quantum.qsharp.comments
 ---
 
 <!-- 
@@ -14,4 +16,3 @@ no-loc: ['Q#', '$$v']
 -->
 
 [!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/1_ProgramStructure/7_comments.md)]
-

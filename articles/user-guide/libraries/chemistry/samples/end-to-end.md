@@ -1,12 +1,14 @@
 ---
-title: Sample NWChem quantum program
-description: Using an NWChem input deck, walk through an example of getting gate counts for quantum chemistry simulation.
 author: cgranade
+description: Using an NWChem input deck, walk through an example of getting gate counts for quantum chemistry simulation.
 ms.author: chgranad
-ms.date: 10/23/2018
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: sample
-uid: microsoft.quantum.libraries.overview-chemistry.examples.overview.endtoend
 no-loc: ['Q#', '$$v']
+title: Sample NWChem quantum program
+uid: microsoft.quantum.libraries.overview-chemistry.examples.overview.endtoend
 ---
 
 # End-to-end with NWChem #
@@ -203,4 +205,4 @@ Get-GateCount -Format YAML qsharp_chem48443.yaml
 ```
 to get resource counts. 
 
-You might enjoy the 3D molecule builder that can be accessed from the ``Arrows Entry - 3D Builder`` tab on the EMSL Arrows start page. Clicking the [JSMol](http://wiki.jmol.org/index.php/JSmol) 3D picture of the shown molecule will let you allow to edit it. You can move atoms around, drag atoms apart so that their inter-molecular distances change, add/remove atoms, etc. For each of these choices, once you added ``theory{qsharp_chem}`` in the query box, you can then generate an instance of the Broombridge YAML schema and further explore it using the Quantum Chemistry Library. 
+You might enjoy the 3D molecule builder that can be accessed from the ``Arrows Entry - 3D Builder`` tab on the EMSL Arrows start page. Clicking the [JSMol](http://wiki.jmol.org/index.php/JSmol) 3D picture of the shown molecule will let you allow to edit it. You can move atoms around, drag atoms apart so that their inter-molecular distances change, add/remove atoms, etc. For each of these choices, once you added ``theory{qsharp_chem}`` in the query box, you can then generate an instance of the Broombridge YAML schema and further explore it using the Quantum Chemistry Library.

@@ -1,10 +1,12 @@
 ---
-title: Glossary for Azure Quantum 
-description: List of common terms of the Azure Quantum service.
 author: geduardo
+description: List of common terms of the Azure Quantum service.
 ms.author: v-edsanc
-ms.date: 06/25/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: core
 ms.topic: article
+title: Glossary for Azure Quantum
 uid: microsoft.quantum.azure.glossary
 ---
 

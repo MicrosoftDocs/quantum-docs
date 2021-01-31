@@ -1,10 +1,12 @@
 ---
-title: Azure Quantum reference
-description: Index for the Azure Quantum reference.
 author: KittyYeungQ
+description: Index for the Azure Quantum reference.
 ms.author: kitty
-ms.date: 01/29/2021
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: core
 ms.topic: article
+title: Azure Quantum reference
 uid: microsoft.quantum.reference.overview
 ---
 

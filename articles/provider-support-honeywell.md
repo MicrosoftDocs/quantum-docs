@@ -1,10 +1,12 @@
 ---
-title: Support Policy for Honeywell in Azure Quantum
-description: This document provides details on the support policy for the Honeywell provider in Azure Quantum
 author: Mobius5150
+description: This document provides details on the support policy for the Honeywell provider in Azure Quantum
 ms.author: mblouin
-ms.date: 1/12/2021
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: computing
 ms.topic: article
+title: Support Policy for Honeywell in Azure Quantum
 uid: microsoft.quantum.providers.honeywell.support
 ---
 
@@ -84,4 +86,3 @@ The third-party products that this article discusses are manufactured by compani
 ### Third-party contact disclaimer
 
 Microsoft provides third-party contact information to help you find additional information about this topic. This contact information may change without notice. Microsoft does not guarantee the accuracy of third-party contact information.
-

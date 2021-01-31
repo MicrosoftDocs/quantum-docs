@@ -1,10 +1,12 @@
 ---
-title: Overview of solvers
-description: This document provides an overview of available optimization solvers in Azure Quantum.
 author: KittyYeungQ
+description: This document provides an overview of available optimization solvers in Azure Quantum.
 ms.author: kitty
-ms.date: 06/29/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: article
+title: Overview of solvers
 uid: microsoft.quantum.optimization.solver-overview
 ---
 

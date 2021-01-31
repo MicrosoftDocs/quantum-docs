@@ -1,12 +1,14 @@
 ---
-title: Quantum data types in Q#
-description: Learn about quantum data types in the Q# programming language.
 author: bettinaheim
+description: Learn about quantum data types in the Q# programming language.
 ms.author: beheim
-ms.date: 10/07/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: reference
-uid: microsoft.quantum.qsharp.quantumdatatypes
 no-loc: ['Q#', '$$v']
+title: Quantum data types in Q#
+uid: microsoft.quantum.qsharp.quantumdatatypes
 ---
 
 <!---
@@ -14,4 +16,3 @@ no-loc: ['Q#', '$$v']
 -->
 
 [!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/4_TypeSystem/QuantumDataTypes.md)]
-

@@ -1,10 +1,12 @@
 ---
-title: Express an optimization problem
-description: This document provides a basic guide to express an optimization problem that could be later used with a solver in Azure Quantum.
 author: KittyYeungQ
+description: This document provides a basic guide to express an optimization problem that could be later used with a solver in Azure Quantum.
 ms.author: kitty
-ms.date: 06/29/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: optimization
 ms.topic: article
+title: Express an optimization problem
 uid: microsoft.quantum.optimization.express-problem
 ---
 

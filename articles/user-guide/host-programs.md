@@ -1,12 +1,14 @@
 ---
-title: Ways to run a Q# program
-description: Overview of the different ways to run Q# programs. From the command prompt, Q# Jupyter Notebooks, and classical host programs in Python or a .NET language.
 author: gillenhaalb
+description: Overview of the different ways to run Q# programs. From the command prompt, Q# Jupyter Notebooks, and classical host programs in Python or a .NET language.
 ms.author: a-gibec
-ms.date: 05/15/2020
+ms.date: 02/01/21
+ms.service: azure-quantum
+ms.subservice: qsharp-guide
 ms.topic: article
-uid: microsoft.quantum.user-guide-qdk.overview.host-programs
 no-loc: ['Q#', '$$v']
+title: Ways to run a Q# program
+uid: microsoft.quantum.user-guide-qdk.overview.host-programs
 ---
 
 # Ways to run a Q# program
