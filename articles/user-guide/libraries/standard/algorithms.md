@@ -4,7 +4,7 @@ description: Learn about fundamental quantum computing algorithms, including amp
 ms.author: martinro
 ms.date: 02/01/2021
 ms.service: azure-quantum
-ms.subservice: qsharp-guideqsharp-guide
+ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
 title: Quantum algorithms in Q#

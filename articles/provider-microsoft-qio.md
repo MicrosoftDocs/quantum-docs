@@ -4,7 +4,7 @@ description: This document provides the technical details of the Microsoft QIO p
 ms.author: kitty
 ms.date: 02/01/2021
 ms.service: azure-quantum
-ms.subservice: computingoptimization
+ms.subservice: optimization
 ms.topic: article
 title: Microsoft QIO
 uid: microsoft.quantum.optimization.providers.microsoft.qio

@@ -7,7 +7,6 @@ ms.topic: article
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.date: 2/01/2021
 uid: microsoft.quantum.quickstarts.optimization.qio
 ---
 
