@@ -5,7 +5,7 @@ ms.author: mblouin
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: article
+ms.topic: reference
 title: Support Policy for Honeywell in Azure Quantum
 uid: microsoft.quantum.providers.honeywell.support
 ---

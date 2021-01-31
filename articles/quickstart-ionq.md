@@ -5,7 +5,7 @@ ms.author: mblouin
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: article
+ms.topic: quickstart
 title: IonQ quickstart for Azure Quantum
 uid: microsoft.quantum.quickstarts.computing.ionq
 ---

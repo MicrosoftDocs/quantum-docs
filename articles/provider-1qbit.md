@@ -5,7 +5,7 @@ ms.author: mblouin
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: article
+ms.topic: reference
 title: 1QBit provider
 uid: microsoft.quantum.providers.optimization.1qbit
 ---

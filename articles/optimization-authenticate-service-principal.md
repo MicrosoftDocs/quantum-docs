@@ -5,7 +5,7 @@ ms.author: anraman
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: article
+ms.topic: how-to
 title: Using a service principal to authenticate
 uid: microsoft.quantum.optimization.authenticate-service-principal
 ---

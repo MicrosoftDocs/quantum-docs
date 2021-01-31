@@ -5,7 +5,7 @@ ms.author: georgenm
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: article
+ms.topic: reference
 title: Azure Quantum Workspace
 uid: microsoft.quantum.optimization.workspace
 ---

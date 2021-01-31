@@ -3,7 +3,7 @@ title: Optimization quickstart for Azure Quantum
 description: This document provides a step-by-step guide to get you started with Azure Quantum optimization 
 author: anraman
 ms.author: anraman
-ms.topic: article
+ms.topic: quickstart
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: optimization

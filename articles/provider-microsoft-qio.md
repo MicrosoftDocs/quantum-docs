@@ -5,8 +5,8 @@ ms.author: kitty
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: article
-title: Microsoft QIO
+ms.topic: reference
+title: Microsoft QIO provider tech details
 uid: microsoft.quantum.optimization.providers.microsoft.qio
 ---
 

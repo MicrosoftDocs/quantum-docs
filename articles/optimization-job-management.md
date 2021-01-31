@@ -5,7 +5,7 @@ ms.author: kitty
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: article
+ms.topic: how-to
 title: Manage optimization jobs
 uid: microsoft.quantum.optimization.job-management
 ---

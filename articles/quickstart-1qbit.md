@@ -5,7 +5,7 @@ ms.author: mblouin
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: article
+ms.topic: quickstart
 title: 1QBit quickstart for Azure Quantum
 uid: microsoft.quantum.quickstarts.optimization.1qbit
 ---
@@ -85,7 +85,7 @@ The goal is to find the configuration that yields the lowest possible value of $
 > [!NOTE]
 > For a detailed walkthrough of the problem scenario and how the cost function is constructed, please refer to the [sample](https://github.com/microsoft/qio-samples) and/or the associated [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/).
 
-## Install the Optimization Python SDK
+## Install the Python SDK for optimization
 
 To implement a solution, first ensure that you have the Optimization Python SDK installed on your machine. If you haven't
 installed the Optimization Python SDK already, follow these steps:

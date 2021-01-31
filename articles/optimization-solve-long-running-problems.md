@@ -5,7 +5,7 @@ ms.author: kitty
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: article
+ms.topic: how-to
 title: Solve long-running problems
 uid: microsoft.quantum.optimization.solve-long-running-problems
 ---
