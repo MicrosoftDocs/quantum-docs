@@ -19,8 +19,7 @@ This guide provides a basic overview of how to install and use the Python SDK fo
 ## Python SDK for optimization installation
 
 The Python SDK is distributed as the `azure-quantum` [PyPI](https://pypi.org)
-package. During this preview, you'll need to follow these instructions to
-install it from the private Azure Quantum feed:
+package. To install the package you will need to follow the steps below:
 
 1. Install [Python](https://www.python.org/downloads/) 3.6 or later.
 2. Install [PIP](https://pip.pypa.io/en/stable/), the Python Package Installer, and ensure you have **version 19.2 or higher**

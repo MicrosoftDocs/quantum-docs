@@ -27,9 +27,7 @@ guide](xref:microsoft.quantum.workspaces-portal) using the following values:
 - `storage`: The connection string of the storage account provisioned for your
   Workspace.
 
-All of these values are output when you use the [`quantum-workspace`
-script](https://dev.azure.com/AzureQuantum-PreviewCustomers/PrivatePreview/_git/Documentation?path=%2Fscripts)
-with either the `create` or `show` commands.
+You can find these values by viewing your Azure Quantum Workspace details through the Azure portal.
 
 ## Workspace.get_job
 
