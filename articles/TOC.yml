@@ -9,6 +9,7 @@
   - name: Get started
     items:
     - name: Workspaces
+      expanded: true
       items:
       - name: Create quantum workspaces with the Azure Portal 
         href: how-to-create-quantum-workspaces-with-the-azure-portal.md
@@ -149,6 +150,7 @@
       - name: Linear algebra for quantum computing
         href: overview-algebra-for-quantum-computing.md
   - name: Get started
+    expanded: true
     items:
     - name: Get started with the QDK
       href: install-get-started-qdk.md
