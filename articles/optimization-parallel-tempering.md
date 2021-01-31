@@ -4,7 +4,7 @@ description: This document provides a basic guide about how to use parallel temp
 author: haohaiyu
 ms.author: hay
 ms.date: 01/12/2021
-ms.topic: article
+ms.topic: reference
 uid: microsoft.quantum.optimization.parallel-tempering
 ---
 

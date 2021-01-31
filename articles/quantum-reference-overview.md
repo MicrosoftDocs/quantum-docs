@@ -4,7 +4,7 @@ description: Index for the Azure Quantum reference.
 author: KittyYeungQ
 ms.author: kitty
 ms.date: 01/29/2021
-ms.topic: article
+ms.topic: overview
 uid: microsoft.quantum.reference.overview
 ---
 

@@ -4,7 +4,7 @@ description: Reference for azure.quantum
 author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
-ms.topic: article
+ms.topic: reference
 uid: microsoft.quantum.reference.python-sdk.azure.quantum
 ---
 

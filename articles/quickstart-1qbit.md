@@ -3,7 +3,7 @@ title: 1QBit quickstart for Azure Quantum
 description: This document provides a step-by-step guide to get you started with 1QBit on Azure Quantum
 author: mblouin
 ms.author: mblouin
-ms.topic: article
+ms.topic: quickstart
 uid: microsoft.quantum.quickstarts.optimization.1qbit
 ---
 

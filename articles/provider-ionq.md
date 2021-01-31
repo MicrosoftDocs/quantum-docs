@@ -4,7 +4,7 @@ description: This document provides the technical details of the IonQ provider
 author: KittyYeungQ
 ms.author: kitty
 ms.date: 06/29/2020
-ms.topic: article
+ms.topic: reference
 uid: microsoft.quantum.providers.ionq
 ---
 

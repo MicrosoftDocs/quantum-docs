@@ -4,7 +4,7 @@ description: This document provides details on the support policy for the 1QBit 
 author: danielstocker
 ms.author: dasto
 ms.date: 10/27/2020
-ms.topic: article
+ms.topic: reference
 uid: microsoft.quantum.providers.optimization.1qbit.support
 ---
 

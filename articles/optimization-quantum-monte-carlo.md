@@ -4,7 +4,7 @@ description: This document provides a basic guide about how to use the Quantum M
 author: irunknee
 ms.author: sanjgupt
 ms.date: 01/21/2021
-ms.topic: article
+ms.topic: reference
 uid: microsoft.quantum.optimization.quantum-monte-carlo
 ---
 

@@ -4,7 +4,7 @@ description: This document provides a basic guide about how to use the simulated
 author: adelebai
 ms.author: adbai
 ms.date: 01/13/2021
-ms.topic: article
+ms.topic: reference
 uid: microsoft.quantum.optimization.simulated-annealing
 ---
 

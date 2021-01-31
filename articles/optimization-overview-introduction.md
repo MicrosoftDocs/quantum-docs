@@ -4,7 +4,7 @@ description: Learn about optimization and key terms
 author: anraman
 ms.author: anraman
 ms.date: 08/19/2020
-ms.topic: article
+ms.topic: overview
 uid: microsoft.quantum.optimization.concepts.overview.introduction
 ---
 
