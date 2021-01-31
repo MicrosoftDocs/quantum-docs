@@ -66,7 +66,7 @@ landingContent:
       - linkListType: how-to-guide 
         links:
           - text: Install the Python SDK for optimization
-            url: how-to-use-the-python-SDK.md
+            url: optimization-install-sdk.md
       - linkListType: learn
         links:
           - text: Overview of optimization solvers
@@ -99,7 +99,7 @@ landingContent:
           - text: Q# user guide
             url: user-guide\index.md
           - text: "Quantum simulators and host applications"
-            url: user-guide\host-programs.md
+            url: user-guide\machines\index.md
       - linkListType: tutorial
         links:
           - text: Build a quantum random number generator
