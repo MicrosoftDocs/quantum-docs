@@ -66,7 +66,7 @@ workspace.credentials = ServicePrincipalCredentials(
     tenant    = "", # From service principal creation, your Directory (tenant) ID
     client_id = "", # From service principal creation, your Application (client) ID
     secret    = "", # From service principal creation, your secret
-    resource  = "https://private-preview.quantum.microsoft.com" # Do not change! This is the resource you want to authenticate against - the Azure Quantum service
+    resource  = "https://quantum.microsoft.com/" # Do not change! This is the resource you want to authenticate against - the Azure Quantum service
 )
 ```
 
