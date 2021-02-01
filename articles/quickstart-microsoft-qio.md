@@ -25,8 +25,6 @@ You use the Azure Quantum service by adding an Azure Quantum workspace resource 
 
 To open the Azure Portal, go to https://portal.azure.com and then follow these steps:
 
-> Note: This is a special link that allows you to create a workspace in the Azure Portal. Without using the link you will be able to see existing workspaces but not create new ones.
-
 1. Click **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
 
    ![Tile for the Azure Quantum (preview)
