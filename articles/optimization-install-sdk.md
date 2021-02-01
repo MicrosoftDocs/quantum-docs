@@ -104,7 +104,7 @@ terms = [
 problem.add_terms(terms=terms)
 ```
 
-> ![NOTE]
+> [!NOTE]
 > There are [multiple ways](xref:microsoft.quantum.optimization.express-problem#Ways-to-supply-problem-terms) to supply terms to the problem, and not all terms must be added at once.
 
 Next, we're ready to apply a **solver**. In this example we'll use a parameter-free version of parallel tempering. You can find documentation on this solver and the other available solvers in the [Microsoft QIO provider reference](xref:microsoft.quantum.optimization.providers.microsoft.qio).
@@ -139,11 +139,11 @@ This method will submit the problem to Azure Quantum for optimization and synchr
 
 - [QIO samples repo](https://github.com/microsoft/qio-samples/)
 - Getting started
-  - [1QBit](https://github.com/microsoft/qio-samples/samples/getting-started/1qbit/)
-  - [Microsoft QIO](https://github.com/microsoft/qio-samples/samples/getting-started/microsoft-qio/)
+  - [1QBit](https://github.com/microsoft/qio-samples/tree/main/samples/getting-started/1qbit)
+  - [Microsoft QIO](https://github.com/microsoft/qio-samples/tree/main/samples/getting-started/microsoft-qio/)
 - Ship loading sample problem
   - [End-to-end Microsoft Learn Module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/)
-  - [Sample code](https://github.com/microsoft/qio-samples/samples/ship-loading/)
+  - [Sample code](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/)
 - Job shop scheduling sample problem
   - [End-to-end Microsoft Learn Module](https://docs.microsoft.com/learn/modules/solve-job-shop-scheduling-optimization-problem/)
-  - [Sample code](https://github.com/microsoft/qio-samples/samples/job-shop-scheduling/)
+  - [Sample code](https://github.com/microsoft/qio-samples/tree/main/samples/job-shop-scheduling/)

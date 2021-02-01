@@ -30,14 +30,14 @@ Parallel tempering in Azure Quantum supports:
 - Ising and PUBO input formats
 - CPU only
 
-## When to use parallel temperinging
+## When to use parallel tempering
 
 Parallel tempering generally outperforms [simulated annealing](xref:microsoft.quantum.optimization.simulated-annealing) on hard problems with rugged landscapes.
 
 It is also very good at solving Ising problems, or problems that are equivalent (such as min-cut problems).
 
 > [!NOTE]
-> For further information on determining which solver to use, please to [Which optimization solver should I use?](xref:microsoft.quantum.optimization.choose-solver).
+> For further information on determining which solver to use, refer to [Which optimization solver should I use?](xref:microsoft.quantum.optimization.choose-solver).
 
 ## Parameter-free parallel tempering
 
