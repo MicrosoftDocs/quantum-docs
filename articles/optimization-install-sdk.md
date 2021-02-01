@@ -145,5 +145,5 @@ This method will submit the problem to Azure Quantum for optimization and synchr
   - [End-to-end Microsoft Learn Module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/)
   - [Sample code](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/)
 - Job shop scheduling sample problem
-  - [End-to-end Microsoft Learn Module](https://docs.microsoft.com/learn/modules/solve-job-shop-scheduling-optimization-problem/)
+  - [End-to-end Microsoft Learn Module](https://docs.microsoft.com/learn/modules/solve-job-shop-optimization-azure-quantum/)
   - [Sample code](https://github.com/microsoft/qio-samples/tree/main/samples/job-shop-scheduling/)

@@ -252,4 +252,4 @@ For more detailed information on the shipping optimization problem please refer 
 - [Ship loading sample](https://github.com/microsoft/qio-samples)
 - [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/)
 
-Once you have explored the ship loading sample in more detail, you may find it useful to tackle the more complex [job shop scheduling sample](https://github.com/microsoft/qio-samples).
+Once you have explored the ship loading sample in more detail, you may find it useful to tackle the more complex [job shop scheduling sample](https://github.com/microsoft/qio-samples/tree/main/samples/job-shop-scheduling). The associated Microsoft Learn module can be found [here](https://docs.microsoft.com/learn/modules/solve-job-shop-optimization-azure-quantum/).
