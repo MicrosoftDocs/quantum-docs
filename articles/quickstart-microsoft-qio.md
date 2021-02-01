@@ -25,8 +25,6 @@ You use the Azure Quantum service by adding an Azure Quantum workspace resource 
 
 To open the Azure Portal, go to https://portal.azure.com and then follow these steps:
 
-> Note: This is a special link that allows you to create a workspace in the Azure Portal. Without using the link you will be able to see existing workspaces but not create new ones.
-
 1. Click **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
 
    ![Tile for the Azure Quantum (preview)
@@ -65,7 +63,7 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 
 ## Define your optimization problem
 
-In this guide, you will solve a simple optimization example to get started with the optimization services of Azure Quantum. This quickstart is based on the [ship loading sample](https://github.com/microsoft/qio-samples/samples/ship-loading/). 
+In this guide, you will solve a simple optimization example to get started with the optimization services of Azure Quantum. This quickstart is based on the [ship loading sample](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/). 
 
 Suppose there are two ships ready to be loaded with containers and a list of containers of varying weights to be assigned to each ship. The aim of the optimization problem is to assign containers to each ship in such a way that the weight is distributed as evenly as possible between both ships.
 
@@ -81,7 +79,7 @@ This cost function has the following properties:
 The goal is to find the configuration that yields the lowest possible value of $H^2$.
 
 > [!NOTE]
-> For a detailed walkthrough of the problem scenario and how the cost function is constructed, please refer to the [sample](https://github.com/microsoft/qio-samples/samples/ship-loading/) and/or the associated [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/).
+> For a detailed walkthrough of the problem scenario and how the cost function is constructed, please refer to the [sample](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/) and/or the associated [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/).
 
 ## Install the Python SDK for optimization
 
@@ -154,7 +152,7 @@ def createProblemForContainerWeights(containerWeights: List[int]) -> List[Term]:
 ```
 
 > [!NOTE]
-> For a detailed explanation of how this function is derived, please refer to the [shipping sample](https://github.com/microsoft/qio-samples/samples/ship-loading/) or the [Microsoft Learn module for optimization](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/).
+> For a detailed explanation of how this function is derived, please refer to the [shipping sample](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/) or the [Microsoft Learn module for optimization](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/).
 
 ## Create a `Problem` instance
 
@@ -255,7 +253,7 @@ During this quick-start guide, you have seen an end-to-end example of how to tak
 
 For more detailed information on the shipping optimization problem, please refer to the following resources:
 
-- [Ship loading sample](https://github.com/microsoft/qio-samples/samples/ship-loading/)
+- [Ship loading sample](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/)
 - [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/)
 
-Once you have explored the ship loading sample in more detail, you may find it useful to tackle the more complex [job shop scheduling sample](https://github.com/microsoft/qio-samples/samples/job-shop-scheduling/).
+Once you have explored the ship loading sample in more detail, you may find it useful to tackle the more complex [job shop scheduling sample](https://github.com/microsoft/qio-samples/tree/main/samples/job-shop-scheduling/).

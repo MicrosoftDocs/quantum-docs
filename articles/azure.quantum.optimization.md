@@ -103,10 +103,21 @@ problem.add_terms([
 Serializes a problem to a json string.
 
 ```py
-problem = Problem("My Problem", [Term(w=1, indices=[0,1])])
-problem.serialize()
+import json
 
-> TODO
+# Create a problem definition
+problem = Problem("My Problem", [Term(w=1, indices=[0,1])])
+
+# Save problem definition to a .json file
+with open('myfile.json', 'w', encoding ='utf8') as json_file: 
+    json_file.write(problem.serialize())
+    
+# Open json file
+with open('myfile.json', 'r', encoding ='utf8') as json_file: 
+    problem = json.load(json_file)
+    print("Version: " + problem["cost_function"]["version"])
+    print("Type: " + problem["cost_function"]["type"])
+    print("Terms: " + str(problem["cost_function"]["terms"]))
 ```
 
 ### Problem.upload

@@ -37,7 +37,7 @@ terms = [
 problem.add_terms(terms=terms)
 ```
 
->![NOTE]
+> [!NOTE]
 > As descrbed below, there are multiple ways to supply terms to the problem.
 
 ## Ways to supply problem terms

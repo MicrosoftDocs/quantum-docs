@@ -29,6 +29,9 @@ This algorithm should perform best in the following two scenarios:
 
 - When there are tall, narrow barriers in the energy landscape (cost function)
 - If the solution is already at a feasible configuration at a low temperature and the user wishes to improve the solution
+
+> [!NOTE]
+> For further information on determining which solver to use, refer to [Which optimization solver should I use?](xref:microsoft.quantum.optimization.choose-solver).
   
 ## Parameterized Quantum Monte Carlo (CPU)
 

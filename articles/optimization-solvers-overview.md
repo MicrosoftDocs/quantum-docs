@@ -18,7 +18,7 @@ The Microsoft QIO provider comes with a variety of optimization solvers. These s
 | - | - | - |
 | Parallel tempering | Rephrases the optimization problem as a thermodynamic system and runs multiple copies of a system, randomly initialized, at different temperatures. Then, based on a specific protocol, exchanges configurations at different temperatures to find the optimal configuration. | <ul><li>Generally outperforms simulated annealing on hard problems with rugged landscapes</li><li> Very good at solving Ising problems</li></ul> |
 | Simulated annealing | Rephrases the optimization problem as a thermodynamic system and considers the energy of a single system. Changes to the system are accepted if they decrease the energy or meet a criterion based on decreasing temperature. | <ul><li>Convex landscapes</li></ul> |
-| Simulated quantum annealing | Similar to simulated annealing but the changes are by simulating quantum-tunneling through barriers rather than using thermal energy jumps. | <ul><li>Optimization landscape has tall and thin barriers</li><li>Due to its large overhead, is useful for small hard problems</li></ul> |
+| Quantum Monte Carlo | Similar to simulated annealing but the changes are by simulating quantum-tunneling through barriers rather than using thermal energy jumps. | <ul><li>Optimization landscape has tall and thin barriers</li><li>Due to its large overhead, is useful for small hard problems</li></ul> |
 | Tabu search | Tabu search looks at neighboring configurations.  It can accept worsening moves if no improving moves are available  and prohibit moves to previously-visited solutions | <ul><li>Convex landscapes, high density problems, QUBO problems.</li></ul>
 
 ### FPGA vs. CPU
