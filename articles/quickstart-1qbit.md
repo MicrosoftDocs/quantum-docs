@@ -61,9 +61,8 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 
    ![Review and create the workspace](./media/azure-quantum-preview-terms.png)
 
-> [!NOTE] 
-> While we are not charging for usage of Azure Quantum during this
-> preview, your jobs will be uploaded to the Azure storage account created above and will be subject to storage charges.
+> [!NOTE]
+> Pricing for Azure Quantum varies by provider. Please consult the information in the Providers tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information.
 
 ## Define your optimization problem
 
