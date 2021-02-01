@@ -10,7 +10,7 @@ title: Quantum optimization problem type
 uid: microsoft.quantum.optimization.problem-type
 ---
 
-# Azure.Quantum.Optimization.ProblemType
+# Quantum optimization ProblemType
 
 ## Quantum optimization problem type
 
