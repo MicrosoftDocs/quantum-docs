@@ -102,7 +102,7 @@ the different providers of your Azure Quantum workspace.
 1. You can use the job ID to track its status:
 
    ```dotnetcli
-   az quantum job show -id yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
+   az quantum job show -j yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
    Id                                    State      Target               Submission time
    ------------------------------------  ---------  -------------------  ---------------------------------
    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy  Succeeded  MyProvider.MyTarget  2020-06-12T14:20:19.819981+00:00
@@ -116,7 +116,7 @@ the different providers of your Azure Quantum workspace.
    job output`:
 
    ```dotnetcli
-    az quantum job output -id yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
+    az quantum job output -j yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
 
     Result    Frequency
     --------  -----------  -------------------------
@@ -187,7 +187,7 @@ Once the job completes (that is, when it's in a **Successful** state), use the c
 job output` to view the results:
 
 ```output
-az quantum job output -id yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
+az quantum job output -j yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
 
 Result    Frequency
 --------  -----------  -------------------------
