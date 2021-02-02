@@ -108,13 +108,15 @@ It is also recommended to set the number of restarts to at least 216 if using th
 To create a simulated annealing solver for the FPGA using the SDK, simply specify the platform option as follows:
 
 ```python
+from azure.quantum.optimization import SimulatedAnnealing, HardwarePlatform
+# Requires a workspace already created.
 solver = SimulatedAnnealing(workspace, timeout=100, seed=22, platform=HardwarePlatform.FPGA)
 ```
 
 For the parametrized version:
 
 ```python
-from azure.quantum.optimization import SimulatedAnnealing
+from azure.quantum.optimization import SimulatedAnnealing, HardwarePlatform
 # Requires a workspace already created.
 solver = SimulatedAnnealing(workspace, sweeps=2, beta_start=0.1, beta_stop=1, restarts=72, seed=22, platform=HardwarePlatform.FPGA)
 ```
