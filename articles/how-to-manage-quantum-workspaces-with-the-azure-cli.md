@@ -57,7 +57,7 @@ In order to create a new Azure Quantum workspace, you'll need to know:
 And then you can create it using the following command, using the previous examples:
 
 ```dotnetcli
-az quantum workspace create -l westus -g MyResourceGroup -w MyQuantumWorkspace -sa MyStorageAccount
+az quantum workspace create -l westus -g MyResourceGroup -w MyQuantumWorkspace -a MyStorageAccount
 ```
 
 > [!NOTE]
