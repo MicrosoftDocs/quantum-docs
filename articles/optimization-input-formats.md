@@ -156,7 +156,7 @@ This document explains how the parameters to optimization problems may be specif
     </tr>
     <tr>
         <td>seed</td>
-        <td>A random integer betweenm 0 and 101</td>
+        <td>A random integer</td>
         <td>Specifies a random value to start the simulation.</td>
     </tr>
     <tr>
