@@ -109,6 +109,10 @@
             href: optimization-problem.md
           - name: ProblemType
             href: optimization-problem-type.md
+          - name : Solver inputs
+            href: optimization-input-formats.md
+          - name: Term
+            href: optimization-term.md
         - name: Usage
           items:
           - name: Express a problem
