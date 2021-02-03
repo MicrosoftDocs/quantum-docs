@@ -2,10 +2,6 @@
 
 Welcome to Azure Quantum! This is the repository for the documentation of Azure Quantum.
 
-## Microsoft Open Source Code of Conduct
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments. 
-
 This repository contains open-source documentation articles and automatically generated API files.  There are two main folders:
 - **[articles/](./articles)** contains the Markdown articles and YAML files that constitute the source of the [QDK documentation](https://docs.microsoft.com/azure/quantum/).
 - **[api/](./api)** contains the *automatically generated* API documentation that serves as the source for the [Q# API reference](https://docs.microsoft.com/qsharp/api/?view=qsharp-preview).
