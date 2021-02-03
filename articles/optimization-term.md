@@ -37,5 +37,5 @@ To create a `Term` object, you specify the following parameters:
  Term(c=3, indices=[0,1,2]).
 ```
 
-For more information on cost functions and how terms relate to a problem definition, see [Cost functions](https://docs.microsoft.com/en-us/azure/quantum/optimization-concepts-cost-functions).
-Terms can be supplied to a `Problem` object, see [Problem](https://docs.microsoft.com/en-us/azure/quantum/optimization-problem).
+For more information on cost functions and how terms relate to a problem definition, see [Cost functions](https://docs.microsoft.com/azure/quantum/optimization-concepts-cost-functions).
+Terms can be supplied to a `Problem` object, see [Problem](https://docs.microsoft.com/azure/quantum/optimization-problem).
