@@ -31,7 +31,7 @@
   ],
   "branches_to_filter": [],
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/quantum-docs",
-  "git_repository_branch_open_to_public_contributors": "master",
+  "git_repository_branch_open_to_public_contributors": "main",
   "skip_source_output_uploading": false,
   "need_preview_pull_request": true,
   "contribution_branch_mappings": {},
@@ -58,7 +58,7 @@
       "path_to_root": "articles/includes/qsharp-language",
       "url": "https://github.com/microsoft/qsharp-language",
       "branch": "⭐Docs",
-      "branch_mapping": {}  
+      "branch_mapping": {}
     }
   ],
   "branch_target_mapping": {
