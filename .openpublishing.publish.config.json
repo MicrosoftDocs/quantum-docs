@@ -79,10 +79,8 @@
   },
   "JoinTOCPlugin": [
     {
-      "ReferenceTOC": "api/TOC.yml",
       "ConceptualTOC": "articles/TOC.yml",
-      "ReferenceTOCUrl": "/qsharp/api/toc.json",
-      "ConceptualTOCUrl": "/azure/quantum/toc.json"
+      "ReferenceTOCUrl": "/qsharp/api/toc.json"
     }
   ],
   "dependent_packages": [
