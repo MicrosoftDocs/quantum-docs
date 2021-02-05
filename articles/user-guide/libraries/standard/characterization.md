@@ -214,7 +214,7 @@ operation ApplyExampleOracle(
 
 operation EstimateBayesianPhase(eigenphase : Double) : Double {
     let oracle = ContinuousOracle(ApplyExampleOracle(eigenphase, _, _));
-    using (eigenstate = Qubit()) {
+    use eigenstate = Qubit() {
         X(eigenstate);
         // The additional inputs here specify the mean and variance of the prior, the number of
         // iterations to perform, how many iterations to perform as a maximum, and how many
