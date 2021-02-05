@@ -128,7 +128,7 @@ Replace the contents of `Program.qs` with the following code:
        open Microsoft.Quantum.Canon;
 
        operation SetQubitState(desired : Result, q1 : Qubit) : Unit {
-           if (desired != M(q1)) {
+           if desired != M(q1) {
                X(q1);
            }
        }
@@ -189,14 +189,14 @@ Add the following operation to the `Program.qs` file, inside the namespace,
    operation TestBellState(count : Int, initial : Result) : (Int, Int) {
 
        mutable numOnes = 0;
-       using (qubit = Qubit()) {
+       use qubit = Qubit() {
 
-           for (test in 1..count) {
+           for test in 1..count {
                SetQubitState(initial, qubit);
                let res = M(qubit);
 
                // Count the number of ones we saw:
-               if (res == One) {
+               if res == One {
                    set numOnes += 1;
                }
            }
@@ -217,7 +217,7 @@ specified `initial` value on a qubit and then measure (`M`) the result. It
 will gather statistics on how many zeros and ones we've measured and return
 them to the caller. It performs one other necessary operation. It resets the
 qubit to a known state (`Zero`) before returning it allowing others to
-allocate this qubit in a known state. This is required by the `using`
+allocate this qubit in a known state. This is required by the `use`
 statement.
 
 #### About variables in Q\#
@@ -233,12 +233,12 @@ value may be changed using a `set` statement.
 In both cases, the type of a variable is inferred by the compiler. Q# doesn't
 require any type annotations for variables.
 
-#### About `using` statements in Q\#
+#### About `use` statements in Q\#
 
-The `using` statement is also special to Q#. It is used to allocate qubits for
+The `use` statement is also special to Q#. It is used to allocate qubits for
 use in a block of code. In Q#, all qubits are dynamically allocated and
 released, rather than being fixed resources that are there for the entire
-lifetime of a complex algorithm. A `using` statement allocates a set of qubits
+lifetime of a complex algorithm. A `use` statement allocates a set of qubits
 at the start, and releases those qubits at the end of the block.
 
 ## Run the code from the command prompt
@@ -254,7 +254,7 @@ namespace Bell {
     open Microsoft.Quantum.Intrinsic;
 
     operation SetQubitState(desired : Result, target : Qubit) : Unit {
-        if (desired != M(target)) {
+        if desired != M(target) {
             X(target);
         }
     }
@@ -263,14 +263,14 @@ namespace Bell {
     operation TestBellState(count : Int, initial : Result) : (Int, Int) {
 
         mutable numOnes = 0;
-        using (qubit = Qubit()) {
+        use qubit = Qubit() {
 
-            for (test in 1..count) {
+            for test in 1..count {
                 SetQubitState(initial, qubit);
                 let res = M(qubit);
 
                 // Count the number of ones we saw:
-                if (res == One) {
+                if res == One {
                     set numOnes += 1;
                 }
             }
@@ -442,8 +442,8 @@ The full routine now looks like this:
     operation TestBellState(count : Int, initial : Result) : (Int, Int) {
 
         mutable numOnes = 0;
-        using ((q0, q1) = (Qubit(), Qubit())) {
-            for (test in 1..count) {
+        use (q0, q1) = (Qubit(), Qubit()) {
+            for test in 1..count {
                 SetQubitState(initial, q0);
                 SetQubitState(Zero, q1);
 
@@ -452,7 +452,7 @@ The full routine now looks like this:
                 let res = M(q0);
 
                 // Count the number of ones we saw:
-                if (res == One) {
+                if res == One {
                     set numOnes += 1;
                 }
             }
@@ -475,8 +475,8 @@ operation:
     operation TestBellState(count : Int, initial : Result) : (Int, Int, Int) {
         mutable numOnes = 0;
         mutable agree = 0;
-        using ((q0, q1) = (Qubit(), Qubit())) {
-            for (test in 1..count) {
+        use (q0, q1) = (Qubit(), Qubit()) {
+            for test in 1..count {
                 SetQubitState(initial, q0);
                 SetQubitState(Zero, q1);
 
@@ -484,12 +484,12 @@ operation:
                 CNOT(q0, q1);
                 let res = M(q0);
 
-                if (M(q1) == res) {
+                if M(q1) == res {
                     set agree += 1;
                 }
 
                 // Count the number of ones we saw:
-                if (res == One) {
+                if res == One {
                     set numOnes += 1;
                 }
             }
