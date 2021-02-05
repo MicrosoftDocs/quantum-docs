@@ -49,7 +49,7 @@ Initially, this file contains one sample unit test `AllocateQubit` which checks 
     @Test("QuantumSimulator")
     operation AllocateQubit () : Unit {
 
-        using (qubit = Qubit()) {
+        use qubit = Qubit() {
             AssertMeasurement([PauliZ], [qubit], Zero, "Newly allocated qubit must be in the |0⟩ state.");
         }
         
@@ -147,7 +147,7 @@ Let's consider a simple example:
 ```qsharp
 function PositivityFact(value : Double) : Unit 
 {
-    if (value <= 0) 
+    if value <= 0
     {
         fail "Expected a positive number.";
     }
@@ -184,7 +184,7 @@ Target machines which work by simulation are not bound by [the no-cloning theore
 A simulator can then, similar to the `PositivityFact` function previous, stop computation if the hypothetical outcome is not observed in practice:
 
 ```qsharp
-using (register = Qubit()) 
+use register = Qubit() 
 {
     H(register);
     AssertMeasurement([PauliX], [register], Zero);
@@ -327,7 +327,7 @@ namespace Samples {
     open Microsoft.Quantum.Diagnostics;
 
     operation Operation () : Unit {
-        using (qubits = Qubit[2]) {
+        use qubits = Qubit[2] {
             H(qubits[1]);
             DumpMachine("dump.txt");
         }
@@ -378,7 +378,7 @@ namespace app
 
     operation Operation () : Unit {
 
-        using (qubits = Qubit[2]) {
+        use qubits = Qubit[2] {
             X(qubits[1]);
             H(qubits[1]);
             R1Frac(1, 2, qubits[1]);
