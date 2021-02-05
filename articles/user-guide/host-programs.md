@@ -33,7 +33,7 @@ Indeed, this process is at the core of the [quantum random number generator](xre
 In Q#, this would be performed by the following code:
 
 ```qsharp
-        using (q = Qubit()) {    // allocates qubit for use (automatically in |0>)
+        use q = Qubit() {    // allocates qubit for use (automatically in |0>)
             H(q);                // puts qubit in superposition of |0> and |1>
             return MResetZ(q);   // measures qubit, returns result (and resets it to |0> before deallocation)
         }
@@ -44,7 +44,7 @@ For that, it needs to make up the body of an [operation](xref:microsoft.quantum.
 Hence, you can write an operation of the following form:
 ```qsharp
     operation MeasureSuperposition() : Result {
-        using (q = Qubit()) {
+        use q = Qubit() {
             H(q);
             return MResetZ(q);
         }
@@ -73,7 +73,7 @@ namespace NamespaceName {
     open Microsoft.Quantum.Measurement;   // for MResetZ
 
     operation MeasureSuperposition() : Result {
-        using (q = Qubit()) { 
+        use q = Qubit() { 
             H(q);
             return MResetZ(q);
         }
@@ -148,7 +148,7 @@ namespace NamespaceName {
 
     @EntryPoint()
     operation MeasureSuperposition() : Result {
-        using (q = Qubit()) { 
+        use q = Qubit() { 
             H(q);
             return MResetZ(q);
         }
@@ -169,7 +169,7 @@ Suppose we wanted to perform a similar operation, but on multiple qubits---the n
 Such an operation could be written as
 ```qsharp
     operation MeasureSuperpositionArray(n : Int) : Result[] {
-        using (qubits = Qubit[n]) {              // allocate a register of n qubits
+        use qubits = Qubit[n] {              // allocate a register of n qubits
             ApplyToEach(H, qubits);              // apply H to each qubit in the register
             return ForEach(MResetZ, qubits);     // perform MResetZ on each qubit, returns the resulting array
         }
@@ -273,14 +273,14 @@ namespace NamespaceName {
     open Microsoft.Quantum.Arrays;        // ForEach
 
     operation MeasureSuperposition() : Result {
-        using (q = Qubit()) { 
+        use q = Qubit() { 
             H(q);
             return MResetZ(q);
         }
     }
 
     operation MeasureSuperpositionArray(n : Int) : Result[] {
-        using (qubits = Qubit[n]) {  
+        use qubits = Qubit[n] {  
             ApplyToEach(H, qubits); 
             return ForEach(MResetZ, qubits);    
         }
