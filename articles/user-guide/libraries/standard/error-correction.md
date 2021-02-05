@@ -114,7 +114,7 @@ Once a code is defined in this way, we can use the <xref:Microsoft.Quantum.Error
 let code = BitFlipCode();
 let fn = BitFlipRecoveryFn();
 let X0 = ApplyPauli([PauliX, PauliI, PauliI], _);
-using (scratch = Qubit[nScratch]) {
+use scratch = Qubit[nScratch] {
     let logicalRegister = encode(data, scratch);
     // Cause an error.
     X0(logicalRegister);
