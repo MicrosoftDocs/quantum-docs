@@ -93,7 +93,7 @@ Later, we will modify it to return an array of measurement results, at which poi
 Within our Q# operation, we first allocate a register of three qubits with the `using` statement:
 
 ```qsharp
-        using (qs = Qubit[3]) {
+        use qs = Qubit[3] {
 
             Message("Initial state |000>:");
             DumpMachine();
@@ -101,7 +101,7 @@ Within our Q# operation, we first allocate a register of three qubits with the `
         }
 ```
 
-With `using`, the qubits are automatically allocated in the $\ket{0}$ state. We can verify this by using [`Message(<string>)`](xref:Microsoft.Quantum.Intrinsic.Message) and [`DumpMachine()`](xref:Microsoft.Quantum.Diagnostics.DumpMachine), which print a string and the system's current state to the console.
+With `use`, the qubits are automatically allocated in the $\ket{0}$ state. We can verify this by using [`Message(<string>)`](xref:Microsoft.Quantum.Intrinsic.Message) and [`DumpMachine()`](xref:Microsoft.Quantum.Diagnostics.DumpMachine), which print a string and the system's current state to the console.
 
 > [!NOTE]
 > The `Message(<string>)` and `DumpMachine()` functions (from [`Microsoft.Quantum.Intrinsic`](xref:Microsoft.Quantum.Intrinsic) and [`Microsoft.Quantum.Diagnostics`](xref:Microsoft.Quantum.Diagnostics), respectively) both print directly to the console. 
@@ -210,7 +210,7 @@ namespace NamespaceQFT {
 
     operation Perform3qubitQFT() : Unit {
 
-        using (qs = Qubit[3]) {
+        use qs = Qubit[3] {
 
             Message("Initial state |000>:");
             DumpMachine();
@@ -332,7 +332,7 @@ namespace NamespaceQFT
     {
         static void Main(string[] args)
         {
-            using (var qsim = new QuantumSimulator())
+            using var qsim = new QuantumSimulator()
             {
                 Perform3QubitQFT.Run(qsim).Wait();
             }
@@ -442,7 +442,7 @@ The `mutable` keyword prefacing `resultArray` allows the variable to be rebound 
 After the Fourier transform operations inside the `using` block, insert the following code:
 
 ```qsharp
-            for(i in IndexRange(qs)) {
+            fori in IndexRange(qs) {
                 set resultArray w/= i <- M(qs[i]);
             }
 ```
@@ -475,7 +475,7 @@ The final operation code should look like:
 
         mutable resultArray = new Result[3];
 
-        using (qs = Qubit[3]) {
+        use qs = Qubit[3] {
 
             //QFT:
             //first qubit:
@@ -495,7 +495,7 @@ The final operation code should look like:
             Message("Before measurement: ");
             DumpMachine();
 
-            for(i in IndexRange(qs)) {
+            for i in IndexRange(qs) {
                 set resultArray w/= i <- M(qs[i]);
             }
 
@@ -733,7 +733,7 @@ To see the real benefit of using the Q# library operations, change the number of
 ```qsharp
         mutable resultArray = new Result[4];
 
-        using (qs = Qubit[4]) {
+        use qs = Qubit[4] {
             //...
         }
 ```
