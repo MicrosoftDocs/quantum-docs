@@ -100,7 +100,7 @@ Asserting against $\ket{0}$ is also useful when we wish to assert that two state
 In particular,
 
 ```qsharp
-using (register = Qubit()) {
+use register = Qubit() {
     P(register);
     Adjoint Q(register);
 
