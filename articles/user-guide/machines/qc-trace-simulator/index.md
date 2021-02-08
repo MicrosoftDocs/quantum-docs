@@ -55,18 +55,17 @@ Therefore, if an operation includes measurements, you must explicitly provide th
 
 ```qsharp
 operation TeleportQubit(source : Qubit, target : Qubit) : Unit {
-    using (qubit = Qubit()) {
-        H(qubit);
-        CNOT(qubit, target);
-        CNOT(source, qubit);
-        H(source);
+    use qubit = Qubit();
+    H(qubit);
+    CNOT(qubit, target);
+    CNOT(source, qubit);
+    H(source);
 
-        AssertMeasurementProbability([PauliZ], [source], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
-        AssertMeasurementProbability([PauliZ], [q], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
+    AssertMeasurementProbability([PauliZ], [source], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
+    AssertMeasurementProbability([PauliZ], [q], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
 
-        if (M(source) == One)  { Z(target); X(source); }
-        if (M(q) == One) { X(target); X(q); }
-    }
+    if M(source) == One { Z(target); X(source); }
+    if M(q) == One { X(target); X(q); }
 }
 ```
 

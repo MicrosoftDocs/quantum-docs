@@ -38,11 +38,10 @@ Now, consider this example:
 
 ```qsharp
 operation ApplyWithNonDistinctInputs() : Unit {
-    using (qubits = Qubit[3]) {
-        let op1 = CNOT(_, qubits[1]);
-        let op2 = CNOT(qubits[1], _);
-        ApplyBoth(qubits[0], qubits[2], op1, op2);
-    }
+    use qubits = Qubit[3];
+    let op1 = CNOT(_, qubits[1]);
+    let op2 = CNOT(qubits[1], _);
+    ApplyBoth(qubits[0], qubits[2], op1, op2);
 }
 ```
 
