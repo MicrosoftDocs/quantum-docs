@@ -93,12 +93,12 @@ Later, we will modify it to return an array of measurement results, at which poi
 Within our Q# operation, we first allocate a register of three qubits with the `using` statement:
 
 ```qsharp
-        use qs = Qubit[3] {
+        use qs = Qubit[3];
 
-            Message("Initial state |000>:");
-            DumpMachine();
+        Message("Initial state |000>:");
+        DumpMachine();
 
-        }
+        
 ```
 
 With `use`, the qubits are automatically allocated in the $\ket{0}$ state. We can verify this by using [`Message(<string>)`](xref:Microsoft.Quantum.Intrinsic.Message) and [`DumpMachine()`](xref:Microsoft.Quantum.Diagnostics.DumpMachine), which print a string and the system's current state to the console.
@@ -210,31 +210,31 @@ namespace NamespaceQFT {
 
     operation Perform3qubitQFT() : Unit {
 
-        use qs = Qubit[3] {
+        use qs = Qubit[3];
 
-            Message("Initial state |000>:");
-            DumpMachine();
+        Message("Initial state |000>:");
+        DumpMachine();
 
-            //QFT:
-            //first qubit:
-            H(qs[0]);
-            Controlled R1([qs[1]], (PI()/2.0, qs[0]));
-            Controlled R1([qs[2]], (PI()/4.0, qs[0]));
+        //QFT:
+        //first qubit:
+        H(qs[0]);
+        Controlled R1([qs[1]], (PI()/2.0, qs[0]));
+        Controlled R1([qs[2]], (PI()/4.0, qs[0]));
 
-            //second qubit:
-            H(qs[1]);
-            Controlled R1([qs[2]], (PI()/2.0, qs[1]));
+        //second qubit:
+        H(qs[1]);
+        Controlled R1([qs[2]], (PI()/2.0, qs[1]));
 
-            //third qubit:
-            H(qs[2]);
+        //third qubit:
+        H(qs[2]);
 
-            SWAP(qs[2], qs[0]);
+        SWAP(qs[2], qs[0]);
 
-            Message("After:");
-            DumpMachine();
+        Message("After:");
+        DumpMachine();
 
-            ResetAll(qs);
-        }
+        ResetAll(qs);
+        
     }
 }
 ```
@@ -442,7 +442,7 @@ The `mutable` keyword prefacing `resultArray` allows the variable to be rebound 
 After the Fourier transform operations inside the `using` block, insert the following code:
 
 ```qsharp
-            fori in IndexRange(qs) {
+            for i in IndexRange(qs) {
                 set resultArray w/= i <- M(qs[i]);
             }
 ```
@@ -475,37 +475,37 @@ The final operation code should look like:
 
         mutable resultArray = new Result[3];
 
-        use qs = Qubit[3] {
+        use qs = Qubit[3];
 
-            //QFT:
-            //first qubit:
-            H(qs[0]);
-            Controlled R1([qs[1]], (PI()/2.0, qs[0]));
-            Controlled R1([qs[2]], (PI()/4.0, qs[0]));
+        //QFT:
+        //first qubit:
+        H(qs[0]);
+        Controlled R1([qs[1]], (PI()/2.0, qs[0]));
+        Controlled R1([qs[2]], (PI()/4.0, qs[0]));
 
-            //second qubit:
-            H(qs[1]);
-            Controlled R1([qs[2]], (PI()/2.0, qs[1]));
+        //second qubit:
+        H(qs[1]);
+        Controlled R1([qs[2]], (PI()/2.0, qs[1]));
 
-            //third qubit:
-            H(qs[2]);
+        //third qubit:
+        H(qs[2]);
 
-            SWAP(qs[2], qs[0]);
+        SWAP(qs[2], qs[0]);
 
-            Message("Before measurement: ");
-            DumpMachine();
+        Message("Before measurement: ");
+        DumpMachine();
 
-            for i in IndexRange(qs) {
-                set resultArray w/= i <- M(qs[i]);
-            }
-
-            Message("After measurement: ");
-            DumpMachine();
-
-            ResetAll(qs);
+        for i in IndexRange(qs) {
+            set resultArray w/= i <- M(qs[i]);
         }
+
+        Message("After measurement: ");
+        DumpMachine();
+
+        ResetAll(qs);
+        
         return resultArray;
-    }
+    
 }
 ```
 
@@ -733,9 +733,9 @@ To see the real benefit of using the Q# library operations, change the number of
 ```qsharp
         mutable resultArray = new Result[4];
 
-        use qs = Qubit[4] {
-            //...
-        }
+        use qs = Qubit[4];
+        //...
+        
 ```
 You can thus apply the proper QFT for any given number of qubits, without having to worry about the mess of new `H` operations and rotations on each qubit.
 
