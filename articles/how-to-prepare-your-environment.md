@@ -27,7 +27,7 @@ Before installing the Azure CLI `quantum` extension, ensure that the following p
 To install the Azure CLI `quantum` extension, open a command prompt, and then run the following command:
 
 ```bash
-    az extension add -n quantum
+az extension add -n quantum
 ```
 
 ## Uninstall the extension
@@ -35,7 +35,7 @@ To install the Azure CLI `quantum` extension, open a command prompt, and then ru
 To uninstall the Azure CLI `quantum` extension, run the following command:
 
 ```bash
-    az extension remove -n quantum
+az extension remove -n quantum
 ```
 
 ## Update the extension
@@ -43,7 +43,7 @@ To uninstall the Azure CLI `quantum` extension, run the following command:
 If you need to update an existing installation of the the Azure CLI `quantum` extension, you can run:
 
 ```bash
-    az extension update -n quantum
+az extension update -n quantum
 ```
 
 > [!NOTE]
