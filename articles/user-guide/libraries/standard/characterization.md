@@ -214,14 +214,14 @@ operation ApplyExampleOracle(
 
 operation EstimateBayesianPhase(eigenphase : Double) : Double {
     let oracle = ContinuousOracle(ApplyExampleOracle(eigenphase, _, _));
-    use eigenstate = Qubit() {
-        X(eigenstate);
-        // The additional inputs here specify the mean and variance of the prior, the number of
-        // iterations to perform, how many iterations to perform as a maximum, and how many
-        // steps to roll back on an approximation failure.
-        let est = RandomWalkPhaseEstimation(0.0, 1.0, 61, 100000, 1, oracle, [eigenstate]);
-        Reset(eigenstate);
-        return est;
-    }
+    use eigenstate = Qubit();
+    X(eigenstate);
+    // The additional inputs here specify the mean and variance of the prior, the number of
+    // iterations to perform, how many iterations to perform as a maximum, and how many
+    // steps to roll back on an approximation failure.
+    let est = RandomWalkPhaseEstimation(0.0, 1.0, 61, 100000, 1, oracle, [eigenstate]);
+    Reset(eigenstate);
+    return est;
+    
 }
 ```
