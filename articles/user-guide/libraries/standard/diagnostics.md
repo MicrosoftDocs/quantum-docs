@@ -100,12 +100,12 @@ Asserting against $\ket{0}$ is also useful when we wish to assert that two state
 In particular,
 
 ```qsharp
-use register = Qubit() {
-    P(register);
-    Adjoint Q(register);
+use register = Qubit();
+P(register);
+Adjoint Q(register);
 
-    AssertQubit(Zero, register);
-}
+AssertQubit(Zero, register);
+
 ```
 
 More generally, however, we may not have access to assertions about states that do not coincide with eigenstates of Pauli operators.
