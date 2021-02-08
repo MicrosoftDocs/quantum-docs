@@ -84,18 +84,17 @@ Using the Quantum Development Kit, this operation can be applied as follows:
 
 ```qsharp
 operation TestMyAddition(xValue : Int, yValue : Int, n : Int) : Unit {
-    use (xQubits, yQubits) = (Qubit[n], Qubit[n])
-    {
-        let x = LittleEndian(xQubits); // define bit order
-        let y = LittleEndian(yQubits);
-        
-        ApplyXorInPlace(xValue, x); // initialize values
-        ApplyXorInPlace(yValue, y);
-        
-        AddI(x, y); // perform addition x+y into y
-        
-        // ... (use the result)
-    }
+    use (xQubits, yQubits) = (Qubit[n], Qubit[n]);
+    let x = LittleEndian(xQubits); // define bit order
+    let y = LittleEndian(yQubits);
+
+    ApplyXorInPlace(xValue, x); // initialize values
+    ApplyXorInPlace(yValue, y);
+
+    AddI(x, y); // perform addition x+y into y
+
+    // ... (use the result)
+    
 }
 ```
 
