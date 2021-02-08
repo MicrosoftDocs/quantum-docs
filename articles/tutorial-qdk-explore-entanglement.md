@@ -189,20 +189,20 @@ Add the following operation to the `Program.qs` file, inside the namespace,
    operation TestBellState(count : Int, initial : Result) : (Int, Int) {
 
        mutable numOnes = 0;
-       use qubit = Qubit() {
+       use qubit = Qubit();
+       for test in 1..count {
+           SetQubitState(initial, qubit);
+           let res = M(qubit);
 
-           for test in 1..count {
-               SetQubitState(initial, qubit);
-               let res = M(qubit);
-
-               // Count the number of ones we saw:
-               if res == One {
-                   set numOnes += 1;
-               }
+           // Count the number of ones we saw:
+           if res == One {       
+               set numOnes += 1;
            }
-            
-           SetQubitState(Zero, qubit);
        }
+
+       SetQubitState(Zero, qubit);
+
+       
 
        // Return number of times we saw a |0> and number of times we saw a |1>
        Message("Test results (# of 0s, # of 1s): ");
@@ -263,20 +263,20 @@ namespace Bell {
     operation TestBellState(count : Int, initial : Result) : (Int, Int) {
 
         mutable numOnes = 0;
-        use qubit = Qubit() {
+        use qubit = Qubit();
+        for test in 1..count {
+            SetQubitState(initial, qubit);
+            let res = M(qubit);
+            
 
-            for test in 1..count {
-                SetQubitState(initial, qubit);
-                let res = M(qubit);
-
-                // Count the number of ones we saw:
-                if res == One {
-                    set numOnes += 1;
-                }
+            // Count the number of ones we saw:
+            if res == One {
+                  set numOnes += 1;
             }
-
-            SetQubitState(Zero, qubit);
         }
+
+        SetQubitState(Zero, qubit);
+        
 
     // Return number of times we saw a |0> and number of times we saw a |1>
     Message("Test results (# of 0s, # of 1s): ");
@@ -411,7 +411,7 @@ The first thing we'll need to do is allocate two qubits instead of one in
 `TestBellState`:
 
 ```qsharp
-using ((q0, q1) = (Qubit(), Qubit())) {
+use (q0, q1) = (Qubit(), Qubit());
 ```
 
 This will allow us to add a new operation (`CNOT`) before we measure  (`M`) in
@@ -442,24 +442,24 @@ The full routine now looks like this:
     operation TestBellState(count : Int, initial : Result) : (Int, Int) {
 
         mutable numOnes = 0;
-        use (q0, q1) = (Qubit(), Qubit()) {
-            for test in 1..count {
-                SetQubitState(initial, q0);
-                SetQubitState(Zero, q1);
-
-                H(q0);
-                CNOT(q0,q1);
-                let res = M(q0);
-
-                // Count the number of ones we saw:
-                if res == One {
-                    set numOnes += 1;
-                }
-            }
-
-            SetQubitState(Zero, q0);
+        use (q0, q1) = (Qubit(), Qubit());
+        for test in 1..count {
+            SetQubitState(initial, q0);
             SetQubitState(Zero, q1);
+
+            H(q0);
+            CNOT(q0,q1);
+            let res = M(q0);
+
+            // Count the number of ones we saw:
+            if res == One {
+                set numOnes += 1;
+            }
         }
+
+        SetQubitState(Zero, q0);
+        SetQubitState(Zero, q1);
+        
 
         // Return number of times we saw a |0> and number of times we saw a |1>
         return (count-numOnes, numOnes);
@@ -475,28 +475,28 @@ operation:
     operation TestBellState(count : Int, initial : Result) : (Int, Int, Int) {
         mutable numOnes = 0;
         mutable agree = 0;
-        use (q0, q1) = (Qubit(), Qubit()) {
-            for test in 1..count {
-                SetQubitState(initial, q0);
-                SetQubitState(Zero, q1);
-
-                H(q0);
-                CNOT(q0, q1);
-                let res = M(q0);
-
-                if M(q1) == res {
-                    set agree += 1;
-                }
-
-                // Count the number of ones we saw:
-                if res == One {
-                    set numOnes += 1;
-                }
-            }
-            
-            SetQubitState(Zero, q0);
+        use (q0, q1) = (Qubit(), Qubit());
+        for test in 1..count {
+            SetQubitState(initial, q0);
             SetQubitState(Zero, q1);
+
+            H(q0);
+            CNOT(q0, q1);
+            let res = M(q0);
+
+            if M(q1) == res {
+                set agree += 1;
+            }
+
+            // Count the number of ones we saw:
+            if res == One {
+                set numOnes += 1;
+            }
         }
+
+        SetQubitState(Zero, q0);
+        SetQubitState(Zero, q1);
+        
 
         // Return times we saw |0>, times we saw |1>, and times measurements agreed
         Message("Test results (# of 0s, # of 1s, # of agreements)");
