@@ -52,10 +52,9 @@ operation RunTrotterStep (qSharpData: JordanWignerEncodingData) : Unit {
     let (nQubits, (rescaleFactor, oracle)) = TrotterStepOracle(qSharpData, trotterStepSize, trotterOrder);
     
     // We not allocate qubits an run a single step.
-    using (qubits = Qubit[nQubits]) {
-        oracle(qubits);
-        ResetAll(qubits);
-    }
+    use qubits = Qubit[nQubits]);
+    oracle(qubits);
+    ResetAll(qubits);
 }
 
 

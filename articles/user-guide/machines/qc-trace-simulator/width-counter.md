@@ -33,9 +33,8 @@ The C# example that follows in this section computes the number of extra qubits 
 open Microsoft.Quantum.Intrinsic;
 open Microsoft.Quantum.Arrays;
 operation ApplyMultiControlledX( numberOfQubits : Int ) : Unit {
-    using(qubits = Qubit[numberOfQubits]) {
-        Controlled X (Rest(qubits), Head(qubits));
-    } 
+    use qubits = Qubit[numberOfQubits];
+    Controlled X (Rest(qubits), Head(qubits));
 }
 ```
 

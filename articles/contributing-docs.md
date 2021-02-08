@@ -121,7 +121,7 @@ For the example of `ControlledOnBitString`, we might write something like the fo
  /// # Example
  /// The following code snippets are equivalent:
  /// ```qsharp
- /// (ControlledOnBitString(bits, oracle))(controlRegister, targetRegister);
+ /// ControlledOnBitString(bits, oracle)(controlRegister, targetRegister);
  /// ```
  /// and
  /// ```qsharp
@@ -134,10 +134,9 @@ For the example of `ControlledOnBitString`, we might write something like the fo
  ///
  /// The following code prepares a state $\frac{1}{2}(\ket{00} - \ket{01} + \ket{10} + \ket{11})$:
  /// ```qsharp
- /// using (register = Qubit[2]) {
- ///     ApplyToEach(H, register);
- ///     (ControlledOnBitString([false], Z))(register[0..0], register[1]);
- /// }
+ /// use register = Qubit[2];
+ /// ApplyToEach(H, register);
+ /// ControlledOnBitString([false], Z)(register[0..0], register[1]);
  /// ```
  function ControlledOnBitString<'T> (bits : Bool[], oracle : ('T => Unit is Adj + Ctl)) : ((Qubit[], 'T) => Unit is Adj + Ctl)
  {

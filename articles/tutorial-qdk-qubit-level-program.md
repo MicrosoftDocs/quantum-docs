@@ -89,25 +89,24 @@ Next, we define the `Perform3qubitQFT` operation:
 For now, the operation takes no arguments and does not return anything---in this case we write that it returns a `Unit` object, which is akin to `void` in C# or an empty tuple, `Tuple[()]`, in Python.
 Later, we will modify it to return an array of measurement results, at which point `Unit` will be replaced by `Result[]`. 
 
-### Allocate qubits with `using`
-Within our Q# operation, we first allocate a register of three qubits with the `using` statement:
+### Allocate qubits with `use`
+Within our Q# operation, we first allocate a register of three qubits with the `use` keyword:
 
 ```qsharp
-        using (qs = Qubit[3]) {
+        use qs = Qubit[3];
 
-            Message("Initial state |000>:");
-            DumpMachine();
+        Message("Initial state |000>:");
+        DumpMachine();
 
-        }
+        
 ```
 
-With `using`, the qubits are automatically allocated in the $\ket{0}$ state. We can verify this by using [`Message(<string>)`](xref:Microsoft.Quantum.Intrinsic.Message) and [`DumpMachine()`](xref:Microsoft.Quantum.Diagnostics.DumpMachine), which print a string and the system's current state to the console.
+With `use`, the qubits are automatically allocated in the $\ket{0}$ state. We can verify this by using [`Message(<string>)`](xref:Microsoft.Quantum.Intrinsic.Message) and [`DumpMachine()`](xref:Microsoft.Quantum.Diagnostics.DumpMachine), which print a string and the system's current state to the console.
 
 > [!NOTE]
 > The `Message(<string>)` and `DumpMachine()` functions (from [`Microsoft.Quantum.Intrinsic`](xref:Microsoft.Quantum.Intrinsic) and [`Microsoft.Quantum.Diagnostics`](xref:Microsoft.Quantum.Diagnostics), respectively) both print directly to the console. 
 > Just like a real quantum computation, Q# does not allow us to directly access qubit states.
 > However, as `DumpMachine` prints the target machine's current state, it can provide valuable insight for debugging and learning when used in conjunction with the full state simulator.
-
 
 ### Applying single-qubit and controlled gates
 
@@ -197,7 +196,7 @@ We call [`DumpMachine()`](xref:Microsoft.Quantum.Diagnostics.DumpMachine) again 
 
 Requiring that all deallocated qubits be explicitly set to $\ket{0}$ is a basic feature of Q#, as it allows other operations to know their state precisely when they begin using those same qubits (a scarce resource).
 Additionally, this assures that they not be entangled with any other qubits in the system.
-If the reset is not performed at the end of a `using` allocation block, a runtime error will be thrown.
+If the reset is not performed at the end of a `use` allocation block, a runtime error might be thrown.
 
 Your full Q# file should now look like this:
 
@@ -210,31 +209,31 @@ namespace NamespaceQFT {
 
     operation Perform3qubitQFT() : Unit {
 
-        using (qs = Qubit[3]) {
+        use qs = Qubit[3];
 
-            Message("Initial state |000>:");
-            DumpMachine();
+        Message("Initial state |000>:");
+        DumpMachine();
 
-            //QFT:
-            //first qubit:
-            H(qs[0]);
-            Controlled R1([qs[1]], (PI()/2.0, qs[0]));
-            Controlled R1([qs[2]], (PI()/4.0, qs[0]));
+        //QFT:
+        //first qubit:
+        H(qs[0]);
+        Controlled R1([qs[1]], (PI()/2.0, qs[0]));
+        Controlled R1([qs[2]], (PI()/4.0, qs[0]));
 
-            //second qubit:
-            H(qs[1]);
-            Controlled R1([qs[2]], (PI()/2.0, qs[1]));
+        //second qubit:
+        H(qs[1]);
+        Controlled R1([qs[2]], (PI()/2.0, qs[1]));
 
-            //third qubit:
-            H(qs[2]);
+        //third qubit:
+        H(qs[2]);
 
-            SWAP(qs[2], qs[0]);
+        SWAP(qs[2], qs[0]);
 
-            Message("After:");
-            DumpMachine();
+        Message("After:");
+        DumpMachine();
 
-            ResetAll(qs);
-        }
+        ResetAll(qs);
+        
     }
 }
 ```
@@ -332,7 +331,7 @@ namespace NamespaceQFT
     {
         static void Main(string[] args)
         {
-            using (var qsim = new QuantumSimulator())
+            using var qsim = new QuantumSimulator()
             {
                 Perform3QubitQFT.Run(qsim).Wait();
             }
@@ -429,7 +428,7 @@ First, we modify our `Perform3QubitQFT` operation to return an array of measurem
 
 #### Define and initialize `Result[]` array
 
-Before even allocating qubits (for example, before the `using` statement), we declare and bind this length-3 array (one `Result` for each qubit): 
+Before even allocating qubits (for example, before the `use` statement), we declare and bind this length-3 array (one `Result` for each qubit): 
 
 ```qsharp
         mutable resultArray = new Result[3];
@@ -439,14 +438,15 @@ The `mutable` keyword prefacing `resultArray` allows the variable to be rebound 
 
 #### Perform measurements in a `for` loop and add results to array
 
-After the Fourier transform operations inside the `using` block, insert the following code:
+After the Fourier transform operations insert the following code:
 
 ```qsharp
-            for(i in IndexRange(qs)) {
+            for i in IndexRange(qs) {
                 set resultArray w/= i <- M(qs[i]);
             }
 ```
-The [`IndexRange`](xref:Microsoft.Quantum.Arrays.IndexRange) function called on an array (for example, our array of qubits, `qs`) returns a range over the indices of the array. 
+
+The [`IndexRange`](xref:Microsoft.Quantum.Arrays.IndexRange) function called on an array (for example, our array of qubits, `qs`) returns a range over the indices of the array.
 Here, we use it in our `for` loop to sequentially measure each qubit using the `M(qs[i])` statement.
 Each measured `Result` type (either `Zero` or `One`) is then added to the corresponding index position in `resultArray` with an update-and-reassign statement.
 
@@ -457,13 +457,12 @@ The keyword `set` is always used to reassign variables bound using `mutable`.
 
 #### Return `resultArray`
 
-With all three qubits measured and the results added to `resultArray`, we are safe to reset and deallocate the qubits as before.
-After the `using` block's close, insert
+With all three qubits measured and the results added to `resultArray`, we are safe to reset and deallocate the qubits as before. To
+return the measurements, insert:
 
 ```qsharp
         return resultArray;
 ```
-to ultimately return the output of our operation. 
 
 ### Understanding the effects of measurement
 
@@ -475,37 +474,37 @@ The final operation code should look like:
 
         mutable resultArray = new Result[3];
 
-        using (qs = Qubit[3]) {
+        use qs = Qubit[3];
 
-            //QFT:
-            //first qubit:
-            H(qs[0]);
-            Controlled R1([qs[1]], (PI()/2.0, qs[0]));
-            Controlled R1([qs[2]], (PI()/4.0, qs[0]));
+        //QFT:
+        //first qubit:
+        H(qs[0]);
+        Controlled R1([qs[1]], (PI()/2.0, qs[0]));
+        Controlled R1([qs[2]], (PI()/4.0, qs[0]));
 
-            //second qubit:
-            H(qs[1]);
-            Controlled R1([qs[2]], (PI()/2.0, qs[1]));
+        //second qubit:
+        H(qs[1]);
+        Controlled R1([qs[2]], (PI()/2.0, qs[1]));
 
-            //third qubit:
-            H(qs[2]);
+        //third qubit:
+        H(qs[2]);
 
-            SWAP(qs[2], qs[0]);
+        SWAP(qs[2], qs[0]);
 
-            Message("Before measurement: ");
-            DumpMachine();
+        Message("Before measurement: ");
+        DumpMachine();
 
-            for(i in IndexRange(qs)) {
-                set resultArray w/= i <- M(qs[i]);
-            }
-
-            Message("After measurement: ");
-            DumpMachine();
-
-            ResetAll(qs);
+        for i in IndexRange(qs) {
+            set resultArray w/= i <- M(qs[i]);
         }
+
+        Message("After measurement: ");
+        DumpMachine();
+
+        ResetAll(qs);
+        
         return resultArray;
-    }
+    
 }
 ```
 
@@ -733,9 +732,9 @@ To see the real benefit of using the Q# library operations, change the number of
 ```qsharp
         mutable resultArray = new Result[4];
 
-        using (qs = Qubit[4]) {
-            //...
-        }
+        use qs = Qubit[4];
+        //...
+        
 ```
 You can thus apply the proper QFT for any given number of qubits, without having to worry about the mess of new `H` operations and rotations on each qubit.
 
