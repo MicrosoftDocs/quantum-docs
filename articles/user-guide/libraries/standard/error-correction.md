@@ -114,14 +114,14 @@ Once a code is defined in this way, we can use the <xref:Microsoft.Quantum.Error
 let code = BitFlipCode();
 let fn = BitFlipRecoveryFn();
 let X0 = ApplyPauli([PauliX, PauliI, PauliI], _);
-using (scratch = Qubit[nScratch]) {
-    let logicalRegister = encode(data, scratch);
-    // Cause an error.
-    X0(logicalRegister);
-    Recover(code, fn, logicalRegister);
-    let (decodedData, decodedScratch) = decode(logicalRegister);
-    ApplyToEach(Reset, decodedScratch);
-}
+use scratch = Qubit[nScratch];
+let logicalRegister = encode(data, scratch);
+// Cause an error.
+X0(logicalRegister);
+Recover(code, fn, logicalRegister);
+let (decodedData, decodedScratch) = decode(logicalRegister);
+ApplyToEach(Reset, decodedScratch);
+
 ```
 
 We explore this in more detail in the [bit flip code sample](https://github.com/microsoft/Quantum/tree/main/samples/error-correction/bit-flip-code).

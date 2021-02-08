@@ -28,7 +28,7 @@ CNOT(register[nQubits - 2], register[nQubits - 1]);
 We can express this pattern by using iteration and `for` loops:
 
 ```qsharp
-for (idxQubit in 0..nQubits - 2) {
+for idxQubit in 0..nQubits - 2 {
     CNOT(register[idxQubit], register[idxQubit + 1]);
 }
 ```
@@ -53,7 +53,7 @@ In Q#, we might use <xref:Microsoft.Quantum.Arrays.IndexRange> to represent this
 operation ApplyHadamardToAll(
     register : Qubit[])
 : Unit is Adj + Ctl {
-    for (qubit in register) {
+    for qubit in register {
         H(qubit);
     }
 }

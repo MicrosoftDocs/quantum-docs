@@ -25,6 +25,11 @@ landingContent:
         links:
           - text: What is Azure Quantum?
             url: overview-azure-quantum.md
+          - text: More about Azure Quantum
+            url: https://azure.microsoft.com/services/quantum/
+          - text: More about the quantum program at Microsoft
+            url: https://azure.microsoft.com/solutions/quantum-computing/
+            
       - linkListType: get-started
         links:
           - text: Prepare your Azure Quantum environment 
@@ -81,6 +86,8 @@ landingContent:
         links:
           - text: What are Q# and the QDK?
             url: overview-what-is-qsharp-and-qdk.md
+          - text: More about the QDK
+            url: https://azure.microsoft.com/resources/development-kit/quantum-computing/
       - linkListType: get-started
         links:
           - text: The Quantum Development Kit

@@ -49,9 +49,9 @@ Initially, this file contains one sample unit test `AllocateQubit` which checks 
     @Test("QuantumSimulator")
     operation AllocateQubit () : Unit {
 
-        using (qubit = Qubit()) {
-            AssertMeasurement([PauliZ], [qubit], Zero, "Newly allocated qubit must be in the |0⟩ state.");
-        }
+        use qubit = Qubit();
+	AssertMeasurement([PauliZ], [qubit], Zero, "Newly allocated qubit must be in the |0⟩ state.");
+        
         
         Message("Test passed");
     }
@@ -147,7 +147,7 @@ Let's consider a simple example:
 ```qsharp
 function PositivityFact(value : Double) : Unit 
 {
-    if (value <= 0) 
+    if value <= 0
     {
         fail "Expected a positive number.";
     }
@@ -184,14 +184,14 @@ Target machines which work by simulation are not bound by [the no-cloning theore
 A simulator can then, similar to the `PositivityFact` function previous, stop computation if the hypothetical outcome is not observed in practice:
 
 ```qsharp
-using (register = Qubit()) 
-{
-    H(register);
-    AssertMeasurement([PauliX], [register], Zero);
-    // Even though we do not have access to states in Q#,
-    // we know by the anthropic principle that the state
-    // of register at this point is |+〉.
-}
+use register = Qubit();
+
+H(register);
+AssertMeasurement([PauliX], [register], Zero);
+// Even though we do not have access to states in Q#,
+// we know by the anthropic principle that the state
+// of register at this point is |+〉.
+
 ```
 
 On physical quantum hardware, where the no-cloning theorem prevents examination of a quantum state, the `AssertMeasurement` and `AssertMeasurementProbability` operations simply return `()` with no other effect.
@@ -327,10 +327,10 @@ namespace Samples {
     open Microsoft.Quantum.Diagnostics;
 
     operation Operation () : Unit {
-        using (qubits = Qubit[2]) {
-            H(qubits[1]);
-            DumpMachine("dump.txt");
-        }
+        use qubits = Qubit[2];
+    	H(qubits[1]);
+    	DumpMachine("dump.txt");
+        
     }
 }
 ```
@@ -378,17 +378,17 @@ namespace app
 
     operation Operation () : Unit {
 
-        using (qubits = Qubit[2]) {
-            X(qubits[1]);
-            H(qubits[1]);
-            R1Frac(1, 2, qubits[1]);
-            
-            DumpMachine("dump.txt");
-            DumpRegister("q0.txt", qubits[0..0]);
-            DumpRegister("q1.txt", qubits[1..1]);
+        use qubits = Qubit[2];
+	X(qubits[1]);
+	H(qubits[1]);
+	R1Frac(1, 2, qubits[1]);
 
-            ResetAll(qubits);
-        }
+	DumpMachine("dump.txt");
+	DumpRegister("q0.txt", qubits[0..0]);
+	DumpRegister("q1.txt", qubits[1..1]);
+
+	ResetAll(qubits);
+        
     }
 }
 ```

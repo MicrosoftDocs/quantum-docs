@@ -35,10 +35,9 @@ The C# example that follows in this section counts how many <xref:Microsoft.Quan
 open Microsoft.Quantum.Intrinsic;
 operation ApplySampleWithCCNOT() : Unit {
 
-    using (qubits = Qubit[3]) {
-        CCNOT(qubits[0], qubits[1], qubits[2]);
-        T(qubits[0]);
-    }
+    use qubits = Qubit[3]);
+    CCNOT(qubits[0], qubits[1], qubits[2]);
+    T(qubits[0]);
 }
 ```
 
