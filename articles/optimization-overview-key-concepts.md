@@ -1,5 +1,5 @@
 ---
-description: Learn about the key concepts of optimization, including cost functions, search spaces, and landscapes. 
+description: Learn about the basic concepts of optimization, including cost functions, search spaces, and landscapes. 
 author: frtibble
 ms.author: frtibble
 ms.date: 02/01/2021
@@ -10,9 +10,9 @@ title: Key concepts for optimization
 uid: microsoft.quantum.optimization.concepts.overview.key-concepts
 ---
 
-# Key concepts for optimization
+# Basic concepts for optimization
 
-To understand optimization problems, you first need to learn some some key terms and concepts.
+To understand optimization problems, you first need to learn some basic terms and concepts.
 
 ## Cost function
 
