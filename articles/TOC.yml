@@ -45,10 +45,6 @@
             href: how-to-submit-jobs-with-jupyter-notebooks.md
           - name: Submit jobs with Python
             href: how-to-submit-jobs-with-python.md
-    - name: Optimization
-      items:
-      - name: Install and use the Python SDK for optimization
-        href: optimization-install-sdk.md
   - name: Resources 
     items:
     - name: Glossary (Azure Quantum)
@@ -209,6 +205,10 @@
         href: concepts-oracles.md
   - name: Optimization
     items:
+    - name: Getting started
+      items:
+      - name: Install and use the Python SDK for optimization
+        href: optimization-install-sdk.md
     - name: Concepts
       items:
       - name: Which solver should you use?
