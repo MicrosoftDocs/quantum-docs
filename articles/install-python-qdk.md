@@ -11,7 +11,7 @@ title: Develop with Q# and Python
 uid: microsoft.quantum.install-qdk.overview.python
 ---
 
-# Use the QDK for quantum computing with Q# and Python
+# Use the QDK to develop with Q# and Python
 
 Learn how to install the Quantum Development Kit (QDK) to develop Python host programs that call Q# operations.
 

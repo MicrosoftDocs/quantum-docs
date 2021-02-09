@@ -12,7 +12,7 @@ uid: microsoft.quantum.optimization.install-sdk
 
 # Install and use the Python SDK for optimization
 
-This guide provides a basic overview of how to install and use the Python SDK for optimization.
+This guide provides a basic overview of how to install and use the Python SDK for optimization. It assumes you have already completed the [Creating an Azure Quantum workspace guide](xref:microsoft.quantum.workspaces-portal).
 
 ## Prerequisites
 
