@@ -45,10 +45,6 @@
             href: how-to-submit-jobs-with-jupyter-notebooks.md
           - name: Submit jobs with Python
             href: how-to-submit-jobs-with-python.md
-    - name: Optimization
-      items:
-      - name: Install and use the Python SDK for optimization
-        href: optimization-install-sdk.md
   - name: Resources 
     items:
     - name: Glossary (Azure Quantum)
@@ -135,7 +131,9 @@
     items:
     - name: Introduction to quantum computing
       href: overview-qdk.md
-    - name: Key concepts
+    - name: Introduction to optimization
+      href: optimization-overview-introduction.md
+    - name: Key concepts for quantum computing
       items: 
       - name: Understanding quantum computing
         href: overview-understanding-quantum-computing.md
@@ -145,6 +143,12 @@
         href: overview-what-is-qsharp-and-qdk.md
       - name: Linear algebra for quantum computing
         href: overview-algebra-for-quantum-computing.md
+    - name: Key concepts for optimization
+      items:
+      - name: What is quantum inspired optimization (QIO)?
+        href: optimization-what-is-quantum-optimization.md
+      - name: Learn the basics
+        href: optimization-overview-key-concepts.md 
   - name: Get started
     items:
     - name: Get started with the QDK
@@ -201,14 +205,10 @@
         href: concepts-oracles.md
   - name: Optimization
     items:
-    - name: Introduction
+    - name: Getting started
       items:
-      - name: Introduction to optimization
-        href: optimization-overview-introduction.md
-      - name: What is quantum inspired optimization (QIO)?
-        href: optimization-what-is-quantum-optimization.md
-      - name: Key concepts
-        href: optimization-overview-key-concepts.md
+      - name: Install and use the Python SDK for optimization
+        href: optimization-install-sdk.md
     - name: Concepts
       items:
       - name: Which solver should you use?
