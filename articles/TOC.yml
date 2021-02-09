@@ -151,14 +151,14 @@
         href: optimization-overview-key-concepts.md 
   - name: Get started
     items:
-    - name: Get started with the QDK
-      href: install-get-started-qdk.md
     - name: Set up the QDK
       href: install-overview-qdk.md
   - name: Quantum Computing
     items:
     - name: Getting started 
       items:
+      - name: Get started with the QDK
+        href: install-get-started-qdk.md
       - name: Q# applications
         href: install-command-line-qdk.md
       - name: Q# with Jupyter Notebooks
@@ -203,6 +203,10 @@
         href: concepts-circuits.md
       - name: Quantum oracles
         href: concepts-oracles.md
+    - name: Glossary
+      href: qdk-glossary.md
+    - name: Further reading
+      href: further-reading-qdk.md
   - name: Optimization
     items:
     - name: Getting started
@@ -218,15 +222,15 @@
       - name: Ising model
         href: optimization-concepts-ising-model-for-optimization.md
       - name: Binary optimization (QUBOs & PUBOs)
-        href: optimization-binary-optimization.md  
-      - name: Samples for using Azure Quantum optimization solvers 
-        href: https://github.com/microsoft/qio-samples
+        href: optimization-binary-optimization.md
+  - name: Tutorials
+    items:
+    - name: Samples for using Azure Quantum optimization solvers 
+      href: https://github.com/microsoft/qio-samples
   - name: Resources
     items:
     - name: Build your skills with MS Learn
       href: https://docs.microsoft.com/learn/paths/quantum-computing-fundamentals/
-    - name: Glossary
-      href: qdk-glossary.md
     - name: Contributing to the QDK
       items:
       - name: Reporting Bugs
@@ -246,7 +250,5 @@
       topicHref: contributing-overview.md
     - name: QDK Release Notes
       href: qdk-relnotes.md
-    - name: Further reading
-      href: further-reading-qdk.md
 - name: Q# user guide
   href: user-guide/toc.yml

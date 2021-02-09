@@ -11,7 +11,7 @@ title: Get started with the Quantum Development Kit (QDK)
 uid: microsoft.quantum.get-started-qdk
 ---
 
-# Get started with the Quantum Development Kit (QDK)
+# Get started with the Quantum Development Kit (QDK) for quantum computing
 
 The Quantum Development Kit (QDK) contains all the tools you'll need to build your own quantum programs and experiments with Q#, a programming language designed specifically for quantum application development.
 
@@ -20,7 +20,7 @@ You'll be guided through setting up the Quantum Development Kit on Windows, Linu
 
 If you're new to quantum computing, review the [Overview](xref:microsoft.quantum.overview.qdk-overview) section to learn what quantum computers can do and the fundamentals of quantum computing.
 
-## Get started programming
+## Get started programming with Q#
 
 The Quantum Development Kit provides many ways to learn how to develop a quantum program with Q#.
 To get up and running with the power of quantum, you can try out our tutorials:
@@ -70,7 +70,6 @@ The current documentation includes the following additional topics.
 ### Additional info
 
 * [Microsoft Quantum Development kit release notes](xref:microsoft.quantum.relnotes-qdk).
-
 
 ## Be a part of the Q# Open-Source Community
 
