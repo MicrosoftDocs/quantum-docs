@@ -31,9 +31,9 @@ Q# programs can run as standalone applications using Visual Studio Code or Visua
 
 You can use the QDK in three ways:
 
-- [Install the QDK for quantum computing locally](#install-the-qdk-locally)
-- [Use the QDK for quantum computing online](#use-the-qdk-online)
-- [Use a QDK for quantum computing Docker image](#use-the-qdk-with-docker)
+- [Install the QDK for quantum computing locally](#install-the-qdk-for-quantum-computing-locally)
+- [Use the QDK for quantum computing online](#use-the-qdk-for-quantum-computing-online)
+- [Use a QDK for quantum computing Docker image](#use-the-qdk-for-quantum-computing-with-docker)
 
 ### Install the QDK for quantum computing locally
 
