@@ -223,10 +223,10 @@
         href: optimization-concepts-ising-model-for-optimization.md
       - name: Binary optimization (QUBOs & PUBOs)
         href: optimization-binary-optimization.md
-  - name: Tutorials
-    items:
-    - name: Samples for using Azure Quantum optimization solvers 
-      href: https://github.com/microsoft/qio-samples
+    - name: Tutorials
+      items:
+      - name: Samples for using Azure Quantum optimization solvers 
+        href: https://github.com/microsoft/qio-samples
   - name: Resources
     items:
     - name: Build your skills with MS Learn
