@@ -45,10 +45,6 @@
             href: how-to-submit-jobs-with-jupyter-notebooks.md
           - name: Submit jobs with Python
             href: how-to-submit-jobs-with-python.md
-    - name: Optimization
-      items:
-      - name: Install and use the Python SDK for optimization
-        href: optimization-install-sdk.md
   - name: Resources 
     items:
     - name: Glossary (Azure Quantum)
@@ -135,7 +131,9 @@
     items:
     - name: Introduction to quantum computing
       href: overview-qdk.md
-    - name: Key concepts
+    - name: Introduction to optimization
+      href: optimization-overview-introduction.md
+    - name: Key concepts for quantum computing
       items: 
       - name: Understanding quantum computing
         href: overview-understanding-quantum-computing.md
@@ -145,16 +143,22 @@
         href: overview-what-is-qsharp-and-qdk.md
       - name: Linear algebra for quantum computing
         href: overview-algebra-for-quantum-computing.md
+    - name: Key concepts for optimization
+      items:
+      - name: What is quantum inspired optimization (QIO)?
+        href: optimization-what-is-quantum-optimization.md
+      - name: Learn the basics
+        href: optimization-overview-key-concepts.md 
   - name: Get started
     items:
-    - name: Get started with the QDK
-      href: install-get-started-qdk.md
     - name: Set up the QDK
       href: install-overview-qdk.md
   - name: Quantum Computing
     items:
     - name: Getting started 
       items:
+      - name: Get started with the QDK
+        href: install-get-started-qdk.md
       - name: Q# applications
         href: install-command-line-qdk.md
       - name: Q# with Jupyter Notebooks
@@ -163,6 +167,8 @@
         href: install-python-qdk.md
       - name: Q# with .NET
         href: install-csharp-qdk.md
+      - name: Q# with Binder
+        href: install-binder-qdk.md
     - name: Update the QDK
       href: install-update-qdk.md
     - name: Tutorials
@@ -199,16 +205,16 @@
         href: concepts-circuits.md
       - name: Quantum oracles
         href: concepts-oracles.md
+    - name: Glossary
+      href: qdk-glossary.md
+    - name: Further reading
+      href: further-reading-qdk.md
   - name: Optimization
     items:
-    - name: Introduction
+    - name: Getting started
       items:
-      - name: Introduction to optimization
-        href: optimization-overview-introduction.md
-      - name: What is quantum inspired optimization (QIO)?
-        href: optimization-what-is-quantum-optimization.md
-      - name: Key concepts
-        href: optimization-overview-key-concepts.md
+      - name: Install and use the Python SDK for optimization
+        href: optimization-install-sdk.md
     - name: Concepts
       items:
       - name: Which solver should you use?
@@ -218,15 +224,15 @@
       - name: Ising model
         href: optimization-concepts-ising-model-for-optimization.md
       - name: Binary optimization (QUBOs & PUBOs)
-        href: optimization-binary-optimization.md  
+        href: optimization-binary-optimization.md
+    - name: Tutorials
+      items:
       - name: Samples for using Azure Quantum optimization solvers 
         href: https://github.com/microsoft/qio-samples
   - name: Resources
     items:
     - name: Build your skills with MS Learn
       href: https://docs.microsoft.com/learn/paths/quantum-computing-fundamentals/
-    - name: Glossary
-      href: qdk-glossary.md
     - name: Contributing to the QDK
       items:
       - name: Reporting Bugs
@@ -246,7 +252,5 @@
       topicHref: contributing-overview.md
     - name: QDK Release Notes
       href: qdk-relnotes.md
-    - name: Further reading
-      href: further-reading-qdk.md
 - name: Q# user guide
   href: user-guide/toc.yml
