@@ -105,4 +105,4 @@ The workflows for each of these setups are described and compared in [Ways to ru
 
 You can use the Python SDK of the Quantum Development Kit to solve optimization problems using Azure Quantum solvers. 
 
-To set up the Python SDK, follow the guide [Install and use the Python SDK for optimization](xref:microsoft.quantum.optimization.install-sdk).
+To set up the Python SDK, follow the steps in [Install and use the Python SDK for optimization](xref:microsoft.quantum.optimization.install-sdk).
