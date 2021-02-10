@@ -99,7 +99,7 @@ You can download the IQ# Docker image from https://github.com/microsoft/iqsharp/
 
 You can also use Docker with a Visual Studio Code Remote Development Container to quickly define development environments. For more information about VS Code Development Containers, see https://github.com/microsoft/Quantum/tree/master/.devcontainer.
 
-The workflows for each of these setups are described and compared at [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
+The workflows for each of these setups are described and compared in [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
 
 ## Set up the Quantum Development Kit to manage optimization solvers in Azure Quantum
 
