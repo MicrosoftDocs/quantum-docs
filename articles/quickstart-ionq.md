@@ -29,7 +29,7 @@ Before you can write a Q# program and run it with IonQ, you'll need a few resour
 1. Install the `quantum` CLI extension for the Azure CLI.
 
    ```bash
-az extension add -n quantum
+   az extension add -n quantum
    ```
 
 ## Create an Azure Quantum workspace
