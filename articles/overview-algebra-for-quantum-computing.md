@@ -53,7 +53,9 @@ $$H = \dfrac{1}{\sqrt{2}}\begin{bmatrix}1 &1\\\\ 1 &-1\end{bmatrix},$$
 
  and puts a qubit into a superposition state where it has an even probability of collapsing either way, as shown here
 
-$$\frac{1}{\sqrt{2}}\begin{bmatrix}1 &1\\\\ 1 &-1\end{bmatrix}\begin{bmatrix} 1 \\\\  0 \end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\\\  1 \end{bmatrix}=\left(\frac{1}{\sqrt{2}}\right)^2=\frac{1}{2}.$$
+$$\frac{1}{\sqrt{2}}\begin{bmatrix}1 &1\\\\ 1 &-1\end{bmatrix}\begin{bmatrix} 1 \\\\  0 \end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\\\  1 \end{bmatrix}.$$
+
+Notice that $|a|^2 =|b|^2 = \frac{1}{2}$, meaning that the probability of collapsing to zero and one state is the same. 
 
 A matrix that represents a quantum operation has one requirement – it must be a **unitary** matrix. A matrix is unitary if the **inverse** of the matrix is equal to the **conjugate transpose** of the matrix.
 
