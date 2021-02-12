@@ -88,17 +88,17 @@ from azure.quantum.optimization import Problem, ProblemType, Term, ParallelTempe
 problem = Problem(name="My First Problem", problem_type=ProblemType.ising)
 ```
 
-Next, create an array of terms and add them to the `problem`:
+Next, create an array of `Term` objects and add them to the `Problem`:
 
 ```py
 terms = [
-    term(c=-9, indices=[0]),
-    term(c=-3, indices=[1,0]),
-    term(c=5, indices=[2,0]),
-    term(c=9, indices=[2,1]),
-    term(c=2, indices=[3,0]),
-    term(c=-4, indices=[3,1]),
-    term(c=4, indices=[3,2])
+    Term(c=-9, indices=[0]),
+    Term(c=-3, indices=[1,0]),
+    Term(c=5, indices=[2,0]),
+    Term(c=9, indices=[2,1]),
+    Term(c=2, indices=[3,0]),
+    Term(c=-4, indices=[3,1]),
+    Term(c=4, indices=[3,2])
 ]
 
 problem.add_terms(terms=terms)
