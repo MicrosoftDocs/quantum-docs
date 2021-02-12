@@ -53,7 +53,7 @@ Follow the instructions on the tab corresponding to your development environment
 
 ### [VS Code](#tab/tabid-vscode)
 
-The below steps currently has a dependency to install [node.js including npm](https://nodejs.org/en/?azure-portal=true). We are working on removing that dependency. Alternatively, use our the command line templates to create a Q# project , or use Visual Studio.
+If you are receiving an error "'npm' is not recognized as an internal or external command", in the below steps, install [node.js including npm](https://nodejs.org/en/?azure-portal=true). Alternatively, use our the command line templates to create a Q# project , or use Visual Studio.
 
 To create a new project:
 
