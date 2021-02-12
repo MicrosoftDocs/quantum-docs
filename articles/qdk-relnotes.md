@@ -19,6 +19,12 @@ For installation instructions, please refer to the [install guide](xref:microsof
 
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
+## Version 0.15.2102.128318
+
+*Release date: February 12th, 2021*
+
+- Fix "'npm' is not recognized as an internal or external command" error during creation of Q# projects with Visual Studio Code extension. See issue [#848](https://github.com/microsoft/qsharp-compiler/issues/848). 
+
 ## Version 0.15.2101.126807
 
 *Release date: January 29th, 2021*
