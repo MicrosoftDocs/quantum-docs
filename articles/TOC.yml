@@ -37,6 +37,8 @@
     items:
     - name: Quantum Computing
       items:
+      - name: Create and run Q# applications in Azure Quantum
+      - href: how-to-create-applications-for-azure-quantum.md
       - name: Submit jobs
         items:
           - name: Submit jobs with the Azure CLI
