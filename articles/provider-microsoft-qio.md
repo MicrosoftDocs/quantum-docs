@@ -51,6 +51,15 @@ For some solvers we offer two versions: an unlabeled version that runs on tradit
 | Pros | <ul><li>Highly parallel optimized, compared with CPU solvers, we witnessed about 100-200 times performance gain when the simulated annealing parameters settings are the same (restarts and sweeps).</li><li>FPGA solver use very condensed memory representation, so for problem with a large number of terms may fail CPU solver for OOM, but not for FPGA solver.</li></ul> |
 | Cons | <ul><li>FPGA solver support upto 8192 variables, this is a hard limitation.</li><li>For best performance, FPGA solvers use 32 bits float point operations, because of this, the computation accuracy of FPGA solvers is a little lower than CPU solvers'.</li></ul>                                                                                                                 |
 
+#### FPGA Regional Availability
+
+FPGA-based solvers are only available to workspaces deployed in the following Azure Regions:
+
+| Region |
+|--------|
+| West US |
+| East US |
+
 #### Recommendations for FPGA solvers
 
 FPGA solvers use the same parameters as their corresponding CPU solvers, but for the best performance, please tune the parameters of FPGA solvers, instead of just directly using CPU solvers' parameters. For example, in FPGA solvers, we build about 200 parallel pipelines, and each pipeline can handle one restart, so the restarts of FPGA shall be no less than 200.
