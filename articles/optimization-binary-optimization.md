@@ -91,7 +91,7 @@ H(\vec{x})=\sum_{\alpha,\beta\in\mathcal{S}}
 $$
 
 in which the binary variable $x_{\alpha,i}$ is equal to $1$ if site $\alpha$ 
-appears $j$th in the path, otherwise it is $0$.  The first term in the 
+appears $i$th in the path, otherwise it is $0$.  The first term in the 
 above expression is simply the length of the path, whereas the last two terms 
 enforce the requirements that every site in $\mathcal{S}$ appears in the
 path and no site is visited more than once, respectively. 
