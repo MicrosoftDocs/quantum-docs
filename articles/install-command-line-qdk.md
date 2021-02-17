@@ -13,15 +13,15 @@ uid: microsoft.quantum.install-qdk.overview.standalone
 
 # Develop with Q# applications in an IDE
 
-Learn how to develop Q# applications in Visual Studio Code (VS Code), Visual Studio, Visual Studio Codespaces, or with any editor/IDE and run applications from the .NET console. Q# programs can run on their own, without a driver in a host language like C#, F#, or Python. 
+Learn how to develop Q# applications in Visual Studio Code (VS Code), Visual Studio, Visual Studio Codespaces, or with any editor/IDE and run applications from the .NET console. Q# programs can run on their own, without a driver in a host language like C#, F#, or Python.
 
 ## Prerequisites for all environments
 
-- [.NET Core SDK 3.1 or later](https://www.microsoft.com/net/download)
+- [.NET Core SDK 3.1](https://www.microsoft.com/net/download)
 
 ## Installation
 
-While you can build Q# applications in any IDE, we recommend using Visual Studio Code (VS Code) or Visual Studio IDE for developing your Q# applications locally. For developing in the Cloud via the web browser, we recommend Visual Studio Codespaces. Developing in these environments leverages the rich functionality of the Quantum Development Kit (QDK) extension, which includes warnings, syntax highlighting, project templates, and more. 
+While you can build Q# applications in any IDE, we recommend using Visual Studio Code (VS Code) or Visual Studio IDE for developing your Q# applications locally. For developing in the Cloud via the web browser, we recommend Visual Studio Codespaces. Developing in these environments leverages the rich functionality of the Quantum Development Kit (QDK) extension, which includes warnings, syntax highlighting, project templates, and more.
 
 ### To configure for VS Code:
 
@@ -33,7 +33,7 @@ While you can build Q# applications in any IDE, we recommend using Visual Studio
 1. Download and install [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 or greater, with the .NET Core cross-platform development workload enabled.
 2. Download and install the [QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit).
 
-### To configure for another environment: 
+### To configure for another environment:
 
 1. Enter the following at the command prompt
 
