@@ -16,8 +16,10 @@ This article introduces the different type of targets available in Azure Quantum
 
 ## Targets as quantum devices
 
-Targets in Azure Quantum can be solvers for optimization
-problems or quantum devices (either physical or simulated) that you can use to
+Azure Quantum is a platform that offers a variety of quantum solutions, such as
+different hardware devices and quantum simulators. At this time, each of these devices has its limitations and requirements for programs that run on them. However, the Quantum Development Kit (QDK) and the Azure Quantum service take care of these requirements in the background so that your Q# code can run seamlessly on all of the Azure Quantum targets.
+
+Targets in Azure Quantum can be solvers for optimization problems or quantum devices (either physical or simulated) that you can use to
 run Q# quantum applications.
 
 Each provider in Azure Quantum offers a range of targets to cover different
@@ -39,8 +41,9 @@ hardware accelerated on field-programmable gate arrays (FPGA), GPUs or hardware 
 
 A quantum processing unit (QPU) is a physical or simulated processor that
 contains a number of interconnected qubits that can be manipulated to compute
-quantum algorithms. It's the central component of a quantum computer. Currently, Azure Quantum and the QDK manage three different
-profiles for QPUs:
+quantum algorithms. It's the central component of a quantum computer.
+
+Quantum devices are still an emerging technology, and not all of them can run all Q# code. As such, you need to keep some restrictions in mind when developing programs for different targets. Currently, Azure Quantum and the QDK manage three different profiles for QPUs:
 
 - **Full:** This profile can run any Q# program within the
   limits of memory for simulated quantum processing units (QPU) or the number of qubits of the physical
