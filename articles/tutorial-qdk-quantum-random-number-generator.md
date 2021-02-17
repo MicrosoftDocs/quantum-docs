@@ -26,7 +26,21 @@ A simple example of a quantum algorithm written in Q# is a quantum random number
 
 1. Replace the contents of the Program.qs file with the following code:
 
-:::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="3-15,34":::
+```qsharp
+namespace Qrng {
+    open Microsoft.Quantum.Convert;
+    open Microsoft.Quantum.Math;
+    open Microsoft.Quantum.Measurement;
+    open Microsoft.Quantum.Canon;
+    open Microsoft.Quantum.Intrinsic;
+    
+    operation SampleQuantumRandomNumberGenerator() : Result {
+        use q = Qubit();   // Allocate a qubit.
+        H(q);              // Put the qubit to superposition. It now has a 50% chance of being 0 or 1.
+        return MResetZ(q); // Measure the qubit value.
+    }
+}
+```
 
 As mentioned in our [Understanding quantum computing](xref:microsoft.quantum.overview.understanding) article, a qubit is a unit of quantum information that can be in superposition. When measured, a qubit can only be either 0 or 1. However, before measurement, the state of the qubit represents the probability of reading either a 0 or a 1 with a measurement. This probabilistic state is known as superposition. We can use this probability to generate random numbers.
 
@@ -56,22 +70,69 @@ We can use this representation to visualize what the code is doing:
 
 Since the outcome of the measurement is completely random, we have obtained a random bit. We can call this operation several times to create integers. For example, if we call the operation three times to obtain three random bits, we can build random 3-bit numbers (that is, a random number between 0 and 7).
 
-
 ## Creating a complete random number generator
 
 Now that we have a Q# operation that generates random bits, we can use it to build a complete quantum random number generator. We can use a Q# application or use a host program.
-
-
 
 ### [Q# applications with Visual Studio or Visual Studio Code](#tab/tabid-qsharp)
 
 To create the full Q# application, add the following entry point to your Q# program: 
 
-:::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="17-33":::
+```qsharp
+operation SampleRandomNumberInRange(max : Int) : Int {
+    mutable bits = new Result[0];
+    for idxBit in 1..BitSizeI(max) {
+        set bits += [SampleQuantumRandomNumberGenerator()];
+    }
+    let sample = ResultArrayAsInt(bits);
+    return sample > max
+            ? SampleRandomNumberInRange(max)
+            | sample;
+}
+
+@EntryPoint()
+operation SampleRandomNumber() : Int {
+    let max = 50;
+    Message($"Sampling a random number between 0 and {max}: ");
+    return SampleRandomNumberInRange(max);
+}
+```
 
 The program will run the operation or function marked with the `@EntryPoint()` attribute on a simulator or resource estimator, depending on the project configuration and command-line options.
 
-:::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="3-34":::
+```qsharp
+namespace Qrng {
+    open Microsoft.Quantum.Convert;
+    open Microsoft.Quantum.Math;
+    open Microsoft.Quantum.Measurement;
+    open Microsoft.Quantum.Canon;
+    open Microsoft.Quantum.Intrinsic;
+    
+    operation SampleQuantumRandomNumberGenerator() : Result {
+        use q = Qubit();   // Allocate a qubit.
+        H(q);              // Put the qubit to superposition. It now has a 50% chance of being 0 or 1.
+        return MResetZ(q); // Measure the qubit value.
+    }
+
+    operation SampleRandomNumberInRange(max : Int) : Int {
+        mutable bits = new Result[0];
+        for idxBit in 1..BitSizeI(max) {
+            set bits += [SampleQuantumRandomNumberGenerator()];
+        }
+        let sample = ResultArrayAsInt(bits);
+        return sample > max
+               ? SampleRandomNumberInRange(max)
+               | sample;
+    }
+    
+    @EntryPoint()
+    operation SampleRandomNumber() : Int {
+        let max = 50;
+        Message($"Sampling a random number between 0 and {max}: ");
+        return SampleRandomNumberInRange(max);
+    }
+}
+````
 
 In Visual Studio, simply press Ctrl + F5 to run the script.
 
@@ -91,7 +152,7 @@ dotnet run --no-build
 
 To run your new Q# program from Python, save the following code as `host.py`:
 
-:::code language="python" source="~/quantum/samples/interoperability/qrng/host.py" range="11-30":::
+:::code language="python" source="~/quantum/samples/interoperability/qrng/host.py" range="11-":::
 
 You can then run your Python host program from the command prompt:
 
@@ -105,7 +166,7 @@ Preparing Q# environment...
 
 To run your new Q# program from C#, modify `Driver.cs` to include the following C# code:
 
-:::code language="csharp" source="~/quantum/samples/interoperability/qrng/Host.cs" range="4-39":::
+:::code language="csharp" source="~/quantum/samples/interoperability/qrng/Host.cs" range="4-":::
 
 You can then run your C# host program from the command prompt (in Visual Studio you should press F5):
 
