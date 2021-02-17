@@ -65,17 +65,17 @@ Each `README.md` should start with some metadata that helps docs.microsoft.com/s
 This metadata is provided as a [YAML header](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html#yaml-header) that indicates what languages your sample covers (typically, this will be `qsharp`, `csharp`, and `python`), and what products your sample covers (typically, just `qdk`).
 
 ```markdown
-    ---
-    page_type: sample
-    languages:
-    - qsharp
-    - python
-    - csharp
-    products:
-    - qdk
-    description: "This sample uses the CHSH game to demonstrate how Q# programs can be used to prepare and work with entanglement."
-    urlFragment: validating-quantum-mechanics
-    ---
+---
+page_type: sample
+languages:
+- qsharp
+- python
+- csharp
+products:
+- qdk
+description: "This sample uses the CHSH game to demonstrate how Q# programs can be used to prepare and work with entanglement."
+urlFragment: validating-quantum-mechanics
+---
 ```
 
 > [!IMPORTANT]
@@ -85,69 +85,70 @@ This metadata is provided as a [YAML header](https://dotnet.github.io/docfx/spec
 After that, it's helpful to give a short intro that says what your new sample does:
 
 ```markdown
-    # Validating Quantum Mechanics with the CHSH Game
-    
-    This sample demonstrates:
-    - How to prepare entangled states with Q#.
-    - How to measure part of an entangled register.
-    - Using Q# to understand superposition and entanglement.
-    
-    In this sample, you can use Q# to prepare qubits in an entangled state, and to check that measuring these qubits lets you win a game known as the _CHSH game_ more often than you can without entanglement.
-    This game helps us understand entanglement, and has even been used experimentally to help test that the universe really is quantum mechanical in nature.
+# Validating Quantum Mechanics with the CHSH Game
+
+This sample demonstrates:
+- How to prepare entangled states with Q#.
+- How to measure part of an entangled register.
+- Using Q# to understand superposition and entanglement.
+
+In this sample, you can use Q# to prepare qubits in an entangled state, and to check that measuring these qubits lets you win a game known as the _CHSH game_ more often than you can without entanglement.
+This game helps us understand entanglement, and has even been used experimentally to help test that the universe really is quantum mechanical in nature.
 ```
 
 Users of your sample will also appreciate knowing what they need to run it (for example, do users just need the Quantum Development Kit itself, or do they need additional software such as node.js?):
 
 ```markdown
-        ## Prerequisites
-        
-        - The Microsoft [Quantum Development Kit](https://docs.microsoft.com/quantum/install-guide/).
-    ```
-    
-    With all that in place, you can tell users how to run your sample:
-    ```markdown
-    
-    ## Running the Sample
-    
-    This sample can be run in a number of different ways, depending on your preferred environment.
-    
-    ### Python in Visual Studio Code or the Command Line
-    
-    At a terminal, run the following command:
-    
-    ```powershell
-    python host.py
-    ```
-    
-    ### C# in Visual Studio Code or the Command Line
-    
-    At a terminal, run the following command:
-    
-    ```powershell
-    dotnet run
-    ```
-    
-    ### C# in Visual Studio 2019
-    
-    Open the folder containing this sample in Visual Studio ("Open a local folder"
-    from the Getting Started screen or "File → Open → Folder..." from the menu bar)
-    and set `CHSHGame.csproj` as the startup project. 
-    Press Start in Visual Studio to run the sample. 
+## Prerequisites
+
+- The Microsoft [Quantum Development Kit](https://docs.microsoft.com/quantum/install-guide/).
+```
+
+With all that in place, you can tell users how to run your sample:
+
+```markdown
+
+## Running the Sample
+
+This sample can be run in a number of different ways, depending on your preferred environment.
+
+### Python in Visual Studio Code or the Command Line
+
+At a terminal, run the following command:
+
+```powershell
+python host.py
+```
+
+### C# in Visual Studio Code or the Command Line
+
+At a terminal, run the following command:
+
+```powershell
+dotnet run
+```
+
+### C# in Visual Studio 2019
+
+Open the folder containing this sample in Visual Studio ("Open a local folder"
+from the Getting Started screen or "File → Open → Folder..." from the menu bar)
+and set `CHSHGame.csproj` as the startup project. 
+Press Start in Visual Studio to run the sample. 
 ```
 
 Finally, it's helpful to tell users what each file in your sample does, and where they can go for more information:
 
 ```markdown
-    ## Manifest
-    
-    - [Game.qs](https://github.com/microsoft/Quantum/blob/main/samples/algorithms/chsh-game/Game.qs): Q# code implementing the game.
-    - [host.py](https://github.com/microsoft/Quantum/blob/main/samples/algorithms/chsh-game/host.py): Python host program to call into the Q# sample.
-    - [Host.cs](https://github.com/microsoft/Quantum/blob/main/samples/algorithms/chsh-game/Host.cs): C# code to call the operations defined in Q#.
-    - [CHSHGame.csproj](https://github.com/microsoft/Quantum/blob/main/samples/algorithms/chsh-game/CHSHGame.csproj): Main C# project for the sample.
-    
-    ## Further resources
-    
-    - [Measurement concepts](https://docs.microsoft.com/quantum/concepts/pauli-measurements)
+## Manifest
+
+- [Game.qs](https://github.com/microsoft/Quantum/blob/main/samples/algorithms/chsh-game/Game.qs): Q# code implementing the game.
+- [host.py](https://github.com/microsoft/Quantum/blob/main/samples/algorithms/chsh-game/host.py): Python host program to call into the Q# sample.
+- [Host.cs](https://github.com/microsoft/Quantum/blob/main/samples/algorithms/chsh-game/Host.cs): C# code to call the operations defined in Q#.
+- [CHSHGame.csproj](https://github.com/microsoft/Quantum/blob/main/samples/algorithms/chsh-game/CHSHGame.csproj): Main C# project for the sample.
+
+## Further resources
+
+- [Measurement concepts](https://docs.microsoft.com/quantum/concepts/pauli-measurements)
 ```
 
 > [!WARNING]
