@@ -41,11 +41,11 @@ The number of incremental boosts is fewer than the number of items in the list. 
 
 1. Add the following code to the `Program.qs` file in your new project:
 
-    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-41":::
+    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-":::
 
 1. To define the list that we're searching, create a new file `Reflections.qs`, and paste in the following code:
 
-    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/Reflections.qs" range="4-70":::
+    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/Reflections.qs" range="4-":::
 
     The `ReflectAboutMarked` operation defines the marked input that you are searching for: the string of alternating zeros and ones. This sample hard-codes the marked input, and can be extended to search for different inputs or generalized for any input.
 

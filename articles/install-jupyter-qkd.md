@@ -80,8 +80,20 @@ Now you are ready to verify your Q# Jupyter Notebook installation by writing and
     - If the Jupyter Notebook doesn't open automatically in your browser, copy and paste the URL provided by the command line into your browser.
 
 1. Choose **New → Q#** to create a Jupyter Notebook with a Q# kernel, and add the following code to the first notebook cell:
+   
+  ```qsharp
+  namespace Qrng {
+      open Microsoft.Quantum.Intrinsic;
 
-    :::code language="qsharp" source="~/quantum/samples/interoperability/qrng/Qrng.qs" range="6-13":::
+      operation SampleQuantumRandomNumberGenerator() : Result {
+          use q = Qubit(); // Allocate a qubit.
+          H(q);            // Put the qubit to superposition. It now has a 50% chance of being 0 or 1.
+          let r = M(q);    // Measure the qubit value.
+          Reset(q);
+          return r;
+      }
+  }
+  ```
 
 1. Run this cell of the notebook:
 

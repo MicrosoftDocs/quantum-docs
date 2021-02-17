@@ -49,7 +49,7 @@ Your host program consists of three parts:
 
     To run your the Q# classifier from C#, save the following code as `Host.cs`. Remember that you also need the Q# file `Training.qs` that is explained later in this tutorial.
 
-    :::code language="csharp" source="~/quantum/samples/machine-learning/half-moons/Host.cs" range="4-86":::
+    :::code language="csharp" source="~/quantum/samples/machine-learning/half-moons/Host.cs" range="4-":::
 
     You can then run your C# host program from the command line:
 
@@ -63,7 +63,7 @@ Your host program consists of three parts:
 
     To run your new Q# program from C# in Visual Studio, modify `Host.cs` to include the following C# code. Remember that you also need the Q# file `Training.qs` that is explained later in this tutorial.
 
-    :::code language="csharp" source="~/quantum/samples/machine-learning/half-moons/Host.cs" range="4-86":::
+    :::code language="csharp" source="~/quantum/samples/machine-learning/half-moons/Host.cs" range="4-":::
 
     Press F5, and the program will start to run. A new window will display the following results: 
 
@@ -79,7 +79,7 @@ Your host program consists of three parts:
 Now let's see how the operations invoked by the host program are defined in Q#.
 We save the following code in a file named `Training.qs`.
 
-:::code language="qsharp" source="~/quantum/samples/machine-learning/half-moons/Training.qs" range="4-116":::
+:::code language="qsharp" source="~/quantum/samples/machine-learning/half-moons/Training.qs" range="4-":::
 
 The most important functions and operations defined in the code above are:
 
