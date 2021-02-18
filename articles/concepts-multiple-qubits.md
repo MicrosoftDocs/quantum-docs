@@ -37,7 +37,7 @@ $$
 \begin{bmatrix} \alpha_{00} \\\\  \alpha_{01} \\\\  \alpha_{10} \\\\  \alpha_{11} \end{bmatrix}
 $$
 
-represents a quantum state on two qubits if $|\alpha_{00}|^2+|\alpha_{01}|^2+|\alpha_{10}|^2+|\alpha_{11}|^2=1$. It is easy to see that more generally the quantum state of $n$ qubits is represented by a unit vector $v_1 \otimes v_2 \otimes \cdots \otimes v_n$ of dimension $2 \cdot 2 \cdot 2 \codts = 2^n$ using this construction. Just as with single qubits, the quantum state vector of multiple qubits holds all the information needed to describe the system's behavior. To further information about vectors and tensor product, see our page [Vectors and Matrices in Quantum Computing](https://docs.microsoft.com/azure/quantum/concepts-vectors-and-matrices?azure-portal=true).
+represents a quantum state on two qubits if $|\alpha_{00}|^2+|\alpha_{01}|^2+|\alpha_{10}|^2+|\alpha_{11}|^2=1$. More generally, you can see that the quantum state of $n$ qubits is represented by a unit vector $v_1 \otimes v_2 \otimes \cdots \otimes v_n$ of dimension $2 \cdot 2 \cdot 2 \cdots = 2^n$ using this construction. Just as with single qubits, the quantum state vector of multiple qubits holds all the information needed to describe the system's behavior. For more information about vectors and tensor products, see [Vectors and Matrices in Quantum Computing](xref:microsoft.quantum.concepts.vectors).
 
 The computational basis for two-qubit states is formed by the tensor products of one-qubit states. For example, we have
 
