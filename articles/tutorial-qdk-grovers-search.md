@@ -205,26 +205,26 @@ operation markingDivisor (
     dividend : Int,
     divisorRegister : Qubit [],
     target : Qubit
-) : Unit is Adj+Ctl {
+) : Unit is Adj + Ctl {
     // Calculate the bit-size of the dividend.
     let size = BitSizeI(dividend);
     // Allocate two new qubit registers for the dividend and the result.
-    using ( (dividendQubits, resultQubits) = (Qubit[size], Qubit[size]) ){
+    use dividendQubits = Qubit[size];
+    use resultQubits = Qubit[size];
         // Create new LittleEndian instances from the registers to use DivideI
         let xs = LittleEndian(dividendQubits);
         let ys = LittleEndian(divisorRegister);
         let result = LittleEndian(resultQubits);
 
         // Start a within-apply statement to perform the operation.
-        within{
+        within {
             // Encode the dividend in the register.
             ApplyXorInPlace(dividend, xs);
             // Apply the division operation.
             DivideI(xs, ys, result);
             // Flip all the qubits from the remainder.
             ApplyToEachA(X, xs!);
-        }
-        apply{
+        } apply {
             // Apply a controlled NOT over the flipped remainder.
             Controlled X(xs!, target);
             // The target flips if and only if the remainder is 0.
@@ -247,13 +247,12 @@ operation ApplyMarkingOracleAsPhaseOracle(
     markingOracle : ((Qubit[], Qubit) => Unit is Adj), 
     register : Qubit[]
 ) : Unit is Adj {
-    using (target = Qubit()) {
-        within {
-            X(target);
-            H(target);
-        } apply {
-            markingOracle(register, target);
-        }
+    use target = Qubit();
+    within {
+        X(target);
+        H(target);
+    } apply {
+        markingOracle(register, target);
     }
 }
 ```
@@ -302,11 +301,11 @@ namespace GroversTutorial {
                     set answer = BoolArrayAsInt(ResultArrayAsBoolArray(res));
                     // Check that if the result is a solution with the oracle.
                     markingOracle(register, output);
-                    if (MResetZ(output) == One and answer != 1 and answer != number) {
+                    if MResetZ(output) == One and answer != 1 and answer != number {
                         set isCorrect = true;
                     }
                     ResetAll(register);
-                } until (isCorrect);
+                } until isCorrect;
 
                 // Print out the answer.
                 Message($"The number {answer} is a factor of {number}.");
@@ -351,7 +350,7 @@ namespace GroversTutorial {
 
     operation RunGroversSearch(register : Qubit[], phaseOracle : ((Qubit[]) => Unit is Adj), iterations : Int) : Unit {
         ApplyToEach(H, register);
-        for (_ in 1 .. iterations) {
+        for _ in 1 .. iterations {
             phaseOracle(register);
             ReflectAboutUniform(register);
         }
