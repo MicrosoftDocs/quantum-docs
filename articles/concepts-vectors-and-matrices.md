@@ -123,7 +123,7 @@ A matrix $M$ is said to be [*Hermitian*](https://en.wikipedia.org/wiki/Hermitian
 
 Finally, another important operation is the [*Kronecker product*](https://en.wikipedia.org/wiki/Kronecker_product), also called the *matrix direct product* or *tensor product*.  Note that the Kronecker product is distinguished from matrix multiplication, which is an entirely different operation. In quantum computing theory, *tensor product* is commonly used to denote the Kronecker product.
 
-Consider two vectors $v=\begin{bmatrix}a \\\\ b  \end{bmatrix} $ and $u =\begin{bmatrix} c \\\\ d \\\\ e \end{bmatrix} $, their tensor product is denoted as $v otimes u$ and it is resulting in a block matrix.
+Consider the two vectors $v=\begin{bmatrix}a \\\\ b  \end{bmatrix} $ and $u =\begin{bmatrix} c \\\\ d \\\\ e \end{bmatrix} $.  Their tensor product is denoted as $v otimes u$ and results in a block matrix.
 $$
 	\begin{bmatrix}
 		a \\\\ b  \end{bmatrix} \otimes \begin{bmatrix} c \\\\ d \\\\ e
@@ -202,4 +202,3 @@ A final useful notational convention surrounding tensor products is that, for an
 \\\\
   &\begin{bmatrix}	0 & 1 \\\\ 1& 0 	\end{bmatrix}^{\otimes 1}= \begin{bmatrix}	0& 1 \\\\ 1& 0 	\end{bmatrix},	\qquad\begin{bmatrix}	0 & 1 \\\\ 1& 0 	\end{bmatrix}^{\otimes 2}= \begin{bmatrix} 0 &0&0&1 \\\\ 0 &0&1&0 \\\\ 0 &1&0&0\\\\ 1 &0&0&0\end{bmatrix}.
 \end{align}
-
