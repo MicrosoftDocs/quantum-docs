@@ -31,7 +31,7 @@ $$
 = \begin{bmatrix} \alpha\gamma \\\\  \alpha\delta \\\\  \beta\gamma \\\\  \beta\delta \end{bmatrix}.
 $$
 
-Therefore, given two single-qubit states $\psi , \phi$  of dimension 2 each one, the corresponding two-qubit state $\psi \otimes \phi$ is 4-dimensional. The vector
+Therefore, given two single-qubit states $\psi and \phi$, each of dimension 2, the corresponding two-qubit state $\psi \otimes \phi$ is 4-dimensional. The vector
 
 $$
 \begin{bmatrix} \alpha_{00} \\\\  \alpha_{01} \\\\  \alpha_{10} \\\\  \alpha_{11} \end{bmatrix}
