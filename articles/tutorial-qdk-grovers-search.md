@@ -28,7 +28,7 @@ In this tutorial you'll learn to implement Grover's algorithm in Q# to solve sea
 
 Grover's algorithm is one of the most famous algorithms in quantum computing. The problem it solves is often referred to as "searching a database", but it's more accurate to think of it as a "search problem".
 
-> [!NOTE] 
+> [!NOTE]
 > This tutorial is intended for people who are already familiar with
 > Grover's algorithm that want to learn how to implement it in Q#. For a more
 > slow paced tutorial we recommend the Microsoft Learn module [Solve graph
@@ -277,6 +277,7 @@ namespace GroversTutorial {
     open Microsoft.Quantum.Convert;
     open Microsoft.Quantum.Arithmetic;
     open Microsoft.Quantum.Arrays;
+    open Microsoft.Quantum.Preparation;
 
     @EntryPoint()
     operation FactorizeWithGrovers(number : Int) : Unit {
@@ -292,25 +293,24 @@ namespace GroversTutorial {
             let nIterations = Round(PI() / 4.0 * Sqrt(IntAsDouble(size) / IntAsDouble(nSolutions)));
 
             // Initialize the register to run the algorithm
-            using ((register, output) = (Qubit[size], Qubit())){
-                mutable isCorrect = false;
-                mutable answer = 0;
-                // Use a Repeat-Until-Succeed loop to iterate until the solution is valid.
-                repeat {
-                    RunGroversSearch(register, phaseOracle, nIterations);
-                    let res = MultiM(register);
-                    set answer = BoolArrayAsInt(ResultArrayAsBoolArray(res));
-                    // Check that if the result is a solution with the oracle.
-                    markingOracle(register, output);
-                    if (MResetZ(output) == One and answer != 1 and answer != number) {
-                        set isCorrect = true;
-                    }
-                    ResetAll(register);
-                } until (isCorrect);
+            use (register, output) = (Qubit[size], Qubit());
+            mutable isCorrect = false;
+            mutable answer = 0;
+            // Use a Repeat-Until-Succeed loop to iterate until the solution is valid.
+            repeat {
+                RunGroversSearch(register, phaseOracle, nIterations);
+                let res = MultiM(register);
+                set answer = BoolArrayAsInt(ResultArrayAsBoolArray(res));
+                // Check that if the result is a solution with the oracle.
+                markingOracle(register, output);
+                if MResetZ(output) == One and answer != 1 and answer != number {
+                    set isCorrect = true;
+                }
+                ResetAll(register);
+            } until isCorrect;
 
-                // Print out the answer.
-                Message($"The number {answer} is a factor of {number}.");
-            }
+            // Print out the answer.
+            Message($"The number {answer} is a factor of {number}.");
 
     }
 
@@ -320,7 +320,7 @@ namespace GroversTutorial {
         target : Qubit
     ) : Unit is Adj+Ctl {
         let size = BitSizeI(dividend);
-        using ( (dividendQubits, resultQubits) = (Qubit[size], Qubit[size]) ){
+        use (dividendQubits, resultQubits) = (Qubit[size], Qubit[size]);
             let xs = LittleEndian(dividendQubits);
             let ys = LittleEndian(divisorRegister);
             let result = LittleEndian(resultQubits);
@@ -332,26 +332,28 @@ namespace GroversTutorial {
             apply{
                 Controlled X(xs!, target);
             }
-        }
+    }
+
+    operation PrepareUniformSuperpositionOverDigits(digitReg : Qubit[]) : Unit is Adj + Ctl {
+        PrepareArbitraryStateCP(ConstantArray(10, ComplexPolar(1.0, 0.0)), LittleEndian(digitReg));
     }
 
     operation ApplyMarkingOracleAsPhaseOracle(
         markingOracle : ((Qubit[], Qubit) => Unit is Adj), 
         register : Qubit[]
     ) : Unit is Adj {
-        using (target = Qubit()) {
-            within {
-                X(target);
-                H(target);
-            } apply {
-                markingOracle(register, target);
-            }
+        use target = Qubit();
+        within {
+            X(target);
+            H(target);
+        } apply {
+            markingOracle(register, target);
         }
     }
 
     operation RunGroversSearch(register : Qubit[], phaseOracle : ((Qubit[]) => Unit is Adj), iterations : Int) : Unit {
         ApplyToEach(H, register);
-        for (_ in 1 .. iterations) {
+        for _ in 1 .. iterations {
             phaseOracle(register);
             ReflectAboutUniform(register);
         }
