@@ -108,7 +108,7 @@ As a side note, in this example we did not use $\ket{+}^{\otimes n}=\ket{+}$ in 
 
 ## Express linearity with Dirac notation
 
-Another nice feature of Dirac notation is the fact that it is linear. That is, consider $\alpha$ and $\beta$ two complex numbers, then we can write
+Another nice feature of Dirac notation is the fact that it is linear. For example, for two complex numbers $\alpha$ and $\beta$, we can write
 
 $$ \ket{\psi} \otimes ( \alpha\ket{\phi} + \beta\ket{\chi})= \alpha\gamma \ket{\psi}\ket{\phi} + \beta\ket{\psi}\ket{\chi}.$$
 
