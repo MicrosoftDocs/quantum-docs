@@ -11,17 +11,6 @@ title: Run Grover's search algorithm in Q# - Quantum Development Kit
 uid: microsoft.quantum.tutorial-qdk.grovers
 ---
 
----
-title: Implement Grover's search algorithm in Q# - Quantum Development Kit
-description: Build a Q# project that demonstrates Grover's algorithm, one of the canonical quantum algorithms.
-author: geduardo
-ms.author: v-edsanc
-ms.date: 11/30/2020
-ms.topic: article
-uid: microsoft.quantum.quickstarts.new-search
-no-loc: ['Q#', '$$v']
----
-
 # Tutorial: Implement Grover's search algorithm in Q\#
 
 In this tutorial you'll learn to implement Grover's algorithm in Q# to solve search based problems.
