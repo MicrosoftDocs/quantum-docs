@@ -94,7 +94,7 @@ $$
 \begin{bmatrix}1 \\\\  0 \end{bmatrix}\otimes \cdots \otimes\begin{bmatrix}1 \\\\  0 \end{bmatrix} = \ket{0} \otimes \cdots \otimes \ket{0}= |0\cdots 0\rangle = \ket{0}^{\otimes n}
 $$
 
-where $\ket{0}^{\otimes n}$ represents tensor product of $n$ $\ket{0}$ quantum states. 
+where $\ket{0}^{\otimes n}$ represents the tensor product of $n$ $\ket{0}$ quantum states. 
 ## Example: Describe superposition with Dirac notation
 
 As another example of how you can use Dirac notation to describe a quantum state, consider the following equivalent ways of writing a quantum state that is an equal superposition over every possible bit string of length $n$
