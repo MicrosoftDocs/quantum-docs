@@ -46,9 +46,3 @@ Command ran in 21.181 seconds (init: 0.457, invoke: 20.724)
 ```
 
 This error occurs when there is a problem with the Q# program that causes the compilation to fail. To see the specific error that is causing the failure, run `dotnet build` in the same folder.
-
-## Creating a Quantum Workspace
-
-### Issue: The resource type could not be found in the namespace 'Microsoft.Quantum' for api version '2019-11-04-preview'
-
-Documentation for this issue is under construction.
