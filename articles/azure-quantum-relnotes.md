@@ -12,6 +12,12 @@ uid: microsoft.quantum.azure.relnotes
 
 # Azure Quantum release notes
 
+### 2021-2-22: SDK Quota List Support
+- The azure-quantum python SDK now exposes a workspace-level method for listing all quotas that effect the workspace and their current meter values.
+
+### 2021-2-22: Enable quantum providers in quantum workspaces via Azure CLI
+- A map of targets to providers and plansis created.
+
 ### 2021-02-01: New public repository for document contributions
 - Document contributions can now made to our new public GitHub repository, https://github.com/MicrosoftDocs/quantum-docs. 
 
