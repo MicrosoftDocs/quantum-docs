@@ -171,7 +171,7 @@ A **heuristic** is a technique for finding an approximate solution, when finding
 We can imagine a person or a particle in our **search space**, and each step taken creates a path, or walk, through the optimization landscape. Often, this will be referred to as a **walker**. Walkers can be used in a variety of ways, for example you may choose to have many walkers starting from the same starting point, or have them starting from different locations, and so on.
 
 ## Convert your problem to a Ising or QUBO model
-Professor Andrew Lucas' paper "Ising formulations of many NP problems" is a good summary about how to convert a NP problem to QIO's QUBO or Ising model. You can download the paper from internet.
+Professor Andrew Lucas' paper [Ising formulations of many NP problems](https://arxiv.org/abs/1302.5843) is a good summary about how to convert a NP problem to QIO's QUBO or Ising model. You can download the paper from internet.
 After converting your field problem into Ising or QUBO model, it is recommend to merge the terms whose variable list are the same into one term. For example
 $$
 w_{0}x_{0}x_{1}, w_{1}x_{1}x_{0}
@@ -181,4 +181,15 @@ can be merged into
 $$
 (w_{0} + w_{1})x_{0}x_{1}
 $$
+
+Expressed in terms of code (using the [QIO Python SDK](https://docs.microsoft.com/en-gb/azure/quantum/optimization-express-optimization-problem)):
+```
+term1 = Term(c=2, indices=[0,1])
+term2 = Term(c=3, indices=[1,0])
+```
+can be merged into:
+```
+merged_term = Term(c=5, indices=[0,1])
+```
+
 Merging terms may significantly improve the performance of QIO, if your problem has a lot of such terms. You can either use hash map or sort algorithm to do the merging.
