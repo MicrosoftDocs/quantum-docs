@@ -5,7 +5,7 @@ ms.author: kitty
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: article
+ms.topic: conceptual
 title: Create and run Q# applications in Azure Quantum
 uid: microsoft.quantum.create-applications
 ---
