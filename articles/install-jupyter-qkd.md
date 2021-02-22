@@ -13,9 +13,9 @@ uid: microsoft.quantum.install-qdk.overview.jupyter
 
 # Develop with Q# Jupyter Notebooks
 
-This article shows you how to install the Quantum Developer Kit (QDK) for developing Q# operations on Q# Jupyter Notebooks. Then, learn how to start developing your own Q# notebooks. 
+This article shows you how to install the Quantum Developer Kit (QDK) for developing Q# operations on Q# Jupyter Notebooks. Then, learn how to start developing your own Q# notebooks.
 
-Jupyter Notebooks allow running code in-place alongside instructions, notes, and other content. This environment is ideal for writing Q# code with embedded explanations or quantum computing interactive tutorials. 
+Jupyter Notebooks allow running code in-place alongside instructions, notes, and other content. This environment is ideal for writing Q# code with embedded explanations or quantum computing interactive tutorials.
 
 ## Install the IQ# Jupyter kernel
 
@@ -62,7 +62,7 @@ IQ# (pronounced i-q-sharp) is an extension primarily used by Jupyter and Python 
 > ```
 > where `/path/to/dotnet-iqsharp` should be replaced by the absolute path to the `dotnet-iqsharp` tool in your file system.
 > Typically this will be under `.dotnet/tools` in your user profile folder.
-    
+
 ***
 
 That's it! You now have the IQ# kernel for Jupyter, which provides the core functionality for compiling and running Q# operations from Q# Jupyter Notebooks.
@@ -80,20 +80,18 @@ Now you are ready to verify your Q# Jupyter Notebook installation by writing and
     - If the Jupyter Notebook doesn't open automatically in your browser, copy and paste the URL provided by the command line into your browser.
 
 1. Choose **New → Q#** to create a Jupyter Notebook with a Q# kernel, and add the following code to the first notebook cell:
-   
-  ```qsharp
-  namespace Qrng {
-      open Microsoft.Quantum.Intrinsic;
 
-      operation SampleQuantumRandomNumberGenerator() : Result {
-          use q = Qubit(); // Allocate a qubit.
-          H(q);            // Put the qubit to superposition. It now has a 50% chance of being 0 or 1.
-          let r = M(q);    // Measure the qubit value.
-          Reset(q);
-          return r;
-      }
-  }
-  ```
+    ```qsharp
+    open Microsoft.Quantum.Intrinsic;
+
+    operation SampleQuantumRandomNumberGenerator() : Result {
+        use q = Qubit(); // Allocate a qubit.
+        H(q);            // Put the qubit to superposition. It now has a 50% chance of being 0 or 1.
+        let r = M(q);    // Measure the qubit value.
+        Reset(q);
+        return r;
+    }
+    ```
 
 1. Run this cell of the notebook:
 
@@ -106,6 +104,9 @@ Now you are ready to verify your Q# Jupyter Notebook installation by writing and
     ![Jupyter Notebook cell with %simulate magic](~/media/install-guide-jupyter-simulate.png)
 
     You should see the result of the operation you invoked. In this case, because your operation generates a random result, you will see either `Zero` or `One` printed on the screen. If you run the cell repeatedly, you should see each result approximately half the time.
+
+> [!NOTE]
+> In a Jupyter Notebook, Q# code is automatically wrapped in a namespace for you. Since Q# does not feature nested namespaces, you should make sure not to declare any additional namespaces inside of code cells.
 
 ## Next steps
 
