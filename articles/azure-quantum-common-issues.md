@@ -45,7 +45,7 @@ Failed to compile program.
 Command ran in 21.181 seconds (init: 0.457, invoke: 20.724)
 ```
 
-This error occurs when there is a problem with the Q# program that causes the compilation to fail. To see the specific error that is causing the failure, run `dotnet build` in the same folder.
+This error occurs when there is a problem with the Q# program that causes the compilation to fail. To see the specific error that is causing the failure, run `dotnet build` in the same folder. 
 
 ## Creating a Quantum Workspace
 
