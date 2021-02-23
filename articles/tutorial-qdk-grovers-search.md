@@ -1,8 +1,8 @@
 ---
-author: cgranade
+author: geduardo
 description: Build a Q# project that demonstrates Grover's algorithm, one of the canonical quantum algorithms.
-ms.author: chgranad
-ms.date: 02/01/2021
+ms.author: v-edsanc
+ms.date: 02/21/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -309,17 +309,17 @@ namespace GroversTutorial {
     ) : Unit is Adj+Ctl {
         let size = BitSizeI(dividend);
         use (dividendQubits, resultQubits) = (Qubit[size], Qubit[size]);
-            let xs = LittleEndian(dividendQubits);
-            let ys = LittleEndian(divisorRegister);
-            let result = LittleEndian(resultQubits);
-            within{
-                ApplyXorInPlace(dividend, xs);
-                DivideI(xs, ys, result);
-                ApplyToEachA(X, xs!);
-            }
-            apply{
-                Controlled X(xs!, target);
-            }
+        let xs = LittleEndian(dividendQubits);
+        let ys = LittleEndian(divisorRegister);
+        let result = LittleEndian(resultQubits);
+        within{
+            ApplyXorInPlace(dividend, xs);
+            DivideI(xs, ys, result);
+            ApplyToEachA(X, xs!);
+        }
+        apply{
+            Controlled X(xs!, target);
+        }
     }
 
     operation PrepareUniformSuperpositionOverDigits(digitReg : Qubit[]) : Unit is Adj + Ctl {
