@@ -72,3 +72,7 @@ workspace.credentials = ServicePrincipalCredentials(
 
 That's it! Make sure you call `workspace.login()` after setting up the service
 principal and you should be able to create jobs as usual.
+
+> [!NOTE]
+> Calling `workspace.login(refresh=True)` will clear the workspace.credentials property and force a new Interactive Device Authentication.
+Whatever credentials were set in the workspace.credentials will be lost, including ServicePrincipalCredentials.
