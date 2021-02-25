@@ -19,12 +19,12 @@ For installation instructions, please refer to the [install guide](xref:microsof
 
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
-## Version X.XX.XXXX.XXXXXX
+## Version 0.15.2102.129448
 
 *Release date: February 22th, 2021*
 
-- Improved IQ# debug user experience, to help developers better understand the inner workings of their quantum applications, and more easily identify logic errors. Created visualizations of a particular execution path of a quantum application, as well as the state at a point during the program execution. For both execution path and basis state visualizations, a horizontal scrollbar is added to scroll through the additional content. 
-- 
+- Improved IQ# debug user experience by adding a horizontal scrollbar to scroll both execution path and basis state visualizations.
+- New functions to represent the group product and group inverse on the single-qubit Clifford group, to quickly define common single-qubit Clifford operators, and to apply single-qubit Clifford operators as operations. For more information, see issue [#409](https://github.com/microsoft/QuantumLibraries/issues/409).
 
 ## Version 0.15.2102.128318
 
