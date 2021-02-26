@@ -205,6 +205,8 @@
         href: concepts-circuits.md
       - name: Quantum oracles
         href: concepts-oracles.md
+      - name: Theory of Grover's algorithm
+        href: concepts-grovers.md
     - name: Glossary
       href: qdk-glossary.md
     - name: Further reading
