@@ -25,7 +25,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 - Fix "'npm' is not recognized as an internal or external command" error during creation of Q# projects with Visual Studio Code extension. See issue [#848](https://github.com/microsoft/qsharp-compiler/issues/848). 
 
-## Version 0.15.2101.126807
+## Version 0.15.2101.126940
 
 *Release date: January 29th, 2021*
 
