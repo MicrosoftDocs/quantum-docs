@@ -23,6 +23,7 @@ Grover's algorithm is one of the most famous algorithms in quantum computing. Th
 > slow paced tutorial we recommend the Microsoft Learn module [Solve graph
 > coloring problems by using Grover's
 > search](https://docs.microsoft.com/learn/modules/solve-graph-coloring-problems-grovers-search/).
+> For a detailed explanation on the theory behind Grover's algortihm, check the conceptual article [Theory of Grover's algorithm](xref:microsoft.quantum.concepts.grovers)
 
 Any searching task can be mathematically formulated with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution for the search task, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The search problem consists of finding any item $x_0$ such that $f(x_0)=1$. This is, an item $x_0$ that is a solution of the search problem.
 
