@@ -160,7 +160,7 @@ h_{ijkl} = h_{ijlk}=h_{jikl}=h_{jilk}=h_{klij}=h_{klji}=h_{lkij}=h_{lkji}.
 $$
 
 > [!NOTE]
-> The term $h_{ijkl}= (ij|kl)$ follows Mulliken index convention, also known as chemists’ notation. The representation used by the .NET and Q# data models follows Dirac or >physicists’ notation, where 
+> The term $h_{ijkl}= (ij|kl)$ follows Mulliken index convention, also known as chemists’ notation. The representation used by the .NET and Q# data models follows Dirac or physicists’ notation, where 
 > 
 > $$ h\_\{ijkl\} = \iint \{\mathrm d\}x^2 \psi^\{\*\}\_i(x\_1)\psi^\{\*\}\_j(x\_2) \frac\{1\}\{\|x\_1 -x\_2\|\}\psi\_k (x\_1) \psi\_l(x\_2)$$.
 >
