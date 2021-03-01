@@ -132,14 +132,13 @@ The value of `metadata` MAY be the empty JSON object (that is, `{}`), or MAY con
 
 This section is informative.
 
-The `hamiltonian` property of each problem description object describes the Hamiltonian for a particular quantum chemistry problem by listing out its one- and two-body terms as sparse arrays of real numbers.
-The Hamiltonian operators described by each problem description object take the form
+The `hamiltonian` property of each problem description object describes the Hamiltonian for a particular quantum chemistry problem by listing out its one- and two-body terms as sparse arrays of real numbers. The Hamiltonian operators described by each problem description object take the form
 
 $$
 H = \sum\_\{i,j\}\sum\_{\sigma\in\\{\uparrow,\downarrow\\}} h\_\{ij\} a^\{\dagger\}\_{i,\sigma} a\_{j,\sigma} + \frac{1}{2}\sum\_\{i,j,k,l\}\sum\_{\sigma,\rho\in\\{\uparrow,\downarrow\\}} h\_{ijkl} a^\dagger\_{i,\sigma} a^\dagger\_{k,\rho} a\_{l,\rho} a\_{j,\sigma},
 $$
 
-here $h_{ijkl}= (ij|kl)$ in Mulliken convention.
+here $h_{ijkl}= (ij|kl)$ in Mulliken convention
 
 For clarity, the one-electron term is
 
@@ -160,6 +159,12 @@ $$
 h_{ijkl} = h_{ijlk}=h_{jikl}=h_{jilk}=h_{klij}=h_{klji}=h_{lkij}=h_{lkji}.
 $$
 
+> [!NOTE]
+> The term $h_{ijkl}= (ij|kl)$ follows Mulliken index convention, also known as chemists’ notation. The representation used by the .NET and Q# data models follows Dirac or >physicists’ notation, where 
+> 
+> $$ h\_\{ijkl\} = \iint \{\mathrm d\}x^2 \psi^\{\*\}\_i(x\_1)\psi^\{\*\}\_j(x\_2) \frac\{1\}\{\|x\_1 -x\_2\|\}\psi\_k (x\_1) \psi\_l(x\_2)$$.
+>
+>Broombridge schema currently only supports Mulliken indexing, such that the deserializer converts between the two conventions when loading data.
 
 #### Contents ####
 
