@@ -138,7 +138,7 @@ $$
 H = \sum\_\{i,j\}\sum\_{\sigma\in\\{\uparrow,\downarrow\\}} h\_\{ij\} a^\{\dagger\}\_{i,\sigma} a\_{j,\sigma} + \frac{1}{2}\sum\_\{i,j,k,l\}\sum\_{\sigma,\rho\in\\{\uparrow,\downarrow\\}} h\_{ijkl} a^\dagger\_{i,\sigma} a^\dagger\_{k,\rho} a\_{l,\rho} a\_{j,\sigma},
 $$
 
-here $h_{ijkl}= (ij|kl)$ in Mulliken convention
+here $h_{ijkl}= (ij|kl)$ in Mulliken convention.
 
 For clarity, the one-electron term is
 
@@ -175,7 +175,7 @@ The value of the `hamiltonian` property is known as a Hamiltonian object, and MU
 
 Each problem description object MUST have a property `coulomb_repulsion` whose value is a simple quantity object.
 Each problem description object MUST have a property `energy_offet` whose value is a simple quantity object.
-> [NOTE]
+> [!NOTE]
 > The values of `coulomb_repulsion` and `energy_offet` added together capture the identity term of the Hamiltonian.
 
 ##### One-Electron Integrals Object #####
@@ -185,7 +185,7 @@ This section is normative.
 The `one_electron_integrals` property of the Hamiltonian object MUST be a sparse array quantity whose indices are two integers and whose values are numbers.
 Every term MUST have indices `[i, j]` where `i >= j`.
 
-> [NOTE]
+> [!NOTE]
 > This reflects the symmetry that $h_{ij} = h_{ji}$ which is a consequence of the fact that the Hamiltonian is Hermitian.
 
 
