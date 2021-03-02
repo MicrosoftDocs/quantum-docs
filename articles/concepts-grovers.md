@@ -23,7 +23,7 @@ problems you can read our [guide to implement Grover's search algorithm](xref:mi
 Any searching task can be expressed with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution for the search task, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The search problem consists in finding any item $x_0$ such that $f(x_0)=1$. This is, an item $x_0$ that is a solution to the search problem.
 
 The task that Grover's algorithm aims to solve is, given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, find an input $x_0$ for which $f(x_0)=1$.
-
+The complexity of the algorithm lies in the number of uses of the function $f(x)$. Classically, in the worst-case scenario, we have to evaluate $f(x)$ $N-1$ times, since if we evaluated f(x)$ for $N-1$ elements we already know the output of the last element. We will see that Grover's quantum algorithm can solve this problem by providing a quadratic speed up.
 ## Outline of the algorithm
 
 Suppose we have $N=2^n$ eligible items for the search task and we index them by assigning each item an integer from $0$ to
