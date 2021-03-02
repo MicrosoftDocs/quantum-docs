@@ -92,6 +92,10 @@ Logs the local user in to Azure. It first attempts to use cached credentials
 from a secure local cache. An optional `refresh` argument can be used to bypass
 the cache and force authentication.
 
+> [!NOTE]
+> Passing `refresh=True` will clear the workspace.credentials property and force a new Interactive Device Authentication.
+Whatever credentials were set in the workspace.credentials will be lost, including ServicePrincipalCredentials.
+
 ```python
 workspace = Workspace(...)
 workspace.login()
