@@ -69,12 +69,6 @@ Alternatively, you can create a workspace in a more advanced way and specify the
 1. To retrieve the list of quantum providers available, you can use the following command (using **westus** as example location) :
 
    ```dotnetcli
-   az quantum offerings list -l westus
-   ```
-
-1. You can see a summary table of the information above by specifying the output format:
-
-   ```dotnetcli
    az quantum offerings list -l westus -o table
    ```
 
