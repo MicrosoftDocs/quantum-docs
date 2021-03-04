@@ -12,7 +12,7 @@ uid: microsoft.quantum.azure.common-issues
 
 # Azure Quantum common issues
 
-When you first start working with Azure Quantum, you may run into these common issues.
+When you first start working with Azure Quantum, you may run into these common issues. 
 
 ## Submitting jobs
 
