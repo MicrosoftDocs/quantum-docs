@@ -28,10 +28,15 @@ The norm of a vector $v$ is defined as $\sqrt{\sum\_i |v\_i|^2}$. A vector is sa
 
 $$\begin{bmatrix}v_1 \\\\ \vdots \\\\ v_n \end{bmatrix}^\dagger = \begin{bmatrix}v_1^* & \cdots & v_n^* \end{bmatrix}$$
 
-The most common way to multiply two vectors together is through the [*inner product*](https://en.wikipedia.org/wiki/Inner_product_space), also known as a dot product.  The inner product gives the projection of one vector onto another and is invaluable in describing how to express one vector as a sum of other simpler vectors.  The inner product between $u$ and $v$, denoted $\left\langle u, v\right\rangle$ is defined as
+Notice that we distinguish between a column vector $v$ and a row vector $v^\dagger$. 
+
+## Inner product
+
+We can multiply two vectors together through the [*inner product*](https://en.wikipedia.org/wiki/Dot_product), also known as a *dot product* or *scalar product*. As the name implies, the result of the inner product of two vectors is a scalar. The inner product gives the projection of one vector onto another and is invaluable in describing how to express one vector as a sum of other simpler vectors. The inner product between two column vectors $u=(u_1 , u_2 , ldots , u_n)$ and $v=(v_1 , v_2 , ldots , v_n)$, denoted $\left\langle u, v\right\rangle$ is defined as
 
 $$
-\langle u, v\rangle = u^\dagger v=u\_1^{\*} v_1 + \cdots + u\_n^{\*} v\_n.
+\langle u, v\rangle = u^\dagger v= \begin{bmatrix}u_1^* & \cdots & u_n^* \end{bmatrix} \begin{bmatrix}
+v_1\\\\ \vdots\\\\ v_n \end{bmatrix} =  u\_1^{\*} v_1 + \cdots + u\_n^{\*} v\_n.
 $$
 
 This notation also allows the norm of a vector $v$ to be written as $\sqrt{\langle v, v\rangle}$.
@@ -70,7 +75,7 @@ M_{m1} ~~ M_{m2} ~~ \cdots ~~ M_{mn}\\\\
 
 Note that a vector of dimension $n$ is simply a matrix of size $n \times 1$. As with vectors, we can multiply a matrix with a number $c$ to obtain a new matrix where every entry is multiplied with $c$, and we can add two matrices of the same size to produce a new matrix whose entries are the sum of the respective entries of the two matrices. 
 
-## Matrix multiplication and tensor products
+## Matrix multiplication
 
 We can also multiply two matrices $M$ of dimension $m\times n$ and $N$ of dimension $n \times p$ to get a new matrix $P$ of dimension $m \times p$ as follows:
 
@@ -113,7 +118,25 @@ $$\langle v,v \rangle=v^\dagger v = v^\dagger U^{-1} U v = v^\dagger U^\dagger U
 
 A matrix $M$ is said to be [*Hermitian*](https://en.wikipedia.org/wiki/Hermitian_matrix) if $M=M^\dagger$.
 
-Finally, the [*tensor product*](https://en.wikipedia.org/wiki/Tensor_product) (or Kronecker product) of two matrices $M$ of size $m\times n$ and $N$ of size $p \times q$ is a larger matrix $P=M\otimes N$ of size $mp \times nq$, and is obtained from $M$ and $N$ as follows:
+
+## Tensor product
+
+Finally, another important operation is the [*Kronecker product*](https://en.wikipedia.org/wiki/Kronecker_product), also called the *matrix direct product* or *tensor product*.  Note that the Kronecker product is distinguished from matrix multiplication, which is an entirely different operation. In quantum computing theory, *tensor product* is commonly used to denote the Kronecker product.
+
+Consider the two vectors $v=\begin{bmatrix}a \\\\ b  \end{bmatrix} $ and $u =\begin{bmatrix} c \\\\ d \\\\ e \end{bmatrix} $.  Their tensor product is denoted as $v otimes u$ and results in a block matrix.
+$$
+	\begin{bmatrix}
+		a \\\\ b  \end{bmatrix} \otimes \begin{bmatrix} c \\\\ d \\\\ e
+	\end{bmatrix} =
+	\begin{bmatrix}
+		a \begin{bmatrix} c \\\\ d \\\\ e \end{bmatrix}
+		\\\\[1.5em]
+		b \begin{bmatrix} c \\\\ d \\\\ e\end{bmatrix}
+	\end{bmatrix}
+	= \begin{bmatrix} a c \\\\ a d \\\\ a e \\\\ b c \\\\ b d \\\\ be\end{bmatrix}
+$$
+
+Notice that tensor product is an operation on two matrices or vectors of arbitrary size. The tensor product of two matrices $M$ of size $m\times n$ and $N$ of size $p \times q$ is a larger matrix $P=M\otimes N$ of size $mp \times nq$, and is obtained from $M$ and $N$ as follows:
 
 \begin{align}
 	M \otimes N &=
@@ -138,22 +161,7 @@ Finally, the [*tensor product*](https://en.wikipedia.org/wiki/Tensor_product) (o
 	\end{bmatrix}.
 \end{align}
 
-This is better demonstrated with some examples:
-
-$$
-	\begin{bmatrix}
-		a \\\\ b  \end{bmatrix} \otimes \begin{bmatrix} c \\\\ d \\\\ e
-	\end{bmatrix} =
-	\begin{bmatrix}
-		a \begin{bmatrix} c \\\\ d \\\\ e \end{bmatrix}
-		\\\\[1.5em]
-		b \begin{bmatrix} c \\\\ d \\\\ e\end{bmatrix}
-	\end{bmatrix}
-	= \begin{bmatrix} a c \\\\ a d \\\\ a e \\\\ b c \\\\ b d \\\\ be\end{bmatrix}
-$$
-
-and
-
+This is better demonstrated with an example:
 $$
 	\begin{bmatrix}
 		a\ b \\\\ c\ d

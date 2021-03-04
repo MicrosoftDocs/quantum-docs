@@ -16,31 +16,9 @@ This guide outlines the process to create a Q# application
 and run it on the different targets available in Azure Quantum.
 
 ## Different types of targets in Azure Quantum
+Azure Quantum is a platform that offers a variety of quantum solutions, such as different hardware devices and quantum simulators. As an emerging technology, quantum devices still have their limitations and we need to keep those in mind when developing programs. In the topic [Targets in Azure Quantum](xref:microsoft.quantum.concepts.targets),  three types of target profiles are described: *Full*, *No Control Flow* and *Basic Measurement Feedback*. 
 
-Azure Quantum is a platform that offers a variety of quantum solutions, such as
-different hardware devices and quantum simulators. 
-At this time, each of these devices has its limitations and requirements for programs that run on them. However, the Quantum Development Kit (QDK) and the Azure Quantum service take care of these requirements in the background so that your Q# code can run seamlessly on all of the Azure Quantum targets.
-
-Quantum devices, however, are still an emerging technology, and not all of
-them can run all Q# code. As such, you need to keep some
-restrictions in mind when developing programs for different targets. Currently, we
-classify targets as having one of three profiles:
-
-- **Full:** This profile can run any Q# program within the
-  limits of memory for simulated quantum processing units (QPU) or the number of qubits of the physical
-  quantum hardware.
-- **No Control Flow:** This profile can run any Q# program that doesn't
-  require the use of the results from qubit measurements to control the
-  program flow. Within a Q# program targeted for this kind of QPU, values of
-  type `Result` do not support equality comparison.
-- **Basic Measurement Feedback:** This profile has limited ability to use the
-  results from qubit measurements to control the program flow. Within a Q# program
-  targeted for this kind of QPU, you can only compare values of type `Result` as
-  part of conditions within `if` statements in operations. The corresponding
-  conditional blocks may not contain `return` or `set` statements.
-
-In this guide, you will create applications for each of these
-target profiles and submit them to run on Azure Quantum hardware.
+In this guide, you will create applications for each of these target profiles and submit them to run on Azure Quantum hardware.
 
 ## Create and run applications for Full profile targets
 
