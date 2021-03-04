@@ -60,8 +60,35 @@ And then you can create it using the following command, using the previous examp
 az quantum workspace create -l westus -g MyResourceGroup -w MyQuantumWorkspace -a MyStorageAccount
 ```
 
-> [!NOTE]
-> Adding or removing providers from a workspace using the Az CLI is not currenly supported. For now, you'll need to [use the Azure portal](xref:microsoft.quantum.workspaces-portal) to modify a workspace.
+By default, a new workspace will be created only containing the Microsoft Basic QIO provider. At any time, it is possible to modify a workspace in order to add or remove other providers. For this, you can use [the Azure portal](xref:microsoft.quantum.workspaces-portal) and edit the workspace.
+
+Alternatively, you can create a workspace in a more advanced way and specify the providers using the CLI directly.
+
+## Specify additional providers during creation of an Azure Quantum workspace
+
+1. To retrieve the list of quantum providers available, you can use the following command (using **westus** as example location) :
+
+   ```dotnetcli
+   az quantum offerings list -l westus -o table
+   ```
+
+1. Once you determine the provider and SKU to include in your workspace, you can review terms using this command, assuming **MyProviderID** and **MySKU** as example values:
+
+   ```dotnetcli
+   az quantum offerings show-terms -l westus -p MyProviderId -k MySKU
+   ```
+
+1. The output of the command above includes a Boolean field `accepted` that shows if the terms for this provider have been accepted already or not, as well as a link to the license terms to review. If you decide to accept those terms, use the following command to record your acceptance.
+
+   ```dotnetcli
+   az quantum offerings accept-terms -l westus -p MyProviderId -k MySKU
+   ```
+
+1. Once you have reviewed and accepted all terms and conditions required, you can create your workspace specifying a list of provider/SKU combinations separated by commas, as in the example below:
+
+   ```dotnetcli
+   az quantum workspace create -l westus -g MyResourceGroup -w MyQuantumWorkspace -a MyStorageAccount -r "MyProvider1/MySKU1, MyProvider2/MySKU2"
+   ```
 
 ## Delete a quantum workspace
 
