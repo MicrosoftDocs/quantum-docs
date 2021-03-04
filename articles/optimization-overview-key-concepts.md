@@ -192,4 +192,4 @@ can be merged into:
 merged_term = Term(c=5, indices=[0,1])
 ```
 
-Merging terms may significantly improve the performance of QIO, if your problem has a lot of such terms. You can either use a hash map or sort algorithm to do the merging.
+Merging terms may significantly improve the performance of QIO, if your problem has a lot of such terms. You can either use a hash map or sort algorithm to do the merging. 
