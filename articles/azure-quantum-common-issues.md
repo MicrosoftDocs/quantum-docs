@@ -5,14 +5,14 @@ ms.author: v-edsanc
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: article
+ms.topic: conceptual
 title: Azure Quantum common issues
 uid: microsoft.quantum.azure.common-issues
 ---
 
 # Azure Quantum common issues
 
-When you first start working with Azure Quantum, you may run into these common issues.
+When you first start working with Azure Quantum, you may run into these common issues. 
 
 ## Submitting jobs
 

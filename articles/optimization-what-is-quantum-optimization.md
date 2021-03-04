@@ -5,7 +5,7 @@ ms.author: frtibble
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: article
+ms.topic: conceptual
 title: What is quantum-inspired optimization?
 uid: microsoft.quantum.optimization.overview.what-is-qio
 ---

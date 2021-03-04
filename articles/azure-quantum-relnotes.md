@@ -5,7 +5,7 @@ ms.author: v-edsanc
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: article
+ms.topic: conceptual
 title: Azure Quantum Release Notes
 uid: microsoft.quantum.azure.relnotes
 ---
