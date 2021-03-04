@@ -4,7 +4,7 @@ description: List of supported LaTeX macros for the Microsoft Quantum Developmen
 author: bradben
 ms.author: v-benbra
 ms.date: 09/04/2019
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.contribute.macros
 no-loc: ['Q#', '$$v']
 ---
