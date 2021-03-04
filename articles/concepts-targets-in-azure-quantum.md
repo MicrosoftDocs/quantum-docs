@@ -12,25 +12,22 @@ uid: microsoft.quantum.concepts.targets
 
 # Targets in Azure Quantum
 
-Targets in Azure Quantum can be solvers for optimization problems or quantum devices (either physical or simulated) that you can use to
-run Q# quantum applications.
-
-## Different types of targets in Azure Quantum
+This article introduces the different type of targets available in Azure Quantum and the Quantum Development Kit (QDK). Targets in Azure Quantum can be solvers for optimization problems or quantum devices (either physical or simulated) that you can use to run Q# quantum applications.
 
 Currently, Azure Quantum includes the following types of targets:
 
-### Optimization solvers
+## Optimization solvers
 
 Azure Quantum offers optimization targets to solve binary optimization problems on classical CPUs, or hardware accelerated on field-programmable gate arrays (FPGA), GPUs or hardware annealers.
 
 For more information on optimization, see [Optimization solvers](xref:microsoft.quantum.optimization.install-sdk).
 
-### Quantum devices
+## Quantum devices
 
 Azure Quantum also offers a variety of quantum solutions, such as
 different hardware devices and quantum simulators. At this time, because of the early development stage of the field, these devices have some limitations and requirements for programs that run on them. The Quantum Development Kit and Azure Quantum will keep track of these requirements in the background so that you can run Q# programs on Azure Quantum targets.
 
-#### Quantum Processing Units (QPU): different profiles
+### Quantum Processing Units (QPU): different profiles
 
 A quantum processing unit (QPU) is a physical or simulated processor that
 contains a number of interconnected qubits that can be manipulated to compute
@@ -54,4 +51,4 @@ Quantum devices are still an emerging technology, and not all of them can run al
 
 ## Next steps
 
-You can find a complete list of the Azure Quantum targets in the artilce [List of targets of Azure Quantum](xref:microsoft.quantum.reference.targets-list)
+You can find a complete list of the Azure Quantum targets in the artilce [List of targets of Azure Quantum](xref:microsoft.quantum.reference.targets-list).
