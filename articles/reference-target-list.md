@@ -14,7 +14,11 @@ uid: microsoft.quantum.reference.target-list
 
 ## Optimization targets
 
+
+
 ### Provider: 1Qbit
+
+![alt_text=logo of IonQ](~/media/logo-1qbit.png)
 
 #### 1QBit Tabu Search Solver
 
@@ -34,27 +38,31 @@ The parallel tempering with isoenergetic cluster moves (PTICM) solver is a Monte
 
 For more information, go to the [1QBit provider reference page](xref:microsoft.quantum.providers.optimization.1qbit#path-relinking-solver).
 
-### Provider: Microsoft QIO 
+### Provider: Microsoft QIO
+
+![alt_text=logo of IonQ](~/media/logo-microsoft.png)
 
 #### Simulated Annealing
 
-Rephrases the optimization problem as a thermodynamic system and considers the energy of a single system. Changes to the system are accepted if they decrease the energy or meet a criterion based on decreasing temperature. This target can be run on CPU or FPGA hardware. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.providers.optimization.1qbit#simulated-annealing).
+Rephrases the optimization problem as a thermodynamic system and considers the energy of a single system. Changes to the system are accepted if they decrease the energy or meet a criterion based on decreasing temperature. This target can be run on CPU or FPGA hardware. For more information, go to the [Microsoft QIO provider reference page](xref:xref:microsoft.quantum.optimization.simulated-annealing).
 
 #### Parallel Tempering
 
-Rephrases the optimization problem as a thermodynamic system and runs multiple copies of a system, randomly initialized, at different temperatures. Then, based on a specific protocol, exchanges configurations at different temperatures to find the optimal configuration. This target can be run on CPU or FPGA hardware. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.providers.optimization.1qbit#parallel-tempering).
+Rephrases the optimization problem as a thermodynamic system and runs multiple copies of a system, randomly initialized, at different temperatures. Then, based on a specific protocol, exchanges configurations at different temperatures to find the optimal configuration. This target can be run on CPU or FPGA hardware. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.parallel-tempering).
 
 #### Tabu search
 
-Tabu Search looks at neighboring configurations. It can accept worsening moves if no improving moves are available and prohibit moves to previously-visited solutions. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.providers.optimization.1qbit#tabu-search).
+Tabu Search looks at neighboring configurations. It can accept worsening moves if no improving moves are available and prohibit moves to previously-visited solutions. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.tabu-search).
 
 #### Quantum Monte Carlo
 
-Quantum Monte Carlo is a Metropolis annealing algorithm, similar in concept to simulated annealing that starts at a low temperature and improves the solution by searching across barriers with some probability as an external perturbation is applied to the system. As this external field is varied over every Monte Carlo step, the configuration may be able to tunnel through energy barriers and evolve towards a desired ground state (without possessing the thermal energy needed to climb the barriers, as would be required in simulated annealing). For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.providers.optimization.1qbit#quantum-monte-carlo).
+Quantum Monte Carlo is a Metropolis annealing algorithm, similar in concept to simulated annealing that starts at a low temperature and improves the solution by searching across barriers with some probability as an external perturbation is applied to the system. As this external field is varied over every Monte Carlo step, the configuration may be able to tunnel through energy barriers and evolve towards a desired ground state (without possessing the thermal energy needed to climb the barriers, as would be required in simulated annealing). For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.quantum-monte-carlo).
 
 ## Quantum computing targets
 
 ### Provider: IonQ
+
+![alt_text=logo of IonQ](~/media/logo-ionq.png)
 
 #### IonQ Quantum Simulator
 
@@ -65,6 +73,8 @@ GPU-accelerated idealized simulator supporting up to 29 qubits, using the same s
 Trapped ion quantum computer. Dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair. For more information, go to the [IonQ provider reference page](xref:microsoft.quantum.providers.ionq#quantum-computer).
 
 ### Provider: Honeywell
+
+![alt_text=logo of IonQ](~/media/logo-honeywell.png)
 
 #### API Validator
 
