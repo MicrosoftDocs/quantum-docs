@@ -14,7 +14,10 @@ uid: microsoft.quantum.reference.target-list
 
 ## Optimization targets
 
+Azure Quantum offers optimization targets to solve binary optimization problems on classical CPUs, or hardware accelerated on field-programmable gate arrays (FPGA), GPUs or hardware annealers.
 
+> [!NOTE]
+> Optimization targets can't run Q# applications or any other type of quantum computing program. Optimization solvers are optimization algorithms that run on specialized classical hardware.
 
 ### Provider: 1Qbit
 
@@ -59,6 +62,9 @@ Tabu Search looks at neighboring configurations. It can accept worsening moves i
 Quantum Monte Carlo is a Metropolis annealing algorithm, similar in concept to simulated annealing that starts at a low temperature and improves the solution by searching across barriers with some probability as an external perturbation is applied to the system. As this external field is varied over every Monte Carlo step, the configuration may be able to tunnel through energy barriers and evolve towards a desired ground state (without possessing the thermal energy needed to climb the barriers, as would be required in simulated annealing). For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.quantum-monte-carlo).
 
 ## Quantum computing targets
+
+Azure Quantum also offers a variety of quantum solutions, such as
+different hardware devices and quantum simulators that you can use to run Q# quantum computing programs.
 
 ### Provider: IonQ
 
