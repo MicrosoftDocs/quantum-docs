@@ -132,8 +132,7 @@ The value of `metadata` MAY be the empty JSON object (that is, `{}`), or MAY con
 
 This section is informative.
 
-The `hamiltonian` property of each problem description object describes the Hamiltonian for a particular quantum chemistry problem by listing out its one- and two-body terms as sparse arrays of real numbers.
-The Hamiltonian operators described by each problem description object take the form
+The `hamiltonian` property of each problem description object describes the Hamiltonian for a particular quantum chemistry problem by listing out its one- and two-body terms as sparse arrays of real numbers. The Hamiltonian operators described by each problem description object take the form
 
 $$
 H = \sum\_\{i,j\}\sum\_{\sigma\in\\{\uparrow,\downarrow\\}} h\_\{ij\} a^\{\dagger\}\_{i,\sigma} a\_{j,\sigma} + \frac{1}{2}\sum\_\{i,j,k,l\}\sum\_{\sigma,\rho\in\\{\uparrow,\downarrow\\}} h\_{ijkl} a^\dagger\_{i,\sigma} a^\dagger\_{k,\rho} a\_{l,\rho} a\_{j,\sigma},
@@ -160,6 +159,12 @@ $$
 h_{ijkl} = h_{ijlk}=h_{jikl}=h_{jilk}=h_{klij}=h_{klji}=h_{lkij}=h_{lkji}.
 $$
 
+> [!NOTE]
+> The term $h_{ijkl}= (ij|kl)$ follows Mulliken index convention, also known as chemists’ notation. The representation used by the .NET and Q# data models follows Dirac or physicists’ notation, where 
+> 
+> $$ h\_\{ijkl\} = \iint \{\mathrm d\}x^2 \psi^\{\*\}\_i(x\_1)\psi^\{\*\}\_j(x\_2) \frac\{1\}\{\|x\_1 -x\_2\|\}\psi\_k (x\_1) \psi\_l(x\_2)$$.
+>
+>Broombridge schema currently only supports Mulliken indexing, such that the deserializer converts between the two conventions when loading data.
 
 #### Contents ####
 
@@ -170,7 +175,7 @@ The value of the `hamiltonian` property is known as a Hamiltonian object, and MU
 
 Each problem description object MUST have a property `coulomb_repulsion` whose value is a simple quantity object.
 Each problem description object MUST have a property `energy_offet` whose value is a simple quantity object.
-> [NOTE]
+> [!NOTE]
 > The values of `coulomb_repulsion` and `energy_offet` added together capture the identity term of the Hamiltonian.
 
 ##### One-Electron Integrals Object #####
@@ -180,7 +185,7 @@ This section is normative.
 The `one_electron_integrals` property of the Hamiltonian object MUST be a sparse array quantity whose indices are two integers and whose values are numbers.
 Every term MUST have indices `[i, j]` where `i >= j`.
 
-> [NOTE]
+> [!NOTE]
 > This reflects the symmetry that $h_{ij} = h_{ji}$ which is a consequence of the fact that the Hamiltonian is Hermitian.
 
 
