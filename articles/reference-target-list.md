@@ -21,7 +21,7 @@ Azure Quantum offers optimization targets to solve binary optimization problems 
 
 ### Provider: 1Qbit
 
-![alt_text=logo of IonQ](~/media/logo-1qbit.png)
+![alt_text=logo of 1qbit](~/media/logo-1qbit.png)
 
 #### 1QBit Tabu Search Solver
 
@@ -68,7 +68,7 @@ different hardware devices and quantum simulators that you can use to run Q# qua
 
 ### Provider: IonQ
 
-![alt_text=logo of IonQ](~/media/logo-ionq.png)
+![alt_text=logo of IonQ-2](~/media/logo-ionq.png)
 
 #### IonQ Quantum Simulator
 
@@ -80,7 +80,7 @@ Trapped ion quantum computer. Dynamically reconfigurable in software to use up t
 
 ### Provider: Honeywell
 
-![alt_text=logo of IonQ](~/media/logo-honeywell.png)
+![alt_text=logo of Honeywell](~/media/logo-honeywell.png)
 
 #### API Validator
 
