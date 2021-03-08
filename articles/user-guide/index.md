@@ -5,7 +5,7 @@ ms.author: a-gibec
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
-ms.topic: article
+ms.topic: conceptual
 no-loc: ['Q#', '$$v']
 title: The Q# User Guide
 uid: microsoft.quantum.user-guide-qdk.overview

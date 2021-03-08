@@ -76,10 +76,10 @@ $$
 
 ## Tensor product notation
 
-Dirac notation also includes an implicit tensor product structure within it.  This is important because in quantum computing, the state vector described by two uncorrelated quantum registers is the tensor products of the two state vectors.  Concisely describing the tensor product structure, or lack thereof, is vital if you want to explain a quantum computation.  The tensor product structure implies that we can write $\psi \otimes \phi$ for any two quantum state vectors $\phi$ and $\psi$ as $\ket{\psi} \ket{\phi}$, sometimes explicitly written as $\ket{\psi} \otimes \ket{\phi}$, however by convention writing $\otimes$ in between the vectors is unnecessary.  For example, the state with two qubits initialized to the zero state is given by
+Dirac notation also includes an implicit tensor product structure within it.  This is important because in quantum computing, the state vector described by two uncorrelated quantum registers is the tensor products of the two state vectors.  Concisely describing the tensor product structure, or lack thereof, is vital if you want to explain a quantum computation.  The tensor product structure implies that we can write $\psi \otimes \phi$ for any two quantum state vectors $\phi$ and $\psi$ as $\ket{\psi} \otimes \ket{\phi}$,  however by convention writing $\otimes$ in between the vectors is unnecessary, and we can simply write $\ket{\psi} \ket{\phi} = \ket{\psi \phi} $. To further information about vectors and tensor products, see [Vectors and Matrices in Quantum Computing](xref:microsoft.quantum.concepts.vectors). For example, the state with two qubits initialized to the zero state is given by
 
 $$
-\begin{bmatrix} 1 \\\\  0 \\\\  0 \\\\  0 \end{bmatrix}= \begin{bmatrix} 1 \\\\  0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\  0 \end{bmatrix} = \ket{0} \otimes \ket{0}= \ket{0} \ket{0}.
+\ket{0} \otimes \ket{0} = \ket{0} \ket{0} = \ket{00} = \begin{bmatrix} 1 \\\\  0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\  0 \end{bmatrix} = \begin{bmatrix} 1 \\\\  0 \\\\  0 \\\\  0 \end{bmatrix}.
 $$
 
 Similarly,  the state $\ket{p}$ for integer $p$ represents a quantum state that encodes in binary representation the integer $p$.  For example, if we wish to express the number $5$ using an unsigned binary encoding we could equally express it as
@@ -91,9 +91,10 @@ $$
 Within this notation $\ket{0}$ need not refer to a single-qubit state but rather a *qubit register* storing a binary encoding of $0$.  The differences between these two notations is usually clear from the context.  This convention is useful for simplifying the first example which can be written in any of the following ways:
 
 $$
-\begin{bmatrix}1 \\\\  0 \end{bmatrix}\otimes \cdots \otimes\begin{bmatrix}1 \\\\  0 \end{bmatrix} = \ket{0} \otimes \cdots \otimes \ket{0}= |0\cdots 0\rangle = \ket{0}^{\otimes n} = \ket{0}.
+\begin{bmatrix}1 \\\\  0 \end{bmatrix}\otimes \cdots \otimes\begin{bmatrix}1 \\\\  0 \end{bmatrix} = \ket{0} \otimes \cdots \otimes \ket{0}= |0\cdots 0\rangle = \ket{0}^{\otimes n}
 $$
 
+where $\ket{0}^{\otimes n}$ represents the tensor product of $n$ $\ket{0}$ quantum states. 
 ## Example: Describe superposition with Dirac notation
 
 As another example of how you can use Dirac notation to describe a quantum state, consider the following equivalent ways of writing a quantum state that is an equal superposition over every possible bit string of length $n$
@@ -107,9 +108,9 @@ As a side note, in this example we did not use $\ket{+}^{\otimes n}=\ket{+}$ in 
 
 ## Express linearity with Dirac notation
 
-Another nice feature of Dirac notation is the fact that it is linear.  If we wish to write for any four quantum state vectors, 
+Another nice feature of Dirac notation is the fact that it is linear. For example, for two complex numbers $\alpha$ and $\beta$, we can write
 
-$$(\alpha \ket{\psi} +\beta\ket{\phi})\otimes (\gamma \ket{\chi} + \delta \ket{\omega})= \alpha\gamma \ket{\psi}\ket{\chi} + \alpha\delta \ket{\psi}\ket{\omega}+\beta\gamma\ket{\phi}\ket{\chi}+\beta\delta\ket{\phi}\ket{\omega}.$$
+$$ \ket{\psi} \otimes ( \alpha\ket{\phi} + \beta\ket{\chi})= \alpha\gamma \ket{\psi}\ket{\phi} + \beta\ket{\psi}\ket{\chi}.$$
 
 That is to say, you can distribute the tensor product notation in Dirac notation so that taking tensor products between state vectors ends up looking just like ordinary multiplication.
 

@@ -5,7 +5,7 @@ ms.author: kitty
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: article
+ms.topic: conceptual
 title: Submit jobs to Azure Quantum with Q# Jupyter Notebooks
 uid: microsoft.quantum.submit-jobs.jupyter
 ---

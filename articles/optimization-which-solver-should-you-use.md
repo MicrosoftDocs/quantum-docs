@@ -6,7 +6,7 @@ ms.author: dasteige
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.date: 02/01/2021
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.optimization.choose-solver
 ---
 

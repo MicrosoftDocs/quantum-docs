@@ -5,7 +5,7 @@ ms.author: beheim
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
-ms.topic: article
+ms.topic: conceptual
 title: Q# programming language introdution
 uid: microsoft.quantum.user-guide-qdk.overview.programs
 ---
