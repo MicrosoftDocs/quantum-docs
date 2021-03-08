@@ -1,6 +1,6 @@
 ---
-author:geduardo
-description: This document provides a list of the available providers on Azure Quantum
+author: geduardo
+description: This document provides a list of the available providers on Azure Quantum.
 ms.author: kitty
 ms.date: 04/03/2021
 ms.service: azure-quantum
@@ -43,7 +43,7 @@ For more information, go to the [1QBit provider reference page](xref:microsoft.q
 
 ### Provider: Microsoft QIO
 
-![alt_text=logo of IonQ](~/media/logo-microsoft.png)
+![alt_text=logo of Microsoft](~/media/logo-microsoft.png)
 
 #### Simulated Annealing
 
