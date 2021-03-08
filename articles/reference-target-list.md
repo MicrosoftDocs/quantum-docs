@@ -33,7 +33,7 @@ For more information, go to the [1QBit provider reference page](xref:microsoft.q
 
 The parallel tempering with isoenergetic cluster moves (PTICM) solver is a Monte Carlo approach to solving QUBO problems. In this algorithm, multiple replicas of the original system, each with a different initial state, are simulated at different temperatures simultaneously. The replicas at neighboring temperatures are periodically swapped based on a Metropolis criterion. These swaps allow different replicas to do a random walk in the temperature space, thereby, efficiently overcoming energy barriers.
 
-For more information, go to the [1QBit provider reference page](xref:microsoft.quantum.providers.optimization.1qbit#tabu-search-solver).
+For more information, go to the [1QBit provider reference page](xref:microsoft.quantum.providers.optimization.1qbit).
 
 #### 1QBit Path-Relinking Solver
 
@@ -47,7 +47,7 @@ For more information, go to the [1QBit provider reference page](xref:microsoft.q
 
 #### Simulated Annealing
 
-Rephrases the optimization problem as a thermodynamic system and considers the energy of a single system. Changes to the system are accepted if they decrease the energy or meet a criterion based on decreasing temperature. This target can be run on CPU or FPGA hardware. For more information, go to the [Microsoft QIO provider reference page](xref:xref:microsoft.quantum.optimization.simulated-annealing).
+Rephrases the optimization problem as a thermodynamic system and considers the energy of a single system. Changes to the system are accepted if they decrease the energy or meet a criterion based on decreasing temperature. This target can be run on CPU or FPGA hardware. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.simulated-annealing).
 
 #### Parallel Tempering
 
