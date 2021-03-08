@@ -48,3 +48,6 @@ Quantum devices are still an emerging technology, and not all of them can run al
   part of conditions within `if` statements in operations. The corresponding
   conditional blocks may not contain `return` or `set` statements.
 
+## Next steps
+
+You can find a complete list of the Azure Quantum targets in the article [List of targets of Azure Quantum](xref:microsoft.quantum.reference.targets-list).
