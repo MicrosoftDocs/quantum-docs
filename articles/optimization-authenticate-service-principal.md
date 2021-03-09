@@ -66,9 +66,13 @@ workspace.credentials = ServicePrincipalCredentials(
     tenant    = "", # From service principal creation, your Directory (tenant) ID
     client_id = "", # From service principal creation, your Application (client) ID
     secret    = "", # From service principal creation, your secret
-    resource  = "https://quantum.microsoft.com/" # Do not change! This is the resource you want to authenticate against - the Azure Quantum service
+    resource  = "https://quantum.microsoft.com" # Do not change! This is the resource you want to authenticate against - the Azure Quantum service
 )
 ```
 
 That's it! Make sure you call `workspace.login()` after setting up the service
 principal and you should be able to create jobs as usual.
+
+> [!NOTE]
+> Calling `workspace.login(refresh=True)` will clear the workspace.credentials property and force a new Interactive Device Authentication.
+Whatever credentials were set in the workspace.credentials will be lost, including ServicePrincipalCredentials.
