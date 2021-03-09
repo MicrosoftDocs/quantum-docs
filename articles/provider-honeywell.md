@@ -63,7 +63,8 @@ where:
 
 - $N_{1q}$ is the number of one-qubit operations in a circuit. 
 - $N_{2q}$ is the number of native two-qubit operations in a circuit. Native gate is equivalent to CNOT up to several one-qubit gates.  
-- $N_{m}$ is the number of state preparation and measurement (SPAM) operations in a circuit including initial implicit state preparation and any intermediate and final measurements and state resets.  
+- $N_{m}$ is the number of state preparation and measurement (SPAM) operations in a circuit including initial implicit state preparation and any intermediate and final measurements and state resets.
+- $C$ is the shot count.
 
 #### Technical Specifications
 
