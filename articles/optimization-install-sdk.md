@@ -5,7 +5,7 @@ ms.author: anraman
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: article
+ms.topic: conceptual
 title: Install and use the Python SDK for optimization
 uid: microsoft.quantum.optimization.install-sdk
 ---

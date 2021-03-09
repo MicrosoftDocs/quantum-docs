@@ -1,6 +1,6 @@
 ---
-author:geduardo
-description: This document provides a list of the available providers on Azure Quantum
+author: geduardo
+description: This document provides a list of the available providers on Azure Quantum.
 ms.author: kitty
 ms.date: 04/03/2021
 ms.service: azure-quantum
@@ -21,7 +21,7 @@ Azure Quantum offers optimization targets to solve binary optimization problems 
 
 ### Provider: 1Qbit
 
-![alt_text=logo of IonQ](~/media/logo-1qbit.png)
+![alt_text=logo of 1qbit](~/media/logo-1qbit.png)
 
 #### 1QBit Tabu Search Solver
 
@@ -33,7 +33,7 @@ For more information, go to the [1QBit provider reference page](xref:microsoft.q
 
 The parallel tempering with isoenergetic cluster moves (PTICM) solver is a Monte Carlo approach to solving QUBO problems. In this algorithm, multiple replicas of the original system, each with a different initial state, are simulated at different temperatures simultaneously. The replicas at neighboring temperatures are periodically swapped based on a Metropolis criterion. These swaps allow different replicas to do a random walk in the temperature space, thereby, efficiently overcoming energy barriers.
 
-For more information, go to the [1QBit provider reference page](xref:microsoft.quantum.providers.optimization.1qbit#tabu-search-solver).
+For more information, go to the [1QBit provider reference page](xref:microsoft.quantum.providers.optimization.1qbit).
 
 #### 1QBit Path-Relinking Solver
 
@@ -43,11 +43,11 @@ For more information, go to the [1QBit provider reference page](xref:microsoft.q
 
 ### Provider: Microsoft QIO
 
-![alt_text=logo of IonQ](~/media/logo-microsoft.png)
+![alt_text=logo of Microsoft](~/media/logo-microsoft.png)
 
 #### Simulated Annealing
 
-Rephrases the optimization problem as a thermodynamic system and considers the energy of a single system. Changes to the system are accepted if they decrease the energy or meet a criterion based on decreasing temperature. This target can be run on CPU or FPGA hardware. For more information, go to the [Microsoft QIO provider reference page](xref:xref:microsoft.quantum.optimization.simulated-annealing).
+Rephrases the optimization problem as a thermodynamic system and considers the energy of a single system. Changes to the system are accepted if they decrease the energy or meet a criterion based on decreasing temperature. This target can be run on CPU or FPGA hardware. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.simulated-annealing).
 
 #### Parallel Tempering
 
@@ -55,7 +55,7 @@ Rephrases the optimization problem as a thermodynamic system and runs multiple c
 
 #### Tabu search
 
-Tabu Search looks at neighboring configurations. It can accept worsening moves if no improving moves are available and prohibit moves to previously-visited solutions. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.tabu-search).
+Tabu Search looks at neighboring configurations. It can accept worsening moves if no improving moves are available and prohibit moves to previously-visited solutions. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.providers.microsoft.qio).
 
 #### Quantum Monte Carlo
 
@@ -68,7 +68,7 @@ different hardware devices and quantum simulators that you can use to run Q# qua
 
 ### Provider: IonQ
 
-![alt_text=logo of IonQ](~/media/logo-ionq.png)
+![alt_text=logo of IonQ-2](~/media/logo-ionq.png)
 
 #### IonQ Quantum Simulator
 
@@ -80,7 +80,7 @@ Trapped ion quantum computer. Dynamically reconfigurable in software to use up t
 
 ### Provider: Honeywell
 
-![alt_text=logo of IonQ](~/media/logo-honeywell.png)
+![alt_text=logo of Honeywell](~/media/logo-honeywell.png)
 
 #### API Validator
 

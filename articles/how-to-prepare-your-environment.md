@@ -5,7 +5,7 @@ ms.author: kitty
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: article
+ms.topic: conceptual
 title: Prepare your environment to use Azure Quantum
 uid: microsoft.quantum.setup.cli
 ---

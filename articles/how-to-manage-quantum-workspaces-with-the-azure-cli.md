@@ -5,7 +5,7 @@ ms.author: ricardoe
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: article
+ms.topic: conceptual
 title: Manage quantum workspaces with the Azure CLI
 uid: microsoft.quantum.workspaces-cli
 ---
