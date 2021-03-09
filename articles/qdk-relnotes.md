@@ -25,6 +25,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 - Improved IQ# debug user experience by adding a horizontal scrollbar to scroll both execution path and basis state visualizations.
 - New functions to represent the group product and group inverse on the single-qubit Clifford group, to quickly define common single-qubit Clifford operators, and to apply single-qubit Clifford operators as operations. For more information, see issue [#409](https://github.com/microsoft/QuantumLibraries/issues/409).
+- Addressing security issue in the Microsoft Quantum Development Kit for Visual Studio Code extension. For details, refer to [CVE-2021-27082](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-27082).
 
 ## Version 0.15.2102.128318
 
@@ -32,7 +33,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 - Fix "'npm' is not recognized as an internal or external command" error during creation of Q# projects with Visual Studio Code extension. See issue [#848](https://github.com/microsoft/qsharp-compiler/issues/848). 
 
-## Version 0.15.2101.126807
+## Version 0.15.2101.126940
 
 *Release date: January 29th, 2021*
 

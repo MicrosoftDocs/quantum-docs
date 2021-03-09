@@ -91,6 +91,7 @@ installed the Python SDK for optimization already, follow these steps:
 
    ```bash
    pip install --upgrade azure-quantum --pre
+   pip install azure-storage-blob --upgrade
    ```
 
 ## Create a `Workspace` object in your Python code and log in
