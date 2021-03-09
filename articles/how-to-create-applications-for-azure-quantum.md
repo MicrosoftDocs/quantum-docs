@@ -12,13 +12,7 @@ uid: microsoft.quantum.create-applications
 
 # Create and run Q# applications in Azure Quantum
 
-This guide outlines the process to create a Q# application
-and run it on the different targets available in Azure Quantum.
-
-## Different types of targets in Azure Quantum
-Azure Quantum is a platform that offers a variety of quantum solutions, such as different hardware devices and quantum simulators. As an emerging technology, quantum devices still have their limitations and we need to keep those in mind when developing programs. In the topic [Targets in Azure Quantum](xref:microsoft.quantum.concepts.targets),  three types of target profiles are described: *Full*, *No Control Flow* and *Basic Measurement Feedback*. 
-
-In this guide, you will create applications for each of these target profiles and submit them to run on Azure Quantum hardware.
+This guide outlines the process to create a Q# application and run it on the different quantum computing targets available in Azure Quantum. To see what types of quantum computing targets Azure Quantum offers, you can check our article [Targets in Azure Quantum](xref:microsoft.quantum.concepts.targets).
 
 ## Create and run applications for Full profile targets
 
