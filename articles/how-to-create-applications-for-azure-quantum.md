@@ -12,9 +12,7 @@ uid: microsoft.quantum.create-applications
 
 # Create and run Q# applications in Azure Quantum
 
-This guide outlines the process to create a Q# application
-and run it on the different quantum computing targets available in Azure Quantum. To see what types of quantum computing targets Azure Quantum offers, you can check our article [Targets in Azure Quantum](xref:microsoft.quantum.concepts.targets)
-
+This guide outlines the process to create a Q# application and run it on the different quantum computing targets available in Azure Quantum. To see what types of quantum computing targets Azure Quantum offers, you can check our article [Targets in Azure Quantum](xref:microsoft.quantum.concepts.targets).
 
 ## Create and run applications for Full profile targets
 
