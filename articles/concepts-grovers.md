@@ -53,13 +53,13 @@ $$(-H^{\otimes n}O_0H^{\otimes n}O_f)^{N_{\text{optimal}}}H^{\otimes n}$$
 To illustrate the process, let's follow the mathematical transformations of the state of the register for a simple case in which we have only two qubits and the valid element is $\ket{01}.$
 
 1. We start with the register in the state:
-  $$|\text{register}=|00\rangle$$
+  $$|\text{register}\rangle=|00\rangle$$
 
 1. After applying $H$ to each qubit the register's state transforms to:
   $$|\text{register}\rangle = \frac{1}{\sqrt{4}} \sum_{i \in \\{0,1\\}^2}|i\rangle=\frac12(\ket{00}+\ket{01}+\ket{10}+\ket{11})$$
 
 1. Then we apply the phase oracle to get:
-  $$|\text{register}\rangle = \frac12(\ket{00}-\ket{01}+\ket{10}+\ket{11})
+  $$|\text{register}\rangle = \frac12(\ket{00}-\ket{01}+\ket{10}+\ket{11})$$
 
 1. Then $H$ acts on each qubit again to give:
 
@@ -159,7 +159,7 @@ If the probability of success as a function of the number of iterations. To find
 We know that $\sin^2{x}$ reaches its first maximum for $x=\frac{\pi}{2}$, so we just need
 to make:
 
-$$\frac{\pi}{2}=(2k_{\text{optimal}} +1)\arccos \left( \sqrt{\frac{N-M}{N}}\right)\right)$$
+$$\frac{\pi}{2}=(2k_{\text{optimal}} +1)\arccos \left( \sqrt{\frac{N-M}{N}}\right)$$
 
 This gives us that:
 
@@ -172,7 +172,7 @@ Therefore we can pick $N_\text{optimal}$ to be $N_\text{optimal} = \left\lfloor 
 ## Complexity analysis
 
 We know that we need $O\left(\sqrt{\frac{N}{M}}\right)$ uses of the oracle $O_f$ to find a valid item. However, can the algorithm be implemented efficiently in terms of time complexity? $O_0$ can be implemented using $O(\log n)$ layers of classical gates. Then we have the two layers of $n$ Hadamard gates. So the overhead is $O(n)$ gates per iteration, and
-depth only $O(\log n)$. This is small compared with the number of iterations $Θ(2n/2)$.
+depth only $O(\log n)$. This is small compared with the number of iterations $Θ(2^{n/2})$.
 
 The overall complexity of the algorithm will ultimately depend on the complexity of the implementation of the oracle $O_f$. If a function evaluation is much more complicated on a quantum computer than on a classical one, the overall algorithm runtime will be longer in the quantum case, even though technically, it will use fewer queries.
 
