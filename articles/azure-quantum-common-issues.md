@@ -46,3 +46,25 @@ Command ran in 21.181 seconds (init: 0.457, invoke: 20.724)
 ```
 
 This error occurs when there is a problem with the Q# program that causes the compilation to fail. To see the specific error that is causing the failure, run `dotnet build` in the same folder.
+
+### Issue: Operation returned an invalid status code 'Forbidden'
+
+
+This issue may happen, during a workspace creation, if Azure Quantum fails to complete the role assignment step when linking the new workspace to the storage account that was specified.
+A typical scenario for this situation happens if the tab or web browser window is closed before the workspace creation is completed. You can verify that you are running into this role assignment issue by following these steps:
+
+* Navigate to your new quantum workspace in Azure Portal
+* Under **Overview** > **Essentials** > **Storage account**, click on the storage account link
+* In the left navigation bar, select **Access Control (IAM)**
+* Select **Role Assignments**
+* Verify that your workspace appears as a **Contributor**
+* If the workspace does not appear as a **Contributor** you can either:
+  * Create a new workspace and make sure to wait for the workspace creation to be completed before closing the web browser tab or window.
+  * Add the proper role assignment under the storage account     
+    * Access Control (IAM) > Add role assignments
+    * Role > Contributor
+    * Assign access to > User, group, or service principal
+    * Select > [Workspace name]
+    * Save
+
+
