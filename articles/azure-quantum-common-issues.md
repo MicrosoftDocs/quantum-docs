@@ -49,7 +49,6 @@ This error occurs when there is a problem with the Q# program that causes the co
 
 ### Issue: Operation returned an invalid status code 'Forbidden'
 
-
 This issue may happen, during a workspace creation, if Azure Quantum fails to complete the role assignment step when linking the new workspace to the storage account that was specified.
 A typical scenario for this situation happens if the tab or web browser window is closed before the workspace creation is completed. You can verify that you are running into this role assignment issue by following these steps:
 
