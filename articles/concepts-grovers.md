@@ -23,14 +23,14 @@ problems you can read our [guide to implement Grover's search algorithm](xref:mi
 Any searching task can be expressed with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution for the search task, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The search problem consists in finding any item $x_0$ such that $f(x_0)=1$. This is, an item $x_0$ that is a solution to the search problem.
 
 The task that Grover's algorithm aims to solve is, given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, find an input $x_0$ for which $f(x_0)=1$.
-The complexity of the algorithm lies in the number of uses of the function $f(x)$. Classically, in the worst-case scenario, we have to evaluate $f(x)$ $N-1$ times, since if we evaluated f(x)$ for $N-1$ elements we already know the output of the last element. We will see that Grover's quantum algorithm can solve this problem by providing a quadratic speed up.
+The complexity of the algorithm lies in the number of uses of the function $f(x)$. Classically, in the worst-case scenario, we have to evaluate $f(x)$ $N-1$ times, since if we evaluated $f(x)$ for $N-1$ elements we already know the output of the last element. We will see that Grover's quantum algorithm can solve this problem by providing a quadratic speed up.
 ## Outline of the algorithm
 
 Suppose we have $N=2^n$ eligible items for the search task and we index them by assigning each item an integer from $0$ to
-$N-1$. The steps of the algorithm are:
+$N-1$. Also, we know that there are $M$ different valid inputs. The steps of the algorithm are:
 
 1. Start with a register of $n$ qubits initialized in the state $\ket{0}$ by applying $H$ to each qubit of the register.
-1. Prepare the register into a uniform superposition: $$|\text{register}\rangle=\frac{1}{N^{1 / 2}} \sum_{x=0}^{N-1}|x\rangle$$
+1. Prepare the register into a uniform superposition: $$|\text{register}\rangle=\frac{1}{\sqrt{N}} \sum_{x=0}^{N-1}|x\rangle$$
 1. Apply $N_{\text{optimal}}$ times the following operations to the register:
    1. The phase oracle $O_f$ that applies a conditional phase shift of $-1$ for the solution items.
    1. Apply $H$ to each qubit of the register.
@@ -39,7 +39,7 @@ $N-1$. The steps of the algorithm are:
 1. Measure the register to obtain the index of a item that's a solution with very high probability.
 1. Check if it's a valid solution. If not, start again.
 
-$N_\text{optimal} = \lfloor\lfloor \frac{\pi}{4}\sqrt{\frac{N}{M}}-\frac{1}{2} \right\rflor$ is the optimal number of iterations that maximizes the likelihood of obtaining the correct item by measuring the register.
+$N_\text{optimal} = \left\lfloor \frac{\pi}{4}\sqrt{\frac{N}{M}}-\frac{1}{2} \right\rflor$ is the optimal number of iterations that maximizes the likelihood of obtaining the correct item by measuring the register.
 
 > [!NOTE]
 > The joint application of the steps 3.b, 3.c and 3.d is usually called in the literature as the Grover's diffusion operator.
@@ -63,15 +63,15 @@ To illustrate the process, let's follow the mathematical transformations of the 
 
 1. Then $H$ acts on each qubit again to give:
 
-   $$|\text{register}\rangle = \frac12(\ket{00}+\ket{01}-\ket{10}+\ket{11})
+   $$|\text{register}\rangle = \frac12(\ket{00}+\ket{01}-\ket{10}+\ket{11})$$
 
 1. Now we apply the conditional phase shift on every state except $\ket{00}$:
 
-   $$|\text{register}\rangle = \frac12(\ket{00}-\ket{01}+\ket{10}-\ket{11})
+   $$|\text{register}\rangle = \frac12(\ket{00}-\ket{01}+\ket{10}-\ket{11})$$
 
 1. Now we end the first Grover iteration by applying $H$ again to get:
 
-    $$|\text{register}\rangle = \ket{01}
+    $$|\text{register}\rangle = \ket{01}$$
 
    We found the valid item in a single iteration. As we will see later, this is because for N=4 and a single valid item, $N_\text{optimal}=1$.
 
@@ -167,12 +167,12 @@ $$k_{\text{optimal}} = \frac{\pi}{4\arccos\left(\sqrt{1-M/N}\right)}-1/2 = \frac
 
 Where in the last step we used the fact that $\arccos \sqrt{1-x} = \sqrt{x} + O(x^{3/2})$.
 
-Therefore we can pick $N_\text{optimal}$ to be $N_\text{optimal} = \lfloor\lfloor \frac{\pi}{4}\sqrt{\frac{N}{M}}-\frac{1}{2} \right\rflor$.
+Therefore we can pick $N_\text{optimal}$ to be $N_\text{optimal} = \left\lfloor \frac{\pi}{4}\sqrt{\frac{N}{M}}-\frac{1}{2} \right\rflor$.
 
 ## Complexity analysis
 
 We know that we need $O\left(\sqrt{\frac{N}{M}}\right)$ uses of the oracle $O_f$ to find a valid item. However, can the algorithm be implemented efficiently in terms of time complexity? $O_0$ can be implemented using $O(\log n)$ layers of classical gates. Then we have the two layers of $n$ Hadamard gates. So the overhead is $O(n)$ gates per iteration, and
-depth only $O(log n)$. This is small compared with the number of iterations $Θ(2n/2)$.
+depth only $O(\log n)$. This is small compared with the number of iterations $Θ(2n/2)$.
 
 The overall complexity of the algorithm will ultimately depend on the complexity of the implementation of the oracle $O_f$. If a function evaluation is much more complicated on a quantum computer than on a classical one, the overall algorithm runtime will be longer in the quantum case, even though technically, it will use fewer queries.
 
