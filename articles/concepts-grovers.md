@@ -23,7 +23,7 @@ problems you can read our [guide to implement Grover's search algorithm](xref:mi
 Any searching task can be expressed with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution for the search task, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The search problem consists in finding any item $x_0$ such that $f(x_0)=1$. This is, an item $x_0$ that is a solution to the search problem.
 
 The task that Grover's algorithm aims to solve is, given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, find an input $x_0$ for which $f(x_0)=1$.
-The complexity of the algorithm lies in the number of uses of the function $f(x)$. Classically, in the worst-case scenario, we have to evaluate $f(x)$ $N-1$ times, since if we evaluated $f(x)$ for $N-1$ elements we already know the output of the last element. We will see that Grover's quantum algorithm can solve this problem by providing a quadratic speed up.
+The complexity of the algorithm lies in the number of uses of the function $f(x)$. Classically, in the worst-case scenario, we have to evaluate $f(x)$ a total of $N-1$ times, since if we evaluated $f(x)$ for $N-1$ elements we already know the output of the last element. We will see that Grover's quantum algorithm can solve this problem by providing a quadratic speed up.
 ## Outline of the algorithm
 
 Suppose we have $N=2^n$ eligible items for the search task and we index them by assigning each item an integer from $0$ to
@@ -39,7 +39,7 @@ $N-1$. Also, we know that there are $M$ different valid inputs. The steps of the
 1. Measure the register to obtain the index of a item that's a solution with very high probability.
 1. Check if it's a valid solution. If not, start again.
 
-$N_\text{optimal} = \left\lfloor \frac{\pi}{4}\sqrt{\frac{N}{M}}-\frac{1}{2} \right\rflor$ is the optimal number of iterations that maximizes the likelihood of obtaining the correct item by measuring the register.
+$N_\text{optimal} = \left\lfloor \frac{\pi}{4}\sqrt{\frac{N}{M}}-\frac{1}{2} \right\rfloor$ is the optimal number of iterations that maximizes the likelihood of obtaining the correct item by measuring the register.
 
 > [!NOTE]
 > The joint application of the steps 3.b, 3.c and 3.d is usually called in the literature as the Grover's diffusion operator.
@@ -156,10 +156,10 @@ If the probability of success as a function of the number of iterations. To find
 
 ![](./media/success-probability-grovers.png)
 
-We know that $\sin^2{x}$ reaches it's first maximum for $x=\frac{pi}{2}$, so we just need
+We know that $\sin^2{x}$ reaches its first maximum for $x=\frac{\pi}{2}$, so we just need
 to make:
 
-$$\frac{\pi}{2}=(2k_{\text{optimal}} +1)\arccos \left( \sqrt{\frac{N-M}{N}}\right)\right$$
+$$\frac{\pi}{2}=(2k_{\text{optimal}} +1)\arccos \left( \sqrt{\frac{N-M}{N}}\right)\right)$$
 
 This gives us that:
 
@@ -167,7 +167,7 @@ $$k_{\text{optimal}} = \frac{\pi}{4\arccos\left(\sqrt{1-M/N}\right)}-1/2 = \frac
 
 Where in the last step we used the fact that $\arccos \sqrt{1-x} = \sqrt{x} + O(x^{3/2})$.
 
-Therefore we can pick $N_\text{optimal}$ to be $N_\text{optimal} = \left\lfloor \frac{\pi}{4}\sqrt{\frac{N}{M}}-\frac{1}{2} \right\rflor$.
+Therefore we can pick $N_\text{optimal}$ to be $N_\text{optimal} = \left\lfloor \frac{\pi}{4}\sqrt{\frac{N}{M}}-\frac{1}{2} \right\rfloor$.
 
 ## Complexity analysis
 
