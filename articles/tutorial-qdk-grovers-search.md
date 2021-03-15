@@ -93,7 +93,7 @@ the API documentation:
 
 A good exercise to understand the code and the operations is to check with pen
 and paper that the operation `ReflectAboutUniform` applies the Grover's
-diffusion operation. To see it note that in `Controlled Z(Most(inputQubits),Tail(inputQubits))` only has an effect different than
+diffusion operation. To see it note that the operation `Controlled Z(Most(inputQubits),Tail(inputQubits))` only has an effect different than
 the identity if and only if all qubits are in the state $\ket{1}$.
 
 The operation is called `ReflectAboutUniform` because it can be geometrically
@@ -102,17 +102,17 @@ state.
 
 ### Number of iterations
 
-Grover's search has an optimal number of iterations that yields the highest probability of measuring a valid output. If the problem has $N$ possible eligible items, and $M$ of them are solutions to the problem, the optimal number of iterations is:
+Grover's search has an optimal number of iterations that yields the highest probability of measuring a valid output. If the problem has $N=2^n$ possible eligible items, and $M$ of them are solutions to the problem, the optimal number of iterations is:
 
 $$N_{\text{optimal}}\approx\frac{\pi}{4}\sqrt{\frac{N}{M}}$$
 
 Continuing to iterate past that number starts reducing that probability until we reach nearly-zero success probability on iteration $2 N_{\text{optimal}}$. After that, the probability grows again and util $3 N_{\text{optimal}}$ and so on.
 
-In practical applications, you don't usually know how many solutions your problem has before you solve it. An efficient strategy to handle this issue is to gradually increase the iteration number (for example: $2, 4, 8, 16, ..., 2^n$) and it will still find the solution with an average number of iterations around $\sqrt{\frac{N}{M}}$.
+In practical applications, you don't usually know how many solutions your problem has before you solve it. An efficient strategy to handle this issue is to "guess" the number of solutions $M$ by progressively increasing the guess in powers of two (i.e. $1, 2, 4, 8, 16, ..., 2^n$). One of these guesses will be sufficiently close that the algorithm will still find the solution with an average number of iterations around $\sqrt{\frac{N}{M}}$.
 
 ### Complete Grover's operation
 
-Now we are ready to write the full operation a Grover's search. It will have three inputs:
+Now we are ready to write a Q# operation for Grover's search algorithm. It will have three inputs:
 
 - A qubit array `register : Qubit[]` that should be initialized in the all `Zero` state. This register will encode the tentative solution to the search problem. After the operation it will be measured.
 - An operation `phaseOracle : ((Qubit[]) => Unit is Adj` that represents the phase oracle for the Grover's task. This operation applies an unitary transformation over a generic qubit register.
@@ -137,7 +137,7 @@ This code is generic - it can be used to solve any search problem. We pass the q
 ## Implement the oracle
 
 One of the key properties that makes Grover's algorithm faster is the ability of
-quantum computers of performing calculations not only on individual inputs but
+quantum computers to perform calculations not only on individual inputs but
 also on superpositions of inputs. We need to compute the function $f(x)$ that
 describes the instance of a search problem using only quantum operations. This
 way we can compute it over a superposition of inputs.
@@ -150,11 +150,11 @@ However, there are some guidelines that might help you to translate your
 function $f(x)$ into a quantum oracle:
 
 1. **Break down the classical function into small building blocks that are easy to implement.** For example, you can try
-   to decompose your function $f(x)$ into a series of arithmetic operations or boolean logic gates.
+   to decompose your function $f(x)$ into a series of arithmetic operations or Boolean logic gates.
 1. **Use the higher-level building blocks of the Q# library operations to implement the intermediate operations.** For instance,
    if you decomposed your function into a combination of simple arithmetic operations, you can use the [Numerics library](xref:microsoft.quantum.arithmetic) to implement the intermediate operations. 
 
-The following equivalence table might result you useful to implement boolean functions in Q#.
+The following equivalence table might prove useful when implementing Boolean functions in Q#.
 
 | Classical logic gate | Q# operation        |
 |----------------|--------------------------|
@@ -174,19 +174,19 @@ Classically, we would compute the rest of the division $M/x$ and check if it's e
 - Compute the remainder of the division.
 - Apply a controlled operation over the output bit so that it's `1` if the remainder is `0`.
 
-So we need to calculate a division of two numbers with a quantum operation. Fortunately, you don't need to write the circuit implementing the division from scratch, you can use [`DivideI`](xref:microsoft.quantum.arithmetic.dividei) operation of the Numerics library instead.
+So we need to calculate a division of two numbers with a quantum operation. Fortunately, you don't need to write the circuit implementing the division from scratch, you can use the [`DivideI`](xref:microsoft.quantum.arithmetic.dividei) operation from the Numerics library instead.
 
 If we look into the description of `DivideI` we see that it needs three qubit registers, the $n$-bit dividend `xs`, the $n$-bit divisor `ys` and the
 $n$-bit `result` that must be initialized in the state `Zero`. The operation is `Adj + Ctl`, so we can conjugate it and use it in *within-apply* statements. Also, in the description it says that the dividend in the input register `xs` is replaced by the remainder. This is perfect since we are interested exclusively in the remainder, and not in the result of the operation.
 
-We can build then a quantum operation that does the following:
+We can then build a quantum operation that does the following:
 
 1. Takes three inputs:
-   - The dividend `number`: `Int`, this is the $M$ of $f_M(x)$.
-   - A qubit array encoding the divisor `divisorRegister : Qubit[]`, this is, $x$, that might be in a superposition state.
+   - The dividend, `number : Int`. This is the $M$ in $f_M(x)$.
+   - A qubit array encoding the divisor, `divisorRegister : Qubit[]`. This is the $x$ in $f_M(x)$, possibly in a superposition state.
    - A target qubit `target : Qubit` that flips if the output of $f_M(x)$ is $1$.
 1. Calculates the division $M/x$ using only reversible quantum operations, and flips the state of `target` if and only if the remainder is zero.
-1. Reverts all the operations except the flipping of `target` to leave the used auxiliary qubits in the zero state without introducing any irreversible operation like measurement. This step is important to preserve entanglement and superposition during the process.
+1. Reverts all operations except the flipping of `target`, so as to return the used auxiliary qubits to the zero state without introducing irreversible operations, such as measurement. This step is important in order to preserve entanglement and superposition during the process.
 
 The code to implement this quantum operation is:
 
@@ -224,11 +224,11 @@ operation markingDivisor (
 ```
 
 > [!NOTE]
-> We take advantage of the statement *within-apply* to achieve the step 3. Alternatively we could write explicitly the adjoints of each of the operations inside the `within` block after the controlled flipping of `target`. The *within-apply* statement does it for us, making the code more readable and short. One of the main goals of Q# is to make quantum programs easy to write and read.
+> We take advantage of the statement *within-apply* to achieve step 3. Alternatively, we could explicitly write the adjoints of each of the operations inside the `within` block after the controlled flipping of `target`. The *within-apply* statement does it for us, making the code shorter and more readable. One of the main goals of Q# is to make quantum programs easy to write and read.
 
 ### Transform the operation into a phase oracle
 
-The operation `markingDivisor` is what's known as a *marking oracle*, since it marks the valid items with an entangled auxiliary qubit (`target`). However, Grover's algorithm needs a *phase oracle*, this is, an oracle that applies a conditional phase shift of $-1$ for the solution items. But don't panic, the operation above isn't work in vain. It's very easy to switch from one to another with Q#.
+The operation `markingDivisor` is what's known as a *marking oracle*, since it marks the valid items with an entangled auxiliary qubit (`target`). However, Grover's algorithm needs a *phase oracle*, that is, an oracle that applies a conditional phase shift of $-1$ for the solution items. But don't panic, the operation above wasn't written in vain. It's very easy to switch from one oracle type to the other in Q#.
 
 We can apply any marking oracle as a phase oracle with the following operation:
 
@@ -251,11 +251,9 @@ This famous transformation is often known as the *phase kickback* and it's widel
 
 ## Factoring numbers with a Grover's search
 
-Now we have all the ingredients to implement the Grover's search algorithm to solve a mathematical problem. We just need to wrap-up everything.
+Now we have all the ingredients to implement a particular instance of Grover's search algorithm and solve our factoring problem.
 
-Let's use the program to find a factor of 21. To simplify the code let's assume that we know the number $M$ of valid items. In this case $M=4$, since there are two factors, 3 and 7, plus 1 and 21 itself.
-
-The code would be:
+Let's use the program below to find a factor of 21. To simplify the code, let's assume that we know the number $M$ of valid items. In this case, $M=4$, since there are two factors, 3 and 7, plus 1 and 21 itself.
 
 ```qsharp
 namespace GroversTutorial {
@@ -271,35 +269,35 @@ namespace GroversTutorial {
     @EntryPoint()
     operation FactorizeWithGrovers(number : Int) : Unit {
         
-            // Define the oracle that for the factoring problem.
-            let markingOracle = markingDivisor(number, _, _);
-            let phaseOracle = ApplyMarkingOracleAsPhaseOracle(markingOracle, _);
-            // Bit-size of the number to factorize.
-            let size = BitSizeI(number);
-            // Estimate of the number of solutions.
-            let nSolutions = 4;
-            // The number of iterations can be computed using the formula.
-            let nIterations = Round(PI() / 4.0 * Sqrt(IntAsDouble(size) / IntAsDouble(nSolutions)));
+        // Define the oracle that for the factoring problem.
+        let markingOracle = markingDivisor(number, _, _);
+        let phaseOracle = ApplyMarkingOracleAsPhaseOracle(markingOracle, _);
+        // Bit-size of the number to factorize.
+        let size = BitSizeI(number);
+        // Estimate of the number of solutions.
+        let nSolutions = 4;
+        // The number of iterations can be computed using the formula.
+        let nIterations = Round(PI() / 4.0 * Sqrt(IntAsDouble(size) / IntAsDouble(nSolutions)));
 
-            // Initialize the register to run the algorithm
-            use (register, output) = (Qubit[size], Qubit());
-            mutable isCorrect = false;
-            mutable answer = 0;
-            // Use a Repeat-Until-Succeed loop to iterate until the solution is valid.
-            repeat {
-                RunGroversSearch(register, phaseOracle, nIterations);
-                let res = MultiM(register);
-                set answer = BoolArrayAsInt(ResultArrayAsBoolArray(res));
-                // Check that if the result is a solution with the oracle.
-                markingOracle(register, output);
-                if MResetZ(output) == One and answer != 1 and answer != number {
-                    set isCorrect = true;
-                }
-                ResetAll(register);
-            } until isCorrect;
+        // Initialize the register to run the algorithm
+        use (register, output) = (Qubit[size], Qubit());
+        mutable isCorrect = false;
+        mutable answer = 0;
+        // Use a Repeat-Until-Succeed loop to iterate until the solution is valid.
+        repeat {
+            RunGroversSearch(register, phaseOracle, nIterations);
+            let res = MultiM(register);
+            set answer = BoolArrayAsInt(ResultArrayAsBoolArray(res));
+            // Check that if the result is a solution with the oracle.
+            markingOracle(register, output);
+            if MResetZ(output) == One and answer != 1 and answer != number {
+                set isCorrect = true;
+            }
+            ResetAll(register);
+        } until isCorrect;
 
-            // Print out the answer.
-            Message($"The number {answer} is a factor of {number}.");
+        // Print out the answer.
+        Message($"The number {answer} is a factor of {number}.");
 
     }
 
@@ -378,7 +376,7 @@ For subsequent runs, there is no need to build it again. To run it, type the fol
 dotnet run --no-build --number 21
 ```
 
-Pressing enter should observe something like:
+After pressing enter, you should see the following message displayed in the terminal:
 
 ```Command line
 The number 7 is a factor of 21.
@@ -386,14 +384,14 @@ The number 7 is a factor of 21.
 
 ## Extra: check the statistics with Python
 
-How can you check that the algorithm is behaving correctly? For example, if we substitute the Grover's search by a random number generator in the code above after ~ $N$ attempts it will also find a factor.
+How can you check that the algorithm is behaving correctly? For example, if we substituted Grover's search by a random number generator in the code above, after ~$N$ attempts it will also find a factor.
 
 Let's write a small Python script to check that program is working as it should.
 
 > [!TIP]
-> If you need help for running Q# operations within Python you can take a look to our [guide to use Python as a host program for Q#](xref:microsoft.quantum.guide.host-programs) and the [installation guide for Python](xref:microsoft.quantum.install.python).
+> If you need help running Q# applications within Python, you can take a look at our guide about the [ways to run a Q# program](xref:microsoft.quantum.guide.host-programs) and the [installation guide for Python](xref:microsoft.quantum.install.python).
 
-First, we are going to modify slightly the code to get rid of the RUS loop so it outputs the first measurement after the Grover's search:
+First, we are going to modify our main operation to get rid of the repeat-until-success loop, instead outputting the first measurement result after running Grover's search:
 
 ```qsharp
 ...
@@ -401,18 +399,18 @@ First, we are going to modify slightly the code to get rid of the RUS loop so it
 @EntryPoint()
 operation FactorizeWithGrovers2(number : Int) : Int {
 
-        let markingOracle = markingDivisor(number, _, _);
-        let phaseOracle = ApplyMarkingOracleAsPhaseOracle(markingOracle, _);
-        let size = BitSizeI(number);
-        let nSolutions = 4;
-        let nIterations = Round(PI() / 4.0 * Sqrt(IntAsDouble(size) / IntAsDouble(nSolutions)));
+    let markingOracle = markingDivisor(number, _, _);
+    let phaseOracle = ApplyMarkingOracleAsPhaseOracle(markingOracle, _);
+    let size = BitSizeI(number);
+    let nSolutions = 4;
+    let nIterations = Round(PI() / 4.0 * Sqrt(IntAsDouble(size) / IntAsDouble(nSolutions)));
 
-        using ((register) = Qubit[size] ){
-            RunGroversSearch(register, phaseOracle, nIterations);
-            let res = MultiM(register);
-            return ResultArrayAsInt(res);
-            // Check whether the result is correct.
-        }
+    using ((register) = Qubit[size] ){
+        RunGroversSearch(register, phaseOracle, nIterations);
+        let res = MultiM(register);
+        return ResultArrayAsInt(res);
+        // Check whether the result is correct.
+    }
 ...
 ```
 
@@ -471,10 +469,10 @@ if __name__ == "__main__":
 
 The program generates the following histogram:
 
-![alt_text=Histogram with the results of running several time the Grover's algorithm](~/media/grovers-histogram.png)
+![Histogram with the results of running several time the Grover's algorithm](~/media/grovers-histogram.png)
 
-As you can see in the histogram, the algorithm outputs the solutions to the search problem (1, 3, 7 and 21) with much higher probability than the non-solutions. You can think of Grover's algorithm as a quantum random generator that is purposefully biased towards those indexes that are a solutions of the search problem.
+As you can see in the histogram, the algorithm outputs the solutions to the search problem (1, 3, 7 and 21) with much higher probability than the non-solutions. You can think of Grover's algorithm as a quantum random generator that is purposefully biased towards those indices that are solutions to the search problem.
 
 ## Next steps
 
-Now that you now how to implement Grover's algorithm, try to transform a mathematical problem into a search task and solve it with Q# and the Grover's algorithm.
+Now that you now how to implement Grover's algorithm, try to transform a mathematical problem into a search task and solve it with Q# and Grover's algorithm.
