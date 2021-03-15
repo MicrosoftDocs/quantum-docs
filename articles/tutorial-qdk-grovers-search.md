@@ -247,7 +247,7 @@ operation ApplyMarkingOracleAsPhaseOracle(
 }
 ```
 
-This famous transformation is often known as the *phase kickback* and it's widely used in many quantum computing algorithms. You can find a detailed explanation of this technique in the [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-graph-coloring-problems-grovers-search/4-implement-quantum-oracle).
+This famous transformation is often known as the *phase kickback* and it's widely used in many quantum computing algorithms. You can find a detailed explanation of this technique in this [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-graph-coloring-problems-grovers-search/4-implement-quantum-oracle).
 
 ## Factoring numbers with a Grover's search
 
@@ -386,7 +386,7 @@ The number 7 is a factor of 21.
 
 How can you check that the algorithm is behaving correctly? For example, if we substituted Grover's search by a random number generator in the code above, after ~$N$ attempts it will also find a factor.
 
-Let's write a small Python script to check that program is working as it should.
+Let's write a small Python script to check that the program is working as it should.
 
 > [!TIP]
 > If you need help running Q# applications within Python, you can take a look at our guide about the [ways to run a Q# program](xref:microsoft.quantum.guide.host-programs) and the [installation guide for Python](xref:microsoft.quantum.install.python).
