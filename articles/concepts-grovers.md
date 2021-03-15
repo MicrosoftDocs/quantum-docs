@@ -85,8 +85,7 @@ We define the state $\ket{good}$ as the superposition of all states that are a s
 
 $$\ket{\text{good}}=\frac{1}{\sqrt{M}}\sum_{x:f(x)=1}\ket{x}$$
 
-Since *good* and *bad* are mutually exclusive sets because an item cannot be
-valid and not valid, the states $\ket{good}$ and $\ket{bad}$ are orthogonal. Both states form the orthogonal basis of a plane in the ket space. We can use this plane to visualize the algorithm.
+Since *good* and *bad* are mutually exclusive sets because an item cannot be valid and not valid, the states $\ket{good}$ and $\ket{bad}$ are orthogonal. Both states form the orthogonal basis of a plane in the ket space. We can use this plane to visualize the algorithm.
 
 ![The plane projected by the orthogonal good and bad vectors.](./media/plane-grovers.png)
 
