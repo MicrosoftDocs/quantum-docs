@@ -13,21 +13,19 @@ no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots'
 
 # Theory of Grover's search algorithm
 
-In this article you'll find a detailed theoretical explanation of the
-mathematical principles that make Grover's algorithm work.
+In this article you'll find a detailed theoretical explanation of the mathematical principles that make Grover's algorithm work.
 
-For a practical implementation of Grover's algorithm to solve mathematical
-problems you can read our [guide to implement Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers).
+For a practical implementation of Grover's algorithm to solve mathematical problems you can read our [guide to implement Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers).
 
 ## Statement of the problem
 
 Any searching task can be expressed with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution for the search task, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The search problem consists in finding any item $x_0$ such that $f(x_0)=1$. This is, an item $x_0$ that is a solution to the search problem.
 
 The task that Grover's algorithm aims to solve is, given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, find an input $x_0$ for which $f(x_0)=1$. The complexity of the algorithm lies in the number of uses of the function $f(x)$. Classically, in the worst-case scenario, we have to evaluate $f(x)$ a total of $N-1$ times, since if we evaluated $f(x)$ for $N-1$ elements we already know the output of the last element. We will see that Grover's quantum algorithm can solve this problem by providing a quadratic speed up.
+
 ## Outline of the algorithm
 
-Suppose we have $N=2^n$ eligible items for the search task and we index them by assigning each item an integer from $0$ to
-$N-1$. Also, we know that there are $M$ different valid inputs. The steps of the algorithm are:
+Suppose we have $N=2^n$ eligible items for the search task and we index them by assigning each item an integer from $0$ to $N-1$. Also, we know that there are $M$ different valid inputs. The steps of the algorithm are:
 
 1. Start with a register of $n$ qubits initialized in the state $\ket{0}$ by applying $H$ to each qubit of the register.
 1. Prepare the register into a uniform superposition: $$|\text{register}\rangle=\frac{1}{\sqrt{N}} \sum_{x=0}^{N-1}|x\rangle$$
@@ -53,25 +51,22 @@ $$(-H^{\otimes n}O_0H^{\otimes n}O_f)^{N_{\text{optimal}}}H^{\otimes n}$$
 To illustrate the process, let's follow the mathematical transformations of the state of the register for a simple case in which we have only two qubits and the valid element is $\ket{01}.$
 
 1. We start with the register in the state:
-  $$|\text{register}\rangle=|00\rangle$$
+   $$|\text{register}\rangle=|00\rangle$$
 
 1. After applying $H$ to each qubit the register's state transforms to:
-  $$|\text{register}\rangle = \frac{1}{\sqrt{4}} \sum_{i \in \\{0,1\\}^2}|i\rangle=\frac12(\ket{00}+\ket{01}+\ket{10}+\ket{11})$$
+   $$|\text{register}\rangle = \frac{1}{\sqrt{4}} \sum_{i \in \\{0,1\\}^2}|i\rangle=\frac12(\ket{00}+\ket{01}+\ket{10}+\ket{11})$$
 
 1. Then we apply the phase oracle to get:
-  $$|\text{register}\rangle = \frac12(\ket{00}-\ket{01}+\ket{10}+\ket{11})$$
+   $$|\text{register}\rangle = \frac12(\ket{00}-\ket{01}+\ket{10}+\ket{11})$$
 
 1. Then $H$ acts on each qubit again to give:
-
    $$|\text{register}\rangle = \frac12(\ket{00}+\ket{01}-\ket{10}+\ket{11})$$
 
 1. Now we apply the conditional phase shift on every state except $\ket{00}$:
-
    $$|\text{register}\rangle = \frac12(\ket{00}-\ket{01}+\ket{10}-\ket{11})$$
 
 1. Now we end the first Grover iteration by applying $H$ again to get:
-
-    $$|\text{register}\rangle = \ket{01}$$
+   $$|\text{register}\rangle = \ket{01}$$
 
    We found the valid item in a single iteration. As we will see later, this is because for N=4 and a single valid item, $N_\text{optimal}=1$.
 

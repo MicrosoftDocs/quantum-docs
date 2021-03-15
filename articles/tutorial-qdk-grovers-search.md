@@ -23,7 +23,7 @@ Grover's algorithm is one of the most famous algorithms in quantum computing. Th
 > slow paced tutorial we recommend the Microsoft Learn module [Solve graph
 > coloring problems by using Grover's
 > search](https://docs.microsoft.com/learn/modules/solve-graph-coloring-problems-grovers-search/).
-> For a detailed explanation on the theory behind Grover's algortihm, check the conceptual article [Theory of Grover's algorithm](xref:microsoft.quantum.concepts.grovers)
+> For a detailed explanation on the theory behind Grover's algorithm, check the conceptual article [Theory of Grover's algorithm](xref:microsoft.quantum.concepts.grovers).
 
 Any searching task can be mathematically formulated with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution for the search task, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The search problem consists of finding any item $x_0$ such that $f(x_0)=1$. This is, an item $x_0$ that is a solution of the search problem.
 
@@ -41,17 +41,17 @@ To implement Grover's algorithm to solve a problem you need to:
 
 ## Quick overview of Grover's algorithm
 
-Suppose we have $N=2^n$ eligible items for the search task and we index them by assigning each item a integer from $0$ to
-$N-1$. The steps of the algorithm are:
+Suppose we have $N=2^n$ eligible items for the search task and we index them by assigning each item a integer from $0$ to $N-1$. The steps of the algorithm are:
 
 1. Start with a register of $n$ qubits initialized in the state $\ket{0}$ by applying $H$ to each qubit of the register.
-1. Prepare the register into a uniform superposition: $$|\psi\rangle=\frac{1}{N^{1 / 2}} \sum_{x=0}^{N-1}|x\rangle$$
+1. Prepare the register into a uniform superposition:
+   $$|\psi\rangle=\frac{1}{N^{1 / 2}} \sum_{x=0}^{N-1}|x\rangle$$
 1. Apply $N_{\text{optimal}}$ times the following operations to the register:
    1. The phase oracle $O_f$ that applies a conditional phase shift of $-1$ for the solution items.
    1. Apply $H$ to each qubit of the register.
    1. A conditional phase shift of $-1$ to every computational basis state except $\ket{0}$.
    1. Apply $H$ to each qubit of the register.
-1. Measure the register to obtain the index of a item that's a solution with very high probability.
+1. Measure the register to obtain the index of an item that's a solution with very high probability.
 1. Check if it's a valid solution. If not, start again.
 
 ## Write the code for Grover's algorithm
@@ -81,8 +81,7 @@ In this operation we use the [within-apply](xref:microsoft.quantum.qsharp.conjug
 > To learn more about conjugations in Q#, check the [conjugations
 > article in the Q# language guide](xref:microsoft.quantum.qsharp.conjugations).
 
-You can check what each of the operations and functions used is by looking into
-the API documentation:
+You can check what each of the operations and functions used is by looking into the API documentation:
 
 - [`ApplyToEachA`](xref:Microsoft.Quantum.Canon.ApplyToEachA)
 - [`Most`](xref:microsoft.quantum.arrays.most)
@@ -90,9 +89,7 @@ the API documentation:
 
 A good exercise to understand the code and the operations is to check with pen and paper that the operation `ReflectAboutUniform` applies Grover's diffusion operator. To see it note that the operation `Controlled Z(Most(inputQubits),Tail(inputQubits))` only has an effect different than the identity if and only if all qubits are in the state $\ket{1}$.
 
-The operation is called `ReflectAboutUniform` because it can be geometrically
-interpreted as a reflection in the ket space about the uniform superposition
-state.
+The operation is called `ReflectAboutUniform` because it can be geometrically interpreted as a reflection in the ket space about the uniform superposition state.
 
 ### Number of iterations
 
@@ -130,23 +127,14 @@ This code is generic - it can be used to solve any search problem. We pass the q
 
 ## Implement the oracle
 
-One of the key properties that makes Grover's algorithm faster is the ability of
-quantum computers to perform calculations not only on individual inputs but
-also on superpositions of inputs. We need to compute the function $f(x)$ that
-describes the instance of a search problem using only quantum operations. This
-way we can compute it over a superposition of inputs.
+One of the key properties that makes Grover's algorithm faster is the ability of quantum computers to perform calculations not only on individual inputs but also on superpositions of inputs. We need to compute the function $f(x)$ that describes the instance of a search problem using only quantum operations. This way we can compute it over a superposition of inputs.
 
-Unfortunately there isn't an automatic way to translate classical functions to
-quantum operations. It's an open field of research in computer science called
-*reversible computing*.
+Unfortunately there isn't an automatic way to translate classical functions to quantum operations. It's an open field of research in computer science called *reversible computing*.
 
-However, there are some guidelines that might help you to translate your
-function $f(x)$ into a quantum oracle:
+However, there are some guidelines that might help you to translate your function $f(x)$ into a quantum oracle:
 
-1. **Break down the classical function into small building blocks that are easy to implement.** For example, you can try
-   to decompose your function $f(x)$ into a series of arithmetic operations or Boolean logic gates.
-1. **Use the higher-level building blocks of the Q# library operations to implement the intermediate operations.** For instance,
-   if you decomposed your function into a combination of simple arithmetic operations, you can use the [Numerics library](xref:microsoft.quantum.arithmetic) to implement the intermediate operations. 
+1. **Break down the classical function into small building blocks that are easy to implement.** For example, you can try to decompose your function $f(x)$ into a series of arithmetic operations or Boolean logic gates.
+1. **Use the higher-level building blocks of the Q# library to implement the intermediate operations.** For instance, if you decomposed your function into a combination of simple arithmetic operations, you can use the [Numerics library](xref:microsoft.quantum.arithmetic) to implement the intermediate operations.
 
 The following equivalence table might prove useful when implementing Boolean functions in Q#.
 
@@ -159,7 +147,7 @@ The following equivalence table might prove useful when implementing Boolean fun
 ### Example: Quantum operation to check if a number is a divisor
 
 > [!IMPORTANT]
-> In this tutorial we are going to factorize a number using Grover's search algorithm as a didatic example to show how to translate a simple mathematical problem into a Grover's task. However, **Grover's algorithm is NOT an efficient algorithm to solve the integer factorization problem**. To explore a quantum algorithm that does solve the integer factorization problem faster than any classical algorithm check the [**Shor's algorithm** sample](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/integer-factorization).
+> In this tutorial we are going to factorize a number using Grover's search algorithm as a didactic example to show how to translate a simple mathematical problem into a Grover's task. However, **Grover's algorithm is NOT an efficient algorithm to solve the integer factorization problem**. To explore a quantum algorithm that does solve the integer factorization problem faster than any classical algorithm check the [**Shor's algorithm** sample](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/integer-factorization).
 
 As an example, let's see how we would express the function $f_M(x)=1[r]$ of the factoring problem as quantum operation in Q#.
 
@@ -170,15 +158,14 @@ Classically, we would compute the rest of the division $M/x$ and check if it's e
 
 So we need to calculate a division of two numbers with a quantum operation. Fortunately, you don't need to write the circuit implementing the division from scratch, you can use the [`DivideI`](xref:microsoft.quantum.arithmetic.dividei) operation from the Numerics library instead.
 
-If we look into the description of `DivideI` we see that it needs three qubit registers, the $n$-bit dividend `xs`, the $n$-bit divisor `ys` and the
-$n$-bit `result` that must be initialized in the state `Zero`. The operation is `Adj + Ctl`, so we can conjugate it and use it in *within-apply* statements. Also, in the description it says that the dividend in the input register `xs` is replaced by the remainder. This is perfect since we are interested exclusively in the remainder, and not in the result of the operation.
+If we look into the description of `DivideI`, we see that it needs three qubit registers: the $n$-bit dividend `xs`, the $n$-bit divisor `ys`, and the $n$-bit `result` that must be initialized in the state `Zero`. The operation is `Adj + Ctl`, so we can conjugate it and use it in *within-apply* statements. Also, in the description it says that the dividend in the input register `xs` is replaced by the remainder. This is perfect since we are interested exclusively in the remainder, and not in the result of the operation.
 
 We can then build a quantum operation that does the following:
 
 1. Takes three inputs:
    - The dividend, `number : Int`. This is the $M$ in $f_M(x)$.
    - A qubit array encoding the divisor, `divisorRegister : Qubit[]`. This is the $x$ in $f_M(x)$, possibly in a superposition state.
-   - A target qubit `target : Qubit` that flips if the output of $f_M(x)$ is $1$.
+   - A target qubit, `target : Qubit`, that flips if the output of $f_M(x)$ is $1$.
 1. Calculates the division $M/x$ using only reversible quantum operations, and flips the state of `target` if and only if the remainder is zero.
 1. Reverts all operations except the flipping of `target`, so as to return the used auxiliary qubits to the zero state without introducing irreversible operations, such as measurement. This step is important in order to preserve entanglement and superposition during the process.
 
@@ -262,7 +249,7 @@ namespace GroversTutorial {
 
     @EntryPoint()
     operation FactorizeWithGrovers(number : Int) : Unit {
-        
+
         // Define the oracle that for the factoring problem.
         let markingOracle = markingDivisor(number, _, _);
         let phaseOracle = ApplyMarkingOracleAsPhaseOracle(markingOracle, _);
@@ -348,7 +335,6 @@ namespace GroversTutorial {
             Controlled Z(Most(inputQubits), Tail(inputQubits));
         }
     }
-    
 }
 ```
 
@@ -389,7 +375,6 @@ First, we are going to modify our main operation to get rid of the repeat-until-
 
 ```qsharp
 ...
-
 @EntryPoint()
 operation FactorizeWithGrovers2(number : Int) : Int {
 
@@ -447,7 +432,7 @@ def main():
     print('Output,  Frequency' )
     for k, v in frequency.items():
         print(f'{k:<8} {v}')
-    
+
     # Plot an histogram with the results
     plt.bar(frequency.keys(), frequency.values())
     plt.xlabel("Output")
