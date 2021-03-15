@@ -193,7 +193,7 @@ solver = PathRelinkingSolver(workspace)
 result = solver.optimize(problem)
 ```
 
-Here you created an instance of a `PathRelinkingSolver` solver for the problem. You could also have chosen other 1QBit solvers (for example, `TabuSearch`) without needing to change more lines of code. To see a list of the available solvers, go to our [reference page](xref:microsoft.quantum.reference.target-list#provider-1qbit).
+Here you created an instance of a `PathRelinkingSolver` solver for the problem. You could also have chosen other 1QBit solvers (for example, `TabuSearch`) without needing to change more lines of code. To see a list of the available solvers, go to the [reference page](xref:microsoft.quantum.reference.target-list#provider-1qbit).
 
 The type `Problem` is the common parameter for all the solvers of Azure Quantum. 
 
