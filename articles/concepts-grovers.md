@@ -5,8 +5,9 @@ author: geduardo
 uid: microsoft.quantum.concepts.grovers
 ms.author: v-edsanc
 ms.date: 12/11/2017
-ms.topic: article
-ms.prod: azure-quantum
+ms.service: azure-quantum
+ms.subservice: core
+ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 ---
 
@@ -22,8 +23,7 @@ problems you can read our [guide to implement Grover's search algorithm](xref:mi
 
 Any searching task can be expressed with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution for the search task, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The search problem consists in finding any item $x_0$ such that $f(x_0)=1$. This is, an item $x_0$ that is a solution to the search problem.
 
-The task that Grover's algorithm aims to solve is, given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, find an input $x_0$ for which $f(x_0)=1$.
-The complexity of the algorithm lies in the number of uses of the function $f(x)$. Classically, in the worst-case scenario, we have to evaluate $f(x)$ a total of $N-1$ times, since if we evaluated $f(x)$ for $N-1$ elements we already know the output of the last element. We will see that Grover's quantum algorithm can solve this problem by providing a quadratic speed up.
+The task that Grover's algorithm aims to solve is, given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, find an input $x_0$ for which $f(x_0)=1$. The complexity of the algorithm lies in the number of uses of the function $f(x)$. Classically, in the worst-case scenario, we have to evaluate $f(x)$ a total of $N-1$ times, since if we evaluated $f(x)$ for $N-1$ elements we already know the output of the last element. We will see that Grover's quantum algorithm can solve this problem by providing a quadratic speed up.
 ## Outline of the algorithm
 
 Suppose we have $N=2^n$ eligible items for the search task and we index them by assigning each item an integer from $0$ to
@@ -88,7 +88,7 @@ $$\ket{\text{good}}=\frac{1}{\sqrt{M}}\sum_{x:f(x)=1}\ket{x}$$
 Since *good* and *bad* are mutually exclusive sets because an item cannot be
 valid and not valid, the states $\ket{good}$ and $\ket{bad}$ are orthogonal. Both states form the orthogonal basis of a plane in the ket space. We can use this plane to visualize the algorithm.
 
-![](./media/plane-grovers.png)
+![The plane projected by the orthogonal good and bad vectors.](./media/plane-grovers.png)
 
 Now, suppose $\ket{\psi}$ is an arbitrary state that lives in the plane spanned by $\ket{\text{good}}$ and $\ket{\text{bad}}$. This property is true for any state of the form:
 
@@ -108,13 +108,13 @@ $$R_{\ket{\psi}}\ket{\xi}=\mu \ket{\psi} - \nu {\ket{\psi^{\perp}}}$$
 
 The operator $R_\ket{\psi}$ inverts the component orthogonal to $\ket{\psi}$ but leaves the $\ket{\psi}$ component unchanged. Therefore, $R_\ket{\psi}$ is a reflection about $\ket{\psi}$.
 
-![](./media/reflection-operator.png)
+![The reflection operator about psi visualized in the plane.](./media/reflection-operator.png)
 
 In Grover's algorithm, after the first application of $H$ to every qubit, we start with an uniform superposition of all states. This can be written as:
 
 $$\ket{\text{all}} = \sqrt{\frac{M}{N}}\ket{\text{good}} + \sqrt{\frac{N-M}{N}}\ket{\text{bad}}$$
 
-![](./media/starting-state.png)
+![The starting state as a superposition of the good and bad states in the plane.](./media/starting-state.png)
 
 And thus the state lives in the plane. Note that the probability of obtaining a correct result when measuring from the equal superposition is just $|\braket{\text{good}|{\text{all}}}|^2=M/N$, that is what we expect from a random guess.
 
@@ -131,33 +131,29 @@ Knowing this fact, it's easy to check that the Grover's diffusion operation $-H^
 $$H^{\otimes n} O_0 H^{\otimes n}=2H^{\otimes n}\ket{0}\bra{0}H^{\otimes n}
 -H^{\otimes n}\mathcal{I}H^{\otimes n} = 2\ket{\text{all}}\bra{\text{all}} - \mathcal{I} = R_{\ket{\text{all}}}$$
 
-We just demonstrated that each iteration of the Grover's algorithm is a composition of two rotations $R_\ket{\text{bad}}$ and $R_\ket{\text{all}}$.
+We just demonstrated that each iteration of the Grover's algorithm is a composition of two reflections $R_\ket{\text{bad}}$ and $R_\ket{\text{all}}$.
 
-![](./media/grovers-iteration.png)
+![The Grover iteration visualized as a sequence of two reflections in the plane.](./media/grovers-iteration.png)
 
-The resulting operation after each Grover's iteration is a counterclockwise
-rotation of an angle $2\theta$. Fortunately, the angle $\theta$ is easy to find.
-Since $\theta$ is just the angle between $\ket{\text{all}}$ and $\ket{\text{bad}}$ we can use
-the scalar product to find the angle. We know that
-$\cos{\theta}=\braket{\text{all}|\text{bad}}$, so we need to calculate $\braket{\text{all}|\text{bad}}$. From the decomposition of $\ket{\text{all}}$ in terms of $\ket{\text{bad}}$ and $\ket{\text{good}}$, we get that:
+The resulting operation after each Grover's iteration is a counterclockwise rotation of an angle $2\theta$. Fortunately, the angle $\theta$ is easy to find. Since $\theta$ is just the angle between $\ket{\text{all}}$ and $\ket{\text{bad}}$, we can use the scalar product to find the angle. We know that $\cos{\theta}=\braket{\text{all}|\text{bad}}$, so we need to calculate $\braket{\text{all}|\text{bad}}$. From the decomposition of $\ket{\text{all}}$ in terms of $\ket{\text{bad}}$ and $\ket{\text{good}}$, we get that:
 
 $$\theta = \arccos{\left(\braket{\text{all}|\text{bad}}\right)}= \arccos{\left(\sqrt{\frac{N-M}{N}}\right)} $$
 
-The angle between the state of the register and the $\ket{\text{good}}$ state will decrease in each iteration, resulting in a higher probability of measuring a valid result. To calculate this probability we just need to calculate $|\braket{\text{good}|\text{register}}|^2$. The angle $\gamma (k)$ between $\ket{\text{good}}$ and $\ket{\text{register}}$ for each iteration $k$ is just 
-$$\gamma (k) = \frac{\pi}{2}-\theta -k2\theta = \frac{\pi}{2} -(2k + 1)  \theta $$.
+The angle between the state of the register and the $\ket{\text{good}}$ state will decrease in each iteration, resulting in a higher probability of measuring a valid result. To calculate this probability we just need to calculate $|\braket{\text{good}|\text{register}}|^2$. The angle $\gamma (k)$ between $\ket{\text{good}}$ and $\ket{\text{register}}$ for each iteration $k$ is just:
+
+$$\gamma (k) = \frac{\pi}{2}-\theta -k2\theta = \frac{\pi}{2} -(2k + 1) \theta $$
 
 Therefore, the probability is just:
 
-$P(\text{success}) = \cos^2(\gamma(k)) = \sin^2\left[(2k +1)\arccos \left( \sqrt{\frac{N-M}{N}}\right)\right]$
+$$P(\text{success}) = \cos^2(\gamma(k)) = \sin^2\left[(2k +1)\arccos \left( \sqrt{\frac{N-M}{N}}\right)\right]$$
 
 ## Optimal number of iterations
 
 If the probability of success as a function of the number of iterations. To find the optimal number of iterations $N_{\text{optimal}}$, we need to find the integer that maximizes it in the first cycle of the function.
 
-![](./media/success-probability-grovers.png)
+![A sinusoidal graph of the success probability as a function of Grover iterations. The optimal number of iterations is near the first peak.](./media/success-probability-grovers.png)
 
-We know that $\sin^2{x}$ reaches its first maximum for $x=\frac{\pi}{2}$, so we just need
-to make:
+We know that $\sin^2{x}$ reaches its first maximum for $x=\frac{\pi}{2}$, so we just need to make:
 
 $$\frac{\pi}{2}=(2k_{\text{optimal}} +1)\arccos \left( \sqrt{\frac{N-M}{N}}\right)$$
 
@@ -171,8 +167,7 @@ Therefore we can pick $N_\text{optimal}$ to be $N_\text{optimal} = \left\lfloor 
 
 ## Complexity analysis
 
-We know that we need $O\left(\sqrt{\frac{N}{M}}\right)$ uses of the oracle $O_f$ to find a valid item. However, can the algorithm be implemented efficiently in terms of time complexity? $O_0$ can be implemented using $O(\log n)$ layers of classical gates. Then we have the two layers of $n$ Hadamard gates. So the overhead is $O(n)$ gates per iteration, and
-depth only $O(\log n)$. This is small compared with the number of iterations $Θ(2^{n/2})$.
+We know that we need $O\left(\sqrt{\frac{N}{M}}\right)$ uses of the oracle $O_f$ to find a valid item. However, can the algorithm be implemented efficiently in terms of time complexity? $O_0$ can be implemented using $O(\log n)$ layers of classical gates. Then we have the two layers of $n$ Hadamard gates. So the overhead is $O(n)$ gates per iteration, and depth only $O(\log n)$. This is small compared with the number of iterations $Θ(2^{n/2})$.
 
 The overall complexity of the algorithm will ultimately depend on the complexity of the implementation of the oracle $O_f$. If a function evaluation is much more complicated on a quantum computer than on a classical one, the overall algorithm runtime will be longer in the quantum case, even though technically, it will use fewer queries.
 
