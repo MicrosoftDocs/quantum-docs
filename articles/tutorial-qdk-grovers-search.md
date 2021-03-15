@@ -60,8 +60,7 @@ Now let's see how to implement the code in Q#.
 
 ### Grover's diffusion operator
 
-First, we are going to write an operation that applies the steps **b**, **c** and **d** of the loop. These steps
-are sometimes known as the Grover's diffusion operation.
+First, we are going to write an operation that applies the steps **b**, **c** and **d** of the loop. Together, these steps are also known as the Grover diffusion operator.
 
 ```qsharp
 operation ReflectAboutUniform(inputQubits : Qubit[]) : Unit {
@@ -76,9 +75,7 @@ operation ReflectAboutUniform(inputQubits : Qubit[]) : Unit {
 }
 ```
 
-In this operation we use the [within-apply](xref:microsoft.quantum.qsharp.conjugations) statement that implements the
-conjugation operations that occurs in the steps of the Grover's diffusion
-operation.
+In this operation we use the [within-apply](xref:microsoft.quantum.qsharp.conjugations) statement that implements the automatic conjugation of operations that occur in Grover's diffusion operator.
 
 > [!NOTE]
 > To learn more about conjugations in Q#, check the [conjugations
@@ -91,10 +88,7 @@ the API documentation:
 - [`Most`](xref:microsoft.quantum.arrays.most)
 - [`Tail`](xref:microsoft.quantum.arrays.tail)
 
-A good exercise to understand the code and the operations is to check with pen
-and paper that the operation `ReflectAboutUniform` applies the Grover's
-diffusion operation. To see it note that the operation `Controlled Z(Most(inputQubits),Tail(inputQubits))` only has an effect different than
-the identity if and only if all qubits are in the state $\ket{1}$.
+A good exercise to understand the code and the operations is to check with pen and paper that the operation `ReflectAboutUniform` applies Grover's diffusion operator. To see it note that the operation `Controlled Z(Most(inputQubits),Tail(inputQubits))` only has an effect different than the identity if and only if all qubits are in the state $\ket{1}$.
 
 The operation is called `ReflectAboutUniform` because it can be geometrically
 interpreted as a reflection in the ket space about the uniform superposition
@@ -126,7 +120,7 @@ operation RunGroversSearch(register : Qubit[], phaseOracle : ((Qubit[]) => Unit 
     for (_ in 1 .. iterations) {
         // Apply phase oracle for the task.
         phaseOracle(register);
-        // Apply Grover's diffusion operation.
+        // Apply Grover's diffusion operator.
         ReflectAboutUniform(register);
     }
 }
