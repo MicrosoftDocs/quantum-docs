@@ -12,7 +12,7 @@ uid: microsoft.quantum.optimization.choose-solver
 
 # Which optimization solver should I use?
 
-Azure Quantum offers a broad range of solvers for optimization problems. You can consult the full list in the [reference page](xref:optimization-targets#optimization-targets). However, it is unfortunately not possible to determine *a priori* which solver will perform best for a new optimization problem. In the following, we describe our suggested strategy to find a suitable solver by benchmarking.
+Azure Quantum offers a broad range of solvers for optimization problems. You can consult the full list in the [reference page](xref:microsoft.quantum.reference.target-list#optimization-targets). However, it is unfortunately not possible to determine *a priori* which solver will perform best for a new optimization problem. In the following, we describe our suggested strategy to find a suitable solver by benchmarking.
 
 ## Benchmarking objective
 
