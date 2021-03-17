@@ -142,7 +142,7 @@ $$P(\text{success}) = \cos^2(\gamma(k)) = \sin^2\left[(2k +1)\arccos \left( \sqr
 
 ## Optimal number of iterations
 
-If the probability of success as a function of the number of iterations. To find the optimal number of iterations $N_{\text{optimal}}$, we need to find the integer that maximizes it in the first cycle of the function.
+As the probability of success can be written as a function of the number of iterations, we can find the optimal number of iterations $N_{\text{optimal}}$ by computing the smallest positive integer that (approximately) maximizes the success probability function.
 
 ![A sinusoidal graph of the success probability as a function of Grover iterations. The optimal number of iterations is near the first peak.](./media/success-probability-grovers.png)
 
