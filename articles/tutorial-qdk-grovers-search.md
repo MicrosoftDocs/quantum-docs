@@ -156,7 +156,7 @@ Classically, we would compute the rest of the division $M/x$ and check if it's e
 - Compute the remainder of the division.
 - Apply a controlled operation over the output bit so that it's `1` if the remainder is `0`.
 
-So we need to calculate a division of two numbers with a quantum operation. Fortunately, you don't need to write the circuit implementing the division from scratch, you can use the [`DivideI`](xref:Microsoft.!uantum.Arithmetic.DivideI) operation from the Numerics library instead.
+So we need to calculate a division of two numbers with a quantum operation. Fortunately, you don't need to write the circuit implementing the division from scratch, you can use the [`DivideI`](xref:Microsoft.Quantum.Arithmetic.DivideI) operation from the Numerics library instead.
 
 If we look into the description of `DivideI`, we see that it needs three qubit registers: the $n$-bit dividend `xs`, the $n$-bit divisor `ys`, and the $n$-bit `result` that must be initialized in the state `Zero`. The operation is `Adj + Ctl`, so we can conjugate it and use it in *within-apply* statements. Also, in the description it says that the dividend in the input register `xs` is replaced by the remainder. This is perfect since we are interested exclusively in the remainder, and not in the result of the operation.
 
