@@ -134,7 +134,7 @@ Unfortunately there isn't an automatic way to translate classical functions to q
 However, there are some guidelines that might help you to translate your function $f(x)$ into a quantum oracle:
 
 1. **Break down the classical function into small building blocks that are easy to implement.** For example, you can try to decompose your function $f(x)$ into a series of arithmetic operations or Boolean logic gates.
-1. **Use the higher-level building blocks of the Q# library to implement the intermediate operations.** For instance, if you decomposed your function into a combination of simple arithmetic operations, you can use the [Numerics library](xref:microsoft.quantum.arithmetic) to implement the intermediate operations.
+1. **Use the higher-level building blocks of the Q# library to implement the intermediate operations.** For instance, if you decomposed your function into a combination of simple arithmetic operations, you can use the [Numerics library](xref:Microsoft.Quantum.Arithmetic) to implement the intermediate operations.
 
 The following equivalence table might prove useful when implementing Boolean functions in Q#.
 
@@ -156,7 +156,7 @@ Classically, we would compute the rest of the division $M/x$ and check if it's e
 - Compute the remainder of the division.
 - Apply a controlled operation over the output bit so that it's `1` if the remainder is `0`.
 
-So we need to calculate a division of two numbers with a quantum operation. Fortunately, you don't need to write the circuit implementing the division from scratch, you can use the [`DivideI`](xref:microsoft.quantum.arithmetic.dividei) operation from the Numerics library instead.
+So we need to calculate a division of two numbers with a quantum operation. Fortunately, you don't need to write the circuit implementing the division from scratch, you can use the [`DivideI`](xref:Microsoft.!uantum.Arithmetic.DivideI) operation from the Numerics library instead.
 
 If we look into the description of `DivideI`, we see that it needs three qubit registers: the $n$-bit dividend `xs`, the $n$-bit divisor `ys`, and the $n$-bit `result` that must be initialized in the state `Zero`. The operation is `Adj + Ctl`, so we can conjugate it and use it in *within-apply* statements. Also, in the description it says that the dividend in the input register `xs` is replaced by the remainder. This is perfect since we are interested exclusively in the remainder, and not in the result of the operation.
 
@@ -369,7 +369,7 @@ How can you check that the algorithm is behaving correctly? For example, if we s
 Let's write a small Python script to check that the program is working as it should.
 
 > [!TIP]
-> If you need help running Q# applications within Python, you can take a look at our guide about the [ways to run a Q# program](xref:microsoft.quantum.guide.host-programs) and the [installation guide for Python](xref:microsoft.quantum.install.python).
+> If you need help running Q# applications within Python, you can take a look at our guide about the [ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs) and the [installation guide for Python](xref:microsoft.quantum.install-qdk.overview.python).
 
 First, we are going to modify our main operation to get rid of the repeat-until-success loop, instead outputting the first measurement result after running Grover's search:
 
