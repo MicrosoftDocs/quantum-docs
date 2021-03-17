@@ -47,6 +47,10 @@
             href: how-to-submit-jobs-with-jupyter-notebooks.md
           - name: Submit jobs with Python
             href: how-to-submit-jobs-with-python.md
+    - name: Optimization
+      items:
+      - name: Install and use the Python SDK for optimization
+        href: optimization-install-sdk.md
   - name: Resources 
     items:
     - name: Glossary (Azure Quantum)
@@ -206,8 +210,6 @@
         href: concepts-oracles.md
     - name: Glossary
       href: qdk-glossary.md
-    - name: Further reading
-      href: further-reading-qdk.md
   - name: Optimization
     items:
     - name: Getting started
@@ -251,5 +253,7 @@
       topicHref: contributing-overview.md
     - name: QDK Release Notes
       href: qdk-relnotes.md
+    - name: Further reading
+      href: further-reading-qdk.md
 - name: Q# user guide
   href: user-guide/toc.yml

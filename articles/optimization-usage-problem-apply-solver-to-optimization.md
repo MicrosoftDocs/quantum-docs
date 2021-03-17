@@ -12,7 +12,7 @@ uid: microsoft.quantum.optimization.apply-solver
 
 # Apply solvers to solve optimization problems
 
-Once we have a `Problem`, we're ready to solve it by applying a **solver**. In this example we'll use a parameter-free version of parallel tempering. You can find documentation on this solver and the other available solvers in the [Solver overview](xref:microsoft.quantum.optimization.solver-overview).
+Once we have a `Problem`, we're ready to solve it by applying a **solver**. In this example we'll use a parameter-free version of parallel tempering. You can find documentation on this solver and the other available solvers in the [Solver overview](xref:microsoft.quantum.reference.target-list#optimization-targets).
 
 ```py
 solver = ParallelTempering(workspace, timeout=100)
