@@ -47,6 +47,10 @@
             href: how-to-submit-jobs-with-jupyter-notebooks.md
           - name: Submit jobs with Python
             href: how-to-submit-jobs-with-python.md
+    - name: Optimization
+      items:
+      - name: Install and use the Python SDK for optimization
+        href: optimization-install-sdk.md
   - name: Resources 
     items:
     - name: Glossary (Azure Quantum)
