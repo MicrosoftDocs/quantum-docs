@@ -1,4 +1,3 @@
-
 ---
 title: Optimization quickstart for Azure Quantum
 description: This document provides a step-by-step guide to get you started with Microsoft QIO on Azure Quantum
