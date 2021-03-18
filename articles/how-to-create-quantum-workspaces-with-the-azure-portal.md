@@ -22,7 +22,7 @@ go to the [Azure free sign-up page](https://azure.microsoft.com/en-us/free/) and
 to start the process of creating an Azure subscription.
 
 > [!NOTE]
-> You will need to introduce your billing information (e.g. a valid credit card) in order to create your free Azure subscription.
+> You will need to introduce your billing information (for example, a valid credit card) to create your free Azure subscription.
 
 ![alt_text=Screen capture of the free Azure sign up page](./media/start-free.png)
 
