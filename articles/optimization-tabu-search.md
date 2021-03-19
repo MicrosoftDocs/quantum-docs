@@ -3,7 +3,7 @@ title: Tabu search optimization solver
 description: This document provides a basic guide about how to use the Tabu  search optimization solver in Azure Quantum.
 author: adelebai
 ms.author: adbai
-ms.date: 02/01/2021
+ms.date: 03/15/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
@@ -59,7 +59,7 @@ solver = Tabu(workspace, timeout=100, seed=22)
 
 The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar numer of variables, terms, locality and similar coefficient scale) using the parametrized tabu search solver.
 
-## Parametrized tabu search
+## Parameterized tabu search
 
 Tabu search with specified parameters is best used if you are already familiar with tabu search terminology (iterations, tenure etc.) and/or have an idea of which parameters you intend to use. If this is your first time using tabu search for a problem, the parameter-free version (described below) is recommended.
 
@@ -69,7 +69,8 @@ Tabu search supports the following parameters:
 |----------------|-------------|
 | `sweeps`       | Number of sets of iterations to run over the variables of a problem. The more sweeps will usually always improve the solution (unless it is already at the global min).|
 | `tabu_tenure`  | Tenure of the tabu list in moves. Describes how many moves a variable stays on the tabu list once it has been made. This value is recommended to be between 1 and the number of variables to have any impact. This will be the main tuneable parameter that will determine the quality of the solution. A good starting point is 20. |
-| `replicas (optional)`  | The number of concurrent instances of a solver to run. Each instance will start with a random configuration **unless an initial configuration is supplied in the problem file**. This parameter will usually default to the number of available threads on the machine, so it is recommended to leave it blank unless you have a clear idea of how many replicas you need. |
+| `restarts`  | The number of repeated instances to run the solver. Each instance will start with a random configuration **unless an initial configuration is supplied in the problem file**. This is recommended to be at least 72 to fully utilize machine capabilities. |
+| `replicas (deprecated)`  | The number of concurrent solvers to initialize. This parameter will now default to the number of available processors on the machine, and is no longer accepting input. |
 | `seed (optional)` | Seed value - used for reproducing results |
 
 To create a parametrized Tabu solver using the SDK:
@@ -77,5 +78,5 @@ To create a parametrized Tabu solver using the SDK:
 ```python
 from azure.quantum.optimization import Tabu
 # Requires a workspace already created.
-solver = Tabu(workspace, sweeps=2, tabu_tenure=5, replicas=72, seed=22)
+solver = Tabu(workspace, sweeps=2, tabu_tenure=5, restarts=72, seed=22)
 ```
