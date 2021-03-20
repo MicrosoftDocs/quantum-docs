@@ -54,19 +54,25 @@ In the mean time, consider:
   
 
 ## 002 - Timeout Insufficient
-**Cause**: This error happens when using parameter-free solvers specifically. It means that the "timeout" parameter (in seconds) is set too low for any meaningful exploration.
+**Cause**: This error happens when using parameter-free solvers specifically. It means that the "timeout" parameter (in seconds) is set too low for any meaningful exploration. Each solver has a different search process and some solvers will take longer than others.
+
+The table below shows the **bare minimum** timeout needed for a particular problem size to get a result (note: not necessarily a good one). Based on the size of your problem, you can adjust the numbers accordingly. 
+
+| Problem | Simulated Annealing | Parallel Tempering | Tabu Search |
+|-|-|-|-|
+|Variables: 1024, Terms: 195k| 5s | 100s | 1s |
+
 
 **Possible actions to take**:
 - Increase the timeout value. This will depend on the solver that is being called, but in general 10s is sufficient for most problems. 
 - If the problem is particularly large (10k+ variables) and/or with many terms, a larger timeout might be needed. 
   
 
-
 # Invalid Input Data (Range 101-200)
 
 Errors in this category are due to mistakes in the user inputs - either there was an issue with the cost function expression, or parameters are invalid. 
 
-## 101 Duplicated Variable
+## 101 - Duplicated Variable
 **Cause**: This error happens when using the ising cost function. Azure Quantum solvers will only accept single-degree variables so if the user is submitting higher power variables, an error will be thrown. 
 
 **Possible actions to take**:
@@ -115,14 +121,55 @@ If ising, even-powered terms are 1 so this should get condensed to:
 
 
 
-## 102 Missing sections in Input Data
+## 102 - Missing sections in Input Data
+**Cause**: This error happens when there are missing fields in the input data. This usually only happens when submitting to the API directly, and not via the SDK. The SDK automatically formats the submitted terms in the correct structure.
 
-## 103 Invalid Types in Input Data
+The solver usually returns a more specific error with which fields are missing in the input. 
 
-## 104 Initial Config Error
+**Possible actions to take**:
+- Look at the specific error message and determine which field is missing from the input. Ensure field is present and has a value of the correct type.
+- Ensure all fields are present and have values in the input expression. **Avoid empty strings "" and null values**. 
 
-## 105 Couldn't Parse Input
+```json
+{
+	"cost_function": {
+		"type": "pubo",
+		"version": "1.0",
+		"terms": [{
+			"c": 1.0,
+			"ids": [0, 1]
+		}, {
+			"c": 0.36,
+			"ids": [1, 2]
+		}]
+	}
+}
+```
 
-## 106 Feature Enable Error
+## 103 - Invalid Types in Input Data
+**Cause**: This error happens when there are fields in the data with invalid types. See [reference](optimization-express-optimization-problem) on how to express problem terms correctly. See table below for the expected types for each field. 
 
-## 107 Invalid Values in Input Data
+|Field Name| Expected Type| Common errors |
+|-|-|-|
+|c|double| Submitting this field in string form i.e. "2.0" or null form. |
+|indices|list of integers| Submitting this field in string form "[0,1]" or individual items as string form ["0", "1"]. Empty lists are allowed and will be treated as constants. |
+
+
+**Possible actions to take**:
+- Ensure all types are converted correctly when using the SDK, especially if you are parsing these values from strings or existing files. 
+
+## 104 - Initial Config Error
+**Cause**: This is a group of errors related to using the initial configuration setting. The error message returned from the solver should contain the specific message. Possible causes can include:
+
+- Variable values are invalid and do not match the given problem type (ising/pubo). For example, this error will appear if the original problem type is ising, and the initial configuration variables are found with values outside of 1 and -1. 
+- Variable dimensions supplied in the initial configuration do not match the variable size of the original problem.
+
+**Possible actions to take**:
+- Ensure that initial configuration settings for variables are valid and only take 2 values (either (0|1) or (-1|1)).
+- Ensure the variables in the configuration map are part of the initial problem and you did not include any new variable ids. 
+
+## 105 - Couldn't Parse Input
+
+## 106 - Feature Enable Error
+
+## 107 - Invalid Values in Input Data
