@@ -1,5 +1,5 @@
 ---
-title: QIO Optimization Troubleshooting
+title: QIO - Troubleshooting
 description: This document provides a basic guide for users on how to troubleshoot common errors when using the service. 
 author: adelebai
 ms.author: adbai
@@ -154,9 +154,11 @@ The solver usually returns a more specific error with which fields are missing i
 |c|double| Submitting this field in string form i.e. "2.0" or null form. |
 |indices|list of integers| Submitting this field in string form "[0,1]" or individual items as string form ["0", "1"]. Empty lists are allowed and will be treated as constants. |
 
+This could also happen in the parameters supplied to the solver. 
 
 **Possible actions to take**:
 - Ensure all types are converted correctly when using the SDK, especially if you are parsing these values from strings or existing files. 
+- Ensure parameters that are lists are not supplied as strings of lists - e.g. [0,1] instead of "[0,1]" or ["0", "1"]
 
 ## 104 - Initial Config Error
 **Cause**: This is a group of errors related to using the initial configuration setting. The error message returned from the solver should contain the specific message. Possible causes can include:
@@ -166,10 +168,28 @@ The solver usually returns a more specific error with which fields are missing i
 
 **Possible actions to take**:
 - Ensure that initial configuration settings for variables are valid and only take 2 values (either (0|1) or (-1|1)).
-- Ensure the variables in the configuration map are part of the initial problem and you did not include any new variable ids. 
+- Ensure the variables in the configuration map are part of the initial problem and that you did not include any new variable ids. 
 
 ## 105 - Couldn't Parse Input
+**Cause**: This error happens when the solver is unable to parse the input data. This usually only happens when submitting to the API directly, and not via the SDK. The SDK automatically formats the submitted terms in the correct json structure.
 
-## 106 - Feature Enable Error
+This happens when there's a syntax error in the input data json, or parameter file json. 
 
-## 107 - Invalid Values in Input Data
+**Possible actions to take**:
+- Use a json lint or formatter tool on the invalid json and correct the syntax errors. 
+- Formulate problems with the SDK (which automatically submits problems in correct form)
+
+## 106 - Feature Switch Error
+**Cause**: This error happens when the feature switch functionality is used and an invalid feature id is supplied. 
+
+**Possible actions to take**:
+- Reference the documentation and disable only the supported feature ids. 
+
+## 107 - Invalid Values in Input
+**Cause**: This error happens when there are forbidden or invalid values being inputted. This mostly happens if the parameters you set for the solver are not valid. 
+
+**Possible actions to take**:
+- Look at the specific error message and determine which field is invalid and the range of allowed values for that field. 
+- Run the parameter-free solver version to obtain a starting point for parameter values. 
+- Most parameters require a value of >0 (e.g. restarts, replicas, sweeps etc.).
+
