@@ -22,8 +22,9 @@ Errors in this category are due to lack of resources to carry out a specific job
 
 **Cause**: This error happens when the submitted problem is too large (usually, due to too many terms) and cannot fit into memory. Users can *estimate* how much memory their problem will use with the following formula (although not 100% precise, it is quite close to real usage):
 
-
-<center>memory_bytes = sum_coefficient_degrees_total*num_variables/8  </center>
+```
+memory_bytes = sum_coefficient_degrees_total*num_variables/8
+```
 
 Where  
 - num_variables = number of variables in problem  
