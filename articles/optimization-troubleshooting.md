@@ -12,13 +12,13 @@ uid: azure.quantum.optimization.troubleshooting
 
 # Troubleshooting User Errors
 
-This document lists the common user errors return by the azure quantum solvers, and troubleshooting steps for each error. The error messages returned by solvers should have an error code (in the form _\<code\>) attached that the user should use to find their specific issue. 
+This document lists the common user errors return by the azure quantum solvers, and troubleshooting steps for each error. The error messages returned by solvers should have an error code (in the form _\<code\>) attached that the user should use to find their specific issue. The code is prefixed with "AZQ".
 
 ## Insufficient Resources (Range 001-100)
 
 Errors in this category are due to lack of resources to carry out a specific job. This could be caused by factors such as problem size, or parameter settings. 
 
-### 001 - Memory Limited
+### AZQ001 - Memory Limited
 
 **Cause**: This error happens when the submitted problem is too large (usually, due to too many terms) and cannot fit into memory. Users can *estimate* how much memory their problem will use with the following formula (although not 100% precise, it is quite close to real usage):
 
@@ -53,7 +53,7 @@ In the mean time, consider:
 - Removing constant terms (i.e. terms without variables, ising terms with even variable power etc.)
   
 
-### 002 - Timeout Insufficient
+### AZQ002 - Timeout Insufficient
 **Cause**: This error happens when using parameter-free solvers specifically. It means that the "timeout" parameter (in seconds) is set too low for any meaningful exploration. Each solver has a different search process and some solvers will take longer than others.
 
 The table below shows the **bare minimum** timeout needed for a particular problem size to get a result (note: not necessarily a good one). Based on the size of your problem, you can adjust the numbers accordingly. 
@@ -72,7 +72,7 @@ The table below shows the **bare minimum** timeout needed for a particular probl
 
 Errors in this category are due to mistakes in the user inputs - either there was an issue with the cost function expression, or parameters are invalid. 
 
-### 101 - Duplicated Variable
+### AZQ101 - Duplicated Variable
 **Cause**: This error happens when using the ising cost function. Azure Quantum solvers will only accept single-degree variables so if the user is submitting higher power variables, an error will be thrown. 
 
 **Possible actions to take**:
@@ -121,7 +121,7 @@ If ising, even-powered terms are 1 so this should get condensed to:
 
 
 
-### 102 - Missing sections in Input Data
+### AZQ102 - Missing sections in Input Data
 **Cause**: This error happens when there are missing fields in the input data. This usually only happens when submitting to the API directly, and not via the SDK. The SDK automatically formats the submitted terms in the correct structure.
 
 The solver usually returns a more specific error with which fields are missing in the input. 
@@ -146,7 +146,7 @@ The solver usually returns a more specific error with which fields are missing i
 }
 ```
 
-### 103 - Invalid Types in Input Data
+### AZQ103 - Invalid Types in Input Data
 **Cause**: This error happens when there are fields in the data with invalid types. See [reference](optimization-express-optimization-problem) on how to express problem terms correctly. See table below for the expected types for each field. 
 
 |Field Name| Expected Type| Common errors |
@@ -160,7 +160,7 @@ This could also happen in the parameters supplied to the solver.
 - Ensure all types are converted correctly when using the SDK, especially if you are parsing these values from strings or existing files. 
 - Ensure parameters that are lists are not supplied as strings of lists - e.g. [0,1] instead of "[0,1]" or ["0", "1"]
 
-### 104 - Initial Config Error
+### AZQ104 - Initial Config Error
 **Cause**: This is a group of errors related to using the initial configuration setting. The error message returned from the solver should contain the specific message. Possible causes can include:
 
 - Variable values are invalid and do not match the given problem type (ising/pubo). For example, this error will appear if the original problem type is ising, and the initial configuration variables are found with values outside of 1 and -1. 
@@ -170,7 +170,7 @@ This could also happen in the parameters supplied to the solver.
 - Ensure that initial configuration settings for variables are valid and only take 2 values (either (0|1) or (-1|1)).
 - Ensure the variables in the configuration map are part of the initial problem and that you did not include any new variable ids. 
 
-### 105 - Couldn't Parse Input
+### AZQ105 - Couldn't Parse Input
 **Cause**: This error happens when the solver is unable to parse the input data. This usually only happens when submitting to the API directly, and not via the SDK. The SDK automatically formats the submitted terms in the correct json structure.
 
 This happens when there's a syntax error in the input data json, or parameter file json. 
@@ -179,13 +179,13 @@ This happens when there's a syntax error in the input data json, or parameter fi
 - Use a json lint or formatter tool on the invalid json and correct the syntax errors. 
 - Formulate problems with the SDK (which automatically submits problems in correct form)
 
-### 106 - Feature Switch Error
+### AZQ106 - Feature Switch Error
 **Cause**: This error happens when the feature switch functionality is used and an invalid feature id is supplied. 
 
 **Possible actions to take**:
 - Reference the documentation and disable only the supported feature ids. 
 
-### 107 - Invalid Values in Input
+### AZQ107 - Invalid Values in Input
 **Cause**: This error happens when there are forbidden or invalid values being inputted. This mostly happens if the parameters you set for the solver are not valid. 
 
 **Possible actions to take**:
