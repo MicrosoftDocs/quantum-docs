@@ -147,7 +147,7 @@ The solver usually returns a more specific error with which fields are missing i
 }
 ```
 
-### 103 - Invalid Types in Input Data
+### AZQ103 - Invalid Types in Input Data
 **Cause**: This error happens when there are fields in the data with invalid types. For more information, see [How to express problem terms correctly](xref:microsoft.quantum.optimization.express-problem). The table below shows the expected types for each field. 
 
 |Field Name| Expected Type| Common errors |
