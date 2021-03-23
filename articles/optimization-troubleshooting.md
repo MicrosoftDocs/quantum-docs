@@ -27,7 +27,7 @@ memory_bytes = sum_coefficient_degrees_total*num_variables/8
 ```
 
 Where  
-- `num_variables` is the number of variables in the problem  
+- `num_variables` is the number of variables in the problem   
 - `sum_coefficient_degrees_total` is the total sum of  the number of variables in each term
 
 
