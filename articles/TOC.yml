@@ -51,6 +51,8 @@
       items:
       - name: Install and use the Python SDK for optimization
         href: optimization-install-sdk.md
+      - name: Troubleshoot optimization solvers
+        href: optimization-troubleshooting.md
   - name: Resources 
     items:
     - name: Glossary (Azure Quantum)
