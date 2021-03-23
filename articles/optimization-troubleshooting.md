@@ -20,7 +20,7 @@ Errors in this category are due to lack of resources to carry out a specific job
 
 ### AZQ001 - Memory Limited
 
-**Cause**: This error happens when the submitted problem is too large (usually, due to too many terms) and cannot fit into memory. Users can *estimate* how much memory their problem will use with the following formula (although not 100% precise, it is close to real usage):
+**Cause**: This error happens when the submitted problem is too large (usually, due to too many terms) and cannot fit into memory. Users can *estimate* how much memory their problem will use with the following formula (although not 100% precise, it is close to real usage): 
 
 ```
 memory_bytes = sum_coefficient_degrees_total*num_variables/8
