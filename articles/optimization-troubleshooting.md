@@ -10,9 +10,9 @@ ms.topic: how-to
 uid: azure.quantum.optimization.troubleshooting
 ---
 
-# Troubleshooting User Errors
+# Troubleshooting user errors in optimization solvers
 
-This document lists the common user errors return by the azure quantum solvers, and troubleshooting steps for each error. The error messages returned by solvers should have an error code (in the form _\<code\>) attached that the user should use to find their specific issue. The code is prefixed with "AZQ".
+This document lists the common user errors return by the Azure Quantum optimization solvers, and troubleshooting steps for each error. The error messages returned by solvers should have an error code (in the form _\<code\>) attached that the user should use to find their specific issue. The code is prefixed with "AZQ".
 
 ## Insufficient Resources (Range 001-100)
 
@@ -51,7 +51,7 @@ Here num_variables = 5 ({0,1,2,3,4}) and sum_coefficient_degrees_total = 6 (3 + 
 **Possible actions to take**: This error is hard to "fix" because some problems will unavoidably have large expanded term expressions, especially higher order problems. If you see this error then most likely at this time, our solvers are not capable of solving your problem. However, Azure Quantum is continuously developing support for more complex term expressions that can reduce the problem size in the future. Be sure to communicate the need for this feature to our support team!  
 
 In the mean time, consider:  
-- Removing constant terms (i.e. terms without variables, ising terms with even variable power etc.)
+- Removing constant terms (for example, terms without variables, Ising terms with even variable power, etc.)
   
 
 ### AZQ002 - Timeout Insufficient
@@ -74,7 +74,7 @@ The table below shows the **bare minimum** timeout needed for a particular probl
 Errors in this category are due to mistakes in the user inputs - either there was an issue with the cost function expression, or parameters are invalid. 
 
 ### AZQ101 - Duplicated Variable
-**Cause**: This error happens when using the ising cost function. Azure Quantum solvers will only accept single-degree variables so if the user is submitting higher power variables, an error will be thrown. 
+**Cause**: This error happens when using the Ising cost function. Azure Quantum solvers will only accept single-degree variables so if the user is submitting higher power variables, an error will be thrown. 
 
 **Possible actions to take**:
 - Condense all higher power variables into either a single variable, or a constant (1). See example below:
@@ -92,7 +92,7 @@ Errors in this category are due to mistakes in the user inputs - either there wa
 ]
 ```
 
-If pubo/hobo, this should get condensed to:
+If PUBO/HOBO, this should get condensed to:
 ```json
 "terms": [
     {
@@ -106,7 +106,7 @@ If pubo/hobo, this should get condensed to:
 ]
 ```
 
-If ising, even-powered terms are 1 so this should get condensed to:
+If Ising, even-powered terms are 1 so this should get condensed to:
 ```json
 "terms": [
     {
@@ -152,7 +152,7 @@ The solver usually returns a more specific error with which fields are missing i
 
 |Field Name| Expected Type| Common errors |
 |-|-|-|
-|c|double| Submitting this field in string form i.e. "2.0" or null form. |
+|c|double| Submitting this field in string form, for example "2.0" or null form. |
 |indices|list of integers| Submitting this field in string form "[0,1]" or individual items as string form ["0", "1"]. Empty lists are allowed and will be treated as constants. |
 
 This could also happen in the parameters supplied to the solver. 
@@ -164,7 +164,7 @@ This could also happen in the parameters supplied to the solver.
 ### AZQ104 - Initial Config Error
 **Cause**: This is a group of errors related to using the initial configuration setting. The error message returned from the solver should contain the specific message. Possible causes can include:
 
-- Variable values are invalid and do not match the given problem type (ising/pubo). For example, this error will appear if the original problem type is ising, and the initial configuration variables are found with values outside of 1 and -1. 
+- Variable values are invalid and do not match the given problem type (Ising/PUBO). For example, this error will appear if the original problem type is Ising, and the initial configuration variables are found with values outside of 1 and -1. 
 - Variable dimensions supplied in the initial configuration do not match the variable size of the original problem.
 
 **Possible actions to take**:
