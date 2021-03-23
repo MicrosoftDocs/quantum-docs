@@ -20,15 +20,15 @@ Errors in this category are due to lack of resources to carry out a specific job
 
 ### AZQ001 - Memory Limited
 
-**Cause**: This error happens when the submitted problem is too large (usually, due to too many terms) and cannot fit into memory. Users can *estimate* how much memory their problem will use with the following formula (although not 100% precise, it is quite close to real usage):
+**Cause**: This error happens when the submitted problem is too large (usually, due to too many terms) and cannot fit into memory. Users can *estimate* how much memory their problem will use with the following formula (although not 100% precise, it is close to real usage):
 
 ```
 memory_bytes = sum_coefficient_degrees_total*num_variables/8
 ```
 
 Where  
-- num_variables = number of variables in problem  
-- sum_coefficient_degrees_total = total sum of #variables in each term
+- `num_variables` is the number of variables in the problem  
+- `sum_coefficient_degrees_total` is the total sum of  the number of variables in each term
 
 
 An example with this formulation:
@@ -45,7 +45,7 @@ An example with this formulation:
 ]
 ```
 
-Here num_variables = 5 ({0,1,2,3,4}) and sum_coefficient_degrees_total = 6 (3 + 3). Total bytes of memory estimated is 6*5/8 = 3.75 bytes. 
+Here `num_variables = 5` (${0,1,2,3,4}$) and `sum_coefficient_degrees_total = 6` ($3 + 3$). The total bytes of memory estimated is $6*5/8 = 3.75 \text_{bytes}$. 
 
 
 **Possible actions to take**: This error is hard to "fix" because some problems will unavoidably have large expanded term expressions, especially higher order problems. If you see this error then most likely at this time, our solvers are not capable of solving your problem. However, Azure Quantum is continuously developing support for more complex term expressions that can reduce the problem size in the future. Be sure to communicate the need for this feature to our support team!  
