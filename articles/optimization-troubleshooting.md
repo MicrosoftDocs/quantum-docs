@@ -16,7 +16,7 @@ This document lists the common user errors return by the Azure Quantum optimizat
 
 ## Insufficient Resources (Range 001-100)
 
-Errors in this category are due to lack of resources to carry out a specific job. This could be caused by factors such as problem size, or parameter settings. 
+Errors in this category are due to lack of resources to carry out a specific job. This could be caused by factors such as problem size, or parameter settings.
 
 ### AZQ001 - Memory Limited
 
