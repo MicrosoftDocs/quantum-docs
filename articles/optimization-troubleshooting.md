@@ -71,7 +71,7 @@ The table below shows the **bare minimum** timeout needed for a particular probl
 
 ## Invalid Input Data (Range 101-200)
 
-Errors in this category are due to mistakes in the user inputs - either there was an issue with the cost function expression, or parameters are invalid. 
+Errors in this category are due to mistakes in the user inputs - either there was an issue with the cost function expression, or parameters are invalid.
 
 ### AZQ101 - Duplicated Variable
 **Cause**: This error happens when using the Ising cost function. Azure Quantum solvers will only accept single-degree variables so if the user is submitting higher power variables, an error will be thrown. 
