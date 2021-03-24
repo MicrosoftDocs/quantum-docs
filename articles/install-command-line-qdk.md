@@ -44,12 +44,6 @@ While you can build Q# applications in any IDE, we recommend using Visual Studio
 dotnet new -i Microsoft.Quantum.ProjectTemplates
 ```
 
-### To configure for Visual Studio Codespaces:
-
-1. Create an [Azure account](https://azure.microsoft.com/free/).
-2. Create a Codespaces environment. Please follow the [quickstart guide](https://docs.microsoft.com/visualstudio/codespaces/quickstarts/browser). When creating the Codespace, we recommend to enter `microsoft/Quantum` in the "Git Repository" field to load QDK-specific settings.
-3. You can now launch your new environment and start developing in the browser via the [VS Codespaces Cloud IDE](https://online.visualstudio.com/environments). Alternatively, it is possible to use your local installation of VS Code and use Codespaces as a [remote environment](https://docs.microsoft.com/visualstudio/online/how-to/vscode).
-
 ## Develop with Q#
 
 Follow the instructions on the tab corresponding to your development environment.
