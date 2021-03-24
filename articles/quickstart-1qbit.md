@@ -10,7 +10,7 @@ title: 1QBit quickstart for Azure Quantum
 uid: microsoft.quantum.quickstarts.optimization.1qbit
 ---
 
-# 1QBit quickstart for Azure Quantum
+# 1QBit optimization quickstart for Azure Quantum
 
 Learn how to use 1QBit in Azure Quantum to solve complex optimization problems.
 
@@ -193,7 +193,9 @@ solver = PathRelinkingSolver(workspace)
 result = solver.optimize(problem)
 ```
 
-Here you created an instance of a `PathRelinkingSolver` solver for the problem. You could also have chosen other 1QBit solvers (for example, `TabuSearch`) without needing to change more lines of code. The type `Problem` is the common parameter for all the solvers of Azure Quantum.
+Here you created an instance of a `PathRelinkingSolver` solver for the problem. You could also have chosen other 1QBit solvers (for example, `TabuSearch`) without needing to change more lines of code. To see a list of the available solvers, go to the [reference page](xref:microsoft.quantum.reference.target-list#provider-1qbit).
+
+The type `Problem` is the common parameter for all the solvers of Azure Quantum. 
 
 You then call `solver.optimize()` and supply the `problem` as the argument. This submits the problem synchronously to Azure Quantum and returns a Python dictionary of values to save the `result` variable for parsing in the next step.
 
