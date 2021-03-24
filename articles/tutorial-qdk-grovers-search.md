@@ -339,7 +339,7 @@ namespace GroversTutorial {
 ```
 
 > ![IMPORTANT]
-> In order to be able to use operations from the numerics library (or any other library besides the standard library for that matter), we need to make sure the corresponding package has been [loaded for our project](/azure/quantum/user-guide/libraries/additional-libraries). For a quick way to do so in VS Code, open the terminal from within your project and run the following command:
+> In order to be able to use operations from the numerics library (or any other library besides the standard library), we need to make sure the corresponding package has been [added to our project](xref:microsoft.quantum.libraries.overview.using). For a quick way to do so in VS Code, open the terminal from within your project and run the following command:
 > ```Command line
 > dotnet add package Microsoft.Quantum.Numerics
 > ```
@@ -453,7 +453,7 @@ if __name__ == "__main__":
 ```
 
 > ![NOTE]
-> The import line `from GroversTutorial import FactorizeWithGrovers2` in the Python script draws on the Q# code we've written previously. Note that the Python module name (`GroversTutorial`) needs to be identical to the Namespace name in which the function we want to import resides (in this case `FactorizeWithGrovers2`).
+> The line `from GroversTutorial import FactorizeWithGrovers2` in the Python program imports the Q# code we've written previously. Note that the Python module name (`GroversTutorial`) needs to be identical to the Namespace of the operation we want to import (in this case, `FactorizeWithGrovers2`).
 
 The program generates the following histogram:
 
