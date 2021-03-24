@@ -51,7 +51,7 @@ Here `num_variables = 5` (${0,1,2,3,4}$) and `sum_coefficient_degrees_total = 6`
 **Possible actions to take**: This error is hard to "fix" because some problems will unavoidably have large expanded term expressions, especially higher order problems. If you see this error then most likely at this time, our solvers are not capable of solving your problem. However, Azure Quantum is continuously developing support for more complex term expressions that can reduce the problem size in the future. Be sure to communicate the need for this feature to our support team!  
 
 In the mean time, consider:  
-- Removing constant terms (for example, terms without variables, Ising terms with even variable power, etc.)
+- Removing constant terms (for example, terms without variables, Ising terms with even variable power, etc.) 
   
 
 ### AZQ002 - Timeout Insufficient
