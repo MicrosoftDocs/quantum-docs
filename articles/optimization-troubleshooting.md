@@ -191,6 +191,6 @@ This happens when there's a syntax error in the input data json, or parameter fi
 
 **Possible actions to take**:
 - Look at the specific error message and determine which field is invalid and the range of allowed values for that field. 
-- Run the parameter-free solver version to obtain a starting point for parameter values. 
+- Run the parameter-free solver version to obtain a starting point for parameter values.
 - Most parameters require a value of >0 (e.g. restarts, replicas, sweeps etc.).
 
