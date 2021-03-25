@@ -32,7 +32,7 @@ Notice that we distinguish between a column vector $v$ and a row vector $v^\dagg
 
 ## Inner product
 
-We can multiply two vectors together through the [*inner product*](https://en.wikipedia.org/wiki/Dot_product), also known as a *dot product* or *scalar product*. As the name implies, the result of the inner product of two vectors is a scalar. The inner product gives the projection of one vector onto another and is invaluable in describing how to express one vector as a sum of other simpler vectors. The inner product between two column vectors $u=(u_1 , u_2 , ldots , u_n)$ and $v=(v_1 , v_2 , ldots , v_n)$, denoted $\left\langle u, v\right\rangle$ is defined as
+We can multiply two vectors together through the [*inner product*](https://en.wikipedia.org/wiki/Dot_product), also known as a *dot product* or *scalar product*. As the name implies, the result of the inner product of two vectors is a scalar. The inner product gives the projection of one vector onto another and is invaluable in describing how to express one vector as a sum of other simpler vectors. The inner product between two column vectors $u=(u_1 , u_2 , \ldots , u_n)$ and $v=(v_1 , v_2 , \ldots , v_n)$, denoted $\left\langle u, v\right\rangle$ is defined as
 
 $$
 \langle u, v\rangle = u^\dagger v= \begin{bmatrix}u_1^* & \cdots & u_n^* \end{bmatrix} \begin{bmatrix}
