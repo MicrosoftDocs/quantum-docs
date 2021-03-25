@@ -45,7 +45,7 @@ An example with this formulation:
 ]
 ```
 
-Here `num_variables = 5` (${0,1,2,3,4}$) and `sum_coefficient_degrees_total = 6` ($3 + 3$). The total bytes of memory estimated is $6*5/8 = 3.75 \text_{bytes}$. 
+Here `num_variables = 5` (${0,1,2,3,4}$) and `sum_coefficient_degrees_total = 6` ($3 + 3$). The total bytes of memory estimated is $6*5/8 = 3.75 \text{bytes}$. 
 
 
 **Possible actions to take**: This error is hard to "fix" because some problems will unavoidably have large expanded term expressions, especially higher order problems. If you see this error then most likely at this time, our solvers are not capable of solving your problem. However, Azure Quantum is continuously developing support for more complex term expressions that can reduce the problem size in the future. Be sure to communicate the need for this feature to our support team!  
@@ -193,4 +193,3 @@ This happens when there's a syntax error in the input data json, or parameter fi
 - Look at the specific error message and determine which field is invalid and the range of allowed values for that field. 
 - Run the parameter-free solver version to obtain a starting point for parameter values.
 - Most parameters require a value of >0 (e.g. restarts, replicas, sweeps etc.).
-
