@@ -26,6 +26,7 @@ Any search task can be mathematically formulated with an abstract function $f(x)
 > coloring problems by using Grover's
 > search](https://docs.microsoft.com/learn/modules/solve-graph-coloring-problems-grovers-search/).
 > For a detailed explanation on the theory behind Grover's algorithm, check the conceptual article [Theory of Grover's algorithm](xref:microsoft.quantum.concepts.grovers).
+
 ## Grover's algorithm task
 
 You are given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$. The task solved by Grover's algorithm is to find an input $x_0$ for which $f(x_0)=1$.
@@ -105,11 +106,11 @@ In practical applications, you don't usually know how many solutions your proble
 Now we are ready to write a Q# operation for Grover's search algorithm. It will have three inputs:
 
 - A qubit array `register : Qubit[]` that should be initialized in the all `Zero` state. This register will encode the tentative solution to the search problem. After the operation it will be measured.
-- An operation `phaseOracle : ((Qubit[]) => Unit is Adj)` that represents the phase oracle for the Grover's task. This operation applies an unitary transformation over a generic qubit register.
+- An operation `phaseOracle : (Qubit[]) => Unit is Adj` that represents the phase oracle for the Grover's task. This operation applies an unitary transformation over a generic qubit register.
 - An integer `iterations : Int` to represent the iterations of the algorithm.
 
 ```qsharp
-operation RunGroversSearch(register : Qubit[], phaseOracle : ((Qubit[]) => Unit is Adj), iterations : Int) : Unit {
+operation RunGroversSearch(register : Qubit[], phaseOracle : (Qubit[]) => Unit is Adj, iterations : Int) : Unit {
     // Prepare register into uniform superposition.
     ApplyToEach(H, register);
     // Start Grover's loop.
@@ -173,7 +174,7 @@ The code to implement this quantum operation is:
 ```qsharp
 operation markingDivisor (
     dividend : Int,
-    divisorRegister : Qubit [],
+    divisorRegister : Qubit[],
     target : Qubit
 ) : Unit is Adj + Ctl {
     // Calculate the bit-size of the dividend.
@@ -282,7 +283,7 @@ namespace GroversTutorial {
 
     operation markingDivisor (
         dividend : Int,
-        divisorRegister : Qubit [],
+        divisorRegister : Qubit[],
         target : Qubit
     ) : Unit is Adj+Ctl {
         let size = BitSizeI(dividend);
@@ -305,7 +306,7 @@ namespace GroversTutorial {
     }
 
     operation ApplyMarkingOracleAsPhaseOracle(
-        markingOracle : ((Qubit[], Qubit) => Unit is Adj), 
+        markingOracle : (Qubit[], Qubit) => Unit is Adj,
         register : Qubit[]
     ) : Unit is Adj {
         use target = Qubit();
