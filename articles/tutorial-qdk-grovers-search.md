@@ -27,6 +27,13 @@ Grover's algorithm is one of the most famous algorithms in quantum computing. Th
 
 Any searching task can be mathematically formulated with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution for the search task, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The search problem consists of finding any item $x_0$ such that $f(x_0)=1$. This is, an item $x_0$ that is a solution of the search problem.
 
+> [!NOTE]
+> This tutorial is intended for people who are already familiar with
+> Grover's algorithm that want to learn how to implement it in Q#. For a more
+> slow paced tutorial we recommend the Microsoft Learn module [Solve graph
+> coloring problems by using Grover's
+> search](https://docs.microsoft.com/learn/modules/solve-graph-coloring-problems-grovers-search/).
+> For a detailed explanation on the theory behind Grover's algorithm, check the conceptual article [Theory of Grover's algorithm](xref:microsoft.quantum.concepts.grovers).
 ## Grover's algorithm task
 
 You are given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$. The task solved by Grover's algorithm is to find an input $x_0$ for which $f(x_0)=1$.
@@ -37,30 +44,30 @@ To implement Grover's algorithm to solve a problem you need to:
 
 1. **Transform the problem to the form of a Grover's task:** for example, suppose we want to find the factors of an integer $M$ using Grover's algorithm. You can transform the integer factorization problem to a Grover's task by creating a function $$f_M(x)=1[r],$$ where $1[r]=1$ if $r=0$ and $1[r]=0$ if $r\neq0$ and $r$ is the remainder of $M/x$. This way, the integers $x_i$ that make $f_M(x_i)=1$ are the factors of $M$ and we transformed the problem to a Grover's task.
 1. **Implement the function of the Grover's task as a quantum oracle:** to implement Grover's algorithm, you need to implement the function $f(x)$ of your Grover's task as a [quantum oracle](xref:microsoft.quantum.concepts.oracles).
-1. **Use Grover's algorithm with your oracle to solve the task:** once you have quantum oracle, you can plug it into your Grover's algorithm implementation to solve the problem and interpret the output.
+1. **Use Grover's algorithm with your oracle to solve the task:** once you have a quantum oracle, you can plug it into your Grover's algorithm implementation to solve the problem and interpret the output.
 
 ## Quick overview of Grover's algorithm
 
-Suppose we have $N=2^n$ eligible items for the search task and we index them by assigning each item a integer from $0$ to $N-1$. The steps of the algorithm are:
+Suppose we have $N=2^n$ eligible items for the search task and we index them by assigning each item an integer from $0$ to $N-1$. The steps of the algorithm are:
 
 1. Start with a register of $n$ qubits initialized in the state $\ket{0}$ by applying $H$ to each qubit of the register.
 1. Prepare the register into a uniform superposition:
    $$|\psi\rangle=\frac{1}{N^{1 / 2}} \sum_{x=0}^{N-1}|x\rangle$$
-1. Apply $N_{\text{optimal}}$ times the following operations to the register:
+1. Apply the following operations to the register $N_{\text{optimal}}$ times:
    1. The phase oracle $O_f$ that applies a conditional phase shift of $-1$ for the solution items.
-   1. Apply $H$ to each qubit of the register.
-   1. A conditional phase shift of $-1$ to every computational basis state except $\ket{0}$.
-   1. Apply $H$ to each qubit of the register.
+   1. Apply $H$ to each qubit in the register.
+   1. Apply $-O_0$, a conditional phase shift of $-1$ to every computational basis state except $\ket{0}$.
+   1. Apply $H$ to each qubit in the register.
 1. Measure the register to obtain the index of an item that's a solution with very high probability.
 1. Check if it's a valid solution. If not, start again.
 
 ## Write the code for Grover's algorithm
 
-Now let's see how to implement the code in Q#.
+Now let's see how to implement the algorithm in Q#.
 
 ### Grover's diffusion operator
 
-First, we are going to write an operation that applies the steps **b**, **c** and **d** of the loop. Together, these steps are also known as the Grover diffusion operator.
+First, we are going to write an operation that applies the steps **b**, **c** and **d** from the loop above. Together, these steps are also known as the Grover diffusion operator $-H^{\otimes n} O_0 H^{\otimes n}$
 
 ```qsharp
 operation ReflectAboutUniform(inputQubits : Qubit[]) : Unit {
@@ -106,7 +113,7 @@ In practical applications, you don't usually know how many solutions your proble
 Now we are ready to write a Q# operation for Grover's search algorithm. It will have three inputs:
 
 - A qubit array `register : Qubit[]` that should be initialized in the all `Zero` state. This register will encode the tentative solution to the search problem. After the operation it will be measured.
-- An operation `phaseOracle : ((Qubit[]) => Unit is Adj` that represents the phase oracle for the Grover's task. This operation applies an unitary transformation over a generic qubit register.
+- An operation `phaseOracle : ((Qubit[]) => Unit is Adj)` that represents the phase oracle for the Grover's task. This operation applies an unitary transformation over a generic qubit register.
 - An integer `iterations : Int` to represent the iterations of the algorithm.
 
 ```qsharp
@@ -114,7 +121,7 @@ operation RunGroversSearch(register : Qubit[], phaseOracle : ((Qubit[]) => Unit 
     // Prepare register into uniform superposition.
     ApplyToEach(H, register);
     // Start Grover's loop.
-    for (_ in 1 .. iterations) {
+    for _ in 1 .. iterations {
         // Apply phase oracle for the task.
         phaseOracle(register);
         // Apply Grover's diffusion operator.
@@ -147,11 +154,11 @@ The following equivalence table might prove useful when implementing Boolean fun
 ### Example: Quantum operation to check if a number is a divisor
 
 > [!IMPORTANT]
-> In this tutorial we are going to factorize a number using Grover's search algorithm as a didactic example to show how to translate a simple mathematical problem into a Grover's task. However, **Grover's algorithm is NOT an efficient algorithm to solve the integer factorization problem**. To explore a quantum algorithm that does solve the integer factorization problem faster than any classical algorithm check the [**Shor's algorithm** sample](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/integer-factorization).
+> In this tutorial we are going to factorize a number using Grover's search algorithm as a didactic example to show how to translate a simple mathematical problem into a Grover's task. However, **Grover's algorithm is NOT an efficient algorithm to solve the integer factorization problem**. To explore a quantum algorithm that does solve the integer factorization problem faster than any classical algorithm, check the [**Shor's algorithm** sample](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/integer-factorization).
 
-As an example, let's see how we would express the function $f_M(x)=1[r]$ of the factoring problem as quantum operation in Q#.
+As an example, let's see how we would express the function $f_M(x)=1[r]$ of the factoring problem as a quantum operation in Q#.
 
-Classically, we would compute the rest of the division $M/x$ and check if it's equal to zero. If it is, the program outputs `1` and if it's not, the program outputs `0`. We need to:
+Classically, we would compute the remainder of the division $M/x$ and check if it's equal to zero. If it is, the program outputs `1`, and if it's not, the program outputs `0`. We need to:
 
 - Compute the remainder of the division.
 - Apply a controlled operation over the output bit so that it's `1` if the remainder is `0`.
@@ -230,7 +237,7 @@ operation ApplyMarkingOracleAsPhaseOracle(
 
 This famous transformation is often known as the *phase kickback* and it's widely used in many quantum computing algorithms. You can find a detailed explanation of this technique in this [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-graph-coloring-problems-grovers-search/4-implement-quantum-oracle).
 
-## Factoring numbers with a Grover's search
+## Factoring numbers with Grover's search
 
 Now we have all the ingredients to implement a particular instance of Grover's search algorithm and solve our factoring problem.
 
@@ -380,7 +387,6 @@ Let's write a small Python script to check that the program is working as it sho
 First, we are going to modify our main operation to get rid of the repeat-until-success loop, instead outputting the first measurement result after running Grover's search:
 
 ```qsharp
-...
 @EntryPoint()
 operation FactorizeWithGrovers2(number : Int) : Int {
 
@@ -390,13 +396,14 @@ operation FactorizeWithGrovers2(number : Int) : Int {
     let nSolutions = 4;
     let nIterations = Round(PI() / 4.0 * Sqrt(IntAsDouble(size) / IntAsDouble(nSolutions)));
 
-    using ((register) = Qubit[size] ){
+    use register = Qubit[size] {
         RunGroversSearch(register, phaseOracle, nIterations);
         let res = MultiM(register);
         return ResultArrayAsInt(res);
         // Check whether the result is correct.
     }
-...
+
+}
 ```
 
 Note that we changed the output type from `Unit` to `Int`. This will be useful for the Python program.
@@ -424,7 +431,7 @@ def main():
     # Run N_Experiments times the Q# operation.
     for i in range(N_Experiments):
         print(f'Experiment: {i} of {N_Experiments}')
-        results.append(FactorizeWithGrovers.simulate(number = number))
+        results.append(FactorizeWithGrovers2.simulate(number = number))
 
     # Store the results in a dictionary
     for i in results:
@@ -463,4 +470,4 @@ As you can see in the histogram, the algorithm outputs the solutions to the sear
 
 ## Next steps
 
-Now that you now how to implement Grover's algorithm, try to transform a mathematical problem into a search task and solve it with Q# and Grover's algorithm.
+Now that you know how to implement Grover's algorithm, try to transform a mathematical problem into a search task and solve it with Q# and Grover's algorithm.
