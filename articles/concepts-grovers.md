@@ -80,11 +80,11 @@ We define the state $\ket{good}$ as the superposition of all states that *are* a
 
 $$\ket{\text{good}}=\frac{1}{\sqrt{M}}\sum_{x:f(x)=1}\ket{x}$$
 
-Since *good* and *bad* are mutually exclusive sets because an item cannot be valid and not valid, the states $\ket{good}$ and $\ket{bad}$ are orthogonal. Both states form the orthogonal basis of a plane in the ket space. We can use this plane to visualize the algorithm.
+Since *good* and *bad* are mutually exclusive sets because an item cannot be valid and not valid, the states $\ket{good}$ and $\ket{bad}$ are orthogonal. Both states form the orthogonal basis of a plane in the vector space. We can use this plane to visualize the algorithm.
 
 ![The plane projected by the orthogonal good and bad vectors.](./media/plane-grovers.png)
 
-Now, suppose $\ket{\psi}$ is an arbitrary state that lives in the plane spanned by $\ket{\text{good}}$ and $\ket{\text{bad}}$. This property is true for any state of the form:
+Now, suppose $\ket{\psi}$ is an arbitrary state that lives in the plane spanned by $\ket{\text{good}}$ and $\ket{\text{bad}}$. Any state living in that plane can be expressed as:
 
 $$\ket{\psi} = \alpha \ket{\text{good}} + \beta \ket{\text{bad}}$$
 

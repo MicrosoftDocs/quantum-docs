@@ -88,7 +88,7 @@ You can check what each of the operations and functions used is by looking into 
 
 A good exercise to understand the code and the operations is to check with pen and paper that the operation `ReflectAboutUniform` applies Grover's diffusion operator. To see it note that the operation `Controlled Z(Most(inputQubits),Tail(inputQubits))` only has an effect different than the identity if and only if all qubits are in the state $\ket{1}$.
 
-The operation is called `ReflectAboutUniform` because it can be geometrically interpreted as a reflection in the ket space about the uniform superposition state.
+The operation is called `ReflectAboutUniform` because it can be geometrically interpreted as a reflection in the vector space about the uniform superposition state.
 
 ### Number of iterations
 
