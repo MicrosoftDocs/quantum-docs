@@ -17,15 +17,7 @@ In this tutorial you'll learn to implement Grover's algorithm in Q# to solve sea
 
 Grover's algorithm is one of the most famous algorithms in quantum computing. The problem it solves is often referred to as "searching a database", but it's more accurate to think of it in terms of the *search problem*.
 
-> [!NOTE]
-> This tutorial is intended for people who are already familiar with
-> Grover's algorithm that want to learn how to implement it in Q#. For a more
-> slow paced tutorial we recommend the Microsoft Learn module [Solve graph
-> coloring problems by using Grover's
-> search](https://docs.microsoft.com/learn/modules/solve-graph-coloring-problems-grovers-search/).
-> For a detailed explanation on the theory behind Grover's algorithm, check the conceptual article [Theory of Grover's algorithm](xref:microsoft.quantum.concepts.grovers).
-
-Any searching task can be mathematically formulated with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution for the search task, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The search problem consists of finding any item $x_0$ such that $f(x_0)=1$. This is, an item $x_0$ that is a solution of the search problem.
+Any search task can be mathematically formulated with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution to the search task, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The search problem consists of finding any item $x_0$ such that $f(x_0)=1$.
 
 > [!NOTE]
 > This tutorial is intended for people who are already familiar with
@@ -50,8 +42,8 @@ To implement Grover's algorithm to solve a problem you need to:
 
 Suppose we have $N=2^n$ eligible items for the search task and we index them by assigning each item an integer from $0$ to $N-1$. The steps of the algorithm are:
 
-1. Start with a register of $n$ qubits initialized in the state $\ket{0}$ by applying $H$ to each qubit of the register.
-1. Prepare the register into a uniform superposition:
+1. Start with a register of $n$ qubits initialized in the state $\ket{0}$.
+1. Prepare the register into a uniform superposition by applying $H$ to each qubit in the register:
    $$|\psi\rangle=\frac{1}{N^{1 / 2}} \sum_{x=0}^{N-1}|x\rangle$$
 1. Apply the following operations to the register $N_{\text{optimal}}$ times:
    1. The phase oracle $O_f$ that applies a conditional phase shift of $-1$ for the solution items.
@@ -221,7 +213,7 @@ We can apply any marking oracle as a phase oracle with the following operation:
 
 ```qsharp
 operation ApplyMarkingOracleAsPhaseOracle(
-    markingOracle : ((Qubit[], Qubit) => Unit is Adj), 
+    markingOracle : (Qubit[], Qubit) => Unit is Adj,
     register : Qubit[]
 ) : Unit is Adj {
     use target = Qubit();
