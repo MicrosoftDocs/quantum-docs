@@ -36,6 +36,8 @@ landingContent:
             url: how-to-prepare-your-environment.md
           - text: Create applications for Azure
             url: how-to-create-applications-for-azure-quantum.md
+          - text: Access quantum learning material
+            url: https://msft-quant-edu-prod.azurewebsites.net/
 
   # Computing
   - title: Quantum computing
