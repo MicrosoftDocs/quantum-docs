@@ -338,10 +338,7 @@ namespace GroversTutorial {
 ```
 
 > ![IMPORTANT]
-> In order to be able to use operations from the numerics library (or any other library besides the standard library), we need to make sure the corresponding package has been [added to our project](xref:microsoft.quantum.libraries.overview.using). For a quick way to do so in VS Code, open the terminal from within your project and run the following command:
-> ```Command line
-> dotnet add package Microsoft.Quantum.Numerics
-> ```
+> In order to be able to use operations from the numerics library (or any other library besides the standard library), we need to make sure the corresponding package has been [added to our project](xref:microsoft.quantum.libraries.overview.using). For a quick way to do so in VS Code, open the terminal from within your project and run the following command: `dotnet add package Microsoft.Quantum.Numerics`
 
 ### Run it with Visual Studio or Visual Studio Code
 
