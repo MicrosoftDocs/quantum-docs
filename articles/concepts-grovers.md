@@ -76,7 +76,7 @@ To see why Grover's algorithm works, let's study the algorithm from a geometrica
 
 $$\ket{\text{bad}}=\frac{1}{\sqrt{N-M}}\sum_{x:f(x)=0}\ket{x}$$
 
-We define the state $\ket{good}$ as the superposition of all states that are a solution to the search problem:
+We define the state $\ket{good}$ as the superposition of all states that *are* a solution to the search problem:
 
 $$\ket{\text{good}}=\frac{1}{\sqrt{M}}\sum_{x:f(x)=1}\ket{x}$$
 
