@@ -19,28 +19,28 @@ For a practical implementation of Grover's algorithm to solve mathematical probl
 
 ## Statement of the problem
 
-Any searching task can be expressed with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution for the search task, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The search problem consists in finding any item $x_0$ such that $f(x_0)=1$. This is, an item $x_0$ that is a solution to the search problem.
+Any search task can be expressed with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution to the search task, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The *search problem* consists of finding any item $x_0$ such that $f(x_0)=1$.
 
-The task that Grover's algorithm aims to solve is, given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, find an input $x_0$ for which $f(x_0)=1$. The complexity of the algorithm lies in the number of uses of the function $f(x)$. Classically, in the worst-case scenario, we have to evaluate $f(x)$ a total of $N-1$ times, since if we evaluated $f(x)$ for $N-1$ elements we already know the output of the last element. We will see that Grover's quantum algorithm can solve this problem by providing a quadratic speed up.
+The task that Grover's algorithm aims to solve can be expressed as follows: given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, find an input $x_0$ for which $f(x_0)=1$. The complexity of the algorithm is measured by the number of uses of the function $f(x)$. Classically, in the worst-case scenario, we have to evaluate $f(x)$ a total of $N-1$ times, trying out all the possibilities. After $N-1$ elements, we know it must be the last element. We will see that Grover's quantum algorithm can solve this problem much faster, providing a quadratic speed up. Quadratic here implies that only about $\sqrt{N}$ evaluations would be required, compared to $N$.
 
 ## Outline of the algorithm
 
-Suppose we have $N=2^n$ eligible items for the search task and we index them by assigning each item an integer from $0$ to $N-1$. Also, we know that there are $M$ different valid inputs. The steps of the algorithm are:
+Suppose we have $N=2^n$ eligible items for the search task and we index them by assigning each item an integer from $0$ to $N-1$. Further, suppose we know that there are $M$ different valid inputs, meaning that there are $M$ inputs for which $f(x)=1$. The steps of the algorithm are then as follows:
 
-1. Start with a register of $n$ qubits initialized in the state $\ket{0}$ by applying $H$ to each qubit of the register.
-1. Prepare the register into a uniform superposition: $$|\text{register}\rangle=\frac{1}{\sqrt{N}} \sum_{x=0}^{N-1}|x\rangle$$
-1. Apply $N_{\text{optimal}}$ times the following operations to the register:
+1. Start with a register of $n$ qubits initialized in the state $\ket{0}$.
+1. Prepare the register into a uniform superposition by applying $H$ to each qubit of the register: $$|\text{register}\rangle=\frac{1}{\sqrt{N}} \sum_{x=0}^{N-1}|x\rangle$$
+1. Apply the following operations to the register $N_{\text{optimal}}$ times:
    1. The phase oracle $O_f$ that applies a conditional phase shift of $-1$ for the solution items.
-   1. Apply $H$ to each qubit of the register.
-   1. A conditional phase shift of $-1$ to every computational basis state except $\ket{0}$. This can be represented by the unitary operation $O_0$.
-   1. Apply $H$ to each qubit of the register.
+   1. Apply $H$ to each qubit in the register.
+   1. A conditional phase shift of $-1$ to every computational basis state except $\ket{0}$. This can be represented by the unitary operation $-O_0$, as $O_0$ represents the conditional phase shift to $\ket{0}$ only.
+   1. Apply $H$ to each qubit in the register.
 1. Measure the register to obtain the index of a item that's a solution with very high probability.
 1. Check if it's a valid solution. If not, start again.
 
 $N_\text{optimal} = \left\lfloor \frac{\pi}{4}\sqrt{\frac{N}{M}}-\frac{1}{2} \right\rfloor$ is the optimal number of iterations that maximizes the likelihood of obtaining the correct item by measuring the register.
 
 > [!NOTE]
-> The joint application of the steps 3.b, 3.c and 3.d is usually called in the literature as the Grover's diffusion operator.
+> The joint application of the steps 3.b, 3.c and 3.d is usually known in the literature as Grover's diffusion operator.
 
 The overall unitary operation applied to the register is:
 
@@ -72,7 +72,7 @@ To illustrate the process, let's follow the mathematical transformations of the 
 
 ## Geometrical explanation
 
-To see why Grover's algorithm works let's study the algorithm from a geometrical perspective. Let $\ket{bad}$ be the superposition of all states that aren't a solution to the search problem. Supposing there are $M$ valid solutions, this is:
+To see why Grover's algorithm works, let's study the algorithm from a geometrical perspective. Let $\ket{bad}$ be the superposition of all states that aren't a solution to the search problem. Supposing there are $M$ valid solutions, we get:
 
 $$\ket{\text{bad}}=\frac{1}{\sqrt{N-M}}\sum_{x:f(x)=0}\ket{x}$$
 
@@ -112,7 +112,7 @@ $$\ket{\text{all}} = \sqrt{\frac{M}{N}}\ket{\text{good}} + \sqrt{\frac{N-M}{N}}\
 
 And thus the state lives in the plane. Note that the probability of obtaining a correct result when measuring from the equal superposition is just $|\braket{\text{good}|{\text{all}}}|^2=M/N$, that is what we expect from a random guess.
 
-The oracle $O_f$ adds a negative phase to any solution to the search problem. Therefore, it can be written as a reflection about the $\ket{\text{bad}}$ axis. This is:
+The oracle $O_f$ adds a negative phase to any solution to the search problem. Therefore, it can be written as a reflection about the $\ket{\text{bad}}$ axis:
 
 $$O_f = R_{\ket{\text{bad}}} = 2\ket{\text{bad}}\bra{\text{bad}} - \mathcal{I}$$
 
@@ -120,23 +120,23 @@ Analogously, the conditional phase shift $O_0$ is just an inverted reflection ab
 
 $$O_0 = R_{\ket{0}}=  -2\ket{0}\bra{0} + \mathcal{I}$$
 
-Knowing this fact, it's easy to check that the Grover's diffusion operation $-H^{\otimes n} O_0 H^{\otimes n}$ is also a reflection about the state $\ket{all}$. Just do:
+Knowing this fact, it's easy to check that the Grover diffusion operation $-H^{\otimes n} O_0 H^{\otimes n}$ is also a reflection about the state $\ket{all}$. Just do:
 
 $$H^{\otimes n} O_0 H^{\otimes n}=2H^{\otimes n}\ket{0}\bra{0}H^{\otimes n} -H^{\otimes n}\mathcal{I}H^{\otimes n} = 2\ket{\text{all}}\bra{\text{all}} - \mathcal{I} = R_{\ket{\text{all}}}$$
 
-We just demonstrated that each iteration of the Grover's algorithm is a composition of two reflections $R_\ket{\text{bad}}$ and $R_\ket{\text{all}}$.
+We just demonstrated that each iteration of Grover's algorithm is a composition of two reflections $R_\ket{\text{bad}}$ and $R_\ket{\text{all}}$.
 
 ![The Grover iteration visualized as a sequence of two reflections in the plane.](./media/grovers-iteration.png)
 
-The resulting operation after each Grover's iteration is a counterclockwise rotation of an angle $2\theta$. Fortunately, the angle $\theta$ is easy to find. Since $\theta$ is just the angle between $\ket{\text{all}}$ and $\ket{\text{bad}}$, we can use the scalar product to find the angle. We know that $\cos{\theta}=\braket{\text{all}|\text{bad}}$, so we need to calculate $\braket{\text{all}|\text{bad}}$. From the decomposition of $\ket{\text{all}}$ in terms of $\ket{\text{bad}}$ and $\ket{\text{good}}$, we get that:
+The combined effect of each Grover iteration is a counterclockwise rotation of an angle $2\theta$. Fortunately, the angle $\theta$ is easy to find. Since $\theta$ is just the angle between $\ket{\text{all}}$ and $\ket{\text{bad}}$, we can use the scalar product to find the angle. We know that $\cos{\theta}=\braket{\text{all}|\text{bad}}$, so we need to calculate $\braket{\text{all}|\text{bad}}$. From the decomposition of $\ket{\text{all}}$ in terms of $\ket{\text{bad}}$ and $\ket{\text{good}}$, we get that:
 
 $$\theta = \arccos{\left(\braket{\text{all}|\text{bad}}\right)}= \arccos{\left(\sqrt{\frac{N-M}{N}}\right)} $$
 
-The angle between the state of the register and the $\ket{\text{good}}$ state will decrease in each iteration, resulting in a higher probability of measuring a valid result. To calculate this probability we just need to calculate $|\braket{\text{good}|\text{register}}|^2$. The angle $\gamma (k)$ between $\ket{\text{good}}$ and $\ket{\text{register}}$ for each iteration $k$ is just:
+The angle between the state of the register and the $\ket{\text{good}}$ state will decrease with each iteration, resulting in a higher probability of measuring a valid result. To calculate this probability we just need to calculate $|\braket{\text{good}|\text{register}}|^2$. Denoting the angle between $\ket{\text{good}}$ and $\ket{\text{register}}$ $\gamma (k)$, where $k$ is the iteration count, we get:
 
 $$\gamma (k) = \frac{\pi}{2}-\theta -k2\theta = \frac{\pi}{2} -(2k + 1) \theta $$
 
-Therefore, the probability is just:
+Therefore, the probability of success is:
 
 $$P(\text{success}) = \cos^2(\gamma(k)) = \sin^2\left[(2k +1)\arccos \left( \sqrt{\frac{N-M}{N}}\right)\right]$$
 
@@ -150,7 +150,7 @@ We know that $\sin^2{x}$ reaches its first maximum for $x=\frac{\pi}{2}$, so we 
 
 $$\frac{\pi}{2}=(2k_{\text{optimal}} +1)\arccos \left( \sqrt{\frac{N-M}{N}}\right)$$
 
-This gives us that:
+This gives us:
 
 $$k_{\text{optimal}} = \frac{\pi}{4\arccos\left(\sqrt{1-M/N}\right)}-1/2 = \frac{\pi}{4}\sqrt{\frac{N}{M}}-\frac{1}{2}-O\left(\sqrt\frac{M}{N}\right)$$
 
@@ -160,7 +160,7 @@ Therefore we can pick $N_\text{optimal}$ to be $N_\text{optimal} = \left\lfloor 
 
 ## Complexity analysis
 
-We know that we need $O\left(\sqrt{\frac{N}{M}}\right)$ uses of the oracle $O_f$ to find a valid item. However, can the algorithm be implemented efficiently in terms of time complexity? $O_0$ can be implemented using $O(\log n)$ layers of classical gates. Then we have the two layers of $n$ Hadamard gates. So the overhead is $O(n)$ gates per iteration, and depth only $O(\log n)$. This is small compared with the number of iterations $Θ(2^{n/2})$.
+We know that we need $O\left(\sqrt{\frac{N}{M}}\right)$ queries of the oracle $O_f$ to find a valid item. However, can the algorithm be implemented efficiently in terms of time complexity? $O_0$ can be implemented using $O(\log n)$ layers of classical gates. Then we have the two layers of $n$ Hadamard gates. So the overhead is $O(n)$ gates per iteration, and depth only $O(\log n)$. This is small compared with the number of iterations $Θ(2^{n/2})$.
 
 The overall complexity of the algorithm will ultimately depend on the complexity of the implementation of the oracle $O_f$. If a function evaluation is much more complicated on a quantum computer than on a classical one, the overall algorithm runtime will be longer in the quantum case, even though technically, it will use fewer queries.
 
