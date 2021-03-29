@@ -18,7 +18,7 @@ Before proceeding with this example, make sure that you've installed Docker, fol
 
 For more information:
 - [Structure of NWChem input decks](https://github.com/nwchemgit/nwchem/wiki/Getting-Started#input-file-structure)
-    - [Input deck commands for use with the Quantum Development Kit](https://github.com/nwchemgit/nwchem/tree/main/contrib/quasar)
+    - [Input deck commands for use with the Quantum Development Kit](https://github.com/nwchemgit/nwchem/tree/master/contrib/quasar)
 - [Installing the chemistry library and dependencies](xref:microsoft.quantum.libraries.overview-chemistry.concepts.installation)
 - [Resource counting](xref:microsoft.quantum.libraries.overview-chemistry.examples.overview.resourcecounts)
 
@@ -91,7 +91,7 @@ First, clone the [nwchemgit/nwchem repository](https://github.com/nwchemgit/nwch
 git clone https://github.com/nwchemgit/nwchem --depth 1
 ```
 
-The `nwchemgit/nwchem` repository comes with a variety of input decks intended for use with the Quantum Development Kit, listed under the [`QA/chem_library_tests` folder](https://github.com/nwchemgit/nwchem/tree/main/QA/chem_library_tests).
+The `nwchemgit/nwchem` repository comes with a variety of input decks intended for use with the Quantum Development Kit, listed under the [`QA/chem_library_tests` folder](https://github.com/nwchemgit/nwchem/tree/master/QA/chem_library_tests).
 For this example, we'll use the `H4` input deck:
 
 ```powershell
