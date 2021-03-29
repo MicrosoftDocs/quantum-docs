@@ -335,8 +335,7 @@ This release adds new Q# language syntax:
 
 ### Library 
 
-This release adds a numerics library: Learn more about how to [use the new numerics library](xref:microsoft.quantum.libraries-numerics.usage) and try out the [new samples](https://github.com/microsoft/quantum/tree/main/samples/Numerics).  [PR #102](https://github.com/Microsoft/QuantumLibraries/pull/102).  
-
+This release adds a numerics library: Learn more about how to [use the new numerics library](xref:microsoft.quantum.libraries-numerics.usage) and try out the [new samples](https://github.com/microsoft/Quantum/tree/main/samples/numerics).  [PR #102](https://github.com/Microsoft/QuantumLibraries/pull/102).  
 This release reorganizes extends and updates the chemistry library:
 
 * Improves modularity of components, extensibility, general code cleanup.  [PR #58](https://github.com/microsoft/QuantumLibraries/pull/58).

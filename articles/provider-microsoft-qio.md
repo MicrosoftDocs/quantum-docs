@@ -65,3 +65,21 @@ FPGA-based solvers are only available to workspaces deployed in the following Az
 FPGA solvers use the same parameters as their corresponding CPU solvers, but for the best performance, please tune the parameters of FPGA solvers, instead of just directly using CPU solvers' parameters. For example, in FPGA solvers, we build about 200 parallel pipelines, and each pipeline can handle one restart, so the restarts of FPGA shall be no less than 200.
 
 FPGA solvers have an initialization time that may take a large percentage of the total runtime for small problems. If your problem can be solved on a CPU solver within a number of seconds, then you will likely not see a performance gain by switching to an FPGA. We recommend using FPGA solvers when the execution timing on CPU is at least a couple minutes.
+
+## General advice for Microsoft QIO solvers
+
+Here are some things to keep in mind when using our QIO solvers, and steps you can take to improve performance in certain cases. Note that other providers might have different requirements and recommendations specific to their solutions. The advice below applies to the terms that [represent your problem](xref:microsoft.quantum.optimization.express-problem) and [cost function](xref:microsoft.quantum.optimization.concepts.cost-function). Remember that a term is composed of a coefficient $c$ and a set of indices $\{i\}$.
+
+1. Remove coefficients that exceed the computational precision:
+
+   If the ratio of largest to smallest coefficient is greater than $2^{64}$, the term with the small coefficient will likely not be taken into account and should be removed. In other words, you should remove any terms with coefficients $|c_i| < \frac{\max{|c_j|}}{2^{64}}$.
+
+1. Merge duplicate terms:
+
+   If you automatically generate your terms, you may encounter some that are duplicates of each other, that is, they contain the same set of decision variables/indices. Avoiding duplicate terms will increase the performance of the solver as it has to handle fewer terms.
+
+   Multiple terms with the same set of variables should be merged into a single term by adding up the coefficients. For example, $3 \cdot x_2 x_4 x_1$ and $2 \cdot x_1 x_4 x_2$ can be merged into the single term $5 \cdot x_1 x_2 x_4$.
+
+1. Use integer coefficients:
+
+   Whenever possible, you should use integers for your coefficients over floating point numbers, as these will provide greater precision.
