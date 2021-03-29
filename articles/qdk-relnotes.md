@@ -19,6 +19,13 @@ For installation instructions, please refer to the [install guide](xref:microsof
 
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
+## Version x.xx.xxxx.xxxxxx
+
+*Release date: March 30th, 2021*
+
+- Released QIR emission as experimental feature.
+- Added support for multiple entry points.
+
 ## Version 0.15.2102.129448
 
 *Release date: February 22th, 2021*
