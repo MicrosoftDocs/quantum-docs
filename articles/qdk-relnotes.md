@@ -25,6 +25,10 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 *Release date: March 30th, 2021*
 
 - Released QIR emission as experimental feature.
+- Loosen restriction on AllowAtMostNCallsCA operation (https://github.com/microsoft/QuantumLibraries/pull/431).
+- Added missing APIs for Math Library (https://github.com/microsoft/QuantumLibraries/issues/413).
+- Removed <xref:Microsoft.Quantum.Environment.GetQubitsAvailableToBorrow> and <xref:Microsoft.Quantum.Environment.GetQubitsAvailableToUse> (https://github.com/microsoft/QuantumLibraries/issues/418).
+- Fixed Q# Language Server fails during initialization in Visual Studio due to JsonReaderException (https://github.com/microsoft/qsharp-compiler/issues/885).
 - Added support for multiple entry points.
 
 ## Version 0.15.2102.129448
