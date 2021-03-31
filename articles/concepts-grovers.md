@@ -160,7 +160,7 @@ Therefore we can pick $N_\text{optimal}$ to be $N_\text{optimal} = \left\lfloor 
 
 ## Complexity analysis
 
-We know that we need $O\left(\sqrt{\frac{N}{M}}\right)$ queries of the oracle $O_f$ to find a valid item. However, can the algorithm be implemented efficiently in terms of time complexity? $O_0$ can be implemented using $O(\log n)$ layers of classical gates. Then we have the two layers of $n$ Hadamard gates. So the overhead is $O(n)$ gates per iteration, and depth only $O(\log n)$. This is small compared with the number of iterations $Θ(2^{n/2})$.
+From the previous analysis, we know that we need $O\left(\sqrt{\frac{N}{M}}\right)$ queries of the oracle $O_f$ to find a valid item. However, can the algorithm be implemented efficiently in terms of time complexity? $O_0$ is based on computing Boolean operations on $n$ bits and is known to be implementable using $O(n)$ gates. We also have two layers of $n$ Hadamard gates. Both of these components thus require only $O(n)$ gates per iteration. Because $N=2^n$, we have that $O(n)=O(log(N))$. Therefore, if we need $O\left(\sqrt{\frac{N}{M}}\right)$ iterations and we need $O(log(N))$ gates per iteration, the total time complexity (without taking into account the oracle implementation) is $O\left(\sqrt{\frac{N}{M}}log(N)\right)$.
 
 The overall complexity of the algorithm will ultimately depend on the complexity of the implementation of the oracle $O_f$. If a function evaluation is much more complicated on a quantum computer than on a classical one, the overall algorithm runtime will be longer in the quantum case, even though technically, it will use fewer queries.
 
