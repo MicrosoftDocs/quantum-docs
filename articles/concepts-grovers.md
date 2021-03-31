@@ -122,7 +122,7 @@ $$O_0 = R_{\ket{0}}=  -2\ket{0}\bra{0} + \mathcal{I}$$
 
 Knowing this fact, it's easy to check that the Grover diffusion operation $-H^{\otimes n} O_0 H^{\otimes n}$ is also a reflection about the state $\ket{all}$. Just do:
 
-$$H^{\otimes n} O_0 H^{\otimes n}=2H^{\otimes n}\ket{0}\bra{0}H^{\otimes n} -H^{\otimes n}\mathcal{I}H^{\otimes n} = 2\ket{\text{all}}\bra{\text{all}} - \mathcal{I} = R_{\ket{\text{all}}}$$
+$$-H^{\otimes n} O_0 H^{\otimes n}=2H^{\otimes n}\ket{0}\bra{0}H^{\otimes n} -H^{\otimes n}\mathcal{I}H^{\otimes n} = 2\ket{\text{all}}\bra{\text{all}} - \mathcal{I} = R_{\ket{\text{all}}}$$
 
 We just demonstrated that each iteration of Grover's algorithm is a composition of two reflections $R_\ket{\text{bad}}$ and $R_\ket{\text{all}}$.
 
