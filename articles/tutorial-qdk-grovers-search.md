@@ -29,7 +29,7 @@ Any search task can be mathematically formulated with an abstract function $f(x)
 
 ## Grover's algorithm task
 
-Given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, where $n$ is de bit-size of the search space, find an input $x_0$ for which $f(x_0)=1$.
+Given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, where $n$ is the bit-size of the search space, find an input $x_0$ for which $f(x_0)=1$.
 
 
 To implement Grover's algorithm to solve a problem you need to:
