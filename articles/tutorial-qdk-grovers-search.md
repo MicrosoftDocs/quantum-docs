@@ -172,7 +172,7 @@ We can then build a quantum operation that does the following:
 The code to implement this quantum operation is:
 
 ```qsharp
-operation markingDivisor (
+operation MarkDivisor (
     dividend : Int,
     divisorRegister : Qubit[],
     target : Qubit
@@ -208,7 +208,7 @@ operation markingDivisor (
 
 ### Transform the operation into a phase oracle
 
-The operation `markingDivisor` is what's known as a *marking oracle*, since it marks the valid items with an entangled auxiliary qubit (`target`). However, Grover's algorithm needs a *phase oracle*, that is, an oracle that applies a conditional phase shift of $-1$ for the solution items. But don't panic, the operation above wasn't written in vain. It's very easy to switch from one oracle type to the other in Q#.
+The operation `MarkDivisor` is what's known as a *marking oracle*, since it marks the valid items with an entangled auxiliary qubit (`target`). However, Grover's algorithm needs a *phase oracle*, that is, an oracle that applies a conditional phase shift of $-1$ for the solution items. But don't panic, the operation above wasn't written in vain. It's very easy to switch from one oracle type to the other in Q#.
 
 We can apply any marking oracle as a phase oracle with the following operation:
 
@@ -250,7 +250,7 @@ namespace GroversTutorial {
     operation FactorizeWithGrovers(number : Int) : Unit {
 
         // Define the oracle that for the factoring problem.
-        let markingOracle = markingDivisor(number, _, _);
+        let markingOracle = MarkDivisor(number, _, _);
         let phaseOracle = ApplyMarkingOracleAsPhaseOracle(markingOracle, _);
         // Bit-size of the number to factorize.
         let size = BitSizeI(number);
@@ -281,7 +281,7 @@ namespace GroversTutorial {
 
     }
 
-    operation markingDivisor (
+    operation MarkDivisor (
         dividend : Int,
         divisorRegister : Qubit[],
         target : Qubit
@@ -379,7 +379,7 @@ First, we are going to modify our main operation to get rid of the repeat-until-
 @EntryPoint()
 operation FactorizeWithGrovers2(number : Int) : Int {
 
-    let markingOracle = markingDivisor(number, _, _);
+    let markingOracle = MarkDivisor(number, _, _);
     let phaseOracle = ApplyMarkingOracleAsPhaseOracle(markingOracle, _);
     let size = BitSizeI(number);
     let nSolutions = 4;
