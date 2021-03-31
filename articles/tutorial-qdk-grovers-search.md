@@ -81,13 +81,13 @@ In this operation we use the [within-apply](xref:microsoft.quantum.qsharp.conjug
 > To learn more about conjugations in Q#, check the [conjugations
 > article in the Q# language guide](xref:microsoft.quantum.qsharp.conjugations).
 
+A good exercise to understand the code and the operations is to check with pen and paper that the operation `ReflectAboutUniform` applies Grover's diffusion operator. To see it note that the operation `Controlled Z(Most(inputQubits),Tail(inputQubits))` only has an effect different than the identity if and only if all qubits are in the state $\ket{1}$.
+
 You can check what each of the operations and functions used is by looking into the API documentation:
 
 - [`ApplyToEachA`](xref:Microsoft.Quantum.Canon.ApplyToEachA)
 - [`Most`](xref:Microsoft.Quantum.Arrays.Most)
 - [`Tail`](xref:Microsoft.Quantum.Arrays.Tail)
-
-A good exercise to understand the code and the operations is to check with pen and paper that the operation `ReflectAboutUniform` applies Grover's diffusion operator. To see it note that the operation `Controlled Z(Most(inputQubits),Tail(inputQubits))` only has an effect different than the identity if and only if all qubits are in the state $\ket{1}$.
 
 The operation is called `ReflectAboutUniform` because it can be geometrically interpreted as a reflection in the vector space about the uniform superposition state.
 
