@@ -25,7 +25,7 @@ if $f(x) = f(y)$ for some $x \ne y$, then $O\ket{x} = O\ket{y}$ but $O^\dagger O
 This means we won't be able to construct the adjoint operation $O^\dagger$, and oracles have to have an adjoint defined for them.
 
 ## Define an oracle by its effect on computational basis states
-We can deal with both of these problems by introducing a second register of $m$ qubits to hold our answer.
+We can deal with both of these problems by introducing a second register of $m$ qubits to hold our answer. 
 Then we will define the effect of the oracle on all computational basis states: for all $x \in \\{0, 1\\}^n$ and $y \in \\{0, 1\\}^m$,
 
 $$
