@@ -164,4 +164,4 @@ An operator whose inverse is equal to its [adjoint](xref:microsoft.quantum.gloss
 
 ## User-defined type
 
-A custom type that may contain one or more named or anonymous items. For more information, see  [Type declarations](microsoft.quantum.qsharp.typedeclarations#type-declarations).
+A custom type that may contain one or more named or anonymous items. For more information, see  [Type declarations](microsoft.quantum.qsharp.typedeclarations).
