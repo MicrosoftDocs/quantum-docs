@@ -5,7 +5,7 @@ ms.author: chgranad
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: contributor-guide
+ms.topic: conceptual
 no-loc: ['Q#', '$$v']
 title: Contributing code to the Microsoft QDK
 uid: microsoft.quantum.contributing-qdk.overview.code
