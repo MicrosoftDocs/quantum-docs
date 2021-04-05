@@ -6,7 +6,7 @@ ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-title: Q# programming language introdution
+title: Q# programming language introduction
 uid: microsoft.quantum.user-guide-qdk.overview.programs
 ---
 
