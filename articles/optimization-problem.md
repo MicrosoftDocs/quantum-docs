@@ -111,11 +111,11 @@ During experimentation, the user may want to set a variable (or a group of varia
 
 ```py
 fixed_var = {'1': 1, '2': 1}
-problem = Problem("My Problem", [Term(c=1, indices=[0,1])], Term(c=11, indices=[1,2]), Term(c=5, indices=[]))
+problem = Problem("My Problem", [Term(c=1, indices=[0,1]), Term(c=11, indices=[1,2]), Term(c=5, indices=[])])
 new_problem = problem.set_fixed_variables(fixed_var)
 new_problem.terms
 
-> [Term(c=1, indices=[0]), Term(c=16, indices=[])]
+> [{'c': 1, 'ids': [0]}, {'c': 16, 'ids': []}]
 ```
 
 To piece back the fixed variables with the solution on the reduced problem:
