@@ -130,6 +130,8 @@
             href: optimization-solve-long-running-problems.md
           - name: Authenticate using a service principal
             href: optimization-authenticate-service-principal.md
+    - name: Azure CLI
+      href: /cli/azure/ext/quantum/quantum
 - name: Quantum Development Kit
   items:
   - name: Overview
