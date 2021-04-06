@@ -26,6 +26,7 @@ To create a `Problem` object, you specify the following information:
 - [optional] `terms`: A list of `Term` objects to add to the problem.
 - [optional] `problem_type`: The type of problem. Must be either
   `ProblemType.ising` or `ProblemType.pubo`. Default is `ProblemType.ising`.
+- [optional] `init_config`: A dictionary of variable ids to value if user wants to specify an initial configuration for the problem.
 
 ```py
 terms = [
@@ -85,3 +86,27 @@ problem.upload(workspace=workspace)
 
 Once a problem is explicitly uploaded, it will not be automatically uploaded
 during submission unless its terms change.
+
+
+### Problem.evaluate
+
+Once a problem has been defined, the user can evaluate the problem on any configuration they supply. The configuration should be supplied as a dictionary of variable ids to values. 
+
+```py
+problem = Problem("My Problem", [Term(c=1, indices=[0,1])])
+problem.evaluate({0:1, 1:1}) # returns 1
+problem.evaluate({0:1, 1:0}) # returns 0
+```
+
+### Problem.set_fixed_variables
+
+Sometimes during experimentation, the user may want to set a variable (or a group of variables) to a particular value. Calling set_fixed_variables will return a new Problem object representing the modified problem after such variables have been fixed. 
+
+```py
+problem = Problem("My Problem", [Term(c=1, indices=[0,1])], Term(c=11, indices=[1,2]), Term(c=5, indices=[]))
+new_problem = problem.set_fixed_variables({'1': 1, '2': 1})
+new_problem.terms
+
+> [Term(c=1, indices=[0]), Term(c=16, indices=[])]
+```
+
