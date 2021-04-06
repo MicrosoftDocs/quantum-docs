@@ -343,21 +343,37 @@ namespace GroversTutorial {
 
 The program above will run the operation or function marked with the `@EntryPoint()` attribute on a simulator or resource estimator, depending on the project configuration and command-line options.
 
-In Visual Studio, simply press Ctrl + F5 to run the script.
+#### [Visual Studio](#tab/tabid-visualstudio)
 
-In VS Code, build the `Program.qs` the first time by typing the below in the terminal:
+In general, running a Q# program in Visual Studio is as simple as pressing `Ctrl + F5`. But first, we need to provide the right command-line arguments to our program.
+
+Command-line arguments can be configured via the debug page of your project properties. You can visit the [Visual Studio reference guide](https://docs.microsoft.com/visualstudio/ide/reference/debug-page-project-designer) for more information about this, or follow the steps below:
+
+1. In the solution explorer on the right, right-click the name of your project (the project node, one level below the solution) and select **Properties**.
+
+1. From the new window that opens, navigate to the **Debug** tab.
+
+1. In the field **Application arguments**, you can enter any arguments you wish to pass to the entry point of your program. Enter `--number 21` in the arguments field.
+
+Now press `Ctrl + F5` to run the program.
+
+#### [VS Code](#tab/tabid-vscode)
+
+In VS Code, first build your project by executing following command in the terminal:
 
 ```Command line
 dotnet build
 ```
 
-For subsequent runs, there is no need to build it again. To run it, type the following command and press enter:
+When running your program, you can now save time by skipping the build phase via the `--no-build` flag. Arguments to pass to the entry point of your program can also be specified at this stage. To run Grover's algorithm on the number 21, type the following command and press enter:
 
 ```Command line
 dotnet run --no-build --number 21
 ```
 
-After pressing enter, you should see the following message displayed in the terminal:
+***
+
+With either environment, you should now see the following message displayed in the terminal:
 
 ```Command line
 The number 7 is a factor of 21.
