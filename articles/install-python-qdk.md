@@ -61,7 +61,7 @@ Learn how to install the Quantum Development Kit (QDK) to develop Python host pr
     > If you encounter a permission error in Linux, install the IQ# kernel in user mode instead with `dotnet iqsharp install --user`.
 
     > [!NOTE]
-    > If you encounter an error and you just installed .NET, you won't be able to run the `dotnet iqsharp install` tool immediately. Instead, under Windows, open a new terminal window and try again. Under Linux, log out of your session and log back in to try again.
+    > If you encounter an error and you just installed .NET, you won't be able to run the `dotnet iqsharp install` command immediately. Instead, under Windows, open a new terminal window and try again. Under Linux, log out of your session and log back in to try again.
     > If this still doesn't work, try locating the installed `dotnet-iqsharp` tool (on Windows, `dotnet-iqsharp.exe`) and running:
     > ```
     > /path/to/dotnet-iqsharp install --user --path-to-tool="/path/to/dotnet-iqsharp"
