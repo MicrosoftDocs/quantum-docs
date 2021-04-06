@@ -24,7 +24,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 *Release date: March 30th, 2021*
 
-- Released QIR emission as experimental feature.
+- Released QIR emission as experimental feature (https://github.com/microsoft/qsharp-compiler/tree/main/src/QsCompiler/QirGeneration#qir-emission---preview-feature). The inclusion of the necessary LLVM packages, and in particular LlvmLibs, causes an increase in package size of the Microsoft.Quantum.Sdk and the Microsoft.Quantum.Compiler, and correspondingly to longer download times the first time the new versions are used. We are working on reducing that again in the future.
 - Loosen restriction on AllowAtMostNCallsCA operation (https://github.com/microsoft/QuantumLibraries/pull/431).
 - Added missing APIs for Math Library (https://github.com/microsoft/QuantumLibraries/issues/413).
 - Removed <xref:Microsoft.Quantum.Environment.GetQubitsAvailableToBorrow> and <xref:Microsoft.Quantum.Environment.GetQubitsAvailableToUse> (https://github.com/microsoft/QuantumLibraries/issues/418).
