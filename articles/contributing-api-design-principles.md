@@ -45,7 +45,7 @@ This article lists these principles, and gives examples to help guide how to app
     a *concrete* example in which it will be useful.
 
   *Examples:*
-  - @"microsoft.quantum.canon.applytoeachca" can be used as `ApplyToEachCA(H, _)` to prepare
+  - @"Microsoft.Quantum.Canon.ApplyToEachCA" can be used as `ApplyToEachCA(H, _)` to prepare
       registers in a uniform superposition state, a common task in
       many quantum algorithms. The same operation can also be used
       for many other tasks in preparation, numerics, and
@@ -86,7 +86,7 @@ This article lists these principles, and gives examples to help guide how to app
       its new name, so that existing code can continue to work
       correctly.
 
-- ✅ **DO** use the @"microsoft.quantum.core.deprecated" attribute to communicate deprecations to the user.
+- ✅ **DO** use the @"Microsoft.Quantum.Core.Deprecated" attribute to communicate deprecations to the user.
 
 - ✅ When renaming an operation or function, **DO** provide the new
     name as a string input to `@Deprecated`.
@@ -109,7 +109,7 @@ This article lists these principles, and gives examples to help guide how to app
     existing libraries.
 
   *Examples:*
-  - The @"microsoft.quantum.canon.delay" operation makes minimal assumptions
+  - The @"Microsoft.Quantum.Canon.Delay" operation makes minimal assumptions
       about its input, and thus can be used to delay applications of either
       operations across the Q# standard library or as defined by users.
   <!-- TODO: define bad example. -->
@@ -315,14 +315,14 @@ This article lists these principles, and gives examples to help guide how to app
 
   *Examples:*
   - The quantum machine learning library published by Microsoft is largely
-      placed into the @"microsoft.quantum.machinelearning" namespace, but example
-      datasets are provided by the @"microsoft.quantum.machinelearning.datasets"
+      placed into the @"Microsoft.Quantum.MachineLearning" namespace, but example
+      datasets are provided by the @"Microsoft.Quantum.MachineLearning.Datasets"
       namespace.
   - Quantum chemistry APIs published by Microsoft as a part of
       the Quantum Development Kit should be placed into
-      `Microsoft.Quantum.Chemistry`. Functionality specific to
+      the @"Microsoft.Quantum.Chemistry" namespace. Functionality specific to
       implementing the Jordan--Wigner decomposition may be placed
-      in `Microsoft.Quantum.Chemistry.JordanWigner`, so that the
+      in the @"Microsoft.Quantum.Chemistry.JordanWigner" namespace, so that the
       primary interface for the quantum chemistry domain area is
       not concerned with implementations.
 
@@ -401,8 +401,8 @@ This article lists these principles, and gives examples to help guide how to app
         measurement results.
 
       *Examples:*
-      - @"microsoft.quantum.characterization.estimatefrequency"
-      - @"microsoft.quantum.characterization.estimateoverlapbetweenstates"
+      - @"Microsoft.Quantum.Characterization.EstimateFrequency"
+      - @"Microsoft.Quantum.Characterization.EstimateOverlapBetweenStates"
 
     - **Prepare**: Apply a quantum operation or sequence of
         operations to one or more qubits assumed to start in a
@@ -415,8 +415,8 @@ This article lists these principles, and gives examples to help guide how to app
         no-op.
 
       *Examples:*
-      - @"microsoft.quantum.preparation.preparearbitrarystate"
-      - @"microsoft.quantum.preparation.prepareuniformsuperposition"
+      - @"Microsoft.Quantum.Preparation.PrepareArbitraryState"
+      - @"Microsoft.Quantum.Preparation.PrepareUniformSuperposition"
 
     - **Measure**: Apply a quantum operation or sequence of
         operations to one or more qubits, reading classical data
@@ -424,8 +424,8 @@ This article lists these principles, and gives examples to help guide how to app
 
       *Examples:*
       - @"Microsoft.Quantum.Intrinsic.Measure"
-      - @"microsoft.quantum.arithmetic.measurefxp"
-      - @"microsoft.quantum.arithmetic.measureinteger"
+      - @"Microsoft.Quantum.Arithmetic.MeasureFxP"
+      - @"Microsoft.Quantum.Arithmetic.MeasureInteger"
 
     - **Apply**: Apply a quantum operation or sequence of
         operations to one or more qubits, causing the state of
@@ -443,7 +443,7 @@ This article lists these principles, and gives examples to help guide how to app
       the *values* provided to that fact. For example:
 
       *Examples:*
-      - @"microsoft.quantum.diagnostics.equalityfacti":
+      - @"Microsoft.Quantum.Diagnostics.EqualityFactI":
         represents an equality fact about two
         integer inputs; either the integers provided as
         input are equal to each other, or they are not,
@@ -454,7 +454,7 @@ This article lists these principles, and gives examples to help guide how to app
         operation. For example:
 
       *Examples:*
-      - The @"microsoft.quantum.machinelearning.trainingoptions" UDT includes
+      - The @"Microsoft.Quantum.MachineLearning.TrainingOptions" UDT includes
         named items for learning rate, minibatch size, and other
         configurable parameters for ML training.
 
