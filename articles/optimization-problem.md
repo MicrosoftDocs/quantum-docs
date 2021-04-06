@@ -36,6 +36,10 @@ terms = [
 ]
 
 problem = Problem(name="My Difficult Problem", terms=terms)
+
+# with initial configuration set
+config = {'0': 1, '1': 1, '2': 0}
+problem2 = Problem(name="Problem with Initial Configuration", terms=terms, init_config=config)
 ```
 
 ### Problem.add_term
@@ -94,19 +98,40 @@ Once a problem has been defined, the user can evaluate the problem on any config
 
 ```py
 problem = Problem("My Problem", [Term(c=1, indices=[0,1])])
-problem.evaluate({0:1, 1:1}) # returns 1
-problem.evaluate({0:1, 1:0}) # returns 0
+problem.evaluate({0:1, 1:1}) 
+> 1
+
+problem.evaluate({0:1, 1:0})
+> 0
 ```
 
 ### Problem.set_fixed_variables
 
-Sometimes during experimentation, the user may want to set a variable (or a group of variables) to a particular value. Calling set_fixed_variables will return a new Problem object representing the modified problem after such variables have been fixed. 
+During experimentation, the user may want to set a variable (or a group of variables) to a particular value. Calling set_fixed_variables will return a new Problem object representing the modified problem after such variables have been fixed. 
 
 ```py
+fixed_var = {'1': 1, '2': 1}
 problem = Problem("My Problem", [Term(c=1, indices=[0,1])], Term(c=11, indices=[1,2]), Term(c=5, indices=[]))
-new_problem = problem.set_fixed_variables({'1': 1, '2': 1})
+new_problem = problem.set_fixed_variables(fixed_var)
 new_problem.terms
 
 > [Term(c=1, indices=[0]), Term(c=16, indices=[])]
 ```
 
+To piece back the fixed variables with the solution on the reduced problem:
+
+```py
+result = solver.optimize(new_problem)
+result_config = json.loads(result)['configuration']
+result_config.update(fixed_var) # join the fixed variables with the result
+```
+
+
+## StreamingProblem
+StreamingProblem class can handle large problems that exceeds local memory limits. Unlike with the Problem class, terms in the StreamingProblem are uploaded directly to blob and are not kept in memory.  
+
+The StreamingProblem class uses the same interface as the Problem class. 
+
+There are some features not supported yet on the StreamingProblem class due to its streaming nature:
+- Problem.set_fixed_variables()
+- Problem.evaluate()
