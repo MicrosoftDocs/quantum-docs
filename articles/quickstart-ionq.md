@@ -261,6 +261,6 @@ This quickstart guide demonstrated how to get started running Q# programs agains
 
 We recommend you continue your journey by learning more about the [different types of targets in Azure Quantum](xref:microsoft.quantum.concepts.targets), which will dictate which Q# programs you may run against a given provider. You might also be interested in learning how to submit Q# jobs with [Jupyter Notebooks](xref:microsoft.quantum.submit-jobs.jupyter) or with [Python](xref:microsoft.quantum.submit-jobs.python).
 
-Looking for more samples to run? Check out the [samples directory](https://github.com/microsoft/qio-samples).
+Looking for more samples to run? Check out the [samples directory](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum) for Azure Quantum.
 
 Lastly, if you would like to learn more about writing Q# programs please see the [Microsoft Quantum Documentation](xref:microsoft.quantum.overview.qdk-overview).
