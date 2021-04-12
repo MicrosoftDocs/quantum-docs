@@ -34,16 +34,17 @@ the different providers of your Azure Quantum workspace.
 > A provider is a partner quantum service consisting of quantum
 > hardware, a simulator, or an optimization service.
 
-1. Log in to Azure using your credentials.
+1. Log in to Azure using your credentials. You'll get a list of subscriptions associated with your account.
 
    ```dotnetcli
    az login
    ```
 
-> [!NOTE]
-> In case you have more than one subscription associated with your Azure
-> account, you must specify the subscription you want to use. You can do this with
-> the command `az account set -s <Your subscription ID>`.
+1. Specify the subscription you want to use from those associated with your Azure account.
+
+   ```dotnetcli
+   az account set -s <Your subscription ID>
+   ```
 
 1. You can see all the Azure Quantum workspaces in your subscription with the
    following command:
