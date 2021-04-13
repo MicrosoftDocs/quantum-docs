@@ -31,10 +31,13 @@ While you can build Q# applications in any IDE, we recommend using Visual Studio
 1. Download and install [VS Code](https://code.visualstudio.com/download) 1.52.0 or greater (Windows, Linux and Mac).
 2. Install the [QDK for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
-### To configure for Visual Studio:
+### To configure for Visual Studio (Windows only):
 
 1. Download and install [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 or greater, with the .NET Core cross-platform development workload enabled.
 2. Download and install the [QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit).
+
+> [!NOTE]
+> Although there is Visual Studio for Mac the QDK extension is only compatible with Visual Studio for Windows.
 
 ### To configure for another environment:
 
