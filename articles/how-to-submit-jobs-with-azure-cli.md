@@ -218,5 +218,5 @@ Note that the IonQ simulator gives the probabilities of obtaining each output if
 ## Next steps
 
 Now that you know how to submit jobs to Azure quantum, you can try to run the
-different [samples](https://github.com/microsoft/qio-samples) we have
+different [samples](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum) we have
 available or try to submit your own projects.
