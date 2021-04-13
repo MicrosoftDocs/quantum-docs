@@ -99,7 +99,7 @@ installed the Optimization Python SDK already, follow these steps:
 
 ## Create a `Workspace` object in your Python code and log in
 
-Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to Azure Quantum. The value for `resource_id` can be found on the Azure Portal page for the [Quantum Workspace you created](xref:microsoft.quantum.workspaces-portal).
+Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to Azure Quantum. The value for `resource_id` and `location` can be found on the Azure Portal page for the [workspace you created](xref:microsoft.quantum.workspaces-portal).
 
 Once the `Workspace` object is created, you log in using the `workspace.login()` command.
 
@@ -108,7 +108,8 @@ from azure.quantum import Workspace
 
 # Copy the settings for your workspace below
 workspace = Workspace(
-    resource_id = ""   # add the Resource ID of the Azure Quantum workspace you created
+    resource_id = "", # add the Resource ID of the Azure Quantum workspace you created
+    location = ""     # add the location of your Azure Quantum workspace (e.g. "westus")
 )
 workspace.login()
 ```
