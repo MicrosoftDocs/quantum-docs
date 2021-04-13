@@ -44,7 +44,7 @@ for contributors:
   
 ## Broken links prevention
 
-The url in the `docs.microsoft.com` site is generated from the path relative to `articles`on the GitHub repository. For example, the article located in `./articles/user-guide/programs.md` has assigned as url `https://docs.microsoft.com/azure/quantum/user-guide/programs`. This fact means that each time an article changes it's path, either because of a relocation or a change in the name of the file, the url will change accordingly. This change can cause some users to find broken links to previously existing articles. To avoid this:
+The URL of article pages on `docs.microsoft.com` is generated from the relative path to the `articles` folder on the GitHub repository. For example, the article located at `./articles/user-guide/programs.md` is assigned the URL `https://docs.microsoft.com/azure/quantum/user-guide/programs`. This fact means that each time an article changes its path, either because of a relocation or a change in the file name, the URL will change accordingly. This change can cause some users to find broken links to previously existing articles. To avoid this:
 
 - Try to not rename or re-locate the articles.
 - If for some reason you need to rename, remove or re-locate an article, you should add a redirect from the previous article to the new url to avoid creating any broken link.
