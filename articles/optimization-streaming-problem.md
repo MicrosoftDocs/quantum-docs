@@ -42,7 +42,7 @@ Note that if `upload()` is not called on a streaming problem, the block blob in 
 Depending on the characteristics of your problem (especially density) or of your CPU/network connection you may want to tune the StreamingProblem class. There are two options for tuning the upload:
 
 - `StreamingProblem.upload_size_threshold` - the size, in bytes, of the compressed payload to upload. As terms are added they are compressed on the fly. When the size of the staged compressed payload surpasses this threshold the chunk is uploaded.
-- `StreamingProblem.upload_terms_threshold` - the threshold for the number of terms that trigger an upload. When the number of queued terms exceed this threshold an upload is triggered. If your problem has high connectivity (terms have many variables) you may choose to lower this threshold.
+- `StreamingProblem.upload_terms_threshold` - the threshold for the number of terms that trigger an upload. When the number of queued terms exceeds this threshold an upload is triggered. If your problem has high connectivity (terms have many variables) you may choose to lower this threshold.
 
 To tune these parameters, set one or both as in the example below **before adding terms to the problem definition**. Changing these parameters after the background uploader begins will have no effect.
 
