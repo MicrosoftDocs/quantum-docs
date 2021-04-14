@@ -26,13 +26,13 @@ In order to use the Azure Quantum service, you will need:
 
 ## Environment setup
 
-1. Log in to Azure using your credentials.
+1. Log in to Azure using your credentials. You'll get a list of subscriptions associated with your account.
 
    ```dotnetcli
    az login
    ```
 
-1. In case you have more than one subscription associated with your Azure account, specify the subscription you want to use.
+1. Specify the subscription you want to use from those associated with your Azure account.
 
    ```dotnetcli
    az account set -s <Your subscription ID>
@@ -53,18 +53,9 @@ In order to create a new Azure Quantum workspace, you'll need to know:
 - The resource group associated with the new workspace. (for example, **MyResourceGroup**).
 - An storage account on the same resource group and subscription than the quantum workspace. It's possible to [create a new storage account from the Az CLI tool](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest&preserve-view=true#az_storage_account_create). (for example, **MyStorageAccount**)
 - The name of the quantum workspace to create. (for example, **MyQuantumWorkspace**)
+- The list of Azure Quantum providers to use in the workspace. A provider offers a set of SKUs, each of them represents a plan with associated terms and conditions, cost and quotas. To create workspaces you'll need to specify not only providers but also the corresponding SKU.
 
-And then you can create it using the following command, using the previous examples:
-
-```dotnetcli
-az quantum workspace create -l westus -g MyResourceGroup -w MyQuantumWorkspace -a MyStorageAccount
-```
-
-By default, a new workspace will be created only containing the Microsoft Basic QIO provider. At any time, it is possible to modify a workspace in order to add or remove other providers. For this, you can use [the Azure portal](xref:microsoft.quantum.workspaces-portal) and edit the workspace.
-
-Alternatively, you can create a workspace in a more advanced way and specify the providers using the CLI directly.
-
-## Specify additional providers during creation of an Azure Quantum workspace
+If you already know the providers and SKU names to use in your workspace, you can skip to step 4 below. Otherwise, we should determine which ones to use first.
 
 1. To retrieve the list of quantum providers available, you can use the following command (using **westus** as example location) :
 
@@ -89,6 +80,9 @@ Alternatively, you can create a workspace in a more advanced way and specify the
    ```dotnetcli
    az quantum workspace create -l westus -g MyResourceGroup -w MyQuantumWorkspace -a MyStorageAccount -r "MyProvider1/MySKU1, MyProvider2/MySKU2"
    ```
+
+Once a workspace has been created, you can still add or remove providers using the Azure Portal.
+
 
 ## Delete a quantum workspace
 
