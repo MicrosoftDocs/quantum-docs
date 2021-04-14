@@ -47,11 +47,13 @@ for contributors:
 The URL of article pages on `docs.microsoft.com` is generated from the relative path to the `articles` folder on the GitHub repository. For example, the article located at `./articles/user-guide/programs.md` is assigned the URL `https://docs.microsoft.com/azure/quantum/user-guide/programs`. This fact means that each time an article changes its path, either because of a relocation or a change in the file name, the URL will change accordingly. This change can cause some users to find broken links to previously existing articles. To avoid this:
 
 - Try to not rename or relocate articles.
-- If for some reason you need to rename, remove or relocate an article, you should add a redirect from the previous article to the new URL to avoid creating any broken links.
+- If for some reason you need to rename, remove or relocate an article, you need to add a redirect from the previous article to the new URL to avoid creating any broken links.
 
 ### How to add a redirect
 
-- To create a redirect you need to add it to the following [`.json` file](https://github.com/MicrosoftDocs/azure-reference-other-pr/blob/master/.openpublishing.redirection.json) by creating a Pull Request.
+A redirect captures a customer's request to a non-existent or outdated web page and redirects it to a working page, preventing any 404 **Page not found** errors.
+
+- To create a redirect, you need to add it to the [`.openpublishing.redirection.json` file](https://github.com/MicrosoftDocs/azure-reference-other-pr/blob/master/.openpublishing.redirection.json) and create a Pull Request.
 
 - To add a redirect to .openpublishing.redirection.json, add an entry to the `redirections` array:
 
@@ -65,11 +67,12 @@ The URL of article pages on `docs.microsoft.com` is generated from the relative 
           },
   ```
 
-  - The `source_path` is the relative repository path to the old article that you're removing. Be sure the path starts with `articles` and ends with `.md`.
-  - The `redirect_url` is the relative public URL from the old article to the new article. Be sure that this URL **doesn't** end in `.md`, as it refers to the public URL and not the repository path. Linking to a section within the new article using `#section` is allowed. You can also use an absolute path to another site here, if necessary.
+  - The `source_path` is the relative repository path to the old article that you're removing or renaming. Be sure the path starts with `articles` and ends with `.md`.
+  - The `redirect_url` is the relative public URL to the new article. Be sure that this URL **does not** end in `.md`, as it refers to the public URL and not the repository path. Linking to a section within the new article using `#section` is allowed. You can also use an absolute path to another site here, for example, *https://azure.microsoft.com/en-us/services/quantum/*.
   - `redirect_document_id` indicates whether you would like to keep the document ID from the previous file. The default is `false`. Use `true` if you want to preserve the `ms.documentid` attribute value from the redirected article. If you preserve the document ID, data, such as page views and rankings, will be transferred to the target article. Do this if the redirect is primarily a rename, and not a pointer to different article that only covers some of the same content.
 
-If you add a redirect, be sure to delete the old file as well.
+- Verify that `source_path` is unique. Different source_paths can redirect to a single target URL, but a single source_path cannot redirect to multiple targets. 
+- If you add a redirect, be sure to delete the old file as well.
 
 ## Adding images
 
