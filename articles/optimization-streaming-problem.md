@@ -86,8 +86,7 @@ problem = StreamingProblem(workspace = workspace, name="My Streamed Problem", pr
 
 ### StreamingProblem.add_term
 
-Adds a single term to the problem. It takes a coefficient for the term and the indices
-of variables that appear in the term.
+Adds a single term to the problem. It takes a coefficient for the term and the indices of variables that appear in the term.
 
 Thread-safe: may be called from multiple calling threads.
 
