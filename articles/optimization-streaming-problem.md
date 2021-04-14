@@ -62,6 +62,14 @@ In general:
 
 The `StreamingProblem` class calculates some statistics about the generated problem as terms are added. To see information about the terms already added to the problem, access the `stats` member of the class which is a dictionary of calculated statistics and contains the following information:
 
+```py
+problem = StreamingProblem(workspace = workspace, name="My Streamed Problem", problem_type=ProblemType.ising)
+# Terms are added...
+print(problem.stats)
+
+> {'type': 'ising', 'max_coupling': 4, 'avg_coupling': 2.4, 'min_coupling': 2, 'num_terms': 6125}
+```
+
 - `type`: The type of problem - `pubo` or `ising`
 - `max_coupling`: The largest coupling (number of variable indices) in any term
 - `avg_coupling`: The average coupling (number of variable indices) of all terms
