@@ -51,7 +51,7 @@ Rephrases the optimization problem as a thermodynamic system and considers the e
 
 #### Parallel Tempering
 
-Rephrases the optimization problem as a thermodynamic system and runs multiple copies of a system, randomly initialized, at different temperatures. Then, based on a specific protocol, exchanges configurations at different temperatures to find the optimal configuration. This target can be run on CPU or FPGA hardware. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.parallel-tempering).
+Rephrases the optimization problem as a thermodynamic system and runs multiple copies of a system, randomly initialized, at different temperatures. Then, based on a specific protocol, exchanges configurations at different temperatures to find the optimal configuration. This target is available on CPUs only. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.parallel-tempering).
 
 #### Tabu search
 
