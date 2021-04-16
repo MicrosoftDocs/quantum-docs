@@ -33,7 +33,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 ## Version 0.15.2102.129448
 
-*Release date: February 22th, 2021*
+*Release date: February 25th, 2021*
 
 - Improved IQ# debug user experience by adding a horizontal scrollbar to scroll both execution path and basis state visualizations.
 - New functions to represent the group product and group inverse on the single-qubit Clifford group, to quickly define common single-qubit Clifford operators, and to apply single-qubit Clifford operators as operations. For more information, see issue [#409](https://github.com/microsoft/QuantumLibraries/issues/409).
