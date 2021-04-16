@@ -119,36 +119,34 @@
         href: optimization-workspace.md
     - name: Azure.Quantum.Optimization
       items:
-      - name: Reference
-        items:
-        - name: Job
-          href: optimization-job-reference.md
-        - name: Problem
-          href: optimization-problem.md
-        - name: ProblemType
-          href: optimization-problem-type.md
-        - name: StreamingProblem
-          href: optimization-streaming-problem.md
-        - name : Solver inputs
-          href: optimization-input-formats.md
-        - name: Term
-          href: optimization-term.md
-      - name: Usage
-        items:
-        - name: Express a problem
-          href: optimization-express-optimization-problem.md
-        - name: Apply a solver
-          href: optimization-usage-problem-apply-solver-to-optimization.md
-        - name: Understand solver results
-          href: optimization-understand-solver-results.md
-        - name: Job management
-          href: optimization-job-management.md
-        - name: Re-use problem definitions
-          href: optimization-reuse-problem-definitions.md
-        - name: Solve long-running problems
-          href: optimization-solve-long-running-problems.md
-        - name: Authenticate using a service principal
-          href: optimization-authenticate-service-principal.md
+      - name: Job
+        href: optimization-job-reference.md
+      - name: Problem
+        href: optimization-problem.md
+      - name: ProblemType
+        href: optimization-problem-type.md
+      - name: StreamingProblem
+        href: optimization-streaming-problem.md
+      - name : Solver inputs
+        href: optimization-input-formats.md
+      - name: Term
+        href: optimization-term.md
+    - name: Usage
+      items:
+      - name: Express a problem
+        href: optimization-express-optimization-problem.md
+      - name: Apply a solver
+        href: optimization-usage-problem-apply-solver-to-optimization.md
+      - name: Understand solver results
+        href: optimization-understand-solver-results.md
+      - name: Job management
+        href: optimization-job-management.md
+      - name: Re-use problem definitions
+        href: optimization-reuse-problem-definitions.md
+      - name: Solve long-running problems
+        href: optimization-solve-long-running-problems.md
+      - name: Authenticate using a service principal
+        href: optimization-authenticate-service-principal.md
   - name: Resources 
     items:
     - name: Glossary (Azure Quantum)
