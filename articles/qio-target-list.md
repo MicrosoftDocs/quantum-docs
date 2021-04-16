@@ -6,7 +6,7 @@ ms.date: 04/03/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
-title: List of targets on Azure Quantum
+title: List of optimization targets on Azure Quantum
 uid: microsoft.quantum.reference.qio-target-list
 ---
 
