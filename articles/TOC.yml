@@ -3,7 +3,7 @@
 - name: Azure Quantum (preview)
   expanded: true
   items:
-  - name: Get started
+  - name: Overview
     items:
     - name: Introduction to Azure Quantum 
       href: overview-azure-quantum.md
@@ -25,7 +25,7 @@
         href: quickstart-ionq.md
       - name: Honeywell quickstart
         href: quickstart-honeywell.md  
-    - name: User guide
+    - name: How-to guides
       items:
       - name: Create and run Q# applications in Azure Quantum
         href: how-to-create-applications-for-azure-quantum.md
@@ -62,7 +62,13 @@
         href: quickstart-microsoft-qio.md
       - name: 1QBit quickstart
         href: quickstart-1qbit.md 
-    - name: User guide
+    - name: How-to guides
+      items:
+      - name: Install and use the Python SDK for optimization
+        href: optimization-install-sdk.md
+      - name: Troubleshoot optimization solvers
+        href: optimization-troubleshooting.md
+    - name: Concepts
       items:
       - name: Introduction to optimization
         href: optimization-overview-introduction.md
@@ -70,8 +76,6 @@
         href: optimization-what-is-quantum-optimization.md
       - name: Key concepts
         href: optimization-overview-key-concepts.md 
-      - name: Install and use the Python SDK for optimization
-        href: optimization-install-sdk.md
       - name: Which solver should you use?
         href: optimization-which-solver-should-you-use.md
       - name: Binary optimization (QUBOs & PUBOs)
@@ -80,8 +84,6 @@
         href: optimization-concepts-ising-model-for-optimization.md
       - name: Cost functions
         href: optimization-concepts-cost-functions.md
-      - name: Troubleshoot optimization solvers
-        href: optimization-troubleshooting.md
     - name: Providers
       href: qio-target-list.md
       items:
@@ -103,7 +105,7 @@
           href: optimization-tabu-search.md
         - name: Quantum Monte Carlo
           href: optimization-quantum-monte-carlo.md
-    - name: Samples and learning
+    - name: Tutorials
       items:
       - name: Samples for using Azure Quantum optimization solvers 
         href: https://github.com/microsoft/qio-samples
@@ -153,7 +155,7 @@
       href: azure-quantum-glossary.md
     - name: Common issues
       href: azure-quantum-common-issues.md
-    - name: Azure CLI
+    - name: Azure CLI commands
       href: https://docs.microsoft.com/cli/azure/ext/quantum/quantum
 - name: Quantum Development Kit
   items:
