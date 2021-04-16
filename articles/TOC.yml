@@ -110,6 +110,8 @@
             href: optimization-problem.md
           - name: ProblemType
             href: optimization-problem-type.md
+          - name: StreamingProblem
+            href: optimization-streaming-problem.md
           - name : Solver inputs
             href: optimization-input-formats.md
           - name: Term

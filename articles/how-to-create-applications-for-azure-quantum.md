@@ -66,7 +66,7 @@ Follow these steps in this section to create an application to run in IonQ targe
 - Install the [QDK](xref:microsoft.quantum.install-qdk.overview.standalone).
 - A Quantum Workspace with IonQ listed as a provider. To create a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
 
-#### Steps 
+#### Steps
 
 1. [Create a Q# application using the Q# project template.](xref:microsoft.quantum.install-qdk.overview.standalone)
 1. Open the `*.csproj` file in a text editor (for example, VS Code) and edit the file to:
@@ -122,5 +122,5 @@ however, we are planning to make some available during the Limited Review.
 
 ## Next steps
 
-- Now that you know how to create Q# applications, you can learn more details about [how to submit jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs.azcli). 
-- You can also  try the different [samples](https://github.com/microsoft/qio-samples) we have available or try to submit your own projects.
+- Now that you know how to create Q# applications, you can learn more details about [how to submit jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs.azcli).
+- You can also  try the different [samples](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum) we have available or try to submit your own projects.
