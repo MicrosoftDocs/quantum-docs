@@ -173,12 +173,8 @@
         href: overview-algebra-for-quantum-computing.md
   - name: Get started
     items:
-    - name: Set up the QDK
-      href: install-overview-qdk.md
-  - name: Quantum Computing
-    items:
-    - name: Getting started 
-      items:
+      - name: Set up the QDK
+        href: install-overview-qdk.md
       - name: Get started with the QDK
         href: install-get-started-qdk.md
       - name: Q# applications
@@ -191,10 +187,10 @@
         href: install-csharp-qdk.md
       - name: Q# with Binder
         href: install-binder-qdk.md
-    - name: Update the QDK
-      href: install-update-qdk.md
-    - name: Tutorials
-      items:
+      - name: Update the QDK
+        href: install-update-qdk.md
+  - name: Tutorials
+    items:
       - name: Quantum random number generator
         href: tutorial-qdk-quantum-random-number-generator.md
       - name: Explore entanglement with Q#
@@ -207,8 +203,8 @@
         href: tutorial-qdk-intro-to-katas.md
       - name: Q# code samples
         href: https://docs.microsoft.com/samples/browse/?languages=qsharp
-    - name: Concepts
-      items:
+  - name: Concepts
+    items:
       - name: "Quantum computing history & background"
         href: concepts-overview.md
       - name: Vectors and matrices
@@ -229,8 +225,8 @@
         href: concepts-oracles.md
       - name: Theory of Grover's algorithm
         href: concepts-grovers.md
-    - name: Glossary
-      href: qdk-glossary.md
+  - name: Glossary
+    href: qdk-glossary.md
   - name: Resources
     items:
     - name: Build your skills with MS Learn
