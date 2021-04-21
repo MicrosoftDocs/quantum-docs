@@ -255,6 +255,10 @@ Eventually, you will see the `Status` in the above table change to `Succeeded`. 
 
 The histogram you receive may be slightly different than the one above, but you should find that the states generally are observed with equal frequency.
 
+> [!NOTE]
+> If you run into an error while working with Azure Quantum, you can check our [list of common issues](xref:microsoft.quantum.azure.common-issues).
+
+
 ## Next steps
 
 This quickstart guide demonstrated how to get started running Q# programs against IonQ's simulator and QPU. For more information on the IonQ offering, please see the [IonQ Provider](xref:microsoft.quantum.providers.ionq).
