@@ -136,19 +136,30 @@ namespace QuantumRNG {
 
 Next, we'll prepare your environment to run the program against the workspace you created.
 
-1. Use `quantum workspace set` to select the workspace you created above
-   as the default workspace. Note that you also need to specify the resource
-   group you created it in, for example:
+1. Log in to Azure using your credentials. You'll get a list of subscriptions associated with your account.
 
    ```dotnetcli
-   az quantum workspace set -g MyResourceGroup -w MyWorkspace -o table
+   az login
+   ```
+   
+1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in Azure Portal.
+
+   ```dotnetcli
+   az account set -s <Your subscription ID>
+   ```
+   
+1. Use `quantum workspace set` to select the workspace you created above
+   as the default Workspace. Note that you also need to specify the resource
+   group and the location you created it in, for example:
+
+   ```dotnetcli
+   az quantum workspace set -g MyResourceGroup -w MyWorkspace -l westus -o table
 
    Location     Name                               ResourceGroup
    -----------  ---------------------------------  --------------------------------
    westus       ws-yyyyyy                          rg-yyyyyyyyy
 
    ```
-
 1. In your workspace, there are different targets available from the
    providers that you added when you created the workspace. You can display a list of all
    the available targets with the command `az quantum target list -o table`:
