@@ -244,6 +244,10 @@ Total weights:
     Ship B: 53 tonnes
 ```
 
+> [!NOTE]
+> If you run into an error while working with Azure Quantum, you can check our [list of common issues](xref:microsoft.quantum.azure.common-issues).
+
+
 ## Next steps
 
 During this quick-start guide, you have seen an end-to-end example of how to take a mathematical cost function, represent it in code, submit it to Azure Quantum and parse the results. To learn more about the Microsoft QIO offering in Azure Quantum, please see the [Microsoft QIO Provider documentation](xref:microsoft.quantum.optimization.providers.microsoft.qio).
