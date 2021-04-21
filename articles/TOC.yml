@@ -145,8 +145,6 @@
         href: optimization-reuse-problem-definitions.md
       - name: Solve long-running problems
         href: optimization-solve-long-running-problems.md
-      - name: Authenticate using a service principal
-        href: optimization-authenticate-service-principal.md
   - name: Resources 
     items:
     - name: Glossary (Azure Quantum)
@@ -155,6 +153,8 @@
       href: azure-quantum-common-issues.md
     - name: Azure CLI commands
       href: https://docs.microsoft.com/cli/azure/ext/quantum/quantum
+    - name: Authenticate using a service principal
+      href: optimization-authenticate-service-principal.md
 - name: Quantum Development Kit
   items:
   - name: Overview
