@@ -80,7 +80,7 @@ Once you sign into your Azure account, your credentials will be cached so that y
 
 ## Expressing and solving a simple problem
 
-To express a simple problem to be solved, create an instance of a `Problem` and set the `problem_type` to either `ProblemType.ising` or `ProblemType.pubo`. For more information, see [`ProblemType`](xref:microsoft.quantum.optimization.problem-type).
+To express a simple problem to be solved, create an instance of a `Problem` and set the `problem_type` to either `ProblemType.ising` or `ProblemType.pubo`. For more information, see [`ProblemType`](xref:microsoft.quantum.optimization.problem-type). 
 
 ```py
 from azure.quantum.optimization import Problem, ProblemType, Term, ParallelTempering
@@ -121,6 +121,8 @@ This method will submit the problem to Azure Quantum for optimization and synchr
 ```output
 {'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0}
 ```
+> [!NOTE]
+> If you run into an error while working with Azure Quantum, you can check our [list of common issues](xref:microsoft.quantum.azure.common-issues). Also if your are using an optimization solver and you get an error in the form <AZQxxx>, you can check our [list of common user errors in optimization solvers](xref:azure.quantum.optimization.troubleshooting).
 
 ## Next steps
 
