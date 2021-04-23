@@ -24,8 +24,8 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 *Release date: April 22nd, 2021*
 
-- HM type inference algorithm.
-- Added support for empty array literals.
+- Improved Q# type inference based on the Hindley-Milner type inference algorithm.
+- [QEP 2: Enhanced Array Literals](https://github.com/microsoft/qsharp-language/blob/main/Approved/2-enhanced-array-literals.md) has been implemented.
 
 
 ## Version 0.15.2103.133969
