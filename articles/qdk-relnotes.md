@@ -29,7 +29,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 - Added support for NumPy types in coefficient definitions for problems in QIO Python SDK.
 
-- Released v0.X.0 of the Az CLI extension: Updated control-plane CLI with new swagger to [support restricted access SKUs](https://github.com/Azure/azure-rest-api-specs/pull/13002).
+- Released v0.X.0 of the Az CLI extension: Updated control-plane swagger file to [support restricted access SKUs](https://github.com/Azure/azure-rest-api-specs/pull/13002).
 
 ## Version 0.15.2103.133969
 
