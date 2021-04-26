@@ -110,6 +110,9 @@ For more information on how to submit jobs to Azure Quantum, see:
 - [Submit jobs to Azure Quantum using Python](xref:microsoft.quantum.submit-jobs.python).
 - [Submit jobs to Azure Quantum using Q# Jupyter Notebooks](xref:microsoft.quantum.submit-jobs.jupyter)
 
+> [!NOTE]
+> If you run into an error while working with Azure Quantum, you can check our [list of common issues](xref:microsoft.quantum.azure.common-issues).
+
 ## Create and run applications for Basic Measurement Feedback targets
 
 **Basic Measurement Feedback** profile targets can run a wide variety of Q#

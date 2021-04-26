@@ -218,6 +218,9 @@ Eventually, you will see the `Status` in the above table change to `Succeeded`. 
 
 The histogram you receive may be slightly different than the one above, but you should find that the states generally are observed with equal frequency.
 
+> [!NOTE]
+> If you run into an error while working with Azure Quantum, you can check our [list of common issues](xref:microsoft.quantum.azure.common-issues).
+
 ## Next steps
 
 This quickstart guide demonstrated how to get started running Q# programs against Honeywell's simulator and QPU. For more information on Honeywell's offerings, please see the [Honeywell Provider](xref:microsoft.quantum.providers.honeywell) documentation.
