@@ -27,7 +27,6 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Improved Q# type inference based on the Hindley-Milner type inference algorithm.
 - [QEP 2: Enhanced Array Literals](https://github.com/microsoft/qsharp-language/blob/main/Approved/2-enhanced-array-literals.md) has been implemented.
 - Added support for NumPy types in coefficient definitions for problems in QIO Python SDK.
-
 - Updated control-plane swagger file to [support restricted access SKUs](https://github.com/Azure/azure-rest-api-specs/pull/13002).
 
 ## Version 0.15.2103.133969
