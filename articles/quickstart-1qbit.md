@@ -249,7 +249,6 @@ Total weights:
 > [!NOTE]
 > If you run into an error while working with Azure Quantum, you can check our [list of common issues](xref:microsoft.quantum.azure.common-issues).
 
-
 ## Next steps
 
 During this quick-start guide, you have seen an end-to-end example of how to take a mathematical cost function, represent it in code, submit it to Azure Quantum and parse the results. To learn more about the 1QBit offering in Azure Quantum, please see the [1QBit Provider documentation](xref:microsoft.quantum.providers.optimization.1qbit).

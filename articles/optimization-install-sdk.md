@@ -80,7 +80,7 @@ Once you sign into your Azure account, your credentials will be cached so that y
 
 ## Expressing and solving a simple problem
 
-To express a simple problem to be solved, create an instance of a `Problem` and set the `problem_type` to either `ProblemType.ising` or `ProblemType.pubo`. For more information, see [`ProblemType`](xref:microsoft.quantum.optimization.problem-type). 
+To express a simple problem to be solved, create an instance of a `Problem` and set the `problem_type` to either `ProblemType.ising` or `ProblemType.pubo`. For more information, see [`ProblemType`](xref:microsoft.quantum.optimization.problem-type).
 
 ```py
 from azure.quantum.optimization import Problem, ProblemType, Term, ParallelTempering
