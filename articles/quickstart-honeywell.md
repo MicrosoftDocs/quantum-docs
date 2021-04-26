@@ -136,16 +136,29 @@ namespace QuantumRNG {
 
 Next, we'll prepare your environment to run the program against the workspace you created.
 
-1. Use `quantum workspace set` to select the workspace you created above
-   as the default workspace. Note that you also need to specify the resource
-   group you created it in, for example:
+1. Log in to Azure using your credentials. You'll get a list of subscriptions associated with your account.
 
    ```dotnetcli
-   az quantum workspace set -g MyResourceGroup -w MyWorkspace -o table
+   az login
+   ```
+   
+1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in Azure Portal.
 
-   Location     Name                               ResourceGroup
-   -----------  ---------------------------------  --------------------------------
-   westus       ws-yyyyyy                          rg-yyyyyyyyy
+   ```azurecli
+   az account set -s <Your subscription ID>
+   ```
+   
+1. Use `quantum workspace set` to select the workspace you created above
+   as the default Workspace. Note that you also need to specify the resource
+   group and the location you created it in:
+
+   ```azurecli
+   az quantum workspace set -g MyResourceGroup -w MyWorkspace -l MyLocation -o table
+   ```
+   ```output
+    Location    Name         ProvisioningState    ResourceGroup    StorageAccount      Usable
+    ----------  -----------  -------------------  ---------------  ------------------  --------
+    MyLocation  MyWorkspace  Succeeded            MyResourceGroup  /subscriptions/...  Yes
 
    ```
 
@@ -153,13 +166,14 @@ Next, we'll prepare your environment to run the program against the workspace yo
    providers that you added when you created the workspace. You can display a list of all
    the available targets with the command `az quantum target list -o table`:
 
-   ```dotnetcli
+   ```azurecli
    az quantum target list -o table
-
-   Provider    Target-id                                       Status     Average Queue Time
-   ----------  ----------------------------------------------  ---------  --------------------
-   honeywell   honeywell.hqs-lt-1.0                            Available  0
-   honeywell   honeywell.hqs-lt-1.0-apival                     Available  0
+   ```
+   ```output
+   Provider    Target-id                                       Current Availability  Average Queue Time
+   ----------  ----------------------------------------------  --------------------  --------------------
+   honeywell   honeywell.hqs-lt-1.0                            Available             0
+   honeywell   honeywell.hqs-lt-1.0-apival                     Available             0
    ```
 
     > [!NOTE]
@@ -173,9 +187,10 @@ Next, we'll prepare your environment to run the program against the workspace yo
 To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command this will compile and submit your program, but it won't wait until the execution 
 is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long you can run `az quantum target list -o table` as described above.
 
-   ```dotnetcli
+   ```azurecli
    az quantum job submit --target-id honeywell.hqs-lt-1.0 -o table
-
+   ```
+   ```output
    Name        Id                                    Status    Target                Submission time
    ----------  ------------------------------------  --------  --------              ---------------------------------
    QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   honeywell.hqs-lt-1.0  2020-01-12T22:41:27.8855301+00:00
@@ -183,9 +198,10 @@ is complete. We recommend this pattern for running against hardware, because you
 
 The table above shows that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the Id output by the previous command:
 
-   ```dotnetcli
-    az quantum job show -o table --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
-
+   ```azurecli
+   az quantum job show -o table --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
+   ```
+   ```output
    Name        Id                                    Status    Target    Submission time
    ----------  ------------------------------------  --------  --------  ---------------------------------
    QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   honeywell.hqs-lt-1.0  2020-10-22T22:41:27.8855301+00:00 
@@ -195,7 +211,8 @@ Eventually, you will see the `Status` in the above table change to `Succeeded`. 
 
    ```dotnetcli
    az quantum job output -o table --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
-
+   ```
+   ```output
    Result     Frequency
    ---------  -----------  -------------------------
    [0,0,0,0]  0.05200000   ▐█                      |
