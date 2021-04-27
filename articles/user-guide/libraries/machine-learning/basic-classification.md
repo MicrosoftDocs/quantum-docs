@@ -45,7 +45,7 @@ Next, in the same folder we create a host program. Your host program consists of
 
 - Load the dataset `data.json` and choose a set of classifier parameters where you want to start your training iterations for your model.
 - Run training to determine the parameters and bias of the model.
-- After training, validate the model to determine its accuracy
+- After training, validate the model to determine its accuracy.
 
     ### [Python with Visual Studio Code or the Command Line](#tab/tabid-python)
 
