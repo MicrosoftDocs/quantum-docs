@@ -21,7 +21,7 @@ In this guide we will train a simple sequential model using a classifier structu
 
 - The Microsoft [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 - Create a Q# project for either a [Python host program](xref:microsoft.quantum.install-qdk.overview.python) or a [C# host program](xref:microsoft.quantum.install-qdk.overview.cs).
-- To add the [Microsoft.Quantum.MachineLearning](https://www.nuget.org/packages/Microsoft.Quantum.MachineLearning) package to your Q# project, run the following command:
+- To add the [Microsoft.Quantum.MachineLearning](https://www.nuget.org/packages/Microsoft.Quantum.MachineLearning) package to your Q# project, run the following command from the root of your project folder:
 
 ```dotnetcli
 dotnet add package Microsoft.Quantum.MachineLearning
