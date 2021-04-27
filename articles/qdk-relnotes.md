@@ -20,9 +20,9 @@ For installation instructions, please refer to the [install guide](xref:microsof
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
 
-## Version 0.16.xxxx.xxxxxx
+## Version 0.16.2104.138035
 
-*Release date: April 22nd, 2021*
+*Release date: April 27th, 2021*
 
 - Improved Q# type inference based on the Hindley-Milner type inference algorithm.
 - [QEP 2: Enhanced Array Literals](https://github.com/microsoft/qsharp-language/blob/main/Approved/2-enhanced-array-literals.md) has been implemented.
