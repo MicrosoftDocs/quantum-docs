@@ -25,9 +25,11 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 *Release date: April 27th, 2021*
 
 - Improved Q# type inference based on the Hindley-Milner type inference algorithm.
-- [QEP 2: Enhanced Array Literals](https://github.com/microsoft/qsharp-language/blob/main/Approved/2-enhanced-array-literals.md) has been implemented.
 - Added support for NumPy types in coefficient definitions for problems in QIO Python SDK.
 - Updated control-plane swagger file to [support restricted access SKUs](https://github.com/Azure/azure-rest-api-specs/pull/13002).
+- Added new `StreamingProblem` class in QIO Python SDK. It supports the same interface for adding terms to a problem definition as the `Problem` class. However, once terms are added to the problem they are queued to be uploaded by a background thread and are not kept in memory for future reference.
+- Restored the packages size of Microsoft.Quantum.Sdk and Microsoft.Quantum.Compiler back to normal. (See related note in 0.15.2103.133969)
+- Improved compiler performance.
 
 ## Version 0.15.2103.133969
 
