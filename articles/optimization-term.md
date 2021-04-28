@@ -29,12 +29,12 @@ To create a `Term` object, you specify the following parameters:
  For instance, the term $2 \cdot (x_1 \cdot x_2)$ translates to the following object: 
  
  ```py
- Term(c=2, indices=[1,2]).
+ Term(c=2, indices=[1,2])
 ```
 
  Or, the term $3 \cdot (x_0 \cdot x_1 \cdot x_2)$ translates to the following object:
   ```py
- Term(c=3, indices=[0,1,2]).
+ Term(c=3, indices=[0,1,2])
 ```
 
 For more information on cost functions and how terms relate to a problem definition, see [Cost functions](https://docs.microsoft.com/azure/quantum/optimization-concepts-cost-functions).
