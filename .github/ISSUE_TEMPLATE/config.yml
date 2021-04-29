@@ -1,8 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Azure Quantum docs issues
-    url: https://github.com/MicrosoftDocs/quantum-docs/issues
-    about: Use this current repository for issues related to the Azure Quantum documentation. Click *Get started* above. 
   - name: Azure Quantum technical support issues
     url: https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest
     about: Request technical support for Azure Quantum and optimization issues here. 
