@@ -10,8 +10,8 @@ contact_links:
     url: https://feedback.azure.com/forums/932905-azure-quantum
     about: Use the feedback forum to request new features for Azure Quantum
   - name: Q# programming language issues
-    url: https://github.com/microsoft/qsharp-language/issues
+    url: https://github.com/microsoft/qsharp-language/issues/new/choose
     about: Post an issue about the Q# programming language here.
   - name: Quantum Development Kit (QDK) issues
-    url: https://github.com/microsoft/qsharp-runtime/issues
+    url: https://github.com/microsoft/qsharp-runtime/issues/new/choose
     about: Post an issue about the QDK runtime library here.
