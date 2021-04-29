@@ -14,6 +14,8 @@ uid: microsoft.quantum.optimization.concepts.overview.introduction
 
 At its simplest, optimization is just the process of selecting the best choice from a set of possible options.
 
+![alt_text=Infographic presenting Optimization within the Azure Quantum service.](./media/optimization-infographic.png)
+
 We can define *best* in many ways: it could be the option with the lowest cost, the quickest runtime or perhaps the lowest environmental impact. To keep things simple, we usually just refer to this definition of best as a cost to be minimized. If we wanted to maximize the cost instead (for example, if we wanted to maximize energy output from a solar cell), all we would need to do is multiply the cost by negative one and then minimize it.
 
 Usually when we say we have an optimization problem, we mean we have a pretty complicated one, where lots of variables can interact in many ways to influence the final cost. We call a particular arrangement of the variables the *configuration* of the problem.

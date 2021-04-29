@@ -190,7 +190,7 @@ solver = ParallelTempering(workspace, timeout=100) # timeout in seconds
 result = solver.optimize(problem)
 ```
 
-Here you created an instance of a `ParallelTempering` solver for the problem. You could have chosen other Microsoft QIO optimization solvers (for example, `SimulatedAnnealing`) without needing to change more lines of code. To see a list of the available solvers, go to the [reference page](xref:microsoft.quantum.reference.target-list#provider-microsoft-qio).
+Here you created an instance of a `ParallelTempering` solver for the problem. You could have chosen other Microsoft QIO optimization solvers (for example, `SimulatedAnnealing`) without needing to change more lines of code. To see a list of the available solvers, go to the [reference page](xref:microsoft.quantum.reference.qio-target-list#provider-microsoft-qio).
 
 The type `Problem` is the common parameter for all the solvers of Azure Quantum.
 
