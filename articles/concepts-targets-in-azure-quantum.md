@@ -50,4 +50,4 @@ Quantum devices are still an emerging technology, and not all of them can run al
 
 ## Next steps
 
-You can find a complete list of the Azure Quantum targets in the article [List of targets of Azure Quantum](xref:microsoft.quantum.reference.target-list).
+You can find a complete list of the Azure Quantum targets for quantum computing [here](xref:microsoft.quantum.reference.qc-target-list) and for optimization [here](xref:microsoft.quantum.reference.qio-target-list). 

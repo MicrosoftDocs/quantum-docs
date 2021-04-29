@@ -77,7 +77,7 @@ landingContent:
       - linkListType: learn
         links:
           - text: Overview of optimization solvers
-            url: xref:microsoft.quantum.reference.target-list#optimization-targets
+            url: xref:microsoft.quantum.reference.qio-target-list
           - text: Microsoft Learn modules for optimization
             url: https://docs.microsoft.com/learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
 

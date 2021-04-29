@@ -13,7 +13,9 @@ uid: microsoft.quantum.overview.qdk-overview
 
 # What is quantum computing?
 
-Harnessing the unique behavior of quantum physics and applying it to computing, quantum computers introduce new concepts to traditional programming methods, making use of quantum physics behaviors such as superposition, entanglement, and quantum interference. 
+Harnessing the unique behavior of quantum physics and applying it to computing, quantum computers introduce new concepts to traditional programming methods, making use of quantum physics behaviors such as superposition, entanglement, and quantum interference.
+
+![alt_text=Infographic presenting quantum computing service under the Azure Quantum service.](./media/quantum-computing-infographic.png)
 
 Quantum computing holds the promise to solve some of our planet's biggest challenges - in the areas of environment, agriculture, health, energy, climate, materials science, and others we haven't encountered yet. For some of these problems, even our most powerful computers run into problems. While quantum technology is just beginning to impact the computing world, it could be far-reaching and change the way we think about computing.
 
