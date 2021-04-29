@@ -1,0 +1,21 @@
+name: Broken links scan of quantum-docs
+on:
+  push:
+    branches:
+    - live
+  
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run broken link scanner
+      run: |
+       $urls = (Get-ChildItem -include *.md, *.yml -exclude *provider-ionq.md*, *README.md* -Attributes !Directory -Path ./ -Recurse | ? { $_.FullName -inotmatch 'language' })
+       .github\scripts\Verify-Links.ps1 -urls $urls -recursive $false
+       
+      
+      shell: pwsh
