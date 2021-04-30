@@ -57,7 +57,7 @@ jobs:
 Comments:
 
 - We use the parameters of the `Get-ChildItem` cmdlet to curate the list of paths. You can use alternative the parameters of the `Verify-Links.ps1` script. 
-  we removed some files from the list to avoid false-positives.
+  we removed some files from the list to avoid false-positives:
     - [articles\provider-ionq.md](https://github.com/MicrosoftDocs/quantum-docs-private/blob/quantum-docs-scan/articles/provider-ionq.md) because the link https://ionq.com/best-practices 
       was giving a false 404 of unknown origin.
     - All the `README.md` fies, since some of them contain links to private repositories that the program flags as 404, and for example, this one host links that the program falls
