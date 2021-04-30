@@ -70,4 +70,61 @@ Comments:
 
 ### The GitHub action for `MicrosoftDocs\learn-pr\learn-pr\quantum`
 
-In construction...
+You can find the GitHub action to scan the `MicrosoftDocs\learn-pr\learn-pr\quantum` directory [here](https://github.com/MicrosoftDocs/quantum-docs-private/blob/main/.github/workflows/broken-links-MSLearn.yml).
+The `YAML` commands for the action are:
+
+```
+name: Broken link scan of MS Learn quantum
+on:
+  push:
+    branches:
+    - live
+  
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout local repo
+      uses: actions/checkout@v2
+      with:
+        path: main
+    - name: Checkout learn repo
+      uses: actions/checkout@v2
+      with:
+        repository: MicrosoftDocs/learn-pr
+        token: ${{ secrets.ACCESS_TOKEN }}
+        path: learn-pr
+    - name: Run broken link scanner
+      run: |
+       $urls = (Get-ChildItem -include *.md, *.yml -Attributes !Directory -Path ./learn-pr/learn-pr/quantum -Recurse)
+       .\main\.github\scripts\Verify-Links.ps1 -urls $urls -rootUrl https://docs.microsoft.com -recursive $false
+        
+      shell: pwsh
+```
+
+Comments:
+
+- In this action we need to access two different repositories, so the structure is slightly different. We use the GH action [actions/checkout@v2](https://github.com/actions/checkout) to handle multiple repos and we specify relative path to root for each repo.
+- The **MicrosoftDocs\learn-pr** repo is a private with a SSO authentication protocol, so in order for the Ubuntu instance to access the repo we need to set a Personal Access Token with access to private repositories and grant it *MicrosofDocs* SSO authentication privileges. This token is added to the Secrets of the quantum-docs-private repository. Currently the token uses @KittyYeungQ credentials.
+- Microsft Learn uses relative links with rootUrl `https://docs.microsoft.com`. To scan correctly those links we just need to add it to the parameters of the `Verify-Links.ps1` script.
+
+## How to use it
+
+The broken links scan will trigger each time that a commit is pushed to the branch `live` of this repo. The scan currently takes around 5min to complete. In order to see the results of the scan you need to go to the branch `live` in the GitHub web client.
+
+![image](https://user-images.githubusercontent.com/48300381/116709755-47a22600-a9d1-11eb-9ba4-adb66eb1cc83.png)
+
+If there is a green checkmark (:heavy_check_mark:) it means that all the GH Actions succeeded and no link is broken.
+
+If there is a broken link, a red cross (:x:) will appear. To find the broken links click on the :x: and see which GH action failed.
+
+![image](https://user-images.githubusercontent.com/48300381/116713347-fd22a880-a9d4-11eb-8403-773c13089955.png)
+
+Click on `Details` of failed check(s) to go to the GH Action register. 
+
+![image](https://user-images.githubusercontent.com/48300381/116713656-4a9f1580-a9d5-11eb-9a9f-5386a068bf8c.png)
+
+Under `Run broken links scanner` you will find the output of the script and a summary report for the broken links that the program found.
