@@ -128,7 +128,7 @@ This method will submit the problem to Azure Quantum for optimization and synchr
 
 ### Documentation
 
-- [Solver overview](xref:microsoft.quantum.reference.target-list#optimization-targets)
+- [Solver overview](xref:microsoft.quantum.reference.qio-target-list)
 - [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)
 - [Interpreting solver results](xref:microsoft.quantum.optimization.understand-solver-results)
 - [Job management](xref:microsoft.quantum.optimization.job-management)

@@ -7,8 +7,6 @@
     items:
     - name: Introduction to Azure Quantum 
       href: overview-azure-quantum.md
-  - name: Get started
-    items:
     - name: Targets
       href: concepts-targets-in-azure-quantum.md
     - name: Prepare your environment
@@ -19,23 +17,15 @@
         href: how-to-create-quantum-workspaces-with-the-azure-portal.md
       - name: Manage quantum workspaces with the Azure CLI 
         href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
-  - name: Quickstarts
+  - name: Quantum Computing
     items:
-    - name: Quantum computing
+    - name: Quickstarts
       items:
       - name: IonQ quickstart
         href: quickstart-ionq.md
       - name: Honeywell quickstart
         href: quickstart-honeywell.md  
-    - name: Optimization
-      items:
-      - name: Microsoft QIO quickstart
-        href: quickstart-microsoft-qio.md
-      - name: 1QBit quickstart
-        href: quickstart-1qbit.md 
-  - name: How-to guides
-    items:
-    - name: Quantum Computing
+    - name: How-to guides
       items:
       - name: Create and run Q# applications in Azure Quantum
         href: how-to-create-applications-for-azure-quantum.md
@@ -47,22 +37,8 @@
             href: how-to-submit-jobs-with-jupyter-notebooks.md
           - name: Submit jobs with Python
             href: how-to-submit-jobs-with-python.md
-    - name: Optimization
-      items:
-      - name: Install and use the Python SDK for optimization
-        href: optimization-install-sdk.md
-      - name: Troubleshoot optimization solvers
-        href: optimization-troubleshooting.md
-  - name: Resources 
-    items:
-    - name: Glossary (Azure Quantum)
-      href: azure-quantum-glossary.md
-    - name: Common issues
-      href: azure-quantum-common-issues.md
-  - name: Reference
-    items:
     - name: Providers
-      href: reference-target-list.md
+      href: qc-target-list.md
       items:
       - name: IonQ
         items:
@@ -76,6 +52,41 @@
           href: provider-honeywell.md
         - name: Honeywell support policy
           href: provider-support-honeywell.md
+  - name: Optimization
+    items:
+    - name: Quickstarts
+      items:
+      - name: Install and use the Python SDK for optimization
+        href: optimization-install-sdk.md
+      - name: Microsoft QIO quickstart
+        href: quickstart-microsoft-qio.md
+      - name: 1QBit quickstart
+        href: quickstart-1qbit.md 
+    - name: How-to guides
+      items:
+      - name: Install and use the Python SDK for optimization
+        href: optimization-install-sdk.md
+      - name: Troubleshoot optimization solvers
+        href: optimization-troubleshooting.md
+    - name: Concepts
+      items:
+      - name: Introduction to optimization
+        href: optimization-overview-introduction.md
+      - name: What is quantum inspired optimization (QIO)?
+        href: optimization-what-is-quantum-optimization.md
+      - name: Key concepts
+        href: optimization-overview-key-concepts.md 
+      - name: Which solver should you use?
+        href: optimization-which-solver-should-you-use.md
+      - name: Binary optimization (QUBOs & PUBOs)
+        href: optimization-binary-optimization.md
+      - name: Ising model
+        href: optimization-concepts-ising-model-for-optimization.md
+      - name: Cost functions
+        href: optimization-concepts-cost-functions.md
+    - name: Providers
+      href: qio-target-list.md
+      items:
       - name: 1QBit
         items:
         - name: 1QBit provider & targets
@@ -94,7 +105,13 @@
           href: optimization-tabu-search.md
         - name: Quantum Monte Carlo
           href: optimization-quantum-monte-carlo.md
-    - name: Python-SDK
+    - name: Tutorials
+      items:
+      - name: Samples for using Azure Quantum optimization solvers 
+        href: https://github.com/microsoft/qio-samples
+      - name: Build your skills with MS Learn
+        href: https://docs.microsoft.com/learn/paths/quantum-computing-fundamentals/
+    - name: Python SDK
       items:
       - name: Azure.Quantum
         items:
@@ -102,46 +119,48 @@
           href: optimization-workspace.md
       - name: Azure.Quantum.Optimization
         items:
-        - name: Reference
-          items:
-          - name: Job
-            href: optimization-job-reference.md
-          - name: Problem
-            href: optimization-problem.md
-          - name: ProblemType
-            href: optimization-problem-type.md
-          - name: StreamingProblem
-            href: optimization-streaming-problem.md
-          - name : Solver inputs
-            href: optimization-input-formats.md
-          - name: Term
-            href: optimization-term.md
-        - name: Usage
-          items:
-          - name: Express a problem
-            href: optimization-express-optimization-problem.md
-          - name: Apply a solver
-            href: optimization-usage-problem-apply-solver-to-optimization.md
-          - name: Understand solver results
-            href: optimization-understand-solver-results.md
-          - name: Job management
-            href: optimization-job-management.md
-          - name: Re-use problem definitions
-            href: optimization-reuse-problem-definitions.md
-          - name: Solve long-running problems
-            href: optimization-solve-long-running-problems.md
-          - name: Authenticate using a service principal
-            href: optimization-authenticate-service-principal.md
-    - name: Azure CLI
+        - name: Job
+          href: optimization-job-reference.md
+        - name: Problem
+          href: optimization-problem.md
+        - name: ProblemType
+          href: optimization-problem-type.md
+        - name: StreamingProblem
+          href: optimization-streaming-problem.md
+        - name : Solver inputs
+          href: optimization-input-formats.md
+        - name: Term
+          href: optimization-term.md
+      - name: Usage
+        items:
+        - name: Express a problem
+          href: optimization-express-optimization-problem.md
+        - name: Apply a solver
+          href: optimization-usage-problem-apply-solver-to-optimization.md
+        - name: Understand solver results
+          href: optimization-understand-solver-results.md
+        - name: Job management
+          href: optimization-job-management.md
+        - name: Re-use problem definitions
+          href: optimization-reuse-problem-definitions.md
+        - name: Solve long-running problems
+          href: optimization-solve-long-running-problems.md
+  - name: Resources 
+    items:
+    - name: Glossary (Azure Quantum)
+      href: azure-quantum-glossary.md
+    - name: Common issues
+      href: azure-quantum-common-issues.md
+    - name: Azure CLI commands
       href: https://docs.microsoft.com/cli/azure/ext/quantum/quantum
+    - name: Authenticate using a service principal
+      href: optimization-authenticate-service-principal.md
 - name: Quantum Development Kit
   items:
   - name: Overview
     items:
     - name: Introduction to quantum computing
       href: overview-qdk.md
-    - name: Introduction to optimization
-      href: optimization-overview-introduction.md
     - name: Key concepts for quantum computing
       items: 
       - name: Understanding quantum computing
@@ -152,20 +171,10 @@
         href: overview-what-is-qsharp-and-qdk.md
       - name: Linear algebra for quantum computing
         href: overview-algebra-for-quantum-computing.md
-    - name: Key concepts for optimization
-      items:
-      - name: What is quantum inspired optimization (QIO)?
-        href: optimization-what-is-quantum-optimization.md
-      - name: Learn the basics
-        href: optimization-overview-key-concepts.md 
   - name: Get started
     items:
-    - name: Set up the QDK
-      href: install-overview-qdk.md
-  - name: Quantum Computing
-    items:
-    - name: Getting started 
-      items:
+      - name: Set up the QDK
+        href: install-overview-qdk.md
       - name: Get started with the QDK
         href: install-get-started-qdk.md
       - name: Q# applications
@@ -178,10 +187,10 @@
         href: install-csharp-qdk.md
       - name: Q# with Binder
         href: install-binder-qdk.md
-    - name: Update the QDK
-      href: install-update-qdk.md
-    - name: Tutorials
-      items:
+      - name: Update the QDK
+        href: install-update-qdk.md
+  - name: Tutorials
+    items:
       - name: Quantum random number generator
         href: tutorial-qdk-quantum-random-number-generator.md
       - name: Explore entanglement with Q#
@@ -194,8 +203,8 @@
         href: tutorial-qdk-intro-to-katas.md
       - name: Q# code samples
         href: https://docs.microsoft.com/samples/browse/?languages=qsharp
-    - name: Concepts
-      items:
+  - name: Concepts
+    items:
       - name: "Quantum computing history & background"
         href: concepts-overview.md
       - name: Vectors and matrices
@@ -216,28 +225,8 @@
         href: concepts-oracles.md
       - name: Theory of Grover's algorithm
         href: concepts-grovers.md
-    - name: Glossary
-      href: qdk-glossary.md
-  - name: Optimization
-    items:
-    - name: Getting started
-      items:
-      - name: Install and use the Python SDK for optimization
-        href: optimization-install-sdk.md
-    - name: Concepts
-      items:
-      - name: Which solver should you use?
-        href: optimization-which-solver-should-you-use.md
-      - name: Cost functions
-        href: optimization-concepts-cost-functions.md
-      - name: Ising model
-        href: optimization-concepts-ising-model-for-optimization.md
-      - name: Binary optimization (QUBOs & PUBOs)
-        href: optimization-binary-optimization.md
-    - name: Tutorials
-      items:
-      - name: Samples for using Azure Quantum optimization solvers 
-        href: https://github.com/microsoft/qio-samples
+  - name: Glossary
+    href: qdk-glossary.md
   - name: Resources
     items:
     - name: Build your skills with MS Learn
