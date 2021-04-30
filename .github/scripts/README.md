@@ -63,7 +63,7 @@ Comments:
     - All the `README.md` fies, since some of them contain links to private repositories that the program flags as 404, and for example, this one host links that the program falls
       as broken.
     - All the files from the [`user-guide\language`](https://github.com/MicrosoftDocs/quantum-docs-private/tree/main/articles/user-guide/language) directory. The content of those
-      files is not stored in our repository and is maintained by other team. Also, the script flags the include files as broken links.
+      files is not stored in our repository and is maintained by other team. Also, the script flags the include links of the stub files as broken links.
 
 > 📝
 > For more information on the `Get-ChildItem` cmdlet, visit the [official documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1)
