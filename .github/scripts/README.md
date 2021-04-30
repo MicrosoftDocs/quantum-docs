@@ -109,7 +109,7 @@ Comments:
 
 - In this action we need to access two different repositories, so the structure is slightly different. We use the GH action [actions/checkout@v2](https://github.com/actions/checkout) to handle multiple repos and we specify relative path to root for each repo.
 - The **MicrosoftDocs\learn-pr** repo is a private with a SSO authentication protocol, so in order for the Ubuntu instance to access the repo we need to set a Personal Access Token with access to private repositories and grant it *MicrosofDocs* SSO authentication privileges. This token is added to the Secrets of the quantum-docs-private repository. Currently the token uses @KittyYeungQ credentials.
-- Microsft Learn uses relative links with rootUrl `https://docs.microsoft.com`. To scan correctly those links we just need to add it to the parameters of the `Verify-Links.ps1` script.
+- Microsft Learn uses relative links with rootUrl `https://docs.microsoft.com`. To scan correctly those links we just need to add it to the parameters of the `Verify-Links.ps1` script. 
 
 ## How to use it
 
