@@ -88,11 +88,11 @@ If you would like to use a different editor, the instructions above have you all
 
 Now you are ready to verify your `qsharp` Python package installation by writing and running a simple Q# program.
 
-1. Create a minimal Q# operation by creating a file called `Operation.qs` and adding the following code to it:
+1. Open Visual Studio Code and create a minimal Q# operation by creating a file called `Operation.qs` and adding the following code to it:
 
     :::code language="qsharp" source="~/quantum/samples/interoperability/qrng/Qrng.qs" range="3-14":::
 
-1. In the same folder as `Operation.qs`, create a Python program called `host.py` to simulate the Q# `SampleQuantumRandomNumberGenerator()` operation:
+1. In the same folder as `Operation.qs`, create a Python program called `host.py` to simulate the Q# `SampleQuantumRandomNumberGenerator()` operation that is defined in `Operation.qs`:
 
     ```python
     import qsharp
@@ -100,10 +100,11 @@ Now you are ready to verify your `qsharp` Python package installation by writing
 
     print(SampleQuantumRandomNumberGenerator.simulate())
     ```
+1. Change the Python interpreter to Anaconda. To do that, on the *View* menu select *Command Palette*. Enter *Python:Select Interpreter* and choose the Pyhton interpreter on the `qsharp-env` that you created. You should see that the interpreter has change at the bottom left corner of the window. 
 
-1. From the environment you created during installation (that is, the conda or Python environment where you installed `qsharp`), run the program:
+1. From the cmd terminal, you should see that `qsharp-env` is now activated. Otherwise, go to the environment directory and activate it `conda activate qsharp-env`. run the program:
 
-    ```
+    ```cmd
     python host.py
     ```
 
