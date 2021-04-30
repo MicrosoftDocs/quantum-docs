@@ -113,7 +113,7 @@ Comments:
 
 ## How to use it
 
-The broken links scan will trigger each time that a commit is pushed to the branch `live` of this repo. The scan currently takes around 5min to complete. In order to see the results of the scan you need to go to the branch `live` in the GitHub web client.
+The broken links scan will trigger each time that a commit is pushed to the `live` branch of this repo. The scan currently takes around 5min to complete. In order to see the results of the scan you need to go to the branch `live` in the GitHub web client.
 
 ![image](https://user-images.githubusercontent.com/48300381/116709755-47a22600-a9d1-11eb-9ba4-adb66eb1cc83.png)
 
