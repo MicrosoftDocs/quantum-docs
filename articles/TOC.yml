@@ -180,7 +180,7 @@
       - name: Q# applications
         href: install-command-line-qdk.md
       - name: Q# with Jupyter Notebooks
-        href: install-jupyter-qkd.md
+        href: install-jupyter-qdk.md
       - name: Q# with Python
         href: install-python-qdk.md
       - name: Q# with .NET
