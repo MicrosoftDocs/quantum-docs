@@ -25,17 +25,17 @@ Azure Quantum offers optimization targets to solve binary optimization problems 
 
 An iterative heuristic algorithm that uses local search techniques to solve a QUBO problem. It starts from a random solution and looks for an improved solution in the solution's neighborhood which includes all possible single flips. The algorithm stops when it reaches a stopping criterion, such as a specified number of consecutive iterations without improvement.
 
-For more information, go to the [1QBit provider reference page](xref:microsoft.quantum.providers.optimization.1qbit#:pticm-solver).
+For more information, go to the [1QBit provider reference page](xref:microsoft.quantum.providers.optimization.1qbit#tabu-search-solver).
 
 ### 1QBit PTICM Solver
 
 The parallel tempering with isoenergetic cluster moves (PTICM) solver is a Monte Carlo approach to solving QUBO problems. In this algorithm, multiple replicas of the original system, each with a different initial state, are simulated at different temperatures simultaneously. The replicas at neighboring temperatures are periodically swapped based on a Metropolis criterion. These swaps allow different replicas to do a random walk in the temperature space, thereby, efficiently overcoming energy barriers.
 
-For more information, go to the [1QBit provider reference page](xref:microsoft.quantum.providers.optimization.1qbit).
+For more information, go to the [1QBit provider reference page](xref:microsoft.quantum.providers.optimization.1qbit#pticm-solver).
 
 ### 1QBit Path-Relinking Solver
 
-The parallel tempering with isoenergetic cluster moves (PTICM) solver is a Monte Carlo approach to solving QUBO problems. In this algorithm, multiple replicas of the original system, each with a different initial state, are simulated at different temperatures simultaneously. The replicas at neighboring temperatures are periodically swapped based on a Metropolis criterion. These swaps allow different replicas to do a random walk in the temperature space, thereby, efficiently overcoming energy barriers.
+The path-relinking algorithm is a heuristic algorithm that uses the tabu search as a subroutine to solve a QUBO problem. The algorithm starts from a set of elite solutions found by the tabu search. It then constructs a path between each pair of elite solutions, selects one of the solutions along the path, and repeats the tabu search. If the tabu search finds a distinct solution that is better than the current worst elite solution, the elite solutions set is updated with the new improved solution. This whole procedure is repeated until the algorithm meets a stopping condition.
 
 For more information, go to the [1QBit provider reference page](xref:microsoft.quantum.providers.optimization.1qbit#path-relinking-solver).
 
@@ -44,6 +44,7 @@ For more information, go to the [1QBit provider reference page](xref:microsoft.q
 ![alt_text=logo of Microsoft](~/media/logo-microsoft.png)
 
 For an overview of the Microsoft QIO solvers available, please refer to the [Microsoft QIO overview page](xref:microsoft.quantum.optimization.providers.microsoft.qio).
+
 ### Simulated Annealing
 
 Rephrases the optimization problem as a thermodynamic system and considers the energy of a single system. Changes to the system are accepted if they decrease the energy or meet a criterion based on decreasing temperature. This target can be run on CPU or FPGA hardware. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.simulated-annealing).
