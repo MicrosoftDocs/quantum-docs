@@ -2,8 +2,8 @@
 1_ProgramStructure/2_TypeDeclarations.md,microsoft.quantum.qsharp.typedeclarations
 1_ProgramStructure/3_CallableDeclarations.md,microsoft.quantum.qsharp.callabledeclarations
 1_ProgramStructure/4_SpecializationDeclarations.md,microsoft.quantum.qsharp.specializationdeclarations
-1_ProgramStructure/5_Attributes.md,microsoft.quantum.qsharp.attributes
-1_ProgramStructure/6_AccessModifiers.md,microsoft.quantum.qsharp.accessmodifiers
+1_ProgramStructure/5_Attributes.md,microsoft.quantum.qsharp.programstructure-overview
+1_ProgramStructure/6_AccessModifiers.md,microsoft.quantum.qsharp.programstructure-overview
 1_ProgramStructure/7_Comments.md,microsoft.quantum.qsharp.comments
 1_ProgramStructure/README.md,microsoft.quantum.qsharp.programstructure-overview
 1_ProgramStructure,microsoft.quantum.qsharp.programstructure-overview
@@ -24,7 +24,7 @@
 3_Expressions/LogicalExpressions.md,microsoft.quantum.qsharp.logicalexpressions
 3_Expressions/ItemAccessExpressions.md,microsoft.quantum.qsharp.itemaccessexpression
 3_Expressions/README.md,microsoft.quantum.qsharp.expressions-overview
-3_Expressions/Identifiers.md,microsoft.quantum.qsharp.identifiers
+3_Expressions/Identifiers.md,microsoft.quantum.qsharp.expressions-overview
 3_Expressions/FunctorApplication.md,microsoft.quantum.qsharp.functorapplication
 3_Expressions/CopyAndUpdateExpressions.md,microsoft.quantum.qsharp.copyandupdateexpressions
 3_Expressions/ContextualExpressions.md,microsoft.quantum.qsharp.contextualexpressions
@@ -35,7 +35,7 @@
 3_Expressions/ArithmeticExpressions.md,microsoft.quantum.qsharp.arithmeticexpressions
 3_Expressions,microsoft.quantum.qsharp.expressions-overview
 4_TypeSystem/TypeParameterizations.md,microsoft.quantum.qsharp.typeparameterizations
-4_TypeSystem/TypeInference.md,microsoft.quantum.qsharp.typeinference
+4_TypeSystem/TypeInference.md,microsoft.quantum.qsharp.typesystem-overview
 4_TypeSystem/SubtypingAndVariance.md,microsoft.quantum.qsharp.subtypingandvariance
 4_TypeSystem/SingletonTupleEquivalence.md,microsoft.quantum.qsharp.singletontupleequivalence
 4_TypeSystem/QuantumDataTypes.md,microsoft.quantum.qsharp.quantumdatatypes
