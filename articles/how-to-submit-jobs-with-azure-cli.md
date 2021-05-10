@@ -36,7 +36,7 @@ the different providers of your Azure Quantum workspace.
 
 1. Log in to Azure using your credentials. You'll get a list of subscriptions associated with your account.
 
-   ```dotnetcli
+   ```azurecli
    az login
    ```
 
@@ -60,6 +60,7 @@ the different providers of your Azure Quantum workspace.
    ```azurecli
    az quantum workspace set -g MyResourceGroup -w MyWorkspace -l MyLocation -o table
    ```
+
    ```ouput
 
    Location     Name                               ResourceGroup
@@ -78,6 +79,7 @@ the different providers of your Azure Quantum workspace.
    ```azurecli
    az quantum target list -o table
    ```
+
    ```output
       Provider    Target-id                                       Status     Average Queue Time
    ----------  ----------------------------------------------  ---------  --------------------
@@ -97,6 +99,7 @@ the different providers of your Azure Quantum workspace.
    ```azurecli
    az quantum job submit --target-id MyProvider.MyTarget
    ```
+
    ```output
    Id                                    State    Target               Submission time
    ------------------------------------  -------  -------------------  ---------------------------------
@@ -110,6 +113,7 @@ the different providers of your Azure Quantum workspace.
    ```azurecli
    az quantum job show -j yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
    ```
+
    ```output
    Id                                    State      Target               Submission time
    ------------------------------------  ---------  -------------------  ---------------------------------
@@ -126,6 +130,7 @@ the different providers of your Azure Quantum workspace.
    ```azurecli
     az quantum job output -j yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
    ```
+
    ```output
     Result    Frequency
     --------  -----------  -------------------------
@@ -186,6 +191,7 @@ workspace, use the command `az quantum job submit`:
 ```azurecli
 az quantum job submit --target-id ionq.simulator --job-name ExampleJob -o table
 ```
+
 ```output
 Name   Id                                    Status    Target          Submission time
 -----  ------------------------------------  --------  --------------  ---------------------------------
@@ -199,6 +205,7 @@ job output` to view the results:
 ```azurecli
 az quantum job output -j yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
 ```
+
 ```output
 Result    Frequency
 --------  -----------  -------------------------
@@ -215,6 +222,7 @@ returning the results of a run.
 ```azurecli
 az quantum execute --target-id ionq.simulator --job-name ExampleJob2 -o table
 ```
+
 ```output
 Result    Frequency
 --------  -----------  -------------------------
