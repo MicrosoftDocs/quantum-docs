@@ -79,18 +79,16 @@ The goal is to find the configuration that yields the lowest possible value of $
 > [!NOTE]
 > For a detailed walkthrough of the problem scenario and how the cost function is constructed, please refer to the [sample](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/) and/or the associated [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/).
 
-## Install the Python SDK for optimization
+## Install the Python SDK for Azure Quantum
 
-To implement a solution, first ensure that you have the Python SDK for optimization installed on your machine. If you haven't
-installed the Python SDK for optimization already, follow these steps:
+To implement a solution, first ensure that you have the Python SDK for Azure Quantum installed on your machine. If you don't have it installed yet, follow these steps:
 
 1. Install [Python](https://www.python.org/downloads/) 3.6 or later in case you haven't already.
 1. Install [PIP](https://pip.pypa.io/en/stable/) and ensure you have **version 19.2 or higher**.
 1. Install the `azure-quantum` python package.
 
-   ```bash
-   pip install --upgrade azure-quantum --pre
-   pip install azure-storage-blob --upgrade
+   ```Shell
+   pip install --upgrade azure-quantum
    ```
 
 ## Create a `Workspace` object in your Python code and log in

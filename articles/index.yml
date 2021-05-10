@@ -72,7 +72,7 @@ landingContent:
           url: optimization-what-is-quantum-optimization.md
       - linkListType: how-to-guide 
         links:
-          - text: Install the Python SDK for optimization
+          - text: Install the Python SDK for Azure Quantum
             url: optimization-install-sdk.md
       - linkListType: learn
         links:
