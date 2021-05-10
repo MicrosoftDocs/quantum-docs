@@ -1,5 +1,5 @@
 ---
-title: Which optimization solver should I use?
+title: Which optimization solver should you use?
 description: This document provides a basic guide on which solvers to use in Azure Quantum.
 author: quantumrandom
 ms.author: dasteige
@@ -10,7 +10,7 @@ ms.topic: conceptual
 uid: microsoft.quantum.optimization.choose-solver
 ---
 
-# Which optimization solver should I use?
+# Which optimization solver should you use?
 
 Azure Quantum offers a broad range of solvers for optimization problems. You can consult the full list in the [reference page](xref:microsoft.quantum.reference.qio-target-list). However, it is unfortunately not possible to determine *a priori* which solver will perform best for a new optimization problem. In the following, we describe our suggested strategy to find a suitable solver by benchmarking.
 
