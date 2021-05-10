@@ -20,6 +20,13 @@ For installation instructions, please refer to the [install guide](xref:microsof
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
 
+## Version 0.16.2105.140472
+
+*Release date: May 10th, 2021*
+
+- Fixed dependency issue in IQSharp on System.Text.Json when submitting jobs to Azure Quantum. See related [pull request](https://github.com/microsoft/iqsharp/pull/429) for details.
+- Resolved issue affecting joint measurements of multi-qubit states on some combinations of Pauli basis resulting in incorrect values. For details, please refer to issue [qsharp-runtime#680](https://github.com/microsoft/qsharp-runtime/issues/680).
+
 ## Version 0.16.2104.138035
 
 *Release date: April 27th, 2021*
@@ -30,6 +37,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Added new `StreamingProblem` class in QIO Python SDK. It supports the same interface for adding terms to a problem definition as the `Problem` class. However, once terms are added to the problem they are queued to be uploaded by a background thread and are not kept in memory for future reference.
 - Restored the packages size of Microsoft.Quantum.Sdk and Microsoft.Quantum.Compiler back to normal. (See related note in 0.15.2103.133969)
 - Improved compiler performance.
+- Released Az CLI quantum extension version 0.4.0: Exposed URL for restricted access SKUs. Fixed regression on offerings commands dependent on Azure Markeplace APIs.
 
 ## Version 0.15.2103.133969
 
@@ -41,6 +49,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Removed <xref:Microsoft.Quantum.Environment.GetQubitsAvailableToBorrow> and <xref:Microsoft.Quantum.Environment.GetQubitsAvailableToUse> (https://github.com/microsoft/QuantumLibraries/issues/418).
 - Fixed Q# Language Server fails during initialization in Visual Studio due to JsonReaderException (https://github.com/microsoft/qsharp-compiler/issues/885).
 - Added support for multiple entry points.
+- Released Az CLI quantum extension version 0.3.0: Updated command 'az quantum workspace create' to require an explicit list of Quantum providers and remove a default. Fixed issue with incorrect location parameter during job submission.
 
 ## Version 0.15.2102.129448
 
@@ -49,6 +58,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Improved IQ# debug user experience by adding a horizontal scrollbar to scroll both execution path and basis state visualizations.
 - New functions to represent the group product and group inverse on the single-qubit Clifford group, to quickly define common single-qubit Clifford operators, and to apply single-qubit Clifford operators as operations. For more information, see issue [#409](https://github.com/microsoft/QuantumLibraries/issues/409).
 - Addressing security issue in the Microsoft Quantum Development Kit for Visual Studio Code extension. For details, refer to [CVE-2021-27082](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-27082).
+- Released Az CLI quantum extension version 0.2.0: Added parameter '--provider-sku-list' to 'az quantum workspace create' to allow specification of Quantum providers. Added command group 'az quantum offerings' with 'list', 'accept-terms' and 'show-terms'.
 
 ## Version 0.15.2102.128318
 
@@ -64,6 +74,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Update IQ# kernel syntax highlighting to include changes to Q# syntax introduced in version [0.15.2101125897](#version-0152101125897)
 - Bugfix to support passing arrays as input arguments to Q# programs submitted to Azure Quantum via `%azure.execute`, see issue [#401](https://github.com/microsoft/iqsharp/issues/401)
 - Fix "Permission denied" error encountered using `az` inside of `iqsharp-base` Docker images, see issue [#404](https://github.com/microsoft/iqsharp/issues/404)
+- Released Az CLI quantum extension version 0.1.0: Provided command line tool for workspace management and quantum computing job submission.
 
 ## Version 0.15.2101125897
 
