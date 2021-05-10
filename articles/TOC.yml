@@ -56,8 +56,6 @@
     items:
     - name: Quickstarts
       items:
-      - name: Install and use the Python SDK for optimization
-        href: optimization-install-sdk.md
       - name: Microsoft QIO quickstart
         href: quickstart-microsoft-qio.md
       - name: 1QBit quickstart
