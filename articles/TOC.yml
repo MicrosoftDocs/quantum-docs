@@ -56,15 +56,13 @@
     items:
     - name: Quickstarts
       items:
-      - name: Install and use the Python SDK for optimization
-        href: optimization-install-sdk.md
       - name: Microsoft QIO quickstart
         href: quickstart-microsoft-qio.md
       - name: 1QBit quickstart
         href: quickstart-1qbit.md 
     - name: How-to guides
       items:
-      - name: Install and use the Python SDK for optimization
+      - name: Install and use the Python SDK for Azure Quantum
         href: optimization-install-sdk.md
       - name: Troubleshoot optimization solvers
         href: optimization-troubleshooting.md
