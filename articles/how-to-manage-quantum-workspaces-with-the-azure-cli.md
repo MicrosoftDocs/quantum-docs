@@ -28,19 +28,19 @@ In order to use the Azure Quantum service, you will need:
 
 1. Log in to Azure using your credentials. You'll get a list of subscriptions associated with your account.
 
-   ```dotnetcli
+   ```azurecli
    az login
    ```
 
 1. Specify the subscription you want to use from those associated with your Azure account.
 
-   ```dotnetcli
+   ```azurecli
    az account set -s <Your subscription ID>
    ```
 
 1. If this is the first time you will be creating quantum workspaces in your subscription, register the resource provider with this command:
 
-   ```dotnetcli
+   ```azurecli
    az provider register --namespace Microsoft.Quantum
    ```
 
@@ -59,25 +59,25 @@ If you already know the providers and SKU names to use in your workspace, you ca
 
 1. To retrieve the list of quantum providers available, you can use the following command (using **westus** as example location) :
 
-   ```dotnetcli
+   ```azurecli
    az quantum offerings list -l westus -o table
    ```
 
 1. Once you determine the provider and SKU to include in your workspace, you can review terms using this command, assuming **MyProviderID** and **MySKU** as example values:
 
-   ```dotnetcli
+   ```azurecli
    az quantum offerings show-terms -l westus -p MyProviderId -k MySKU
    ```
 
 1. The output of the command above includes a Boolean field `accepted` that shows if the terms for this provider have been accepted already or not, as well as a link to the license terms to review. If you decide to accept those terms, use the following command to record your acceptance.
 
-   ```dotnetcli
+   ```azurecli
    az quantum offerings accept-terms -l westus -p MyProviderId -k MySKU
    ```
 
 1. Once you have reviewed and accepted all terms and conditions required, you can create your workspace specifying a list of provider/SKU combinations separated by commas, as in the example below:
 
-   ```dotnetcli
+   ```azurecli
    az quantum workspace create -l westus -g MyResourceGroup -w MyQuantumWorkspace -a MyStorageAccount -r "MyProvider1/MySKU1, MyProvider2/MySKU2"
    ```
 
@@ -88,7 +88,7 @@ Once a workspace has been created, you can still add or remove providers using t
 
 If you know the name and resource group of a quantum workspace you want to delete, you can do it with the following command (using the same names as the example above):
 
-   ```dotnetcli
+   ```azurecli
    az quantum workspace delete -g MyResourceGroup -w MyQuantumWorkspace
    ```
 
@@ -97,14 +97,14 @@ If you know the name and resource group of a quantum workspace you want to delet
 
 After you delete a workspace, you will still see it listed while it's being deleted in the cloud, however, the `provisioningState` property of the workspace will immediately change to indicate it's being deleted. You can see this information by using the following command:
 
-   ```dotnetcli
+   ```azurecli
    az quantum workspace show -g MyResourceGroup -w MyQuantumWorkspace
    ```
 
 > [!NOTE]
 > In case you used the `az quantum workspace set` command previously to specify a default quantum workspace, then calling the command without parameters will delete (and clear) the default workspace.
 
-   ```dotnetcli
+   ```azurecli
    az quantum workspace delete
    ```
 
