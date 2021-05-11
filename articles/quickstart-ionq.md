@@ -28,7 +28,7 @@ Before you can write a Q# program and run it with IonQ, you'll need a few resour
 1. Install the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 1. Install the `quantum` CLI extension for the Azure CLI.
 
-   ```bash
+   ```azurecli
    az extension add -n quantum
    ```
 
@@ -140,7 +140,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
 
 1. Log in to Azure using your credentials. You'll get a list of subscriptions associated with your account.
 
-   ```dotnetcli
+   ```azurecli
    az login
    ```
    
@@ -157,6 +157,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
    ```azurecli
    az quantum workspace set -g MyResourceGroup -w MyWorkspace -l MyLocation -o table
    ```
+
    ```output
     Location    Name         ProvisioningState    ResourceGroup    StorageAccount      Usable
     ----------  -----------  -------------------  ---------------  ------------------  --------
@@ -171,6 +172,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
    ```azurecli
    az quantum target list -o table
    ```
+
    ```output
    Provider    Target-id                                       Status     Average Queue Time
    ----------  ----------------------------------------------  ---------  --------------------
@@ -196,6 +198,7 @@ Run your program with `az quantum execute --target-id ionq.simulator -o table`. 
    ```azurecli
    az quantum execute --target-id ionq.simulator -o table
    ```
+
    ```output
    Result     Frequency
    ---------  -----------  -------------------------
@@ -227,6 +230,7 @@ is complete. We recommend this pattern for running against hardware, because you
    ```azurecli
    az quantum job submit --target-id ionq.qpu -o table
    ```
+
    ```output
    Name        Id                                    Status    Target    Submission time
    ----------  ------------------------------------  --------  --------  ---------------------------------
@@ -238,6 +242,7 @@ The table above shows that your job has been submitted and is waiting for its tu
    ```azurecli
     az quantum job show -o table --job-id 5aa8ce7a-25d2-44db-bbc3-87e48a97249c 
    ```
+
    ```output
    Name        Id                                    Status    Target    Submission time
    ----------  ------------------------------------  --------  --------  ---------------------------------
@@ -249,6 +254,7 @@ Eventually, you will see the `Status` in the above table change to `Succeeded`. 
    ```azurecli
    az quantum job output -o table --job-id 5aa8ce7a-25d2-44db-bbc3-87e48a97249c 
    ```
+
    ```output
    Result     Frequency
    ---------  -----------  -------------------------
