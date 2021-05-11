@@ -28,7 +28,7 @@ Before you can write a Q# program and run it with Honeywell, you'll need a few r
 1. Install the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 1. Install the `quantum` CLI extension for the Azure CLI.
 
-   ```bash
+   ```azurecli
    az extension add -n quantum
    ```
 
@@ -138,7 +138,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
 
 1. Log in to Azure using your credentials. You'll get a list of subscriptions associated with your account.
 
-   ```dotnetcli
+   ```azurecli
    az login
    ```
    
@@ -155,6 +155,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
    ```azurecli
    az quantum workspace set -g MyResourceGroup -w MyWorkspace -l MyLocation -o table
    ```
+
    ```output
     Location    Name         ProvisioningState    ResourceGroup    StorageAccount      Usable
     ----------  -----------  -------------------  ---------------  ------------------  --------
@@ -169,6 +170,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
    ```azurecli
    az quantum target list -o table
    ```
+
    ```output
    Provider    Target-id                                       Current Availability  Average Queue Time
    ----------  ----------------------------------------------  --------------------  --------------------
@@ -190,6 +192,7 @@ is complete. We recommend this pattern for running against hardware, because you
    ```azurecli
    az quantum job submit --target-id honeywell.hqs-lt-1.0 -o table
    ```
+
    ```output
    Name        Id                                    Status    Target                Submission time
    ----------  ------------------------------------  --------  --------              ---------------------------------
@@ -201,6 +204,7 @@ The table above shows that your job has been submitted and is waiting for its tu
    ```azurecli
    az quantum job show -o table --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
    ```
+
    ```output
    Name        Id                                    Status    Target    Submission time
    ----------  ------------------------------------  --------  --------  ---------------------------------
@@ -209,9 +213,10 @@ The table above shows that your job has been submitted and is waiting for its tu
 
 Eventually, you will see the `Status` in the above table change to `Succeeded`. Once that's done you can get the results from the job by running `az quantum job output`:
 
-   ```dotnetcli
+   ```azurecli
    az quantum job output -o table --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
    ```
+
    ```output
    Result     Frequency
    ---------  -----------  -------------------------
