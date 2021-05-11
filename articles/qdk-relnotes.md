@@ -24,7 +24,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 *Release date: May 10th, 2021*
 
-- Fixed dependency issue in IQSharp on System.Text.Json when submitting jobs to Azure Quantum. See related [pull request](https://github.com/microsoft/iqsharp/pull/429) for details.
+- Fixed dependency error in IQSharp on System.Text.Json when submitting jobs to Azure Quantum. See full details in issue [iqsharp#435](https://github.com/microsoft/iqsharp/issues/435).
 - Resolved issue affecting joint measurements of multi-qubit states on some combinations of Pauli basis resulting in incorrect values. For details, please refer to issue [qsharp-runtime#680](https://github.com/microsoft/qsharp-runtime/issues/680).
 
 ## Version 0.16.2104.138035
