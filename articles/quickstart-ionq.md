@@ -181,8 +181,8 @@ Next, we'll prepare your environment to run the program against the workspace yo
     > [!NOTE]
     > When you submit a job in Azure Quantum it will wait in a queue until the
     > provider is ready to run your program. The **Average Queue Time** column of
-    > the target list command shows you how long recently run jobs waited in the queue. This can give you an idea of how long you
-    > might have to wait.
+    > the target list command shows you how many seconds recently run jobs waited
+    > in the queue. This can give you an idea of how long you might have to wait.
 
 ## Simulate the program
 
