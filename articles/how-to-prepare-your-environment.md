@@ -55,7 +55,7 @@ Now that you have installed the tools to use Azure Quantum you can learn to subm
 
 ### For optimization users
 
-Learn how to [submit jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs.python) to solve optimization problems.
+Learn how to [use the Python SDK](xref:microsoft.quantum.optimization.install-sdk) to solve optimization problems.
 
 ### For quantum computing users
 
