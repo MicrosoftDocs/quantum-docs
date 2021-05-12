@@ -74,7 +74,7 @@
         href: optimization-what-is-quantum-optimization.md
       - name: Key concepts
         href: optimization-overview-key-concepts.md 
-      - name: Which solver should you use?
+      - name: Which solver should I use?
         href: optimization-which-solver-should-you-use.md
       - name: Binary optimization (QUBOs & PUBOs)
         href: optimization-binary-optimization.md
