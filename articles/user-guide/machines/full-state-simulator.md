@@ -50,7 +50,7 @@ dotnet run
 dotnet run -s QuantumSimulator
 ```
 
-### Invoking the simulator from Juptyer Notebooks
+### Invoking the simulator from Jupyter Notebooks
 
 Use the IQ# magic command [%simulate](xref:microsoft.quantum.iqsharp.magic-ref.simulate) to run the Q# operation.
 
