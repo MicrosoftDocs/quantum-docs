@@ -19,40 +19,30 @@ Learn how to install the Quantum Development Kit (QDK) to develop Python host pr
 
 ### [Install using conda (recommended)](#tab/tabid-conda)
 
-1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads). **Note:** 64-bit installation required.
+1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads). Consult their [installation guide](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) if you are unsure about any steps. **Note:** 64-bit installation required.
 
-1. (Windows) Open an Anaconda Prompt.
+1. Initialize conda for your preferred shell with the `conda init` command. The steps below are tailored to your operating system:
 
-   (Other) Make sure the `conda` command is available in your terminal. During installation, you may have been prompted to initialize conda for your shell. If not, navigate to your selected install location and run the `conda init` command for your shell (e.g. `conda init bash`). Close and reopen your terminal.
+    **(Windows)** Open an Anaconda Prompt by searching for it in the start menu. Then run the initialization command for your shell, e.g. `conda init powershell cmd.exe` will set up both the Windows PowerShell and Command Prompt for you. You can then close this prompt.
 
-1. Create and activate a new conda environment named `qsharp-env` with the required packages (including Jupyter Notebook and IQ#) by running the following commands:
+    > [!IMPORTANT]
+    > To work with PowerShell, conda will configure a startup script to run whenever you launch a PowerShell instance. By default, the script's execution will be blocked on Windows, and requires modifying the PowerShell execution policy with the following command (executed from within PowerShell):
+    >
+    > ```powershell
+    > Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+    > ```
 
-    ```Shell
+    **(Linux)** If haven't done so during installation, you can still initialize conda now. Open a terminal and navigate to the `bin` directory inside your selected install location (e.g. `/home/ubuntu/miniconda3/bin`). Then run the appropriate command for your shell, e.g. `./conda init bash`. Close your terminal for the changes to take effect.
+
+1. From a new terminal, create and activate a new conda environment named `qsharp-env` with the required packages (including Jupyter Notebook and IQ#) by running the following commands:
+
+    ```shell
     conda create -n qsharp-env -c quantum-engineering qsharp notebook
 
     conda activate qsharp-env
     ```
 
-1. Run `python -c "import qsharp"` from the same terminal to verify your installation and populate your local package cache with all required QDK components.
-
-> [!NOTE]
-> If you would like to use PowerShell to run Q# programs, or will be using VS Code on Windows for development, it is strongly recommended that you set up your PowerShell environment to work with conda. To do so, follow the steps below:
->
-> 1. Open a PowerShell window.
->
-> 1. If you didn't add `conda` to your `PATH` during installation, you will first need to navigate to its install location (e.g. `C:\Users\MyUserName\Miniconda3\`).
->
-> 1. (Windows only) Conda will configure a script to run automatically when opening a PowerShell window. On Windows, this requires modifying the PowerShell execution policy with the following command:
->
->     ```powershell
->     Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
->     ```
->
-> 1. Now run the command:
->
->     ```powershell
->     conda init powershell
->     ```
+1. Finally, run `python -c "import qsharp"` to verify your installation and populate your local package cache with all required QDK components.
 
 ### [Install using .NET CLI and pip (advanced)](#tab/tabid-dotnetcli)
 
@@ -64,7 +54,7 @@ Learn how to install the Quantum Development Kit (QDK) to develop Python host pr
 
 1. Install the `qsharp` package, a Python package that enables interop between Q# and Python.
 
-    ```Shell
+    ```shell
     pip install qsharp
     ```
 
@@ -101,7 +91,7 @@ If you would like to use VS Code:
 - Install [VS Code](https://code.visualstudio.com/download) (Windows, Linux and Mac).
 - Install the [QDK extension for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
-If you used the conda installation method and want to use VS Code on Windows, make sure you follow the setup instructions for using PowerShell with conda in the previous section's note box. This will allow you to run *Q# with Python* programs directly from VS Code's integrated terminal. Remember to activate your Q# environment there before running any programs, using `conda activate qsharp-env`.
+If you are using conda, make sure you follow the procedure detailed in the installation section to initialize conda for the shell used by VS Code. On Windows, VS Code will use PowerShell unless configured differently. Doing so will allow you to run *Q# with Python* programs directly from VS Code's integrated terminal. Remember to activate your Q# environment there before running any programs, using `conda activate qsharp-env`.
 
 If you would like to use a different editor, the instructions so far have you all set.
 
@@ -124,7 +114,7 @@ Now you are ready to verify your `qsharp` Python package installation by writing
 
 1. From a terminal with access to your Python/Q# environment created during installation, navigate to your project folder and run the Python host program:
 
-    ```Shell
+    ```shell
     python host.py
     ```
 
