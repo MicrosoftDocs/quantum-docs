@@ -13,7 +13,7 @@ uid: microsoft.quantum.install-qdk.overview.binder
 
 # Develop with Q# and Binder
 
-Learn how to create a Q# application using Binder. You can use Binder to run and share Jupyter Notebooks online, and even run Q# console applications online, allowing for a zero-install experience if desired.
+Learn how to create a Q# application using Binder. You can use Binder to run and share Jupyter Notebooks online, and even run Q# console applications online, which allows you to try Q# without installing the QDK.
 
 ## Use Binder with the QDK samples
 
