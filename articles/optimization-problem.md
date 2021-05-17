@@ -126,6 +126,16 @@ result_config = json.loads(result)['configuration']
 result_config.update(fixed_var) # join the fixed variables with the result
 ```
 
+### Problem.get_terms
+The user can get the terms in which a variable exists using this function.
+
+```py
+problem = Problem("My problem" ,  [Term(c=1, indices=[0,1]), Term(c=11, indices=[1,2]), Term(c=5, indices=[1])])
+terms = problem.get_terms(id = 1)
+terms
+
+> [{'c': 11, 'ids': [1,2]}, {'c': 5, 'ids': [1]}]
+```
 
 ## StreamingProblem
 StreamingProblem class can handle large problems that exceeds local memory limits. Unlike with the Problem class, terms in the StreamingProblem are uploaded directly to blob and are not kept in memory.  
