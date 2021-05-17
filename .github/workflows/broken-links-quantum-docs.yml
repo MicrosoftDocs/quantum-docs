@@ -15,7 +15,7 @@ jobs:
     - name: Run broken link scanner
       run: |
        $urls = (Get-ChildItem -include *.md, *.yml -exclude -Attributes !Directory -Path ./ -Recurse | ? { $_.FullName -inotmatch 'language' })
-       .\.github\scripts\Verify-Links.ps1 -urls $urls -recursive $false -ignoreLinksFile ".\ignorelinks.txt"
+       .\.github\scripts\Verify-Links.ps1 -urls $urls -recursive $false -ignoreLinksFile ".\.github\scripts\ignorelinks.txt"
        
       
       shell: pwsh
