@@ -19,7 +19,7 @@ Learn how to create a Q# application using Binder. You can use Binder to run and
 
 To configure Binder automatically to use the Quantum Development Kit (QDK) samples:
 
-1. Open a browser and run https://aka.ms/try-qsharp.
+1. Open a browser and navigate to <https://aka.ms/try-qsharp>.
 1. On the **Quantum Development Kit Samples** landing page, click the **Q# notebook** link on the **Intro to IQ#** sample to learn how to use IQ# and write your own quantum application notebooks.
 
 ![QDK samples overview - highlight Q# notebook link](~/media/binder-install.png)
@@ -81,6 +81,15 @@ If you already have notebooks in a (public!) GitHub repository, you can configur
 3. Enter your repository name as the **GitHub URL** (for example *MyName/MyRepo*), and click **launch**.
 
 ![MyBinder form](~/media/mybinder.png)
+
+## Use Binder with the Quantum Katas
+
+To configure Binder automatically to use the Quantum Katas:
+
+1. Open a browser and navigate to <https://aka.ms/try-quantum-katas>.
+1. On the **Quantum Katas and Tutorials** landing page, select any of the Katas listed in the learning path to open them as Jupyter Notebooks, allowing you to run and interact with a Kata without requiring any installation.
+
+![Quantum Katas overview on Binder](~/media/binder-katas.png)
 
 ## Next steps
 
