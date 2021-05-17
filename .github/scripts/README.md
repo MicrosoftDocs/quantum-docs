@@ -47,8 +47,8 @@ jobs:
     - uses: actions/checkout@v1
     - name: Run broken link scanner
       run: |
-       $urls = (Get-ChildItem -include *.md, *.yml -exclude *provider-ionq.md*, *README.md* -Attributes !Directory -Path ./ -Recurse | ? { $_.FullName -inotmatch 'language' })
-       .\.github\scripts\Verify-Links.ps1 -urls $urls -recursive $false
+       $urls = (Get-ChildItem -include *.md, *.yml -exclude -Attributes !Directory -Path ./ -Recurse | ? { $_.FullName -inotmatch 'language' })
+       .\.github\scripts\Verify-Links.ps1 -urls $urls -recursive $false -ignoreLinksFile ".\ignorelinks.txt"
        
       
       shell: pwsh
@@ -57,13 +57,9 @@ jobs:
 Comments:
 
 - We use the parameters of the `Get-ChildItem` cmdlet to curate the list of paths. You can use alternative the parameters of the `Verify-Links.ps1` script. 
-  we removed some files from the list to avoid false-positives:
-    - [articles\provider-ionq.md](https://github.com/MicrosoftDocs/quantum-docs-private/blob/quantum-docs-scan/articles/provider-ionq.md) because the link https://ionq.com/best-practices 
-      was giving a false 404 of unknown origin.
-    - All the `README.md` fies, since some of them contain links to private repositories that the program flags as 404, and for example, this one host links that the program falls
-      as broken.
-    - All the files from the [`user-guide\language`](https://github.com/MicrosoftDocs/quantum-docs-private/tree/main/articles/user-guide/language) directory. The content of those
-      files is not stored in our repository and is maintained by other team. Also, the script flags the include links of the stub files as broken links.
+- We removed some links from the list to avoid false-positives:
+    - All the files from the [`user-guide\language`](https://github.com/MicrosoftDocs/quantum-docs-private/tree/main/articles/user-guide/language) directory. The content of those files is not stored in our repository and is maintained by other team. Also, the script flags the include links of the stub files as broken links.
+    - The file [`ignorelinks.txt`](https://github.com/MicrosoftDocs/quantum-docs-private/blob/quantum-docs-scan/.github/scripts/ignorelinks.txt) contains links to be ignored, for example links to private repositories, since the program flags them as 404. Also the link https://ionq.com/best-practices as it was giving a false 404 of unknown origin. 
 
 > 📝
 > For more information on the `Get-ChildItem` cmdlet, visit the [official documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1)
@@ -109,7 +105,7 @@ Comments:
 
 - In this action we need to access two different repositories, so the structure is slightly different. We use the GH action [actions/checkout@v2](https://github.com/actions/checkout) to handle multiple repos and we specify relative path to root for each repo.
 - The **MicrosoftDocs\learn-pr** repo is a private with a SSO authentication protocol, so in order for the Ubuntu instance to access the repo we need to set a Personal Access Token with access to private repositories and grant it *MicrosofDocs* SSO authentication privileges. This token is added to the Secrets of the quantum-docs-private repository. Currently the token uses @KittyYeungQ credentials.
-- Microsft Learn uses relative links with rootUrl `https://docs.microsoft.com`. To scan correctly those links we just need to add it to the parameters of the `Verify-Links.ps1` script. 
+- Microsoft Learn uses relative links with rootUrl `https://docs.microsoft.com`. To scan correctly those links we just need to add it to the parameters of the `Verify-Links.ps1` script. 
 
 ## How to use it
 
