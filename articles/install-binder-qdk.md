@@ -27,14 +27,14 @@ To configure Binder automatically to use the Quantum Development Kit (QDK) sampl
 Note that you are not restricted to the existing samples, as you can create new notebook or text files by first selecting **File** -> **Open...** from the Jupyter interface to open the directory view, and then hitting the **New▾** button in the top right of the page.
 
 > [!WARNING]
-> Files created within the pre-configured binder are not persistent and should thus only be used for exploratory purposes.
+> Files created in a Binder environment will not persist across sessions. Should you wish to preserve any changes or new files you created during your session, make sure to save them locally by downloading them via the Jupyter interface.
 
 ### Run Jupyter Notebook samples
 
 Binder supports both types of Q# development styles for Jupyter Notebook:
 
-- the *Q# notebook*, which uses the IQ# kernel to directly run code cells written in Q# (see [here](xref:microsoft.quantum.install-qdk.overview.jupyter)).
-- the *Q# + Python* notebook, which contains regular Python code that calls into Q# operations from a `.qs` file (see [here](xref:microsoft.quantum.install-qdk.overview.python)).
+- the *Q# notebook*, which uses the IQ# kernel to directly run code cells written in Q# (see [developing with Q# Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.jupyter)).
+- the *Q# + Python* notebook, which contains regular Python code that calls into Q# operations from a `.qs` file (see [developing with Q# and Python](xref:microsoft.quantum.install-qdk.overview.python)).
 
 You will find that the different Jupyter samples might use either of the two styles, and are sometimes available in both, so feel free to explore what best suites your preferences. You can create a notebook of your own by clicking on **New▾ → Python 3** (*Q# + Python* style) or **New▾ → Q#** (*Q# notebook* style) from the directory view.
 
@@ -42,22 +42,23 @@ You will find that the different Jupyter samples might use either of the two sty
 
 ### Run console application samples
 
-In addition to notebooks, you can also run Q# console applications via Binder. To do so, you'll have to open a terminal in the Jupyter interface, by selecting **New▾ → Terminal** from the directory view. You can then run bash commands, such as to run the CHSH sample as shown below.
+In addition to notebooks, you can also run Q# console applications via Binder. You'll notice notice that there are different types of console applications present in the samples:
+
+- the *Q# standalone* application, which uses an `EntryPoint` function/operation in a `.qs` file to run the Q# program from the command line (see [developing with Q# applications](xref:microsoft.quantum.install-qdk.overview.standalone)).
+- the *Q# + .NET* application, which uses a .NET language (C# or F#) host program to call into operations from a `.qs` file (see [developing with Q# and .NET](xref:microsoft.quantum.install-qdk.overview.cs)).
+- while not directly shown in the samples overview, a lot of samples are also available as Python console applications. These contain the same Python code as a *Q# + Python* Jupyter Notebook would, just without the notebook part (see [developing with Q# and Python](xref:microsoft.quantum.install-qdk.overview.python)).
+
+To run the samples, you can open a terminal in the Jupyter interface by selecting **New▾ → Terminal** from the directory view. You may then run any bash commands from within the Binder environment, for example to run the CHSH sample via `python host.py` as shown below.
 
 ![Run Q# from a Jupyter terminal](~/media/binder-terminal.png)
 
-Here as well you might notice that there are two types of console applications present in the samples:
-
-- the *Q# standalone* application, which uses an `EntryPoint` function/operation in a `.qs` file to run the Q# program from the command line (see [here](xref:microsoft.quantum.install-qdk.overview.standalone)).
-- the *Q# + .NET* application, which uses a .NET language (C# or F#) host program to call into operations from a `.qs` file (see [here](xref:microsoft.quantum.install-qdk.overview.cs)).
-
-As an alternative to the Jupyter terminal, you can also run Q# console applications from a .NET PowerShell notebook such as the CHSH README.md shown below, but also from your own notebook via **New▾ → .NET (PowerShell)**.
+As an alternative to the Jupyter terminal, you can also run Q# console applications from a .NET PowerShell notebook in which the cells act like a PowerShell terminal. You can then run some of the samples via their README file by clicking on the sample name (e.g. the CHSH README shown below), or from your own notebook via **New▾ → .NET (PowerShell)**.
 
 ![Run Q# from a PowerShell notebook](~/media/binder-powershell-notebook.png)
 
 ## Use Binder with your own notebooks and repository
 
-If you already have notebooks in a GitHub repository, you can configure Binder to work with your repo:
+If you already have notebooks in a (public!) GitHub repository, you can configure Binder to work with your repo:
 
 1. Ensure that there is a file named *Dockerfile* in the root of your repository. The file must contain at least the following lines:
 
