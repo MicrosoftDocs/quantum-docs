@@ -1,0 +1,7 @@
+https://ionq.com/best-practices
+https://github.com/MicrosoftDocs/quantum-docs-private/tree/main/articles
+https://github.com/MicrosoftDocs/azure-reference-other-pr/blob/master/.openpublishing.redirection.json
+https://github.com/MicrosoftDocs/quantum-docs-private/blob/quantum-docs-scan/.github/scripts/Verify-Links.ps1
+https://github.com/MicrosoftDocs/quantum-docs-private/blob/quantum-docs-scan/.github/workflows/broken-links-quantum-docs.yml
+https://github.com/MicrosoftDocs/quantum-docs-private/blob/main/.github/workflows/broken-links-MSLearn.yml
+https://github.com/MicrosoftDocs/quantum-docs-private/blob/quantum-docs-scan/.github/scripts/ignorelinks.txt
