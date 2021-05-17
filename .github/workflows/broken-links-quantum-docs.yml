@@ -14,8 +14,8 @@ jobs:
     - uses: actions/checkout@v1
     - name: Run broken link scanner
       run: |
-       $urls = (Get-ChildItem -include *.md, *.yml -exclude *provider-ionq.md*, *README.md* -Attributes !Directory -Path ./ -Recurse | ? { $_.FullName -inotmatch 'language' })
-       .\.github\scripts\Verify-Links.ps1 -urls $urls -recursive $false
+       $urls = (Get-ChildItem -include *.md, *.yml -exclude -Attributes !Directory -Path ./ -Recurse | ? { $_.FullName -inotmatch 'language' })
+       .\.github\scripts\Verify-Links.ps1 -urls $urls -recursive $false -ignoreLinksFile ".\ignorelinks.txt"
        
       
       shell: pwsh
