@@ -127,6 +127,7 @@ result_config.update(fixed_var) # join the fixed variables with the result
 ```
 
 ### Problem.get_terms
+
 The user can get the terms in which a variable exists using this function.
 
 ```py
@@ -138,14 +139,17 @@ terms
 ```
 
 ## StreamingProblem
+
 StreamingProblem class can handle large problems that exceeds local memory limits. Unlike with the Problem class, terms in the StreamingProblem are uploaded directly to blob and are not kept in memory.  
 
 The StreamingProblem class uses the same interface as the Problem class. 
 
 There are some features not supported yet on the StreamingProblem class due to its streaming nature:
+
 - Problem.set_fixed_variables()
 - Problem.evaluate()
 
 ## OnlineProblem
-OnlineProblem class creates a problem from the url of the blob storage where an optimization problem has been uploaded. It is essentially used to reusing already submitted problems. 
-It has the same interface as the Problem class and does not support client side analysis eg: evaluate and set_fixed_variables. It allows you to download the problem from the blob storage as an instance of the Problem class to do any of the client side operations.
+
+OnlineProblem class creates a problem from the url of the blob storage where an optimization problem has been uploaded. It is essentially used to reusing already submitted problems.
+It does not support client side analysis eg: evaluate and set_fixed_variables. It allows you to download the problem from the blob storage as an instance of the Problem class to do any of the client side operations.
