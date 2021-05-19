@@ -1,9 +1,8 @@
-name: Broken link scan of MS Learn quantum
+name: Broken links scan of MS Learn quantum
 on:
-  push:
-    branches:
-    - live
-  
+  schedule:
+    - cron: '23 6 * * 1,3,5'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -24,6 +23,6 @@ jobs:
     - name: Run broken link scanner
       run: |
        $urls = (Get-ChildItem -include *.md, *.yml -Attributes !Directory -Path ./learn-pr/learn-pr/quantum -Recurse)
-       .\main\.github\scripts\Verify-Links.ps1 -urls $urls -rootUrl https://docs.microsoft.com -recursive $false
-        
+       .\main\.github\scripts\Verify-Links.ps1 -urls $urls -rootUrl https://docs.microsoft.com -recursive $false -ignoreLinks .\main\.github\scripts\ignorelinks.txt
+
       shell: pwsh

@@ -1,0 +1,18 @@
+name: Broken links scan of AQ learning page
+on:
+  schedule:
+    - cron: '23 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run broken link scanner
+      run: |
+       .\.github\scripts\Verify-Links.ps1 -urls https://msft-quant-edu-prod.azurewebsites.net -ignoreLinks .\.github\scripts\ignorelinks.txt
+
+      shell: pwsh
