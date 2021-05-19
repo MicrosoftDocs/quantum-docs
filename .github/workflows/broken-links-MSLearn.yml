@@ -23,6 +23,6 @@ jobs:
     - name: Run broken link scanner
       run: |
        $urls = (Get-ChildItem -include *.md, *.yml -Attributes !Directory -Path ./learn-pr/learn-pr/quantum -Recurse)
-       .\main\.github\scripts\Verify-Links.ps1 -urls $urls -rootUrl https://docs.microsoft.com -recursive $false -ignoreLinks .\main\.github\scripts\ignorelinks.txt
+       .\main\.github\scripts\Verify-Links.ps1 -urls $urls -rootUrl https://docs.microsoft.com -recursive $false -ignoreLinksFile .\main\.github\scripts\ignorelinks.txt
 
       shell: pwsh

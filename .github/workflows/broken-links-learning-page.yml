@@ -13,6 +13,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run broken link scanner
       run: |
-       .\.github\scripts\Verify-Links.ps1 -urls https://msft-quant-edu-prod.azurewebsites.net -ignoreLinks .\.github\scripts\ignorelinks.txt
+       .\.github\scripts\Verify-Links.ps1 -urls https://msft-quant-edu-prod.azurewebsites.net -ignoreLinksFile .\.github\scripts\ignorelinks.txt
 
       shell: pwsh
