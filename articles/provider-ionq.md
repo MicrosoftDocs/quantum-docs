@@ -71,7 +71,7 @@ Trapped ion quantum computer. Dynamically reconfigurable in software to use up t
 
 IonQ charges per **gate-shot**: the number of gates in your circuit, multiplied by the number of shots.
 
-Multi-controlled two-qubit gates are billed as _(6N - 6)_ two-qubit gates, where N is the number of qubits involved in the gate. For example, a NOT gate with three controls would be billed as _(6 * 4 - 6)_ or 8 two-qubit gates.
+Multi-controlled two-qubit gates are billed as _6 * (N - 2)_ two-qubit gates, where N is the number of qubits involved in the gate. For example, a NOT gate with three controls would be billed as _(6 * (4 - 2))_ or 12 two-qubit gates.
 
 To see the pricing options:
 
