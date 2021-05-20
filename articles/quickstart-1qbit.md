@@ -101,8 +101,6 @@ installed the Optimization Python SDK already, follow these steps:
 
 Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to Azure Quantum. The value for `resource_id` can be found on the Azure Portal page for the [Quantum Workspace you created](xref:microsoft.quantum.workspaces-portal).
 
-Once the `Workspace` object is created, you log in using the `workspace.login()` command.
-
 ```python
 from azure.quantum import Workspace
 
@@ -110,10 +108,15 @@ from azure.quantum import Workspace
 workspace = Workspace(
     resource_id = ""   # add the Resource ID of the Azure Quantum workspace you created
 )
-workspace.login()
 ```
 
-The first time you run this code on your device, a window might prompt in your default browser asking for your credentials.
+The first time you run a method which interacts with the Azure service, a window might prompt in your default browser asking for your credentials.
+You can optionally pass a credential to be used in the authentication in the construction of the `Workspace` object or via its `credentials` property.
+See more at [Azure.Quantum.Workspace](xref:microsoft.quantum.Azure.Quantum)
+
+> [!NOTE]
+> The `workspace.login()` method has been deprecated and is no longer necessary. The first time there is a call to the service, an authentication will be attempted using the credentials passed in the `Workspace` constructor or its `credentials` property. If no credentials were passed, several authentication methods will be attempted by the [DefaultAzureCredential](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-identity/1.6.0/azure.identity.html#azure.identity.DefaultAzureCredential).
+
 
 ## Generate the terms for the problem
 

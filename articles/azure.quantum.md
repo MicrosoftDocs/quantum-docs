@@ -28,8 +28,18 @@ guide](xref:microsoft.quantum.workspaces-portal) using the following values:
 - `name`: The name of the Workspace.
 - `storage`: The connection string of the storage account provisioned for your
   Workspace.
+- `credential`: (Optional) The credential to use to connect to the Azure Quantum and Storage services.
+   Normally one of the [credential types from Azure.Identity](https://docs.microsoft.com/en-us/python/api/overview/azure/identity-readme?view=azure-python#credential-classes).
+   Defaults to `DefaultAzureCredential`, which will attempt [multiple forms of authentication](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-identity/1.6.0/azure.identity.html#azure.identity.DefaultAzureCredential).
 
 You can find these values by viewing your Azure Quantum Workspace details through the Azure portal.
+
+The first time you run a method which interacts with the Azure service, a window might prompt in your default browser asking for your credentials.
+You can optionally pass a credential to be used in the authentication in the construction of the `Workspace` object or via its `credentials` property.
+See more at [Azure.Quantum.Workspace](xref:microsoft.quantum.Azure.Quantum)
+
+> [!NOTE]
+> The `workspace.login()` method has been deprecated and is no longer necessary. The first time there is a call to the service, an authentication will be attempted using the credentials passed in the `Workspace` constructor or its `credentials` property. If no credentials were passed, several authentication methods will be attempted by the [DefaultAzureCredential](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-identity/1.6.0/azure.identity.html#azure.identity.DefaultAzureCredential).
 
 ## Workspace.get_job
 
@@ -38,7 +48,12 @@ Retrieves information about a job.
 ```py
 from azure.quantum import Workspace
 
-workspace = Workspace(...)
+workspace = Workspace (
+    subscription_id = "",  # Add your subscription_id
+    resource_group = "",   # Add your resource_group
+    name = "",             # Add your workspace name
+    location = ""          # Add your workspace location (for example, "westus")
+)
 job = workspace.get_job("285cfcb4-6822-11ea-a05f-2a16a847b8a3")
 print(job.details.status)
 
@@ -78,23 +93,3 @@ print(job.details.status)
 
 > Succeeded
 ```
-
-## Workspace.login
-
-Logs the local user in to Azure. It first attempts to use cached credentials
-from a secure local cache. An optional `refresh` argument can be used to bypass
-the cache and force authentication.
-
-```python
-workspace = Workspace(...)
-workspace.login()
-```
-
-When you call login you will see the following printed in your console:
-
-```output
-To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code <CODE> to authenticate.
-```
-
-Once logged in, the credentials are cached locally. The location of the
-cache can be specified via the `AZURE_QUANTUM_TOKEN_CACHE` environment variable.
