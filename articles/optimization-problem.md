@@ -107,7 +107,7 @@ problem.evaluate({0:1, 1:0})
 
 ### Problem.set_fixed_variables
 
-During experimentation, the user may want to set a variable (or a group of variables) to a particular value. Calling set_fixed_variables will return a new Problem object representing the modified problem after such variables have been fixed. 
+During experimentation, the user may want to set a variable (or a group of variables) to a particular value. Calling set_fixed_variables will return a new Problem object representing the modified problem after such variables have been fixed.
 
 ```py
 fixed_var = {'1': 1, '2': 1}
@@ -140,7 +140,7 @@ terms
 
 ## StreamingProblem
 
-StreamingProblem class can handle large problems that exceeds local memory limits. Unlike with the Problem class, terms in the StreamingProblem are uploaded directly to blob and are not kept in memory.  
+StreamingProblem class can handle large problems that exceeds local memory limits. Unlike with the Problem class, terms in the StreamingProblem are uploaded directly to blob and are not kept in memory.
 
 The StreamingProblem class uses the same interface as the Problem class.
 
@@ -152,5 +152,4 @@ There are some features not supported yet on the StreamingProblem class due to i
 ## OnlineProblem
 
 OnlineProblem class creates a problem from the url of the blob storage where an optimization problem has been uploaded. It is essentially used to reusing already submitted problems.
-It does not support client side analysis eg: evaluate and set_fixed_variables. It allows you to download the problem from the blob storage as an instance of the Problem class to do any of the client side operations.
-For an example of how to use the OnlineProblem class see [here](xref:microsoft.quantum.optimization.reuse-problem-definition))
+It does not support client side analysis eg: evaluate and set_fixed_variables. It allows you to download the problem from the blob storage as an instance of the Problem class to do any of the client side operations. For an example of how to use the OnlineProblem class, have a look at [reusing problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions).
