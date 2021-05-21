@@ -23,7 +23,7 @@ Learn how to use Microsoft QIO in Azure Quantum to solve a simple binary optimiz
 
 You use the Azure Quantum service by adding an Azure Quantum workspace resource to your Azure subscription in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
 
-To open the Azure Portal, go to https://portal.azure.com and then follow these steps:
+To open the Azure Portal, go to <https://portal.azure.com> and then follow these steps:
 
 1. Click **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
 
@@ -37,7 +37,7 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 
 1. Fill out the details of your workspace:
    - **Subscription:** The subscription that you want to associate with this
-     workspace. 
+     workspace.
    - **Resource group:** The resource group that you want to assign this workspace to.
    - **Name:** The name of your workspace.
    - **Region:** The region for the workspace.
@@ -57,7 +57,7 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
    ![Review and create the workspace](./media/azure-quantum-preview-terms.png)
 
 > [!NOTE]
-> Pricing for Azure Quantum varies by provider. Please consult the information in the Providers tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information.
+> Pricing for Azure Quantum varies by provider. Please consult the information in the Providers tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information, or visit the [Azure Quantum pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
 
 ## Define your optimization problem
 
