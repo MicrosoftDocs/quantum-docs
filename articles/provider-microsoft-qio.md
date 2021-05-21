@@ -66,6 +66,10 @@ FPGA solvers use the same parameters as their corresponding CPU solvers, but for
 
 FPGA solvers have an initialization time that may take a large percentage of the total runtime for small problems. If your problem can be solved on a CPU solver within a number of seconds, then you will likely not see a performance gain by switching to an FPGA. We recommend using FPGA solvers when the execution timing on CPU is at least a couple minutes.
 
+## Pricing
+
+For the most up-to-date pricing information on Microsoft's QIO offering, please refer to the Providers tab of your workspace on the [Azure portal](https://portal.azure.com/) or visit the [Azure Quantum pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
+
 ## General advice for Microsoft QIO solvers
 
 Here are some things to keep in mind when using our QIO solvers, and steps you can take to improve performance in certain cases. Note that other providers might have different requirements and recommendations specific to their solutions. The advice below applies to the terms that [represent your problem](xref:microsoft.quantum.optimization.express-problem) and [cost function](xref:microsoft.quantum.optimization.concepts.cost-function). Remember that a term is composed of a coefficient $c$ and a set of indices $\{i\}$.
