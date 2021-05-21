@@ -1,45 +1,44 @@
 ---
 author: anraman
-description: This document provides a basic installation and usage overview of the Python SDK for optimization.
+description: This document provides a basic installation and usage overview of the Python SDK for Azure Quantum.
 ms.author: anraman
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: article
-title: Install and use the Python SDK for optimization
+ms.topic: conceptual
+title: Install and use the Python SDK for Azure Quantum
 uid: microsoft.quantum.optimization.install-sdk
 ---
 
-# Install and use the Python SDK for optimization
+# Install and use the Python Python SDK for Azure Quantum
 
-This guide provides a basic overview of how to install and use the Python SDK for optimization.
+This guide provides a basic overview of how to install and use the Python SDK for Azure Quantum.
 
 ## Prerequisites
 
 - An Azure Quantum workspace created in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
 
-## Python SDK for optimization installation
+## Python SDK for Azure Quantum installation
 
-The Python SDK is distributed as the `azure-quantum` [PyPI](https://pypi.org)
-package. To install the package you will need to follow the steps below:
+The Python SDK is distributed as the `azure-quantum` [PyPI](https://pypi.org/project/azure-quantum/) package. To install the package you will need to follow the steps below:
 
 1. Install [Python](https://www.python.org/downloads/) 3.6 or later.
-2. Install [PIP](https://pip.pypa.io/en/stable/), the Python Package Installer, and ensure you have **version 19.2 or higher**
-3. Install the `azure-quantum` Python package:
+2. Install [PIP](https://pip.pypa.io/en/stable/), the Python Package Installer, and ensure you have **version 19.2 or higher**.
+3. Install the latest `azure-quantum` Python package:
 
-   ```bash
-   pip install azure-quantum
+   ```Shell
+   pip install --upgrade azure-quantum
    ```
 
 ## Jupyter Notebooks installation
 
 You can also choose to interact with Azure Quantum optimization using Jupyter Notebooks. In order to do this, you will need to:
 
-1. Install the Python SDK for optimization (as described in the previous section)
+1. Install the Python SDK for Azure Quantum (as described in the previous section)
 2. [Install Jupyter Notebooks](https://jupyter.org/install)
 3. In your terminal of choice, use the following command to launch a new Jupyter Notebook:
 
-    ```bash
+    ```Shell
     jupyter notebook
     ```
 
@@ -119,12 +118,14 @@ This method will submit the problem to Azure Quantum for optimization and synchr
 ```output
 {'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0}
 ```
+> [!NOTE]
+> If you run into an error while working with Azure Quantum, you can check our [list of common issues](xref:microsoft.quantum.azure.common-issues). Also if your are using an optimization solver and you get an error in the form <AZQxxx>, you can check our [list of common user errors in optimization solvers](xref:azure.quantum.optimization.troubleshooting).
 
 ## Next steps
 
 ### Documentation
 
-- [Solver overview](xref:microsoft.quantum.optimization.solver-overview)
+- [Solver overview](xref:microsoft.quantum.reference.qio-target-list)
 - [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)
 - [Interpreting solver results](xref:microsoft.quantum.optimization.understand-solver-results)
 - [Job management](xref:microsoft.quantum.optimization.job-management)

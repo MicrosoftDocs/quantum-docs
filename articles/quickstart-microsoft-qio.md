@@ -1,6 +1,6 @@
 ---
 title: Optimization quickstart for Azure Quantum
-description: This document provides a step-by-step guide to get you started with Azure Quantum optimization 
+description: This document provides a step-by-step guide to get you started with Microsoft QIO on Azure Quantum
 author: anraman
 ms.author: anraman
 ms.topic: quickstart
@@ -10,9 +10,9 @@ ms.subservice: optimization
 uid: microsoft.quantum.quickstarts.optimization.qio
 ---
 
-# Optimization quickstart for Azure Quantum
+# Microsoft QIO optimization quickstart for Azure Quantum
 
-Learn how to use Azure Quantum to solve a simple binary optimization problem.
+Learn how to use Microsoft QIO in Azure Quantum to solve a simple binary optimization problem.
 
 ## Prerequisites
 
@@ -45,7 +45,6 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 
    ![Properties for the Azure Quantum workspace](./media/azure-quantum-preview-properties.png)
 
-
    > [!NOTE]
    > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](https://docs.microsoft.com/learn/modules/control-and-organize-with-azure-resource-manager/).
 
@@ -62,7 +61,7 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 
 ## Define your optimization problem
 
-In this guide, you will solve a simple optimization example to get started with the optimization services of Azure Quantum. This quickstart is based on the [ship loading sample](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/). 
+In this guide, you will solve a simple optimization example to get started with the optimization services of Azure Quantum. This quickstart is based on the [ship loading sample](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/).
 
 Suppose there are two ships ready to be loaded with containers and a list of containers of varying weights to be assigned to each ship. The aim of the optimization problem is to assign containers to each ship in such a way that the weight is distributed as evenly as possible between both ships.
 
@@ -80,32 +79,29 @@ The goal is to find the configuration that yields the lowest possible value of $
 > [!NOTE]
 > For a detailed walkthrough of the problem scenario and how the cost function is constructed, please refer to the [sample](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/) and/or the associated [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/).
 
-## Install the Python SDK for optimization
+## Install the Python SDK for Azure Quantum
 
-To implement a solution, first ensure that you have the Python SDK for optimization installed on your machine. If you haven't
-installed the Python SDK for optimization already, follow these steps:
+To implement a solution, first ensure that you have the Python SDK for Azure Quantum installed on your machine. If you don't have it installed yet, follow these steps:
 
 1. Install [Python](https://www.python.org/downloads/) 3.6 or later in case you haven't already.
 1. Install [PIP](https://pip.pypa.io/en/stable/) and ensure you have **version 19.2 or higher**.
 1. Install the `azure-quantum` python package.
 
-   ```bash
-   pip install --upgrade azure-quantum --pre
+   ```Shell
+   pip install --upgrade azure-quantum
    ```
 
 ## Create a `Workspace` object in your Python code and log in
 
-Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to Azure Quantum. The value for `resource_id` can be found on the Azure Portal page for the [workspace you created](xref:microsoft.quantum.workspaces-portal).
+Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to Azure Quantum. The value for `resource_id` and `location` can be found on the Azure Portal page for the [workspace you created](xref:microsoft.quantum.workspaces-portal).
 
 ```python
 from azure.quantum import Workspace
 
 # Copy the settings for your workspace below
-workspace = Workspace (
-    subscription_id = "",  # Add your subscription_id
-    resource_group = "",   # Add your resource_group
-    name = "",             # Add your workspace name
-    location = ""          # Add your workspace location (for example, "westus")
+workspace = Workspace(
+    resource_id = "", # add the Resource ID of the Azure Quantum workspace you created
+    location = ""     # add the location of your Azure Quantum workspace (e.g. "westus")
 )
 ```
 
@@ -195,13 +191,13 @@ solver = ParallelTempering(workspace, timeout=100) # timeout in seconds
 result = solver.optimize(problem)
 ```
 
-Here you created an instance of a `ParallelTempering` solver for the problem. You could have chosen other Azure Quantum optimization solvers (for example, `SimulatedAnnealing`) without needing to change more lines of code. The type `Problem` is the common parameter for all the solvers of Azure Quantum.
+Here you created an instance of a `ParallelTempering` solver for the problem. You could have chosen other Microsoft QIO optimization solvers (for example, `SimulatedAnnealing`) without needing to change more lines of code. To see a list of the available solvers, go to the [reference page](xref:microsoft.quantum.reference.qio-target-list#provider-microsoft-qio).
+
+The type `Problem` is the common parameter for all the solvers of Azure Quantum.
 
 You then call `solver.optimize()` and supply the `problem` as the argument. This submits the problem synchronously to Azure Quantum and returns a Python dictionary of values to save the `result` variable for parsing in the next step.
 
-
 > You can also submit problems asynchronously. For more info, you can go to the guide for [solving long-running problems](xref:microsoft.quantum.optimization.solve-long-running-problems).
-
 
 ## Results readout
 
@@ -249,9 +245,12 @@ Total weights:
     Ship B: 53 tonnes
 ```
 
+> [!NOTE]
+> If you run into an error while working with Azure Quantum, you can check our [list of common issues](xref:microsoft.quantum.azure.common-issues).
+
 ## Next steps
 
-During this quick-start guide, you have seen an end-to-end example of how to take a mathematical cost function, represent it in code, submit it to Azure Quantum and parse the results.
+During this quick-start guide, you have seen an end-to-end example of how to take a mathematical cost function, represent it in code, submit it to Azure Quantum and parse the results. To learn more about the Microsoft QIO offering in Azure Quantum, please see the [Microsoft QIO Provider documentation](xref:microsoft.quantum.optimization.providers.microsoft.qio).
 
 For more detailed information on the shipping optimization problem, please refer to the following resources:
 

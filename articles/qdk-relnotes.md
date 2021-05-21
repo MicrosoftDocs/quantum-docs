@@ -19,13 +19,54 @@ For installation instructions, please refer to the [install guide](xref:microsof
 
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
+
+## Version 0.16.2105.140472
+
+*Release date: May 10th, 2021*
+
+- Fixed dependency error in IQSharp on System.Text.Json when submitting jobs to Azure Quantum. See full details in issue [iqsharp#435](https://github.com/microsoft/iqsharp/issues/435).
+- Resolved issue affecting joint measurements of multi-qubit states on some combinations of Pauli basis resulting in incorrect values. For details, please refer to issue [qsharp-runtime#680](https://github.com/microsoft/qsharp-runtime/issues/680).
+
+## Version 0.16.2104.138035
+
+*Release date: April 27th, 2021*
+
+- Improved Q# type inference based on the Hindley-Milner type inference algorithm.
+- Added support for NumPy types in coefficient definitions for problems in QIO Python SDK.
+- Updated control-plane swagger file to [support restricted access SKUs](https://github.com/Azure/azure-rest-api-specs/pull/13002).
+- Added new `StreamingProblem` class in QIO Python SDK. It supports the same interface for adding terms to a problem definition as the `Problem` class. However, once terms are added to the problem they are queued to be uploaded by a background thread and are not kept in memory for future reference.
+- Restored the packages size of Microsoft.Quantum.Sdk and Microsoft.Quantum.Compiler back to normal. (See related note in 0.15.2103.133969)
+- Improved compiler performance.
+- Released Az CLI quantum extension version 0.4.0: Exposed URL for restricted access SKUs. Fixed regression on offerings commands dependent on Azure Markeplace APIs.
+
+## Version 0.15.2103.133969
+
+*Release date: March 30th, 2021*
+
+- Released QIR emission as experimental feature (https://github.com/microsoft/qsharp-compiler/tree/main/src/QsCompiler/QirGeneration#qir-emission---preview-feature). The inclusion of the necessary LLVM packages, and in particular LlvmLibs, causes an increase in package size of the Microsoft.Quantum.Sdk and the Microsoft.Quantum.Compiler, and correspondingly to longer download times the first time the new versions are used. We are working on reducing that again in the future.
+- Loosen restriction on AllowAtMostNCallsCA operation (https://github.com/microsoft/QuantumLibraries/pull/431).
+- Added missing APIs for Math Library (https://github.com/microsoft/QuantumLibraries/issues/413).
+- Removed <xref:Microsoft.Quantum.Environment.GetQubitsAvailableToBorrow> and <xref:Microsoft.Quantum.Environment.GetQubitsAvailableToUse> (https://github.com/microsoft/QuantumLibraries/issues/418).
+- Fixed Q# Language Server fails during initialization in Visual Studio due to JsonReaderException (https://github.com/microsoft/qsharp-compiler/issues/885).
+- Added support for multiple entry points.
+- Released Az CLI quantum extension version 0.3.0: Updated command 'az quantum workspace create' to require an explicit list of Quantum providers and remove a default. Fixed issue with incorrect location parameter during job submission.
+
+## Version 0.15.2102.129448
+
+*Release date: February 25th, 2021*
+
+- Improved IQ# debug user experience by adding a horizontal scrollbar to scroll both execution path and basis state visualizations.
+- New functions to represent the group product and group inverse on the single-qubit Clifford group, to quickly define common single-qubit Clifford operators, and to apply single-qubit Clifford operators as operations. For more information, see issue [#409](https://github.com/microsoft/QuantumLibraries/issues/409).
+- Addressing security issue in the Microsoft Quantum Development Kit for Visual Studio Code extension. For details, refer to [CVE-2021-27082](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-27082).
+- Released Az CLI quantum extension version 0.2.0: Added parameter '--provider-sku-list' to 'az quantum workspace create' to allow specification of Quantum providers. Added command group 'az quantum offerings' with 'list', 'accept-terms' and 'show-terms'.
+
 ## Version 0.15.2102.128318
 
 *Release date: February 12th, 2021*
 
 - Fix "'npm' is not recognized as an internal or external command" error during creation of Q# projects with Visual Studio Code extension. See issue [#848](https://github.com/microsoft/qsharp-compiler/issues/848). 
 
-## Version 0.15.2101.126807
+## Version 0.15.2101.126940
 
 *Release date: January 29th, 2021*
 
@@ -33,6 +74,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Update IQ# kernel syntax highlighting to include changes to Q# syntax introduced in version [0.15.2101125897](#version-0152101125897)
 - Bugfix to support passing arrays as input arguments to Q# programs submitted to Azure Quantum via `%azure.execute`, see issue [#401](https://github.com/microsoft/iqsharp/issues/401)
 - Fix "Permission denied" error encountered using `az` inside of `iqsharp-base` Docker images, see issue [#404](https://github.com/microsoft/iqsharp/issues/404)
+- Released Az CLI quantum extension version 0.1.0: Provided command line tool for workspace management and quantum computing job submission.
 
 ## Version 0.15.2101125897
 
@@ -196,7 +238,7 @@ This release contains minor bugfixes for version 0.11.2003.2506.
 
 This release contains the following:
 
-- New support for access modifiers in Q#, for more information see [Access  Modifiers](xref:microsoft.quantum.qsharp.accessmodifiers)
+- New support for access modifiers in Q#
 - Updated to .NET Core SDK 3.1
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
@@ -319,7 +361,7 @@ The changes are summarized here as well as instructions for upgrading your exist
 
 ### Q# language syntax
 This release adds new Q# language syntax:
-* Add named items for [user-defined types]microsoft.quantum.qsharp.typedeclarations#type-declarations).  
+* Add named items for [user-defined types](xref:microsoft.quantum.qsharp.typedeclarations#type-declarations).  
 * User-defined type constructors can now be used as functions.
 * Add support for [copy-and-update](xref:microsoft.quantum.qsharp.copyandupdateexpressions#copy-and-update-expressions) and [apply-and-reassign](xref:microsoft.quantum.qsharp.variabledeclarationsandreassignments#evaluate-and-reassign-statements) in user-defined types.
 * Fixup-block for [repeat-until-success](xref:microsoft.quantum.qsharp.conditionalloops#repeat-statement) loops is now optional.
@@ -327,14 +369,14 @@ This release adds new Q# language syntax:
 
 ### Library 
 
-This release adds a numerics library: Learn more about how to [use the new numerics library](xref:microsoft.quantum.libraries-numerics.usage) and try out the [new samples](https://github.com/microsoft/quantum/tree/main/Numerics).  [PR #102](https://github.com/Microsoft/QuantumLibraries/pull/102).  
-
+This release adds a numerics library: Learn more about how to [use the new numerics library](xref:microsoft.quantum.libraries-numerics.usage) and try out the [new samples](https://github.com/microsoft/Quantum/tree/main/samples/numerics).  [PR #102](https://github.com/Microsoft/QuantumLibraries/pull/102).  
 This release reorganizes extends and updates the chemistry library:
+
 * Improves modularity of components, extensibility, general code cleanup.  [PR #58](https://github.com/microsoft/QuantumLibraries/pull/58).
 * Add support for [multi-reference wavefunctions](xref:microsoft.quantum.libraries.overview-chemistry.concepts.multireference), both sparse multi-reference wavefunctions and unitary coupled cluster.  [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 * (Thank you!) [1QBit](https://1qbit.com) contributor ([@valentinS4t1qbit](https://github.com/ValentinS4t1qbit)): Energy evaluation using variational ansatz. [PR #120](https://github.com/Microsoft/QuantumLibraries/pull/120).
 * Updating [Broombridge](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge) schema to new [version 0.2](xref:microsoft.quantum.libraries.overview.chemistry.schema.spec_v_0_2), adding unitary coupled cluster specification. [Issue #65](https://github.com/microsoft/QuantumLibraries/issues/65).
-* Adding Python interoperability to chemistry library functions. Try out this [sample](https://github.com/microsoft/Quantum/tree/main/Chemistry/PythonIntegration). [Issue #53](https://github.com/microsoft/QuantumLibraries/issues/53) [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
+* Adding Python interoperability to chemistry library functions. Try out this [sample](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/PythonIntegration). [Issue #53](https://github.com/microsoft/QuantumLibraries/issues/53) [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 
 ## Version 0.6.1905
 
@@ -465,8 +507,7 @@ Even though our VS Code extension was not using it, it was flagged and removed f
 This version removes all runtime dependencies that could make the extension trigger any red flags.
 
 If you had previously installed the extension you will need to install it again by visiting 
-the [Microsoft Quantum Development Kit for Visual Studio Code](vscode:extension/quantum.quantum-devkit-vscode) extension on the 
-Visual Studio Marketplace and press Install. We are sorry about the inconvenience.
+the [Microsoft Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode) extension on the Visual Studio Marketplace and press Install. We are sorry about the inconvenience.
 
 
 ## Version 0.3.1811.1511
@@ -567,7 +608,7 @@ The Q# coder community is growing and we are thrilled to see the first user cont
 * RolfHuisman ([@RolfHuisman](https://github.com/RolfHuisman)): Microsoft MVP Rolf Huisman contributed a sample that generates flat QASM code from Q# code for a restricted class of programs that do not have classical control flow and restricted quantum operations. [PR #59](https://github.com/Microsoft/Quantum/pull/59)
 * Sarah Kasier ([@crazy4pi314](https://github.com/crazy4pi314)): helped to improve our code base by submitting a library function for controlled operations. [PR #53](https://github.com/Microsoft/Quantum/pull/53)
 * Jessica Lemieux ([@Lemj3111](https://github.com/Lemj3111)): fixed @"microsoft.quantum.canon.quantumphaseestimation" and created new unit tests.  [PR #54](https://github.com/Microsoft/Quantum/pull/54)
-* Tama McGlinn ([@TamaHobbit](https://github.com/TamaHobbit)): cleaned the Teleportation sample by making sure the QuantumSimulator instance is disposed. [PR #20](https://github.com/Microsoft/Quantum/pull/20)
+* Tama McGlinn ([@TamaMcGlinn](https://github.com/TamaMcGlinn)): cleaned the Teleportation sample by making sure the QuantumSimulator instance is disposed. [PR #20](https://github.com/Microsoft/Quantum/pull/20)
 
 Additionally, a big **Thank You!** to these Microsoft Software Engineers from the Commercial Engineering Services team contributors who made valuable changes to our documentation during their Hackathon.  Their changes vastly improved the clarity and onboarding experience for all of us:
 * Sascha Corti

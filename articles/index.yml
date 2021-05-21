@@ -36,6 +36,8 @@ landingContent:
             url: how-to-prepare-your-environment.md
           - text: Create applications for Azure
             url: how-to-create-applications-for-azure-quantum.md
+          - text: Access quantum learning material
+            url: https://msft-quant-edu-prod.azurewebsites.net/
 
   # Computing
   - title: Quantum computing
@@ -70,12 +72,12 @@ landingContent:
           url: optimization-what-is-quantum-optimization.md
       - linkListType: how-to-guide 
         links:
-          - text: Install the Python SDK for optimization
+          - text: Install the Python SDK for Azure Quantum
             url: optimization-install-sdk.md
       - linkListType: learn
         links:
           - text: Overview of optimization solvers
-            url: optimization-solvers-overview.md
+            url: xref:microsoft.quantum.reference.qio-target-list
           - text: Microsoft Learn modules for optimization
             url: https://docs.microsoft.com/learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
 

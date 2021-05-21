@@ -7,7 +7,7 @@ ms.author: mamykhai
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.user-guide-qdk.overview.testingdebugging
 no-loc: ['Q#', '$$v']
 ---
@@ -22,7 +22,7 @@ In this section, we cover the tools offered by Q# for testing and debugging quan
 One common approach to testing classical programs is to write small programs called *unit tests*, which run code in a library and compare its output to some expected output.
 For example, you can ensure that `Square(2)` returns `4` since you know *a priori* that $2^2 = 4$.
 
-Q# supports creating unit tests for quantum programs, and which can run as tests within the [xUnit](https://xunit.github.io/) unit testing framework.
+Q# supports creating unit tests for quantum programs, and which can run as tests within the [xUnit](https://xunit.net/) unit testing framework.
 
 ### Creating a Test Project
 

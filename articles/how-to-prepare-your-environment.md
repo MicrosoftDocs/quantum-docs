@@ -5,7 +5,7 @@ ms.author: kitty
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: article
+ms.topic: conceptual
 title: Prepare your environment to use Azure Quantum
 uid: microsoft.quantum.setup.cli
 ---
@@ -26,7 +26,7 @@ Before installing the Azure CLI `quantum` extension, ensure that the following p
 
 To install the Azure CLI `quantum` extension, open a command prompt, and then run the following command:
 
-```bash
+```azurecli
 az extension add -n quantum
 ```
 
@@ -34,7 +34,7 @@ az extension add -n quantum
 
 To uninstall the Azure CLI `quantum` extension, run the following command:
 
-```bash
+```azurecli
 az extension remove -n quantum
 ```
 
@@ -42,7 +42,7 @@ az extension remove -n quantum
 
 If you need to update an existing installation of the the Azure CLI `quantum` extension, you can run:
 
-```bash
+```azurecli
 az extension update -n quantum
 ```
 
@@ -55,7 +55,7 @@ Now that you have installed the tools to use Azure Quantum you can learn to subm
 
 ### For optimization users
 
-Learn how to [submit jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs.python) to solve optimization problems.
+Learn how to [use the Python SDK](xref:microsoft.quantum.optimization.install-sdk) to solve optimization problems.
 
 ### For quantum computing users
 

@@ -5,7 +5,7 @@ ms.author: a-gibec
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
-ms.topic: article
+ms.topic: conceptual
 no-loc: ['Q#', '$$v']
 title: Ways to run a Q# program
 uid: microsoft.quantum.user-guide-qdk.overview.host-programs
@@ -618,7 +618,7 @@ The output then lists those operations, which can then be called from future cel
 
 ### Target machines
 
-The functionality to run operations on specific target machines is provided via [IQ# Magic Commands](xref:microsoft.quantum.user-guide-qdk.overview.quickref.iqsharp).
+The functionality to run operations on specific target machines is provided via [IQ# Magic Commands](xref:microsoft.quantum.iqsharp.magic-ref.index).
 For example, `%simulate` makes use of the `QuantumSimulator`, and `%estimate` uses the `ResourcesEstimator`:
 
 <img src="~/media/hostprograms_jupyter_no_args_sim_est_crop.png" alt="Jupyter cell simulating a Q# operation and running resource estimation" width="773">

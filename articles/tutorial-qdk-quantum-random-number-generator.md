@@ -33,6 +33,7 @@ namespace Qrng {
     open Microsoft.Quantum.Measurement;
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Intrinsic;
+    @EntryPoint()
     operation SampleQuantumRandomNumberGenerator() : Result {
         use q = Qubit();   // Allocate a qubit.
         H(q);              // Put the qubit to superposition. It now has a 50% chance of being 0 or 1.
@@ -75,28 +76,7 @@ Now that we have a Q# operation that generates random bits, we can use it to bui
 
 ### [Q# applications with Visual Studio or Visual Studio Code](#tab/tabid-qsharp)
 
-To create the full Q# application, add the following entry point to your Q# program: 
-
-```qsharp
-    operation SampleRandomNumberInRange(max : Int) : Int {
-        mutable bits = new Result[0];
-        for idxBit in 1..BitSizeI(max) {
-            set bits += [SampleQuantumRandomNumberGenerator()];
-        }
-        let sample = ResultArrayAsInt(bits);
-        return sample > max
-                ? SampleRandomNumberInRange(max)
-                | sample;
-    }
-    
-    @EntryPoint()
-    operation SampleRandomNumber() : Int {
-        let max = 50;
-        Message($"Sampling a random number between 0 and {max}: ");
-        return SampleRandomNumberInRange(max);
-    }
-
-The program will run the operation or function marked with the `@EntryPoint()` attribute on a simulator or resource estimator, depending on the project configuration and command-line options.
+To create the full Q# application, add the following entry point to your Q# program:
 
 ```qsharp
 namespace Qrng {
@@ -128,7 +108,9 @@ namespace Qrng {
         return SampleRandomNumberInRange(max);
     }
 }
-````
+```
+
+The program will run the operation or function marked with the `@EntryPoint()` attribute on a simulator or resource estimator, depending on the project configuration and command-line options.
 
 In Visual Studio, simply press Ctrl + F5 to run the script.
 

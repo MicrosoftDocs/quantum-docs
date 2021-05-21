@@ -5,42 +5,14 @@ ms.author: kitty
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: article
+ms.topic: conceptual
 title: Create and run Q# applications in Azure Quantum
 uid: microsoft.quantum.create-applications
 ---
 
 # Create and run Q# applications in Azure Quantum
 
-This guide outlines the process to create a Q# application
-and run it on the different targets available in Azure Quantum.
-
-## Different types of targets in Azure Quantum
-
-Azure Quantum is a platform that offers a variety of quantum solutions, such as
-different hardware devices and quantum simulators. 
-At this time, each of these devices has its limitations and requirements for programs that run on them. However, the Quantum Development Kit (QDK) and the Azure Quantum service take care of these requirements in the background so that your Q# code can run seamlessly on all of the Azure Quantum targets.
-
-Quantum devices, however, are still an emerging technology, and not all of
-them can run all Q# code. As such, you need to keep some
-restrictions in mind when developing programs for different targets. Currently, we
-classify targets as having one of three profiles:
-
-- **Full:** This profile can run any Q# program within the
-  limits of memory for simulated quantum processing units (QPU) or the number of qubits of the physical
-  quantum hardware.
-- **No Control Flow:** This profile can run any Q# program that doesn't
-  require the use of the results from qubit measurements to control the
-  program flow. Within a Q# program targeted for this kind of QPU, values of
-  type `Result` do not support equality comparison.
-- **Basic Measurement Feedback:** This profile has limited ability to use the
-  results from qubit measurements to control the program flow. Within a Q# program
-  targeted for this kind of QPU, you can only compare values of type `Result` as
-  part of conditions within `if` statements in operations. The corresponding
-  conditional blocks may not contain `return` or `set` statements.
-
-In this guide, you will create applications for each of these
-target profiles and submit them to run on Azure Quantum hardware.
+This guide outlines the process to create a Q# application and run it on the different quantum computing targets available in Azure Quantum. To see what types of quantum computing targets Azure Quantum offers, you can check our article [Targets in Azure Quantum](xref:microsoft.quantum.concepts.targets).
 
 ## Create and run applications for Full profile targets
 
@@ -94,7 +66,7 @@ Follow these steps in this section to create an application to run in IonQ targe
 - Install the [QDK](xref:microsoft.quantum.install-qdk.overview.standalone).
 - A Quantum Workspace with IonQ listed as a provider. To create a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
 
-#### Steps 
+#### Steps
 
 1. [Create a Q# application using the Q# project template.](xref:microsoft.quantum.install-qdk.overview.standalone)
 1. Open the `*.csproj` file in a text editor (for example, VS Code) and edit the file to:
@@ -138,6 +110,9 @@ For more information on how to submit jobs to Azure Quantum, see:
 - [Submit jobs to Azure Quantum using Python](xref:microsoft.quantum.submit-jobs.python).
 - [Submit jobs to Azure Quantum using Q# Jupyter Notebooks](xref:microsoft.quantum.submit-jobs.jupyter)
 
+> [!NOTE]
+> If you run into an error while working with Azure Quantum, you can check our [list of common issues](xref:microsoft.quantum.azure.common-issues).
+
 ## Create and run applications for Basic Measurement Feedback targets
 
 **Basic Measurement Feedback** profile targets can run a wide variety of Q#
@@ -150,5 +125,5 @@ however, we are planning to make some available during the Limited Review.
 
 ## Next steps
 
-- Now that you know how to create Q# applications, you can learn more details about [how to submit jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs.azcli). 
-- You can also  try the different [samples](https://github.com/microsoft/qio-samples) we have available or try to submit your own projects.
+- Now that you know how to create Q# applications, you can learn more details about [how to submit jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs.azcli).
+- You can also  try the different [samples](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum) we have available or try to submit your own projects.

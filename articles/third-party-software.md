@@ -1,12 +1,12 @@
 ---
 title: Microsoft Quantum Development Kit Third Party Software 
 description: Microsoft Quantum Development Kit third party software notices and information.  
-services: service-name-with-dashes-AZURE-ONLY 
 keywords: Don’t add or edit keywords without consulting your SEO champ.
 author: QuantumWriter
 ms.author: v-benbra
 ms.date: 10/09/2017
 ms.topic: conceptual
+ms.service: azure-quantum
 no-loc: ['Q#', '$$v']
 ---
 

@@ -92,4 +92,3 @@ print(job.details.status)
 
 > Succeeded
 ```
-

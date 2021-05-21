@@ -20,12 +20,12 @@ The QDK consists of:
 - The Q# programming language
 - A set of libraries that abstract complex functionality in Q#
 - APIs for Python and .NET languages (C#, F#, and VB.NET) for running quantum programs written in Q#
-- A Python SDK to handle use optimization solvers on Azure Quantum
+- A Python SDK to use optimization solvers on Azure Quantum
 - Tools to facilitate your development
 
 ## Set up the Quantum Development Kit to develop quantum computing applications in Q#
 
-Q# programs can run as standalone applications using Visual Studio Code or Visual Studio, through Jupyter Notebooks with the IQ# Jupyter kernel, or paired with a host program written in Python or a .NET language (C#, F#). You can also run Q# programs online using [Codespaces](https://online.visualstudio.com/), [MyBinder.org](https://mybinder.org/), or [Docker](#use-the-qdk-for-quantum-computing-with-docker).
+Q# programs can run as standalone applications using Visual Studio Code or Visual Studio, through Jupyter Notebooks with the IQ# Jupyter kernel, or paired with a host program written in Python or a .NET language (C#, F#). You can also run Q# programs online using [MyBinder.org](https://mybinder.org/), or [Docker](#use-the-qdk-for-quantum-computing-with-docker).
 
 ### Options for setting up the QDK for quantum computing
 
@@ -88,7 +88,6 @@ You can also develop Q# code without installing anything locally with these opti
 
 |Resource|Advantages|Limitations|
 |---|---|---|
-|[**Visual Studio Codespaces**](xref:microsoft.quantum.install-qdk.overview.standalone)|A rich online development environment  |Requires an Azure subscription and plan |
 |[**Binder**](xref:microsoft.quantum.install-qdk.overview.binder) | Free online notebook experience |No persistence |
 
 ### Use the QDK for quantum computing with Docker
@@ -105,4 +104,4 @@ The workflows for each of these setups are described and compared in [Ways to ru
 
 You can use the Python SDK of the Quantum Development Kit to solve optimization problems using Azure Quantum solvers. 
 
-To set up the Python SDK, follow the steps in [Install and use the Python SDK for optimization](xref:microsoft.quantum.optimization.install-sdk).
+To set up the Python SDK, follow the steps in [Install and use the Python SDK for Azure Quantum](xref:microsoft.quantum.optimization.install-sdk).

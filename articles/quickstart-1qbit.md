@@ -10,7 +10,7 @@ title: 1QBit quickstart for Azure Quantum
 uid: microsoft.quantum.quickstarts.optimization.1qbit
 ---
 
-# 1QBit quickstart for Azure Quantum
+# 1QBit optimization quickstart for Azure Quantum
 
 Learn how to use 1QBit in Azure Quantum to solve complex optimization problems.
 
@@ -84,29 +84,29 @@ The goal is to find the configuration that yields the lowest possible value of $
 > [!NOTE]
 > For a detailed walkthrough of the problem scenario and how the cost function is constructed, please refer to the [sample](https://github.com/microsoft/qio-samples) and/or the associated [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/).
 
-## Install the Python SDK for optimization
+## Install the Python SDK for Azure Quantum
 
-To implement a solution, first ensure that you have the Optimization Python SDK installed on your machine. If you haven't
-installed the Optimization Python SDK already, follow these steps:
+To implement a solution, first ensure that you have the Python SDK for Azure Quantum installed on your machine. If you don't have it installed yet, follow these steps:
 
 1. Install [Python](https://www.python.org/downloads/) 3.6 or later in case you haven't already.
 1. Install [PIP](https://pip.pypa.io/en/stable/) and ensure you have **version 19.2 or higher**.
 1. Install the `azure-quantum` python package.
 
-   ```bash
+   ```Shell
    pip install --upgrade azure-quantum
    ```
 
 ## Create a `Workspace` object in your Python code and log in
 
-Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to Azure Quantum. The value for `resource_id` can be found on the Azure Portal page for the [Quantum Workspace you created](xref:microsoft.quantum.workspaces-portal).
+Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to Azure Quantum. The value for `resource_id` and `location` can be found on the Azure Portal page for the [workspace you created](xref:microsoft.quantum.workspaces-portal).
 
 ```python
 from azure.quantum import Workspace
 
 # Copy the settings for your workspace below
 workspace = Workspace(
-    resource_id = ""   # add the Resource ID of the Azure Quantum workspace you created
+    resource_id = "", # add the Resource ID of the Azure Quantum workspace you created
+    location = ""     # add the location of your Azure Quantum workspace (e.g. "westus")
 )
 ```
 
@@ -196,7 +196,9 @@ solver = PathRelinkingSolver(workspace)
 result = solver.optimize(problem)
 ```
 
-Here you created an instance of a `PathRelinkingSolver` solver for the problem. You could also have chosen other 1QBit solvers (for example, `TabuSearch`) without needing to change more lines of code. The type `Problem` is the common parameter for all the solvers of Azure Quantum.
+Here you created an instance of a `PathRelinkingSolver` solver for the problem. You could also have chosen other 1QBit solvers (for example, `TabuSearch`) without needing to change more lines of code. To see a list of the available solvers, go to the [reference page](xref:microsoft.quantum.reference.qio-target-list#provider-1qbit).
+
+The type `Problem` is the common parameter for all the solvers of Azure Quantum. 
 
 You then call `solver.optimize()` and supply the `problem` as the argument. This submits the problem synchronously to Azure Quantum and returns a Python dictionary of values to save the `result` variable for parsing in the next step.
 
@@ -245,6 +247,9 @@ Total weights:
     Ship A: 52 tonnes
     Ship B: 53 tonnes
 ```
+
+> [!NOTE]
+> If you run into an error while working with Azure Quantum, you can check our [list of common issues](xref:microsoft.quantum.azure.common-issues).
 
 ## Next steps
 

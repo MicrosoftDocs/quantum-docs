@@ -5,14 +5,14 @@ ms.author: v-edsanc
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: article
+ms.topic: conceptual
 title: Azure Quantum common issues
 uid: microsoft.quantum.azure.common-issues
 ---
 
 # Azure Quantum common issues
 
-When you first start working with Azure Quantum, you may run into these common issues.
+When you first start working with Azure Quantum, you may run into these common issues. 
 
 ## Submitting jobs
 
@@ -45,10 +45,29 @@ Failed to compile program.
 Command ran in 21.181 seconds (init: 0.457, invoke: 20.724)
 ```
 
-This error occurs when there is a problem with the Q# program that causes the compilation to fail. To see the specific error that is causing the failure, run `dotnet build` in the same folder.
+This error occurs when there is a problem with the Q# program that causes the compilation to fail. To see the specific error that is causing the failure, run `dotnet build` in the same folder. 
 
-## Creating a Quantum Workspace
+### Issue: Operation returned an invalid status code 'Forbidden'
 
-### Issue: The resource type could not be found in the namespace 'Microsoft.Quantum' for api version '2019-11-04-preview'
+When you submit your first job you may get a ‘forbidden’ error code.
 
-Documentation for this issue is under construction.
+This issue may originate during the workspace creation: Azure Quantum fails to complete the role assignment linking the new workspace to the storage account that was specified.
+A typical scenario for this situation happens if the tab or web browser window is closed before the workspace creation is completed.
+
+You can verify that you are running into this role assignment issue by following these steps:
+
+* Navigate to your new quantum workspace in Azure Portal
+* Under **Overview** > **Essentials** > **Storage account**, click on the storage account link
+* In the left navigation bar, select **Access Control (IAM)**
+* Select **Role Assignments**
+* Verify that your workspace appears as a **Contributor**
+* If the workspace does not appear as a **Contributor** you can either:
+  * Create a new workspace and make sure to wait for the workspace creation to be completed before closing the web browser tab or window.
+  * Add the proper role assignment under the storage account     
+    * Access Control (IAM) > Add role assignments
+    * Role > Contributor
+    * Assign access to > User, group, or service principal
+    * Select > [Workspace name]
+    * Save
+
+

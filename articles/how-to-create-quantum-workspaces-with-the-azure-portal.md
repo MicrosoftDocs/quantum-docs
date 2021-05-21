@@ -5,7 +5,7 @@ ms.author: kitty
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: article
+ms.topic: conceptual
 title: Create quantum workspaces with the Azure portal
 uid: microsoft.quantum.workspaces-portal
 ---
@@ -17,16 +17,25 @@ the Azure portal, and start running your quantum applications in Azure Quantum.
 
 ## Prerequisites
 
-In order to use the Azure Quantum service, you will need an active Azure subscription.
+In order to use the Azure Quantum service, you will need an active Azure subscription. To create an Azure subscription
+go to the [Azure free sign-up page](https://azure.microsoft.com/en-us/free/) and click on the green **Start free** button
+to start the process of creating an Azure subscription.
 
 > [!NOTE]
-> For more information about creating an Azure account and subscription, see the Microsoft Learn module [Create an Azure account](https://docs.microsoft.com/learn/modules/create-an-azure-account/).
+> You will need to introduce your billing information (for example, a valid credit card) to create your free Azure subscription.
+
+![alt_text=Screen capture of the free Azure sign up page](./media/start-free.png)
+
+Once you have an active Azure subscription, you can continue with the next section **Create an Azure Quantum workspace**.
 
 ## Create an Azure Quantum workspace
 
 You use the Azure Quantum service by adding an Azure Quantum workspace resource to your Azure subscription in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
 
 To open the Azure Portal, go to https://portal.azure.com and then follow these steps:
+
+> [!NOTE]
+> If you just created your Azure subscription, you might be asked to confirm your email address in order to use the service. 
 
 1. Click **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
 

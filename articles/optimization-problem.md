@@ -26,6 +26,7 @@ To create a `Problem` object, you specify the following information:
 - [optional] `terms`: A list of `Term` objects to add to the problem.
 - [optional] `problem_type`: The type of problem. Must be either
   `ProblemType.ising` or `ProblemType.pubo`. Default is `ProblemType.ising`.
+- [optional] `init_config`: A dictionary of variable ids to value if user wants to specify an initial configuration for the problem.
 
 ```py
 terms = [
@@ -35,6 +36,10 @@ terms = [
 ]
 
 problem = Problem(name="My Difficult Problem", terms=terms)
+
+# with initial configuration set
+config = {'0': 1, '1': 1, '2': 0}
+problem2 = Problem(name="Problem with Initial Configuration", terms=terms, init_config=config)
 ```
 
 ### Problem.add_term
@@ -85,3 +90,67 @@ problem.upload(workspace=workspace)
 
 Once a problem is explicitly uploaded, it will not be automatically uploaded
 during submission unless its terms change.
+
+
+### Problem.evaluate
+
+Once a problem has been defined, the user can evaluate the problem on any configuration they supply. The configuration should be supplied as a dictionary of variable ids to values. 
+
+```py
+problem = Problem("My Problem", [Term(c=1, indices=[0,1])])
+problem.evaluate({0:1, 1:1}) 
+> 1
+
+problem.evaluate({0:1, 1:0})
+> 0
+```
+
+### Problem.set_fixed_variables
+
+During experimentation, the user may want to set a variable (or a group of variables) to a particular value. Calling set_fixed_variables will return a new Problem object representing the modified problem after such variables have been fixed. 
+
+```py
+fixed_var = {'1': 1, '2': 1}
+problem = Problem("My Problem", [Term(c=1, indices=[0,1]), Term(c=11, indices=[1,2]), Term(c=5, indices=[])])
+new_problem = problem.set_fixed_variables(fixed_var)
+new_problem.terms
+
+> [{'c': 1, 'ids': [0]}, {'c': 16, 'ids': []}]
+```
+
+To piece back the fixed variables with the solution on the reduced problem:
+
+```py
+result = solver.optimize(new_problem)
+result_config = json.loads(result)['configuration']
+result_config.update(fixed_var) # join the fixed variables with the result
+```
+
+### Problem.get_terms
+
+The user can get the terms in which a variable exists using this function.
+
+```py
+problem = Problem("My problem" ,  [Term(c=1, indices=[0,1]), Term(c=11, indices=[1,2]), Term(c=5, indices=[1])])
+terms = problem.get_terms(id = 1)
+terms
+
+> [{'c': 11, 'ids': [1,2]}, {'c': 5, 'ids': [1]}]
+```
+
+## StreamingProblem
+
+StreamingProblem class can handle large problems that exceeds local memory limits. Unlike with the Problem class, terms in the StreamingProblem are uploaded directly to blob and are not kept in memory.  
+
+The StreamingProblem class uses the same interface as the Problem class.
+
+There are some features not supported yet on the StreamingProblem class due to its streaming nature:
+
+- Problem.set_fixed_variables()
+- Problem.evaluate()
+
+## OnlineProblem
+
+OnlineProblem class creates a problem from the url of the blob storage where an optimization problem has been uploaded. It is essentially used to reusing already submitted problems.
+It does not support client side analysis eg: evaluate and set_fixed_variables. It allows you to download the problem from the blob storage as an instance of the Problem class to do any of the client side operations.
+For an example of how to use the OnlineProblem class see [here](xref:microsoft.quantum.optimization.reuse-problem-definitions))

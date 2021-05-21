@@ -5,7 +5,7 @@ ms.author: kitty
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: article
+ms.topic: conceptual
 title: Submit jobs to Azure Quantum with Python
 uid: microsoft.quantum.submit-jobs.python
 ---
@@ -138,5 +138,5 @@ quantum programs on Azure Quantum.
 
 ## Next steps
 
-Now that you know how to submit jobs to Azure Quantum, you can try to run the different [samples](https://github.com/microsoft/qio-samples) we have
+Now that you know how to submit jobs to Azure Quantum, you can try to run the different [samples](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum) we have
 available or try to submit your own projects.

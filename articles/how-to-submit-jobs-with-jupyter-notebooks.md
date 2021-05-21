@@ -5,7 +5,7 @@ ms.author: kitty
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: article
+ms.topic: conceptual
 title: Submit jobs to Azure Quantum with Q# Jupyter Notebooks
 uid: microsoft.quantum.submit-jobs.jupyter
 ---
@@ -15,7 +15,7 @@ uid: microsoft.quantum.submit-jobs.jupyter
 This document provides a basic guide to submit and run Q# applications in Azure
 Quantum using Q# Jupyter Notebooks.
 
-## Prerequisites 
+## Prerequisites
 
 - An Azure Quantum workspace in your Azure subscription. To create
   a workspace, see [Create an Azure Quantum
@@ -113,5 +113,5 @@ Some helpful tips while using Q# Jupyter Notebooks:
 ## Next steps
 
 Now that you know how to submit jobs to Azure Quantum, you can try to run the
-different [samples](https://github.com/microsoft/qio-samples) we have
+different [samples](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum) we have
 available or try to submit your own projects. In particular, you can view a sample written entirely in a Q# Jupyter notebook.

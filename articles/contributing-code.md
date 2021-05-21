@@ -5,7 +5,7 @@ ms.author: chgranad
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: contributor-guide
+ms.topic: conceptual
 no-loc: ['Q#', '$$v']
 title: Contributing code to the Microsoft QDK
 uid: microsoft.quantum.contributing-qdk.overview.code
@@ -30,7 +30,7 @@ The Q# functions, operations, and user-defined types that make up libraries such
 When a new pull request is opened, for instance, our [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/) configuration will check that the changes in the pull request do not break any existing functionality that the quantum programming community depends on.
 
 With the latest Q# version, unit tests are defined using the `@Test("QuantumSimulator")` attribute. The argument may be either "QuantumSimulator", "ToffoliSimulator", "TraceSimulator", or any fully qualified name specifying the run target. Several attributes defining different run targets may be attached to the same callable. 
-Some of our tests still use the deprecated [Microsoft.Quantum.Xunit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) package that exposes all Q# functions and operations ending in `Test` to the [xUnit](https://xunit.github.io/) framework. This package is no longer needed for defining unit tests. 
+Some of our tests still use the deprecated [Microsoft.Quantum.Xunit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) package that exposes all Q# functions and operations ending in `Test` to the [xUnit](https://xunit.net/) framework. This package is no longer needed for defining unit tests. 
 
 The following function is used to ensure that the <xref:Microsoft.Quantum.Canon.Fst> and <xref:Microsoft.Quantum.Canon.Snd> functions both return the right outputs in a representative example.
 If the output of `Fst` or `Snd` is incorrect, the `fail` statement is used to cause the test to fail.

@@ -23,6 +23,7 @@ You expose the full state simulator via the `QuantumSimulator` class. For additi
 
 Create an instance of the `QuantumSimulator` class and then pass it to the `Run` method
 of a quantum operation, along with any additional parameters.
+
 ```csharp
     using (var sim = new QuantumSimulator())
     {
@@ -43,20 +44,21 @@ qubit_result = myOperation.simulate()
 
 ### Invoking the simulator from the command line
 
-When running a Q# program from the command line, the full state simulator is the default target machine. Optionally, you can use the **--simulator** (or **-s** shortcut) parameter to specify the desired target machine. Both of the following commands run a program using the full state simulator. 
+When running a Q# program from the command line, the full state simulator is the default target machine. Optionally, you can use the **--simulator** (or **-s** shortcut) parameter to specify the desired target machine. Both of the following commands run a program using the full state simulator.
 
 ```dotnetcli
 dotnet run
 dotnet run -s QuantumSimulator
 ```
 
-### Invoking the simulator from Juptyer Notebooks
+### Invoking the simulator from Jupyter Notebooks
 
 Use the IQ# magic command [%simulate](xref:microsoft.quantum.iqsharp.magic-ref.simulate) to run the Q# operation.
 
 ```
 %simulate myOperation
 ```
+
 ## Seeding the simulator
 
 By default, the full state simulator uses a random number generator to simulate quantum randomness. For testing purposes, it is sometimes useful to have deterministic results. In a C# program, you can accomplish this by providing a seed for the random number generator in the `QuantumSimulator` constructor via the `randomNumberGeneratorSeed` parameter.
@@ -67,6 +69,24 @@ By default, the full state simulator uses a random number generator to simulate 
         var res = myOperationTest.Run(sim).Result;
         ///...
     }
+```
+
+## Simulator options
+
+The behavior of the full state simulator can be adjusted via the following parameters to the C# constructor:
+
+- `throwOnReleasingQubitsNotInZeroState`: The simulator can warn you if qubits have not been returned to the `zero` state before release by throwing an exception. Resetting or measuring qubits before release is required by the Q# spec - not doing so may lead to computational errors! The default is `true`.
+- `randomNumberGeneratorSeed`: Obtain deterministic behavior by seeding the simulator as described above.
+- `disableBorrowing`: If you don't want to use [borrowed qubits](xref:microsoft.quantum.qsharp.quantummemorymanagement#borrow-statement) for this simulation, you can disable this feature by setting this parameter to `true`. Borrowed qubits will instead be replaced with regular clean qubits. The default is `false`.
+
+The code below shows a possible configuration of the parameters.
+
+```csharp
+    var sim = new QuantumSimulator (
+        throwOnReleasingQubitsNotInZeroState: false,
+        randomNumberGeneratorSeed: 42,
+        disableBorrowing: true
+    )
 ```
 
 ## Configuring threads
