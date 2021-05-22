@@ -59,23 +59,23 @@ At the root of every repository there is a file named **.openpublishing.redirect
         {"redirect entry"},
         {"redirect entry"},
         {"redirect entry"},
-  ]
+    ]
 }
 ```
 
 Each entry in the array contains the source path of an article being redirected, a relative URL of a new target location, and whether or not to keep the file's history.
 
 ```json
-          {
-              "source_path": "articles/folder/old-article.md",
-              "redirect_url": "/azure/quantum/new-article#section-about-old-topic",
-              "redirect_document_id": false
-          },
-          {
-              "source_path": "articles/folder/renamed-article.md",
-              "redirect_url": "/azure/quantum/new-named-article#section-about-old-topic",
-              "redirect_document_id": true
-          }
+        {
+            "source_path": "articles/folder/old-article.md",
+            "redirect_url": "/azure/quantum/new-article#section-about-old-topic",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "articles/folder/renamed-article.md",
+            "redirect_url": "/azure/quantum/new-named-article#section-about-old-topic",
+            "redirect_document_id": true
+        }
 ```
 
 ### How to create a redirect
