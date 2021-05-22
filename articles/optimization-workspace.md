@@ -29,7 +29,7 @@ guide](xref:microsoft.quantum.workspaces-portal) using the following values:
 - `location`: The location where the workspace is deployed, for example **West US**,
 with either the `create` or `show` commands.
 - `credential`: (Optional) The credential to use to connect to the Azure Quantum and Storage services.
-   Normally one of the [credential types from Azure.Identity](https://docs.microsoft.com/en-us/python/api/overview/azure/identity-readme?view=azure-python#credential-classes).
+   Normally one of the [credential types from Azure.Identity](/python/api/overview/azure/identity-readme#credential-classes).
    Defaults to `DefaultAzureCredential`, which will attempt [multiple forms of authentication](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-identity/1.6.0/azure.identity.html#azure.identity.DefaultAzureCredential).
 
 You can find these values by viewing your Azure Quantum Workspace details through the Azure portal.
