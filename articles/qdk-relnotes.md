@@ -35,7 +35,6 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 ## Azure Quantum update
 *May 18th, 2021*
 - Added support for new regions: Japan East, Japan West, UK South, UK West
-
 - Control Plane: Set Provider in Failed state if provisioning fails. Previously it would be stuck in Launching/Updating state.
 *May 4, 2021*
 - Added help button in portal to direct user to support forum.
