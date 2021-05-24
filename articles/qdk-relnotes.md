@@ -26,7 +26,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 - Updated control-plane clients (.NET, Go, Python) with new swagger. See full details in [Azure REST API specs](https://github.com/Azure/azure-rest-api-specs/pull/13002).
 - Added a new function to the `azure-quantum` Python client to support the translation of binary optimization terms from `npz` to Azure Quantum. See full details in [QDK Python](https://github.com/microsoft/qdk-python/pull/61).
-- Published QIR oracle compiler sample. This program allows turns classical Q# functions on Boolean inputs into quantum implementations of that functions in terms of Q# operations at the level of QIR. This allows, for example, to implement quantum algorithms that are used by many quantum algorithms readily as classical functions.
+- Published [QIR oracle generation sample](https://github.com/microsoft/Quantum/issues/496). This program allows turns classical Q# functions on Boolean inputs into quantum implementations of that functions in terms of Q# operations at the level of QIR. This allows, for example, to implement quantum algorithms that are used by many quantum algorithms readily as classical functions.
 - Added Chemistry azure-quantum sample notebook to Quantum repo. 
 - Fixed a bug that prevents QIR generation from being enabled in the iqsharp-base Docker image. See details [here](https://github.com/microsoft/iqsharp/issues/432).
 - Implemented special functions proposal.
