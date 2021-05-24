@@ -24,7 +24,6 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 ## QDK Version 0.17.2105.xxxxxx
 
-- Updated control-plane clients (.NET, Go, Python) with new swagger. See full details in [Azure REST API specs](https://github.com/Azure/azure-rest-api-specs/pull/13002).
 - Added a new function to the `azure-quantum` Python client to support the translation of binary optimization terms from `npz` to Azure Quantum. See full details in [QDK Python](https://github.com/microsoft/qdk-python/pull/61).
 - Published [QIR oracle generation sample](https://github.com/microsoft/Quantum/issues/496). This program allows turns classical Q# functions on Boolean inputs into quantum implementations of that functions in terms of Q# operations at the level of QIR. This allows, for example, to implement quantum algorithms that are used by many quantum algorithms readily as classical functions.
 - Added Chemistry azure-quantum sample notebook to Quantum repo. 
@@ -34,11 +33,15 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Set CLI user agent to include version number.
 
 ## Azure Quantum update
+*May 18th, 2021*
+- Added support for new regions: Japan East, Japan West, UK South, UK West
 
-- Job Scheduler: Fixed an issue where jobs could be rejected if an unrelated metric has reached capacity.
 - Control Plane: Set Provider in Failed state if provisioning fails. Previously it would be stuck in Launching/Updating state.
+*May 4, 2021*
 - Added help button to direct user to support forum.
 - Rendered provider cost in localized currency from Azure Marketplace.
+- Added feedback button in portal to gather user feedback.
+- Added quickstart guide in portal in overview blade.
 
 
 ## Version 0.16.2105.140472
