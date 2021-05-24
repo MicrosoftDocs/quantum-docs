@@ -20,6 +20,27 @@ For installation instructions, please refer to the [install guide](xref:microsof
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
 
+*Release date: May 24th, 2021*
+
+## QDK Version 0.17.2105.xxxxxx
+
+- Updated control-plane clients (.NET, Go, Python) with new swagger. See full details in [Azure REST API specs](https://github.com/Azure/azure-rest-api-specs/pull/13002).
+- Added a new function to the `azure-quantum` Python client to support the translation of binary optimization terms from `npz` to Azure Quantum. See full details in [QDK Python](https://github.com/microsoft/qdk-python/pull/61).
+- Published QIR oracle compiler sample. This program allows turns classical Q# functions on Boolean inputs into quantum implementations of that functions in terms of Q# operations at the level of QIR. This allows, for example, to implement quantum algorithms that are used by many quantum algorithms readily as classical functions.
+- Added Chemistry azure-quantum sample notebook to Quantum repo. 
+- Fixed a bug that prevents QIR generation from being enabled in the iqsharp-base Docker image. See details [here](https://github.com/microsoft/iqsharp/issues/432).
+- Implemented special functions proposal.
+- C# Client: Changed input data format type to "v2" for Quantum Computing. 
+- Set CLI user agent to include version number.
+
+## Azure Quantum update
+
+- Job Scheduler: Fixed an issue where jobs could be rejected if an unrelated metric has reached capacity.
+- Control Plane: Set Provider in Failed state if provisioning fails. Previously it would be stuck in Launching/Updating state.
+- Added help button to direct user to support forum.
+- Rendered provider cost in localized currency from Azure Marketplace.
+
+
 ## Version 0.16.2105.140472
 
 *Release date: May 10th, 2021*
