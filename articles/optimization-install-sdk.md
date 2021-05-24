@@ -65,17 +65,15 @@ workspace = Workspace (
     name = "",             # Add your workspace name
     location = ""          # Add your workspace location (for example, "westus")
     )
-
-workspace.login()
 ```
 
-When you run the command `workspace.login()` for the first time, you will see the following displayed in your console:
+The first time you run a method which interacts with the Azure service, a window might prompt in your default browser asking for your credentials.
+You can optionally pass a credential to be used in the authentication in the construction of the `Workspace` object or via its `credentials` property.
+See more at [Azure.Quantum.Workspace](xref:microsoft.quantum.optimization.workspace)
 
-```output
-To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code [RANDOM-CODE] to authenticate.
-```
+> [!NOTE]
+> The `workspace.login()` method has been deprecated and is no longer necessary. The first time there is a call to the service, an authentication will be attempted using the credentials passed in the `Workspace` constructor or its `credentials` property. If no credentials were passed, several authentication methods will be attempted by the [DefaultAzureCredential](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-identity/1.6.0/azure.identity.html#azure.identity.DefaultAzureCredential).
 
-Once you sign into your Azure account, your credentials will be cached so that you do not have to repeat this process for future runs.
 
 ## Expressing and solving a simple problem
 
@@ -120,6 +118,7 @@ This method will submit the problem to Azure Quantum for optimization and synchr
 ```output
 {'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0}
 ```
+
 > [!NOTE]
 > If you run into an error while working with Azure Quantum, you can check our [list of common issues](xref:microsoft.quantum.azure.common-issues). Also if your are using an optimization solver and you get an error in the form <AZQxxx>, you can check our [list of common user errors in optimization solvers](xref:azure.quantum.optimization.troubleshooting).
 
@@ -143,8 +142,8 @@ This method will submit the problem to Azure Quantum for optimization and synchr
   - [1QBit](https://github.com/microsoft/qio-samples/tree/main/samples/getting-started/1qbit)
   - [Microsoft QIO](https://github.com/microsoft/qio-samples/tree/main/samples/getting-started/microsoft-qio/)
 - Ship loading sample problem
-  - [End-to-end Microsoft Learn Module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/)
+  - [End-to-end Microsoft Learn Module](/learn/modules/solve-quantum-inspired-optimization-problems/)
   - [Sample code](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/)
 - Job shop scheduling sample problem
-  - [End-to-end Microsoft Learn Module](https://docs.microsoft.com/learn/modules/solve-job-shop-optimization-azure-quantum/)
+  - [End-to-end Microsoft Learn Module](/learn/modules/solve-job-shop-optimization-azure-quantum/)
   - [Sample code](https://github.com/microsoft/qio-samples/tree/main/samples/job-shop-scheduling/)

@@ -28,6 +28,13 @@ guide](xref:microsoft.quantum.workspaces-portal) using the following values:
 - `name`: The name of the workspace.
 - `location`: The location where the workspace is deployed, for example **West US**,
 with either the `create` or `show` commands.
+- `credential`: (Optional) The credential to use to connect to the Azure Quantum and Storage services.
+   Normally one of the [credential types from Azure.Identity](/python/api/overview/azure/identity-readme#credential-classes).
+   Defaults to `DefaultAzureCredential`, which will attempt [multiple forms of authentication](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-identity/1.6.0/azure.identity.html#azure.identity.DefaultAzureCredential).
+
+You can find these values by viewing your Azure Quantum Workspace details through the Azure portal.
+
+In case you have not specified any credentials, the first time you run a method which interacts with the Azure service, a window might prompt in your default browser asking for your credentials.
 
 ```py
 workspace = Workspace (
@@ -85,27 +92,3 @@ print(job.details.status)
 
 > Succeeded
 ```
-
-## Workspace.login
-
-Logs the local user in to Azure. It first attempts to use cached credentials
-from a secure local cache. An optional `refresh` argument can be used to bypass
-the cache and force authentication.
-
-> [!NOTE]
-> Passing `refresh=True` will clear the workspace.credentials property and force a new Interactive Device Authentication.
-Whatever credentials were set in the workspace.credentials will be lost, including ServicePrincipalCredentials.
-
-```python
-workspace = Workspace(...)
-workspace.login()
-```
-
-When you call login you will see the following printed in your console:
-
-```output
-To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code <CODE> to authenticate.
-```
-
-Once logged in, the credentials are cached locally. The location of the
-cache can be specified via the `AZURE_QUANTUM_TOKEN_CACHE` environment variable.
