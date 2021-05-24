@@ -32,7 +32,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - C# Client: Changed input data format type to "v2" for Quantum Computing. 
 - Set CLI user agent to include version number.
 
-## Azure Quantum update
+## Azure Quantum service update
 *May 18th, 2021*
 - Added support for new regions: Japan East, Japan West, UK South, UK West
 - Control Plane: Set Provider in Failed state if provisioning fails. Previously it would be stuck in Launching/Updating state.
