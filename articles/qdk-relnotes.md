@@ -38,7 +38,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 - Control Plane: Set Provider in Failed state if provisioning fails. Previously it would be stuck in Launching/Updating state.
 *May 4, 2021*
-- Added help button to direct user to support forum.
+- Added help button in portal to direct user to support forum.
 - Rendered provider cost in localized currency from Azure Marketplace.
 - Added feedback button in portal to gather user feedback.
 - Added quickstart guide in portal in overview blade.
