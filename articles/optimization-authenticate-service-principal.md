@@ -16,23 +16,23 @@ Sometimes it is unsuitable to use interactive authentication or to authenticate
 as a user account. These cases may arise when you want to submit jobs from a
 web service, another worker role, or an automated system. In this case you
 typically want to authenticate using a [Service
-Principal](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals).
+Principal](/azure/active-directory/develop/app-objects-and-service-principals).
 
 ## Prerequisite: Create a service principal and application secret
 
 To authenticate as a service principal, you must first [create a service
-principal](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
+principal](/azure/active-directory/develop/howto-create-service-principal-portal).
 
 To create a service principal, assign access, and generate a credential:
 
-1. [Create an Azure AAD application](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal):
+1. [Create an Azure AAD application](/azure/active-directory/develop/howto-create-service-principal-portal):
     >[!NOTE]
     > You do not need to set a redirect URI
 
     1. Once created, write down the *Application (client) ID* and the *Directory (tenant) ID*.
 
 1. [Create a
-   credential](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret)
+   credential](/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret)
    to login as the application:
     1. In the settings for your application, select **Certificates & secrets**.
     1. Under **Client Secrets**, select **Create New Secret**.
@@ -58,7 +58,7 @@ The first one is the [EnvironmentCredential](https://azuresdkdocs.blob.core.wind
 - **AZURE_CLIENT_ID**: the service principal’s client ID
 - **AZURE_CLIENT_SECRET**: one of the service principal’s client secrets
 
-**Option 2: Using the ClientSecretCredential**: Pass a [ClientSecretCredential](https://docs.microsoft.com/en-us/python/api/azure-identity/azure.identity.clientsecretcredential?view=azure-python) during the instantiation of the `Workspace` object or set the its `credentials` property.
+**Option 2: Using the ClientSecretCredential**: Pass a [ClientSecretCredential](/python/api/azure-identity/azure.identity.clientsecretcredential) during the instantiation of the `Workspace` object or set the its `credentials` property.
 
 ```python
 from azure.identity import ClientSecretCredential
