@@ -30,7 +30,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Fixed a bug that prevents QIR generation from being enabled in the iqsharp-base Docker image. See details [here](https://github.com/microsoft/iqsharp/issues/432).
 - Implemented new special functions (e.g.: factorial and log-gamma) in Microsoft.Quantum.Math (microsoft/QuantumLibraries#448). Thanks to @TheMagicNacho for the contribution (microsoft/QuantumLibraries#440)!
 - C# Client: Changed input data format type to "v2" for Quantum Computing. 
-- Set CLI user agent to include version number.
+- Released Az CLI quantum extension version 0.5.0: Adapted to 'az' tool version 2.23.0, adding user agent information on calls to Azure Quantum Service.
 
 ## Azure Quantum service update
 *May 18th, 2021*
