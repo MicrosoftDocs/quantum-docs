@@ -33,6 +33,8 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Released Az CLI quantum extension version 0.5.0: Adapted to 'az' tool version 2.23.0, adding user agent information on calls to Azure Quantum Service.
 
 ## Azure Quantum service update
+*May 25th, 2021*
+- Added PA and SSMC solvers along with preview access via a specialized SKU available to a subset of customers.
 *May 18th, 2021*
 - Added support for new regions: Japan East, Japan West, UK South, UK West
 - Control Plane: Set Provider in Failed state if provisioning fails. Previously it would be stuck in Launching/Updating state.
