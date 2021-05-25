@@ -8,17 +8,17 @@ ms.topic: article
 uid: azure.quantum.optimization.population-annealing
 ---
 
+# Population annealing
+
 > [!NOTE]
 > This solver is available to a subset of customers in private preview and will
 > be available to all our customers soon.
-
-# Population annealing 
 
 [Population annealing](https://arxiv.org/abs/1006.0252) is a sequential Monte
 Carlo method which aims to alleviate the susceptibility of the Metropolis
 Algorithm to rough cost landscapes (for example, with many local minima) by simulating
 a population of metropolis walkers. Akin to [Simulated
-Annealing](xref:microsoft.zaure.quantum.optimization.simulatedannealing), the
+Annealing](xref:microsoft.quantum.optimization.simulated-annealing), the
 algorithm proceeds over a set of decreasing temperatures $T$ (or increasing
 $\beta = 1/T$), but the population is resampled at each temperature step.
 During resampling, some walkers are eliminated and some are multiplied according
@@ -69,7 +69,7 @@ terms.
 
 > [!NOTE]
 > For further information on choosing which solver to use, please refer to
-> [this document](xref:microsoft.azure.quantum.optimization.choose-solver).
+> [this document](xref:microsoft.quantum.optimization.choose-solver).
 
 ## Parameter free population annealing
 
