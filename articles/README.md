@@ -14,7 +14,7 @@ Development Kit (QDK). This directory contains:
   - Articles sub-directories. These
     sub-directories should also contain their own `toc.yml` file.
 
-    > [!NOTE] Although it's possible to refer the `*.md` files directly in the parent `TOC.yml` file, to keep things ordered we only refer them from the `toc.yml` of their current directory.
+    > :pencil: Although it's possible to refer the `*.md` files directly in the parent `TOC.yml` file, to keep things ordered we only refer them from the `toc.yml` of their current directory.
 
 - **Main table of contents (TOC) `TOC.yml` file**: in this file the sections of
   the website TOC are listed together with the reference to the main `toc.yml`
@@ -86,12 +86,10 @@ To create a redirect, you need to add an entry to the [.openpublishing.redirecti
 2. Add an entry to the `redirections` array.
 
     - **source_path** is the relative repository path (relative to the root of the repository, *<https://github.com/MicrosoftDocs/quantum-docs/>*) to the old article that you're removing or renaming. Be sure the path starts with **articles** and ends with **.md**. A majority of our files live in the root **/articles** folder, so the path would be **articles/old-article.md**. If the file lives in a sub-folder, indicate the folder in the path, for example, **articles/user-guide/old-article.md**.
-      > [!NOTE]
- Verify that **source_path** is unique in the **.openpublishing.redirection.json** file. Multiple source_paths can redirect to a single target URL, but a single source_path cannot redirect to multiple targets.
+      > :pencil: Verify that **source_path** is unique in the **.openpublishing.redirection.json** file. Multiple source_paths can redirect to a single target URL, but a single source_path cannot redirect to multiple targets.
     - **redirect_url** is the relative public URL to the new article (relative to *<https://docs.microsoft.com/azure/quantum/>*). Be sure that this URL **does not** end in **.md**, as it refers to the public URL and not the repository path. Linking to a section within the new article using `#section` is allowed, for example, **/azure/quantum/new-article#specific-section**. You can also use an absolute path to another site, for example, *<https://azure.microsoft.com/services/quantum/>*.
     - **redirect_document_id** indicates whether to keep the document ID from the previous file. When set to **true**, you preserve the document ID, and data, such as page views and rankings, is transferred to the target article. Do this if the redirect is primarily a rename, and not a pointer to different article that only covers some of the same content.
-      > [!NOTE]
- If there are multiple redirect entries that go to the same target (for example, three old articles were merged into one new article), **redirect_document_id** can only be **true** for **one** of the entries.
+      > :pencil: If there are multiple redirect entries that go to the same target (for example, three old articles were merged into one new article), **redirect_document_id** can only be **true** for **one** of the entries.
 
 3. Save the file and submit a Pull Request to be reviewed and merged.
 
