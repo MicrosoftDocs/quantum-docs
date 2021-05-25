@@ -41,10 +41,13 @@ cd Tests
 code . # To open in Visual Studio Code
 ```
 
+Alternatively, in VS Code you can create a new test project by opening the command palette (**View > Command Palette...** or **Ctrl+Shift+P**) and searching for **Q#: Create new project...** and then **Unit testing project**.
+
 ****
 
-Your new project has a single file `Tests.qs`, which provides a convenient place to define new Q# unit tests.
-Initially, this file contains one sample unit test `AllocateQubit` which checks that a newly allocated qubit is in the $\ket{0}$ state and prints a message:
+Your new project will have two files in it, a code file and a project file. `Tests.qs` provides a convenient place to define new Q# unit tests, while the `.csproj` file contains configuration parameters needed to build the project.
+
+Initially, the code file contains one sample unit test `AllocateQubit` which checks that a newly allocated qubit is in the $\ket{0}$ state and prints a message:
 
 ```qsharp
     @Test("QuantumSimulator")
@@ -68,9 +71,36 @@ In the previous example, the argument to that attribute, `"QuantumSimulator"`, s
         ...
 ```
 
-Save the file and run all tests. There should now be two unit tests, one where `AllocateQubit` runs on the `QuantumSimulator`, and one where it runs in the `ResourcesEstimator`.
+After saving the file you will see two unit tests when running the tests: one where `AllocateQubit` runs on the `QuantumSimulator`, and one where it runs in the `ResourcesEstimator`.
 
 The Q# compiler recognizes the built-in targets `"QuantumSimulator"`, `"ToffoliSimulator"`, and `"ResourcesEstimator"` as valid run targets for unit tests. It is also possible to specify any fully qualified name to define a custom run target.
+
+Besides the code file, the test project template will populate the `.csproj` file with the following parameters:
+
+```xml
+<Project Sdk="Microsoft.Quantum.Sdk/0.16.2105140472">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Quantum.Xunit" Version="0.16.2105140472" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
+  </ItemGroup>
+
+</Project>
+```
+
+The first line specifies the version number of the software development kit used to build the application. Note that the exact version numbers you see will depend on your installation.
+
+The `TargetFramework` generally contains either of two values for Q# applications depending on the project type: `netcoreapp3.1` for executable projects, and `netstandard2.1` for libraries. Next, the `IsPackable` parameter is set to false (true when omitted). It determines whether a NuGet package is generated from this project when the [`dotnet pack`](/dotnet/core/tools/dotnet-pack) command is run.
+
+Lastly, the file contains all the NuGet package dependencies required to run unit tests. Make sure to include these if you are creating a test project manually or are converting a regular project.
 
 ### Running Q# Unit Tests
 
@@ -86,7 +116,7 @@ Build the project, open the **Test** menu, and select **Windows > Test Explorer*
 
 #### [Command Line / Visual Studio Code](#tab/tabid-vscode)
 
-To run tests, navigate to the project folder (the folder which contains `Tests.csproj`), and run the command:
+To run tests, navigate to the project folder (the folder which contains the `.csproj` file), and run the command:
 
 ```shell
 dotnet restore
