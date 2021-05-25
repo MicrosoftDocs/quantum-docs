@@ -34,7 +34,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 ## Azure Quantum service update
 *May 25th, 2021*
-- Added PA and SSMC solvers along with preview access via a specialized SKU available to a subset of customers.
+- Added PA (population annealing) and SSMC (sub-stochastic Monte Carlo) solvers along with preview access via a specialized SKU available to a subset of customers.
 *May 18th, 2021*
 - Added support for new regions: Japan East, Japan West, UK South, UK West
 - Control Plane: Set Provider in Failed state if provisioning fails. Previously it would be stuck in Launching/Updating state.
