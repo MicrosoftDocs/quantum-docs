@@ -20,6 +20,31 @@ For installation instructions, please refer to the [install guide](xref:microsof
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
 
+*Release date: May 24th, 2021*
+
+## QDK Version 0.17.2105.xxxxxx
+
+- Added a new function to the `azure-quantum` Python client to support the translation of binary optimization terms from `npz` to Azure Quantum. See full details in [QDK Python](https://github.com/microsoft/qdk-python/pull/61).
+- Published [QIR oracle generation sample](https://github.com/microsoft/Quantum/issues/496). This program allows turns classical Q# functions on Boolean inputs into quantum implementations of that functions in terms of Q# operations at the level of QIR. This allows, for example, to implement quantum algorithms that are used by many quantum algorithms readily as classical functions.
+- Added Chemistry azure-quantum sample notebook to Quantum repo. 
+- Fixed a bug that prevents QIR generation from being enabled in the iqsharp-base Docker image. See details [here](https://github.com/microsoft/iqsharp/issues/432).
+- Implemented new special functions (e.g.: factorial and log-gamma) in Microsoft.Quantum.Math (microsoft/QuantumLibraries#448). Thanks to @TheMagicNacho for the contribution (microsoft/QuantumLibraries#440)!
+- C# Client: Changed input data format type to "v2" for Quantum Computing. 
+- Released Az CLI quantum extension version 0.5.0: Adapted to 'az' tool version 2.23.0, adding user agent information on calls to Azure Quantum Service.
+
+## Azure Quantum service update
+*May 25th, 2021*
+- Added PA (population annealing) and SSMC (sub-stochastic Monte Carlo) solvers along with preview access via a specialized SKU available to a subset of customers.
+*May 18th, 2021*
+- Added support for new regions: Japan East, Japan West, UK South, UK West
+- Control Plane: Set Provider in Failed state if provisioning fails. Previously it would be stuck in Launching/Updating state.
+*May 4, 2021*
+- Added help button in portal to direct user to support forum.
+- Rendered provider cost in localized currency from Azure Marketplace.
+- Added feedback button in portal to gather user feedback.
+- Added quickstart guide in portal in overview blade.
+
+
 ## Version 0.16.2105.140472
 
 *Release date: May 10th, 2021*
