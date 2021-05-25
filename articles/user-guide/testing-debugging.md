@@ -34,10 +34,11 @@ In the upper right corner, search for `Q#`, and select the **Q# Test Project** t
 #### [Command Line / Visual Studio Code](#tab/tabid-vscode)
 
 From your favorite command line, run the following command:
+
 ```dotnetcli
-$ dotnet new xunit -lang Q# -o Tests
-$ cd Tests
-$ code . # To open in Visual Studio Code
+dotnet new xunit -lang Q# -o Tests
+cd Tests
+code . # To open in Visual Studio Code
 ```
 
 ****
@@ -50,24 +51,26 @@ Initially, this file contains one sample unit test `AllocateQubit` which checks 
     operation AllocateQubit () : Unit {
 
         use qubit = Qubit();
-	AssertMeasurement([PauliZ], [qubit], Zero, "Newly allocated qubit must be in the |0⟩ state.");
-        
-        
+        AssertMeasurement([PauliZ], [qubit], Zero, "Newly allocated qubit must be in the |0⟩ state.");
+
+
         Message("Test passed");
     }
 ```
 
-Any Q# operation or function that takes an argument of type `Unit` and returns `Unit` can be marked as a unit test via the `@Test("...")` attribute. 
-In the previous example, the argument to that attribute, `"QuantumSimulator"`, specifies the target on which the test runs. A single test can run on multiple targets. For example, add an attribute `@Test("ResourcesEstimator")` before `AllocateQubit`. 
+Any Q# operation or function that takes an argument of type `Unit` and returns `Unit` can be marked as a unit test via the `@Test("...")` attribute.
+In the previous example, the argument to that attribute, `"QuantumSimulator"`, specifies the target on which the test runs. A single test can run on multiple targets. For example, add an attribute `@Test("ResourcesEstimator")` before `AllocateQubit`.
+
 ```qsharp
     @Test("QuantumSimulator")
     @Test("ResourcesEstimator")
     operation AllocateQubit () : Unit {
         ...
 ```
-Save the file and run all tests. There should now be two unit tests, one where `AllocateQubit` runs on the `QuantumSimulator`, and one where it runs in the `ResourcesEstimator`. 
 
-The Q# compiler recognizes the built-in targets `"QuantumSimulator"`, `"ToffoliSimulator"`, and `"ResourcesEstimator"` as valid run targets for unit tests. It is also possible to specify any fully qualified name to define a custom run target. 
+Save the file and run all tests. There should now be two unit tests, one where `AllocateQubit` runs on the `QuantumSimulator`, and one where it runs in the `ResourcesEstimator`.
+
+The Q# compiler recognizes the built-in targets `"QuantumSimulator"`, `"ToffoliSimulator"`, and `"ResourcesEstimator"` as valid run targets for unit tests. It is also possible to specify any fully qualified name to define a custom run target.
 
 ### Running Q# Unit Tests
 
@@ -85,14 +88,14 @@ Build the project, open the **Test** menu, and select **Windows > Test Explorer*
 
 To run tests, navigate to the project folder (the folder which contains `Tests.csproj`), and run the command:
 
-```bash
-$ dotnet restore
-$ dotnet test
+```shell
+dotnet restore
+dotnet test
 ```
 
 You should get output similar to the following:
 
-```
+```output
 Build started, please wait...
 Build completed.
 
@@ -113,11 +116,10 @@ Test execution time: 1.9607 Seconds
 
 Unit tests can be filtered according to their name or the run target:
 
-```bash 
-$ dotnet test --filter "Target=QuantumSimulator"
-$ dotnet test --filter "Name=AllocateQubit"
+```shell
+dotnet test --filter "Target=QuantumSimulator"
+dotnet test --filter "Name=AllocateQubit"
 ```
-
 
 ***
 
@@ -140,7 +142,7 @@ For failing tests, the outputs are also printed to the console to help diagnose 
 
 Because functions in Q# have no _logical_ side effects, you can never observe, from within a Q# program, any other kinds of effects from running a function whose output type is the empty tuple `()`.
 That is, a target machine can choose not to run any function which returns `()` with the guarantee that this omission will not modify the behavior of any following Q# code.
-This behavior makes functions returning `()` (such as `Unit`) a useful tool for embedding assertions and debugging logic into Q# programs. 
+This behavior makes functions returning `()` (such as `Unit`) a useful tool for embedding assertions and debugging logic into Q# programs.
 
 Let's consider a simple example:
 
@@ -161,7 +163,7 @@ Thus, if we proceed past a call to `PositivityFact`, we can be assured that its 
 Note that we can implement the same behavior as `PositivityFact` using the [`Fact`](xref:Microsoft.Quantum.Diagnostics.Fact) function from the <xref:Microsoft.Quantum.Diagnostics> namespace:
 
 ```qsharp
-	Fact(value > 0, "Expected a positive number.");
+    Fact(value > 0, "Expected a positive number.");
 ```
 
 *Assertions*, on the other hand, are used similarly to facts but may depend on the state of the target machine. 
@@ -171,7 +173,7 @@ To understand the distinction, consider the following use of a fact within an as
 ```qsharp
 operation AssertQubitsAreAvailable() : Unit
 {
-     Fact(GetQubitsAvailableToUse() > 0, "No qubits were actually available");
+    Fact(GetQubitsAvailableToUse() > 0, "No qubits were actually available");
 }
 ```
 
@@ -196,7 +198,7 @@ AssertMeasurement([PauliX], [register], Zero);
 
 On physical quantum hardware, where the no-cloning theorem prevents examination of a quantum state, the `AssertMeasurement` and `AssertMeasurementProbability` operations simply return `()` with no other effect.
 
-The <xref:Microsoft.Quantum.Diagnostics> namespace provides several more functions of the `Assert` family, with which you can check more advanced conditions. 
+The <xref:Microsoft.Quantum.Diagnostics> namespace provides several more functions of the `Assert` family, with which you can check more advanced conditions.
 
 ## Dump Functions
 
@@ -212,7 +214,7 @@ $$
 $$
 calling <xref:Microsoft.Quantum.Diagnostics.DumpMachine> generates this output:
 
-```
+```output
 # wave function for qubits with ids (least to most significant): 0;1
 ∣0❭:	 0.707107 +  0.000000 i	 == 	**********           [ 0.500000 ]     --- [  0.00000 rad ]
 ∣1❭:	 0.000000 +  0.000000 i	 == 	                     [ 0.000000 ]                   
@@ -257,7 +259,7 @@ The following examples show `DumpMachine` for some common states:
 
 ### `∣0❭`
 
-```
+```output
 # wave function for qubits with ids (least to most significant): 0
 ∣0❭:	 1.000000 +  0.000000 i	 == 	******************** [ 1.000000 ]     --- [  0.00000 rad ]
 ∣1❭:	 0.000000 +  0.000000 i	 == 	                     [ 0.000000 ]                   
@@ -265,7 +267,7 @@ The following examples show `DumpMachine` for some common states:
 
 ### `∣1❭`
 
-```
+```output
 # wave function for qubits with ids (least to most significant): 0
 ∣0❭:	 0.000000 +  0.000000 i	 == 	                     [ 0.000000 ]                   
 ∣1❭:	 1.000000 +  0.000000 i	 == 	******************** [ 1.000000 ]     --- [  0.00000 rad ]
@@ -273,7 +275,7 @@ The following examples show `DumpMachine` for some common states:
 
 ### `∣+❭`
 
-```
+```output
 # wave function for qubits with ids (least to most significant): 0
 ∣0❭:	 0.707107 +  0.000000 i	 == 	**********           [ 0.500000 ]      --- [  0.00000 rad ]
 ∣1❭:	 0.707107 +  0.000000 i	 == 	**********           [ 0.500000 ]      --- [  0.00000 rad ]
@@ -281,22 +283,20 @@ The following examples show `DumpMachine` for some common states:
 
 ### `∣-❭`
 
-```
+```output
 # wave function for qubits with ids (least to most significant): 0
 ∣0❭:	 0.707107 +  0.000000 i	 == 	**********           [ 0.500000 ]      --- [  0.00000 rad ]
 ∣1❭:	-0.707107 +  0.000000 i	 == 	**********           [ 0.500000 ]  ---     [  3.14159 rad ]
 ```
 
-
   > [!NOTE]
   > The id of a qubit is assigned at runtime and is not necessarily aligned with the order in which the qubit was allocated or its position within a qubit register.
-
 
 #### [Visual Studio 2019](#tab/tabid-vs2019)
 
   > [!TIP]
   > You can locate a qubit id in Visual Studio by putting a breakpoint in your code and inspecting the value of a qubit variable, for example:
-  > 
+  >
   > ![show qubit id in Visual Studio](~/media/qubit_id.png)
   >
   > the qubit with index `0` on `register2` has id=`3`, the qubit with index `1` has id=`2`.
@@ -309,13 +309,14 @@ The following examples show `DumpMachine` for some common states:
   > ```qsharp
   > Message($"0={register2[0]}; 1={register2[1]}");
   > ```
-  > 
+  >
   > which could generate this output:
-  >```
+  >
+  >```output
   > 0=q:3; 1=q:2
   >```
+  >
   > which means that the qubit with index `0` on `register2` has id=`3`, the qubit with index `1` has id=`2`.
-
 
 ***
 
@@ -328,13 +329,11 @@ namespace Samples {
 
     operation Operation () : Unit {
         use qubits = Qubit[2];
-    	H(qubits[1]);
-    	DumpMachine("dump.txt");
-        
+        H(qubits[1]);
+        DumpMachine("dump.txt");
     }
 }
 ```
-
 
 ### DumpRegister
 
@@ -348,7 +347,7 @@ $$
 $$
 calling <xref:Microsoft.Quantum.Diagnostics.DumpRegister> for `qubit[0]` generates this output:
 
-```
+```output
 # wave function for qubits with ids (least to most significant): 0
 ∣0❭:	-0.707107 + -0.707107 i	 == 	******************** [ 1.000000 ]  /      [ -2.35619 rad ]
 ∣1❭:	 0.000000 +  0.000000 i	 == 	                     [ 0.000000 ]                   
@@ -356,7 +355,7 @@ calling <xref:Microsoft.Quantum.Diagnostics.DumpRegister> for `qubit[0]` generat
 
 and calling <xref:Microsoft.Quantum.Diagnostics.DumpRegister> for `qubit[1]` generates this output:
 
-```
+```output
 # wave function for qubits with ids (least to most significant): 1
 ∣0❭:	 0.707107 +  0.000000 i	 == 	***********          [ 0.500000 ]     --- [  0.00000 rad ]
 ∣1❭:	-0.500000 + -0.500000 i	 == 	***********          [ 0.500000 ]  /      [ -2.35619 rad ]
@@ -364,7 +363,7 @@ and calling <xref:Microsoft.Quantum.Diagnostics.DumpRegister> for `qubit[1]` gen
 
 In general, the state of a register that is entangled with another register is a mixed state rather than a pure state. In this case, <xref:Microsoft.Quantum.Diagnostics.DumpRegister> outputs the following message:
 
-```
+```output
 Qubits provided (0;) are entangled with some other qubit.
 ```
 
@@ -379,16 +378,16 @@ namespace app
     operation Operation () : Unit {
 
         use qubits = Qubit[2];
-	X(qubits[1]);
-	H(qubits[1]);
-	R1Frac(1, 2, qubits[1]);
+        X(qubits[1]);
+        H(qubits[1]);
+        R1Frac(1, 2, qubits[1]);
 
-	DumpMachine("dump.txt");
-	DumpRegister("q0.txt", qubits[0..0]);
-	DumpRegister("q1.txt", qubits[1..1]);
+        DumpMachine("dump.txt");
+        DumpRegister("q0.txt", qubits[0..0]);
+        DumpRegister("q1.txt", qubits[1..1]);
 
-	ResetAll(qubits);
-        
+        ResetAll(qubits);
+
     }
 }
 ```
