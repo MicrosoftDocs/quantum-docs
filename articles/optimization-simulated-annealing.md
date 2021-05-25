@@ -54,7 +54,7 @@ from azure.quantum.optimization import SimulatedAnnealing
 solver = SimulatedAnnealing(workspace, timeout=100, seed=22)
 ```
 
-The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar numer of variables, terms, locality and similar coefficient scale) using the parametrized simulated annealing solver.
+The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar number of variables, terms, locality and similar coefficient scale) using the parametrized simulated annealing solver.
 
 ## Parametrized simulated annealing (CPU)
 
