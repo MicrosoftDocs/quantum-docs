@@ -7,3 +7,4 @@ https://github.com/MicrosoftDocs/quantum-docs-private/blob/main/.github/workflow
 https://github.com/MicrosoftDocs/quantum-docs-private/blob/quantum-docs-scan/.github/scripts/ignorelinks.txt
 https://docs.microsoft.com/azure/quantum/old-article
 https://docs.microsoft.com/azure/quantum/new-article
+https://msft-quant-edu-prod.azurewebsites.net/&

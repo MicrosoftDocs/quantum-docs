@@ -23,7 +23,7 @@ Learn how to use Microsoft QIO in Azure Quantum to solve a simple binary optimiz
 
 You use the Azure Quantum service by adding an Azure Quantum workspace resource to your Azure subscription in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
 
-To open the Azure Portal, go to https://portal.azure.com and then follow these steps:
+To open the Azure Portal, go to <https://portal.azure.com> and then follow these steps:
 
 1. Click **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
 
@@ -37,7 +37,7 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 
 1. Fill out the details of your workspace:
    - **Subscription:** The subscription that you want to associate with this
-     workspace. 
+     workspace.
    - **Resource group:** The resource group that you want to assign this workspace to.
    - **Name:** The name of your workspace.
    - **Region:** The region for the workspace.
@@ -46,7 +46,7 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
    ![Properties for the Azure Quantum workspace](./media/azure-quantum-preview-properties.png)
 
    > [!NOTE]
-   > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](https://docs.microsoft.com/learn/modules/control-and-organize-with-azure-resource-manager/).
+   > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](/learn/modules/control-and-organize-with-azure-resource-manager/).
 
 1. After completing the information, click the **Providers** tab to add providers to your workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
 
@@ -57,7 +57,7 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
    ![Review and create the workspace](./media/azure-quantum-preview-terms.png)
 
 > [!NOTE]
-> Pricing for Azure Quantum varies by provider. Please consult the information in the Providers tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information.
+> Pricing for Azure Quantum varies by provider. Please consult the information in the Providers tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information, or visit the [Azure Quantum pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
 
 ## Define your optimization problem
 
@@ -77,7 +77,7 @@ This cost function has the following properties:
 The goal is to find the configuration that yields the lowest possible value of $H^2$.
 
 > [!NOTE]
-> For a detailed walkthrough of the problem scenario and how the cost function is constructed, please refer to the [sample](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/) and/or the associated [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/).
+> For a detailed walkthrough of the problem scenario and how the cost function is constructed, please refer to the [sample](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/) and/or the associated [Microsoft Learn module](/learn/modules/solve-quantum-inspired-optimization-problems/).
 
 ## Install the Python SDK for Azure Quantum
 
@@ -95,8 +95,6 @@ To implement a solution, first ensure that you have the Python SDK for Azure Qua
 
 Now create a Python file or Jupyter Notebook, import the `Workspace` module from `azure.quantum`, and create a `Workspace` object. This is what you will use to submit our optimization problem to Azure Quantum. The value for `resource_id` and `location` can be found on the Azure Portal page for the [workspace you created](xref:microsoft.quantum.workspaces-portal).
 
-Once the `Workspace` object is created, you log in using the `workspace.login()` command.
-
 ```python
 from azure.quantum import Workspace
 
@@ -105,10 +103,15 @@ workspace = Workspace(
     resource_id = "", # add the Resource ID of the Azure Quantum workspace you created
     location = ""     # add the location of your Azure Quantum workspace (e.g. "westus")
 )
-workspace.login()
 ```
 
-The first time you run this code on your device, a window might prompt in your default browser asking for your credentials.
+The first time you run a method which interacts with the Azure service, a window might prompt in your default browser asking for your credentials.
+You can optionally pass a credential to be used in the authentication in the construction of the `Workspace` object or via its `credentials` property.
+See more at [Azure.Quantum.Workspace](xref:microsoft.quantum.optimization.workspace)
+
+> [!NOTE]
+> The `workspace.login()` method has been deprecated and is no longer necessary. The first time there is a call to the service, an authentication will be attempted using the credentials passed in the `Workspace` constructor or its `credentials` property. If no credentials were passed, several authentication methods will be attempted by the [DefaultAzureCredential](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-identity/1.6.0/azure.identity.html#azure.identity.DefaultAzureCredential).
+
 
 ## Generate the terms for the problem
 
@@ -147,7 +150,7 @@ def createProblemForContainerWeights(containerWeights: List[int]) -> List[Term]:
 ```
 
 > [!NOTE]
-> For a detailed explanation of how this function is derived, please refer to the [shipping sample](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/) or the [Microsoft Learn module for optimization](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/).
+> For a detailed explanation of how this function is derived, please refer to the [shipping sample](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/) or the [Microsoft Learn module for optimization](/learn/modules/solve-quantum-inspired-optimization-problems/).
 
 ## Create a `Problem` instance
 
@@ -252,6 +255,6 @@ During this quick-start guide, you have seen an end-to-end example of how to tak
 For more detailed information on the shipping optimization problem, please refer to the following resources:
 
 - [Ship loading sample](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/)
-- [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-quantum-inspired-optimization-problems/)
+- [Microsoft Learn module](/learn/modules/solve-quantum-inspired-optimization-problems/)
 
-Once you have explored the ship loading sample in more detail, you may find it useful to tackle the more complex [job shop scheduling sample](https://github.com/microsoft/qio-samples/tree/main/samples/job-shop-scheduling). The associated Microsoft Learn module can be found [here](https://docs.microsoft.com/learn/modules/solve-job-shop-optimization-azure-quantum/).
+Once you have explored the ship loading sample in more detail, you may find it useful to tackle the more complex [job shop scheduling sample](https://github.com/microsoft/qio-samples/tree/main/samples/job-shop-scheduling). The associated Microsoft Learn module can be found [here](/learn/modules/solve-job-shop-optimization-azure-quantum/).
