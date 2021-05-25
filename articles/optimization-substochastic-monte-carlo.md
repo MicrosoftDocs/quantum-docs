@@ -51,7 +51,7 @@ Substochastic Monte Carlo in Azure Quantum supports:
 
 > [!NOTE]
 > For further information on choosing which solver to use, please refer to
-> [this document](xref:microsoft.azure.quantum.optimization.choose-solver).
+> [this document](xref:microsoft.quantum.optimization.choose-solver).
 
 ## Parameter-free substochastic Monte Carlo
 
