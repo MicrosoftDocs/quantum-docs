@@ -73,3 +73,13 @@ workspace.credentials = credential
 
 > [!NOTE]
 > The `workspace.login()` method has been deprecated and is no longer necessary. The first time there is a call to the service, an authentication will be attempted using the credentials passed in the `Workspace` constructor or its `credentials` property. If no credentials were passed, several authentication methods will be attempted by the [DefaultAzureCredential](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-identity/1.6.0/azure.identity.html#azure.identity.DefaultAzureCredential).
+
+
+> [!NOTE]
+> In order to create a role assignment on the resource group or workspace, you need to be an _owner_ or _user access administrator_ at the scope of the role assignment. If you do not have permissions to create the Service Principal in your subscription, you will need to request permission from the _owner_ or _administrator_ of the Azure subscription.
+
+If you have permissions only at Resource Group or Workspace level, you can try to create the service principal without subscription level assignment using:
+
+```az ad sp create-for-rbac --skip-assignment true```
+
+Then, based on the output for the Service Principal name, you can go directly to the Resource Group or Azure Quantum Workspace in the portal to create a role assignment for that Service Principal, and assign the _contributor_ role. 
