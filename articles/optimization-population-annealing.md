@@ -56,7 +56,7 @@ Population Annealing in Azure Quantum supports:
 - Parameterized mode
 - Ising and PUBO input formats
 
-## When To Use Population Annealing
+## When to use Population Annealing
 
 Generally speaking, given enough resources, Population Annealing can solve any
 problem that

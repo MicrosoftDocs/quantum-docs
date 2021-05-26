@@ -48,7 +48,7 @@ Substochastic Monte Carlo in Azure Quantum supports:
 - Parameterized mode
 - Ising and PUBO input formats
 
-## When To Use Substochastic Monte Carlo
+## When to use Substochastic Monte Carlo
 
 Substochastic Monte Carlo exhibits a tunneling-like property, akin to quantum
 adiabatic evolution, through the combination of diffusion and resampling.
