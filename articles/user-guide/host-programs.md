@@ -628,7 +628,7 @@ Upon running a cell with such a statement, the definitions from those namespaces
 
 Similarly, defining operations requires only writing the Q# code and running the cell.
 
-<img src="~/media/hostprograms_jupyter_op_def_crop.png" alt="Jupyter cell defining Q# operations" width="773">
+<img src="~/media/hostprograms_jupyter_op_def_crop.png" alt="Jupyter cell defining Q# operations" width="721">
 
 The output then lists those operations, which can then be called from future cells.
 
