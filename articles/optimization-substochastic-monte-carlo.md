@@ -57,7 +57,7 @@ optimization where the constraints cause severe nonconvexity that traps
 sequential methods such as
 [Simulated Annealing](xref:microsoft.quantum.optimization.simulated-annealing)
 or
-[Tabu Search](xref:azure.quantum.optimization.tabu).
+[Tabu Search](xref:microsoft.quantum.optimization.tabu).
 If long runs of Simulated Annealing or Tabu Search are returning diverse
 values, then it is likely they are being trapped by a rough optimization
 landscape. In this case Substochastic Monte Carlo with a modest population size
