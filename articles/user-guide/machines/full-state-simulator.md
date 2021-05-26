@@ -19,7 +19,7 @@ The QDK provides a full state simulator that simulates a quantum machine on your
 
 You expose the full state simulator via the `QuantumSimulator` class. For additional details, see [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
 
-### Invoking the simulator from C#
+### Invoking the simulator from C\#
 
 Create an instance of the `QuantumSimulator` class and then pass it to the `Run` method
 of a quantum operation, along with any additional parameters.
@@ -55,7 +55,7 @@ dotnet run -s QuantumSimulator
 
 Use the IQ# magic command [%simulate](xref:microsoft.quantum.iqsharp.magic-ref.simulate) to run the Q# operation.
 
-```
+```IQ#
 %simulate myOperation
 ```
 

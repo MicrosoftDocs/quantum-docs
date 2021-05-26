@@ -15,7 +15,7 @@ uid: microsoft.quantum.libraries.overview-chemistry.examples.overview.resourceco
 
 The cost of simulating $n$ qubits on classical computers scales exponentially with $n$. This greatly limits the size of a quantum chemistry simulation we may perform with the full-state simulator. For large instances of chemistry, we may nevertheless obtain useful information. Here, we examine how resource costs, such as the number of T-gates or CNOT gates, for simulating chemistry may be obtained in an automated fashion using the [trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro). Such information informs us of when quantum computers might be large enough to run these quantum chemistry algorithms. For reference, see the provided `GetGateCount` sample.
 
-Let us assume that we already have a `FermionHamiltonian` instance, say, loaded from the Broombridge schema as discussed in the [loading-from-file](xref:microsoft.quantum.libraries.overview-chemistry.examples.overview.loadhamiltonian) example. 
+Let us assume that we already have a `FermionHamiltonian` instance, say, loaded from the Broombridge schema as discussed in the [loading-from-file](xref:microsoft.quantum.libraries.overview-chemistry.examples.overview.loadhamiltonian) example.
 
 ```csharp
     // Filename of Hamiltonian to be loaded.
@@ -39,18 +39,18 @@ The syntax for obtaining resource estimates is almost identical to running the a
 /// # Summary
 /// This allocates qubits and applies a single Trotter step.
 operation RunTrotterStep (qSharpData: JordanWignerEncodingData) : Unit {
-    
+
     // The data describing the Hamiltonian for all these steps is contained in
     // `qSharpData`
     // We use a Product formula, also known as `Trotterization` to
     // simulate the Hamiltonian.
     // The integrator step size does not affect the gate cost of a single step.
     let trotterStepSize = 1.0;
-    
+
     // Order of integrator
     let trotterOrder = 1;
     let (nQubits, (rescaleFactor, oracle)) = TrotterStepOracle(qSharpData, trotterStepSize, trotterOrder);
-    
+
     // We not allocate qubits an run a single step.
     use qubits = Qubit[nQubits]);
     oracle(qubits);
@@ -65,17 +65,17 @@ operation RunTrotterStep (qSharpData: JordanWignerEncodingData) : Unit {
 /// # Summary
 /// This allocates qubits and applies a single qubitization step.
 operation RunQubitizationStep (qSharpData: JordanWignerEncodingData) : Double {
-    
+
     // The data describing the Hamiltonian for all these steps is contained in
     // `qSharpData`
     let (nQubits, (l1Norm, oracle)) = QubitizationOracle(qSharpData);
-    
+
     // We now allocate qubits and run a single step.
     using (qubits = Qubit[nQubits]) {
         oracle(qubits);
         ResetAll(qubits);
     }
-    
+
     return l1Norm;
 }
 ```
