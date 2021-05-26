@@ -22,28 +22,29 @@ a population of metropolis walkers. Akin to
 the algorithm proceeds over a set of decreasing temperatures $T$ (or increasing
 $\beta = 1/T$), but the population is resampled at each temperature step.
 During resampling, some walkers are removed and some are duplicated
-according to appropriate weights such that lower energy walkers are given a
-higher chance of surviving. This has the effect of continuously consolidating
-search efforts around favorable states. In this sense, Population Annealing
-shares many features with evolutionary-type algorithms. Intuitively, one can
-picture Population Annealing as a set of walkers spread across the
-configurational space of the problem.  Each walker is free to explore its own
-neighborhood. Once a walker finds a better state, the rest of the population is
-gravitated toward that state.  Therefore, the algorithm is designed to take
-advantage of the "collective knowledge" of the walkers to find its way toward
-the solution among exponentially many configurations.
+(with a bias towards retaining lower cost walkers). This has the effect of
+continuously consolidating search efforts around favorable states. In this
+sense, Population Annealing shares many features with evolutionary-type
+algorithms.
+
+Intuitively, one can picture Population Annealing as a set of
+walkers spread across the configuration space of the problem. Each walker is
+free to explore its own neighborhood. Once a walker finds a better state, the
+rest of the population is gravitated toward that state.  Therefore, the
+algorithm is designed to take advantage of the "collective knowledge" of the
+walkers to find its way toward the solution.
 
 In the context of optimization problems, the algorithm starts with an initial
 population of random states at high temperature. In this regime, "bad" transitions
-are still accepted with a high probability and walkers with "worse" states are not
-yet penalized heavily in the resampling. At lower temperatures, the
+are still accepted with a high probability and the bias towards lower-cost walkers
+in the resampling is weak. At lower temperatures, the
 [Metropolis Criterion](https://aip.scitation.org/doi/10.1063/1.4904889)
 strongly favors transitions which decrease the cost and resampling progressively
-weeds out non-competitive states. The removal rate of the walkers is strongly
-dependent upon the size of temperature steps. Therefore, the temperature
+weeds out non-competitive states. The removal rate during resampling
+depends on the size of the individual temperature steps. Therefore, the temperature
 schedule must be slow enough such that a reasonable number of walkers (about 10%-20%)
-are dropped while a relatively equal percentage of them are copied on to balance out the
-population size throughout the algorithm.
+are dropped while roughly the same number of them are copied to keep the population
+size stable.
 
 Eventually, all walkers are resampled into the same lowest-cost state discovered
 ("population collapse"). At this stage it is more efficient to restart the process
@@ -61,7 +62,7 @@ Population Annealing in Azure Quantum supports:
 Generally speaking, given enough resources, Population Annealing can solve any
 problem that
 [Simulated Annealing](xref:microsoft.quantum.optimization.simulated-annealing)
-is used for more efficiently.However, due to
+is used for more efficiently. However, due to
 the memory footprint of multiple walkers, Population Annealing is most suitable
 for very hard moderately-sized problems.  We recommend Population Annealing for
 both sparse and dense graphs. The algorithm might struggle for constraint
