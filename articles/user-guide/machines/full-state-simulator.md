@@ -19,13 +19,13 @@ The QDK provides a full state simulator that simulates a quantum machine on your
 
 You expose the full state simulator via the `QuantumSimulator` class. For additional details, see [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
 
-### Invoking the simulator from C#
+### Invoking the simulator from C\#
 
 Create an instance of the `QuantumSimulator` class and then pass it to the `Run` method
 of a quantum operation, along with any additional parameters.
 
 ```csharp
-    using (var sim = new QuantumSimulator())
+    use var sim = new QuantumSimulator()
     {
         var res = myOperation.Run(sim).Result;
         ///...
@@ -55,7 +55,7 @@ dotnet run -s QuantumSimulator
 
 Use the IQ# magic command [%simulate](xref:microsoft.quantum.iqsharp.magic-ref.simulate) to run the Q# operation.
 
-```
+```IQ#
 %simulate myOperation
 ```
 
@@ -64,7 +64,7 @@ Use the IQ# magic command [%simulate](xref:microsoft.quantum.iqsharp.magic-ref.s
 By default, the full state simulator uses a random number generator to simulate quantum randomness. For testing purposes, it is sometimes useful to have deterministic results. In a C# program, you can accomplish this by providing a seed for the random number generator in the `QuantumSimulator` constructor via the `randomNumberGeneratorSeed` parameter.
 
 ```csharp
-    using (var sim = new QuantumSimulator(randomNumberGeneratorSeed: 42))
+    use var sim = new QuantumSimulator(randomNumberGeneratorSeed: 42)
     {
         var res = myOperationTest.Run(sim).Result;
         ///...
