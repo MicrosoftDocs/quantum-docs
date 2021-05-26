@@ -7,7 +7,7 @@ ms.date: 03/16/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
-uid: azure.quantum.optimization.troubleshooting
+uid: microsoft.quantum.optimization.troubleshooting
 ---
 
 # Troubleshooting user errors in optimization solvers
