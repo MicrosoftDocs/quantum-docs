@@ -7,7 +7,7 @@ ms.date: 03/15/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
-uid: microsoft.quantum.optimization.tabu
+uid: azure.quantum.optimization.tabu
 ---
 
 # Tabu search optimization solver
