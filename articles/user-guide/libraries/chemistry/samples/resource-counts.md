@@ -71,7 +71,7 @@ operation RunQubitizationStep (qSharpData: JordanWignerEncodingData) : Double {
     let (nQubits, (l1Norm, oracle)) = QubitizationOracle(qSharpData);
 
     // We now allocate qubits and run a single step.
-    using (qubits = Qubit[nQubits]) {
+    use qubits = Qubit[nQubits] {
         oracle(qubits);
         ResetAll(qubits);
     }

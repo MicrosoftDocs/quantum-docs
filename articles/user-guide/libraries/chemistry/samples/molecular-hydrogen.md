@@ -123,7 +123,7 @@ operation GetEnergyByTrotterization (
 You can now invoke the Q# code from the host program. The following C# code creates a full-state simulator and runs `GetEnergyByTrotterization` to obtain the ground state energy.
 
 ```csharp
-using (var qsim = new QuantumSimulator())
+use var qsim = new QuantumSimulator()
 {
     // Specify the bits of precision desired in the phase estimation algorithm
     var bits = 7;
