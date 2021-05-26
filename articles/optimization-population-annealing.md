@@ -4,7 +4,6 @@ description: This document provides a basic guide about how to use the Populatio
 author: andrist
 ms.author: ruandris
 ms.date: 05/25/2021
-ms.date: 05/14/2021
 ms.topic: article
 uid: quantum.optimization.population-annealing
 ---
