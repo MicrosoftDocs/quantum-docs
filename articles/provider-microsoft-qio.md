@@ -27,8 +27,8 @@ The Microsoft QIO provider makes the following targets available:
 - [Solver: Simulated Annealing (Parametrized - FPGA)](xref:microsoft.quantum.optimization.simulated-annealing#simulated-annealing-fpga)
 - [Solver: Parallel Tempering (Parameter-free)](xref:microsoft.quantum.optimization.parallel-tempering#parameter-free-parallel-tempering)
 - [Solver: Parallel Tempering (Parametrized)](xref:microsoft.quantum.optimization.parallel-tempering#parametrized-parallel-tempering)
-- [Solver: Tabu Search (Parameter-free)](xref:azure.quantum.optimization.tabu#parameter-free-tabu-search)
-- [Solver: Tabu Search (Parametrized)](xref:azure.quantum.optimization.tabu#parametrized-tabu-search)
+- [Solver: Tabu Search (Parameter-free)](xref:microsoft.quantum.optimization.tabu#parameter-free-tabu-search)
+- [Solver: Tabu Search (Parametrized)](xref:microsoft.quantum.optimization.tabu#parametrized-tabu-search)
 - [Solver: Quantum Monte Carlo (Parametrized)](xref:microsoft.quantum.optimization.quantum-monte-carlo#parameterized-quantum-monte-carlo-cpu)
 
 ## Target Comparison

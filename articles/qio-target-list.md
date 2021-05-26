@@ -55,7 +55,7 @@ Rephrases the optimization problem as a thermodynamic system and runs multiple c
 
 ### Tabu search
 
-Tabu Search looks at neighboring configurations. It can accept worsening moves if no improving moves are available and prohibit moves to previously-visited solutions. For more information, go to the [Microsoft QIO provider reference page](xref:azure.quantum.optimization.tabu).
+Tabu Search looks at neighboring configurations. It can accept worsening moves if no improving moves are available and prohibit moves to previously-visited solutions. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.tabu).
 
 ### Quantum Monte Carlo
 
