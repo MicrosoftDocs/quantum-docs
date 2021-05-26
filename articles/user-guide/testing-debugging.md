@@ -56,7 +56,6 @@ Initially, the code file contains one sample unit test `AllocateQubit` which che
         use qubit = Qubit();
         AssertMeasurement([PauliZ], [qubit], Zero, "Newly allocated qubit must be in the |0⟩ state.");
 
-
         Message("Test passed");
     }
 ```
@@ -73,9 +72,9 @@ In the previous example, the argument to that attribute, `"QuantumSimulator"`, s
 
 After saving the file you will see two unit tests when running the tests: one where `AllocateQubit` runs on the `QuantumSimulator`, and one where it runs in the `ResourcesEstimator`.
 
-The Q# compiler recognizes the built-in targets `"QuantumSimulator"`, `"ToffoliSimulator"`, and `"ResourcesEstimator"` as valid run targets for unit tests. It is also possible to specify any fully qualified name to define a custom run target.
+The Q# compiler recognizes the built-in targets `"QuantumSimulator"`, `"ToffoliSimulator"`, and `"ResourcesEstimator"` as valid run targets for unit tests. It is also possible to specify any fully qualified simulator name to define a custom run target.
 
-Besides the code file, the test project template will populate the `.csproj` file with the following parameters:
+Besides the code file, the test project template includes the `.csproj` file with the following contents:
 
 ```xml
 <Project Sdk="Microsoft.Quantum.Sdk/0.16.2105140472">
