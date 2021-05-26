@@ -5,105 +5,101 @@ author: andrist
 ms.author: ruandris
 ms.date: 05/25/2021
 ms.topic: article
-uid: azure.quantum.optimization.substochastic-monte-carlo
+uid: microsoft.quantum.optimization.substochastic-monte-carlo
 ---
 
-# Substochastic Monte Carlo 
-
-[Substochastic Monte Carlo](https://arxiv.org/pdf/1607.03389.pdf) is a
-diffusion Monte Carlo algorithm inspired by adiabatic quantum computation.
-It simulates the diffusion of a population of walkers in search space, while
-the cost function governs the rate at which walkers are removed or duplicated.
-
-The initial set of walkers consists of random starting points
-(`population` = number of walkers), which are subjected to *random* transitions
-and a cost-based birth-death process parametrized by `alpha` and `beta`:
-
-  * `alpha`: The probability of making a random transition (single spin flip
-    in the context of binary models)
-  * `beta`: The probability of applying birth/death dynamics according to the
-    state's cost.
-
-`alpha` and `beta` are typically chosen in a time-dependent form, with `alpha`
-decreasing over time and `beta` increasing. This has the effect that the
-simulation focuses on exploration initially, followed by a transition to an
-optimization regime.
-
 > [!NOTE]
-> The beta parameter in SSMC is not an inverse Temperature as seen in other
-> Monte Carlo based optimization methods.
+> This solver is available to a subset of customers in private preview and will
+> be available to all our customers soon.
 
-For best optimization results, SSMC is typically restarted multiple times with
-a fresh set of randomly placed walkers. This can be controlled with the
-`restarts` parameter.
+# Substochastic Monte Carlo
 
-## Features of substochastic Monte Carlo on Azure Quantum
+[Substochastic Monte Carlo](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.94.042318) is a
+diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It
+simulates the diffusion of a population of walkers in search space, while
+walkers are removed or duplicated based on how they perform according the cost
+function.
+
+The initial set of walkers consists of random starting points (`population` =
+number of walkers), which are subjected to *random* transitions and a
+resampling process parameterized by `alpha` and `beta`:
+
+  * `alpha`: The probability of making a random transition (single variable
+    change in the context of binary models)
+  * `beta`: The factor to apply when resampling the population (higher values
+    for `beta` favor low-cost states more heavily)
+
+Like
+[Simulated Annealing](xref:microsoft.quantum.optimization.simulated-annealing) or
+[Population Annealing](xref:microsoft.quantum.optimization.population-annealing),
+the parameters `alpha` and `beta` are typically chosen in a time-dependent
+form, with `alpha` decreasing over time and `beta` increasing. This has the
+effect that the simulation focuses on exploration initially, and optimization
+later. Note that `beta` is not the same as inverse temperature in other
+annealing-based optimization methods, although it does govern roughly the same
+effect: when `beta` is small walkers are free to explore the space, but when
+`beta` gets large walkers in poor configurations are likely to be removed while
+those in good regimes will duplicate.
+
+## Features of Substochastic Monte Carlo on Azure Quantum
 
 Substochastic Monte Carlo in Azure Quantum supports:
 
-- Parameter-free mode and parametrized mode (with parameters)
+- Parameterized mode
 - Ising and PUBO input formats
 
-## When to use substochastic Monte Carlo
+## When To Use Substochastic Monte Carlo
 
-> [!TODO]
-> TODO(ruandris): Fill this section on what we recommend the algorithm for.
+Substochastic Monte Carlo exhibits a tunneling-like property, akin to quantum
+adiabatic evolution, through the combination of diffusion and resampling.
+Hence it is likely to find best use in problems obtained from constrained
+optimization where the constraints cause severe nonconvexity that traps
+sequential methods such as
+[Simulated Annealing](xref:microsoft.quantum.optimization.simulated-annealing)
+or
+[Tabu Search](xref:microsoft.quantum.optimization.tabu).
+If long runs of Simulated Annealing or Tabu Search are returning diverse
+values, then it is likely they are being trapped by a rough optimization
+landscape. In this case Substochastic Monte Carlo with a modest population size
+would be a good alternative to try.
 
 > [!NOTE]
 > For further information on choosing which solver to use, please refer to
 > [this document](xref:microsoft.quantum.optimization.choose-solver).
 
-## Parameter-free substochastic Monte Carlo
+## Parameterized Substochastic Monte Carlo
 
-The parameter free version of Substochastic Monte Carlo is recommended for new
-users, those who don't want to manually tune parameters (especially `alpha` and `beta`), and
-even as a starting point for further manual tuning. The main parameters to be
-tuned for this solver are the number of `population`, `alpha`, `beta` and `restarts`
-(described in the next section).
+Suitable values for the `target_population`, `step_limit` and the resampling
+schedule depend on the problem and the magnitude (cost difference) of its
+variable changes.
 
-The parameter free solver will halt on `timeout` (specified in seconds)
+  * Modest `target_population` sizes (10-100) tend to work best. While some problems
+    can benefit from larger populations, often one sees diminishing returns on
+    effort to success.
 
-| Parameter Name | Description |
-|----------------|-------------|
-| `timeout` | Max execution time for the solver (in seconds). This is a best effort mechanism, so the solver may not stop immediately when the timeout is reached.|
-| `seed (optional)` | Seed value - used for reproducing results. |
+  * The `beta_start`, `beta_stop` range from
+    [Simulated Annealing](xref:microsoft.quantum.optimization.simulated-annealing)
+    can be a helpful guidance for the resampling parameter schedule.
 
-To create a parameter free Substochastic Monte Carlo solver for the CPU using the SDK:
+  * Substochastic Monte Carlo performs individual variable updates between
+    resampling (rather than full sweeps). As a result the `step_limit` should
+    be higher as compared to, e.g., Simulated Annealing.
 
-```python
-from azure.quantum.optimization import SubstochasticMonteCarlo
-# Requires a workspace already created.
-solver = SubstochasticMonteCarlo(workspace, timeout=100, seed=22)
-```
-
-The parameter-free solver will return the parameters used in the result JSON.
-You can then use these parameters to solve similar problems (similar number of
-variables, terms, locality and similar coefficient scale) using the
-parametrized Substochastic Monte Carlo solver.
-
-## Parametrized substochastic Monte Carlo
-
-Substochastic Monte Carlo with specified parameters is best used if you are
-already familiar with Substochastic Monte Carlo terminology (`population`,
-`alpha`, `beta`, `restarts`) and/or have an idea of which parameter values you
-intend to use. **If this is your first time using Substochastic Monte Carlo for
-a problem, the parameter free version is recommended.**
 
 Substochastic Monte Carlo supports the following parameters:
 
-| Parameter Name | Description |
-|----------------|-------------|
-| `timeout`      | |
-| `population`   | |
-| `alpha`        | |
-| `beta`         | |
-| `restarts`     | The number of repeats of the annealing schedule to run. Each restart will start with a random configuration **unless an initial configuration is supplied in the problem file.** |
-| `seed (optional)`                 | Seed value - used for reproducing results |
+| Parameter Name           | Default Value   | Description |
+|--------------------------|-----------------|-------------|
+| `step_limit`             | _required_      | Number of monte carlo steps. More steps will usually improve the solution (unless it is already at the global minimum). |
+| `target_population`      | _number of threads_ | The number of walkers in the population (should be greater-equal 8). |
+| `alpha`                  | linear `1`..`0` | Schedule for the stepping chance (must be decreasing). |
+| `beta`                   | linear `1`..`5` | Schedule for the resampling factor (must be increasing). |
+| `seed` (optional)        | _time based_    | Seed value - used for reproducing results. |
 
-To create a parametrized Substochastic Monte Carlo solver for the CPU using the SDK:
+To create a parameterized Substochastic Monte Carlo solver for the CPU using the SDK:
 
 ```python
 from azure.quantum.optimization import SubstochasticMonteCarlo
 # Requires a workspace already created.
-solver = SubstochasticMonteCarlo(workspace, population=128, restarts=100, seed=42)
+solver = SubstochasticMonteCarlo(workspace, step_limit=10000, population=64, beta_stop=10.0, seed=42)
 ```
