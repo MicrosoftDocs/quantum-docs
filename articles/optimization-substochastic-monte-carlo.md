@@ -8,11 +8,11 @@ ms.topic: article
 uid: microsoft.quantum.optimization.substochastic-monte-carlo
 ---
 
+# Substochastic Monte Carlo
+
 > [!NOTE]
 > This solver is available to a subset of customers in private preview and will
 > be available to all our customers soon.
-
-# Substochastic Monte Carlo
 
 [Substochastic Monte Carlo](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.94.042318) is a
 diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It

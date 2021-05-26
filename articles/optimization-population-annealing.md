@@ -5,14 +5,14 @@ author: andrist
 ms.author: ruandris
 ms.date: 05/25/2021
 ms.topic: article
-uid: quantum.optimization.population-annealing
+uid: microsoft.quantum.optimization.population-annealing
 ---
+
+# Population Annealing
 
 > [!NOTE]
 > This solver is available to a subset of customers in private preview and will
 > be available to all our customers soon.
-
-# Population Annealing
 
 [Population Annealing](https://arxiv.org/abs/1006.0252) is a sequential Monte
 Carlo method which aims to alleviate the susceptibility of the Metropolis
@@ -24,9 +24,9 @@ $\beta = 1/T$), but the population is resampled at each temperature step.
 During resampling, some walkers are removed and some are duplicated
 according to appropriate weights such that lower energy walkers are given a
 higher chance of surviving. This has the effect of continuously consolidating
-search efforts around favorable states. In this sense, population annealing
+search efforts around favorable states. In this sense, Population Annealing
 shares many features with evolutionary-type algorithms. Intuitively, one can
-picture population annealing as a set of walkers spread across the
+picture Population Annealing as a set of walkers spread across the
 configurational space of the problem.  Each walker is free to explore its own
 neighborhood. Once a walker finds a better state, the rest of the population is
 gravitated toward that state.  Therefore, the algorithm is designed to take
@@ -58,12 +58,12 @@ Population Annealing in Azure Quantum supports:
 
 ## When To Use Population Annealing
 
-Generally speaking, given enough resources, population annealing can solve any
+Generally speaking, given enough resources, Population Annealing can solve any
 problem that
 [Simulated Annealing](xref:microsoft.quantum.optimization.simulated-annealing)
 is used for more efficiently.However, due to
-the memory footprint of multiple walkers, population annealing is most suitable
-for very hard moderately-sized problems.  We recommend population annealing for
+the memory footprint of multiple walkers, Population Annealing is most suitable
+for very hard moderately-sized problems.  We recommend Population Annealing for
 both sparse and dense graphs. The algorithm might struggle for constraint
 problems with large penalty terms.
 
