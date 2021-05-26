@@ -35,7 +35,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 ## Azure Quantum service update
 - Added PA (population annealing) and SSMC (sub-stochastic Monte Carlo) solvers along with preview access via a specialized SKU available to a subset of customers.
 - Added support for new regions: Japan East, Japan West, UK South, UK West
-- Control Plane: Set Provider in Failed state if provisioning fails. Previously it would be stuck in Launching/Updating state.
+- Set Provider in Failed state if provisioning fails. Previously it would be stuck in Launching/Updating state.
 - Added help button in portal to direct user to support forum.
 - Rendered provider cost in localized currency from Azure Marketplace.
 - Added feedback button in portal to gather user feedback.
