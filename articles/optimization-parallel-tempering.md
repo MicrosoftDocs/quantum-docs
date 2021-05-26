@@ -47,7 +47,7 @@ The parameter-free solver will halt either on `timeout` (specified in seconds) o
 
 | Parameter Name | Description |
 |----------------|-------------|
-| `timeout` | Max execution time for the solver (in seconds). This is a best effort mechnism, so the solver may not stop immediately when the timeout is reached.|
+| `timeout` | Max execution time for the solver (in seconds). This is a best effort mechanism, so the solver may not stop immediately when the timeout is reached.|
 | `seed (optional)` | Seed value - used for reproducing results. |
 
 To create a parameter-free parallel tempering solver using the SDK:
@@ -58,7 +58,7 @@ from azure.quantum.optimization import ParallelTempering
 solver = ParallelTempering(workspace, timeout=100, seed=22)
 ```
 
-The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar numer of variables, terms, locality and similar coefficient scale) using the parametrized parallel tempering solver.
+The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar number of variables, terms, locality and similar coefficient scale) using the parametrized parallel tempering solver.
 
 ## Parametrized parallel tempering
 

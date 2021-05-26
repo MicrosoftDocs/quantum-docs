@@ -7,7 +7,7 @@ ms.date: 03/15/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
-uid: azure.quantum.optimization.tabu
+uid: microsoft.quantum.optimization.tabu
 ---
 
 # Tabu search optimization solver
@@ -57,7 +57,7 @@ from azure.quantum.optimization import Tabu
 solver = Tabu(workspace, timeout=100, seed=22)
 ```
 
-The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar numer of variables, terms, locality and similar coefficient scale) using the parametrized tabu search solver.
+The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar number of variables, terms, locality and similar coefficient scale) using the parametrized tabu search solver.
 
 ## Parameterized tabu search
 
