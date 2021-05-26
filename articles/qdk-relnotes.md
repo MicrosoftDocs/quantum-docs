@@ -20,9 +20,9 @@ For installation instructions, please refer to the [install guide](xref:microsof
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
 
-*Release date: May 24th, 2021*
-
 ## QDK Version 0.17.2105.143879
+
+*Release date: May 26th, 2021*
 
 - Added a new function to the `azure-quantum` Python client to support the translation of binary optimization terms from `npz` to Azure Quantum. See full details in [QDK Python](https://github.com/microsoft/qdk-python/pull/61).
 - Published [QIR oracle generation sample](https://github.com/microsoft/Quantum/issues/496). This program allows turns classical Q# functions on Boolean inputs into quantum implementations of that functions in terms of Q# operations at the level of QIR. This allows, for example, to implement quantum algorithms that are used by many quantum algorithms readily as classical functions.
