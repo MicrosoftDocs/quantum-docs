@@ -20,7 +20,7 @@ simulates the diffusion of a population of walkers in search space, while
 walkers are removed or duplicated based on how they perform according the cost
 function.
 
-The initial set of walkers consists of random starting points (`population` =
+The initial set of walkers consists of random starting points (`target_population` =
 number of walkers), which are subjected to *random* transitions and a
 resampling process parameterized by `alpha` and `beta`:
 
@@ -99,7 +99,7 @@ Substochastic Monte Carlo supports the following parameters:
 To create a parameterized Substochastic Monte Carlo solver for the CPU using the SDK:
 
 ```python
-from azure.quantum.optimization import SubstochasticMonteCarlo
+from azure.quantum.optimization import SubstochasticMonteCarlo, RangeSchedule
 # Requires a workspace already created.
-solver = SubstochasticMonteCarlo(workspace, step_limit=10000, population=64, beta_stop=10.0, seed=42)
+solver = SubstochasticMonteCarlo(workspace, step_limit=10000, target_population=64, beta=RangeSchedule("linear", 1, 5), seed=42)
 ```
