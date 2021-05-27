@@ -46,7 +46,7 @@ This will list the packages available for download.
 
 3. Hover over **Microsoft.Quantum.Numerics** and click the downward-pointing arrow to the right of the version number to install the numerics package.
 
-For more details, see the [Package Manager UI guide](https://docs.microsoft.com/nuget/tools/package-manager-ui).
+For more details, see the [Package Manager UI guide](/nuget/tools/package-manager-ui).
 
 Alternatively, you can use the Package Manager Console to add the numerics library to your project via the command line interface.
 
@@ -58,7 +58,7 @@ From the Package Manager Console, run the following:
 Install-Package Microsoft.Quantum.Numerics
 ```
 
-For more details, see the [Package Manager Console guide](https://docs.microsoft.com/nuget/tools/package-manager-console).
+For more details, see the [Package Manager Console guide](/nuget/tools/package-manager-console).
 
 ## [IQ# Notebooks](#tab/tabid-notebook)
 
@@ -79,7 +79,7 @@ To make the package available from Q# code in the current workspace, reload the 
 ## [Python interoperability](#tab/tabid-python)
 
 
-You can make additional packages available for use in a Python host program by using the [`qsharp.packages.add`](https://docs.microsoft.com/python/qsharp-core/qsharp.packages.packages) method.
+You can make additional packages available for use in a Python host program by using the [`qsharp.packages.add`](/python/qsharp-core/qsharp.packages.packages) method.
 For example, to add the [**Microsoft.Quantum.Numerics**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) package for use in an IQ# Notebook, run the following Python code:
 
 ```python

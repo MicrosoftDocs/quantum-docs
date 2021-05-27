@@ -36,7 +36,7 @@ Regardless of whether you are using C# or Python to host Q# operations, follow t
 
 ### Update Q# projects in Visual Studio
  
-1. Update to the latest version of Visual Studio 2019, see [here](https://docs.microsoft.com/visualstudio/install/update-visual-studio) for instructions.
+1. Update to the latest version of Visual Studio 2019, see [here](/visualstudio/install/update-visual-studio) for instructions.
 2. Open your solution in Visual Studio.
 3. From the menu, select **Build** -> **Clean Solution**.
 4. In each of your .csproj files, update the target framework to `netcoreapp3.1` (or `netstandard2.1` if it is a library project).
@@ -46,7 +46,7 @@ Regardless of whether you are using C# or Python to host Q# operations, follow t
     <TargetFramework>netcoreapp3.1</TargetFramework>
     ```
 
-    You can find more details on specifying target frameworks [here](https://docs.microsoft.com/dotnet/standard/frameworks#how-to-specify-target-frameworks).
+    You can find more details on specifying target frameworks [here](/dotnet/standard/frameworks#how-to-specify-target-frameworks).
 
 5. In each of the .csproj files, set the SDK to `Microsoft.Quantum.Sdk`, as indicated in the line below. Please notice that the version number should be the latest available, and you can determine it by reviewing the [release notes](xref:microsoft.quantum.relnotes-qdk).
 
@@ -101,7 +101,7 @@ You can now skip ahead to [update your Visual Studio QDK extension](#update-the-
         <TargetFramework>netcoreapp3.1</TargetFramework>
         ```
 
-        You can find more details on specifying target frameworks [here](https://docs.microsoft.com/dotnet/standard/frameworks#how-to-specify-target-frameworks).
+        You can find more details on specifying target frameworks [here](/dotnet/standard/frameworks#how-to-specify-target-frameworks).
 
     - Replace the reference to the SDK in the project definition. Make sure that the version number corresponds to the value determined in **step 3**.
 

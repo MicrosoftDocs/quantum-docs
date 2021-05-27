@@ -58,7 +58,7 @@ double inputWidth =
         functor: OperationFunctor.Controlled);
 ```
 
-The first part of the program runs the `ApplyMultiControlledX` operation. The second part uses the [`QCTraceSimulator.GetMetric`](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) method to retrieve the number of allocated qubits as well as the number of qubits that the `Controlled X` operation received as input. 
+The first part of the program runs the `ApplyMultiControlledX` operation. The second part uses the [`QCTraceSimulator.GetMetric`](/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) method to retrieve the number of allocated qubits as well as the number of qubits that the `Controlled X` operation received as input. 
 
 Finally, you can output all the statistics collected by the width counter in CSV format using the following:
 ```csharp

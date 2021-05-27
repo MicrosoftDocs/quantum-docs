@@ -24,7 +24,7 @@ Any search task can be mathematically formulated with an abstract function $f(x)
 > Grover's algorithm that want to learn how to implement it in Q#. For a more
 > slow paced tutorial we recommend the Microsoft Learn module [Solve graph
 > coloring problems by using Grover's
-> search](https://docs.microsoft.com/learn/modules/solve-graph-coloring-problems-grovers-search/).
+> search](/learn/modules/solve-graph-coloring-problems-grovers-search/).
 > For a detailed explanation on the theory behind Grover's algorithm, check the conceptual article [Theory of Grover's algorithm](xref:microsoft.quantum.concepts.grovers).
 
 ## Grover's algorithm task
@@ -226,7 +226,7 @@ operation ApplyMarkingOracleAsPhaseOracle(
 }
 ```
 
-This famous transformation is often known as the *phase kickback* and it's widely used in many quantum computing algorithms. You can find a detailed explanation of this technique in this [Microsoft Learn module](https://docs.microsoft.com/learn/modules/solve-graph-coloring-problems-grovers-search/4-implement-quantum-oracle).
+This famous transformation is often known as the *phase kickback* and it's widely used in many quantum computing algorithms. You can find a detailed explanation of this technique in this [Microsoft Learn module](/learn/modules/solve-graph-coloring-problems-grovers-search/4-implement-quantum-oracle).
 
 ## Factoring numbers with Grover's search
 
@@ -347,7 +347,7 @@ The program above will run the operation or function marked with the `@EntryPoin
 
 In general, running a Q# program in Visual Studio is as simple as pressing `Ctrl + F5`. But first, we need to provide the right command-line arguments to our program.
 
-Command-line arguments can be configured via the debug page of your project properties. You can visit the [Visual Studio reference guide](https://docs.microsoft.com/visualstudio/ide/reference/debug-page-project-designer) for more information about this, or follow the steps below:
+Command-line arguments can be configured via the debug page of your project properties. You can visit the [Visual Studio reference guide](/visualstudio/ide/reference/debug-page-project-designer) for more information about this, or follow the steps below:
 
 1. In the solution explorer on the right, right-click the name of your project (the project node, one level below the solution) and select **Properties**.
 
