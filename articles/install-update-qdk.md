@@ -51,7 +51,7 @@ Regardless of whether you are using C# or Python to host Q# operations, follow t
 5. In each of the .csproj files, set the SDK to `Microsoft.Quantum.Sdk`, as indicated in the line below. Please notice that the version number should be the latest available, and you can determine it by reviewing the [release notes](xref:microsoft.quantum.relnotes-qdk).
 
     ```xml
-    <Project Sdk="Microsoft.Quantum.Sdk/0.12.20072031">
+    <Project Sdk="Microsoft.Quantum.Sdk/0.17.2105143879">
     ```
 
 6. Save and close all files in your solution.
@@ -106,13 +106,13 @@ You can now skip ahead to [update your Visual Studio QDK extension](#update-the-
     - Replace the reference to the SDK in the project definition. Make sure that the version number corresponds to the value determined in **step 3**.
 
         ```xml
-        <Project Sdk="Microsoft.Quantum.Sdk/0.12.20072031">
+        <Project Sdk="Microsoft.Quantum.Sdk/0.17.2105143879">
         ```
 
     - Remove the reference to package `Microsoft.Quantum.Development.Kit` if present, which will be specified in the following entry:
 
         ```xml
-        <PackageReference Include="Microsoft.Quantum.Development.Kit" Version="0.10.1910.3107" />
+        <PackageReference Include="Microsoft.Quantum.Development.Kit" Version="0.17.2105143879" />
         ```
 
     - Update the version of the all the Microsoft Quantum packages to the most recently released version of the QDK (determined in **step 3**). Those packages are named with the following patterns:
@@ -125,7 +125,7 @@ You can now skip ahead to [update your Visual Studio QDK extension](#update-the-
         References to packages have the following format:
 
         ```xml
-        <PackageReference Include="Microsoft.Quantum.Compiler" Version="0.12.20072031" />
+        <PackageReference Include="Microsoft.Quantum.Compiler" Version="0.17.2105143879" />
         ```
 
     - Save the updated file.
@@ -192,8 +192,8 @@ The update procedure depends on whether you originally installed using conda or 
     You should see the following output:
 
     ```
-    iqsharp: 0.12.20072031
-    Jupyter Core: 1.4.0.0
+    iqsharp: 0.17.2105143879
+    Jupyter Core: 1.5.0.0
     ```
 
     Don't worry if your `iqsharp` version is higher. It should match the [latest release](xref:microsoft.quantum.relnotes-qdk).
@@ -214,7 +214,7 @@ The update procedure depends on whether you originally installed using conda or 
 
     ```
     Name: qsharp
-    Version: 0.12.2007.2031
+    Version: 0.17.2105.143879
     Summary: Python client for Q#, a domain-specific quantum programming language
     ...
     ```
@@ -265,8 +265,8 @@ The update procedure depends on whether you originally installed using conda or 
     Your output should be similar to the following:
 
     ```
-    iqsharp: 0.12.20072031
-    Jupyter Core: 1.4.0.0
+    iqsharp: 0.17.2105143879
+    Jupyter Core: 1.5.0.0
     ```
 
     Don't worry if your `iqsharp` version is higher. It should match the [latest release](xref:microsoft.quantum.relnotes-qdk).

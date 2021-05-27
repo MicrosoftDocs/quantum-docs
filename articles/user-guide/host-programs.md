@@ -397,14 +397,14 @@ load any `ProjectReference` or `PackageReference` items found in that `.csproj` 
 For example, here is a simple `.csproj` file that causes IQ# to automatically load the `Microsoft.Quantum.Chemistry` package:
 
 ```xml
-<Project Sdk="Microsoft.Quantum.Sdk/0.12.20072031">
+<Project Sdk="Microsoft.Quantum.Sdk/0.17.2105143879">
     <PropertyGroup>
         <OutputType>Library</OutputType>
         <TargetFramework>netstandard2.1</TargetFramework>
         <IQSharpLoadAutomatically>true</IQSharpLoadAutomatically>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Microsoft.Quantum.Chemistry" Version="0.12.20072031" />
+        <PackageReference Include="Microsoft.Quantum.Chemistry" Version="0.17.2105143879" />
     </ItemGroup>
 </Project>
 ```
@@ -675,14 +675,14 @@ load any `ProjectReference` or `PackageReference` items found in that `.csproj` 
 For example, here is a simple `.csproj` file that causes IQ# to automatically load the `Microsoft.Quantum.Chemistry` package:
 
 ```xml
-<Project Sdk="Microsoft.Quantum.Sdk/0.12.20072031">
+<Project Sdk="Microsoft.Quantum.Sdk/0.17.2105143879">
     <PropertyGroup>
         <OutputType>Library</OutputType>
         <TargetFramework>netstandard2.1</TargetFramework>
         <IQSharpLoadAutomatically>true</IQSharpLoadAutomatically>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Microsoft.Quantum.Chemistry" Version="0.12.20072031" />
+        <PackageReference Include="Microsoft.Quantum.Chemistry" Version="0.17.2105143879" />
     </ItemGroup>
 </Project>
 ```
