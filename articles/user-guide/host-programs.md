@@ -1,7 +1,7 @@
 ---
-author: gillenhaalb
+author: bradben
 description: Overview of the different ways to run Q# programs. From the command prompt, Q# Jupyter Notebooks, and classical host programs in Python or a .NET language.
-ms.author: a-gibec
+ms.author: v-benbra
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

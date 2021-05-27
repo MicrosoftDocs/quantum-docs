@@ -1,7 +1,7 @@
 ---
-author: geduardo
+author: bradben
 description: Build a Q# project that demonstrates Grover's algorithm, one of the canonical quantum algorithms.
-ms.author: v-edsanc
+ms.author: v-benbra
 ms.date: 02/21/2021
 ms.service: azure-quantum
 ms.subservice: qdk
