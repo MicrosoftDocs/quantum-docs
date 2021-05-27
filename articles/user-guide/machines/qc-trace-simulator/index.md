@@ -71,7 +71,7 @@ operation TeleportQubit(source : Qubit, target : Qubit) : Unit {
 
 When the quantum trace simulator encounters `AssertMeasurementProbability` it records that measuring `PauliZ` on `source` and `q` should give an outcome of `Zero`, with probability **0.5**. When it runs the `M` operation later, it finds the recorded values of the outcome probabilities, and `M` returns `Zero` or `One`, with probability **0.5**. When the same code runs on a simulator that keeps track of the quantum state, that simulator checks that the provided probabilities in `AssertMeasurementProbability` are correct.
 
-Note that if there is at least one measurement operation that is not annotated using `AssertMeasurementProbability`, the simulator throws an [`UnconstrainedMeasurementException`](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.qctracesimulatorruntime.unconstrainedmeasurementexception).
+Note that if there is at least one measurement operation that is not annotated using `AssertMeasurementProbability`, the simulator throws an [`UnconstrainedMeasurementException`](/dotnet/api/microsoft.quantum.simulation.qctracesimulatorruntime.unconstrainedmeasurementexception).
 
 ## Quantum trace simulator tools
 
@@ -89,7 +89,7 @@ Each of these tools is enabled by setting appropriate flags in `QCTraceSimulator
 
 ## QCTraceSimulator methods
 
-`QCTraceSimulator` has several built-in methods to retrieve the values of the metrics tracked during a quantum operation. Examples of the [QCTraceSimulator.GetMetric](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) and the [QCTraceSimulator.ToCSV](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.tocsv) methods can be found in the [Primitive operations counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.primitive-counter), [Depth counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.depth-counter), and [Width counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.width-counter) articles. For more information on all available methods, see [QCTraceSimulator](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) in the Q# API reference.  
+`QCTraceSimulator` has several built-in methods to retrieve the values of the metrics tracked during a quantum operation. Examples of the [QCTraceSimulator.GetMetric](/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) and the [QCTraceSimulator.ToCSV](/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.tocsv) methods can be found in the [Primitive operations counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.primitive-counter), [Depth counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.depth-counter), and [Width counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.width-counter) articles. For more information on all available methods, see [QCTraceSimulator](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) in the Q# API reference.  
 
 ## See also
 

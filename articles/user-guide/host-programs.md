@@ -1,7 +1,7 @@
 ---
-author: gillenhaalb
+author: bradben
 description: Overview of the different ways to run Q# programs. From the command prompt, Q# Jupyter Notebooks, and classical host programs in Python or a .NET language.
-ms.author: a-gibec
+ms.author: v-benbra
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
@@ -135,7 +135,7 @@ dotnet run
 
 at the command prompt.
 The simplest workflow is when the terminal's directory location is the same as the Q# file, which can be easily handled alongside Q# file editing by using the integrated terminal in VS Code, for example.
-However, the [`dotnet run` command](https://docs.microsoft.com/dotnet/core/tools/dotnet-run) accepts numerous options, and the program can also be run from a different location by simply providing `--project <PATH>` with the location of the Q# file.
+However, the [`dotnet run` command](/dotnet/core/tools/dotnet-run) accepts numerous options, and the program can also be run from a different location by simply providing `--project <PATH>` with the location of the Q# file.
 
 ### Add entry point to Q# file
 
@@ -242,7 +242,7 @@ For details on what these metrics indicate, see [Resource estimator: metrics rep
 
 ### Non-Q# `dotnet run` options
 
-As we briefly mentioned above with the `--project` option, the [`dotnet run` command](https://docs.microsoft.com/dotnet/core/tools/dotnet-run) also accepts options unrelated to the Q# callable arguments.
+As we briefly mentioned above with the `--project` option, the [`dotnet run` command](/dotnet/core/tools/dotnet-run) also accepts options unrelated to the Q# callable arguments.
 If providing both kinds of options, the `dotnet`-specific options must be provided first, followed by a delimeter `--`, and then the Q#-specific options.
 For example, specifying a path along with a number qubits for the operation above would be run via `dotnet run --project <PATH> -- -n <n>`.
 
@@ -363,7 +363,7 @@ Multiple qubits:
 By default, the `import qsharp` command loads all of the `.qs` files in the current folder and makes their Q# operations and functions
 available for use from inside the Python script.
 
-To load Q# code from another folder, the [`qsharp.projects` API](https://docs.microsoft.com/python/qsharp-core/qsharp.projects.projects)
+To load Q# code from another folder, the [`qsharp.projects` API](/python/qsharp-core/qsharp.projects.projects)
 can be used to add a reference to a `.csproj` file for a Q# project (that is, a project that references `Microsoft.Quantum.Sdk`).
 This command will compile any `.qs` files in the folder containing the `.csproj` and its subfolders. It will also recursively load
 any packages referenced via `PackageReference` or Q# projects referenced via `ProjectReference` in that `.csproj` file.
@@ -385,7 +385,7 @@ Adding reference to project: ../qrng/Qrng.csproj
 Qrng result: 0
 ```
 
-To load external packages containing Q# code, use the [`qsharp.packages` API](https://docs.microsoft.com/python/qsharp-core/qsharp.packages.packages).
+To load external packages containing Q# code, use the [`qsharp.packages` API](/python/qsharp-core/qsharp.packages.packages).
 
 If the Q# code in the current folder depends on external projects or packages, you may see errors when running `import qsharp`,
 since the dependencies have not yet been loaded.

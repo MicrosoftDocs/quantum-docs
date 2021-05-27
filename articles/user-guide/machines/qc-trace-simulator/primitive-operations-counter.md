@@ -55,7 +55,7 @@ double tCountAll = sim.GetMetric<ApplySampleWithCCNOT>(PrimitiveOperationsGroups
 double tCount = sim.GetMetric<Primitive.CCNOT, ApplySampleWithCCNOT>(PrimitiveOperationsGroupsNames.T);
 ```
 
-The first part of the program runs `ApplySampleWithCCNOT`. The second part uses the [`QCTraceSimulator.GetMetric`](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) method to retrieve the number of `T` operations run by `ApplySampleWithCCNOT`: 
+The first part of the program runs `ApplySampleWithCCNOT`. The second part uses the [`QCTraceSimulator.GetMetric`](/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) method to retrieve the number of `T` operations run by `ApplySampleWithCCNOT`: 
 
 When you call `GetMetric` with two type parameters, it returns the value of the metric associated with a given call graph edge. In the preceding example, the program calls the `Primitive.CCNOT` operation  within `ApplySampleWithCCNOT` and therefore the call graph contains the edge `<Primitive.CCNOT, ApplySampleWithCCNOT>`. 
 

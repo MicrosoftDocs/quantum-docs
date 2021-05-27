@@ -23,7 +23,7 @@ any target with this profile yet, but you can try any Q# program locally using t
 
 If you need help setting up your environment to run Q# programs locally, see [Getting started with the QDK](xref:microsoft.quantum.get-started-qdk).
 
-You can also explore different [Q# code samples](https://docs.microsoft.com/samples/browse/?languages=qsharp) to run locally with the QDK.
+You can also explore different [Q# code samples](/samples/browse/?languages=qsharp) to run locally with the QDK.
 
 ## Create and run applications for No Control Flow profile targets
 

@@ -32,11 +32,11 @@ of a quantum operation, along with any additional parameters.
     }
 ```
 
-Because the `QuantumSimulator` class implements the <xref:System.IDisposable> interface, you must call the `Dispose` method once you do not need the instance of the simulator anymore. The best way to do this is to wrap the simulator declaration and operations within a [using](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/using-statement) statement, which automatically calls the `Dispose` method.
+Because the `QuantumSimulator` class implements the <xref:System.IDisposable> interface, you must call the `Dispose` method once you do not need the instance of the simulator anymore. The best way to do this is to wrap the simulator declaration and operations within a [using](/dotnet/csharp/language-reference/keywords/using-statement) statement, which automatically calls the `Dispose` method.
 
 ### Invoking the simulator from Python
 
-Use the [simulate()](https://docs.microsoft.com/python/qsharp-core/qsharp.loader.qsharpcallable) method from the Q# Python library with the imported Q# operation:
+Use the [simulate()](/python/qsharp-core/qsharp.loader.qsharpcallable) method from the Q# Python library with the imported Q# operation:
 
 ```python
 qubit_result = myOperation.simulate()

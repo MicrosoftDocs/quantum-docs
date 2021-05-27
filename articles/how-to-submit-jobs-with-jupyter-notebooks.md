@@ -102,13 +102,13 @@ Some helpful tips while using Q# Jupyter Notebooks:
   appending a `?` to the command, for example, `%azure.connect?`.
 
 - Documentation for magic commands is also available online:
-  [%azure.connect](https://docs.microsoft.com/qsharp/api/iqsharp-magic/azure.connect),
-  [%azure.target](https://docs.microsoft.com/qsharp/api/iqsharp-magic/azure.target),
-  [%azure.submit](https://docs.microsoft.com/qsharp/api/iqsharp-magic/azure.submit),
-  [%azure.execute](https://docs.microsoft.com/qsharp/api/iqsharp-magic/azure.execute),
-  [%azure.status](https://docs.microsoft.com/qsharp/api/iqsharp-magic/azure.status),
-  [%azure.output](https://docs.microsoft.com/qsharp/api/iqsharp-magic/azure.output),
-  [%azure.jobs](https://docs.microsoft.com/qsharp/api/iqsharp-magic/azure.jobs)
+  [%azure.connect](/qsharp/api/iqsharp-magic/azure.connect),
+  [%azure.target](/qsharp/api/iqsharp-magic/azure.target),
+  [%azure.submit](/qsharp/api/iqsharp-magic/azure.submit),
+  [%azure.execute](/qsharp/api/iqsharp-magic/azure.execute),
+  [%azure.status](/qsharp/api/iqsharp-magic/azure.status),
+  [%azure.output](/qsharp/api/iqsharp-magic/azure.output),
+  [%azure.jobs](/qsharp/api/iqsharp-magic/azure.jobs)
 
 ## Next steps
 

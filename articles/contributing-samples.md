@@ -60,7 +60,7 @@ One especially important file, though, is the `README.md` file, as that's what u
 Each `README.md` should start with some metadata that helps docs.microsoft.com/samples find your contribution.
 
 > [!div class="nextstepaction"]
-> [See how the chsh-game sample is rendered](https://docs.microsoft.com/samples/microsoft/quantum/validating-quantum-mechanics/)
+> [See how the chsh-game sample is rendered](/samples/microsoft/quantum/validating-quantum-mechanics/)
 
 This metadata is provided as a [YAML header](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html#yaml-header) that indicates what languages your sample covers (typically, this will be `qsharp`, `csharp`, and `python`), and what products your sample covers (typically, just `qdk`).
 
@@ -101,7 +101,7 @@ Users of your sample will also appreciate knowing what they need to run it (for 
 ```markdown
     ## Prerequisites
 
-    - The Microsoft [Quantum Development Kit](https://docs.microsoft.com/quantum/install-guide/).
+    - The Microsoft [Quantum Development Kit](/azure/quantum/install-overview-qdk).
 
 ```
 
@@ -149,7 +149,7 @@ Finally, it's helpful to tell users what each file in your sample does, and wher
 
 ## Further resources
 
-- [Measurement concepts](https://docs.microsoft.com/quantum/concepts/pauli-measurements)
+- [Measurement concepts](/azure/quantum/concepts-pauli-measurements)
 ```
 
 > [!WARNING]
