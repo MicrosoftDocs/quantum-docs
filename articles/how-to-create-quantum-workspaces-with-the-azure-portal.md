@@ -18,7 +18,7 @@ the Azure portal, and start running your quantum applications in Azure Quantum.
 ## Prerequisites
 
 In order to use the Azure Quantum service, you will need an active Azure subscription. To create an Azure subscription
-go to the [Azure free sign-up page](https://azure.microsoft.com/en-us/free/) and click on the green **Start free** button
+go to the [Azure free sign-up page](https://azure.microsoft.com/free/) and click on the green **Start free** button
 to start the process of creating an Azure subscription.
 
 > [!NOTE]

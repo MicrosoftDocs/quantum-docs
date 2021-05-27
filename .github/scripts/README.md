@@ -62,7 +62,7 @@ Comments:
     - The file [`ignorelinks.txt`](https://github.com/MicrosoftDocs/quantum-docs-private/blob/quantum-docs-scan/.github/scripts/ignorelinks.txt) contains links to be ignored, for example links to private repositories, since the program flags them as 404. Also the link https://ionq.com/best-practices as it was giving a false 404 of unknown origin. 
 
 > 📝
-> For more information on the `Get-ChildItem` cmdlet, visit the [official documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1)
+> For more information on the `Get-ChildItem` cmdlet, visit the [official documentation](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1)
 
 ### The GitHub action for `MicrosoftDocs\learn-pr\learn-pr\quantum`
 
