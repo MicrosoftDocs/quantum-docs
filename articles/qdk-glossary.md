@@ -17,7 +17,7 @@ uid: microsoft.quantum.glossary-qdk
 
 The complex conjugate transpose of an [operation](xref:microsoft.quantum.glossary-qdk#operation). For operations that implement a [unitary](xref:microsoft.quantum.glossary-qdk#unitary-operator) operator, the adjoint is the inverse of the operation and is indicated by a dagger symbol. For example, if the operation `U` represents the unitary operator $U$, then `Adjoint U` represents $U^\dagger$. For more information, see [Functor application](xref:microsoft.quantum.qsharp.functorapplication#functor-application).
 
-## Auxiliary
+## Auxiliary qubit
 
 A [qubit](xref:microsoft.quantum.glossary-qdk#qubit) that serves as temporary memory for a quantum computer and is allocated and de-allocated as needed. Sometimes referred to as an **ancilla**.  For more information, see [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits).
 
