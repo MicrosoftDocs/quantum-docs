@@ -108,7 +108,7 @@
       - name: Samples for using Azure Quantum optimization solvers 
         href: https://github.com/microsoft/qio-samples
       - name: Build your skills with MS Learn
-        href: https://docs.microsoft.com/learn/paths/quantum-computing-fundamentals/
+        href: /learn/paths/quantum-computing-fundamentals/
     - name: Python SDK
       items:
       - name: Azure.Quantum
@@ -150,7 +150,7 @@
     - name: Common issues
       href: azure-quantum-common-issues.md
     - name: Azure CLI commands
-      href: https://docs.microsoft.com/cli/azure/ext/quantum/quantum
+      href: /cli/azure/ext/quantum/quantum
     - name: Authenticate using a service principal
       href: optimization-authenticate-service-principal.md
 - name: Quantum Development Kit
@@ -200,7 +200,7 @@
       - name: Learn Q# with the Quantum Katas
         href: tutorial-qdk-intro-to-katas.md
       - name: Q# code samples
-        href: https://docs.microsoft.com/samples/browse/?languages=qsharp
+        href: /samples/browse/?languages=qsharp
   - name: Concepts
     items:
       - name: "Quantum computing history & background"
@@ -226,7 +226,7 @@
   - name: Resources
     items:
     - name: Build your skills with MS Learn
-      href: https://docs.microsoft.com/learn/paths/quantum-computing-fundamentals/
+      href: /learn/paths/quantum-computing-fundamentals/
     - name: Contributing to the QDK
       items:
       - name: Reporting Bugs
