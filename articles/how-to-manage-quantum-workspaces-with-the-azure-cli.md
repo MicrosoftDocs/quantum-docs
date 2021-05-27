@@ -18,8 +18,8 @@ In this guide, learn to create Azure Quantum workspaces and the required Resourc
 
 In order to use the Azure Quantum service, you will need:
 
-- An active Azure account and subscription. For more information, see the Microsoft Learn module [Create an Azure account](https://docs.microsoft.com/learn/modules/create-an-azure-account/).
-- The [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+- An active Azure account and subscription. For more information, see the Microsoft Learn module [Create an Azure account](/learn/modules/create-an-azure-account/).
+- The [Azure CLI](/cli/azure/install-azure-cli).
 - The [necessary utilities to use Azure Quantum](xref:microsoft.quantum.setup.cli) (includes the `quantum` extension for the Azure CLI).
 - An Azure resource group where the quantum workspace will live.
 - A storage account in the resource group to be associated with the quantum workspace. Multiple workspaces can be associated with the same account.
@@ -51,7 +51,7 @@ In order to create a new Azure Quantum workspace, you'll need to know:
 
 - The location or Azure region name where the resource will live. You can use the [list of regions and their resource manager codes](https://github.com/Azure/azure-extensions-cli#regions) supported by the Azure CLI tool (for example, **westus**).
 - The resource group associated with the new workspace. (for example, **MyResourceGroup**).
-- An storage account on the same resource group and subscription than the quantum workspace. It's possible to [create a new storage account from the Az CLI tool](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest&preserve-view=true#az_storage_account_create). (for example, **MyStorageAccount**)
+- An storage account on the same resource group and subscription than the quantum workspace. It's possible to [create a new storage account from the Az CLI tool](/cli/azure/storage/account?view=azure-cli-latest&preserve-view=true#az_storage_account_create). (for example, **MyStorageAccount**)
 - The name of the quantum workspace to create. (for example, **MyQuantumWorkspace**)
 - The list of Azure Quantum providers to use in the workspace. A provider offers a set of SKUs, each of them represents a plan with associated terms and conditions, cost and quotas. To create workspaces you'll need to specify not only providers but also the corresponding SKU.
 

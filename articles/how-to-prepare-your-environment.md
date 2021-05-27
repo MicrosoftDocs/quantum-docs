@@ -19,7 +19,7 @@ Azure Quantum uses the Azure CLI `quantum` extension to enable submitting Q# pro
 Before installing the Azure CLI `quantum` extension, ensure that the following packages are installed:
 
 - The Microsoft [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview.standalone)
-- The latest version of [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true)
+- The latest version of [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true)
   (version 2.5.0 or higher)
 
 ## Installation

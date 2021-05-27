@@ -303,7 +303,7 @@ That said, an individual target machine may mitigate this performance impact by 
 
 ### Math ###
 
-The <xref:Microsoft.Quantum.Math> namespace provides many useful functions from the .NET base class library's [`System.Math` class](https://docs.microsoft.com/dotnet/api/system.math?view=netframework-4.7.1&preserve-view=true).
+The <xref:Microsoft.Quantum.Math> namespace provides many useful functions from the .NET base class library's [`System.Math` class](/dotnet/api/system.math?view=netframework-4.7.1&preserve-view=true).
 These functions can be used in the same manner as any other Q# functions:
 
 ```qsharp
