@@ -28,7 +28,7 @@ These libraries must therefore blend both classical and quantum information proc
 
 Viewing quantum programming in terms of quantum characterization suggests a useful alternative to quantum phase estimation.
 That is, instead of preparing an $n$-qubit register to contain a binary representation of the phase as in quantum phase estimation, we can view phase estimation as the process by which a *classical* agent learns properties of a quantum system through measurements.
-We proceed as in the quantum case by using phase kickback to turn applications of a black-box operation into rotations by an unknown angle, but will measure the ancilla qubit that we rotate at each step immediately following the rotation.
+We proceed as in the quantum case by using phase kickback to turn applications of a black-box operation into rotations by an unknown angle, but will measure the auxiliary qubit that we rotate at each step immediately following the rotation.
 This has the advantage that we only require a single additional qubit to perform the phase kickback described in the quantum case, as we then learn the phase from the measurement results at each step in an iterative fashion.  
 Each of the methods proposed below uses a different strategy for designing experiments and different data processing methods to learn the phase.  They each have unique advantage ranging from having rigorous error bounds, to the abilities to incorporate prior information, tolerate errors or run on memory limitted classical computers.
 
@@ -137,7 +137,7 @@ $$
 $$
 where the lower bound is reached in the limit of asymptotically large $Q$, and the upper bound is guaranteed even for small sample sizes.  Note that $n$ selected by the `bitsPrecision` input, which implicitly defines $Q$.
 
-Other relevant details include, say, the small space overhead of just $1$ ancilla qubit, or that the procedure is non-adaptive, meaning the required sequence of quantum experiments is independent of the intermediate measurement outcomes. In this and forthcoming examples where the choice of phase estimation algorithm is important, one should one should refer to the documentation such as @"microsoft.quantum.characterization.robustphaseestimation" and the referenced publications therein for more information and for their the implementation.
+Other relevant details include, say, the small space overhead of just $1$ auxiliary qubit, or that the procedure is non-adaptive, meaning the required sequence of quantum experiments is independent of the intermediate measurement outcomes. In this and forthcoming examples where the choice of phase estimation algorithm is important, one should one should refer to the documentation such as <xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation> and the referenced publications therein for more information and for their the implementation.
 
 > [!TIP]
 > There are many samples where robust phase estimation is used. For phase estimation in extracting the ground state energy of various physical system, 

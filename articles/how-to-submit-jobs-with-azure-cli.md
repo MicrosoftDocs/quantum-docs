@@ -21,7 +21,7 @@ Ensure that the following items are installed on your computer:
 - An Azure Quantum workspace in your Azure subscription. To create
   a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
 - The latest version of the [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview.standalone).
-- The [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+- The [Azure CLI](/cli/azure/install-azure-cli).
 - The [necessary utilities to use Azure Quantum](xref:microsoft.quantum.setup.cli) (includes the `quantum`
   extension for the Azure CLI).
 
@@ -154,7 +154,7 @@ Azure Quantum.
 
 > [!TIP]
 > If this is your first time creating Q# quantum applications, see our [Microsoft Learn
-> module](https://docs.microsoft.com/learn/modules/qsharp-create-first-quantum-development-kit/).
+> module](/learn/modules/qsharp-create-first-quantum-development-kit/).
 
 In this case, we will use a simple quantum random bit generator. Create a Q#
 project and substitute the content of `Program.qs` with the following code:

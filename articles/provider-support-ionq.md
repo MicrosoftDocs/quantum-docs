@@ -14,7 +14,7 @@ uid: microsoft.quantum.providers.computing.ionq.support
 
 This article describes the Microsoft support policy that applies when you use the IonQ provider in Azure Quantum. The article applies to any of the targets under this provider.
 
-If you are using the IonQ provider and hit any unexpected issues that you cannot troubleshoot yourself, you can usually contact the Azure Support team for help by [creating an Azure support case](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
+If you are using the IonQ provider and hit any unexpected issues that you cannot troubleshoot yourself, you can usually contact the Azure Support team for help by [creating an Azure support case](/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
 There are however some situations, where the Azure Support team will need to redirect you to IonQ's support team, or where you may receive a quicker response by reaching our to IonQ directly. This article aims to provide more detail on this based on some frequently asked questions.
 

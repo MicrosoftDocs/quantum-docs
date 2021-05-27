@@ -83,7 +83,7 @@ $$
     \right)^{r} + \mathcal{O}(d^3 \max_j\\|H\_j\\|^3 t^3/r^2),
 \end{align}
 $$ 
-using a product of $2rd$ terms. Larger orders will involve even more terms and optimized variants may require highly non-trivial orderings on the exponentials. Other advanced algorithms may also involve the use of ancilla qubits in intermediate steps. Thus we package simulation algorithms in the canon as the user-defined type
+using a product of $2rd$ terms. Larger orders will involve even more terms and optimized variants may require highly non-trivial orderings on the exponentials. Other advanced algorithms may also involve the use of auxiliary qubits in intermediate steps. Thus we package simulation algorithms in the canon as the user-defined type
 
 ```qsharp
 newtype SimulationAlgorithm = ((Double, EvolutionGenerator, Qubit[]) => Unit is Adj + Ctl);
