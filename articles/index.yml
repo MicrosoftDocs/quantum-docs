@@ -53,7 +53,7 @@ landingContent:
           - text: Quantum computers and quantum simulators
             url: overview-quantum-computers-and-simulators.md
           - text: Microsoft Learn modules for quantum computing
-            url: https://docs.microsoft.com/learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
+            url: /learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
       - linkListType: concept
         links:
           - text: Quantum computing concepts
@@ -79,7 +79,7 @@ landingContent:
           - text: Overview of optimization solvers
             url: xref:microsoft.quantum.reference.qio-target-list
           - text: Microsoft Learn modules for optimization
-            url: https://docs.microsoft.com/learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
+            url: /learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
 
   # QDK
   - title: Develop with the Quantum Development Kit
@@ -122,7 +122,7 @@ landingContent:
           - text: Learn with the Quantum Katas
             url: tutorial-qdk-intro-to-katas.md
           - text: Browse Q# code samples
-            url: https://docs.microsoft.com/samples/browse/?languages=qsharp
+            url: /samples/browse/?languages=qsharp
 
   #  API
   - title: Q# libraries

@@ -11,6 +11,7 @@ uid: microsoft.quantum.optimization.streaming-problem
 ---
 
 # Streaming upload of large optimization problems
+
 When formulating very large problems with the Python SDK you may find that you do not have enough memory to keep the entire problem definition loaded, which is the behavior of the [`Problem`](xref:microsoft.quantum.optimization.problem) class. If you do not need to keep your whole problem definition in memory for later access or modification you should consider using the `StreamingProblem` class instead, which is a drop-in replacement for the `Problem` class, but that streams the problem definition to Azure as you formulate the problem to reduce memory requirements and increase performance.
 
 ## StreamingProblem

@@ -1,7 +1,7 @@
 ---
-author: geduardo
+author: bradben
 description: List of common terms of the Azure Quantum service.
-ms.author: v-edsanc
+ms.author: v-benbra
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core

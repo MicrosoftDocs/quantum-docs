@@ -182,7 +182,7 @@ $$
 (w_{0} + w_{1})x_{0}x_{1}
 $$
 
-Expressed in terms of code (using the [Python SDK](/azure/quantum/optimization-express-optimization-problem)):
+Expressed in terms of code (using the [Python SDK](/azure/quantum/optimization-install-sdk)):
 ```
 term1 = Term(c=2, indices=[0,1])
 term2 = Term(c=3, indices=[1,0])

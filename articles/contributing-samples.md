@@ -101,7 +101,7 @@ Users of your sample will also appreciate knowing what they need to run it (for 
 ```markdown
     ## Prerequisites
 
-    - The Microsoft [Quantum Development Kit](/quantum/install-guide/).
+    - The Microsoft [Quantum Development Kit](/azure/quantum/install-overview-qdk).
 
 ```
 
@@ -149,7 +149,7 @@ Finally, it's helpful to tell users what each file in your sample does, and wher
 
 ## Further resources
 
-- [Measurement concepts](/quantum/concepts/pauli-measurements)
+- [Measurement concepts](/azure/quantum/concepts-pauli-measurements)
 ```
 
 > [!WARNING]

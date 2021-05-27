@@ -38,7 +38,7 @@ operation ApplyMultiControlledX( numberOfQubits : Int ) : Unit {
 }
 ```
 
-The multiply controlled <xref:Microsoft.Quantum.Intrinsic.X> operation acts on a total of five qubits, allocates two [ancillary qubits](xref:microsoft.quantum.glossary-qdk#ancilla), and has an input width of **5**. Use the following C# program to verify the counts:
+The multiply controlled <xref:Microsoft.Quantum.Intrinsic.X> operation acts on a total of five qubits, allocates two [auxiliary qubits](xref:microsoft.quantum.glossary-qdk#auxiliary-qubit), and has an input width of **5**. Use the following C# program to verify the counts:
 
 ```csharp 
 var config = new QCTraceSimulatorConfiguration();

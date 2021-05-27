@@ -103,7 +103,7 @@ Next, we'll open up Visual Studio Code and get create a Q# Project.
 1. Start by opening the **QuantumRNG.csproj** file and adding the `ExecutionTarget` property, which will give you design-time feedback on the compatibility of your program for Honeywell's hardware.
 
 ```xml
-<Project Sdk="Microsoft.Quantum.Sdk/0.14.2011120240">
+<Project Sdk="Microsoft.Quantum.Sdk/0.17.2105143879">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
