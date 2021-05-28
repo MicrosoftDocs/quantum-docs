@@ -97,13 +97,13 @@ If you would like to use a different editor, the instructions so far have you al
 
 ## Write your first Q# program
 
-Now you are ready to verify your `qsharp` Python package installation by writing and running a simple Q# program.
+Now you are ready to verify your `qsharp` Python package installation by writing a simple Q# program and running it on a [simulator](/azure/quantum/user-guide/machines/).
 
 1. Create a minimal Q# operation by creating a file called `Operation.qs` and adding the following code to it:
 
     :::code language="qsharp" source="~/quantum/samples/interoperability/qrng/Qrng.qs" range="3-14":::
 
-1. In the same folder as `Operation.qs`, create a Python program called `host.py` to simulate the Q# `SampleQuantumRandomNumberGenerator()` operation that is defined in `Operation.qs`:
+1. In the same folder as `Operation.qs`, create a Python program called `host.py`. There you can [import the Q# operation](/azure/quantum/user-guide/host-programs?tabs=tabid-python#q-with-host-programs) `SampleQuantumRandomNumberGenerator()` defined above which allows you to execute it. The code below runs the Q# operation on the [default simulator](/azure/quantum/user-guide/machines/full-state-simulator) with a `.simulate()` call:
 
     ```python
     import qsharp
@@ -126,3 +126,13 @@ Now you are ready to verify your `qsharp` Python package installation by writing
 ## Next steps
 
 Now that you have tested the Quantum Development Kit in your preferred environment, you can follow this tutorial to write and run [your first quantum program](xref:microsoft.quantum.tutorial-qdk.random-number).
+
+You can also find more information on how to run Q# programs with Python in the following resources:
+
+- how [Q# interacts with a Python host program](/azure/quantum/user-guide/host-programs?tabs=tabid-python#q-with-host-programs)
+
+- how to [run Q# on a local simulator](/azure/quantum/user-guide/machines/full-state-simulator)
+
+- how to [run Q# on quantum hardware](/azure/quantum/how-to-submit-jobs-with-python) through Azure Quantum
+
+- how to first [estimate quantum resources](/azure/quantum/user-guide/machines/resources-estimator) required by your program

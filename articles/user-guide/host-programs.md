@@ -315,12 +315,22 @@ A Python host program is constructed as follows:
 
     With the `qsharp` module imported, you can also import callables directly from the Q# library namespaces.
 
-3. Among any other Python code, you can now call those callables on specific target machines, and assign their returns to variables (if they return a value) for further use.
+3. Alongside regular Python code, you can now run those callables on specific target machines (see next section), and assign their return values to variables for further use:
+
+    ```python
+    random_bit = MeasureSuperposition.simulate()
+    print(random_bit)
+    ```
 
 #### Specifying target machines
 
-Calling an operation to be run on a specific target machine is done via different Python methods on the imported object.
-For example, `.simulate(<args>)`, uses the `QuantumSimulator` to run the operation, whereas `.estimate_resources(<args>)` does so on the `ResourcesEstimator`.
+Running Q# operations on a specific target machine is done by invoking Python methods directly on the imported operation object. Thus, there is no need to first create an object for the execution target such as a simulator. Call one of the following methods on an imported Q# operation to execute it:
+
+- `.simulate(<args>)` uses the [full state simulator](/azure/quantum/user-guide/machines/full-state-simulator) to simulate the operation for an ideal quantum computer ([api reference for .simulate()](/python/qsharp-core/qsharp.loader.qsharpcallable#simulate---kwargs-----typing-any))
+- `.estimate_resources(<args>)` uses the [resources estimator](/azure/quantum/user-guide/machines/resources-estimator) to compute various quantum resources required by the program ([api reference for .estimate_resources(<args>)](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)
+- `.toffoli_simulate(<args>)` uses the [Toffoli simulator](/azure/quantum/user-guide/machines/toffoli-simulator) to provide a more efficient simulation method for a restricted class of quantum programs ([api reference for .toffoli_simulate()](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)
+
+See [Quantum simulators](/azure/quantum/user-guide/machines/) for an overview of local target machines.
 
 #### Passing inputs to Q\#
 
