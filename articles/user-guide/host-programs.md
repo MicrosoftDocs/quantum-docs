@@ -324,7 +324,7 @@ A Python host program is constructed as follows:
 
 #### Specifying target machines
 
-Running Q# operations on a specific target machine is done by invoking Python methods directly on the imported operation object. Thus, there is no need to create an object for the run target, such as a simulator. To run an imported Q# operation, invoke one of the following methods:
+Running Q# operations on a specific target machine is done by invoking Python methods directly on the imported operation object. Thus, there is no need to create an object for the run target (such as a simulator). Instead, invoke one of the following methods to run the imported Q# operation:
 
 - `.simulate(<args>)` uses the [full state simulator](/azure/quantum/user-guide/machines/full-state-simulator) to simulate the operation for an ideal quantum computer ([api reference for .simulate()](/python/qsharp-core/qsharp.loader.qsharpcallable#simulate---kwargs-----typing-any))
 - `.estimate_resources(<args>)` uses the [resources estimator](/azure/quantum/user-guide/machines/resources-estimator) to compute various quantum resources required by the program ([api reference for .estimate_resources(<args>)](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)
