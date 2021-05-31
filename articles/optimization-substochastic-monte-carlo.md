@@ -92,8 +92,8 @@ Substochastic Monte Carlo supports the following parameters:
 |--------------------------|-----------------|-------------|
 | `step_limit`             | _required_      | Number of monte carlo steps. More steps will usually improve the solution (unless it is already at the global minimum). |
 | `target_population`      | _number of threads_ | The number of walkers in the population (should be greater-equal 8). |
-| `alpha`                  | linear `1`..`0` | Schedule for the stepping chance (must be decreasing). |
-| `beta`                   | linear `1`..`5` | Schedule for the resampling factor (must be increasing). |
+| `alpha`                  | linear `1`..`0` | Schedule for the stepping chance (must be decreasing, i.e. `alpha.initial > alpha.final`). |
+| `beta`                   | linear `0`..`5` | Schedule for the resampling factor (must be increasing, i.e. `beta.initial < beta.final`). |
 | `seed` (optional)        | _time based_    | Seed value - used for reproducing results. |
 
 To create a parameterized Substochastic Monte Carlo solver for the CPU using the SDK:
@@ -101,5 +101,5 @@ To create a parameterized Substochastic Monte Carlo solver for the CPU using the
 ```python
 from azure.quantum.optimization import SubstochasticMonteCarlo, RangeSchedule
 # Requires a workspace already created.
-solver = SubstochasticMonteCarlo(workspace, step_limit=10000, target_population=64, beta=RangeSchedule("linear", 1, 5), seed=42)
+solver = SubstochasticMonteCarlo(workspace, step_limit=10000, target_population=64, beta=RangeSchedule("linear", 0, 5), seed=42)
 ```
