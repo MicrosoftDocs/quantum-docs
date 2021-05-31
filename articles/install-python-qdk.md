@@ -17,6 +17,8 @@ Learn how to install the Quantum Development Kit (QDK) to develop Python host pr
 
 ## Install the `qsharp` Python package
 
+The `qsharp` Python package, which includes the IQ# kernel, contains the necessary functionality for compiling and simulating Q# operations from a regular Python program.
+
 ### [Install using conda (recommended)](#tab/tabid-conda)
 
 1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads). Consult their [installation guide](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) if you are unsure about any steps. **Note:** 64-bit installation required.
@@ -80,7 +82,7 @@ Learn how to install the Quantum Development Kit (QDK) to develop Python host pr
 
 ***
 
-That's it! You now have both the `qsharp` Python package and the IQ# kernel for Jupyter, which provide the core functionality for compiling and running Q# operations from Python and allows you to use Q# Jupyter Notebooks.
+That's it! You now have both the `qsharp` Python package and the IQ# kernel for Jupyter, allowing you to compile and run Q# operations from Python and Q# Jupyter Notebooks.
 
 ## Choose your IDE
 
