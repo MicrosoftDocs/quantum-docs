@@ -25,11 +25,13 @@ The Microsoft QIO provider makes the following targets available:
 - [Solver: Simulated Annealing (Parameter-free - FPGA)](xref:microsoft.quantum.optimization.simulated-annealing#simulated-annealing-fpga)
 - [Solver: Simulated Annealing (Parametrized)](xref:microsoft.quantum.optimization.simulated-annealing#parametrized-simulated-annealing-cpu)
 - [Solver: Simulated Annealing (Parametrized - FPGA)](xref:microsoft.quantum.optimization.simulated-annealing#simulated-annealing-fpga)
+- [Solver: Population Annealing (Parametrized)](xref:microsoft.quantum.optimization.population-annealing#parameterized-population-annealing)
 - [Solver: Parallel Tempering (Parameter-free)](xref:microsoft.quantum.optimization.parallel-tempering#parameter-free-parallel-tempering)
 - [Solver: Parallel Tempering (Parametrized)](xref:microsoft.quantum.optimization.parallel-tempering#parametrized-parallel-tempering)
 - [Solver: Tabu Search (Parameter-free)](xref:microsoft.quantum.optimization.tabu#parameter-free-tabu-search)
 - [Solver: Tabu Search (Parametrized)](xref:microsoft.quantum.optimization.tabu#parametrized-tabu-search)
 - [Solver: Quantum Monte Carlo (Parametrized)](xref:microsoft.quantum.optimization.quantum-monte-carlo#parameterized-quantum-monte-carlo-cpu)
+- [Solver: Substochastic Monte Carlo (Parametrized)](xref:microsoft.quantum.optimization.substochastic-monte-carlo#parameterized-substochastic-monte-carlo)
 
 ## Target Comparison
 
@@ -39,7 +41,9 @@ In the following table you can find a brief comparison between the available tar
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
 | Parallel Tempering       | Rephrases the optimization problem as a thermodynamic system and runs multiple copies of a system, randomly initialized, at different temperatures. Then, based on a specific protocol, exchanges configurations at different temperatures to find the optimal configuration.  | <ul><li>Generally outperforms Simulated Annealing on hard problems with rugged landscapes</li><li> Very good at solving Ising problems</li></ul> |
 | Simulated Annealing      | Rephrases the optimization problem as a thermodynamic system and considers the energy of a single system. Changes to the system are accepted  if they decrease the energy or meet a criterion based on decreasing temperature.                                                 | <ul><li>Convex landscapes</li></ul>                                                                                                              |
+| Population Annealing      | Aims to alleviate the susceptibility of the Metropolis Algorithm to rough cost landscapes by simulating a population of metropolis walkers, which continuously consolidates search efforts around favorable states.                                                 | <ul><li>TBD</li></ul>                                                                                                              |
 | Quantum Monte Carlo      | Similar to Simulated Annealing but the changes are by simulating quantum-tunneling through barriers rather  than using thermal energy jumps.                                                                                                                                   | <ul><li>Optimization landscape has tall and thin barriers</li><li>Due to its large overhead, is useful for small hard problems</li></ul>         |
+| Substochastic Monte Carlo      | Substochastic Monte Carlo is a diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It simulates the diffusion of a population of walkers in search space, while walkers are removed or duplicated based on how they perform according the cost function.                                                                                                                                   | <ul><li>TBD</li></ul>         |
 | Tabu Search              | Tabu Search looks at neighboring configurations.  It can accept worsening moves if no improving moves are available  and prohibit moves to previously-visited solutions                                                                                                        | <ul><li>Convex landscapes, high density problems, QUBO problems.</li></ul>                                                                       |
 
 ### FPGA vs. CPU

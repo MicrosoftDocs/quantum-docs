@@ -96,13 +96,17 @@
         - name: Overview
           href: provider-microsoft-qio.md
         - name: Simulated Annealing
-          href: optimization-simulated-annealing.md        
+          href: optimization-simulated-annealing.md
+        - name: Population Annealing
+          href: optimization-population-annealing.md          
         - name: Parallel Tempering
           href: optimization-parallel-tempering.md
         - name: Tabu Search
           href: optimization-tabu-search.md
         - name: Quantum Monte Carlo
           href: optimization-quantum-monte-carlo.md
+        - name: Substochastic Monte Carlo
+          href: optimization-substochastic-monte-carlo.md
     - name: Tutorials
       items:
       - name: Samples for using Azure Quantum optimization solvers 

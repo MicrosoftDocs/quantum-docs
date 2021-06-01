@@ -95,6 +95,44 @@ This document explains how the parameters to optimization problems may be specif
     </tbody>
 </table>
 
+
+
+## Population Annealing
+
+<table>
+    <thead>
+        <tr class = "header">
+        <th>Property Name (case sensitive)</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>step_limit</td>
+        <td>TBD</td>
+        <td>TBD</td>
+    </tr>
+    <tr>
+        <td>beta</td>
+        <td>TBD</td>
+        <td>TBD</td>
+    </tr>
+    <tr>
+        <td>population</td>
+        <td>TBD</td>
+        <td>TBD</td>
+    </tr>
+    <tr>
+        <td>seed</td>
+        <td>TBD</td>
+        <td>TBD</td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+
 ## Tabu
 
 <table>
@@ -168,6 +206,44 @@ This document explains how the parameters to optimization problems may be specif
          <td>trotter_number</td>
         <td>integer</td>
         <td>Specifies the number of copies of each variable to create in a simulation.</td>
+    </tr>
+    </tbody>
+</table>
+
+## Substochastic Monte Carlo
+ 
+<table>
+    <thead>
+        <tr class = "header">
+        <th>Property Name (case sensitive)</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>step_limit</td>
+        <td>TBD</td>
+        <td>TBD</td>
+    </tr>
+    <tr>
+        <td>target_population</td>
+        <td>TBD</td>
+        <td>TBD</td>
+    </tr>
+    <tr>
+        <td>alpha</td>
+        <td>TBD</td>
+        <td>TBD</td>
+    </tr>
+    <tr>
+        <td>beta</td>
+        <td>TBD</td>
+        <td>TBD</td>
+    </tr>
+    <tr>
+         <td>seed</td>
+        <td>TBD</td>
+        <td>TBD</td>
     </tr>
     </tbody>
 </table>
