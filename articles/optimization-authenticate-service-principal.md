@@ -51,24 +51,23 @@ To create a service principal, assign access, and generate a credential:
 
 ## Authenticate as the service principal
 
-**Option 1: Using environment variables**:
-The default credential used in the `Workspace` object creation is the [DefaultAzureCredential](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-identity/1.6.0/azure.identity.html#azure.identity.DefaultAzureCredential), which will attempt several types of authentication.
-The first one is the [EnvironmentCredential](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-identity/1.6.0/azure.identity.html#azure.identity.EnvironmentCredential), and with that you pass pass the Service Principal credentials via the following environment variables:
-- **AZURE_TENANT_ID**: ID of the service principal’s tenant. Also called its ‘directory’ ID.
-- **AZURE_CLIENT_ID**: the service principal’s client ID
-- **AZURE_CLIENT_SECRET**: one of the service principal’s client secrets
+**Step 1**: Install the `azure-common` python package:
 
-**Option 2: Using the ClientSecretCredential**: Pass a [ClientSecretCredential](/python/api/azure-identity/azure.identity.clientsecretcredential) during the instantiation of the `Workspace` object or set the its `credentials` property.
+```bash
+pip3 install azure-common
+```
+
+**Step 2**: Before you call `workspace.login()`, instantiate your service
+principal and provide it to the workspace:
 
 ```python
-from azure.identity import ClientSecretCredential
-
-tenant_id = os.environ["AZURE_TENANT_ID"]
-client_id = os.environ["AZURE_CLIENT_ID"]
-client_secret = os.environ["AZURE_CLIENT_SECRET"]
-credential = ClientSecretCredential(tenant_id=tenant_id, client_id=client_id, client_secret=client_secret)
-
-workspace.credentials = credential
+from azure.common.credentials import ServicePrincipalCredentials
+workspace.credentials = ServicePrincipalCredentials(
+    tenant    = "", # From service principal creation, your Directory (tenant) ID
+    client_id = "", # From service principal creation, your Application (client) ID
+    secret    = "", # From service principal creation, your secret
+    resource  = "https://quantum.microsoft.com" # Do not change! This is the resource you want to authenticate against - the Azure Quantum service
+)
 ```
 
 > [!NOTE]

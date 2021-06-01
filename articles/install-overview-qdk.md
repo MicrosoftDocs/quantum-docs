@@ -94,9 +94,9 @@ You can also develop Q# code without installing anything locally with these opti
 
 You can use our QDK Docker image in your local Docker installation or in the cloud via any service that supports Docker images, such as ACI.
 
-You can download the IQ# Docker image from https://github.com/microsoft/iqsharp/#using-iq-as-a-container. 
+You can download the IQ# Docker image from <https://github.com/microsoft/iqsharp/#using-iq-as-a-container>. 
 
-You can also use Docker with a Visual Studio Code Remote Development Container to quickly define development environments. For more information about VS Code Development Containers, see https://github.com/microsoft/Quantum/tree/master/.devcontainer.
+You can also use Docker with a Visual Studio Code Remote Development Container to quickly define development environments. For more information about VS Code Development Containers, see <https://github.com/microsoft/Quantum/tree/master/.devcontainer>.
 
 The workflows for each of these setups are described and compared in [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
 

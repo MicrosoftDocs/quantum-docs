@@ -48,23 +48,21 @@ For some solvers we offer two versions: an unlabeled version that runs on tradit
 
 | Pros/Cons  | FPGA solvers                                                                                                                                                                                                                                                                                                                                                                                           |
 |------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Pros       | <ul><li>Highly parallel optimized, compared with CPU solvers, we witnessed up to 18 times performance gain (compared with 72 cpu cores) when the simulated annealing parameters settings are the same (restarts and sweeps).</li><li>FPGA solver use very condensed memory representation, so for problem with a large number of terms may fail CPU solver for OOM, but not for FPGA solver.</li></ul> |
-| Cons       | <ul><li>FPGA solver support up to 65535 variables, this is a hard limitation.</li><li>For best performance, FPGA solvers use 32 bits float point operations, because of this, the computation accuracy of FPGA solvers is a little lower than CPU solvers'.</li></ul>                                                                                                                                  |
+| Pros       | <ul><li>FPGA solvers run on highly optimized hardware that enables algorithms to parallelize very efficiently. This can achieve a significant performance gain when comparing CPU and FPGA solvers.</li><li>FPGA solver use very condensed memory representation.</li><li>This means that problems with a large number of terms may fail on a CPU solver due to a lack of memory, but run on an FPGA implementation of that solver.</li></ul> |
+| Cons       | <ul><li>Our FPGA solvers support up to 65535 variables. This is a hard limitation.</li><li>To achieve the best performance, FPGA solvers use 32-bit floating point operations.</li><li>As a result, the accuracy of FPGA solvers is a little lower than for CPU solvers.</li></ul>                                                                                                                                  |
 
 #### FPGA Regional Availability
 
-FPGA-based solvers are only available to workspaces deployed in the following Azure Regions:
+FPGA-based solvers are only available in a limited set of Azure regions. When creating your Azure Quantum workspace you can see if FPGA targets are available in the region that you have selected by accessing the Microsoft QIO provider blade on the Create screen. 
+Regions that offer access to FPGA solvers will show "FPGA simulated annealing" in their list of available targets. 
 
-| Region  |
-|---------|
-| West US |
-| East US |
+For existing workspaces you can check the "Providers" blade. Select "Modify" to view your Microsoft QIO SKU. If your workspace is in a region where FPGA solvers are available "FPGA simulated annealing" will show up in the list of targets. 
 
 #### Recommendations for FPGA solvers
 
 FPGA solvers use the same parameters as their corresponding CPU solvers, but for the best performance, please tune the parameters of FPGA solvers, instead of just directly using CPU solvers' parameters. For example, in FPGA solvers, we build about 200 parallel pipelines, and each pipeline can handle one restart, so the restarts of FPGA shall be no less than 200.
 
-FPGA solvers have an initialization time that may take a large percentage of the total runtime for small problems. If your problem can be solved on a CPU solver within a number of seconds, then you will likely not see a performance gain by switching to an FPGA. We recommend using FPGA solvers when the execution timing on CPU is at least a couple minutes.
+FPGA solvers have an initialization time that may take a large percentage of the total runtime for small problems. If your problem can be solved on a CPU solver within a number of seconds, then you will likely not see a performance gain by switching to FPGA. We recommend using FPGA solvers when the execution timing on CPU is at least a couple minutes.
 
 ## Pricing
 

@@ -26,7 +26,7 @@ Please note for the parameters values, they are required to be of JSON string ty
 improvement_cutoff: "5"
 ******
 
-For more information please visit: https://portal.1qbit-prod.com/docs/model/tabusolver
+For more information please visit: <https://portal.1qbit-prod.com/docs/model/tabusolver>
 
 - Job type: `Quantum-Inspired Optimization Problem`
 - Data Format: `microsoft.qio.v2`
@@ -45,7 +45,7 @@ For more information please visit: https://portal.1qbit-prod.com/docs/model/tabu
 ### PTICM Solver
 The parallel tempering with isoenergetic cluster moves (PTICM) solver is a Monte Carlo approach to solving QUBO problems. In this algorithm, multiple replicas of the original system, each with a different initial state, are simulated at different temperatures simultaneously. The replicas at neighboring temperatures are periodically swapped based on a Metropolis criterion. These swaps allow different replicas to do a random walk in the temperature space, thereby, efficiently overcoming energy barriers.
 
-For more information please visit: https://portal.1qbit-prod.com/docs/model/pticmsolver
+For more information please visit: <https://portal.1qbit-prod.com/docs/model/pticmsolver>
 
 - Job type: `Quantum-Inspired Optimization Problem`
 - Data Format: `microsoft.qio.v2`
@@ -77,7 +77,7 @@ For more information please visit: https://portal.1qbit-prod.com/docs/model/ptic
 ### Path-Relinking Solver
 The path-relinking algorithm is a heuristic algorithm that uses the tabu search as a subroutine to solve a QUBO problem. The algorithm starts from a set of elite solutions found by the tabu search. It then constructs a path between each pair of elite solutions, selects one of the solutions along the path, and repeats the tabu search. If the tabu search finds a distinct solution that is better than the current worst elite solution, the elite solutions set is updated with the new improved solution. This whole procedure is repeated until the algorithm meets a stopping condition.
 
-For more information please visit: https://portal.1qbit-prod.com/docs/model/pathrelinkingsolver
+For more information please visit: <https://portal.1qbit-prod.com/docs/model/pathrelinkingsolver>
 
 - Job type: `Quantum-Inspired Optimization Problem`
 - Data Format: `microsoft.qio.v2`
