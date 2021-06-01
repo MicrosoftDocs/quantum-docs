@@ -23,7 +23,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 *Release date: June 1st, 2021*
 
-- Reverted a change in the `azure-quantum` Python client that could create authentication issues for some users.
+- Reverted a change in the `azure-quantum` Python client that could create authentication issues for some users (refer to issues [#66](https://github.com/microsoft/qdk-python/issues/66), [#67](https://github.com/microsoft/qdk-python/issues/67)).
 
 ## QDK Version 0.17.2105.143879
 
