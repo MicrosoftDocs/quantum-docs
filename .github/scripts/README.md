@@ -57,8 +57,8 @@ Comments:
 
 - We use the parameters of the `Get-ChildItem` cmdlet to curate the list of paths, together with the `ignoreLinksFile` parameter of the `Verify-Links.ps1` script.
 - We remove some links from the list to avoid false-positives:
-  - All the files from the [`user-guide\language`](https://github.com/MicrosoftDocs/quantum-docs-private/tree/main/articles/user-guide/language) directory. The content of those files is not stored in our repository and is maintained by another team. Also, the script flags the include links of the stub files as broken links.
-  - The file [`ignorelinks.txt`](https://github.com/MicrosoftDocs/quantum-docs-private/blob/quantum-docs-scan/.github/scripts/ignorelinks.txt) contains links to be ignored, for example links to private repositories, since the program flags them as 404. Also the link <https://ionq.com/best-practices> as it was giving a false 404 of unknown origin.
+    - All the files from the [`user-guide\language`](https://github.com/MicrosoftDocs/quantum-docs-private/tree/main/articles/user-guide/language) directory. The content of those files is not stored in our repository and is maintained by another team. Also, the script flags the include links of the stub files as broken links.
+    - The file [`ignorelinks.txt`](https://github.com/MicrosoftDocs/quantum-docs-private/blob/quantum-docs-scan/.github/scripts/ignorelinks.txt) contains links to be ignored, for example links to private repositories, since the program flags them as 404. Also the link <https://ionq.com/best-practices> as it was giving a false 404 of unknown origin. 
 
 > 📝
 > For more information on the `Get-ChildItem` cmdlet, visit the [official documentation](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1)

@@ -36,7 +36,7 @@ Before you can write a Q# program and run it with IonQ, you'll need a few resour
 
 You use the Azure Quantum service by adding an Azure Quantum workspace resource to your Azure subscription in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
 
-To open the Azure Portal, go to https://portal.azure.com and then follow these steps:
+To open the Azure Portal, go to <https://portal.azure.com> and then follow these steps:
 
 > Note: This is a special link that allows you to create a workspace in the Azure Portal. Without using the link you will be able to see existing workspaces but not create new ones.
 
