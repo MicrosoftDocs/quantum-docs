@@ -4,7 +4,7 @@ contact_links:
     url: https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest
     about: Request technical support for Azure Quantum and optimization issues here. 
   - name: Azure Quantum technical Q&A
-    url: https://docs.microsoft.com/en-us/answers/topics/azure-quantum.html
+    url: https://docs.microsoft.com/answers/topics/azure-quantum.html
     about: Post a technical question to the Azure Quantum community.  
   - name: Azure Quantum feature requests
     url: https://feedback.azure.com/forums/932905-azure-quantum
