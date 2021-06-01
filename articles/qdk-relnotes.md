@@ -19,6 +19,11 @@ For installation instructions, please refer to the [install guide](xref:microsof
 
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
+## QDK Version 0.17.2105.144881
+
+*Release date: June 1st, 2021*
+
+- Reverted a change in the `azure-quantum` Python client that could create authentication issues for some users.
 
 ## QDK Version 0.17.2105.143879
 
