@@ -49,6 +49,10 @@ For an overview of the Microsoft QIO solvers available, please refer to the [Mic
 
 Rephrases the optimization problem as a thermodynamic system and considers the energy of a single system. Changes to the system are accepted if they decrease the energy or meet a criterion based on decreasing temperature. This target can be run on CPU or FPGA hardware. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.simulated-annealing).
 
+### Population Annealing
+
+Aims to alleviate the susceptibility of the Metropolis Algorithm to rough cost landscapes by simulating a population of metropolis walkers, which continuously consolidates search efforts around favorable states. This target is available on CPUs. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.population-annealing).
+
 ### Parallel Tempering
 
 Rephrases the optimization problem as a thermodynamic system and runs multiple copies of a system, randomly initialized, at different temperatures. Then, based on a specific protocol, exchanges configurations at different temperatures to find the optimal configuration. This target is available on CPUs only. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.parallel-tempering).
@@ -60,3 +64,7 @@ Tabu Search looks at neighboring configurations. It can accept worsening moves i
 ### Quantum Monte Carlo
 
 Quantum Monte Carlo is a Metropolis annealing algorithm, similar in concept to simulated annealing that starts at a low temperature and improves the solution by searching across barriers with some probability as an external perturbation is applied to the system. As this external field is varied over every Monte Carlo step, the configuration may be able to tunnel through energy barriers and evolve towards a desired ground state (without possessing the thermal energy needed to climb the barriers, as would be required in simulated annealing). For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.quantum-monte-carlo).
+
+### Substochastic Monte Carlo
+
+Substochastic Monte Carlo is a diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It simulates the diffusion of a population of walkers in search space, while walkers are removed or duplicated based on how they perform according the cost function. This target is available on CPUs. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.substochastic-monte-carlo).
