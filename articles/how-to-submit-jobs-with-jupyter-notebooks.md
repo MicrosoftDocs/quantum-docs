@@ -17,36 +17,13 @@ Quantum using Q# Jupyter Notebooks.
 
 ## Prerequisites
 
-- An Azure Quantum workspace in your Azure subscription. To create
-  a workspace, see [Create an Azure Quantum
-  workspace](xref:microsoft.quantum.workspaces-portal).
+- An Azure Quantum workspace in your Azure subscription. To create a workspace,
+  see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
+- The latest version of the [Quantum Development Kit for Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.jupyter#install-the-iq-jupyter-kernel).
 
-## Installation
-
-Follow these steps to install Jupyter Notebook and the current version of the
-IQ# kernel, which powers the Q# Jupyter Notebook and Python experiences.
-
-1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or
-   [Anaconda](https://www.anaconda.com/products/individual#Downloads).
-1. Open an Anaconda Prompt.
-   - Or, if you prefer to use PowerShell or pwsh: open a shell, run `conda init
-     powershell`, then close and re-open the shell.
-1. Create and activate a new conda environment named `qsharp-env` with the
-   required packages (including Jupyter Notebook and IQ#) by running the
-   following commands:
-
-    ```bash
-    conda create -n qsharp-env -c quantum-engineering qsharp notebook
-
-    conda activate qsharp-env
-    ```
-
-1. Run `python -c "import qsharp"` from the same terminal to verify your
-   installation and populate your local package cache with all of the required QDK
-   components.
-
-You are now set up to use Q# Jupyter Notebooks and Q# integration to run
-quantum programs on Azure Quantum.
+Follow the installation steps in the provided link to install Jupyter Notebook and
+the current version of the IQ# kernel, which powers the Q# Jupyter Notebook and
+Python experiences.
 
 ## Quantum computing with Q# Jupyter Notebooks
 
