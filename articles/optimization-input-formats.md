@@ -31,7 +31,7 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>replicas</td>
         <td>integer</td>
-        <td>Specifies the number of iterations of a solver to run.</td>
+        <td>Specifies the number of iterations of the solver to run.</td>
     </tr>
     <tr>
         <td>sweeps</td>
