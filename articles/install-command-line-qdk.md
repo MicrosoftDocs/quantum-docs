@@ -49,6 +49,8 @@ Configure the QDK for your preferred environment from one of the following optio
 dotnet new -i Microsoft.Quantum.ProjectTemplates
 ```
 
+***
+
 ## Develop with Q\#
 
 Follow the instructions on the tab corresponding to your development environment.
