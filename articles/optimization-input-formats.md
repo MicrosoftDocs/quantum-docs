@@ -180,7 +180,7 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>beta_start</td>
         <td>float</td>
-        <td>Specifies the inverse of the temperature at which the problem is solved.</td>
+        <td>Specifies the inverse of the starting temperature for the algorithm.</td>
     </tr>
     <tr>
         <td>transverse_field_start</td>
