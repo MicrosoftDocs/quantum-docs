@@ -26,12 +26,12 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>all_betas</td>
         <td>a list of floats</td>
-        <td>Specifies the list of inverse temperatures. This list should be equal in length to the number of replicas (described below)</td>
+        <td>Specifies the list of inverse temperatures. This list should be equal in length to the number of replicas.</td>
     </tr>
     <tr>
         <td>replicas</td>
         <td>integer</td>
-        <td>Specifies the number of iterations of solver to run.</td>
+        <td>Specifies the number of iterations of a solver to run.</td>
     </tr>
     <tr>
         <td>sweeps</td>
@@ -46,7 +46,7 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>timeout</td>
         <td>integer</td>
-        <td>Specifies the maximum number of seconds to run the core solver loop. initialization time does not respect this value, so the solver may run longer than the value specified.
+        <td>Specifies the maximum number of seconds to run the core solver loop. Initialization time does not respect this value, so the solver may run longer than the value specified.
         </td>
     </tr>
     </tbody>
@@ -64,7 +64,7 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>beta_start</td>
         <td>float</td>
-        <td>Specifies the list of inverse temperatures. This list should be equal in length to the number of replicas (described below)</td>
+        <td>Specifies the list of inverse temperatures. This list should be equal in length to the number of replicas.</td>
     </tr>
     <tr>
         <td>beta_stop</td>
@@ -84,7 +84,7 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>timeout</td>
         <td>integer</td>
-        <td>Specifies the maximum number of seconds to run the core solver loop. initialization time does not respect this value, so the solver may run longer than the value specified.
+        <td>Specifies the maximum number of seconds to run the core solver loop. Initialization time does not respect this value, so the solver may run longer than the value specified.
         </td>
     </tr>
     <tr>
@@ -115,7 +115,7 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>beta</td>
         <td>RangeSchedule</td>
-        <td>Specifies a range from the initial temperature value to the final value. This is the schedule must increase over time.</td>
+        <td>Specifies a range from the initial temperature value to the final value. This schedule must increase over time.</td>
     </tr>
     <tr>
         <td>population</td>
@@ -151,12 +151,12 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>timeout</td>
         <td>integer</td>
-        <td>Specifies the maximum number of seconds to run the core solver loop. initialization time does not respect this value, so the solver may run longer than the value specified.
+        <td>Specifies the maximum number of seconds to run the core solver loop. Initialization time does not respect this value, so the solver may run longer than the value specified.
         </td>
     </tr>
     <tr>
         <td>seed</td>
-        <td>A random integer betweenm 0 and 101</td>
+        <td>A random integer between 0 and 101</td>
         <td>Specifies a random value to start the simulation.</td>
     </tr>
     <tr>
@@ -180,7 +180,7 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>beta_start</td>
         <td>float</td>
-        <td>Specifies the inverse of temperature at which the problem is solved.</td>
+        <td>Specifies the inverse of the temperature at which the problem is solved.</td>
     </tr>
     <tr>
         <td>transverse_field_start</td>
@@ -190,7 +190,7 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>transverse_field_end</td>
         <td>float</td>
-        <td>Specified the ending value of the external field supplied to the simulation.</td>
+        <td>Specifies the ending value of the external field supplied to the simulation.</td>
     </tr>
     <tr>
         <td>seed</td>
@@ -228,12 +228,12 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>target_population</td>
         <td>integer</td>
-        <td>Should be greater or equal to 8. The number of walkers in the population.</td>
+        <td>Specifies the number of walkers in the population. Should be greater than or equal to 8.</td>
     </tr>
     <tr>
         <td>alpha</td>
         <td>RangeSchedule</td>
-        <td>Specifies a range from the initial value to the final value. This is the schedule for the stepping chance. It should decrease over time.</td>
+        <td>Specifies a range from the initial value to the final value. This is the schedule for the stepping chance and should decrease over time.</td>
     </tr>
     <tr>
         <td>beta</td>
