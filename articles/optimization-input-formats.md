@@ -109,23 +109,23 @@ This document explains how the parameters to optimization problems may be specif
     <tbody>
     <tr>
         <td>step_limit</td>
-        <td>TBD</td>
-        <td>TBD</td>
+        <td>integer</td>
+        <td>Number of Monte Carlo steps. More steps will usually improve the solution if it has not yet found a global minimum.</td>
     </tr>
     <tr>
         <td>beta</td>
-        <td>TBD</td>
-        <td>TBD</td>
+        <td>RangeSchedule</td>
+        <td>Specifies a range from the initial temperature value to the final value. This is the schedule must increase over time.</td>
     </tr>
     <tr>
         <td>population</td>
-        <td>TBD</td>
-        <td>TBD</td>
+        <td>integer</td>
+        <td>The number of walkers in the population that the algorithm should use.</td>
     </tr>
     <tr>
         <td>seed</td>
-        <td>TBD</td>
-        <td>TBD</td>
+        <td>A random integer</td>
+        <td>Used to initialize the algorithm. Use the same seed to reproduce results.</td>
     </tr>
     </tbody>
 </table>
@@ -222,28 +222,28 @@ This document explains how the parameters to optimization problems may be specif
     <tbody>
     <tr>
         <td>step_limit</td>
-        <td>TBD</td>
-        <td>TBD</td>
+        <td>integer</td>
+        <td>Number of Monte Carlo steps. More steps will usually improve the solution if it has not yet found a global minimum.</td>
     </tr>
     <tr>
         <td>target_population</td>
-        <td>TBD</td>
-        <td>TBD</td>
+        <td>integer</td>
+        <td>Should be greater or equal to 8. The number of walkers in the population.</td>
     </tr>
     <tr>
         <td>alpha</td>
-        <td>TBD</td>
-        <td>TBD</td>
+        <td>RangeSchedule</td>
+        <td>Specifies a range from the initial value to the final value. This is the schedule for the stepping chance. It should decrease over time.</td>
     </tr>
     <tr>
         <td>beta</td>
-        <td>TBD</td>
-        <td>TBD</td>
+        <td>RangeSchedule</td>
+        <td>Specifies a range from the initial value to the final value. This is the schedule for the resampling factor that will increase over time.</td>
     </tr>
     <tr>
          <td>seed</td>
-        <td>TBD</td>
-        <td>TBD</td>
+        <td>A random integer</td>
+        <td>Used to initialize the algorithm. Use the same seed to reproduce results.</td>
     </tr>
     </tbody>
 </table>

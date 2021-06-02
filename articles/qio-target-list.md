@@ -51,7 +51,7 @@ Rephrases the optimization problem as a thermodynamic system and considers the e
 
 ### Population Annealing
 
-Aims to alleviate the susceptibility of the Metropolis Algorithm to rough cost landscapes by simulating a population of metropolis walkers, which continuously consolidates search efforts around favorable states. [TBD - SUPPORTED HARDWARE?] For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.population-annealing).
+Aims to alleviate the susceptibility of the Metropolis Algorithm to rough cost landscapes by simulating a population of metropolis walkers, which continuously consolidates search efforts around favorable states. This target is available on CPUs. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.population-annealing).
 
 ### Parallel Tempering
 
@@ -67,4 +67,4 @@ Quantum Monte Carlo is a Metropolis annealing algorithm, similar in concept to s
 
 ### Substochastic Monte Carlo
 
-Substochastic Monte Carlo is a diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It simulates the diffusion of a population of walkers in search space, while walkers are removed or duplicated based on how they perform according the cost function. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.substochastic-monte-carlo).
+Substochastic Monte Carlo is a diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It simulates the diffusion of a population of walkers in search space, while walkers are removed or duplicated based on how they perform according the cost function. This target is available on CPUs. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.substochastic-monte-carlo).
