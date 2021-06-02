@@ -11,7 +11,7 @@ title: Quantum Development Kit Release Notes
 uid: microsoft.quantum.relnotes-qdk
 ---
 
-#Release Notes
+# Release Notes
 
 This article contains information on each Quantum Development Kit release.
 
