@@ -42,7 +42,7 @@ for contributors:
   
 ## Broken links prevention
 
-The URL of an article page on *docs.microsoft.com* is generated from the relative path to the **articles** folder on the GitHub repository where the source files are stored. For example, the article located at *<https://github.com/MicrosoftDocs/quantum-docs/articles/user-guide/programs.md>* is assigned the URL *<https://docs.microsoft.com/azure/quantum/user-guide/programs>*. This means that any time time you change an article's path, either because of a relocation, deletion, or change in the file name, the URL will change accordingly. If you don't redirect the original link to a working page, customers that have bookmarked the original article, and other pages that link to the original article, will get a **404 Page not found** error. To avoid this:
+The URL of an article page on *docs.microsoft.com* is generated from the relative path to the **articles** folder on the GitHub repository where the source files are stored. For example, the article located at *[MicrosoftDocs/quantum-docs/articles/user-guide/programs.md](https://github.com/MicrosoftDocs/quantum-docs/blob/main/articles/user-guide/programs.md)* is assigned the URL *<https://docs.microsoft.com/azure/quantum/user-guide/programs>*. This means that any time you change an article's path, either because of a relocation, deletion, or change in the file name, the URL will change accordingly. If you don't redirect the original link to a working page, customers that have bookmarked the original article, and other pages that link to the original article, will get a **404 Page not found** error. To avoid this:
 
 - If possible, do not rename or relocate articles.
 - If you need to rename, remove or relocate an article, you must add a *redirect* from the previous article location to the URL of the new article to avoid creating  broken links.
@@ -80,9 +80,9 @@ Each entry in the array contains the source path of an article being redirected,
 
 ### How to create a redirect
 
-To create a redirect, you need to add an entry to the [.openpublishing.redirection.json](https://github.com/MicrosoftDocs/quantum-docs/blob/master/.openpublishing.redirection.json) file and create a Pull Request.
+To create a redirect, you need to add an entry to the [.openpublishing.redirection.json](https://github.com/MicrosoftDocs/quantum-docs/blob/main/.openpublishing.redirection.json) file and create a Pull Request.
 
-1. Open the [.openpublishing.redirection.json](https://github.com/MicrosoftDocs/quantum-docs/blob/master/.openpublishing.redirection.json) file for editing.
+1. Open the [.openpublishing.redirection.json](https://github.com/MicrosoftDocs/quantum-docs/blob/main/.openpublishing.redirection.json) file for editing.
 2. Add an entry to the `redirections` array.
 
     - **source_path** is the relative repository path (relative to the root of the repository, *<https://github.com/MicrosoftDocs/quantum-docs/>*) to the old article that you're removing or renaming. Be sure the path starts with **articles** and ends with **.md**. A majority of our files live in the root **/articles** folder, so the path would be **articles/old-article.md**. If the file lives in a sub-folder, indicate the folder in the path, for example, **articles/user-guide/old-article.md**.
