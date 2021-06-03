@@ -133,6 +133,8 @@
           href: optimization-input-formats.md
         - name: Term
           href: optimization-term.md
+        - name: RangeSchedule
+          href: optimization-rangeschedule.md
       - name: Usage
         items:
         - name: Express a problem
