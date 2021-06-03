@@ -79,7 +79,7 @@ For fermionic systems, the Pauli exclusion principle prevents more than one elec
 This means that we can write the two legal states for $\psi_1$ as
 
 \begin{equation}
-\psi_1 \rightarrow \begin{cases} \ket{0}_1 & \text{if $\psi_1$ is not occupied,} \\\
+\psi_1 \rightarrow \begin{cases} \ket{0}_1 & \text{if $\psi_1$ is not occupied,} \\\\
 \ket{1}_1 & \text{if $\psi_1$ is occupied.} \end{cases}
 \end{equation}
 
@@ -96,7 +96,7 @@ would correspond to spin orbitals $1$ and $2$ being occupied with the remainder 
 Similarly, the state
 
 $$
-\ket{0} \equiv \ket{0}_{0} \cdots \ket{0}_{N-1},
+\ket{0} \equiv \ket{0}_0 \cdots \ket{0}\_{N-1},
 $$
 
 has no electrons and is known as the 'vacuum state'.
@@ -112,9 +112,9 @@ These are denoted $a^\dagger_j$ and $a_j$ respectively.
 
 For example,
 
-\begin{align}
+$$
 a^\dagger_1 \ket{0}_1 = \ket{1}_1,\quad a^\dagger_1 \ket{1}_1 = 0,\quad a_1 \ket{0}_1 = 0,\quad a_1 \ket{1}_1 = \ket{0}_1.
-\end{align}
+$$
 
 Note that here $a^\dagger_1 \ket{1}_1=0$ and $a_1 \ket{0}_1$ yield the zero-vector not $\ket{0}_1$.
 Such operators are therefore neither Hermitian nor unitary.
@@ -193,14 +193,14 @@ where $S_i = \sum_{j<i} a^\dagger_j a_j$ measures the total number of Fermions t
 A third operator is also often used in second quantized representations.
 This operator is known as the number operator and is defined by
 
-\begin{equation}
+$$
 n_i = a^\dagger_i a_i.
-\end{equation}
+$$
 
 This operator counts the occupation of a given spin orbital, which is to say
 
 \begin{align}
-n_i \ket{0}_i &= 0\nonumber\\\
+n_i \ket{0}_i &= 0\nonumber\\\\
 n_i \ket{1}_i &= \ket{1}_i.
 \end{align}
 
@@ -229,9 +229,9 @@ $$
 
 Such operators are said to 'anti-commute' and in general for any $i, j$ we have that
 
-\begin{align}
+$$
 a^\dagger_i a^\dagger_j  = -(1-\delta_{i,j})a^\dagger_j a^\dagger_i,\quad a^\dagger_i a_j =\delta_{i,j} - a_j a^\dagger_i.
-\end{align}
+$$
 
 Thus the following two <xref:Microsoft.Quantum.Chemistry.LadderOperators.LadderSequence`1> instances are considered inequivalent
 
@@ -280,21 +280,21 @@ Any `FermionTerm` is automatically put into canonical order as follows.
 It is perhaps unsurprising that the Hamiltonian in [Quantum Models for Electronic Systems](xref:microsoft.quantum.libraries.overview-chemistry.concepts.quantummodels) can be written in terms of creation and annihilation operators.
 In particular, if $\psi\_j$ are the spin orbitals that form the basis then
 
-\begin{equation}
-\hat{H} = \sum\_{pq} h\_{pq}a^\dagger\_p a\_q + \frac{1}{2}\sum\_{pqrs} h\_{pqrs}a^\dagger\_p a^\dagger\_q a\_ra\_s +h\_{\textrm nuc},\label{eq:totalHam}
-\end{equation}
+$$
+\hat{H} = \sum\_{pq} h\_{pq}a^\dagger\_p a\_q + \frac{1}{2}\sum\_{pqrs} h\_{pqrs}a^\dagger\_p a^\dagger\_q a\_ra\_s +h\_\textrm{nuc},\label{eq:totalHam}
+$$
 
-where $h\_{\textrm nuc}$ is the nuclear energy (which is a constant under the Born-Oppenheimer approximation) and
+where $h\_\textrm{nuc}$ is the nuclear energy (which is a constant under the Born-Oppenheimer approximation) and
 
-\begin{align}
-h\_{pq} &= \int\_{-\infty}^\infty \psi^\*\_p(x\_1) \left(-\frac{\nabla^2}{2} +V(x\_1)\right)  \psi\_q(x\_1)\mathrm{d}^3x\_1,
-\end{align}
+$$
+h\_{pq} = \int\_{-\infty}^\infty \psi^\*\_p(x\_1) \left(-\frac{\nabla^2}{2} +V(x\_1)\right)  \psi\_q(x\_1)\mathrm{d}^3x\_1,
+$$
 
 where $V(x)$ is the mean-field potential, and
 
-\begin{align}
-h\_{pqrs} &= \int\_{-\infty}^\infty \int\_{-\infty}^\infty\psi\_p^\*(x\_1)\psi\_q^\*(x\_2) \left(\frac{1}{|x_1-x_2|} \right)\psi\_r(x\_2)\psi\_s(x\_1)\mathrm{d}^3x\_1\mathrm{d}^3x\_2.\label{eq:integrals}
-\end{align}
+$$
+h\_{pqrs} = \int\_{-\infty}^\infty \int\_{-\infty}^\infty\psi\_p^\*(x\_1)\psi\_q^\*(x\_2) \left(\frac{1}{|x_1-x_2|} \right)\psi\_r(x\_2)\psi\_s(x\_1)\mathrm{d}^3x\_1\mathrm{d}^3x\_2.\label{eq:integrals}
+$$
 
 The terms $h\_{pq}$ are referred to as one-electron integrals because all such terms only involve single electrons and likewise $h\_{pqrs}$ are the two-electron integrals.
 They are called integrals because computing the values of these coefficients requires an integral.
@@ -392,9 +392,7 @@ Later on, this reduces the number of quantum gates required to simulate the Hami
 A fermionic Hamiltonian with one- and two-body interactions is represented in second-quantized notation as
 
 $$
-\begin{align}
 H=\sum\_{pq}h\_{pq}a^\dagger\_{p}a\_{q}+\frac{1}{2}\sum\_{pqrs}h\_{pqrs}a^\dagger\_{p}a^\dagger\_{q}a\_{r}a\_{s}.
-\end{align}
 $$
 
 In this notation, there are at most $N^2+N^4$ coefficients.
@@ -418,17 +416,13 @@ Furthermore, as $H$ is Hermitian, every non-Hermitian fermionic operator, say $h
 Let us identify this set of canonically ordered indices as
 
 $$
-\begin{align}
 (i\_1,\cdots,i\_n,j\_1,\cdots,j\_m) \in S\_{n,m}.
-\end{align}
 $$
 
 With this canonical ordering, the fermionic Hamiltonian may be expressed as
 
 $$
-\begin{align}
 H=\sum\_{(p,q)\in S\_{1,1}}h'\_{pq}\frac{a^\dagger\_{p}a\_{q}+a^\dagger\_{q}a\_{p}}{2}+\sum\_{(p,q,r,s)\in S\_{2,2}}h'\_{pqrs}\frac{a^\dagger\_{p}a^\dagger\_{q}a\_{r}a\_{s}+a^\dagger\_{s}a^\dagger\_{r}a\_{q}a\_{p}}{2},
-\end{align}
 $$
 
 with suitably adapted one- and two-electron integrals $h'\_{pq}$ and $h'\_{pqrs}$, respectively.
