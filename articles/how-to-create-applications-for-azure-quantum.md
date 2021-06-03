@@ -48,7 +48,7 @@ to control the computation flow with an `if` statement.
 > [!NOTE]
 > Currently, there is an additional limitation for this type of profile target: *you can't apply operations on qubits that have been measured, even
 > if you don't use the results to control the program flow.* This limitation is
-> not inherent to this profile type but is circumstantial to the situation of the Limited
+> not inherent to this profile type but is circumstantial to the situation of the Public
 > Preview.
 
 Presently, these No Control Flow targets are available for Azure Quantum:
@@ -120,8 +120,11 @@ applications, with the constraint that you can only compare values of type `Resu
 corresponding conditional blocks may not contain `return` or `set` statements. This profile type supposes an improvement over No Control Flow profiles, but still is subject to
 some limitations.
 
-Currently, Azure Quantum doesn't host any targets with this profile,
-however, we are planning to make some available during the Limited Review.
+Presently, these Basic Measurement Feedback targets are available for Azure Quantum:
+
+- **Provider:** Honeywell
+  - Honeywell System Model H0 (`honeywell.hqs-lt-1.0`)
+  - Honeywell System Model H1 (`honeywell.hqs-lt-s1`)
 
 ## Next steps
 
