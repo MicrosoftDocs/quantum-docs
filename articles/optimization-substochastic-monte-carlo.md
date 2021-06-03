@@ -105,6 +105,7 @@ solver = SubstochasticMonteCarlo(workspace, step_limit=10000, target_population=
 ```
 
 Most parameters have default values. (All those not shown as _required_ in the table above) 
+
 The below sample shows a submission with minimal parameters:
 
 ```python
