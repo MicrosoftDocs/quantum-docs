@@ -87,7 +87,7 @@ Population Annealing supports the following parameters:
 
 | Parameter Name           | Default Value   | Description |
 |--------------------------|-----------------|-------------|
-| `sweeps`             | _number of sweeps per thread_      | Number of sweeps per thread. More sweeps will usually improve the solution (unless it is already at the global minimum). |
+| `sweeps`             | 10000 | Number of sweeps. More sweeps will usually improve the solution (unless it is already at the global minimum). |
 | `beta`                   | linear `0`..`5` | Annealing schedule (beta must be increasing) |
 | `population`             | _number of threads_ | The number of walkers in the population (must be positive). |
 | `seed` (optional)        | _time based_    | Seed value - used for reproducing results. |
@@ -98,4 +98,14 @@ To create a parameterized Population Annealing solver for the CPU using the SDK:
 from azure.quantum.optimization import PopulationAnnealing, RangeSchedule
 # Requires a workspace already created.
 solver = PopulationAnnealing(workspace, sweeps=200, beta=RangeSchedule("linear", 0, 5), population=128, seed=42)
+```
+
+As the solver sets defaults for all inputs, you can omit some or all parameters. 
+
+Please note that this is not the same as running a parameter-free version of the solver as the solver will simply use the default values rather than tuning them to the problem submitted. 
+
+```python
+from azure.quantum.optimization import PopulationAnnealing, RangeSchedule
+# use default values for all parameters
+solver = PopulationAnnealing(workspace)
 ```
