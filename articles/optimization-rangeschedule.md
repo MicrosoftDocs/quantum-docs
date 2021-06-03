@@ -19,7 +19,7 @@ from azure.quantum.optimization import RangeSchedule
 ```
 
 Some solvers allow you to specify an instance of the RangeSchedule class as an input. 
-A RangeSchedule can be created with two different types of schedules. (either linear or geometric)
+A RangeSchedule can be created with two different types of schedules (either linear or geometric).
 We recommend reviewing our [Solver Inputs](/azure/quantum/optimization-input-formats) documentation for more details.
 
 
