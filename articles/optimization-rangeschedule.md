@@ -22,7 +22,6 @@ Some solvers allow you to specify an instance of the RangeSchedule class as an i
 A RangeSchedule can be created with two different types of schedules (either linear or geometric).
 We recommend reviewing our [Solver Inputs](/azure/quantum/optimization-input-formats) documentation for more details.
 
-
 ### Constructor
 
 - `schedule_type`: This is a string indicating the type of schedule. The accepted values are `linear` and `geometric`.
