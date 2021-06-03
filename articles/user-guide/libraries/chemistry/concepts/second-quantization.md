@@ -26,9 +26,13 @@ This combined index of $(j,\sigma)$ for $\sigma \in \{\uparrow,\downarrow\}$ is 
 In the chemistry library, spin-orbitals are stored in a `SpinOrbital` data structure, and are created as follows.
 
 ```csharp
-    // First, we load the namespace containing spin-orbital objects.
-    using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
+// The code snippets in this section require the following namespaces.
+// Make sure to include these at the top of your file or namespace.
+using Microsoft.Quantum.Chemistry;
+using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
+```
 
+```csharp
     // First, we assign an orbital index, say `5`. Note that we use 0-indexing,
     // so this is the 6th orbital.
     var orbitalIdx = 5;
@@ -54,10 +58,10 @@ The quantum chemistry library can use these conventions, and the spin-orbitals i
 
 ```csharp
     // Let us use the spin orbital created in the previous snippet.
-   var spinOrbital = new SpinOrbital(5, Spin.d);
+    var spinOrbital = new SpinOrbital(5, Spin.d);
 
-   // Let us set the total number of orbitals to be say, `7`.
-   var nOrbitals = 7;
+    // Let us set the total number of orbitals to be say, `7`.
+    var nOrbitals = 7;
 
     // This converts a spin-orbital index to a unique integer, in this case `12`,
     // using the formula `g(j,σ)`.
@@ -73,20 +77,24 @@ The quantum chemistry library can use these conventions, and the spin-orbitals i
 
 For fermionic systems, the Pauli exclusion principle prevents more than one electron from being present in any spin-orbital at the same time.
 This means that we can write the two legal states for $\psi_1$ as
+
 \begin{equation}
 \psi_1 \rightarrow \begin{cases} \ket{0}_1 & \text{if $\psi_1$ is not occupied,} \\\
 \ket{1}_1 & \text{if $\psi_1$ is occupied.} \end{cases}
 \end{equation}
+
 This encoding is great for quantum computers because it means that we can store the electronic occupation as a single quantum bit.
 
 The occupation states for the $2N$ spin orbitals can similarly be stored in $2N$ qubits.
 As an example, if $N=2$ then the state
+
 $$
 \ket{0} \ket{1} \ket{1} \ket{0},
 $$
 
 would correspond to spin orbitals $1$ and $2$ being occupied with the remainder empty.
 Similarly, the state
+
 $$
 \ket{0} \equiv \ket{0}_{0} \cdots \ket{0}_{N-1},
 $$
@@ -103,18 +111,28 @@ These operators insert or destroy electrons at a particular location.
 These are denoted $a^\dagger_j$ and $a_j$ respectively.
 
 For example,
+
 \begin{align}
 a^\dagger_1 \ket{0}_1 = \ket{1}_1,\quad a^\dagger_1 \ket{1}_1 = 0,\quad a_1 \ket{0}_1 = 0,\quad a_1 \ket{1}_1 = \ket{0}_1.
 \end{align}
+
 Note that here $a^\dagger_1 \ket{1}_1=0$ and $a_1 \ket{0}_1$ yield the zero-vector not $\ket{0}_1$.
 Such operators are therefore neither Hermitian nor unitary.
 We represent general creation and annihilation operators using the <xref:Microsoft.Quantum.Chemistry.LadderOperators.LadderOperator`1> type.
 For instance, a single creation operator is represented as follow.
 
 ```csharp
-    // We load the namespace containing ladder operator objects.
-    using Microsoft.Quantum.Chemistry.LadderOperators;
+// The code snippets in this section require the following namespaces.
+// Make sure to include these at the top of your file or namespace.
+using Microsoft.Quantum.Chemistry;
+using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
+using Microsoft.Quantum.Chemistry.LadderOperators;
+using Microsoft.Quantum.Chemistry.Fermion;
+// We load this namespace for convenience methods for manipulating arrays.
+using System.Linq;
+```
 
+```csharp
     // Let us use the spin orbital created in the previous snippet.
     var spinOrbitalInteger = new SpinOrbital(5, Spin.d).ToInt();
 
@@ -135,14 +153,14 @@ For instance, a single creation operator is represented as follow.
 ```
 
 Also using such operators we can express
+
 $$
 \ket{0} \ket{1} \ket{1} \ket{0} = a^\dagger_1 a^\dagger_2 \ket{0}^{\otimes 4}.
 $$
-This sequence of operators would be constructed within the Hamiltonian simulation library using C# code that is similar to the single-spin orbital case considered above above:
-```csharp
-    // We load the namespace containing fermion-related objects.
-    using Microsoft.Quantum.Chemistry.Fermion;
 
+This sequence of operators would be constructed within the Hamiltonian simulation library using C# code that is similar to the single-spin orbital case considered above:
+
+```csharp
     // Let us initialize an array of tuples representing the
     // desired sequence of creation operators.
     var indices = new[] { (RaisingLowering.u, 1), (RaisingLowering.u, 2) };
@@ -158,27 +176,36 @@ This sequence of operators would be constructed within the Hamiltonian simulatio
     var fermionTerm = new FermionTerm(ladderSequences);
 ```
 
-For a system of $k$ Fermions, in second quantization the action of the creation operator $a^\dagger_i$ is given by 
+For a system of $k$ Fermions, in second quantization the action of the creation operator $a^\dagger_i$ is given by
+
 $$
-a^\dagger_i \ket{n_1, n_2, \ldots, 0_i, \ldots, n_k } = (-1)^{S_i} \ket{n_1, n_2, \ldots, 1_i, \ldots, n_k}, 
+a^\dagger_i \ket{n_1, n_2, \ldots, 0_i, \ldots, n_k } = (-1)^{S_i} \ket{n_1, n_2, \ldots, 1_i, \ldots, n_k},
 $$
-and 
+
+and
+
 $$
 a^\dagger_i \ket{n_1, n_2, \ldots, 1_i, \ldots, n_k } = 0,
 $$
+
 where $S_i = \sum_{j<i} a^\dagger_j a_j$ measures the total number of Fermions that are in the state of a single particle and that have an index $j < i$.
 
 A third operator is also often used in second quantized representations.
 This operator is known as the number operator and is defined by
+
 \begin{equation}
 n_i = a^\dagger_i a_i.
 \end{equation}
+
 This operator counts the occupation of a given spin orbital, which is to say
+
 \begin{align}
 n_i \ket{0}_i &= 0\nonumber\\\
 n_i \ket{1}_i &= \ket{1}_i.
 \end{align}
+
 Similar to the above `FermionTerm` examples, this number operator is constructed as follows.
+
 ```csharp
     // Let us use a new method to compactly create a sequence of ladder
     // operators. Note that we have omitted specifying whether the 
@@ -195,14 +222,19 @@ Similar to the above `FermionTerm` examples, this number operator is constructed
 A subtlety emerges though when using creation or annihilation operators in fermionic systems.
 We require that any valid quantum state is anti-symmetric under exchange of labels.
 This means that
+
 $$
 a^\dagger_2 a^\dagger_1 \ket{0} = -a^\dagger_1 a^\dagger_2 \ket{0}.
 $$
+
 Such operators are said to 'anti-commute' and in general for any $i, j$ we have that
+
 \begin{align}
 a^\dagger_i a^\dagger_j  = -(1-\delta_{i,j})a^\dagger_j a^\dagger_i,\quad a^\dagger_i a_j =\delta_{i,j} - a_j a^\dagger_i.
 \end{align}
+
 Thus the following two <xref:Microsoft.Quantum.Chemistry.LadderOperators.LadderSequence`1> instances are considered inequivalent
+
 ```csharp
     // Let us initialize an array of tuples representing the
     // desired sequence of creation operators.
@@ -210,20 +242,21 @@ Thus the following two <xref:Microsoft.Quantum.Chemistry.LadderOperators.LadderS
 
     // We now construct a `LadderSequence` representing a creation operator
     // on the index 1 followed by 2, then a term with the reverse ordering.
-    var laddderSeqeunce = indices.ToLadderSequence();
-    var laddderSeqeunceReversed = indices.Reverse().ToLadderSequence();
+    var ladderSequence = indices.ToLadderSequence();
+    var ladderSequenceReversed = indices.Reverse().ToLadderSequence();
 
     // The following Boolean is `false`.
-    var equal = laddderSeqeunce == laddderSeqeunceReversed;
+    var equal = ladderSequence == ladderSequenceReversed;
 ```
 
 The requirement that each of the creation operators anti-commute means that using a second quantized representation does obviate the challenges faced by the anti-symmetry of Fermions.
-Instead the challenge re-emerges in our definition of the creation operators. 
+Instead the challenge re-emerges in our definition of the creation operators.
 
 Using the anti-commutation rules, some `LadderSequence` instances actually correspond to the same sequence of fermionic operators, sometimes up to a minus sign.
 For instance, consider the Hamiltonian $a_0^\dagger a_1^\dagger a_1 a_0 = - a_1^\dagger a_0^\dagger a_1 a_0$.
 This motivates us to define a canonical ordering for every `FermionTerm`.
 Any `FermionTerm` is automatically put into canonical order as follows.
+
 ```csharp
     // We now construct two `FermionTerms` that are equivalent with respect to
     // anti-commutation up to a sign change.
@@ -250,6 +283,7 @@ In particular, if $\psi\_j$ are the spin orbitals that form the basis then
 \begin{equation}
 \hat{H} = \sum\_{pq} h\_{pq}a^\dagger\_p a\_q + \frac{1}{2}\sum\_{pqrs} h\_{pqrs}a^\dagger\_p a^\dagger\_q a\_ra\_s +h\_{\textrm nuc},\label{eq:totalHam}
 \end{equation}
+
 where $h\_{\textrm nuc}$ is the nuclear energy (which is a constant under the Born-Oppenheimer approximation) and
 
 \begin{align}
@@ -277,6 +311,17 @@ As Hamiltonians are Hermitian by definition, we index terms using the more speci
 
 Let us construct a few illustrative examples.
 Consider the Hamiltonian $\hat{H} = a_0^\dagger a_1 + a_1^\dagger a_0$.
+
+```csharp
+// The code snippets in this section require the following namespaces.
+// Make sure to include these at the top of your file or namespace.
+using Microsoft.Quantum.Chemistry;
+using Microsoft.Quantum.Chemistry.LadderOperators;
+using Microsoft.Quantum.Chemistry.Fermion;
+// We load this namespace for convenience methods for manipulating arrays.
+using System.Linq;
+```
+
 ```csharp
     // We create a `FermionHamiltonian` instance to store the fermion terms.
     var hamiltonian = new FermionHamiltonian();
@@ -302,9 +347,11 @@ Consider the Hamiltonian $\hat{H} = a_0^\dagger a_1 + a_1^\dagger a_0$.
     hamiltonian.Add(hermitianFermionTerm0, 1.0);
     hamiltonian.Add(hermitianFermionTerm1, 1.0);
 ```
+
 We may simplify this construction using the fact that Hamiltonian operators are Hermitian operators.
 When adding terms to the Hamiltonian using `Add`, any non-Hermitian term such as `fermionTerm0` is assumed to be paired with its Hermitian conjugate.
 Thus the following snippet also represents the same Hamiltonian:
+
 ```csharp
     // We create a `FermionHamiltonian` instance to store the fermion terms.
     var hamiltonian = new FermionHamiltonian();
@@ -318,6 +365,7 @@ For instance, consider the Hamiltonian $H=a_0^\dagger a_1^\dagger a_1 a_0 - a_1^
 It may not always be clear to the user that these are equivalent terms, and so they may be added to the Hamiltonian separately.
 Alternatively, one may be interested in modifying already-existing terms in the Hamiltonian.
 In these cases, we may combine equivalent terms as follows.
+
 ```csharp
     // We create a `FermionHamiltonian` instance to store the fermion terms.
     var hamiltonian = new FermionHamiltonian();
@@ -335,6 +383,7 @@ In these cases, we may combine equivalent terms as follows.
     // There is only one unique term. `nTerms == 1` is `true`.
     var nTerms = hamiltonian.CountTerms();
 ```
+
 By combining coefficients of equivalent terms, we reduce the total number of terms in the Hamiltonian.
 Later on, this reduces the number of quantum gates required to simulate the Hamiltonian.
 
@@ -351,6 +400,7 @@ $$
 In this notation, there are at most $N^2+N^4$ coefficients.
 However, many of these coefficients may be collected as they correspond to the same operator.
 For instance, in the case where $p,q,r,s$ are distinct indices, we may use the anti-commutation rules to show that:
+
 $$
 a^\dagger\_{p}a^\dagger\_{q}a\_{r}a\_{s} =
 -a^\dagger\_{q}a^\dagger\_{p}a\_{r}a\_{s} =
@@ -359,12 +409,14 @@ a^\dagger\_{q}a^\dagger\_{p}a\_{s}a\_{r}.
 $$
 
 Furthermore, as $H$ is Hermitian, every non-Hermitian fermionic operator, say $h\_{pqrs}a^\dagger\_{p}a^\dagger\_{q}a\_{r}a\_{s}$, has a Hermitian conjugate that is also found in $H$. In order to uniquely index groups of terms characterized by these symmetries, we define a canonical ordering on the indices $(i\_1,\cdots,i\_n,j\_1,\cdots,j\_m)$ of any sequence of $n+m$ fermionic operators $a^\dagger\_{i\_1}\cdots a^\dagger\_{i\_n}a\_{j\_1}\cdots a\_{j\_m}$as follows:
--   All creation operators $a^\dagger\_{i\_\cdot}$ are placed before all annihilation operators $a\_{j\_\cdot}$.
--   All creation operator indices are sorted in ascending order, that is $i\_1< i\_2< \cdots < i\_n$.
--   All annihilation operator indices are sorted in descending order, that is $j\_1> j\_2 \cdots > j\_m$.
--   The left-most index is less than or equal to the right-most index, that is $i\_1\le j\_m$.
+
+- All creation operators $a^\dagger\_{i\_\cdot}$ are placed before all annihilation operators $a\_{j\_\cdot}$.
+- All creation operator indices are sorted in ascending order, that is $i\_1< i\_2< \cdots < i\_n$.
+- All annihilation operator indices are sorted in descending order, that is $j\_1> j\_2 \cdots > j\_m$.
+- The left-most index is less than or equal to the right-most index, that is $i\_1\le j\_m$.
 
 Let us identify this set of canonically ordered indices as
+
 $$
 \begin{align}
 (i\_1,\cdots,i\_n,j\_1,\cdots,j\_m) \in S\_{n,m}.
@@ -372,9 +424,11 @@ $$
 $$
 
 With this canonical ordering, the fermionic Hamiltonian may be expressed as
+
 $$
 \begin{align}
 H=\sum\_{(p,q)\in S\_{1,1}}h'\_{pq}\frac{a^\dagger\_{p}a\_{q}+a^\dagger\_{q}a\_{p}}{2}+\sum\_{(p,q,r,s)\in S\_{2,2}}h'\_{pqrs}\frac{a^\dagger\_{p}a^\dagger\_{q}a\_{r}a\_{s}+a^\dagger\_{s}a^\dagger\_{r}a\_{q}a\_{p}}{2},
 \end{align}
 $$
+
 with suitably adapted one- and two-electron integrals $h'\_{pq}$ and $h'\_{pqrs}$, respectively.
