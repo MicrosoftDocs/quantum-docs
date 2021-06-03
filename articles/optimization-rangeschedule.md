@@ -29,10 +29,10 @@ We recommend reviewing our [Solver Inputs](/azure/quantum/optimization-input-for
 - `initial`: A floating point value indicating the initial value of the schedule.
 - `final`: A floating point value indicating the final value of the schedule.
 
- For instance, if you want to create a linear range schedule that increases from 0 to 5 over time:
+For instance, if you want to create a linear range schedule that increases from 0 to 5 over time:
  
- ```py
- RangeSchedule("linear", 0, 5)
+```py
+RangeSchedule("linear", 0, 5)
 ```
 
  Or, if you want to create a geometric range schedule that decreases from 1 to 0:
