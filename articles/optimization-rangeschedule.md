@@ -34,7 +34,8 @@ For instance, if you want to create a linear range schedule that increases from 
 RangeSchedule("linear", 0, 5)
 ```
 
- Or, if you want to create a geometric range schedule that decreases from 1 to 0:
-  ```py
- RangeSchedule("geometric", 1, 0)
+Or, if you want to create a geometric range schedule that decreases from 1 to 0:
+
+```py
+RangeSchedule("geometric", 1, 0)
 ```
