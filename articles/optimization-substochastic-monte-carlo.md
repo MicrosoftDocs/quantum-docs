@@ -103,3 +103,12 @@ from azure.quantum.optimization import SubstochasticMonteCarlo, RangeSchedule
 # Requires a workspace already created.
 solver = SubstochasticMonteCarlo(workspace, step_limit=10000, target_population=64, beta=RangeSchedule("linear", 0, 5), seed=42)
 ```
+
+Most parameters have default values. (All those not shown as _required_ in the table above) 
+The below sample shows a submission with minimal parameters:
+
+```python
+from azure.quantum.optimization import SubstochasticMonteCarlo, RangeSchedule
+# utilizes the default values shown in the documentation
+solver = SubstochasticMonteCarlo(workspace, step_limit=500)
+```
