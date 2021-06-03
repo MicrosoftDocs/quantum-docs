@@ -154,7 +154,7 @@ Select your development environment below.
 * [Visual Studio: update the QDK extension](#update-the-visual-studio-qdk-extension)
 * [VS Code: update the QDK extension](#update-the-vs-code-qdk-extension)
 * [Command line and C#: update project templates](#c-using-the-dotnet-command-line-tool)
-* [Python: Update the Python SDK for Optimization](#update-the-python-sdk-for-optimization)
+* [Python: Update the Python SDK for Azure Quantum](#update-the-python-sdk-for-azure-quantum)
 
 
 ## Update the `qsharp` Python package
@@ -318,7 +318,7 @@ You can now use the updated IQ# kernel to run your existing Q# Jupyter Notebooks
    - Select **Q#: Install command line project templates**
    - After a few seconds you should get a popup confirming "project templates installed successfully"
 
-## Update the Python SDK for Optimization 
+## Update the Python SDK for Azure Quantum
 
 1. Update to the latest `azure-quantum` Python package by using the Python Package Installer (PIP)
 
