@@ -60,6 +60,15 @@ solver = ParallelTempering(workspace, timeout=100, seed=22)
 
 The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar number of variables, terms, locality and similar coefficient scale) using the parametrized parallel tempering solver.
 
+Running the solver without any parameters also triggers the parameter-free version:
+
+```python
+from azure.quantum.optimization import ParallelTempering
+# Requires a workspace already created.
+# Not specifying any parameters runs the parameter-free version of the solver.
+solver = ParallelTempering(workspace)
+```
+
 ## Parametrized parallel tempering
 
 Parallel tempering with specified parameters is best used if you are already familiar with parallel tempering terminology (sweeps, betas) and/or have an idea of which parameter values you intend to use. **If this is your first time using parallel tempering for a problem, the parameter-free version is recommended.** Some of the parameters like `beta_start` and `beta_stop` are hard to estimate without a good starting point.
