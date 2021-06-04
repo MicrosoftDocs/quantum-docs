@@ -22,7 +22,7 @@ When sweeping for a binary problem, each decision variable is "flipped" based on
 
 Simulated annealing in Azure Quantum supports:
 
-- Parameter-free mode and parametrized mode (with parameters)
+- Parameter-free mode and parameterized mode (with parameters)
 - Ising and PUBO input formats
 - CPU & FPGA hardware (see below for instructions on how to use both)
 
@@ -54,9 +54,9 @@ from azure.quantum.optimization import SimulatedAnnealing
 solver = SimulatedAnnealing(workspace, timeout=100, seed=22)
 ```
 
-The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar number of variables, terms, locality and similar coefficient scale) using the parametrized simulated annealing solver.
+The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar number of variables, terms, locality and similar coefficient scale) using the parameterized simulated annealing solver.
 
-## Parametrized simulated annealing (CPU)
+## Parameterized simulated annealing (CPU)
 
 Simulated annealing with specified parameters is best used if you are already familiar with simulated annealing terminology (sweeps, betas) and/or have an idea of which parameter values you intend to use. **If this is your first time using simulated annealing for a problem, the parameter-free version is recommended.** Some of the parameters like `beta_start` and `beta_stop` are hard to estimate without a good starting point.
 
@@ -69,7 +69,7 @@ Simulated annealing supports the following parameters:
 | `restarts`              | The number of repeats of the annealing schedule to run. Each restart will start with a random configuration **unless an initial configuration is supplied in the problem file.** The restarts will be executed in parallel and split amongst the threads of the VM. Recommended to set this value to at least 72.|
 | `seed (optional)`                 | Seed value - used for reproducing results |
 
-To create a parametrized simulated annealing solver for the CPU using the SDK:
+To create a parameterized simulated annealing solver for the CPU using the SDK:
 
 ```python
 from azure.quantum.optimization import SimulatedAnnealing
@@ -113,7 +113,7 @@ from azure.quantum.optimization import SimulatedAnnealing, HardwarePlatform
 solver = SimulatedAnnealing(workspace, timeout=100, seed=22, platform=HardwarePlatform.FPGA)
 ```
 
-For the parametrized version:
+For the parameterized version:
 
 ```python
 from azure.quantum.optimization import SimulatedAnnealing, HardwarePlatform
