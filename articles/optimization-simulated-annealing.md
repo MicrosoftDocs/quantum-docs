@@ -46,8 +46,7 @@ The parameter-free solver will halt either on `timeout` (specified in seconds) o
 | `timeout` | Max execution time for the solver (in seconds). This is a best effort mechanism, so the solver may not stop immediately when the timeout is reached.|
 | `seed` | Seed value - used for reproducing results. |
 
-You can create a parameter-free simulated annealing solver using the Python SDK. 
-The below sample is for a CPU target.
+To create a parameter-free simulated annealing solver for the CPU platform using the SDK:
 
 ```python
 from azure.quantum.optimization import SimulatedAnnealing
@@ -79,7 +78,7 @@ Simulated annealing supports the following parameters:
 | `restarts`              | The number of repeats of the annealing schedule to run. Each restart will start with a random configuration **unless an initial configuration is supplied in the problem file.** The restarts will be executed in parallel and split amongst the threads of the VM. Recommended to set this value to at least 72.|
 | `seed (optional)`                 | Seed value - used for reproducing results |
 
-To create a parameterized simulated annealing solver with a CPU target use the following code: 
+To create a parameterized simulated annealing solver for the CPU platform using the SDK:
 
 ```python
 from azure.quantum.optimization import SimulatedAnnealing
@@ -115,7 +114,7 @@ FPGA simulated annealing uses the same parameters as the corresponding CPU solve
 
 It is also recommended to set the number of restarts to at least 216 if using the FPGA solver, as it can support a higher degree of parallelization.
 
-To create a simulated annealing solver for the FPGA using the SDK, simply specify the platform option as follows:
+To create a simulated annealing solver for the FPGA platform using the SDK, simply specify the platform option as follows:
 
 ```python
 from azure.quantum.optimization import SimulatedAnnealing, HardwarePlatform
