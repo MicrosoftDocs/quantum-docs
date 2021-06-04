@@ -13,6 +13,7 @@ uid: microsoft.quantum.optimization.input-format
 # Input format for optimization problems
 
 This document explains how the parameters to optimization problems may be specified for all the different solvers. 
+All solvers set default values for their parameters but we strongly recommend setting them to values appropriate for your problem. Where there is a parameter-free solver available not setting any parameters will call the parameter-free version of that solver which will complete when there is sufficient convergence on a solution.
 
 ## Parallel Tempering
 <table>
@@ -108,9 +109,9 @@ This document explains how the parameters to optimization problems may be specif
     </thead>
     <tbody>
     <tr>
-        <td>step_limit</td>
+        <td>sweeps</td>
         <td>integer</td>
-        <td>Number of Monte Carlo steps. More steps will usually improve the solution if it has not yet found a global minimum.</td>
+        <td>Number of sweeps. More sweeps will usually improve the solution if it has not yet found a global minimum.</td>
     </tr>
     <tr>
         <td>beta</td>
