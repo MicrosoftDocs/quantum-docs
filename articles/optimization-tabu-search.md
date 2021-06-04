@@ -47,7 +47,7 @@ The parameter-free solver will halt either on `timeout` (specified in seconds) o
 | Parameter Name | Description |
 |----------------|-------------|
 | `timeout` | Max execution time for the solver (in seconds). This is a best effort mechanism, so the solver may not stop immediately when the timeout is reached.|
-| `seed (optional)` | Seed value - used for reproducing results. |
+| `seed` | Seed value - used for reproducing results. |
 
 To create a parameter-free Tabu solver using the SDK:
 
@@ -58,6 +58,15 @@ solver = Tabu(workspace, timeout=100, seed=22)
 ```
 
 The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar number of variables, terms, locality and similar coefficient scale) using the parametrized tabu search solver.
+
+Running the solver without any parameters also triggers the parameter-free version:
+
+```python
+from azure.quantum.optimization import Tabu
+# Requires a workspace already created.
+# Not specifying any parameters runs the parameter-free version of the solver.
+solver = Tabu(workspace)
+```
 
 ## Parameterized tabu search
 
