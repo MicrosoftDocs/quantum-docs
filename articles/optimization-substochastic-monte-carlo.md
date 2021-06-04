@@ -94,7 +94,7 @@ Substochastic Monte Carlo supports the following parameters:
 | `target_population`      | _number of threads_ | The number of walkers in the population (should be greater-equal 8). |
 | `alpha`                  | linear `1`..`0` | Schedule for the stepping chance (must be decreasing, i.e. `alpha.initial > alpha.final`). |
 | `beta`                   | linear `0`..`5` | Schedule for the resampling factor (must be increasing, i.e. `beta.initial < beta.final`). |
-| `seed` (optional)        | _time based_    | Seed value - used for reproducing results. |
+| `seed (optional)`        | _time based_    | Seed value - used for reproducing results. |
 
 To create a parameterized Substochastic Monte Carlo solver for the CPU using the SDK:
 
