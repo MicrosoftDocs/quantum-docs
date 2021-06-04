@@ -30,6 +30,6 @@ We recommend that you to start with the parameter-free solvers as they don't req
 
 2. Parameter-free parallel tempering (PT)
 
-Automatically determining parameters for solvers is convenient but also creates a runtime overhead. If one has to solve many similar problems or wants to achieve better performance, parameterized solvers should be considered. We suggest to start with parametrized SA if the parameter-free SA solver provided better results than the parameter-free PT and otherwise start with parametrized PT.
+Automatically determining parameters for solvers is convenient but also creates a runtime overhead. If one has to solve many similar problems or wants to achieve better performance, parameterized solvers should be considered. We suggest to start with parameterized SA if the parameter-free SA solver provided better results than the parameter-free PT and otherwise start with parameterized PT.
 
 Afterwards we recommend to benchmark the remaining solvers.

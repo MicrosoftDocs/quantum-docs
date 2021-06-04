@@ -23,15 +23,15 @@ The Microsoft QIO provider makes the following targets available:
 
 - [Solver: Simulated Annealing (Parameter-free)](xref:microsoft.quantum.optimization.simulated-annealing#parameter-free-simulated-annealing-cpu)
 - [Solver: Simulated Annealing (Parameter-free - FPGA)](xref:microsoft.quantum.optimization.simulated-annealing#simulated-annealing-fpga)
-- [Solver: Simulated Annealing (Parametrized)](xref:microsoft.quantum.optimization.simulated-annealing#parametrized-simulated-annealing-cpu)
-- [Solver: Simulated Annealing (Parametrized - FPGA)](xref:microsoft.quantum.optimization.simulated-annealing#simulated-annealing-fpga)
-- [Solver: Population Annealing (Parametrized)](xref:microsoft.quantum.optimization.population-annealing#parameterized-population-annealing)
+- [Solver: Simulated Annealing (Parameterized)](xref:microsoft.quantum.optimization.simulated-annealing#parameterized-simulated-annealing-cpu)
+- [Solver: Simulated Annealing (Parameterized - FPGA)](xref:microsoft.quantum.optimization.simulated-annealing#simulated-annealing-fpga)
+- [Solver: Population Annealing (Parameterized)](xref:microsoft.quantum.optimization.population-annealing#parameterized-population-annealing)
 - [Solver: Parallel Tempering (Parameter-free)](xref:microsoft.quantum.optimization.parallel-tempering#parameter-free-parallel-tempering)
-- [Solver: Parallel Tempering (Parametrized)](xref:microsoft.quantum.optimization.parallel-tempering#parametrized-parallel-tempering)
+- [Solver: Parallel Tempering (Parameterized)](xref:microsoft.quantum.optimization.parallel-tempering#parameterized-parallel-tempering)
 - [Solver: Tabu Search (Parameter-free)](xref:microsoft.quantum.optimization.tabu#parameter-free-tabu-search)
-- [Solver: Tabu Search (Parametrized)](xref:microsoft.quantum.optimization.tabu#parametrized-tabu-search)
-- [Solver: Quantum Monte Carlo (Parametrized)](xref:microsoft.quantum.optimization.quantum-monte-carlo#parameterized-quantum-monte-carlo-cpu)
-- [Solver: Substochastic Monte Carlo (Parametrized)](xref:microsoft.quantum.optimization.substochastic-monte-carlo#parameterized-substochastic-monte-carlo)
+- [Solver: Tabu Search (Parameterized)](xref:microsoft.quantum.optimization.tabu#parameterized-tabu-search)
+- [Solver: Quantum Monte Carlo (Parameterized)](xref:microsoft.quantum.optimization.quantum-monte-carlo#parameterized-quantum-monte-carlo-cpu)
+- [Solver: Substochastic Monte Carlo (Parameterized)](xref:microsoft.quantum.optimization.substochastic-monte-carlo#parameterized-substochastic-monte-carlo)
 
 ## Target Comparison
 
