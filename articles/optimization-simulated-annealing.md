@@ -44,7 +44,7 @@ The parameter-free solver will halt either on `timeout` (specified in seconds) o
 | Parameter Name | Description |
 |----------------|-------------|
 | `timeout` | Max execution time for the solver (in seconds). This is a best effort mechanism, so the solver may not stop immediately when the timeout is reached.|
-| `seed (optional)` | Seed value - used for reproducing results. |
+| `seed` (optional) | Seed value - used for reproducing results. |
 
 To create a parameter-free simulated annealing solver for the CPU platform using the SDK:
 
@@ -76,7 +76,7 @@ Simulated annealing supports the following parameters:
 | `sweeps`       | Number of sets of iterations to run over the variables of a problem. More sweeps will usually improve the solution (unless it is already at the global min).|
 | `beta_start/beta_stop`  | Represents the starting and stopping betas of the annealing schedule. A suitable value for these parameters will depend entirely on the problem and the magnitude of its changing moves. In general a non-zero and declining acceptance probability is sufficient. |
 | `restarts`              | The number of repeats of the annealing schedule to run. Each restart will start with a random configuration **unless an initial configuration is supplied in the problem file.** The restarts will be executed in parallel and split amongst the threads of the VM. Recommended to set this value to at least 72.|
-| `seed (optional)`                 | Seed value - used for reproducing results |
+| `seed` (optional)                 | Seed value - used for reproducing results |
 
 To create a parameterized simulated annealing solver for the CPU platform using the SDK:
 
