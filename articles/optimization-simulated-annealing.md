@@ -44,7 +44,7 @@ The parameter-free solver will halt either on `timeout` (specified in seconds) o
 | Parameter Name | Description |
 |----------------|-------------|
 | `timeout` | Max execution time for the solver (in seconds). This is a best effort mechanism, so the solver may not stop immediately when the timeout is reached.|
-| `seed` | Seed value - used for reproducing results. |
+| `seed (optional)` | Seed value - used for reproducing results. |
 
 To create a parameter-free simulated annealing solver for the CPU platform using the SDK:
 
