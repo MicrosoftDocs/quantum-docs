@@ -44,6 +44,7 @@ Quantum Monte Carlo supports the following parameters:
 |`restarts`| The number of repeats of the annealing schedule to run. Each restart will start with a random configuration unless an initial configuration is supplied in the problem file. The restarts will be executed in parallel and split amongst the threads of the virtual machine. Recommended to set this value to at least 72.|
 |`beta_start`| Represents the temperature at which the annealing schedule is executed. This should be a value low enough to produce a feasible configuration. |
 |`transverse_field_start` & `transverse_field_stop`| Represents the starting and stopping values of the external field applied to the annealing schedule. A suitable value for these parameters will depend entirely on the problem and the magnitude of its changing moves. In general a non-zero and declining acceptance probability is sufficient.|
+|`seed` (optional)| Seed value - used for reproducing results. |
 
 To create a parameterized Quantum Monte Carlo solver using the SDK:
 
