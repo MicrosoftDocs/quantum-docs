@@ -87,7 +87,7 @@ Population Annealing supports the following parameters:
 
 | Parameter Name           | Default Value   | Description |
 |--------------------------|-----------------|-------------|
-| `step_limit`             | _required_      | Number of Monte Carlo steps. More steps will usually improve the solution (unless it is already at the global minimum). |
+| `sweeps`             |10000      | Number of sweeps. More sweeps will usually improve the solution (unless it is already at the global minimum). |
 | `beta`                   | linear `0`..`5` | Annealing schedule (beta must be increasing) |
 | `population`             | _number of threads_ | The number of walkers in the population (must be positive). |
 | `seed` (optional)        | _time based_    | Seed value - used for reproducing results. |
@@ -97,5 +97,7 @@ To create a parameterized Population Annealing solver for the CPU using the SDK:
 ```python
 from azure.quantum.optimization import PopulationAnnealing, RangeSchedule
 # Requires a workspace already created.
-solver = PopulationAnnealing(workspace, step_limit=200, beta=RangeSchedule("linear", 0, 5), population=128, seed=42)
+solver = PopulationAnnealing(workspace, sweeps=200, beta=RangeSchedule("linear", 0, 5), population=128, seed=42)
 ```
+
+Running the solver without parameters will apply the default parameters shown in the table above. These default values are subject to change and we strongly recommend setting the values based on your problem rather than using the defaults.
