@@ -25,7 +25,7 @@ yet finished, blocks until it has.
 results = job.get_results()
 print(results)
 
-> {'version': '1.0', 'configuration': {'1': 1, '0': 1, '2': -1, '3': 1}, 'cost': -23.0}
+> {'version': '1.0', 'solutions': [{'configuration': {'1': 1, '0': 1, '2': -1, '3': 1}, 'cost': -23.0}]}
 ```
 
 ## Job.refresh
