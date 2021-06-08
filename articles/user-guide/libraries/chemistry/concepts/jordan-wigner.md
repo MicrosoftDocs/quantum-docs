@@ -26,8 +26,8 @@ We then have that $a^\dagger_j \ket{0}_j = \ket{1}_j$ and $a^\dagger_j \ket{1}_j
 It is easy to verify that
 
 \begin{align}
-a^\dagger_j &= \begin{bmatrix}0 & 0 \\\ 1 &0 \end{bmatrix}=\frac{X_j - iY_j}{2}, \nonumber\\\\
-a_j &= \begin{bmatrix}0 & 1 \\\ 0 &0 \end{bmatrix}=\frac{X_j + iY_j}{2},
+a^\dagger_j &= \begin{bmatrix}0 & 0 \\\\ 1 &0 \end{bmatrix}=\frac{X_j - iY_j}{2}, \nonumber\\\\
+a_j &= \begin{bmatrix}0 & 1 \\\\ 0 &0 \end{bmatrix}=\frac{X_j + iY_j}{2},
 \end{align}
 
 where $X_j$ and $Y_j$ are the Pauli-$X$ and -$Y$ operators acting on qubit $j$.
@@ -66,10 +66,10 @@ a^\dagger_N &= Z\otimes Z\otimes Z\otimes Z \otimes \cdots \otimes Z\otimes \lef
 It is also convenient to express the number operators, $n_j$, in terms of Pauli operators.
 Thankfully, the strings of $Z$ operators (known as Jordan-Wigner strings) cancel after one makes this substitution.
 After carrying this out (and recalling that $X_jY_j=iZ_j$), we have
-\begin{equation}
-n_j = a^\dagger_j a_j = \frac{(1-Z_j)}{2}.
-\end{equation}
 
+$$
+n_j = a^\dagger_j a_j = \frac{(1-Z_j)}{2}.
+$$
 
 ## Constructing Hamiltonians in Jordan-Wigner Representation
 
