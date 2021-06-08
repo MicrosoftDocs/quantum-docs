@@ -48,5 +48,5 @@ job = workspace.get_job(jobId)
 result = job.get_results()
 print(result)
 
-> {'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0}
+> {'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0}]}
 ```
