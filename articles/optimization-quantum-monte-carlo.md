@@ -19,7 +19,7 @@ In Azure Quantum the core of algorithmic approach to our QMC implementation is b
 
 ## Features of Quantum Monte Carlo on Azure Quantum
 
-- Parametrized mode (with parameters)
+- Parameterized mode (with parameters)
 - Ising and PUBO input formats
 - CPU only
   

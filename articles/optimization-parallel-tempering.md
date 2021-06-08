@@ -26,7 +26,7 @@ Instead of running a single copy of the system, Parallel Tempering creates multi
 
 Parallel tempering in Azure Quantum supports:
 
-- Parameter-free mode and parametrized mode (with parameters)
+- Parameter-free mode and parameterized mode (with parameters)
 - Ising and PUBO input formats
 - CPU only
 
@@ -58,7 +58,7 @@ from azure.quantum.optimization import ParallelTempering
 solver = ParallelTempering(workspace, timeout=100, seed=22)
 ```
 
-The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar number of variables, terms, locality and similar coefficient scale) using the parametrized parallel tempering solver.
+The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar number of variables, terms, locality and similar coefficient scale) using the parameterized parallel tempering solver.
 
 Running the solver without any parameters also triggers the parameter-free version:
 
@@ -69,7 +69,7 @@ from azure.quantum.optimization import ParallelTempering
 solver = ParallelTempering(workspace)
 ```
 
-## Parametrized parallel tempering
+## Parameterized parallel tempering
 
 Parallel tempering with specified parameters is best used if you are already familiar with parallel tempering terminology (sweeps, betas) and/or have an idea of which parameter values you intend to use. **If this is your first time using parallel tempering for a problem, the parameter-free version is recommended.** Some of the parameters like `beta_start` and `beta_stop` are hard to estimate without a good starting point.
 
@@ -84,7 +84,7 @@ Parallel tempering supports the following parameters:
 
 The larger the number of sweeps and replicas, the more likely the parallel tempering solver will be to find an optimal or near-optimal solution, however the solver will take longer to run.
 
-To create a parametrized parallel tempering solver using the SDK:
+To create a parameterized parallel tempering solver using the SDK:
 
 ```python
 from azure.quantum.optimization import ParallelTempering

@@ -20,7 +20,7 @@ In Azure Quantum, the core algorithmic approach to our tabu search implementatio
 
 Tabu search in Azure Quantum supports:
 
-- Parameter-free mode and parametrized mode (with parameters)
+- Parameter-free mode and parameterized mode (with parameters)
 - Ising and PUBO input formats
 - CPU only
 
@@ -57,7 +57,7 @@ from azure.quantum.optimization import Tabu
 solver = Tabu(workspace, timeout=100, seed=22)
 ```
 
-The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar number of variables, terms, locality and similar coefficient scale) using the parametrized tabu search solver.
+The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar number of variables, terms, locality and similar coefficient scale) using the parameterized tabu search solver.
 
 Running the solver without any parameters also triggers the parameter-free version:
 
@@ -82,7 +82,7 @@ Tabu search supports the following parameters:
 | `replicas` (deprecated)  | The number of concurrent solvers to initialize. This parameter will now default to the number of available processors on the machine, and is no longer accepting input. |
 | `seed` (optional) | Seed value - used for reproducing results |
 
-To create a parametrized Tabu solver using the SDK:
+To create a parameterized Tabu solver using the SDK:
 
 ```python
 from azure.quantum.optimization import Tabu
