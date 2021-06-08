@@ -24,10 +24,12 @@ Recall that a state $\ket{0}_j$ implies that spin orbital $j$ is empty and $\ket
 This means that qubits can naturally store the occupation of a given spin orbital.
 We then have that $a^\dagger_j \ket{0}_j = \ket{1}_j$ and $a^\dagger_j \ket{1}_j = 0$.
 It is easy to verify that
+
 \begin{align}
 a^\dagger_j &= \begin{bmatrix}0 & 0 \\\ 1 &0 \end{bmatrix}=\frac{X_j - iY_j}{2}, \nonumber\\\\
 a_j &= \begin{bmatrix}0 & 1 \\\ 0 &0 \end{bmatrix}=\frac{X_j + iY_j}{2},
 \end{align}
+
 where $X_j$ and $Y_j$ are the Pauli-$X$ and -$Y$ operators acting on qubit $j$.
 
 >[!NOTE]
@@ -39,24 +41,26 @@ This shows that for a single spin orbital it is easy to represent creation and a
  We will see later that this does not pose a challenge for simulation.
 
 One problem that remains is that while the above construction works for a single spin orbital, it fails for systems with two or more spin orbitals.
-Since Fermions are antisymmetic, we know that $a^\dagger_j a^\dagger_k = - a^\dagger_k a^\dagger_j$ for any $j$ and $k$.
- However, 
+Since Fermions are antisymmetric, we know that $a^\dagger_j a^\dagger_k = - a^\dagger_k a^\dagger_j$ for any $j$ and $k$.
+However,
+
 $$
 \left(\frac{X_j - iY_j}{2}\right)\left(\frac{X_k - iY_k}{2}\right) = \left(\frac{X_k - iY_k}{2}\right) \left(\frac{X_j - iY_j}{2}\right).
 $$
+
 In other words, the two creation operators do not anti-commute as required.
 This can be remedied though in a straightforward, if inelegant fashion.
 The fix is to note that Pauli operators naturally anti-commute.
 In particular, $XZ = -ZX$ and $YZ=-ZY$.
 Thus, by interspersing $Z$ operators into the construction of the operator, we can emulate the correct anti-commutation.
- The full construction is as follows: 
+ The full construction is as follows:
 
 \begin{align}
 a^\dagger_1 &= \left(\frac{X-iY}{2}\right)\otimes 1 \otimes 1 \otimes 1 \otimes \cdots \otimes 1,\\\\
 a^\dagger_2 &= Z\otimes\left(\frac{X-iY}{2}\right)\otimes 1\otimes 1 \otimes \cdots \otimes 1,\\\\
 a^\dagger_3 &= Z\otimes Z\otimes \left(\frac{X-iY}{2}\right)\otimes 1 \otimes \cdots \otimes 1,\\\\
 &\vdots\\\\
- a^\dagger_N &= Z\otimes Z\otimes Z\otimes Z \otimes \cdots \otimes Z\otimes \left(\frac{X-iY}{2}\right). \label{eq:JW}
+a^\dagger_N &= Z\otimes Z\otimes Z\otimes Z \otimes \cdots \otimes Z\otimes \left(\frac{X-iY}{2}\right). \label{eq:JW}
 \end{align}
 
 It is also convenient to express the number operators, $n_j$, in terms of Pauli operators.
@@ -70,10 +74,10 @@ n_j = a^\dagger_j a_j = \frac{(1-Z_j)}{2}.
 ## Constructing Hamiltonians in Jordan-Wigner Representation
 
 Once we have invoked the Jordan-Wigner representation translating the Hamiltonian to a sum of Pauli operators is straight forward.
- One simply has to replace each of the $a^\dagger$ and $a$ operators in the Fermionic Hamiltonian with the strings of Pauli-operators given above.
- When one performs this substitution, there are only five classes of terms within the Hamiltonian.
- These five classes correspond to the different ways we can pick the $p,q$ and $p,q,r,s$ in the one-body and the two-body terms in the Hamiltonian.
- These five classes, for the case where $p>q>r>s$ and real-valued orbitals, are
+One simply has to replace each of the $a^\dagger$ and $a$ operators in the Fermionic Hamiltonian with the strings of Pauli-operators given above.
+When one performs this substitution, there are only five classes of terms within the Hamiltonian.
+These five classes correspond to the different ways we can pick the $p,q$ and $p,q,r,s$ in the one-body and the two-body terms in the Hamiltonian.
+These five classes, for the case where $p>q>r>s$ and real-valued orbitals, are
 
 \begin{align}
 h_{pp}a_p^\dagger a_p &= \sum_p \frac{h_{pp}}{2}(1 - Z_p)\\\\
@@ -86,13 +90,15 @@ H_{pqrs} &= \frac{h_{pqrs}}{8}\prod_{j=s+1}^{r-1} Z_j\prod_{k=q+1}^{p-1} Z_k \Bi
 \end{align}
 
 While generating such Hamiltonians by hand only requires applying these replacement rules, doing so would be infeasible for large molecules which can consist of millions of Hamiltonian terms.
- As an alternative, we can automatically construct the `JordanWignerEncoding` given a `FermionHamiltonian` representation of the Hamiltonian.
+As an alternative, we can automatically construct the `JordanWignerEncoding` given a `FermionHamiltonian` representation of the Hamiltonian.
 
 ```csharp
-    // We load the namespace containing fermion and Pauli objects. 
-    using Microsoft.Quantum.Chemistry.Fermion;
-    using Microsoft.Quantum.Chemistry.Pauli;
-    
+// Make sure to load these at the top of your file or namespace.
+using Microsoft.Quantum.Chemistry.Fermion;
+using Microsoft.Quantum.Chemistry.Paulis;
+```
+
+```csharp
     // We create an example `FermionHamiltonian` instance.
     var fermionHamiltonian = new FermionHamiltonian();
 
