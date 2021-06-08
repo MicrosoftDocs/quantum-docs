@@ -16,17 +16,17 @@ uid: microsoft.quantum.libraries.overview-chemistry.concepts.symmetries
 The inherent symmetry of the Coulomb Hamiltonian, which is the Hamiltonian given in [Quantum Models for Electronic Systems](xref:microsoft.quantum.libraries.overview-chemistry.concepts.quantummodels), that describes electrons interacting electrically with each other and with the nuclei, leads to a number of symmetries that can be exploited to compress the terms in the Hamiltonian.
 In general if no further assumptions are made about the basis functions $\psi_j$ then we only have that
 
-\begin{equation}
+$$
 h_{pqrs}= h_{qpsr},\tag{★}\label{eq:hpqrs}
-\end{equation}
+$$
 
 which can be immediately seen from the integrals in [Quantum Models for Electronic Systems](xref:microsoft.quantum.libraries.overview-chemistry.concepts.quantummodels) upon noting that their values remain identical if $p,q$ and $r,s$ are interchanged from anti-commutation.
 
 If we assume that the spin-orbitals are real-valued (as they are for Gaussian orbital bases) then we further have that
 
-\begin{equation}
+$$
 h_{pqrs} = h_{qpsr} = h_{srqp} = h_{rspq}=h_{rqps}=h_{psrq}=h_{spqr}=h_{qrsp}.\tag{★}\label{eq:hpqrsreal}
-\end{equation}
+$$
 
 Given such assumptions hold, we can use the above symmetries to reduce the data needed to store the matrix elements of the Hamiltonian by a factor of $8$; although doing so makes importing data in a consistent way slightly more challenging.
 Fortunately the Hamiltonian simulation library has subroutines that can be used to import integral files from either [LIQUI$|\rangle$](https://www.microsoft.com/research/project/language-integrated-quantum-operations-liqui/) or directly from [NWChem](http://www.nwchem-sw.org/index.php/Main_Page).
