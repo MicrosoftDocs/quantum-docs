@@ -82,9 +82,9 @@ where
 
 $$
     e^{-i Z \otimes Z t} = \begin{bmatrix}
-        e^{-it} & 0  & 0  & 0 \\\
-        0 & e^{i t}  & 0 & 0 \\\
-        0 & 0 & e^{it} & 0 \\\
+        e^{-it} & 0  & 0  & 0 \\\\
+        0 & e^{i t}  & 0 & 0 \\\\
+        0 & 0 & e^{it} & 0 \\\\
         0 & 0 & 0 & e^{-it}
     \end{bmatrix}.
 $$
@@ -194,9 +194,9 @@ Unlike Trotter–Suzuki methods, these subroutines are quantum not classical and
 
 The first quantum subroutine that qubitization uses is called $\operatorname{Select}$ and it is promised to yield
 
-\begin{equation}
+$$
     \operatorname{Select} \ket{j} \ket{\psi} = \ket{j} H_j \ket{\psi},
-\end{equation}
+$$
 
 where each $H_j$ is assumed to be Hermitian and unitary.
 While this may seem to be restrictive, recall that Pauli operators are Hermitian and unitary and so applications like quantum chemistry simulation naturally fall into this framework.
@@ -206,27 +206,25 @@ This can be seen from the fact that $\operatorname{Select}^2\ket{j} \ket{\psi} =
 The second subroutine is called $\operatorname{Prepare}$.
 While the select operation provides a means to coherently access each of the Hamiltonian terms $H_j$ the prepare subroutine gives a method for accessing the coefficients $h_j$,
 
-\begin{equation}
+$$
     \operatorname{Prepare}\ket{0} = \sum_j \sqrt{\frac{h_j}{|h|_1}}\ket{j}.
-\end{equation}
+$$
 
 Then, by using a multiply controlled phase gate, we see that
 
 $$
     \Lambda\ket{0}^{\otimes n} = \begin{cases}
-        \-\ket{x} & \text{if } x = 0 \\\
+        \-\ket{x} & \text{if } x = 0 \\\\
         \ket{x}   & \text{otherwise}
     \end{cases}.
 $$
 
 The $\operatorname{Prepare}$ operation is not used directly in qubitization, but rather is used to implement a reflection about the state that $\operatorname{Prepare}$ creates
 
-$$
 \begin{align}
-    R &amp; = 1 - 2\operatorname{Prepare} \ket{0}\bra{0} \operatorname{Prepare}^{-1} \\\\
-      &amp; = \operatorname{Prepare} \Lambda \operatorname{Prepare}^{-1}.
+    R &= 1 - 2\operatorname{Prepare} \ket{0}\bra{0} \operatorname{Prepare}^{-1} \\\\
+      &= \operatorname{Prepare} \Lambda \operatorname{Prepare}^{-1}.
 \end{align}
-$$
 
 The walk operator, $W$, can be expressed in terms of the $\operatorname{Select}$ and $R$ operations as
 
