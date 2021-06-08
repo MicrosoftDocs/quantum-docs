@@ -657,6 +657,9 @@ So, to run `MeasureSuperpositionArray` with four qubits, we can run `%simulate M
 <img src="~/media/hostprograms_jupyter_args_sim_crop.png" alt="Jupyter cell simulating a Q# operation with arguments" width="773">
 
 This pattern can be used similarly with `%estimate` and other run commands.
+ 
+> [!NOTE]
+> Passing callables in a similar manner with run commands such as `%simulate` or `%estimate` is not possible.
 
 ### Using Q# code from other projects or packages
 

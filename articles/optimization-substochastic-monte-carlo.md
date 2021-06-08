@@ -90,7 +90,7 @@ Substochastic Monte Carlo supports the following parameters:
 
 | Parameter Name           | Default Value   | Description |
 |--------------------------|-----------------|-------------|
-| `step_limit`             | _required_      | Number of monte carlo steps. More steps will usually improve the solution (unless it is already at the global minimum). |
+| `step_limit`             | 10000      | Number of monte carlo steps. More steps will usually improve the solution (unless it is already at the global minimum). |
 | `target_population`      | _number of threads_ | The number of walkers in the population (should be greater-equal 8). |
 | `alpha`                  | linear `1`..`0` | Schedule for the stepping chance (must be decreasing, i.e. `alpha.initial > alpha.final`). |
 | `beta`                   | linear `0`..`5` | Schedule for the resampling factor (must be increasing, i.e. `beta.initial < beta.final`). |
@@ -103,3 +103,5 @@ from azure.quantum.optimization import SubstochasticMonteCarlo, RangeSchedule
 # Requires a workspace already created.
 solver = SubstochasticMonteCarlo(workspace, step_limit=10000, target_population=64, beta=RangeSchedule("linear", 0, 5), seed=42)
 ```
+
+Running the solver without parameters will apply the default parameters shown in the table above. These default values are subject to change and we strongly recommend setting the values based on your problem rather than using the defaults.
