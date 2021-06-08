@@ -66,6 +66,9 @@ where:
 - $N_{m}$ is the number of state preparation and measurement (SPAM) operations in a circuit including initial implicit state preparation and any intermediate and final measurements and state resets.
 - $C$ is the shot count.
 
+> [!IMPORTANT]
+> Note that there is a $30 USD minimum cost to run a job on the Honeywell QPU.
+
 #### Technical Specifications
 
 - Trapped-ion based quantum computer with laser based gates
