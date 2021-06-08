@@ -46,8 +46,6 @@ By default, the CPU version of a solver is used. In order to specify a different
 solver =  SimulatedAnnealing(workspace, timeout=100, platform=HardwarePlatform.FPGA)
 ```
 
-## Additional Solver Options
-
 ### Returning multiple solutions
 Some solvers support the option to return more than 1 solution on a single run. The below example shows how to set this option.
 
