@@ -60,7 +60,7 @@ QubitCount      2       2
 BorrowedWidth   0       0
 ```
 
-For more information about the collected metrics, see the description of the [Reported Metrics](#metrics-reported). The default configuration used for the `ResourcesEstimator` counts only T gates. Other configurations can be set by creating and customizing a [`QCTraceSimulator`](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro) instance.
+For more information about the collected metrics, see the description of the [Reported Metrics](#metrics-reported). The default configuration used for the `ResourcesEstimator` counts only `T` gates. Other configurations can be set by creating and customizing a [`QCTraceSimulator`](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro) instance.
 
 > [!NOTE]
 > A `ResourcesEstimator` instance does not reset its calculations on every run. If you use the same instance to run another operation, it aggregates the new results with the existing results in the `Sum` column. Additionally, the `Max` column will contain the highest value encountered so far for each metric. If you need to reset calculations between runs, create a new instance for every run.
