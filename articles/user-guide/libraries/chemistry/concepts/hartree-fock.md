@@ -19,18 +19,18 @@ While the ground state is typically too hard to learn (even with a quantum compu
 Quantities such as ground state energy can be learned.
 For example, if $\ket{\psi}$ is any pure quantum state then
 
-\begin{equation}
-E = \bra{ \psi } \hat{H} \ket{\psi}
-\end{equation}
+$$
+    E = \bra{ \psi } \hat{H} \ket{\psi}
+$$
 
 gives the mean energy that the system has in that state.
 The ground state then is the state that gives the smallest such value. As a result, choosing a state that is as close as possible to the true ground state is vitally important for estimating the energy either directly (as is done in variational eigensolvers) or through phase estimation.
 
 Hartree–Fock theory gives a simple way to construct the initial state for quantum systems. It yields a single Slater-determinant approximation to the ground state of a quantum system. To that end, it finds a rotation within Fock-space that minimizes the ground state energy. In particular, for a system of $N$ electrons the method performs the rotation
 
-\begin{equation}
-\prod_{j=0}^{N-1} a^\dagger_j \ket{0} \mapsto \prod_{j=0}^{N-1} e^{u} a^\dagger_j e^{-u} \ket{0}\defeq\prod_{j=0}^{N-1}  \widetilde{a}^\dagger_j  \ket{0},
-\end{equation}
+$$
+    \prod_{j=0}^{N-1} a^\dagger_j \ket{0} \mapsto \prod_{j=0}^{N-1} e^{u} a^\dagger_j e^{-u} \ket{0}\defeq\prod_{j=0}^{N-1}  \widetilde{a}^\dagger_j  \ket{0},
+$$
 
 with an anti-Hermitian (for example, $u= -u^\dagger$) matrix $u = \sum_{pq} u_{pq} a^\dagger_p a_q$. It should be noted that the matrix $u$ represents the orbital rotations and $\widetilde{a}^\dagger_j$ and $\widetilde{a}_j$ represent creation and annihilation operators for electrons occupying Hartree–Fock molecular spin-orbitals.
 
