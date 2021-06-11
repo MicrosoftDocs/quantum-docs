@@ -30,7 +30,7 @@ Configure the QDK for your preferred environment from one of the following optio
 
 ### [VS Code](#tab/tabid-vscode)
 
-1. Download and install [VS Code](https://code.visualstudio.com/download) 1.52.0 or greater (Windows, Linux and Mac).
+1. Download and install [VS Code](https://code.visualstudio.com/download) 1.52.0 or greater (Windows, Linux and Mac). You can install VS Code through a graphical software installer or through the command line in your Linux environment.
 2. Install the [QDK for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
 ### [Visual Studio (Windows only)](#tab/tabid-vs)
