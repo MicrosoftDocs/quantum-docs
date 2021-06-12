@@ -122,7 +122,7 @@ To piece back the fixed variables with the solution on the reduced problem:
 
 ```py
 result = solver.optimize(new_problem)
-result_config = json.loads(result)['configuration']
+result_config = json.loads(result)['solutions'][0]['configuration']
 result_config.update(fixed_var) # join the fixed variables with the result
 ```
 
@@ -142,7 +142,7 @@ terms
 
 The StreamingProblem class can handle large problems that exceeds local memory limits. Unlike with the Problem class, terms in the StreamingProblem are uploaded directly to blob and are not kept in memory.
 
-The StreamingProblem class uses the same interface as the Problem class.
+The StreamingProblem class uses the same interface as the Problem class. See [StreamingProblem](xref:microsoft.quantum.optimization.streaming-problem) usage documentation. 
 
 There are some features that are not yet supported on the StreamingProblem class due to its streaming nature:
 

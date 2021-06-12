@@ -33,7 +33,7 @@ print(result)
 This method will submit the problem to Azure Quantum for optimization and synchronously wait for it to be solved. You'll see output like the following in your terminal:
 
 ```output
-> {'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0}
+> {'solutions':[{'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0}]}
 ```
 
 See [Solve long running problems](xref:microsoft.quantum.optimization.solve-long-running-problems) for solving problems asynchronously.
@@ -45,3 +45,18 @@ By default, the CPU version of a solver is used. In order to specify a different
 ```py
 solver =  SimulatedAnnealing(workspace, timeout=100, platform=HardwarePlatform.FPGA)
 ```
+
+### Returning multiple solutions
+Some solvers support the option to return more than 1 solution on a single run. The below example shows how to set this option.
+
+```py
+# return a maximum of 5 solutions
+solver.set_number_of_solutions(5)
+```
+
+The option will have the following behaviour and requirements:
+- Value must be between 1 and 10 (default to 1 if not set). 
+- Solvers are not guaranteed to return the exact number of solutions specified by the parameter as solvers may not find that many solutions. 
+- Solvers are guaranteed to return the best solution they find in index 0. They will return the rest of the solutions (if any) in the same list and in sorted order.
+
+**Not supported:** this option is not available on FPGA solvers.
