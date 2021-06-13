@@ -47,16 +47,26 @@ Presently, these No Control Flow targets are available for Azure Quantum:
   - IonQ simulator (`ionq.simulator`)
   - IonQ QPU: (`ionq.qpu`)
 
-### Create applications for IonQ targets
+## Create and run applications for Basic Measurement Feedback targets
+
+**Basic Measurement Feedback** profile targets can run a wide variety of Q# applications, with the constraint that you can only compare values of type `Result` as part of conditions within `if` statements in operations. The corresponding conditional blocks may not contain `return` or `set` statements. This profile type supposes an improvement over No Control Flow profiles, but still is subject to some limitations.
+
+Presently, these Basic Measurement Feedback targets are available for Azure Quantum:
+
+- **Provider:** Honeywell
+  - Honeywell System Model H0 (`honeywell.hqs-lt-1.0`)
+  - Honeywell System Model H1 (`honeywell.hqs-lt-s1`)
+
+## Create applications for IonQ targets
 
 Follow these steps in this section to create an application to run in IonQ targets.
 
-#### Prerequisites
+### Prerequisites
 
 - Install the [QDK](xref:microsoft.quantum.install-qdk.overview.standalone).
 - A Quantum Workspace with IonQ listed as a provider. To create a Workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
 
-#### Steps
+### Steps
 
 1. [Create a Q# application using the Q# project template.](xref:microsoft.quantum.install-qdk.overview.standalone)
 1. Open the `*.csproj` file in a text editor (for example, VS Code) and edit the file to:
@@ -94,16 +104,6 @@ For more information on how to submit jobs to Azure Quantum, see:
 
 > [!NOTE]
 > If you run into an error while working with Azure Quantum, you can check our [list of common issues](xref:microsoft.quantum.azure.common-issues).
-
-## Create and run applications for Basic Measurement Feedback targets
-
-**Basic Measurement Feedback** profile targets can run a wide variety of Q# applications, with the constraint that you can only compare values of type `Result` as part of conditions within `if` statements in operations. The corresponding conditional blocks may not contain `return` or `set` statements. This profile type supposes an improvement over No Control Flow profiles, but still is subject to some limitations.
-
-Presently, these Basic Measurement Feedback targets are available for Azure Quantum:
-
-- **Provider:** Honeywell
-  - Honeywell System Model H0 (`honeywell.hqs-lt-1.0`)
-  - Honeywell System Model H1 (`honeywell.hqs-lt-s1`)
 
 ## Next steps
 
