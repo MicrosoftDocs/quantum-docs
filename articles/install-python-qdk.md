@@ -23,7 +23,7 @@ The `qsharp` Python package, which includes the IQ# kernel, contains the necessa
 
 1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads). Consult their [installation guide](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) if you are unsure about any steps. **Note:** 64-bit installation required.
 
-1. Initialize conda for your preferred shell with the `conda init` command. The steps below are tailored to your operating system:
+1. Initialize conda for your preferred shell with the `conda init` initialization command. The steps below are tailored to your operating system:
 
     **(Windows)** Open an Anaconda Prompt by searching for it in the start menu. Then run the initialization command for your shell, e.g. `conda init powershell cmd.exe` will set up both the Windows PowerShell and Command Prompt for you. You can then close this prompt.
 
