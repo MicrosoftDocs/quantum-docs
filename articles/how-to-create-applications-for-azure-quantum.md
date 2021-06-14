@@ -93,9 +93,9 @@ Follow the steps in this section to create an application to run on available qu
     ```
 
    where `X.XX.XXXX.XXXXXX` is a place holder for the latest version number of the QDK, and `my.target` a placeholder for your chosen target.
-1. Write your Q# program, keeping in mind the restrictions applying to the computation profile of your particular target.  you cannot compare measurement results to control the program flow.
+1. Write your Q# program, keeping in mind the restrictions applying to the computation profile of your particular target.  You cannot compare measurement results to control the program flow.
 1. Build and run your program locally using the targets supplied by the QDK. This will let you know if your Q# application can run on the specified Azure Quantum target by checking the fulfillment of the computation profile restrictions and calculating the needed resources.
-   - You can run your Q# program locally using the QDK full state simulator by using the command `dotnet run`. Since you selected the `ExecutionTarget` in the `*.csproj` file, the console output will warn you if you created a file that is not compatible with selected computation profile.
+   - You can run your Q# program locally using the QDK full state simulator by using the command `dotnet run`. Since you selected the `ExecutionTarget` in the `*.csproj` file, the console output will warn you if you created a file that is not compatible with the selected computation profile.
    - You can use the [`resources estimator`](xref:microsoft.quantum.machines.overview.resources-estimator) to estimate what resources your Q# program requires to run. You invoke the resources estimator with the command: `dotnet run --simulator ResourcesEstimator`.
 1. Once your Q# program is ready, submit the job to Azure Quantum using your preferred environment by specifying the target ID, for example `ionq.qpu` or `honeywell.hqs-lt-1.0`.
 
