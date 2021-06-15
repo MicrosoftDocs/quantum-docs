@@ -95,7 +95,7 @@ Besides the code file, the test project template includes the `.csproj` file wit
 </Project>
 ```
 
-The first line specifies the version number of the software development kit used to build the application. Note that the exact version numbers you see in this file will depend on your installation.
+The first line specifies the version number of the Microsoft Quantum Development Kit used to build the application. Note that the exact version numbers you see in this file will depend on your installation.
 
 The `TargetFramework` generally contains either of two values for Q# applications depending on the project type: `netcoreapp3.1` for executable projects, and `netstandard2.1` for libraries. Next, the `IsPackable` parameter is set to false (true when omitted). It determines whether a NuGet package is generated from this project when the [`dotnet pack`](/dotnet/core/tools/dotnet-pack) command is run.
 
