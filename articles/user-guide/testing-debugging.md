@@ -95,11 +95,11 @@ Besides the code file, the test project template includes the `.csproj` file wit
 </Project>
 ```
 
-The first line specifies the version number of the software development kit used to build the application. Note that the exact version numbers you see will depend on your installation.
+The first line specifies the version number of the software development kit used to build the application. Note that the exact version numbers you see in this file will depend on your installation.
 
 The `TargetFramework` generally contains either of two values for Q# applications depending on the project type: `netcoreapp3.1` for executable projects, and `netstandard2.1` for libraries. Next, the `IsPackable` parameter is set to false (true when omitted). It determines whether a NuGet package is generated from this project when the [`dotnet pack`](/dotnet/core/tools/dotnet-pack) command is run.
 
-Lastly, the file contains all the NuGet package dependencies required to run unit tests. Make sure to include these if you are creating a test project manually or are converting a regular project.
+Finally, the file lists NuGet package dependencies inside the `<ItemGroup>` tag. [xUnit](https://xunit.net/) is a popular testing framework for the .NET framework, which Q# test projects make use of (third reference in the list). The `Microsoft.Quantum.Xunit` and `Microsoft.NET.Test.Sdk` packages are used to expose Q# constructs to xUnit and build .NET test projects. In order to run any tests, xUnit also requires a unit test runner. Both the `xunit.runner.visualstudio` and the `dotnet-xunit` runners are required to run tests from the command line, while the former is sufficient when running tests from within Visual Studio. Make sure to include the appropriate package references if you are creating a test project manually or are converting from a regular project.
 
 ### Running Q# Unit Tests
 
