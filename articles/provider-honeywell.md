@@ -60,8 +60,11 @@ Billing information:
 
 | Parameter Name | Type     | Required | Description |
 |----------------|----------|----------|-------------|
-| `count`   | int    | No | Number of experimental shots. Defaults to 1. |
+| `count`   | int  | No | Number of experimental shots. Defaults to 1. |
 | `options` | list | No | Compiler options. Only one option currently supported: `no-opt` to disable all optimization |
+
+> [!IMPORTANT]
+> The default shot count shown in the table is a provider default. Submitting jobs without an explicit shot count through any of the Azure Quantum SDKs or the CLI will set this value to 500.
 
 The following equation defines how circuits are translated into Honeywell Quantum Credits (HQCs):
 
