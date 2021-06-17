@@ -73,112 +73,112 @@
           href: optimization-substochastic-monte-carlo.md
     - name: Troubleshoot optimization solvers
       href: optimization-troubleshooting.md
-  - name: Quantum Computing
+- name: Quantum Computing
+  items:
+  - name: Overview
     items:
-    - name: Overview
+    - name: Introduction to quantum computing
+      href: overview-qdk.md    
+    - name: Providers
+      href: qc-target-list.md
+    - name: Key concepts for quantum computing
       items:
-      - name: Introduction to quantum computing
-        href: overview-qdk.md    
-      - name: Providers
-        href: qc-target-list.md
-      - name: Key concepts for quantum computing
-        items:
-        - name: Understanding quantum computing
-          href: overview-understanding-quantum-computing.md
-        - name: Quantum computers and simulators
-          href: overview-quantum-computers-and-simulators.md
-        - name: What are Q# and the QDK?
-          href: overview-what-is-qsharp-and-qdk.md
-        - name: Linear algebra for quantum computing
-          href: overview-algebra-for-quantum-computing.md
-    - name: Quickstarts
+      - name: Understanding quantum computing
+        href: overview-understanding-quantum-computing.md
+      - name: Quantum computers and simulators
+        href: overview-quantum-computers-and-simulators.md
+      - name: What are Q# and the QDK?
+        href: overview-what-is-qsharp-and-qdk.md
+      - name: Linear algebra for quantum computing
+        href: overview-algebra-for-quantum-computing.md
+  - name: Quickstarts
+    items:
+    - name: Azure Quantum
       items:
-      - name: Azure Quantum
-        items:
-        - name: IonQ quickstart
-          href: quickstart-ionq.md
-        - name: Honeywell quickstart
-          href: quickstart-honeywell.md
-        - name: Create and run Q# applications in Azure Quantum
-          href: how-to-create-applications-for-azure-quantum.md  
-        - name: Submit jobs with the Azure CLI
-          href: how-to-submit-jobs-with-azure-cli.md
-        - name: Submit jobs with Q# Jupyter Notebooks
-          href: how-to-submit-jobs-with-jupyter-notebooks.md
-        - name: Submit jobs with Python
-          href: how-to-submit-jobs-with-python.md
-      - name: QDK (offline)
-        items:
-        - name: Set up the QDK
-          href: install-overview-qdk.md
-        - name: Get started with the QDK
-          href: install-get-started-qdk.md
-        - name: Q# applications
-          href: install-command-line-qdk.md
-        - name: Q# with Jupyter Notebooks
-          href: install-jupyter-qdk.md
-        - name: Q# with Python
-          href: install-python-qdk.md
-        - name: Q# with .NET
-          href: install-csharp-qdk.md
-        - name: Q# with Binder
-          href: install-binder-qdk.md
-    - name: Tutorials
+      - name: IonQ quickstart
+        href: quickstart-ionq.md
+      - name: Honeywell quickstart
+        href: quickstart-honeywell.md
+      - name: Create and run Q# applications in Azure Quantum
+        href: how-to-create-applications-for-azure-quantum.md  
+      - name: Submit jobs with the Azure CLI
+        href: how-to-submit-jobs-with-azure-cli.md
+      - name: Submit jobs with Q# Jupyter Notebooks
+        href: how-to-submit-jobs-with-jupyter-notebooks.md
+      - name: Submit jobs with Python
+        href: how-to-submit-jobs-with-python.md
+    - name: QDK (offline)
       items:
-        - name: Quantum random number generator
-          href: tutorial-qdk-quantum-random-number-generator.md
-        - name: Explore entanglement with Q#
-          href: tutorial-qdk-explore-entanglement.md
-        - name: Implement Grover's search algorithm
-          href: tutorial-qdk-grovers-search.md
-        - name: Qubit-level programming
-          href: tutorial-qdk-qubit-level-program.md
-        - name: Learn Q# with the Quantum Katas
-          href: tutorial-qdk-intro-to-katas.md
-        - name: Q# code samples
-          href: /samples/browse/?languages=qsharp
-    - name: How-to guides
-      items: 
-      - name: Update the QDK
-        href: install-update-qdk.md
-    - name: Q# user guide
-      href: user-guide/toc.yml
-    - name: Concepts
+      - name: Set up the QDK
+        href: install-overview-qdk.md
+      - name: Get started with the QDK
+        href: install-get-started-qdk.md
+      - name: Q# applications
+        href: install-command-line-qdk.md
+      - name: Q# with Jupyter Notebooks
+        href: install-jupyter-qdk.md
+      - name: Q# with Python
+        href: install-python-qdk.md
+      - name: Q# with .NET
+        href: install-csharp-qdk.md
+      - name: Q# with Binder
+        href: install-binder-qdk.md
+  - name: Tutorials
+    items:
+      - name: Quantum random number generator
+        href: tutorial-qdk-quantum-random-number-generator.md
+      - name: Explore entanglement with Q#
+        href: tutorial-qdk-explore-entanglement.md
+      - name: Implement Grover's search algorithm
+        href: tutorial-qdk-grovers-search.md
+      - name: Qubit-level programming
+        href: tutorial-qdk-qubit-level-program.md
+      - name: Learn Q# with the Quantum Katas
+        href: tutorial-qdk-intro-to-katas.md
+      - name: Q# code samples
+        href: /samples/browse/?languages=qsharp
+  - name: How-to guides
+    items: 
+    - name: Update the QDK
+      href: install-update-qdk.md
+  - name: Q# user guide
+    href: user-guide/toc.yml
+  - name: Concepts
+    items:
+      - name: "Quantum computing history & background"
+        href: concepts-overview.md
+      - name: Vectors and matrices
+        href: concepts-vectors-and-matrices.md
+      - name: Advanced matrix concepts
+        href: concepts-advanced-matrices.md
+      - name: The qubit
+        href: concepts-the-qubit.md
+      - name: Multiple qubits
+        href: concepts-multiple-qubits.md
+      - name: Dirac notation
+        href: concepts-dirac-notation.md
+      - name: Pauli measurements
+        href: concepts-pauli-measurements.md
+      - name: Quantum circuits
+        href: concepts-circuits.md
+      - name: Quantum oracles
+        href: concepts-oracles.md
+      - name: Theory of Grover's algorithm
+        href: concepts-grovers.md
+  - name: Provider references
+    items:
+    - name: IonQ
       items:
-        - name: "Quantum computing history & background"
-          href: concepts-overview.md
-        - name: Vectors and matrices
-          href: concepts-vectors-and-matrices.md
-        - name: Advanced matrix concepts
-          href: concepts-advanced-matrices.md
-        - name: The qubit
-          href: concepts-the-qubit.md
-        - name: Multiple qubits
-          href: concepts-multiple-qubits.md
-        - name: Dirac notation
-          href: concepts-dirac-notation.md
-        - name: Pauli measurements
-          href: concepts-pauli-measurements.md
-        - name: Quantum circuits
-          href: concepts-circuits.md
-        - name: Quantum oracles
-          href: concepts-oracles.md
-        - name: Theory of Grover's algorithm
-          href: concepts-grovers.md
-    - name: Provider references
+      - name: IonQ provider & targets
+        href: provider-ionq.md
+      - name: IonQ support policy
+        href: provider-support-ionq.md
+    - name: Honeywell
       items:
-      - name: IonQ
-        items:
-        - name: IonQ provider & targets
-          href: provider-ionq.md
-        - name: IonQ support policy
-          href: provider-support-ionq.md
-      - name: Honeywell
-        items:
-        - name: Honeywell provider & targets
-          href: provider-honeywell.md
-        - name: Honeywell support policy
-          href: provider-support-honeywell.md
+      - name: Honeywell provider & targets
+        href: provider-honeywell.md
+      - name: Honeywell support policy
+        href: provider-support-honeywell.md
 - name: Resources 
   items:
   - name: Glossary (merged)
