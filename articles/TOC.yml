@@ -71,6 +71,8 @@
           href: optimization-quantum-monte-carlo.md
         - name: Substochastic Monte Carlo
           href: optimization-substochastic-monte-carlo.md
+    - name: Samples for using Azure Quantum optimization solvers 
+      href: https://github.com/microsoft/qio-samples
     - name: Troubleshoot optimization solvers
       href: optimization-troubleshooting.md
 - name: Quantum Computing
@@ -79,7 +81,7 @@
     items:
     - name: Introduction to quantum computing
       href: overview-qdk.md    
-    - name: Providers
+    - name: Quantum computing pProviders
       href: qc-target-list.md
     - name: Key concepts for quantum computing
       items:
@@ -109,10 +111,6 @@
         href: how-to-submit-jobs-with-python.md
     - name: QDK (offline)
       items:
-      - name: Set up the QDK
-        href: install-overview-qdk.md
-      - name: Get started with the QDK
-        href: install-get-started-qdk.md
       - name: Q# applications
         href: install-command-line-qdk.md
       - name: Q# with Jupyter Notebooks
@@ -179,7 +177,7 @@
         href: provider-honeywell.md
       - name: Honeywell support policy
         href: provider-support-honeywell.md
-- name: Resources 
+- name: Resources
   items:
   - name: Glossary (merged)
     href: azure-quantum-glossary.md
