@@ -44,6 +44,10 @@
       href: optimization-concepts-ising-model-for-optimization.md
     - name: Cost functions
       href: optimization-concepts-cost-functions.md
+  - name: Troubleshooting
+    items:
+    - name: Troubleshoot optimization solvers
+      href: optimization-troubleshooting.md
   - name: Resources
     items:
     - name: Provider reference
@@ -73,15 +77,13 @@
           href: optimization-substochastic-monte-carlo.md
     - name: Samples for using Azure Quantum optimization solvers 
       href: https://github.com/microsoft/qio-samples
-    - name: Troubleshoot optimization solvers
-      href: optimization-troubleshooting.md
 - name: Quantum Computing
   items:
   - name: Overview
     items:
     - name: Introduction to quantum computing
       href: overview-qdk.md    
-    - name: Quantum computing pProviders
+    - name: Quantum computing providers
       href: qc-target-list.md
     - name: Key concepts for quantum computing
       items:
@@ -131,10 +133,6 @@
         href: tutorial-qdk-grovers-search.md
       - name: Qubit-level programming
         href: tutorial-qdk-qubit-level-program.md
-      - name: Learn Q# with the Quantum Katas
-        href: tutorial-qdk-intro-to-katas.md
-      - name: Q# code samples
-        href: /samples/browse/?languages=qsharp
   - name: How-to guides
     items: 
     - name: Update the QDK
@@ -185,11 +183,15 @@
     href: azure-quantum-common-issues.md
   - name: Build your skills with MS Learn
     href: /learn/paths/quantum-computing-fundamentals/
+  - name: Learn Q# with the Quantum Katas
+    href: tutorial-qdk-intro-to-katas.md
+  - name: Q# code samples
+    href: /samples/browse/?languages=qsharp
   - name: Further reading
     href: further-reading-qdk.md
   - name: Azure CLI commands
     href: /cli/azure/ext/quantum/quantum
-  - name: Contributing to the QDK
+  - name: Contributing to the Quantum Development Kit
     items:
     - name: Reporting Bugs
       href: contributing-reporting-bugs.md
