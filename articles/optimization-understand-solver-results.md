@@ -21,6 +21,7 @@ Some of the useful properties in the result are:
    1. `all_betas`: An array of the starting temperatures for the parallel tempering solver
    2. `replicas`: The number of runs of the solver before evaluating the best configuration from all these runs
    3. `sweeps`: The number of Monte Carlo steps performed in each iteration of the solver.
+4. `solutions`: Contains all solutions that the solver has returned. Including the best solution found which is also shown in `configuration`. 
 
 The example below shows how to print the result if a solver job was submitted synchronously.
 ```py
@@ -39,6 +40,12 @@ In both cases, the result should look like the following:
 ```output
 > {'version': '1.0', 'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0, 'parameters': {'all_betas': [0.1,0.5,1,2,4], 'replicas': 70, 'sweeps': 600}, 'solutions':[{'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0}]}
 ```
-It should be noted that for now, the solution appears in both the root of the payload ('configurations' and 'cost') as well as in the 'solutions' field. It is recommended to consume solutions from the 'solutions' field (as the root 'configuration' and 'cost' fields will be deprecated in the future). 
+It should be noted that for now, the solution appears in both the root of the payload ('configurations' and 'cost') as well as in the 'solutions' field. **It is recommended to consume solutions from the 'solutions' field (as the root 'configuration' and 'cost' fields will be deprecated in the future).**
 
-The best solution found by the solver will always appear in index 0 of the 'solutions' list (if multiple solutions are specified).  
+The best solution found by the solver will always appear in index 0 of the 'solutions' list (if multiple solutions are specified).  You can specify the amount of solutions that you would like to receive when [configuring your solver](https://docs.microsoft.com/en-us/azure/quantum/optimization-usage-problem-apply-solver-to-optimization#returning-multiple-solutions). 
+
+Here is an example of a small problem where two solutions were returned. 
+```output
+> {'version': '1.0', 'configuration': {'0': 1, '1': -1, '2': 1, '3': 1}, 'cost': -32.0, 'parameters': {'all_betas': [0.1,0.5,1,2,4], 'replicas': 70, 'sweeps': 600}, 'solutions':[{'configuration': {'0': 1, '1': -1, '2': 1, '3': 1}, 'cost': -32.0}, {'configuration': {'0': -1, '1': 1, '2': -1, '3': -1}, 'cost': -32.0}]}
+```
+
