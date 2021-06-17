@@ -10,7 +10,7 @@ title: Install and use the Python SDK for Azure Quantum
 uid: microsoft.quantum.optimization.install-sdk
 ---
 
-# Install and use the Python Python SDK for Azure Quantum
+# Install and use the Python SDK for Azure Quantum
 
 This guide provides a basic overview of how to install and use the Python SDK for Azure Quantum.
 
