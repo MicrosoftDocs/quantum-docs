@@ -114,7 +114,7 @@ Python experiences.
    {'0': 0.5, '1': 0.5}
    ```
 
-## Autentication
+## Authentication
 
 The `qsharp.azure.connect` method takes an optional `credential` parameter
 that allows you to specify what type of credentials to use to authenticate with Azure.
