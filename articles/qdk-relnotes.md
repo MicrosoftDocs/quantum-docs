@@ -23,7 +23,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 *Release date: June 22nd, 2021*
 
-- You can now configure how many solutions they want returned from a solver run (see "Returning multiple solutions" [section](https://docs.microsoft.com/en-us/azure/quantum/optimization-usage-problem-apply-solver-to-optimization))
+- You can now configure how many solutions you want returned from a solver run (see "Returning multiple solutions" [section](https://docs.microsoft.com/en-us/azure/quantum/optimization-usage-problem-apply-solver-to-optimization))
 - A new NuGet package Microsoft.Quantum.AutoSubstitution, which when added to a Q# project, allows you to annotate operations with the SubstitutableOnTarget(AltOp, Sim) attribute. It will then call AltOp instead of the annotated operation, whenever it is executed using Sim.
 - Integration with Azure-Identity provides more mechanisms to authenticate with Azure.
 - The .NET Microsoft.Azure.Management.Quantum now returns the Restricted Access URL so you can to know more/apply for a restricted access SKU.
