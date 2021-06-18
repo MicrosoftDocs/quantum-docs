@@ -27,7 +27,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - A new NuGet package Microsoft.Quantum.AutoSubstitution, which when added to a Q# project, allows the user to annotate operations with the SubstitutableOnTarget(AltOp, Sim) attribute. It will then call AltOp instead of the annotated operation, whenever it is executed using Sim.
 - Integration with Azure-Identity provides more mechanisms to authenticate with Azure.
 - The .NET Microsoft.Azure.Management.Quantum now returns the Restricted Access URL so you can to know more/apply for a restricted access SKU
-- Integration with Azure-Identity, provides additional mechanisms to authenticate with Azure.Experimental support for noisy simulation in open systems and stabilizer representations [qsharp-runtime#714](https://github.com/microsoft/qsharp-runtime/issues/714). See [here](https://github.com/microsoft/qsharp-runtime/blob/cgranade/finish-opensim-decompositions/documentation/experimental-simulators.md) for documentation on experimental simulators.
+- Experimental support for noisy simulation in open systems and stabilizer representations [qsharp-runtime#714](https://github.com/microsoft/qsharp-runtime/issues/714). See [here](https://github.com/microsoft/qsharp-runtime/blob/cgranade/finish-opensim-decompositions/documentation/experimental-simulators.md) for documentation on experimental simulators.
 - Using quantum-viz.js as the engine to render the output from the jupyter notebook %trace magic
 
 ## QDK Version 0.17.2105.144881
