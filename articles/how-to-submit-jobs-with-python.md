@@ -129,7 +129,7 @@ The possible values for this parameter are:
 * **Interactive**: Opens a new browser window to interactively authenticate and obtain an access token.
 * **DeviceCode**: Authenticates using the device code flow.
 
-If the `credential` parameter is not provided, then all the different mechanisms listed above are tried by default.
+If the `credential` parameter is not provided, then by default all the different mechanisms listed above are tried in order until one succeeds.
 
 The following example shows how to use the `credential` parameter to explicitly open a new browser window to login to Azure:
 ```py
