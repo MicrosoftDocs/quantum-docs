@@ -71,6 +71,34 @@ Python experiences.
 1. After submitting a job, you can check its status with the command `%azure.status` or view
    its results with the command `%azure.output`. You can view a list of all your jobs with the command `%azure.jobs`.
 
+
+## Autentication
+
+The `%azure.connect` magic takes an optional `credential` parameter
+that allows you to specify what type of credentials to use to authenticate with Azure.
+The possible values for this parameter are:
+* **Environment**: Authenticates a service principal or user via credential information specified in environment variables.
+  For information about the specific environment variable needed see the [EnvironmentCredential online documentation](https://docs.microsoft.com/dotnet/api/azure.identity.environmentcredential?view=azure-dotnet)
+* **ManagedIdentity**: Authenticates the managed identity of an Azure resource.
+* **CLI**: Authenticates in a development environment using data from the Azure CLI.
+* **SharedToken**: Authenticates in a development environment using tokens in the local cache shared between Microsoft applications.
+* **VisualStudio**: Authenticates in a development environment using data from Visual Studio.
+* **VisualStudioCode**: Authenticates in a development environment using data from Visual Studio Code.
+* **Interactive**: Opens a new browser window to interactively authenticate and obtain an access token.
+* **DeviceCode**: Authenticates using the device code flow.
+
+If the `credential` parameter is not provided, then by default all the different mechanisms listed above are tried in order until one succeeds.
+
+The following example shows how to use the `credential` parameter to explicitly open a new browser window to login to Azure:
+```
+%azure.connect
+/subscriptions/SUBSCRIPTION_ID/resourceGroups/RESOURCE_GROUP/providers/Microsoft.Quantum/Workspaces/WORKSPACE
+location=LOCATION
+credential=interactive
+```
+
+## Getting inline help
+
 Some helpful tips while using Q# Jupyter Notebooks:
 
 - Use the command `%lsmagic` to see all of the available magic commands, including
