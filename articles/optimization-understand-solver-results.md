@@ -42,7 +42,7 @@ In both cases, the result should look like the following:
 ```
 It should be noted that for now, the solution appears in both the root of the payload ('configurations' and 'cost') as well as in the 'solutions' field. **It is recommended to consume solutions from the 'solutions' field (as the root 'configuration' and 'cost' fields will be deprecated in the future).**
 
-The best solution found by the solver will always appear in index 0 of the 'solutions' list (if multiple solutions are specified).  You can specify the amount of solutions that you would like to receive when [configuring your solver](https://docs.microsoft.com/en-us/azure/quantum/optimization-usage-problem-apply-solver-to-optimization#returning-multiple-solutions). 
+The best solution found by the solver will always appear in index 0 of the 'solutions' list (if multiple solutions are specified).  You can specify the amount of solutions that you would like to receive when [configuring your solver](xref:microsoft.quantum.optimization.apply-solver#returning-multiple-solutions). 
 
 Here is an example of a small problem where two solutions were returned. 
 ```output
