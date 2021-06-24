@@ -14,8 +14,8 @@ no-loc: ['Q#', '$$v']
 
 # Testing and debugging
 
-As with classical programming, it is essential to be able to check that quantum programs act as intended, and to be able to diagnose incorrect behavior.
-In this section, we cover the tools offered by Q# for testing and debugging quantum programs.
+As with classical programming, it is essential to be able to check that quantum programs act as intended, and to be able to diagnose incorrect behavior. Unlike with classical software development, though, observing the state of a quantum system and tracking the behavior of a quantum program might not be easy.
+In this section, we cover the tools offered by the Quantum Development Kit for testing and debugging quantum programs.
 
 ## Unit Tests
 
@@ -248,17 +248,39 @@ The <xref:Microsoft.Quantum.Diagnostics> provides several more functions of the 
 
 ## Dump Functions
 
-To help troubleshooting quantum programs, the <xref:Microsoft.Quantum.Diagnostics> offers two functions that can dump into a file the current status of the target machine: <xref:Microsoft.Quantum.Diagnostics.DumpMachine> and <xref:Microsoft.Quantum.Diagnostics.DumpRegister>. The generated output of each depends on the target machine.
+Just like a real quantum computation, Q# does not allow us to directly access qubit states. However, the <xref:Microsoft.Quantum.Diagnostics> offers two functions that can dump into a file the current status of the target machine and can provide valuable insight for debugging and learning when used in conjunction with the full state simulator: <xref:Microsoft.Quantum.Diagnostics.DumpMachine> and <xref:Microsoft.Quantum.Diagnostics.DumpRegister>. The generated output of each depends on the target machine.
 
 ### DumpMachine
 
-The full-state quantum simulator distributed as part of the Quantum Development Kit writes into the file the [wave function](https://en.wikipedia.org/wiki/Wave_function) of the entire quantum system, as a one-dimensional array of complex numbers, in which each element represents the amplitude of the probability of measuring the computational basis state $\ket{n}$, where $\ket{n} = \ket{b_{n-1}...b_1b_0}$ for bits $\{b_i\}$. For example, on a machine with only two qubits allocated and in the quantum state
+The full-state quantum simulator distributed as part of the Quantum Development Kit writes into the file the [wave function](https://en.wikipedia.org/wiki/Wave_function) of the entire quantum system, as a one-dimensional array of complex numbers, in which each element represents the amplitude of the probability of measuring the computational basis state $\ket{n}$, where $\ket{n} = \ket{b_{n-1}...b_1b_0}$ for bits $\{b_i\}$. For example, consider the following operation that allocates two qubits and prepares an uneven superposition state on them.
+
+ ```qsharp
+namespace MultiDumpMachineTest {
+    open Microsoft.Quantum.Intrinsic;
+    open Microsoft.Quantum.Diagnostics;
+ 
+    @EntryPoint()
+    operation MultiQubitDumpMachineDemo() : Unit {
+        use qubits = Qubit[2];
+        X(qubits[1]);
+        H(qubits[1]);
+        R1Frac(1, 2, qubits[1]);
+        
+        DumpMachine("dump.txt");
+
+        ResetAll(qubits);
+    }
+}
+```
+The resulting quantum state of `MultiQubitDumpMachineDemo` operation is
+
 $$
 \begin{align}
-    \ket{\psi} = \frac{1}{\sqrt{2}} \ket{00} - \frac{(1 + i)}{2} \ket{10},
+    \ket{\psi} = \frac{1}{\sqrt{2}} \ket{00} - \frac{(1 + i)}{2} \ket{10}.
 \end{align}
 $$
-calling <xref:Microsoft.Quantum.Diagnostics.DumpMachine> generates this output:
+
+Calling <xref:Microsoft.Quantum.Diagnostics.DumpMachine> on the previous quantum state generates the following output:
 
 ```output
 # wave function for qubits with ids (least to most significant): 0;1
@@ -366,27 +388,44 @@ The following examples show `DumpMachine` for some common states:
 
 ***
 
-Since <xref:Microsoft.Quantum.Diagnostics.DumpMachine> is part of the  <xref:Microsoft.Quantum.Diagnostics> namespace, you must add an `open` statement to access it:
+For the sake of simplicity, in the previous testing and debugging tools we have displayed examples of code using Q# standalone application in the command prompt and any IDE, though you can use any of the running options offered by Quantum Development Kit to develop quantum computing applications in Q#.
 
-```qsharp
-namespace DumpMachineTest {
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Diagnostics;
+In this case, for <xref:Microsoft.Quantum.Diagnostics.DumpMachine>, we explicitly show the development on Q# Jupyter Notebook as it offers more visualization tools for testing and debugging quantum programs.
+
+1. To run `DumpMachine` on Jupyter Notebook, open a [new Jupyter Notebook with a Q# kernel](xref:microsoft.quantum.install-qdk.overview.jupyter) and copy the following code to the first notebook cell.
+
+ ```qsharp
+open Microsoft.Quantum.Diagnostics;
  
-    @EntryPoint()
-    operation Operation () : Unit {
+operation MultiQubitDumpMachineDemo() : Unit {
         use qubits = Qubit[2];
         X(qubits[1]);
         H(qubits[1]);
         R1Frac(1, 2, qubits[1]);
         
-        DumpMachine("dump.txt");
+        DumpMachine();
 
         ResetAll(qubits);
     }
-}
 
 ```
+1. In a new cell, run `MultiQubitDumpMachineDemo` operation on a full state quantum simulator by using the `%simulate` magic command. `DumpMachine` call will print the information about the quantum state of the program after the Controlled Ry gate as a set of lines, one per basis state, showing their complex amplitudes, phases, and measurement probabilities:
+
+![DumpMachine output](~/media/dumpmachine-output.png)
+
+> [!NOTE]
+> You can use <xref:microsoft.quantum.iqsharp.magic-ref.config> (available only in Q# Jupyter Notebooks) to tweak the format of `DumpMachine` output. It offers a lot of settings convenient in different scenarios. For example, by default `DumpMachine` uses little-endian integers to denote the basis states (the first column of the output); if you find raw bit strings easier to read, you can use `%config dump.basisStateLabelingConvention="Bitstring"` to switch.
+
+1. Jupyter Notebook offers the possibility to visualize the execution of the quantum program as a quantum circuit by using <xref:microsoft.quantum.iqsharp.magic-ref.trace> (available only in Q# Jupyter Notebooks). This command traces one run of the Q# program and build a circuit based on that execution. This is the circuit resulting from the running of `%trace MultiQubitDumpMachineDemo`, 
+
+![DumpMachine trace output](~/media/dumpmachine-trace-output.png)
+
+The visualization is interactive, allowing you to click on each block to drill down to the intrinsic gates.
+
+1. Finally, <xref:microsoft.quantum.iqsharp.magic-ref.debug> (available only in Q# Jupyter Notebooks) allows you to combine tracing the program execution (as a circuit) and observing the program state as it evolves at the same time. The visualization is also interactive, you can click through each of the steps until the program run is complete, and switch to observe real and imaginary components of the amplitudes instead of measurement probabilities in the beginning of the program.
+
+![DumpMachine debug output](~/media/dumpmachine-debug-output.png)
+
 
 ### DumpRegister
 
@@ -428,7 +467,7 @@ namespace DumpRegisterTest {
     open Microsoft.Quantum.Diagnostics;
  
     @EntryPoint()
-    operation Operation () : Unit {
+    operation DumpRegisterTestOp () : Unit {
         use qubits = Qubit[2];
         X(qubits[1]);
         H(qubits[1]);
