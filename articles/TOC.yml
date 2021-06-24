@@ -4,10 +4,6 @@
   items:
   - name: Introduction to Azure Quantum 
     href: overview-azure-quantum.md
-  - name: Targets
-    href: concepts-targets-in-azure-quantum.md
-  - name: Quantum computing and optimization
-    href: generic-stub.md
 - name: Get started
   items:
   - name: Set up Azure Quantum 
@@ -24,12 +20,8 @@
       href: optimization-overview-key-concepts.md 
   - name: Quickstarts
     items:
-    - name: Express and solve a simple problem
-      href: optimization-install-sdk.md
-    - name: Microsoft QIO quickstart
+    - name: Optimization quickstart
       href: quickstart-microsoft-qio.md
-    - name: 1QBit quickstart
-      href: quickstart-1qbit.md 
   - name: How-to guides
     items:
     - name: Authenticate using a service principal
@@ -51,8 +43,9 @@
   - name: Resources
     items:
     - name: Provider reference
-      href: qio-target-list.md
       items:
+      - name: Optimization provider overview
+        href: qio-target-list.md
       - name: 1QBit
         items:
         - name: 1QBit provider & targets
@@ -83,8 +76,6 @@
     items:
     - name: Introduction to quantum computing
       href: overview-qdk.md    
-    - name: Quantum computing providers
-      href: qc-target-list.md
     - name: Key concepts for quantum computing
       items:
       - name: Understanding quantum computing
@@ -97,21 +88,15 @@
         href: overview-algebra-for-quantum-computing.md
   - name: Quickstarts
     items:
-    - name: Azure Quantum
+    - name: Using the Azure Quantum portal
       items:
+      - name: Quantum computing quickstart
+        href: quickstart-microsoft-qc.md
       - name: IonQ quickstart
         href: quickstart-ionq.md
       - name: Honeywell quickstart
         href: quickstart-honeywell.md
-      - name: Create and run Q# applications in Azure Quantum
-        href: how-to-create-applications-for-azure-quantum.md  
-      - name: Submit jobs with the Azure CLI
-        href: how-to-submit-jobs-with-azure-cli.md
-      - name: Submit jobs with Q# Jupyter Notebooks
-        href: how-to-submit-jobs-with-jupyter-notebooks.md
-      - name: Submit jobs with Python
-        href: how-to-submit-jobs-with-python.md
-    - name: QDK (offline)
+    - name: Using the QDK offline
       items:
       - name: Q# applications
         href: install-command-line-qdk.md
@@ -137,6 +122,12 @@
     items: 
     - name: Update the QDK
       href: install-update-qdk.md
+    - name: Submit jobs with the Azure CLI
+      href: how-to-submit-jobs-with-azure-cli.md
+    - name: Submit jobs with Q# Jupyter Notebooks
+      href: how-to-submit-jobs-with-jupyter-notebooks.md
+    - name: Submit jobs with Python
+      href: how-to-submit-jobs-with-python.md
   - name: Q# user guide
     href: user-guide/toc.yml
   - name: Concepts
@@ -161,8 +152,12 @@
         href: concepts-oracles.md
       - name: Theory of Grover's algorithm
         href: concepts-grovers.md
-  - name: Provider references
+  - name: Provider reference
     items:
+    - name: Quantum computing provider overview
+      href: qc-target-list.md
+    - name: Quantum computing target profiles
+      href: how-to-create-applications-for-azure-quantum.md 
     - name: IonQ
       items:
       - name: IonQ provider & targets
