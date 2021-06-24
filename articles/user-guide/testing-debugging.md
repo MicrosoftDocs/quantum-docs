@@ -248,7 +248,41 @@ The <xref:Microsoft.Quantum.Diagnostics> provides several more functions of the 
 
 ## Dump Functions
 
-Just like a real quantum computation, Q# does not allow us to directly access qubit states. However, the <xref:Microsoft.Quantum.Diagnostics> offers two functions that can dump into a file the current status of the target machine and can provide valuable insight for debugging and learning when used in conjunction with the full state simulator: <xref:Microsoft.Quantum.Diagnostics.DumpMachine> and <xref:Microsoft.Quantum.Diagnostics.DumpRegister>. The generated output of each depends on the target machine.
+Just like a real quantum computation, Q# does not allow us to directly access qubit states. However, the <xref:Microsoft.Quantum.Diagnostics> offers three functions that can dump into a file the current status of the target machine and can provide valuable insight for debugging and learning when used in conjunction with the full state simulator: <xref:Microsoft.Quantum.Diagnostics.DumpOperation>, <xref:Microsoft.Quantum.Diagnostics.DumpMachine> and <xref:Microsoft.Quantum.Diagnostics.DumpRegister>. The generated output of each depends on the target machine.
+
+### DumpOperation
+
+Suppose you are implementing a quantum gate described by a matrix. You’ve written a Q# operation and want to check that it implements exactly the unitary matrix you’re looking for. The <xref:Microsoft.Quantum.Diagnostics.DumpOperation> takes an operation that acts on an array of qubits as a parameter (if your operation acts on a single qubit, like most intrinsic gates, or on a mix of individual qubits and qubit arrays, you’ll need to write a wrapper for it to use `DumpOperation` on it), and prints a matrix implemented by this operation. Let's take the CNOT gate as an exmaple.
+
+```qsharp
+namespace DumpOperationTest {
+
+    open Microsoft.Quantum.Canon;
+    open Microsoft.Quantum.Intrinsic;
+    open Microsoft.Quantum.Diagnostics;
+    
+    @EntryPoint()
+    operation DumpCnot() : Unit {
+    DumpOperation(2, ApplyToFirstTwoQubitsCA(CNOT, _));
+    }
+}
+```
+Calling `DumpOperation` will print the following matrix,
+
+```output
+Real:
+[[1, 0, 0, 0],
+[0, 0, 0, 1],
+[0, 0, 1, 0],
+[0, 1, 0, 0]]
+Imag:
+[[0, 0, 0, 0],
+[0, 0, 0, 0],
+[0, 0, 0, 0],
+[0, 0, 0, 0]]
+```
+> [!NOTE]
+> `DumpOperation` and the rest of Dump functions use the little-endian encoding for converting basis states to the indices of matrix elements. Thus, the second column of the CNOT matrix corresponds to the input state |1⟩\_{LE} = |10⟩, which the CNOT gate converts to |11⟩ = |3\_{LE}. Similarly, the imput state |2⟩\_{LE} = |01⟩.
 
 ### DumpMachine
 
@@ -289,7 +323,6 @@ Calling <xref:Microsoft.Quantum.Diagnostics.DumpMachine> on the previous quantum
 ∣2❭:	-0.500000 + -0.500000 i	 == 	**********           [ 0.500000 ]   /     [ -2.35619 rad ]
 ∣3❭:	 0.000000 +  0.000000 i	 == 	                     [ 0.000000 ]                   
 ```
-
 The first row provides a comment with the ids of the corresponding qubits in their significant order.
 The rest of the rows describe the probability amplitude of measuring the basis state vector $\ket{n}$ in both Cartesian and polar formats. In detail for the first row:
 
@@ -388,6 +421,8 @@ The following examples show `DumpMachine` for some common states:
 
 ***
 
+#### DumpMachine with Jupyter Notebook
+
 For the sake of simplicity, in the previous testing and debugging tools we have displayed examples of code using Q# standalone application in the command prompt and any IDE, though you can use any of the running options offered by Quantum Development Kit to develop quantum computing applications in Q#.
 
 In this case, for <xref:Microsoft.Quantum.Diagnostics.DumpMachine>, we explicitly show the development on Q# Jupyter Notebook as it offers more visualization tools for testing and debugging quantum programs.
@@ -415,6 +450,7 @@ operation MultiQubitDumpMachineDemo() : Unit {
 
 > [!NOTE]
 > You can use <xref:microsoft.quantum.iqsharp.magic-ref.config> (available only in Q# Jupyter Notebooks) to tweak the format of `DumpMachine` output. It offers a lot of settings convenient in different scenarios. For example, by default `DumpMachine` uses little-endian integers to denote the basis states (the first column of the output); if you find raw bit strings easier to read, you can use `%config dump.basisStateLabelingConvention="Bitstring"` to switch.
+
 
 1. Jupyter Notebook offers the possibility to visualize the execution of the quantum program as a quantum circuit by using <xref:microsoft.quantum.iqsharp.magic-ref.trace> (available only in Q# Jupyter Notebooks). This command traces one run of the Q# program and build a circuit based on that execution. This is the circuit resulting from the running of `%trace MultiQubitDumpMachineDemo`, 
 
