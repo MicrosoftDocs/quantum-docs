@@ -50,6 +50,11 @@ Your new project will have two files in it, a code file and a project file. `Tes
 Initially, the code file contains one sample unit test `AllocateQubit` which checks that a newly allocated qubit is in the $\ket{0}$ state and prints a message:
 
 ```qsharp
+namespace TestProject {
+    open Microsoft.Quantum.Canon;
+    open Microsoft.Quantum.Diagnostics;
+    open Microsoft.Quantum.Intrinsic;
+    
     @Test("QuantumSimulator")
     operation AllocateQubit () : Unit {
 
@@ -58,16 +63,25 @@ Initially, the code file contains one sample unit test `AllocateQubit` which che
 
         Message("Test passed");
     }
+}
+   
 ```
 
 Any Q# operation or function that takes an argument of type `Unit` and returns `Unit` can be marked as a unit test via the `@Test("...")` attribute.
 In the previous example, the argument to that attribute, `"QuantumSimulator"`, specifies the target on which the test runs. A single test can run on multiple targets. For example, add an attribute `@Test("ResourcesEstimator")` before `AllocateQubit`.
 
 ```qsharp
+namespace TestProject {
+    open Microsoft.Quantum.Canon;
+    open Microsoft.Quantum.Diagnostics;
+    open Microsoft.Quantum.Intrinsic;
+    
     @Test("QuantumSimulator")
     @Test("ResourcesEstimator")
     operation AllocateQubit () : Unit {
         ...
+    }
+}
 ```
 
 After saving the file you will see two unit tests when running the tests: one where `AllocateQubit` runs on the `QuantumSimulator`, and one where it runs in the `ResourcesEstimator`.
@@ -125,22 +139,22 @@ dotnet test
 You should get output similar to the following:
 
 ```output
-Build started, please wait...
-Build completed.
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+ 
+  ____________________________________________
 
-Test run for C:\Users\chgranad.REDMOND\tmp\Tests\bin\Debug\netcoreapp2.0\Tests.dll(.NETCoreApp,Version=v2.0)
-Microsoft (R) Test Execution Command Line Tool Version 15.3.0-preview-20170628-02
+  Q#: Success! (0 errors, 0 warnings) 
+  
+  TestProject -> C:\Users\user\TestProject\bin\Debug\netcoreapp3.1\test2.dll
+Test run for C:\Users\user\TestProject\bin\Debug\netcoreapp3.1\test2.dll (.NETCoreApp,Version=v3.1)
+Microsoft (R) Test Execution Command Line Tool Version 16.10.0
 Copyright (c) Microsoft Corporation.  All rights reserved.
 
 Starting test execution, please wait...
-[xUnit.net 00:00:00.5864002]   Discovering: Tests
-[xUnit.net 00:00:00.7073844]   Discovered:  Tests
-[xUnit.net 00:00:00.7453826]   Starting:    Tests
-[xUnit.net 00:00:00.9590439]   Finished:    Tests
+A total of 1 test files matched the specified pattern.
 
-Total tests: 1. Passed: 1. Failed: 0. Skipped: 0.
-Test Run Successful.
-Test execution time: 1.9607 Seconds
+Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: < 1 ms - test2.dll (netcoreapp3.1)
 ```
 
 Unit tests can be filtered according to their name or the run target:
@@ -176,11 +190,15 @@ This behavior makes functions returning `()` (such as `Unit`) a useful tool for 
 Let's consider a simple example:
 
 ```qsharp
-function PositivityFact(value : Double) : Unit 
-{
-    if value <= 0
-    {
-        fail "Expected a positive number.";
+namespace DebuggingFactsTest {
+
+    @EntryPoint()
+    function PositivityFact(value : Int) : Unit {
+
+        if value <= 0 {
+
+             fail "Expected a positive number.";
+        }   
     }
 }
 ```
@@ -189,49 +207,48 @@ Here, the keyword `fail` indicates that the computation should not proceed, and 
 By definition, a failure of this kind cannot be observed from within Q#, as the target machine no longer runs the Q# code after reaching a `fail` statement.
 Thus, if we proceed past a call to `PositivityFact`, we can be assured that its input was positive.
 
-Note that we can implement the same behavior as `PositivityFact` using the [`Fact`](xref:Microsoft.Quantum.Diagnostics.Fact) function from the <xref:Microsoft.Quantum.Diagnostics> namespace:
+Note that we can implement the same behavior as `PositivityFact` using the [*Fact*](xref:Microsoft.Quantum.Diagnostics.Fact) function from the <xref:Microsoft.Quantum.Diagnostics>:
 
 ```qsharp
     Fact(value > 0, "Expected a positive number.");
 ```
 
-*Assertions*, on the other hand, are used similarly to facts but may depend on the state of the target machine. 
-Correspondingly, they are defined as operations, whereas facts are defined as functions (as in the previous example).
-To understand the distinction, consider the following use of a fact within an assertion:
-
-```qsharp
-operation AssertQubitsAreAvailable() : Unit
-{
-    Fact(GetQubitsAvailableToUse() > 0, "No qubits were actually available");
-}
-```
-
-Here, we are using the operation <xref:Microsoft.Quantum.Environment.GetQubitsAvailableToUse> to return the number of qubits available to use.
-As this depends on the global state of the program and its run environment, our definition of `AssertQubitsAreAvailable` must be an operation as well.
-However, we can use that global state to yield a simple `Bool` value as input to the `Fact` function.
+*Assertions*, on the other hand, are used similarly to facts but may depend on the state of the target machine. Correspondingly, they are defined as operations, whereas facts are defined as functions (as in the previous example). 
 
 [The prelude](xref:microsoft.quantum.libraries.overview.standard.prelude), building on these ideas, offers two especially useful assertions, <xref:Microsoft.Quantum.Diagnostics.AssertMeasurement> and <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> both modeled as operations onto `()`. These assertions each take a Pauli operator describing a particular measurement of interest, a quantum register on which a measurement is performed, and a hypothetical outcome.
 Target machines which work by simulation are not bound by [the no-cloning theorem](https://en.wikipedia.org/wiki/No-cloning_theorem), and can perform such measurements without disturbing the register that passes to such assertions.
 A simulator can then, similar to the `PositivityFact` function previous, stop computation if the hypothetical outcome is not observed in practice:
 
 ```qsharp
-use register = Qubit();
+namespace AssertionsTest {
 
-H(register);
-AssertMeasurement([PauliX], [register], Zero);
-// Even though we do not have access to states in Q#,
-// we know by the anthropic principle that the state
-// of register at this point is |+〉.
+    open Microsoft.Quantum.Canon;
+    open Microsoft.Quantum.Intrinsic;
+    open Microsoft.Quantum.Diagnostics;
+    
+    @EntryPoint()
+    operation Assert() : Unit {
+        use register = Qubit();
+        H(register);
+        AssertMeasurement([PauliX], [register], Zero, "The state of the quantum register is not |+〉");
+
+        ResetAll([register]);
+        
+        // Even though we do not have access to states in Q#,
+        // we know by the anthropic principle that the state
+        // of register at this point is |+〉.
+    }
+}
 
 ```
 
 On physical quantum hardware, where the no-cloning theorem prevents examination of a quantum state, the `AssertMeasurement` and `AssertMeasurementProbability` operations simply return `()` with no other effect.
 
-The <xref:Microsoft.Quantum.Diagnostics> namespace provides several more functions of the `Assert` family, with which you can check more advanced conditions.
+The <xref:Microsoft.Quantum.Diagnostics> provides several more functions of the `Assert` family, with which you can check more advanced conditions.
 
 ## Dump Functions
 
-To help troubleshooting quantum programs, the <xref:Microsoft.Quantum.Diagnostics> namespace offers two functions that can dump into a file the current status of the target machine: <xref:Microsoft.Quantum.Diagnostics.DumpMachine> and <xref:Microsoft.Quantum.Diagnostics.DumpRegister>. The generated output of each depends on the target machine.
+To help troubleshooting quantum programs, the <xref:Microsoft.Quantum.Diagnostics> offers two functions that can dump into a file the current status of the target machine: <xref:Microsoft.Quantum.Diagnostics.DumpMachine> and <xref:Microsoft.Quantum.Diagnostics.DumpRegister>. The generated output of each depends on the target machine.
 
 ### DumpMachine
 
@@ -352,16 +369,23 @@ The following examples show `DumpMachine` for some common states:
 Since <xref:Microsoft.Quantum.Diagnostics.DumpMachine> is part of the  <xref:Microsoft.Quantum.Diagnostics> namespace, you must add an `open` statement to access it:
 
 ```qsharp
-namespace Samples {
+namespace DumpMachineTest {
     open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Diagnostics;
-
+ 
+    @EntryPoint()
     operation Operation () : Unit {
         use qubits = Qubit[2];
+        X(qubits[1]);
         H(qubits[1]);
+        R1Frac(1, 2, qubits[1]);
+        
         DumpMachine("dump.txt");
+
+        ResetAll(qubits);
     }
 }
+
 ```
 
 ### DumpRegister
@@ -399,26 +423,24 @@ Qubits provided (0;) are entangled with some other qubit.
 The following example shows you how you can use both <xref:Microsoft.Quantum.Diagnostics.DumpRegister> and <xref:Microsoft.Quantum.Diagnostics.DumpMachine> in your Q# code:
 
 ```qsharp
-namespace app
-{
+namespace DumpRegisterTest {
     open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Diagnostics;
-
+ 
+    @EntryPoint()
     operation Operation () : Unit {
-
         use qubits = Qubit[2];
         X(qubits[1]);
         H(qubits[1]);
         R1Frac(1, 2, qubits[1]);
-
+        
         DumpMachine("dump.txt");
         DumpRegister("q0.txt", qubits[0..0]);
         DumpRegister("q1.txt", qubits[1..1]);
-
         ResetAll(qubits);
-
     }
 }
+
 ```
 
 ## Debugging
