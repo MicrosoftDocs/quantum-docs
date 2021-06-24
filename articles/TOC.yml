@@ -26,6 +26,12 @@
     items:
     - name: Authenticate using a service principal
       href: optimization-authenticate-service-principal.md
+    - name: Work with jobs
+      href: how-to-work-with-jobs.md
+    - name: Submit jobs
+      href: how-to-submit-jobs.md
+    - name: Work with Azure Quantum using the Azure CLI 
+      href: microsoft.quantum.workspaces-cli.md
   - name: Concepts
     items:
     - name: Which solver should I use?
@@ -46,12 +52,6 @@
       items:
       - name: Optimization provider overview
         href: qio-target-list.md
-      - name: 1QBit
-        items:
-        - name: 1QBit provider & targets
-          href: provider-1qbit.md
-        - name: 1QBit support policy
-          href: provider-support-1qbit.md
       - name: Microsoft QIO
         items:
         - name: Overview
@@ -68,6 +68,12 @@
           href: optimization-quantum-monte-carlo.md
         - name: Substochastic Monte Carlo
           href: optimization-substochastic-monte-carlo.md
+      - name: 1QBit
+        items:
+        - name: 1QBit provider & targets
+          href: provider-1qbit.md
+        - name: 1QBit support policy
+          href: provider-support-1qbit.md
     - name: Samples for using Azure Quantum optimization solvers 
       href: https://github.com/microsoft/qio-samples
 - name: Quantum Computing
@@ -118,12 +124,10 @@
     items: 
     - name: Update the QDK
       href: install-update-qdk.md
-    - name: Submit jobs with the Azure CLI
-      href: how-to-submit-jobs-with-azure-cli.md
-    - name: Submit jobs with Q# Jupyter Notebooks
-      href: how-to-submit-jobs-with-jupyter-notebooks.md
-    - name: Submit jobs with Python
-      href: how-to-submit-jobs-with-python.md
+    - name: Work with jobs
+      href: how-to-work-with-jobs.md
+    - name: Submit jobs
+      href: how-to-submit-jobs.md
   - name: Q# user guide
     href: user-guide/toc.yml
   - name: Concepts
@@ -152,8 +156,8 @@
     items:
     - name: Quantum computing provider overview
       href: qc-target-list.md
-    - name: Target profiles
-      href: how-to-create-applications-for-azure-quantum.md 
+    - name: Quantum computing profile targets
+      href: quantum-computing-target-profiles.md 
     - name: IonQ
       items:
       - name: IonQ provider & targets
