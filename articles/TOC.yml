@@ -18,7 +18,7 @@
       href: optimization-what-is-quantum-optimization.md
     - name: Key concepts
       href: optimization-overview-key-concepts.md 
-  - name: Quickstarts
+  - name: Quickstart
     items:
     - name: Optimization quickstart
       href: quickstart-microsoft-qio.md
@@ -92,10 +92,6 @@
       items:
       - name: Quantum computing quickstart
         href: quickstart-microsoft-qc.md
-      - name: IonQ quickstart
-        href: quickstart-ionq.md
-      - name: Honeywell quickstart
-        href: quickstart-honeywell.md
     - name: Using the QDK offline
       items:
       - name: Q# applications
@@ -156,7 +152,7 @@
     items:
     - name: Quantum computing provider overview
       href: qc-target-list.md
-    - name: Quantum computing target profiles
+    - name: Target profiles
       href: how-to-create-applications-for-azure-quantum.md 
     - name: IonQ
       items:
