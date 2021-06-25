@@ -31,7 +31,7 @@
     - name: Submit jobs
       href: how-to-submit-jobs.md
     - name: Work with Azure Quantum using the Azure CLI 
-      href: microsoft.quantum.workspaces-cli.md
+      href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
   - name: Concepts
     items:
     - name: Which solver should I use?
