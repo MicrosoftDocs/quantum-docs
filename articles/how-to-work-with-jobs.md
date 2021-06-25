@@ -10,7 +10,7 @@ title: Working with jobs in Azure Quantum
 uid: microsoft.quantum.work-with-jobs
 ---
 
-# Jobs
+# Work with Azure Quantum jobs
 
 When you run a quantum program or solve an optimization problem in Azure Quantum,
 you create and run a **job**. The steps to create and run a job depend on
@@ -18,7 +18,7 @@ the job type and the provider and target that you configure for the workspace.
 
 ## Job properties
 
-All jobs, however, have the following properties in common:
+All jobs have the following properties in common:
 
 |Property |Description|
 |-----|----|
@@ -61,7 +61,7 @@ This diagram shows the possible job state transitions:
 
 ![Azure Quantum job submission diagram](./media/aq-diagram.png)
 
-After a job completes successfully, it displays a link to the output data in your Azure Storage account. How you access this data depends on the SDK or tool you used to submit the job.
+After a job completes successfully, it displays a link to the output data in your Azure Storage account. How you access this data depends on the SDK or tool you used to [submit the job](xref:microsoft.quantum.submit-jobs).
 
 ## Job cancellation
 

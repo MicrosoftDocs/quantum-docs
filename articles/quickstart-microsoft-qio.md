@@ -12,7 +12,7 @@ uid: microsoft.quantum.quickstarts.optimization.qio
 
 # Optimization quickstart for Azure Quantum
 
-Learn how to use Microsoft QIO in Azure Quantum to solve a simple binary optimization problem.
+Learn how to use optimization solvers in Azure Quantum to solve a simple binary optimization problem.
 
 ## Prerequisites
 
@@ -142,7 +142,7 @@ problem.add_terms(terms=terms)
 > [!NOTE]
 > There are [multiple ways](xref:microsoft.quantum.optimization.express-problem#Ways-to-supply-problem-terms) to supply terms to the problem, and not all terms must be added at once.
 
-Next, we're ready to apply a **solver**. You can choose to use a solver form the Microsoft QIO provider or one from the 1Qbit provider.
+Next, we're ready to apply an optimization **solver**. You can choose to use a solver from the Microsoft QIO provider or one from the 1Qbit provider.
 
 ### Use a Microsoft QIO solver
 
