@@ -114,6 +114,37 @@ Python experiences.
    {'0': 0.5, '1': 0.5}
    ```
 
+## Authentication
+
+The `qsharp.azure.connect` method takes an optional `credential` parameter
+that allows you to specify what type of credentials to use to authenticate with Azure.
+The possible values for this parameter are:
+
+- **Environment**: Authenticates a service principal or user via credential information specified in environment variables.
+  For information about the specific environment variable needed see the [EnvironmentCredential online documentation](/dotnet/api/azure.identity.environmentcredential).
+- **ManagedIdentity**: Authenticates the managed identity of an Azure resource.
+- **CLI**: Authenticates in a development environment using data from the Azure CLI.
+- **SharedToken**: Authenticates in a development environment using tokens in the local cache shared between Microsoft applications.
+- **VisualStudio**: Authenticates in a development environment using data from Visual Studio.
+- **VisualStudioCode**: Authenticates in a development environment using data from Visual Studio Code.
+- **Interactive**: Opens a new browser window to interactively authenticate and obtain an access token.
+- **DeviceCode**: Authenticates using the device code flow.
+
+If the `credential` parameter is not provided, then by default all the different mechanisms listed above are tried in order until one succeeds.
+
+The following example shows how to use the `credential` parameter to explicitly open a new browser window to login to Azure:
+
+```py
+import qsharp
+import qsharp.azure
+from Test import GenerateRandomBits
+
+qsharp.azure.connect(
+   resourceId="/subscriptions/.../Microsoft.Quantum/Workspaces/WORKSPACE_NAME",
+   location="West US",
+   credential="interactive")
+```
+
 ## Next steps
 
 Now that you know how to submit jobs to Azure Quantum, you can try to run the different [samples](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum) we have
