@@ -19,16 +19,16 @@ For installation instructions, please refer to the [install guide](xref:microsof
 
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
-## QDK Version 0.xx.xxxx.xxxxxx
+## QDK Version 0.18.2106.148911
 
-*Release date: June 22nd, 2021*
+*Release date: June 25th, 2021*
 
 - You can now configure how many solutions you want returned from a solver run (see "Returning multiple solutions" [section](https://docs.microsoft.com/en-us/azure/quantum/optimization-usage-problem-apply-solver-to-optimization))
-- A new NuGet package Microsoft.Quantum.AutoSubstitution, which when added to a Q# project, allows you to annotate operations with the SubstitutableOnTarget(AltOp, Sim) attribute. It will then call AltOp instead of the annotated operation, whenever it is executed using Sim.
+- A new NuGet package `Microsoft.Quantum.AutoSubstitution`, which when added to a Q# project, allows you to annotate operations with the `SubstitutableOnTarget(AltOp, Sim)` attribute. It will then call `AltOp` instead of the annotated operation, whenever it is executed using `Sim`.
 - Integration with Azure-Identity provides more mechanisms to authenticate with Azure.
-- The .NET Microsoft.Azure.Management.Quantum now returns the Restricted Access URL so you can to know more/apply for a restricted access SKU.
+- The .NET `Microsoft.Azure.Management.Quantum` now returns the Restricted Access URL so you can to know more/apply for a restricted access SKU.
 - Experimental support for noisy simulation in open systems and stabilizer representations [qsharp-runtime#714](https://github.com/microsoft/qsharp-runtime/issues/714). See [here](https://github.com/microsoft/qsharp-runtime/blob/cgranade/finish-opensim-decompositions/documentation/experimental-simulators.md) for documentation on experimental simulators.
-- Using quantum-viz.js as the engine to render the output from the jupyter notebook %trace magic.
+- Using [quantum-viz.js](https://github.com/microsoft/quantum-viz.js) as the engine to render the output from the jupyter notebook %trace magic.
 
 ## QDK Version 0.17.2105.144881
 
