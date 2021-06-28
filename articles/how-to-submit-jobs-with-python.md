@@ -121,7 +121,7 @@ that allows you to specify what type of credentials to use to authenticate with 
 The possible values for this parameter are:
 
 - **Environment**: Authenticates a service principal or user via credential information specified in environment variables.
-  For information about the specific environment variable needed see the [EnvironmentCredential online documentation](https://docs.microsoft.com/dotnet/api/azure.identity.environmentcredential?view=azure-dotnet).
+  For information about the specific environment variable needed see the [EnvironmentCredential online documentation](/dotnet/api/azure.identity.environmentcredential).
 - **ManagedIdentity**: Authenticates the managed identity of an Azure resource.
 - **CLI**: Authenticates in a development environment using data from the Azure CLI.
 - **SharedToken**: Authenticates in a development environment using tokens in the local cache shared between Microsoft applications.
