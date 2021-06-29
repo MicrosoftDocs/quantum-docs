@@ -38,7 +38,7 @@ operation ApplyMultiControlledX( numberOfQubits : Int ) : Unit {
 }
 ```
 
-The multiply controlled <xref:Microsoft.Quantum.Intrinsic.X> operation acts on a total of five qubits, allocates two [ancillary qubits](xref:microsoft.quantum.glossary-qdk#ancilla), and has an input width of **5**. Use the following C# program to verify the counts:
+The multiply controlled <xref:Microsoft.Quantum.Intrinsic.X> operation acts on a total of five qubits, allocates two [auxiliary qubits](xref:microsoft.quantum.glossary-qdk#auxiliary-qubit), and has an input width of **5**. Use the following C# program to verify the counts:
 
 ```csharp 
 var config = new QCTraceSimulatorConfiguration();
@@ -58,7 +58,7 @@ double inputWidth =
         functor: OperationFunctor.Controlled);
 ```
 
-The first part of the program runs the `ApplyMultiControlledX` operation. The second part uses the [`QCTraceSimulator.GetMetric`](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) method to retrieve the number of allocated qubits as well as the number of qubits that the `Controlled X` operation received as input. 
+The first part of the program runs the `ApplyMultiControlledX` operation. The second part uses the [`QCTraceSimulator.GetMetric`](/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) method to retrieve the number of allocated qubits as well as the number of qubits that the `Controlled X` operation received as input. 
 
 Finally, you can output all the statistics collected by the width counter in CSV format using the following:
 ```csharp

@@ -42,7 +42,7 @@ This section contains selected references to deep coverage of quantum computing 
 
 ### Online Courses
 
-+ [MS Learn Quantum Computing modules](https://docs.microsoft.com/learn/paths/quantum-computing-fundamentals/). A ste-by-step tutorial of quantum computing concepts and practices. 
++ [MS Learn Quantum Computing modules](/learn/paths/quantum-computing-fundamentals/). A ste-by-step tutorial of quantum computing concepts and practices. 
 + [Quantum Computing - Brilliant Course](https://brilliant.org/courses/quantum-computing/). Learn to build quantum algorithms from the ground up with a quantum computer simulated in your browser.
 + [Introduction to Quantum Computing - LinkedIn Learning](https://www.linkedin.com/learning/introduction-to-quantum-computing). 1h25m video introduction. 
 + [Quantum Computing through Comics](https://hackaday.io/project/168554-introduction-to-quantum-computing). Sunday weekly hands-on community class. 

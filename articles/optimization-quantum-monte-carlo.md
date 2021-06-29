@@ -19,7 +19,7 @@ In Azure Quantum the core of algorithmic approach to our QMC implementation is b
 
 ## Features of Quantum Monte Carlo on Azure Quantum
 
-- Parametrized mode (with parameters)
+- Parameterized mode (with parameters)
 - Ising and PUBO input formats
 - CPU only
   
@@ -44,11 +44,12 @@ Quantum Monte Carlo supports the following parameters:
 |`restarts`| The number of repeats of the annealing schedule to run. Each restart will start with a random configuration unless an initial configuration is supplied in the problem file. The restarts will be executed in parallel and split amongst the threads of the virtual machine. Recommended to set this value to at least 72.|
 |`beta_start`| Represents the temperature at which the annealing schedule is executed. This should be a value low enough to produce a feasible configuration. |
 |`transverse_field_start` & `transverse_field_stop`| Represents the starting and stopping values of the external field applied to the annealing schedule. A suitable value for these parameters will depend entirely on the problem and the magnitude of its changing moves. In general a non-zero and declining acceptance probability is sufficient.|
+|`seed` (optional)| Seed value - used for reproducing results. |
 
 To create a parameterized Quantum Monte Carlo solver using the SDK:
 
 ```python
 from azure.quantum.optimization import QuantumMonteCarlo
 # Requires a workspace to be already created
-solver = QuantumMonteCarlo(workspace, sweeps = 2, trotter_number = 10, restarts = 72, seed = 22, beta_start = 0.1, transverse_field_start = 10, transverse_field_stop = 0.1)
+solver = QuantumMonteCarlo(workspace, sweeps = 2, trotter_number = 10, restarts = 72, beta_start = 0.1, transverse_field_start = 10, transverse_field_stop = 0.1, seed = 22)
 ```

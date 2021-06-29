@@ -26,7 +26,7 @@ Instead of running a single copy of the system, Parallel Tempering creates multi
 
 Parallel tempering in Azure Quantum supports:
 
-- Parameter-free mode and parametrized mode (with parameters)
+- Parameter-free mode and parameterized mode (with parameters)
 - Ising and PUBO input formats
 - CPU only
 
@@ -48,7 +48,7 @@ The parameter-free solver will halt either on `timeout` (specified in seconds) o
 | Parameter Name | Description |
 |----------------|-------------|
 | `timeout` | Max execution time for the solver (in seconds). This is a best effort mechanism, so the solver may not stop immediately when the timeout is reached.|
-| `seed (optional)` | Seed value - used for reproducing results. |
+| `seed` (optional) | Seed value - used for reproducing results. |
 
 To create a parameter-free parallel tempering solver using the SDK:
 
@@ -58,9 +58,18 @@ from azure.quantum.optimization import ParallelTempering
 solver = ParallelTempering(workspace, timeout=100, seed=22)
 ```
 
-The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar number of variables, terms, locality and similar coefficient scale) using the parametrized parallel tempering solver.
+The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar number of variables, terms, locality and similar coefficient scale) using the parameterized parallel tempering solver.
 
-## Parametrized parallel tempering
+Running the solver without any parameters also triggers the parameter-free version:
+
+```python
+from azure.quantum.optimization import ParallelTempering
+# Requires a workspace already created.
+# Not specifying any parameters runs the parameter-free version of the solver.
+solver = ParallelTempering(workspace)
+```
+
+## Parameterized parallel tempering
 
 Parallel tempering with specified parameters is best used if you are already familiar with parallel tempering terminology (sweeps, betas) and/or have an idea of which parameter values you intend to use. **If this is your first time using parallel tempering for a problem, the parameter-free version is recommended.** Some of the parameters like `beta_start` and `beta_stop` are hard to estimate without a good starting point.
 
@@ -71,11 +80,11 @@ Parallel tempering supports the following parameters:
 | `sweeps` | Number of sets of iterations to run over the variables of a problem. More sweeps will usually improve the solution (unless it is already at the global min).|
 | `replicas`  | The number of concurrent running copies for sampling. Each instance will start with a random configuration. We recommend this value to be no less than the number of cores available on the machine, in order to fully utilize the available compute power. Currently on Azure Quantum this should be no less than 72.|
 | `all_betas` | The list of beta values used in each replica for sampling. The number of beta values must equal the number of replicas, as each replica will be assigned one beta value from the list. These beta values control how the solver escapes optimization saddle points - the larger the beta values, the less likely the sampling process will be to jump out of a local optimum.|
-| `seed (optional)` | Seed value - used for reproducing results |
+| `seed` (optional) | Seed value - used for reproducing results |
 
 The larger the number of sweeps and replicas, the more likely the parallel tempering solver will be to find an optimal or near-optimal solution, however the solver will take longer to run.
 
-To create a parametrized parallel tempering solver using the SDK:
+To create a parameterized parallel tempering solver using the SDK:
 
 ```python
 from azure.quantum.optimization import ParallelTempering

@@ -10,7 +10,7 @@ title: Install and use the Python SDK for Azure Quantum
 uid: microsoft.quantum.optimization.install-sdk
 ---
 
-# Install and use the Python Python SDK for Azure Quantum
+# Install and use the Python SDK for Azure Quantum
 
 This guide provides a basic overview of how to install and use the Python SDK for Azure Quantum.
 
@@ -116,7 +116,7 @@ print(result)
 This method will submit the problem to Azure Quantum for optimization and synchronously wait for it to be solved. You'll see output like the following in your terminal window or Jupyter Notebook:
 
 ```output
-{'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0}
+{'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0}]}
 ```
 
 > [!NOTE]

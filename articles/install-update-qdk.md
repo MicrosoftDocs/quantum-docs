@@ -36,7 +36,7 @@ Regardless of whether you are using C# or Python to host Q# operations, follow t
 
 ### Update Q# projects in Visual Studio
  
-1. Update to the latest version of Visual Studio 2019, see [here](https://docs.microsoft.com/visualstudio/install/update-visual-studio) for instructions.
+1. Update to the latest version of Visual Studio 2019, see [here](/visualstudio/install/update-visual-studio) for instructions.
 2. Open your solution in Visual Studio.
 3. From the menu, select **Build** -> **Clean Solution**.
 4. In each of your .csproj files, update the target framework to `netcoreapp3.1` (or `netstandard2.1` if it is a library project).
@@ -46,12 +46,12 @@ Regardless of whether you are using C# or Python to host Q# operations, follow t
     <TargetFramework>netcoreapp3.1</TargetFramework>
     ```
 
-    You can find more details on specifying target frameworks [here](https://docs.microsoft.com/dotnet/standard/frameworks#how-to-specify-target-frameworks).
+    You can find more details on specifying target frameworks [here](/dotnet/standard/frameworks#how-to-specify-target-frameworks).
 
 5. In each of the .csproj files, set the SDK to `Microsoft.Quantum.Sdk`, as indicated in the line below. Please notice that the version number should be the latest available, and you can determine it by reviewing the [release notes](xref:microsoft.quantum.relnotes-qdk).
 
     ```xml
-    <Project Sdk="Microsoft.Quantum.Sdk/0.12.20072031">
+    <Project Sdk="Microsoft.Quantum.Sdk/0.17.2105143879">
     ```
 
 6. Save and close all files in your solution.
@@ -101,18 +101,18 @@ You can now skip ahead to [update your Visual Studio QDK extension](#update-the-
         <TargetFramework>netcoreapp3.1</TargetFramework>
         ```
 
-        You can find more details on specifying target frameworks [here](https://docs.microsoft.com/dotnet/standard/frameworks#how-to-specify-target-frameworks).
+        You can find more details on specifying target frameworks [here](/dotnet/standard/frameworks#how-to-specify-target-frameworks).
 
     - Replace the reference to the SDK in the project definition. Make sure that the version number corresponds to the value determined in **step 3**.
 
         ```xml
-        <Project Sdk="Microsoft.Quantum.Sdk/0.12.20072031">
+        <Project Sdk="Microsoft.Quantum.Sdk/0.17.2105143879">
         ```
 
     - Remove the reference to package `Microsoft.Quantum.Development.Kit` if present, which will be specified in the following entry:
 
         ```xml
-        <PackageReference Include="Microsoft.Quantum.Development.Kit" Version="0.10.1910.3107" />
+        <PackageReference Include="Microsoft.Quantum.Development.Kit" Version="0.17.2105143879" />
         ```
 
     - Update the version of the all the Microsoft Quantum packages to the most recently released version of the QDK (determined in **step 3**). Those packages are named with the following patterns:
@@ -125,7 +125,7 @@ You can now skip ahead to [update your Visual Studio QDK extension](#update-the-
         References to packages have the following format:
 
         ```xml
-        <PackageReference Include="Microsoft.Quantum.Compiler" Version="0.12.20072031" />
+        <PackageReference Include="Microsoft.Quantum.Compiler" Version="0.17.2105143879" />
         ```
 
     - Save the updated file.
@@ -154,6 +154,7 @@ Select your development environment below.
 * [Visual Studio: update the QDK extension](#update-the-visual-studio-qdk-extension)
 * [VS Code: update the QDK extension](#update-the-vs-code-qdk-extension)
 * [Command line and C#: update project templates](#c-using-the-dotnet-command-line-tool)
+* [Python: Update the Python SDK for Azure Quantum](#update-the-python-sdk-for-azure-quantum)
 
 
 ## Update the `qsharp` Python package
@@ -192,8 +193,8 @@ The update procedure depends on whether you originally installed using conda or 
     You should see the following output:
 
     ```
-    iqsharp: 0.12.20072031
-    Jupyter Core: 1.4.0.0
+    iqsharp: 0.17.2105143879
+    Jupyter Core: 1.5.0.0
     ```
 
     Don't worry if your `iqsharp` version is higher. It should match the [latest release](xref:microsoft.quantum.relnotes-qdk).
@@ -214,7 +215,7 @@ The update procedure depends on whether you originally installed using conda or 
 
     ```
     Name: qsharp
-    Version: 0.12.2007.2031
+    Version: 0.17.2105.143879
     Summary: Python client for Q#, a domain-specific quantum programming language
     ...
     ```
@@ -265,8 +266,8 @@ The update procedure depends on whether you originally installed using conda or 
     Your output should be similar to the following:
 
     ```
-    iqsharp: 0.12.20072031
-    Jupyter Core: 1.4.0.0
+    iqsharp: 0.17.2105143879
+    Jupyter Core: 1.5.0.0
     ```
 
     Don't worry if your `iqsharp` version is higher. It should match the [latest release](xref:microsoft.quantum.relnotes-qdk).
@@ -316,3 +317,13 @@ You can now use the updated IQ# kernel to run your existing Q# Jupyter Notebooks
    - In VS Code, go to **View** -> **Command Palette**
    - Select **Q#: Install command line project templates**
    - After a few seconds you should get a popup confirming "project templates installed successfully"
+
+## Update the Python SDK for Azure Quantum
+
+1. Update to the latest `azure-quantum` Python package by using the Python Package Installer (PIP)
+
+   ```Shell
+   pip install --upgrade azure-quantum
+   ```
+   
+1. If you encounter any issues please ensure that Python and PIP are up to date. For information on the latest version requirements, please follow our guide for [installing and using the Python SDK](/azure/quantum/optimization-install-sdk)

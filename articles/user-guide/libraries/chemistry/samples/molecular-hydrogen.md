@@ -12,6 +12,7 @@ uid: microsoft.quantum.libraries.overview-chemistry.examples.overview.energyesti
 ---
 
 # Obtaining energy level estimates
+
 Estimating the values of energy levels is one of the principal applications of quantum chemistry. This article outlines how you can perform this for the canonical example of molecular hydrogen. The sample referenced in this section is [`MolecularHydrogen`](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogen) in the chemistry samples repository. A more visual example that plots the output is the [`MolecularHydrogenGUI`](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogenGUI) demo.
 
 ## Estimating the energy values of molecular hydrogen
@@ -84,36 +85,36 @@ The following snippet shows how the real-time evolution output by the chemistry 
 
 ```qsharp
 operation GetEnergyByTrotterization (
-    qSharpData : JordanWignerEncodingData, 
-    nBitsPrecision : Int, 
-    trotterStepSize : Double, 
+    qSharpData : JordanWignerEncodingData,
+    nBitsPrecision : Int,
+    trotterStepSize : Double,
     trotterOrder : Int) : (Double, Double) {
-    
+
     // The data describing the Hamiltonian for all these steps is contained in
     // `qSharpData`
     let (nSpinOrbitals, fermionTermData, statePrepData, energyOffset) = qSharpData!;
-    
+
     // Using a Product formula, also known as `Trotterization`, to
     // simulate the Hamiltonian.
     let (nQubits, (rescaleFactor, oracle)) = 
         TrotterStepOracle(qSharpData, trotterStepSize, trotterOrder);
-    
+
     // The operation that creates the trial state is defined here.
     // By default, greedy filling of spin-orbitals is used.
     let statePrep = PrepareTrialState(statePrepData, _);
-    
+
     // Using the Robust Phase Estimation algorithm
     // of Kimmel, Low and Yoder.
     let phaseEstAlgorithm = RobustPhaseEstimation(nBitsPrecision, _, _);
-    
+
     // This runs the quantum algorithm and returns a phase estimate.
     let estPhase = EstimateEnergy(nQubits, statePrep, oracle, phaseEstAlgorithm);
-    
+
     // Now, obtain the energy estimate by rescaling the phase estimate
     // with the trotterStepSize. We also add the constant energy offset
     // to the estimated energy.
     let estEnergy = estPhase * rescaleFactor + energyOffset;
-    
+
     // Return both the estimated phase and the estimated energy.
     return (estPhase, estEnergy);
 }
@@ -122,10 +123,9 @@ operation GetEnergyByTrotterization (
 You can now invoke the Q# code from the host program. The following C# code creates a full-state simulator and runs `GetEnergyByTrotterization` to obtain the ground state energy.
 
 ```csharp
-using (var qsim = new QuantumSimulator())
+use var qsim = new QuantumSimulator()
 {
-    // Specify the bits of precision desired in the phase estimation 
-    // algorithm
+    // Specify the bits of precision desired in the phase estimation algorithm
     var bits = 7;
 
     // Specify the step size of the simulated time evolution. The step size needs to
@@ -149,7 +149,7 @@ using (var qsim = new QuantumSimulator())
 }
 ```
 
-The operation returns two parameters: 
+The operation returns two parameters:
 
-- `energyEst` is the estimate of the ground state energy and should be close to `-1.137` on average. 
+- `energyEst` is the estimate of the ground state energy and should be close to `-1.137` on average.
 - `phaseEst` is the raw phase returned by the phase estimation algorithm. This useful for diagnosing aliasing when it occurs due to a `trotterStep` value that is too large.

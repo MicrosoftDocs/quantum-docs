@@ -26,11 +26,13 @@ You can use the `list_jobs` method to get a list of all jobs in the workspace:
 ```py
 jobs = [job.id for job in workspace.list_jobs()]
 print(jobs)
-
-> ['5d2f9cd70f55f149e3ed3aef', '23as12fs5d2f9cd70f55f', '1644428ea8507edb7361']
 ```
 
-This shows how to submit a job asynchronously and call `get_job` to get the metadata (and results) for a previously submitted job, by `id`: 
+```output
+['5d2f9cd70f55f149e3ed3aef', '23as12fs5d2f9cd70f55f', '1644428ea8507edb7361']
+```
+
+The next piece of code shows how to submit a job asynchronously and obtain its job id:
 
 ```py
 from azure.quantum.optimization import Problem, ProblemType, Term, ParallelTempering, SimulatedAnnealing
@@ -43,12 +45,33 @@ problem.add_term(c=5, indices=[2,0])
 solver = SimulatedAnnealing(workspace)
 job = solver.submit(problem)
 print(job.id)
+```
 
-> 5d2f9cd70f55f149e3ed3aef
+```output
+5d2f9cd70f55f149e3ed3aef
+```
 
-job = workspace.get_job(job.id)
+The function `get_job` can be called to get the metadata (including results) for a previously submitted job, using the job `id`:
+
+```py
+job = workspace.get_job('5d2f9cd70f55f149e3ed3aef')
 results = job.get_results()
 print(results)
+```
 
-> {'configuration': {'0': 1, '1': 1, '2': -1}, 'cost': -17.0}
+```output
+{'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1}, 'cost': -17.0}]}
+```
+
+In order to cancel a job, use the function `cancel_job` as shown in this next piece of code:
+
+```py
+job = workspace.get_job('5d2f9cd70f55f149e3ed3aef')
+workspace.cancel_job(job)
+
+print(job.details.status)
+```
+
+```output
+Cancelled
 ```

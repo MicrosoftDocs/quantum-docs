@@ -18,7 +18,7 @@ the Azure portal, and start running your quantum applications in Azure Quantum.
 ## Prerequisites
 
 In order to use the Azure Quantum service, you will need an active Azure subscription. To create an Azure subscription
-go to the [Azure free sign-up page](https://azure.microsoft.com/en-us/free/) and click on the green **Start free** button
+go to the [Azure free sign-up page](https://azure.microsoft.com/free/) and click on the green **Start free** button
 to start the process of creating an Azure subscription.
 
 > [!NOTE]
@@ -32,7 +32,7 @@ Once you have an active Azure subscription, you can continue with the next secti
 
 You use the Azure Quantum service by adding an Azure Quantum workspace resource to your Azure subscription in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
 
-To open the Azure Portal, go to https://portal.azure.com and then follow these steps:
+To open the Azure Portal, go to <https://portal.azure.com> and then follow these steps:
 
 > [!NOTE]
 > If you just created your Azure subscription, you might be asked to confirm your email address in order to use the service. 
@@ -59,7 +59,7 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 
 
    > [!NOTE]
-   > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](https://docs.microsoft.com/learn/modules/control-and-organize-with-azure-resource-manager/).
+   > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](/learn/modules/control-and-organize-with-azure-resource-manager/).
 
 1. After completing the information, click the **Providers** tab to add providers to your workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
 
