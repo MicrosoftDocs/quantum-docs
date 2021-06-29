@@ -1,21 +1,22 @@
-- name: Azure Quantum Documentation
+- name: Azure Quantum documentation
   href: index.yml
 - name: Overview
   items:
-  - name: Introduction to Azure Quantum 
+  - name: What is Azure Quantum?
     href: overview-azure-quantum.md
 - name: Get started
   items:
   - name: Set up Azure Quantum 
     href: install-overview-qdk.md
 - name: Optimization
+  expanded: true
   items:
   - name: Overview
     items:
-    - name: Introduction to optimization
-      href: optimization-overview-introduction.md
     - name: What is quantum inspired optimization (QIO)?
       href: optimization-what-is-quantum-optimization.md
+    - name: What is optimization?
+      href: optimization-overview-introduction.md
     - name: Key concepts
       href: optimization-overview-key-concepts.md 
   - name: Quickstart
@@ -74,15 +75,15 @@
           href: provider-1qbit.md
         - name: 1QBit support policy
           href: provider-support-1qbit.md
-    - name: Samples for using Azure Quantum optimization solvers 
+    - name: Samples for using Azure Quantum optimization solvers >>
       href: https://github.com/microsoft/qio-samples
-- name: Quantum Computing
+- name: Quantum computing
   items:
   - name: Overview
     items:
-    - name: Introduction to quantum computing
+    - name: What is quantum computing?
       href: overview-qdk.md    
-    - name: Key concepts for quantum computing
+    - name: Key concepts
       items:
       - name: Understanding quantum computing
         href: overview-understanding-quantum-computing.md
@@ -94,11 +95,11 @@
         href: overview-algebra-for-quantum-computing.md
   - name: Quickstarts
     items:
-    - name: Using the Azure Quantum portal
+    - name: Azure Quantum portal
       items:
       - name: Quantum computing quickstart
         href: quickstart-microsoft-qc.md
-    - name: Using the QDK offline
+    - name: Quantum Development Kit (QDK) offline
       items:
       - name: Q# applications
         href: install-command-line-qdk.md
@@ -172,37 +173,36 @@
         href: provider-support-honeywell.md
 - name: Resources
   items:
-  - name: Glossary (merged)
+  - name: Glossary
     href: azure-quantum-glossary.md
   - name: Common issues
     href: azure-quantum-common-issues.md
-  - name: Build your skills with MS Learn
+  - name: Build your skills with MS Learn >>
     href: https://docs.microsoft.com/learn/paths/quantum-computing-fundamentals/
   - name: Learn Q# with the Quantum Katas
     href: tutorial-qdk-intro-to-katas.md
-  - name: Q# code samples
+  - name: Q# code samples >>
     href: https://docs.microsoft.com/samples/browse/?languages=qsharp
   - name: Further reading
     href: further-reading-qdk.md
-  - name: Azure CLI commands
+  - name: Azure CLI commands >>
     href: https://docs.microsoft.com/cli/azure/ext/quantum/quantum
   - name: Contributing to the Quantum Development Kit
     items:
-    - name: Reporting Bugs
+    - name: Reporting bugs
       href: contributing-reporting-bugs.md
-    - name: Improving Documentation
+    - name: Improving documentation
       href: contributing-docs.md
-    - name: Opening Pull Requests
+    - name: Opening pull requests
       href: contributing-pull-requests.md
-    - name: Contributing Code
+    - name: Contributing code
       href: contributing-code.md
-    - name: Contributing Samples
+    - name: Contributing samples
       href: contributing-samples.md
-    - name: Style Guide
+    - name: Contributing style guide
       href: contributing-style-guide.md
-    - name: API Design Principles
+    - name: API design principles
       href: contributing-api-design-principles.md
     topicHref: contributing-overview.md
 - name: Release Notes
   href: qdk-relnotes.md
-
