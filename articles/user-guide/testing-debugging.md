@@ -444,7 +444,7 @@ operation MultiQubitDumpMachineDemo() : Unit {
     }
 
 ```
-1. In a new cell, run `MultiQubitDumpMachineDemo` operation on a full state quantum simulator by using the `%simulate` magic command. `DumpMachine` call will print the information about the quantum state of the program after the Controlled Ry gate as a set of lines, one per basis state, showing their complex amplitudes, phases, and measurement probabilities:
+1. In a new cell, run the `MultiQubitDumpMachineDemo` operation on a full state quantum simulator by using the `%simulate` magic command. The `DumpMachine` call prints the information about the quantum state of the program after the Controlled Ry gate as a set of lines, one per basis state, showing their complex amplitudes, phases, and measurement probabilities.
 
 ![DumpMachine output](~/media/dumpmachine-output.png)
 
