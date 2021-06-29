@@ -14,7 +14,7 @@ no-loc: ['Q#', '$$v']
 
 # Testing and debugging
 
-As with classical programming, it is essential to be able to check that quantum programs act as intended, and to be able to diagnose incorrect behavior. Unlike with classical software development, though, observing the state of a quantum system and tracking the behavior of a quantum program might not be easy.
+As with classical programming, it is essential to be able to check that quantum programs act as intended, and to be able to diagnose incorrect behavior. Unlike classical programming, though, observing the state of a quantum system and tracking the behavior of a quantum program is not always easy.
 In this section, we cover the tools offered by the Quantum Development Kit for testing and debugging quantum programs.
 
 ## Unit Tests
