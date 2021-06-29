@@ -449,7 +449,7 @@ operation MultiQubitDumpMachineDemo() : Unit {
 ![DumpMachine output](~/media/dumpmachine-output.png)
 
 > [!NOTE]
-> You can use <xref:microsoft.quantum.iqsharp.magic-ref.config> (available only in Q# Jupyter Notebooks) to tweak the format of `DumpMachine` output. It offers a lot of settings convenient in different scenarios. For example, by default `DumpMachine` uses little-endian integers to denote the basis states (the first column of the output); if you find raw bit strings easier to read, you can use `%config dump.basisStateLabelingConvention="Bitstring"` to switch.
+> You can use <xref:microsoft.quantum.iqsharp.magic-ref.config> (available only in Q# Jupyter Notebooks) to tweak the format of the `DumpMachine` output. It offers many settings that you can use in different scenarios. For example, by default `DumpMachine` uses little-endian integers to denote the basis states (the first column of the output); if you find raw bit strings easier to read, you can use `%config dump.basisStateLabelingConvention="Bitstring"` to switch.
 
 
 1. Jupyter Notebook offers the possibility to visualize the execution of the quantum program as a quantum circuit by using <xref:microsoft.quantum.iqsharp.magic-ref.trace> (available only in Q# Jupyter Notebooks). This command traces one run of the Q# program and build a circuit based on that execution. This is the circuit resulting from the running of `%trace MultiQubitDumpMachineDemo`, 
