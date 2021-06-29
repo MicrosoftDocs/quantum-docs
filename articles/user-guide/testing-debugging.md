@@ -458,7 +458,7 @@ operation MultiQubitDumpMachineDemo() : Unit {
 
    The visualization is interactive, allowing you to click on each block to drill down to the intrinsic gates.
 
-1. Finally, <xref:microsoft.quantum.iqsharp.magic-ref.debug> (available only in Q# Jupyter Notebooks) allows you to combine tracing the program execution (as a circuit) and observing the program state as it evolves at the same time. The visualization is also interactive, you can click through each of the steps until the program run is complete, and switch to observe real and imaginary components of the amplitudes instead of measurement probabilities in the beginning of the program.
+1. Finally, <xref:microsoft.quantum.iqsharp.magic-ref.debug> (available only in Q# Jupyter Notebooks) allows you to combine tracing the program execution (as a circuit) and observing the program state as it evolves at the same time. The visualization is also interactive; you can click through each of the steps until the program run is complete, and switch to observe real and imaginary components of the amplitudes, instead of measurement probabilities in the beginning of the program.
 
 ![DumpMachine debug output](~/media/dumpmachine-debug-output.png)
 
