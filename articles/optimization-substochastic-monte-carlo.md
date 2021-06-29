@@ -116,7 +116,7 @@ from azure.quantum.optimization import SubstochasticMonteCarlo
 # Requires a workspace already created.
 solver = SubstochasticMonteCarlo(workspace, timeout=10, seed=48)
 ```
-If you are using an earlier versionof the python SDK that supports the Substochastic Monte Carlo solver.
+If you are using an earlier version of the python SDK that supports the Substochastic Monte Carlo solver.
 You can run parameter-free version by the following syntax:
 ```python
 from azure.quantum.optimization import SubstochasticMonteCarlo
@@ -125,4 +125,3 @@ solver = SubstochasticMonteCarlo(workspace, seed=48)
 solver.target = 'microsoft.substochasticmontecarlo-parameterfree.cpu'
 solver.set_one_param("timeout", 10)
 ```
-
