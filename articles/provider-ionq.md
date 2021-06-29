@@ -78,6 +78,9 @@ To see the pricing options:
 1. Go to the Azure Portal and create a new workspace.
 1. In the **Providers** pane, click in the **Add** button of the IonQ tile and in the description you will find the current pricing options.
 
+> [!IMPORTANT]
+> Note that there is a $1 USD minimum cost to run a job on the IonQ QPU.
+
 ## IonQ Best Practices & Connectivity Graph
 
 To see recommended best practices for the IonQ QPU, we recommend reading their [best practices](https://ionq.com/best-practices).

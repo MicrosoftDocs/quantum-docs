@@ -223,7 +223,7 @@ def printResultSummary(result):
 
     print(f'\nTotal weights: \n\tShip A: {shipAWeight} tonnes \n\tShip B: {shipBWeight} tonnes')
 
-printResultSummary(result)
+printResultSummary(result['solutions'][0])
 ```
 
 The output should look something like this:

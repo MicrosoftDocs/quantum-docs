@@ -17,35 +17,13 @@ Quantum using Python.
 
 ## Prerequisites
 
-- An Azure Quantum workspace in your Azure subscription. To create
-  a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
+- An Azure Quantum workspace in your Azure subscription. To create a workspace,
+  see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
+- The latest version of the [Quantum Development Kit for Python](xref:microsoft.quantum.install-qdk.overview.python#install-the-qsharp-python-package).
 
-## Installation
-
-Follow these steps to install Jupyter Notebook and the current version of the
-IQ# kernel, which powers the Q# Jupyter Notebook and Python experiences.
-
-1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or
-   [Anaconda](https://www.anaconda.com/products/individual#Downloads).
-1. Open an Anaconda Prompt.
-   - Or, if you prefer to use PowerShell or pwsh: open a shell, run `conda init
-     powershell`, then close and re-open the shell.
-1. Create and activate a new conda environment named `qsharp-env` with the
-   required packages (including Jupyter Notebook and IQ#) by running the
-   following commands:
-
-    ```
-    conda create -n qsharp-env -c quantum-engineering qsharp notebook
-
-    conda activate qsharp-env
-    ```
-
-1. Run `python -c "import qsharp"` from the same terminal to verify your
-   installation and populate your local package cache with all of the required QDK
-   components.
-
-You are now set up to use Python and Q# integration to run
-quantum programs on Azure Quantum.
+Follow the installation steps in the provided link to install Python and
+the current version of the IQ# kernel, which powers the Q# Jupyter Notebook and
+Python experiences.
 
 ## Quantum computing with Q# and Python
 
@@ -81,7 +59,7 @@ quantum programs on Azure Quantum.
 1. Create a Python script in the same folder as your `*.qs` file. Azure Quantum
    functionality is available by running `import qsharp.azure` and then calling
    the Python commands to interact with Azure Quantum. For reference, see the
-   [complete list of `qsharp.azure` Python commands](https://docs.microsoft.com/python/qsharp-core/qsharp.azure).
+   [complete list of `qsharp.azure` Python commands](/python/qsharp-core/qsharp.azure).
    You'll need the resource ID of your Azure Quantum workspace in order to
    connect. (The resource ID can be found on your workspace
    page in the Azure Portal.)
@@ -135,6 +113,37 @@ quantum programs on Azure Quantum.
    >>> qsharp.azure.output('1b03cc74-b5d5-4ffa-81db-465f08ae6cd0')
    {'0': 0.5, '1': 0.5}
    ```
+
+## Authentication
+
+The `qsharp.azure.connect` method takes an optional `credential` parameter
+that allows you to specify what type of credentials to use to authenticate with Azure.
+The possible values for this parameter are:
+
+- **Environment**: Authenticates a service principal or user via credential information specified in environment variables.
+  For information about the specific environment variable needed see the [EnvironmentCredential online documentation](/dotnet/api/azure.identity.environmentcredential).
+- **ManagedIdentity**: Authenticates the managed identity of an Azure resource.
+- **CLI**: Authenticates in a development environment using data from the Azure CLI.
+- **SharedToken**: Authenticates in a development environment using tokens in the local cache shared between Microsoft applications.
+- **VisualStudio**: Authenticates in a development environment using data from Visual Studio.
+- **VisualStudioCode**: Authenticates in a development environment using data from Visual Studio Code.
+- **Interactive**: Opens a new browser window to interactively authenticate and obtain an access token.
+- **DeviceCode**: Authenticates using the device code flow.
+
+If the `credential` parameter is not provided, then by default all the different mechanisms listed above are tried in order until one succeeds.
+
+The following example shows how to use the `credential` parameter to explicitly open a new browser window to login to Azure:
+
+```py
+import qsharp
+import qsharp.azure
+from Test import GenerateRandomBits
+
+qsharp.azure.connect(
+   resourceId="/subscriptions/.../Microsoft.Quantum/Workspaces/WORKSPACE_NAME",
+   location="West US",
+   credential="interactive")
+```
 
 ## Next steps
 

@@ -96,19 +96,23 @@
         - name: Overview
           href: provider-microsoft-qio.md
         - name: Simulated Annealing
-          href: optimization-simulated-annealing.md        
+          href: optimization-simulated-annealing.md
+        - name: Population Annealing
+          href: optimization-population-annealing.md          
         - name: Parallel Tempering
           href: optimization-parallel-tempering.md
         - name: Tabu Search
           href: optimization-tabu-search.md
         - name: Quantum Monte Carlo
           href: optimization-quantum-monte-carlo.md
+        - name: Substochastic Monte Carlo
+          href: optimization-substochastic-monte-carlo.md
     - name: Tutorials
       items:
       - name: Samples for using Azure Quantum optimization solvers 
         href: https://github.com/microsoft/qio-samples
       - name: Build your skills with MS Learn
-        href: https://docs.microsoft.com/learn/paths/quantum-computing-fundamentals/
+        href: /learn/paths/quantum-computing-fundamentals/
     - name: Python SDK
       items:
       - name: Azure.Quantum
@@ -129,6 +133,8 @@
           href: optimization-input-formats.md
         - name: Term
           href: optimization-term.md
+        - name: RangeSchedule
+          href: optimization-rangeschedule.md
       - name: Usage
         items:
         - name: Express a problem
@@ -150,7 +156,7 @@
     - name: Common issues
       href: azure-quantum-common-issues.md
     - name: Azure CLI commands
-      href: https://docs.microsoft.com/cli/azure/ext/quantum/quantum
+      href: /cli/azure/ext/quantum/quantum
     - name: Authenticate using a service principal
       href: optimization-authenticate-service-principal.md
 - name: Quantum Development Kit
@@ -200,7 +206,7 @@
       - name: Learn Q# with the Quantum Katas
         href: tutorial-qdk-intro-to-katas.md
       - name: Q# code samples
-        href: https://docs.microsoft.com/samples/browse/?languages=qsharp
+        href: /samples/browse/?languages=qsharp
   - name: Concepts
     items:
       - name: "Quantum computing history & background"
@@ -223,12 +229,10 @@
         href: concepts-oracles.md
       - name: Theory of Grover's algorithm
         href: concepts-grovers.md
-  - name: Glossary
-    href: qdk-glossary.md
   - name: Resources
     items:
     - name: Build your skills with MS Learn
-      href: https://docs.microsoft.com/learn/paths/quantum-computing-fundamentals/
+      href: /learn/paths/quantum-computing-fundamentals/
     - name: Contributing to the QDK
       items:
       - name: Reporting Bugs
@@ -246,9 +250,11 @@
       - name: API Design Principles
         href: contributing-api-design-principles.md
       topicHref: contributing-overview.md
-    - name: QDK Release Notes
-      href: qdk-relnotes.md
-    - name: Further reading
-      href: further-reading-qdk.md
 - name: Q# user guide
   href: user-guide/toc.yml
+- name: Release Notes
+  href: qdk-relnotes.md
+- name: Glossary
+  href: qdk-glossary.md
+- name: Further reading
+  href: further-reading-qdk.md

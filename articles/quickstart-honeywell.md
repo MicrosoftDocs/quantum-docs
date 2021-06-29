@@ -25,7 +25,7 @@ Learn how to use Azure Quantum to run Q# problems against the Honeywell simulato
 Before you can write a Q# program and run it with Honeywell, you'll need a few resources installed:
 
 1. Install the [Microsoft QDK for VS Code extension](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
-1. Install the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+1. Install the [Azure CLI](/cli/azure/install-azure-cli).
 1. Install the `quantum` CLI extension for the Azure CLI.
 
    ```azurecli
@@ -36,7 +36,7 @@ Before you can write a Q# program and run it with Honeywell, you'll need a few r
 
 You use the Azure Quantum service by adding an Azure Quantum workspace resource to your Azure subscription in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
 
-To open the Azure Portal, go to https://portal.azure.com and then follow these steps:
+To open the Azure Portal, go to <https://portal.azure.com> and then follow these steps:
 
 1. Click **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
 
@@ -60,14 +60,14 @@ To open the Azure Portal, go to https://portal.azure.com and then follow these s
 
 
    > [!NOTE]
-   > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](https://docs.microsoft.com/learn/modules/control-and-organize-with-azure-resource-manager/).
+   > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](/learn/modules/control-and-organize-with-azure-resource-manager/).
 
 1. After completing the information, click the **Providers** tab to add providers to your workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
 
    > [!NOTE]
    > If you do not see the Honeywell provider, you may not have access to their
    > preview yet. If you have received an email welcoming you to the Honeywell Preview
-   > but you can't see their provider, please [create a ticket with Azure Support](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
+   > but you can't see their provider, please [create a ticket with Azure Support](/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
    ![Providers for Azure Quantum](./media/azure-quantum-preview-providers.png)
 
@@ -103,7 +103,7 @@ Next, we'll open up Visual Studio Code and get create a Q# Project.
 1. Start by opening the **QuantumRNG.csproj** file and adding the `ExecutionTarget` property, which will give you design-time feedback on the compatibility of your program for Honeywell's hardware.
 
 ```xml
-<Project Sdk="Microsoft.Quantum.Sdk/0.14.2011120240">
+<Project Sdk="Microsoft.Quantum.Sdk/0.17.2105143879">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -130,7 +130,7 @@ namespace QuantumRNG {
 ```
 
 > [!NOTE] 
-> If you would like to learn more about this program code, we recommend checking out how to [Create your first Q# program by using the Quantum Development Kit](https://docs.microsoft.com/learn/modules/qsharp-create-first-quantum-development-kit/).
+> If you would like to learn more about this program code, we recommend checking out how to [Create your first Q# program by using the Quantum Development Kit](/learn/modules/qsharp-create-first-quantum-development-kit/).
 
 ## Prepare the AZ CLI
 

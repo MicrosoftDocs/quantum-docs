@@ -171,25 +171,33 @@ A **heuristic** is a technique for finding an approximate solution, when finding
 We can imagine a person or a particle in our **search space**, and each step taken creates a path, or walk, through the optimization landscape. Often, this will be referred to as a **walker**. Walkers can be used in a variety of ways, for example you may choose to have many walkers starting from the same starting point, or have them starting from different locations, and so on.
 
 ## Convert your problem to a Ising or QUBO model
+
 Professor Andrew Lucas' paper [Ising formulations of many NP problems](https://arxiv.org/abs/1302.5843) is a good summary of how to convert an NP problem to QIO's QUBO or Ising model. You can download the paper from the link provided.
 After converting your field problem into the Ising or QUBO model, it is recommended to merge terms with the same variable list into a single term. For example:
+
 $$
 w_{0}x_{0}x_{1}, w_{1}x_{1}x_{0}
 $$
-can be merged into 
+
+can be merged into
 
 $$
 (w_{0} + w_{1})x_{0}x_{1}
 $$
 
-Expressed in terms of code (using the [Python SDK](https://docs.microsoft.com/azure/quantum/optimization-express-optimization-problem)):
-```
+Expressed in terms of code:
+
+```py
 term1 = Term(c=2, indices=[0,1])
 term2 = Term(c=3, indices=[1,0])
 ```
-can be merged into:
-```
+
+can be merged into
+
+```py
 merged_term = Term(c=5, indices=[0,1])
 ```
 
-Merging terms may significantly improve the performance of QIO, if your problem has a lot of such terms. You can either use a hash map or sort algorithm to do the merging. 
+where the Python SDK is used to [express the terms of an optimization problem](/azure/quantum/optimization-express-optimization-problem).
+
+Merging terms may significantly improve the performance of QIO, if your problem has a lot of such terms. You can either use a hash map or sort algorithm to do the merging.

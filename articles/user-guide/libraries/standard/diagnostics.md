@@ -95,7 +95,7 @@ Using the primitive operations defined in the prelude, we can directly perform a
 
 
 The operation <xref:Microsoft.Quantum.Diagnostics.AssertQubit> provides a particularly useful shorthand to do so in the case that we wish to test the assertion $\ket{\psi} = \ket{0}$.
-This is common, for instance, when we have uncomputed to return ancilla qubits to $\ket{0}$ before releasing them.
+This is common, for instance, when we have uncomputed to return auxiliary qubits to $\ket{0}$ before releasing them.
 Asserting against $\ket{0}$ is also useful when we wish to assert that two state preparation `P` and `Q` operations both prepare the same state, and when `Q` supports `Adjoint`.
 In particular,
 

@@ -13,6 +13,7 @@ uid: microsoft.quantum.optimization.input-format
 # Input format for optimization problems
 
 This document explains how the parameters to optimization problems may be specified for all the different solvers. 
+All solvers set default values for their parameters but we strongly recommend setting them to values appropriate for your problem. Where there is a parameter-free solver available not setting any parameters will call the parameter-free version of that solver which will complete when there is sufficient convergence on a solution.
 
 ## Parallel Tempering
 <table>
@@ -26,12 +27,12 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>all_betas</td>
         <td>a list of floats</td>
-        <td>Specifies the list of inverse temperatures. This list should be equal in length to the number of replicas (described below)</td>
+        <td>Specifies the list of inverse temperatures. This list should be equal in length to the number of replicas.</td>
     </tr>
     <tr>
         <td>replicas</td>
         <td>integer</td>
-        <td>Specifies the number of iterations of solver to run.</td>
+        <td>Specifies the number of iterations of the solver to run.</td>
     </tr>
     <tr>
         <td>sweeps</td>
@@ -46,7 +47,7 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>timeout</td>
         <td>integer</td>
-        <td>Specifies the maximum number of seconds to run the core solver loop. initialization time does not respect this value, so the solver may run longer than the value specified.
+        <td>Specifies the maximum number of seconds to run the core solver loop. Initialization time does not respect this value, so the solver may run longer than the value specified.
         </td>
     </tr>
     </tbody>
@@ -64,7 +65,7 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>beta_start</td>
         <td>float</td>
-        <td>Specifies the list of inverse temperatures. This list should be equal in length to the number of replicas (described below)</td>
+        <td>Specifies the list of inverse temperatures. This list should be equal in length to the number of replicas.</td>
     </tr>
     <tr>
         <td>beta_stop</td>
@@ -84,7 +85,7 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>timeout</td>
         <td>integer</td>
-        <td>Specifies the maximum number of seconds to run the core solver loop. initialization time does not respect this value, so the solver may run longer than the value specified.
+        <td>Specifies the maximum number of seconds to run the core solver loop. Initialization time does not respect this value, so the solver may run longer than the value specified.
         </td>
     </tr>
     <tr>
@@ -94,6 +95,44 @@ This document explains how the parameters to optimization problems may be specif
     </tr>
     </tbody>
 </table>
+
+
+
+## Population Annealing
+
+<table>
+    <thead>
+        <tr class = "header">
+        <th>Property Name (case sensitive)</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>sweeps</td>
+        <td>integer</td>
+        <td>Number of sweeps. More sweeps will usually improve the solution if it has not yet found a global minimum.</td>
+    </tr>
+    <tr>
+        <td>beta</td>
+        <td>RangeSchedule</td>
+        <td>Specifies a range from the initial temperature value to the final value. This schedule must increase over time.</td>
+    </tr>
+    <tr>
+        <td>population</td>
+        <td>integer</td>
+        <td>The number of walkers in the population that the algorithm should use.</td>
+    </tr>
+    <tr>
+        <td>seed</td>
+        <td>A random integer</td>
+        <td>Used to initialize the algorithm. Use the same seed to reproduce results.</td>
+    </tr>
+    </tbody>
+</table>
+
+
+
 
 ## Tabu
 
@@ -113,12 +152,12 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>timeout</td>
         <td>integer</td>
-        <td>Specifies the maximum number of seconds to run the core solver loop. initialization time does not respect this value, so the solver may run longer than the value specified.
+        <td>Specifies the maximum number of seconds to run the core solver loop. Initialization time does not respect this value, so the solver may run longer than the value specified.
         </td>
     </tr>
     <tr>
         <td>seed</td>
-        <td>A random integer betweenm 0 and 101</td>
+        <td>A random integer between 0 and 101</td>
         <td>Specifies a random value to start the simulation.</td>
     </tr>
     <tr>
@@ -142,7 +181,7 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>beta_start</td>
         <td>float</td>
-        <td>Specifies the inverse of temperature at which the problem is solved.</td>
+        <td>Specifies the inverse of the starting temperature for the algorithm.</td>
     </tr>
     <tr>
         <td>transverse_field_start</td>
@@ -152,12 +191,7 @@ This document explains how the parameters to optimization problems may be specif
     <tr>
         <td>transverse_field_end</td>
         <td>float</td>
-        <td>Specified the ending value of the external field supplied to the simulation.</td>
-    </tr>
-    <tr>
-        <td>seed</td>
-        <td>A random integer</td>
-        <td>Specifies a random value to start the simulation.</td>
+        <td>Specifies the ending value of the external field supplied to the simulation.</td>
     </tr>
     <tr>
          <td>sweep</td>
@@ -168,6 +202,49 @@ This document explains how the parameters to optimization problems may be specif
          <td>trotter_number</td>
         <td>integer</td>
         <td>Specifies the number of copies of each variable to create in a simulation.</td>
+    </tr>
+    <tr>
+        <td>seed</td>
+        <td>A random integer</td>
+        <td>Specifies a random value to start the simulation.</td>
+    </tr>
+    </tbody>
+</table>
+
+## Substochastic Monte Carlo
+ 
+<table>
+    <thead>
+        <tr class = "header">
+        <th>Property Name (case sensitive)</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>step_limit</td>
+        <td>integer</td>
+        <td>Number of Monte Carlo steps. More steps will usually improve the solution if it has not yet found a global minimum.</td>
+    </tr>
+    <tr>
+        <td>target_population</td>
+        <td>integer</td>
+        <td>Specifies the number of walkers in the population. Should be greater than or equal to 8.</td>
+    </tr>
+    <tr>
+        <td>alpha</td>
+        <td>RangeSchedule</td>
+        <td>Specifies a range from the initial value to the final value. This is the schedule for the stepping chance and should decrease over time.</td>
+    </tr>
+    <tr>
+        <td>beta</td>
+        <td>RangeSchedule</td>
+        <td>Specifies a range from the initial value to the final value. This is the schedule for the resampling factor that will increase over time.</td>
+    </tr>
+    <tr>
+         <td>seed</td>
+        <td>A random integer</td>
+        <td>Used to initialize the algorithm. Use the same seed to reproduce results.</td>
     </tr>
     </tbody>
 </table>

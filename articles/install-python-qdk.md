@@ -11,17 +11,19 @@ title: Develop with Q# and Python
 uid: microsoft.quantum.install-qdk.overview.python
 ---
 
-# Use the QDK for quantum computing with Q# and Python
+# Develop with Q# and Python
 
 Learn how to install the Quantum Development Kit (QDK) to develop Python host programs that call Q# operations.
 
 ## Install the `qsharp` Python package
 
+The `qsharp` Python package, which includes the IQ# kernel, contains the necessary functionality for compiling and simulating Q# operations from a regular Python program.
+
 ### [Install using conda (recommended)](#tab/tabid-conda)
 
 1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads). Consult their [installation guide](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) if you are unsure about any steps. **Note:** 64-bit installation required.
 
-1. Initialize conda for your preferred shell with the `conda init` command. The steps below are tailored to your operating system:
+1. Initialize conda for your preferred shell with the `conda init` initialization command. The steps below are tailored to your operating system:
 
     **(Windows)** Open an Anaconda Prompt by searching for it in the start menu. Then run the initialization command for your shell, e.g. `conda init powershell cmd.exe` will set up both the Windows PowerShell and Command Prompt for you. You can then close this prompt.
 
@@ -80,7 +82,7 @@ Learn how to install the Quantum Development Kit (QDK) to develop Python host pr
 
 ***
 
-That's it! You now have both the `qsharp` Python package and the IQ# kernel for Jupyter, which provide the core functionality for compiling and running Q# operations from Python and allows you to use Q# Jupyter Notebooks.
+That's it! You now have both the `qsharp` Python package and the IQ# kernel for Jupyter, allowing you to compile and run Q# operations from Python and Q# Jupyter Notebooks.
 
 ## Choose your IDE
 
@@ -97,13 +99,13 @@ If you would like to use a different editor, the instructions so far have you al
 
 ## Write your first Q# program
 
-Now you are ready to verify your `qsharp` Python package installation by writing and running a simple Q# program.
+Now you are ready to verify your `qsharp` Python package installation by writing a simple Q# program and running it on a quantum [simulator](/azure/quantum/user-guide/machines/).
 
 1. Create a minimal Q# operation by creating a file called `Operation.qs` and adding the following code to it:
 
     :::code language="qsharp" source="~/quantum/samples/interoperability/qrng/Qrng.qs" range="3-14":::
 
-1. In the same folder as `Operation.qs`, create a Python program called `host.py` to simulate the Q# `SampleQuantumRandomNumberGenerator()` operation that is defined in `Operation.qs`:
+1. In the same folder as `Operation.qs`, create the following Python program called `host.py`. This program [imports the Q# operation](/azure/quantum/user-guide/host-programs?tabs=tabid-python#q-with-host-programs) `SampleQuantumRandomNumberGenerator()` defined in step 1 and runs it on the [default simulator](/azure/quantum/user-guide/machines/full-state-simulator) with a `.simulate()` call:
 
     ```python
     import qsharp
@@ -126,3 +128,13 @@ Now you are ready to verify your `qsharp` Python package installation by writing
 ## Next steps
 
 Now that you have tested the Quantum Development Kit in your preferred environment, you can follow this tutorial to write and run [your first quantum program](xref:microsoft.quantum.tutorial-qdk.random-number).
+
+For more information on how to run Q# programs with Python, see the following articles:
+
+- how [Q# interacts with a Python host program](/azure/quantum/user-guide/host-programs?tabs=tabid-python#q-with-host-programs)
+
+- how to [run Q# on a local simulator](/azure/quantum/user-guide/machines/full-state-simulator)
+
+- how to [run Q# on quantum hardware](/azure/quantum/how-to-submit-jobs-with-python) through Azure Quantum
+
+- how to first [estimate quantum resources](/azure/quantum/user-guide/machines/resources-estimator) required by your program

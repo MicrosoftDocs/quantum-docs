@@ -23,13 +23,15 @@ The Microsoft QIO provider makes the following targets available:
 
 - [Solver: Simulated Annealing (Parameter-free)](xref:microsoft.quantum.optimization.simulated-annealing#parameter-free-simulated-annealing-cpu)
 - [Solver: Simulated Annealing (Parameter-free - FPGA)](xref:microsoft.quantum.optimization.simulated-annealing#simulated-annealing-fpga)
-- [Solver: Simulated Annealing (Parametrized)](xref:microsoft.quantum.optimization.simulated-annealing#parametrized-simulated-annealing-cpu)
-- [Solver: Simulated Annealing (Parametrized - FPGA)](xref:microsoft.quantum.optimization.simulated-annealing#simulated-annealing-fpga)
+- [Solver: Simulated Annealing (Parameterized)](xref:microsoft.quantum.optimization.simulated-annealing#parameterized-simulated-annealing-cpu)
+- [Solver: Simulated Annealing (Parameterized - FPGA)](xref:microsoft.quantum.optimization.simulated-annealing#simulated-annealing-fpga)
+- [Solver: Population Annealing (Parameterized)](xref:microsoft.quantum.optimization.population-annealing#parameterized-population-annealing)
 - [Solver: Parallel Tempering (Parameter-free)](xref:microsoft.quantum.optimization.parallel-tempering#parameter-free-parallel-tempering)
-- [Solver: Parallel Tempering (Parametrized)](xref:microsoft.quantum.optimization.parallel-tempering#parametrized-parallel-tempering)
+- [Solver: Parallel Tempering (Parameterized)](xref:microsoft.quantum.optimization.parallel-tempering#parameterized-parallel-tempering)
 - [Solver: Tabu Search (Parameter-free)](xref:microsoft.quantum.optimization.tabu#parameter-free-tabu-search)
-- [Solver: Tabu Search (Parametrized)](xref:microsoft.quantum.optimization.tabu#parametrized-tabu-search)
-- [Solver: Quantum Monte Carlo (Parametrized)](xref:microsoft.quantum.optimization.quantum-monte-carlo#parameterized-quantum-monte-carlo-cpu)
+- [Solver: Tabu Search (Parameterized)](xref:microsoft.quantum.optimization.tabu#parameterized-tabu-search)
+- [Solver: Quantum Monte Carlo (Parameterized)](xref:microsoft.quantum.optimization.quantum-monte-carlo#parameterized-quantum-monte-carlo-cpu)
+- [Solver: Substochastic Monte Carlo (Parameterized)](xref:microsoft.quantum.optimization.substochastic-monte-carlo#parameterized-substochastic-monte-carlo)
 
 ## Target Comparison
 
@@ -39,7 +41,9 @@ In the following table you can find a brief comparison between the available tar
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
 | Parallel Tempering       | Rephrases the optimization problem as a thermodynamic system and runs multiple copies of a system, randomly initialized, at different temperatures. Then, based on a specific protocol, exchanges configurations at different temperatures to find the optimal configuration.  | <ul><li>Generally outperforms Simulated Annealing on hard problems with rugged landscapes</li><li> Very good at solving Ising problems</li></ul> |
 | Simulated Annealing      | Rephrases the optimization problem as a thermodynamic system and considers the energy of a single system. Changes to the system are accepted  if they decrease the energy or meet a criterion based on decreasing temperature.                                                 | <ul><li>Convex landscapes</li></ul>                                                                                                              |
+| Population Annealing      | Aims to alleviate the susceptibility of the Metropolis Algorithm to rough cost landscapes by simulating a population of metropolis walkers, which continuously consolidates search efforts around favorable states.                                                 | <ul><li>We recommend Population Annealing for both sparse and dense graphs.</li><li>The algorithm might not be suitable for constraint problems with large penalty terms.</li></ul>                                                                                                              |
 | Quantum Monte Carlo      | Similar to Simulated Annealing but the changes are by simulating quantum-tunneling through barriers rather  than using thermal energy jumps.                                                                                                                                   | <ul><li>Optimization landscape has tall and thin barriers</li><li>Due to its large overhead, is useful for small hard problems</li></ul>         |
+| Substochastic Monte Carlo      | Substochastic Monte Carlo is a diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It simulates the diffusion of a population of walkers in search space, while walkers are removed or duplicated based on how they perform according the cost function.                                                                                                                                   | <ul><li>The algorithm is suitable for rough optimization landscapes where Simulated Annealing or Tabu Search might return a diverse set of solutions.</li></ul>         |
 | Tabu Search              | Tabu Search looks at neighboring configurations.  It can accept worsening moves if no improving moves are available  and prohibit moves to previously-visited solutions                                                                                                        | <ul><li>Convex landscapes, high density problems, QUBO problems.</li></ul>                                                                       |
 
 ### FPGA vs. CPU
@@ -48,23 +52,21 @@ For some solvers we offer two versions: an unlabeled version that runs on tradit
 
 | Pros/Cons  | FPGA solvers                                                                                                                                                                                                                                                                                                                                                                                           |
 |------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Pros       | <ul><li>Highly parallel optimized, compared with CPU solvers, we witnessed up to 18 times performance gain (compared with 72 cpu cores) when the simulated annealing parameters settings are the same (restarts and sweeps).</li><li>FPGA solver use very condensed memory representation, so for problem with a large number of terms may fail CPU solver for OOM, but not for FPGA solver.</li></ul> |
-| Cons       | <ul><li>FPGA solver support up to 65535 variables, this is a hard limitation.</li><li>For best performance, FPGA solvers use 32 bits float point operations, because of this, the computation accuracy of FPGA solvers is a little lower than CPU solvers'.</li></ul>                                                                                                                                  |
+| Pros       | <ul><li>FPGA solvers run on highly optimized hardware that enables algorithms to parallelize very efficiently. This can achieve a significant performance gain when comparing CPU and FPGA solvers.</li><li>FPGA solver use very condensed memory representation.</li><li>This means that problems with a large number of terms may fail on a CPU solver due to a lack of memory, but run on an FPGA implementation of that solver.</li></ul> |
+| Cons       | <ul><li>Our FPGA solvers support up to 65535 variables. This is a hard limitation.</li><li>To achieve the best performance, FPGA solvers use 32-bit floating point operations.</li><li>As a result, the accuracy of FPGA solvers is a little lower than for CPU solvers.</li></ul>                                                                                                                                  |
 
 #### FPGA Regional Availability
 
-FPGA-based solvers are only available to workspaces deployed in the following Azure Regions:
+FPGA-based solvers are only available in a limited set of Azure regions. When creating your Azure Quantum workspace you can see if FPGA targets are available in the region that you have selected by accessing the Microsoft QIO provider blade on the Create screen. 
+Regions that offer access to FPGA solvers will show "FPGA simulated annealing" in their list of available targets. 
 
-| Region  |
-|---------|
-| West US |
-| East US |
+For existing workspaces you can check the "Providers" blade. Select "Modify" to view your Microsoft QIO SKU. If your workspace is in a region where FPGA solvers are available "FPGA simulated annealing" will show up in the list of targets. 
 
 #### Recommendations for FPGA solvers
 
 FPGA solvers use the same parameters as their corresponding CPU solvers, but for the best performance, please tune the parameters of FPGA solvers, instead of just directly using CPU solvers' parameters. For example, in FPGA solvers, we build about 200 parallel pipelines, and each pipeline can handle one restart, so the restarts of FPGA shall be no less than 200.
 
-FPGA solvers have an initialization time that may take a large percentage of the total runtime for small problems. If your problem can be solved on a CPU solver within a number of seconds, then you will likely not see a performance gain by switching to an FPGA. We recommend using FPGA solvers when the execution timing on CPU is at least a couple minutes.
+FPGA solvers have an initialization time that may take a large percentage of the total runtime for small problems. If your problem can be solved on a CPU solver within a number of seconds, then you will likely not see a performance gain by switching to FPGA. We recommend using FPGA solvers when the execution timing on CPU is at least a couple minutes.
 
 ## Pricing
 

@@ -20,7 +20,7 @@ In Azure Quantum, the core algorithmic approach to our tabu search implementatio
 
 Tabu search in Azure Quantum supports:
 
-- Parameter-free mode and parametrized mode (with parameters)
+- Parameter-free mode and parameterized mode (with parameters)
 - Ising and PUBO input formats
 - CPU only
 
@@ -47,7 +47,7 @@ The parameter-free solver will halt either on `timeout` (specified in seconds) o
 | Parameter Name | Description |
 |----------------|-------------|
 | `timeout` | Max execution time for the solver (in seconds). This is a best effort mechanism, so the solver may not stop immediately when the timeout is reached.|
-| `seed (optional)` | Seed value - used for reproducing results. |
+| `seed` (optional) | Seed value - used for reproducing results. |
 
 To create a parameter-free Tabu solver using the SDK:
 
@@ -57,7 +57,16 @@ from azure.quantum.optimization import Tabu
 solver = Tabu(workspace, timeout=100, seed=22)
 ```
 
-The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar number of variables, terms, locality and similar coefficient scale) using the parametrized tabu search solver.
+The parameter-free solver will return the parameters used in the result JSON. You can then use these parameters to solve similar problems (similar number of variables, terms, locality and similar coefficient scale) using the parameterized tabu search solver.
+
+Running the solver without any parameters also triggers the parameter-free version:
+
+```python
+from azure.quantum.optimization import Tabu
+# Requires a workspace already created.
+# Not specifying any parameters runs the parameter-free version of the solver.
+solver = Tabu(workspace)
+```
 
 ## Parameterized tabu search
 
@@ -70,10 +79,10 @@ Tabu search supports the following parameters:
 | `sweeps`       | Number of sets of iterations to run over the variables of a problem. The more sweeps will usually always improve the solution (unless it is already at the global min).|
 | `tabu_tenure`  | Tenure of the tabu list in moves. Describes how many moves a variable stays on the tabu list once it has been made. This value is recommended to be between 1 and the number of variables to have any impact. This will be the main tuneable parameter that will determine the quality of the solution. A good starting point is 20. |
 | `restarts`  | The number of repeated instances to run the solver. Each instance will start with a random configuration **unless an initial configuration is supplied in the problem file**. This is recommended to be at least 72 to fully utilize machine capabilities. |
-| `replicas (deprecated)`  | The number of concurrent solvers to initialize. This parameter will now default to the number of available processors on the machine, and is no longer accepting input. |
-| `seed (optional)` | Seed value - used for reproducing results |
+| `replicas` (deprecated)  | The number of concurrent solvers to initialize. This parameter will now default to the number of available processors on the machine, and is no longer accepting input. |
+| `seed` (optional) | Seed value - used for reproducing results |
 
-To create a parametrized Tabu solver using the SDK:
+To create a parameterized Tabu solver using the SDK:
 
 ```python
 from azure.quantum.optimization import Tabu

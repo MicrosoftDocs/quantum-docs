@@ -24,7 +24,7 @@ For more information:
 
 > [!NOTE]
 > This example requires Windows PowerShell Core to run.
-> Download PowerShell Core for Windows, macOS, or Linux at https://github.com/PowerShell/PowerShell.
+> Download PowerShell Core for Windows, macOS, or Linux at <https://github.com/PowerShell/PowerShell>.
 
 ## Importing required PowerShell modules ##
 

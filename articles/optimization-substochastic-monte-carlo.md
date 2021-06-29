@@ -10,10 +10,6 @@ uid: microsoft.quantum.optimization.substochastic-monte-carlo
 
 # Substochastic Monte Carlo
 
-> [!NOTE]
-> This solver is available to a subset of customers in private preview and will
-> be available to all our customers soon.
-
 [Substochastic Monte Carlo](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.94.042318) is a
 diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It
 simulates the diffusion of a population of walkers in search space, while
@@ -90,10 +86,10 @@ Substochastic Monte Carlo supports the following parameters:
 
 | Parameter Name           | Default Value   | Description |
 |--------------------------|-----------------|-------------|
-| `step_limit`             | _required_      | Number of monte carlo steps. More steps will usually improve the solution (unless it is already at the global minimum). |
+| `step_limit`             | 10000      | Number of monte carlo steps. More steps will usually improve the solution (unless it is already at the global minimum). |
 | `target_population`      | _number of threads_ | The number of walkers in the population (should be greater-equal 8). |
-| `alpha`                  | linear `1`..`0` | Schedule for the stepping chance (must be decreasing). |
-| `beta`                   | linear `1`..`5` | Schedule for the resampling factor (must be increasing). |
+| `alpha`                  | linear `1`..`0` | Schedule for the stepping chance (must be decreasing, i.e. `alpha.initial > alpha.final`). |
+| `beta`                   | linear `0`..`5` | Schedule for the resampling factor (must be increasing, i.e. `beta.initial < beta.final`). |
 | `seed` (optional)        | _time based_    | Seed value - used for reproducing results. |
 
 To create a parameterized Substochastic Monte Carlo solver for the CPU using the SDK:
@@ -101,8 +97,9 @@ To create a parameterized Substochastic Monte Carlo solver for the CPU using the
 ```python
 from azure.quantum.optimization import SubstochasticMonteCarlo, RangeSchedule
 # Requires a workspace already created.
-solver = SubstochasticMonteCarlo(workspace, step_limit=10000, target_population=64, beta=RangeSchedule("linear", 1, 5), seed=42)
+solver = SubstochasticMonteCarlo(workspace, step_limit=10000, target_population=64, beta=RangeSchedule("linear", 0, 5), seed=42)
 ```
+
 ## Parameter-Free Substochastic Monte Carlo
 Parameter-free Substochastic Monte Carlo searches for "optimal" parameters of the Substochastic Monte Carlo solver at runtime, so that solver users have no need to set up parameters like `alpha`, `beta` and so on. The only parameter required to run 
 parameter-free Substochastic Monte Carlo solver is `timeout` which represents the physical time in seconds and 
@@ -129,3 +126,4 @@ solver = SubstochasticMonteCarlo(workspace, seed=48)
 solver.target = 'microsoft.substochasticmontecarlo-parameterfree.cpu'
 solver.set_one_param("timeout", 10)
 ```
+
