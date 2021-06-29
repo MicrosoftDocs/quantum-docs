@@ -425,7 +425,7 @@ The following examples show `DumpMachine` for some common states:
 
 For the sake of simplicity, in the previous testing and debugging tools we have displayed examples of code using Q# standalone application in the command prompt and any IDE, though you can use any of the running options offered by Quantum Development Kit to develop quantum computing applications in Q#.
 
-In this case, for <xref:Microsoft.Quantum.Diagnostics.DumpMachine>, we explicitly show the development on Q# Jupyter Notebook as it offers more visualization tools for testing and debugging quantum programs.
+In this example for <xref:Microsoft.Quantum.Diagnostics.DumpMachine>, we explicitly show the development using a Q# Jupyter Notebook, as it offers more visualization tools for testing and debugging quantum programs.
 
 1. To run `DumpMachine` on Jupyter Notebook, open a [new Jupyter Notebook with a Q# kernel](xref:microsoft.quantum.install-qdk.overview.jupyter) and copy the following code to the first notebook cell.
 
