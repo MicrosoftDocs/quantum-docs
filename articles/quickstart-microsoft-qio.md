@@ -150,7 +150,7 @@ Next, we're ready to apply an optimization **solver** from one of the selected p
 
 ## Use a Microsoft QIO solver
 
- For the Microsoft QIO solver, we'll use a parameter-free version of parallel tempering. You can find documentation on this solver and the other available solvers in the [Microsoft QIO provider reference](xref:microsoft.quantum.optimization.providers.microsoft.qio).
+ For the Microsoft QIO provider, we'll use a parameter-free version of parallel tempering. You can find documentation on this solver and the other available solvers in the [Microsoft QIO provider reference](xref:microsoft.quantum.optimization.providers.microsoft.qio).
 
 ```py
 from azure.quantum.optimization import ParallelTempering
@@ -171,7 +171,7 @@ This method will submit the problem to Azure Quantum for optimization and synchr
 
 ## Use a 1Qbit solver
 
- The 1Qbit solver uses a path-relinking solver. You can find documentation on this solver and the other available solvers in the [1Qbit provider reference](xref:microsoft.quantum.providers.optimization.1qbit).
+ For the 1Qbit provider, we'll use the path-relinking solver. You can find documentation on this solver and the other available solvers in the [1Qbit provider reference](xref:microsoft.quantum.providers.optimization.1qbit).
 
 ```py
 

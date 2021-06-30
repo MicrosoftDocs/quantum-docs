@@ -28,9 +28,9 @@
     items:
     - name: Azure Quantum portal
       items:
-      - name: Quantum computing quickstart
+      - name: Create a quantum-based random number generator
         href: quickstart-microsoft-qc.md
-    - name: Quantum Development Kit (QDK) offline
+    - name: Quantum Development Kit (QDK)
       items:
       - name: Q# applications
         href: install-command-line-qdk.md
@@ -115,7 +115,7 @@
       href: optimization-overview-key-concepts.md 
   - name: Quickstart
     items:
-    - name: Optimization quickstart
+    - name: Solve a simple optimization problem
       href: quickstart-microsoft-qio.md
   - name: How-to guides
     items:
