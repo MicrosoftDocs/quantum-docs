@@ -20,6 +20,16 @@ Estimating the values of energy levels is one of the principal applications of q
 The first step is to construct the Hamiltonian representing molecular hydrogen. Although you can construct this using the NWChem tool, for brevity, this sample adds the Hamiltonian terms manually.
 
 ```csharp
+// The code snippets in this section require the following namespaces.
+// Make sure to include these at the top of your file or namespace.
+using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
+using Microsoft.Quantum.Chemistry.Fermion;
+using Microsoft.Quantum.Chemistry.Paulis;
+using Microsoft.Quantum.Chemistry.QSharpFormat;
+using Microsoft.Quantum.Simulation.Simulators;
+```
+
+```csharp
     // These orbital integrals are represented using the OrbitalIntegral
     // data structure.
     var energyOffset = 0.713776188; // This is the coulomb repulsion
@@ -48,7 +58,7 @@ Simulating the Hamiltonian requires converting the fermion operators to qubit op
     // expressed in terms of Pauli matrices. This is an essential step
     // for simulating our constructed Hamiltonians on a qubit quantum
     // computer.
-    var jordanWignerEncoding = fermionHamiltonian.ToPauliHamiltonian(Pauli.QubitEncoding.JordanWigner);
+    var jordanWignerEncoding = fermionHamiltonian.ToPauliHamiltonian(QubitEncoding.JordanWigner);
 
     // You also need to create an input quantum state to this Hamiltonian.
     // Use the Hartree-Fock state.
@@ -58,32 +68,36 @@ Simulating the Hamiltonian requires converting the fermion operators to qubit op
     // of the Hamiltonian and wavefunction made for consumption by the Q# operations.
     var qSharpHamiltonianData = jordanWignerEncoding.ToQSharpFormat();
     var qSharpWavefunctionData = fermionWavefunction.ToQSharpFormat();
-    var qSharpData = QSharpFormat.Convert.ToQSharpFormat(qSharpHamiltonianData, qSharpWavefunctionData);
+    var qSharpData = Convert.ToQSharpFormat(qSharpHamiltonianData, qSharpWavefunctionData);
 ```
 
-Next, pass `qSharpData`, which represents the Hamiltonian, to the `TrotterStepOracle` function. `TrotterStepOracle` returns a quantum operation that approximates the real-time evolution of the Hamiltonian. For more information, see [Simulating Hamiltonian dynamics](xref:microsoft.quantum.libraries.overview-chemistry.concepts.simulationalgorithms).
+Next, pass `qSharpData`, which represents the Hamiltonian, to the `TrotterStepOracle` function (available in the [Microsoft.Quantum.Chemistry.JordanWigner](xref:Microsoft.Quantum.Chemistry.JordanWigner) namespace). `TrotterStepOracle` returns a quantum operation that approximates the real-time evolution of the Hamiltonian. For more information, see [Simulating Hamiltonian dynamics](xref:microsoft.quantum.libraries.overview-chemistry.concepts.simulationalgorithms).
 
 ```qsharp
-// qSharpData passed from driver
-let qSharpData = ... 
+operation RunTrotterStep(qSharpData: JordanWignerEncodingData) : Unit {
+    // Choose the integrator step size
+    let stepSize = 1.0;
 
-// Choose the integrator step size
-let stepSize = 1.0;
+    // Choose the order of the Trotter—Suzuki integrator.
+    let integratorOrder = 4;
 
-// Choose the order of the Trotter—Suzuki integrator.
-let integratorOrder = 4;
-
-// `oracle` is an operation that applies a single time-step of evolution for duration `stepSize`.
-// `rescale` is just `1.0/stepSize` -- the number of steps required to simulate unit-time evolution.
-// `nQubits` is the number of qubits that must be allocated to run the `oracle` operation.
-let (nQubits, (rescale, oracle)) =  TrotterStepOracle (qSharpData, stepSize, integratorOrder);
+    // `oracle` is an operation that applies a single time-step of evolution for duration `stepSize`.
+    // `rescale` is just `1.0/stepSize` -- the number of steps required to simulate unit-time evolution.
+    // `nQubits` is the number of qubits that must be allocated to run the `oracle` operation.
+    let (nQubits, (rescale, oracle)) =  TrotterStepOracle (qSharpData, stepSize, integratorOrder);
+}
 ```
 
-At this point, you can use the standard library's [phase estimation algorithms](xref:microsoft.quantum.libraries.overview.characterization) to learn the ground state energy using the previous simulation. This requires preparing a good approximation to the quantum ground state. Suggestions for such approximations are provided in the [`Broombridge`](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge) schema. However, absent these suggestions, the default approach adds a number of `hamiltonian.NElectrons` electrons to greedily minimize the diagonal one-electron term energies. The phase estimation functions and operations are provided in DocFX notation in the [Microsoft.Quantum.Characterization](xref:Microsoft.Quantum.Characterization) namespace.
+At this point, you can use the standard library's [phase estimation algorithms](xref:microsoft.quantum.libraries.overview.characterization) to learn the ground state energy using the previous simulation. This requires preparing a good approximation to the quantum ground state. Suggestions for such approximations are provided in the [`Broombridge`](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge) schema. However, absent these suggestions, the default approach adds a number of `hamiltonian.NElectrons` electrons to greedily minimize the diagonal one-electron term energies. The phase estimation functions and operations are provided in DocFX notation in the [Microsoft.Quantum.Characterization](xref:Microsoft.Quantum.Characterization) namespace, as well as the [Microsoft.Quantum.Simulation](xref:Microsoft.Quantum.Simulation) namespace. Make sure to open these in your Q# file when using the `GetEnergyByTrotterization` code shown here.
 
 The following snippet shows how the real-time evolution output by the chemistry simulation library integrates with quantum phase estimation.
 
 ```qsharp
+open Microsoft.Quantum.Intrinsic;
+open Microsoft.Quantum.Chemistry.JordanWigner;
+open Microsoft.Quantum.Characterization;
+open Microsoft.Quantum.Simulation;
+
 operation GetEnergyByTrotterization (
     qSharpData : JordanWignerEncodingData,
     nBitsPrecision : Int,
@@ -123,30 +137,31 @@ operation GetEnergyByTrotterization (
 You can now invoke the Q# code from the host program. The following C# code creates a full-state simulator and runs `GetEnergyByTrotterization` to obtain the ground state energy.
 
 ```csharp
-use var qsim = new QuantumSimulator()
-{
-    // Specify the bits of precision desired in the phase estimation algorithm
-    var bits = 7;
-
-    // Specify the step size of the simulated time evolution. The step size needs to
-    // be small enough to avoid aliasing of phases, and also to control the
-    // error of simulation.
-    var trotterStep = 0.4;
-
-    // Choose the Trotter integrator order
-    Int64 trotterOrder = 1;
-
-    // As the quantum algorithm is probabilistic, run a few trials.
-
-    // This may be compared to true value of
-    Console.WriteLine("Exact molecular hydrogen ground state energy: -1.137260278.\n");
-    Console.WriteLine("----- Performing quantum energy estimation by Trotter simulation algorithm");
-    for (int i = 0; i < 5; i++)
+    using (var qsim = new QuantumSimulator())
     {
-        // EstimateEnergyByTrotterization
-        var (phaseEst, energyEst) = GetEnergyByTrotterization.Run(qsim, qSharpData, bits, trotterStep, trotterOrder).Result;
+        // Specify the bits of precision desired in the phase estimation algorithm
+        var bits = 7;
+
+        // Specify the step size of the simulated time evolution. The step size needs to
+        // be small enough to avoid aliasing of phases, and also to control the
+        // error of simulation.
+        var trotterStep = 0.4;
+
+        // Choose the Trotter integrator order
+        Int64 trotterOrder = 1;
+
+        // As the quantum algorithm is probabilistic, run a few trials.
+
+        // This may be compared to true value of
+        Console.WriteLine("Exact molecular hydrogen ground state energy: -1.137260278.\n");
+        Console.WriteLine("----- Performing quantum energy estimation by Trotter simulation algorithm");
+        for (int i = 0; i < 5; i++)
+        {
+            // EstimateEnergyByTrotterization
+            var (phaseEst, energyEst) = GetEnergyByTrotterization.Run(qsim, qSharpData, bits, trotterStep, trotterOrder).Result;
+            Console.WriteLine("Estimated molecular hydrogen ground state energy: {0}", energyEst);
+        }
     }
-}
 ```
 
 The operation returns two parameters:

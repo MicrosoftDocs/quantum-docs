@@ -10,9 +10,6 @@ uid: microsoft.quantum.optimization.population-annealing
 
 # Population Annealing
 
-> [!NOTE]
-> This solver is available to a subset of customers in private preview and will
-> be available to all our customers soon.
 
 [Population Annealing](https://arxiv.org/abs/1006.0252) is a sequential Monte
 Carlo method which aims to alleviate the susceptibility of the Metropolis
