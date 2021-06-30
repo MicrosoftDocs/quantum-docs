@@ -18,25 +18,52 @@ The cost of simulating $n$ qubits on classical computers scales exponentially wi
 Let us assume that we already have a `FermionHamiltonian` instance, say, loaded from the Broombridge schema as discussed in the [loading-from-file](xref:microsoft.quantum.libraries.overview-chemistry.examples.overview.loadhamiltonian) example.
 
 ```csharp
+// The code snippets in this section require the following namespaces.
+// Make sure to include these at the top of your file or namespace.
+using Microsoft.Quantum.Chemistry;
+using Microsoft.Quantum.Chemistry.Broombridge;
+using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
+using Microsoft.Quantum.Chemistry.Fermion;
+using Microsoft.Quantum.Chemistry.Paulis;
+using Microsoft.Quantum.Chemistry.QSharpFormat;
+using Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators;
+using System.Linq;
+```
+
+```csharp
     // Filename of Hamiltonian to be loaded.
-    var filename = "...";
+    var filename = @"...";
+    // This creates a stream that can be passed to the deserializer
+    using var textReader = System.IO.File.OpenText(filename);
 
     // This deserializes Broombridge.
-    var problem = Broombridge.Deserializers.DeserializeBroombridge(filename).ProblemDescriptions.First();
+    var problem = BroombridgeSerializer.Deserialize(textReader).First();
+
+    // This extracts the `OrbitalIntegralHamiltonian` from Broombridge format,
+    // then converts it to a fermion Hamiltonian, then to a Jordan-Wigner
+    // representation.
+    var orbitalIntegralHamiltonian = problem.OrbitalIntegralHamiltonian;
+    var fermionHamiltonian = orbitalIntegralHamiltonian.ToFermionHamiltonian(IndexConvention.UpDown);
+    var jordanWignerEncoding = fermionHamiltonian.ToPauliHamiltonian(QubitEncoding.JordanWigner);
+
+    // The desired initial state, assuming that a description of it is present in the
+    // Broombridge schema.
+    var state = "...";
+    var wavefunction = problem.InitialStates[state].ToIndexing(IndexConvention.UpDown);
 
     // This is a data structure representing the Jordan-Wigner encoding 
     // of the Hamiltonian that we may pass to a Q# algorithm.
-    var qSharpData = problem.ToQSharpFormat();
+    var qSharpHamiltonianData = jordanWignerEncoding.ToQSharpFormat();
+    var qSharpWavefunctionData = wavefunction.ToQSharpFormat();
+    var qSharpData = Convert.ToQSharpFormat(qSharpHamiltonianData, qSharpWavefunctionData);
 ```
 
 The syntax for obtaining resource estimates is almost identical to running the algorithm on the full-state simulator. We simply choose a different target machine. For the purposes of resource estimates, it suffices to evaluate the cost of a single Trotter step, or a quantum walk created by the Qubitization technique. The boilerplate for invoking these algorithms is as follows.
 
 ```qsharp
-//////////////////////////////////////////////////////////////////////////
-// Using Trotterization //////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
+open Microsoft.Quantum.Intrinsic;
+open Microsoft.Quantum.Chemistry.JordanWigner;
 
-/// # Summary
 /// This allocates qubits and applies a single Trotter step.
 operation RunTrotterStep (qSharpData: JordanWignerEncodingData) : Unit {
 
@@ -52,17 +79,11 @@ operation RunTrotterStep (qSharpData: JordanWignerEncodingData) : Unit {
     let (nQubits, (rescaleFactor, oracle)) = TrotterStepOracle(qSharpData, trotterStepSize, trotterOrder);
 
     // We not allocate qubits an run a single step.
-    use qubits = Qubit[nQubits]);
+    use qubits = Qubit[nQubits];
     oracle(qubits);
     ResetAll(qubits);
 }
 
-
-//////////////////////////////////////////////////////////////////////////
-// Using Qubitization ////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-
-/// # Summary
 /// This allocates qubits and applies a single qubitization step.
 operation RunQubitizationStep (qSharpData: JordanWignerEncodingData) : Double {
 
@@ -88,8 +109,8 @@ private static QCTraceSimulator CreateAndConfigureTraceSim()
     // Create and configure Trace Simulator
     var config = new QCTraceSimulatorConfiguration()
     {
-        usePrimitiveOperationsCounter = true,
-        throwOnUnconstraintMeasurement = false
+        UsePrimitiveOperationsCounter = true,
+        ThrowOnUnconstrainedMeasurement = false
     };
 
     return new QCTraceSimulator(config);
@@ -99,16 +120,16 @@ private static QCTraceSimulator CreateAndConfigureTraceSim()
 We now run the quantum algorithm from the driver program as follows.
 
 ```csharp
-// Instantiate a trace simulator instance
-QCTraceSimulator sim = CreateAndConfigureTraceSim();
+    // Instantiate a trace simulator instance
+    QCTraceSimulator sim = CreateAndConfigureTraceSim();
 
-// Run the quantum algorithm on the trace simulator.
-RunQubitizationStep.Run(sim, qSharpData);
+    // Run the quantum algorithm on the trace simulator.
+    RunQubitizationStep.Run(sim, qSharpData);
 
-// Print all resource counts to file.
-var gateStats = sim.ToCSV();
-foreach (var x in gateStats)
-{
-    System.IO.File.WriteAllLines($"QubitizationGateCountEstimates.{x.Key}.csv", new string[] { x.Value });
-}
+    // Print all resource counts to file.
+    var gateStats = sim.ToCSV();
+    foreach (var x in gateStats)
+    {
+        System.IO.File.WriteAllLines($"QubitizationGateCountEstimates.{x.Key}.csv", new string[] { x.Value });
+    }
 ```
