@@ -15,15 +15,16 @@ uid: microsoft.quantum.azure-quantum-overview
 Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs or solve optimization problems in the cloud. Using the Azure Quantum tools and SDKs, you can create quantum programs and run them against different quantum simulators and machines.
 
 ![alt_text=Infographic presenting the Azure Quantum service, consisting of quantum computing and optimization services.](./media/azure-quantum-infographic.png)
+
 ## Quantum computing
 
 Azure Quantum service offers you access to different providers of quantum computing devices and enables you to run your Q# quantum programs in real hardware. [Q#](xref:microsoft.quantum.overview.q-sharp) is a Microsoft’s open-source programming language for developing and running your quantum algorithms. Azure Quantum also offers the option to run algorithms in simulated quantum computers to test your code. To learn more about quantum computers and quantum algorithms see [Introduction to quantum computing](xref:microsoft.quantum.overview.qdk-overview).
 
-Azure Quantum provides access to trapped ion devices through the providers **IonQ** and **Honeywell.** 
+Azure Quantum provides access to trapped ion devices through the providers **IonQ** and **Honeywell**.
 
 ## Optimization
 
-Azure Quantum gives you access to a broad set of state-of-the-art optimization algorithms developed by Microsoft and its partners. You can use classic optimization algorithms, included some inspired by standard physics, as well as quantum-inspired optimization algorithms (QIO). 
+Azure Quantum gives you access to a broad set of state-of-the-art optimization algorithms developed by Microsoft and its partners. You can use classic optimization algorithms, included some inspired by standard physics, as well as quantum-inspired optimization algorithms (QIO).
 
 QIO uses algorithms that are based on quantum principles for increased speed and accuracy. Azure Quantum supports QIO to help developers leverage the power of new quantum techniques today without waiting for quantum hardware.
 
@@ -35,7 +36,7 @@ You use the Azure Quantum service by adding an Azure Quantum workspace resource 
 
 ## Providers and targets
 
-Another property configured in the workspace is the **provider** that you want to use to run programs in that workspace. A single provider may expose one or more **targets**, which can be quantum hardware or simulators, and are ultimately responsible for running your program. The complete list of targets can be found [here](xref:microsoft.quantum.reference.target.list).
+Another property configured in the workspace is the **provider** that you want to use to run programs in that workspace. A single provider may expose one or more **targets**, which can be quantum hardware or simulators, and are ultimately responsible for running your program. The complete list of targets can be found in the [quantum computing providers](xref:microsoft.quantum.reference.qc-target-list) and [optimization providers](xref:microsoft.quantum.reference.qio-target-list).
 
 By default, Azure Quantum adds the Microsoft QIO provider to every workspace, and you can add other providers when you create the workspace or any time afterward. For more information, see the [Microsoft QIO provider](xref:microsoft.quantum.optimization.providers.microsoft.qio).
 

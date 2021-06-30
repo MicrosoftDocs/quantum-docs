@@ -23,6 +23,16 @@ The following targets are available from this provider:
 - [Honeywell System Model H0](#honeywell-system-model-h0)
 - [Honeywell System Model H1](#honeywell-system-model-h1)
 
+### Target Availability
+
+A target's status indicates its current ability to process jobs. The possible states of a target include:
+
+- **Available**: The target is processing jobs at a normal rate.
+- **Degraded**: The target is currently processing jobs at a slower rate than usual.
+- **Unavailable**: The target currently does not process jobs.
+
+Current status information may be retrieved from the *Providers* tab of a workspace on the [Azure Portal](https://portal.azure.com).
+
 ### API Validator
 
 Tool to verify proper syntax and compilation completion. Full stack is exercised with the exception of the actual quantum operations. Assuming no bugs, all zeros are returned in the proper data structure.
@@ -65,7 +75,7 @@ $$
 where:
 
 - $N_{1q}$ is the number of one-qubit operations in a circuit.
-- $N_{2q}$ is the number of native two-qubit operations in a circuit. Native gate is equivalent to CNOT up to several one-qubit gates.  
+- $N_{2q}$ is the number of native two-qubit operations in a circuit. Native gate is equivalent to CNOT up to several one-qubit gates.
 - $N_{m}$ is the number of state preparation and measurement (SPAM) operations in a circuit including initial implicit state preparation and any intermediate and final measurements and state resets.
 - $C$ is the shot count.
 
