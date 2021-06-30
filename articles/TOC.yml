@@ -8,75 +8,6 @@
   items:
   - name: Set up Azure Quantum 
     href: install-overview-qdk.md
-- name: Optimization
-  expanded: true
-  items:
-  - name: Overview
-    items:
-    - name: What is quantum inspired optimization (QIO)?
-      href: optimization-what-is-quantum-optimization.md
-    - name: What is optimization?
-      href: optimization-overview-introduction.md
-    - name: Key concepts
-      href: optimization-overview-key-concepts.md 
-  - name: Quickstart
-    items:
-    - name: Optimization quickstart
-      href: quickstart-microsoft-qio.md
-  - name: How-to guides
-    items:
-    - name: Authenticate using a service principal
-      href: optimization-authenticate-service-principal.md
-    - name: Work with jobs
-      href: how-to-work-with-jobs.md
-    - name: Submit jobs
-      href: how-to-submit-jobs.md
-    - name: Work with Azure Quantum using the Azure CLI 
-      href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
-  - name: Concepts
-    items:
-    - name: Which solver should I use?
-      href: optimization-which-solver-should-you-use.md
-    - name: Binary optimization (QUBOs & PUBOs)
-      href: optimization-binary-optimization.md
-    - name: Ising model
-      href: optimization-concepts-ising-model-for-optimization.md
-    - name: Cost functions
-      href: optimization-concepts-cost-functions.md
-  - name: Troubleshooting
-    items:
-    - name: Troubleshoot optimization solvers
-      href: optimization-troubleshooting.md
-  - name: Resources
-    items:
-    - name: Provider reference
-      items:
-      - name: Optimization provider overview
-        href: qio-target-list.md
-      - name: Microsoft QIO
-        items:
-        - name: Overview
-          href: provider-microsoft-qio.md
-        - name: Simulated Annealing
-          href: optimization-simulated-annealing.md
-        - name: Population Annealing
-          href: optimization-population-annealing.md          
-        - name: Parallel Tempering
-          href: optimization-parallel-tempering.md
-        - name: Tabu Search
-          href: optimization-tabu-search.md
-        - name: Quantum Monte Carlo
-          href: optimization-quantum-monte-carlo.md
-        - name: Substochastic Monte Carlo
-          href: optimization-substochastic-monte-carlo.md
-      - name: 1QBit
-        items:
-        - name: 1QBit provider & targets
-          href: provider-1qbit.md
-        - name: 1QBit support policy
-          href: provider-support-1qbit.md
-    - name: Samples for using Azure Quantum optimization solvers >>
-      href: https://github.com/microsoft/qio-samples
 - name: Quantum computing
   items:
   - name: Overview
@@ -171,6 +102,75 @@
         href: provider-honeywell.md
       - name: Honeywell support policy
         href: provider-support-honeywell.md
+- name: Optimization
+  expanded: true
+  items:
+  - name: Overview
+    items:
+    - name: What is quantum inspired optimization (QIO)?
+      href: optimization-what-is-quantum-optimization.md
+    - name: What is optimization?
+      href: optimization-overview-introduction.md
+    - name: Key concepts
+      href: optimization-overview-key-concepts.md 
+  - name: Quickstart
+    items:
+    - name: Optimization quickstart
+      href: quickstart-microsoft-qio.md
+  - name: How-to guides
+    items:
+    - name: Authenticate using a service principal
+      href: optimization-authenticate-service-principal.md
+    - name: Work with jobs
+      href: how-to-work-with-jobs.md
+    - name: Submit jobs
+      href: how-to-submit-jobs.md
+    - name: Work with Azure Quantum using the Azure CLI 
+      href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
+  - name: Concepts
+    items:
+    - name: Which solver should I use?
+      href: optimization-which-solver-should-you-use.md
+    - name: Binary optimization (QUBOs & PUBOs)
+      href: optimization-binary-optimization.md
+    - name: Ising model
+      href: optimization-concepts-ising-model-for-optimization.md
+    - name: Cost functions
+      href: optimization-concepts-cost-functions.md
+  - name: Troubleshooting
+    items:
+    - name: Troubleshoot optimization solvers
+      href: optimization-troubleshooting.md
+  - name: Resources
+    items:
+    - name: Provider reference
+      items:
+      - name: Optimization provider overview
+        href: qio-target-list.md
+      - name: Microsoft QIO
+        items:
+        - name: Overview
+          href: provider-microsoft-qio.md
+        - name: Simulated Annealing
+          href: optimization-simulated-annealing.md
+        - name: Population Annealing
+          href: optimization-population-annealing.md          
+        - name: Parallel Tempering
+          href: optimization-parallel-tempering.md
+        - name: Tabu Search
+          href: optimization-tabu-search.md
+        - name: Quantum Monte Carlo
+          href: optimization-quantum-monte-carlo.md
+        - name: Substochastic Monte Carlo
+          href: optimization-substochastic-monte-carlo.md
+      - name: 1QBit
+        items:
+        - name: 1QBit provider & targets
+          href: provider-1qbit.md
+        - name: 1QBit support policy
+          href: provider-support-1qbit.md
+    - name: Samples for using Azure Quantum optimization solvers >>
+      href: https://github.com/microsoft/qio-samples
 - name: Resources
   items:
   - name: Glossary

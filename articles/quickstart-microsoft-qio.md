@@ -1,5 +1,5 @@
 ---
-title: Optimization quickstart for Azure Quantum
+title: Quickstart - Solve an optimization problem in Azure Quantum
 description: This document provides a step-by-step guide to get you started with optimization on Azure Quantum
 author: anraman
 ms.author: anraman
@@ -10,7 +10,7 @@ ms.subservice: optimization
 uid: microsoft.quantum.quickstarts.optimization.qio
 ---
 
-# Optimization quickstart for Azure Quantum
+# Quickstart: Solve an optimization problem in Azure Quantum
 
 Learn how to use optimization solvers in Azure Quantum to solve a simple binary optimization problem.
 
@@ -113,7 +113,7 @@ See more at [Azure.Quantum.Workspace](xref:microsoft.quantum.optimization.worksp
 > [!NOTE]
 > The `workspace.login()` method has been deprecated and is no longer necessary. The first time there is a call to the service, an authentication will be attempted using the credentials passed in the `Workspace` constructor or its `credentials` property. If no credentials were passed, several authentication methods will be attempted by the [DefaultAzureCredential](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-identity/1.6.0/azure.identity.html#azure.identity.DefaultAzureCredential).
 
-## Expressing and solving a simple problem
+## Express a simple problem
 
 To express a simple problem to be solved, create an instance of a `Problem` and set the `problem_type` to either `ProblemType.ising` or `ProblemType.pubo`. For more information, see [`ProblemType`](xref:microsoft.quantum.optimization.problem-type).
 
@@ -142,11 +142,15 @@ problem.add_terms(terms=terms)
 > [!NOTE]
 > There are [multiple ways](xref:microsoft.quantum.optimization.express-problem#Ways-to-supply-problem-terms) to supply terms to the problem, and not all terms must be added at once.
 
-Next, we're ready to apply an optimization **solver**. You can choose to use a solver from the Microsoft QIO provider or one from the 1Qbit provider.
+## Apply an optimization solver
 
-### Use a Microsoft QIO solver
+Next, we're ready to apply an optimization **solver** from one of the selected providers. Select the tab for your preferred provider.
 
- In this example, we'll use a parameter-free version of parallel tempering. You can find documentation on this solver and the other available solvers in the [Microsoft QIO provider reference](xref:microsoft.quantum.optimization.providers.microsoft.qio).
+## [Microsoft QIO](#tab/tabid-msqio)
+
+## Use a Microsoft QIO solver
+
+ For the Microsoft QIO solver, we'll use a parameter-free version of parallel tempering. You can find documentation on this solver and the other available solvers in the [Microsoft QIO provider reference](xref:microsoft.quantum.optimization.providers.microsoft.qio).
 
 ```py
 from azure.quantum.optimization import ParallelTempering
@@ -163,9 +167,11 @@ This method will submit the problem to Azure Quantum for optimization and synchr
 {'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0}]}
 ```
 
-### Use a 1Qbit solver
+## [1Qbit](#tab/tabid-1qbit)
 
- In this example, we'll use a path-relinking solver. You can find documentation on this solver and the other available solvers in the [1Qbit provider reference](xref:microsoft.quantum.providers.optimization.1qbit).
+## Use a 1Qbit solver
+
+ The 1Qbit solver uses a path-relinking solver. You can find documentation on this solver and the other available solvers in the [1Qbit provider reference](xref:microsoft.quantum.providers.optimization.1qbit).
 
 ```py
 
@@ -183,6 +189,7 @@ This method will submit the problem to Azure Quantum for optimization and synchr
 {'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0}]}
 ```
 
+***
 
 > [!NOTE]
 > If you run into an error while working with Azure Quantum, you can check our [list of common issues](xref:microsoft.quantum.azure.common-issues). Also if your are using an optimization solver and you get an error in the form <AZQxxx>, you can check our [list of common user errors in optimization solvers](xref:microsoft.quantum.optimization.troubleshooting).
