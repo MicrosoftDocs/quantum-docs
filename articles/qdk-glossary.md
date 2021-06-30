@@ -1,17 +1,17 @@
 ---
 author: bradben
-description: A glossary of common terms, actions and objects used in quantum computing.
+description: A glossary of common terms, actions and objects used in Azure Quantum.
 ms.author: v-benbra
-ms.date: 02/01/2021
+ms.date: 07/01/2021
 ms.service: azure-quantum
-ms.subservice: qdk
+ms.subservice: core  
 ms.topic: reference
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 title: Quantum computing glossary
 uid: microsoft.quantum.glossary-qdk
 ---
 
-# Quantum computing glossary
+# Azure Quantum glossary
 
 ## Adjoint
 
@@ -20,6 +20,26 @@ The complex conjugate transpose of an [operation](xref:microsoft.quantum.glossar
 ## Auxiliary qubit
 
 A [qubit](xref:microsoft.quantum.glossary-qdk#qubit) that serves as temporary memory for a quantum computer and is allocated and de-allocated as needed. Sometimes referred to as an **ancilla**.  For more information, see [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits).
+
+## Azure Active Directory (AAD) / Microsoft Identity Platform
+
+Azure’s identity service, used to implement access control and authentication to resources. The names Azure Active Directory and Microsoft Identity Platform are interchangeable For more information, see [Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis).
+
+## Azure Managed Application (AMA) / Managed Application
+
+A type of application offered to end customers in Azure through the Azure Marketplace. For more information, see [Azure managed applications](/azure/managed-applications/overview).
+
+## Azure Marketplace
+
+A storefront for cloud-based software in Azure. For more information, see [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/).
+
+## Azure Quantum
+
+Microsoft’s quantum service for Azure, enabling customers access to quantum solutions from both Microsoft [providers](#provider) and partner providers.
+
+## Azure Resource Manager (ARM)
+
+Azure’s deployment and management service. For more information, see [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview).
 
 ## Bell state
 
@@ -86,6 +106,10 @@ The Hadamard operation (also referred to as the Hadamard gate or transform) acts
 
 A variable whose value cannot be changed. An immutable variable in Q# is created using the `let` keyword. To declare variables that *can* be changed, use the [mutable](xref:microsoft.quantum.glossary-qdk#immutable) keyword to declare and the `set` keyword to modify the value. 
 
+## Job
+
+A [program](#quantum-program), [problem](#quantum-inspired-optimization-problem), or application, submitted to Azure Quantum for processing by an Azure Quantum [provider](#provider).
+
 ## Measurement
 
 A manipulation of a [qubit](xref:microsoft.quantum.glossary-qdk#qubit) (or set of qubits) that yields the result of an observation, in effect obtaining a classical bit. For more information, see [The Qubit](xref:microsoft.quantum.concepts.qubit#measuring-a-qubit).
@@ -114,6 +138,10 @@ Calling a [function](xref:microsoft.quantum.glossary-qdk#function) or [operation
 
 A set of three 2 x 2 unitary matrices known as the `X`, `Y` and `Z` quantum operations. The identity matrix, $I$, is often included in the set as well.  $I = \begin{bmatrix} 1 & 0 \\\\ 0 & 1 \end{bmatrix}$, $X = \begin{bmatrix} 0 & 1 \\\\ 1 & 0 \end{bmatrix}$, $Y = \begin{bmatrix} 0 & -i \\\\ i & 0 \end{bmatrix}$, $Z = \begin{bmatrix} 1 & 0 \\\\ 0 & -1 \end{bmatrix}$.   For more information, see [Single-qubit operations](xref:microsoft.quantum.concepts.qubit#single-qubit-operations).
 
+## Provider
+
+A component in Azure Quantum that provides the ability to run [jobs](#job) on selected [targets](#target-machine). Providers may be made available by Microsoft or by third-party partners.
+
 ## Quantum circuit diagram
 
 A method to graphically represent the sequence of [gates](xref:microsoft.quantum.glossary-qdk#gate) for simple quantum programs, for example 
@@ -122,9 +150,25 @@ A method to graphically represent the sequence of [gates](xref:microsoft.quantum
 
 For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
+## Quantum Development Kit (QDK)
+
+Microsoft’s software development kit for developing quantum applications in the Azure Quantum service. The QDK contains Q\#, Microsoft's programming language for quantum computing, along with Q\# libraries, samples and tutorials. It also contains developer APIs for running jobs on the Azure Quantum service. For more information, see the [Microsoft QDK Documentation](xref:microsoft.quantum.overview.qdk-overview).
+
+## Quantum-inspired optimization (QIO)
+
+The emulation of quantum algorithms on classical computing hardware to find optimal solutions to complex problems. For more information, see [What is quantum-inspired optimization?](xref:microsoft.quantum.optimization.overview.what-is-qio).
+
+## Quantum-inspired optimization problem
+
+A problem expressed using the Python optimization library and solved using Azure Quantum. Problems may be expressed as PUBOs (Polynomial Unconstrained Binary Optimization) or Ising forms. For more information, see [Binary optimization](xref:microsoft.quantum.optimization.concepts.binary-optimization).
+
 ## Quantum libraries
 
 Collections of [operations](xref:microsoft.quantum.glossary-qdk#operation), [functions](xref:microsoft.quantum.glossary-qdk#function) and [user-defined types](xref:microsoft.quantum.glossary-qdk#user-defined-type) for creating Q# programs. The [Standard library](xref:microsoft.quantum.libraries.overview.standard.intro) is installed by default. Other libraries available are the [Chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview), the [Numerics library](xref:microsoft.quantum.libraries-numerics.overview) and the [Machine learning library](xref:microsoft.quantum.libraries-machine-learning.overview).
+
+## Quantum program
+
+In the scope of Azure Quantum, a program written in Q# that targets a [provider](#provider) in the Azure Quantum service.
 
 ## Quantum state
 
@@ -140,7 +184,7 @@ A concept often used in quantum algorithms that consists of repeatedly applying 
 
 ## Standard libraries
 
-[Operations](xref:microsoft.quantum.glossary-qdk#operation), [functions](xref:microsoft.quantum.glossary-qdk#function) and [user-defined types](xref:microsoft.quantum.glossary-qdk#user-defined-type) that are installed along with the Q# compiler during installation. The standard library implementation is agnostic with respect to target machines. For more information, see [Standard libraries](xref:microsoft.quantum.libraries.overview.standard.intro).
+[Operations](xref:microsoft.quantum.glossary-qdk#operation), [functions](xref:microsoft.quantum.glossary-qdk#function) and [user-defined types](xref:microsoft.quantum.glossary-qdk#user-defined-type) that are installed along with the Q# compiler during installation. The standard library implementation is agnostic with respect to [target machines](#target-machine). For more information, see [Standard libraries](xref:microsoft.quantum.libraries.overview.standard.intro).
 
 ## Superposition
 
@@ -148,7 +192,7 @@ The concept in quantum computing that a [qubit](xref:microsoft.quantum.glossary-
 
 ## Target machine
 
-A compilation target that lowers an abstract quantum program towards hardware or simulation. This typically include re-writes for many purposes including gate replacement, encoding for error correction, geometric layout and others. For more information, see [Quantum simulators and host applications](xref:microsoft.quantum.machines.overview).
+Specific hardware or simulator exposed by a [provider](#provider) that can be used to run [jobs](#job) on Azure Quantum. Customers select which target they would like to use to run a particular [job](#job). For example, a three-qubit machine, a six-qubit machine, and a full-state simulator may each be targets.
 
 ## Teleportation
 
