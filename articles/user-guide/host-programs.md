@@ -367,7 +367,14 @@ Multiple qubits:
 [0, 1, 1, 1]
 {'CNOT': 0, 'QubitClifford': 4, 'R': 0, 'Measure': 4, 'T': 0, 'Depth': 0, 'Width': 4, 'BorrowedWidth': 0}
 ```
+Passing arrays in a similar manner is also possible. You can see an example of that in the (samples)[https://github.com/microsoft/Quantum/blob/main/samples/algorithms/reversible-logic-synthesis/host.py#L15]. 
 
+Passing qubits as arguments from classical code is not possible. Any logic that relates to Q# types like `Qubit` should live in your Q# code. If you want your Python code to specify the number of qubits, you could have something like `nQubits : Int` parameter to your Q# operation. Your Python code could pass this as a integer and then your Q# code could allocate the array of the appropriate number of qubits.
+
+For the `Pauli` and `Result` types, there are actually Python enums defined such that you could pass those values directly if you want to. See (qsharp.Pauli)[https://docs.microsoft.com/python/qsharp-core/qsharp.pauli?azure-portal=true!] and (qsharp.Result)[https://docs.microsoft.com/python/qsharp-core/qsharp.result?azure-portal=true!].
+
+Passing a previously defined callable such as an operation as arguments is possible in Python host programs. You can see an example of passing callables to Q# in the (samples)[https://github.com/microsoft/Quantum/blob/main/samples/interoperability/python/tomography-sample.ipynb].
+  
 #### Using Q# code from other projects or packages
 
 By default, the `import qsharp` command loads all of the `.qs` files in the current folder and makes their Q# operations and functions
@@ -486,6 +493,27 @@ Hence the results of `MeasureSuperpositionArray` on `n=4` qubits would fetched v
             var multiQubitResult = await MeasureSuperpositionArray.Run(sim, 4);
 ```
 
+The data type used for passing fixed-length arrays to and from Q# code is `QArray`. You have to create an instance of this data type from your array explicitly before passing it to your Q# program:
+
+```csharp
+            var qarray = new QArray<long>(arrayCreated);
+```
+Passing a string works in a similar manner. To pass a `string[]` to your Q# operation, you can construct a `QArray<string>` object from it. 
+  
+Passing qubits as arguments to your C# code is not possible. Any logic that relates to Q# types like `Qubit` should live in your Q# code, and can't be directly used from within C#. Thus, you'd likely want to make a new Q# operation to serve as the "entry point" from C#; this new operation would then be responsible for allocating qubits and passing them down.
+  
+Q# type `Result` is represented by C# class `Microsoft.Quantum.Simulation.Core.Result`; in particular, it has constants `Result.Zero` and `Result.One` that you can compare the return of your operation to. To unpack the tuple returned by operation you can do it by using the `Item1`, `Item2` fields exposed by the C# `ValueTuple` class. To turn the result back into a conventional .NET array, we finish by calling `ToArray()`. See the following C# program as an example on how to use these features. 
+  
+```csharp
+using Microsoft.Quantum.Simulation.Core;
+ 
+            var task  = QuantumOperation.Run(qsim);
+            var data = task.Result.Select((result) > result == Result.One);
+  
+            var energyEst = data.Item1;
+            var measuredState = data.Item2.ToArray();
+```
+  
 A full C# host program could thus look like
 
 ```csharp
