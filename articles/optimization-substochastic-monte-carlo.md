@@ -121,10 +121,6 @@ While the parameter-free version of Substochastic Monte Carlo is in 'early acces
 ```python
 from azure.quantum.optimization import SubstochasticMonteCarlo
 # Requires a workspace already created.
-solver = SubstochasticMonteCarlo(workspace, timeout=10, seed=48)
-```python
-from azure.quantum.optimization import SubstochasticMonteCarlo
-# Requires a workspace already created.
 solver = SubstochasticMonteCarlo(workspace, seed=48)
 solver.target = 'microsoft.substochasticmontecarlo-parameterfree.cpu'
 solver.set_one_param("timeout", 10)
