@@ -95,24 +95,21 @@ Now you are ready to verify your Q# Jupyter Notebook installation by writing and
 1. Choose **New → Q#** to create a Jupyter Notebook with a Q# kernel, and add the following code to the first notebook cell:
 
     ```qsharp
-    open Microsoft.Quantum.Intrinsic;
-
     operation SampleQuantumRandomNumberGenerator() : Result {
-        use q = Qubit(); // Allocate a qubit.
+        use q = Qubit(); // Allocate a qubit in |0>
         H(q);            // Put the qubit to superposition. It now has a 50% chance of being 0 or 1.
         let r = M(q);    // Measure the qubit value.
         Reset(q);
         return r;
     }
     ```
+> [!NOTE]
+> Callables from [Microsoft.Quantum.Intrinsic](xref:Microsoft.Quantum.Intrinsic) and [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon) (for example, [`H`](xref:Microsoft.Quantum.Intrinsic.H) operation belongs to `Microsoft.Quantum.Intrinsic` namespace) are automatically available to operations defined within cells in Q# Jupyter Notebooks. You don't need to open those namespaces in your Q# program.
+> However, this is not true for code brought in from external Q# source files (a process shown at [Intro to Q# and Jupyter Notebooks](https://github.com/microsoft/Quantum/blob/main/samples/getting-started/intro-to-iqsharp/Notebook.ipynb)).
 
-1. Run this cell of the notebook:
+1. Run this cell of the notebook. You should see `SampleQuantumRandomNumberGenerator` in the output of the cell. When running in Jupyter Notebook, the Q# code is compiled, and the cell outputs the name of any operations that it finds.
 
-    ![Jupyter Notebook cell with Q# code](~/media/install-guide-jupyter.png)
-
-    You should see `SampleQuantumRandomNumberGenerator` in the output of the cell. When running in Jupyter Notebook, the Q# code is compiled, and the cell outputs the name of any operations that it finds.
-
-1. In a new cell, run the operation you just created (in a simulator) by using the `%simulate` command:
+1. In a new cell, run the operation you just created in a simulator by using the `%simulate` magic command:
 
     ![Jupyter Notebook cell with %simulate magic](~/media/install-guide-jupyter-simulate.png)
 
