@@ -101,7 +101,11 @@ solver = SubstochasticMonteCarlo(workspace, step_limit=10000, target_population=
 ```
 
 ## Parameter-Free Substochastic Monte Carlo
-Parameter-free Substochastic Monte Carlo searches for "optimal" parameters of the Substochastic Monte Carlo solver at runtime, so that solver users have no need to set up parameters like `alpha`, `beta`, and so on. The only parameter required to run 
+
+> [!NOTE]
+> Parameter-Free Substochastic Monte Carlo is currently available to users in the Azure Quantum Early Access program. It will be available to all users in the near future.
+
+Parameter-free Substochastic Monte Carlo searches for "optimal" parameters of the Substochastic Monte Carlo solver at runtime. This means that you do not need to set up parameters like `alpha`, `beta`, and so on. The only parameter required to run the
 parameter-free Substochastic Monte Carlo solver is `timeout` which represents the physical time in seconds that the solver is allowed to run.
 
 | Parameter Name           | Default Value   | Description |
@@ -110,7 +114,10 @@ parameter-free Substochastic Monte Carlo solver is `timeout` which represents th
 | `seed` (optional)       | _time based_    | Seed value - used for reproducing results. |
 
 Note that the `timeout` parameter is required to trigger the parameter-free Substochastic Monte Carlo solver.
-For example, if you are using the latest python SDK:
+If you do not use the `timeout` parameter the default parameters for parameterized Substochastic Monte Carlo will be used instead.
+
+While the parameter-free version of Substochastic Monte Carlo is in 'early access' you can trigger the parameter-free solver by using code similar to the sample shown below:
+
 ```python
 from azure.quantum.optimization import SubstochasticMonteCarlo
 # Requires a workspace already created.
