@@ -45,7 +45,8 @@
       "feedback_product_url": "https://github.com/MicrosoftDocs/quantum-docs/issues",
       "titleSuffix": "Azure Quantum ",
       "breadcrumb_path": "/quantum/breadcrumb/toc.json",
-      "extendBreadcrumb": true
+      "extendBreadcrumb": true,
+      "zone_pivot_group_filename": "zone-pivot-groups.json"
     },
     "fileMetadata": {
       "latex_macros": {
@@ -60,9 +61,6 @@
           "defeq": "\\mathrel{:=}",
           "dd": "\\mathrm{d}"
         }
-      },
-      "zone_pivot_group_filename": {
-        "articles/*.md": "zone-pivot-groups.json"
       }
     },
     "template": [],
