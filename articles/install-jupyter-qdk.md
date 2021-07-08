@@ -109,7 +109,7 @@ Now you are ready to verify your Q# Jupyter Notebook installation by writing and
 
 1. Run this cell of the notebook. You should see `SampleQuantumRandomNumberGenerator` in the output of the cell. When running in Jupyter Notebook, the Q# code is compiled, and the cell outputs the name of any operations that it finds.
 
-1. In a new cell, run the operation you just created in a simulator by using the `%simulate` magic command:
+1. In a new cell, run the operation you just created in a simulator by using the [`%simulate` magic command](xref:microsoft.quantum.iqsharp.magic-ref.simulate):
 
     ![Jupyter Notebook cell with %simulate magic](~/media/install-guide-jupyter-simulate.png)
 
