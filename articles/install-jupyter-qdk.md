@@ -96,7 +96,7 @@ Now you are ready to verify your Q# Jupyter Notebook installation by writing and
 
     ```qsharp
     operation SampleQuantumRandomNumberGenerator() : Result {
-        use q = Qubit(); // Allocate a qubit in |0>
+        use q = Qubit(); // Allocate a qubit in the |0⟩ state.
         H(q);            // Put the qubit to superposition. It now has a 50% chance of being 0 or 1.
         let r = M(q);    // Measure the qubit value.
         Reset(q);
