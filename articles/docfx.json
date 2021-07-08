@@ -46,7 +46,7 @@
       "titleSuffix": "Azure Quantum ",
       "breadcrumb_path": "/quantum/breadcrumb/toc.json",
       "extendBreadcrumb": true,
-      "zone_pivot_group_filename": "zone-pivot-groups.json"
+      "zone_pivot_group_filename": "/quantum/zone-pivot-groups.json"
     },
     "fileMetadata": {
       "latex_macros": {

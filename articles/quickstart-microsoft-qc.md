@@ -9,7 +9,6 @@ ms.topic: quickstart
 title: Quickstart - create a quantum-based random number generator
 uid: microsoft.quantum.quickstarts.computing
 zone_pivot_groups: quantum-computing-platforms
-zone_pivot_group_filename: zone-pivot-groups.json
 ---
 
 # Quickstart: Create a quantum-based random number generator in Azure Quantum
