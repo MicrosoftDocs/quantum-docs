@@ -1,0 +1,18 @@
+# YamlMime:ZonePivotGroups
+groups:
+- id: quantum-computing-platforms
+  title: Provider platforms
+  prompt: Choose a provider platform
+  pivots:
+  - id: platform-honeywell
+    title: Honeywell
+  - id: platform-ionq
+    title: IonQ
+- id: optimization-platforms
+  title: Provider platforms
+  prompt: Choose a provider platform
+  pivots:
+  - id: platform-microsoft
+    title: Microsoft QIO
+  - id: platform-1qbit
+    title: 1Qbit

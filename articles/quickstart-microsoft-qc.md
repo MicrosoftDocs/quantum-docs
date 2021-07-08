@@ -8,11 +8,14 @@ ms.subservice: computing
 ms.topic: quickstart
 title: Quickstart - create a quantum-based random number generator
 uid: microsoft.quantum.quickstarts.computing
+zone_pivot_groups: quantum-computing-platforms
 ---
 
 # Quickstart: Create a quantum-based random number generator in Azure Quantum
 
 Learn how to use Azure Quantum to create a simple quantum-based random number generator. 
+
+::: zone pivot="platform-honeywell"
 
 ## Prerequisites
 
@@ -74,7 +77,7 @@ To open the Azure Portal, go to <https://portal.azure.com> and then follow these
    > [!NOTE]
    > By default, the Azure Quantum service adds the Microsoft QIO provider to every workspace.
 
-1. Add all the available providers, then click **Review + create**.
+1. Add at least the Honeywell provider, then click **Review + create**.
 
 1. Review the settings and approve the *Terms and Conditions of Use* of
    the selected providers. If everything is correct, click **Create** to create your workspace.
@@ -83,13 +86,6 @@ To open the Azure Portal, go to <https://portal.azure.com> and then follow these
 
 > [!NOTE]
 > Pricing for Azure Quantum varies by provider. Please consult the information in the **Providers** tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information.
-
-## Setup your project and write your program
-
-You can set up your project and run your program on any of the quantum computing providers in Azure Quantum. Select the tab for your preferred provider.
-
-
-## [Honeywell](#tab/tabid-honeywell)
 
 ## Create a Q# project in Visual Studio Code
 
@@ -247,9 +243,79 @@ Eventually, you will see the `Status` in the above table change to `Succeeded`. 
 
 The histogram you receive may be slightly different than the one above, but you should find that the states generally are observed with equal frequency.
 
+::: zone-end
 
-## [IonQ](#tab/tabid-ionq)
 
+::: zone pivot="platform-ionq"
+
+## Prerequisites
+
+- To complete this tutorial you need an Azure subscription. If you don't have
+  an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
+- In this guide we'll use [Visual Studio Code](https://code.visualstudio.com/download) which you can download and use for free.
+
+## Install the Quantum Development Kit and other resources
+
+Before you can write a Q# program and run it with one of the quantum computing providers, you'll need to install few resources:
+
+1. Install the [Microsoft QDK for VS Code extension](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
+1. Install the [Azure CLI](/cli/azure/install-azure-cli).
+1. Install the `quantum` CLI extension for the Azure CLI.
+
+   ```azurecli
+   az extension add -n quantum
+   ```
+
+## Create an Azure Quantum workspace
+
+You use the Azure Quantum service by adding an Azure Quantum workspace resource to your Azure subscription in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
+
+To open the Azure Portal, go to <https://portal.azure.com> and then follow these steps:
+
+1. Click **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
+
+   ![Tile for the Azure Quantum (preview)
+   service](./media/azure-quantum-preview-search.png)
+
+1. Click **Azure Quantum (preview)** and then click  **Create**. This opens a form to create a workspace.
+
+   ![Create resource for the Azure Quantum (preview)
+   service](./media/azure-quantum-preview-create.png)
+
+1. Fill out the details of your workspace:
+   - **Subscription:** The subscription that you want to associate with this
+     workspace. 
+   - **Resource group:** The resource group that you want to assign this workspace to.
+   - **Name:** The name of your workspace.
+   - **Region:** The region for the workspace.
+   - **Storage Account**: The Azure storage account to store your jobs and results. If you don't have an existing storage account, click **Create a new storage account** and complete the necessary fields. For this preview, we recommend using the default values.
+
+   ![Properties for the Azure Quantum workspace](./media/azure-quantum-preview-properties.png)
+
+   > [!NOTE]
+   > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](/learn/modules/control-and-organize-with-azure-resource-manager/).
+
+1. After completing the information, click the **Providers** tab to add providers to your workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
+
+   > [!NOTE]
+   > If you do not see the Honeywell or IonQ providers, you may not have access to their
+   > previews yet. If you have received an email welcoming you to either the Honeywell Preview or the IonQ Preview
+   > but you can't see their provider, please [create a ticket with Azure Support](/azure/azure-portal/supportability/how-to-create-azure-support-request).
+
+   ![Providers for Azure Quantum](./media/azure-quantum-preview-providers.png)
+
+   > [!NOTE]
+   > By default, the Azure Quantum service adds the Microsoft QIO provider to every workspace.
+
+1. Add at least the IonQ provider, then click **Review + create**.
+
+1. Review the settings and approve the *Terms and Conditions of Use* of
+   the selected providers. If everything is correct, click **Create** to create your workspace.
+
+   ![Review and create the workspace](./media/azure-quantum-preview-terms-honeywell.png)
+
+> [!NOTE]
+> Pricing for Azure Quantum varies by provider. Please consult the information in the **Providers** tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information.
 
 ## Create a Q# project in Visual Studio Code
 
@@ -443,7 +509,7 @@ Eventually, you will see the `Status` in the above table change to `Succeeded`. 
 
 The histogram you receive may be slightly different than the one above, but you should find that the states generally are observed with equal frequency.
 
-***
+::: zone-end
 
 > [!NOTE]
 > If you run into an error while working with Azure Quantum, you can check our [list of common issues](xref:microsoft.quantum.azure.common-issues).
