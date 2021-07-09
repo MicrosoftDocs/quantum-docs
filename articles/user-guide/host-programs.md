@@ -371,7 +371,7 @@ Multiple qubits:
 [0, 1, 1, 1]
 {'CNOT': 0, 'QubitClifford': 4, 'R': 0, 'Measure': 4, 'T': 0, 'Depth': 0, 'Width': 4, 'BorrowedWidth': 0}
 ```
-Passing arrays in a similar manner is also possible. You can see an example of that in the [samples](https://github.com/microsoft/Quantum/blob/main/samples/algorithms/reversible-logic-synthesis/host.py#L15). 
+Passing arrays in a similar manner is also possible. You can see an example of that in the [Reversible Logic Synthesis sample](https://github.com/microsoft/Quantum/blob/main/samples/algorithms/reversible-logic-synthesis/host.py#L15). 
 
 Passing qubits as arguments from classical code is not possible. Any logic that relates to Q# types like `Qubit` should live in your Q# code. If you want your Python code to specify the number of qubits, you could have something like `nQubits : Int` parameter to your Q# operation. Your Python code could pass this as a integer and then your Q# code could allocate the array of the appropriate number of qubits.
 
