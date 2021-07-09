@@ -142,7 +142,7 @@ However, the [`dotnet run` command](/dotnet/core/tools/dotnet-run) accepts numer
 Most Q# files will contain more than one callable, so naturally we need to let the compiler know *which* callable to run when we provide the `dotnet run` command.
 This is done with a simple change to the Q# file itself; you need to add a line with `@EntryPoint()` directly preceding the callable.
 
-Our file from above would therefore become:
+The file from above would therefore become:
 
 ```qsharp
 namespace Superposition {
