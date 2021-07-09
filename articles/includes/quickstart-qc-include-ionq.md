@@ -34,12 +34,12 @@ To open the Azure Portal, go to <https://portal.azure.com> and then follow these
 1. Click **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
 
    ![Tile for the Azure Quantum (preview)
-   service](./media/azure-quantum-preview-search.png)
+   service](../media/azure-quantum-preview-search.png)
 
 1. Click **Azure Quantum (preview)** and then click  **Create**. This opens a form to create a workspace.
 
    ![Create resource for the Azure Quantum (preview)
-   service](./media/azure-quantum-preview-create.png)
+   service](../media/azure-quantum-preview-create.png)
 
 1. Fill out the details of your workspace:
    - **Subscription:** The subscription that you want to associate with this
@@ -49,19 +49,14 @@ To open the Azure Portal, go to <https://portal.azure.com> and then follow these
    - **Region:** The region for the workspace.
    - **Storage Account**: The Azure storage account to store your jobs and results. If you don't have an existing storage account, click **Create a new storage account** and complete the necessary fields. For this preview, we recommend using the default values.
 
-   ![Properties for the Azure Quantum workspace](./media/azure-quantum-preview-properties.png)
+   ![Properties for the Azure Quantum workspace](../media/azure-quantum-preview-properties.png)
 
    > [!NOTE]
    > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](/learn/modules/control-and-organize-with-azure-resource-manager/).
 
 1. After completing the information, click the **Providers** tab to add providers to your workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
 
-   > [!NOTE]
-   > If you do not see the Honeywell or IonQ providers, you may not have access to their
-   > previews yet. If you have received an email welcoming you to either the Honeywell Preview or the IonQ Preview
-   > but you can't see their provider, please [create a ticket with Azure Support](/azure/azure-portal/supportability/how-to-create-azure-support-request).
-
-   ![Providers for Azure Quantum](./media/azure-quantum-preview-providers.png)
+   ![Providers for Azure Quantum](../media/azure-quantum-preview-providers.png)
 
    > [!NOTE]
    > By default, the Azure Quantum service adds the Microsoft QIO provider to every workspace.
@@ -71,7 +66,7 @@ To open the Azure Portal, go to <https://portal.azure.com> and then follow these
 1. Review the settings and approve the *Terms and Conditions of Use* of
    the selected providers. If everything is correct, click **Create** to create your workspace.
 
-   ![Review and create the workspace](./media/azure-quantum-preview-terms-honeywell.png)
+   ![Review and create the workspace](../media/azure-quantum-preview-terms.png)
 
 > [!NOTE]
 > Pricing for Azure Quantum varies by provider. Please consult the information in the **Providers** tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information.

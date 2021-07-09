@@ -14,19 +14,19 @@ ms.topic: include
 
 ## Create an Azure Quantum workspace
 
-You use the Azure Quantum service by adding an Azure Quantum workspace resource to your Azure subscription in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
+You use     the Azure Quantum service by adding an Azure Quantum workspace resource to your Azure subscription in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
 
 To open the Azure Portal, go to <https://portal.azure.com> and then follow these steps:
 
 1. Click **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
 
    ![Tile for the Azure Quantum (preview)
-   service](./media/azure-quantum-preview-search.png)
+   service](../media/azure-quantum-preview-search.png)
 
 1. Click **Azure Quantum (preview)** and then click  **Create**. This opens a form to create a workspace.
 
    ![Create resource for the Azure Quantum (preview)
-   service](./media/azure-quantum-preview-create.png)
+   service](../media/azure-quantum-preview-create.png)
 
 1. Fill out the details of your workspace:
    - **Subscription:** The subscription that you want to associate with this
@@ -36,7 +36,7 @@ To open the Azure Portal, go to <https://portal.azure.com> and then follow these
    - **Region:** The region for the workspace.
    - **Storage Account**: The Azure storage account to store your jobs and results. If you don't have an existing storage account, click **Create a new storage account** and complete the necessary fields. For this preview, we recommend using the default values.
 
-   ![Properties for the Azure Quantum workspace](./media/azure-quantum-preview-properties.png)
+   ![Properties for the Azure Quantum workspace](../media/azure-quantum-preview-properties.png)
 
    > [!NOTE]
    > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](/learn/modules/control-and-organize-with-azure-resource-manager/).
@@ -49,8 +49,6 @@ To open the Azure Portal, go to <https://portal.azure.com> and then follow these
 1. Ensure the Microsoft QIO provider is enabled (it is by default), then click **Review + create**.
 
 1. Review the setting you've selected and if everything is correct, click **Create** to create your workspace.
-
-   ![Review and create the workspace](./media/azure-quantum-preview-terms.png)
 
 > [!NOTE]
 > Pricing for Azure Quantum varies by provider. Please consult the information in the Providers tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information, or visit the [Azure Quantum pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
