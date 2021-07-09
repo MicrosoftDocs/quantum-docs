@@ -377,7 +377,7 @@ Passing qubits as arguments from classical code is not possible. Any logic that 
 
 For the `Pauli` and `Result` types, there are actually Python enums defined such that you could pass those values directly if you want to. See [qsharp.Pauli](https://docs.microsoft.com/python/qsharp-core/qsharp.pauli?azure-portal=true!) and [qsharp.Result](https://docs.microsoft.com/python/qsharp-core/qsharp.result?azure-portal=true!).
 
-Passing a previously defined callable such as an operation as argument is possible in Python host programs. You can see an example of passing callables to Q# in the [samples](https://github.com/microsoft/Quantum/blob/main/samples/interoperability/python/tomography-sample.ipynb).
+Passing a previously defined callable such as an operation as argument is possible in Python host programs. You can see an example of passing callables to Q# in the [Quantum Process Tomography with Q# and Python sample](https://github.com/microsoft/Quantum/blob/main/samples/interoperability/python/tomography-sample.ipynb).
   
 #### Using Q# code from other projects or packages
 
