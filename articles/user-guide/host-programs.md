@@ -168,7 +168,7 @@ Additionally, it's no problem if your callable includes [documentation comments]
 
 So far, we've only considered an operation that takes no inputs.
 Suppose we wanted to perform a similar operation, but on multiple qubits---the number of which is provided as an argument.
-Such an operation could be written as:
+Such an operation can be written as:
 
 ```qsharp
 namespace MultiSuperposition {
