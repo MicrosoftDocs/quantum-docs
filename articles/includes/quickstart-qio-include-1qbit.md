@@ -43,6 +43,8 @@ To open the Azure Portal, go to <https://portal.azure.com> and then follow these
 
 1. After completing the information, click the **Providers** tab to add providers to your workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
 
+   ![Providers for Azure Quantum](../media/azure-quantum-preview-providers-1qbit.png)
+
    > [!NOTE]
    > By default, the Azure Quantum service adds the Microsoft QIO provider to every workspace.
 

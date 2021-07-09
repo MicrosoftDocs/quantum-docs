@@ -49,7 +49,7 @@ To open the Azure Portal, go to <https://portal.azure.com> and then follow these
    - **Region:** The region for the workspace.
    - **Storage Account**: The Azure storage account to store your jobs and results. If you don't have an existing storage account, click **Create a new storage account** and complete the necessary fields. For this preview, we recommend using the default values.
 
-   ![Properties for the Azure Quantum workspace](../media/azure-quantum-preview-properties.png)
+   ![Properties for the Azure Quantum workspace](../media/azure-quantum-preview-properties-honeywell.png)
 
 
    > [!NOTE]
