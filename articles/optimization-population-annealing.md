@@ -114,6 +114,8 @@ For example, if you are using the latest python SDK:
 from azure.quantum.optimization import PopulationAnnealing
 # Requires a workspace already created.
 solver = PopulationAnnealing(workspace, timeout=10, seed=48)
+```
+While the parameter-free version of Population Annealing is in 'early access' you can trigger the parameter-free solver by using code similar to the sample shown below:
 ```python
 from azure.quantum.optimization import PopulationAnnealing
 # Requires a workspace already created.
