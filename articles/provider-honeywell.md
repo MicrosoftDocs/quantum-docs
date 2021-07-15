@@ -40,7 +40,7 @@ Tool to verify proper syntax and compilation completion. Full stack is exercised
 - Job type: `Simulation`
 - Data Format: `honeywell.openqasm.v1`
 - Target ID: `honeywell.hqs-lt-1.0-apival`
-- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.concepts.targets)
+- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
 Billing information:  No charge for usage.
 
@@ -51,7 +51,7 @@ Honeywell Quantum Solutions' Quantum Computer, System Model H0
 - Job type: `Quantum Program`
 - Data Format: `honeywell.openqasm.v1`
 - Target ID: `honeywell.hqs-lt-1.0`
-- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.concepts.targets)
+- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
 Billing information:
 
@@ -99,7 +99,7 @@ Honeywell Quantum Solutions' Quantum Computer, System Model H1
 - Job type: `Quantum Program`
 - Data Format: `honeywell.openqasm.v1`
 - Target ID: `honeywell.hqs-lt-s1`
-- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.concepts.targets)
+- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
 Billing information:
 

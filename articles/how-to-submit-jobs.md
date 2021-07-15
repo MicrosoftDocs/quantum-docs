@@ -23,7 +23,7 @@ Select the option for your development environment:
 ## Prerequisites
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
-  see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
+  see [Create an Azure Quantum workspace](xref:microsoft.quantum.quickstarts.optimization.qio).
 - The latest version of the [Quantum Development Kit for Python](xref:microsoft.quantum.install-qdk.overview.python#install-the-qsharp-python-package).
 
 Follow the installation steps in the provided link to install Python and
@@ -124,7 +124,7 @@ Python experiences.
 ## Prerequisites
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
-  see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
+  see [Create an Azure Quantum workspace](xref:microsoft.quantum.quickstarts.optimization.qio).
 - The latest version of the [Quantum Development Kit for Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.jupyter#install-the-iq-jupyter-kernel).
 
 Follow the installation steps in the provided link to install Jupyter Notebook and
@@ -200,7 +200,7 @@ Some helpful tips while using Q# Jupyter Notebooks:
 Ensure that the following items are installed on your computer:
 
 - An Azure Quantum workspace in your Azure subscription. To create
-  a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.workspaces-portal).
+  a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.quickstarts.optimization.qio).
 - The latest version of the [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview.standalone).
 - The [Azure CLI](/cli/azure/install-azure-cli).
 - The [necessary utilities to use Azure Quantum](xref:microsoft.quantum.setup.cli) (includes the `quantum`
