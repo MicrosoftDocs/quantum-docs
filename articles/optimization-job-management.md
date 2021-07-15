@@ -17,6 +17,7 @@ When a problem is submitted to a solver, a `Job` is created in Azure Quantum. Th
 - **get_job**: Returns the `Job` metadata and results for a specific job
     (based on job `id`).
 - **list_jobs**: Returns a list of all jobs in the workspace.
+- **job.details**: Returns a list of the job's details.
 - **cancel_job**: Cancels a specific job.
 
 See [Job Cancellation](xref:microsoft.quantum.azure-quantum-overview#job-cancellation) for more information on how cancellation requests are processed.
@@ -61,6 +62,36 @@ print(results)
 
 ```output
 {'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1}, 'cost': -17.0}]}
+```
+
+You can get full details about the job submission, such as the name of the job, the date of creation or the status using `job.details`:
+
+```py
+job = workspace.get_job(jobId)
+print(job.details)
+```
+
+```output
+{
+    "additional_properties": json object, e.g. if the job is being cancelled
+    "id": string, the job id
+    "name": string, the name of the job
+    "container_uri": string, where the job data is stored
+    "input_data_uri": string, where the input data is stored
+    "input_data_format": string, e.g. "microsoft.qio.v2"
+    "input_params": json object, includes solver specific parameter information, such as beta values, or population size
+    "provider_id": string, e.g. "microsoft"
+    "target": string, the name of the target, e.g."microsoft.substochasticmontecarlo.cpu"
+    "metadata":  e.g. None
+    "output_data_uri":  string, where the output data is stored
+    "output_data_format": string, e.g. "microsoft.qio-results.v2"
+    "status": string, status of the Job e.g. "Succeeded"
+    "creation_time": datetime, when the job was created
+    "begin_execution_time": datetime, when the job began execution
+    "end_execution_time": datetime, when the job completed
+    "cancellation_time":  e.g. None, when the job was cancelled (if applicable)
+    "error_data": e.g None, any error details during job submission
+}
 ```
 
 In order to cancel a job, use the function `cancel_job` as shown in this next piece of code:
