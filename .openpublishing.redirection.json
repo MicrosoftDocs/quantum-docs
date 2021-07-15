@@ -74,6 +74,11 @@
 			"source_path": "articles/qdk-glossary.md",
 			"redirect_url": "/azure/quantum/azure-quantum-glossary",
 			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/concepts-targets-in-azure-quantum.md",
+			"redirect_url": "/azure/quantum/quantum-computing-target-profiles",
+			"redirect_document_id": false
 		}
 	]
 }
