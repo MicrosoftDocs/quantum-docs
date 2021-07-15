@@ -171,42 +171,42 @@
           href: provider-support-1qbit.md
     - name: Samples for using Azure Quantum optimization solvers >>
       href: https://github.com/microsoft/qio-samples
-    - name: Python SDK
+  - name: Python SDK
+    items:
+    - name: Azure.Quantum
       items:
-      - name: Azure.Quantum
-        items:
-        - name: Workspace
-          href: optimization-workspace.md
-      - name: Azure.Quantum.Optimization
-        items:
-        - name: Job
-          href: optimization-job-reference.md
-        - name: Problem
-          href: optimization-problem.md
-        - name: ProblemType
-          href: optimization-problem-type.md
-        - name: StreamingProblem
-          href: optimization-streaming-problem.md
-        - name : Solver inputs
-          href: optimization-input-formats.md
-        - name: Term
-          href: optimization-term.md
-        - name: RangeSchedule
-          href: optimization-rangeschedule.md
-      - name: Usage
-        items:
-        - name: Express a problem
-          href: optimization-express-optimization-problem.md
-        - name: Apply a solver
-          href: optimization-usage-problem-apply-solver-to-optimization.md
-        - name: Understand solver results
-          href: optimization-understand-solver-results.md
-        - name: Job management
-          href: optimization-job-management.md
-        - name: Re-use problem definitions
-          href: optimization-reuse-problem-definitions.md
-        - name: Solve long-running problems
-          href: optimization-solve-long-running-problems.md
+      - name: Workspace
+        href: optimization-workspace.md
+    - name: Azure.Quantum.Optimization
+      items:
+      - name: Job
+        href: optimization-job-reference.md
+      - name: Problem
+        href: optimization-problem.md
+      - name: ProblemType
+        href: optimization-problem-type.md
+      - name: StreamingProblem
+        href: optimization-streaming-problem.md
+      - name : Solver inputs
+        href: optimization-input-formats.md
+      - name: Term
+        href: optimization-term.md
+      - name: RangeSchedule
+        href: optimization-rangeschedule.md
+    - name: Usage
+      items:
+      - name: Express a problem
+        href: optimization-express-optimization-problem.md
+      - name: Apply a solver
+        href: optimization-usage-problem-apply-solver-to-optimization.md
+      - name: Understand solver results
+        href: optimization-understand-solver-results.md
+      - name: Job management
+        href: optimization-job-management.md
+      - name: Re-use problem definitions
+        href: optimization-reuse-problem-definitions.md
+      - name: Solve long-running problems
+        href: optimization-solve-long-running-problems.md
 - name: Resources
   items:
   - name: Glossary
