@@ -52,12 +52,13 @@ Honeywell Quantum Solutions' Quantum Computer, System Model H1
 - Target ID: `honeywell.hqs-lt-s1`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
+
 Billing information:
 
 - **Standard Subscription:**
-Subscription plan with two 4-hour sessions of dedicated access, with unrestricted, queued access for the remainder of the month, based on system availability.
+Monthly subscription plan with 10K Honeywell quantum credits (HQCs) / month, available through queue.
 - **Premium Subscription:**
-Subscription plan with four 4-hour sessions of dedicated access, with unrestricted, queued access for the remainder of the month, based on system availability.
+Monthly subscription plan with 17K Honeywell quantum credits (HQCs) / month, available through queue.
 
 The following equation defines how circuits are translated into Honeywell Quantum Credits (HQCs):
 
