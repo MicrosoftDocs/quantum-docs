@@ -64,35 +64,32 @@ print(results)
 {'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1}, 'cost': -17.0}]}
 ```
 
-You can get full details about the job submission, such as the name of the job, the date of creation or the status using `job.details`:
+You can get full details about the job submission, such as the name of the job, the date of creation or the current status, using `job.details`:
 
 ```py
 job = workspace.get_job(jobId)
 print(job.details)
 ```
 
-```output
-{
-    "additional_properties": json object, e.g. if the job is being cancelled
-    "id": string, the job id
-    "name": string, the name of the job
-    "container_uri": string, where the job data is stored
-    "input_data_uri": string, where the input data is stored
-    "input_data_format": string, e.g. "microsoft.qio.v2"
-    "input_params": json object, includes solver specific parameter information, such as beta values, or population size
-    "provider_id": string, e.g. "microsoft"
-    "target": string, the name of the target, e.g."microsoft.substochasticmontecarlo.cpu"
-    "metadata":  e.g. None
-    "output_data_uri":  string, where the output data is stored
-    "output_data_format": string, e.g. "microsoft.qio-results.v2"
-    "status": string, status of the Job e.g. "Succeeded"
-    "creation_time": datetime, when the job was created
-    "begin_execution_time": datetime, when the job began execution
-    "end_execution_time": datetime, when the job completed
-    "cancellation_time":  e.g. None, when the job was cancelled (if applicable)
-    "error_data": e.g None, any error details during job submission
-}
-```
+|Property|Data Type| Description|
+|-----|----|----|
+|**ID**|String|The unique identifier for the job. |
+|**Name**|String| The job name. It is not required for the name to be unique. |
+|**Container_uri**|String| The blob container SAS uri, where the host job data is stored.|
+|**Input_data_uri**|String| The input blob SAS uri, where the input data is stored.|
+|**Input_data_format**|String| The format of the input data, for example, _microsoft.qio.v2_.|
+|**Input_params**|json object| The input parameters for the job. It is expected that the size of this object is small and only used to specify parameters for the execution target, such as beta values, or population size, not the input data.|
+|**Provider_id**|String| The unique identifier for the provider, for example, _microsoft_.|
+|**Target**|String| The name of the target to run the job, for example, _microsoft.substochasticmontecarlo.cpu_.|
+|**Metadata**|String| The job metadata. Metadata provides client the ability to store client-specific information.|
+|**Output_data_uri**|String| The output blob SAS uri, where the output data is stored. When a job finishes successfully, results will be uploaded to this blob.|
+|**Output_data_format**|String| The format of the output data, for example, _microsoft.qio.v2_.|
+|**Status**|String| The current status of the job, for example _Succeeded_.|
+|**Creation_time**|Datetime| The time when the job was created.|
+|**Begin_execution_time**|Datetime| The time when the job began the execution.|
+|**End_execution_time**|Datetime| The time when the job completed.|
+|**Cancellation_time**|Datetime| The time when the job was cancelled (if applicable).|
+|**Error_data**|String| Error details during job submission (only applicable if job fails).|
 
 In order to cancel a job, use the function `cancel_job` as shown in this next piece of code:
 
