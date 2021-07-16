@@ -30,7 +30,7 @@ print(results)
 
 ## Job.details
 
-Retrieves the full list of job's details.
+Retrieves the full list of the job's details.
 
 ```py
 job = workspace.get_job(jobId)
