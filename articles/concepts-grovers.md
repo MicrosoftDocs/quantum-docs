@@ -72,15 +72,15 @@ To illustrate the process, let's follow the mathematical transformations of the 
 
 ## Geometrical explanation
 
-To see why Grover's algorithm works, let's study the algorithm from a geometrical perspective. Let $\ket{bad}$ be the superposition of all states that aren't a solution to the search problem. Supposing there are $M$ valid solutions, we get:
+To see why Grover's algorithm works, let's study the algorithm from a geometrical perspective. Let $\ket{\text{bad}}$ be the superposition of all states that aren't a solution to the search problem. Supposing there are $M$ valid solutions, we get:
 
 $$\ket{\text{bad}}=\frac{1}{\sqrt{N-M}}\sum_{x:f(x)=0}\ket{x}$$
 
-We define the state $\ket{good}$ as the superposition of all states that *are* a solution to the search problem:
+We define the state $\ket{\text{good}}$ as the superposition of all states that *are* a solution to the search problem:
 
 $$\ket{\text{good}}=\frac{1}{\sqrt{M}}\sum_{x:f(x)=1}\ket{x}$$
 
-Since *good* and *bad* are mutually exclusive sets because an item cannot be valid and not valid, the states $\ket{good}$ and $\ket{bad}$ are orthogonal. Both states form the orthogonal basis of a plane in the vector space. We can use this plane to visualize the algorithm.
+Since *good* and *bad* are mutually exclusive sets because an item cannot be valid and not valid, the states $\ket{\text{good}}$ and $\ket{\text{bad}}$ are orthogonal. Both states form the orthogonal basis of a plane in the vector space. We can use this plane to visualize the algorithm.
 
 ![The plane projected by the orthogonal good and bad vectors.](./media/plane-grovers.png)
 
