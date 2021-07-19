@@ -119,10 +119,10 @@
         items:
         - name: Workspace
           href: optimization-workspace.md
-      - name: Azure.Quantum.Optimization
-        items:
         - name: Job
           href: optimization-job-reference.md
+      - name: Azure.Quantum.Optimization
+        items:
         - name: Problem
           href: optimization-problem.md
         - name: ProblemType
