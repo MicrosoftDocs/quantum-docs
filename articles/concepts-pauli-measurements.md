@@ -42,7 +42,7 @@ $$
 By reading the diagonal elements of the Pauli-$Z$ matrix, we can see that $Z$ has two eigenvectors, $\ket{0}$ and $\ket{1}$, with corresponding eigenvalues $\pm 1$.
 Thus, if we measure the qubit and obtain `Zero` (corresponding to the state $\ket{0}$), we know that the state of our qubit is a $+1$ eigenstate of the $Z$ operator.
 Similarly, if we obtain `One`, we know that the state of our qubit is a $-1$ eigenstate of $Z$.
-This process is referred to in the language of Pauli measurements as "measuring Pauli $Z$," and is entirely equivalent to performing a computational basis measurement.
+This process is referred to in the language of Pauli measurements as "measuring Pauli $Z$", and is entirely equivalent to performing a computational basis measurement.
 
 Any $2\times 2$ matrix that is a unitary transformation of $Z$ also satisfies this criteria.
 That is, we could also use a matrix $A=U^\dagger Z U$, where $U$ is any other unitary matrix, to give a matrix that defines the two outcomes of a measurement in its $\pm 1$ eigenvectors.
@@ -56,7 +56,7 @@ These measurements are given below for convenience.
 | $X$               | $H$                    |
 | $Y$               | $HS^{\dagger}$         |
 
-That is, using this language, "measure $Y$" is equivalent to applying $HS^\dagger$ and then measuring in the computational basis, where [`S`](xref:Microsoft.Quantum.Intrinsic.S) is an intrinsic quantum operation sometimes called the "phase gate," and can be simulated by the unitary matrix
+That is, using this language, "measure $Y$" is equivalent to applying $HS^\dagger$ and then measuring in the computational basis, where [`S`](xref:Microsoft.Quantum.Intrinsic.S) is an intrinsic quantum operation sometimes called the "phase gate", and can be simulated by the unitary matrix
 
 $$
 \begin{align}
