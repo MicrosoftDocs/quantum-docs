@@ -77,6 +77,57 @@ for job in jobs:
 > f0c8de58-68f1-11ea-a565-2a16a847b8a3 Executing
 ```
 
+The Workspace.list_jobs method also allows the user to filter on the creation date, status and name properties of a job when listing. Filters can be combined.
+
+### Filtering by creation time on list_jobs
+
+To filter by jobs created after a certain time, set the **created_after** filter. This parameter accepts a datetime object.
+- A datetime without timezone information will be assumed to be in the local time of the user.
+
+```py
+from azure.quantum import Workspace
+from datetime import datetime, timedelta, timezone
+
+# filter jobs created within the last day (in local time).
+creation_time = datetime.now() - timedelta(days=1)
+
+workspace = Workspace(...)
+jobs = workspace.list_jobs(created_after=creation_time)
+```
+
+### Filtering by job name on list_jobs
+To filter by jobs by a certain name, set the **name_match** filter. This parameter accepts a regex string.
+
+```py
+from azure.quantum import Workspace
+
+workspace = Workspace(...)
+
+# filter job name on any regex expression
+jobs1 = workspace.list_jobs(name_match="job_.+")
+jobs2 = workspace.list_jobs(name_match=".*test.*")
+jobs3 = workspace.list_jobs(name_match="regular_string_job_name")
+```
+
+### Filtering by job status on list_jobs
+To filter by jobs by status, set the **status** filter. This parameter accepts a JobStatus enumeration.
+
+```py
+from azure.quantum import Workspace
+from azure.quantum._client.models import JobStatus
+
+workspace = Workspace(...)
+
+# list succeeded jobs
+jobs1 = workspace.list_jobs(status=JobStatus.SUCCEEDED)
+
+# list pending jobs
+jobs2 = workspace.list_jobs(status=JobStatus.EXECUTING)
+
+# list failed jobs
+jobs3 = workspace.list_jobs(status=JobStatus.FAILED)
+```
+
 ## Workspace.cancel_job
 
 Cancels a job that was previously submitted.
