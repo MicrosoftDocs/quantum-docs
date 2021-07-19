@@ -114,7 +114,7 @@ To filter by jobs by status, set the **status** filter. This parameter accepts a
 
 ```py
 from azure.quantum import Workspace
-from azure.quantum._client.models import JobStatus
+from azure.quantum import JobStatus
 
 workspace = Workspace(...)
 
