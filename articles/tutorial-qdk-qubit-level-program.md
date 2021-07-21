@@ -330,7 +330,7 @@ namespace NamespaceQFT
     {
         static void Main(string[] args)
         {
-            using var qsim = new QuantumSimulator()
+            using (var qsim = new QuantumSimulator())
             {
                 Perform3QubitQFT.Run(qsim).Wait();
             }
