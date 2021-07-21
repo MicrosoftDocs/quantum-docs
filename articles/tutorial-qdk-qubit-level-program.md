@@ -615,7 +615,7 @@ namespace NamespaceQFT
     {
         static void Main(string[] args)
         {
-            using var qsim = new QuantumSimulator()
+            using (var qsim = new QuantumSimulator())
             {
                 var measurementResult = Perform3QubitQFT.Run(qsim).Result;
                 System.Console.WriteLine(
