@@ -25,7 +25,7 @@ Create an instance of the `QuantumSimulator` class and then pass it to the `Run`
 of a quantum operation, along with any additional parameters.
 
 ```csharp
-    use var sim = new QuantumSimulator()
+    using var sim = new QuantumSimulator()
     {
         var res = myOperation.Run(sim).Result;
         ///...
@@ -64,7 +64,7 @@ Use the IQ# magic command [%simulate](xref:microsoft.quantum.iqsharp.magic-ref.s
 By default, the full state simulator uses a random number generator to simulate quantum randomness. For testing purposes, it is sometimes useful to have deterministic results. In a C# program, you can accomplish this by providing a seed for the random number generator in the `QuantumSimulator` constructor via the `randomNumberGeneratorSeed` parameter.
 
 ```csharp
-    use var sim = new QuantumSimulator(randomNumberGeneratorSeed: 42)
+    using var sim = new QuantumSimulator(randomNumberGeneratorSeed: 42)
     {
         var res = myOperationTest.Run(sim).Result;
         ///...
