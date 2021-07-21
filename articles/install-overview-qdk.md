@@ -27,7 +27,7 @@ The QDK consists of:
 - A Python SDK to use optimization solvers on Azure Quantum
 - Tools to facilitate your development
 
--### [Use the QDK locally](#tab/tabid-local)
+### [Use the QDK locally](#tab/tabid-local)
 
 ## Install the QDK and develop quantum applications locally
 
@@ -35,8 +35,8 @@ Q# programs can run as standalone applications using Visual Studio Code or Visua
 
 You can use the QDK for quantum computing in three ways:
 
-- [Install the QDK for quantum computing locally](#install-the-qdk-for-quantum-computing-locally)
-- [Use the QDK for quantum computing with Binder](#use-the-qdk-for-quantum-computing-online)
+- [Install the QDK for quantum computing locally](#install-options-for-the-qdk)
+- [Use the QDK for quantum computing with Binder](#use-the-qdk-for-quantum-computing-with-binder)
 - [Use a QDK for quantum computing Docker image](#use-the-qdk-for-quantum-computing-with-docker)
 
 ### Install options for the QDK
@@ -104,7 +104,7 @@ You can also use Docker with a Visual Studio Code Remote Development Container t
 
 The workflows for each of these setups are described and compared in [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
 
--### [Use the Azure Quantum service](#tab/tabid-aq-service)
+### [Use the Azure Quantum service](#tab/tabid-aq)
 
 ## Set up the Azure Quantum service
 
