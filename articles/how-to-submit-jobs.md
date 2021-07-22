@@ -211,6 +211,8 @@ Ensure that the following items are installed on your computer:
 These steps show how to use the Azure CLI to run a Q# application and select a target from
 the different providers of your Azure Quantum workspace.
 
+You will also find a full reference for all commands and features available through the `az quantum` extension in the corresponding section of the [Azure CLI documentation](/cli/azure/quantum).
+
 > [!NOTE]
 > A provider is a partner quantum service consisting of quantum
 > hardware, a simulator, or an optimization service.
