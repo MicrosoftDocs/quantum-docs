@@ -1,6 +1,7 @@
 - name: Azure Quantum documentation
   href: index.yml
 - name: Overview
+  expanded: true
   items:
   - name: What is Azure Quantum?
     href: overview-azure-quantum.md
