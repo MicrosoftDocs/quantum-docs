@@ -55,8 +55,8 @@ Now that you have installed the tools to use Azure Quantum you can learn to subm
 
 ### For optimization users
 
-Learn how to [use the Python SDK](xref:microsoft.quantum.optimization.install-sdk) to solve optimization problems.
+Learn how to [use the Python SDK](xref:microsoft.quantum.quickstarts.optimization.qio) to solve optimization problems.
 
 ### For quantum computing users
 
-Learn how to [create Q# applications and run them on Azure Quantum](xref:microsoft.quantum.create-applications).
+Learn how to [create Q# applications and run them on Azure Quantum](xref:microsoft.quantum.target-profiles).
