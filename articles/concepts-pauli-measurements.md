@@ -56,7 +56,7 @@ These measurements are given below for convenience.
 | $X$               | $H$                    |
 | $Y$               | $HS^{\dagger}$         |
 
-That is, using this language, "measure $Y$" is equivalent to applying $HS^\dagger$ and then measuring in the computational basis, where [`S`](xref:Microsoft.Quantum.Intrinsic.S) is an intrinsic quantum operation sometimes called the "phase gate", and can be simulated by the unitary matrix
+That is, using this language, "measure $Y$" is equivalent to applying $HS^\dagger$ and then measuring in the computational basis, where [`S`](xref:Microsoft.Quantum.Intrinsic.S) is an intrinsic quantum operation sometimes called the "phase gate," and can be simulated by the unitary matrix
 
 $$
 \begin{align}
