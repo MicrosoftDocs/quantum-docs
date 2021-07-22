@@ -1,14 +1,17 @@
 - name: Azure Quantum documentation
   href: index.yml
 - name: Overview
+  expanded: true
   items:
   - name: What is Azure Quantum?
     href: overview-azure-quantum.md
 - name: Get started
+  expanded: true
   items:
   - name: Set up Azure Quantum 
     href: install-overview-qdk.md
 - name: Quantum computing
+  expanded: true
   items:
   - name: Overview
     items:
