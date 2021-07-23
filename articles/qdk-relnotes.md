@@ -28,6 +28,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Improved error message on IQ# `%azure.*` magic commands when no quantum computing targets are available.
 - `azure-quantum` Python package now requires minimum versions for all dependencies to mitigate issues with older dependencies. (link to issue)
 - Fixed a [bug](xref:https://github.com/microsoft/iqsharp/issues/448) in which job execution would fail if any operation was defined that wasn't supported on the given target
+- Released Az CLI quantum extension version 0.6.1: Added command to request job cancellation: `az quantum job cancel`; fixed a bug in which job submissions in Azure Quantum that emit standard output were reported as failed, even if the job succeeded; enabled job submissions from a different directory using `--project` parameter; added version number as part of ApplicationID in job submissions.
 
 ## QDK Version 0.17.2105.144881
 
