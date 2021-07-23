@@ -100,4 +100,28 @@ from azure.quantum.optimization import SubstochasticMonteCarlo, RangeSchedule
 solver = SubstochasticMonteCarlo(workspace, step_limit=10000, target_population=64, beta=RangeSchedule("linear", 0, 5), seed=42)
 ```
 
-Running the solver without parameters will apply the default parameters shown in the table above. These default values are subject to change and we strongly recommend setting the values based on your problem rather than using the defaults.
+## Parameter-Free Substochastic Monte Carlo
+
+> [!NOTE]
+> Parameter-Free Substochastic Monte Carlo is currently available to users in the Azure Quantum Early Access program. It will be available to all users in the near future.
+
+Parameter-free Substochastic Monte Carlo searches for "optimal" parameters of the Substochastic Monte Carlo solver at runtime. This means that you do not need to set up parameters like `alpha`, `beta`, and so on. The only parameter required to run the
+parameter-free Substochastic Monte Carlo solver is `timeout` which represents the physical time in seconds that the solver is allowed to run.
+
+| Parameter Name           | Default Value   | Description |
+|--------------------------|-----------------|-------------|
+| `timeout` (required)    | 5      | Number of seconds to allow the solver to run.|
+| `seed` (optional)       | _time based_    | Seed value - used for reproducing results. |
+
+Note that the `timeout` parameter is required to trigger the parameter-free Substochastic Monte Carlo solver.
+If you do not use the `timeout` parameter the default parameters for parameterized Substochastic Monte Carlo will be used instead.
+
+While the parameter-free version of Substochastic Monte Carlo is in 'early access' you can trigger the parameter-free solver by using code similar to the sample shown below:
+
+```python
+from azure.quantum.optimization import SubstochasticMonteCarlo
+# Requires a workspace already created.
+solver = SubstochasticMonteCarlo(workspace, seed=48)
+solver.target = 'microsoft.substochasticmontecarlo-parameterfree.cpu'
+solver.set_one_param("timeout", 10)
+```
