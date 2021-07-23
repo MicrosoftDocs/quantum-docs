@@ -30,6 +30,17 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Fixed a [bug](https://github.com/microsoft/iqsharp/issues/448) in which job execution would fail if any operation was defined that wasn't supported on the given target
 - Released Az CLI quantum extension version 0.6.1: Added command to request job cancellation: `az quantum job cancel`; fixed a bug in which job submissions in Azure Quantum that emit standard output were reported as failed, even if the job succeeded; enabled job submissions from a different directory using `--project` parameter; added version number as part of ApplicationID in job submissions.
 
+## QDK Version 0.18.2106.148911
+
+*Release date: June 25th, 2021*
+
+- You can now [configure](xref:microsoft.quantum.optimization.apply-solver#returning-multiple-solutions) how many solutions you want returned from a solver run.
+- A new NuGet package [Microsoft.Quantum.AutoSubstitution](https://www.nuget.org/packages/Microsoft.Quantum.AutoSubstitution/), which when added to a Q# project, allows you to annotate operations with the `SubstitutableOnTarget(AltOp, Sim)` attribute. It will then call `AltOp` instead of the annotated operation, whenever it is executed using `Sim`.
+- Integration with Azure-Identity provides more mechanisms to [authenticate](xref:microsoft.quantum.iqsharp.magic-ref.azure.connect) with Azure.
+- The .NET [Microsoft.Azure.Management.Quantum](https://www.nuget.org/packages/Microsoft.Azure.Management.Quantum) now returns the Restricted Access URL so you can to know more/apply for a restricted access SKU.
+- Preview support for noisy simulation in open systems and stabilizer representations [qsharp-runtime#714](https://github.com/microsoft/qsharp-runtime/issues/714). See [here](https://github.com/microsoft/qsharp-runtime/blob/0826903c0842ba99a923e79be9f072054fe44a43/documentation/preview-simulators.md) for documentation on preview simulators.
+- Using [quantum-viz.js](https://github.com/microsoft/quantum-viz.js) as the engine to render the output from the jupyter notebook %trace magic.
+
 ## QDK Version 0.17.2105.144881
 
 *Release date: June 1st, 2021*
