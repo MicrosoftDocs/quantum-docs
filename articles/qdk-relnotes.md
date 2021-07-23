@@ -19,6 +19,16 @@ For installation instructions, please refer to the [install guide](xref:microsof
 
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
+## QDK Version 0.xx.xxxx.xxxxxx
+
+*Release date: July 27th, 2021*
+
+- You can filter by job name, job status and job creation time when listing jobs in azure-quantum.
+- Fixed [regression](xref:https://github.com/microsoft/qsharp-compiler/issues/1067) in Code Actions due to incompatibility with protocol in VS 16.10.x versions.
+- Improved error message on IQ# `%azure.*` magic commands when no quantum computing targets are available.
+- `azure-quantum` Python package now requires minimum versions for all dependencies to mitigate issues with older dependencies. (link to issue)
+- Fixed a [bug](xref:https://github.com/microsoft/iqsharp/issues/448) in which job execution would fail if any operation was defined that wasn't supported on the given target
+
 ## QDK Version 0.17.2105.144881
 
 *Release date: June 1st, 2021*
