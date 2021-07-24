@@ -87,7 +87,7 @@ You can develop Q# code in most of your favorites IDEs, as well as integrate Q# 
         <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.python">Install</a></td>
     </tr>
     <tr>
-        <td align="right"><img src="~/media/dotnet.png" alt="dotnet install" width="50"/></td>
+        <td align="right"><img src="~/media/dotnet-2.png" alt="dotnet install" width="50"/></td>
         <td align="left"><b>Q# and .NET (C#, F#)</b></td> 
         <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.cs">Install</a></td>
         <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.cs">Install</a></td>
