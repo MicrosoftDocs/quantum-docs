@@ -2,7 +2,7 @@
 author: geduardo
 description: This document provides a list of the available optimization providers on Azure Quantum.
 ms.author: kitty
-ms.date: 04/03/2021
+ms.date: 07/26/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
@@ -23,7 +23,9 @@ Azure Quantum offers optimization targets to solve binary optimization problems 
 
 ### 1QBit Tabu Search Solver
 
+
 An iterative heuristic algorithm that uses local search techniques to solve a QUBO problem. It starts from a random solution and looks for an improved solution in the solution's neighborhood that includes all possible single flips. The algorithm stops when it reaches a stopping criterion, such as a specified number of consecutive iterations without improvement.
+
 
 For more information, see the [1QBit provider reference page](xref:microsoft.quantum.providers.optimization.1qbit#tabu-search-solver).
 
@@ -43,7 +45,9 @@ For more information, see the [1QBit provider reference page](xref:microsoft.qua
 
 ![alt_text=logo of Microsoft](~/media/logo-microsoft.png)
 
+
 For an overview of the available Microsoft QIO solvers, see the [Microsoft QIO provider](xref:microsoft.quantum.optimization.providers.microsoft.qio) overview page.
+
 
 ### Simulated Annealing
 
@@ -67,4 +71,5 @@ Quantum Monte Carlo is a Metropolis annealing algorithm, similar in concept to s
 
 ### Substochastic Monte Carlo
 
-Substochastic Monte Carlo is a diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It simulates the diffusion of a population of walkers in search space, while walkers are removed or duplicated based on how they perform according to the cost function. This target is available on CPUs. For more information,see the [Substochastic Monte Carlo](xref:microsoft.quantum.optimization.substochastic-monte-carlo) reference page.
+Substochastic Monte Carlo is a diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It simulates the diffusion of a population of walkers in search space, while walkers are removed or duplicated based on how they perform according to the cost function. This target is available on CPUs. For more information, see the [Substochastic Monte Carlo](xref:microsoft.quantum.optimization.substochastic-monte-carlo) reference page.
+
