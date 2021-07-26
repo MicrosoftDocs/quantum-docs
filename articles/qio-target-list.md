@@ -17,7 +17,7 @@ Azure Quantum offers optimization targets to solve binary optimization problems 
 > [!NOTE]
 > Optimization targets can't run Q# applications or any other type of quantum computing program. Optimization solvers are optimization algorithms that run on specialized classical hardware.
 
-## Provider: 1Qbit
+## Provider: 1QBit
 
 ![alt_text=logo of 1qbit](~/media/logo-1qbit.png)
 
