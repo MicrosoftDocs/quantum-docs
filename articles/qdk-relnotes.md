@@ -30,7 +30,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Fixed a [bug](https://github.com/microsoft/iqsharp/issues/448) in which job execution would fail if any operation was defined that wasn't supported on the given target
 - Released Az CLI quantum extension version 0.6.1: 
     - Added command to request job cancellation: `az quantum job cancel`. 
-    - Fixed a bug in which job submissions in Azure Quantum that emit standard output were reported as failed, even if the job succeeded.
+    - Fixed a [bug in iqsharp](https://github.com/microsoft/iqsharp/issues/448) in which job submissions in Azure Quantum that emit standard output were reported as failed, even if the job succeeded.
     - Enabled job submissions from a different directory using `--project` parameter.
 
 ## QDK Version 0.18.2106.148911
