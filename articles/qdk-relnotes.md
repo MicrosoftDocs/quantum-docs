@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the latest updates to the Microsoft Quantum Development Kit preview.
 ms.author: v-benbra
-ms.date: 02/01/2021
+ms.date: 07/26/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
