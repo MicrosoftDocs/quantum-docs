@@ -2,7 +2,7 @@
 author: geduardo
 description: This document provides a list of the available optimization providers on Azure Quantum.
 ms.author: kitty
-ms.date: 04/03/2021
+ms.date: 07/26/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
