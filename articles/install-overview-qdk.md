@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to set up Azure Quantum for different workflows.
 ms.author: v-benbra
-ms.date: 07/21/2021
+ms.date: 07/26/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart

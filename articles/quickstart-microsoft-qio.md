@@ -4,7 +4,7 @@ description: This document provides a step-by-step guide to get you started with
 author: anraman
 ms.author: anraman
 ms.topic: quickstart
-ms.date: 02/01/2021
+ms.date: 07/26/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 uid: microsoft.quantum.quickstarts.optimization.qio
