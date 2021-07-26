@@ -61,4 +61,4 @@ The option will have the following behavior and requirements:
 - Solvers are guaranteed to return the best solution they find in index 0. They will return the rest of the solutions (if any) in the same list and in sorted order.
 - A build of the Python SDK for Optimization with version 0.17.2106 or higher is required to take advantage of the feature
 
-**Not supported:** this option is not available on FPGA solvers.
+This option is available on both CPU and FPGA solvers. 
