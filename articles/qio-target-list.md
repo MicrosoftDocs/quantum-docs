@@ -10,7 +10,7 @@ title: List of optimization targets on Azure Quantum
 uid: microsoft.quantum.reference.qio-target-list
 ---
 
-# List of targets on Azure Quantum
+# Optimization providers on Azure Quantum
 
 Azure Quantum offers optimization targets to solve binary optimization problems on classical CPUs, or hardware accelerated on field-programmable gate arrays (FPGA), GPUs, or hardware annealers.
 
@@ -27,19 +27,19 @@ Azure Quantum offers optimization targets to solve binary optimization problems 
 An iterative heuristic algorithm that uses local search techniques to solve a QUBO problem. It starts from a random solution and looks for an improved solution in the solution's neighborhood that includes all possible single flips. The algorithm stops when it reaches a stopping criterion, such as a specified number of consecutive iterations without improvement.
 
 
-For more information, see the [1QBit provider reference page](xref:microsoft.quantum.providers.optimization.1qbit#tabu-search-solver).
+For more information, see the [1QBit provider](xref:microsoft.quantum.providers.optimization.1qbit#tabu-search-solver) reference page.
 
 ### 1QBit PTICM Solver
 
 The parallel tempering with isoenergetic cluster moves (PTICM) solver is a Monte Carlo approach to solving QUBO problems. In this algorithm, multiple replicas of the original system, each with a different initial state, are simulated at different temperatures simultaneously. The replicas at neighboring temperatures are periodically swapped based on a Metropolis criterion. These swaps allow different replicas to do a random walk in the temperature space, thereby, efficiently overcoming energy barriers.
 
-For more information, see the [1QBit provider reference page](xref:microsoft.quantum.providers.optimization.1qbit#pticm-solver).
+For more information, see the [1QBit provider](xref:microsoft.quantum.providers.optimization.1qbit#pticm-solver) reference page.
 
 ### 1QBit Path-Relinking Solver
 
 The path-relinking algorithm is a heuristic algorithm that uses the tabu search as a subroutine to solve a QUBO problem. The algorithm starts from a set of elite solutions found by the tabu search. It then constructs a path between each pair of elite solutions, selects one of the solutions along the path, and repeats the tabu search. If the tabu search finds a distinct solution that is better than the current worst elite solution, the elite solutions set is updated with the new improved solution. This whole procedure is repeated until the algorithm meets a stopping condition.
 
-For more information, see the [1QBit provider reference page](xref:microsoft.quantum.providers.optimization.1qbit#path-relinking-solver).
+For more information, see the [1QBit provider](xref:microsoft.quantum.providers.optimization.1qbit#path-relinking-solver) reference page.
 
 ## Provider: Microsoft QIO
 
