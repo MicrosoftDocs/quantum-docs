@@ -32,6 +32,9 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
     - Added command to request job cancellation: `az quantum job cancel`. 
     - Fixed a bug in which job submissions in Azure Quantum that emit standard output were reported as failed, even if the job succeeded.
     - Enabled job submissions from a different directory using `--project` parameter.
+- Parameter Free Population Annealing solver is now available through the 'Early Access' SKU in Azure Quantum. Sign up for early access: [https://aka.ms/aq/preview](https://aka.ms/aq/preview)
+- Terms banner in Review tab in Azure Quantum portal is hidden when only Microsoft provider is being added during workspace creation.
+
 
 ## QDK Version 0.18.2106.148911
 
