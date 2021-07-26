@@ -87,24 +87,26 @@
         href: concepts-oracles.md
       - name: Theory of Grover's algorithm
         href: concepts-grovers.md
-  - name: Provider reference
-    items:
-    - name: Quantum computing provider overview
-      href: qc-target-list.md
-    - name: Quantum computing profile targets
-      href: quantum-computing-target-profiles.md 
-    - name: IonQ
+  - name: Resources
+    items: 
+    - name: Provider reference
       items:
-      - name: IonQ provider & targets
-        href: provider-ionq.md
-      - name: IonQ support policy
-        href: provider-support-ionq.md
-    - name: Honeywell
-      items:
-      - name: Honeywell provider & targets
-        href: provider-honeywell.md
-      - name: Honeywell support policy
-        href: provider-support-honeywell.md
+      - name: Quantum computing provider overview
+        href: qc-target-list.md
+      - name: Quantum computing profile targets
+        href: quantum-computing-target-profiles.md 
+      - name: IonQ
+        items:
+        - name: IonQ provider & targets
+          href: provider-ionq.md
+        - name: IonQ support policy
+          href: provider-support-ionq.md
+      - name: Honeywell
+        items:
+        - name: Honeywell provider & targets
+          href: provider-honeywell.md
+        - name: Honeywell support policy
+          href: provider-support-honeywell.md
 - name: Optimization
   expanded: true
   items:

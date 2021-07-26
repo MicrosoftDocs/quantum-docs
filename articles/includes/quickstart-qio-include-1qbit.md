@@ -140,7 +140,7 @@ problem.add_terms(terms=terms)
 
 ## Apply an optimization solver
 
- For the 1Qbit provider, we'll use the path-relinking solver. You can find documentation on this solver and the other available solvers in the [1Qbit provider reference](xref:microsoft.quantum.providers.optimization.1qbit).
+ For the 1QBit provider, we'll use the path-relinking solver. You can find documentation on this solver and the other available solvers in the [1QBit provider reference](xref:microsoft.quantum.providers.optimization.1qbit).
 
 ```py
 

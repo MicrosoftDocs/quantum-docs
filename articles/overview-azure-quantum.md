@@ -18,7 +18,7 @@ The Microsoft Quantum Development Kit (QDK) consists of [Q#](xref:microsoft.quan
 
 Azure Quantum currently partners with the following providers to enable you to run your Q# quantum programs on real hardware, and the option to test your code on simulated quantum computers. 
 
-- 1Qbit
+- 1QBit
 - Honeywell
 - IonQ
 

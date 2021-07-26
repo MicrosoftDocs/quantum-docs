@@ -42,7 +42,7 @@ Learn how to use optimization solvers in Azure Quantum to solve a simple binary 
 - [Reuse problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions)
 - [Authenticating with a service principal](xref:microsoft.quantum.optimization.authenticate-service-principal)
 - [Solvers reference for Microsoft QIO solver](xref:microsoft.quantum.optimization.providers.microsoft.qio)
-- [Solvers reference for 1Qbit solver](xref:microsoft.quantum.providers.optimization.1qbit)
+- [Solvers reference for 1QBit solver](xref:microsoft.quantum.providers.optimization.1qbit)
 
 ### Samples and end-to-end learning
 
