@@ -33,7 +33,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
     - Fixed a bug in which job submissions in Azure Quantum that emit standard output were reported as failed, even if the job succeeded.
     - Enabled job submissions from a different directory using `--project` parameter.
 
-## Azure Quantum service update
+### Azure Quantum service update
 
 - Parameter Free Population Annealing solver is now available through the 'Early Access' SKU in Azure Quantum. Sign up for early access: [https://aka.ms/aq/preview](https://aka.ms/aq/preview)
 - Terms banner in Review tab in Azure Quantum portal is hidden when only Microsoft provider is being added during workspace creation.
