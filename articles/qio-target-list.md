@@ -2,7 +2,7 @@
 author: geduardo
 description: This document provides a list of the available optimization providers on Azure Quantum.
 ms.author: kitty
-ms.date: 04/03/2021
+ms.date: 07/26/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
@@ -12,18 +12,18 @@ uid: microsoft.quantum.reference.qio-target-list
 
 # List of targets on Azure Quantum
 
-Azure Quantum offers optimization targets to solve binary optimization problems on classical CPUs, or hardware accelerated on field-programmable gate arrays (FPGA), GPUs or hardware annealers.
+Azure Quantum offers optimization targets to solve binary optimization problems on classical CPUs, or hardware accelerated on field-programmable gate arrays (FPGA), GPUs, or hardware annealers.
 
 > [!NOTE]
 > Optimization targets can't run Q# applications or any other type of quantum computing program. Optimization solvers are optimization algorithms that run on specialized classical hardware.
 
-## Provider: 1Qbit
+## Provider: 1QBit
 
 ![alt_text=logo of 1qbit](~/media/logo-1qbit.png)
 
 ### 1QBit Tabu Search Solver
 
-An iterative heuristic algorithm that uses local search techniques to solve a QUBO problem. It starts from a random solution and looks for an improved solution in the solution's neighborhood which includes all possible single flips. The algorithm stops when it reaches a stopping criterion, such as a specified number of consecutive iterations without improvement.
+An iterative heuristic algorithm that uses local search techniques to solve a QUBO problem. It starts from a random solution and looks for an improved solution in the solution's neighborhood, which includes all possible single flips. The algorithm stops when it reaches a stopping criterion, such as a specified number of consecutive iterations without improvement.
 
 For more information, go to the [1QBit provider reference page](xref:microsoft.quantum.providers.optimization.1qbit#tabu-search-solver).
 
@@ -43,7 +43,7 @@ For more information, go to the [1QBit provider reference page](xref:microsoft.q
 
 ![alt_text=logo of Microsoft](~/media/logo-microsoft.png)
 
-For an overview of the Microsoft QIO solvers available, please refer to the [Microsoft QIO overview page](xref:microsoft.quantum.optimization.providers.microsoft.qio).
+For an overview of the Microsoft QIO solvers available, refer to the [Microsoft QIO overview page](xref:microsoft.quantum.optimization.providers.microsoft.qio).
 
 ### Simulated Annealing
 
@@ -67,4 +67,4 @@ Quantum Monte Carlo is a Metropolis annealing algorithm, similar in concept to s
 
 ### Substochastic Monte Carlo
 
-Substochastic Monte Carlo is a diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It simulates the diffusion of a population of walkers in search space, while walkers are removed or duplicated based on how they perform according the cost function. This target is available on CPUs. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.substochastic-monte-carlo).
+Substochastic Monte Carlo is a diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It simulates the diffusion of a population of walkers in search space, while walkers are removed or duplicated based on how they perform according to the cost function. This target is available on CPUs. For more information, go to the [Microsoft QIO provider reference page](xref:microsoft.quantum.optimization.substochastic-monte-carlo).
