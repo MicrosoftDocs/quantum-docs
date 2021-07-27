@@ -19,14 +19,14 @@ For installation instructions, please refer to the [install guide](xref:microsof
 
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
-## QDK Version 0.xx.xxxx.xxxxxx
+## QDK Version 0.18.2107.153439
 
 *Release date: July 27th, 2021*
 
 - You can filter by job name, job status and job creation time when listing jobs in azure-quantum.
 - Fixed [regression](https://github.com/microsoft/qsharp-compiler/issues/1067) in Code Actions due to incompatibility with protocol in VS 16.10.x versions.
 - Improved error message on IQ# `%azure.*` magic commands when no quantum computing targets are available.
-- `azure-quantum` Python package now requires minimum versions for all dependencies to [mitigate issues with older dependencies](https://github.com/microsoft/qdk-python/issues/80).
+- `azure-quantum` Python package fixes an [issue](https://github.com/microsoft/qdk-python/issues/80) with MSAL Credentials on Windows and now requires minimum versions for all dependencies to mitigate other potential issues with older dependencies.
 - Fixed a [bug in iqsharp](https://github.com/microsoft/iqsharp/issues/448) in which job execution would fail if any operation was defined that wasn't supported on the given target
 - Released Az CLI quantum extension version 0.6.1: 
     - Added command to request job cancellation: `az quantum job cancel`. 
