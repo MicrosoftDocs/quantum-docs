@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the latest updates to the Microsoft Quantum Development Kit preview.
 ms.author: v-benbra
-ms.date: 02/01/2021
+ms.date: 07/26/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
@@ -18,6 +18,27 @@ This article contains information on each Quantum Development Kit release.
 For installation instructions, please refer to the [install guide](xref:microsoft.quantum.install-qdk.overview).
 
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
+
+## QDK Version 0.18.2107.153439
+
+*Release date: July 27th, 2021*
+
+- You can filter by job name, job status and job creation time when listing jobs in azure-quantum.
+- Fixed [regression](https://github.com/microsoft/qsharp-compiler/issues/1067) in Code Actions due to incompatibility with protocol in VS 16.10.x versions.
+- Improved error message on IQ# `%azure.*` magic commands when no quantum computing targets are available.
+- `azure-quantum` Python package fixes an [issue](https://github.com/microsoft/qdk-python/issues/80) with MSAL Credentials on Windows and now requires minimum versions for all dependencies to mitigate other potential issues with older dependencies.
+- Fixed a [bug in iqsharp](https://github.com/microsoft/iqsharp/issues/448) in which job execution would fail if any operation was defined that wasn't supported on the given target
+- Fixed a [bug in iqsharp](https://github.com/microsoft/iqsharp/issues/484) in which some programs targeting hardware that supports the [Basic Measurement Feedback profile](https://docs.microsoft.com/en-us/azure/quantum/concepts-targets-in-azure-quantum#quantum-processing-units-qpu-different-profiles) were incorrectly being reported as not supported by the Azure Quantum target
+- Released Az CLI quantum extension version 0.6.1: 
+    - Added command to request job cancellation: `az quantum job cancel`. 
+    - Fixed a bug in which job submissions in Azure Quantum that emit standard output were reported as failed, even if the job succeeded.
+    - Enabled job submissions from a different directory using `--project` parameter.
+
+### Azure Quantum service update
+
+- Parameter Free Population Annealing solver is now available through the 'Early Access' SKU in Azure Quantum. Sign up for early access: [https://aka.ms/aq/preview](https://aka.ms/aq/preview)
+- Terms banner in Review tab in Azure Quantum portal is hidden when only Microsoft provider is being added during workspace creation.
+
 
 ## QDK Version 0.18.2106.148911
 

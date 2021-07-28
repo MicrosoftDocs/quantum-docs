@@ -99,13 +99,13 @@ If you would like to use a different editor, the instructions so far have you al
 
 ## Write your first Q# program
 
-Now you are ready to verify your `qsharp` Python package installation by writing a simple Q# program and running it on a quantum [simulator](/azure/quantum/user-guide/machines/).
+Now you are ready to verify your `qsharp` Python package installation by writing a simple Q# program and running it on a quantum [simulator](xref:microsoft.quantum.machines.overview).
 
 1. Create a minimal Q# operation by creating a file called `Operation.qs` and adding the following code to it:
 
     :::code language="qsharp" source="~/quantum/samples/interoperability/qrng/Qrng.qs" range="3-14":::
 
-1. In the same folder as `Operation.qs`, create the following Python program called `host.py`. This program [imports the Q# operation](/azure/quantum/user-guide/host-programs?tabs=tabid-python#q-with-host-programs) `SampleQuantumRandomNumberGenerator()` defined in step 1 and runs it on the [default simulator](/azure/quantum/user-guide/machines/full-state-simulator) with a `.simulate()` call:
+1. In the same folder as `Operation.qs`, create the following Python program called `host.py`. This program [imports the Q# operation](/azure/quantum/user-guide/host-programs?tabs=tabid-python#q-with-host-programs) `SampleQuantumRandomNumberGenerator()` defined in step 1 and runs it on the [default simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) with a `.simulate()` call:
 
     ```python
     import qsharp
@@ -131,10 +131,10 @@ Now that you have tested the Quantum Development Kit in your preferred environme
 
 For more information on how to run Q# programs with Python, see the following articles:
 
-- how [Q# interacts with a Python host program](/azure/quantum/user-guide/host-programs?tabs=tabid-python#q-with-host-programs)
+- how [Q# interacts with a Python host program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs?tabs=tabid-python#q-with-host-programs)
 
-- how to [run Q# on a local simulator](/azure/quantum/user-guide/machines/full-state-simulator)
+- how to [run Q# on a local simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
 
-- how to [run Q# on quantum hardware](/azure/quantum/how-to-submit-jobs-with-python) through Azure Quantum
+- how to [run Q# on quantum hardware](xref:microsoft.quantum.submit-jobs) through Azure Quantum
 
-- how to first [estimate quantum resources](/azure/quantum/user-guide/machines/resources-estimator) required by your program
+- how to first [estimate quantum resources](xref:microsoft.quantum.machines.overview.resources-estimator) required by your program
