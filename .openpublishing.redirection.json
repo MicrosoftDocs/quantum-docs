@@ -45,6 +45,7 @@
 			"redirect_url": "/azure/quantum/user-guide/language/TypeSystem/",
 			"redirect_document_id": false
 		},
+		{
 			"source_path": "articles/quickstart-1qbit.md",
 			"redirect_url": "/azure/quantum/quickstart-microsoft-qio",
 			"redirect_document_id": false
