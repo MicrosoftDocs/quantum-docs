@@ -2,7 +2,7 @@
 author: KittyYeungQ
 description: This document provides a basic guide to applying a optimization solver in Azure Quantum using Python.
 ms.author: kitty
-ms.date: 07/26/2021
+ms.date: 07/27/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: conceptual
@@ -48,7 +48,7 @@ solver =  SimulatedAnnealing(workspace, timeout=100, platform=HardwarePlatform.F
 
 ### Returning multiple solutions
 
-CPU-based solvers in the Microsoft QIO provider support the option to return more than one solution during a single run. 
+Both FPGA and CPU solvers in the Microsoft QIO provider support the option to return more than one solution during a single run. 
 Use `set_number_of_solutions` to set this option.
 
 ```py
@@ -62,6 +62,3 @@ This option has the following behavior and requirements:
 - Solvers are not guaranteed to return the exact number of solutions specified by the parameter as solvers may not find that many solutions. 
 - Solvers are guaranteed to return the best solution they find in index 0. They will return the rest of the solutions (if any) in the same list and in sorted order.
 - A build of the Python SDK for Optimization with version 0.17.2106 or higher is required to take advantage of the feature.
-
-> [!NOTE]
-> `set_number_of_solutions` is not supported on FPGA solvers.
