@@ -41,11 +41,6 @@
 			"redirect_document_id": false
 		},
 		{
-			"source_path": "articles/how-to-submit-jobs-with-azure-cli.md",
-			"redirect_url": "/azure/quantum/how-to-submit-jobs",
-			"redirect_document_id": false
-		},
-		{
 			"source_path": "articles/how-to-submit-jobs-with-python.md",
 			"redirect_url": "/azure/quantum/how-to-submit-jobs",
 			"redirect_document_id": false

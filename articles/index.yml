@@ -23,11 +23,11 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: Introduction to quantum computing
+          - text: What is quantum computing?
             url: overview-qdk.md
       - linkListType: quickstart
         links:
-          - text: Quantum computing quickstart
+          - text: Create a quantum-based random number generator in Azure Quantum
             url: quickstart-microsoft-qc.md
       - linkListType: concept
         links:
@@ -47,13 +47,13 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-        - text: Introduction to optimization
+        - text: What is optimization?
           url: optimization-overview-introduction.md
         - text: What are quantum-inspired algorithms?
           url: optimization-what-is-quantum-optimization.md
       - linkListType: quickstart 
         links:
-          - text: Optimization quickstart
+          - text: Solve an optimization problem in Azure Quantum
             url: quickstart-microsoft-qio.md
       - linkListType: concept 
         links:
@@ -63,7 +63,7 @@ landingContent:
             url: optimization-binary-optimization.md
       - linkListType: learn
         links:
-          - text: Overview of optimization solvers
+          - text: Optimization providers and solvers
             url: xref:microsoft.quantum.reference.qio-target-list
           - text: Microsoft Learn modules for optimization
             url: https://docs.microsoft.com/learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
@@ -77,10 +77,10 @@ landingContent:
             url: overview-what-is-qsharp-and-qdk.md
           - text: More about the QDK
             url: https://azure.microsoft.com/resources/development-kit/quantum-computing/
-      - linkListType: quickstart
+      - linkListType: tutorial
         links:
-          - text: Implement a Quantum Random Number Generator in Q#
-            url: tutorial-qdk-quantum-random-number-generator.md
+          - text: Explore entanglement with Q#
+            url: tutorial-qdk-explore-entanglement.md
       - linkListType: concept
         links:
           - text: The Quantum Development Kit
@@ -90,7 +90,7 @@ landingContent:
           - text: Q# user guide
             url: user-guide\index.md
           - text: Q# programs
-            url: \user-guide\programs.md
+            url: user-guide\programs.md
 
   #  Community
   - title: Community & contribution

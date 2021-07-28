@@ -4,7 +4,7 @@ description: This document provides a step-by-step guide to get you started with
 author: anraman
 ms.author: anraman
 ms.topic: quickstart
-ms.date: 02/01/2021
+ms.date: 07/26/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 uid: microsoft.quantum.quickstarts.optimization.qio
@@ -42,7 +42,7 @@ Learn how to use optimization solvers in Azure Quantum to solve a simple binary 
 - [Reuse problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions)
 - [Authenticating with a service principal](xref:microsoft.quantum.optimization.authenticate-service-principal)
 - [Solvers reference for Microsoft QIO solver](xref:microsoft.quantum.optimization.providers.microsoft.qio)
-- [Solvers reference for 1Qbit solver](xref:microsoft.quantum.providers.optimization.1qbit)
+- [Solvers reference for 1QBit solver](xref:microsoft.quantum.providers.optimization.1qbit)
 
 ### Samples and end-to-end learning
 

@@ -2,7 +2,7 @@
 author: KittyYeungQ
 description: This document provides the information about how to install the necessary tools on your computer to submit Q# programs to Azure Quantum from the command line.
 ms.author: kitty
-ms.date: 02/01/2021
+ms.date: 07/26/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
