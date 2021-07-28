@@ -15,25 +15,32 @@ uid: microsoft.quantum.libraries.overview-chemistry.concepts.symmetries
 
 The inherent symmetry of the Coulomb Hamiltonian, which is the Hamiltonian given in [Quantum Models for Electronic Systems](xref:microsoft.quantum.libraries.overview-chemistry.concepts.quantummodels), that describes electrons interacting electrically with each other and with the nuclei, leads to a number of symmetries that can be exploited to compress the terms in the Hamiltonian.
 In general if no further assumptions are made about the basis functions $\psi_j$ then we only have that
-\begin{equation}
+
+$$
 h_{pqrs}= h_{qpsr},\tag{★}\label{eq:hpqrs}
-\end{equation}
+$$
+
 which can be immediately seen from the integrals in [Quantum Models for Electronic Systems](xref:microsoft.quantum.libraries.overview-chemistry.concepts.quantummodels) upon noting that their values remain identical if $p,q$ and $r,s$ are interchanged from anti-commutation.
 
-If we assume that the spin-orbitals are real-valued (as they are for Gaussian orbital bases) then we further have that 
-\begin{equation}
+If we assume that the spin-orbitals are real-valued (as they are for Gaussian orbital bases) then we further have that
+
+$$
 h_{pqrs} = h_{qpsr} = h_{srqp} = h_{rspq}=h_{rqps}=h_{psrq}=h_{spqr}=h_{qrsp}.\tag{★}\label{eq:hpqrsreal}
-\end{equation}
+$$
+
 Given such assumptions hold, we can use the above symmetries to reduce the data needed to store the matrix elements of the Hamiltonian by a factor of $8$; although doing so makes importing data in a consistent way slightly more challenging.
 Fortunately the Hamiltonian simulation library has subroutines that can be used to import integral files from either [LIQUI$|\rangle$](https://www.microsoft.com/research/project/language-integrated-quantum-operations-liqui/) or directly from [NWChem](http://www.nwchem-sw.org/index.php/Main_Page).
 
 Molecular orbital integrals such as these (for example, the $h\_{pq}$ and $h\_{pqrs}$ terms) are represented using the `OrbitalIntegral` type, which provides a number of helpful functions to express this symmetry.
 
 ```csharp
-    // Load the namespace containing orbital integral objects.
-    using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
+// The code snippets in this section require the following namespaces.
+// Make sure to include these at the top of your file or namespace.
+using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
+```
 
-    // Create a `OrbitalIntegral` instance to store a one-electron molecular 
+```csharp
+    // Create a `OrbitalIntegral` instance to store a one-electron molecular
     // orbital integral data.
     var oneElectronOrbitalIndices = new[] { 0, 1 };
     var oneElectronCoefficient = 1.0;
@@ -56,6 +63,7 @@ Molecular orbital integrals such as these (for example, the $h\_{pq}$ and $h\_{p
 ```
 
 In addition to enumerating over all orbital integrals that are numerically identical, a list of all spin-orbital indices contained in the Hamiltonian represented by an `OrbitalIntegral` may be generated as follows.
+
 ```csharp
     // Create a `OrbitalIntegral` instance to store a two-electron molecular
     // orbital integral data.
@@ -66,27 +74,34 @@ In addition to enumerating over all orbital integrals that are numerically ident
     // of `SpinOrbital` instances.
     var twoElectronSpinOrbitalIndices = twoElectronIntegral.EnumerateSpinOrbitals();
 ```
+
 ## Constructing Fermionic Hamiltonians from Molecular Integrals
 
 Rather than constructing a Fermionic Hamiltonian by adding `FermionTerm`s, all terms corresponding to each orbital integral may be added automatically.
-For example, the following code automatically enumerates over all permutational symmetries and orders the terms in canonical order: 
-```csharp
-    // Load the namespace containing fermion objects. This
-    // example also uses LINQ queries.
-    using Microsoft.Quantum.Chemistry.Fermion;
-    using System.Linq;
+For example, the following code automatically enumerates over all permutational symmetries and orders the terms in canonical order:
 
-    // Create a `OrbitalIntegral` instance to store a two-electron molecular 
+```csharp
+// The code snippets in this section require the following namespaces.
+// Make sure to include these at the top of your file or namespace.
+using Microsoft.Quantum.Chemistry;
+using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
+using Microsoft.Quantum.Chemistry.Fermion;
+// We load this namespace for convenience methods for manipulating arrays.
+using System.Linq;
+```
+
+```csharp
+    // Create a `OrbitalIntegral` instance to store a two-electron molecular
     // orbital integral data.
     var orbitalIntegral = new OrbitalIntegral(new[] { 0, 1, 2, 3 }, 0.123);
 
     // Create an `OrbitalIntegralHamiltonian` instance to store the orbital integral
-    // terms
+    // terms.
     var orbitalIntegralHamiltonian = new OrbitalIntegralHamiltonian();
     orbitalIntegralHamiltonian.Add(orbitalIntegral);
 
     // Convert the orbital integral representation to a fermion
-    // representation. This also requires choosing a convention for 
+    // representation. This also requires choosing a convention for
     // mapping spin orbital indices to integer indices.
     var fermionHamiltonian = orbitalIntegralHamiltonian.ToFermionHamiltonian(IndexConvention.UpDown);
 

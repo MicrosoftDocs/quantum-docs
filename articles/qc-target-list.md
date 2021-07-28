@@ -2,7 +2,7 @@
 author: geduardo
 description: This document provides a list of the available quantum computing providers on Azure Quantum.
 ms.author: kitty
-ms.date: 04/03/2021
+ms.date: 07/26/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
@@ -10,7 +10,7 @@ title: List of quantum computing targets on Azure Quantum
 uid: microsoft.quantum.reference.qc-target-list
 ---
 
-# List of quantum computing targets on Azure Quantum
+# Quantum computing providers on Azure Quantum
 
 Azure Quantum also offers a variety of quantum solutions, such as
 different hardware devices and quantum simulators that you can use to run Q# quantum computing programs.
