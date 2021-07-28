@@ -24,6 +24,26 @@
 			"source_path": "articles/azure.quantum.optimization.md",
 			"redirect_url": "/azure/quantum/optimization-job-reference",
 			"redirect_document_id": false
-		}
+		},
+		{
+			"source_path": "articles/user-guide/language/Expressions/identifiers.md",
+			"redirect_url": "/azure/quantum/user-guide/language/Expressions/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/language/ProgramStructure/accessmodifiers.md",
+			"redirect_url": "/azure/quantum/user-guide/language/ProgramStructure/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/language/ProgramStructure/attributes.md",
+			"redirect_url": "/azure/quantum/user-guide/language/ProgramStructure/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/language/TypeSystem/typeinference.md",
+			"redirect_url": "/azure/quantum/user-guide/language/TypeSystem/",
+			"redirect_document_id": false
+		},
 	]
 }
