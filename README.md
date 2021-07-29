@@ -1,4 +1,4 @@
-# Azure Quantum documentation -TEST
+# Azure Quantum documentation
 
 Welcome to Azure Quantum! This is the repository for the documentation of Azure Quantum.
 
