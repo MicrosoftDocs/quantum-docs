@@ -24,6 +24,76 @@
 			"source_path": "articles/azure.quantum.optimization.md",
 			"redirect_url": "/azure/quantum/optimization-job-reference",
 			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/language/Expressions/identifiers.md",
+			"redirect_url": "/azure/quantum/user-guide/language/Expressions/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/language/ProgramStructure/accessmodifiers.md",
+			"redirect_url": "/azure/quantum/user-guide/language/ProgramStructure/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/language/ProgramStructure/attributes.md",
+			"redirect_url": "/azure/quantum/user-guide/language/ProgramStructure/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/language/TypeSystem/typeinference.md",
+			"redirect_url": "/azure/quantum/user-guide/language/TypeSystem/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/quickstart-1qbit.md",
+			"redirect_url": "/azure/quantum/quickstart-microsoft-qio",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/quickstart-honeywell.md",
+			"redirect_url": "/azure/quantum/quickstart-microsoft-qc",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/quickstart-ionq.md",
+			"redirect_url": "/azure/quantum/quickstart-microsoft-qc",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/how-to-submit-jobs-with-python.md",
+			"redirect_url": "/azure/quantum/how-to-submit-jobs",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/how-to-submit-jobs-with-jupyter-notebooks.md",
+			"redirect_url": "/azure/quantum/how-to-submit-jobs",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/how-to-create-applications-for-azure-quantum.md",
+			"redirect_url": "/azure/quantum/quantum-computing-target-profiles",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-install-sdk.md",
+			"redirect_url": "/azure/quantum/quickstart-microsoft-qio",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/how-to-create-quantum-workspaces-with-the-azure-portal.md",
+			"redirect_url": "/azure/quantum/quickstart-microsoft-qio",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/qdk-glossary.md",
+			"redirect_url": "/azure/quantum/azure-quantum-glossary",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/concepts-targets-in-azure-quantum.md",
+			"redirect_url": "/azure/quantum/quantum-computing-target-profiles",
+			"redirect_document_id": false
 		}
 	]
 }

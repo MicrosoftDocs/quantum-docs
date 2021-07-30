@@ -2,7 +2,7 @@
 author: george-moussa
 description: Reference for azure.quantum.Workspace
 ms.author: georgenm
-ms.date: 02/01/2021
+ms.date: 07/26/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -18,10 +18,10 @@ from azure.quantum import Workspace
 
 ## Constructor
 
-To create a Workspace object, you must supply the following arguments in order
+To create a `Workspace` object, you must supply the following arguments in order
 to connect. If you have not already created a workspace, follow the steps in
 [Creating an Azure Quantum workspace
-guide](xref:microsoft.quantum.workspaces-portal) using the following values:
+guide](xref:microsoft.quantum.quickstarts.optimization.qio) using the following values:
 
 - `subscription_id`: The subscription ID where the workspace is deployed.
 - `resource_group`: The name of the resource group where the workspace is deployed.
@@ -63,6 +63,7 @@ print(job.details.status)
 ## Workspace.list_jobs
 
 Returns the list of existing jobs in the workspace.
+
 ```py
 from azure.quantum import Workspace
 
@@ -75,6 +76,63 @@ for job in jobs:
 > 0ab1863a-68f2-11ea-82b3-2a16a847b8a3 Succeeded
 > 0c5c507e-68f2-11ea-ba75-2a16a847b8a3 Cancelled
 > f0c8de58-68f1-11ea-a565-2a16a847b8a3 Executing
+```
+
+The `Workspace.list_jobs` method also allows the user to filter on the creation date, status and name properties of a job when listing. Filters can be combined. 
+
+> [!NOTE]
+> To use the filter feature, you must have **version 0.18.2107** or newer of the [Python SDK for Azure Quantum](xref:microsoft.quantum.quickstarts.optimization.qio#install-the-python-sdk-for-azure-quantum). 
+
+### Filtering by creation time on list_jobs
+
+To filter by jobs created after a certain time, set the `created_after` filter. This parameter accepts a `datetime` object.
+
+- A datetime without timezone information is assumed to be in the local time of the user.
+
+```py
+from azure.quantum import Workspace
+from datetime import datetime, timedelta, timezone
+
+# filter jobs created within the last day (in local time).
+creation_time = datetime.now() - timedelta(days=1)
+
+workspace = Workspace(...)
+jobs = workspace.list_jobs(created_after=creation_time)
+```
+
+### Filtering by job name on list_jobs
+
+To filter by jobs by a certain name, set the `name_match` filter. This parameter accepts a regex string.
+
+```py
+from azure.quantum import Workspace
+
+workspace = Workspace(...)
+
+# filter job name on any regex expression
+jobs1 = workspace.list_jobs(name_match="job_.+")
+jobs2 = workspace.list_jobs(name_match=".*test.*")
+jobs3 = workspace.list_jobs(name_match="regular_string_job_name")
+```
+
+### Filtering by job status on list_jobs
+
+To filter by jobs by status, set the `status` filter. This parameter accepts a `JobStatus` enumeration.
+
+```py
+from azure.quantum import Workspace
+from azure.quantum import JobStatus
+
+workspace = Workspace(...)
+
+# list succeeded jobs
+jobs1 = workspace.list_jobs(status=JobStatus.SUCCEEDED)
+
+# list pending jobs
+jobs2 = workspace.list_jobs(status=JobStatus.EXECUTING)
+
+# list failed jobs
+jobs3 = workspace.list_jobs(status=JobStatus.FAILED)
 ```
 
 ## Workspace.cancel_job
