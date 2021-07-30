@@ -107,6 +107,8 @@
           href: provider-honeywell.md
         - name: Honeywell support policy
           href: provider-support-honeywell.md
+    - name: Samples for using Azure Quantum Computing >>
+      href: https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum
 - name: Optimization
   expanded: true
   items:
