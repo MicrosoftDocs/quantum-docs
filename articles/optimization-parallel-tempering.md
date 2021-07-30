@@ -39,6 +39,29 @@ It is also very good at solving Ising problems, or problems that are equivalent 
 > [!NOTE]
 > For further information on determining which solver to use, refer to [Which optimization solver should I use?](xref:microsoft.quantum.optimization.choose-solver).
 
+## Parameterized parallel tempering
+
+Parallel tempering with specified parameters is best used if you are already familiar with parallel tempering terminology (sweeps, betas) and/or have an idea of which parameter values you intend to use. **If this is your first time using parallel tempering for a problem, the parameter-free version is recommended.** Some of the parameters like `beta_start` and `beta_stop` are hard to estimate without a good starting point.
+
+Parallel tempering supports the following parameters:
+
+| Parameter Name | Description |
+|----------------|-------------|
+| `sweeps` | Number of sets of iterations to run over the variables of a problem. More sweeps will usually improve the solution (unless it is already at the global min).|
+| `replicas`  | The number of concurrent running copies for sampling. Each instance will start with a random configuration. We recommend this value to be no less than the number of cores available on the machine, in order to fully utilize the available compute power. Currently on Azure Quantum this should be no less than 72.|
+| `all_betas` | The list of beta values used in each replica for sampling. The number of beta values must equal the number of replicas, as each replica will be assigned one beta value from the list. These beta values control how the solver escapes optimization saddle points - the larger the beta values, the less likely the sampling process will be to jump out of a local optimum.|
+| `seed` (optional) | Seed value - used for reproducing results |
+
+The larger the number of sweeps and replicas, the more likely the parallel tempering solver will be to find an optimal or near-optimal solution, however the solver will take longer to run.
+
+To create a parameterized parallel tempering solver using the SDK:
+
+```python
+from azure.quantum.optimization import ParallelTempering
+# Requires a workspace already created.
+solver = ParallelTempering(workspace, sweeps=2, all_betas=[1.15, 3.14], replicas=2, seed=22)
+```
+
 ## Parameter-free parallel tempering
 
 The parameter-free version of parallel tempering is recommended for new users, those who don't want to manually tune parameters, and even as a starting point for further manual tuning. The main parameters to be tuned for this solver are the number of `sweeps`, `replicas` and `all_betas` (described in the next section).
@@ -67,27 +90,4 @@ from azure.quantum.optimization import ParallelTempering
 # Requires a workspace already created.
 # Not specifying any parameters runs the parameter-free version of the solver.
 solver = ParallelTempering(workspace)
-```
-
-## Parameterized parallel tempering
-
-Parallel tempering with specified parameters is best used if you are already familiar with parallel tempering terminology (sweeps, betas) and/or have an idea of which parameter values you intend to use. **If this is your first time using parallel tempering for a problem, the parameter-free version is recommended.** Some of the parameters like `beta_start` and `beta_stop` are hard to estimate without a good starting point.
-
-Parallel tempering supports the following parameters:
-
-| Parameter Name | Description |
-|----------------|-------------|
-| `sweeps` | Number of sets of iterations to run over the variables of a problem. More sweeps will usually improve the solution (unless it is already at the global min).|
-| `replicas`  | The number of concurrent running copies for sampling. Each instance will start with a random configuration. We recommend this value to be no less than the number of cores available on the machine, in order to fully utilize the available compute power. Currently on Azure Quantum this should be no less than 72.|
-| `all_betas` | The list of beta values used in each replica for sampling. The number of beta values must equal the number of replicas, as each replica will be assigned one beta value from the list. These beta values control how the solver escapes optimization saddle points - the larger the beta values, the less likely the sampling process will be to jump out of a local optimum.|
-| `seed` (optional) | Seed value - used for reproducing results |
-
-The larger the number of sweeps and replicas, the more likely the parallel tempering solver will be to find an optimal or near-optimal solution, however the solver will take longer to run.
-
-To create a parameterized parallel tempering solver using the SDK:
-
-```python
-from azure.quantum.optimization import ParallelTempering
-# Requires a workspace already created.
-solver = ParallelTempering(workspace, sweeps=2, all_betas=[1.15, 3.14], replicas=2, seed=22)
 ```
