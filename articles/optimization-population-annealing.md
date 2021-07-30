@@ -92,7 +92,6 @@ from azure.quantum.optimization import PopulationAnnealing
 solver = PopulationAnnealing(workspace, timeout=10, seed=48)
 ```
 
-
 ## Parameterized Population Annealing
 
 Suitable values for the `population` size and the annealing schedule `beta`,
