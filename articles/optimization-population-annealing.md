@@ -115,11 +115,9 @@ parameter-free Population Annealing solver is `timeout` which represents the phy
 Note that the `timeout` parameter is required to trigger the parameter-free Population Annealing solver.
 Leaving the parameter out will cause the solver to use its default parameters instead.
 
-While the parameter-free version of Population Annealing is in 'early access' you can trigger the parameter-free solver by using code similar to the sample shown below:
+You can create the parameter-free solver by using code similar to the sample shown below:
 ```python
 from azure.quantum.optimization import PopulationAnnealing
 # Requires a workspace already created.
-solver = PopulationAnnealing(workspace, seed=48)
-solver.target = 'microsoft.populationannealing-parameterfree.cpu'
-solver.set_one_param("timeout", 10)
+solver = PopulationAnnealing(workspace, timeout=10, seed=48)
 ```
