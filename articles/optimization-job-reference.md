@@ -1,6 +1,6 @@
 ---
 author: george-moussa
-description: Reference for azure.quantum.optimization.Job
+description: Reference for azure.quantum.Job
 ms.author: georgenm
 ms.date: 07/26/2021
 ms.service: azure-quantum
@@ -13,7 +13,7 @@ uid: microsoft.quantum.optimization.job-reference
 # Quantum optimization Job
 
 ```py
-from azure.quantum.optimization import Job
+from azure.quantum import Job
 ```
 
 ## Job.get_results
