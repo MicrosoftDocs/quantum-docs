@@ -77,7 +77,7 @@ parameter-free Substochastic Monte Carlo solver is `timeout` which represents th
 | `seed` (optional)       | _time based_    | Seed value - used for reproducing results. |
 
 Note that the `timeout` parameter is required to trigger the parameter-free Substochastic Monte Carlo solver.
-If you do not use the `timeout` parameter, the parameterized Substochastic Monte Carlo solver will be used instead. (using the default parameters specified in the next section)
+If you do not use the `timeout` parameter, the parameterized Substochastic Monte Carlo solver will be used instead, using the default parameters specified in the next section.
 
 You can create the parameter-free solver by using code similar to the sample shown below:
 
@@ -123,5 +123,4 @@ from azure.quantum.optimization import SubstochasticMonteCarlo, RangeSchedule
 # Requires a workspace already created.
 solver = SubstochasticMonteCarlo(workspace, step_limit=10000, target_population=64, beta=RangeSchedule("linear", 0, 5), seed=42)
 ```
-
 
