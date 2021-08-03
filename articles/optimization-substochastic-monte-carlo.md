@@ -77,7 +77,7 @@ parameter-free Substochastic Monte Carlo solver is `timeout` which represents th
 | `seed` (optional)       | _time based_    | Seed value - used for reproducing results. |
 
 Note that the `timeout` parameter is required to trigger the parameter-free Substochastic Monte Carlo solver.
-If you do not use the `timeout` parameter the default parameters for parameterized Substochastic Monte Carlo will be used instead.
+If you do not use the `timeout` parameter, the parameterized Substochastic Monte Carlo solver will be used instead. (using the default parameters specified in the next section)
 
 You can create the parameter-free solver by using code similar to the sample shown below:
 
