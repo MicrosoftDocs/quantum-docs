@@ -69,6 +69,29 @@ problems with large penalty terms.
 > For further information on choosing which solver to use, please refer to
 > [this document](xref:microsoft.quantum.optimization.choose-solver).
 
+## Parameter-Free Population Annealing
+
+> [!NOTE]
+> Parameter-Free Population Annealing is currently available to users in the Azure Quantum Early Access program. It will be available to all users in the near future.
+
+Parameter-free Population Annealing searches for "optimal" parameters of the Population Annealing solver at runtime, so that solver users have no need to set up parameters like `beta`, and so on. The only parameter required to run 
+parameter-free Population Annealing solver is `timeout` which represents the physical time in seconds that the solver is allowed to run.
+
+| Parameter Name           | Default Value   | Description |
+|--------------------------|-----------------|-------------|
+| `timeout` (required)    | 5      | Number of seconds to allow the solver to run.|
+| `seed` (optional)       | _time based_    | Seed value - used for reproducing results. |
+
+Note that the `timeout` parameter is required to trigger the parameter-free Population Annealing solver.
+If you do not specify the `timeout` parameter, a parameterized Population Annealing solver will be created instead, using the default parameters shown in the next section (unless otherwise specified).
+
+You can create the parameter-free solver by using code similar to the sample shown below:
+```python
+from azure.quantum.optimization import PopulationAnnealing
+# Requires a workspace already created.
+solver = PopulationAnnealing(workspace, timeout=10, seed=48)
+```
+
 ## Parameterized Population Annealing
 
 Suitable values for the `population` size and the annealing schedule `beta`,
@@ -98,28 +121,3 @@ solver = PopulationAnnealing(workspace, sweeps=200, beta=RangeSchedule("linear",
 ```
 
 Running the solver without parameters will apply the default parameters shown in the table above. These default values are subject to change and we strongly recommend setting the values based on your problem rather than using the defaults.
-
-## Parameter-Free Population Annealing
-
-> [!NOTE]
-> Parameter-Free Population Annealing is currently available to users in the Azure Quantum Early Access program. It will be available to all users in the near future.
-
-Parameter-free Population Annealing searches for "optimal" parameters of the Population Annealing solver at runtime, so that solver users have no need to set up parameters like `beta`, and so on. The only parameter required to run 
-parameter-free Population Annealing solver is `timeout` which represents the physical time in seconds that the solver is allowed to run.
-
-| Parameter Name           | Default Value   | Description |
-|--------------------------|-----------------|-------------|
-| `timeout` (required)    | 5      | Number of seconds to allow the solver to run.|
-| `seed` (optional)       | _time based_    | Seed value - used for reproducing results. |
-
-Note that the `timeout` parameter is required to trigger the parameter-free Population Annealing solver.
-Leaving the parameter out will cause the solver to use its default parameters instead.
-
-While the parameter-free version of Population Annealing is in 'early access' you can trigger the parameter-free solver by using code similar to the sample shown below:
-```python
-from azure.quantum.optimization import PopulationAnnealing
-# Requires a workspace already created.
-solver = PopulationAnnealing(workspace, seed=48)
-solver.target = 'microsoft.populationannealing-parameterfree.cpu'
-solver.set_one_param("timeout", 10)
-```

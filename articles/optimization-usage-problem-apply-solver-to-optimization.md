@@ -21,7 +21,7 @@ solver = ParallelTempering(workspace, timeout=100)
 For arguments, the solver takes the `Workspace` object created previously and a `timeout` value, which is the maximum amount of time (in seconds) to run the solver. Detailed documentation on parameters is available in the reference for each solver.
 
 > [!NOTE]
-> See [Create a quantum-based random number generator in Azure Quantum](xref:microsoft.quantum.quickstarts.optimization.qio) for details on connecting to a workspace and getting a `Workspace` object for it.
+> See [Optimization Quickstart](xref:microsoft.quantum.quickstarts.optimization.qio) for details on connecting to a workspace and getting a `Workspace` object for it.
 
 Solvers provide an `optimize` method that expects a `Problem` object. The `optimize` method uploads the problem definition, submits a job to solve the problem, and polls the status until the job has completed running. Once the job has completed, it returns a `JobOutput` object which contains the results. For more information, see [Understand Solver results](xref:microsoft.quantum.optimization.understand-solver-results).
 
