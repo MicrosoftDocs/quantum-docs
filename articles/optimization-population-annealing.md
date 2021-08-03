@@ -83,7 +83,7 @@ parameter-free Population Annealing solver is `timeout` which represents the phy
 | `seed` (optional)       | _time based_    | Seed value - used for reproducing results. |
 
 Note that the `timeout` parameter is required to trigger the parameter-free Population Annealing solver.
-Not specifying the parameter will create a parameterized Population Annealing solver. (using the default parameters shown in the next section if not otherwise specified)
+If you do not specify the `timeout` parameter, a parameterized Population Annealing solver will be created instead, using the default parameters shown in the next section (unless otherwise specified).
 
 You can create the parameter-free solver by using code similar to the sample shown below:
 ```python
