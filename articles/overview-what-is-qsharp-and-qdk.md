@@ -27,11 +27,15 @@ Integrate your quantum development with [Visual Studio, Visual Studio Code](xref
 
 ### Try quantum operations and domain-specific libraries
 
-Write and test quantum algorithms to explore superposition, entanglement, and other quantum operations. The Q# libraries enable you to run complex quantum operations without having to design low-level operation sequences.
+Write and test quantum algorithms to explore superposition, [entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement), and other quantum operations. The Q# libraries enable you to run complex quantum operations without having to design low-level operation sequences.
+
+### Submit jobs to the Azure Quantum service
+
+Write [quantum computing](xref:microsoft.quantum.overview.qdk-overview) and [quantum-inspired optimization](xref:microsoft.quantum.optimization.overview.what-is-qio) programs and submit them to Azure Quantum to run on partner providers and optimization solvers. 
 
 ### Run programs in simulators
 
-Run your quantum programs on a full-state quantum simulator, a limited-scope Toffoli simulator, or test your Q# code in different resource estimators. 
+Run your quantum programs on a [full-state quantum simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), a limited-scope [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator), or test your Q# code in different [resource estimators](xref:microsoft.quantum.machines.overview.resources-estimator). 
 
 ## Where can I learn more?
 
