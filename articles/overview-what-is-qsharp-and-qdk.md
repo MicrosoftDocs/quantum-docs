@@ -35,7 +35,7 @@ Run your quantum programs on a full-state quantum simulator, a limited-scope Tof
 
 ## Where can I learn more?
 
-|||
+|Learning goal|Resource|
 | ---- | ---- |
 | **I'm new to quantum computing** | Review some basics of quantum physics and quantum computing in [Key Concepts](xref:microsoft.quantum.overview.understanding).|
 | **I want to dive deeper into the Q# language** | Explore types, expressions, variables, and quantum program structure in the [Q# User Guide](xref:microsoft.quantum.user-guide-qdk.overview).|
