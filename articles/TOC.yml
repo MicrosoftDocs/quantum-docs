@@ -57,11 +57,7 @@
         href: tutorial-qdk-qubit-level-program.md
   - name: How-to guides
     items: 
-    - name: Update the QDK
-      href: install-update-qdk.md
-    - name: Work with jobs
-      href: how-to-work-with-jobs.md
-    - name: Submit jobs
+    - name: Submit quantum computing jobs 
       href: how-to-submit-jobs.md
   - name: Q# user guide
     href: user-guide/toc.yml
@@ -126,14 +122,8 @@
       href: quickstart-microsoft-qio.md
   - name: How-to guides
     items:
-    - name: Authenticate using a service principal
-      href: optimization-authenticate-service-principal.md
-    - name: Work with jobs
-      href: how-to-work-with-jobs.md
-    - name: Submit jobs
+    - name: Submit optimization jobs
       href: how-to-submit-jobs.md
-    - name: Work with Azure Quantum using the Azure CLI 
-      href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
   - name: Concepts
     items:
     - name: Which solver should I use?
@@ -214,6 +204,16 @@
         href: optimization-reuse-problem-definitions.md
       - name: Solve long-running problems
         href: optimization-solve-long-running-problems.md
+- name: Manage Azure Quantum
+  items:
+    - name: Update the QDK
+      href: install-update-qdk.md
+    - name: Work with jobs
+      href: how-to-work-with-jobs.md
+    - name: Authenticate using a service principal
+      href: optimization-authenticate-service-principal.md
+    - name: Work with Azure Quantum using the Azure CLI 
+      href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
 - name: Resources
   items:
   - name: Glossary
