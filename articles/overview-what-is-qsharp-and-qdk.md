@@ -31,7 +31,7 @@ Write and test quantum algorithms to explore superposition, [entanglement](xref:
 
 ### Submit jobs to the Azure Quantum service
 
-Write [quantum computing](xref:microsoft.quantum.overview.qdk-overview) and [quantum-inspired optimization](xref:microsoft.quantum.optimization.overview.what-is-qio) programs and submit them to Azure Quantum to run on partner providers and optimization solvers. 
+Write [quantum computing](xref:microsoft.quantum.overview.qdk-overview) and [quantum-inspired optimization](xref:microsoft.quantum.optimization.overview.what-is-qio) programs and submit them to Azure Quantum to run on [partner providers](xref:microsoft.quantum.reference.qc-target-list) and [optimization solvers](xref:microsoft.quantum.reference.qio-target-list). 
 
 ### Run programs in simulators
 
