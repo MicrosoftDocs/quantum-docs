@@ -19,12 +19,16 @@ metadata:
 landingContent:
 
   # Computing
-  - title: Azure Quantum for Quantum computing
+  - title: Azure Quantum for Quantum Computing
     linkLists:
       - linkListType: overview
         links:
           - text: What is quantum computing?
             url: overview-qdk.md
+      - linkListType: get-started
+        links:
+          - text: Set up Azure Quantum
+            url: install-overview-qdk.md
       - linkListType: quickstart
         links:
           - text: Create a quantum-based random number generator in Azure Quantum
