@@ -4,14 +4,14 @@ title: Azure Quantum documentation (preview)
 summary: Learn about quantum computing and and quantum-inspired optimization with the Azure Quantum service.  Use the Quantum Development Kit (QDK) and Q#, a language for quantum programming, to write your first quantum program. 
 metadata:
 
-  title: Azure Quantum Documentation, QDK & Q# API Reference
+  title: Azure Quantum documentation, QDK & Q# API reference
   description: Explore the concepts of quantum computing and quantum-inspired optimization and how to use the Quantum Development Kit (QDK) and Q#, an open source quantum programming language.
   ms.service: azure-quantum
   ms.topic: landing-page
   ms.collection: collection
   author: bradben
   ms.author: v-benbra
-  ms.date: 02/01/2021
+  ms.date: 08/05/2021
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -19,12 +19,16 @@ metadata:
 landingContent:
 
   # Computing
-  - title: Azure Quantum for Quantum computing
+  - title: Azure Quantum for Quantum Computing
     linkLists:
       - linkListType: overview
         links:
           - text: What is quantum computing?
             url: overview-qdk.md
+      - linkListType: get-started
+        links:
+          - text: Set up Azure Quantum
+            url: install-overview-qdk.md
       - linkListType: quickstart
         links:
           - text: Create a quantum-based random number generator in Azure Quantum
