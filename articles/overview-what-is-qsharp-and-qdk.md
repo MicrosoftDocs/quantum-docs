@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the Quantum Development Kit (QDK), the Q# programming language, and how you can create quantum programs.
 ms.author: v-benbra
-ms.date: 02/01/2021
+ms.date: 08/05/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
@@ -27,19 +27,24 @@ Integrate your quantum development with [Visual Studio, Visual Studio Code](xref
 
 ### Try quantum operations and domain-specific libraries
 
-Write and test quantum algorithms to explore superposition, entanglement, and other quantum operations. The Q# libraries enable you to run complex quantum operations without having to design low-level operation sequences.
+Write and test quantum algorithms to explore superposition, [entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement), and other quantum operations. The Q# libraries enable you to run complex quantum operations without having to design low-level operation sequences.
+
+### Submit jobs to the Azure Quantum service
+
+Write [quantum computing](xref:microsoft.quantum.overview.qdk-overview) and [quantum-inspired optimization](xref:microsoft.quantum.optimization.overview.what-is-qio) programs and submit them to Azure Quantum to run on [partner providers](xref:microsoft.quantum.reference.qc-target-list) and [optimization solvers](xref:microsoft.quantum.reference.qio-target-list). 
 
 ### Run programs in simulators
 
-Run your quantum programs on a full-state quantum simulator, a limited-scope Toffoli simulator, or test your Q# code in different resource estimators. 
+Run your quantum programs on a [full-state quantum simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), a limited-scope [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator), or test your Q# code in different [resource estimators](xref:microsoft.quantum.machines.overview.resources-estimator). 
 
 ## Where can I learn more?
 
-|||
+|Learning goal|Resource|
 | ---- | ---- |
 | **I'm new to quantum computing** | Review some basics of quantum physics and quantum computing in [Key Concepts](xref:microsoft.quantum.overview.understanding).|
 | **I want to dive deeper into the Q# language** | Explore types, expressions, variables, and quantum program structure in the [Q# User Guide](xref:microsoft.quantum.user-guide-qdk.overview).|
 | **I just want to start writing quantum programs** | Set up your Q# environment and start writing quantum programs in [QuickStarts](xref:microsoft.quantum.install-qdk.overview).|
+| **I prefer a more structured learning path** | Learn about Quantum computing foundations on [Microsoft Learn](/learn/paths/quantum-computing-fundamentals/).
 
 ## How does Q# work?
 
