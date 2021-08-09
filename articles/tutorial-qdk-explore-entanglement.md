@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to write a quantum program in Q#. Develop a Bell State application using the Quantum Development Kit (QDK)
 ms.author: v-benbra
-ms.date: 02/01/2021
+ms.date: 08/05/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -25,8 +25,7 @@ and quantum entanglement.
 
 If you are ready to start coding, follow these steps before proceeding:
 
-* [Install](xref:microsoft.quantum.install-qdk.overview) the Quantum Development Kit (QDK) using
-  your  preferred language and development environment. 
+* [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview?tabs=tabid-local#install-the-qdk-and-develop-quantum-applications-locally) using your preferred language and development environment.
 * If you already have the QDK installed, make sure you have
   [updated](xref:microsoft.quantum.update-qdk) to the latest version
 
