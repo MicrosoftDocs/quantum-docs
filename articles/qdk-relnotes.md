@@ -23,12 +23,12 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 *Release date: July 27th, 2021*
 
-- You can filter by job name, job status and job creation time when listing jobs in azure-quantum.
+- You can filter by job name, job status, and job creation time when listing jobs in azure-quantum.
 - Fixed [regression](https://github.com/microsoft/qsharp-compiler/issues/1067) in Code Actions due to incompatibility with protocol in VS 16.10.x versions.
 - Improved error message on IQ# `%azure.*` magic commands when no quantum computing targets are available.
 - `azure-quantum` Python package fixes an [issue](https://github.com/microsoft/qdk-python/issues/80) with MSAL Credentials on Windows and now requires minimum versions for all dependencies to mitigate other potential issues with older dependencies.
 - Fixed a [bug in iqsharp](https://github.com/microsoft/iqsharp/issues/448) in which job execution would fail if any operation was defined that wasn't supported on the given target
-- Fixed a [bug in iqsharp](https://github.com/microsoft/iqsharp/issues/484) in which some programs targeting hardware that supports the [Basic Measurement Feedback profile](https://docs.microsoft.com/en-us/azure/quantum/concepts-targets-in-azure-quantum#quantum-processing-units-qpu-different-profiles) were incorrectly being reported as not supported by the Azure Quantum target
+- Fixed a [bug in iqsharp](https://github.com/microsoft/iqsharp/issues/484) in which some programs targeting hardware that supports the [Basic Measurement Feedback profile](xref:microsoft.quantum.target-profiles) were incorrectly being reported as not supported by the Azure Quantum target
 - Released Az CLI quantum extension version 0.6.1: 
     - Added command to request job cancellation: `az quantum job cancel`. 
     - Fixed a bug in which job submissions in Azure Quantum that emit standard output were reported as failed, even if the job succeeded.
@@ -47,7 +47,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - You can now [configure](xref:microsoft.quantum.optimization.apply-solver#returning-multiple-solutions) how many solutions you want returned from a solver run.
 - A new NuGet package [Microsoft.Quantum.AutoSubstitution](https://www.nuget.org/packages/Microsoft.Quantum.AutoSubstitution/), which when added to a Q# project, allows you to annotate operations with the `SubstitutableOnTarget(AltOp, Sim)` attribute. It will then call `AltOp` instead of the annotated operation, whenever it is executed using `Sim`.
 - Integration with Azure-Identity provides more mechanisms to [authenticate](xref:microsoft.quantum.iqsharp.magic-ref.azure.connect) with Azure.
-- The .NET [Microsoft.Azure.Management.Quantum](https://www.nuget.org/packages/Microsoft.Azure.Management.Quantum) now returns the Restricted Access URL so you can to know more/apply for a restricted access SKU.
+- The .NET [Microsoft.Azure.Management.Quantum](https://www.nuget.org/packages/Microsoft.Azure.Management.Quantum) now returns the Restricted Access URL so you can know more/apply for a restricted access SKU.
 - Preview support for noisy simulation in open systems and stabilizer representations [qsharp-runtime#714](https://github.com/microsoft/qsharp-runtime/issues/714). See [here](https://github.com/microsoft/qsharp-runtime/blob/0826903c0842ba99a923e79be9f072054fe44a43/documentation/preview-simulators.md) for documentation on preview simulators.
 - Using [quantum-viz.js](https://github.com/microsoft/quantum-viz.js) as the engine to render the output from the jupyter notebook %trace magic.
 
@@ -64,7 +64,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Added a new function to the `azure-quantum` Python client to support the translation of binary optimization terms from `npz` to Azure Quantum. See full details in [QDK Python](https://github.com/microsoft/qdk-python/pull/61).
 - Published [QIR oracle generation sample](https://github.com/microsoft/Quantum/issues/496). This program allows turns classical Q# functions on Boolean inputs into quantum implementations of that functions in terms of Q# operations at the level of QIR. This allows, for example, to implement quantum algorithms that are used by many quantum algorithms readily as classical functions.
 - Fixed a bug that prevents QIR generation from being enabled in the iqsharp-base Docker image. See details [here](https://github.com/microsoft/iqsharp/issues/432).
-- Implemented new special functions (e.g.: factorial and log-gamma) in Microsoft.Quantum.Math (microsoft/QuantumLibraries#448). Thanks to @TheMagicNacho for the contribution (microsoft/QuantumLibraries#440)!
+- Implemented new special functions, for example, `factorial` and `log-gamma`, in Microsoft.Quantum.Math (microsoft/QuantumLibraries#448). Thanks to @TheMagicNacho for the contribution (microsoft/QuantumLibraries#440)!
 - C# Client: Changed input data format type to "v2" for Quantum Computing. 
 - Released Az CLI quantum extension version 0.5.0: Adapted to 'az' tool version 2.23.0, adding user agent information on calls to Azure Quantum Service.
 
@@ -132,7 +132,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Update IQ# kernel syntax highlighting to include changes to Q# syntax introduced in version [0.15.2101125897](#version-0152101125897)
 - Bugfix to support passing arrays as input arguments to Q# programs submitted to Azure Quantum via `%azure.execute`, see issue [#401](https://github.com/microsoft/iqsharp/issues/401)
 - Fix "Permission denied" error encountered using `az` inside of `iqsharp-base` Docker images, see issue [#404](https://github.com/microsoft/iqsharp/issues/404)
-- Released Az CLI quantum extension version 0.1.0: Provided command line tool for workspace management and quantum computing job submission.
+- Released Az CLI quantum extension version 0.1.0: Provided command-line tool for workspace management and quantum computing job submission.
 
 ## Version 0.15.2101125897
 
@@ -319,7 +319,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 This release contains the following:
 
 - New Microsoft.Quantum.SDK NuGet package which will replace Microsoft.Quantum.Development.Kit NuGet package when creating new projects. Microsoft.Quantum.Development.Kit NuGet package will continue to be supported for existing projects. 
-- Support for Q# compiler extensions, enabled by the new Microsoft.Quantum.SDK NuGet packge, for more information see the [documentation on Github](https://github.com/microsoft/qsharp-compiler/tree/main/src/QuantumSdk#extending-the-q-compiler), the [compiler extensions sample](https://github.com/microsoft/qsharp-compiler/tree/main/examples/CompilerExtensions) and the [Q# Dev Blog](https://devblogs.microsoft.com/qsharp/extending-the-q-compiler/)
+- Support for Q# compiler extensions, enabled by the new Microsoft.Quantum.SDK NuGet package, for more information see the [documentation on Github](https://github.com/microsoft/qsharp-compiler/tree/main/src/QuantumSdk#extending-the-q-compiler), the [compiler extensions sample](https://github.com/microsoft/qsharp-compiler/tree/main/examples/CompilerExtensions) and the [Q# Dev Blog](https://devblogs.microsoft.com/qsharp/extending-the-q-compiler/)
 - Added support for .NET Core 3.1, it is highly recommended to have version 3.1.100 installed since building with older .NET Core SDK versions may cause issues
 - New compiler transformations available under Microsoft.Quantum.QsCompiler.Experimental
 - New functionality to expose output state vectors as HTML in IQ#
@@ -428,7 +428,7 @@ This release adds new Q# language syntax:
 ### Library 
 
 This release adds a numerics library: Learn more about how to [use the new numerics library](xref:microsoft.quantum.libraries-numerics.usage) and try out the [new samples](https://github.com/microsoft/Quantum/tree/main/samples/numerics).  [PR #102](https://github.com/Microsoft/QuantumLibraries/pull/102).  
-This release reorganizes extends and updates the chemistry library:
+This release reorganizes, extends and updates the chemistry library:
 
 * Improves modularity of components, extensibility, general code cleanup.  [PR #58](https://github.com/microsoft/QuantumLibraries/pull/58).
 * Add support for [multi-reference wavefunctions](xref:microsoft.quantum.libraries.overview-chemistry.concepts.multireference), both sparse multi-reference wavefunctions and unitary coupled cluster.  [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
@@ -524,7 +524,7 @@ This release contains the following:
 
 - Adds support for Jupyter Notebook, which offers a great way to learn about Q#.  [Check out new Jupyter Notebook samples and learn how to write your own Notebooks](xref:microsoft.quantum.install-qdk.overview). 
 
-- Adds integer adder arithmetic to the Quantum Canon library.  See also a Jupyter Notebook that [describes how to use the new integer adders](https://github.com/microsoft/Quantum/blob/main/samples/arithmetic/AdderExample.ipynb).
+- Adds integer adder arithmetic to the Quantum Canon library.  See also a Jupyter Notebook that [describes how to use the new integer adders](https://github.com/microsoft/Quantum/blob/main/samples/arithmetic/quantum-adders/AdderExample.ipynb).
 
 - Bug fix for DumpRegister issue reported by the community ([#148](https://github.com/Microsoft/Quantum/issues/148)).
 
@@ -634,7 +634,7 @@ This release includes bug fixes for issues reported by the community.
 
 *Release date: June 30, 2018*
 
-This releases is just a quick fix for [issue #48 reported on GitHub](https://github.com/Microsoft/Quantum/issues/48) (Q# compilation fails if user name contains a blank space). Follow same update instructions as `0.2.1806.1503` with the corresponding new version (`0.2.1806.3001-preview`).
+This release is just a quick fix for [issue #48 reported on GitHub](https://github.com/Microsoft/Quantum/issues/48) (Q# compilation fails if user name contains a blank space). Follow same update instructions as `0.2.1806.1503` with the corresponding new version (`0.2.1806.3001-preview`).
 
 ## Version 0.2.1806.1503
 
@@ -662,7 +662,7 @@ Learn more about [Testing and Debugging](xref:microsoft.quantum.user-guide-qdk.o
 ### Community Contributions
 
 The Q# coder community is growing and we are thrilled to see the first user contributed libraries and samples that were submitted to our open code base at http://github.com/Microsoft/quantum.  **A big Thank you!** to the following contributors:
-* Mathias Soeken ([@msoeken](https://github.com/msoeken)):  contributed a sample defining a transformation based logic synthesis method that constructs Toffoli networks to implement a given permutation. The code is written entirely in Q# functions and operations.  [PR #41](https://github.com/Microsoft/Quantum/pull/41).
+* Mathias Soeken ([@msoeken](https://github.com/msoeken)):  contributed a sample defining a transformation-based logic synthesis method that constructs Toffoli networks to implement a given permutation. The code is written entirely in Q# functions and operations.  [PR #41](https://github.com/Microsoft/Quantum/pull/41).
 * RolfHuisman ([@RolfHuisman](https://github.com/RolfHuisman)): Microsoft MVP Rolf Huisman contributed a sample that generates flat QASM code from Q# code for a restricted class of programs that do not have classical control flow and restricted quantum operations. [PR #59](https://github.com/Microsoft/Quantum/pull/59)
 * Sarah Kasier ([@crazy4pi314](https://github.com/crazy4pi314)): helped to improve our code base by submitting a library function for controlled operations. [PR #53](https://github.com/Microsoft/Quantum/pull/53)
 * Jessica Lemieux ([@Lemj3111](https://github.com/Lemj3111)): fixed @"microsoft.quantum.canon.quantumphaseestimation" and created new unit tests.  [PR #54](https://github.com/Microsoft/Quantum/pull/54)
@@ -715,7 +715,7 @@ dotnet clean
 
 ### Known Issues
 
-No aditional known issues to report.
+No additional known issues to report.
 
 
 ## Version 0.2.1802.2202
