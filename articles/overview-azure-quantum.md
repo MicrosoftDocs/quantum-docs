@@ -59,7 +59,7 @@ Choose the provider that best suits the characteristics of your problem and your
 
 - [Honeywell Quantum Solutions](https://www.honeywell.com/ecompany/quantum): Trapped-ion system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurements.
 - [IONQ](https://ionq.com/): Dynamically reconfigurable trapped-ion quantum computer for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
-- {Quantum Circuits, Inc](https://quantumcircuits.com/): Fast and high-fidelity system with powerful real-time feedback to enable error correction.
+- [Quantum Circuits, Inc](https://quantumcircuits.com/): Fast and high-fidelity system with powerful real-time feedback to enable error correction.
 
 For more information, see the full [Quantum computing target list](xref:microsoft.quantum.reference.qc-target-list).
 
@@ -71,17 +71,17 @@ For more information, see the full [Quantum computing target list](xref:microsof
 
 For more information, see the full [Optimization target list](xref:microsoft.quantum.reference.qio-target-list).
 
-## The power of quantum
+## Why using quantum computing: the power of quantum
 
-Quantum computing makes use of wave-like properties of nature to encode information in qubits that can process highly complex calculations more quickly. When designed to scale, quantum systems will have capabilities that exceed our most powerful supercomputers. As the global community of quantum researchers, scientists, engineers, and business leaders continue to collaborate to advance the quantum ecosystem, we expect to see quantum impact accelerate across every industry.
+Quantum computing makes use of wave-like properties of nature to encode information in qubits, so it can process highly complex calculations more quickly. When designed to scale, quantum computers will have capabilities that exceed our most powerful supercomputers. 
 
-The quantum bit, or qubit, is the basic unit of quantum information. Whereas a classical bit holds a single binary value, 0 or 1, a qubit can be in a “superposition” of both values at the same time. This enables quantum mechanical effects such as interference, tunneling, and entanglement, which in turn empower quantum algorithms for faster searching, better optimization, and greater security. When multiple qubits are connected, these properties can deliver significantly more processing power than the same number of classical bits. For instance, 4 bits are enough for a classical computer to represent any number between 0 and 15. In opposition, with 4 qubits a quantum computer can represent **every** number between 0 and 15 at the same time!
+The quantum bit, or qubit, is the basic unit of quantum information. Whereas a classical bit holds a single binary value, 0 or 1, a qubit can be in a “superposition” of both values at the same time. This enables quantum mechanical effects which in turn empower quantum algorithms for faster searching, better optimization, and greater security. For instance, 4 bits are enough for a classical computer to represent any number between 0 and 15. In opposition, with 4 qubits a quantum computer can represent **every** number between 0 and 15 at the same time!
 
 ### Quantum computing
 
-Quantum mechanics is the underlying "operating system" of our universe. It describes how the fundamental building blocks of nature behave. Nature's behaviors, such as chemical reactions, biological reactions, and material formations, often involve many-body quantum interactions. Classical computing, which uses binary states, is increasingly challenged as the size of the system grows. For intrinsically simulating quantum mechanical problems, quantum computing is promising, because quantum states can be used to represent the natural states in question. 
+Quantum mechanics is the underlying "operating system" of our universe. Nature's behaviors, such as chemical reactions, biological reactions, and material formations, often involve many-body quantum interactions. For intrinsically simulating quantum mechanical problems, quantum computing is promising, because quantum states can be used to represent the natural states in question. 
 
-Quantum computing harnesses quantum mechanics to enable computations that can solve remarkably complex problems. Applied to areas such as financial services, machine learning, chemistry, biology, and materials development, quantum computers can aid in development far beyond the capacity of present-day supercomputers. Researchers and businesses can model complex scenarios in risk management, cybersecurity, network analysis, vaccine development, and materials science. When quantum systems are designed to scale, they'll have capabilities that exceed our most powerful supercomputers. 
+Applied to areas such as financial services, machine learning, chemistry, biology, and materials development, quantum computers can aid in development far beyond the capacity of present-day supercomputers. Researchers and businesses can model complex scenarios in risk management, cybersecurity, network analysis, vaccine development, and materials science. When quantum systems are designed to scale, they'll have capabilities that exceed our most powerful supercomputers. 
 
 To learn more about quantum computers and quantum algorithms see [What is quantum computing?](xref:microsoft.quantum.overview.qdk-overview).  
 
@@ -94,6 +94,7 @@ Optimization is a class of computing problems that are primary candidates for ru
 Optimization algorithms are available to run on various classical computing silicon solutions, such as CPU, FPGA, GPU, or custom silicon. For more information about optimization problems, see [What is optimization?](xref:microsoft.quantum.optimization.concepts.overview.introduction).
 
 ### Quantum-inspired optimization
+
 Emulating the quantum effects on classical computers has led to the development of new types of quantum solutions that run on classical hardware, also called *Quantum-Inspired Optimization (QIO)* algorithms. These algorithms allow us to exploit some of the advantages of quantum computing approaches today on classical hardware, providing a speedup over traditional approaches. Using quantum solutions on classical hardware also prepares us for the future of quantum optimization on actual quantum hardware. Once quantum computers become available at scale, even greater acceleration is possible.
 
 Quantum-inspired solutions harness the power of quantum physics to solve hard computational problems on classical hardware, today. Azure Quantum gives you access to a broad set of state-of-the-art optimization algorithms developed by Microsoft and its partners. Azure Quantum supports QIO to help developers apply the power of new quantum techniques today without waiting for quantum hardware.
