@@ -22,7 +22,7 @@ With Azure Quantum and the [Quantum Development Kit toolset](xref:microsoft.quan
 
 ## What is Q\# and the Quantum Development Kit?
 
-The Microsoft Quantum Development Kit (QDK) is an open-source development kit to develop quantum applications and to formulate optimization problems. The QDK includes the quantum programming language [Q#](xref:microsoft.quantum.overview.q-sharp), a high-level programming language that allows you to focus your work at the algorithm and application level to create quantum programs.
+The Microsoft Quantum Development Kit (QDK) is an open-source development kit to develop quantum applications and to formulate optimization problems. The QDK includes the [quantum programming language Q#](xref:microsoft.quantum.overview.q-sharp), a high-level programming language that allows you to focus your work at the algorithm and application level to create quantum programs.
 
 The QDK offers a set of tools that will assist you in the quantum software development process: 
 
