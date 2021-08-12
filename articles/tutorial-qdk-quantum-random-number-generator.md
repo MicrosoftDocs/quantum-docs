@@ -265,7 +265,7 @@ The random number generated is 42
 
 ## Next steps
 
-The tutorial [Explore entanglement with Q#](xref:) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
+The tutorial [Explore entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
 
 [Get Started with the Quantum Development Kit](xref:microsoft.quantum.get-started-qdk)
 recommends more ways to learn Q# and quantum programming.
