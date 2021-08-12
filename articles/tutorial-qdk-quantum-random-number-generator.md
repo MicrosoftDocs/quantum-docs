@@ -2,7 +2,7 @@
 author: bromeg
 description: Build a Q# project that demonstrates fundamental quantum concepts like superposition by creating a quantum random number generator.
 ms.author: megbrow
-ms.date: 02/01/2021
+ms.date: 08/12/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -13,18 +13,56 @@ uid: microsoft.quantum.tutorial-qdk.random-number
 
 # Tutorial: Implement a Quantum Random Number Generator in Q\#
 
-A simple example of a quantum algorithm written in Q# is a quantum random number generator. This algorithm leverages the nature of quantum mechanics to produce a random number.
+In this tutorial, you'll write your first quantum program by using the Quantum Development Kit (QDK). A simple example of a quantum algorithm written in Q# is a quantum random number generator. This algorithm leverages the nature of quantum mechanics to produce a random number.
 
 ## Prerequisites
 
-- The Microsoft [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+- [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview?tabs=tabid-local#install-the-qdk-and-develop-quantum-applications-locally) using your preferred language and development environment.
+- If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update-qdk) to the latest version.
+
 - Create a Q# project for either a [Q# application](xref:microsoft.quantum.install-qdk.overview.standalone), with a [Python host program](xref:microsoft.quantum.install-qdk.overview.python), or a [C# host program](xref:microsoft.quantum.install-qdk.overview.cs).
 
-## Write a Q# operation
+https://dotnet.microsoft.com/download
 
-### Q# operation code
+## In this tutorial, you'll learn how to:
 
-1. Replace the contents of the Program.qs file with the following code:
+> [!div class="checklist"]
+> - Prepare your development environment for writing quantum programs in Q#.
+> - Understand how Q# programs are structured.
+> - Work with qubits and superposition to build a quantum random number generator.
+
+
+## Creating a Q# project
+
+The first thing you need to do is to create a new Q# project. This tutorial uses the environment based on [Q# applications with VS Code](xref:microsoft.quantum.install-qdk.overview.standalone), but you can use your preferred IDE. 
+
+To create a new project, in VS Code: 
+
+1. Click **View** -> **Command Palette** and select **Q#: Create New Project**.
+2. Click **Standalone console application**.
+3. Navigate to the location to save the project and click **Create Project**.
+4. When the project is successfully created, click **Open new project...** in the
+   lower right.
+
+In this case the project is called `Qrng`. This generates two files: `Qrng.csproj`, the project file and `Program.qs`, a template of a Q# application
+that we will use to write our application. The content of `Program.qs` should be:
+
+```qsharp
+   namespace Qrng {
+
+      open Microsoft.Quantum.Canon;
+      open Microsoft.Quantum.Intrinsic;
+      
+      @EntryPoint()
+      operation HelloQ() : Unit {
+          Message("Hello quantum world!");
+      }
+   }
+```
+
+## Write a Q\# operation
+
+Replace the contents of the Program.qs file with the following code:
 
 ```qsharp
 namespace Qrng {
@@ -33,8 +71,9 @@ namespace Qrng {
     open Microsoft.Quantum.Measurement;
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Intrinsic;
+    
     @EntryPoint()
-    operation SampleQuantumRandomNumberGenerator() : Result {
+    operation GenerateRandomBit() : Result {
         use q = Qubit();   // Allocate a qubit.
         H(q);              // Put the qubit to superposition. It now has a 50% chance of being 0 or 1.
         return MResetZ(q); // Measure the qubit value.
@@ -42,13 +81,13 @@ namespace Qrng {
 }
 ```
 
-As mentioned in our [Understanding quantum computing](xref:microsoft.quantum.overview.understanding) article, a qubit is a unit of quantum information that can be in superposition. When measured, a qubit can only be either 0 or 1. However, before measurement, the state of the qubit represents the probability of reading either a 0 or a 1 with a measurement. This probabilistic state is known as superposition. We can use this probability to generate random numbers.
+Let's take a look at this code. You define the `GenerateRandomBit` operation, which takes no input and produces a value of type `Result`. The `Result` type represents the result of a measurement and can have two possible values: `Zero` and `One`. `EntryPoint` tells the Q# compiler to begin executing the program here. In Q#, qubits are allocated through the `use` keyword. The `H` operation places the qubit in superposition. The `M` operation measures the qubit and returns the measured value (a zero or a one).
 
-In our Q# operation, we introduce the `Qubit` datatype, native to Q#. We can only allocate a `Qubit` with a `use` statement. When it gets allocated, a qubit is always in the `Zero`  state. 
+As mentioned in the [Understanding quantum computing](xref:microsoft.quantum.overview.understanding) article, a qubit is a unit of quantum information that can be in superposition. When measured, a qubit can only be either 0 or 1. However, before measurement, the state of the qubit represents the probability of reading either a 0 or a 1 with a measurement. This probabilistic state is known as superposition. One can use this probability to generate random numbers.
 
-Using the `H` operation, we are able to put our `Qubit` in superposition. To measure a qubit and read its value, you use the `M` intrinsic operation.
+This Q# operation introduces the `Qubit` datatype, native to Q#. We can only allocate a `Qubit` with a `use` statement. When it gets allocated, a qubit is always in the `Zero`  state. 
 
-By putting our `Qubit` in superposition and measuring it, our result will be a different value each time the code is invoked.
+By putting the `Qubit` in superposition with the `H` operation and measuring it with the `M` intrinsic operation, the result will be a different value each time the code is invoked.
 
 When a `Qubit` is deallocated it must be explicitly set back to the `Zero` state, otherwise the simulator will report a runtime error. An easy way to achieve this is invoking `Reset`.
 
@@ -70,9 +109,70 @@ We can use this representation to visualize what the code is doing:
 
 Since the outcome of the measurement is completely random, we have obtained a random bit. We can call this operation several times to create integers. For example, if we call the operation three times to obtain three random bits, we can build random 3-bit numbers (that is, a random number between 0 and 7).
 
-## Creating a complete random number generator
+## Create a complete random number generator
 
-Now that we have a Q# operation that generates random bits, we can use it to build a complete quantum random number generator. We can use a Q# application or use a host program.
+Now that you have a Q# operation that generates random bits, you can combine multiple random bits to build a complete quantum random number generator. You can use a Q# application or use a host program to do it.
+
+### Define the random number generator logic
+First, let's outline what the logic of a random number generator should be, provided there already exists a random bit generator:
+
+1. Define `max` as the maximum number you want to generate.
+1. Define the number of random bits that you need to generate. This is done by calculating how many bits, `nBits`, we need to express integers up to max.
+1. Generate a random bit string that is `nBits` in length.
+1. If the bit string represents a number greater than `max`, go back to step three.
+1. Otherwise, the process is complete. Return the generated number as an integer.
+
+### Define the operation 
+
+Define the `SampleRandomNumberInRange` operation, which repeatedly calls the `GenerateRandomBit` operation to build a string of bits.
+
+Modify `Program.qs` like this:
+
+```qsharp
+namespace Qrng {
+
+    open Microsoft.Quantum.Canon;
+    open Microsoft.Quantum.Intrinsic;
+    open Microsoft.Quantum.Measurement;
+    open Microsoft.Quantum.Math;
+    open Microsoft.Quantum.Convert;
+
+    operation GenerateRandomBit() : Result {
+        // Allocate a qubit.
+        use q = Qubit(); 
+        // Put the qubit to superposition.
+        H(q);
+        // It now has a 50% chance of being measured 0 or 1.
+        // Measure the qubit value.
+        return M(q);
+    }
+
+    operation SampleRandomNumberInRange(max : Int) : Int {
+        mutable output = 0; 
+        repeat {
+            mutable bits = new Result[0]; 
+            for idxBit in 1..BitSizeI(max) {
+                set bits += [GenerateRandomBit()]; 
+            }
+            set output = ResultArrayAsInt(bits);
+        } until (output <= max);
+        return output;
+    }
+}
+```
+Let's take a moment to review the new code.
+
+In order to calculate the number of bits needed to express integers up to max, the `Microsoft.Quantum.Math` library provides the `BitSizeI` function to accomplish this task.
+
+The `SampleRandomNumberInRange` operation uses a `repeat` loop to generate random numbers until it generates one that's equal to or less than max.
+
+The `for` loop inside `repeat` works exactly the same as a for loop in other programming languages.
+
+In this example, `output` and `bits` are mutable variables. A mutable variable is one that can change during the computation. You use the set directive to change a mutable variable's value.
+
+The `ResultArrayAsInt` function comes from the `Microsoft.Quantum.Convert library`. This function converts the bit string to a positive integer.
+
+The `Qrng` program can now generate random numbers. Modify `Program.qs` like this to define the entry point.
 
 ### [Q# applications with Visual Studio or Visual Studio Code](#tab/tabid-qsharp)
 
@@ -80,27 +180,35 @@ To create the full Q# application, add the following entry point to your Q# prog
 
 ```qsharp
 namespace Qrng {
-    open Microsoft.Quantum.Convert;
-    open Microsoft.Quantum.Math;
-    open Microsoft.Quantum.Measurement;
+
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Intrinsic;
-    operation SampleQuantumRandomNumberGenerator() : Result {
-        use q = Qubit();   // Allocate a qubit.
-        H(q);              // Put the qubit to superposition. It now has a 50% chance of being 0 or 1.
-        return MResetZ(q); // Measure the qubit value.
+    open Microsoft.Quantum.Measurement;
+    open Microsoft.Quantum.Math;
+    open Microsoft.Quantum.Convert;
+
+    operation GenerateRandomBit() : Result {
+        // Allocate a qubit.
+        use q = Qubit();
+        // Put the qubit to superposition.
+        H(q);
+        // It now has a 50% chance of being measured 0 or 1.
+        // Measure the qubit value.
+        return M(q);
     }
 
     operation SampleRandomNumberInRange(max : Int) : Int {
-        mutable bits = new Result[0];
-        for idxBit in 1..BitSizeI(max) {
-            set bits += [SampleQuantumRandomNumberGenerator()];
-        }
-        let sample = ResultArrayAsInt(bits);
-        return sample > max
-               ? SampleRandomNumberInRange(max)
-               | sample;
+        mutable output = 0; 
+        repeat {
+            mutable bits = new Result[0]; 
+            for idxBit in 1..BitSizeI(max) {
+                set bits += [GenerateRandomBit()]; 
+            }
+            set output = ResultArrayAsInt(bits);
+        } until (output <= max);
+        return output;
     }
+
     @EntryPoint()
     operation SampleRandomNumber() : Int {
         let max = 50;
@@ -154,3 +262,6 @@ The random number generated is 42
 ```
 
 ***
+
+> [!NOTE]
+> This code snippet does not currently run on any available Azure Quantum hardware targets, as the callable `ResultArrayAsInt` requires a QPU with [full computation profile](/azure/quantum/concepts-targets-in-azure-quantum#quantum-processing-units-qpu-different-profiles).
