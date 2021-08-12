@@ -12,7 +12,7 @@ uid: microsoft.quantum.azure-quantum-overview
 
 # What is Azure Quantum?
 
-Azure Quantum is a cloud service of quantum partners and technologies for running quantum computing programs or solving optimization problems. With Azure Quantum you can create your own path to scalable quantum computing, and also integrate optimization solutions running on classical Azure hardware for immediate results.
+Azure Quantum is a cloud service of quantum partners and technologies for running [quantum computing](xref:microsoft.quantum.overview.qdk-overview) programs or solving [optimization](xref:microsoft.quantum.optimization.overview.what-is-qio) problems. With Azure Quantum you can create your own path to scalable quantum computing, and also integrate optimization solutions running on classical Azure hardware for immediate results.
 
 - An **open ecosystem**, enabling you to access diverse quantum software, hardware, and solutions from Microsoft and its partners.
 - Quantum impact today, with pre-built solutions that run on classical and accelerated compute resources (also referred to as optimization solutions).
