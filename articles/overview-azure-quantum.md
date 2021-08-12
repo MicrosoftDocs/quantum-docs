@@ -71,7 +71,7 @@ For more information, see the full [Quantum computing target list](xref:microsof
 
 For more information, see the full [Optimization target list](xref:microsoft.quantum.reference.qio-target-list).
 
-## Why using quantum computing: the power of quantum
+## Why use quantum computing
 
 Quantum computing makes use of wave-like properties of nature to encode information in qubits, so it can process highly complex calculations more quickly. When designed to scale, quantum computers will have capabilities that exceed our most powerful supercomputers. 
 
