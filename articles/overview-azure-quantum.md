@@ -1,12 +1,12 @@
 ---
-author: KittyYeungQ
+author: SoniaLopezBravo
 description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs or solve optimization problems in the cloud.
-ms.author: kitty
-ms.date: 08/11/2021
+ms.author: v-sonialopez
+ms.date: 08/13/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
-title: Introduction to Azure Quantum
+title: What is Azure Quantum?
 uid: microsoft.quantum.azure-quantum-overview
 ---
 
@@ -65,6 +65,8 @@ For more information, see the full [Quantum computing target list](xref:microsof
 
 ### Optimization providers
 
+For optimization solutions, these are the available providers you can choose from:
+
 - [1QBit](https://1qbit.com/): Iterative heuristic algorithms that usessearch techniques to solve QUBO problems.
 - [Microsoft QIO](xref:microsoft.quantum.optimization.providers.microsoft.qio): A set of multiple targets that rephrase the optimization problem inspired by decades of quantum research.
 - [Toshiba SBM](https://www.toshiba-sol.co.jp/en/pro/sbm/index.htm): Toshiba Simulated Bifurcation Machine is a GPU-powered ISING machine that solves large-scale combinatorial optimization problems at high speed.
@@ -73,33 +75,33 @@ For more information, see the full [Optimization target list](xref:microsoft.qua
 
 ## Why use quantum computing
 
-Quantum computing makes use of wave-like properties of nature to encode information in qubits, so it can process highly complex calculations more quickly. When designed to scale, quantum computers will have capabilities that exceed our most powerful supercomputers. 
+Quantum computing makes use of wave-like properties of quantum particles to encode information, so it can process highly complex calculations more quickly. When designed to scale, quantum computers will have capabilities that exceed today's most powerful supercomputers. 
 
 The quantum bit, or qubit, is the basic unit of quantum information. Whereas a classical bit holds a single binary value, 0 or 1, a qubit can be in a “superposition” of both values at the same time. This enables quantum mechanical effects which in turn empower quantum algorithms for faster searching, better optimization, and greater security. For instance, 4 bits are enough for a classical computer to represent any number between 0 and 15. In opposition, with 4 qubits a quantum computer can represent **every** number between 0 and 15 at the same time!
 
 ### Quantum computing
 
-Quantum mechanics is the underlying "operating system" of our universe. Nature's behaviors, such as chemical reactions, biological reactions, and material formations, often involve many-body quantum interactions. For intrinsically simulating quantum mechanical problems, quantum computing is promising, because quantum states can be used to represent the natural states in question. 
+Quantum mechanics is the underlying "operating system" of our universe. If you aim to simulate quantum mechanical problems, such as chemical reactions, biological reactions, or material formations, quantum computing is promising, because quantum states can be used to represent the natural states in question. 
 
-Applied to areas such as financial services, machine learning, chemistry, biology, and materials development, quantum computers can aid in development far beyond the capacity of present-day supercomputers. Researchers and businesses can model complex scenarios in risk management, cybersecurity, network analysis, vaccine development, and materials science. When quantum systems are designed to scale, they'll have capabilities that exceed our most powerful supercomputers. 
+At the same time quantum computers can aid in diverse areas such as financial services, machine learning, chemistry, biology, and materials development, where lots of calculations are needed. 
+
+Researchers and businesses can model complex scenarios in risk management, cybersecurity, network analysis, vaccine development, and materials science. When quantum systems are designed to scale, they'll have capabilities that exceed our most powerful supercomputers. 
 
 To learn more about quantum computers and quantum algorithms see [What is quantum computing?](xref:microsoft.quantum.overview.qdk-overview).  
 
 ### Optimization
 
-Complex optimization problems exist across every industry: vehicle routing, supply chain management, scheduling, portfolio optimization, power grid management, and many others. Optimization algorithms are also at the core of many machine learning methods. Solving these real-world problems results in high-value benefits, such as reduced costs, accelerated processes, or reduced risks. Many real-world optimization problems are still unsolvable by classical computing, despite the advancement in both algorithms and computing power over the past decades.
+Complex optimization problems exist across every industry: vehicle routing, supply chain management, scheduling, portfolio optimization, power grid management, and many others.  Solving these real-world problems results in high-value benefits, such as reduced costs, accelerated processes, or reduced risks. 
 
-Optimization is a class of computing problems that are primary candidates for running on quantum computers in the future, providing a quantum advantage over classical solutions. We can already accelerate optimization problems using Azure Quantum solvers that run on classical hardware in Azure today faster than many other classical optimization techniques.
+Optimization is a class of computing problems that are primary candidates for running on quantum computers in the future, providing a quantum advantage over classical solutions. You can already implement optimization problems using Azure Quantum solvers that run on classical hardware in Azure today faster than many other classical optimization techniques.
 
 Optimization algorithms are available to run on various classical computing silicon solutions, such as CPU, FPGA, GPU, or custom silicon. For more information about optimization problems, see [What is optimization?](xref:microsoft.quantum.optimization.concepts.overview.introduction).
 
 ### Quantum-inspired optimization
 
-Emulating the quantum effects on classical computers has led to the development of new types of quantum solutions that run on classical hardware, also called *Quantum-Inspired Optimization (QIO)* algorithms. These algorithms allow us to exploit some of the advantages of quantum computing approaches today on classical hardware, providing a speedup over traditional approaches. Using quantum solutions on classical hardware also prepares us for the future of quantum optimization on actual quantum hardware. Once quantum computers become available at scale, even greater acceleration is possible.
+Simulating the quantum effects on classical computers has led to the development of new types of quantum solutions. *Quantum-Inspired Optimization (QIO)* algorithms exploit some of the advantages of quantum computing on classical hardware, providing a speedup over traditional approaches. In addition, using quantum solutions on classical hardware also prepares us for the future of quantum optimization on actual quantum hardware. Once quantum computers become available at scale, even greater acceleration is possible.
 
-Quantum-inspired solutions harness the power of quantum physics to solve hard computational problems on classical hardware, today. Azure Quantum gives you access to a broad set of state-of-the-art optimization algorithms developed by Microsoft and its partners. Azure Quantum supports QIO to help developers apply the power of new quantum techniques today without waiting for quantum hardware.
-
-For more information, see [What is quantum-inspired optimization?](xref:microsoft.quantum.optimization.overview.what-is-qio). 
+Azure Quantum gives you access to a broad set of state-of-the-art quantum-inspired optimization algorithms developed by Microsoft and its partners. For more information, see [What is quantum-inspired optimization?](xref:microsoft.quantum.optimization.overview.what-is-qio). 
 
 ## Next steps
 
