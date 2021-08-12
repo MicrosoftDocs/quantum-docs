@@ -36,7 +36,7 @@ The Quantum Development Kit is the development kit for Q#, a quantum-focused pro
 
 The Quantum Development Kit includes extensions for [Visual Studio](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit) and [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode), and integration with [Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.jupyter). 
  
-You can use Q# as standalone, in notebooks, and at the command-line or use a host language, the QDK supports interoperability with [Python](xref:microsoft.quantum.install-qdk.overview.python) and [.NET languages](microsoft.quantum.install-qdk.overview.cs). You can also formulate optimization solutions with the Azure Quantum optimization Python package. As quantum systems evolve, your code endures.
+You can use Q# as standalone, in notebooks, and at the command-line or use a host language, the QDK supports interoperability with [Python](xref:microsoft.quantum.install-qdk.overview.python) and [.NET languages](xref:microsoft.quantum.install-qdk.overview.cs). You can also formulate optimization solutions with the Azure Quantum optimization Python package. As quantum systems evolve, your code endures.
 
 ## Who is Azure Quantum for?
 
@@ -67,7 +67,7 @@ For more information, see the full [Quantum computing target list](xref:microsof
 
 For optimization solutions, these are the available providers you can choose from:
 
-- [1QBit](https://1qbit.com/): Iterative heuristic algorithms that usessearch techniques to solve QUBO problems.
+- [1QBit](https://1qbit.com/): Iterative heuristic algorithms that uses search techniques to solve QUBO problems.
 - [Microsoft QIO](xref:microsoft.quantum.optimization.providers.microsoft.qio): A set of multiple targets that rephrase the optimization problem inspired by decades of quantum research.
 - [Toshiba SBM](https://www.toshiba-sol.co.jp/en/pro/sbm/index.htm): Toshiba Simulated Bifurcation Machine is a GPU-powered ISING machine that solves large-scale combinatorial optimization problems at high speed.
 
