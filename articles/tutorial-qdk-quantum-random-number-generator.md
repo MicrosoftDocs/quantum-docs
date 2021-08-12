@@ -20,13 +20,10 @@ In this tutorial, you'll write your first quantum program by using the Quantum D
 - [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview?tabs=tabid-local#install-the-qdk-and-develop-quantum-applications-locally) using your preferred language and development environment.
 - If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update-qdk) to the latest version.
 
-- Create a Q# project for either a [Q# application](xref:microsoft.quantum.install-qdk.overview.standalone), with a [Python host program](xref:microsoft.quantum.install-qdk.overview.python), or a [C# host program](xref:microsoft.quantum.install-qdk.overview.cs).
-
-https://dotnet.microsoft.com/download
-
 ## In this tutorial, you'll learn how to:
 
 > [!div class="checklist"]
+> - Create a Q# project.
 > - Prepare your development environment for writing quantum programs in Q#.
 > - Understand how Q# programs are structured.
 > - Work with qubits and superposition to build a quantum random number generator.
@@ -265,3 +262,10 @@ The random number generated is 42
 
 > [!NOTE]
 > This code snippet does not currently run on any available Azure Quantum hardware targets, as the callable `ResultArrayAsInt` requires a QPU with [full computation profile](/azure/quantum/concepts-targets-in-azure-quantum#quantum-processing-units-qpu-different-profiles).
+
+## Next steps
+
+The tutorial [Explore entanglement with Q#](xref:) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
+
+[Get Started with the Quantum Development Kit](xref:microsoft.quantum.get-started-qdk)
+recommends more ways to learn Q# and quantum programming.
