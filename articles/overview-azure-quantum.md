@@ -17,7 +17,7 @@ Azure Quantum is a cloud service of quantum partners and technologies for runnin
 - An **open ecosystem**, enabling you to access diverse quantum software, hardware, and solutions from Microsoft and its partners.
 - Quantum impact today, with pre-built solutions that run on classical and accelerated compute resources (also referred to as optimization solutions).
 
-With Azure Quantum and the *Quantum Development Kit toolset*, you will be able to program and test your quantum algorithms and solve optimization problems, then apply those quantum solutions within the existing Azure platform to achieve real-world impacts even before the development of a general-purpose quantum computer. Microsoft and its partners ensure hardware and software innovations are brought to you with minimal to no change to your code base.
+With Azure Quantum and the [Quantum Development Kit toolset](xref:microsoft.quantum.overview.q-sharp), you will be able to program and test your quantum algorithms and solve optimization problems, then apply those quantum solutions within the existing Azure platform to achieve real-world impacts even before the development of a general-purpose quantum computer. Microsoft and its partners ensure hardware and software innovations are brought to you with minimal to no change to your code base.
 
 
 ## What is Q\# and the Quantum Development Kit?
