@@ -53,9 +53,9 @@ Azure Quantum offers some of the most compelling and diverse quantum resources a
 
 ![azure quantum job flow](~/media/azure-quantum-flow-diagram.png)
 
-Choose the provider that best suits the characteristics of your problem and your needs. 
-
 ### Quantum computing providers
+
+Choose the provider that best suits the characteristics of your problem and your needs. 
 
 - [Honeywell Quantum Solutions](https://www.honeywell.com/ecompany/quantum): Trapped-ion system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurements.
 - [IONQ](https://ionq.com/): Dynamically reconfigurable trapped-ion quantum computer for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
