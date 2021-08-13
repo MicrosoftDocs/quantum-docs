@@ -1,6 +1,6 @@
 ---
 author: SoniaLopezBravo
-description: This document provides a basic guide to submit and run optimization jobs Azure Quantum using Pyhton SDK and Jupyter Notebooks. 
+description: This document provides a basic guide to submit and run optimization jobs Azure Quantum using Python SDK and Jupyter Notebooks. 
 ms.author: v-sonialopez
 ms.date: 08/12/2021
 ms.service: azure-quantum
