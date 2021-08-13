@@ -29,7 +29,7 @@ Select the option for your development environment:
 
 ## Set up
 
-First, you must instantiate a `Workspace` object, which allows you to connect to the workspace you've previously deployed in Azure. Be sure to fill in the following settings, which can be retrieved from the [web interface](https://ms.portal.azure.com/#home?azure-portal=true) or by opening a command prompt and running `az quantum workspace show` through the Azure CLI. Open a new python file and run the following lines:
+First, you must instantiate a `Workspace` object, which allows you to connect to the workspace you've previously deployed in Azure. Be sure to fill in the following settings, which can be retrieved from the [Azure Portal](https://portal.azure.com/) or by opening a command prompt and running `az quantum workspace show` through the Azure CLI. Open a new python file and run the following lines:
 
 ```python
 from azure.quantum import Workspace
