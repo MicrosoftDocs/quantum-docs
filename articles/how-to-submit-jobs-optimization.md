@@ -96,7 +96,7 @@ result = solver.optimize(problem)
 timeElapsed = time.time() - start
 print(f'Result in {timeElapsed} seconds: ', result)
 ```
->[!NOTE]
+> [!NOTE]
 > This guide uses **Parameter-Free Parallel Tempering** solver with a timeout of 100 seconds as an example of a QIO solver. For more information about available solvers, you can visit the [Microsoft QIO provider](xref:microsoft.quantum.optimization.providers.microsoft.qio) documentation page.
 
 Notice that the solver returns the results in the form of a Python dictionary, along with some metadata. For a more human-readable format, use the following function to print a summary of what the solution means:
