@@ -12,7 +12,7 @@ uid: microsoft.quantum.submit-jobs-optimization
 
 # Submit optimization jobs to Azure Quantum
 
-In this article you will find the steps on how to submit optimization jobs to Azure Quantum using Python SDK, Jupyter Notebooks, or the Azure CLI.
+In this article you will find the steps for how to submit optimization jobs to Azure Quantum using Python SDK, Jupyter Notebooks, or the Azure CLI.
 
 As an example, this document follows a sample shipping company that has a difficult business problem: balancing the loads of container ships at port. If you are interested in the problem details, see [shipping-loading sample](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading) .
 
