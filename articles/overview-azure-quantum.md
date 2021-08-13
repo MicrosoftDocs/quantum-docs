@@ -77,7 +77,9 @@ For more information, see the full [Optimization target list](xref:microsoft.qua
 
 Quantum computing makes use of wave-like properties of quantum particles to encode information, so it can process highly complex calculations more quickly. When designed to scale, quantum computers will have capabilities that exceed today's most powerful supercomputers. 
 
-The quantum bit, or qubit, is the basic unit of quantum information. Whereas a classical bit holds a single binary value, 0 or 1, a qubit can be in a “superposition” of both values at the same time. This enables quantum mechanical effects which in turn empower quantum algorithms for faster searching, better optimization, and greater security. For instance, 4 bits are enough for a classical computer to represent any number between 0 and 15. In opposition, with 4 qubits a quantum computer can represent **every** number between 0 and 15 at the same time!
+The quantum bit, or qubit, is the basic unit of quantum information. Whereas a classical bit holds a single binary value, 0 or 1, a qubit can be in a “superposition” of both values at the same time. For instance, 4 bits are enough for a classical computer to represent any number between 0 and 15. In opposition, with 4 qubits a quantum computer can represent **every** number between 0 and 15 at the same time! 
+
+Superposition enables quantum mechanical effects which in turn empower quantum algorithms for faster searching, better optimization, and greater security. 
 
 ### Quantum computing
 
@@ -85,7 +87,7 @@ Quantum mechanics is the underlying "operating system" of our universe. If you a
 
 At the same time quantum computers can aid in diverse areas such as financial services, machine learning, chemistry, biology, and materials development, where lots of calculations are needed. 
 
-Researchers and businesses can model complex scenarios in risk management, cybersecurity, network analysis, vaccine development, and materials science. When quantum systems are designed to scale, they'll have capabilities that exceed our most powerful supercomputers. 
+Researchers and businesses can use quantum computing to model complex scenarios in risk management, cybersecurity, network analysis, vaccine development, or materials science. 
 
 To learn more about quantum computers and quantum algorithms see [What is quantum computing?](xref:microsoft.quantum.overview.qdk-overview).  
 
@@ -99,7 +101,9 @@ Optimization algorithms are available to run on various classical computing sili
 
 ### Quantum-inspired optimization
 
-Simulating the quantum effects on classical computers has led to the development of new types of quantum solutions. *Quantum-Inspired Optimization (QIO)* algorithms exploit some of the advantages of quantum computing on classical hardware, providing a speedup over traditional approaches. In addition, using quantum solutions on classical hardware also prepares us for the future of quantum optimization on actual quantum hardware. Once quantum computers become available at scale, even greater acceleration is possible.
+Simulating the quantum effects on classical computers has led to the development of new types of quantum solutions. **Quantum-Inspired Optimization (QIO)** algorithms exploit some of the advantages of quantum computing on classical hardware, providing a speedup over traditional approaches. 
+
+In addition, using quantum solutions on classical hardware also prepares us for the future of quantum optimization on actual quantum hardware. Once quantum computers become available at scale, even greater acceleration is possible.
 
 Azure Quantum gives you access to a broad set of state-of-the-art quantum-inspired optimization algorithms developed by Microsoft and its partners. For more information, see [What is quantum-inspired optimization?](xref:microsoft.quantum.optimization.overview.what-is-qio). 
 
