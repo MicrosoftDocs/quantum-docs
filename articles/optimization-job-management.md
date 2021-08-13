@@ -1,6 +1,6 @@
 ---
 author: KittyYeungQ
-description: This document provides a basic guide to managing jobs submitted for solving optimization problems in Azure Quantum using Python.
+description: This article provides a basic guide to managing jobs submitted for solving optimization problems in Azure Quantum using Python.
 ms.author: kitty
 ms.date: 08/12/2021
 ms.service: azure-quantum
@@ -76,7 +76,7 @@ print(job.details)
 |**Cancellation_time**|Datetime| The time when the job was cancelled (if applicable).|
 |**Error_data**|String| Error details during job submission (only applicable if job fails).|
 
-If you are only interested in getting the id of the job, you can use `job.id`. The next piece of code shows how to submit a job asynchronously and obtain its job id:
+If you are only interested in getting the ID of the job, you can use `job.id`. The next piece of code shows how to submit a job asynchronously and obtain its job ID:
 
 ```py
 from azure.quantum.optimization import Problem, ProblemType, Term, ParallelTempering, SimulatedAnnealing
