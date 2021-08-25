@@ -153,7 +153,7 @@ print(job.details.status)
 
 ## Workspace.get_targets
 
-Lists instances of all targets available on the Workspace, with optional filter by provider ID or target name. This method returns a list or a single instance.
+Lists instances of all targets available on the Workspace, with optional filter by provider ID or target name. This method returns a list or a single instance. This includes all of the QIO Solvers, since Solver is a subclass of Target.
 Each target can be used to submit a job as an alternative to creating a Solver instance directly as described in [Job management](xref:microsoft.quantum.optimization.job-management). Workspace.get_targets takes optional keyword parameters. If no keyword parameters are passed, it automatically defaults to using the parameter-free target.
 
 ```py
@@ -183,8 +183,8 @@ print(targets)
 ```
 
 ```py
-target = workspace.get_targets("microsoft.simulatedannealing.cpu")
-print(target)
+solver = workspace.get_targets("microsoft.simulatedannealing.cpu")
+print(solver)
 ```
 
 Since no keyword arguments were given, the workspace defaults to the parameter-free version:
@@ -196,7 +196,7 @@ Since no keyword arguments were given, the workspace defaults to the parameter-f
 To specify input arguments, use:
 
 ```py
-target = workspace.get_targets("microsoft.simulatedannealing.cpu", timeout=100, seed=22)
+solver = workspace.get_targets("microsoft.simulatedannealing.cpu", timeout=100, seed=22)
 print(target)
 ```
 
@@ -215,7 +215,7 @@ problem.add_term(c=-9, indices=[0])
 problem.add_term(c=-3, indices=[1,0])
 problem.add_term(c=5, indices=[2,0])
 problem = 
-job = target.submit(problem)
+job = solver.submit(problem)
 results = job.get_results()
 print(results)
 ```
