@@ -154,6 +154,7 @@ print(job.details.status)
 ## Workspace.get_targets
 
 Lists instances of all targets available on the Workspace, with optional filter by provider ID or target name. This method returns a list or a single instance.
+Each target can be used to submit a job as an alternative to creating a Solver instance directly as described in [Job management](xref:microsoft.quantum.optimization.job-management). Workspace.get_targets takes optional keyword parameters. If no keyword parameters are passed, it automatically defaults to using the parameter-free target.
 
 ```py
 from azure.quantum import Workspace
@@ -162,7 +163,9 @@ workspace = Workspace(...)
 targets = workspace.get_targets()
 
 print(targets)
-> [<Target name="microsoft.paralleltempering-parameterfree.cpu", avg. queue time=0 s, Available>,
+```
+```output
+[<Target name="microsoft.paralleltempering-parameterfree.cpu", avg. queue time=0 s, Available>,
  <Target name="microsoft.simulatedannealing-parameterfree.cpu", avg. queue time=0 s, Available>,
  <Target name="microsoft.tabu-parameterfree.cpu", avg. queue time=0 s, Available>,
  <Target name="microsoft.qmc.cpu", avg. queue time=0 s, Available>,
@@ -177,9 +180,46 @@ print(targets)
  <Target name="honeywell.hqs-lt-s1", avg. queue time=0 s, Unavailable>,
  <Target name="honeywell.hqs-lt-s1-apival", avg. queue time=1 s, Available>,
  <Target name="honeywell.hqs-lt-s1-sim", avg. queue time=6 s, Available>]
+```
 
-
-target = workspace.get_targets("microsoft.populationannealing.cpu")
+```py
+target = workspace.get_targets("microsoft.simulatedannealing.cpu")
 print(target)
-> <Target name="microsoft.populationannealing.cpu", avg. queue time=0 s, Available>
+```
+
+Since no keyword arguments were given, the workspace defaults to the parameter-free version:
+
+```output
+<Target name="microsoft.simulatedannealing-parameterfree.cpu", avg. queue time=0 s, Available>
+```
+
+To specify input arguments, use:
+
+```py
+target = workspace.get_targets("microsoft.simulatedannealing.cpu", timeout=100, seed=22)
+print(target)
+```
+
+```output
+<Target name="microsoft.simulatedannealing.cpu", avg. queue time=0 s, Available>
+```
+
+
+This target can then be used to submit a problem and get the resulting job:
+
+```py
+from azure.quantum.optimization import Problem, ProblemType
+
+problem = Problem(name="MyOptimizationJob", problem_type=ProblemType.ising)
+problem.add_term(c=-9, indices=[0])
+problem.add_term(c=-3, indices=[1,0])
+problem.add_term(c=5, indices=[2,0])
+problem = 
+job = target.submit(problem)
+results = job.get_results()
+print(results)
+```
+
+```output
+{'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1}, 'cost': -17.0}]}
 ```
