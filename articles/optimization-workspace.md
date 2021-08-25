@@ -197,7 +197,7 @@ To specify input arguments, use:
 
 ```py
 solver = workspace.get_targets("microsoft.simulatedannealing.cpu", timeout=100, seed=22)
-print(target)
+print(solver)
 ```
 
 ```output
