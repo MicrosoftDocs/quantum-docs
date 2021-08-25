@@ -150,3 +150,36 @@ print(job.details.status)
 
 > Succeeded
 ```
+
+## Workspace.get_targets
+
+Lists instances of all targets available on the Workspace, with optional filter by provider ID or target name. This method returns a list or a single instance.
+
+```py
+from azure.quantum import Workspace
+
+workspace = Workspace(...)
+targets = workspace.get_targets()
+
+print(targets)
+> [<Target name="microsoft.paralleltempering-parameterfree.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.simulatedannealing-parameterfree.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.tabu-parameterfree.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.qmc.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.populationannealing.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.substochasticmontecarlo.cpu", avg. queue time=0 s, Available>,
+ <Target name="ionq.qpu", avg. queue time=669 s, Available>,
+ <Target name="ionq.simulator", avg. queue time=1 s, Available>,
+ <Target name="1qbit.tabu", avg. queue time=0 s, Available>,
+ <Target name="1qbit.pathrelinking", avg. queue time=0 s, Available>,
+ <Target name="1qbit.pticm", avg. queue time=0 s, Available>,
+ <Target name="toshiba.sbm.ising", avg. queue time=5 s, Available>,
+ <Target name="honeywell.hqs-lt-s1", avg. queue time=0 s, Unavailable>,
+ <Target name="honeywell.hqs-lt-s1-apival", avg. queue time=1 s, Available>,
+ <Target name="honeywell.hqs-lt-s1-sim", avg. queue time=6 s, Available>]
+
+
+target = workspace.get_targets("microsoft.populationannealing.cpu")
+print(target)
+> <Target name="microsoft.populationannealing.cpu", avg. queue time=0 s, Available>
+```
