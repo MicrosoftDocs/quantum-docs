@@ -18,7 +18,7 @@ This document provides steps on how to submit jobs to Azure Quantum using Python
 
 Select the option for your development environment:
 
-### [Q# and Python](#tab/tabid-python)
+### [Python](#tab/tabid-python)
 
 ## Prerequisites
 
