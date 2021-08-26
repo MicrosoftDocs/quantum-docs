@@ -23,10 +23,10 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 *Release date: August 30th, 2021*
 
-- Alternative operation in @SubstitutableOnTarget does not need to be explicitly referred to anymore in Microsoft.Quantum.AutoSubstitution NuGet package
-- New Python azure.quantum.aio package in azure-quantum with support for submitting jobs using async i/o.
+- Alternative operation in @SubstitutableOnTarget does not need to be explicitly referred to anymore in Microsoft.Quantum.AutoSubstitution NuGet package.
+- New Python azure.quantum.aio package in azure-quantum with support for submitting jobs using async I/O.
 - New Workspace.get_targets() method in azure-quantum package that returns a list of all available targets. Can filter by Provider ID or Target ID.
-- An issue was resolved that prevented using IQ# or the `qsharp` Python package with Python 3.8 or 3.9 when using `conda` [microsoft/iqsharp#500](https://github.com/microsoft/iqsharp/issues/500)
+- An issue was resolved that prevented using IQ# or the `qsharp` Python package with Python 3.8 or 3.9 when using `conda` [microsoft/iqsharp#500](https://github.com/microsoft/iqsharp/issues/500).
 - Released Az CLI quantum extension version 0.7.0:
     - Provide compiler output to users in case of error for easier troubleshooting.
     - Fixed bug in which retrieving output from workspaces in a location different to another set as default failed.
@@ -40,8 +40,8 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Fixed [regression](https://github.com/microsoft/qsharp-compiler/issues/1067) in Code Actions due to incompatibility with protocol in VS 16.10.x versions.
 - Improved error message on IQ# `%azure.*` magic commands when no quantum computing targets are available.
 - `azure-quantum` Python package fixes an [issue](https://github.com/microsoft/qdk-python/issues/80) with MSAL Credentials on Windows and now requires minimum versions for all dependencies to mitigate other potential issues with older dependencies.
-- Fixed a [bug in iqsharp](https://github.com/microsoft/iqsharp/issues/448) in which job execution would fail if any operation was defined that wasn't supported on the given target
-- Fixed a [bug in iqsharp](https://github.com/microsoft/iqsharp/issues/484) in which some programs targeting hardware that supports the [Basic Measurement Feedback profile](xref:microsoft.quantum.target-profiles) were incorrectly being reported as not supported by the Azure Quantum target
+- Fixed a [bug in iqsharp](https://github.com/microsoft/iqsharp/issues/448) in which job execution would fail if any operation was defined that wasn't supported on the given target.
+- Fixed a [bug in iqsharp](https://github.com/microsoft/iqsharp/issues/484) in which some programs targeting hardware that supports the [Basic Measurement Feedback profile](xref:microsoft.quantum.target-profiles) were incorrectly being reported as not supported by the Azure Quantum target.
 - Released Az CLI quantum extension version 0.6.1: 
     - Added command to request job cancellation: `az quantum job cancel`. 
     - Fixed a bug in which job submissions in Azure Quantum that emit standard output were reported as failed, even if the job succeeded.
