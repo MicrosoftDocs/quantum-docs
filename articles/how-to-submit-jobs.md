@@ -6,11 +6,11 @@ ms.date: 06/24/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
-title: Submit jobs to Azure Quantum
+title: Submit Q# jobs to Azure Quantum
 uid: microsoft.quantum.submit-jobs
 ---
 
-# Submit jobs to Azure Quantum
+# Submit Q# jobs to Azure Quantum
 
 This document provides steps on how to submit jobs to Azure Quantum using Python, Jupyter Notebooks, or the Azure CLI.
 
@@ -18,7 +18,7 @@ This document provides steps on how to submit jobs to Azure Quantum using Python
 
 Select the option for your development environment:
 
-### [Python](#tab/tabid-python)
+### [Q# and Python](#tab/tabid-python)
 
 ## Prerequisites
 
