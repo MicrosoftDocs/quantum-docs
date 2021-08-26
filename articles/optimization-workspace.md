@@ -40,8 +40,8 @@ In case you have not specified any credentials, the first time you run a method 
 workspace = Workspace (
     subscription_id = "",  # Add your subscription_id
     resource_group = "",   # Add your resource_group
-    name = ""              # Add your workspace name
-    location= ""           # Add the workspace location, for example, westus
+    name = "",             # Add your workspace name
+    location= ""        # Add the workspace location, for example, westus
 )
 ```
 
