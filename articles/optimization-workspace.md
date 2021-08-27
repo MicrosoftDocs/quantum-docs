@@ -55,8 +55,10 @@ from azure.quantum import Workspace
 workspace = Workspace(...)
 job = workspace.get_job("285cfcb4-6822-11ea-a05f-2a16a847b8a3")
 print(job.details.status)
+```
 
-> Succeeded
+```output
+Succeeded
 ```
 
 
@@ -71,11 +73,12 @@ workspace = Workspace(...)
 jobs = workspace.list_jobs()
 for job in jobs:
     print(job.id, job.details.status)
-
-> 08ea8792-68f2-11ea-acc5-2a16a847b8a3 Succeeded
-> 0ab1863a-68f2-11ea-82b3-2a16a847b8a3 Succeeded
-> 0c5c507e-68f2-11ea-ba75-2a16a847b8a3 Cancelled
-> f0c8de58-68f1-11ea-a565-2a16a847b8a3 Executing
+```
+```output
+08ea8792-68f2-11ea-acc5-2a16a847b8a3 Succeeded
+0ab1863a-68f2-11ea-82b3-2a16a847b8a3 Succeeded
+0c5c507e-68f2-11ea-ba75-2a16a847b8a3 Cancelled
+f0c8de58-68f1-11ea-a565-2a16a847b8a3 Executing
 ```
 
 The `Workspace.list_jobs` method also allows the user to filter on the creation date, status and name properties of a job when listing. Filters can be combined. 
@@ -147,6 +150,101 @@ job = workspace.get_job("285cfcb4-6822-11ea-a05f-2a16a847b8a3")
 
 workspace.cancel_job(job)
 print(job.details.status)
+```
 
-> Succeeded
+```output
+Succeeded
+```
+
+## Workspace.get_targets
+
+Lists instances of all targets available on the Workspace and can be filtered by provider ID or target name. This method returns a list or a single instance. This includes all of the QIO Solvers, since Solver is a subclass of Target.
+Each target can be used to submit a job as an alternative to creating a Solver instance directly as described in [Job management](xref:microsoft.quantum.optimization.job-management). `Workspace.get_targets` takes optional keyword parameters. If no keyword parameters are passed, it defaults to using the parameter-free target. Note that there is an exception for the Population Annealing and Substochastic Monte Carlo solvers, as they requrie a `timeout` parameter to resolve to the parameter-free version. The QMC solver does not have a parameter-free option.
+
+The following example shows how to get all targets associated with your workspace:
+
+```py
+from azure.quantum import Workspace
+
+workspace = Workspace(...)
+targets = workspace.get_targets()
+targets
+```
+
+```output
+[<Target name="microsoft.paralleltempering-parameterfree.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.simulatedannealing-parameterfree.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.tabu-parameterfree.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.qmc.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.populationannealing.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.substochasticmontecarlo.cpu", avg. queue time=0 s, Available>,
+ <Target name="ionq.qpu", avg. queue time=669 s, Available>,
+ <Target name="ionq.simulator", avg. queue time=1 s, Available>,
+ <Target name="1qbit.tabu", avg. queue time=0 s, Available>,
+ <Target name="1qbit.pathrelinking", avg. queue time=0 s, Available>,
+ <Target name="1qbit.pticm", avg. queue time=0 s, Available>,
+ <Target name="toshiba.sbm.ising", avg. queue time=5 s, Available>,
+ <Target name="honeywell.hqs-lt-s1", avg. queue time=0 s, Unavailable>,
+ <Target name="honeywell.hqs-lt-s1-apival", avg. queue time=1 s, Available>,
+ <Target name="honeywell.hqs-lt-s1-sim", avg. queue time=6 s, Available>]
+```
+
+To filter by provider, specify the `provider_id` input argument:
+
+```py
+targets = workspace.get_targets(provider_id="microsoft")
+targets
+```
+
+```output
+[<Target name="microsoft.paralleltempering-parameterfree.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.simulatedannealing-parameterfree.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.tabu-parameterfree.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.qmc.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.populationannealing.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.substochasticmontecarlo.cpu", avg. queue time=0 s, Available>]
+```
+
+To get a single target, for instance, the Simulated Annealing solver, specify the `name` input argument:
+
+```py
+solver = workspace.get_targets(name="microsoft.simulatedannealing.cpu")
+solver
+```
+
+Since no keyword arguments were given, the workspace defaults to the parameter-free version:
+
+```output
+<Target name="microsoft.simulatedannealing-parameterfree.cpu", avg. queue time=0 s, Available>
+```
+
+To specify input arguments, use:
+
+```py
+solver = workspace.get_targets(name="microsoft.simulatedannealing.cpu", timeout=100, seed=22)
+solver
+```
+
+```output
+<Target name="microsoft.simulatedannealing.cpu", avg. queue time=0 s, Available>
+```
+
+
+This target can then be used to submit a problem and get the resulting job:
+
+```py
+from azure.quantum.optimization import Problem, ProblemType
+
+problem = Problem(name="MyOptimizationJob", problem_type=ProblemType.ising)
+problem.add_term(c=-9, indices=[0])
+problem.add_term(c=-3, indices=[1,0])
+problem.add_term(c=5, indices=[2,0])
+problem = 
+job = solver.submit(problem)
+results = job.get_results()
+results
+```
+
+```output
+{'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1}, 'cost': -17.0}]}
 ```
