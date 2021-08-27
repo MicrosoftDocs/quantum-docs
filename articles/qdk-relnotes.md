@@ -19,11 +19,11 @@ For installation instructions, please refer to the [install guide](xref:microsof
 
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
-## QDK Version 0.18.2108.160184
+## QDK Version 0.18.2108.160310
 
 *Release date: August 30th, 2021*
 
-- Alternative operation in @SubstitutableOnTarget does not need to be explicitly referred to anymore in Microsoft.Quantum.AutoSubstitution NuGet package.
+- Alternative operation in [@SubstitutableOnTarget](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.targeting.substitutableontarget) does not need to be explicitly referred to anymore in Microsoft.Quantum.AutoSubstitution NuGet package.
 - New Python azure.quantum.aio package in azure-quantum with support for submitting jobs using async I/O.
 - New Workspace.get_targets() method in azure-quantum package that returns a list of all available targets. Can filter by Provider ID or Target ID.
 - An issue was resolved that prevented using IQ# or the `qsharp` Python package with Python 3.8 or 3.9 when using `conda` [microsoft/iqsharp#500](https://github.com/microsoft/iqsharp/issues/500).
