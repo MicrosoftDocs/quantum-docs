@@ -19,17 +19,16 @@ Learn how to install the Azure Quantum SDK for Python and submit basic Quantum C
 
 The `azure-quantum` Python package contains the necessary functionality for connecting to the Azure Quantum Workspace and submit quantum circuits to the Quantum Computing targets such as [IonQ](xref:microsoft.quantum.providers.ionq) and [Honeywell](xref:microsoft.quantum.providers.honeywell).
 
-1. (Optional) If you are using [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads), activate your preferred Python environment. Optionally, you can create a new environment using the [environment.yml]() file and running:
-
-    ```
-    conda env create -f environment.yml
-    ```
-
-    This creates a new conda environment that you can activate using:
-
-    ```
-    conda activate azurequantum
-    ```
+1. Install [Python](https://www.python.org/downloads/) 3.6 or later in case you haven't already.
+1. Install [PIP](https://pip.pypa.io/en/stable/) and ensure you have **version 19.2 or higher**.
+    > Optionally, if you are using [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads), create a new environment by downloading the [environment.yml](https://github.com/microsoft/qdk-python/blob/main/azure-quantum/environment.yml) file and running the following:
+    >```
+    >conda env create -f environment.yml
+    >```
+    > This creates a new conda environment that you can activate with the following:
+    >```
+    >conda activate azurequantum
+    >```
 
 1. Install the package using pip:
 
