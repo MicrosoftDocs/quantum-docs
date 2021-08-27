@@ -156,13 +156,15 @@ print(job.details.status)
 Lists instances of all targets available on the Workspace, with optional filter by provider ID or target name. This method returns a list or a single instance. This includes all of the QIO Solvers, since Solver is a subclass of Target.
 Each target can be used to submit a job as an alternative to creating a Solver instance directly as described in [Job management](xref:microsoft.quantum.optimization.job-management). `Workspace.get_targets` takes optional keyword parameters. If no keyword parameters are passed, it automatically defaults to using the parameter-free target.
 
+The below example shows how to get all targets associated with your workspace:
+
 ```py
 from azure.quantum import Workspace
 
 workspace = Workspace(...)
 targets = workspace.get_targets()
 
-print(targets)
+targets
 ```
 ```output
 [<Target name="microsoft.paralleltempering-parameterfree.cpu", avg. queue time=0 s, Available>,
@@ -182,9 +184,27 @@ print(targets)
  <Target name="honeywell.hqs-lt-s1-sim", avg. queue time=6 s, Available>]
 ```
 
+To filter by provider, simply specify the `provider_id` input argument:
+
 ```py
-solver = workspace.get_targets("microsoft.simulatedannealing.cpu")
-print(solver)
+targets = workspace.get_targets(provider_id="microsoft")
+targets
+```
+
+```output
+[<Target name="microsoft.paralleltempering-parameterfree.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.simulatedannealing-parameterfree.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.tabu-parameterfree.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.qmc.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.populationannealing.cpu", avg. queue time=0 s, Available>,
+ <Target name="microsoft.substochasticmontecarlo.cpu", avg. queue time=0 s, Available>]
+```
+
+To get a single target, for instance, the Simulated Annealing solver, speciy the `name` input argument:
+
+```py
+solver = workspace.get_targets(name="microsoft.simulatedannealing.cpu")
+solver
 ```
 
 Since no keyword arguments were given, the workspace defaults to the parameter-free version:
@@ -196,8 +216,8 @@ Since no keyword arguments were given, the workspace defaults to the parameter-f
 To specify input arguments, use:
 
 ```py
-solver = workspace.get_targets("microsoft.simulatedannealing.cpu", timeout=100, seed=22)
-print(solver)
+solver = workspace.get_targets(name="microsoft.simulatedannealing.cpu", timeout=100, seed=22)
+solver
 ```
 
 ```output
@@ -217,7 +237,7 @@ problem.add_term(c=5, indices=[2,0])
 problem = 
 job = solver.submit(problem)
 results = job.get_results()
-print(results)
+results
 ```
 
 ```output
