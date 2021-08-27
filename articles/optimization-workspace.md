@@ -154,7 +154,7 @@ print(job.details.status)
 ## Workspace.get_targets
 
 Lists instances of all targets available on the Workspace, with optional filter by provider ID or target name. This method returns a list or a single instance. This includes all of the QIO Solvers, since Solver is a subclass of Target.
-Each target can be used to submit a job as an alternative to creating a Solver instance directly as described in [Job management](xref:microsoft.quantum.optimization.job-management). Workspace.get_targets takes optional keyword parameters. If no keyword parameters are passed, it automatically defaults to using the parameter-free target.
+Each target can be used to submit a job as an alternative to creating a Solver instance directly as described in [Job management](xref:microsoft.quantum.optimization.job-management). `Workspace.get_targets` takes optional keyword parameters. If no keyword parameters are passed, it automatically defaults to using the parameter-free target.
 
 ```py
 from azure.quantum import Workspace
