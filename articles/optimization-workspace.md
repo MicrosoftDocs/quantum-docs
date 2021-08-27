@@ -55,8 +55,10 @@ from azure.quantum import Workspace
 workspace = Workspace(...)
 job = workspace.get_job("285cfcb4-6822-11ea-a05f-2a16a847b8a3")
 print(job.details.status)
+```
 
-> Succeeded
+```output
+Succeeded
 ```
 
 
@@ -71,11 +73,12 @@ workspace = Workspace(...)
 jobs = workspace.list_jobs()
 for job in jobs:
     print(job.id, job.details.status)
-
-> 08ea8792-68f2-11ea-acc5-2a16a847b8a3 Succeeded
-> 0ab1863a-68f2-11ea-82b3-2a16a847b8a3 Succeeded
-> 0c5c507e-68f2-11ea-ba75-2a16a847b8a3 Cancelled
-> f0c8de58-68f1-11ea-a565-2a16a847b8a3 Executing
+```
+```output
+08ea8792-68f2-11ea-acc5-2a16a847b8a3 Succeeded
+0ab1863a-68f2-11ea-82b3-2a16a847b8a3 Succeeded
+0c5c507e-68f2-11ea-ba75-2a16a847b8a3 Cancelled
+f0c8de58-68f1-11ea-a565-2a16a847b8a3 Executing
 ```
 
 The `Workspace.list_jobs` method also allows the user to filter on the creation date, status and name properties of a job when listing. Filters can be combined. 
@@ -147,8 +150,10 @@ job = workspace.get_job("285cfcb4-6822-11ea-a05f-2a16a847b8a3")
 
 workspace.cancel_job(job)
 print(job.details.status)
+```
 
-> Succeeded
+```output
+Succeeded
 ```
 
 ## Workspace.get_targets
@@ -163,9 +168,9 @@ from azure.quantum import Workspace
 
 workspace = Workspace(...)
 targets = workspace.get_targets()
-
 targets
 ```
+
 ```output
 [<Target name="microsoft.paralleltempering-parameterfree.cpu", avg. queue time=0 s, Available>,
  <Target name="microsoft.simulatedannealing-parameterfree.cpu", avg. queue time=0 s, Available>,
