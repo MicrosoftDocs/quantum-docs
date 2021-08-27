@@ -158,10 +158,10 @@ Succeeded
 
 ## Workspace.get_targets
 
-Lists instances of all targets available on the Workspace, with optional filter by provider ID or target name. This method returns a list or a single instance. This includes all of the QIO Solvers, since Solver is a subclass of Target.
+Lists instances of all targets available on the Workspace and can be filtered by provider ID or target name. This method returns a list or a single instance. This includes all of the QIO Solvers, since Solver is a subclass of Target.
 Each target can be used to submit a job as an alternative to creating a Solver instance directly as described in [Job management](xref:microsoft.quantum.optimization.job-management). `Workspace.get_targets` takes optional keyword parameters. If no keyword parameters are passed, it automatically defaults to using the parameter-free target. Note that there is an exception for the Population Annealing and Substochastic Monte Carlo solvers, as they requrie a `timeout` parameter to resolve to the parameter-free version. The QMC solver does not have a parameter-free option.
 
-The below example shows how to get all targets associated with your workspace:
+The following example shows how to get all targets associated with your workspace:
 
 ```py
 from azure.quantum import Workspace
@@ -189,7 +189,7 @@ targets
  <Target name="honeywell.hqs-lt-s1-sim", avg. queue time=6 s, Available>]
 ```
 
-To filter by provider, simply specify the `provider_id` input argument:
+To filter by provider, specify the `provider_id` input argument:
 
 ```py
 targets = workspace.get_targets(provider_id="microsoft")
@@ -205,7 +205,7 @@ targets
  <Target name="microsoft.substochasticmontecarlo.cpu", avg. queue time=0 s, Available>]
 ```
 
-To get a single target, for instance, the Simulated Annealing solver, speciy the `name` input argument:
+To get a single target, for instance, the Simulated Annealing solver, specify the `name` input argument:
 
 ```py
 solver = workspace.get_targets(name="microsoft.simulatedannealing.cpu")
