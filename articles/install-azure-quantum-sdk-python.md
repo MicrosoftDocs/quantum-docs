@@ -1,6 +1,6 @@
 ---
 author: guenp
-description: Learn how to install the Azure Quantum SDK for Python to submit Quantum Computing circuits to Azure Quantum.
+description: Learn how to install the Azure Quantum SDK for Python to submit Quantum circuits to Azure Quantum.
 ms.author: v-guenp
 ms.date: 08/25/2021
 ms.service: azure-quantum
@@ -13,7 +13,7 @@ uid: microsoft.quantum.install-qdk.overview.azure-sdk-python
 
 # Submit quantum circuits to IonQ and Honeywell with Python
 
-Learn how to install the Azure Quantum SDK for Python and submit basic Quantum Computing circuits to Azure Quantum.
+Learn how to install the Azure Quantum SDK for Python and submit basic Quantum circuits to Azure Quantum. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
 ## Install the `azure-quantum` Python package
 
