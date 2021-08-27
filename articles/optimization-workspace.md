@@ -159,7 +159,7 @@ Succeeded
 ## Workspace.get_targets
 
 Lists instances of all targets available on the Workspace and can be filtered by provider ID or target name. This method returns a list or a single instance. This includes all of the QIO Solvers, since Solver is a subclass of Target.
-Each target can be used to submit a job as an alternative to creating a Solver instance directly as described in [Job management](xref:microsoft.quantum.optimization.job-management). `Workspace.get_targets` takes optional keyword parameters. If no keyword parameters are passed, it automatically defaults to using the parameter-free target. Note that there is an exception for the Population Annealing and Substochastic Monte Carlo solvers, as they requrie a `timeout` parameter to resolve to the parameter-free version. The QMC solver does not have a parameter-free option.
+Each target can be used to submit a job as an alternative to creating a Solver instance directly as described in [Job management](xref:microsoft.quantum.optimization.job-management). `Workspace.get_targets` takes optional keyword parameters. If no keyword parameters are passed, it defaults to using the parameter-free target. Note that there is an exception for the Population Annealing and Substochastic Monte Carlo solvers, as they requrie a `timeout` parameter to resolve to the parameter-free version. The QMC solver does not have a parameter-free option.
 
 The following example shows how to get all targets associated with your workspace:
 
