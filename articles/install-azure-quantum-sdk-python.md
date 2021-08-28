@@ -116,14 +116,14 @@ pl.ylabel("Probabilities")
     measure q[2] -> c0[2];
     ```
 
-1. Submit the circuit to the Honeywell target. In the below example we are using the Honeywell simulator. This returns a `Job` (for more info, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference)).
+1. Submit the circuit to the Honeywell target. In the below example we are using the Honeywell API validator. This returns a `Job` (for more info, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference)).
 
     ```python
-    target = Honeywell(workspace=workspace, target="honeywell.hqs-lt-s1-sim")
+    target = Honeywell(workspace=workspace, target="honeywell.hqs-lt-s1-apival")
     job = target.submit(circuit, num_shots=500)
     ```
 
-1. Wait until the job is complete and fetch the results.
+1. Wait until the job is complete and fetch the results. Note that the API validator only returns zeroes for qubit read-out results.
 
     ```python
     results = job.get_results()
@@ -133,11 +133,11 @@ pl.ylabel("Probabilities")
     ```output
     ........
     {'c0': ['000',
-    '111',
     '000',
     '000',
     '000',
-    '111',
+    '000',
+    '000',
     '000',
     ...
     ]}
