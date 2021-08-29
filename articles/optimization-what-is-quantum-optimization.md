@@ -37,6 +37,12 @@ Applying QIO to real-world problems may offer businesses new insights or help lo
 
 Since QIO methods are heuristics, they're not guaranteed to find the optimal solution. Also, they don't always outperform other optimization techniques. In reality, it depends on the problem, and discovering what makes QIO perform better than other methods in some situations and not others is still an active area of research.
 
+Here are the necessary conditions for QIO to perform well, compared to other classical optimization algorithms:
+
+- Optimization landscapes should be rugged but structured. Such landscapes occur frequently in real-world problems.
+- If the number of variables is too small, simplistic algorithms are already sufficient. For problems that have hundreds of variables, QIO has achieved orders of magnitude improvement over previously used methods.
+- Problem parameters that affect the chosen cost metric must be represented via the variables of a cost function. Express cost functions as polynomials over binary variables to obtain a PUBO problem.
+
 ## How does QIO solve problems?
 
 There exist two common methods for finding the global minimum of a cost function: *simulated annealing* and *quantum annealing*. Simulated annealing is based on ideas from thermal physics, whereas quantum annealing is a quantum algorithm.
@@ -68,12 +74,12 @@ This parameter defines the radius of neighboring states we can move to. As time 
 
 Azure Quantum offers a range of quantum-inspired techniques to solve discrete and combinatorial optimization problems.
 
-- **Parallel Tempering**: A related classical optimization approach, where copies of a system are kept at different temperatures, automating the repeated heating and cooling in tempering approaches. It can be used to accelerate both classical and (simulated) quantum annealing, as well as many other heuristics. 
-- **Simulated Annealing**: A classical stochastic simulation method that mimics the slow cooling of a material (annealing) to remove imperfections. A temperature is reduced according to a schedule. Thermal hops assist in escaping from local minima in the search space. 
-- **Population Annealing**: Just like Simulated Annealing simulates a walker that, ideally, always moves downhill, Population Annealing simulates a population of metropolis walkers, which continuously consolidates search efforts around favorable states.
-- **Quantum Monte Carlo**: A quantum-inspired optimization that mimics the quantum annealing method by using quantum Monte-Carlo simulations. Analogous to the temperature in simulated annealing, the quantum tunneling strength is reduced over time. Quantum tunneling effects assist in escaping from local minima in the search space.
+- [**Parallel Tempering**](xref:microsoft.quantum.optimization.parallel-tempering): A related classical optimization approach, where copies of a system are kept at different temperatures, automating the repeated heating and cooling in tempering approaches. It can be used to accelerate both classical and (simulated) quantum annealing, as well as many other heuristics. 
+- [**Simulated Annealing**](xref:microsoft.quantum.optimization.simulated-annealing): A classical stochastic simulation method that mimics the slow cooling of a material (annealing) to remove imperfections. A temperature is reduced according to a schedule. Thermal hops assist in escaping from local minima in the search space. 
+- [**Population Annealing**](xref:microsoft.quantum.optimization.population-annealing): Just like Simulated Annealing simulates a walker that, ideally, always moves downhill, Population Annealing simulates a population of metropolis walkers, which continuously consolidates search efforts around favorable states.
+- [**Quantum Monte Carlo**](xref:microsoft.quantum.optimization.quantum-monte-carlo): A quantum-inspired optimization that mimics the quantum annealing method by using quantum Monte-Carlo simulations. Analogous to the temperature in simulated annealing, the quantum tunneling strength is reduced over time. Quantum tunneling effects assist in escaping from local minima in the search space.
 Note that this is just a small subset of available techniques, and we continue to develop and add new solvers to the service.
-- **Substochastic Monte Carlo**: Substochastic Monte Carlo is a diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It simulates the diffusion of a population of walkers in search space, while walkers are removed or duplicated based on how they perform according to the cost function.
-- **Tabu Search**: Tabu Search looks at neighboring configurations. It can accept worsening moves if no improving moves are available and prohibit moves to previously visited solutions
+- [**Substochastic Monte Carlo**](xref:microsoft.quantum.optimization.substochastic-monte-carlo): Substochastic Monte Carlo is a diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It simulates the diffusion of a population of walkers in search space, while walkers are removed or duplicated based on how they perform according to the cost function.
+- [**Tabu Search**](xref:microsoft.quantum.optimization.tabu): Tabu Search looks at neighboring configurations. It can accept worsening moves if no improving moves are available and prohibit moves to previously visited solutions
 
 For more information, visit [Microsoft QIO provider list](xref:microsoft.quantum.optimization.providers.microsoft.qio).
