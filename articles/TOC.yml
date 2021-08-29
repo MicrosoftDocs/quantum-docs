@@ -112,10 +112,10 @@
   items:
   - name: Overview
     items:
-    - name: What is quantum inspired optimization (QIO)?
-      href: optimization-what-is-quantum-optimization.md
     - name: What is optimization?
       href: optimization-overview-introduction.md
+    - name: What is quantum inspired optimization (QIO)?
+      href: optimization-what-is-quantum-optimization.md
     - name: Key concepts
       href: optimization-overview-key-concepts.md 
   - name: Quickstart
