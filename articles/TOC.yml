@@ -29,10 +29,12 @@
         href: overview-algebra-for-quantum-computing.md
   - name: Quickstarts
     items:
-    - name: Azure Quantum portal
+    - name: Azure Quantum
       items:
-      - name: Create a quantum-based random number generator
+      - name: Create a quantum-based random number generator with Q#
         href: quickstart-microsoft-qc.md
+      - name: Submit quantum circuits to IonQ and Honeywell with Python
+        href: install-azure-quantum-sdk-python.md
     - name: Quantum Development Kit (QDK)
       items:
       - name: Q# applications
@@ -57,7 +59,7 @@
         href: tutorial-qdk-qubit-level-program.md
   - name: How-to guides
     items: 
-    - name: Submit quantum computing jobs 
+    - name: Submit Q# jobs
       href: how-to-submit-jobs.md
   - name: Q# user guide
     href: user-guide/toc.yml
