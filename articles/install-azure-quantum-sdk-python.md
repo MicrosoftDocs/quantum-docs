@@ -103,8 +103,8 @@ pl.ylabel("Probabilities")
 
 1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For instance, the below example creates a Teleportation circuit:
 
-    ```
-    OPENQASM 2.0;
+    ```py
+    circuit = """OPENQASM 2.0;
     include "qelib1.inc";
     qreg q[3];
     creg c0[3];
@@ -114,6 +114,14 @@ pl.ylabel("Probabilities")
     measure q[0] -> c0[0];
     measure q[1] -> c0[1];
     measure q[2] -> c0[2];
+    """
+    ```
+
+    Optionally, you can load the circuit from a file:
+
+    ```py
+    with open("my_teleport.qasm", "r") as f:
+        circuit = f.read()
     ```
 
 1. Submit the circuit to the Honeywell target. In the below example we are using the Honeywell API validator. This returns a `Job` (for more info, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference)).
