@@ -118,6 +118,13 @@ pl.ylabel("Probabilities")
     """
     ```
 
+    Optionally, you can load the circuit from a file:
+
+    ```py
+    with open("my_teleport.qasm", "r") as f:
+        circuit = f.read()
+    ```
+
 1. Submit the circuit to the Honeywell target. In the below example we are using the Honeywell API validator. This returns a `Job` (for more info, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference)).
 
     ```python
