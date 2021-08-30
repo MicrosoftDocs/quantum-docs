@@ -103,7 +103,7 @@ pl.ylabel("Probabilities")
 
 1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For instance, the below example creates a Teleportation circuit:
 
-    ```
+    ```py
     circuit = """
     OPENQASM 2.0;
     include "qelib1.inc";
