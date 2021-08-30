@@ -24,7 +24,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 *Release date: August 30th, 2021*
 
 - Alternative operation in [@SubstitutableOnTarget](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.targeting.substitutableontarget) does not need to be explicitly referred to anymore in Microsoft.Quantum.AutoSubstitution NuGet package.
-- New Workspace.get_targets() method in azure-quantum package that returns a list of all available targets. Can filter by Provider ID or Target ID.
+- New `Workspace.get_targets()` method in azure-quantum package that returns a list of all available targets. Can filter by Provider ID or Target ID.
 - An [issue](https://github.com/microsoft/iqsharp/issues/500) was resolved that prevented using IQ# or the `qsharp` Python package with Python 3.8 or 3.9 when using `conda`.
 - Fixed an [issue](https://github.com/microsoft/qsharp-compiler/issues/768) where nested Conditional blocks may be incorrectly lifted.
 - Resolve an [issue](https://github.com/microsoft/qsharp-compiler/issues/1112) where some code failed to compile previously for Honeywell target.
