@@ -25,7 +25,10 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 - Alternative operation in [@SubstitutableOnTarget](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.targeting.substitutableontarget) does not need to be explicitly referred to anymore in Microsoft.Quantum.AutoSubstitution NuGet package.
 - New Workspace.get_targets() method in azure-quantum package that returns a list of all available targets. Can filter by Provider ID or Target ID.
-- An issue was resolved that prevented using IQ# or the `qsharp` Python package with Python 3.8 or 3.9 when using `conda` [microsoft/iqsharp#500](https://github.com/microsoft/iqsharp/issues/500).
+- An [issue](https://github.com/microsoft/iqsharp/issues/500) was resolved that prevented using IQ# or the `qsharp` Python package with Python 3.8 or 3.9 when using `conda`.
+- Fixed an [issue](https://github.com/microsoft/qsharp-compiler/issues/768) where nested Conditional blocks may be incorrectly lifted.
+- Resolve an [issue](https://github.com/microsoft/qsharp-compiler/issues/1112) where some code failed to compile previously for Honeywell target.
+- Added an option where QIR generation is not target specific.
 - Released Az CLI quantum extension version 0.7.0:
     - Provide compiler output to users in case of error for easier troubleshooting.
     - Fixed bug in which retrieving output from workspaces in a location different to another set as default failed.
