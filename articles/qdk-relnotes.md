@@ -29,6 +29,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Fixed an [issue](https://github.com/microsoft/qsharp-compiler/issues/768) where nested Conditional blocks may be incorrectly lifted.
 - Resolved an [issue](https://github.com/microsoft/qsharp-compiler/issues/1112) where some code failed to compile previously for Honeywell target.
 - Added an option where QIR generation is not target specific.
+- Fixed a concurrency [bug](https://github.com/microsoft/qsharp-runtime/pull/798) that could cause intermittent crashes if multiple simulator instances are run in the same process.
 - Released Az CLI quantum extension version 0.7.0:
   - Provide compiler output to users if there was error for easier troubleshooting.
   - Fixed bug in which retrieving output from workspaces in a location different to another set as default failed.
