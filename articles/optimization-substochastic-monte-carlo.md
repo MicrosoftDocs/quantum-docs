@@ -43,6 +43,7 @@ Substochastic Monte Carlo in Azure Quantum supports:
 
 - Parameterized mode
 - Ising and PUBO input formats
+- CPU only
 
 ## When to use Substochastic Monte Carlo
 
