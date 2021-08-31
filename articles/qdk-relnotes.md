@@ -21,7 +21,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 ## QDK Version 0.18.2108.160310
 
-*Release date: August 30, 2021*
+*Release date: August 31, 2021*
 
 - Alternative operation in [@SubstitutableOnTarget](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.targeting.substitutableontarget) does not need to be explicitly referred to anymore in Microsoft.Quantum.AutoSubstitution NuGet package.
 - New `Workspace.get_targets()` method in azure-quantum package that returns a list of all available targets. Can filter by Provider ID or Target ID.
