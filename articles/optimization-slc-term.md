@@ -24,8 +24,8 @@ Right now the Python SDK for Optimization supports `SlcTerm` objects and we are 
 
 To create a `SlcTerm` object, specify the following parameters:
 
-- `terms`: This corresponds to the list of monomial terms comprising the grouped term argument; each element of this list should be a `Term` object.
-- `c`: This corresponds to the lead coefficient.
+- `terms`: The list of monomial terms that make up the grouped term argument; each element of this list should be a `Term` object.
+- `c`: The lead coefficient.
 
  For instance, the squared linear combination term $2 (x_1 + 3x_2 - x_3 - 1)^2$ translates to the following object: 
 
@@ -54,13 +54,13 @@ SlcTerm(
 
 #### Constraints on Input
 
-For squared linear comibnation terms there are two main constraints on input:
+For squared linear combination terms there are two main constraints on input:
 
 - In the `terms` list, *each term must be linear or constant*. That is, each `Term` must have an `indices` argument with a length of at most 1.
 - Among the `terms` list, *like-terms must be combined* before input. That is, there may not be multiple terms having the same `indices` argument within a given SLC term.
 
 For more information on cost functions and how terms relate to a problem definition, see [Cost functions](xref:microsoft.quantum.optimization.concepts.cost-function).
-Grouped terms are comprised of `Term` objects, see [Term](xref:microsoft.quantum.optimization.term).
+Grouped terms are composed of `Term` objects, see [Term](xref:microsoft.quantum.optimization.term).
 Terms can be supplied to a `Problem` object, see [Problem](xref:microsoft.quantum.optimization.problem).
 
 #### Availability
@@ -71,7 +71,9 @@ The terms can currently be handled by two solvers in Microsoft QIO:
 - Substochastic Monte Carlo
 - Population Annealing
 
-When submitting grouped problem types to a solver that does not support them via the SDK a client error will appear and the problem submission will fail. 
-We are closely monitoring the use of grouped terms in solvers that support them, and are considering expanding the feature to more solvers in future.
+If you submit grouped problem types to a solver that doesn't support them, a client error will appear in the SDK. 
+The submission will fail.
+
+We are reviewing the use of grouped terms in solvers that support them. We are considering expanding the feature to more solvers, and adding more grouped terms in future.
 
 If you discover any bugs or issues while working with SlcTerms, please reach out to [Azure Support](https://support.microsoft.com/topic/contact-microsoft-azure-support-2315e669-8b1f-493b-5fb1-d88a8736ffe4).
