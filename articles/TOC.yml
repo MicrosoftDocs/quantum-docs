@@ -190,6 +190,8 @@
         href: optimization-input-formats.md
       - name: Term
         href: optimization-term.md
+      - name: SlcTerm
+        href: optimization-slc-term.md
       - name: RangeSchedule
         href: optimization-rangeschedule.md
     - name: Usage
