@@ -23,9 +23,10 @@ from azure.quantum.optimization import Problem
 To create a `Problem` object, you specify the following information:
 
 - `name`: A friendly name for your problem. No uniqueness constraints.
-- [optional] `terms`: A list of `Term` objects to add to the problem.
-- [optional] `problem_type`: The type of problem. Must be either
-  `ProblemType.ising` or `ProblemType.pubo`. Default is `ProblemType.ising`.
+- [optional] `terms`: A list of `Term` objects and grouped term objects - where supported - to add to the problem.
+- [optional] `problem_type`: The type of problem. Must be one of
+  `ProblemType.ising`, `ProblemType.pubo`, `ProblemType.ising_grouped`, or
+  `ProblemType.pubo_grouped`. The default is `ProblemType.ising`.
 - [optional] `init_config`: A dictionary of variable IDs to value if user wants to specify an initial configuration for the problem.
 
 ```py
@@ -44,12 +45,39 @@ problem2 = Problem(name="Problem with Initial Configuration", terms=terms, init_
 
 ### Problem.add_term
 
-Adds a single term to the problem. It takes a coefficient for the term and the indices
+Adds a single monomial term to the problem. It takes a coefficient for the term and the indices
 of variables that appear in the term.
 
 ```py
 coefficient = 0.13
 problem.add_term(c=coefficient, indices=[2,0])
+```
+
+### Problem.add_slc_term
+
+Adds a single squared linear combination (SLC) term to
+the problem. It accepts a list of composite terms and a
+lead coefficient. The list of terms may be given as either
+a list of `Term` objects or as a list of tuples, with each
+tuple containing a monomial term coefficient then the
+variable index for the monomial (or `None` if a constant).
+
+```py
+subterms_Term = [
+    Term(c=1, indices=[0]),
+    Term(c=-2, indices=[1]),
+    Term(c=1, indices=[2]),
+    Term(c=-1, indices=[])
+]
+subterms_tuple = [
+    (1, 0),
+    (-2, 1),
+    (1, 2),
+    (-1, None)
+]
+coefficient = 2
+problem.add_slc_term(terms=subterms_Term, c=coefficient)
+problem.add_slc_term(terms=subterms_tuple, c=coefficient)
 ```
 
 ### Problem.add_terms
@@ -66,6 +94,23 @@ problem.add_terms([
     Term(c=-4, indices=[3,1]),
     Term(c=4, indices=[3,2])
 ])
+```
+
+This function is overloaded to further serve as a wrapper
+for grouped terms with the input list of terms as the list
+of terms comprising the grouped term as well as a grouped
+term type and lead coefficient.
+
+```py
+problem.add_terms([
+        Term(c=1, indices=[0]),
+        Term(c=-2, indices=[1]),
+        Term(c=1, indices=[2]),
+        Term(c=-1, indices=[])
+    ],
+    term_type = GroupType.squared_linear_combination,
+    c = 2
+)
 ```
 
 ### Problem.serialize
