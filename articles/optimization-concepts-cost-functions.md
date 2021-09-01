@@ -78,10 +78,8 @@ the optimal solution, $22/7$, is unique.
 
 ## Parameterized models
 
-Typical optimization problems consist of many variables and several terms
-that make up the cost function. It is a good idea to select a
-specific structure for the mathematical expression that makes it easy to 
-create several different problem instances by adjusting the parameters and variables.
+Typically, optimization problems consist of many variables and several terms that make up the cost function. 
+It is useful to select a specific mathematical structure to represent these cost functions which allows you to simply denote the parameters and variable locations required to construct the cost function for your specific problem.
 
 **Example**: Divide a set of $N$ numbers into two groups of equal sum.
 
@@ -91,7 +89,7 @@ create several different problem instances by adjusting the parameters and varia
 *   Model cost function:
     $$ \mathrm{cost} = \left| \sum_i w_i x_i \right| $$
 
-That is, we always construct a cost function of the form in the third bullet,
+In this example we always construct a cost function of the form in the third bullet,
 but we adjust the parameters $w_i$ according to the specific problem instance
 we are solving.
 
