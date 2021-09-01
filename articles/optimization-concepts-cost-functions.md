@@ -121,8 +121,13 @@ to obtain:
 $$ \mathrm{cost}' = \left(\sum_i w_ix_i\right)^2 = \sum_{ij} w_iw_jx_ix_j\text{ .} $$
 
 When multiplied out, this cost function has more terms than the previous one,
-but it happens to be in the (polynomial) form supported by our optimizers
-(namely, an Ising cost function).
+but together these forms represent the polynomial forms supported by our optimizers. 
+
+All optimizers support cost functions as sums of monomial terms and 
+we are gradually adding support for squared linear combinations.
+
+> [!NOTE]
+> The squared linear combination (SLC) term is supported in the Substochastic Monte Carlo and Population Annealing solver as an Early Access feature.
 
 ### Ising cost function
 
