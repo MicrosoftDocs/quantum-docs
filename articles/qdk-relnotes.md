@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the latest updates to the Microsoft Quantum Development Kit preview.
 ms.author: v-benbra
-ms.date: 08/31/2021
+ms.date: 09/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
@@ -18,6 +18,12 @@ This article contains information on each Quantum Development Kit release.
 For installation instructions, please refer to the [install guide](xref:microsoft.quantum.install-qdk.overview).
 
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
+
+## QDK Version 0.18.2108.160999
+
+*Release date: September 1, 2021*
+
+- The 'Microsoft.Quantum.Qir.Runtime.Tools' NuGet package issue has been fixed.
 
 ## QDK Version 0.18.2108.160310
 
