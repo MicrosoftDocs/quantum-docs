@@ -12,7 +12,7 @@ uid: microsoft.quantum.optimization.express-problem
 
 # Express an optimization problem
 
-To express a simple problem to be solved, create an instance of a `Problem` and set the `problem_type`
+To express a problem to be solved, create an instance of a `Problem` and set the `problem_type`
 to one of `ProblemType.ising`, `ProblemType.pubo`, or their grouped analogues,
 see [`ProblemType`](xref:microsoft.quantum.optimization.problem-type).
 
@@ -44,7 +44,7 @@ problem.add_terms(terms=terms)
 ## Ways to supply problem terms
 
 There are three ways to supply terms for a [`Problem`](xref:microsoft.quantum.optimization.problem): in the
-constructor, individually, and as a list of `Term` objects or - where supported - grouped term (e.g. `SlcTerm`) objects.
+constructor, individually, and as a list of `Term` objects or - where supported - grouped term (for example: `SlcTerm`) objects.
 
 ### In the constructor
 
