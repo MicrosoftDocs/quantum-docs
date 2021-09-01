@@ -96,10 +96,8 @@ problem.add_terms([
 ])
 ```
 
-This function is overloaded to further serve as a wrapper
-for grouped terms with the input list of terms as the list
-of terms comprising the grouped term as well as a grouped
-term type and lead coefficient.
+This function also has an overload that serves as a wrapper for grouped terms as shown below.
+The overload can be used by specifying a list of `Term` objects along with the grouped term type.
 
 ```py
 problem.add_terms([
@@ -133,13 +131,13 @@ Problem data can be explicitly uploaded to an Azure storage account using its
 problem.upload(workspace=workspace)
 ```
 
-Once a problem is explicitly uploaded, it will not be automatically uploaded
+Once a problem is explicitly uploaded, it won't be uploaded automatically 
 during submission unless its terms change.
 
 
 ### Problem.evaluate
 
-Once a problem has been defined, the user can evaluate the problem on any configuration they supply. The configuration should be supplied as a dictionary of variable IDs to values. 
+Once a problem has been defined, you can evaluate the problem on any configuration they supply. The configuration should be supplied as a dictionary of variable IDs to values. 
 
 ```py
 problem = Problem("My Problem", [Term(c=1, indices=[0,1])])
@@ -152,7 +150,7 @@ problem.evaluate({0:1, 1:0})
 
 ### Problem.set_fixed_variables
 
-During experimentation, the user may want to set a variable (or a group of variables) to a particular value. Calling set_fixed_variables will return a new Problem object representing the modified problem after such variables have been fixed.
+During experimentation, you may want to set a variable (or a group of variables) to a particular value. Calling set_fixed_variables will return a new Problem object representing the modified problem after the selected variables have been fixed.
 
 ```py
 fixed_var = {'1': 1, '2': 1}
@@ -173,7 +171,7 @@ result_config.update(fixed_var) # join the fixed variables with the result
 
 ### Problem.get_terms
 
-The user can get the terms in which a variable exists using this function.
+You can get the terms in which a variable exists using this function.
 
 ```py
 problem = Problem("My problem" ,  [Term(c=1, indices=[0,1]), Term(c=11, indices=[1,2]), Term(c=5, indices=[1])])
@@ -188,14 +186,13 @@ terms
 The StreamingProblem class can handle large problems that exceed local memory limits. Unlike with the Problem class, terms in the StreamingProblem are uploaded directly to blob and are not kept in memory.
 
 The StreamingProblem class uses the same interface as the Problem class. See [StreamingProblem](xref:microsoft.quantum.optimization.streaming-problem) usage documentation. 
-
-There are some features that are not yet supported on the StreamingProblem class due to its streaming nature:
+There are some features that are not yet supported on the StreamingProblem class because of its streaming nature:
 
 - Problem.set_fixed_variables()
 - Problem.evaluate()
 
 ## OnlineProblem
 
-The OnlineProblem class creates a problem from the url of the blob storage where an optimization problem has been uploaded. It is essentially used to reuse already submitted problems.
+The OnlineProblem class creates a problem from the url of the blob storage where an optimization problem has been uploaded. It allows you to reuse already submitted problems.
 It does not support client-side analysis, for example, the `evaluate` and `set_fixed_variables` functions. It allows you to download the problem from the blob storage as an instance of the `Problem` class to do any of the client-side operations.
 For an example of how to use the `OnlineProblem` class, have a look at [reusing problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions).
