@@ -81,7 +81,7 @@ the optimal solution, $22/7$, is unique.
 Typical optimization problems consist of many variables and several terms
 that make up the cost function. It is a good idea to select a
 specific structure for the mathematical expression that makes it easy to 
-create several differnt problem instances by adjusting the parameters and variables.
+create several different problem instances by adjusting the parameters and variables.
 
 **Example**: Divide a set of $N$ numbers into two groups of equal sum.
 
