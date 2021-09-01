@@ -23,7 +23,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 *Release date: September 1, 2021*
 
-- The 'Microsoft.Quantum.Qir.Runtime.Tools' NuGet package issue has been fixed.
+- Fixed an issue where required metadata was missing for the [Microsoft.Quantum.Qir.Runtime](https://www.nuget.org/packages/Microsoft.Quantum.Qir.Runtime) NuGet package.
 
 ## QDK Version 0.18.2108.160310
 
