@@ -127,7 +127,8 @@ All optimizers support cost functions as sums of monomial terms and
 we are gradually adding support for squared linear combinations.
 
 > [!NOTE]
-> The squared linear combination (SLC) term is supported in the Substochastic Monte Carlo and Population Annealing solver as an Early Access feature.
+> Only a subset of optimization solvers currently support grouped terms.
+> Refer to the [`SlcTerm`](xref:microsoft.quantum.optimization.slc-term) documentation for details.
 
 ### Ising cost function
 
