@@ -16,12 +16,12 @@ An *optimization problem* is described by a set of *variables*, each having a se
 (or range) of possible values. They describe the decisions that the optimizer
 must make.
 
-A *solution* assigns a value to each of these variables. These describe the choice
+A *solution* assigns a value to each of these variables. The variables describe the choice
 for each of the aforementioned decisions.
 
 The *cost function* associates a numerical value ("score") with each possible
-solution in order to compare them and select the most favorable one (typically
-identified by the lowest cost value).
+solution in order to compare them and selects the most favorable one. Typically
+the most favorable solution is identified by the lowest cost value.
 
 > [!NOTE]
 > In physics, the *Hamiltonian* takes the role of the cost function and its
@@ -55,10 +55,10 @@ problem's variables and parameters.
 
 ## Constraints
 
-A *constraint* is a relation between multiple variables which must hold for a
-solution to be deemed valid.
+A *constraint* is a relation between multiple variables that must hold for a
+solution to be considered valid.
 
-Solutions which violate constraints can either be assigned a very high cost
+Solutions that violate constraints can either be assigned a very high cost
 ("penalty") by the cost function or be excluded from sampling explicitly by
 the optimizer.
 
@@ -79,10 +79,9 @@ the optimal solution, $22/7$, is unique.
 ## Parameterized models
 
 Typical optimization problems consist of many variables and several terms
-constituting the cost function. It is therefore pertinent to select a
-specific structure for the mathematical expression, while denoting merely
-the parameters and variable locations required to construct the cost
-function.
+that make up the cost function. It is a good idea to select a
+specific structure for the mathematical expression that makes it easy to 
+create several differnt problem instances by adjusting the parameters and variables.
 
 **Example**: Divide a set of $N$ numbers into two groups of equal sum.
 
@@ -114,7 +113,7 @@ and Quadratic/Polynomial unconstrained
 problems. These support versatile applications because several other
 optimization problems can be mapped to them.
 
-**Example**: For the above number set division problem, one can substitute the
+**Example**: For the above number set division problem, you can replace the
 absolute value with the square operator (which also has its lowest value at 0)
 to obtain:
 
@@ -152,7 +151,7 @@ For instance, the input:
   ]
 }
 ```
-describes the an Ising cost function with three terms:
+describes an Ising cost function with three terms:
 $$ \mathrm{cost} = 3x_0x_1x_2 -2x_0x_3 + x_2x_3\text{ .} $$
 
 > [!NOTE]
