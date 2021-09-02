@@ -89,7 +89,7 @@ It is useful to select a specific mathematical structure to represent these cost
 *   Model cost function:
     $$ \mathrm{cost} = \left| \sum_i w_i x_i \right| $$
 
-In this example we always construct a cost function of the form in the third bullet,
+In this example, we always construct a cost function of the form in the third bullet,
 but we adjust the parameters $w_i$ according to the specific problem instance
 we are solving.
 
