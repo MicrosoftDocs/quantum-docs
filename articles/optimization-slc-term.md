@@ -10,7 +10,7 @@ title: Quantum optimization grouped term
 uid: microsoft.quantum.optimization.slc-term
 ---
 
-# Azure Quantum Optimization Squared Linear Combination terms
+# Azure Quantum Optimization squared linear combination terms
 
 ## SlcTerm
 ```py
