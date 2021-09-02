@@ -60,10 +60,6 @@ terms = [
 problem = Problem(name="My Difficult Problem", terms=terms)
 ```
 
-> [!NOTE]
-> Only a subset of optimization solvers currently support grouped terms.
-> Refer to the [`SlcTerm`](xref:microsoft.quantum.optimization.slc-term) documentation for details.
-
 If grouped terms are included in the terms list, the problem type should reflect the grouped
 nature via either `ProblemType.ising_grouped` or `ProblemType.pubo_grouped`.
 When grouped terms are added to a problem, the problem type will automatically be converted to the
