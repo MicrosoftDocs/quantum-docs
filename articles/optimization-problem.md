@@ -56,11 +56,8 @@ problem.add_term(c=coefficient, indices=[2,0])
 ### Problem.add_slc_term
 
 Adds a single squared linear combination (SLC) term to
-the problem. It accepts a list of composite terms and a
-lead coefficient. The list of terms may be given as either
-a list of `Term` objects or as a list of tuples, with each
-tuple containing a monomial term coefficient followed by the
-variable index for the monomial (or `None` if a constant). For more information, see [SlcTerm](xref:microsoft.quantum.optimization.slc-term).
+the problem. It accepts a list of monomial terms that make up the squared linear combination term and a
+lead coefficient. 
 
 ```py
 subterms_Term = [
@@ -69,6 +66,14 @@ subterms_Term = [
     Term(c=1, indices=[2]),
     Term(c=-1, indices=[])
 ]
+coefficient = 2
+problem.add_slc_term(terms=subterms_Term, c=coefficient)
+```
+In addition to using a list of `Term` objects, a list of tuples, with each
+tuple containing a monomial term coefficient followed by the
+variable index for the monomial (or `None` if a constant) can be used instead. 
+
+```py
 subterms_tuple = [
     (1, 0),
     (-2, 1),
@@ -76,9 +81,10 @@ subterms_tuple = [
     (-1, None)
 ]
 coefficient = 2
-problem.add_slc_term(terms=subterms_Term, c=coefficient)
 problem.add_slc_term(terms=subterms_tuple, c=coefficient)
 ```
+
+For more information, see [SlcTerm](xref:microsoft.quantum.optimization.slc-term).
 
 ### Problem.add_terms
 
