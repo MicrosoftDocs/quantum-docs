@@ -39,7 +39,7 @@ problem.add_terms(terms=terms)
 ```
 
 > [!NOTE]
-> As described below, there are multiple ways to supply terms to the problem.
+> As described in the following section, there are multiple ways to supply terms to the problem.
 
 ## Ways to supply problem terms
 
