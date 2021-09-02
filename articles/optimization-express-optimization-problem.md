@@ -60,10 +60,7 @@ terms = [
 problem = Problem(name="My Difficult Problem", terms=terms)
 ```
 
-If grouped terms are included in the terms list, the problem type should reflect the grouped
-nature via either `ProblemType.ising_grouped` or `ProblemType.pubo_grouped`.
-When grouped terms are added to a problem, the problem type will automatically be converted to the
-appropriate grouped version as needed.
+Grouped term objects can be included in the terms list just like monomial terms.
 
 ```py
 terms = [
@@ -94,10 +91,8 @@ problem.add_term(c=-3, indices=[1,0])
 problem.add_term(c=5, indices=[2,0])
 ```
 
-You can supply each grouped term individually by calling the particular method on the `Problem`
+You can also supply grouped term objects individually by calling the particular method on the `Problem`
 according to the particular grouped term type, or through an overloaded `add_terms` method.
-When grouped terms are added to a problem, the problem type will automatically be converted to the
-appropriate grouped version as needed.
 
 Currently, squared linear combinations are the only enabled grouped terms and may be added via
 `add_slc_term`. For more information, see [Problem.add_slc_term](xref:microsoft.quantum.optimization.problem#problemadd_slc_term) and [SlcTerm](xref:microsoft.quantum.optimization.slc-term).
@@ -111,6 +106,11 @@ subterms = [
     Term(c=-1, indices=[])
 ]
 problem.add_slc_term(terms=subterms, c=2)
+```
+
+An alternate way to supply squared linear combination (slc) grouped terms is to supply them as a list of pairs where the first entry is the coefficient, and second is the variable id. Constants are supplied as (c, None).
+
+```python
 problem.add_slc_term(
     terms=[(1,0), (-2,1), (1,2), (-1,None)],
     c=2
