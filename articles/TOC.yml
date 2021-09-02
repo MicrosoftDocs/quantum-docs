@@ -195,7 +195,7 @@
       - name: RangeSchedule
         href: optimization-rangeschedule.md
       - name: GroupType
-        href: optimization-grouptype.md
+        href: optimization-group-type.md
     - name: Usage
       items:
       - name: Express a problem
