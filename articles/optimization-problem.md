@@ -2,7 +2,7 @@
 author: george-moussa
 description: Reference for azure.quantum.optimization.Problem
 ms.author: georgenm
-ms.date: 07/26/2021
+ms.date: 09/02/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
