@@ -12,7 +12,7 @@ uid: microsoft.quantum.optimization.problem-type
 
 # Quantum optimization ProblemType
 
-## Quantum optimization problem type
+## ProblemType
 
 ```py
 from azure.quantum.optimization import ProblemType
