@@ -73,6 +73,5 @@ The terms can currently be handled by two solvers in Microsoft QIO:
 
 If you submit problems with grouped term objects to a solver that doesn't support them, a client error will appear in the SDK and the submission will fail.
 
-We are reviewing the use of grouped terms in solvers that support them. We are considering expanding the feature to more solvers, and adding more grouped terms in future.
 
 If you discover any bugs or issues while working with SlcTerms, please reach out to [Azure Support](https://support.microsoft.com/topic/contact-microsoft-azure-support-2315e669-8b1f-493b-5fb1-d88a8736ffe4).
