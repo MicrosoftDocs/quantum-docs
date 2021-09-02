@@ -19,8 +19,6 @@ from azure.quantum.optimization import Term, SlcTerm, GroupType
 Some optimization problems bear cost functions with *grouped terms*, which are represented by objects composed of multiple [Terms](xref:microsoft.quantum.optimization.term). Currently, the Python SDK for Optimization supports squared linear combination terms as grouped term objects using the `SlcTerm` class.
 ### Constructor
 
-Some optimization problems bear cost functions with grouped terms, which we can represent with a grouped term object. 
-Right now the Python SDK for Optimization supports `SlcTerm` objects and we are considering adding more in future.
 
 To create a `SlcTerm` object, specify the following parameters:
 
