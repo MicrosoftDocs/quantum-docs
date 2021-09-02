@@ -120,12 +120,9 @@ $$ \mathrm{cost}' = \left(\sum_i w_ix_i\right)^2 = \sum_{ij} w_iw_jx_ix_j\text{ 
 When multiplied out, this cost function has more terms than the previous one,
 but together these forms represent the polynomial forms supported by our optimizers. 
 
-All optimizers support cost functions as sums of monomial terms and 
-we are gradually adding support for squared linear combinations.
-
 > [!NOTE]
-> Only a subset of optimization solvers currently support grouped terms.
-> Refer to the [`SlcTerm`](xref:microsoft.quantum.optimization.slc-term) documentation for details.
+> While all Microsoft QIO solvers support cost functions as sums of monomial terms, only a subset of optimization solvers currently support grouped terms.
+> For more information, see [`SlcTerm`](xref:microsoft.quantum.optimization.slc-term)..
 
 ### Ising cost function
 
