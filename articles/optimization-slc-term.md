@@ -64,8 +64,7 @@ For more information on cost functions and how terms relate to a problem definit
 
 #### Availability
 
-`SlcTerm` objects are a new "Early Access" feature in the Python SDK for Optimization. 
-The terms can currently be handled by two solvers in Microsoft QIO:
+`SlcTerm` objects are a new "Early Access" feature in the Python SDK for Optimization, and are currently supported by two Microsoft QIO solvers:
 
 - Substochastic Monte Carlo
 - Population Annealing
