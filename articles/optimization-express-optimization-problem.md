@@ -104,7 +104,7 @@ When grouped terms are added to a problem, the problem type will automatically b
 appropriate grouped version as needed.
 
 Currently, squared linear combinations are the only enabled grouped terms and may be added via
-`add_slc_term`.
+`add_slc_term`. For more information, see [Problem.add_slc_term](xref:microsoft.quantum.optimization.problem#problemadd_slc_term) and [SlcTerm](xref:microsoft.quantum.optimization.slc-term).
 
 ```python
 problem = Problem(name="My Other Difficult Problem", problem_type=ProblemType.ising)
