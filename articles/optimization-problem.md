@@ -23,11 +23,11 @@ from azure.quantum.optimization import Problem
 To create a `Problem` object, you specify the following information:
 
 - `name`: A friendly name for your problem. No uniqueness constraints.
-- [optional] `terms`: A list of `Term` objects and grouped term objects - where supported - to add to the problem.
-- [optional] `problem_type`: The type of problem. Must be one of
+- `terms` (optional): A list of `Term` objects and grouped term objects, where supported, to add to the problem.
+- `problem_type`(optional): The type of problem. Must be one of
   `ProblemType.ising`, `ProblemType.pubo`, `ProblemType.ising_grouped`, or
   `ProblemType.pubo_grouped`. The default is `ProblemType.ising`.
-- [optional] `init_config`: A dictionary of variable IDs to value if user wants to specify an initial configuration for the problem.
+- `init_config`(optional): A dictionary of variable IDs to value if user wants to specify an initial configuration for the problem.
 
 ```py
 terms = [
