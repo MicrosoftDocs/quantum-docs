@@ -71,8 +71,7 @@ The terms can currently be handled by two solvers in Microsoft QIO:
 - Substochastic Monte Carlo
 - Population Annealing
 
-If you submit grouped problem types to a solver that doesn't support them, a client error will appear in the SDK. 
-The submission will fail.
+If you submit problems with grouped term objects to a solver that doesn't support them, a client error will appear in the SDK and the submission will fail.
 
 We are reviewing the use of grouped terms in solvers that support them. We are considering expanding the feature to more solvers, and adding more grouped terms in future.
 
