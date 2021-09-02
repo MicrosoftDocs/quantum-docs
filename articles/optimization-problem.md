@@ -59,8 +59,8 @@ Adds a single squared linear combination (SLC) term to
 the problem. It accepts a list of composite terms and a
 lead coefficient. The list of terms may be given as either
 a list of `Term` objects or as a list of tuples, with each
-tuple containing a monomial term coefficient then the
-variable index for the monomial (or `None` if a constant).
+tuple containing a monomial term coefficient followed by the
+variable index for the monomial (or `None` if a constant). For more information, see [SlcTerm](xref:microsoft.quantum.optimization.slc-term).
 
 ```py
 subterms_Term = [
