@@ -12,7 +12,7 @@ uid: microsoft.quantum.optimization.grouptype
 
 # Quantum optimization group type
 
-## Group Type
+## GroupType
 
 ```py
 from azure.quantum.optimization import GroupType
