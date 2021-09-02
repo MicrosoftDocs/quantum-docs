@@ -96,7 +96,7 @@ problem.add_terms([
 ])
 ```
 
-This function also has an overload that serves as a wrapper for grouped terms as shown below.
+This function also has an overload that serves as a wrapper for grouped terms as shown in the following example.
 The overload can be used by specifying a list of `Term` objects along with the grouped term type.
 
 ```py
