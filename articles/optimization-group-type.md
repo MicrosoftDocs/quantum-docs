@@ -2,7 +2,7 @@
 author: danielstocker
 description: Reference for azure.quantum.optimization.GroupType
 ms.author: dasto
-ms.date: 03/02/2021
+ms.date: 09/02/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
