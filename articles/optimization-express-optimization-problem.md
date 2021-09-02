@@ -2,7 +2,7 @@
 author: KittyYeungQ
 description: This document provides a basic guide to express an optimization problem that could be later used with a solver in Azure Quantum.
 ms.author: kitty
-ms.date: 02/01/2021
+ms.date: 09/02/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
