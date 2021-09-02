@@ -55,7 +55,7 @@ SlcTerm(
 For squared linear combination terms there are two main constraints on input:
 
 - In the `terms` list, *each term must be linear or constant*. That is, each `Term` must have an `indices` argument with a length of at most 1.
-- Among the `terms` list, *like-terms must be combined* before input. That is, there may not be multiple terms having the same `indices` argument within a given SLC term.
+- Among the `terms` list, *like-terms must be combined* before input. That is, there may not be multiple terms having the same `indices` argument within a given squared linear combination term.
 
 For more information on cost functions and how terms relate to a problem definition, see [Cost functions](xref:microsoft.quantum.optimization.concepts.cost-function).
 Grouped terms are composed of `Term` objects, see [Term](xref:microsoft.quantum.optimization.term).
