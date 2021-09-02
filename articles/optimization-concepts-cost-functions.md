@@ -118,7 +118,7 @@ to obtain:
 $$ \mathrm{cost}' = \left(\sum_i w_ix_i\right)^2 = \sum_{ij} w_iw_jx_ix_j\text{ .} $$
 
 When multiplied out, this cost function has more terms than the previous one,
-but together these forms represent the polynomial forms supported by our optimizers. 
+but together, these forms represent the polynomial forms supported by our optimizers. 
 
 > [!NOTE]
 > While all Microsoft QIO solvers support cost functions as sums of monomial terms, only a subset of optimization solvers currently support grouped terms.
