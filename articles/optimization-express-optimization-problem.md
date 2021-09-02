@@ -44,7 +44,7 @@ problem.add_terms(terms=terms)
 ## Ways to supply problem terms
 
 There are three ways to supply terms for a [`Problem`](xref:microsoft.quantum.optimization.problem): in the
-constructor, individually, and as a list of `Term` objects or - where supported - grouped term (for example: `SlcTerm`) objects.
+constructor, individually, or as a list of `Term` objects (or, where supported, grouped term objects, for example: [`SlcTerm`](xref:microsoft.quantum.optimization.slc-term)).
 
 ### In the constructor
 
