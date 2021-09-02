@@ -2,7 +2,7 @@
 author: danielstocker
 description: Reference for azure.quantum.optimization.SlcTerm
 ms.author: dasto
-ms.date: 08/31/2021
+ms.date: 09/02/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
