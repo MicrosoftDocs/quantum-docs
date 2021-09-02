@@ -20,7 +20,7 @@ Some optimization problems bear cost functions with *grouped terms*, which are r
 ### Constructor
 
 
-To create a `SlcTerm` object, specify the following parameters:
+To create an `SlcTerm` object, specify the following parameters:
 
 - `terms`: The list of monomial terms that make up the grouped term argument; each element of this list should be a `Term` object.
 - `c`: The lead coefficient.
