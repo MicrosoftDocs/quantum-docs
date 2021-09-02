@@ -66,8 +66,8 @@ For more information on cost functions and how terms relate to a problem definit
 
 `SlcTerm` objects are a new "Early Access" feature in the Python SDK for Optimization, and are currently supported by two Microsoft QIO solvers:
 
-- Substochastic Monte Carlo
-- Population Annealing
+- [Substochastic Monte Carlo](xref:microsoft.quantum.reference.qio-target-list#substochastic-monte-carlo)
+- [Population Annealing](xref:microsoft.quantum.reference.qio-target-list#population-annealing)
 
 If you submit problems with grouped term objects to a solver that doesn't support them, a client error will appear in the SDK and the submission will fail.
 
