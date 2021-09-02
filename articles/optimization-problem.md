@@ -26,7 +26,7 @@ To create a `Problem` object, you specify the following information:
 - `terms` (optional): A list of `Term` objects and grouped term objects, where supported, to add to the problem.
 - `problem_type`(optional): The type of problem. Must be one of
   `ProblemType.ising`, `ProblemType.pubo`, `ProblemType.ising_grouped`, or
-  `ProblemType.pubo_grouped`. The default is `ProblemType.ising`.
+  `ProblemType.pubo_grouped`. The default is `ProblemType.ising`. A grouped problem type is picked automatically if grouped terms are used in the problem formulation.
 - `init_config`(optional): A dictionary of variable IDs to value if user wants to specify an initial configuration for the problem.
 
 ```py
