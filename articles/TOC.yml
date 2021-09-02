@@ -194,6 +194,8 @@
         href: optimization-slc-term.md
       - name: RangeSchedule
         href: optimization-rangeschedule.md
+      - name: GroupType
+        href: optimization-grouptype.md
     - name: Usage
       items:
       - name: Express a problem
