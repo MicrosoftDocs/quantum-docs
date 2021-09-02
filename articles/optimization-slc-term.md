@@ -22,7 +22,7 @@ Some optimization problems bear cost functions with *grouped terms*, which are r
 
 To create an `SlcTerm` object, specify the following parameters:
 
-- `terms`: The list of monomial terms that make up the grouped term argument; each element of this list should be a `Term` object.
+- `terms`: The list of monomial terms that make up the squared linear combination term argument. Each element of this list should be a `Term` object.
 - `c`: The lead coefficient.
 
  For instance, the squared linear combination term $2 (x_1 + 3x_2 - x_3 - 1)^2$ translates to the following object: 
