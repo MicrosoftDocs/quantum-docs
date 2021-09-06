@@ -35,7 +35,7 @@ Applying quantum-inspired optimization to real-world problems may offer business
 - Find a higher quality solution than other optimization techniques for a fixed problem and fixed amount of time.
 - Use a more realistic model than other optimization techniques by extending the problem to consider more variables.
 
-Since QIO methods are heuristics, they're not guaranteed to find the optimal solution. Also, they don't always outperform other optimization techniques. In reality, it depends on the problem, and discovering what makes QIO perform better than other methods in some situations and not others is still an active area of research.
+Since quantum-inspired optimization methods are heuristics, they're not guaranteed to find the optimal solution, nor do they always outperform other optimization techniques. In reality, it depends on the problem, and discovering what makes quantum-inspired optimization perform better than other methods in some situations and not others is still an active area of research.
 
 Here are the necessary conditions for QIO to perform well, compared to other classical optimization algorithms:
 
