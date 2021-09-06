@@ -40,7 +40,7 @@ Since quantum-inspired optimization methods are heuristics, they're not guarante
 Here are the necessary conditions for quantum-inspired optimization to perform well, compared to other classical optimization algorithms:
 
 - Optimization landscapes should be rugged but structured. Such landscapes occur frequently in real-world problems.
-- If the number of variables is too small, simplistic algorithms are already sufficient. For problems that have hundreds of variables, QIO has achieved orders of magnitude improvement over previously used methods.
+- If the number of variables is small (for example, less than one hundred), simplistic algorithms are already sufficient. For problems that have hundreds of variables, quantum-inspired optimization has achieved improvement over previously used methods by orders of magnitude.
 - Problem parameters that affect the chosen cost metric must be represented via the variables of a cost function. Express cost functions as polynomials over binary variables to obtain a PUBO problem.
 
 ## How does QIO solve problems?
