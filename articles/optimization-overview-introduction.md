@@ -59,7 +59,7 @@ Because there are so many possible configurations to choose from, it is sometime
 
 The goal of the optimization is to find the minimum point on this cost function (or as close to the minimum point as possible, given a reasonable amount of time).
 
-Consider the following example: traffic minimization. The aim of this optimization task is to reduce congestion in a road system to reduce the amount of time users spend waiting in traffic.
+Consider the following example of traffic minimization. The aim of this optimization task is to reduce congestion in a road system, thereby reducing the amount of time drivers and passengers spend waiting in traffic.
 
 Each configuration represents a different combination of routes assigned to the vehicles in the system. The cost to minimize is the overall traffic level (or congestion level).
 
