@@ -19,7 +19,7 @@ Quantum-inspired algorithms are classical algorithms where the essential quantum
 - First prepare a system and initialize it to its lowest energy state. For a simple system, one which is completely understood, this is easy to do.
 - Next, slowly transform that system into a more complex one that describes the problem you are trying to solve. The adiabatic theorem states that, as long as this transformation happens slowly enough, the system has time to adapt and will stay in that lowest energy configuration. When we're done with our transformations, we've solved our problem.
 
-A good analogy of this is to imagine you have a glass of water. If you move that glass slowly across a table, the contents won't spill because the system has time to adapt to its new configuration. If you were to move the glass quickly however, the system has been forced to change too quickly, and we have water everywhere.
+A good analogy of this is to imagine you have a glass of water. If you move that glass slowly across a table, the contents won't spill because the system has time to adapt to its new configuration. If you were to move the glass quickly however, the system has been forced to change too quickly, and you have water everywhere.
 
 Adiabatic quantum computation is an area of active research that's already being used in the industry. A number of techniques have been developed to simulate this type of physics. Although this article focuses on QIO, it is important to remember that the quantum-inspired idea is not limited to optimization. Similarly, some quantum optimization algorithms might not have a quantum-inspired counterpart.
 
