@@ -81,4 +81,4 @@ Azure Quantum offers a range of quantum-inspired techniques to solve discrete an
 - [**Substochastic Monte Carlo**](xref:microsoft.quantum.optimization.substochastic-monte-carlo): Substochastic Monte Carlo is a diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It simulates the diffusion of a population of walkers in the search space, where walkers are removed or duplicated based on how they perform according to the cost function.
 - [**Tabu Search**](xref:microsoft.quantum.optimization.tabu): Tabu Search looks at neighboring configurations. It can accept worsening moves if no improving moves are available and prohibits moves to previously visited solutions
 
-For more information, visit [Microsoft QIO provider list](xref:microsoft.quantum.optimization.providers.microsoft.qio).
+Note that this is only a small subset of available techniques, and Microsoft continues to develop and add new solvers to the Azure Quantum service.  For more information, see the [Microsoft QIO provider list](xref:microsoft.quantum.optimization.providers.microsoft.qio).
