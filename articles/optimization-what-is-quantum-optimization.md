@@ -12,7 +12,7 @@ uid: microsoft.quantum.optimization.overview.what-is-qio
 
 # What is quantum-inspired optimization?
 
-Quantum-inspired optimization (QIO) is a method that's based on emulating quantum tunneling. A number of techniques have been developed to simulate this type of physics, and one such approach uses a concept from quantum physics known as [the adiabatic theorem](https://wikipedia.org/wiki/Adiabatic_theorem).
+Quantum-inspired optimization is a method that's based on emulating quantum tunneling. A number of techniques have been developed to simulate this type of physics, and one such approach uses a concept from quantum physics known as [the adiabatic theorem](https://wikipedia.org/wiki/Adiabatic_theorem).
 
 Quantum-inspired algorithms are classical algorithms where the essential quantum phenomena that would provide the speedup can be classically emulated. There are many types of quantum-inspired algorithms, one commonly used quantum-inspired algorithm is based on a computational model called *adiabatic quantum computing*. This approach uses a concept from quantum physics known as the adiabatic theorem. When you apply that theorem to solve a problem, you:
 
