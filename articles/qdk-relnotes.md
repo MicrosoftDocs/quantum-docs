@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the latest updates to the Microsoft Quantum Development Kit preview.
 ms.author: v-benbra
-ms.date: 08/31/2021
+ms.date: 09/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
@@ -19,16 +19,23 @@ For installation instructions, please refer to the [install guide](xref:microsof
 
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
+## QDK Version 0.18.2108.160999
+
+*Release date: September 1, 2021*
+
+- Fixed an issue where required metadata was missing for the [Microsoft.Quantum.Qir.Runtime](https://www.nuget.org/packages/Microsoft.Quantum.Qir.Runtime) NuGet package.
+
 ## QDK Version 0.18.2108.160310
 
 *Release date: August 31, 2021*
 
-- Alternative operation in @SubstitutableOnTarget does not need to be explicitly referred to anymore in [Microsoft.Quantum.AutoSubstitution](https://www.nuget.org/packages/Microsoft.Quantum.AutoSubstitution/) NuGet package.
+- Alternative operation in [@SubstitutableOnTarget](/qsharp/api/qsharp/microsoft.quantum.targeting.substitutableontarget) does not need to be explicitly referred to anymore in [Microsoft.Quantum.AutoSubstitution](https://www.nuget.org/packages/Microsoft.Quantum.AutoSubstitution/) NuGet package.
 - New [Workspace.get_targets()](xref:microsoft.quantum.optimization.workspace#workspaceget_targets) method in azure-quantum package that returns a list of all available targets. Can filter by Provider ID or Target ID.
 - An [issue](https://github.com/microsoft/iqsharp/issues/500) was resolved that prevented using IQ# or the `qsharp` Python package with Python 3.8 or 3.9 when using `conda`.
 - Fixed an [issue](https://github.com/microsoft/qsharp-compiler/issues/768) where nested Conditional blocks may be incorrectly lifted.
 - Resolved an [issue](https://github.com/microsoft/qsharp-compiler/issues/1112) where some code failed to compile previously for Honeywell target.
 - Added an option where QIR generation is not target specific.
+- Fixed a concurrency [bug](https://github.com/microsoft/qsharp-runtime/pull/798) that could cause intermittent crashes if multiple simulator instances are run in the same process.
 - Released Az CLI quantum extension version 0.7.0:
   - Provide compiler output to users if there was error for easier troubleshooting.
   - Fixed bug in which retrieving output from workspaces in a location different to another set as default failed.
