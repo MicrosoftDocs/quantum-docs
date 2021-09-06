@@ -43,7 +43,7 @@ Here are the necessary conditions for quantum-inspired optimization to perform w
 - If the number of variables is small (for example, less than one hundred), simplistic algorithms are already sufficient. For problems that have hundreds of variables, quantum-inspired optimization has achieved improvement over previously used methods by orders of magnitude.
 - Problem parameters that affect the chosen cost metric must be represented via the variables of a cost function. Express cost functions as polynomials over binary variables to obtain a PUBO problem.
 
-## How does QIO solve problems?
+## How does quantum-inspired optimization solve problems?
 
 There exist two common methods for finding the global minimum of a cost function: *simulated annealing* and *quantum annealing*. Simulated annealing is based on ideas from thermal physics, whereas quantum annealing is a quantum algorithm.
 
