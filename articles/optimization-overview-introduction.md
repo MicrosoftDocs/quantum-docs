@@ -39,7 +39,7 @@ Consider the following plot of a cost function of two continuous variables where
 
 ![Structured landspace](./media/structured-landscape.png)
 
-In this scenario, one of the greatest challenges is to avoid getting stuck at any of the sub-optimal local minima. A rugged landscape can have multiple valleys. Each of these valleys has a lowest point, which is a local minimum. One of these points will be the lowest of them all, and that point is known as the global minimum.
+In this scenario, one of the greatest challenges is to avoid getting stuck at any of the sub-optimal local minima. A rugged landscape can have multiple valleys. Each of these valleys has a lowest point, which is called a *local minimum*. One of these points will be the lowest of them all, and that point is the global minimum.
 
 Such rugged landscapes present situations where quantum-inspired optimization can outperform other techniques.
 
