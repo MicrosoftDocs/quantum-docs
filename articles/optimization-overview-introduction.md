@@ -51,7 +51,7 @@ In these cases, where the solutions are completely random, there is no optimizat
 
 ## Problem configuration
 
-Usually an optimization problem involves lots of variables that can interact in many ways to influence the final cost. A particular arrangement of the variables is called the *configuration* of the problem.
+Usually, an optimization problem involves a lot of variables that can interact in many ways to influence the final cost. A particular arrangement of the variables is called the *configuration* of the problem.
 
 Because there are so many possible configurations to choose from, it is sometimes difficult to identify the best solution, particularly when the problem space is very large. It can be easy to get stuck in a local optimum. Some examples of local optima are shown on the following graph, along with the global optimum - the lowest cost configuration our system can adopt.
 
