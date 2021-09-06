@@ -23,7 +23,7 @@ A good analogy of this is to imagine you have a glass of water. If you move that
 
 Adiabatic quantum computation is an area of active research that's already being used in the industry. A number of techniques have been developed to simulate this type of physics. Although this article focuses on quantum-inspired optimization, it is important to remember that the quantum-inspired idea is not limited to optimization. Similarly, some quantum optimization algorithms might not have a quantum-inspired counterpart.
 
-## Where can QIO be applied?
+## Where can quantum-inspired optimization be applied?
 
 Optimization problems are found in every industry, such as manufacturing, finance, and transportation. In fact, industries such as logistics are dedicated entirely to solving optimization problems. To solve these problems, you search through feasible solutions, and the best solution is the one with the lowest cost. Adiabatic quantum algorithms are well-suited to solving many optimization problems.
 
