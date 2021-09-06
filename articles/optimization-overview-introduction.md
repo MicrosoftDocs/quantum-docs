@@ -61,7 +61,7 @@ The goal of the optimization is to find the minimum point on this cost function 
 
 Consider the following example: traffic minimization. The aim of this optimization task is to reduce congestion in a road system to reduce the amount of time users spend waiting in traffic.
 
-Each configuration represents a different combination of routes assigned to the vehicles in the system. The cost is the overall traffic level (or congestion level), which is what we wish to minimize.
+Each configuration represents a different combination of routes assigned to the vehicles in the system. The cost to minimize is the overall traffic level (or congestion level).
 
 ![Graph showing a cost function with local optima corresponding to different traffic levels in a vehicle routing simulation](./media/optimization-intro-traffic-optima.png)
 
