@@ -55,9 +55,9 @@ Simulated annealing is similar to gradient descent. The algorithm simulates a wa
 
 ![Simulated Annealing](media/simulated-annealing.png)
 
-In this graph, notice that this uphill move is described as a thermal jump. That is because simulated annealing is an algorithm from physics that mimics the behavior of materials as they are slowly cooled. The walker is like an atom in a metal that is driven by temperature to reconfigure itself. These changes are random, but moves to lower-energy configurations are more likely than moves to higher-energy configurations. That is why we say the walker follows a biased random walk.
+In this graph, notice that this uphill move is described as a *thermal jump*. That is because simulated annealing is an algorithm from physics that mimics the behavior of materials as they are slowly cooled. The walker is like an atom in a metal that is driven by temperature to reconfigure itself. Even though these changes are random, moves to lower-energy configurations are more likely than moves to higher-energy configurations. That is why the walker is said to follow a *biased random walk*.
 
-Simulated annealing isn't a QIO method, because it uses only thermal effects. However, it's a technique that is commonly used for solving combinatorial problems such as the ones used on QIO methods, and the problems can be formulated in the same way.
+Simulated annealing isn't a quantum-inspired optimization method, because it uses only thermal effects. However, it's a technique that is commonly used for solving combinatorial problems such as those used on quantum-inspired optimization methods, and the problems can be formulated in the same way.
 
 ### Quantum annealing
 Quantum annealing is a quantum algorithm that is similar in spirit to simulated annealing, but it differs in a few ways. In simulated annealing, the solution space is explored by making thermal jumps from one solution to the next, while in quantum annealing makes use of a quantum effect called quantum tunneling, which allows us to travel through these energy barriers.
