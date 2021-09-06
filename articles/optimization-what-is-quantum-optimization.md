@@ -25,7 +25,7 @@ Adiabatic quantum computation is an area of active research that's already being
 
 ## Where can QIO be applied?
 
-Optimization problems are found in every industry, such as manufacturing, finance, and transportation. In fact, industries such as logistics are dedicated entirely to solving optimization problems. To solve these problems, we search through feasible solutions. The best solution is the one with the lowest cost. Adiabatic quantum algorithms are well-suited to solving many optimization problems.
+Optimization problems are found in every industry, such as manufacturing, finance, and transportation. In fact, industries such as logistics are dedicated entirely to solving optimization problems. To solve these problems, you search through feasible solutions, and the best solution is the one with the lowest cost. Adiabatic quantum algorithms are well-suited to solving many optimization problems.
 
 Today, adiabatic quantum algorithms can be emulated by using quantum-inspired techniques on classical hardware. These techniques often perform better than state-of-the-art classical optimization techniques.
 
