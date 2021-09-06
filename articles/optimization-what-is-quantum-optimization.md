@@ -37,7 +37,7 @@ Applying quantum-inspired optimization to real-world problems may offer business
 
 Since quantum-inspired optimization methods are heuristics, they're not guaranteed to find the optimal solution, nor do they always outperform other optimization techniques. In reality, it depends on the problem, and discovering what makes quantum-inspired optimization perform better than other methods in some situations and not others is still an active area of research.
 
-Here are the necessary conditions for QIO to perform well, compared to other classical optimization algorithms:
+Here are the necessary conditions for quantum-inspired optimization to perform well, compared to other classical optimization algorithms:
 
 - Optimization landscapes should be rugged but structured. Such landscapes occur frequently in real-world problems.
 - If the number of variables is too small, simplistic algorithms are already sufficient. For problems that have hundreds of variables, QIO has achieved orders of magnitude improvement over previously used methods.
