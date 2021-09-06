@@ -68,7 +68,7 @@ In this graph, you can see the difference between a thermal jump, where thermal 
 
 In quantum annealing, the problem is framed by giving assignments to the variables, the energy of which is the value of the cost function. Initially, the process begins with the quantum state in a broad superposition over many possible assignments to the variables. Instead of varying the temperature, as in simulated annealing, quantum annealing varies a parameter called the *quantum field strength*.
 
-This parameter defines the radius of neighboring states we can move to. As time goes on and we get closer to a solution, this radius becomes smaller and smaller. By the end of the annealing process, the system has settled into one particular low-energy configuration that can then be measured, which gives us the solution to the optimization problem. The most mathematically clean formulation of quantum annealing is called adiabatic quantum optimization, and this is what quantum-inspired methods attempt to emulate.
+This parameter defines the radius of neighboring states the walker can move to. As time goes on and the algorithm gets closer to a solution, this radius becomes smaller and smaller. By the end of the annealing process, the system has settled into one particular low-energy configuration that can then be measured, which gives us the solution to the optimization problem. The most mathematically clean formulation of quantum annealing is called *adiabatic quantum optimization*, and this is what quantum-inspired methods attempt to emulate.
 
 ## Azure Quantum optimization techniques
 
