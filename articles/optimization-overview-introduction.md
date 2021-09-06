@@ -32,7 +32,7 @@ Consider the following plot of a cost function of two continuous variables, whic
 
 ![Smooth landspace](./media/smooth-landscape.png)
 
-This kind of problem is easily solved with techniques such as gradient descent, where you begin from an initial starting point and greedily move to any solution with a lower cost. After a few moves, the solution converges to the global minimum. The global minimum is the lowest point in the optimization landscape.
+This kind of problem is easily solved with techniques such as gradient descent, where you begin from an initial starting point and greedily move to any solution with a lower cost. After a few moves, the solution converges to the global minimum, the lowest point in the optimization landscape.
 
 ## Structured landscape
 Consider the following plot of a cost function of two continuous variables where the landscape is rugged, with many hills and valleys:
