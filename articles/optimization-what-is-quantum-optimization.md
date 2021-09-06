@@ -60,7 +60,7 @@ In this graph, notice that this uphill move is described as a *thermal jump*. Th
 Simulated annealing isn't a quantum-inspired optimization method, because it uses only thermal effects. However, it's a technique that is commonly used for solving combinatorial problems such as those used on quantum-inspired optimization methods, and the problems can be formulated in the same way.
 
 ### Quantum annealing
-Quantum annealing is a quantum algorithm that is similar in spirit to simulated annealing, but it differs in a few ways. In simulated annealing, the solution space is explored by making thermal jumps from one solution to the next, while in quantum annealing makes use of a quantum effect called quantum tunneling, which allows us to travel through these energy barriers.
+Quantum annealing is a quantum algorithm that is similar in spirit to simulated annealing, but it differs in a few ways. In simulated annealing, the solution space is explored by making thermal jumps from one solution to the next, while quantum annealing makes use of a quantum effect called *quantum tunneling*, which allows the walker to travel through these energy barriers.
 
 ![Quantum Annealing](media/quantum-annealing.png)
 
