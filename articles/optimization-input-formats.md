@@ -93,6 +93,11 @@ All solvers set default values for their parameters but we strongly recommend se
         <td>integers</td>
         <td>Specifies the number of iterations of the simulation to run.</td>
     </tr>
+    <tr>
+        <td>platform</td>
+        <td>enum</td>
+        <td>Defaults to `HardwarePlatform.CPU`. Specifies the hardware platform that the solver should use. The options are `HardwarePlatform.FPGA` and `HardwarePlatform.CPU`. </td>
+    </tr>
     </tbody>
 </table>
 
