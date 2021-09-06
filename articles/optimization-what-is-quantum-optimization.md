@@ -29,7 +29,7 @@ Optimization problems are found in every industry, such as manufacturing, financ
 
 Today, adiabatic quantum algorithms can be emulated by using quantum-inspired techniques on classical hardware. These techniques often perform better than state-of-the-art classical optimization techniques.
 
-Applying QIO to real-world problems may offer businesses new insights or help lower costs by making their processes more efficient. QIO gives us the opportunity to:
+Applying quantum-inspired optimization to real-world problems may offer businesses new insights or help lower costs by making their processes more efficient. quantum-inspired optimization gives us the opportunity to:
 
 - Find a solution faster than other optimization techniques for a fixed use case and fixed quality of solution.
 - Find a higher quality solution than other optimization techniques for a fixed problem and fixed amount of time.
