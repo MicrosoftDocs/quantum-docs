@@ -21,7 +21,7 @@ Quantum-inspired algorithms are classical algorithms where the essential quantum
 
 A good analogy of this is to imagine you have a glass of water. If you move that glass slowly across a table, the contents won't spill because the system has time to adapt to its new configuration. If you were to move the glass quickly however, the system has been forced to change too quickly, and you have water everywhere.
 
-Adiabatic quantum computation is an area of active research that's already being used in the industry. A number of techniques have been developed to simulate this type of physics. Although this article focuses on QIO, it is important to remember that the quantum-inspired idea is not limited to optimization. Similarly, some quantum optimization algorithms might not have a quantum-inspired counterpart.
+Adiabatic quantum computation is an area of active research that's already being used in the industry. A number of techniques have been developed to simulate this type of physics. Although this article focuses on quantum-inspired optimization, it is important to remember that the quantum-inspired idea is not limited to optimization. Similarly, some quantum optimization algorithms might not have a quantum-inspired counterpart.
 
 ## Where can QIO be applied?
 
