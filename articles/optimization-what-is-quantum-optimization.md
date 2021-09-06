@@ -49,7 +49,7 @@ There exist two common methods for finding the global minimum of a cost function
 
 ### Simulated annealing
 
-For optimization problems in search spaces that are too large to solve by exhaustive search and with cost functions that are rugged, one of the most successful and commonly used heuristics is simulated annealing. Heuristics is a technique for finding an approximate solution, specially in situations where finding an exact solution can take too long. You can think of the technique as a random walk through the solution space, where each walker creates a path through the optimization landscape.
+For optimization problems in search spaces that are too large to solve by exhaustive search and with cost functions that are rugged, one of the most successful and commonly used heuristics is simulated annealing. Heuristics is a technique for finding an approximate solution, especially in situations where finding an exact solution can take too long. You can think of the technique as a random walk through the solution space, where each *walker* creates a path through the optimization landscape.
 
 Simulated annealing is similar to gradient descent. The algorithm simulates a walker that, ideally, always moves downhill. But, unlike gradient descent, the walker can also take uphill moves with some non-zero probability. This creates the possibility for the walker to escape from local minima and then descend into deeper neighboring minima.
 
