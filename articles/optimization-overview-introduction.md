@@ -23,7 +23,7 @@ To understand optimization problems, you first need to learn some terminology:
 - 
 Together, the cost function and the search space are often referred to as an *optimization landscape*. In the case of a problem that involves two continuous variables, the analogy to a landscape is quite direct.
 
-Let's explore a few landscapes and see which are good candidates for QIO.
+Let's explore a few landscapes and see which are good candidates for quantum-inspired optimization.
 
 ## Optimization landscapes
 
