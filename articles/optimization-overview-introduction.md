@@ -18,7 +18,7 @@ The *best* solution can be defined in many ways: it could be the option with the
 
 To understand optimization problems, you first need to learn some terminology:
 
-- [Cost function](xref:microsoft.quantum.optimization.concepts.overview.key-concepts): The way the cost varies as a function of the system configuration. It is a mathematical function to be minimized. 
+- [Cost function](xref:microsoft.quantum.optimization.concepts.overview.key-concepts): This is the way that the cost varies as a function of the system configuration. It is a mathematical function to be minimized. 
 - Search space: This is the space that contains all the feasible solutions to the optimization problem. Each point in this search space is a valid solution to the problem, but it's not necessarily the lowest point, which corresponds to the lowest cost solution.
 - 
 Together, the cost function and the search space are often referred to as an optimization landscape. In the case of a problem that involves two continuous variables, the analogy to a landscape is quite direct.
