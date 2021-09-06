@@ -14,7 +14,7 @@ uid: microsoft.quantum.optimization.concepts.overview.introduction
 
 At its simplest, optimization is just the process of selecting the best solution to a problem from a set of possible options.
 
-The *best* solution can be defined in many ways: it could be the option with the lowest cost, the quickest runtime, or perhaps the lowest environmental impact. To keep things simple, *best* is usually defined as a cost to be minimized. If we wanted to maximize the cost instead (for example, if we wanted to maximize energy output from a solar cell), all we would need to do is multiply the cost by negative one and then minimize it.
+The *best* solution can be defined in many ways: it could be the option with the lowest cost, the quickest runtime, or perhaps the lowest environmental impact. To keep things simple, *best* is usually defined as a cost to be minimized. If you wanted to maximize the cost instead (for example, if you wanted to maximize energy output from a solar cell), all you would need to do is multiply the cost by negative one and then minimize it.
 
 To understand optimization problems, you first need to learn some terminology:
 
