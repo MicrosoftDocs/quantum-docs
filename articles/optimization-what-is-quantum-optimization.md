@@ -2,7 +2,7 @@
 author: frtibble
 description: Learn about quantum-inspired optimization techniques.
 ms.author: frtibble
-ms.date: 08/29/2021
+ms.date: 09/07/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: conceptual
@@ -29,7 +29,7 @@ Optimization problems are found in every industry, such as manufacturing, financ
 
 Today, adiabatic quantum algorithms can be emulated by using quantum-inspired techniques on classical hardware. These techniques often perform better than state-of-the-art classical optimization techniques.
 
-Applying quantum-inspired optimization to real-world problems may offer businesses new insights or help lower costs by making their processes more efficient. quantum-inspired optimization gives us the opportunity to:
+Applying quantum-inspired optimization to real-world problems may offer businesses new insights or help lower costs by making their processes more efficient. Quantum-inspired optimization gives us the opportunity to:
 
 - Find a solution faster than other optimization techniques for a fixed use case and fixed quality of solution.
 - Find a higher quality solution than other optimization techniques for a fixed problem and fixed amount of time.
@@ -49,7 +49,7 @@ There exist two common methods for finding the global minimum of a cost function
 
 ### Simulated annealing
 
-For optimization problems in search spaces that are too large to solve by exhaustive search and with cost functions that are rugged, one of the most successful and commonly used heuristics is simulated annealing. Heuristics is a technique for finding an approximate solution, especially in situations where finding an exact solution can take too long. You can think of the technique as a random walk through the solution space, where each *walker* creates a path through the optimization landscape.
+For optimization problems in search spaces that are too large to solve by exhaustive search and with cost functions that are rugged, one of the most successful and commonly used heuristics is simulated annealing. Heuristics is a technique for finding an approximate solution, especially in situations where finding an exact solution can take too long. You can think of the technique as a random walk through the search space, where each *walker* creates a path through the optimization landscape.
 
 Simulated annealing is similar to gradient descent. The algorithm simulates a walker that, ideally, always moves downhill. But, unlike gradient descent, the walker can also take uphill moves with some non-zero probability. This creates the possibility for the walker to escape from local minima and then descend into deeper neighboring minima.
 
@@ -60,7 +60,7 @@ In this graph, notice that this uphill move is described as a *thermal jump*. Th
 Simulated annealing isn't a quantum-inspired optimization method, because it uses only thermal effects. However, it's a technique that is commonly used for solving combinatorial problems such as those used on quantum-inspired optimization methods, and the problems can be formulated in the same way.
 
 ### Quantum annealing
-Quantum annealing is a quantum algorithm that is similar in spirit to simulated annealing, but it differs in a few ways. In simulated annealing, the solution space is explored by making thermal jumps from one solution to the next, while quantum annealing makes use of a quantum effect called *quantum tunneling*, which allows the walker to travel through these energy barriers.
+Quantum annealing is a quantum algorithm that is similar in spirit to simulated annealing, but it differs in a few ways. In simulated annealing, the search space is explored by making thermal jumps from one solution to the next, while quantum annealing makes use of a quantum effect called *quantum tunneling*, which allows the walker to travel through these energy barriers.
 
 ![Quantum Annealing](media/quantum-annealing.png)
 
