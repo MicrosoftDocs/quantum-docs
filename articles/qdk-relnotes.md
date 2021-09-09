@@ -23,7 +23,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 *Release date: September 9, 2021*
 
-- Reverts a change that sometimes led to excessive memory usage in IQ# when automatically loading at startup.
+- Reverts a change that sometimes led to excessive memory usage in IQ# when automatically loading packages at startup.
 
 ## QDK Version 0.18.2108.160999
 
