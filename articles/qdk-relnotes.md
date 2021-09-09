@@ -23,7 +23,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 
 *Release date: September 9, 2021*
 
-- Fixes an [issue](https://github.com/microsoft/iqsharp/issues/517) that sometimes resulted in kernel crash in Quantum Katas. No customer impact since Katas stayed with the older QDK version.
+- Fixes an [issue](https://github.com/microsoft/iqsharp/issues/517) that sometimes resulted in kernel crash in online Quantum Katas. No customer impact since online Katas stayed with the older QDK version.
 
 ## QDK Version 0.18.2108.160999
 
