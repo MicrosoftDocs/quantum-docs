@@ -13,7 +13,7 @@ uid: microsoft.quantum.optimization.input-format
 # Input format for optimization problems
 
 This document explains how the parameters to optimization problems may be specified for all the different solvers. 
-All solvers set default values for their parameters but we strongly recommend setting them to values appropriate for your problem. Where there is a parameter-free solver available not setting any parameters will call the parameter-free version of that solver which will complete when there is sufficient convergence on a solution.
+All solvers set default values for their parameters but we strongly recommend setting them to values appropriate for your problem. Where there is a parameter-free solver available not setting any parameters will call the parameter-free version of that solver, which will complete when there is sufficient convergence on a solution.
 
 ## Parallel Tempering
 
