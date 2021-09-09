@@ -1,6 +1,6 @@
 ---
 author: KittyYeungQ
-description: This document gives an overview of the valid input formats when submitting optimization problems.
+description: This article gives an overview of the valid input formats when submitting optimization problems.
 ms.author: kitty
 ms.date: 09/09/2021
 ms.service: azure-quantum
@@ -12,7 +12,8 @@ uid: microsoft.quantum.optimization.input-format
 
 # Input format for optimization problems
 
-This document explains how the parameters to optimization problems may be specified for all the different solvers. 
+This article explains how the parameters to optimization problems may be specified for all the different solvers.
+
 All solvers set default values for their parameters but we strongly recommend setting them to values appropriate for your problem. Where there is a parameter-free solver available not setting any parameters will call the parameter-free version of that solver, which will complete when there is sufficient convergence on a solution.
 
 ## Parallel Tempering
