@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the latest updates to the Microsoft Quantum Development Kit preview.
 ms.author: v-benbra
-ms.date: 09/01/2021
+ms.date: 09/09/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
@@ -18,6 +18,12 @@ This article contains information on each Quantum Development Kit release.
 For installation instructions, please refer to the [install guide](xref:microsoft.quantum.install-qdk.overview).
 
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
+
+## QDK Version 0.18.2109.162469
+
+*Release date: September 9, 2021*
+
+- Reverts a change that sometimes led to excessive memory usage in IQ# when automatically loading at startup.
 
 ## QDK Version 0.18.2108.160999
 
