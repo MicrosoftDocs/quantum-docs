@@ -5,7 +5,7 @@ author: hsirtl
 ms.author: hsirtl
 ms.service: azure-quantum
 ms.topic: how-to
-ms.date: 09/06/2021
+ms.date: 09/09/2021
 ms.custom: template-how-to
 #Customer intent: As a researcher, I want to make my quantum algorithm accessible via API so that developers without further quantum knowledge can call it via classical API-calls.
 ---
@@ -38,7 +38,9 @@ Learn how to deploy your QIO model as a web service. You'll accomplish this task
 In this section, you'll use Visual Studio Code to create a local Azure Functions project in Python. Later, you'll publish your function code to Azure.
 
 1. Choose the Azure icon in the Activity bar, then in the **Azure: Functions** area, select the **Create new project...** icon. Notice that icons might only appear when moving the mouse pointer into the Azure Functions field.
-:::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/create-new-project.png" alt-text="Create a new project":::
+
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/create-new-project.png" alt-text="Create a new project":::
+    
 1. Choose a directory location for your project workspace and choose **Select**.
 1. Provide the following information at the prompts:
 
@@ -58,10 +60,15 @@ Even though the Function doesn't provide any useful functionality yet, it's perf
 > It is good practice to repeat this step after each following step to ensure your changes didn't break anything. As we proceed, you should change the request parameters appropriately.
 
 1. To call your function, press <kbd>F5</kbd> to start the function app project. Output from Core Tools is displayed in the **Terminal** panel. Your app starts in the **Terminal** panel. You can see the URL endpoint of your HTTP-triggered function running locally.
-:::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/run-azure-function-locally-1.png" alt-text="Run the Azure Function locally":::
-If you have trouble running on Windows, make sure that the default terminal for Visual Studio Code isn't set to **WSL Bash**.
+
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/run-azure-function-locally-1.png" alt-text="Run the Azure Function locally":::
+    
+    If you have trouble running on Windows, make sure that the default terminal for Visual Studio Code isn't set to **WSL Bash**.
+
 1. With Core Tools running, go to the **Azure: Functions area**. Under **Functions**, expand **Local Project > Functions**. Right-click (Windows) or <kbd>Ctrl -</kbd> click (macOS) the `SplitWeights` function and choose **Execute Function Now...**.
-:::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/run-azure-function-locally-2.png" alt-text="Call the Function":::
+
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/run-azure-function-locally-2.png" alt-text="Call the Function":::
+    
 1. In **Enter request body**, you see the request message body value of { "name": "Azure" }. Press Enter to send this request message to your function.
 1. When the function executes locally and returns a response, a notification is raised in Visual Studio Code. Information about the function execution is shown in **Terminal** panel.
 1. Press <kbd>Ctrl + C</kbd> to stop Core Tools and disconnect the debugger.
@@ -83,7 +90,6 @@ Per default, the generated Azure Functions project only references standard Pyth
     ```
 
 1. Save the file by pressing <kbd>Ctrl + S</kbd>.
-
 
 ## Add a reference to your Azure Quantum workspace
 
@@ -193,7 +199,9 @@ Let's now prepare the target environment that will host the Function. Preparatio
 
 1. To begin, go to the [Azure Portal](https://portal.azure.com) and sign in to your Azure account.
 1. Create a Function App. Select **Create a resource** in the upper left corner of the portal.
-:::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-1.png" alt-text="Create a resource":::
+
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-1.png" alt-text="Create a resource":::
+
 1. Search for **Function App** and select **Create**.
 1. Provide the following information:
 
@@ -209,7 +217,9 @@ Let's now prepare the target environment that will host the Function. Preparatio
 1. Validate your input and select **Create**. Deployment will take a few seconds. Wait until a confirmation is displayed.
 1. Select **Go to resource** for navigating to your Function App.
 1. Configure a managed identity for the Function App. A managed identity allows the App to access other Azure resources (such as the Quantum Workspace) and authenticate with these resources.
-:::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-2.png" alt-text="Create a managed identity for the Function App":::
+
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-2.png" alt-text="Create a managed identity for the Function App":::
+
     Select **Save** to persist your configuration and confirm the opening dialog with **Yes**.
 1. Allow the Function App to access your Quantum Workspace. Navigate to your Quantum Workspace and select **Access control (IAM)** from the left-side menu. Select **Add** and **Add role assignment**.
 :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-3.png" alt-text="Create a new role assignment on your Quantum Workspace":::
@@ -229,9 +239,12 @@ Let's now prepare the target environment that will host the Function. Preparatio
 Let's now deploy your Function code to the environment you prepared in the previous step.
 
 1. In Visual Studio Code, choose the Azure icon in the Activity bar, then in the **Azure: Functions** area, choose the **Deploy to function app...** button.
-:::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/deploy-function-1.png" alt-text="Deploy the Function":::
+
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/deploy-function-1.png" alt-text="Deploy the Function":::
+
 1. At the prompt, **Select Function App in Azure** select the Function App that you previously created.
 1. A notification is displayed after your function app is deployed. Select **View Output** to display status information and the URL the Function can be called by.
+
 :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/deploy-function-2.png" alt-text="Notification after successful deployment":::
 
 ## Call your QIO algorithm via the Azure Function
@@ -243,9 +256,9 @@ Now it's time to finally test the Function in the cloud.
     ```text
     https://<your_function_app_name>.azurewebsites.net/api/splitweights
     ```
-    
+
     This call should generate following output:
-    
+
     ```text
     The function couldn't be executed successfully. Pass a mineralWeights param in the query string or in the request body for a personalized response.
     ```
@@ -257,16 +270,19 @@ Now it's time to finally test the Function in the cloud.
     ```
 
     This call should generate following output:
-    
+
     ```text
     {"0": -1, "1": 1, "2": -1, "3": 1, "4": -1, "5": -1}
     ```
 
 1. Let's call the Function with mineral weights passed within the request body. Back in Visual Studio Code in the **Azure: Functions** area in the side bar, expand your subscription, your new function app, and Functions. Right-click (Windows) or <kbd>Ctrl -</kbd> click (macOS) the ``SplitWeights`` function and choose **Execute Function Now...**.
-:::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/execute-function-1.png" alt-text="Execute the Function via Visual Studio Code":::
+
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/execute-function-1.png" alt-text="Execute the Function via Visual Studio Code":::
+
 1. In the input field **Enter request body**, you see the request message body. Enter the value of ``{ "mineralWeights": [5,11,8,7,1,1] }``. Press **Enter** to send this request message to your function.
 1. Following confirmation message should appear after a few seconds:
-:::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/execute-function-2.png" alt-text="Result after Function call":::
+
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/execute-function-2.png" alt-text="Result after Function call":::
 
 > [!TIP]
 > The Function you just deployed implements the *number partitioning problem*. It allows you to split a given sets of numbers into two subsets with equal (or similar) sum of their elements. To learn more about this problem and its implementation have a look at [MS Learn Module: Solve optimization problems by using quantum-inspired optimization](/learn/modules/solve-quantum-inspired-optimization-problems/).
