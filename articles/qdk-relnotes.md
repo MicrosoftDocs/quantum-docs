@@ -19,7 +19,7 @@ For installation instructions, please refer to the [install guide](xref:microsof
 
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
-## QDK Version 0.18.2109.162469
+## QDK Version 0.18.2109.162531
 
 *Release date: September 9, 2021*
 
