@@ -6,22 +6,24 @@ ms.author: hsirtl
 ms.service: azure-quantum
 ms.topic: how-to
 ms.date: 09/09/2021
-ms.custom: template-how-to
+ms.topic: how-to
 #Customer intent: As a researcher, I want to make my quantum algorithm accessible via API so that developers without further quantum knowledge can call it via classical API-calls.
 ---
 
 # Publish a QIO job as an Azure Function
 
-After you've finished developing and testing your QIO model, you certainly want to make its functionality available to other developers. These developers should be able to integrate the QIO model into classic code. This integration should be possible without any further knowledge of quantum concepts or QDK libraries. The best way for exposing the QIO functionality for that purpose is via an Azure Function that can be called via Web-API.
+Learn how to deploy your QIO model as a web service. You'll accomplish this task by using an Azure Function that can be called via a Web-API. The Function receives model input via request-URL or via request-body. It then calls an Azure Quantum Solver and returns the result as JSON-string.
+
+You can make your QIO model and its functionality available to other developers, who will be able to integrate it into their classic code. This integration can be possible without any further knowledge of quantum concepts or QDK libraries. One for exposing the QIO functionality for that purpose is via an Azure Function that can be called via Web-API.
 
 Azure Functions is a serverless solution that allows you to host your functionality in Azure without worrying about underlying infrastructure.
-
-Learn how to deploy your QIO model as a web service. You'll accomplish this task by using an Azure Function that can be called via a Web-API. The Function receives model input via request-URL or via request-body. It then calls an Azure Quantum Solver and returns the result as JSON-string.
 
 > [!NOTE]
 > The QIO job that will be published as an Azure Function implements the so called *number partitioning problem*. It splits a given sets of integer numbers into two subsets with equal (or similar) sum of their elements. Have a look at following **MS Learn Module** to learn more about this problem and its implementation: [Solve optimization problems by using quantum-inspired optimization](/learn/modules/solve-quantum-inspired-optimization-problems/). 
 
 ## Prerequisites
+
+You need the following prerequisites to follow the steps in this article.
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?ref=microsoft.com).
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
@@ -35,9 +37,9 @@ Learn how to deploy your QIO model as a web service. You'll accomplish this task
 
 ## Create a new Azure Function project
 
-In this section, you'll use Visual Studio Code to create a local Azure Functions project in Python. Later, you'll publish your function code to Azure.
+First, use Visual Studio Code to create a local Azure Functions project in Python. Later, you'll publish your function code to Azure.
 
-1. Choose the Azure icon in the Activity bar, then in the **Azure: Functions** area, select the **Create new project...** icon. Notice that icons might only appear when moving the mouse pointer into the Azure Functions field.
+1. Choose the Azure icon in the Activity bar, then in the **Azure: Functions** area, select the **Create new project...** icon. The icons might only appear when moving the mouse pointer into the Azure Functions field.
 
     :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/create-new-project.png" alt-text="Create a new project":::
     
@@ -59,23 +61,23 @@ Even though the Function doesn't provide any useful functionality yet, it's perf
 > [!TIP]
 > It is good practice to repeat this step after each following step to ensure your changes didn't break anything. As we proceed, you should change the request parameters appropriately.
 
-1. To call your function, press <kbd>F5</kbd> to start the function app project. Output from Core Tools is displayed in the **Terminal** panel. Your app starts in the **Terminal** panel. You can see the URL endpoint of your HTTP-triggered function running locally.
+1. To call your function, press **F5** to start the function app project. Output from Core Tools is displayed in the **Terminal** panel. Your app starts in the **Terminal** panel. You can see the URL endpoint of your HTTP-triggered function running locally.
 
     :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/run-azure-function-locally-1.png" alt-text="Run the Azure Function locally":::
     
     If you have trouble running on Windows, make sure that the default terminal for Visual Studio Code isn't set to **WSL Bash**.
 
-1. With Core Tools running, go to the **Azure: Functions area**. Under **Functions**, expand **Local Project > Functions**. Right-click (Windows) or <kbd>Ctrl -</kbd> click (macOS) the `SplitWeights` function and choose **Execute Function Now...**.
+1. With Core Tools running, go to the **Azure: Functions area**. Under **Functions**, expand **Local Project > Functions**. Right-click (Windows) or *Ctrl -* click (macOS) the `SplitWeights` function and choose **Execute Function Now...**.
 
     :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/run-azure-function-locally-2.png" alt-text="Call the Function":::
     
-1. In **Enter request body**, you see the request message body value of { "name": "Azure" }. Press Enter to send this request message to your function.
+1. In **Enter request body**, you see the request message body value of `{ "name": "Azure" }`. Press **Enter** to send this request message to your function.
 1. When the function executes locally and returns a response, a notification is raised in Visual Studio Code. Information about the function execution is shown in **Terminal** panel.
-1. Press <kbd>Ctrl + C</kbd> to stop Core Tools and disconnect the debugger.
+1. Press **Ctrl + C** to stop Core Tools and disconnect the debugger.
 
 ## Reference Azure Quantum libraries
 
-Per default, the generated Azure Functions project only references standard Python libraries. All other libraries needed for the specific Function must be explicitly referenced. These references tell the Azure Functions runtime what libraries to load when a Function is called. Let's add a reference to the Azure Quantum Python library.
+By default, the generated Azure Functions project only references standard Python libraries. All other libraries needed for the specific function must be explicitly referenced. These references tell the Azure Functions runtime what libraries to load when a function is called. You can add a reference to the Azure Quantum Python library.
 
 1. Open the file `requirements.txt` by clicking on it.
 1. After `azure-functions` add a reference to the Azure Quantum Python library by adding `azure-quantum` at the end of the file. The complete file should look as follows:
@@ -89,13 +91,13 @@ Per default, the generated Azure Functions project only references standard Pyth
     azure-quantum
     ```
 
-1. Save the file by pressing <kbd>Ctrl + S</kbd>.
+1. Save the file.
 
 ## Add a reference to your Azure Quantum workspace
 
-You now have a Function that could access necessary Azure Quantum libraries when being called via http-call. But so far, the Function doesn't do anything. We'll change that now. First, let's add a reference to your Quantum Workspace.
+You now have a Function that could access necessary Azure Quantum libraries when being called via http-call. But so far, the function doesn't do anything. To change that, add a reference to your Quantum Workspace.
 
-1. Open the file `__init__.py` located in folder `SplitWeights`. This file contains the code executed when an http-request is received.
+1. Open the file `__init__.py` located in the folder `SplitWeights`. This file contains the code executed when an http-request is received.
 1. Add a reference to your Azure Quantum Workspace. Add following code right after the last `import` statement.
 
     ```python
@@ -109,11 +111,11 @@ You now have a Function that could access necessary Azure Quantum libraries when
         )
     ``` 
 
-1. Save the file by pressing <kbd>Ctrl + S</kbd>.
+1. Save the file.
 
 ## Add the QIO algorithm code
 
-So far, we only prepared the Function to load necessary Python libraries and create a connection to your Azure Quantum Workspace. It's time to add some useful optimization code.
+So far, we only prepared the function to load necessary Python libraries and create a connection to your Azure Quantum Workspace. It's time to add some useful optimization code.
 
 1. Add necessary ``import`` statements at the beginning. Add following line after the first ``import`` statement.
 
@@ -191,13 +193,13 @@ So far, we only prepared the Function to load necessary Python libraries and cre
         return Problem(name="Freight Balancing Problem", problem_type=ProblemType.ising, terms=terms)
     ```
 
-The Function now contains two functions: The ``main``-function is executed when a http-request is received. It parses the request and looks at the request URL. If a ``mineralWeights``-parameter is found in the URL, these weights are processed. If the URL doesn't contain this parameter, the request body is analyzed. If a ``mineralWeights``-parameter is found in the body, these weights are processed. Weights are passed to the ``createProblemForMineralWeights``-function that creates a ``Problem``-object. The ``main``-function passes this ``Problem``-object to an Azure Quantum solver and returns the results.
+The function now contains two functions: The ``main``-function is executed when a http-request is received. It parses the request and looks at the request URL. If a ``mineralWeights``-parameter is found in the URL, these weights are processed. If the URL doesn't contain this parameter, the request body is analyzed. If a ``mineralWeights``-parameter is found in the body, these weights are processed. Weights are passed to the ``createProblemForMineralWeights``-function that creates a ``Problem``-object. The ``main``-function passes this ``Problem``-object to an Azure Quantum solver and returns the results.
 
 ## Prepare your cloud environment
 
-Let's now prepare the target environment that will host the Function. Preparation includes the creation of an empty Azure Function App and granting access to your Quantum Workspace.
+You can now prepare the target environment that will host the Function. Preparation includes the creation of an empty Azure Function App and granting access to your Quantum Workspace.
 
-1. To begin, go to the [Azure Portal](https://portal.azure.com) and sign in to your Azure account.
+1. Go to the [Azure Portal](https://portal.azure.com) and sign in to your Azure account.
 1. Create a Function App. Select **Create a resource** in the upper left corner of the portal.
 
     :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-1.png" alt-text="Create a resource":::
@@ -236,7 +238,7 @@ Let's now prepare the target environment that will host the Function. Preparatio
 
 ## Deploy the Azure Function to the cloud
 
-Let's now deploy your Function code to the environment you prepared in the previous step.
+Deploy your Function code to the environment you prepared in the previous step.
 
 1. In Visual Studio Code, choose the Azure icon in the Activity bar, then in the **Azure: Functions** area, choose the **Deploy to function app...** button.
 
@@ -249,9 +251,9 @@ Let's now deploy your Function code to the environment you prepared in the previ
 
 ## Call your QIO algorithm via the Azure Function
 
-Now it's time to finally test the Function in the cloud.
+You can now test the Function in the cloud.
 
-1. Call the Function by calling the Function-URL in a browser. Call following URL:
+1. Call the function by calling the Function-URL in a browser. Call following URL:
 
     ```text
     https://<your_function_app_name>.azurewebsites.net/api/splitweights
@@ -263,7 +265,7 @@ Now it's time to finally test the Function in the cloud.
     The function couldn't be executed successfully. Pass a mineralWeights param in the query string or in the request body for a personalized response.
     ```
 
-1. Call the Function by calling the Function-URL with required parameters in a browser. Call following URL:
+1. Call the function by calling the Function-URL with required parameters in a browser. Call the following URL:
 
     ```text
     https://<your_function_app_name>.azurewebsites.net/api/splitweights?mineralWeights=5,11,8,7,1,1
@@ -275,12 +277,12 @@ Now it's time to finally test the Function in the cloud.
     {"0": -1, "1": 1, "2": -1, "3": 1, "4": -1, "5": -1}
     ```
 
-1. Let's call the Function with mineral weights passed within the request body. Back in Visual Studio Code in the **Azure: Functions** area in the side bar, expand your subscription, your new function app, and Functions. Right-click (Windows) or <kbd>Ctrl -</kbd> click (macOS) the ``SplitWeights`` function and choose **Execute Function Now...**.
+1. Call the Function with mineral weights passed within the request body. Back in Visual Studio Code in the **Azure: Functions** area in the side bar, expand your subscription, your new function app, and Functions. Right-click (Windows) or *Ctrl -*click (macOS) the ``SplitWeights`` function and choose **Execute Function Now...**.
 
     :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/execute-function-1.png" alt-text="Execute the Function via Visual Studio Code":::
 
-1. In the input field **Enter request body**, you see the request message body. Enter the value of ``{ "mineralWeights": [5,11,8,7,1,1] }``. Press **Enter** to send this request message to your function.
-1. Following confirmation message should appear after a few seconds:
+1. In the input field **Enter request body**, you will see the request message body. Enter the value of ``{ "mineralWeights": [5,11,8,7,1,1] }``. Press **Enter** to send this request message to your function.
+1. The following confirmation message should appear after a few seconds:
 
     :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/execute-function-2.png" alt-text="Result after Function call":::
 
