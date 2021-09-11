@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the latest updates to the Microsoft Quantum Development Kit preview.
 ms.author: v-benbra
-ms.date: 09/09/2021
+ms.date: 09/10/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
@@ -19,9 +19,9 @@ For installation instructions, please refer to the [install guide](xref:microsof
 
 For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
 
-## QDK Version 0.18.2109.162531
+## QDK Version 0.18.2109.162713
 
-*Release date: September 9, 2021*
+*Release date: September 10, 2021*
 
 - Fixes an [issue](https://github.com/microsoft/iqsharp/issues/517) that sometimes resulted in kernel crash in online Quantum Katas. No customer impact since online Katas stayed with the older QDK version.
 
