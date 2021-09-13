@@ -24,7 +24,3 @@ groups:
     title: Python
   - id: ide-jupyter
     title: Jupyter Notebooks
-  - id: ide-azurecli
-    title: Azure CLI
-  - id: ide-csharp
-    title: C#
