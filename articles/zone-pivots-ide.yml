@@ -3,7 +3,7 @@
 groups:
 - id: azurequantum-ide
   title: IDE for submitting jobs to AQ 
-  prompt: Select the option for your development environment:
+  prompt: Select the option for your development environment
   pivots:
   - id: ide-python
     title: Python
