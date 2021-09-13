@@ -8,7 +8,7 @@ ms.subservice: core
 ms.topic: how-to
 title: Submit optimization jobs to Azure Quantum
 uid: microsoft.quantum.submit-jobs-optimization
-zone_pivots_ide: azurequantum-ide
+zone_pivot_groups: azurequantum-ide
 ---
 
 # Submit optimization jobs to Azure Quantum
