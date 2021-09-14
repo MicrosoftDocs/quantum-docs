@@ -126,6 +126,8 @@
     items:
     - name: Submit optimization jobs
       href: how-to-submit-jobs.md
+    - name: Publish a QIO job as an Azure Function
+      href: how-to-publish-qio-job-as-azurefunction.md
   - name: Concepts
     items:
     - name: Which solver should I use?
