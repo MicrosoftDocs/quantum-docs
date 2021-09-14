@@ -57,7 +57,7 @@ Azure Quantum offers some of the most compelling and diverse quantum resources a
 
 Choose the provider that best suits the characteristics of your problem and your needs. 
 
-- [Honeywell Quantum Solutions](https://www.honeywell.com/ecompany/quantum): Trapped-ion system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurements.
+- [Honeywell Quantum Solutions](https://www.honeywell.com/us/en/company/quantum): Trapped-ion system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurements.
 - [IONQ](https://ionq.com/): Dynamically reconfigurable trapped-ion quantum computer for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
 - [Quantum Circuits, Inc](https://quantumcircuits.com/): Fast and high-fidelity system with powerful real-time feedback to enable error correction.
 
