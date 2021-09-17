@@ -400,7 +400,7 @@ This release contains the following:
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
-## Version 0.9 (*PackageReference 0.9.1908.2902*)
+## Version 0.9.1908.2902
 
 *Release date: August 29, 2019*
 
@@ -417,7 +417,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 The changes are summarized here as well as instructions for upgrading your existing programs.  Read more about these changes on the [Q# dev blog](https://devblogs.microsoft.com/qsharp).
 
-## Version 0.8 (*PackageReference 0.8.1907.1701*)
+## Version 0.8.1907.1701
 
 *Release date: July 12, 2019*
 
@@ -429,7 +429,7 @@ This release contains the following:
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed) and [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed).  
 
-## Version 0.7 (*PackageReference 0.7.1905.3109*)
+## Version 0.7.1905.3109
 
 *Release date: May 31, 2019*
 
