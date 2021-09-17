@@ -1,19 +1,19 @@
 ---
 author: bradben
-description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK).
+description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
 ms.author: v-benbra
 ms.date: 09/17/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
-title: Quantum Development Kit (QDK) release notes
+title: Quantum Development Kit (QDK) and Azure Quantum release notes
 uid: microsoft.quantum.relnotes-qdk
 ---
 
-# Quantum Development Kit (QDK) release notes
+# Quantum Development Kit (QDK) and Azure Quantum release notes
 
-In this article, learn about the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) releases with [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview).
+In this article, learn about updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview).
 
 For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For update instructions, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
