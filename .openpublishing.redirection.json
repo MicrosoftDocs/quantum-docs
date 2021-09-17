@@ -94,7 +94,7 @@
 			"source_path": "articles/concepts-targets-in-azure-quantum.md",
 			"redirect_url": "/azure/quantum/quantum-computing-target-profiles",
 			"redirect_document_id": false
-		}
+		},
 		{
 			"source_path": "articles/qdk-relnotes.md",
 			"redirect_url": "/azure/quantum/release-notes",
