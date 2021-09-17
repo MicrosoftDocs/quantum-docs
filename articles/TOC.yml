@@ -250,5 +250,5 @@
       href: contributing-style-guide.md
     - name: API design principles
       href: contributing-api-design-principles.md
-- name: Release Notes
-  href: qdk-relnotes.md
+- name: Release notes
+  href: release-notes.md
