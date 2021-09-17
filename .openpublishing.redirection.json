@@ -98,7 +98,7 @@
 		{
 			"source_path": "articles/qdk-relnotes.md",
 			"redirect_url": "/azure/quantum/release-notes",
-			"redirect_document_id": false
+			"redirect_document_id": true
 		}
 	]
 }
