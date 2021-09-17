@@ -10,7 +10,7 @@ title: Quantum optimization job
 uid: microsoft.quantum.optimization.job-reference
 ---
 
-# Quantum optimization Job
+# Azure Quantum Job
 
 ```py
 from azure.quantum import Job
