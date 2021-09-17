@@ -1,6 +1,6 @@
 ---
 author: bradben
-description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) preview.
+description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK).
 ms.author: v-benbra
 ms.date: 09/16/2021
 ms.service: azure-quantum
@@ -13,25 +13,23 @@ uid: microsoft.quantum.relnotes-qdk
 
 # Quantum Development Kit (QDK) release notes
 
-This article contains information on each Quantum Development Kit release.
+In this article, learn about the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) releases with [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview).
 
-For installation instructions, please refer to the [install guide](xref:microsoft.quantum.install-qdk.overview).
+For how to get started, see [Set up Azure Quantum](microsoft.quantum.install-qdk.overview). For update instructions, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
-For update instructions, please refer to the [update guide](xref:microsoft.quantum.update-qdk).
-
-## QDK Version 0.18.2109.162713
+## Version 0.18.2109.162713
 
 *Release date: September 10, 2021*
 
 - Fixes an [issue](https://github.com/microsoft/iqsharp/issues/517) that sometimes resulted in kernel crash in online Quantum Katas. No customer impact since online Katas stayed with the older QDK version.
 
-## QDK Version 0.18.2108.160999
+## Version 0.18.2108.160999
 
 *Release date: September 1, 2021*
 
 - Fixed an issue where required metadata was missing for the [Microsoft.Quantum.Qir.Runtime](https://www.nuget.org/packages/Microsoft.Quantum.Qir.Runtime) NuGet package.
 
-## QDK Version 0.18.2108.160310
+## Version 0.18.2108.160310
 
 *Release date: August 31, 2021*
 
@@ -47,7 +45,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
   - Fixed bug in which retrieving output from workspaces in a location different to another set as default failed.
   - Processing jobs that produce no output is allowed.
 
-## QDK Version 0.18.2107.153439
+## Version 0.18.2107.153439
 
 *Release date: July 27, 2021*
 
@@ -68,7 +66,7 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Terms banner in Review tab in Azure Quantum portal is hidden when only Microsoft provider is being added during workspace creation.
 
 
-## QDK Version 0.18.2106.148911
+## Version 0.18.2106.148911
 
 *Release date: June 25, 2021*
 
@@ -79,13 +77,13 @@ For update instructions, please refer to the [update guide](xref:microsoft.quant
 - Preview support for noisy simulation in open systems and stabilizer representations [qsharp-runtime#714](https://github.com/microsoft/qsharp-runtime/issues/714). See [here](https://github.com/microsoft/qsharp-runtime/blob/0826903c0842ba99a923e79be9f072054fe44a43/documentation/preview-simulators.md) for documentation on preview simulators.
 - Using [quantum-viz.js](https://github.com/microsoft/quantum-viz.js) as the engine to render the output from the jupyter notebook %trace magic.
 
-## QDK Version 0.17.2105.144881
+## Version 0.17.2105.144881
 
 *Release date: June 1, 2021*
 
 - Reverted a change in the `azure-quantum` Python client that could create authentication issues for some users (refer to issues [#66](https://github.com/microsoft/qdk-python/issues/66), [#67](https://github.com/microsoft/qdk-python/issues/67)).
 
-## QDK Version 0.17.2105.143879
+## Version 0.17.2105.143879
 
 *Release date: May 26, 2021*
 
