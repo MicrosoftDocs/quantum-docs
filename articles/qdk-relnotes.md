@@ -65,7 +65,6 @@ For how to get started, see [Set up Azure Quantum](microsoft.quantum.install-qdk
 - Parameter Free Population Annealing solver is now available through the 'Early Access' SKU in Azure Quantum. Sign up for early access: [https://aka.ms/aq/preview](https://aka.ms/aq/preview)
 - Terms banner in Review tab in Azure Quantum portal is hidden when only Microsoft provider is being added during workspace creation.
 
-
 ## Version 0.18.2106.148911
 
 *Release date: June 25, 2021*
@@ -94,7 +93,8 @@ For how to get started, see [Set up Azure Quantum](microsoft.quantum.install-qdk
 - C# Client: Changed input data format type to "v2" for Quantum Computing. 
 - Released Az CLI quantum extension version 0.5.0: Adapted to 'az' tool version 2.23.0, adding user agent information on calls to Azure Quantum Service.
 
-## Azure Quantum service update
+### Azure Quantum service update
+
 - Added PA (population annealing) and SSMC (sub-stochastic Monte Carlo) solvers along with preview access via a specialized SKU available to a subset of customers.
 - Added support for new regions: Japan East, Japan West, UK South, UK West
 - Set Provider in Failed state if provisioning fails. Previously it would be stuck in Launching/Updating state.
@@ -102,7 +102,6 @@ For how to get started, see [Set up Azure Quantum](microsoft.quantum.install-qdk
 - Rendered provider cost in localized currency from Azure Marketplace.
 - Added feedback button in portal to gather user feedback.
 - Added quickstart guide in portal in overview blade.
-
 
 ## Version 0.16.2105.140472
 
