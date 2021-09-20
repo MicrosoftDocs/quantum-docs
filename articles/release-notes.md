@@ -1,13 +1,13 @@
 ---
-author: bradben
+title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
+author: bradben
 ms.author: v-benbra
-ms.date: 09/17/2021
+ms.date: 09/20/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
-title: Quantum Development Kit (QDK) and Azure Quantum release notes
 uid: microsoft.quantum.relnotes-qdk
 ---
 
@@ -17,7 +17,9 @@ In this article, learn about updates to the [Quantum Development Kit (QDK)](xref
 
 For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For update instructions, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
-## Version 0.18.2109.162713
+## 2021-10-10
+
+### Version 0.18.2109.162713
 
 *Release date: September 10, 2021*
 
