@@ -19,19 +19,19 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2021-10-10
 
-### Version 0.18.2109.162713
+### QDK version 0.18.2109.162713
 
 - Fixes an [issue](https://github.com/microsoft/iqsharp/issues/517) that sometimes resulted in kernel crash in online Quantum Katas. No customer impact since online Katas stayed with the older QDK version.
 
 ## 2021-10-01
 
-### Version 0.18.2108.160999
+### QDK version 0.18.2108.160999
 
 - Fixed an issue where required metadata was missing for the [Microsoft.Quantum.Qir.Runtime](https://www.nuget.org/packages/Microsoft.Quantum.Qir.Runtime) NuGet package.
 
 ## 2021-08-31
 
-### Version 0.18.2108.160310
+### QDK version 0.18.2108.160310
 
 - Alternative operation in [@SubstitutableOnTarget](/qsharp/api/qsharp/microsoft.quantum.targeting.substitutableontarget) does not need to be explicitly referred to anymore in [Microsoft.Quantum.AutoSubstitution](https://www.nuget.org/packages/Microsoft.Quantum.AutoSubstitution/) NuGet package.
 - New [Workspace.get_targets()](xref:microsoft.quantum.optimization.workspace#workspaceget_targets) method in azure-quantum package that returns a list of all available targets. Can filter by Provider ID or Target ID.
@@ -47,7 +47,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2021-07-27
 
-### Version 0.18.2107.153439
+### QDK version 0.18.2107.153439
 
 - You can filter by job name, job status, and job creation time when listing jobs in azure-quantum.
 - Fixed [regression](https://github.com/microsoft/qsharp-compiler/issues/1067) in Code Actions due to incompatibility with protocol in VS 16.10.x versions.
@@ -67,7 +67,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2021-06-25
 
-### Version 0.18.2106.148911
+### QDK version 0.18.2106.148911
 
 - You can now [configure](xref:microsoft.quantum.optimization.apply-solver#returning-multiple-solutions) how many solutions you want returned from a solver run.
 - A new NuGet package [Microsoft.Quantum.AutoSubstitution](https://www.nuget.org/packages/Microsoft.Quantum.AutoSubstitution/), which when added to a Q# project, allows you to annotate operations with the `SubstitutableOnTarget(AltOp, Sim)` attribute. It will then call `AltOp` instead of the annotated operation, whenever it is executed using `Sim`.
@@ -78,13 +78,13 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2021-06-01
 
-### Version 0.17.2105.144881
+### QDK version 0.17.2105.144881
 
 - Reverted a change in the `azure-quantum` Python client that could create authentication issues for some users (refer to issues [#66](https://github.com/microsoft/qdk-python/issues/66), [#67](https://github.com/microsoft/qdk-python/issues/67)).
 
 ## 2021-05-26
 
-### Version 0.17.2105.143879
+### QDK version 0.17.2105.143879
 
 - Added a new function to the `azure-quantum` Python client to support the translation of binary optimization terms from `npz` to Azure Quantum. See full details in [QDK Python](https://github.com/microsoft/qdk-python/pull/61).
 - Published [QIR oracle generation sample](https://github.com/microsoft/Quantum/issues/496). This program allows turns classical Q# functions on Boolean inputs into quantum implementations of that functions in terms of Q# operations at the level of QIR. This allows, for example, to implement quantum algorithms that are used by many quantum algorithms readily as classical functions.
@@ -105,14 +105,14 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2021-05-10
 
-### Version 0.16.2105.140472
+### QDK version 0.16.2105.140472
 
 - Fixed dependency error in IQSharp on System.Text.Json when submitting jobs to Azure Quantum. See full details in issue [iqsharp#435](https://github.com/microsoft/iqsharp/issues/435).
 - Resolved issue affecting joint measurements of multi-qubit states on some combinations of Pauli basis resulting in incorrect values. For details, please refer to issue [qsharp-runtime#680](https://github.com/microsoft/qsharp-runtime/issues/680).
 
 ## 2021-04-27
 
-### Version 0.16.2104.138035
+### QDK version 0.16.2104.138035
 
 - Improved Q# type inference based on the Hindley-Milner type inference algorithm.
 - Added support for NumPy types in coefficient definitions for problems in QIO Python SDK.
@@ -124,7 +124,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2021-03-30
 
-### Version 0.15.2103.133969
+### QDK version 0.15.2103.133969
 
 - Released QIR emission as experimental feature (https://github.com/microsoft/qsharp-compiler/tree/main/src/QsCompiler/QirGeneration#qir-emission---preview-feature). The inclusion of the necessary LLVM packages, and in particular LlvmLibs, causes an increase in package size of the Microsoft.Quantum.Sdk and the Microsoft.Quantum.Compiler, and correspondingly to longer download times the first time the new versions are used. We are working on reducing that again in the future.
 - Loosen restriction on AllowAtMostNCallsCA operation (https://github.com/microsoft/QuantumLibraries/pull/431).
@@ -136,7 +136,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2021-02-25
 
-### Version 0.15.2102.129448
+### QDK version 0.15.2102.129448
 
 - Improved IQ# debug user experience by adding a horizontal scrollbar to scroll both execution path and basis state visualizations.
 - New functions to represent the group product and group inverse on the single-qubit Clifford group, to quickly define common single-qubit Clifford operators, and to apply single-qubit Clifford operators as operations. For more information, see issue [#409](https://github.com/microsoft/QuantumLibraries/issues/409).
@@ -145,13 +145,13 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2021-02-12
 
-### Version 0.15.2102.128318
+### QDK version 0.15.2102.128318
 
 - Fix "'npm' is not recognized as an internal or external command" error during creation of Q# projects with Visual Studio Code extension. See issue [#848](https://github.com/microsoft/qsharp-compiler/issues/848). 
 
 ## 2021-01-29
 
-### Version 0.15.2101.126940
+### QDK version 0.15.2101.126940
 
 - Added project templates to Q# compiler for executables targeting IonQ and Honeywell providers
 - Update IQ# kernel syntax highlighting to include changes to Q# syntax introduced in version [0.15.2101125897](#version-0152101125897)
@@ -161,7 +161,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2021-01-26
 
-### Version 0.15.2101125897
+### QDK version 0.15.2101125897
 
 - Simplified qubit allocation, providing more convenient syntax for allocating qubits, [see details in Q# language repository](https://github.com/microsoft/qsharp-language/blob/main/Approved/1-implicitly-scoped-qubit-allocation.md).
 - Created QDK-Python repository that includes `azure-quantum`, the Python client for submitting quantum-inspired optimization jobs to the Azure Quantum service, and `qdk`, including `qdk.chemistry`, a Python-based convenience layer for the Q# chemistry library that includes molecular visualization and functionality to generate input files for several chemistry packages such as NWChem, Psi4, and OpenMolcas.
@@ -172,7 +172,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2020-11-25
 
-### Version 0.14.2011120240
+### QDK version 0.14.2011120240
 
 - Improved compiler performance due to faster reference loading.
 - Added an [ANTLR grammar for Q#](https://github.com/microsoft/qsharp-language/tree/main/Specifications/Language/5_Grammar) to the Q# language specification.
@@ -184,13 +184,13 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 ## 2020-11-10
 
-### Version 0.13.20111004
+### QDK version 0.13.20111004
 
 This release disables IntelliSense features for Q# files in Visual Studio and Visual Studio Code when a project file is not present. This resolves an issue where IntelliSense features may stop working after adding a new Q# file to a project (see [qsharp-compiler#720](https://github.com/microsoft/qsharp-compiler/issues/720)).
 
 ## 2020-10-27
 
-### Version 0.13.20102604
+### QDK version 0.13.20102604
 
 This release contains the following:
 
@@ -200,13 +200,13 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 ## 2020-10-05
 
-### Version 0.12.20100504
+### QDK version 0.12.20100504
 
 This release fixes a bug affecting load of Q# notebooks (see [iqsharp#331](https://github.com/microsoft/iqsharp/pull/331)).
 
 ## 2020-09-29
 
-### Version 0.12.20092803
+### QDK version 0.12.20092803
 
 This release contains the following:
 
@@ -224,7 +224,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 ## 2020-08-25
 
-### Version 0.12.20082513
+### QDK version 0.12.20082513
 
 This release contains the following:
 
@@ -242,7 +242,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 ## 2020-07-21
 
-### Version 0.12.20072031
+### QDK version 0.12.20072031
 
 *Release date: July 21, 2020*
 
@@ -254,7 +254,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 ## 2020-07-02
 
-### Version 0.12.20070124
+### QDK version 0.12.20070124
 
 This release contains the following:
 
@@ -275,13 +275,13 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 ## 2020-06-04
 
-### Version 0.11.2006.403
+### QDK version 0.11.2006.403
 
 This release fixes a bug affecting compilation of Q# projects.
 
 ## 2020-06-03
 
-### Version 0.11.2006.207
+### QDK version 0.11.2006.207
 
 This release contains the following:
 
@@ -297,7 +297,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 ## 2020-04-30
 
-### Version 0.11.2004.2825
+### QDK version 0.11.2004.2825
 
 This release contains the following:
 
@@ -311,13 +311,13 @@ This release contains the following:
 
 ## 2020-03-31
 
-### Version 0.11.2003.3107
+### QDK version 0.11.2003.3107
 
 This release contains minor bug fixes for version 0.11.2003.2506.
 
 ## 2020-03-26
 
-### Version 0.11.2003.2506
+### QDK version 0.11.2003.2506
 
 This release contains the following:
 
@@ -328,7 +328,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 ## 2020-02-27
 
-### Version 0.10.2002.2610
+### QDK version 0.10.2002.2610
 
 This release contains the following:
 
@@ -339,7 +339,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 ## 2020-01-29
 
-### Version 0.10.2001.2831
+### QDK version 0.10.2001.2831
 
 This release contains the following:
 
@@ -355,7 +355,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 ## 2019-12-05
 
-### Version 0.10.1912.0501
+### QDK version 0.10.1912.0501
 
 This release contains the following:
 
@@ -367,7 +367,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 ## 2019-11-17
 
-### Version 0.10.1911.1607
+### QDK version 0.10.1911.1607
 
 This release contains the following:
 
@@ -375,10 +375,9 @@ This release contains the following:
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
+## 2019-11-01
 
-### Version 0.10.1911.307
-
-*Release date: November 1, 2019*
+### QDK version 0.10.1911.307
 
 This release contains the following:
 
@@ -389,9 +388,9 @@ This release contains the following:
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
-### Version 0.9.1909.3002
+## 2019-09-30
 
-*Release date: September 30, 2019*
+### QDK version 0.9.1909.3002
 
 This release contains the following:
 
@@ -400,9 +399,9 @@ This release contains the following:
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
-### Version 0.9.1908.2902
+## 2019-08-29
 
-*Release date: August 29, 2019*
+### QDK version 0.9.1908.2902
 
 This release contains the following:
 
@@ -417,7 +416,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 The changes are summarized here as well as instructions for upgrading your existing programs.  Read more about these changes on the [Q# dev blog](https://devblogs.microsoft.com/qsharp).
 
-### Version 0.8.1907.1701
+### QDK version 0.8.1907.1701
 
 *Release date: July 12, 2019*
 
@@ -429,7 +428,7 @@ This release contains the following:
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed) and [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed).  
 
-### Version 0.7.1905.3109
+### QDK version 0.7.1905.3109
 
 *Release date: May 31, 2019*
 
@@ -461,7 +460,7 @@ This release reorganizes, extends and updates the chemistry library:
 * Updating [Broombridge](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge) schema to new [version 0.2](xref:microsoft.quantum.libraries.overview.chemistry.schema.spec_v_0_2), adding unitary coupled cluster specification. [Issue #65](https://github.com/microsoft/QuantumLibraries/issues/65).
 * Adding Python interoperability to chemistry library functions. Try out this [sample](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/PythonIntegration). [Issue #53](https://github.com/microsoft/QuantumLibraries/issues/53) [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 
-### Version 0.6.1905
+### QDK version 0.6.1905
 
 *Release date: May 3, 2019*
 
@@ -534,14 +533,14 @@ If you have existing Q# projects from version 0.5 of the Quantum Development Kit
 > * In order to work with a solution in Visual Studio, all projects contained in the solution need to be in the same folder as the solution or in one of its subfolders.  
 > * References between projects migrated to 0.6 and higher and projects using older package versions are **not** supported.
 
-### Version 0.5.1904
+### QDK version 0.5.1904
 
 *Release date: April 15, 2019*
 
 This release contains bug fixes.
 
 
-### Version 0.5.1903
+### QDK version 0.5.1903
 
 *Release date: March 27, 2019*
 
@@ -558,7 +557,7 @@ This release contains the following:
 - Revamped [getting started guide](xref:microsoft.quantum.install-qdk.overview).
 
 
-### Version 0.5.1902
+### QDK version 0.5.1902
 
 *Release date: February 27, 2019*
 
@@ -570,7 +569,7 @@ This release contains the following:
 
 - The Visual Studio extension can now be installed on Visual Studio 2019.
 
-### Version 0.4.1901
+### QDK version 0.4.1901
 
 *Release date: January 30, 2019*
 
@@ -581,7 +580,7 @@ This release contains the following:
 - adds a simple resource estimator that estimates the resources required to run a given instance of a Q# operation on a quantum computer.  Learn more about the [Resource Estimator](xref:microsoft.quantum.machines.overview.resources-estimator).
 
 
-### Version 0.3.1811.2802
+### QDK version 0.3.1811.2802
 
 *Release date: November 28, 2018*
 
@@ -593,13 +592,13 @@ If you had previously installed the extension you will need to install it again 
 the [Microsoft Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode) extension on the Visual Studio Marketplace and press Install. We are sorry about the inconvenience.
 
 
-### Version 0.3.1811.1511
+### QDK version 0.3.1811.1511
 
 *Release date: November 20, 2018*
 
 This release fixes a bug that prevented some users to successfully load the Visual Studio extension.
 
-### Version 0.3.1811.203
+### QDK version 0.3.1811.203
 
 *Release date: November 2, 2018*
 
@@ -609,7 +608,7 @@ This release includes a few bug fixes, including:
 * Removed compilation warnings when building projects using a version of .NET Core previous to 2.1.403.
 * Clean up of documentation, specially the tooltips shown during mouse hover in VS Code or Visual Studio.
 
-### Version 0.3.1810.2508
+### QDK version 0.3.1810.2508
 
 *Release date: October 29, 2018*
 
@@ -649,19 +648,19 @@ This release includes bug fixes and features for issues reported by the communit
 
 Thank you also to Rohit Gupta ([@guptarohit](https://github.com/guptarohit),[PR #90](https://github.com/Microsoft/quantum/pull/90)), Tanaka Takayoshi ([@tanaka-takayoshi](https://github.com/tanaka-takayoshi),[PR #289](https://github.com/MicrosoftDocs/quantum-docs-pr/pull/289)), and Lee James O'Riordan ([@mlxd](https://github.com/mlxd),[PR #96](https://github.com/Microsoft/Quantum/pull/96)) for their work improving the content for all of us through documentation, spelling and typo corrections! 
 
-### Version 0.2.1809.701
+### QDK version 0.2.1809.701
 
 *Release date: September 10, 2018*
 
 This release includes bug fixes for issues reported by the community.
 
-### Version 0.2.1806.3001
+### QDK version 0.2.1806.3001
 
 *Release date: June 30, 2018*
 
 This release is just a quick fix for [issue #48 reported on GitHub](https://github.com/Microsoft/Quantum/issues/48) (Q# compilation fails if user name contains a blank space). Follow same update instructions as `0.2.1806.1503` with the corresponding new version (`0.2.1806.3001-preview`).
 
-### Version 0.2.1806.1503
+### QDK version 0.2.1806.1503
 
 *Release date: June 22, 2018*
 
@@ -743,7 +742,7 @@ dotnet clean
 No additional known issues to report.
 
 
-### Version 0.2.1802.2202
+### QDK version 0.2.1802.2202
 
 *Release date: February 26, 2018*
 
@@ -778,7 +777,7 @@ Please note that the operation RandomWalkPhaseEstimation from the namespace Micr
 - The `--filter` option to `dotnet test` does not work correctly for tests written in Q#.
   As a result, individual unit tests cannot be run in Visual Studio Code; we recommend using `dotnet test` at the command prompt to re-run all tests.
 
-### Version 0.1.1801.1707
+### QDK version 0.1.1801.1707
 
 *Release date: January 18, 2018*
 
@@ -789,7 +788,7 @@ This release fixes some issues reported by the community. Namely:
 - `SignD` primitive operation now returns `Int` rather than `Double`.
 
 
-### Version 0.1.1712.901
+### QDK version 0.1.1712.901
 
 *Release date: December 11, 2017*
 
