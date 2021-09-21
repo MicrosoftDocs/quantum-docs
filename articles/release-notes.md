@@ -416,9 +416,9 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 The changes are summarized here as well as instructions for upgrading your existing programs.  Read more about these changes on the [Q# dev blog](https://devblogs.microsoft.com/qsharp).
 
-### QDK version 0.8.1907.1701
+## 2019-07-12
 
-*Release date: July 12, 2019*
+### QDK version 0.8.1907.1701
 
 This release contains the following:
 
@@ -428,9 +428,9 @@ This release contains the following:
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed) and [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed).  
 
-### QDK version 0.7.1905.3109
+## 2019-05-31
 
-*Release date: May 31, 2019*
+### QDK version 0.7.1905.3109
 
 This release contains the following:
 - additions to the Q# language, 
@@ -441,7 +441,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 The changes are summarized here as well as instructions for upgrading your existing programs.  Read more about these changes on the [Q# dev blog](https://devblogs.microsoft.com/qsharp).
 
-### Q# language syntax
+#### Q# language syntax
 This release adds new Q# language syntax:
 * Add named items for [user-defined types](xref:microsoft.quantum.qsharp.typedeclarations#type-declarations).  
 * User-defined type constructors can now be used as functions.
@@ -449,7 +449,7 @@ This release adds new Q# language syntax:
 * Fixup-block for [repeat-until-success](xref:microsoft.quantum.qsharp.conditionalloops#repeat-statement) loops is now optional.
 * We now support while loops in functions (not in operations).
 
-### Library 
+#### Library
 
 This release adds a numerics library: Learn more about how to [use the new numerics library](xref:microsoft.quantum.libraries-numerics.usage) and try out the [new samples](https://github.com/microsoft/Quantum/tree/main/samples/numerics).  [PR #102](https://github.com/Microsoft/QuantumLibraries/pull/102).  
 This release reorganizes, extends and updates the chemistry library:
@@ -460,11 +460,12 @@ This release reorganizes, extends and updates the chemistry library:
 * Updating [Broombridge](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge) schema to new [version 0.2](xref:microsoft.quantum.libraries.overview.chemistry.schema.spec_v_0_2), adding unitary coupled cluster specification. [Issue #65](https://github.com/microsoft/QuantumLibraries/issues/65).
 * Adding Python interoperability to chemistry library functions. Try out this [sample](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/PythonIntegration). [Issue #53](https://github.com/microsoft/QuantumLibraries/issues/53) [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 
+## 2019-05-03
+
 ### QDK version 0.6.1905
 
-*Release date: May 3, 2019*
-
 This release contains the following:
+
 - makes changes to the Q# language, 
 - restructures the Quantum Development Kit libraries, 
 - adds new samples, and 
@@ -472,8 +473,10 @@ This release contains the following:
 
 The changes are summarized here as well as instructions for upgrading your existing programs.  You can read more about these changes on devblogs.microsoft.com/qsharp.
 
-### Q# language syntax
+#### Q# language syntax
+
 This release adds new Q# language syntax:
+
 * Add a [shorthand way to express specializations of quantum operations](xref:microsoft.quantum.qsharp.specializationdeclarations) (control and adjoints) with `+` operators.  The old syntax is deprecated.  Programs that use the old syntax (for example, `: adjoint`) will continue to work, but a compile-time warning will be generated.  
 * Add a new ternary operator for [copy-and-update](xref:microsoft.quantum.qsharp.copyandupdateexpressions#copy-and-update-expressions), `w/` `<-`, can be used to express array creation as a modification of an existing array.
 * Add the common [apply-and-reassign statement](xref:microsoft.quantum.qsharp.variabledeclarationsandreassignments#evaluate-and-reassign-statements), for example, `+=`, `w/=`.
@@ -481,8 +484,10 @@ This release adds new Q# language syntax:
 
 With this release, we no longer allow an array element to be specified on the left side of a set statement.  This is because that syntax implies that arrays are mutable when in fact, the result of the operation has always been the creation of a new array with the modification.  Instead, a compiler error will be generated with a suggestion to use the new copy-and-update operator, `w/`, to accomplish the same result.  
 
-### Library restructuring
+#### Library restructuring
+
 This release reorganizes the libraries to enable their growth in a consistent way:
+
 * Renames the Microsoft.Quantum.Primitive namespace  to Microsoft.Quantum.Intrinsic.  These operations are implemented by the target machine.  The Microsoft.Quantum.Primitive namespace is deprecated.  A runtime warning will advise when programs call operations and functions using deprecated names.
 
 * Renames the Microsoft.Quantum.Canon package to Microsoft.Quantum.Standard.  This package contains namespaces that are common to most Q# programs.  This includes:  
@@ -499,7 +504,7 @@ With this change, programs that include a single "open" statement for the namesp
 
 * The names of several callables (functions and operations) have been changed to conform to the [Q# Style Guide](xref:microsoft.quantum.contributing-qdk.overview.style).  The old callable names are deprecated.  Programs that use the old callables will continue to work with a compile-time warning. 
 
-### New Samples
+#### New Samples
 
 We added a [sample of using Q# with F# driver](https://github.com/Microsoft/Quantum/pull/164).  
 
@@ -507,7 +512,7 @@ We added a [sample of using Q# with F# driver](https://github.com/Microsoft/Quan
 
 * Mathias Soeken ([@msoeken](https://github.com/msoeken)): Oracle function synthesis. [PR #135](https://github.com/Microsoft/Quantum/pull/135).
 
-### Migrating existing projects to 0.6.1905.
+#### Migrating existing projects to 0.6.1905.
 
 See the [install guide](xref:microsoft.quantum.install-qdk.overview) to update the QDK.
   
