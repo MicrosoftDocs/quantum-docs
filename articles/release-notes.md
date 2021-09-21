@@ -244,7 +244,6 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 ### QDK version 0.12.20072031
 
-*Release date: July 21, 2020*
 
 This release contains the following:
 
