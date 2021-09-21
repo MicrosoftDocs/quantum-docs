@@ -295,9 +295,9 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 > [!NOTE]
 > This version contains a bug affecting compilation of Q# projects. We recommend upgrading to a newer release.
 
-### Version 0.11.2004.2825
+## 2020-04-30
 
-*Release date: April 30, 2020*
+### Version 0.11.2004.2825
 
 This release contains the following:
 
@@ -309,15 +309,15 @@ This release contains the following:
 > Q# applications using the new [`@EntryPoint()`](xref:Microsoft.Quantum.Core.EntryPoint) attribute currently cannot be called from Python or .NET host programs.
 > See the [Python](xref:microsoft.quantum.install-qdk.overview.python) and [.NET interoperability](xref:microsoft.quantum.install-qdk.overview.cs) guides for more information.
 
-### Version 0.11.2003.3107
+## 2020-03-31
 
-*Release date: March 31, 2020*
+### Version 0.11.2003.3107
 
 This release contains minor bug fixes for version 0.11.2003.2506.
 
-### Version 0.11.2003.2506
+## 2020-03-26
 
-*Release date: March 26, 2020*
+### Version 0.11.2003.2506
 
 This release contains the following:
 
@@ -326,9 +326,9 @@ This release contains the following:
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
-### Version 0.10.2002.2610
+## 2020-02-27
 
-*Release date: February 27, 2020*
+### Version 0.10.2002.2610
 
 This release contains the following:
 
@@ -337,9 +337,9 @@ This release contains the following:
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
-### Version 0.10.2001.2831
+## 2020-01-29
 
-*Release date: January 29, 2020*
+### Version 0.10.2001.2831
 
 This release contains the following:
 
@@ -353,9 +353,9 @@ This release contains the following:
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
-### Version 0.10.1912.0501
+## 2019-12-05
 
-*Release date: December 5, 2019*
+### Version 0.10.1912.0501
 
 This release contains the following:
 
@@ -365,9 +365,9 @@ This release contains the following:
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
-### Version 0.10.1911.1607
+## 2019-11-17
 
-*Release date: November 17, 2019*
+### Version 0.10.1911.1607
 
 This release contains the following:
 
