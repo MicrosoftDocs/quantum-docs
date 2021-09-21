@@ -154,7 +154,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 ### QDK version 0.15.2101.126940
 
 - Added project templates to Q# compiler for executables targeting IonQ and Honeywell providers
-- Update IQ# kernel syntax highlighting to include changes to Q# syntax introduced in version [0.15.2101125897](#version-0152101125897)
+- Update IQ# kernel syntax highlighting to include changes to Q# syntax introduced in version [0.15.2101125897](#qdk-version-0152101125897)
 - Bugfix to support passing arrays as input arguments to Q# programs submitted to Azure Quantum via `%azure.execute`, see issue [#401](https://github.com/microsoft/iqsharp/issues/401)
 - Fix "Permission denied" error encountered using `az` inside of `iqsharp-base` Docker images, see issue [#404](https://github.com/microsoft/iqsharp/issues/404)
 - Released Az CLI quantum extension version 0.1.0: Provided command-line tool for workspace management and quantum computing job submission.
