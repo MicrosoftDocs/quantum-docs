@@ -572,9 +572,9 @@ This release contains the following:
 
 - The Visual Studio extension can now be installed on Visual Studio 2019.
 
-### QDK version 0.4.1901
+## 2019-01-30
 
-*Release date: January 30, 2019*
+### QDK version 0.4.1901
 
 This release contains the following:
 
@@ -582,10 +582,9 @@ This release contains the following:
 - adds new Toffoli simulator, a special purpose fast simulator that can simulate X, CNOT and multi-controlled X quantum operations with very large numbers of qubits.  Learn more about [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator).
 - adds a simple resource estimator that estimates the resources required to run a given instance of a Q# operation on a quantum computer.  Learn more about the [Resource Estimator](xref:microsoft.quantum.machines.overview.resources-estimator).
 
+## 2018-11-28
 
 ### QDK version 0.3.1811.2802
-
-*Release date: November 28, 2018*
 
 Even though our VS Code extension was not using it, it was flagged and removed from the marketplace during
 [the extensions purge](https://code.visualstudio.com/blogs/2018/11/26/event-stream) related to the `event-stream` NPM package. 
@@ -594,16 +593,15 @@ This version removes all runtime dependencies that could make the extension trig
 If you had previously installed the extension you will need to install it again by visiting 
 the [Microsoft Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode) extension on the Visual Studio Marketplace and press Install. We are sorry about the inconvenience.
 
+## 2018-11-20
 
 ### QDK version 0.3.1811.1511
 
-*Release date: November 20, 2018*
-
 This release fixes a bug that prevented some users to successfully load the Visual Studio extension.
 
-### QDK version 0.3.1811.203
+## 2018-11-02
 
-*Release date: November 2, 2018*
+### QDK version 0.3.1811.203
 
 This release includes a few bug fixes, including:
 
@@ -611,9 +609,9 @@ This release includes a few bug fixes, including:
 * Removed compilation warnings when building projects using a version of .NET Core previous to 2.1.403.
 * Clean up of documentation, specially the tooltips shown during mouse hover in VS Code or Visual Studio.
 
-### QDK version 0.3.1810.2508
+## 2018-10-29
 
-*Release date: October 29, 2018*
+### QDK version 0.3.1810.2508
 
 This release includes new language features and an improved developer experience:
 
@@ -641,7 +639,7 @@ With the new chemistry library, we are separating out the libraries into a new G
 
 This release includes bug fixes and features for issues reported by the community.
 
-### Community Contributions
+#### Community Contributions
 
 **Thank you!** to the following contributors to our open code base at http://github.com/Microsoft/Quantum. These contributions add significantly to the rich samples of Q# code:
 
@@ -651,21 +649,21 @@ This release includes bug fixes and features for issues reported by the communit
 
 Thank you also to Rohit Gupta ([@guptarohit](https://github.com/guptarohit),[PR #90](https://github.com/Microsoft/quantum/pull/90)), Tanaka Takayoshi ([@tanaka-takayoshi](https://github.com/tanaka-takayoshi),[PR #289](https://github.com/MicrosoftDocs/quantum-docs-pr/pull/289)), and Lee James O'Riordan ([@mlxd](https://github.com/mlxd),[PR #96](https://github.com/Microsoft/Quantum/pull/96)) for their work improving the content for all of us through documentation, spelling and typo corrections! 
 
-### QDK version 0.2.1809.701
+## 2018-09-10
 
-*Release date: September 10, 2018*
+### QDK version 0.2.1809.701
 
 This release includes bug fixes for issues reported by the community.
 
-### QDK version 0.2.1806.3001
+## 2018-06-30
 
-*Release date: June 30, 2018*
+### QDK version 0.2.1806.3001
 
 This release is just a quick fix for [issue #48 reported on GitHub](https://github.com/Microsoft/Quantum/issues/48) (Q# compilation fails if user name contains a blank space). Follow same update instructions as `0.2.1806.1503` with the corresponding new version (`0.2.1806.3001-preview`).
 
-### QDK version 0.2.1806.1503
+## 2018-06-22
 
-*Release date: June 22, 2018*
+### QDK version 0.2.1806.1503
 
 This release includes several community contributions as well as an improved debugging experience and improved performance.  Specifically:
 
