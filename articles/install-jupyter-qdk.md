@@ -41,7 +41,7 @@ IQ# (pronounced i-q-sharp) is an extension primarily used by Jupyter and Python 
 1. From a new terminal, create and activate a new conda environment named `qsharp-env` with the required packages (including Jupyter Notebook and IQ#) by running the following commands:
 
     ```shell
-    conda create -n qsharp-env -c quantum-engineering qsharp notebook
+    conda create -n qsharp-env -c microsoft qsharp notebook
 
     conda activate qsharp-env
     ```
