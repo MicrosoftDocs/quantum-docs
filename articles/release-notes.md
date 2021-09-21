@@ -23,7 +23,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 - Fixes an [issue](https://github.com/microsoft/iqsharp/issues/517) that sometimes resulted in kernel crash in online Quantum Katas. No customer impact since online Katas stayed with the older QDK version.
 
-## 2021-10-01
+## 2021-09-01
 
 ### QDK version 0.18.2108.160999
 
