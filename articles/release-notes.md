@@ -538,16 +538,15 @@ If you have existing Q# projects from version 0.5 of the Quantum Development Kit
 > * In order to work with a solution in Visual Studio, all projects contained in the solution need to be in the same folder as the solution or in one of its subfolders.  
 > * References between projects migrated to 0.6 and higher and projects using older package versions are **not** supported.
 
-### QDK version 0.5.1904
+## 2019-04-15
 
-*Release date: April 15, 2019*
+### QDK version 0.5.1904
 
 This release contains bug fixes.
 
+## 2019-03-27
 
 ### QDK version 0.5.1903
-
-*Release date: March 27, 2019*
 
 This release contains the following:
 
@@ -561,10 +560,9 @@ This release contains the following:
 
 - Revamped [getting started guide](xref:microsoft.quantum.install-qdk.overview).
 
+## 2019-02-27
 
 ### QDK version 0.5.1902
-
-*Release date: February 27, 2019*
 
 This release contains the following:
 
