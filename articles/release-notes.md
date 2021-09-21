@@ -11,7 +11,7 @@ no-loc: ['Q#', '$$v']
 uid: microsoft.quantum.relnotes-qdk
 ---
 
-# Quantum Development Kit (QDK) and Azure Quantum release notes
+# Azure Quantum and Quantum Development Kit (QDK) release notes
 
 In this article, learn about updates to the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview) and the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp).
 
