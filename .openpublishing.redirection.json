@@ -99,6 +99,11 @@
 			"source_path": "articles/qdk-relnotes.md",
 			"redirect_url": "/azure/quantum/release-notes",
 			"redirect_document_id": true
+		},
+		{
+			"source_path": "articles/install-azure-quantum-sdk-python.md",
+			"redirect_url": "/azure/quantum/quickstart-microsoft-qiskit",
+			"redirect_document_id": true
 		}
 	]
 }

@@ -28,17 +28,20 @@ The `azure-quantum` Python package contains the necessary functionality for conn
 1. Install [Python](https://www.python.org/downloads/) 3.6 or later in case you haven't already.
 1. Install [PIP](https://pip.pypa.io/en/stable/) and ensure you have **version 19.2 or higher**.
     > Optionally, if you are using [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads), create a new environment by downloading the [environment.yml](https://github.com/microsoft/qdk-python/blob/main/azure-quantum/environment.yml) file and running the following:
-    >```
+
+    >```shell
     >conda env create -f environment.yml
     >```
+
     > This creates a new conda environment that you can activate with the following:
-    >```
+
+    >```shell
     >conda activate azurequantum
     >```
 
 1. Install the `azure-quantum` package using pip, adding the necessary dependency for your desired code source:
 
-    ```
+    ```shell
     // for native quantum circuits
     pip install azure-quantum
     // for Cirq

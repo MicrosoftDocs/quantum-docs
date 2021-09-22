@@ -216,6 +216,8 @@
   items:
     - name: Update the QDK
       href: install-update-qdk.md
+    - name: Create an Azure Quantum Workspace
+      href: how-to-create-workspace.md
     - name: Work with jobs
       href: how-to-work-with-jobs.md
     - name: Authenticate using a service principal
