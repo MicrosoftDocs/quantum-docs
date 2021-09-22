@@ -2,7 +2,7 @@
 author: andrist
 description: This document describes the definition and purpose of the cost function for optimization problems.
 ms.author: ruandris
-ms.date: 02/01/2021
+ms.date: 09/02/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: conceptual
@@ -16,12 +16,12 @@ An *optimization problem* is described by a set of *variables*, each having a se
 (or range) of possible values. They describe the decisions that the optimizer
 must make.
 
-A *solution* assigns a value to each of these variables. These describe the choice
+A *solution* assigns a value to each of these variables. The variables describe the choice
 for each of the aforementioned decisions.
 
 The *cost function* associates a numerical value ("score") with each possible
-solution in order to compare them and select the most favorable one (typically
-identified by the lowest cost value).
+solution in order to compare them and selects the most favorable one. Typically
+the most favorable solution is identified by the lowest cost value.
 
 > [!NOTE]
 > In physics, the *Hamiltonian* takes the role of the cost function and its
@@ -55,10 +55,10 @@ problem's variables and parameters.
 
 ## Constraints
 
-A *constraint* is a relation between multiple variables which must hold for a
-solution to be deemed valid.
+A *constraint* is a relation between multiple variables that must hold for a
+solution to be considered valid.
 
-Solutions which violate constraints can either be assigned a very high cost
+Solutions that violate constraints can either be assigned a very high cost
 ("penalty") by the cost function or be excluded from sampling explicitly by
 the optimizer.
 
@@ -78,11 +78,8 @@ the optimal solution, $22/7$, is unique.
 
 ## Parameterized models
 
-Typical optimization problems consist of many variables and several terms
-constituting the cost function. It is therefore pertinent to select a
-specific structure for the mathematical expression, while denoting merely
-the parameters and variable locations required to construct the cost
-function.
+Typically, optimization problems consist of many variables and several terms that make up the cost function. 
+It is useful to select a specific mathematical structure to represent these cost functions which allows you to simply denote the parameters and variable locations required to construct the cost function for your specific problem.
 
 **Example**: Divide a set of $N$ numbers into two groups of equal sum.
 
@@ -92,7 +89,7 @@ function.
 *   Model cost function:
     $$ \mathrm{cost} = \left| \sum_i w_i x_i \right| $$
 
-That is, we always construct a cost function of the form in the third bullet,
+In this example, we always construct a cost function of the form in the third bullet,
 but we adjust the parameters $w_i$ according to the specific problem instance
 we are solving.
 
@@ -114,15 +111,18 @@ and Quadratic/Polynomial unconstrained
 problems. These support versatile applications because several other
 optimization problems can be mapped to them.
 
-**Example**: For the above number set division problem, one can substitute the
+**Example**: For the above number set division problem, you can replace the
 absolute value with the square operator (which also has its lowest value at 0)
 to obtain:
 
 $$ \mathrm{cost}' = \left(\sum_i w_ix_i\right)^2 = \sum_{ij} w_iw_jx_ix_j\text{ .} $$
 
 When multiplied out, this cost function has more terms than the previous one,
-but it happens to be in the (polynomial) form supported by our optimizers
-(namely, an Ising cost function).
+but together, these forms represent the polynomial forms supported by our optimizers. 
+
+> [!NOTE]
+> While all Microsoft QIO solvers support cost functions as sums of monomial terms, only a subset of optimization solvers currently support grouped terms.
+> For more information, see [`SlcTerm`](xref:microsoft.quantum.optimization.slc-term)..
 
 ### Ising cost function
 
@@ -146,7 +146,7 @@ For instance, the input:
   ]
 }
 ```
-describes the an Ising cost function with three terms:
+describes an Ising cost function with three terms:
 $$ \mathrm{cost} = 3x_0x_1x_2 -2x_0x_3 + x_2x_3\text{ .} $$
 
 > [!NOTE]

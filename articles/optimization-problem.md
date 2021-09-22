@@ -2,7 +2,7 @@
 author: george-moussa
 description: Reference for azure.quantum.optimization.Problem
 ms.author: georgenm
-ms.date: 07/26/2021
+ms.date: 09/02/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -23,10 +23,11 @@ from azure.quantum.optimization import Problem
 To create a `Problem` object, you specify the following information:
 
 - `name`: A friendly name for your problem. No uniqueness constraints.
-- [optional] `terms`: A list of `Term` objects to add to the problem.
-- [optional] `problem_type`: The type of problem. Must be either
-  `ProblemType.ising` or `ProblemType.pubo`. Default is `ProblemType.ising`.
-- [optional] `init_config`: A dictionary of variable IDs to value if user wants to specify an initial configuration for the problem.
+- `terms` (optional): A list of `Term` objects and grouped term objects, where supported, to add to the problem.
+- `problem_type`(optional): The type of problem. Must be one of
+  `ProblemType.ising`, `ProblemType.pubo`, `ProblemType.ising_grouped`, or
+  `ProblemType.pubo_grouped`. The default is `ProblemType.ising`. A grouped problem type is picked automatically if grouped terms are used in the problem formulation.
+- `init_config`(optional): A dictionary of variable IDs to value if user wants to specify an initial configuration for the problem.
 
 ```py
 terms = [
@@ -44,13 +45,46 @@ problem2 = Problem(name="Problem with Initial Configuration", terms=terms, init_
 
 ### Problem.add_term
 
-Adds a single term to the problem. It takes a coefficient for the term and the indices
+Adds a single monomial term to the problem. It takes a coefficient for the term and the indices
 of variables that appear in the term.
 
 ```py
 coefficient = 0.13
 problem.add_term(c=coefficient, indices=[2,0])
 ```
+
+### Problem.add_slc_term
+
+Adds a single squared linear combination (SLC) term to
+the problem. It accepts a list of monomial terms that make up the squared linear combination term and a
+lead coefficient. 
+
+```py
+subterms_Term = [
+    Term(c=1, indices=[0]),
+    Term(c=-2, indices=[1]),
+    Term(c=1, indices=[2]),
+    Term(c=-1, indices=[])
+]
+coefficient = 2
+problem.add_slc_term(terms=subterms_Term, c=coefficient)
+```
+In addition to using a list of `Term` objects, a list of tuples, with each
+tuple containing a monomial term coefficient followed by the
+variable index for the monomial (or `None` if a constant) can be used instead. 
+
+```py
+subterms_tuple = [
+    (1, 0),
+    (-2, 1),
+    (1, 2),
+    (-1, None)
+]
+coefficient = 2
+problem.add_slc_term(terms=subterms_tuple, c=coefficient)
+```
+
+For more information, see [SlcTerm](xref:microsoft.quantum.optimization.slc-term).
 
 ### Problem.add_terms
 
@@ -66,6 +100,21 @@ problem.add_terms([
     Term(c=-4, indices=[3,1]),
     Term(c=4, indices=[3,2])
 ])
+```
+
+This function also has an overload that serves as a wrapper for grouped terms as shown in the following example.
+The overload can be used by specifying a list of `Term` objects along with the grouped term type.
+
+```py
+problem.add_terms([
+        Term(c=1, indices=[0]),
+        Term(c=-2, indices=[1]),
+        Term(c=1, indices=[2]),
+        Term(c=-1, indices=[])
+    ],
+    term_type = GroupType.squared_linear_combination,
+    c = 2
+)
 ```
 
 ### Problem.serialize
@@ -88,13 +137,13 @@ Problem data can be explicitly uploaded to an Azure storage account using its
 problem.upload(workspace=workspace)
 ```
 
-Once a problem is explicitly uploaded, it will not be automatically uploaded
+Once a problem is explicitly uploaded, it won't be uploaded automatically 
 during submission unless its terms change.
 
 
 ### Problem.evaluate
 
-Once a problem has been defined, the user can evaluate the problem on any configuration they supply. The configuration should be supplied as a dictionary of variable IDs to values. 
+Once a problem has been defined, you can evaluate the problem on any configuration they supply. The configuration should be supplied as a dictionary of variable IDs to values. 
 
 ```py
 problem = Problem("My Problem", [Term(c=1, indices=[0,1])])
@@ -107,7 +156,7 @@ problem.evaluate({0:1, 1:0})
 
 ### Problem.set_fixed_variables
 
-During experimentation, the user may want to set a variable (or a group of variables) to a particular value. Calling set_fixed_variables will return a new Problem object representing the modified problem after such variables have been fixed.
+During experimentation, you may want to set a variable (or a group of variables) to a particular value. Calling set_fixed_variables will return a new Problem object representing the modified problem after the selected variables have been fixed.
 
 ```py
 fixed_var = {'1': 1, '2': 1}
@@ -128,7 +177,7 @@ result_config.update(fixed_var) # join the fixed variables with the result
 
 ### Problem.get_terms
 
-The user can get the terms in which a variable exists using this function.
+You can get the terms in which a variable exists using this function.
 
 ```py
 problem = Problem("My problem" ,  [Term(c=1, indices=[0,1]), Term(c=11, indices=[1,2]), Term(c=5, indices=[1])])
@@ -143,14 +192,13 @@ terms
 The StreamingProblem class can handle large problems that exceed local memory limits. Unlike with the Problem class, terms in the StreamingProblem are uploaded directly to blob and are not kept in memory.
 
 The StreamingProblem class uses the same interface as the Problem class. See [StreamingProblem](xref:microsoft.quantum.optimization.streaming-problem) usage documentation. 
-
-There are some features that are not yet supported on the StreamingProblem class due to its streaming nature:
+There are some features that are not yet supported on the StreamingProblem class because of its streaming nature:
 
 - Problem.set_fixed_variables()
 - Problem.evaluate()
 
 ## OnlineProblem
 
-The OnlineProblem class creates a problem from the url of the blob storage where an optimization problem has been uploaded. It is essentially used to reuse already submitted problems.
+The OnlineProblem class creates a problem from the url of the blob storage where an optimization problem has been uploaded. It allows you to reuse already submitted problems.
 It does not support client-side analysis, for example, the `evaluate` and `set_fixed_variables` functions. It allows you to download the problem from the blob storage as an instance of the `Problem` class to do any of the client-side operations.
 For an example of how to use the `OnlineProblem` class, have a look at [reusing problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions).
