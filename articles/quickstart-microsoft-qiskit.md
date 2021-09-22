@@ -1,7 +1,7 @@
 ---
 author: guenp
 description: Learn how to install the Azure Quantum SDK for Python to submit Quantum circuits to Azure Quantum.
-ms.author: v-guenp
+ms.author: guenp
 ms.date: 09/22/2021
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -19,7 +19,7 @@ Learn how to use the `azure-quantum` Python package to submit Qiskit, Cirq, or n
 ## Prerequisites
 
 - To work in Azure Quantum, you need an Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/).
-- Create an Azure Quantum workspace and enable your preferred provider, Honeywell or IonQ, or both) for this scenario. For more information, see [Create an Azure Quantum workspace](xref:).
+- Create an Azure Quantum workspace and enable your preferred provider, Honeywell or IonQ, or both) for this scenario. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Install the `azure-quantum` Python package
 
