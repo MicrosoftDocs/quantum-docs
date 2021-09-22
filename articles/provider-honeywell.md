@@ -38,18 +38,18 @@ Tool to verify proper syntax and compilation completion. Full stack is exercised
 
 - Job type: `Simulation`
 - Data Format: `honeywell.openqasm.v1`
-- Target ID: `honeywell.hqs-lt-1.0-apival`
+- Target ID: `honeywell.hqs-lt-1.0-apival` and `honeywell.hqs-lt-s2-apival`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
 Billing information:  No charge for usage.
 
-### Honeywell System Model H1
+### Honeywell System Model H1 and H1-2
 
-Honeywell Quantum Solutions' Quantum Computer, System Model H1
+Honeywell Quantum Solutions' Quantum Computer, System Model H1. To instances of this system are available (known as H1-1 and H1-2).
 
 - Job type: `Quantum Program`
 - Data Format: `honeywell.openqasm.v1`
-- Target ID: `honeywell.hqs-lt-s1`
+- Target ID: `honeywell.hqs-lt-s1` and `honeywell.hqs-lt-s2`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
 
