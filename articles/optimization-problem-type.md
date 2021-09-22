@@ -2,7 +2,7 @@
 author: george-moussa
 description: Reference for azure.quantum.optimization.ProblemType
 ms.author: georgenm
-ms.date: 02/01/2021
+ms.date: 09/02/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -12,7 +12,7 @@ uid: microsoft.quantum.optimization.problem-type
 
 # Quantum optimization ProblemType
 
-## Quantum optimization problem type
+## ProblemType
 
 ```py
 from azure.quantum.optimization import ProblemType
@@ -42,3 +42,12 @@ c_{i,j,k} s_{i} s_{j} s_{k} \text{ where } c_{i,j,k} \in R \text{ and }
 s_{i,j,k} \in [-1, 1]$$
 
 It is called *k*-local if the maximum degree of the polynomial is *k*.
+
+### Grouped terms
+
+Both problem types support grouped terms. If grouped terms are included in the cost function, use `ProblemType.pubo_grouped` or `ProblemType.ising_grouped`. 
+The SDK will adjust the problem type automatically used once a grouped term is added.
+
+> [!NOTE]
+> Only a subset of optimization solvers currently support grouped terms.
+> Refer to the [`SlcTerm`](xref:microsoft.quantum.optimization.slc-term) documentation for details.
