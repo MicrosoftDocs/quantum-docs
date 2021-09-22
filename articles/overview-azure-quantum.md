@@ -19,19 +19,19 @@ Azure Quantum is a cloud service that brings you, under as single pane a glass, 
 
 Azure Quantum offers you two main paths of quantum solutions:
 
-- [Quantum Computing]((xref:microsoft.quantum.overview.qdk-overview)): to learn, experiment and prototype with a variety of quantum hardware providers to help you get ready for the future of scaled quantum machines. Unlike other solutions, you are not siloed to a single hardware technology, and you benefit from a full stack approach protecting your long-term investments. 
+- [Quantum Computing](xref:microsoft.quantum.overview.qdk-overview): to learn, experiment and prototype with a variety of quantum hardware providers to help you get ready for the future of scaled quantum machines. Unlike other solutions, you are not siloed to a single hardware technology, and you benefit from a full stack approach protecting your long-term investments. 
 - [Optimization](xref:microsoft.quantum.optimization.overview.what-is-qio): to develop solutions that help you reduce cost of operation in a broad range of fields such as finance, energy cost, fleet management, scheduling, and more. 
 
 With Azure Quantum and the [Quantum Development Kit toolset](xref:microsoft.quantum.overview.q-sharp), you will be able to program  your quantum algorithms and optimization solutions, then apply those quantum solutions within the existing Azure platform to achieve real-world impacts even before the development of a general-purpose quantum computer. 
 
-
+![azure quantum solutions](~/media/azure-quantum-qdk-carousel.png)
 
 > [!Tip]
 > **Free trial!** If you don’t have an Azure subscription, you can [create a free account](https://azure.microsoft.com/free/) before you begin. You can also apply to the [Azure Quantum Credits program](https://microsoft.qualtrics.com/jfe/form/SV_3fl9dfFrkC3g0aG?aq_source=organic), Microsoft offers up to $10,000 USD in credits for use on quantum hardware. After the credits are used up, you can keep the account and use free Azure services. Your credit card is never charged unless you explicitly change your settings and ask to be charged.
 
 ## What is Q\# and the Quantum Development Kit?
 
-The Microsoft Quantum Development Kit (QDK) is an open-source development kit to develop quantum applications and to formulate optimization problems. The QDK includes the [quantum programming language Q#](xref:microsoft.quantum.overview.q-sharp), a high-level programming language that allows you to focus your work at the algorithm and application level to create quantum programs.
+The Microsoft Quantum Development Kit (QDK) is an open-source development kit for Azure Quantum that enables you to work both online with the service and offline. With the QDK you will be able to develop quantum applications and to formulate optimization problems. The QDK includes the [quantum programming language Q#](xref:microsoft.quantum.overview.q-sharp), a high-level programming language that allows you to focus your work at the algorithm and application level to create quantum programs.
 
 The QDK offers a set of tools that will assist you in the quantum software development process: 
 
@@ -42,9 +42,9 @@ The QDK offers a set of tools that will assist you in the quantum software devel
 
 ### Tools for developers
 
-The Quantum Development Kit includes extensions for [Visual Studio](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit) and [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode), and integration with [Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.jupyter). 
+Developers will find familiar interfaces in the Azure Quantum services. The Quantum Development Kit includes extensions for [Visual Studio](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit) and [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode), and integration with [Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.jupyter). 
  
-You can use Q# as standalone, in notebooks, and at the command-line or use a host language, the QDK supports interoperability with [Python](xref:microsoft.quantum.install-qdk.overview.python) and [.NET languages](xref:microsoft.quantum.install-qdk.overview.cs). You can also formulate optimization solutions with the Azure Quantum optimization Python package. As quantum systems evolve, your code endures.
+You can use Q# as standalone, in notebooks, and at the command-line or use a host language, the QDK supports interoperability with [Python](xref:microsoft.quantum.install-qdk.overview.python) and other [.NET languages](xref:microsoft.quantum.install-qdk.overview.cs). You can also formulate optimization solutions with the Azure Quantum optimization Python package. As quantum systems evolve, your code endures.
 
 ### Workflow of the quantum software development
 
@@ -73,9 +73,11 @@ As a researcher, student or quantum enthusiast, you will broaden your learnings 
 
 ## Quantum cloud solutions available on Azure Quantum
 
-Azure Quantum offers some of the most compelling and diverse quantum resources available today from industry leaders. Azure Quantum currently partners with the following providers to enable you to run your Q# quantum programs on real hardware, and the option to test your code on simulated quantum computers. 
+Once you’ve validated the correctness of your program and estimated that it is fit to run on the hardware you have access to, you are ready to submit your program to Azure Quantum. The following diagram shows the basic workflow after you submit your job:
 
 ![azure quantum job flow](~/media/azure-quantum-flow-diagram-providers.png)
+
+Azure Quantum offers some of the most compelling and diverse quantum resources available today from industry leaders. Azure Quantum currently partners with the following providers to enable you to run your Q# quantum programs on real hardware, and the option to test your code on simulated quantum computers. 
 
 ### Quantum computing providers
 
@@ -107,6 +109,8 @@ Superposition enables quantum mechanical effects which in turn empower quantum a
 
 ### Quantum computing
 
+![quantum computing carousel](~/media/qdk-quantum-computing-carousel.png)
+
 Quantum mechanics is the underlying "operating system" of our universe. If you aim to simulate quantum mechanical problems, such as chemical reactions, biological reactions, or material formations, quantum computing is promising, because quantum states can be used to represent the natural states in question. 
 
 At the same time quantum computers can aid in diverse areas such as financial services, machine learning, chemistry, biology, and materials development, where lots of calculations are needed. 
@@ -116,6 +120,8 @@ Researchers and businesses can use quantum computing to model complex scenarios 
 To learn more about quantum computers and quantum algorithms see [What is quantum computing?](xref:microsoft.quantum.overview.qdk-overview).  
 
 ### Optimization
+
+![optimization carousel](~/media/qdk-optimization-carousel.png)
 
 Complex optimization problems exist across every industry: vehicle routing, supply chain management, scheduling, portfolio optimization, power grid management, and many others.  Solving these real-world problems results in high-value benefits, such as reduced costs, accelerated processes, or reduced risks. 
 
