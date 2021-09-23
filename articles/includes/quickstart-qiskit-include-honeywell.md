@@ -38,7 +38,7 @@ ms.topic: include
 
     ```python
     from azure.quantum.target import Honeywell
-    target = Honeywell(workspace=workspace, target="honeywell.hqs-lt-s1-apival")
+    target = Honeywell(workspace=workspace, name="honeywell.hqs-lt-s1-apival")
     job = target.submit(circuit, num_shots=500)
     ```
 
