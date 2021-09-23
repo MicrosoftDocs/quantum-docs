@@ -34,7 +34,13 @@
       - name: Create a quantum-based random number generator with Q#
         href: quickstart-microsoft-qc.md
       - name: Submit a circuit to IonQ and Honeywell
-        href: install-azure-quantum-sdk-python.md
+        items:
+        - name: Provider format
+          href: install-azure-quantum-sdk-python.md
+        - name: Cirq
+          href: install-azure-quantum-sdk-python.md
+        - name: Qiskit
+          href: install-azure-quantum-sdk-python.md
     - name: Quantum Development Kit (QDK)
       items:
       - name: Q# applications
