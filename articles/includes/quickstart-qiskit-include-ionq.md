@@ -38,6 +38,7 @@ ms.topic: include
 1. Submit the circuit to the IonQ target. In the below example we are using the IonQ simulator. This returns a `Job` (for more info, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference)).
 
     ```python
+    from azure.quantum.target import IonQ
     target = IonQ(workspace=workspace, target="ionq.simulator")
     job = target.submit(circuit)
     ```
