@@ -197,7 +197,7 @@ pl.xlabel("Result")
 Text(0.5, 0, 'Result')
 ```
 
-![DESCRIPTION](13ad062505acf5cd247191207c48568d7a1363b3.png)
+![DESCRIPTION1](13ad062505acf5cd247191207c48568d7a1363b3.png)
 
 ## Asynchronous workflow using Jobs
 
@@ -360,7 +360,7 @@ Result(backend_name='honeywell.hqs-lt-s1-apival', backend_version='1', qobj_id='
 {'000': 1024, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
 ```
 
-![DESCRIPTION](2e1a8e4f3df2a215dc2d9d892a3d5676efdcd808.png)
+![DESCRIPTION2](2e1a8e4f3df2a215dc2d9d892a3d5676efdcd808.png)
 
 ### Run on QPU (note: depending on queue times this may take a while to run!)
 
@@ -399,6 +399,6 @@ Result(backend_name='honeywell.hqs-lt-s1-apival', backend_version='1', qobj_id='
 {'000': 500, '001': 1, '010': 5, '011': 16, '100': 17, '101': 6, '110': 8, '111': 471}
 ```
 
-![DESCRIPTION](216d0c159e12d0b21c09fac874b8ea75d068d533.png)
+![DESCRIPTION3](216d0c159e12d0b21c09fac874b8ea75d068d533.png)
 
 ***
