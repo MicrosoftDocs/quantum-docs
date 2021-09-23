@@ -96,27 +96,16 @@ pl.xlabel("Bitstring")
 
 ## [Cirq](#tab/tabid-cirq)
 
-
-
-
-## Getting started with Cirq and Honeywell on Azure Quantum
+### Getting started with Cirq and Honeywell on Azure Quantum
 
 This notebooks shows how to send a basic quantum circuit to a Honeywell
 target via Azure Quantum.
 
-First, install `azure-quantum` with the Cirq dependencies and import the
-required packages:
+First, install `azure-quantum` with the Cirq dependencies:
 
 ```python
-!pip install azure-quantum[cirq]==0.18.2109.165000a1 --extra-index-url=https://pkgs.dev.azure.com/ms-quantum-public/9af4e09e-a436-4aca-9559-2094cfe8d80c/_packaging/alpha/pypi/simple/ --quiet
+!pip install azure-quantum[cirq]
 !pip install matplotlib --quiet
-
-from azure.quantum.cirq import AzureQuantumService
-
-# Plotting
-import pylab as pl
-%matplotlib inline
-pl.rcParams["font.size"] = 16
 ```
 
 ## Connecting to the Azure Quantum service
@@ -132,6 +121,7 @@ Optionally, specify a default target.
 
 
 ```python
+from azure.quantum.cirq import AzureQuantumService
 service = AzureQuantumService(
     resource_id="",
     location="",
@@ -175,7 +165,7 @@ circuit = cirq.Circuit(
 circuit
 ```
 
-```{=html}
+```html
 <pre style="overflow: auto; white-space: pre;">0: ───H───@───M(&#x27;b&#x27;)───
           │   │
 1: ───────X───M────────</pre>
@@ -227,16 +217,10 @@ The `service.create_job` method returns a `Job`, which you can use to
 get the results after the job has run successfully.
 
 ```python
-%%time
 job = service.create_job(
     program=circuit,
     repetitions=100
 )
-```
-
-```output
-CPU times: user 31.2 ms, sys: 262 µs, total: 31.5 ms
-Wall time: 475 ms
 ```
 
 To check on the job status, use `job.status()`:
@@ -253,15 +237,12 @@ To wait for the job to be done and get the results, use the blocking
 call `job.results()`:
 
 ```python
-%%time
 result = job.results()
 print(result)
 ```
 
 ```output
     {'m_b': ['00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00']}
-    CPU times: user 16.3 ms, sys: 0 ns, total: 16.3 ms
-    Wall time: 87.4 ms
 ```
 
 Note that this does not return a `cirq.Result` object. Instead it
