@@ -9,7 +9,16 @@ ms.topic: include
 
 ## [Provider format](#tab/tabid-native)
 
-## Connecting to the Azure Quantum service
+This notebooks shows how to send a basic quantum circuit in the Honeywell 
+OpenQASM 2.0 format to a Honeywell target via Azure Quantum.
+
+First, run the below cell to import the required packages for this sample:
+
+```python
+from azure.quantum import Workspace
+```
+
+### Connecting to the Azure Quantum service
 
 To connect to the Azure Quantum service, find the resource ID and
 location of your Workspace from the Azure Quantum portal here:
@@ -28,7 +37,7 @@ workspace = Workspace(
 ```
 
 
-## Submit a quantum circuit to Honeywell
+### Submit a quantum circuit to Honeywell
 
 1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For instance, the below example creates a Teleportation circuit:
 
@@ -98,17 +107,16 @@ pl.xlabel("Bitstring")
 
 ### Getting started with Cirq and Honeywell on Azure Quantum
 
-This notebooks shows how to send a basic quantum circuit to a Honeywell
-target via Azure Quantum.
+This notebooks shows how to send a basic quantum circuit built with Cirq
+to a Honeywell target via Azure Quantum.
 
-First, install `azure-quantum` with the Cirq dependencies:
+First, run the below cell to import the required packages for this sample:
 
 ```python
-!pip install azure-quantum[cirq]
-!pip install matplotlib --quiet
+from azure.quantum.cirq import AzureQuantumService
 ```
 
-## Connecting to the Azure Quantum service
+### Connecting to the Azure Quantum service
 
 To connect to the Azure Quantum service, find the resource ID and
 location of your Workspace from the Azure Quantum portal here:
@@ -121,7 +129,6 @@ Optionally, specify a default target.
 
 
 ```python
-from azure.quantum.cirq import AzureQuantumService
 service = AzureQuantumService(
     resource_id="",
     location="",
@@ -258,19 +265,10 @@ dict
 
 ## [Qiskit](#tab/tabid-qiskit)
 
-## Getting started with Qiskit and Honeywell on Azure Quantum
-
 This example notebook shows how to send a basic quantum circuit built
 with Qiskit to the Honeywell Quantum Computing target on Azure Quantum.
 
-First, install `azure-quantum` with the `qiskit` dependencies:
-
-```python
-!pip install azure-quantum[qiskit]==0.18.2109.165000a1 --quiet --extra-index-url=https://pkgs.dev.azure.com/ms-quantum-public/9af4e09e-a436-4aca-9559-2094cfe8d80c/_packaging/alpha/pypi/simple/
-!pip install matplotlib --quiet
-```
-
-And import the required packages for this sample:
+First, run the below cell to import the required packages for this sample:
 
 ```python
 from qiskit import QuantumCircuit
