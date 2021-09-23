@@ -7,7 +7,7 @@ ms.subservice: qdk
 ms.topic: include
 ---
 
-## [Native quantum](#tab/tabid-native)
+## [Provider format](#tab/tabid-native)
 
 ## Submit a quantum circuit to IonQ
 
