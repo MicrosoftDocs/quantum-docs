@@ -27,7 +27,7 @@ Azure Quantum offers you two main paths of quantum solutions:
 With Azure Quantum and the [Quantum Development Kit toolset](xref:microsoft.quantum.overview.q-sharp), you will be able to program your quantum algorithms and optimization solutions, then apply those quantum solutions within the existing Azure platform to achieve real-world impacts even before the development of a general-purpose quantum computer. 
 
 > [!Tip]
-> **Free trial!** If you don’t have an Azure subscription, you can [create a free account](https://azure.microsoft.com/free/) before you begin. You can also apply to the [Azure Quantum Credits program](https://microsoft.qualtrics.com/jfe/form/SV_3fl9dfFrkC3g0aG?aq_source=organic), Microsoft offers up to $10,000 USD in credits for use on quantum hardware. After the credits are used up, you can keep the account and use free Azure services. Your credit card is never charged unless you explicitly change your settings and ask to be charged.
+> **Free trial!** If you don’t have an Azure subscription, you can [create a free account](https://azure.microsoft.com/free/) before you begin. Microsoft offers up to $10,000 USD in credits for use on quantum hardware. After the credits are used up, you can keep the account and use free Azure services. Your credit card is never charged unless you explicitly change your settings and ask to be charged. You can apply to the Azure Quantum Credits program [here](https://microsoft.qualtrics.com/jfe/form/SV_3fl9dfFrkC3g0aG?aq_source=organic),
 
 ## Who is Azure Quantum for?
 
@@ -35,7 +35,7 @@ Azure Quantum is for individuals and teams who want to take a step forward and b
 
 Incorporating quantum type solutions can help to be more competitive and be at the forefront of innovation. To build industry solutions, Azure Quantum is the best path to leverage the latest optimization technologies, as you seek long term cost-saving solutions. For businesses, Azure Quantum offers the advantages of the most diverse quantum resources available today—including optimization solvers and quantum hardware—with applications for a wide range of industries. To learn more about how real-life problems can be solved using Azure Quantum and quantum applications, see the following [case studies](https://azure.microsoft.com/resources/whitepapers/search/?term=quantum).
 
-As a developer, you will use familiar programming tools to create quantum applications, and at the same time you will learn to use and write your quantum code in Q#, a quantum-focused programming language. With Azure Quantum and the Quantum Development Kit, developers can explore quantum programming and learn more about quantum applications, such as data search, quantum machine learning or optimization solutions.
+As a developer, you will use familiar programming tools to create quantum applications, and at the same time you will learn to use and write your quantum code in Q#, a quantum-focused programming language. With Azure Quantum and the Quantum Development Kit, developers can explore quantum programming and learn more about quantum applications, such as data search, quantum machine learning, or optimization solutions.
 
 As a researcher, Azure Quantum can help you test your quantum algorithms and theories, to efficiently simulate quantum systems such as superconductivity, and complex molecular formations. Azure Quantum enables you to learn, build, and deploy impactful solutions at scale, helping you harness quantum computing and benefit from the latest innovations. To learn more about research resources and career opportunities, see the [Microsoft Quantum Computing research area](https://www.microsoft.com/research/research-area/quantum-computing/?facet%5Btax%5D%5Bmsr-research-area%5D%5B0%5D=243138&sort_by=most-recent). Also, Azure Quantum is a great tool for teaching quantum computing and quantum application. You can apply to the Azure Quantum Credits program [here](https://microsoft.qualtrics.com/jfe/form/SV_3fl9dfFrkC3g0aG?aq_source=organic).
 
@@ -45,15 +45,15 @@ If you are a student or quantum enthusiast, Azure Quantum will make your interes
 
 Quantum computers harness the unique behavior of quantum physics—such as superposition, entanglement, and quantum interference—and apply it to computing. This introduces new concepts to traditional programming methods. When designed to scale, quantum computers will have capabilities that exceed today's most powerful supercomputers. 
 
-The quantum bit, or qubit, is the basic unit of quantum information. Qubits play a similar role in quantum computing as bits play in classical computing, but they behave very differently. Whereas a classical bit holds a single binary value, 0 or 1, a qubit can be in a “superposition” of both values at the same time. For instance, 4 bits are enough for a classical computer to represent any number between 0 and 15. In opposition, with 4 qubits a quantum computer can represent **every** number between 0 and 15 at the same time! 
+The quantum bit, or qubit, is the basic unit of quantum information. Qubits play a similar role in quantum computing as bits play in classical computing, but they behave differently. Whereas a classical bit holds a single binary value, 0 or 1, a qubit can be in a “superposition” of both values at the same time. For instance, 4 bits are enough for a classical computer to represent any number between 0 and 15. In opposition, with 4 qubits a quantum computer can represent **every** number between 0 and 15 at the same time! 
 
-Quantum effectss empower quantum computers for calculating exponentially more information and solve more complicated problems. With Azure Quantum, you can make use of the advantages of quantum computing today, in a a full-stack open cloud ecosystem with access to software, hardware, and pre-built solutions.
+Quantum effects empower quantum computers for calculating exponentially more information and solve more complicated problems. With Azure Quantum, you can make use of the advantages of quantum computing today, in a full-stack open cloud ecosystem with access to software, hardware, and pre-built solutions.
 
 ### Quantum computing
 
 ![quantum computing carousel](~/media/qdk-quantum-computing-carousel.png)
 
-If you aim to simulate quantum mechanical problems, such as chemical reactions, biological reactions, or material formations, quantum computera work exceptionally well because they use quantum phenomena in their computation. Quantum computers can also aid to speed up progress in diverse areas such as financial services, machine learning, and unstructured data searches, where lots of calculations are needed.
+If you aim to simulate quantum mechanical problems, such as chemical reactions, biological reactions, or material formations, quantum computers work exceptionally well because they use quantum phenomena in their computation. Quantum computers can also aid to speed up progress in diverse areas such as financial services, machine learning, and unstructured data searches, where lots of calculations are needed.
 
 With Azure Quantum, researchers and businesses can use quantum computing to model complex scenarios in risk management, cybersecurity, network analysis, data search, vaccine development, or materials science. To learn more about how you can use quantum computing and quantum algorithms, see [What is quantum computing?](xref:microsoft.quantum.overview.qdk-overview).  
 
@@ -126,7 +126,7 @@ For more information, see the full [Quantum computing target list](xref:microsof
 
 For optimization solutions, these are the available providers you can choose from:
 
-- [1QBit](https://1qbit.com/): Iterative heuristic algorithms that uses search techniques to solve QUBO problems.
+- [1QBit](https://1qbit.com/): Iterative heuristic algorithms that use search techniques to solve QUBO problems.
 - [Microsoft QIO](xref:microsoft.quantum.optimization.providers.microsoft.qio): A set of multiple targets that rephrase the optimization problem inspired by decades of quantum research.
 - [Toshiba SBM](https://www.toshiba-sol.co.jp/en/pro/sbm/index.htm): Toshiba Simulated Bifurcation Machine is a GPU-powered ISING machine that solves large-scale combinatorial optimization problems at high speed.
 
