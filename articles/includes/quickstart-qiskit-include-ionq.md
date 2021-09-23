@@ -9,6 +9,26 @@ ms.topic: include
 
 ## [Provider format](#tab/tabid-native)
 
+
+## Connecting to the Azure Quantum service
+
+To connect to the Azure Quantum service, find the resource ID and
+location of your Workspace from the Azure Quantum portal here:
+<https://portal.azure.com>. Navigate to your Azure Quantum workspace and
+copy the values from the header.
+
+Paste the values into the `Workspace` constructor below to
+create a `workspace` that connects to your Azure Quantum Workspace.
+Optionally, specify a default target:
+
+```python
+from azure.quantum import Workspace
+service = Workspace(
+    resource_id="",
+    location=""
+)
+```
+
 ## Submit a quantum circuit to IonQ
 
 1. Create a quantum circuit using the the language-agnostic JSON format supported by the [IonQ targets](xref:microsoft.quantum.providers.ionq) as described in the [IonQ API documentation](https://docs.ionq.com/#tag/quantum_programs). For instance, the below example creates a superposition between three qubits:
@@ -38,8 +58,7 @@ ms.topic: include
 1. Submit the circuit to the IonQ target. In the below example we are using the IonQ simulator. This returns a `Job` (for more info, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference)).
 
     ```python
-    from azure.quantum.target import IonQ
-    target = IonQ(workspace=workspace, name="ionq.simulator")
+    target = workspace.get_targets(name="ionq.simulator")
     job = target.submit(circuit)
     ```
 
@@ -96,8 +115,8 @@ location of your Workspace from the Azure Quantum portal here:
 <https://portal.azure.com>. Navigate to your Azure Quantum workspace and
 copy the values from the header.
 
-Paste the values into the `AzureQuantumProvider` constructor below to
-create a `provider` that connects to your Azure Quantum Workspace.
+Paste the values into the `AzureQuantumService` constructor below to
+create a `service` that connects to your Azure Quantum Workspace.
 Optionally, specify a default target:
 
 ```python
