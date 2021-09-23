@@ -7,7 +7,7 @@ ms.subservice: qdk
 ms.topic: include
 ---
 
-## [Native quantum](#tab/tabid-native)
+## [Provider format](#tab/tabid-native)
 
 ## Submit a quantum circuit to Honeywell
 
@@ -37,6 +37,7 @@ ms.topic: include
 1. Submit the circuit to the Honeywell target. In the below example we are using the Honeywell API validator. This returns a `Job` (for more info, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference)).
 
     ```python
+    from azure.quantum.target import Honeywell
     target = Honeywell(workspace=workspace, target="honeywell.hqs-lt-s1-apival")
     job = target.submit(circuit, num_shots=500)
     ```
