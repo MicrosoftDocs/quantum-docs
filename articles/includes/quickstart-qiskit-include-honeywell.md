@@ -74,14 +74,14 @@ pl.ylabel("Counts")
 pl.xlabel("Bitstring")
 ```
 
-![alt_text=Honeywell job output](../media/honeywell-results.png)
+![Honeywell job output](../media/honeywell-results.png)
 
 ## [Cirq](#tab/tabid-cirq)
 
 
 
 
-# Getting started with Cirq and Honeywell on Azure Quantum
+## Getting started with Cirq and Honeywell on Azure Quantum
 
 This notebooks shows how to send a basic quantum circuit to a Honeywell
 target via Azure Quantum.
@@ -127,6 +127,8 @@ current queue time and availability.
 service.targets()
 ```
 
+```output
+
     [<Target name="ionq.qpu", avg. queue time=196 s, Available>,
      <Target name="ionq.simulator", avg. queue time=2 s, Available>,
      <Target name="honeywell.hqs-lt-s1", avg. queue time=0 s, Unavailable>,
@@ -134,6 +136,7 @@ service.targets()
      <Target name="honeywell.hqs-lt-s2", avg. queue time=0 s, Degraded>,
      <Target name="honeywell.hqs-lt-s2-apival", avg. queue time=0 s, Available>,
      <Target name="honeywell.hqs-lt-s1-sim", avg. queue time=0 s, Available>]
+```
 
 ## Run a simple circuit
 
@@ -166,8 +169,10 @@ result. The following cell will submit a job that runs the circuit with
 result = service.run(program=circuit, repetitions=100)
 ```
 
+```output
     ........CPU times: user 68.2 ms, sys: 4.53 ms, total: 72.7 ms
     Wall time: 10.7 s
+```
 
 This returns a `cirq.Result` object. Note that we used the API
 validator, which only returns zeros.
@@ -176,7 +181,9 @@ validator, which only returns zeros.
 print(result)
 ```
 
+```output
     b=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+```
 
 Plot the results in a histogram:
 
@@ -186,9 +193,11 @@ pl.ylabel("Counts")
 pl.xlabel("Result")
 ```
 
-    Text(0.5, 0, 'Result')
+```output
+Text(0.5, 0, 'Result')
+```
 
-![](13ad062505acf5cd247191207c48568d7a1363b3.png)
+![DESCRIPTION](13ad062505acf5cd247191207c48568d7a1363b3.png)
 
 ## Asynchronous workflow using Jobs
 
@@ -204,8 +213,10 @@ job = service.create_job(
 )
 ```
 
-    CPU times: user 31.2 ms, sys: 262 µs, total: 31.5 ms
-    Wall time: 475 ms
+```output
+CPU times: user 31.2 ms, sys: 262 µs, total: 31.5 ms
+Wall time: 475 ms
+```
 
 To check on the job status, use `job.status()`:
 
@@ -213,7 +224,9 @@ To check on the job status, use `job.status()`:
 job.status()
 ```
 
-    'Waiting'
+``output
+'Waiting'
+```
 
 To wait for the job to be done and get the results, use the blocking
 call `job.results()`:
@@ -224,9 +237,11 @@ result = job.results()
 print(result)
 ```
 
+```output
     {'m_b': ['00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00']}
     CPU times: user 16.3 ms, sys: 0 ns, total: 16.3 ms
     Wall time: 87.4 ms
+```
 
 Note that this does not return a `cirq.Result` object. Instead it
 returns a dictionary that is specific to the Honeywell simulator.
@@ -235,16 +250,13 @@ returns a dictionary that is specific to the Honeywell simulator.
 type(result)
 ```
 
-    dict
-
-
-
+```output
+dict
+```
 
 ## [Qiskit](#tab/tabid-qiskit)
 
-
-
-# Getting started with Qiskit and Honeywell on Azure Quantum
+## Getting started with Qiskit and Honeywell on Azure Quantum
 
 This example notebook shows how to send a basic quantum circuit built
 with Qiskit to the Honeywell Quantum Computing target on Azure Quantum.
@@ -287,7 +299,9 @@ provider = AzureQuantumProvider(
 print([backend.name() for backend in provider.backends()])
 ```
 
+```output
     ['ionq.simulator', 'ionq.qpu', 'honeywell.hqs-lt-s1', 'honeywell.hqs-lt-s1-apival', 'honeywell.hqs-lt-s1-sim']
+```
 
 ### Run on API validator (note that this backend will always return 0 on measurement)
 
@@ -339,12 +353,14 @@ print(counts)
 plot_histogram(counts)
 ```
 
-    Job id 3e7decf2-fc93-11eb-8301-00155df03c4e
-    Job Status: job has successfully run
-    Result(backend_name='honeywell.hqs-lt-s1-apival', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='3e7decf2-fc93-11eb-8301-00155df03c4e', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 1024}, probabilities={'000': 1.0}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
-    {'000': 1024, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
+```output
+Job id 3e7decf2-fc93-11eb-8301-00155df03c4e
+Job Status: job has successfully run
+Result(backend_name='honeywell.hqs-lt-s1-apival', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='3e7decf2-fc93-11eb-8301-00155df03c4e', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 1024}, probabilities={'000': 1.0}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
+{'000': 1024, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
+```
 
-![](2e1a8e4f3df2a215dc2d9d892a3d5676efdcd808.png)
+![DESCRIPTION](2e1a8e4f3df2a215dc2d9d892a3d5676efdcd808.png)
 
 ### Run on QPU (note: depending on queue times this may take a while to run!)
 
@@ -363,9 +379,10 @@ print("Job id", job_id)
 job_monitor(job)
 ```
 
-    Job id ba839b3e-fc4e-11eb-9d2c-00155df03c4e
-    
+```output
+Job id ba839b3e-fc4e-11eb-9d2c-00155df03c4e
 Job Status: job has successfully run
+```
 
 ```python
 # Get the job results (this method also waits for the Job to complete):
@@ -377,12 +394,11 @@ print(counts)
 plot_histogram(counts)
 ```
 
-    Result(backend_name='honeywell.hqs-lt-s1-apival', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='ba839b3e-fc4e-11eb-9d2c-00155df03c4e', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'011': 16, '010': 5, '001': 1, '000': 500, '111': 471, '101': 6, '100': 17, '110': 8}, probabilities={'011': 0.015625, '010': 0.0048828125, '001': 0.0009765625, '000': 0.48828125, '111': 0.4599609375, '101': 0.005859375, '100': 0.0166015625, '110': 0.0078125}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
-    {'000': 500, '001': 1, '010': 5, '011': 16, '100': 17, '101': 6, '110': 8, '111': 471}
+```output
+Result(backend_name='honeywell.hqs-lt-s1-apival', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='ba839b3e-fc4e-11eb-9d2c-00155df03c4e', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'011': 16, '010': 5, '001': 1, '000': 500, '111': 471, '101': 6, '100': 17, '110': 8}, probabilities={'011': 0.015625, '010': 0.0048828125, '001': 0.0009765625, '000': 0.48828125, '111': 0.4599609375, '101': 0.005859375, '100': 0.0166015625, '110': 0.0078125}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
+{'000': 500, '001': 1, '010': 5, '011': 16, '100': 17, '101': 6, '110': 8, '111': 471}
+```
 
-![](216d0c159e12d0b21c09fac874b8ea75d068d533.png)
-
-
-
+![DESCRIPTION](216d0c159e12d0b21c09fac874b8ea75d068d533.png)
 
 ***
