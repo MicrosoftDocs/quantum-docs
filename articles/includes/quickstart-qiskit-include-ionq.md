@@ -292,13 +292,6 @@ b=111010111111111011100001110101111100110001000000101101110100111100111100110110
 
 ## [Qiskit](#tab/tabid-qiskit)
 
-## Getting started with Qiskit and IonQ on Azure Quantum
-
-This example notebook shows how to send a basic quantum circuit built
-with Qiskit to the IonQ quantum computing target via Azure Quantum.
-
-## [Qiskit](#tab/tabid-qiskit)
-
 ### Getting started with Qiskit and IonQ on Azure Quantum
 
 This example shows how to send a basic quantum circuit built with Qiskit
