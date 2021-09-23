@@ -9,6 +9,8 @@ ms.topic: include
 
 ## [Provider format](#tab/tabid-native)
 
+### Getting started with Honeywell on Azure Quantum
+
 This example shows how to send a basic quantum circuit in the Honeywell 
 OpenQASM 2.0 format to a Honeywell Quantum Computing target via Azure Quantum.
 
