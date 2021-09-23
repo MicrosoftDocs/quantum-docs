@@ -43,11 +43,12 @@ For businesses, incorporating quantum type solutions can help to be more competi
 As a developer, you will use familiar programming tools to create quantum applications, such as Python or Visual Studio Code, and at the same time you will learn to use and write your quantum code in Q#, a quantum-focused programming language. With Azure Quantum and the Quantum Development Kit, developers can explore quantum programming and learn more about quantum applications, such as data search, quantum machine learning, or optimization solutions.
 
 ### Researchers
+
 As a researcher, Azure Quantum can help you test your quantum algorithms and theories, to efficiently simulate quantum systems such as superconductivity, and complex molecular formations. Azure Quantum enables you to learn, build, and deploy impactful solutions at scale, helping you harness quantum computing and benefit from the latest innovations. 
 
-To learn more about research resources and career opportunities, see the [Microsoft Quantum Computing research area](https://www.microsoft.com/research/research-area/quantum-computing/?facet%5Btax%5D%5Bmsr-research-area%5D%5B0%5D=243138&sort_by=most-recent). Also, Azure Quantum is a great tool for teaching quantum computing and quantum application. You can apply to the Azure Quantum Credits program [here](https://microsoft.qualtrics.com/jfe/form/SV_3fl9dfFrkC3g0aG?aq_source=organic).
+To learn more about research resources and career opportunities, see the [Microsoft Quantum Computing research area](https://www.microsoft.com/research/research-area/quantum-computing/?facet%5Btax%5D%5Bmsr-research-area%5D%5B0%5D=243138&sort_by=most-recent). Also, Azure Quantum is a great tool for teaching quantum computing and quantum application. You can apply to the [Azure Quantum Credits program](https://microsoft.qualtrics.com/jfe/form/SV_3fl9dfFrkC3g0aG?aq_source=organic).
 
-### Quantum enthusiast
+### Quantum enthusiasts
 
 If you are a student or quantum enthusiast, Azure Quantum will make your interest in quantum computing evolve. You will broaden your learnings through the access to the most diverse set of quantum technologies, you will learn the basics of quantum computing and the quantum programming language Q#, and discover the areas where quantum computers have the potential to make a big impact.
 
