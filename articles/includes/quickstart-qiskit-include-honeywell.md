@@ -9,6 +9,25 @@ ms.topic: include
 
 ## [Provider format](#tab/tabid-native)
 
+## Connecting to the Azure Quantum service
+
+To connect to the Azure Quantum service, find the resource ID and
+location of your Workspace from the Azure Quantum portal here:
+<https://portal.azure.com>. Navigate to your Azure Quantum workspace and
+copy the values from the header.
+
+Paste the values into the `Workspace` constructor below to
+create a `workspace` that connects to your Azure Quantum Workspace.
+
+```python
+from azure.quantum import Workspace
+workspace = Workspace(
+    resource_id="",
+    location=""
+)
+```
+
+
 ## Submit a quantum circuit to Honeywell
 
 1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For instance, the below example creates a Teleportation circuit:
@@ -37,8 +56,7 @@ ms.topic: include
 1. Submit the circuit to the Honeywell target. In the below example we are using the Honeywell API validator. This returns a `Job` (for more info, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference)).
 
     ```python
-    from azure.quantum.target import Honeywell
-    target = Honeywell(workspace=workspace, name="honeywell.hqs-lt-s1-apival")
+    target = workspace.get_targets(name="honeywell.hqs-lt-s1-apival")
     job = target.submit(circuit, num_shots=500)
     ```
 
@@ -108,7 +126,10 @@ location of your Workspace from the Azure Quantum portal here:
 <https://portal.azure.com>. Navigate to your Azure Quantum workspace and
 copy the values from the header.
 
-`<img src="copy_resource_id.png">`{=html}
+Paste the values into the `AzureQuantumService` constructor below to
+create a `service` that connects to your Azure Quantum Workspace.
+Optionally, specify a default target.
+
 
 ```python
 service = AzureQuantumService(
@@ -284,7 +305,8 @@ location of your Workspace from the Azure Quantum portal here:
 <https://portal.azure.com>. Navigate to your Azure Quantum workspace and
 copy the values from the header.
 
-`<img src="..\copy_resource_id.png">`{=html}
+Paste the values into the `AzureQuantumProvider` constructor below to
+create a `provider` that connects to your Azure Quantum Workspace.
 
 ```python
 # Enter your workspace details here
