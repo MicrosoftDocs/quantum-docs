@@ -39,7 +39,7 @@ ms.topic: include
 
     ```python
     from azure.quantum.target import IonQ
-    target = IonQ(workspace=workspace, target="ionq.simulator")
+    target = IonQ(workspace=workspace, name="ionq.simulator")
     job = target.submit(circuit)
     ```
 
