@@ -9,8 +9,18 @@ ms.topic: include
 
 ## [Provider format](#tab/tabid-native)
 
+### Getting started with IonQ on Azure Quantum
 
-## Connecting to the Azure Quantum service
+This example shows how to send a basic quantum circuit in the IonQ JSON
+format to an IonQ Quantum Computing target via Azure Quantum.
+
+First, run the below cell for the required imports:
+
+```python
+from azure.quantum import Workspace
+```
+
+### Connecting to the Azure Quantum service
 
 Your program will need the resource ID and the
 location of your Azure Quantum workspace. Login to your Azure account,
@@ -22,14 +32,13 @@ create a `workspace` object that connects to your Azure Quantum workspace.
 Optionally, specify a default target:
 
 ```python
-from azure.quantum import Workspace
 service = Workspace(
     resource_id="",
     location=""
 )
 ```
 
-## Submit a quantum circuit to IonQ
+### Submit a quantum circuit to IonQ
 
 1. Create a quantum circuit using the the language-agnostic JSON format supported by the [IonQ targets](xref:microsoft.quantum.providers.ionq) as described in the [IonQ API documentation](https://docs.ionq.com/#tag/quantum_programs). For instance, the below example creates a superposition between three qubits:
 
@@ -92,19 +101,18 @@ pl.ylabel("Probabilities")
 
 ## [Cirq](#tab/tabid-cirq)
 
-## Getting started with Cirq and IonQ on Azure Quantum
+### Getting started with Cirq and IonQ on Azure Quantum
 
-This notebooks shows how to send a basic quantum circuit to an IonQ
-target via Azure Quantum.
+This example shows how to send a basic quantum circuit built with Cirq
+to an IonQ Quantum Computing target via Azure Quantum.
 
-First, install `azure-quantum` with the Cirq dependencies:
+First, run the below cell for the required imports:
 
 ```python
-!pip install azure-quantum[cirq]==0.18.2109.165000a1 --quiet --extra-index-url=https://pkgs.dev.azure.com/ms-quantum-public/9af4e09e-a436-4aca-9559-2094cfe8d80c/_packaging/alpha/pypi/simple/
-!pip install matplotlib --quiet
+from azure.quantum.cirq import AzureQuantumService
 ```
 
-## Connecting to the Azure Quantum service
+### Connecting to the Azure Quantum service
 
 To connect to the Azure Quantum service, find the resource ID and
 location of your Workspace from the Azure Quantum portal here:
@@ -116,7 +124,6 @@ create a `service` that connects to your Azure Quantum Workspace.
 Optionally, specify a default target:
 
 ```python
-from azure.quantum.cirq import AzureQuantumService
 service = AzureQuantumService(
     resource_id="",
     location="",
@@ -124,7 +131,7 @@ service = AzureQuantumService(
 )
 ```
 
-### List all targets
+#### List all targets
 
 You can now list all the targets that you have access to, including the
 current queue time and availability.
@@ -143,7 +150,7 @@ service.targets()
 <Target name="honeywell.hqs-lt-s1-sim", avg. queue time=1062 s, Available>]
 ```
 
-## Run a simple circuit
+### Run a simple circuit
 
 Let\'s create a simple Cirq circuit to run. This circuit uses the square
 root of X gate, native to the IonQ hardware system.
@@ -214,7 +221,7 @@ print(result)
 b=0101011011011111100001011101101011011110100010000000011110111000100100110110101100110001001111101111, 0101011011011111100001011101101011011110100010000000011110111000100100110110101100110001001111101111
 ```
 
-## Asynchronous model using Jobs
+### Asynchronous model using Jobs
 
 For long-running circuits, it can be useful to run them asynchronously.
 The `service.create_job` method returns a `Job`, which you can use to
@@ -288,16 +295,16 @@ b=111010111111111011100001110101111100110001000000101101110100111100111100110110
 ## Getting started with Qiskit and IonQ on Azure Quantum
 
 This example notebook shows how to send a basic quantum circuit built
-with Qiskit to the IonQ quantum computing target on Azure Quantum.
+with Qiskit to the IonQ quantum computing target via Azure Quantum.
 
-First, install `azure-quantum` with the `qiskit` dependencies:
+## [Qiskit](#tab/tabid-qiskit)
 
-```python
-!pip install azure-quantum[qiskit]==0.18.2109.165000a1 --quiet --extra-index-url=https://pkgs.dev.azure.com/ms-quantum-public/9af4e09e-a436-4aca-9559-2094cfe8d80c/_packaging/alpha/pypi/simple/
-!pip install matplotlib --quiet
-```
+### Getting started with Qiskit and IonQ on Azure Quantum
 
-And import the required packages for this sample:
+This example shows how to send a basic quantum circuit built with Qiskit
+to an IonQ Quantum Computing target via Azure Quantum.
+
+First, run the below cell for the required imports:
 
 ```python
 from qiskit import QuantumCircuit
@@ -306,7 +313,7 @@ from qiskit.tools.monitor import job_monitor
 from azure.quantum.qiskit import AzureQuantumProvider
 ```
 
-## Connecting to the Azure Quantum service
+### Connecting to the Azure Quantum service
 
 To connect to the Azure Quantum service, find the resource ID and
 location of your Workspace from the Azure Quantum portal here:
@@ -323,7 +330,7 @@ provider = AzureQuantumProvider(
 )
 ```
 
-### List all backends
+#### List all backends
 
 You can now print all of the quantum computing backends that are
 available on your workspace:
@@ -336,7 +343,7 @@ print([backend.name() for backend in provider.backends()])
 ['ionq.qpu', 'ionq.simulator', 'honeywell.hqs-lt-s1', 'honeywell.hqs-lt-s1-apival', 'honeywell.hqs-lt-s2', 'honeywell.hqs-lt-s2-apival', 'honeywell.hqs-lt-s1-sim']
 ```
 
-## Run a simple circuit
+### Run a simple circuit
 
 First, create a simple Qiskit circuit to run.
 
@@ -439,7 +446,7 @@ plot_histogram(counts)
 ![](0fd9147b17ddae64a3c6ead2a3dc76cd0e9a7867.png)
 ```
 
-### Run on IonQ QPU
+#### Run on IonQ QPU
 
 To connect to real hardware (Quantum Processing Unit or QPU), simply
 provide the name of the target `"ionq.qpu"` to the
@@ -482,7 +489,7 @@ Result(backend_name='ionq.simulator', backend_version='1', qobj_id='Qiskit Sampl
 
 ![DESCRIPTION1](43ac66a2f89cbb6c1983455be0da3d258b2708f4.png)
 
-# Quantum Phase Estimation (QPE)
+### Quantum Phase Estimation (QPE)
 
 The `azure-quantum[qiskit]` also supports more advanced examples. Let\'s
 go with the QPE example from Qiskit textbook:
@@ -587,7 +594,7 @@ results = simulator_backend.run(qobj).result()
 
 answer = results.get_counts()
 
-plot_histogram(answer);
+plot_histogram(answer)
 ```
 
 ```output

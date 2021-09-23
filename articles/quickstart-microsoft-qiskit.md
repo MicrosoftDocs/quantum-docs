@@ -12,7 +12,7 @@ zone_pivot_groups: quantum-computing-platforms
 uid: microsoft.quantum.install-qdk.overview.azure-sdk-python
 --- 
 
-# Quickstart: Submit Qiskit, Cirq, or native quantum circuits to IonQ and Honeywell with Python
+# Quickstart: Submit a circuit to IonQ and Honeywell
 
 Learn how to use the `azure-quantum` Python package to submit Qiskit, Cirq, or quantum circuits in the provider-specific format ([OpenQASM 2.0](https://github.com/Qiskit/openqasm/tree/OpenQASM2.x) or [IonQ JSON](https://docs.ionq.com/#tag/quantum_programs)) to Azure Quantum. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 

@@ -9,7 +9,36 @@ ms.topic: include
 
 ## [Provider format](#tab/tabid-native)
 
-## Submit a quantum circuit to Honeywell
+### Getting started with Honeywell on Azure Quantum
+
+This example shows how to send a basic quantum circuit in the Honeywell 
+OpenQASM 2.0 format to a Honeywell Quantum Computing target via Azure Quantum.
+
+First, run the below cell for the required imports:
+
+```python
+from azure.quantum import Workspace
+```
+
+### Connecting to the Azure Quantum service
+
+To connect to the Azure Quantum service, find the resource ID and
+location of your Workspace from the Azure Quantum portal here:
+<https://portal.azure.com>. Navigate to your Azure Quantum workspace and
+copy the values from the header.
+
+Paste the values into the `Workspace` constructor below to
+create a `workspace` that connects to your Azure Quantum Workspace.
+
+```python
+from azure.quantum import Workspace
+workspace = Workspace(
+    resource_id="",
+    location=""
+)
+```
+
+### Submit a quantum circuit to Honeywell
 
 1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For instance, the below example creates a Teleportation circuit:
 
@@ -37,8 +66,7 @@ ms.topic: include
 1. Submit the circuit to the Honeywell target. In the below example we are using the Honeywell API validator. This returns a `Job` (for more info, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference)).
 
     ```python
-    from azure.quantum.target import Honeywell
-    target = Honeywell(workspace=workspace, name="honeywell.hqs-lt-s1-apival")
+    target = workspace.get_targets(name="honeywell.hqs-lt-s1-apival")
     job = target.submit(circuit, num_shots=500)
     ```
 
@@ -78,37 +106,28 @@ pl.xlabel("Bitstring")
 
 ## [Cirq](#tab/tabid-cirq)
 
+### Getting started with Cirq and Honeywell on Azure Quantum
 
+This example shows how to send a basic quantum circuit built with Cirq
+to a Honeywell Quantum Computing target via Azure Quantum.
 
-
-## Getting started with Cirq and Honeywell on Azure Quantum
-
-This notebooks shows how to send a basic quantum circuit to a Honeywell
-target via Azure Quantum.
-
-First, install `azure-quantum` with the Cirq dependencies and import the
-required packages:
+First, run the below cell for the required imports:
 
 ```python
-!pip install azure-quantum[cirq]==0.18.2109.165000a1 --extra-index-url=https://pkgs.dev.azure.com/ms-quantum-public/9af4e09e-a436-4aca-9559-2094cfe8d80c/_packaging/alpha/pypi/simple/ --quiet
-!pip install matplotlib --quiet
-
 from azure.quantum.cirq import AzureQuantumService
-
-# Plotting
-import pylab as pl
-%matplotlib inline
-pl.rcParams["font.size"] = 16
 ```
 
-## Connecting to the Azure Quantum service
+### Connecting to the Azure Quantum service
 
 To connect to the Azure Quantum service, find the resource ID and
 location of your Workspace from the Azure Quantum portal here:
 <https://portal.azure.com>. Navigate to your Azure Quantum workspace and
 copy the values from the header.
 
-`<img src="copy_resource_id.png">`{=html}
+Paste the values into the `AzureQuantumService` constructor below to
+create a `service` that connects to your Azure Quantum Workspace.
+Optionally, specify a default target.
+
 
 ```python
 service = AzureQuantumService(
@@ -118,7 +137,7 @@ service = AzureQuantumService(
 )
 ```
 
-### List all targets
+#### List all targets
 
 You can now list all the targets that you have access to, including the
 current queue time and availability.
@@ -138,7 +157,7 @@ service.targets()
      <Target name="honeywell.hqs-lt-s1-sim", avg. queue time=0 s, Available>]
 ```
 
-## Run a simple circuit
+### Run a simple circuit
 
 Now, let\'s create a simple Cirq circuit to run.
 
@@ -154,7 +173,7 @@ circuit = cirq.Circuit(
 circuit
 ```
 
-```{=html}
+```html
 <pre style="overflow: auto; white-space: pre;">0: ───H───@───M(&#x27;b&#x27;)───
           │   │
 1: ───────X───M────────</pre>
@@ -199,23 +218,17 @@ Text(0.5, 0, 'Result')
 
 ![DESCRIPTION1](13ad062505acf5cd247191207c48568d7a1363b3.png)
 
-## Asynchronous workflow using Jobs
+### Asynchronous workflow using Jobs
 
 For long-running circuits, it can be useful to run them asynchronously.
 The `service.create_job` method returns a `Job`, which you can use to
 get the results after the job has run successfully.
 
 ```python
-%%time
 job = service.create_job(
     program=circuit,
     repetitions=100
 )
-```
-
-```output
-CPU times: user 31.2 ms, sys: 262 µs, total: 31.5 ms
-Wall time: 475 ms
 ```
 
 To check on the job status, use `job.status()`:
@@ -232,15 +245,12 @@ To wait for the job to be done and get the results, use the blocking
 call `job.results()`:
 
 ```python
-%%time
 result = job.results()
 print(result)
 ```
 
 ```output
     {'m_b': ['00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00']}
-    CPU times: user 16.3 ms, sys: 0 ns, total: 16.3 ms
-    Wall time: 87.4 ms
 ```
 
 Note that this does not return a `cirq.Result` object. Instead it
@@ -256,19 +266,10 @@ dict
 
 ## [Qiskit](#tab/tabid-qiskit)
 
-## Getting started with Qiskit and Honeywell on Azure Quantum
-
-This example notebook shows how to send a basic quantum circuit built
+This example shows how to send a basic quantum circuit built
 with Qiskit to the Honeywell Quantum Computing target on Azure Quantum.
 
-First, install `azure-quantum` with the `qiskit` dependencies:
-
-```python
-!pip install azure-quantum[qiskit]==0.18.2109.165000a1 --quiet --extra-index-url=https://pkgs.dev.azure.com/ms-quantum-public/9af4e09e-a436-4aca-9559-2094cfe8d80c/_packaging/alpha/pypi/simple/
-!pip install matplotlib --quiet
-```
-
-And import the required packages for this sample:
+First, run the below cell for the required imports:
 
 ```python
 from qiskit import QuantumCircuit
@@ -277,14 +278,15 @@ from qiskit.tools.monitor import job_monitor
 from azure.quantum.qiskit import AzureQuantumProvider
 ```
 
-## Connecting to the Azure Quantum service
+### Connecting to the Azure Quantum service
 
 To connect to the Azure Quantum service, find the resource ID and
 location of your Workspace from the Azure Quantum portal here:
 <https://portal.azure.com>. Navigate to your Azure Quantum workspace and
 copy the values from the header.
 
-`<img src="..\copy_resource_id.png">`{=html}
+Paste the values into the `AzureQuantumProvider` constructor below to
+create a `provider` that connects to your Azure Quantum Workspace.
 
 ```python
 # Enter your workspace details here
