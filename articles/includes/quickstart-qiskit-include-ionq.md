@@ -9,16 +9,18 @@ ms.topic: include
 
 ## [Provider format](#tab/tabid-native)
 
+### Getting started with IonQ on Azure Quantum
+
 This example shows how to send a basic quantum circuit in the IonQ JSON
 format to an IonQ Quantum Computing target via Azure Quantum.
 
-First, run the below cell to run the required imports:
+First, run the below cell for the required imports:
 
 ```python
 from azure.quantum import Workspace
 ```
 
-## Connecting to the Azure Quantum service
+### Connecting to the Azure Quantum service
 
 To connect to the Azure Quantum service, find the resource ID and
 location of your Workspace from the Azure Quantum portal here:
@@ -36,7 +38,7 @@ service = Workspace(
 )
 ```
 
-## Submit a quantum circuit to IonQ
+### Submit a quantum circuit to IonQ
 
 1. Create a quantum circuit using the the language-agnostic JSON format supported by the [IonQ targets](xref:microsoft.quantum.providers.ionq) as described in the [IonQ API documentation](https://docs.ionq.com/#tag/quantum_programs). For instance, the below example creates a superposition between three qubits:
 
@@ -99,22 +101,18 @@ pl.ylabel("Probabilities")
 
 ## [Cirq](#tab/tabid-cirq)
 
-
-
-
-
-# Getting started with Cirq and IonQ on Azure Quantum
+### Getting started with Cirq and IonQ on Azure Quantum
 
 This example shows how to send a basic quantum circuit built with Cirq
 to an IonQ Quantum Computing target via Azure Quantum.
 
-First, run the below cell to run the required imports:
+First, run the below cell for the required imports:
 
 ```python
 from azure.quantum.cirq import AzureQuantumService
 ```
 
-## Connecting to the Azure Quantum service
+### Connecting to the Azure Quantum service
 
 To connect to the Azure Quantum service, find the resource ID and
 location of your Workspace from the Azure Quantum portal here:
@@ -133,7 +131,7 @@ service = AzureQuantumService(
 )
 ```
 
-### List all targets
+#### List all targets
 
 You can now list all the targets that you have access to, including the
 current queue time and availability.
@@ -150,7 +148,7 @@ service.targets()
      <Target name="honeywell.hqs-lt-s2-apival", avg. queue time=0 s, Available>,
      <Target name="honeywell.hqs-lt-s1-sim", avg. queue time=1062 s, Available>]
 
-## Run a simple circuit
+### Run a simple circuit
 
 Let\'s create a simple Cirq circuit to run. This circuit uses the square
 root of X gate, native to the IonQ hardware system.
@@ -215,7 +213,7 @@ print(result)
 
     b=0101011011011111100001011101101011011110100010000000011110111000100100110110101100110001001111101111, 0101011011011111100001011101101011011110100010000000011110111000100100110110101100110001001111101111
 
-## Asynchronous model using Jobs
+### Asynchronous model using Jobs
 
 For long-running circuits, it can be useful to run them asynchronously.
 The `service.create_job` method returns a `Job`, which you can use to
@@ -282,7 +280,7 @@ result.to_cirq_result()
 This example shows how to send a basic quantum circuit built with Qiskit
 to an IonQ Quantum Computing target via Azure Quantum.
 
-First, run the below cell to run the required imports:
+First, run the below cell for the required imports:
 
 ```python
 from qiskit import QuantumCircuit
