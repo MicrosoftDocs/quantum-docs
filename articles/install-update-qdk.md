@@ -166,7 +166,7 @@ The update procedure depends on whether you originally installed using conda or 
 1. Activate the conda environment where you installed the `qsharp` package, and then run this command to update it:
 
     ```
-    conda update -c quantum-engineering qsharp
+    conda update -c microsoft qsharp
     ```
 
 1. Run the following command from the location of your `.qs` files:
@@ -239,7 +239,7 @@ The update procedure depends on whether you originally installed using conda or 
 1. Activate the conda environment where you installed the `qsharp` package, and then run this command to update it:
 
     ```
-    conda update -c quantum-engineering qsharp
+    conda update -c microsoft qsharp
     ```
 
 1. Run the following command from a cell in each of your existing Q# Jupyter Notebooks:
