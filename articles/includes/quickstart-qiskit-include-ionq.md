@@ -398,7 +398,7 @@ add them to `counts`.
 counts = {format(n, "03b"): 0 for n in range(8)}
 counts.update(result.get_counts(circuit))
 print(counts)
-plot_histogram(counts);
+plot_histogram(counts)
 ```
     {'000': 50, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 50}
 ![](0fd9147b17ddae64a3c6ead2a3dc76cd0e9a7867.png)
@@ -546,7 +546,7 @@ results = simulator_backend.run(qobj).result()
 
 answer = results.get_counts()
 
-plot_histogram(answer);
+plot_histogram(answer)
 ```
     .....
 ![](2701507d294396f486ef69860cb68cd998339f56.png)
