@@ -19,6 +19,8 @@ Azure Quantum is a cloud service that brings you, under as single pane a glass, 
 
 ![azure quantum solutions](~/media/azure-quantum-qdk-carousel.png)
 
+## The parts of Azure Quantum
+
 Azure Quantum offers you two main paths of quantum solutions:
 
 - [Quantum Computing](xref:microsoft.quantum.overview.qdk-overview): to learn, experiment and prototype with a variety of quantum hardware providers to help you get ready for the future of scaled quantum machines. Unlike other solutions, you are not siloed to a single hardware technology, and you benefit from a full stack approach protecting your long-term investments. 
