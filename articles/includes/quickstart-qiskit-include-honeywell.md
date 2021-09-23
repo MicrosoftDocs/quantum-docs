@@ -9,10 +9,10 @@ ms.topic: include
 
 ## [Provider format](#tab/tabid-native)
 
-This notebooks shows how to send a basic quantum circuit in the Honeywell 
-OpenQASM 2.0 format to a Honeywell target via Azure Quantum.
+This example shows how to send a basic quantum circuit in the Honeywell 
+OpenQASM 2.0 format to a Honeywell Quantum Computing target via Azure Quantum.
 
-First, run the below cell to import the required packages for this sample:
+First, run the below cell for the required imports:
 
 ```python
 from azure.quantum import Workspace
@@ -35,7 +35,6 @@ workspace = Workspace(
     location=""
 )
 ```
-
 
 ### Submit a quantum circuit to Honeywell
 
@@ -107,10 +106,10 @@ pl.xlabel("Bitstring")
 
 ### Getting started with Cirq and Honeywell on Azure Quantum
 
-This notebooks shows how to send a basic quantum circuit built with Cirq
-to a Honeywell target via Azure Quantum.
+This example shows how to send a basic quantum circuit built with Cirq
+to a Honeywell Quantum Computing target via Azure Quantum.
 
-First, run the below cell to import the required packages for this sample:
+First, run the below cell for the required imports:
 
 ```python
 from azure.quantum.cirq import AzureQuantumService
@@ -136,7 +135,7 @@ service = AzureQuantumService(
 )
 ```
 
-### List all targets
+#### List all targets
 
 You can now list all the targets that you have access to, including the
 current queue time and availability.
@@ -156,7 +155,7 @@ service.targets()
      <Target name="honeywell.hqs-lt-s1-sim", avg. queue time=0 s, Available>]
 ```
 
-## Run a simple circuit
+### Run a simple circuit
 
 Now, let\'s create a simple Cirq circuit to run.
 
@@ -217,7 +216,7 @@ Text(0.5, 0, 'Result')
 
 ![DESCRIPTION](13ad062505acf5cd247191207c48568d7a1363b3.png)
 
-## Asynchronous workflow using Jobs
+### Asynchronous workflow using Jobs
 
 For long-running circuits, it can be useful to run them asynchronously.
 The `service.create_job` method returns a `Job`, which you can use to
@@ -265,10 +264,10 @@ dict
 
 ## [Qiskit](#tab/tabid-qiskit)
 
-This example notebook shows how to send a basic quantum circuit built
+This example shows how to send a basic quantum circuit built
 with Qiskit to the Honeywell Quantum Computing target on Azure Quantum.
 
-First, run the below cell to import the required packages for this sample:
+First, run the below cell for the required imports:
 
 ```python
 from qiskit import QuantumCircuit
@@ -277,7 +276,7 @@ from qiskit.tools.monitor import job_monitor
 from azure.quantum.qiskit import AzureQuantumProvider
 ```
 
-## Connecting to the Azure Quantum service
+### Connecting to the Azure Quantum service
 
 To connect to the Azure Quantum service, find the resource ID and
 location of your Workspace from the Azure Quantum portal here:
