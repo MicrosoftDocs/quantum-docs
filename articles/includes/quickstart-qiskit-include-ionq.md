@@ -9,6 +9,14 @@ ms.topic: include
 
 ## [Provider format](#tab/tabid-native)
 
+This example shows how to send a basic quantum circuit in the IonQ JSON
+format to an IonQ Quantum Computing target via Azure Quantum.
+
+First, run the below cell to run the required imports:
+
+```python
+from azure.quantum import Workspace
+```
 
 ## Connecting to the Azure Quantum service
 
@@ -22,7 +30,6 @@ create a `workspace` that connects to your Azure Quantum Workspace.
 Optionally, specify a default target:
 
 ```python
-from azure.quantum import Workspace
 service = Workspace(
     resource_id="",
     location=""
@@ -98,14 +105,13 @@ pl.ylabel("Probabilities")
 
 # Getting started with Cirq and IonQ on Azure Quantum
 
-This notebooks shows how to send a basic quantum circuit to an IonQ
-target via Azure Quantum.
+This example shows how to send a basic quantum circuit built with Cirq
+to an IonQ Quantum Computing target via Azure Quantum.
 
-First, install `azure-quantum` with the Cirq dependencies:
+First, run the below cell to run the required imports:
 
 ```python
-!pip install azure-quantum[cirq]==0.18.2109.165000a1 --quiet --extra-index-url=https://pkgs.dev.azure.com/ms-quantum-public/9af4e09e-a436-4aca-9559-2094cfe8d80c/_packaging/alpha/pypi/simple/
-!pip install matplotlib --quiet
+from azure.quantum.cirq import AzureQuantumService
 ```
 
 ## Connecting to the Azure Quantum service
@@ -120,7 +126,6 @@ create a `service` that connects to your Azure Quantum Workspace.
 Optionally, specify a default target:
 
 ```python
-from azure.quantum.cirq import AzureQuantumService
 service = AzureQuantumService(
     resource_id="",
     location="",
@@ -270,25 +275,14 @@ result.to_cirq_result()
     b=1110101111111110111000011101011111001100010000001011011101001111001111001101100111010000001100011100, 1110101111111110111000011101011111001100010000001011011101001111001111001101100111010000001100011100
 
 
-
-
-
 ## [Qiskit](#tab/tabid-qiskit)
 
+### Getting started with Qiskit and IonQ on Azure Quantum
 
-# Getting started with Qiskit and IonQ on Azure Quantum
+This example shows how to send a basic quantum circuit built with Qiskit
+to an IonQ Quantum Computing target via Azure Quantum.
 
-This example notebook shows how to send a basic quantum circuit built
-with Qiskit to the IonQ Quantum Computing target on Azure Quantum.
-
-First, install `azure-quantum` with the `qiskit` dependencies:
-
-```python
-!pip install azure-quantum[qiskit]==0.18.2109.165000a1 --quiet --extra-index-url=https://pkgs.dev.azure.com/ms-quantum-public/9af4e09e-a436-4aca-9559-2094cfe8d80c/_packaging/alpha/pypi/simple/
-!pip install matplotlib --quiet
-```
-
-And import the required packages for this sample:
+First, run the below cell to run the required imports:
 
 ```python
 from qiskit import QuantumCircuit
@@ -297,7 +291,7 @@ from qiskit.tools.monitor import job_monitor
 from azure.quantum.qiskit import AzureQuantumProvider
 ```
 
-## Connecting to the Azure Quantum service
+### Connecting to the Azure Quantum service
 
 To connect to the Azure Quantum service, find the resource ID and
 location of your Workspace from the Azure Quantum portal here:
@@ -314,7 +308,7 @@ provider = AzureQuantumProvider(
 )
 ```
 
-### List all backends
+#### List all backends
 
 You can now print all of the Quantum Computing backends that are
 available on your Workspace:
@@ -324,7 +318,7 @@ print([backend.name() for backend in provider.backends()])
 ```
     ['ionq.qpu', 'ionq.simulator', 'honeywell.hqs-lt-s1', 'honeywell.hqs-lt-s1-apival', 'honeywell.hqs-lt-s2', 'honeywell.hqs-lt-s2-apival', 'honeywell.hqs-lt-s1-sim']
 
-## Run a simple circuit
+### Run a simple circuit
 
 Let\'s create a simple Qiskit circuit to run.
 
@@ -411,7 +405,7 @@ plot_histogram(counts);
     {'000': 50, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 50}
 ![](0fd9147b17ddae64a3c6ead2a3dc76cd0e9a7867.png)
 
-### Run on IonQ QPU
+#### Run on IonQ QPU
 
 To connect to real hardware (Quantum Processing Unit or QPU), simply
 provide the name of the target `"ionq.qpu"` to the
@@ -450,7 +444,7 @@ plot_histogram(counts)
     {'000': 505, '001': 6, '010': 1, '011': 1, '100': 1, '101': 10, '110': 11, '111': 488}
 ![](43ac66a2f89cbb6c1983455be0da3d258b2708f4.png)
 
-# Quantum Phase Estimation (QPE)
+### Quantum Phase Estimation (QPE)
 
 The `azure-quantum[qiskit]` also supports more advanced examples. Let\'s
 go with the QPE example from Qiskit textbook:
