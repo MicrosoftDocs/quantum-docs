@@ -26,8 +26,6 @@ The preview simulators are **not yet** supported by:
 - Q# standalone command-line programs
 - QIR-based executables
 
-
-
 ## Invoking  the preview simulators from Python
 
 You start by importing the [QuTiP library]( https://qutip.org/), a popular Python library for manipulating states and processes of closed and open quantum systems.
@@ -35,7 +33,7 @@ You start by importing the [QuTiP library]( https://qutip.org/), a popular Pytho
 ```python
 import qutip as qt
 ```
-Once you have the right version of the `qsharp-core` Python package installed, you can enable the use of the experimental simulators by using the `qsharp.experimental` module:
+You can enable the use of the experimental simulators by using the `qsharp.experimental` module:
 
 ```python
 import qsharp
@@ -59,7 +57,7 @@ namespace NoisySimulation {
     operation DumpPlus() : Unit {
         use q = Qubit();
         H(q);
-        Microsoft.Quantum.Diagnostics.DumpMachine();
+        DumpMachine();
         X(q);
         Reset(q);
     }
