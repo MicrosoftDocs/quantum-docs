@@ -7,297 +7,9 @@ ms.subservice: qdk
 ms.topic: include
 ---
 
-## [Provider format](#tab/tabid-native)
+## Load the required imports
 
-### Getting started with IonQ on Azure Quantum
-
-This example shows how to send a basic quantum circuit in the IonQ JSON
-format to an IonQ Quantum Computing target via Azure Quantum.
-
-First, run the below cell for the required imports:
-
-```python
-from azure.quantum import Workspace
-```
-
-### Connecting to the Azure Quantum service
-
-Your program will need the resource ID and the
-location of your Azure Quantum workspace. Login to your Azure account,
-<https://portal.azure.com>, navigate to your Azure Quantum workspace, and
-copy the values from the header.
-
-Paste the values into the `Workspace` constructor below to
-create a `workspace` object that connects to your Azure Quantum workspace.
-Optionally, specify a default target:
-
-```python
-service = Workspace(
-    resource_id="",
-    location=""
-)
-```
-
-### Submit a quantum circuit to IonQ
-
-1. Create a quantum circuit using the the language-agnostic JSON format supported by the [IonQ targets](xref:microsoft.quantum.providers.ionq) as described in the [IonQ API documentation](https://docs.ionq.com/#tag/quantum_programs). For instance, the below example creates a superposition between three qubits:
-
-    ```python
-    circuit = {
-        "qubits": 3,
-        "circuit": [
-            {
-            "gate": "h",
-            "target": 0
-            },
-            {
-            "gate": "cnot",
-            "control": 0,
-            "target": 1
-            },
-            {
-            "gate": "cnot",
-            "control": 0,
-            "target": 2
-            },
-        ]
-    }
-    ```
-
-1. Submit the circuit to the IonQ target. In the below example we are using the IonQ simulator. This returns a `Job` (for more info, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference)).
-
-    ```python
-    target = workspace.get_targets(name="ionq.simulator")
-    job = target.submit(circuit)
-    ```
-
-1. Wait until the job is complete and fetch the results.
-
-    ```python
-    results = job.get_results()
-    results
-    ```
-
-    ```output
-    .....
-    {'duration': 8240356, 'histogram': {'0': 0.5, '7': 0.5}}
-    ```
-
-1. Visualize the results
-
-We can then visualize the results using [Matplotlib](https://matplotlib.org/stable/users/installing.html).
-
-```python
-%matplotlib inline
-import pylab as pl
-pl.rcParams["font.size"] = 16
-hist = {format(n, "03b"): 0 for n in range(8)}
-hist.update({format(int(k), "03b"): v for k, v in results["histogram"].items()})
-pl.bar(hist.keys(), hist.values())
-pl.ylabel("Probabilities")
-```
-
-![IonQ job output](../media/ionq-results.png)
-
-## [Cirq](#tab/tabid-cirq)
-
-### Getting started with Cirq and IonQ on Azure Quantum
-
-This example shows how to send a basic quantum circuit built with Cirq
-to an IonQ Quantum Computing target via Azure Quantum.
-
-First, run the below cell for the required imports:
-
-```python
-from azure.quantum.cirq import AzureQuantumService
-```
-
-### Connecting to the Azure Quantum service
-
-To connect to the Azure Quantum service, find the resource ID and
-location of your Workspace from the Azure Quantum portal here:
-<https://portal.azure.com>. Navigate to your Azure Quantum workspace and
-copy the values from the header.
-
-Paste the values into the `AzureQuantumService` constructor below to
-create a `service` that connects to your Azure Quantum Workspace.
-Optionally, specify a default target:
-
-```python
-service = AzureQuantumService(
-    resource_id="",
-    location="",
-    default_target="ionq.simulator"
-)
-```
-
-#### List all targets
-
-You can now list all the targets that you have access to, including the
-current queue time and availability.
-
-```python
-service.targets()
-```
-
-```output
-[<Target name="ionq.qpu", avg. queue time=345 s, Available>,
-<Target name="ionq.simulator", avg. queue time=4 s, Available>,
-<Target name="honeywell.hqs-lt-s1", avg. queue time=0 s, Unavailable>,
-<Target name="honeywell.hqs-lt-s1-apival", avg. queue time=0 s, Available>,
-<Target name="honeywell.hqs-lt-s2", avg. queue time=313169 s, Available>,
-<Target name="honeywell.hqs-lt-s2-apival", avg. queue time=0 s, Available>,
-<Target name="honeywell.hqs-lt-s1-sim", avg. queue time=1062 s, Available>]
-```
-
-### Run a simple circuit
-
-Let\'s create a simple Cirq circuit to run. This circuit uses the square
-root of X gate, native to the IonQ hardware system.
-
-```python
-import cirq
-
-q0, q1 = cirq.LineQubit.range(2)
-circuit = cirq.Circuit(
-    cirq.X(q0)**0.5,             # Square root of X
-    cirq.CX(q0, q1),              # CNOT
-    cirq.measure(q0, q1, key='b') # Measure both qubits
-)
-circuit
-```
-
-```{=html}
-<pre style="overflow: auto; white-space: pre;">0: ───X^0.5───@───M(&#x27;b&#x27;)───
-              │   │
-1: ───────────X───M────────</pre>
-```
-
-You can now run the program via the Azure Quantum service and get the
-result. The following cell will submit a job that runs the circuit with
-100 shots, wait until the job is completed and return the results.
-
-```python
-%%time
-result = service.run(program=circuit, repetitions=100)
-```
-
-```output
-CPU times: user 74.9 ms, sys: 0 ns, total: 74.9 ms
-Wall time: 12.5 s
-```
-
-This returns a `cirq.Result` object.
-
-```python
-print(result)
-```
-
-```output
-    b=1001100101100001000011011101000011010100010111100011001000100100010000001110010010101110110000011010, 1001100101100001000011011101000011010100010111100011001000100100010000001110010010101110110000011010
-```
-
-The previous job ran on the default simulator we specified,
-`"ionq.simulator"`. To run on the QPU, provide `"ionq.qpu"` as the
-`target` argument:
-
-```python
-%%time
-result = service.run(
-    program=circuit,
-    repetitions=100,
-    target="ionq.qpu",
-    timeout_seconds=500 # Set timeout to 500 seconds to accomodate current queue time on QPU
-)
-```
-
-Again, this returns a `cirq.Result` object.
-
-```python
-print(result)
-```
-
-```output
-b=0101011011011111100001011101101011011110100010000000011110111000100100110110101100110001001111101111, 0101011011011111100001011101101011011110100010000000011110111000100100110110101100110001001111101111
-```
-
-### Asynchronous model using Jobs
-
-For long-running circuits, it can be useful to run them asynchronously.
-The `service.create_job` method returns a `Job`, which you can use to
-get the results after the job has run successfully.
-
-```python
-%%time
-job = service.create_job(
-    program=circuit,
-    repetitions=100,
-    target="ionq.simulator"
-)
-```
-
-```output
-CPU times: user 20.3 ms, sys: 12 ms, total: 32.3 ms
-Wall time: 961 ms
-```
-
-To check on the job status, use `job.status()`:
-
-```python
-job.status()
-```
-
-```output
-'completed'
-```
-
-To wait for the job to be done and get the results, use the blocking
-call `job.results()`:
-
-```python
-%%time
-result = job.results()
-print(result)
-```
-
-```output
-00: 0.5
-11: 0.5
-CPU times: user 276 µs, sys: 143 µs, total: 419 µs
-Wall time: 314 µs
-```
-
-Note that this does not return a `cirq.Result` object. Instead it
-returns a result object that is specific to the IonQ simulator and uses
-state probabilities instead of shot data.
-
-```python
-type(result)
-```
-
-```output
-cirq_ionq.results.SimulatorResult
-```
-
-To convert this to a `cirq.Result` object, use
-`result.to_cirq_result()`:
-
-```python
-result.to_cirq_result()
-```
-
-```output
-b=1110101111111110111000011101011111001100010000001011011101001111001111001101100111010000001100011100, 1110101111111110111000011101011111001100010000001011011101001111001111001101100111010000001100011100
-```
-
-## [Qiskit](#tab/tabid-qiskit)
-
-### Getting started with Qiskit and IonQ on Azure Quantum
-
-This example shows how to send a basic quantum circuit built with Qiskit
-to an IonQ Quantum Computing target via Azure Quantum.
-
-First, run the below cell for the required imports:
+First, run the following cell for the required imports:
 
 ```python
 from qiskit import QuantumCircuit
@@ -306,15 +18,15 @@ from qiskit.tools.monitor import job_monitor
 from azure.quantum.qiskit import AzureQuantumProvider
 ```
 
-### Connecting to the Azure Quantum service
+## Connect to the Azure Quantum service
 
-To connect to the Azure Quantum service, find the resource ID and
-location of your Workspace from the Azure Quantum portal here:
-<https://portal.azure.com>. Navigate to your Azure Quantum workspace and
+To connect to the Azure Quantum service, your program will need the resource ID and the
+location of your Azure Quantum workspace. Login to your Azure account,
+<https://portal.azure.com>, navigate to your Azure Quantum workspace, and
 copy the values from the header.
 
-Paste the values into the `AzureQuantumProvider` constructor below to
-create a `provider` that connects to your Azure Quantum workspace:
+Paste the values into the following `Workspace` constructor to
+create a `workspace` object that connects to your Azure Quantum workspace.
 
 ```python
 provider = AzureQuantumProvider(
@@ -323,7 +35,7 @@ provider = AzureQuantumProvider(
 )
 ```
 
-#### List all backends
+### List all backends
 
 You can now print all of the quantum computing backends that are
 available on your workspace:
@@ -336,7 +48,7 @@ print([backend.name() for backend in provider.backends()])
 ['ionq.qpu', 'ionq.simulator', 'honeywell.hqs-lt-s1', 'honeywell.hqs-lt-s1-apival', 'honeywell.hqs-lt-s2', 'honeywell.hqs-lt-s2-apival', 'honeywell.hqs-lt-s1-sim']
 ```
 
-### Run a simple circuit
+## Run a simple circuit
 
 First, create a simple Qiskit circuit to run.
 
@@ -373,7 +85,7 @@ simulator_backend = provider.get_backend("ionq.simulator")
 ```
 
 You can now run the program via the Azure Quantum service and get the
-result. The following cell will submit a job that runs the circuit with
+result. The following cell submits a job that runs the circuit with
 100 shots:
 
 ```python
@@ -386,7 +98,7 @@ print("Job id", job_id)
 Job id 6255e7ce-1ca0-11ec-9d4c-00155dd132ce
 ```
 
-To monitor job progress, we can use the Qiskit `job_monitor` we imported
+To monitor job progress, you can use the Qiskit `job_monitor` imported
 earlier to keep track of the Job\'s status. Note that this call will
 block until the job completes:
 
@@ -398,7 +110,7 @@ job_monitor(job)
 Job Status: job has successfully run
 ```
 
-To wait until the job is completed and return the results, run:
+To wait until the job is complete and return the results, run:
 
 ```python
 result = job.result()
@@ -436,12 +148,13 @@ plot_histogram(counts)
 
 ```output
 {'000': 50, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 50}
-![](0fd9147b17ddae64a3c6ead2a3dc76cd0e9a7867.png)
 ```
 
-#### Run on IonQ QPU
+![DESCRIPTION](0fd9147b17ddae64a3c6ead2a3dc76cd0e9a7867.png)
 
-To connect to real hardware (Quantum Processing Unit or QPU), simply
+## Run on IonQ QPU
+
+To connect to real hardware (a Quantum Processing Unit, or QPU), simply
 provide the name of the target `"ionq.qpu"` to the
 `provider.get_backend` method:
 
@@ -449,8 +162,9 @@ provide the name of the target `"ionq.qpu"` to the
 qpu_backend = provider.get_backend("ionq.qpu")
 ```
 
-Submit the circuit to run on Azure Quantum. Note that, depending on queue
-times, this may take a while to run!
+Submit the circuit to run on Azure Quantum. 
+
+> [!NOTE] Depending on queue times, this may take a while to run.
 
 As before, use `job_monitor` to keep track of the job
 status, and `plot_histogram` to plot the results.
@@ -480,6 +194,5 @@ Result(backend_name='ionq.simulator', backend_version='1', qobj_id='Qiskit Sampl
 {'000': 505, '001': 6, '010': 1, '011': 1, '100': 1, '101': 10, '110': 11, '111': 488}
 ```
 
-![DESCRIPTION1](43ac66a2f89cbb6c1983455be0da3d258b2708f4.png)
+![DESCRIPTION2](43ac66a2f89cbb6c1983455be0da3d258b2708f4.png)
 
-***

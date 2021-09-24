@@ -1,0 +1,96 @@
+---
+author: guenp
+ms.author:  v-guenp
+ms.date: 09/22/2021
+ms.service: azure-quantum
+ms.subservice: qdk
+ms.topic: include
+---
+
+## Load the required imports
+
+First, run the following cell for the required imports:
+
+```python
+from azure.quantum import Workspace
+```
+
+## Connecting to the Azure Quantum service
+
+To connect to the Azure Quantum service, your program will need the resource ID and the
+location of your Azure Quantum workspace. Login to your Azure account,
+<https://portal.azure.com>, navigate to your Azure Quantum workspace, and
+copy the values from the header.
+
+Paste the values into the following `Workspace` constructor to
+create a `workspace` object that connects to your Azure Quantum workspace.
+Optionally, specify a default target:
+
+```python
+service = Workspace(
+    resource_id="",
+    location=""
+)
+```
+
+## Submit a quantum circuit to IonQ
+
+1. Create a quantum circuit using the the language-agnostic JSON format supported by the [IonQ targets](xref:microsoft.quantum.providers.ionq), as described in the [IonQ API documentation](https://docs.ionq.com/#tag/quantum_programs). For example, the following sample creates a superposition between three qubits:
+
+    ```python
+    circuit = {
+        "qubits": 3,
+        "circuit": [
+            {
+            "gate": "h",
+            "target": 0
+            },
+            {
+            "gate": "cnot",
+            "control": 0,
+            "target": 1
+            },
+            {
+            "gate": "cnot",
+            "control": 0,
+            "target": 2
+            },
+        ]
+    }
+    ```
+
+1. Submit the circuit to the IonQ target. The following example uses the IonQ simulator, which returns a `Job` object. For more information, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference).
+
+    ```python
+    target = workspace.get_targets(name="ionq.simulator")
+    job = target.submit(circuit)
+    ```
+
+1. Wait until the job is complete and then fetch the results.
+
+    ```python
+    results = job.get_results()
+    results
+    ```
+
+    ```output
+    .....
+    {'duration': 8240356, 'histogram': {'0': 0.5, '7': 0.5}}
+    ```
+
+1. Visualize the results
+
+You can then visualize the results using [Matplotlib](https://matplotlib.org/stable/users/installing.html).
+
+```python
+%matplotlib inline
+import pylab as pl
+pl.rcParams["font.size"] = 16
+hist = {format(n, "03b"): 0 for n in range(8)}
+hist.update({format(int(k), "03b"): v for k, v in results["histogram"].items()})
+pl.bar(hist.keys(), hist.values())
+pl.ylabel("Probabilities")
+```
+
+![IonQ job output](../media/ionq-results.png)
+

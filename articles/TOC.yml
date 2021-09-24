@@ -34,11 +34,11 @@
       - name: Create a quantum-based random number generator with Q#
         href: quickstart-microsoft-qc.md
       - name: Submit a circuit in provider-specific format
-        href: install-azure-quantum-sdk-python.md
+        href: quickstart-microsoft-provider-format.md
       - name: Submit a circuit with Cirq
-        href: install-azure-quantum-sdk-python.md?tabs=tabid-cirq
+        href: quickstart-microsoft-cirq.md
       - name: Submit a circuit with Qiskit
-        href: install-azure-quantum-sdk-python.md?tabs=tabid-qiskit
+        href: quickstart-microsoft-qiskit.md
     - name: Quantum Development Kit (QDK)
       items:
       - name: Q# applications

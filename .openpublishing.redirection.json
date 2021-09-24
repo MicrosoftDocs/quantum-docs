@@ -102,7 +102,7 @@
 		},
 		{
 			"source_path": "articles/install-azure-quantum-sdk-python.md",
-			"redirect_url": "/azure/quantum/quickstart-microsoft-qiskit",
+			"redirect_url": "/azure/quantum/quickstart-microsoft-provider-format",
 			"redirect_document_id": true
 		}
 	]

@@ -1,20 +1,20 @@
 ---
 author: guenp
-description: Learn how to submit Qiskit quantum circuits to Azure Quantum.
+description: Learn how to to submit provider  quantum circuits to Azure Quantum.
 ms.author: guenp
 ms.date: 09/22/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Python', '$$v']
-title: Submit Qiskit quantum circuits to IonQ and Honeywell
+title: Submit provider formatted quantum circuits to IonQ and Honeywell
 zone_pivot_groups: quantum-computing-platforms
-uid: microsoft.quantum.quickstarts.computing.qiskit
+uid: microsoft.quantum.quickstarts.computing.provider
 --- 
 
-# Quickstart: Submit a Qiskit circuit to IonQ and Honeywell
+# Quickstart: Submit a provider-specific formatted circuit to IonQ and Honeywell
 
-Learn how to use the `azure-quantum` Python package to submit Qiskit quantum circuits to an IonQ or Honeywell quantum computing target via the Azure Quantum service. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
+Learn how to use the `azure-quantum` Python package to submit quantum circuits in the provider-specific format ([OpenQASM 2.0](https://github.com/Qiskit/openqasm/tree/OpenQASM2.x) or [IonQ JSON](https://docs.ionq.com/#tag/quantum_programs)) to an IonQ or Honeywell quantum computing target via the Azure Quantum service. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ Learn how to use the `azure-quantum` Python package to submit Qiskit quantum cir
 
 ## Install the `azure-quantum` Python package
 
-The `azure-quantum` Python package contains the necessary functionality for connecting to an Azure Quantum workspace and submitting quantum circuits to the quantum computing targets on the [IonQ](xref:microsoft.quantum.providers.ionq) and [Honeywell](xref:microsoft.quantum.providers.honeywell) providers.
+The `azure-quantum` Python package contains the necessary functionality for connecting to an Azure Quantum workspace and submitting quantum circuits to the quantum computing targets such as [IonQ](xref:microsoft.quantum.providers.ionq) and [Honeywell](xref:microsoft.quantum.providers.honeywell).
 
 1. Install [Python](https://www.python.org/downloads/) 3.6 or later in case you haven't already.
 1. Install [PIP](https://pip.pypa.io/en/stable/) and ensure you have **version 19.2 or higher**.
@@ -50,20 +50,20 @@ The `azure-quantum` Python package contains the necessary functionality for conn
     pip install azure-quantum[qiskit]
     // for Cirq and Qiskit
     pip install azure-quantum[cirq,qiskit]
-
     ```
 
 1. Start your favorite code editor or interactive Python tool, such as [VS Code](https://code.visualstudio.com/docs/python/jupyter-support-py), [Jupyter](https://jupyter.readthedocs.io/en/latest/content-quickstart.html) or [iPython](https://ipython.readthedocs.io/en/stable/interactive/tutorial.html).
 
+
 ::: zone pivot="platform-ionq"
 
-[!INCLUDE [ms-procedure](includes/quickstart-qiskit-include-ionq.md)]
+[!INCLUDE [ms-procedure](includes/quickstart-provider-include-ionq.md)]
 
 ::: zone-end
 
 ::: zone pivot="platform-honeywell"
 
-[!INCLUDE [ms-procedure](includes/quickstart-qiskit-include-honeywell.md)]
+[!INCLUDE [ms-procedure](includes/quickstart-provider-include-honeywell.md)]
 
 ::: zone-end
 

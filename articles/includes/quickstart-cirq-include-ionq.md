@@ -1,0 +1,194 @@
+---
+author: guenp
+ms.author:  v-guenp
+ms.date: 09/22/2021
+ms.service: azure-quantum
+ms.subservice: qdk
+ms.topic: include
+---
+
+## Load the required imports
+
+First, run the following cell for the required imports:
+
+```python
+from azure.quantum.cirq import AzureQuantumService
+```
+
+## Connect to the Azure Quantum service
+
+To connect to the Azure Quantum service, your program will need the resource ID and the
+location of your Azure Quantum workspace. Login to your Azure account,
+<https://portal.azure.com>, navigate to your Azure Quantum workspace, and
+copy the values from the header.
+
+Paste the values into the following `Workspace` constructor to
+create a `workspace` object that connects to your Azure Quantum workspace.
+Optionally, specify a default target:
+
+```python
+service = AzureQuantumService(
+    resource_id="",
+    location="",
+    default_target="ionq.simulator"
+)
+```
+
+### List all targets
+
+You can now list all the targets that you have access to, including the
+current queue time and availability.
+
+```python
+service.targets()
+```
+
+```output
+[<Target name="ionq.qpu", avg. queue time=345 s, Available>,
+<Target name="ionq.simulator", avg. queue time=4 s, Available>,
+<Target name="honeywell.hqs-lt-s1", avg. queue time=0 s, Unavailable>,
+<Target name="honeywell.hqs-lt-s1-apival", avg. queue time=0 s, Available>,
+<Target name="honeywell.hqs-lt-s2", avg. queue time=313169 s, Available>,
+<Target name="honeywell.hqs-lt-s2-apival", avg. queue time=0 s, Available>,
+<Target name="honeywell.hqs-lt-s1-sim", avg. queue time=1062 s, Available>]
+```
+
+## Run a simple circuit
+
+Next, create a simple Cirq circuit to run. This circuit uses the square
+root of X gate, native to the IonQ hardware system.
+
+```python
+import cirq
+
+q0, q1 = cirq.LineQubit.range(2)
+circuit = cirq.Circuit(
+    cirq.X(q0)**0.5,             # Square root of X
+    cirq.CX(q0, q1),              # CNOT
+    cirq.measure(q0, q1, key='b') # Measure both qubits
+)
+circuit
+```
+
+```{=html}
+<pre style="overflow: auto; white-space: pre;">0: ───X^0.5───@───M(&#x27;b&#x27;)───
+              │   │
+1: ───────────X───M────────</pre>
+```
+
+You can now run the program via the Azure Quantum service and get the
+result. The following cell submits a job that runs the circuit with
+100 shots, waits until the job is complete, and returns the results.
+
+```python
+%%time
+result = service.run(program=circuit, repetitions=100)
+```
+
+```output
+CPU times: user 74.9 ms, sys: 0 ns, total: 74.9 ms
+Wall time: 12.5 s
+```
+
+This returns a `cirq.Result` object.
+
+```python
+print(result)
+```
+
+```output
+    b=1001100101100001000011011101000011010100010111100011001000100100010000001110010010101110110000011010, 1001100101100001000011011101000011010100010111100011001000100100010000001110010010101110110000011010
+```
+
+The previous job ran on the default simulator,
+`"ionq.simulator"`. To run on the QPU, provide `"ionq.qpu"` as the
+`target` argument:
+
+```python
+%%time
+result = service.run(
+    program=circuit,
+    repetitions=100,
+    target="ionq.qpu",
+    timeout_seconds=500 # Set timeout to 500 seconds to accommodate current queue time on QPU
+)
+```
+
+Again, this returns a `cirq.Result` object.
+
+```python
+print(result)
+```
+
+```output
+b=0101011011011111100001011101101011011110100010000000011110111000100100110110101100110001001111101111, 0101011011011111100001011101101011011110100010000000011110111000100100110110101100110001001111101111
+```
+
+## Asynchronous model using Jobs
+
+For long-running circuits, it can be useful to run them asynchronously.
+The `service.create_job` method returns a `Job` object, which you can use to
+get the results after the job has run successfully.
+
+```python
+%%time
+job = service.create_job(
+    program=circuit,
+    repetitions=100,
+    target="ionq.simulator"
+)
+```
+
+```output
+CPU times: user 20.3 ms, sys: 12 ms, total: 32.3 ms
+Wall time: 961 ms
+```
+
+To check on the job status, use `job.status()`:
+
+```python
+job.status()
+```
+
+```output
+'completed'
+```
+
+To wait for the job to complete and then get the results, use the blocking
+call `job.results()`:
+
+```python
+%%time
+result = job.results()
+print(result)
+```
+
+```output
+00: 0.5
+11: 0.5
+CPU times: user 276 µs, sys: 143 µs, total: 419 µs
+Wall time: 314 µs
+```
+
+Note that this does not return a `cirq.Result` object. Instead it
+returns a result object that is specific to the IonQ simulator and uses
+state probabilities instead of shot data.
+
+```python
+type(result)
+```
+
+```output
+cirq_ionq.results.SimulatorResult
+```
+
+To convert this to a `cirq.Result` object, use `result.to_cirq_result()`:
+
+```python
+result.to_cirq_result()
+```
+
+```output
+b=1110101111111110111000011101011111001100010000001011011101001111001111001101100111010000001100011100, 1110101111111110111000011101011111001100010000001011011101001111001111001101100111010000001100011100
+```
+
