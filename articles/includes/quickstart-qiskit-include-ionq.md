@@ -21,7 +21,7 @@ from azure.quantum.qiskit import AzureQuantumProvider
 ## Connect to the Azure Quantum service
 
 To connect to the Azure Quantum service, your program will need the resource ID and the
-location of your Azure Quantum workspace. Login to your Azure account,
+location of your Azure Quantum workspace. Log in to your Azure account,
 <https://portal.azure.com>, navigate to your Azure Quantum workspace, and
 copy the values from the header.
 

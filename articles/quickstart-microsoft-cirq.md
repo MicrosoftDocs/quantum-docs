@@ -1,6 +1,6 @@
 ---
 author: guenp
-description: Learn how to to submit Cirq quantum circuits to Azure Quantum.
+description: Learn how to submit Cirq quantum circuits to Azure Quantum.
 ms.author: guenp
 ms.date: 09/22/2021
 ms.service: azure-quantum
