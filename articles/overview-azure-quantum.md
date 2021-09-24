@@ -120,7 +120,7 @@ The following diagram shows the stages through which a quantum program goes from
 
 Once you’ve validated the correctness of your program and estimated that it is fit to run on the hardware you have access to, you are ready to submit your program to Azure Quantum. The following diagram shows the basic workflow after you submit your job:
 
-![azure quantum job flow](~/media/azure-quantum-flow-diagram-providers.png)
+![azure quantum job flow](~/media/azure-quantum-flow-diagram-providers.svg)
 
 Azure Quantum offers some of the most compelling and diverse quantum resources available today from industry leaders. Azure Quantum currently partners with the following providers to enable you to run your Q# quantum programs on real hardware, and the option to test your code on simulated quantum computers. 
 
