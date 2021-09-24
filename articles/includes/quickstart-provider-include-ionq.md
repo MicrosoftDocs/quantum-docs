@@ -78,19 +78,17 @@ service = Workspace(
     {'duration': 8240356, 'histogram': {'0': 0.5, '7': 0.5}}
     ```
 
-1. Visualize the results
+1. You can then visualize the results using [Matplotlib](https://matplotlib.org/stable/users/installing.html).
 
-You can then visualize the results using [Matplotlib](https://matplotlib.org/stable/users/installing.html).
-
-```python
-%matplotlib inline
-import pylab as pl
-pl.rcParams["font.size"] = 16
-hist = {format(n, "03b"): 0 for n in range(8)}
-hist.update({format(int(k), "03b"): v for k, v in results["histogram"].items()})
-pl.bar(hist.keys(), hist.values())
-pl.ylabel("Probabilities")
-```
-
+    ```python
+    %matplotlib inline
+    import pylab as pl
+    pl.rcParams["font.size"] = 16
+    hist = {format(n, "03b"): 0 for n in range(8)}
+    hist.update({format(int(k), "03b"): v for k, v in results["histogram"].items()})
+    pl.bar(hist.keys(), hist.values())
+    pl.ylabel("Probabilities")
+    ```
+    
 ![IonQ job output](../media/ionq-results.png)
 
