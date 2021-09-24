@@ -125,7 +125,7 @@ print(result)
 
 ## Run on IonQ QPU
 
-The previous job ran on the default simulator, `"ionq.simulator"`, however, you can also run it on IonQ's hardware processor (a [Quantum Processor Unit](xref:microsoft.quantum.target-profiles#quantum-processing-units-qpu-different-profiles) (QPU)). To run on the IonQ QPU, provide `"ionq.qpu"` as the
+The previous job ran on the default simulator, `"ionq.simulator"`. However, you can also run it on IonQ's hardware processor (a [Quantum Processor Unit](xref:microsoft.quantum.target-profiles#quantum-processing-units-qpu-different-profiles) (QPU)). To run on the IonQ QPU, provide `"ionq.qpu"` as the
 `target` argument:
 
 ```python
