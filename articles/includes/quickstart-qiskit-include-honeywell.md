@@ -104,7 +104,8 @@ Result(backend_name='honeywell.hqs-lt-s1-apival', backend_version='1', qobj_id='
 
 ## Run on a Quantum Processing Unit (QPU) 
 
-> [!NOTE] Depending on queue times, this may take a while to run.
+> [!NOTE] 
+> Depending on queue times, this may take a while to run.
 
 ```python
 # Get Honeywell's QPU backend:

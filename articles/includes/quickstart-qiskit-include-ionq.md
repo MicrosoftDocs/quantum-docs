@@ -164,7 +164,8 @@ qpu_backend = provider.get_backend("ionq.qpu")
 
 Submit the circuit to run on Azure Quantum. 
 
-> [!NOTE] Depending on queue times, this may take a while to run.
+> [!NOTE] 
+> Depending on queue times, this may take a while to run.
 
 As before, use `job_monitor` to keep track of the job
 status, and `plot_histogram` to plot the results.
