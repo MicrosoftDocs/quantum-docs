@@ -36,7 +36,9 @@ Azure Quantum is for individuals and teams who want to take a step forward and b
 
 ### Industry solutions
 
-For businesses, incorporating quantum type solutions can help to be more competitive and be at the forefront of innovation. To build industry solutions, Azure Quantum is the best path to apply the latest optimization technologies, as you seek long term cost-saving solutions. Azure Quantum offers the advantages of the most diverse quantum resources available today with applications for a wide range of industries. To learn more about how real-life problems can be solved using Azure Quantum and quantum applications, see the following [case studies](https://azure.microsoft.com/resources/whitepapers/search/?term=quantum).
+For businesses, incorporating quantum type solutions can help to be more competitive and be at the forefront of innovation. To build industry solutions, Azure Quantum is the best path to apply the latest optimization technologies, as you seek long term cost-saving solutions. Azure Quantum offers the advantages of the most diverse quantum resources available today with applications for a wide range of industries. 
+
+To learn more about how real-life problems can be solved using Azure Quantum and quantum applications, see the following [case studies](https://azure.microsoft.com/resources/whitepapers/search/?term=quantum).
 
 ### Developers
 
@@ -68,9 +70,9 @@ With Azure Quantum, researchers and businesses can use quantum computing to mode
 
 Optimization is the process of finding the best solution to a problem given its desired outcome and constraints. Complex optimization problems exist across every industry: vehicle routing, supply chain management, scheduling, portfolio optimization, power grid management, and many others. Solving these real-world problems results in high-value benefits, such as reduced costs, accelerated processes, or reduced risks. 
 
-You can already implement optimization problems using Azure Quantum solvers that run on classical hardware in Azure today faster than many other classical optimization techniques. In Azure Quantum, optimization algorithms are available to run on various classical computing silicon solutions, such as CPU, FPGA, GPU, or custom silicon. 
+In Azure Quantum, you can already implement optimization problems to run on various classical computing silicon solutions, such as CPU, FPGA, GPU, or custom silicon, faster than many other classical optimization techniques. 
 
-On the other hand, simulating the quantum effects on classical computers has led to the development of new types of quantum solutions. **Quantum-Inspired Optimization** algorithms exploit some of the advantages of quantum computing on classical hardware, providing a speedup over traditional approaches. By running quantum-inspired optimization algorithms on classical computers, you can find solutions that were previously impossible. 
+On the other hand, simulating the quantum effects on classical computers has led to the development of new types of quantum solutions. **Quantum-Inspired Optimization** algorithms exploit some of the advantages of quantum computing on classical hardware, providing a speedup over traditional approaches.
 
 Azure Quantum gives you access to a broad set of state-of-the-art quantum-inspired optimization algorithms developed by Microsoft and its partners. 
 
@@ -84,7 +86,7 @@ The QDK offers a set of tools that will assist you in the quantum software devel
 
 - [Ready-to-use libraries](xref:microsoft.quantum.libraries.overview) to help you keep your code high-level, including both “standard” libraries that implement patterns common for a lot of quantum algorithms, and domain-specific libraries, such as chemistry and machine learning. 
 - [Quantum computing simulators](xref:microsoft.quantum.machines.overview), so that you can run a small instance of your program and see what it does without actual hardware access. 
-- Preview simulators that allow for simulating the behavior of Q# programs under the influence of noise and the stabilizer representation. 
+- [Preview simulators](xref:microsoft.quantum.machines.overview.noise-simulator) that allow for simulating the behavior of Q# programs under the influence of noise and the stabilizer representation. 
 - A [resource estimator](xref:microsoft.quantum.machines.overview.resources-estimator) that provides real world costs to run your solutions, for example, how many qubits you need and how long your program will take.
 
 ### Tools for developers
@@ -101,13 +103,13 @@ The following diagram shows the stages through which a quantum program goes from
 
 ![qdk workflow](~/media/quantum-development-kit-flow-diagram.svg)
 
-1. **Write your quantum code.** You can create you Q# program using the QDK extensions for Visual Studio, Visual Studio Code or Jupyter Notebooks.
+1. **Write your quantum code.** You can [create your Q# program](xref:microsoft.quantum.install-qdk.overview.standalone) using the QDK extensions for Visual Studio, Visual Studio Code or Jupyter Notebooks.
 
-2. **Use libraries to keep your code high level.** The quantum libraries will help you keep your code high-level, doing a lot of the heavy lifting in implementation for you so that you can focus on the logic of your algorithms.
+2. **Use libraries to keep your code high level.** The [quantum libraries](xref:microsoft.quantum.libraries.overview) will help you keep your code high-level, doing a lot of the heavy lifting in implementation for you so that you can focus on the logic of your algorithms.
 
 3. **Integrate with classical software.** The Quantum Development Kit allows you to [integrate Q# programs with Python and .NET](xref:microsoft.quantum.user-guide-qdk.overview.host-programs), enabling a quantum software developer to take advantage of a lot of the advances made in classical computing in the past 70 years.
 
-4. **Run your quantum code in simulation.**  Once you’ve written your program, you’ll want to use simulators – classical programs that simulate the behavior of a quantum system, so that you can run a small instance of your program and see what it does without actual hardware access.
+4. **Run your quantum code in simulation.**  Once you’ve written your program, you’ll want to use [quantum simulators](xref:microsoft.quantum.machines.overview) – classical programs that simulate the behavior of a quantum system, so that you can run a small instance of your program and see what it does without actual hardware access.
 
 5. **Estimate resources.**  Before running on quantum hardware, you’ll need to figure out whether your program can run on existing hardware. You can use [QDK resource estimators](xref:microsoft.quantum.machines.overview.resources-estimator) to tell you how many qubits you need and how long your program will take.
 
