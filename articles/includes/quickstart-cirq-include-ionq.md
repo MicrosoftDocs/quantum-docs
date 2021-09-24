@@ -46,7 +46,7 @@ service.targets()
 ```output
 [<Target name="ionq.qpu", avg. queue time=345 s, Available>,
 <Target name="ionq.simulator", avg. queue time=4 s, Available>,
-<Target name="honeywell.hqs-lt-s1", avg. queue time=0 s, Unavailable>,
+<Target name="honeywell.hqs-lt-s1", avg. queue time=0 s, Available>,
 <Target name="honeywell.hqs-lt-s1-apival", avg. queue time=0 s, Available>,
 <Target name="honeywell.hqs-lt-s2", avg. queue time=313169 s, Available>,
 <Target name="honeywell.hqs-lt-s2-apival", avg. queue time=0 s, Available>,
@@ -70,10 +70,10 @@ circuit = cirq.Circuit(
 circuit
 ```
 
-```{=html}
-<pre style="overflow: auto; white-space: pre;">0: ───X^0.5───@───M(&#x27;b&#x27;)───
+```output
+0: ───X^0.5───@───M────────
               │   │
-1: ───────────X───M────────</pre>
+1: ───────────X───M────────
 ```
 
 You can now run the program via the Azure Quantum service and get the
@@ -81,13 +81,7 @@ result. The following cell submits a job that runs the circuit with
 100 shots, waits until the job is complete, and returns the results.
 
 ```python
-%%time
 result = service.run(program=circuit, repetitions=100)
-```
-
-```output
-CPU times: user 74.9 ms, sys: 0 ns, total: 74.9 ms
-Wall time: 12.5 s
 ```
 
 This returns a `cirq.Result` object.
@@ -105,12 +99,11 @@ The previous job ran on the default simulator,
 `target` argument:
 
 ```python
-%%time
 result = service.run(
     program=circuit,
     repetitions=100,
     target="ionq.qpu",
-    timeout_seconds=500 # Set timeout to 500 seconds to accommodate current queue time on QPU
+    timeout_seconds=500 # Set timeout to accommodate queue time on QPU
 )
 ```
 
@@ -131,17 +124,11 @@ The `service.create_job` method returns a `Job` object, which you can use to
 get the results after the job has run successfully.
 
 ```python
-%%time
 job = service.create_job(
     program=circuit,
     repetitions=100,
     target="ionq.simulator"
 )
-```
-
-```output
-CPU times: user 20.3 ms, sys: 12 ms, total: 32.3 ms
-Wall time: 961 ms
 ```
 
 To check on the job status, use `job.status()`:
@@ -158,7 +145,6 @@ To wait for the job to complete and then get the results, use the blocking
 call `job.results()`:
 
 ```python
-%%time
 result = job.results()
 print(result)
 ```
@@ -166,8 +152,6 @@ print(result)
 ```output
 00: 0.5
 11: 0.5
-CPU times: user 276 µs, sys: 143 µs, total: 419 µs
-Wall time: 314 µs
 ```
 
 Note that this does not return a `cirq.Result` object. Instead it
