@@ -9,7 +9,7 @@ ms.topic: include
 
 ## Load the required imports
 
-First, run the following cell for the required imports:
+First, run the following cell to load the required imports:
 
 ```python
 from azure.quantum.cirq import AzureQuantumService
@@ -22,8 +22,10 @@ location of your Azure Quantum workspace. Log in to your Azure account,
 <https://portal.azure.com>, navigate to your Azure Quantum workspace, and
 copy the values from the header.
 
-Paste the values into the following `Workspace` constructor to
-create a `workspace` object that connects to your Azure Quantum workspace.
+![How to retrieve the resource ID and location from an Azure Quantum workspace](../media/azure-quantum-resource-id.png)
+
+Paste the values into the following `AzureQuantumService` constructor to
+create a `service` object that connects to your Azure Quantum workspace.
 Optionally, specify a default target:
 
 ```python
@@ -53,7 +55,10 @@ service.targets()
 <Target name="honeywell.hqs-lt-s1-sim", avg. queue time=1062 s, Available>]
 ```
 
-## Run a simple circuit
+## Run a simple circuit on the API validator
+
+> [!NOTE]
+> The Honeywell API validator backend will always return 0 on measurement.
 
 Next, create a simple Cirq circuit to run.
 
@@ -83,8 +88,7 @@ result. The following cell submits a job that runs the circuit with
 result = service.run(program=circuit, repetitions=100)
 ```
 
-This returns a `cirq.Result` object. Note that the API
-validator only returns zeros.
+This returns a `cirq.Result` object.
 
 ```python
 print(result)

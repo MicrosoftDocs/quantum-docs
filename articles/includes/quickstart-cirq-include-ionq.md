@@ -9,7 +9,7 @@ ms.topic: include
 
 ## Load the required imports
 
-First, run the following cell for the required imports:
+First, run the following cell to load the required imports:
 
 ```python
 from azure.quantum.cirq import AzureQuantumService
@@ -22,8 +22,10 @@ location of your Azure Quantum workspace. Log in to your Azure account,
 <https://portal.azure.com>, navigate to your Azure Quantum workspace, and
 copy the values from the header.
 
-Paste the values into the following `Workspace` constructor to
-create a `workspace` object that connects to your Azure Quantum workspace.
+![How to retrieve the resource ID and location from an Azure Quantum workspace](../media/azure-quantum-resource-id.png)
+
+Paste the values into the following `AzureQuantumService` constructor to
+create a `service` object that connects to your Azure Quantum workspace.
 Optionally, specify a default target:
 
 ```python
@@ -175,4 +177,3 @@ result.to_cirq_result()
 ```output
 b=1110101111111110111000011101011111001100010000001011011101001111001111001101100111010000001100011100, 1110101111111110111000011101011111001100010000001011011101001111001111001101100111010000001100011100
 ```
-

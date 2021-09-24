@@ -9,7 +9,7 @@ ms.topic: include
 
 ## Load the required imports
 
-First, run the following cell for the required imports:
+First, run the following cell to load the required imports:
 
 ```python
 from qiskit import QuantumCircuit
@@ -25,8 +25,10 @@ location of your Azure Quantum workspace. Log in to your Azure account,
 <https://portal.azure.com>, navigate to your Azure Quantum workspace, and
 copy the values from the header.
 
-Paste the values into the following `Workspace` constructor to
-create a `workspace` object that connects to your Azure Quantum workspace.
+![How to retrieve the resource ID and location from an Azure Quantum workspace](../media/azure-quantum-resource-id.png)
+
+Paste the values into the following `AzureQuantumProvider` constructor to
+create a `provider` object that connects to your Azure Quantum workspace.
 
 ```python
 provider = AzureQuantumProvider(
@@ -66,7 +68,7 @@ circuit.draw()
 ```
 
 ```html
-<pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">     ┌───┐          ┌─┐      
+     ┌───┐          ┌─┐      
 q_0: ┤ H ├──■───────┤M├──────
      └───┘┌─┴─┐     └╥┘┌─┐   
 q_1: ─────┤ X ├──■───╫─┤M├───
@@ -74,7 +76,7 @@ q_1: ─────┤ X ├──■───╫─┤M├───
 q_2: ──────────┤ X ├─╫──╫─┤M├
                └───┘ ║  ║ └╥┘
 c: 3/════════════════╩══╩══╩═
-                     0  1  2 </pre>
+                     0  1  2 
 ```
 
 To get a result back quickly, use `provider.get_backend` to create a
@@ -95,7 +97,7 @@ print("Job id", job_id)
 ```
 
 ```output
-Job id 6255e7ce-1ca0-11ec-9d4c-00155dd132ce
+Job id 00000000-0000-0000-0000-000000000000
 ```
 
 To monitor job progress, you can use the Qiskit `job_monitor` imported
@@ -131,7 +133,7 @@ print(result)
 ```
 
 ```output
-Result(backend_name='ionq.simulator', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='6255e7ce-1ca0-11ec-9d4c-00155dd132ce', success=True, results=[ExperimentResult(shots=100, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 50, '111': 50}, probabilities={'000': 0.5, '111': 0.5}), header=QobjExperimentHeader(meas_map='[0, 1, 2]', name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits='3', qiskit='True'))])
+Result(backend_name='ionq.simulator', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=100, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 50, '111': 50}, probabilities={'000': 0.5, '111': 0.5}), header=QobjExperimentHeader(meas_map='[0, 1, 2]', name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits='3', qiskit='True'))])
 ```
 
 Because this is an object native to the Qiskit package, you can use
@@ -149,8 +151,6 @@ plot_histogram(counts)
 ```output
 {'000': 50, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 50}
 ```
-
-![DESCRIPTION](0fd9147b17ddae64a3c6ead2a3dc76cd0e9a7867.png)
 
 ## Run on IonQ QPU
 
@@ -189,11 +189,8 @@ plot_histogram(counts)
 ```
 
 ```output
-Job id 614da722-fa72-11eb-9e14-00155df1914a
+Job id 00000000-0000-0000-0000-000000000000
 Job Status: job has successfully run
-Result(backend_name='ionq.simulator', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='614da722-fa72-11eb-9e14-00155df1914a', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'0': 505, '1': 6, '2': 1, '3': 1, '4': 1, '5': 10, '6': 11, '7': 488}, probabilities={'0': 0.4932, '1': 0.0059, '2': 0.001, '3': 0.001, '4': 0.001, '5': 0.0098, '6': 0.0117, '7': 0.4766}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits='3', qiskit='True'))])
+Result(backend_name='ionq.simulator', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'0': 505, '1': 6, '2': 1, '3': 1, '4': 1, '5': 10, '6': 11, '7': 488}, probabilities={'0': 0.4932, '1': 0.0059, '2': 0.001, '3': 0.001, '4': 0.001, '5': 0.0098, '6': 0.0117, '7': 0.4766}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits='3', qiskit='True'))])
 {'000': 505, '001': 6, '010': 1, '011': 1, '100': 1, '101': 10, '110': 11, '111': 488}
 ```
-
-![DESCRIPTION2](43ac66a2f89cbb6c1983455be0da3d258b2708f4.png)
-

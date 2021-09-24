@@ -9,7 +9,7 @@ ms.topic: include
 
 ## Load the required imports
 
-First, run the following cell for the required imports:
+First, run the following cell to load the required imports:
 
 ```python
 from azure.quantum import Workspace
@@ -22,18 +22,22 @@ location of your Azure Quantum workspace. Log in to your Azure account,
 <https://portal.azure.com>, navigate to your Azure Quantum workspace, and
 copy the values from the header.
 
+![How to retrieve the resource ID and location from an Azure Quantum workspace](../media/azure-quantum-resource-id.png)
+
 Paste the values into the following `Workspace` constructor to
 create a `workspace` object that connects to your Azure Quantum workspace.
 
 ```python
-from azure.quantum import Workspace
 workspace = Workspace(
     resource_id="",
     location=""
 )
 ```
 
-## Submit a quantum circuit to Honeywell
+## Submit a quantum circuit to the Honeywell API validator
+
+> [!NOTE]
+> The Honeywell API validator backend will always return 0 on measurement.
 
 1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For example, the following example creates a Teleportation circuit:
 
@@ -65,7 +69,7 @@ workspace = Workspace(
     job = target.submit(circuit, num_shots=500)
     ```
 
-1. Wait until the job is complete and then fetch the results. Note that the API validator only returns zeroes for qubit read-out results.
+1. Wait until the job is complete and then fetch the results.
 
     ```python
     results = job.get_results()
