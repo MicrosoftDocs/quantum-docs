@@ -12,7 +12,7 @@ zone_pivot_groups: quantum-computing-platforms
 uid: microsoft.quantum.quickstarts.computing.provider
 --- 
 
-# Quickstart: Submit a provider-specific formatted circuit to IonQ and Honeywell
+# Quickstart: Submit a circuit with a provider-specific format to IonQ and Honeywell
 
 Learn how to use the `azure-quantum` Python package to submit quantum circuits in the provider-specific format ([OpenQASM 2.0](https://github.com/Qiskit/openqasm/tree/OpenQASM2.x) or [IonQ JSON](https://docs.ionq.com/#tag/quantum_programs)) to an IonQ or Honeywell quantum computing target via the Azure Quantum service. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
@@ -20,40 +20,6 @@ Learn how to use the `azure-quantum` Python package to submit quantum circuits i
 
 - To work in Azure Quantum, you need an Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/).
 - Create an Azure Quantum workspace and enable your preferred provider, Honeywell or IonQ (or both), for this scenario. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-
-## Install the `azure-quantum` Python package
-
-The `azure-quantum` Python package contains the necessary functionality for connecting to an Azure Quantum workspace and submitting quantum circuits to the quantum computing targets such as [IonQ](xref:microsoft.quantum.providers.ionq) and [Honeywell](xref:microsoft.quantum.providers.honeywell).
-
-1. Install [Python](https://www.python.org/downloads/) 3.6 or later in case you haven't already.
-1. Install [PIP](https://pip.pypa.io/en/stable/) and ensure you have **version 19.2 or higher**.
-    > Optionally, if you are using [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads), create a new environment by downloading the [environment.yml](https://github.com/microsoft/qdk-python/blob/main/azure-quantum/environment.yml) file and running the following:
-
-    >```shell
-    >conda env create -f environment.yml
-    >```
-
-    > This creates a new conda environment that you can activate with the following:
-
-    >```shell
-    >conda activate azurequantum
-    >```
-
-1. Install the `azure-quantum` package using pip, adding the necessary dependency for your desired code source:
-
-    ```shell
-    // for quantum circuits in provider-specific format
-    pip install azure-quantum
-    // for Cirq
-    pip install azure-quantum[cirq]
-    // for Qiskit
-    pip install azure-quantum[qiskit]
-    // for Cirq and Qiskit
-    pip install azure-quantum[cirq,qiskit]
-    ```
-
-1. Start your favorite code editor or interactive Python tool, such as [VS Code](https://code.visualstudio.com/docs/python/jupyter-support-py), [Jupyter](https://jupyter.readthedocs.io/en/latest/content-quickstart.html) or [iPython](https://ipython.readthedocs.io/en/stable/interactive/tutorial.html).
-
 
 ::: zone pivot="platform-ionq"
 
