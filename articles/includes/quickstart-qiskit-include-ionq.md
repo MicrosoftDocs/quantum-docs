@@ -31,12 +31,6 @@ The `azure-quantum` Python package contains the necessary functionality for conn
     pip install azure-quantum[qiskit]
     ```
 
-    If you plan to work with both Qiskit and Cirq circuits, you can install both dependencies:
-
-    ```shell
-    pip install azure-quantum[qiskit, cirq]
-    ```
-
 1. Start your favorite code editor or interactive Python tool, such as [VS Code](https://code.visualstudio.com/docs/python/jupyter-support-py), [Jupyter](https://jupyter.readthedocs.io/en/latest/content-quickstart.html) or [iPython](https://ipython.readthedocs.io/en/stable/interactive/tutorial.html).
 
 ## Load the required imports
@@ -186,9 +180,8 @@ plot_histogram(counts)
 
 ## Run on IonQ QPU
 
-To connect to real hardware (a Quantum Processing Unit, or QPU), simply
-provide the name of the target `"ionq.qpu"` to the
-`provider.get_backend` method:
+To connect to real hardware (a [Quantum Processor Unit](xref:microsoft.quantum.target-profiles#quantum-processing-units-qpu-different-profiles) (QPU)), simply
+provide the name of the target `"ionq.qpu"` to the `provider.get_backend` method:
 
 ```python
 qpu_backend = provider.get_backend("ionq.qpu")
@@ -197,7 +190,7 @@ qpu_backend = provider.get_backend("ionq.qpu")
 Submit the circuit to run on Azure Quantum. 
 
 > [!NOTE] 
-> Depending on queue times, this may take a while to run.
+> The time required to run a circuit on the QPU may vary depending on current queue times.
 
 As before, use `job_monitor` to keep track of the job
 status, and `plot_histogram` to plot the results.

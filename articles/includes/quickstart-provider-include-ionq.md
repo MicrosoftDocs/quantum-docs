@@ -117,6 +117,6 @@ workspace = Workspace(
     pl.bar(hist.keys(), hist.values())
     pl.ylabel("Probabilities")
     ```
-    
+
 ![IonQ job output](../media/ionq-results.png)
 

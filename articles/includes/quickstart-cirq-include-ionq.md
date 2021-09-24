@@ -31,12 +31,6 @@ The `azure-quantum` Python package contains the necessary functionality for conn
     pip install azure-quantum[cirq]
     ```
 
-    If you plan to work with both Cirq and Qiskit circuits, you can install both dependencies:
-
-    ```shell
-    pip install azure-quantum[cirq,qiskit]
-    ```
-
 1. Start your favorite code editor or interactive Python tool, such as [VS Code](https://code.visualstudio.com/docs/python/jupyter-support-py), [Jupyter](https://jupyter.readthedocs.io/en/latest/content-quickstart.html) or [iPython](https://ipython.readthedocs.io/en/stable/interactive/tutorial.html).
 
 
@@ -59,7 +53,7 @@ copy the values from the header.
 
 Paste the values into the following `AzureQuantumService` constructor to
 create a `service` object that connects to your Azure Quantum workspace.
-Optionally, specify a default target:
+Optionally, you can specify a default target, in this case the IonQ simulator:
 
 ```python
 service = AzureQuantumService(
@@ -112,7 +106,7 @@ circuit
 ```
 
 You can now run the program via the Azure Quantum service and get the
-result. The following cell submits a job that runs the circuit with
+result. The following cell submits a job (to the default IonQ simulator) that runs the circuit with
 100 shots, waits until the job is complete, and returns the results.
 
 ```python
@@ -129,8 +123,9 @@ print(result)
     b=1001100101100001000011011101000011010100010111100011001000100100010000001110010010101110110000011010, 1001100101100001000011011101000011010100010111100011001000100100010000001110010010101110110000011010
 ```
 
-The previous job ran on the default simulator,
-`"ionq.simulator"`. To run on the QPU, provide `"ionq.qpu"` as the
+## Run on IonQ QPU
+
+The previous job ran on the default simulator, `"ionq.simulator"`, however, you can also run it on IonQ's hardware processor (a [Quantum Processor Unit](xref:microsoft.quantum.target-profiles#quantum-processing-units-qpu-different-profiles) (QPU)). To run on the IonQ QPU, provide `"ionq.qpu"` as the
 `target` argument:
 
 ```python

@@ -1,18 +1,18 @@
 ---
 author: guenp
-description: Learn how to submit Qiskit quantum circuits to Azure Quantum.
+description: Learn how to submit Qiskit quantum circuits to the Azure Quantum service.
 ms.author: guenp
 ms.date: 09/22/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Python', '$$v']
-title: Submit Qiskit quantum circuits to IonQ and Honeywell
+title: Submit Qiskit quantum circuits to Azure Quantum
 zone_pivot_groups: quantum-computing-platforms
 uid: microsoft.quantum.quickstarts.computing.qiskit
 --- 
 
-# Quickstart: Submit a circuit with Qiskit to IonQ and Honeywell
+# Quickstart: Submit a circuit with Qiskit to Azure Quantum
 
 Learn how to use the `azure-quantum` Python package to submit Qiskit quantum circuits to an IonQ or Honeywell quantum computing target via the Azure Quantum service. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 

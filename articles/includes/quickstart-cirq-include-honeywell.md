@@ -31,12 +31,6 @@ The `azure-quantum` Python package contains the necessary functionality for conn
     pip install azure-quantum[cirq]
     ```
 
-    If you plan to work with both Cirq and Qiskit circuits, you can install both dependencies:
-
-    ```shell
-    pip install azure-quantum[cirq,qiskit]
-    ```
-
 1. Start your favorite code editor or interactive Python tool, such as [VS Code](https://code.visualstudio.com/docs/python/jupyter-support-py), [Jupyter](https://jupyter.readthedocs.io/en/latest/content-quickstart.html) or [iPython](https://ipython.readthedocs.io/en/stable/interactive/tutorial.html).
 
 ## Load the required imports
@@ -61,10 +55,11 @@ create a `service` object that connects to your Azure Quantum workspace.
 Optionally, specify a default target:
 
 ```python
+from azure.quantum.cirq import AzureQuantumService
 service = AzureQuantumService(
     resource_id="",
     location="",
-    default_target="ionq.simulator"
+    default_target="honeywell.hqs-lt-s1-apival"
 )
 ```
 

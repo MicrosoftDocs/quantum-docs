@@ -1,18 +1,18 @@
 ---
 author: guenp
-description: Learn how to to submit provider  quantum circuits to Azure Quantum.
+description: Learn how to to submit provider-formatted quantum circuits with OpenQASM and IonQ JSON to the Azure Quantum service.
 ms.author: guenp
 ms.date: 09/22/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Python', '$$v']
-title: Submit provider formatted quantum circuits to IonQ and Honeywell
+title: Submit provider-formatted quantum circuits to Azure Quantum
 zone_pivot_groups: quantum-computing-platforms
 uid: microsoft.quantum.quickstarts.computing.provider
 --- 
 
-# Quickstart: Submit a circuit with a provider-specific format to IonQ and Honeywell
+# Quickstart: Submit a circuit with a provider-specific format to Azure Quantum
 
 Learn how to use the `azure-quantum` Python package to submit provider-specific formatted quantum circuits, (for example, [OpenQASM 2.0](https://github.com/Qiskit/openqasm/tree/OpenQASM2.x) or [IonQ JSON](https://docs.ionq.com/#tag/quantum_programs)), to an IonQ or Honeywell quantum computing target via the Azure Quantum service. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
