@@ -134,8 +134,9 @@ Job id 00000000-0000-0000-0000-000000000000
 Job Status: job has successfully run
 Result(backend_name='honeywell.hqs-lt-s1-apival', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 1024}, probabilities={'000': 1.0}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
 {'000': 1024, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
-![Qiskit circuit result on Honeywell API validator](../media/azure-quantum-qiskit-hw-result-1.png)
 ```
+
+![Qiskit circuit result on Honeywell API validator](../media/azure-quantum-qiskit-hw-result-1.png)
 
 
 ## Run on a Honeywell QPU 
