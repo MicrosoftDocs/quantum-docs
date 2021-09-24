@@ -64,7 +64,7 @@ workspace = Workspace(
 ## Submit a quantum circuit to the Honeywell API validator
 
 > [!NOTE]
-> The Honeywell API validator target will always return 0 on measurement.
+> The [Honeywell API validator](xref:microsoft.quantum.providers.honeywell#api-validator) target will always return 0 on measurement.
 
 1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For example, the following example creates a Teleportation circuit:
 

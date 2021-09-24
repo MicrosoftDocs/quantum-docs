@@ -85,7 +85,7 @@ print([backend.name() for backend in provider.backends()])
 ## Run on the API validator 
 
 > [!NOTE]
-> The Honeywell API validator backend will always return 0 on measurement.
+> The [Honeywell API validator](xref:microsoft.quantum.providers.honeywell#api-validator) backend will always return 0 on measurement.
 
 ```python
 # Get Honeywell's API validator backend:
