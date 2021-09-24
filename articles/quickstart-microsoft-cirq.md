@@ -42,7 +42,7 @@ The `azure-quantum` Python package contains the necessary functionality for conn
 1. Install the `azure-quantum` package using pip, adding the necessary dependency for your desired code source:
 
     ```shell
-    // for quantum circuits in provider format
+    // for quantum circuits in provider-specific format
     pip install azure-quantum
     // for Cirq
     pip install azure-quantum[cirq]

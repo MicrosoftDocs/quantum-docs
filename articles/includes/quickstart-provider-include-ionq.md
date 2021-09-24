@@ -15,7 +15,7 @@ First, run the following cell for the required imports:
 from azure.quantum import Workspace
 ```
 
-## Connecting to the Azure Quantum service
+## Connect to the Azure Quantum service
 
 To connect to the Azure Quantum service, your program will need the resource ID and the
 location of your Azure Quantum workspace. Login to your Azure account,

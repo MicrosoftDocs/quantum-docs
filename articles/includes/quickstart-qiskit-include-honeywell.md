@@ -43,7 +43,10 @@ print([backend.name() for backend in provider.backends()])
     ['ionq.simulator', 'ionq.qpu', 'honeywell.hqs-lt-s1', 'honeywell.hqs-lt-s1-apival', 'honeywell.hqs-lt-s1-sim']
 ```
 
-## Run on API validator (note that this backend will always return 0 on measurement)
+## Run on the API validator 
+
+> [!NOTE]
+> The Honeywell API validator backend will always return 0 on measurement.
 
 ```python
 # Get Honeywell's API validator backend:
@@ -63,7 +66,7 @@ circuit.measure([0,1,2], [0, 1, 2])
 circuit.draw()
 ```
 
-```{=html}
+```html
 <pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">     ┌───┐          ┌─┐      
 q_0: ┤ H ├──■───────┤M├──────
      └───┘┌─┴─┐     └╥┘┌─┐   
