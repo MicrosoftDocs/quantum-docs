@@ -181,5 +181,5 @@ Result(backend_name='honeywell.hqs-lt-s1-apival', backend_version='1', qobj_id='
 {'000': 500, '001': 1, '010': 5, '011': 16, '100': 17, '101': 6, '110': 8, '111': 471}
 ```
 
-![Qiskit circuit result on Honeywell API validator](../media/azure-quantum-qiskit-hw-result-2.png)
+![Qiskit circuit result on Honeywell QPU](../media/azure-quantum-qiskit-hw-result-2.png)
 
