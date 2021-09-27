@@ -31,10 +31,8 @@ As an example, this article follows a sample shipping company that has a difficu
 
 ## Next steps
 
-Now that you know how to submit jobs to Azure quantum, you can try to run the
-different available [samples](https://github.com/microsoft/qio-samples/tree/main/samples) or try to submit your own projects.
+Now that you know how to submit jobs to Azure quantum, you can check the following articles:
 
-You can also check the following articles:
 - [Solver overview](xref:microsoft.quantum.reference.qio-target-list)
 - [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)
 - [Interpreting solver results](xref:microsoft.quantum.optimization.understand-solver-results)
