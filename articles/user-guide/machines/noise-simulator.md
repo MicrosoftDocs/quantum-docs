@@ -46,7 +46,7 @@ After calling `enable_noisy_simulation()`, Q# operations imported into Python wi
 
 By default, `.simulate_noise()` method will assume an ideal error model (that is, no noise). To configure a particular error model, you can use the `qsharp.experimental.get_noise_model` and `qsharp.experimental.set_noise_model` functions to get and set the current noise model for the preview simulators. Each error model is represented as a dictionary from intrinsic operation names to objects representing the errors in those intrinsic operations.
 
-3. In the same folder as the python host program, create the following Q# program called `NoisySimulation.qs`:
+3. In the same folder as the Python host program, create the following Q# program in a file called `NoisySimulation.qs`:
 
 ```qsharp
 namespace NoisySimulation {
