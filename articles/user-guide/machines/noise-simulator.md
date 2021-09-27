@@ -30,7 +30,7 @@ The preview simulators are **not yet** supported by:
 
 You need to create a Python host program that invokes the quantum program, and can further process returned results. For additional details, see [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
 
-1. You start by importing the [QuTiP library]( https://qutip.org/), a popular Python library for manipulating states and processes of closed and open quantum systems.
+1. You start by importing the [QuTiP library](https://qutip.org/), a popular Python library for manipulating states and processes of closed and open quantum systems.
 
 ```python
 import qutip as qt
