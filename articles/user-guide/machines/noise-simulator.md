@@ -18,9 +18,9 @@ Quantum systems that are very well isolated from their environments such that no
 As a preview feature, the Quantum Development Kit provides a preview simulator for simulation of open quantum systems. This feature allows for simulating the behavior of Q# programs under the influence of noise, and also for using the *stabilizer representation* (also known as CHP simulation) with programs that only call Clifford operations.
 
 Currently, the preview simulators are supported for use with:
-- C# host programs
 - Python host programs
 - Q# standalone notebooks
+- C# host programs
 
 The preview simulators are **not yet** supported by:
 - Q# standalone command-line programs
