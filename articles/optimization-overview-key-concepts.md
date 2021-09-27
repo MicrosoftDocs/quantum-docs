@@ -16,41 +16,59 @@ To understand optimization problems, you first need to learn some basic terms an
 
 ## Cost function
 
-A *cost function* is a mathematical description of a problem that, when evaluated, tells you the value of that solution. Typically in optimization problems, we are looking to find the lowest value solution to a problem. In other words, we are trying to minimize the cost.
+The *cost function* is the way that the cost varies as a function of the system configuration. It is a mathematical function to be minimized. 
 
-## Search space
+## Search space 
 
-The *search space* contains all the feasible solutions to an optimization problem. Each point in this search space is a valid solution to the problem but it may not necessarily be the lowest point, which corresponds to the lowest cost solution.
+The *search space* contains all the feasible solutions to an optimization problem. Each point in this search space is a valid solution to the problem. The lowest point, which corresponds to the lowest cost solution, is called the *global minimum*.
 
-## Optimization landscape
+## Optimization landscapes
 
-Together, the search space and the cost function are often referred to as an *optimization landscape*. In the case of a problem that involves two continuous variables, the analogy to a landscape is quite direct.
+Together, the search space and the cost function are often referred to as an optimization landscape. In the case of a problem that involves two continuous variables, the analogy to a landscape is quite direct.
 
 Let's explore a few different optimization landscapes and see which are good candidates for Azure Quantum optimization.
 
-### A smooth, convex landscape
+### Smooth landscape
 
-Consider the following plot of a cost function that looks like a single smooth valley:
+Consider the following plot of a cost function of two continuous variables, which looks like a single, smooth valley:
 
-![An optimization landscape showing a smooth valley](./media/plot_simple.png)
+![Smooth landspace](./media/smooth-landscape.png)
 
-This kind of problem is easily solved with techniques such as gradient descent, where you begin from an initial starting point and greedily move to any solution with a lower cost. After a few moves, the solution converges to the *global minimum*. The global minimum is the lowest point in the optimization landscape. Azure Quantum optimization solvers offer no advantages over other techniques with these straightforward problems.
+This kind of problem is easily solved with techniques such as gradient descent, where you begin from an initial starting point and greedily move to any solution with a lower cost. After a few moves, the solution converges to the global minimum, the lowest point in the optimization landscape. Azure Quantum optimization solvers offer no advantages over other techniques with these straightforward problems.
 
-### A structured, rugged landscape
+## Structured landscape
 
-Azure Quantum works best with problems where the landscape is rugged, with many hills and valleys. Here's an example that considers two continuous variables.
+Consider the following plot of a cost function of two continuous variables where the landscape is rugged, with many hills and valleys:
 
-![An optimization landscape showing many hills and valleys](./media/plot_rugged.png)
+![Structured landspace](./media/structured-landscape.png)
 
-In this scenario, one of the greatest challenges is to avoid getting stuck at any of the suboptimal *local minima*. A rugged landscape can have multiple valleys. Each of these valleys will have a lowest point, which is the local minimum. One of these points will be the lowest overall, and that point is the global minimum. These rugged landscapes present situations where Azure Quantum optimization solvers can outperform other techniques.
+In this scenario, one of the greatest challenges is to avoid getting stuck at any of the sub-optimal local minima. A rugged landscape can have multiple valleys. Each of these valleys has a lowest point, which is called a *local minimum*. One of these points will be the lowest of them all, and that point is the global minimum.
 
-### A scattered, random landscape
+Such rugged landscapes present situations where quantum-inspired optimization can outperform other techniques.
 
-So far we have discussed smooth and rugged cost functions, but what if there is no structure at all? The following diagram shows such a landscape:
+### Scattered landscape
 
-![An optimization landscape showing scattered points with no pattern](./media/plot_random.png)
+The following plot corresponds to a random, unstructured landscape: 
 
-In these cases, where the solutions are completely random, then no algorithm can improve on a brute force search.
+![Scattered landspace](./media/scattered-landscape.png)
+
+In these cases, where the solutions are completely random, there is no optimization algorithm that can improve on a brute force search.
+
+## Problem configuration
+
+Usually, an optimization problem involves a lot of variables that can interact in many ways to influence the final cost. A particular arrangement of the variables is called the *configuration* of the problem.
+
+Because there are so many possible configurations to choose from, it is sometimes difficult to identify the best solution, particularly when the problem space is very large. It can be easy to get stuck in a local optimum. Some examples of local optima are shown on the following graph, along with the global optimum - the lowest cost configuration our system can adopt.
+
+The goal of the optimization is to find the minimum point on the cost function (or as close to the minimum point as possible, given a reasonable amount of time).
+
+Consider the following example of traffic minimization. The aim of this optimization task is to reduce congestion in a road system, thereby reducing the amount of time drivers and passengers spend waiting in traffic.
+
+Each configuration represents a different combination of routes assigned to the vehicles in the system. The cost to minimize is the overall traffic level (or congestion level).
+
+![Graph showing a cost function with local optima corresponding to different traffic levels in a vehicle routing simulation](./media/optimization-intro-traffic-optima.png)
+
+This graph highlights some examples of different system configurations, each of which has a different cost value. The costs are visualized here cost using color: the redder the road segment, the higher the traffic level and, therefore, the greater the cost. Conversely, greener road segments have fewer vehicles simultaneously occupying them and, therefore, lower traffic and cost values.
 
 ## Defining a cost function
 
