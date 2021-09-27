@@ -24,7 +24,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 - Added support for submitting [Cirq]() and [Qiskit]() circuits to IonQ and Honeywell.
 - You can formulate pubo and ising problems using [squared linear terms](/azure/quantum/optimization-slc-term) natively on the PA and SSMC solvers.
 - Fixed [issues](https://github.com/microsoft/qsharp-compiler/issues/1089) with memory management and improved reliability for QIR generation: [1152](https://github.com/microsoft/qsharp-compiler/issues/1152) and [1086](https://github.com/microsoft/qsharp-compiler/issues/1086).
-- Fixed [issue](https://github.com/microsoft/qdk-python/issues/147) related to Workspace.get_targets(). It now returns all available targets in the subscription, even those that don't have client-side support. The returned target will require extra keyword arguments to specify input and output data formats.
+- Fixed [issue](https://github.com/microsoft/qdk-python/issues/147) related to `Workspace.get_targets()`. It now returns all available targets in the subscription, even those that don't have client-side support.
 - **Breaking change:** The order of arguments in `ApplyIf`, `ApplyIfA`, `ApplyIfC`, and `ApplyIfCA` [has been changed](https://github.com/microsoft/QuantumLibraries/issues/377) to be consistent with to be consistent with related operations such as `ApplyIfElseB` and [Q# API design principles](/azure/quantum/contributing-api-design-principles).
 - Fixed error messages appearing in the wrong place with some array index expressions.
 - Users will receive recommendation at most once a day, to update the az quantum extension if the version installed is out-of-date.
