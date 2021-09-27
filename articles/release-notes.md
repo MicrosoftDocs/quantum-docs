@@ -17,9 +17,9 @@ In this article, learn about updates to the [Quantum Development Kit (QDK)](xref
 
 For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For update instructions, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
-## 2021-09-29
+## 2021-09-28
 
-### QDK version 0.19.xxxx.xxxxxx
+### QDK version 0.19.2109.165653
 
 - You can formulate pubo and ising problems using [squared linear terms](https://docs.microsoft.com/azure/quantum/optimization-slc-term) natively on the PA and SSMC solvers.
 - Fixed issues with [memory management](https://github.com/microsoft/qsharp-compiler/pull/1141) and [improved reliability for QIR generation](https://github.com/microsoft/qsharp-compiler/pull/1153).
