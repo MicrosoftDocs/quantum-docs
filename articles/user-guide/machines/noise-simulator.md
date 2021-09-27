@@ -234,7 +234,7 @@ Since this feature is currently under active development, there are still a numb
 
 Some limitations are inherent to open systems simulation, and may not ever be supported:
 
-- Assertions (e.g.: `AssertMeasurement` and `AssertMeasurementProbability`) are not supported, as these assertions may fail for correct code in the presence of noise. These assertions are no-ops on the experimental simulators.
+- Assertions (e.g.: `AssertMeasurement` and `AssertMeasurementProbability`) are not supported, as these assertions may fail for correct code in the presence of noise. These assertions are no-ops on the preview simulators.
 
 ## See also
 
