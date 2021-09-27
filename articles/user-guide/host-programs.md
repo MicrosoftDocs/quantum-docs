@@ -181,7 +181,6 @@ namespace MultiSuperposition {
         use qubits = Qubit[n];               // allocate a register of n qubits in |0> 
         ApplyToEach(H, qubits);              // apply H to each qubit in the register
         return ForEach(MResetZ, qubits);     // perform MResetZ on each qubit, returns the resulting array
-        }
     }
 }
 ```
