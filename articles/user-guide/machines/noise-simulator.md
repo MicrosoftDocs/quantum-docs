@@ -180,21 +180,21 @@ print(DumpPlus.simulate_noise())
 > ```
 > ```output
 > [Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
- Qobj data =
- [[ 0.06123724 -0.02041241]
-  [-0.02041241  0.02041241]],
- Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
- Qobj data =
- [[ 0.70445014  0.70445014]
-  [ 0.70445014 -0.70445014]],
- Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = False
- Qobj data =
- [[ 0.05707046 -0.02948997]
-  [ 0.00190948  0.02948997]],
- Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = False
- Qobj data =
- [[-0.00103545  0.04950143]
-  [ 0.00197827  0.05044425]]]
+> Qobj data =
+> [[ 0.06123724 -0.02041241]
+> [-0.02041241  0.02041241]],
+> Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
+> Qobj data =
+> [[ 0.70445014  0.70445014]
+>  [ 0.70445014 -0.70445014]],
+> Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = False
+> Qobj data =
+> [[ 0.05707046 -0.02948997]
+>  [ 0.00190948  0.02948997]],
+> Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = False
+> Qobj data =
+> [[-0.00103545  0.04950143]
+>  [ 0.00197827  0.05044425]]]
 > ```
 
 ## Configuring Stabilizer Noise Models
