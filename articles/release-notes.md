@@ -27,7 +27,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 - Fixed [issue](https://github.com/microsoft/qdk-python/issues/147) related to `Workspace.get_targets()`. It now returns all available targets in the subscription, even those that don't have client-side support.
 - **Breaking change:** The order of arguments in `ApplyIf`, `ApplyIfA`, `ApplyIfC`, and `ApplyIfCA` [has been changed](https://github.com/microsoft/QuantumLibraries/issues/377) to be consistent with to be consistent with related operations such as `ApplyIfElseB` and [Q# API design principles](/azure/quantum/contributing-api-design-principles).
 - Fixed error messages appearing in the wrong place with some array index expressions.
-- Users will receive recommendation at most once a day, to update the az quantum extension if the version installed is out-of-date.
+- Users will receive recommendation at most once a day to update the `az` quantum extension if the version installed is out-of-date.
 - Python SDK now serializes the name of the Optimization Problem in a new optional metadata field, so you don't have to specify it again when deserializing the problem.
 - Released Az CLI quantum extension version 0.8.0: Users will receive recommendation at most once a day, to update the az quantum extension if the version installed is out-of-date.
 
