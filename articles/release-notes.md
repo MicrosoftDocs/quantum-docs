@@ -21,7 +21,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ### QDK version 0.19.2109.165653
 
-- Added support for submitting [Cirq]() and [Qiskit]() circuits to IonQ and Honeywell.
+- Added support for submitting [Cirq](https://quantumai.google/cirq) and [Qiskit](https://qiskit.org/documentation/intro_tutorial1.html) circuits to IonQ and Honeywell.
 - You can formulate pubo and ising problems using [squared linear terms](/azure/quantum/optimization-slc-term) natively on the PA and SSMC solvers.
 - Fixed [issues](https://github.com/microsoft/qsharp-compiler/issues/1089) with memory management and improved reliability for QIR generation: [1152](https://github.com/microsoft/qsharp-compiler/issues/1152) and [1086](https://github.com/microsoft/qsharp-compiler/issues/1086).
 - Fixed [issue](https://github.com/microsoft/qdk-python/issues/147) related to `Workspace.get_targets()`. It now returns all available targets in the subscription, even those that don't have client-side support.
