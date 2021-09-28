@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to run your Q# programs on the Microsoft Quantum Development Kit noise simulator.
 ms.author: v-sonialopez
-ms.date: 09/23/2021
+ms.date: 09/28/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -73,8 +73,7 @@ from NoisySimulation import DumpPlus
 print(DumpPlus.simulate_noise())
 ```
 ```output
-[[0.5000000000000001 + 0*i , 0.5000000000000001 + 0*i],
-[0.5000000000000001 + 0*i , 0.5000000000000001 + 0*i]]
+'text/plain': 'Mixed state on 3 qubits: [ [0.5000000000000001 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0.5000000000000001 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0.5000000000000001 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0.5000000000000001 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] ]'
 ```
 
 5. Looking at the output, you can notice two distinct differences with the output from [default simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) with `.simulate()`:
@@ -94,6 +93,18 @@ ket_psi = qt.tensor(ket_plus, ket_zero, ket_zero)
 rho = ket_psi * ket_psi.dag()
 print(rho)
 ```
+```output
+Quantum object: dims = [[2, 2, 2], [2, 2, 2]], shape = (8, 8), type = oper, isherm = True
+Qobj data =
+[[0.5 0.  0.  0.  0.5 0.  0.  0. ]
+ [0.  0.  0.  0.  0.  0.  0.  0. ]
+ [0.  0.  0.  0.  0.  0.  0.  0. ]
+ [0.  0.  0.  0.  0.  0.  0.  0. ]
+ [0.5 0.  0.  0.  0.5 0.  0.  0. ]
+ [0.  0.  0.  0.  0.  0.  0.  0. ]
+ [0.  0.  0.  0.  0.  0.  0.  0. ]
+ [0.  0.  0.  0.  0.  0.  0.  0. ]]
+ ```
 
 > [!NOTE]
 > The QuTiP library is a very handful library to work with quantum states. In QuTiP notation, quantum states are written as `qt.basis(d,s)`, where *d* is the dimension of the systems and *s* is the state. For example, the quantum state $|0\rangle$ can be written as `ket_zero = qt.basis(2, 0)`. To learn more about QuTiP methods and features, see the [QuTiP user guide](https://qutip.org/docs/latest/guide/guide.html).
@@ -107,8 +118,7 @@ qsharp.config['experimental.simulators.nQubits'] = 1
 print(DumpPlus.simulate_noise())
 ```
 ```output
-[[0.5000000000000001 + 0*i , 0.5000000000000001 + 0*i],
-[0.5000000000000001 + 0*i , 0.5000000000000001 + 0*i]]
+'text/plain': 'Mixed state on 1 qubits: [ [0.5000000000000001 + 0 i, 0.5000000000000001 + 0 i] [0.5000000000000001 + 0 i, 0.5000000000000001 + 0 i] ]'
 ```
 2. You can modify the noise model used in simulating Q# programs by using several functions in the `qsharp.experimental` module. For instance, to initialize the noise model to an **ideal model** (that is, with no noise), you can use `set_noise_model_by_name`. You can then access the noise model by using `get_noise_model`:
 
@@ -119,13 +129,16 @@ noise_model = qsharp.experimental.get_noise_model()
 > [!NOTE]
 > If you are using Jupyter Notebooks to develop you Python program, you use the `%noise_model --set-by-name` magic command to initialize the noise model to an ideal model.
 
-This noise model is represented as a Python dictionary from preparations, measurements, and gates to Python objects representing the noise in each. For example, in the ideal noise model, the `Microsoft.Quantum.Intrinsic.H` operation is simulated by a unitary matrix:
+This noise model is represented as a Python dictionary from preparations, measurements, and gates to Python objects representing the noise in each. For example, in the ideal noise model, the <xref:Microsoft.Quantum.Intrinsic.H> is simulated by a unitary matrix:
 
 ```python
 print(noise_model['h'])
 ```
 ```output
-[[0.707 , 0.707],[0.707 , -0.707]]
+Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
+Qobj data =
+[[ 0.70710678  0.70710678]
+ [ 0.70710678 -0.70710678]]
 ```
 
 3. You can modify the noise model to add **depolarizing noise** using QuTiP functions to build a depolarizing noise channel:
@@ -141,7 +154,13 @@ noise_model['h'] = depolarizing_noise(0.99) * qt.to_super(qt.qip.operations.hada
 print(noise_model['h'])
 ```
 ```output
-[[0.500 , 0.495 , 0.495 , 0.500],[0.495 , -0.495 , 0.495 , -0.495],[0.495 , 0.495 , -0.495 , -0.495],[0.500 , -0.495 , -0.495 , 0.500]]
+Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = True
+Qobj data =
+[[ 0.5    0.495  0.495  0.5  ]
+ [ 0.495 -0.495  0.495 -0.495]
+ [ 0.495  0.495 -0.495 -0.495]
+ [ 0.5   -0.495 -0.495  0.5  ]]
+ ```
 
 You can apply the depolarizing noise model to the density operator $\rho = \left|0\right\rangle\left\langle0\right|$ to check how the density operator changes under the effects of depolarizing noise.
 
@@ -149,12 +168,18 @@ You can apply the depolarizing noise model to the density operator $\rho = \left
 ket_zero = qt.basis(2, 0)
 rho_zero = ket_zero * ket_zero.dag()
 print(rho_zero)
-noise_model['h'](rho_zero)
+rho_zero_dep_noise = noise_model['h'](rho_zero)
 print(rho_zero_dep_noise)
 ```
 ```output
-rho_zero = [[1.0 , 0.0],[0.0 , 0.0]]
-rho_zero_dep_noise = [[0.500 , 0.495],[0.495 , 0.500]]
+Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
+Qobj data =
+[[1. 0.]
+ [0. 0.]]
+Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
+Qobj data =
+[[0.5   0.495]
+ [0.495 0.5  ]]
 ```
 
 4. Once you have modified our noise model in this way, you can set it as the active noise model used in simulating Q# programs:
@@ -162,12 +187,13 @@ rho_zero_dep_noise = [[0.500 , 0.495],[0.495 , 0.500]]
 ```python
 qsharp.experimental.set_noise_model(noise_model)
 ```
-Using this model, you no longer get the exact $\rho=|+\rangle\langle+|$ state, but the Q# program has incurred some small error due to noise in the application of `Microsoft.Quantum.Intrinsic.H`:
+Using this model, you no longer get the exact $\rho=|+\rangle\langle+|$ state, but the Q# program has incurred some small error due to noise in the application of <xref:Microsoft.Quantum.Intrinsic.H>:
 ``python
 print(DumpPlus.simulate_noise())
 ```
 ```output
-[[0.5032581095356969 + 0*i , 0.4951069263733158 + 0 i],[0.4951069263733158 + 0*i , 0.49667422634133085 + 0*i]]
+'text/plain': 'Mixed state on 1 qubits: [ [0.5002403569793327 + 0 i, 0.49578581259001314 + 0 i] [0.49578581259001314 + 0 i, 0.499235767960659 
++ 0 i] ]'
 ```
 
 > [!TIP]
@@ -176,25 +202,23 @@ print(DumpPlus.simulate_noise())
 > You can calculate the Kraus decomposition of a noise model using the QuTiP library:
 > 
 > ```python
-> qt.to_kraus(noise_model['h'])
+> kraus_operators = qt.to_kraus(noise_model['h'])
+> print(kraus_operators)
 > ```
 > ```output
-> [Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
-> Qobj data =
-> [[ 0.06123724 -0.02041241]
-> [-0.02041241  0.02041241]],
-> Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
-> Qobj data =
-> [[ 0.70445014  0.70445014]
->  [ 0.70445014 -0.70445014]],
-> Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = False
-> Qobj data =
-> [[ 0.05707046 -0.02948997]
->  [ 0.00190948  0.02948997]],
-> Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = False
-> Qobj data =
-> [[-0.00103545  0.04950143]
->  [ 0.00197827  0.05044425]]]
+>[Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
+>Qobj data =
+>[[ 0.06123724 -0.02041241]
+> [-0.02041241  0.02041241]], Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
+>Qobj data =
+>[[ 0.70445014  0.70445014]
+> [ 0.70445014 -0.70445014]], Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = False
+>Qobj data =
+>[[ 0.01550345 -0.03309488]
+> [ 0.0506863   0.03309488]], Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = False
+>Qobj data =
+>[[-2.74180053e-18  5.00000000e-02]
+> [-5.27753089e-18  5.00000000e-02]]]
 > ```
 
 ## Configuring Stabilizer Noise Models
@@ -213,10 +237,99 @@ qsharp.experimental.set_noise_model(noise_model)
 qsharp.config['experimental.simulators.representation'] = 'stabilizer'
 print(DumpPlus.simulate_noise())
 ```
+The visualization of the output is the following:
+
+$$\left(\begin{array}{c|c|c}0 & 1 & 0\\\hline 1 & 0 & 0\end{array}\right)$$
+
+> [!TIP]
+> If you are running the Python host program from the terminal, you will obtain the *html* metadata as output of `print(.simulate.noise())`. For easier visualization, Jupyter Notebooks display *html* tables within the same notebook.
+
+3. Notably, the stabilizer representation does not support operations outside of the stabilizer formalism, such as T and CCNOT. This allows the stabilizer representation to support significantly more qubits than other representations. For example, consider a quantum register of 10 qubits:
+
+```python
+qsharp.config['experimental.simulators.nQubits'] = 10
+print(DumpPlus.simulate_noise())
+```
+The visualization of the output is the following:
+
+$$\left(\begin{array}{cccccccccc|cccccccccc|c}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0\end{array}\right)$$
+
+4.  Modify the Q# program with the following code, where `DumpBellPair` operation performs `DumpMachine` function to a Bell pair, which is an entangled paid of qubits. 
+
+```qsharp
+operation DumpBellPair() : Unit {
+    use left = Qubit();
+    use right = Qubit();
+    within {
+        H(left);
+        CNOT(left, right);
+    } apply {
+        DumpMachine();
+    }
+}
+```
+5. Run `DumpBellPair` operation using the stabilizer noise simulator. For simplicity, let's consider a quantum register of 4 qubits.
+```python
+from NoisySimulation import DumpBellPair
+
+qsharp.config['experimental.simulators.nQubits'] = 4
+DumpBellPair.simulate_noise()
+```
+
+The visualization of the output is the following:
+
+$$\left(\begin{array}{cccc|cccc|c}0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0\\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0\\
+\hline
+1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0\end{array}\right)$$
 
 
+6. The visualization style for stabilizer states can be selected by using the `experimental.simulators.stabilizerStateStyle` configuration setting. 
 
+For example, you can select the visualization without destabilizers.
 
+```python
+qsharp.config['experimental.simulators.stabilizerStateStyle'] = 'matrixWithoutDestabilizers'
+```
+$$\left(\begin{array}{cccc|cccc|c}1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0\end{array}\right)$$
+
+```python
+qsharp.config['experimental.simulators.stabilizerStateStyle'] = 'denseGroupPresentation'
+```
+$$\left\langle XX𝟙𝟙, ZZ𝟙𝟙, 𝟙𝟙Z𝟙, 𝟙𝟙𝟙Z \right\rangle $$
+
+```python
+qsharp.config['experimental.simulators.stabilizerStateStyle'] = 'sparseGroupPresentation'
+```
+$$\left\langle X_{0}X_{1}, Z_{0}Z_{1}, Z_{2}, Z_{3} \right\rangle $$
 
 ## Known issues and limitations
 
