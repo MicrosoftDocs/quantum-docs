@@ -65,6 +65,8 @@
     items: 
     - name: Submit Q# jobs
       href: how-to-submit-jobs.md
+    - name: Publish a Q# job as an Azure Function
+      href: how-to-publish-qsharp-job-as-azurefunction.md
   - name: Q# user guide
     href: user-guide/toc.yml
   - name: Concepts
