@@ -9,7 +9,7 @@ ms.date: 27/09/2021
 #Customer intent: As a researcher, I want to make my quantum algorithm accessible via API so that developers without further quantum knowledge can call it via classical API-calls.
 ---
 
-# Publish a QIO job as an Azure Function
+# Publish a Q# job as an Azure Function
 
 Learn how to deploy your Q# job as a web service. You'll accomplish this task by using an Azure Function that can be called via a Web-API. The Function receives input via request-URL or via request-body. It then executes the Q# job on a simulator or quantum hardware and returns the result as JSON-string.
 
