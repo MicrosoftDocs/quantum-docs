@@ -22,6 +22,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 ### QDK version 0.19.2109.165653
 
 - Added support for submitting Cirq and Qiskit circuits to IonQ and Honeywell.
+- Conda packages have been moved from the quantum-engineering channel to the microsoft channel. When using conda to install the Quantum Development Kit for Q# notebook or Q# + Python usage, the `-c quantum-engineering` argument to conda should be changed to `-c microsoft`, and the `channels` section of environment.yml files should be updated. Please see the [getting started guide](xref:microsoft.quantum.install-qdk.overview) for the full install command using the new packages.
 - You can formulate PUBO and Ising problems using [squared linear terms](/azure/quantum/optimization-slc-term) natively on the PA and SSMC solvers.
 - Fixed [issue](https://github.com/microsoft/qsharp-compiler/issues/1089) with memory management and improved reliability for QIR generation: [1152](https://github.com/microsoft/qsharp-compiler/issues/1152) and [1086](https://github.com/microsoft/qsharp-compiler/issues/1086).
 - Fixed [issue](https://github.com/microsoft/qdk-python/issues/147) related to `Workspace.get_targets()`. It now returns all available targets in the subscription, even those that don't have client-side support.
