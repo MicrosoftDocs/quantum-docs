@@ -19,7 +19,7 @@ metadata:
 landingContent:
 
 
-  # Computing
+  # Get started
   - title: Get started with Azure Quantum
     linkLists:
       - linkListType: overview
@@ -30,6 +30,13 @@ landingContent:
         links:
           - text: Set up Azure Quantum
             url: install-dev-main.md
+      - linkListType: learn
+        links:
+          - text: Microsoft Learn
+            url: https://aka.ms/LearnQC
+          - text: Quantum Katas tutorials and exercises
+            url: https://aka.ms/QuantumKatas
+
 
 
   # Computing
@@ -39,10 +46,6 @@ landingContent:
         links:
           - text: What is quantum computing?
             url: overview-qdk.md
-      - linkListType: get-started
-        links:
-          - text: Set up Azure Quantum
-            url: install-overview-qdk.md
       - linkListType: quickstart
         links:
           - text: Create a quantum-based random number generator in Azure Quantum
