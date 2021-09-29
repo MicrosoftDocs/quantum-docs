@@ -45,7 +45,7 @@ landingContent:
           - text: What is quantum computing?
             url: overview-qdk.md
           - text: What are the Q# programming language and Quantum Development Kit (QDK)?
-            url: overview-what-is-qsharp-and-qdkk.md
+            url: overview-what-is-qsharp-and-qdk.md
       - linkListType: quickstart
         links:
           - text: Create a quantum-based random number generator in Azure Quantum
