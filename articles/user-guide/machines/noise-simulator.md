@@ -15,7 +15,7 @@ uid: microsoft.quantum.machines.overview.noise-simulator
 
 Quantum systems that are very well isolated from their environments such that no other system interacts with the qubits are called *closed quantum systems*. By contrast, a device that is subject to some amount of  interaction, or *noise* from its environment is an *open quantum system*. 
 
-As a preview feature, the Quantum Development Kit provides a preview simulator for simulation of open quantum systems. This feature allows for simulating the behavior of Q# programs under the influence of noise, and also for using the *stabilizer representation* (also known as CHP simulation) with programs that only call Clifford operations.
+As a preview feature, the Quantum Development Kit provides a preview simulator for simulation of open quantum systems. This feature allows for simulating the behavior of Q# programs under the influence of noise, and also for using the *stabilizer representation* (also known as CHP simulation) of quantum algorithms, that is algorithms consisting solely of CNOT, Hadamard, and phase gates. 
 
 Currently, the preview simulators are supported for use with:
 - Python host programs
@@ -76,7 +76,7 @@ print(DumpPlus.simulate_noise())
 'text/plain': 'Mixed state on 3 qubits: [ [0.5000000000000001 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0.5000000000000001 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0.5000000000000001 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0.5000000000000001 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] ]'
 ```
 
-5. Looking at the output, you can notice two distinct differences with the output from [default simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) with `.simulate()`:
+5. Looking at the output, you can notice two distinct differences with the output from [default simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), which can be invoked by `.simulate()`:
 
 - The preview simulators use quantum registers of a fixed size (by default, three qubits), and allocate qubits from that register.
 - By default, the preview simulators represent quantum states as density operators $\rho = \left|\psi\right\rangle\left\langle\psi\right|$ instead of as state vectors $\left|\psi\right\rangle$.
@@ -141,7 +141,11 @@ Qobj data =
  [ 0.70710678 -0.70710678]]
 ```
 
-3. You can modify the noise model to add **depolarizing noise** using QuTiP functions to build a depolarizing noise channel:
+3. The **depolarizing channel** is a simple model for noise in quantum systems. A quantum channel can be view as a map $\Delta_{p}$, depending on one parameter $\lambda$ , which maps a quantum state $\rho$ to a quantum state $\rho^{'}$. The single-qubit depolarizing channel is written as:
+
+$$\Delta_{p}(\rho) = (1-p) \frac{\mathbb{I}}{2} + p \rho $$
+
+You can modify the noise model to add **depolarizing noise** using QuTiP functions. 
 
 ```python
 I, X, Y, Z = [P.as_qobj() for P in qsharp.Pauli]
@@ -162,20 +166,15 @@ Qobj data =
  [ 0.5   -0.495 -0.495  0.5  ]]
  ```
 
-You can apply the depolarizing noise model to the density operator $\rho = \left|0\right\rangle\left\langle0\right|$ to check how the density operator changes under the effects of depolarizing noise.
+You can apply the depolarizing noise model to the density operator $\rho_{\text{zero}} = \left|0\right\rangle\left\langle0\right|$ to check how it changes under the effects of depolarizing noise. Using this model, you no longer get the exact state $\rho_{+}=|+\rangle\langle+|$ state, but the Q# program has incurred some small error due to noise in the application of <xref:Microsoft.Quantum.Intrinsic.H>:
 
 ```python
 ket_zero = qt.basis(2, 0)
 rho_zero = ket_zero * ket_zero.dag()
-print(rho_zero)
 rho_zero_dep_noise = noise_model['h'](rho_zero)
 print(rho_zero_dep_noise)
 ```
 ```output
-Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
-Qobj data =
-[[1. 0.]
- [0. 0.]]
 Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
 Qobj data =
 [[0.5   0.495]
@@ -186,9 +185,6 @@ Qobj data =
 
 ```python
 qsharp.experimental.set_noise_model(noise_model)
-```
-Using this model, you no longer get the exact $\rho=|+\rangle\langle+|$ state, but the Q# program has incurred some small error due to noise in the application of <xref:Microsoft.Quantum.Intrinsic.H>:
-``python
 print(DumpPlus.simulate_noise())
 ```
 ```output
@@ -197,7 +193,7 @@ print(DumpPlus.simulate_noise())
 ```
 
 > [!TIP]
-> Any noise model $\Delta_{\lambda}$ has a operator-sum representation on a density matrix $\rho$, such that $\Delta_{\lambda }(\rho )=\sum_{i=0}^{3}K_{i}\rho K_{i}^{\dagger}$, where $K_{i}$ are the *Kraus operators*. 
+> Any quantum channel has a operator-sum representation on a density matrix $\rho$, such that $\Delta_{p}(\rho )=\sum_{i}K_{i}\rho K_{i}^{\dagger}$, such that $\sum_{i}K_{i}^{\dagger}K_{i} = \mathcal{I}$ where matrices $K_{i}$ are the *Kraus operators*.
 > 
 > You can calculate the Kraus decomposition of a noise model using the QuTiP library:
 > 
@@ -223,7 +219,7 @@ print(DumpPlus.simulate_noise())
 
 ## Configuring Stabilizer Noise Models
 
-You can configure the preview simulator to be used with stabilizer circuits, also known as CHP simulation. CHP is a high-performance simulator of stabilizer circuits, that is quantum circuits that consist of controlled-NOT, Hadamard, and π/2 phase gates as well as 1-qubit measurement gates. Stabilizer circuits can be simulated efficiently on a classical computer.
+You can configure the preview simulator to be used with stabilizer circuits or algorithms, also known as CHP simulation. CHP (CNOT-Hadamard-Phase) is a high-performance simulator of stabilizer circuits, that is quantum algorithms that consist solely of controlled-NOT, Hadamard, and π/2 phase gates, as well as 1-qubit measurement gates. Stabilizer algorithms can be simulated efficiently on a classical computer, which is shown by [the Gottesman–Knill theorem](https://en.wikipedia.org/wiki/Gottesman%E2%80%93Knill_theorem).
 
 1. Create a new noise model by using `get_noise_model_by_name` and set it as the active noise model:
 
@@ -289,6 +285,7 @@ operation DumpBellPair() : Unit {
 }
 ```
 5. Run `DumpBellPair` operation using the stabilizer noise simulator. For simplicity, let's consider a quantum register of 4 qubits.
+
 ```python
 from NoisySimulation import DumpBellPair
 
@@ -311,7 +308,7 @@ $$\left(\begin{array}{cccc|cccc|c}0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0\\
 
 6. The visualization style for stabilizer states can be selected by using the `experimental.simulators.stabilizerStateStyle` configuration setting. 
 
-For example, you can select the visualization without destabilizers.
+For example, you can select the visualization without destabilizers with 'matrixWithoutDestabilizers':
 
 ```python
 qsharp.config['experimental.simulators.stabilizerStateStyle'] = 'matrixWithoutDestabilizers'
@@ -321,10 +318,14 @@ $$\left(\begin{array}{cccc|cccc|c}1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0\\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0\end{array}\right)$$
 
+To select the representation of the stabilizer group, use 'denseGroupPresentation':
+
 ```python
 qsharp.config['experimental.simulators.stabilizerStateStyle'] = 'denseGroupPresentation'
 ```
 $$\left\langle XX𝟙𝟙, ZZ𝟙𝟙, 𝟙𝟙Z𝟙, 𝟙𝟙𝟙Z \right\rangle $$
+
+To select the representation of the stabilizer group without the identity matrix, use 'sparseGroupPresentation':
 
 ```python
 qsharp.config['experimental.simulators.stabilizerStateStyle'] = 'sparseGroupPresentation'
