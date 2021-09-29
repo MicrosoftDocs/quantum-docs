@@ -38,7 +38,7 @@ landingContent:
             url: tutorial-qdk-intro-to-katas.md
 
   # Computing
-  - title: Azure Quantum for Quantum Computing
+  - title: Quantum Computing
     linkLists:
       - linkListType: overview
         links:
@@ -65,11 +65,11 @@ landingContent:
 
 
   # OPTIMIZATION
-  - title: Azure Quantum for Optimization
+  - title: Optimization
     linkLists:
       - linkListType: overview
         links:
-        - text: What are quantum-inspired optimization?
+        - text: What is quantum-inspired optimization?
           url: optimization-what-is-quantum-optimization.md
         - text: What is optimization?
           url: optimization-overview-introduction.md
