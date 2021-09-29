@@ -34,10 +34,8 @@ landingContent:
         links:
           - text: Microsoft Learn
             url: https://aka.ms/LearnQC
-          - text: Quantum Katas tutorials and exercises
-            url: https://aka.ms/QuantumKatas
-
-
+          - text: Learn with the Quantum Katas
+            url: tutorial-qdk-intro-to-katas.md
 
   # Computing
   - title: Azure Quantum for Quantum Computing
@@ -50,28 +48,27 @@ landingContent:
         links:
           - text: Create a quantum-based random number generator in Azure Quantum
             url: quickstart-microsoft-qc.md
-      - linkListType: concept
-        links:
-          - text: Quantum computing concepts
-            url: concepts-overview.md
+          - text: Submit a circuit with Qiskit to Azure Quantum
+            url: quickstart-microsoft-qiskit.md
+          - text: Submit a circuit with Cirq to Azure Quantum
+            url: quickstart-microsoft-cirq.md
       - linkListType: learn
         links:
           - text: Understanding quantum computing
             url: overview-understanding-quantum-computing.md
           - text: Quantum computers and quantum simulators
             url: overview-quantum-computers-and-simulators.md
-          - text: Learn quantum computing with the Quantum Katas
-            url: tutorial-qdk-intro-to-katas.md
+
 
   # OPTIMIZATION
   - title: Azure Quantum for Optimization
     linkLists:
       - linkListType: overview
         links:
+        - text: What are quantum-inspired optimization?
+          url: optimization-what-is-quantum-optimization.md
         - text: What is optimization?
           url: optimization-overview-introduction.md
-        - text: What are quantum-inspired algorithms?
-          url: optimization-what-is-quantum-optimization.md
       - linkListType: quickstart 
         links:
           - text: Solve an optimization problem in Azure Quantum
