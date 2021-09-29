@@ -33,7 +33,7 @@ landingContent:
       - linkListType: learn
         links:
           - text: Microsoft Learn
-            url: https://aka.ms/LearnQC
+            url: https://docs.microsoft.com/en-us/learn/paths/quantum-computing-fundamentals/
           - text: Learn with the Quantum Katas
             url: tutorial-qdk-intro-to-katas.md
 
@@ -44,6 +44,8 @@ landingContent:
         links:
           - text: What is quantum computing?
             url: overview-qdk.md
+          - text: What are the Q# programming language and Quantum Development Kit (QDK)?
+            url: overview-what-is-qsharp-and-qdkk.md
       - linkListType: quickstart
         links:
           - text: Create a quantum-based random number generator in Azure Quantum
@@ -77,42 +79,6 @@ landingContent:
         links:
           - text: Solve an optimization problem in Azure Quantum
             url: quickstart-microsoft-qio.md
-      - linkListType: concept 
-        links:
-          - text: Key concepts for optimization
-            url: optimization-overview-key-concepts.md
-          - text: Binary optimization
-            url: optimization-binary-optimization.md
-      - linkListType: learn
-        links:
-          - text: Optimization providers and solvers
-            url: xref:microsoft.quantum.reference.qio-target-list
-          - text: Microsoft Learn modules for optimization
-            url: https://docs.microsoft.com/learn/browse/?expanded=azure&products=azure-quantum%2Cqdk
-
-  # QDK
-  - title: Develop with the Quantum Development Kit
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: What are Q# and the QDK?
-            url: overview-what-is-qsharp-and-qdk.md
-          - text: More about the QDK
-            url: https://azure.microsoft.com/resources/development-kit/quantum-computing/
-      - linkListType: tutorial
-        links:
-          - text: Explore entanglement with Q#
-            url: tutorial-qdk-explore-entanglement.md
-      - linkListType: concept
-        links:
-          - text: The Quantum Development Kit
-            url: install-get-started-qdk.md
-      - linkListType: learn
-        links:
-          - text: Q# user guide
-            url: user-guide\index.md
-          - text: Q# programs
-            url: user-guide\programs.md
 
   #  Community
   - title: Community & contribution
