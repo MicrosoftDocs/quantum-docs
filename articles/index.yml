@@ -38,7 +38,7 @@ landingContent:
             url: tutorial-qdk-intro-to-katas.md
 
   # Computing
-  - title: Quantum Computing
+  - title: Quantum computing
     linkLists:
       - linkListType: overview
         links:
