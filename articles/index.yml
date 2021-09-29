@@ -52,12 +52,16 @@ landingContent:
             url: quickstart-microsoft-qiskit.md
           - text: Submit a circuit with Cirq to Azure Quantum
             url: quickstart-microsoft-cirq.md
-      - linkListType: learn
+      - linkListType: tutorial
         links:
-          - text: Understanding quantum computing
-            url: overview-understanding-quantum-computing.md
-          - text: Quantum computers and quantum simulators
-            url: overview-quantum-computers-and-simulators.md
+          - text: Implement a Quantum Random Number Generator in Q#
+            url: tutorial-qdk-quantum-random-number-generator.md
+          - text: Explore entanglement with Q#
+            url: tutorial-qdk-explore-entanglement.md
+          - text: Implement Grover's search algorithm in Q#
+            url: tutorial-qdk-grovers-search.md
+          - text: Write and simulate qubit-level programs in Q#
+            url: tutorial-qdk-qubit-level-program.md
 
 
   # OPTIMIZATION
