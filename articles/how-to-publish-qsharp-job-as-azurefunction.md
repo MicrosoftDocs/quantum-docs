@@ -24,12 +24,16 @@ The Q# job that will be published as an Azure Function implements a quantum rand
 You need the following prerequisites to follow the steps in this article.
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?ref=microsoft.com).
-- An Azure Quantum workspace in your Azure subscription. To create a workspace,
-  see [Create an Azure Quantum workspace](xref:microsoft.quantum.quickstarts.optimization.qio).
 - The latest version of the [Quantum Development Kit for Q# and .NET](/azure/quantum/install-overview-qdk?tabs=tabid-local).
 - The [Azure Functions Core Tools](/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools) version 3.x.
 - [Visual Studio Code](https://code.visualstudio.com/) on one of the [supported platforms](https://code.visualstudio.com/docs/supporting/requirements#_platforms).
 - The [Azure Functions extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) for Visual Studio Code.
+
+### Optional
+
+- An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.quickstarts.optimization.qio).
+
+A workspace is only required, if you intend to run your Q# job on a target other than a simulator. This document describes how to execute the quantum algorithm on a simulator.
 
 ## Create a Q# library and an Azure Function host
 
