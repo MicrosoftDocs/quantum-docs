@@ -71,8 +71,6 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-        - text: What is quantum-inspired optimization?
-          url: optimization-what-is-quantum-optimization.md
         - text: What is optimization?
           url: optimization-overview-introduction.md
       - linkListType: quickstart 
