@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to run your Q# programs on the Microsoft Quantum Development Kit noise simulator.
 ms.author: v-sonialopez
-ms.date: 09/28/2021
+ms.date: 09/30/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -141,7 +141,7 @@ Qobj data =
  [ 0.70710678 -0.70710678]]
 ```
 
-3. The **depolarizing channel** is a simple model for noise in quantum systems. A quantum channel can be view as a map $\Delta_{p}$, depending on one parameter $\lambda$ , which maps a quantum state $\rho$ to a quantum state $\rho^{'}$. The single-qubit depolarizing channel is written as:
+Besides ideal noise model, you can configure other noise models. For example, the **depolarizing channel** is a simple model for noise in quantum systems. A quantum channel can be view as a map $\Delta_{p}$, depending on one parameter $\lambda$ , which maps a quantum state $\rho$ to a quantum state $\rho^{'}$. The single-qubit depolarizing channel is written as:
 
 $$\Delta_{p}(\rho) = (1-p) \frac{\mathbb{I}}{2} + p \rho $$
 
@@ -181,7 +181,7 @@ Qobj data =
  [0.495 0.5  ]]
 ```
 
-4. Once you have modified our noise model in this way, you can set it as the active noise model used in simulating Q# programs:
+3. Once you have modified the noise model, you can set it as the active noise model used in simulating Q# programs:
 
 ```python
 qsharp.experimental.set_noise_model(noise_model)
