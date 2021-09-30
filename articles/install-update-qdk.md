@@ -202,7 +202,7 @@ The update procedure depends on whether you originally installed using conda or 
 1. Update the `qsharp` package:
 
     ```
-    pip install qsharp --upgrade
+    pip install --upgrade qsharp
     ```
 
 1. Verify the `qsharp` version:
