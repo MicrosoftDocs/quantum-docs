@@ -25,7 +25,7 @@ The `azure-quantum` Python package contains the necessary functionality for conn
     >conda activate azurequantum
     >```
 
-1. Install the `azure-quantum` package using pip. If you already have a version of `azure-quantum` installed, use the `--upgrade` flag.
+1. Install the `azure-quantum` package using pip. Use the `--upgrade` flag to make sure to get the latest version.
 
     ```shell
     pip install --upgrade azure-quantum[cirq]
