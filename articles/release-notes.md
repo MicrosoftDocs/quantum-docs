@@ -3,7 +3,7 @@ title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
 author: bradben
 ms.author: v-benbra
-ms.date: 09/20/2021
+ms.date: 09/28/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
@@ -16,6 +16,20 @@ uid: microsoft.quantum.relnotes-qdk
 In this article, learn about updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview).
 
 For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For update instructions, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
+
+## 2021-09-28
+
+### QDK version 0.19.2109.165653
+
+- Added support for submitting Cirq and Qiskit circuits to IonQ and Honeywell.
+- Conda packages have been moved from the quantum-engineering channel to the microsoft channel. When using conda to install the Quantum Development Kit for Q# notebook or Q# + Python usage, the `-c quantum-engineering` argument to conda should be changed to `-c microsoft`, and the `channels` section of environment.yml files should be updated. Please see the [getting started guide](xref:microsoft.quantum.install-qdk.overview) for the full install command using the new packages.
+- You can formulate PUBO and Ising problems using [squared linear terms](/azure/quantum/optimization-slc-term) natively on the PA and SSMC solvers.
+- Fixed [issue](https://github.com/microsoft/qsharp-compiler/issues/1089) with memory management and improved reliability for QIR generation: [1152](https://github.com/microsoft/qsharp-compiler/issues/1152) and [1086](https://github.com/microsoft/qsharp-compiler/issues/1086).
+- Fixed [issue](https://github.com/microsoft/qdk-python/issues/147) related to `Workspace.get_targets()`. It now returns all available targets in the subscription, even those that don't have client-side support.
+- Fixed issues with Q# compiler's diagnostics appearing in incorrect places: [1133](https://github.com/microsoft/qsharp-compiler/issues/1133) and [1172](https://github.com/microsoft/qsharp-compiler/issues/1172).
+- **Breaking change:** The order of arguments in `ApplyIf`, `ApplyIfA`, `ApplyIfC`, and `ApplyIfCA` [has been changed](https://github.com/microsoft/QuantumLibraries/issues/377) to be consistent with related operations such as `ApplyIfElseB` and [Q# API design principles](/azure/quantum/contributing-api-design-principles).
+- `Problem.serialize()` of the `azure.quantum.optimization` Python package now serializes the name of the Optimization Problem in a new optional metadata field, so you don't have to specify it again when deserializing the problem. See PR [#64](https://github.com/microsoft/qdk-python/pull/64).
+- Released Az CLI quantum extension version 0.8.0: Users will receive recommendation at most once a day, to update the az quantum extension if the version installed is out-of-date.
 
 ## 2021-09-10
 
@@ -53,8 +67,8 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 - Fixed [regression](https://github.com/microsoft/qsharp-compiler/issues/1067) in Code Actions due to incompatibility with protocol in VS 16.10.x versions.
 - Improved error message on IQ# `%azure.*` magic commands when no quantum computing targets are available.
 - `azure-quantum` Python package fixes an [issue](https://github.com/microsoft/qdk-python/issues/80) with MSAL Credentials on Windows and now requires minimum versions for all dependencies to mitigate other potential issues with older dependencies.
-- Fixed a [bug in iqsharp](https://github.com/microsoft/iqsharp/issues/448) in which job execution would fail if any operation was defined that wasn't supported on the given target
-- Fixed a [bug in iqsharp](https://github.com/microsoft/iqsharp/issues/484) in which some programs targeting hardware that supports the [Basic Measurement Feedback profile](xref:microsoft.quantum.target-profiles) were incorrectly being reported as not supported by the Azure Quantum target
+- Fixed a [bug in IQ#](https://github.com/microsoft/iqsharp/issues/448) in which job execution would fail if any operation was defined that wasn't supported on the given target.
+- Fixed a [bug in IQ#](https://github.com/microsoft/iqsharp/issues/484) in which some programs targeting hardware that supports the [Basic Measurement Feedback profile](xref:microsoft.quantum.target-profiles) were incorrectly being reported as not supported by the Azure Quantum target.
 - Released Az CLI quantum extension version 0.6.1: 
     - Added command to request job cancellation: `az quantum job cancel`. 
     - Fixed a bug in which job submissions in Azure Quantum that emit standard output were reported as failed, even if the job succeeded.
