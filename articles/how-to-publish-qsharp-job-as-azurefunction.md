@@ -235,8 +235,8 @@ Once you have your projects set up, you can call into Q# from your Azure functio
 
 This code instantiates a ``QuantumSimulator`` object, where the random number generation occurs. You can use other target machines by instantiating them here, although the manner of doing so and the processing of the returns can be slightly different. For brevity, this section uses the ``QuantumSimulator``.  For information about other quantum computing targets, see [Quantum simulators](xref:microsoft.quantum.machines.overview) and [Quantum computing providers](xref:microsoft.quantum.reference.qc-target-list).
 
-    > [!NOTE]
-    > The ``Run`` method is run asynchronously because this will be the case for real quantum hardware, and therefore the ``await`` keyword blocks further processing until the task completes.
+> [!NOTE]
+> The ``Run`` method is run asynchronously because this will be the case for real quantum hardware, and therefore the ``await`` keyword blocks further processing until the task completes.
 
 ## Prepare your cloud environment
 
