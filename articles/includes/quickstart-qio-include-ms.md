@@ -61,7 +61,7 @@ To implement a solution, first ensure that you have the Python SDK for Azure Qua
 
 1. Install [Python](https://www.python.org/downloads/) 3.6 or later in case you haven't already.
 1. Install [PIP](https://pip.pypa.io/en/stable/) and ensure you have **version 19.2 or higher**.
-1. Install the `azure-quantum` python package.
+1. Install the `azure-quantum` python package. If you already have a version of `azure-quantum` installed, use the `--upgrade` flag.
 
    ```Shell
    pip install --upgrade azure-quantum
