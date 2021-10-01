@@ -5,7 +5,7 @@ author: hsirtl
 ms.author: hsirtl
 ms.service: azure-quantum
 ms.topic: how-to
-ms.date: 09/27/2021
+ms.date: 10/01/2021
 #Customer intent: As a researcher, I want to make my quantum algorithm accessible via API so that developers without further quantum knowledge can call it via classical API-calls.
 ---
 
@@ -268,7 +268,7 @@ You can now prepare the target environment that will host the function. Preparat
     > [!IMPORTANT]
     > Failing to configure the function for a 64-bit platform will result in errors when the compiler tries to load the quantum libraries. These libraries require a 64-bit environment and won't load in a 32-bit environment.
 
-Because this sample only uses simulated hardware, a Quantum Workspace is optional. When executing a quantum algorithm on quantum hardware, make sure that the Azure Function is properly authenticated to the Quantum Workspace.
+Because this sample only uses simulated hardware, a Quantum Workspace is optional. When executing a quantum algorithm on quantum hardware, make sure that the Azure Function is properly authenticated to the Quantum Workspace. For necessary steps see [Publish a QIO job as an Azure Function](/azure/quantum/how-to-publish-qio-job-as-azurefunction).
 
 ## Deploy the Azure Function to the cloud
 
