@@ -193,7 +193,7 @@ print(DumpPlus.simulate_noise())
 ```
 
 > [!TIP]
-> Any quantum channel has a operator-sum representation on a density matrix $\rho$, such that $\Delta_{p}(\rho )=\sum_{i}K_{i}\rho K_{i}^{\dagger}$, such that $\sum_{i}K_{i}^{\dagger}K_{i} = \mathcal{I}$ where matrices $K_{i}$ are the *Kraus operators*.
+> Any quantum channel has a operator-sum representation on a density matrix $\rho$, such that $\Delta_{p}(\rho )=\sum_{i}K_{i}\rho K_{i}^{\dagger}$ and $\sum_{i}K_{i}^{\dagger}K_{i} = \mathcal{I}$, where matrices $K_{i}$ are the *Kraus operators*.
 > 
 > You can calculate the Kraus decomposition of a noise model using the QuTiP library:
 > 
