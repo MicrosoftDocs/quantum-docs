@@ -13,7 +13,7 @@ uid: microsoft.quantum.machines.overview.noise-simulator
 
 # Quantum Development Kit (QDK) preview simulator
 
-Quantum systems that are very well isolated from their environments such that no other system interacts with the qubits are called *closed quantum systems*. By contrast, a device that is subject to some amount of  interaction, or *noise* from its environment is an *open quantum system*. 
+Quantum systems that are very well isolated from their environments such that no other system interacts with the qubits are called *closed quantum systems*. By contrast, a device that is subject to some amount of  interaction, or *noise*, from its environment is an *open quantum system*. 
 
 As a preview feature, the Quantum Development Kit provides a preview simulator for simulation of open quantum systems. This feature allows for simulating the behavior of Q# programs under the influence of noise, and also for using the *stabilizer representation* (also known as CHP simulation) of quantum algorithms, that is algorithms consisting solely of CNOT, Hadamard, and phase gates. 
 
