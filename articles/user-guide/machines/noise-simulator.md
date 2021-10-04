@@ -270,7 +270,7 @@ $$\left(\begin{array}{cccccccccc|cccccccccc|c}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0\\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0\end{array}\right)$$
 
-4.  Modify the Q# program with the following code, where `DumpBellPair` operation performs `DumpMachine` function to a Bell pair, which is an entangled paid of qubits. 
+4.  Modify the Q# program with the following code, where the `DumpBellPair` operation performs a `DumpMachine` function to a Bell pair, which is an entangled pair of qubits. 
 
 ```qsharp
 operation DumpBellPair() : Unit {
