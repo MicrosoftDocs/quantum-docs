@@ -69,7 +69,7 @@ You can now list all the targets that you have access to, including the
 current queue time and availability.
 
 ```python
-service.targets()
+print(service.targets())
 ```
 
 ```output
@@ -98,7 +98,7 @@ circuit = cirq.Circuit(
     cirq.CNOT(q0, q1), # CNOT
     cirq.measure(q0, q1, key='b') # Measure both qubits
 )
-circuit
+print(circuit)
 ```
 
 ```output
@@ -149,7 +149,7 @@ job = service.create_job(
 To check on the job status, use `job.status()`:
 
 ```python
-job.status()
+print(job.status())
 ```
 
 ```output
