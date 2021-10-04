@@ -284,7 +284,7 @@ operation DumpBellPair() : Unit {
     }
 }
 ```
-5. Run `DumpBellPair` operation using the stabilizer noise simulator. For simplicity, let's consider a quantum register of 4 qubits.
+5. Run the `DumpBellPair` operation using the stabilizer noise simulator. For simplicity, use a quantum register of four qubits.
 
 ```python
 from NoisySimulation import DumpBellPair
