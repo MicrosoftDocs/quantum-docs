@@ -308,7 +308,7 @@ $$\left(\begin{array}{cccc|cccc|c}0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0\\
 
 6. The visualization style for stabilizer states can be selected by using the `experimental.simulators.stabilizerStateStyle` configuration setting. 
 
-For example, you can select the visualization without destabilizers with 'matrixWithoutDestabilizers':
+For example, you can select the visualization without destabilizers using 'matrixWithoutDestabilizers':
 
 ```python
 qsharp.config['experimental.simulators.stabilizerStateStyle'] = 'matrixWithoutDestabilizers'
