@@ -166,7 +166,7 @@ Qobj data =
  [ 0.5   -0.495 -0.495  0.5  ]]
  ```
 
-You can apply the depolarizing noise model to the density operator $\rho_{\text{zero}} = \left|0\right\rangle\left\langle0\right|$ to check how it changes under the effects of depolarizing noise. Using this model, you no longer get the exact state $\rho_{+}=|+\rangle\langle+|$ state, but the Q# program has incurred some small error due to noise in the application of <xref:Microsoft.Quantum.Intrinsic.H>:
+You can apply the depolarizing noise model to the density operator $\rho_{\text{zero}} = \left|0\right\rangle\left\langle0\right|$ to check how it changes under the effects of depolarizing noise. Using this model, you no longer get the exact state $\rho_{+}=|+\rangle\langle+|$ , because the Q# program has incurred some small error due to noise in the application of <xref:Microsoft.Quantum.Intrinsic.H>:
 
 ```python
 ket_zero = qt.basis(2, 0)
