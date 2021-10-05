@@ -81,7 +81,7 @@ print(DumpPlus.simulate_noise())
 - The preview simulators use quantum registers of a fixed size (by default, three qubits), and allocate qubits from that register.
 - By default, the preview simulators represent quantum states as density operators, $\rho = \left|\psi\right\rangle\left\langle\psi\right|$, instead of as state vectors, $\left|\psi\right\rangle$.
 
-For example, in the output above, the preview simulator has output the density operator $\rho = \left|+00\right\rangle\left\langle+00\right|$, as we can verify by using QuTiP.
+For example, in the output above, the preview simulator has output the density operator $\rho = \left|+00\right\rangle\left\langle+00\right|$, which you can verify by using QuTiP.
 
 ```python
 ket_zero = qt.basis(2, 0)
