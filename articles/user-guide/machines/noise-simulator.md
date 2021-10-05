@@ -145,7 +145,7 @@ Besides the ideal noise model, you can configure other noise models. For example
 
 $$\Delta_{p}(\rho) = (1-p) \frac{\mathbb{I}}{2} + p \rho $$
 
-You can modify the noise model to add **depolarizing noise** using QuTiP functions. 
+You can modify the noise model to add *depolarizing noise* using QuTiP functions. 
 
 ```python
 I, X, Y, Z = [P.as_qobj() for P in qsharp.Pauli]
