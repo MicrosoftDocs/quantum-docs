@@ -94,7 +94,7 @@ That is to say, the controlled gate applies $G$ to the register containing $\psi
 ![Circuit diagram of a singly controlled gate](~/media/5.svg)
 
 Here the black circle denotes the quantum bit on which the gate is controlled and a vertical wire denotes the unitary that is applied when the control qubit takes the value $1$.
-For the special cases where $G=X$ and $G=Z$ we introduce the following notation to describe the controlled version of the gates (note that the controlled-X gate is the [CNOT gate](xref:Microsoft.Quantum.Intrinsic.CNOT)):
+For the special cases where $G=X$ and $G=Z$, the following notation is used to describe the controlled version of the gates (note that the controlled-X gate is the [CNOT gate](xref:Microsoft.Quantum.Intrinsic.CNOT)):
 
 <!--- ![](.\media\6.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
