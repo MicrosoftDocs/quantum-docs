@@ -76,7 +76,7 @@ print(DumpPlus.simulate_noise())
 'text/plain': 'Mixed state on 3 qubits: [ [0.5000000000000001 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0.5000000000000001 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0.5000000000000001 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0.5000000000000001 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] [0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i, 0 + 0 i] ]'
 ```
 
-5. Looking at the output, you can notice two distinct differences with the output from [default simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), which can be invoked by `.simulate()`:
+5. Looking at the output, you can notice two distinct differences compared to the output of the [default simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), which you can invoke using `.simulate()`:
 
 - The preview simulators use quantum registers of a fixed size (by default, three qubits), and allocate qubits from that register.
 - By default, the preview simulators represent quantum states as density operators $\rho = \left|\psi\right\rangle\left\langle\psi\right|$ instead of as state vectors $\left|\psi\right\rangle$.
