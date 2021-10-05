@@ -111,7 +111,7 @@ Qobj data =
 
 ## Configuring open systems noise models
 
-1. The preview simulators can be configured by the use of the `qsharp.config` object. For example, to change the size of the register used to one qubit, you can modify the `experimental.simulators.nQubits` configuration setting:
+1. The preview simulators can be configured using the `qsharp.config` object. For example, to change the size of the register to one qubit, you can modify the `experimental.simulators.nQubits` configuration setting:
 
 ```python
 qsharp.config['experimental.simulators.nQubits'] = 1
