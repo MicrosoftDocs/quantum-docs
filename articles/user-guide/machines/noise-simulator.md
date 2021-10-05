@@ -79,7 +79,7 @@ print(DumpPlus.simulate_noise())
 5. Looking at the output, you can notice two distinct differences compared to the output of the [default simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), which you can invoke using `.simulate()`:
 
 - The preview simulators use quantum registers of a fixed size (by default, three qubits), and allocate qubits from that register.
-- By default, the preview simulators represent quantum states as density operators $\rho = \left|\psi\right\rangle\left\langle\psi\right|$ instead of as state vectors $\left|\psi\right\rangle$.
+- By default, the preview simulators represent quantum states as density operators, $\rho = \left|\psi\right\rangle\left\langle\psi\right|$, instead of as state vectors, $\left|\psi\right\rangle$.
 
 For example, in the output above, the preview simulator has output the density operator $\rho = \left|+00\right\rangle\left\langle+00\right|$, as we can verify by using QuTiP.
 
