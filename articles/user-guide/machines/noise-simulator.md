@@ -344,7 +344,7 @@ Since this feature is currently under active development, there are still a numb
 - In some cases, qubits may need to be manually `Reset` before releasing, even if they have been measured.
 
 > [!NOTE]
-> For more information about the development of this feature, please see the GitHub issue at <https://github.com/microsoft/qsharp-runtime/issues/714>.
+> For more information about the development of this feature, see [this GitHub issue](https://github.com/microsoft/qsharp-runtime/issues/714).
 
 Some limitations are inherent to open systems simulation, and may not ever be supported:
 
