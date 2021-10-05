@@ -127,7 +127,7 @@ qsharp.experimental.set_noise_model_by_name('ideal')
 noise_model = qsharp.experimental.get_noise_model()
 ```
 > [!NOTE]
-> If you are using Jupyter Notebooks to develop you Python program, you use the `%noise_model --set-by-name` magic command to initialize the noise model to an ideal model.
+> If you are using Jupyter Notebooks to develop your Python program, you use the `%noise_model --set-by-name` magic command to initialize the noise model to an ideal model.
 
 This noise model is represented as a Python dictionary from preparations, measurements, and gates to Python objects representing the noise in each. For example, in the ideal noise model, the <xref:Microsoft.Quantum.Intrinsic.H> is simulated by a unitary matrix:
 
