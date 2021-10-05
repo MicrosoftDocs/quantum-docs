@@ -19,7 +19,7 @@ With Azure Quantum, you can use the `azure-quantum` Python package to submit qua
 
 ## Quantum circuit diagram conventions
 
-In a circuit diagram, each solid line depicts a qubit, or more generally a qubit register. By convention, the top line is qubit register $0$ and the remainder are labeled sequentially. 
+In a circuit diagram, each solid line depicts a qubit, or more generally, a qubit register. By convention, the top line is qubit register $0$ and the remainder are labeled sequentially. 
 
 Operations are represented by quantum gates. The term quantum gate is analogous to classical logic gates. Gates acting on one or more qubit registers are denoted as a box.
 For example, the symbol
