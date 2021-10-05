@@ -141,7 +141,7 @@ Qobj data =
  [ 0.70710678 -0.70710678]]
 ```
 
-Besides ideal noise model, you can configure other noise models. For example, the **depolarizing channel** is a simple model for noise in quantum systems. A quantum channel can be view as a map $\Delta_{p}$, depending on one parameter $\lambda$ , which maps a quantum state $\rho$ to a quantum state $\rho^{'}$. The single-qubit depolarizing channel is written as:
+Besides the ideal noise model, you can configure other noise models. For example, the *depolarizing channel* is a simple model for noise in quantum systems. A quantum channel can be view as a map $\Delta_{p}$, depending on one parameter $\lambda$ , which maps a quantum state $\rho$ to a quantum state $\rho^{'}$. The single-qubit depolarizing channel is written as:
 
 $$\Delta_{p}(\rho) = (1-p) \frac{\mathbb{I}}{2} + p \rho $$
 
