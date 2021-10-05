@@ -107,7 +107,7 @@ Qobj data =
  ```
 
 > [!NOTE]
-> The QuTiP library is a very handful library to work with quantum states. In QuTiP notation, quantum states are written as `qt.basis(d,s)`, where *d* is the dimension of the systems and *s* is the state. For example, the quantum state $|0\rangle$ can be written as `ket_zero = qt.basis(2, 0)`. To learn more about QuTiP methods and features, see the [QuTiP user guide](https://qutip.org/docs/latest/guide/guide.html).
+> The QuTiP library is a very helpful library when working with quantum states. In QuTiP notation, quantum states are written as `qt.basis(d,s)`, where *d* is the dimension of the systems and *s* is the state. For example, the quantum state $|0\rangle$ can be written as `ket_zero = qt.basis(2, 0)`. To learn more about QuTiP methods and features, see the [QuTiP user guide](https://qutip.org/docs/latest/guide/guide.html).
 
 ## Configuring Open Systems Noise Models
 
