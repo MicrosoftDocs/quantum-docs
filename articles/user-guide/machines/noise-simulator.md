@@ -240,7 +240,7 @@ $$\left(\begin{array}{c|c|c}0 & 1 & 0\\\hline 1 & 0 & 0\end{array}\right)$$
 > [!TIP]
 > If you are running the Python host program from the terminal, you will obtain the HTML metadata from the output of `print(.simulate_noise())`. For easier visualization, Jupyter Notebooks displays HTML  tables within the same notebook.
 
-3. Notably, the stabilizer representation does not support operations outside of the stabilizer formalism, such as T and CCNOT. This allows the stabilizer representation to support significantly more qubits than other representations. For example, consider a quantum register of 10 qubits:
+3. Notably, the stabilizer representation does not support operations outside of the stabilizer formalism, such as [T](xref:Microsoft.Quantum.Intrinsic.T) and [CCNOT](xref:Microsoft.Quantum.Intrinsic.CCNOT). This allows the stabilizer representation to support significantly more qubits than other representations. For example, consider a quantum register of 10 qubits:
 
 ```python
 qsharp.config['experimental.simulators.nQubits'] = 10
