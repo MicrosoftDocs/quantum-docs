@@ -69,7 +69,7 @@ You can now list all the targets that you have access to, including the
 current queue time and availability.
 
 ```python
-service.targets()
+print(service.targets())
 ```
 
 ```output
@@ -96,7 +96,7 @@ circuit = cirq.Circuit(
     cirq.CX(q0, q1),              # CNOT
     cirq.measure(q0, q1, key='b') # Measure both qubits
 )
-circuit
+print(circuit)
 ```
 
 ```output
@@ -164,7 +164,7 @@ job = service.create_job(
 To check on the job status, use `job.status()`:
 
 ```python
-job.status()
+print(job.status())
 ```
 
 ```output
@@ -199,7 +199,7 @@ cirq_ionq.results.SimulatorResult
 To convert this to a `cirq.Result` object, use `result.to_cirq_result()`:
 
 ```python
-result.to_cirq_result()
+print(result.to_cirq_result())
 ```
 
 ```output

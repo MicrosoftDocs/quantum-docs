@@ -118,8 +118,6 @@
   items:
   - name: Overview
     items:
-    - name: What is quantum inspired optimization (QIO)?
-      href: optimization-what-is-quantum-optimization.md
     - name: What is optimization?
       href: optimization-overview-introduction.md
     - name: Key concepts
@@ -131,7 +129,7 @@
   - name: How-to guides
     items:
     - name: Submit optimization jobs
-      href: how-to-submit-jobs.md
+      href: how-to-submit-jobs-optimization.md
     - name: Publish a QIO job as an Azure Function
       href: how-to-publish-qio-job-as-azurefunction.md
   - name: Concepts
