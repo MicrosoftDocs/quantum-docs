@@ -16,3 +16,11 @@ groups:
     title: Microsoft QIO
   - id: platform-1qbit
     title: 1QBit
+- id: azurequantum-ide
+  title: IDE for submitting jobs to AQ 
+  prompt: Select the option for your development environment
+  pivots:
+  - id: ide-python
+    title: Python
+  - id: ide-jupyter
+    title: Jupyter Notebooks
