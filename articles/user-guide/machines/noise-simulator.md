@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to run your Q# programs on the Microsoft Quantum Development Kit noise simulator.
 ms.author: v-sonialopez
-ms.date: 09/30/2021
+ms.date: 10/05/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -78,7 +78,7 @@ print(DumpPlus.simulate_noise())
 
 5. Looking at the output, you can notice two distinct differences compared to the output of the [default simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), which you can invoke using `.simulate()`:
 
-- The preview simulators use quantum registers of a fixed size (by default, three qubits), and allocate qubits from that register.
+- The preview simulators use quantum registers of a defined size (by default, three qubits), and allocate qubits from that register.
 - By default, the preview simulators represent quantum states as density operators, $\rho = \left|\psi\right\rangle\left\langle\psi\right|$, instead of as state vectors, $\left|\psi\right\rangle$.
 
 For example, in the output above, the preview simulator has output the density operator $\rho = \left|+00\right\rangle\left\langle+00\right|$, which you can verify by using QuTiP.
@@ -219,7 +219,7 @@ print(DumpPlus.simulate_noise())
 
 ## Configuring stabilizer noise models
 
-You can configure the preview simulator to be used with stabilizer circuits or algorithms, also known as CHP simulation. CHP (CNOT-Hadamard-Phase) simulation allows for high-performance simulation of stabilizer programs; that is, quantum algorithms that consist solely of controlled-NOT, Hadamard, and π/2 phase gates (represented in Q# by the [`S` operation](xref:Microsoft.Quantum.Intrinsic.S)), as well as Pauli-basis measurements. Stabilizer programs can be simulated efficiently on a classical computer, as shown by [the Gottesman–Knill theorem](https://en.wikipedia.org/wiki/Gottesman%E2%80%93Knill_theorem).
+You can configure the preview simulator to be used with stabilizer circuits (or stabilizer algorithms), also known as CHP simulation. CHP (CNOT-Hadamard-Phase) simulation allows for high-performance simulation of stabilizer programs; that is, quantum algorithms that consist solely of controlled-NOT, Hadamard, and π/2 phase gates (represented in Q# by the [`S` operation](xref:Microsoft.Quantum.Intrinsic.S)), as well as Pauli-basis measurements. Stabilizer programs can be simulated efficiently on a classical computer, as shown by [the Gottesman–Knill theorem](https://en.wikipedia.org/wiki/Gottesman%E2%80%93Knill_theorem).
 
 1. Create a new noise model by using `get_noise_model_by_name` and set it as the active noise model:
 
