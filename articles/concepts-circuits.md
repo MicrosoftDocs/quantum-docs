@@ -87,7 +87,7 @@ The action of a quantum singly controlled gate, denoted $\Lambda(G)$, where a si
 
 $$\Lambda(G) (\alpha \ket{0} + \beta \ket{1}) \ket{\psi} = \alpha \ket{0} \ket{\psi} + \beta \ket{1} G\ket{\psi}$$
 
-That is to say, the controlled gate applies $G$ to the register containing $\psi$ if and only if the control qubit takes the value $1$. In general, we describe such controlled operations in circuit diagrams as
+That is to say, the controlled gate applies $G$ to the register containing $\psi$ if and only if the control qubit takes the value $1$. In general, such controlled operations are described in circuit diagrams as
 
 <!--- ![](.\media\5.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
