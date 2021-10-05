@@ -100,7 +100,7 @@ workspace = Workspace(
 
     ```python
     results = job.get_results()
-    results
+    print(results)
     ```
 
     ```output
@@ -119,7 +119,6 @@ workspace = Workspace(
 1. You can then visualize the results using [Matplotlib](https://matplotlib.org/stable/users/installing.html).
 
     ```python
-    %matplotlib inline
     import pylab as pl
     pl.hist(results["c0"])
     pl.ylabel("Counts")
