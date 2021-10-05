@@ -120,7 +120,7 @@ print(DumpPlus.simulate_noise())
 ```output
 'text/plain': 'Mixed state on 1 qubits: [ [0.5000000000000001 + 0 i, 0.5000000000000001 + 0 i] [0.5000000000000001 + 0 i, 0.5000000000000001 + 0 i] ]'
 ```
-2. You can modify the noise model used in simulating Q# programs by using several functions in the `qsharp.experimental` module. For instance, to initialize the noise model to an **ideal model** (that is, with no noise), you can use `set_noise_model_by_name`. You can then access the noise model by using `get_noise_model`:
+2. You can modify the noise model used in simulating Q# programs by using several functions in the `qsharp.experimental` module. For example, to initialize the noise model to an ideal model (that is, with no noise), you can use `set_noise_model_by_name`. You can then access the noise model by using `get_noise_model`:
 
 ```python
 qsharp.experimental.set_noise_model_by_name('ideal')
