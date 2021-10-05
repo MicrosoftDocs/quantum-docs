@@ -139,7 +139,7 @@ Quantum teleportation is a method for moving data within a quantum computer (or 
 Interestingly, it is actually capable of moving a quantum state, say the value in a given qubit, from one qubit to another, without even knowing what the qubit's value is.
 This is necessary for the protocol to work according to the laws of quantum mechanics.
 
-The quantum teleportation circuit is given below; together with an annotated version of the circuit to illustrate how to read the quantum circuit.
+The quantum teleportation circuit is shown here along with an annotated version of the circuit to illustrate how to read the quantum circuit.
 
 <!--- ![](.\media\tp2.svg){ width=50% } --->
 ![Quantum teleportation circuit](~/media/tp2.svg)
