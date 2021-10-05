@@ -156,7 +156,7 @@ Microsoft’s software development kit for developing quantum applications in th
 
 ## Quantum-inspired optimization (QIO)
 
-The emulation of quantum algorithms on classical computing hardware to find optimal solutions to complex problems. For more information, see [What is quantum-inspired optimization?](xref:microsoft.quantum.optimization.overview.what-is-qio).
+The emulation of quantum algorithms on classical computing hardware to find optimal solutions to complex problems. For more information, see [What is quantum-inspired optimization](xref:microsoft.quantum.optimization.concepts.overview.introduction).
 
 ## Quantum-inspired optimization problem
 

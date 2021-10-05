@@ -53,8 +53,6 @@ landingContent:
         links:
         - text: What is optimization?
           url: optimization-overview-introduction.md
-        - text: What are quantum-inspired algorithms?
-          url: optimization-what-is-quantum-optimization.md
       - linkListType: quickstart 
         links:
           - text: Solve an optimization problem in Azure Quantum
