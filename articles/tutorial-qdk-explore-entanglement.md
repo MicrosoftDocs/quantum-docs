@@ -449,5 +449,5 @@ you how to build and run Grover search, one of the most popular quantum
 computing algorithms and offers a nice example of a Q# program that can be used
 to solve real problems with quantum computing.  
 
-[Get Started with the Quantum Development Kit](xref:microsoft.quantum.get-started-qdk)
+[Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview)
 recommends more ways to learn Q# and quantum programming.

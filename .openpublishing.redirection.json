@@ -104,6 +104,16 @@
 			"source_path": "articles/install-azure-quantum-sdk-python.md",
 			"redirect_url": "/azure/quantum/quickstart-microsoft-provider-format",
 			"redirect_document_id": true
+		},
+		{
+			"source_path": "articles/install-get-started-qdk.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
+			"redirect_document_id": true
+		},
+		{
+			"source_path": "articles/optimization-what-is-quantum-optimization.md.md",
+			"redirect_url": "/azure/quantum/optimization-overview-introduction",
+			"redirect_document_id": true
 		}
 	]
 }
