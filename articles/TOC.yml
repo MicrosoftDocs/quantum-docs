@@ -113,6 +113,8 @@
           href: provider-support-honeywell.md
     - name: Samples for using Azure Quantum Computing >>
       href: https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum
+    - name: Azure Quantum Credits FAQ
+      href: credits-faq.md
 - name: Optimization
   expanded: true
   items:
