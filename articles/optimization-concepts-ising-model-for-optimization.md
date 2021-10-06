@@ -2,7 +2,7 @@
 author: andrist
 description: This document describes the Ising model and its use in formulating optimization problems.
 ms.author: ruandris
-ms.date: 02/01/2021
+ms.date: 10/05/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: conceptual
@@ -14,7 +14,7 @@ uid: microsoft.quantum.optimization.concepts.ising-model
 
 In statistical mechanics, the *Ising model* is a simplified representation of
 the interaction between individual magnetic moments in a ferromagnetic
-substance (for example, a fridge magnet). These moments, called *spins*, are presumed to
+substance, for example, a refrigerator magnet. These moments, called *spins*, are presumed to
 point either "up" ($+1$) or "down" ($-1$) and interact with other spins
 depending on their relative position.
 
@@ -37,27 +37,26 @@ The energy of an Ising system is described by the *Hamiltonian*
 $$ \mathcal{H} = -\sum_{\langle i,j\rangle} J \sigma_i\sigma_j, $$
 
 where $\sigma_i \in \\{\pm1\\}$ are the spin variables, the sum is over
-interacting ("neighboring") spin pairs and $J>0$ is an interaction constant
-(describing how strongly neighboring spins interact). For each pair of spins
-which are aligned, we get a contribution of $-J$ to the overall energy.
+interacting, or *neighboring*, spin pairs, and $J>0$ is an interaction constant
+that describes how strongly neighboring spins interact. For each pair of spins
+which are aligned, there is a contribution of $-J$ to the overall energy.
 
 > [!NOTE]
-> The Ising Model has no disorder in the interaction; at low temperature
-> all spins have a tendency to align with their respective neighbors and
-> the lowest-energy state ("ground state") is attained when all spin
-> variables have the same value (for example, they are either all $+1$ or all $-1$).
+> The Ising Model has no disorder in the interaction. At low temperature,
+> all spins have a tendency to align with their respective neighbors. The lowest-energy state, or *ground state*, is attained when all spin
+> variables have the same value; for example, they are either all $+1$ or all $-1$.
 
 ## Dynamics of the system
 
-The probability of finding statistical-mechanical system in a specific state is
+The probability of finding a statistical-mechanical system in a specific state is
 given by the Boltzmann distribution. It depends on the energy of this state
-(compared to that of all other possible states) and the temperature:
+(compared to that of all other possible states) and the temperature
 
 $$ p(\vec{\sigma}) = \frac{e^{-\mathcal{H}(\vec\sigma)/k_\mathrm{B}T}}{\sum_{\vec{s}}e^{-\mathcal{H}(\vec{s})/k_\mathrm{B}T}} \propto e^{-\mathcal{H}(\vec\sigma)/k_\mathrm{B}T},$$
 
-where the normalizing sum in the denominator is over all states ("partition
-function"), $k_\mathrm{B}$ is the Boltzmann constant (typically simplified to
-$k_\mathrm{B}=1$ in theoretical models) and $T$ is the current temperature (often
+where the normalizing sum in the denominator is over all of the states (the *partition
+function*), $k_\mathrm{B}$ is the Boltzmann constant (typically simplified to
+$k_\mathrm{B}=1$ in theoretical models), and $T$ is the current temperature (often
 expressed as the inverse temperature $\beta = 1/T$).
 
 > [!NOTE]
@@ -70,25 +69,25 @@ expressed as the inverse temperature $\beta = 1/T$).
 
 While the (ferromagnetic) Ising model offers some interesting dynamics,
 the system becomes more complex if the interaction constants $J$ are
-allowed to be bond-dependent (for example, we use a different constant for
-each set of interacting spins).
+allowed to be *bond-dependent*, such as using a different constant for
+each set of interacting spins.
 
 $$ \mathcal{H} = -\sum_{\langle i,j\rangle} J_{ij} \sigma_i\sigma_j. $$
 
-For these so-called *Ising Spin Glasses*,
+These are know as *Ising Spin Glasses*, and exhibit the following behavior:
 
-* A term with $J_{ij}<0$ represents anti-ferromagnetic interaction: 
-  Spins which favor anti-alignment (alternating $+1$ and $-1$ spin values).
+* A term with $J_{ij}<0$ represents anti-ferromagnetic interaction, that is,
+  spins which favor anti-alignment (alternating $+1$ and $-1$ spin values).
 
 * A selection of $J_{ij}$'s with different signs (and possibly magnitudes),
-  along with the interaction graph, can lead to *competing interactions*:
-  A situation where no spin-variable assignment satisfies all the bonds
-  (this is known as *frustration*).
+  along with the interaction graph, can lead to *competing interactions*;
+  a situation where no spin-variable assignment satisfies all the bonds
+  (known as *frustration*).
 
 * When finding the ground state, the choice of *how* to assign variables
   with competing interactions can have a ripple effect across the system
-  (by changing how adjacent spins must be arranged, in turn impacting
-  their respective neighbors).
+  by changing how adjacent spins must be arranged, in turn impacting
+  their respective neighbors.
 
 As a result, finding the ground state is much more challenging in these
 complex systems.
