@@ -2,7 +2,9 @@
 author: andrist
 description: This document describes the definition and purpose of the cost function for optimization problems.
 ms.author: ruandris
+
 ms.date: 09/13/2021
+
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: conceptual
@@ -14,8 +16,9 @@ uid: microsoft.quantum.optimization.concepts.cost-function
 
 An *optimization problem* is described by a set of *variables*, each having a set, or range, of possible values. They describe the decisions that the optimization solver must make.
 
-A *solution* assigns a value to each of these variables. These describe the choice
+A *solution* assigns a value to each of these variables. The variables describe the choice
 for each of the aforementioned decisions.
+
 
 The *cost function* associates a numerical value, or *score*, with each possible
 solution in order to compare them and select the most favorable one, the *optimal solution*, which is typically
@@ -53,8 +56,8 @@ problem's variables and parameters.
 
 ## Constraints
 
-A *constraint* is a relation between multiple variables which must hold for a
-solution to be deemed valid.
+A *constraint* is a relation between multiple variables that must hold for a
+solution to be considered valid.
 
 Solutions which violate constraints can either be assigned a very high cost, or *penalty*, by the cost function or be excluded from sampling explicitly by
 the solver.
@@ -75,11 +78,8 @@ the optimal solution, $22/7$, is unique.
 
 ## Parameterized models
 
-Typical optimization problems consist of many variables and several terms
-constituting the cost function. It is therefore pertinent to select a
-specific structure for the mathematical expression, while denoting merely
-the parameters and variable locations required to construct the cost
-function.
+Typically, optimization problems consist of many variables and several terms that make up the cost function. 
+It is useful to select a specific mathematical structure to represent these cost functions which allows you to simply denote the parameters and variable locations required to construct the cost function for your specific problem.
 
 **Example**: Divide a set of $N$ numbers into two groups of equal sum.
 
@@ -88,6 +88,7 @@ function.
     first ($x_i=+1$) or second group ($x_i=-1$).
 * Model cost function:
   $$ \mathrm{cost} = \left| \sum_i w_i x_i \right| $$
+
 
 That is, you always construct a cost function of the form in the last bullet,
 but you adjust the parameters $w_i$ according to the specific problem instance
@@ -110,15 +111,19 @@ and the [quadratic and polynomial unconstrained binary optimization](xref:micros
 problems. These support versatile applications because several other
 optimization problems can be mapped to them.
 
+
 **Example**: For the previous number set division problem, you can substitute the
+
 absolute value with the square operator (which also has its lowest value at 0)
 to obtain
 
 $$ \mathrm{cost}' = \left(\sum_i w_ix_i\right)^2 = \sum_{ij} w_iw_jx_ix_j\text{ .} $$
 
+
 When multiplied out, this cost function has more terms than the previous example,
 but it happens to be in the polynomial (PUBO) form supported by the Microsoft QIO solvers
 (namely, an Ising cost function).
+
 
 ### Ising cost function
 
@@ -185,5 +190,5 @@ Although the form of the PUBO cost function is identical to the previous Ising e
 
 > [!NOTE]
 > PUBO and QUBO are handled by the same cost function; there is no separate
-> `"qubo"` identifier. Quadratic binary optimization problems are a special
+> **qubo** identifier. Quadratic binary optimization problems are a special
 > case of a PUBO where each `ids` array has length at most 2.

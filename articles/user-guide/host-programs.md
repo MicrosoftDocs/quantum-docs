@@ -2,7 +2,7 @@
 author: bradben
 description: Overview of the different ways to run Q# programs. From the command prompt, Q# Jupyter Notebooks, and classical host programs in Python or a .NET language.
 ms.author: v-benbra
-ms.date: 02/01/2021
+ms.date: 09/16/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -181,7 +181,6 @@ namespace MultiSuperposition {
         use qubits = Qubit[n];               // allocate a register of n qubits in |0> 
         ApplyToEach(H, qubits);              // apply H to each qubit in the register
         return ForEach(MResetZ, qubits);     // perform MResetZ on each qubit, returns the resulting array
-        }
     }
 }
 ```
@@ -375,9 +374,7 @@ Passing arrays in a similar manner is also possible. You can see an example of t
 Passing qubits as arguments from classical code is not possible. Any logic that relates to Q# types like `Qubit` should live in your Q# code. If you want your Python code to specify the number of qubits, you could have something like `nQubits : Int` parameter to your Q# operation. Your Python code could pass this as a integer and then your Q# code could allocate the array of the appropriate number of qubits.
 
 For the `Pauli` and `Result` types, there are actually Python enums defined such that you could pass those values directly if you want to. See [qsharp.Pauli](https://docs.microsoft.com/python/qsharp-core/qsharp.pauli?azure-portal=true!) and [qsharp.Result](https://docs.microsoft.com/python/qsharp-core/qsharp.result?azure-portal=true!).
-
-Passing a previously defined callable such as an operation as argument is possible in Python host programs. You can see an example of passing callables to Q# in the [Quantum Process Tomography with Q# and Python sample](https://github.com/microsoft/Quantum/blob/main/samples/interoperability/python/tomography-sample.ipynb).
-  
+ 
 #### Using Q# code from other projects or packages
 
 By default, the `import qsharp` command loads all of the `.qs` files in the current folder and makes their Q# operations and functions

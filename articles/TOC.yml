@@ -33,8 +33,12 @@
       items:
       - name: Create a quantum-based random number generator with Q#
         href: quickstart-microsoft-qc.md
-      - name: Submit quantum circuits to IonQ and Honeywell with Python
-        href: install-azure-quantum-sdk-python.md
+      - name: Submit a circuit with Qiskit
+        href: quickstart-microsoft-qiskit.md
+      - name: Submit a circuit with Cirq
+        href: quickstart-microsoft-cirq.md
+      - name: Submit a circuit in provider-specific format
+        href: quickstart-microsoft-provider-format.md
     - name: Quantum Development Kit (QDK)
       items:
       - name: Q# applications
@@ -61,6 +65,8 @@
     items: 
     - name: Submit Q# jobs
       href: how-to-submit-jobs.md
+    - name: Publish a Q# job as an Azure Function
+      href: how-to-publish-qsharp-job-as-azurefunction.md
   - name: Q# user guide
     href: user-guide/toc.yml
   - name: Concepts
@@ -112,8 +118,6 @@
   items:
   - name: Overview
     items:
-    - name: What is quantum inspired optimization (QIO)?
-      href: optimization-what-is-quantum-optimization.md
     - name: What is optimization?
       href: optimization-overview-introduction.md
     - name: Key concepts
@@ -125,7 +129,9 @@
   - name: How-to guides
     items:
     - name: Submit optimization jobs
-      href: how-to-submit-jobs.md
+      href: how-to-submit-jobs-optimization.md
+    - name: Publish a QIO job as an Azure Function
+      href: how-to-publish-qio-job-as-azurefunction.md
   - name: Concepts
     items:
     - name: Which solver should I use?
@@ -190,8 +196,12 @@
         href: optimization-input-formats.md
       - name: Term
         href: optimization-term.md
+      - name: SlcTerm
+        href: optimization-slc-term.md
       - name: RangeSchedule
         href: optimization-rangeschedule.md
+      - name: GroupType
+        href: optimization-group-type.md
     - name: Usage
       items:
       - name: Express a problem
@@ -210,6 +220,8 @@
   items:
     - name: Update the QDK
       href: install-update-qdk.md
+    - name: Create an Azure Quantum Workspace
+      href: how-to-create-workspace.md
     - name: Work with jobs
       href: how-to-work-with-jobs.md
     - name: Authenticate using a service principal
@@ -248,5 +260,5 @@
       href: contributing-style-guide.md
     - name: API design principles
       href: contributing-api-design-principles.md
-- name: Release Notes
-  href: qdk-relnotes.md
+- name: Release notes
+  href: release-notes.md

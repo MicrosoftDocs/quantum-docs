@@ -94,6 +94,16 @@
 			"source_path": "articles/concepts-targets-in-azure-quantum.md",
 			"redirect_url": "/azure/quantum/quantum-computing-target-profiles",
 			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/qdk-relnotes.md",
+			"redirect_url": "/azure/quantum/release-notes",
+			"redirect_document_id": true
+		},
+		{
+			"source_path": "articles/install-azure-quantum-sdk-python.md",
+			"redirect_url": "/azure/quantum/quickstart-microsoft-provider-format",
+			"redirect_document_id": true
 		}
 	]
 }

@@ -39,7 +39,7 @@
       "ms.service": "azure-quantum",
       "ms.devlang": "qsharp",
       "ms.topic": "conceptual",
-      "searchScope": ["quantum", "q#", "qsharp"],
+      "searchScope": ["q#", "qsharp", "Quantum"],
       "feedback_system": "GitHub",
       "feedback_github_repo": "MicrosoftDocs/quantum-docs",
       "feedback_product_url": "https://github.com/MicrosoftDocs/quantum-docs/issues",
