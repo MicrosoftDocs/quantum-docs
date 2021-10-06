@@ -5,7 +5,7 @@ author: quantumrandom
 ms.author: dasteige
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.date: 09/13/2021
+ms.date: 10/05/2021
 ms.topic: conceptual
 uid: microsoft.quantum.optimization.choose-solver
 ---

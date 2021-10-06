@@ -3,7 +3,7 @@ author: andrist
 description: This document describes the definition and purpose of the cost function for optimization problems.
 ms.author: ruandris
 
-ms.date: 09/13/2021
+ms.date: 10/05/2021
 
 ms.service: azure-quantum
 ms.subservice: optimization
