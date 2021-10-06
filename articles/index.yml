@@ -29,7 +29,7 @@ landingContent:
       - linkListType: get-started
         links:
           - text: Set up Azure Quantum
-            url: install-dev-main.md
+            url: install-overview-qdk.md
       - linkListType: learn
         links:
           - text: Microsoft Learn
