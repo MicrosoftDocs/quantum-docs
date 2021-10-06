@@ -45,6 +45,26 @@ In some cases, your rejection notice may specify that insufficient information w
 ## Are there any costs or charges when using my credits?
 
 ## How do I see my credits balance?
+You can see your current credit balance by going to the Overview blade on your Azure Quantum Workspace, and selecting the "Quota" tab. You will see a credits quota for each provider that you have credits with. You will see the total number of credits you have received, and may hover over the relevant graph to see the amount you have used towards your credits.
+
+You can also see your quotas by using the AZ CLI and the `az quantum workspace quotas` command, like in the example below. In this case, the `qgs` row shows that the account has a total of `8333334 qgs`, of which `33334 qgs` have been used.
+```bash
+$ az quantum workspace quotas -o table
+Dimension  Holds  Limit      Period    ProviderId  Scope         Utilization
+---------  -----  ---------  --------  ----------  ------------  -----------
+qgs        0.0    8333334.0  Infinite  ionq        Subscription  33334.0
+```
+
+Note that credits are shown in the quota units used by the provider, and not in the dollar value of the credits received. You may use the table below to understand the approximate conversion value between quota units and US dollar value:
+| Provider | Unit | Approximate $ Value (USD) |
+|----------|------|---------------|
+| Honeywell | HQC (Honeywell Quantum Credit) | $1 USD ~= 0.08 HQC |
+| IonQ | QGS (Qubit Gate-Shot) | $1 USD ~= 33,333.3 QGS |
+
+## I'm encountering a problem using my credits, what can I do?
+If you are having any problems with Azure Quantum pertaining to credits or otherwise, the best and fastest place to get support is by [filing a support ticket with Azure](https://azure.microsoft.com/support/create-ticket/).
+
+If you do not have an Azure support subscription or are unsure about how to file a ticket, you may reply to your approval notice email and one of our team members will get back to you.
 
 ## Guide: Onboarding with Honeywell Credits
 
