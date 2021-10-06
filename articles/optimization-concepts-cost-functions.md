@@ -132,7 +132,7 @@ cost function has the form
 
 $$ \mathrm{cost} = \sum_k \mathrm{term}_k = \sum_k c_k\prod_i x_i\text{ .} $$
 
-The parameters `c` and the `ids` of the variables $x_i$ participating in each
+The parameters $c$ and the *ids* of the variables $x_i$ participating in each
 term $k$ are listed as part of the input.
 
 For instance, the input
