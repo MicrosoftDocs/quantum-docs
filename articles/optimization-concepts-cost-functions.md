@@ -94,13 +94,13 @@ That is, you always construct a cost function of the form in the last bullet,
 but you adjust the parameters $w_i$ according to the specific problem instance
 you are solving.
 
-For instance, the numbers $[18, 19, 36, 84, 163, 165, 243]$ result in
+For example, the numbers $[18, 19, 36, 84, 163, 165, 243]$ result in
 the cost function
 
 $$ \mathrm{cost} = \left| 18x_0 + 19x_1 + 36x_2 + 84x_3 + 163x_4 + 165x_5 + 243x_6 \right|$$
 
 > [!NOTE]
-> This instance has only two solutions with $\mathrm{cost}=0$ (one mirrors
+> This example has only two solutions with $\mathrm{cost}=0$ (one mirrors
 > the other). Can you find them?
 
 ## Supported models
@@ -169,7 +169,7 @@ For binary optimization problems, variables take the values $x_i\in\\{0,1\\}$ an
 
 $$ \mathrm{cost} = \sum_k \mathrm{term}_k = \sum_k c_k\prod_i x_i\text{ .} $$
 
-For instance, the input
+For example, the input
 
 ```json
 "cost_function" {

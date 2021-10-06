@@ -12,12 +12,12 @@ uid: microsoft.quantum.optimization.choose-solver
 
 # Which optimization solver should I use?
 
-Azure Quantum offers a broad range of solvers for optimization problems. You can consult the full list in the [reference page](xref:microsoft.quantum.reference.qio-target-list). However, it is unfortunately not possible to determine *a priori* which solver will perform best for a new optimization problem. THis article describes Microsoft's suggested strategy to find a suitable solver by benchmarking.
+Azure Quantum offers a broad range of solvers for optimization problems. You can consult the full list in the [reference page](xref:microsoft.quantum.reference.qio-target-list). However, it is unfortunately not possible to determine *a priori* which solver will perform best for a new optimization problem. This article describes Microsoft's suggested strategy to find a suitable solver by benchmarking.
 
 ## Benchmarking objective
 
 The benchmarking objective will have a large influence on the selection of a suitable solver. This objective for the solvers is dictated by the application. For example, one benchmarking objective is to find the closest solution to the global minimum. Another objective might be to find the closest solution to the global minimum but in a given time interval or for a specified runtime cost.
-If ou are interested in solving several problems from a similar domain, a benchmarking objective might be to find a solver which produces good results for most instances, rather than returning very good results for some instances but failing to give a good enough solution for the remaining instances.
+If you are interested in solving several problems from a similar domain, a benchmarking objective might be to find a solver which produces good results for most instances, rather than returning very good results for some instances but failing to give a good enough solution for the remaining instances.
 
 ## Benchmarking strategy
 
