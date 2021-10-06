@@ -62,8 +62,8 @@ $$
 
 If the elements of the adjacency matrix $J_{ij}$ are drawn from a random
 distribution, the objective function in the example is equivalent to the *Hamiltonian*
-of *spin glass*. Spin glasses are well-known in physics for their 
-rugged energy landscape with exponentially many local minima which makes 
+of *spin glass*. Spin glasses are well known in physics for their 
+rugged energy landscape with exponentially many local minima, which makes 
 finding their ground state an NP-hard problem.
 Many non-trivial optimization problems such as max-cut, network flows, 
 satisfiability, geometrical packing, graph coloring, and integer linear
@@ -72,9 +72,9 @@ might increase the hardness of the problem.
 
 ### Example of a QUBO problem
 
-The following shows the QUBO mapping for the famous Travelling Salesperson Problem (TSP).
+The following example shows the QUBO mapping for the famous Traveling Salesperson Problem (TSP).
 
-![The travelling salesperson problem.](~/media/travelling-salesperson.png)
+![The traveling salesperson problem.](~/media/travelling-salesperson.png)
 
 The TSP is a simple, yet important, problem with applications in transportation. 
 It consists of trying to find the shortest closed path between a set of $N$
@@ -96,4 +96,4 @@ example expression is simply the length of the path, whereas the last two terms
 enforce the requirements that every site in $\mathcal{S}$ appears in the
 path and no site is visited more than once, respectively. 
 Note that the penalty coefficient $\lambda$ must be a large positive number,
-so that any deviation form the constraints is heavily suppressed.
+so that any deviation from the constraints is heavily suppressed.
