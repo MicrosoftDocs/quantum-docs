@@ -178,6 +178,6 @@ can be merged into
 merged_term = Term(c=5, indices=[0,1])
 ```
 
-where the Python SDK is used to [express the terms of an optimization problem](/azure/quantum/optimization-express-optimization-problem).
+where the *azure-quantum* Python package is used to [express the terms of an optimization problem](/azure/quantum/optimization-express-optimization-problem).
 
-Merging terms may significantly improve the performance of QIO, if your problem has many such terms. You can either use a hash map or sort algorithm to do the merging.
+Merging terms may significantly improve the performance of quantum-inspired optimization, if your problem has many such terms. You can either use a hash map or sort algorithm to do the merging.

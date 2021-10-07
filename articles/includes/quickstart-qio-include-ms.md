@@ -55,9 +55,9 @@ To open the Azure Portal, go to <https://portal.azure.com> and then follow these
 > [!NOTE]
 > Pricing for Azure Quantum varies by provider. Please consult the information in the Providers tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information, or visit the [Azure Quantum pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
 
-## Install the Python SDK for Azure Quantum
+## Install the azure-quantum Python package
 
-To implement a solution, first ensure that you have the Python SDK for Azure Quantum installed on your machine. If you don't have it installed yet, follow these steps:
+To implement a solution, first ensure that you have the *azure-quantum* Python package installed on your machine. If you don't have it installed yet, follow these steps:
 
 1. Install [Python](https://www.python.org/downloads/) 3.6 or later in case you haven't already.
 1. Install [PIP](https://pip.pypa.io/en/stable/) and ensure you have **version 19.2 or higher**.
@@ -71,7 +71,7 @@ To implement a solution, first ensure that you have the Python SDK for Azure Qua
 
 Optionally, you can choose to interact with Azure Quantum optimization using Jupyter Notebooks. In order to do this, you need to:
 
-1. Install the Python SDK for Azure Quantum (as described in the previous section)
+1. Install the *azure-quantum* Python package (as described in the previous section)
 2. [Install Jupyter Notebooks](https://jupyter.org/install)
 3. In your terminal of choice, use the following command to launch a new Jupyter Notebook:
 
