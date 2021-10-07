@@ -98,3 +98,4 @@ The full state simulator uses [OpenMP](http://www.openmp.org/) to parallelize th
 - [Quantum resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)
 - [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
 - [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)
+- [Quantum noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator)

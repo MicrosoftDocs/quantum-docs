@@ -34,7 +34,9 @@ We refer to the [Q# language guide](xref:microsoft.quantum.qsharp.overview) for 
 
 - [Quantum simulators and host applications](xref:microsoft.quantum.machines.overview): An overview of the different simulators available, as well of how host programs and target machines work together to run Q# programs.
 
-- [Full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator): The target machine which simulates the full quantum state. Useful for fully running or debugging smaller-scale programs (less than a few dozen qubits)
+- [Full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator): The target machine which simulates the full quantum state. Useful for fully running or debugging smaller-scale programs (less than a few dozen qubits).
+
+- [Noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator): A preview simulator for simulation of open quantum systems, that is quantum systems under the influence of noise.
 
 - [Resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator): Estimates the resources required to run a given instance of a Q# operation on a quantum computer.
 

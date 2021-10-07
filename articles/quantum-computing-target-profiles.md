@@ -29,7 +29,7 @@ write programs without functionality restrictions. Azure Quantum does not provid
 any target with this profile yet, but you can try any Q# program locally using the
 [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) or the [resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator) from the QDK. 
 
-If you need help setting up your environment to run Q# programs locally, see [Getting started with the QDK](xref:microsoft.quantum.get-started-qdk).
+If you need help setting up your environment to run Q# programs locally, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview).
 
 You can also explore different [Q# code samples](/samples/browse/?languages=qsharp) to run locally with the QDK.
 
