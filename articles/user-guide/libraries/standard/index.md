@@ -1,8 +1,8 @@
 ---
-author: QuantumWriter
+author: SoniaLopezBravo
 description: Learn about the Microsoft Q# standard libraries that define the operations, functions and data types used in quantum programs.
-ms.author: martinro
-ms.date: 08/29/2021
+ms.author: v-sonialopez
+ms.date: 10/07/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
