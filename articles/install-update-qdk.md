@@ -19,6 +19,7 @@ This article assumes that you already have the QDK installed. If you are install
 
 We recommend keeping up to date with the latest QDK release. Follow this update guide to upgrade to the most recent QDK version. 
 The process consists of two parts:
+
 1. Updating your existing Q# files and projects to align your code with any updated syntax.
 2. Updating the QDK itself for your chosen development environment.
 
@@ -154,7 +155,7 @@ Select your development environment below.
 * [Visual Studio: update the QDK extension](#update-the-visual-studio-qdk-extension)
 * [VS Code: update the QDK extension](#update-the-vs-code-qdk-extension)
 * [Command line and C#: update project templates](#c-using-the-dotnet-command-line-tool)
-* [Python: Update the *azure-quantum* Python package](#update-the-python-sdk-for-azure-quantum)
+* [Python: Update the *azure-quantum* Python package](#update-the-azure-quantum-python-package)
 
 
 ## Update the `qsharp` Python package
