@@ -7,7 +7,7 @@ ms.subservice: computing
 ms.topic: include
 ---
 
-# Prerequisites
+## Prerequisites
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.quickstarts.optimization.qio).
