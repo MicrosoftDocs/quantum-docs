@@ -96,3 +96,4 @@ Each of these tools is enabled by setting appropriate flags in `QCTraceSimulator
 - [Quantum resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)
 - [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
 - [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
+- [Quantum noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator)

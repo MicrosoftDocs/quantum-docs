@@ -173,3 +173,4 @@ You can use <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> fr
 - [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)
 - [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
 - [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
+- [Quantum noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator)
