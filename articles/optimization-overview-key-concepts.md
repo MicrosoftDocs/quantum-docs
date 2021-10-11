@@ -16,7 +16,7 @@ To understand optimization problems, you first need to learn some basic terms an
 
 ## Cost function
 
-The *cost function* is the way that the cost varies as a function of the system configuration. It is a mathematical function to be minimized. 
+The *cost function* is the way that the cost varies as a function of the system configuration. It is a mathematical function to be minimized. For more information, see [Cost functions](xref:microsoft.quantum.optimization.concepts.cost-function).
 
 ## Search space 
 
@@ -151,7 +151,7 @@ In Azure Quantum, the term *PUBO* is used to describe problems with a maximum de
 
 ## Convert your problem to an Ising or QUBO model
 
-Professor Andrew Lucas' paper [Ising formulations of many NP problems](https://arxiv.org/abs/1302.5843) is a good summary of how to convert a *nondeterministic polynomial time (NP)* problem to a [quantum-inspired optimization](xref:microsoft.quantum.optimization.concepts.overview.introduction) QUBO or Ising model. You can download the paper from the link provided.
+Professor Andrew Lucas' paper [Ising formulations of many NP problems](https://arxiv.org/abs/1302.5843) is a good summary of how to convert a *nondeterministic polynomial time (NP)* problem to a [quantum-inspired optimization](xref:microsoft.quantum.optimization.concepts.overview.introduction#what-is-quantum-inspired-optimization) QUBO or Ising model. You can download the paper from the link provided.
 
 After converting your field problem into the Ising or QUBO model, it is recommended to merge terms with the same variable list into a single term. For example:
 
