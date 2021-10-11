@@ -24,14 +24,14 @@ The QDK consists of:
 - The Q# programming language
 - A set of libraries that abstract complex functionality in Q#
 - APIs for Python and .NET languages (C#, F#, and VB.NET) for running quantum programs written in Q#
-- A Python SDK to use optimization solvers on Azure Quantum
+- The *azure-quantum* Python package to use optimization solvers on Azure Quantum
 - Tools to facilitate your development
 
 ### [Use the Azure Quantum service](#tab/tabid-aq)
 
 ## Set up the Azure Quantum service
 
-With the Azure Quantum service, you can use the Azure Quantum python SDK to solve optimization problems using solvers from Microsoft and other providers, or use Q# to develop quantum computing applications and run them on quantum hardware from our partner providers. 
+With the Azure Quantum service, you can use the *azure-quantum* Python package to solve optimization problems using solvers from Microsoft and other providers, or use Q# to develop quantum computing applications and run them on quantum hardware from our partner providers. 
 
 To set up optimization, follow the steps in the [Optimization quickstart](xref:microsoft.quantum.quickstarts.optimization.qio).
 

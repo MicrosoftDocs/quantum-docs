@@ -84,7 +84,7 @@ f0c8de58-68f1-11ea-a565-2a16a847b8a3 Executing
 The `Workspace.list_jobs` method also allows the user to filter on the creation date, status and name properties of a job when listing. Filters can be combined. 
 
 > [!NOTE]
-> To use the filter feature, you must have **version 0.18.2107** or newer of the [Python SDK for Azure Quantum](xref:microsoft.quantum.quickstarts.optimization.qio#install-the-python-sdk-for-azure-quantum). 
+> To use the filter feature, you must have **version 0.18.2107** or newer of the [*azure-quantum* Python package](xref:microsoft.quantum.quickstarts.optimization.qio#install-the-python-sdk-for-azure-quantum). 
 
 ### Filtering by creation time on list_jobs
 
