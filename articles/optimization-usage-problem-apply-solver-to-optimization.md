@@ -61,4 +61,4 @@ This option has the following behavior and requirements:
 - Value must be between 1 and 10 (default to 1 if not set). 
 - Solvers are not guaranteed to return the exact number of solutions specified by the parameter as solvers may not find that many solutions. 
 - Solvers are guaranteed to return the best solution they find in index 0. They will return the rest of the solutions (if any) in the same list and in sorted order.
-- A build of the Python SDK for Optimization with version 0.17.2106 or higher is required to take advantage of the feature.
+- A build of the *azure-quantum* Python package with version 0.17.2106 or higher is required to take advantage of the feature.

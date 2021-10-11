@@ -19,6 +19,7 @@ This article assumes that you already have the QDK installed. If you are install
 
 We recommend keeping up to date with the latest QDK release. Follow this update guide to upgrade to the most recent QDK version. 
 The process consists of two parts:
+
 1. Updating your existing Q# files and projects to align your code with any updated syntax.
 2. Updating the QDK itself for your chosen development environment.
 
@@ -154,7 +155,7 @@ Select your development environment below.
 * [Visual Studio: update the QDK extension](#update-the-visual-studio-qdk-extension)
 * [VS Code: update the QDK extension](#update-the-vs-code-qdk-extension)
 * [Command line and C#: update project templates](#c-using-the-dotnet-command-line-tool)
-* [Python: Update the Python SDK for Azure Quantum](#update-the-python-sdk-for-azure-quantum)
+* [Python: Update the *azure-quantum* Python package](#update-the-azure-quantum-python-package)
 
 
 ## Update the `qsharp` Python package
@@ -318,7 +319,7 @@ You can now use the updated IQ# kernel to run your existing Q# Jupyter Notebooks
    - Select **Q#: Install command line project templates**
    - After a few seconds you should get a popup confirming "project templates installed successfully"
 
-## Update the Python SDK for Azure Quantum
+## Update the azure-quantum Python package
 
 1. Update to the latest `azure-quantum` Python package by using the Python Package Installer (PIP)
 
@@ -326,4 +327,4 @@ You can now use the updated IQ# kernel to run your existing Q# Jupyter Notebooks
    pip install --upgrade azure-quantum
    ```
    
-1. If you encounter any issues please ensure that Python and PIP are up to date. For information on the latest version requirements, please follow our guide for [installing and using the Python SDK](xref:microsoft.quantum.quickstarts.optimization.qio)
+1. If you encounter any issues please ensure that Python and PIP are up to date. For information on the latest version requirements, please follow our guide for [installing and using the *azure-quantum* Python package](xref:microsoft.quantum.quickstarts.optimization.qio)
