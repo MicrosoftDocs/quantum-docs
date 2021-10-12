@@ -24,3 +24,13 @@ groups:
     title: Python
   - id: ide-jupyter
     title: Jupyter Notebooks
+- id: azurequantum-quantumcomputing-ide
+  title: IDE for submitting quantum computing jobs to AQ 
+  prompt: Select the option for your development environment
+  pivots:
+  - id: ide-python
+    title: Python
+  - id: ide-jupyter
+    title: Jupyter Notebooks
+  - id: ide-azurecli
+    title: Azure CLI
