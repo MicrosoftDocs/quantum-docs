@@ -11,7 +11,7 @@ ms.topic: include
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.quickstarts.optimization.qio).
-- The latest version of the [Python SDK for Azure Quantum](xref:microsoft.quantum.quickstarts.optimization.qio#install-the-python-sdk-for-azure-quantum).
+- The latest version of the [*azure-quantum* Python package](xref:microsoft.quantum.quickstarts.optimization.qio#install-the-python-sdk-for-azure-quantum).
 - [Jupyter Notebook](xref:microsoft.quantum.quickstarts.optimization.qio#jupyter-notebooks-installation).
 
 ##  Set up

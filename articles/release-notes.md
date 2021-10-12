@@ -129,9 +129,9 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 ### QDK version 0.16.2104.138035
 
 - Improved Q# type inference based on the Hindley-Milner type inference algorithm.
-- Added support for NumPy types in coefficient definitions for problems in QIO Python SDK.
+- Added support for NumPy types in coefficient definitions for problems in QIO *azure-quantum* Python package.
 - Updated control-plane swagger file to [support restricted access SKUs](https://github.com/Azure/azure-rest-api-specs/pull/13002).
-- Added new `StreamingProblem` class in QIO Python SDK. It supports the same interface for adding terms to a problem definition as the `Problem` class. However, once terms are added to the problem they are queued to be uploaded by a background thread and are not kept in memory for future reference.
+- Added new `StreamingProblem` class in QIO *azure-quantum* Python package. It supports the same interface for adding terms to a problem definition as the `Problem` class. However, once terms are added to the problem they are queued to be uploaded by a background thread and are not kept in memory for future reference.
 - Restored the packages size of Microsoft.Quantum.Sdk and Microsoft.Quantum.Compiler back to normal. (See related note in 0.15.2103.133969)
 - Improved compiler performance.
 - Released Az CLI quantum extension version 0.4.0: Exposed URL for restricted access SKUs. Fixed regression on offerings commands dependent on Azure Marketplace APIs.

@@ -16,7 +16,7 @@ uid: microsoft.quantum.optimization.slc-term
 ```py
 from azure.quantum.optimization import Term, SlcTerm, GroupType
 ```
-Some optimization problems bear cost functions with *grouped terms*, which are represented by objects composed of multiple [Terms](xref:microsoft.quantum.optimization.term). Currently, the Python SDK for Optimization supports squared linear combination terms as grouped term objects using the `SlcTerm` class.
+Some optimization problems bear cost functions with *grouped terms*, which are represented by objects composed of multiple [Terms](xref:microsoft.quantum.optimization.term). Currently, the *azure-quantum* Python package supports squared linear combination terms as grouped term objects using the `SlcTerm` class.
 ### Constructor
 
 
@@ -64,7 +64,7 @@ For more information on cost functions and how terms relate to a problem definit
 
 #### Availability
 
-`SlcTerm` objects are a new "Early Access" feature in the Python SDK for Optimization, and are currently supported by two Microsoft QIO solvers:
+`SlcTerm` objects are a new "Early Access" feature in the *azure-quantum* Python package, and are currently supported by two Microsoft QIO solvers:
 
 - [Substochastic Monte Carlo](xref:microsoft.quantum.reference.qio-target-list#substochastic-monte-carlo)
 - [Population Annealing](xref:microsoft.quantum.reference.qio-target-list#population-annealing)

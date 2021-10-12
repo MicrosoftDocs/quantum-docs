@@ -21,7 +21,7 @@ from azure.quantum.optimization import GroupType
 Some solvers allow you to use grouped terms. 
 When specifying the type of grouped term that you want to add to a problem formulation, you can use the GroupType enum. 
 
-The Python SDK for Optimization currently only supports the squared linear combination term. 
+The *azure-quantum* Python package currently only supports the squared linear combination term. 
 We recommend reviewing our documentation for further details on the usage of `GroupType`.
 - Optimization [`Problem`](xref:microsoft.quantum.optimization.problem) 
 - [`SlcTerm`](xref:microsoft.quantum.optimization.slc-term) 
