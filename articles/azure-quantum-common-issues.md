@@ -2,7 +2,7 @@
 author: bradben
 description: List of common issues of the Azure Quantum service.
 ms.author: v-benbra
-ms.date: 02/01/2021
+ms.date: 02/01/2021 
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: conceptual
