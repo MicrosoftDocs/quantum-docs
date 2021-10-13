@@ -328,9 +328,9 @@ A Python host program is constructed as follows:
 
 Running Q# operations on a specific target machine is done by invoking Python methods directly on the imported operation object. Thus, there is no need to create an object for the run target (such as a simulator). Instead, invoke one of the following methods to run the imported Q# operation:
 
-- `.simulate(<args>)` uses the [full state simulator](/azure/quantum/user-guide/machines/full-state-simulator) to simulate the operation for an ideal quantum computer ([api reference for .simulate()](/python/qsharp-core/qsharp.loader.qsharpcallable#simulate---kwargs-----typing-any))
-- `.estimate_resources(<args>)` uses the [resources estimator](/azure/quantum/user-guide/machines/resources-estimator) to compute various quantum resources required by the program ([api reference for .estimate_resources(<args>)](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)
-- `.toffoli_simulate(<args>)` uses the [Toffoli simulator](/azure/quantum/user-guide/machines/toffoli-simulator) to provide a more efficient simulation method for a restricted class of quantum programs ([api reference for .toffoli_simulate()](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)
+- `.simulate(<args>)` uses the [full state simulator](/azure/quantum/user-guide/machines/full-state-simulator) to simulate the operation for an ideal quantum computer ([api reference for `.simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#simulate---kwargs-----typing-any))
+- `.estimate_resources(<args>)` uses the [resources estimator](/azure/quantum/user-guide/machines/resources-estimator) to compute various quantum resources required by the program ([api reference for `.estimate_resources(<args>)`](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)
+- `.toffoli_simulate(<args>)` uses the [Toffoli simulator](/azure/quantum/user-guide/machines/toffoli-simulator) to provide a more efficient simulation method for a restricted class of quantum programs ([api reference for `.toffoli_simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)
 
 For more information about local target machines, see [Quantum simulators](/azure/quantum/user-guide/machines/).
 
@@ -373,7 +373,7 @@ Passing arrays in a similar manner is also possible. You can see an example of t
 
 Passing qubits as arguments from classical code is not possible. Any logic that relates to Q# types like `Qubit` should live in your Q# code. If you want your Python code to specify the number of qubits, you could have something like `nQubits : Int` parameter to your Q# operation. Your Python code could pass this as a integer and then your Q# code could allocate the array of the appropriate number of qubits.
 
-For the `Pauli` and `Result` types, there are actually Python enums defined such that you could pass those values directly if you want to. See [qsharp.Pauli](https://docs.microsoft.com/python/qsharp-core/qsharp.pauli?azure-portal=true!) and [qsharp.Result](https://docs.microsoft.com/python/qsharp-core/qsharp.result?azure-portal=true!).
+For the `Pauli` and `Result` types, there are actually Python enums defined such that you could pass those values directly if you want to. See [qsharp.Pauli](/python/qsharp-core/qsharp.pauli?azure-portal=true!) and [qsharp.Result](/python/qsharp-core/qsharp.result?azure-portal=true!).
  
 #### Using Q# code from other projects or packages
 
