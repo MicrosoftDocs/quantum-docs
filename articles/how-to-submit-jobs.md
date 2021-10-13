@@ -65,12 +65,9 @@ Python experiences.
    functionality is available by running `import qsharp.azure` and then calling
    the Python commands to interact with Azure Quantum. For reference, see the
    [complete list of `qsharp.azure` Python commands](/python/qsharp-core/qsharp.azure).
-   You'll need the resource ID of your Azure Quantum workspace in order to
+   You'll need the resource ID and location of your Azure Quantum workspace in order to
    connect. (The resource ID can be found on your workspace
    page in the Azure Portal.)
-
-   If your workspace was created in an Azure region other than \"West US\", you also
-   need to specify this as the `location` parameter to `qsharp.azure.connect()`.
 
    For example, your Python script could look like this:
 
