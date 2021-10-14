@@ -52,7 +52,7 @@ A graphical representation of a single-[qubit](xref:microsoft.quantum.glossary-q
 ## Callable
 
 An [operation](xref:microsoft.quantum.glossary-qdk#operation) or [function](xref:microsoft.quantum.glossary-qdk#function) in the [Q# language](xref:microsoft.quantum.user-guide-qdk.overview).
-For more information, see [Q# programs](xref:microsoft.quantum.user-guide-qdk.overview.programs)
+For more information, see the [Q# user guide](xref:microsoft.quantum.user-guide-qdk.overview)
 
 ## Clifford group
 
@@ -88,7 +88,7 @@ How a [quantum state](xref:microsoft.quantum.glossary-qdk#quantum-state) changes
 
 ## Function
 A type of subroutine in the Q# language that is purely deterministic. While functions are used within quantum algorithms, they cannot act on [qubits](xref:microsoft.quantum.glossary-qdk#qubit) or call [operations](xref:microsoft.quantum.glossary-qdk#operation). 
-For more information, see [Q# programs](xref:microsoft.quantum.user-guide-qdk.overview.programs)
+For more information, see [The Q# user guide](xref:microsoft.quantum.user-guide-qdk.overview)
 
 ## Gate
 
@@ -124,7 +124,7 @@ A label for a collection of related names (for example, [operations](xref:micros
 
 ## Operation
 
-The basic unit of quantum computation in Q#. It is roughly equivalent to a function in C, C++ or Python, or a static method in C# or Java. For more information, see [Q# programs](xref:microsoft.quantum.user-guide-qdk.overview.programs).
+The basic unit of quantum computation in Q#. It is roughly equivalent to a function in C, C++ or Python, or a static method in C# or Java. For more information, see [The Q# user guide](xref:microsoft.quantum.user-guide-qdk.overview).
 
 ## Oracle
 
