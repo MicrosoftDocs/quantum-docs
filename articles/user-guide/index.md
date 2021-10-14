@@ -13,18 +13,20 @@ uid: microsoft.quantum.user-guide-qdk.overview
 
 # The Q programming language user guide
 
-The Q# programming language is part of Microsoft's [Quantum Development Kit](https://www.microsoft.com/quantum) and provides rich IDE support and tools for program visualization and analysis.
-Our goal is to support the development of future large-scale applications while supporting the user's first efforts in that direction on current quantum hardware.
+The Q# programming language is part of Microsoft's [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) and provides rich IDE support and tools for program visualization and analysis.
+Q# supports the development of future large-scale applications while supporting the user's first efforts in that direction on current quantum hardware.
 
 The Q# user guide contains:
 
 - **The Q# language guide**: A full specification and documentation of the Q# quantum programming language.
+
 - **The Q# library documentation**: Documentation of the operations, functions, and user-defined types that make up the standard Q# library, as well as the chemistry, machine learning, and numerics libraries.
+
 - **Quantum simulator documentation**: Documentation and examples of the quantum software simulators that make it possible to run and test quantum programs on classical computers.
 
 ## Programming in Q#
 
-The type system permits Q# programs to safely interleave and naturally represent the composition of classical and quantum computations. A Q# program may express arbitrary classical computations based on quantum measurements that execute while qubits remain live, meaning they are not released and maintain their state. Even though the full complexity of such computations requires further hardware development, Q# programs can be targeted to run on various quantum hardware backends in [Azure Quantum](https://azure.microsoft.com/services/quantum/).
+The type system permits Q# programs to safely interleave and naturally represent the composition of classical and quantum computations. A Q# program may express arbitrary classical computations based on quantum measurements that execute while qubits remain live, meaning they are not released and maintain their state. Even though the full complexity of such computations requires further hardware development, Q# programs can be targeted to run on various [quantum hardware backends](xref:microsoft.quantum.reference.qc-target-list) in Azure Quantum.
 
 Q# is a stand-alone language offering a high level of abstraction. There is no notion of a quantum state or a circuit; instead, Q# implements programs in terms of statements and expressions, much like classical programming languages. Distinct quantum capabilities (such as support for functors and control-flow constructs) facilitate expressing, for example, phase estimation and quantum chemistry algorithms.
 
@@ -66,5 +68,10 @@ operation MeasureOneQubit() : Result {
 }
 ```
 
-Our [Quantum Katas](https://github.com/microsoft/QuantumKatas#introduction) give a good introduction on [Quantum Computing Concepts](https://github.com/microsoft/QuantumKatas#quantum-computing-concepts-qubits-and-gates) such as common quantum operations and how to manipulate qubits. 
-More examples can also be found in [Intrinsic Operations and Functions](xref:microsoft.quantum.libraries.overview.standard.prelude).
+Our [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas) provide a good introduction to [quantum computing concepts](xref:microsoft.quantum.tutorial-qdk.katas#introduction-to-quantum-computing-concepts) such as common quantum operations and how to manipulate qubits.
+For more examples, see [intrinsic operations and functions](xref:microsoft.quantum.libraries.overview.standard.prelude).
+
+## Next steps
+
+- [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs)
+- [Testing and debugging Q# programs](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging)
