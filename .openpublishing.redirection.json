@@ -124,6 +124,11 @@
 			"source_path": "articles/user-guide/programs.md",
 			"redirect_url": "/azure/quantum/user-guide/index",
 			"redirect_document_id": true
+		},
+		{
+			"source_path": "articles/how-to-prepare-your-environment.md",
+			"redirect_url": "/azure/quantum/how-to-manage-quantum-workspaces-with-the-azure-cli",
+			"redirect_document_id": true
 		}
 	]
 }
