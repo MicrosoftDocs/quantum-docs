@@ -1,4 +1,4 @@
-- name: Overview
+- name: Quantum simulators
   href: index.md
 - name: Full state simulator
   href: full-state-simulator.md
