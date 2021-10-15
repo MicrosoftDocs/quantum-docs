@@ -19,12 +19,18 @@ In this guide, learn to use the Azure Command-Line Interface (Azure CLI) to crea
 To use the Azure Quantum service, you will need:
 
 - An active Azure account and subscription. For more information, see the Microsoft Learn module [Create an Azure account](/learn/modules/create-an-azure-account/).
-- The [Azure CLI](/cli/azure/install-azure-cli).
-- The [necessary utilities to use Azure Quantum](xref:microsoft.quantum.setup.cli), including the `quantum` extension for the Azure CLI.
 - An Azure resource group where the quantum workspace will live.
 - A storage account in the resource group to be associated with the quantum workspace. Multiple workspaces can be associated with the same account.
+- The [Azure CLI](/cli/azure/install-azure-cli).
+- The [Microsoft Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
 ## Environment setup
+
+1. 1. Install the Azure CLI `quantum` extension. Open a command prompt and run the following command:
+
+    ```azurecli
+    az extension add -n quantum
+    ```
 
 1. Log in to Azure using your credentials. You will see list of subscriptions associated with your account.
 
