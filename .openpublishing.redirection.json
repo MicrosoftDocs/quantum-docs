@@ -111,8 +111,23 @@
 			"redirect_document_id": true
 		},
 		{
-			"source_path": "articles/optimization-what-is-quantum-optimization.md.md",
+			"source_path": "articles/optimization-what-is-quantum-optimization.md",
 			"redirect_url": "/azure/quantum/optimization-overview-introduction",
+			"redirect_document_id": true
+		},
+		{
+			"source_path": "articles/user-guide/language/index.md",
+			"redirect_url": "/azure/quantum/user-guide/language/programstructure/namespaces",
+			"redirect_document_id": true
+		},
+		{
+			"source_path": "articles/user-guide/programs.md",
+			"redirect_url": "/azure/quantum/user-guide/index",
+			"redirect_document_id": true
+		},
+		{
+			"source_path": "articles/how-to-prepare-your-environment.md",
+			"redirect_url": "/azure/quantum/how-to-manage-quantum-workspaces-with-the-azure-cli",
 			"redirect_document_id": true
 		}
 	]

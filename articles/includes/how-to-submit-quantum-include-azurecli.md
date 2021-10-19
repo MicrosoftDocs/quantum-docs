@@ -15,8 +15,11 @@ Ensure that the following items are installed on your computer:
   a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.quickstarts.optimization.qio).
 - The latest version of the [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview.standalone).
 - The [Azure CLI](/cli/azure/install-azure-cli).
-- The [necessary utilities to use Azure Quantum](xref:microsoft.quantum.setup.cli) (includes the `quantum`
-  extension for the Azure CLI).
+- Install the Azure CLI `quantum` extension. Open a command prompt and run the following command:
+
+    ```azurecli
+    az extension add -n quantum
+    ```
 
 ## Submit a job to Azure Quantum with the Azure CLI
 
