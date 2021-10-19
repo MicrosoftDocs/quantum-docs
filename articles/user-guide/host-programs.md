@@ -330,7 +330,7 @@ Running Q# operations on a specific target machine is done by invoking Python me
 
 - `.simulate(<args>)` uses the [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) to simulate the operation for an ideal quantum computer ([api reference for `.simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#simulate---kwargs-----typing-any))
 - `.estimate_resources(<args>)` uses the [resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator) to compute various quantum resources required by the program ([api reference for `.estimate_resources(<args>)`](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)
-- `.toffoli_simulate(<args>)` uses the [Toffoli simulator](/azure/quantum/user-guide/machines/toffoli-simulator) to provide a more efficient simulation method for a restricted class of quantum programs ([api reference for `.toffoli_simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)
+- `.toffoli_simulate(<args>)` uses the [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator) to provide a more efficient simulation method for a restricted class of quantum programs ([api reference for `.toffoli_simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)
 
 For more information about local target machines, see [Quantum simulators](/azure/quantum/user-guide/machines/).
 
