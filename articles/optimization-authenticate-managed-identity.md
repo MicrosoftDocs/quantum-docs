@@ -71,4 +71,4 @@ credential=ManagedIdentityCredential())
 
 ## Next steps
 
-- Now that you know how to configure a managed idendity, see how it can be used in [Publish a QIO job as an Azure Function](articles/how-to-publish-qio-job-as-azurefunction).
+- Now that you know how to configure a managed identity, see how it can be used in [Publish a QIO job as an Azure Function](articles/how-to-publish-qio-job-as-azurefunction).
