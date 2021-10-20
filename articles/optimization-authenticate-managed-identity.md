@@ -13,12 +13,7 @@ uid: microsoft.quantum.optimization.authenticate-managed-identity
 # Using a managed identity to authenticate
 
 There are several scenarios where it is unsuitable to use interactive authentication or to authenticate
-as a user account. For example, you may want to submit jobs from a virtual machine (VM), or from a Function App. One option is to authenticate using a service principal, another option is to configure a managed identity.
-
-These cases may arise when you want to submit jobs from a
-web service, another worker role, or an automated system. In this case you
-typically want to authenticate using a [Service
-Principal](/azure/active-directory/develop/app-objects-and-service-principals).
+as a user account. For example, you may want to submit jobs from a virtual machine (VM), or from a Function App. One option is to [authenticate using a service principal](articles/optimization-authenticate-service-principal), another option is to configure a managed identity, which this article will explain.
 
 ## Configure a managed identity
 
