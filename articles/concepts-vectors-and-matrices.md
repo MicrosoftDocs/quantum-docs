@@ -2,7 +2,7 @@
 author: QuantumWriter
 description: Learn the basics of how to work with vectors and matrices.
 ms.author: v-benbra
-ms.date: 02/01/2021
+ms.date: 10/20/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -13,7 +13,9 @@ uid: microsoft.quantum.concepts.vectors
 
 # Work with vectors and matrices in quantum computing
 
-Some familiarity with vectors and matrices is essential to understand quantum computing. We provide a brief introduction below and interested readers are recommended to read a standard reference on linear algebra such as *Strang, G. (1993). Introduction to linear algebra (Vol. 3). Wellesley, MA: Wellesley-Cambridge Press* or an online reference such as [Linear Algebra](http://joshua.smcvt.edu/linearalgebra/).
+Some familiarity with vectors and matrices is essential to understand quantum computing. This article provides a brief introduction, and interested readers are recommended to read a standard reference on linear algebra such as *Strang, G. (1993). Introduction to linear algebra (Vol. 3). Wellesley, MA: Wellesley-Cambridge Press* or an online reference such as [Linear Algebra](http://joshua.smcvt.edu/linearalgebra/).
+
+## Vectors
 
 A column vector (or simply [*vector*](https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics))) $v$ of dimension (or size) $n$ is a collection of $n$ complex numbers $(v_1,v_2,\ldots,v_n)$ arranged as a column:
 
@@ -28,11 +30,11 @@ The norm of a vector $v$ is defined as $\sqrt{\sum\_i |v\_i|^2}$. A vector is sa
 
 $$\begin{bmatrix}v_1 \\\\ \vdots \\\\ v_n \end{bmatrix}^\dagger = \begin{bmatrix}v_1^* & \cdots & v_n^* \end{bmatrix}$$
 
-Notice that we distinguish between a column vector $v$ and a row vector $v^\dagger$. 
+Notice that there is a distinction between a column vector $v$ and a row vector $v^\dagger$. 
 
 ## Inner product
 
-We can multiply two vectors together through the [*inner product*](https://en.wikipedia.org/wiki/Dot_product), also known as a *dot product* or *scalar product*. As the name implies, the result of the inner product of two vectors is a scalar. The inner product gives the projection of one vector onto another and is invaluable in describing how to express one vector as a sum of other simpler vectors. The inner product between two column vectors $u=(u_1 , u_2 , \ldots , u_n)$ and $v=(v_1 , v_2 , \ldots , v_n)$, denoted $\left\langle u, v\right\rangle$ is defined as
+Two vectors can be multiplied together through the [*inner product*](https://en.wikipedia.org/wiki/Dot_product), also known as a *dot product* or *scalar product*. As the name implies, the result of the inner product of two vectors is a scalar. The inner product gives the projection of one vector onto another and is invaluable in describing how to express one vector as a sum of other simpler vectors. The inner product between two column vectors $u=(u_1 , u_2 , \ldots , u_n)$ and $v=(v_1 , v_2 , \ldots , v_n)$, denoted $\left\langle u, v\right\rangle$ is defined as
 
 $$
 \langle u, v\rangle = u^\dagger v= \begin{bmatrix}u_1^* & \cdots & u_n^* \end{bmatrix} \begin{bmatrix}
@@ -41,7 +43,7 @@ $$
 
 This notation also allows the norm of a vector $v$ to be written as $\sqrt{\langle v, v\rangle}$.
 
-We can multiply a vector with a number $c$ to form a new vector whose entries are multiplied by $c$. We can also add two vectors $u$ and $v$ to form a new vector whose entries are the sum of the entries of $u$ and $v$. These operations are depicted below:
+A vector can be multiplied with a number $c$ to form a new vector whose entries are multiplied by $c$. You can also add two vectors $u$ and $v$ to form a new vector whose entries are the sum of the entries of $u$ and $v$. These operations are the following:
 
 $$\mathrm{If}~u =\begin{bmatrix}
 u_1\\\\
@@ -73,11 +75,11 @@ M_{21} ~~ M_{22} ~~ \cdots ~~ M_{2n}\\\\
 M_{m1} ~~ M_{m2} ~~ \cdots ~~ M_{mn}\\\\
 \end{bmatrix}.$$
 
-Note that a vector of dimension $n$ is simply a matrix of size $n \times 1$. As with vectors, we can multiply a matrix with a number $c$ to obtain a new matrix where every entry is multiplied with $c$, and we can add two matrices of the same size to produce a new matrix whose entries are the sum of the respective entries of the two matrices. 
+Note that a vector of dimension $n$ is simply a matrix of size $n \times 1$. As with vectors, a matrix can be multiplied with a number $c$ to obtain a new matrix where every entry is multiplied with $c$, and two matrices of the same size can be added to produce a new matrix whose entries are the sum of the respective entries of the two matrices. 
 
 ## Matrix multiplication
 
-We can also multiply two matrices $M$ of dimension $m\times n$ and $N$ of dimension $n \times p$ to get a new matrix $P$ of dimension $m \times p$ as follows:
+You can also multiply two matrices $M$ of dimension $m\times n$ and $N$ of dimension $n \times p$ to get a new matrix $P$ of dimension $m \times p$ as follows:
 
 \begin{align}
 &\begin{bmatrix}
@@ -110,9 +112,9 @@ $$\boldone=\begin{bmatrix}
 0 ~~ 0 ~~ \cdots ~~ 1
 \end{bmatrix}.$$
 
-For a square matrix $A$, we say a matrix $B$ is its [*inverse*](https://en.wikipedia.org/wiki/Invertible_matrix) if $AB = BA = \boldone$. The inverse of a matrix need not exist, but when it exists it is unique and we denote it $A^{-1}$. 
+For a square matrix $A$, a matrix $B$ is its [*inverse*](https://en.wikipedia.org/wiki/Invertible_matrix) if $AB = BA = \boldone$. The inverse of a matrix need not exist, but when it exists it is unique and we denote it $A^{-1}$. 
 
-For any matrix $M$, the adjoint or conjugate transpose of $M$ is a matrix $N$ such that $N_{ij} = M_{ji}^\*$. The adjoint of $M$ is usually denoted $M^\dagger$. We say a matrix $U$ is [*unitary*](https://en.wikipedia.org/wiki/Unitary_matrix) if $UU^\dagger = U^\dagger U = \boldone$ or equivalently, $U^{-1} = U^\dagger$.  Perhaps the most important property of unitary matrices is that they preserve the norm of a vector.  This happens because 
+For any matrix $M$, the adjoint or conjugate transpose of $M$ is a matrix $N$ such that $N_{ij} = M_{ji}^\*$. The adjoint of $M$ is usually denoted $M^\dagger$. A matrix $U$ is [*unitary*](https://en.wikipedia.org/wiki/Unitary_matrix) if $UU^\dagger = U^\dagger U = \boldone$ or equivalently, $U^{-1} = U^\dagger$. One important property of unitary matrices is that they preserve the norm of a vector. This happens because 
 
 $$\langle v,v \rangle=v^\dagger v = v^\dagger U^{-1} U v = v^\dagger U^\dagger U v = \langle U v, U v\rangle.$$  
 
@@ -121,9 +123,9 @@ A matrix $M$ is said to be [*Hermitian*](https://en.wikipedia.org/wiki/Hermitian
 
 ## Tensor product
 
-Finally, another important operation is the [*Kronecker product*](https://en.wikipedia.org/wiki/Kronecker_product), also called the *matrix direct product* or *tensor product*.  Note that the Kronecker product is distinguished from matrix multiplication, which is an entirely different operation. In quantum computing theory, *tensor product* is commonly used to denote the Kronecker product.
+Another important operation is the [*Kronecker product*](https://en.wikipedia.org/wiki/Kronecker_product), also called the *matrix direct product* or *tensor product*.  Note that the Kronecker product is distinguished from matrix multiplication, which is an entirely different operation. In quantum computing theory, *tensor product* is commonly used to denote the Kronecker product.
 
-Consider the two vectors $v=\begin{bmatrix}a \\\\ b  \end{bmatrix} $ and $u =\begin{bmatrix} c \\\\ d \\\\ e \end{bmatrix} $.  Their tensor product is denoted as $v otimes u$ and results in a block matrix.
+Consider the two vectors $v=\begin{bmatrix}a \\\\ b  \end{bmatrix} $ and $u =\begin{bmatrix} c \\\\ d \\\\ e \end{bmatrix} $.  Their tensor product is denoted as $v \otimes u$ and results in a block matrix.
 $$
 	\begin{bmatrix}
 		a \\\\ b  \end{bmatrix} \otimes \begin{bmatrix} c \\\\ d \\\\ e
@@ -195,10 +197,20 @@ $$
 	\end{bmatrix}.
 $$
 
-A final useful notational convention surrounding tensor products is that, for any vector $v$ or matrix $M$, $v^{\otimes n}$ or $M^{\otimes n}$ is short hand for an $n$-fold repeated tensor product.  For example:
+A final useful notational convention surrounding tensor products is that, for any vector $v$ or matrix $M$, $v^{\otimes n}$ or $M^{\otimes n}$ is short hand for an $n$-fold repeated tensor product. For example:
 
 \begin{align}
 &\begin{bmatrix} 1 \\\\ 0 \end{bmatrix}^{\otimes 1} = \begin{bmatrix} 1 \\\\ 0 \end{bmatrix}, \qquad\begin{bmatrix} 1 \\\\ 0 \end{bmatrix}^{\otimes 2} = \begin{bmatrix} 1 \\\\ 0 \\\\0 \\\\0 \end{bmatrix}, \qquad\begin{bmatrix} 1 \\\\ -1 \end{bmatrix}^{\otimes 2} = \begin{bmatrix} 1 \\\\ -1 \\\\-1 \\\\1 \end{bmatrix},
 \\\\
   &\begin{bmatrix}	0 & 1 \\\\ 1& 0 	\end{bmatrix}^{\otimes 1}= \begin{bmatrix}	0& 1 \\\\ 1& 0 	\end{bmatrix},	\qquad\begin{bmatrix}	0 & 1 \\\\ 1& 0 	\end{bmatrix}^{\otimes 2}= \begin{bmatrix} 0 &0&0&1 \\\\ 0 &0&1&0 \\\\ 0 &1&0&0\\\\ 1 &0&0&0\end{bmatrix}.
 \end{align}
+
+## Next Steps 
+
+- [Advanced matrix concepts](xref:microsoft.quantum.concepts.matrix-advanced)
+- [The qubit in quantum computing](xref:microsoft.quantum.concepts.qubit)
+- [Operations on multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)
+- [Dirac notation](xref:microsoft.quantum.concepts.dirac)
+- [Pauli measurements](xref:microsoft.quantum.concepts.pauli)
+- [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
+- [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
