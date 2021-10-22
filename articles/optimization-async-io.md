@@ -29,7 +29,7 @@ workspace = Workspace(
 )
 ```
 
-To submit a problem concurrently, use the `submit` method on the `solver`. This submits a `Job` and returns the results synchronously.
+To submit a problem concurrently, use the `submit` method on the `solver`. This submits a `Job` and returns the results asynchronously.
 
 ```py
 solver = ParallelTempering(workspace, timeout=100, seed=11)
