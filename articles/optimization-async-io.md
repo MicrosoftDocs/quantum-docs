@@ -76,6 +76,7 @@ async def solve_problems(problems):
     results = await asyncio.gather(*[get_cost(problem) for problem in problems])
 
 results = asyncio.run(solve_problems(problems))
+results
 ```
 
 ```output
