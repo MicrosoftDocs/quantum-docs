@@ -10,7 +10,7 @@
   items:
   - name: Set up Azure Quantum 
     href: install-overview-qdk.md
-  - name: Create an Azure Quantum Workspace
+  - name: Create an Azure Quantum workspace
     href: how-to-create-workspace.md
 - name: Quantum computing
   expanded: true
