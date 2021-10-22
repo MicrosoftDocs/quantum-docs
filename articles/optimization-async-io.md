@@ -10,7 +10,7 @@ title: Submit jobs asynchronously
 uid: microsoft.quantum.optimization.async-io
 ---
 
-# Submit a batch of jobs
+# Solve a batch of many problems
 
 The example in [Solve long-running problems](xref:microsoft.quantum.optimization.solve-long-running-problems) submits a job to Azure Quantum and fetches the results later. This is convenient for being able to submit a problem and check on it later, or submit many problems and compare the results. However, to achieve concurrency and utilize all CPU time while waiting for a job to finish we need to use Python's `asyncio` framework. This can considerably speed up applications that run post-processing of job results or access a file or database.
 

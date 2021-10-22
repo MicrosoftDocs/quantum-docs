@@ -216,7 +216,7 @@
         href: optimization-reuse-problem-definitions.md
       - name: Solve long-running problems
         href: optimization-solve-long-running-problems.md
-      - name: Solve problem asynchronously
+      - name: Solve a batch of many problems
         href: optimization-async-io.md
 - name: Manage Azure Quantum
   items:
