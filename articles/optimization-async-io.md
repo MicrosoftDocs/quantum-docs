@@ -1,16 +1,16 @@
 ---
 author: guenp
-description: Learn how to submit a batch of jobs concurrently to Azure Quantum using Python.
+description: Learn how to solve a batch of problems with asyncio with Azure Quantum using Python.
 ms.author: guenp
 ms.date: 10/21/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
-title: Solve a batch of problems
+title: Solve a batch of problems using asyncio
 uid: microsoft.quantum.optimization.async-io
 ---
 
-# Solve a batch of problems
+# Solve a batch of problems using asyncio
 
 Learn how to solve a batch of problems by submitting a batch of jobs asynchronously to Azure Quantum using Python.
 
@@ -52,7 +52,7 @@ import asyncio
 from azure.quantum.aio.optimization import Problem, ProblemType
 
 problems = []
-for n in range(5):
+for n in range(10):
     problem = Problem(name=f"Problem-{n}", problem_type=ProblemType.ising)
     terms = [
         Term(c=n-9, indices=[0]),
@@ -75,3 +75,27 @@ results = asyncio.run(solve_problems(problems))
 ```output
 [-17.0, -16.0, -15.0, -14.0, -15.0, -16.0, -17.0, -18.0, -19.0, -20.0]
 ```
+
+## Next steps
+
+The `azure.quantum.aio` package covers all solvers provided by the `azure.quantum` package. To use the below samples and documentation with `asyncio`, change the imports to use the `azure.quantum.aio` library instead and use the `await` keyword with asynchronous methods.
+
+### Documentation
+
+- [Solver overview](xref:microsoft.quantum.reference.qio-target-list)
+- [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)
+- [Interpreting solver results](xref:microsoft.quantum.optimization.understand-solver-results)
+- [Reuse problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions)
+
+### Samples and end-to-end learning
+
+- [QIO samples repo](https://github.com/microsoft/qio-samples/)
+- Getting started
+  - [1QBit](https://github.com/microsoft/qio-samples/tree/main/samples/getting-started/1qbit)
+  - [Microsoft QIO](https://github.com/microsoft/qio-samples/tree/main/samples/getting-started/microsoft-qio/)
+- Ship loading sample problem
+  - [End-to-end Microsoft Learn Module](/learn/modules/solve-quantum-inspired-optimization-problems/)
+  - [Sample code](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/)
+- Job shop scheduling sample problem
+  - [End-to-end Microsoft Learn Module](/learn/modules/solve-job-shop-optimization-azure-quantum/)
+  - [Sample code](https://github.com/microsoft/qio-samples/tree/main/samples/job-shop-scheduling/)
