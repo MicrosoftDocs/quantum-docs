@@ -48,7 +48,7 @@ result = asyncio.run(solver.optimize(problem))
 
 ### Submit batch of problems
 
-You can now use the `solve_problem` function with `asyncio.gather` to submit a batch of problems asynchronously. The sample coe below generates and solves 20 problems:
+You can now use the `solve_problem` function with `asyncio.gather` to submit a batch of problems asynchronously. The sample code below generates and solves 20 problems:
 
 ```python
 import asyncio
