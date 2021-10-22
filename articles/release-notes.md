@@ -21,15 +21,15 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ### QDK version 0.xx.xxxx.xxxxxx
 
--IQ# kernel `[%azure.connect]`(https://docs.microsoft.com/qsharp/api/iqsharp-magic/azure.connect) command no longer sets "West US" as the default location. Location parameter is now required. 
--The azure-quantum package now supports asynchronous I/O via the new `azure.quantum.aio` package. See [Solve a batch of problems](https://docs.microsoft.com/azure/quantum/optimization-async-io)
--Updated Azure CLI Extensions to version 0.9.0. 
--Fixed an [issue](https://github.com/microsoft/qdk-python/issues/160): Qiskit jobs fetched with AzureQuantumProvider.get_job() can now use job.result() without running into a KeyError. 
--Fixed an [issue](https://github.com/microsoft/qdk-python/issues/164) that caused azure.quantum.cirq and azure.quantum.qiskit not to be recognized by [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). The azure.quantum.plugins package is deprecated and will be removed next release.  
--Fixed an [issue](https://github.com/microsoft/iqsharp/issues/531) in IQ# in which job execution would fail if any operation defined in an external file wasn't supported on the given target. 
--Fixed an [issue](https://github.com/microsoft/qsharp-compiler/issues/1163) in the Visual Studio extension that caused incorrect indentation in some cases when a closing bracket was typed. 
--Refactored QIR Runtime DLLs to use static VC runtime, removing dependency on msvcrt.dll and Visual Studio installation. 
--Refactored QIR Runtime to use `intptr_t` for Qubit ID types consistently. 
+- IQ# kernel `[%azure.connect]`(https://docs.microsoft.com/qsharp/api/iqsharp-magic/azure.connect) command no longer sets "West US" as the default location. Location parameter is now required. 
+- The `azure-quantum` package now supports asynchronous I/O via the new `azure.quantum.aio` package. See [Solve a batch of problems](https://docs.microsoft.com/azure/quantum/optimization-async-io) for more details.
+- Updated Azure CLI Extensions to version 0.9.0. 
+- Fixed an [issue](https://github.com/microsoft/qdk-python/issues/160): Qiskit jobs fetched with `AzureQuantumProvider.get_job()` can now use `job.result()` without running into a `KeyError`. 
+- Fixed an [issue](https://github.com/microsoft/qdk-python/issues/164) that caused `azure.quantum.cirq` and `azure.quantum.qiskit` not to be recognized by [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). The `azure.quantum.plugins` package is deprecated and will be removed next release.  
+- Fixed an [issue](https://github.com/microsoft/iqsharp/issues/531) in IQ# in which job execution would fail if any operation defined in an external file wasn't supported on the given target. 
+- Fixed an [issue](https://github.com/microsoft/qsharp-compiler/issues/1163) in the Visual Studio extension that caused incorrect indentation in some cases when a closing bracket was typed. 
+- Refactored QIR Runtime DLLs to use static VC runtime, removing dependency on msvcrt.dll and Visual Studio installation. 
+- Refactored QIR Runtime to use `intptr_t` for Qubit ID types consistently. 
 
 ## 2021-09-28
 
