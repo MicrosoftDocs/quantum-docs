@@ -32,7 +32,9 @@ workspace = Workspace(
 To submit a problem, use the `submit` method on the `solver`. This submits a `Job` and returns the results asynchronously.
 
 ```py
+# Create a solver
 solver = ParallelTempering(workspace, timeout=100, seed=11)
+# Construct a problem
 problem = Problem(name=f"Problem", problem_type=ProblemType.ising)
 terms = [
     Term(c=-9, indices=[0]),
@@ -40,7 +42,8 @@ terms = [
     Term(c=5, indices=[2,0]),
 ]
 problem.add_terms(terms=terms)
-asyncio.run(solver.optimize(problem))
+# Solve the problem and fetch the result
+result = asyncio.run(solver.optimize(problem))
 ```
 
 ### Submit batch of problems
@@ -51,6 +54,7 @@ You can now use the `solve_problem` function with `asyncio.gather` to submit a b
 import asyncio
 from azure.quantum.aio.optimization import Problem, ProblemType
 
+# Create a list of problems.
 problems = []
 for n in range(10):
     problem = Problem(name=f"Problem-{n}", problem_type=ProblemType.ising)
@@ -63,10 +67,12 @@ for n in range(10):
     problems.append(problem)
 
 async def get_cost(problem):
+    # Run a problem against the solver and return the cost.
     result = solver.optimize(problem)
     return result["cost"]
 
 async def solve_problems(problems):
+    # Asynchronously solve a list of problems and get the costs.
     results = await asyncio.gather(*[get_cost(problem) for problem in problems])
 
 results = asyncio.run(solve_problems(problems))
