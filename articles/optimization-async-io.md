@@ -1,6 +1,6 @@
 ---
 author: guenp
-description: This document provides a basic guide to submitting a batch of jobs concurrently to Azure Quantum using Python.
+description: Learn how to submit a batch of jobs concurrently to Azure Quantum using Python.
 ms.author: guenp
 ms.date: 10/21/2021
 ms.service: azure-quantum
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.async-io
 ---
 
 # Solve a batch of many problems
+
+Learn how to submit a batch of jobs concurrently to Azure Quantum using Python.
 
 The example in [Solve long-running problems](xref:microsoft.quantum.optimization.solve-long-running-problems) submits a job to Azure Quantum and fetches the results later. This is convenient for being able to submit a problem and check on it later, or submit many problems and compare the results. However, to achieve concurrency and utilize all CPU time while waiting for a job to finish we need to use Python's `asyncio` framework. This can considerably speed up applications that run post-processing of job results or access a file or database.
 
