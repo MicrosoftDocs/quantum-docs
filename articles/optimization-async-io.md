@@ -73,7 +73,7 @@ async def get_cost(problem):
 
 async def solve_problems(problems):
     # Asynchronously solve a list of problems and get the costs.
-    results = await asyncio.gather(*[get_cost(problem) for problem in problems])
+    return await asyncio.gather(*[get_cost(problem) for problem in problems])
 
 results = asyncio.run(solve_problems(problems))
 results
