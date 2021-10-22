@@ -29,7 +29,7 @@ workspace = Workspace(
 )
 ```
 
-To submit a problem concurrently, use the `submit` method on the `solver`. This submits a `Job` and returns the results asynchronously.
+To submit a problem, use the `submit` method on the `solver`. This submits a `Job` and returns the results asynchronously.
 
 ```py
 solver = ParallelTempering(workspace, timeout=100, seed=11)
@@ -45,7 +45,7 @@ asyncio.run(solver.optimize(problem))
 
 ### Submit batch of problems
 
-You can now use the `solve_problem` function with `asyncio.gather` to submit a batch of problems concurrently. The sample coe below generates and solves 20 problems:
+You can now use the `solve_problem` function with `asyncio.gather` to submit a batch of problems asynchronously. The sample coe below generates and solves 20 problems:
 
 ```python
 import asyncio
