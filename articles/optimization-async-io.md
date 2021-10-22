@@ -60,7 +60,7 @@ for n in range(5):
     problem.add_terms(terms=terms)
     problems.append(problem)
 
-async def get_cost(problem)
+async def get_cost(problem):
     result = solver.optimize(problem)
     return result["cost"]
 
