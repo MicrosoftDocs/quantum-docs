@@ -29,7 +29,7 @@ workspace = Workspace(
 )
 ```
 
-To submit a problem, use the `submit` method on the `solver`. This submits a `Job` and returns the results asynchronously.
+To submit a problem, use the `optimize` method on the `solver`. This submits a `Job` and returns the results asynchronously.
 
 ```py
 # Create a solver
