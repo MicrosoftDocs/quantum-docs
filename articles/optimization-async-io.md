@@ -22,7 +22,6 @@ First, create an async `workspace`:
 
 ```python
 from azure.quantum.aio import Workspace
-from azure.quantum.aio.optimization import ParallelTempering
 workspace = Workspace(
     resource_id="",
     location=""
@@ -32,6 +31,10 @@ workspace = Workspace(
 To submit a problem, use the `optimize` method on the `solver`. This submits a `Job` and returns the results asynchronously.
 
 ```py
+import asyncio
+from azure.quantum.aio.optimization import ParallelTempering, Problem, ProblemType
+from azure.quantum.optimization import Term
+
 # Create a solver
 solver = ParallelTempering(workspace, timeout=100, seed=11)
 # Construct a problem
@@ -44,6 +47,20 @@ terms = [
 problem.add_terms(terms=terms)
 # Solve the problem and fetch the result
 result = asyncio.run(solver.optimize(problem))
+result
+```
+
+```output
+{'version': '1.0',
+ 'configuration': {'0': 1, '1': 1, '2': -1},
+ 'cost': -17.0,
+ 'parameters': {'all_betas': [0.058823529411764705,
+   0.11612417761345521,
+   ...,
+],
+  'replicas': 70,
+  'sweeps': 600},
+ 'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1}, 'cost': -17.0}]}
 ```
 
 ### Submit batch of problems
@@ -51,9 +68,6 @@ result = asyncio.run(solver.optimize(problem))
 You can now use the `solve_problem` function with `asyncio.gather` to submit a batch of problems asynchronously. The sample code below generates and solves 20 problems:
 
 ```python
-import asyncio
-from azure.quantum.aio.optimization import Problem, ProblemType
-
 # Create a list of problems.
 problems = []
 for n in range(10):
@@ -68,7 +82,7 @@ for n in range(10):
 
 async def get_cost(problem):
     # Run a problem against the solver and return the cost.
-    result = solver.optimize(problem)
+    result = await solver.optimize(problem)
     return result["cost"]
 
 async def solve_problems(problems):
