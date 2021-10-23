@@ -68,25 +68,25 @@ result
 You can now use the `solve_problem` function with `asyncio.gather` to submit a batch of problems asynchronously. The sample code below generates and solves 20 problems:
 
 ```python
-# Create a list of problems.
-problems = []
-for n in range(10):
-    problem = Problem(name=f"Problem-{n}", problem_type=ProblemType.ising)
-    terms = [
-        Term(c=n-9, indices=[0]),
-        Term(c=n-3, indices=[1,0]),
-        Term(c=n+5, indices=[2,0]),
-    ]
-    problem.add_terms(terms=terms)
-    problems.append(problem)
-
 async def get_cost(problem):
     # Run a problem against the solver and return the cost.
     result = await solver.optimize(problem)
     return result["cost"]
 
 async def main():
-    await asyncio.gather(*[get_cost(problem) for problem in problems])
+    # Create a list of problems.
+    problems = []
+    for n in range(10):
+        problem = Problem(name=f"Problem-{n}", problem_type=ProblemType.ising)
+        terms = [
+            Term(c=n-9, indices=[0]),
+            Term(c=n-3, indices=[1,0]),
+            Term(c=n+5, indices=[2,0]),
+        ]
+        problem.add_terms(terms=terms)
+        problems.append(problem)
+
+    return await asyncio.gather(*[get_cost(problem) for problem in problems])
 
 # Asynchronously solve a list of problems and get the costs.
 results = asyncio.run(main())
