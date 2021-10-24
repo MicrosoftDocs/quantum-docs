@@ -98,7 +98,7 @@ async def main():
 
 # Asynchronously solve a list of problems and get the costs.
 results = asyncio.run(main())
-results
+print(results)
 ```
 
 ```output
