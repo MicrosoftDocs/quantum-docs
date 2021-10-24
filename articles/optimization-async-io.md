@@ -58,8 +58,7 @@ async def main():
     job = await solver.submit(problem)
     
     # Fetch the result and post-process it
-    cost = await get_cost(job)    
-    return cost
+    return await get_cost(job)    
     
 result = asyncio.run(main())
 print(result)
