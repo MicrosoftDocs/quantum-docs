@@ -28,7 +28,7 @@ workspace = Workspace(
 )
 ```
 
-To submit a problem and get a `Job`, use the `submit` method on the `solver`. You can now create an asynchronous function `get_cost` that fetches the result and post-processes them asynchronously. In the sample below we'll implement a very simple post-processing step and will simply get the `"cost"` value from the result dictionary.
+To submit a problem and get a `Job`, use the `submit` method on the `solver`. You can now create an asynchronous function `get_cost` that fetches the result and post-processes them asynchronously. In the sample below we'll implement a very simple post-processing step that returns the `"cost"` value from the result dictionary.
 
 To learn more about the types of data returned by the solvers, see [Interpreting solver results](xref:microsoft.quantum.optimization.understand-solver-results).
 
