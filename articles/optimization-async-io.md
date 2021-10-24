@@ -92,7 +92,7 @@ async def main():
     # Create jobs
     jobs = [await solver.submit(problem) for problem in problems]
 
-    # Fetch the job results and post-process them
+    # Fetch the job results and post-process them asynchronously
     return await asyncio.gather(*[get_cost(job) for job in jobs])
 
 # Asynchronously solve a list of problems and get the costs.
