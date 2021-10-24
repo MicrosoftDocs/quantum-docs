@@ -16,7 +16,7 @@ Learn how to solve a batch of problems with asyncio on Azure Quantum using Pytho
 
 The example in [Solve long-running problems](xref:microsoft.quantum.optimization.solve-long-running-problems) submits a job to Azure Quantum and fetches the results later. This can be used to a problem and check on it later, or submit many problems and compare the results. However, to solve a batch of problems and, for example, run other processing steps while waiting for them to finish, we need to use Python's [asyncio](https://docs.python.org/3/library/asyncio.html) framework. This can considerably speed up applications that run post-processing of job results or access a file or database.
 
-## Using the azure.quantum.aio package
+### Submit a problem and process the results asynchronously
 
 First, create an async `workspace`:
 
@@ -68,7 +68,7 @@ print(result)
 -17.0
 ```
 
-### Submit batch of problems
+### Submit a batch of problems and process the results asynchronously
 
 You can now use the `get_cost` function with `asyncio.gather` to fetch the results for a batch of problems and post-process them asynchronously. The sample code below generates and solves 10 problems.
 
