@@ -28,52 +28,56 @@ workspace = Workspace(
 )
 ```
 
-To submit a problem, use the `optimize` method on the `solver`. This submits a `Job` and returns the results asynchronously.
+To submit a problem and get a `Job`, use the `submit` method on the `solver`. You can now create an asynchronous function `get_cost` that fetches the result and post-processes them asynchronously. In the sample below we'll implement a very simple post-processing step and will simply get the `"cost"` value from the result dictionary.
+
+To learn more about the types of data returned by the solvers, see [Interpreting solver results](xref:microsoft.quantum.optimization.understand-solver-results).
 
 ```py
 import asyncio
 from azure.quantum.aio.optimization import ParallelTempering, Problem, ProblemType
 from azure.quantum.optimization import Term
 
-# Create a solver
-solver = ParallelTempering(workspace, timeout=100, seed=11)
-# Construct a problem
-problem = Problem(name=f"Problem", problem_type=ProblemType.ising)
-terms = [
-    Term(c=-9, indices=[0]),
-    Term(c=-3, indices=[1,0]),
-    Term(c=5, indices=[2,0]),
-]
-problem.add_terms(terms=terms)
-# Solve the problem and fetch the result
-result = asyncio.run(solver.optimize(problem))
-result
+async def get_cost(job):
+    result = await job.get_results()
+    return result["cost"]
+
+async def main():
+    # Create a solver
+    solver = ParallelTempering(workspace, timeout=100, seed=11)
+
+    # Construct a problem
+    problem = Problem(name=f"Problem", problem_type=ProblemType.ising)
+    terms = [
+        Term(c=-9, indices=[0]),
+        Term(c=-3, indices=[1,0]),
+        Term(c=5, indices=[2,0]),
+    ]
+    problem.add_terms(terms=terms)
+    
+    # Submit job
+    job = await solver.submit(problem)
+    
+    # Fetch the result and post-process it
+    cost = await get_cost(job)    
+    return cost
+    
+result = asyncio.run(main())
+print(result)
 ```
 
 ```output
-{'version': '1.0',
- 'configuration': {'0': 1, '1': 1, '2': -1},
- 'cost': -17.0,
- 'parameters': {'all_betas': [0.058823529411764705,
-   0.11612417761345521,
-   ...,
-],
-  'replicas': 70,
-  'sweeps': 600},
- 'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1}, 'cost': -17.0}]}
+-17.0
 ```
 
 ### Submit batch of problems
 
-You can now use the `solve_problem` function with `asyncio.gather` to submit a batch of problems asynchronously. The sample code below generates and solves 20 problems:
+You can now use the `get_cost` function with `asyncio.gather` to fetch the results for a batch of problems and post-process them asynchronously. The sample code below generates and solves 10 problems.
 
 ```python
-async def get_cost(problem):
-    # Run a problem against the solver and return the cost.
-    result = await solver.optimize(problem)
-    return result["cost"]
-
 async def main():
+    # Create a solver
+    solver = ParallelTempering(workspace, timeout=100, seed=11)
+    
     # Create a list of problems.
     problems = []
     for n in range(10):
@@ -85,8 +89,12 @@ async def main():
         ]
         problem.add_terms(terms=terms)
         problems.append(problem)
+    
+    # Create jobs
+    jobs = [await solver.submit(problem) for problem in problems]
 
-    return await asyncio.gather(*[get_cost(problem) for problem in problems])
+    # Fetch the job results and post-process them
+    return await asyncio.gather(*[get_cost(job) for job in jobs])
 
 # Asynchronously solve a list of problems and get the costs.
 results = asyncio.run(main())
