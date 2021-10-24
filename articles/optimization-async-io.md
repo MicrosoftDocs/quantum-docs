@@ -106,7 +106,7 @@ print(results)
 
 ## Next steps
 
-The `azure.quantum.aio` package covers all solvers provided by the `azure.quantum` package. To use the below samples and documentation with `asyncio`, change the imports to use the `azure.quantum.aio` library instead and use the `await` keyword with asynchronous methods.
+The `azure.quantum.aio` package contains asyncio-compatible versions of all solvers provided by the `azure.quantum` package. To use the below samples and documentation with `asyncio`, change the imports to use the `azure.quantum.aio` library instead and use the `await` keyword when calling asynchronous methods.
 
 ### Documentation
 
