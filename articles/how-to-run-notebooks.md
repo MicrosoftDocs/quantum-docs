@@ -33,6 +33,8 @@ Follow these steps to create a new Q# or Python notebook in Azure Quantum.
 1. Click on **My Notebooks** and click **Add new**
 1. Select either **Q#** or **Python 3** as the **Kernel Type**, type a **File Name** and click **Create file**.
 
+IMG
+
 The first cell of the notebook is populated automatically with the connection string to the Azure Quantum workspace.
 
 For Q#, the first cell will look like this.
@@ -43,6 +45,8 @@ For Python, the first cell will look like this.
 
 IMG
 
+Click **+ Code** or **+ Markdown** to add a code or markdown text cell.
+
 ## Upload notebooks
 
 You can upload one or more existing Jupyter notebook to Azure Quantum notebooks.
@@ -51,8 +55,8 @@ You can upload one or more existing Jupyter notebook to Azure Quantum notebooks.
 > Only upload and run notebooks from trusted sources and only install packages from trusted sources. While Azure Quantum notebooks sandbox outputs and protect you, Jupyter Notebooks is built for arbitrary code execution, so there are inherent risks to uploading or running notebooks from an untrusted source.
 
 1. Click on your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
-1. Click on **Jupyter Notebooks**.
-1. Click on **My Notebooks** and click **Upload notebooks**.
+1. Click **Jupyter Notebooks**.
+1. Click **Upload notebooks**.
 1. Click **Choose Files** and select the notebook files you want to upload.
 1. If you would like to overwrite already existing files, select **Overwrite if already exists**.
 1. Click **Upload files**.
@@ -69,6 +73,21 @@ You can rename, delete, duplicate, and download en existing notebook in Azure Qu
 1. Click on **Jupyter Notebooks**.
 1. Click on your notebook in **My Notebooks** and click on the context pane (**...**).
 1. Select **Rename Notebook**, **Delete Notebook**, **Duplicate Notebook**, or **Download Notebook**.
+
+IMG
+
+## Notebook gallery
+
+To use a notebook sample from the galley, follow these steps.
+
+1. Click on your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
+1. Click **Jupyter Notebooks**.
+1. Click **Notebook Gallery**.
+1. Select the sample you would like to use, and click **Copy to My Notebooks**.
+
+IMG
+
+You will now see the sample notebook under **My Notebooks** and you can run or edit the notebook.
 
 IMG
 
