@@ -11,7 +11,7 @@ title: Run Azure Quantum notebooks in a workspace
 uid: microsoft.quantum.how-to.notebooks
 ---
 
-# Run Azure Quantum Notebooks in a workspace
+# Run Azure Quantum notebooks in a workspace
 
 Learn how to run Q# or Python in a Jupyter notebook directly in a workspace in Azure Quantum.
 
