@@ -20,9 +20,7 @@ Learn how to run Q# or Python in a Jupyter notebook directly in a workspace in A
 You need the following prerequisites to use Azure Quantum notebooks.
 
 - An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
-
 - An Azure Quantum workspace. See [Create an Azure Quantum workspace](how-to-create-workspace.md).
-
 - When Azure Quantum notebooks are used, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on your linked [Azure Storage](/azure/storage/) account. 
     - If you do not want to enable CORS for your Azure Storage account, please do not visit the **Jupyter Notebooks** blade in the portal. If you have visited the blade previously and now no longer want to enable CORS, you can directly edit your storage account to remove any existing CORS rules.
 
@@ -31,11 +29,8 @@ You need the following prerequisites to use Azure Quantum notebooks.
 Follow these steps to create a new Q# or Python notebook in Azure Quantum.
 
 1. Click on your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
-
 1. Click on **Jupyter Notebooks**.
-
 1. Click on **My Notebooks** and click **Add new**
-
 1. Select either **Q#** or **Python 3** as the **Kernel Type**, type a **File Name** and click **Create file**.
 
 The first cell of the notebook is populated automatically with the connection string to the Azure Quantum workspace.
