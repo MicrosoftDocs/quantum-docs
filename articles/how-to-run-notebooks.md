@@ -13,13 +13,31 @@ uid: microsoft.quantum.install-qdk.overview.jupyter
 
 # Run Azure Quantum notebooks in a workspace
 
-Learn how to run notebooks directly in a workspace in Azure Azure. 
+Learn how to run Q# or Python in a Jupyter notebook directly in a workspace in Azure Azure.
 
 ## Prerequisites
 
 - An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
 - A Machine Learning workspace. See [Create an Azure Quantum workspace](how-to-create-workspace.md).
 
+## Create a new notebook
+
+Follow these steps to create a new Q# or Python notebook in Azure Quantum.
+
+1. Click on your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
+1. Click on **Jupyter Notebooks**.
+1. Click on **My Notebooks** and click **Add new**
+1. Select either **Q#** or **Python 3** as the **Kernel Type**, type a **File Name** and click **Create file**.
+
+The first cell of the notebook is populated automatically with the connection string to the Azure Quantum workspace.
+
+For Q#, the first cell will look like this.
+
+IMG
+
+For Python, the first cell will look like this.
+
+IMG
 
 
 ## Next steps
