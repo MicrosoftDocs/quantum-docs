@@ -39,6 +39,20 @@ For Python, the first cell will look like this.
 
 IMG
 
+## Upload notebooks
+
+You can upload one or more existing Jupyter notebook to Azure Quantum notebooks.
+
+1. Click on your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
+1. Click on **Jupyter Notebooks**.
+1. Click on **My Notebooks** and click **Upload notebooks**.
+1. Click **Choose Files** and select the notebook files you want to upload.
+1. If you would like to overwrite already existing files, select **Overwrite if already exists**.
+1. Click **Upload files**.
+
+IMG
+
+After the notebooks have been uploaded, you can find them under **My Notebooks**.
 
 ## Next steps
 
