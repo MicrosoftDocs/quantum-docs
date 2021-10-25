@@ -31,9 +31,11 @@ Follow these steps to create a new Q# or Python notebook in Azure Quantum.
 1. Click on your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Click on **Jupyter Notebooks**.
 1. Click on **My Notebooks** and click **Add new**
+
+    :::image type="content" source="media/how-to-run-notebooks-workspace/create-new-notebook.png" alt-text="Create a new Azure Quantum notebook.":::
+
 1. Select either **Q#** or **Python 3** as the **Kernel Type**, type a **File Name** and click **Create file**.
 
-IMG
 
 The first cell of the notebook is populated automatically with the connection string to the Azure Quantum workspace.
 
