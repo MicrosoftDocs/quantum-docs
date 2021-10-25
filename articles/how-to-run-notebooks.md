@@ -13,12 +13,13 @@ uid: microsoft.quantum.install-qdk.overview.jupyter
 
 # Run Azure Quantum notebooks in a workspace
 
-Learn how to run Q# or Python in a Jupyter notebook directly in a workspace in Azure Azure.
+Learn how to run Q# or Python in a Jupyter notebook directly in a workspace in Azure Quantum.
 
 ## Prerequisites
 
 - An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
 - A Machine Learning workspace. See [Create an Azure Quantum workspace](how-to-create-workspace.md).
+- When Azure Quantum notebooks are used, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on your linked [Azure Storage](/azure/storage/) account. If you do not want to enable CORS for your storage account, please do not visit the Jupyter Notebooks blade in the portal. If you have visited the blade previously and now no longer want to enable CORS, you can directly edit your storage account to remove any existing CORS rules.
 
 ## Create a new notebook
 
@@ -43,6 +44,9 @@ IMG
 
 You can upload one or more existing Jupyter notebook to Azure Quantum notebooks.
 
+> [!CAUTION]
+> Only upload and run notebooks from trusted sources and only install packages from trusted sources. While Azure Quantum notebooks sandbox outputs and protect you, Jupyter Notebooks is built for arbitrary code execution, so there are inherent risks to uploading or running notebooks from an untrusted source.
+
 1. Click on your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Click on **Jupyter Notebooks**.
 1. Click on **My Notebooks** and click **Upload notebooks**.
@@ -61,9 +65,19 @@ You can rename, delete, duplicate, and download en existing notebook in Azure Qu
 1. Click on your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Click on **Jupyter Notebooks**.
 1. Click on your notebook in **My Notebooks** and click on the context pane (**...**).
-1. Select the option you want to perform.
+1. Select **Rename Notebook**, **Delete Notebook**, **Duplicate Notebook**, or **Download Notebook**.
 
 IMG
+
+## Isolation
+
+Azure Quantum notebooks are isolated from other users' notebooks.
+
+- Your compute is hosted by Azure Quantum with hypervisor-level isolation from other user's compute.
+- Your notebooks are stored in your linked storage account in your subscription.
+- Your compute is scoped to you and a specific workspace. If you visit another workspace, you will get a different compute instance. If another user visits the same workspace, they will get a different compute instance from you.
+- Your files are scoped to a workspace, so if visiting another workspace, the same files will not appear under My Files.
+- Your files are also currently scoped to you, meaning if another user visits the same workspace, they will not see your files.
 
 ## Next steps
 
