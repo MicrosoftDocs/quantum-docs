@@ -19,7 +19,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2021-10-26
 
-### QDK version 0.xx.xxxx.xxxxxx
+### QDK version 0.20.2110.171573
 
 - IQ# kernel [%azure.connect](https://docs.microsoft.com/qsharp/api/iqsharp-magic/azure.connect) command no longer sets "West US" as the default location. Location parameter is now required.
 - The `azure-quantum` package now supports asynchronous I/O via the new `azure.quantum.aio` package. For more information, see [Solve a batch of problems](xref:microsoft.quantum.optimization.async-io).
