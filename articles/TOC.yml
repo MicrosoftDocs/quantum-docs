@@ -182,10 +182,10 @@
       items:
       - name: Workspace
         href: optimization-workspace.md
-    - name: Azure.Quantum.Optimization
-      items:
       - name: Job
         href: optimization-job-reference.md
+    - name: Azure.Quantum.Optimization
+      items:
       - name: Problem
         href: optimization-problem.md
       - name: ProblemType
@@ -216,6 +216,8 @@
         href: optimization-reuse-problem-definitions.md
       - name: Solve long-running problems
         href: optimization-solve-long-running-problems.md
+      - name: Solve a batch of problems using asyncio
+        href: optimization-async-io.md
 - name: Manage Azure Quantum
   items:
     - name: Update the QDK
