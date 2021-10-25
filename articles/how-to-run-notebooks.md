@@ -1,14 +1,14 @@
 ---
 author: dphansen
-description: This article shows you how to install the Quantum Developer Kit (QDK) and develop your own Q# notebooks.
+description: Learn how to run Q# or Python in a Jupyter notebook directly in a workspace in Azure Quantum.
 ms.author: davidph
-ms.date: 10/22/2021
+ms.date: 10/26/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Develop with Q# Jupyter notebooks
-uid: microsoft.quantum.install-qdk.overview.jupyter
+title: Run Azure Quantum notebooks in a workspace
+uid: microsoft.quantum.how-to.notebooks
 ---
 
 # Run Azure Quantum notebooks in a workspace
