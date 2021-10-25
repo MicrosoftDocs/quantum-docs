@@ -21,7 +21,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ### QDK version 0.20.2110.171573
 
-- IQ# kernel [%azure.connect](https://docs.microsoft.com/qsharp/api/iqsharp-magic/azure.connect) command no longer sets "West US" as the default location. Location parameter is now required.
+- IQ# kernel [%azure.connect](/qsharp/api/iqsharp-magic/azure.connect) command no longer sets "West US" as the default location. Location parameter is now required.
 - The `azure-quantum` package now supports asynchronous I/O via the new `azure.quantum.aio` package. For more information, see [Solve a batch of problems](xref:microsoft.quantum.optimization.async-io).
 - Fixed an [issue](https://github.com/microsoft/qdk-python/issues/160): Qiskit jobs fetched with `AzureQuantumProvider.get_job()` can now use `job.result()` without running into a `KeyError`.
 - Fixed an [issue](https://github.com/microsoft/qdk-python/issues/164) that caused `azure.quantum.cirq` and `azure.quantum.qiskit` not to be recognized by [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). The `azure.quantum.plugins` package is deprecated and will be removed next release.  
