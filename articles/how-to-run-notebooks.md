@@ -11,15 +11,18 @@ title: Run Azure Quantum notebooks in a workspace
 uid: microsoft.quantum.how-to.notebooks
 ---
 
-# Run Azure Quantum notebooks in a workspace
+# Run Azure Quantum Motebooks in a workspace
 
 Learn how to run Q# or Python in a Jupyter notebook directly in a workspace in Azure Quantum.
 
 ## Prerequisites
 
+You need the following prerequisites to use Azure Quantum notebooks.
+
 - An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
-- A Machine Learning workspace. See [Create an Azure Quantum workspace](how-to-create-workspace.md).
-- When Azure Quantum notebooks are used, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on your linked [Azure Storage](/azure/storage/) account. If you do not want to enable CORS for your Azure Storage account, please do not visit the **Jupyter Notebooks** blade in the portal. If you have visited the blade previously and now no longer want to enable CORS, you can directly edit your storage account to remove any existing CORS rules.
+- An Azure Quantum workspace. See [Create an Azure Quantum workspace](how-to-create-workspace.md).
+- When Azure Quantum notebooks are used, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on your linked [Azure Storage](/azure/storage/) account. 
+    - If you do not want to enable CORS for your Azure Storage account, please do not visit the **Jupyter Notebooks** blade in the portal. If you have visited the blade previously and now no longer want to enable CORS, you can directly edit your storage account to remove any existing CORS rules.
 
 ## Create a new notebook
 
