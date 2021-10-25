@@ -1,6 +1,6 @@
 ---
 author: guenp
-description: Learn how to solve a batch of problems with asyncio on Azure Quantum using Python.
+description: Learn how to solve a batch of problems using Azure Quantum and the Python asyncio library.
 ms.author: guenp
 ms.date: 10/21/2021
 ms.service: azure-quantum
@@ -10,13 +10,13 @@ title: Solve a batch of problems using asyncio
 uid: microsoft.quantum.optimization.async-io
 ---
 
-# Solve a batch of problems using asyncio
+# Solve a batch of optimization problems using asyncio
 
-Learn how to solve a batch of problems with asyncio on Azure Quantum using Python.
+Learn how to solve a batch of optimization problems using Azure Quantum and the Python asyncio library.
 
-The example in [Solve long-running problems](xref:microsoft.quantum.optimization.solve-long-running-problems) submits a job to Azure Quantum and fetches the results later. This can be used to a problem and check on it later, or submit many problems and compare the results. However, to solve a batch of problems and, for example, run other processing steps while waiting for them to finish, we need to use Python's [asyncio](https://docs.python.org/3/library/asyncio.html) framework. This can considerably speed up applications that run post-processing of job results or access a file or database.
+The example in [Solve long-running problems](xref:microsoft.quantum.optimization.solve-long-running-problems) submits a job to Azure Quantum and fetches the results later. This can be used to submit a problem and check on it later, or submit many problems and compare the results. However, to solve a batch of problems and, for example, run other processing steps while waiting for them to finish, you need to use Python's [asyncio](https://docs.python.org/3/library/asyncio.html) framework. This can considerably speed up applications that run post-processing on job results or access a file or database.
 
-### Submit a problem and process the results asynchronously
+## Submit a problem and process the results asynchronously
 
 First, create an async `workspace`:
 
@@ -28,7 +28,7 @@ workspace = Workspace(
 )
 ```
 
-To submit a problem and get a `Job`, use the `submit` method on the `solver`. You can now create an asynchronous function `get_cost` that fetches the result and post-processes them asynchronously. In the sample below we'll implement a very simple post-processing step that returns the `"cost"` value from the result dictionary.
+To submit a problem and get a `Job`, use the `submit` method on the `solver`. You can now create an asynchronous function `get_cost` that fetches the results and processes them asynchronously. The following example implements a very simple post-processing step that returns the `"cost"` value from the result dictionary.
 
 To learn more about the types of data returned by the solvers, see [Interpreting solver results](xref:microsoft.quantum.optimization.understand-solver-results).
 
@@ -54,10 +54,10 @@ async def main():
     ]
     problem.add_terms(terms=terms)
     
-    # Submit job
+    # Submit a job
     job = await solver.submit(problem)
     
-    # Fetch the result and post-process it
+    # Fetch the result and process it
     return await get_cost(job)    
     
 result = asyncio.run(main())
@@ -68,9 +68,9 @@ print(result)
 -17.0
 ```
 
-### Submit a batch of problems and process the results asynchronously
+## Submit a batch of problems and process the results asynchronously
 
-You can now use the `get_cost` function with `asyncio.gather` to fetch the results for a batch of problems and post-process them asynchronously. The sample code below generates and solves 10 problems.
+You can now use the `get_cost` function with `asyncio.gather` to fetch the results for a batch of problems and process them asynchronously. The following sample code generates and solves ten problems.
 
 ```python
 async def main():
@@ -89,7 +89,7 @@ async def main():
         problem.add_terms(terms=terms)
         problems.append(problem)
     
-    # Create jobs
+    # Create a job for each problem
     jobs = [await solver.submit(problem) for problem in problems]
 
     # Fetch the job results and post-process them asynchronously
@@ -106,7 +106,7 @@ print(results)
 
 ## Next steps
 
-The `azure.quantum.aio.optimization` package contains asyncio-compatible versions of all solvers provided by the `azure.quantum.optimization` package. To use the below samples and documentation with `asyncio`, change the imports to use the `azure.quantum.aio` library instead and use the `await` keyword when calling asynchronous methods.
+The `azure.quantum.aio.optimization` package contains asyncio-compatible versions of all the solvers provided by the `azure.quantum.optimization` package. To use the following samples and documentation with `asyncio`, change the imports to use the `azure.quantum.aio` library instead and use the `await` keyword when calling asynchronous methods.
 
 ### Documentation
 
