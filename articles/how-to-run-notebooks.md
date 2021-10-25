@@ -54,6 +54,17 @@ IMG
 
 After the notebooks have been uploaded, you can find them under **My Notebooks**.
 
+## Manage notebooks
+
+You can rename, delete, duplicate, and download en existing notebook in Azure Quantum.
+
+1. Click on your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
+1. Click on **Jupyter Notebooks**.
+1. Click on your notebook in **My Notebooks** and click on the context pane (**...**).
+1. Select the option you want to perform.
+
+IMG
+
 ## Next steps
 
 - [Quickstart: Create a quantum-based random number generator in Azure Quantum](xref:microsoft.quantum.quickstarts.computing)
