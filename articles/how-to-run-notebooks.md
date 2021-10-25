@@ -19,7 +19,7 @@ Learn how to run Q# or Python in a Jupyter notebook directly in a workspace in A
 
 - An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
 - A Machine Learning workspace. See [Create an Azure Quantum workspace](how-to-create-workspace.md).
-- When Azure Quantum notebooks are used, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on your linked [Azure Storage](/azure/storage/) account. If you do not want to enable CORS for your storage account, please do not visit the Jupyter Notebooks blade in the portal. If you have visited the blade previously and now no longer want to enable CORS, you can directly edit your storage account to remove any existing CORS rules.
+- When Azure Quantum notebooks are used, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on your linked [Azure Storage](/azure/storage/) account. If you do not want to enable CORS for your Azure Storage account, please do not visit the **Jupyter Notebooks** blade in the portal. If you have visited the blade previously and now no longer want to enable CORS, you can directly edit your storage account to remove any existing CORS rules.
 
 ## Create a new notebook
 
@@ -78,6 +78,16 @@ Azure Quantum notebooks are isolated from other users' notebooks.
 - Your compute is scoped to you and a specific workspace. If you visit another workspace, you will get a different compute instance. If another user visits the same workspace, they will get a different compute instance from you.
 - Your files are scoped to a workspace, so if visiting another workspace, the same files will not appear under My Files.
 - Your files are also currently scoped to you, meaning if another user visits the same workspace, they will not see your files.
+
+## Limitations
+
+The following are limitations with Azure Quantum Notebooks.
+
+- Since it is free compute, your compute instance will live up to a max of 12 hours (after that time, your compute will be deleted/recreated, and you will need to re-install any custom packages).
+    - Azure Quantum may need to delete your compute to apply security patches or rollout emergency changes. When possible, it will not interrupt your workflow.
+- Notebooks compute has pre-allocated 2 vCPU and 4 GB of memory. This may change this in the future.
+- Idle kernels are terminated after 30 minutes (after that time, you will need to re-run cells).
+- The location of your storage account and workspace will impact the performance of notebooks. When possible, try to create the storage account and workspace in a region close to where you will be using notebooks.
 
 ## Next steps
 
