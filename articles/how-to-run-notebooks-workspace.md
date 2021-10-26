@@ -110,7 +110,7 @@ You can rename, delete, duplicate, and download existing notebooks.
 
 Jupyter notebooks in an Azure Quantum workspace are isolated from other users' notebooks.
 
-- Your Jupyter Notebook instance is hosted by Azure Quantum with hypervisor-level isolation from other user's instances.
+- Your Jupyter Notebook instance is hosted by Azure Quantum with hypervisor-level isolation from other users' instances.
 - Notebooks are stored in your linked storage account in your subscription.
 - A Jupyter Notebook instance is scoped to you and a specific workspace. If you visit another workspace, you will get a different instance. If another user visits the same workspace, they will get a different Jupyter Notebook instance from you.
 - Notebooks are scoped to a workspace, so if visiting another workspace, the same notebooks will not appear under My Notebooks.
