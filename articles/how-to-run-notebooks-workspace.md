@@ -64,7 +64,8 @@ You can upload one or more existing Jupyter notebook to Azure Quantum notebooks.
 1. If you would like to overwrite already existing files, select **Overwrite if already exists**.
 1. Click **Upload files**.
 
-IMG
+    :::image type="content" source="media/how-to-run-notebooks-workspace/upload-notebook.png" alt-text="Upload notebook in Azure Quantum.":::
+
 
 After the notebooks have been uploaded, you can find them under **My Notebooks**.
 
