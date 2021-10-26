@@ -113,8 +113,7 @@ Jupyter notebooks in an Azure Quantum workspace are isolated from other users' n
 - Your Jupyter Notebook instance is hosted by Azure Quantum with hypervisor-level isolation from other users' instances.
 - Notebooks are stored in your linked storage account in your subscription.
 - A Jupyter Notebook instance is scoped to you and a specific workspace. If you visit another workspace, you will get a different instance. If another user visits the same workspace, they will get a different Jupyter Notebook instance from you.
-- Notebooks are scoped to a workspace, so if visiting another workspace, the same notebooks will not appear under My Notebooks.
-- Notebooks are also currently scoped to you, meaning if another user visits the same workspace, they will not see your notebooks.
+- Notebooks are scoped to you and a specific workspace. If you visit another workspace, the same notebooks will not appear under My Notebooks. If another user visits the same workspace, they will not see your notebooks.
 
 ## Storage of notebooks
 
