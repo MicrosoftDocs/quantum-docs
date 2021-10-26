@@ -25,9 +25,35 @@ You need the following prerequisites to use Jupyter notebooks in an Azure Quantu
 > [!NOTE]
 > When notebooks are used in a workspace, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on your linked [Azure Storage](/azure/storage/) account. If you do not want to enable CORS for your Azure Storage account, please do not visit the **Jupyter Notebooks** blade in the portal. If you have visited the blade previously and now no longer want to enable CORS, you can directly edit your storage account to remove any existing CORS rules.
 
+## Notebook gallery
+
+To get started, you can use use a sample from the notebook gallery.
+
+1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
+1. Select **Jupyter Notebooks**.
+1. Select **Notebook Gallery**.
+1. Select the sample you want to use, and select **Copy to My Notebooks**.
+
+    :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-gallery.png" alt-text="Notebook gallery in Azure Quantum.":::
+
+The sample notebook can be found under **My Notebooks** and you can run or edit the notebook.
+
+## Run notebook
+
+To run Q# or Python in a Jupyter notebook, follow these steps.
+
+1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
+1. Select **Jupyter Notebooks**.
+1. Select your notebook in **My Notebooks**.
+1. Select the cell you want to run and select the run icon to execute the code.
+
+    :::image type="content" source="media/how-to-run-notebooks-workspace/run-notebook.png" alt-text="Run a Jupyter notebook.":::
+
+You can also select **Run all** to run all cells in the notebook.
+
 ## Create a new notebook
 
-Follow these steps to create a new Jupyter notebook using Q# or Python. You can also start with a [notebook from the gallery](#notebook-gallery).
+Follow these steps to create a new Jupyter notebook using Q# or Python.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Jupyter Notebooks**.
@@ -53,19 +79,6 @@ Select **+ Code** or **+ Markdown** to add a code or markdown text cell.
 
 > [!TIP]
 > Notebooks auto-saves every 30 seconds. You can also manually save by pressing **CTRL + S**.
-
-## Run notebook
-
-To run Q# or Python in a Jupyter notebook, follow these steps.
-
-1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
-1. Select **Jupyter Notebooks**.
-1. Select your notebook in **My Notebooks**.
-1. Select the cell you want to run and select the run icon to execute the code.
-
-    :::image type="content" source="media/how-to-run-notebooks-workspace/run-notebook.png" alt-text="Run a Jupyter notebook.":::
-
-You can also select **Run all** to run all cells in the notebook.
 
 ## Upload notebooks
 
@@ -95,19 +108,6 @@ You can rename, delete, duplicate, and download existing notebooks.
 1. Select **Rename Notebook**, **Delete Notebook**, **Duplicate Notebook**, or **Download Notebook**.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-context-pane.png" alt-text="Notebook context pane in Azure Quantum.":::
-
-## Notebook gallery
-
-To use a notebook sample from the gallery, follow these steps.
-
-1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
-1. Select **Jupyter Notebooks**.
-1. Select **Notebook Gallery**.
-1. Select the sample you want to use, and select **Copy to My Notebooks**.
-
-    :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-gallery.png" alt-text="Notebook gallery in Azure Quantum.":::
-
-The sample notebook is under **My Notebooks** and you can run or edit the notebook.
 
 ## Isolation
 
