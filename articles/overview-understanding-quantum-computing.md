@@ -21,7 +21,7 @@ Classical computing, which uses binary states, is increasingly challenged as the
 The quantum material behaves according to the laws of quantum mechanics, leveraging concepts such as probabilistic computation, superposition, and entanglement. These concepts provide the basis for quantum algorithms that harness the power of quantum computing to solve complex problems.
 
 
-## Where can quantum computing be applied?
+## What can quantum computing be used for?
 
 A quantum computer isn't a supercomputer that can do everything faster. One of the goals of quantum computing research is to study which problems can be solved by a quantum computer faster than a classical computer and how large the speedup can be.
 
@@ -46,13 +46,20 @@ With the anticipation of a sufficiently large and fault-tolerant quantum compute
 - Estimate the security for cryptosystems of a given bit length in a post-quantum environment.
 - Estimate how long it will take to migrate current cryptosystems to new ones.
 
-In collaboration with Microsoft Quantum researchers, Microsoft has been developing concrete quantum estimates for breaking current encryption systems. It's also working on ways to make these systems robust against quantum attacks.
-
-## Search algorithms
+### Search Algorithms
 
 In 1996, Lov Grover developed a quantum algorithm that dramatically sped up the solution to unstructured data searches, running the search in fewer steps than any classical algorithm could.
 
 For more information, see the [theory of Grover's search algorithm](xref:microsoft.quantum.concepts.grovers). For a practical implementation of Grover's algorithm to solve mathematical problems you can see this [tutorial to implement Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers).
+
+The search problem is by design generic. Indeed, any problem that allows you to check whether a given value $x$ is a valid solution (a "yes or no problem") can be formulated in terms of the search problem. The following are some examples:
+
+- Boolean satisfiability problem: Is the set of Boolean values $x$ an interpretation (an assignment of values to variables) that satisfies the given Boolean formula?
+- Traveling salesman problem: Does $x$ describe the shortest possible loop that connects all cities?
+- Database search problem: Does the database table contain a record $x$?
+- Integer factorization problem: Is the fixed number $N$ divisible by the number $x$?
+
+Some of these problems are better suited to benefit from using Grover's algorithm than the others.
 
 ### Quantum Machine Learning
 
