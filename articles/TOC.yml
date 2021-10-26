@@ -224,6 +224,8 @@
       href: install-update-qdk.md
     - name: Create an Azure Quantum workspace
       href: how-to-create-workspace.md
+    - name: Run notebooks in a workspace
+      href: how-to-run-notebooks-workspace.md
     - name: Work with jobs
       href: how-to-work-with-jobs.md
     - name: Authenticate using a service principal
