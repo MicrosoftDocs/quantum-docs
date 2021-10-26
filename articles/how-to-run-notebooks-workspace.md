@@ -58,7 +58,7 @@ Select **+ Code** or **+ Markdown** to add a code or markdown text cell.
 You can upload one or more existing Jupyter notebooks to an Azure Quantum workspace.
 
 > [!CAUTION]
-> You should only upload and run Juptyer notebooks from trusted sources and only install packages from trusted sources. While notebooks in Azure Quantum protects you by sandboxing outputs, Jupyter notebooks is built for arbitrary code execution, so there are inherent risks to uploading or running notebooks from an untrusted source.
+> You should only upload and run Jupyter notebooks from trusted sources and only install packages from trusted sources. While notebooks in Azure Quantum protects you by sandboxing outputs, Jupyter Notebooks is built for arbitrary code execution, so there are inherent risks to uploading or running notebooks from an untrusted source.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Jupyter Notebooks**.
