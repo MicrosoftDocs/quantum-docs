@@ -99,9 +99,9 @@ The sample notebook is under **My Notebooks** and you can run or edit the notebo
 
 Jupyter notebooks in an Azure Quantum workspace are isolated from other users' notebooks.
 
-- Compute is hosted by Azure Quantum with hypervisor-level isolation from other user's compute.
+- Your Jupyter Notebook instance is hosted by Azure Quantum with hypervisor-level isolation from other user's instances.
 - Notebooks are stored in your linked storage account in your subscription.
-- Compute is scoped to you and a specific workspace. If you visit another workspace, you will get a different compute instance. If another user visits the same workspace, they will get a different compute instance from you.
+- A Jupyter Notebook instance is scoped to you and a specific workspace. If you visit another workspace, you will get a different instance. If another user visits the same workspace, they will get a different Jupyter Notebook instance from you.
 - Notebooks are scoped to a workspace, so if visiting another workspace, the same notebooks will not appear under My Notebooks.
 - Notebooks are also currently scoped to you, meaning if another user visits the same workspace, they will not see your notebooks.
 
@@ -109,11 +109,11 @@ Jupyter notebooks in an Azure Quantum workspace are isolated from other users' n
 
 The following are limitations with Jupyter notebooks in an Azure Quantum workspace.
 
-- Since it is free compute, your compute instance will live up to a max of 12 hours (after that time, your compute will be deleted/recreated, and you will need to reinstall any custom packages).
-    - Azure Quantum may need to delete your compute to apply security patches or roll out emergency changes. When possible, it will not interrupt your workflow.
-- Notebooks compute has pre-allocated 2 vCPU and 4 GB of memory.
+- As it is free, the Jupyter Notebook instance will live up to a max of 12 hours (after that time, your instance will be deleted/recreated, and you will need to reinstall any custom packages).
+  - Azure Quantum may need to delete your Jupyter Notebook instance to apply security patches or roll out emergency changes. When possible, it will not interrupt your workflow.
+- Notebook instances have pre-allocated 2 vCPU and 4 GB of memory.
 - Idle kernels are terminated after 30 minutes. After that time, you will need to rerun the cells.
-- The location of your storage account and workspace will affect the performance of Jypter notebooks in an Azure Quantum workspace. When possible, try to create the storage account and workspace in a region close to where you will be using your notebooks.
+- The location of your storage account and workspace will affect the performance of Jupyter notebooks in an Azure Quantum workspace. When possible, try to create the storage account and workspace in a region close to where you will be using your notebooks.
 
 ## Next steps
 
