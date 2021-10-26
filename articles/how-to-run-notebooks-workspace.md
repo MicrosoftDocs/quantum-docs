@@ -66,7 +66,6 @@ You can upload one or more existing Jupyter notebook to Azure Quantum notebooks.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/upload-notebook.png" alt-text="Upload notebook in Azure Quantum.":::
 
-
 After the notebooks have been uploaded, you can find them under **My Notebooks**.
 
 ## Manage notebooks
@@ -89,11 +88,9 @@ To use a notebook sample from the galley, follow these steps.
 1. Click **Notebook Gallery**.
 1. Select the sample you would like to use, and click **Copy to My Notebooks**.
 
-IMG
+    :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-gallery.png" alt-text="Notebook gallery in Azure Quantum.":::
 
 You will now see the sample notebook under **My Notebooks** and you can run or edit the notebook.
-
-IMG
 
 ## Isolation
 
