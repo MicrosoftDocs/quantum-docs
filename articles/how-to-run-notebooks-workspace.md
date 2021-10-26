@@ -1,6 +1,6 @@
 ---
 author: dphansen
-description: Learn how to run Q# or Python in a Jupyter notebook in a workspace in Azure Quantum.
+description: Learn how to run Q# or Python in a Jupyter notebook in an Azure Quantum workspace.
 ms.author: davidph
 ms.date: 10/26/2021
 ms.service: azure-quantum
@@ -13,7 +13,7 @@ uid: microsoft.quantum.how-to.notebooks
 
 # Run Azure Quantum notebooks in a workspace
 
-Learn how to run Q# or Python in a Jupyter notebook in a [workspace](xref:microsoft.quantum.how-to.workspace) in [Azure Quantum](microsoft.quantum.azure-quantum-overview).
+Learn how to run Q# or Python in a Jupyter notebook in an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Prerequisites
 
@@ -74,7 +74,7 @@ You can rename, delete, duplicate, and download existing  Azure Quantum notebook
 
 1. Click your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Click **Jupyter Notebooks**.
-1. Click your notebook in **My Notebooks** and click on the context pane (**...**).
+1. Click your notebook in **My Notebooks** and click the context pane (**...**).
 1. Select **Rename Notebook**, **Delete Notebook**, **Duplicate Notebook**, or **Download Notebook**.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-context-pane.png" alt-text="Notebook context pane in Azure Quantum.":::
