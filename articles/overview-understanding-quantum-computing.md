@@ -27,7 +27,7 @@ For more information about the beginnings and motivation of quantum computing, s
 
 A quantum computer isn't a supercomputer that can do everything faster. One of the goals of quantum computing research is to study which problems can be solved by a quantum computer faster than a classical computer and how large the speedup can be.
 
-Quantum computers do exceptionaly well in problems that require calculation of many possible different combinations. These type of problems can be found across many areas. 
+Quantum computers do exceptionally well in problems that require calculation of many possible different combinations. These type of problems can be found across many areas. 
 
 ### Quantum simulation
 
@@ -139,7 +139,7 @@ Initializing and transforming qubits is done using quantum operations (also know
 
 Measuring the result of the computation tells us an answer, but for some quantum algorithms, not necessarily the correct answer. Because the result of some quantum algorithms is based on the probability that was configured by the quantum operations, these computations are run multiple times to get a probability distribution and refine the accuracy of the results.  Assurance that an operation returned a correct answer is known as quantum verification and is a significant challenge in quantum computing.
 
-## Azure Quantum computing harware partners
+## Azure Quantum computing hardware partners
 
 Microsoft is partnering with quantum hardware companies to provide developers with cloud access to quantum hardware. Leveraging the [Azure Quantum](https://azure.microsoft.com/services/quantum/) platform and the Q# language, developers will be able to explore quantum algorithms and run their quantum programs on different types of quantum hardware.
 
