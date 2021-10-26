@@ -20,7 +20,7 @@ The Quantum Development Kit (QDK) provides additional domain-specific functional
 | [Q# standard libraries](xref:microsoft.quantum.libraries.overview.standard.intro) | [**Microsoft.Quantum.Standard**](https://www.nuget.org/packages/Microsoft.Quantum.Standard) | Included by default |
 | [Quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview) | [**Microsoft.Quantum.Chemistry**](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) | |
 | [Quantum machine learning library](xref:microsoft.quantum.libraries.overview.machine-learning.intro) | [**Microsoft.Quantum.MachineLearning**](https://www.nuget.org/packages/Microsoft.Quantum.MachineLearning) | |
-| [Quantum numerics library](xref:microsoft.quantum.libraries-numerics.overview) | [**Microsoft.Quantum.Numerics**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) | |
+| [Quantum numerics library](xref:microsoft.quantum.libraries-numerics.usage) | [**Microsoft.Quantum.Numerics**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) | |
 
 ## Standard Libraries
 
@@ -159,10 +159,11 @@ Sources of the libraries as well as code samples can be obtained from GitHub.
 See [Licensing](xref:microsoft.quantum.libraries.overview.licensing) for further information. Note that package references ("binaries") are available also for the libraries and offer another way of including the libraries in projects.
 
 - [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs)
+- [Testing and debuggind quantum programs](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging)
 - [Standard Libraries](xref:microsoft.quantum.libraries.overview.standard.intro)
-- [Quantum Chemistry Library](xref:)
-- [Quantum Machine Learning Library](xref:)
-- [Quantum Numerics Library](xref:)
+- [Quantum Chemistry Library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview)
+- [Quantum Machine Learning Library](xref:microsoft.quantum.libraries.overview.machine-learning.intro)
+- [Quantum Numerics Library](xref:microsoft.quantum.libraries-numerics.usage)
 - [Quantum Simulators](xref:microsoft.quantum.machines.overview)
 
 
