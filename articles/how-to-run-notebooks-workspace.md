@@ -53,6 +53,19 @@ For Python, the first cell will look like this.
 
 Select **+ Code** or **+ Markdown** to add a code or markdown text cell.
 
+## Run notebook
+
+To run Q# or Python in a Jupyter notebook, follow these steps.
+
+1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
+1. Select **Jupyter Notebooks**.
+1. Select your notebook in **My Notebooks**.
+1. Select the cell you want to run and select the run icon to execute the code.
+
+    :::image type="content" source="media/how-to-run-notebooks-workspace/run-notebook.png" alt-text="Run a Jupyter notebook.":::
+
+You can also select **Run all** to run all cells in the notebook.
+
 ## Upload notebooks
 
 You can upload one or more existing Jupyter notebooks to an Azure Quantum workspace.
