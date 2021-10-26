@@ -51,10 +51,10 @@ You can expect low performance compared to current classical machine learning fr
 The quantum machine learning library documentation provides an implementation of the sequential classifiers that take advantage of quantum computing to understand data. In this documentation you will find:
 
 - An [introduction to quantum machine learning concepts](xref:microsoft.quantum.libraries.overview.machine-learning.intro), and specifically their realization in quantum circuit centric classifiers (also known as quantum sequential classifiers).
-- A [bassic classification with QDK](xref:microsoft.quantum.libraries.overview.machine-learning.basics), to run quantum sequential classifier written in Q# using the Quantum Machine Learning library of the QDK. To do that, you will train a simple sequential model using a classifier structure defined in Q#.
+- A [basic classification with QDK](xref:microsoft.quantum.libraries.overview.machine-learning.basics), to run quantum sequential classifier written in Q# using the Quantum Machine Learning library of the QDK. To do that, you will train a simple sequential model using a classifier structure defined in Q#.
 - How to [design your own classifier with Q#](xref:microsoft.quantum.libraries.overview.machine-learning.design), learning the basic concepts behind the design of circuit models for the quantum circuit centric classifier.
 - How to [load your own data sets](xref:microsoft.quantum.libraries.overview.machine-learning.load) to train a classifier model with the Quantum Development Kit (QDK).
-- Finally, a [quantum machine laerning glossary](xref:microsoft.quantum.libraries.overview.machine-learning.training), withthe main concepts and ingredients of the training process.
+- Finally, a [quantum machine learning glossary](xref:microsoft.quantum.libraries.overview.machine-learning.training), with the main concepts and ingredients of the training process.
 
 ## Quantum Numerics Library
 
@@ -155,11 +155,10 @@ qsharp.reload()
 
 ## Next Steps
 
-Sources of the libraries as well as code samples can be obtained from GitHub.
-See [Licensing](xref:microsoft.quantum.libraries.overview.licensing) for further information. Note that package references ("binaries") are available also for the libraries and offer another way of including the libraries in projects.
+Sources of the libraries as well as code samples can be obtained from GitHub. See [Licensing](xref:microsoft.quantum.libraries.overview.licensing) for further information. Note that package references ("binaries") are available also for the libraries and offer another way of including the libraries in projects.
 
 - [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs)
-- [Testing and debuggind quantum programs](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging)
+- [Testing and debugging quantum programs](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging)
 - [Standard Libraries](xref:microsoft.quantum.libraries.overview.standard.intro)
 - [Quantum Chemistry Library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview)
 - [Quantum Machine Learning Library](xref:microsoft.quantum.libraries.overview.machine-learning.intro)
