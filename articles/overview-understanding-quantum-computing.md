@@ -17,12 +17,15 @@ Quantum computing holds the promise to solve some of our planet's biggest challe
 
 Classical computing, which uses binary states, is increasingly challenged as the size of the system grows. Quantum computing makes use of quantum mechanical phenomena such as superposition, interference, and entanglement to address some of these challenges. For simulating intrinsically quantum mechanical problems, quantum computing is promising, because quantum states can be used to represent the natural states in question.
 
-Quantum computing uses the principles of quantum mechanics to process information. Because of this, quantum computing requires a different approach than classical computing. One example of this difference is the processor used in quantum computers. Where classical computers use familiar silicon-based chips, quantum computers use quantum systems such as atoms, ions, photons, or electrons. They use their quantum properties to represent bits that can be prepared in different quantum superpositions of 1 and 0.  
 
 The quantum material behaves according to the laws of quantum mechanics, leveraging concepts such as probabilistic computation, superposition, and entanglement. These concepts provide the basis for quantum algorithms that harness the power of quantum computing to solve complex problems.
 
 
 ## Where can quantum computing be applied?
+
+A quantum computer isn't a supercomputer that can do everything faster. One of the goals of quantum computing research is to study which problems can be solved by a quantum computer faster than a classical computer and how large the speedup can be.
+
+Quantum computers do exceptionaly well in problems that require calculation of 
 
 ### Quantum simulation
 
@@ -30,7 +33,26 @@ Quantum mechanics is the underlying "operating system" of our universe. It descr
 
 To simulate quantum mechanical systems, such as molecules, quantum computing provides significant speed increases as qubits can be used to simulate the quantum states in question.
 
-### Cryptography
+### Quantum Cryptography
+
+Cryptography is the technique of concealing confidential information by using physical or mathematical means, such as using a computational difficulty of solving a particular task. Classical cryptography relies on the intractability of problems such as integer factorization or discrete logarithms, many of which can be solved more efficiently using quantum computers.
+
+In 1994, Peter Shor showed that a scalable quantum computer could break classical cryptographic schemes such as the Rivest–Shamir–Adleman (RSA) scheme, which is widely used in e-commerce for secure data transmission. This scheme is based on the practical difficulty of factoring prime numbers by using classical algorithms.
+
+Quantum cryptography promises information security by harnessing basic physics rather than complexity assumptions. RSA is safe today because a scalable quantum computer is not yet available. But after quantum computers are built at large scale, polynomial time quantum algorithms might attack the underlying math problems for these cryptosystems. RSA would then become unsafe.
+
+With the anticipation of a sufficiently large and fault-tolerant quantum computer, active research is underway to:
+
+- Estimate the security for cryptosystems of a given bit length in a post-quantum environment.
+- Estimate how long it will take to migrate current cryptosystems to new ones.
+
+In collaboration with Microsoft Quantum researchers, Microsoft has been developing concrete quantum estimates for breaking current encryption systems. It's also working on ways to make these systems robust against quantum attacks.
+
+## Search algorithms
+
+In 1996, Lov Grover developed a quantum algorithm that dramatically sped up the solution to unstructured data searches, running the search in fewer steps than any classical algorithm could.
+
+For more information, see the [theory of Grover's search algorithm](xref:microsoft.quantum.concepts.grovers). For a practical implementation of Grover's algorithm to solve mathematical problems you can see this [tutorial to implement Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers).
 
 ### Quantum Machine Learning
 
@@ -39,33 +61,68 @@ Machine learning on classical computers is revolutionizing the world of science 
 The Quantum Development Kit comes with the [quantum machine learning library](xref:microsoft.quantum.libraries-machine-learning.overview) that gives you the ability to run hybrid quantum/classical machine learning experiments. The library includes samples and tutorials, and provides the necessary tools to implement a new hybrid quantum–classical algorithm, the circuit-centric quantum classifier, to solve supervised classification problems.
 
 
+## Quantum Computers vs Quantum Simulators
+
+Quantum computing uses the principles of quantum mechanics to process information. Because of this, quantum computing requires a different approach than classical computing. One example of this difference is the processor used in quantum computers. Where classical computers use familiar silicon-based chips, quantum computers use quantum systems such as atoms, ions, photons, or electrons. They use their quantum properties to represent bits that can be prepared in different quantum superpositions of 1 and 0.  
+
+Quantum computers are still in the infancy of their development. The quantum hardware and maintenance are expensive, and most systems are located in universities and research labs. The technology is advancing, though, and limited public access to some systems is available.
+
+Quantum simulators are software programs that run on classical computers and make it possible to run and test quantum programs in an environment that predicts how qubits react to different operations.
+
+### Quantum hardware
+
+A quantum computer has three primary parts: an area that houses the qubits, a method for transferring signals to the qubits, and a classical computer to run a program and send instructions.
+
+- The quantum material used for qubits is fragile and highly sensitive to environmental interferences. For some methods of qubit storage, the unit that houses the qubits is kept at a temperature just above absolute zero to maximize their coherence. Other types of qubit housing use a vacuum chamber to help minimize vibrations and stabilize the qubits.  
+- Signals can be sent to the qubits using a variety of methods including microwaves, laser, and voltage.
+
+Quantum computers face a multitude of challenges to operate correctly. Error correction in quantum computers is a significant issue, and scaling up (adding more qubits) increases the error rate. Because of these limitations, a quantum PC for your desktop is far in the future, but a commercially-viable lab-based quantum computer is closer.
+
+Microsoft is developing a quantum computer based on topological qubits. A topological qubit is less impacted by changes in its environment, therefore reducing the degree of external error correction required.
+
+Topological qubits feature increased stability and resistance to environmental noise, which means they can more readily scale and remain reliable longer.
+
+### Quantum simulators
+
+Quantum simulators that run on classical computers allow you to simulate the running of quantum algorithms on a quantum system.  Microsoft’s Quantum Development Kit (QDK) includes a full-state vector simulator along with other specialized quantum simulators.
+
+
+## Quantum computations
+
+Performing computations on a quantum computer or quantum simulator follows a basic process:
+
+- Access the qubits
+- Initialize the qubits to the desired state
+- Perform operations to transform the states of the qubits
+- Measure the new states of the qubits
+
+Initializing and transforming qubits is done using **quantum operations** (sometimes called quantum gates). Quantum operations are similar to logic operations in classical computing, such as AND, OR, NOT, and XOR. An operation can be as basic as flipping a qubit's state from 1 to 0 or entangling a pair of qubits, to using multiple operations in series to affect the probability of a superposed qubit collapsing one way or the other.
+
+> [!NOTE] 
+> The [Q# libraries](xref:microsoft.quantum.libraries.overview) provide built-in operations that define complex combinations of lower-level quantum operations. You can use the library operations to transform qubits and to create more complex user-defined operations.  
+
+Measuring the result of the computation tells us an answer, but for some quantum algorithms, not necessarily the correct answer. Because the result of some quantum algorithms is based on the probability that was configured by the quantum operations, these computations are run multiple times to get a probability distribution and refine the accuracy of the results.  Assurance that an operation returned a correct answer is known as quantum verification and is a significant challenge in quantum computing.
+
+
 ## How does quantum computing solve problems? 
 
 For some computational tasks, quantum computing provides exponential speedups. These speedups are possible thanks to three phenomena from quantum mechanics: superposition, interference, and entanglement.
 
 ### Superposition vs. binary computing
 
-Imagine that you are exercising in your living room. You turn all the way to your left and then all the way to your right. Now turn to your left and your right at the same time. You can’t do it (not without splitting yourself in two, at least).  Obviously, you can’t be in both of those states at once – you can’t be facing left and facing right at the same time.
+Imagine that you are exercising in your living room. You turn all the way to your left and then all the way to your right. Now turn to your left and your right at the same time. You can’t do it (not without splitting yourself in two, at least). Obviously, you can’t be in both of those states at once – you can’t be facing left and facing right at the same time.
 
 However, if you are a quantum particle, then you can have a certain probability of *facing left* AND a certain probability of *facing right* due to a phenomenon known as **superposition** (also known as **coherence**).
 
 A quantum particle such as an electron has its own “facing left or facing right” properties, for example **spin**, referred to as either up or down, or to make it more relatable to classical binary computing, let’s just say 1 or 0. When a quantum particle is in a superposition state, it’s a linear combination of an infinite number of states between 1 and 0, but you don’t know which one it will be until you actually look at it, which brings up our next phenomenon, **quantum measurement**.
-
-### Quantum measurement
-
-Now, let’s say your friend comes over and wants to take a picture of you exercising. Most likely, they’ll get a blurry image of you turning somewhere between all the way left and all the way right.
-
-But if you’re a quantum particle, an interesting thing happens. No matter where you are when they take the picture, it will always show you either all the way left or all the way right – nothing in-between.
-
-This is because the act of observing or measuring a quantum particle **collapses** the superposition state (also known as **decoherence**) and the particle takes on a classical binary state of either 1 or 0.
-
-This binary state is helpful to us, because in computing you can do lots of things with 1’s and 0’s. However, once a quantum particle has been measured and collapsed, it stays in that state forever (just like your picture) and will always be a 1 or 0. As you’ll see later, though, in quantum computing there are operations that can “reset” a particle back to a superposition state so it can be used for quantum calculations again.
 
 ### Entanglement
 
 Possibly the most interesting phenomenon of quantum mechanics is the ability of two or more quantum particles to become **entangled** with each other. When particles become entangled, they form a single system such that the quantum state of any one particle cannot be described independently of the quantum state of the other particles. This means that whatever operation or process you apply to one particle correlates to the other particles as well.
 
 In addition to this interdependency, particles can maintain this connection even when separated over incredibly large distances, even light-years. The effects of quantum measurement also apply to entangled particles, such that when one particle is measured and collapses, the other particle collapses as well. Because there is a correlation between the entangled qubits, measuring the state of one qubit provides information about the state of the other qubit – this particular property is very helpful in quantum computing.
+
+If you want to learn more, see the tutorial [exploring quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement).
 
 ### Qubits and probability
 
@@ -82,11 +139,14 @@ For example, with two bits in a classical computer, each bit can store 1 or 0, s
 
 Microsoft is partnering with quantum hardware companies to provide developers with cloud access to quantum hardware. Leveraging the [Azure Quantum](https://azure.microsoft.com/services/quantum/) platform and the Q# language, developers will be able to explore quantum algorithms and run their quantum programs on different types of quantum hardware.
 
-[IonQ](https://ionq.com/news/november-4-2019-microsoft-partnership) and [Honeywell](https://www.honeywell.com/newsroom/news/2019/11/the-future-of-quantum-computing) both use **trapped ion-based** processors, utilizing individual ions trapped in an electronic field, whereas [QCI](https://quantumcircuits.com/news-and-publications/quantum-circuits-partners-with-microsoft-on-azure-quantum) uses superconducting circuits.
+- [Honeywell Quantum Solutions](https://www.honeywell.com/us/en/company/quantum): **Trapped-ion** system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurements.
+- [IONQ](https://ionq.com/): Dynamically reconfigurable **trapped-ion** quantum computer for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
+- [Quantum Circuits, Inc](https://quantumcircuits.com/): Fast and high-fidelity **superconducting circuits** with powerful real-time feedback to enable error correction.
+
+For more information, see the full [Quantum computing target list](xref:microsoft.quantum.reference.qc-target-list).
 
 
 ## Next Steps
 
-- [Quantum computers and quantum simulators](xref:microsoft.quantum.overview.simulators)
-- []()
+- [What are the Q# programming language and Quantum Development Kit (QDK)?](xref:microsoft.quantum.overview.q-sharp)
 - [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview)
