@@ -78,7 +78,7 @@ You can rename, delete, duplicate, and download en existing notebook in Azure Qu
 1. Click on your notebook in **My Notebooks** and click on the context pane (**...**).
 1. Select **Rename Notebook**, **Delete Notebook**, **Duplicate Notebook**, or **Download Notebook**.
 
-IMG
+    :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-context-pane.png" alt-text="Notebook context pane in Azure Quantum.":::
 
 ## Notebook gallery
 
