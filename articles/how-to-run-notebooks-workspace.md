@@ -22,9 +22,6 @@ You need the following prerequisites to use Jupyter notebooks in an Azure Quantu
 - An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
 - An Azure Quantum workspace. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
-> [!NOTE]
-> When notebooks are used in a workspace, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on your linked [Azure Storage](/azure/storage/) account. If you do not want to enable CORS for your Azure Storage account, please do not visit the **Jupyter Notebooks** blade in the portal. If you have visited the blade previously and now no longer want to enable CORS, you can directly edit your storage account to remove any existing CORS rules.
-
 ## Get a sample notebook
 
 To get started, you can use use a sample from the notebook gallery.
@@ -118,6 +115,12 @@ Jupyter notebooks in an Azure Quantum workspace are isolated from other users' n
 - A Jupyter Notebook instance is scoped to you and a specific workspace. If you visit another workspace, you will get a different instance. If another user visits the same workspace, they will get a different Jupyter Notebook instance from you.
 - Notebooks are scoped to a workspace, so if visiting another workspace, the same notebooks will not appear under My Notebooks.
 - Notebooks are also currently scoped to you, meaning if another user visits the same workspace, they will not see your notebooks.
+
+## Storage of notebooks
+
+Jupyter notebooks are stored in an [Azure Storage](/azure/storage/) account linked to your Azure Quantum workspace.
+
+When notebooks are used in a workspace, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on the linked Azure Storage account. If you do not want to enable CORS for your Azure Storage account, please do not visit the **Jupyter Notebooks** blade in the portal. If you have visited the blade previously and now no longer want to enable CORS, you can directly edit your storage account to remove any existing CORS rules.
 
 ## Limitations
 
