@@ -13,7 +13,7 @@ uid: microsoft.quantum.how-to.notebooks
 
 # Run Jupyter notebooks in an Azure Quantum workspace
 
-Learn how to run Q# or Python in a Jupyter notebook in an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+Learn how to run Q# or Python code in a Jupyter notebook in an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Prerequisites
 
@@ -50,6 +50,9 @@ For Python, the first cell will look like this.
 :::image type="content" source="media/how-to-run-notebooks-workspace/new-python-notebook-snippet.png" alt-text="New Python notebook in Azure Quantum.":::
 
 Select **+ Code** or **+ Markdown** to add a code or markdown text cell.
+
+> [!TIP]
+> Notebooks auto-saves every 30 seconds. You can also manually save by pressing **CTRL + S**.
 
 ## Run notebook
 
