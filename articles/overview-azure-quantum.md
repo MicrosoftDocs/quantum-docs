@@ -24,7 +24,7 @@ Azure Quantum is a cloud service with a diverse set of quantum solutions and tec
 
 Azure Quantum offers you two main paths of quantum solutions:
 
-- [Quantum Computing](xref:microsoft.quantum.overview.qdk-overview): Learn, experiment and prototype with a variety of quantum hardware providers to help you get ready for the future of scaled quantum machines. Unlike other solutions, you are not siloed to a single hardware technology, and you benefit from a full stack approach protecting your long-term investments. 
+- [Quantum Computing](xref:microsoft.quantum.overview.understanding): Learn, experiment and prototype with a variety of quantum hardware providers to help you get ready for the future of scaled quantum machines. Unlike other solutions, you are not siloed to a single hardware technology, and you benefit from a full stack approach protecting your long-term investments. 
 - [Optimization](xref:microsoft.quantum.optimization.concepts.overview.introduction): Develop solutions that help you reduce the cost of operation in a broad range of fields such as finance, energy cost, fleet management, scheduling, and more. 
 
 With Azure Quantum and the [Quantum Development Kit toolset](xref:microsoft.quantum.overview.q-sharp), you will be able to program your quantum algorithms and optimization solutions, then apply those quantum solutions within the existing Azure platform to achieve real-world impacts even before the development of a general-purpose quantum computer. 
@@ -64,7 +64,7 @@ With Azure Quantum, you can make use of the advantages of quantum computing toda
 
 If you aim to simulate quantum mechanical problems, such as chemical reactions, biological reactions, or material formations, quantum computers work exceptionally well because they use quantum phenomena in their computation. Quantum computers can also aid to speed up progress in diverse areas such as financial services, machine learning, and unstructured data searches, where lots of calculations are needed.
 
-With Azure Quantum, researchers and businesses can use quantum computing to model complex scenarios in risk management, cybersecurity, network analysis, data search, vaccine development, or materials science. To learn more about how you can use quantum computing and quantum algorithms, see [What is quantum computing?](xref:microsoft.quantum.overview.qdk-overview).  
+With Azure Quantum, researchers and businesses can use quantum computing to model complex scenarios in risk management, cybersecurity, network analysis, data search, vaccine development, or materials science. To learn more about how you can use quantum computing and quantum algorithms, see [Understanding Quantum Computing](xref:microsoft.quantum.overview.understanding).  
 
 ### Optimization
 
