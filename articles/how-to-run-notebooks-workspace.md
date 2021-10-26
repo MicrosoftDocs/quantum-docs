@@ -27,7 +27,7 @@ You need the following prerequisites to use Jupyter notebooks in an Azure Quantu
 
 ## Create a new notebook
 
-Follow these steps to create a new Jupyter notebook using Q# or Python.
+Follow these steps to create a new Jupyter notebook using Q# or Python. You can also start with a [notebook from the gallery](#notebook-gallery).
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Jupyter Notebooks**.
