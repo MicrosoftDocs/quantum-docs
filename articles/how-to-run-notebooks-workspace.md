@@ -7,36 +7,39 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Run Azure Quantum notebooks in a workspace
+title: Run Jupyter notebooks in a workspace
 uid: microsoft.quantum.how-to.notebooks
 ---
 
-# Run Azure Quantum notebooks in a workspace
+# Run Jupyter notebooks in an Azure Quantum workspace
 
 Learn how to run Q# or Python in a Jupyter notebook in an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Prerequisites
 
-You need the following prerequisites to use Azure Quantum notebooks.
+You need the following prerequisites to use Jupyter notebooks in an Azure Quantum workspace.
 
 - An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
 - An Azure Quantum workspace. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- When Azure Quantum notebooks are used, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on your linked [Azure Storage](/azure/storage/) account. 
-    - If you do not want to enable CORS for your Azure Storage account, please do not visit the **Jupyter Notebooks** blade in the portal. If you have visited the blade previously and now no longer want to enable CORS, you can directly edit your storage account to remove any existing CORS rules.
+
+> [!NOTE]
+> When notebooks are used in a workspace, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on your linked [Azure Storage](/azure/storage/) account.
+> 
+> If you do not want to enable CORS for your Azure Storage account, please do not visit the **Jupyter Notebooks** blade in the portal. If you have visited the blade previously and now no longer want to enable CORS, you can directly edit your storage account to remove any existing CORS rules.
 
 ## Create a new notebook
 
-Follow these steps to create a new Azure Quantum notebook using Q# or Python.
+Follow these steps to create a new Jupyter notebook using Q# or Python.
 
 1. Click your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Click **Jupyter Notebooks**.
 1. Click **My Notebooks** and click **Add new**
 
-    :::image type="content" source="media/how-to-run-notebooks-workspace/create-new-notebook.png" alt-text="Create a new Azure Quantum notebook.":::
+    :::image type="content" source="media/how-to-run-notebooks-workspace/create-new-notebook.png" alt-text="Create a new Jupyter notebook.":::
 
 1. Select either **Q#** or **Python 3** as the **Kernel Type**, type a **File Name** and click **Create file**.
 
-    :::image type="content" source="media/how-to-run-notebooks-workspace/create-new-notebook-kernel-name.png" alt-text="Select notebook kernel and file name for a new Azure Quantum notebook.":::
+    :::image type="content" source="media/how-to-run-notebooks-workspace/create-new-notebook-kernel-name.png" alt-text="Select notebook kernel and file name for a new Jypter notebook.":::
 
 The first cell of the notebook is populated automatically with the connection string to the Azure Quantum workspace.
 
@@ -52,10 +55,10 @@ Click **+ Code** or **+ Markdown** to add a code or markdown text cell.
 
 ## Upload notebooks
 
-You can upload one or more existing Jupyter notebooks to Azure Quantum notebooks.
+You can upload one or more existing Jupyter notebooks to an Azure Quantum workspace.
 
 > [!CAUTION]
-> You should only upload and run Juptyer notebooks from trusted sources and only install packages from trusted sources. While Azure Quantum notebooks protects you by sandboxing outputs, Jupyter notebooks is built for arbitrary code execution, so there are inherent risks to uploading or running notebooks from an untrusted source.
+> You should only upload and run Juptyer notebooks from trusted sources and only install packages from trusted sources. While notebooks in Azure Quantum protects you by sandboxing outputs, Jupyter notebooks is built for arbitrary code execution, so there are inherent risks to uploading or running notebooks from an untrusted source.
 
 1. Click your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Click **Jupyter Notebooks**.
@@ -70,7 +73,7 @@ After the notebooks have been uploaded, you can find them under **My Notebooks**
 
 ## Manage notebooks
 
-You can rename, delete, duplicate, and download existing  Azure Quantum notebooks.
+You can rename, delete, duplicate, and download existing notebooks.
 
 1. Click your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Click **Jupyter Notebooks**.
@@ -94,23 +97,23 @@ You will now see the sample notebook under **My Notebooks** and you can run or e
 
 ## Isolation
 
-Azure Quantum notebooks are isolated from other users' notebooks.
+Jupyter notebooks in an Azure Quantum workspace are isolated from other users' notebooks.
 
 - Your compute is hosted by Azure Quantum with hypervisor-level isolation from other user's compute.
 - Your notebooks are stored in your linked storage account in your subscription.
 - Your compute is scoped to you and a specific workspace. If you visit another workspace, you will get a different compute instance. If another user visits the same workspace, they will get a different compute instance from you.
-- Your files are scoped to a workspace, so if visiting another workspace, the same files will not appear under My Files.
-- Your files are also currently scoped to you, meaning if another user visits the same workspace, they will not see your files.
+- Your notebooks are scoped to a workspace, so if visiting another workspace, the same notebooks will not appear under My Notebooks.
+- Your notebooks are also currently scoped to you, meaning if another user visits the same workspace, they will not see your notebooks.
 
 ## Limitations
 
-The following are limitations with Azure Quantum notebooks.
+The following are limitations with Jupyter notebooks in an Azure Quantum workspace.
 
 - Since it is free compute, your compute instance will live up to a max of 12 hours (after that time, your compute will be deleted/recreated, and you will need to re-install any custom packages).
     - Azure Quantum may need to delete your compute to apply security patches or roll out emergency changes. When possible, it will not interrupt your workflow.
 - Notebooks compute has pre-allocated 2 vCPU and 4 GB of memory. This may change in the future.
 - Idle kernels are terminated after 30 minutes. After that time, you will need to re-run the cells.
-- The location of your storage account and workspace will impact the performance of Azure Quantum notebooks. When possible, try to create the storage account and workspace in a region close to where you will be using your notebooks.
+- The location of your storage account and workspace will impact the performance of Jypter notebooks in an Azure Quantum workspace. When possible, try to create the storage account and workspace in a region close to where you will be using your notebooks.
 
 ## Next steps
 
