@@ -42,11 +42,11 @@ The first cell of the notebook is populated automatically with the connection st
 
 For Q#, the first cell will look like this.
 
-IMG
+:::image type="content" source="media/how-to-run-notebooks-workspace/new-qsharp-notebook-snippet.png" alt-text="New Q# notebook in Azure Quantum.":::
 
 For Python, the first cell will look like this.
 
-IMG
+:::image type="content" source="media/how-to-run-notebooks-workspace/new-python-notebook-snippet.png" alt-text="New Python notebook in Azure Quantum.":::
 
 Click **+ Code** or **+ Markdown** to add a code or markdown text cell.
 
