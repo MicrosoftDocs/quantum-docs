@@ -33,7 +33,7 @@ To get started, you can use use a sample from the notebook gallery.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-gallery.png" alt-text="Notebook gallery in Azure Quantum.":::
 
-The sample notebook can be found under **My Notebooks** and you can run or edit the notebook.
+The sample notebook can be found under **My Notebooks** and you can now run the notebook.
 
 ## Run notebook
 
