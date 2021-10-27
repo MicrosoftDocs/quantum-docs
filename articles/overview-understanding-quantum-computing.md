@@ -141,7 +141,7 @@ Measuring the result of the computation tells us an answer, but for some quantum
 
 ## Azure Quantum computing hardware partners
 
-Microsoft is partnering with quantum hardware companies to provide developers with cloud access to quantum hardware. Leveraging the [Azure Quantum](https://azure.microsoft.com/services/quantum/) platform and the Q# language, developers will be able to explore quantum algorithms and run their quantum programs on different types of quantum hardware.
+Microsoft is partnering with quantum hardware companies to provide developers with cloud access to quantum hardware. Leveraging the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) platform and the Q# language, developers will be able to explore quantum algorithms and run their quantum programs on different types of quantum hardware.
 
 - [Honeywell Quantum Solutions](https://www.honeywell.com/us/en/company/quantum): **Trapped-ion** system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurements.
 - [IONQ](https://ionq.com/): Dynamically reconfigurable **trapped-ion** quantum computer for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
