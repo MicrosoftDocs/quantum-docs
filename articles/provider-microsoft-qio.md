@@ -73,7 +73,7 @@ For the most up-to-date pricing information on Microsoft's QIO offering, please 
 
 ## Limits & Quotas
 
-Up to date information on the various limits for each Microsoft QIO pricing SKU are available via the general Azure [subscription limits, quotas, and constraints](~/azure-resource-manager/management/azure-subscription-service-limits#azure-quantum-limits) article. 
+Up to date information on the various limits for each Microsoft QIO pricing SKU are available via the general Azure [subscription limits, quotas, and constraints](/azure-resource-manager/management/azure-subscription-service-limits#azure-quantum-limits) article. 
 
 ## General advice for Microsoft QIO solvers
 
