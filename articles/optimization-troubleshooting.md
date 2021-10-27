@@ -20,7 +20,7 @@ Errors in this category are due to lack of resources to carry out a specific job
 
 ### AZQ001 - Memory Limited
 
-**Cause**: This error happens when the submitted problem is too large (usually, due to too many terms) and cannot fit into memory. Users can *estimate* how much memory their problem will use with the following formula (although not 100% precise, it is close to real usage): 
+**Cause**: This error happens when the submitted problem is too large (usually, due to too many terms) and can't fit into memory. Users can *estimate* how much memory their problem will use with the following formula (although not 100% precise, it's close to real usage): 
 
 ```
 memory_bytes = sum_coefficient_degrees_total*num_variables/8
@@ -48,9 +48,9 @@ An example with this formulation:
 
 Here, `num_variables = 5` (${0,1,2,3,4}$) and `sum_coefficient_degrees_total = 6` ($3 + 3$). The total bytes of memory estimated is $6*5/8 = 3.75 \text{bytes}$. 
 
-**Possible actions to take**: This error is hard to resolve because some problems unavoidably have large expanded term expressions, especially higher order problems. If you see this error, then, most likely at this time, our solvers are not capable of solving your problem. However, Azure Quantum is continuously developing support for more complex term expressions that can reduce the problem size in the future. Be sure to communicate the need for this feature to our support team!  
+**Possible actions to take**: This error is hard to resolve because some problems unavoidably have large expanded term expressions, especially higher-order problems. If you see this error, then, most likely at this time, our solvers are not capable of solving your problem. However, Azure Quantum is continuously developing support for more complex term expressions that can reduce the problem size in the future. Be sure to communicate the need for this feature to our support team!  
 
-In the mean time, consider:  
+In the meantime, consider:  
 
 - Removing constant terms (such as terms without variables or Ising terms with even variable power) 
   
