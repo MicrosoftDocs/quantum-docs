@@ -76,10 +76,12 @@ terms = [
     )
 ]
 problem = Problem(name="My Other Problem", terms=terms, problem_type=ProblemType.ising_grouped)
+
 ```
 > [!NOTE]
 > Only a subset of optimization solvers currently support grouped terms.
 > Refer to the [`SlcTerm`](xref:microsoft.quantum.optimization.slc-term) documentation for details.
+
 ### Individually
 
 You can supply each `Term` object individually by calling the `add_term` method on the `Problem`.

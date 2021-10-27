@@ -12,7 +12,7 @@ uid: microsoft.quantum.optimization.streaming-problem
 
 # Streaming upload of large optimization problems
 
-When formulating very large problems with the *azure-quantum* Python package you may find that you do not have enough memory to keep the entire problem definition loaded, which is the behavior of the [`Problem`](xref:microsoft.quantum.optimization.problem) class. If you do not need to keep your whole problem definition in memory for later access or modification you should consider using the `StreamingProblem` class instead, which is a drop-in replacement for the `Problem` class, but that streams the problem definition to Azure as you formulate the problem to reduce memory requirements and increase performance.
+When formulating very large problems with the *azure-quantum* Python package, you may find that you do not have enough memory to keep the entire problem definition loaded, which is the behavior of the [`Problem`](xref:microsoft.quantum.optimization.problem) class. If you do not need to keep your whole problem definition in memory for later access or modification you should consider using the `StreamingProblem` class instead, which is a drop-in replacement for the `Problem` class, but that streams the problem definition to Azure as you formulate the problem to reduce memory requirements and increase performance.
 
 ## StreamingProblem
 
@@ -20,32 +20,32 @@ When formulating very large problems with the *azure-quantum* Python package you
 from azure.quantum.optimization import StreamingProblem
 ```
 
-The `StreamingProblem` class supports the same interface for adding terms to a problem definition as the `Problem` class. However, once terms are added to the problem they are queued to be uploaded by a background thread and are not kept in memory for future reference.
+The `StreamingProblem` class supports the same interface for adding terms to a problem definition as the `Problem` class. However, once terms are added to the problem, they are queued to be uploaded by a background thread and are not kept in memory for future reference.
 
-#### Lifecycle of a StreamingProblem
+### Lifecycle of a StreamingProblem
 
-The first time you call one of the `add_term()` or `add_terms()` functions on a streaming problem, the following things happen:
+The first time you call one of the `add_term()` or `add_terms()` functions on a streaming problem, the following actions happen:
 
-1. A background thread is started
-2. A [Block Blob](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs) is initialized in Azure Storage, which is where the problem will be uploaded
-3. The terms that were added are queued for upload
+1. A background thread is started.
+2. A [Block Blob](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs) is initialized in Azure Storage, which is where the problem will be uploaded.
+3. The terms that were added are queued for upload.
 
-The background thread will stay alive until the problem definition is finalized, and will continuously attempt to chunk terms into blocks that are individually uploaded in Azure. A chunk upload is triggered when the queued terms surpass a threshold on the number of terms, or the size of the data. This means that not every call to `add_terms()` triggers an upload.
+The background thread remains alive until the problem definition is finalized, and  continuously attempts to chunk terms into blocks that are individually uploaded in Azure. A chunk upload is triggered when the queued terms surpass a threshold on the number of terms or the size of the data. This means that not every call to `add_terms()` triggers an upload.
 
-After the first call to `add_terms()` you may continue to call this method as many times as needed to add all of your terms. Note that this method is thread-safe so you may have multiple threads simultaneously adding terms to the problem definition although there is only ever one uploader thread.
+After the first call to `add_terms()`, you may continue to call this method as many times as needed to add all of your terms. Note that this method is thread-safe, so you may have multiple threads simultaneously adding terms to the problem definition although there is only ever one uploader thread.
 
-Once you have finished adding all of your terms, you must call the `upload()` method to finalize the problem definition (note that if you call `solver.submit(problem)`, `upload()` is called for you). The first time the `upload()` method is called the streaming problem will block on the background upload thread to complete. Once this is done, the block blob is finalized in Azure Storage and is ready to be used to solve the problem with Azure Quantum. Note that you may not add terms to a problem after it has been finalized.
+Once you have finished adding all of your terms, you must call the `upload()` method to finalize the problem definition (note that if you call `solver.submit(problem)`, `upload()` is called automatically). The first time the `upload()` method is called, the streaming problem will block on the background upload thread to complete. Once this is done, the block blob is finalized in Azure Storage and is ready to be used to solve the problem with Azure Quantum. Note that you may not add terms to a problem after it has been finalized.
 
-Note that if `upload()` is not called on a streaming problem, the block blob in Azure Storage is never finalized. When this happens, Azure Storage will automatically delete the uploaded data within a period of time. For more information, see the [Block Blob reference](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs).
+If `upload()` is not called on a streaming problem, the block blob in Azure Storage is never finalized. When this happens, Azure Storage automatically deletes the uploaded data within a period of time. For more information, see the [Block Blob reference](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs).
 
-#### Tuning the upload
+### Tuning the upload
 
-Depending on the characteristics of your problem (especially density) or of your CPU/network connection you may want to tune the StreamingProblem class. There are two options for tuning the upload:
+Depending on the characteristics of your problem (especially density) or of your CPU or network connection, you may want to tune the StreamingProblem class. There are two options for tuning the upload:
 
-- `StreamingProblem.upload_size_threshold` - the size, in bytes, of the compressed payload to upload. As terms are added they are compressed on the fly. When the size of the staged compressed payload surpasses this threshold the chunk is uploaded.
-- `StreamingProblem.upload_terms_threshold` - the threshold for the number of terms that trigger an upload. When the number of queued terms exceeds this threshold an upload is triggered. If your problem has high connectivity (terms have many variables) you may choose to lower this threshold.
+- `StreamingProblem.upload_size_threshold` - the size, in bytes, of the compressed payload to upload. As terms are added they are compressed on the fly. When the size of the staged compressed payload surpasses this threshold, the chunk is uploaded.
+- `StreamingProblem.upload_terms_threshold` - the threshold for the number of terms that trigger an upload. When the number of queued terms exceeds this threshold an upload is triggered. If your problem has high connectivity (for example, if your terms have many variables), you may choose to lower this threshold.
 
-To tune these parameters, set one or both as in the example below **before adding terms to the problem definition**. Changing these parameters after the background uploader begins will have no effect.
+To tune these parameters, set one or both as shown in the following example **before adding terms to the problem definition**. Changing these parameters after the background uploader begins will have no effect.
 
 ```py
 problem = StreamingProblem(workspace = workspace, name="My Streamed Problem", problem_type=ProblemType.ising)
@@ -59,9 +59,9 @@ In general:
 - If you have a slow network connection, consider _increasing_ the thresholds
 - If you are highly memory constrained, consider _decreasing_ the size threshold
 
-#### Statistics of the uploaded problem
+### Statistics of the uploaded problem
 
-The `StreamingProblem` class calculates some statistics about the generated problem as terms are added. To see information about the terms already added to the problem, access the `stats` member of the class which is a dictionary of calculated statistics and contains the following information:
+The `StreamingProblem` class calculates some statistics about the generated problem as terms are added. To see information about the terms already added to the problem, access the `stats` member of the class, which is a dictionary of calculated statistics and contains the following information:
 
 ```py
 problem = StreamingProblem(workspace = workspace, name="My Streamed Problem", problem_type=ProblemType.ising)
@@ -79,7 +79,7 @@ print(problem.stats)
 
 These statistics are also set as metadata on the uploaded blob in Azure Storage. See the [Azure Storage documentation](/learn/modules/organize-blobs-properties-metadata/) for more information on accessing these properties.
 
-### Constructor
+## Constructor
 
 To create a `StreamingProblem` object, specify the following information:
 
@@ -93,7 +93,7 @@ To create a `StreamingProblem` object, specify the following information:
 problem = StreamingProblem(workspace = workspace, name="My Streamed Problem", problem_type=ProblemType.ising)
 ```
 
-### StreamingProblem.add_term
+## StreamingProblem.add_term
 
 Adds a single term to the problem. It takes a coefficient for the term and the indices of variables that appear in the term.
 
@@ -104,7 +104,7 @@ coefficient = 0.13
 problem.add_term(c=coefficient, indices=[2,0])
 ```
 
-### StreamingProblem.add_terms
+## StreamingProblem.add_terms
 
 Adds multiple terms to the problem using a list of `Terms`.
 
@@ -122,15 +122,15 @@ problem.add_terms([
 ])
 ```
 
-### StreamingProblem.download
+## StreamingProblem.download
 
 Downloads the uploaded problem definition as an instance of [`Problem`](xref:microsoft.quantum.optimization.problem). May only be called on a streaming problem after it has been finalized by calling `upload()`.
 
-### StreamingProblem.upload
+## StreamingProblem.upload
 
 Finalizes the upload of the streaming problem in Azure Storage by blocking on the background uploader thread until it completes. Once this method returns, the problem is ready to be submitted to an Azure Quantum Solver.
 
-This method may be called multiple times. If the the uploading has not yet completed all calls will block. If the uploading has completed, it will immediately return the URL of the uploaded problem (without re-uploading).
+This method may be called multiple times. If the the uploading has not yet completed, all calls will block. If the uploading has completed, it immediately returns the URL of the uploaded problem (without re-uploading).
 
 ```py
 problem.upload()
