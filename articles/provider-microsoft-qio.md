@@ -2,7 +2,7 @@
 author: KittyYeungQ
 description: This document provides the technical details of the Microsoft QIO provider
 ms.author: kitty
-ms.date: 07/26/2021
+ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference

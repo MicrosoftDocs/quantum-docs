@@ -2,7 +2,7 @@
 author: KittyYeungQ
 description: This document provides a basic guide to applying a optimization solver in Azure Quantum using Python.
 ms.author: kitty
-ms.date: 07/27/2021
+ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: conceptual
@@ -68,3 +68,11 @@ This option has the following behavior and requirements:
 - Solvers are not guaranteed to return the exact number of solutions specified by the parameter, as solvers may not find that many solutions. 
 - Solvers are guaranteed to return the best solution they find in index 0. They will return the rest of the solutions (if any) in the same list and in sorted order.
 - A build of the *azure-quantum* Python package with version 0.17.2106 or higher is required to use the feature. For more information, see [Update the QDK](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-package)
+
+## Next steps
+
+- [Understand Solver results](xref:microsoft.quantum.optimization.understand-solver-results)
+- [Solve long-running problems](xref:microsoft.quantum.optimization.solve-long-running-problems)
+- [Re-use problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions)
+- [Solver overview](xref:microsoft.quantum.reference.qio-target-list)
+- [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)

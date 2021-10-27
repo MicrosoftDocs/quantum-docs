@@ -2,7 +2,7 @@
 author: KittyYeungQ
 description: This document provides a basic guide to interpreting results of optimization problems solved in Azure Quantum using Python.
 ms.author: kitty
-ms.date: 02/01/2021
+ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -55,3 +55,11 @@ Here is an example of a small problem where two solutions are returned.
 ```output
 > {'version': '1.0', 'configuration': {'0': 1, '1': -1, '2': 1, '3': 1}, 'cost': -32.0, 'parameters': {'all_betas': [0.1,0.5,1,2,4], 'replicas': 70, 'sweeps': 600}, 'solutions':[{'configuration': {'0': 1, '1': -1, '2': 1, '3': 1}, 'cost': -32.0}, {'configuration': {'0': -1, '1': 1, '2': -1, '3': -1}, 'cost': -32.0}]}
 ```
+
+## Next steps
+
+- [Re-use problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions)
+- [Solve long-running problems](xref:microsoft.quantum.optimization.solve-long-running-problems)
+- [Solver overview](xref:microsoft.quantum.reference.qio-target-list)
+- [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)
+- [Understand solver results](xref:microsoft.quantum.optimization.understand-solver-results)

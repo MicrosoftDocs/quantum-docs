@@ -2,7 +2,7 @@
 author: KittyYeungQ
 description: This document provides a basic guide to re-using a problem definition when solving problems in Azure Quantum using Python.
 ms.author: kitty
-ms.date: 02/01/2021
+ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
@@ -31,3 +31,10 @@ online_problem = OnlineProblem(name = "o_prob", blob_uri = url)
 job = solver.submit(online_problem)
 problem = online_problem.download(workspace)
 ```
+
+## Next steps
+
+- [Understand Solver results](xref:microsoft.quantum.optimization.understand-solver-results)
+- [Solve long-running problems](xref:microsoft.quantum.optimization.solve-long-running-problems)
+- [Solver overview](xref:microsoft.quantum.reference.qio-target-list)
+- [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)

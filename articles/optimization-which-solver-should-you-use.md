@@ -5,7 +5,7 @@ author: quantumrandom
 ms.author: dasteige
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.date: 10/05/2021
+ms.date: 10/25/2021
 ms.topic: conceptual
 uid: microsoft.quantum.optimization.choose-solver
 ---
@@ -25,11 +25,20 @@ Optimization problems from the same field of domain might share common features.
 
 Start with the parameter-free solvers, as they don't require parameter tuning:
 
-1. Parameter-free simulated annealing:
-   This provides a solid baseline for the runtime and possible minima.
+- [Parameter-free simulated annealing](xref:microsoft.quantum.optimization.simulated-annealing#parameter-free-simulated-annealing-cpu): This solver provides a solid baseline for the runtime and possible minima.
 
-2. Parameter-free parallel tempering
+- [Parameter-free parallel tempering](xref:microsoft.quantum.optimization.parallel-tempering#parameter-free-parallel-tempering)
 
 Automatically determining parameters for solvers is convenient, but also creates a runtime overhead. If you have to solve many similar problems or want to achieve better performance, parameterized solvers should be considered. Start with parameterized simulated annealing if the parameter-free simulated annealing solver provided better results than the parameter-free parallel tempering. Otherwise, start with parameterized parallel tempering.
 
 Afterwards, you should benchmark the remaining solvers.
+
+## Next steps
+
+Explore more aspects of optimization in Azure Quantum.
+
+- [Parameterized simulated annealing](xref:microsoft.quantum.optimization.simulated-annealing#parameterized-simulated-annealing-cpu)
+- [Parameterized parallel tempering](xref:microsoft.quantum.optimization.parallel-tempering#parameterized-parallel-tempering)
+- [Binary optimization](xref:microsoft.quantum.optimization.concepts.binary-optimization)
+- [Ising model](xref:microsoft.quantum.optimization.concepts.ising-model)
+- [Cost functions](xref:microsoft.quantum.optimization.concepts.cost-function)

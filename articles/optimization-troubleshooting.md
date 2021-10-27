@@ -1,9 +1,9 @@
 ---
-title: QIO - Troubleshooting
+title: Troubleshooting user errors in optimization solvers
 description: This document provides a basic guide for users on how to troubleshoot common errors when using optimization solvers with Azure Quantum. 
 author: adelebai
 ms.author: adbai
-ms.date: 03/16/2021
+ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
