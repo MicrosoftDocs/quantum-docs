@@ -1,11 +1,11 @@
 ---
-author: bradben
+author: dphansen
 description: Learn how to create an Azure Quantum workspace.
-ms.author: v-benbra
-ms.date: 09/20/2021
+ms.author: davidph
+ms.date: 10/22/2021
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: conceptual
+ms.topic: how-to
 no-loc: ['Q#', '$$v']
 title: Create an Azure Quantum workspace
 uid: microsoft.quantum.how-to.workspace
@@ -13,7 +13,7 @@ uid: microsoft.quantum.how-to.workspace
 
 # Create an Azure Quantum workspace
 
-You use the Azure Quantum service by adding an Azure Quantum workspace resource to your Azure subscription in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
+Learn how to create an Azure Quantum workspace in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
 
 > [!NOTE]
 > You can also create an Azure Quantum workspace using the Azure command-line interface (CLI). For more information, see [Manage quantum workspaces with the Azure CLI](xref:microsoft.quantum.workspaces-cli).
