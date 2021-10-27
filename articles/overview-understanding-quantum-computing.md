@@ -46,7 +46,7 @@ With the anticipation of a sufficiently large and fault-tolerant quantum compute
 - Estimate the security for cryptosystems of a given bit length in a post-quantum environment.
 - Estimate how long it will take to migrate current cryptosystems to new ones.
 
-### Search Algorithms
+### Search algorithms
 
 In 1996, Lov Grover developed a quantum algorithm that dramatically sped up the solution to unstructured data searches, running the search in fewer steps than any classical algorithm could.
 
