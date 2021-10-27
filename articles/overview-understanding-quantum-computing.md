@@ -98,7 +98,7 @@ Similarly, quantum interference affects the state of a qubit in order to influen
 
 For example, with two bits in a classical computer, each bit can store 1 or 0, so together you can store four possible values – **00**, **01**, **10**, and **11** – but only one of those at a time. With two qubits in superposition, however, each qubit can be 1 or 0 or *both*, so you can represent the same four values simultaneously. With three qubits, you can represent eight values, with four qubits, you can represent 16 values, and so on.
 
-## Quantum Computers vs Quantum Simulators
+## Quantum computers vs quantum simulators
 
 A quantum computer is a machine that combines the power of classical and quantum computing. The current quantum computers correspond to and hybrid model: a classical computer that controls a quantum processor. 
 
