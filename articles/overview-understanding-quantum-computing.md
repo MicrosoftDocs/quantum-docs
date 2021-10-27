@@ -59,7 +59,7 @@ The search problem is by design generic. Indeed, any problem that allows you to 
 
 Some of these problems are better suited to benefit from using Grover's algorithm than the others. For more information, see the [theory of Grover's search algorithm](xref:microsoft.quantum.concepts.grovers). For a practical implementation of Grover's algorithm to solve mathematical problems you can see this [tutorial to implement Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers).
 
-### Quantum Machine Learning
+### Quantum machine learning
 
 Machine learning on classical computers is revolutionizing the world of science and business. However, the high computational cost of training the models hinders the development and scope of the field. The area of quantum machine learning explores how to devise and implement quantum software that enables machine learning that runs faster than classical computers.
 
