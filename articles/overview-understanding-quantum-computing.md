@@ -11,7 +11,7 @@ title: Understanding quantum computing
 uid: microsoft.quantum.overview.understanding
 ---
 
-# Understanding Quantum Computing
+# Understanding quantum computing
 
 Quantum computing holds the promise to solve some of our planet's biggest challenges - in the areas of environment, agriculture, health, energy, climate, materials science, and others we haven't encountered yet. For some of these problems, classical computing is increasingly challenged as the size of the system grows.
 
