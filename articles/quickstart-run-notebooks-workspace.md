@@ -1,17 +1,17 @@
 ---
 author: dphansen
-description: Learn how to run Q# or Python in a Jupyter notebook in an Azure Quantum workspace.
+description: Learn how to run a Q# or Python quantum program in a Jupyter notebook in an Azure Quantum workspace.
 ms.author: davidph
 ms.date: 10/27/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Run Jupyter notebooks in a workspace
-uid: microsoft.quantum.how-to.notebooks
+title: Quickstart - Run a Q# or Python program in a Jupyter notebook on Azure Quantum
+uid: microsoft.quantum.quickstarts.notebooks
 ---
 
-# Run Jupyter notebooks in an Azure Quantum workspace
+# Quickstart: Run a Q# or Python program in a Jupyter notebook on Azure Quantum
 
 Learn how to run Q# or Python code in a Jupyter notebook in an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 

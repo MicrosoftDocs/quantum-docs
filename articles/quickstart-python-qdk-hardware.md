@@ -1,17 +1,17 @@
 ---
 author: bradben
-description: Learn how to install the Quantum Development Kit (QDK) to develop Python host programs that call Q# operations.
+description:  Learn how to develop and run Python host programs that call Q# operations on remote quantum hardware.
 ms.author: v-benbra
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Q#', '$$v']
-title: Develop with Q# and Python
-uid: microsoft.quantum.install-qdk.overview.python
+title: Quickstart - Run a Q# and Python program on remote quantum hardware
+uid: microsoft.quantum.quickstarts.python-hardware
 ---
 
-# Develop with Q# and Python
+# Quickstart: Run a Q# and Python program on remote quantum hardware
 
 Learn how to install the Quantum Development Kit (QDK) to develop Python host programs that call Q# operations.
 

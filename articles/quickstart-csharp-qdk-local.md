@@ -1,17 +1,17 @@
 ---
 author: bradben
-description: Learn how to create a Q# application using .NET languages. Q# is built to work well with .NET languages such as C# and F#.
+description: Learn how to create and run a Q# application using .NET languages on a local quantum simulator. Q# is built to work well with .NET languages such as C# and F#.
 ms.author: v-benbra
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Q#', '$$v']
-title: Develop with Q# and .NET
-uid: microsoft.quantum.install-qdk.overview.cs
+title: Quickstart - Run a Q# and .NET program on a local quantum simulator
+uid: microsoft.quantum.quickstarts.csharp-local
 ---
 
-# Develop with Q# and .NET
+# Quickstart: Run a Q# and .NET program on a local quantum simulator
 
 The Q# programming language is built to work well with .NET languages such as C# and F#. In this guide, we demonstrate how to use Q# with a host program written in a .NET language.
 

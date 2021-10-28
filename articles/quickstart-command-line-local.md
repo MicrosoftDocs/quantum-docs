@@ -8,7 +8,7 @@ ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Q#', '$$v']
 title: Quickstart - Run a Q# standalone program on a local quantum simulator
-uid: microsoft.quantum.quickstart.standalone-local
+uid: microsoft.quantum.quickstarts.standalone-local
 ---
 
 # Quickstart: Run a Q# standalone program on a local quantum simulator
@@ -117,4 +117,4 @@ To run a Q# program in the .NET console:
 
 ## Next steps
 
-Now that you have run a Q# program on a local quantum simulator, learn how you can also run your program on remote [quantum hardware](xref:microsoft.quantum.quickstart.standalone-hardware).
+Now that you have run a Q# program on a local quantum simulator, learn how you can also run your program on remote [quantum hardware](xref:microsoft.quantum.quickstarts.computing).
