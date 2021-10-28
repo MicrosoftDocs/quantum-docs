@@ -147,7 +147,7 @@
 		},
 		{
 			"source_path": "articles/user-guide/libraries/additional-libraries.md",
-			"redirect_url": "/azure/quantum/how-to-manage-quantum-workspaces-with-the-azure-cli",
+			"redirect_url": "/azure/quantum/user-guide/libraries/index",
 			"redirect_document_id": true
 		}
 	]
