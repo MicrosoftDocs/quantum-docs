@@ -129,6 +129,26 @@
 			"source_path": "articles/how-to-prepare-your-environment.md",
 			"redirect_url": "/azure/quantum/how-to-manage-quantum-workspaces-with-the-azure-cli",
 			"redirect_document_id": true
+		},
+		{
+			"source_path": "articles/user-guide/libraries/numerics/index.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries/numerics/numerics",
+			"redirect_document_id": true
+		},
+		{
+			"source_path": "articles/user-guide/libraries/machine-learning/index.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries/machine-learning/intro",
+			"redirect_document_id": true
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/samples/index.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries/chemistry/index",
+			"redirect_document_id": true
+		},
+		{
+			"source_path": "articles/user-guide/libraries/additional-libraries.md",
+			"redirect_url": "/azure/quantum/how-to-manage-quantum-workspaces-with-the-azure-cli",
+			"redirect_document_id": true
 		}
 	]
 }
