@@ -42,7 +42,7 @@
     - name: Write a Q# standalone program
       items:
       - name: Using a local simulator
-        href: quickstart-microsoft-qc.md
+        href: quickstart-command-line-local.md
       - name: Using quantum hardware
         href: quickstart-microsoft-qc.md
     - name: Write a Q# and Python program

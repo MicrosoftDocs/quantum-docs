@@ -1,45 +1,107 @@
 ---
 author: bradben
-description: Learn how to develop Q# applications in an editor/IDE and run applications from the .NET console
+description: Learn how to set up a Q standalone environment to develop quantum programs with the Microsoft Quantum Development Kit.
 ms.author: v-benbra
-ms.date: 02/01/2021
+ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Q#', '$$v']
-title: Develop with Q# applications in an IDE
+title: Set up a Q# standalone environment
 uid: microsoft.quantum.install-qdk.overview.standalone
 ---
 
-# Develop with Q# applications in an IDE
+# Set up a Q# standalone environment
 
-Learn how to develop Q# applications in Visual Studio Code (VS Code), Visual Studio, or with any editor/IDE and run applications from the .NET console. Q# programs can run on their own, without a driver in a host language like C#, F#, or Python.
+Learn how to configure a standalone Q# development environment using Jupyter Notebooks, Visual Studio Code (VS Code), Visual Studio, or any editor/IDE. Q# programs can run on their own, without the need for a driver program in a host language like C#, F#, or Python.
 
-## Prerequisites for all environments
+## Q# and Jupyter Notebooks
 
-- [.NET Core SDK 3.1](https://www.microsoft.com/net/download)
+Jupyter Notebooks allows running code in-place alongside instructions, notes, and other content. This environment is ideal for writing Q# code with embedded explanations or quantum computing interactive tutorials. All the necessary components can be set up with a single conda installation.
 
-## Installation
+>[!NOTE]
+>If you want to use Jupyter Notebooks but prefer not to install conda, you can [set up Jupyter Notebooks with the .NET CLI](#q-and-other-ides).
 
-While you can build Q# applications in any IDE, we recommend using Visual Studio Code (VS Code) or Visual Studio IDE for developing your Q# applications locally. Developing in these environments leverages the rich functionality of the Quantum Development Kit (QDK) extension, which includes warnings, syntax highlighting, project templates, and more.
+1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads). Consult their [installation guide](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) if you are unsure about any steps. **Note:** 64-bit installation required.
+
+1. Initialize conda for your preferred shell with the `conda init` command. The steps below are tailored to your operating system:
+
+    **(Windows)** Open an Anaconda Prompt by searching for it in the start menu. Then run the initialization command for your shell, e.g. `conda init powershell cmd.exe` will set up both the Windows PowerShell and Command Prompt for you. You can then close this prompt.
+
+    > [!IMPORTANT]
+    > To work with PowerShell, conda will configure a startup script to run whenever you launch a PowerShell instance. By default, the script's execution will be blocked on Windows, and requires modifying the PowerShell execution policy with the following command (executed from within PowerShell):
+    >
+    > ```powershell
+    > Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+    > ```
+
+    **(Linux)** If haven't done so during installation, you can still initialize conda now. Open a terminal and navigate to the `bin` directory inside your selected install location (e.g. `/home/ubuntu/miniconda3/bin`). Then run the appropriate command for your shell, e.g. `./conda init bash`. Close your terminal for the changes to take effect.
+
+1. From a new terminal, create and activate a new conda environment named `qsharp-env` with the required packages (including Jupyter Notebook and IQ#) by running the following commands:
+
+    ```shell
+    conda create -n qsharp-env -c microsoft qsharp notebook
+
+    conda activate qsharp-env
+    ```
+
+1. Finally, run `python -c "import qsharp"` to verify your installation and populate your local package cache with all required QDK components.
+
+## Q# and other IDEs
+
+While you can build Q# applications in any IDE, we recommend using Visual Studio Code (VS Code) or Visual Studio IDE for developing your Q# applications if you are running them via a .NET console. Developing in these environments leverages the rich functionality of the Quantum Development Kit (QDK) extension, which includes warnings, syntax highlighting, project templates, and more.
 
 > [!IMPORTANT]
 > If you are working on Linux, you may encounter a missing dependency depending on your particular distribution and installation method (e.g. certain Docker images). Please make sure that the `libgomp` library is installed on your system, as the GNU OpenMP support library is required by the quantum simulator of the QDK. On Ubuntu, you can do so by running `sudo apt install libgomp1`, or `yum install libgomp` on CentOS. For other distributions, please refer to your particular package manager.
+
+
+### Prerequisite
+
+- [.NET Core SDK 3.1](https://www.microsoft.com/net/download)
 
 Configure the QDK for your preferred environment from one of the following options:
 
 ### [VS Code](#tab/tabid-vscode)
 
 1. Download and install [VS Code](https://code.visualstudio.com/download) 1.52.0 or greater (Windows, Linux and Mac).
-2. Install the [QDK for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
+1. Install the [QDK for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
 ### [Visual Studio (Windows only)](#tab/tabid-vs)
 
 1. Download and install [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 or greater, with the .NET Core cross-platform development workload enabled.
-2. Download and install the [QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit).
+1. Download and install the [QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit).
 
 > [!NOTE]
 > Although there is Visual Studio for Mac, the QDK extension is only compatible with Visual Studio for Windows.
+
+### [Jupyter Notebooks (.NET CLI)](#tab/tabid-jupyter)
+
+If you want to run your programs in Jupyter Notebooks but don't want to install conda, you can set up the necessary components with .NET. 
+
+1. Prerequisites:
+
+    - [Python](https://www.python.org/downloads/) 3.6 or later
+    - [Jupyter Notebook](https://jupyter.readthedocs.io/en/latest/install.html)
+
+1. Install IQ# via the .NET `Microsoft.Quantum.IQSharp` package.
+
+    ```dotnetcli
+    dotnet tool install -g Microsoft.Quantum.IQSharp
+    dotnet iqsharp install
+    ```
+
+    > [!NOTE]
+    > If you encounter a permission error in Linux, install the IQ# kernel in user mode instead with `dotnet iqsharp install --user`.
+
+    > [!NOTE]
+    > If you encounter an error and you just installed .NET, you won't be able to run the `dotnet iqsharp install` command immediately. Instead, under Windows, open a new terminal window and try again. Under Linux, log out of your session and log back in to try again.
+    > If this still doesn't work, try locating the installed `dotnet-iqsharp` tool (on Windows, `dotnet-iqsharp.exe`) and running:
+    >
+    > ```dotnetcli
+    > /path/to/dotnet-iqsharp install --user --path-to-tool="/path/to/dotnet-iqsharp"
+    > ```
+    >
+    > where `/path/to/dotnet-iqsharp` should be replaced by the absolute path to the `dotnet-iqsharp` tool in your file system. Typically this will be under `.dotnet/tools` in your user profile folder.
 
 ### [Other editors with the command prompt](#tab/tabid-cmdline)
 
@@ -51,80 +113,6 @@ dotnet new -i Microsoft.Quantum.ProjectTemplates
 
 ***
 
-## Develop with Q\#
-
-Follow the instructions on the tab corresponding to your development environment.
-
-### [VS Code](#tab/tabid-vscode)
-
-If you are receiving an error "'npm' is not recognized as an internal or external command", in the below steps, install [node.js including npm](https://nodejs.org/en/?azure-portal=true). Alternatively, use our the command line templates to create a Q# project , or use Visual Studio.
-
-To create a new project:
-
-1. Click **View** -> **Command Palette** and select **Q#: Create New Project**.
-2. Click **Standalone console application**.
-3. Navigate to the location to save the project. Enter the project name and click **Create Project**.
-4. When the project is successfully created, click **Open new project...** in the lower right.
-
-Inspect the project. You should see a source file named `Program.qs`, which is a Q# program that defines a simple operation to print a message to the console.
-
-To run the application:
-
-1. Click **Terminal** -> **New Terminal**.
-2. At the terminal prompt, enter `dotnet run`.
-3. You should see the following text in the output window `Hello quantum world!`
-
-> [!NOTE]
-> Workspaces with multiple root folders are not currently supported by the VS Code Q# extension. If you have multiple projects within one VS Code workspace, all projects need to be contained within the same root folder.
-
-### [Visual Studio (Windows only)](#tab/tabid-vs)
-
-Verify your Visual Studio installation by creating a Q# `Hello World` application.
-
-To create a new Q# application:
-
-1. Open Visual Studio and click **File** -> **New** -> **Project**.
-2. Type `Q#` in the search box, select **Q# Application** and click **Next**.
-3. Enter a name and location for your application and click **Create**.
-
-Inspect the project. You should see a source file named `Program.qs`, which is a Q# program that defines a simple operation to print a message to the console.
-
-To run the application:
-
-1. Select **Debug** -> **Start Without Debugging**.
-2. You should see the text `Hello quantum world!` printed to a console window.
-
-> [!NOTE]
-> If you have multiple projects within one Visual Studio solution, all projects contained in the solution need to be in the same folder as the solution, or in one of its sub-folders.  
-
-### [Other editors with the command prompt](#tab/tabid-cmdline)
-
-Verify your installation by creating a Q# `Hello World` application.
-
-1. Create a new application:
-
-    ```dotnetcli
-    dotnet new console -lang Q# -o runSayHello
-    ```
-
-1. Navigate to the application directory:
-
-    ```dotnetcli
-    cd runSayHello
-    ```
-
-    This directory should now contain a file `Program.qs`, which is a Q# program that defines a simple operation to print a message to the console. You can modfiy this template with a text editor and overwrite it with your own quantum applications.
-
-1. Run the program:
-
-    ```dotnetcli
-    dotnet run
-    ```
-
-1. You should see the following text printed: `Hello quantum world!`
-
-***
-
 ## Next steps
 
-Now that you have installed the Quantum Development Kit in your preferred environment, you can write and run [your first quantum program](xref:microsoft.quantum.tutorial-qdk.random-number).
+Now that you have set up your standalone Q# environment, you can write and run quantum programs against [local quantum simulators](xref:microsoft.quantum.quickstart.standalone-local) or remote [quantum hardware](xref:microsoft.quantum.quickstart.standalone-hardware).
