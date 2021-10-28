@@ -8,7 +8,7 @@ ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Q#', '$$v']
 title: Set up Azure Quantum2
-uid: microsoft.quantum.install-qdk.overview2
+uid: microsoft.quantum.install-qdk.overview
 ---
 
 # Set up and configure Azure Quantum (2)
