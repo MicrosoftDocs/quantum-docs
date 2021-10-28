@@ -8,8 +8,16 @@
 - name: Get started
   expanded: true
   items:
-  - name: Set up Azure Quantum 
+  - name: Set up and configure your environment 
     href: install-overview-qdk.md
+  - name: Set up a Q# standalone environment
+    href: install-command-line-qdk.md
+  - name: Set up a Python environment
+    href: install-python-qdk.md
+  - name: Set up a .NET environment
+    href: install-csharp-qdk.md
+  - name: Use a Binder environment
+    href: install-binder-qdk.md
 - name: Quantum computing
   expanded: true
   items:
@@ -29,28 +37,28 @@
         href: overview-algebra-for-quantum-computing.md
   - name: Quickstarts
     items:
-    - name: Azure Quantum
+    - name: Run Azure Quantum notebooks
+      href: how-to-run-notebooks-workspace.md
+    - name: Write a Q# standalone program
       items:
-      - name: Create a quantum-based random number generator with Q#
+      - name: Using a local simulator
+        href: TBD
+      - name: Using quantum hardware
         href: quickstart-microsoft-qc.md
-      - name: Submit a circuit with Qiskit
-        href: quickstart-microsoft-qiskit.md
-      - name: Submit a circuit with Cirq
-        href: quickstart-microsoft-cirq.md
-      - name: Submit a circuit in provider-specific format
-        href: quickstart-microsoft-provider-format.md
-    - name: Quantum Development Kit (QDK)
+    - name: Write a Q# and Python program
       items:
-      - name: Q# applications
-        href: install-command-line-qdk.md
-      - name: Q# with Jupyter Notebooks
-        href: install-jupyter-qdk.md
-      - name: Q# with Python
-        href: install-python-qdk.md
-      - name: Q# with .NET
-        href: install-csharp-qdk.md
-      - name: Q# with Binder
-        href: install-binder-qdk.md
+      - name: Using a local simulator
+        href: TBD
+      - name: Using quantum hardware
+        href: TBD
+    - name: Write a Q# and .NET program
+      href: TBD
+    - name: Submit a circuit with Qiskit
+      href: quickstart-microsoft-qiskit.md
+    - name: Submit a circuit with Cirq
+      href: quickstart-microsoft-cirq.md
+    - name: Submit a circuit in provider-specific format
+      href: quickstart-microsoft-provider-format.md
   - name: Tutorials
     items:
       - name: Quantum random number generator
