@@ -137,7 +137,7 @@
 		},
 		{
 			"source_path": "articles/user-guide/libraries/machine-learning/index.md",
-			"redirect_url": "/azure/quantum/user-guide/libraries/machine-learning/intro",
+			"redirect_url": "/azure/quantum/user-guide/libraries/index#quantum-machine-learning-library",
 			"redirect_document_id": true
 		},
 		{
