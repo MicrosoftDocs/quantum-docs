@@ -15,7 +15,13 @@ uid: microsoft.quantum.quickstarts.standalone-local
 
 The Microsoft Quantum Development Kit contains several [quantum simulators](xref:microsoft.quantum.machines.overview) that allow you to test and run quantum programs locally, without having to access the Azure Quantum service.
 
-Follow the instructions on the tab corresponding to your development environment that you created during [set up](xref:microsoft.quantum.install-qdk.overview.standalone).
+## Prerequisites
+
+Set up your preferred local environment per the instructions in [Set up a Q# standalone environment](xref:microsoft.quantum.install-qdk.overview.standalone).
+
+## Run a Q# program
+
+Follow the instructions on the tab corresponding to your development environment that you created during set up.
 
 ### [Jupyter Notebooks](#tab/tabid-jupyter)
 
