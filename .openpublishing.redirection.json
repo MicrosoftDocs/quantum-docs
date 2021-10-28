@@ -148,7 +148,7 @@
 		{
 			"source_path": "articles/user-guide/libraries/additional-libraries.md",
 			"redirect_url": "/azure/quantum/user-guide/libraries/index",
-			"redirect_document_id": true
+			"redirect_document_id": false
 		}
 	]
 }
