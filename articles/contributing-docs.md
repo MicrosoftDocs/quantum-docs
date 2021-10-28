@@ -23,7 +23,7 @@ We similarly adopt the [MathJax](https://www.mathjax.org/) library to allow for 
 That said, each form of documentation does vary somewhat in the details:
 
 - The **conceptual documentation** consists of a set of articles that are published to [docs.microsoft.com](xref:microsoft.quantum.overview.qdk-overview), and that describe everything from the basics of quantum computing to the technical specifications for interchange formats. These articles are written in [DocFX-Flavored Markdown (DFM)](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html), a Markdown variant used for creating rich documentation sets.
-- The **API reference** is a set of pages for each Q# function, operation, and user-defined type, published to <https://docs.microsoft.com/qsharp/api/>. These pages document the inputs and operations to each callable, along with examples and links to more information. The API reference is automatically extracted from small DFM documents in Q# source code as a part of each release.
+- The **API reference** is a set of pages for each Q# function, operation, and user-defined type, published to [https://docs.microsoft.com/qsharp/api/](/qsharp/api/). These pages document the inputs and operations to each callable, along with examples and links to more information. The API reference is automatically extracted from small DFM documents in Q# source code as a part of each release.
 - The **README<!---->.md** files included with each sample and kata describe how to use that sample or kata is used, what it covers, and how it relates to the rest of the Quantum Development Kit. These files are written using [GitHub Flavored Markdown (GFM)](https://github.github.com/gfm/), a more lightweight alternative to DFM that's popular for attaching documentation directly to code repositories.
 
 ## Contributing to the conceptual documentation
@@ -66,7 +66,7 @@ Using this command, you can avoid duplicating code between conceptual articles a
 
 To contribute an improvement to the API references, it's most helpful to open a pull request directly on the code being documented.
 Each function, operation, or user-defined type supports a documentation comment (denoted with `///` instead of `//`).
-When we compile each release of the Quantum Development Kit, these comments are used to generate the API reference at <https://docs.microsoft.com/qsharp/api/>, including details about the inputs to and outputs from each callable, the assumptions each callable makes, and examples of how to use them.
+When we compile each release of the Quantum Development Kit, these comments are used to generate the API reference at [https://docs.microsoft.com/qsharp/api/](/qsharp/api/), including details about the inputs to and outputs from each callable, the assumptions each callable makes, and examples of how to use them.
 
 > [!IMPORTANT]
 > Please make sure to not manually edit the generated API documentation, as these files are overwritten with each new release.
