@@ -2,7 +2,7 @@
 author: KittyYeungQ
 description: This document provides a basic guide to solving long-running problems in Azure Quantum using Python.
 ms.author: kitty
-ms.date: 02/01/2021
+ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
@@ -50,3 +50,10 @@ print(result)
 
 > {'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0}]}
 ```
+
+## Next steps
+
+- [Understand Solver results](xref:microsoft.quantum.optimization.understand-solver-results)
+- [Re-use problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions)
+- [Solver overview](xref:microsoft.quantum.reference.qio-target-list)
+- [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)

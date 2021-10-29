@@ -2,7 +2,7 @@
 author: KittyYeungQ
 description: This document provides a basic guide to express an optimization problem that could be later used with a solver in Azure Quantum.
 ms.author: kitty
-ms.date: 09/02/2021
+ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
@@ -76,10 +76,12 @@ terms = [
     )
 ]
 problem = Problem(name="My Other Problem", terms=terms, problem_type=ProblemType.ising_grouped)
+
 ```
 > [!NOTE]
 > Only a subset of optimization solvers currently support grouped terms.
 > Refer to the [`SlcTerm`](xref:microsoft.quantum.optimization.slc-term) documentation for details.
+
 ### Individually
 
 You can supply each `Term` object individually by calling the `add_term` method on the `Problem`.
@@ -135,3 +137,7 @@ terms = [
 
 problem.add_terms(terms=terms)
 ```
+
+## Next steps
+
+Now that you've created an optimization problem, learn how to solve it by [applying a solver](xref:microsoft.quantum.optimization.apply-solver). 
