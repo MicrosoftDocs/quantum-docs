@@ -86,4 +86,4 @@ That's it! You now have both the `qsharp` Python package and the IQ# kernel for 
 
 ## Next steps
 
-Now that you have set up your Python environment, you can write and run quantum programs against [local quantum simulators](xref:microsoft.quantum.how-to.python-local) or remote [quantum hardware](xref:microsoft.quantum.how-to.python-hardware).
+Now that you have set up your Python environment, you can write and run quantum programs against [local quantum simulators](xref:microsoft.quantum.how-to.python-local) or remote [quantum hardware](xref:microsoft.quantum.submit-jobs).
