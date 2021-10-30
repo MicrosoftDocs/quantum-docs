@@ -17,7 +17,7 @@ Learn how to set up and install the tools necessary to develop quantum computing
 
 ## Azure Quantum service and the Quantum Development Kit (QDK)
 
-With the ability to run Jupyter Notebooks on Azure Quantum, you can develop and run quantum programs in the Azure Quantum portal without installing any additional tools.
+With the ability to run [Jupyter Notebooks on Azure Quantum](xref:microsoft.quantum.how-to.notebooks), you can develop and run quantum programs in the Azure Quantum portal without installing any additional tools.
 
 However, with the Quantum Development Kit (QDK), you can customize your environment to develop and run quantum computing applications locally, or develop quantum computing and optimization applications to run on quantum simulators or hardware using the Azure Quantum service.
 

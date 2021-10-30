@@ -7,11 +7,11 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Run a Q# and Python program on a local quantum simulator
+title: Write a Q# and Python program to run on a local quantum simulator
 uid: microsoft.quantum.how-to.python-local
 ---
 
-# Run a Q# and Python program on a local quantum simulator
+# Write a Q# and Python program to run on a local quantum simulator
 
 The Microsoft Quantum Development Kit contains several [quantum simulators](xref:microsoft.quantum.machines.overview) that allow you to test and run quantum programs locally, without having to access the Azure Quantum service.
 

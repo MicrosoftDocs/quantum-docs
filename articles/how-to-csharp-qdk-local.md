@@ -7,11 +7,11 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Run a Q# and .NET program on a local quantum simulator
+title: Write a Q# and .NET program to run on a local quantum simulator
 uid: microsoft.quantum.how-to.csharp-local
 ---
 
-# Run a Q# and .NET program on a local quantum simulator
+# Write a Q# and .NET program to run on a local quantum simulator
 
 The Q# programming language is built to work well with .NET languages such as C# and F#. This guide demonstrate how to use Q# with a host program written in a .NET language.
 
