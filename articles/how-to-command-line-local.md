@@ -5,19 +5,19 @@ ms.author: v-benbra
 ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: quickstart
+ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Quickstart - Run a Q# standalone program on a local quantum simulator
-uid: microsoft.quantum.quickstarts.standalone-local
+title: Run a Q# standalone program on a local quantum simulator
+uid: microsoft.quantum.how-to.standalone-local
 ---
 
-# Quickstart: Run a Q# standalone program on a local quantum simulator
+# Run a Q# standalone program on a local quantum simulator
 
 The Microsoft Quantum Development Kit contains several [quantum simulators](xref:microsoft.quantum.machines.overview) that allow you to test and run quantum programs locally, without having to access the Azure Quantum service.
 
 ## Prerequisites
 
-Set up your preferred local environment per the instructions in [Set up a Q# standalone environment](xref:microsoft.quantum.install-qdk.overview.standalone).
+Set up your preferred local environment with the Microsoft Quantum Development Kit following the steps in [Set up a Q# standalone environment](xref:microsoft.quantum.install-qdk.overview.standalone).
 
 ## Run a Q# program
 

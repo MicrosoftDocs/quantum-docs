@@ -13,7 +13,7 @@ uid: microsoft.quantum.install-qdk.overview.standalone
 
 # Set up a Q# standalone environment
 
-Learn how to configure a standalone Q# development environment using Jupyter Notebooks, Visual Studio Code (VS Code), Visual Studio, or any editor/IDE. Q# programs can run on their own, without the need for a driver program in a host language like C#, F#, or Python.
+Learn how to configure a standalone Q# development environment using Jupyter Notebooks, Visual Studio Code (VS Code), Visual Studio, or any editor/IDE. Q# programs can run on their own, or can utilize a driver program in a host language like C# or F#.
 
 ## Q# and Jupyter Notebooks
 
@@ -26,7 +26,7 @@ Jupyter Notebooks allows running code in-place alongside instructions, notes, an
 
 1. Initialize conda for your preferred shell with the `conda init` command. The steps below are tailored to your operating system:
 
-    **(Windows)** Open an Anaconda Prompt by searching for it in the start menu. Then run the initialization command for your shell, e.g. `conda init powershell cmd.exe` will set up both the Windows PowerShell and Command Prompt for you. You can then close this prompt.
+    **(Windows)** Open an Anaconda Prompt by searching for it in the start menu. Then run the initialization command for your shell, for example, `conda init powershell cmd.exe` will set up both the Windows PowerShell and Command Prompt for you. You can then close this prompt.
 
     > [!IMPORTANT]
     > To work with PowerShell, conda will configure a startup script to run whenever you launch a PowerShell instance. By default, the script's execution will be blocked on Windows, and requires modifying the PowerShell execution policy with the following command (executed from within PowerShell):
@@ -35,7 +35,7 @@ Jupyter Notebooks allows running code in-place alongside instructions, notes, an
     > Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
     > ```
 
-    **(Linux)** If haven't done so during installation, you can still initialize conda now. Open a terminal and navigate to the `bin` directory inside your selected install location (e.g. `/home/ubuntu/miniconda3/bin`). Then run the appropriate command for your shell, e.g. `./conda init bash`. Close your terminal for the changes to take effect.
+    **(Linux)** If haven't done so during installation, you can still initialize conda now. Open a terminal and navigate to the `bin` directory inside your selected install location (for example, `/home/ubuntu/miniconda3/bin`). Then run the appropriate command for your shell, for example, `./conda init bash`. Close your terminal for the changes to take effect.
 
 1. From a new terminal, create and activate a new conda environment named `qsharp-env` with the required packages (including Jupyter Notebook and IQ#) by running the following commands:
 
@@ -52,7 +52,7 @@ Jupyter Notebooks allows running code in-place alongside instructions, notes, an
 While you can build Q# applications in any IDE, we recommend using Visual Studio Code (VS Code) or Visual Studio IDE for developing your Q# applications if you are running them via a .NET console. Developing in these environments leverages the rich functionality of the Quantum Development Kit (QDK) extension, which includes warnings, syntax highlighting, project templates, and more.
 
 > [!IMPORTANT]
-> If you are working on Linux, you may encounter a missing dependency depending on your particular distribution and installation method (e.g. certain Docker images). Please make sure that the `libgomp` library is installed on your system, as the GNU OpenMP support library is required by the quantum simulator of the QDK. On Ubuntu, you can do so by running `sudo apt install libgomp1`, or `yum install libgomp` on CentOS. For other distributions, please refer to your particular package manager.
+> If you are working on Linux, you may encounter a missing dependency depending on your particular distribution and installation method (such as certain Docker images). Please make sure that the `libgomp` library is installed on your system, as the GNU OpenMP support library is required by the quantum simulator of the QDK. On Ubuntu, you can do so by running `sudo apt install libgomp1`, or `yum install libgomp` on CentOS. For other distributions, please refer to your particular package manager.
 
 
 ### Prerequisite
@@ -61,12 +61,12 @@ While you can build Q# applications in any IDE, we recommend using Visual Studio
 
 Configure the QDK for your preferred environment from one of the following options:
 
-### [VS Code](#tab/tabid-vscode)
+### VS Code
 
 1. Download and install [VS Code](https://code.visualstudio.com/download) 1.52.0 or greater (Windows, Linux and Mac).
 1. Install the [QDK for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
-### [Visual Studio (Windows only)](#tab/tabid-vs)
+### Visual Studio (Windows only)
 
 1. Download and install [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 or greater, with the .NET Core cross-platform development workload enabled.
 1. Download and install the [QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit).
@@ -74,7 +74,7 @@ Configure the QDK for your preferred environment from one of the following optio
 > [!NOTE]
 > Although there is Visual Studio for Mac, the QDK extension is only compatible with Visual Studio for Windows.
 
-### [Jupyter Notebooks (.NET CLI)](#tab/tabid-jupyter)
+### Jupyter Notebooks (using the .NET CLI)
 
 If you want to run your programs in Jupyter Notebooks but don't want to install conda, you can set up the necessary components with .NET. 
 
@@ -103,7 +103,7 @@ If you want to run your programs in Jupyter Notebooks but don't want to install 
     >
     > where `/path/to/dotnet-iqsharp` should be replaced by the absolute path to the `dotnet-iqsharp` tool in your file system. Typically this will be under `.dotnet/tools` in your user profile folder.
 
-### [Other editors with the command prompt](#tab/tabid-cmdline)
+### .NET CLI
 
 1. Enter the following at the command prompt
 
@@ -111,8 +111,15 @@ If you want to run your programs in Jupyter Notebooks but don't want to install 
 dotnet new -i Microsoft.Quantum.ProjectTemplates
 ```
 
-***
+### Azure CLI (.NET Core SDK 3.1 not required)
+
+- Install the [Azure CLI](/cli/azure/install-azure-cli).
+- Install the Azure CLI `quantum` extension. Open a command prompt and run the following command:
+
+    ```azurecli
+    az extension add -n quantum
+    ```
 
 ## Next steps
 
-Now that you have set up your standalone Q# environment, you can write and run quantum programs against [local quantum simulators](xref:microsoft.quantum.quickstarts.standalone-local) or remote [quantum hardware](xref:microsoft.quantum.quickstarts.computing).
+Now that you have set up your standalone Q# environment, you can write and run quantum programs against [local quantum simulators](xref:microsoft.quantum.how-to.standalone-local) or remote [quantum hardware](xref:microsoft.quantum.quickstarts.computing).
