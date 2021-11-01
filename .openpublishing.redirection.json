@@ -129,6 +129,16 @@
 			"source_path": "articles/how-to-prepare-your-environment.md",
 			"redirect_url": "/azure/quantum/how-to-manage-quantum-workspaces-with-the-azure-cli",
 			"redirect_document_id": true
+		},
+		{
+			"source_path": "articles/overview-qdk.md",
+			"redirect_url": "/azure/quantum/overview-understanding-quantum-computing",
+			"redirect_document_id": true
+		},
+		{
+			"source_path": "articles/overview-quantum-computers-and-simulators.md",
+			"redirect_url": "/azure/quantum/overview-understanding-quantum-computing#quantum-computers-vs-quantum-simulators",
+			"redirect_document_id": true
 		}
 	]
 }
