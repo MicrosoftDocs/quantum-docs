@@ -2,7 +2,7 @@
 author: KittyYeungQ
 description: This document provides a basic guide to solving long-running problems in Azure Quantum using Python.
 ms.author: kitty
-ms.date: 02/01/2021
+ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
@@ -10,11 +10,11 @@ title: Solve long-running problems
 uid: microsoft.quantum.optimization.solve-long-running-problems
 ---
 
-# Solve long running problems
+# Solve long-running problems
 
 In the example in [Apply solvers to solve optimization problems](xref:microsoft.quantum.optimization.apply-solver), a problem was submitted to Azure Quantum and solved synchronously. This is convenient for certain environments, but unsuitable for others where there is a need to either submit a problem and check on it later, or submit many problems and compare the results.
 
-### Submit the problem
+## Submit the problem
 
 To submit a problem asynchronously, use the `submit` method on the `solver`. This submits a `Job` which is returned by the method:
 
@@ -26,7 +26,7 @@ print(job.id)
 > ea81bb40-682f-11ea-8271-c49dede60d7c
 ```
 
-### Refresh job status
+## Refresh job status
 
 After submitting the job, you can check on the status of the job by calling the
 `refresh` method. Each time `refresh` is called, the job metadata gets refreshed.
@@ -38,7 +38,7 @@ print(job.details.status)
 > Succeeded
 ```
 
-### Get the job output
+## Get the job output
 
 Once the job is in a final state, such as `Succeeded`, you may download the job output using `get_results`:
 
@@ -50,3 +50,10 @@ print(result)
 
 > {'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1, '3': 1}, 'cost': -32.0}]}
 ```
+
+## Next steps
+
+- [Understand Solver results](xref:microsoft.quantum.optimization.understand-solver-results)
+- [Re-use problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions)
+- [Solver overview](xref:microsoft.quantum.reference.qio-target-list)
+- [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)

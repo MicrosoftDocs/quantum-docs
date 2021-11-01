@@ -66,7 +66,7 @@ Using this command, you can avoid duplicating code between conceptual articles a
 
 To contribute an improvement to the API references, it's most helpful to open a pull request directly on the code being documented.
 Each function, operation, or user-defined type supports a documentation comment (denoted with `///` instead of `//`).
-When we compile each release of the Quantum Development Kit, these comments are used to generate the API reference at <https://docs.microsoft.com/qsharp/api/>, including details about the inputs to and outputs from each callable, the assumptions each callable makes, and examples of how to use them.
+When we compile each release of the Quantum Development Kit, these comments are used to generate the API reference at [https://docs.microsoft.com/qsharp/api/](/qsharp/api/), including details about the inputs to and outputs from each callable, the assumptions each callable makes, and examples of how to use them.
 
 > [!IMPORTANT]
 > Please make sure to not manually edit the generated API documentation, as these files are overwritten with each new release.

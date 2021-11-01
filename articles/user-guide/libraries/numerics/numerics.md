@@ -11,7 +11,7 @@ title: Using the Microsoft Q# Numerics Library
 uid: microsoft.quantum.libraries-numerics.usage
 ---
 
-# Using the Numerics library
+# Using the Quantum Numerics library
 
 ## Overview
 
@@ -144,3 +144,4 @@ Then, `cd` into one of the sample folders and run the sample via
 ```bash
 dotnet run
 ```
+

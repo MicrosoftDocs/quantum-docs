@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs or solve optimization problems in the cloud.
 ms.author: v-sonialopez
-ms.date: 09/23/2021
+ms.date: 10/21/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
@@ -12,13 +12,13 @@ uid: microsoft.quantum.azure-quantum-overview
 
 # What is Azure Quantum?
 
-Azure Quantum is a cloud service with a diverse set of quantum solutions and technologies. You can write your code once and run it with little to no change against multiple targets of the same family and without thinking about about hardware or solution specificities.
+Azure Quantum is a cloud service with a diverse set of quantum solutions and technologies. You can write your code once and run it with little to no change against multiple targets of the same family and allows you to focus your programming at the algorithm level.
 
 - An **open ecosystem**, enabling you to access diverse quantum software, hardware, and solutions from Microsoft and its partners.
 - Quantum impact today, with pre-built solutions that run on classical and accelerated compute resources (also referred to as optimization solutions).
 
 > [!Tip]
-> **Free trial.** If you don’t have an Azure subscription, you can [create a free account](https://azure.microsoft.com/free/) before you begin. Microsoft offers up to $10,000 USD in credits for use on quantum hardware. After the credits are used up, you can keep the account and use free Azure services. Your credit card is never charged unless you explicitly change your settings and ask to be charged. You can apply to the [Azure Quantum Credits program](https://microsoft.qualtrics.com/jfe/form/SV_3fl9dfFrkC3g0aG?aq_source=organic).
+> **Free trial.** If you don’t have an Azure subscription, you can [create a free account](https://azure.microsoft.com/free/) before you begin. Microsoft offers up to $10,000 USD in credits for use on quantum hardware. After the credits are used up, you can keep the account and use free Azure services. Your credit card is never charged unless you explicitly change your settings and ask to be charged. You can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
 
 ## The parts of Azure Quantum
 
@@ -78,26 +78,38 @@ Azure Quantum gives you access to a broad set of state-of-the-art quantum-inspir
 
 To learn more about the optimization solutions in Azure Quantum, see [What is optimization?](xref:microsoft.quantum.optimization.concepts.overview.introduction).
 
-## What is Q\# and the Quantum Development Kit?
+## What are Q\# and the Quantum Development Kit?
 
 The Microsoft Quantum Development Kit (QDK) is an **open-source** development kit for Azure Quantum, that enables you to work both online with the service and offline. The QDK includes the [quantum programming language Q#](xref:microsoft.quantum.overview.q-sharp), a high-level programming language that allows you to focus your work at the algorithm and application level to create quantum programs.
+
+### The Quantum Development Kit
 
 The QDK offers a set of tools that will assist you in the quantum software development process: 
 
 - [Ready-to-use libraries](xref:microsoft.quantum.libraries.overview) to help you keep your code high-level, including both “standard” libraries that implement patterns common for a lot of quantum algorithms, and domain-specific libraries, such as chemistry and machine learning. 
 - [Quantum computing simulators](xref:microsoft.quantum.machines.overview), so that you can run a small instance of your program and see what it does without actual hardware access. 
-- Preview simulators that allow for simulating the behavior of Q# programs under the influence of noise and the stabilizer representation. 
+- [Noise simulators](xref:microsoft.quantum.machines.overview.noise-simulator) that allow for simulating the behavior of Q# programs under the influence of noise and the stabilizer representation. 
 - A [resource estimator](xref:microsoft.quantum.machines.overview.resources-estimator) that provides real world costs to run your solutions, for example, how many qubits you need and how long your program will take.
 
-### Tools for developers
+The Quantum Development Kit includes extensions for [Visual Studio](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit) and [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode), and integration with [Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.jupyter). 
 
-Developers will find familiar interfaces in the Azure Quantum services. The Quantum Development Kit includes extensions for [Visual Studio](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit) and [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode), and integration with [Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.jupyter). Quantum developers that are already working in other development languages, such as Qiskit or Cirq, can also run their programs on Azure Quantum.
- 
-You can use Q# as standalone, in notebooks, and at the command-line or use a host language, the QDK supports interoperability with [Python](xref:microsoft.quantum.install-qdk.overview.python) and other [.NET languages](xref:microsoft.quantum.install-qdk.overview.cs). You can also formulate optimization solutions with the Azure Quantum optimization Python package. As quantum systems evolve, your code endures.
+The Quantum Development Kit supports interoperability with [Python](xref:microsoft.quantum.install-qdk.overview.python) and other [.NET languages](xref:microsoft.quantum.install-qdk.overview.cs). You can also formulate optimization solutions with the Azure Quantum optimization Python package. As quantum systems evolve, your code endures. 
 
-### Workflow of the quantum software development
+As an additional feature, the QDK supports integration with Qiskit and Cirq, so quantum developers that are already working in other development languages, can also run their programs on Azure Quantum.
 
-The Quantum Development Kit is the development kit for the quantum-focused programming language Q#, and Azure Quantum is the quantum cloud platform. 
+### The quantum programming language Q\#
+
+Why a quantum programming language? In short terms, because you want to write algorithms, not circuits.
+
+The Q# language allows the integration on classical and quantum computing. Q# supports general classical control flow during the execution of an algorithm. This allows clean expression of adaptive algorithms that are difficult to express directly in the circuit model of a fixed sequence of quantum gates.
+
+The Q# language doesn’t specify whether qubits are logical or physical. This can be decided by the runtime when the algorithm is executed. Similarly, the mapping from a qubit variable in a program to an actual logical or physical qubit is decided by the runtime, and that mapping may be deferred until after the topology and other details of the target device is known. The runtime is responsible for determining a mapping that allows the algorithm to execute, including any qubit state transfer and remapping required during execution.
+
+You can use Q# as standalone, in notebooks, and at the command-line or use a host language such as Python or C#. 
+
+## Workflow of the quantum software development
+
+The Quantum Development Kit is the development kit for the quantum-focused programming language Q#, and Azure Quantum is the quantum cloud platform.
 
 The following diagram shows the stages through which a quantum program goes from idea to complete implementation on Azure Quantum, and the tools offered by the QDK for each stage.
 

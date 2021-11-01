@@ -164,7 +164,7 @@ A problem expressed using the Python optimization library and solved using Azure
 
 ## Quantum libraries
 
-Collections of [operations](xref:microsoft.quantum.glossary-qdk#operation), [functions](xref:microsoft.quantum.glossary-qdk#function) and [user-defined types](xref:microsoft.quantum.glossary-qdk#user-defined-type) for creating Q# programs. The [Standard library](xref:microsoft.quantum.libraries.overview.standard.intro) is installed by default. Other libraries available are the [Chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview), the [Numerics library](xref:microsoft.quantum.libraries-numerics.overview) and the [Machine learning library](xref:microsoft.quantum.libraries-machine-learning.overview).
+Collections of [operations](xref:microsoft.quantum.glossary-qdk#operation), [functions](xref:microsoft.quantum.glossary-qdk#function) and [user-defined types](xref:microsoft.quantum.glossary-qdk#user-defined-type) for creating Q# programs. The [Standard library](xref:microsoft.quantum.libraries.overview.standard.intro) is installed by default. Other libraries available are the [Chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview), the [Numerics library](xref:microsoft.quantum.libraries.overview#quantum-numerics-library) and the [Machine learning library](xref:microsoft.quantum.libraries.overview#quantum-machine-learning-library).
 
 ## Quantum program
 
