@@ -71,6 +71,10 @@ FPGA solvers have an initialization time that may take a large percentage of the
 
 For the most up-to-date pricing information on Microsoft's QIO offering, please refer to the Providers tab of your workspace on the [Azure portal](https://portal.azure.com/) or visit the [Azure Quantum pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
 
+## Limits & Quotas
+
+Up to date information on the various limits for each Microsoft QIO pricing SKU are available via the general [Azure subscription limits, quotas, and constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-quantum-limits) article. 
+
 ## General advice for Microsoft QIO solvers
 
 Here are some things to keep in mind when using our QIO solvers, and steps you can take to improve performance in certain cases. Be aware that other providers may have different requirements and recommendations specific to their solutions. The advice here applies to the terms that [represent your problem](xref:microsoft.quantum.optimization.express-problem) and [cost function](xref:microsoft.quantum.optimization.concepts.cost-function). Remember that a term is composed of a coefficient $c$ and a set of indices $\{i\}$.
