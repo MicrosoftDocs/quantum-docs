@@ -2,7 +2,7 @@
 author: dphansen
 description: Learn how to run Q# or Python in a Jupyter notebook in an Azure Quantum workspace.
 ms.author: davidph
-ms.date: 10/27/2021
+ms.date: 10/28/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -42,11 +42,9 @@ To run Q# or Python in a Jupyter notebook, follow these steps.
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Jupyter Notebooks**.
 1. Select your notebook in **My Notebooks**.
-1. Select the cell you want to run and select the run icon to execute the code.
+1. Select the cell you want to run and select the **run icon** to execute the code in the cell, or select **Run all** to run all cells in the notebook.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/run-notebook.png" alt-text="Run a Jupyter notebook.":::
-
-You can also select **Run all** to run all cells in the notebook.
 
 ## Create a new notebook
 
