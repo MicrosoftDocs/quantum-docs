@@ -133,7 +133,7 @@
 		{
 			"source_path": "articles/overview-qdk.md",
 			"redirect_url": "/azure/quantum/overview-understanding-quantum-computing",
-			"redirect_document_id": true
+			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/overview-quantum-computers-and-simulators.md",
