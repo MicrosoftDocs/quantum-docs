@@ -39,4 +39,4 @@ We recommend you continue your journey by learning more about the [different typ
 
 Looking for more samples to run? Check out the [samples directory](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum) for Azure Quantum.
 
-Lastly, if you would like to learn more about writing Q# programs please see the [Microsoft Quantum Documentation](xref:microsoft.quantum.overview.qdk-overview).
+Lastly, if you would like to learn more about writing Q# programs please see the [Q# programming language user guide](xref:microsoft.quantum.user-guide-qdk.overview).
