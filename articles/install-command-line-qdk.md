@@ -122,4 +122,4 @@ dotnet new -i Microsoft.Quantum.ProjectTemplates
 
 ## Next steps
 
-Now that you have set up your standalone Q# environment, you can write and run quantum programs against [local quantum simulators](xref:microsoft.quantum.how-to.standalone-local) or remote [quantum hardware](xref:microsoft.quantum.quickstarts.computing).
+Now that you have set up your standalone Q# environment, you can write and run quantum programs against [local quantum simulators](xref:microsoft.quantum.how-to.standalone-local), [cloud-hosted simulators](xref:microsoft.quantum.reference.qc-target-list), or remote [quantum hardware](xref:microsoft.quantum.quickstarts.computing).
