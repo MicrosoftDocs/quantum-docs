@@ -152,11 +152,11 @@ For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.cir
 
 ## Quantum Development Kit (QDK)
 
-Microsoft’s software development kit for developing quantum applications in the Azure Quantum service. The QDK contains Q\#, Microsoft's programming language for quantum computing, along with Q\# libraries, samples and tutorials. It also contains developer APIs for running jobs on the Azure Quantum service. For more information, see the [Microsoft QDK Documentation](xref:microsoft.quantum.overview.qdk-overview).
+Microsoft’s software development kit for developing quantum applications in the Azure Quantum service. The QDK contains Q\#, Microsoft's programming language for quantum computing, along with Q\# libraries, samples and tutorials. It also contains developer APIs for running jobs on the Azure Quantum service. For more information, see the [Microsoft QDK Documentation](xref:microsoft.quantum.overview.q-sharp).
 
 ## Quantum-inspired optimization (QIO)
 
-The emulation of quantum algorithms on classical computing hardware to find optimal solutions to complex problems. For more information, see [What is quantum-inspired optimization](xref:microsoft.quantum.optimization.concepts.overview.introduction).
+The emulation of quantum algorithms on classical computing hardware to find optimal solutions to complex problems. For more information, see [What is quantum-inspired optimization](xref:microsoft.quantum.overview.q-sharp).
 
 ## Quantum-inspired optimization problem
 

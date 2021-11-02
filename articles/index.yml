@@ -43,7 +43,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: What is quantum computing?
-            url: overview-qdk.md
+            url: overview-understanding-quantum-computing.md
           - text: What are the Q# programming language and Quantum Development Kit (QDK)?
             url: overview-what-is-qsharp-and-qdk.md
       - linkListType: quickstart
