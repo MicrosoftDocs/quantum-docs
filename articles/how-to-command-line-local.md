@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Write a Q# standalone program to run on a local quantum simulator
+title: Write a Q# standalone program on a local quantum simulator
 uid: microsoft.quantum.how-to.standalone-local
 ---
 
@@ -95,7 +95,7 @@ To run the application:
 
 ### [Other editors with the command prompt](#tab/tabid-cmdline)
 
-To run a Q# program in the .NET console:
+To run a Q# program in the console:
 
 1. Create a new application:
 
