@@ -16,7 +16,7 @@
       href: install-overview-qdk.md
     - name: Set up a Q# standalone or .NET environment
       href: install-command-line-qdk.md
-    - name: Set up a Python environment
+    - name: Set up a Q# + Python environment
       href: install-python-qdk.md
     - name: Use a Binder environment
       href: install-binder-qdk.md

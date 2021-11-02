@@ -1,6 +1,6 @@
 ---
 author: bradben
-description: Learn how to set up a Q standalone environment to develop quantum programs with the Microsoft Quantum Development Kit.
+description: Learn how to set up a Q# standalone environment to develop quantum programs with the Microsoft Quantum Development Kit.
 ms.author: v-benbra
 ms.date: 10/25/2021
 ms.service: azure-quantum
@@ -19,8 +19,8 @@ Learn how to configure a standalone Q# development environment using Jupyter Not
 
 Jupyter Notebooks allows running code in-place alongside instructions, notes, and other content. This environment is ideal for writing Q# code with embedded explanations or quantum computing interactive tutorials. All the necessary components can be set up with a single conda installation.
 
->[!NOTE]
->If you want to use Jupyter Notebooks but prefer not to install conda, you can [set up Jupyter Notebooks with the .NET CLI](#q-and-other-ides).
+> [!NOTE]
+> If you want to use Jupyter Notebooks but prefer not to install conda, you can [set up Jupyter Notebooks with the .NET CLI](#q-and-other-ides).
 
 1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads). Consult their [installation guide](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) if you are unsure about any steps. **Note:** 64-bit installation required.
 
