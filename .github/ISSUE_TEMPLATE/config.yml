@@ -7,7 +7,7 @@ contact_links:
     url: https://docs.microsoft.com/answers/topics/azure-quantum.html
     about: Post a technical question to the Azure Quantum community.  
   - name: Azure Quantum feature requests
-    url: https://feedback.azure.com/forums/932905-azure-quantum
+    url: https://feedback.azure.com/d365community/
     about: Use the feedback forum to request new features for Azure Quantum
   - name: Q# programming language issues
     url: https://github.com/microsoft/qsharp-language/issues/new/choose
