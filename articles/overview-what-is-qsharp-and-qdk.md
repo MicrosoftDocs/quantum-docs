@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: Learn about the Quantum Development Kit (QDK), the Q# programming language, and how you can create quantum programs.
-ms.author: v-benbra
-ms.date: 08/05/2021
+ms.author: v-sonialopez
+ms.date: 11/03/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
@@ -31,7 +31,12 @@ You can use Q# as standalone, in notebooks, and at the command-line or use a hos
 ## What is a quantum program?
 
 A quantum program can be seen as a particular set of classical subroutines which, when called, perform a computation by interacting with a quantum system; a program written in Q# does not directly model the quantum state, but rather describes how a classical control computer interacts with qubits.
-This allows us to be entirely agnostic about what a quantum state even *is* on each target machine, which might have different interpretations depending on the machine. 
+
+This allows you to be entirely agnostic about what a quantum state even *is* on each target machine, which might have different interpretations depending on the machine. 
+
+When designing a programming language to express a quantum computation, the question naturally arises of whether qubits should be represented in the language, and if so, how. In the most naïve model of such a picture, there would be a software entity that represented each horizontal line, with little or no accessible state other than perhaps a label, but there are other possibilities.
+
+### Qubits as opaque references
 
 An important consequence of that is that Q# has no ability to introspect into the state of a qubit or other properties of quantum mechanics directly, which guarantees that a Q# program can be physically executed on a quantum computer.
 Instead, a program can call operations such as [`Measure`](xref:Microsoft.Quantum.Intrinsic.Measure) to extract classical information from a qubit.
@@ -66,7 +71,7 @@ operation MeasureOneQubit() : Result {
 }
 ```
 
-Our [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas) provide a good introduction to [quantum computing concepts](xref:microsoft.quantum.tutorial-qdk.katas#introduction-to-quantum-computing-concepts) such as common quantum operations and how to manipulate qubits.
+If you want to learn more, the [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas) provide a good introduction to [quantum computing concepts](xref:microsoft.quantum.tutorial-qdk.katas#introduction-to-quantum-computing-concepts) such as common quantum operations and how to manipulate qubits.
 For more examples, see [intrinsic operations and functions](xref:microsoft.quantum.libraries.overview.standard.prelude).
 
 
@@ -103,7 +108,7 @@ Write and test quantum algorithms to explore superposition, [entanglement](xref:
 
 The [Q# libraries](xref:microsoft.quantum.libraries.overview) will help you keep your code high-level, enabling you to run complex quantum operations without having to design low-level operation sequences. The [`Microsoft.Quantum.Sdk` NuGet package](https://www.nuget.org/packages/Microsoft.Quantum.Sdk/) automatically includes the Q# [standard library](xref:microsoft.quantum.libraries.overview.standard.intro), which provides a set of essential and very useful functions and operations that can be used when writing quantum programs in Q#.
 
-In addition to the standard library, the QDK includes a [quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview), a [quantum machine learning library](xref:microsoft.quantum.libraries.overview#quantum-machine-learning-library), and a [quantum numeric library](xref:microsoft.quantum.libraries-numerics.usage).
+In addition to the standard library, the QDK includes a [quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview) for simulating quantum dynamics and electronic structure problems on quantum computers, a [quantum machine learning library](xref:microsoft.quantum.libraries.overview#quantum-machine-learning-library) which provides an implementation of the sequential classifiers that take advantage of quantum computing to run hybrid quantum/classical machine learning experiments, and a [quantum numeric library](xref:microsoft.quantum.libraries-numerics.usage) which provides support for a wide range of numerics functionality.
 
 ### Tools for developers
 
