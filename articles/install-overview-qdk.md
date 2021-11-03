@@ -1,8 +1,8 @@
 ---
 author: bradben
-description: Learn how to set up Azure Quantum for different workflows.
+description: Learn how to set up Azure Quantum for different languages and platforms.
 ms.author: v-benbra
-ms.date: 07/26/2021
+ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -11,98 +11,50 @@ title: Set up Azure Quantum
 uid: microsoft.quantum.install-qdk.overview
 ---
 
-# Set up Azure Quantum
+# Set up a local development environment for Azure Quantum
 
-Learn how to set up Azure Quantum to develop quantum computing and optimization applications in your environment.
+Learn how to set up and install the tools necessary to develop quantum computing and optimization applications for [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) in your preferred local environment.
 
-## Select your platform
+## Azure Quantum service and the Quantum Development Kit (QDK)
 
-You can use the Quantum Development Kit (QDK) to develop quantum computing and optimization applications using the Azure Quantum service, or to develop quantum computing applications locally using a variety of environments.
+With the ability to run [Jupyter notebooks on Azure Quantum](xref:microsoft.quantum.how-to.notebooks), you can develop and run quantum programs in the Azure Quantum portal without installing any additional tools.
 
-The QDK consists of:
+However, with the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp), you can customize your environment to develop and run quantum computing applications locally, or develop quantum computing and optimization applications to run on quantum simulators or hardware using the Azure Quantum service.
 
-- The Q# programming language
-- A set of libraries that abstract complex functionality in Q#
-- APIs for Python and .NET languages (C#, F#, and VB.NET) for running quantum programs written in Q#
-- The *azure-quantum* Python package to use optimization solvers on Azure Quantum
-- Tools to facilitate your development
+The QDK provides:
 
-### [Use the Azure Quantum service](#tab/tabid-aq)
+- The Q# programming language and libraries
+- The IQ# kernel for running Q# on Jupyter Notebooks
+- APIs for Python and .NET languages (C#, F#, and VB.NET)
+- Extensions for Visual Studio Code and Visual Studio
+- Ability to submit Qiskit, Cirq, and provider-specific formatted applications to the Azure Quantum service
 
-## Set up the Azure Quantum service
+## Sign up for the Azure subscription
 
-With the Azure Quantum service, you can use the *azure-quantum* Python package to solve optimization problems using solvers from Microsoft and other providers, or use Q# to develop quantum computing applications and run them on quantum hardware from our partner providers. 
+To access remote quantum hardware and utilize all the features in the Azure Quantum service, you will need an Azure subscription. If you don't have an Azure subscription already, create a [free account](https://azure.microsoft.com/free/).
 
-To set up optimization, follow the steps in the [Optimization quickstart](xref:microsoft.quantum.quickstarts.optimization.qio).
+Once you have a subscription, use the following section to configure your preferred development environment. 
 
-To set up quantum computing, follow the steps in the [Quantum computing quickstart](xref:microsoft.quantum.quickstarts.computing).
+## Language and platform options
 
-### [Use the QDK locally](#tab/tabid-local)
+You can develop Q# code in most of your favorite IDEs, as well as integrate Q# with other languages such as Python and .NET (C#, F#).
 
-## Install the QDK and develop quantum applications locally
+| Preferred language | Use case |
+| ----| ---- |
+| [Python](xref:microsoft.quantum.install-qdk.overview.python) | With the `qsharp` Python package and the IQ# kernel, you can call Q# operations and develop with Jupyter Notebooks, Visual Studio, Visual Studio Code, or any standard Python environment. |
+| [Q# standalone or Q# + .NET languages](xref:microsoft.quantum.install-qdk.overview.standalone) | You can develop and run Q# programs with Juptyer Notebooks, Visual Studio, Visual Studio Code, or the command line, or use C# or F# to develop a host program that calls Q# operations. |
 
-Q# programs can run as standalone applications using Visual Studio Code or Visual Studio, through Jupyter Notebooks with the IQ# Jupyter kernel, or paired with a host program written in Python or a .NET language (C#, F#). You can also run Q# programs online using [MyBinder.org](https://mybinder.org/), or [Docker](#use-the-qdk-for-quantum-computing-with-docker).
+## Cloud options
 
-You can use the QDK for quantum computing in three ways:
+You can also run Q# programs online, with no installation involved, using the Azure Quantum portal, Binder, or Docker.
 
-- [Install the QDK for quantum computing locally](#install-options-for-the-qdk)
-- [Use the QDK for quantum computing with Binder](#use-the-qdk-for-quantum-computing-with-binder)
-- [Use a QDK for quantum computing Docker image](#use-the-qdk-for-quantum-computing-with-docker)
+### Use Jupyter notebooks in the Azure Quantum portal
 
-### Install options for the QDK
-
-You can develop Q# code in most of your favorites IDEs, as well as integrate Q# with other languages such as Python and .NET (C#, F#).
-
-<table>
-    <tr>
-        <th width=10%>&nbsp;</th>
-        <th>&nbsp;</th>
-        <th align="center" width=18%><img src="~/media/vs_code.png" alt="VS Code" width="50"/><br><b>VS Code<br>(2019 or later)</b></th>
-        <th align="center" width=18%><img src="~/media/visualstudio-1.png" alt="Visual Studio" width="50"/><br><b>Visual Studio<br>(2019 or later)</b></th>
-        <th align="center" width=18%><img src="~/media/Jupyter_logo.svg.png" alt="jupyter install" width="65"/><br><b>Jupyter Notebooks</b></th>
-        <th align="center" width=18%><img src="~/media/blank.png" alt="blank spacer" width="65"/><br><b>Command line</b></th>
-    </tr>
-    <tr>
-        <th>&nbsp;</th>
-        <td align="left"><b>OS support:</b></td>
-        <td align="center">Windows, macOS, Linux</td>
-        <td align="center">Windows only</td>
-        <td align="center">Windows, macOS, Linux</td>
-        <td align="center">Windows, macOS, Linux</td>
-    </tr>
-    <tr>
-        <td align="right"><img src="~/media/azure-quantum-logo-trans.png" alt="QDK" width="60"/></td>
-        <td align="left"><b>Q# standalone</b></td>
-        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.standalone">Install</a></td>
-        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.standalone">Install</a></td>
-        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.jupyter">Install</a></td>
-        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.standalone">Install</a></td>
-    </tr>
-    <tr>
-        <td align="right"><img src="~/media/python.png" alt="python install" width="50"/></td>
-        <td align="left"><b>Q# and Python</b></td>
-        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.python">Install</a></td>
-        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.python">Install</a></td>
-        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.python">Install</a></td>
-        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.python">Install</a></td>
-    </tr>
-    <tr>
-        <td align="right"><img src="~/media/dotnet-logo.png" alt="dotnet install" width="50"/></td>
-        <td align="left"><b>Q# and .NET (C#, F#)</b></td> 
-        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.cs">Install</a></td>
-        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.cs">Install</a></td>
-        <td align="center">&#10006;</td>
-        <td align="center"><a href="xref:microsoft.quantum.install-qdk.overview.cs">Install</a></td>
-   </tr>
-</table>
+You can create, upload, store, and run Jupyter notebooks directly in the Azure Quantum portal. A gallery of sample Jupyter notebooks is provided to get you started. For more information, see [Run Jupyter notebooks on Azure Quantum](xref:microsoft.quantum.how-to.notebooks). 
 
 ### Use the QDK for quantum computing with Binder
 
-You can also develop Q# code without installing anything locally with these options:
-
-|Resource|Advantages|Limitations|
-|---|---|---|
-|[**Binder**](xref:microsoft.quantum.install-qdk.overview.binder) | Free online notebook experience |No persistence |
+Binder offers a free online Notebook experience to run and share Jupyter Notebooks and Q# console applications online, allowing you to try Q# without installing the QDK. For more information, see [Using Binder online](xref:microsoft.quantum.install-qdk.overview.binder).
 
 ### Use the QDK for quantum computing with Docker
 
@@ -112,5 +64,8 @@ You can download the IQ# Docker image from <https://github.com/microsoft/iqsharp
 
 You can also use Docker with a Visual Studio Code Remote Development Container to quickly define development environments. For more information about VS Code Development Containers, see <https://github.com/microsoft/Quantum/tree/master/.devcontainer>.
 
-The workflows for each of these setups are described and compared in [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
+## Next steps
 
+- [Run Jupyter notebooks on Azure Quantum](xref:microsoft.quantum.how-to.notebooks)
+- [Create and submit a quantum program](xref:microsoft.quantum.quickstarts.computing) to quantum hardware.
+- [Create and submit an optimization problem](xref:microsoft.quantum.quickstarts.optimization.qio) to Azure Quantum. 
