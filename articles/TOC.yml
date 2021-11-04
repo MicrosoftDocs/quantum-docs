@@ -8,8 +8,18 @@
 - name: Get started
   expanded: true
   items:
-  - name: Set up Azure Quantum 
-    href: install-overview-qdk.md
+  - name: Run Azure Quantum notebooks
+    href: how-to-run-notebooks-workspace.md
+  - name: Set up a local development environment
+    items:
+    - name: Configure your local environment
+      href: install-overview-qdk.md
+    - name: Set up a Q# standalone or .NET environment
+      href: install-command-line-qdk.md
+    - name: Set up a Q# + Python environment
+      href: install-python-qdk.md
+    - name: Use a Binder environment
+      href: install-binder-qdk.md
 - name: Quantum computing
   expanded: true
   items:
@@ -19,28 +29,14 @@
       href: overview-understanding-quantum-computing.md
   - name: Quickstarts
     items:
-    - name: Azure Quantum
-      items:
-      - name: Create a quantum-based random number generator with Q#
-        href: quickstart-microsoft-qc.md
-      - name: Submit a circuit with Qiskit
-        href: quickstart-microsoft-qiskit.md
-      - name: Submit a circuit with Cirq
-        href: quickstart-microsoft-cirq.md
-      - name: Submit a circuit in provider-specific format
-        href: quickstart-microsoft-provider-format.md
-    - name: Quantum Development Kit (QDK)
-      items:
-      - name: Q# applications
-        href: install-command-line-qdk.md
-      - name: Q# with Jupyter Notebooks
-        href: install-jupyter-qdk.md
-      - name: Q# with Python
-        href: install-python-qdk.md
-      - name: Q# with .NET
-        href: install-csharp-qdk.md
-      - name: Q# with Binder
-        href: install-binder-qdk.md
+    - name: Create a quantum-based random number generator
+      href: quickstart-microsoft-qc.md
+    - name: Submit a circuit with Qiskit
+      href: quickstart-microsoft-qiskit.md
+    - name: Submit a circuit with Cirq
+      href: quickstart-microsoft-cirq.md
+    - name: Submit a circuit in provider-specific format
+      href: quickstart-microsoft-provider-format.md
   - name: Tutorials
     items:
       - name: Quantum random number generator
@@ -57,6 +53,12 @@
       href: how-to-submit-jobs.md
     - name: Publish a Q# job as an Azure Function
       href: how-to-publish-qsharp-job-as-azurefunction.md
+    - name: Write a Q# standalone program
+      href: how-to-command-line-local.md
+    - name: Write a Q# and Python program
+      href: how-to-python-qdk-local.md
+    - name: Write a Q# and .NET program
+      href: how-to-csharp-qdk-local.md
   - name: Q# user guide
     href: user-guide/toc.yml
   - name: Quantum Computing Concepts
@@ -216,8 +218,6 @@
       href: install-update-qdk.md
     - name: Create an Azure Quantum workspace
       href: how-to-create-workspace.md
-    - name: Run notebooks in a workspace
-      href: how-to-run-notebooks-workspace.md
     - name: Work with jobs
       href: how-to-work-with-jobs.md
     - name: Authenticate using a service principal
