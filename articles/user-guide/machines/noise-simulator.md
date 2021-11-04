@@ -235,7 +235,11 @@ print(DumpPlus.simulate_noise())
 ```
 The visualization of the output is the following:
 
-$$\left(\begin{array}{c|c|c}0 & 1 & 0 \\ \hline 1 & 0 & 0\end{array}\right)$$
+$$\left( \begin{array}{c|c|c}
+0 & 1 & 0\\
+\hline 
+1 & 0 & 0
+\end{array} \right)$$
 
 > [!TIP]
 > If you are running the Python host program from the terminal, you will obtain the HTML metadata from the output of `print(.simulate_noise())`. For easier visualization, Jupyter Notebooks displays HTML  tables within the same notebook.
