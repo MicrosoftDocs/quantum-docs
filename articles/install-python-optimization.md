@@ -27,6 +27,6 @@ There are some processes that you can run on Azure Quantum that use Python witho
 
 ## Next steps
 
-- [Submit a Qiskit circuit](xrerf:microsoft.quantum.quickstarts.computing.qiskit)
-- [Submit a Cirq circuit](xrerf:microsoft.quantum.quickstarts.computing.cirq)
+- [Submit a Qiskit circuit](xref:microsoft.quantum.quickstarts.computing.qiskit)
+- [Submit a Cirq circuit](xref:microsoft.quantum.quickstarts.computing.cirq)
 - [Solve a simple optimization problem](xref:microsoft.quantum.quickstarts.optimization.qio)
