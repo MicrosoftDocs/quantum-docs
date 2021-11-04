@@ -241,7 +241,7 @@ $$
         0 & 1 & 0 \\\\
         \hline 
         1 & 0 & 0
-    \end{matriz}\right) 
+    \end{matrix}\right) 
 \end{align}
 $$
 
@@ -325,11 +325,16 @@ For example, you can select the visualization without destabilizers using `matri
 ```python
 qsharp.config['experimental.simulators.stabilizerStateStyle'] = 'matrixWithoutDestabilizers'
 ```
-$$\left(\begin{array}{cccc|cccc|c}1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
-\end{array}\right)$$
+$$
+\begin{align}
+    \left(\begin{array}{cccc|cccc|c}
+        1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+    \end{array}\right)
+\end{align}
+$$
 
 To select the representation of the stabilizer group, use `denseGroupPresentation`:
 
