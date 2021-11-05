@@ -13,7 +13,7 @@ uid: microsoft.quantum.install-qdk.overview.python-only
 
 # Use Python without Q#
 
-There are some processes that you can run on Azure Quantum that use Python without explicitly calling any Q# code, such as submitting Qiskit or Cirq circuits, or submitting optimization problems. To use these features, you must install the `azure-quantum` Python package.
+There are some processes that you can run on Azure Quantum that use Python without explicitly calling any Q# code, such as submitting [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) or [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq) circuits, or submitting [optimization problems](xref:microsoft.quantum.submit-jobs-optimization). To use these features, you must install the `azure-quantum` Python package.
 
 ## Install the `azure-quantum` Python package
 
