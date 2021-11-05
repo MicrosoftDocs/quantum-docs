@@ -9,68 +9,13 @@ ms.topic: include
 
 ## Prerequisites
 
-- To complete this tutorial you need an Azure subscription. If you don't have
-  an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
-- In this guide we'll use [Visual Studio Code](https://code.visualstudio.com/download) which you can download and use for free.
+To complete this tutorial, you need
 
-## Install the Quantum Development Kit and other resources
-
-Before you can write a Q# program and run it with one of the quantum computing providers, you'll need to install few resources:
-
-1. Install the [Microsoft QDK for VS Code extension](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
-1. Install the [Azure CLI](/cli/azure/install-azure-cli).
-1. Install the `quantum` CLI extension for the Azure CLI.
-
-   ```azurecli
-   az extension add -n quantum
-   ```
-
-## Create an Azure Quantum workspace
-
-You use the Azure Quantum service by adding an Azure Quantum workspace resource to your Azure subscription in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
-
-To open the Azure Portal, go to <https://portal.azure.com> and then follow these steps:
-
-1. Click **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
-
-   ![Tile for the Azure Quantum (preview)
-   service](../media/azure-quantum-preview-search.png)
-
-1. Click **Azure Quantum (preview)** and then click  **Create**. This opens a form to create a workspace.
-
-   ![Create resource for the Azure Quantum (preview)
-   service](../media/azure-quantum-preview-create.png)
-
-1. Fill out the details of your workspace:
-   - **Subscription:** The subscription that you want to associate with this
-     workspace. 
-   - **Resource group:** The resource group that you want to assign this workspace to.
-   - **Name:** The name of your workspace.
-   - **Region:** The region for the workspace.
-   - **Storage Account**: The Azure storage account to store your jobs and results. If you don't have an existing storage account, click **Create a new storage account** and complete the necessary fields. For this preview, we recommend using the default values.
-
-   ![Properties for the Azure Quantum workspace](../media/azure-quantum-preview-properties.png)
-
-
-   > [!NOTE]
-   > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](/learn/modules/control-and-organize-with-azure-resource-manager/).
-
-1. After completing the information, click the **Providers** tab to add providers to your workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
-
-   ![Providers for Azure Quantum](../media/azure-quantum-preview-providers-honeywell.png)
-
-   > [!NOTE]
-   > By default, the Azure Quantum service adds the Microsoft QIO provider to every workspace.
-
-1. Add at least the Honeywell provider, then click **Review + create**.
-
-1. Review the settings and approve the *Terms and Conditions of Use* of
-   the selected providers. If everything is correct, click **Create** to create your workspace.
-
-   ![Review and create the workspace](../media/azure-quantum-preview-terms-honeywell.png)
-
-> [!NOTE]
-> Pricing for Azure Quantum varies by provider. Please consult the information in the **Providers** tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information.
+- An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
+- [Visual Studio Code](https://code.visualstudio.com/download), which you can download and use for free.
+- The [Microsoft QDK for VS Code extension](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
+- The [Azure CLI and the quantum CLI extension](xref:microsoft.quantum.install-qdk.overview.standalone#azure-cli-net-core-sdk-31-not-required).
+- An Azure Quantum workspace with the **Honeywell** provider enabled. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Create a Q# project in Visual Studio Code
 
@@ -118,7 +63,7 @@ namespace QuantumRNG {
 > [!NOTE] 
 > If you would like to learn more about this program code, see [Create your first Q# program by using the Quantum Development Kit](/learn/modules/qsharp-create-first-quantum-development-kit/).
 
-## Prepare the AZ CLI
+## Prepare the Azure CLI
 
 Next, we'll prepare your environment to run the program against the workspace you created.
 
@@ -127,13 +72,13 @@ Next, we'll prepare your environment to run the program against the workspace yo
    ```azurecli
    az login
    ```
-   
+
 1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in Azure Portal.
 
    ```azurecli
    az account set -s <Your subscription ID>
    ```
-   
+
 1. Use `quantum workspace set` to select the workspace you created above
    as the default Workspace. Note that you also need to specify the resource
    group and the location you created it in:
