@@ -181,7 +181,7 @@ The `Qrng` program can now generate random numbers.
 
 ## Run the random number generator program
 
-Using your final version of the Q# code:
+Using your final version of the Q# code,
 
 ```qsharp
 namespace Qrng {
