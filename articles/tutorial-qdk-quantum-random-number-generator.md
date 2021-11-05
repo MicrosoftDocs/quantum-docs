@@ -25,10 +25,10 @@ In this tutorial, you'll write a basic quantum program in Q# that leverages the 
 
 ## In this tutorial, you'll learn how to
 
-> - Create a Q# project.
-> - Prepare your development environment for writing quantum programs in Q#.
-> - Understand how Q# programs are structured.
-> - Work with qubits and superposition to build a quantum random number generator.
+- Create a Q# project.
+- Prepare your development environment for writing quantum programs in Q#.
+- Understand how Q# programs are structured.
+- Work with qubits and superposition to build a quantum random number generator.
 
 
 ## Creating a Q# project
@@ -60,7 +60,7 @@ This generates two files: the project file, *Qrng.csproj*, and a Q# application 
 
 ## Write a Q\# operation
 
-Now, replace the contents of the Program.qs file with the following code:
+Now, replace the contents of the *Program.qs* file with the following code:
 
 ```qsharp
 namespace Qrng {
@@ -218,9 +218,9 @@ namespace Qrng {
 
 select the tab for your preferred language and environment and follow the instructions for running or calling your Q# program. 
 
-### [Q# standalone application with Visual Studio or Visual Studio Code](#tab/tabid-qsharp)
+### [Standalone Q# application with Visual Studio or Visual Studio Code](#tab/tabid-qsharp)
 
-A standalone Q# program requires an `EntryPoint` so the Q# compiler knows where to start the program. To create the full Q# application, add the following entry point to your Q# program, *Program.qs*:
+A standalone Q# application requires an `EntryPoint` so the Q# compiler knows where to start the program. To create the full Q# application, add the following entry point to your Q# program, *Program.qs*:
 
 ```qsharp
 namespace Qrng {
