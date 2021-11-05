@@ -35,7 +35,7 @@ Learn how to use Azure Quantum to create a simple quantum-based random number ge
 
 This quickstart demonstrated how to get started running Q# programs against different quantum computing simulators and QPUs. For more information on the available providers, see the [Quantum computing provider overview](xref:microsoft.quantum.reference.qc-target-list) documentation.
 
-We recommend you continue your journey by learning more about the [different types of targets in Azure Quantum](xref:microsoft.quantum.target-profiles), which will dictate which Q# programs you may run against a given provider. You might also be interested in learning [how to submit Q# jobs](xref:microsoft.quantum.submit-jobs) with Python, Jupyter Notebooks, or the Azure CLI.
+We recommend you continue your journey by learning more about the [different types of targets in Azure Quantum](xref:microsoft.quantum.target-profiles), which dictate the types of Q# programs you can run against a given provider. You might also be interested in learning [how to submit Q# jobs](xref:microsoft.quantum.submit-jobs) with Python, Jupyter Notebooks, or the Azure CLI.
 
 Looking for more samples to run? Check out the [samples directory](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum) for Azure Quantum.
 
