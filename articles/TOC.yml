@@ -18,6 +18,8 @@
       href: install-command-line-qdk.md
     - name: Set up a Q# + Python environment
       href: install-python-qdk.md
+    - name: Use Python without Q#
+      href: install-python-optimization.md
     - name: Use a Binder environment
       href: install-binder-qdk.md
 - name: Quantum computing
