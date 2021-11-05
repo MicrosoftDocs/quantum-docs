@@ -91,13 +91,13 @@ Let's take a look at this code.
 - You define the `SampleQuantumRandomNumberGenerator` operation, which takes no input and produces a value of type [`Result`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types). The `Result` type represents the result of a measurement and can have two possible values: `Zero` and `One`.  
 - [Qubits](xref:microsoft.quantum.glossary-qdk#qubit) are allocated through the `use` keyword. 
 - The [`H`](xref:Microsoft.Quantum.Intrinsic.H) ([Hadamard](xref:microsoft.quantum.glossary-qdk#hadamard)) operation places the qubit in [superposition](xref:microsoft.quantum.glossary-qdk#superposition). 
-- The [`M`](xref:Microsoft.Quantum.Measurement.M) is an operation measures the qubit and returns the measured value ( `Zero` or `One`). 
+- The [`M`](xref:Microsoft.Quantum.Intrinsic.M) is an operation measures the qubit and returns the measured value ( `Zero` or `One`). 
 
 As discussed in the [Understanding quantum computing](xref:microsoft.quantum.overview.understanding) article, a qubit is a unit of quantum information that can be in [superposition](xref:microsoft.quantum.glossary-qdk#superposition). When measured, a qubit can only be either 0 or 1. However, before measurement, the state of the qubit represents the *probability* of reading either a 0 or a 1 with a measurement. This probabilistic state is known as superposition, and you can use this probability to generate random numbers.
 
 The user-defined `SampleQuantumRandomNumberGenerator` operation introduces the [`Qubit`](xref:microsoft.quantum.qsharp.quantumdatatypes#qubits) datatype, which is native to Q#. You can only allocate a `Qubit` with a `use` statement. When it gets allocated, a qubit is always in the `Zero` state. 
 
-By putting the `Qubit` in superposition with the [`H`](xref:Microsoft.Quantum.Intrinsic.H) operation and measuring it with the [`M`](xref:Microsoft.Quantum.Measurement.M) operation, the result will be a different value each time the code is invoked.
+By putting the `Qubit` in superposition with the [`H`](xref:Microsoft.Quantum.Intrinsic.H) operation and measuring it with the [`M`](xref:Microsoft.Quantum.Intrinsic.M) operation, the result will be a different value each time the code is invoked.
 
 ### Visualizing the code with the Bloch sphere
 
