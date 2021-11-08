@@ -7,13 +7,15 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Get started with Jupyter notebooks
+title: Get started with a Jupyter and Qiskit notebook
 uid: microsoft.quantum.get-started.notebooks
 ---
 
-# Get started with Jupyter notebooks in Azure Quantum
+# Get started with a Jupyter notebook and Qiskit in Azure Quantum
 
-Learn how to run Q# or Python code in a Jupyter notebook in an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). A Jupyter notebook is a document that contains both rich text and code and can run in your browser.
+Learn how to run Python code that use the Qiskit library in a Jupyter notebook with [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview). A [Jupyter](https://jupyter.org/) notebook is a document that contains both rich text and code and can run in your browser, and can run Q# and Python code with Azure Quantum.
+
+In this article, you will run a sample notebook that sends a basic quantum circuit expressed using the Qiskit library to an IonQ target via the Azure Quantum service. Qiskit is an open-source framework for working with noisy quantum computers at the level of pulses, circuits, and algorithms. For more information about Quiskit, see the [Qiskit documentation](https://qiskit.org/documentation/intro_tutorial1.html).
 
 For more information about Jupyter notebooks, see [Run Jupyter notebooks in an Azure Quantum workspace](xref:microsoft.quantum.how-to.notebooks)
 
@@ -24,14 +26,14 @@ Before you begin, you need the following prerequisites to use Jupyter notebooks 
 - An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
 - An Azure Quantum workspace. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
-## Get a sample notebook
+## Get the sample notebook
 
-To get started, you can use use a sample from the notebook gallery.
+To get started, copy the sample notebook from the notebook gallery.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Jupyter Notebooks**.
 1. Select **Notebook Gallery**.
-1. Select the sample you want to use, and select **Copy to My Notebooks**.
+1. Select the **Qiskit and IonQ** notebook , and select **Copy to My Notebooks**.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-gallery.png" alt-text="Notebook gallery in Azure Quantum.":::
 
@@ -39,14 +41,16 @@ The sample notebook can be found under **My Notebooks** and you can now run the 
 
 ## Run notebook
 
-To run Q# or Python in a Jupyter notebook, follow these steps.
+To run the Jupyter notebook, follow these steps.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Jupyter Notebooks**.
-1. Select your notebook in **My Notebooks**.
+1. Select the **qiskit-ionq** notebook in **My Notebooks**.
 1. Select the cell you want to run and select the **run icon** to execute the code in the cell, or select **Run all** to run all cells in the notebook.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/run-notebook.png" alt-text="Run a Jupyter notebook.":::
+
+    The notebook first imports the required packages for the sample, then connects to the Azure Quantum service, and then runs a simple Qiskit circuit.
 
 ## Next steps
 

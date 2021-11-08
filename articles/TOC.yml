@@ -10,8 +10,8 @@
   items:
   - name: Create an Azure Quantum workspace
     href: how-to-create-workspace.md
-  - name: Get started with Jupyter notebooks
-    href: get-started-jupyter-notebooks.md
+  - name: Get started with a Jupyter notebook
+    href: get-started-jupyter-notebook.md
   - name: Set up a local development environment
     items:
     - name: Configure your local environment
