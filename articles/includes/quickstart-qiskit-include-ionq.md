@@ -1,7 +1,7 @@
 ---
 author: guenp
 ms.author:  v-guenp
-ms.date: 09/22/2021
+ms.date: 11/08/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
