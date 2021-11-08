@@ -8,8 +8,8 @@
 - name: Get started
   expanded: true
   items:
-  - name: Run Azure Quantum notebooks
-    href: how-to-run-notebooks-workspace.md
+  - name: Get started with Jupyter notebooks
+    href: get-started-jupyter-notebooks.md
   - name: Set up a local development environment
     items:
     - name: Configure your local environment
@@ -216,6 +216,8 @@
         href: optimization-async-io.md
 - name: Manage Azure Quantum
   items:
+    - name: Run Azure Quantum notebooks
+      href: how-to-run-notebooks-workspace.md
     - name: Update the QDK
       href: install-update-qdk.md
     - name: Create an Azure Quantum workspace
