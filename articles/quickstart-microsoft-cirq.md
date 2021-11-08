@@ -25,14 +25,14 @@ Learn how to use the `azure-quantum` Python package to submit Cirq quantum circu
     > [!TIP]
     > If you are using [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads), you can optionally create a new environment by downloading [environment.yml](https://github.com/microsoft/qdk-python/blob/main/azure-quantum/environment.yml) and running the following:
     >
-        >```shell
-        >conda env create -f environment.yml
-        >```
+    >```shell
+    >conda env create -f environment.yml
+    >```
     >
     > This creates a new conda environment that you can activate with the following:
     >
-        >```shell
-        >conda activate azurequantum
+    >```shell
+    >conda activate azurequantum
 
 - Start your favorite code editor or interactive Python tool, such as [VS Code](https://code.visualstudio.com/docs/python/jupyter-support-py), [Jupyter](https://jupyter.readthedocs.io/en/latest/content-quickstart.html) or [iPython](https://ipython.readthedocs.io/en/stable/interactive/tutorial.html).
 
