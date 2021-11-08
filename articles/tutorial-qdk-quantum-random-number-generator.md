@@ -13,7 +13,14 @@ uid: microsoft.quantum.tutorial-qdk.random-number
 
 # Tutorial: Implement a quantum random number generator in Q\#
 
-In this tutorial, you'll write a basic quantum program in Q# that leverages the nature of quantum mechanics to produce a random number.
+Learn to write a basic quantum program in Q# that leverages the nature of quantum mechanics to produce a random number.
+
+In this tutorial, you'll learn how to
+
+- Create a Q# project.
+- Prepare your development environment for writing quantum programs in Q#.
+- Understand how Q# programs are structured.
+- Work with qubits and superposition to build a quantum random number generator.
 
 ## Prerequisites
 
@@ -23,19 +30,11 @@ In this tutorial, you'll write a basic quantum program in Q# that leverages the 
     - Q# and C# ([Set up a Q# and .NET environment](xref:microsoft.quantum.install-qdk.overview.standalone#q-and-other-ides))
 - If you already have the QDK installed, make sure you have [updated the QDK](xref:microsoft.quantum.update-qdk) (and the [Python qsharp package](xref:microsoft.quantum.update-qdk#update-the-qsharp-python-package), if applicable) to the latest version.
 
-## In this tutorial, you'll learn how to
-
-- Create a Q# project.
-- Prepare your development environment for writing quantum programs in Q#.
-- Understand how Q# programs are structured.
-- Work with qubits and superposition to build a quantum random number generator.
-
-
 ## Creating a Q# project
 
 The first thing you need to do is to create a new Q# project. This tutorial uses the environment based on [Q# applications with VS Code](xref:microsoft.quantum.install-qdk.overview.standalone#q-and-other-ides), but you can use your preferred IDE. 
 
-To create a new project in VS Code: 
+To create a new project in Visual Studio Code: 
 
 1. Click **View** -> **Command Palette** and select **Q#: Create New Project**.
 2. Click **Standalone console application**.
@@ -70,7 +69,6 @@ namespace Qrng {
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Intrinsic;
     
-    @EntryPoint()
     operation SampleQuantumRandomNumberGenerator() : Result {
         // Allocate a qubit        
         use q = Qubit();  
@@ -83,10 +81,9 @@ namespace Qrng {
 }
 ```
 
-Let's take a look at this code. 
+Now take a look at new code. 
 
 - First, you `open` the necessary namespaces from the Q# libraries for the functions and operations needed. 
-- `@EntryPoint()` tells the Q# compiler to begin executing the program here.
 - You define the `SampleQuantumRandomNumberGenerator` operation, which takes no input and produces a value of type [`Result`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types). The `Result` type represents the result of a measurement and can have two possible values: `Zero` or `One`.  
 - Allocate a single [qubit](xref:microsoft.quantum.glossary-qdk#qubit) with the `use` keyword. 
 - Use the [`H`](xref:Microsoft.Quantum.Intrinsic.H) ([Hadamard](xref:microsoft.quantum.glossary-qdk#hadamard)) operation to place the qubit in [superposition](xref:microsoft.quantum.glossary-qdk#superposition). 
@@ -169,7 +166,7 @@ namespace Qrng {
 }
 ```
 
-Let's take a moment to review the new code.
+Now take a moment to review the new operation.
 
 - In order to calculate the number of bits needed to express integers up to `max`, use the [`BitSizeI`](xref:Microsoft.Quantum.Math.BitSizeI) function.
 - The `SampleRandomNumberInRange` operation uses a [`repeat`](xref:Microsoft.Quantum.Canon.Repeat) loop to generate random numbers until it generates one that's equal to or less than `max`.
