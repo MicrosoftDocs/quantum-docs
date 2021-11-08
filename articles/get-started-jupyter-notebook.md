@@ -17,7 +17,7 @@ Learn how to run Python code that use the Qiskit library in a Jupyter notebook w
 
 In this article, you will run a sample notebook that sends a basic quantum circuit expressed using the Qiskit library to an IonQ target via the Azure Quantum service. Qiskit is an open-source framework for working with noisy quantum computers at the level of pulses, circuits, and algorithms. For more information about Quiskit, see the [Qiskit documentation](https://qiskit.org/documentation/intro_tutorial1.html).
 
-For more information about Jupyter notebooks, see [Run Jupyter notebooks in an Azure Quantum workspace](xref:microsoft.quantum.how-to.notebooks)
+For more information about Jupyter notebooks, see [Run Jupyter notebooks in an Azure Quantum workspace](xref:microsoft.quantum.how-to.notebooks).
 
 ## Prerequisites
 
