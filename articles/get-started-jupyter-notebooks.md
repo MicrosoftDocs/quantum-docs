@@ -7,11 +7,11 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Get started with Jupyter notebooks in a workspace
+title: Get started with Jupyter notebooks
 uid: microsoft.quantum.get-started.notebooks
 ---
 
-# Get started with Jupyter notebooks in an Azure Quantum workspace
+# Get started with Jupyter notebooks in Azure Quantum
 
 Learn how to run Q# or Python code in a Jupyter notebook in an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). A Jupyter notebook is a document that contains both rich text and code and can run in your browser.
 
