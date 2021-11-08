@@ -26,7 +26,7 @@ Before you begin, you need the following prerequisites to use Jupyter notebooks 
 - An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
 - An Azure Quantum workspace. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
-## Get the sample notebook
+## Get sample notebook
 
 To get started, copy the sample notebook from the notebook gallery.
 
