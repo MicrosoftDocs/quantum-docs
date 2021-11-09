@@ -54,7 +54,7 @@ To create a service principal, assign access, and generate a credential:
 >
 > If you have permissions only at Resource Group or Workspace level, you can try to create the service principal without subscription level assignment using:
 >
-> `az ad sp create-for-rbac --role Contributor --skip-assignment true`
+> `az ad sp create-for-rbac --skip-assignment true`
 >
 > Then, based on the output for the Service Principal name, you can go directly to the Resource Group or Azure Quantum Workspace in the portal to create a role assignment for that Service Principal, and assign the _contributor_ role. 
 
