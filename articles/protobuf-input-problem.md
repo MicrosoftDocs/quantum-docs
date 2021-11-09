@@ -18,8 +18,6 @@ This feature is only for encoding input problems which maybe significantly large
 Note that no change is made to the format itself but rather only its encoding. The format matches the json format exactly and supports version "1.1".  
 The user can specify the problem type, the terms, initial configuration and problem metadata (eg: problem name) exactly as is supported currently in json.
 
-This feature is available for Microsoft's **Population Annealing** and **Substochastic Monte Carlo** solvers only.
-
 To submit a problem with protobuf serialization in the problem object definition specify the newly added optional parameter **content_type** to **Content.protobuf**.
 The default is assumed to **ContentType.json**.
 
@@ -37,3 +35,20 @@ The parameter **problem_as_json** has been renamed to **input_problem**.
 deserialized_problem = Problem.deserialize(input_problem = your_problem)
 
 ```
+
+For more information on cost functions and how terms relate to a problem definition, see the following topics:
+
+- [Cost functions](xref:microsoft.quantum.optimization.concepts.cost-function)
+- [Term](xref:microsoft.quantum.optimization.term)
+- [Problem](xref:microsoft.quantum.optimization.problem)
+
+## Availability
+
+Protobuf serialization is a new "Early Access" feature in the *azure-quantum* Python package, and is currently supported by two Microsoft QIO solvers:
+
+- [Substochastic Monte Carlo](xref:microsoft.quantum.reference.qio-target-list#substochastic-monte-carlo)
+- [Population Annealing](xref:microsoft.quantum.reference.qio-target-list#population-annealing)
+
+If you submit problems as protobuf to a solver that doesn't support them, a client error will appear in the SDK and the submission will fail.
+
+If you discover any bugs or issues while working with protobuf, please reach out to [Azure Support](https://support.microsoft.com/topic/contact-microsoft-azure-support-2315e669-8b1f-493b-5fb1-d88a8736ffe4).
