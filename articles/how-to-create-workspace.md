@@ -22,6 +22,8 @@ A workspace is needed to [get started with Jupyter notebooks in Azure Quantum](x
 
 ## Prerequisites
 
+You need the following prerequisites to create a workspace.
+
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 - You must be an **Owner** of the resource group you use, to create a new storage account. For more information about how resource groups work in Azure, see [Manage Azure Resource Manager resource groups by using the Azure portal](/azure/azure-resource-manager/management/manage-resource-groups-portal).
