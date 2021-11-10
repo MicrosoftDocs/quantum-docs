@@ -23,6 +23,7 @@ A workspace is needed to [get started with Jupyter notebooks in Azure Quantum](x
 ## Prerequisites
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- You must be an **Owner** of the resource group you use, to create a new storage account. For more information about how resource groups work in Azure, see [Manage Azure Resource Manager resource groups by using the Azure portal](/azure/azure-resource-manager/management/manage-resource-groups-portal).
 
 ## Create the workspace
 
@@ -46,10 +47,10 @@ A workspace is needed to [get started with Jupyter notebooks in Azure Quantum](x
    - **Region:** The region for the workspace.
    - **Storage Account**: The Azure storage account to store your jobs and results. If you don't have an existing storage account, select **Create a new storage account** and complete the necessary fields. For this preview, we recommend using the default values.
 
-   ![Properties for the Azure Quantum workspace](./media/azure-quantum-preview-properties.png)
+   > [!IMPORTANT]
+   > You must be an **Owner** of the resource group you use, to create a new storage account. For more information about how resource groups work in Azure, see [Manage Azure Resource Manager resource groups by using the Azure portal](/azure/azure-resource-manager/management/manage-resource-groups-portal).
 
-   > [!NOTE]
-   > You must be an Owner of the selected resource group to create a new storage account. For more information about how resource groups work in Azure, see [Control and organize Azure resources with Azure Resource Manager](/learn/modules/control-and-organize-with-azure-resource-manager/).
+   ![Properties for the Azure Quantum workspace](./media/azure-quantum-preview-properties.png)
 
 1. After completing the information, select the **Providers** tab to add providers to your workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
 
