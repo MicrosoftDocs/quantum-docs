@@ -55,14 +55,19 @@
       href: how-to-submit-jobs.md
     - name: Publish a Q# job as an Azure Function
       href: how-to-publish-qsharp-job-as-azurefunction.md
+  - name: Q# and the Quantum Development Kit
+    expanded: true
+    items:
+    - name: What are Q# and the Quantum Development Kit
+      href: overview-what-is-qsharp-and-qdk.md
+    - name: The Q# user guide
+      href: user-guide/toc.yml
     - name: Write a Q# standalone program
       href: how-to-command-line-local.md
     - name: Write a Q# and Python program
       href: how-to-python-qdk-local.md
     - name: Write a Q# and .NET program
       href: how-to-csharp-qdk-local.md
-  - name: Q# user guide
-    href: user-guide/toc.yml
   - name: Quantum Computing Concepts
     items:
       - name: "Quantum computing history & background"
