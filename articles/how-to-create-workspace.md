@@ -30,6 +30,8 @@ You need the following prerequisites to create a workspace.
 
 ## Create the workspace
 
+To create an Azure Quantum workspace, follow these steps.
+
 1. Sign in to the [Azure portal](https://portal.azure.com) by using the credentials for your Azure subscription.
 
 1. Select **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
