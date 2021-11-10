@@ -86,7 +86,7 @@ Now take a look at new code.
 - First, you `open` the necessary namespaces from the Q# libraries for the functions and operations needed. 
 - You define the `SampleQuantumRandomNumberGenerator` operation, which takes no input and produces a value of type [`Result`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types). The `Result` type represents the result of a measurement and can have two possible values: `Zero` or `One`.  
 - Allocate a single [qubit](xref:microsoft.quantum.glossary-qdk#qubit) with the `use` keyword. 
-- Use the [`H`](xref:Microsoft.Quantum.Intrinsic.H) ([Hadamard](xref:microsoft.quantum.glossary-qdk#hadamard)) operation to place the qubit in [superposition](xref:microsoft.quantum.glossary-qdk#superposition). 
+- Use the [`H`](xref:Microsoft.Quantum.Intrinsic.H) ([Hadamard](xref:microsoft.quantum.glossary-qdk#hadamard)) operation to place the qubit in an equal [superposition](xref:microsoft.quantum.glossary-qdk#superposition). 
 - Use the [`M`](xref:Microsoft.Quantum.Intrinsic.M) operation to measure the qubit and return the measured value (`Zero` or `One`). 
 
 As discussed in the [Understanding quantum computing](xref:microsoft.quantum.overview.understanding) article, a qubit is a unit of quantum information that can be in [superposition](xref:microsoft.quantum.glossary-qdk#superposition). When measured, a qubit can only be either in the **0** state or in the **1** state. However, before measurement, the state of the qubit represents the *probability* of reading either a **0** or a **1** with a measurement. In this example, before the measurement the qubit is in an equal superposition, that is there is a probability of 50% of reading  **0** and 50% of reading **1**.  You can use this probability to generate random numbers.
@@ -103,7 +103,7 @@ In the [Bloch sphere](xref:microsoft.quantum.glossary-qdk#bloch-sphere), the nor
 
 You can use this representation to visualize what the code is doing:
 
-* First, start with a qubit initialized in the state **0** and apply an [`H`](xref:Microsoft.Quantum.Intrinsic.H) operation to create a superposition in which the probabilities for **0** and **1** are the same.
+* First, start with a qubit initialized in the state **0** and apply an [`H`](xref:Microsoft.Quantum.Intrinsic.H) operation to create an equal superposition in which the probabilities for **0** and **1** are the same.
 
 <img src="~/media/qrng-H.png" width="450" alt="Preparing a qubit in superposition">
 
@@ -111,7 +111,7 @@ You can use this representation to visualize what the code is doing:
 
 <img src="~/media/qrng-meas.png" width="450" alt="Measuring a qubit and saving the output">
 
-Since the outcome of the measurement is random, you have obtained a random bit. You can call this operation several times to create integers. For example, if you call the operation three times to obtain three random bits, you can build random 3-bit numbers (that is, a random number between 0 and 7).
+Since the outcome of the measurement is random and the probabilities of measuring **0** and **1** are the same, you have obtained a completely random bit. You can call this operation several times to create integers. For example, if you call the operation three times to obtain three random bits, you can build random 3-bit numbers (that is, a random number between 0 and 7).
 
 ## Create a complete random number generator
 
