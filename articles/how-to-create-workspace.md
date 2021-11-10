@@ -17,7 +17,7 @@ Learn how to create an [Azure Quantum](xref:microsoft.quantum.azure-quantum-over
 
 A workspace is needed to [get started with Jupyter notebooks in Azure Quantum](xref:microsoft.quantum.get-started.notebooks).
 
-> [!NOTE]
+> [!TIP]
 > You can also create an Azure Quantum workspace using the Azure command-line interface (CLI). For more information, see [Manage quantum workspaces with the Azure CLI](xref:microsoft.quantum.workspaces-cli).
 
 ## Prerequisites
