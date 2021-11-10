@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs or solve optimization problems in the cloud.
 ms.author: v-sonialopez
-ms.date: 10/21/2021
+ms.date: 11/10/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
@@ -158,10 +158,10 @@ For optimization solutions, these are the available providers you can choose fro
 
 For more information, see the full [Optimization target list](xref:microsoft.quantum.reference.qio-target-list).
 
-
 ## Next steps
 
 Start using Azure Quantum:
 
-- [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview)
-- [Q# user guide](xref:microsoft.quantum.user-guide-qdk.overview)
+- [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace)
+- [Get started with a Jupyter notebook and Qiskit in Azure Quantum](xref:microsoft.quantum.get-started.notebooks)
+- [Set up a local development environment for Azure Quantum](xref:microsoft.quantum.install-qdk.overview)

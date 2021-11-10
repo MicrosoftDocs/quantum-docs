@@ -13,7 +13,7 @@ uid: microsoft.quantum.how-to.notebooks
 
 # Run Jupyter notebooks in an Azure Quantum workspace
 
-Learn how to run Q# or Python code in a Jupyter notebook in an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+Learn how to run Q# or Python code in a Jupyter notebook in an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). A Jupyter notebook is a document that contains both rich text and code and can run in your browser.
 
 ## Prerequisites
 

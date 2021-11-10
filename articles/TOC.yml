@@ -8,8 +8,10 @@
 - name: Get started
   expanded: true
   items:
-  - name: Run Azure Quantum notebooks
-    href: how-to-run-notebooks-workspace.md
+  - name: Create an Azure Quantum workspace
+    href: how-to-create-workspace.md
+  - name: Get started with a Jupyter notebook
+    href: get-started-jupyter-notebook.md
   - name: Set up a local development environment
     items:
     - name: Configure your local environment
@@ -55,14 +57,19 @@
       href: how-to-submit-jobs.md
     - name: Publish a Q# job as an Azure Function
       href: how-to-publish-qsharp-job-as-azurefunction.md
+  - name: Q# and the Quantum Development Kit
+    expanded: true
+    items:
+    - name: What are Q# and the Quantum Development Kit
+      href: overview-what-is-qsharp-and-qdk.md
+    - name: The Q# user guide
+      href: user-guide/toc.yml
     - name: Write a Q# standalone program
       href: how-to-command-line-local.md
     - name: Write a Q# and Python program
       href: how-to-python-qdk-local.md
     - name: Write a Q# and .NET program
       href: how-to-csharp-qdk-local.md
-  - name: Q# user guide
-    href: user-guide/toc.yml
   - name: Quantum Computing Concepts
     items:
       - name: "Quantum computing history & background"
@@ -216,10 +223,10 @@
         href: optimization-async-io.md
 - name: Manage Azure Quantum
   items:
+    - name: Run Azure Quantum notebooks
+      href: how-to-run-notebooks-workspace.md
     - name: Update the QDK
       href: install-update-qdk.md
-    - name: Create an Azure Quantum workspace
-      href: how-to-create-workspace.md
     - name: Work with jobs
       href: how-to-work-with-jobs.md
     - name: Authenticate using a service principal
