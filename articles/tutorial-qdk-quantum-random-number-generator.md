@@ -42,20 +42,7 @@ To create a new project in Visual Studio Code:
 4. When the project is successfully created, click **Open new project...** in the
    lower right.
 
-This generates two files: the project file, *Qrng.csproj*, and a Q# application template, *Program.qs*, that you will use to write your application. The default content of *Program.qs* is a Hello World operation:
-
-```qsharp
-   namespace Qrng {
-
-      open Microsoft.Quantum.Canon;
-      open Microsoft.Quantum.Intrinsic;
-      
-      @EntryPoint()
-      operation HelloQ() : Unit {
-          Message("Hello quantum world!");
-      }
-   }
-```
+This generates two files: the project file, *Qrng.csproj*, and a Q# application template, *Program.qs*, that you will use to write your application.
 
 ## Write a Q\# operation
 
@@ -81,7 +68,7 @@ namespace Qrng {
 }
 ```
 
-Now take a look at new code. 
+Now take a look at new code.
 
 - First, you `open` the necessary namespaces from the Q# libraries for the functions and operations needed. 
 - You define the `SampleQuantumRandomNumberGenerator` operation, which takes no input and produces a value of type [`Result`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types). The `Result` type represents the result of a measurement and can have two possible values: `Zero` or `One`.  
