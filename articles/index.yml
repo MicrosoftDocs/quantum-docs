@@ -9,9 +9,9 @@ metadata:
   ms.service: azure-quantum
   ms.topic: landing-page
   ms.collection: collection
-  author: bradben
-  ms.author: v-benbra
-  ms.date: 09/27/2021
+  author: dphansen
+  ms.author: davidph
+  ms.date: 11/10/2021
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -28,7 +28,11 @@ landingContent:
             url: overview-azure-quantum.md
       - linkListType: get-started
         links:
-          - text: Set up Azure Quantum
+          - text: Create an Azure Quantum workspace
+            url: how-to-create-workspace.md
+          - text: Get started with a Jupyter notebook
+            url: get-started-jupyter-notebook.md
+          - text: Set up a local development environment
             url: install-overview-qdk.md
       - linkListType: learn
         links:
