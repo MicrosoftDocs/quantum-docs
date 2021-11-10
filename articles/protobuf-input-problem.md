@@ -12,7 +12,7 @@ uid: microsoft.quantum.optimization.protobuf
 
 # Input problem serialized to protobuf binary
 
-Azure Quantum now provides support for submitting optimization problems in protobuf in place of json. This is an optional feature.
+Azure Quantum now provides support for submitting optimization problems in protobuf in place of json. This is an optional feature that is limited to a subset of optimization solvers in the Microsoft QIO provider.
 JSON will continue to be supported at this time.
 This feature is only for encoding input problems which maybe significantly large in size and performance can benefit from a binary encoded data format.
 Note that no change is made to the format itself but rather only its encoding. The format matches the json format exactly and supports version "1.1".  
