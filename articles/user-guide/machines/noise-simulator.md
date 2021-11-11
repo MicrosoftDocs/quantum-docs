@@ -6,12 +6,12 @@ ms.date: 10/05/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 title: Noise quantum simulator - Quantum Development Kit
 uid: microsoft.quantum.machines.overview.noise-simulator
 ---
 
-# Quantum Development Kit (QDK) preview simulator
+# Quantum Development Kit (QDK) noise simulator
 
 Quantum systems that are very well isolated from their environments such that no other system interacts with the qubits are called *closed quantum systems*. By contrast, a device that is subject to some amount of  interaction, or *noise*, from its environment is an *open quantum system*. 
 
@@ -235,7 +235,15 @@ print(DumpPlus.simulate_noise())
 ```
 The visualization of the output is the following:
 
-$$\left(\begin{array}{c|c|c}0 & 1 & 0\\\hline 1 & 0 & 0\end{array}\right)$$
+$$ 
+\begin{align}
+    \left(\begin{array}{c|c|c}
+        0 & 1 & 0 \\\\
+        \hline 
+        1 & 0 & 0
+    \end{array}\right) 
+\end{align}
+$$
 
 > [!TIP]
 > If you are running the Python host program from the terminal, you will obtain the HTML metadata from the output of `print(.simulate_noise())`. For easier visualization, Jupyter Notebooks displays HTML  tables within the same notebook.
@@ -248,27 +256,33 @@ print(DumpPlus.simulate_noise())
 ```
 The visualization of the output is the following:
 
-$$\left(\begin{array}{cccccccccc|cccccccccc|c}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-\hline
-1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0\end{array}\right)$$
+$$
+\begin{align}
+    \left(\begin{array}{cccccccccc|cccccccccc|c}
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        \hline
+        1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+    \end{array}\right)
+\end{align}
+$$
 
 4.  Modify the Q# program with the following code, where the `DumpBellPair` operation performs a `DumpMachine` function to a Bell pair, which is an entangled pair of qubits. 
 
@@ -295,37 +309,49 @@ DumpBellPair.simulate_noise()
 
 The visualization of the output is the following:
 
-$$\left(\begin{array}{cccc|cccc|c}0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0\\
-0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0\\
-\hline
-1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0\end{array}\right)$$
+$$
+\begin{align}
+    \left(\begin{array}{cccc|cccc|c}
+        0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\\\
+        0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\\\
+        \hline
+        1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+    \end{array}\right)
+\end{align}
+$$
 
 
 6. The visualization style for stabilizer states can be selected by using the `experimental.simulators.stabilizerStateStyle` configuration setting. 
 
-For example, you can select the visualization without destabilizers using 'matrixWithoutDestabilizers':
+For example, you can select the visualization without destabilizers using `matrixWithoutDestabilizers`:
 
 ```python
 qsharp.config['experimental.simulators.stabilizerStateStyle'] = 'matrixWithoutDestabilizers'
 ```
-$$\left(\begin{array}{cccc|cccc|c}1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0\end{array}\right)$$
+$$
+\begin{align}
+    \left(\begin{array}{cccc|cccc|c}
+        1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\\\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+    \end{array}\right)
+\end{align}
+$$
 
-To select the representation of the stabilizer group, use 'denseGroupPresentation':
+To select the representation of the stabilizer group, use `denseGroupPresentation`:
 
 ```python
 qsharp.config['experimental.simulators.stabilizerStateStyle'] = 'denseGroupPresentation'
 ```
 $$\left\langle XX𝟙𝟙, ZZ𝟙𝟙, 𝟙𝟙Z𝟙, 𝟙𝟙𝟙Z \right\rangle $$
 
-To select the representation of the stabilizer group without the identity matrix, use 'sparseGroupPresentation':
+To select the representation of the stabilizer group without the identity matrix, use `sparseGroupPresentation`:
 
 ```python
 qsharp.config['experimental.simulators.stabilizerStateStyle'] = 'sparseGroupPresentation'
