@@ -36,10 +36,10 @@ The first thing you need to do is to create a new Q# project. This tutorial uses
 
 To create a new project in Visual Studio Code: 
 
-1. Click **View** -> **Command Palette** and select **Q#: Create New Project**.
-2. Click **Standalone console application**.
-3. Select a location to save the project, name it **Qrng**, and click **Create Project**.
-4. When the project is successfully created, click **Open new project...** in the
+1. Select **View** -> **Command Palette** and select **Q#: Create New Project**.
+2. Select **Standalone console application**.
+3. Select a location to save the project, name it **Qrng**, and select **Create Project**.
+4. When the project is successfully created, select **Open new project...** in the
    lower right.
 
 This generates two files: the project file, *Qrng.csproj*, and a Q# application template, *Program.qs*, that you will use to write your application.
