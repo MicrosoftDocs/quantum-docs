@@ -12,6 +12,11 @@ uid: microsoft.quantum.credits.credits-faq
 
 # FAQ: Applications to the Azure Quantum Credits Program
 
+## I have questions about Azure Quantum or Azure Quantum Credits and I can't find the answer, how do I get help?
+If you have an Azure support subscription, we recommend connecting with Azure Support for the fastest resolution to your question.
+
+If you have any question regarding the workspace creation process or run into any issue at any point using Azure Quantum, bookmark [https://aka.ms/AQ/OfficeHours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday at 8:30am PST.
+
 ## Who can apply for the Azure Quantum Credits Program?
 Educational institutions, companies, and some other approved organizations may apply for Azure Quantum Credits. Credits applicants may be based in the United States, or in any other market that is currently served by Microsoft Azure. For more information, see the [Azure Quantum Hardware Credit Program Terms](https://aka.ms/aq/credits/terms).
 
@@ -94,3 +99,7 @@ Links to Quickstart guides (follow the one for your desired programming framewor
 > If you have received grants towards more than one Provider, you may add all of them to the same Quantum Workspace or you may create multiple Workspaces.
 Links to Quickstart guides (follow the one for your desired programming framework):
 
+## I Couldn't find an answer to my question, how can I get support?
+If you have an Azure support subscription, we recommend connecting with Azure Support for the fastest resolution to your question.
+
+If you have any question regarding the workspace creation process or run into any issue at any point using Azure Quantum, bookmark [https://aka.ms/AQ/OfficeHours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday at 8:30am PST.
