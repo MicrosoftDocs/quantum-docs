@@ -81,6 +81,7 @@ Instructions for configuring your Azure Quantum Workspace to access Honeywell:
 
 1. [Open the Azure Quantum Workspace Create screen in the Azure Portal](https://portal.azure.com/#create/Microsoft.AzureQuantum)
 1. On the **Basics** tab while configuring your Workspace, ensure the selected **subscription** matches the subscription you supplied in your onboarding information. The subscription information is also copied in the onboarding mail you received.
+    > Not sure how to find the subscription with the ID specified in the email? You can see the list of your [Azure Subscriptions on this page](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) to identify which should be selected.
 1. On the **Basics** tab while configuring your Workspace, ensure the selected **region** matches the subscription you supplied in your onboarding information. The region information is also copied in the onboarding mail you received.
 1. Provider and SKU: On the **Providers** tab, select "Honeywell Quantum Solutions". When the SKU/Pricing selector opens, ensure you select "Azure Quantum Credits".
     > Important: If you select any plan other than “Azure Quantum Credits” you may be charged for usage. If you do not see the Azure Quantum Credits SKU please double check that you have selected the correct Subscription and Region, then send an email to the support email address specified in your credits onboarding email if you cannot see the SKU.
@@ -92,6 +93,7 @@ Links to Quickstart guides (follow the one for your desired programming framewor
 
 1. [Open the Azure Quantum Workspace Create screen in the Azure Portal](https://portal.azure.com/#create/Microsoft.AzureQuantum)
 1. On the **Basics** tab while configuring your Workspace, ensure the selected **subscription** matches the subscription you supplied in your onboarding information. The subscription information is also copied in the onboarding mail you received.
+    > Not sure how to find the subscription with the ID specified in the email? You can see the list of your [Azure Subscriptions on this page](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) to identify which should be selected.
 1. On the **Basics** tab while configuring your Workspace, ensure the selected **region** matches the subscription you supplied in your onboarding information. The region information is also copied in the onboarding mail you received.
 1. Provider and SKU: On the **Providers** tab, select "IonQ". When the SKU/Pricing selector opens, ensure you select "Azure Quantum Credits".
     > Important: If you select any plan other than “Azure Quantum Credits” you may be charged for usage. If you do not see the Azure Quantum Credits SKU please double check that you have selected the correct Subscription and Region, then send an email to the support email address specified in your credits onboarding email if you cannot see the SKU.
