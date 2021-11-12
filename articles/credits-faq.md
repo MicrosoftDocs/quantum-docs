@@ -4,7 +4,7 @@ description: Frequently Asked Questions regarding the Azure Quantum Credits Prog
 ms.author: mblouin
 ms.date: 10/06/2021
 ms.service: azure-quantum
-ms.subservice: computation
+ms.subservice: core
 ms.topic: faq
 title: Azure Quantum Credits FAQ
 uid: microsoft.quantum.credits.credits-faq
