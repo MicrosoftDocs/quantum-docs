@@ -219,7 +219,7 @@ For an example of how to use the `OnlineProblem` class, have a look at [reusing 
 Azure Quantum now provides support for submitting optimization problems in protobuf in place of JSON. This is an optional feature that is limited to a subset of optimization solvers in the Microsoft QIO provider.
 JSON will continue to be supported at this time.
 This feature is useful for encoding input problems that are significantly large in size. In these cases using a binary encoding method like protobuf reduces the payload sizes, and improves upload and processing speeds relative to submitting as the standard JSON format.
-Note that no change is made to the format itself but rather only its encoding. The protobuf input forrmat mirrors our JSON format. The only difference is the encoding, but there are no feature differences.  
+Note that no change is made to the format itself but rather only its encoding. The protobuf input format mirrors our JSON format. The only difference is the encoding, but there are no feature differences.  
 You can specify the problem type, the terms, initial configuration and problem metadata (eg: problem name) exactly as is supported currently in JSON.
 
 ### Protobuf
