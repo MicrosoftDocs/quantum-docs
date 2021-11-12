@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: v-sonialopez
-ms.date: 10/11/2021
+ms.date: 11/12/2021
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -10,11 +10,8 @@ ms.topic: include
 ## Prerequisites
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
-  see [Create an Azure Quantum workspace](xref:microsoft.quantum.quickstarts.optimization.qio).
-- The latest version of the [Quantum Development Kit for Python](xref:microsoft.quantum.install-qdk.overview.python#install-the-qsharp-python-package).
-
-Follow the installation steps in the provided link to install Python and
-the current version of the IQ# kernel, which powers the Q# Jupyter Notebook and
+  see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- The latest version of the [Quantum Development Kit for Python](xref:microsoft.quantum.install-qdk.overview.python#install-the-qsharp-python-package). This installs the `qsharp` Python package and the IQ# kernel, which powers the Q# Jupyter Notebook and
 Python experiences.
 
 ## Quantum computing with Q# and Python
@@ -23,9 +20,7 @@ Python experiences.
    includes the `qsharp` Python package. Make sure you are running your Python
    script from a terminal where this conda environment is activated.
 
-1. If you've never used Q# with Python, follow the steps in [Create your first Q#
-   program with
-   Python](xref:microsoft.quantum.install-qdk.overview.python).
+1. If you've never used Q# with Python, follow the steps in [Write a Q# and Python programs](xref:microsoft.quantum.how-to.python-local).
 
 1. Write your Q# operations in a `*.qs` file. When running `import qsharp` in
    Python, the IQ# kernel will automatically detect any .qs files in the same
