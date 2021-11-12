@@ -53,7 +53,7 @@ To run the Jupyter notebook, follow these steps.
     The notebook first imports the required packages for the sample, then connects to the Azure Quantum service, and then runs a simple Qiskit circuit.
 
 > [!NOTE]
-> If you have any question regarding the workspace creation process or run into any issue at any point using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Standard Time zone (PST).
+> If you have any questions regarding the workspace creation process or run into any issue at any point using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Standard Time zone (PST).
 
 ## Next steps
 
