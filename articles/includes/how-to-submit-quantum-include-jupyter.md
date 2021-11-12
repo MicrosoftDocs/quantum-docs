@@ -37,7 +37,7 @@ Python experiences.
 1. Once you have your Q# operations defined, use the `%azure.*` magic commands
    to connect and submit jobs to Azure Quantum. You'll use the resource ID of
    your Azure Quantum workspace in order to connect. (The resource ID can be found
-   on your workspace page in the Azure Portal.)
+   on your workspace page in the Azure portal.)
 
    If your workspace was created in an Azure region other than \"West US\", you also
    need to specify this as the `location` parameter to `%azure.connect`.

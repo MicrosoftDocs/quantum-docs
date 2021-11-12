@@ -33,7 +33,7 @@ You will also find a full reference for all commands and features available thro
    az login
    ```
 
-1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in Azure Portal.
+1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in Azure portal.
 
    ```azurecli
    az account set -s <Your subscription ID>
