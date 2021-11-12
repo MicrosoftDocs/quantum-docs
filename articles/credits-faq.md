@@ -28,7 +28,7 @@ Note that to use Azure Quantum Credits you must also accept the relevant usage t
 ## How long are credits valid for?
 Credits are valid six months from your project start date. Extensions are optionally available on a case-by-case basis.
 
-## I have applied, how long will it take to hear back on my application?
+## How long after I apply will it take to hear back on my application?
 We try to respond to all credits applications within one (1) month of the application date.
 
 ## What programming languages or frameworks can be used with Azure Quantum and Azure Quantum Credits?
