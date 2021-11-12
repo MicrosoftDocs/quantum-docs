@@ -230,7 +230,7 @@ For a detailed introduction to protobuf please see [here](https://developers.goo
 ### Usage
 
 To submit a problem with protobuf serialization in the problem object definition specify the optional parameter **content_type** and set it to **Content.protobuf**.
-The default is assumed to **ContentType.json**.
+If you do not set this parameter explicitly, then it will be set to **ContentType.json**.
 
 ```py
 problem = Problem(name = "sample_problem", content_type = ContentType.protobuf)
