@@ -119,7 +119,7 @@ problem.add_terms([
 
 ### Problem.serialize
 
-Serializes a problem to a json string or protobuf.
+Serializes a problem to a JSON string or protobuf.
 Note: Please see section `Input problem serialization to protobuf binary` to understand the usage of protobuf
 ```py
 problem = Problem("My Problem", [Term(c=1, indices=[0,1])])
@@ -130,7 +130,7 @@ problem.serialize()
 
 ### Problem.deserialize
 
-Deserilaizes a problem from json or protobuf to an instance of Problem. 
+Deserilaizes a problem from JSON or protobuf to an instance of Problem. 
 Note: Please see section `Input problem serialization to protobuf binary` to understand the usage of protobuf
 
 ```py
@@ -215,11 +215,11 @@ For an example of how to use the `OnlineProblem` class, have a look at [reusing 
 
 ## Input problem serialization to protobuf binary
 
-Azure Quantum now provides support for submitting optimization problems in protobuf in place of json. This is an optional feature that is limited to a subset of optimization solvers in the Microsoft QIO provider.
+Azure Quantum now provides support for submitting optimization problems in protobuf in place of JSON. This is an optional feature that is limited to a subset of optimization solvers in the Microsoft QIO provider.
 JSON will continue to be supported at this time.
-This feature is useful for encoding input problems that are significantly large in size. In these cases using a binary encoding method like protobuf reduces the payload sizes, and improves upload and processing speeds relative to submitting as the standard json format.
-Note that no change is made to the format itself but rather only its encoding. The protobuf input forrmat mirrors our json format. The only difference is the encoding, but there are no feature differences.  
-You can specify the problem type, the terms, initial configuration and problem metadata (eg: problem name) exactly as is supported currently in json.
+This feature is useful for encoding input problems that are significantly large in size. In these cases using a binary encoding method like protobuf reduces the payload sizes, and improves upload and processing speeds relative to submitting as the standard JSON format.
+Note that no change is made to the format itself but rather only its encoding. The protobuf input forrmat mirrors our JSON format. The only difference is the encoding, but there are no feature differences.  
+You can specify the problem type, the terms, initial configuration and problem metadata (eg: problem name) exactly as is supported currently in JSON.
 
 ### Protobuf
 
@@ -237,7 +237,7 @@ problem = Problem(name = "sample_problem", content_type = ContentType.protobuf)
 job = solver.submit(problem)
 ```
 
-The result will be returned back as a json.
+The result will be returned back as a JSON.
 You may continue to serialize, download and deserialize problems as before.
 One breaking change has been introduced in the deserialize method of the Problem class.
 The parameter **problem_as_json** has been renamed to **input_problem**.
