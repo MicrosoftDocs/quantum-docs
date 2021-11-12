@@ -121,6 +121,7 @@ problem.add_terms([
 
 Serializes a problem to a JSON string or protobuf.
 Note: Please see section `Input problem serialization to protobuf binary` to understand the usage of protobuf
+
 ```py
 problem = Problem("My Problem", [Term(c=1, indices=[0,1])])
 problem.serialize()
