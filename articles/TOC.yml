@@ -198,8 +198,6 @@
         href: optimization-rangeschedule.md
       - name: GroupType
         href: optimization-group-type.md
-      - name: Submit input problem serialized to protobuf binary
-        href: protobuf-input-problem.md
     - name: Usage
       items:
       - name: Express a problem

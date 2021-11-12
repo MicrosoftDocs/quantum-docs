@@ -119,13 +119,23 @@ problem.add_terms([
 
 ### Problem.serialize
 
-Serializes a problem to a json string.
-
+Serializes a problem to a json string or protobuf.
+Note: Please see section `Input problem serialization to protobuf binary` to understand the usage of protobuf
 ```py
 problem = Problem("My Problem", [Term(c=1, indices=[0,1])])
 problem.serialize()
 
 > {"cost_function": {"version": "1.0", "type": "ising", "terms": [{"c": 1, "ids": [0, 1]}]}}
+```
+
+### Problem.deserialize
+
+Deserilaizes a problem from json or protobuf to an instance of Problem. 
+Note: Please see section `Input problem serialization to protobuf binary` to understand the usage of protobuf
+
+```py
+
+deserialized_problem = Problem.deserialize(input_poblem = "your_problem")
 ```
 
 ### Problem.upload
@@ -202,3 +212,55 @@ There are some features that are not yet supported on the StreamingProblem class
 The OnlineProblem class creates a problem from the url of the blob storage where an optimization problem has been uploaded. It allows you to reuse already submitted problems.
 It does not support client-side analysis, for example, the `evaluate` and `set_fixed_variables` functions. It allows you to download the problem from the blob storage as an instance of the `Problem` class to do any of the client-side operations.
 For an example of how to use the `OnlineProblem` class, have a look at [reusing problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions).
+
+## Input problem serialization to protobuf binary
+
+Azure Quantum now provides support for submitting optimization problems in protobuf in place of json. This is an optional feature that is limited to a subset of optimization solvers in the Microsoft QIO provider.
+JSON will continue to be supported at this time.
+This feature is useful for encoding input problems that are significantly large in size. In these cases using a binary encoding method like protobuf reduces the payload sizes, and improves upload and processing speeds relative to submitting as the standard json format.
+Note that no change is made to the format itself but rather only its encoding. The protobuf input forrmat mirrors our json format. The only difference is the encoding, but there are no feature differences.  
+You can specify the problem type, the terms, initial configuration and problem metadata (eg: problem name) exactly as is supported currently in json.
+
+### Protobuf
+
+Protobuf is Google's Data Interchange Format. It is binary format with a static schema. 
+This guide provides information for anyone planning to add support for protobuf for Azure Quantum optimization targets.
+For a detailed introduction to protobuf please see [here](https://developers.google.com/protocol-buffers).
+
+### Usage
+
+To submit a problem with protobuf serialization in the problem object definition specify the optional parameter **content_type** and set it to **Content.protobuf**.
+The default is assumed to **ContentType.json**.
+
+```py
+problem = Problem(name = "sample_problem", content_type = ContentType.protobuf)
+job = solver.submit(problem)
+```
+
+The result will be returned back as a json.
+You may continue to serialize, download and deserialize problems as before.
+One breaking change has been introduced in the deserialize method of the Problem class.
+The parameter **problem_as_json** has been renamed to **input_problem**.
+The introduction of the protobuf format has meant that some helper functions had to be adjusted in the Python SDK for Optimization. Please review our documentation around serializing and deserializing problems for more details.
+
+```py
+deserialized_problem = Problem.deserialize(input_problem = your_problem)
+
+```
+
+For more information on cost functions and how terms relate to a problem definition, see the following topics:
+
+- [Cost functions](xref:microsoft.quantum.optimization.concepts.cost-function)
+- [Term](xref:microsoft.quantum.optimization.term)
+- [Problem](xref:microsoft.quantum.optimization.problem)
+
+### Availability
+
+Protobuf serialization is a new "Early Access" feature in the *azure-quantum* Python package, and is currently supported by two Microsoft QIO solvers:
+
+- [Substochastic Monte Carlo](xref:microsoft.quantum.reference.qio-target-list#substochastic-monte-carlo)
+- [Population Annealing](xref:microsoft.quantum.reference.qio-target-list#population-annealing)
+
+If you submit problems as protobuf to a solver that doesn't support them, a client error will appear in the SDK and the submission will fail.
+
+If you discover any bugs or issues while working with protobuf, please reach out to [Azure Support](https://support.microsoft.com/topic/contact-microsoft-azure-support-2315e669-8b1f-493b-5fb1-d88a8736ffe4).
