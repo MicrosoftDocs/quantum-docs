@@ -213,7 +213,7 @@ The OnlineProblem class creates a problem from the url of the blob storage where
 It does not support client-side analysis, for example, the `evaluate` and `set_fixed_variables` functions. It allows you to download the problem from the blob storage as an instance of the `Problem` class to do any of the client-side operations.
 For an example of how to use the `OnlineProblem` class, have a look at [reusing problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions).
 
-## Input problem serialization to protobuf binary
+## Input problem serialization to protobuf binary format
 
 Azure Quantum now provides support for submitting optimization problems in protobuf in place of JSON. This is an optional feature that is limited to a subset of optimization solvers in the Microsoft QIO provider.
 JSON will continue to be supported at this time.
@@ -223,7 +223,7 @@ You can specify the problem type, the terms, initial configuration and problem m
 
 ### Protobuf
 
-Protobuf is Google's Data Interchange Format. It is binary format with a static schema. 
+Protobuf is Google's Data Interchange Format. It is binary format with a static schema.
 This guide provides information for anyone planning to add support for protobuf for Azure Quantum optimization targets.
 For a detailed introduction to protobuf please see [here](https://developers.google.com/protocol-buffers).
 
