@@ -34,9 +34,9 @@ We try to respond to all credits applications within one (1) month of the applic
 ## What programming languages or frameworks can be used with Azure Quantum and Azure Quantum Credits?
 Credits may be used with any programming language or framework that is supported by Azure Quantum. Currently we support:
 
-- Q# ([Quickstart](xref:microsoft.quantum.quickstarts.computing)) ([Installation](https://docs.microsoft.com/azure/quantum/quickstart-microsoft-qc))
-- Cirq ([Quickstart](xref:microsoft.quantum.quickstarts.computing.cirq)) ([Installation](https://quantumai.google/cirq/azure-quantum/access))
-- Qiskit ([Quickstart](xref:microsoft.quantum.quickstarts.computing.qiskit)) ([Installation]())
+- Q# ([Quickstart](xref:microsoft.quantum.quickstarts.computing))
+- Cirq ([Quickstart](xref:microsoft.quantum.quickstarts.computing.cirq))
+- Qiskit ([Quickstart](xref:microsoft.quantum.quickstarts.computing.qiskit))
 
 ## My application was rejected. Can I appeal the decision or re-apply?
 Rejections may be made for a number of reasons, including the contents of the application or other business reasons, and may not be appealed. In the event of substantial changes to your proposed project, or the group carrying out the project, you may re-apply.
