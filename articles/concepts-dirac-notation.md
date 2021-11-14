@@ -170,10 +170,20 @@ which matches the multi-qubit measurement discussion.  The generalization of thi
 
 ## Density operators
 
-Another useful operator to express using Dirac notation is a *density operator*, sometimes also known as a *state operator*.
-A density operator for a quantum state vector takes the form $\rho = \ket{\psi} \bra{\psi}$.
+Another useful operator to express using Dirac notation is the *density operator*, sometimes also known as a *state operator*. A density operator for a quantum state vector takes the form $\rho = \ket{\psi} \bra{\psi}$.
+
+More generally, a given matrix $\rho$ is a valid density operator if the following conditions are fulfilled:
+
+1. $\rho$ is a matrix of complex numbers
+1. $\rho = \rho^{\dagger}$ (that is, $\rho$ is Hermitian)
+1. Every eigenvalue $p$ of $\rho$ is $0 &lt;= p &lt;= 1$
+1. All the eigenvalues of $\rho$ sum to 1
+
+Together, these conditions guarantee that $\rho$ can be thought of as an ensemble. In particular, if $\rho = \sum_i p_i \ket{\psi_i} \bra{\psi_i}$ is an eigenvalue decomposition of $\rho$, then $\rho$ describes the ensemble $\rho = \{\ket{\psi_i} \text{ with probability } p_i\}$.
+
 This concept of representing the state as a matrix, rather than a vector, is often convenient because it gives a convenient way of representing probability calculations, and also allows one to describe both statistical uncertainty as well as quantum uncertainty within the same formalism.
 General quantum state operators, rather than vectors, are ubiquitous in some areas of quantum computing but are not necessary to understand the basics of the field.
+
 For the interested reader, we recommend reading one of the reference books provided in [For more information](xref:microsoft.quantum.more-information).
 
 ## Q# gate sequences equivalent to quantum states
