@@ -122,8 +122,6 @@ ket_plus = (1 / np.sqrt(2)) * (ket0 + ket1)
 print(ket_plus)
 
 ```
-
-
 When measuring a qubit in the $\ket{+}$ state in the $Z$-basis, we get Zero and One with equal probability:
 
 ```qsharp
@@ -265,6 +263,84 @@ $$
 $$
 
 That is, even though both `SampleRandomBit` and `PrepareAndMeasureRandomState` both prepare density operators with the same diagonal elements (and thus have the same measurement probabilies in the $Z$-basis), the two density operators have different off-diagonal elements. 
+
+We say that density operators in general represent mixed states, and that states that can be written as $\ket{\psi}\bra{\psi}$ for some state vector $\ket{\psi}$ (e.g.: $\ket{+}\bra{+}$) are pure states. For more information about the differences between mixed states and pure states, see [density operators](xref:microsoft.quantum.concepts.dirac#density-operators).
+
+## Representing quantum processes
+
+Considering the [Hadamard](xref:Microsoft.Quantum.Intrinsic.H) operation, you can simulate its action on a pure state $\ket{\psi}$ as $H \ket{\psi}$. By direct analogy, you can simulate what $H$ does to a density operator by multiplying on the left and right both:
+
+$$
+\begin{aligned}
+    \rho \longmapsto H\rho H^{\dagger} = H \rho H.
+\end{aligned}
+$$
+
+More generally, though, you can also represent processes in which one of several unitary operations is applied at random. For example, suppose $H$ operation works 95% of the time, but the other 5% of the time does nothing. You can simply add the density operators weighted by the probability of each case:
+
+$$
+\begin{aligned}
+    \rho \longmapsto 0.95 H \rho H + 0.05 \rho.
+\end{aligned}
+$$
+
+One way to model this is by thinking of the $H$ operation not as being represented by a unitary matrix, but by a function from density operators to density operators.
+
+$$
+\begin{aligned}
+    \Lambda_H(\rho) = H\rho H.
+\end{aligned}
+$$
+
+Since density functions represent an average over different preparations, and since averages are linear, such functions must in general must also be linear.
+
+A linear function from density operators to density operators is called a **quantum process**.
+
+> [!TIP]
+> Quantum processes that can be realized in practice have a few other conditions as well as linearity, known as complete positivity and trace preservingness. A process that is both completely positive and trace preserving (CPTP) is a **quantum channel**.
+
+There's a few different ways to represent quantum processes, but the one most commonly encounter in working with noise models for open quantum systems is known as **superoperators**. Just as operators are linear functions from vectors to vectors, superoperators are linear functions from operators to operators, and can be written using matrices.
+
+For example, you can use `qt.to_super` to convert a few unitary matrices into superoperators. Notice that the 2 × 2 identity operator $𝟙$ we use to simulate the [I](xref:Microsoft.Quantum.Intrinsic.I) operation is a 4 × 4 identity matrix:
+
+```python
+# Convert the 𝟙 matrix used to simulate Microsoft.Quantum.Intrinsic.I (single qubit no-op) into a superoperator.
+print(qt.to_super(qt.qeye(2)))
+```
+```output
+Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = True
+Qobj data =
+[[1.0  0.0  0.0  0.0]
+ [0.0  1.0  0.0  0.0]
+ [0.0  0.0  1.0  0.0]
+ [0.0  0.0  0.0  1.0]]
+```
+That is, as we would expect, the superoperator resulting from the identity operator maps all operators to themselves.
+
+On the other hand, we get something quite different for the $X$ matrix:
+
+```python
+# Convert the 𝑋 matrix used to simulate Microsoft.Quantum.Intrinsic.X into a superoperator.
+print(qt.to_super(qt.sigmax()))
+```
+```output
+Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = True
+Qobj data =
+[[0.0  0.0  0.0  1.0]
+ [0.0  0.0  1.0  0.0]
+ [0.0  1.0  0.0  0.0]
+ [1.0  0.0  0.0  0.0]]
+ 
+Notice that each column is a stack of the elements in an operator output by the function $\Lambda_X(\rho) = X \rho X^{\dagger} = X \rho X$.
+
+Since $\Lambda(\ket{0}\bra{0}) = X\ket{0} \bra{0}X = \ket{1}\bra{1}$, the first column is a stack of the elements of $\ket{1}\bra{1} = \left(\begin{matrix} 0 &amp; 0 \\ 0 &amp; 1 \end{matrix}\right)$. Similarly, the second column is a stack of the elements of $\Lambda_X(\ket{0}\bra{1}) = \ket{1}\bra{0}$:
+
+```python
+print(np.array((ket1 * ket0.dag()).data.todense().flat))
+```
+```output
+[0.+0.j, 0.+0.j, 1.+0.j, 0.+0.j]
+```
 
 
 
