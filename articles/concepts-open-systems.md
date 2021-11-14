@@ -241,7 +241,7 @@ $$
 \end{aligned}
 $$
 
-Factoring out $\bra{\phi}$ and $\ket{\phi}$ in the last step gives us a neat new way of writing out ensembles of state vectors as matrices called **density operators**. For example, the ensemble $\rho$ can also be written out as the following density operator,
+Factoring out $\bra{\phi}$ and $\ket{\phi}$ in the last step gives us a neat new way of writing out ensembles of state vectors as matrices called [**density operators**](xref:microsoft.quantum.concepts.dirac#density-operators). For example, the ensemble $\rho$ can also be written out as the following density operator,
 
 $$
 \begin{aligned}
@@ -266,43 +266,5 @@ $$
 
 That is, even though both `SampleRandomBit` and `PrepareAndMeasureRandomState` both prepare density operators with the same diagonal elements (and thus have the same measurement probabilies in the $Z$-basis), the two density operators have different off-diagonal elements. 
 
-In general, density operators represent *mixed states*, while those states that can be written as $\ket{\psi}\bra{\psi}$ for some state vector $\ket{\psi}$ (e.g.: $\ket{+}\bra{+}$) are *pure states*.
-
-To tell how close a given density operator $\rho$ is to being pure, you can look at the trace (that is the sum of the diagonal elements) of $\rho^2$:
-
-```python
-rho_mixed = (ket0 * ket0.dag() + ket1 * ket1.dag()) / 2
-print(rho_mixed)
-```
-```output
-Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
-Qobj data =
-[[0.5  0.0]
- [0.0  0.5]]
-```
-The trace of $\rho$ is written as $\Tr(\rho)$ and can be calculated using QuTiP's .tr() method:
-```python
-print((rho_mixed ** 2).tr())
-```
-```output
-0.5
-```
-```python
-rho_pure = ket_plus * ket_plus.dag()
-print(rho_pure)
-```
-```output
-Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
-Qobj data =
-[[0.5  0.5]
- [0.5  0.5]]
-```
-
-```python
-print((rho_pure ** 2).tr())
-```
-```output
-0.9999999999999996
-```
 
 
