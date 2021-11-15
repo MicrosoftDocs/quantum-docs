@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: v-sonialopez
-ms.date: 09/10/2021
+ms.date: 11/12/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: include
@@ -9,12 +9,12 @@ ms.topic: include
 
 ## Prerequisites
 
-- An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.quickstarts.optimization.qio).
-- The latest version of the [*azure-quantum* Python package](xref:microsoft.quantum.quickstarts.optimization.qio#install-the-python-sdk-for-azure-quantum).
+- An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- The latest version of the [*azure-quantum* Python package](xref:microsoft.quantum.install-qdk.overview.python-only).
 
 ## Set up
 
-First, you must instantiate a `Workspace` object, which allows you to connect to the workspace you've previously deployed in Azure. Be sure to fill in the following settings, which can be retrieved from the [Azure Portal](https://portal.azure.com/) or by opening a command prompt and running `az quantum workspace show` through the Azure CLI. Open a new python file and run the following lines:
+First, you must instantiate a `Workspace` object, which allows you to connect to the workspace you've previously deployed in Azure. Be sure to fill in the following settings, which can be retrieved from the [Azure portal](https://portal.azure.com/) or by opening a command prompt and running `az quantum workspace show` through the Azure CLI. Open a new python file and run the following lines:
 
 ```python
 from azure.quantum import Workspace
@@ -27,9 +27,10 @@ workspace = Workspace (
 	location = ""  # Add your workspace location (for example, "westus") 
 )
 ```
+
 ## Problem instantiation
 
-To submit a problem to the Azure Quantum services, you first need to create a `Problem` instance. This is a Python object that stores all the required information, such as the cost function details and the kind of problem you are modeling.
+To submit a problem to Azure Quantum, you first need to create a `Problem` instance. This is a Python object that stores all the required information, such as the cost function details and the kind of problem you are modeling.
 
 ```python
 from typing import List
@@ -55,6 +56,7 @@ def createProblemForContainerWeights(containerWeights: List[int]) -> Problem:
     # Return an Ising-type problem
     return Problem(name="Freight Balancing Problem", problem_type=ProblemType.ising, terms=terms)
 ```
+
 Before submitting the problem to Azure Quantum, you instantiate it by defining a list of containers via their weights:
 
 ```python
@@ -64,9 +66,11 @@ containerWeights = [1, 5, 9, 21, 35, 5, 3, 5, 10, 11]
 # Create a problem for the given list of containers:
 problem = createProblemForContainerWeights(containerWeights)
 ```
+
 ## Submit the job to Azure Quantum
 
 Now, submit the problem to Azure Quantum:
+
 ```python
 from azure.quantum.optimization import ParallelTempering
 import time
@@ -81,10 +85,11 @@ result = solver.optimize(problem)
 timeElapsed = time.time() - start
 print(f'Result in {timeElapsed} seconds: ', result)
 ```
+
 > [!NOTE]
 > This guide uses **Parameter-Free Parallel Tempering** solver with a timeout of 100 seconds as an example of a QIO solver. For more information about available solvers, you can visit the [Microsoft QIO provider](xref:microsoft.quantum.optimization.providers.microsoft.qio) documentation page.
 
-Notice that the solver returns the results in the form of a Python dictionary, along with some metadata. For a more human-readable format, use the following function to print a summary of what the solution means:
+Notice that the solver returns the results in the form of a Python dictionary, along with some metadata. You can use the following function to print a more human-readable summary of the solution:
 
 ```python
 def printResultSummary(result):
@@ -108,6 +113,7 @@ def printResultSummary(result):
 
 print_result_summary(result)
 ```
+
 ```output
 Container 0 with weight 1 was placed on Ship A
 Container 1 with weight 5 was placed on Ship B
