@@ -39,11 +39,6 @@ import qsharp
 import qsharp.experimental
 qsharp.experimental.enable_noisy_simulation()
 ```
-After calling `enable_noisy_simulation()`, Q# operations imported into Python expose a `.simulate_noise()` method that can be used to run Q# programs against the noise simulators.
-
-By default, `.simulate_noise()` method assumes an *ideal error* model (that is, no noise). To configure a particular error model, you can use the `qsharp.experimental.get_noise_model` and `qsharp.experimental.set_noise_model` functions to get and set the current noise model for the preview simulators. Each error model is represented as a dictionary from intrinsic operation names to objects representing the errors in those intrinsic operations. For more information, see [Configuring open systems noise models](#configuring-open-systems-noise-models).
-
-
 ## Revisiting quantum states
 
 Before proceeding to discuss representing open quantum systems, it's helpful to quickly revisit representations of closed quantum systems. In particular, the state of an $n$-qubit register can be represented as a vector of $2^n$ complex numbers. For example, the state of a single qubit can be written as a vector of the form
@@ -410,5 +405,153 @@ That is, the off-diagonal elements of density operators describe the relative ph
 ## Noisy quantum processes
 
 Using superoperators not only allows us to represent familiar unitary operations, but also those functions from density operators to density operators that arise in describing noise. For example, the quantum process $\Lambda(\rho) = 0.95 H\rho H + 0.05 \rho$ can be written as a superoperator by simply summing the superoperators for $H$ and $I$ weighted by the probability for each case:
+
+```python
+lambda_noisy_h = 0.95 * qt.to_super(qt.qip.operations.hadamard_transform()) + 0.05 * qt.to_super(qt.qeye(2))
+print(lambda_noisy_h)
+```
+```output
+Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = True
+Qobj data =
+[[0.525 0.475 0.475 0.475]
+ [0.475 -0.425 0.475 -0.475]
+ [0.475 0.475 -0.425 -0.475]
+ [0.475 -0.475 -0.475 0.525]]
+```
+
+Unlike the unitary matrix $H$ that describes the ideal action of the Hadamard operation, the superoperator $\Lambda_{text{noisy}H}$ simulates the action of the Hadamard operation when it has a 5% probability of doing nothing.
+
+### Noise simulation in Q\#
+
+The [QDK noise simulators](xref:microsoft.quantum.machines.overview.noise-simulator) are enabled by using the `qsharp.experimental` module. 
+
+After calling `enable_noisy_simulation()`, Q# operations imported into Python expose a `.simulate_noise()` method that can be used to run Q# programs against the noise simulators.
+
+By default, `.simulate_noise()` method assumes an *ideal error* model (that is, no noise). To configure a particular error model, you can use the `qsharp.experimental.get_noise_model` and `qsharp.experimental.set_noise_model` functions to get and set the current noise model for the preview simulators. Each error model is represented as a dictionary from intrinsic operation names to objects representing the errors in those intrinsic operations. For more information, see [Configuring open systems in noise models](xref:microsoft.quantum.machines.overview.noise-simulator#configuring-open-systems-noise-models).
+
+You can simulate the superoperator $\Lambda_{text{noisy}H}$ previously defined as a noise model and run `DumPlus` operation. 
+
+First, run the code with an ideal noise model so you can compare the outcome.
+
+```python
+qsharp.config['experimental.simulators.nQubits'] = 1
+qsharp.experimental.set_noise_model_by_name('ideal')
+
+# Run with an ideal noise model first.
+print(DumpPlus.simulate_noise())
+```
+```output
+'text/plain': 'Mixed state on 1 qubits: [ [0.5000000000000001 + 0 i, 0.5000000000000001 + 0 i] [0.5000000000000001 + 0 i, 0.5000000000000001 + 0 i] ]'
+```
+To configure the noise model, set `lambda_noisy_h` as the noise model to follow, and then run the `DumpPlus` operation to see the effects of the noisy Hadamard operation on the quantum state.
+
+```python
+noise_model = qsharp.experimental.get_noise_model_by_name('ideal')
+noise_model['h'] = lambda_noisy_h
+qsharp.experimental.set_noise_model(noise_model)
+
+# Run again, using the new noisy superoperator for the `H` operation.
+print(DumpPlus.simulate_noise())
+```
+```output
+'text/plain': 'Mixed state on 1 qubits: [ [0.5249999999999999 + 0 i, 0.47500000000000026 + -7.536865798903469E-33 i] [0.5249999999999999 + 0 i, 0.47500000000000026 + 7.536865798903469E-33 i & 0.4750000000000007 + 0 i] ]'
+```
+
+Comparing the two quantum states, you can see that when adding a probability to the Hadamard operation of failing into the noise model, the noise simulator uses the density operator representation together with the defined noise model to simulate the effect of that noise on the state of the qubits.
+
+There are many other kinds of noise as well. For example, a very well known noise model is the *completely depolarizing noise*, which results of the equal probability of applying the I, X, Y, or Z operations to a single qubit:
+
+```python
+[I, X, Y, Z] = map(qt.to_super, [qt.qeye(2), qt.sigmax(), qt.sigmay(), qt.sigmaz()])
+completely_depolarizing_process = 0.25 * (I + X + Y + Z)
+print(completely_depolarizing_process)
+```
+```output
+Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = True
+Qobj data =
+[[0.5 0.0 0.0 0.5]
+ [0.0 0.0 0.0 0.0]
+ [0.0 0.0 0.0 0.0]
+ [0.5 0.0 0.0 0.5]]
+```
+
+From the output, you can see that the completely depolarizing noise maps all input density operators to the same output, namely $𝟙 / 2$. That is, completely depolarizing noise replaces whatever state we had with the maximially mixed state.
+
+The depolarizing noise can also be of a finite strength (that is, *not completely* depolarizing) by taking a linear combination of the identity and completely depolarizing processes.
+
+```python
+def depolarizing_noise(strength=0.05):
+    return strength * completely_depolarizing_process + (1 - strength) * qt.to_super(I)
+    
+print(depolarizing_noise(0.05))
+```
+```output
+Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = True
+Qobj data =
+[[0.975 0.0 0.0 0.025]
+ [0.0 0.950 0.0 0.0]
+ [0.0 0.0 0.950 0.0]
+ [0.025 0.0 0.0 0.975]]
+```
+
+Some noise model can be represented as a mixture of unitary operators, but there's also many kinds of noise that cannot be represented this way. For instance, by analogy to completely depolarizing noise, a process that has some probability of resetting its input state can be represented as a mixture of a superoperator that always resets and the identity process.
+
+To see this, consider the process $\Lambda_{\text{Reset}}(\rho) = \Tr(\rho) \ket{0}\bra{0}$. Since this process does the same thing to each density operator as input, the first and fourth columns should be the same, namely $\left(1 & 0 & 0 & 0 \right)^{\text{T}}$.
+
+On the other hand, the second and third columns represent the output of $\Lambda_{\text{Reset}}$ acting on $\ket{0}\bra{1}$ and $\ket{1}\bra{0}$ respectively. Neither of these is a valid density operator on their own — indeed, $\Tr(\ket{0}\bra{1}) = \Tr(\ket{1}\bra{0})$ such that the $\Tr$ factor zeros out both of these columns.
+
+```python
+lambda_reset = qt.Qobj([
+    [1, 0, 0, 1],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+], dims=completely_depolarizing_process.dims)
+```
+You can use `lambda_reset` to represent the *amplitude damping noise*, in which there's a finite chance of resetting each qubit:
+
+```python
+def amplitude_damping_noise(strength=0.05):
+    return strength * lambda_reset + (1 - strength) * qt.to_super(I)
+print(amplitude_damping_noise(0.05))
+```
+```output
+Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = False
+Qobj data =
+[[1.0 0.0 0.0 0.050]
+ [0.0 0.950 0.0 0.0]
+ [0.0 0.0 0.950 0.0]
+ [0.0 0.0 0.0 0.950]]
+```
+## Example: Decaying Ramsey signal
+
+
+In this example, you will study the evolution of a qubit when you repeatedly apply `S` to it and then measure. This simple example works as a good toy model for Ramsey interferometry, which is a technique for measuring particle transition frequencies with atomic precision. Ramsey interferometry can 
+
+In the absense of noise, we should see the signal that we get back oscillate with each iteration of S:
+
+%%qsharp
+
+operation ApplySRepeatedlyAndMeasure(nRepetions : Int) : Result {
+    use q = Qubit();
+    within {
+        H(q);
+    } apply {
+        for _ in 1..nRepetions {
+            S(q);
+        }
+    }
+    return MResetZ(q);
+}
+qsharp.experimental.set_noise_model_by_name('ideal')
+ns = np.arange(1, 101)
+signal_wo_noise = [
+    sum(ApplySRepeatedlyAndMeasure.simulate_noise(nRepetions=n) for _ in range(100))
+    for n in ns
+]
+plt.plot(ns, signal_wo_noise)
+
+
+
 
 
