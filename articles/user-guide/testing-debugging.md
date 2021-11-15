@@ -4,7 +4,7 @@ title: Test and debug quantum programs
 description: Learn how to use unit tests, facts and assertions, and dump functions to test and debug quantum programs. 
 author: tcNickolas
 ms.author: mamykhai
-ms.date: 02/01/2021
+ms.date: 11/15/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -427,7 +427,7 @@ For the sake of simplicity, in the previous testing and debugging tools we displ
 
 In this example for <xref:Microsoft.Quantum.Diagnostics.DumpMachine>, we explicitly show the development using a Q# Jupyter Notebook, as it offers more visualization tools for testing and debugging quantum programs.
 
-1. To run `DumpMachine` on a Jupyter Notebook, open a [new Jupyter Notebook with a Q# kernel](xref:microsoft.quantum.install-qdk.overview.jupyter) and copy the following code to the first notebook cell:
+1. To run `DumpMachine` on a Jupyter Notebook, open a [new Jupyter Notebook with a Q# kernel](xref:microsoft.quantum.how-to.standalone-local) and copy the following code to the first notebook cell:
 
  ```qsharp
 open Microsoft.Quantum.Diagnostics;

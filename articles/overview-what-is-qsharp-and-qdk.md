@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn about the Quantum Development Kit (QDK), the Q# programming language, and how you can create quantum programs.
 ms.author: v-sonialopez
-ms.date: 11/03/2021
+ms.date: 11/15/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
@@ -101,7 +101,7 @@ In addition to the standard library, the QDK includes a [quantum chemistry libra
 
 ### Tools for developers
 
-The Quantum Development Kit includes extensions for [Visual Studio, Visual Studio Code](xref:microsoft.quantum.install-qdk.overview.standalone), and integration with [Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.jupyter). 
+The Quantum Development Kit includes extensions for [Visual Studio, Visual Studio Code](xref:microsoft.quantum.install-qdk.overview.standalone), and integration with [Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.standalone). 
 
 The Quantum Development Kit's built-in APIs supports interoperability with [Python](xref:microsoft.quantum.install-qdk.overview.python) and other [.NET languages](xref:microsoft.quantum.install-qdk.overview.cs). You can also formulate optimization solutions with the Azure Quantum optimization Python package. 
 
@@ -127,7 +127,7 @@ Everything you need to write and run Q# programs, including the Q# compiler, the
 
 - Developing [Q# applications](xref:microsoft.quantum.install-qdk.overview.standalone) is the quickest way to get started.
 
-- Run standalone [Jupyter Notebooks with IQ#](xref:microsoft.quantum.install-qdk.overview.jupyter), a Jupyter extension for compiling, simulating, and visualizing Q# programs.
+- Run standalone [Jupyter Notebooks with IQ#](xref:microsoft.quantum.install-qdk.overview.standalone), a Jupyter extension for compiling, simulating, and visualizing Q# programs.
 
 - If you are familiar with [Python](xref:microsoft.quantum.install-qdk.overview.python), you can use it as a host programming platform to get started. Python enjoys widespread use not only among developers, but also scientists, researchers and teachers.
 
