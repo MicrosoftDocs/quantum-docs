@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide to submit and run optimization jobs to Azure Quantum using Python and Jupyter Notebooks. 
 ms.author: v-sonialopez
-ms.date: 09/17/2021
+ms.date: 11/12/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
@@ -31,7 +31,7 @@ As an example, this article follows a sample shipping company that has a difficu
 
 ## Next steps
 
-Now that you know how to submit jobs to Azure quantum, you can check the following articles:
+Now that you know how to submit jobs to Azure Quantum, continue to explore optimization with the following articles:
 
 - [Solver overview](xref:microsoft.quantum.reference.qio-target-list)
 - [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)
