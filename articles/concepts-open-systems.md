@@ -246,7 +246,7 @@ $$
     \rho &amp; = \sum_i \Pr(\psi_i) \ket{\psi_i} \bra{\psi_i} \\
          &amp; = \frac{1}{2} \ket{0} \bra{0} + \frac{1}{2} \ket{1} \bra{1} \\
          &amp; = \frac{1}{2} \left( \begin{matrix}
-             1 &amp; 0 \\ 0 &amp; 1
+             1 &a 0 \\ 0 & 1
          \end{matrix} \right).
 \end{aligned}
 $$
@@ -257,14 +257,14 @@ $$
 \begin{aligned}
     \ket{+}\bra{+} = 
     \frac{1}{2} \left( \begin{matrix}
-        1 &amp; 1 \\ 1 &amp; 1
+        1 & 1 \\ 1 & 1
     \end{matrix} \right).
 \end{aligned}
 $$
 
 That is, even though both `SampleRandomBit` and `PrepareAndMeasureRandomState` both prepare density operators with the same diagonal elements (and thus have the same measurement probabilies in the $Z$-basis), the two density operators have different off-diagonal elements. 
 
-We say that density operators in general represent mixed states, and that states that can be written as $\ket{\psi}\bra{\psi}$ for some state vector $\ket{\psi}$ (e.g.: $\ket{+}\bra{+}$) are pure states. For more information about the differences between mixed states and pure states, see [density operators](xref:microsoft.quantum.concepts.dirac#density-operators).
+We say that density operators in general represent *mixed states*, and that states that can be written as $\ket{\psi}\bra{\psi}$ for some state vector $\ket{\psi}$ (e.g.: $\ket{+}\bra{+}$) are *pure states*. For more information about the differences between mixed states and pure states, see [density operators](xref:microsoft.quantum.concepts.dirac#density-operators).
 
 ## Representing quantum processes
 
@@ -333,7 +333,7 @@ Qobj data =
  
 Notice that each column is a stack of the elements in an operator output by the function $\Lambda_X(\rho) = X \rho X^{\dagger} = X \rho X$.
 
-Since $\Lambda(\ket{0}\bra{0}) = X\ket{0} \bra{0}X = \ket{1}\bra{1}$, the first column is a stack of the elements of $\ket{1}\bra{1} = \left(\begin{matrix} 0 &amp; 0 \\ 0 &amp; 1 \end{matrix}\right)$. Similarly, the second column is a stack of the elements of $\Lambda_X(\ket{0}\bra{1}) = \ket{1}\bra{0}$:
+Since $\Lambda(\ket{0}\bra{0}) = X\ket{0} \bra{0}X = \ket{1}\bra{1}$, the first column is a stack of the elements of $\ket{1}\bra{1} = \left(\begin{matrix} 0 &a 0 \\ 0 & 1 \end{matrix}\right)$. Similarly, the second column is a stack of the elements of $\Lambda_X(\ket{0}\bra{1}) = \ket{1}\bra{0}$:
 
 ```python
 print(np.array((ket1 * ket0.dag()).data.todense().flat))
@@ -342,5 +342,73 @@ print(np.array((ket1 * ket0.dag()).data.todense().flat))
 [0.+0.j, 0.+0.j, 1.+0.j, 0.+0.j]
 ```
 
+The same pattern can be used  in converting other unitary operators such as $H$ and $Z$:
+
+```python
+H_super = qt.to_super(qt.qip.operations.hadamard_transform())
+print(H_super)
+```
+```output
+Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = True
+Qobj data =
+[[0.5 0.5 0.5 0.5]
+ [0.5 -0.5 0.5 -0.5]
+ [0.5 0.5 -0.5 -0.5]
+ [0.5 -0.5 -0.5 0.5]]
+ ```
+```python
+Z_super = qt.to_super(qt.sigmaz())
+print(Z_super)
+```
+```output
+Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = True
+Qobj data =
+[[1.0 0.0 0.0 0.0]
+ [0.0 -1.0 0.0 0.0]
+ [0.0 0.0 -1.0 0.0]
+ [0.0 0.0 0.0 1.0]]
+ ```
+ 
+Looking at the $Z$ superoperator example, notice there is no $-1$ sign in the lower-right hand corner because of the fact that density operators and superoperators do not have the same global phase ambiguity that state vectors and unitary operators do.
+
+In particular, consider the $Z$ operation acting on a qubit in the $\ket{1}$ state. When simulating this with state vectors, the result is $Z \ket{1} = -\ket{1}$, where the $-$ sign in front of $\ket{1}$ is in this case an insignificant global phase. On the other hand, when using open systems notation, the same operation results in $\Lambda_Z(\ket{1}\bra{1}) = Z\ket{1} \bra{1}Z^{\dagger} = Z\ket{1} \bra{1}Z = (-\ket{1})(-\bra{1}) = \ket{1}\bra{1}$, such that the global phases on the "ket" and "bra" parts of $\ket{1}\bra{1}$ cancel each other out.
+
+More generally, suppose that $U \ket{\phi} = e^{i\phi} \ket{\phi}$ for some unitary operator $U$, some phase $\phi$, and some state vector $\ket{\phi}$. Then since $\bra{\phi} U^\dagger = (U \ket{\phi})^\dagger = (e^{i \phi} \ket{\phi})^\dagger = \bra{\phi} e^{-i\phi}$, this results in the same cancellation:
+
+$$
+\begin{aligned}
+    \Lambda_U (\ket{\phi} \bra{\phi}) & = U \ket{\phi} \bra{\phi} U^{\dagger} \\
+                                      & = e^{i\phi} \ket{\phi} \bra{\phi} e^{-i\phi} \\
+                                      & = \ket{\phi} \bra{\phi}
+\end{aligned}
+$$
+
+On the other hand, relative phases are still represented in open systems notation, as we can confirm by looking at the matrices for $\ket{+}\bra{+}$ and $\ket{-}\bra{-}$:
+
+```python
+print(ket_plus * ket_plus.dag())
+```
+```output
+Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
+Qobj data =
+[[0.5 0.5]
+ [0.5 0.5]]
+```
+```python
+ket_minus = (ket0 - ket1) / np.sqrt(2)
+print(ket_minus * ket_minus.dag())
+```
+```output
+Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
+Qobj data =
+[[0.5 -0.5]
+ [-0.5 0.5]]
+```
+
+That is, the off-diagonal elements of density operators describe the relative phases between each computational basis state.
+
+## Noisy quantum processes
+
+Using superoperators not only allows us to represent familiar unitary operations, but also those functions from density operators to density operators that arise in describing noise. For example, the quantum process $\Lambda(\rho) = 0.95 H\rho H + 0.05 \rho$ can be written as a superoperator by simply summing the superoperators for $H$ and $I$ weighted by the probability for each case:
 
 
