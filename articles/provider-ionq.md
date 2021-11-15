@@ -2,7 +2,7 @@
 author: KittyYeungQ
 description: This document provides the technical details of the IonQ provider
 ms.author: kitty
-ms.date: 07/26/2021
+ms.date: 11/15/2021
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -26,7 +26,7 @@ The IonQ provider makes the following targets available:
     - [IonQ Quantum Simulator](#quantum-simulator)
     - [IonQ Quantum Computer](#quantum-computer)
 
-## Quantum Simulator
+## Quantum simulator
 GPU-accelerated idealized simulator supporting up to 29 qubits, using the same set of gates IonQ provide on its quantum hardware—a great place to preflight jobs before running them on an actual quantum computer.
 
 - Job type: `Simulation`
@@ -34,7 +34,7 @@ GPU-accelerated idealized simulator supporting up to 29 qubits, using the same s
 - Target ID: `ionq.simulator`
 - Q# Profile: `No Control Flow`
 
-## Quantum Computer
+## Quantum computer
 Trapped ion quantum computer. Dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair.
 
 - Job type: `Quantum Program`
@@ -81,6 +81,6 @@ To see the pricing options:
 > [!IMPORTANT]
 > Note that there is a $1 USD minimum cost to run a job on the IonQ QPU.
 
-## IonQ Best Practices & Connectivity Graph
+## IonQ best practices and connectivity graph
 
 To see recommended best practices for the IonQ QPU, we recommend reading their [best practices](https://ionq.com/best-practices).

@@ -6,6 +6,11 @@
 			"redirect_document_id": true
 		},
 		{
+			"source_path": "articles/install-jupyter-qdk.md",
+			"redirect_url": "/azure/quantum/install-command-line-qdk",
+			"redirect_document_id": true
+		},
+		{
 			"source_path": "articles/reference-target-list.md",
 			"redirect_url": "/azure/quantum/qc-target-list",
 			"redirect_document_id": false

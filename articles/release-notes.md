@@ -3,7 +3,7 @@ title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
 author: bradben
 ms.author: v-benbra
-ms.date: 09/30/2021
+ms.date: 11/15/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
@@ -289,7 +289,7 @@ This release contains the following:
 - New functions and operations in the [`Microsoft.Quantum.Synthesis`](xref:Microsoft.Quantum.Synthesis) namespace for coherently applying classical oracles using transformation- and decomposition-based synthesis algorithms.
 - IQ# now allows arguments to the `%simulate`, `%estimate`, and other magic commands. See the [`%simulate` magic command reference](xref:microsoft.quantum.iqsharp.magic-ref.simulate) for more details.
 - New phase display options in IQ#. See the [`%config` magic command reference](xref:microsoft.quantum.iqsharp.magic-ref.config) for more details.
-- IQ# and the `qsharp` Python package are now provided via conda packages ([qsharp](https://anaconda.org/quantum-engineering/qsharp) and [iqsharp](https://anaconda.org/quantum-engineering/iqsharp)) to simplify local installation of Q# Jupyter and Python functionality to a conda environment. See the [Q# Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.jupyter) and [Q# with Python](xref:microsoft.quantum.install-qdk.overview.python) installation guides for more details.
+- IQ# and the `qsharp` Python package are now provided via conda packages ([qsharp](https://anaconda.org/quantum-engineering/qsharp) and [iqsharp](https://anaconda.org/quantum-engineering/iqsharp)) to simplify local installation of Q# Jupyter and Python functionality to a conda environment. See the  [Q# with Python](xref:microsoft.quantum.install-qdk.overview.python) installation guides for more details.
 - When using the simulator, qubits no longer need to be in the |0⟩ state upon release, but can be automatically reset if they were measured immediately before releasing.
 - Updates to make it easier for IQ# users to consume library packages with different QDK versions, requiring only major & minor version numbers match rather than the exact same version
 - Removed deprecated `Microsoft.Quantum.Primitive.*` namespace
