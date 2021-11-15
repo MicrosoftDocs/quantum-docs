@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to create a Q# application using Binder. You can use Binder to run and share Jupyter Notebooks online.
 ms.author: v-benbra
-ms.date: 02/01/2021
+ms.date: 11/15/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -33,7 +33,7 @@ Note that you are not restricted to the existing samples, as you can create new 
 
 Binder supports both types of Q# development styles for Jupyter Notebook:
 
-- the *Q# notebook*, which uses the IQ# kernel to directly run code cells written in Q# (see [developing with Q# Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.jupyter)).
+- the *Q# notebook*, which uses the IQ# kernel to directly run code cells written in Q# (see [developing with Q# Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.standalone)).
 - the *Q# + Python* notebook, which contains regular Python code that calls into Q# operations from a `.qs` file (see [developing with Q# and Python](xref:microsoft.quantum.install-qdk.overview.python)).
 
 You will find that the different Jupyter samples might use either of the two styles, and are sometimes available in both, so feel free to explore what best suites your preferences. You can create a notebook of your own by clicking on **New▾ → Python 3** (*Q# + Python* style) or **New▾ → Q#** (*Q# notebook* style) from the directory view.
