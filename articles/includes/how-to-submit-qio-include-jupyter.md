@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: v-sonialopez
-ms.date: 09/10/2021
+ms.date: 11/12/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: include
@@ -10,14 +10,14 @@ ms.topic: include
 ## Prerequisites
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
-  see [Create an Azure Quantum workspace](xref:microsoft.quantum.quickstarts.optimization.qio).
-- The latest version of the [*azure-quantum* Python package](xref:microsoft.quantum.quickstarts.optimization.qio#install-the-python-sdk-for-azure-quantum).
-- [Jupyter Notebook](xref:microsoft.quantum.quickstarts.optimization.qio#jupyter-notebooks-installation).
+  see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- The latest version of the [*azure-quantum* Python package](xref:microsoft.quantum.install-qdk.overview.python-only).
+- [Jupyter Notebook](https://jupyter.org/install).
 
-##  Set up
+## Set up
 
-1. Run `jupyter notebook` from the terminal of your choice. This starts the notebook server and opens Jupyter in a browser. In the browser view, select the dropdown button on the right hand top corner and select  `Python 3`  from the list. This should create a new notebook. 
-2. Instantiate a `Workspace` object which allows you to connect to the Workspace you've previously deployed in Azure. Be sure to fill in the settings below which can be retrieved by running `az quantum workspace show`.
+1. Run `jupyter notebook` from the terminal of your choice. This starts the notebook server and opens Jupyter in a browser. In the browser view, select the dropdown button on the right hand top corner and select  `Python 3`  from the list to create a new notebook. 
+2. Instantiate a `Workspace` object which allows you to connect to the workspace you've previously deployed in Azure. Be sure to fill in the following settings, which can be retrieved by running `az quantum workspace show`.
 
 ```python
 # This allows you to connect to the Workspace you've previously deployed in Azure. 
@@ -30,9 +30,10 @@ workspace = Workspace (
 	name = "", # Add your workspace name 
 	location = ""  # Add your workspace location (for example, "westus") )
 ```
+
 ## Problem instantiation
 
-To submit a problem to the Azure Quantum services, you first need to create a `Problem` instance. This is a Python object that stores all the required information, such as the cost function details and the kind of problem we are modeling.
+To submit a problem to Azure Quantum, you first need to create a `Problem` instance. This is a Python object that stores all the required information, such as the cost function details and the kind of problem you are modeling.
 
 Next, define a function that takes an array of container weights and returns a `Problem` object that represents the cost function. The following function generalizes the `Term` creation for any number of weights by using some for loops. It takes an array of weights and returns a `Problem` object.
 
@@ -72,9 +73,11 @@ container_weights = [1, 5, 9, 21, 35, 5, 3, 5, 10, 11]
 # Create a problem for the list of containers:
 problem = create_problem_for_container_weights(container_weights)
 ```
+
 ## Submit the job to Azure Quantum
 
 Now, submit the problem to Azure Quantum:
+
 ```python
 from azure.quantum.optimization import ParallelTempering
 import time
@@ -89,10 +92,11 @@ result = solver.optimize(problem)
 time_elapsed = time.time() - start
 print(f'Result in {time_elapsed} seconds: ', result)
 ```
+
 > [!NOTE]
 > This guide uses **Parameter-Free Parallel Tempering** solver with a timeout of 100 seconds as an example of a QIO solver. For more information about available solvers, you can visit the [Microsoft QIO provider](xref:microsoft.quantum.optimization.providers.microsoft.qio) documentation page.
 
-Notice that the solver returns the results in the form of a Python dictionary, along with some metadata. For a more human-readable format, use the following function to print a summary of what the solution means:
+Notice that the solver returns the results in the form of a Python dictionary, along with some metadata. You can use the following function to print a more human-readable summary of the solution:
 
 ```python
 def print_result_summary(result):
@@ -116,6 +120,7 @@ def print_result_summary(result):
 
 print_result_summary(result)
 ```
+
 ```output
 Container 0 with weight 1 was placed on Ship A
 Container 1 with weight 5 was placed on Ship B

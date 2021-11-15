@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: v-sonialopez
-ms.date: 10/11/2021
+ms.date: 11/12/2021
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -12,14 +12,9 @@ ms.topic: include
 Ensure that the following items are installed on your computer:
 
 - An Azure Quantum workspace in your Azure subscription. To create
-  a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.quickstarts.optimization.qio).
+  a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - The latest version of the [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview.standalone).
-- The [Azure CLI](/cli/azure/install-azure-cli).
-- Install the Azure CLI `quantum` extension. Open a command prompt and run the following command:
-
-    ```azurecli
-    az extension add -n quantum
-    ```
+- The [Azure CLI and the quantum CLI extension](xref:microsoft.quantum.install-qdk.overview.standalone#azure-cli-net-core-sdk-31-not-required).
 
 ## Submit a job to Azure Quantum with the Azure CLI
 
@@ -38,7 +33,7 @@ You will also find a full reference for all commands and features available thro
    az login
    ```
 
-1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in Azure Portal.
+1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in Azure portal.
 
    ```azurecli
    az account set -s <Your subscription ID>

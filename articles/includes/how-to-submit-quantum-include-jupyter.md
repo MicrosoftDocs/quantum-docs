@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: v-sonialopez
-ms.date: 10/11/2021
+ms.date: 11/12/2021
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -10,11 +10,8 @@ ms.topic: include
 ## Prerequisites
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
-  see [Create an Azure Quantum workspace](xref:microsoft.quantum.quickstarts.optimization.qio).
-- The latest version of the [Quantum Development Kit for Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.jupyter#install-the-iq-jupyter-kernel).
-
-Follow the installation steps in the provided link to install Jupyter Notebook and
-the current version of the IQ# kernel, which powers the Q# Jupyter Notebook and
+  see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- The latest version of the [Quantum Development Kit for Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.python#install-the-qsharp-python-package). This installs Jupyter Notebook and the IQ# kernel, which powers the Q# Jupyter Notebook and
 Python experiences.
 
 ## Quantum computing with Q# Jupyter Notebooks
@@ -22,8 +19,7 @@ Python experiences.
 1. Run `jupyter notebook` from the terminal where your conda environment is
    activated. This starts the notebook server and opens Jupyter in a browser.
 1. Create your Q# notebook (via **New** → **Q#**) and write your Q# program.
-1. If you've never used Q# with Jupyter, follow the steps in [Create your first Q#
-    notebook](xref:microsoft.quantum.install-qdk.overview.jupyter).
+1. If you've never used Q# with Jupyter, follow the steps in [Run a Q# program](xref:microsoft.quantum.how-to.standalone-local#run-a-q-program).
 1. Write your Q# operations directly in the notebook. Running the cells will
    compile the Q# code and report whether there are any errors.
     - For example, you could write a Q# operation that looks like this:
@@ -41,7 +37,7 @@ Python experiences.
 1. Once you have your Q# operations defined, use the `%azure.*` magic commands
    to connect and submit jobs to Azure Quantum. You'll use the resource ID of
    your Azure Quantum workspace in order to connect. (The resource ID can be found
-   on your workspace page in the Azure Portal.)
+   on your workspace page in the Azure portal.)
 
    If your workspace was created in an Azure region other than \"West US\", you also
    need to specify this as the `location` parameter to `%azure.connect`.
