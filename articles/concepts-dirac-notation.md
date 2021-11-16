@@ -180,7 +180,7 @@ More generally, a given matrix $\rho$ is a valid density operator if the followi
 1. Every eigenvalue $p$ of $\rho$ is $0 &lt;= p &lt;= 1$
 1. All the eigenvalues of $\rho$ sum to 1
 
-Together, these conditions guarantee that $\rho$ can be thought of as an ensemble. In particular, if $\rho = \sum_i p_i \ket{\psi_i} \bra{\psi_i}$ is an eigenvalue decomposition of $\rho$, then $\rho$ describes the ensemble $\rho = \{\ket{\psi_i}$ with probability $p_i$.
+Together, these conditions guarantee that $\rho$ can be thought of as an ensemble. In particular, if $\rho = \sum_i p_i \ket{\psi_i} \bra{\psi_i}$ is an eigenvalue decomposition of $\rho$, then $\rho$ describes the ensemble $\rho =\ket{\psi_i}$ with probability $p_i$.
 
 This concept of representing the state as a matrix, rather than a vector, is often convenient because it gives a convenient way of representing probability calculations, and also allows one to describe both statistical uncertainty as well as quantum uncertainty within the same formalism.
 General quantum state operators, rather than vectors, are ubiquitous in some areas of quantum computing but are not necessary to understand the basics of the field.
@@ -192,7 +192,7 @@ In general, density operators represent *mixed states*, while those states that 
 
 To tell how close a given density operator $\rho$ is to being pure, you can look at the trace (that is the sum of the diagonal elements) of $\rho^2$. A density operator represents a pure state if and only if $\text{tr}(\rho ^{2})=1.
 
-Let's consider the mixed state $\rho_{\text{mixed}} = \frac{1}{2}\left( \ket{0}\bra{0} + $\ket{1}\bra{1} \right)$,
+Let's consider the mixed state $\rho_{\text{mixed}} = \frac{1}{2}\left( \ket{0}\bra{0} + \ket{1}\bra{1} \right)$,
 
 ```python
 import qutip as qt
