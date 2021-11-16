@@ -218,12 +218,12 @@ $$
 The trick here is to average over the different state vectors that could be prepared by the `ApplyHToRandomStateAndMeasure` operation:
 
 $$
-\begin{align}
-    Pr(\phi | \rho) & = \mathbb{E}_{\psi \sim \rho} 	[ \,Pr(\phi | \psi)] \, \\\\
-                    & = \mathbb{E}_{\psi \sim \rho} 	[ \, \left\langle \phi | \psi \right\rangle \left\langle \psi | \phi \right\rangle ] \, \\\\
-                    & = \sum_i Pr(\psi_i) \left\langle \phi | \psi_i \right\rangle \left\langle \psi_i | \phi \right\rangle \\\\
-                    & = \left\langle\phi \Bigg| \left(\sum_i Pr(\psi_i) \ket{\psi_i} \bra{\psi_i}\right) \Bigg| \phi\right\rangle
-\end{align}
+\begin{aligned}
+    Pr(\phi | \rho) & = \mathbb{E}_{\psi \sim \rho} \left[ Pr(\phi | \psi) \right] \\\\
+        & = \mathbb{E}_{\psi \sim \rho} \left[ \left\langle \phi | \psi \right\rangle \left\langle \psi | \phi \right\rangle \right] \\\\
+        & = \sum_i Pr(\psi_i) \left\langle \phi | \psi_i \right\rangle \left\langle \psi_i | \phi \right\rangle \\\\
+        & = \left\langle \phi \Bigg| \left( \sum_i Pr(\psi_i) \ket{\psi_i} \bra{\psi_i} \right) \Bigg| \phi \right\rangle.
+\end{aligned}
 $$
 
 Factoring out $\bra{\phi}$ and $\ket{\phi}$ in the last step gives us a neat new way of writing out ensembles of state vectors as matrices called [**density operators**](xref:microsoft.quantum.concepts.dirac#density-operators). For example, the ensemble $\rho$ can also be written out as the following density operator,
