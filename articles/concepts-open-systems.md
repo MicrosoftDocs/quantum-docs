@@ -84,7 +84,7 @@ namespace OpenSystemsConcepts {
 ```python
 from OpenSystemsConcepts import DumpPlus
 
-print(DumpPlus.simulate_noise())
+print(DumpPlus.simulate())
 ```
 Calling <xref:Microsoft.Quantum.Diagnostics.DumpMachine> generates the following output:
 
