@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how quantum operations affect the states of open systems.
 ms.author: v-sonialopez
-ms.date: 11/12/2021
+ms.date: 11/16/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -13,11 +13,11 @@ uid: microsoft.quantum.concepts.opensystems
 
 # Open quantum systems
 
-Quantum systems that are very well isolated from their environments such that no other system interacts with the qubits are called *closed quantum systems*. By contrast, a device that is subject to some amount of  interaction, or *noise*, from its environment is an *open quantum system*. 
+Quantum systems that are very well isolated from their environments such that no other system interacts with the qubits are called *closed quantum systems*. By contrast, a device that is subject to some amount of interaction, or *noise*, from its environment is an *open quantum system*. In general, these interactions between the system and the environment significantly change the dynamics of the system and result in quantum dissipation, such that the information contained in the system is lost to its environment.
  
 The Quantum Development Kit provides a [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulation of open quantum systems. This feature allows for simulating the behavior of Q# programs under the influence of noise, and also for using the *stabilizer representation* (also known as CHP simulation) of quantum algorithms, that is, algorithms consisting solely of [CNOT](xref:Microsoft.Quantum.Intrinsic.CNOT), [Hadamard](xref:Microsoft.Quantum.Intrinsic.H), and phase gates. 
 
-This article explains some of the basic concepts on open quantum systems, and how quantum operations affect the states of open systems. 
+This article explains some of the basic concepts on open quantum systems, and how quantum operations can affect the states of open systems. 
 
 ## Invoking the noise simulators from Python
 
@@ -41,7 +41,7 @@ qsharp.experimental.enable_noisy_simulation()
 ```
 ## Revisiting quantum states
 
-Before proceeding to discuss representing open quantum systems, it's helpful to quickly revisit representations of closed quantum systems. In particular, the state of an $n$-qubit register can be represented as a vector of $2^n$ complex numbers. For example, the state of a single qubit can be written as a vector of the form
+Before discussing the representation of open quantum systems, it's helpful to quickly revisit representations of closed quantum systems. In particular, the state of an $n$-qubit register can be represented as a vector of $2^n$ complex numbers. For example, the state of a single qubit can be written as a vector of the form
 
 $$
 \begin{aligned}
@@ -51,14 +51,14 @@ $$
 \end{aligned}
 $$
 
-for complex numbers $\alpha$ and $\beta$ such that $|\alpha|^2 + |\beta|^2 = 1$.
+where $\alpha$ and $\beta$ are complex numbers such that $|\alpha|^2 + |\beta|^2 = 1$.
 
 In Q#, you can ask the default simulator to dump the state that it uses to simulate quantum programs, getting back a description of that state as a vector of this form. For more information, see [Dump functions](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging#dump-functions).
 
-1. In the same folder as the Python host program, create the following Q# program in a file called `DumpSimulation.qs`:
+1. In the same folder as the Python host program, create the following Q# program in a file called `OpenSystemsConcepts.qs`:
 
 ```qsharp
-namespace DumpSimulation {
+namespace OpenSystemsConcepts {
     open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Diagnostics;
@@ -82,7 +82,7 @@ namespace DumpSimulation {
 1. Add the following code to your host program to import the Q# operation `DumpPlus`:
 
 ```python
-from DumpSimulation import DumpPlus
+from OpenSystemsConcepts import DumpPlus
 
 print(DumpPlus.simulate_noise())
 ```
@@ -115,9 +115,8 @@ ket0 = qt.basis(2, 0)
 ket1 = qt.basis(2, 1)
 ket_plus = (1 / np.sqrt(2)) * (ket0 + ket1)
 print(ket_plus)
-
 ```
-When measuring a qubit in the $\ket{+}$ state in the $Z$-basis, we get Zero and One with equal probability:
+1. When measuring a qubit in the $\ket{+}$ state in the $Z$-basis, we get Zero and One with equal probability:
 
 ```qsharp
 operation SampleRandomBit() : Result {
@@ -127,13 +126,13 @@ operation SampleRandomBit() : Result {
 }
 ```
 ```python
-from DumpSimulation import SampleRandomBit
+from OpenSystemsConcepts import SampleRandomBit
 print(sum(SampleRandomBit.simulate() for _ in range(100)))
 ```
 ```output
 54
 ```
-Importantly, though, the $\ket{+}$ state is not inherently random — we can determinstically return to the $\ket{0}$ state by applying another H operation:
+1. Though, the $\ket{+}$ state is not inherently random — you can determinstically return to the $\ket{0}$ state by applying another Hadamard operation:
 
 ```qsharp
 operation ApplyHTwiceAndMeasure() : Result {
@@ -144,7 +143,7 @@ operation ApplyHTwiceAndMeasure() : Result {
 }
 ```
 ```python
-from DumpSimulation import ApplyHTwiceAndMeasure
+from OpenSystemsConcepts import ApplyHTwiceAndMeasure
 print(sum(ApplyHTwiceAndMeasure.simulate() for _ in range(100)))
 ```
 ```output
@@ -152,8 +151,9 @@ print(sum(ApplyHTwiceAndMeasure.simulate() for _ in range(100)))
 ```
 ## Preparing random states
 
-As opposed to preparing $\ket{+}$ and measuring, you could also consider flipping a coin classically, and using the outcome to prepare either the $\ket{0}$ or $\ket{1}$ state. Thus, if the outcome is "heads", the qubit is prepared in the $\ket{0}$ state, and if the outcome is "tails", the qubit is prepared in the $\ket{1}$ state.
+As opposed to preparing $\ket{+}$ and then measuring it, you could also consider flipping a coin classically, and using the outcome to prepare either the $\ket{0}$ or $\ket{1}$ state. Thus, if the outcome is "heads", the qubit is prepared in the $\ket{0}$ state, and if the outcome is "tails", the qubit is prepared in the $\ket{1}$ state.
 
+1. Add the following code to your Q# program.
 ```qsharp
 operation PrepareAndMeasureRandomState() : Result {
     use q = Qubit();
@@ -163,16 +163,17 @@ operation PrepareAndMeasureRandomState() : Result {
     return MResetZ(q);
 }
 ```
-Doing so, we get the same 50/50 outcomes that we saw before:
+The `PrepareAndMeasureRandomState` operation applies the [`X`](xref:Microsoft.Quantum.Intrinsic.X) to a qubit with 50% of probability, as in a classical coin flip. Doing so, the results is the 50/50 outcomes for the $\ket{0}$ state and the $\ket{1}$ state :
 
 ```python
-from import PrepareAndMeasureRandomState
+from OpenSystemsConcepts import PrepareAndMeasureRandomState
 print(sum(PrepareAndMeasureRandomState.simulate() for _ in range(100)))
 ```
 ```output
 45
 ```
-This time, however, when we apply H again, we don't get back to a determinstic outcome:
+1. However, now if you apply `H` again, the result of the operation doesn't get back to a deterministic outcome:
+
 ```qsharp
 operation ApplyHToRandomStateAndMeasure() : Result {
     use q = Qubit();
@@ -184,7 +185,7 @@ operation ApplyHToRandomStateAndMeasure() : Result {
 }
 ```
 ```python
-from import PrepareAndMeasureRandomState
+from OpenSystemsConcepts import PrepareAndMeasureRandomState
 print(sum(ApplyHToRandomStateAndMeasure.simulate() for _ in range(100)))
 ```
 ```output
@@ -193,7 +194,7 @@ print(sum(ApplyHToRandomStateAndMeasure.simulate() for _ in range(100)))
 
 ### Density operator
 
-As it turns out, there is no single vector that represents the state prepared by `ApplyHToRandomStateAndMeasure` unless you know the outcome of the random coin flip `(DrawRandomBool(0.5))`. If you don't know the outcome of the coin flip, the quantum state is given by the following *ensemble* of state vectors,
+As it turns out, there is no single vector that represents the state prepared by the `ApplyHToRandomStateAndMeasure` operation unless you know the outcome of the random coin flip `(DrawRandomBool(0.5))`. If you don't know the outcome of the coin flip, the quantum state is given by the following *ensemble* of state vectors,
 
 $$
 \begin{aligned}
@@ -209,8 +210,8 @@ Given a quantum state $\ket{\psi}$ the probability of the outcome $\ket{\phi}$ a
 
 $$
 \begin{aligned}
-    \Pr(\phi | \psi) &amp; = \left|\left\langle \phi | \psi \right\rangle\right|^2 \\
-                     &amp; = \left\langle \phi | \psi \right\rangle \left\langle \psi | \phi \right\rangle.
+    \Pr(\phi | \psi) & = \left|\left\langle \phi | \psi \right\rangle\right|^2 \\
+                     & = \left\langle \phi | \psi \right\rangle \left\langle \psi | \phi \right\rangle.
 \end{aligned}
 $$
 
@@ -219,14 +220,14 @@ The trick here is to average over the different state vectors that could be prep
 $$
 \begin{aligned}
     \Pr(\phi | \rho)
-        &amp; = \mathbb{E}_{\psi \sim \rho} \left[
+        & = \mathbb{E}_{\psi \sim \rho} \left[
             \Pr(\phi | \psi)
         \right] \\
-        &amp; = \mathbb{E}_{\psi \sim \rho} \left [
+        & = \mathbb{E}_{\psi \sim \rho} \left [
             \left\langle \phi | \psi \right\rangle \left\langle \psi | \phi \right\rangle
         \right] \\
-        &amp; = \sum_i \Pr(\psi_i) \left\langle \phi | \psi_i \right\rangle \left\langle \psi_i | \phi \right\rangle \\
-        &amp; = \left\langle
+        & = \sum_i \Pr(\psi_i) \left\langle \phi | \psi_i \right\rangle \left\langle \psi_i | \phi \right\rangle \\
+        & = \left\langle
             \phi \Bigg| \left(
                 \sum_i \Pr(\psi_i) \ket{\psi_i} \bra{\psi_i}
             \right) \Bigg| \phi
@@ -238,9 +239,9 @@ Factoring out $\bra{\phi}$ and $\ket{\phi}$ in the last step gives us a neat new
 
 $$
 \begin{aligned}
-    \rho &amp; = \sum_i \Pr(\psi_i) \ket{\psi_i} \bra{\psi_i} \\
-         &amp; = \frac{1}{2} \ket{0} \bra{0} + \frac{1}{2} \ket{1} \bra{1} \\
-         &amp; = \frac{1}{2} \left( \begin{matrix}
+    \rho & = \sum_i \Pr(\psi_i) \ket{\psi_i} \bra{\psi_i} \\
+         & = \frac{1}{2} \ket{0} \bra{0} + \frac{1}{2} \ket{1} \bra{1} \\
+         & = \frac{1}{2} \left( \begin{matrix}
              1 &a 0 \\ 0 & 1
          \end{matrix} \right).
 \end{aligned}
@@ -525,13 +526,11 @@ Qobj data =
 ```
 ## Example: Decaying Ramsey signal
 
+In this example, you will study the evolution of a qubit when you repeatedly apply the π/4 phase gate or [`S`](xref:Microsoft.Quantum.Intrinsic.S) to it and then measure. This simple example works as a good toy model for Ramsey interferometry, which is a technique for measuring particle transition frequencies with atomic precision. 
 
-In this example, you will study the evolution of a qubit when you repeatedly apply `S` to it and then measure. This simple example works as a good toy model for Ramsey interferometry, which is a technique for measuring particle transition frequencies with atomic precision. Ramsey interferometry can 
+In the absense of noise, Ramsey signal keeps oscillating back and forth with each iteration of `S`. Add the following code to your Q# quantum program:
 
-In the absense of noise, we should see the signal that we get back oscillate with each iteration of S:
-
-%%qsharp
-
+```qsharp
 operation ApplySRepeatedlyAndMeasure(nRepetions : Int) : Result {
     use q = Qubit();
     within {
@@ -543,15 +542,64 @@ operation ApplySRepeatedlyAndMeasure(nRepetions : Int) : Result {
     }
     return MResetZ(q);
 }
+```
+
+The operation `ApplySRepeatedlyAndMeasure` sets a qubit in superposition, then it applies the π/4 phase operation `nRepetions` times, and it retunrs the measurement in $Z$-axis. 
+Add the following code to your host program to simulate the `ApplySRepeatedlyAndMeasure` operation in the absense of noise.
+
+```python
+from OpenSystemsConcepts import ApplySRepeatedlyAndMeasure
+
 qsharp.experimental.set_noise_model_by_name('ideal')
+
 ns = np.arange(1, 101)
 signal_wo_noise = [
     sum(ApplySRepeatedlyAndMeasure.simulate_noise(nRepetions=n) for _ in range(100))
     for n in ns
 ]
-plt.plot(ns, signal_wo_noise)
+
+print(plt.plot(ns, signal_wo_noise))
+```
+![ramsey signal ideal](~/media/ramsey-signal-ideal-model.png)
+
+On the other hand, if the $S$ operation has some finite amplitude damping noise, then the signal will eventually decay:
+
+```python
+S = qt.Qobj([
+    [1, 0],
+    [0, 1j]
+])
+
+noise_model = qsharp.experimental.get_noise_model_by_name('ideal')
+noise_model['h'] = (
+    depolarizing_noise(0.025) *
+    qt.to_super(qt.qip.operations.hadamard_transform())
+)
+noise_model['s'] = (
+    amplitude_damping_noise(0.025) *
+    qt.to_super(S)
+)
+qsharp.experimental.set_noise_model(noise_model)
+
+# Note that this can take a few moments to run.
+signal = [
+    sum(ApplySRepeatedlyAndMeasure.simulate_noise(nRepetions=n) for _ in range(100))
+    for n in ns
+]
+
+print(plt.plot(ns, signal_wo_noise, label='Ideal Signal'))
+print(plt.plot(ns, signal, label='With Amplitude Damping Noise'))
+plt.legend()
+```
+
+![ramsey signal noise](~/media/ramsey-signal-noise-model.png)
 
 
+## Next steps
+
+- [QDK noise simulators](xref:microsoft.quantum.machines.overview.noise-simulator)
+- [Understanding quantum computing](xref:microsoft.quantum.overview.understanding)
+- [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra)
 
 
 
