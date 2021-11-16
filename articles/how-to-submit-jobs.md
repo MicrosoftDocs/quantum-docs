@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides a basic guide to submit and run Azure Quantum using python, Jupyter Notebooks, or the Azure CLI.
 ms.author: v-benbra
-ms.date: 06/24/2021
+ms.date: 11/12/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
