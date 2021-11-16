@@ -323,14 +323,38 @@ A Python host program is constructed as follows:
     random_bit = MeasureSuperposition.simulate()
     print(random_bit)
     ```
+#### Diagnostics
+
+Just as with Q# standalone notebooks, you can also use diagnostics like `DumpMachine` and `DumpOperation` from Python notebooks to learn how your Q# program work and to help diagnose issues and bugs in your Q# programs.
+
+```qsharp
+namespace DumpOperation {
+    open Microsoft.Quantum.Diagnostics;
+
+    operation DumpPlusState() : Unit {
+        use q = Qubit();
+        within {
+            H(q);
+        } apply {
+            DumpMachine();
+        }
+    }
+}
+```
+```python
+from  DumpOperation import DumpPlusState
+print(DumpPlusState.simulate())
+```
+To learn more about the diagnostics features offered by Q# and the Quantum Development Kit, see [testing and debugging](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging).
 
 #### Specifying target machines
 
 Running Q# operations on a specific target machine is done by invoking Python methods directly on the imported operation object. Thus, there is no need to create an object for the run target (such as a simulator). Instead, invoke one of the following methods to run the imported Q# operation:
 
-- `.simulate(<args>)` uses the [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) to simulate the operation for an ideal quantum computer ([api reference for `.simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#simulate---kwargs-----typing-any))
-- `.estimate_resources(<args>)` uses the [resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator) to compute various quantum resources required by the program ([api reference for `.estimate_resources(<args>)`](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)
-- `.toffoli_simulate(<args>)` uses the [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator) to provide a more efficient simulation method for a restricted class of quantum programs ([api reference for `.toffoli_simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)
+- `.simulate(<args>)` uses the [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) to simulate the operation for an ideal quantum computer. ([API reference for `.simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#simulate---kwargs-----typing-any)).
+- `.estimate_resources(<args>)` uses the [resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator) to compute various quantum resources required by the program. ([API reference for `.estimate_resources()`](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)).
+- `.toffoli_simulate(<args>)` uses the [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator) to provide a more efficient simulation method for a restricted class of quantum programs. ([API reference for `.toffoli_simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)).
+- `.simulate_noise(<args>)` uses the [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) to simulate the operation in an open quantum system under the influence of noise.
 
 For more information about local target machines, see [Quantum simulators](xref:microsoft.quantum.machines.overview).
 
