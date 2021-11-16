@@ -2,7 +2,7 @@
 author: guenp
 description: Learn how to to submit provider-formatted quantum circuits with OpenQASM and IonQ JSON to the Azure Quantum service.
 ms.author: guenp
-ms.date: 11/09/2021
+ms.date: 11/16/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart

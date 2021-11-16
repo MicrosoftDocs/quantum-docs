@@ -5,7 +5,7 @@ author: hsirtl
 ms.author: hsirtl
 ms.service: azure-quantum
 ms.topic: how-to
-ms.date: 09/09/2021
+ms.date: 11/16/2021
 #Customer intent: As a researcher, I want to make my quantum algorithm accessible via API so that developers without further quantum knowledge can call it via classical API-calls.
 ---
 

@@ -1,7 +1,7 @@
 ---
 author: mblouin
 ms.author: mblouin
-ms.date: 06/24/2021
+ms.date: 11/16/2021
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include

@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to set up Azure Quantum for different languages and platforms.
 ms.author: v-benbra
-ms.date: 10/25/2021
+ms.date: 11/16/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart

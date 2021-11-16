@@ -2,7 +2,7 @@
 author: guenp
 description: Learn how to submit Qiskit quantum circuits to the Azure Quantum service.
 ms.author: guenp
-ms.date: 11/08/2021
+ms.date: 11/16/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
