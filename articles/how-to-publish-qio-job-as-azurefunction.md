@@ -23,7 +23,7 @@ The QIO job that will be published as an Azure Function implements the so called
 
 You need the following prerequisites to follow the steps in this article.
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?ref=microsoft.com).
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.quickstarts.optimization.qio).
 - The latest version of the [Quantum Development Kit for Python](xref:microsoft.quantum.install-qdk.overview.python#install-the-qsharp-python-package).

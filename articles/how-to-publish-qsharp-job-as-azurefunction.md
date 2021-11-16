@@ -23,7 +23,7 @@ The Q# job that you will publish as an Azure function implements a quantum rando
 
 You need the following prerequisites to follow the steps in this article:
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?ref=microsoft.com).
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - The latest version of the [Quantum Development Kit for Q# and .NET](/azure/quantum/install-overview-qdk?tabs=tabid-local).
 - The [Azure Functions Core Tools](/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools) version 3.x.
 - [Visual Studio Code (VS Code)](https://code.visualstudio.com/) on one of the [supported platforms](https://code.visualstudio.com/docs/supporting/requirements#_platforms).
