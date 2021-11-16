@@ -79,7 +79,7 @@ namespace OpenSystemsConcepts {
 > [!Note]
 > The `@EntryPoint()` attribute used for Q# applications cannot be used with host programs. An error will be raised if it is present in the Q# file being called by a host.
 
-1. Add the following code to your host program to import the Q# operation `DumpPlus`:
+2. Add the following code to your host program to import the Q# operation `DumpPlus`:
 
 ```python
 from OpenSystemsConcepts import DumpPlus
@@ -116,7 +116,7 @@ ket1 = qt.basis(2, 1)
 ket_plus = (1 / np.sqrt(2)) * (ket0 + ket1)
 print(ket_plus)
 ```
-1. When measuring a qubit in the $\ket{+}$ state in the $Z$-basis, we get Zero and One with equal probability:
+3. When measuring a qubit in the $\ket{+}$ state in the $Z$-basis, we get Zero and One with equal probability:
 
 ```qsharp
 operation SampleRandomBit() : Result {
@@ -132,7 +132,7 @@ print(sum(SampleRandomBit.simulate() for _ in range(100)))
 ```output
 54
 ```
-1. Though the $\ket{+}$ state is not inherently random — you can deterministically return to the $\ket{0}$ state by applying another Hadamard operation:
+4. Though the $\ket{+}$ state is not inherently random, you can deterministically return to the $\ket{0}$ state by applying another Hadamard operation:
 
 ```qsharp
 operation ApplyHTwiceAndMeasure() : Result {
@@ -172,7 +172,7 @@ print(sum(PrepareAndMeasureRandomState.simulate() for _ in range(100)))
 ```output
 45
 ```
-1. However, now if you apply `H` again, the result of the operation doesn't get back to a deterministic outcome:
+2. However, now if you apply `H` again, the result of the operation doesn't get back to a deterministic outcome:
 
 ```qsharp
 operation ApplyHToRandomStateAndMeasure() : Result {
@@ -197,95 +197,79 @@ print(sum(ApplyHToRandomStateAndMeasure.simulate() for _ in range(100)))
 As it turns out, there is no single vector that represents the state prepared by the `ApplyHToRandomStateAndMeasure` operation unless you know the outcome of the random coin flip `(DrawRandomBool(0.5))`. If you don't know the outcome of the coin flip, the quantum state is given by the following *ensemble* of state vectors,
 
 $$
-\begin{aligned}
-    \rho =
-        \left\{
-            \ket{0} \text{ with probability 50%}, \quad
-            \ket{1} \text{ with probability 50%}
-        \right\}.
-\end{aligned}
+\rho =\left\{\ket{0} \text{ with probability 50%}, \quad \ket{1} \text{ with probability 50%}\right\}
 $$
 
 Given a quantum state $\ket{\psi}$ the probability of the outcome $\ket{\phi}$ after a measurement is given by the Born's rule,
 
 $$
-\begin{aligned}
-    \Pr(\phi | \psi) & = \left|\left\langle \phi | \psi \right\rangle\right|^2 \\
+\begin{align}
+    \Pr(\phi | \psi) & = \left|\left\langle \phi | \psi \right\rangle\right|^2 \\\\
                      & = \left\langle \phi | \psi \right\rangle \left\langle \psi | \phi \right\rangle.
-\end{aligned}
+\end{align}
 $$
 
 The trick here is to average over the different state vectors that could be prepared by the `ApplyHToRandomStateAndMeasure` operation:
-
 $$
-\begin{aligned}
-    \Pr(\phi | \rho)
-        & = \mathbb{E}_{\psi \sim \rho} \left[
-            \Pr(\phi | \psi)
-        \right] \\
-        & = \mathbb{E}_{\psi \sim \rho} \left [
-            \left\langle \phi | \psi \right\rangle \left\langle \psi | \phi \right\rangle
-        \right] \\
-        & = \sum_i \Pr(\psi_i) \left\langle \phi | \psi_i \right\rangle \left\langle \psi_i | \phi \right\rangle \\
-        & = \left\langle
-            \phi \Bigg| \left(
-                \sum_i \Pr(\psi_i) \ket{\psi_i} \bra{\psi_i}
-            \right) \Bigg| \phi
-        \right\rangle.
-\end{aligned}
+\begin{align}
+    Pr(\phi | \rho) & = \mathbb{E}_{\psi \sim \rho} \left[Pr(\phi | \psi)\right] \\\\
+                    & = \mathbb{E}_{\psi \sim \rho} \left[\left\langle \phi | \psi \right\rangle \left\langle \psi | \phi \right\rangle \right] \\\\
+                    & = \sum_i Pr(\psi_i) \left\langle \phi | \psi_i \right\rangle \left\langle \psi_i | \phi \right\rangle \\\\
+                    & = \left\langle\phi \Bigg| \left(\sum_i Pr(\psi_i) \ket{\psi_i} \bra{\psi_i}\right) \Bigg| \phi\right\rangle
+\end{align}
 $$
 
 Factoring out $\bra{\phi}$ and $\ket{\phi}$ in the last step gives us a neat new way of writing out ensembles of state vectors as matrices called [**density operators**](xref:microsoft.quantum.concepts.dirac#density-operators). For example, the ensemble $\rho$ can also be written out as the following density operator,
 
 $$
-\begin{aligned}
+\begin{align}
     \rho & = \sum_i \Pr(\psi_i) \ket{\psi_i} \bra{\psi_i} \\
          & = \frac{1}{2} \ket{0} \bra{0} + \frac{1}{2} \ket{1} \bra{1} \\
          & = \frac{1}{2} \left( \begin{matrix}
-             1 &a 0 \\ 0 & 1
+             1 & 0 \\\\ 0 & 1
          \end{matrix} \right).
-\end{aligned}
+\end{align}
 $$
 
 Using density operators, you can write both ensembles of states, as well as the projectors on to those state vectors. For example, the $\ket{+}$ state can be written as the density operator
 
 $$
-\begin{aligned}
+\begin{align}
     \ket{+}\bra{+} = 
     \frac{1}{2} \left( \begin{matrix}
-        1 & 1 \\ 1 & 1
+        1 & 1 \\\\ 1 & 1
     \end{matrix} \right).
-\end{aligned}
+\end{align}
 $$
 
 That is, even though both `SampleRandomBit` and `PrepareAndMeasureRandomState` both prepare density operators with the same diagonal elements (and thus have the same measurement probabilities in the $Z$-basis), the two density operators have different off-diagonal elements. 
 
-We say that density operators in general represent *mixed states*, and that states that can be written as $\ket{\psi}\bra{\psi}$ for some state vector $\ket{\psi}$ (e.g.: $\ket{+}\bra{+}$) are *pure states*. For more information about the differences between mixed states and pure states, see [density operators](xref:microsoft.quantum.concepts.dirac#density-operators).
+We say that density operators in general represent *mixed states*, and that states that can be written as $\ket{\psi}\bra{\psi}$ for some state vector $\ket{\psi}$ (fo example, $\ket{+}\bra{+}$) are *pure states*. For more information about the differences between mixed states and pure states, see [density operators](xref:microsoft.quantum.concepts.dirac#density-operators).
 
 ## Representing quantum processes
 
 Considering the [Hadamard](xref:Microsoft.Quantum.Intrinsic.H) operation, you can simulate its action on a pure state $\ket{\psi}$ as $H \ket{\psi}$. By direct analogy, you can simulate what $H$ does to a density operator by multiplying on the left and right both:
 
 $$
-\begin{aligned}
+\begin{align}
     \rho \longmapsto H\rho H^{\dagger} = H \rho H.
-\end{aligned}
+\end{align}
 $$
 
 More generally, though, you can also represent processes in which one of several unitary operations is applied at random. For example, suppose $H$ operation works 95% of the time, but the other 5% of the time does nothing. You can simply add the density operators weighted by the probability of each case:
 
 $$
-\begin{aligned}
+\begin{align}
     \rho \longmapsto 0.95 H \rho H + 0.05 \rho.
-\end{aligned}
+\end{align}
 $$
 
 One way to model this is by thinking of the $H$ operation not as being represented by a unitary matrix, but by a function from density operators to density operators.
 
 $$
-\begin{aligned}
+\begin{align}
     \Lambda_H(\rho) = H\rho H.
-\end{aligned}
+\end{align}
 $$
 
 Since density functions represent an average over different preparations, and since averages are linear, such functions must in general must also be linear.
@@ -326,6 +310,7 @@ Qobj data =
  [0.0  0.0  1.0  0.0]
  [0.0  1.0  0.0  0.0]
  [1.0  0.0  0.0  0.0]]
+```
  
 Notice that each column is a stack of the elements in an operator output by the function $\Lambda_X(\rho) = X \rho X^{\dagger} = X \rho X$.
 
@@ -351,7 +336,7 @@ Qobj data =
  [0.5 -0.5 0.5 -0.5]
  [0.5 0.5 -0.5 -0.5]
  [0.5 -0.5 -0.5 0.5]]
- ```
+```
 ```python
 Z_super = qt.to_super(qt.sigmaz())
 print(Z_super)
@@ -363,7 +348,7 @@ Qobj data =
  [0.0 -1.0 0.0 0.0]
  [0.0 0.0 -1.0 0.0]
  [0.0 0.0 0.0 1.0]]
- ```
+```
  
 Looking at the $Z$ superoperator example, notice there is no $-1$ sign in the lower-right hand corner because of the fact that density operators and superoperators do not have the same global phase ambiguity that state vectors and unitary operators do.
 
@@ -372,11 +357,11 @@ In particular, consider the $Z$ operation acting on a qubit in the $\ket{1}$ sta
 More generally, suppose that $U \ket{\phi} = e^{i\phi} \ket{\phi}$ for some unitary operator $U$, some phase $\phi$, and some state vector $\ket{\phi}$. Then since $\bra{\phi} U^\dagger = (U \ket{\phi})^\dagger = (e^{i \phi} \ket{\phi})^\dagger = \bra{\phi} e^{-i\phi}$, this results in the same cancellation:
 
 $$
-\begin{aligned}
+\begin{align}
     \Lambda_U (\ket{\phi} \bra{\phi}) & = U \ket{\phi} \bra{\phi} U^{\dagger} \\
                                       & = e^{i\phi} \ket{\phi} \bra{\phi} e^{-i\phi} \\
                                       & = \ket{\phi} \bra{\phi}
-\end{aligned}
+\end{align}
 $$
 
 On the other hand, relative phases are still represented in open systems notation, as we can confirm by looking at the matrices for $\ket{+}\bra{+}$ and $\ket{-}\bra{-}$:
@@ -420,7 +405,7 @@ Qobj data =
  [0.475 -0.475 -0.475 0.525]]
 ```
 
-Unlike the unitary matrix $H$ that describes the ideal action of the Hadamard operation, the superoperator $\Lambda_{text{noisy}H}$ simulates the action of the Hadamard operation when it has a 5% probability of doing nothing.
+Unlike the unitary matrix $H$ that describes the ideal action of the Hadamard operation, the superoperator $\Lambda_{\text{noisy}H}$ simulates the action of the Hadamard operation when it has a 5% probability of doing nothing.
 
 ### Noise simulation in Q\#
 
@@ -444,7 +429,7 @@ print(DumpPlus.simulate_noise())
 ```output
 'text/plain': 'Mixed state on 1 qubits: [ [0.5000000000000001 + 0 i, 0.5000000000000001 + 0 i] [0.5000000000000001 + 0 i, 0.5000000000000001 + 0 i] ]'
 ```
-1. To configure the noise model, set `lambda_noisy_h` as the noise model to follow, and then run the `DumpPlus` operation to see the effects of the noisy Hadamard operation on the quantum state.
+2. To configure the noise model, set `lambda_noisy_h` as the noise model to follow, and then run the `DumpPlus` operation to see the effects of the noisy Hadamard operation on the quantum state.
 
 ```python
 noise_model = qsharp.experimental.get_noise_model_by_name('ideal')
@@ -497,9 +482,9 @@ Qobj data =
 
 Some noise model can be represented as a mixture of unitary operators, but there's also many kinds of noise that cannot be represented this way. For instance, by analogy to completely depolarizing noise, a process that has some probability of resetting its input state can be represented as a mixture of a superoperator that always resets and the identity process.
 
-To see this, consider the process $\Lambda_{\text{Reset}}(\rho) = \Tr(\rho) \ket{0}\bra{0}$. Since this process does the same thing to each density operator as input, the first and fourth columns should be the same, namely $\left(1 & 0 & 0 & 0 \right)^{\text{T}}$.
+To see this, consider the process $\Lambda_{\text{Reset}}(\rho) = Tr(\rho) \ket{0}\bra{0}$. Since this process does the same thing to each density operator as input, the first and fourth columns should be the same, namely $\left(\begin{array}1 & 0 & 0 & 0 \end{array} \right)^{\text{T}}$.
 
-On the other hand, the second and third columns represent the output of $\Lambda_{\text{Reset}}$ acting on $\ket{0}\bra{1}$ and $\ket{1}\bra{0}$ respectively. Neither of these is a valid density operator on their own — indeed, $\Tr(\ket{0}\bra{1}) = \Tr(\ket{1}\bra{0})$ such that the $\Tr$ factor zeros out both of these columns.
+On the other hand, the second and third columns represent the output of $\Lambda_{\text{Reset}}$ acting on $\ket{0}\bra{1}$ and $\ket{1}\bra{0}$ respectively. Neither of these is a valid density operator on their own — indeed, $Tr(\ket{0}\bra{1}) = Tr(\ket{1}\bra{0})$ such that the $Tr$ factor zeros out both of these columns.
 
 ```python
 lambda_reset = qt.Qobj([
