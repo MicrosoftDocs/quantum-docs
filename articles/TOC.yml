@@ -92,6 +92,8 @@
         href: concepts-circuits.md
       - name: Quantum oracles
         href: concepts-oracles.md
+      - name: Open quantum systems
+        href: concepts-open-systems.md
       - name: Theory of Grover's algorithm
         href: concepts-grovers.md
   - name: Resources
