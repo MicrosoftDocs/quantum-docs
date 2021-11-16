@@ -13,8 +13,6 @@ uid: microsoft.quantum.how-to.workspace
 
 # Create an Azure Quantum workspace
 
-The Azure Quantum Credits program provides sponsored access to quantum hardware through Azure. You will not be charged for usage created under the credits program, up to the limit of your credit grant. Your default credit grant is USD 500 equivalent, expressed in hardware credits. See quota utilization section once you completed your workspace creation.
-
 Learn how to create an [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) workspace. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
 
 A workspace is needed to [get started with Jupyter notebooks in Azure Quantum](xref:microsoft.quantum.get-started.notebooks).
