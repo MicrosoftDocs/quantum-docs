@@ -12,6 +12,8 @@ uid: microsoft.quantum.azure-quantum-overview
 
 # What is Azure Quantum?
 
+[!INCLUDE [Azure Quantum credits banner](~/includes/azure-quantum-credits.md)]
+
 Azure Quantum is a cloud service with a diverse set of quantum solutions and technologies. You can write your code once and run it with little to no change against multiple targets of the same family and allows you to focus your programming at the algorithm level.
 
 - An **open ecosystem**, enabling you to access diverse quantum software, hardware, and solutions from Microsoft and its partners.

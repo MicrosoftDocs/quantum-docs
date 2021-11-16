@@ -13,6 +13,8 @@ uid: microsoft.quantum.get-started.notebooks
 
 # Get started with a Jupyter notebook and Qiskit in Azure Quantum
 
+[!INCLUDE [retirement banner](~/includes/azure-quantum-credits.md)]
+
 Learn how to run Python code that use the Qiskit library in a Jupyter notebook with [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview). A [Jupyter](https://jupyter.org/) notebook is a document that contains both rich text and code and can run in your browser, and can run Q# and Python code with Azure Quantum.
 
 In this article, you will run a sample notebook that sends a basic quantum circuit expressed using the Qiskit library to an IonQ target via the Azure Quantum service. Qiskit is an open-source framework for working with noisy quantum computers at the level of pulses, circuits, and algorithms. For more information about Quiskit, see the [Qiskit documentation](https://qiskit.org/documentation/intro_tutorial1.html).
