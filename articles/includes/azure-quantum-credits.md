@@ -7,4 +7,4 @@ ms.date: 12/01/2021
 ---
 
 > [!NOTE]
-> You can get $500 USD free credit for use on quantum hardware through Azure. For more information, see the [Azure Quantum credits section in [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace#azure-quantum-credits).
+> You can get $500 USD free credit for use on quantum hardware through Azure. For more information, see the [Azure Quantum credits section in [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace#azurequantumcredits).

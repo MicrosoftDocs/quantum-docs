@@ -22,6 +22,8 @@ A workspace is needed to [get started with Jupyter notebooks in Azure Quantum](x
 > [!TIP]
 > You can also create an Azure Quantum workspace using the Azure command-line interface (CLI). For more information, see [Manage quantum workspaces with the Azure CLI](xref:microsoft.quantum.workspaces-cli).
 
+<a name="azurequantumcredits"></a>
+
 ## Free Azure Quantum credits
 
 You can get $500 USD free credit for use on quantum hardware through Azure. The Azure Quantum Credits program provides sponsored access to quantum hardware through Azure. You will not be charged for usage created under the credits program, up to the limit of your credit grant. Your default credit grant is USD 500 equivalent, expressed in hardware credits. See the quota utilization section in the workspace, once you completed your workspace creation.
