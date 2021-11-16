@@ -6,7 +6,7 @@ ms.date: 11/16/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
-no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
+no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '\Bigg' ,'|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', '\rho', '\quad']
 title: Open systems
 uid: microsoft.quantum.concepts.opensystems
 ---
@@ -218,12 +218,12 @@ $$
 The trick here is to average over the different state vectors that could be prepared by the `ApplyHToRandomStateAndMeasure` operation:
 
 $$
-\begin{aligned}
+\begin{align}
     Pr(\phi | \rho) & = \mathbb{E}_{\psi \sim \rho} \left[ Pr(\phi | \psi) \right] \\\\
         & = \mathbb{E}_{\psi \sim \rho} \left[ \left\langle \phi | \psi \right\rangle \left\langle \psi | \phi \right\rangle \right] \\\\
         & = \sum_i Pr(\psi_i) \left\langle \phi | \psi_i \right\rangle \left\langle \psi_i | \phi \right\rangle \\\\
         & = \left\langle \phi \Bigg| \left( \sum_i Pr(\psi_i) \ket{\psi_i} \bra{\psi_i} \right) \Bigg| \phi \right\rangle.
-\end{aligned}
+\end{align}
 $$
 
 Factoring out $\bra{\phi}$ and $\ket{\phi}$ in the last step gives us a neat new way of writing out ensembles of state vectors as matrices called [**density operators**](xref:microsoft.quantum.concepts.dirac#density-operators). For example, the ensemble $\rho$ can also be written out as the following density operator,
