@@ -180,19 +180,19 @@ More generally, a given matrix $\rho$ is a valid density operator if the followi
 1. Every eigenvalue $p$ of $\rho$ is $0 &lt;= p &lt;= 1$
 1. All the eigenvalues of $\rho$ sum to 1
 
-Together, these conditions guarantee that $\rho$ can be thought of as an ensemble. In particular, if $\rho = \sum_i p_i \ket{\psi_i} \bra{\psi_i}$ is an eigenvalue decomposition of $\rho$, then $\rho$ describes the ensemble $\rho = \{\ket{\psi_i} \text{ with probability } p_i\}$.
+Together, these conditions guarantee that $\rho$ can be thought of as an ensemble. In particular, if $\rho = \sum_i p_i \ket{\psi_i} \bra{\psi_i}$ is an eigenvalue decomposition of $\rho$, then $\rho$ describes the ensemble $\rho = \{\ket{\psi_i}$ with probability $p_i$.
 
 This concept of representing the state as a matrix, rather than a vector, is often convenient because it gives a convenient way of representing probability calculations, and also allows one to describe both statistical uncertainty as well as quantum uncertainty within the same formalism.
 General quantum state operators, rather than vectors, are ubiquitous in some areas of quantum computing but are not necessary to understand the basics of the field.
 
-In general, density operators represent *mixed states*, while those states that can be written as $\ket{\psi}\bra{\psi}$ for some state vector $\ket{\psi}$ (e.g.: $\ket{+}\bra{+}$) are *pure states*.
+In general, density operators represent *mixed states*, while those states that can be written as $\ket{\psi}\bra{\psi}$ for some state vector $\ket{\psi}$ (for example, $\ket{+}\bra{+}$) are *pure states*.
 
 >[!TIP]
 > The QuTiP library is a very helpful Python library when working with quantum states. You can write quantum states in QuTiP notation, using qt.basis(2, i) to represent $\ket{i}$ on a single qubit. To learn more about QuTiP methods and features, see the [QuTiP user guide](https://qutip.org/docs/latest/guide/guide.html).
 
 To tell how close a given density operator $\rho$ is to being pure, you can look at the trace (that is the sum of the diagonal elements) of $\rho^2$. A density operator represents a pure state if and only if $\text{tr}(\rho ^{2})=1.
 
-Let's consider the mixed state $\rho_{\text{mixed}}= \frac{1}{2}\left( $\ket{0}\bra{0} + $\ket{1}\bra{1} \right)$,
+Let's consider the mixed state $\rho_{\text{mixed}} = \frac{1}{2}\left( \ket{0}\bra{0} + $\ket{1}\bra{1} \right)$,
 
 ```python
 import qutip as qt
@@ -209,7 +209,7 @@ Qobj data =
 [[0.5  0.0]
  [0.0  0.5]]
 ```
-The trace of $\rho$ is written as $\Tr(\rho)$ and can be calculated using QuTiP's `.tr()` method:
+The trace of $\rho$ is written as $Tr(\rho)$ and can be calculated using QuTiP's `.tr()` method:
 
 ```python
 print((rho_mixed ** 2).tr())
@@ -260,7 +260,7 @@ bloch.show()
 
 The state at the very center of the Bloch sphere is the **maximally mixed state**. Unlike pure states, the maximally mixed state returns 50/50 outcomes for any ideal Pauli measurement.
 
-For the interested reader, we recommend reading one of the reference books provided in [For more information](xref:microsoft.quantum.more-information).
+If you are interested in learning more about density operators and pure and mixed states, you can read one of the reference books provided in [For more information](xref:microsoft.quantum.more-information).
 
 ## Q# gate sequences equivalent to quantum states
 
