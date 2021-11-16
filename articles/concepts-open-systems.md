@@ -197,7 +197,7 @@ print(sum(ApplyHToRandomStateAndMeasure.simulate() for _ in range(100)))
 As it turns out, there is no single vector that represents the state prepared by the `ApplyHToRandomStateAndMeasure` operation unless you know the outcome of the random coin flip `(DrawRandomBool(0.5))`. If you don't know the outcome of the coin flip, the quantum state is given by the following *ensemble* of state vectors,
 
 $$
-\rho =\left\{\ket{0} \text{ with probability 50%}, \quad \ket{1} \text{ with probability 50%}\right\}
+\rho = \left\{ \ket{0} \text{with probability 50%}, \quad \ket{1} \text{with probability 50%} \right\}
 $$
 
 Given a quantum state $\ket{\psi}$ the probability of the outcome $\ket{\phi}$ after a measurement is given by the Born's rule,
@@ -210,6 +210,7 @@ $$
 $$
 
 The trick here is to average over the different state vectors that could be prepared by the `ApplyHToRandomStateAndMeasure` operation:
+
 $$
 \begin{align}
     Pr(\phi | \rho) & = \mathbb{E}_{\psi \sim \rho} \left[Pr(\phi | \psi)\right] \\\\
@@ -223,8 +224,8 @@ Factoring out $\bra{\phi}$ and $\ket{\phi}$ in the last step gives us a neat new
 
 $$
 \begin{align}
-    \rho & = \sum_i \Pr(\psi_i) \ket{\psi_i} \bra{\psi_i} \\
-         & = \frac{1}{2} \ket{0} \bra{0} + \frac{1}{2} \ket{1} \bra{1} \\
+    \rho & = \sum_i \Pr(\psi_i) \ket{\psi_i} \bra{\psi_i} \\\\
+         & = \frac{1}{2} \ket{0} \bra{0} + \frac{1}{2} \ket{1} \bra{1} \\\\
          & = \frac{1}{2} \left( \begin{matrix}
              1 & 0 \\\\ 0 & 1
          \end{matrix} \right).
@@ -295,9 +296,9 @@ Qobj data =
  [0.0  0.0  1.0  0.0]
  [0.0  0.0  0.0  1.0]]
 ```
-That is, as we would expect, the superoperator resulting from the identity operator maps all operators to themselves.
+That is, as expected, the superoperator resulting from the identity operator maps all operators to themselves.
 
-On the other hand, we get something quite different for the $X$ matrix:
+On the other hand, for the $X$ operation the result is different:
 
 ```python
 # Convert the 𝑋 matrix used to simulate Microsoft.Quantum.Intrinsic.X into a superoperator.
@@ -314,7 +315,7 @@ Qobj data =
  
 Notice that each column is a stack of the elements in an operator output by the function $\Lambda_X(\rho) = X \rho X^{\dagger} = X \rho X$.
 
-Since $\Lambda(\ket{0}\bra{0}) = X\ket{0} \bra{0}X = \ket{1}\bra{1}$, the first column is a stack of the elements of $\ket{1}\bra{1} = \left(\begin{matrix} 0 &a 0 \\ 0 & 1 \end{matrix}\right)$. Similarly, the second column is a stack of the elements of $\Lambda_X(\ket{0}\bra{1}) = \ket{1}\bra{0}$:
+Since $\Lambda(\ket{0}\bra{0}) = X\ket{0} \bra{0}X = \ket{1}\bra{1}$, the first column is a stack of the elements of $\ket{1}\bra{1} = \left(\begin{matrix} 0 & 0 \\\\ 0 & 1 \end{matrix}\right)$. Similarly, the second column is a stack of the elements of $\Lambda_X(\ket{0}\bra{1}) = \ket{1}\bra{0}$:
 
 ```python
 print(np.array((ket1 * ket0.dag()).data.todense().flat))
@@ -358,8 +359,8 @@ More generally, suppose that $U \ket{\phi} = e^{i\phi} \ket{\phi}$ for some unit
 
 $$
 \begin{align}
-    \Lambda_U (\ket{\phi} \bra{\phi}) & = U \ket{\phi} \bra{\phi} U^{\dagger} \\
-                                      & = e^{i\phi} \ket{\phi} \bra{\phi} e^{-i\phi} \\
+    \Lambda_U (\ket{\phi} \bra{\phi}) & = U \ket{\phi} \bra{\phi} U^{\dagger} \\\\
+                                      & = e^{i\phi} \ket{\phi} \bra{\phi} e^{-i\phi} \\\\
                                       & = \ket{\phi} \bra{\phi}
 \end{align}
 $$
@@ -482,9 +483,9 @@ Qobj data =
 
 Some noise model can be represented as a mixture of unitary operators, but there's also many kinds of noise that cannot be represented this way. For instance, by analogy to completely depolarizing noise, a process that has some probability of resetting its input state can be represented as a mixture of a superoperator that always resets and the identity process.
 
-To see this, consider the process $\Lambda_{\text{Reset}}(\rho) = Tr(\rho) \ket{0}\bra{0}$. Since this process does the same thing to each density operator as input, the first and fourth columns should be the same, namely $\left(\begin{array}1 & 0 & 0 & 0 \end{array} \right)^{\text{T}}$.
+To see this, consider the process $\Lambda_{\text{Reset}}(\rho) = Tr(\rho) \ket{0}\bra{0}$. Since this process does the same thing to each density operator as input, the first and fourth columns should be the same, namely $\left(\begin{array} 1 & 0 & 0 & 0 \end{array} \right)^{\text{T}}$.
 
-On the other hand, the second and third columns represent the output of $\Lambda_{\text{Reset}}$ acting on $\ket{0}\bra{1}$ and $\ket{1}\bra{0}$ respectively. Neither of these is a valid density operator on their own — indeed, $Tr(\ket{0}\bra{1}) = Tr(\ket{1}\bra{0})$ such that the $Tr$ factor zeros out both of these columns.
+On the other hand, the second and third columns represent the output of $\Lambda_{\text{Reset}}$ acting on $\ket{0}\bra{1}$ and $\ket{1}\bra{0}$ respectively. Neither of these is a valid density operator on their own — indeed, $Tr(\ket{0}\bra{1}) = Tr(\ket{1}\bra{0})$ such that the trace factor zeros out both of these columns.
 
 ```python
 lambda_reset = qt.Qobj([
