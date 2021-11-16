@@ -132,7 +132,7 @@ print(sum(SampleRandomBit.simulate() for _ in range(100)))
 ```output
 54
 ```
-1. Though, the $\ket{+}$ state is not inherently random — you can determinstically return to the $\ket{0}$ state by applying another Hadamard operation:
+1. Though the $\ket{+}$ state is not inherently random — you can deterministically return to the $\ket{0}$ state by applying another Hadamard operation:
 
 ```qsharp
 operation ApplyHTwiceAndMeasure() : Result {
@@ -258,7 +258,7 @@ $$
 \end{aligned}
 $$
 
-That is, even though both `SampleRandomBit` and `PrepareAndMeasureRandomState` both prepare density operators with the same diagonal elements (and thus have the same measurement probabilies in the $Z$-basis), the two density operators have different off-diagonal elements. 
+That is, even though both `SampleRandomBit` and `PrepareAndMeasureRandomState` both prepare density operators with the same diagonal elements (and thus have the same measurement probabilities in the $Z$-basis), the two density operators have different off-diagonal elements. 
 
 We say that density operators in general represent *mixed states*, and that states that can be written as $\ket{\psi}\bra{\psi}$ for some state vector $\ket{\psi}$ (e.g.: $\ket{+}\bra{+}$) are *pure states*. For more information about the differences between mixed states and pure states, see [density operators](xref:microsoft.quantum.concepts.dirac#density-operators).
 
@@ -290,12 +290,12 @@ $$
 
 Since density functions represent an average over different preparations, and since averages are linear, such functions must in general must also be linear.
 
-A linear function from density operators to density operators is called a **quantum process**.
+A linear function from density operators to density operators is called a *quantum process*.
 
 > [!TIP]
-> Quantum processes that can be realized in practice have a few other conditions as well as linearity, known as complete positivity and trace preservingness. A process that is both completely positive and trace preserving (CPTP) is a **quantum channel**.
+> Quantum processes that can be realized in practice have a few other conditions as well as linearity, known as complete positivity and trace preservingness. A process that is both completely positive and trace preserving (CPTP) is a *quantum channel*.
 
-There's a few different ways to represent quantum processes, but the one most commonly encounter in working with noise models for open quantum systems is known as **superoperators**. Just as operators are linear functions from vectors to vectors, superoperators are linear functions from operators to operators, and can be written using matrices.
+There's a few different ways to represent quantum processes, but the one most commonly encounter in working with noise models for open quantum systems is known as *superoperators*. Just as operators are linear functions from vectors to vectors, superoperators are linear functions from operators to operators, and can be written using matrices.
 
 For example, you can use `qt.to_super` to convert a few unitary matrices into superoperators. Notice that the 2 × 2 identity operator $𝟙$ we use to simulate the [I](xref:Microsoft.Quantum.Intrinsic.I) operation is a 4 × 4 identity matrix:
 
@@ -432,7 +432,7 @@ By default, `.simulate_noise()` method assumes an *ideal error* model (that is, 
 
 You can simulate the superoperator $\Lambda_{text{noisy}H}$ previously defined as a noise model and run `DumPlus` operation. 
 
-First, run the code with an ideal noise model so you can compare the outcome.
+1. First, run the code with an ideal noise model so you can compare the outcome.
 
 ```python
 qsharp.config['experimental.simulators.nQubits'] = 1
@@ -444,7 +444,7 @@ print(DumpPlus.simulate_noise())
 ```output
 'text/plain': 'Mixed state on 1 qubits: [ [0.5000000000000001 + 0 i, 0.5000000000000001 + 0 i] [0.5000000000000001 + 0 i, 0.5000000000000001 + 0 i] ]'
 ```
-To configure the noise model, set `lambda_noisy_h` as the noise model to follow, and then run the `DumpPlus` operation to see the effects of the noisy Hadamard operation on the quantum state.
+1. To configure the noise model, set `lambda_noisy_h` as the noise model to follow, and then run the `DumpPlus` operation to see the effects of the noisy Hadamard operation on the quantum state.
 
 ```python
 noise_model = qsharp.experimental.get_noise_model_by_name('ideal')
@@ -476,7 +476,7 @@ Qobj data =
  [0.5 0.0 0.0 0.5]]
 ```
 
-From the output, you can see that the completely depolarizing noise maps all input density operators to the same output, namely $𝟙 / 2$. That is, completely depolarizing noise replaces whatever state we had with the maximially mixed state.
+From the output, you can see that the completely depolarizing noise maps all input density operators to the same output, namely $𝟙 / 2$. That is, completely depolarizing noise replaces whatever state we had with the maximally mixed state.
 
 The depolarizing noise can also be of a finite strength (that is, *not completely* depolarizing) by taking a linear combination of the identity and completely depolarizing processes.
 
@@ -528,7 +528,7 @@ Qobj data =
 
 In this example, you will study the evolution of a qubit when you repeatedly apply the π/4 phase gate or [`S`](xref:Microsoft.Quantum.Intrinsic.S) to it and then measure. This simple example works as a good toy model for Ramsey interferometry, which is a technique for measuring particle transition frequencies with atomic precision. 
 
-In the absense of noise, Ramsey signal keeps oscillating back and forth with each iteration of `S`. Add the following code to your Q# quantum program:
+In the absence of noise, Ramsey signal keeps oscillating back and forth with each iteration of `S`. Add the following code to your Q# quantum program:
 
 ```qsharp
 operation ApplySRepeatedlyAndMeasure(nRepetions : Int) : Result {
@@ -544,8 +544,8 @@ operation ApplySRepeatedlyAndMeasure(nRepetions : Int) : Result {
 }
 ```
 
-The operation `ApplySRepeatedlyAndMeasure` sets a qubit in superposition, then it applies the π/4 phase operation `nRepetions` times, and it retunrs the measurement in $Z$-axis. 
-Add the following code to your host program to simulate the `ApplySRepeatedlyAndMeasure` operation in the absense of noise.
+The operation `ApplySRepeatedlyAndMeasure` sets a qubit in superposition, then it applies the π/4 phase operation `nRepetions` times, and it returns the measurement in $Z$-axis. 
+Add the following code to your host program to simulate the `ApplySRepeatedlyAndMeasure` operation in the absence of noise.
 
 ```python
 from OpenSystemsConcepts import ApplySRepeatedlyAndMeasure
