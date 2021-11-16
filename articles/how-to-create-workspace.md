@@ -13,8 +13,7 @@ uid: microsoft.quantum.how-to.workspace
 
 # Create an Azure Quantum workspace
 
-> [!NOTE]
-> The Azure Quantum Credits program provides sponsored access to quantum hardware through Azure. You will not be charged for usage created under the credits program, up to the limit of your credit grant. Your default credit grant is USD 500 equivalent, expressed in hardware credits. See quota utilization section once you completed your workspace creation.
+The Azure Quantum Credits program provides sponsored access to quantum hardware through Azure. You will not be charged for usage created under the credits program, up to the limit of your credit grant. Your default credit grant is USD 500 equivalent, expressed in hardware credits. See quota utilization section once you completed your workspace creation.
 
 Learn how to create an [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) workspace. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications. 
 
@@ -22,6 +21,12 @@ A workspace is needed to [get started with Jupyter notebooks in Azure Quantum](x
 
 > [!TIP]
 > You can also create an Azure Quantum workspace using the Azure command-line interface (CLI). For more information, see [Manage quantum workspaces with the Azure CLI](xref:microsoft.quantum.workspaces-cli).
+
+# Azure Quantum credits
+
+The Azure Quantum Credits program provides sponsored access to quantum hardware through Azure. You will not be charged for usage created under the credits program, up to the limit of your credit grant. Your default credit grant is USD 500 equivalent, expressed in hardware credits. See quota utilization section once you completed your workspace creation.
+
+When you create the Azure Quantum workspace, select the IonQ Azure Quantum Credits SKU.
 
 ## Prerequisites
 
