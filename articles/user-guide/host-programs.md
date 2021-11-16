@@ -345,6 +345,49 @@ namespace DumpOperation {
 from  DumpOperation import DumpPlusState
 print(DumpPlusState.simulate())
 ```
+Calling <xref:Microsoft.Quantum.Diagnostics.DumpMachine> generates the following output:
+
+```output
+# wave function for qubits with ids (least to most significant): 0
+∣0❭:     0.707107 +  0.000000 i  ==     ***********          [ 0.500000 ]     --- [  0.00000 rad ]
+∣1❭:     0.707107 +  0.000000 i  ==     ***********          [ 0.500000 ]     --- [  0.00000 rad ]
+```
+The Q# package also allows you to capture these diagnostics and manipulate them as Python objects:
+
+```python
+with qsharp.capture_diagnostics() as diagnostics:
+    DumpPlusState.simulate()
+print(diagnostics)
+```
+```output
+[{'diagnostic_kind': 'state-vector',
+  'div_id': 'dump-machine-div-7d3eac24-85c5-4080-b123-4a76cacaf58f',
+  'qubit_ids': [0],
+  'n_qubits': 1,
+  'amplitudes': [{'Real': 0.7071067811865476,
+    'Imaginary': 0.0,
+    'Magnitude': 0.7071067811865476,
+    'Phase': 0.0},
+   {'Real': 0.7071067811865476,
+    'Imaginary': 0.0,
+    'Magnitude': 0.7071067811865476,
+    'Phase': 0.0}]}]
+```
+Working with raw JSON for diagnostics can be somewhat inconvienent, so the capture_diagnostics function also supports converting diagnostics into quantum objects using the [QuTiP library](https://qutip.org/):
+
+```python
+
+with qsharp.capture_diagnostics(as_qobj=True) as diagnostics:
+    DumpPlusState.simulate()
+diagnostics[0]
+```
+```output
+Quantum object: dims = [[2], [1]], shape = (2, 1), type = ket
+Qobj data =
+[[0.707]
+ [0.707]]
+```
+
 To learn more about the diagnostics features offered by Q# and the Quantum Development Kit, see [testing and debugging](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging).
 
 #### Specifying target machines
