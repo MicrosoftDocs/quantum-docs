@@ -197,7 +197,13 @@ print(sum(ApplyHToRandomStateAndMeasure.simulate() for _ in range(100)))
 As it turns out, there is no single vector that represents the state prepared by the `ApplyHToRandomStateAndMeasure` operation unless you know the outcome of the random coin flip `(DrawRandomBool(0.5))`. If you don't know the outcome of the coin flip, the quantum state is given by the following *ensemble* of state vectors,
 
 $$
-\rho = \{ \ket{0} \text{with probability 50%}, \quad \ket{1} \text{with probability 50%} \}
+\begin{align}
+    \rho =
+        \left\{
+            \ket{0} \text{ with probability 50%}, \quad
+            \ket{1} \text{ with probability 50%}
+        \right\}.
+\end{align}
 $$
 
 Given a quantum state $\ket{\psi}$ the probability of the outcome $\ket{\phi}$ after a measurement is given by the Born's rule,
@@ -213,8 +219,8 @@ The trick here is to average over the different state vectors that could be prep
 
 $$
 \begin{align}
-    Pr(\phi | \rho) & = \mathbb{E}_{\psi \sim \rho} \[Pr(\phi | \psi)\] \\\\
-                    & = \mathbb{E}_{\psi \sim \rho} \[\left\langle \phi | \psi \right\rangle \left\langle \psi | \phi \right\rangle \] \\\\
+    Pr(\phi | \rho) & = \mathbb{E}_{\psi \sim \rho} 	[ \,Pr(\phi | \psi)] \, \\\\
+                    & = \mathbb{E}_{\psi \sim \rho} 	[ \, \left\langle \phi | \psi \right\rangle \left\langle \psi | \phi \right\rangle ] \, \\\\
                     & = \sum_i Pr(\psi_i) \left\langle \phi | \psi_i \right\rangle \left\langle \psi_i | \phi \right\rangle \\\\
                     & = \left\langle\phi \Bigg| \left(\sum_i Pr(\psi_i) \ket{\psi_i} \bra{\psi_i}\right) \Bigg| \phi\right\rangle
 \end{align}
