@@ -6,7 +6,7 @@ ms.date: 11/16/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
-no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '\Bigg' ,'|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', '\rho', '\quad']
+no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '\Bigg' ,'|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', '\rho', '\quad', '\sim', '\left\','\right\']
 title: Open systems
 uid: microsoft.quantum.concepts.opensystems
 ---
@@ -220,9 +220,9 @@ The trick here is to average over the different state vectors that could be prep
 $$
 \begin{align}
     Pr(\phi | \rho) & = \mathbb{E}_{\psi \sim \rho} \left[ Pr(\phi | \psi) \right] \\\\
-        & = \mathbb{E}_{\psi \sim \rho} \left[ \left\langle \phi | \psi \right\rangle \left\langle \psi | \phi \right\rangle \right] \\\\
-        & = \sum_i Pr(\psi_i) \left\langle \phi | \psi_i \right\rangle \left\langle \psi_i | \phi \right\rangle \\\\
-        & = \left\langle \phi \Bigg| \left( \sum_i Pr(\psi_i) \ket{\psi_i} \bra{\psi_i} \right) \Bigg| \phi \right\rangle.
+                    & = \mathbb{E}_{\psi \sim \rho} \left[ \left\langle \phi | \psi \right\rangle \left\langle \psi | \phi \right\rangle \right] \\\\
+                    & = \sum_i Pr(\psi_i) \left\langle \phi | \psi_i \right\rangle \left\langle \psi_i | \phi \right\rangle \\\\
+                    & = \left\langle \phi \Bigg| \left( \sum_i Pr(\psi_i) \ket{\psi_i} \bra{\psi_i} \right) \Bigg| \phi \right\rangle.
 \end{align}
 $$
 
