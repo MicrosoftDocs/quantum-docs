@@ -286,7 +286,7 @@ A linear function from density operators to density operators is called a *quant
 > [!TIP]
 > Quantum processes that can be realized in practice have a few other conditions as well as linearity, known as complete positivity and trace preservingness. A process that is both completely positive and trace preserving (CPTP) is a *quantum channel*.
 
-There's a few different ways to represent quantum processes, but the one most commonly encounter in working with noise models for open quantum systems is known as *superoperators*. Just as operators are linear functions from vectors to vectors, superoperators are linear functions from operators to operators, and can be written using matrices.
+There are different ways to represent quantum processes, but the most common method when working with noise models for open quantum systems is to use *superoperators*. Just as operators are linear functions from vectors to vectors, superoperators are linear functions from operators to operators, and can be written using matrices.
 
 For example, you can use `qt.to_super` to convert a few unitary matrices into superoperators. Notice that the 2 × 2 identity operator $𝟙$ we use to simulate the [I](xref:Microsoft.Quantum.Intrinsic.I) operation is a 4 × 4 identity matrix:
 
