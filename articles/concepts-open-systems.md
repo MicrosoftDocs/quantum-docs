@@ -302,7 +302,7 @@ Qobj data =
  [0.0  0.0  1.0  0.0]
  [0.0  0.0  0.0  1.0]]
 ```
-That is, as expected, the superoperator resulting from the identity operator maps all operators to themselves.
+As expected, the superoperator resulting from the identity operator maps all operators to themselves.
 
 On the other hand, for the $X$ operation the result is different:
 
