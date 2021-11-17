@@ -185,7 +185,7 @@ The Q# code in your workspace can also depend on other Q# *packages* and *projec
 > [!TIP]
 > If you don't have a project file for your workspace, the `qsharp` package will assume some reasonable defaults. Having a project file makes it easy to use additional packages, to get code completion and hover documentation while you edit your Q# files, and so forth.
 
-To see what packages are currently added to your workspace, you can use the `qsharp.packages` object. You can also add new packages dynamically by using `qsharp.packages.add` object. For example, adding [the QDK Chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview):
+To see what packages are currently added to your workspace, you can use the `qsharp.packages` object. You can also add new packages dynamically by using `qsharp.packages.add` object. For example, to add the [the QDK Chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview):
 
 ```python
 qsharp.packages.add('Microsoft.Quantum.Chemistry')
