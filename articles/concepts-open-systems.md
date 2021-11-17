@@ -397,7 +397,7 @@ That is, the off-diagonal elements of density operators describe the relative ph
 
 ## Noisy quantum processes
 
-Using superoperators not only allows us to represent familiar unitary operations, but also those functions from density operators to density operators that arise in describing noise. For example, the quantum process $\Lambda(\rho) = 0.95 H\rho H + 0.05 \rho$ can be written as a superoperator by simply summing the superoperators for $H$ and $I$ weighted by the probability for each case:
+Using superoperators not only allows you to represent familiar unitary operations, but also those functions from density operators to density operators that arise in describing noise. For example, the quantum process $\Lambda(\rho) = 0.95 H\rho H + 0.05 \rho$ can be written as a superoperator by summing the superoperators for $H$ and $I$ weighted by the probability for each case:
 
 ```python
 lambda_noisy_h = 0.95 * qt.to_super(qt.qip.operations.hadamard_transform()) + 0.05 * qt.to_super(qt.qeye(2))
