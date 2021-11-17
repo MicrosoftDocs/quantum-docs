@@ -357,7 +357,7 @@ Qobj data =
  [0.0 0.0 0.0 1.0]]
 ```
  
-Looking at the $Z$ superoperator example, notice there is no $-1$ sign in the lower-right hand corner because of the fact that density operators and superoperators do not have the same global phase ambiguity that state vectors and unitary operators do.
+Looking at the $Z$ superoperator example, notice there is not a $-1$ sign in the lower-right hand corner. This is because density operators and superoperators do not have the same global phase ambiguity that state vectors and unitary operators do.
 
 In particular, consider the $Z$ operation acting on a qubit in the $\ket{1}$ state. When simulating this with state vectors, the result is $Z \ket{1} = -\ket{1}$, where the $-$ sign in front of $\ket{1}$ is in this case an insignificant global phase. On the other hand, when using open systems notation, the same operation results in $\Lambda_Z(\ket{1}\bra{1}) = Z\ket{1} \bra{1}Z^{\dagger} = Z\ket{1} \bra{1}Z = (-\ket{1})(-\bra{1}) = \ket{1}\bra{1}$, such that the global phases on the "ket" and "bra" parts of $\ket{1}\bra{1}$ cancel each other out.
 
