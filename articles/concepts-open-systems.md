@@ -536,7 +536,7 @@ operation ApplySRepeatedlyAndMeasure(nRepetions : Int) : Result {
 }
 ```
 
-The operation `ApplySRepeatedlyAndMeasure` sets a qubit in superposition, then it applies the π/4 phase operation `nRepetions` times, and it returns the measurement in $Z$-axis. 
+The operation `ApplySRepeatedlyAndMeasure` sets a qubit in superposition, applies the π/4 phase operation `nRepetions` times, and then returns the measurement in $Z$-axis. 
 Add the following code to your host program to simulate the `ApplySRepeatedlyAndMeasure` operation in the absence of noise.
 
 ```python
