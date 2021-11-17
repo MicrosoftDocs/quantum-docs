@@ -126,7 +126,7 @@ print(sample_qrng.simulate())
 
 ## Workspaces, Projects, and Packages
 
-As your quantum programs get larger, it can be inconvienent to keep all of your Q# code in a single notebook or Python script. Instead, the `qsharp` package allows you to call into Q# code from source code in the same directory as your notebook.
+As your quantum programs get larger, it can be inconvienent to keep all of your Q# code in a single notebook or Python script. Instead, the `qsharp` package allows you to call into Q# code from source code in the same directory as your notebook or scripts.
 
 For example, in the same folder as `host.py` and `HostPython.qs`create the following Q# program called `OperationSamples.qs`, which defines three different operations:
 
