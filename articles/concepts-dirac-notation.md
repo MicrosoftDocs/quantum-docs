@@ -217,7 +217,7 @@ print((rho_mixed ** 2).tr())
 ```output
 0.5
 ```
-Now, let's consider the pure quantum state $\rho_{\text{pure}}=\ket{+}\bra{+}$,
+Now, consider the pure quantum state $\rho_{\text{pure}}=\ket{+}\bra{+}$,
 ```python
 ket_plus = (1 / np.sqrt(2)) * (ket0 + ket1)
 rho_pure = ket_plus * ket_plus.dag()
