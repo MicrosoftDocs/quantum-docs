@@ -468,7 +468,7 @@ Qobj data =
  [0.5 0.0 0.0 0.5]]
 ```
 
-From the output, you can see that the completely depolarizing noise maps all input density operators to the same output, namely $𝟙 / 2$. That is, completely depolarizing noise replaces whatever state we had with the maximally mixed state.
+From the output, you can see that the completely depolarizing noise maps all input density operators to the same output, namely $𝟙 / 2$. That is, completely depolarizing noise replaces whatever the previous state was with the maximally mixed state.
 
 The depolarizing noise can also be of a finite strength (that is, *not completely* depolarizing) by taking a linear combination of the identity and completely depolarizing processes.
 
