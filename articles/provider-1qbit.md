@@ -58,7 +58,7 @@ The parallel tempering with isoenergetic cluster moves (PTICM) solver is a Monte
 |---------------------------|----------|----------|-------------|
 | auto_set_temperatures|boolean|Optional|This defines whether the temperature parameters are auto-calculated or not. Set it to True for auto-calculating and False for customizing the temperature parameters. Default: True |
 | elite_threshold|double|Optional|The fraction of the best solutions used for the var_fixing_type parameter with value SPVAR. Default: 0.3 |
-| frac_icm_thermal_layers|double|Optional|The fraction of temperatures for the iso-energetic cluster moves. To change this value, set the perform_icm parameter to True. Default: 0.5 |
+| frac_icm_thermal_layers|double|Optional|The fraction of temperatures for the iso-energetic cluster moves. Default: 0.5 |
 | frac_sweeps_fixing|double|Optional|The fraction of sweeps used for fixing the QUBO variables. Default: 0.15 |
 | frac_sweeps_idle|double|Optional|The fraction of sweeps to wait before fixing the QUBO variables. Default: 1.0 |
 | frac_sweeps_stagnation|double|Optional|The fraction of sweeps without improvement that triggers a restart. Default: 1.0 |
@@ -67,12 +67,11 @@ The parallel tempering with isoenergetic cluster moves (PTICM) solver is a Monte
 | low_temp|double|Optional|The lowest temperature of a replica. Set the auto_set_temperatures parameter to False to use this feature. Default: 0.2 |
 | max_samples_per_layer|int|Optional|The maximum number of samples collected per replica. Default: 10 |
 | max_total_sweeps|int|Optional|The total number of sweeps before termination. Default: num_sweeps_per_run * 10 |
-| manual_temperatures|array[double]|Optional|An array of a custom temperature schedule which includes the high, intermediate, and low temperature values for the replicas. Set the auto_set_temperatures parameter to False to use this feature.  |
+| manual_temperatures|array[double]|Optional|An array of a custom temperature schedule which includes the high and low temperature values for the replicas. Set the auto_set_temperatures parameter to False to use this feature.  |
 | num_elite_temps|int|Optional|The number of elite temperatures used for fixing the variables with persistency. Default = 4 |
 | num_replicas|int|Optional|The number of replicas at each temperature. Default: 2 |
 | num_sweeps_per_run|int|Optional|The number of Monte Carlo sweeps. Default: 100 |
 | num_temps|int|Optional|The number of temperatures including the highest and the lowest temperatures. Set the auto_set_temperatures parameter to False to use this feature. Default: 30 |
-| perform_icm|boolean|Optional|This defines whether or not to perform the isoenergetic cluster moves. Default: true |
 | scaling_type|string|Optional|This defines whether the QUBO problem is automatically scaled or not. MEDIAN means it's automatically scaled, and NO_SCALING means it's not. Valid values: "MEDIAN" or "NO_SCALING" |
 | seed|int|Optional|The seed in the random number generator to control for deterministic results. Default: a random integer |
 | var_fixing_type|string|Optional|This decides whether the values of QUBO variables are fixed or not. You can fix them with PERSISTENCY or SPVAR types. NO_FIXING means the variables are not fixed. If you choose PERSISTENCY or SPVAR, also set the solver.frac_sweeps_fixing and solver.frac_sweeps_idle parameters to a number less than one. Valid values: "PERSISTENCY", "SPVAR" or "NO_FIXING" Default: NO_FIXING |
