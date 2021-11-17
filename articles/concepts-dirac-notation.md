@@ -190,7 +190,7 @@ In general, density operators represent *mixed states*, while those states that 
 >[!TIP]
 > The QuTiP library is a very helpful Python library when working with quantum states. You can write quantum states in QuTiP notation, using qt.basis(2, i) to represent $\ket{i}$ on a single qubit. To learn more about QuTiP methods and features, see the [QuTiP user guide](https://qutip.org/docs/latest/guide/guide.html).
 
-To tell how close a given density operator $\rho$ is to being pure, you can look at the trace (that is the sum of the diagonal elements) of $\rho^2$. A density operator represents a pure state if and only if $Tr(\rho ^{2})=1$.
+To tell how close a given density operator $\rho$ is to being pure, you can look at the trace (that is, the sum of the diagonal elements) of $\rho^2$. A density operator represents a pure state if, and only if, $Tr(\rho ^{2})=1$.
 
 Let's consider the mixed state $\rho_{\text{mixed}} = \frac{1}{2}\left( \ket{0}\bra{0} + \ket{1}\bra{1} \right)$,
 
