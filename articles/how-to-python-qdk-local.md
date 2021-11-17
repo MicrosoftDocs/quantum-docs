@@ -34,7 +34,7 @@ If you would like to use a different editor, the instructions so far have you al
 
 ## Using Q\# with Python
 
-To begin with, you need to import the `qsharp` Python package. This package provides Q# interoperability for Python, as well as the IQ# kernel for Jupyter, allowing you to compile and run Q# operations from Python and Q# Jupyter Notebooks.
+To begin, your Python program needs to import the `qsharp` Python package. This package provides Q# interoperability for Python, as well as the IQ# kernel for Jupyter, allowing you to compile and run Q# operations from Python and Q# Jupyter Notebooks.
 
 Once imported, the `qsharp` package allows Q# namespaces to appear as Python modules, from which we can "import" Q# callables. You can use Q# functions and operations as Python objects, and use methods on these objects to specify the target machines to simulate quantum programs, estimate quantum resources, and so forth.
 
