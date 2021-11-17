@@ -520,7 +520,7 @@ Qobj data =
 
 In this example, you will study the evolution of a qubit when you repeatedly apply the π/4 phase gate or [`S`](xref:Microsoft.Quantum.Intrinsic.S) to it and then measure. This simple example works as a good toy model for Ramsey interferometry, which is a technique for measuring particle transition frequencies with atomic precision. 
 
-In the absence of noise, Ramsey signal keeps oscillating back and forth with each iteration of `S`. Add the following code to your Q# quantum program:
+In the absence of noise, a Ramsey signal keeps oscillating back and forth with each iteration of `S`. Add the following code to your Q# quantum program:
 
 ```qsharp
 operation ApplySRepeatedlyAndMeasure(nRepetions : Int) : Result {
