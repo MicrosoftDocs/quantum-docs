@@ -13,7 +13,7 @@ uid: microsoft.quantum.how-to.python-local
 
 # Write a Q# and Python program to run on a local quantum simulator
 
-A Q# program can be run with an additional host program, written in Python which then invokes the program and can further process returned results.The Microsoft Quantum Development Kit contains several [quantum simulators](xref:microsoft.quantum.machines.overview) that allow you to test and run quantum programs locally, without having to access the Azure Quantum service.
+A Q# program can be run by a Python host program, which then invokes the Q# program and can further process returned results.The Microsoft Quantum Development Kit contains several [quantum simulators](xref:microsoft.quantum.machines.overview) that allow you to test and run quantum programs locally, without having to access the Azure Quantum service.
 
 ## Prerequisite
 
