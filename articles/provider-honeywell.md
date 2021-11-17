@@ -35,7 +35,7 @@ Current status information may be retrieved from the *Providers* tab of a worksp
 
 ### API Validator
 
-We recommend that users first validate their code using our API Validator. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Full stack is exercised with the exception of the actual quantum operations. Assuming no bugs, all zeros are returned in the proper data structure. The API Validator is available even when the machine is offline to enable developers to validate their code at any time.
+We recommend that users first validate their code using our API Validator. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Full stack is exercised with the exception of the actual quantum operations. Assuming no bugs, all zeros are returned in the proper data structure. The API Validator allows developers to validate their code at any time, even when the machine is offline.
 
 - Job type: `Simulation`
 - Data Format: `honeywell.openqasm.v1`
@@ -46,20 +46,20 @@ Billing information:  No charge for usage.
 
 ### Honeywell System Model H1 Emulator
 
-After users have validated the syntax of their code with the API Validator, Honeywell provides a simulator tool which contains detailed, realistic noise models of the actual System Model H1 hardware. The H1 Emulator noise model is derived from detailed characterization of the H1-1 hardware, but is also representative of what should be expected for H1-2 hardware performance. The H1 Emulator uses an identical API for job submission as the System Model H1 hardware, enabling seamless transition from emulation to hardware. The H1 Emulator is available even while the hardware is offline to enable maximized productivity and to assist with shortening development time.     
+After validating the syntax of their code with the API Validator,  users can run Honeywell's H1 Emulator, a simulator tool which contains detailed, realistic noise models of the actual System Model H1 hardware. The H1 Emulator noise model is derived from a detailed characterization of the H1-1 hardware, and is also representative of  H1-2 hardware performance. The H1 Emulator uses an identical API for job submission as the System Model H1 hardware, enabling seamless transition from emulation to hardware. To help maximize productivity and shorten development time, the H1 Emulator is available even while the hardware is offline.     
 - Job type: `Simulation`
 - Data Format: `honeywell.openqasm.v1`
 - Target ID:  `honeywell.hqs-lt-s1-sim` or `honeywell.hqs-lt-s2-sim`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
-Billing information:  Emulator usage offered free-of-charge with hardware subscription (see subscription details below)
+Billing information:  H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see Billing information for the [System Model H1](#honeywell-system-model-h1).
 
 
 ### Honeywell System Model H1
 
-Honeywell Quantum Solutions' Quantum Computer, System Model H1 includes two hardware machine targets, H1-1 and H1-2.  Both machines have fundamentally the same design and both meet a nominal set of technical requirements but may have system-to-system variability in exact performance and features, such as maximum number of available qubits. Users are encouraged to submit jobs to the API Validator prior to submitting to the hardware to test compatibility of their code with the target machine.  
+Honeywell Quantum Solutions' quantum computer, the System Model H1, includes two hardware machine targets: H1-1 and H1-2.  Both machines have fundamentally the same design and both meet a nominal set of technical requirements. However, they may have system-to-system variability in exact performance and features, such as the maximum number of available qubits. Users are encouraged to test compatibility of their code by submitting jobs to the [API Validator](#api-validator) prior to submitting them to the target machines.  
 
-Users may submit jobs to a specific machine (H1-1 or H1-2) or submit to the *machine family*.  Submission to the *machine family* enables the submitted job to run on the first available, compatible machine. The only condition for compatibility is number of qubits. If a user submits a job to a specific machine that is not available, the jobs will remain in the machine queue until that machine becomes available.   
+Users may submit jobs to a specific machine (H1-1 or H1-2), or submit them to the *machine family*.  Submission to the machine family enables the submitted job to run on the first available, compatible machine. The only condition for compatibility is the number of qubits. If a user submits a job to a specific machine that is not available, the job will remain in that machine's queue until the machine becomes available.   
 
 Both System Model H1 hardware H1-1 and H1-2 are continuously upgraded throughout their product lifecycle. Users are given access to the most up-to-date, advanced, and capable hardware available.
 
