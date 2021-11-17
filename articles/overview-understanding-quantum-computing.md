@@ -75,7 +75,12 @@ Imagine that you are exercising in your living room. You turn all the way to you
 
 However, if you are a quantum particle, then you can have a certain probability of *facing left* AND a certain probability of *facing right* due to a phenomenon known as **superposition** (also known as **coherence**).
 
-A quantum particle such as an electron has its own “facing left or facing right” properties, for example **spin**, referred to as either up or down, or to make it more relatable to classical binary computing, let’s just say 1 or 0. When a quantum particle is in a superposition state, it’s a linear combination of an infinite number of states between 1 and 0, but you don’t know which one it will be until you actually look at it, which brings up our next phenomenon, **quantum measurement**.
+Unlike classical particles, if two states $A$ and $B$ are valid quantum states of a quantum particle, then any linear combination of the states is also a valid
+quantum state: $\text{qubit state}=\alpha A + \beta B$. This linear combination of quantum states $A$ and $B$ is called superposition. Here, $\alpha$ and $\beta$ are the probability amplitudes of $A$ and $B$, respectively, such that $|\alpha|^{2} + |\beta|^{2} = 1$. 
+
+Only quantum systems like ions or electrons can exist in the superposition states that enable the power of quantum computing. A quantum particle such as an electron has its own “facing left or facing right” property, for example **spin**, referred to as either up or down, so the quantum state of an electron is a superposition of "spin up" and "spin down". 
+
+Generally, and to make it more relatable to classical binary computing, if a quantum particle can be in two quantum states, these states are referred as 0 state and 1 state.
 
 ### Entanglement
 
@@ -90,13 +95,13 @@ If you want to learn more, see the tutorial [exploring quantum entanglement with
 
 ### Qubits and probability
 
-Classical computers store and process information in bits, which can have a state of either 1 or 0, but never both. The equivalent in quantum computing is the **qubit**, which represents the state of a quantum particle. Because of superposition, qubits can either be 1 or 0 or anything in between. Depending on its configuration, a qubit has a certain *probability* of collapsing to 1 or 0. The qubit's probability of collapsing one way or the other is determined by **quantum interference**. 
+Classical computers store and process information in bits, which can have a state of either 1 or 0, but never both. The equivalent in quantum computing is the **qubit**, which represents the state of a quantum particle. A qubit is any quantum particle that can be in a superposition of two quantum states, 0 and 1. Each possible quantum state has an associated probability amplitude. Only after measuring a qubit, its state collapses to either the 0 state or the 1 state depending on the associated probability, thus, one of the possible states is obtained with a certain probability. 
 
-Remember your friend that was taking your picture? Suppose they have special filters on their camera called *Interference* filters. If they select the *70/30* filter and start taking pictures, in 70% of them you will be facing left, and in 30% you will be facing right. The filter has interfered with the regular state of the camera to influence the probability of its behavior.
-
-Similarly, quantum interference affects the state of a qubit in order to influence the probability of a certain outcome during measurement, and this probabilistic state is where the power of quantum computing excels.
+The qubit's probability of collapsing one way or the other is determined by **quantum interference**. Quantum interference affects the state of a qubit in order to influence the probability of a certain outcome during measurement, and this probabilistic state is where the power of quantum computing excels.
 
 For example, with two bits in a classical computer, each bit can store 1 or 0, so together you can store four possible values – **00**, **01**, **10**, and **11** – but only one of those at a time. With two qubits in superposition, however, each qubit can be 1 or 0 or *both*, so you can represent the same four values simultaneously. With three qubits, you can represent eight values, with four qubits, you can represent 16 values, and so on.
+
+For more information, see [the qubit in quantum computing](xref:microsoft.quantum.concepts.qubit).
 
 ## Quantum computers vs quantum simulators
 
