@@ -487,7 +487,7 @@ Qobj data =
  [0.025 0.0 0.0 0.975]]
 ```
 
-Some noise model can be represented as a mixture of unitary operators, but there's also many kinds of noise that cannot be represented this way. For instance, by analogy to completely depolarizing noise, a process that has some probability of resetting its input state can be represented as a mixture of a superoperator that always resets and the identity process.
+Some noise models can be represented as a mixture of unitary operators, but there are also many kinds of noise that cannot be represented this way. For instance, by analogy to completely depolarizing noise, a process that has some probability of resetting its input state can be represented as a mixture of a superoperator that always resets and the identity process.
 
 To see this, consider the process $\Lambda_{\text{Reset}}(\rho) = Tr(\rho) \ket{0}\bra{0}$. Since this process does the same thing to each density operator as input, the first and fourth columns should be the same, namely $\left(\begin{array} 1 & 0 & 0 & 0 \end{array} \right)^{\text{T}}$.
 
