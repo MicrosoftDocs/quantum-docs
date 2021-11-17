@@ -48,7 +48,7 @@ Once imported, the `qsharp` package allows Q# namespaces to appear as Python mod
         open Microsoft.Quantum.Intrinsic;
 
         operation SayHello(name : String) : Unit {
-        Message($"Hello, {name}!");
+            Message($"Hello, {name}!");
         }
     }
     ```
