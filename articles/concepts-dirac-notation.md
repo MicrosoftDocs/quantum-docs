@@ -258,7 +258,7 @@ bloch.show()
 ```
 ![bloch rho mixed](~/media/bloch-rho-mixed.png)
 
-The state at the very center of the Bloch sphere is the **maximally mixed state**. Unlike pure states, the maximally mixed state returns 50/50 outcomes for any ideal Pauli measurement.
+The state at the very center of the Bloch sphere is the *maximally mixed state*. Unlike pure states, the maximally mixed state returns 50/50 outcomes for any ideal Pauli measurement.
 
 If you are interested in learning more about density operators and pure and mixed states, you can read one of the reference books provided in [For more information](xref:microsoft.quantum.more-information).
 
