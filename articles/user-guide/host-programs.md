@@ -373,7 +373,7 @@ print(diagnostics)
     'Magnitude': 0.7071067811865476,
     'Phase': 0.0}]}]
 ```
-Working with raw JSON for diagnostics can be somewhat inconvienent, so the capture_diagnostics function also supports converting diagnostics into quantum objects using the [QuTiP library](https://qutip.org/):
+Working with raw JSON for diagnostics can be inconvienent, so the capture_diagnostics function also supports converting diagnostics into quantum objects using the [QuTiP library](https://qutip.org/):
 
 ```python
 
