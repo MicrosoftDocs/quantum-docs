@@ -17,7 +17,7 @@ Quantum systems that are isolated from their environments such that no other sys
  
 The Quantum Development Kit provides a [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulation of open quantum systems. This feature allows for simulating the behavior of Q# programs under the influence of noise, and also for using the *stabilizer representation* (also known as CHP simulation) of quantum algorithms, that is, algorithms consisting solely of [CNOT](xref:Microsoft.Quantum.Intrinsic.CNOT), [Hadamard](xref:Microsoft.Quantum.Intrinsic.H), and phase gates. 
 
-This article explains some of the basic concepts on open quantum systems, and how quantum operations can affect the states of open systems. 
+This article explains some of the basic concepts of open quantum systems, and how quantum operations can affect the states of open systems. 
 
 ## Invoking the noise simulators from Python
 
