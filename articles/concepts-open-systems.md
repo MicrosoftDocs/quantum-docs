@@ -13,7 +13,7 @@ uid: microsoft.quantum.concepts.opensystems
 
 # Open quantum systems
 
-Quantum systems that are very well isolated from their environments such that no other system interacts with the qubits are called *closed quantum systems*. By contrast, a device that is subject to some amount of interaction, or *noise*, from its environment is an *open quantum system*. In general, these interactions between the system and the environment significantly change the dynamics of the system and result in quantum dissipation, such that the information contained in the system is lost to its environment.
+Quantum systems that are isolated from their environments such that no other system interacts with the qubits are called *closed quantum systems*. By contrast, a device that is subject to some amount of interaction, or *noise*, from its environment is an *open quantum system*. In general, these interactions between the system and the environment significantly change the dynamics of the system and result in quantum dissipation, such that the information contained in the system is lost to its environment.
  
 The Quantum Development Kit provides a [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulation of open quantum systems. This feature allows for simulating the behavior of Q# programs under the influence of noise, and also for using the *stabilizer representation* (also known as CHP simulation) of quantum algorithms, that is, algorithms consisting solely of [CNOT](xref:Microsoft.Quantum.Intrinsic.CNOT), [Hadamard](xref:Microsoft.Quantum.Intrinsic.H), and phase gates. 
 
