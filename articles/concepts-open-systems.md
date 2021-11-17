@@ -422,7 +422,7 @@ After calling `enable_noisy_simulation()`, Q# operations imported into Python ex
 
 By default, `.simulate_noise()` method assumes an *ideal error* model, that is, no noise. To configure a particular error model, you can use the `qsharp.experimental.get_noise_model` and `qsharp.experimental.set_noise_model` functions to get and set the current noise model for the preview simulators. Each error model is represented as a dictionary from intrinsic operation names to objects representing the errors in those intrinsic operations. For more information, see [Configuring open systems in noise models](xref:microsoft.quantum.machines.overview.noise-simulator#configuring-open-systems-noise-models).
 
-You can simulate the superoperator $\Lambda_{text{noisy}H}$ previously defined as a noise model and run `DumPlus` operation. 
+You can simulate the superoperator $\Lambda_{text{noisy}H}$ previously defined as a noise model and run the `DumpPlus` operation. 
 
 1. First, run the code with an ideal noise model so you can compare the outcome.
 
