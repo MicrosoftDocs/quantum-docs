@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs or solve optimization problems in the cloud.
 ms.author: v-sonialopez
-ms.date: 11/15/2021
+ms.date: 11/16/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
@@ -18,7 +18,7 @@ Azure Quantum is a cloud service with a diverse set of quantum solutions and tec
 - Quantum impact today, with pre-built solutions that run on classical and accelerated compute resources (also referred to as optimization solutions).
 
 > [!Tip]
-> **Free trial.** If you don’t have an Azure subscription, you can [create a free account](https://azure.microsoft.com/free/) before you begin. Microsoft offers up to $10,000 USD in credits for use on quantum hardware. After the credits are used up, you can keep the account and use free Azure services. Your credit card is never charged unless you explicitly change your settings and ask to be charged. You can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
+> **Free trial.** If you don’t have an Azure subscription, you can [create a free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin. Microsoft offers up to $10,000 USD in credits for use on quantum hardware. After the credits are used up, you can keep the account and use free Azure services. Your credit card is never charged unless you explicitly change your settings and ask to be charged. You can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
 
 ## The parts of Azure Quantum
 

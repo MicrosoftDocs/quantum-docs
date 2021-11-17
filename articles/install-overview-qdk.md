@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to set up Azure Quantum for different languages and platforms.
 ms.author: v-benbra
-ms.date: 10/25/2021
+ms.date: 11/16/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -31,7 +31,7 @@ The QDK provides:
 
 ## Sign up for the Azure subscription
 
-To access remote quantum hardware and utilize all the features in the Azure Quantum service, you will need an Azure subscription. If you don't have an Azure subscription already, create a [free account](https://azure.microsoft.com/free/).
+To access remote quantum hardware and utilize all the features in the Azure Quantum service, you will need an Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 Once you have a subscription, use the following section to configure your preferred development environment. 
 
