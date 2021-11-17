@@ -397,7 +397,7 @@ Running Q# operations on a specific target machine is done by invoking Python me
 - `.simulate(<args>)` uses the [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) to simulate the operation for an ideal quantum computer. ([API reference for `.simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#simulate---kwargs-----typing-any)).
 - `.estimate_resources(<args>)` uses the [resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator) to compute various quantum resources required by the program. ([API reference for `.estimate_resources()`](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)).
 - `.toffoli_simulate(<args>)` uses the [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator) to provide a more efficient simulation method for a restricted class of quantum programs. ([API reference for `.toffoli_simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)).
-- `.simulate_noise(<args>)` uses the [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) to simulate the operation in an open quantum system under the influence of noise.
+- `.simulate_noise(<args>)` uses the [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) to simulate the operation in an open quantum system under the influence of noise. You can enable the use of the noise simulator by calling `qsharp.experimental.enable_noisy_simulation()`.
 
 For more information about local target machines, see [Quantum simulators](xref:microsoft.quantum.machines.overview).
 
