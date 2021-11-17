@@ -452,7 +452,7 @@ print(DumpPlus.simulate_noise())
 
 Comparing the two quantum states, you can see that when adding a probability to the Hadamard operation of failing into the noise model, the noise simulator uses the density operator representation together with the defined noise model to simulate the effect of that noise on the state of the qubits.
 
-There are many other kinds of noise as well. For example, a very well known noise model is the *completely depolarizing noise*, which results of the equal probability of applying the I, X, Y, or Z operations to a single qubit:
+There are many other kinds of noise as well. For example, a very well known noise model is the *completely depolarizing noise*, which results in the equal probability of applying the I, X, Y, or Z operations to a single qubit:
 
 ```python
 [I, X, Y, Z] = map(qt.to_super, [qt.qeye(2), qt.sigmax(), qt.sigmay(), qt.sigmaz()])
