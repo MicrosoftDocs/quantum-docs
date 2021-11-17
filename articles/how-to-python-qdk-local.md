@@ -93,7 +93,7 @@ print(Plus.simulate(x=3, y=5))
 ```output
 8
 ```
-You can also work with the qubits allocated in the Q# programs and simulate the operation from Python. Consider the following operation, which creates a random bit quantum generator. 
+You can also work with the qubits allocated in the Q# programs and simulate the operation from Python. Consider the following operation, which creates a quantum random bit generator. 
 
 ```qsharp
 open Microsoft.Quantum.Measurement;
