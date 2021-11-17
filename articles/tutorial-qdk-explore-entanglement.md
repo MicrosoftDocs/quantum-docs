@@ -146,7 +146,7 @@ The `TestBellState`operation:
     1. Stores the number of measurements that return `One`.
 1. After the loop completes, it calls `SetQubitState` again to reset the qubit to a known state (`Zero`) to allow others to
 allocate this qubit in a known state. This is required by the `use` statement. 
-1. Finally, it uses the [`Message`](microsoft.quantum.intrinsic.message) function to print an explanatory message in the console before returning the results.
+1. Finally, it uses the [`Message`](xref:Microsoft.Quantum.Intrinsic.Messagee) function to print an explanatory message in the console before returning the results.
 
 Your code should look like this now:
 
