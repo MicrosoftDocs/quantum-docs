@@ -371,7 +371,7 @@ $$
 \end{align}
 $$
 
-On the other hand, relative phases are still represented in open systems notation, as we can confirm by looking at the matrices for $\ket{+}\bra{+}$ and $\ket{-}\bra{-}$:
+On the other hand, relative phases are still represented in open systems notation, which can be confirmed by looking at the matrices for $\ket{+}\bra{+}$ and $\ket{-}\bra{-}$:
 
 ```python
 print(ket_plus * ket_plus.dag())
