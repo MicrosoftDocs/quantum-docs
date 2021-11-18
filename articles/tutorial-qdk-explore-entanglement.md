@@ -15,8 +15,7 @@ uid: microsoft.quantum.tutorial-qdk.entanglement
 
 This tutorial shows you how to write a Q# program that manipulates and measures qubits, and demonstrates the effects of superposition and entanglement. 
 
-* Where classical bits hold a single binary value such as a 0 or 1, the state of a [qubit](xref:microsoft.quantum.glossary-qdk#qubit) can be in a [superposition](xref:xref:microsoft.quantum.glossary-qdk#superposition) of
-having an equal probability of being either 0 or 1.
+* Where classical bits hold a single binary value such as a 0 or 1, the state of a [qubit](xref:microsoft.quantum.glossary-qdk#qubit) can be in a [superposition](xref:microsoft.quantum.glossary-qdk#superposition) of having an equal probability of being either 0 or 1.
 * The act of [**measuring**](xref:microsoft.quantum.glossary-qdk#measurement) a qubit produces a binary result, either 0 or 1, and changes the state of the qubit out of superposition. 
 * Multiple qubits can be [**entangled**](xref:microsoft.quantum.glossary-qdk#entanglement) such that they cannot be described independently from each other. That is, whatever happens to one qubit, also happens to the entangled qubit.
 
