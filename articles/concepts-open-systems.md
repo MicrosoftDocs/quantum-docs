@@ -93,6 +93,8 @@ Calling <xref:Microsoft.Quantum.Diagnostics.DumpMachine> generates the following
 ∣0❭:     0.707107 +  0.000000 i  ==     ***********          [ 0.500000 ]     --- [  0.00000 rad ]
 ∣1❭:     0.707107 +  0.000000 i  ==     ***********          [ 0.500000 ]     --- [  0.00000 rad ]
 ```
+> [!NOTE]
+> Notice that the output may appear differently if you run the example in a Python notebook, as Jupyter notebook, instead of at the command line, as that interface understands how to forward HTML-based diagnostics from the IQ# kernel to the IPython kernel.
 
 The first row provides a comment with the IDs of the corresponding qubits in their significant order.
 The rest of the rows describe the probability amplitude of measuring the basis state vector $\ket{n}$ in both Cartesian and polar formats. In detail for the first row:
@@ -116,7 +118,13 @@ ket1 = qt.basis(2, 1)
 ket_plus = (1 / np.sqrt(2)) * (ket0 + ket1)
 print(ket_plus)
 ```
-3. When measuring a qubit in the $\ket{+}$ state in the $Z$-basis, we get Zero and One with equal probability:
+```output
+Quantum object: dims = [[2], [1]], shape = (2, 1), type = ket
+Qobj data =
+[[0.707]
+ [0.7.7]]
+```
+3. When measuring a qubit in the $\ket{+}$ state in the $Z$-basis, you get 0 and 1 with equal probability. This can be used as a quantum random bit generator.
 
 ```qsharp
 operation SampleRandomBit() : Result {
@@ -197,13 +205,13 @@ print(sum(ApplyHToRandomStateAndMeasure.simulate() for _ in range(100)))
 As it turns out, there is no single vector that represents the state prepared by the `ApplyHToRandomStateAndMeasure` operation unless you know the outcome of the random coin flip `(DrawRandomBool(0.5))`. If you don't know the outcome of the coin flip, the quantum state is given by the following *ensemble* of state vectors,
 
 $$
-\begin{align}
+\begin{equation}
     \rho =
         \left\{
             \ket{0} \text{ with probability 50%}, \quad
             \ket{1} \text{ with probability 50%}
         \right\}.
-\end{align}
+\end{equation}
 $$
 
 Given a quantum state $\ket{\psi}$ the probability of the outcome $\ket{\phi}$ after a measurement is given by the Born's rule,
@@ -219,10 +227,10 @@ The trick here is to average over the different state vectors that could be prep
 
 $$
 \begin{align}
-    Pr(\phi | \rho) & = \mathbb{E}_{\psi \sim \rho} \left[ Pr(\phi | \psi) \right] \\\\
+    \text{Pr}(\phi | \rho) & = \mathbb{E}_{\psi \sim \rho} \left[ \text{Pr}(\phi | \psi) \right] \\\\
                     & = \mathbb{E}_{\psi \sim \rho} \left[ \left\langle \phi | \psi \right\rangle \left\langle \psi | \phi \right\rangle \right] \\\\
-                    & = \sum_i Pr(\psi_i) \left\langle \phi | \psi_i \right\rangle \left\langle \psi_i | \phi \right\rangle \\\\
-                    & = \left\langle \phi \Bigg| \left( \sum_i Pr(\psi_i) \ket{\psi_i} \bra{\psi_i} \right) \Bigg| \phi \right\rangle.
+                    & = \sum_i \text{Pr}(\psi_i) \left\langle \phi | \psi_i \right\rangle \left\langle \psi_i | \phi \right\rangle \\\\
+                    & = \left\langle \phi \Bigg| \left( \sum_i \text{Pr}(\psi_i) \ket{\psi_i} \bra{\psi_i} \right) \Bigg| \phi \right\rangle.
 \end{align}
 $$
 
@@ -281,10 +289,10 @@ $$
 
 Since density functions represent an average over different preparations, and since averages are linear, such functions must in general must also be linear.
 
-A linear function from density operators to density operators is called a *quantum process*.
+A linear function that maps a density operator to another density operator is called a *quantum process*.
 
 > [!TIP]
-> Quantum processes that can be realized in practice have a few other conditions as well as linearity, known as complete positivity and trace preservingness. A process that is both completely positive and trace preserving (CPTP) is a *quantum channel*.
+> In addition to linearity, quantum processes that can be realized in practice fulfill the condition of being completely positive and trace preserving (CPTP) maps. A linear map that is both completely positive and trace preserving is known as a *quantum channel*.
 
 There are different ways to represent quantum processes, but the most common method when working with noise models for open quantum systems is to use *superoperators*. Just as operators are linear functions from vectors to vectors, superoperators are linear functions from operators to operators, and can be written using matrices.
 
