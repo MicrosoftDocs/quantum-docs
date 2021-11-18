@@ -2,7 +2,7 @@
 author: QuantumWriter
 description: Learn about using Dirac notation to represent quantum states and to simulate quantum operations.
 ms.author: v-benbra
-ms.date: 02/01/2021
+ms.date: 11/18/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -171,7 +171,7 @@ which matches the multi-qubit measurement discussion.  The generalization of thi
 
 ## Density operators
 
-Another useful operator to express using Dirac notation is the *density operator*, sometimes also known as a *state operator*. A density operator for a quantum state vector takes the form $\rho = \ket{\psi} \bra{\psi}$.
+Another useful operator to express using Dirac notation is the *density operator*, sometimes also known as a *state operator*. As the quantum state vector, the density operator describes the quantum state of a system. However, while quantum state vectors can only represent *pure states*, density operators can also represent *mixed states*.
 
 More generally, a given matrix $\rho$ is a valid density operator if the following conditions are fulfilled:
 
@@ -180,17 +180,22 @@ More generally, a given matrix $\rho$ is a valid density operator if the followi
 - Every eigenvalue $p$ of $\rho$ is $0 &lt;= p &lt;= 1$
 - All the eigenvalues of $\rho$ sum to 1
 
-Together, these conditions guarantee that $\rho$ can be thought of as an ensemble. In particular, if $\rho = \sum_i p_i \ket{\psi_i} \bra{\psi_i}$ is an eigenvalue decomposition of $\rho$, then $\rho$ describes the ensemble $\rho =\ket{\psi_i}$ with probability $p_i$.
+Together, these conditions guarantee that $\rho$ can be thought of as an ensemble. A density operator for a quantum state vector $\ket{\psi}$ takes the form $\rho = \sum_i p_i \ket{\psi_i} \bra{\psi_i}$ is an eigenvalue decomposition of $\rho$, then $\rho$ describes the ensemble $\rho = \{ \ket{\psi_i} \text{with probability} p_i \}$.
+
+Pure quantum states are those that are characterized by a single ket vector or wavefunction, and cannot be written as a statistical mixture (or *convex combination*) of other quantum states. A mixed quantum state is a statistical ensemble of pure states. 
 
 This concept of representing the state as a matrix, rather than a vector, is often convenient because it gives a convenient way of representing probability calculations, and also allows one to describe both statistical uncertainty as well as quantum uncertainty within the same formalism.
-General quantum state operators, rather than vectors, are ubiquitous in some areas of quantum computing but are not necessary to understand the basics of the field.
-
-In general, density operators represent *mixed states*, while those states that can be written as $\ket{\psi}\bra{\psi}$ for some state vector $\ket{\psi}$ (for example, $\ket{+}\bra{+}$) are *pure states*.
 
 >[!TIP]
 > The QuTiP library is a very helpful Python library when working with quantum states. You can write quantum states in QuTiP notation, using qt.basis(2, i) to represent $\ket{i}$ on a single qubit. To learn more about QuTiP methods and features, see the [QuTiP user guide](https://qutip.org/docs/latest/guide/guide.html).
 
-To tell how close a given density operator $\rho$ is to being pure, you can look at the trace (that is, the sum of the diagonal elements) of $\rho^2$. A density operator represents a pure state if, and only if, $Tr(\rho ^{2})=1$.
+A density operator $\rho$ represents a pure state if and only if: 
+
+- $\rho$ can be written as an outer product of a state vector, $\rho=\ket{\psi}\bra{\psi}$
+- $\rho =\rho^2$
+- $tr(\rho^2)=1$
+
+To tell how close a given density operator $\rho$ is to being pure, you can look at the trace (that is, the sum of the diagonal elements) of $\rho^2$. A density operator represents a pure state if and only if $tr(\rho ^{2})=1$.
 
 Consider the mixed state $\rho_{\text{mixed}} = \frac{1}{2}\left( \ket{0}\bra{0} + \ket{1}\bra{1} \right)$,
 
