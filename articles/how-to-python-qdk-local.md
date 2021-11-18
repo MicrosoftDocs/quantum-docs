@@ -32,6 +32,9 @@ VS Code also offers its own terminal from which you can run code. If you are usi
 
 If you would like to use a different editor, the instructions so far have you all set.
 
+> [!NOTE]
+> Notice that the output of your program may appear differently if you run the code in a Python notebook, as Jupyter notebook, instead of at the command line, as that interface understands how to forward HTML-based diagnostics from the IQ# kernel to the IPython kernel.
+
 ## Use Q\# with Python
 
 To begin, your Python program needs to import the `qsharp` Python package. This package provides Q# interoperability for Python, as well as the IQ# kernel for Jupyter, allowing you to compile and run Q# operations from Python and Q# Jupyter Notebooks.
