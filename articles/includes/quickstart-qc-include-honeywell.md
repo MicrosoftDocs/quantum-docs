@@ -1,7 +1,7 @@
 ---
 author: mblouin
 ms.author: mblouin
-ms.date: 06/24/2021
+ms.date: 11/16/2021
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -11,7 +11,7 @@ ms.topic: include
 
 To complete this tutorial, you need
 
-- An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - [Visual Studio Code](https://code.visualstudio.com/download), which you can download and use for free.
 - The [Microsoft QDK for VS Code extension](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 - The [Azure CLI and the quantum CLI extension](xref:microsoft.quantum.install-qdk.overview.standalone#azure-cli-net-core-sdk-31-not-required).
