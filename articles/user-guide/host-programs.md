@@ -323,14 +323,81 @@ A Python host program is constructed as follows:
     random_bit = MeasureSuperposition.simulate()
     print(random_bit)
     ```
+#### Diagnostics
+
+Just as with Q# standalone notebooks, you can also use diagnostics like `DumpMachine` and `DumpOperation` from Python notebooks to learn how your Q# program work and to help diagnose issues and bugs in your Q# programs.
+
+```qsharp
+namespace DumpOperation {
+    open Microsoft.Quantum.Diagnostics;
+
+    operation DumpPlusState() : Unit {
+        use q = Qubit();
+        within {
+            H(q);
+        } apply {
+            DumpMachine();
+        }
+    }
+}
+```
+```python
+from  DumpOperation import DumpPlusState
+print(DumpPlusState.simulate())
+```
+Calling <xref:Microsoft.Quantum.Diagnostics.DumpMachine> generates the following output:
+
+```output
+# wave function for qubits with ids (least to most significant): 0
+∣0❭:     0.707107 +  0.000000 i  ==     ***********          [ 0.500000 ]     --- [  0.00000 rad ]
+∣1❭:     0.707107 +  0.000000 i  ==     ***********          [ 0.500000 ]     --- [  0.00000 rad ]
+```
+The Q# package also allows you to capture these diagnostics and manipulate them as Python objects:
+
+```python
+with qsharp.capture_diagnostics() as diagnostics:
+    DumpPlusState.simulate()
+print(diagnostics)
+```
+```output
+[{'diagnostic_kind': 'state-vector',
+  'div_id': 'dump-machine-div-7d3eac24-85c5-4080-b123-4a76cacaf58f',
+  'qubit_ids': [0],
+  'n_qubits': 1,
+  'amplitudes': [{'Real': 0.7071067811865476,
+    'Imaginary': 0.0,
+    'Magnitude': 0.7071067811865476,
+    'Phase': 0.0},
+   {'Real': 0.7071067811865476,
+    'Imaginary': 0.0,
+    'Magnitude': 0.7071067811865476,
+    'Phase': 0.0}]}]
+```
+Working with raw JSON for diagnostics can be inconvienent, so the capture_diagnostics function also supports converting diagnostics into quantum objects using the [QuTiP library](https://qutip.org/):
+
+```python
+
+with qsharp.capture_diagnostics(as_qobj=True) as diagnostics:
+    DumpPlusState.simulate()
+diagnostics[0]
+```
+```output
+Quantum object: dims = [[2], [1]], shape = (2, 1), type = ket
+Qobj data =
+[[0.707]
+ [0.707]]
+```
+
+To learn more about the diagnostics features offered by Q# and the Quantum Development Kit, see [testing and debugging](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging).
 
 #### Specifying target machines
 
 Running Q# operations on a specific target machine is done by invoking Python methods directly on the imported operation object. Thus, there is no need to create an object for the run target (such as a simulator). Instead, invoke one of the following methods to run the imported Q# operation:
 
-- `.simulate(<args>)` uses the [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) to simulate the operation for an ideal quantum computer ([api reference for `.simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#simulate---kwargs-----typing-any))
-- `.estimate_resources(<args>)` uses the [resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator) to compute various quantum resources required by the program ([api reference for `.estimate_resources(<args>)`](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)
-- `.toffoli_simulate(<args>)` uses the [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator) to provide a more efficient simulation method for a restricted class of quantum programs ([api reference for `.toffoli_simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)
+- `.simulate(<args>)` uses the [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) to simulate the operation for an ideal quantum computer. ([API reference for `.simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#simulate---kwargs-----typing-any)).
+- `.estimate_resources(<args>)` uses the [resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator) to compute various quantum resources required by the program. ([API reference for `.estimate_resources()`](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)).
+- `.toffoli_simulate(<args>)` uses the [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator) to provide a more efficient simulation method for a restricted class of quantum programs. ([API reference for `.toffoli_simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#estimate-resources---kwargs-----typing-dict-str--int-)).
+- `.simulate_noise(<args>)` uses the [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) to simulate the operation in an open quantum system under the influence of noise. You can enable the use of the noise simulator by calling `qsharp.experimental.enable_noisy_simulation()`.
 
 For more information about local target machines, see [Quantum simulators](xref:microsoft.quantum.machines.overview).
 
