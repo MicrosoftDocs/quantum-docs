@@ -235,7 +235,7 @@ For a detailed introduction to protobuf, please see Google's [Protocol Buffers](
 
 To submit a problem with protobuf serialization, specify the optional parameter **content_type** in the problem object definition and set it to **Content.protobuf**.
 If you do not set this parameter explicitly, then it will be set to **ContentType.json**.
-Please see [problem.serialize](#problem-serialize) for a sample.
+Please see [problem.serialize](#problemserialize) for a sample.
 
 For more information on cost functions and how terms relate to a problem definition, see the following topics:
 
