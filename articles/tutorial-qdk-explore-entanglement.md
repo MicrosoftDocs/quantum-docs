@@ -15,8 +15,8 @@ uid: microsoft.quantum.tutorial-qdk.entanglement
 
 This tutorial shows you how to write a Q# program that manipulates and measures qubits, and demonstrates the effects of superposition and entanglement. 
 
-* Where classical bits hold a single binary value such as a 0 or 1, the state of a [qubit](xref:microsoft.quantum.glossary-qdk#qubit) can be in a [superposition](xref:microsoft.quantum.glossary-qdk#superposition) of having an equal probability of being either 0 or 1.
-* The act of [**measuring**](xref:microsoft.quantum.glossary-qdk#measurement) a qubit produces a binary result, either 0 or 1, and changes the state of the qubit out of superposition. 
+* Where classical bits hold a single binary value such as a 0 or 1, the state of a [qubit](xref:microsoft.quantum.glossary-qdk#qubit) can be in a [superposition](xref:microsoft.quantum.glossary-qdk#superposition) of two quantum states, 0 and 1. Each possible quantum state has an associated probability amplitude..
+* The act of [**measuring**](xref:microsoft.quantum.glossary-qdk#measurement) a qubit produces a binary result, either 0 or 1, with a certain probability, and changes the state of the qubit out of superposition. 
 * Multiple qubits can be [**entangled**](xref:microsoft.quantum.glossary-qdk#entanglement) such that they cannot be described independently from each other. That is, whatever happens to one qubit, also happens to the entangled qubit.
 
 In this tutorial, you will prepare two qubits in a specific quantum state, learn how to operate on qubits with Q# to change their state, and demonstrate the effects
@@ -38,7 +38,7 @@ In this tutorial, you'll learn how to
 
 ## Initialize a qubit using measurement
 
-The first step is to define a Q# operation that will initialize a qubit to a known state. This can be called to set a qubit to a classical state, meaning it either returns `Zero` 100% of the time or returns `One` 100% of the time. `Zero` and `One` are Q# constants that represent the only two possible results of a measurement of a qubit.
+The first step is to define a Q# operation that will initialize a qubit to a known state. This can be called to set a qubit to a classical state, meaning it either returns `Zero` 100% of the time or returns `One` 100% of the time. `Zero` and `One` are Q# values that represent the only two possible results of a measurement of a qubit.
 
 In your project, replace the contents of `Program.qs` with the following code:
 
@@ -57,11 +57,11 @@ In your project, replace the contents of `Program.qs` with the following code:
 
 The code example introduces two standard operations, [`M`](xref:Microsoft.Quantum.Intrinsic.M) and [`X`](xref:Microsoft.Quantum.Intrinsic.X), which transform the state of a qubit. 
 
-The  `SetQubitState` operation
+The  `SetQubitState` operation:
 
-* Takes two parameters: a type [`Result`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types), named `desired`, that represents the desired state for the qubit to be in (0 or 1), and a type [`Qubit`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types). 
-* Performs a measurement operation, `M`, which measures the state of the qubit (`Zero` or `One`) and compares the result to the value specified in `desired`.
-* If the measurement does not match the compared value, it runs an `X` operation, which flips the state of the qubit to where the probabilities of a measurement returning `Zero` and `One` are reversed. This way, `SetQubitState` always puts the target qubit in the desired state. 
+1. Takes two parameters: a type [`Result`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types), named `desired`, that represents the desired state for the qubit to be in (0 or 1), and a type [`Qubit`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types). 
+1. Performs a measurement operation, `M`, which measures the state of the qubit (`Zero` or `One`) and compares the result to the value specified in `desired`.
+1. If the measurement does not match the compared value, it runs an `X` operation, which flips the state of the qubit to where the probabilities of a measurement returning `Zero` and `One` are reversed. This way, `SetQubitState` always puts the target qubit in the desired state. 
 
 ## Test the measurement
 
@@ -261,7 +261,7 @@ Q1:Zero/One  Q2:Zero/One
 
 ## Entangle two qubits
 
-As mentioned earlier, entangled qubits are connected such that they cannot be described independently from each other. That is, whatever happens to one qubit, also happens to the entangled qubit. This allows you to manipulate one qubit and measure the result on the entangled qubit. (This example uses two qubits; however, it is also possible to entangle three or more qubits).
+As mentioned earlier, entangled qubits are connected such that they cannot be described independently from each other. That is, whatever operation happens to one qubit, also happens to the entangled qubit. This allows you to know the resulting state of one qubit without measuring it, just by measuring the state of the other qubit. (This example uses two qubits; however, it is also possible to entangle three or more qubits).
 
 To enable entanglement, Q# provides the `CNOT` operation, which stands for *Controlled-NOT*.  The result of running this operation on two qubits is to flip the second qubit if the first qubit is `One`.
 
