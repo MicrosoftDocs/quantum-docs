@@ -207,7 +207,7 @@ terms
 
 The StreamingProblem class can handle large problems that exceed local memory limits. Unlike with the Problem class, terms in the StreamingProblem are uploaded directly to blob and are not kept in memory.
 
-The StreamingProblem class uses the same interface as the Problem class. For details, see the [StreamingProblem](xref:microsoft.quantum.optimization.streaming-problem) docucmentation. 
+The StreamingProblem class uses the same interface as the Problem class. For details, see the [StreamingProblem](xref:microsoft.quantum.optimization.streaming-problem) documentation. 
 There are some features that are not yet supported on the StreamingProblem class because of its streaming nature:
 
 - Problem.set_fixed_variables()
