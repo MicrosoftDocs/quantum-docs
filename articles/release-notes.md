@@ -17,6 +17,18 @@ In this article, learn about updates to the [Quantum Development Kit (QDK)](xref
 
 For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For update instructions, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
+
+## 2021-11-19
+
+### QDK version 0.21.2111.xxxxxx
+
+- Added a [tool](TODO) to update deprecated Q# syntax and basic formatting:
+  - Added Code Action and Edit -> Advanced menu item to Visual Studio Code and Visual Studio extensions to allow for file-wide formatting and updating deprecated Q# syntax.
+  - Added a build target, UpdateSyntax, for updating deprecated syntax in a Q# project. This can be used with `dotnet msbuild -t:UpdateSyntax` on command-line.
+- Added support for submitting problems to a subset of Microsoft targets in protobuf binary format. You can use it for encoding significantly large problems by reducing the payload sizes, and improve upload and processing speeds.
+- Added support for submitting problems to a subset of Microsoft targets in protobuf binary format. It is useful for encoding significantly large problems by reducing the payload sizes, and improve upload and processing speeds.
+- Introduced a breaking change: The deserialize class method of the Problem class has a parameter name change from `problem_as_json` to `input_problem` to support deserialization of protobuf.
+
 ## 2021-10-26
 
 ### QDK version 0.20.2110.171573
