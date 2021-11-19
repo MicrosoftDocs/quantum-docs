@@ -22,7 +22,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ### QDK version 0.21.2111.xxxxxx
 
-- Added a [tool](TODO) to update deprecated Q# syntax and basic formatting:
+- Added a [tool](https://github.com/microsoft/qsharp-compiler/tree/main/src/QsFmt) to update deprecated Q# syntax and basic formatting:
   - Added Code Action and Edit -> Advanced menu item to Visual Studio Code and Visual Studio extensions to allow for file-wide formatting and updating deprecated Q# syntax.
   - Added a build target, UpdateSyntax, for updating deprecated syntax in a Q# project. This can be used with `dotnet msbuild -t:UpdateSyntax` on command-line.
 - Added support for submitting problems to a subset of Microsoft targets in protobuf binary format. You can use it for encoding significantly large problems by reducing the payload sizes, and improve upload and processing speeds.
