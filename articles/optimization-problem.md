@@ -138,8 +138,7 @@ problem.serialize()
 
 ### Problem.deserialize
 
-Deserilaizes a problem from JSON or protobuf to an instance of Problem. 
-Note: Please see section `Input problem serialization to protobuf binary` to understand the usage of protobuf
+Deserilaizes a problem from the uploaded input data to an instance of Problem. 
 
 ```py
 
