@@ -241,8 +241,7 @@ Please see problem.serialize for a sample.
 For more information on cost functions and how terms relate to a problem definition, see the following topics:
 
 - [Cost functions](xref:microsoft.quantum.optimization.concepts.cost-function)
-- [Term](xref:microsoft.quantum.optimization.term)
-- [Problem](xref:microsoft.quantum.optimization.problem)
+- [Term](xref:microsoft.quantum.optimization.terd
 
 ### Availability
 
