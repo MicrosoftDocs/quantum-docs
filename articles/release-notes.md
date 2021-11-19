@@ -24,7 +24,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 - Added a [tool](https://github.com/microsoft/qsharp-compiler/tree/main/src/QsFmt) to update deprecated Q# syntax and basic formatting:
   - Added Code Action and Edit -> Advanced menu item to Visual Studio Code and Visual Studio extensions to allow for file-wide formatting and updating deprecated Q# syntax.
-  - Added a build target, UpdateSyntax, for updating deprecated syntax in a Q# project. This can be used with `dotnet msbuild -t:UpdateSyntax` on command-line.
+  - Added a build target, UpdateSyntax, for updating deprecated syntax in a Q# project. This can be used with `dotnet msbuild -t:UpdateSyntax` at a command prompt.
 - Added support for submitting problems to a subset of Microsoft targets in protobuf binary format. You can use it for encoding significantly large problems by reducing the payload sizes, and improve upload and processing speeds.
 - Added support for submitting problems to a subset of Microsoft targets in protobuf binary format. It is useful for encoding significantly large problems by reducing the payload sizes, and improve upload and processing speeds.
 - Introduced a breaking change: The [deserialize](https://docs.microsoft.com/azure/quantum/optimization-problem) class method of the Problem class has a parameter name change from `problem_as_json` to `input_problem` to support deserialization of protobuf.
