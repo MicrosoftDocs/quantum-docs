@@ -119,8 +119,7 @@ problem.add_terms([
 
 ### Problem.serialize
 
-Serializes a problem to a JSON string or protobuf.
-Note: Please see section `Input problem serialization to protobuf binary` to understand the usage of protobuf
+Serializes a problem to a JSON string or protobuf. For more information about the usage of protobuf, see [Input problem serialization to protobuf binary format](#input-problem-serialization-to-protobuf-binary-format).
 
 ```py
 problem = Problem("My Problem", [Term(c=1, indices=[0,1])])
@@ -129,7 +128,7 @@ problem.serialize()
 > {"cost_function": {"version": "1.0", "type": "ising", "terms": [{"c": 1, "ids": [0, 1]}]}}
 ```
 
-To serialize to protobuf (only supported for population annealing and substochastic monte carlo microsoft solvers)
+To serialize to protobuf (only supported for the Population Annealing and Substochastic Monte Carlo Microsoft solvers)
 
 ```py
 problem = Problem(name = "protobuf_problem", terms = [Term(c=1, indices=[0,1])], content_type=ContentType.protobuf)
@@ -208,7 +207,7 @@ terms
 
 The StreamingProblem class can handle large problems that exceed local memory limits. Unlike with the Problem class, terms in the StreamingProblem are uploaded directly to blob and are not kept in memory.
 
-The StreamingProblem class uses the same interface as the Problem class. See [StreamingProblem](xref:microsoft.quantum.optimization.streaming-problem) usage documentation. 
+The StreamingProblem class uses the same interface as the Problem class. For details, see the [StreamingProblem](xref:microsoft.quantum.optimization.streaming-problem) documentation. 
 There are some features that are not yet supported on the StreamingProblem class because of its streaming nature:
 
 - Problem.set_fixed_variables()
@@ -222,21 +221,21 @@ For an example of how to use the `OnlineProblem` class, have a look at [reusing 
 
 ## Input problem serialization to protobuf binary format
 
-In addition to the standard JSON form Azure Quantum also supports protobuf. This is an optional feature that is limited to a subset of optimization solvers in the Microsoft QIO provider.
+In addition to the standard JSON form, Azure Quantum also supports protobuf. This is an optional feature that is limited to a subset of optimization solvers in the Microsoft QIO provider.
 JSON will continue to be supported at this time.
-This feature is useful for encoding input problems that are significantly large in size. In these cases using a binary encoding method like protobuf reduces the payload sizes, and improves upload and processing speeds relative to submitting as the standard JSON format.
-You can specify the problem type, the terms, initial configuration and problem metadata (eg: problem name) exactly as is supported currently in JSON.
+This feature is useful for encoding input problems that are significantly large in size. In these cases, using a binary encoding method like protobuf reduces the payload sizes, and improves upload and processing speeds relative to submitting as the standard JSON format.
+You can specify the problem type, terms, initial configuration and problem metadata (for example, problem name) exactly as is supported currently in JSON.
 
 ### Protobuf
 
 Protobuf is Google's Data Interchange Format. It is binary format with a static schema.
-For a detailed introduction to protobuf please see [here](https://developers.google.com/protocol-buffers).
+For a detailed introduction to protobuf, please see Google's [Protocol Buffers](https://developers.google.com/protocol-buffers) page.
 
 ### Usage
 
-To submit a problem with protobuf serialization in the problem object definition specify the optional parameter **content_type** and set it to **Content.protobuf**.
+To submit a problem with protobuf serialization, specify the optional parameter **content_type** in the problem object definition and set it to **Content.protobuf**.
 If you do not set this parameter explicitly, then it will be set to **ContentType.json**.
-Please see problem.serialize for a sample.
+Please see [problem.serialize](#problemserialize) for a sample.
 
 For more information on cost functions and how terms relate to a problem definition, see the following topics:
 
