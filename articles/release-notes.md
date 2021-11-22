@@ -22,11 +22,12 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ### QDK version 0.21.2111.177148
 
-- Added a [tool](https://github.com/microsoft/qsharp-compiler/tree/main/src/QsFmt) to update deprecated Q# syntax and basic formatting for Q# projects with QDK version `0.21.2111.177148` and up:
-  - Added Code Action and Edit -> Advanced menu item to Visual Studio Code and Visual Studio extensions to allow for file-wide formatting and updating deprecated Q# syntax.
+- Added a [Q# formatter](https://github.com/microsoft/qsharp-compiler/tree/main/src/QsFmt) to update deprecated Q# syntax and basic formatting for Q# projects with QDK version **0.21.2111.177148** and up:
+  - You need to update the QDK version in the `<Project>` tag of your .csproj file to use the Q# formatter. 
+  - You can use the Q# formatter via Visual Studio by clicking on the **Edit -> Advanced -> Format Document** menu item. Via Visual Studio Code, you can format your code by right-clicking on the code you want to format, and clicking on the **Format Document** menu item.
   - Added a build target, UpdateSyntax, for updating deprecated syntax in a Q# project. This can be used with `dotnet msbuild -t:UpdateSyntax` at a command prompt.
-- Added support for submitting problems to a subset of Microsoft targets in [protobuf binary format](xref:microsoft.quantum.optimization.problem). You can use it for encoding significantly large problems by reducing the payload sizes, and improve upload and processing speeds.
-- **Breaking change:** The [deserialize](https://docs.microsoft.com/azure/quantum/optimization-problem) class method of the Problem class has a parameter name change from `problem_as_json` to `input_problem` to support deserialization of protobuf.
+- Added support for submitting problems to a subset of Microsoft targets in [protobuf binary format](xref:microsoft.quantum.optimization.problem#input-problem-serialization-to-protobuf-binary-format). You can use it for encoding significantly large problems by reducing the payload sizes, and improve upload and processing speeds.
+- **Breaking change:** The [deserialize](xref:microsoft.quantum.optimization.problem#problemserialize) class method of the Problem class has a parameter name change from `problem_as_json` to `input_problem` to support deserialization of protobuf.
 
 ## 2021-10-26
 
