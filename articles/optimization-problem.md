@@ -229,7 +229,7 @@ You can specify the problem type, terms, initial configuration and problem metad
 ### Protobuf
 
 Protobuf is Google's Data Interchange Format. It is binary format with a static schema.
-For a detailed introduction to protobuf, please see Google's [Protocol Buffers](https://developers.google.com/protocol-buffers) page.
+For a detailed introduction to protobuf, please see Google's [Protocol Buffers](https://developers.google.com/protocol-buffers/) page.
 
 ### Usage
 
