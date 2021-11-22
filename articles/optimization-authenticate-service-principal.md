@@ -2,7 +2,7 @@
 author: anraman
 description: This document provides instructions on how to authenticate using a service principal.
 ms.author: anraman
-ms.date: 02/01/2021
+ms.date: 11/22/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
@@ -52,11 +52,9 @@ To create a service principal, assign access, and generate a credential:
 > [!NOTE]
 > In order to create a role assignment on the resource group or workspace, you need to be an _owner_ or _user access administrator_ at the scope of the role assignment. If you do not have permissions to create the Service Principal in your subscription, you will need to request permission from the _owner_ or _administrator_ of the Azure subscription.
 >
-> If you have permissions only at Resource Group or Workspace level, you can try to create the service principal without subscription level assignment using:
+> If you have permissions only at Resource Group or Workspace level, you can try to create the service principal under the Contributor role using:
 >
-> `az ad sp create-for-rbac`
->
-> Then, based on the output for the Service Principal name, you can go directly to the Resource Group or Azure Quantum Workspace in the portal to create a role assignment for that Service Principal, and assign the _contributor_ role. 
+> `az ad sp create-for-rbac --role Contributor`
 
 ## Authenticate as the service principal
 
