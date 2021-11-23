@@ -236,7 +236,7 @@ If the `index_convention` property of a `two_electron_integrals` object is equal
 - `[l, k, j, i]`
 
 > [!NOTE]
-> Because the `index_convention` property is a sparse quantity object, no indices may be repeated on different elements.
+> Because the `two_electron_integrals` property is a sparse array quantity object, no indices may be repeated on different elements.
 > In particular, if an element with indices `[i, j, k, l]` is present, no other element may have those indices.
 
 
