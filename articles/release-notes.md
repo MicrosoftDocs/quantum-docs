@@ -3,7 +3,7 @@ title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
 author: bradben
 ms.author: v-benbra
-ms.date: 11/22/2021
+ms.date: 11/23/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
@@ -18,7 +18,7 @@ In this article, learn about updates to the [Quantum Development Kit (QDK)](xref
 For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For update instructions, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
 
-## 2021-11-22
+## 2021-11-23
 
 ### QDK version 0.21.2111.177148
 
@@ -26,8 +26,13 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
   - You need to update the QDK version in the `<Project>` tag of your .csproj file to use the Q# formatter. 
   - You can use the Q# formatter via Visual Studio by clicking on the **Edit -> Advanced -> Format Document** menu item. Via Visual Studio Code, you can format your code by right-clicking on the code you want to format, and clicking on the **Format Document** menu item.
   - Added a build target, UpdateSyntax, for updating deprecated syntax in a Q# project. This can be used with `dotnet msbuild -t:UpdateSyntax` at a command prompt.
+  - Added Code Actions to automatically update deprecated syntax.
 - Added support for submitting problems to a subset of Microsoft targets in [protobuf binary format](xref:microsoft.quantum.optimization.problem#input-problem-serialization-to-protobuf-binary-format). You can use it for encoding significantly large problems by reducing the payload sizes, and improve upload and processing speeds.
 - **Breaking change:** The [deserialize](xref:microsoft.quantum.optimization.problem#problemserialize) class method of the Problem class has a parameter name change from `problem_as_json` to `input_problem` to support deserialization of protobuf.
+
+#### Known issues
+
+- Code actions are currently not working in Visual Studio Code (when you hover over a code warning the message is "no quick fixes available").
 
 ## 2021-10-26
 
