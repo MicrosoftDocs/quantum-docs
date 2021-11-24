@@ -2,7 +2,7 @@
 author: guenp
 description: Learn how to submit Cirq quantum circuits to the Azure Quantum service.
 ms.author: guenp
-ms.date: 11/09/2021
+ms.date: 11/16/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -18,7 +18,7 @@ Learn how to use the `azure-quantum` Python package to submit Cirq quantum circu
 
 ## Prerequisites
 
-- To work in Azure Quantum, you need an Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/).
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - Create an Azure Quantum workspace and enable your preferred provider, Honeywell or IonQ (or both), for this scenario. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - Install the latest [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview.python-only).
 

@@ -1,7 +1,7 @@
 ---
 author: anraman
 ms.author: anraman
-ms.date: 11/12/2021
+ms.date: 11/16/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: include
@@ -11,7 +11,7 @@ ms.topic: include
 
 To complete this tutorial, you need
 
-- An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - An Azure Quantum workspace with the **1Qbit** provider enabled. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - The latest [azure-quantum Python package](xref:microsoft.quantum.install-qdk.overview.python-only).
 
