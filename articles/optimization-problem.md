@@ -131,7 +131,7 @@ problem.serialize()
 ```
 
 To serialize to protobuf you need to specify the optional `content_type` parameter. 
-Protobuf is supported on a [subset of optimization solvers](#protobuf-serialization-availability).
+Protobuf is supported on a [subset of optimization solvers](#protobuf-availability).
 
 ```py
 problem = Problem(name = "protobuf_problem", terms = [Term(c=1, indices=[0,1])], content_type=ContentType.protobuf)
@@ -247,6 +247,7 @@ For more information on cost functions and how terms relate to a problem definit
 - [Cost functions](xref:microsoft.quantum.optimization.concepts.cost-function)
 - [Term](xref:microsoft.quantum.optimization.term)
 
+<a name="protobuf-availability"></a>
 #### Protobuf serialization availability
 
 Protobuf serialization is a new "Early Access" feature in the *azure-quantum* Python package, and is currently supported by two Microsoft QIO solvers:
