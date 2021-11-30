@@ -2,7 +2,7 @@
 author: bradben
 description: In this tutorial, you will build a Q# project that demonstrates Grover's search algorithm, one of the canonical quantum algorithms.
 ms.author: v-benbra
-ms.date: 11/23/2021
+ms.date: 12/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -40,7 +40,7 @@ In this tutorial, you'll learn how to:
 - Create a Q# project for a [Q# standalone application](xref:microsoft.quantum.how-to.standalone-local) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local), or use a [Python host program](xref:microsoft.quantum.install-qdk.overview.python) in your preferred Python environment.
 
 > [!NOTE]
-> To use the optional procedure [Extra: check the statistics with Python](#extra-check-the-statistics-with-python), you will need a Python development environment for Q# set up. For more information, see [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview.python).
+> To use the optional procedure [Extra: verify the statistics with Python](#extra-verify-the-statistics-with-python), you will need a Python development environment for Q# set up. For more information, see [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview.python).
 
 ## Grover's algorithm task
 
