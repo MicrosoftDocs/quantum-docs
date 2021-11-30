@@ -30,7 +30,7 @@ Any search problem can be mathematically formulated with an abstract function $f
 In this tutorial, you'll learn how to:
 
 > [!div class="checklist"]
-> - Build quantum oracles that implement classical functions on a quantum computer.
+> - Build a quantum oracle that implements classical functions on a quantum computer.
 > - Write a Q# program that uses Grover's algorithm to find factors of an integer.
 
 ## Prerequisites
@@ -42,7 +42,7 @@ In this tutorial, you'll learn how to:
 > [!NOTE]
 > To use the optional procedure [Extra: verify the statistics with Python](#extra-verify-the-statistics-with-python), you will need a Python development environment for Q# set up. For more information, see [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview.python).
 
-## Grover's algorithm task
+## Grover's algorithm task and background
 
 Given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, where $n$ is the bit-size of the search space, find an input $x_0$ for which $f(x_0)=1$.
 
@@ -52,7 +52,7 @@ To implement Grover's algorithm to solve a problem, you need to:
 1. Implement the function of the Grover's task as a quantum oracle. To implement Grover's algorithm, you need to implement the function $f(x)$ of your Grover's task as a [quantum oracle](xref:microsoft.quantum.concepts.oracles).
 1. Use Grover's algorithm with your oracle to solve the task. Once you have a quantum oracle, you can plug it into your Grover's algorithm implementation to solve the problem and interpret the output.
 
-## Quick overview of Grover's algorithm
+### Quick overview of Grover's algorithm
 
 Suppose there are $N=2^n$ eligible items for the search problem and they are indexed by assigning each item an integer from $0$ to $N-1$. The steps of the algorithm are:
 
@@ -128,10 +128,11 @@ operation RunGroversSearch(register : Qubit[], phaseOracle : (Qubit[]) => Unit i
     }
 }
 ```
+
 > [!TIP]
 > This code is generic, that is, it can be used to solve any search problem. You pass the quantum oracle - the only operation that relies on the knowledge of the problem instance you want to solve - as a parameter to the search code.
 
-## Implement the oracle
+## Write the code to implement the oracle
 
 One of the key properties that makes Grover's algorithm faster is the ability of quantum computers to perform calculations not only on individual inputs but also on superpositions of inputs. You need to compute the function $f(x)$ that describes the instance of a search problem using only quantum operations. This way it can be computed over a superposition of inputs.
 
@@ -150,7 +151,7 @@ The following equivalence table might prove useful when implementing Boolean fun
 | $XOR$          | `CNOT`                   |
 | $AND$          | `CCNOT` with an auxiliary qubit|
 
-### Example: Quantum operation to check if a number is a divisor
+### Create a quantum operation to check if a number is a divisor
 
 > [!IMPORTANT]
 > This tutorial factorizes a number using Grover's search algorithm as a didactic example to show how to translate a simple mathematical problem into a Grover's task. However, Grover's algorithm is **not** an efficient algorithm to solve the integer factorization problem. To explore a quantum algorithm that **does** solve the integer factorization problem faster than any classical algorithm, see the [**Shor's algorithm** sample](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/integer-factorization).
@@ -235,11 +236,9 @@ operation ApplyMarkingOracleAsPhaseOracle(
 
 This famous transformation is often known as the *phase kickback* and it's widely used in many quantum computing algorithms. You can find a detailed explanation of this technique in this [Microsoft Learn module](/learn/modules/solve-graph-coloring-problems-grovers-search/4-implement-quantum-oracle).
 
-## Factoring numbers with Grover's search
+## Run the final code
 
-Now you have all the ingredients to implement a particular instance of Grover's search algorithm and solve the factoring problem.
-
-Use the following program to find a factor of 21. To simplify the code, assume that you know the number of valid items, $M$. In this case, $M=4$, since there are two factors, 3 and 7, plus 1 and 21 itself.
+Now you have all the ingredients to implement a particular instance of Grover's search algorithm and solve the factoring problem. Your final code should look like this:
 
 ```qsharp
 namespace GroversTutorial {
@@ -343,10 +342,12 @@ namespace GroversTutorial {
 }
 ```
 
+Use the program to find a factor of 21. To simplify the code, assume that you know the number of valid items, $M$. In this case, $M=4$, since there are two factors, 3 and 7, plus 1 and 21 itself.
+
 > [!IMPORTANT]
 > In order to be able to use operations from the numerics library (or any other library besides the standard library), you need to make sure the corresponding package has been [added to our project](xref:microsoft.quantum.user-guide-qdk.overview#installation). For a quick way to do so in VS Code, open the terminal from within your project and run the following command: `dotnet add package Microsoft.Quantum.Numerics`
 
-### Run it with Visual Studio or Visual Studio Code
+### Run the program with Visual Studio or Visual Studio Code
 
 The program above will run the operation or function marked with the `@EntryPoint()` attribute on a simulator or resource estimator, depending on the project configuration and command-line options.
 
@@ -486,3 +487,8 @@ You can learn more about the operations and functions used in this tutorial in t
 - [`ApplyToEachA`](xref:Microsoft.Quantum.Canon.ApplyToEachA)
 - [`Most`](xref:Microsoft.Quantum.Arrays.Most)
 - [`Tail`](xref:Microsoft.Quantum.Arrays.Tail)
+
+
+Other Grover's samples
+
+https://docs.microsoft.com/en-us/samples/browse/?languages=qsharp&terms=grovers
