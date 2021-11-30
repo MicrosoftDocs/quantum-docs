@@ -87,8 +87,8 @@
 		},
 		{
 			"source_path": "articles/how-to-create-quantum-workspaces-with-the-azure-portal.md",
-			"redirect_url": "/azure/quantum/quickstart-microsoft-qio",
-			"redirect_document_id": false
+			"redirect_url": "/azure/quantum/how-to-create-workspace",
+			"redirect_document_id": true
 		},
 		{
 			"source_path": "articles/qdk-glossary.md",
