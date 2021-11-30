@@ -79,7 +79,7 @@ workspace = Workspace(
     {'duration': 8240356, 'histogram': {'0': 0.5, '7': 0.5}}
     ```
 
-1. You can then visualize the results using [Matplotlib](https://matplotlib.org/stable/users/installing.html).
+1. You can then visualize the results using [Matplotlib](https://matplotlib.org/stable/users/installing/index.html).
 
     ```python
     import pylab as pl
