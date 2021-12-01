@@ -33,10 +33,11 @@ In this tutorial, you'll learn how to:
 > - Build a quantum oracle that implements classical functions on a quantum computer.
 > - Write a Q# program that uses Grover's algorithm to find factors of an integer.
 
-## Prerequisites
+## Prerequisites 
 
 - [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview?tabs=tabid-local#install-the-qdk-and-develop-quantum-applications-locally) using your preferred language and development environment.
 - If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update-qdk) to the latest version.
+- This tutorial requires the Microsoft.Quantum.Numerics library. For more information, follow the steps to [install additional quantum libraries](xref:microsoft.quantum.libraries.overview#installation).
 - Create a Q# project for a [Q# standalone application](xref:microsoft.quantum.how-to.standalone-local) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local), or use a [Python host program](xref:microsoft.quantum.install-qdk.overview.python) in your preferred Python environment.
 
 > [!NOTE]
@@ -52,7 +53,7 @@ To implement Grover's algorithm to solve a problem, you need to:
 1. Implement the function of the Grover's task as a quantum oracle. To implement Grover's algorithm, you need to implement the function $f(x)$ of your Grover's task as a [quantum oracle](xref:microsoft.quantum.concepts.oracles).
 1. Use Grover's algorithm with your oracle to solve the task. Once you have a quantum oracle, you can plug it into your Grover's algorithm implementation to solve the problem and interpret the output.
 
-### Quick overview of Grover's algorithm
+### Quick review of Grover's algorithm
 
 Suppose there are $N=2^n$ eligible items for the search problem and they are indexed by assigning each item an integer from $0$ to $N-1$. The steps of the algorithm are:
 
@@ -353,6 +354,8 @@ The program above will run the operation or function marked with the `@EntryPoin
 
 #### [Visual Studio](#tab/tabid-visualstudio)
 
+This tutorial requires the Microsoft.Quantum.Numerics library. For more information, follow the steps to [install additional quantum libraries](xref:microsoft.quantum.libraries.overview#installation) to your project.
+
 In general, running a Q# program in Visual Studio is as simple as pressing `Ctrl + F5`. But first, you need to provide the right command-line arguments to our program.
 
 Command-line arguments can be configured via the debug page of your project properties. You can visit the [Visual Studio reference guide](/visualstudio/ide/reference/debug-page-project-designer) for more information about this, or follow the steps below:
@@ -366,6 +369,8 @@ Command-line arguments can be configured via the debug page of your project prop
 Now press `Ctrl + F5` to run the program.
 
 #### [VS Code](#tab/tabid-vscode)
+
+This tutorial requires the Microsoft.Quantum.Numerics library. For more information, follow the steps to [install additional quantum libraries](xref:microsoft.quantum.libraries.overview#installation) to your project.
 
 In VS Code, first build your project by executing following command in the terminal:
 
@@ -389,14 +394,14 @@ The number 7 is a factor of 21.
 
 ## Extra: Verify the statistics with Python
 
-How can you verify that the algorithm is behaving correctly? For example, if you substitute Grover's search with a random number generator in the previous code example, it will also find a factor (after ~$N$ attempts).
+How can you verify that the algorithm is behaving correctly? For example, if you substitute Grover's search with a random number generator in the previous code example, it will eventually find a factor as well (after ~$N$ attempts).
 
-You will write a short Python script to verify that the program is working as it should.
+This example shows how to write a short Python script to verify that the program is working as it should.
 
 > [!TIP]
 > If you need help running Q# applications with Python, see [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview.python) and [Write a Q# and Python program](xref:microsoft.quantum.how-to.python-local).
 
-First, modify your main operation to remove the repeat-until-success loop. Instead, output the first measurement result after running Grover's search:
+First, replace your main operation, `FactorizeWithGrovers`, with the following operation, `FactorizeWithGrovers2`:
 
 ```qsharp
 @EntryPoint()
@@ -418,9 +423,14 @@ operation FactorizeWithGrovers2(number : Int) : Int {
 }
 ```
 
-Note that the output type has changed from `Unit` to `Int`, which will be useful for the Python program. The Python program is very simple; it just calls the operation `FactorizeWithGrovers2` several times and plots the results in a histogram.
+Note the changes from the original operation:
 
-The code is the following:
+- The output type has changed from `Unit` to `Int`, which is more useful for the Python program.
+- The repeat-until-success loop has been removed. Instead, you output the first measurement result after running Grover's search. 
+
+The Python program is very simple; it just calls the operation `FactorizeWithGrovers2` several times and plots the results in a histogram.
+
+Save the following code as a Python file in your project folder:
 
 ```python
 import qsharp
@@ -445,7 +455,7 @@ def main():
 
     # Store the results in a dictionary
     for i in results:
-        if i in frequency:c
+        if i in frequency:
             frequency[i]=frequency[i]+1
         else:
             frequency[i]=1
@@ -471,6 +481,7 @@ if __name__ == "__main__":
 
 > [!NOTE]
 > The line `from GroversTutorial import FactorizeWithGrovers2` in the Python program imports the Q# code you previously wrote. Note that the Python module name (`GroversTutorial`) needs to be identical to the Namespace of the operation you want to import (in this case, `FactorizeWithGrovers2`).
+> You will need the Matplotlib package to display the histogram. For more information, see [Matploblib](https://matplotlib.org/stable/users/installing/index.html).
 
 The program generates the following histogram:
 
@@ -491,4 +502,4 @@ You can learn more about the operations and functions used in this tutorial in t
 
 Other Grover's samples
 
-https://docs.microsoft.com/en-us/samples/browse/?languages=qsharp&terms=grovers
+https://docs.microsoft.com/samples/browse/?languages=qsharp&terms=grovers
