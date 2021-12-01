@@ -142,7 +142,7 @@ Unfortunately there isn't an automatic way to translate classical functions to q
 However, there are some guidelines that might help you to translate your function $f(x)$ into a quantum oracle:
 
 1. **Break down the classical function into small building blocks that are easy to implement.** For example, you can try to decompose your function $f(x)$ into a series of arithmetic operations or Boolean logic gates.
-1. **Use the higher-level building blocks of the Q# library to implement the intermediate operations.** For instance, if you decomposed your function into a combination of simple arithmetic operations, you can use the [Numerics library](xref:Microsoft.Quantum.Arithmetic) to implement the intermediate operations.
+1. **Use the higher-level building blocks of the Q# library to implement the intermediate operations.** For instance, if you decomposed your function into a combination of simple arithmetic operations, you can use the [Numerics library](xref:microsoft.quantum.libraries-numerics.usage) to implement the intermediate operations.
 
 The following equivalence table might prove useful when implementing Boolean functions in Q#.
 
@@ -344,9 +344,6 @@ namespace GroversTutorial {
 ```
 
 Use the program to find a factor of 21. To simplify the code, assume that you know the number of valid items, $M$. In this case, $M=4$, since there are two factors, 3 and 7, plus 1 and 21 itself.
-
-> [!IMPORTANT]
-> In order to be able to use operations from the numerics library (or any other library besides the standard library), you need to make sure the corresponding package has been [added to your project](xref:microsoft.quantum.user-guide-qdk.overview#installation). For a quick way to do so in VS Code, open the terminal from within your project and run the following command: `dotnet add package Microsoft.Quantum.Numerics`
 
 ### Run the program with Visual Studio or Visual Studio Code
 
