@@ -70,7 +70,7 @@ Suppose there are $N=2^n$ eligible items for the search problem and they are ind
 
 ## Write the code for Grover's algorithm
 
-Now let's see how to implement the algorithm in Q#.
+This section discusses how to implement the algorithm in Q#.
 
 ### Grover's diffusion operator
 
@@ -346,7 +346,7 @@ namespace GroversTutorial {
 Use the program to find a factor of 21. To simplify the code, assume that you know the number of valid items, $M$. In this case, $M=4$, since there are two factors, 3 and 7, plus 1 and 21 itself.
 
 > [!IMPORTANT]
-> In order to be able to use operations from the numerics library (or any other library besides the standard library), you need to make sure the corresponding package has been [added to our project](xref:microsoft.quantum.user-guide-qdk.overview#installation). For a quick way to do so in VS Code, open the terminal from within your project and run the following command: `dotnet add package Microsoft.Quantum.Numerics`
+> In order to be able to use operations from the numerics library (or any other library besides the standard library), you need to make sure the corresponding package has been [added to your project](xref:microsoft.quantum.user-guide-qdk.overview#installation). For a quick way to do so in VS Code, open the terminal from within your project and run the following command: `dotnet add package Microsoft.Quantum.Numerics`
 
 ### Run the program with Visual Studio or Visual Studio Code
 
@@ -356,7 +356,7 @@ The program above will run the operation or function marked with the `@EntryPoin
 
 This tutorial requires the Microsoft.Quantum.Numerics library. For more information, follow the steps to [install additional quantum libraries](xref:microsoft.quantum.libraries.overview#installation) to your project.
 
-In general, running a Q# program in Visual Studio is as simple as pressing `Ctrl + F5`. But first, you need to provide the right command-line arguments to our program.
+In general, running a Q# program in Visual Studio is as simple as pressing `Ctrl + F5`. But first, you need to provide the right command-line arguments to your program.
 
 Command-line arguments can be configured via the debug page of your project properties. You can visit the [Visual Studio reference guide](/visualstudio/ide/reference/debug-page-project-designer) for more information about this, or follow the steps below:
 
