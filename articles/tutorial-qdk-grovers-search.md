@@ -491,15 +491,5 @@ As you can see in the histogram, the algorithm outputs the solutions to the sear
 
 ## Next steps
 
-Now that you know how to implement Grover's algorithm, try to transform a mathematical problem into a search problem and solve it with Q# and Grover's algorithm.
+For more Q# code samples that use Grover's algorithm, see the [Samples Browser](/samples/browse/?languages=qsharp&terms=grovers), or try to transform a mathematical problem of your own into a search problem and solve it with Q# and Grover's algorithm.
 
-You can learn more about the operations and functions used in this tutorial in the API documentation:
-
-- [`ApplyToEachA`](xref:Microsoft.Quantum.Canon.ApplyToEachA)
-- [`Most`](xref:Microsoft.Quantum.Arrays.Most)
-- [`Tail`](xref:Microsoft.Quantum.Arrays.Tail)
-
-
-Other Grover's samples
-
-https://docs.microsoft.com/samples/browse/?languages=qsharp&terms=grovers
