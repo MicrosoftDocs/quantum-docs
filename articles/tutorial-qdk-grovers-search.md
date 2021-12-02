@@ -1,61 +1,61 @@
 ---
 author: bradben
-description: Build a Q# project that demonstrates Grover's algorithm, one of the canonical quantum algorithms.
+description: In this tutorial, you will build a Q# project that demonstrates Grover's search algorithm, one of the canonical quantum algorithms.
 ms.author: v-benbra
-ms.date: 08/12/2021
+ms.date: 12/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
 no-loc: ['Q#', '$$v']
-title: Run Grover's search algorithm in Q# - Quantum Development Kit
+title: Implement Grover's search algorithm in Q# - Quantum Development Kit
 uid: microsoft.quantum.tutorial-qdk.grovers
 ---
 
 # Tutorial: Implement Grover's search algorithm in Q\#
 
-In this tutorial you'll learn to implement Grover's algorithm in Q# to solve search based problems.
+In this tutorial, you'll learn to implement Grover's algorithm in Q# to solve search-based problems.
 
 Grover's algorithm is one of the most famous algorithms in quantum computing. The problem it solves is often referred to as "searching a database", but it's more accurate to think of it in terms of the *search problem*.
 
-Any search task can be mathematically formulated with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution to the search task, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The search problem consists of finding any item $x_0$ such that $f(x_0)=1$.
+Any search problem can be mathematically formulated with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution to the search problem, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The search problem consists of finding any item $x_0$ such that $f(x_0)=1$.
 
 > [!NOTE]
 > This tutorial is intended for people who are already familiar with
-> Grover's algorithm that want to learn how to implement it in Q#. For a more
-> slow paced tutorial we recommend the Microsoft Learn module [Solve graph
+> Grover's algorithm and want to learn how to implement it in Q#. For a more
+> introductory tutorial, see the Microsoft Learn module [Solve graph
 > coloring problems by using Grover's
 > search](/learn/modules/solve-graph-coloring-problems-grovers-search/).
-> For a detailed explanation on the theory behind Grover's algorithm, check the conceptual article [Theory of Grover's algorithm](xref:microsoft.quantum.concepts.grovers).
+> For an in-depth explanation of the theory behind Grover's algorithm, see the [Theory of Grover's algorithm](xref:microsoft.quantum.concepts.grovers).
 
+In this tutorial, you'll learn how to:
 
-## Prerequisites
+> [!div class="checklist"]
+> - Build a quantum oracle that implements classical functions on a quantum computer.
+> - Write a Q# program that uses Grover's algorithm to find factors of an integer.
+
+## Prerequisites 
 
 - [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview?tabs=tabid-local#install-the-qdk-and-develop-quantum-applications-locally) using your preferred language and development environment.
 - If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update-qdk) to the latest version.
-- Create a Q# project for either a [Q# application](xref:microsoft.quantum.install-qdk.overview.standalone), with a [Python host program](xref:microsoft.quantum.install-qdk.overview.python), or a [C# host program](xref:microsoft.quantum.install-qdk.overview.cs).
+- This tutorial requires the Microsoft.Quantum.Numerics library. For more information, follow the steps to [install additional quantum libraries](xref:microsoft.quantum.libraries.overview#installation).
+- Create a Q# project for a [Q# standalone application](xref:microsoft.quantum.how-to.standalone-local) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local), or use a [Python host program](xref:microsoft.quantum.install-qdk.overview.python) in your preferred Python environment.
 
-## In this tutorial, you'll learn how to:
+> [!NOTE]
+> To use the optional procedure [Extra: verify the statistics with Python](#extra-verify-the-statistics-with-python), you will need a Python development environment for Q# set up. For more information, see [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview.python).
 
-> [!div class="checklist"]
-> - Build quantum oracles that implement classical functions on a quantum computer.
-> - Explain the roles superposition, interference, and entanglement play in building quantum algorithms.
-> - Write a Q# program that uses Grover's algorithm to solve a graph coloring problem.
-> - Recognize the kinds of problems for which Grover's algorithm can offer speedup compared to classical algorithms.
-
-## Grover's algorithm task
+## Grover's algorithm task and background
 
 Given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, where $n$ is the bit-size of the search space, find an input $x_0$ for which $f(x_0)=1$.
 
+To implement Grover's algorithm to solve a problem, you need to:
 
-To implement Grover's algorithm to solve a problem you need to:
+1. Transform the problem to the form of a **Grover's task**. For example, suppose you want to find the factors of an integer $M$ using Grover's algorithm. You can transform the integer factorization problem to a Grover's task by creating a function $$f_M(x)=1[r],$$ where $1[r]=1$ if $r=0$ and $1[r]=0$ if $r\neq0$ and $r$ is the remainder of $M/x$. This way, the integers $x_i$ that make $f_M(x_i)=1$ are the factors of $M$ and you have transformed the problem to a Grover's task.
+1. Implement the function of the Grover's task as a quantum oracle. To implement Grover's algorithm, you need to implement the function $f(x)$ of your Grover's task as a [quantum oracle](xref:microsoft.quantum.concepts.oracles).
+1. Use Grover's algorithm with your oracle to solve the task. Once you have a quantum oracle, you can plug it into your Grover's algorithm implementation to solve the problem and interpret the output.
 
-1. **Transform the problem to the form of a Grover's task:** for example, suppose we want to find the factors of an integer $M$ using Grover's algorithm. You can transform the integer factorization problem to a Grover's task by creating a function $$f_M(x)=1[r],$$ where $1[r]=1$ if $r=0$ and $1[r]=0$ if $r\neq0$ and $r$ is the remainder of $M/x$. This way, the integers $x_i$ that make $f_M(x_i)=1$ are the factors of $M$ and we transformed the problem to a Grover's task.
-1. **Implement the function of the Grover's task as a quantum oracle:** to implement Grover's algorithm, you need to implement the function $f(x)$ of your Grover's task as a [quantum oracle](xref:microsoft.quantum.concepts.oracles).
-1. **Use Grover's algorithm with your oracle to solve the task:** once you have a quantum oracle, you can plug it into your Grover's algorithm implementation to solve the problem and interpret the output.
+### Quick review of Grover's algorithm
 
-## Quick overview of Grover's algorithm
-
-Suppose there are $N=2^n$ eligible items for the search task and they are indexed by assigning each item an integer from $0$ to $N-1$. The steps of the algorithm are:
+Suppose there are $N=2^n$ eligible items for the search problem and they are indexed by assigning each item an integer from $0$ to $N-1$. The steps of the algorithm are:
 
 1. Start with a register of $n$ qubits initialized in the state $\ket{0}$.
 1. Prepare the register into a uniform superposition by applying $H$ to each qubit in the register:
@@ -66,11 +66,11 @@ Suppose there are $N=2^n$ eligible items for the search task and they are indexe
    1. Apply $-O_0$, a conditional phase shift of $-1$ to every computational basis state except $\ket{0}$.
    1. Apply $H$ to each qubit in the register.
 1. Measure the register to obtain the index of an item that's a solution with very high probability.
-1. Check if it's a valid solution. If not, start again.
+1. Check the item to see if it's a valid solution. If not, start again.
 
 ## Write the code for Grover's algorithm
 
-Now let's see how to implement the algorithm in Q#.
+This section discusses how to implement the algorithm in Q#.
 
 ### Grover's diffusion operator
 
@@ -92,16 +92,9 @@ operation ReflectAboutUniform(inputQubits : Qubit[]) : Unit {
 This operation uses the [within-apply](xref:microsoft.quantum.qsharp.conjugations) statement that implements the automatic conjugation of operations that occur in Grover's diffusion operator.
 
 > [!NOTE]
-> To learn more about conjugations in Q#, check the [conjugations
-> article in the Q# language guide](xref:microsoft.quantum.qsharp.conjugations).
+> To learn more about conjugations in Q#, see [Conjugations](xref:microsoft.quantum.qsharp.conjugations) in the Q# language guide.
 
 A good exercise to understand the code and the operations is to check with pen and paper that the operation `ReflectAboutUniform` applies Grover's diffusion operator. To see it note that the operation `Controlled Z(Most(inputQubits),Tail(inputQubits))` only has an effect different than the identity if and only if all qubits are in the state $\ket{1}$.
-
-You can check what each of the operations and functions used is by looking into the API documentation:
-
-- [`ApplyToEachA`](xref:Microsoft.Quantum.Canon.ApplyToEachA)
-- [`Most`](xref:Microsoft.Quantum.Arrays.Most)
-- [`Tail`](xref:Microsoft.Quantum.Arrays.Tail)
 
 The operation is called `ReflectAboutUniform` because it can be geometrically interpreted as a reflection in the vector space about the uniform superposition state.
 
@@ -111,9 +104,9 @@ Grover's search has an optimal number of iterations that yields the highest prob
 
 $$N_{\text{optimal}}\approx\frac{\pi}{4}\sqrt{\frac{N}{M}}$$
 
-Continuing to iterate past that number starts reducing that probability until we reach nearly-zero success probability on iteration $2 N_{\text{optimal}}$. After that, the probability grows again and util $3 N_{\text{optimal}}$ and so on.
+Continuing to iterate past that number starts reducing that probability until you reach nearly-zero success probability on iteration $2 N_{\text{optimal}}$. After that, the probability grows again until $3 N_{\text{optimal}}$, and so on.
 
-In practical applications, you don't usually know how many solutions your problem has before you solve it. An efficient strategy to handle this issue is to "guess" the number of solutions $M$ by progressively increasing the guess in powers of two (i.e. $1, 2, 4, 8, 16, ..., 2^n$). One of these guesses will be sufficiently close that the algorithm will still find the solution with an average number of iterations around $\sqrt{\frac{N}{M}}$.
+In practical applications, you don't usually know how many solutions your problem has before you solve it. An efficient strategy to handle this issue is to "guess" the number of solutions $M$ by progressively increasing the guess in powers of two (i.e. $1, 2, 4, 8, 16, ..., 2^n$). One of these guesses will be close enough that the algorithm will still find the solution with an average number of iterations around $\sqrt{\frac{N}{M}}$.
 
 ### Complete Grover's operation
 
@@ -136,10 +129,11 @@ operation RunGroversSearch(register : Qubit[], phaseOracle : (Qubit[]) => Unit i
     }
 }
 ```
-> [!TIP]
-> This code is generic - it can be used to solve any search problem. We pass the quantum oracle - the only operation that relies on the knowledge of the problem instance we want to solve - as a parameter to the search code.
 
-## Implement the oracle
+> [!TIP]
+> This code is generic, that is, it can be used to solve any search problem. You pass the quantum oracle - the only operation that relies on the knowledge of the problem instance you want to solve - as a parameter to the search code.
+
+## Write the code to implement the oracle
 
 One of the key properties that makes Grover's algorithm faster is the ability of quantum computers to perform calculations not only on individual inputs but also on superpositions of inputs. You need to compute the function $f(x)$ that describes the instance of a search problem using only quantum operations. This way it can be computed over a superposition of inputs.
 
@@ -148,7 +142,7 @@ Unfortunately there isn't an automatic way to translate classical functions to q
 However, there are some guidelines that might help you to translate your function $f(x)$ into a quantum oracle:
 
 1. **Break down the classical function into small building blocks that are easy to implement.** For example, you can try to decompose your function $f(x)$ into a series of arithmetic operations or Boolean logic gates.
-1. **Use the higher-level building blocks of the Q# library to implement the intermediate operations.** For instance, if you decomposed your function into a combination of simple arithmetic operations, you can use the [Numerics library](xref:Microsoft.Quantum.Arithmetic) to implement the intermediate operations.
+1. **Use the higher-level building blocks of the Q# library to implement the intermediate operations.** For instance, if you decomposed your function into a combination of simple arithmetic operations, you can use the [Numerics library](xref:microsoft.quantum.libraries-numerics.usage) to implement the intermediate operations.
 
 The following equivalence table might prove useful when implementing Boolean functions in Q#.
 
@@ -158,21 +152,21 @@ The following equivalence table might prove useful when implementing Boolean fun
 | $XOR$          | `CNOT`                   |
 | $AND$          | `CCNOT` with an auxiliary qubit|
 
-### Example: Quantum operation to check if a number is a divisor
+### Create a quantum operation to check if a number is a divisor
 
 > [!IMPORTANT]
-> This tutorial factorizes a number using Grover's search algorithm as a didactic example to show how to translate a simple mathematical problem into a Grover's task. However, **Grover's algorithm is NOT an efficient algorithm to solve the integer factorization problem**. To explore a quantum algorithm that does solve the integer factorization problem faster than any classical algorithm, check the [**Shor's algorithm** sample](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/integer-factorization).
+> This tutorial factorizes a number using Grover's search algorithm as a didactic example to show how to translate a simple mathematical problem into a Grover's task. However, Grover's algorithm is **not** an efficient algorithm to solve the integer factorization problem. To explore a quantum algorithm that **does** solve the integer factorization problem faster than any classical algorithm, see the [**Shor's algorithm** sample](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/integer-factorization).
 
-As an example, let's see how we would express the function $f_M(x)=1[r]$ of the factoring problem as a quantum operation in Q#.
+The following example shows how you would express the function $f_M(x)=1[r]$ of the factoring problem as a quantum operation in Q#.
 
-Classically, you would compute the remainder of the division $M/x$ and check if it's equal to zero. If it is, the program outputs `1`, and if it's not, the program outputs `0`. You need to:
+Classically, you would compute the remainder of the division $M/x$ and see if it's equal to zero. If it is, the program outputs `1`, and if it's not, the program outputs `0`. You need to:
 
 - Compute the remainder of the division.
 - Apply a controlled operation over the output bit so that it's `1` if the remainder is `0`.
 
-So you need to calculate a division of two numbers with a quantum operation. Fortunately, you don't need to write the circuit implementing the division from scratch, you can use the [`DivideI`](xref:Microsoft.Quantum.Arithmetic.DivideI) operation from the Numerics library instead.
+You need to calculate a division of two numbers with a quantum operation. Fortunately, you don't need to write the circuit implementing the division from scratch, you can use the [`DivideI`](xref:Microsoft.Quantum.Arithmetic.DivideI) operation from the Numerics library instead.
 
-Looking into the description of `DivideI`, it says that it needs three qubit registers: the $n$-bit dividend `xs`, the $n$-bit divisor `ys`, and the $n$-bit `result` that must be initialized in the state `Zero`. The operation is `Adj + Ctl`, so we can conjugate it and use it in *within-apply* statements. Also, in the description it says that the dividend in the input register `xs` is replaced by the remainder. This is perfect since we are interested exclusively in the remainder, and not in the result of the operation.
+Looking into the description of `DivideI`, it says that it needs three qubit registers: the $n$-bit dividend `xs`, the $n$-bit divisor `ys`, and the $n$-bit `result` that must be initialized in the state `Zero`. The operation is `Adj + Ctl`, so you can conjugate it and use it in *within-apply* statements. Also, in the description it says that the dividend in the input register `xs` is replaced by the remainder. This is perfect, since you are interested exclusively in the remainder and not in the result of the operation.
 
 You can then build a quantum operation that does the following:
 
@@ -243,11 +237,9 @@ operation ApplyMarkingOracleAsPhaseOracle(
 
 This famous transformation is often known as the *phase kickback* and it's widely used in many quantum computing algorithms. You can find a detailed explanation of this technique in this [Microsoft Learn module](/learn/modules/solve-graph-coloring-problems-grovers-search/4-implement-quantum-oracle).
 
-## Factoring numbers with Grover's search
+## Run the final code
 
-Now you have all the ingredients to implement a particular instance of Grover's search algorithm and solve the factoring problem.
-
-Let's use the program below to find a factor of 21. To simplify the code, let's assume that we know the number $M$ of valid items. In this case, $M=4$, since there are two factors, 3 and 7, plus 1 and 21 itself.
+Now you have all the ingredients to implement a particular instance of Grover's search algorithm and solve the factoring problem. Your final code should look like this:
 
 ```qsharp
 namespace GroversTutorial {
@@ -282,7 +274,7 @@ namespace GroversTutorial {
             RunGroversSearch(register, phaseOracle, nIterations);
             let res = MultiM(register);
             set answer = BoolArrayAsInt(ResultArrayAsBoolArray(res));
-            // Check that if the result is a solution with the oracle.
+            // See if the result is a solution with the oracle.
             markingOracle(register, output);
             if MResetZ(output) == One and answer != 1 and answer != number {
                 set isCorrect = true;
@@ -351,16 +343,17 @@ namespace GroversTutorial {
 }
 ```
 
-> [!IMPORTANT]
-> In order to be able to use operations from the numerics library (or any other library besides the standard library), you need to make sure the corresponding package has been [added to our project](xref:microsoft.quantum.user-guide-qdk.overview#installation). For a quick way to do so in VS Code, open the terminal from within your project and run the following command: `dotnet add package Microsoft.Quantum.Numerics`
+Use the program to find a factor of 21. To simplify the code, assume that you know the number of valid items, $M$. In this case, $M=4$, since there are two factors, 3 and 7, plus 1 and 21 itself.
 
-### Run it with Visual Studio or Visual Studio Code
+### Run the program with Visual Studio or Visual Studio Code
 
 The program above will run the operation or function marked with the `@EntryPoint()` attribute on a simulator or resource estimator, depending on the project configuration and command-line options.
 
 #### [Visual Studio](#tab/tabid-visualstudio)
 
-In general, running a Q# program in Visual Studio is as simple as pressing `Ctrl + F5`. But first, you need to provide the right command-line arguments to our program.
+This tutorial requires the Microsoft.Quantum.Numerics library. For more information, follow the steps to [install additional quantum libraries](xref:microsoft.quantum.libraries.overview#installation) to your project.
+
+In general, running a Q# program in Visual Studio is as simple as pressing `Ctrl + F5`. But first, you need to provide the right command-line arguments to your program.
 
 Command-line arguments can be configured via the debug page of your project properties. You can visit the [Visual Studio reference guide](/visualstudio/ide/reference/debug-page-project-designer) for more information about this, or follow the steps below:
 
@@ -373,6 +366,8 @@ Command-line arguments can be configured via the debug page of your project prop
 Now press `Ctrl + F5` to run the program.
 
 #### [VS Code](#tab/tabid-vscode)
+
+This tutorial requires the Microsoft.Quantum.Numerics library. For more information, follow the steps to [install additional quantum libraries](xref:microsoft.quantum.libraries.overview#installation) to your project.
 
 In VS Code, first build your project by executing following command in the terminal:
 
@@ -394,16 +389,16 @@ With either environment, you should now see the following message displayed in t
 The number 7 is a factor of 21.
 ```
 
-## Extra: check the statistics with Python
+## Extra: Verify the statistics with Python
 
-How can you check that the algorithm is behaving correctly? For example, if we substituted Grover's search by a random number generator in the code above, after ~$N$ attempts it will also find a factor.
+How can you verify that the algorithm is behaving correctly? For example, if you substitute Grover's search with a random number generator in the previous code example, it will eventually find a factor as well (after ~$N$ attempts).
 
-Let's write a small Python script to check that the program is working as it should.
+This example shows how to write a short Python script to verify that the program is working as it should.
 
 > [!TIP]
-> If you need help running Q# applications within Python, you can take a look at our guide about the [ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs) and the [installation guide for Python](xref:microsoft.quantum.install-qdk.overview.python).
+> If you need help running Q# applications with Python, see [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview.python) and [Write a Q# and Python program](xref:microsoft.quantum.how-to.python-local).
 
-First, modify our main operation to get rid of the repeat-until-success loop, instead outputting the first measurement result after running Grover's search:
+First, replace your main operation, `FactorizeWithGrovers`, with the following operation, `FactorizeWithGrovers2`:
 
 ```qsharp
 @EntryPoint()
@@ -419,15 +414,20 @@ operation FactorizeWithGrovers2(number : Int) : Int {
         RunGroversSearch(register, phaseOracle, nIterations);
         let res = MultiM(register);
         return ResultArrayAsInt(res);
-        // Check whether the result is correct.
+        // Verify whether the result is correct.
     }
 
 }
 ```
 
-Note that the output type has changed from `Unit` to `Int`, this will be useful for the Python program. The Python program is very simple; it just calls the operation `FactorizeWithGrovers2` several times and plots the results in a histogram.
+Note the changes from the original operation:
 
-The code is the following:
+- The output type has changed from `Unit` to `Int`, which is more useful for the Python program.
+- The repeat-until-success loop has been removed. Instead, you output the first measurement result after running Grover's search. 
+
+The Python program is very simple; it just calls the operation `FactorizeWithGrovers2` several times and plots the results in a histogram.
+
+Save the following code as a Python file in your project folder:
 
 ```python
 import qsharp
@@ -452,7 +452,7 @@ def main():
 
     # Store the results in a dictionary
     for i in results:
-        if i in frequency:c
+        if i in frequency:
             frequency[i]=frequency[i]+1
         else:
             frequency[i]=1
@@ -477,7 +477,8 @@ if __name__ == "__main__":
 ```
 
 > [!NOTE]
-> The line `from GroversTutorial import FactorizeWithGrovers2` in the Python program imports the Q# code we've written previously. Note that the Python module name (`GroversTutorial`) needs to be identical to the Namespace of the operation we want to import (in this case, `FactorizeWithGrovers2`).
+> The line `from GroversTutorial import FactorizeWithGrovers2` in the Python program imports the Q# code you previously wrote. Note that the Python module name (`GroversTutorial`) needs to be identical to the Namespace of the operation you want to import (in this case, `FactorizeWithGrovers2`).
+> You will need the Matplotlib package to display the histogram. For more information, see [Matploblib](https://matplotlib.org/stable/users/installing/index.html).
 
 The program generates the following histogram:
 
@@ -487,4 +488,5 @@ As you can see in the histogram, the algorithm outputs the solutions to the sear
 
 ## Next steps
 
-Now that you know how to implement Grover's algorithm, try to transform a mathematical problem into a search task and solve it with Q# and Grover's algorithm.
+For more Q# code samples that use Grover's algorithm, see the [Samples Browser](/samples/browse/?languages=qsharp&terms=grovers), or try to transform a mathematical problem of your own into a search problem and solve it with Q# and Grover's algorithm.
+
