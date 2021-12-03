@@ -17,7 +17,7 @@ Learn how you can run a Q# program by a Python host program, which then invokes 
 
 ## Prerequisite
 
-Set up your Python environment with the Microsoft Quantum Development Kit following the steps in [Set up a Python environment](xref:microsoft.quantum.install-qdk.overview.python).
+Set up your Python environment with the Microsoft Quantum Development Kit [following these steps](xref:microsoft.quantum.install-qdk.overview.python).
 
 ## Choose your IDE
 
