@@ -30,10 +30,6 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 - Added support for submitting problems to a subset of Microsoft targets in [protobuf binary format](xref:microsoft.quantum.optimization.problem#input-problem-serialization-to-protobuf-binary-format). You can use it for encoding significantly large problems by reducing the payload sizes, and improve upload and processing speeds.
 - **Breaking change:** The [deserialize](xref:microsoft.quantum.optimization.problem#problemserialize) class method of the Problem class has a parameter name change from `problem_as_json` to `input_problem` to support deserialization of protobuf.
 
-#### Known issues
-
-- Code actions are currently not working in Visual Studio Code (when you hover over a code warning the message is "no quick fixes available").
-
 ## 2021-10-26
 
 ### QDK version 0.20.2110.171573
