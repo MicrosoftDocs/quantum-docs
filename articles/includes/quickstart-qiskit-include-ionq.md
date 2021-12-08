@@ -155,7 +155,7 @@ plot_histogram(counts)
 ![Qiskit circuit result on IonQ Simulator](../media/azure-quantum-qiskit-ionq-result-1.png)
 
 
-## Estimate job cost
+## Calculate job cost
 
 Before running a job on the QPU, you may want to estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the following script:
 

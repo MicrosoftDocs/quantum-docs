@@ -107,7 +107,7 @@ pl.ylabel("Counts")
 pl.xlabel("Result")
 ```
 
-## Estimate job cost
+## Calculate job cost
 
 Before running a job on the QPU, you may want to estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the following script:
 

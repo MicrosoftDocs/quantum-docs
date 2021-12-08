@@ -96,7 +96,7 @@ print(result)
     b=1001100101100001000011011101000011010100010111100011001000100100010000001110010010101110110000011010, 1001100101100001000011011101000011010100010111100011001000100100010000001110010010101110110000011010
 ```
 
-## Estimate job cost
+## Calculate job cost
 
 Before running a job on the QPU, you may want to estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the following script:
 
