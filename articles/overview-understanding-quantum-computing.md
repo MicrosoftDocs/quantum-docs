@@ -105,7 +105,7 @@ If you want to learn more, see the tutorial [exploring quantum entanglement with
 
 ## Quantum computers vs quantum simulators
 
-A quantum computer is a machine that combines the power of classical and quantum computing. The current quantum computers correspond to and hybrid model: a classical computer that controls a quantum processor. 
+A quantum computer is a machine that combines the power of classical and quantum computing. The current quantum computers correspond to a hybrid model: a classical computer that controls a quantum processor. 
 
 The development of quantum computers is still in the infancy of their development. The quantum hardware and their maintenance are expensive, and most systems are located in universities and research labs. Where classical computers use familiar silicon-based chips, quantum computers use quantum systems such as atoms, ions, photons, or electrons. They use their quantum properties to represent bits that can be prepared in different quantum superpositions of 1 and 0. The technology is advancing, though, and limited public access to some systems is available.
 
