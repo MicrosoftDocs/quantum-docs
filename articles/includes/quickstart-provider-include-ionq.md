@@ -93,7 +93,7 @@ workspace = Workspace(
 ![IonQ job output](../media/ionq-results.png)
 
 
-## Estimate job cost
+## Estimate job price
 
 Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, run the following script:
 
