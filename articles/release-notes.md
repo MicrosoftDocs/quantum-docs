@@ -17,6 +17,11 @@ In this article, learn about updates to the [Quantum Development Kit (QDK)](xref
 
 For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For update instructions, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
+## 2021-12-14
+
+### QDK version 0.21.2112.[tbd]
+
+- Released Az CLI quantum extension version 0.11.0: Job result histograms will be left-aligned (not centered) in console output.
 
 ## 2021-11-23
 
