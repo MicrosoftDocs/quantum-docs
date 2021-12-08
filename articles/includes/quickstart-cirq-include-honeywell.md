@@ -109,13 +109,13 @@ pl.xlabel("Result")
 
 ## Calculate job cost
 
-Before running a job on the QPU, you may want to estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the following script:
+Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, run the following script:
 
 ```python
 HQC = 5 + num_shots * (N_1q + 10 * N_2q + 5 * N_m) / 5000
 ```
 
-this returns the cost in HQC, or "Honeywell Quantum Credits". Here, `N_1q` is the number of one-qubit gates, `N_2q` is the number of two-qubit gates, `N_m` is the number of measurement operators, and `num_shots` is the number of shots.
+This returns the cost in HQC, or "Honeywell Quantum Credits". Here, `N_1q` is the number of one-qubit gates, `N_2q` is the number of two-qubit gates, `N_m` is the number of measurement operators, and `num_shots` is the number of shots.
 
 For the most current pricing details, see [Honeywell System Model H1](xref:microsoft.quantum.providers.honeywell#honeywell-system-model-h1), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](http://aka.ms/aq/myworkspaces).
 
