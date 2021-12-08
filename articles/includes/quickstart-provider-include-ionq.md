@@ -104,4 +104,4 @@ cost = max(cost, 1.0)
 
 `N_1q` is the number of one-qubit gates, `N_2q` is the number of two-qubit gates, `cost_1q` is the cost of running a single one-qubit gate for one shot, `cost_2q` is the cost of running a single two-qubit gate for one shot, and `num_shots` is the number of shots.
 
-For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](http://aka.ms/aq/myworkspaces).
+For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
