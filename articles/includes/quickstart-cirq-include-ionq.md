@@ -1,7 +1,7 @@
 ---
 author: guenp
 ms.author:  v-guenp
-ms.date: 11/09/2021
+ms.date: 12/08/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -96,7 +96,7 @@ print(result)
     b=1001100101100001000011011101000011010100010111100011001000100100010000001110010010101110110000011010, 1001100101100001000011011101000011010100010111100011001000100100010000001110010010101110110000011010
 ```
 
-## Calculate job cost
+## Estimate job cost
 
 Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, run the following script:
 
