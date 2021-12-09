@@ -58,7 +58,6 @@
     - name: Publish a Q# job as an Azure Function
       href: how-to-publish-qsharp-job-as-azurefunction.md
   - name: Q# and the Quantum Development Kit
-    expanded: true
     items:
     - name: What are Q# and the Quantum Development Kit
       href: overview-what-is-qsharp-and-qdk.md
