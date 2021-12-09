@@ -103,7 +103,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ### Azure Quantum service update
 
-- Parameter Free Population Annealing solver is now available through the 'Early Access' SKU in Azure Quantum. Sign up for early access: [https://aka.ms/aq/preview](https://aka.ms/aq/preview)
+- Parameter Free Population Annealing solver is now available through the 'Early Access' plan in Azure Quantum. Sign up for early access: [https://aka.ms/aq/preview](https://aka.ms/aq/preview)
 - Terms banner in Review tab in Azure Quantum portal is hidden when only Microsoft provider is being added during workspace creation.
 
 ## 2021-06-25
@@ -113,7 +113,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 - You can now [configure](xref:microsoft.quantum.optimization.apply-solver#returning-multiple-solutions) how many solutions you want returned from a solver run.
 - A new NuGet package [Microsoft.Quantum.AutoSubstitution](https://www.nuget.org/packages/Microsoft.Quantum.AutoSubstitution/), which when added to a Q# project, allows you to annotate operations with the `SubstitutableOnTarget(AltOp, Sim)` attribute. It will then call `AltOp` instead of the annotated operation, whenever it is executed using `Sim`.
 - Integration with Azure-Identity provides more mechanisms to [authenticate](xref:microsoft.quantum.iqsharp.magic-ref.azure.connect) with Azure.
-- The .NET [Microsoft.Azure.Management.Quantum](https://www.nuget.org/packages/Microsoft.Azure.Management.Quantum) now returns the Restricted Access URL so you can know more/apply for a restricted access SKU.
+- The .NET [Microsoft.Azure.Management.Quantum](https://www.nuget.org/packages/Microsoft.Azure.Management.Quantum) now returns the Restricted Access URL so you can know more/apply for a restricted access plan.
 - Preview support for noisy simulation in open systems and stabilizer representations [qsharp-runtime#714](https://github.com/microsoft/qsharp-runtime/issues/714). See [here](https://github.com/microsoft/qsharp-runtime/blob/0826903c0842ba99a923e79be9f072054fe44a43/documentation/preview-simulators.md) for documentation on preview simulators.
 - Using [quantum-viz.js](https://github.com/microsoft/quantum-viz.js) as the engine to render the output from the jupyter notebook %trace magic.
 
@@ -136,7 +136,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ### Azure Quantum service update
 
-- Added PA (population annealing) and SSMC (sub-stochastic Monte Carlo) solvers along with preview access via a specialized SKU available to a subset of customers.
+- Added PA (population annealing) and SSMC (sub-stochastic Monte Carlo) solvers along with preview access via a specialized plan available to a subset of customers.
 - Added support for new regions: Japan East, Japan West, UK South, UK West
 - Set Provider in Failed state if provisioning fails. Previously it would be stuck in Launching/Updating state.
 - Added help button in portal to direct user to support forum.
@@ -157,11 +157,11 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 - Improved Q# type inference based on the Hindley-Milner type inference algorithm.
 - Added support for NumPy types in coefficient definitions for problems in QIO *azure-quantum* Python package.
-- Updated control-plane swagger file to [support restricted access SKUs](https://github.com/Azure/azure-rest-api-specs/pull/13002).
+- Updated control-plane swagger file to [support restricted access plans](https://github.com/Azure/azure-rest-api-specs/pull/13002).
 - Added new `StreamingProblem` class in QIO *azure-quantum* Python package. It supports the same interface for adding terms to a problem definition as the `Problem` class. However, once terms are added to the problem they are queued to be uploaded by a background thread and are not kept in memory for future reference.
 - Restored the packages size of Microsoft.Quantum.Sdk and Microsoft.Quantum.Compiler back to normal. (See related note in 0.15.2103.133969)
 - Improved compiler performance.
-- Released Az CLI quantum extension version 0.4.0: Exposed URL for restricted access SKUs. Fixed regression on offerings commands dependent on Azure Marketplace APIs.
+- Released Az CLI quantum extension version 0.4.0: Exposed URL for restricted access plans. Fixed regression on offerings commands dependent on Azure Marketplace APIs.
 
 ## 2021-03-30
 
