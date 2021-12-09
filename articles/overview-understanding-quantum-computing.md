@@ -17,7 +17,7 @@ Quantum computing holds the promise to solve some of our planet's biggest challe
 
 Quantum computers are controllable quantum mechanical devices that exploit the properties of quantum physics to perform computations. For some computational tasks, quantum computing provides exponential speedups. These speedups are possible thanks to three phenomena from quantum mechanics: superposition, interference, and entanglement.
 
-Just as bits are the fundamental object of information in classical computing, [qubits](xref:microsoft.quantum.concepts.qubit) (quantum bits) are the fundamental object of information in quantum computing. While a bit, or binary digit, can have value either 0 or 1, a qubit can have a value that is either 0, 1 or a quantum superposition of 0 and 1.
+Just as bits are the fundamental object of information in classical computing, [qubits](xref:microsoft.quantum.concepts.qubit) (quantum bits) are the fundamental object of information in quantum computing. While a bit, or binary digit, can have a value either 0 or 1, a qubit can have a value that is either 0, 1 or a quantum superposition of 0 and 1.
 
 A fundamental difference between classical computers and quantum computers is that programs in quantum computers are intrinsically probabilistic, whereas classical computers are usually deterministic. In quantum algorithms each possible result has an associated probability amplitude. After a measurement, one of the possible states is obtained with a certain probability. This fact contrasts with classical computing, where a bit can only be deterministically 0 or 1.
 
