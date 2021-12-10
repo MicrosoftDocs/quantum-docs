@@ -19,7 +19,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2021-12-14
 
-### QDK version 0.21.2112.[tbd]
+### QDK version 0.21.2112.180703
 
 - Released Az CLI quantum extension version 0.11.0: Job result histograms will be left-aligned (not centered) in console output.
 
