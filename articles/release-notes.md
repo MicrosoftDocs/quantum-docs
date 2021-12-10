@@ -103,7 +103,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ### Azure Quantum service update
 
-- Parameter Free Population Annealing solver is now available through the 'Early Access' plan in Azure Quantum. Sign up for early access: [https://aka.ms/aq/preview](https://aka.ms/aq/preview)
+- Parameter Free Population Annealing solver is now available through the Early Access plan in Azure Quantum. To sign up for early access, see [Apply for Azure Quantum Early Access](https://aka.ms/aq/preview).
 - Terms banner in Review tab in Azure Quantum portal is hidden when only Microsoft provider is being added during workspace creation.
 
 ## 2021-06-25

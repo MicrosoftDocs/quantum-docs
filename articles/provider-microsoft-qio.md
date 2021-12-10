@@ -59,7 +59,7 @@ For some solvers we offer two versions: an unlabeled version that runs on tradit
 
 FPGA-based solvers are only available in a limited set of Azure regions. When creating your Azure Quantum workspace, you can see if FPGA targets are available in the region that you selected by accessing the Microsoft QIO provider blade on the **Create** screen. Regions that offer access to FPGA solvers will display **FPGA simulated annealing** in their list of available targets. 
 
-For existing workspaces, you can check the "Providers" blade. Select **Modify** to view your Microsoft QIO plan. If your workspace is in a region where FPGA solvers are available "FPGA simulated annealing" will show up in the list of targets. 
+For existing workspaces, you can check the **Providers** blade. Select **Modify** to view your Microsoft QIO plan. If your workspace is in a region where FPGA solvers are available, **FPGA simulated annealing** will be available in the list of targets. 
 
 ### Recommendations for FPGA solvers
 
