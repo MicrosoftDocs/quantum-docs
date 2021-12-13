@@ -59,9 +59,9 @@ To create a new Azure Quantum workspace, you'll need to know:
 - The resource group associated with the new workspace, for example, **MyResourceGroup**.
 - A storage account in the same resource group and subscription as the quantum workspace. It's possible to [create a new storage account from the Az CLI tool](/cli/azure/storage/account?view=azure-cli-latest&preserve-view=true#az_storage_account_create), for example, **MyStorageAccount**.
 - The name of the quantum workspace to create, for example, **MyQuantumWorkspace**.
-- The list of Azure Quantum providers to use in the workspace. A provider offers a set of SKUs, each of them representing a plan with associated terms and conditions, costs, and quotas. To create workspaces, you'll need to specify the corresponding SKU along with the providers.
+- The list of Azure Quantum providers to use in the workspace. A provider offers a set of plans, each of them representing a plan with associated terms and conditions, costs, and quotas. To create workspaces, you'll need to specify the corresponding plan along with the providers.
 
-If you already know the provider and SKU names to use in your workspace, you can skip to step 4 below. Otherwise, determine which providers to use first.
+If you already know the provider and plan names to use in your workspace, you can skip to step 4 below. Otherwise, determine which providers to use first.
 
 1. To retrieve the list of available quantum providers, use the `list` command (this example uses **westus** as the location):
 
@@ -69,22 +69,22 @@ If you already know the provider and SKU names to use in your workspace, you can
    az quantum offerings list -l westus -o table
    ```
 
-1. Once you determine the provider and SKU to include in your workspace, you can review terms using the `show-terms` command (adding your **MyProviderID** and **MySKU** as example values):
+1. Once you determine the provider and plan to include in your workspace, you can review terms using the `show-terms` command (adding your **MyProviderID** and **MyPlan** as example values):
 
    ```azurecli
-   az quantum offerings show-terms -l westus -p MyProviderId -k MySKU
+   az quantum offerings show-terms -l westus -p MyProviderId -k MyPlan
    ```
 
 1. The output of the `show-terms` command includes a Boolean field `accepted` that shows whether the terms for this provider have been accepted already or not, as well as a link to the license terms to review. If you decide to accept those terms, use the `accept-terms` command to record your acceptance.
 
    ```azurecli
-   az quantum offerings accept-terms -l westus -p MyProviderId -k MySKU
+   az quantum offerings accept-terms -l westus -p MyProviderId -k MyPlan
    ```
 
-1. Once you have reviewed and accepted all required terms and conditions, you can create your workspace using the `create` command, specifying a list of provider and SKU combinations separated by commas, as in the following example:
+1. Once you have reviewed and accepted all required terms and conditions, you can create your workspace using the `create` command, specifying a list of provider and plan combinations separated by commas, as in the following example:
 
    ```azurecli
-   az quantum workspace create -l westus -g MyResourceGroup -w MyQuantumWorkspace -a MyStorageAccount -r "MyProvider1/MySKU1, MyProvider2/MySKU2"
+   az quantum workspace create -l westus -g MyResourceGroup -w MyQuantumWorkspace -a MyStorageAccount -r "MyProvider1/MyPlan1, MyProvider2/MyPlan2"
    ```
 
 Once you create a workspace, you can still add or remove providers using the Azure Portal.
