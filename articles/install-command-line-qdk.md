@@ -53,7 +53,7 @@ While you can build Q# applications in any IDE, we recommend using Visual Studio
 
 > [!IMPORTANT]
 > If you are working on Linux, you may encounter a missing dependency depending on your particular distribution and installation method (such as certain Docker images). Please make sure that the `libomp` library is installed on your system, as the OpenMP support library is required by the quantum simulator of the QDK. On Ubuntu, you can do so by running `sudo apt install libomp5-11`, or `yum install libomp` on CentOS. For other distributions, please refer to your particular package manager.  
-On MacOS you can install `libomp` by running `brew install libomp`.
+On macOS you can install `libomp` by running `brew install libomp`.
 
 
 ### Prerequisite
