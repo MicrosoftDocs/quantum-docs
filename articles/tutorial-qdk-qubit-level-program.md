@@ -373,7 +373,7 @@ which is precisely the behavior of the three-qubit Fourier transform.
 
 If you are curious about how other input states are affected, you are encouraged to experiment with applying other qubit operations before the transform.
 
-## Adding measurements
+## Add measurements
 
 The display from the `DumpMachine` function showed the results of the operation, but unfortunately, a cornerstone of quantum mechanics states that a real quantum system cannot have such a `DumpMachine` function.
 Instead, the information is extracted through measurements, which in general not only fail to provide information on the full quantum state, but can also drastically alter the system itself.
@@ -428,7 +428,7 @@ return the measurements, insert:
         return resultArray;
 ```
 
-## Understanding the effects of measurement
+## Run the measurements
 
 Now change the placement of the `DumpMachine` functions to output the state before and after the measurements.
 Your final Q# code should look like this:
