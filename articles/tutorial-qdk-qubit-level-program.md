@@ -1,7 +1,7 @@
 ---
 
 title: Write and simulate qubit-level programs in Q#
-description: In this tutorial, learn how to write and simulate a quantum program which operates at the individual qubit level.
+description: In this tutorial, learn how to write and simulate a quantum program that operates at the individual qubit level.
 author: bradben
 ms.author: v-benbra
 ms.date: 12/10/2021
@@ -43,11 +43,11 @@ In this tutorial, you'll learn how to
 
 The first part of this tutorial consists of defining the Q# operation `Perform3qubitQFT`, which performs the quantum Fourier transform on three qubits. The `DumpMachine` function is used to observe how the simulated wavefunction of the three-qubit system evolves across the operation. In the second part of the tutorial, you will add measurement functionality and compare the pre- and post-measurement states of the qubits. 
 
-You will build the operation step-by-step. However, you can view the [full Q# code](#the-complete-operation) for this section as reference. 
+You will build the operation step by step. However, you can view the [full Q# code](#the-complete-operation) for this section as reference. 
 
 ### Namespaces to access other Q# operations
 
-Inside the your Q# file, define the namespace `NamespaceQFT`, which ia accessed by the compiler.
+Inside your Q# file, define the namespace `NamespaceQFT`, which ia accessed by the compiler.
 For this operation to make use of existing Q# operations, open the relevant `Microsoft.Quantum.<>` namespaces.
 
 ```qsharp
@@ -86,7 +86,7 @@ Within the Q# operation, allocate a register of three qubits with the `use` keyw
 
 ```
 
-With `use`, the qubits are automatically allocated in the $\ket{0}$ state. You can verify this by using `Message(<string>)` and `DumpMachine`, which print a string and the system's current state to the console.
+With `use`, the qubits are automatically allocated in the $\ket{0}$ state. You can verify their allocated state by using `Message(<string>)` and `DumpMachine`, which print a string and the system's current state to the console.
 
 > [!NOTE]
 > The `Message(<string>)` and `DumpMachine()` functions both print directly to the console.
@@ -94,7 +94,7 @@ With `use`, the qubits are automatically allocated in the $\ket{0}$ state. You c
 
 ### Applying single-qubit and controlled operations
 
-Next, apply the operations which comprise the `Perform3qubitQFT` operation itself. Q# already contains these and many other basic quantum operations in the `Microsoft.Quantum.Intrinsic` namespace.
+Next, apply the operations that comprise the `Perform3qubitQFT` operation itself. Q# already contains these and many other basic quantum operations in the `Microsoft.Quantum.Intrinsic` namespace.
 
 The first operation applied is the `H` (Hadamard) operation to the first qubit:
 
@@ -125,7 +125,7 @@ The next operations are the `R1` operations that act on the first qubit (and con
 <br/>
 <img src="./media/qft_firstqubit.PNG" alt="Circuit diagram for three qubit QFT through first qubit" width="310">
 
-In your Q# file, call these with:
+In your Q# file, call these operations with these statements:
 
 ```qsharp
             Controlled R1([qs[1]], (PI()/2.0, qs[0]));
@@ -161,7 +161,7 @@ Now you have finished writing the qubit-level operations of the quantum Fourier 
 
 The last step is to call `DumpMachine()` again to see the post-operation state, and to deallocate the qubits. The qubits were in state $\ket{0}$ when you allocated them and need to be reset to their initial state using the `ResetAll` operation.
 
-Requiring that all deallocated qubits be explicitly set to $\ket{0}$ is a basic feature of Q#, as it allows other operations to know their state precisely when they begin using those same qubits (a scarce resource). Additionally, this assures that they not be entangled with any other qubits in the system. If the reset is not performed at the end of a `use` allocation block, a runtime error might be thrown.
+Requiring that all deallocated qubits be explicitly set to $\ket{0}$ is a basic feature of Q#, as it allows other operations to know their state precisely when they begin using those same qubits (a scarce resource). Additionally, this assures that they are not entangled with any other qubits in the system. If the reset is not performed at the end of a `use` allocation block, a runtime error might be thrown.
 
 Add the following lines to your Q# file:
 
@@ -218,7 +218,7 @@ With the Q# file and operation complete, your quantum program is ready to be cal
 
 ## Test the operation
 
-Having defined the Q# operation in a `.qs` file, you now need to call that operation and observe any returned classical data. For now, the operation doesn't return any value (recall that the operation previously defined returns `Unit`). This will be addressed later when you modify the operation to return an array of measurement results (`Result[]`).
+Having defined the Q# operation in a `.qs` file, you now need to call that operation and observe any returned classical data. For now, the operation doesn't return any value (recall that the operation previously defined returns `Unit`). Later, you will modify the operation to return an array of measurement results (`Result[]`).
 
 While the Q# program is ubiquitous across the environments used to call it, the manner of doing so varies.
 As such, follow the instructions in the tab corresponding to your setup: working from the Q# application, or using a host program in Python or C#.
@@ -248,14 +248,14 @@ Create a Python host file: `host.py`.
 The host file is constructed as follows:
 
 1. First, import the `qsharp` module, which registers the module loader for Q# interoperability. This allows Q# namespaces (for example, the `NamespaceQFT` defined in the Q# file) to appear as Python modules, from which you can import Q# operations.
-2. Next, import the Q# operations which you will directly invoke, in this case, `Perform3qubitQFT`.
+2. Next, import the Q# operations that you will directly invoke, in this case, `Perform3qubitQFT`.
     You need only import the entry point into a Q# program (for example, _not_ operations like `H` and `R1`, which are called by other Q# operations but never by the host program).
 3. To run your Q# program on a quantum simulator, use the form `<Q#callable>.simulate(<args>)`.
 
 4. Upon performing the simulation, the operation call returns values as defined in the Q# file.
     Currently there is nothing returned, but in the next step you will add measurements and return those values.
 
-Your full `host.py` file should be this:
+Your full `host.py` file should be:
 
 ```python
 import qsharp
@@ -270,17 +270,15 @@ Run the Python file, and you should see the `Message` and `DumpMachine` outputs 
 
 Following the instructions in [Write a Q# and .NET program to run on a local quantum simulator](xref:microsoft.quantum.how-to.csharp-local), create a C# host file, and rename it to `host.cs`.
 
-The C# host has four parts:
+The C# host has three parts:
 
-1. Construct a quantum simulator.
-    In the following code, this is the variable `qsim`.
-2. Compute any arguments required for the quantum algorithm.
-    There are none in this example.
-3. Run the quantum algorithm.
-    Each Q# operation generates a C# class with the same name and a `Run` method that runs the operation **asynchronously**.
+1. Constructing a quantum simulator.
+    In the C# code, this is the variable `qsim`.
+2. Running the quantum algorithm.
+    Each Q# operation generates a C# class with the same name, *Perform3QubitQFT*, and a `Run` method that runs the operation **asynchronously**.
     The run is asynchronous because running it on actual hardware will be asynchronous.
     Because the `Run` method is asynchronous, you need to call the `Wait()` method; this blocks the run until the task completes and returns the result synchronously.
-4. Process the returned result of the operation.
+3. Processing the returned result of the operation.
     Currently there is nothing returned, but in the next step you will add measurements and return those values.
 
 ```csharp
@@ -487,7 +485,7 @@ To have more understanding of the returned array printed in the console, you can
         return resultArray;
 ```
 
-Run the project, and your output should look similar to the following:
+Run the project, and your output should look similar to the output:
 
 ```Output
 Before measurement: 
@@ -570,7 +568,7 @@ Corresponding basis state in binary:
 ### [C#](#tab/tabid-csharp)
 
 Now that the operation is returning a result, replace the method call `Wait()` with fetching the `Result` property.
-This still accomplishes the same synchronicity discussed earlier, and you can directly bind this value to the variable `measurementResult`.
+The `Result` property still accomplishes the same synchronicity discussed earlier, and you can directly bind this value to the variable `measurementResult`.
 
 ```csharp
 using System;
@@ -655,7 +653,7 @@ This output illustrates a few different things:
     A measurement only returns a single basis state, with a probability determined by the amplitude of that state in the system's wavefunction.
 2. From the post-measurement `DumpMachine`, you see that measurement _changes_ the state itself, projecting it from the initial superposition over basis states to the single basis state that corresponds to the measured value.
 
-If you were to repeat this operation many times, you would see the result statistics begin to illustrate the equally weighted superposition of the post-QFT state that gives rise to a random result on each shot.
+If you repeat this operation many times, you will see the result statistics begin to illustrate the equally weighted superposition of the post-QFT state that gives rise to a random result on each shot.
 _However_, besides being inefficient and still imperfect, this would nevertheless only reproduce the relative amplitudes of the basis states, not the relative phases between them.
 The latter is not an issue in this example, but you would see relative phases appear if given a more complex input to the QFT than $\ket{000}$.
 
@@ -669,13 +667,11 @@ To explore how measuring only some qubits of the register can affect the system'
                 DumpMachine();
 ```
 
-Note that to access the `IntAsString` function, you have to add
+Note that to access the `IntAsString` function, you have to add an additional `open` statement:
 
 ```qsharp
     open Microsoft.Quantum.Convert;
 ```
-
-with the rest of the namespace `open` statements.
 
 In the resulting output, you see the gradual projection into subspaces as each qubit is measured.
 
@@ -685,7 +681,7 @@ As mentioned in the introduction, much of Q#'s power rests in the fact that it a
 Indeed, if you want to develop full-scale, applicable quantum programs, worrying about whether an `H` operation goes before or after a particular rotation would only slow you down.
 
 The Q# libraries contain the `QFT` operation, which you can use and apply for any number of qubits.
-To give it a try, define a new operation in your Q# file which has the same contents of `Perform3QubitQFT`, but with everything from the first `H` to the `SWAP` replaced by two easy lines:
+To give it a try, define a new operation in your Q# file that has the same contents of `Perform3QubitQFT`, but with everything from the first `H` to the `SWAP` replaced by two easy lines:
 
 ```qsharp
             let register = BigEndian(qs);    //from Microsoft.Quantum.Arithmetic
