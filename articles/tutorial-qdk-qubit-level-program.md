@@ -21,7 +21,7 @@ Although Q# was primarily created as a high-level programming language for large
 
 
 > [!NOTE]
->Note that this low-level view of quantum information processing is often described in terms of [**quantum circuits**](xref:microsoft.quantum.concepts.circuits), which represent the sequential application of gates, or *operations*, to specific qubits of a system. Thus, the single- and multi-qubit operations you sequentially apply can be readily represented in [circuit diagrams](xref:microsoft.quantum.glossary-qdk#quantum-circuit-diagram). For example, the full three-qubit quantum Fourier transform used in this tutorial has the following representation as a circuit:
+>This lower level view of quantum information processing is often described in terms of [**quantum circuits**](xref:microsoft.quantum.concepts.circuits), which represent the sequential application of gates, or *operations*, to specific qubits of a system. Thus, the single- and multi-qubit operations you sequentially apply can be readily represented in [circuit diagrams](xref:microsoft.quantum.glossary-qdk#quantum-circuit-diagram). For example, the full three-qubit quantum Fourier transform used in this tutorial has the following representation as a circuit:
 ><br/>
 ><img src="./media/qft_full.PNG" alt="Three qubit quantum Fourier transform circuit diagram" width="600">
 
@@ -86,10 +86,9 @@ Within the Q# operation, allocate a register of three qubits with the `use` keyw
 
 ```
 
-With `use`, the qubits are automatically allocated in the $\ket{0}$ state. You can verify their allocated state by using `Message(<string>)` and `DumpMachine`, which print a string and the system's current state to the console.
+With `use`, the qubits are automatically allocated in the $\ket{0}$ state. You can verify their allocated state by using `DumpMachine`, which prints the system's current state to the console.
 
 > [!NOTE]
-> The `Message(<string>)` and `DumpMachine()` functions both print directly to the console.
 > As in real quantum computations, Q# does not allow you to directly access qubit states. However, as `DumpMachine` prints the target machine's current state, it can provide valuable insight for debugging and learning when used in conjunction with the full state simulator.
 
 ### Applying single-qubit and controlled operations
@@ -109,7 +108,7 @@ So, applying the `H` operation to the first qubit of the register `qs` takes the
 ```
 
 Besides applying the `H` operation to individual qubits, the QFT circuit consists primarily of controlled `R1` rotations.
-An `R1(θ, <qubit>)` operation in general leaves the $\ket{0}$ component of the qubit unchanged, while applying a rotation of $e^{i\theta}$ to the $\ket{1}$ component.
+An `R1(θ, <qubit>)` operation in general leaves the $\ket{0}$ component of the qubit unchanged while applying a rotation of $e^{i\theta}$ to the $\ket{1}$ component.
 
 ### Controlled operations
 
@@ -432,9 +431,16 @@ return the measurements, insert:
 ## Understanding the effects of measurement
 
 Now change the placement of the `DumpMachine` functions to output the state before and after the measurements.
-The final operation code should look like:
+Your final Q# code should look like this:
 
 ```qsharp
+namespace NamespaceQFT {
+    open Microsoft.Quantum.Intrinsic;
+    open Microsoft.Quantum.Diagnostics;
+    open Microsoft.Quantum.Math;
+    open Microsoft.Quantum.Arrays;
+
+    @EntryPoint()
     operation Perform3QubitQFT() : Result[] {
 
         mutable resultArray = new Result[3];
@@ -471,6 +477,7 @@ The final operation code should look like:
         return resultArray;
 
     }
+}
 ```
 
 If you are working from the command prompt, the returned array displays directly to the console at the end of the run.
