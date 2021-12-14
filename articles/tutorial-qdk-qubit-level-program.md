@@ -22,8 +22,7 @@ Although Q# was primarily created as a high-level programming language for large
 
 > [!NOTE]
 >This lower level view of quantum information processing is often described in terms of [**quantum circuits**](xref:microsoft.quantum.concepts.circuits), which represent the sequential application of gates, or *operations*, to specific qubits of a system. Thus, the single- and multi-qubit operations you sequentially apply can be readily represented in [circuit diagrams](xref:microsoft.quantum.glossary-qdk#quantum-circuit-diagram). For example, the full three-qubit quantum Fourier transform used in this tutorial has the following representation as a circuit:
-><br/>
-><img src="./media/qft_full.PNG" alt="Three qubit quantum Fourier transform circuit diagram" width="600">
+>![QFT circuit](./media/qft_full.PNG)
 
 In this tutorial, you'll learn how to
 
@@ -97,8 +96,7 @@ Next, apply the operations that comprise the `Perform3qubitQFT` operation itself
 
 The first operation applied is the `H` (Hadamard) operation to the first qubit:
 
-<br/>
-<img src="./media/qft_firstH.PNG" alt="Circuit diagram for three qubit QFT through first Hadamard" width="120">
+![Circuit diagram for three qubit QFT through first Hadamard](./media/qft_firstH.PNG)
 
 To apply an operation to a specific qubit from a register (for example, a single `Qubit` from an array `Qubit[]`), use standard index notation.
 So, applying the `H` operation to the first qubit of the register `qs` takes the form:
@@ -121,8 +119,7 @@ Note that the control qubit argument must be an array, even if it is for a singl
 
 The next operations are the `R1` operations that act on the first qubit (and controlled by the second and third qubits):
 
-<br/>
-<img src="./media/qft_firstqubit.PNG" alt="Circuit diagram for three qubit QFT through first qubit" width="310">
+![Circuit diagram for three qubit QFT through first qubit](./media/qft_firstqubit.PNG)
 
 In your Q# file, call these operations with these statements:
 
@@ -154,7 +151,7 @@ This is necessary because the nature of the quantum Fourier transform outputs th
 
 Now you have finished writing the qubit-level operations of the quantum Fourier transform into your Q# operation:
 
-<img src="./media/qft_full.PNG" alt="Three qubit quantum Fourier transform circuit diagram" width="600">
+![Three qubit quantum Fourier transform circuit diagram](./media/qft_full.PNG)
 
 ### Deallocate qubits
 
@@ -720,3 +717,9 @@ To see the real benefit of using the Q# library operations, change the number of
 You can thus apply the proper QFT for any given number of qubits, without having to worry about the mess of new `H` operations and rotations on each qubit.
 
 ## Next steps
+
+Continue to explore other quantum algorithms and techniques:
+
+* The tutorial [Implement Grover’s search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm to solve a graph coloring problem.
+* [Explore entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
+* The [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas) are Jupyter Notebook-based, self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
