@@ -36,7 +36,7 @@ In this tutorial, you'll learn how to
 ## Prerequisites
 
 * [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview?tabs=tabid-local#install-the-qdk-and-develop-quantum-applications-locally) using your preferred language and development environment.
-* If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update-qdk) to the latest version.
+* If you already have the QDK installed, make sure you have [updated to the latest version](xref:microsoft.quantum.update-qdk).
 * Create a Q# project for either a [Q# application](xref:microsoft.quantum.how-to.standalone-local) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local). Alternatively, you can run your Q# code from a [Python host program](xref:microsoft.quantum.how-to.python-local).
 
 ## Allocate qubits and define quantum operations
@@ -47,7 +47,7 @@ You will build the operation step by step. However, you can view the [full Q# co
 
 ### Namespaces to access other Q# operations
 
-Inside your Q# file, define the namespace `NamespaceQFT`, which ia accessed by the compiler.
+Inside your Q# file, define the namespace `NamespaceQFT`, which is accessed by the compiler.
 For this operation to make use of existing Q# operations, open the relevant `Microsoft.Quantum.<>` namespaces.
 
 ```qsharp
