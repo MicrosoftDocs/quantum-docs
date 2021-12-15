@@ -2,7 +2,7 @@
 author: QuantumWriter
 description: Learn about qubits, the fundamental unit of information in quantum computing. This article examines the single qubit.
 ms.author: v-benbra
-ms.date: 02/01/2021
+ms.date: 12/15/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -17,7 +17,7 @@ Just as bits are the fundamental object of information in classical computing, [
 
 ## Representing a qubit
 
-While a bit, or binary digit, can have value either $0$ or $1$, a qubit can have a value that is either $0$, $1$  or a quantum superposition of $0$ and $1$.
+While a bit, or binary digit, can have a value either $0$ or $1$, a qubit can have a value that is either $0$, $1$  or a quantum superposition of $0$ and $1$.
 
 The state of a single qubit can be described by a two-dimensional column vector of unit norm, that is, the magnitude squared of its entries must sum to $1$. This vector, called the quantum state vector, holds all the information needed to describe the one-qubit quantum system just as a single bit holds all of the information needed to describe the state of a binary variable.
 
