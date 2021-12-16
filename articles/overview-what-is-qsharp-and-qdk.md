@@ -5,7 +5,7 @@ ms.author: v-sonialopez
 ms.date: 11/15/2021
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: overview
+ms.topic: conceptual
 no-loc: ['Q#', '$$v']
 title: What are the Q# programming language & QDK?
 uid: microsoft.quantum.overview.q-sharp
@@ -34,7 +34,7 @@ The Q# language allows the integration on classical and quantum computing. Q# su
 
 The Q# language doesn’t specify whether qubits are logical or physical. This can be decided by the runtime when the algorithm is executed. Similarly, the mapping from a qubit variable in a program to an actual logical or physical qubit is decided by the runtime, and that mapping may be deferred until after the topology and other details of the target device is known. The runtime is responsible for determining a mapping that allows the algorithm to execute, including any qubit state transfer and remapping required during execution.
 
-You can use Q# as standalone, in notebooks, and at the command-line or use a host language such as Python or C#. 
+You can use Q# as standalone, in notebooks, and at the command line or use a host language such as Python or C#. 
 
 ## What is a quantum program?
 
@@ -56,7 +56,7 @@ Therefore, Q# has no ability to introspect into the state of a qubit or other pr
 
 Once allocated, a qubit can be passed to operations and functions, also referred to as [*callables*](xref:microsoft.quantum.qsharp.callabledeclarations). In some sense, this is all that a Q# program can do with a qubit. Any direct actions on state of a qubit are all defined by *intrinsic* callables such as [`X`](xref:Microsoft.Quantum.Intrinsic.X) and [`H`](xref:Microsoft.Quantum.Intrinsic.H) - that is, callables whose implementations are not defined within Q# but are instead defined by the target machine. What these operations actually *do* is only made concrete by the target machine you choose to run the particular Q# program. For more information, see [Q# program implementation](xref:microsoft.quantum.qsharp.programstructure-overview).
 
-For example, if running the program on the [full-state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), the simulator performs the corresponding mathematical operations to the simulated quantum system. But looking toward the future, when the target machine is a real quantum computer, calling such operations in Q# will direct the quantum computer to perform the corresponding **real operations** on the **real quantum hardware**. For example, in a trapped-ion quantum computer the quantum operations are realised by precisely timed laser pulses.
+For example, if running the program on the [full-state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), the simulator performs the corresponding mathematical operations to the simulated quantum system. But looking toward the future, when the target machine is a real quantum computer, calling such operations in Q# will direct the quantum computer to perform the corresponding **real operations** on the **real quantum hardware**. For example, in a trapped-ion quantum computer the quantum operations are realized by precisely timed laser pulses.
 
 A Q# program recombines these operations as defined by a target machine to create new, higher-level operations to express quantum computation.
 In this way, Q# makes it easy to express the logic underlying quantum and hybrid quantum–classical algorithms, while also being general with respect to the structure of a target machine or simulator.
@@ -104,7 +104,7 @@ Isolating the Q# code in the simulator ensures that the algorithms follow the la
 
 You can [create your Q# program](xref:microsoft.quantum.install-qdk.overview.standalone) using the QDK extensions for Visual Studio, Visual Studio Code or Jupyter Notebooks. You can follow the Q# tutorials and start writing quantum programs to explore [superposition](xref:microsoft.quantum.tutorial-qdk.random-number), [entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement), [Grover's quantum algorithm](xref:microsoft.quantum.tutorial-qdk.grovers), and other quantum phenomena. 
 
-The [Q# libraries](xref:microsoft.quantum.libraries.overview) will help you keep your code high-level, enabling you to run complex quantum operations without having to design low-level operation sequences. The [`Microsoft.Quantum.Sdk` NuGet package](https://www.nuget.org/packages/Microsoft.Quantum.Sdk/) automatically includes the Q# [standard library](xref:microsoft.quantum.libraries.overview.standard.intro), which provides a set of essential and very useful functions and operations that can be used when writing quantum programs in Q#.
+The [Q# libraries](xref:microsoft.quantum.libraries.overview) will help you keep your code high level, enabling you to run complex quantum operations without having to design low-level operation sequences. The [`Microsoft.Quantum.Sdk` NuGet package](https://www.nuget.org/packages/Microsoft.Quantum.Sdk/) automatically includes the Q# [standard library](xref:microsoft.quantum.libraries.overview.standard.intro), which provides a set of essential and very useful functions and operations that can be used when writing quantum programs in Q#.
 
 In addition to the standard library, the QDK includes a [quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview) for simulating quantum dynamics and electronic structure problems on quantum computers, a [quantum machine learning library](xref:microsoft.quantum.libraries.overview#quantum-machine-learning-library) which provides an implementation of the sequential classifiers that take advantage of quantum computing to run hybrid quantum/classical machine learning experiments, and a [quantum numeric library](xref:microsoft.quantum.libraries-numerics.usage) which provides support for a wide range of numerics functionality.
 
@@ -126,7 +126,7 @@ Before running on quantum hardware, you’ll need to figure out whether your pro
 
 ### Submit jobs to the Azure Quantum service
 
-[Azure Quantum](xref:microsoft.quantum.submit-jobs) is the quantum computing cloud platform that allow you to run your program on quantum hardware.
+[Azure Quantum](xref:microsoft.quantum.submit-jobs) is the quantum computing cloud platform that allows you to run your program on quantum hardware.
 
 You can write [quantum computing](xref:microsoft.quantum.overview.understanding) and [quantum-inspired optimization](xref:microsoft.quantum.optimization.concepts.overview.introduction) programs and submit them to Azure Quantum to run on [quantum hardware](xref:microsoft.quantum.reference.qc-target-list) and [optimization solvers](xref:microsoft.quantum.reference.qio-target-list). 
 
