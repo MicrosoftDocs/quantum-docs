@@ -2,7 +2,7 @@
 author: QuantumWriter
 description: Learn about qubits, the fundamental unit of information in quantum computing. This article examines the single qubit.
 ms.author: v-benbra
-ms.date: 02/01/2021
+ms.date: 12/15/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -17,7 +17,7 @@ Just as bits are the fundamental object of information in classical computing, [
 
 ## Representing a qubit
 
-While a bit, or binary digit, can have value either $0$ or $1$, a qubit can have a value that is either $0$, $1$  or a quantum superposition of $0$ and $1$.
+While a bit, or binary digit, can have a value either $0$ or $1$, a qubit can have a value that is either $0$, $1$  or a quantum superposition of $0$ and $1$.
 
 The state of a single qubit can be described by a two-dimensional column vector of unit norm, that is, the magnitude squared of its entries must sum to $1$. This vector, called the quantum state vector, holds all the information needed to describe the one-qubit quantum system just as a single bit holds all of the information needed to describe the state of a binary variable.
 
@@ -25,7 +25,7 @@ Any two-dimensional column vector of real or complex numbers with norm $1$ repre
 
 $$\begin{bmatrix} 1 \\\\  0 \end{bmatrix}, \begin{bmatrix} 0 \\\\  1 \end{bmatrix}, \begin{bmatrix} \frac{1}{\sqrt{2}} \\\\  \frac{1}{\sqrt{2}} \end{bmatrix}, \begin{bmatrix} \frac{1}{\sqrt{2}} \\\\  \frac{-1}{\sqrt{2}} \end{bmatrix}, \text{ and }\begin{bmatrix} \frac{1}{\sqrt{2}} \\\\  \frac{i}{\sqrt{2}} \end{bmatrix}.$$
 
-The quantum state vectors $\begin{bmatrix} 1 \\\\  0 \end{bmatrix}$ and $\begin{bmatrix} 0 \\\\  1 \end{bmatrix}$ take a special role. These two vectors form a basis for the vector space that describes the qubit's state. This means that any quantum state vector can be written as a sum of these basis vectors. Specifically, the vector $\begin{bmatrix} x \\\\  y \end{bmatrix}$ can be written as $x \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\\\  1 \end{bmatrix}$. While any rotation of these vectors would serve as a perfectly valid basis for the qubit, this particular one is choosen, by calling it the *computational basis*.
+The quantum state vectors $\begin{bmatrix} 1 \\\\  0 \end{bmatrix}$ and $\begin{bmatrix} 0 \\\\  1 \end{bmatrix}$ take a special role. These two vectors form a basis for the vector space that describes the qubit's state. This means that any quantum state vector can be written as a sum of these basis vectors. Specifically, the vector $\begin{bmatrix} x \\\\  y \end{bmatrix}$ can be written as $x \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\\\  1 \end{bmatrix}$. While any rotation of these vectors would serve as a perfectly valid basis for the qubit, this particular one is chosen, by calling it the *computational basis*.
 
 These two quantum states are taken to correspond to the two states of a classical bit, namely $0$ and $1$. The standard convention is to choose
 
