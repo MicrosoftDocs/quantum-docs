@@ -13,9 +13,18 @@ uid: microsoft.quantum.overview.q-sharp
 
 # What are the Q# programming language and Quantum Development Kit (QDK)?
 
-Q# is a Microsoft’s **open-source** programming language for developing and running quantum algorithms. It’s part of the Quantum Development Kit (QDK), which offers a set of tools that will assist you in the quantum software development process. The QDK includes [quantum libraries](xref:microsoft.quantum.libraries.overview) that let you create complex quantum operations, and [quantum simulators](xref:microsoft.quantum.machines.overview) to accurately run and test your programs. The Q# programs can run as standalone apps or be called from [other programming environments](xref:microsoft.quantum.install-qdk.overview), and can be written, run, and tested from your local computer. The QDK also includes [API documentation](xref:microsoft.quantum.apiref-intro).
+Q# is a Microsoft’s **open-source** programming language for developing and running quantum algorithms. It’s part of the Quantum Development Kit (QDK), which offers a set of tools that will assist you in the quantum software development process. The QDK includes [quantum libraries](xref:microsoft.quantum.libraries.overview) that let you create complex quantum operations, and [quantum simulators](xref:microsoft.quantum.machines.overview) to accurately run and test your programs. 
 
-As a programming language, Q# draws familiar elements from Python, C#, and F# and supports a basic procedural model for writing programs with loops, if/then statements, and common data types. It also introduces new quantum-specific data structures and operations.
+> [!Tip]
+> 
+> **Install Q# SDK** 
+> - [Set up a Q# and Python development environment](xref:microsoft.quantum.install-qdk.overview.python)
+> - [Set up a standalone Q# development environment](xref:microsoft.quantum.install-qdk.overview.standalone)
+>
+> **[Q# API reference documentation](xref:microsoft.quantum.apiref-intro)**
+> 
+
+The Q# programs can run as standalone apps or be called from [other programming environments](xref:microsoft.quantum.install-qdk.overview), and can be written, run, and tested from your local computer. As a programming language, Q# draws familiar elements from Python, C#, and F# and supports a basic procedural model for writing programs with loops, if/then statements, and common data types. It also introduces new quantum-specific data structures and operations.
 
 ## The quantum programming language Q\#
 
