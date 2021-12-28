@@ -29,7 +29,7 @@ By providing rotations as well, Q# allows the programmer to work within the sing
 
 Where possible, the operations defined in the prelude which act on qubits allow for applying the `Controlled` variant, such that the target machine will perform the appropriate decomposition.
 
-Many of the functions and operations defined in this portion of the prelude are in the @"microsoft.quantum.intrinsic" namespace, such that most Q# source files will have an `open Microsoft.Quantum.Intrinsic;` directive immediately following the initial namespace declaration.
+Many of the functions and operations defined in this portion of the prelude are in the <xref:Microsoft.Quantum.Intrinsic> namespace, such that most Q# source files will have an `open Microsoft.Quantum.Intrinsic;` directive immediately following the initial namespace declaration.
 The <xref:Microsoft.Quantum.Core> namespace is automatically opened, so that functions such as <xref:Microsoft.Quantum.Core.Length> can be used without an `open` statement at all.
 
 ### Common Single-Qubit Unitary Operations ###
