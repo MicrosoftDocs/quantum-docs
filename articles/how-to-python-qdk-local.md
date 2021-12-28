@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to develop and run Python host programs that call Q# operations on a local simulator.
 ms.author: v-benbra
-ms.date: 11/16/2021
+ms.date: 12/17/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -13,11 +13,11 @@ uid: microsoft.quantum.how-to.python-local
 
 # Write a Q# and Python program to run on a local quantum simulator
 
-Learn how you can run a Q# program by a Python host program, which then invokes the Q# program and further process return results. The Microsoft Quantum Development Kit contains several [quantum simulators](xref:microsoft.quantum.machines.overview) that allow you to test and run quantum programs locally, without having to access the Azure Quantum service.
+Learn how you can run a Q# program using a Python host program, which invokes the Q# program and further processes return results. The Microsoft Quantum Development Kit contains several [quantum simulators](xref:microsoft.quantum.machines.overview) that allow you to test and run quantum programs locally, without having to access the Azure Quantum service.
 
 ## Prerequisite
 
-Set up your Python environment with the Microsoft Quantum Development Kit following the steps in [Set up a Python environment](xref:microsoft.quantum.install-qdk.overview.python).
+Set up a Python environment, or configure your existing Python environment, to use the Microsoft Quantum Development Kit following the steps in [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview.python).
 
 ## Choose your IDE
 
