@@ -116,7 +116,8 @@ Population Annealing supports the following parameters:
 To create a parameterized Population Annealing solver for the CPU using the SDK:
 
 ```python
-from azure.quantum.optimization import PopulationAnnealing, RangeSchedule
+from azure.quantum.optimization import PopulationAnnealing
+from azure.quantum.target.solvers import RangeSchedule
 # Requires a workspace already created.
 solver = PopulationAnnealing(workspace, sweeps=200, beta=RangeSchedule("linear", 0, 5), population=128, seed=42)
 ```
