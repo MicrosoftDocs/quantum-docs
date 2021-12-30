@@ -2,7 +2,7 @@
 author: mblouin
 description: Frequently Asked Questions regarding the Azure Quantum Credits Program
 ms.author: mblouin
-ms.date: 10/06/2021
+ms.date: 12/30/2021
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: faq
@@ -11,6 +11,16 @@ uid: microsoft.quantum.credits.credits-faq
 ---
 
 # FAQ: Applications to the Azure Quantum Credits Program
+
+You can get free credit for use on quantum hardware through Azure. The Azure Quantum Credits program provides sponsored access to quantum hardware through Azure. You will not be charged for usage created under the credits program, up to the limit of your credit grant.
+
+## How do I get free Azure Quantum credits?
+
+There are two credit programs for Azure Quantum:
+
+1. The default credit grant is USD 500 equivalent, expressed in hardware credits. For more information on how to use these, see the [Azure Quantum credits section in Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace#azurequantumcredits).
+
+1. Microsoft also offers up to USD 10,000 in credits for use on quantum hardware. To receive this credit, you can apply for the [Azure Quantum Credits program](https://aka.ms/aq/credits).
 
 ## I have questions about Azure Quantum or Azure Quantum Credits and I can't find the answer, how do I get help?
 If you have an Azure support subscription, we recommend connecting with [Azure Support](https://azure.microsoft.com/support/options/#get-support) for the fastest resolution to your question.
