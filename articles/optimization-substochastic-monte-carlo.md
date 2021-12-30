@@ -120,7 +120,8 @@ Substochastic Monte Carlo supports the following parameters:
 To create a parameterized Substochastic Monte Carlo solver for the CPU using the SDK:
 
 ```python
-from azure.quantum.optimization import SubstochasticMonteCarlo, RangeSchedule
+from azure.quantum.optimization import SubstochasticMonteCarlo
+from azure.quantum.target.solvers import RangeSchedule
 # Requires a workspace already created.
 solver = SubstochasticMonteCarlo(workspace, step_limit=10000, target_population=64, beta=RangeSchedule("linear", 0, 5), seed=42)
 ```

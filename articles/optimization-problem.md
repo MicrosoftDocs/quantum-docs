@@ -2,7 +2,7 @@
 author: george-moussa
 description: Reference for azure.quantum.optimization.Problem
 ms.author: georgenm
-ms.date: 11/22/2021
+ms.date: 11/26/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -28,6 +28,7 @@ To create a `Problem` object, you specify the following information:
   `ProblemType.ising`, `ProblemType.pubo`, `ProblemType.ising_grouped`, or
   `ProblemType.pubo_grouped`. The default is `ProblemType.ising`. A grouped problem type is picked automatically if grouped terms are used in the problem formulation.
 - `init_config`(optional): A dictionary of variable IDs to value if user wants to specify an initial configuration for the problem.
+- `content_type`(optional): The defaults is `ContentType.json`. Can be set to `ContentType.protobuf` for solvers that support this input serialization.
 
 ```py
 terms = [
@@ -119,7 +120,8 @@ problem.add_terms([
 
 ### Problem.serialize
 
-Serializes a problem to a JSON string or protobuf. For more information about the usage of protobuf, see [Input problem serialization to protobuf binary format](#input-problem-serialization-to-protobuf-binary-format).
+Serializes a problem to a JSON string or protobuf. 
+For more information about the usage of protobuf, see [Input problem serialization to protobuf binary format](#input-problem-serialization-to-protobuf-binary-format).
 
 ```py
 problem = Problem("My Problem", [Term(c=1, indices=[0,1])])
@@ -128,7 +130,8 @@ problem.serialize()
 > {"cost_function": {"version": "1.0", "type": "ising", "terms": [{"c": 1, "ids": [0, 1]}]}}
 ```
 
-To serialize to protobuf (only supported for the Population Annealing and Substochastic Monte Carlo Microsoft solvers)
+To serialize to protobuf you need to specify the optional `content_type` parameter. 
+Protobuf is supported on a [subset of optimization solvers](#protobuf-availability).
 
 ```py
 problem = Problem(name = "protobuf_problem", terms = [Term(c=1, indices=[0,1])], content_type=ContentType.protobuf)
@@ -221,8 +224,7 @@ For an example of how to use the `OnlineProblem` class, have a look at [reusing 
 
 ## Input problem serialization to protobuf binary format
 
-In addition to the standard JSON form, Azure Quantum also supports protobuf. This is an optional feature that is limited to a subset of optimization solvers in the Microsoft QIO provider.
-JSON will continue to be supported at this time.
+In addition to the standard JSON format, Azure Quantum also supports protobuf. This is an optional feature that is limited to a subset of optimization solvers in the Microsoft QIO provider. JSON will continue to be supported at this time.
 This feature is useful for encoding input problems that are significantly large in size. In these cases, using a binary encoding method like protobuf reduces the payload sizes, and improves upload and processing speeds relative to submitting as the standard JSON format.
 You can specify the problem type, terms, initial configuration and problem metadata (for example, problem name) exactly as is supported currently in JSON.
 
@@ -231,18 +233,22 @@ You can specify the problem type, terms, initial configuration and problem metad
 Protobuf is Google's Data Interchange Format. It is binary format with a static schema.
 For a detailed introduction to protobuf, please see Google's [Protocol Buffers](https://developers.google.com/protocol-buffers/) page.
 
-### Usage
+#### Usage
 
 To submit a problem with protobuf serialization, specify the optional parameter **content_type** in the problem object definition and set it to **Content.protobuf**.
 If you do not set this parameter explicitly, then it will be set to **ContentType.json**.
-Please see [problem.serialize](#problemserialize) for a sample.
+
+```py
+problem = Problem(name = "protobuf_problem", terms = [Term(c=1, indices=[0,1])], content_type=ContentType.protobuf)
+```
 
 For more information on cost functions and how terms relate to a problem definition, see the following topics:
 
 - [Cost functions](xref:microsoft.quantum.optimization.concepts.cost-function)
-- [Term](xref:microsoft.quantum.optimization.terd
+- [Term](xref:microsoft.quantum.optimization.term)
 
-### Availability
+<a name="protobuf-availability"></a>
+#### Protobuf serialization availability
 
 Protobuf serialization is a new "Early Access" feature in the *azure-quantum* Python package, and is currently supported by two Microsoft QIO solvers:
 

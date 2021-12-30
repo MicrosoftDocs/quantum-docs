@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how quantum computing works, how it compares to classical computing, and how it uses the principles of quantum mechanics.
 ms.author: v-sonialopez
-ms.date: 10/21/2021
+ms.date: 12/08/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
@@ -17,7 +17,7 @@ Quantum computing holds the promise to solve some of our planet's biggest challe
 
 Quantum computers are controllable quantum mechanical devices that exploit the properties of quantum physics to perform computations. For some computational tasks, quantum computing provides exponential speedups. These speedups are possible thanks to three phenomena from quantum mechanics: superposition, interference, and entanglement.
 
-Just as bits are the fundamental object of information in classical computing, [qubits](xref:microsoft.quantum.concepts.qubit) (quantum bits) are the fundamental object of information in quantum computing. While a bit, or binary digit, can have value either 0 or 1, a qubit can have a value that is either 0, 1 or a quantum superposition of 0 and 1.
+Just as bits are the fundamental object of information in classical computing, [qubits](xref:microsoft.quantum.concepts.qubit) (quantum bits) are the fundamental object of information in quantum computing. While a bit, or binary digit, can have a value either 0 or 1, a qubit can have a value that is either 0, 1 or a quantum superposition of 0 and 1.
 
 A fundamental difference between classical computers and quantum computers is that programs in quantum computers are intrinsically probabilistic, whereas classical computers are usually deterministic. In quantum algorithms each possible result has an associated probability amplitude. After a measurement, one of the possible states is obtained with a certain probability. This fact contrasts with classical computing, where a bit can only be deterministically 0 or 1.
 
@@ -94,7 +94,7 @@ For more information, see [the qubit in quantum computing](xref:microsoft.quantu
 
 ### Entanglement
 
-One of the most interesting phenomenon of quantum mechanics is the ability of two or more quantum systems to become **entangled** with each other. Enatnglement is a quantum correlation between quantum systems. When qubits become entangled, they form a global system such that the quantum state of individual subsystems cannot be described independently. Two systems are entangled when the state of the global system cannot be written as a linear combination of the subsystem.
+One of the most interesting phenomenon of quantum mechanics is the ability of two or more quantum systems to become **entangled** with each other. Entanglement is a quantum correlation between quantum systems. When qubits become entangled, they form a global system such that the quantum state of individual subsystems cannot be described independently. Two systems are entangled when the state of the global system cannot be written as a linear combination of the subsystems.
 
 Entangled quantum systems can maintain this correlation even when separated over large distances. This means that whatever operation or process you apply to one subsystem correlates to the other subsystem as well. Because there is a correlation between the entangled qubits, measuring the state of one qubit provides information about the state of the other qubit – this particular property is very helpful in quantum computing.
 
@@ -105,7 +105,7 @@ If you want to learn more, see the tutorial [exploring quantum entanglement with
 
 ## Quantum computers vs quantum simulators
 
-A quantum computer is a machine that combines the power of classical and quantum computing. The current quantum computers correspond to and hybrid model: a classical computer that controls a quantum processor. 
+A quantum computer is a machine that combines the power of classical and quantum computing. The current quantum computers correspond to a hybrid model: a classical computer that controls a quantum processor. 
 
 The development of quantum computers is still in the infancy of their development. The quantum hardware and their maintenance are expensive, and most systems are located in universities and research labs. Where classical computers use familiar silicon-based chips, quantum computers use quantum systems such as atoms, ions, photons, or electrons. They use their quantum properties to represent bits that can be prepared in different quantum superpositions of 1 and 0. The technology is advancing, though, and limited public access to some systems is available.
 
