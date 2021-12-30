@@ -2,7 +2,7 @@
 author: dphansen
 description: Learn how to run Q# or Python in a Jupyter notebook in an Azure Quantum workspace.
 ms.author: davidph
-ms.date: 11/16/2021
+ms.date: 12/30/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -27,11 +27,11 @@ You need the following prerequisites to use Jupyter notebooks in an Azure Quantu
 To get started, you can use use a sample from the notebook gallery.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
-1. Select **Jupyter Notebooks**.
+1. Select **Notebooks**.
 1. Select **Notebook Gallery**.
 1. Select the sample you want to use, and select **Copy to My Notebooks**.
 
-    :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-gallery.png" alt-text="Notebook gallery in Azure Quantum.":::
+    :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-gallery.gif" alt-text="Notebook gallery in Azure Quantum.":::
 
 The sample notebook can be found under **My Notebooks** and you can now run the notebook.
 
