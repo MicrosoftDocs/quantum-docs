@@ -28,14 +28,14 @@ You need the following prerequisites to create a workspace.
 
 - You must be an **Owner** of the resource group you use, to create a new storage account. For more information about how resource groups work in Azure, see [Manage Azure Resource Manager resource groups by using the Azure portal](/azure/azure-resource-manager/management/manage-resource-groups-portal).
 
-## Create the workspace
-
 > [!NOTE]
 > If you have any questions regarding the workspace creation process or run into any issue at any point using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Standard Time zone (PST).
 
-To create an Azure Quantum workspace, follow these steps.
+## Create the workspace
 
 :::image type="content" source="media/create-quantum-workspace.gif" alt-text="Create Azure Quantum workspace.":::
+
+To create an Azure Quantum workspace, follow these steps.
 
 1. Sign in to the [Azure portal](https://portal.azure.com) by using the credentials for your Azure subscription.
 
