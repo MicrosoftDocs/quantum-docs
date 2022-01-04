@@ -52,8 +52,7 @@ Jupyter Notebooks allows running code in-place alongside instructions, notes, an
 While you can build Q# applications in any IDE, we recommend using Visual Studio Code (VS Code) or Visual Studio IDE for developing your Q# applications if you are running them via a .NET console. Developing in these environments leverages the rich functionality of the Quantum Development Kit (QDK) extension, which includes warnings, syntax highlighting, project templates, and more.
 
 > [!IMPORTANT]
-> If you are working on Linux, you may encounter a missing dependency depending on your particular distribution and installation method (such as certain Docker images). Please make sure that the `libomp` library is installed on your system, as the OpenMP support library is required by the quantum simulator of the QDK. On Ubuntu, you can do so by running `sudo apt install libomp5-11`, or `yum install libomp` on CentOS. For other distributions, please refer to your particular package manager.  
-On macOS you can install `libomp` by running `brew install libomp`.
+> If you encounter a missing dependency then please make sure that the `libomp` library is installed on your system, as the OpenMP support library is required by the quantum simulator of the QDK. You can install `libomp` by running `sudo apt install libomp5-11` on Ubuntu, `brew install libomp` on macOS. For other distributions/OSs, please refer to your particular package manager.
 
 
 ### Prerequisite

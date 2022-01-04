@@ -79,8 +79,7 @@ Once imported, the `qsharp` package allows Q# namespaces to appear as Python mod
     ```
 
 > [!NOTE]
-> If you hit an error `Unable to load shared library 'Microsoft.Quantum.Simulator.Runtime' or one of its dependencies`, then you need to install the `libomp` library, as the OpenMP support library is required by the quantum simulator of the QDK. On Ubuntu, you can do so by running `sudo apt install libomp5-11`, or `yum install libomp` on CentOS. For other distributions, please refer to your particular package manager.  
-On macOS you can install `libomp` by running `brew install libomp`.
+> If you hit an error `Unable to load shared library 'Microsoft.Quantum.Simulator.Runtime' or one of its dependencies`, then you may be missing the `libomp` library, as the OpenMP support library is required by the quantum simulator of the QDK. You can install `libomp` by running `sudo apt install libomp5-11` on Ubuntu, `brew install libomp` on macOS. For other distributions/OSs, please refer to your particular package manager.
 
 > [!NOTE]
 > If you are running your operations in Jupyter Notebooks, the `%%qsharp` magic command allows you to define new Q# operations within the same Jupyter notebook as the Python code, eluding the use of a host program. For more information, see [Q# and Jupyter Notebooks](/azure/quantum/user-guide/host-programs?tabs=tabid-python#q-jupyter-notebooks).
