@@ -50,7 +50,7 @@ Here are the necessary conditions for quantum-inspired optimization to perform w
 
 ## How does quantum-inspired optimization solve problems?
 
-There exist several methods for finding the global minimum of a cost function, one of the most successful and commonly used heuristics is *simulated annealing*. Heuristics is a technique for finding an approximate solution, especially in situations where finding an exact solution can take too long. You can think of the technique as a random walk through the search space, where each *walker* creates a path through the optimization landscape.
+There exist several methods for finding the global minimum of a cost function, one of the most successful and commonly used heuristic is *simulated annealing*. A heuristic is a technique for finding an approximate solution, especially in situations where finding an exact solution can take too long. You can think of the technique as a random walk through the search space, where each *walker* creates a path through the optimization landscape.
 
 In simulated annealing, the algorithm simulates a walker that, ideally, always moves downhill but can also take uphill moves with some non-zero probability. This creates the possibility for the walker to escape from local minima and then descend into deeper neighboring minima. The uphill moves are called *thermal jumps*. That is because simulated annealing is an algorithm from physics that mimics the behavior of materials as they are slowly cooled.
 
