@@ -77,7 +77,7 @@ Once imported, the `qsharp` package allows Q# namespaces to appear as Python mod
     ```output
     Hello, quantum world!
     ```
-    
+
 > [!NOTE]
 > If you are running your operations in Jupyter Notebooks, the `%%qsharp` magic command allows you to define new Q# operations within the same Jupyter notebook as the Python code, eluding the use of a host program. For more information, see [Q# and Jupyter Notebooks](/azure/quantum/user-guide/host-programs?tabs=tabid-python#q-jupyter-notebooks).
 
