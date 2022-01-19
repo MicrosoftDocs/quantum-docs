@@ -2,7 +2,7 @@
 author: QuantumWriter
 description: Learn about the intrinsic operations and functions in the QDK, including classical functions and unitary, rotation and measurement operations.
 ms.author: martinro
-ms.date: 02/01/2021
+ms.date: 01/19/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -29,7 +29,7 @@ By providing rotations as well, Q# allows the programmer to work within the sing
 
 Where possible, the operations defined in the prelude which act on qubits allow for applying the `Controlled` variant, such that the target machine will perform the appropriate decomposition.
 
-Many of the functions and operations defined in this portion of the prelude are in the @"microsoft.quantum.intrinsic" namespace, such that most Q# source files will have an `open Microsoft.Quantum.Intrinsic;` directive immediately following the initial namespace declaration.
+Many of the functions and operations defined in this portion of the prelude are in the <xref:Microsoft.Quantum.Intrinsic> namespace, such that most Q# source files will have an `open Microsoft.Quantum.Intrinsic;` directive immediately following the initial namespace declaration.
 The <xref:Microsoft.Quantum.Core> namespace is automatically opened, so that functions such as <xref:Microsoft.Quantum.Core.Length> can be used without an `open` statement at all.
 
 ### Common Single-Qubit Unitary Operations ###

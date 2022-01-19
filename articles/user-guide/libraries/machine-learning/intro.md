@@ -2,7 +2,7 @@
 author: alexeib2
 description: Learn how machine learning is used on quantum systems
 ms.author: alexeib
-ms.date: 02/01/2021
+ms.date: 01/19/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -15,8 +15,8 @@ uid: microsoft.quantum.libraries.overview.machine-learning.intro
 
 ## Framework and goals
 
-Quantum encoding and processing of information is a powerful alternative to classical machine learning
-Quantum classifiers. In particular, it allows us to encode data in quantum registers that are concise relative to the number of features, systematically employing quantum entanglement as computational resource and employing quantum measurement for class inference.
+Quantum encoding and processing of information is a powerful alternative to classical machine learning.
+In particular, it allows us to encode data in quantum registers that are concise relative to the number of features, systematically employing quantum entanglement as computational resource and employing quantum measurement for class inference.
 Circuit centric quantum classifier is a relatively simple quantum solution that combines data encoding with a rapidly entangling/disentangling quantum circuit followed by measurement to infer class labels of data samples.
 The goal is to ensure classical characterization and storage of subject circuits, as well as hybrid quantum/classical training of the circuit parameters even for extremely large feature spaces.
 
