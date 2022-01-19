@@ -24,6 +24,8 @@
       href: install-python-optimization.md
     - name: Use a Binder environment
       href: install-binder-qdk.md
+  - name: Understanding job costs in Azure Quantum
+    href: microsoft.quantum.azure.job-costs
 - name: Quantum computing
   expanded: true
   items:
