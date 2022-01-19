@@ -2,7 +2,7 @@
 author: dphansen
 description: Learn how to create an Azure Quantum workspace.
 ms.author: davidph
-ms.date: 11/16/2021
+ms.date: 12/30/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -13,7 +13,7 @@ uid: microsoft.quantum.how-to.workspace
 
 # Create an Azure Quantum workspace
 
-Learn how to create an [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) workspace. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications. 
+Learn how to create an [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) workspace. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
 
 A workspace is needed to [get started with Jupyter notebooks in Azure Quantum](xref:microsoft.quantum.get-started.notebooks).
 
@@ -28,51 +28,42 @@ You need the following prerequisites to create a workspace.
 
 - You must be an **Owner** of the resource group you use, to create a new storage account. For more information about how resource groups work in Azure, see [Manage Azure Resource Manager resource groups by using the Azure portal](/azure/azure-resource-manager/management/manage-resource-groups-portal).
 
+> [!NOTE]
+> If you have any questions regarding the workspace creation process or run into any issue at any point using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Standard Time zone (PST).
+
 ## Create the workspace
+
+:::image type="content" source="media/create-quantum-workspace.gif" alt-text="Create Azure Quantum workspace.":::
 
 To create an Azure Quantum workspace, follow these steps.
 
 1. Sign in to the [Azure portal](https://portal.azure.com) by using the credentials for your Azure subscription.
 
-1. Select **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum (preview)** service.
+1. Select **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum** service.
 
-   ![Tile for the Azure Quantum (preview)
-   service](./media/azure-quantum-preview-search.png)
-
-1. Select **Azure Quantum (preview)** and then select  **Create**. This opens a form to create a workspace.
-
-   ![Create resource for the Azure Quantum (preview)
-   service](./media/azure-quantum-preview-create.png)
+1. Select **Azure Quantum** and then select  **Create**. This opens a form to create a workspace.
 
 1. Fill out the details of your workspace:
-   - **Subscription:** The subscription that you want to associate with this
-     workspace.
-   - **Resource group:** The resource group that you want to assign this workspace to.
+   - **Subscription:** The subscription that you want to associate with this workspace.
+   - **Resource group:** The [resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) that you want to assign this workspace to.
    - **Name:** The name of your workspace.
    - **Region:** The region for the workspace.
-   - **Storage Account**: The Azure storage account to store your jobs and results. If you don't have an existing storage account, select **Create a new storage account** and complete the necessary fields. For this preview, we recommend using the default values.
+   - **Storage Account**: The Azure storage account to store your jobs and results. If you don't have an existing storage account, select **Create a new storage account** and complete the necessary fields.
 
    > [!IMPORTANT]
    > You must be an **Owner** of the resource group you use, to create a new storage account. For more information about how resource groups work in Azure, see [Manage Azure Resource Manager resource groups by using the Azure portal](/azure/azure-resource-manager/management/manage-resource-groups-portal).
 
-   ![Properties for the Azure Quantum workspace](./media/azure-quantum-preview-properties.png)
-
-1. After completing the information, select the **Providers** tab to add providers to your workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
-
-   ![Providers for Azure Quantum](./media/azure-quantum-preview-providers-ms.png)
+1. After completing the information, select **Next** to the **Providers** tab. You can add providers to your workspace. A provider gives you access to a quantum service, which can be quantum hardware, a quantum simulator, or an optimization service.
 
    > [!NOTE]
    > By default, the Azure Quantum service adds the Microsoft QIO provider to every workspace.
 
-1. Select **Review + create**.
+1. Select **Next** and **Next**.
 
 1. Review the setting you've selected and if everything is correct, select **Create** to create your workspace.
 
     > [!NOTE]
     > Pricing for Azure Quantum varies by provider. Please consult the information in the Providers tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information, or visit the [Azure Quantum pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
-
-> [!NOTE]
-> If you have any questions regarding the workspace creation process or run into any issue at any point using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Standard Time zone (PST).
 
 ## Next steps
 
