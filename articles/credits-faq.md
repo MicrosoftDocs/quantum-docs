@@ -18,7 +18,7 @@ You can get free credit for use on quantum hardware through Azure. The Azure Qua
 
 There are two credit programs for Azure Quantum:
 
-1. The default credit grant is USD 500 equivalent, expressed in hardware credits. For more information on how to use these, see the [Azure Quantum credits section in Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace#azurequantumcredits).
+1. The default credit grant is USD 500 equivalent per provider, expressed in hardware credits. For more information on how to use these, see the [Azure Quantum credits section in Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace#azurequantumcredits).
 
 1. Microsoft also offers up to USD 10,000 in credits for use on quantum hardware. To receive this credit, you can apply for the [Azure Quantum Credits program](https://aka.ms/aq/credits).
 
