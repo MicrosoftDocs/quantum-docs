@@ -2,7 +2,7 @@
 author: martinro
 description: Learn about the licensing for using and contributing to the Microsoft Q# standard libraries - licensing and contributing.
 ms.author: martinro
-ms.date: 02/01/2021
+ms.date: 01/19/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
