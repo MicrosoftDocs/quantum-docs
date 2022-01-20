@@ -2,7 +2,7 @@
 author: martinro
 description: Learn about the licensing for using and contributing to the Microsoft Q# standard libraries - licensing and contributing.
 ms.author: martinro
-ms.date: 02/01/2021
+ms.date: 01/19/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -14,7 +14,7 @@ uid: microsoft.quantum.libraries.overview.licensing
 # Licensing #
 
 The Quantum Development Kit is provided with an extensive collection of open-source functions and operations, licensed under the [MIT license](https://github.com/Microsoft/Quantum/blob/main/LICENSE.txt).
-The portions of the standard library that are portable across target machines can be obtained from the [Microsoft/QuantumLibraries](https://github.com/Microsoft/QuantumLibraries) repository on GitHub, along with other libraries such as  and other libraries, such as the [quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview).
+The portions of the standard library that are portable across target machines can be obtained from the [Microsoft/QuantumLibraries](https://github.com/Microsoft/QuantumLibraries) repository on GitHub, along with other libraries, such as the [quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview).
 
 Microsoft's Quantum Development Kit also provides specialized library functions and operations that are licensed under a [Microsoft Research license](https://github.com/Microsoft/Quantum-NC/blob/main/LICENSE).
 These can be obtained from the [Microsoft/Quantum-NC](https://github.com/microsoft/quantum-nc) repository on GitHub.
