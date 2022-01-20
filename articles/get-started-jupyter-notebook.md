@@ -2,7 +2,7 @@
 author: dphansen
 description: Learn how to run a Q# or Python sample Jupyter notebook in an Azure Quantum workspace.
 ms.author: davidph
-ms.date: 12/31/2021
+ms.date: 01/18/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -12,6 +12,8 @@ uid: microsoft.quantum.get-started.notebooks
 ---
 
 # Get started with a Jupyter notebook and Q# in Azure Quantum
+
+[!INCLUDE [Azure Quantum credits banner](~/includes/azure-quantum-credits.md)]
 
 Learn how to run Q# code in a Jupyter notebook with [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview). A [Jupyter](https://jupyter.org/) notebook is a document that contains both rich text and code and can run in your browser, and can run Q# and Python code with Azure Quantum.
 
