@@ -2,7 +2,7 @@
 author: dphansen
 description: Learn how to create an Azure Quantum workspace.
 ms.author: davidph
-ms.date: 12/30/2021
+ms.date: 01/20/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -19,6 +19,12 @@ A workspace is needed to [get started with Jupyter notebooks in Azure Quantum](x
 
 > [!TIP]
 > You can also create an Azure Quantum workspace using the Azure command-line interface (CLI). For more information, see [Manage quantum workspaces with the Azure CLI](xref:microsoft.quantum.workspaces-cli).
+
+<a name="azurequantumcredits"></a>
+
+## Free Azure Quantum credits
+
+You can get a $500 USD (or equivalent) free credit for use with IonQ and Quantinuum hardware by selecting the **Azure Quantum Credits** plan when creating your workspace. If you need more credits, you may apply to the [https://aka.ms/aq/credits](Azure Quantum Credits program).
 
 ## Prerequisites
 
