@@ -96,16 +96,21 @@ print(result)
     b=1001100101100001000011011101000011010100010111100011001000100100010000001110010010101110110000011010, 1001100101100001000011011101000011010100010111100011001000100100010000001110010010101110110000011010
 ```
 
-## Estimate job price
+## Estimate job cost
 
-Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, run the following script:
+Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
 
 ```python
-cost = (cost_1q * N_1q + cost_2q * N_2q) * num_shots
-cost = max(cost, 1.0)
+cost = service.estimate_cost(
+    program=circuit,
+    repetitions=100,
+    target="ionq.qpu"
+)
+
+print(f"Estimated cost: {cost.estimated_total}")
 ```
 
-`N_1q` is the number of one-qubit gates, `N_2q` is the number of two-qubit gates, `cost_1q` is the cost of running a single one-qubit gate for one shot, `cost_2q` is the cost of running a single two-qubit gate for one shot, and `num_shots` is the number of shots.
+This prints the estimated cost in USD.
 
 For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
