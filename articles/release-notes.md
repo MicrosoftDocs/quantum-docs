@@ -21,7 +21,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ### QDK version 0.22.186910
 
-- The Full State Simulator has been migrated from the platform-specific compiler to Clang to fix this [GitHub issue](https://github.com/microsoft/qsharp-runtime/issues/876). 
+- The Full State Simulator has been migrated from the platform-specific compiler to Clang to fix [GitHub issue #876](https://github.com/microsoft/qsharp-runtime/issues/876). 
 - When submitting a job to Azure Quantum via the CLI, Python, IQ# and other Azure Quantum SDKs, the job details may include the cost estimate of the job (if supported by the provider). The final cost on your bill might be slightly different due to added taxes and currency conversion rates. 
 - You can now estimate the price of your job in azure-quantum package by using [estimate_cost](xref:microsoft.quantum.quickstarts.computing.provider#estimate-job-cost) for the target that you are using with the Qiskit, Cirq and pass-through feature.
 - The azure-quantum package now supports submitting Qiskit lists of length 1. 
