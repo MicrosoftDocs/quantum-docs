@@ -21,14 +21,14 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ### QDK version 0.22.xxxxxx
 
-- The Full State Simulator has been migrated from the platform-specific compiler to Clang to fix this GitHub Issue. 
+- The Full State Simulator has been migrated from the platform-specific compiler to Clang to fix this GitHub issue. 
 - When submitting a job to Azure Quantum via the CLI, Python, IQ# and other Azure Quantum SDKs, the job details may include the cost estimate of the job (if supported by the provider). The final cost on your bill might be slightly different due to added taxes and currency conversion rates. 
-- You can now estimate the price of your job in azure-quantum package by using [estimate_cost](/azure/quantum/quickstart-microsoft-provider-format?pivots=platform-ionq#estimate-job-cost) for the target that you are using with the Qiskit, Cirq and pass-through feature.
+- You can now estimate the price of your job in azure-quantum package by using [estimate_cost](xref:microsoft.quantum.quickstarts.computing.provider#estimate-job-cost) for the target that you are using with the Qiskit, Cirq and pass-through feature.
 - The azure-quantum package now supports submitting Qiskit lists of length 1. 
-- Fixed [issue#198](https://github.com/microsoft/qdk-python/issues/198) in azure-quantum package where the Qiskit jobs were causing incorrect results in circuits with helper qubits.
+- Fixed [GitHub issue #198](https://github.com/microsoft/qdk-python/issues/198) in the azure-quantum package where the Qiskit jobs were causing incorrect results in circuits with helper qubits.
 - In azure-quantum package, the perform_icm parameter of the 1QBit `PticmSolver` was deprecated, using it will now return a deprecation warning. A `seed` parameter was added to all other 1QBit solvers that specifies a random seed. 
-- Fixed an [issue](https://github.com/microsoft/qdk-python/issues/178) in azure-quantum package so errors returned by the Azure Quantum service when using the Qiskit or Cirq feature are now propagated up. 
-- Fixed an [issue](https://github.com/microsoft/qsharp-compiler/issues/1297) where IntelliSense information was not updated when the ExecutionTarget property was modified in the project file 
+- Fixed [GitHub issue #178](https://github.com/microsoft/qdk-python/issues/178) in the azure-quantum package so errors returned by the Azure Quantum service when using the Qiskit or Cirq feature are now propagated up. 
+- Fixed [GitHub issue #1297](https://github.com/microsoft/qsharp-compiler/issues/1297) where the IntelliSense information was not updated when the ExecutionTarget property was modified in the project file.
 
 ## 2021-12-14
 
