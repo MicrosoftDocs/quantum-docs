@@ -392,7 +392,7 @@ First, modify the `Perform3QubitQFT` operation to return an array of measurement
 Before allocating qubits (for example, before the `use` statement), declare and bind a three-element array (one `Result` for each qubit):
 
 ```qsharp
-        mutable resultArray = new Result[3];
+        mutable resultArray = [Zero, size=3];
 ```
 
 The `mutable` keyword prefacing `resultArray` allows the variable to be modified later in the code, for example, when adding your measurement results.
