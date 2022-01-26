@@ -392,7 +392,7 @@ First, modify the `Perform3QubitQFT` operation to return an array of measurement
 Before allocating qubits (for example, before the `use` statement), declare and bind a three-element array (one `Result` for each qubit):
 
 ```qsharp
-        mutable resultArray = new Result[3];
+        mutable resultArray = [Zero, size = 3];
 ```
 
 The `mutable` keyword prefacing `resultArray` allows the variable to be modified later in the code, for example, when adding your measurement results.
@@ -440,7 +440,7 @@ namespace NamespaceQFT {
     @EntryPoint()
     operation Perform3QubitQFT() : Result[] {
 
-        mutable resultArray = new Result[3];
+        mutable resultArray = [Zero, size = 3];
 
         use qs = Qubit[3];
 
@@ -707,7 +707,7 @@ Now, adjust your host program to call the name of your new operation, for exampl
 To see the real benefit of using the Q# library operations, change the number of qubits to something other than `3`:
 
 ```qsharp
-        mutable resultArray = new Result[4];
+        mutable resultArray = [Zero, size = 4];
 
         use qs = Qubit[4];
         //...
