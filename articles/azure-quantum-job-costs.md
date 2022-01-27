@@ -30,6 +30,8 @@ You may purchase Honeywell Quantum Credits through various plans. Go to the [Azu
 ### IonQ pricing
 IonQ charges based on the number of gates in your program, the complexity of the gates you use, and the number of shots. These units are called `qubit-gate-shots` and you can find more information about how these are calculated on the [IonQ Provider Page](xref:microsoft.quantum.providers.ionq).
 
+> Note: IonQ has minimum job costs. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
+
 IonQ pricing is based on a pay-as-you-go model with no monthly subscription fees. To see the current service costs, please go to the [Azure Portal](https://aka.ms/AQ/CreateWorkspace) and select the IonQ provider for the most up to date list of subscription plans available.
 
 ### 1QBit pricing
@@ -55,7 +57,7 @@ How to interpret the Cost Estimation table columns:
 - `Dimension`: This is the name of the dimension you are charged for by the provider. This represents an aspect of the job that you run that you are billed for.
 - `Unit Price`: This is the cost of one unit of the dimension.
 - `Consumed Units`: This is how many units of the dimension the job consumed.
-- `Billed Units`: This is how many units you were actually billed for. In some cases, this column may be less than _Consumed Units_ if the providers billing plan offers an amount of included free usage or is credits-based.
+- `Billed Units`: This is how many units you were actually billed for. In some cases, this column may be less than _Consumed Units_ if the providers billing plan offers an amount of included free usage or is credits-based. This column may also be less than _Consumed Units_ in the event that a provider has a minimum job cost and the actual units consumed were less than required to satisfy the requirement.
 - `Estimated Cost`: This is the estimated cost for this dimension, and equals `[Billed Units] * [Unit Price]`
 
 The total row at the bottom shows the total cost of all dimensions for processing the job.
