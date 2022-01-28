@@ -1,5 +1,5 @@
 ---
-author: bradben
+author: bradben 
 description: In this tutorial, you will build a Q# project that demonstrates Grover's search algorithm, one of the canonical quantum algorithms.
 ms.author: v-benbra
 ms.date: 12/01/2021
