@@ -1,5 +1,5 @@
 ---
-title: Theory of Grover's search algorithm
+title: Theory of Grover's search algorithm 
 description: Learn about the theory behind Grover's algorithm.
 author: bradben
 uid: microsoft.quantum.concepts.grovers
