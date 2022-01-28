@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: cjgronlund
 description: Learn how to develop a standalone Q# application and run it on a local simulator.
-ms.author: v-benbra
+ms.author: cgronlun
 ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: qdk
