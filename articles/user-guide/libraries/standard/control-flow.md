@@ -1,5 +1,5 @@
 ---
-author: QuantumWriter
+author: cjgronlund
 description: Learn about the flow control operations and functions in the Microsoft Q# standard library.
 ms.author: martinro
 ms.date: 02/01/2021

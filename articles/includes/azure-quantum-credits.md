@@ -1,6 +1,6 @@
 ---
-author: dphansen
-ms.author: davidph
+author: cjgronlund
+ms.author: cgronlun
 ms.prod: azure-quantum
 ms.topic: include
 ms.date: 12/30/2021

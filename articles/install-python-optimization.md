@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: cjgronlund
 description: Learn how to install the azure-quantum Python package to define optimization problems to run on Azure Quantum.
-ms.author: v-benbra
+ms.author: cgronlun
 ms.date: 11/04/2021
 ms.service: azure-quantum
 ms.subservice: qdk

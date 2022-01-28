@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: cjgronlund
 description: Learn the rules used to build multi-qubit states out of single-qubit states. Also learn about gate operations needed to form a many-qubit quantum computer.
-ms.author: v-benbra
+ms.author: cgronlun
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core
