@@ -1,5 +1,5 @@
 ---
-author: QuantumWriter
+author: QuantumWriter 
 description: Learn about using Dirac notation to represent quantum states and to simulate quantum operations.
 ms.author: v-benbra
 ms.date: 11/18/2021
