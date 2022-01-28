@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: cjgronlund
 description: Learn how quantum operations affect the states of open systems.
-ms.author: v-sonialopez
+ms.author: cgronlun
 ms.date: 11/16/2021
 ms.service: azure-quantum
 ms.subservice: core

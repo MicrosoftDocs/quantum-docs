@@ -1,5 +1,5 @@
 ---
-author: QuantumWriter
+author: cjgronlund
 description: Learn how to use error correcting codes in your Q# programs while protecting the state of the qubits.
 ms.author: martinro
 ms.date: 02/01/2021

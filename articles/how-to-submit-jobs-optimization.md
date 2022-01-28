@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: cjgronlund
 description: This document provides a basic guide to submit and run optimization jobs to Azure Quantum using Python and Jupyter Notebooks. 
-ms.author: v-sonialopez
+ms.author: cgronlun
 ms.date: 11/12/2021
 ms.service: azure-quantum
 ms.subservice: core
