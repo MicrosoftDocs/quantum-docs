@@ -1,8 +1,8 @@
 ---
 author: SoniaLopezBravo
 description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs or solve optimization problems in the cloud.
-ms.author: v-sonialopez
-ms.date: 12/01/2021
+ms.author: davidph
+ms.date: 01/27/2022
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
@@ -144,7 +144,7 @@ Azure Quantum offers some of the most compelling and diverse quantum resources a
 
 Choose the provider that best suits the characteristics of your problem and your needs. 
 
-- [Honeywell Quantum Solutions](https://www.honeywell.com/us/en/company/quantum): Trapped-ion system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurements.
+- [Quantinuum](https://www.quantinuum.com): Trapped-ion system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurements.
 - [IONQ](https://ionq.com/): Dynamically reconfigurable trapped-ion quantum computer for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
 - [Quantum Circuits, Inc](https://quantumcircuits.com/): Fast and high-fidelity system with powerful real-time feedback to enable error correction.
 

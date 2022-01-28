@@ -1,7 +1,7 @@
 ---
 author: guenp
 ms.author:  v-guenp
-ms.date: 01/21/2022
+ms.date: 01/27/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -59,7 +59,7 @@ print(service.targets())
 ## Run a simple circuit on the API validator
 
 > [!NOTE]
-> The [Honeywell API validator](xref:microsoft.quantum.providers.honeywell#api-validator) target will always return 0 on measurement.
+> The [Quantinuum API validator](xref:microsoft.quantum.providers.honeywell#api-validator) target will always return 0 on measurement.
 
 Next, create a simple Cirq circuit to run.
 
@@ -121,9 +121,9 @@ cost = service.estimate_cost(
 print(f"Estimated cost: {cost.estimated_total}")
 ```
 
-This prints the estimated cost in HQC, or "Honeywell Quantum Credits".
+This prints the estimated cost in HQC, or "H1 Quantum Credits".
 
-For the most current pricing details, see [Honeywell System Model H1](xref:microsoft.quantum.providers.honeywell#honeywell-system-model-h1), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
+For the most current pricing details, see [System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.honeywell#honeywell-system-model-h1), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
 
 ## Asynchronous workflow using Jobs

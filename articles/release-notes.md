@@ -2,7 +2,7 @@
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
 author: bradben
-ms.author: v-benbra
+ms.author: davidph
 ms.date: 01/26/2022
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -66,7 +66,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ### QDK version 0.19.2109.165653
 
-- Added support for submitting [Cirq](/azure/quantum/quickstart-microsoft-cirq) and [Qiskit](/azure/quantum/quickstart-microsoft-qiskit) circuits to IonQ and Honeywell.
+- Added support for submitting [Cirq](/azure/quantum/quickstart-microsoft-cirq) and [Qiskit](/azure/quantum/quickstart-microsoft-qiskit) circuits to IonQ and Quantinuum.
 - Conda packages have been moved from the quantum-engineering channel to the microsoft channel. When using conda to install the Quantum Development Kit for Q# notebook or Q# + Python usage, the `-c quantum-engineering` argument to conda should be changed to `-c microsoft`, and the `channels` section of environment.yml files should be updated. See the [getting started guide](xref:microsoft.quantum.install-qdk.overview) for the full install command using the new packages.
 - You can formulate PUBO and Ising problems using [squared linear terms](/azure/quantum/optimization-slc-term) natively on the PA and SSMC solvers.
 - Fixed [issue](https://github.com/microsoft/qsharp-compiler/issues/1089) with memory management and improved reliability for QIR generation: [1152](https://github.com/microsoft/qsharp-compiler/issues/1152) and [1086](https://github.com/microsoft/qsharp-compiler/issues/1086).
@@ -96,7 +96,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 - New [Workspace.get_targets()](xref:microsoft.quantum.optimization.workspace#workspaceget_targets) method in azure-quantum package that returns a list of all available targets. Can filter by Provider ID or Target ID.
 - An [issue](https://github.com/microsoft/iqsharp/issues/500) was resolved that prevented using IQ# or the `qsharp` Python package with Python 3.8 or 3.9 when using `conda`.
 - Fixed an [issue](https://github.com/microsoft/qsharp-compiler/issues/768) where nested Conditional blocks may be incorrectly lifted.
-- Resolved an [issue](https://github.com/microsoft/qsharp-compiler/issues/1112) where some code failed to compile previously for Honeywell target.
+- Resolved an [issue](https://github.com/microsoft/qsharp-compiler/issues/1112) where some code failed to compile previously for Quantinuum target.
 - Added an option where QIR generation isn't target specific.
 - Fixed a concurrency [bug](https://github.com/microsoft/qsharp-runtime/pull/798) that could cause intermittent crashes if multiple simulator instances are run in the same process.
 - Released Az CLI quantum extension version 0.7.0:
@@ -212,7 +212,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ### QDK version 0.15.2101.126940
 
-- Added project templates to Q# compiler for executables targeting IonQ and Honeywell providers
+- Added project templates to Q# compiler for executables targeting IonQ and Quantinuum providers
 - Update IQ# kernel syntax highlighting to include changes to Q# syntax introduced in version [0.15.2101125897](#qdk-version-0152101125897)
 - Bugfix to support passing arrays as input arguments to Q# programs submitted to Azure Quantum via `%azure.execute`, see issue [#401](https://github.com/microsoft/iqsharp/issues/401)
 - Fix "Permission denied" error when using `az` in `iqsharp-base` Docker images, see issue [#404](https://github.com/microsoft/iqsharp/issues/404)
