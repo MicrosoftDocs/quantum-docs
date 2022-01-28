@@ -25,7 +25,7 @@
     - name: Use a Binder environment
       href: install-binder-qdk.md
   - name: Understanding job costs in Azure Quantum
-    href: microsoft.quantum.azure.job-costs
+    href: azure-quantum-job-costs.md
 - name: Quantum computing
   expanded: true
   items:

@@ -2,7 +2,7 @@
 author: mobius5150
 description: Understand the job cost reporting functionality in Azure Quantum.
 ms.author: mblouin
-ms.date: 11/11/2021
+ms.date: 01/28/2021
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: conceptual
