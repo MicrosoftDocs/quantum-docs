@@ -1,5 +1,5 @@
 ---
-author: QuantumWriter
+author: cjgronlund
 description: Learn about fundamental quantum computing algorithms, including amplitude amplification, Fourier transform, Draper and Beauregard adders, and phase estimation.
 ms.author: martinro
 ms.date: 02/01/2021

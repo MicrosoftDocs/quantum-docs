@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: cjgronlund
 description: Describes how to update your Q# programming language projects and the Quantum Development Kit (QDK) to the current version.
-ms.author: v-benbra
+ms.author: cgronlun
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk

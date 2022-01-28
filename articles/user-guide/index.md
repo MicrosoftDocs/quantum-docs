@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: cjgronlund
 description: A guide to the Q# programming language, the Q# libraries, and how to develop quantum programs.
-ms.author: v-sonialopez
+ms.author: cgronlun
 ms.date: 11/05/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

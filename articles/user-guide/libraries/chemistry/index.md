@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: cjgronlund
 description: Learn about the Microsoft Quantum Chemistry Library and how it is used to simulate electronic structure problems on quantum computers.
-ms.author: v-sonialopez
+ms.author: cgronlun
 ms.date: 10/22/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
