@@ -3,7 +3,7 @@ title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
 author: bradben
 ms.author: v-benbra
-ms.date: 01/26/2022
+ms.date: 01/28/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
