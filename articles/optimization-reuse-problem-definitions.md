@@ -1,7 +1,7 @@
 ---
 author: cjgronlund
 description: This document provides a basic guide to reusing a problem definition when solving problems in Azure Quantum using Python.
-ms.author: kitty
+ms.author: cgronlun
 ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: optimization
