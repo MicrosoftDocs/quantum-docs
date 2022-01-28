@@ -1,5 +1,5 @@
 ---
-author: KittyYeungQ
+author: cjgronlund
 description: This article gives an overview of the valid input formats when submitting optimization problems.
 ms.author: kitty
 ms.date: 09/09/2021

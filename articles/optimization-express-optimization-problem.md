@@ -1,5 +1,5 @@
 ---
-author: KittyYeungQ
+author: cjgronlund
 description: This document provides a basic guide to express an optimization problem that could be later used with a solver in Azure Quantum.
 ms.author: kitty
 ms.date: 10/25/2021

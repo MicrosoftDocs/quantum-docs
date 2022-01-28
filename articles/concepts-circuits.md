@@ -1,7 +1,7 @@
 ---
-author: QuantumWriter
+author: cjgronlund
 description: Learn how to visually represent simple and complex quantum operations with quantum circuit diagrams.
-ms.author: v-benbra
+ms.author: cgronlun
 ms.date: 10/04/2021
 ms.service: azure-quantum
 ms.subservice: core

@@ -1,5 +1,5 @@
 ---
-author: KittyYeungQ
+author: cjgronlund
 description: This document provides the technical details of the Microsoft QIO provider
 ms.author: kitty
 ms.date: 10/25/2021

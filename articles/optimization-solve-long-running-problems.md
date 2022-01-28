@@ -1,5 +1,5 @@
 ---
-author: KittyYeungQ
+author: cjgronlund
 description: This document provides a basic guide to solving long-running problems in Azure Quantum using Python.
 ms.author: kitty
 ms.date: 10/25/2021

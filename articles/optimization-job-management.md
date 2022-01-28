@@ -1,5 +1,5 @@
 ---
-author: KittyYeungQ
+author: cjgronlund
 description: This article provides a basic guide to managing jobs submitted for solving optimization problems in Azure Quantum using Python.
 ms.author: kitty
 ms.date: 08/12/2021

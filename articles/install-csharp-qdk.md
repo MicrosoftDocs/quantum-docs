@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: cjgronlund
 description: Learn how to create a Q# application using .NET languages. Q# is built to work well with .NET languages such as C# and F#.
-ms.author: v-benbra
+ms.author: cgronlun
 ms.date: 01/10/2021
 ms.service: azure-quantum
 ms.subservice: qdk
