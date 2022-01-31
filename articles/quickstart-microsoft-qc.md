@@ -2,7 +2,7 @@
 author: mblouin
 description: This document provides a step-by-step guide to get you started with quantum computing on Azure Quantum
 ms.author: mblouin
-ms.date: 06/24/2021
+ms.date: 01/27/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: quickstart
@@ -22,9 +22,9 @@ Learn how to use Azure Quantum to create a simple quantum-based random number ge
 ::: zone-end
 
 
-::: zone pivot="platform-honeywell"
+::: zone pivot="platform-quantinuum"
 
-[!INCLUDE [honeywell-procedure](includes/quickstart-qc-include-honeywell.md)]
+[!INCLUDE [quantinuum-procedure](includes/quickstart-qc-include-honeywell.md)]
 
 ::: zone-end
 
