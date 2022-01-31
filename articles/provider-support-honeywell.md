@@ -24,12 +24,12 @@ The goal of Support is to identify and remedy defects or malfunctions causing th
 
 ### 1.1	Contacting Technical Support within Quantinuum
 
-To create a support request with Quantinuum, submit an incident report via email to HoneywellAzureQuantumSupport@Honeywell.com. The on-call engineer will respond within the appropriate SLA (Table 2). Note that only incident reports that contain all of the following information will notify the Quantinuum team and have the appropriate SLA resolution window. Reports without the necessary information will not trigger this response. All requests must be provided in the English language and will be answered in the English language.
+To create a support request with Quantinuum, submit an incident report via email to <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a>. The on-call engineer will respond within the appropriate SLA (Table 2). Note that only incident reports that contain all of the following information will notify the Quantinuum team and have the appropriate SLA resolution window. Reports without the necessary information will not trigger this response. All requests must be provided in the English language and will be answered in the English language.
 
 _Table 1: Support Contact information and Standard Operating Hours_
 | Email | Standard Operating Hours |
 | - | - |
-| <a href="mailto:HoneywellAzureQuantumSupport@Honeywell.com">HoneywellAzureQuantumSupport@Honeywell.com</a> | 8am – 5pm MST on Business Days<sup>1</sup> |
+| <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a> | 8am – 5pm MST on Business Days<sup>1</sup> |
 
 _<sup>1</sup> “Business Days” means Monday to Friday but excluding national, legal, or bank holidays._
 
@@ -43,7 +43,7 @@ Once a report is filed, the Quantinuum team will be notified and will respond wi
 
 During Reserved (dedicated) Sessions, Quantinuum will provide at least one quantum specialist available to you for customer support for the entirety of your dedicated session. Quantinuum reserves the right to change out the specialist during your session, but will use commercially reasonable efforts to ensure the new specialist is prepared to continue providing support.     
 
-During Queued Runs, if your job is running in the general queue and you encounter an issue, you may submit your issue request online at: <a href="mailto:HoneywellAzureQuantumSupport@Honeywell.com">HoneywellAzureQuantumSupport@Honeywell.com</a>. You can expect to receive an answer within three (3) business days.  
+During Queued Runs, if your job is running in the general queue and you encounter an issue, you may submit your issue request online at: <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a>. You can expect to receive an answer within three (3) business days.  
 
 ### 1.2	Quantinuum severity index and response SLA
 
