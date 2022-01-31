@@ -1,7 +1,7 @@
 ---
-author: QuantumWriter
+author: cjgronlund
 description: Learn about the history of quantum computing, some background describing how it works, and about the Quantum Development Kit (QDK).
-ms.author: v-benbra
+ms.author: cgronlun
 ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: core

@@ -1,7 +1,7 @@
 ---
-author: dphansen
+author: cjgronlund
 description: This document provides the technical details of the IonQ provider
-ms.author: davidph
+ms.author: cgronlun
 ms.date: 12/01/2021
 ms.service: azure-quantum
 ms.subservice: computing

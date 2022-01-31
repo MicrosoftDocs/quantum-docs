@@ -1,7 +1,7 @@
 ---
-author: QuantumWriter
+author: cjgronlund
 description: Describes the quantum simulators available as target machines for Q# programs.
-ms.author: v-benbra
+ms.author: cgronlun
 ms.date: 10/05/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
