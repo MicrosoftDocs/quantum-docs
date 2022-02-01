@@ -1,8 +1,8 @@
 ---
-author: SoniaLopezBravo
+author: cjgronlund
 description: Learn how quantum computing works, how it compares to classical computing, and how it uses the principles of quantum mechanics.
-ms.author: v-sonialopez
-ms.date: 12/08/2021
+ms.date: 01/27/2022
+ms.author: cgronlun
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
@@ -148,7 +148,7 @@ Measuring the result of the computation tells us an answer, but for some quantum
 
 Microsoft is partnering with quantum hardware companies to provide developers with cloud access to quantum hardware. Leveraging the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) platform and the Q# language, developers will be able to explore quantum algorithms and run their quantum programs on different types of quantum hardware.
 
-- [Honeywell Quantum Solutions](https://www.honeywell.com/us/en/company/quantum): **Trapped-ion** system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurements.
+- [Quantinuum](https://www.quantinuum.com): **Trapped-ion** system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurements.
 - [IONQ](https://ionq.com/): Dynamically reconfigurable **trapped-ion** quantum computer for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
 - [Quantum Circuits, Inc](https://quantumcircuits.com/): Fast and high-fidelity **superconducting circuits** with powerful real-time feedback to enable error correction.
 

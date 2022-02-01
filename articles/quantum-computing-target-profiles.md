@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: cjgronlund
 description: This document provides an overview of targets and target profile types in Azure Quantum.
-ms.author: v-benbra
-ms.date: 06/24/2021
+ms.date: 01/27/2022
+ms.author: cgronlun
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -74,6 +74,6 @@ some limitations.
 
 Presently, these Basic Measurement Feedback targets are available for Azure Quantum:
 
-- **Provider:** Honeywell
+- **Provider:** Quantinuum
   - Honeywell System Model H0 (`honeywell.hqs-lt-1.0`)
   - Honeywell System Model H1 (`honeywell.hqs-lt-s1`)

@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: cjgronlund
 description: Overview of the standard, chemistry, numerics, and machine learning libraries included in the Quantum Development Kit (QDK).
-ms.author: v-sonialopez
+ms.author: cgronlun
 ms.date: 10/22/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

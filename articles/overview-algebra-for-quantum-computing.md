@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: cjgronlund
 description: Learn what basic linear algebra concepts are needed to understand quantum computing
-ms.author: v-benbra
+ms.author: cgronlun
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
