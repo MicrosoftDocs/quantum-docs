@@ -109,11 +109,11 @@
           href: provider-ionq.md
         - name: IonQ support policy
           href: provider-support-ionq.md
-      - name: Honeywell
+      - name: Quantinuum
         items:
-        - name: Honeywell provider & targets
+        - name: Quantinuum provider & targets
           href: provider-honeywell.md
-        - name: Honeywell support policy
+        - name: Quantinuum support policy
           href: provider-support-honeywell.md
     - name: Samples for using Azure Quantum Computing >>
       href: https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum
