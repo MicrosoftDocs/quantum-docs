@@ -1,7 +1,7 @@
 ---
 author: guenp
 ms.author:  v-guenp
-ms.date: 01/21/2022
+ms.date: 01/27/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -34,10 +34,10 @@ workspace = Workspace(
 )
 ```
 
-## Submit a quantum circuit to the Honeywell API validator
+## Submit a quantum circuit to the Quantinuum API validator
 
 > [!NOTE]
-> The [Honeywell API validator](xref:microsoft.quantum.providers.honeywell#api-validator) target will always return 0 on measurement.
+> The [Quantinuum API validator](xref:microsoft.quantum.providers.honeywell#api-validator) target will always return 0 on measurement.
 
 1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For example, the following example creates a Teleportation circuit:
 
@@ -62,7 +62,7 @@ workspace = Workspace(
         circuit = f.read()
     ```
 
-1. Submit the circuit to the Honeywell target. The following example uses the Honeywell API validator, which returns a `Job` object. For more information, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference).
+1. Submit the circuit to the Quantinuum target. The following example uses the Quantinuum API validator, which returns a `Job` object. For more information, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference).
 
     ```python
     target = workspace.get_targets(name="honeywell.hqs-lt-s1-apival")
@@ -98,7 +98,7 @@ workspace = Workspace(
     pl.xlabel("Bitstring")
     ```
 
-![Honeywell job output](../media/honeywell-results.png)
+![Quantinuum job output](../media/honeywell-results.png)
 
 
 ## Estimate job cost
@@ -112,6 +112,6 @@ cost = target.estimate_cost(circuit, num_shots=500)
 print(f"Estimated cost: {cost.estimated_total}")
 ```
 
-This prints the estimated cost in HQC, or "Honeywell Quantum Credits".
+This prints the estimated cost in HQC, or "H1 Quantum Credits".
 
-For the most current pricing details, see [Honeywell System Model H1](xref:microsoft.quantum.providers.honeywell#honeywell-system-model-h1), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
+For the most current pricing details, see [System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.honeywell#honeywell-system-model-h1), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
