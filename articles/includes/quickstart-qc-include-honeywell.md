@@ -1,7 +1,7 @@
 ---
 author: mblouin
 ms.author: mblouin
-ms.date: 11/16/2021
+ms.date: 01/27/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -15,7 +15,7 @@ To complete this tutorial, you need
 - [Visual Studio Code](https://code.visualstudio.com/download), which you can download and use for free.
 - The [Microsoft QDK for VS Code extension](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 - The [Azure CLI and the quantum CLI extension](xref:microsoft.quantum.install-qdk.overview.standalone#azure-cli-net-core-sdk-31-not-required).
-- An Azure Quantum workspace with the **Honeywell** provider enabled. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- An Azure Quantum workspace with the **Quantinuum** provider enabled. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Create a Q# project in Visual Studio Code
 
@@ -31,7 +31,7 @@ To complete this tutorial, you need
 
 1. You should see two files: the project file and **Program.qs**, which contains starter code. Open **Program.qs**.
 
-1. Start by opening the **QuantumRNG.csproj** file and adding the `ExecutionTarget` property, which will give you design-time feedback on the compatibility of your program for Honeywell's hardware.
+1. Start by opening the **QuantumRNG.csproj** file and adding the `ExecutionTarget` property, which will give you design-time feedback on the compatibility of your program for Quantinuum's hardware.
 
 ```xml
 <Project Sdk="Microsoft.Quantum.Sdk/0.17.2105143879">
@@ -107,8 +107,8 @@ Next, we'll prepare your environment to run the program against the workspace yo
    ```output
    Provider    Target-id                                       Current Availability  Average Queue Time
    ----------  ----------------------------------------------  --------------------  --------------------
-   honeywell   honeywell.hqs-lt-1.0                            Available             0
-   honeywell   honeywell.hqs-lt-1.0-apival                     Available             0
+   Quantinuum   honeywell.hqs-lt-1.0                            Available             0
+   Quantinuum   honeywell.hqs-lt-1.0-apival                     Available             0
    ```
 
 

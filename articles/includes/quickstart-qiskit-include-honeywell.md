@@ -1,7 +1,7 @@
 ---
 author: guenp
 ms.author:  v-guenp
-ms.date: 01/21/2022
+ms.date: 01/27/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -53,10 +53,10 @@ print([backend.name() for backend in provider.backends()])
 ## Run on the API validator 
 
 > [!NOTE]
-> The [Honeywell API validator](xref:microsoft.quantum.providers.honeywell#api-validator) backend will always return 0 on measurement.
+> The [Quantinuum API validator](xref:microsoft.quantum.providers.honeywell#api-validator) backend will always return 0 on measurement.
 
 ```python
-# Get Honeywell's API validator backend:
+# Get Quantinuum's API validator backend:
 apival_backend = provider.get_backend("honeywell.hqs-lt-s1-apival")
 ```
 
@@ -110,7 +110,7 @@ Result(backend_name='honeywell.hqs-lt-s1-apival', backend_version='1', qobj_id='
 {'000': 1024, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
 ```
 
-![Qiskit circuit result on Honeywell API validator](../media/azure-quantum-qiskit-hw-result-1.png)
+![Qiskit circuit result on Quantinuum API validator](../media/azure-quantum-qiskit-hw-result-1.png)
 
 
 ## Estimate job cost
@@ -124,20 +124,20 @@ cost = qpu_backend.estimate_cost(circuit, count=1024)
 print(f"Estimated cost: {cost.estimated_total}")
 ```
 
-This prints the estimated cost in HQC, or "Honeywell Quantum Credits".
+This prints the estimated cost in HQC, or "H1 Quantum Credits".
 
-For the most current pricing details, see [Honeywell System Model H1](xref:microsoft.quantum.providers.honeywell#honeywell-system-model-h1), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
+For the most current pricing details, see [System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.honeywell#honeywell-system-model-h1), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
 
-## Run on a Honeywell QPU 
+## Run on a Quantinuum QPU 
 
-After running successfully on the API validator, you can run your job on one of Honeywell's hardware processors (a [Quantum Processor Unit](xref:microsoft.quantum.target-profiles#quantum-processing-units-qpu-different-profiles) (QPU)).
+After running successfully on the API validator, you can run your job on one of Quantinuum's hardware processors (a [Quantum Processor Unit](xref:microsoft.quantum.target-profiles#quantum-processing-units-qpu-different-profiles) (QPU)).
 
 > [!NOTE] 
 > The time required to run a circuit on the QPU may vary depending on current queue times.
 
 ```python
-# Get Honeywell's QPU backend:
+# Get Quantinuum's QPU backend:
 qpu_backend = provider.get_backend("honeywell.hqs-lt-s1")
 ```
 
@@ -171,5 +171,5 @@ Result(backend_name='honeywell.hqs-lt-s1-apival', backend_version='1', qobj_id='
 {'000': 500, '001': 1, '010': 5, '011': 16, '100': 17, '101': 6, '110': 8, '111': 471}
 ```
 
-![Qiskit circuit result on Honeywell QPU](../media/azure-quantum-qiskit-hw-result-2.png)
+![Qiskit circuit result on Quantinuum QPU](../media/azure-quantum-qiskit-hw-result-2.png)
 
