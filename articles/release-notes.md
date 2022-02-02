@@ -1,9 +1,9 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
+ms.date: 02/01/2022
 author: cjgronlund
 ms.author: cgronlun
-ms.date: 01/26/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
@@ -16,6 +16,15 @@ uid: microsoft.quantum.relnotes-qdk
 In this article, learn about updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview).
 
 For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For update instructions, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
+
+## 2022-02-01
+
+### QDK version 0.22.189218-beta (Preview)
+
+- Adding support for .NET 6.0 to the Quantum Development Kit.
+- Updating the minimum required version for the Quantum Development Kit extensions to .NET 6.0.
+- Q# Compiler uses LLVM 13 binaries for producing QIR.
+- Released [Microsoft Quantum Development Kit for Visual Studio Code .NET 6 Preview](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode-net6).
 
 ## 2022-01-26
 
