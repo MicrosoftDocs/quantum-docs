@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 01/28/2022
+ms.date: 02/01/2022
 author: cjgronlund
 ms.author: cgronlun
 ms.service: azure-quantum
@@ -17,9 +17,9 @@ In this article, learn about updates to the [Quantum Development Kit (QDK)](xref
 
 For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For update instructions, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
-## 2022-01-27
+## 2022-02-01
 
-### QDK version 0.22.188119-beta (Preview)
+### QDK version 0.22.189218-beta (Preview)
 
 - Adding support for .NET 6.0 to the Quantum Development Kit.
 - Updating the minimum required version for the Quantum Development Kit extensions to .NET 6.0.
