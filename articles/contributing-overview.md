@@ -55,6 +55,7 @@ Each of these different pieces finds its home on a different repository, so the 
 - [**microsoft/qsharp-compiler**](https://github.com/microsoft/qsharp-compiler): The Q# compiler, Visual Studio extension, and Visual Studio Code extension.
 - [**microsoft/qsharp-runtime**](https://github.com/microsoft/qsharp-runtime): Simulation framework, code generation, and simulation target machines for the Quantum Development Kit.
 - [**microsoft/iqsharp**](https://github.com/microsoft/iqsharp): Jupyter kernel and Python host functionality for Q#, as well as Docker images for using IQ# in cloud environments.
+- [**microsoft/qdk-python**](https://github.com/microsoft/qdk-python): Python packages `qdk` and `azure-quantum`.
 - [**microsoft/qsharp-language**](https://github.com/microsoft/qsharp-language): This is where new Q# features are developed and specified, and where you can share ideas and suggestions about the future evolution of the Q# language and core libraries.
 - [**MicrosoftDocs/quantum-docs**](https://github.com/MicrosoftDocs/quantum-docs): Source code for the documentation published at [docs.microsoft.com](xref:microsoft.quantum.azure-quantum-overview).
 
@@ -64,6 +65,7 @@ Each of these different pieces finds its home on a different repository, so the 
 There are also a few other, more specialized repositories focusing on auxiliary functionality related to the Quantum Development Kit.
 
 - [**msr-quarc/qsharp.sty**](https://github.com/msr-quarc/qsharp.sty): LaTeX formatting support for Q# syntax.
+- [**microsoft/quantum-viz.js**](https://github.com/microsoft/quantum-viz.js): A tool for rendering quantum circuits using pure HTML, used in Q# Jupyter Notebooks.
 
 ## Next steps
 
