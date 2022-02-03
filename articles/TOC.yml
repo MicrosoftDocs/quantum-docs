@@ -254,6 +254,8 @@
     href: https://docs.microsoft.com/cli/azure/ext/quantum/quantum
   - name: Contributing to the Quantum Development Kit
     items:
+    - name: Contributing to the QDK
+      href: contributing-overview.md
     - name: Reporting bugs
       href: contributing-reporting-bugs.md
     - name: Improving documentation
