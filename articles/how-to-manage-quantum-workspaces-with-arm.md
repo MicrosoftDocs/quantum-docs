@@ -23,7 +23,7 @@ Before you begin, you must have an Azure account with an active subscription. [C
 
 ### Editor
 
-To create ARM or Bicep templates, you need a good editor. We recommend Visual Studio Code with the Resource Manager Tools extension. If you need to install these tools, see [Quickstart: Create ARM templates with Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
+To create ARM or Bicep templates, you need a good editor. We recommend Visual Studio Code with the Resource Manager Tools extension. If you need to install these tools, see [Quickstart: Create ARM templates with Visual Studio Code](/azure/azure-resource-manager/templates/quickstart-create-templates-use-visual-studio-code).
 
 ### Command-line deployment
 
@@ -352,13 +352,6 @@ az group delete --name ExampleResourceGroup
 ```azurepowershell
 Remove-AzResourceGroup -Name ExampleResourceGroup
 ```
-
-# [Portal](#tab/portal)
-
-1. From the Azure portal, select Resource group from the left menu.
-1. Enter the resource group name in the Filter by name field.
-1. Select the resource group name.
-1. Select Delete resource group from the top menu.
 
 ---
 
