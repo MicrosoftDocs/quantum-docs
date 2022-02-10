@@ -73,7 +73,7 @@ When you deploy a template, you specify a resource group that will contain the q
 ```azurecli
 az group create \
   --name myResourceGroup \
-  --location "Central US"
+  --location "East US"
 ```
 
 # [PowerShell](#tab/azure-powershell)
@@ -81,7 +81,7 @@ az group create \
 ```azurepowershell
 New-AzResourceGroup `
   -Name myResourceGroup `
-  -Location "Central US"
+  -Location "East US"
 ```
 
 ---
@@ -305,8 +305,8 @@ templateFile="{provide-the-path-to-the-template-file}"
 az deployment group create \
   --name blanktemplate \
   --resource-group myResourceGroup \
-  --template-file $templateFile
-  --parameters appName={provide-app-name} location={provide-location}
+  --template-file $templateFile \
+  --parameters appName="{provide-app-name}" location="{provide-location}"
 ```
 
 # [PowerShell](#tab/azure-powershell)
@@ -316,9 +316,9 @@ $templateFile = "{provide-the-path-to-the-template-file}"
 New-AzResourceGroupDeployment `
   -Name blanktemplate `
   -ResourceGroupName myResourceGroup `
-  -TemplateFile $templateFile
-  -appName={provide-app-name}
-  -location={provide-location}
+  -TemplateFile $templateFile `
+  -appName="{provide-app-name}" `
+  -location="{provide-location}"
 ```
 
 ---
@@ -344,13 +344,13 @@ If you no longer need the quantum workspace, you might want to delete the resour
 # [Azure CLI](#tab/azure-cli)
 
 ```azurecli
-az group delete --name ExampleResourceGroup
+az group delete --name myResourceGroup
 ```
 
 # [PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
-Remove-AzResourceGroup -Name ExampleResourceGroup
+Remove-AzResourceGroup -Name myResourceGroup
 ```
 
 ---
