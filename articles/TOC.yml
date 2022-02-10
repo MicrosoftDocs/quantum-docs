@@ -237,7 +237,7 @@
     - name: Work with Azure Quantum using the Azure CLI 
       href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
     - name: Work with Azure Quantum using the Azure Resource Manager 
-      href: how-to-manage-quantum-workspaces-with-arm.md
+      href: how-to-manage-quantum-workspaces-with-azure-resource-manager.md
 - name: Resources
   items:
   - name: Glossary

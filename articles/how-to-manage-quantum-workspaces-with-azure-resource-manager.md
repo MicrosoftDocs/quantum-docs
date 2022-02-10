@@ -1,6 +1,6 @@
 ---
 title: Manage quantum workspaces with the Azure Resource Manager
-description: This guide shows you how to create and delete quantum workspaces using the Azure Resource Manager (ARM and Bicep). 
+description: This guide shows you how to create and delete quantum workspaces using the Azure Resource Manager. 
 author: hsirtl
 ms.author: hsirtl
 ms.service: azure-quantum
@@ -9,7 +9,7 @@ ms.date: 02/10/2022
 ms.custom: template-how-to
 ---
 
-# Manage quantum workspaces with the Azure Resource Manager (ARM & Bicep)
+# Manage quantum workspaces with the Azure Resource Manager
 
 In this guide, learn to use an Azure Resource Manager template (ARM template) or a Bicep template to create Azure Quantum workspaces and the required resource groups and storage accounts. After template deployment, you can start running your quantum applications in Azure Quantum. Treating your infrastructure as code enables you to track changes to your infrastructure requirements and makes your deployments more consistent and repeatable.
 
@@ -290,7 +290,7 @@ Both templates generate following output. You can use these values later to iden
 
 ## Deploy the template
 
-To deploy the template, use either Azure CLI or Azure PowerShell. Use the resource group you created. Give a name to the deployment so you can easily identify it in the deployment history. Replace `{provide-the-path-to-the-template-file}` and the curly braces `{}` with the path to your template file. Furthermore, replace `{provide-app-name}` and `{provide-location}` with values for the overall application name and the location where the workspace should reside. Please note that the app name should only contain letters.
+To deploy the template, use either Azure CLI or Azure PowerShell. Use the resource group you created. Give a name to the deployment so you can easily identify it in the deployment history. Replace `{provide-the-path-to-the-template-file}` and the curly braces `{}` with the path to your template file. Furthermore, replace `{provide-app-name}` and `{provide-location}` with values for the overall application name and the location where the workspace should reside. The app name should only contain letters.
 
 # [Azure CLI](#tab/azure-cli)
 
@@ -357,4 +357,4 @@ Remove-AzResourceGroup -Name myResourceGroup
 ## Next steps
 
 Now that you can create and delete workspaces, learn about the different [targets to run quantum algorithms in Azure Quantum](xref:microsoft.quantum.reference.qio-target-list).
-You now also have the tools to do workspace deployments from within [Azure DevOps pipelines](/azure/azure-resource-manager/templates/add-template-to-azure-pipelines) or [GitHub Actions](/azure/azure-resource-manager/templates/deploy-github-actions).
+You now also have the tools to do workspace deployments from within [Azure Pipelines](/azure/azure-resource-manager/templates/add-template-to-azure-pipelines) or [GitHub Actions](/azure/azure-resource-manager/templates/deploy-github-actions).
