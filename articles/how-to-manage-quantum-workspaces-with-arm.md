@@ -71,17 +71,13 @@ When you deploy a template, you specify a resource group that will contain the q
 # [Azure CLI](#tab/azure-cli)
 
 ```azurecli
-az group create \
-  --name myResourceGroup \
-  --location "East US"
+az group create --name myResourceGroup --location "East US"
 ```
 
 # [PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
-New-AzResourceGroup `
-  -Name myResourceGroup `
-  -Location "East US"
+New-AzResourceGroup -Name myResourceGroup -Location "East US"
 ```
 
 ---
@@ -294,7 +290,7 @@ Both templates generate following output. You can use these values later to iden
 
 ## Deploy the template
 
-To deploy the template, use either Azure CLI or Azure PowerShell. Use the resource group you created. Give a name to the deployment so you can easily identify it in the deployment history. Replace `{provide-the-path-to-the-template-file}` and the curly braces `{}` with the path to your template file. Furthermore, replace `{provide-app-name}` and `{provide-location}` with values for the overall application name and the location where the workspace should reside.
+To deploy the template, use either Azure CLI or Azure PowerShell. Use the resource group you created. Give a name to the deployment so you can easily identify it in the deployment history. Replace `{provide-the-path-to-the-template-file}` and the curly braces `{}` with the path to your template file. Furthermore, replace `{provide-app-name}` and `{provide-location}` with values for the overall application name and the location where the workspace should reside. Please note that the app name should only contain letters.
 
 # [Azure CLI](#tab/azure-cli)
 
@@ -303,7 +299,7 @@ To run this deployment command, you must have the [latest version](/cli/azure/in
 ```azurecli
 templateFile="{provide-the-path-to-the-template-file}"
 az deployment group create \
-  --name blanktemplate \
+  --name myDeployment \
   --resource-group myResourceGroup \
   --template-file $templateFile \
   --parameters appName="{provide-app-name}" location="{provide-location}"
@@ -314,7 +310,7 @@ az deployment group create \
 ```azurepowershell
 $templateFile = "{provide-the-path-to-the-template-file}"
 New-AzResourceGroupDeployment `
-  -Name blanktemplate `
+  -Name myDeployment `
   -ResourceGroupName myResourceGroup `
   -TemplateFile $templateFile `
   -appName="{provide-app-name}" `
@@ -324,6 +320,9 @@ New-AzResourceGroupDeployment `
 ---
 
 The deployment command returns results. Look for `ProvisioningState` to see whether the deployment succeeded.
+
+> [!IMPORTANT]
+> In some cases you might get a deployment error (Code: PrincipalNotFound). Reason for this is that the workspace principal was not created yet when the resource manager tried to configure the role assignment. If this is the case, just repeat the deployment. It should succeed in the second run.
 
 ## Validate the deployment
 
