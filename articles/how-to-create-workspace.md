@@ -81,6 +81,8 @@ Select the payment plan you'd like to use and click "Add".
 
 <img width="831" alt="Screen Shot 2022-02-11 at 11 21 51 AM" src="https://user-images.githubusercontent.com/4041805/153656142-013d0161-6d00-4eda-84ef-dbb7e47b7c4b.png">
 
+Now, the provider will be added to your Quantum Workspace. It may take several minutes before it becomes available.
+
 ## Next steps
 
 - [Get started with Jupyter notebooks in Azure Quantum](xref:microsoft.quantum.get-started.notebooks)
