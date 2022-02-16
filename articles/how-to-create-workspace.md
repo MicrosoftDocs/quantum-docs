@@ -79,7 +79,7 @@ To create an Azure Quantum workspace, follow these steps.
 
 2. Select the payment plan you'd like to use and click **Add**.
 
-<img width="831" alt="Screen shot showing how to select a provider to add to a Quantum Workspace" src="media/add-provider-2.png">
+<img width="831" alt="Screen shot showing how to select a provider SKU (Stock-keeping-Unit) to add to a Quantum Workspace" src="media/add-provider-2.png">
 
 The provider is added to your Quantum workspace. It may take several minutes before it becomes available.
 
