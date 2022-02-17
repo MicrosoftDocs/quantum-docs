@@ -24,6 +24,16 @@ There are some processes that you can run on Azure Quantum that use Python witho
    ```Shell
    pip install --upgrade azure-quantum
    ```
+   To install the optional dependencies required to submit Qiskit programs, install using the `[qiskit]` tag:
+
+   ```Shell
+   pip install --upgrade azure-quantum[qiskit]
+   ```
+   To install the optional dependencies required to submit Cirq programs, install using the `[cirq]` tag:
+
+   ```Shell
+   pip install --upgrade azure-quantum[cirq]
+   ```
 
 ## Next steps
 
