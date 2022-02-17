@@ -32,7 +32,7 @@ IonQ charges based on the number of gates in your program, the complexity of the
 
 > Note: IonQ has minimum job costs. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
 
-IonQ pricing is based on a pay-as-you-go model with no monthly subscription fees. To see the current service costs, please go to the [Azure Portal](https://aka.ms/AQ/CreateWorkspace) and select the IonQ provider for the most up to date list of subscription plans available.
+IonQ uses a pay-as-you-go model with no monthly subscription fees. To see the current service costs, please go to the [Azure Portal](https://aka.ms/AQ/CreateWorkspace) and select the IonQ provider for the most up to date list of subscription plans available.
 
 ### 1QBit pricing
 1QBit charges through either a subscription model or on a pay-as-you-go model based on the runtime of your optimization problem, in seconds. You can find more information about 1QBit's offering on the [1QBit Provider Page](xref:microsoft.quantum.providers.optimization.1qbit).
