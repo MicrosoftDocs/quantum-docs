@@ -87,7 +87,7 @@ c: 3/════════════════╩══╩══╩═
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = apival_backend.run(circuit, count=1024)
+job = apival_backend.run(circuit, shots=1024)
 job_id = job.id()
 print("Job id", job_id)
 
@@ -119,7 +119,7 @@ Before running a job on the QPU, you can estimate how much it will cost to run. 
 
 ```python
 qpu_backend = provider.get_backend("honeywell.hqs-lt-s1")
-cost = qpu_backend.estimate_cost(circuit, count=1024)
+cost = qpu_backend.estimate_cost(circuit, shots=1024)
 
 print(f"Estimated cost: {cost.estimated_total}")
 ```
@@ -143,7 +143,7 @@ qpu_backend = provider.get_backend("honeywell.hqs-lt-s1")
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = qpu_backend.run(circuit, count=500)
+job = qpu_backend.run(circuit, shots=500)
 job_id = job.id()
 print("Job id", job_id)
 
