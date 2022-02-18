@@ -1,6 +1,6 @@
 ---
 author: cjgronlund
-description: Learn the basics of how to work with vectors and matrices.
+description: Learn the basics of how to work with vectors and matrices in quantum computing.
 ms.author: cgronlun
 ms.date: 10/20/2021
 ms.service: azure-quantum
