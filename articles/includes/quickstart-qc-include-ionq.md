@@ -34,32 +34,32 @@ To complete this tutorial, you need
 
 1. Start by opening the **QuantumRNG.csproj** file and adding the `ExecutionTarget` property, which will give you design-time feedback on the compatibility of your program for IonQ's hardware.
 
-```xml
-<Project Sdk="Microsoft.Quantum.Sdk/0.17.2105143879">
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <ExecutionTarget>ionq.qpu</ExecutionTarget>
-  </PropertyGroup>
-</Project>
-```
+    ```xml
+    <Project Sdk="Microsoft.Quantum.Sdk">
+      <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <ExecutionTarget>ionq.qpu</ExecutionTarget>
+      </PropertyGroup>
+    </Project>
+    ```
 
 1. Replace the contents of **Program.qs** with the program:
 
-```qsharp
-namespace QuantumRNG {
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Measurement;
-    open Microsoft.Quantum.Canon;
+    ```qsharp
+    namespace QuantumRNG {
+        open Microsoft.Quantum.Intrinsic;
+        open Microsoft.Quantum.Measurement;
+        open Microsoft.Quantum.Canon;
 
-    @EntryPoint()
-    operation GenerateRandomBits() : Result[] {
-        use qubits = Qubit[4];
-        ApplyToEach(H, qubits);
-        return MultiM(qubits);
+        @EntryPoint()
+        operation GenerateRandomBits() : Result[] {
+            use qubits = Qubit[4];
+            ApplyToEach(H, qubits);
+            return MultiM(qubits);
+        }
     }
-}
-```
+    ```
 
 > [!NOTE] 
 > If you would like to learn more about this program code, see [Create your first Q# program by using the Quantum Development Kit](/learn/modules/qsharp-create-first-quantum-development-kit/).
