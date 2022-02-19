@@ -34,32 +34,32 @@ To complete this tutorial, you need
 
 1. Start by opening the **QuantumRNG.csproj** file and adding the `ExecutionTarget` property, which will give you design-time feedback on the compatibility of your program for IonQ's hardware.
 
-```xml
-<Project Sdk="Microsoft.Quantum.Sdk/0.17.2105143879">
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <ExecutionTarget>ionq.qpu</ExecutionTarget>
-  </PropertyGroup>
-</Project>
-```
+    ```xml
+    <Project Sdk="Microsoft.Quantum.Sdk">
+      <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <ExecutionTarget>ionq.qpu</ExecutionTarget>
+      </PropertyGroup>
+    </Project>
+    ```
 
 1. Replace the contents of **Program.qs** with the program:
 
-```qsharp
-namespace QuantumRNG {
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Measurement;
-    open Microsoft.Quantum.Canon;
+    ```qsharp
+    namespace QuantumRNG {
+        open Microsoft.Quantum.Intrinsic;
+        open Microsoft.Quantum.Measurement;
+        open Microsoft.Quantum.Canon;
 
-    @EntryPoint()
-    operation GenerateRandomBits() : Result[] {
-        use qubits = Qubit[4];
-        ApplyToEach(H, qubits);
-        return MultiM(qubits);
+        @EntryPoint()
+        operation GenerateRandomBits() : Result[] {
+            use qubits = Qubit[4];
+            ApplyToEach(H, qubits);
+            return MultiM(qubits);
+        }
     }
-}
-```
+    ```
 
 > [!NOTE] 
 > If you would like to learn more about this program code, see [Create your first Q# program by using the Quantum Development Kit](/learn/modules/qsharp-create-first-quantum-development-kit/).
@@ -74,7 +74,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
    az login
    ```
    
-1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in Azure Portal.
+1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in the Azure portal.
 
    ```azurecli
    az account set -s <Your subscription ID>
@@ -164,19 +164,19 @@ To run the program on hardware, we'll use the asynchronous job submission comman
    ```
 
    ```output
-    Name        Id                                    Status    Target    Submission time
+    Name        ID                                   Status    Target    Submission time
     ----------  ------------------------------------  --------  --------  ---------------------------------
     QuantumRNG  5aa8ce7a-25d2-44db-bbc3-87e48a97249c  Waiting   ionq.qpu  2020-10-22T22:41:27.8855301+00:00
    ```
 
-The tables above show that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the Id output by the previous command, for example:
+The tables above show that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the ID output by the previous command, for example:
 
    ```azurecli
     az quantum job show -o table --job-id 5aa8ce7a-25d2-44db-bbc3-87e48a97249c 
    ```
 
    ```output
-    Name        Id                                    Status    Target    Submission time
+    Name        ID                                   Status    Target    Submission time
     ----------  ------------------------------------  --------  --------  ---------------------------------
     QuantumRNG  5aa8ce7a-25d2-44db-bbc3-87e48a97249c  Waiting   ionq.qpu  2020-10-22T22:41:27.8855301+00:00
    ```
