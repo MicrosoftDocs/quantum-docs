@@ -74,7 +74,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
    az login
    ```
    
-1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in Azure Portal.
+1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in the Azure portal.
 
    ```azurecli
    az account set -s <Your subscription ID>
@@ -164,7 +164,7 @@ To run the program on hardware, we'll use the asynchronous job submission comman
    ```
 
    ```output
-    Name        Id                                    Status    Target    Submission time
+    Name        ID                                   Status    Target    Submission time
     ----------  ------------------------------------  --------  --------  ---------------------------------
     QuantumRNG  5aa8ce7a-25d2-44db-bbc3-87e48a97249c  Waiting   ionq.qpu  2020-10-22T22:41:27.8855301+00:00
    ```
@@ -176,7 +176,7 @@ The tables above show that your job has been submitted and is waiting for its tu
    ```
 
    ```output
-    Name        Id                                    Status    Target    Submission time
+    Name        ID                                   Status    Target    Submission time
     ----------  ------------------------------------  --------  --------  ---------------------------------
     QuantumRNG  5aa8ce7a-25d2-44db-bbc3-87e48a97249c  Waiting   ionq.qpu  2020-10-22T22:41:27.8855301+00:00
    ```

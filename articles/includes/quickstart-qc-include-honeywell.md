@@ -31,7 +31,7 @@ To complete this tutorial, you need
 
 1. You should see two files: the project file and **Program.qs**, which contains starter code. Open **Program.qs**.
 
-1. Start by opening the **QuantumRNG.csproj** file and adding the `ExecutionTarget` property, which will give you design-time feedback on the compatibility of your program for Quantinuum's hardware.
+1. Start by opening the **QuantumRNG.csproj** file and adding the `ExecutionTarget` property, which provides design-time feedback on the compatibility of your program for Quantinuum's hardware.
 
     ```xml
     <Project Sdk="Microsoft.Quantum.Sdk">
@@ -73,7 +73,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
    az login
    ```
 
-1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in Azure Portal.
+1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in the Azure portal.
 
    ```azurecli
    az account set -s <Your subscription ID>
@@ -120,7 +120,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
 
 ## Run the program on hardware
 
-To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command this will compile and submit your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long that may be, you can run `az quantum target list -o table` as described above. Depending on the provider you selected, you will see:
+To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command this will compile and submit your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long that may be, you can run `az quantum target list -o table` as described above. Depending on the provider you selected, you'll see:
 
 
    ```azurecli
@@ -128,7 +128,7 @@ To run the program on hardware, we'll use the asynchronous job submission comman
    ```
 
    ```output
-    Name        Id                                    Status    Target                Submission time
+    Name        ID                                    Status    Target                Submission time
     ----------  ------------------------------------  --------  --------              ---------------------------------
     QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   honeywell.hqs-lt-1.0  2020-01-12T22:41:27.8855301+00:00
    ```
@@ -140,11 +140,11 @@ The tables above show that your job has been submitted and is waiting for its tu
    ```
 
    ```output
-    Name        Id                                    Status    Target    Submission time
+    Name        ID                                    Status    Target    Submission time
     ----------  ------------------------------------  --------  --------  ---------------------------------
     QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   honeywell.hqs-lt-1.0  2020-10-22T22:41:27.8855301+00:00
 
-Eventually, you will see the `Status` in the above table change to `Succeeded`. Once that's done you can get the results from the job by running `az quantum job output`:
+`Status` in the above table changes to `Succeeded`. Once that's done you can get the results from the job by running `az quantum job output`:
 
    ```azurecli
    az quantum job output -o table --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
