@@ -86,6 +86,15 @@ To get a result back quickly, use `provider.get_backend` to create a
 simulator_backend = provider.get_backend("ionq.simulator")
 ```
 
+IonQ backends support gates from a defined [gateset](https://docs.ionq.com/#section/Supported-Gates) which are compiled to run optimally on the hardware. If your circuit contains gates that are not in this list, you will need to transpile your circuit first into the supported gateset. For that, you can use the `transpile` function provided by Qiskit:
+
+```python
+from qiskit import transpile
+circuit = transpile(circuit, simulator_backend)
+```
+
+This will return a new circuit object where gates are decomposed into gates that are supported by the specified backend.
+
 You can now run the program via the Azure Quantum service and get the
 result. The following cell submits a job that runs the circuit with
 100 shots:
