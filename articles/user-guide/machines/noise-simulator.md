@@ -379,6 +379,7 @@ Some limitations are inherent to open systems simulation, and may not ever be su
 ## See also
 
 - [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
+- [Quantum sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator)
 - [Quantum resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)
 - [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
 - [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)

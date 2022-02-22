@@ -170,6 +170,7 @@ You can use <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> fr
 
 ## See also
 
+- [Quantum sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator)
 - [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)
 - [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
 - [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
