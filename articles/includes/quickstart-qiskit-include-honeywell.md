@@ -85,7 +85,7 @@ c: 3/════════════════╩══╩══╩═
                      0  1  2 
 ```
 
-Honeywell backends support gates from a defined gateset which are compiled to run optimally on the hardware. If your circuit contains gates that are not in this list, you will need to transpile your circuit first into the supported gateset. For that, you can use the `transpile` function provided by Qiskit:
+Quantinuum backends support gates from a defined gateset which are compiled to run optimally on the hardware. If your circuit contains gates that are not in this list, you will need to transpile your circuit first into the supported gateset. For that, you can use the `transpile` function provided by Qiskit:
 
 ```python
 from qiskit import transpile
