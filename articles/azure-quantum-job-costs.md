@@ -70,7 +70,7 @@ How to interpret the Cost Estimation table columns:
 
 The total row at the bottom shows the total cost of all dimensions for processing the job.
 
-## Next Steps
+## Next steps
 
 - [Submit a job with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit)
 - [Submit a job with Q#](xref:microsoft.quantum.quickstarts.computing)
