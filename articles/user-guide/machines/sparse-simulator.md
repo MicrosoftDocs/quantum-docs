@@ -13,16 +13,15 @@ uid: microsoft.quantum.machines.overview.sparse-simulator
 
 # Quantum Development Kit (QDK) sparse simulator
 
-Sparse simulator is a simulator with discrete (sparse) states of the qubits, as opposed to the full-state simulator. Sparse states of the qubits minimize the memory footprint of the quantum state thus enabling the larger number of qubits. This is efficient for a class of quantum algorithms with a smaller number of states in superposition. This is an unlock for users to explore larger applications than what can be explored using the full-state simulator alone.
+Sparse simulator is a simulator with discrete (sparse) states of the qubits, as opposed to the full-state simulator. Sparse states of the qubits minimize the memory footprint of the quantum state thus enabling the larger number of qubits. This feature is efficient for a class of quantum algorithms with a smaller number of states in superposition. This simulator is an unlocker for users to explore larger applications than what can be explored using the full-state simulator alone.
 
 ## Invoking and running the sparse simulator
 
-The sparse simulator is exposed via the `SparseSimulator` class. For additional details, see [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
+The sparse simulator is exposed via the `SparseSimulator` class. For more information, see [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
 
 ### Invoking the simulator from C\#
 
-Create an instance of the `SparseSimulator` class and then pass it to the `Run` method
-of a quantum operation, along with any additional parameters.
+Create an instance of the `SparseSimulator` class and then pass it to the `Run` method of a quantum operation, along with any parameters.
 
 ```csharp
     using (var sim = new SparseSimulator())
@@ -32,7 +31,7 @@ of a quantum operation, along with any additional parameters.
     }
 ```
 
-Because the `SparseSimulator` class implements the <xref:System.IDisposable> interface, you must call the `Dispose` method once you do not need the instance of the simulator anymore. The best way to do this is to wrap the simulator declaration and operations within a [using](/dotnet/csharp/language-reference/keywords/using-statement) statement, which automatically calls the `Dispose` method.
+Because the `SparseSimulator` class implements the <xref:System.IDisposable> interface, you must call the `Dispose` method once you don't need the instance of the simulator anymore. The best way to automate that call is to wrap the simulator declaration and operations within a [using](/dotnet/csharp/language-reference/keywords/using-statement) statement, which automatically calls the `Dispose` method.
 
 ### Invoking the simulator from Python
 
@@ -44,7 +43,7 @@ qubit_result = myOperation.simulate_sparse()
 
 ### Invoking the simulator from the command line
 
-You can use the **--simulator** (or **-s** shortcut) parameter to specify the desired target machine.
+You can use the `--simulator` (or `-s` shortcut) parameter to specify the desired target machine.
 
 ```dotnetcli
 dotnet run -s SparseSimulator
@@ -60,7 +59,7 @@ Use the IQ# magic command [%simulate_sparse](xref:microsoft.quantum.iqsharp.magi
 
 ## Seeding the simulator
 
-By default, the sparse simulator uses a random number generator to simulate quantum randomness. For testing purposes, it is sometimes useful to have deterministic results. In a C# program, you can accomplish this by providing a seed for the random number generator in the `SparseSimulator` constructor via the `randomNumberGeneratorSeed` parameter.
+By default, the sparse simulator uses a random number generator to simulate quantum randomness. For testing purposes, it's sometimes useful to have deterministic results. In a C# program, you can accomplish this determinism by providing a seed for the random number generator in the `SparseSimulator` constructor via the `randomNumberGeneratorSeed` parameter.
 
 ```csharp
     using (var sim = new SparseSimulator(randomNumberGeneratorSeed: 42))
@@ -74,7 +73,7 @@ By default, the sparse simulator uses a random number generator to simulate quan
 
 The behavior of the sparse simulator can be adjusted via the following parameters to the C# constructor:
 
-- `throwOnReleasingQubitsNotInZeroState`: The simulator can warn you by throwing an exception if qubits have not been returned to the `zero` state before release. Resetting or measuring qubits before release is required by the Q# spec - not doing so may lead to computational errors! The default is `true`.
+- `throwOnReleasingQubitsNotInZeroState`: The simulator can warn you by throwing an exception if qubits haven't been returned to the `zero` state before release. Resetting or measuring qubits before release is required by the Q# spec - not doing so may lead to computational errors! The default is `true`.
 - `randomNumberGeneratorSeed`: Obtain deterministic behavior by seeding the simulator as described above.
 - `disableBorrowing`: If you don't want to use [borrowed qubits](xref:microsoft.quantum.qsharp.quantummemorymanagement#borrow-statement) for this simulation, you can disable this feature by setting this parameter to `true`. Borrowed qubits will instead be replaced with regular clean qubits. The default is `false`.
 - `numQubits`: The number of qubits the sparse simulator will be operating with. The default is 64. This number has a hard limit of 1024.
