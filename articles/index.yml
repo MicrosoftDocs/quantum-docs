@@ -33,6 +33,8 @@ landingContent:
             url: get-started-jupyter-notebook.md
           - text: Set up a local development environment
             url: install-overview-qdk.md
+          - text: Understanding job costs in Azure Quantum
+            url: azure-quantum-job-costs.md
       - linkListType: learn
         links:
           - text: Microsoft Learn
