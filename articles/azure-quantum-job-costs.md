@@ -30,7 +30,8 @@ You may purchase Honeywell Quantum Credits through various plans. Go to the [Azu
 ### IonQ pricing
 IonQ charges based on the number of gates in your program, the complexity of the gates you use, and the number of shots. These units are called `qubit-gate-shots` and you can find more information about how they're calculated on the [IonQ Provider Page](xref:microsoft.quantum.providers.ionq).
 
-> Note: IonQ has minimum job costs. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
+> [!NOTE]
+> IonQ has minimum job costs. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
 
 IonQ uses a pay-as-you-go model with no monthly subscription fees. To see the current service costs, go to the [Azure portal](https://aka.ms/AQ/CreateWorkspace) and select the IonQ provider for the list of available subscription plans.
 
@@ -45,11 +46,16 @@ After you run a job, Azure Quantum makes available detailed cost estimates for s
 
 To review job costs, navigate to the **Job Management** blade within your Azure Quantum Workspace. In the job list, you will see estimated costs reported for each job you've run (where supported). To see more information, click on a job that shows pricing information.
 
-![The Job Management blade, with the Cost Estimate column highlighted](./media/job-costs/job-table-with-costs.png)
+_Prices below are shown for example purposes only._
 
-> Note: Some Azure Quantum providers do not support reporting per-job costs, however you can still see your current bill **TODO: Link to section with instructions for reviewing customers total bill for providers.**
+[ ![The Job Management blade, with the Cost Estimate column highlighted](./media/job-costs/job-table-with-costs.png) ](./media/job-costs/job-table-with-costs.png#lightbox)
+
+> [!NOTE]
+> Some Azure Quantum providers do not support reporting per-job costs, however you can still see your bill under Cost Management in the Azure portal.
 
 To review detailed cost estimate information for a job, select the job in the Job Management pane and then open the "Cost Estimation" tab. The table displays the billing dimensions used by the job and their associated cost.
+
+_Prices below are shown for example purposes only._
 
 ![The Job Details pane for a quantum job, with the Cost Estimation tab selected](./media/job-costs/job-cost-details.png)
 
