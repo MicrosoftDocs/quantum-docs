@@ -85,9 +85,18 @@ c: 3/════════════════╩══╩══╩═
                      0  1  2 
 ```
 
+Quantinuum backends support gates from a defined gateset which are compiled to run optimally on the hardware. If your circuit contains gates that are not in this list, you will need to transpile your circuit first into the supported gateset. For that, you can use the `transpile` function provided by Qiskit:
+
+```python
+from qiskit import transpile
+circuit = transpile(circuit, apival_backend)
+```
+
+This will return a new circuit object where gates are decomposed into gates that are supported by the specified backend.
+
 ```python
 # Submit the circuit to run on Azure Quantum
-job = apival_backend.run(circuit, count=1024)
+job = apival_backend.run(circuit, shots=1024)
 job_id = job.id()
 print("Job id", job_id)
 
@@ -115,11 +124,11 @@ Result(backend_name='honeywell.hqs-lt-s1-apival', backend_version='1', qobj_id='
 
 ## Estimate job cost
 
-Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU,you can use the `estimate_cost` method:
+Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
 
 ```python
 qpu_backend = provider.get_backend("honeywell.hqs-lt-s1")
-cost = qpu_backend.estimate_cost(circuit, count=1024)
+cost = qpu_backend.estimate_cost(circuit, shots=1024)
 
 print(f"Estimated cost: {cost.estimated_total}")
 ```
@@ -143,7 +152,7 @@ qpu_backend = provider.get_backend("honeywell.hqs-lt-s1")
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = qpu_backend.run(circuit, count=500)
+job = qpu_backend.run(circuit, shots=500)
 job_id = job.id()
 print("Job id", job_id)
 
