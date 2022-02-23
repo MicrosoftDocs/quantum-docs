@@ -48,8 +48,8 @@ To review job costs, navigate to the **Job Management** blade within your Azure 
 
 _Prices below are shown for example purposes only._
 
-[!div class="mx-imgBorder"]
-[ ![The Job Management blade, with the Cost Estimate column highlighted](./media/job-costs/job-table-with-costs.png) ](./media/job-costs/job-table-with-costs.png#lightbox)
+> [!div class="mx-imgBorder"]
+> [ ![The Job Management blade, with the Cost Estimate column highlighted](./media/job-costs/job-table-with-costs.png) ](./media/job-costs/job-table-with-costs.png#lightbox)
 
 > [!NOTE]
 > Some Azure Quantum providers do not support reporting per-job costs, however you can still see your bill under Cost Management in the Azure portal.
@@ -58,8 +58,8 @@ To review detailed cost estimate information for a job, select the job in the Jo
 
 _Prices below are shown for example purposes only._
 
-[!div class="mx-imgBorder"]
-![The Job Details pane for a quantum job, with the Cost Estimation tab selected](./media/job-costs/job-cost-details.png)
+> [!div class="mx-imgBorder"]
+> ![The Job Details pane for a quantum job, with the Cost Estimation tab selected](./media/job-costs/job-cost-details.png)
 
 How to interpret the Cost Estimation table columns:
 - `Dimension`: The name of the dimension you're charged for by the provider.
