@@ -6,7 +6,7 @@ ms.date: 01/27/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
-title: Quantinuum provider
+title: Honeywell provider
 uid: microsoft.quantum.providers.honeywell
 ---
 
