@@ -75,5 +75,5 @@ some limitations.
 Presently, these Basic Measurement Feedback targets are available for Azure Quantum:
 
 - **Provider:** Quantinuum
-  - Honeywell System Model H0 (`honeywell.hqs-lt-1.0`)
-  - Honeywell System Model H1 (`honeywell.hqs-lt-s1`)
+  - Quantinuum System Model H1-1, Powered by Honeywell (`quantinuum.hqs-lt-s1`)
+  - Quantinuum System Model H1-2, Powered by Honeywell (`quantinuum.hqs-lt-s2`)

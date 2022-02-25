@@ -44,7 +44,7 @@ Learn how to use the `azure-quantum` Python package to submit Cirq quantum circu
 
 ::: zone pivot="platform-quantinuum"
 
-[!INCLUDE [quantinuum-procedure](includes/quickstart-cirq-include-honeywell.md)]
+[!INCLUDE [quantinuum-procedure](includes/quickstart-cirq-include-quantinuum.md)]
 
 ::: zone-end
 

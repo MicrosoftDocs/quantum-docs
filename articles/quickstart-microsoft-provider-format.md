@@ -44,7 +44,7 @@ Learn how to use the `azure-quantum` Python package to submit provider-specific 
 
 ::: zone pivot="platform-quantinuum"
 
-[!INCLUDE [quantinuum-procedure](includes/quickstart-provider-include-honeywell.md)]
+[!INCLUDE [quantinuum-procedure](includes/quickstart-provider-include-quantinuum.md)]
 
 ::: zone-end
 

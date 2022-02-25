@@ -47,7 +47,7 @@ print([backend.name() for backend in provider.backends()])
 ```
 
 ```output
-['ionq.qpu', 'ionq.simulator', 'honeywell.hqs-lt-s1', 'honeywell.hqs-lt-s1-apival', 'honeywell.hqs-lt-s2', 'honeywell.hqs-lt-s2-apival', 'honeywell.hqs-lt-s1-sim']
+['ionq.qpu', 'ionq.simulator']
 ```
 
 ## Run a simple circuit
