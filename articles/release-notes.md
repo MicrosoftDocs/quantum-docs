@@ -23,18 +23,17 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 ### QDK version 0.23.todo
 
 - Released preview version of Microsoft Quantum Development Kit for VS 2022.
-- <!-- Entry to be provided by Mike Blouin. -->
 - Q# now supports lambda expressions. See the [Q# language documentation](TODO: Add link to lambda docs when available) for information about how to use them.
 - Fixed GitHub issues [microsoft/qsharp-compiler#1046](https://github.com/microsoft/qsharp-compiler/issues/1046) and [microsoft/qsharp-compiler#1352](https://github.com/microsoft/qsharp-compiler/issues/1352) related to QIR generation. The first issue fixes an issue when generating big integer literals with more than 64 bits, and the second issue can cause a runtime failure when using a new array expression to create an array of callables.
-- The error message you get when trying to run a sample before adding a provider to your Quantum Workspace was improved and includes instructions (link) on how to add a new provider.
-- Fixed issue (link github issue). For the azure-quantum Python package, you can now pass `shots` to `backend.run` and `backend.estimate_cost` for all backends.
+- The error message you get when trying to run a sample before adding a provider to your Quantum Workspace was improved and includes instructions ([link](https://aka.ms/AQ/Docs/AddProvider)) on how to add a new provider.
+- Fixed issue ([link](https://github.com/microsoft/qdk-python/pull/246)). For the azure-quantum Python package, you can now pass `shots` to `backend.run` and `backend.estimate_cost` for all backends.
 - Fixed the GitHub issue to remove a UserWarning when initializing the solver when a job is sent to Toshiba SimulatedBifurcationMachine.
 - Breaking change: The compress flag was removed from problem, solvers and streaming_problem classes and the compress parameter can no longer be set in `solvers.problem` or `streaming_problem` objects and methods.
 - Fixed GitHub issue [microsoft/qsharp-compiler#1346](https://github.com/microsoft/qsharp-compiler/issues/1346) where the Q# Formatter was removing parentheses around for-loop conditions without ensuring spacing around the condition.
 - The Visual Studio and Visual Studio Code extensions no longer throw an unhandled exception if the .NET SDK is not found. The Language Server will fallback to purely syntactic diagnostics. [microsoft/qsharp-compiler#1235](https://github.com/microsoft/qsharp-compiler/issues/1235).
 - Fixed GitHub issue [microsoft/qsharp-compiler#1300](https://github.com/microsoft/qsharp-compiler/issues/1300) where the Q# compiler would log an exception in addition to an error message, if an operation is called that returns a non-unit type but is incorrectly defined to be adjointable and/or controllable.
-- Fixed issue (link github issue) for the Qiskit plugin of the azure-quantum Python package. The total number of counts in the histogram now matches the total number of shots.
-- <!-- Entry to be provided by Scott Carda. -->
+- Fixed issue ([link](https://github.com/microsoft/qdk-python/issues/248)) for the Qiskit plugin of the azure-quantum Python package. The total number of counts in the histogram now matches the total number of shots.
+- Fixed GitHub issue [microsoft/qsharp-compiler#1289](https://github.com/microsoft/qsharp-compiler/issues/1289), improving usability of the Q# Formatter by outputting a summary of its changes to console and not overwriting unchanged files.
 
 
 ## 2022-02-01
