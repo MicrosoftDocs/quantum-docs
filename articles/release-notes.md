@@ -20,7 +20,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2022-03-02
 
-### QDK version 0.23.todo
+### QDK version 0.23.195710
 
 - Released preview version of Microsoft Quantum Development Kit for VS 2022.
 - Q# now supports lambda expressions. See the [Q# language documentation](TODO: Add link to lambda docs when available) for information about how to use them.
@@ -32,7 +32,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 - Fixed GitHub issue [microsoft/qsharp-compiler#1346](https://github.com/microsoft/qsharp-compiler/issues/1346) where the Q# Formatter was removing parentheses around for-loop conditions without ensuring spacing around the condition.
 - Fixed GitHub issue [microsoft/qsharp-compiler#1235](https://github.com/microsoft/qsharp-compiler/issues/1235) where the Visual Studio and Visual Studio Code extensions no longer throw an unhandled exception if the .NET SDK is not found. The Language Server will fallback to purely syntactic diagnostics.
 - Fixed GitHub issue [microsoft/qsharp-compiler#1300](https://github.com/microsoft/qsharp-compiler/issues/1300) where the Q# compiler would log an exception in addition to an error message, if an operation is called that returns a non-unit type but is incorrectly defined to be adjointable and/or controllable.
-- Fixed issue ([link](https://github.com/microsoft/qdk-python/issues/248)) for the Qiskit plugin of the azure-quantum Python package. The total number of counts in the histogram now matches the total number of shots.
+- Fixed GitHub issue [microsoft/qdk-python](https://github.com/microsoft/qdk-python/issues/248) for the Qiskit plugin of the azure-quantum Python package. The total number of counts in the histogram now matches the total number of shots.
 - Fixed GitHub issue [microsoft/qsharp-compiler#1289](https://github.com/microsoft/qsharp-compiler/issues/1289), improving usability of the Q# Formatter by outputting a summary of its changes to console and not overwriting unchanged files.
 
 
@@ -53,10 +53,10 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 - When submitting a job to Azure Quantum via the CLI, Python, IQ# and other Azure Quantum SDKs, the job details may include the cost estimate of the job (if supported by the provider). The final cost on your bill might be slightly different due to added taxes and currency conversion rates. 
 - You can now estimate the price of your job in azure-quantum package by using [estimate_cost](xref:microsoft.quantum.quickstarts.computing.provider#estimate-job-cost) for the target that you are using with the Qiskit, Cirq and pass-through feature.
 - The azure-quantum package now supports submitting Qiskit lists of length 1. 
-- Fixed [GitHub issue #198](https://github.com/microsoft/qdk-python/issues/198) in the azure-quantum package where the Qiskit jobs were causing incorrect results in circuits with helper qubits.
-- In azure-quantum package, the perform_icm parameter of the 1QBit `PticmSolver` was deprecated, using it will now return a deprecation warning. A `seed` parameter was added to all other 1QBit solvers that specifies a random seed. 
-- Fixed [GitHub issue #178](https://github.com/microsoft/qdk-python/issues/178) in the azure-quantum package so errors returned by the Azure Quantum service when using the Qiskit or Cirq feature are now propagated up. 
-- Fixed [GitHub issue #1297](https://github.com/microsoft/qsharp-compiler/issues/1297) where the IntelliSense information was not updated when the ExecutionTarget property was modified in the project file.
+- Fixed GitHub issue [microsoft/qdk-python#198](https://github.com/microsoft/qdk-python/issues/198) in the azure-quantum package where the Qiskit jobs were causing incorrect results in circuits with helper qubits.
+- In azure-quantum package, the perform_icm parameter of the 1QBit `PticmSolver` was deprecated, using it will now return a deprecation warning. A `seed` parameter was added to all other 1QBit solvers that specifies a random seed.
+- Fixed GitHub issue [microsoft/qdk-python#178](https://github.com/microsoft/qdk-python/issues/178) in the azure-quantum package so errors returned by the Azure Quantum service when using the Qiskit or Cirq feature are now propagated up.
+- Fixed GitHub issue [microsoft/qsharp-compiler#1297](https://github.com/microsoft/qsharp-compiler/issues/1297) where the IntelliSense information was not updated when the ExecutionTarget property was modified in the project file.
 
 ## 2021-12-14
 
