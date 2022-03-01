@@ -75,11 +75,11 @@ To create an Azure Quantum workspace, follow these steps.
 
 1. To add more providers to an existing workspace, go to the **Providers** tab in your Quantum workspace and click on **Add a Provider**. Then, select the provider you want to add.
 
-<img width="1456" alt="Screen shot showing how to select a provider to add to a Quantum Workspace" src="media/add-provider-1.png">
+   :::image type="content" source="media/add-provider-1.png" alt-text="Screen shot showing how to select a provider to add to a Quantum Workspace.":::
 
 2. Select the payment plan you'd like to use and click **Add**.
 
-<img width="831" alt="Screen shot showing how to select a provider SKU (Stock-keeping-Unit) to add to a Quantum Workspace" src="media/add-provider-2.png">
+   :::image type="content" source="media/add-provider-2.png" alt-text="Screen shot showing how to select a provider SKU (Stock-keeping-Unit) to add to a Quantum Workspace.":::
 
 The provider is added to your Quantum workspace. It may take several minutes before it becomes available.
 
