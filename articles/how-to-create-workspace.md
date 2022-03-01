@@ -81,6 +81,8 @@ To create an Azure Quantum workspace, follow these steps.
 
    :::image type="content" source="media/add-provider-2.png" alt-text="Screen shot showing how to select a provider SKU (Stock-keeping-Unit) to add to a Quantum Workspace.":::
 
+Note that the pricing details in the above screenshot are shown for example purposes only.
+
 The provider is added to your Quantum workspace. It may take several minutes before it becomes available.
 
 ## Next steps
