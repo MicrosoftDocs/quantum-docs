@@ -7,11 +7,11 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
 no-loc: ['Q#', '$$v']
-title: Explore entanglement with Q#
+title: Explore entanglement with Q# and Azure Quantum
 uid: microsoft.quantum.tutorial-portal.entanglement
 ---
 
-# Tutorial: Explore entanglement with Q\#
+# Tutorial: Explore entanglement with Q\# and Azure Quantum
 
 This tutorial shows you how to write a Q# program, using an online Notebook in Azure Quantum, that manipulates and measures qubits, and demonstrates the effects of superposition and entanglement. 
 
