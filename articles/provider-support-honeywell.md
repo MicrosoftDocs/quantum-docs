@@ -14,13 +14,13 @@ uid: microsoft.quantum.providers.honeywell.support
 
 This article describes the Microsoft support policy that applies when you use the Honeywell provider in Azure Quantum. The article applies to any of the targets under this provider.
 
-If you are using the Honeywell provider and hit unexpected issues, you can contact the Azure Support team for help by [creating an Azure support case](/azure/azure-portal/supportability/how-to-create-azure-support-request).
+If you're using the Honeywell provider and hit unexpected issues, you can contact the Azure Support team for help by [creating an Azure support case](/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
 In some situations, the Azure Support team will need to redirect you to Honeywell's support team, or where you may receive a quicker response by reaching out to Honeywell directly. This article details this process and answers some frequently asked questions.
 
 ## Honeywell Support Policy - Public Preview
 
-The goal of Support is to identify and remedy defects or malfunctions causing the Quantum Computer to fail to perform in accordance with the agreed specifications and documentation (“Problems”). Support only covers the current released version generally available to customers.  Although our quantum experts can help you troubleshoot algorithm issues, we are not responsible for any issues, problems, or defects with your algorithm. To minimize programming issues, users are able to run their algorithms through the syntax validator prior to running on hardware.  
+The goal of Support is to identify and remedy defects or malfunctions causing the Quantum Computer to fail to perform in accordance with the agreed specifications and documentation (“Problems”). Support only covers the current released version generally available to customers.  Although our quantum experts can help you troubleshoot algorithm issues, we're not responsible for any issues, problems, or defects with your algorithm. To minimize programming issues, users are able to run their algorithms through the syntax validator prior to running on hardware.  
 
 ### 1.1	Contacting Technical Support within Honeywell
 
@@ -35,7 +35,7 @@ _<sup>1</sup> “Business Days” means Monday to Friday but excluding national,
 
 The incident report will require the following information:
 
-- Description: A detailed description of the issue you are facing, what you are observing, and any steps you have already taken to triage/understand the issue
+- Description: A detailed description of the issue you're facing, what you're observing, and any steps you have already taken to triage/understand the issue
 - Primary contact: A primary contact name and phone number in case we require more information
 - Incident Severity: the severity of the incident, according to our severity definitions
 
@@ -47,9 +47,9 @@ During Queued Runs, if your job is running in the general queue and you encounte
 
 ### 1.2	Honeywell severity index and response SLA
 
-If the Honeywell engineer determines that the issue does not fall within the bounds of our incident response commitments, or does not have the right severity classification, they may opt at their sole discretion to adjust the severity and/or end support if the new severity does not require it.
+If the Honeywell engineer determines that the issue doesn't fall within the bounds of our incident response commitments, or doesn't have the right severity classification, they may opt at their sole discretion to adjust the severity and/or end support if the new severity doesn't require it.
 
-Certain problems may be easier to address than others, and we may not be able to completely resolve the problem with our initial response. If we are unable to reasonably resolve the problem, we will make a good faith effort to give an assessment of the issue and an estimated time for resolution. 
+Certain problems may be easier to address than others, and we may not be able to completely resolve the problem with our initial response. If we're unable to reasonably resolve the problem, we'll make a good faith effort to give an assessment of the issue and an estimated time for resolution. 
 
 _Table 2: Definition of Severity Index_
 
@@ -59,7 +59,7 @@ _Table 2: Definition of Severity Index_
 | Severity 2| 	Urgent or high impact | Job status has not updated; issues retrieving data |
 | Severity 3| 	Not urgent | Miscellaneous  |
 
-The following table shows the Response SLA that will be adhered to by Honeywell for incident reports of the corresponding severity. Note that these define how fast we will respond to issues – resolution times are not guaranteed.
+The following table shows the Response SLA that will be adhered to by Honeywell for incident reports of the corresponding severity. Note that these define how fast we'll respond to issues – resolution times are not guaranteed.
 
 _Table 3: Response SLA for Various Severity_
 | Severity	| Response SLA |
@@ -86,4 +86,4 @@ The third-party products that this article discusses are manufactured by compani
 
 ### Third-party contact disclaimer
 
-Microsoft provides third-party contact information to help you find additional information about this topic. This contact information may change without notice. Microsoft does not guarantee the accuracy of third-party contact information.
+Microsoft provides third-party contact information to help you find additional information about this topic. This contact information may change without notice. Microsoft doesn't guarantee the accuracy of third-party contact information.
