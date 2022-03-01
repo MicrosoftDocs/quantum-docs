@@ -71,6 +71,20 @@ To create an Azure Quantum workspace, follow these steps.
     > [!NOTE]
     > Pricing for Azure Quantum varies by provider. Please consult the information in the Providers tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information, or visit the [Azure Quantum pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
 
+## Add additional providers
+
+1. To add more providers to an existing workspace, go to the **Providers** tab in your Quantum workspace and click on **Add a Provider**. Then, select the provider you want to add.
+
+   :::image type="content" source="media/add-provider-1.png" alt-text="Screen shot showing how to select a provider to add to a Quantum Workspace.":::
+
+2. Select the payment plan you'd like to use and click **Add**.
+
+   :::image type="content" source="media/add-provider-2.png" alt-text="Screen shot showing how to select a provider SKU (Stock-keeping-Unit) to add to a Quantum Workspace.":::
+
+Note that the pricing details in the above screenshot are shown for example purposes only.
+
+The provider is added to your Quantum workspace. It may take several minutes before it becomes available.
+
 ## Next steps
 
 - [Get started with Jupyter notebooks in Azure Quantum](xref:microsoft.quantum.get-started.notebooks)
