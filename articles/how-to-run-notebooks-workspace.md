@@ -28,7 +28,7 @@ To get started, you can use use a sample from the notebook gallery.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Notebooks**.
-1. Select **Notebook Gallery**.
+1. Select **Sample Gallery**.
 1. Select the sample you want to use, and select **Copy to My Notebooks**.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-gallery.gif" alt-text="Notebook gallery in Azure Quantum.":::
