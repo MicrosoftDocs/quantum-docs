@@ -20,7 +20,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2022-03-02
 
-### QDK version 0.23.195710
+### QDK version 0.23.195904
 
 - Released preview version of Microsoft Quantum Development Kit for VS 2022.
 - Fixed GitHub issue [microsoft/qsharp-compiler#1235](https://github.com/microsoft/qsharp-compiler/issues/1235) where the Visual Studio and Visual Studio Code extensions no longer throw an unhandled exception if the .NET SDK is not found. The Language Server will fallback to purely syntactic diagnostics.
