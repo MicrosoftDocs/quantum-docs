@@ -54,7 +54,7 @@ To create a service principal, assign access, and generate a credential:
 >
 > If you have permissions only at Resource Group or Workspace level, you can try to create the service principal under the Contributor role using:
 >
-> `az ad sp create-for-rbac --role Contributor`
+> `az ad sp create-for-rbac --role Contributor --scopes /subscriptions/<SUBSCRIPTION-ID>`
 
 ## Authenticate as the service principal
 
