@@ -10,7 +10,7 @@ title: Honeywell to Quantinuum Migration Guide
 uid: microsoft.quantum.providers.honeywell.migration
 ---
 
-# Honeywell to Quantinuum Migration Guide
+# Honeywell to Quantinuum migration guide
 
 The Honeywell provider has been replaced by the Quantinuum provider in Azure Quantum. This guide is for users who previously used the Honeywell provider and need to migrate to the Quantinuum provider.
 
@@ -24,8 +24,8 @@ The first step is to open the [Azure portal](https://portal.azure.com) and navig
 1. Navigate to the "Providers" pane by clicking the navigation button on the left
 2. Locate the Honeywell Provider and click the Delete button. Confirm the deletion by clicking "Yes" in the dialog box that opens.
 
-> [!div class="mx-imgBorder"]
-> ![The Providers pane with the old Honeywell provider](./media/honeywell-migration/honeywell-migration-remove-provider.png)
+>   [!div class="mx-imgBorder"]
+>   ![The Providers pane with the old Honeywell provider](./media/honeywell-migration/honeywell-migration-remove-provider.png)
 
 3. Click the "Add a provider" button on the top of the window
 4. Select the Quantinuum provider from the list
@@ -48,13 +48,11 @@ The table below shows the value to replace in your code to use the equivalent Qu
 | H1-2 API Validator                | honeywell.hqs-lt-s2-apival | quantinuum.hqs-lt-s2-apival |
 | H1 Simulator                      | honeywell.hqs-lt-s1-sim    | quantinuum.hqs-lt-s1-sim    |
 
-## TODO: Update QDK version  numbers below once final QDK is published
-
 ### Migrating a Q# Project with Visual Studio Code or Visual Studio
 To migrate a Q# project, open the `project.csproj` file in the root folder of your solution, and update the value of `ExecutionTarget` per the table above.
 
 > [!Note]
-> If your .csproj file has a fixed SDK version such as `<Project Sdk="Microsoft.Quantum.Sdk/0.17.2105143879">`, ensure you replace the version number with at least `Microsoft.Quantum.Sdk/0.23.194793-beta`.
+> If your .csproj file has a fixed SDK version such as `<Project Sdk="Microsoft.Quantum.Sdk/0.17.2105143879">`, ensure you replace the version number with at least `Microsoft.Quantum.Sdk/0.23.195983`.
 
 Old `.csproj` file:
 ```xml
@@ -111,7 +109,7 @@ Also, ensure that you have the latest `azure-quantum[qiskit]` package by upgradi
 pip install --upgrade azure-quantum[qiskit]
 ```
 
-The minimum supported `azure-quantum[qiskit]` version is `TODO`.
+The minimum supported `azure-quantum[qiskit]` version is `0.23.195983`.
 
 ### Migrating a Cirq Project
 To migrate a Cirq project, find the line(s) in your Python file that reference the Honeywell target, and replace it with the appropriate Quantinuum target per the table above.
@@ -141,7 +139,7 @@ Also, ensure that you have the latest `azure-quantum[cirq]` package by upgrading
 pip install --upgrade azure-quantum[cirq]
 ```
 
-The minimum supported `azure-quantum[cirq]` version is `TODO`.
+The minimum supported `azure-quantum[cirq]` version is `0.23.195983`.
 
 ### Migrating a Passthrough Project
 To migrate a passthrough project using the `azure-quantum` python package, find the line(s) in your Python file that reference the Honeywell target, and replace it with the appropriate Quantinuum target per the table above.
@@ -161,4 +159,4 @@ Also, ensure that you have the latest `azure-quantum` package by upgrading with 
 pip install --upgrade azure-quantum
 ```
 
-The minimum supported `azure-quantum` version is `TODO`.
+The minimum supported `azure-quantum` version is `0.23.195983`.

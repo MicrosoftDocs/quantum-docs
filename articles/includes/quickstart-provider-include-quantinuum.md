@@ -103,7 +103,7 @@ workspace = Workspace(
 
 ## Estimate job cost
 
-Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU,you can use the `estimate_cost` method:
+Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
 
 ```python
 target = workspace.get_targets(name="quantinuum.hqs-lt-s1")

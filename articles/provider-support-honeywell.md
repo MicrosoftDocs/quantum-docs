@@ -27,6 +27,7 @@ The goal of Support is to identify and remedy defects or malfunctions causing th
 To create a support request with Honeywell, submit an incident report via email to <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a>. The on-call engineer will respond within the appropriate SLA (Table 2). Note that only incident reports that contain all of the following information will notify the Honeywell team and have the appropriate SLA resolution window. Reports without the necessary information will not trigger this response. All requests must be provided in the English language and will be answered in the English language.
 
 _Table 1: Support Contact information and Standard Operating Hours_
+
 | Email | Standard Operating Hours |
 | - | - |
 | <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a> | 8am – 5pm MST on Business Days<sup>1</sup> |

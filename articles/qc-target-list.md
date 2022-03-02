@@ -37,7 +37,7 @@ Tool to verify proper syntax and compilation completion. Full stack is exercised
 
 ### System Model H1 Emulator
 
-a simulator tool which contains detailed, realistic noise models of the actual System Model H1 hardware. The H1 Emulator noise model is derived from a detailed characterization of the H1 hardware, and is also representative of  H1 hardware performance. For more information, go to the [Quantinuum provider reference page](xref:microsoft.quantum.providers.quantinuum#system-model-h1-emulator-powered-by-honeywell).
+A simulator tool which contains detailed, realistic noise models of the actual System Model H1 hardware. The H1 Emulator noise model is derived from a detailed characterization of the H1 hardware, and is also representative of  H1 hardware performance. For more information, go to the [Quantinuum provider reference page](xref:microsoft.quantum.providers.quantinuum#system-model-h1-emulator-powered-by-honeywell).
 
 ### System Model H1, Powered by Honeywell
 

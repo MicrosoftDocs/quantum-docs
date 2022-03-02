@@ -143,6 +143,7 @@ The tables above show that your job has been submitted and is waiting for its tu
     Name        ID                                    Status    Target    Submission time
     ----------  ------------------------------------  --------  --------  ---------------------------------
     QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   quantinuum.hqs-lt  2020-10-22T22:41:27.8855301+00:00
+   ```
 
 `Status` in the above table changes to `Succeeded`. Once that's done you can get the results from the job by running `az quantum job output`:
 

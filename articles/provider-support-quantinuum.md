@@ -10,7 +10,7 @@ title: Support Policy for Quantinuum in Azure Quantum
 uid: microsoft.quantum.providers.quantinuum.support
 ---
 
-# Support Policy for Quantinuum in Azure Quantum
+# Support policy for Quantinuum in Azure Quantum
 
 This article describes the Microsoft support policy that applies when you use the Honeywell provider in Azure Quantum. The article applies to any of the targets under this provider.
 
@@ -27,6 +27,7 @@ The goal of Support is to identify and remedy defects or malfunctions causing th
 To create a support request with Quantinuum, submit an incident report via email to <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a>. The on-call engineer will respond within the appropriate SLA (Table 2). Note that only incident reports that contain all of the following information will notify the Quantinuum team and have the appropriate SLA resolution window. Reports without the necessary information will not trigger this response. All requests must be provided in the English language and will be answered in the English language.
 
 _Table 1: Support Contact information and Standard Operating Hours_
+
 | Email | Standard Operating Hours |
 | - | - |
 | <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a> | 8am – 5pm MST on Business Days<sup>1</sup> |
