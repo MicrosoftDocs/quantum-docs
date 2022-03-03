@@ -24,7 +24,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 - Released preview version of Microsoft Quantum Development Kit for VS 2022.
 - Fixed GitHub issue [microsoft/qsharp-compiler#1235](https://github.com/microsoft/qsharp-compiler/issues/1235) where the Visual Studio and Visual Studio Code extensions no longer throw an unhandled exception if the .NET SDK is not found. The Language Server will fallback to purely syntactic diagnostics.
-- Q# now supports lambda expressions. See the [Q# language documentation](TODO: Add link to lambda docs when available) for information about how to use them.
+- Q# now supports lambda expressions. See the [Q# language documentation](https://github.com/microsoft/qsharp-compiler/issues/1113) for information about how to use them.
 - Fixed GitHub issue [microsoft/qsharp-compiler#1300](https://github.com/microsoft/qsharp-compiler/issues/1300) where the Q# compiler would log an exception in addition to an error message, if an operation is called that returns a non-unit type but is incorrectly defined to be adjointable and/or controllable.
 - Fixed GitHub issue [microsoft/qsharp-compiler#1346](https://github.com/microsoft/qsharp-compiler/issues/1346) where the Q# Formatter was removing parentheses around for-loop conditions without ensuring spacing around the condition.
 - Fixed GitHub issue [microsoft/qsharp-compiler#1289](https://github.com/microsoft/qsharp-compiler/issues/1289), improving usability of the Q# Formatter by outputting a summary of its changes to console and not overwriting unchanged files.
