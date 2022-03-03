@@ -21,8 +21,22 @@ There are some processes that you can run on Azure Quantum that use Python witho
 1. Install [PIP](https://pip.pypa.io/en/stable/) and ensure you have **version 19.2 or higher**.
 1. Install the `azure-quantum` python package. Use the `--upgrade` flag to make sure to get the latest version.
 
+   To install the `azure-quantum` package without any optional dependencies, run:
+
    ```Shell
    pip install --upgrade azure-quantum
+   ```
+
+   To install the optional dependencies required for submitting Qiskit programs, install using the `[qiskit]` tag:
+
+   ```Shell
+   pip install --upgrade azure-quantum[qiskit]
+   ```
+
+   To install the optional dependencies required for submitting Cirq programs, install using the `[cirq]` tag:
+
+   ```Shell
+   pip install --upgrade azure-quantum[cirq]
    ```
 
 ## Next steps
