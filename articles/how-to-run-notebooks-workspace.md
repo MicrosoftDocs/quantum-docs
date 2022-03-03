@@ -1,17 +1,17 @@
 ---
 author: cjgronlund
-description: Learn how to run Q# or Python in a Jupyter notebook in an Azure Quantum workspace.
+description: Learn how to work with Q# or Python in a Jupyter notebook in an Azure Quantum workspace.
 ms.author: cgronlun
-ms.date: 12/30/2021
+ms.date: 03/03/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Run Jupyter notebooks in a workspace
+title: Work with Jupyter notebooks in a workspace
 uid: microsoft.quantum.how-to.notebooks
 ---
 
-# Run Jupyter notebooks in an Azure Quantum workspace
+# Work with Jupyter notebooks in an Azure Quantum workspace
 
 Learn how to run Q# or Python code in a Jupyter notebook in an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). A Jupyter notebook is a document that contains both rich text and code and can run in your browser.
 
@@ -28,20 +28,20 @@ To get started, you can use use a sample from the notebook gallery.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Notebooks**.
-1. Select **Sample Gallery**.
-1. Select the sample you want to use, and select **Copy to My Notebooks**.
+1. Select **Notebook Gallery**.
+1. Select the sample you want to use, and select **Copy to My notebooks**.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-gallery.gif" alt-text="Notebook gallery in Azure Quantum.":::
 
-The sample notebook can be found under **My Notebooks** and you can now run the notebook.
+The sample notebook can be found under **My notebooks** and you can now run the notebook.
 
 ## Run notebook
 
 To run Q# or Python in a Jupyter notebook, follow these steps.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
-1. Select **Jupyter Notebooks**.
-1. Select your notebook in **My Notebooks**.
+1. Select **Notebooks**.
+1. Select your notebook in **My notebooks**.
 1. Select the cell you want to run and select the **run icon** to execute the code in the cell, or select **Run all** to run all cells in the notebook.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/run-notebook.png" alt-text="Run a Jupyter notebook.":::
@@ -51,8 +51,8 @@ To run Q# or Python in a Jupyter notebook, follow these steps.
 Follow these steps to create a new Jupyter notebook using Q# or Python.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
-1. Select **Jupyter Notebooks**.
-1. Select **My Notebooks** and select **Add new**
+1. Select **Notebooks**.
+1. Select **My notebooks** and select **Add new**
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/create-new-notebook.png" alt-text="Create a new Jupyter notebook.":::
 
@@ -83,23 +83,24 @@ You can upload one or more existing Jupyter notebooks to an Azure Quantum worksp
 > You should only upload and run Jupyter notebooks from trusted sources and only install packages from trusted sources. While notebooks in Azure Quantum protects you by sandboxing outputs, Jupyter Notebooks is built for arbitrary code execution, so there are inherent risks to uploading or running notebooks from an untrusted source.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
-1. Select **Jupyter Notebooks**.
-1. Select **Upload notebooks**.
-1. Select **Choose Files** and select the notebook files you want to upload.
+1. Select **Notebooks**.
+1. Select **My notebooks**.
+1. Select **Upload new**.
+1. Drag and drop your notebook files, or select **Browse for Files** and select the notebook files you want to upload.
 1. If you want to overwrite already existing files, select **Overwrite if already exists**.
 1. Select **Upload files**.
 
-    :::image type="content" source="media/how-to-run-notebooks-workspace/upload-notebook.png" alt-text="Upload notebook in Azure Quantum.":::
+    :::image type="content" source="media/upload-notebook.png" alt-text="Upload notebook to Azure Quantum.":::
 
-After the notebooks have been uploaded, you can find them under **My Notebooks**.
+After the notebooks have been uploaded, you can find them under **My notebooks**.
 
 ## Manage notebooks
 
 You can rename, delete, duplicate, and download existing notebooks.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
-1. Select **Jupyter Notebooks**.
-1. Select your notebook in **My Notebooks** and select the context pane (**...**).
+1. Select **Notebooks**.
+1. Select your notebook in **My notebooks** and select the context pane (**...**).
 1. Select **Rename Notebook**, **Delete Notebook**, **Duplicate Notebook**, or **Download Notebook**.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-context-pane.png" alt-text="Notebook context pane in Azure Quantum.":::
@@ -118,7 +119,7 @@ Jupyter notebooks in an Azure Quantum workspace are isolated from other users' n
 Jupyter notebooks are stored in an [Azure Storage](/azure/storage/) account linked to your Azure Quantum workspace.
 
 > [!NOTE]
-> When notebooks are used in a workspace, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on the linked Azure Storage account. If you do not want to enable CORS for your Azure Storage account, please do not visit the **Jupyter Notebooks** blade in the portal. If you have visited the blade previously and now no longer want to enable CORS, you can directly edit your storage account to remove any existing CORS rules.
+> When notebooks are used in a workspace, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on the linked Azure Storage account. If you do not want to enable CORS for your Azure Storage account, please do not visit the **Notebooks** blade in the portal. If you have visited the blade previously and now no longer want to enable CORS, you can directly edit your storage account to remove any existing CORS rules.
 
 ## Limitations
 

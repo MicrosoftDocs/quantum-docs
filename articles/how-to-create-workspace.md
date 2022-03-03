@@ -20,11 +20,10 @@ A workspace is needed to [get started with Jupyter notebooks in Azure Quantum](x
 > [!TIP]
 > You can also create an Azure Quantum workspace using the Azure command-line interface (CLI). For more information, see [Manage quantum workspaces with the Azure CLI](xref:microsoft.quantum.workspaces-cli).
 
-<a name="azurequantumcredits"></a>
 
 ## Free Azure Quantum credits
 
-First-time users automatically get 1,000 USD (or equivalent) free credit for use with IonQ and Quantinuum hardware when creating your workspace. If you need more credits, you may apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
+First-time users automatically get free Azure Quantum Credits for use with IonQ and Quantinuum hardware (500 USD each) when creating your workspace. If you need more credits, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
 
 ## Prerequisites
 
@@ -52,8 +51,8 @@ To create an Azure Quantum workspace, follow these steps.
 
    |Option | Description |
    |--- | --- |
-   | Quick create | This option is the easiest path to creating a workspace. It automatically creates the necessary resource group and storage account, adds the Quantinuum, IonQ, and Microsoft QIO providers, and includes USD 1000 free credit for Quantinuum and IonQ hardware. You workspace can still be customized after creation, if needed. |
-   | Advanced create | Use this option to manually configure your resource group and storage account, select other payment options for your providers, and set tags to categorize resources. By default, this option also adds the Quantinuum, IonQ, and Microsoft QIO providers, and includes USD 1000 free credit for Quantinuum and IonQ hardware. |
+   | Quick create | This option is the easiest path to creating a workspace. It automatically creates the necessary resource group and storage account, adds the Quantinuum, IonQ, and Microsoft QIO providers, and includes free Azure Quantum Credits for Quantinuum and IonQ hardware (USD 500 each). You workspace can still be customized after creation, if needed. |
+   | Advanced create | Use this option to manually configure your resource group and storage account, select other payment options for your providers, and set tags to categorize resources. By default, this option also adds the Quantinuum, IonQ, and Microsoft QIO providers, and includes free Azure Quantum Credits for Quantinuum and IonQ hardware (USD 500 each). |
 
 
 ### [Quick create](#tab/tabid-quick)
