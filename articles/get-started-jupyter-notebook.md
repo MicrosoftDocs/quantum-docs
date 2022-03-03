@@ -37,7 +37,7 @@ To get started, copy a sample notebook from the notebook gallery.
 1. In the **Sample gallery**, locate the **Hello, world: Q#** notebook tile, select either the **IonQ** or **Quantinuum** provider (the sample code is identical) and select **Copy to my notebooks**.
 1. The sample notebook can be found under **My notebooks** and you can now run the notebook.
 
-    :::image type="content" source="media/load_notebook_steps.png" alt-text="Load a sample Jupyter notebook.":::
+    :::image type="content" source="media/create_notebook_steps.png" alt-text="Load a sample Jupyter notebook.":::
 
 ## Run the notebook
 
