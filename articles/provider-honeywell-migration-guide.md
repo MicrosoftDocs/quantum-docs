@@ -22,7 +22,7 @@ The Honeywell provider has been replaced by the Quantinuum provider in Azure Qua
 The first step is to open the [Azure portal](https://portal.azure.com) and navigate to your Quantum Workspace. Once you have opened your workspace, follow the steps below:
 
 1. Navigate to the "Providers" pane by clicking the navigation button on the left
-2. Locate the Honeywell Provider and click the Delete button. Confirm the deletion by clicking "Yes" in the dialog box that opens.
+2. Locate the Honeywell Provider and click the Remove button. Confirm the deletion by clicking "Yes" in the dialog box that opens.
 
   > [!div class="mx-imgBorder"]
   > ![The Providers pane with the old Honeywell provider](./media/honeywell-migration/honeywell-migration-remove-provider.png)
