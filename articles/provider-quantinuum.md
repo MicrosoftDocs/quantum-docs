@@ -34,7 +34,7 @@ A target's status indicates its current ability to process jobs. The possible st
 - **Degraded**: The target is currently processing jobs at a slower rate than usual.
 - **Unavailable**: The target currently does not process jobs.
 
-Current status information may be retrieved from the *Providers* tab of a workspace on the [Azure Portal](https://portal.azure.com).
+Current status information may be retrieved from the *Providers* tab of a workspace on the [Azure portal](https://portal.azure.com).
 
 ## API Validator
 

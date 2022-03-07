@@ -6,7 +6,7 @@ ms.date: 02/24/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: how-to
-title: Honeywell to Quantinuum Migration Guide
+title: Honeywell to Quantinuum migration guide
 uid: microsoft.quantum.providers.honeywell.migration
 ---
 
@@ -24,8 +24,8 @@ The first step is to open the [Azure portal](https://portal.azure.com) and navig
 1. Navigate to the "Providers" pane by clicking the navigation button on the left
 2. Locate the Honeywell Provider and click the Delete button. Confirm the deletion by clicking "Yes" in the dialog box that opens.
 
->   [!div class="mx-imgBorder"]
->   ![The Providers pane with the old Honeywell provider](./media/honeywell-migration/honeywell-migration-remove-provider.png)
+  > [!div class="mx-imgBorder"]
+  > ![The Providers pane with the old Honeywell provider](./media/honeywell-migration/honeywell-migration-remove-provider.png)
 
 3. Click the "Add a provider" button on the top of the window
 4. Select the Quantinuum provider from the list

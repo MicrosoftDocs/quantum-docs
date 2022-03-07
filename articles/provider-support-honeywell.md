@@ -63,6 +63,7 @@ _Table 2: Definition of Severity Index_
 The following table shows the Response SLA that will be adhered to by Honeywell for incident reports of the corresponding severity. Note that these define how fast we'll respond to issues – resolution times are not guaranteed.
 
 _Table 3: Response SLA for Various Severity_
+
 | Severity	| Response SLA |
 | - | - |
 | Severity 1	| Business hours response within 1 hour |

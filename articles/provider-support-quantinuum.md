@@ -6,7 +6,7 @@ ms.date: 02/24/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
-title: Support Policy for Quantinuum in Azure Quantum
+title: Support policy for Quantinuum in Azure Quantum
 uid: microsoft.quantum.providers.quantinuum.support
 ---
 
@@ -40,7 +40,7 @@ The incident report will require the following information:
 - Primary contact: A primary contact name and phone number in case we require more information
 - Incident Severity: the severity of the incident, according to our severity definitions
 
-Once a report is filed, the Quantinuum team will be notified and will respond within the required SLA window. You will receive an acknowledgement of the issue once it has been received and the on-call engineer has been notified. The on-call engineer may request more information, or may call you at the contact number listed in the report depending on the severity. 
+Once a report is filed, the Quantinuum team will be notified and will respond within the required SLA window. You will receive an acknowledgment of the issue once it has been received and the on-call engineer has been notified. The on-call engineer may request more information, or may call you at the contact number listed in the report depending on the severity. 
 
 During Reserved (dedicated) Sessions, Quantinuum will provide at least one quantum specialist available to you for customer support for the entirety of your dedicated session. Quantinuum reserves the right to change out the specialist during your session, but will use commercially reasonable efforts to ensure the new specialist is prepared to continue providing support.     
 
@@ -63,6 +63,7 @@ _Table 2: Definition of Severity Index_
 The following table shows the Response SLA that will be adhered to by Quantinuum for incident reports of the corresponding severity. Note that these define how fast we'll respond to issues – resolution times are not guaranteed.
 
 _Table 3: Response SLA for Various Severity_
+
 | Severity	| Response SLA |
 | - | - |
 | Severity 1	| Business hours response within 1 hour |
@@ -79,7 +80,7 @@ The support engineer will also give you advice and guidance on how to reach out 
 
 #### Q: What happens if I raise a support issue with the Quantinuum team and it turns out that there is an issue with the Azure Quantum service?
 
-The Quantinuum support team will help you reach out to Microsoft and provide you with a redirection package. This is a PDF document that you can use when continuing your support enquiry with the Azure support team.
+The Quantinuum support team will help you reach out to Microsoft and provide you with a redirection package. This is a PDF document that you can use when continuing your support inquiry with the Azure support team.
 
 ### Third-party information disclaimer
 
