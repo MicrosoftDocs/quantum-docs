@@ -107,7 +107,7 @@ Before running a job on the QPU, you can estimate how much it will cost to run. 
 
 ```python
 target = workspace.get_targets(name="honeywell.hqs-lt-s1")
-cost = target.estimate_cost(circuit, num_shots=500)
+cost = target.estimate_cost(circuit, shots=500)
 
 print(f"Estimated cost: {cost.estimated_total}")
 ```
