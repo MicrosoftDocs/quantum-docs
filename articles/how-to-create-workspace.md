@@ -23,7 +23,7 @@ A workspace is needed to [get started with Jupyter notebooks in Azure Quantum](x
 
 ## Free Azure Quantum credits
 
-First-time users automatically get free Azure Quantum Credits for use with IonQ and Quantinuum hardware (500 USD each) when creating your workspace. If you need more credits, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
+First-time users automatically get free Azure Quantum Credits for use with each participating quantum hardware provider (500 USD each) when creating your workspace. If you need more credits, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
 
 ## Prerequisites
 
