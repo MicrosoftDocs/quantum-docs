@@ -184,6 +184,8 @@
           href: provider-1qbit.md
         - name: 1QBit support policy
           href: provider-support-1qbit.md
+    - name: Azure Quantum providers pricing 
+      href: pricing.md
     - name: Samples for using Azure Quantum optimization solvers >>
       href: https://github.com/microsoft/qio-samples
   - name: Python SDK
