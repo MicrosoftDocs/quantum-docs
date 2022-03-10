@@ -37,7 +37,7 @@ workspace = Workspace(
 ## Submit a quantum circuit to the Quantinuum API validator
 
 > [!NOTE]
-> The [Quantinuum API validator](xref:microsoft.quantum.providers.honeywell#api-validator) target will always return 0 on measurement.
+> The [Quantinuum API validator](xref:microsoft.quantum.providers.quantinuum#api-validator) target will always return 0 on measurement.
 
 1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For example, the following example creates a Teleportation circuit:
 
@@ -65,7 +65,7 @@ workspace = Workspace(
 1. Submit the circuit to the Quantinuum target. The following example uses the Quantinuum API validator, which returns a `Job` object. For more information, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference).
 
     ```python
-    target = workspace.get_targets(name="honeywell.hqs-lt-s1-apival")
+    target = workspace.get_targets(name="quantinuum.hqs-lt-s1-apival")
     job = target.submit(circuit, num_shots=500)
     ```
 
@@ -98,15 +98,15 @@ workspace = Workspace(
     pl.xlabel("Bitstring")
     ```
 
-![Quantinuum job output](../media/honeywell-results.png)
+![Quantinuum job output](../media/quantinuum-results.png)
 
 
 ## Estimate job cost
 
-Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU,you can use the `estimate_cost` method:
+Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
 
 ```python
-target = workspace.get_targets(name="honeywell.hqs-lt-s1")
+target = workspace.get_targets(name="quantinuum.hqs-lt-s1")
 cost = target.estimate_cost(circuit, num_shots=500)
 
 print(f"Estimated cost: {cost.estimated_total}")
@@ -114,4 +114,4 @@ print(f"Estimated cost: {cost.estimated_total}")
 
 This prints the estimated cost in HQC, or "H1 Quantum Credits".
 
-For the most current pricing details, see [System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.honeywell#honeywell-system-model-h1), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
+For the most current pricing details, see [System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.quantinuum#honeywell-system-model-h1), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).

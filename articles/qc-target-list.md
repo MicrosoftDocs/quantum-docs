@@ -1,8 +1,8 @@
 ---
 author: geduardo
 description: This document provides a list of the available quantum computing providers on Azure Quantum.
-ms.date: 01/27/2022
-ms.author: cgronlun
+ms.date: 02/24/2022
+ms.author: mblouin
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
@@ -33,12 +33,12 @@ Trapped ion quantum computer. Dynamically reconfigurable in software to use up t
 
 ### API Validator
 
-Tool to verify proper syntax and compilation completion. Full stack is exercised with the exception of the actual quantum operations. Assuming no bugs, all zeros are returned in the proper data structure. For more information, go to the [Quantinuum provider reference page](xref:microsoft.quantum.providers.honeywell#api-validator).
+Tool to verify proper syntax and compilation completion. Full stack is exercised with the exception of the actual quantum operations. Assuming no bugs, all zeros are returned in the proper data structure. For more information, go to the [Quantinuum provider reference page](xref:microsoft.quantum.providers.quantinuum#api-validator).
 
-### System Model H0, Powered by Honeywell
+### System Model H1 Emulator
 
-Trapped ion quantum computer with 6 physical fully connected qubits and laser based gates. It uses a QCCD architecture with linear trap and two parallel operation zones. For more information, go to the [Quantinuum provider reference page](xref:microsoft.quantum.providers.honeywell#honeywell-system-model-h1).
+A simulator tool which contains detailed, realistic noise models of the actual System Model H1 hardware. The H1 Emulator noise model is derived from a detailed characterization of the H1 hardware, and is also representative of  H1 hardware performance. For more information, go to the [Quantinuum provider reference page](xref:microsoft.quantum.providers.quantinuum#system-model-h1-emulator-powered-by-honeywell).
 
 ### System Model H1, Powered by Honeywell
 
-Trapped ion quantum computer with 10 physical fully connected qubits and laser based gates. It uses a QCCD architecture with linear trap and two parallel operation zones. For more information, go to the [Quantinuum provider reference page](xref:microsoft.quantum.providers.honeywell#honeywell-system-model-h1)
+Trapped ion quantum computer with 10 physical fully connected qubits and laser based gates. It uses a QCCD architecture with linear trap and two parallel operation zones. For more information, go to the [Quantinuum provider reference page](xref:microsoft.quantum.providers.quantinuum#system-model-h1-powered-by-honeywell)
