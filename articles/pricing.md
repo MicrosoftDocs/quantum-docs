@@ -33,13 +33,13 @@ To see the different pricing plans in your local currency:
  :::image type="content" source="media/add-provider-2.png" alt-text="Screen shot showing how to select a provider SKU (Stock-keeping-Unit) to add to a Quantum Workspace.":::
 
 
-::: zone pivot="ide-pricing.computing"
+::: zone pivot="ide-computing"
 
 [!INCLUDE [pricing-computing](includes/pricing-qc.md)]
 
 ::: zone-end
 
-::: zone pivot="ide-pricing.optimization"
+::: zone pivot="ide-optimization"
 
 [!INCLUDE [pricing-optimization](includes/pricing-optimization.md)]
 
