@@ -41,7 +41,6 @@ powered by Honeywell and 40k emulator credits (eHQCs) for use on the H1 Emulator
 |Pricing| $ 125,000 USD / Month + Azure infrastructure costs |
 |---|---|
 
-If you want to learn more about how H1 Quantum Credits are calculated, visit the [Quantinuum provider page](xref:microsoft.quantum.providers.honeywell).
 ### [Premium Subscription](#tab/tabid-premium)
  
 The Premium Subscription is a monthly subscription plan with 17k H1 Quantum Credits (HQCs) for use on System Model H1 hardware, 
