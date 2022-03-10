@@ -48,11 +48,11 @@ print(service.targets())
 ```output
 [<Target name="ionq.qpu", avg. queue time=345 s, Available>,
 <Target name="ionq.simulator", avg. queue time=4 s, Available>,
-<Target name="honeywell.hqs-lt-s1", avg. queue time=0 s, Available>,
-<Target name="honeywell.hqs-lt-s1-apival", avg. queue time=0 s, Available>,
-<Target name="honeywell.hqs-lt-s2", avg. queue time=313169 s, Available>,
-<Target name="honeywell.hqs-lt-s2-apival", avg. queue time=0 s, Available>,
-<Target name="honeywell.hqs-lt-s1-sim", avg. queue time=1062 s, Available>]
+<Target name="quantinuum.hqs-lt-s1", avg. queue time=0 s, Available>,
+<Target name="quantinuum.hqs-lt-s1-apival", avg. queue time=0 s, Available>,
+<Target name="quantinuum.hqs-lt-s2", avg. queue time=313169 s, Available>,
+<Target name="quantinuum.hqs-lt-s2-apival", avg. queue time=0 s, Available>,
+<Target name="quantinuum.hqs-lt-s1-sim", avg. queue time=1062 s, Available>]
 ```
 
 ## Run a simple circuit
