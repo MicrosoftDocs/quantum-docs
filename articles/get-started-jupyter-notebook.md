@@ -37,7 +37,7 @@ To get started, copy a sample notebook from the notebook gallery.
 1. In the **Sample gallery**, locate the **Hello, world: Q#** notebook tile, select either the **IonQ** or **Quantinuum** provider (the sample code is identical) and select **Copy to my notebooks**.
 1. The sample notebook can be found under **My notebooks** and you can now run the notebook.
 
-    :::image type="content" source="media/create_notebook_steps.png" alt-text="Load a sample Jupyter notebook.":::
+    :::image type="content" source="media/load_notebook_steps.png" alt-text="Load a sample Jupyter notebook.":::
 
 ## Run the notebook
 
@@ -89,6 +89,9 @@ Looking at the histogram, you may notice that the program returned 0 every time,
 
 To create a true random number generator, modify the code in the 5th cell to use the **System Model H1 Emulator** target, *honeywell.hqs-lt-s1-sim*
 
+> [!NOTE]
+> Running the program against the H1 Emulator or the System Model H1 computer will use H1 Quantum Credits (HQC) from your account. A single run of this example program costs approximately 5.3 HQC.
+
 ```python
 qsharp.azure.target("honeywell.hqs-lt-s1-sim")
 ```
@@ -100,4 +103,7 @@ Re-run that cell and the following cells. Now, the results should be roughly spl
 > [!NOTE]
 > If you have any questions regarding the workspace creation process or run into any issue at any point using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Standard Time zone (PST).
 
+## Next steps
 
+- [Quickstart: Solve an optimization problem in the Azure Quantum portal](xref:microsoft.quantum.quickstarts.optimization.qio.portal)
+- [Quickstart: Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal)

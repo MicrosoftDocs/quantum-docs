@@ -56,7 +56,7 @@ Follow these steps to create a new Jupyter notebook using Q# or Python.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/create-new-notebook.png" alt-text="Create a new Jupyter notebook.":::
 
-1. Select either **Q#** or **Python 3** as the **Kernel Type**, type a **File Name** and select **Create file**.
+1. Select either **IQ#** or **IPython** as the **Kernel Type**, type a **File Name** and select **Create file**.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/create-new-notebook-kernel-name.png" alt-text="Select notebook kernel and file name for a new Jypter notebook.":::
 
@@ -133,6 +133,6 @@ The following are limitations with Jupyter notebooks in an Azure Quantum workspa
 
 ## Next steps
 
-- [Quickstart: Create a quantum-based random number generator in Azure Quantum](xref:microsoft.quantum.quickstarts.computing)
-- [Quickstart: Solve an optimization problem in Azure Quantum](xref:microsoft.quantum.quickstarts.optimization.qio)
-- [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)
+- [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks)
+- [Quickstart: Solve an optimization problem using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.optimization.qio.portal)
+- [Quickstart: Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal)

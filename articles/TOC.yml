@@ -10,14 +10,12 @@
   items:
   - name: Create an Azure Quantum workspace
     href: how-to-create-workspace.md
-  - name: Create a simple random number generator with Q#
+  - name: Get started with Q# and an Azure Quantum notebook
     href: get-started-jupyter-notebook.md
   - name: Create and run a Qiskit circuit
     href: quickstart-microsoft-qiskit-portal.md
   - name: Create and run a simple optimization job
     href: quickstart-microsoft-qio-portal.md
-  - name: Explore quantum entanglement
-    href: tutorial-portal-explore-entanglement.md
   - name: Understanding job costs in Azure Quantum
     href: azure-quantum-job-costs.md
 - name: Quantum computing
@@ -29,23 +27,25 @@
       href: overview-understanding-quantum-computing.md
   - name: Quickstarts
     items:
-    - name: Submit a circuit with Cirq (TBD)
-      href: quickstart-microsoft-cirq.md
-    - name: Submit a circuit in provider-specific format (TBD)
-      href: quickstart-microsoft-provider-format.md
+    - name: Submit a circuit with Cirq
+      href: quickstart-microsoft-cirq-portal.md
+    - name: Submit a circuit in provider-specific format
+      href: quickstart-microsoft-provider-format-portal.md
   - name: Tutorials
     items:
-    - name: Quantum random number generator (TBD)
+    - name: Quantum random number generator
       href: tutorial-qdk-quantum-random-number-generator.md
-    - name: Implement Grover's search algorithm (TBD)
+    - name: Explore entanglement with Q#
+      href: tutorial-qdk-explore-entanglement.md
+    - name: Implement Grover's search algorithm
       href: tutorial-qdk-grovers-search.md
-    - name: Qubit-level programming (TBD)
+    - name: Qubit-level programming
       href: tutorial-qdk-qubit-level-program.md
   - name: How-to guides
     items: 
     - name: Submit Q# jobs
       href: how-to-submit-jobs.md
-    - name: Publish a Q# job as an Azure Function (MOVE?)
+    - name: Publish a Q# job as an Azure Function
       href: how-to-publish-qsharp-job-as-azurefunction.md
   - name: Q# and the Quantum Development Kit
     items:
@@ -116,7 +116,7 @@
     items:
     - name: Submit optimization jobs
       href: how-to-submit-jobs-optimization.md
-    - name: Publish a QIO job as an Azure Function (MOVE?)
+    - name: Publish a QIO job as an Azure Function
       href: how-to-publish-qio-job-as-azurefunction.md
   - name: Concepts
     items:
@@ -228,16 +228,6 @@
       href: quickstart-microsoft-cirq.md
     - name: Submit a circuit in provider-specific format
       href: quickstart-microsoft-provider-format.md
-  - name: Tutorials
-    items: 
-    - name: Quantum random number generator
-      href: tutorial-qdk-quantum-random-number-generator.md
-    - name: Explore entanglement with Q#
-      href: tutorial-qdk-explore-entanglement.md
-    - name: Implement Grover's search algorithm
-      href: tutorial-qdk-grovers-search.md
-    - name: Qubit-level programming
-      href: tutorial-qdk-qubit-level-program.md
   - name: Use a Binder environment
     href: install-binder-qdk.md
 - name: Manage Azure Quantum

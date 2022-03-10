@@ -24,7 +24,7 @@ To run your circuit on the API validator, add the following code which uses the 
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = apival_backend.run(circuit, count=1024)
+job = apival_backend.run(circuit, count=100)
 job_id = job.id()
 print("Job id", job_id)
 
@@ -50,7 +50,7 @@ print(result)
 ```
 
 ```output
-Result(backend_name='honeywell.hqs-lt-s1-sim', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='89511b08-9691-11ec-be32-00155d00ae89', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'101': 2, '111': 50, '001': 1, '000': 47}, probabilities={'101': 0.02, '111': 0.5, '001': 0.01, '000': 0.47}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
+Result(backend_name='honeywell.hqs-lt-s1-apival', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='89511b08-9691-11ec-be32-00155d00ae89', success=True, results=[ExperimentResult(shots=100, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 100}, probabilities={'000': 1.0}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
 ```
 
 Because this `result` type is an object native to the Qiskit package, you can use
@@ -66,10 +66,12 @@ plot_histogram(counts)
 ```
 
 ```output
-{'000': 50, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 50}
+{'000': 100, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
 ```
 
 ![Qiskit circuit result on Quantinuum API validator](../media/azure-quantum-qiskit-hw-result-1.png)
+
+Looking at the histogram, you may notice that the random number generator returned 0 every time, which is not very random. This is because that, while the API Validator ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
 
 ## Estimate job cost
 
@@ -103,14 +105,18 @@ qpu_backend = provider.get_backend("honeywell.hqs-lt-s1")
 To estimate the cost of running a job on the QPU, add and run a new cell using the `estimate_cost` method of the target:
 
 ```python
-cost = qpu_backend.estimate_cost(circuit, count=1024)
+cost = qpu_backend.estimate_cost(circuit, count=100)
 
 print(f"Estimated cost: {cost.estimated_total}")
 ```
 
+```output
+Estimated cost: 5.72
+```
+
 This displays the estimated cost in HQC, or "H1 Quantum Credits".
 
-For the most current pricing details, see [System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.honeywell#system-model-h1-powered-by-honeywell), or find your workspace and view pricing options in the **Providers** blade of your workspace.
+For the most current pricing details, see [System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.honeywell#system-model-h1-powered-by-honeywell), or view pricing options in the **Providers** blade of your workspace. To see your current credit status and usage, select **Credits and quotas**.
 
 ## Run on a Quantinuum QPU 
 
@@ -123,7 +129,7 @@ Use the same `run` method and operations that you used previously with the API V
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = qpu_backend.run(circuit, count=1024)
+job = qpu_backend.run(circuit, count=100)
 job_id = job.id()
 print("Job id", job_id)
 
@@ -132,11 +138,11 @@ job_monitor(job)
 ```
 
 ```output
-Job id 910b5ac8-98cd-11ec-b3ba-00155d5528cf
+Job id 48282d18-9c15-11ec-bfbd-00155d6373ba
 Job Status: job has successfully run
 ```
 
-When the job has successfully run, get the job results as before and display them in a chart:
+When the job has successfully run, get the job results as before and display them in a histogram:
 
 ```python
 result = job.result()
@@ -147,9 +153,11 @@ print(counts)
 plot_histogram(counts)
 ```
 
+You can see that the results now are roughly divided between 0 and 1. 
+
 ```output
-Result(backend_name='honeywell.hqs-lt-s1', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='910b5ac8-98cd-11ec-b3ba-00155d5528cf', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 245, '010': 1, '110': 1, '111': 250, '001': 1, '101': 2}, probabilities={'000': 0.49, '010': 0.002, '110': 0.002, '111': 0.5, '001': 0.002, '101': 0.004}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
-{'000': 245, '001': 1, '010': 1, '011': 0, '100': 0, '101': 2, '110': 1, '111': 250}
+Result(backend_name='honeywell.hqs-lt-s1', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='48282d18-9c15-11ec-bfbd-00155d6373ba', success=True, results=[ExperimentResult(shots=100, success=True, meas_level=2, data=ExperimentResultData(counts={'111': 53, '101': 1, '000': 46}, probabilities={'111': 0.53, '101': 0.01, '000': 0.46}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
+{'000': 46, '001': 0, '010': 0, '011': 0, '100': 0, '101': 1, '110': 0, '111': 53}
 ```
 
 ![Qiskit circuit result on Quantinuum QPU](../media/azure-quantum-qiskit-hw-result-2.png)

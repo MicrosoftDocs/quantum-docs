@@ -145,4 +145,8 @@ This workspace's targets:
 
 ::: zone-end
 
+## Next steps
 
+Looking for more samples to run? Check out the [samples directory](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum) for Azure Quantum.
+
+Lastly, if you would like to learn more about writing Q# programs please see the [Q# programming language user guide](xref:microsoft.quantum.user-guide-qdk.overview).

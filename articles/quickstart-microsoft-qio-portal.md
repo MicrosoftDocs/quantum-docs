@@ -11,7 +11,7 @@ uid: microsoft.quantum.quickstarts.optimization.qio.portal
 zone_pivot_groups: optimization-platforms
 ---
 
-# Quickstart: Solve an optimization problem in the Azure Quantum portal
+# Quickstart: Solve an optimization problem using an Azure Quantum notebook
 
 Learn how to use Azure Quantum optimization solvers to solve a simple binary optimization problem. This procedure uses Notebooks in the Azure Quantum portal. 
 
