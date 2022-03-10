@@ -33,6 +33,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 - Fixed the GitHub issue to remove a UserWarning when initializing the solver when a job is sent to Toshiba SimulatedBifurcationMachine.
 - Breaking change: The compress flag was removed from problem, solvers and streaming_problem classes and the compress parameter can no longer be set in `solvers.problem` or `streaming_problem` objects and methods.
 - Fixed GitHub issues [microsoft/qsharp-compiler#1046](https://github.com/microsoft/qsharp-compiler/issues/1046) and [microsoft/qsharp-compiler#1352](https://github.com/microsoft/qsharp-compiler/issues/1352) related to QIR generation. The first issue fixes an issue when generating big integer literals with more than 64 bits, and the second issue can cause a runtime failure when using a new array expression to create an array of callables.
+- Added support for the [Quantinuum Provider](xref:microsoft.quantum.providers.quantinuum) which replaces the Honeywell Provider.
 
 ## 2022-02-01
 

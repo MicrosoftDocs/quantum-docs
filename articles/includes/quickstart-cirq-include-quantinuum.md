@@ -33,7 +33,7 @@ from azure.quantum.cirq import AzureQuantumService
 service = AzureQuantumService(
     resource_id="",
     location="",
-    default_target="honeywell.hqs-lt-s1-apival"
+    default_target="quantinuum.hqs-lt-s1-apival"
 )
 ```
 
@@ -49,17 +49,17 @@ print(service.targets())
 ```output
 [<Target name="ionq.qpu", avg. queue time=345 s, Available>,
 <Target name="ionq.simulator", avg. queue time=4 s, Available>,
-<Target name="honeywell.hqs-lt-s1", avg. queue time=0 s, Available>,
-<Target name="honeywell.hqs-lt-s1-apival", avg. queue time=0 s, Available>,
-<Target name="honeywell.hqs-lt-s2", avg. queue time=313169 s, Available>,
-<Target name="honeywell.hqs-lt-s2-apival", avg. queue time=0 s, Available>,
-<Target name="honeywell.hqs-lt-s1-sim", avg. queue time=1062 s, Available>]
+<Target name="quantinuum.hqs-lt-s1", avg. queue time=0 s, Available>,
+<Target name="quantinuum.hqs-lt-s1-apival", avg. queue time=0 s, Available>,
+<Target name="quantinuum.hqs-lt-s2", avg. queue time=313169 s, Available>,
+<Target name="quantinuum.hqs-lt-s2-apival", avg. queue time=0 s, Available>,
+<Target name="quantinuum.hqs-lt-s1-sim", avg. queue time=1062 s, Available>]
 ```
 
 ## Run a simple circuit on the API validator
 
 > [!NOTE]
-> The [Quantinuum API validator](xref:microsoft.quantum.providers.honeywell#api-validator) target will always return 0 on measurement.
+> The [Quantinuum API validator](xref:microsoft.quantum.providers.quantinuum#api-validator) target will always return 0 on measurement.
 
 Next, create a simple Cirq circuit to run.
 
@@ -115,7 +115,7 @@ Before running a job on the QPU, you can estimate how much it will cost to run. 
 cost = service.estimate_cost(
     program=circuit,
     repetitions=100e,
-    target="honeywell.hqs-lt-s1"
+    target="quantinuum.hqs-lt-s1"
 )
 
 print(f"Estimated cost: {cost.estimated_total}")

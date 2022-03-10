@@ -1,24 +1,24 @@
 ---
 author: Mobius5150
-description: This document provides the technical details of the Honeywell quantum provider
+description: This document provides the technical details of the Quantinuum quantum provider
 ms.author: mblouin
-ms.date: 01/27/2022
+ms.date: 02/24/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
-title: Honeywell provider
-uid: microsoft.quantum.providers.honeywell
+title: Quantinuum provider
+uid: microsoft.quantum.providers.quantinuum
 ---
 
-# Honeywell provider
+# Quantinuum provider
+
+Quantinuum provides access to a trapped-ion system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurement.
 
 - Publisher: [Quantinuum](https://www.quantinuum.com)
-- Provider ID: `honeywell`
+- Provider ID: `quantinuum`
 
 > [!Note]
-> The Honeywell provider has been replaced by the Quantinuum Provider. New customers must use the [Quantinuum provider](xref:microsoft.quantum.providers.quantinuum). Existing customers may continue using the Honeywell provider or may follow the [migration guide to switch to the Quantinuum provider](xref:microsoft.quantum.providers.honeywell.migration).
-
-## Targets
+> The Quantinuum provider replaces the old Honeywell provider. New customers must use the Quantinuum provider in their workspaces. All previously available targets and systems are available with the Quantinuum provider. If you previously used the Honeywell provider you may follow the [migration guide to switch to the Quantinuum provider](xref:microsoft.quantum.providers.honeywell.migration).
 
 The following targets are available from this provider:
 
@@ -26,7 +26,7 @@ The following targets are available from this provider:
 - [System Model H1 Emulator, Powered by Honeywell](#system-model-h1-emulator-powered-by-honeywell)
 - [System Model H1, Powered by Honeywell](#system-model-h1-powered-by-honeywell)
 
-### Target Availability
+## Target Availability
 
 A target's status indicates its current ability to process jobs. The possible states of a target include:
 
@@ -34,31 +34,31 @@ A target's status indicates its current ability to process jobs. The possible st
 - **Degraded**: The target is currently processing jobs at a slower rate than usual.
 - **Unavailable**: The target currently does not process jobs.
 
-Current status information may be retrieved from the *Providers* tab of a workspace on the [Azure Portal](https://portal.azure.com).
+Current status information may be retrieved from the *Providers* tab of a workspace on the [Azure portal](https://portal.azure.com).
 
-### API Validator
+## API Validator
 
 We recommend that users first validate their code using our API Validator. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Full stack is exercised with the exception of the actual quantum operations. Assuming no bugs, all zeros are returned in the proper data structure. The API Validator allows developers to validate their code at any time, even when the machine is offline.
 
 - Job type: `Simulation`
 - Data Format: `honeywell.openqasm.v1`
-- Target ID: `honeywell.hqs-lt-s1-apival` or `honeywell.hqs-lt-s2-apival`
+- Target ID: `quantinuum.hqs-lt-s1-apival` or `quantinuum.hqs-lt-s2-apival`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
 Billing information:  No charge for usage.
 
-### System Model H1 Emulator, Powered by Honeywell
+## System Model H1 Emulator, Powered by Honeywell
 
 After validating the syntax of their code with the API Validator,  users can run Quantinuum's H1 Emulator, a simulator tool which contains detailed, realistic noise models of the actual System Model H1 hardware. The H1 Emulator noise model is derived from a detailed characterization of the H1-1 hardware, and is also representative of  H1-2 hardware performance. The H1 Emulator uses an identical API for job submission as the System Model H1 hardware, enabling seamless transition from emulation to hardware. To help maximize productivity and shorten development time, the H1 Emulator is available even while the hardware is offline.     
 - Job type: `Simulation`
 - Data Format: `honeywell.openqasm.v1`
-- Target ID:  `honeywell.hqs-lt-s1-sim` or `honeywell.hqs-lt-s2-sim`
+- Target ID:  `quantinuum.hqs-lt-s1-sim` or `quantinuum.hqs-lt-s2-sim`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
-Billing information:  H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see Billing information for the [System Model H1](#system-model-h1-powered-by-honeywell).
+Billing information: H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see Billing information for the [System Model H1](#system-model-h1-powered-by-honeywell).
 
 
-### System Model H1, Powered by Honeywell
+## System Model H1, Powered by Honeywell
 
 Quantinuum's quantum computer, the System Model H1, Powered by Honeywell, includes two hardware machine targets: H1-1 and H1-2.  Both machines have fundamentally the same design and both meet a nominal set of technical requirements. However, they may have system-to-system variability in exact performance and features, such as the maximum number of available qubits. Users are encouraged to test compatibility of their code by submitting jobs to the [API Validator](#api-validator) prior to submitting them to the target machines.  
 
@@ -70,9 +70,9 @@ Both System Model H1 hardware H1-1 and H1-2 are continuously upgraded throughout
 - Job type: `Quantum Program`
 - Data Format: `honeywell.openqasm.v1`
 - Target ID:
-    - H1-1: `honeywell.hqs-lt-s1` 
-    - H1-2: `honeywell.hqs-lt-s2`
-    - H1 machine family: `honeywell.hqs-lt`
+    - H1-1: `quantinuum.hqs-lt-s1` 
+    - H1-2: `quantinuum.hqs-lt-s2`
+    - H1 machine family: `quantinuum.hqs-lt`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
 
@@ -80,6 +80,7 @@ Billing information:
 
 - **Standard Subscription:**
 Monthly subscription plan with 10k H1 Quantum Credits (HQCs) for use on the System Model H1 hardware, Powered by Honeywell and 40k emulator credits (eHQCs) for use on the H1 Emulator / month, available through queued access.
+
 - **Premium Subscription:**
 Monthly subscription plan with 17k H1 Quantum Credits (HQCs) for use on System Model H1 hardware, Powered by Honeywell and 100k emulator credits (eHQCs) for use on the H1 Emulator / month, available through queued access.
 
@@ -96,7 +97,7 @@ where:
 - $N_{m}$ is the number of state preparation and measurement (SPAM) operations in a circuit including initial implicit state preparation and any intermediate and final measurements and state resets.
 - $C$ is the shot count.
 
-#### Technical Specifications
+### Technical Specifications
 
 - Trapped-ion based quantum computer with laser based gates
 - QCCD architecture with linear trap and three parallel operational zones
