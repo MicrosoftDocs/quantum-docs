@@ -8,6 +8,7 @@ ms.subservice: core
 ms.topic: reference
 title: Azure Quantum providers pricing
 uid: microsoft.quantum.providers-pricing
+zone_pivot_groups: azurequantum-providers
 ---
 
 # Azure Quantum providers pricing 
