@@ -114,8 +114,16 @@
       - name: Quantinuum
         items:
         - name: Quantinuum provider & targets
-          href: provider-honeywell.md
+          href: provider-quantinuum.md
         - name: Quantinuum support policy
+          href: provider-support-quantinuum.md
+      - name: Honeywell (Deprecated)
+        items:
+        - name: Migration Guide
+          href: provider-honeywell-migration-guide.md
+        - name: Honeywell provider & targets
+          href: provider-honeywell.md
+        - name: Honeywell support policy
           href: provider-support-honeywell.md
     - name: Samples for using Azure Quantum Computing >>
       href: https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum

@@ -184,9 +184,9 @@ targets
  <Target name="1qbit.pathrelinking", avg. queue time=0 s, Available>,
  <Target name="1qbit.pticm", avg. queue time=0 s, Available>,
  <Target name="toshiba.sbm.ising", avg. queue time=5 s, Available>,
- <Target name="honeywell.hqs-lt-s1", avg. queue time=0 s, Unavailable>,
- <Target name="honeywell.hqs-lt-s1-apival", avg. queue time=1 s, Available>,
- <Target name="honeywell.hqs-lt-s1-sim", avg. queue time=6 s, Available>]
+ <Target name="quantinuum.hqs-lt-s1", avg. queue time=0 s, Unavailable>,
+ <Target name="quantinuum.hqs-lt-s1-apival", avg. queue time=1 s, Available>,
+ <Target name="quantinuum.hqs-lt-s1-sim", avg. queue time=6 s, Available>]
 ```
 
 To filter by provider, specify the `provider_id` input argument:

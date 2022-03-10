@@ -1,6 +1,6 @@
 ---
 author: guenp
-description: Learn how to to submit provider-formatted quantum circuits with OpenQASM and IonQ JSON to the Azure Quantum service.
+description: Learn how to submit provider-formatted quantum circuits with OpenQASM and IonQ JSON to the Azure Quantum service.
 ms.author: guenp
 ms.date: 01/27/2022
 ms.service: azure-quantum
@@ -44,7 +44,7 @@ Learn how to use the `azure-quantum` Python package to submit provider-specific 
 
 ::: zone pivot="platform-quantinuum"
 
-[!INCLUDE [quantinuum-procedure](includes/quickstart-provider-include-honeywell.md)]
+[!INCLUDE [quantinuum-procedure](includes/quickstart-provider-include-quantinuum.md)]
 
 ::: zone-end
 

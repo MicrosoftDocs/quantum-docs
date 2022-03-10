@@ -25,7 +25,7 @@ Learn how to use Azure Quantum to create a simple quantum-based random number ge
 
 ::: zone pivot="platform-quantinuum"
 
-[!INCLUDE [quantinuum-procedure](includes/quickstart-qc-include-honeywell.md)]
+[!INCLUDE [quantinuum-procedure](includes/quickstart-qc-include-quantinuum.md)]
 
 ::: zone-end
 
