@@ -5,7 +5,7 @@ ms.author: sonialopez
 ms.date: 03/10/2022
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: faq
+ms.topic: reference
 title: Azure Quantum providers pricing
 uid: microsoft.quantum.providers-pricing
 ---
