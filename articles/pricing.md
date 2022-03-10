@@ -26,13 +26,9 @@ To see the different pricing plans in your local currency:
 2. Create a new [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). 
 3. Go to the **Providers** tab in your Quantum workspace and click on **Add a Provider**. Then, select the provider you want to add.
 
- :::image type="content" source="media/add-provider-1.png" alt-text="Screen shot showing how to select a provider to add to a Quantum Workspace.":::
+ :::image type="content" source="media/add-providers-portal.png" alt-text="Screen shot showing how to select a provider to add to a Quantum Workspace.":::
  
 4. In the description of the provider pane, you will find the current pricing options in your local currency. 
-
- :::image type="content" source="media/add-provider-2.png" alt-text="Screen shot showing how to select a provider SKU (Stock-keeping-Unit) to add to a Quantum Workspace.":::
-
-
 
 ::: zone pivot="ide-computing"
 
