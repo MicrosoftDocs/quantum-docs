@@ -33,6 +33,7 @@ groups:
   - id: ide-jupyter
     title: Jupyter Notebooks
   - id: ide-azurecli
+    title: Azure CLI
 - id: azurequantum-providers
   title: Quantum solutions offered by AQ
   prompt: Select the type of quantum solution
