@@ -6,7 +6,16 @@ Besides Azure Quantum credits, IonQ offers a **Pay-as-you-go** plan.
 
 ### [Azure Quantum Credits](#tab/tabid-AQcredits)
 
-Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. One you have consumed all the credits you need to switch to a different plan to continue using IonQ - Azure Quantum won’t start charging you once you reach your credit limit. 
+Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. 
+
+Every quantum program consists of $N$ logical gates of one or more qubits, and is executed for a certain number of shots. The number of gate-shots is calculated by 
+multiplying the number of one- or two-qubit gates submitted with the number of execution shots requested. 
+
+Gates involving more than two qubits are considered as $6(N-2)$ two-qubit gates, where $N$ is the number of qubits in the gate. For example, a NOT gate with three controls would 
+be calculated as 6(4-2) or 12 two-qubit gates.  
+
+> [!NOTE]
+> Once you have consumed all the credits you need to switch to a different plan to continue using IonQ. Azure Quantum won’t start charging you once you reach your credit limit. 
  
 |Pricing | $0 per month + Azure infrastructure costs |
 |---|---|  
@@ -15,13 +24,14 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 
 Minimum of $1 USD per program execution, deducted from your credits. 
 
-### [Pas as you go](#tab/tabid-paygo)
+### [Pay As You Go](#tab/tabid-paygo)
 
 The Pay-as-you-go plan consists of *a la carte* access to trapped ion quantum computers and simulators, charged on a resource-usage model.  
+
 Every quantum program consists of $N$ logical gates of one or more qubits, and is executed for a certain number of shots. We bill based on gate-shots, calculated by 
 multiplying the number of one- or two-qubit gates submitted with the number of execution shots requested.  
 
-Gates involving more than two qubits are billed as $6(N-2)$ two-qubit gates, where N is the number of qubits in the gate. For example, a NOT gate with three controls would 
+Gates involving more than two qubits are billed as $6(N-2)$ two-qubit gates, where $N$ is the number of qubits in the gate. For example, a NOT gate with three controls would 
 be billed as 6(4-2) or 12 two-qubit gates.  
 
 |Pricing | $0 per month + Azure infrastructure costs |
@@ -58,7 +68,10 @@ Besides Azure Quantum credits, Quantinuum provides two plans: **Standard Subscri
 
 ### [Azure Quantum Credits](#tab/tabid-AQcreditsQ)
 
-Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. One you have consumed all the credits you need to explicitly switch to a different plan to continue using Quantinuum. Azure Quantum won’t start charging you once you reach your credit limit. 
+Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. 
+
+> [!NOTE]
+> Once you have consumed all the credits you need to explicitly switch to a different plan to continue using Quantinuum. Azure Quantum won’t start charging you once you reach your credit limit. 
 
 |Pricing | Use is deducted from the Azure Quantum Credits based on the HQC equation described above |
 |---|---|  
