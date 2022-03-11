@@ -56,7 +56,7 @@ where:
 
 Besides Azure Quantum credits, Quantinuum provides two plans: **Standard Subscription** and **Premium Subscription**. 
 
-### [Azure Quantum Credits](#tab/tabid-AQcredits)
+### [Azure Quantum Credits](#tab/tabid-AQcreditsQ)
 
 Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. One you have consumed all the credits you need to explicitly switch to a different plan to continue using Quantinuum. Azure Quantum won’t start charging you once you reach your credit limit. 
 
