@@ -242,7 +242,7 @@
       href: how-to-manage-quantum-workspaces-with-azure-resource-manager.md
 - name: Resources
   items:
-  - name: Azure Quantum providers pricing 
+  - name: Azure Quantum pricing 
     href: pricing.md
   - name: Glossary
     href: azure-quantum-glossary.md
