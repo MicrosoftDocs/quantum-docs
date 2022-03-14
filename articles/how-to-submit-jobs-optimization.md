@@ -1,8 +1,8 @@
 ---
 author: cjgronlund
-description: This document provides a basic guide to submit and run optimization jobs to Azure Quantum using Python and Jupyter Notebooks. 
-ms.author: cgronlun
-ms.date: 11/12/2021
+description: This document provides a basic guide to submit and run optimization jobs to Azure Quantum using the Azure portal, Python, or Jupyter Notebooks. 
+ms.author: sonialopez
+ms.date: 03/09/2022
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
@@ -13,9 +13,15 @@ zone_pivot_groups: azurequantum-ide
 
 # Submit optimization jobs to Azure Quantum
 
-In this article you will find the steps for how to submit optimization jobs to Azure Quantum using Python or Jupyter Notebooks.
+In this article you will find the steps for how to submit optimization jobs to Azure Quantum using the Azure portal, Python, or Jupyter Notebooks.
 
-As an example, this article follows a sample shipping company that has a difficult business problem: Balancing the loads of container ships at port. If you are interested in the problem details, see the [shipping-loading sample](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading) .
+As an example, this article follows a sample shipping company that has a difficult business problem: Balancing the loads of container ships at port. If you are interested in the problem details, see the [shipping-loading sample](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading).
+
+::: zone pivot="ide-portal"
+
+[!INCLUDE [python-procedure](includes/how-to-submit-qio-include-portal.md)]
+
+::: zone-end
 
 ::: zone pivot="ide-python"
 
