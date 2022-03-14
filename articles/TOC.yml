@@ -10,20 +10,12 @@
   items:
   - name: Create an Azure Quantum workspace
     href: how-to-create-workspace.md
-  - name: Get started with a Jupyter notebook
+  - name: Get started with Q# and an Azure Quantum notebook
     href: get-started-jupyter-notebook.md
-  - name: Set up a local development environment
-    items:
-    - name: Configure your local environment
-      href: install-overview-qdk.md
-    - name: Set up a Q# standalone or .NET environment
-      href: install-command-line-qdk.md
-    - name: Set up a Q# + Python environment
-      href: install-python-qdk.md
-    - name: Use Python without Q#
-      href: install-python-optimization.md
-    - name: Use a Binder environment
-      href: install-binder-qdk.md
+  - name: Create and run a Qiskit circuit
+    href: quickstart-microsoft-qiskit-portal.md
+  - name: Create and run a simple optimization job
+    href: quickstart-microsoft-qio-portal.md
   - name: Understanding job costs in Azure Quantum
     href: azure-quantum-job-costs.md
 - name: Quantum computing
@@ -35,24 +27,20 @@
       href: overview-understanding-quantum-computing.md
   - name: Quickstarts
     items:
-    - name: Create a quantum-based random number generator
-      href: quickstart-microsoft-qc.md
-    - name: Submit a circuit with Qiskit
-      href: quickstart-microsoft-qiskit.md
     - name: Submit a circuit with Cirq
-      href: quickstart-microsoft-cirq.md
+      href: quickstart-microsoft-cirq-portal.md
     - name: Submit a circuit in provider-specific format
-      href: quickstart-microsoft-provider-format.md
+      href: quickstart-microsoft-provider-format-portal.md
   - name: Tutorials
     items:
-      - name: Quantum random number generator
-        href: tutorial-qdk-quantum-random-number-generator.md
-      - name: Explore entanglement with Q#
-        href: tutorial-qdk-explore-entanglement.md
-      - name: Implement Grover's search algorithm
-        href: tutorial-qdk-grovers-search.md
-      - name: Qubit-level programming
-        href: tutorial-qdk-qubit-level-program.md
+    - name: Quantum random number generator
+      href: tutorial-qdk-quantum-random-number-generator.md
+    - name: Explore entanglement with Q#
+      href: tutorial-qdk-explore-entanglement.md
+    - name: Implement Grover's search algorithm
+      href: tutorial-qdk-grovers-search.md
+    - name: Qubit-level programming
+      href: tutorial-qdk-qubit-level-program.md
   - name: How-to guides
     items: 
     - name: Submit Q# jobs
@@ -65,12 +53,6 @@
       href: overview-what-is-qsharp-and-qdk.md
     - name: The Q# user guide
       href: user-guide/toc.yml
-    - name: Write a Q# standalone program
-      href: how-to-command-line-local.md
-    - name: Write a Q# and Python program
-      href: how-to-python-qdk-local.md
-    - name: Write a Q# and .NET program
-      href: how-to-csharp-qdk-local.md
   - name: Quantum Computing Concepts
     items:
       - name: "Quantum computing history & background"
@@ -138,10 +120,6 @@
       href: optimization-overview-introduction.md
     - name: Key concepts
       href: optimization-overview-key-concepts.md 
-  - name: Quickstart
-    items:
-    - name: Solve a simple optimization problem
-      href: quickstart-microsoft-qio.md
   - name: How-to guides
     items:
     - name: Submit optimization jobs
@@ -234,22 +212,50 @@
         href: optimization-solve-long-running-problems.md
       - name: Solve a batch of problems using asyncio
         href: optimization-async-io.md
+- name: Use a local development environment
+  items:
+  - name: Configuration
+    items:
+    - name: Configure your local environment
+      href: install-overview-qdk.md
+    - name: Set up a Q# standalone or .NET environment
+      href: install-command-line-qdk.md
+    - name: Set up a Q# + Python environment
+      href: install-python-qdk.md
+    - name: Use Python without Q#
+      href: install-python-optimization.md
+  - name: Quickstarts
+    items: 
+    - name: Create a quantum-based random number generator
+      href: quickstart-microsoft-qc.md
+    - name: Solve a simple optimization problem
+      href: quickstart-microsoft-qio.md
+    - name: Submit a circuit with Qiskit
+      href: quickstart-microsoft-qiskit.md
+    - name: Submit a circuit with Cirq
+      href: quickstart-microsoft-cirq.md
+    - name: Submit a circuit in provider-specific format
+      href: quickstart-microsoft-provider-format.md
+  - name: Use a Binder environment
+    href: install-binder-qdk.md
 - name: Manage Azure Quantum
   items:
-    - name: Run Azure Quantum notebooks
-      href: how-to-run-notebooks-workspace.md
-    - name: Update the QDK
-      href: install-update-qdk.md
-    - name: Work with jobs
-      href: how-to-work-with-jobs.md
-    - name: Authenticate using a service principal
-      href: optimization-authenticate-service-principal.md
-    - name: Work with Azure Quantum using the Azure CLI 
-      href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
-    - name: Work with Azure Quantum using the Azure Resource Manager 
-      href: how-to-manage-quantum-workspaces-with-azure-resource-manager.md
+  - name: Run Azure Quantum notebooks
+    href: how-to-run-notebooks-workspace.md
+  - name: Update the QDK
+    href: install-update-qdk.md
+  - name: Work with jobs
+    href: how-to-work-with-jobs.md
+  - name: Authenticate using a service principal
+    href: optimization-authenticate-service-principal.md
+  - name: Work with Azure Quantum using the Azure CLI 
+    href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
+  - name: Work with Azure Quantum using the Azure Resource Manager 
+    href: how-to-manage-quantum-workspaces-with-azure-resource-manager.md
 - name: Resources
   items:
+  - name: Azure Quantum pricing 
+    href: pricing.md
   - name: Glossary
     href: azure-quantum-glossary.md
   - name: Common issues
