@@ -44,7 +44,7 @@ Learn how to use the `azure-quantum` Python package to submit Qiskit quantum cir
 
 ::: zone pivot="platform-quantinuum"
 
-[!INCLUDE [quantinuum-procedure](includes/quickstart-qiskit-include-honeywell.md)]
+[!INCLUDE [quantinuum-procedure](includes/quickstart-qiskit-include-quantinuum.md)]
 
 ::: zone-end
 

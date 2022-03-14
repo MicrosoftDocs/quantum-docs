@@ -47,7 +47,7 @@ print([backend.name() for backend in provider.backends()])
 ```
 
 ```output
-['ionq.qpu', 'ionq.simulator', 'honeywell.hqs-lt-s1', 'honeywell.hqs-lt-s1-apival', 'honeywell.hqs-lt-s2', 'honeywell.hqs-lt-s2-apival', 'honeywell.hqs-lt-s1-sim']
+['ionq.qpu', 'ionq.simulator']
 ```
 
 ## Run a simple circuit
@@ -86,7 +86,7 @@ To get a result back quickly, use `provider.get_backend` to create a
 simulator_backend = provider.get_backend("ionq.simulator")
 ```
 
-IonQ backends support gates from a defined [gateset](https://docs.ionq.com/#section/Supported-Gates) which are compiled to run optimally on the hardware. If your circuit contains gates that are not in this list, you will need to transpile your circuit first into the supported gateset. For that, you can use the `transpile` function provided by Qiskit:
+IonQ backends support gates from a defined [gateset](https://docs.ionq.com/#section/Supported-Gates), which are compiled to run optimally on the hardware. If your circuit contains gates that are not in this list, you'll need to transpile into the supported gateset using the `transpile` function provided by Qiskit:
 
 ```python
 from qiskit import transpile
@@ -110,7 +110,7 @@ Job id 00000000-0000-0000-0000-000000000000
 ```
 
 To monitor job progress, you can use the Qiskit `job_monitor` imported
-earlier to keep track of the Job\'s status. Note that this call will
+earlier to keep track of the Job\'s status. This call will
 block until the job completes:
 
 ```python
@@ -145,7 +145,7 @@ print(result)
 Result(backend_name='ionq.simulator', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=100, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 50, '111': 50}, probabilities={'000': 0.5, '111': 0.5}), header=QobjExperimentHeader(meas_map='[0, 1, 2]', name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits='3', qiskit='True'))])
 ```
 
-Because this is an object native to the Qiskit package, you can use
+Because the result is an object native to the Qiskit package, you can use
 Qiskit\'s `result.get_counts` and `plot_histogram` to visualize the
 results. To make sure that all possible bitstring labels are represented,
 add them to `counts`.

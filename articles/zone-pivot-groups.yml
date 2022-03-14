@@ -38,3 +38,12 @@ groups:
     title: Azure CLI
   - id: ide-portal
     title: Azure portal
+- id: azurequantum-providers
+  title: Quantum solutions offered by AQ
+  prompt: Select the type of quantum solution
+  pivots:
+  - id: ide-computing
+    title: Quantum Computing
+  - id: ide-optimization
+    title: Optimization
+

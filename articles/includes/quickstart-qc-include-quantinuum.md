@@ -38,7 +38,7 @@ To complete this tutorial, you need
       <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <ExecutionTarget>honeywell.hqs-lt-1.0</ExecutionTarget>
+        <ExecutionTarget>quantinuum.hqs-lt</ExecutionTarget>
       </PropertyGroup>
     </Project>
     ```
@@ -107,8 +107,8 @@ Next, we'll prepare your environment to run the program against the workspace yo
    ```output
    Provider    Target-id                                       Current Availability  Average Queue Time
    ----------  ----------------------------------------------  --------------------  --------------------
-   Quantinuum   honeywell.hqs-lt-1.0                            Available             0
-   Quantinuum   honeywell.hqs-lt-1.0-apival                     Available             0
+   quantinuum  quantinuum.hqs-lt                           Available             0
+   quantinuum  quantinuum.hqs-lt-apival                    Available             0
    ```
 
 
@@ -124,13 +124,13 @@ To run the program on hardware, we'll use the asynchronous job submission comman
 
 
    ```azurecli
-   az quantum job submit --target-id honeywell.hqs-lt-1.0 -o table
+   az quantum job submit --target-id quantinuum.hqs-lt -o table
    ```
 
    ```output
     Name        ID                                    Status    Target                Submission time
     ----------  ------------------------------------  --------  --------              ---------------------------------
-    QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   honeywell.hqs-lt-1.0  2020-01-12T22:41:27.8855301+00:00
+    QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   quantinuum.hqs-lt  2020-01-12T22:41:27.8855301+00:00
    ```
 
 The tables above show that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the Id output by the previous command, for example:
@@ -142,7 +142,8 @@ The tables above show that your job has been submitted and is waiting for its tu
    ```output
     Name        ID                                    Status    Target    Submission time
     ----------  ------------------------------------  --------  --------  ---------------------------------
-    QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   honeywell.hqs-lt-1.0  2020-10-22T22:41:27.8855301+00:00
+    QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   quantinuum.hqs-lt  2020-10-22T22:41:27.8855301+00:00
+   ```
 
 `Status` in the above table changes to `Succeeded`. Once that's done you can get the results from the job by running `az quantum job output`:
 

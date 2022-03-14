@@ -20,7 +20,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2022-03-02
 
-### QDK version 0.23.195904
+### QDK version 0.23.195983
 
 - Fixed GitHub issue [microsoft/qsharp-compiler#1235](https://github.com/microsoft/qsharp-compiler/issues/1235) where the Visual Studio and Visual Studio Code extensions no longer throw an unhandled exception if the .NET SDK is not found. The Language Server will fallback to purely syntactic diagnostics.
 - Q# now supports lambda expressions. See the [Q# language documentation](https://github.com/microsoft/qsharp-compiler/issues/1113) for information about how to use them.
@@ -33,6 +33,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 - Fixed the GitHub issue to remove a UserWarning when initializing the solver when a job is sent to Toshiba SimulatedBifurcationMachine.
 - Breaking change: The compress flag was removed from problem, solvers and streaming_problem classes and the compress parameter can no longer be set in `solvers.problem` or `streaming_problem` objects and methods.
 - Fixed GitHub issues [microsoft/qsharp-compiler#1046](https://github.com/microsoft/qsharp-compiler/issues/1046) and [microsoft/qsharp-compiler#1352](https://github.com/microsoft/qsharp-compiler/issues/1352) related to QIR generation. The first issue fixes an issue when generating big integer literals with more than 64 bits, and the second issue can cause a runtime failure when using a new array expression to create an array of callables.
+- Added support for the [Quantinuum Provider](xref:microsoft.quantum.providers.quantinuum) which replaces the Honeywell Provider.
 
 ## 2022-02-01
 
