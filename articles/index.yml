@@ -1,16 +1,16 @@
 ### YamlMime:Landing
 
 title: Azure Quantum documentation (preview)
-summary: Learn about quantum computing and quantum-inspired optimization with the Azure Quantum service. Use Python and Q#, a language for quantum programming, and the Quantum Development Kit (QDK) to write your first quantum program. 
+summary: Learn about quantum computing and quantum-inspired optimization with the Azure Quantum service. Use Python and Q#, a language for quantum programming, to create and submit quantum programs in the Azure portal, or set up your own local development environment with the Quantum Development Kit (QDK) to write quantum programs. 
 metadata:
   title: Azure Quantum documentation, QDK & Q# API reference
-  description: Learn about quantum computing and quantum-inspired optimization with the Azure Quantum service. Use Python and Q#, a language for quantum programming, and the Quantum Development Kit (QDK) to write your first quantum program. 
+  description: Learn about quantum computing and quantum-inspired optimization with the Azure Quantum service. Use Python and Q#, a language for quantum programming, to write your first quantum program. 
   ms.service: azure-quantum
   ms.topic: landing-page
   ms.collection: collection
   author: dphansen
   ms.author: davidph
-  ms.date: 11/10/2021
+  ms.date: 03/09/2022
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -29,10 +29,10 @@ landingContent:
         links:
           - text: Create an Azure Quantum workspace
             url: how-to-create-workspace.md
-          - text: Get started with a Jupyter notebook
+          - text: Get started with Q# and an Azure Quantum notebook
             url: get-started-jupyter-notebook.md
-          - text: Set up a local development environment
-            url: install-overview-qdk.md
+          - text: Solve an optimization problem in Azure Quantum
+            url: quickstart-microsoft-qio.md
           - text: Understanding job costs in Azure Quantum
             url: azure-quantum-job-costs.md
       - linkListType: learn
@@ -53,18 +53,20 @@ landingContent:
             url: overview-what-is-qsharp-and-qdk.md
       - linkListType: quickstart
         links:
+          - text: Submit a circuit with Qiskit to Azure Quantum
+            url: quickstart-microsoft-qiskit-portal.md
+          - text: Submit a circuit with Cirq to Azure Quantum
+            url: quickstart-microsoft-cirq-portal.md
+          - text: Set up a local development environment
+            url: install-overview-qdk.md
           - text: Create a quantum-based random number generator in Azure Quantum
             url: quickstart-microsoft-qc.md
-          - text: Submit a circuit with Qiskit to Azure Quantum
-            url: quickstart-microsoft-qiskit.md
-          - text: Submit a circuit with Cirq to Azure Quantum
-            url: quickstart-microsoft-cirq.md
       - linkListType: tutorial
         links:
-          - text: Implement a Quantum Random Number Generator in Q#
-            url: tutorial-qdk-quantum-random-number-generator.md
           - text: Explore entanglement with Q#
             url: tutorial-qdk-explore-entanglement.md
+          - text: Implement a quantum random number generator in Q#
+            url: tutorial-qdk-quantum-random-number-generator.md
           - text: Implement Grover's search algorithm in Q#
             url: tutorial-qdk-grovers-search.md
           - text: Write and simulate qubit-level programs in Q#
