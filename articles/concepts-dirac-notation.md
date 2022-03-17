@@ -111,7 +111,7 @@ As a side note, in this example we did not use $\ket{+}^{\otimes n}=\ket{+}$ in 
 
 Another nice feature of Dirac notation is the fact that it is linear. For example, for two complex numbers $\alpha$ and $\beta$, we can write
 
-$$ \ket{\psi} \otimes ( \alpha\ket{\phi} + \beta\ket{\chi})= \alpha\gamma \ket{\psi}\ket{\phi} + \beta\ket{\psi}\ket{\chi}.$$
+$$ \ket{\psi} \otimes ( \alpha\ket{\phi} + \beta\ket{\chi})= \alpha\ket{\psi}\ket{\phi} + \beta\ket{\psi}\ket{\chi}.$$
 
 That is to say, you can distribute the tensor product notation in Dirac notation so that taking tensor products between state vectors ends up looking just like ordinary multiplication.
 
