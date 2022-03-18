@@ -15,7 +15,7 @@ uid: microsoft.quantum.user-guide-qdk.overview.host-programs
 
 One of the Quantum Development Kit's greatest strengths is its flexibility across platforms and development environments.
 However, this also means that new Q# users may find themselves confused or overwhelmed by the numerous options found in the [install guide](xref:microsoft.quantum.install-qdk.overview).
-This page explains what happens when a Q# program is run, and compare the different ways in which users can do so.
+This page explains what happens when a Q# program is run, and compares the different ways in which users can do so.
 
 A primary distinction is that Q# can be run:
 
@@ -55,7 +55,7 @@ Hence, you can write an operation of the following form:
 
 You have defined an operation, `MeasureSuperposition`, which takes no inputs and returns a value of type [Result](xref:microsoft.quantum.qsharp.typesystem-overview#available-types).
 
-In addition to operations, Q# also allows to encapsulate deterministic computations into [functions](xref:microsoft.quantum.qsharp.operationsandfunctions). Aside from the determinism guarantee that implies that computations that act on qubits need to be encapsulated into operations rather than functions, there is little difference between operations and function. We refer to them collectively as *callables*.
+In addition to operations, Q# also allows to encapsulate deterministic computations into [functions](xref:microsoft.quantum.qsharp.operationsandfunctions). Aside from the determinism guarantee that implies that computations that act on qubits need to be encapsulated into operations rather than functions, there is little difference between operations and functions. We refer to them collectively as *callables*.
 
 ### Callable defined in a Q# file
 
@@ -68,7 +68,7 @@ For example, the [`H`](xref:Microsoft.Quantum.Intrinsic.H) and [`MResetZ`](xref:
 As such, they can always be called via their *full* names, `Microsoft.Quantum.Intrinsic.H(<qubit>)` and `Microsoft.Quantum.Measurement.MResetZ(<qubit>)`, but always doing this would lead to very cluttered code.
 
 Instead, `open` statements allow callables to be referenced with more concise shorthand, as it is done in the operation body above.
-The full Q# file containing our operation would therefore consist of defining our own namespace, opening the namespaces for those callables our operation uses, and then the operation:
+The full Q# file containing the operation would therefore consist of defining your own namespace, opening the namespaces for those callables the operation will use, and then write the operation:
 
 ```qsharp
 namespace Superposition {
