@@ -34,7 +34,7 @@ Indeed, this process is at the core of the [quantum random number generator](xre
 In Q#, this would be performed by the following code:
 
 ```qsharp
-        use q = Qubit();   // allocates qubit for use (automatically in |0>)
+        use q = Qubit();     // allocates qubit for use (automatically in |0>)
         H(q);                // puts qubit in superposition of |0> and |1>
         return MResetZ(q);   // measures qubit, returns result (and resets it to |0> before deallocation)
 
@@ -49,7 +49,6 @@ Hence, you can write an operation of the following form:
         use q = Qubit();     // allocates qubit for use (automatically in |0>)
         H(q);                // puts qubit in superposition of |0> and |1>
         return MResetZ(q);   // measures qubit, returns result (and resets it to |0> before deallocation)
-
     }
 ```
 
@@ -79,7 +78,6 @@ namespace Superposition {
         use q = Qubit();     // allocates qubit for use (automatically in |0>)
         H(q);                // puts qubit in superposition of |0> and |1>
         return MResetZ(q);   // measures qubit, returns result (and resets it to |0> before deallocation)
-
     }
 }
 ```
@@ -586,6 +584,7 @@ A full C# host program could thus look like
 ```csharp
 using System;
 using System.Threading.Tasks;
+using Microsoft.Quantum.Simulation.Core;
 using Microsoft.Quantum.Simulation.Simulators;
 using Superposition;
 
