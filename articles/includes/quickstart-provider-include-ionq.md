@@ -1,7 +1,7 @@
 ---
 author: guenp
 ms.author:  v-guenp
-ms.date: 01/21/2022
+ms.date: 03/21/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -98,7 +98,7 @@ workspace = Workspace(
 Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU,you can use the `estimate_cost` method:
 
 ```python
-target = IonQ(workspace=workspace, name="ionq.qpu")
+target = workspace.get_targets(name="ionq.qpu")
 cost = target.estimate_cost(circuit, num_shots=500)
 
 print(f"Estimated cost: {cost.estimated_total}")
