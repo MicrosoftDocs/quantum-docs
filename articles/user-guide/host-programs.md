@@ -554,7 +554,7 @@ await <callable>.Run(<simulator>);
 #### Passing arguments to callables in Q\#
 
 Any arguments to the Q# callable are simply passed as additional arguments after the target machine.
-Hence the results of `MeasureSuperpositionArray` on `n=4` qubits would fetched via
+Hence the results of `MeasureSuperpositionArray` on `n=4` qubits would be fetched via
 
 ```csharp
             var multiQubitResult = await MeasureSuperpositionArray.Run(sim, 4);
