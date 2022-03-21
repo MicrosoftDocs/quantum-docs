@@ -42,7 +42,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 #### Known Issues
 
-- Q# lambda functions and operations do not compile properly in Jupyter notebooks or from Q# + Python applications, as tracked by [microsoft/iqsharp#606](https://github.com/microsoft/iqsharp/issues/606).
+- Q# lambda functions and operations do not compile properly in Q# Jupyter notebooks or from Q# + Python applications, as tracked by [microsoft/iqsharp#606](https://github.com/microsoft/iqsharp/issues/606).
 
 ## 2022-02-01
 
