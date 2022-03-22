@@ -18,9 +18,7 @@ Azure Quantum is the cloud quantum computing service of Azure, with a diverse se
 - Quantum impact today, with pre-built solutions that run on classical and accelerated compute resources (also referred to as optimization solutions).
 
 > [!Tip]
-> **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin. With Azure you can create, deploy, and manage applications across multiple clouds, on-premises, and at the edge. You will get $200 Azure credit to use in other Azure services. 
-
-[!INCLUDE [Azure Quantum credits banner](~/includes/azure-quantum-credits.md)]
+> **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). With Azure you can create, deploy, and manage applications across multiple clouds, on-premises, and at the edge. You will get $200 Azure credit to use in other Azure services. 
 
 ## The parts of Azure Quantum
 
@@ -139,6 +137,8 @@ Once you’ve validated the correctness of your program and estimated that it is
 ![azure quantum job flow](~/media/azure-quantum-flow-diagram-providers.svg)
 
 Azure Quantum offers some of the most compelling and diverse quantum resources available today from industry leaders. Azure Quantum currently partners with the following providers to enable you to run your Q# quantum programs on real hardware, and the option to test your code on simulated quantum computers. 
+
+[!INCLUDE [Azure Quantum credits banner](~/includes/azure-quantum-credits.md)]
 
 ### Quantum computing providers
 
