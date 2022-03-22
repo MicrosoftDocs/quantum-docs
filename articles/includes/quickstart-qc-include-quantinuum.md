@@ -99,9 +99,10 @@ Next, we'll prepare your environment to run the program against the workspace yo
     > [!NOTE]
     > The MyLocation parameter in the example above is the **Region** 
     > specified on the **Create Quantum Workspace** page when following 
-    > the steps in [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). Region > and Location are synonymous.  The parameter value may be expressed 
-    > in mixed case surrounded by quotes, e.g. `-l "West US 2"`, or in 
-    > lower case with no spaces or quotes, e.g. `-l westus2`.
+    > the steps in [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+    > Region and Location are synonymous.  The parameter value may be 
+    > expressed in mixed case surrounded by quotes, e.g. `-l "West US 2"`,
+    > or in lower case with no spaces or quotes, e.g. `-l westus2`.
 
 1. In your workspace, there are different targets available from the
    providers that you added when you created the workspace. You can display a list of all
