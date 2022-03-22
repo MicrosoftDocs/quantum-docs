@@ -1,8 +1,8 @@
 ---
-author: cjgronlund
+author: SoniaLopezBravo
 description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs or solve optimization problems in the cloud.
 ms.date: 01/27/2022
-ms.author: cgronlun
+ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
@@ -33,6 +33,8 @@ With Azure Quantum and the [Quantum Development Kit toolset](xref:microsoft.quan
 ## Who is Azure Quantum for?
 
 Azure Quantum is for individuals and teams who want to take a step forward and bring quantum computation into production.
+
+[!INCLUDE [Azure Quantum credits banner](~/includes/azure-quantum-credits.md)]
 
 ### Industry solutions
 
@@ -131,8 +133,6 @@ The following diagram shows the stages through which a quantum program goes from
 > You use the same Q# code for all steps of the workflow. In the short term you might have to tweak some portions of the code to account for the current hardware limitations. But in the long run you’ll be able to switch between various simulators and hardware providers without any code modifications.
 
 ## Quantum cloud solutions available on Azure Quantum
-
-[!INCLUDE [Azure Quantum credits banner](~/includes/azure-quantum-credits.md)]
 
 Once you’ve validated the correctness of your program and estimated that it is fit to run on the hardware you have access to, you are ready to submit your program to Azure Quantum. The following diagram shows the basic workflow after you submit your job:
 
