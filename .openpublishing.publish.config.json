@@ -27,7 +27,8 @@
     "tedhudek@microsoft.com"
   ],
   "sync_notification_subscribers": [
-    "kitty@microsoft.com"
+    "kitty@microsoft.com",
+    "tedhudek@microsoft.com"
   ],
   "branches_to_filter": [],
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/quantum-docs",
