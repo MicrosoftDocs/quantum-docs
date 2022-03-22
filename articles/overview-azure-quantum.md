@@ -12,15 +12,15 @@ uid: microsoft.quantum.azure-quantum-overview
 
 # What is Azure Quantum?
 
-[!INCLUDE [Azure Quantum credits banner](~/includes/azure-quantum-credits.md)]
-
-Azure Quantum is a cloud service with a diverse set of quantum solutions and technologies. You can write your code once and run it with little to no change against multiple targets of the same family which allows you to focus your programming at the algorithm level.
+Azure Quantum is the cloud quantum computing service of Azure, with a diverse set of quantum solutions and technologies. You can write your code once and run it with little to no change against multiple targets of the same family which allows you to focus your programming at the algorithm level.
 
 - An **open ecosystem**, enabling you to access diverse quantum software, hardware, and solutions from Microsoft and its partners.
 - Quantum impact today, with pre-built solutions that run on classical and accelerated compute resources (also referred to as optimization solutions).
 
 > [!Tip]
-> **Free trial.** If you don’t have an Azure subscription, you can [create a free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin. Microsoft offers up to $10,000 USD in credits for use on quantum hardware. After the credits are used up, you can keep the account and use free Azure services. Your credit card is never charged unless you explicitly change your settings and ask to be charged. You can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
+> **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin. With Azure you can create, deploy, and manage applications across multiple clouds, on-premises, and at the edge. You will get $200 Azure credit to use in other Azure services. 
+
+[!INCLUDE [Azure Quantum credits banner](~/includes/azure-quantum-credits.md)]
 
 ## The parts of Azure Quantum
 
