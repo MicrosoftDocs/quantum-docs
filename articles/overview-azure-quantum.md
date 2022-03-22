@@ -18,7 +18,7 @@ Azure Quantum is the cloud quantum computing service of Azure, with a diverse se
 - Quantum impact today, with pre-built solutions that run on classical and accelerated compute resources (also referred to as optimization solutions).
 
 > [!Tip]
-> **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). With Azure you can create, deploy, and manage applications across multiple clouds, on-premises, and at the edge. You will get $200 Azure credit to use in other Azure services. 
+> **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). With Azure you can create, deploy, and manage applications across multiple clouds, on-premises, and at the edge. You will get 200 USD Azure credit to use in other Azure services. 
 
 ## The parts of Azure Quantum
 
