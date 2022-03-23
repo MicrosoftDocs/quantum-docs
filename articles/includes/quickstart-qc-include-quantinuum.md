@@ -67,7 +67,7 @@ To complete this tutorial, you need
 
 Next, we'll prepare your environment to run the program against the workspace you created.
 
-1. From the Visual Studio Code menu, select **Terminal** -> **New Terminal**.
+1. From the Visual Studio Code menu, select **Terminal** > **New Terminal**.
 
 1. Log in to Azure using your credentials. You'll get a list of subscriptions associated with your account.
 
@@ -101,8 +101,8 @@ Next, we'll prepare your environment to run the program against the workspace yo
     > specified on the **Create Quantum Workspace** page when following 
     > the steps in [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
     > Region and Location are synonymous.  The parameter value may be 
-    > expressed in mixed case surrounded by quotes, e.g. `-l "West US 2"`,
-    > or in lower case with no spaces or quotes, e.g. `-l westus2`.
+    > expressed in mixed case surrounded by quotes, for example, `-l "West US 2"`,
+    > or in lower case with no spaces or quotes, such as `-l westus2`.
 
 1. In your workspace, there are different targets available from the
    providers that you added when you created the workspace. You can display a list of all
