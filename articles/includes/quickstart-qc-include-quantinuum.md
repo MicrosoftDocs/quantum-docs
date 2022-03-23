@@ -67,6 +67,8 @@ To complete this tutorial, you need
 
 Next, we'll prepare your environment to run the program against the workspace you created.
 
+1. From the Visual Studio Code menu, select **Terminal** > **New Terminal**.
+
 1. Log in to Azure using your credentials. You'll get a list of subscriptions associated with your account.
 
    ```azurecli
@@ -76,7 +78,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
 1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in the Azure portal.
 
    ```azurecli
-   az account set -s <Your subscription ID>
+   az account set -s MySubscriptionID
    ```
 
 1. Use `quantum workspace set` to select the workspace you created above
@@ -93,6 +95,14 @@ Next, we'll prepare your environment to run the program against the workspace yo
     MyLocation  MyWorkspace  Succeeded            MyResourceGroup  /subscriptions/...  Yes
 
    ```
+
+    > [!NOTE]
+    > The MyLocation parameter in the example above is the **Region** 
+    > specified on the **Create Quantum Workspace** page when following 
+    > the steps in [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+    > Region and Location are synonymous.  The parameter value may be 
+    > expressed in mixed case surrounded by quotes, for example, `-l "West US 2"`,
+    > or in lower case with no spaces or quotes, such as `-l westus2`.
 
 1. In your workspace, there are different targets available from the
    providers that you added when you created the workspace. You can display a list of all
