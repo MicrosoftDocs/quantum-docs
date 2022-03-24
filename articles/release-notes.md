@@ -17,6 +17,27 @@ In this article, learn about updates to the [Quantum Development Kit (QDK)](xref
 
 For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For update instructions, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
+## 2022-03-30
+
+### QDK version 0.24.xxxxxx
+
+- Added the SparseSimulator with discrete (sparse) states of the qubits, which is more efficient for a class of quantum algorithms with a smaller number of states in superposition and unlocks the researchers to explore applications with larger number of qubits than supported by QuantumSimulator.
+- Migrated the Quantum Development Kit to [.NET 6.0](https://dotnet.microsoft.com/download), which is now the minimum supported version.
+- Updated the [Microsoft Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode) extension to support QDK versions based on .NET 6.
+- Released the Microsoft Quantum Development Kit for Visual Studio 2022 extension.
+- Fixed GitHub issue [microsoft/QuantumLibraries#511](https://github.com/microsoft/QuantumLibraries/issues/511) where the reflection phases for amplitude estimation were calculated incorrectly.
+- Fixed GitHub issue [microsoft/QuantumLibraries#527](https://github.com/microsoft/QuantumLibraries/issues/527) where the RangeAsIntArray function returned a wrong value for a corner case.
+- Fixed GitHub issue [microsoft/QuantumLibraries#494](https://github.com/microsoft/QuantumLibraries/issues/494) where the qdk-chem tool produced invalid Broombridge files.
+- Fixed GitHub issue [microsoft/QuantumLibraries#386](https://github.com/microsoft/QuantumLibraries/issues/386) where the AllowAtMostNCallsCA operation failed non-deterministically.
+- Fixed GitHub issue [microsoft/qsharp-runtime#929](https://github.com/microsoft/qsharp-runtime/issues/929) where the empty quantum program was causing an exception when submitted to Azure Quantum.
+- Fixed GitHub issue [microsoft/QuantumLibraries#444](https://github.com/microsoft/QuantumLibraries/issues/444) where tests failed probabilistically.
+- Fixed GitHub issue [microsoft/QuantumLibraries#270](https://github.com/microsoft/QuantumLibraries/issues/270) where the number of qubits was overestimated in the machine learning library.
+- Fixed GitHub issue [microsoft/iqsharp#606](https://github.com/microsoft/iqsharp/issues/606) where lambda expressions could not be used in Q# programs that are called from Python, including Jupyter notebooks.
+- In Q# programs submitted to IonQ targets, fixed a GitHub issue [microsoft/qsharp-runtime#967](https://github.com/microsoft/qsharp-runtime/issues/967) where decomposition of the [Exp operation](https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.intrinsic.exp) would use the incorrect angle convention resulting in incorrect rotation.
+- Performance improvements were made for Q# notebook and Q# + Python workflows.
+- Released Az CLI quantum extension version 0.14.0:
+  - **Pending**
+
 ## 2022-03-15
 
 ### QDK version 0.23.198514-beta (Preview)
@@ -39,6 +60,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 - Breaking change: The compress flag was removed from problem, solvers and streaming_problem classes and the compress parameter can no longer be set in `solvers.problem` or `streaming_problem` objects and methods.
 - Fixed GitHub issues [microsoft/qsharp-compiler#1046](https://github.com/microsoft/qsharp-compiler/issues/1046) and [microsoft/qsharp-compiler#1352](https://github.com/microsoft/qsharp-compiler/issues/1352) related to QIR generation. The first issue fixes an issue when generating big integer literals with more than 64 bits, and the second issue can cause a runtime failure when using a new array expression to create an array of callables.
 - Added support for the [Quantinuum Provider](xref:microsoft.quantum.providers.quantinuum) which replaces the Honeywell Provider.
+- Breaking change: The QuantumSimulator has been refactored. If you use the [StateDumper::Callback()] directly then you will need to update that code.
 
 #### Known Issues
 
@@ -51,7 +73,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 - Adding support for .NET 6.0 to the Quantum Development Kit.
 - Updating the minimum required version for the Quantum Development Kit extensions to .NET 6.0.
 - Q# Compiler uses LLVM 13 binaries for producing QIR.
-- Released [Microsoft Quantum Development Kit for Visual Studio Code .NET 6 Preview](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode-net6).
+- Released Microsoft Quantum Development Kit for Visual Studio Code .NET 6 Preview. (**Update:** *This extension preview has now been retired and its changes have been incorporated into the regular [Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).*)
 
 ## 2022-01-26
 
