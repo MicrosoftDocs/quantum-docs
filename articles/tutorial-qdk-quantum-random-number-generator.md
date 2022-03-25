@@ -142,7 +142,7 @@ namespace Qrng {
     operation SampleRandomNumberInRange(max : Int) : Int {
         mutable output = 0; 
         repeat {
-            mutable bits = new Result[0]; 
+            mutable bits = []; 
             for idxBit in 1..BitSizeI(max) {
                 set bits += [SampleQuantumRandomNumberGenerator()]; 
             }
@@ -189,7 +189,7 @@ namespace Qrng {
     operation SampleRandomNumberInRange(max : Int) : Int {
         mutable output = 0; 
         repeat {
-            mutable bits = new Result[0]; 
+            mutable bits = []; 
             for idxBit in 1..BitSizeI(max) {
                 set bits += [SampleQuantumRandomNumberGenerator()]; 
             }
@@ -228,7 +228,7 @@ namespace Qrng {
     operation SampleRandomNumberInRange(max : Int) : Int {
         mutable output = 0; 
         repeat {
-            mutable bits = new Result[0]; 
+            mutable bits = []; 
             for idxBit in 1..BitSizeI(max) {
                 set bits += [SampleQuantumRandomNumberGenerator()]; 
             }
