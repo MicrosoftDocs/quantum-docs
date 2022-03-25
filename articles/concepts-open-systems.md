@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: SoniaLopezBravo
 description: Learn how quantum operations affect the states of open systems.
-ms.author: cgronlun
+ms.author: sonialopez
 ms.date: 11/16/2021
 ms.service: azure-quantum
 ms.subservice: core
@@ -208,8 +208,8 @@ $$
 \begin{equation}
     \rho =
         \left\{
-            \ket{0} \text{ with probability 50%}, \quad
-            \ket{1} \text{ with probability 50%}
+            \ket{0} \text{ with probability 50\%}, \quad
+            \ket{1} \text{ with probability 50\%}
         \right\}.
 \end{equation}
 $$
@@ -227,8 +227,8 @@ The trick here is to average over the different state vectors that could be prep
 
 $$
 \begin{align}
-    \text{Pr}(\phi | \rho) & = \mathbb{E}_{\psi \sim \rho} \left[ \text{Pr}(\phi | \psi) \right] \\\\
-                    & = \mathbb{E}_{\psi \sim \rho} \left[ \left\langle \phi | \psi \right\rangle \left\langle \psi | \phi \right\rangle \right] \\\\
+    \text{Pr}(\phi | \rho) & = \mathbb{E}\_{\psi \sim \rho} \left( \text{Pr}(\phi | \psi) \right) \\\\
+                    & = \mathbb{E}\_{\psi \sim \rho} \left( \left\langle \phi | \psi \right\rangle \left\langle \psi | \phi \right\rangle \right) \\\\
                     & = \sum_i \text{Pr}(\psi_i) \left\langle \phi | \psi_i \right\rangle \left\langle \psi_i | \phi \right\rangle \\\\
                     & = \left\langle \phi \Bigg| \left( \sum_i \text{Pr}(\psi_i) \ket{\psi_i} \bra{\psi_i} \right) \Bigg| \phi \right\rangle.
 \end{align}
