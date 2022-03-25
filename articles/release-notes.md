@@ -36,7 +36,8 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 - In Q# programs submitted to IonQ targets, fixed a GitHub issue [microsoft/qsharp-runtime#967](https://github.com/microsoft/qsharp-runtime/issues/967) where decomposition of the [Exp operation](https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.intrinsic.exp) would use the incorrect angle convention resulting in incorrect rotation.
 - Performance improvements were made for Q# notebook and Q# + Python workflows.
 - Released Az CLI quantum extension version 0.14.0:
-  - **Pending**
+  - Extended error message in failed jobs to include details originated from the provider.
+  - Completed support in workspace creation for all storage account types allowed in the Azure Quantum service.
 
 ## 2022-03-15
 
