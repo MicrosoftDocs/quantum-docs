@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 02/01/2022
+ms.date: 03/30/2022
 author: cjgronlund
 ms.author: cgronlun
 ms.service: azure-quantum
@@ -19,21 +19,21 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2022-03-30
 
-### QDK version 0.24.xxxxxx
+### QDK version 0.24.201332
 
-- Added the SparseSimulator with discrete (sparse) states of the qubits, which is more efficient for a class of quantum algorithms with a smaller number of states in superposition and unlocks the researchers to explore applications with larger number of qubits than supported by QuantumSimulator.
-- Migrated the Quantum Development Kit to [.NET 6.0](https://dotnet.microsoft.com/download), which is now the minimum supported version.
+- Added the SparseSimulator with discrete (sparse) states of the qubits, which is more efficient for a class of quantum algorithms with a smaller number of states in superposition and unlocks applications with larger number of qubits than supported by QuantumSimulator.
+- Migrated the Quantum Development Kit from **.NETCore 3.1** to [.NET 6.0](https://dotnet.microsoft.com/download), and raised the minimum supported version accordingly.
 - Updated the [Microsoft Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode) extension to support QDK versions based on .NET 6.
-- Released the Microsoft Quantum Development Kit for Visual Studio 2022 extension.
+- Released the [Microsoft Quantum Development Kit for Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) extension.
+- In Q# programs submitted to IonQ targets, fixed a GitHub issue [microsoft/qsharp-runtime#967](https://github.com/microsoft/qsharp-runtime/issues/967) where decomposition of the [Exp operation](https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.intrinsic.exp) would use the incorrect angle convention resulting in incorrect rotation.
+- Fixed GitHub issue [microsoft/iqsharp#606](https://github.com/microsoft/iqsharp/issues/606) where lambda expressions could not be used in Q# programs that are called from Python, including Jupyter notebooks.
 - Fixed GitHub issue [microsoft/QuantumLibraries#511](https://github.com/microsoft/QuantumLibraries/issues/511) where the reflection phases for amplitude estimation were calculated incorrectly.
-- Fixed GitHub issue [microsoft/QuantumLibraries#527](https://github.com/microsoft/QuantumLibraries/issues/527) where the RangeAsIntArray function returned a wrong value for a corner case.
-- Fixed GitHub issue [microsoft/QuantumLibraries#494](https://github.com/microsoft/QuantumLibraries/issues/494) where the qdk-chem tool produced invalid Broombridge files.
-- Fixed GitHub issue [microsoft/QuantumLibraries#386](https://github.com/microsoft/QuantumLibraries/issues/386) where the AllowAtMostNCallsCA operation failed non-deterministically.
+- Fixed GitHub issue [microsoft/QuantumLibraries#527](https://github.com/microsoft/QuantumLibraries/issues/527) where the [RangeAsIntArray](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.convert.rangeasintarray) function returned a wrong value for a corner case.
+- Fixed GitHub issue [microsoft/QuantumLibraries#494](https://github.com/microsoft/QuantumLibraries/issues/494) where the [qdk-chem tool](https://docs.microsoft.com/azure/quantum/user-guide/libraries/chemistry/installation#using-the-quantum-development-kit-with-qdk-chem) produced invalid Broombridge files.
+- Fixed GitHub issue [microsoft/QuantumLibraries#386](https://github.com/microsoft/QuantumLibraries/issues/386) where the [AllowAtMostNCallsCA](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.diagnostics.allowatmostncallsca) operation failed non-deterministically.
 - Fixed GitHub issue [microsoft/qsharp-runtime#929](https://github.com/microsoft/qsharp-runtime/issues/929) where the empty quantum program was causing an exception when submitted to Azure Quantum.
 - Fixed GitHub issue [microsoft/QuantumLibraries#444](https://github.com/microsoft/QuantumLibraries/issues/444) where tests failed probabilistically.
-- Fixed GitHub issue [microsoft/QuantumLibraries#270](https://github.com/microsoft/QuantumLibraries/issues/270) where the number of qubits was overestimated in the machine learning library.
-- Fixed GitHub issue [microsoft/iqsharp#606](https://github.com/microsoft/iqsharp/issues/606) where lambda expressions could not be used in Q# programs that are called from Python, including Jupyter notebooks.
-- In Q# programs submitted to IonQ targets, fixed a GitHub issue [microsoft/qsharp-runtime#967](https://github.com/microsoft/qsharp-runtime/issues/967) where decomposition of the [Exp operation](https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.intrinsic.exp) would use the incorrect angle convention resulting in incorrect rotation.
+- Fixed GitHub issue [microsoft/QuantumLibraries#270](https://github.com/microsoft/QuantumLibraries/issues/270) where the number of qubits was overestimated in the [machine learning library](https://docs.microsoft.com/azure/quantum/user-guide/libraries/machine-learning/intro).
 - Performance improvements were made for Q# notebook and Q# + Python workflows.
 - Released Az CLI quantum extension version 0.14.0:
   - Extended error message in failed jobs to include details originated from the provider.
