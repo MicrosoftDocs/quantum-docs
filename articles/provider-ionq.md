@@ -71,17 +71,7 @@ Trapped ion quantum computer. Dynamically reconfigurable in software to use up t
 
 ## Pricing
 
-IonQ charges per **gate-shot**: the number of gates in your circuit, multiplied by the number of shots.
-
-Multi-controlled two-qubit gates are billed as _6 * (N - 2)_ two-qubit gates, where N is the number of qubits involved in the gate. For example, a NOT gate with three controls would be billed as _(6 * (4 - 2))_ or 12 two-qubit gates.
-
-To see the pricing options:
-
-1. Go to the Azure Portal and create a new workspace.
-1. In the **Providers** pane, click in the **Add** button of the IonQ tile and in the description you will find the current pricing options.
-
-> [!IMPORTANT]
-> Note that there is a $1 USD minimum cost to run a job on the IonQ QPU.
+To see IonQ billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
 ## IonQ best practices and connectivity graph
 
