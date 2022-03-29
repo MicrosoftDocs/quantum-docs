@@ -13,33 +13,18 @@ uid: microsoft.quantum.azure.job-costs
 # Azure Quantum job costs
 This article helps you understand the cost of jobs in Azure Quantum. 
 
+[!INCLUDE [Azure Quantum credits banner](~/includes/azure-quantum-credits.md)]
+
 ## Before you start: Understanding job pricing
-Azure Quantum makes solutions available from our partner companies, so the billing details can between Providers and the pricing plans you select. Below is some general information on pricing in Azure Quantum, and details for each provider.
+
+Azure Quantum makes solutions available from our partner companies, so the billing details can between providers and the pricing plans you select.
 
 General pricing guidance:
 
-- You can only use general-purpose Azure Credits with the Microsoft providers. 3rd-party providers (providers that aren't Microsoft) aren't eligible. For these providers, you may consider applying to the [Azure Quantum Credits Program](https://aka.ms/aq/credits).
-
-- Most providers bill based on the resources you consume by running a job, though some also offer subscription plans. For more information, review the subscription plans available to you in the Azure portal.
-
-### Honeywell pricing
-Honeywell uses a credit system called *Honeywell Quantum Credits*. Each job you run consumes credits depending on the number of operations in the job, and the number of shots you run. You can find more information on Honeywell Quantum Credits on the [Honeywell Provider page](xref:microsoft.quantum.providers.honeywell).
-
-You may purchase Honeywell Quantum Credits through various plans. Go to the [Azure portal](https://aka.ms/AQ/CreateWorkspace) and select the Honeywell provider for the list of available subscription plans.
-
-### IonQ pricing
-IonQ charges based on the number of gates in your program, the complexity of the gates you use, and the number of shots. These units are called `qubit-gate-shots` and you can find more information about how they're calculated on the [IonQ Provider Page](xref:microsoft.quantum.providers.ionq).
-
-> [!NOTE]
-> IonQ has minimum job costs. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
-
-IonQ uses a pay-as-you-go model with no monthly subscription fees. To see the current service costs, go to the [Azure portal](https://aka.ms/AQ/CreateWorkspace) and select the IonQ provider for the list of available subscription plans.
-
-### 1QBit pricing
-1QBit charges through a subscription model or a pay-as-you-go model based on the runtime of your optimization problem. You can find more information about 1QBit's offering on the [1QBit Provider Page](xref:microsoft.quantum.providers.optimization.1qbit).
-
-### Microsoft Optimization pricing
-Microsoft Optimization Solutions charges based on the runtime of your optimization problem, in seconds. Per-second rates are based on the plan you select and the volume of optimization jobs you run within a month. For more information, see the [Microsoft Optimization Pricing Page](https://azure.microsoft.com/pricing/details/azure-quantum/).
+- When you create a new Azure account, you get 200 USD free **Azure Credits** to use on Microsoft services. You can only use general-purpose Azure Credits with the Microsoft providers. 3rd-party providers (providers that aren't owned by Microsoft) aren't eligible. 
+- When you create a new Azure Quantum workspace, you get 500 USD free **Azure Quantum credits** for use with each participating quantum hardware provider. 
+- If you have consumed all the credits and you need more, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits). Microsoft offers up to $10,000 USD extra Azure Quantum Credits for use on quantum hardware. For more information see [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq).
+- Most providers bill based on the resources you consume by running a job, though some also offer subscription plans. For more information about how each each provider charges, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
 ## After you run: Job cost reporting
 After you run a job, Azure Quantum makes available detailed cost estimates for supported providers. You can use this information to understand the cost of individual jobs. This cost is the cost billed by the provider; refer to your final bill for the exact charges including relevant taxes.
