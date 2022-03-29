@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: SoniaLopezBravo
 description: This document provides the technical details of the Microsoft QIO provider
-ms.author: cgronlun
+ms.author: sonialopez
 ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: optimization
