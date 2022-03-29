@@ -5,7 +5,7 @@
 Every quantum program consists of $N$ logical gates of one or more qubits, and is executed for a certain number of shots. The number of gate-shots is calculated by 
 multiplying the number of one- or two-qubit gates submitted with the number of execution shots requested. 
 
-Multi-controlled two-qubit gates are billed as 6 * (N - 2) two-qubit gates, where N is the number of qubits involved in the gate. For example, a NOT gate with three controls would be billed as (6 * (4 - 2)) or 12 two-qubit gates. To learn more about IonQ and how gate-shots are calculated, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
+Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with 3 controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. To learn more about IonQ and how gate-shots are calculated, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
 
 > [!NOTE]
 > IonQ has $1 USD minimum cost to run a job on the IonQ QPU. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
