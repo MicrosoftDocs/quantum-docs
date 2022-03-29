@@ -37,6 +37,8 @@
       href: tutorial-qdk-quantum-random-number-generator.md
     - name: Explore entanglement with Q#
       href: tutorial-qdk-explore-entanglement.md
+    - name: Explore entanglement with Q# and Azure Quantum
+      href: tutorial-portal-explore-entanglement.md
     - name: Implement Grover's search algorithm
       href: tutorial-qdk-grovers-search.md
     - name: Qubit-level programming
@@ -236,6 +238,14 @@
       href: quickstart-microsoft-cirq.md
     - name: Submit a circuit in provider-specific format
       href: quickstart-microsoft-provider-format.md
+  - name: How-to guides
+    items:
+    - name: Write a Q# program to run on local simulator
+      href: how-to-command-line-local.md
+    - name: Write a Q# and Python program to run on local simulator
+      href: how-to-python-qdk-local.md
+    - name: Write a Q# and .NET program to run on local simulator
+      href: how-to-csharp-qdk-local.md    
   - name: Use a Binder environment
     href: install-binder-qdk.md
 - name: Manage Azure Quantum
