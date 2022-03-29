@@ -69,7 +69,7 @@ FPGA solvers have an initialization time that may take a large percentage of the
 
 ## Pricing
 
-For the most up-to-date pricing information on Microsoft's QIO offering, please refer to the Providers tab of your workspace on the [Azure portal](https://portal.azure.com/) or visit the [Azure Quantum pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
+For the most up-to-date pricing information on Microsoft's QIO offering, please refer to the Providers tab of your workspace on the [Azure portal](https://portal.azure.com/) or visit the [Microsoft optimization pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
 
 ## Limits & Quotas
 
