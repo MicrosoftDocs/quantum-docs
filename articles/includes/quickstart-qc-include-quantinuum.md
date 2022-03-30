@@ -37,7 +37,7 @@ To complete this tutorial, you need
     <Project Sdk="Microsoft.Quantum.Sdk">
       <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <ExecutionTarget>quantinuum.hqs-lt</ExecutionTarget>
       </PropertyGroup>
     </Project>
