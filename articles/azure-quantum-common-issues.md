@@ -2,7 +2,7 @@
 author: cjgronlund
 description: List of common issues of the Azure Quantum service.
 ms.author: cgronlun
-ms.date: 02/01/2021
+ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: conceptual
@@ -70,4 +70,18 @@ You can verify that you are running into this role assignment issue by following
     * Select > [Workspace name]
     * Save
 
+### Issue: .NET SDK version mismatch
 
+In version `0.24.201332` of the Quantum Development Kit (QDK), the target framework was updated from .NETCore 3.1 to .NET 6.0, so it's possible to encounter some issues while going from older to newer versions or when using projects from versions before and after this change.
+
+Some recommendations to avoid those problems are:
+
+* Install the latest version of [.NET 6.0](https://dotnet.microsoft.com/download) even if you have .NETCore 3.1 already. Multiple versions can coexist side-by-side in the same environment, so you don't have to uninstall older ones.
+* If you're upgrading an application or test project to a QDK version equal or greater than `0.24.201332`, update the target framework from `netcoreapp3.1` to `net6.0`. Leave the framework as is if you want to keep using older versions of the QDK.
+* If you are a Visual Studio user, you will need to upgrade to [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) to develop projects targeting .NET 6.0. We also have a [Q# extension](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) available for this product.
+
+### Issue: Visual Studio 2019 extension is not being updated
+
+The last released version of the [QDK extension for Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit) was `0.23.195983`. You can continue using this extension with projects targeting up to that QDK version; however, there are no plans to continue upgrading this extension regularly.
+
+In order to use newer versions of the QDK for quantum projects with version `0.24.201332` or higher, you should use either the [extension for Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or the [extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).

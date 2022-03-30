@@ -2,7 +2,7 @@
 author: cgranade
 description: Learn how to contribute sample code to the Quantum Development Kit (QDK).
 ms.author: chgranad
-ms.date: 02/01/2021
+ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
@@ -129,7 +129,7 @@ With all that in place, you can tell users how to run your sample:
     dotnet run
     ```
 
-    ### C# in Visual Studio 2019
+    ### C# in Visual Studio 2022
 
     Open the folder containing this sample in Visual Studio ("Open a local folder"
     from the Getting Started screen or "File → Open → Folder..." from the menu bar)

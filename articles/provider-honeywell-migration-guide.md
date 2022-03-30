@@ -59,7 +59,7 @@ Old `.csproj` file:
 <Project Sdk="Microsoft.Quantum.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <ExecutionTarget>honeywell.hqs-lt</ExecutionTarget>
   </PropertyGroup>
 </Project>
@@ -70,11 +70,14 @@ Updated `.csproj` file:
 <Project Sdk="Microsoft.Quantum.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <ExecutionTarget>quantinuum.hqs-lt</ExecutionTarget>
   </PropertyGroup>
 </Project>
 ```
+
+> [!Note]
+> Starting from QDK version `0.24.201332`, you will also need to upgrade the `TargetFramework` value to `net6.0`. For older versions you should still target `netcoreapp3.1`.
 
 ### Migrating a Q# Project with Jupyter Notebooks
 To migrate a Q# project in Jupyter Notebooks, update the value used in the `%azure.target` magic command per the table above.

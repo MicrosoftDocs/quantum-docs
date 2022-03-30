@@ -2,7 +2,7 @@
 author: cjgronlund
 description: Describes how to update your Q# programming language projects and the Quantum Development Kit (QDK) to the current version.
 ms.author: cgronlun
-ms.date: 02/01/2021
+ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -27,24 +27,24 @@ The process consists of two parts:
 
 Regardless of whether you are using C# or Python to host Q# operations, follow these instructions to update your Q# projects.
 
-1. First, check that you have the latest version of the [.NET Core SDK 3.1](https://dotnet.microsoft.com/download). Run the following command in the command prompt:
+1. First, check that you have the latest version of the [.NET SDK 6.0](https://dotnet.microsoft.com/download). Run the following command in the command prompt:
 
     ```dotnetcli
     dotnet --version
     ```
 
-    Verify the output is `3.1.100` or higher. If not, install the [latest version](https://dotnet.microsoft.com/download) and check again. Then follow the instructions below depending on your setup (Visual Studio, Visual Studio Code, or directly from the command prompt).
+    Verify the output is `6.0.100` or higher. If not, install the [latest version](https://dotnet.microsoft.com/download) and check again. Then follow the instructions below depending on your setup (Visual Studio, Visual Studio Code, or directly from the command prompt).
 
 ### Update Q# projects in Visual Studio
  
-1. Update to the latest version of Visual Studio 2019, see [here](/visualstudio/install/update-visual-studio) for instructions.
+1. Update to the latest version of Visual Studio 2022, see [here](/visualstudio/install/update-visual-studio) for instructions.
 2. Open your solution in Visual Studio.
 3. From the menu, select **Build** -> **Clean Solution**.
-4. In each of your .csproj files, update the target framework to `netcoreapp3.1` (or `netstandard2.1` if it is a library project).
+4. In each of your .csproj files, update the target framework to `net6.0` (or `netstandard2.1` if it is a library project).
     That is, edit lines of the form:
 
     ```xml
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     ```
 
     You can find more details on specifying target frameworks [here](/dotnet/standard/frameworks#how-to-specify-target-frameworks).
@@ -52,7 +52,7 @@ Regardless of whether you are using C# or Python to host Q# operations, follow t
 5. In each of the .csproj files, set the SDK to `Microsoft.Quantum.Sdk`, as indicated in the line below. Please notice that the version number should be the latest available, and you can determine it by reviewing the [release notes](xref:microsoft.quantum.relnotes-qdk).
 
     ```xml
-    <Project Sdk="Microsoft.Quantum.Sdk/0.17.2105143879">
+    <Project Sdk="Microsoft.Quantum.Sdk/0.24.201332">
     ```
 
 6. Save and close all files in your solution.
@@ -92,14 +92,14 @@ You can now skip ahead to [update your Visual Studio QDK extension](#update-the-
     dotnet clean [project_name].csproj
     ```
 
-3. Determine the current version of the QDK. To find it, you can review the [release notes](xref:microsoft.quantum.relnotes-qdk). The version will be in a format similar to `0.12.20072031`.
+3. Determine the current version of the QDK. To find it, you can review the [release notes](xref:microsoft.quantum.relnotes-qdk). The version will be in a format similar to `0.24.201332`.
 
 4. In each of your `.csproj` files, go through the following steps:
 
-    - Update the target framework to `netcoreapp3.1` (or `netstandard2.1` if it is a library project). That is, edit lines of the form:
+    - Update the target framework to `net6.0` (or `netstandard2.1` if it is a library project). That is, edit lines of the form:
 
         ```xml
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         ```
 
         You can find more details on specifying target frameworks [here](/dotnet/standard/frameworks#how-to-specify-target-frameworks).
@@ -107,13 +107,13 @@ You can now skip ahead to [update your Visual Studio QDK extension](#update-the-
     - Replace the reference to the SDK in the project definition. Make sure that the version number corresponds to the value determined in **step 3**.
 
         ```xml
-        <Project Sdk="Microsoft.Quantum.Sdk/0.17.2105143879">
+        <Project Sdk="Microsoft.Quantum.Sdk/0.24.201332">
         ```
 
     - Remove the reference to package `Microsoft.Quantum.Development.Kit` if present, which will be specified in the following entry:
 
         ```xml
-        <PackageReference Include="Microsoft.Quantum.Development.Kit" Version="0.17.2105143879" />
+        <PackageReference Include="Microsoft.Quantum.Development.Kit" Version="0.24.201332" />
         ```
 
     - Update the version of the all the Microsoft Quantum packages to the most recently released version of the QDK (determined in **step 3**). Those packages are named with the following patterns:
@@ -126,7 +126,7 @@ You can now skip ahead to [update your Visual Studio QDK extension](#update-the-
         References to packages have the following format:
 
         ```xml
-        <PackageReference Include="Microsoft.Quantum.Compiler" Version="0.17.2105143879" />
+        <PackageReference Include="Microsoft.Quantum.Compiler" Version="0.24.201332" />
         ```
 
     - Save the updated file.
@@ -137,7 +137,10 @@ You can now skip ahead to [update your Visual Studio QDK extension](#update-the-
         dotnet restore [project_name].csproj
         ```
 
-4. Navigate back to the folder containing your main project and run:
+    > [!NOTE]
+    > For versions `0.24.201332` and above, the target framework was upgraded from `netcoreapp3.1` to `net6.0` (except for libraries). If using an older QDK, you should keep this value as is.
+
+5. Navigate back to the folder containing your main project and run:
 
     ```dotnetcli
     dotnet build [project_name].csproj
@@ -194,7 +197,7 @@ The update procedure depends on whether you originally installed using conda or 
     You should see the following output:
 
     ```
-    iqsharp: 0.17.2105143879
+    iqsharp: 0.24.201332
     Jupyter Core: 1.5.0.0
     ```
 
@@ -216,7 +219,7 @@ The update procedure depends on whether you originally installed using conda or 
 
     ```
     Name: qsharp
-    Version: 0.17.2105.143879
+    Version: 0.24.201332
     Summary: Python client for Q#, a domain-specific quantum programming language
     ...
     ```
@@ -267,7 +270,7 @@ The update procedure depends on whether you originally installed using conda or 
     Your output should be similar to the following:
 
     ```
-    iqsharp: 0.17.2105143879
+    iqsharp: 0.24.201332
     Jupyter Core: 1.5.0.0
     ```
 
@@ -287,7 +290,7 @@ You can now use the updated IQ# kernel to run your existing Q# Jupyter Notebooks
 
 1. Update the Q# Visual Studio extension
 
-    - Visual Studio prompts you to accept updates to the [Quantum Visual Studio extension](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit)
+    - Visual Studio prompts you to accept updates to the [Quantum Visual Studio extension](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64)
     - Accept the update
 
     > [!NOTE]

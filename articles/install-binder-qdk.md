@@ -2,7 +2,7 @@
 author: cjgronlund
 description: Learn how to create a Q# application using Binder. You can use Binder to run and share Jupyter Notebooks online.
 ms.author: cgronlun
-ms.date: 11/15/2021
+ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -63,7 +63,7 @@ If you already have notebooks in a (public!) GitHub repository, you can configur
 1. Ensure that there is a file named *Dockerfile* in the root of your repository. The file must contain at least the following lines:
 
     ```bash
-    FROM mcr.microsoft.com/quantum/iqsharp-base:0.12.20082513
+    FROM mcr.microsoft.com/quantum/iqsharp-base:0.24.201332
 
     USER root
     COPY . ${HOME}

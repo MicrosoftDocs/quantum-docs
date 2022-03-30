@@ -2,7 +2,7 @@
 author: cjgronlund
 description: Learn how to run a quantum sequential classifier written in Q# using the Quantum Machine Learning library of the Microsoft QDK.
 ms.author: cgronlun
-ms.date: 02/01/2021
+ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -78,7 +78,7 @@ Next, in the same folder we create a host program. Your host program consists of
     Observed X.XX% misclassifications.
     ```
 
-    ### [C# with Visual Studio 2019](#tab/tabid-vs2019)
+    ### [C# with Visual Studio 2022](#tab/tabid-vs2022)
 
     To run your new Q# program from C# in Visual Studio, modify `Host.cs` to include the following C# code. Remember that you also need the Q# file `Training.qs` that is explained above in this tutorial.
 
