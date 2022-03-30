@@ -41,9 +41,8 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ### Azure Quantum service update
 
-- Updated text in the Portal for improved clarity.
-- Added usability improvements to the Portal experience.
-- Added a portal notebook sample for the hidden shift scenario.
+- [Streamlined](xref:microsoft.quantum.how-to.workspace) workspace creation and navigation experience in Azure Portal.
+- Added a portal [notebook](xref:microsoft.quantum.how-to.notebooks) sample for the hidden shift scenario.
 
 ## 2022-03-15
 
