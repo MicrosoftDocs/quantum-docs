@@ -2,7 +2,7 @@
 author: cjgronlund
 description: Learn how to set up a Q# standalone environment to develop quantum programs with the Microsoft Quantum Development Kit.
 ms.author: cgronlun
-ms.date: 10/25/2021
+ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -54,7 +54,7 @@ While you can build Q# applications in any IDE, we recommend using Visual Studio
 
 ### Prerequisite
 
-- [.NET Core SDK 3.1](https://www.microsoft.com/net/download)
+- [.NET SDK 6.0](https://dotnet.microsoft.com/download)
 
 Configure the QDK for your preferred environment from one of the following options:
 
@@ -65,8 +65,8 @@ Configure the QDK for your preferred environment from one of the following optio
 
 ### Visual Studio (Windows only)
 
-1. Download and install [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 or greater, with the .NET Core cross-platform development workload enabled.
-1. Download and install the [QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit).
+1. Download and install [Visual Studio](https://visualstudio.microsoft.com/downloads/) 17.0 or greater, with the .NET Core cross-platform development workload enabled.
+1. Download and install the [QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64).
 
 > [!NOTE]
 > Although there is Visual Studio for Mac, the QDK extension is only compatible with Visual Studio for Windows.
