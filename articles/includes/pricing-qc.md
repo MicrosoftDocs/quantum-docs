@@ -1,18 +1,20 @@
 ## IonQ 
 
-All new Azure Quantum customers benefit of a one-time $500 free credits toward [IonQ](https://ionq.com/) provider. You may also have been awarded a special grant with a larger amount of Azure Quantum Credits. See [Azure Quantum Credits program](https://aka.ms/aq/credits) for more details. 
-
-Besides Azure Quantum credits, IonQ offers a **Pay-as-you-go** plan. 
-
-### [Azure Quantum Credits](#tab/tabid-AQcredits)
-
-Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. 
+[IonQ](https://ionq.com/) charges based on the number of gates in your program, the complexity of the gates you use, and the number of shots. These units are called *gate-shots*.
 
 Every quantum program consists of $N$ logical gates of one or more qubits, and is executed for a certain number of shots. The number of gate-shots is calculated by 
 multiplying the number of one- or two-qubit gates submitted with the number of execution shots requested. 
 
-Gates involving more than two qubits are considered as $6(N-2)$ two-qubit gates, where $N$ is the number of qubits in the gate. For example, a NOT gate with three controls would 
-be calculated as 6(4-2) or 12 two-qubit gates.  
+Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with 3 controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. To learn more about IonQ and how gate-shots are calculated, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
+
+> [!NOTE]
+> IonQ has $1 USD minimum cost to run a job on the IonQ QPU. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
+
+All new Azure Quantum customers benefit of a one-time $500 free Azure Quantum credits toward IonQ provider. Besides Azure Quantum credits, IonQ offers a **Pay-as-you-go** plan with no monthly subscription fees. 
+
+### [Azure Quantum Credits](#tab/tabid-AQcredits)
+
+Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. 
 
 |Pricing | $0 per month + Azure infrastructure costs |
 |---|---|  
@@ -28,12 +30,6 @@ Minimum of $1 USD per program execution, deducted from your credits.
 
 The Pay-as-you-go plan consists of *a la carte* access to trapped ion quantum computers and simulators, charged on a resource-usage model.  
 
-Every quantum program consists of $N$ logical gates of one or more qubits, and is executed for a certain number of shots. We bill based on gate-shots, calculated by 
-multiplying the number of one- or two-qubit gates submitted with the number of execution shots requested.  
-
-Gates involving more than two qubits are billed as $6(N-2)$ two-qubit gates, where $N$ is the number of qubits in the gate. For example, a NOT gate with three controls would 
-be billed as 6(4-2) or 12 two-qubit gates.  
-
 |Pricing | $0 per month + Azure infrastructure costs |
 |---|---|  
 |Includes access to | <ul><li>IonQ QPU</li><li>IonQ Simulator (free)</li></ul>|
@@ -43,13 +39,10 @@ Minimum of $1 USD per program execution.
 
 ***
 
-If you want to learn more about how IonQ Qubit-Gate-Shots are calculated, visit the [IonQ provider page](xref:microsoft.quantum.providers.ionq)
 
 ## Quantinuum 
 
-All new Azure customers benefit of a one-time $500 free credits toward [Quantinuum](https://www.quantinuum.com/) provider, which corresponds to 40 hardware H1 Quantum Credits and 160 emulator H1 Quantum Credits. 
-
-You may also have been awarded a special grant with larger amount of Azure Quantum Credits. See [Azure Quantum Credits program](https://aka.ms/aq/credits) for more details. 
+[Quantinuum](https://www.quantinuum.com/) , powered by Honeywell, uses a credit system called *Honeywell Quantum Credits*. Each job you run consumes credits depending on the number of operations in the job, and the number of shots you run.
 
 The following equation defines how circuits are translated into H1 Quantum Credits (HQCs):
 
@@ -64,7 +57,9 @@ where:
 - $N_{m}$ is the number of state preparation and measurement (SPAM) operations in a circuit including initial implicit state preparation and any intermediate and final measurements and state resets.
 - $C$ is the shot count.
 
-Besides Azure Quantum credits, Quantinuum provides two plans: **Standard Subscription** and **Premium Subscription**. 
+To learn more about Quantinuum and how H1 Quantum Credits are calculated, visit the [Quantinuum provider page](xref:microsoft.quantum.providers.honeywell).
+
+All new Azure customers benefit of a one-time $500 free credits toward Quantinuum provider. Besides Azure Quantum credits, Quantinuum provides two plans: **Standard Subscription** and **Premium Subscription**. 
 
 ### [Azure Quantum Credits](#tab/tabid-AQcreditsQ)
 
@@ -72,7 +67,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 
 |Pricing | Use is deducted from the Azure Quantum Credits based on the HQC equation described above |
 |---|---|  
-|Includes access to | <ul><li>System Model H1 hardware</li><li>Emulator </li></ul>|
+|Includes access to | <ul><li>40 H1 Quantum Credits (HQCs) for use on the System Model H1 hardware, powered by Honeywell</li><li>160 emulator credits (eHQCs) for use on the H1 Emulator</li></ul>|
 
 > [!NOTE]
 > Once you have consumed all the credits you need to explicitly switch to a different plan to continue using Quantinuum. Azure Quantum won’t start charging you once you reach your credit limit. 
@@ -94,4 +89,4 @@ The Premium Subscription is a monthly subscription plan available through queued
 |Includes access to | <ul><li>17k H1 Quantum Credits (HQCs) for use on System Model H1 hardware, powered by Honeywell</li><li>100k emulator credits (eHQCs) for use on the H1 Emulator</li></ul>|
 ***
 
-If you want to learn more about how H1 Quantum Credits are calculated, visit the [Quantinuum provider page](xref:microsoft.quantum.providers.honeywell).
+

@@ -80,7 +80,7 @@ location of your Azure Quantum workspace:
 1. Paste the resource ID into the value for *resource_id*, and then add the location string from the first cell to *location*.
 1. Run the cell.
 
-![How to retrieve the resource ID and location from an Azure Quantum workspace](/media/azure-quantum-resource-id.png) 
+![How to retrieve the resource ID and location from an Azure Quantum workspace](media/azure-quantum-resource-id.png) 
 
 ## Define a simple circuit
 
