@@ -2,8 +2,8 @@
 title: Microsoft Quantum Development Kit Third Party Software 
 description: Microsoft Quantum Development Kit third party software notices and information.  
 keywords: Don’t add or edit keywords without consulting your SEO champ.
-author: cjgronlund
-ms.author: cgronlun
+author: tedhudek
+ms.author: tedhudek
 ms.date: 10/09/2017
 ms.topic: conceptual
 ms.service: azure-quantum

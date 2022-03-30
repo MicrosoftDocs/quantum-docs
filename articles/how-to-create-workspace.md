@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: tedhudek
 description: Learn how to create an Azure Quantum workspace.
-ms.author: cgronlun
+ms.author: tedhudek
 ms.date: 02/23/2022
 ms.service: azure-quantum
 ms.subservice: qdk

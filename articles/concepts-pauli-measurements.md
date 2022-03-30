@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: tedhudek
 description: Learn how to work with single- and multi-qubit Pauli measurement operations.
-ms.author: cgronlun
+ms.author: tedhudek
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core

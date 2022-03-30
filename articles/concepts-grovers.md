@@ -1,9 +1,9 @@
 ---
 title: Theory of Grover's search algorithm 
 description: Learn about the theory behind Grover's algorithm.
-author: cjgronlund
+author: tedhudek
 uid: microsoft.quantum.concepts.grovers
-ms.author: cgronlun
+ms.author: tedhudek
 ms.date: 12/11/2017
 ms.service: azure-quantum
 ms.subservice: core

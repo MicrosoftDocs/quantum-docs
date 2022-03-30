@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: tedhudek
 description: A guide to the Q# programming language, the Q# libraries, and how to develop quantum programs.
-ms.author: cgronlun
+ms.author: tedhudek
 ms.date: 11/05/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

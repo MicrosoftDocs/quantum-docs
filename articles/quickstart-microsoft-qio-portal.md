@@ -1,8 +1,8 @@
 ---
 title: Quickstart - Solve an optimization problem in the Azure Quantum portal
 description: This document provides a step-by-step guide to get you started with optimization in the Azure Quantum portal
-author: cjgronlund
-ms.author: cgronlun
+author: tedhudek
+ms.author: tedhudek
 ms.topic: quickstart
 ms.date: 02/17/2022
 ms.service: azure-quantum
