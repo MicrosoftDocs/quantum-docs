@@ -39,6 +39,12 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
   - Extended error message in failed jobs to include details originated from the provider.
   - Completed support in workspace creation for all storage account types allowed in the Azure Quantum service.
 
+### Azure Quantum service update
+
+- Updated text in the Portal for improved clarity.
+- Added usability improvements to the Portal experience.
+- Added a portal notebook sample for the hidden shift scenario.
+
 ## 2022-03-15
 
 ### QDK version 0.23.198514-beta (Preview)
