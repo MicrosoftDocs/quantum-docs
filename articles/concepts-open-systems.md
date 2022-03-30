@@ -205,7 +205,7 @@ print(sum(ApplyHToRandomStateAndMeasure.simulate() for _ in range(100)))
 As it turns out, there is no single vector that represents the state prepared by the `ApplyHToRandomStateAndMeasure` operation unless you know the outcome of the random coin flip `(DrawRandomBool(0.5))`. If you don't know the outcome of the coin flip, the quantum state is given by the following *ensemble* of state vectors,
 
 $$
-\rho = \lbrace \ket{0} \text{ with probability } 50%, \ket{1}  \text{ with probability } 50% \rbrace .
+\rho = \lbrace \ket{0} \text{ with probability } \frac{1}{2}, \ket{1}  \text{ with probability } \frac{1}{2} \rbrace .
 $$
 
 Given a quantum state $\ket{\psi}$ the probability of the outcome $\ket{\phi}$ after a measurement is given by the Born's rule,
