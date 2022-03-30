@@ -13,12 +13,9 @@ zone_pivot_groups: azurequantum-providers
 
 # Azure Quantum pricing 
 
-In Azure Quantum, hardware and software providers define and control the pricing of their offerings. The information below is subject to change by providers and some delays 
-in reflecting latest pricing information may exist. Be sure to verify the latest pricing information from the Azure Quantum workspace you are using. 
+In Azure Quantum, hardware and software providers define and control the pricing of their offerings. The information below is subject to change by providers and some delays in reflecting latest pricing information may exist. Be sure to verify the latest pricing information from the Azure Quantum workspace you are using. 
 
-> [!NOTE]
-> First-time users automatically get free Azure Quantum Credits for use with each participating quantum hardware provider (500 USD each) when creating your workspace.
-If you need more credits, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
+[!INCLUDE [Azure Quantum credits banner](~/includes/azure-quantum-credits.md)]
  
 To see the different pricing plans in your local currency: 
 
