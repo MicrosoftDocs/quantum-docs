@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: SoniaLopezBravo
 description: This document provides the technical details of the Microsoft QIO provider
-ms.author: cgronlun
+ms.author: sonialopez
 ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: optimization
@@ -69,7 +69,7 @@ FPGA solvers have an initialization time that may take a large percentage of the
 
 ## Pricing
 
-For the most up-to-date pricing information on Microsoft's QIO offering, please refer to the Providers tab of your workspace on the [Azure portal](https://portal.azure.com/) or visit the [Azure Quantum pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
+For the most up-to-date pricing information on Microsoft's QIO offering, please refer to the Providers tab of your workspace on the [Azure portal](https://portal.azure.com/) or visit the [Microsoft optimization pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
 
 ## Limits & Quotas
 
