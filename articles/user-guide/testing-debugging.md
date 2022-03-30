@@ -4,7 +4,7 @@ title: Test and debug quantum programs
 description: Learn how to use unit tests, facts and assertions, and dump functions to test and debug quantum programs. 
 author: tcNickolas
 ms.author: mamykhai
-ms.date: 11/15/2021
+ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -26,9 +26,9 @@ Q# supports creating unit tests for quantum programs, and which can run as tests
 
 ### Creating a Test Project
 
-#### [Visual Studio 2019](#tab/tabid-vs2019)
+#### [Visual Studio 2022](#tab/tabid-vs2022)
 
-Open Visual Studio 2019. Go to the **File** menu and select **New > Project...**.
+Open Visual Studio 2022. Go to the **File** menu and select **New > Project...**.
 In the upper right corner, search for `Q#`, and select the **Q# Test Project** template.
 
 #### [Command Line / Visual Studio Code](#tab/tabid-vscode)
@@ -91,15 +91,15 @@ The Q# compiler recognizes the built-in targets `"QuantumSimulator"`, `"ToffoliS
 Besides the code file, the test project template includes the `.csproj` file with the following contents:
 
 ```xml
-<Project Sdk="Microsoft.Quantum.Sdk/0.16.2105140472">
+<Project Sdk="Microsoft.Quantum.Sdk/0.24.201332">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Quantum.Xunit" Version="0.16.2105140472" />
+    <PackageReference Include="Microsoft.Quantum.Xunit" Version="0.24.201332" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
@@ -111,13 +111,13 @@ Besides the code file, the test project template includes the `.csproj` file wit
 
 The first line specifies the version number of the Microsoft Quantum Development Kit used to build the application. Note that the exact version numbers you see in this file will depend on your installation.
 
-The `TargetFramework` generally contains either of two values for Q# applications depending on the project type: `netcoreapp3.1` for executable and test projects, and `netstandard2.1` for libraries. Next, the `IsPackable` parameter is set to false (true when omitted). It determines whether a NuGet package is generated from this project when the [`dotnet pack`](/dotnet/core/tools/dotnet-pack) command is run.
+The `TargetFramework` generally contains either of two values for Q# applications depending on the project type: `net6.0` for executable and test projects, and `netstandard2.1` for libraries. Next, the `IsPackable` parameter is set to false (true when omitted). It determines whether a NuGet package is generated from this project when the [`dotnet pack`](/dotnet/core/tools/dotnet-pack) command is run.
 
 Finally, the file lists NuGet package dependencies inside the `<ItemGroup>` tag. [xUnit](https://xunit.net/) is a popular testing framework for the .NET framework, which Q# test projects make use of (third reference in the list). The `Microsoft.Quantum.Xunit` and `Microsoft.NET.Test.Sdk` packages are used to expose Q# constructs to xUnit and build .NET test projects. In order to run any tests, xUnit also requires a unit test runner. Both the `xunit.runner.visualstudio` and the `dotnet-xunit` runners are required to run tests from the command line, while the former is sufficient when running tests from within Visual Studio. Make sure to include the appropriate package references if you are creating a test project manually or are converting from a regular project.
 
 ### Running Q# Unit Tests
 
-#### [Visual Studio 2019](#tab/tabid-vs2019)
+#### [Visual Studio 2022](#tab/tabid-vs2022)
 
 As a one-time per-solution setup, go to the **Test** menu and select **Test Settings > Default Processor Architecture > X64**.
 
@@ -146,15 +146,15 @@ You should get output similar to the following:
 
   Q#: Success! (0 errors, 0 warnings) 
   
-  TestProject -> C:\Users\user\TestProject\bin\Debug\netcoreapp3.1\test2.dll
-Test run for C:\Users\user\TestProject\bin\Debug\netcoreapp3.1\test2.dll (.NETCoreApp,Version=v3.1)
-Microsoft (R) Test Execution Command Line Tool Version 16.10.0
+  TestProject -> C:\Users\user\TestProject\bin\Debug\net6.0\test2.dll
+Test run for C:\Users\user\TestProject\bin\Debug\net6.0\test2.dll (.NETCoreApp,Version=v6.0)
+Microsoft (R) Test Execution Command Line Tool Version 17.1.0
 Copyright (c) Microsoft Corporation.  All rights reserved.
 
 Starting test execution, please wait...
 A total of 1 test files matched the specified pattern.
 
-Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: < 1 ms - test2.dll (netcoreapp3.1)
+Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: < 1 ms - test2.dll (net6.0)
 ```
 
 Unit tests can be filtered according to their name or the run target:
@@ -168,7 +168,7 @@ dotnet test --filter "Name=AllocateQubit"
 
 The intrinsic function <xref:Microsoft.Quantum.Intrinsic.Message> has type `(String -> Unit)` and enables the creation of diagnostic messages.
 
-#### [Visual Studio 2019](#tab/tabid-vs2019)
+#### [Visual Studio 2022](#tab/tabid-vs2022)
 
 After you run a test in Test Explorer and click the test name, a panel displays with information about test run: Pass/fail status, elapsed time, and a link to the output. Click **Output** to open the test output in a new window.
 
@@ -393,7 +393,7 @@ The following examples show `DumpMachine` for some common states:
   > [!NOTE]
   > The id of a qubit is assigned at runtime and is not necessarily aligned with the order in which the qubit was allocated or its position within a qubit register.
 
-#### [Visual Studio 2019](#tab/tabid-vs2019)
+#### [Visual Studio 2022](#tab/tabid-vs2022)
 
   > [!TIP]
   > You can locate a qubit id in Visual Studio by putting a breakpoint in your code and inspecting the value of a qubit variable, for example:

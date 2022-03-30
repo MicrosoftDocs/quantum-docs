@@ -2,7 +2,7 @@
 author: cjgronlund
 description: Learn how to create a Q# application using .NET languages. Q# is built to work well with .NET languages such as C# and F#.
 ms.author: cgronlun
-ms.date: 01/10/2021
+ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -58,7 +58,7 @@ If you are using an editor other than Visual Studio or VS Code, simply follow th
   dotnet sln quantum-dotnet.sln add ./host/host.csproj
   ```
 
-### [Visual Studio 2019](#tab/tabid-vs2019)
+### [Visual Studio 2022](#tab/tabid-vs2022)
 
 - Create a new Q# library
   - Go to **File** -> **New** -> **Project**

@@ -2,7 +2,7 @@
 author: cjgronlund
 description: Learn how to install the Quantum Development Kit (QDK) to develop Python host programs that call Q# operations.
 ms.author: cgronlun
-ms.date: 02/01/2021
+ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -52,7 +52,7 @@ The `qsharp` Python package, which includes the IQ# kernel, contains the necessa
 
     - [Python](https://www.python.org/downloads/) 3.6 or later
     - The [PIP](https://pip.pypa.io/en/stable/installing) Python package manager
-    - [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+    - [.NET SDK 6.0](https://dotnet.microsoft.com/download/)
 
 1. Install the `qsharp` package, a Python package that enables interop between Q# and Python.
 
