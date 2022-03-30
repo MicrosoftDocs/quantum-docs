@@ -2,7 +2,7 @@
 author: cjgronlund
 description: Overview of the standard, chemistry, numerics, and machine learning libraries included in the Quantum Development Kit (QDK).
 ms.author: cgronlun
-ms.date: 10/22/2021
+ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -93,7 +93,7 @@ For example, to add the [**Microsoft.Quantum.Numerics**](https://www.nuget.org/p
 dotnet add package Microsoft.Quantum.Numerics
 ```
 
-**Visual Studio:** If you are using Visual Studio 2019 or later, you can add additional Q# packages using the NuGet Package Manager.
+**Visual Studio:** If you are using Visual Studio 2022 or later, you can add additional Q# packages using the NuGet Package Manager.
 To load a package: 
 1. With a project open in Visual Studio, select **Manage NuGet Packages...** from the **Project** menu.
 
@@ -164,6 +164,3 @@ Sources of the libraries as well as code samples can be obtained from GitHub. Se
 - [Quantum Machine Learning Library](xref:microsoft.quantum.libraries.overview.machine-learning.intro)
 - [Quantum Numerics Library](xref:microsoft.quantum.libraries-numerics.usage)
 - [Quantum Simulators](xref:microsoft.quantum.machines.overview)
-
-
-

@@ -5,7 +5,7 @@ author: hsirtl
 ms.author: hsirtl
 ms.service: azure-quantum
 ms.topic: how-to
-ms.date: 11/16/2021
+ms.date: 03/30/2022
 #Customer intent: As a researcher, I want to make my quantum algorithm accessible via API so that developers without further quantum knowledge can call it via classical API-calls.
 ---
 
@@ -77,7 +77,7 @@ When using an editor other than Visual Studio or VS Code, follow the command pro
   dotnet sln function-qsharp.sln add .\Function.Csharp\Function_Csharp.csproj
   ```
 
-### [Visual Studio 2019](#tab/tabid-vs2019)
+### [Visual Studio 2022](#tab/tabid-vs2022)
 
 - Create a new Q# library
   - Go to **File** -> **New** -> **Project**
@@ -255,7 +255,7 @@ You can now prepare the target environment that will host the function. Preparat
     - **Function App name**: Enter a globally unique name for the function app. Type a name that is valid in a URL path. The name you type is validated to make sure that it's unique in Azure Functions.
     - **Publish**: Select ``Code``.
     - **Runtime stack**: Select ``.NET``.
-    - **Version**: Select ``3.1``.
+    - **Version**: Select ``6.0``.
     - **Region**: Select the region that contains your Quantum Workspace.
 
     Select **Review + Create** to confirm your input.
