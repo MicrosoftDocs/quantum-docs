@@ -21,7 +21,7 @@ The sparse simulator is exposed via the `SparseSimulator` class. For more inform
 
 ### Invoking the simulator from C\#
 
-Create an instance of the <xref:Microsoft.Quantum.Simulation.Simulators.SparseSimulator> class and then pass it to the `Run` method of a quantum operation, along with any parameters.
+Create an instance of the `SparseSimulator` class and then pass it to the `Run` method of a quantum operation, along with any parameters.
 
 ```csharp
     using (var sim = new SparseSimulator())
