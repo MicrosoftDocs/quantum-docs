@@ -1,6 +1,6 @@
 ---
-author: cjgronlund
-ms.author: cgronlun
+author: tedhudek
+ms.author: tedhudek
 ms.date: 11/12/2021
 ms.service: azure-quantum
 ms.subservice: computing

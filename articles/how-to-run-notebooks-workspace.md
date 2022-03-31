@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: tedhudek
 description: Learn how to work with Q# or Python in a Jupyter notebook in an Azure Quantum workspace.
-ms.author: cgronlun
+ms.author: tedhudek
 ms.date: 03/03/2022
 ms.service: azure-quantum
 ms.subservice: qdk

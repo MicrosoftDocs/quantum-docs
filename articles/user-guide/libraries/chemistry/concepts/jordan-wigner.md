@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: tedhudek
 description: Learn about the Jordan-Wigner Representation, which maps Hamiltonian operators to unitary matrices that can more easily implemented on a quantum computer.
-ms.author: cgronlun
+ms.author: tedhudek
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

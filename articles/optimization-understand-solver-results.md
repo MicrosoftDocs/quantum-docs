@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: tedhudek
 description: This document provides a basic guide to interpreting results of optimization problems solved in Azure Quantum using Python.
-ms.author: cgronlun
+ms.author: tedhudek
 ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: optimization

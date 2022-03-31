@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: tedhudek
 description: Learn about the Quantum Development Kit (QDK), the Q# programming language, and how you can create quantum programs.
-ms.author: cgronlun
+ms.author: tedhudek
 ms.date: 11/15/2021
 ms.service: azure-quantum
 ms.subservice: qdk

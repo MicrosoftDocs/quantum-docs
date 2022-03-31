@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: tedhudek
 description: Learn about the Second Quantization approach to modeling electronic structures in quantum programming.
-ms.author: cgronlun
+ms.author: tedhudek
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
