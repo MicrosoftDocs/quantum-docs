@@ -1,7 +1,7 @@
 ---
-author: tedhudek
+author: bradben
 description: Learn how to run a quantum sequential classifier written in Q# using the Quantum Machine Learning library of the Microsoft QDK.
-ms.author: tedhudek
+ms.author: brbenefield
 ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

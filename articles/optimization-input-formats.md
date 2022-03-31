@@ -1,7 +1,7 @@
 ---
-author: tedhudek
+author: bradben
 description: This article gives an overview of the valid input formats when submitting optimization problems.
-ms.author: tedhudek
+ms.author: brbenefield
 ms.date: 09/09/2021
 ms.service: azure-quantum
 ms.subservice: optimization

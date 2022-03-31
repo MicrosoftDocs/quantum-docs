@@ -1,7 +1,7 @@
 ---
-author: tedhudek
+author: bradben
 description: This article provides a basic guide to managing jobs submitted for solving optimization problems in Azure Quantum using Python.
-ms.author: tedhudek
+ms.author: brbenefield
 ms.date: 08/12/2021
 ms.service: azure-quantum
 ms.subservice: optimization

@@ -1,7 +1,7 @@
 ---
-author: tedhudek
+author: bradben
 description: Learn how to create a Q# application using Binder. You can use Binder to run and share Jupyter Notebooks online.
-ms.author: tedhudek
+ms.author: brbenefield
 ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qdk

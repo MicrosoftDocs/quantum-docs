@@ -1,7 +1,7 @@
 ---
-author: tedhudek
+author: bradben
 description: Learn about eigenvectors, eigenvalues, and matrix exponentials, the fundamental tools used to describe and simulate quantum algorithms.
-ms.author: tedhudek
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: core

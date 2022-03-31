@@ -1,7 +1,7 @@
 ---
-author: tedhudek
+author: bradben
 description: Learn about the katas (training exercises) provided with the Microsoft Quantum Development Kit (QDK)
-ms.author: tedhudek
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
