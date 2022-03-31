@@ -40,7 +40,7 @@ The behavior of the sparse simulator can be adjusted via the following parameter
 - `throwOnReleasingQubitsNotInZeroState`: The simulator can warn you by throwing an exception if qubits haven't been returned to the `zero` state before release. Resetting or measuring qubits before release is required by the Q# spec - not doing so may lead to computational errors! The default is `true`.
 - `randomNumberGeneratorSeed`: Obtain deterministic behavior by seeding the simulator as described above.
 - `disableBorrowing`: If you don't want to use [borrowed qubits](xref:microsoft.quantum.qsharp.quantummemorymanagement#borrow-statement) for this simulation, you can disable this feature by setting this parameter to `true`. Borrowed qubits will instead be replaced with regular clean qubits. The default is `false`.
-- `numQubits`: The number of qubits the sparse simulator will be operating with. The default is 64. This number has a hard limit of 1024.
+- `numQubits`: The number of qubits the sparse simulator will be operating with. By default, this number is set to 64 and it has a hard limit of 1024.
 
 The code below shows a possible configuration of the parameters.
 
