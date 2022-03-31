@@ -12,15 +12,15 @@ uid: microsoft.quantum.providers.quantinuum.support
 
 # Support policy for Quantinuum in Azure Quantum
 
-This article describes the Microsoft support policy that applies when you use the Honeywell provider in Azure Quantum. The article applies to any of the targets under this provider.
+This article describes the Microsoft support policy that applies when you use the Quantinuum provider in Azure Quantum. The article applies to any of the targets under this provider.
 
-If you're using the Honeywell provider and hit unexpected issues, you can contact the Azure Support team for help by [creating an Azure support case](/azure/azure-portal/supportability/how-to-create-azure-support-request).
+If you're using the Quantinuum provider and hit unexpected issues, you can contact the Azure Support team for help by [creating an Azure support case](/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
-In some situations, the Azure Support team will need to redirect you to Honeywell's support team, or where you may receive a quicker response by reaching out to Honeywell directly. This article details this process and answers some frequently asked questions.
+In some situations, the Azure Support team will need to redirect you to Quantinuum's support team. You may receive a quicker response by reaching out to Quantinuum directly. This article details this process and answers some frequently asked questions.
 
 ## Quantinuum Support Policy - Public Preview
 
-The goal of Support is to identify and remedy defects or malfunctions causing the Quantum Computer to fail to perform in accordance with the agreed specifications and documentation (“Problems”). Support only covers the current released version generally available to customers.  Although our quantum experts can help you troubleshoot algorithm issues, we're not responsible for any issues, problems, or defects with your algorithm. To minimize programming issues, users are able to run their algorithms through the syntax validator prior to running on hardware.  
+The goal of Support is to identify and remedy defects or malfunctions causing the Quantum Computer to fail to perform in accordance with the agreed specifications and documentation (“Problems”). Support only covers the current released version generally available to customers. Although our quantum experts can help you troubleshoot algorithm issues, we're not responsible for any issues, problems, or defects with your algorithm. To minimize programming issues, users are able to run their algorithms through the syntax checker prior to running on hardware.  
 
 ### 1.1	Contacting Technical Support within Quantinuum
 
@@ -36,9 +36,9 @@ _<sup>1</sup> “Business Days” means Monday to Friday but excluding national,
 
 The incident report will require the following information:
 
-- Description: A detailed description of the issue you're facing, what you're observing, and any steps you have already taken to triage/understand the issue
-- Primary contact: A primary contact name and phone number in case we require more information
-- Incident Severity: the severity of the incident, according to our severity definitions
+- **Description**: A detailed description of the issue you're facing, what you're observing, and any steps you have already taken to triage/understand the issue
+- **Primary contact**: A primary contact name and phone number in case we require more information
+- **Incident Severity**: the severity of the incident, according to our severity definitions
 
 Once a report is filed, the Quantinuum team will be notified and will respond within the required SLA window. You will receive an acknowledgment of the issue once it has been received and the on-call engineer has been notified. The on-call engineer may request more information, or may call you at the contact number listed in the report depending on the severity. 
 
