@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: bradben
 description: Learn how to use Trotter-Suzuki formulas and qubitization to work with Hamiltonian simulations.
-ms.author: cgronlun
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
