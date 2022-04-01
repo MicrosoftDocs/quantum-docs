@@ -1,5 +1,5 @@
 ---
-author: cjgronlund
+author: bradben
 description: This document provides a basic guide to submit and run optimization jobs to Azure Quantum using the Azure portal, Python, or Jupyter Notebooks. 
 ms.author: sonialopez
 ms.date: 03/09/2022

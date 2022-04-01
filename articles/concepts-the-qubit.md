@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: bradben
 description: Learn about qubits, the fundamental unit of information in quantum computing. This article examines the single qubit.
-ms.author: cgronlun
+ms.author: brbenefield
 ms.date: 12/15/2021
 ms.service: azure-quantum
 ms.subservice: core

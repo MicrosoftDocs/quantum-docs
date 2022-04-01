@@ -1,6 +1,6 @@
 ---
-author: cjgronlund
-ms.author: cgronlun
+author: bradben
+ms.author: brbenefield
 ms.date: 02-17-2022
 ms.service: azure-quantum
 ms.subservice: optimization

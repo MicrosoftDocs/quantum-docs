@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: bradben
 description: Learn how to develop and run Python host programs that call Q# operations on a local simulator.
-ms.author: cgronlun
+ms.author: brbenefield
 ms.date: 12/17/2021
 ms.service: azure-quantum
 ms.subservice: qdk

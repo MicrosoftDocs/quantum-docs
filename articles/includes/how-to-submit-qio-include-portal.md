@@ -1,5 +1,5 @@
 ---
-author: cjgronlund
+author: bradben
 ms.author: sonialopez
 ms.date: 03/09/2022
 ms.service: azure-quantum
