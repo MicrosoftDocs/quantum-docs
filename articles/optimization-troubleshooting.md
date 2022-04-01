@@ -1,8 +1,8 @@
 ---
 title: Troubleshooting user errors in optimization solvers
 description: This document provides a basic guide for users on how to troubleshoot common errors when using optimization solvers with Azure Quantum. 
-author: cjgronlund
-ms.author: cgronlun
+author: bradben
+ms.author: brbenefield
 ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: optimization
