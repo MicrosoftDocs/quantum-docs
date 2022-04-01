@@ -1,7 +1,7 @@
 ---
-author: tedhudek
+author: bradben
 description: Learn how to set up a Q# standalone environment to develop quantum programs with the Microsoft Quantum Development Kit.
-ms.author: tedhudek
+ms.author: brbenefield
 ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qdk

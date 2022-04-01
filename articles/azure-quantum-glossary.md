@@ -1,7 +1,7 @@
 ---
-author: tedhudek
+author: bradben
 description: A glossary of common terms, actions and objects used in Azure Quantum.
-ms.author: tedhudek
+ms.author: brbenefield
 ms.date: 07/01/2021
 ms.service: azure-quantum
 ms.subservice: core  

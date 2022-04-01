@@ -1,8 +1,8 @@
 ---
-author: tedhudek
+author: bradben
 description: This document provides an overview of targets and target profile types in Azure Quantum.
 ms.date: 01/27/2022
-ms.author: tedhudek
+ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual

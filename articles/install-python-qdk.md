@@ -1,7 +1,7 @@
 ---
-author: tedhudek
+author: bradben
 description: Learn how to install the Quantum Development Kit (QDK) to develop Python host programs that call Q# operations.
-ms.author: tedhudek
+ms.author: brbenefield
 ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qdk

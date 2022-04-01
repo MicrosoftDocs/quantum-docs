@@ -1,6 +1,6 @@
 ---
-author: tedhudek
-ms.author: tedhudek
+author: bradben
+ms.author: brbenefield
 ms.date: 02-17-2022
 ms.service: azure-quantum
 ms.subservice: optimization

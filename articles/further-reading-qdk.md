@@ -1,7 +1,7 @@
 ---
-author: tedhudek
+author: bradben
 description: A reference list with deep coverage of quantum computing topics if you want to learn more about quantum computer programming.
-ms.author: tedhudek
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk

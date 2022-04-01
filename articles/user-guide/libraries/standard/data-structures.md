@@ -1,5 +1,5 @@
 ---
-author: tedhudek
+author: bradben
 description: Learn about data structures, oracles and dynamical generators in the Microsoft Q# standard libraries.
 ms.author: martinro
 ms.date: 02/01/2021

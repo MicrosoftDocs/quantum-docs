@@ -1,5 +1,5 @@
 ---
-author: tedhudek
+author: bradben
 description: Learn about two fundamental applications in quantum computing - Hamiltonian simulation and Shor's search algorithm.
 ms.author: martinro
 ms.date: 02/01/2021

@@ -1,5 +1,5 @@
 ---
-author: tedhudek
+author: bradben
 description: Learn how measurement statistics from phase estimations are used to estimate result values in quantum programming.
 ms.author: martinro
 ms.date: 02/01/2021
