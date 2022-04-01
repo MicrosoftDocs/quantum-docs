@@ -13,9 +13,9 @@ uid: microsoft.quantum.machines.overview.sparse-simulator
 
 # Quantum Development Kit (QDK) sparse simulator
 
-The sparse simulator is a simulator that utilizes a sparse representation of quantum state vectors, as opposed to the full-state simulator. This feature allows the sparse simulator to minimize the memory footprint used to represent quantum states that are sparse in the computational basis, thus enabling simulations over a larger number of qubits. The sparse simulator is efficient for a class of quantum algorithms with a smaller number of states in superposition. As such, this simulator enables users to explore larger applications than what can be explored using the full-state simulator alone.
+> The sparse simulator is a simulator that utilizes a sparse representation of quantum state vectors, as opposed to the full-state simulator. This feature allows the sparse simulator to minimize the memory footprint used to represent quantum states, thus enabling simulations over a larger number of qubits. The sparse simulator is efficient for representing quantum states that are sparse in the computational basis, that is, quantum states for which most of the amplitude coefficients are zero in the computational basis. As such, sparse simulator enables users to explore larger applications than what can be represented using the full-state simulator which will waste both memory and time on an exponentially large number of zero-amplitudes.
 
-If you want to learn more about the sparse simulator, see [this work](https://arxiv.org/abs/2105.01533).
+> For more information about the sparse simulator, please see [Jaques and Häner (arXiv:2105.01533)](https://arxiv.org/abs/2105.01533).
 
 ## Invoking and running the sparse simulator
 
