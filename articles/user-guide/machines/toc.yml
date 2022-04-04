@@ -2,6 +2,8 @@
   href: index.md
 - name: Full state simulator
   href: full-state-simulator.md
+- name: Sparse simulator
+  href: sparse-simulator.md
 - name: Resources estimator
   href: resources-estimator.md
 - name: Noise simulator
