@@ -89,3 +89,4 @@ For example:
 - [Quantum Trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)
 - [Quantum Full State simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
 - [Quantum noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator)
+- [Quantum sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator)
