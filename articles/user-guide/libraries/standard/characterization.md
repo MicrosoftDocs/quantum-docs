@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: Learn how measurement statistics from phase estimations are used to estimate result values in quantum programming.
-ms.author: martinro
-ms.date: 02/01/2021
+ms.author: sonialopez
+ms.date: 04/05/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -50,16 +50,16 @@ We emphasize this by briefly describing iterative phase estimation at a theoreti
 
 If an input state is provided that is not an eigenstate, which is to say that if $U(m)\ket{\phi\_j} = e^{im\phi\_j}$ then the process of phase estimation non-deterministically guides the quantum state towards a single energy eigenstate.  The eigenstate it ultimately converges to is the eigenstate that is most likely to produce the observed `Result`.
 
-Specifically, a single step of PE performs the following non-unitary transformation on a state
+Specifically, a single step of phase estimation performs the following non-unitary transformation on a state
 \begin{align}
-    \sum_j \sqrt{\Pr(\phi\_j)} \ket{\phi\_j} \mapsto \sum\_j\frac{\sqrt{\Pr(\phi\_j)}\sqrt{\Pr(\text{Result}|\phi\_j)}\ket{\phi\_j}}{\sqrt{\Pr(\phi\_j)\sum\_j \Pr(\text{Result}|\phi\_j)}}.
+    \sum_j \sqrt{\Pr(\phi\_j)} \ket{\phi\_j} \mapsto \sum\_j\frac{\sqrt{\Pr(\phi\_j)}\sqrt{\Pr(\text{Result}|\phi\_j)}\ket{\phi\_j}}{\sqrt{\sum\_k \Pr(\text{Result}|\phi\_k)\Pr(\phi\_k)}}.
 \end{align}
 As this process is iterated over multiple `Result` values, eigenstates that do not have maximal values of $\prod_k\Pr(\text{Result}\_k|\phi\_j)$ will be exponentially suppressed.
 As a result, the inference process will tend to converge to states with a single eigenvalue if the experiments are chosen properly.
 
 Bayes' theorem further suggests that the state that results from phase estimation be written in the form
 \begin{align}
-    \frac{\sqrt{\Pr(\phi\_j)}\sqrt{\Pr(\text{Result}|\phi\_j)}\ket{\phi\_j}}{\sqrt{\Pr(\phi\_j)\sum\_j \Pr(\text{Result}|\phi\_j)}}=\sum_j \sqrt{\Pr(\phi\_j|\text{Result})} \ket{\phi\_j}.
+    \frac{\sqrt{\Pr(\phi\_j)}\sqrt{\Pr(\text{Result}|\phi\_j)}\ket{\phi\_j}}{\sqrt{\sum\_k \Pr(\text{Result}|\phi\_k)\Pr(\phi\_k)}}=\sum_j \sqrt{\Pr(\phi\_j|\text{Result})} \ket{\phi\_j}.
 \end{align}
 Here $\Pr(\phi\_j|\text{Result})$ can be interpretted as the probability that one would ascribe to each hypothesis about the eigenstates given:
 
@@ -104,10 +104,11 @@ Following traditional classical terminology, we call $\eqref{eq:phase-est-likeli
 Having observed a `Result` from the iterative phase estimation likelihood function, we can then use Bayes' rule to prescribe what we should believe the phase to be following that observation.
 Concretely,
 \begin{equation}
-    \Pr(\phi | d) = \frac{\Pr(d | \phi) \Pr(\phi)}{\int \Pr(d | \phi) \Pr(\phi){\mathrm d}\phi} \Pr(\phi),
+    \Pr(\phi | d) = \frac{\Pr(d | \phi) \Pr(\phi)}{\int \Pr(d | \phi) \Pr(\phi){\mathrm d}\phi},
 \end{equation}
-where $d \in \\{\texttt{Zero}, \texttt{One}\\}$ is a `Result`, and where $\Pr(\phi)$ describes our prior beliefs about $\phi$.
+where $d \in \\{\texttt{Zero}, \texttt{One}\\}$ is a `Result`, Pr(d| φ) is the likelihood function in the previous step, $\Pr(\phi)$ describes our prior beliefs about $\phi$, and where $\Pr(d) = \int \Pr(d | \phi) \Pr(\phi){\mathrm d}\phi$ is a normalization factor.
 This then makes the iterative nature of iterative phase estimation explicit, as the posterior distribution $\Pr(\phi | d)$ describes our beliefs immediately preceding our observation of the next `Result`.
+
 
 At any point during this procedure, we can report the phase $\hat{\phi}$ inferred by the classical controller as
 \begin{equation}
