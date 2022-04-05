@@ -59,7 +59,7 @@ As a result, the inference process will tend to converge to states with a single
 
 Bayes' theorem further suggests that the state that results from phase estimation be written in the form
 \begin{align}
-    \frac{\sqrt{\Pr(\phi\_j)}\sqrt{\Pr(\text{Result}|\phi\_j)}\ket{\phi\_j}}{\sqrt{\sum\_j \Pr(\text{Result}|\phi\_k)\Pr(\phi\_k)}}=\sum_j \sqrt{\Pr(\phi\_j|\text{Result})} \ket{\phi\_j}.
+    \frac{\sqrt{\Pr(\phi\_j)}\sqrt{\Pr(\text{Result}|\phi\_j)}\ket{\phi\_j}}{\sqrt{\sum\_k \Pr(\text{Result}|\phi\_k)\Pr(\phi\_k)}}=\sum_j \sqrt{\Pr(\phi\_j|\text{Result})} \ket{\phi\_j}.
 \end{align}
 Here $\Pr(\phi\_j|\text{Result})$ can be interpretted as the probability that one would ascribe to each hypothesis about the eigenstates given:
 
@@ -106,7 +106,7 @@ Concretely,
 \begin{equation}
     \Pr(\phi | d) = \frac{\Pr(d | \phi) \Pr(\phi)}{\int \Pr(d | \phi) \Pr(\phi){\mathrm d}\phi},
 \end{equation}
-where $d \in \\{\texttt{Zero}, \texttt{One}\\}$ is a `Result`, Pr(d| φ) is the likelihood function in the previous step, $\Pr(\phi)$ describes our prior beliefs about $\phi$, and where $Pr(d) = \int \Pr(d | \phi) \Pr(\phi){\mathrm d}\phi$ is a normalization factor.
+where $d \in \\{\texttt{Zero}, \texttt{One}\\}$ is a `Result`, Pr(d| φ) is the likelihood function in the previous step, $\Pr(\phi)$ describes our prior beliefs about $\phi$, and where $\Pr(d) = \int \Pr(d | \phi) \Pr(\phi){\mathrm d}\phi$ is a normalization factor.
 This then makes the iterative nature of iterative phase estimation explicit, as the posterior distribution $\Pr(\phi | d)$ describes our beliefs immediately preceding our observation of the next `Result`.
 
 
