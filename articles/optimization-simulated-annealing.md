@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides a basic guide about how to use the simulated annealing solver in Azure Quantum.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 04/05/2022
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
