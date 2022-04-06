@@ -14,9 +14,8 @@ uid: microsoft.quantum.optimization.authenticate-service-principal
 
 Sometimes it is unsuitable to use interactive authentication or to authenticate
 as a user account. These cases may arise when you want to submit jobs from a
-web service, another worker role, or an automated system. In this case you
-typically want to authenticate using a [Service
-Principal](/azure/active-directory/develop/app-objects-and-service-principals).
+web service, another worker role, or an automated system. One option is to configure a managed identity, another option is to use a [Service
+Principal](/azure/active-directory/develop/app-objects-and-service-principals), which this article will explain.
 
 ## Prerequisite: Create a service principal and application secret
 
