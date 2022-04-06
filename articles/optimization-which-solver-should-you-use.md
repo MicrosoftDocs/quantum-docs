@@ -1,11 +1,11 @@
 ---
 title: Which optimization solver should I use?
 description: This document provides a basic guide on which solvers to use in Azure Quantum.
-author: quantumrandom
-ms.author: dasteige
+author: bradben
+ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.date: 10/25/2021
+ms.date: 04/06/2022
 ms.topic: conceptual
 uid: microsoft.quantum.optimization.choose-solver
 ---
