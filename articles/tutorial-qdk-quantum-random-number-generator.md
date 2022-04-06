@@ -1,8 +1,8 @@
 ---
-author: bromeg
+author: bradben
 description: Build a Q# project that demonstrates fundamental quantum concepts like superposition by creating a quantum random number generator.
-ms.author: megbrow
-ms.date: 11/04/2021
+ms.author: brbenefield
+ms.date: 04/06/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial

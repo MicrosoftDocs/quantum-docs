@@ -271,15 +271,15 @@
   - name: Common issues
     href: azure-quantum-common-issues.md
   - name: Build your skills with MS Learn >>
-    href: https://docs.microsoft.com/learn/paths/quantum-computing-fundamentals/
+    href: /learn/paths/quantum-computing-fundamentals/
   - name: Learn Q# with the Quantum Katas
     href: tutorial-qdk-intro-to-katas.md
   - name: Q# code samples >>
-    href: https://docs.microsoft.com/samples/browse/?languages=qsharp
+    href: /samples/browse/?languages=qsharp
   - name: Further reading
     href: further-reading-qdk.md
   - name: Azure CLI commands >>
-    href: https://docs.microsoft.com/cli/azure/ext/quantum/quantum
+    href: /cli/azure/ext/quantum/quantum
   - name: Contributing to the Quantum Development Kit
     items:
     - name: Contributing to the QDK
