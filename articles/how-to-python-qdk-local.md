@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to develop and run Python host programs that call Q# operations on a local simulator.
 ms.author: brbenefield
-ms.date: 12/17/2021
+ms.date: 04/06/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -115,8 +115,10 @@ print(Qrng.simulate())
 Because the `Qrng` operation generates a random result, the outcome will be either 0 or 1. If you run the program repeatedly, you should see each result approximately half the time.
 
 The `qsharp` package also provides the `compile` function, which allows for compiling Q# code from Python strings:
+
 ```python
 sample_qrng = qsharp.compile("""
+    open Microsoft.Quantum.Measurement; // namespace required for MResetZ operation
     operation Qrng() : Result {
         use q = Qubit();
         H(q);
@@ -129,7 +131,7 @@ print(sample_qrng.simulate())
 
 ## Workspaces, Projects, and Packages
 
-As your quantum programs get larger, it can be inconvienent to keep all of your Q# code in a single notebook or Python script. Instead, the `qsharp` package allows you to call into Q# code from source code in the same directory as your notebook or scripts.
+As your quantum programs get larger, it can be inconvenient to keep all of your Q# code in a single notebook or Python script. Instead, the `qsharp` package allows you to call into Q# code from source code in the same directory as your notebook or scripts.
 
 For example, in the same folder as `host.py` and `HostPython.qs`create the following Q# program called `OperationSamples.qs`, which defines three different operations:
 
