@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: tedhudek
 description: Learn how to run your Q# programs on the Microsoft Quantum Development Kit noise simulator.
-ms.author: cgronlun
+ms.author: tedhudek
 ms.date: 10/05/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
@@ -379,6 +379,7 @@ Some limitations are inherent to open systems simulation, and may not ever be su
 ## See also
 
 - [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
+- [Quantum sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator)
 - [Quantum resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)
 - [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
 - [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)

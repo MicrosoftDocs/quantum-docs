@@ -1,8 +1,8 @@
 ---
-author: cjgronlund
+author: bradben
 description: Learn how quantum computing works, how it compares to classical computing, and how it uses the principles of quantum mechanics.
 ms.date: 01/27/2022
-ms.author: cgronlun
+ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview

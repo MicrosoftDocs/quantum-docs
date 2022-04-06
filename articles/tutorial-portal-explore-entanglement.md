@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: bradben
 description: In this tutorial, use an online Notebook in Azure Quantum to write a quantum program in Q# that demonstrates the superposition and entanglement of qubits.
-ms.author: cgronlun
+ms.author: brbenefield
 ms.date: 02/24/2022
 ms.service: azure-quantum
 ms.subservice: qdk

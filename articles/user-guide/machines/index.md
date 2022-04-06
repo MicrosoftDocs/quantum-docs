@@ -1,7 +1,7 @@
 ---
-author: cjgronlund
+author: tedhudek
 description: Describes the quantum simulators available as target machines for Q# programs.
-ms.author: cgronlun
+ms.author: tedhudek
 ms.date: 10/05/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
@@ -27,6 +27,7 @@ that the algorithm hasn't changed.
 |Simulator |Class| Namespace|Description|
 |-----|------|---|------|
 |[Full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)| `QuantumSimulator` | `Microsoft.Quantum.Simulation.Simulators`| Runs and debugs quantum algorithms, and is limited to about 30 qubits. |
+|[Sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator)| `SparseSimulator` | `Microsoft.Quantum.Simulation.Simulators`| Simulates quantum algorithms with sparse states, small number of states in superposition. |
 |[Simple resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)| `ResourcesEstimator` | `Microsoft.Quantum.Simulation.Simulators`| Performs a top level analysis of the resources needed to run a quantum algorithm, and supports thousands of qubits.|
 |[Trace-based resource estimator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)|  `QCTraceSimulator` | `Microsoft.Quantum.Simulation.Simulators`| Runs advanced analysis of resources consumptions for the algorithm's entire call-graph, and supports thousands of qubits.|
 |[Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)| `ToffoliSimulator` | `Microsoft.Quantum.Simulation.Simulators`|Simulates quantum algorithms that are limited to `X`, `CNOT`, and multi-controlled `X` quantum operations, and supports million of qubits. |
