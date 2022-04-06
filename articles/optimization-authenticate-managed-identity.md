@@ -13,7 +13,7 @@ uid: microsoft.quantum.optimization.authenticate-managed-identity
 # Using a managed identity to authenticate
 
 There are several scenarios where it is unsuitable to use interactive authentication or to authenticate
-as a user account. For example, you may want to submit jobs from a virtual machine (VM), or from a Function App. One option is to [authenticate using a service principal](articles/optimization-authenticate-service-principal), another option is to configure a managed identity, which this article will explain.
+as a user account. For example, you may want to submit jobs from a virtual machine (VM), or from a Function App. One option is to [authenticate using a service principal](xref:microsoft.quantum.optimization.authenticate-service-principal), another option is to configure a managed identity, which this article will explain.
 
 ## Configure a managed identity
 
@@ -71,4 +71,4 @@ credential=ManagedIdentityCredential())
 
 ## Next steps
 
-- Now that you know how to configure a managed identity, see how it can be used in [Publish a QIO job as an Azure Function](articles/how-to-publish-qio-job-as-azurefunction).
+- Now that you know how to configure a managed identity, see how it can be used to [Publish a QIO job as an Azure Function](xref:microsoft.quantum.publish-qio-as-azure-function).

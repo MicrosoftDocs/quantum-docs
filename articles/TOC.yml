@@ -258,6 +258,8 @@
     href: how-to-work-with-jobs.md
   - name: Authenticate using a service principal
     href: optimization-authenticate-service-principal.md
+  - name: Authenticate using a managed identity
+    href: optimization-authenticate-managed-identity.md
   - name: Work with Azure Quantum using the Azure CLI 
     href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
   - name: Work with Azure Quantum using the Azure Resource Manager 
