@@ -111,7 +111,7 @@ The performance gain may not be obvious for the parameter-free mode because both
 
 ### Limitations of FPGA simulated annealing
 
-- The FPGA solver supports up to **65535 variables**, which is a hard limitation. This number is limited by the available DRAM, but it usually not an issue for FPGA (since most problems are smaller than 65535).
+- The FPGA solver supports up to **65535 variables**, which is a hard limitation. This number is limited by the available DRAM, but it usually is not an issue for FPGA (since most problems are smaller than 65535).
 - For best performance, FPGA solvers on Azure Quantum use 32-bit floating-point operations. Because of this, the computation accuracy of FPGA solvers is a somewhat lower than that of the CPU solvers.
 
 ### Parameter guide for FPGA simulated annealing
