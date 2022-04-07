@@ -35,6 +35,8 @@ Create an instance of the `SparseSimulator` class and then pass it to the `Run` 
 
 Because the `SparseSimulator` class implements the <xref:System.IDisposable> interface, you must call the `Dispose` method once you don't need the instance of the simulator anymore. The best way to automate that call is to wrap the simulator declaration and operations within a [using](/dotnet/csharp/language-reference/keywords/using-statement) statement, which automatically calls the `Dispose` method.
 
+For an example of sparse simulator usage in C\# see the [Integer Factorization Sample](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/integer-factorization).
+
 #### Simulator options
 
 The behavior of the sparse simulator can be adjusted via the following parameters to the C# constructor:
@@ -78,6 +80,8 @@ Use the IQ# magic command [%simulate_sparse](xref:microsoft.quantum.iqsharp.magi
 ```IQ#
 %simulate_sparse RunMyOperation
 ```
+
+For an example of sparse simulator usage in Jupyter Notebook see the [LargeSimulation Sample](https://github.com/microsoft/Quantum/tree/main/samples/getting-started/simulation).
 
 ## Seeding the simulator
 
