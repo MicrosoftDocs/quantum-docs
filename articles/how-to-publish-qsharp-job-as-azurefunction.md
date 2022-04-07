@@ -6,6 +6,7 @@ ms.author: hsirtl
 ms.service: azure-quantum
 ms.topic: how-to
 ms.date: 03/30/2022
+uid: microsoft.quantum.publish-qc-as-azure-function
 #Customer intent: As a researcher, I want to make my quantum algorithm accessible via API so that developers without further quantum knowledge can call it via classical API-calls.
 ---
 
@@ -17,7 +18,7 @@ With Azure Functions, you can make your Q# job and its functionality available t
 
 The function receives input via a request URL or via a request body. It then executes the Q# job on a simulator or quantum hardware and returns the result as a JSON string.
 
-The Q# job that you will publish as an Azure function implements a quantum random number generator. The algorithm uses the nature of quantum mechanics to produce a random number. To learn more about this algorithm, see the [Tutorial: Implement a Quantum Random Number Generator in Q#](xref:microsoft.quantum.tutorial-qdk.random-number).
+The Q# job that you'll publish as an Azure function implements a quantum random number generator. The algorithm uses the nature of quantum mechanics to produce a random number. To learn more about this algorithm, see the [Tutorial: Implement a Quantum Random Number Generator in Q#](xref:microsoft.quantum.tutorial-qdk.random-number).
 
 ## Prerequisites
 
@@ -242,7 +243,7 @@ This code instantiates a ``QuantumSimulator`` object, where the random number ge
 
 You can now prepare the target environment that will host the function. Preparation includes the creation of an empty Azure function app.
 
-1. Go to the [Azure Portal](https://portal.azure.com) and sign in to your Azure account.
+1. Go to the [Azure portal](https://portal.azure.com) and sign in to your Azure account.
 1. Create a function app. Select **Create a resource** in the upper left corner of the portal.
 
     :::image type="content" source="media/how-to-publish-qsharp-job-as-azurefunction/prepare-cloud-env-1.png" alt-text="Create a resource":::
@@ -261,14 +262,14 @@ You can now prepare the target environment that will host the function. Preparat
     Select **Review + Create** to confirm your input.
 
 1. Validate your input and select **Create**. Deployment will take a few seconds. Wait until a confirmation is displayed.
-1. Navigate to the new function. Select **Configuration** from the *Settings* menu and click **General settings** .  For the **Platform**, select **64 Bit**.
+1. Navigate to the new function. Select **Configuration** from the *Settings* menu and select **General settings** .  For the **Platform**, select **64 Bit**.
 
     :::image type="content" source="media/how-to-publish-qsharp-job-as-azurefunction/prepare-cloud-env-2.png" alt-text="Configure 64-Bit-Platform setting":::
 
     > [!IMPORTANT]
     > Failing to configure the function for a 64-bit platform will result in errors when the compiler tries to load the quantum libraries. These libraries require a 64-bit environment and won't load in a 32-bit environment.
 
-Because this sample only uses simulated hardware, a Quantum Workspace is optional. When executing a quantum algorithm on quantum hardware, make sure that the Azure Function is properly authenticated to the Quantum Workspace. For necessary steps see [Publish a QIO job as an Azure Function](/azure/quantum/how-to-publish-qio-job-as-azurefunction).
+Because this sample only uses simulated hardware, a Quantum workspace is optional. When executing a quantum algorithm on quantum hardware, make sure that the Azure Function is properly authenticated to the Quantum workspace. For more information and steps, see [Publish a QIO job as an Azure Function](/azure/quantum/how-to-publish-qio-job-as-azurefunction).
 
 ## Deploy the Azure Function to the cloud
 
@@ -314,5 +315,5 @@ You can now test the function in the cloud.
 
 ## Next steps
 
-- Now that you know how to publish Q# jobs using Azure Functions, you can try to publish other jobs from our [samples collection](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum) or try to publish your own job.
-- When you are finished testing your job in a simulator environment, try using other targets available on Azure Quantum (for example, other quantum simulators or quantum hardware). For learning more about how to target quantum hardware, see the MS Learn Module [Run algorithms on quantum hardware by using Azure Quantum](/learn/modules/run-algorithms-quantum-hardware-azure-quantum/).
+- Now that you know how to publish Q# jobs using Azure Functions, you can publish other jobs from our [samples collection](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum) or publish your own job.
+- When you're finished testing your job in a simulator environment, try using other targets available on Azure Quantum (for example, other quantum simulators or quantum hardware). For learning more about how to target quantum hardware, see the MS Learn Module [Run algorithms on quantum hardware by using Azure Quantum](/learn/modules/run-algorithms-quantum-hardware-azure-quantum/).

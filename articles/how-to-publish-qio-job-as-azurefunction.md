@@ -5,7 +5,8 @@ author: hsirtl
 ms.author: hsirtl
 ms.service: azure-quantum
 ms.topic: how-to
-ms.date: 11/16/2021
+ms.date: 04/06/2022
+uid: microsoft.quantum.publish-qio-as-azure-function
 #Customer intent: As a researcher, I want to make my quantum algorithm accessible via API so that developers without further quantum knowledge can call it via classical API-calls.
 ---
 
@@ -17,7 +18,7 @@ You can make your QIO model and its functionality available to other developers,
 
 Azure Functions is a serverless solution that allows you to host your functionality in Azure without worrying about underlying infrastructure.
 
-The QIO job that will be published as an Azure Function implements the so called *number partitioning problem*. It splits a given sets of integer numbers into two subsets with equal (or similar) sum of their elements. Have a look at following **MS Learn Module** to learn more about this problem and its implementation: [Solve optimization problems by using quantum-inspired optimization](/learn/modules/solve-quantum-inspired-optimization-problems/).
+The QIO job that will be published as an Azure Function implements the so called *number partitioning problem*. It splits a given set of integer numbers into two subsets with equal (or similar) sum of their elements. Have a look at following **MS Learn Module** to learn more about this problem and its implementation: [Solve optimization problems by using quantum-inspired optimization](/learn/modules/solve-quantum-inspired-optimization-problems/).
 
 ## Prerequisites
 
@@ -57,7 +58,7 @@ First, use Visual Studio Code to create a local Azure Functions project in Pytho
 
 Even though the Function doesn't provide any useful functionality yet, it's perfect time to test the Function locally.
 > [!TIP]
-> It is good practice to repeat this step after each following step to ensure your changes didn't break anything. As we proceed, you should change the request parameters appropriately.
+> It's good practice to repeat this step after each following step to ensure your changes didn't break anything. As we proceed, you should change the request parameters appropriately.
 
 1. To call your function, press **F5** to start the function app project. Output from Core Tools is displayed in the **Terminal** panel. Your app starts in the **Terminal** panel. You can see the URL endpoint of your HTTP-triggered function running locally.
 
@@ -65,7 +66,7 @@ Even though the Function doesn't provide any useful functionality yet, it's perf
 
     If you have trouble running on Windows, make sure that the default terminal for Visual Studio Code isn't set to **WSL Bash**.
 
-1. With Core Tools running, go to the **Azure: Functions area**. Under **Functions**, expand **Local Project > Functions**. Right-click (Windows) or *Ctrl -* click (macOS) the `SplitWeights` function and choose **Execute Function Now...**.
+1. With Core Tools running, go to the **Azure: Functions area**. Under **Functions**, expand **Local Project > Functions**. Right-click (Windows) or *Ctrl*-select (macOS) the `SplitWeights` function and choose **Execute Function Now...**.
 
     :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/run-azure-function-locally-2.png" alt-text="Call the Function":::
 
@@ -77,7 +78,7 @@ Even though the Function doesn't provide any useful functionality yet, it's perf
 
 By default, the generated Azure Functions project only references standard Python libraries. All other libraries needed for the specific function must be explicitly referenced. These references tell the Azure Functions runtime what libraries to load when a function is called. You can add a reference to the Azure Quantum Python library.
 
-1. Open the file `requirements.txt` by clicking on it.
+1. Select the file `requirements.txt` to it.
 1. After `azure-functions` add a reference to the Azure Quantum Python library by adding `azure-quantum` at the end of the file. The complete file should look as follows:
 
     ```python
@@ -191,13 +192,13 @@ So far, we only prepared the function to load necessary Python libraries and cre
         return Problem(name="Freight Balancing Problem", problem_type=ProblemType.ising, terms=terms)
     ```
 
-The function now contains two functions: The ``main``-function is executed when a http-request is received. It parses the request and looks at the request URL. If a ``mineralWeights``-parameter is found in the URL, these weights are processed. If the URL doesn't contain this parameter, the request body is analyzed. If a ``mineralWeights``-parameter is found in the body, these weights are processed. Weights are passed to the ``createProblemForMineralWeights``-function that creates a ``Problem``-object. The ``main``-function passes this ``Problem``-object to an Azure Quantum solver and returns the results.
+The function now contains two functions: The ``main``-function is executed when an http-request is received. It parses the request and looks at the request URL. If a ``mineralWeights``-parameter is found in the URL, these weights are processed. If the URL doesn't contain this parameter, the request body is analyzed. If a ``mineralWeights``-parameter is found in the body, these weights are processed. Weights are passed to the ``createProblemForMineralWeights``-function that creates a ``Problem``-object. The ``main``-function passes this ``Problem``-object to an Azure Quantum solver and returns the results.
 
 ## Prepare your cloud environment
 
 You can now prepare the target environment that will host the Function. Preparation includes the creation of an empty Azure Function App and granting access to your Quantum Workspace.
 
-1. Go to the [Azure Portal](https://portal.azure.com) and sign in to your Azure account.
+1. Go to the [Azure portal](https://portal.azure.com) and sign in to your Azure account.
 1. Create a Function App. Select **Create a resource** in the upper left corner of the portal.
 
     :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-1.png" alt-text="Create a resource":::
@@ -275,17 +276,17 @@ You can now test the Function in the cloud.
     {"0": -1, "1": 1, "2": -1, "3": 1, "4": -1, "5": -1}
     ```
 
-1. Call the Function with mineral weights passed within the request body. Back in Visual Studio Code in the **Azure: Functions** area in the side bar, expand your subscription, your new function app, and Functions. Right-click (Windows) or *Ctrl -*click (macOS) the ``SplitWeights`` function and choose **Execute Function Now...**.
+1. Call the Function with mineral weights passed within the request body. Back in Visual Studio Code in the **Azure: Functions** area in the side bar, expand your subscription, your new function app, and Functions. Right-click (Windows) or *Ctrl*-select (macOS) the ``SplitWeights`` function and choose **Execute Function Now...**.
 
     :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/execute-function-1.png" alt-text="Execute the Function via Visual Studio Code":::
 
-1. In the input field **Enter request body**, you will see the request message body. Enter the value of ``{ "mineralWeights": [5,11,8,7,1,1] }``. Press **Enter** to send this request message to your function.
+1. In the input field **Enter request body**, you'll see the request message body. Enter the value of ``{ "mineralWeights": [5,11,8,7,1,1] }``. Press **Enter** to send this request message to your function.
 1. The following confirmation message should appear after a few seconds:
 
     :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/execute-function-2.png" alt-text="Result after Function call":::
 
 > [!TIP]
-> The Function you just deployed implements the *number partitioning problem*. It allows you to split a given sets of numbers into two subsets with equal (or similar) sum of their elements. To learn more about this problem and its implementation have a look at [MS Learn Module: Solve optimization problems by using quantum-inspired optimization](/learn/modules/solve-quantum-inspired-optimization-problems/).
+> The Function you just deployed implements the *number partitioning problem*. It allows you to split a given set of numbers into two subsets with equal (or similar) sum of their elements. To learn more about this problem and its implementation have a look at [MS Learn Module: Solve optimization problems by using quantum-inspired optimization](/learn/modules/solve-quantum-inspired-optimization-problems/).
 
 ## Next steps
 
