@@ -51,7 +51,7 @@ To create a service principal, assign access, and generate a credential:
 > [!NOTE]
 > In order to create a role assignment on the resource group or workspace, you need to be an _owner_ or _user access administrator_ at the scope of the role assignment. If you do not have permissions to create the Service Principal in your subscription, you will need to request permission from the _owner_ or _administrator_ of the Azure subscription.
 >
-> If you have permissions only at the Resource Group or Workspace level, you can to create the service principal under the Contributor role using:
+> If you have permissions only at the resource group or workspace level, you can to create the service principal under the Contributor role using:
 >
 > `az ad sp create-for-rbac --role Contributor --scopes /subscriptions/<SUBSCRIPTION-ID>`
 

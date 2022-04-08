@@ -94,10 +94,10 @@ By default, the generated Azure Functions project only references standard Pytho
 
 ## Add a reference to your Azure Quantum workspace
 
-You now have a Function that could access necessary Azure Quantum libraries when being called via http-call. But so far, the function doesn't do anything. To change that, add a reference to your Quantum Workspace.
+You now have a Function that could access necessary Azure Quantum libraries when being called via http-call. But so far, the function doesn't do anything. To change that, add a reference to your Azure Quantum workspace.
 
 1. Open the file `__init__.py` located in the folder `SplitWeights`. This file contains the code executed when an http-request is received.
-1. Add a reference to your Azure Quantum Workspace. Add following code right after the last `import` statement.
+1. Add a reference to your Azure Quantum workspace. Add following code right after the last `import` statement.
 
     ```python
     from azure.quantum import Workspace
@@ -114,7 +114,7 @@ You now have a Function that could access necessary Azure Quantum libraries when
 
 ## Add the QIO algorithm code
 
-So far, we only prepared the function to load necessary Python libraries and create a connection to your Azure Quantum Workspace. It's time to add some useful optimization code.
+So far, we only prepared the function to load necessary Python libraries and create a connection to your Azure Quantum workspace. It's time to add some useful optimization code.
 
 1. Add necessary ``import`` statements at the beginning. Add following line after the first ``import`` statement.
 
@@ -196,7 +196,7 @@ The function now contains two functions: The ``main``-function is executed when 
 
 ## Prepare your cloud environment
 
-You can now prepare the target environment that will host the Function. Preparation includes the creation of an empty Azure Function App and granting access to your Quantum Workspace.
+You can now prepare the target environment that will host the Function. Preparation includes the creation of an empty Azure Function App and granting access to your Azure Quantum workspace.
 
 1. Go to the [Azure portal](https://portal.azure.com) and sign in to your Azure account.
 1. Create a Function App. Select **Create a resource** in the upper left corner of the portal.
@@ -206,24 +206,24 @@ You can now prepare the target environment that will host the Function. Preparat
 1. Search for **Function App** and select **Create**.
 1. Provide the following information:
 
-    - **Subscription**: Choose the subscription to use. Use the one that also contains your Quantum Workspace.
-    - **Resource Group**: Choose the one that also contains your Quantum Workspace.
+    - **Subscription**: Choose the subscription to use. Use the one that also contains your Azure Quantum workspace.
+    - **Resource Group**: Choose the one that also contains your Azure Quantum workspace.
     - **Function App name**: Enter a globally unique name for the Function App. Type a name that is valid in a URL path. The name you type is validated to make sure that it's unique in Azure Functions.
     - **Publish**: Select ``Code``.
     - **Runtime stack**: Select ``Python``.
     - **Version**: Choose the version of Python you've been running on locally. You can use the ``python --version`` command to check your version.
-    - **Region**: Choose the one that also contains your Quantum Workspace.
+    - **Region**: Choose the one that also contains your Azure Quantum workspace.
 
     Select **Review + Create** to confirm your input.
 1. Validate your input and select **Create**. Deployment will take a few seconds. Wait until a confirmation is displayed.
 1. Select **Go to resource** for navigating to your Function App.
-1. Configure a managed identity for the Function App. A managed identity allows the App to access other Azure resources (such as the Quantum Workspace) and authenticate with these resources.
+1. Configure a managed identity for the Function App. A managed identity allows the App to access other Azure resources (such as the Azure Quantum workspace).
 
     :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-2.png" alt-text="Create a managed identity for the Function App":::
 
     Select **Save** to persist your configuration and confirm the opening dialog with **Yes**.
-1. Allow the Function App to access your Quantum Workspace. Navigate to your Quantum Workspace and select **Access control (IAM)** from the left-side menu. Select **Add** and **Add role assignment**.
-:::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-3.png" alt-text="Create a new role assignment on your Quantum Workspace":::
+1. Allow the Function App to access your Azure Quantum workspace. Navigate to your Azure Quantum workspace and select **Access control (IAM)** from the left-side menu. Select **Add** and **Add role assignment**.
+:::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-3.png" alt-text="Create a new role assignment on your Azure Quantum workspace":::
 1. The role assignment dialog opens. Provide the following information:
 
     - **Role**: Select ``Contributor``.
@@ -231,7 +231,7 @@ You can now prepare the target environment that will host the Function. Preparat
     - **Subscription**: Select your subscription.
     - **Select**: Enter your Function App name.
 
-    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-4.png" alt-text="Add your Function App as a Contributor to your Quantum Workspace":::
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-4.png" alt-text="Add your Function App as a Contributor to your Azure Quantum workspace":::
 
 1. Select your Function App and confirm your selection with **Save**.
 

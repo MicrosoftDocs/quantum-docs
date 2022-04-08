@@ -251,13 +251,13 @@ You can now prepare the target environment that will host the function. Preparat
 1. Search for **Function App** and select **Create**.
 1. Provide the following information:
 
-    - **Subscription**: Select the subscription that contains your Quantum Workspace.
-    - **Resource Group**: Select the resource group that contains your Quantum Workspace.
+    - **Subscription**: Select the subscription that contains your Azure Quantum workspacee.
+    - **Resource Group**: Select the resource group that contains your Azure Quantum workspace.
     - **Function App name**: Enter a globally unique name for the function app. Type a name that is valid in a URL path. The name you type is validated to make sure that it's unique in Azure Functions.
     - **Publish**: Select ``Code``.
     - **Runtime stack**: Select ``.NET``.
     - **Version**: Select ``6.0``.
-    - **Region**: Select the region that contains your Quantum Workspace.
+    - **Region**: Select the region that contains your Azure Quantum workspace.
 
     Select **Review + Create** to confirm your input.
 

@@ -29,7 +29,7 @@ General pricing guidance:
 ## After you run: Job cost reporting
 After you run a job, Azure Quantum makes available detailed cost estimates for supported providers. You can use this information to understand the cost of individual jobs. This cost is the cost billed by the provider; refer to your final bill for the exact charges including relevant taxes.
 
-To review job costs, navigate to the **Job Management** blade within your Azure Quantum Workspace. In the job list, you will see estimated costs reported for each job you've run (where supported). To see more information, click on a job that shows pricing information.
+To review job costs, navigate to the **Job Management** blade within your Azure Quantum workspace. In the job list, you will see estimated costs reported for each job you've run (where supported). To see more information, click on a job that shows pricing information.
 
 _Prices below are shown for example purposes only._
 

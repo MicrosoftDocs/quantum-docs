@@ -17,9 +17,9 @@ The Honeywell provider has been replaced by the Quantinuum provider in Azure Qua
 > [!Note]
 > Existing Honeywell customers who have received Azure Quantum Credits grants will be able to use the Honeywell provider through to the expiration of their grant. For more information, please see your onboarding email for your grant expiry date.
 
-## Step 1: Update your Azure Quantum Workspace
+## Step 1: Update your Azure Quantum workspace
 
-The first step is to open the [Azure portal](https://portal.azure.com) and navigate to your Quantum Workspace. Once you have opened your workspace, follow the steps below:
+The first step is to open the [Azure portal](https://portal.azure.com) and navigate to your Azure Quantum workspace. Once you have opened your workspace, follow the steps below:
 
 1. Navigate to the "Providers" pane by clicking the navigation button on the left
 2. Locate the Honeywell Provider and click the Remove button. Confirm the deletion by clicking "Yes" in the dialog box that opens.
