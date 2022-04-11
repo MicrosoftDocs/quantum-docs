@@ -6,11 +6,11 @@ ms.date: 07/26/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
-title: Azure Quantum Workspace
+title: Azure Quantum workspace
 uid: microsoft.quantum.optimization.workspace
 ---
 
-# Quantum Workspace
+# Azure Quantum workspace
 
 ```python
 from azure.quantum import Workspace
@@ -32,7 +32,7 @@ with either the `create` or `show` commands.
    Normally one of the [credential types from Azure.Identity](/python/api/overview/azure/identity-readme#credential-classes).
    Defaults to `DefaultAzureCredential`, which will attempt [multiple forms of authentication](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-identity/1.6.0/azure.identity.html#azure.identity.DefaultAzureCredential).
 
-You can find these values by viewing your Azure Quantum Workspace details through the Azure portal.
+You can find these values by viewing your Azure Quantum workspace details through the Azure portal.
 
 In case you have not specified any credentials, the first time you run a method which interacts with the Azure service, a window might prompt in your default browser asking for your credentials.
 

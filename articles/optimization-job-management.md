@@ -12,7 +12,7 @@ uid: microsoft.quantum.optimization.job-management
 
 # Job management
 
-When a problem is submitted to a solver, a `Job` is created in Azure Quantum. The `Workspace` provides the following methods for managing jobs:
+When a problem is submitted to a solver, a `Job` is created in Azure Quantum. The `Workspace` object provides the following methods for managing jobs:
 
 - **list_jobs**: Returns a list of all jobs in the workspace.
 - **get_job**: Returns the `Job` metadata and results for a specific job

@@ -74,7 +74,7 @@ There are no costs or charges to using your free credits. However, there may be 
 
 ### How do I see my credits balance?
 
-You can see your current credit balance by selecting the **Overview** blade of your Azure Quantum Workspace, and selecting the **Quota** tab. You will see a credits quota for each provider that you have credits with. The quota lists the total number of credits you have received, and you can hover over the relevant graph to see the amount you have used towards your credits.
+You can see your current credit balance by selecting the **Overview** blade of your Azure Quantum workspace, and selecting the **Quota** tab. You will see a credits quota for each provider that you have credits with. The quota lists the total number of credits you have received, and you can hover over the relevant graph to see the amount you have used towards your credits.
 
 You can also see your quotas by using the Azure CLI and the `az quantum workspace quotas` command, as shown in the following example. In this case, the `qgs` row shows that the account has a total of `8333334 qgs` with IonQ, of which `33334 qgs` have been used. The account also has `800 HQC` with Quantinuum, of which `0 HQC` have been used.
 
@@ -101,35 +101,35 @@ If you do not have an Azure support subscription or are unsure about how to file
 
 ## Guide: Onboarding with Quantinuum Credits
 
-Instructions for configuring your Azure Quantum Workspace to access Quantinuum:
+Instructions for configuring your Azure Quantum workspace to access Quantinuum:
 
-1. Open the [Azure Quantum Workspace Create page] in the Azure Portal(https://portal.azure.com/#create/Microsoft.AzureQuantum)
-1. On the **Basics** tab while configuring your Workspace, ensure the selected **subscription** matches the subscription you supplied in your onboarding information. The subscription information is also copied in the onboarding mail you received.
+1. Open the [Azure Quantum workspace Create page] in the Azure Portal(https://portal.azure.com/#create/Microsoft.AzureQuantum)
+1. On the **Basics** tab while configuring your workspace, ensure the selected **subscription** matches the subscription you supplied in your onboarding information. The subscription information is also copied in the onboarding mail you received.
 > [!TIP]
 > Not sure how to find the subscription with the ID specified in the email? View the [list of your Azure Subscriptions](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) to identify which should be selected.
-1. On the **Basics** tab while configuring your Workspace, ensure the selected **region** matches the subscription you supplied in your onboarding information. The region information is also copied in the onboarding mail you received.
+1. On the **Basics** tab while configuring your workspace, ensure the selected **region** matches the subscription you supplied in your onboarding information. The region information is also copied in the onboarding mail you received.
 1. On the **Providers** tab, select **Quantinuum**. When the plan/pricing selector opens, ensure you select **Azure Quantum Credits**.
 > [!IMPORTANT] 
 > If you select any plan other than **Azure Quantum Credits**, you may be charged for usage. If you do not see the Azure Quantum Credits plan, please double check that you have selected the correct **Subscription** and **Region**, then send an email to the support email address specified in your credits onboarding email if you cannot see the plan.
 
 > [!TIP]
- > If you have received grants towards more than one provider, you may add all of them to the same Quantum Workspace or you may create multiple Workspaces.
+ > If you have received grants towards more than one provider, you may add all of them to the same Azure Quantum workspace or you may create multiple workspaces.
 Links to Quickstart guides (follow the one for your desired programming framework):
 
 ## Guide: Onboarding with IonQ Credits
 
-1. Open the [Azure Quantum Workspace Create page] in the Azure Portal(https://portal.azure.com/#create/Microsoft.AzureQuantum)
-1. On the **Basics** tab while configuring your Workspace, ensure the selected **subscription** matches the subscription you supplied in your onboarding information. The subscription information is also copied in the onboarding mail you received.
+1. Open the [Azure Quantum workspace Create page] in the Azure Portal(https://portal.azure.com/#create/Microsoft.AzureQuantum)
+1. On the **Basics** tab while configuring your workspace, ensure the selected **subscription** matches the subscription you supplied in your onboarding information. The subscription information is also copied in the onboarding mail you received.
  > [!TIP]
 > Not sure how to find the subscription with the ID specified in the email? View the [list of your Azure Subscriptions](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) to identify which should be selected.
-1. On the **Basics** tab while configuring your Workspace, ensure the selected **region** matches the subscription you supplied in your onboarding information. The region information is also copied in the onboarding mail you received.
+1. On the **Basics** tab while configuring your workspace, ensure the selected **region** matches the subscription you supplied in your onboarding information. The region information is also copied in the onboarding mail you received.
 1. Provider and plan: On the **Providers** tab, select **IonQ**. When the plan/Pricing selector opens, ensure you select **Azure Quantum Credits**.
 > [!IMPORTANT] 
 > If you select any plan other than **Azure Quantum Credits**, you may be charged for usage. If you do not see the Azure Quantum Credits plan, please double check that you have selected the correct **Subscription** and **Region**, then send an email to the support email address specified in your credits onboarding email if you cannot see the plan.       
     
 
 > [!TIP]
- > If you have received grants towards more than one Provider, you may add all of them to the same Quantum Workspace or you may create multiple Workspaces.
+ > If you have received grants towards more than one Provider, you may add all of them to the same Azure Quantum workspace or you may create multiple workspaces.
 Links to Quickstart guides (follow the one for your desired programming framework):
 
 ## I Couldn't find an answer to my question, how can I get support?
