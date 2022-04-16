@@ -61,7 +61,7 @@ To create a new Azure Quantum workspace, you'll need to know:
 - The name of the quantum workspace to create, for example, **MyQuantumWorkspace**.
 - The list of Azure Quantum providers to use in the workspace. A provider offers a set of plans, each of them representing a plan with associated terms and conditions, costs, and quotas. To create workspaces, you'll need to specify the corresponding plan along with the providers.
 
-If you already know the provider and plan names to use in your workspace, you can skip to step 4 below. Otherwise, determine which providers to use first.
+If you already know the provider and plan names to use in your workspace, you can skip to step four. Otherwise, determine which providers to use first.
 
 1. To retrieve the list of available quantum providers, use the `list` command (this example uses **westus** as the location):
 
@@ -89,10 +89,20 @@ If you already know the provider and plan names to use in your workspace, you ca
 
 Once you create a workspace, you can still add or remove providers using the Azure Portal.
 
+## Change the default storage account for a quantum workspace
+
+If you need to change the default storage account for an existing workspace, you can use the `create` command, specifying all the current properties along with the new storage account. The following example uses the same settings as the workspace created in the previous example:
+
+   ```azurecli
+   az quantum workspace create -l westus -g MyResourceGroup -w MyQuantumWorkspace -a MyNEWStorageAccount -r "MyProvider1/MyPlan1, MyProvider2/MyPlan2"
+   ```
+
+> [!IMPORTANT]
+> This procedure actually re-creates the workspace with the new storage account. Ensure that all properties other than the storage account are exactly the same as the original, otherwise a second workspace will be created.
 
 ## Delete a quantum workspace
 
-If you know the name and resource group of a quantum workspace you want to delete, you can do it with the `delete` command (using the same names as the example above):
+If you know the name and resource group of a quantum workspace you want to delete, you can do it with the `delete` command (using the same names as the previous example):
 
    ```azurecli
    az quantum workspace delete -g MyResourceGroup -w MyQuantumWorkspace
