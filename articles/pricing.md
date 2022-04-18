@@ -15,7 +15,7 @@ zone_pivot_groups: azurequantum-providers
 
 In Azure Quantum, hardware and software providers define and control the pricing of their offerings. The information below is subject to change by providers and some delays in reflecting latest pricing information may exist. Be sure to verify the latest pricing information from the Azure Quantum workspace you are using. 
 
-[!INCLUDE [Azure Quantum credits banner](~/includes/azure-quantum-credits.md)]
+[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
  
 To see the different pricing plans in your local currency: 
 
