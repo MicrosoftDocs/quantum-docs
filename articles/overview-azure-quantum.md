@@ -114,7 +114,7 @@ The Quantum Development Kit supports interoperability with [Python](xref:microso
 
 Why a quantum programming language? In short terms, because you want to write algorithms, not circuits.
 
-The Q# language allows the integration on classical and quantum computing. Q# supports general classical control flow during the execution of an algorithm. This allows clean expression of adaptive quantum algorithms that are difficult to express directly in the circuit model of a fixed sequence of quantum gates. If you want to learn more, see [What is a quantum program](xref:microsoft.quantum.overview.q-sharp#what-is-a-quantum-program)
+The Q# language allows the integration on classical and quantum computing. Q# supports general classical control flow during the execution of an algorithm. This allows clean expression of adaptive quantum algorithms that are difficult to express directly in the circuit model of a fixed sequence of quantum gates. For more information, see [What is a quantum program](xref:microsoft.quantum.overview.q-sharp#what-is-a-quantum-program)
 
 The Q# language doesn’t specify whether qubits are logical or physical. This can be decided by the runtime when the algorithm is executed. Similarly, the mapping from a qubit variable in a program to an actual logical or physical qubit is decided by the runtime, and that mapping may be deferred until after the topology and other details of the target device is known. The runtime is responsible for determining a mapping that allows the algorithm to execute, including any qubit state transfer and remapping required during execution.
 
