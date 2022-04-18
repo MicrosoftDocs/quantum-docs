@@ -33,7 +33,7 @@ Steps to resolve this issue:
 7. Click the **Role** dropdown, select either **Owner** or **Contributor**, then enter your email address and select your account.
 8. Click **Save**.
 9. You should now see your account set configured with either the **Owner** or **Contributor** role.
-10. Create your Quantum Workspace again and then submit a job against this new Quantum Workspace.
+10. Create your Azure Quantum workspace again and then submit a job against this new Workspace.
 
 ### Issue: "Failed to compile program" when attempting to submit a Q# program through the CLI
 
