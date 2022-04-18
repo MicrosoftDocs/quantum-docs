@@ -54,7 +54,7 @@ You can build on code and work in your favorite [local development environment](
 
 ### Researchers
 
-As a researcher, Azure Quantum can help you test your quantum algorithms and theories, to efficiently simulate quantum systems such as superconductivity and complex molecular formations. Azure Quantum enables you to learn, build, and deploy impactful solutions towards industrial-scale quantum computing, helping you harness quantum computing and benefit from the latest innovations. 
+As a researcher, Azure Quantum can help you test your quantum algorithms and theories and efficiently simulate quantum systems such as superconductivity and complex molecular formations. Azure Quantum enables you to learn, build, and deploy impactful solutions towards industrial-scale quantum computing, helping you harness quantum computing and benefit from the latest innovations. 
 
 In addition to the default Azure Quantum credit grant of USD 500 per quantum hardware provider, Microsoft offers up to USD 10,000 in Azure Quantum credits towards use of quantum hardware to explore new algorithms, investigate use cases, and experiment with leading hardware platforms. Credits are awarded based on an application’s value to the quantum ecosystem from a research, education, or industry perspective. For more information, see [FAQ: Azure Quantum Credits program](xref:microsoft.quantum.credits.credits-faq).
 
