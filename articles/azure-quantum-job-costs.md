@@ -13,7 +13,7 @@ uid: microsoft.quantum.azure.job-costs
 # Azure Quantum job costs
 This article helps you understand the cost of jobs in Azure Quantum. 
 
-[!INCLUDE [Azure Quantum credits banner](~/includes/azure-quantum-credits.md)]
+[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 ## Before you start: Understanding job pricing
 
