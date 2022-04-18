@@ -42,7 +42,7 @@ Azure Quantum is for individuals and teams who want to take a step forward and b
 
 For businesses, incorporating quantum type solutions can help to be more competitive and be at the forefront of innovation. To build industry solutions, Azure Quantum is the best path to apply the latest optimization technologies, as you seek long term cost-saving solutions. Azure Quantum offers the advantages of the most diverse quantum resources available today with applications for a wide range of industries. 
 
-Enterprises or other organizations can work directly with the Azure Quantum team through the **Enterprise Acceleration Program** to tackle difficult but high-reward problems, using high-performance hybrid quantum classical systems and a rich set of quantum hardware.
+Enterprises or other organizations can work directly with the Azure Quantum team through the **Enterprise Acceleration Program** to tackle difficult, but high-reward, problems using high-performance hybrid quantum classical systems and a rich set of quantum hardware.
 
 To learn more about how real-life problems can be solved using Azure Quantum and quantum applications, see the following [case studies](https://azure.microsoft.com/resources/whitepapers/search/?term=quantum).
 
