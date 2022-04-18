@@ -92,4 +92,15 @@ location of your Azure Quantum workspace:
 
 ::: zone-end
 
-
+> [!IMPORTANT]
+> Submitting multiple circuits on a single job is currently not supported. As a workaround you can call the `backend.run` method to submit each circuit asynchronously, then fetch the results of each job. For example:
+>
+> ```python
+> jobs = []
+> for circuit in circuits:
+>     jobs.append(backend.run(circuit, shots=N))
+> 
+> results = []
+> for job in jobs:
+>     results.append(job.result())
+>```
