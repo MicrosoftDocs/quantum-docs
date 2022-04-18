@@ -128,7 +128,7 @@ The following diagram shows the stages through which a quantum program goes from
 
 ![qdk workflow](~/media/quantum-development-kit-flow-diagram.svg)
 
-1. **Write your quantum code.** You can write your Q# program with the [hosted Jupyter notebooks](xref:microsoft.quantum.get-started.notebooks) available from your Azure Quantum workspace. If you preferred a local development, you can [create your Q# program](xref:microsoft.quantum.install-qdk.overview.standalone) using the QDK extensions for Visual Studio, Visual Studio Code, or Jupyter notebooks. 
+1. **Write your quantum code.** You can write your Q# program with the [hosted Jupyter notebooks](xref:microsoft.quantum.get-started.notebooks) available in your Azure Quantum workspace. If you prefer a local development environment, you can [create your Q# program](xref:microsoft.quantum.install-qdk.overview.standalone) using the QDK extensions for Visual Studio, Visual Studio Code, or Jupyter notebooks. 
 
 2. **Use libraries to keep your code high level.** The [quantum libraries](xref:microsoft.quantum.libraries.overview) will help you keep your code high-level, doing a lot of the heavy lifting in implementation for you so that you can focus on the logic of your algorithms.
 
