@@ -38,7 +38,7 @@ submit your job.
 
 This diagram shows the basic workflow after you submit your job:
 
-![Azure Quantum job workflow overview](./media/azure-quantum-flow-diagram.png)
+![azure quantum job flow](~/media/azure-quantum-flow-diagram-providers.svg)
 
 First, Azure Quantum uploads the job to the Azure Storage account that you configured in the workspace. Then, the job is added to the job queue for the provider that you specified in the job. Azure Quantum then downloads your program and translates it for the provider. The provider processes the job and returns the output to Azure Storage, where it is available for download. 
 
