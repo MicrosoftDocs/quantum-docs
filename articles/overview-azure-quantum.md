@@ -122,7 +122,7 @@ You can use Q# as standalone, in notebooks, and at the command-line or use a hos
 
 ## Workflow of the quantum software development
 
-Azure Quantum provides the best development environment to create quantum algorithms for multiple platforms at once while preserving flexibility to tune the same algorithms for specific systems. You can pick from many programming languages such as Qiskit, Cirq, and Q# and run your algorithms on multiple quantum systems. On Azure Quantum, it’s easy to simultaneously explore today’s quantum systems and be ready for the scaled quantum systems of the future.
+Azure Quantum provides the best development environment to create quantum algorithms for multiple platforms at once while preserving flexibility to tune the same algorithms for specific systems. You can pick from quantum programming languages such as Qiskit, Cirq, and Q# and run your algorithms on multiple quantum systems. With Azure Quantum, it’s easy to simultaneously explore today’s quantum systems and be ready for the scaled quantum systems of the future.
 
 The following diagram shows the stages through which a quantum program goes from idea to complete implementation on Azure Quantum, and the tools offered by the QDK for each stage.
 
