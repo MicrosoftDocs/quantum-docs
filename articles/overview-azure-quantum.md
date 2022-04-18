@@ -63,7 +63,7 @@ To learn more about research resources and career opportunities, see the [Micros
 
 ### Quantum enthusiasts
 
-If you are an educator, a student or quantum enthusiast, Azure Quantum is a great tool for teaching quantum computing and quantum applications. You will broaden your learnings through the access to the most diverse set of quantum technologies, you will learn the basics of quantum computing and the quantum programming language Q#, and discover the areas where quantum computers have the potential to make a big impact.  In addition to using the default USD 500 in Azure Quantum credits for a class project, an [Azure for Students](https://azure.microsoft.com/free/students/) account will jumpstart the learning journey with USD 100 more in traditional Azure credits.
+If you are an educator, a student, or quantum enthusiast, Azure Quantum is a great tool for teaching quantum computing and quantum applications. You will broaden your learning through the access to the most diverse set of quantum technologies, learn the basics of quantum computing and the quantum programming language Q#, and discover the areas where quantum computers have the potential to make a big impact.  In addition to using the default USD 500 in Azure Quantum credits for a class project, an [Azure for Students](https://azure.microsoft.com/free/students/) account will jumpstart the learning journey with an additional USD 100 in traditional Azure credits.
 
 ## Why use quantum computing
 
