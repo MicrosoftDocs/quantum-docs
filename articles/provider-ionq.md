@@ -12,7 +12,7 @@ uid: microsoft.quantum.providers.ionq
 
 # IonQ provider
 
-[!INCLUDE [Azure Quantum credits banner](~/includes/azure-quantum-credits.md)]
+[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 IonQ’s quantum computers perform calculations by manipulating the hyperfine energy states of Ytterbium ions with lasers. Atoms are nature's qubits — every qubit is identical within and between programs. Logical operations can also be performed on any arbitrary pair of qubits, enabling complex quantum programs unhindered by physical connectivity. Want to learn more? Read IonQ’s [trapped ion quantum computer technology overview](https://ionq.com/technology).
 

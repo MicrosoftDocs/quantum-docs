@@ -13,7 +13,7 @@ uid: microsoft.quantum.get-started.notebooks
 
 # Get started with Q# and an Azure Quantum notebook
 
-[!INCLUDE [Azure Quantum credits banner](~/includes/azure-quantum-credits.md)]
+[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 Learn how to run Q# code in a Jupyter notebook in the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) portal. A [Jupyter](https://jupyter.org/) notebook is a document that contains both rich text and code and can run in your browser, and can run Q# and Python code in Azure Quantum.  Notebooks can be created directly in the Azure Quantum portal, and offer features such as preloaded connection information and standard Q# libraries. 
 

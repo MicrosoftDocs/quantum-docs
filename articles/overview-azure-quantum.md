@@ -36,7 +36,7 @@ With Azure Quantum and the [Quantum Development Kit toolset](xref:microsoft.quan
 
 Azure Quantum is for individuals and teams who want to take a step forward and bring quantum computation into production.
 
-[!INCLUDE [Azure Quantum credits banner](~/includes/azure-quantum-credits.md)]
+[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 ### Industry solutions
 
