@@ -1,7 +1,7 @@
 ---
 author: andrist
 description: This article describes the definition and purpose of the cost function for optimization problems.
-ms.author: ruandris
+ms.author: tedhudek
 
 ms.date: 10/05/2021
 
