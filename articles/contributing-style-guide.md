@@ -469,7 +469,7 @@ We suggest:
 - Use spaces around binary operators.
 - Use spaces on either side of colons used for type annotations.
 - Use a single space after commas used in array and tuple literals (for example, in inputs to functions and operations).
-- Do not use spaces after function, operation, or UDT names, or after the `@` in attribute declarations.
+- Do not use spaces after function, operation, or UDT names in calls and declarations, or after the `@` in attribute declarations.
 - Each attribute declaration should be on its own line.
 
 # [Examples](#tab/examples)
@@ -479,6 +479,7 @@ We suggest:
 | ☒ | <s>`2+3`</s> | Use spaces around binary operators. |
 | ☒ | <s>`target:Qubit`</s> | Use spaces around type annotation colons. |
 | ☑ | `Example(a, b, c)` | Items in input tuple are correctly spaced for readability. |
-| ☒ | <s>`Example (a, b, c)`</s> | Spaces should be suppressed after function, operation, or UDT names. |
+| ☒ | <s>`Example (a, b, c)`</s> | Spaces should be suppressed after function, operation, or UDT names in calls. |
+| ☒ | <s>`operation GenerateRandomBit ()`</s> | Spaces should be suppressed after function, operation, or UDT names in declaration. |
 
 ***
