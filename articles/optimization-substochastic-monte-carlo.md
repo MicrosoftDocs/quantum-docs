@@ -2,7 +2,7 @@
 title: Substochastic Monte Carlo
 description: This document provides a basic guide about how to use the Substochastic Monte Carlo solver in Azure Quantum.
 author: andrist
-ms.author: ruandris
+ms.author: tedhudek
 ms.date: 05/25/2021
 ms.topic: article
 uid: microsoft.quantum.optimization.substochastic-monte-carlo
