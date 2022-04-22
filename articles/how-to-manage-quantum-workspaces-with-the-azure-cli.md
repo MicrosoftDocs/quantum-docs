@@ -26,10 +26,10 @@ To use the Azure Quantum service, you will need:
 
 ## Environment setup
 
-1. 1. Install the Azure CLI `quantum` extension. Open a command prompt and run the following command:
+1. Install the Azure CLI `quantum` extension. Open a command prompt and run the following command, which will also upgrade the extension if a previous version is already installed:
 
     ```azurecli
-    az extension add -n quantum
+    az extension add --upgrade -n quantum
     ```
 
 1. Log in to Azure using your credentials. You will see list of subscriptions associated with your account.
