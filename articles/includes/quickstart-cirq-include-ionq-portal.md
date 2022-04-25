@@ -43,12 +43,12 @@ for target in service.targets():
 
 ```output
 This workspace's targets:
-<Target name="honeywell.hqs-lt-s1", avg. queue time=0 s, Unavailable>
-<Target name="honeywell.hqs-lt-s1-apival", avg. queue time=1 s, Available>
-<Target name="honeywell.hqs-lt-s2", avg. queue time=75362 s, Available>
-<Target name="honeywell.hqs-lt-s2-apival", avg. queue time=0 s, Available>
-<Target name="honeywell.hqs-lt-s1-sim", avg. queue time=195 s, Available>
-<Target name="honeywell.hqs-lt", avg. queue time=0 s, Available>
+<Target name="quantinuum.hqs-lt-s1", avg. queue time=0 s, Unavailable>
+<Target name="quantinuum.hqs-lt-s1-apival", avg. queue time=1 s, Available>
+<Target name="quantinuum.hqs-lt-s2", avg. queue time=75362 s, Available>
+<Target name="quantinuum.hqs-lt-s2-apival", avg. queue time=0 s, Available>
+<Target name="quantinuum.hqs-lt-s1-sim", avg. queue time=195 s, Available>
+<Target name="quantinuum.hqs-lt", avg. queue time=0 s, Available>
 <Target name="ionq.qpu", avg. queue time=229 s, Available>
 <Target name="ionq.simulator", avg. queue time=3 s, Available>
 ```
