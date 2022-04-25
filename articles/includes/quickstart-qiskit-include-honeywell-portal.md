@@ -15,7 +15,7 @@ Add a new cell and create an object to represent the Quantinuum API validator ta
 
 ```python
 # Get Quantinuum's API validator target:
-apival_backend = provider.get_backend("honeywell.hqs-lt-s1-apival")
+apival_backend = provider.get_backend("quantinuum.hqs-lt-s1-apival")
 ```
 
 ## Run on the API validator 
@@ -50,7 +50,7 @@ print(result)
 ```
 
 ```output
-Result(backend_name='honeywell.hqs-lt-s1-apival', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='89511b08-9691-11ec-be32-00155d00ae89', success=True, results=[ExperimentResult(shots=100, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 100}, probabilities={'000': 1.0}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
+Result(backend_name='quantinuum.hqs-lt-s1-apival', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='89511b08-9691-11ec-be32-00155d00ae89', success=True, results=[ExperimentResult(shots=100, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 100}, probabilities={'000': 1.0}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
 ```
 
 Because this `result` type is an object native to the Qiskit package, you can use
