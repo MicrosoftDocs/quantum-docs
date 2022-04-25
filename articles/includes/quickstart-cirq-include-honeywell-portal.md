@@ -42,19 +42,19 @@ for target in service.targets():
 
 ```output
 This workspace's targets:
-<Target name="honeywell.hqs-lt-s1", avg. queue time=0 s, Unavailable>
-<Target name="honeywell.hqs-lt-s1-apival", avg. queue time=1 s, Available>
-<Target name="honeywell.hqs-lt-s2", avg. queue time=75362 s, Available>
-<Target name="honeywell.hqs-lt-s2-apival", avg. queue time=0 s, Available>
-<Target name="honeywell.hqs-lt-s1-sim", avg. queue time=195 s, Available>
-<Target name="honeywell.hqs-lt", avg. queue time=0 s, Available>
+<Target name="quantinuum.hqs-lt-s1", avg. queue time=0 s, Unavailable>
+<Target name="quantinuum.hqs-lt-s1-apival", avg. queue time=1 s, Available>
+<Target name="quantinuum.hqs-lt-s2", avg. queue time=75362 s, Available>
+<Target name="quantinuum.hqs-lt-s2-apival", avg. queue time=0 s, Available>
+<Target name="quantinuum.hqs-lt-s1-sim", avg. queue time=195 s, Available>
+<Target name="quantinuum.hqs-lt", avg. queue time=0 s, Available>
 <Target name="ionq.qpu", avg. queue time=229 s, Available>
 <Target name="ionq.simulator", avg. queue time=3 s, Available>
 ```
 
 ## Select a target and run your program
 
-To check your circuit before running it on actual quantum hardware, you can use the Quantinuum API Validator, `honeywell.hqs-lt-s1-apival`.
+To check your circuit before running it on actual quantum hardware, you can use the Quantinuum API Validator, `quantinuum.hqs-lt-s1-apival`.
 
 Add the following cell that submits a job to run the circuit with
 100 shots, or repititions, waits until the job is complete, and returns the results:
@@ -63,7 +63,7 @@ Add the following cell that submits a job to run the circuit with
 result = service.run(
     program=circuit,
     repetitions=100,
-    target="honeywell.hqs-lt-s1-apival"
+    target="quantinuum.hqs-lt-s1-apival"
 )
 ```
 
@@ -97,7 +97,7 @@ Before running a job on actual quantum hardware, or a [quantum processing unit](
 cost = service.estimate_cost(
     program=circuit,
     repetitions=100,
-    target="honeywell.hqs-lt-s1"
+    target="quantinuum.hqs-lt-s1"
 )
 
 print(f"Estimated cost: {cost.estimated_total}")
@@ -124,7 +124,7 @@ Use the same `run` method and operations that you used previously with the API V
 result = service.run(
     program=circuit,
     repetitions=100,
-    target="honeywell.hqs-lt-s1"
+    target="quantinuum.hqs-lt-s1"
 )
 ```
 
@@ -146,7 +146,7 @@ get the results after the job has run successfully.
 job = service.create_job(
     program=circuit,
     repetitions=100,
-    target="honeywell.hqs-lt-s1-sim"
+    target="quantinuum.hqs-lt-s1-sim"
 )
 ```
 
