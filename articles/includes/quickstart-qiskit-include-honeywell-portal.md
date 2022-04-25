@@ -87,11 +87,11 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
-- honeywell.hqs-lt-s1
-- honeywell.hqs-lt-s1-apival
-- honeywell.hqs-lt-s2
-- honeywell.hqs-lt-s2-apival
-- honeywell.hqs-lt-s1-sim
+- quantinuum.hqs-lt-s1
+- quantinuum.hqs-lt-s1-apival
+- quantinuum.hqs-lt-s2
+- quantinuum.hqs-lt-s2-apival
+- quantinuum.hqs-lt-s1-sim
 - ionq.qpu
 - ionq.simulator
 ```
@@ -99,7 +99,7 @@ This workspace's targets:
 Next, create an object to represent the [Quantinuum System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.honeywell#system-model-h1-powered-by-honeywell):
 
 ```python
-qpu_backend = provider.get_backend("honeywell.hqs-lt-s1")
+qpu_backend = provider.get_backend("quantinuum.hqs-lt-s1")
 ```
 
 To estimate the cost of running a job on the QPU, add and run a new cell using the `estimate_cost` method of the target:
@@ -156,7 +156,7 @@ plot_histogram(counts)
 You can see that the results now are roughly divided between 0 and 1. 
 
 ```output
-Result(backend_name='honeywell.hqs-lt-s1', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='48282d18-9c15-11ec-bfbd-00155d6373ba', success=True, results=[ExperimentResult(shots=100, success=True, meas_level=2, data=ExperimentResultData(counts={'111': 53, '101': 1, '000': 46}, probabilities={'111': 0.53, '101': 0.01, '000': 0.46}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
+Result(backend_name='quantinuum.hqs-lt-s1', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='48282d18-9c15-11ec-bfbd-00155d6373ba', success=True, results=[ExperimentResult(shots=100, success=True, meas_level=2, data=ExperimentResultData(counts={'111': 53, '101': 1, '000': 46}, probabilities={'111': 0.53, '101': 0.01, '000': 0.46}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
 {'000': 46, '001': 0, '010': 0, '011': 0, '100': 0, '101': 1, '110': 0, '111': 53}
 ```
 
