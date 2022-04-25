@@ -86,11 +86,11 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
-- honeywell.hqs-lt-s1
-- honeywell.hqs-lt-s1-apival
-- honeywell.hqs-lt-s2
-- honeywell.hqs-lt-s2-apival
-- honeywell.hqs-lt-s1-sim
+- quantinuum.hqs-lt-s1
+- quantinuum.hqs-lt-s1-apival
+- quantinuum.hqs-lt-s2
+- quantinuum.hqs-lt-s2-apival
+- quantinuum.hqs-lt-s1-sim
 - ionq.qpu
 - ionq.simulator
 ```
