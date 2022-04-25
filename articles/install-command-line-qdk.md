@@ -117,7 +117,7 @@ dotnet new -i Microsoft.Quantum.ProjectTemplates
 - Install the Azure CLI `quantum` extension. Open a command prompt and run the following command:
 
     ```azurecli
-    az extension add -n quantum
+    az extension add --upgrade -n quantum
     ```
 
 ## Next steps

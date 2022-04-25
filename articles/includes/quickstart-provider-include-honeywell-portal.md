@@ -40,24 +40,24 @@ for target in service.targets():
 
 ```output
 This workspace's targets:
-<Target name="honeywell.hqs-lt-s1", avg. queue time=0 s, Unavailable>
-<Target name="honeywell.hqs-lt-s1-apival", avg. queue time=1 s, Available>
-<Target name="honeywell.hqs-lt-s2", avg. queue time=75362 s, Available>
-<Target name="honeywell.hqs-lt-s2-apival", avg. queue time=0 s, Available>
-<Target name="honeywell.hqs-lt-s1-sim", avg. queue time=195 s, Available>
-<Target name="honeywell.hqs-lt", avg. queue time=0 s, Available>
+<Target name="quantinuum.hqs-lt-s1", avg. queue time=0 s, Unavailable>
+<Target name="quantinuum.hqs-lt-s1-apival", avg. queue time=1 s, Available>
+<Target name="quantinuum.hqs-lt-s2", avg. queue time=75362 s, Available>
+<Target name="quantinuum.hqs-lt-s2-apival", avg. queue time=0 s, Available>
+<Target name="quantinuum.hqs-lt-s1-sim", avg. queue time=195 s, Available>
+<Target name="quantinuum.hqs-lt", avg. queue time=0 s, Available>
 <Target name="ionq.qpu", avg. queue time=229 s, Available>
 <Target name="ionq.simulator", avg. queue time=3 s, Available>
 ```
 
 ## Select a target and run your program
 
-To check your circuit before running it on actual quantum hardware, you can use the [Quantinuum API validator](xref:microsoft.quantum.providers.honeywell#api-validator), `honeywell.hqs-lt-s1-apival`, which returns a `Job` object. For more information, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference).
+To check your circuit before running it on actual quantum hardware, you can use the [Quantinuum API validator](xref:microsoft.quantum.providers.honeywell#api-validator), `quantinuum.hqs-lt-s1-apival`, which returns a `Job` object. For more information, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference).
 
 Run the following code to set the target to the API Validator and submit your circuit with 500 shots:
 
 ```python
-target = workspace.get_targets(name="honeywell.hqs-lt-s1-apival")
+target = workspace.get_targets(name="quantinuum.hqs-lt-s1-apival")
 job = target.submit(circuit, num_shots=500)
 ```
 
@@ -99,10 +99,10 @@ Looking at the histogram, you may notice that all the measurements are 0.  This 
 
 Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method.
 
-The following code changes the target to the System Model H1, Powered by Honeywell, `honeywell.hqs-lt-s1`, and uses the `estimate_cost` method to estimate the cost of running the job:
+The following code changes the target to the System Model H1, Powered by Honeywell, `quantinuum.hqs-lt-s1`, and uses the `estimate_cost` method to estimate the cost of running the job:
 
 ```python
-target = workspace.get_targets(name="honeywell.hqs-lt-s1")
+target = workspace.get_targets(name="quantinuum.hqs-lt-s1")
 cost = target.estimate_cost(circuit, num_shots=500)
 
 print(f"Estimated cost: {cost.estimated_total}")
@@ -126,7 +126,7 @@ After running successfully on the API validator and estimating the QPU cost, it'
 Use the same `submit` method and operations that you used previously with the API Validator to submit your job and display the results:
 
 ```python
-target = workspace.get_targets(name="honeywell.hqs-lt-s1")
+target = workspace.get_targets(name="quantinuum.hqs-lt-s1")
 job = target.submit(circuit, num_shots=500)
 ```
 
