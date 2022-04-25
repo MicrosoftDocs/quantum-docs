@@ -12,47 +12,47 @@ uid: microsoft.quantum.workspaces-locks
 
 # Manage permissions to your Azure Quantum resources
 
-Microsoft recommends locking all of your Azure Quantum workspaces and linked storage accounts with an Azure Resource Manager (ARM) resource lock to prevent accidental or malicious deletion. For example, professors may want to restrict students from modifying provider SKUs, but still enable them to use notebooks and submit jobs.  There are two types of ARM resource locks:
+Microsoft recommends locking all of your Azure Quantum workspaces and linked storage accounts with an Azure Resource Manager (ARM) resource lock to prevent accidental or malicious deletion. For example, professors may want to restrict students from modifying provider SKUs, but still enable them to use notebooks and submit jobs.  
+
+There are two types of ARM resource locks:
 
 - A **CannotDelete** lock prevents users from deleting a resource, but permits reading and modifying its configuration.
 - A **ReadOnly** lock prevents users from modifying a resource's configuration (including deleting it), but permits reading its configuration.
 For more information about resource locks, see [Lock resources to prevent unexpected changes](/azure/azure-resource-manager/management/lock-resources?tabs=json).
 
 > [!NOTE]
-> If you already use an [ARM or Bicep template to manage your Azure Quantum workspaces](how-to-manage-quantum-workspaces-with-azure-resource-manager), you can add the procedures in this article to your existing templates.
+> If you already use an [ARM or Bicep template to manage your Azure Quantum workspaces](xref:microsoft.quantum.workspaces-arm), you can add the procedures in this article to your existing templates.
 
-## Recommended lock configuration
+## Recommended lock configurations
 
 The following table shows the recommended resource lock configurations to deploy for an Azure Quantum workspace.
 
-|Resource |Lock&nbsp;type | Y/N |Notes |
+|Resource |Lock&nbsp;type | Notes |
 |--------|--------|--------|--------|
-|Workspace |Delete |Y |Prevents the workspace from being deleted.|
-|Workspace |Read-only |Y |Prevents any modifications to the workspace, including additions or deletions of providers. To modify providers when this lock is set, you need to remove the resource lock, make your changes, then redeploy the lock.|
-|Storage account |Delete |Y |Prevents the storage account from being deleted. CAN NOTEBOOKS AND JOBS STILL BE DELETED?| 
+|Workspace |Delete |Prevents the workspace from being deleted.|
+|Workspace |Read-only |Prevents any modifications to the workspace, including additions or deletions of providers. To modify providers when this lock is set, you need to [remove the resource lock](#viewing-and-deleting-locks), make your changes, then redeploy the lock.|
+|Storage account |Delete |Prevents the storage account from being deleted.
 
 These lock configurations should be avoided:
 
-|Resource |Lock&nbsp;type | Y/N |Notes |
+|Resource |Lock&nbsp;type |Notes |
 |--------|--------|--------|--------|
-|Storage account |Read-only |N |Setting a Read-only resource lock on the storage account can cause failures with workspace creation, the Jupyter Notebooks interface, and submitting and fetching jobs. | 
-|Parent subscription of the workspace or the parent resource group of the workspace or storage account |Read-only |N |When a resource lock is applied to a parent resource, all resources under that parent inherit the same lock, including resources created at a later date. For more granular control, resource locks should be applied directly at the resource level. | 
+|Storage account |Read-only |Setting a Read-only resource lock on the storage account can cause failures with workspace creation, the Jupyter Notebooks interface, and submitting and fetching jobs. | 
+|Parent subscription of the workspace or the parent resource group of the workspace or storage account |Read-only |When a resource lock is applied to a parent resource, all resources under that parent inherit the same lock, including resources created at a later date. For more granular control, resource locks should be applied directly at the resource level. | 
 
 ## Prerequisites
 
-You must be an **Owner** or **User Access Administrator** of a resource to apply ARM resource locks.
+You must be an **Owner** or **User Access Administrator** of a resource to apply ARM resource locks. For more information, see [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
 
 ### Command-line deployment
 
-You also need either Azure PowerShell or Azure CLI to deploy the lock. If you use Azure CLI, you must have the latest version. For the installation instructions, see:
+You will need either Azure PowerShell or Azure CLI to deploy the lock. If you use Azure CLI, you must have the latest version. For the installation instructions, see:
 
 - [Install Azure PowerShell](/powershell/azure/install-az-ps)    
-- [Install Azure CLI on Windows](/cli/azure/install-azure-cli-windows)
-- [Install Azure CLI on Linux](/cli/azure/install-azure-cli-linux)
-- [Install Azure CLI on macOS](/cli/azure/install-azure-cli-macos)
+- [Install Azure CLI](/cli/azure/install-azure-cli)
 
-If you haven't used Azure CLI with Azure Quantum before, follow the steps in the [Environment setup](xref:microsoft.quantum.workspaces-cli#environment-setup) section to add the quantum extension and register the Azure Quantum namespace. 
-
+> [!IMPORTANT]
+> If you haven't used Azure CLI with Azure Quantum before, follow the steps in the [Environment setup](xref:microsoft.quantum.workspaces-cli#environment-setup) section to add the `quantum` extension and register the Azure Quantum namespace. 
 
 ## Sign in to Azure
 
@@ -64,7 +64,7 @@ After installing either Azure CLI or Azure Powershell, make sure you sign in for
 az login
 ```
 
-If you have multiple Azure subscriptions, select the subscription with the workspace that you want to lock. Replace `SubscriptionName` with your subscription name. You can also use the subscription ID instead of the subscription name.  For example 
+If you have multiple Azure subscriptions, select the subscription with the resources that you want to lock. Replace `SubscriptionName` with your subscription name or subscription ID.  For example,
 
 ```azurecli
 az account set --subscription "Azure subscription 1"
@@ -76,7 +76,7 @@ az account set --subscription "Azure subscription 1"
 Connect-AzAccount
 ```
 
-If you have multiple Azure subscriptions, select the subscription with the workspace that you want to lock. Replace `SubscriptionName` with your subscription name. You can also use the subscription ID instead of the subscription name. For example
+If you have multiple Azure subscriptions, select the subscription with the resources that you want to lock. Replace `SubscriptionName` with your subscription name or subscription ID. For example,
 
 ```azurepowershell
 Set-AzContext "Azure subscription 1"
@@ -258,7 +258,7 @@ To view or delete locks:
 
 # [Azure CLI](#tab/azure-cli)
 
-For more information, see the [az lock reference](cli/azure/lock).
+For more information, see the [az lock reference](/cli/azure/lock).
 
 View all locks in a subscription
 
@@ -295,7 +295,7 @@ If the delete is successful, Azure does not return a message. To verify the dele
 
 # [PowerShell](#tab/azure-powershell)
 
-For more information, see the [Get-AzResourceLock reference](powershell/module/az.resources/get-azresourcelock).
+For more information, see the [Get-AzResourceLock reference](/powershell/module/az.resources/get-azresourcelock).
 
 View all locks in a subscription
 
@@ -323,7 +323,7 @@ Get-AzResourceLock -ResourceName armlocksstorage -ResourceGroupName armlocks-res
 
 Delete a lock
 
-To delete a lock, use the `Remove-AzResourceLock` command. For more information, see the [Remove-AzResourceLock reference](powershell/module/az.resources/remove-azresourcelock). 
+To delete a lock, use the `Remove-AzResourceLock` command. For more information, see the [Remove-AzResourceLock](/powershell/module/az.resources/remove-azresourcelock) reference. 
 
 ```azurepowershell
 Remove-AzResourceLock -LockName ArmLockStoreDelete -ResourceGroupName armlocks-resgrp -ResourceName armlocksstorage -ResourceType Microsoft.Storage/storageAccounts
