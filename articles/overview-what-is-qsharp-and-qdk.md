@@ -13,9 +13,17 @@ uid: microsoft.quantum.overview.q-sharp
 
 # What are the Q# programming language and the Quantum Development Kit?
 
-Q# is a Microsoft’s **open-source** programming language for developing and running quantum algorithms. It’s part of the Quantum Development Kit (QDK), a SDK which offers a set of tools that will assist you in the quantum software development process. The Quantum Development Kit includes [quantum libraries](xref:microsoft.quantum.libraries.overview) that let you create complex quantum operations, and [quantum simulators](xref:microsoft.quantum.machines.overview) to accurately run and test your programs. 
+Q# is a Microsoft’s **open-source** programming language for developing and running quantum algorithms. It’s part of the Quantum Development Kit (QDK), a SDK which offers a set of tools that will assist you in the quantum software development process. The Quantum Development Kit provides:
+- A tool set integrated with leading development environments
+- Open-source resources
+- [Quantum libraries](xref:microsoft.quantum.libraries.overview) that let you create complex quantum operations
+- [Quantum simulators](xref:microsoft.quantum.machines.overview) to accurately run and test your programs
 
-The Q# programs can run as standalone apps or be called from [other programming environments](xref:microsoft.quantum.install-qdk.overview), and can be written, run, and tested from your local computer. As a programming language, Q# draws familiar elements from Python, C#, and F# and supports a basic procedural model for writing programs with loops, if/then statements, and common data types. It also introduces new quantum-specific data structures and operations.
+With the Quantum Development Kit you can build programs that run on quantum hardware or formulate problems that run on quantum-inspired solvers in Azure Quantum, an open cloud ecosystem with a diverse set of quantum solutions and technologies. The Quantum Development Kit offers support for Q#, Qiskit, and Cirq for quantum computing, so if you are already working in other development languages you can also run your circuits on Azure Quantum; and access to optimization solvers for running optimization problems in the cloud. 
+
+The Q# programs can run as standalone apps or be called from [other programming environments](xref:microsoft.quantum.install-qdk.overview), and can be written, run, and tested from your local computer. As a programming language, Q# draws familiar elements from Python, C#, and F#, and supports a basic procedural model for writing programs with loops, if/then statements, and common data types. It also introduces new quantum-specific data structures and operations.
+
+
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
@@ -23,34 +31,42 @@ The Q# programs can run as standalone apps or be called from [other programming 
 
 Why the need of a quantum programming language? In short terms, because you want to write algorithms, not circuits.
 
-Q# is a stand-alone language offering a high level of abstraction. There is no notion of a quantum state or a circuit; instead, Q# implements programs in terms of statements and expressions, much like classical programming languages. Distinct quantum capabilities (such as support for functors and control-flow constructs) facilitate expressing, for example, phase estimation and quantum chemistry algorithms. The Q# language allows the integration on classical and quantum computing, and  supports general classical control flow during the execution of an algorithm. This allows clean expression of adaptive algorithms that are difficult to express directly in the circuit model of a fixed sequence of quantum gates.
-
-The Q# language doesn’t specify whether qubits are logical or physical. This can be decided by the runtime when the algorithm is executed. Similarly, the mapping from a qubit variable in a program to an actual logical or physical qubit is decided by the runtime, and that mapping may be deferred until after the topology and other details of the target device is known. The runtime is responsible for determining a mapping that allows the algorithm to execute, including any qubit state transfer and remapping required during execution.
-
-Q# is hardware agnostic, meaning that the Q# language provides the means to express and leverage powerful quantum computing concepts independent on how hardware evolves in the future. To be useable across a wide range of applications, Q# allows to build reusable components and layers of abstractions. To achieve performance with growing quantum hardware size, the Q# quantum programming language ensures the scalability of both applications and development effort. Even though the full complexity of such computations requires further hardware development, Q# programs can be targeted to run on various [quantum hardware backends](xref:microsoft.quantum.reference.qc-target-list) in Azure Quantum.
-
-The Q# language is focused on expressing information to optimize execution. The goal is to ensure an efficient execution of quantum components, independent of the context within which they are invoked. Q# allows the developer to communicate their knowledge about a computation so that the compiler can make an informed decision regarding how to translate it into instructions, leveraging information about the end-to-end application that is not available to the developer.
-
-The type system permits Q# programs to safely interleave and naturally represent the composition of classical and quantum computations. A Q# program may express arbitrary classical computations based on quantum measurements that execute while qubits remain live, meaning they are not released and maintain their state.
+A quantum program can be seen as a particular set of classical subroutines which, when called, perform a computation by interacting with a quantum system; a program written in Q# does not directly model the quantum state, but rather describes how a classical control computer interacts with qubits. This allows you to be entirely agnostic about what a quantum state even *is* on each target machine, which might have different interpretations depending on the machine. You can write your code once and run it with little to no change against multiple targets of the same family which allows you to focus your programming at the algorithm level.
 
 To learn more about the QDK features and the general pieces that fit within a Q# program, see [the Q# programming language user guide](xref:microsoft.quantum.user-guide-qdk.overview).
 
-## What is a quantum program?
+### Integration with quantum and classical computation
 
-A quantum program can be seen as a particular set of classical subroutines which, when called, perform a computation by interacting with a quantum system; a program written in Q# does not directly model the quantum state, but rather describes how a classical control computer interacts with qubits.
+Q# is a stand-alone language offering a high level of abstraction. There is no notion of a quantum state or a circuit; instead, Q# implements programs in terms of statements and expressions, much like classical programming languages. Distinct quantum capabilities (such as support for functors and control-flow constructs) facilitate expressing, for example, phase estimation and quantum chemistry algorithms. The Q# language allows the integration of classical and quantum computing, and  supports general classical control flow during the execution of an algorithm. This allows clean expression of adaptive algorithms that are difficult to express directly in the circuit model of a fixed sequence of quantum gates.
 
-This allows you to be entirely agnostic about what a quantum state even *is* on each target machine, which might have different interpretations depending on the machine. 
+### Qubits as opaque references
 
-When designing a programming language to express a quantum computation, the question naturally arises of whether qubits should be represented in the language, and if so, how. In the most naïve model of such a picture, there would be a software entity that represented each horizontal line, with little or no accessible state other than perhaps a label, but there are other possibilities.
+The Q# language doesn’t specify whether qubits are logical or physical. This can be decided by the runtime when the algorithm is executed. Similarly, the mapping from a qubit variable in a program to an actual logical or physical qubit is decided by the runtime, and that mapping may be deferred until after the topology and other details of the target device is known. The runtime is responsible for determining a mapping that allows the algorithm to execute, including any qubit state transfer and remapping required during execution.
+
+In Q# qubits are modeled as opaque data types that represent a reference to a specific two-state quantum system, whether physical or logical (error-corrected), on which quantum operations may be performed. This is an operational view of qubits: qubits are defined by what you can do to them. 
+
+The representation used in Q# has the interesting implication that all of the actual quantum computing is done by side effect. There is no way to directly interact with the quantum state of the computer; it has no software representation at all. Instead, one performs operations on qubit entities that have the side effect of modifying the quantum state. Effectively, the quantum state of the computer is an opaque global variable that is inaccessible except through a small set of accessor primitives (measurements) — and even these accessors have side effects on the quantum state, and so are really “mutators with results” rather than true accessors.
+
+### Respect the laws of physics
+
+Quantum programs should be required to respect the laws of physics. For example, copying the state of a qubit or direct access to the qubit state are not possible in Q#. 
+
+Therefore, Q# has no ability to introspect into the state of a qubit or other properties of quantum mechanics directly, which guarantees that a Q# program can be physically executed on any quantum computer. Instead, a Q# program has the ability to call operations, such as [`Measure`](xref:Microsoft.Quantum.Intrinsic.Measure), to extract classical information from a qubit, that allows validation and state examination to facilitate debugging with a simulator.
+
+### Hardware agnostic
+
+Q# is hardware agnostic, meaning that the Q# language provides the means to express and leverage powerful quantum computing concepts independent on how hardware evolves in the future. To be useable across a wide range of applications, Q# allows to build reusable components and layers of abstractions. To achieve performance with growing quantum hardware size, the Q# quantum programming language ensures the scalability of both applications and development effort. Even though the full complexity of such computations requires further hardware development, Q# programs can be targeted to run on various [quantum hardware backends](xref:microsoft.quantum.reference.qc-target-list) in Azure Quantum.
+
+### 
+
+The Q# language is focused on expressing information to optimize execution. The goal is to ensure an efficient execution of quantum components, independent of the context within which they are invoked. Q# allows the developer to communicate their knowledge about a computation so that the compiler can make an informed decision regarding how to translate it into instructions, leveraging information about the end-to-end application that is not available to the developer.
 
 
 ## What can I do with the Quantum Development Kit?
 
 The Quantum Development Kit is a full-featured development kit for Q# that you can use with common tools and languages to develop quantum applications that you can run in various environments. A Q# program can compile into a standalone application, through Jupyter Notebooks, or be called by a host program that is written either in Python or a .NET language.
 
-When you compile and run the program, it creates an instance of the quantum simulator and passes the Q# code to it. The simulator uses the Q# code to create qubits (simulations of quantum particles) and apply transformations to modify their state. The results of the quantum operations in the simulator are then returned to the program.  
-
-Isolating the Q# code in the simulator ensures that the algorithms follow the laws of quantum physics and can run correctly on quantum computers.
+When you compile and run the program, it creates an instance of the quantum simulator and passes the Q# code to it. The simulator uses the Q# code to create qubits (simulations of quantum particles) and apply transformations to modify their state. The results of the quantum operations in the simulator are then returned to the program. Isolating the Q# code in the simulator ensures that the algorithms follow the laws of quantum physics and can run correctly on quantum computers.
 
 ![qdk workflow](~/media/quantum-development-kit-flow-diagram.svg)
 
