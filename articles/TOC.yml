@@ -264,6 +264,8 @@
     href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
   - name: Work with Azure Quantum using the Azure Resource Manager 
     href: how-to-manage-quantum-workspaces-with-azure-resource-manager.md
+  - name: Protect Azure Quantum with resource locks
+    href: how-to-set-resource-locks.md
 - name: Resources
   items:
   - name: Azure Quantum pricing 
