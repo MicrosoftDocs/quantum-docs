@@ -1,11 +1,11 @@
 ---
-title: Manage quantum permissions to Azure Quantum resources 
+title: Protect Azure Quantum resources with resource locks 
 description: This guide shows you how to set Azure Resource Manager locks on Azure Quantum resources 
 author: bradben
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.topic: how-to
-ms.date: 04/20/2022
+ms.date: 04/27/2022
 ms.custom: lock-how-to
 uid: microsoft.quantum.workspaces-locks
 ---
