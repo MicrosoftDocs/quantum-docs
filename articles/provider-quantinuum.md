@@ -14,7 +14,7 @@ uid: microsoft.quantum.providers.quantinuum
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
-Quantinuum provides access to trapped-ion systems with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurement.
+Quantinuum provides access to a trapped-ion system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurement.
 
 - Publisher: [Quantinuum](https://www.quantinuum.com)
 - Provider ID: `quantinuum`
