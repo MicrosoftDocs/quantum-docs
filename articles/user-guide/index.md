@@ -183,9 +183,6 @@ operation MeasureOneQubit() : Result {
 }
 ```
 
-If you want to learn more, the [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas) provide a good introduction to [quantum computing concepts](xref:microsoft.quantum.tutorial-qdk.katas#introduction-to-quantum-computing-concepts) such as common quantum operations and how to manipulate qubits.
-For more information, see [the Q# user guide](xref:microsoft.quantum.user-guide-qdk.overview).
-
 
 ## Next steps
 
