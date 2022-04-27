@@ -5,8 +5,9 @@ author: hsirtl
 ms.author: hsirtl
 ms.service: azure-quantum
 ms.topic: how-to
-ms.date: 02/10/2022
+ms.date: 04/20/2022
 ms.custom: template-how-to
+uid: microsoft.quantum.workspaces-arm
 ---
 
 # Manage quantum workspaces with the Azure Resource Manager
