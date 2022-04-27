@@ -10,14 +10,14 @@ ms.custom: lock-how-to
 uid: microsoft.quantum.workspaces-locks
 ---
 
-# Manage permissions to your Azure Quantum resources
+# Protect Azure Quantum resources with Azure Resource Manager (ARM) locks
 
 Microsoft recommends locking all of your Azure Quantum workspaces and linked storage accounts with an Azure Resource Manager (ARM) resource lock to prevent accidental or malicious deletion. For example, professors may want to restrict students from modifying provider SKUs, but still enable them to use notebooks and submit jobs.  
 
 There are two types of ARM resource locks:
 
 - A **CannotDelete** lock prevents users from deleting a resource, but permits reading and modifying its configuration.
-- A **ReadOnly** lock prevents users from modifying a resource's configuration (including deleting it), but permits reading its configuration.
+- A **ReadOnly** lock prevents users from modifying a resource's configuration (including deleting it), but permits reading its configuration. 
 For more information about resource locks, see [Lock resources to prevent unexpected changes](/azure/azure-resource-manager/management/lock-resources?tabs=json).
 
 > [!NOTE]
@@ -28,15 +28,18 @@ For more information about resource locks, see [Lock resources to prevent unexpe
 The following table shows the recommended resource lock configurations to deploy for an Azure Quantum workspace.
 
 |Resource |Lock&nbsp;type | Notes |
-|--------|--------|--------|--------|
+|--------|--------|--------|
 |Workspace |Delete |Prevents the workspace from being deleted.|
-|Workspace |Read-only |Prevents any modifications to the workspace, including additions or deletions of providers. To modify providers when this lock is set, you need to [remove the resource lock](#viewing-and-deleting-locks), make your changes, then redeploy the lock.|
+|Workspace |Read-only |Prevents any modifications to the workspace, including additions or deletions of providers, while still allowing users to create and delete notebooks and submit jobs. To modify providers when this lock is set, you need to [remove the resource lock](#viewing-and-deleting-locks), make your changes, then redeploy the lock.|
 |Storage account |Delete |Prevents the storage account from being deleted.
 
-These lock configurations should be avoided:
+The following configurations should be avoided:
+
+> [!IMPORTANT]
+> Setting the following ARM locks may cause your workspace to function incorrectly.
 
 |Resource |Lock&nbsp;type |Notes |
-|--------|--------|--------|--------|
+|--------|--------|--------|
 |Storage account |Read-only |Setting a Read-only resource lock on the storage account can cause failures with workspace creation, the Jupyter Notebooks interface, and submitting and fetching jobs. | 
 |Parent subscription of the workspace or the parent resource group of the workspace or storage account |Read-only |When a resource lock is applied to a parent resource, all resources under that parent inherit the same lock, including resources created at a later date. For more granular control, resource locks should be applied directly at the resource level. | 
 
@@ -290,7 +293,7 @@ Delete a lock
 az lock delete --name ArmLockStoreDelete --resource-group armlocks-resgrp --resource armlocksstorage --resource-type  Microsoft.Storage/storageAccounts
 ```
 
-If the delete is successful, Azure does not return a message. To verify the deletion, you can run `az lock list`. 
+If the deletion is successful, Azure does not return a message. To verify the deletion, you can run `az lock list`. 
 
 
 # [PowerShell](#tab/azure-powershell)
@@ -329,7 +332,7 @@ To delete a lock, use the `Remove-AzResourceLock` command. For more information,
 Remove-AzResourceLock -LockName ArmLockStoreDelete -ResourceGroupName armlocks-resgrp -ResourceName armlocksstorage -ResourceType Microsoft.Storage/storageAccounts
 ```
 
-If the delete is successful, Powershell displays `True`.  To verify the deletion, you can run `Get-AzResourceLock`. 
+If the deletion is successful, Powershell displays `True`.  To verify the deletion, you can run `Get-AzResourceLock`. 
 
 ---
 
