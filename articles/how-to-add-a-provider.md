@@ -1,7 +1,7 @@
 ---
-author: brbenefield
+author: bradben
 description: Add a provider to an existing Azure Quantum workspace
-ms.author: bradben
+ms.author: brbenefield
 ms.date: 04/27/2022
 ms.service: azure-quantum
 ms.subservice: core
