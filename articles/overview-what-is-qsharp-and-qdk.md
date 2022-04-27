@@ -19,11 +19,11 @@ Q# is a Microsoft’s **open-source** programming language for developing and ru
 - [Quantum libraries](xref:microsoft.quantum.libraries.overview) that let you create complex quantum operations
 - [Quantum simulators](xref:microsoft.quantum.machines.overview) to accurately run and test your programs
 
-[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
-
 With the Quantum Development Kit you can build programs that run on quantum hardware or formulate problems that run on quantum-inspired solvers in Azure Quantum, an open cloud ecosystem with a diverse set of quantum solutions and technologies. The Quantum Development Kit offers support for Q#, Qiskit, and Cirq for quantum computing, so if you are already working in other development languages you can also run your circuits on Azure Quantum; and access to optimization solvers for running optimization problems in the cloud. 
 
-The Q# programs can run as standalone apps or be called from [other programming environments](xref:microsoft.quantum.install-qdk.overview) and can be written, run, and tested from  your local computer. As a programming language, Q# draws familiar elements from Python, C#, and F#, and supports a basic procedural model for writing programs with loops, if/then statements, and common data types. It also introduces new quantum-specific data structures and operations.
+[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
+
+The Q# programs can run as standalone or be called from other programming environments, and can be written, run, and tested from the [online Jupyter notebooks](xref:microsoft.quantum.get-started.notebooks) available in your Azure Quantum workspace, and from your [local computer](xref:(xref:microsoft.quantum.install-qdk.overview.standalone)). As a programming language, Q# draws familiar elements from Python, C#, and F#, and supports a basic procedural model for writing programs with loops, if/then statements, and common data types. It also introduces new quantum-specific data structures and operations.
 
 As an additional feature, the QDK supports integration with [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) and [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq), so quantum developers that are already working in other development languages, can also run their programs on Azure Quantum.
 
@@ -37,6 +37,7 @@ As an additional feature, the QDK supports integration with [Qiskit](xref:micros
 >   - [Set up a standalone Q# development environment](xref:microsoft.quantum.install-qdk.overview.standalone)
 >
 > - [Q# API reference documentation](xref:microsoft.quantum.apiref-intro)
+
 
 ## The quantum programming language Q\#
 
@@ -74,9 +75,11 @@ The Q# language is focused on expressing information to optimize the execution. 
 
 ## What can I do with the Quantum Development Kit?
 
-The Quantum Development Kit is a full-featured development kit for Q# that you can use with common tools and languages to develop quantum applications that you can run in various environments. A Q# program can compile into a standalone application, through Jupyter Notebooks, or be called by a host program that is written either in Python or a .NET language.
+The Quantum Development Kit is a full-featured development kit for Q# that you can use with common tools and languages to develop quantum applications that you can run in various environments. A Q# program can compile into a standalone application, or be called by a host program that is written either in Python or a .NET language.
 
 When you compile and run the program, it creates an instance of the quantum simulator and passes the Q# code to it. The simulator uses the Q# code to create qubits (simulations of quantum particles) and apply transformations to modify their state. The results of the quantum operations in the simulator are then returned to the program. Isolating the Q# code in the simulator ensures that the algorithms follow the laws of quantum physics and can run correctly on quantum computers.
+
+The following diagram shows the stages through which a quantum program goes from idea to complete implementation on Azure Quantum, and the tools offered by the QDK for each stage.
 
 ![qdk workflow](~/media/quantum-development-kit-flow-diagram.svg)
 
@@ -85,11 +88,13 @@ When you compile and run the program, it creates an instance of the quantum simu
 
 ### Write your quantum program
 
-You can write your Q# program with the [hosted Jupyter notebooks](xref:microsoft.quantum.get-started.notebooks) available in your Azure Quantum workspace. If you prefer a local development environment, you can [create your Q# program](xref:microsoft.quantum.install-qdk.overview.standalone) using the QDK extensions for Visual Studio, Visual Studio Code, or Jupyter notebooks. 
+If you want to start practicing and writing your Q# programs without installing additional software you can use the [hosted Jupyter notebooks](xref:microsoft.quantum.get-started.notebooks) available in Azure portal in your Azure Quantum workspace. In the sample gallery you will find various notebook samples, you can select the sample you want to use and run it on cloud-based simulators or real quantum computers. If you prefer a local development environment, you can [create your Q# program](xref:microsoft.quantum.install-qdk.overview.standalone) using the QDK extensions for Visual Studio 2022, Visual Studio Code, or Jupyter notebooks with IQ#. 
 
 ### Try quantum operations and domain-specific libraries
 
-You can [create your Q# program](xref:microsoft.quantum.install-qdk.overview.standalone) using the QDK extensions for Visual Studio, Visual Studio Code or Jupyter Notebooks. You can follow the Q# tutorials and start writing quantum programs to explore [superposition](xref:microsoft.quantum.tutorial-qdk.random-number), [entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement), [Grover's quantum algorithm](xref:microsoft.quantum.tutorial-qdk.grovers), and other quantum phenomena. 
+You can also run quantum circuits written in [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) or [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq).
+
+You can follow the Q# tutorials and start writing quantum programs to explore [superposition](xref:microsoft.quantum.tutorial-qdk.random-number), [entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement), [Grover's quantum algorithm](xref:microsoft.quantum.tutorial-qdk.grovers), and other quantum phenomena. 
 
 The [Q# libraries](xref:microsoft.quantum.libraries.overview) will help you keep your code high level, enabling you to run complex quantum operations without having to design low-level operation sequences. The [`Microsoft.Quantum.Sdk` NuGet package](https://www.nuget.org/packages/Microsoft.Quantum.Sdk/) automatically includes the Q# [standard library](xref:microsoft.quantum.libraries.overview.standard.intro), which provides a set of essential and very useful functions and operations that can be used when writing quantum programs in Q#.
 
@@ -140,6 +145,8 @@ The Quantum Development Kit supports interoperability with [Python](xref:microso
 
 
 ## Next Steps
+
+If you want to learn more, the [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas) provide a good introduction to [quantum computing concepts](xref:microsoft.quantum.tutorial-qdk.katas#introduction-to-quantum-computing-concepts) such as common quantum operations and how to manipulate qubits.
 
 - [QuickStarts](xref:microsoft.quantum.install-qdk.overview)
 - [Understanding quantum computing](xref:microsoft.quantum.overview.understanding)
