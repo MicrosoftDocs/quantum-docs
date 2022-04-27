@@ -12,6 +12,8 @@ uid: microsoft.quantum.providers.quantinuum
 
 # Quantinuum provider
 
+[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
+
 Quantinuum provides access to trapped-ion systems with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurement.
 
 - Publisher: [Quantinuum](https://www.quantinuum.com)
@@ -74,26 +76,6 @@ Both System Model H1 hardware H1-1 and H1-2 are continuously upgraded throughout
   - H1 machine family: `quantinuum.hqs-lt`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
-Billing information:
-
-- **Standard Subscription:**
-Monthly subscription plan with 10k H-System Quantum Credits (HQCs) for use on the System Model H1 hardware and 40k emulator credits (eHQCs) for use on the H1 Emulator / month, available through queued access.
-
-- **Premium Subscription:**
-Monthly subscription plan with 17k H-System Quantum Credits (HQCs) for use on System Model H1 hardware and 100k emulator credits (eHQCs) for use on the H1 Emulator / month, available through queued access.
-
-The following equation defines how circuits are translated into H-System Quantum Credits (HQCs). Note that the circuit cost is returned by all systems, including the [Syntax Checker](#syntax-checker). It may be helpful to check the circuit HQCs before submitting to the [System Model H1 Emulator](#system-model-h1-emulator) or [System Model H1](#system-model-h1).
-
-$$
-HQC = 5 + C(N_{1q} + 10 N_{2q} + 5 N_m)/5000
-$$
-
-where:
-
-- $N_{1q}$ is the number of one-qubit operations in a circuit.
-- $N_{2q}$ is the number of native two-qubit operations in a circuit. Native gate is equivalent to CNOT up to several one-qubit gates.
-- $N_{m}$ is the number of state preparation and measurement (SPAM) operations in a circuit including initial implicit state preparation and any intermediate and final measurements and state resets.
-- $C$ is the shot count.
 
 ### Technical Specifications
 
@@ -109,3 +91,7 @@ where:
   - two-qubit ZZ-gates
 
 More details available under NDA.
+
+## Pricing
+
+To see Quantinuum billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
