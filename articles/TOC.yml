@@ -256,6 +256,8 @@
     href: install-update-qdk.md
   - name: Work with jobs
     href: how-to-work-with-jobs.md
+  - name: Add or remove a provider
+    href: how-to-add-a-provider.md
   - name: Authenticate using a service principal
     href: optimization-authenticate-service-principal.md
   - name: Authenticate using a managed identity
