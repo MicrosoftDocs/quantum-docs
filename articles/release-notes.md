@@ -19,9 +19,25 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ## 2022-03-30
 
+### QDK version 0.24.todo
+
+- Added a [large simulation sample](https://github.com/microsoft/Quantum/tree/main/samples/getting-started/simulation) 
+demonstrating the use of the sparse simulator.
+- Fixed GitHub issue [microsoft/QuantumLibraries#367](https://github.com/microsoft/QuantumLibraries/issues/367) to change how variants of operations are counted in [AllowAtMostNCallsCA](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.diagnostics.allowatmostncallsca).
+- Improved processing of Qiskit job data in the Azure Quantum Python SDK which enables VQE scenarios as well as using Qiskit Experiment's StateTomography by fixing GitHub issues: [microsoft/qdk-python#224](https://github.com/microsoft/qdk-python/issues/224), [microsoft/qdk-python#258](https://github.com/microsoft/qdk-python/issues/258), [microsoft/qdk-python#259](https://github.com/microsoft/qdk-python/issues/259), and [microsoft/qdk-python#263](https://github.com/microsoft/qdk-python/issues/263).
+- Fixed GitHub issue [microsoft/QuantumLibraries#546](https://github.com/microsoft/QuantumLibraries/issues/546) where the use of `Default` is not advised and an alternative is proposed.
+- Implemented GitHub issue [microsoft/QuantumLibraries#442](https://github.com/microsoft/QuantumLibraries/issues/442) which provides two new operations `SinglyControlled` and `SinglyControlledA` for a concise shorthand to control operations with a single qubit.
+- Fixed GitHub issue [microsoft/QuantumLibraries#560](https://github.com/microsoft/QuantumLibraries/issues/560) where the [MeasureFxP](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.arithmetic.measurefxp) operation returned a wrong value when the measurement value corresponds to the smallest representable fixed point.
+- Released Az CLI quantum extension version 0.15.0:
+  - Fixed GitHub issue [azure/azure-cli-extensions#4697](https://github.com/azure/azure-cli-extensions/issues/4697), which allows setting a polling interval when waiting for an Azure Quantum job to complete.
+
+### Azure Quantum service update
+
+- Added a portal [notebook](https://docs.microsoft.com/azure/quantum/how-to-run-notebooks-workspace) for the [large simulation sample](https://github.com/microsoft/Quantum/blob/main/samples/getting-started/simulation/LargeSimulation.ipynb).
+
 ### QDK version 0.24.201332
 
-- Added the SparseSimulator with discrete (sparse) states of the qubits, which is more efficient for a class of quantum algorithms with a smaller number of states in superposition and unlocks applications with larger number of qubits than supported by QuantumSimulator.
+- Added the [SparseSimulator](https://docs.microsoft.com/azure/quantum/user-guide/machines/sparse-simulator) with discrete (sparse) states of the qubits, which is more efficient for a class of quantum algorithms with a smaller number of states in superposition and unlocks applications with larger number of qubits than supported by QuantumSimulator.
 - Migrated the Quantum Development Kit from **.NETCore 3.1** to [.NET 6.0](https://dotnet.microsoft.com/download), and raised the minimum supported version accordingly.
 - Updated the [Microsoft Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode) extension to support QDK versions based on .NET 6.
 - Released the [Microsoft Quantum Development Kit for Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) extension.
