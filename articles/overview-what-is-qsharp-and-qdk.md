@@ -21,7 +21,8 @@ Q# is a Microsoft’s **open-source** programming language for developing and ru
 
 With the Quantum Development Kit you can build programs that run on quantum hardware or formulate problems that run on quantum-inspired solvers in Azure Quantum, an open cloud ecosystem with a diverse set of quantum solutions and technologies. The Quantum Development Kit offers support for Q#, Qiskit, and Cirq for quantum computing, so if you are already working in other development languages you can also run your circuits on Azure Quantum; and access to optimization solvers for running optimization problems in the cloud. 
 
-[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
+> [!Tip]
+> **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) (check out free Azure accounts [for students](https://azure.microsoft.com/free/students/)). With Azure you can create, deploy, and manage applications across multiple clouds, on-premises, and at the edge. You will get 200 USD Azure credit to use in other Azure services. 
 
 The Q# programs can run as standalone or be called from other programming environments, and can be written, run, and tested from the [online Jupyter notebooks](xref:microsoft.quantum.get-started.notebooks) available in your Azure Quantum workspace, and from your [local computer](xref:(xref:microsoft.quantum.install-qdk.overview.standalone)). As a programming language, Q# draws familiar elements from Python, C#, and F#, and supports a basic procedural model for writing programs with loops, if/then statements, and common data types. It also introduces new quantum-specific data structures and operations.
 
@@ -88,13 +89,13 @@ The following diagram shows the stages through which a quantum program goes from
 
 ### Write your quantum program
 
-If you want to start practicing and writing your Q# programs without installing additional software you can use the [hosted Jupyter notebooks](xref:microsoft.quantum.get-started.notebooks) available in Azure portal in your Azure Quantum workspace. In the sample gallery you will find various notebook samples, you can select the sample you want to use and run it on cloud-based simulators or real quantum computers. If you prefer a local development environment, you can [create your Q# program](xref:microsoft.quantum.install-qdk.overview.standalone) using the QDK extensions for Visual Studio 2022, Visual Studio Code, or Jupyter notebooks with IQ#. 
+If you want to start practicing and writing your Q# programs without installing additional software, you can use the [hosted Jupyter notebooks](xref:microsoft.quantum.get-started.notebooks) available in Azure portal in your Azure Quantum workspace. In the sample gallery you will find various notebook samples, you can select the sample you want to use and run it on cloud-based simulators or real quantum computers.
+
+If you prefer a local development environment, you can [create your Q# program](xref:microsoft.quantum.install-qdk.overview.standalone) using the QDK extensions for Visual Studio 2022, Visual Studio Code, or Jupyter notebooks with IQ#. 
 
 ### Try quantum operations and domain-specific libraries
 
-You can also run quantum circuits written in [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) or [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq).
-
-You can follow the Q# tutorials and start writing quantum programs to explore [superposition](xref:microsoft.quantum.tutorial-qdk.random-number), [entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement), [Grover's quantum algorithm](xref:microsoft.quantum.tutorial-qdk.grovers), and other quantum phenomena. 
+You can follow the Q# tutorials and start writing quantum programs to explore quantum concepts such as [superposition](xref:microsoft.quantum.tutorial-qdk.random-number), [entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement), [Grover's quantum algorithm](xref:microsoft.quantum.tutorial-qdk.grovers), and other quantum phenomena. If you have leaned towards online development, in the sample gallery in your Azure Quantum workspace you will also find notebook samples to get started in the quantum software development.
 
 The [Q# libraries](xref:microsoft.quantum.libraries.overview) will help you keep your code high level, enabling you to run complex quantum operations without having to design low-level operation sequences. The [`Microsoft.Quantum.Sdk` NuGet package](https://www.nuget.org/packages/Microsoft.Quantum.Sdk/) automatically includes the Q# [standard library](xref:microsoft.quantum.libraries.overview.standard.intro), which provides a set of essential and very useful functions and operations that can be used when writing quantum programs in Q#.
 
@@ -103,19 +104,21 @@ In addition to the standard library, the QDK includes a [quantum chemistry libra
 
 ### Run programs in simulators
 
-Once you’ve written your program, the QDK offers a set of [quantum simulators](xref:microsoft.quantum.machines.overview) – classical programs that simulate the behavior of a quantum system, so that you can run a small instance of your program and see what it does without actual hardware access. You can run your quantum programs on a [full-state quantum simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), a limited-scope [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator), or
-even use the [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulating the behavior of Q# programs under the influence of noise. 
+Once you’ve written your program, the QDK offers a set of [quantum simulators](xref:microsoft.quantum.machines.overview) – classical programs that simulate the behavior of a quantum system, so that you can run a small instance of your program and see what it does without actual hardware access. You can run your quantum programs on a [full-state quantum simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), a limited-scope [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator), a [sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator) for systems with larger number of qubits, and even use the [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulating the behavior of Q# programs under the influence of noisy environments. 
 
-Before running on quantum hardware, you’ll need to figure out whether your program can run on existing hardware, and how many resources it will consume. You can use [QDK resource estimators](xref:microsoft.quantum.machines.overview.resources-estimator) to tell you how many qubits and quantum gates you need, and how long your program will take.
+Before running on quantum hardware, you’ll need to figure out whether your program can run on existing hardware, and how many resources it will consume. You can use the [resource estimator](xref:microsoft.quantum.machines.overview.resources-estimator) to tell you how many qubits and quantum gates you need, and how long your program will take, and the [trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro) to do an advanced analysis of resources consumption and  debug classical code that is part of your quantum program.
+
+See the full list of [quantum simulators](xrefmicrosoft.quantum.machines.overview).
 
 ### Submit jobs to the Azure Quantum service
 
-[Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) is the cloud quantum computing service of Azure, with a diverse set of quantum solutions and technologies. Azure Quantum ensures an open, flexible, and future-proofed path to quantum computing that allows you to run your program on quantum hardware.
+[Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) is the cloud quantum computing service of Azure, with a diverse set of quantum solutions and technologies. Azure Quantum ensures an open, flexible, and future-proofed path to quantum computing that allows you to run your program on quantum hardware. You can run your Qiskit, Cirq, and Q# algorithms on multiple quantum systems.
 
-> [!Tip]
-> **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) (check out free Azure accounts [for students](https://azure.microsoft.com/free/students/)). With Azure you can create, deploy, and manage applications across multiple clouds, on-premises, and at the edge. You will get 200 USD Azure credit to use in other Azure services. 
+[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
-Once you have created an Azure account, you can submit your Q# programs (also known as jobs) to Azure Quantum through your preferred development enviroment, both locally and online. Learn [how to submit Q# jobs](xref:microsoft.quantum.submit-jobs). The following diagram shows the basic workflow after you submit your job:
+Once you’ve created an Azure Quantum workspace, you can submit your Q# programs (also known as jobs) to Azure Quantum through your preferred development enviroment, both locally and online. For more information, see [how to submit Q# jobs](xref:microsoft.quantum.submit-jobs). You can also run and submit quantum circuits written in [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) or [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq). 
+
+The following diagram shows the basic workflow after you submit your job:
 
 ![azure quantum job flow](~/media/azure-quantum-flow-diagram-providers.svg)
 
@@ -124,25 +127,19 @@ Azure Quantum offers some of the most compelling and diverse quantum resources a
 
 ## How can I use the Quantum Development Kit?
 
-Everything you need to write and run Q# programs, including the Q# compiler, the Q# libraries, and the quantum simulators, can be done cloud-base in the Azure portal with the hosted Jupyter notebooks, or it can be installed and run from your local computer if you prefer.
+Everything you need to write and run Q# programs, including the Q# compiler, the Q# libraries, and the quantum simulators, can be done cloud-base in the Azure portal with the hosted Jupyter notebooks, or it can be installed and run from your local computer if you prefer to.
 
-The Quantum Development Kit includes extensions for [Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) and [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode), and integration with [Jupyter Notebooks with IQ#](xref:microsoft.quantum.install-qdk.overview.standalone). 
+The Quantum Development Kit includes extensions for [Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) and [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode), and integration for [Jupyter Notebooks with IQ#](xref:microsoft.quantum.install-qdk.overview.standalone). 
 
 The Quantum Development Kit supports interoperability with [Python](xref:microsoft.quantum.install-qdk.overview.python) and other [.NET languages](xref:microsoft.quantum.install-qdk.overview.cs), as well as integration with [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) and [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq), so quantum developers that are already working in other development languages can also run their circuits on Azure Quantum.
 
+- Running a Q# code in a Jupyter notebook in the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) portal is the quickest way to get started.
 
-- Developing [Q# applications](xref:microsoft.quantum.install-qdk.overview.standalone) is the quickest way to get started.
-
-- Run standalone [Jupyter Notebooks with IQ#](xref:microsoft.quantum.install-qdk.overview.standalone), a Jupyter extension for compiling, simulating, and visualizing Q# programs.
+- You can develop Q# programs as standalone applications in a [local development environment](xref:microsoft.quantum.install-qdk.overview.standalone). 
 
 - If you are familiar with Python, you can use it as a [host programming platform](xref:microsoft.quantum.install-qdk.overview.python) to get started. Python enjoys widespread use not only among developers, but also scientists, researchers and teachers.
 
 - If you already have experience with [C#, F#, or VB.NET](xref:microsoft.quantum.install-qdk.overview.cs) and are familiar with the Visual Studio development environment, there are just a few extensions you need to add to Visual Studio to prepare it for Q#.  
-
-
-
-
-
 
 ## Next Steps
 
