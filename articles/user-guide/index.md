@@ -2,7 +2,7 @@
 author: bradben
 description: A guide to the Q# programming language, the Q# libraries, and how to develop quantum programs.
 ms.author: brbenefield
-ms.date: 11/05/2021
+ms.date: 04/29/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -11,7 +11,7 @@ title: The Q# programming language user guide
 uid: microsoft.quantum.user-guide-qdk.overview
 ---
 
-# The Q# quantum programming language 
+# The Q# quantum programming language user guide
 
 The Q# quantum programming language is part of Microsoft's [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) and provides rich IDE support and tools for program visualization and analysis.
 
@@ -103,22 +103,6 @@ Here, you simply specify `Message` and the compiler understands which namespace 
 
 The Q# documentation provides complete reference documentation for each built-in library. For more information, see [the Q# libraries documentation](/quantum/user-guide/libraries/additional-libraries?tabs=tabid-csproj).
 
-### Operations
-
-[Operations](xref:microsoft.quantum.qsharp.operationsandfunctions) are the basic building blocks of a Q# program. A Q# operation is a quantum subroutine. That is, it's a callable routine that contains quantum operations that modify the state of the qubit register.
-
-To define a Q# operation, you specify a name for the operation along with its inputs and its output. Here's a basic example:
-
-```qsharp
-operation HelloQ() : Unit {
-    Message("Hello quantum world!");
-}
-```
-
-Here, `HelloQ` is the name of the operation. It takes zero arguments as its input and returns type `Unit`, which means that the operation returns no information.
-
-Q# libraries also provide operations that you can use in your programs. One operation you'll use later is the `H` operation. Think of the `H` operation as a way of putting a qubit into an *even* superposition. Once in superposition, a qubit has a 50% chance of being measured as zero or one.
-
 ### Types
 
 Q# provides many [built-in types](xref:microsoft.quantum.qsharp.typesystem-overview) you're already familiar with, including `Int`, `Double`, `Bool`, and `String`, along with types that are specific to quantum computing. For example, the `Result` type represents the result of a qubit measurement and can have one of two possible values: `One` and `Zero`. Q# also provides types that define ranges, arrays, and tuples. You can even define your [own custom types](xref:microsoft.quantum.qsharp.typedeclarations).
@@ -139,43 +123,53 @@ use q = Qubit();
 ```
 By default, every qubit you allocate with the `use` keyword starts in the zero state.
 
-### Measuring qubits
+## Quantum operations
 
-There are many sorts of quantum measurements, but Q# focuses on projective measurements on single qubits, also known as [Pauli measurements](xref:microsoft.quantum.concepts.pauli). Upon measurement in a given basis (for example, the computational basis $\ket{0},\ket{1}$) the qubit state is projected onto whichever basis state was measured, hence destroying any superposition between the two.
+Once allocated, a qubit can be passed to operations and functions, also referred to as [*callables*](xref:microsoft.quantum.qsharp.callabledeclarations). In some sense, this is all that a Q# program can do with a qubit. [Operations](xref:microsoft.quantum.qsharp.operationsandfunctions) are the basic building blocks of a Q# program. A Q# operation is a quantum subroutine. That is, it's a callable routine that contains quantum operations that modify the state of the qubit register.
 
-In Q#, Pauli measurements are done by applying [`Measure` operation](xref:Microsoft.Quantum.Intrinsic.Measure), which performs a joint measurement of one or more qubits in the specified Pauli bases. `Measure` operation returns a `Result` type.
+To define a Q# operation, you specify a name for the operation along with its inputs and its output. Here's a basic example:
 
-To implement a measurement in the computational basis $\ket{0},\ket{1}$, you can also use the [`M` operation](xref:Microsoft.Quantum.Intrinsic.M), wich performs a measurement of a single qubit in the Pauli Z basis. Therefore `M` operation is equivalent to applying `Measure([PauliZ], [qubit])`.
+```qsharp
+operation HelloQ() : Unit {
+    Message("Hello quantum world!");
+}
+```
 
-> [!NOTE]
-> If the basis array and qubit array are different lengths, then the `Measure` operation will fail.
+Here, `HelloQ` is the name of the operation. It takes zero arguments as its input and returns type `Unit`, which means that the operation returns no information.
 
-For performing measurements beyond a single joint measurement, the [`Microsoft.Quantum.Measurement` namespace](xref:Microsoft.Quantum.Measurement) includes more specific operations. For example, the [`MultiM` operation](xref:Microsoft.Quantum.Measurement.MultiM) takes an array of qubits and returns an array of measurement results in the computational basis. 
+The [Q# libraries](xref:microsoft.quantum.libraries.overview) also provide operations that you can use in your programs, for example the Hadamard, or `H` operation. The `H` operation puts a qubit into an *even* superposition. Once in superposition, a qubit has a 50% chance of being measured as zero or one.
 
-## Programing quantum operations
-
-Once allocated, a qubit can be passed to operations and functions, also referred to as [*callables*](xref:microsoft.quantum.qsharp.callabledeclarations). In some sense, this is all that a Q# program can do with a qubit. Any direct actions on state of a qubit are all defined by *intrinsic* callables such as [`X`](xref:Microsoft.Quantum.Intrinsic.X) and [`H`](xref:Microsoft.Quantum.Intrinsic.H) - that is, callables whose implementations are not defined within Q# but are instead defined by the target machine. What these operations actually *do* is only made concrete by the target machine you choose to run the particular Q# program. For more information, see [Q# program implementation](xref:microsoft.quantum.qsharp.programstructure-overview).
+Any direct actions on state of a qubit are all defined by *intrinsic* callables such as [`X`](xref:Microsoft.Quantum.Intrinsic.X) and [`H`](xref:Microsoft.Quantum.Intrinsic.H) - that is, callables whose implementations are not defined within Q# but are instead defined by the target machine. What these operations actually *do* is only made concrete by the target machine you choose to run the particular Q# program. For more information, see [Q# program implementation](xref:microsoft.quantum.qsharp.programstructure-overview).
 
 For example, if running the program on the [full-state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), the simulator performs the corresponding mathematical operations to the simulated quantum system. But looking toward the future, when the target machine is a real quantum computer, calling such operations in Q# will direct the quantum computer to perform the corresponding **real operations** on the **real quantum hardware**. For example, in a trapped-ion quantum computer the quantum operations are realized by precisely timed laser pulses.
 
 A Q# program recombines these operations as defined by a target machine to create new, higher-level operations to express quantum computation.
 In this way, Q# makes it easy to express the logic underlying quantum and hybrid quantum–classical algorithms, while also being general with respect to the structure of a target machine or simulator.
 
+### Measuring qubits
+
+There are many sorts of quantum measurements, but Q# focuses on projective measurements on single qubits, also known as [Pauli measurements](xref:microsoft.quantum.concepts.pauli). Upon measurement in a given basis (for example, the computational basis $\ket{0},\ket{1}$) the qubit state is projected onto whichever basis state was measured, hence destroying any superposition between the two.
+
+In Q#, Pauli measurements are done by applying [`Measure` operation](xref:Microsoft.Quantum.Intrinsic.Measure), which performs a joint measurement of one or more qubits in the specified Pauli bases. `Measure` operation returns a `Result` type.
+
+> [!NOTE]
+> If the basis array and qubit array are different lengths, then the `Measure` operation will fail.
+
+To implement a measurement in the computational basis $\ket{0},\ket{1}$, you can also use the [`M` operation](xref:Microsoft.Quantum.Intrinsic.M), wich performs a measurement of a single qubit in the Pauli Z basis. Therefore `M` operation is equivalent to applying `Measure([PauliZ], [qubit])`.
+
 A simple example is the following program, which allocates one qubit in the $\ket{0}$ state, then applies a Hadamard operation `H` to it and measures the result in the `PauliZ` basis.
 
 ```qsharp
 @EntryPoint()
 operation MeasureOneQubit() : Result {
-    // The following using block creates a fresh qubit and initializes it
-    // in the |0〉 state.
-    use qubit = Qubit();
-    // We apply a Hadamard operation H to the state, thereby preparing the
-    // state 1 / sqrt(2) (|0〉 + |1〉).
-    H(qubit);
+    // Allocate a qubit, by default it is in zero state      
+    use q = Qubit();  
+    // We apply a Hadamard operation H to the state
+    // It now has a 50% chance of being measured 0 or 1  
+    H(q);      
     // Now we measure the qubit in Z-basis.
     let result = M(qubit);
-    // As the qubit is now in an eigenstate of the measurement operator,
-    // we reset the qubit before releasing it.
+    // We reset the qubit before releasing it.
     if result == One { X(qubit); }
     // Finally, we return the result of the measurement.
     return result;
@@ -183,6 +177,7 @@ operation MeasureOneQubit() : Result {
 }
 ```
 
+For performing measurements beyond a single joint measurement, the [`Microsoft.Quantum.Measurement` namespace](xref:Microsoft.Quantum.Measurement) includes more specific operations. For example, the [`MultiM` operation](xref:Microsoft.Quantum.Measurement.MultiM) takes an array of qubits and returns an array of measurement results in the computational basis. 
 
 ## Next steps
 
