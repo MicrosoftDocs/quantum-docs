@@ -24,7 +24,7 @@ With the Quantum Development Kit you can build programs that run on quantum hard
 > [!Tip]
 > **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) (check out free Azure accounts [for students](https://azure.microsoft.com/free/students/)). With Azure you can create, deploy, and manage applications across multiple clouds, on-premises, and at the edge. You will get 200 USD Azure credit to use in other Azure services. 
 
-The Q# programs can run as standalone or be called from other programming environments, and can be written, run, and tested from the [online Jupyter notebooks](xref:microsoft.quantum.get-started.notebooks) available in your Azure Quantum workspace, and from your [local computer](xref:(xref:microsoft.quantum.install-qdk.overview.standalone)). As a programming language, Q# draws familiar elements from Python, C#, and F#, and supports a basic procedural model for writing programs with loops, if/then statements, and common data types. It also introduces new quantum-specific data structures and operations.
+The Q# programs can run as standalone or be called from other programming environments, and can be written, run, and tested from the [online Jupyter notebooks](xref:microsoft.quantum.get-started.notebooks) available in your Azure Quantum workspace, and from your [local computer](xref:microsoft.quantum.install-qdk.overview.standalone). As a programming language, Q# draws familiar elements from Python, C#, and F#, and supports a basic procedural model for writing programs with loops, if/then statements, and common data types. It also introduces new quantum-specific data structures and operations.
 
 As an additional feature, the QDK supports integration with [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) and [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq), so quantum developers that are already working in other development languages, can also run their programs on Azure Quantum.
 
@@ -108,7 +108,7 @@ Once you’ve written your program, the QDK offers a set of [quantum simulators]
 
 Before running on quantum hardware, you’ll need to figure out whether your program can run on existing hardware, and how many resources it will consume. You can use the [resource estimator](xref:microsoft.quantum.machines.overview.resources-estimator) to tell you how many qubits and quantum gates you need, and how long your program will take, and the [trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro) to do an advanced analysis of resources consumption and  debug classical code that is part of your quantum program.
 
-See the full list of [quantum simulators](xrefmicrosoft.quantum.machines.overview).
+See the full list of [quantum simulators](xref:microsoft.quantum.machines.overview).
 
 ### Submit jobs to the Azure Quantum service
 
