@@ -13,7 +13,7 @@ uid: microsoft.quantum.overview.q-sharp
 
 # What are the Q# programming language and the Quantum Development Kit?
 
-Q# is a Microsoft’s **open-source** programming language for developing and running quantum algorithms. It’s part of the Quantum Development Kit (QDK), a SDK which offers a set of tools that will assist you in the quantum software development process. The Quantum Development Kit provides:
+Q# is Microsoft’s **open-source** programming language for developing and running quantum algorithms. It’s part of the Quantum Development Kit (QDK), a SDK which offers a set of tools that will assist you in the quantum software development process. The Quantum Development Kit provides:
 - A tool set integrated with leading development environments
 - Open-source resources
 - [Quantum libraries](xref:microsoft.quantum.libraries.overview) that let you create complex quantum operations
