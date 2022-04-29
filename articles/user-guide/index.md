@@ -123,7 +123,7 @@ use q = Qubit();
 ```
 By default, every qubit you allocate with the `use` keyword starts in the zero state.
 
-## Quantum operations
+### Quantum operations
 
 Once allocated, a qubit can be passed to operations and functions, also referred to as [*callables*](xref:microsoft.quantum.qsharp.callabledeclarations). In some sense, this is all that a Q# program can do with a qubit. [Operations](xref:microsoft.quantum.qsharp.operationsandfunctions) are the basic building blocks of a Q# program. A Q# operation is a quantum subroutine. That is, it's a callable routine that contains quantum operations that modify the state of the qubit register.
 
