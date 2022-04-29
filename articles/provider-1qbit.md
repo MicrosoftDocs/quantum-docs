@@ -21,7 +21,7 @@ uid: microsoft.quantum.providers.optimization.1qbit
 ### Tabu Search Solver
 An iterative heuristic algorithm that uses local search techniques to solve a QUBO problem. It starts from a random solution and looks for an improved solution in the solution's neighborhood that includes all possible single flips. The algorithm stops when it reaches a stopping criterion, such as a specified number of consecutive iterations without improvement.
 
->[NOTE!]
+>[!NOTE]
 > If you are not using the *azure-quantum* Python package, parameter values are required to be of JSON string type. The types listed here are the types that the solvers expect within the string value. For example, `improvement_cutoff` is listed as type int, and is expected to be passed in the format:
 >
 >**improvement_cutoff: "5"**
@@ -44,7 +44,7 @@ An iterative heuristic algorithm that uses local search techniques to solve a QU
 ### PTICM Solver
 The parallel tempering with isoenergetic cluster moves (PTICM) solver is a Monte Carlo approach to solving QUBO problems. In this algorithm, multiple replicas of the original system, each with a different initial state, are simulated at different temperatures simultaneously. The replicas at neighboring temperatures are periodically swapped based on a Metropolis criterion. These swaps allow different replicas to do a random walk in the temperature space, thereby, efficiently overcoming energy barriers.
 
->[NOTE!]
+>[!NOTE]
 > If you are not using the *azure-quantum* Python package, parameter values are required to be of JSON string type. The types listed here are the types that the solvers expect within the string value. For example, `frac_icm_thermal_layers` is listed as type double, and is expected to be passed in the format:
 >
 >**frac_icm_thermal_layers: "0.5"**
@@ -80,7 +80,7 @@ The parallel tempering with isoenergetic cluster moves (PTICM) solver is a Monte
 
 The path-relinking algorithm is a heuristic algorithm that uses the tabu search as a subroutine to solve a QUBO problem. The algorithm starts from a set of elite solutions found by the tabu search. It then constructs a path between each pair of elite solutions, selects one of the solutions along the path, and repeats the tabu search. If the tabu search finds a distinct solution that is better than the current worst elite solution, the elite solutions set is updated with the new improved solution. This whole procedure is repeated until the algorithm meets a stopping condition.
 
->[NOTE!]
+>[!NOTE]
 > If not using the *azure-quantum* Python package, parameter values are required to be of JSON string type. The types listed here are the types that the solvers expect within the string value. For example, `greedy_path_relinking` is listed as type boolean, and is expected to be passed in the format:
 >
 >**greedy_path_relinking: "False"**
