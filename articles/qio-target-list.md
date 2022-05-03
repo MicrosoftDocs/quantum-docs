@@ -20,8 +20,8 @@ Azure Quantum offers various optimization targets to solve binary optimization p
 
 | Provider | Description |
 |---|---|
-|<img src="~/media/logo-1qbit.png" alt="logo of 1qbit" title="logo of 1qbit" width="200" height="200"/>|1QBit connects intractable industry problems to novel quantum-inspired optimization solutions that utilize the most advanced hardware. For more information, see the [1QBit provider](xref:microsoft.quantum.providers.optimization.1qbit) reference page.|
-|<img src="~/media/logo-microsoft.png" alt="logo of Microsoft" title="logo of Microsoft" width="200" height="200"/>| Microsoft QIO offers ground-breaking optimization algorithms inspired by decades of quantum research. For more information, see the [Microsoft QIO provider](xref:microsoft.quantum.optimization.providers.microsoft.qio) overview page. |
+|<img src="~/media/logo-1qbit2.png" alt="logo of 1qbit" title="logo of 1qbit" width="200" height="200"/>|1QBit connects intractable industry problems to novel quantum-inspired optimization solutions that utilize the most advanced hardware. For more information, see the [1QBit provider](xref:microsoft.quantum.providers.optimization.1qbit) reference page.|
+|<img src="~/media/logo-microsoft2.png" alt="logo of Microsoft" title="logo of Microsoft" width="200" height="200"/>| Microsoft QIO offers ground-breaking optimization algorithms inspired by decades of quantum research. For more information, see the [Microsoft QIO provider](xref:microsoft.quantum.optimization.providers.microsoft.qio) overview page. |
 
 Azure Quantum offers a broad range of solvers for optimization problems. However, it is not possible to determine which solver will perform best for a new optimization problem. You can explore the specifications of each target to develop your strategy, and in [Which optimization solver should I use](xref:microsoft.quantum.optimization.choose-solver) article you can find some guidelines to find a suitable solver by benchmarking.
 
