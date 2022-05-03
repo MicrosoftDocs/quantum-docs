@@ -91,7 +91,9 @@ The following diagram shows the stages through which a quantum program goes from
 
 If you want to start practicing and writing your Q# programs without installing additional software, you can use the [hosted Jupyter notebooks](xref:microsoft.quantum.get-started.notebooks) available in Azure portal in your Azure Quantum workspace. In the sample gallery you will find various notebook samples, you can select the sample you want to use and run it on cloud-based simulators or real quantum computers.
 
-If you prefer a local development environment, you can [create your Q# program](xref:microsoft.quantum.install-qdk.overview.standalone) using the QDK extensions for Visual Studio 2022, Visual Studio Code, or Jupyter notebooks with IQ#. 
+If you prefer a local development environment, you can [create your Q# program](xref:microsoft.quantum.install-qdk.overview.standalone) using the QDK extensions for Visual Studio 2022, Visual Studio Code, or Jupyter Notebooks with IQ# and then run them against quantum hardware or local simulators. 
+
+Whichever environment you prefer, you can follow the Q# tutorials and start writing quantum programs to explore quantum concepts such as [superposition](xref:microsoft.quantum.tutorial-qdk.random-number), [entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement), [Grover's quantum algorithm](xref:microsoft.quantum.tutorial-qdk.grovers), and other quantum phenomena.
 
 ### Try quantum operations and domain-specific libraries
 
