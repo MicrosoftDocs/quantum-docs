@@ -62,7 +62,7 @@ The representation used in Q# has the interesting implication that all of the ac
 
 ### Respect the laws of physics
 
-Quantum programs should be required to respect the laws of physics. For example, copying the state of a qubit or direct access to the qubit state are not possible in Q#. 
+Quantum programs should be required to respect the laws of physics. For example, copying the state of a qubit or directly accessing the qubit state are not possible in Q#. 
 
 Therefore, Q# has no ability to introspect into the state of a qubit or other properties of quantum mechanics directly, which guarantees that a Q# program can be physically executed on any quantum computer. Instead, a Q# program has the ability to call operations, such as [`Measure`](xref:Microsoft.Quantum.Intrinsic.Measure), to extract classical information from a qubit, that allows validation and state examination to facilitate debugging with a simulator.
 
