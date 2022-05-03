@@ -68,7 +68,7 @@ Therefore, Q# has no ability to introspect into the state of a qubit or other pr
 
 ### Hardware agnostic
 
-Q# is hardware agnostic, meaning that the Q# language provides the means to express and leverage powerful quantum computing concepts independent on how hardware evolves in the future. To be useable across a wide range of applications, Q# allows to build reusable components and layers of abstractions. To achieve performance with growing quantum hardware size, the Q# quantum programming language ensures the scalability of both applications and development effort. Even though the full complexity of such computations requires further hardware development, Q# programs can be targeted to run on various [quantum hardware backends](xref:microsoft.quantum.reference.qc-target-list) in Azure Quantum.
+Q# is hardware agnostic, meaning that it provides the means to express and leverage powerful quantum computing concepts independently of how hardware evolves in the future. To be useable across a wide range of applications, Q# allows you to build reusable components and layers of abstractions. To achieve performance with growing quantum hardware size, the Q# quantum programming language ensures the scalability of both applications and development effort. Even though the full complexity of such computations requires further hardware development, Q# programs can be targeted to run on various [quantum hardware backends](xref:microsoft.quantum.reference.qc-target-list) in Azure Quantum.
 
 ### Efficient execution
 
