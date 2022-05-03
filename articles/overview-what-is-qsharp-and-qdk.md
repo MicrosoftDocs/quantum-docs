@@ -128,7 +128,7 @@ Azure Quantum offers some of the most compelling and diverse quantum resources a
 
 ## How can I use the Quantum Development Kit?
 
-Everything you need to write and run Q# programs, including the Q# compiler, the Q# libraries, and the quantum simulators, can be done cloud-base in the Azure portal with the hosted Jupyter notebooks, or it can be installed and run from your local computer if you prefer to.
+Everything you need to write and run Q# programs, including the Q# compiler, the Q# libraries, and the quantum simulators, is pre-deployed in the hosted Jupyter Notebooks in the Azure portal. If you prefer to customize your own development environment, the QDK can also be installed and run from your local computer.
 
 The Quantum Development Kit includes extensions for [Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) and [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode), and integration for [Jupyter Notebooks with IQ#](xref:microsoft.quantum.install-qdk.overview.standalone). 
 
