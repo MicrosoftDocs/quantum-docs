@@ -23,7 +23,7 @@ Quantum hardware devices are still an emerging technology. These devices have so
 
 ## Coming soon to Azure Quantum
 
-Azure Quantum is a platform for innovation. The quantum hardware partners across Azure Quantum ecosystem keep growing, see and exlore the upcoming quantum hardware solutions.
+Azure Quantum is a platform for innovation. As the quantum hardware partners across Azure Quantum ecosystem keep growing, you can explore these upcoming quantum hardware solutions.
 
 | Provider | Description  |
 |---|---|
