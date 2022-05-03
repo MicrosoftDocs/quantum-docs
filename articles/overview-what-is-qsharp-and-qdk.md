@@ -26,7 +26,7 @@ With the Quantum Development Kit, you can build programs that run on quantum har
 
 Q# programs can run as standalone programs or be called from other programming environments. You can write, run, and test programs using the [online Jupyter notebooks](xref:microsoft.quantum.get-started.notebooks) available in your Azure Quantum workspace, and from your [local computer](xref:microsoft.quantum.install-qdk.overview.standalone). As a programming language, Q# draws familiar elements from Python, C#, and F#, and supports a basic procedural model for writing programs with loops, if/then statements, and common data types. It also introduces new quantum-specific data structures and operations.
 
-As an additional feature, the QDK supports integration with [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) and [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq), so quantum developers that are already working in other development languages, can also run their programs on Azure Quantum.
+As an additional feature, the QDK supports integration with [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) and [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq), so quantum developers who are already working in these development languages can also run their programs on Azure Quantum.
 
 > [!Tip]
 > Get started with the Q# language:
