@@ -30,7 +30,7 @@ GPU-accelerated idealized simulator supporting up to 29 qubits, using the same s
 - Q# Profile: `No Control Flow`
 
 ### Quantum computer
-IonQ QPU is a trapped ion quantum computer dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair.
+The IonQ QPU is a trapped ion quantum computer and is dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair.
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
