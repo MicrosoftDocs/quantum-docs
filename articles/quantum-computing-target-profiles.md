@@ -73,7 +73,6 @@ applications, with the constraint that you can only compare values of type `Resu
 corresponding conditional blocks may not contain `return` or `set` statements. This profile type supposes an improvement over No Control Flow profiles, but still is subject to
 some limitations.
 
-However, this statement .
 
 For example, the preceding `SetQubitState`operation can be used in a Basic Measurement Feedback target as long as you don't include any `return` or `set` statement within the `if` block, but the following operation can't:
 
