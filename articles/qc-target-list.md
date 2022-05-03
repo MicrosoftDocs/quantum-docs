@@ -19,7 +19,7 @@ Azure Quantum offers a variety of quantum solutions, such as different quantum h
 |<img src="~/media/logo-ionq2.png" alt="logo of IonQ" title="logo of IonQ" width="200" height="200"/>|IonQ trapped-ion gate-based quantum computers are universal and dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair. The implementation of quantum gate operations is done by manipulating Ytterbium ions with lasers pulses. IonQ provides a GPU-accelerated quantum simulator supporting up to 29 qubits, using the same set of gates IonQ provide on its quantum hardware. For more information, go to the [IonQ provider page](xref:microsoft.quantum.providers.ionq#quantum-simulator).|
 |<img src="~/media/logo-quantinuum.svg" alt="logo of Quantinuum" title="logo of Quantinuum" width="200" height="200"/>| Quantinuum trapped-ion quantum computer have 10 physical high-fidelity fully connected qubits, allowing qubit reuse. Quantum operations are laser based gates with low error rates, and it has the ability to perform mid-circuit measurements. It uses a QCCD architecture with linear trap and two parallel operation zones. Quantinuum provides a simulator tool which contains detailed, realistic noise models of the actual quantum hardware. The For more information, go to the [Quantinuum provider page](xref:microsoft.quantum.providers.quantinuum#api-validator). |
 
-
+Quantum hardware devices are still an emerging technology. These devices have some limitations and requirements for quantum programs that run on them. For more information, see the [target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles) to be aware of the restrictions. 
 
 ## Coming soon to Azure Quantum
 
