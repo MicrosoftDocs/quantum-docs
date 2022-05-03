@@ -95,7 +95,7 @@ If you prefer a local development environment, you can [create your Q# program](
 
 Whichever environment you prefer, you can follow the Q# tutorials and start writing quantum programs to explore quantum concepts such as [superposition](xref:microsoft.quantum.tutorial-qdk.random-number), [entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement), [Grover's quantum algorithm](xref:microsoft.quantum.tutorial-qdk.grovers), and other quantum phenomena.
 
-### Try quantum operations and domain-specific libraries
+### Explore domain-specific libraries
 
 You can follow the Q# tutorials and start writing quantum programs to explore quantum concepts such as [superposition](xref:microsoft.quantum.tutorial-qdk.random-number), [entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement), [Grover's quantum algorithm](xref:microsoft.quantum.tutorial-qdk.grovers), and other quantum phenomena. If you have leaned towards online development, in the sample gallery in your Azure Quantum workspace you will also find notebook samples to get started in the quantum software development.
 
