@@ -42,7 +42,7 @@ As an additional feature, the QDK supports integration with [Qiskit](xref:micros
 
 ## The quantum programming language Q\#
 
-Why the need of a quantum programming language? In short terms, because you want to write algorithms, not circuits.
+Why a quantum programming language? In short, because you want to write algorithms, not circuits.
 
 A quantum program can be seen as a particular set of classical subroutines which, when called, perform a computation by interacting with a quantum system; a program written in Q# does not directly model the quantum state, but rather describes how a classical control computer interacts with qubits. This allows you to be entirely agnostic about what a quantum state even *is* on each target machine, which might have different interpretations depending on the machine. You can write your code once and, with little to no change, run it against multiple targets of the same family, allowing you to focus your programming at the algorithm level.
 
