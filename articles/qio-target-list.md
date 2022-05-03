@@ -27,7 +27,7 @@ Azure Quantum offers a broad range of solvers for optimization problems. However
 
 ## Coming soon to Azure Quantum
 
-Azure Quantum is a platform for innovation. The hardware partners across Azure Quantum ecosystem keep growing, see the upcoming quantum-inspired hardware solutions.
+Azure Quantum is a platform for innovation. As the hardware partners across Azure Quantum ecosystem keep growing, you can explore these upcoming quantum-inspired hardware solutions.
 
 | Provider | Description  |
 |---|---|
