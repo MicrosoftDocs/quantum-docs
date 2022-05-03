@@ -21,14 +21,7 @@ IonQ’s quantum computers perform calculations by manipulating the hyperfine en
 
 ## Targets
 
-The IonQ provider makes the following targets available:
-
-- [IonQ provider](#ionq-provider)
-  - [Targets](#targets)
-    - [IonQ Quantum Simulator](#quantum-simulator)
-    - [IonQ Quantum Computer](#quantum-computer)
-
-## Quantum simulator
+### Quantum simulator
 GPU-accelerated idealized simulator supporting up to 29 qubits, using the same set of gates IonQ provide on its quantum hardware—a great place to preflight jobs before running them on an actual quantum computer.
 
 - Job type: `Simulation`
@@ -36,8 +29,8 @@ GPU-accelerated idealized simulator supporting up to 29 qubits, using the same s
 - Target ID: `ionq.simulator`
 - Q# Profile: `No Control Flow`
 
-## Quantum computer
-Trapped ion quantum computer. Dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair.
+### Quantum computer
+IonQ QPU is a trapped ion quantum computer dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair.
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
@@ -48,7 +41,7 @@ Trapped ion quantum computer. Dynamically reconfigurable in software to use up t
 |----------------|----------|----------|-------------|
 | `shots`   | int    | No | Number of experimental shots. Defaults to 500. |
 
-### System timing
+#### System timing
 
 | Measure | Average time duration (µs) |
 |---------|----------------------------|
@@ -60,7 +53,7 @@ Trapped ion quantum computer. Dynamically reconfigurable in software to use up t
 | Register reset | 25 | 
 | Coherence time / gate duration | 1667 | 
 
-### System fidelity
+#### System fidelity
 
 | Operation | Average fidelity |
 |-----------|------------------|
