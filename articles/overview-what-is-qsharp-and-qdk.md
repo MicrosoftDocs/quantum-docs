@@ -134,7 +134,7 @@ The Quantum Development Kit includes extensions for [Visual Studio 2022](https:/
 
 The Quantum Development Kit supports interoperability with [Python](xref:microsoft.quantum.install-qdk.overview.python) and other [.NET languages](xref:microsoft.quantum.install-qdk.overview.cs), as well as integration with [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) and [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq), so quantum developers that are already working in other development languages can also run their circuits on Azure Quantum.
 
-- Running a Q# code in a Jupyter notebook in the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) portal is the quickest way to get started.
+- Running a Q# program in a Jupyter Notebook in the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) portal is the quickest way to get started.
 
 - You can develop Q# programs as standalone applications in a [local development environment](xref:microsoft.quantum.install-qdk.overview.standalone). 
 
