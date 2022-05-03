@@ -74,7 +74,7 @@ corresponding conditional blocks may not contain `return` or `set` statements. T
 some limitations.
 
 
-For example, the preceding `SetQubitState`operation can be used in a Basic Measurement Feedback target as long as you don't include any `return` or `set` statement within the `if` block, but the following operation can't:
+For example, the preceding `SetQubitState`operation can be used in a Basic Measurement Feedback target as long as you don't include any `return` or `set` statement within the `if` block. For example, the following operation can't be used in a Basic Measurement Feedback target:
 
 ```qsharp
     operation SetQubitState(desired : Result, q : Qubit) : Result {
