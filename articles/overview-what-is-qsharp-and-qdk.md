@@ -113,7 +113,7 @@ See the full list of [quantum simulators](xref:microsoft.quantum.machines.overvi
 
 ### Submit jobs to the Azure Quantum service
 
-[Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) is the cloud quantum computing service of Azure, with a diverse set of quantum solutions and technologies. Azure Quantum ensures an open, flexible, and future-proofed path to quantum computing that allows you to run your program on quantum hardware. You can run your Qiskit, Cirq, and Q# algorithms on multiple quantum systems.
+[Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) is the cloud quantum computing service of Azure, with a diverse set of quantum solutions and technologies. Azure Quantum ensures an open, flexible, and future-proofed path to quantum computing that allows you to run your program on quantum hardware. You can run your Qiskit, Cirq, and Q# programs on multiple quantum systems.
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
