@@ -104,7 +104,7 @@ You will also find a full reference for all commands and features available thro
 1. You can use the job ID to track its status:
 
    ```azurecli
-   az quantum job show -j yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
+   az quantum job show -id yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
    ```
 
    ```output
@@ -121,7 +121,7 @@ You will also find a full reference for all commands and features available thro
    job output`:
 
    ```azurecli
-    az quantum job output -j yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
+    az quantum job output -id yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
    ```
 
    ```output
@@ -196,7 +196,7 @@ Once the job completes (that is, when it's in a **Successful** state), use the c
 job output` to view the results:
 
 ```azurecli
-az quantum job output -j yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
+az quantum job output -id yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
 ```
 
 ```output
