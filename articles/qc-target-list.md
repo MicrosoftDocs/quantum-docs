@@ -1,8 +1,8 @@
 ---
-author: geduardo
+author: SoniaLopezBravo
 description: This document provides a list of the available quantum computing providers on Azure Quantum.
-ms.date: 02/24/2022
-ms.author: mblouin
+ms.date: 04/21/2022
+ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
@@ -12,33 +12,24 @@ uid: microsoft.quantum.reference.qc-target-list
 
 # Quantum computing providers on Azure Quantum
 
-Azure Quantum also offers a variety of quantum solutions, such as
-different hardware devices and quantum simulators that you can use to run Q# quantum computing programs.
+Azure Quantum offers various quantum solutions, such as different quantum hardware devices and quantum simulators that you can use to run your quantum computing programs. This topic has the latest capabilities available through Azure Quantum.
 
-## Provider: IonQ
+| Provider | Description |
+|---|---|
+|<img src="~/media/logo-ionq2.png" alt="logo of IonQ" title="logo of IonQ" width="200" height="200"/>|IonQ's trapped-ion gate-based quantum computers are universal and dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair. The implementation of quantum gate operations is done by manipulating Ytterbium ions with laser pulses. IonQ provides a GPU-accelerated quantum simulator supporting up to 29 qubits, using the same set of gates IonQ provides on its quantum hardware. For more information, see the [IonQ provider page](xref:microsoft.quantum.providers.ionq).|
+|<img src="~/media/logo-quantinuum.svg" alt="logo of Quantinuum" title="logo of Quantinuum" width="200" height="200"/>| Quantinuum's trapped-ion quantum computers have 10 physical high-fidelity fully connected qubits, allowing qubit reuse. Quantum operations are laser-based gates with low error rates, and the devices have the ability to perform mid-circuit measurements. It uses a QCCD architecture with linear trap and two parallel operation zones. Quantinuum provides a simulator tool, which contains detailed, realistic noise models of the actual quantum hardware. For more information, see the [Quantinuum provider page](xref:microsoft.quantum.providers.quantinuum). |
 
-![alt_text=logo of IonQ-2](~/media/logo-ionq.png)
+Quantum hardware devices are still an emerging technology. These devices have some limitations and requirements for quantum programs that run on them. For more information, see the [target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles). 
 
-### IonQ Quantum Simulator
+## Coming soon to Azure Quantum
 
-GPU-accelerated idealized simulator supporting up to 29 qubits, using the same set of gates IonQ provide on its quantum hardware—a great place to preflight jobs before running them on an actual quantum computer. For more information, go to the [IonQ provider reference page](xref:microsoft.quantum.providers.ionq#quantum-simulator).
+Azure Quantum is a platform for innovation. As the quantum hardware partners across Azure Quantum ecosystem keep growing, you can explore these upcoming quantum hardware solutions.
 
-### IonQ Quantum Computer
+| Provider | Description  |
+|---|---|
+|<img src="~/media/logo-pasqal.png" alt="logo of Pasqal" title="logo of Pasqal" width="200" height="200"/>|Pasqal's neutral atom-based quantum processors operating at room temperature have long coherence times and impressive qubit connectivity. You can pre-register today for Azure Quantum’s [private preview](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxm1OO5DJVRBs-fh9Rmd-nRURVRKVUJDM05WV1hDRlU2OFFZUlhUN1Q4SCQlQCN0PWcu) of Pasqal.|
+|<img src="~/media/logo-rigetti.png" alt="logo of Rigetti" title="logo of Rigetti" width="200" height="200"/> | Rigetti's gate-based superconducting processors utilize Quantum Intermediate Representation (QIR) to enable low latency and parallel execution. You can pre-register today for Azure Quantum’s [private preview](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxm1OO5DJVRBs-fh9Rmd-nRURVRKVUJDM05WV1hDRlU2OFFZUlhUN1Q4SCQlQCN0PWcu) of Rigetti.|
+|<img src="~/media/logo-qci.png" alt="logo of Quantum Circuits" title="logo of Quantum Circuits" width="200" height="200"/>| Quantum Circuits’ full-stack superconducting circuits have real-time feedback that enables error-correcting, encoding-agnostic entangling gates. You can pre-register today for Azure Quantum’s [private preview](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxm1OO5DJVRBs-fh9Rmd-nRURVRKVUJDM05WV1hDRlU2OFFZUlhUN1Q4SCQlQCN0PWcu) of QCI. |
 
-Trapped ion quantum computer. Dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair. For more information, go to the [IonQ provider reference page](xref:microsoft.quantum.providers.ionq#quantum-computer).
 
-## Provider: Quantinuum
 
-![alt_text=logo of Quantinuum](~/media/logo-quantinuum.png)
-
-### API Validator
-
-Tool to verify proper syntax and compilation completion. Full stack is exercised with the exception of the actual quantum operations. Assuming no bugs, all zeros are returned in the proper data structure. For more information, go to the [Quantinuum provider reference page](xref:microsoft.quantum.providers.quantinuum#api-validator).
-
-### System Model H1 Emulator
-
-A simulator tool which contains detailed, realistic noise models of the actual System Model H1 hardware. The H1 Emulator noise model is derived from a detailed characterization of the H1 hardware, and is also representative of  H1 hardware performance. For more information, go to the [Quantinuum provider reference page](xref:microsoft.quantum.providers.quantinuum#system-model-h1-emulator-powered-by-honeywell).
-
-### System Model H1, Powered by Honeywell
-
-Trapped ion quantum computer with 10 physical fully connected qubits and laser based gates. It uses a QCCD architecture with linear trap and two parallel operation zones. For more information, go to the [Quantinuum provider reference page](xref:microsoft.quantum.providers.quantinuum#system-model-h1-powered-by-honeywell)
