@@ -12,8 +12,9 @@ uid: microsoft.quantum.target-profiles
 
 # Target profile types in Azure Quantum
 
-This article discusses the different type of target profile types available in the quantum computing providers in Azure Quantum. At this time, because of the early development stage of the field, these devices have some limitations and requirements for programs that run on them. The Quantum Development Kit and Azure Quantum will keep track of these requirements in the background so that you can run your Q# programs on Azure Quantum targets.
+This article discusses the different type of target profile types available in the quantum computing providers in Azure Quantum. At this time, because of the early development stage of the field, quantum devices have some limitations and requirements for programs that run on them. 
 
+## Quantum Processing Units (QPU): different profiles
 A Quantum Processing Unit (QPU) is a physical or simulated processor that contains a number of interconnected qubits that can be manipulated to compute
 quantum algorithms. It's the central component of a quantum computer or quantum simulator.
 
@@ -23,7 +24,7 @@ Quantum devices are still an emerging technology, and not all of them can run al
 - **No Control Flow**: This profile can run any Q# program that doesn't require the use of the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, values of type `Result` don't support equality comparison.
 - **Basic Measurement Feedback**: This profile has limited ability to use the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, you can only compare values of type `Result` as part of conditions within `if` statements in operations. The corresponding conditional blocks might not contain `return` or `set` statements.
 
-## Create and run applications for Full profile targets
+### Create and run applications for Full profile targets
 
 Full profile targets can run any Q# program, meaning you can
 write programs without functionality restrictions. Azure Quantum does not provide
@@ -34,7 +35,7 @@ If you need help setting up your environment to run Q# programs locally, see [Se
 
 You can also explore different [Q# code samples](/samples/browse/?languages=qsharp) to run locally with the QDK.
 
-## Create and run applications for No Control Flow profile targets
+### Create and run applications for No Control Flow profile targets
 
 No Control Flow profile targets can run a wide variety of Q# applications, with
 the constraint that they can't use results from qubit measurements to control
@@ -66,7 +67,7 @@ Presently, these No Control Flow targets are available for Azure Quantum:
   - [IonQ simulator](xref:microsoft.quantum.providers.ionq#quantum-simulator) (`ionq.simulator`)
   - [IonQ QPU](xref:microsoft.quantum.providers.ionq##quantum-computer) (`ionq.qpu`)
 
-## Create and run applications for Basic Measurement Feedback targets
+### Create and run applications for Basic Measurement Feedback targets
 
 Basic Measurement Feedback profile targets can run a wide variety of Q#
 applications, with the constraint that you can only compare values of type `Result` as part of conditions within `if` statements in operations. The
