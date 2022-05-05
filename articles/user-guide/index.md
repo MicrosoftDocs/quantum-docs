@@ -41,7 +41,7 @@ namespace HelloQuantum {
 
 
     @EntryPoint()
-    operation HelloQ() : Unit {
+    operation SayHelloQ() : Unit {
         Message("Hello quantum world!");
     }
 }
@@ -77,7 +77,7 @@ When you call a function or operation from a library, you specify the library's 
 namespace HelloQuantum {
 
     @EntryPoint()
-    operation HelloQ() : Unit {
+    operation SayHelloQ() : Unit {
         Microsoft.Quantum.Intrinsic.Message("Hello quantum world!");
     }
 }
@@ -93,7 +93,7 @@ namespace HelloQuantum {
     open Microsoft.Quantum.Intrinsic;
 
     @EntryPoint()
-    operation HelloQ() : Unit {
+    operation SayHelloQ() : Unit {
         Message("Hello quantum world!");
     }
 }
@@ -130,14 +130,14 @@ Once allocated, a qubit can be passed to operations and functions, also referred
 To define a Q# operation, you specify a name for the operation along with its inputs and its output. Here's a basic example:
 
 ```qsharp
-operation HelloQ() : Unit {
+operation SayHelloQ() : Unit {
     Message("Hello quantum world!");
 }
 ```
 
-Here, `HelloQ` is the name of the operation. It takes zero arguments as its input and returns type `Unit`, which means that the operation returns no information.
+Here, `SayHelloQ` is the name of the operation. It takes zero arguments as its input and returns type `Unit`, which means that the operation returns no information.
 
-The [Q# libraries](xref:microsoft.quantum.libraries.overview) also provide operations that you can use in your programs, for example the Hadamard, or `H` operation. The `H` operation puts a qubit into an *even* superposition. Once in superposition, a qubit has a 50% chance of being measured as zero or one.
+The [Q# libraries](xref:microsoft.quantum.libraries.overview) also provide operations that you can use in your programs, for example the Hadamard or `H` operation. Given a qubit in Z-basis, the `H` operation puts the qubit into an *even* superposition. Once in superposition, the qubit has a 50% chance of being measured as zero or one.
 
 Any direct actions on state of a qubit are all defined by *intrinsic* callables such as [`X`](xref:Microsoft.Quantum.Intrinsic.X) and [`H`](xref:Microsoft.Quantum.Intrinsic.H) - that is, callables whose implementations are not defined within Q# but are instead defined by the target machine. What these operations actually *do* is only made concrete by the target machine you choose to run the particular Q# program. For more information, see [Q# program implementation](xref:microsoft.quantum.qsharp.programstructure-overview).
 
