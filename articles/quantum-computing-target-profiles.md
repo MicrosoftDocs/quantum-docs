@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: This document provides an overview of targets and target profile types in Azure Quantum.
-ms.date: 01/27/2022
+ms.date: 05/03/2022
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: core
@@ -12,19 +12,21 @@ uid: microsoft.quantum.target-profiles
 
 # Target profile types in Azure Quantum
 
-This article discusses the different type of target profile types available in the quantum computing providers in Azure Quantum. 
+This article discusses the different type of target profile types available in the quantum computing providers in Azure Quantum. At this time, because of the early development stage of the field, quantum devices have some limitations and requirements for programs that run on them. 
 
 ## Quantum Processing Units (QPU): different profiles
-
-A quantum processing unit (QPU) is a physical or simulated processor that
-contains a number of interconnected qubits that can be manipulated to compute
+A Quantum Processing Unit (QPU) is a physical or simulated processor that contains a number of interconnected qubits that can be manipulated to compute
 quantum algorithms. It's the central component of a quantum computer or quantum simulator.
 
 Quantum devices are still an emerging technology, and not all of them can run all Q# code. As such, you need to keep some restrictions in mind when developing programs for different targets. Currently, Azure Quantum and the QDK manage three different profiles for QPUs:
 
+- **Full**: This profile can run any Q# program within the limits of memory for simulators or the number of qubits for physical quantum computers.
+- **No Control Flow**: This profile can run any Q# program that doesn't require the use of the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, values of type `Result` don't support equality comparison.
+- **Basic Measurement Feedback**: This profile has limited ability to use the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, you can only compare values of type `Result` as part of conditions within `if` statements in operations. The corresponding conditional blocks might not contain `return` or `set` statements.
+
 ### Create and run applications for Full profile targets
 
-**Full** profile targets can run any Q# program, meaning you can
+Full profile targets can run any Q# program, meaning you can
 write programs without functionality restrictions. Azure Quantum does not provide
 any target with this profile yet, but you can try any Q# program locally using the
 [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) or the [resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator) from the QDK. 
@@ -35,7 +37,7 @@ You can also explore different [Q# code samples](/samples/browse/?languages=qsha
 
 ### Create and run applications for No Control Flow profile targets
 
-**No Control Flow** profile targets can run a wide variety of Q# applications, with
+No Control Flow profile targets can run a wide variety of Q# applications, with
 the constraint that they can't use results from qubit measurements to control
 the program flow. More specifically, values of type `Result` do not support
 equality comparison.
@@ -62,18 +64,30 @@ to control the computation flow with an `if` statement.
 Presently, these No Control Flow targets are available for Azure Quantum:
 
 - **Provider:** IonQ
-  - IonQ simulator (`ionq.simulator`)
-  - IonQ QPU: (`ionq.qpu`)
+  - [IonQ simulator](xref:microsoft.quantum.providers.ionq#quantum-simulator) (`ionq.simulator`)
+  - [IonQ QPU](xref:microsoft.quantum.providers.ionq##quantum-computer) (`ionq.qpu`)
 
-## Create and run applications for Basic Measurement Feedback targets
+### Create and run applications for Basic Measurement Feedback targets
 
-**Basic Measurement Feedback** profile targets can run a wide variety of Q#
+Basic Measurement Feedback profile targets can run a wide variety of Q#
 applications, with the constraint that you can only compare values of type `Result` as part of conditions within `if` statements in operations. The
 corresponding conditional blocks may not contain `return` or `set` statements. This profile type supposes an improvement over No Control Flow profiles, but still is subject to
 some limitations.
 
+
+For example, the preceding `SetQubitState`operation can be used in a Basic Measurement Feedback target as long as you don't include any `return` or `set` statement within the `if` block. For example, the following operation can't be used in a Basic Measurement Feedback target:
+
+```qsharp
+    operation SetQubitState(desired : Result, q : Qubit) : Result {
+    if desired != M(q) {
+        X(q);
+        return M(q);
+    }
+}
+```
+
 Presently, these Basic Measurement Feedback targets are available for Azure Quantum:
 
 - **Provider:** Quantinuum
-  - Quantinuum System Model H1-1, Powered by Honeywell (`quantinuum.hqs-lt-s1`)
-  - Quantinuum System Model H1-2, Powered by Honeywell (`quantinuum.hqs-lt-s2`)
+  - [Quantinuum System Model H1-1](xref:microsoft.quantum.providers.quantinuum#system-model-h1-powered-by-honeywell) (`quantinuum.hqs-lt-s1`)
+  - [Quantinuum System Model H1-2](xref:microsoft.quantum.providers.quantinuum#system-model-h1-powered-by-honeywell) (`quantinuum.hqs-lt-s2`)
