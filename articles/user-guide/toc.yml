@@ -6,7 +6,5 @@
   href: testing-debugging.md
 - name: Q# language guide
   href: language/toc.yml
-- name: Simulators and resource estimators
-  href: machines/toc.yml
 - name: Q# libraries
   href: libraries/toc.yml
