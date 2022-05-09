@@ -12,7 +12,7 @@ uid: microsoft.quantum.tutorial-portal.entanglement-test
 zone_pivot_groups: ide-platforms
 ---
 
-# Tutorial: Explore entanglement with Q\# and Azure Quantum
+# Tutorial: Explore quantum entanglement with Q\#
 
 This tutorial shows you how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement. 
 
