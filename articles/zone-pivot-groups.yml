@@ -53,4 +53,4 @@ groups:
   - id: ide-azure-portal
     title: Azure Quantum portal
   - id: ide-local
-    title: Local
+    title: Local computer

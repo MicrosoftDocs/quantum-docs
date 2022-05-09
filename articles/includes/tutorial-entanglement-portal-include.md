@@ -258,5 +258,3 @@ Q1:Zero/One  Q2:Zero/One
 ```
 
 The statistics for the first qubit haven't changed (a 50/50 chance of a `Zero` or a `One` after measurement), but the measurement results for the second qubit are **always** the same as the measurement of the first qubit, regardless of what the qubit is initialized to. The `CNOT` operation has entangled the two qubits, so that whatever happens to one of them, happens to the other. 
-
-S
