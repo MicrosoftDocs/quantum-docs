@@ -2,7 +2,7 @@
 author: bradben
 description: A guide to the Q# programming language, the Q# libraries, and how to develop quantum programs.
 ms.author: brbenefield
-ms.date: 11/05/2021
+ms.date: 04/29/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -11,11 +11,12 @@ title: The Q# programming language user guide
 uid: microsoft.quantum.user-guide-qdk.overview
 ---
 
-# The Q# programming language user guide
+# The Q# quantum programming language user guide
 
-The Q# quantum programming language is part of Microsoft's [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) and provides rich IDE support and tools for program visualization and analysis.
+The [Q# quantum programming language](xref:microsoft.quantum.overview.q-sharp) is part of Microsoft's Quantum Development Kit, which provides rich IDE support and tools for program visualization and analysis. With Q# and the Quantum Development Kit (QDK) you can write your quantum programs and run them on real quantum hardware using [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview).
 
-Q# supports the development of future large-scale applications while supporting the user's first efforts in that direction on current quantum hardware.
+For more information, see [how to configure your quantum development environment](xref:microsoft.quantum.install-qdk.overview) and [how to submit Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs).
+
 
 The Q# user guide contains:
 
@@ -29,16 +30,6 @@ The Q# user guide contains:
 
 - [**The Q# library documentation**](xref:microsoft.quantum.libraries.overview): The Quantum Development Kit provides additional domain-specific functionality through *NuGet* packages that can be added to your Q# projects. The documentation includes operations, functions, user-defined types, examples, and concepts that make up the standard Q# library, as well as the quantum chemistry, quantum machine learning, and quantum numerics libraries.
 
-## Programming in Q#
-
-Q# is a stand-alone language offering a high level of abstraction. There is no notion of a quantum state or a circuit; instead, Q# implements programs in terms of statements and expressions, much like classical programming languages. Distinct quantum capabilities (such as support for functors and control-flow constructs) facilitate expressing, for example, phase estimation and quantum chemistry algorithms.
-
-Q# is hardware agnostic, meaning that the Q# language provides the means to express and leverage powerful quantum computing concepts independent on how hardware evolves in the future. To be useable across a wide range of applications, Q# allows to build reusable components and layers of abstractions. To achieve performance with growing quantum hardware size, the Q# quantum programming language ensures the scalability of both applications and development effort. Even though the full complexity of such computations requires further hardware development, Q# programs can be targeted to run on various [quantum hardware backends](xref:microsoft.quantum.reference.qc-target-list) in Azure Quantum.
-
-The Q# language  is focused on expressing information to optimize execution. The goal is to ensure an efficient execution of quantum components, independent of the context within which they are invoked. Q# allows the developer to communicate their knowledge about a computation so that the compiler can make an informed decision regarding how to translate it into instructions, leveraging information about the end-to-end application that is not available to the developer.
-
-The type system permits Q# programs to safely interleave and naturally represent the composition of classical and quantum computations. A Q# program may express arbitrary classical computations based on quantum measurements that execute while qubits remain live, meaning they are not released and maintain their state. 
-
 ## What is in a Q# program?
 
 Let's explore the general pieces that fit within a Q# program. Consider the following Q# program:
@@ -51,7 +42,7 @@ namespace HelloQuantum {
 
 
     @EntryPoint()
-    operation HelloQ() : Unit {
+    operation SayHelloQ() : Unit {
         Message("Hello quantum world!");
     }
 }
@@ -87,7 +78,7 @@ When you call a function or operation from a library, you specify the library's 
 namespace HelloQuantum {
 
     @EntryPoint()
-    operation HelloQ() : Unit {
+    operation SayHelloQ() : Unit {
         Microsoft.Quantum.Intrinsic.Message("Hello quantum world!");
     }
 }
@@ -103,7 +94,7 @@ namespace HelloQuantum {
     open Microsoft.Quantum.Intrinsic;
 
     @EntryPoint()
-    operation HelloQ() : Unit {
+    operation SayHelloQ() : Unit {
         Message("Hello quantum world!");
     }
 }
@@ -112,22 +103,6 @@ namespace HelloQuantum {
 Here, you simply specify `Message` and the compiler understands which namespace it belongs to.
 
 The Q# documentation provides complete reference documentation for each built-in library. For more information, see [the Q# libraries documentation](/quantum/user-guide/libraries/additional-libraries?tabs=tabid-csproj).
-
-### Operations
-
-[Operations](xref:microsoft.quantum.qsharp.operationsandfunctions) are the basic building blocks of a Q# program. A Q# operation is a quantum subroutine. That is, it's a callable routine that contains quantum operations that modify the state of the qubit register.
-
-To define a Q# operation, you specify a name for the operation along with its inputs and its output. Here's a basic example:
-
-```qsharp
-operation HelloQ() : Unit {
-    Message("Hello quantum world!");
-}
-```
-
-Here, `HelloQ` is the name of the operation. It takes zero arguments as its input and returns type `Unit`, which means that the operation returns no information.
-
-Q# libraries also provide operations that you can use in your programs. One operation you'll use later is the `H` operation. Think of the `H` operation as a way of putting a qubit into an *even* superposition. Once in superposition, a qubit has a 50% chance of being measured as zero or one.
 
 ### Types
 
@@ -149,16 +124,59 @@ use q = Qubit();
 ```
 By default, every qubit you allocate with the `use` keyword starts in the zero state.
 
+### Quantum operations
+
+Once allocated, a qubit can be passed to operations and functions, also referred to as [*callables*](xref:microsoft.quantum.qsharp.callabledeclarations). In some sense, this is all that a Q# program can do with a qubit. [Operations](xref:microsoft.quantum.qsharp.operationsandfunctions) are the basic building blocks of a Q# program. A Q# operation is a quantum subroutine. That is, it's a callable routine that contains quantum operations that modify the state of the qubit register.
+
+To define a Q# operation, you specify a name for the operation along with its inputs and its output. Here's a basic example:
+
+```qsharp
+operation SayHelloQ() : Unit {
+    Message("Hello quantum world!");
+}
+```
+
+Here, `SayHelloQ` is the name of the operation. It takes zero arguments as its input and returns type `Unit`, which means that the operation returns no information.
+
+The [Q# libraries](xref:microsoft.quantum.libraries.overview) also provide operations that you can use in your programs, for example the Hadamard or `H` operation. Given a qubit in Z-basis, the `H` operation puts the qubit into an *even* superposition. Once in superposition, the qubit has a 50% chance of being measured as zero or one.
+
+Any direct actions on state of a qubit are all defined by *intrinsic* callables such as [`X`](xref:Microsoft.Quantum.Intrinsic.X) and [`H`](xref:Microsoft.Quantum.Intrinsic.H) - that is, callables whose implementations are not defined within Q# but are instead defined by the target machine. What these operations actually *do* is only made concrete by the target machine you choose to run the particular Q# program. For more information, see [Q# program implementation](xref:microsoft.quantum.qsharp.programstructure-overview).
+
+For example, if running the program on the [full-state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), the simulator performs the corresponding mathematical operations to the simulated quantum system. But looking toward the future, when the target machine is a real quantum computer, calling such operations in Q# will direct the quantum computer to perform the corresponding **real operations** on the **real quantum hardware**. For example, in a trapped-ion quantum computer the quantum operations are realized by precisely timed laser pulses.
+
+A Q# program recombines these operations as defined by a target machine to create new, higher-level operations to express quantum computation.
+In this way, Q# makes it easy to express the logic underlying quantum and hybrid quantum–classical algorithms, while also being general with respect to the structure of a target machine or simulator.
+
 ### Measuring qubits
 
 There are many sorts of quantum measurements, but Q# focuses on projective measurements on single qubits, also known as [Pauli measurements](xref:microsoft.quantum.concepts.pauli). Upon measurement in a given basis (for example, the computational basis $\ket{0},\ket{1}$) the qubit state is projected onto whichever basis state was measured, hence destroying any superposition between the two.
 
 In Q#, Pauli measurements are done by applying [`Measure` operation](xref:Microsoft.Quantum.Intrinsic.Measure), which performs a joint measurement of one or more qubits in the specified Pauli bases. `Measure` operation returns a `Result` type.
 
-To implement a measurement in the computational basis $\ket{0},\ket{1}$, you can also use the [`M` operation](xref:Microsoft.Quantum.Intrinsic.M), wich performs a measurement of a single qubit in the Pauli Z basis. Therefore `M` operation is equivalent to applying `Measure([PauliZ], [qubit])`.
-
 > [!NOTE]
 > If the basis array and qubit array are different lengths, then the `Measure` operation will fail.
+
+To implement a measurement in the computational basis $\ket{0},\ket{1}$, you can also use the [`M` operation](xref:Microsoft.Quantum.Intrinsic.M), wich performs a measurement of a single qubit in the Pauli Z basis. Therefore `M` operation is equivalent to applying `Measure([PauliZ], [qubit])`.
+
+A simple example is the following program, which allocates one qubit in the $\ket{0}$ state, then applies a Hadamard operation `H` to it and measures the result in the `PauliZ` basis.
+
+```qsharp
+@EntryPoint()
+operation MeasureOneQubit() : Result {
+    // Allocate a qubit, by default it is in zero state      
+    use q = Qubit();  
+    // We apply a Hadamard operation H to the state
+    // It now has a 50% chance of being measured 0 or 1  
+    H(q);      
+    // Now we measure the qubit in Z-basis.
+    let result = M(qubit);
+    // We reset the qubit before releasing it.
+    if result == One { X(qubit); }
+    // Finally, we return the result of the measurement.
+    return result;
+    
+}
+```
 
 For performing measurements beyond a single joint measurement, the [`Microsoft.Quantum.Measurement` namespace](xref:Microsoft.Quantum.Measurement) includes more specific operations. For example, the [`MultiM` operation](xref:Microsoft.Quantum.Measurement.MultiM) takes an array of qubits and returns an array of measurement results in the computational basis. 
 

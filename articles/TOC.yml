@@ -49,6 +49,8 @@
       href: how-to-submit-jobs.md
     - name: Publish a Q# job as an Azure Function
       href: how-to-publish-qsharp-job-as-azurefunction.md
+  - name: Simulators and resource estimators
+    href: machines/toc.yml  
   - name: Q# and the Quantum Development Kit
     items:
     - name: What are Q# and the Quantum Development Kit

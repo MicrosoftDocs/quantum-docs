@@ -17,7 +17,7 @@ This article helps you understand the cost of jobs in Azure Quantum.
 
 ## Before you start: Understanding job pricing
 
-Azure Quantum makes solutions available from our partner companies, so the billing details can between providers and the pricing plans you select.
+Azure Quantum makes solutions available from our partner companies, so the billing details will depend on the provider and the pricing plan you select.
 
 General pricing guidance:
 
