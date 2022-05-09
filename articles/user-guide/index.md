@@ -13,7 +13,7 @@ uid: microsoft.quantum.user-guide-qdk.overview
 
 # The Q# quantum programming language user guide
 
-The Q# quantum programming language is part of Microsoft's [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) and provides rich IDE support and tools for program visualization and analysis.
+The [Q# quantum programming language](xref: microsoft.quantum.overview.q-sharp) is part of Microsoft's Quantum Development Kit, which provides rich IDE support and tools for program visualization and analysis. With Q# and the Quantum Development Kit (QDK) you can write your quantum programs and run them on real quantum hardware using [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview). For more information, see [how to configure your quantum development environment](xref:microsoft.quantum.install-qdk.overview) and [how to submit Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs).
 
 Q# supports the development of future large-scale applications while supporting the user's first efforts in that direction on current quantum hardware.
 
