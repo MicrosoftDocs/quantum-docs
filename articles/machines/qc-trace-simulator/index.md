@@ -1,8 +1,8 @@
 ---
-author: vadym-kl
+author: bradben
 description: Learn how to use the Microsoft quantum computer trace simulator to debug classical code and to estimate resource requirements of a Q# program.
-ms.author: vadym
-ms.date: 02/01/2021
+ms.author: brbenefield
+ms.date: 05/11/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
