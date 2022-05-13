@@ -1,17 +1,18 @@
 ---
 author: cgranade
-description: Q# API Design Principles
+description: API design principles for programming with Q#
 ms.author: chgranad
-ms.date: 02/01/2021
+ms.date: 05/13/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
+ms.custom: kr2b-contr-experiment
 no-loc: ['Q#', '$$v']
-title: Q# API Design Principles
+title: API design principles for Q# programming
 uid: microsoft.quantum.contributing-qdk.overview.api-design
 ---
 
-# Q# API Design Principles
+# API design principles for Q# programming
 
 ## Introduction
 
@@ -26,9 +27,9 @@ This article lists these principles, and gives examples to help guide how to app
 > On the other hand, if you're looking to learn how to contribute to the Quantum Development Kit more generally, we suggest starting with the [contribution guide](xref:microsoft.quantum.contributing-qdk.overview).
 > If you're looking for more general information about how we recommend formatting your Q# code, you may be interested in checking out the [style guide](xref:microsoft.quantum.contributing-qdk.overview.style).
 
-## General Principles
+## General principles
 
-**Key principle:** Expose APIs that places the focus on quantum applications.
+**Key principle:** Expose APIs that place the focus on quantum applications.
 
 - ✅ **DO** choose operation and function names that reflect the
     high-level structure of algorithms and applications.
@@ -95,7 +96,7 @@ This article lists these principles, and gives examples to help guide how to app
     deprecation period of at least six months for preview releases,
     or at least two years for supported releases.
 
-## Functions and Operations
+## Functions and operations
 
 **Key principle:** ensure that every function and operation has a single well-defined purpose within the API.
 
@@ -195,7 +196,7 @@ This article lists these principles, and gives examples to help guide how to app
       before all qubits in input tuples, but use good judgment and
       examine how your API is called in practice.
 
-## User-Defined Types
+## User-defined types
 
 **Key principle:** use user-defined types to help make APIs more expressive and convenient to use.
 
@@ -278,7 +279,7 @@ This article lists these principles, and gives examples to help guide how to app
       functions `GetReal : Complex -> Double` and
       `GetImag : Complex -> Double`.
 
-## Namespaces and Organization
+## Namespaces and organization
 
 **Key principle:** choose namespace names that are predictable and that clearly
     communicate the purpose of functions, operations, and user-defined
@@ -351,7 +352,7 @@ This article lists these principles, and gives examples to help guide how to app
 - ✅ **DO** place all unit tests into namespaces matching the
       namespace under test and ending in `.Tests`.
 
-## Naming Conventions and Vocabulary
+## Naming conventions and vocabulary
 
 **Key principle:** Choose names and terminology that are clear, accessible, and
     readable across a diverse range of audiences, including both quantum

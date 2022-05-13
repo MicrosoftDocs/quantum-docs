@@ -1,20 +1,21 @@
 ---
 author: cgranade
-description: Learn how to submit a GitHub pull request when you are ready to contribute code or documentation to the Microsoft Quantum Development Kit.
+description: Learn how to submit a GitHub pull request to contribute code or documentation to the Microsoft Quantum Development Kit.
 ms.author: chgranad
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
+ms.custom: kr2b-contr-experiment
 no-loc: ['Q#', '$$v']
-title: Opening pull requests
+title: Opening pull requests for the Quantum Development Kit
 uid: microsoft.quantum.contributing-qdk.overview.pulls
 ---
 
-# Opening Pull Requests #
+# Opening pull requests for Quantum Development Kit contributions
 
-All of the documentation for the Quantum Development Kit is managed using the Git version control system through the use of several repositories hosted on GitHub.
-Using Git and GitHub together makes it easy to collaborate widely on the Quantum Development Kit.
+All of the documentation for the Quantum Development Kit (QDK) is managed using the Git version control system through the use of several repositories hosted on GitHub.
+Using Git and GitHub together makes it easy to collaborate widely on the QDK.
 In particular, any Git repository can be cloned or forked to make a completely independent copy of that repository.
 This allows you to work on your contribution with the tools and at a pace that you prefer.
 
@@ -31,7 +32,7 @@ The page for each pull request includes details of all the changes that make you
 > - [Version Control with Git (EPQIS 2016)](https://nbviewer.jupyter.org/github/QuinnPhys/PythonWorkshop-science/blob/master/lecture-1-scicomp-tools-part1.ipynb#Version-Control-with-Git-(50-Minutes)): A Git tutorial oriented towards scientific computing.
 > - [Learn Git Branching](https://learngitbranching.js.org/): An interactive set of branching and rebasing puzzles to help learn new Git features.
 
-## What is a Pull Request? ##
+## What is a pull request? ##
 
 Having said the above, it's helpful to take a few moments to say what a pull request **is**.
 When working with Git, any changes are represented as _commits_ that describe how those changes are related to the state of the repository before those changes.
@@ -40,23 +41,23 @@ We'll often draw diagrams in which commits are drawn as circles with arrows from
 Suppose you have started a contribution in a _branch_ called `feature`.
 Then your fork of **Microsoft/Quantum** might look something like this:
 
-![A working branch in GitHub](~/media/git-workflow-step0.png)
+![Diagram of a working branch diverging from original repo.](./media/git-workflow-step0.png)
 
 If you make your changes in your local repository, you can _pull_ changes from another repository into yours to catch up to any changes that happened upstream.
 
-![Pulling and merging changes from an upstream repo](~/media/git-workflow-step1.png)
+![Diagram that shows paths for pulling and merging changes from an upstream repo.](./media/git-workflow-step1.png)
 
 Pull requests work the same way, but in reverse: when you open a pull request, you ask for the upstream repository to pull your contribution in.
 
-![Requesting to pull your changes back into the original repo](~/media/git-workflow-step2.png)
+![Diagram of changes pulled back into the original repo.](./media/git-workflow-step2.png)
 
 When you open a pull request to one of our repositories, GitHub will offer an opportunity for others in the community to see a summary of your changes, to comment on them, and to make suggestions for how to help make an even better contribution.
 
-![Screenshot of a pull request in GitHub](~/media/pull-request-header.png)
+![Screenshot of a pull request in GitHub.](./media/pull-request-header.png)
 
 Using this process helps us use GitHub functionality to improve contributions and to maintain a high-quality product for the quantum programming community.
 
-## How to Make a Pull Request ##
+## How to make a pull request ##
 
 There are two main ways to make a pull request.  
 For small changes that only affect a single file, the GitHub web interface can be used to make a pull request entirely online. Simply navigate to the file you want to edit and use the edit icon.  
@@ -88,4 +89,4 @@ Congratulations on using Git to help out the Quantum Development Kit community!
 To learn more about how to contribute code, please continue with the following guide.
 
 > [!div class="nextstepaction"]
-> [Learn how to contribute code](xref:microsoft.quantum.contributing-qdk.overview.code)
+> [Learn how to contribute code](contributing-code.md)

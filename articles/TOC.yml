@@ -290,19 +290,19 @@
     items:
     - name: Contributing to the QDK
       href: contributing-overview.md
-    - name: Reporting bugs
+    - name: Report bugs
       href: contributing-reporting-bugs.md
     - name: Improving documentation
       href: contributing-docs.md
     - name: Opening pull requests
       href: contributing-pull-requests.md
-    - name: Contributing code
+    - name: Contribute code
       href: contributing-code.md
-    - name: Contributing samples
+    - name: Contribute samples
       href: contributing-samples.md
-    - name: Contributing style guide
+    - name: Style guide for contributors
       href: contributing-style-guide.md
-    - name: API design principles
+    - name: API design principles for Q#
       href: contributing-api-design-principles.md
 - name: Release notes
   href: release-notes.md

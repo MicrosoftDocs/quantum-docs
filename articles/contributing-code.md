@@ -2,29 +2,30 @@
 author: cgranade
 description: Learn how to contribute sample and library code to the Microsoft Quantum Development Kit (QDK).
 ms.author: chgranad
-ms.date: 02/01/2021
+ms.date: 05/12/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
+ms.custom: kr2b-contr-experiment
 no-loc: ['Q#', '$$v']
-title: Contributing code to the Microsoft QDK
+title: Contribute code to the Quantum Development Kit
 uid: microsoft.quantum.contributing-qdk.overview.code
 ---
 
-# Contributing Code
+# Contribute code to the Quantum Development Kit
 
-In addition to reporting issues and improving documentation, contributing code to the Quantum Development Kit can be a very direct way to help your peers in the quantum programming community.
+In addition to reporting issues and improving documentation, contributing code to the Quantum Development Kit (QDK) can be a very direct way to help your peers in the quantum programming community.
 By contributing code, you can help to fix issues, provide new examples, make existing libraries easier to use, or even add entirely new features.
 
 In this guide, we'll detail a bit of what we look for when we review pull requests to help your contribution do the most good.
 
-## What We Look For
+## What we look for
 
-An ideal code contribution builds on the existing work in a Quantum Development Kit repository to fix issues, expand existing features, or to add new features that are within the scope of a repository.
-When we accept a code contribution, it becomes a part of the Quantum Development Kit itself, such that new features will be released, maintained, and developed in the same way as the rest of the Quantum Development Kit.
+An ideal code contribution builds on the existing work in a QDK repository to fix issues, expand existing features, or to add new features that are within the scope of a repository.
+When we accept a code contribution, it becomes a part of the QDK itself, such that new features will be released, maintained, and developed in the same way as the rest of the kit.
 Thus, it is helpful when functionality added by a contribution is well-tested and is documented.
 
-### Unit Tests
+### Unit tests
 
 The Q# functions, operations, and user-defined types that make up libraries such as the canon are automatically tested as a part of development on the [**Microsoft/QuantumLibraries**](https://github.com/Microsoft/QuantumLibraries/) repository.
 When a new pull request is opened, for instance, our [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/) configuration will check that the changes in the pull request do not break any existing functionality that the quantum programming community depends on.
@@ -78,18 +79,17 @@ Locally, unit tests can be run using the Visual Studio Test Explorer or the `dot
 
 ### Citations and References ### -->
 
-## Pull Requests
+## Pull requests
 
-When you are ready to contribute your work, please send a Pull Request via GitHub to the corresponding repository.
-The team will review and provide feedback. All comments need to be answered and resolved and all checks need to pass
-before the code is merged to the `main` branch.
+When you are ready to contribute your work, please send a [pull request](contributing-pull-requests.md) via GitHub to the corresponding repository.
+The team will review and provide feedback. All comments need to be answered and resolved and all checks need to pass before the code is merged to the `main` branch.
 
-## When We'll Reject a Pull Request
+## When we'll reject a pull request
 
 Sometimes, we'll reject the pull request for a contribution.
 If this happens to you, it doesn't mean that it's bad, as there's a number of reasons why we might not be able to accept a particular contribution.
-Perhaps most commonly, a contribution to the quantum programming community is a really good one, but the Quantum Development Kit repositories aren't the right place to develop it.
-In such cases, we strongly encourage you to make your own repository --- part of the strength of the Quantum Development Kit is that it's easy to make and distribute your own libraries using GitHub and NuGet.org, the same way that we distribute the canon and chemistry libraries today.
+Perhaps most commonly, a contribution to the quantum programming community is a really good one, but the QDK repositories aren't the right place to develop it.
+In such cases, we strongly encourage you to make your own repository --- part of the strength of the QDK is that it's easy to make and distribute your own libraries using GitHub and NuGet.org, the same way that we distribute the canon and chemistry libraries today.
 
 At other times, we may reject a good contribution simply because we aren't yet ready to maintain and develop it.
 It can be difficult to do everything, so we plan out what features we're best able to work on as a roadmap.
