@@ -2,20 +2,21 @@
 author: cgranade
 description: Learn how to contribute sample code to the Quantum Development Kit (QDK).
 ms.author: chgranad
-ms.date: 03/30/2022
+ms.date: 05/13/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
+ms.custom: kr2b-contr-experiment
 no-loc: ['Q#', '$$v']
-title: Contributing samples to the QDK
+title: Contribute samples to the Quantum Development Kit
 uid: microsoft.quantum.contributing-qdk.overview.samples
 ---
 
-# Contributing Samples to the Quantum Development Kit
+# Contribute samples to the Quantum Development Kit
 
-If you're interested in contributing code to the [samples repository](https://github.com/Microsoft/Quantum), thank you for making the quantum development community a better place!
+If you're interested in [contributing code](contributing-code.md) to the [samples repository](https://github.com/Microsoft/Quantum), thank you for making the quantum development community a better place!
 
-## The Quantum Development Kit Samples Repository
+## The QDK samples repository
 
 To help you prepare your contribution to help out as much as possible, it's helpful to take a quick look at how the samples repository is laid out:
 
@@ -39,7 +40,7 @@ microsoft/Quantum
 That is, the samples in the [microsoft/Quantum repository](https://github.com/microsoft/Quantum) are broken down by subject area into different folders such as `algorithms/`, `arithmetic/`, or `characterization/`.
 Within the folder for each subject area, each sample consists of a single folder that collects everything a user will need to explore and make use of that sample.
 
-## How Samples are Structured
+## How samples are structured
 
 Looking at the files that make up each folder, let's dive into the [`algorithms/chsh-game/`](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/chsh-game) sample.
 
@@ -53,7 +54,7 @@ Looking at the files that make up each folder, let's dive into the [`algorithms/
 
 Not all samples will have the exact same set of files (for example, some samples may be C#-only, others may not have a Python host, or some samples may require auxillary data files to work).
 
-## Anatomy of a Helpful README File
+## Anatomy of a helpful README file
 
 One especially important file, though, is the `README.md` file, as that's what users need to get started with your sample!
 
@@ -109,11 +110,11 @@ With all that in place, you can tell users how to run your sample:
 
 ```markdown
 
-    ## Running the Sample
+    ## Running the sample
 
     This sample can be run in a number of different ways, depending on your preferred environment.
 
-    ### Python in Visual Studio Code or the Command Line
+    ### Python in Visual Studio Code or the command line
 
     At a terminal, run the following command:
 
@@ -121,7 +122,7 @@ With all that in place, you can tell users how to run your sample:
     python host.py
     ```
 
-    ### C# in Visual Studio Code or the Command Line
+    ### C# in Visual Studio Code or the command line
 
     At a terminal, run the following command:
 
