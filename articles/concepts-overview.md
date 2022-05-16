@@ -32,11 +32,6 @@ A quantum computer isn't a supercomputer that can do everything faster or that c
 
 ## Use Azure Quantum and the Quantum Development Kit to do quantum computing
 
-Designing a quantum program to harness interference may sound like a daunting challenge, and while it is, many techniques and tools, including the Quantum Development Kit (QDK), have been introduced to make quantum programming and algorithm development more accessible. There are a handful of basic strategies that can be used to manipulate quantum interference in a way useful for computing, while at the same time not causing the solution to be lost in a tangle of quantum possibilities. Quantum programming is a distinct art from classical programming requiring very different tools to understand and express quantum algorithmic thinking. Indeed, without general tools to aid a quantum developer in tackling the art of quantum programming, quantum algorithmic development is not so easy.
-
-The [Quantum Development Kit](xref:microsoft.quantum.overview.q-sharp) empowers a growing community with tools to unlock the quantum revolution for their tasks, problems, and solutions. The high-level quantum programming language, Q#, was designed to address the challenges of quantum information processing; it is integrated in a software stack that enables a quantum algorithm to be compiled down to the primitive operations of a quantum computer.  
-
-Before approaching the programming language, it's helpful to review the basic principles on which quantum computing is based. Check out some important quantum computing concepts, such as [the qubit](xref:microsoft.quantum.concepts.qubit), [Pauli measurements](xref:microsoft.quantum.concepts.pauli), or [linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra). If a deeper study of quantum computing history and principles is desired, we refer you to the [reference section](xref:microsoft.quantum.more-information) containing more information.
 
 Quantum computing is evolving quickly. [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) is an open, flexible, and future-proofed cloud ecosystem for quantum computing, aimed at empowering you to deliver impact with your quantum applications, exploration, and research. Azure Quantum provides a diverse set of quantum computing solutions and technologies.
 
@@ -48,21 +43,12 @@ Quantum computing is evolving quickly. [Azure Quantum](xref:microsoft.quantum.az
 > [!Tip]
 > **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) (check out free Azure accounts [for students](https://azure.microsoft.com/free/students/)). With Azure you can create, deploy, and manage applications across multiple clouds, on-premises, and at the edge. You will get 200 USD Azure credit to use in other Azure services. 
 
-## The process of quantum computing
+Designing a quantum program to harness interference may sound like a daunting challenge, and while it is, many techniques and tools, including the Quantum Development Kit (QDK), have been introduced to make quantum programming and algorithm development more accessible. There are a handful of basic strategies that can be used to manipulate quantum interference in a way useful for computing, while at the same time not causing the solution to be lost in a tangle of quantum possibilities. Quantum programming is a distinct art from classical programming requiring very different tools to understand and express quantum algorithmic thinking. Indeed, without general tools to aid a quantum developer in tackling the art of quantum programming, quantum algorithmic development is not so easy.
 
-Performing computations on a quantum computer or quantum simulator follows a basic process:
+The [Quantum Development Kit](xref:microsoft.quantum.overview.q-sharp) empowers a growing community with tools to unlock the quantum revolution for their tasks, problems, and solutions. The high-level quantum programming language, Q#, was designed to address the challenges of quantum information processing; it is integrated in a software stack that enables a quantum algorithm to be compiled down to the primitive operations of a quantum computer.  
 
-- Access the qubits
-- Initialize the qubits to the desired state
-- Perform operations to transform the states of the qubits
-- Measure the new states of the qubits
+Before approaching the programming language, it's helpful to review the basic principles on which quantum computing is based. Check out some important quantum computing concepts, such as [the qubit](xref:microsoft.quantum.concepts.qubit), [Pauli measurements](xref:microsoft.quantum.concepts.pauli), or [linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra). If a deeper study of quantum computing history and principles is desired, we refer you to the [reference section](xref:microsoft.quantum.more-information) containing more information.
 
-Initializing and transforming qubits is done using quantum operations (also known as quantum gates). Quantum operations are similar to logic operations in classical computing, such as AND, OR, NOT, and XOR. An operation can be as basic as flipping a qubit's state from 1 to 0 or entangling a pair of qubits, to using multiple operations in series to affect the probability of a superposed qubit collapsing one way or the other.
-
-> [!NOTE] 
-> The [Q# libraries](xref:microsoft.quantum.libraries.overview) provide built-in operations that define complex combinations of lower-level quantum operations. You can use the library operations to transform qubits and to create more complex user-defined operations.  
-
-Measuring the result of the computation tells us an answer, but for some quantum algorithms, not necessarily the correct answer. Because the result of some quantum algorithms is based on the probability that was configured by the quantum operations, these computations are run multiple times to get a probability distribution and refine the accuracy of the results.  Assurance that an operation returned a correct answer is known as quantum verification and is a significant challenge in quantum computing.
 
 ## Next Steps
 
