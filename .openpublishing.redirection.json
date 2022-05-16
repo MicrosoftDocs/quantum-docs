@@ -186,7 +186,7 @@
 			"redirect_document_id": true
 		},
 		{
-			"source_path": "articles/user-guide/machines/sparce-simulator.md",
+			"source_path": "articles/user-guide/machines/sparse-simulator.md",
 			"redirect_url": "/azure/quantum/machines/sparse-simulator",
 			"redirect_document_id": true
 		},
