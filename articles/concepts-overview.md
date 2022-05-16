@@ -34,16 +34,19 @@ A quantum computer isn't a supercomputer that can do everything faster or that c
 
 Designing a quantum program to harness interference may sound like a daunting challenge, and while it is, many techniques and tools, including the Quantum Development Kit (QDK), have been introduced to make quantum programming and algorithm development more accessible. There are a handful of basic strategies that can be used to manipulate quantum interference in a way useful for computing, while at the same time not causing the solution to be lost in a tangle of quantum possibilities. Quantum programming is a distinct art from classical programming requiring very different tools to understand and express quantum algorithmic thinking. Indeed, without general tools to aid a quantum developer in tackling the art of quantum programming, quantum algorithmic development is not so easy.
 
-The Quantum Development Kit empowers a growing community with tools to unlock the quantum revolution for their tasks, problems, and solutions. The high-level quantum programming language, Q#, was designed to address the challenges of quantum information processing; it is integrated in a software stack that enables a quantum algorithm to be compiled down to the primitive operations of a quantum computer.  
+The [Quantum Development Kit](xref:microsoft.quantum.overview.q-sharp) empowers a growing community with tools to unlock the quantum revolution for their tasks, problems, and solutions. The high-level quantum programming language, Q#, was designed to address the challenges of quantum information processing; it is integrated in a software stack that enables a quantum algorithm to be compiled down to the primitive operations of a quantum computer.  
 
-Before approaching the programming language, it's helpful to review the basic principles on which quantum computing is based. We will take the fundamental rules of quantum computing to be axioms, rather than detailing their foundations in quantum mechanics. Additionally, we will assume basic familiarity with linear algebra (vectors, matrices, and so on). If a deeper study of quantum computing history and principles is desired, we refer you to the [reference section](xref:microsoft.quantum.more-information) containing more information.
+Before approaching the programming language, it's helpful to review the basic principles on which quantum computing is based. Check out some important quantum computing concepts, such as [the qubit](xref:microsoft.quantum.concepts.qubit), [Pauli measurements](xref:microsoft.quantum.concepts.pauli), or [linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra). If a deeper study of quantum computing history and principles is desired, we refer you to the [reference section](xref:microsoft.quantum.more-information) containing more information.
 
+Quantum computing is evolving quickly. [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) is an open, flexible, and future-proofed cloud ecosystem for quantum computing, aimed at empowering you to deliver impact with your quantum applications, exploration, and research. Azure Quantum provides a diverse set of quantum computing solutions and technologies.
 
+- Free Azure Quantum Credits to power your development.
+- Free hosted Jupyter notebooks to get started within minutes.
+- Support for the most popular quantum SDKs: Q#, Qiskit, and Cirq.
+- Write once and run on multiple hardware architectures.
 
-> [!NOTE]
-> First-time users automatically get free Azure Quantum Credits for use with each participating quantum hardware provider (500 USD each) when creating a workspace. If you need more credits, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
-
-
+> [!Tip]
+> **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) (check out free Azure accounts [for students](https://azure.microsoft.com/free/students/)). With Azure you can create, deploy, and manage applications across multiple clouds, on-premises, and at the edge. You will get 200 USD Azure credit to use in other Azure services. 
 
 ## The process of quantum computing
 
@@ -60,4 +63,19 @@ Initializing and transforming qubits is done using quantum operations (also know
 > The [Q# libraries](xref:microsoft.quantum.libraries.overview) provide built-in operations that define complex combinations of lower-level quantum operations. You can use the library operations to transform qubits and to create more complex user-defined operations.  
 
 Measuring the result of the computation tells us an answer, but for some quantum algorithms, not necessarily the correct answer. Because the result of some quantum algorithms is based on the probability that was configured by the quantum operations, these computations are run multiple times to get a probability distribution and refine the accuracy of the results.  Assurance that an operation returned a correct answer is known as quantum verification and is a significant challenge in quantum computing.
+
+## Next Steps
+
+- [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra)
+- [Vectors and matrices](xref:microsoft.quantum.concepts.vectors)
+- [Advanced matrix concets](xref:microsoft.quantum.concepts.matrix-advanced)
+- [The qubit](xref:microsoft.quantum.concepts.qubit)
+- [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)
+- [Dirac notation](xref:microsoft.quantum.concepts.dirac)
+- [Pauli measurements](xref:microsoft.quantum.concepts.pauli)
+- [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
+- [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
+- [Open quantum systems](xref:microsoft.quantum.concepts.opensystems)
+- [Grover's algorithm](xref:microsoft.quantum.concepts.grovers)
+
 
