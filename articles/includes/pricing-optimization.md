@@ -30,7 +30,7 @@ Learn and develop with SQBM+ (not for operational use).
 
 |Pricing | $0.00/month + Azure infrastructure costs  |
 |---|---|
-|Plus| 0-0.1 hour: \$0/hour<br />0.1-1 hour: \$200/hour |
+|Plus| 0-0.1 hour: \\$0/hour<br />0.1-1 hour: \\$200/hour |
 |Quota| Up to 1 concurrent job<br />1 hour of compute per month |
 |Targets available | toshiba.sbm.ising |
 
@@ -40,7 +40,7 @@ Deploy world-class SQBM+ solutions.
 
 |Pricing | $0.00/month + Azure infrastructure costs  |
 |---|---|
-|Plus| 0-5 hours: \$1800/hour<br />5-25 hours: \$1600/hour<br />25-50 hours: \$1400/hour<br />50-2,500 hours: \$1000/hour |
+|Plus| 0-5 hours: \\$1800/hour<br />5-25 hours: \\$1600/hour<br />25-50 hours: \\$1400/hour<br />50-2,500 hours: \\$1000/hour |
 |Quota| Up to 3 concurrent jobs<br />2,500 hours of compute per month |
 |Targets available | toshiba.sbm.ising |
 
