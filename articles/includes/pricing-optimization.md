@@ -17,8 +17,8 @@ This plan provides access to all 1QBit quantum inspired optimization solvers wit
 |Pricing | $7,500.00/month + Azure infrastructure costs  |
 |---|---|
 
-You can find more information about 1QBit's offering on the [1QBit Provider Page](xref:microsoft.quantum.providers.optimization.1qbit).
 ***
+You can find more information about 1QBit's offering on the [1QBit Provider Page](xref:microsoft.quantum.providers.optimization.1qbit).
 
 ## Toshiba SQBM+
 
@@ -44,8 +44,8 @@ Deploy world-class SQBM+ solutions.
 |Quota| Up to 3 concurrent jobs<br />2,500 hours of compute per month |
 |Targets available | toshiba.sbm.ising |
 
-You can find more information about Toshiba's offering on the [Toshiba SQBM+ Provider Page](xref:microsoft.quantum.providers.optimization.toshiba).
 ***
+You can find more information about Toshiba's offering on the [Toshiba SQBM+ Provider Page](xref:microsoft.quantum.providers.optimization.toshiba).
 
 ## Microsoft
 
