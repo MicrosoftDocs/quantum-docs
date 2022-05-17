@@ -169,7 +169,7 @@ For optimization solutions, these are the available providers you can choose fro
 
 - [1QBit](https://1qbit.com/): Iterative heuristic algorithms that use search techniques to solve QUBO problems.
 - [Microsoft QIO](xref:microsoft.quantum.optimization.providers.microsoft.qio): A set of multiple targets that rephrase the optimization problem inspired by decades of quantum research.
-- [Toshiba SBM](https://www.toshiba-sol.co.jp/en/pro/sbm/index.htm): Toshiba Simulated Bifurcation Machine is a GPU-powered ISING machine that solves large-scale combinatorial optimization problems at high speed.
+- [Toshiba SQBM+](https://www.toshiba-sol.co.jp/en/pro/sbm/index.htm): Toshiba Simulated Quantum Bifurcation Machine is a GPU-powered ISING machine that solves large-scale combinatorial optimization problems at high speed.
 
 For more information on the specifications of each provider, see the full [Optimization target list](xref:microsoft.quantum.reference.qio-target-list).
 
