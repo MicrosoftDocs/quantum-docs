@@ -10,14 +10,14 @@ title: Toshiba SQBM+ provider
 uid: microsoft.quantum.providers.optimization.toshiba
 ---
 
-# Toshiba SQBM+ Cloud on Azure Quantum
+# Toshiba SQBM+ provider
 
 - Publisher: [Toshiba Digital Solutions Corporation](https://www.global.toshiba/jp/company/digitalsolution.html)
 - Provider ID: `toshiba`
 
 ## Targets
 
-The SQBM+ Cloud on Azure Quantum (SQBM+) provider makes the following target available:
+The Toshiba SQBM+ Cloud on Azure Quantum (SQBM+) provider makes the following target available:
 
 ### Ising Solver
 
@@ -30,17 +30,16 @@ This solver enables users to quickly obtain nearly optimal solutions for large c
 
 > [!NOTE] The solver uses shared resources to execute the jobs issued by all users. You may experience the delay until the job is executed.
 
-### Overview of SQBM+ computation structure
+## Overview of SQBM+ computation structure
 
 A computation request to SQBM+ computation service consists of three computation units: step, run, and loop in ascending order:
 
 ![fig1](./media/toshiba-computation-structure.png "fig1")
 
-The smallest unit is a "step."
+The smallest unit is a "step." A group of steps constitutes a "run"; a group of runs constitutes a "loop"; a group of loops constitutes a "computation request."
 
-A group of steps constitutes a "run"; a group of runs constitutes a "loop"; a group of loops constitutes a "computation request."
-
-The number of steps and loops can be specified for each computation request using the computation parameters to be described in the [input parameters](#input-parameters) section, but the number of runs is fixed at 160.
+> [!IMPORTANT]
+> The number of steps and loops can be specified for each computation request using the computation parameters to be described in the [input parameters](#input-parameters) section, but the number of runs is **fixed** at 160.
 
 SQBM+ computation service executes a group of runs in parallel, given the initial values of combinatorial variables using random numbers for each run, while each run produces a nearly optimal solution.
 
@@ -88,15 +87,11 @@ SQBM+ computation service is completed when any of the following conditions is s
 | `dt`           | Number | The value of the parameter `dt` chosen by the parameter auto tuning. This property is included in the output only if `auto` is "true."                                                                                                                                                                                                                                                                                                                                                        |
 | `algo`         | String | The value of the parameter `algo` chosen by the parameter auto tuning. This property is included in the output only if `auto` is "true."                                                                                                                                                                                                                                                                                                                                                      |
 | `total_time`   | Number | The calculation time in seconds including search time. This property is included in the output only if `auto` is "true."                                                                                                                                                                                                                                                                                                                                                                      |
+  
 ## Pricing
 
-For the most up-to-date pricing information, please refer to the Providers tab of your workspace on the [Azure portal](https://portal.azure.com).
-
+To see Toshiba SQBM+ billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
+  
 ## Limits & Quotas
 
 Up to date information on the various limits are available via the Providers tab of your workspace on the [Azure portal](https://portal.azure.com).
-
-## References
-
-- Goto, H., Tatsumura, K., & Dixon, A. R. (2019) Combinatorial optimization by simulating adiabatic bifurcations in nonlinear Hamiltonian systems, Science Advances, 5(4), DOI:10.1126/sciadv.aav2372
-- Goto, H., Endo, K., Suzuki, M., Sakai, Y., Kanao T., Hamakawa Y., Hidaka, R., Yamasaki, M., & Tatsumura, K. (2021) High-performance combinatorial optimization based on classical mechanics, Science Advances, 7(6), DOI:10.1126/sciadv.abe7953
