@@ -37,7 +37,7 @@ For more information about the simulated bifurcation machine (SBM), please see [
 
 A computation request to SQBM+ computation service consists of three computation units: step, run, and loop in ascending order:
 
-:::image type="content" source="media/toshiba-computation-structure.png" alt-text="Diagram of a computation request showing steps, inside runs, inside loops, inside the request.":::
+![Diagram of a computation request showing steps, inside runs, inside loops, inside the request.](media/toshiba-computation-structure.png)
 
 The smallest unit is a step. A group of steps constitutes a run. A group of runs constitutes a loop. A group of loops constitutes a computation request.
 
