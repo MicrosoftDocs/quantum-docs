@@ -2,7 +2,7 @@
 author: anraman
 description: This document provides the technical details of the Toshiba SQBM+ provider
 ms.author: anraman
-ms.date: 05/16/2022
+ms.date: 05/17/2022
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -30,19 +30,25 @@ For more information about the simulated bifurcation machine (SBM), please see [
 - Target ID: `toshiba.sbm.ising`
 - Python Solver class name: `SimulatedBifurcationMachine`
 
-> [!NOTE] 
+> [!NOTE]
 > The solver uses shared resources to execute the jobs issued by all users. You may experience the delay until the job is executed.
 
 ## Overview of SQBM+ computation structure
 
 A computation request to SQBM+ computation service consists of three computation units: step, run, and loop in ascending order:
 
-![fig1](./media/toshiba-computation-structure.png "fig1")
+:::image type="content" source="media/toshiba-computation-structure.png" alt-text="Diagram of a computation request showing steps, inside runs, inside loops, inside the request.":::
 
-The smallest unit is a "step." A group of steps constitutes a "run"; a group of runs constitutes a "loop"; a group of loops constitutes a "computation request."
+The smallest unit is a step. A group of steps constitutes a run. A group of runs constitutes a loop. A group of loops constitutes a computation request.
 
 > [!IMPORTANT]
-> The number of steps and loops can be specified for each computation request using the computation parameters to be described in the [input parameters](#input-parameters) section, but the number of runs is **fixed** at 160.
+> The number of steps and loops can be specified for each computation request using the computation parameters.
+>
+> - The *steps* computation parameter specifies the number of steps in a run.
+> - The number of *runs* in a loop is predefined for each solver and is fixed at 160.
+> - The *loops* computation parameter specifies the number of loops in a request.
+>
+> For more information, see the [Input Parameters](#input-parameters) section.
 
 SQBM+ computation service executes a group of runs in parallel, given the initial values of combinatorial variables using random numbers for each run, while each run produces a nearly optimal solution.
 
@@ -69,23 +75,23 @@ The auto tuning functionality will help you find a better setting. For detailed 
 
 ### Maximum problem size
 
-* Maximum number of spins: 100,000
-* Maximum number of non-zero value elements in the problem matrix: 100,000,000
+- Maximum number of spins: 100,000
+- Maximum number of non-zero value elements in the problem matrix: 100,000,000
 
 ### Completion conditions
 
 SQBM+ computation service is completed when any of the following conditions is satisfied.
 
-* The number of loops reaches `loops` (when `loops` is not 0).
-* The computation time reaches `timeout`.
-* The value reaches `target` or less (when `target` is specified).
+- The number of loops reaches `loops` (when `loops` is not 0).
+- The computation time reaches `timeout`.
+- The value reaches `target` or less (when `target` is specified).
 
 ### Output parameters
 
 | Parameter Name | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | -------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `runs`         | Number | The total number of runs executed, not including interrupted runs.                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `message`      | String | Messages about completion conditions and others.<br> One of the three message strings (finished, timeout, and reached) is used; their specifications are as follows:<ul><li>“finished”: Completed the computation of the specified number of steps and loops.</li><li>“timeout”: Stopped the computation because the computation time has reached its timeout.</li><li>“reached”: Stopped the computation because the value has reached the value specified in the parameter target.</li><ul> |
+| `message`      | String | Messages about completion conditions and others.<br> One of the three message strings (finished, timeout, and reached) is used; their specifications are as follows:<ul><li>"finished": Completed the computation of the specified number of steps and loops.</li><li>"timeout": Stopped the computation because the computation time has reached its timeout.</li><li>"reached": Stopped the computation because the value has reached the value specified in the parameter target.</li><ul> |
 | `time`         | Number | The calculation time in seconds not including pre-processing and post-processing. If `auto` is "true", the value is the calculation time only when the best solution is obtained.                                                                                                                                                                                                                                                                                                             |
 | `dt`           | Number | The value of the parameter `dt` chosen by the parameter auto tuning. This property is included in the output only if `auto` is "true."                                                                                                                                                                                                                                                                                                                                                        |
 | `algo`         | String | The value of the parameter `algo` chosen by the parameter auto tuning. This property is included in the output only if `auto` is "true."                                                                                                                                                                                                                                                                                                                                                      |
