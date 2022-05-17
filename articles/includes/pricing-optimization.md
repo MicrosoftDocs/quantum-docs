@@ -44,7 +44,7 @@ Deploy world-class SQBM+ solutions.
 |Quota| Up to 3 concurrent jobs<br />2,500 hours of compute per month |
 |Plus| 0-5 hours: £1352.01112/hour<br />5-25 hours: £1201.78766/hour<br />25-50 hours: £1051.5642/hour<br />50-2,500 hours: £751.11729/hour |
 
-You can find more information about 1QBit's offering on the [1QBit Provider Page](xref:microsoft.quantum.providers.optimization.1qbit).
+You can find more information about Toshiba's offering on the [Toshiba SQBM+ Provider Page](xref:microsoft.quantum.providers.optimization.toshiba).
 ***
 
 ## Microsoft
