@@ -170,6 +170,12 @@
           href: provider-1qbit.md
         - name: 1QBit support policy
           href: provider-support-1qbit.md
+      - name: Toshiba SQBM+
+        items:
+        - name: Toshiba SQBM+ provider & targets
+          href: provider-toshiba.md
+        - name: Toshiba SQBM+ support policy
+          href: provider-support-toshiba.md
     - name: Samples for using Azure Quantum optimization solvers >>
       href: https://github.com/microsoft/qio-samples
   - name: Python SDK
