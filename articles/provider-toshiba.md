@@ -21,14 +21,15 @@ The Toshiba SQBM+ Cloud on Azure Quantum (SQBM+) provider makes the following ta
 
 ### Ising Solver
 
-This solver enables users to quickly obtain nearly optimal solutions for large combinatorial optimization problems. It is developed based on the theory described in [these papers](#references).
+This solver enables users to quickly obtain nearly optimal solutions for large-scale combinatorial optimization problems at high speed. It is based on an [Ising model](xref:microsoft.quantum.optimization.concepts.ising-model) machine which can solve combinatorial optimization problems by simulating adiabatic bifurcations in nonlinear Hamiltonian systems. For more information about the simulated bifurcation machine (SBM), please see [Goto, Tatsumura and Dixon (Science Advances, 5(4), DOI:10.1126/sciadv.aav2372)](https://pubmed.ncbi.nlm.nih.gov/31016238/).
 
 - Job type: `Quantum-Inspired Optimization Problem`
 - Data Format: `microsoft.qio.v2`
 - Target ID: `toshiba.sbm.ising`
 - Python Solver class name: `SimulatedBifurcationMachine`
 
-> [!NOTE] The solver uses shared resources to execute the jobs issued by all users. You may experience the delay until the job is executed.
+> [!NOTE] 
+> The solver uses shared resources to execute the jobs issued by all users. You may experience the delay until the job is executed.
 
 ## Overview of SQBM+ computation structure
 
