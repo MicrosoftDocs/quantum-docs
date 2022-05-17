@@ -37,7 +37,7 @@ Quantum computing is evolving quickly. [Azure Quantum](xref:microsoft.quantum.az
 
 - Free Azure Quantum Credits to power your development.
 - Free hosted Jupyter notebooks to get started within minutes.
-- Support for the most popular quantum SDKs: Q#, Qiskit, and Cirq.
+- Support for the most popular quantum languages and SDKs: Q#, Qiskit, and Cirq.
 - Write once and run on multiple hardware architectures.
 
 > [!Tip]
