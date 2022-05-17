@@ -22,7 +22,7 @@ You can find more information about 1QBit's offering on the [1QBit Provider Page
 
 ## Toshiba SQBM+
 
-1QBit offers two plans: a Pay-as-you-go model based on the runtime of your optimization problem, and a fixed monthly plan.
+Toshiba SQBM+ offers two plans: Learn & Develop model and Performace at Scale model, both based on the runtime of your optimization problem.
 
 ### [Learn & Develop](#tab/tabid-learndevelop)
 
