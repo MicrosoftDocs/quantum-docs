@@ -36,7 +36,7 @@ A quantum computer isn't a supercomputer that can do everything faster or that c
 Quantum computing is evolving quickly. [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) is an open, flexible, and future-proofed cloud ecosystem for quantum computing that empowers you to deliver impact with your quantum applications, exploration, and research. Azure Quantum provides a diverse set of quantum computing solutions and technologies.
 
 - Free Azure Quantum Credits to power your development.
-- Free hosted Jupyter notebooks to get started within minutes.
+- Free hosted Jupyter notebooks to get started in minutes.
 - Support for the most popular quantum languages and SDKs: Q#, Qiskit, and Cirq.
 - Write once and run on multiple hardware architectures.
 
