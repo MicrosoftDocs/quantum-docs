@@ -139,7 +139,7 @@ Quantum simulators are software programs that run on classical computers and mak
 
 The Quantum Development Kit (QDK) includes different classes of quantum simulators representing different ways of simulating the same quantum algorithm, such as a [sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator) for simulating large systems, a [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulating quantum algorithms under the presence of noise, and a [resource estimator](xref:microsoft.quantum.machines.overview.resources-estimator). For more information, see [quantum simulators](xref:microsoft.quantum.machines.overview).
 
-If you have an Azure account, in the sample gallery of your Azure Quantum workspace you will find two Jupyter notebook samples that use quantum simulators. See [how to get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
+If you have an Azure account, in the sample gallery of your Azure Quantum workspace you will find several Jupyter Notebook samples that use quantum simulators. See [how to get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
 
 ## Next Steps
