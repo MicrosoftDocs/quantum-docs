@@ -106,7 +106,7 @@ If you want to learn more, see the tutorial [exploring quantum entanglement with
 
 A quantum computer is a machine that combines the power of classical and quantum computing. The current quantum computers correspond to a hybrid model: a classical computer that controls a quantum processor. 
 
-The development of quantum computers is still in the infancy of their development. The quantum hardware and their maintenance are expensive, and most systems are located in universities and research labs. Where classical computers use familiar silicon-based chips, quantum computers use quantum systems such as atoms, ions, photons, or electrons. The technology is advancing, though, and limited public cloud access to quantum systems is available. 
+The development of quantum computers is still in its infancy. Quantum hardware is expensive and most systems are located in universities and research labs. Where classical computers use familiar silicon-based chips, quantum computers use quantum systems such as atoms, ions, photons, or electrons. The technology is advancing, though, and limited public cloud access to quantum systems is available. 
 
 Azure Quantum allows you to create quantum algorithms for multiple platforms at once while preserving flexibility to tune the same algorithms for specific systems. You can pick from many programming languages such as Qiskit, Cirq, and Q# and run your algorithms on multiple quantum systems. On Azure Quantum, it’s easy to simultaneously explore today’s quantum systems and be ready for the scaled quantum systems of the future.
 
