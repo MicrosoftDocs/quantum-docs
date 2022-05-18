@@ -31,7 +31,7 @@ Learn how to create an [Azure Quantum workspace](xref:microsoft.quantum.how-to.w
 
 A quantum computer isn't a supercomputer that can do everything faster. One of the goals of quantum computing research is to study which problems can be solved by a quantum computer faster than a classical computer and how large the speedup can be.
 
-Quantum computers do exceptionally well in problems that require calculation of many possible different combinations. These type of problems can be found across many areas, such as quantum simulation, cryptography, quantum machine learning, and search problems.
+Quantum computers do exceptionally well with problems that require calculating a large number of possible combinations. These types of problems can be found in many areas, such as quantum simulation, cryptography, quantum machine learning, and search problems.
 
 ### Quantum simulation
 
