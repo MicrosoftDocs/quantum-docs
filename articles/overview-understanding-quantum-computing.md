@@ -119,7 +119,7 @@ A quantum computer has three primary parts:
 - A method for performing quantum operations (also known as quantum gates) on the qubits and measuring them
 - A classical computer to run a program and send instructions 
 
-Qubits are fragile and highly sensitive to environmental interferences. For some methods of qubit storage, the unit that houses the qubits is kept at a temperature just above absolute zero to maximize their coherence. Other types of qubit housing use a vacuum chamber to help minimize vibrations and stabilize the qubits.  
+Qubits are fragile and highly sensitive to environmental interference. For some methods of qubit storage, the unit that houses the qubits is kept at a temperature just above absolute zero to maximize their coherence. Other types of qubit housing use a vacuum chamber to help minimize vibrations and stabilize the qubits.  
 Operations can be performed using a variety of methods including microwaves, laser, and voltage, depending on the type of qubit.
 
 Quantum computers face a multitude of challenges to operate correctly. Error correction in quantum computers is a significant issue, and scaling up (adding more qubits) increases the error rate. Because of these limitations, a quantum PC for your desktop is far in the future, but a commercially-viable lab-based quantum computer is closer.
