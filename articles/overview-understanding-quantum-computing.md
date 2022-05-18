@@ -13,7 +13,7 @@ uid: microsoft.quantum.overview.understanding
 
 # Understanding quantum computing
 
-Quantum computing holds the promise to solve some of our planet's biggest challenges - in the areas of environment, agriculture, health, energy, climate, materials science, and others we haven't encountered yet. For some of these problems, classical computing is increasingly challenged as the size of the system grows. When designed to scale, quantum systems will have capabilities that exceed our most powerful supercomputers. As the global community of quantum researchers, scientists, engineers, and business leaders continue  to collaborate to advance the quantum ecosystem, we expect to see quantum impact accelerate across every industry.
+Quantum computing holds the promise to solve some of our planet's biggest challenges - in the areas of environment, agriculture, health, energy, climate, materials science, and others we haven't encountered yet. For some of these problems, classical computing is increasingly challenged as the size of the system grows. When designed to scale, quantum systems will presumably have some capabilities that exceed our most powerful supercomputers. As the global community of quantum researchers, scientists, engineers, and business leaders continue  to collaborate to advance the quantum ecosystem, we expect to see quantum impact accelerate across every industry.
 
 Just as bits are the fundamental units of information in classical computing, [qubits](xref:microsoft.quantum.concepts.qubit) (quantum bits) are the fundamental units of information in quantum computing. While a bit, or binary digit, can have a value either 0 or 1, a qubit can have a value that is either 0, 1 or a quantum superposition of 0 and 1.
 
@@ -37,7 +37,7 @@ Quantum computers do exceptionally well in problems that require calculation of 
 
 Quantum mechanics is the underlying "operating system" of our universe. It describes how the fundamental building blocks of nature behave. Nature's behaviors, such as chemical reactions, biological reactions, and material formations, often involve many-body quantum interactions. For simulating intrinsically quantum mechanical systems, such as molecules, quantum computing is promising, because qubits can be used to represent the natural states in question. Examples of quantum systems that we can model include photosynthesis, superconductivity, and complex molecular formations.
 
-The Quantum Development Kit (QDK) comes with the [quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview) to simulate electronic structure problems and quantum dynamics on a quantum computer.
+The Quantum Development Kit (QDK) comes with the [quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview) to simulate electronic structure problems and quantum dynamics on a quantum computer. An example of such simulations is the [simple molecular energy estimation of the ground state of a molecule](https://docs.microsoft.com/samples/microsoft/quantum/simple-molecular-energy-estimation-with-the-azure-quantum-service/). This and more QDK and Azure Quantum samples can be found in the [code samples](https://docs.microsoft.com/samples/browse/?expanded=azure&products=azure-quantum%2Cqdk&languages=qsharp).
 
 ### Quantum speedups
 
@@ -47,7 +47,7 @@ Shor's algorithm running on a quantum computer could break classical cryptograph
 
 Like Shor's algorithm for factoring, the hidden shift problem is a natural source of problems for which a quantum computer has an exponential advantage over the best known classical algorithms. This may eventually help in solving deconvolution problems and enable us to efficiently find patterns in complex data sets. It turns out that a quantum computer can in principle compute convolutions in a super-fast way, which in turn is based on the quantum computer's ability to compute Fourier transforms in a super-fast way. In the sample gallery of your Azure Quantum workspace you will find a [Hidden Shifts Jupyter notebook sample](xref:microsoft.quantum.get-started.notebooks) (an Azure account is required). 
 
-[Grover's algorithm](xref:microsoft.quantum.concepts.grovers) speed up the solution to unstructured data searches, running the search in fewer steps than any classical algorithm could. Indeed, any problem that allows you to check whether a given value $x$ is a valid solution (a "yes or no problem") can be formulated in terms of the search problem. The following are some examples:
+[Grover's algorithm](xref:microsoft.quantum.concepts.grovers) speeds up the solution to unstructured data searches, running the search in fewer steps than any classical algorithm could. Indeed, any problem that allows you to check whether a given value $x$ is a valid solution (a "yes or no problem") can be formulated in terms of the search problem. The following are some examples:
 
 - Boolean satisfiability problem: Is the set of Boolean values $x$ an interpretation (an assignment of values to variables) that satisfies the given Boolean formula?
 - Traveling salesman problem: Does $x$ describe the shortest possible loop that connects all cities?
@@ -55,6 +55,8 @@ Like Shor's algorithm for factoring, the hidden shift problem is a natural sourc
 - Integer factorization problem: Is the fixed number $N$ divisible by the number $x$?
 
 For a practical implementation of Grover's algorithm to solve mathematical problems you can check the [Grover's Search Jupyter notebook](xref:microsoft.quantum.get-started.notebooks) in the sample gallery of your Azure Quantum workspace (an Azure account is required), or see this [tutorial to implement Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers).
+
+For more quantum algorithm samples, see the [code samples](https://docs.microsoft.com/samples/browse/?expanded=azure&products=azure-quantum%2Cqdk&languages=qsharp).
 
 ### Quantum machine learning
 
@@ -131,9 +133,11 @@ For more information, see the full [quantum computing target list](xref:microsof
 
 ### Azure Quantum simulators
 
+For the moment, the use of real quantum hardware is limited due to resources and budget. Quantum simulators serve to the purpose of running quantum algorithms, making it easy to test and debug an algorithm and then run it on real hardware with confidence that the result will match the expectations.
+
 Quantum simulators are software programs that run on classical computers and make it possible to run and test quantum programs in an environment that predicts how qubits react to different operations, making it easy to test and debug an algorithm and then run it on real hardware with confidence that the result will match the expectations. 
 
-The Microsoft’s Quantum Development Kit (QDK) includes different classes of quantum simulators representing different ways of simulating the same quantum algorithm, such as a [sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator) for simulating large systems, a [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulating quantum algorithms under the presence of noise, and a [resource estimator](xref:microsoft.quantum.machines.overview.resources-estimator). For more information, see [quantum simulators](xref:microsoft.quantum.machines.overview).
+The Quantum Development Kit (QDK) includes different classes of quantum simulators representing different ways of simulating the same quantum algorithm, such as a [sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator) for simulating large systems, a [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulating quantum algorithms under the presence of noise, and a [resource estimator](xref:microsoft.quantum.machines.overview.resources-estimator). For more information, see [quantum simulators](xref:microsoft.quantum.machines.overview).
 
 If you have an Azure account, in the sample gallery of your Azure Quantum workspace you will find two Jupyter notebook samples that use quantum simulators. See [how to get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
