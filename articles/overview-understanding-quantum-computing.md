@@ -116,7 +116,7 @@ Azure Quantum allows you to create quantum algorithms for multiple platforms at 
 
 A quantum computer has three primary parts: 
 - A device that houses the qubits 
-- A method for performing quantum operations (also known as quantum gates) to the qubits and measuring them
+- A method for performing quantum operations (also known as quantum gates) on the qubits and measuring them
 - A classical computer to run a program and send instructions 
 
 Qubits are fragile and highly sensitive to environmental interferences. For some methods of qubit storage, the unit that houses the qubits is kept at a temperature just above absolute zero to maximize their coherence. Other types of qubit housing use a vacuum chamber to help minimize vibrations and stabilize the qubits.  
