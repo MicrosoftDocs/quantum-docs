@@ -2,6 +2,13 @@
   tocHref: /
   topicHref: /
   items:
-  - name: Microsoft Quantum
-    tocHref: /quantum/
-    topicHref: /quantum/
+  - name: Azure
+    tocHref: /azure/
+    topicHref: azure/index
+    items:
+    - name: Azure Quantum
+      tocHref: /azure/quantum/
+      topicHref: /quantum/index
+    - name: Azure Quantum
+      tocHref: /azure/architecture/
+      topicHref: /quantum/index
