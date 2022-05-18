@@ -124,7 +124,7 @@ Operations can be performed using a variety of methods including microwaves, las
 
 Quantum computers face a multitude of challenges to operate correctly. Error correction in quantum computers is a significant issue, and scaling up (adding more qubits) increases the error rate. Because of these limitations, a quantum PC for your desktop is far in the future, but a commercially-viable lab-based quantum computer is closer.
 
-Azure Quantum is partnering with quantum hardware companies to provide cloud access to quantum hardware. With [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) platform and the QDK, you can explore and run quantum programs on different types of quantum hardware. These are the currently available quantum targets:
+Microsoft is partnering with quantum hardware companies to provide cloud access to quantum hardware. With the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) platform and the QDK, you can explore and run quantum programs on different types of quantum hardware. These are the currently available quantum targets:
 
 - [Quantinuum](xref:microsoft.quantum.providers.quantinuum): **Trapped-ion** system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurements.
 - [IonQ](xref:microsoft.quantum.providers.ionq): Dynamically reconfigurable **trapped-ion** quantum computer for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
