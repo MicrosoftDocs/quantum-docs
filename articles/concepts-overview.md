@@ -27,7 +27,7 @@ The foundational core of quantum computing is to store information in quantum st
 
 An early example of programming interference to solve a problem thought to be hard on our conventional computers was done by [Peter Shor](https://en.wikipedia.org/wiki/Peter_Shor) in 1994 for a problem known as factoring.  Solving factoring brings with it the ability to break many of our public key cryptosystems underlying the security of e-commerce today, including RSA and Elliptic Curve Cryptography.  Since that time, fast and efficient quantum computer algorithms have been developed for many of our hard classical tasks: simulating physical systems in chemistry, physics, and materials science, searching an unordered database, solving systems of linear equations, and machine learning.
 
-A quantum computer isn't a supercomputer that can do everything faster or that can solve any problem. The problems a quantum computer can solve more efficiently than a classical computer are called BQP (bounded-error quantum polynomial), meaning that they are solvable by a quantum computer in polynomial time. Examples of BQP problems is the factoring problem or the search problem. 
+A quantum computer isn't a supercomputer that can do everything faster or that can solve any problem. The problems that a quantum computer can solve more efficiently than a classical computer are called BQP (bounded-error quantum polynomials), meaning that they are solvable by a quantum computer in polynomial time. Examples of BQP problems include the factoring problem and the search problem. 
 
 
 ## Use Azure Quantum and the Quantum Development Kit to do quantum computing
