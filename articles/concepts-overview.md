@@ -33,7 +33,7 @@ A quantum computer isn't a supercomputer that can do everything faster or that c
 ## Use Azure Quantum and the Quantum Development Kit to do quantum computing
 
 
-Quantum computing is evolving quickly. [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) is an open, flexible, and future-proofed cloud ecosystem for quantum computing, aimed at empowering you to deliver impact with your quantum applications, exploration, and research. Azure Quantum provides a diverse set of quantum computing solutions and technologies.
+Quantum computing is evolving quickly. [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) is an open, flexible, and future-proofed cloud ecosystem for quantum computing that empowers you to deliver impact with your quantum applications, exploration, and research. Azure Quantum provides a diverse set of quantum computing solutions and technologies.
 
 - Free Azure Quantum Credits to power your development.
 - Free hosted Jupyter notebooks to get started within minutes.
