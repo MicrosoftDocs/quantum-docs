@@ -21,7 +21,7 @@ For more information about the beginnings and motivation of quantum computing, s
 
 [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) is an open ecosystem to build quantum computing solutions on a diverse selection of today’s quantum hardware, and it offers flexibility to use your preferred development tools with support for Cirq, Qiskit, and Q#. You can use the familiar and trusted Azure platform to learn how to develop quantum algorithms and how to program and run them on real hardware from multiple providers. 
 
-Learn how to create and [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace) and start submitting your quantum programs on real quantum hardware. First-time users automatically get free Azure Quantum Credits for use with each participating quantum hardware provider (500 USD each) when creating your workspace. If you need more credits, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
+Learn how to create an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace) and start submitting your quantum programs on real quantum hardware. First-time users automatically get free Azure Quantum Credits for use with each participating quantum hardware provider (500 USD each) when creating your workspace. If you need more credits, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
 
 > [!Tip]
 > **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) (check out free Azure accounts [for students](https://azure.microsoft.com/free/students/)). 
