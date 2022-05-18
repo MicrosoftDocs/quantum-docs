@@ -54,7 +54,7 @@ Like Shor's algorithm for factoring, the hidden shift problem is a natural sourc
 - Database search problem: Does the database table contain a record $x$?
 - Integer factorization problem: Is the fixed number $N$ divisible by the number $x$?
 
-For a practical implementation of Grover's algorithm to solve mathematical problems you can check the [Grover's Search Jupyter notebook](xref:microsoft.quantum.get-started.notebooks) in the sample gallery of your Azure Quantum workspace (an Azure account is required), or see this [tutorial to implement Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers).
+For a practical implementation of Grover's algorithm to solve mathematical problems take a look at the [Grover's Search Jupyter notebook](xref:microsoft.quantum.get-started.notebooks) in the sample gallery of your Azure Quantum workspace (an Azure account is required), or see this [tutorial to implement Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers).
 
 For more quantum algorithm samples, see the [code samples](https://docs.microsoft.com/samples/browse/?expanded=azure&products=azure-quantum%2Cqdk&languages=qsharp).
 
