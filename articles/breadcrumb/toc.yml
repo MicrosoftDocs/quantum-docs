@@ -4,7 +4,7 @@
   items:
   - name: Azure
     tocHref: /azure/
-    topicHref: azure/index
+    topicHref: "https://docs.microsoft.com/azure"
     items:
     - name: Azure Quantum
       tocHref: /azure/quantum/
