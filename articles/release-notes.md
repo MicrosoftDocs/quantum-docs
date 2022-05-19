@@ -41,19 +41,19 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 demonstrating the use of the sparse simulator.
 - Fixed GitHub issue [microsoft/QuantumLibraries#367](https://github.com/microsoft/QuantumLibraries/issues/367) to change how variants of operations are counted in [AllowAtMostNCallsCA](/qsharp/api/qsharp/microsoft.quantum.diagnostics.allowatmostncallsca).
 - Fixed GitHub issue [microsoft/QuantumLibraries#546](https://github.com/microsoft/QuantumLibraries/issues/546) where the use of `Default` isn't advised and an alternative is proposed.
-- Fixed GitHub issue [microsoft/QuantumLibraries#560](https://github.com/microsoft/QuantumLibraries/issues/560) where the [MeasureFxP](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.arithmetic.measurefxp) operation returned a wrong value when the measurement value corresponds to the smallest representable fixed point.
+- Fixed GitHub issue [microsoft/QuantumLibraries#560](https://github.com/microsoft/QuantumLibraries/issues/560) where the [MeasureFxP](/qsharp/api/qsharp/microsoft.quantum.arithmetic.measurefxp) operation returned a wrong value when the measurement value corresponds to the smallest representable fixed point.
 - Released Azure CLI quantum extension version 0.15.0:
   - Fixed GitHub issue [azure/azure-cli-extensions#4697](https://github.com/azure/azure-cli-extensions/issues/4697), which allows setting a polling interval when waiting for an Azure Quantum job to complete.
 
 ### Azure Quantum service update
 
-- Added a portal [notebook](https://docs.microsoft.com/azure/quantum/how-to-run-notebooks-workspace) for the [large simulation sample](https://github.com/microsoft/Quantum/blob/main/samples/getting-started/simulation/LargeSimulation.ipynb).
+- Added a portal [notebook](/azure/quantum/how-to-run-notebooks-workspace) for the [large simulation sample](https://github.com/microsoft/Quantum/blob/main/samples/getting-started/simulation/LargeSimulation.ipynb).
 
 ## 2022-03-30
 
 ### QDK version 0.24.201332
 
-- Added the [SparseSimulator](https://docs.microsoft.com/azure/quantum/user-guide/machines/sparse-simulator) with discrete (sparse) states of the qubits. This simulator is more efficient for a class of quantum algorithms with a smaller number of states in superposition and unlocks applications with larger number of qubits than supported by QuantumSimulator.
+- Added the [SparseSimulator](/azure/quantum/user-guide/machines/sparse-simulator) with discrete (sparse) states of the qubits. This simulator is more efficient for a class of quantum algorithms with a smaller number of states in superposition and unlocks applications with larger number of qubits than supported by QuantumSimulator.
 - Migrated the Quantum Development Kit from **.NETCore 3.1** to [.NET 6.0](https://dotnet.microsoft.com/download), and raised the minimum supported version accordingly.
 - Updated the [Microsoft Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode) extension to support QDK versions based on .NET 6.
 - Released the [Microsoft Quantum Development Kit for Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) extension.
