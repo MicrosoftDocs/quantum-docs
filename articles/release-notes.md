@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 04/08/2022
+ms.date: 05/23/2022
 author: bradben
 ms.author: brbenefield
 ms.service: azure-quantum
@@ -28,21 +28,21 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ### Azure Quantum service update
 
-- Streamlined advanced creation flow in Azure Portal.
+- Streamlined advanced creation flow in Azure portal.
 - Updated the default storage account type to general-purpose v2 (from general-purpose v1).
 
 ## 2022-04-29
 
 ### QDK version 0.24.208024
 
-- Improved processing of Qiskit job data in the Azure Quantum Python SDK which enables VQE scenarios as well as using Qiskit Experiment's StateTomography by fixing GitHub issues: [microsoft/qdk-python#224](https://github.com/microsoft/qdk-python/issues/224), [microsoft/qdk-python#258](https://github.com/microsoft/qdk-python/issues/258), [microsoft/qdk-python#259](https://github.com/microsoft/qdk-python/issues/259), and [microsoft/qdk-python#263](https://github.com/microsoft/qdk-python/issues/263).
-- Implemented GitHub issue [microsoft/QuantumLibraries#442](https://github.com/microsoft/QuantumLibraries/issues/442) which provides two new operations `SinglyControlled` and `SinglyControlledA` for a concise shorthand to control operations with a single qubit.
-- Added a [large simulation sample](https://github.com/microsoft/Quantum/tree/main/samples/getting-started/simulation) 
+- Improved processing of Qiskit job data in the Azure Quantum Python SDK, which enables VQE scenarios and using Qiskit Experiment's StateTomography by fixing GitHub issues: [microsoft/qdk-python#224](https://github.com/microsoft/qdk-python/issues/224), [microsoft/qdk-python#258](https://github.com/microsoft/qdk-python/issues/258), [microsoft/qdk-python#259](https://github.com/microsoft/qdk-python/issues/259), and [microsoft/qdk-python#263](https://github.com/microsoft/qdk-python/issues/263).
+- Implemented GitHub issue [microsoft/QuantumLibraries#442](https://github.com/microsoft/QuantumLibraries/issues/442), which provides two new operations `SinglyControlled` and `SinglyControlledA` for a concise shorthand to control operations with a single qubit.
+- Added a [large simulation sample](https://github.com/microsoft/Quantum/tree/main/samples/getting-started/simulation)
 demonstrating the use of the sparse simulator.
 - Fixed GitHub issue [microsoft/QuantumLibraries#367](https://github.com/microsoft/QuantumLibraries/issues/367) to change how variants of operations are counted in [AllowAtMostNCallsCA](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.diagnostics.allowatmostncallsca).
-- Fixed GitHub issue [microsoft/QuantumLibraries#546](https://github.com/microsoft/QuantumLibraries/issues/546) where the use of `Default` is not advised and an alternative is proposed.
+- Fixed GitHub issue [microsoft/QuantumLibraries#546](https://github.com/microsoft/QuantumLibraries/issues/546) where the use of `Default` isn't advised and an alternative is proposed.
 - Fixed GitHub issue [microsoft/QuantumLibraries#560](https://github.com/microsoft/QuantumLibraries/issues/560) where the [MeasureFxP](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.arithmetic.measurefxp) operation returned a wrong value when the measurement value corresponds to the smallest representable fixed point.
-- Released Az CLI quantum extension version 0.15.0:
+- Released Azure CLI quantum extension version 0.15.0:
   - Fixed GitHub issue [azure/azure-cli-extensions#4697](https://github.com/azure/azure-cli-extensions/issues/4697), which allows setting a polling interval when waiting for an Azure Quantum job to complete.
 
 ### Azure Quantum service update
@@ -53,12 +53,12 @@ demonstrating the use of the sparse simulator.
 
 ### QDK version 0.24.201332
 
-- Added the [SparseSimulator](https://docs.microsoft.com/azure/quantum/user-guide/machines/sparse-simulator) with discrete (sparse) states of the qubits, which is more efficient for a class of quantum algorithms with a smaller number of states in superposition and unlocks applications with larger number of qubits than supported by QuantumSimulator.
+- Added the [SparseSimulator](https://docs.microsoft.com/azure/quantum/user-guide/machines/sparse-simulator) with discrete (sparse) states of the qubits. This simulator is more efficient for a class of quantum algorithms with a smaller number of states in superposition and unlocks applications with larger number of qubits than supported by QuantumSimulator.
 - Migrated the Quantum Development Kit from **.NETCore 3.1** to [.NET 6.0](https://dotnet.microsoft.com/download), and raised the minimum supported version accordingly.
 - Updated the [Microsoft Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode) extension to support QDK versions based on .NET 6.
 - Released the [Microsoft Quantum Development Kit for Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) extension.
 - In Q# programs submitted to IonQ targets, fixed a GitHub issue [microsoft/qsharp-runtime#967](https://github.com/microsoft/qsharp-runtime/issues/967) where decomposition of the [Exp operation](/qsharp/api/qsharp/microsoft.quantum.intrinsic.exp) would use the incorrect angle convention resulting in incorrect rotation.
-- Fixed GitHub issue [microsoft/iqsharp#606](https://github.com/microsoft/iqsharp/issues/606) where lambda expressions could not be used in Q# programs that are called from Python, including Jupyter notebooks.
+- Fixed GitHub issue [microsoft/iqsharp#606](https://github.com/microsoft/iqsharp/issues/606) where lambda expressions couldn't be used in Q# programs that are called from Python, including Jupyter notebooks.
 - Fixed GitHub issue [microsoft/QuantumLibraries#511](https://github.com/microsoft/QuantumLibraries/issues/511) where the reflection phases for amplitude estimation were calculated incorrectly.
 - Fixed GitHub issue [microsoft/QuantumLibraries#527](https://github.com/microsoft/QuantumLibraries/issues/527) where the [RangeAsIntArray](/qsharp/api/qsharp/microsoft.quantum.convert.rangeasintarray) function returned a wrong value for a corner case.
 - Fixed GitHub issue [microsoft/QuantumLibraries#494](https://github.com/microsoft/QuantumLibraries/issues/494) where the [qdk-chem tool](xref:microsoft.quantum.libraries.overview-chemistry.concepts.installation#using-the-quantum-development-kit-with-qdk-chem) produced invalid Broombridge files.
@@ -67,13 +67,13 @@ demonstrating the use of the sparse simulator.
 - Fixed GitHub issue [microsoft/QuantumLibraries#444](https://github.com/microsoft/QuantumLibraries/issues/444) where tests failed probabilistically.
 - Fixed GitHub issue [microsoft/QuantumLibraries#270](https://github.com/microsoft/QuantumLibraries/issues/270) where the number of qubits was overestimated in the [machine learning library](xref:microsoft.quantum.libraries.overview.machine-learning.intro).
 - Performance improvements were made for Q# notebook and Q# + Python workflows.
-- Released Az CLI quantum extension version 0.14.0:
+- Released Azure CLI quantum extension version 0.14.0:
   - Extended error message in failed jobs to include details originated from the provider.
   - Completed support in workspace creation for all storage account types allowed in the Azure Quantum service.
 
 ### Azure Quantum service update
 
-- [Streamlined](xref:microsoft.quantum.how-to.workspace) workspace creation and navigation experience in Azure Portal.
+- [Streamlined](xref:microsoft.quantum.how-to.workspace) workspace creation and navigation experience in Azure portal.
 - Added a portal [notebook](xref:microsoft.quantum.how-to.notebooks) sample for the hidden shift scenario.
 
 ## 2022-03-15
@@ -86,23 +86,23 @@ demonstrating the use of the sparse simulator.
 
 ### QDK version 0.23.195983
 
-- Fixed GitHub issue [microsoft/qsharp-compiler#1235](https://github.com/microsoft/qsharp-compiler/issues/1235) where the Visual Studio and Visual Studio Code extensions no longer throw an unhandled exception if the .NET SDK is not found. The Language Server will fallback to purely syntactic diagnostics.
+- Fixed GitHub issue [microsoft/qsharp-compiler#1235](https://github.com/microsoft/qsharp-compiler/issues/1235) where the Visual Studio and Visual Studio Code extensions no longer throw an unhandled exception if the .NET SDK isn't found. The Language Server will fall back to purely syntactic diagnostics.
 - Q# now supports lambda expressions. See the [Q# language documentation](https://github.com/microsoft/qsharp-compiler/issues/1113) for information about how to use them.
 - Fixed GitHub issue [microsoft/qsharp-compiler#1300](https://github.com/microsoft/qsharp-compiler/issues/1300) where the Q# compiler would log an exception in addition to an error message, if an operation is called that returns a non-unit type but is incorrectly defined to be adjointable and/or controllable.
 - Fixed GitHub issue [microsoft/qsharp-compiler#1346](https://github.com/microsoft/qsharp-compiler/issues/1346) where the Q# Formatter was removing parentheses around for-loop conditions without ensuring spacing around the condition.
 - Fixed GitHub issue [microsoft/qsharp-compiler#1289](https://github.com/microsoft/qsharp-compiler/issues/1289), improving usability of the Q# Formatter by outputting a summary of its changes to console and not overwriting unchanged files.
-- The error message you get when trying to run a sample before adding a provider to your Azure Quantum workspace was improved and includes instructions ([link](https://aka.ms/AQ/Docs/AddProvider)) on how to add a new provider.
+- The error message you get when trying to run a sample, before adding a provider to your Azure Quantum workspace, was improved and includes instructions ([link](https://aka.ms/AQ/Docs/AddProvider)) on how to add a new provider.
 - Breaking change: Fixed GitHub issue [microsoft/qdk-python#269](https://github.com/microsoft/qdk-python/issues/269). For the azure-quantum Python package, you can now pass `shots` to `backend.run` and `backend.estimate_cost` for all backends.
 - Fixed GitHub issue [microsoft/qdk-python#248](https://github.com/microsoft/qdk-python/issues/248) for the Qiskit plugin of the azure-quantum Python package. The total number of counts in the histogram now matches the total number of shots.
 - Fixed the GitHub issue to remove a UserWarning when initializing the solver when a job is sent to Toshiba SimulatedBifurcationMachine.
 - Breaking change: The compress flag was removed from problem, solvers and streaming_problem classes and the compress parameter can no longer be set in `solvers.problem` or `streaming_problem` objects and methods.
 - Fixed GitHub issues [microsoft/qsharp-compiler#1046](https://github.com/microsoft/qsharp-compiler/issues/1046) and [microsoft/qsharp-compiler#1352](https://github.com/microsoft/qsharp-compiler/issues/1352) related to QIR generation. The first issue fixes an issue when generating big integer literals with more than 64 bits, and the second issue can cause a runtime failure when using a new array expression to create an array of callables.
-- Added support for the [Quantinuum Provider](xref:microsoft.quantum.providers.quantinuum) which replaces the Honeywell Provider.
-- Breaking change: The QuantumSimulator has been refactored. If you use the [StateDumper::Callback()] directly then you will need to update that code.
+- Added support for the [Quantinuum Provider](xref:microsoft.quantum.providers.quantinuum), which replaces the Honeywell Provider.
+- Breaking change: The QuantumSimulator has been refactored. If you use the `StateDumper::Callback()` directly, then you'll need to update that code.
 
 #### Known Issues
 
-- Q# lambda functions and operations do not compile properly in Q# Jupyter notebooks or from Q# + Python applications, as tracked by [microsoft/iqsharp#606](https://github.com/microsoft/iqsharp/issues/606).
+- Q# lambda functions and operations don't compile properly in Q# Jupyter notebooks or from Q# + Python applications, as tracked by [microsoft/iqsharp#606](https://github.com/microsoft/iqsharp/issues/606).
 
 ## 2022-02-01
 
@@ -119,18 +119,18 @@ demonstrating the use of the sparse simulator.
 
 - The Full State Simulator has been migrated from the platform-specific compiler to Clang to fix [GitHub issue #876](https://github.com/microsoft/qsharp-runtime/issues/876). 
 - When submitting a job to Azure Quantum via the CLI, Python, IQ# and other Azure Quantum SDKs, the job details may include the cost estimate of the job (if supported by the provider). The final cost on your bill might be slightly different due to added taxes and currency conversion rates. 
-- You can now estimate the price of your job in azure-quantum package by using [estimate_cost](xref:microsoft.quantum.quickstarts.computing.provider#estimate-job-cost) for the target that you are using with the Qiskit, Cirq and pass-through feature.
+- You can now estimate the price of your job in azure-quantum package by using [estimate_cost](xref:microsoft.quantum.quickstarts.computing.provider#estimate-job-cost) for the target that you're using with the Qiskit, Cirq and pass-through feature.
 - The azure-quantum package now supports submitting Qiskit lists of length 1. 
 - Fixed GitHub issue [microsoft/qdk-python#198](https://github.com/microsoft/qdk-python/issues/198) in the azure-quantum package where the Qiskit jobs were causing incorrect results in circuits with helper qubits.
 - In azure-quantum package, the perform_icm parameter of the 1QBit `PticmSolver` was deprecated, using it will now return a deprecation warning. A `seed` parameter was added to all other 1QBit solvers that specifies a random seed.
 - Fixed GitHub issue [microsoft/qdk-python#178](https://github.com/microsoft/qdk-python/issues/178) in the azure-quantum package so errors returned by the Azure Quantum service when using the Qiskit or Cirq feature are now propagated up.
-- Fixed GitHub issue [microsoft/qsharp-compiler#1297](https://github.com/microsoft/qsharp-compiler/issues/1297) where the IntelliSense information was not updated when the ExecutionTarget property was modified in the project file.
+- Fixed GitHub issue [microsoft/qsharp-compiler#1297](https://github.com/microsoft/qsharp-compiler/issues/1297) where the IntelliSense information wasn't updated when the ExecutionTarget property was modified in the project file.
 
 ## 2021-12-14
 
 ### QDK version 0.21.2112.180703
 
-- Released Az CLI quantum extension version 0.11.0: Job result histograms will be left-aligned (not centered) in console output.
+- Released Azure CLI quantum extension version 0.11.0: Job result histograms will be left-aligned (not centered) in console output.
 
 ## 2021-11-23
 
@@ -139,9 +139,9 @@ demonstrating the use of the sparse simulator.
 - Added a [Q# formatter](https://github.com/microsoft/qsharp-compiler/tree/main/src/QsFmt) to update deprecated Q# syntax and basic formatting for Q# projects with QDK version **0.21.2111.177148** and up:
   - You need to update the QDK version in the `<Project>` tag of your `.csproj` file to use the Q# formatter.
   - You can use the Q# formatter via Visual Studio by clicking on the **Edit -> Advanced -> Format Document** menu item. Via Visual Studio Code, you can format your code by right-clicking on the code you want to format, and clicking on the **Format Document** menu item.
-  - Added a build target, UpdateSyntax, for updating deprecated syntax in a Q# project. This can be used with `dotnet msbuild -t:UpdateSyntax` at a command prompt.
+  - Added a build target, UpdateSyntax, for updating deprecated syntax in a Q# project. This target can be used with `dotnet msbuild -t:UpdateSyntax` at a command prompt.
   - Added Code Actions to automatically update deprecated syntax.
-- Added support for submitting problems to a subset of Microsoft targets in [protobuf binary format](xref:microsoft.quantum.optimization.problem#input-problem-serialization-to-protobuf-binary-format). You can use it for encoding significantly large problems by reducing the payload sizes, and improve upload and processing speeds.
+- Added support for submitting problems to a subset of Microsoft targets in [protobuf binary format](xref:microsoft.quantum.optimization.problem#input-problem-serialization-to-protobuf-binary-format). You can use it for encoding significantly larger problems by reducing the payload sizes, and improve upload and processing speeds.
 - **Breaking change:** The [deserialize](xref:microsoft.quantum.optimization.problem#problemserialize) class method of the Problem class has a parameter name change from `problem_as_json` to `input_problem` to support deserialization of protobuf.
 
 ## 2021-10-26
@@ -170,7 +170,7 @@ demonstrating the use of the sparse simulator.
 - Fixed issues with Q# compiler's diagnostics appearing in incorrect places: [1133](https://github.com/microsoft/qsharp-compiler/issues/1133) and [1172](https://github.com/microsoft/qsharp-compiler/issues/1172).
 - **Breaking change:** The order of arguments in `ApplyIf`, `ApplyIfA`, `ApplyIfC`, and `ApplyIfCA` [has been changed](https://github.com/microsoft/QuantumLibraries/issues/377) to be consistent with related operations such as `ApplyIfElseB` and [Q# API design principles](/azure/quantum/contributing-api-design-principles).
 - `Problem.serialize()` of the `azure.quantum.optimization` Python package now serializes the name of the Optimization Problem in a new optional metadata field, so you don't have to specify it again when deserializing the problem as detailed in this [issue](https://github.com/microsoft/qdk-python/issues/153).
-- Released Az CLI quantum extension version 0.8.0: Users will receive recommendation at most once a day, to update the az quantum extension if the version installed is out-of-date.
+- Released Azure CLI quantum extension version 0.8.0: Users will receive recommendation at most once a day, to update the az quantum extension if the version installed is out-of-date.
 
 ## 2021-09-10
 
