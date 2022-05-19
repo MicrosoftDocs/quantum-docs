@@ -38,7 +38,7 @@ landingContent:
       - linkListType: learn
         links:
           - text: Microsoft Learn
-            url: https://docs.microsoft.com/en-us/learn/paths/quantum-computing-fundamentals/
+            url: /learn/paths/quantum-computing-fundamentals/
           - text: Learn with the Quantum Katas
             url: tutorial-qdk-intro-to-katas.md
 
