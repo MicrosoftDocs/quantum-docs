@@ -1,14 +1,10 @@
-- name: Docs
-  tocHref: /
-  topicHref: /
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure
   items:
-  - name: Azure
-    tocHref: /azure/
-    topicHref: /azure
-    items:
-    - name: Azure Quantum
-      tocHref: /azure/quantum/
-      topicHref: /quantum/index
-    - name: Azure Quantum
-      tocHref: /azure/architecture/
-      topicHref: /quantum/index
+  - name: Azure Quantum
+    tocHref: /azure/quantum/
+    topicHref: /quantum/index
+  - name: Azure Quantum
+    tocHref: /azure/architecture/
+    topicHref: /quantum/index
