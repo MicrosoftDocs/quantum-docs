@@ -5,6 +5,6 @@
   - name: Quantum
     tocHref: /azure/quantum/
     topicHref: /quantum/index
-  - name: Azure Quantum
+  - name: Quantum
     tocHref: /azure/architecture/
     topicHref: /quantum/index
