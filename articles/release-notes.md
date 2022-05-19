@@ -39,7 +39,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 - Implemented GitHub issue [microsoft/QuantumLibraries#442](https://github.com/microsoft/QuantumLibraries/issues/442), which provides two new operations `SinglyControlled` and `SinglyControlledA` for a concise shorthand to control operations with a single qubit.
 - Added a [large simulation sample](https://github.com/microsoft/Quantum/tree/main/samples/getting-started/simulation)
 demonstrating the use of the sparse simulator.
-- Fixed GitHub issue [microsoft/QuantumLibraries#367](https://github.com/microsoft/QuantumLibraries/issues/367) to change how variants of operations are counted in [AllowAtMostNCallsCA](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.diagnostics.allowatmostncallsca).
+- Fixed GitHub issue [microsoft/QuantumLibraries#367](https://github.com/microsoft/QuantumLibraries/issues/367) to change how variants of operations are counted in [AllowAtMostNCallsCA](/qsharp/api/qsharp/microsoft.quantum.diagnostics.allowatmostncallsca).
 - Fixed GitHub issue [microsoft/QuantumLibraries#546](https://github.com/microsoft/QuantumLibraries/issues/546) where the use of `Default` isn't advised and an alternative is proposed.
 - Fixed GitHub issue [microsoft/QuantumLibraries#560](https://github.com/microsoft/QuantumLibraries/issues/560) where the [MeasureFxP](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.arithmetic.measurefxp) operation returned a wrong value when the measurement value corresponds to the smallest representable fixed point.
 - Released Azure CLI quantum extension version 0.15.0:
@@ -74,7 +74,7 @@ demonstrating the use of the sparse simulator.
 ### Azure Quantum service update
 
 - [Streamlined](xref:microsoft.quantum.how-to.workspace) workspace creation and navigation experience in Azure portal.
-- Added a portal [notebook](xref:microsoft.quantum.how-to.notebooks) sample for the hidden shift scenario.
+- Added a portal [notebook](xref:microsoft.quantum.how-to.notebooks) sample for the hidden shift scenario. 
 
 ## 2022-03-15
 
