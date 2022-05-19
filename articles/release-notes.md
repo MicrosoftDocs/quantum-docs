@@ -17,6 +17,20 @@ In this article, learn about updates to the [Quantum Development Kit (QDK)](xref
 
 For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For update instructions, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
+## 2022-05-23
+
+### QDK version 0.24.210930
+
+- Implemented GitHub issue [microsoft/QuantumLibraries#549](https://github.com/microsoft/QuantumLibraries/issues/549), which provides names to access fields in `FixedPoint` user-defined type.
+- Implemented GitHub issue [microsoft/QuantumLibraries#555](https://github.com/microsoft/QuantumLibraries/issues/555), which provides two new operations `SubtractFxP` and `InvertFxP` to subtract and invert quantum fixed-point numbers, respectively.
+- Implemented GitHub issue [microsoft/QuantumLibraries#559](https://github.com/microsoft/QuantumLibraries/issues/559), which provides utility functions to convert between floating-point and fixed-point representation.
+- Fixed issue [microsoft/qdk-python#323](https://github.com/microsoft/qdk-python/issues/323), addressing an apparent inconsistency in results returned by `job.result()` on a Qiskit job.
+
+### Azure Quantum service update
+
+- Streamlined advanced creation flow in Azure Portal.
+- Updated the default storage account type to general-purpose v2 (from general-purpose v1).
+
 ## 2022-04-29
 
 ### QDK version 0.24.208024
