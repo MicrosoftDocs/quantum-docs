@@ -4,7 +4,7 @@
   items:
   - name: Quantum
     tocHref: /azure/quantum/
-    topicHref: /quantum/index
+    topicHref: /azure/quantum/index
   - name: Quantum
     tocHref: /azure/architecture/
     topicHref: /quantum/index
