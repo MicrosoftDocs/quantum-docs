@@ -1,6 +1,6 @@
 - name: Azure
   tocHref: /azure/
-  topicHref: /azure
+  topicHref: /azure/index
   items:
   - name: Quantum
     tocHref: /azure/quantum/
