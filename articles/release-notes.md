@@ -21,15 +21,15 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ### QDK version 0.24.210930
 
-- Implemented GitHub issue [microsoft/QuantumLibraries#549](https://github.com/microsoft/QuantumLibraries/issues/549), which provides names to access fields in `FixedPoint` user-defined type.
-- Implemented GitHub issue [microsoft/QuantumLibraries#555](https://github.com/microsoft/QuantumLibraries/issues/555), which provides two new operations `SubtractFxP` and `InvertFxP` to subtract and invert quantum fixed-point numbers, respectively.
-- Implemented GitHub issue [microsoft/QuantumLibraries#559](https://github.com/microsoft/QuantumLibraries/issues/559), which provides utility functions to convert between floating-point and fixed-point representation.
+- Added names to access fields in `FixedPoint` user-defined type ([microsoft/QuantumLibraries#549](https://github.com/microsoft/QuantumLibraries/issues/549)).
+- Added two new operations `SubtractFxP` and `InvertFxP` to subtract and invert quantum fixed-point numbers, respectively  ([microsoft/QuantumLibraries#555](https://github.com/microsoft/QuantumLibraries/issues/555)).
+- Added utility functions to convert between floating-point and fixed-point representation [microsoft/QuantumLibraries#559](https://github.com/microsoft/QuantumLibraries/issues/559).
 - Fixed issue [microsoft/qdk-python#323](https://github.com/microsoft/qdk-python/issues/323), addressing an apparent inconsistency in results returned by `job.result()` on a Qiskit job.
 
 ### Azure Quantum service update
 
-- Streamlined advanced creation flow in Azure portal.
-- Updated the default storage account type to general-purpose v2 (from general-purpose v1).
+- Streamlined advanced creation flow for Azure Quantum workspaces in the Azure Portal.
+- Updated the default storage account type to general-purpose v2 (from general-purpose v1) to support modern storage account offerings and features when managing data.
 
 ## 2022-04-29
 
