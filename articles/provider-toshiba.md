@@ -16,7 +16,7 @@ uid: microsoft.quantum.providers.optimization.toshiba
 - Provider ID: `toshiba`
 
 > [!NOTE]
-> Toshiba SQBM+ provider is currently available to customers with their billing accounts in US, UK, Canada and Japan.
+> Toshiba SQBM+ provider is currently available to customers with their Azure billing accounts in US, UK, Canada and Japan.
 
 ## Targets
 
