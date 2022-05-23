@@ -195,7 +195,7 @@ demonstrating the use of the sparse simulator.
 - Resolved an [issue](https://github.com/microsoft/qsharp-compiler/issues/1112) where some code failed to compile previously for Quantinuum target.
 - Added an option where QIR generation isn't target specific.
 - Fixed a concurrency [bug](https://github.com/microsoft/qsharp-runtime/pull/798) that could cause intermittent crashes if multiple simulator instances are run in the same process.
-- Released Az CLI quantum extension version 0.7.0:
+- Released Azure CLI quantum extension version 0.7.0:
   - Provide compiler output to users if there was error for easier troubleshooting.
   - Fixed bug in which retrieving output from workspaces in a location different to another set as default failed.
   - Processing jobs that produce no output is allowed.
@@ -210,7 +210,7 @@ demonstrating the use of the sparse simulator.
 - `azure-quantum` Python package fixes an [issue](https://github.com/microsoft/qdk-python/issues/80) with MSAL Credentials on Windows and now requires minimum versions for all dependencies to mitigate other potential issues with older dependencies.
 - Fixed a [bug in IQ#](https://github.com/microsoft/iqsharp/issues/448) in which job execution would fail if any operation was defined that wasn't supported on the given target.
 - Fixed a [bug in IQ#](https://github.com/microsoft/iqsharp/issues/484) in which some programs targeting hardware that supports the [Basic Measurement Feedback profile](xref:microsoft.quantum.target-profiles) were incorrectly being reported as not supported by the Azure Quantum target.
-- Released Az CLI quantum extension version 0.6.1:
+- Released Azure CLI quantum extension version 0.6.1:
   - Added command to request job cancellation: `az quantum job cancel`.
   - Fixed a bug in which job submissions in Azure Quantum that emit standard output were reported as failed, even if the job succeeded.
   - Enabled job submissions from a different directory using `--project` parameter.
@@ -246,7 +246,7 @@ demonstrating the use of the sparse simulator.
 - Fixed a bug that prevents QIR generation from being enabled in the iqsharp-base Docker image. See details [here](https://github.com/microsoft/iqsharp/issues/432).
 - Implemented new special functions, for example, `factorial` and `log-gamma`, in Microsoft.Quantum.Math (microsoft/QuantumLibraries#448). Thanks to @TheMagicNacho for the contribution (microsoft/QuantumLibraries#440)!
 - C# Client: Changed input data format type to "v2" for Quantum Computing.
-- Released Az CLI quantum extension version 0.5.0: Adapted to 'az' tool version 2.23.0, adding user agent information on calls to Azure Quantum Service.
+- Released Azure CLI quantum extension version 0.5.0: Adapted to 'az' tool version 2.23.0, adding user agent information on calls to Azure Quantum Service.
 
 ### Azure Quantum service update
 
@@ -275,7 +275,7 @@ demonstrating the use of the sparse simulator.
 - Added new `StreamingProblem` class in QIO *azure-quantum* Python package. It supports the same interface for adding terms to a problem definition as the `Problem` class. However, once terms are added to the problem they are queued to be uploaded by a background thread and are not kept in memory for future reference.
 - Restored the packages size of Microsoft.Quantum.Sdk and Microsoft.Quantum.Compiler back to normal. (See related note in 0.15.2103.133969)
 - Improved compiler performance.
-- Released Az CLI quantum extension version 0.4.0: Exposed URL for restricted access plans. Fixed regression on offerings commands dependent on Azure Marketplace APIs.
+- Released Azure CLI quantum extension version 0.4.0: Exposed URL for restricted access plans. Fixed regression on offerings commands dependent on Azure Marketplace APIs.
 
 ## 2021-03-30
 
