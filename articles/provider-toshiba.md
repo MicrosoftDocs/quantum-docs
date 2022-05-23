@@ -15,6 +15,9 @@ uid: microsoft.quantum.providers.optimization.toshiba
 - Publisher: [Toshiba Digital Solutions Corporation](https://www.global.toshiba/jp/company/digitalsolution.html)
 - Provider ID: `toshiba`
 
+> [!NOTE]
+> Toshiba SQBM+ provider is currently available to customers with their billing accounts in US, UK, Canada and Japan.
+
 ## Targets
 
 The Toshiba SQBM+ Cloud on Azure Quantum (SQBM+) provider makes the following target available:
