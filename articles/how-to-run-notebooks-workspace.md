@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to work with Q# or Python in a Jupyter notebook in an Azure Quantum workspace.
 ms.author: brbenefield
-ms.date: 03/03/2022
+ms.date: 05/23/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -11,44 +11,44 @@ title: Work with Jupyter notebooks in a workspace
 uid: microsoft.quantum.how-to.notebooks
 ---
 
-# Work with Jupyter notebooks in an Azure Quantum workspace
+# Work with Jupyter Notebooks in an Azure Quantum workspace
 
-Learn how to run Q# or Python code in a Jupyter notebook in an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). A Jupyter notebook is a document that contains both rich text and code and can run in your browser.
+Learn how to run Q# or Python code in a Jupyter Notebook in an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). A Jupyter Notebook is a document that contains both rich text and code and can run in your browser.
 
 ## Prerequisites
 
-You need the following prerequisites to use Jupyter notebooks in an Azure Quantum workspace.
+You need the following prerequisites to use Jupyter Notebooks in an Azure Quantum workspace.
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - An Azure Quantum workspace. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Get a sample notebook
 
-To get started, you can use use a sample from the notebook gallery.
+To get started, you can use use a sample notebook from the sample gallery.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Notebooks**.
-1. Select **Sample Gallery**.
-1. Select the sample you want to use, and select **Copy to My notebooks**.
+1. Select **Sample gallery**.
+1. Select the sample you want to use, and select **Copy to my notebooks**.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-gallery.gif" alt-text="Notebook gallery in Azure Quantum.":::
 
 The sample notebook can be found under **My notebooks** and you can now run the notebook.
 
-## Run notebook
+## Run a notebook
 
-To run Q# or Python in a Jupyter notebook, follow these steps.
+To run Q# or Python code in a Jupyter Notebook, follow these steps.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Notebooks**.
 1. Select your notebook in **My notebooks**.
-1. Select the cell you want to run and select the **run icon** to execute the code in the cell, or select **Run all** to run all cells in the notebook.
+1. Select the cell you want to run and select the **run icon** to run the code in the cell, or select **Run all** to run all cells in the notebook.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/run-notebook.png" alt-text="Run a Jupyter notebook.":::
 
 ## Create a new notebook
 
-Follow these steps to create a new Jupyter notebook using Q# or Python.
+Follow these steps to create a new Jupyter Notebook using Q# or Python.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Notebooks**.
@@ -62,25 +62,25 @@ Follow these steps to create a new Jupyter notebook using Q# or Python.
 
 The first cell of the notebook is populated automatically with the connection string to the Azure Quantum workspace.
 
-For Q#, the first cell will look like this.
+For Q#, the first cell will look like this:
 
 :::image type="content" source="media/how-to-run-notebooks-workspace/new-qsharp-notebook-snippet.png" alt-text="New Q# notebook in Azure Quantum.":::
 
-For Python, the first cell will look like this.
+For Python, the first cell will look like this:
 
 :::image type="content" source="media/how-to-run-notebooks-workspace/new-python-notebook-snippet.png" alt-text="New Python notebook in Azure Quantum.":::
 
 Select **+ Code** or **+ Markdown** to add a code or markdown text cell.
 
 > [!TIP]
-> Notebooks auto-saves every 30 seconds. You can also manually save by pressing **CTRL + S**.
+> A notebook auto-saves every 30 seconds. You can also manually save by pressing **CTRL + S**.
 
 ## Upload notebooks
 
-You can upload one or more existing Jupyter notebooks to an Azure Quantum workspace.
+You can upload one or more existing Jupyter Notebooks to an Azure Quantum workspace.
 
 > [!CAUTION]
-> You should only upload and run Jupyter notebooks from trusted sources and only install packages from trusted sources. While notebooks in Azure Quantum protects you by sandboxing outputs, Jupyter Notebooks is built for arbitrary code execution, so there are inherent risks to uploading or running notebooks from an untrusted source.
+> You should only upload and run Jupyter Notebooks from trusted sources, and only install packages from trusted sources. While notebooks in Azure Quantum protects you by sandboxing outputs, Jupyter Notebooks is built for arbitrary code execution, so there are inherent risks to uploading or running notebooks from an untrusted source.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Notebooks**.
@@ -111,25 +111,25 @@ Jupyter notebooks in an Azure Quantum workspace are isolated from other users' n
 
 - Your Jupyter Notebook instance is hosted by Azure Quantum with hypervisor-level isolation from other users' instances.
 - Notebooks are stored in your linked storage account in your subscription.
-- A Jupyter Notebook instance is scoped to you and a specific workspace. If you visit another workspace, you will get a different instance. If another user visits the same workspace, they will get a different Jupyter Notebook instance from you.
-- Notebooks are scoped to you and a specific workspace. If you visit another workspace, the same notebooks will not appear under My Notebooks. If another user visits the same workspace, they will not see your notebooks.
+- A Jupyter Notebook instance is scoped to a combination of you and a specific workspace. If you visit another workspace, you will get a different Jupyter Notebook instance. If another user visits the same workspace, they will get a different Jupyter Notebook instance than you.
+- Notebooks are scoped to you and a specific workspace. If you visit another workspace, the same notebooks will not appear under **My notebooks**. If another user visits that workspace, they will not see your notebooks.
 
 ## Storage of notebooks
 
-Jupyter notebooks are stored in an [Azure Storage](/azure/storage/) account linked to your Azure Quantum workspace.
+Jupyter Notebooks are stored in an [Azure Storage](/azure/storage/) account linked to your Azure Quantum workspace.
 
 > [!NOTE]
-> When notebooks are used in a workspace, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on the linked Azure Storage account. If you do not want to enable CORS for your Azure Storage account, please do not visit the **Notebooks** blade in the portal. If you have visited the blade previously and now no longer want to enable CORS, you can directly edit your storage account to remove any existing CORS rules.
+> When an Azure Quantum workspace is created, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on the linked Azure Storage account. This is required for using Jupyter Notebooks in the portal. If you do not plan to use Jupyter Notebooks in the portal and you do not want to enable CORS for your Azure Storage account, you can directly edit your storage account to remove the CORS rule. In the storage account properties, under **Settings**, select **Resource Sharing (CORS)** and remove the rule under **File Service**.  Be aware that if you open the **Notebooks** blade again in your workspace, the rule will be recreated automatically. 
 
 ## Limitations
 
-The following are limitations with Jupyter notebooks in an Azure Quantum workspace.
+The following are limitations with Jupyter Notebooks in an Azure Quantum workspace.
 
-- As it is free, the Jupyter Notebook instance will live up to a max of 12 hours (after that time, your instance will be deleted/recreated, and you will need to reinstall any custom packages).
+- As it is free, the Jupyter Notebook instance will live up to a maximum of 12 hours (after that time, your instance will be deleted or recreated, and you will need to reinstall any custom packages).
   - Azure Quantum may need to delete your Jupyter Notebook instance to apply security patches or roll out emergency changes. When possible, it will not interrupt your workflow.
 - Notebook instances have pre-allocated 2 vCPU and 4 GB of memory.
 - Idle kernels are terminated after 30 minutes. After that time, you will need to rerun the cells.
-- The location of your storage account and workspace will affect the performance of Jupyter notebooks in an Azure Quantum workspace. When possible, try to create the storage account and workspace in a region close to where you will be using your notebooks.
+- The location of your storage account and workspace will affect the performance of Jupyter Notebooks in an Azure Quantum workspace. When possible, try to create the storage account and workspace in a region close to where you will be using your notebooks.
 
 ## Next steps
 
