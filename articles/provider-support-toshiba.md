@@ -14,6 +14,9 @@ uid: microsoft.quantum.providers.optimization.toshiba.support
 
 Toshiba SQBM+ team of Toshiba Digital Solutions Corporation (TDSL) provides Support Services under the terms of this support policy as long as you maintain a current subscription to SQBM+ Cloud on Azure Quantum.
 
+> [!NOTE]
+> Toshiba SQBM+ provider is currently available to customers with their Azure billing accounts in US, UK, Canada and Japan.
+
 ## Support services
 
 - Informational Support  
