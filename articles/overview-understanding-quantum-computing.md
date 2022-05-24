@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Learn how quantum computing works, how it compares to classical computing, and how it uses the principles of quantum mechanics.
-ms.date: 01/27/2022
+ms.date: 05/16/2022
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -13,61 +13,60 @@ uid: microsoft.quantum.overview.understanding
 
 # Understanding quantum computing
 
-Quantum computing holds the promise to solve some of our planet's biggest challenges - in the areas of environment, agriculture, health, energy, climate, materials science, and others we haven't encountered yet. For some of these problems, classical computing is increasingly challenged as the size of the system grows.
+Quantum computing holds the promise to solve some of our planet's biggest challenges - in the areas of environment, agriculture, health, energy, climate, materials science, and others we haven't encountered yet. For some of these problems, classical computing is increasingly challenged as the size of the system grows. When designed to scale, quantum systems will presumably have some capabilities that exceed our most powerful supercomputers. As the global community of quantum researchers, scientists, engineers, and business leaders continue  to collaborate to advance the quantum ecosystem, we expect to see quantum impact accelerate across every industry.
 
-Quantum computers are controllable quantum mechanical devices that exploit the properties of quantum physics to perform computations. For some computational tasks, quantum computing provides exponential speedups. These speedups are possible thanks to three phenomena from quantum mechanics: superposition, interference, and entanglement.
-
-Just as bits are the fundamental object of information in classical computing, [qubits](xref:microsoft.quantum.concepts.qubit) (quantum bits) are the fundamental object of information in quantum computing. While a bit, or binary digit, can have a value either 0 or 1, a qubit can have a value that is either 0, 1 or a quantum superposition of 0 and 1.
-
-A fundamental difference between classical computers and quantum computers is that programs in quantum computers are intrinsically probabilistic, whereas classical computers are usually deterministic. In quantum algorithms each possible result has an associated probability amplitude. After a measurement, one of the possible states is obtained with a certain probability. This fact contrasts with classical computing, where a bit can only be deterministically 0 or 1.
+Just as bits are the fundamental units of information in classical computing, [qubits](xref:microsoft.quantum.concepts.qubit) (quantum bits) are the fundamental units of information in quantum computing. While a bit, or binary digit, can have a value either 0 or 1, a qubit can have a value that is either 0, 1 or a quantum superposition of 0 and 1.
 
 For more information about the beginnings and motivation of quantum computing, see [quantum computing history and background](xref:microsoft.quantum.concepts.intro).
 
-## What can quantum computing be used for?
+[Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) is an open ecosystem to build quantum computing solutions on a diverse selection of today’s quantum hardware, and it offers flexibility to use your preferred development tools with support for Cirq, Qiskit, and Q#. You can use the familiar and trusted Azure platform to learn how to develop quantum algorithms and how to program and run them on real hardware from multiple providers. 
+
+Learn how to create an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace) and start submitting your quantum programs on real quantum hardware. First-time users automatically get free Azure Quantum Credits for use with each participating quantum hardware provider (500 USD each) when creating your workspace. If you need more credits, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
+
+> [!Tip]
+> **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) (check out free Azure accounts [for students](https://azure.microsoft.com/free/students/)). 
+
+
+## What can quantum computing and Azure Quantum be used for?
 
 A quantum computer isn't a supercomputer that can do everything faster. One of the goals of quantum computing research is to study which problems can be solved by a quantum computer faster than a classical computer and how large the speedup can be.
 
-Quantum computers do exceptionally well in problems that require calculation of many possible different combinations. These type of problems can be found across many areas. 
+Quantum computers do exceptionally well with problems that require calculating a large number of possible combinations. These types of problems can be found in many areas, such as quantum simulation, cryptography, quantum machine learning, and search problems.
 
 ### Quantum simulation
 
-Quantum mechanics is the underlying "operating system" of our universe. It describes how the fundamental building blocks of nature behave. Nature's behaviors, such as chemical reactions, biological reactions, and material formations, often involve many-body quantum interactions. For simulating intrinsically quantum mechanical systems, such as molecules, quantum computing is promising, because qubits can be used to represent the natural states in question.
+Quantum mechanics is the underlying "operating system" of our universe. It describes how the fundamental building blocks of nature behave. Nature's behaviors, such as chemical reactions, biological reactions, and material formations, often involve many-body quantum interactions. For simulating intrinsically quantum mechanical systems, such as molecules, quantum computing is promising, because qubits can be used to represent the natural states in question. Examples of quantum systems that we can model include photosynthesis, superconductivity, and complex molecular formations.
 
-### Quantum cryptography
+The Quantum Development Kit (QDK) comes with the [quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview) to simulate electronic structure problems and quantum dynamics on a quantum computer. An example of such simulations is the [simple molecular energy estimation of the ground state of a molecule](https://docs.microsoft.com/samples/microsoft/quantum/simple-molecular-energy-estimation-with-the-azure-quantum-service/). This and more QDK and Azure Quantum samples can be found in the [code samples](https://docs.microsoft.com/samples/browse/?expanded=azure&products=azure-quantum%2Cqdk&languages=qsharp).
 
-Cryptography is the technique of concealing confidential information by using physical or mathematical means, such as using a computational difficulty of solving a particular task. Classical cryptography relies on the intractability of problems such as integer factorization or discrete logarithms, many of which can be solved more efficiently using quantum computers.
+### Quantum speedups
 
-In 1994, Peter Shor showed that a scalable quantum computer could break classical cryptographic schemes such as the Rivest–Shamir–Adleman (RSA) scheme, which is widely used in e-commerce for secure data transmission. This scheme is based on the practical difficulty of factoring prime numbers by using classical algorithms.
+One of the goals of quantum computing research is to study which problems can be solved by a quantum computer faster than a classical computer and how large the speedup can be. Two well-known examples are Grover's algorithm and Shor's algorithm, which yield a polynomial and an exponential speedup, respectively, over their classical counterparts. 
 
-Quantum cryptography promises information security by harnessing basic physics rather than complexity assumptions. RSA is safe today because a scalable quantum computer is not yet available. But after quantum computers are built at large scale, polynomial time quantum algorithms might attack the underlying math problems for these cryptosystems.
+Shor's algorithm running on a quantum computer could break classical cryptographic schemes such as the Rivest–Shamir–Adleman (RSA) scheme, which is widely used in e-commerce for secure data transmission. This scheme is based on the practical difficulty of factoring prime numbers by using classical algorithms. Quantum cryptography promises information security by harnessing basic physics rather than complexity assumptions. 
 
-With the anticipation of a sufficiently large and fault-tolerant quantum computer, active research is underway to:
+Like Shor's algorithm for factoring, the hidden shift problem is a natural source of problems for which a quantum computer has an exponential advantage over the best known classical algorithms. This may eventually help in solving deconvolution problems and enable us to efficiently find patterns in complex data sets. It turns out that a quantum computer can in principle compute convolutions at high speed, which in turn is based on the quantum computer's ability to compute Fourier transforms extremely rapidly. In the sample gallery of your Azure Quantum workspace you will find a [Hidden Shifts Jupyter notebook sample](xref:microsoft.quantum.get-started.notebooks) (an Azure account is required). 
 
-- Estimate the security for cryptosystems of a given bit length in a post-quantum environment.
-- Estimate how long it will take to migrate current cryptosystems to new ones.
-
-### Search algorithms
-
-In 1996, Lov Grover developed a quantum algorithm that dramatically sped up the solution to unstructured data searches, running the search in fewer steps than any classical algorithm could.
-
-The search problem is by design generic. Indeed, any problem that allows you to check whether a given value $x$ is a valid solution (a "yes or no problem") can be formulated in terms of the search problem. The following are some examples:
+[Grover's algorithm](xref:microsoft.quantum.concepts.grovers) speeds up the solution to unstructured data searches, running the search in fewer steps than any classical algorithm could. Indeed, any problem that allows you to check whether a given value $x$ is a valid solution (a "yes or no problem") can be formulated in terms of the search problem. The following are some examples:
 
 - Boolean satisfiability problem: Is the set of Boolean values $x$ an interpretation (an assignment of values to variables) that satisfies the given Boolean formula?
 - Traveling salesman problem: Does $x$ describe the shortest possible loop that connects all cities?
 - Database search problem: Does the database table contain a record $x$?
 - Integer factorization problem: Is the fixed number $N$ divisible by the number $x$?
 
-Some of these problems are better suited to benefit from using Grover's algorithm than the others. For more information, see the [theory of Grover's search algorithm](xref:microsoft.quantum.concepts.grovers). For a practical implementation of Grover's algorithm to solve mathematical problems you can see this [tutorial to implement Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers).
+For a practical implementation of Grover's algorithm to solve mathematical problems take a look at the [Grover's Search Jupyter notebook](xref:microsoft.quantum.get-started.notebooks) in the sample gallery of your Azure Quantum workspace (an Azure account is required), or see this [tutorial to implement Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers).
+
+For more quantum algorithm samples, see the [code samples](https://docs.microsoft.com/samples/browse/?expanded=azure&products=azure-quantum%2Cqdk&languages=qsharp).
 
 ### Quantum machine learning
 
 Machine learning on classical computers is revolutionizing the world of science and business. However, the high computational cost of training the models hinders the development and scope of the field. The area of quantum machine learning explores how to devise and implement quantum software that enables machine learning that runs faster than classical computers.
 
-The Microsoft’s Quantum Development Kit (QDK) comes with the [quantum machine learning library](xref:microsoft.quantum.libraries.overview#quantum-machine-learning-library) that gives you the ability to run hybrid quantum/classical machine learning experiments. The library includes samples and tutorials, and provides the necessary tools to implement a new hybrid quantum–classical algorithm, the circuit-centric quantum classifier, to solve supervised classification problems.
+The Quantum Development Kit (QDK) comes with the [quantum machine learning library](xref:microsoft.quantum.libraries.overview#quantum-machine-learning-library) that gives you the ability to run hybrid quantum/classical machine learning experiments. The library includes samples and tutorials, and provides the necessary tools to implement a new hybrid quantum–classical algorithm, the circuit-centric quantum classifier, to solve supervised classification problems.
 
 ## How does quantum computing solve problems? 
 
-For some computational tasks, quantum computing provides exponential speedups. These speedups are possible thanks to three phenomena from quantum mechanics: superposition, interference, and entanglement.
+Quantum computers are controllable quantum mechanical devices that exploit the properties of quantum physics to perform computations. For some computational tasks, quantum computing provides exponential speedups. These speedups are possible thanks to three phenomena from quantum mechanics: superposition, interference, and entanglement.
 
 ### Superposition
 
@@ -78,7 +77,7 @@ However, if you are a quantum particle, then you can have a certain probability 
 Unlike classical particles, if two states $A$ and $B$ are valid quantum states of a quantum particle, then any linear combination of the states is also a valid
 quantum state: $\text{qubit state}=\alpha A + \beta B$. This linear combination of quantum states $A$ and $B$ is called superposition. Here, $\alpha$ and $\beta$ are the probability amplitudes of $A$ and $B$, respectively, such that $|\alpha|^{2} + |\beta|^{2} = 1$. 
 
-Only quantum systems like ions, electrons or superconducting circuits can exist in the superposition states that enable the power of quantum computing. A quantum particle such as an electron has its own “facing left or facing right” property, for example **spin**, referred to as either up or down, so the quantum state of an electron is a superposition of "spin up" and "spin down". 
+Only quantum systems like ions, electrons or superconducting circuits can exist in the superposition states that enable the power of quantum computing. A quantum particle such as an electron has its own “facing left or facing right” property, namely *spin*, referred to as either up or down, so the quantum state of an electron is a superposition of "spin up" and "spin down". 
 
 Generally, and to make it more relatable to classical binary computing, if a quantum system can be in two quantum states, these states are referred as 0 state and 1 state.
 
@@ -101,58 +100,47 @@ Entangled quantum systems can maintain this correlation even when separated over
 > [!NOTE]
 > Not every correlation between the measurements of two qubits means that the two qubits are entangled. Classical bits can also be correlated. Two qubits are entangled when they present correlations that can't be reproduced by using classical bits. This difference between classical and quantum correlations is subtle, but it's essential for the speedup provided by quantum computers. 
 
-If you want to learn more, see the tutorial [exploring quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement).
+If you want to learn more, see the tutorial [exploring quantum entanglement with Q# and Azure Quantum](xref:microsoft.quantum.tutorial-portal.entanglement).
 
 ## Quantum computers vs quantum simulators
 
 A quantum computer is a machine that combines the power of classical and quantum computing. The current quantum computers correspond to a hybrid model: a classical computer that controls a quantum processor. 
 
-The development of quantum computers is still in the infancy of their development. The quantum hardware and their maintenance are expensive, and most systems are located in universities and research labs. Where classical computers use familiar silicon-based chips, quantum computers use quantum systems such as atoms, ions, photons, or electrons. They use their quantum properties to represent bits that can be prepared in different quantum superpositions of 1 and 0. The technology is advancing, though, and limited public access to some systems is available.
+The development of quantum computers is still in its infancy. Quantum hardware is expensive and most systems are located in universities and research labs. Where classical computers use familiar silicon-based chips, quantum computers use quantum systems such as atoms, ions, photons, or electrons. The technology is advancing, though, and limited public cloud access to quantum systems is available. 
 
-### Quantum hardware
+Azure Quantum allows you to create quantum algorithms for multiple platforms at once, while preserving flexibility to tune the same algorithms for specific systems. You can pick from many programming languages such as Qiskit, Cirq, and Q# and run your algorithms on multiple quantum systems. On Azure Quantum, it’s easy to simultaneously explore today’s quantum systems and be ready for the scaled quantum systems of the future.
 
-A quantum computer has three primary parts: a device that houses the qubits, a method for performing quantum operations (also known as quantum gates) to the qubits and measuring them, and a classical computer to run a program and send instructions. The type of qubit chosen to build a quantum computer will determine the implementation of these.
+[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
-- The quantum material used for qubits is fragile and highly sensitive to environmental interferences. For example, for superconducting qubits, the unit that houses the qubits is kept at a temperature just above absolute zero to maximize their coherence. Other types of qubit housing use a vacuum chamber to help minimize vibrations and stabilize the qubits.  
-- Operations or quantum gates can be performed using a variety of methods including microwaves, laser, and voltage, depending on the type of qubit.
+### Azure Quantum hardware
+
+A quantum computer has three primary parts: 
+- A device that houses the qubits 
+- A method for performing quantum operations (also known as quantum gates) on the qubits and measuring them
+- A classical computer to run a program and send instructions 
+
+Qubits are fragile and highly sensitive to environmental interference. For some methods of qubit storage, the unit that houses the qubits is kept at a temperature just above absolute zero to maximize their coherence. Other types of qubit housing use a vacuum chamber to help minimize vibrations and stabilize the qubits.  
+Operations can be performed using a variety of methods including microwaves, laser, and voltage, depending on the type of qubit.
 
 Quantum computers face a multitude of challenges to operate correctly. Error correction in quantum computers is a significant issue, and scaling up (adding more qubits) increases the error rate. Because of these limitations, a quantum PC for your desktop is far in the future, but a commercially-viable lab-based quantum computer is closer.
 
-Microsoft is developing a quantum computer based on topological qubits. A topological qubit is less impacted by changes in its environment, therefore reducing the degree of external error correction required. Topological qubits feature increased stability and resistance to environmental noise, which means they can more readily scale and remain reliable longer.
+Microsoft is partnering with quantum hardware companies to provide cloud access to quantum hardware. With the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) platform and the QDK, you can explore and run quantum programs on different types of quantum hardware. These are the currently available quantum targets:
 
-### Quantum simulators
+- [Quantinuum](xref:microsoft.quantum.providers.quantinuum): **Trapped-ion** system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurements.
+- [IonQ](xref:microsoft.quantum.providers.ionq): Dynamically reconfigurable **trapped-ion** quantum computer for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
 
-For the moment, the use of real quantum hardware is limited due to resources and budget. In the meantime, quantum simulators serve to the purpose of running quantum algorithms, making it easy to test and debug an algorithm and then run it on real hardware with confidence that the result will match the expectations.
+For more information, see the full [quantum computing target list](xref:microsoft.quantum.reference.qc-target-list).
 
-Quantum simulators are software programs that run on classical computers and make it possible to run and test quantum programs in an environment that predicts how qubits react to different operations. The Microsoft’s Quantum Development Kit (QDK) includes different classes of quantum simulators representing different ways of simulating the same quantum algorithm, including a [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulating quantum algorithms under the presence of noise, and a [resource estimator](xref:microsoft.quantum.machines.overview.resources-estimator).
+### Azure Quantum simulators
 
-For more information, see [Quantum Simulators](xref:microsoft.quantum.machines.overview).
+For the moment, the use of real quantum hardware is limited due to resources and budget. Quantum simulators serve to the purpose of running quantum algorithms, making it easy to test and debug an algorithm and then run it on real hardware with confidence that the result will match the expectations.
 
-### The process of quantum computing
+Quantum simulators are software programs that run on classical computers and make it possible to run and test quantum programs in an environment that predicts how qubits react to different operations, making it easy to test and debug an algorithm and then run it on real hardware with confidence that the result will match the expectations. 
 
-Performing computations on a quantum computer or quantum simulator follows a basic process:
+The Quantum Development Kit (QDK) includes different classes of quantum simulators representing different ways of simulating the same quantum algorithm, such as a [sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator) for simulating large systems, a [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulating quantum algorithms under the presence of noise, and a [resource estimator](xref:microsoft.quantum.machines.overview.resources-estimator). For more information, see [quantum simulators](xref:microsoft.quantum.machines.overview).
 
-- Access the qubits
-- Initialize the qubits to the desired state
-- Perform operations to transform the states of the qubits
-- Measure the new states of the qubits
+If you have an Azure account, in the sample gallery of your Azure Quantum workspace you will find several Jupyter Notebook samples that use quantum simulators. See [how to get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
-Initializing and transforming qubits is done using quantum operations (also known as quantum gates). Quantum operations are similar to logic operations in classical computing, such as AND, OR, NOT, and XOR. An operation can be as basic as flipping a qubit's state from 1 to 0 or entangling a pair of qubits, to using multiple operations in series to affect the probability of a superposed qubit collapsing one way or the other.
-
-> [!NOTE] 
-> The [Q# libraries](xref:microsoft.quantum.libraries.overview) provide built-in operations that define complex combinations of lower-level quantum operations. You can use the library operations to transform qubits and to create more complex user-defined operations.  
-
-Measuring the result of the computation tells us an answer, but for some quantum algorithms, not necessarily the correct answer. Because the result of some quantum algorithms is based on the probability that was configured by the quantum operations, these computations are run multiple times to get a probability distribution and refine the accuracy of the results.  Assurance that an operation returned a correct answer is known as quantum verification and is a significant challenge in quantum computing.
-
-## Azure Quantum computing hardware partners
-
-Microsoft is partnering with quantum hardware companies to provide developers with cloud access to quantum hardware. Leveraging the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) platform and the Q# language, developers will be able to explore quantum algorithms and run their quantum programs on different types of quantum hardware.
-
-- [Quantinuum](https://www.quantinuum.com): **Trapped-ion** system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurements.
-- [IONQ](https://ionq.com/): Dynamically reconfigurable **trapped-ion** quantum computer for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
-- [Quantum Circuits, Inc](https://quantumcircuits.com/): Fast and high-fidelity **superconducting circuits** with powerful real-time feedback to enable error correction.
-
-For more information, see the full [Quantum computing target list](xref:microsoft.quantum.reference.qc-target-list).
 
 ## Next Steps
 
