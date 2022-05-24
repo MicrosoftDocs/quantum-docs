@@ -46,4 +46,11 @@ groups:
     title: Quantum Computing
   - id: ide-optimization
     title: Optimization
-
+- id: ide-platforms
+  title: Local or online development environments
+  prompt: Select your preferred development environment
+  pivots:
+  - id: ide-azure-portal
+    title: Azure Quantum portal
+  - id: ide-local
+    title: Local computer
