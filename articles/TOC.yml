@@ -39,8 +39,6 @@
       href: tutorial-qdk-quantum-random-number-generator.md
     - name: Explore entanglement with Q#
       href: tutorial-qdk-explore-entanglement.md
-    - name: Explore entanglement with Q# and Azure Quantum
-      href: tutorial-portal-explore-entanglement.md
     - name: Implement Grover's search algorithm
       href: tutorial-qdk-grovers-search.md
     - name: Qubit-level programming
