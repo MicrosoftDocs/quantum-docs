@@ -34,7 +34,7 @@ For more information about the simulated bifurcation machine (SBM), please see [
 - Python Solver class name: `SimulatedBifurcationMachine`
 
 > [!NOTE]
-> The solver uses shared resources to execute the jobs issued by all users. You may experience the delay until the job is executed.
+> The solver uses shared resources to execute the jobs issued by all users. You may experience a delay before the job is executed.
 
 ## Overview of SQBM+ computation structure
 
@@ -53,7 +53,7 @@ The smallest unit is a step. A group of steps constitutes a run. A group of runs
 >
 > For more information, see the [Input Parameters](#input-parameters) section.
 
-SQBM+ computation service executes a group of runs in parallel, given the initial values of combinatorial variables using random numbers for each run, while each run produces a nearly optimal solution.
+The SQBM+ computation service executes a group of runs in parallel, given the initial values of combinatorial variables using random numbers for each run, while each run produces a nearly optimal solution.
 
 This means inside SQBM+ computation service, a computation request produces `number of loops in a request` $\times$ `number of runs in a loop` optimal solutions in total.
 
@@ -83,7 +83,7 @@ The auto tuning functionality will help you find a better setting. For detailed 
 
 ### Completion conditions
 
-SQBM+ computation service is completed when any of the following conditions is satisfied.
+SQBM+ computation service is completed when any of the following conditions are satisfied:
 
 - The number of loops reaches `loops` (when `loops` is not 0).
 - The computation time reaches `timeout`.
