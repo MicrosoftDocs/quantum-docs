@@ -48,7 +48,7 @@
       "feedback_github_repo": "MicrosoftDocs/quantum-docs",
       "feedback_product_url": "https://feedback.azure.com/d365community/forum/8616edd6-9f3b-ec11-8c62-00224825a012",
       "titleSuffix": "Azure Quantum ",
-      "breadcrumb_path": "/quantum/breadcrumb/toc.json",
+      "breadcrumb_path": "/azure/quantum/breadcrumb/toc.json",
       "zone_pivot_group_filename": "/quantum/zone-pivot-groups.json"
     },
     "fileMetadata": {
