@@ -28,7 +28,7 @@ Broombridge documents are intended to communicate instances of simulation proble
 This section is normative.
 
 A Broombridge document MUST be serialized as a [YAML 1.2 document](http://yaml.org/spec/) representing a JSON object as described in [RFC 4627](https://tools.ietf.org/html/rfc4627) section 2.2.
-The object serialized to YAML MUST have a property `"$schema"` whose value is `"https://raw.githubusercontent.com/Microsoft/Quantum/master/Chemistry/Schema/qchem-0.2.schema.json"`, and MUST be valid according to the JSON Schema draft-06 specifications [[1](https://tools.ietf.org/html/draft-wright-json-schema-01), [2](https://tools.ietf.org/html/draft-wright-json-schema-validation-01)].
+The object serialized to YAML MUST have a property `"$schema"` whose value is `"https://raw.githubusercontent.com/microsoft/Quantum/main/Chemistry/Schema/broombridge-0.2.schema.json"`, and MUST be valid according to the JSON Schema draft-06 specifications [[1](https://tools.ietf.org/html/draft-wright-json-schema-01), [2](https://tools.ietf.org/html/draft-wright-json-schema-validation-01)].
 
 For the remainder of this specification, "the Broombridge object" will refer to the JSON object deserialized from a Broombridge YAML document.
 
