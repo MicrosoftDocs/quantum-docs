@@ -8,7 +8,7 @@ ms.subservice: qdk
 ms.topic: tutorial
 no-loc: ['Q#', '$$v']
 title: Explore quantum entanglement with Q# and Azure Quantum
-uid: uid: microsoft.quantum.tutorial-qdk.entanglement
+uid: microsoft.quantum.tutorial-qdk.entanglement
 zone_pivot_groups: ide-platforms
 ---
 

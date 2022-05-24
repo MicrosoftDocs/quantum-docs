@@ -37,7 +37,7 @@ Quantum computers do exceptionally well with problems that require calculating a
 
 Quantum mechanics is the underlying "operating system" of our universe. It describes how the fundamental building blocks of nature behave. Nature's behaviors, such as chemical reactions, biological reactions, and material formations, often involve many-body quantum interactions. For simulating intrinsically quantum mechanical systems, such as molecules, quantum computing is promising, because qubits can be used to represent the natural states in question. Examples of quantum systems that we can model include photosynthesis, superconductivity, and complex molecular formations.
 
-The Quantum Development Kit (QDK) comes with the [quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview) to simulate electronic structure problems and quantum dynamics on a quantum computer. An example of such simulations is the [simple molecular energy estimation of the ground state of a molecule](https://docs.microsoft.com/samples/microsoft/quantum/simple-molecular-energy-estimation-with-the-azure-quantum-service/). This and more QDK and Azure Quantum samples can be found in the [code samples](https://docs.microsoft.com/samples/browse/?expanded=azure&products=azure-quantum%2Cqdk&languages=qsharp).
+The Quantum Development Kit (QDK) comes with the [quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview) to simulate electronic structure problems and quantum dynamics on a quantum computer. An example of such simulations is the [simple molecular energy estimation of the ground state of a molecule](/samples/microsoft/quantum/simple-molecular-energy-estimation-with-the-azure-quantum-service/). This and more QDK and Azure Quantum samples can be found in the [code samples](/samples/browse/?expanded=azure&products=azure-quantum%2Cqdk&languages=qsharp).
 
 ### Quantum speedups
 
@@ -56,7 +56,7 @@ Like Shor's algorithm for factoring, the hidden shift problem is a natural sourc
 
 For a practical implementation of Grover's algorithm to solve mathematical problems take a look at the [Grover's Search Jupyter notebook](xref:microsoft.quantum.get-started.notebooks) in the sample gallery of your Azure Quantum workspace (an Azure account is required), or see this [tutorial to implement Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers).
 
-For more quantum algorithm samples, see the [code samples](https://docs.microsoft.com/samples/browse/?expanded=azure&products=azure-quantum%2Cqdk&languages=qsharp).
+For more quantum algorithm samples, see the [code samples](/samples/browse/?expanded=azure&products=azure-quantum%2Cqdk&languages=qsharp).
 
 ### Quantum machine learning
 
@@ -100,7 +100,7 @@ Entangled quantum systems can maintain this correlation even when separated over
 > [!NOTE]
 > Not every correlation between the measurements of two qubits means that the two qubits are entangled. Classical bits can also be correlated. Two qubits are entangled when they present correlations that can't be reproduced by using classical bits. This difference between classical and quantum correlations is subtle, but it's essential for the speedup provided by quantum computers. 
 
-If you want to learn more, see the tutorial [exploring quantum entanglement with Q# and Azure Quantum](xref:microsoft.quantum.tutorial-portal.entanglement).
+If you want to learn more, see the tutorial [exploring quantum entanglement with Q# and Azure Quantum](xref:microsoft.quantum.tutorial-qdk.entanglement).
 
 ## Quantum computers vs quantum simulators
 
