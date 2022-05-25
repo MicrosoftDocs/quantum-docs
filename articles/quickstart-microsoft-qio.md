@@ -27,6 +27,12 @@ Learn how to use optimization solvers in Azure Quantum to solve a simple binary 
 
 ::: zone-end
 
+::: zone pivot="platform-toshiba"
+
+[!INCLUDE [toshiba-procedure](includes/quickstart-qio-include-toshiba.md)]
+
+::: zone-end
+
 > [!NOTE]
 > If you run into an error while working with Azure Quantum, you can check our [list of common issues](xref:microsoft.quantum.azure.common-issues). Also if your are using an optimization solver and you get an error in the form `<AZQxxx>`, you can check our [list of common user errors in optimization solvers](xref:microsoft.quantum.optimization.troubleshooting).
 
