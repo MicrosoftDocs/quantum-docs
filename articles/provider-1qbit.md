@@ -1,7 +1,7 @@
 ---
-author: Mobius5150
+author: bradben
 description: This document provides the technical details of the 1QBit provider
-ms.author: mblouin
+ms.author: brbenefield
 ms.date: 07/26/2021
 ms.service: azure-quantum
 ms.subservice: optimization

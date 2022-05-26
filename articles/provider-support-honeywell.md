@@ -1,7 +1,7 @@
 ---
-author: Mobius5150
+author: bradben
 description: This document provides details on the support policy for the Honeywell provider in Azure Quantum
-ms.author: mblouin
+ms.author: brbenefield
 ms.date: 02/01/2022
 ms.service: azure-quantum
 ms.subservice: computing

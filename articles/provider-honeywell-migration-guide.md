@@ -1,7 +1,7 @@
 ---
-author: Mobius5150
+author: bradben
 description: This document details how to migrate from the Honeywell provide to the Quantinuum provider.
-ms.author: mblouin
+ms.author: brbenefield
 ms.date: 02/24/2022
 ms.service: azure-quantum
 ms.subservice: computing
