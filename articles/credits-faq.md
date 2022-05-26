@@ -1,7 +1,7 @@
 ---
-author: mblouin
+author: sonialopezbravo
 description: Frequently Asked Questions regarding the Azure Quantum Credits Program
-ms.author: mblouin
+ms.author: sonialopez
 ms.date: 01/27/2022
 ms.service: azure-quantum
 ms.subservice: core

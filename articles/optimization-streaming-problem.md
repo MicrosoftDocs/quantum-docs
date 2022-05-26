@@ -1,7 +1,7 @@
 ---
-author: Mobius5150
+author: sonialopezbravo
 description: Reference for azure.quantum.optimization.StreamingProblem
-ms.author: mblouin
+ms.author: sonialopez
 ms.date: 04/12/2021
 ms.service: azure-quantum
 ms.subservice: optimization
