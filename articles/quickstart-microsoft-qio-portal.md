@@ -29,7 +29,7 @@ Learn how to use Azure Quantum optimization solvers to solve a simple binary opt
 
 ::: zone pivot="platform-toshiba"
 
-[!INCLUDE [toshiba-procedure](includes/quickstart-qio-include-toshiba.md)]
+[!INCLUDE [toshiba-procedure](includes/quickstart-qio-include-toshiba-portal.md)]
 
 ::: zone-end
 
