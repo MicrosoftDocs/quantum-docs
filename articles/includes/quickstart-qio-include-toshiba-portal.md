@@ -12,7 +12,7 @@ ms.topic: include
 To complete this tutorial, you need
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- An Azure Quantum workspace with the **Toshiba** provider enabled. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- An Azure Quantum workspace with the **Toshiba SQBM+** provider enabled. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Create a new Notebook in your workspace
 
@@ -49,7 +49,7 @@ Click **+ Code** to add another new cell and add the following lines:
 ```py
 from azure.quantum.optimization import Problem, ProblemType, Term
 
-problem = Problem(name="My First Problem", problem_type=ProblemType.ising)
+problem = Problem(name="My First Problem", problem_type=ProblemType.pubo)
 ```
 
 This code creates an instance of a `Problem` and sets the `problem_type` to  `ProblemType.pubo`. For more information, see [`ProblemType`](xref:microsoft.quantum.optimization.problem-type).
