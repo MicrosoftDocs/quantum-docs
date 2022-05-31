@@ -4,7 +4,7 @@ description: This document provides a step-by-step guide to get you started with
 author: bradben
 ms.author: brbenefield
 ms.topic: quickstart
-ms.date: 02/17/2022
+ms.date: 05/31/2022
 ms.service: azure-quantum
 ms.subservice: optimization
 uid: microsoft.quantum.quickstarts.optimization.qio.portal
@@ -24,6 +24,12 @@ Learn how to use Azure Quantum optimization solvers to solve a simple binary opt
 ::: zone pivot="platform-1qbit"
 
 [!INCLUDE [1qbit-procedure](includes/quickstart-qio-include-1qbit-portal.md)]
+
+::: zone-end
+
+::: zone pivot="platform-toshiba"
+
+[!INCLUDE [toshiba-procedure](includes/quickstart-qio-include-toshiba.md)]
 
 ::: zone-end
 
