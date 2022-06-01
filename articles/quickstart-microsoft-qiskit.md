@@ -1,8 +1,8 @@
 ---
-author: guenp
+author: bradben
 description: Learn how to submit Qiskit quantum circuits to the Azure Quantum service.
-ms.author: guenp
-ms.date: 01/27/2022
+ms.author: brbenefield
+ms.date: 05/31/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -20,7 +20,7 @@ Learn how to use the `azure-quantum` Python package to submit Qiskit quantum cir
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - Create an Azure Quantum workspace and enable your preferred provider, Quantinuum or IonQ (or both), for this scenario. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- Install the latest [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview.python-only).
+- Install the latest [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview.python-only) using the \[qiskit\] tag.
 
     > [!TIP]
     > If you are using [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads), you can optionally create a new environment by downloading [environment.yml](https://github.com/microsoft/qdk-python/blob/main/azure-quantum/environment.yml) and running the following:
