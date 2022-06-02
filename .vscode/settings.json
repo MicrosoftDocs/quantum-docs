@@ -7,6 +7,17 @@
         "MD013": false
     },
     "cSpell.words": [
-        "Quickstart"
+        "CNOT",
+        "Hadamard",
+        "kraus",
+        "mathrel",
+        "matplotlib",
+        "numpy",
+        "pyplot",
+        "qsharp",
+        "qubit",
+        "qubits",
+        "Quickstart",
+        "qutip"
     ]
 }

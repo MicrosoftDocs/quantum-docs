@@ -31,7 +31,7 @@ that the algorithm hasn't changed.
 |[Simple resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)| `ResourcesEstimator` | `Microsoft.Quantum.Simulation.Simulators`| Performs a top level analysis of the resources needed to run a quantum algorithm, and supports thousands of qubits.|
 |[Trace-based resource estimator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)|  `QCTraceSimulator` | `Microsoft.Quantum.Simulation.Simulators`| Runs advanced analysis of resources consumptions for the algorithm's entire call-graph, and supports thousands of qubits.|
 |[Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)| `ToffoliSimulator` | `Microsoft.Quantum.Simulation.Simulators`|Simulates quantum algorithms that are limited to `X`, `CNOT`, and multi-controlled `X` quantum operations, and supports million of qubits. |
-|[Noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator)| `OpenSystemsSimulator` | `Microsoft.Quantum.Experimental`|Simulates quantum algorithms under the presence of noise, and also the *stabilizer representation* (also known as CHP simulation) of quantum algorithms.|
+|[Noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator)| `OpenSystemsSimulator` | `Microsoft.Quantum.Simulation.Simulators`|Simulates quantum algorithms under the presence of noise, and also the *stabilizer representation* (also known as CHP simulation) of quantum algorithms.|
 
 ## Next steps
 

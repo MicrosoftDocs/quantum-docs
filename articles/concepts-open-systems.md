@@ -14,10 +14,10 @@ uid: microsoft.quantum.concepts.opensystems
 # Open quantum systems
 
 Quantum systems that are isolated from their environments such that no other system interacts with the qubits are called *closed quantum systems*. By contrast, a device that is subject to some amount of interaction, or *noise*, from its environment is an *open quantum system*. In general, these interactions between the system and the environment significantly change the dynamics of the system and result in quantum dissipation, such that the information contained in the system is lost to its environment.
- 
-The Quantum Development Kit provides a [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulation of open quantum systems. This feature allows for simulating the behavior of Q# programs under the influence of noise, and also for using the *stabilizer representation* (also known as CHP simulation) of quantum algorithms, that is, algorithms consisting solely of [CNOT](xref:Microsoft.Quantum.Intrinsic.CNOT), [Hadamard](xref:Microsoft.Quantum.Intrinsic.H), and phase gates. 
 
-This article explains some of the basic concepts of open quantum systems, and how quantum operations can affect the states of open systems. 
+The Quantum Development Kit provides a [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulation of open quantum systems. This feature allows for simulating the behavior of Q# programs under the influence of noise, and also for using the *stabilizer representation* (also known as CHP simulation) of quantum algorithms, that is, algorithms consisting solely of [CNOT](xref:Microsoft.Quantum.Intrinsic.CNOT), [Hadamard](xref:Microsoft.Quantum.Intrinsic.H), and phase gates.
+
+This article explains some of the basic concepts of open quantum systems, and how quantum operations can affect the states of open systems.
 
 ## Invoking the noise simulators from Python
 
@@ -32,13 +32,12 @@ import matplotlib.pyplot as plt
 
 ```
 
-2. You can enable the use of the noise simulators by using the `qsharp.experimental` module:
+1. You can enable the use of the noise simulators by using the `qsharp` package:
 
 ```python
 import qsharp
-import qsharp.experimental
-qsharp.experimental.enable_noisy_simulation()
 ```
+
 ## Revisiting quantum states
 
 Before discussing the representation of open quantum systems, it's helpful to quickly revisit representations of closed quantum systems. In particular, the state of an $n$-qubit register can be represented as a vector of $2^n$ complex numbers. For example, the state of a single qubit can be written as a vector of the form
@@ -76,23 +75,25 @@ namespace OpenSystemsConcepts {
 }
 ```
 
-> [!Note]
+> [!NOTE]
 > The `@EntryPoint()` attribute used for Q# applications cannot be used with host programs. An error will be raised if it is present in the Q# file being called by a host.
 
-2. Add the following code to your host program to import the Q# operation `DumpPlus`:
+1. Add the following code to your host program to import the Q# operation `DumpPlus`:
 
 ```python
 from OpenSystemsConcepts import DumpPlus
 
 print(DumpPlus.simulate())
 ```
-Calling <xref:Microsoft.Quantum.Diagnostics.DumpMachine> generates the following output:
+
+Calling the <xref:Microsoft.Quantum.Diagnostics.DumpMachine> generates the following output:
 
 ```output
 # wave function for qubits with ids (least to most significant): 0
 ∣0❭:     0.707107 +  0.000000 i  ==     ***********          [ 0.500000 ]     --- [  0.00000 rad ]
 ∣1❭:     0.707107 +  0.000000 i  ==     ***********          [ 0.500000 ]     --- [  0.00000 rad ]
 ```
+
 > [!NOTE]
 > Notice that the output may appear differently if you run the example in a Python notebook, as Jupyter notebook, instead of at the command line, as that interface understands how to forward HTML-based diagnostics from the IQ# kernel to the IPython kernel.
 
@@ -107,7 +108,6 @@ The rest of the rows describe the probability amplitude of measuring the basis s
 * **`    ---`**: A graphical representation of the amplitude's phase (see the following output).
 * **`[ 0.0000 rad ]`**: the numeric value of the phase (in radians).
 
-
 The above diagnostic tells you that at the point when `DumpMachine` is called, the state of the qubit is given by the vector $\ket{+} \mathrel{:=} (\ket{0} + \ket{1}) / \sqrt{2} \approx 0.7071 \ket{0} + 0.7071 \ket{1}$.
 
 You can also write this state in QuTiP notation, using `qt.basis(2, i)` to represent $\ket{i}$ on a single qubit:
@@ -118,13 +118,15 @@ ket1 = qt.basis(2, 1)
 ket_plus = (1 / np.sqrt(2)) * (ket0 + ket1)
 print(ket_plus)
 ```
+
 ```output
 Quantum object: dims = [[2], [1]], shape = (2, 1), type = ket
 Qobj data =
 [[0.707]
  [0.7.7]]
 ```
-3. When measuring a qubit in the $\ket{+}$ state in the $Z$-basis, you get 0 and 1 with equal probability. This can be used as a quantum random bit generator.
+
+1. When measuring a qubit in the $\ket{+}$ state in the $Z$-basis, you get 0 and 1 with equal probability. This can be used as a quantum random bit generator.
 
 ```qsharp
 operation SampleRandomBit() : Result {
@@ -133,14 +135,17 @@ operation SampleRandomBit() : Result {
     return MResetZ(q);
 }
 ```
+
 ```python
 from OpenSystemsConcepts import SampleRandomBit
 print(sum(SampleRandomBit.simulate() for _ in range(100)))
 ```
+
 ```output
 54
 ```
-4. Though the $\ket{+}$ state is not inherently random, you can deterministically return to the $\ket{0}$ state by applying another Hadamard operation:
+
+1. Though the $\ket{+}$ state is not inherently random, you can deterministically return to the $\ket{0}$ state by applying another Hadamard operation:
 
 ```qsharp
 operation ApplyHTwiceAndMeasure() : Result {
@@ -150,18 +155,22 @@ operation ApplyHTwiceAndMeasure() : Result {
     return MResetZ(q);
 }
 ```
+
 ```python
 from OpenSystemsConcepts import ApplyHTwiceAndMeasure
 print(sum(ApplyHTwiceAndMeasure.simulate() for _ in range(100)))
 ```
+
 ```output
 0
 ```
+
 ## Preparing random states
 
 As opposed to preparing $\ket{+}$ and then measuring it, you could also consider flipping a coin classically, and using the outcome to prepare either the $\ket{0}$ or $\ket{1}$ state. Thus, if the outcome is "heads", the qubit is prepared in the $\ket{0}$ state, and if the outcome is "tails", the qubit is prepared in the $\ket{1}$ state.
 
 1. Add the following code to your Q# program.
+
 ```qsharp
 operation PrepareAndMeasureRandomState() : Result {
     use q = Qubit();
@@ -171,16 +180,19 @@ operation PrepareAndMeasureRandomState() : Result {
     return MResetZ(q);
 }
 ```
+
 The `PrepareAndMeasureRandomState` operation applies the [`X`](xref:Microsoft.Quantum.Intrinsic.X) to a qubit with 50% of probability, as in a classical coin flip. Doing so, the results is the 50/50 outcomes for the $\ket{0}$ state and the $\ket{1}$ state :
 
 ```python
 from OpenSystemsConcepts import PrepareAndMeasureRandomState
 print(sum(PrepareAndMeasureRandomState.simulate() for _ in range(100)))
 ```
+
 ```output
 45
 ```
-2. However, now if you apply `H` again, the result of the operation doesn't get back to a deterministic outcome:
+
+1. However, now if you apply `H` again, the result of the operation doesn't get back to a deterministic outcome:
 
 ```qsharp
 operation ApplyHToRandomStateAndMeasure() : Result {
@@ -192,10 +204,12 @@ operation ApplyHToRandomStateAndMeasure() : Result {
     return MResetZ(q);
 }
 ```
+
 ```python
 from OpenSystemsConcepts import PrepareAndMeasureRandomState
 print(sum(ApplyHToRandomStateAndMeasure.simulate() for _ in range(100)))
 ```
+
 ```output
 42
 ```
@@ -244,14 +258,14 @@ Using density operators, you can write both ensembles of states, as well as the 
 
 $$
 \begin{align}
-    \ket{+}\bra{+} = 
+    \ket{+}\bra{+} =
     \frac{1}{2} \left( \begin{matrix}
         1 & 1 \\\\ 1 & 1
     \end{matrix} \right).
 \end{align}
 $$
 
-That is, even though both `SampleRandomBit` and `PrepareAndMeasureRandomState` both prepare density operators with the same diagonal elements (and thus have the same measurement probabilities in the $Z$-basis), the two density operators have different off-diagonal elements. 
+That is, even though both `SampleRandomBit` and `PrepareAndMeasureRandomState` both prepare density operators with the same diagonal elements (and thus have the same measurement probabilities in the $Z$-basis), the two density operators have different off-diagonal elements.
 
 We say that density operators in general represent *mixed states*, and that states that can be written as $\ket{\psi}\bra{\psi}$ for some state vector $\ket{\psi}$ (fo example, $\ket{+}\bra{+}$) are *pure states*. For more information about the differences between mixed states and pure states, see [density operators](xref:microsoft.quantum.concepts.dirac#density-operators).
 
@@ -296,6 +310,7 @@ For example, you can use `qt.to_super` to convert a few unitary matrices into su
 # Convert the 𝟙 matrix used to simulate Microsoft.Quantum.Intrinsic.I (single qubit no-op) into a superoperator.
 print(qt.to_super(qt.qeye(2)))
 ```
+
 ```output
 Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = True
 Qobj data =
@@ -304,6 +319,7 @@ Qobj data =
  [0.0  0.0  1.0  0.0]
  [0.0  0.0  0.0  1.0]]
 ```
+
 As expected, the superoperator resulting from the identity operator maps all operators to themselves.
 
 On the other hand, for the $X$ operation the result is different:
@@ -312,6 +328,7 @@ On the other hand, for the $X$ operation the result is different:
 # Convert the 𝑋 matrix used to simulate Microsoft.Quantum.Intrinsic.X into a superoperator.
 print(qt.to_super(qt.sigmax()))
 ```
+
 ```output
 Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = True
 Qobj data =
@@ -320,7 +337,7 @@ Qobj data =
  [0.0  1.0  0.0  0.0]
  [1.0  0.0  0.0  0.0]]
 ```
- 
+
 Notice that each column is a stack of the elements in an operator output by the function $\Lambda_X(\rho) = X \rho X^{\dagger} = X \rho X$.
 
 Since $\Lambda(\ket{0}\bra{0}) = X\ket{0} \bra{0}X = \ket{1}\bra{1}$, the first column is a stack of the elements of $\ket{1}\bra{1} = \left(\begin{matrix} 0 & 0 \\\\ 0 & 1 \end{matrix}\right)$. Similarly, the second column is a stack of the elements of $\Lambda_X(\ket{0}\bra{1}) = \ket{1}\bra{0}$:
@@ -328,6 +345,7 @@ Since $\Lambda(\ket{0}\bra{0}) = X\ket{0} \bra{0}X = \ket{1}\bra{1}$, the first 
 ```python
 print(np.array((ket1 * ket0.dag()).data.todense().flat))
 ```
+
 ```output
 [0.+0.j, 0.+0.j, 1.+0.j, 0.+0.j]
 ```
@@ -338,6 +356,7 @@ The same pattern can be used  in converting other unitary operators such as $H$ 
 H_super = qt.to_super(qt.qip.operations.hadamard_transform())
 print(H_super)
 ```
+
 ```output
 Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = True
 Qobj data =
@@ -346,10 +365,12 @@ Qobj data =
  [0.5 0.5 -0.5 -0.5]
  [0.5 -0.5 -0.5 0.5]]
 ```
+
 ```python
 Z_super = qt.to_super(qt.sigmaz())
 print(Z_super)
 ```
+
 ```output
 Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = True
 Qobj data =
@@ -358,7 +379,7 @@ Qobj data =
  [0.0 0.0 -1.0 0.0]
  [0.0 0.0 0.0 1.0]]
 ```
- 
+
 Looking at the $Z$ superoperator example, notice there is not a $-1$ sign in the lower-right hand corner. This is because density operators and superoperators do not have the same global phase ambiguity that state vectors and unitary operators do.
 
 In particular, consider the $Z$ operation acting on a qubit in the $\ket{1}$ state. When simulating this with state vectors, the result is $Z \ket{1} = -\ket{1}$, where the $-$ sign in front of $\ket{1}$ is, in this case, an insignificant global phase. On the other hand, when using open systems notation, the same operation results in $\Lambda_Z(\ket{1}\bra{1}) = Z\ket{1} \bra{1}Z^{\dagger} = Z\ket{1} \bra{1}Z = (-\ket{1})(-\bra{1}) = \ket{1}\bra{1}$, such that the global phases on the "ket" and "bra" parts of $\ket{1}\bra{1}$ cancel each other out.
@@ -378,16 +399,19 @@ On the other hand, relative phases are still represented in open systems notatio
 ```python
 print(ket_plus * ket_plus.dag())
 ```
+
 ```output
 Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
 Qobj data =
 [[0.5 0.5]
  [0.5 0.5]]
 ```
+
 ```python
 ket_minus = (ket0 - ket1) / np.sqrt(2)
 print(ket_minus * ket_minus.dag())
 ```
+
 ```output
 Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
 Qobj data =
@@ -405,6 +429,7 @@ Using superoperators not only allows you to represent familiar unitary operation
 lambda_noisy_h = 0.95 * qt.to_super(qt.qip.operations.hadamard_transform()) + 0.05 * qt.to_super(qt.qeye(2))
 print(lambda_noisy_h)
 ```
+
 ```output
 Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = True
 Qobj data =
@@ -418,36 +443,35 @@ Unlike the unitary matrix $H$ that describes the ideal action of the Hadamard op
 
 ### Noise simulation in Q\#
 
-The [QDK noise simulators](xref:microsoft.quantum.machines.overview.noise-simulator) are enabled by using the `qsharp.experimental` module. 
+Similar to the `.simulate()` method, Q# operations imported into Python expose a `.simulate_noise()` method that can be used to run Q# programs against the noise simulators.
 
-After calling `enable_noisy_simulation()`, Q# operations imported into Python expose a `.simulate_noise()` method that can be used to run Q# programs against the noise simulators.
+By default, `.simulate_noise()` method assumes an *ideal error* model, that is, no noise. To configure a particular error model, you can use the `qsharp.get_noise_model` and `qsharp.set_noise_model` functions to get and set the current noise model for the preview simulators. Each error model is represented as a dictionary from intrinsic operation names to objects representing the errors in those intrinsic operations. For more information, see [Configuring open systems in noise models](xref:microsoft.quantum.machines.overview.noise-simulator#configuring-open-systems-noise-models).
 
-By default, `.simulate_noise()` method assumes an *ideal error* model, that is, no noise. To configure a particular error model, you can use the `qsharp.experimental.get_noise_model` and `qsharp.experimental.set_noise_model` functions to get and set the current noise model for the preview simulators. Each error model is represented as a dictionary from intrinsic operation names to objects representing the errors in those intrinsic operations. For more information, see [Configuring open systems in noise models](xref:microsoft.quantum.machines.overview.noise-simulator#configuring-open-systems-noise-models).
-
-You can simulate the superoperator $\Lambda_{text{noisy}H}$ previously defined as a noise model and run the `DumpPlus` operation. 
+You can simulate the superoperator $\Lambda_{text{noisy}H}$ previously defined as a noise model and run the `DumpPlus` operation.
 
 1. First, run the code with an ideal noise model so you can compare the outcome.
 
 ```python
-qsharp.config['experimental.simulators.nQubits'] = 1
-qsharp.experimental.set_noise_model_by_name('ideal')
+qsharp.config['simulators.noisy.nQubits'] = 1
+qsharp.set_noise_model_by_name('ideal')
 
 # Run with an ideal noise model first.
 print(DumpPlus.simulate_noise())
 ```
+
 ```output
 'text/plain': 'Mixed state on 1 qubits: [ [0.5000000000000001 + 0 i, 0.5000000000000001 + 0 i] [0.5000000000000001 + 0 i, 0.5000000000000001 + 0 i] ]'
 ```
-2. To configure the noise model, set `lambda_noisy_h` as the noise model to follow, and then run the `DumpPlus` operation to see the effects of the noisy Hadamard operation on the quantum state.
+
+1. To configure the noise model, set `lambda_noisy_h` as the noise model to follow, and then run the `DumpPlus` operation to see the effects of the noisy Hadamard operation on the quantum state.
 
 ```python
-noise_model = qsharp.experimental.get_noise_model_by_name('ideal')
-noise_model['h'] = lambda_noisy_h
-qsharp.experimental.set_noise_model(noise_model)
+noise_model = qsharp.set_noise_model_by_name('ideal', h=lambda_noisy_h)
 
 # Run again, using the new noisy superoperator for the `H` operation.
 print(DumpPlus.simulate_noise())
 ```
+
 ```output
 'text/plain': 'Mixed state on 1 qubits: [ [0.5249999999999999 + 0 i, 0.47500000000000026 + -7.536865798903469E-33 i] [0.5249999999999999 + 0 i, 0.47500000000000026 + 7.536865798903469E-33 i & 0.4750000000000007 + 0 i] ]'
 ```
@@ -461,6 +485,7 @@ There are many other kinds of noise as well. For example, a very well known nois
 completely_depolarizing_process = 0.25 * (I + X + Y + Z)
 print(completely_depolarizing_process)
 ```
+
 ```output
 Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = True
 Qobj data =
@@ -480,6 +505,7 @@ def depolarizing_noise(strength=0.05):
     
 print(depolarizing_noise(0.05))
 ```
+
 ```output
 Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = True
 Qobj data =
@@ -503,6 +529,7 @@ lambda_reset = qt.Qobj([
     [0, 0, 0, 0],
 ], dims=completely_depolarizing_process.dims)
 ```
+
 You can use `lambda_reset` to represent the *amplitude damping noise*, in which there's a finite chance of resetting each qubit:
 
 ```python
@@ -510,6 +537,7 @@ def amplitude_damping_noise(strength=0.05):
     return strength * lambda_reset + (1 - strength) * qt.to_super(I)
 print(amplitude_damping_noise(0.05))
 ```
+
 ```output
 Quantum object: dims = [[[2], [2]], [[2], [2]]], shape = (4, 4), type = super, isherm = False
 Qobj data =
@@ -518,9 +546,10 @@ Qobj data =
  [0.0 0.0 0.950 0.0]
  [0.0 0.0 0.0 0.950]]
 ```
+
 ## Example: Decaying Ramsey signal
 
-In this example, you will study the evolution of a qubit when you repeatedly apply the π/4 phase gate or [`S`](xref:Microsoft.Quantum.Intrinsic.S) to it and then measure. This simple example works as a good toy model for Ramsey interferometry, which is a technique for measuring particle transition frequencies with atomic precision. 
+In this example, you will study the evolution of a qubit when you repeatedly apply the π/4 phase gate or [`S`](xref:Microsoft.Quantum.Intrinsic.S) to it and then measure. This simple example works as a good toy model for Ramsey interferometry, which is a technique for measuring particle transition frequencies with atomic precision.
 
 In the absence of noise, a Ramsey signal keeps oscillating back and forth with each iteration of `S`. Add the following code to your Q# quantum program:
 
@@ -538,13 +567,13 @@ operation ApplySRepeatedlyAndMeasure(nRepetions : Int) : Result {
 }
 ```
 
-The operation `ApplySRepeatedlyAndMeasure` sets a qubit in superposition, applies the π/4 phase operation `nRepetions` times, and then returns the measurement in $Z$-axis. 
+The operation `ApplySRepeatedlyAndMeasure` sets a qubit in superposition, applies the π/4 phase operation `nRepetions` times, and then returns the measurement in $Z$-axis.
 Add the following code to your host program to simulate the `ApplySRepeatedlyAndMeasure` operation in the absence of noise.
 
 ```python
 from OpenSystemsConcepts import ApplySRepeatedlyAndMeasure
 
-qsharp.experimental.set_noise_model_by_name('ideal')
+qsharp.set_noise_model_by_name('ideal')
 
 ns = np.arange(1, 101)
 signal_wo_noise = [
@@ -554,6 +583,7 @@ signal_wo_noise = [
 
 print(plt.plot(ns, signal_wo_noise))
 ```
+
 ![ramsey signal ideal](~/media/ramsey-signal-ideal-model.png)
 
 On the other hand, if the $S$ operation has some finite amplitude damping noise, then the signal will eventually decay:
@@ -564,16 +594,17 @@ S = qt.Qobj([
     [0, 1j]
 ])
 
-noise_model = qsharp.experimental.get_noise_model_by_name('ideal')
-noise_model['h'] = (
-    depolarizing_noise(0.025) *
-    qt.to_super(qt.qip.operations.hadamard_transform())
+qsharp.set_noise_model_by_name(
+    'ideal',
+    h=(
+        depolarizing_noise(0.025) *
+        qt.to_super(qt.qip.operations.hadamard_transform())
+    ),
+    s=(
+        amplitude_damping_noise(0.025) *
+        qt.to_super(S)
+    )
 )
-noise_model['s'] = (
-    amplitude_damping_noise(0.025) *
-    qt.to_super(S)
-)
-qsharp.experimental.set_noise_model(noise_model)
 
 # Note that this can take a few moments to run.
 signal = [
@@ -588,12 +619,95 @@ plt.legend()
 
 ![ramsey signal noise](~/media/ramsey-signal-noise-model.png)
 
+## Representing noise in continuous-time rotations
+
+So far, we have mostly considered quantum operations such as [`H`](xref:Microsoft.Quantum.Intrinsic.H) or [`X`](xref:Microsoft.Quantum.Intrinsic.X).
+In particular, these operations are both of type `Qubit => Unit is Adj + Ctl`, indicating that they do not have any additional parameters beyond the target qubit that they act upon.
+
+By contrast, the [`Rz` operation](xref:Microsoft.Quantum.Intrinsic.Rz) has type `(Double, Qubit) => Unit is Adj + Ctl`, representing the angle of the rotation to be performed as well as the target.
+In general, the noise incurred by `Rz(0.123)` need not be the same as the noise incurred by `Rz(0.456)`, such that we also require a way to represent *continuous-time* noise as well as the discrete case considered above.
+
+In closed quantum systems (that is, quantum systems that evolve without noise), continuous-time evolution is given by a Hamiltonian operator $H$ that represents the time derivative of a quantum state as per the Schrödinger equation:
+$$
+\begin{equation*}
+    \frac{\partial}{\partial t} \ket{\psi(t)} = -iH \ket{\psi(t)}.
+\end{equation*}
+$$
+This is solved by taking the matrix exponential of $H$,
+$$
+\begin{aligned}
+    \ket{\psi(t)} & = U(t) \ket{\psi(0)} \text{ where} \\
+    U(t) & = \exp(-itH).
+\end{aligned}
+$$
+
+By analogy, we can represent the derivative of a density operator in the absence of noise by rearranging the Schrödinger equation:
+$$
+\begin{equation*}
+    \frac{\partial}{\partial t} \rho(t) = -i[H, \rho],
+\end{equation*}
+$$
+where $[A, B] \mathrel{:=} AB - BA$ is the *commutator* of $A$ with $B$.
+The effect of noise can be included in the above by adding one or more *jump operators* $\{L_i\}$ representing the various kinds of noisy processes competing with coherent evolution:
+$$
+\begin{equation*}
+    \frac{\partial}{\partial t} \rho(t) = -i[H, \rho] + \sum_i \left(
+        L_i \rho L_i^\dagger - \frac12 \{L_i^\dagger L, \rho\}
+    \right)
+\end{equation*}
+$$
+where $\{A, B\} \mathrel{:=} AB + BA$ is the *anticommutator* of $A$ with $B$.
+
+To represent the above derivative as a single matrix as we did with $U(t)$ in the closed systems case, we need a way to turn left- and right-multiplication of a matrix into left-multiplication of a vector. We can use what's known as the *column-stacking convention* to turn $\rho$ into a vector $|\rho⟫$; for example,
+$$
+    \Bigg|\left(\begin{matrix} a & b \\ c & d \end{matrix}\right)\Bigg\rangle\!\!\!\!\Bigg\rangle =
+    \left(\begin{matrix}a \\ c \\ b \\ d\end{matrix}\right).
+$$
+We can then use the identity that $|ABC⟫ = C^\mathrm{T} \otimes A |B⟫$ to turn the above open systems derivative into a single matrix
+$$
+    G = -i(𝟙 \otimes H - H^\mathrm{T} \otimes I) + \sum_i \left(
+        L_i^* \otimes L_i
+        - \frac12 (L_i^\dagger L_i)^\mathrm{T} \otimes 𝟙
+        - \frac12 𝟙 \otimes (L_i^\dagger L_i)^\mathrm{T}
+    \right).
+$$
+This then gives us that
+$$
+    \rho(t) = \exp(tG) \rho(0).
+$$
+
+We can assign such generators to a noise model using the `to_generator` function provided by the `qsharp` package.
+For example, the ideal action of the `Rz` operation is given by the Hamiltonian $H = -\frac12 Z$; we can represent a misalignment of this Hamiltonian together with $T_1$ and $T_2$ processes by passing each to `to_generator`:
+
+```python
+qsharp.set_noise_model_by_name(
+    'ideal',
+    rz=to_generator(
+        -0.48 * qt.sigmaz(),
+        t1_dissipation(100.0),
+        t2_dissipation(25.0)
+    )
+)
+```
+
+We can also add in fixed quantum processes that apply before and after continuous-time evolution using the `pre` and `post` keyword arguments:
+
+```python
+qsharp.set_noise_model_by_name(
+    'ideal',
+    rz=to_generator(
+        -0.48 * qt.sigmaz(),
+        t1_dissipation(100.0),
+        t2_dissipation(25.0),
+        post=depolarizing_process(0.95)
+    )
+)
+```
+
+<!-- TODO: Revisit Ramsey! -->
 
 ## Next steps
 
-- [QDK noise simulators](xref:microsoft.quantum.machines.overview.noise-simulator)
-- [Understanding quantum computing](xref:microsoft.quantum.overview.understanding)
-- [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra)
-
-
-
+* [QDK noise simulators](xref:microsoft.quantum.machines.overview.noise-simulator)
+* [Understanding quantum computing](xref:microsoft.quantum.overview.understanding)
+* [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra)
