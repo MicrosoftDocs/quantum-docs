@@ -21,12 +21,32 @@ Azure Quantum makes solutions available from our partner companies, so the billi
 
 General pricing guidance:
 
-- When you create a new Azure account, you get 200 USD free **Azure Credits** to use on Microsoft services. You can only use general-purpose Azure Credits with the Microsoft providers. 3rd-party providers (providers that aren't owned by Microsoft) aren't eligible. 
-- When you create a new Azure Quantum workspace, you get 500 USD free **Azure Quantum credits** for use with each participating quantum hardware provider. 
-- If you have consumed all the credits and you need more, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits). Microsoft offers up to $10,000 USD extra Azure Quantum Credits for use on quantum hardware. For more information see [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq).
-- Most providers bill based on the resources you consume by running a job, though some also offer subscription plans. For more information about how each each provider charges, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
+- **Free Azure Credits**: When you create a new Azure account, you get 200 USD free **Azure Credits** to use on Microsoft services. You can only use general-purpose Azure Credits with the Microsoft providers. 3rd-party providers (providers that aren't owned by Microsoft) aren't eligible. 
+- **Free Azure Quantum credits**: When you create a new Azure Quantum workspace, you get 500 USD free **Azure Quantum credits** for use with each participating quantum hardware provider. 
+- **Azure Quantum Credits program**: If you have consumed all the credits and you need more, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits). Microsoft offers up to 10,000 USD extra Azure Quantum Credits for use on quantum hardware. For more information see [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq).
+- **Billing**: Most providers bill based on the resources you consume by running a job, though some also offer subscription plans. For more information about how each each provider charges, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
+
+## Before you run: Estimate job cost
+
+Before running a job on actual quantum hardware or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you can estimate how much it will cost to run. 
+
+To estimate the cost of running a job on the QPU, use the `estimate_cost` Python method. The `currency_code` method will tell you the currency unit of the estimated cost.
+
+```python
+cost = qpu_backend.estimate_cost(circuit, shots=100)
+
+print(f"Estimated cost: {cost.estimated_total} {cost.currency_code}")
+```
+
+In Azure Quantum, hardware and software providers define and control the pricing of their offerings. To understand job cost estimation, notice the difference in the equivalence between unit and price for each provider.
+
+|Provider | Unit price  |
+|---|---|
+|IonQ|1 qubit gate shot = 0.00003 USD |
+|Quantinuum|40 HQC = 500 USD |
 
 ## After you run: Job cost reporting
+
 After you run a job, Azure Quantum makes available detailed cost estimates for supported providers. You can use this information to understand the cost of individual jobs. This cost is the cost billed by the provider; refer to your final bill for the exact charges including relevant taxes.
 
 To review job costs, navigate to the **Job Management** blade within your Azure Quantum workspace. In the job list, you will see estimated costs reported for each job you've run (where supported). To see more information, click on a job that shows pricing information.
@@ -54,6 +74,10 @@ How to interpret the Cost Estimation table columns:
 - `Estimated Cost`: The estimated cost for this dimension, and equals `[Billed Units] * [Unit Price]`
 
 The total row at the bottom shows the total cost of all dimensions for processing the job.
+
+> [!NOTE]
+> IonQ has 1 USD minimum cost to run a job on the IonQ QPU. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
+
 
 ## Next steps
 
