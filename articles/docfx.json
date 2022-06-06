@@ -67,6 +67,8 @@
         }
       }
     },
+    "brand": "azure",
+    "uhfHeaderId": "azure",
     "template": [],
     "dest": "quantum-docs"
   }
