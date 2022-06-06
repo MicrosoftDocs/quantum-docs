@@ -28,7 +28,7 @@ General pricing guidance:
 
 ## Before you run: Estimate job cost
 
-Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you can estimate how much it will cost to run. 
+Before running a job on actual quantum hardware or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you can estimate how much it will cost to run. 
 
 To estimate the cost of running a job on the QPU, use the `estimate_cost` Python method. The `currency_code` method will tell you the currency unit of the estimated cost.
 
