@@ -272,6 +272,16 @@
     href: how-to-manage-quantum-workspaces-with-azure-resource-manager.md
   - name: Protect Azure Quantum with resource locks
     href: how-to-set-resource-locks.md
+  - name: Integrate with Azure Architecture
+    items:
+    - name: DevOps for quantum computing
+      href: /azure/architecture/guide/quantum/devops-for-quantum-computing?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
+    - name: CI/CD for quantum computing jobs
+      href: /azure/architecture/solution-ideas/articles/cicd-for-quantum-computing-jobs?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
+    - name: Loosely coupled quantum computing
+      href: /azure/architecture/example-scenario/quantum/loosely-coupled-quantum-computing-job?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
+    - name: Tightly coupled quantum computing
+      href: /azure/architecture/example-scenario/quantum/tightly-coupled-quantum-computing-job?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
 - name: Resources
   items:
   - name: Azure Quantum pricing 
