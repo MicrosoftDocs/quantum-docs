@@ -62,7 +62,7 @@ Billing information: H1 Emulator usage is offered free-of-charge with a hardware
 
 ## System Model H1
 
-The System Model H1 generation of quantum computers, Powered by Honeywell, includes two machine targets: H1-1 and H1-2. Both quantum computers have fundamentally the same design and both meet a nominal set of technical requirements. However, they may have system-to-system variability in exact performance and features, such as the maximum number of available qubits. Users are encouraged to test compatibility of their code by submitting jobs to the [Syntax Checker](#syntax-checker) and [System Model H1 Emulator](#system-model-h1-emulator) prior to submitting them to the target machines.  
+The System Model H1 generation of quantum computers, Powered by Honeywell, includes two machine targets: H1-1 and H1-2. Both quantum computers have fundamentally the same design and both meet a nominal set of technical requirements. However, they may have system-to-system variability in exact performance and features, such as the maximum number of available qubits. Users are encouraged to test compatibility of their code by submitting jobs to the [syntax checker](#syntax-checkers) and [System Model H1 Emulator](#system-model-h1-emulators) prior to submitting them to the target machines.  
 
 Users may submit jobs to a specific machine (H1-1 or H1-2), or submit them to the *machine family*.  Submission to the machine family enables the submitted job to run on the first available, compatible machine. The only condition for compatibility is the number of qubits. If a user submits a job to a specific machine that is not available, the job will remain in that machine's queue until the machine becomes available.
 
@@ -78,7 +78,7 @@ Both System Model H1 hardware H1-1 and H1-2 are continuously upgraded throughout
 
 ### Technical Specifications
 
-Technical details for System Model H1 and System Model H1 Emulators are found in Quantinuum's Product Data Sheets, which can be found here: [Quantinuum System Model H1](https://www.quantinuum.com/products/h1).
+Technical details for the System Model H1 and System Model H1 Emulators can be found in Quantinuum's [product data sheets](https://www.quantinuum.com/products/h1).
 
 ## Pricing
 
