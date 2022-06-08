@@ -90,7 +90,7 @@ Looking at the histogram, you may notice that the program returned 0 every time,
 To create a true random number generator, modify the code in the 5th cell to use the **System Model H1 Emulator** target, *honeywell.hqs-lt-s1-sim*
 
 > [!NOTE]
-> Running the program against the H1 Emulator or the System Model H1 computer will use H1 Quantum Credits (HQC) from your account. A single run of this example program costs approximately 5.3 HQC.
+> Running the program against the H1 Emulator or the System Model H1 computer will use H-System Quantum Credits (HQC) from your account. A single run of this example program costs approximately 5.3 HQC.
 
 ```python
 qsharp.azure.target("honeywell.hqs-lt-s1-sim")

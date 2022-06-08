@@ -112,9 +112,9 @@ print(f"Estimated cost: {cost.estimated_total}")
 Estimated cost: 8.6
 ```
 
-This prints the estimated cost in HQC, or "H1 Quantum Credits".
+This prints the estimated cost in H-System Quantum Credits (HQCs).
 
-For the most current pricing details, see [System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.honeywell#honeywell-system-model-h1), or view pricing options in the **Providers** blade of your workspace. To see your current credit status and usage, select **Credits and quotas**.
+For the most current pricing details, see [System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.quantinuum#quantinuum-system-model-h1), or view pricing options in the **Providers** blade of your workspace. To see your current credit status and usage, select **Credits and quotas**.
 
 ## Run on a Quantinuum QPU 
 
