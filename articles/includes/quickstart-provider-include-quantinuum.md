@@ -112,6 +112,6 @@ cost = target.estimate_cost(circuit, num_shots=500)
 print(f"Estimated cost: {cost.estimated_total}")
 ```
 
-This prints the estimated cost in HQC, or "H1 Quantum Credits".
+This prints the estimated cost in H-System Quantum Credits (HQCs).
 
-For the most current pricing details, see [System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.quantinuum#honeywell-system-model-h1), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
+For the most current pricing details, see [System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.quantinuum#quantinuum-system-model-h1), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
