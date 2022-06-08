@@ -1,6 +1,6 @@
 ---
-author: guenp
-ms.author:  v-guenp
+author: bradben
+ms.author: brbenefield
 ms.date: 01/21/2022
 ms.service: azure-quantum
 ms.subservice: qdk
