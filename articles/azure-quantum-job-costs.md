@@ -11,6 +11,7 @@ uid: microsoft.quantum.azure.job-costs
 ---
 
 # Azure Quantum job costs
+
 This article helps you understand the cost of jobs in Azure Quantum. 
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
@@ -21,8 +22,8 @@ Azure Quantum makes solutions available from our partner companies, so the billi
 
 General pricing guidance:
 
-- **Free Azure Credits**: When you create a new Azure account, you get 200 USD free **Azure Credits** to use on Microsoft services. You can only use general-purpose Azure Credits with the Microsoft providers. 3rd-party providers (providers that aren't owned by Microsoft) aren't eligible. 
-- **Free Azure Quantum credits**: When you create a new Azure Quantum workspace, you get 500 USD free **Azure Quantum credits** for use with each participating quantum hardware provider. 
+- **Free Azure Credits**: When you create a new Azure account, you get 200 USD free **Azure Credits** to use on Microsoft services. You can only use general-purpose Azure Credits with the Microsoft providers. 3rd-party providers (providers that aren't owned by Microsoft) aren't eligible.
+- **Free Azure Quantum credits**: When you create a new Azure Quantum workspace, you get 500 USD free **Azure Quantum credits** for use with each participating quantum hardware provider.
 - **Azure Quantum Credits program**: If you have consumed all the credits and you need more, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits). Microsoft offers up to 10,000 USD extra Azure Quantum Credits for use on quantum hardware. For more information see [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq).
 - **Billing**: Most providers bill based on the resources you consume by running a job, though some also offer subscription plans. For more information about how each each provider charges, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
@@ -67,6 +68,7 @@ _Prices below are shown for example purposes only._
 > ![The Job Details pane for a quantum job, with the Cost Estimation tab selected](./media/job-costs/job-cost-details.png)
 
 How to interpret the Cost Estimation table columns:
+
 - `Dimension`: The name of the dimension you're charged for by the provider.
 - `Unit Price`: The cost of one unit of the dimension.
 - `Consumed Units`: How many units of the dimension the job consumed.
@@ -77,7 +79,6 @@ The total row at the bottom shows the total cost of all dimensions for processin
 
 > [!NOTE]
 > IonQ has 1 USD minimum cost to run a job on the IonQ QPU. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
-
 
 ## Next steps
 

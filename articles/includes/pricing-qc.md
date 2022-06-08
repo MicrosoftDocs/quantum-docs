@@ -39,12 +39,11 @@ Minimum of $1 USD per program execution.
 
 ***
 
+## Quantinuum
 
-## Quantinuum 
+[Quantinuum](https://www.quantinuum.com/) uses a credit system called *H-System Quantum Credits (HQCs)*. Each job you run consumes credits depending on the number of operations in the job, and the number of shots you run.
 
-[Quantinuum](https://www.quantinuum.com/) , powered by Honeywell, uses a credit system called *Honeywell Quantum Credits*. Each job you run consumes credits depending on the number of operations in the job, and the number of shots you run.
-
-The following equation defines how circuits are translated into H1 Quantum Credits (HQCs):
+The following equation defines how circuits are translated into HQCs:
 
 $$
 HQC = 5 + C(N_{1q} + 10 N_{2q} + 5 N_m)/5000
@@ -57,9 +56,9 @@ where:
 - $N_{m}$ is the number of state preparation and measurement (SPAM) operations in a circuit including initial implicit state preparation and any intermediate and final measurements and state resets.
 - $C$ is the shot count.
 
-To learn more about Quantinuum and how H1 Quantum Credits are calculated, visit the [Quantinuum provider page](xref:microsoft.quantum.providers.honeywell).
+To learn more about Quantinuum, visit the [Quantinuum provider page](xref:microsoft.quantum.providers.quantinuum).
 
-All new Azure customers benefit of a one-time $500 free credits toward Quantinuum provider. Besides Azure Quantum credits, Quantinuum provides two plans: **Standard Subscription** and **Premium Subscription**. 
+All new Azure customers benefit of a one-time $500 in free credits towards the Quantinuum provider. Besides Azure Quantum credits, Quantinuum provides two plans: **Standard Subscription** and **Premium Subscription**.
 
 ### [Azure Quantum Credits](#tab/tabid-AQcreditsQ)
 
@@ -67,7 +66,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 
 |Pricing | Use is deducted from the Azure Quantum Credits based on the HQC equation described above |
 |---|---|  
-|Includes access to | <ul><li>40 H1 Quantum Credits (HQCs) for use on the System Model H1 hardware, powered by Honeywell</li><li>160 emulator credits (eHQCs) for use on the H1 Emulator</li></ul>|
+|Includes access to | <ul><li>40 H-System Quantum Credits (HQCs) for use on the System Model H1 hardware</li><li>160 emulator credits (eHQCs) for use on the System H1 Emulator</li></ul>|
 
 > [!NOTE]
 > Once you have consumed all the credits you need to explicitly switch to a different plan to continue using Quantinuum. Azure Quantum won’t start charging you once you reach your credit limit. 
@@ -78,7 +77,7 @@ The Standard Subcription is a monthly subscription plan available through queued
 
 |Pricing| $ 125,000 USD / Month + Azure infrastructure costs |
 |---|---|
-|Includes access to | <ul><li>10k H1 Quantum Credits (HQCs) for use on the System Model H1 hardware, powered by Honeywell</li><li>40k emulator credits (eHQCs) for use on the H1 Emulator</li></ul>|
+|Includes access to | <ul><li>10k H-System Quantum Credits (HQCs) for use on the System Model H1 hardware</li><li>40k emulator credits (eHQCs) for use on the H1 Emulator</li></ul>|
 
 ### [Premium Subscription](#tab/tabid-premium)
  
@@ -86,7 +85,7 @@ The Premium Subscription is a monthly subscription plan available through queued
 
 | Pricing |$ 175,000 USD / Month + Azure infrastructure costs |
 |---|---| 
-|Includes access to | <ul><li>17k H1 Quantum Credits (HQCs) for use on System Model H1 hardware, powered by Honeywell</li><li>100k emulator credits (eHQCs) for use on the H1 Emulator</li></ul>|
+|Includes access to | <ul><li>17k H-System Quantum Credits (HQCs) for use on System Model H1 hardware</li><li>100k emulator credits (eHQCs) for use on the H1 Emulator</li></ul>|
 ***
 
 

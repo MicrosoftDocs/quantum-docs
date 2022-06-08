@@ -54,38 +54,37 @@ Certain problems may be easier to address than others, and we may not be able to
 
 _Table 2: Definition of Severity Index_
 
-| Severity	| Meaning | Description |
+| Severity | Meaning | Description |
 | - | - | - |
-| Severity 1| 	Significant Impact | System performance degraded below minimum accepted level |
-| Severity 2| 	Urgent or high impact | Job status has not updated; issues retrieving data |
-| Severity 3| 	Not urgent | Miscellaneous  |
+| Severity 1| Significant Impact | System performance degraded below minimum accepted level |
+| Severity 2| Urgent or high impact | Job status has not updated; issues retrieving data |
+| Severity 3| Not urgent | Miscellaneous  |
 
 The following table shows the Response SLA that will be adhered to by Quantinuum for incident reports of the corresponding severity. Note that these define how fast we'll respond to issues – resolution times are not guaranteed.
 
 _Table 3: Response SLA for Various Severity_
 
-| Severity	| Response SLA |
+| Severity | Response SLA |
 | - | - |
-| Severity 1	| Business hours response within 1 hour |
-| Severity 2	| Business hours response within 1 business day |
-| Severity 3	| Business hours response within 3 business days |
-
+| Severity 1 | Business hours response within 1 hour |
+| Severity 2 | Business hours response within 1 business day |
+| Severity 3 | Business hours response within 3 business days |
 
 ## Frequently asked questions
 
-#### Q: What happens if I raise a support issue with the Azure support team and it turns out that a third party provider (like Quantinuum) needs to troubleshoot the issue further?
+### Q: What happens if I raise a support issue with the Azure support team and it turns out that a third party provider (like Quantinuum) needs to troubleshoot the issue further?
 
 The support engineer will create a redirection package for you. This is a PDF document that contains information about your case which you can provide to the Quantinuum support team.
 The support engineer will also give you advice and guidance on how to reach out to Quantinuum to continue troubleshooting.
 
-#### Q: What happens if I raise a support issue with the Quantinuum team and it turns out that there is an issue with the Azure Quantum service?
+### Q: What happens if I raise a support issue with the Quantinuum team and it turns out that there is an issue with the Azure Quantum service?
 
 The Quantinuum support team will help you reach out to Microsoft and provide you with a redirection package. This is a PDF document that you can use when continuing your support inquiry with the Azure support team.
 
-### Third-party information disclaimer
+## Third-party information disclaimer
 
 The third-party products that this article discusses are manufactured by companies that are independent of Microsoft. Microsoft makes no warranty, implied or otherwise, about the performance or reliability of these products.
 
-### Third-party contact disclaimer
+## Third-party contact disclaimer
 
 Microsoft provides third-party contact information to help you find additional information about this topic. This contact information may change without notice. Microsoft does not guarantee the accuracy of third-party contact information.

@@ -76,21 +76,21 @@ There are no costs or charges to using your free credits. However, there may be 
 
 You can see your current credit balance by selecting the **Overview** blade of your Azure Quantum workspace, and selecting the **Quota** tab. You will see a credits quota for each provider that you have credits with. The quota lists the total number of credits you have received, and you can hover over the relevant graph to see the amount you have used towards your credits.
 
-You can also see your quotas by using the Azure CLI and the `az quantum workspace quotas` command, as shown in the following example. In this case, the `qgs` row shows that the account has a total of `8333334 qgs` with IonQ, of which `33334 qgs` have been used. The account also has `800 HQC` with Quantinuum, of which `0 HQC` have been used.
+You can also see your quotas by using the Azure CLI and the `az quantum workspace quotas` command, as shown in the following example. In this case, the `qgs` row shows that the account has a total of `8333334 qgs` with IonQ, of which `33334 qgs` have been used. The account also has `800` HQCs with Quantinuum, of which `0` have been used.
 
 ```bash
 $ az quantum workspace quotas -o table
 |Dimension | Holds | Limit   |   Period |   ProviderId | Scope  Utilization|
 |--------- | ----- | --------- | -------- | ----------|  ------------ | -----------|
 |qgs      |  0.0  |  8333334.0 | Infinite | ionq      |  Subscription | 33334.0|
-|hqc      |  0.0  |  800.0     | Infinite | honeywell  | Subscription | 0.0|
+|hqc      |  0.0  |  800.0     | Infinite | quantinuum  | Subscription | 0.0|
 ```
 
 Note that credits are shown in the quota units used by the provider, and not in the dollar value of the credits received. Use the table below to understand the approximate conversion value between quota units and US dollar value:
 
 | Provider | Unit | Approximate $ Value (USD) | Documentation |
 |----------|------|---------------------------|---------------|
-| Quantinuum | HQC (H1 Quantum Credit) | $1 USD ~= 0.08 HQC | [Learn more about how H1 Quantum Credits are calculated](xref:microsoft.quantum.providers.honeywell) |
+| Quantinuum | HQC (H-System Quantum Credit) | $1 USD ~= 0.08 HQC | [Learn more about how H-System Quantum Credits are calculated](xref:microsoft.quantum.providers.quantinuum) |
 | IonQ | QGS (Qubit Gate-Shot) | $1 USD ~= 33,333.3 QGS | [Learn more about how IonQ Qubit-Gate-Shots are calculated](xref:microsoft.quantum.providers.ionq) |
 
 ### I'm encountering a problem using my credits. What can I do?
@@ -103,12 +103,15 @@ If you do not have an Azure support subscription or are unsure about how to file
 
 Instructions for configuring your Azure Quantum workspace to access Quantinuum:
 
-1. Open the [Azure Quantum workspace Create page] in the Azure Portal(https://portal.azure.com/#create/Microsoft.AzureQuantum)
+1. Open the [Azure Quantum workspace Create page](https://portal.azure.com/#create/Microsoft.AzureQuantum) in the Azure Portal.
 1. On the **Basics** tab while configuring your workspace, ensure the selected **subscription** matches the subscription you supplied in your onboarding information. The subscription information is also copied in the onboarding mail you received.
+
 > [!TIP]
 > Not sure how to find the subscription with the ID specified in the email? View the [list of your Azure Subscriptions](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) to identify which should be selected.
+
 1. On the **Basics** tab while configuring your workspace, ensure the selected **region** matches the subscription you supplied in your onboarding information. The region information is also copied in the onboarding mail you received.
 1. On the **Providers** tab, select **Quantinuum**. When the plan/pricing selector opens, ensure you select **Azure Quantum Credits**.
+
 > [!IMPORTANT] 
 > If you select any plan other than **Azure Quantum Credits**, you may be charged for usage. If you do not see the Azure Quantum Credits plan, please double check that you have selected the correct **Subscription** and **Region**, then send an email to the support email address specified in your credits onboarding email if you cannot see the plan.
 
@@ -118,15 +121,17 @@ Links to Quickstart guides (follow the one for your desired programming framewor
 
 ## Guide: Onboarding with IonQ Credits
 
-1. Open the [Azure Quantum workspace Create page] in the Azure Portal(https://portal.azure.com/#create/Microsoft.AzureQuantum)
+1. Open the [Azure Quantum workspace Create page](https://portal.azure.com/#create/Microsoft.AzureQuantum) in the Azure Portal.
 1. On the **Basics** tab while configuring your workspace, ensure the selected **subscription** matches the subscription you supplied in your onboarding information. The subscription information is also copied in the onboarding mail you received.
+
  > [!TIP]
 > Not sure how to find the subscription with the ID specified in the email? View the [list of your Azure Subscriptions](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) to identify which should be selected.
+
 1. On the **Basics** tab while configuring your workspace, ensure the selected **region** matches the subscription you supplied in your onboarding information. The region information is also copied in the onboarding mail you received.
 1. Provider and plan: On the **Providers** tab, select **IonQ**. When the plan/Pricing selector opens, ensure you select **Azure Quantum Credits**.
+
 > [!IMPORTANT] 
-> If you select any plan other than **Azure Quantum Credits**, you may be charged for usage. If you do not see the Azure Quantum Credits plan, please double check that you have selected the correct **Subscription** and **Region**, then send an email to the support email address specified in your credits onboarding email if you cannot see the plan.       
-    
+> If you select any plan other than **Azure Quantum Credits**, you may be charged for usage. If you do not see the Azure Quantum Credits plan, please double check that you have selected the correct **Subscription** and **Region**, then send an email to the support email address specified in your credits onboarding email if you cannot see the plan.
 
 > [!TIP]
  > If you have received grants towards more than one Provider, you may add all of them to the same Azure Quantum workspace or you may create multiple workspaces.
