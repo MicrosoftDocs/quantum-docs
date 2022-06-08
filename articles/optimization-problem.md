@@ -229,7 +229,7 @@ For a detailed introduction to Protobuf, have a look at Google's [Protocol Buffe
 
 In Azure Quantum, we've added support for Protobuf as it is useful for encoding input problems that are significantly large in size. Using a binary encoding method rather than the default JSON format can reduce payload sizes, improve upload speeds and reduce processing speeds.
 
-With this update, you can specify the problem type, terms, initial configuration and problem metadata (for example, problem name) exactly as is supported currently in JSON.
+With this feature, you can specify the problem type, terms, initial configuration and problem metadata (for example, problem name) exactly as is supported currently in JSON.
 
 > [!NOTE]
 > This feature is available for a subset of solvers in the Microsoft QIO provider. Usage and availability are detailed below.

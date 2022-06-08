@@ -64,10 +64,14 @@ For more information on cost functions and how terms relate to a problem definit
 
 #### Availability
 
-`SlcTerm` objects are a new "Early Access" feature in the *azure-quantum* Python package, and are currently supported by two Microsoft QIO solvers:
+`SlcTerm` objects are currently supported by the following Microsoft QIO solvers:
 
-- [Substochastic Monte Carlo](xref:microsoft.quantum.reference.qio-target-list#substochastic-monte-carlo)
-- [Population Annealing](xref:microsoft.quantum.reference.qio-target-list#population-annealing)
+- [Parallel Tempering (CPU)](xref:microsoft.quantum.optimization.parallel-tempering)
+- [Population Annealing (CPU)](xref:microsoft.quantum.optimization.population-annealing)
+- [Quantum Monte Carlo (CPU)](xref:microsoft.quantum.optimization.quantum-monte-carlo)
+- [Simulated Annealing (CPU)](xref:microsoft.quantum.optimization.simulated-annealing)
+- [Substochastic Monte Carlo (CPU)](xref:microsoft.quantum.optimization.substochastic-monte-carlo)
+- [Tabu Search (CPU)](xref:microsoft.quantum.optimization.tabu)
 
 If you submit problems with grouped term objects to a solver that doesn't support them, a client error will appear in the SDK and the submission will fail.
 
