@@ -134,6 +134,8 @@ To serialize to protobuf you need to specify the optional `content_type` paramet
 Protobuf is supported on a [subset of optimization solvers](#protobuf-availability).
 
 ```py
+from azure.quantum.job.base_job import ContentType
+
 problem = Problem(name = "protobuf_problem", terms = [Term(c=1, indices=[0,1])], content_type=ContentType.protobuf)
 problem.serialize()
 ```
