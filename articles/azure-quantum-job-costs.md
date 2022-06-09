@@ -44,7 +44,6 @@ In Azure Quantum, hardware and software providers define and control the pricing
 |Provider | Unit price  |
 |---|---|
 |IonQ|1 qubit gate shot = 0.00003 USD |
-|Quantinuum|40 HQC = 500 USD |
 
 ## After you run: Job cost reporting
 
