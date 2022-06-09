@@ -1,8 +1,8 @@
 ---
-author: danielstocker
+author: bradben
 description: Reference for azure.quantum.optimization.RangeSchedule
-ms.author: dasto
-ms.date: 03/02/2021
+ms.author: brbenefield
+ms.date: 06/09/2022
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -29,7 +29,7 @@ We recommend reviewing our [Solver Inputs](/azure/quantum/optimization-input-for
 - `final`: A floating point value indicating the final value of the schedule.
 
 For instance, if you want to create a linear range schedule that increases from 0 to 5 over time:
- 
+
 ```py
 RangeSchedule("linear", 0, 5)
 ```
