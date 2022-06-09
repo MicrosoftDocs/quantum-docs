@@ -1,8 +1,8 @@
 ---
-author: danielstocker
+author: bradben
 description: Reference for azure.quantum.optimization.GroupType
-ms.author: dasto
-ms.date: 09/02/2021
+ms.author: brbenefield
+ms.date: 06/09/2022
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -23,6 +23,7 @@ When specifying the type of grouped term that you want to add to a problem formu
 
 The *azure-quantum* Python package currently only supports the squared linear combination term. 
 We recommend reviewing our documentation for further details on the usage of `GroupType`.
+
 - Optimization [`Problem`](xref:microsoft.quantum.optimization.problem) 
 - [`SlcTerm`](xref:microsoft.quantum.optimization.slc-term) 
 
