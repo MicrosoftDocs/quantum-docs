@@ -5,7 +5,7 @@ ms.author: beheim
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
-ms.topic: conceptual
+ms.topic: reference
 no-loc: ['Q#', '$$v']
 title: Implementing a Q# program
 uid: microsoft.quantum.qsharp.programstructure-overview

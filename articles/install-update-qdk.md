@@ -5,7 +5,7 @@ ms.author: brbenefield
 ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: quickstart
+ms.topic: how-to
 no-loc: ['Q#', '$$v']
 title: Update the Quantum Development Kit (QDK)
 uid: microsoft.quantum.update-qdk

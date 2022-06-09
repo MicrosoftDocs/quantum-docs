@@ -5,7 +5,7 @@ ms.author: brbenefield
 ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: conceptual
+ms.topic: troubleshooting
 title: Azure Quantum common issues
 uid: microsoft.quantum.azure.common-issues
 ---

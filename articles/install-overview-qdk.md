@@ -5,7 +5,7 @@ ms.author: brbenefield
 ms.date: 11/16/2021
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: quickstart
+ms.topic: how-to
 no-loc: ['Q#', '$$v']
 title: Set up Azure Quantum
 uid: microsoft.quantum.install-qdk.overview

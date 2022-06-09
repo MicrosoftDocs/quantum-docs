@@ -7,7 +7,7 @@ ms.author: mamykhai
 ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
-ms.topic: conceptual
+ms.topic: reference
 uid: microsoft.quantum.user-guide-qdk.overview.testingdebugging
 no-loc: ['Q#', '$$v']
 ---

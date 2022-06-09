@@ -5,7 +5,7 @@ ms.author: brbenefield
 ms.date: 09/09/2021
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: how-to
+ms.topic: reference
 title: Input format for optimization problems
 uid: microsoft.quantum.optimization.input-format
 ---
