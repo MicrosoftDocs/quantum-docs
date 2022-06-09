@@ -299,7 +299,7 @@
   - name: Further reading
     href: further-reading-qdk.md
   - name: Azure CLI commands >>
-    href: /cli/azure/ext/quantum/quantum
+    href: /cli/azure/quantum
   - name: Contributing to the Quantum Development Kit
     items:
     - name: Contributing to the QDK
