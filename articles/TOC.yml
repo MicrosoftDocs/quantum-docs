@@ -111,6 +111,8 @@
       href: https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum
     - name: Azure Quantum Credits FAQ
       href: credits-faq.md
+    - name: Q# compiler messages
+      href: qs-compiler-messages/toc.yml
 - name: Optimization
   expanded: true
   items:
