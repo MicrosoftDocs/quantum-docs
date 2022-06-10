@@ -148,7 +148,7 @@ from azure.quantum.optimization import Problem, Term, SlcTerm
 problem = Problem(name="My Example Problem")
 ```
 
-From here, you can use the methods described above to add `Term` and `SlcTerm` objects. If grouped terms are included in the cost function, the SDK will automatically adjust the problem type for you. For example, you do not need to update the problem type from `ProblemType.pubo` to `ProblemType.pubo_grouped`, as this will be done for you.
+From here, you can use the methods described in [Ways to supply problem terms](#ways-to-supply-problem-terms) to add `Term` and `SlcTerm` objects. If grouped terms are included in the cost function, the SDK will automatically adjust the problem type. For example, you would not need to update the problem type from `ProblemType.pubo` to `ProblemType.pubo_grouped`, as this will be done for you.
 
 ```python
 # add regular terms to the problem
