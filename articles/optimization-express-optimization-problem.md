@@ -138,6 +138,47 @@ terms = [
 problem.add_terms(terms=terms)
 ```
 
+## Combining term types
+It is possible to use both `Term` and `SlcTerm` objects within the same `Problem`.
+
+```python
+from azure.quantum.optimization import Problem, Term, SlcTerm
+
+# create a problem object
+problem = Problem(name="My Example Problem")
+```
+
+From here, you can use the methods described in [Ways to supply problem terms](#ways-to-supply-problem-terms) to add `Term` and `SlcTerm` objects. If grouped terms are included in the cost function, the SDK will automatically adjust the problem type. For example, you would not need to update the problem type from `ProblemType.pubo` to `ProblemType.pubo_grouped`, as this will be done for you.
+
+```python
+# add regular terms to the problem
+problem.add_terms([
+    Term(c=-9, indices=[0]),
+    Term(c=-3, indices=[1,0]),
+    Term(c=5, indices=[2,0])
+])
+
+# add a grouped term to the problem
+subterms = [
+    Term(c=1, indices=[0]),
+    Term(c=-2, indices=[1]),
+    Term(c=1, indices=[2]),
+    Term(c=-1, indices=[])
+]
+problem.add_slc_term(terms=subterms, c=2)
+```
+
+You will be able to see the combination of these term types in the cost function using `to_json()`.
+
+```python
+# convert to json to show "terms" and "terms_slc" array in cost function
+problem.to_json()
+```
+
+```output
+> '{"metadata": {"name": "My Example Problem"}, "cost_function": {"version": "1.0", "type": "ising_grouped", "terms": [{"c": -9, "ids": [0]}, {"c": -3, "ids": [1, 0]}, {"c": 5, "ids": [2, 0]}], "terms_slc": [{"c": 2, "terms": [{"c": 1, "ids": [0]}, {"c": -2, "ids": [1]}, {"c": 1, "ids": [2]}, {"c": -1, "ids": []}]}]}}'
+```
+
 ## Next steps
 
 Now that you've created an optimization problem, learn how to solve it by [applying a solver](xref:microsoft.quantum.optimization.apply-solver). 
