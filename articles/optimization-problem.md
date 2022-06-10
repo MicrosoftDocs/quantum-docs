@@ -130,7 +130,7 @@ problem.serialize()
 > {"cost_function": {"version": "1.0", "type": "ising", "terms": [{"c": 1, "ids": [0, 1]}]}}
 ```
 
-To serialize to protobuf you need to specify the optional `content_type` parameter. 
+To serialize to Protobuf you need to specify the optional `content_type` parameter. 
 Protobuf is supported on a [subset of optimization solvers](#protobuf-availability).
 
 ```py
@@ -226,10 +226,10 @@ For an example of how to use the `OnlineProblem` class, have a look at [reusing 
 
 ## Handling large input with Protobuf
 
-Protobuf is Google's Data Interchange Format. It is binary format with a static schema.
+Protobuf is Google's Data Interchange Format. It is a binary format with a static schema.
 For a detailed introduction to Protobuf, have a look at Google's [Protocol Buffers](https://developers.google.com/protocol-buffers/) page.
 
-In Azure Quantum, we've added support for Protobuf as it is useful for encoding input problems that are significantly large in size. Using a binary encoding method rather than the default JSON format can reduce payload sizes, improve upload speeds and reduce processing speeds.
+In Azure Quantum, we've added support for Protobuf as it is useful for encoding input problems that are large in size. Using a binary encoding method rather than the default JSON format can reduce payload sizes, improve upload speeds, and reduce processing speeds.
 
 With this feature, you can specify the problem type, terms, initial configuration and problem metadata (for example, problem name) exactly as is supported currently in JSON.
 
