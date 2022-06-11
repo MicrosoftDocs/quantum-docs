@@ -66,6 +66,17 @@ The IonQ QPU is a trapped ion quantum computer and is dynamically reconfigurable
 
 To see IonQ billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
+## Limits & Quotas
+
+IonQ quotas are tracked based on the QPU usage unit, which is *qubit-gate-shot* or *QGS*. The resource usage is credited against your account.
+
+If you are using an Azure Quantum Credits plan, the quotas map to your allocated credits. 
+
+Approx. value is 0.000015 USD per QPU Credit 
+
+Quotas are based on plan selection and can be increased with a support ticket. For more information, see [Azure Quantum quotas](xref:microsoft.quantum.providers-quotas).
+
+
 ## IonQ best practices and connectivity graph
 
 To see recommended best practices for the IonQ QPU, we recommend reading their [best practices](https://ionq.com/best-practices).
