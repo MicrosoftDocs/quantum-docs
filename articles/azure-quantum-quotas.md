@@ -1,13 +1,13 @@
 ---
 author: SoniaLopezBravo
-description: Azure Quantum quotas
+description: Azure Quantum quotas overview, how to review remaining quotas and apply for more. 
 ms.author: sonialopez
 ms.date: 06/14/2022
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
 title: Azure Quantum quotas
-uid: microsoft.quantum.providers-quotas
+uid: microsoft.quantum.quotas
 ---
 
 # Azure Quantum quotas 
@@ -102,5 +102,6 @@ If you are not using an Azure Quantum Credits plan, then you can request quota i
 
 ## Next Steps
 
+- [Azure Quantum Credits](xref:microsoft.quantum.credits)
 - [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq)
 
