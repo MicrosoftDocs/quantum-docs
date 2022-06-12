@@ -105,5 +105,9 @@ SQBM+ computation service is completed when any of the following conditions are 
 To see Toshiba SQBM+ billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
   
 ## Limits & Quotas
+  
+Toshiba SQBM+ quotas are tracked based on the number of computing hours within your subscription per month. The computing hours are tracked separately for different plans but otherwise shared at “subscription x region” level. The job concurrency is limited at the workspace level. 
+  
+Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the “Credits and quotas” blade and select the “Quotas” tab of your workspace on the [Azure portal](https://portal.azure.com).
 
-Up to date information on the various limits are available via the Providers tab of your workspace on the [Azure portal](https://portal.azure.com).
+For more information, see [Azure Quantum quotas](xref:microsoft.quantum.providers-quotas).
