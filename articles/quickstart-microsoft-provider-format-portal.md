@@ -88,7 +88,7 @@ location of your Azure Quantum workspace:
 
 ::: zone pivot="platform-quantinuum"
 
-[!INCLUDE [quantinuum-procedure](includes/quickstart-provider-include-honeywell-portal.md)]
+[!INCLUDE [quantinuum-procedure](includes/quickstart-provider-include-quantinuum-portal.md)]
 
 ::: zone-end
 

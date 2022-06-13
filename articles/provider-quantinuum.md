@@ -24,8 +24,8 @@ Quantinuum provides access to trapped-ion systems with high-fidelity, fully conn
 
 The following targets are available from this provider:
 
-- [Syntax Checker](#syntax-checker)
-- [System Model H1 Emulator](#system-model-h1-emulator)
+- [Syntax Checker](#syntax-checkers)
+- [System Model H1 Emulator](#system-model-h1-emulators)
 - [System Model H1](#system-model-h1)
 
 ## Target Availability
@@ -43,7 +43,7 @@ Current status information may be retrieved from the *Providers* tab of a worksp
 We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-2 syntax checker uses the same compiler as H1-2. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker will return a `success` status and a result of all 0s. If the code does not compile, the syntax checker will return a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
 
 - Job type: `Simulation`
-- Data Format: `honeywell.openqasm.v1`
+- Data Format: `quantinuum.openqasm.v1`
 - Target ID: `quantinuum.hqs-lt-s1-apival` or `quantinuum.hqs-lt-s2-apival`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
@@ -54,7 +54,7 @@ Billing information:  No charge for usage.
 After validating the syntax of their code with a Syntax Checker, users can take advantage of Quantinuum's H1 Emulators, emulation tools which contains a detailed physical model and realistic noise model of the actual System Model H1 hardware. The noise model is derived from a detailed characterization of the H1-1 hardware and is also representative of H1-2 hardware performance. The System Model H1 Emulator uses an identical API for job submission as the System Model H1 hardware, enabling seamless transition from emulation to hardware. To help maximize productivity and shorten development time, the H1 Emulator is available even while the hardware is offline.
 
 - Job type: `Simulation`
-- Data Format: `honeywell.openqasm.v1`
+- Data Format: `quantinuum.openqasm.v1`
 - Target ID:  `quantinuum.hqs-lt-s1-sim` or `quantinuum.hqs-lt-s2-sim`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
@@ -69,7 +69,7 @@ Users may submit jobs to a specific machine (H1-1 or H1-2), or submit them to th
 Both System Model H1 hardware H1-1 and H1-2 are continuously upgraded throughout their product lifecycle. Users are given access to the most up-to-date, advanced, and capable hardware available.
 
 - Job type: `Quantum Program`
-- Data Format: `honeywell.openqasm.v1`
+- Data Format: `quantinuum.openqasm.v1`
 - Target ID:
   - H1-1: `quantinuum.hqs-lt-s1` 
   - H1-2: `quantinuum.hqs-lt-s2`
