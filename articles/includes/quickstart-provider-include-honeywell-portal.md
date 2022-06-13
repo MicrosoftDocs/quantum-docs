@@ -52,7 +52,7 @@ This workspace's targets:
 
 ## Select a target and run your program
 
-To check your circuit before running it on actual quantum hardware, you can use the [Quantinuum API validator](xref:microsoft.quantum.providers.honeywell#api-validator), `quantinuum.hqs-lt-s1-apival`, which returns a `Job` object. For more information, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference).
+To check your circuit before running it on actual quantum hardware, you can use the [Quantinuum API validator](xref:microsoft.quantum.providers.quantinuum#api-validator), `quantinuum.hqs-lt-s1-apival`, which returns a `Job` object. For more information, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference).
 
 Run the following code to set the target to the API Validator and submit your circuit with 500 shots:
 
@@ -91,7 +91,7 @@ pl.ylabel("Counts")
 pl.xlabel("Bitstring")
 ```
 
-![Quantinuum job output](../media/honeywell-results.png)
+![Quantinuum job output](../media/quantinuum-results.png)
 
 Looking at the histogram, you may notice that all the measurements are 0.  This is because that, while the Quantinuum API validator target ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For an accurate measurement of your circuit, you need to run it on quantum hardware.
 
@@ -139,6 +139,6 @@ pl.ylabel("Counts")
 pl.xlabel("Bitstring")
 ```
 
-![Quantinuum job output qpu](../media/honeywell-results-qpu.png)
+![Quantinuum job output qpu](../media/quantinuum-results-qpu.png)
 
 Note that the measurements now are roughly split between 0 and 1.

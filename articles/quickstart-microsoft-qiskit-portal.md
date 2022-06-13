@@ -141,7 +141,7 @@ This workspace's targets:
 
 ::: zone pivot="platform-quantinuum"
 
-[!INCLUDE [quantinuum-procedure](includes/quickstart-qiskit-include-honeywell-portal.md)]
+[!INCLUDE [quantinuum-procedure](includes/quickstart-qiskit-include-quantinuum-portal.md)]
 
 ::: zone-end
 
