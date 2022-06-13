@@ -5,7 +5,7 @@ ms.author: brbenefield
 ms.date: 11/04/2021
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: quickstart
+ms.topic: how-to
 no-loc: ['Q#', '$$v']
 title: Use Python without Q#
 uid: microsoft.quantum.install-qdk.overview.python-only

@@ -5,7 +5,7 @@ ms.author: brbenefield
 ms.date: 11/15/2021
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: conceptual
+ms.topic: overview
 no-loc: ['Q#', '$$v']
 title: What are the Q# programming language & QDK?
 uid: microsoft.quantum.overview.q-sharp

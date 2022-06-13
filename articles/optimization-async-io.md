@@ -1,7 +1,7 @@
 ---
-author: guenp
+author: bradben
 description: Learn how to solve a batch of problems using Azure Quantum and the Python asyncio library.
-ms.author: guenp
+ms.author: brbenefield
 ms.date: 10/21/2021
 ms.service: azure-quantum
 ms.subservice: optimization

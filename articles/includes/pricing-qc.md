@@ -58,7 +58,7 @@ where:
 
 To learn more about Quantinuum, visit the [Quantinuum provider page](xref:microsoft.quantum.providers.quantinuum).
 
-All new Azure customers benefit of a one-time $500 in free credits towards the Quantinuum provider. Besides Azure Quantum credits, Quantinuum provides two plans: **Standard Subscription** and **Premium Subscription**.
+All new Azure customers benefit from $500 in free credits towards the Quantinuum provider. Besides Azure Quantum credits, Quantinuum provides two plans: **Standard Subscription** and **Premium Subscription**.
 
 ### [Azure Quantum Credits](#tab/tabid-AQcreditsQ)
 

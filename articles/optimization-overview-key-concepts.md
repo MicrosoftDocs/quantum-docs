@@ -5,7 +5,7 @@ ms.author: frtibble
 ms.date: 09/28/2021
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: conceptual
+ms.topic: overview
 title: Key concepts for optimization
 uid: microsoft.quantum.optimization.concepts.overview.key-concepts
 ---

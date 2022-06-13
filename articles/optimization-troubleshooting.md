@@ -6,7 +6,7 @@ ms.author: brbenefield
 ms.date: 10/25/2021
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: how-to
+ms.topic: troubleshooting
 uid: microsoft.quantum.optimization.troubleshooting
 ---
 

@@ -5,7 +5,7 @@ ms.date: 05/03/2022
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: reference
 title: Understanding target profile types in Azure Quantum
 uid: microsoft.quantum.target-profiles
 ---

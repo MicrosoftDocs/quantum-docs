@@ -5,7 +5,7 @@ ms.author: beheim
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
-ms.topic: conceptual
+ms.topic: reference
 no-loc: ['Q#', '$$v']
 title: Singleton tuple equivalence in Q#
 uid: microsoft.quantum.qsharp.singletontupleequivalence

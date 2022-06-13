@@ -5,7 +5,7 @@ ms.author: brbenefield
 ms.date: 04/27/2022
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 title: Add or remove a provider
 uid: microsoft.quantum.add-provider
 ---

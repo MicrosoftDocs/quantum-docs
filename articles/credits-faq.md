@@ -90,7 +90,6 @@ Note that credits are shown in the quota units used by the provider, and not in 
 
 | Provider | Unit | Approximate $ Value (USD) | Documentation |
 |----------|------|---------------------------|---------------|
-| Quantinuum | HQC (H-System Quantum Credit) | $1 USD ~= 0.08 HQC | [Learn more about how H-System Quantum Credits are calculated](xref:microsoft.quantum.providers.quantinuum) |
 | IonQ | QGS (Qubit Gate-Shot) | $1 USD ~= 33,333.3 QGS | [Learn more about how IonQ Qubit-Gate-Shots are calculated](xref:microsoft.quantum.providers.ionq) |
 
 ### I'm encountering a problem using my credits. What can I do?

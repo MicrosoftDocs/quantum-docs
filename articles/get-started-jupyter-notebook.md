@@ -5,7 +5,7 @@ ms.author: brbenefield
 ms.date: 01/18/2022
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: how-to
+ms.topic: quickstart
 no-loc: ['Q#', '$$v']
 title: Get started with Q# and an Azure Quantum notebook
 uid: microsoft.quantum.get-started.notebooks

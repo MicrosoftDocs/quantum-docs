@@ -5,7 +5,7 @@ ms.author: anraman
 ms.date: 09/27/2021
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: conceptual
+ms.topic: overview
 title: Introduction to optimization
 uid: microsoft.quantum.optimization.concepts.overview.introduction
 ---
