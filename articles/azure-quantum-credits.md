@@ -48,17 +48,17 @@ To use credits, you just have to submit a job in a workspace that uses a credits
 
 ***
 
-## How is credits consuption calculated?
+## How is credits consumption calculated?
 
 Azure Quantum Credits consumption is based on a resource-usage model defined by each provider and cost of use is deducted from your credits.
 
 > [!TIP]
-> If you have consumed all the credits and you need more, you can apply to the [**Azure Quantum Credits program**](https://aka.ms/aq/credits). Microsoft offers up to 10,000 USD extra Azure Quantum Credits for use on quantum hardware For more information see [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq).
+> If you have consumed all the credits and you need more, you can apply to the [**Azure Quantum Credits Program**](https://aka.ms/aq/credits). Microsoft offers up to 10,000 USD extra Azure Quantum Credits for use on quantum hardware For more information see [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq).
 
 
 ### IonQ 
 
-On IonQ QPU, Each job you run consumes credits depending on the number of gates in your program, the complexity of the gates you use, and the number of shots. These usage units are called *qubit-gate-shots (QGS)*.  
+On IonQ QPU, each job you run consumes credits depending on the number of gates in your program, the complexity of the gates you use, and the number of shots. These usage units are called *qubit-gate-shots (QGS)*.  
 
 Every quantum program consists of $N$ quantum logical gates of one or more qubits, and is executed for a certain number of shots. The number of gate-shots is calculated by the following formula:
 $$
@@ -69,9 +69,14 @@ where:
 - $N$ is the number of one- or two-qubit gates submitted
 - $C$ is the number of execution shots requested
 
+|Usage unit|Approx. value|
+|---|---|  
+|QGS|  |
+
+
 ### Quantinuum 
 
-On Quantinuum each job you run consumes credits depending on the number of operations in the job, and the number of shots you run. The usage units are *H1 Quantum Credit (HQC)* for jobs submitted to System Model H1 quantum computer, and *Quantinuum Emulator Quantum Credits (eHQC)* for jobs submitted to System Model H1 emulator.
+On Quantinuum, each job you run consumes credits depending on the number of operations in the job, and the number of shots you run. The usage units are *H1 Quantum Credit (HQC)* for jobs submitted to System Model H1 quantum computer, and *Quantinuum Emulator Quantum Credits (eHQC)* for jobs submitted to System Model H1 emulator.
 
 |Usage unit|Approx. value|
 |---|---|  
