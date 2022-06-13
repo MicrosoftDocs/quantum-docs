@@ -58,7 +58,7 @@ Azure Quantum Credits consumption is based on a resource-usage model defined by 
 
 ### IonQ 
 
-On IonQ QPU, each job you run consumes credits depending on the number of gates in your program, the complexity of the gates you use, and the number of shots. These usage units are called *qubit-gate-shots (QGS)*.  
+On IonQ QPU, each job you run consumes credits depending on the number of gates in your program, the complexity of the gates you use, and the number of shots. In order to track the job cost, IonQ uses a unit called *qubit-gate-shot (QGS)*.  
 
 Every quantum program consists of $N$ quantum logical gates of one or more qubits, and is executed for a certain number of shots. The number of gate-shots is calculated by the following formula:
 $$
@@ -71,12 +71,14 @@ where:
 
 |Usage unit|Approx. value|
 |---|---|  
-|QGS|  |
-
+|QGS|0.00003 USD per QGS |
 
 ### Quantinuum 
 
 On Quantinuum, each job you run consumes credits depending on the number of operations in the job, and the number of shots you run. The usage units are *H1 Quantum Credit (HQC)* for jobs submitted to System Model H1 quantum computer, and *Quantinuum Emulator Quantum Credits (eHQC)* for jobs submitted to System Model H1 emulator.
+
+> [!NOTE]
+> Do not confuse the Quantinuum credits HQC with the Azure Quantum credits. Quantinuum credits are a usage unit defined by the provider to track the usage and quotas of their targets.
 
 |Usage unit|Approx. value|
 |---|---|  
