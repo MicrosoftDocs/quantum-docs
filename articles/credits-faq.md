@@ -41,9 +41,9 @@ Your approval notice will contain a link to an onboarding survey which you will 
 
 You will receive a notice once your credits are available to be used, with detailed instruction to do so.
 
-### 
+### My credits are available to use. What is the onboarding process?
 
-Instructions for configuring your Azure Quantum workspace to access Quantinuum:
+Instructions for configuring your Azure Quantum workspace to access Azure Quantum Credits program:
 
 1. Open the [Azure Quantum workspace Create page](https://portal.azure.com/#create/Microsoft.AzureQuantum) in the Azure Portal.
 1. On the **Basics** tab while configuring your workspace, ensure the selected **subscription** matches the subscription you supplied in your onboarding information. The subscription information is also copied in the onboarding mail you received.
@@ -52,32 +52,13 @@ Instructions for configuring your Azure Quantum workspace to access Quantinuum:
 > Not sure how to find the subscription with the ID specified in the email? View the [list of your Azure Subscriptions](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) to identify which should be selected.
 
 1. On the **Basics** tab while configuring your workspace, ensure the selected **region** matches the subscription you supplied in your onboarding information. The region information is also copied in the onboarding mail you received.
-1. On the **Providers** tab, select **Quantinuum**. When the plan/pricing selector opens, ensure you select **Azure Quantum Credits**.
+1. On the **Providers** tab, select the provider for which you have been granted credits. When the plan/pricing selector opens, ensure you select **Azure Quantum Credits**.
 
 > [!IMPORTANT] 
 > If you select any plan other than **Azure Quantum Credits**, you may be charged for usage. If you do not see the Azure Quantum Credits plan, please double check that you have selected the correct **Subscription** and **Region**, then send an email to the support email address specified in your credits onboarding email if you cannot see the plan.
 
 > [!TIP]
- > If you have received grants towards more than one provider, you may add all of them to the same Azure Quantum workspace or you may create multiple workspaces.
-Links to Quickstart guides (follow the one for your desired programming framework):
-
-## Guide: Onboarding with IonQ Credits
-
-1. Open the [Azure Quantum workspace Create page](https://portal.azure.com/#create/Microsoft.AzureQuantum) in the Azure Portal.
-1. On the **Basics** tab while configuring your workspace, ensure the selected **subscription** matches the subscription you supplied in your onboarding information. The subscription information is also copied in the onboarding mail you received.
-
- > [!TIP]
-> Not sure how to find the subscription with the ID specified in the email? View the [list of your Azure Subscriptions](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) to identify which should be selected.
-
-1. On the **Basics** tab while configuring your workspace, ensure the selected **region** matches the subscription you supplied in your onboarding information. The region information is also copied in the onboarding mail you received.
-1. Provider and plan: On the **Providers** tab, select **IonQ**. When the plan/Pricing selector opens, ensure you select **Azure Quantum Credits**.
-
-> [!IMPORTANT] 
-> If you select any plan other than **Azure Quantum Credits**, you may be charged for usage. If you do not see the Azure Quantum Credits plan, please double check that you have selected the correct **Subscription** and **Region**, then send an email to the support email address specified in your credits onboarding email if you cannot see the plan.
-
-> [!TIP]
- > If you have received grants towards more than one Provider, you may add all of them to the same Azure Quantum workspace or you may create multiple workspaces.
-Links to Quickstart guides (follow the one for your desired programming framework):
+> If you have received grants towards more than one provider, you may add all of them to the same Azure Quantum workspace or you may create multiple workspaces.
 
 ## My application was rejected. Can I appeal the decision or re-apply?
 
