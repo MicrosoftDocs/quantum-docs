@@ -81,7 +81,7 @@ where:
 - $N$ is the number of one- or two-qubit gates submitted
 - $C$ is the number of execution shots requested
 
-Quotas are based on plan selection and can be increased with a support ticket. For more information, see [Azure Quantum quotas](xref:microsoft.quantum.providers-quotas).
+Quotas are based on plan selection and can be increased with a support ticket. For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
 
 > [!NOTE]
 > If you are using an Azure Quantum Credits plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received, and you can hover over the relevant graph to see the amount you have used towards your credits.
