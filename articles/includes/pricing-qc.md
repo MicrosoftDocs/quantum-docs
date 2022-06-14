@@ -26,7 +26,6 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 |Includes access to | <ul><li>IonQ QPU</li><li>IonQ Simulator (free)</li></ul>|
 | |<ul><li>1-Qubit Gate Shot: 0.00003 USD deducted from your credits</li><li>2-Qubit Gate Shot: 0.0003 USD deducted from your credits</li></ul>|
 
-
 Minimum of $1 USD per program execution, deducted from your credits. 
 
 > [!NOTE]
