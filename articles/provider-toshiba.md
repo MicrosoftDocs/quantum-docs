@@ -108,7 +108,7 @@ To see Toshiba SQBM+ billing plan, visit [Azure Quantum pricing](xref:microsoft.
   
 Toshiba SQBM+ quotas are tracked based on the number of computing hours within your subscription per month. The computing hours are tracked separately for different plans but otherwise shared at “subscription x region” level. The job concurrency is limited at the workspace level. 
   
-Quotas are based on billing plan selection and can be increased with a support ticket. For more information, see [Azure Quantum quotas](xref:microsoft.quantum.providers-quotas).
+Quotas are based on billing plan selection and can be increased with a support ticket. For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
 
 |Billing plan | Quota  |
 |---|---|
