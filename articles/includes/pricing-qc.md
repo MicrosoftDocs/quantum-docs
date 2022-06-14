@@ -24,7 +24,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 |Pricing | Use is deducted from the Azure Quantum Credits based on the number of QGSs executed |
 |---|---|  
 |Includes access to | <ul><li>IonQ QPU</li><li>IonQ Simulator (free)</li></ul>|
-| |<ul><li>1-Qubit Gate Shot: 0.00003 USD deducted from your credits</li><li>2-Qubit Gate Shot: 0.0003 deducted from your credits</li></ul>|
+| |<ul><li>1-Qubit Gate Shot: 0.00003 USD deducted from your credits</li><li>2-Qubit Gate Shot: 0.0003 USD deducted from your credits</li></ul>|
 
 
 Minimum of $1 USD per program execution, deducted from your credits. 
@@ -36,10 +36,10 @@ Minimum of $1 USD per program execution, deducted from your credits.
 
 The Pay-as-you-go plan consists of *a la carte* access to trapped ion quantum computers and simulators, charged on a resource-usage model.  
 
-|Pricing | Use is charged based on the number of QGSs executed |
+|Pricing | Use is charged based on the number of QGSs executed + Azure infrastructure costs |
 |---|---|  
 |Includes access to | <ul><li>IonQ QPU</li><li>IonQ Simulator (free)</li></ul>|
-|Plus |<ul><li>1Q Gate Shot: $0.00003 per gate shot</li><li>2Q Gate Shot: $0.0003 2q gate shot</li></ul>|
+||<ul><li>1-qubit gate shot: 0.00003 USD </li><li>2-qubit gate shot: 0.0003 USD </li></ul>|
 
 Minimum of $1 USD per program execution.  
 
@@ -51,11 +51,6 @@ Minimum of $1 USD per program execution.
 
 > [!NOTE]
 > Do not confuse the Quantinuum credits HQC with the Azure Quantum credits. Quantinuum credits are a usage unit defined by the provider to track the usage and quotas of their targets.
-
-|Usage unit|Approx. value|
-|---|---|  
-|HQC| 6.25 USD per HQC  |
-|eHQC|1.56 USD per eHQC |
 
 HQC and eHQC are used to calculate the cost of running a job, and they are calculated based on the following formula (same for eHQC):
 
