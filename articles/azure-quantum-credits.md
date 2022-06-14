@@ -61,6 +61,6 @@ Azure Quantum Credits consumption is based on a resource-usage model defined by 
 ## Next Steps
 
 - [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq)
-- [Azure Quantum quotas](microsoft.quantum.quotas)
+- [Azure Quantum quotas](xref:microsoft.quantum.quotas)
 - [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing)
 - [Azure Quantum job cost](xref:microsoft.quantum.azure.job-costs)
