@@ -68,14 +68,25 @@ To see IonQ billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.p
 
 ## Limits & Quotas
 
-IonQ quotas are tracked based on the QPU usage unit, which is *qubit-gate-shot* or *QGS*. The resource usage is credited against your account.
+IonQ quotas are tracked based on the QPU usage unit, which is *qubit-gate-shot (QGS)*. The resource usage is credited against your account.
 
-If you are using an Azure Quantum Credits plan, the quotas map to your allocated credits. 
+Every quantum program consists of $N$ quantum logical gates of one or more qubits, and is executed for a certain number of shots. The number of gate-shots is calculated by the following formula:
 
-Approx. value is 0.000015 USD per QPU Credit 
+$$
+QGS = N · C
+$$
+
+where:
+
+- $N$ is the number of one- or two-qubit gates submitted
+- $C$ is the number of execution shots requested
 
 Quotas are based on plan selection and can be increased with a support ticket. For more information, see [Azure Quantum quotas](xref:microsoft.quantum.providers-quotas).
 
+> [!NOTE]
+> If you are using an Azure Quantum Credits plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received, and you can hover over the relevant graph to see the amount you have used towards your credits.
+
+To see your current limits and quotas, go to the “Credits and quotas” blade and select the “Quotas” tab of your workspace on the [Azure portal](https://portal.azure.com).
 
 ## IonQ best practices and connectivity graph
 
