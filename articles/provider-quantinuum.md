@@ -88,11 +88,6 @@ To see Quantinuum's billing plans, visit [Azure Quantum pricing](xref:microsoft.
 
 Quantinuum's quotas are tracked based on the QPU usage credit unit, which is *H1 Quantum Credit (HQC)* for jobs submitted to System Model H1 quantum computer, and *Quantinuum Emulator Quantum Credits (eHQC)* for jobs submitted to System Model H1 emulator.
 
-|Usage unit|Approx. value|
-|---|---|  
-|HQC| 6.25 USD per HQC  |
-|eHQC|1.56 USD per eHQC |
-
 HQC and eHQC are used to calculate the cost of running a job, and they are calculated based on the following formula (same for eHQC):
 
 $$
@@ -107,6 +102,9 @@ where:
 - $C$ is the shot count.
 
 Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the “Credits and quotas” blade and select the “Quotas” tab of your workspace on the [Azure portal](https://portal.azure.com).
+
+> [!NOTE]
+> If you are using an Azure Quantum Credits plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received, and you can hover over the relevant graph to see the amount you have used towards your credits.
 
 For more information, see [Azure Quantum quotas](xref:microsoft.quantum.providers-quotas).
 
