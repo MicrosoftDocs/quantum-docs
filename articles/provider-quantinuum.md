@@ -106,6 +106,6 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 > [!NOTE]
 > If you are using an Azure Quantum Credits plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received, and you can hover over the relevant graph to see the amount you have used towards your credits.
 
-For more information, see [Azure Quantum quotas](xref:microsoft.quantum.providers-quotas).
+For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
 
 
