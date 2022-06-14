@@ -67,9 +67,10 @@ Microsoft QIO also have quotas for job concurrency – separate for CPU and FPGA
 
 Up to date information on the various usage limits for each Microsoft QIO plan are available via the general [Azure subscription limits, quotas, and constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-quantum-limits) article. 
 
-Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the “Credits and quotas” blade and select the “Quotas” tab of your workspace on the [Azure portal](https://portal.azure.com).
+Quotas are based on plan selection and can be increased with a support ticket. For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
 
-For more information, see [Azure Quantum quotas](xref:microsoft.quantum.providers-quotas).
+To see your current limits and quotas, go to the “Credits and quotas” blade and select the “Quotas” tab of your workspace on the [Azure portal](https://portal.azure.com).
+
 
 ## General advice for Microsoft QIO solvers
 
