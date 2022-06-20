@@ -29,7 +29,7 @@ Once you have consumed all available credits for a given quantum hardware provid
 
 Credits may be used with any programming language or framework that is supported by Azure Quantum. 
 
-To use credits, you just have to submit a job in a workspace that uses a credits plan for that provider. The workspace will not spend any money on jobs submitted to providers that use a credits plan in that workspace (if your job happens to go over the credit allocation, it will either be rejected or completed for free, and then subsequent jobs will be rejected) 
+To use credits, you just have to submit a job in a workspace that uses a credits plan for that provider. The workspace will not spend any money on jobs submitted to providers that use a credits plan in that workspace (if your job happens to go over the credit allocation, it will either be rejected or completed for free, and then subsequent jobs will be rejected).
 
 
 > [!IMPORTANT]
