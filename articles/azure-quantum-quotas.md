@@ -29,9 +29,7 @@ In Azure Quantum, hardware and software providers define and control the quotas 
 
 ## Viewing remaining quota
 
-The Azure Quantum usage and quotas are measured in terms of each provider's unit of usage. 
-
-Some providers don't define any quotas or meters. In that case, those providers will not have usage information to display.
+The Azure Quantum usage and quotas are measured in terms of each provider's unit of usage. Some providers don't define any quotas or meters. In that case, those providers will not have usage information to display.
 
 > [!NOTE]
 > If you are using an Azure Quantum Credits plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received, and you can hover over the relevant graph to see the amount you have used towards your credits.
@@ -64,10 +62,13 @@ $ az quantum workspace quotas -o table
 
 The "Scope" column indicates whether the quota refers to the current workspace or the subscription.
 
-- *Workspace*: tracked for an individual workspace.
-- *Subscription*: tracked together for all workspaces within the same subscription/region.
-- *SubscriptionCredit*: represents Azure Quantum Credits, which are tracked together for all workspaces in the same subscription/region. 
-- 
+- *Workspace*: Quota is tracked for an individual workspace.
+- *Subscription*: Quota is tracked together for all workspaces within the same subscription/region.
+
+The "Period" column indicates the period when your quota is renewed. 
+- *Monthly*: The usage is reset on the 1st of every month.
+- *Infinite*: The usage is never reset (also referred as *one-time*).
+
 ### [Using Python SDK](#tab/tabid-python)
 
 
