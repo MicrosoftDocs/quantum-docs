@@ -51,7 +51,7 @@ To use credits, you just have to submit a job in a workspace that uses a credits
 
 ***
 
-## How is credits consumption calculated
+## How credit consumption is calculated
 
 Azure Quantum Credits consumption is based on a resource-usage model defined by each provider and cost of use is deducted from your credits. To see the offering of each quantum hardware provider and how they track the credits usage, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
