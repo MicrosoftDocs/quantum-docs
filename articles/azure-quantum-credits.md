@@ -12,24 +12,25 @@ uid: microsoft.quantum.credits
 
 # Azure Quantum Credits
 
+> [!Tip]
+> **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/) (check out free Azure accounts [for students](https://azure.microsoft.com/free/students/)). With Azure you can create, deploy, and manage applications across multiple clouds, on-premises, and at the edge. You will get $200 (USD) Azure credit to use in other Azure services. 
+
 Azure Quantum Credits can be used to run programs on quantum hardware. 
 
-First-time users automatically get **free 500 USD Azure Quantum Credits** for use with each participating quantum hardware provider. To obtain your free Azure Quantum Credits, you have to [create a quantum workspace](xref:microsoft.quantum.how-to.workspace).
+First-time users automatically get **free $500 (USD) Azure Quantum Credits** for use with each participating quantum hardware provider. When you [create a new quantum workspace](xref:microsoft.quantum.how-to.workspace) you get your free Azure Quantum Credits.
+
 Credits are shared for all workspaces within a single subscription and region. That is, you will get free USD 500 Azure Quantum credits for each quantum hardware provider when you create your first Azure Quantum workspace, but the following workspaces you create within the same subscription and region will share the credits grant.
 
-Once you have consumed all available credits for a given quantum hardware provider, you need to switch to a different plan to continue using it. Azure Quantum won’t automatically start charging you once you reach your credit limit.
+Azure Quantum Credit plan will be free to add to your workspace. Once you have consumed all the credits, you will get error messages when submitting new jobs, and you can then upgrade to a new plan to keep using the selected quantum hardware providers.
 
 > [!NOTE]
-> Please notice that Azure Credits are not the same as Azure Quantum Credits. When you create a new Azure account, you get 200 USD free Azure Credits to use on Microsoft services. You can only use general-purpose Azure Credits with the Microsoft providers. 3rd-party providers (providers that aren't owned by Microsoft) aren't eligible.
-
-> [!Tip]
-> **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) (check out free Azure accounts [for students](https://azure.microsoft.com/free/students/)). With Azure you can create, deploy, and manage applications across multiple clouds, on-premises, and at the edge. You will get 200 USD Azure credit to use in other Azure services. 
+> Please notice that Azure credits are not the same as Azure Quantum Credits. When you create a [new Azure account](https://azure.microsoft.com/free/), you get 200 USD free Azure Credits to use on Microsoft services. You can only use general-purpose Azure Credits with the Microsoft providers. 3rd-party providers (providers that aren't owned by Microsoft) aren't eligible.
 
 ## How to use Azure Quantum Credits
 
 Credits may be used with any programming language or framework that is supported by Azure Quantum. 
 
-To use credits, you just have to submit a job in a workspace that uses a credits plan for that provider. The workspace will not spend any money on jobs submitted to providers that use a credits plan in that workspace (if your job happens to go over the credit allocation, it will either be rejected or completed for free, and then subsequent jobs will be rejected).
+To use your credits, you submit a job in a workspace that uses a Azure Quantum Credits plan for that provider. All jobs submitted from a workspace that use a credit plan will be free. If your job happens to go over the current credit allocation, it will be rejected.
 
 
 > [!IMPORTANT]
@@ -48,7 +49,24 @@ To use credits, you just have to submit a job in a workspace that uses a credits
 
 ### [Using Azure CLI](#tab/tabid-cli)
 
+You can see your credit bakance by using the Azure CLI and the `az quantum workspace quotas` command, as shown in the following example. If you are using an Azure Quantum Credits plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
 
+In this example, the `qgs` row shows that the account has a limit of `8333334 qgs` with IonQ, of which `33334 qgs` have been used. The account also has a limit of`800` HQCs with Quantinuum, of which `0` have been used.
+
+```bash
+$ az quantum workspace quotas -o table
+|Dimension | Holds | Limit   |   Period |   ProviderId | Scope | Utilization|
+|--------- | ----- | --------- | -------- | ----------|  ------------ | -----------|
+|qgs      |  0.0  |  8333334.0 | Infinite | ionq      |  Subscription | 33334.0|
+|hqc      |  0.0  |  800.0     | Infinite | quantinuum  | Subscription | 0.0|
+```
+
+The "Scope" column indicates whether the quota refers to the current workspace or the subscription.
+
+- *Workspace*: tracked for an individual workspace.
+- *Subscription*: tracked together for all workspaces within the same subscription/region.
+
+The "Period" column indicates the period when your quota is renewed. For Azure Quantum Credits, the period is infinite, meaning that your credits are never reset.
 ***
 
 ## How credit consumption is calculated
@@ -56,7 +74,7 @@ To use credits, you just have to submit a job in a workspace that uses a credits
 Azure Quantum Credits consumption is based on a resource-usage model defined by each provider and cost of use is deducted from your credits. To see the offering of each quantum hardware provider and how they track the credits usage, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
 > [!TIP]
-> If you have consumed all the credits and you need more, you can apply to the [**Azure Quantum Credits Program**](https://aka.ms/aq/credits). Microsoft offers up to 10,000 USD extra Azure Quantum Credits for use on quantum hardware For more information see [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq).
+> If you have consumed all the credits and you need more, you can apply to the [**Azure Quantum Credits Program**](https://aka.ms/aq/credits). Microsoft offers up to $10,000 (USD) extra Azure Quantum Credits for use on quantum hardware. For more information, see [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq).
 
 ## Next Steps
 
