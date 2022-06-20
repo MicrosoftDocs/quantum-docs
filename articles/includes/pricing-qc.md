@@ -26,7 +26,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 |Includes access to | <ul><li>IonQ QPU</li><li>IonQ Simulator (free)</li></ul>|
 | |<ul><li>1-Qubit Gate Shot: 0.00003 USD deducted from your credits</li><li>2-Qubit Gate Shot: 0.0003 USD deducted from your credits</li></ul>|
 
-Minimum of $1 USD per program execution, deducted from your credits. 
+Minimum of $1 (USD) per program execution, deducted from your credits. 
 
 > [!NOTE]
 > Once you have consumed all the credits you need to switch to a different plan to continue using IonQ. Azure Quantum won’t start charging you once you reach your credit limit. 
@@ -40,7 +40,7 @@ The Pay-as-you-go plan consists of *a la carte* access to trapped ion quantum co
 |Includes access to | <ul><li>IonQ QPU</li><li>IonQ Simulator (free)</li></ul>|
 ||<ul><li>1-qubit gate shot: 0.00003 USD </li><li>2-qubit gate shot: 0.0003 USD </li></ul>|
 
-Minimum of $1 USD per program execution.  
+Minimum of $1 (USD) per program execution.  
 
 ***
 
