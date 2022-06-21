@@ -12,7 +12,7 @@ uid: microsoft.quantum.quotas
 
 # Azure Quantum quotas 
 
-Azure Quantum quotas are limits of usage of the QPUs and optimization targets, that help you to prevent accidental cost overages. Quotas are based on plan selection and can be increased with a support ticket.  
+Azure Quantum quotas are limits of usage of the QPUs and optimization targets that help you to prevent accidental cost overages while also preserving the integrity of their systems. Quotas are based on plan selection and can usually be increased with a support ticket.  
 The usage tracked by quotas is not necessarily tied to a cost or credit, but it might be correlated.
 
 
