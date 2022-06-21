@@ -230,6 +230,36 @@ print(DumpPlus.simulate_noise())
 > [-5.27753089e-18  5.00000000e-02]]]
 > ```
 
+Continuous-time errors in rotations such as the [`Rx`](xref:Microsoft.Quantum.Intrinsic.Rx), [`Ry`](xref:Microsoft.Quantum.Intrinsic.Ry), and [`Rz`](xref:Microsoft.Quantum.Intrinsic.Rz) operations can be specified by setting quantum dynamical generators that include both coherent and decoherent evolution.
+In particular, the `qsharp.to_generator` function can be used to create a dynamical generator from a Hamiltonian and one or more *jump operators* (also known as Lindblad operators).
+For example, to set the `Rz` operation to apply a Hamiltonian of $H = -0.48 Z$ together with a finite $T_1$ and $T_2$ process:
+
+```python
+qsharp.set_noise_model_by_name(
+    'ideal',
+    rz=to_generator(
+        -0.48 * qt.sigmaz(),
+        t1_dissipation(100.0),
+        t2_dissipation(25.0)
+    )
+)
+```
+
+Continuous-time error processes can also be specified as generator cosets; that is, with fixed quantum processes that apply before or after a dynamical generator. To specify processes that apply before or after continuous-time evolution, the `pre` and `post` keyword arguments can be provided to `to_generator`:
+
+```python
+qsharp.set_noise_model_by_name(
+    'ideal',
+    rz=to_generator(
+        -0.48 * qt.sigmaz(),
+        t1_dissipation(100.0),
+        t2_dissipation(25.0),
+        # Applies a 5% depolarizing process after each call to Rz.
+        post=depolarizing_process(0.95)
+    )
+)
+```
+
 ## Configuring stabilizer noise models
 
 You can configure the preview simulator to be used with stabilizer circuits (or stabilizer algorithms), also known as CHP simulation. CHP (CNOT-Hadamard-Phase) simulation allows for high-performance simulation of stabilizer programs; that is, quantum algorithms that consist solely of controlled-NOT, Hadamard, and π/2 phase gates (represented in Q# by the [`S` operation](xref:Microsoft.Quantum.Intrinsic.S)), as well as Pauli-basis measurements. Stabilizer programs can be simulated efficiently on a classical computer, as shown by [the Gottesman–Knill theorem](https://en.wikipedia.org/wiki/Gottesman%E2%80%93Knill_theorem).

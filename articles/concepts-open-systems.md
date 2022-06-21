@@ -704,7 +704,65 @@ qsharp.set_noise_model_by_name(
 )
 ```
 
-<!-- TODO: Revisit Ramsey! -->
+## Example: Revisiting Ramsey evolution
+
+The [`S` operation](xref:Microsoft.Quantum.Intrinsic.S) used in our Ramsey example above is a special case of the [`Rz` operation](xref:Microsoft.Quantum.Intrinsic.Rz); specifically, `S` applies a rotation about the $Z$-axis by an angle of $\pi / 4$. By representing continuous-time noise, we can consider the more general case as well.
+
+Let's go on and define a new Q# operation for our continuous-time Ramsey example:
+
+```qsharp
+open Microsoft.Quantum.Measurement;
+
+operation MeasureRamsey(nShots : Int, t : Double) : Int {
+    mutable nUp = 0;
+    for idxShot in 1..nShots {
+        use q = Qubit();
+        within {
+            H(q);
+        } apply {
+            Rz(t, q);
+        }
+        if MResetZ(q) == One {
+            set nUp += 1;
+        }
+    }
+    return nUp;
+}
+```
+
+We can then assign a continuous-time noise process to the `Rz` operation:
+
+```python
+import qsharp
+import qutip as qt
+
+qsharp.set_noise_model_by_name(
+    'ideal',
+    rz=to_generator(
+        -0.48 * qt.sigmaz(),
+        t1_dissipation(100.0),
+        t2_dissipation(25.0),
+        post=depolarizing_process(0.95)
+    )
+)
+```
+
+![ramsey signal noise](~/media/ramsey-signal-noise-model.png)
+
+
+Finally, we can simulate at a variety of different evolution times and plot the effect of the above noise:
+
+```python
+import numpy as np
+
+ts = np.linspace(0, 10, 101)
+n_ups_noiseless = np.array([MeasureRamsey.simulate(nShots=500, t=t) for t in ts])
+n_ups = np.array([MeasureRamsey.simulate_noise(nShots=500, t=t) for t in ts])
+```
+
+
+
+Here, we note that the elements of `ts` are not even multiples of $\pi / 4$, such that we cannot reproduce the above results without assigning a continuous-time generator to describe the noise incurred by calling `Rz`.
 
 ## Next steps
 
