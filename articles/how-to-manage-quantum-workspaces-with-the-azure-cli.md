@@ -66,8 +66,8 @@ If you already know the provider and plan names to use in your workspace, you ca
    ```azurecli
    az quantum workspace create -l MyLocation -g MyResourceGroup -w MyQuantumWorkspace -a MyStorageAccount
    ```
-You may be prompted to accept terms of use.  Enter `Y` to accept the terms.
- 
+You may be prompted to accept terms of use.  Enter `Y` to accept the terms.  Note that the `-r` parameter shown in step four, below, was not required. 
+
 If you need to determine which providers and plans to use, proceed as follows:
 
 1. To retrieve the list of available quantum providers, use the `list` command (this example uses **westus** as the location):
@@ -75,6 +75,9 @@ If you need to determine which providers and plans to use, proceed as follows:
    ```azurecli
    az quantum offerings list -l westus -o table
    ```
+
+> [!TIP]
+> If want to see which providers give free credit, use the `--autoadd-only` parameter, for example: `az quantum offerings list --autoadd-only -l westus -o table`
 
 1. Once you determine the provider and plan to include in your workspace, you can review terms using the `show-terms` command (adding your **MyProviderID** and **MyPlan** as example values):
 
