@@ -19,7 +19,7 @@ All new Azure Quantum customers benefit of a one-time $500 free Azure Quantum cr
 
 ### [Azure Quantum Credits](#tab/tabid-AQcredits)
 
-Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. To learn more about credits, see [Azure Quantum credits](xref:microsoft.quantum.credits).
+Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
 
 |Pricing | Use is deducted from the Azure Quantum Credits based on the number of QGSs executed |
 |---|---|  
@@ -70,7 +70,7 @@ All new Azure customers benefit from $500 in free credits towards the Quantinuum
 
 ### [Azure Quantum Credits](#tab/tabid-AQcreditsQ)
 
-Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. To learn more about credits, see [Azure Quantum credits](xref:microsoft.quantum.credits).
+Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
 
 |Pricing | Use is deducted from the Azure Quantum Credits based on the HQC equation described above |
 |---|---|  
