@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide of what Azure Quantum quotas are, how to review remaining quotas and how to apply to get more. 
 ms.author: sonialopez
-ms.date: 06/14/2022
+ms.date: 06/22/2022
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
@@ -32,7 +32,7 @@ In Azure Quantum, hardware and software providers define and control the quotas 
 The Azure Quantum usage and quotas are measured in terms of each provider's unit of usage. Some providers don't define any quotas or meters. In that case, those providers will not have usage information to display.
 
 > [!NOTE]
-> If you are using an Azure Quantum Credits plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received, and you can hover over the relevant graph to see the amount you have used towards your credits.
+> If you are using an Azure Quantum Credits plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
 
 ### [Using portal](#tab/tabid-portal)
 
@@ -57,7 +57,7 @@ You can see your quotas by using the Azure Command-Line Interface (Azure CLI). F
     az extension add --upgrade -n quantum
     ```
 
-1. Log in to Azure using your credentials. You will see list of subscriptions associated with your account.
+1. **Log in** to Azure using your credentials. You will see list of subscriptions associated with your account.
 
    ```azurecli
    az login
@@ -73,7 +73,7 @@ You can see your quotas by using the Azure Command-Line Interface (Azure CLI). F
    ```azurecli
    az quantum workspace set -g MyResourceGroup -w MyWorkspace -l MyLocation -o table
    ```
-1. Use the `az quantum workspace quotas` command to display quotas information for the selected workspace.
+1. Use the **`az quantum workspace quotas` command** to display quotas information for the selected workspace.
 
     ```azurecli
     az quantum workspace quotas -o table
