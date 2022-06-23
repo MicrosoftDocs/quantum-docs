@@ -76,7 +76,14 @@ The auto tuning functionality will help you find a better setting. For detailed 
 | `algo` | string | 2.0 | Optional | Specifies the type of SQBM+ computation algorithm. One of "1.5" (bSB algorithm) or "2.0" (dSB algorithm) (see note below for details). Depending on the type of problem, there may be differences in performance between the "1.5" and "2.0" algorithms. Try both and decide which yields better performance. |
 | `auto` | bool | false | Optional | Specifies the parameter auto tuning flag. If the value is "true," SQBM+ computation service searches for the values of the parameters automatically to obtain the best solution. Parameters other than `auto` are treated as follows in this case. `algo` and `dt` are ignored and tuned automatically. `loops` and `maxout` are ignored. `timeout` can be specified as the total computation time (sec). Other parameters are treated as defined. |
 
-> There are two algorithms available through the SQBM+ provider in Azure Quantum: the high-speed Ballistic Simulated Bifurcation algorithm (bSB), designed to find a good solution in a short time; and the high-accuracy Discrete Simulated Bifurcation algorithm (dSB), which [finds more accurate solutions at a calculation speed that surpasses that of other machines](https://www.science.org/doi/10.1126/sciadv.abe7953) (both classical and quantum). **When selecting which algorithm to use with the `algo` parameter, `"1.5"` corresponds to the bSB algorithm and `"2.0"` corresponds to dSB.** For more information, please refer to the [getting started sample for Toshiba SQBM+](https://github.com/microsoft/qio-samples/tree/main/samples/getting-started/toshiba-sqbm).
+> [!NOTE]
+> There are two algorithms available through the SQBM+ provider in Azure Quantum:
+> - High-speed **Ballistic Simulated Bifurcation algorithm (bSB)**, designed to find a good solution in a short time
+> - High-accuracy **Discrete Simulated Bifurcation algorithm (dSB)**, which [finds more accurate solutions at a calculation speed that surpasses that of other machines](https://www.science.org/doi/10.1126/sciadv.abe7953) (both classical and quantum).
+>
+> **When selecting which algorithm to use with the `algo` parameter, `"1.5"` corresponds to the bSB algorithm and `"2.0"` corresponds to dSB.**
+>
+> For more information, please refer to the [getting started sample for Toshiba SQBM+](https://github.com/microsoft/qio-samples/tree/main/samples/getting-started/toshiba-sqbm).
 
 ### Maximum problem size
 
