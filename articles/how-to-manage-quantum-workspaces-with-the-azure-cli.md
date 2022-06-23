@@ -59,15 +59,27 @@ To create a new Azure Quantum workspace, you'll need to know:
 - The resource group associated with the new workspace, for example, **MyResourceGroup**.
 - A storage account in the same resource group and subscription as the quantum workspace. It's possible to [create a new storage account from the Az CLI tool](/cli/azure/storage/account#az_storage_account_create), for example, **MyStorageAccount**.
 - The name of the quantum workspace to create, for example, **MyQuantumWorkspace**.
-- The list of Azure Quantum providers to use in the workspace. A provider offers a set of plans, each of them representing a plan with associated terms and conditions, costs, and quotas. To create workspaces, you'll need to specify the corresponding plan along with the providers.
+- The list of Azure Quantum providers to use in the workspace. A provider offers a set of plans, each of them representing a plan with associated terms and conditions, costs, and quotas. To create workspaces, you'll need to specify the corresponding plan along with the providers, unless you want to start with the providers that offer free credit – they are automatically added to your workspace.
 
-If you already know the provider and plan names to use in your workspace, you can skip to step four. Otherwise, determine which providers to use first.
+If you already know the provider and plan names to use in your workspace, you can skip to step four, below. If you want to start with the providers that offer free credit, you can enter the following command:
+
+   ```azurecli
+   az quantum workspace create -l MyLocation -g MyResourceGroup -w MyQuantumWorkspace -a MyStorageAccount
+   ```
+You may be prompted to accept terms of use.  Enter `Y` to accept the terms.  Note that the `-r` parameter shown in step four, below, was not required. 
+
+If you need to determine which providers and plans to use, proceed as follows:
 
 1. To retrieve the list of available quantum providers, use the `list` command (this example uses **westus** as the location):
 
    ```azurecli
    az quantum offerings list -l westus -o table
    ```
+
+        > [!TIP]
+        > If want to see which providers give free credit, use the `--autoadd-only` parameter, for example:<br />
+        > `az quantum offerings list --autoadd-only -l westus -o table`<br />
+        > As mentioned previously, those providers are automatically added to your workspace. You do not need to specify them with the `-r` parameter.
 
 1. Once you determine the provider and plan to include in your workspace, you can review terms using the `show-terms` command (adding your **MyProviderID** and **MyPlan** as example values):
 
