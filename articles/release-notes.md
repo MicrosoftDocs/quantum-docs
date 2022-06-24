@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 05/23/2022
+ms.date: 06/27/2022
 author: bradben
 ms.author: brbenefield
 ms.service: azure-quantum
@@ -16,6 +16,22 @@ uid: microsoft.quantum.relnotes-qdk
 In this article, learn about updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview).
 
 For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For update instructions, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
+
+## 2022-0-27
+
+### QDK version TBD
+
+- Added new magic commands in the IQ# `%azure.target-capability`, `%qir`.
+- Improved the Q# compiler diagnostics in Jupyter notebooks such that upon cell compilation the lines that cause errors and warnings are pointed at, the documentation on Q# error and warning messages is automatically linked.
+- Target specific diagnostics will now be shown for each Jupyter notebook cell if the target is set.
+- Added support for continuous-angle rotations (e.g. Microsoft.Quantum.Intrinsic.Rx and Microsoft.Quantum.Intrinsic.Exp) to the open systems simulator, allowing the simulation of more Q# programs. See GitHub feature request [microsoft/qsharp-runtime#914](https://github.com/microsoft/qsharp-runtime/issues/914) for more details.
+- Added support for [IonQ Native Gates](https://ionq.com/docs/getting-started-with-native-gates) when creating a backend in Azure Quantum.
+- All Microsoft QIO CPU solvers now support [squared linear combination](https://docs.microsoft.com/azure/quantum/optimization-slc-term) terms and [protobuf binary format](https://docs.microsoft.com/azure/quantum/optimization-problem#input-problem-serialization-to-protobuf-binary-format). Additionally, several solvers now benefit from performance improvements, resulting in reduced memory usage and shortened runtimes. These solvers use input format `microsoft.qio.v2` only, the default format for all problems submitted via the Azure Quantum Python SDK.
+- Fixed GitHub issue [microsoft/qsharp-runtime#993](https://github.com/microsoft/qsharp-runtime/issues/993) to enable calling [Parity()](https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.bitwise.parity) with a negative argument.
+- Released Azure CLI quantum extension version 0.15.0
+  - Any providers participating in the ‘Credits for All’ program will automatically be added when you create a workspace with the CLI. See
+[Azure Quantum Credits FAQ](https://docs.microsoft.com/en-us/azure/quantum/credits-faq)
+
 
 ## 2022-05-23
 
