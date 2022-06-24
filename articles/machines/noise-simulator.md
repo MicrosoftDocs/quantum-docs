@@ -406,24 +406,6 @@ qsharp.config['simulators.noisy.stabilizerStateStyle'] = 'sparseGroupPresentatio
 
 $$\left\langle X_{0}X_{1}, Z_{0}Z_{1}, Z_{2}, Z_{3} \right\rangle $$
 
-## Known issues and limitations
-
-Since this feature is currently under active development, there are still a number of limitations and missing capabilities.
-
-- Continuous-time rotations (for example `Rx`, `Ry`, `Rz`, and `Exp`) are not yet supported.
-- Fractional rotations (for example `R1Frac`, `ExpFrac`) are not yet supported.
-- The `Controlled Y` operation with more than one control qubit is not yet supported.
-- The `Controlled T` operation is not yet supported.
-- Joint measurement is not yet supported.
-- In some cases, qubits may need to be manually `Reset` before releasing, even if they have been measured.
-
-> [!NOTE]
-> For more information about the development of this feature, see [this GitHub issue](https://github.com/microsoft/qsharp-runtime/issues/714).
-
-Some limitations are inherent to open systems simulation, and may not ever be supported:
-
-- Assertions (for example, `AssertMeasurement` and `AssertMeasurementProbability`) are not supported, as these assertions may fail for correct code in the presence of noise. These assertions are no-operational on the preview simulators.
-
 ## See also
 
 - [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
