@@ -44,6 +44,7 @@ The Azure Quantum usage and quotas are measured in terms of each provider's unit
   - *Azure subscription usage*: The usage for all workspaces within the current region and subscription. Not all quotas are tracked at this level. 
   - *Interval*: The period when your quota is renewed. If monthly, the usage is reset on the 1st of every month. If one-time, usage is never reset.
 
+ :::image type="content" source="media/portal-quotas-blade.png" alt-text="Quotas blade in Azure portal":::
 
 In this view, credits are included as quotas. This enables the user to see the credit information expressed in terms of the units that the provider tracks, as well as the interval associated. 
 
