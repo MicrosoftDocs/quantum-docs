@@ -6,7 +6,7 @@ ms.date: 06/22/2022
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
-title: Azure Quantum credits
+title: Azure Quantum Credits
 uid: microsoft.quantum.credits
 ---
 
@@ -45,7 +45,8 @@ To use your credits with a provider, submit a job in a workspace that uses an Az
 3. In the left panel, under **Operations**, go to the **Credits and quotas** blade and select the **Credits** tab. 
 4. See the consumed and the remaing credits for each selected provider. Credits are expressed in US dollars. 
 
-
+ :::image type="content" source="media/portal-credits-blade.png" alt-text="Credist blade in Azure portal":::
+ 
 ### [Using Azure CLI](#tab/tabid-cli)
 
 You can see your credit balance by using the Azure Command-Line Interface (Azure CLI) with the `az quantum workspace quotas` command. For more information, see [How to manage quantum workspaces with the Azure CLI](xref:microsoft.quantum.workspaces-cli).
