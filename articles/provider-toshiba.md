@@ -73,8 +73,17 @@ The auto tuning functionality will help you find a better setting. For detailed 
 | `maxout` | int | 1 | Optional | Specifies the upper limit of the number of solutions to be outputted. Until the limit specified by maxout is reached, SQBM+ computation service outputs the obtained solutions in ascending order of the value of the objective function. The maximum is 1,000. |
 | `dt` | float | 1 | Optional | Specifies the time per step. The range of the value is greater than 0.0 and less than or equal to 1.0. |
 | `C` | float | 0 | Optional | Corresponds to the constant ξ0, appearing in the paper by Goto, Tatsumura, & Dixon (2019, p. 2), which is the theoretical basis of SQBM+. Specify the constant as a single-precision floating point number, equal to or more than 0. If the value is 0, the value C is automatically determined. |
-| `algo` | string | 2.0 | Optional | Specifies the type of SQBM+ computation algorithm. One of "1.5" or "2.0". Depending on the type of problem, there may be differences in performance between the "1.5" and "2.0" algorithms. Try both and decide which yields better performance. |
+| `algo` | string | 2.0 | Optional | Specifies the type of SQBM+ computation algorithm. One of "1.5" (bSB algorithm) or "2.0" (dSB algorithm) (see note below for details). Depending on the type of problem, there may be differences in performance between the "1.5" and "2.0" algorithms. Try both and decide which yields better performance. |
 | `auto` | bool | false | Optional | Specifies the parameter auto tuning flag. If the value is "true," SQBM+ computation service searches for the values of the parameters automatically to obtain the best solution. Parameters other than `auto` are treated as follows in this case. `algo` and `dt` are ignored and tuned automatically. `loops` and `maxout` are ignored. `timeout` can be specified as the total computation time (sec). Other parameters are treated as defined. |
+
+> [!NOTE]
+> There are two algorithms available through the SQBM+ provider in Azure Quantum:
+> - High-speed **Ballistic Simulated Bifurcation algorithm (bSB)**, designed to find a good solution in a short time
+> - High-accuracy **Discrete Simulated Bifurcation algorithm (dSB)**, which [finds more accurate solutions at a calculation speed that surpasses that of other machines](https://www.science.org/doi/10.1126/sciadv.abe7953) (both classical and quantum).
+>
+> **When selecting which algorithm to use with the `algo` parameter, `"1.5"` corresponds to the bSB algorithm and `"2.0"` corresponds to dSB.**
+>
+> For more information, please refer to the [getting started sample for Toshiba SQBM+](https://github.com/microsoft/qio-samples/tree/main/samples/getting-started/toshiba-sqbm).
 
 ### Maximum problem size
 
