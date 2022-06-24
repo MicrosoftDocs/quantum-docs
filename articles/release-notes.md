@@ -17,7 +17,7 @@ In this article, learn about updates to the [Quantum Development Kit (QDK)](xref
 
 For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For update instructions, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
-## 2022-0-27
+## 2022-06-27
 
 ### QDK version TBD
 
@@ -28,7 +28,7 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 - Added support for [IonQ Native Gates](https://ionq.com/docs/getting-started-with-native-gates) when creating a backend in Azure Quantum.
 - All Microsoft QIO CPU solvers now support [squared linear combination](https://docs.microsoft.com/azure/quantum/optimization-slc-term) terms and [protobuf binary format](https://docs.microsoft.com/azure/quantum/optimization-problem#input-problem-serialization-to-protobuf-binary-format). Additionally, several solvers now benefit from performance improvements, resulting in reduced memory usage and shortened runtimes. These solvers use input format `microsoft.qio.v2` only, the default format for all problems submitted via the Azure Quantum Python SDK.
 - Fixed GitHub issue [microsoft/qsharp-runtime#993](https://github.com/microsoft/qsharp-runtime/issues/993) to enable calling [Parity()](https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.bitwise.parity) with a negative argument.
-- Released Azure CLI quantum extension version 0.15.0
+- Released Azure CLI quantum extension version 0.16.0
   - Any providers participating in the ‘Credits for All’ program will automatically be added when you create a workspace with the CLI. See
 [Azure Quantum Credits FAQ](https://docs.microsoft.com/en-us/azure/quantum/credits-faq)
 
