@@ -21,13 +21,12 @@ For how to get started, see [Set up Azure Quantum](xref:microsoft.quantum.instal
 
 ### QDK version TBD
 
-- Added new magic commands in the IQ# `%azure.target-capability`, `%qir`.
+- Added new magic commands for Q# Jupyter notebooks: [`%azure.target-capability`](https://docs.microsoft.com/en-us/qsharp/api/iqsharp-magic/azure.target-capability), [`%qir`](https://docs.microsoft.com/en-us/qsharp/api/iqsharp-magic/qir). Target specific diagnostics will also now be shown for each notebook cell if the target is set.
 - Improved the Q# compiler diagnostics in Jupyter notebooks such that upon cell compilation the lines that cause errors and warnings are pointed at, the documentation on Q# error and warning messages is automatically linked.
-- Target specific diagnostics will now be shown for each Jupyter notebook cell if the target is set.
 - Added support for continuous-angle rotations (e.g. Microsoft.Quantum.Intrinsic.Rx and Microsoft.Quantum.Intrinsic.Exp) to the open systems simulator, allowing the simulation of more Q# programs. See GitHub feature request [microsoft/qsharp-runtime#914](https://github.com/microsoft/qsharp-runtime/issues/914) for more details.
 - Added support for [IonQ Native Gates](https://ionq.com/docs/getting-started-with-native-gates) when creating a backend in Azure Quantum.
 - All Microsoft QIO CPU solvers now support [squared linear combination](https://docs.microsoft.com/azure/quantum/optimization-slc-term) terms and [protobuf binary format](https://docs.microsoft.com/azure/quantum/optimization-problem#input-problem-serialization-to-protobuf-binary-format). Additionally, several solvers now benefit from performance improvements, resulting in reduced memory usage and shortened runtimes. These solvers use input format `microsoft.qio.v2` only, the default format for all problems submitted via the Azure Quantum Python SDK.
-- Fixed GitHub issue [microsoft/qsharp-runtime#993](https://github.com/microsoft/qsharp-runtime/issues/993) to enable calling [Parity()](https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.bitwise.parity) with a negative argument.
+- Enabled calling [Parity()](https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.bitwise.parity) with a negative argument, fixing GitHub issue [microsoft/qsharp-runtime#993](https://github.com/microsoft/qsharp-runtime/issues/993).
 - Released Azure CLI quantum extension version 0.16.0
   - Any providers participating in the ‘Credits for All’ program will automatically be added when you create a workspace with the CLI. See
 [Azure Quantum Credits FAQ](https://docs.microsoft.com/en-us/azure/quantum/credits-faq)
