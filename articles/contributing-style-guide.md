@@ -14,37 +14,37 @@ uid: microsoft.quantum.contributing-qdk.overview.style
 # Q# style guide #
 ## General conventions ##
 
-The conventions suggested in this guide are intended to help make programs and libraries written in Q# programming language easier to read and understand.
+The conventions suggested in this guide are intended to help make it easier to read and understand programs, and libraries written in Q# programming language.
 
 ## Guidance
 
-We suggest:
+We recommend:
 
-- Never disregard a convention unless you’re doing so intentionally in order to provide more readable and understandable code for your users.
+- Never disregard convention, unless you intentionally want to provide  code that is more readable and understandable for users.
 
 ## Naming conventions ##
 
-In offering the Quantum Development Kit, we strive for function and operation names that help quantum developers write programs that are easy to read and that minimize surprise.
-An important part of that is that when we choose names for functions, operations, and types, we are establishing the *vocabulary* that programmers use to express quantum concepts; with our choices, we either help or hinder them in their effort to clearly communicate.
-This places a responsibility on us to make sure that the names we introduce offer clarity rather than obscurity.
-In this section, we detail how we meet this obligation in terms of explicit guidance that helps us do the best by the Q# development community.
+In offering the Quantum Development Kit, we strive for function and operation names that help quantum developers write programs. We want programs to be easy to read and to minimize surprises.
+An important part of facilitating developers is that we establish the *vocabulary* that programmers use to express quantum concepts when we choose names for functions, operations, and types. Our choices either help or hinder developers in their efforts to communicate clearly.
+We have a responsibility to ensure that the names we introduce offer clarity rather than obscurity.
+In this section, we detail how we meet this obligation. We'll offer explicit guidance that helps us do the best by the Q# development community.
 
 ### Operations and functions ###
 
-One of the first things that a name should establish is whether a given symbol represents a function or an operation.
-The difference between functions and operations is critical to understanding how a block of code behaves.
+Our name choices should first establish whether a symbol represents a function or an operation.
+The distinction between functions and operations indicates how a block of code behaves.
 To communicate the distinction between functions and operations to users, we rely on that Q# models quantum operations through the use of side effects.
 That is, an operation *does* something.
 
-By contrast, functions describe the mathematical relationships between data.
+In contrast, functions describe the mathematical relationships between data.
 The expression `Sin(PI() / 2.0)` *is* `1.0`, and implies nothing about the state of a program or its qubits.
 
-Summarizing, operations do things while functions are things.
-This distinction suggests that we name operations as verbs and functions as nouns.
+In summary, operations do things, while functions are things.
+Based on this distinction, we name operations as verbs and functions as nouns.
 
 > [!NOTE]
 > When a user-defined type is declared, a new function that constructs instances of that type is implicitly defined at the same time.
-> From that perspective, user-defined types should be named as nouns so that both the type itself and the constructor function have consistent names.
+> From that perspective, user-defined types should be nouns so that both the type itself and the constructor function have consistent names.
 
 Where reasonable, ensure that operation names begin with verbs that clearly indicate the effect taken by the operation.
 For example:
@@ -53,8 +53,8 @@ For example:
 - `EstimateEnergy`
 - `SampleInt`
 
-One case that deserves special mention is when an operation takes another operation as input and calls it.
-In such cases, the action taken by the input operation is not clear when the outer operation is defined, such that the right verb is not immediately clear.
+We should pay special attention when an operation takes another operation as input. Also, when the operation calls it.
+In such cases, the action taken by the input operation is not clear when the outer operation is defined. Therefore the right verb is not immediately clear.
 We recommend the verb `Apply`, as in `ApplyIf`, `ApplyToEach`, and `ApplyToFirst`.
 Other verbs may be useful in this case as well, as in `IterateThroughCartesianPower`.
 
@@ -67,20 +67,20 @@ Other verbs may be useful in this case as well, as in `IterateThroughCartesianPo
 | Prepare | A given register of qubits is initialized into a particular state |
 | Sample | A classical value is returned at random from some distribution |
 
-For functions, we suggest avoiding the use of verbs in favor of common nouns (see guidance on proper nouns below) or adjectives:
+For functions, we recommend avoiding the use of verbs in favor of common nouns (see guidance on proper nouns below) or adjectives:
 
 - `ConstantArray`
 - `Head`
 - `LookupFunction`
 
-In particular, in almost all cases, we suggest using past participles where appropriate to indicate that a function name is strongly connected to an action or side effect elsewhere in a quantum program.
-For example,  `ControlledOnInt` uses the part participle form of the verb "control" to indicate that the function acts as an adjective to modify its argument.
-This name has the additional benefit of matching the semantics of the built-in `Controlled` functor, as discussed further below.
-Similarly, _agent nouns_ can be used to construct function and UDT names from operation names, as in the case of the name `Encoder` for a UDT that is strongly associated with `Encode`.
+In almost every case, we suggest using past participles where appropriate. This indicates that a function name is strongly connected to an action or side effect elsewhere in the quantum program.
+As an example,  `ControlledOnInt` uses the part participle form of the verb "control" to indicate that the function acts as an adjective to modify its argument.
+This name has the additional benefit of matching the semantics of the built-in `Controlled` functor, as discussed further in this article.
+Similarly, _agent nouns_ can be used to construct function and UDT names from operation names. An example of this is the name `Encoder` for a UDT that is strongly associated with `Encode`.
 
 # [Guidance](#tab/guidance)
 
-We suggest:
+We recommend:
 
 - Use verbs for operation names.
 - Use nouns or adjectives for function names.
@@ -108,8 +108,8 @@ We suggest:
 
 ### Entry points
 
-When defining an entry point into a Q# program, the Q# compiler recognizes the [`@EntryPoint()` attribute](xref:Microsoft.Quantum.Core.EntryPoint) rather requiring that entry points have a particular name (for example: `main`, `Main`, or `__main__`).
-That is, from the perspective of a Q# developer, entry points are ordinary operations annotated with `@EntryPoint()`.
+When defining entry points for Q# programs, the Q# compiler recognizes the [`@EntryPoint()` attribute](xref:Microsoft.Quantum.Core.EntryPoint). Entry points should have a specifc name (for example: `main`, `Main`, or `__main__`).
+From the Q# developer perspective, entry points are ordinary operations annotated with `@EntryPoint()`.
 Moreover, Q# entry points may be entry points for an entire application (for example, in Q# standalone executable programs), or may be an interface between a Q# program and the host program for an application (for example, when using Q# with Python or .NET), such that the name "main" could be misleading when applied to a Q# entry point.
 
 We suggest using naming entry points to reflect the use of the `@EntryPoint()` attribute by using the general advice for naming operations listed above.
