@@ -24,7 +24,7 @@ Credits are shared for all workspaces within a single subscription and region. T
 Azure Quantum Credit plan will be free to add to your workspace. Once you have consumed all the credits, you will get error messages when submitting new jobs, and you can then upgrade to a new plan to keep using the selected quantum hardware providers.
 
 > [!NOTE]
-> Please notice that Azure credits are not the same as Azure Quantum Credits. When you create a [new Azure account](https://azure.microsoft.com/free/), you get 200 USD free Azure Credits to use on Microsoft services. You can only use general-purpose Azure Credits with the Microsoft providers. 3rd-party providers (providers that aren't owned by Microsoft) aren't eligible.
+> Please notice that Azure credits are not the same as Azure Quantum Credits. When you create a [new Azure account](https://azure.microsoft.com/free/), you get $200 (USD) free Azure Credits to use on Microsoft services. You can only use general-purpose Azure Credits with the Microsoft providers. 3rd-party providers (providers that aren't owned by Microsoft) aren't eligible.
 
 ## How to use Azure Quantum Credits
 
