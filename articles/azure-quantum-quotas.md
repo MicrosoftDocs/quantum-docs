@@ -42,11 +42,11 @@ The Azure Quantum usage and quotas are measured in terms of each provider's unit
 4. See the consumed and the remaing quotas for each selected provider. Notice that quotas information is displayed in three columns.
   - *Workspace usage*: The usage limit for the current workspace. Azure Quantum workspace have a usage limit
   - *Azure subscription usage*: The usage for all workspaces within the current region and subscription. Not all quotas are tracked at this level. 
-  - *Interval*: The period when your quota is renewed. If monthly, the usage is reset on the 1st of every month. If one-time, usage is never reset.
+  - *Cadence*: The period when your quota is renewed. If monthly, the usage is reset on the 1st of every month. If one-time, usage is never reset.
 
  :::image type="content" source="media/portal-quotas-blade.png" alt-text="Quotas blade in Azure portal":::
 
-In this view, credits are included as quotas. This enables the user to see the credit information expressed in terms of the units that the provider tracks, as well as the interval associated. 
+In this view, [Azure Quantum Credits](xref:microsoft.quantum.credits) are included as quotas. This enables the user to see the credit information expressed in terms of the units that the provider tracks, as well as the interval associated.
 
 ### [Using Azure CLI](#tab/tabid-cli)
 
