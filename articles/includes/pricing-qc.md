@@ -24,12 +24,16 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 |Pricing | Use is deducted from the Azure Quantum Credits based on the number of QGSs executed |
 |---|---|  
 |Includes access to | <ul><li>IonQ QPU</li><li>IonQ Simulator (free)</li></ul>|
-| |<ul><li>1-Qubit Gate Shot: 0.00003 USD deducted from your credits</li><li>2-Qubit Gate Shot: 0.0003 USD deducted from your credits</li></ul>|
+| |<ul><li>1-Qubit Gate Shot: $0.00003 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.0003 (USD) deducted from your credits</li></ul>|
 
 Minimum of $1 (USD) per program execution, deducted from your credits. 
 
 > [!NOTE]
 > Once you have consumed all the credits you need to switch to a different plan to continue using IonQ. Azure Quantum won’t start charging you once you reach your credit limit. 
+
+> [!IMPORTANT]
+> There are no costs or charges to using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
+> For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
  
 ### [Pay As You Go](#tab/tabid-paygo)
 
@@ -38,9 +42,11 @@ The Pay-as-you-go plan consists of *a la carte* access to trapped ion quantum co
 |Pricing | Use is charged based on the number of QGSs executed + Azure infrastructure costs |
 |---|---|  
 |Includes access to | <ul><li>IonQ QPU</li><li>IonQ Simulator (free)</li></ul>|
-||<ul><li>1-qubit gate shot: 0.00003 USD </li><li>2-qubit gate shot: 0.0003 USD </li></ul>|
+||<ul><li>1-qubit gate shot: $0.00003 (USD) </li><li>2-qubit gate shot: $0.0003 (USD) </li></ul>|
 
 Minimum of $1 (USD) per program execution.  
+
+For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ***
 
@@ -79,21 +85,29 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 > [!NOTE]
 > Once you have consumed all the credits you need to explicitly switch to a different plan to continue using Quantinuum. Azure Quantum won’t start charging you once you reach your credit limit. 
 
+> [!IMPORTANT]
+> There are no costs or charges to using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
+> For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
+
 ### [Standard Subscription](#tab/tabid-standard)
 
 The Standard Subcription is a monthly subscription plan available through queued access. 
 
-|Pricing|  125,000 USD / Month + Azure infrastructure costs |
+|Pricing|  $125,000 (USD)/Month + Azure infrastructure costs |
 |---|---|
 |Includes access to | <ul><li>10k HQCs for use on the System Model H1 hardware</li><li>40k eHQCs for use on the H1 Emulator</li></ul>|
+
+For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ### [Premium Subscription](#tab/tabid-premium)
  
 The Premium Subscription is a monthly subscription plan available through queued access.
 
-| Pricing | 175,000 USD / Month + Azure infrastructure costs |
+| Pricing | $175,000 (USD)/Month + Azure infrastructure costs |
 |---|---| 
 |Includes access to | <ul><li>17k HQCs for use on System Model H1 hardware</li><li>100k eHQCs for use on the H1 Emulator</li></ul>|
+
+For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 ***
 
 
