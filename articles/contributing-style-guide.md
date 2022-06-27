@@ -14,39 +14,37 @@ uid: microsoft.quantum.contributing-qdk.overview.style
 # Q# style guide #
 ## General conventions ##
 
-The conventions suggested in this guide are intended to help make it easier to read and understand programs, and libraries written in Q# programming language.
+The conventions in this guide make it easier to read and understand programs and libraries written in the Q# programming language.
 
 ## Guidance
 
 We recommend:
 
-- Never disregard convention, unless you intentionally want to provide  code that is more readable and understandable for users.
+- Stick to convention unless you intentionally want to provide code that is more readable and understandable for users.
 
 ## Naming conventions ##
 
-In offering the Quantum Development Kit, we strive for function and operation names that help quantum developers write programs. We want programs to be easy to read and to minimize surprises.
-An important part of facilitating developers is that we establish the *vocabulary* that programmers use to express quantum concepts when we choose names for functions, operations, and types. Our choices either help or hinder developers in their efforts to communicate clearly.
-We have a responsibility to ensure that the names we introduce offer clarity rather than obscurity.
-In this section, we detail how we meet this obligation. We'll offer explicit guidance that helps us do the best by the Q# development community.
+Our goal is to aid developers who use the Quantum Development Kit. We strive to create function and operation names that help quantum developers write easy-to-read programs with minimal surprises. We have established *vocabulary* that expresses quantum concepts, such as our names for functions, operations, and types. All of this faciliates developers. Our choices either help or hinder developers in their efforts to communicate clearly. Let's offer clarity rather than obscurity.
+In this section, we detail how we meet this obligation. We'll offer explicit guidance that helps the Q# development community.
 
 ### Operations and functions ###
 
 Our name choices should first establish whether a symbol represents a function or an operation.
-The distinction between functions and operations indicates how a block of code behaves.
-To communicate the distinction between functions and operations to users, we rely on that Q# models quantum operations through the use of side effects.
+The difference between functions and operations indicates how a block of code behaves.
+We rely on Q# models quantum operations to communicate the difference between functions and operations to users, through the use of side effects.
 That is, an operation *does* something.
 
 In contrast, functions describe the mathematical relationships between data.
 The expression `Sin(PI() / 2.0)` *is* `1.0`, and implies nothing about the state of a program or its qubits.
 
 In summary, operations do things, while functions are things.
-Based on this distinction, we name operations as verbs and functions as nouns.
+Based on this difference, we name operations as verbs and functions as nouns.
 
 > [!NOTE]
 > When a user-defined type is declared, a new function that constructs instances of that type is implicitly defined at the same time.
 > From that perspective, user-defined types should be nouns so that both the type itself and the constructor function have consistent names.
 
-Where reasonable, ensure that operation names begin with verbs that clearly indicate the effect taken by the operation.
+Ensure that operation names begin with verbs that clearly indicate the effect taken by the operation.
 For example:
 
 - `MeasureInteger`
@@ -54,7 +52,7 @@ For example:
 - `SampleInt`
 
 We should pay special attention when an operation takes another operation as input. Also, when the operation calls it.
-In such cases, the action taken by the input operation is not clear when the outer operation is defined. Therefore the right verb is not immediately clear.
+In such cases, the action taken by the input operation is not clear at the time that the outer operation is defined. Therefore the right verb is not immediately clear.
 We recommend the verb `Apply`, as in `ApplyIf`, `ApplyToEach`, and `ApplyToFirst`.
 Other verbs may be useful in this case as well, as in `IterateThroughCartesianPower`.
 
@@ -67,13 +65,13 @@ Other verbs may be useful in this case as well, as in `IterateThroughCartesianPo
 | Prepare | A given register of qubits is initialized into a particular state |
 | Sample | A classical value is returned at random from some distribution |
 
-For functions, we recommend avoiding the use of verbs in favor of common nouns (see guidance on proper nouns below) or adjectives:
+For functions, we recommend that you avoid use of verbs. Instead, use common nouns (see guidance on proper nouns below) or adjectives:
 
 - `ConstantArray`
 - `Head`
 - `LookupFunction`
 
-In almost every case, we suggest using past participles where appropriate. This indicates that a function name is strongly connected to an action or side effect elsewhere in the quantum program.
+We recommend that you use past participles in every scenario possible. This strongly connects a function name to an action or side effect elsewhere in the quantum program.
 As an example,  `ControlledOnInt` uses the part participle form of the verb "control" to indicate that the function acts as an adjective to modify its argument.
 This name has the additional benefit of matching the semantics of the built-in `Controlled` functor, as discussed further in this article.
 Similarly, _agent nouns_ can be used to construct function and UDT names from operation names. An example of this is the name `Encoder` for a UDT that is strongly associated with `Encode`.
@@ -83,10 +81,10 @@ Similarly, _agent nouns_ can be used to construct function and UDT names from op
 We recommend:
 
 - Use verbs for operation names.
-- Use nouns or adjectives for function names.
-- Use nouns for user-defined types and attributes.
-- For all callable names, use `CamelCase` in strong preference to `pascalCase`, `snake_case`, or `ANGRY_CASE`. In particular, ensure that callable names start with uppercase letters.
-- For all local variables, use `pascalCase` in strong preference to `CamelCase`, `snake_case`, or `ANGRY_CASE`. In particular, ensure that local variables start with lowercase letters.
+- Use of nouns or adjectives for function names.
+- Use of nouns for user-defined types and attributes.
+- Use `CamelCase` in strong preference to `pascalCase`, `snake_case`, or `ANGRY_CASE`, for all callable names. Ensure that callable names start with uppercase letters.
+- Use `pascalCase` in strong preference to `CamelCase`, `snake_case`, or `ANGRY_CASE`, for all local variables. Ensure that local variables start with lowercase letters.
 - Avoid the use of underscores `_` in function and operation names; where additional levels of hierarchy are needed, use namespaces and namespace aliases.
 
 # [Examples](#tab/examples)
@@ -108,16 +106,16 @@ We recommend:
 
 ### Entry points
 
-When defining entry points for Q# programs, the Q# compiler recognizes the [`@EntryPoint()` attribute](xref:Microsoft.Quantum.Core.EntryPoint). Entry points should have a specifc name (for example: `main`, `Main`, or `__main__`).
+When you define entry points for Q# programs, the Q# compiler recognizes the [`@EntryPoint()` attribute](xref:Microsoft.Quantum.Core.EntryPoint). Entry points should have a specifc name (for example: `main`, `Main`, or `__main__`).
 From the Q# developer perspective, entry points are ordinary operations annotated with `@EntryPoint()`.
-Moreover, Q# entry points may be entry points for an entire application (for example, in Q# standalone executable programs), or may be an interface between a Q# program and the host program for an application (for example, when using Q# with Python or .NET), such that the name "main" could be misleading when applied to a Q# entry point.
+Moreover, Q# entry points may be entry points for an entire application (for example, in Q# standalone executable programs), or may be an interface between a Q# program and the host program for an application (for example, when you use Q# with Python or .NET), such that the name "main" could be misleading when applied to a Q# entry point.
 
-We suggest using naming entry points to reflect the use of the `@EntryPoint()` attribute by using the general advice for naming operations listed above.
+We recommend that you use naming entry points that reflect the use of the `@EntryPoint()` attribute by using the general advice for naming operations listed above.
 
 
 # [Guidance](#tab/guidance)
 
-We suggest:
+We recommend:
 
 - Do not name entry point operations as "main."
 - Name entry point operations as ordinary operations.
@@ -133,20 +131,20 @@ We suggest:
 
 ### Shorthand and abbreviations ###
 
-The above advice notwithstanding, there are many forms of shorthand that see common and pervasive use in quantum computing.
-We suggest using existing and common shorthand where it exists, especially for operations that are intrinsic to the operation of a target machine.
+The above advice notwithstanding, many forms of shorthand are commonly used in quantum computing.
+We recommend that you use common shorthand where it exists, especially for operations that are intrinsic to the operation of a target machine.
 For example, we choose the name `X` instead of `ApplyX`, and `Rz` instead of `RotateAboutZ`.
-When using such shorthand, operation names should be all uppercase (for example, `MAJ`).
+When you use such shorthand, operation names should be all uppercase (for example, `MAJ`).
 
-Some care is required when applying this convention in the case of commonly used acronyms and initialisms such as "QFT" for "quantum Fourier transform."
-We suggest following general .NET conventions for the use of acronyms and initialisms in full names, which prescribe that:
+Pay attention when you apply this convention in the case of commonly used acronyms and initialisms such as "QFT" for "quantum Fourier transform."
+We recommend following general .NET conventions for the use of acronyms and initialisms in full names, which recommend that:
 
 - two-letter acronyms and initialisms are named in upper case (for example, `BE` for "big-endian"),
 - all longer acronyms and initialisms are named in `CamelCase` (for example, `Qft` for "quantum Fourier transform")
 
-Thus, an operation implementing the QFT could either be called `QFT` as shorthand, or written out as `ApplyQft`.
+Thus, an operation that implements the QFT could either be called `QFT` as shorthand, or written out as `ApplyQft`.
 
-For particularly commonly used operations and functions, it may be desirable to provide a shorthand name as an _alias_ for a longer form:
+For commonly used operations and functions, you may want to provide a shorthand name as an _alias_ for a longer form:
 
 ```qsharp
 operation CCNOT(control0 : Qubit, control1 : Qubit, target : Qubit)
@@ -157,9 +155,9 @@ is Adj + Ctl {
 
 # [Guidance](#tab/guidance)
 
-We suggest:
+We recommend:
 
-- Consider commonly accepted and widely used shorthand names when appropriate.
+- Commonly accepted and widely used shorthand names when appropriate.
 - Use uppercase for shorthand.
 - Use uppercase for short (two-letter) acronyms and initialisms.
 - Use `CamelCase` for longer (three or more letter) acronyms and initialisms.
@@ -181,25 +179,24 @@ We suggest:
 
 ### Proper nouns in names ###
 
-While in physics it is common to name things after the first person to publish about them, most non-physicists aren’t familiar with everyone’s names and all of the history.
-Relying too heavily on naming conventions from physics can thus put up a substantial barrier to entry, as users from other backgrounds must learn a large number of seemingly opaque names in order to use common operations and concepts.
-<!-- An important part of the task of reducing confusion is to make code more accessible.
-Especially in a field such as quantum computing that is rich with domain expertise, we must at all times be cognizant of the demands we place on that expertise as we design quantum software.
-In naming code symbols, one way that this cognizance expresses itself is as an awareness of the convention from physics of adopting as the names of algorithms and operations the names of their original publishers.
-While we must maintain the history and intellectual provenance of concepts in quantum computing, demanding that all users be versed in this history to use even the most basic of functions and operations places a barrier to entry that is in most cases severe enough to even present an ethical compromise. -->
-Thus, we recommend that wherever reasonable, common nouns that describe a concept be adopted in strong preference to proper nouns that describe the publication history of a concept.
+In physics it is common to name things after the first person that published information about it. HOever, most non-physicists aren’t familiar with the important names and history of physics.
+Don't rely too heavily on naming conventions from physics since they can create barriers to entry. They require users from other backgrounds to learn a large number of names just to use common operations and concepts.
+<!-- Reduce confusion by making code more accessible.
+Quantum computing is rich with domain expertise. We must be conscienscious of the demands we place on that expertise as we design quantum software.
+Be aware of conventions from physics of the names of algorithms and operations being the names of their original publishers.
+We must maintain the history and intellectual provenance of quantum computing concepts, but to demand that all users learn the history of physics creates barriers to entry that are severe enough to present an ethical compromise. -->
+We recommend that wherever reasonable, common nouns that describe a concept be adopted. This is preferrable over proper nouns that describe the publication history of a concept.
 As a particular example, the singly controlled SWAP and doubly controlled NOT operations are often called the "Fredkin" and "Toffoli" operations in academic literature, but are identified in Q# primarily as `CSWAP` and `CCNOT`.
-In both cases, the API documentation comments provide synonymous names based on proper nouns, along with all appropriate citations.
+In both cases, API documentation comments provide synonymous names based on proper nouns, along with all appropriate citations.
 
-This preference is especially important given that some usage of proper nouns will always be necessary — Q# follows the tradition set by many classical languages, for instance, and refers to `Bool` types in reference to Boolean logic, which is in turn named in honor of George Boole.
+This option is especially important since some use of proper nouns will always be necessary — Q# follows the tradition set by many classical languages, for instance, and refers to `Bool` types in reference to Boolean logic, which is in turn named in honor of George Boole.
 A few quantum concepts similarly are named in a similar fashion, including the `Pauli` type built-in to the Q# language.
-By minimizing the usage of proper nouns where such usage is not essential, we reduce the impact where proper nouns cannot be reasonably avoided.
 
 # [Guidance](#tab/guidance) 
 
-We suggest:
+We recommend:
 
-- Avoid the use of proper nouns in names.
+- Avoid use of proper nouns in names.
 
 # [Examples](#tab/examples)
 
@@ -211,13 +208,13 @@ Since Q# is a strongly and statically typed language, a value of one type can on
 This is in contrast to languages which allow for values to change types implicitly (for example, type promotion), or through casting.
 As a result, type conversion functions play an important role in Q# library development, and comprise one of the more commonly encountered decisions about naming.
 We note, however, that since type conversions are always _deterministic_, they can be written as functions and thus fall under the advice above.
-In particular, we suggest that type conversion functions should never be named as verbs (for example, `ConvertToX`) or adverb prepositional phrases (`ToX`), but should be named as adjective prepositional phrases that indicate the source and destination types (`XAsY`).
-When listing array types in type conversion function names, we recommend the shorthand `Arr`.
-Barring exceptional circumstances, we recommend that all type conversion functions be named using `As` so that they can be quickly identified.
+We recommend that type conversion functions never be named as verbs (for example, `ConvertToX`) or adverb prepositional phrases (`ToX`), but should be named as adjective prepositional phrases that indicate the source and destination types (`XAsY`).
+When you list array types in type conversion function names, we recommend the shorthand `Arr`.
+We recommend that all type conversion functions be named using `As` so that they are quickly identified.
 
 # [Guidance](#tab/guidance)
 
-We suggest:
+We recommend:
 
 - If a function converts a value of type `X` to a value of type `Y`, use either the name `AsY` or `XAsY`.
 
@@ -234,15 +231,15 @@ We suggest:
 
 ### Private or internal names ###
 
-In many cases, a name is intended strictly for use internal to a library or project, and is not a guaranteed part of the API offered by a library.
+In many cases, a name is intended strictly for internal use in a library or project. It is not a guaranteed part of the API that a library offers.
 It is helpful to clearly indicate that this is the case when naming functions and operations so that accidental dependencies on internal-only code are made obvious.
-If an operation or function is not intended for direct use, but rather should be used by a matching callable which acts by partial application, consider using a name starting with the `internal` keyword for the callable that is partially applied.
+There are operations and functions that aren't intended for direct use. They can be used by a matching callable which acts by partial application. Then consider using a name that starts with the `internal` keyword for the callable that is partially applied.
 
 # [Guidance](#tab/guidance)
 
-We suggest:
+We recommend:
 
-- When a function, operation, or user-defined type is not a part of the public API for a Q# library or program, ensure that it is marked as internal by placing the `internal` keyword before the `function`, `operation`, or `newtype` declaration.
+- When functions, operations, or user-defined types are not part of the public API for a Q# library or program, mark it as internal by placing the `internal` keyword before the `function`, `operation`, or `newtype` declaration.
 
 # [Examples](#tab/examples)
 
@@ -254,8 +251,8 @@ We suggest:
 ***
 ### Variants ###
 
-Though this limitation may not persist in future versions of Q#, it is presently the case that there will often be groups of related operations or functions that are distinguished by which functors their inputs support, or by the concrete types of their arguments.
-These groups can be distinguished by using the same root name, followed by one or two letters that indicate its variant.
+There are often groups of related operations or functions that are identified by which functors their inputs support. They can also be identified by the concrete types of their arguments. This limitation may not persist in future versions of Q#.
+These groups can be identified by using the same root name, followed by one or two letters that indicate its variant.
 
 | Suffix | Meaning |
 |--------|---------|
@@ -268,10 +265,10 @@ These groups can be distinguished by using the same root name, followed by one o
 
 # [Guidance](#tab/guidance)
 
-We suggest:
+We recommend:
 
 - If a function or operation is not related to any similar functions or operations by the types and functor support of their inputs, do not use a suffix.
-- If a function or operation is related to any similar functions or operations by the types and functor support of their inputs, use suffixes as in the table above to distinguish variants.
+- If a function or operation is related to any similar functions or operations by the types and functor support of their inputs, use suffixes as in the table above to identify variants.
 
 # [Examples](#tab/examples)
 
@@ -285,11 +282,11 @@ Similarly, the names of inputs and type arguments should communicate how a funct
 
 # [Guidance](#tab/guidance)
 
-We suggest:
+We recommend:
 
 - For all variable and input names, use `pascalCase` in strong preference to `CamelCase`, `snake_case`, or `ANGRY_CASE`.
 - Input names should be descriptive; avoid one or two letter names where possible.
-- Operations and functions accepting exactly one type argument should denote that type argument by `T` when its role is obvious.
+- Operations and functions that accept one type argument should denote that type argument by `T` when its role is obvious.
 - If a function or operation takes multiple type arguments, or if the role of a single type argument is not obvious, consider using a short capitalized word prefaced by `T` (for example, `TOutput`) for each type.
 - Do not include type names in argument and variable names; this information can and should be provided by your development environment.
 - Denote scalar types by their literal names (`flagQubit`), and array types by a plural (`measResults`).
@@ -309,7 +306,7 @@ This helps in order to clearly separate named items from references to locally s
 
 # [Guidance](#tab/guidance)
 
-We suggest:
+We recommend:
 
 - Named items in UDT constructors should be named as `CamelCase`; that is, they should begin with an initial uppercase.
 - Named items that resolve to operations should be named as verb phases.
@@ -332,12 +329,12 @@ When a developer calls into an operation or function, the various inputs to that
 In particular, the task of remembering input orderings is often a distraction from the task at hand: programming an implementation of a quantum algorithm.
 Though rich IDE support can mitigate this to a large extent, good design and adherence to common conventions can also help to minimize the cognitive load imposed by an API.
 
-Where possible, it can be helpful to reduce the number of inputs expected by an operation or function, so that the role of each input is more immediately obvious both to developers calling into that operation or function, and to developers reading that code later.
-Especially when it is not possible or reasonable to reduce the number of arguments to an operation or function, it is important to have a consistent ordering that minimizes the surprise that a user faces when predicting the order of inputs.
+Reduce the number of inputs expected by an operation or function. This way the role of each input is more immediately obvious both to developers that call the operation or function, and to developers that read the code later.
+When it is not possible or reasonable to reduce the number of arguments in an operation or function, be consistent with the order of arguments. This minimizes surprises as users predict input order.
 
-We recommend an input ordering conventions that largely derives from thinking of partial application as a generalization of currying 𝑓(𝑥, 𝑦) ≡ 𝑓(𝑥)(𝑦).
-Thus, partially applying the first arguments should result in a callable that is useful in its own right whenever that is reasonable.
-Following this principle, consider using the following order of arguments:
+We recommend an input order convention. Create this by thinking of partial application as a generalization of currying 𝑓(𝑥, 𝑦) ≡ 𝑓(𝑥)(𝑦).
+Partially apply the first arguments which results in a callable that is useful in its own right whenever that is reasonable.
+Also consider using the following order of arguments:
 
 - Classical non-callable arguments such as angles, vectors of powers, etc.
 - Callable arguments (functions and arguments).
@@ -360,16 +357,16 @@ operation ApplyPhaseEstimationIteration(
 : Unit
 ...
 ```
-As a special case of minimizing surprise, some functions and operations mimic the behavior of the built-in functors `Adjoint` and `Controlled`.
+Some functions and operations mimic the behavior of the built-in functors `Adjoint` and `Controlled`.
 For instance, `ControlledOnInt<'T>` has type `(Int, ('T => Unit is Adj + Ctl)) => ((Qubit[], 'T) => Unit is Adj + Ctl)`, such that `ControlledOnInt<Qubit[]>(5, _)` acts like the `Controlled` functor, but on the condition that the control register represents the state $\ket{5} = \ket{101}$.
-Thus, a developer expects that the inputs to `ControlledOnInt` place the callable being transformed last, and that the resulting operation takes as its input `(Qubit[], 'T)` --- the same order as followed by the output of the `Controlled` functor.
+Developers expect that input to `ControlledOnInt` places the callable that is being transformed, last in the queue. They also assume that the resulting operation accepts `(Qubit[], 'T)` as its input--- the same order as followed by the output of the `Controlled` functor.
 
 # [Guidance](#tab/guidance)
 
-We suggest:
+We recommend:
 
-- Use input orderings consistent with the use of partial application.
-- Use input orderings consistent with built-in functors.
+- Order your inputs consistent with use of partial application.
+- Order your inputs consistent with built-in functors.
 - Place all classical inputs before any quantum inputs.
 
 # [Examples](#tab/examples)
@@ -378,20 +375,20 @@ We suggest:
 
 ## Documentation conventions ##
 
-The Q# language allows for attaching documentation to operations, functions, and user-defined types through the use of specially formatted documentation comments.
-Denoted by triple-slashes (`///`), these documentation comments are small [DocFX-flavored Markdown](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html) documents that can be used to describing the purpose of each operation, function, and user-defined type, what inputs each expects, and so forth.
-The compiler provided with the Quantum Development Kit extracts these comments and uses them to help typeset documentation similar to that at [docs.microsoft.com](/documentation/).
-Similarly, the language server provided with the Quantum Development Kit uses these comments to provide help to users when they hover over symbols in their Q# code.
-Making use of documentation comments can thus help users to make sense of code by providing a useful reference for details that are not easily expressed using the other conventions in this document.
+The Q# language allows you to attach documentation to operations, functions, and user-defined types through use of specially formatted documentation comments.
+Denoted by triple-slashes (`///`), these documentation comments are small [DocFX-flavored Markdown](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html) documents that describe the purpose of operations, functions, and user-defined types, expected inputs, etc.
+The Quantum Development Kit compiler extracts these comments and uses them to help typeset documentation similar to that at [docs.microsoft.com](/documentation/).
+Similarly, the Quantum Development Kit language server uses these comments to help users when they hover over symbols in their Q# code.
+Documentation comments can help users to make sense of code. 
 
 > [!div class="nextstepaction"]
 > [Documentation comment syntax reference](xref:microsoft.quantum.qsharp.comments#documentation-comments).
 
-In order to effectively use this functionality to help users, we recommend keeping a few things in mind as you write documentation comments.
+Keep a few things in mind as you write documentation comments:
 
 # [Guidance](#tab/guidance)
 
-We suggest:
+We recommend:
 
 - Each public function, operation, and user-defined type should be immediately preceded by a documentation comment.
 - At a minimum, each documentation comment should include the following sections:
@@ -399,11 +396,11 @@ We suggest:
     - Input
     - Output (if applicable)
 - Ensure that all summaries are two sentences or less. If more room is needed, provide a `# Description` section immediately following `# Summary` with complete details.
-- Where reasonable, do not include math in summaries, as not all clients support TeX notation in summaries. Note that when writing prose documents (for example, TeX or Markdown), it may be preferable to use longer line lengths.
+- Where reasonable, do not include math in summaries, as not all clients support TeX notation in summaries. Note that when you write prose documents (for example, TeX or Markdown), it may be preferable to use longer line lengths.
 - Provide all relevant mathematical expressions in the `# Description` section.
-- When describing inputs, do not repeat the types of each input as these can be inferred by the compiler and risk introducing inconsistency.
+- When you describe inputs, do not repeat the types of each input as these can be inferred by the compiler and risk being inconsistent.
 - Provide examples as appropriate, each in their own `# Example` section.
-- Briefly describe each example before listing code.
+- Briefly describe each example before you list code.
 - Cite all relevant academic publications (for example: papers, proceedings, blog posts, and alternative implementations) in a `# References` section as a bulleted list of links.
 - Ensure that, where possible, all citation links are to permanent and immutable identifiers (DOIs or versioned arXiv numbers).
 - When an operation or function is related to other operations or functions by functor variants, list other variants as bullets in the `# See Also` section.
@@ -450,14 +447,14 @@ is Adj + Ctl {
 
 ## Formatting conventions ##
 
-In addition to the preceding suggestions, it is helpful to help make code as legible as possible to use consistent formatting rules.
-Such formatting rules by nature tend to be somewhat arbitrary and strongly up to personal aesthetics.
-Nonetheless, we recommend maintaining a consistent set of formatting conventions within a group of collaborators, and especially for large Q# projects such as the Quantum Development Kit itself.
-These rules can be automatically applied by using the formatting tool integrated with the Q# compiler.
+In addition to the preceding recommendations, make code as legible as possible for consistent formatting rules.
+Such formatting rules by nature tend to be arbitrary and strongly up to personal aesthetics.
+Nonetheless, we recommend that you maintain a consistent set of formatting conventions within a group of collaborators, and especially for large Q# projects.
+These rules can be automatically applied by using the formatting tool that is integrated with the Q# compiler.
 
 # [Guidance](#tab/guidance) 
 
-We suggest:
+We recommend:
 
 - Use four spaces instead of tabs for portability.
   For instance, in VS Code:
