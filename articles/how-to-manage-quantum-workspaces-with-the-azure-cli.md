@@ -76,10 +76,10 @@ If you need to determine which providers and plans to use, proceed as follows:
    az quantum offerings list -l westus -o table
    ```
 
-        > [!TIP]
-        > If want to see which providers give free credit, use the `--autoadd-only` parameter, for example:<br />
-        > `az quantum offerings list --autoadd-only -l westus -o table`<br />
-        > As mentioned previously, those providers are automatically added to your workspace. You do not need to specify them with the `-r` parameter.
+   > [!TIP]
+   > If want to see which providers give free credit, use the `--autoadd-only` parameter, for example:<br />
+   > `az quantum offerings list --autoadd-only -l westus -o table`<br />
+   > As mentioned previously, those providers are automatically added to your workspace. You do not need to specify them with the `-r` parameter.
 
 1. Once you determine the provider and plan to include in your workspace, you can review terms using the `show-terms` command (adding your **MyProviderID** and **MyPlan** as example values):
 
