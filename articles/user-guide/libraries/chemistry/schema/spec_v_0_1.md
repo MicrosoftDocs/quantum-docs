@@ -1,29 +1,30 @@
 ---
+title: Broombridge Schema Specification (ver 0.1)
+description: Specifications for the Broombridge quantum chemistry schema for the Microsoft quantum chemistry library v0.1.
 author: cgranade
-description: Details the specifications for the Broombridge quantum chemistry schema v0.1 for the Microsoft quantum chemistry library.
 ms.author: chgranad
-ms.date: 02/01/2021
+ms.date: 06/27/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
-title: Broombridge Schema Specification (ver 0.1)
 uid: microsoft.quantum.libraries.overview.chemistry.schema.spec_v_0_1
+ms.custom: kr2b-contr-experiment
 ---
 
 # Broombridge Specification v0.1 #
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
+The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 
 Any sidebar with the headings "NOTE," "INFORMATION," or "WARNING" is informative.
 
-## Introduction ##
+## What are Broombridge Documents? ##
 
 This section is informative.
 
-Broombridge documents are intended to communicate instances of simulation problems in quantum chemistry for processing using quantum simulation and programming toolchains.
+Broombridge documents communicate simulation problems in quantum chemistry. They resolve problems through quantum simulation and programming toolchains.
 
-## Serialization ##
+## How to serialize Broombridge documents ##
 
 This section is normative.
 

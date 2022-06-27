@@ -62,7 +62,7 @@ Other verbs may be useful in this case as well, as in `IterateThroughCartesianPo
 | Assert | A hypothesis about the outcome of a possible quantum measurement is checked by a simulator |
 | Estimate | A classical value is returned, representing an estimate drawn from one or more measurements |
 | Measure | A quantum measurement is performed, and its result is returned to the user |
-| Prepare | A given register of qubits is initialized into a particular state |
+| Prepare | A given register of qubits is initialized into a specific state |
 | Sample | A classical value is returned at random from some distribution |
 
 For functions, we recommend that you avoid use of verbs. Instead, use common nouns (see guidance on proper nouns below) or adjectives:
@@ -142,7 +142,7 @@ We recommend following general .NET conventions for the use of acronyms and init
 - two-letter acronyms and initialisms are named in upper case (for example, `BE` for "big-endian"),
 - all longer acronyms and initialisms are named in `CamelCase` (for example, `Qft` for "quantum Fourier transform")
 
-Thus, an operation that implements the QFT could either be called `QFT` as shorthand, or written out as `ApplyQft`.
+An operation that implements the QFT could either be called `QFT` as shorthand, or written out as `ApplyQft`.
 
 For commonly used operations and functions, you may want to provide a shorthand name as an _alias_ for a longer form:
 
@@ -186,7 +186,7 @@ Quantum computing is rich with domain expertise. We must be conscienscious of th
 Be aware of conventions from physics of the names of algorithms and operations being the names of their original publishers.
 We must maintain the history and intellectual provenance of quantum computing concepts, but to demand that all users learn the history of physics creates barriers to entry that are severe enough to present an ethical compromise. -->
 We recommend that wherever reasonable, common nouns that describe a concept be adopted. This is preferrable over proper nouns that describe the publication history of a concept.
-As a particular example, the singly controlled SWAP and doubly controlled NOT operations are often called the "Fredkin" and "Toffoli" operations in academic literature, but are identified in Q# primarily as `CSWAP` and `CCNOT`.
+As an example, the singly controlled SWAP and doubly controlled NOT operations are often called the "Fredkin" and "Toffoli" operations in academic literature, but are identified in Q# primarily as `CSWAP` and `CCNOT`.
 In both cases, API documentation comments provide synonymous names based on proper nouns, along with all appropriate citations.
 
 This option is especially important since some use of proper nouns will always be necessary — Q# follows the tradition set by many classical languages, for instance, and refers to `Bool` types in reference to Boolean logic, which is in turn named in honor of George Boole.
@@ -207,7 +207,7 @@ We recommend:
 Since Q# is a strongly and statically typed language, a value of one type can only be used as a value of another type by using an explicit call to a type conversion function.
 This is in contrast to languages which allow for values to change types implicitly (for example, type promotion), or through casting.
 As a result, type conversion functions play an important role in Q# library development, and comprise one of the more commonly encountered decisions about naming.
-We note, however, that since type conversions are always _deterministic_, they can be written as functions and thus fall under the advice above.
+We note, however, that since type conversions are always _deterministic_, they can be written as functions and fall under the advice above.
 We recommend that type conversion functions never be named as verbs (for example, `ConvertToX`) or adverb prepositional phrases (`ToX`), but should be named as adjective prepositional phrases that indicate the source and destination types (`XAsY`).
 When you list array types in type conversion function names, we recommend the shorthand `Arr`.
 We recommend that all type conversion functions be named using `As` so that they are quickly identified.
@@ -290,9 +290,9 @@ We recommend:
 - If a function or operation takes multiple type arguments, or if the role of a single type argument is not obvious, consider using a short capitalized word prefaced by `T` (for example, `TOutput`) for each type.
 - Do not include type names in argument and variable names; this information can and should be provided by your development environment.
 - Denote scalar types by their literal names (`flagQubit`), and array types by a plural (`measResults`).
-  For arrays of qubits in particular, consider denoting such types by `Register` where the name refers to a sequence of qubits that are closely related in some way.
+  For arrays of qubits, consider denoting such types by `Register` where the name refers to a sequence of qubits that are closely related in some way.
 - Variables used as indices into arrays should begin with `idx` and should be singular (for example, `things[idxThing]`).
-  In particular, strongly avoid using single-letter variable names as indices; consider using `idx` at a minimum.
+  Avoid using single-letter variable names as indices; consider using `idx` at a minimum.
 - Variables used to hold lengths of arrays should begin with `n` and should be pluralized (for example, `nThings`).
 
 # [Examples](#tab/examples)
@@ -325,8 +325,8 @@ We recommend:
 
 ## Input conventions ##
 
-When a developer calls into an operation or function, the various inputs to that operation or function must be specified in a particular order, increasing the cognitive load that a developer faces in order to make use of a library.
-In particular, the task of remembering input orderings is often a distraction from the task at hand: programming an implementation of a quantum algorithm.
+When a developer calls an operation or function, input parameters must be specified in a specific order. This increases the cognitive load that a developer faces to be able to use a library.
+Remembering the order of input parameters is often a distraction from the task at hand: programming an implementation of a quantum algorithm.
 Though rich IDE support can mitigate this to a large extent, good design and adherence to common conventions can also help to minimize the cognitive load imposed by an API.
 
 Reduce the number of inputs expected by an operation or function. This way the role of each input is more immediately obvious both to developers that call the operation or function, and to developers that read the code later.
@@ -344,7 +344,7 @@ Also consider using the following order of arguments:
 - Qubit arguments used as targets.
 
 Consider an operation `ApplyPhaseEstimationIteration` for use in phase estimation that takes an angle and an oracle, passes the angle to `Rz` modified by an array of different scaling factors, and then controls applications of the oracle.
-We would order the inputs to `ApplyPhaseEstimationIteration` in the following fashion:
+We would order inputs to `ApplyPhaseEstimationIteration` in the following fashion:
 
 ```qsharp
 operation ApplyPhaseEstimationIteration(
@@ -365,8 +365,8 @@ Developers expect that input to `ControlledOnInt` places the callable that is be
 
 We recommend:
 
-- Order your inputs consistent with use of partial application.
-- Order your inputs consistent with built-in functors.
+- Order your inputs to be consistent with use of partial application.
+- Order your inputs to be consistent with built-in functors.
 - Place all classical inputs before any quantum inputs.
 
 # [Examples](#tab/examples)
