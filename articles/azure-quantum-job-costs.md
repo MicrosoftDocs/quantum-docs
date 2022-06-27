@@ -29,7 +29,7 @@ Azure Quantum makes hardware and solutions available from Microsoft and from our
 
 ## Before you run: Estimate job cost
 
-Before running a job on actual quantum hardware or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you can estimate how much it will cost to run. 
+Before running a job on actual quantum hardware or a [quantum processing unit (QPU)](xref:microsoft.quantum.target-profiles), you can estimate how much it will cost to run. 
 
 To estimate the cost of running a job on the QPU, use the `estimate_cost` Python method. The `currency_code` method will tell you the currency unit of the estimated cost.
 
@@ -54,7 +54,7 @@ _Prices below are shown for example purposes only._
 > [ ![The Job Management blade, with the Cost Estimate column highlighted](./media/job-costs/job-table-with-costs.png) ](./media/job-costs/job-table-with-costs.png#lightbox)
 
 > [!NOTE]
-> Some Azure Quantum providers do not support reporting per-job costs, however you can still see your bill under Cost Management in the Azure portal.
+> Some Azure Quantum providers do not support reporting per-job costs, however you can still see your bill under **Cost Management** in the Azure portal.
 
 To review detailed cost estimate information for a job, select the job in the Job Management pane and then open the "Cost Estimation" tab. The table displays the billing dimensions used by the job and their associated cost.
 
@@ -64,9 +64,9 @@ _Prices below are shown for example purposes only._
 > ![The Job Details pane for a quantum job, with the Cost Estimation tab selected](./media/job-costs/job-cost-details.png)
 
 > [!NOTE]
-> IonQ has 1 USD minimum cost to run a job on the IonQ QPU. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
+> IonQ has $1 (USD) minimum cost to run a job on the IonQ QPU. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
 
-How to interpret the Cost Estimation table columns:
+How to interpret the **Cost Estimation** table columns:
 
 - `Dimension`: The name of the dimension you're charged for by the provider.
 - `Unit Price`: The cost of one unit of the dimension.
@@ -78,5 +78,7 @@ The total row at the bottom shows the total cost of all dimensions for processin
 
 ## Next steps
 
+- [Azure Quantum Credits](xref:microsoft.quantum.credits)
+- [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing)
 - [Submit a job with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit)
 - [Submit a job with Q#](xref:microsoft.quantum.quickstarts.computing)
