@@ -21,7 +21,7 @@ The conventions in this guide make it easier to read and understand programs and
 
 We recommend:
 
-- Stick to convention unless you intentionally want to provide code that is more readable and understandable for users.
+- Stick to convention unless breaking convention makes code more readable and understandable for users.
 
 ## Naming conventions ##
 
