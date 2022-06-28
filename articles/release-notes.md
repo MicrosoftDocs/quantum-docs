@@ -15,14 +15,14 @@ uid: microsoft.quantum.relnotes-qdk
 
 This article outlines updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview).
 
-For 'getting started' innstructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
+For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
 ## 2022-06-28
 
 ### QDK version 0.25.218240
 
 - The latest version of the QDK has new magic commands for Q# Jupyter notebooks: [`%azure.target-capability`](/qsharp/api/iqsharp-magic/azure.target-capability), [`%qir`](/qsharp/api/iqsharp-magic/qir). The new commands will allow you to target specific diagnostics and will show in each notebook cell if the target is set.
-- We've improved the Q# compiler diagnostics in Jupyter notebooks. Upon cell compilation, the compiler will now pont to lines that cause errors and warnings, and will also direct you to Q# documentation for the given error or warning message.
+- We've improved the Q# compiler diagnostics in Jupyter notebooks. Upon cell compilation, the compiler will now point to lines that cause errors and warnings, and will also direct you to Q# documentation for the given error or warning message.
 - This release also adds support for continuous-angle rotations to the open systems simulator (e.g. Microsoft.Quantum.Intrinsic.Rx and Microsoft.Quantum.Intrinsic.Exp), enabling the simulation of more Q# programs. See GitHub feature request [microsoft/qsharp-runtime#914](https://github.com/microsoft/qsharp-runtime/issues/914) for more details.
 - We've added support for [IonQ Native Gates](https://ionq.com/docs/getting-started-with-native-gates) when creating a backend in Azure Quantum.
 - All Microsoft QIO CPU solvers now support [squared linear combination](/azure/quantum/optimization-slc-term) terms and [protobuf binary format](/azure/quantum/optimization-problem#input-problem-serialization-to-protobuf-binary-format). Additionally, several solvers now benefit from performance improvements, resulting in reduced memory usage and shortened runtimes. These solvers only use input format `microsoft.qio.v2`, the default format for all problems submitted via the Azure Quantum Python SDK.
@@ -59,7 +59,7 @@ demonstrating the use of the sparse simulator.
   - [microsoft/QuantumLibraries#367](https://github.com/microsoft/QuantumLibraries/issues/367)  changes how variants of operations are counted in [AllowAtMostNCallsCA](/qsharp/api/qsharp/microsoft.quantum.diagnostics.allowatmostncallsca).
   - [microsoft/QuantumLibraries#546](https://github.com/microsoft/QuantumLibraries/issues/546) proposes an alternative for the use of `Default`, which is not advised.
  - [microsoft/QuantumLibraries#560](https://github.com/microsoft/QuantumLibraries/issues/560) addresses the wrong value being returned in the [MeasureFxP](/qsharp/api/qsharp/microsoft.quantum.arithmetic.measurefxp) operation when the measurement value corresponds to the smallest representable fixed point.
-  - [azure/azure-cli-extensions#4697](https://github.com/azure/azure-cli-extensions/issues/4697) in the Azure CLI exntension, which allows setting a polling interval when waiting for an Azure Quantum job to complete.
+  - [azure/azure-cli-extensions#4697](https://github.com/azure/azure-cli-extensions/issues/4697) in the Azure CLI extension, which allows setting a polling interval when waiting for an Azure Quantum job to complete.
 
 ### Azure Quantum service update
 
