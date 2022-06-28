@@ -16,7 +16,7 @@ Learn how to solve a batch of optimization problems using Azure Quantum and the 
 
 The example in [Solve long-running problems](xref:microsoft.quantum.optimization.solve-long-running-problems) submits a job to Azure Quantum and fetches the results later. This can be used to submit a problem and check on it later, or submit many problems and compare the results. However, to submit a batch of problems and run other processing steps while waiting for them to finish, you need to use Python's [asyncio](https://docs.python.org/3/library/asyncio.html) framework. This can considerably speed up applications that run post-processing on job results or access a file or database.
 
-> [!NOTE] On the service side there is a single job queue, so jobs submitted in parallel via the client SDK will still execute sequentially on the service side. This means that jobs may be processed out of order when they are submitted in a batch.
+> [!NOTE] On the service side there are multiple solver instances, so multiple jobs might run in parallel up to any resource or policy limits set by the service. This means that jobs may be processed out of order when they are submitted in a batch.
 
 ## Submit a problem and process the results asynchronously
 
