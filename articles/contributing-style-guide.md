@@ -52,8 +52,7 @@ For example:
 - `EstimateEnergy`
 - `SampleInt`
 
-We should pay special attention when an operation takes another operation as input. Also, when the operation calls it.
-In such cases, the action taken by the input operation is not clear at the time that the outer operation is defined. Therefore the right verb is not immediately clear.
+We should pay special attention when an operation takes another operation as input and then calls it. The action taken by the input operation is not clear at the time that the outer operation is defined. Therefore the correct verb is not immediately clear.
 We recommend the verb `Apply`, as in `ApplyIf`, `ApplyToEach`, and `ApplyToFirst`.
 Other verbs may be useful in this case as well, as in `IterateThroughCartesianPower`.
 
@@ -111,14 +110,13 @@ When you define entry points for Q# programs, the Q# compiler recognizes the [`@
 From the Q# developer perspective, entry points are ordinary operations annotated with `@EntryPoint()`.
 Moreover, Q# entry points may be entry points for an entire application (for example, in Q# standalone executable programs), or may be an interface between a Q# program and the host program for an application (for example, when you use Q# with Python or .NET), such that the name "main" could be misleading when applied to a Q# entry point.
 
-We recommend that you use naming entry points that reflect the use of the `@EntryPoint()` attribute by using the general advice for naming operations listed above.
-
+When you name operations, remember the general advice that is listed above. Name entry points in a way that reflects use of the `@EntryPoint()` attribute.
 
 # [Guidance](#tab/guidance)
 
 We recommend:
 
-- Do not name entry point operations as "main."
+- Don't name entry point operations as "main."
 - Name entry point operations as ordinary operations.
 
 # [Examples](#tab/examples)
@@ -180,8 +178,8 @@ We recommend:
 
 ### Proper nouns in names ###
 
-In physics it is common to name things after the first person that published information about it. HOever, most non-physicists aren’t familiar with the important names and history of physics.
-Don't rely too heavily on naming conventions from physics since they can create barriers to entry. They require users from other backgrounds to learn a large number of names just to use common operations and concepts.
+It is common for things to be named after the first person that published information about them, in physics. However, most non-physicists aren’t familiar with names or history relevant to physics.
+Don't rely too heavily on naming conventions from physics since this can create barriers to entry. It requires users from other backgrounds to learn a large number of names just to use common operations and concepts.
 <!-- Reduce confusion by making code more accessible.
 Quantum computing is rich with domain expertise. We must be conscienscious of the demands we place on that expertise as we design quantum software.
 Be aware of conventions from physics of the names of algorithms and operations being the names of their original publishers.
@@ -197,7 +195,7 @@ A few quantum concepts similarly are named in a similar fashion, including the `
 
 We recommend:
 
-- Avoid use of proper nouns in names.
+- Don't use proper nouns when you choose names.
 
 # [Examples](#tab/examples)
 
@@ -232,15 +230,15 @@ We recommend:
 
 ### Private or internal names ###
 
-In many cases, a name is intended strictly for internal use in a library or project. It is not a guaranteed part of the API that a library offers.
-It is helpful to clearly indicate that this is the case when naming functions and operations so that accidental dependencies on internal-only code are made obvious.
-There are operations and functions that aren't intended for direct use. They can be used by a matching callable which acts by partial application. Then consider using a name that starts with the `internal` keyword for the callable that is partially applied.
+In many cases, names used in libraries or projects are intended for strict internal use. They aren't a guaranteed part of APIs offered by these libraries.
+It is helpful therefore to clearly indicate that this is the case. Do this at the time that you name functions and operations. This ensures that accidental dependencies on internal-only code are made obvious.
+When an operation or function is intended for a matching callable which acts by partial application, we recommend that you use a name that starts with the `internal` keyword.
 
 # [Guidance](#tab/guidance)
 
 We recommend:
 
-- When functions, operations, or user-defined types are not part of the public API for a Q# library or program, mark it as internal by placing the `internal` keyword before the `function`, `operation`, or `newtype` declaration.
+- When functions, operations, and user-defined types are not part of the public API for a Q# library or program, mark them as internal by placing the `internal` keyword before `function`, `operation`, and `newtype` declarations.
 
 # [Examples](#tab/examples)
 
@@ -334,7 +332,7 @@ Reduce the number of inputs expected by an operation or function. This way the r
 When it is not possible or reasonable to reduce the number of arguments in an operation or function, be consistent with the order of arguments. This minimizes surprises as users predict input order.
 
 We recommend an input order convention. Create this by thinking of partial application as a generalization of currying 𝑓(𝑥, 𝑦) ≡ 𝑓(𝑥)(𝑦).
-Partially apply the first arguments which results in a callable that is useful in its own right whenever that is reasonable.
+When you partially apply the first arguments it should result in a callable that is useful in its own right, whenever that is reasonable.
 Also consider using the following order of arguments:
 
 - Classical non-callable arguments such as angles, vectors of powers, etc.
@@ -360,7 +358,7 @@ operation ApplyPhaseEstimationIteration(
 ```
 Some functions and operations mimic the behavior of the built-in functors `Adjoint` and `Controlled`.
 For instance, `ControlledOnInt<'T>` has type `(Int, ('T => Unit is Adj + Ctl)) => ((Qubit[], 'T) => Unit is Adj + Ctl)`, such that `ControlledOnInt<Qubit[]>(5, _)` acts like the `Controlled` functor, but on the condition that the control register represents the state $\ket{5} = \ket{101}$.
-Developers expect that input to `ControlledOnInt` places the callable that is being transformed, last in the queue. They also assume that the resulting operation accepts `(Qubit[], 'T)` as its input--- the same order as followed by the output of the `Controlled` functor.
+Developers expect that inputs to `ControlledOnInt` place the callable that is being transformed, last in the queue. They also assume that the resulting operation accepts `(Qubit[], 'T)` as its input--- the same order as followed by the output of the `Controlled` functor.
 
 # [Guidance](#tab/guidance)
 

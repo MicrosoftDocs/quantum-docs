@@ -18,7 +18,7 @@ The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SH
 
 Any sidebar with the headings "NOTE," "INFORMATION," or "WARNING" is informative.
 
-## What are Broombridge Documents? ##
+## Introduction ##
 
 This section is informative.
 

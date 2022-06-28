@@ -16,6 +16,6 @@ ms.custom: kr2b-contr-experiment
 
 These functions primarily work with Q# built-in data types `Int`, `Double`, and `Range`.
 
-As an example, the <xref:Microsoft.Quantum.Random.DrawCategorical> has the signature `(Double[] => Int)`. It takes a categorical distribution specified by a list of probablities. An array of doubles can be entered as an input, and then return a randomly-selected index into the array as an `Int`.
+As an example, <xref:Microsoft.Quantum.Random.DrawCategorical> has a signature of `(Double[] => Int)`. It takes a categorical distribution specified by a list of probablities. An array of doubles can be entered as an input, and then return a randomly-selected index into the array as an `Int`.
 
 The probability of selecting a specific index is proportional to the value of the array element at that index. Array elements that are equal to zero are ignored and their indices are never returned. If any array element is less than zero, or if no array element is greater than zero, the operation fails.
