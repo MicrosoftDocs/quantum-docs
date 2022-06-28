@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 06/27/2022
+ms.date: 06/28/2022
 author: bradben
 ms.author: brbenefield
 ms.service: azure-quantum
@@ -17,9 +17,9 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 For 'getting started' innstructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
-## 2022-06-27
+## 2022-06-28
 
-### QDK version TBD
+### QDK version 0.25.218240
 
 - The latest version of the QDK has new magic commands for Q# Jupyter notebooks: [`%azure.target-capability`](https://docs.microsoft.com/en-us/qsharp/api/iqsharp-magic/azure.target-capability), [`%qir`](https://docs.microsoft.com/en-us/qsharp/api/iqsharp-magic/qir). The new commands will allow you to target specific diagnostics and will show in each notebook cell if the target is set.
 - We've improved the Q# compiler diagnostics in Jupyter notebooks. Upon cell compilation, the compiler will now pont to lines that cause errors and warnings, and will also direct you to Q# documentation for the given error or warning message.
