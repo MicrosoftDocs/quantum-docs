@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to develop and run Python host programs that call Q# operations on a local simulator.
 ms.author: brbenefield
-ms.date: 04/06/2022
+ms.date: 06/28/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -13,15 +13,25 @@ uid: microsoft.quantum.how-to.python-local
 
 # Write a Q# and Python program to run on a local quantum simulator
 
-Learn how you can run a Q# program using a Python host program, which invokes the Q# program and further processes return results. The Microsoft Quantum Development Kit contains several [quantum simulators](xref:microsoft.quantum.machines.overview) that allow you to test and run quantum programs locally, without having to access the Azure Quantum service.
+Learn how you can run a Q# program using a Python host program or Jupyter Notebook, which invokes the Q# code and further processes return results. The Microsoft Quantum Development Kit contains several [quantum simulators](xref:microsoft.quantum.machines.overview) that allow you to test and run quantum programs locally, without having to access the Azure Quantum service.
 
 ## Prerequisite
 
-Set up a Python environment, or configure your existing Python environment, to use the Microsoft Quantum Development Kit following the steps in [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview.python).
+Set up a Python environment, or configure your existing Python environment, to use the Microsoft Quantum Development Kit and Jupyter Notebooks following the steps in [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview.python). 
 
 ## Choose your IDE
 
-While you can use Q# with Python in any IDE, we recommend using Visual Studio Code (VS Code) for your Q# + Python applications. With the QDK extension for VS Code you gain access to richer functionality such as warnings, syntax highlighting, project templates, and more.
+While you can use Q# with Python in any IDE to write your Python program and call Q# operations, we recommend using either Jupyter Notebooks or Visual Studio Code (VS Code) for your Q# + Python applications. 
+
+### Jupyter Notebooks
+
+A Jupyter Notebook is a document that contains both rich text and code and can run in your browser, and can run Q# and Python code in Azure Quantum. Notebooks can also be created directly in the Azure Quantum portal, and offer features such as preloaded connection information and standard Q# libraries.
+
+For more information on using Jupyter Notebooks in the Azure Quantum portal, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
+
+### Visual Studio Code (VS Code)
+
+With the QDK extension for VS Code, you gain access to richer functionality such as warnings, syntax highlighting, project templates, and more.
 
 If you would like to use VS Code:
 
@@ -33,16 +43,13 @@ VS Code also offers its own terminal from which you can run code. If you are usi
 If you would like to use a different editor, the instructions so far have you all set.
 
 > [!NOTE]
-> Notice that the output of your program may appear differently if you run the code in a Python notebook, as Jupyter notebook, instead of at the command line, as that interface understands how to forward HTML-based diagnostics from the IQ# kernel to the IPython kernel.
+> Notice that the output of your program may appear differently if you run the code in a Jupyter Notebook instead of at the command line, as that interface understands how to forward HTML-based diagnostics from the IQ# kernel to the IPython kernel.
 
 ## Use Q\# with Python
 
 To begin, your Python program needs to import the `qsharp` Python package. This package provides Q# interoperability for Python, as well as the IQ# kernel for Jupyter, allowing you to compile and run Q# operations from Python and Q# Jupyter Notebooks.
 
-Once imported, the `qsharp` package allows Q# namespaces to appear as Python modules, from which we can "import" Q# callables. You can use Q# functions and operations as Python objects, and use methods on these objects to specify the target machines to simulate quantum programs, estimate quantum resources, and so forth.
-
-> [!NOTE]
-> The Python code is just a normal Python program. You can use any Python environment, including Python-based Jupyter Notebooks, to write the Python program and call Q# operations. The Python host program can import Q# operations from any `.qs` files located in the same folder as the Python code itself.
+Once imported into your program, the `qsharp` package allows Q# namespaces to appear as Python packages, from which you can import Q# callables. You can use Q# functions and operations as Python objects, and use methods on these objects to specify the target machines to simulate quantum programs, estimate quantum resources, and so forth. Your Python host program or Jupyter Notebook can import Q# namespaces from any Q# files (with the extension `.qs`) located in the same folder.
 
 1. Create a minimal Q# [operation](xref:microsoft.quantum.qsharp.operationsandfunctions) by creating a file called `HostPython.qs` and adding the following code to it:
 
@@ -57,10 +64,9 @@ Once imported, the `qsharp` package allows Q# namespaces to appear as Python mod
     ```
 
     > [!Note]
-    > The `@EntryPoint()` attribute used for Q# applications cannot be used with host programs. An error will be raised if it is present in the Q# file being called by a host.
+    > The `@EntryPoint()` attribute used for Q#-only applications cannot be used with host programs. An error will be raised if it is present in the Q# file being called by a host.
 
-
-1. In the same folder as `HostPython.qs`, create the following Python program called `host.py`. This program [imports the Q# operation](/azure/quantum/user-guide/host-programs?tabs=tabid-python#q-with-host-programs) `SayHello()` defined in the previous step and runs it on the [default simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) by using the `.simulate()` method:
+1. In the same folder as `HostPython.qs`, create the following Python program called `host.py`, or enter the code in your Juptyer Notebook cell. This program [imports the Q# operation](/azure/quantum/user-guide/host-programs?tabs=tabid-python#q-with-host-programs) `SayHello()`, defined in the previous step, and runs it on the [default simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) by using the `.simulate()` method:
 
     ```python
     import qsharp
@@ -68,72 +74,124 @@ Once imported, the `qsharp` package allows Q# namespaces to appear as Python mod
 
     print(SayHello.simulate(name="quantum world"))
     ```
-    
-1. From a terminal with access to your Python/Q# environment created during installation, navigate to your project folder and run the Python host program:
+
+1. From a terminal with access to your Python/Q# environment created during installation, navigate to your project folder and run the Python host program or Juptyer Notebook cell:
 
     ```shell
     python host.py
     ```
+
     ```output
     Hello, quantum world!
     ```
 
-> [!NOTE]
-> If you are running your operations in Jupyter Notebooks, the `%%qsharp` magic command allows you to define new Q# operations within the same Jupyter notebook as the Python code, eluding the use of a host program. For more information, see [Q# and Jupyter Notebooks](/azure/quantum/user-guide/host-programs?tabs=tabid-python#q-jupyter-notebooks).
+1. Inputs to your Q# operation are represented by Python keyword arguments, and outputs are returned back to the Python host. For example, add the following function `Plus` to the `HostPython.qs` program and save it:
 
-Inputs to your Q# operation are represented by Python keyword arguments, and outputs are returned back to the Python host. For example, add the following code to the `HostPython.qs` program:
-
-```qsharp
-function Plus(x : Int, y : Int) : Int {
-    return x + y;
-}
-```
-```python
-from HostPython import Plus
-
-print(Plus.simulate(x=3, y=5))
-```
-```output
-8
-```
-You can also work with the qubits allocated in the Q# programs and simulate the operation from Python. Consider the following operation, which creates a quantum random bit generator. 
-
-```qsharp
-open Microsoft.Quantum.Measurement;
-
-operation Qrng() : Result {
-    use q = Qubit(); // Allocate a qubit.
-    H(q); // Put the qubit to superposition. It now has a 50% chance of being 0 or 1.
-    return MResetZ(q); // Measure the qubit value.
-}
-```
-```python
-from HostPython import Qrng
-
-print(Qrng.simulate())
-```
-Because the `Qrng` operation generates a random result, the outcome will be either 0 or 1. If you run the program repeatedly, you should see each result approximately half the time.
-
-The `qsharp` package also provides the `compile` function, which allows for compiling Q# code from Python strings:
-
-```python
-sample_qrng = qsharp.compile("""
-    open Microsoft.Quantum.Measurement; // namespace required for MResetZ operation
-    operation Qrng() : Result {
-        use q = Qubit();
-        H(q);
-        return MResetZ(q);
+    ```qsharp
+    namespace HostPython {
+        open Microsoft.Quantum.Intrinsic;
+    
+        operation SayHello(name : String) : Unit {
+            Message($"Hello, {name}!");
+        }
+    
+        function Plus(x : Int, y : Int) : Int {
+            return x + y;
+        }
     }
-""")
+    ```
+    
+    ```python
+    from HostPython import Plus
+    
+    print(Plus.simulate(x=3, y=5))
+    ```
+    
+    ```output
+    8
+    ```
 
-print(sample_qrng.simulate())
+1. You can also work with the qubits allocated in the Q# programs and simulate the operation from Python. Add the following operation `Qrng`, which creates a quantum random bit generator, to the `HostPython.qs` program:
+
+    ```qsharp
+    namespace HostPython {
+        open Microsoft.Quantum.Intrinsic;
+        open Microsoft.Quantum.Measurement;
+    
+        operation SayHello(name : String) : Unit {
+            Message($"Hello, {name}!");
+        }
+    
+        function Plus(x : Int, y : Int) : Int {
+            return x + y;
+        }
+    
+        operation Qrng() : Result {
+            use q = Qubit(); // Allocate a qubit.
+            H(q); // Put the qubit to superposition. It now has a 50% chance of being 0 or 1.
+            return MResetZ(q); // Measure the qubit value.
+        }
+    }
+    ```
+
+    ```python
+    from HostPython import Qrng
+    
+    print(Qrng.simulate())
+    ```
+    
+    Because the `Qrng` operation generates a random result, the outcome will be either 0 or 1. If you run the program repeatedly, you should see each result approximately half the time.
+    
+1. The `qsharp` package also provides the `compile` function, which allows for compiling Q# code from Python strings:
+
+    ```python
+    sample_qrng = qsharp.compile("""
+        open Microsoft.Quantum.Measurement; // namespace required for MResetZ operation
+        operation Qrng() : Result {
+            use q = Qubit();
+            H(q);
+            return MResetZ(q);
+        }
+    """)
+        
+        print(sample_qrng.simulate())
+    ```
+
+## The \%\%qsharp magic command
+
+If you are running your operations in a Python-based Jupyter Notebook (using the Python 3 (*ipykernel*)), the `%%qsharp` magic command allows you to write new Q# code within the same Jupyter Notebook as the Python code, avoiding the necessity of a separate Q# program and host program.
+
+- You must run `import qsharp` first to enable the `%%qsharp` command.
+- The `%%qsharp` command is scoped to the cell in which it appears.
+- The Q# code that follows the command must adhere to standard Q# coding syntax.
+
+For example, the first Q# example in the previous section could be written and run with the following three cells:
+
+```py
+import qsharp
 ```
 
-## Workspaces, Projects, and Packages
+```py
+%%qsharp
 
-As your quantum programs get larger, it can be inconvenient to keep all of your Q# code in a single notebook or Python script. Instead, the `qsharp` package allows you to call into Q# code from source code in the same directory as your notebook or scripts.
+open Microsoft.Quantum.Intrinsic;
 
-For example, in the same folder as `host.py` and `HostPython.qs`create the following Q# program called `OperationSamples.qs`, which defines three different operations:
+operation SayHello(name : String) : Unit {
+    Message($"Hello, {name}!");
+}
+```
+
+```py
+print(SayHello.simulate(name="quantum world"))
+```
+
+Note that `import qsharp` must be run in its own cell before using the `%%qsharp` command, and the `print` statement must also run in its own cell. The `%%qsharp` command cannot be preceded by or followed by a Python statement within its cell. 
+
+### Calling into a Q# program
+
+Using the `%%qsharp` command, you can enter Q# code directly into a notebook cell while also leveraging externally defined Q# callables.  
+
+For example, in the same folder as your notebook and the `HostPython.qs` file, create the following Q# program called `OperationSamples.qs`, which defines three different operations:
 
 ```qsharp
 namespace Microsoft.Quantum.Samples {
@@ -167,30 +225,43 @@ namespace Microsoft.Quantum.Samples {
             Message("Teleported successfully!");
         }
     }
-
 }
 ```
 
-The `PrepareBellPair` operation is defined in `./OperationSamples.qs`, but you can call it from Q# operations defined using `%%qsharp` magic command in Jupyter Notebooks.
+The `PrepareBellPair` operation is defined in the `OperationSamples.qs` file, but you can call it from the Q# operation `PrepareAndMeasureBellPair()` defined in your notebook using the `%%qsharp` magic command (you may need to refresh your notebook and kernel to recognize the new Q# file):
 
-![qsharp magic command](~/media/qsharp-magic-command.png)
+```py
+%%qsharp
+open Microsoft.Quantum.Samples;
 
-After importing the `qsharp` package, you can also import Q# namespaces as though they were Python packages. For example, `OperationSamples.qs` also defines an operation that demonstrates how to run quantum teleportation; you can import it here and run the `RunTeleportationExample` operation on the simulator.
+operation PrepareAndMeasureBellPair() : (Result, Result) {
+    use left = Qubit();
+    use right = Qubit();
 
-```python
-from Microsoft.Quantum.Samples import RunTeleportationExample
-print(RunTeleportationExample.simulate())
+    PrepareBellPair(left, right);
+    return (MResetZ(left), MResetZ(right));
+}
 ```
-```output
-Teleported successfully!
+
+```py
+PrepareAndMeasureBellPair.simulate()
 ```
+
+
+## Packages and projects
 
 The Q# code in your workspace can also depend on other Q# *packages* and *projects* by using `.csproj` project files.
 
 > [!TIP]
 > If you don't have a project file for your workspace, the `qsharp` package will assume some reasonable defaults. Having a project file makes it easy to use additional packages, to get code completion and hover documentation while you edit your Q# files, and so forth.
 
-To see what packages are currently added to your workspace, you can use the `qsharp.packages` object. You can also add new packages dynamically by using `qsharp.packages.add` object. For example, to add the [the QDK Chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview):
+To see what packages are currently added to your workspace, you can use the `qsharp.packages` object. 
+
+```python
+qsharp.packages
+```
+
+You can also add new packages dynamically by using `qsharp.packages.add` object. For example, to add the [the QDK Chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview):
 
 ```python
 qsharp.packages.add('Microsoft.Quantum.Chemistry')
