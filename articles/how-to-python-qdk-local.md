@@ -154,7 +154,7 @@ Once imported into your program, the `qsharp` package allows Q# namespaces to ap
         }
     """)
         
-        print(sample_qrng.simulate())
+    print(sample_qrng.simulate())
     ```
 
 ## The \%\%qsharp magic command
@@ -228,7 +228,7 @@ namespace Microsoft.Quantum.Samples {
 }
 ```
 
-The `PrepareBellPair` operation is defined in the `OperationSamples.qs` file, but you can call it from the Q# operation `PrepareAndMeasureBellPair()` defined in your notebook using the `%%qsharp` magic command (you may need to refresh your notebook and kernel to recognize the new Q# file):
+The `PrepareBellPair` operation is defined in the `OperationSamples.qs` file, but you can call it from the Q# operation `PrepareAndMeasureBellPair()`, which you define in your notebook using the `%%qsharp` magic command (you may need to refresh your notebook and kernel to recognize the new Q# file):
 
 ```py
 %%qsharp
@@ -255,7 +255,7 @@ The Q# code in your workspace can also depend on other Q# *packages* and *projec
 > [!TIP]
 > If you don't have a project file for your workspace, the `qsharp` package will assume some reasonable defaults. Having a project file makes it easy to use additional packages, to get code completion and hover documentation while you edit your Q# files, and so forth.
 
-To see what packages are currently added to your workspace, you can use the `qsharp.packages` object. 
+To see what packages are currently added to your workspace, use the `qsharp.packages` object:
 
 ```python
 qsharp.packages
@@ -265,6 +265,10 @@ You can also add new packages dynamically by using `qsharp.packages.add` object.
 
 ```python
 qsharp.packages.add('Microsoft.Quantum.Chemistry')
+```
+
+```python
+qsharp.packages
 ```
 
 ## Next steps
