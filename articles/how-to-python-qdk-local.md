@@ -248,18 +248,18 @@ PrepareAndMeasureBellPair.simulate()
 
 In addition to the `%%qsharp` magic command, the `qsharp` package also provides the `compile` function, which allows you to compile Q# code from Python strings:
 
-    ```python
-    sample_qrng = qsharp.compile("""
-        open Microsoft.Quantum.Measurement; // namespace required for MResetZ operation
-        operation Qrng() : Result {
-            use q = Qubit();
-            H(q);
-            return MResetZ(q);
-        }
-    """)
-        
-    print(sample_qrng.simulate())
-    ```
+```python
+sample_qrng = qsharp.compile("""
+    open Microsoft.Quantum.Measurement; // namespace required for MResetZ operation
+    operation Qrng() : Result {
+        use q = Qubit();
+        H(q);
+        return MResetZ(q);
+    }
+""")
+    
+print(sample_qrng.simulate())
+```
 
 ## Packages and projects
 
