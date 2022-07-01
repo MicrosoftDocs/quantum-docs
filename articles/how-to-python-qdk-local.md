@@ -32,12 +32,14 @@ A Jupyter Notebook is a document that contains both rich text and code and can r
 
 #### Types of quantum notebooks
 
-Installing the QDK extends the Juptyer Notebooks' Python kernel, **ipykernel**, with the `qsharp` Python package, and also adds the **IQ#** kernel, which allows you to create standalone Q# notebooks. You select the kernel type when you create a new notebook. 
+Installing the QDK extends the Juptyer Notebooks' Python kernel, **ipykernel**, with the `qsharp` Python package, and also adds the **IQ#** kernel, which allows you to create standalone Q# notebooks. You select the kernel type when you create a new notebook. Select **Python 3 (ipykernel)** for a Python + Q# notebook, and **Q#** for a Q# standalone notebook.
 
-- *Python and Q# notebook*: Write your program in Python, importing Q# operations and functions from a separate Q# file. You can also use the [*%%qsharp* magic command](#the-qsharp-magic-command) to write Q# code directly in a notebook cell. 
+:::image type="content" source="/media/jupyter-kernels.png":::
+
+- *Python + Q# notebook*: Write your program in Python, importing Q# operations and functions from a separate Q# file. You can also use the [*%%qsharp* magic command](#the-qsharp-magic-command) to write Q# code directly in a notebook cell. 
 - *Q# standalone notebook*: Write Q# code directly in your notebook and make use of Azure Quantum-specific magic commands installed with the QDK.
 
-This article describes processes and procedures used with Python and Q# notebooks only. 
+This article describes processes and procedures used with Python + Q# notebooks only.
 
 For more information on using Jupyter Notebooks in the Azure Quantum portal, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
