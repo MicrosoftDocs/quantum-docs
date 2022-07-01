@@ -34,7 +34,7 @@ A Jupyter Notebook is a document that contains both rich text and code and can r
 
 Installing the QDK extends the Juptyer Notebooks' Python kernel, **ipykernel**, with the `qsharp` Python package, and also adds the **IQ#** kernel, which allows you to create standalone Q# notebooks. You select the kernel type when you create a new notebook: 
 
-:::image type="content" source="media/jupyter-kernels.png" alt-text="Options for notebook kernels":::
+:::image type="content" source="media/jupyter-kernels.png" alt-text="Screenshot of options for notebook kernels.":::
 
 Select **Python 3 (ipykernel)** for a Python + Q# notebook, and **Q#** for a Q# standalone notebook.
 
@@ -156,7 +156,7 @@ Once imported into your program, the `qsharp` package allows Q# namespaces to ap
     print(CreateQuantumRNG.simulate())
     ```
     
-Because the `CreateQuantumRNG` operation generates a random result, the outcome will be either 0 or 1. If you run the program repeatedly, you should see each result approximately half the time.
+    Because the `CreateQuantumRNG` operation generates a random result, the outcome will be either 0 or 1. If you run the program repeatedly, you should see each result approximately half the time.
     
 ## The \%\%qsharp magic command
 
