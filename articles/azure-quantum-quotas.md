@@ -20,7 +20,7 @@ The usage tracked by quotas is not necessarily tied to a cost or credit, but it 
 
 ## How quotas are calculated
 
-In Azure Quantum, hardware and software providers define and control the quotas of their offerings. For obtaining detailed quota information, see each provider reference page. If a provider doesn't appear in the following table, then that provider doesn't define any quotas or meters.  
+In Azure Quantum, hardware and software providers define and control the quotas of their offerings. For obtaining detailed quota information, see each provider reference page. If a provider doesn't appear in the following table, then that provider doesn't define any quotas.  
 
 |Quantum Computing providers | Optimization providers|
 |---|---|  
@@ -29,7 +29,7 @@ In Azure Quantum, hardware and software providers define and control the quotas 
 
 ## Viewing remaining quota
 
-The Azure Quantum usage and quotas are measured in terms of each provider's unit of usage. Some providers don't define any quotas or meters. In that case, those providers will not have usage information to display.
+The Azure Quantum usage and quotas are measured in terms of each provider's unit of usage. Some providers don't define any quotas. In that case, those providers will not have usage information to display.
 
 > [!NOTE]
 > If you are using an Azure Quantum Credits plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
