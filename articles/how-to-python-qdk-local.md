@@ -123,7 +123,7 @@ Once imported into your program, the `qsharp` package allows Q# namespaces to ap
     8
     ```
 
-1. You can also work with the qubits allocated in the Q# programs and simulate the operation from Python. Add the following operation `Qrng`, which creates a quantum random bit generator, to the `HostPython.qs` program:
+1. You can also work with the qubits allocated in the Q# programs and simulate the operation from Python. Add the following operation `CreateQuantumRNG`, which creates a quantum random bit generator, to the `HostPython.qs` program:
 
     ```qsharp
     namespace HostPython {
@@ -138,7 +138,7 @@ Once imported into your program, the `qsharp` package allows Q# namespaces to ap
             return x + y;
         }
     
-        operation Qrng() : Result {
+        operation CreateQuantumRNG() : Result {
             use q = Qubit(); // Allocate a qubit.
             H(q); // Put the qubit to superposition. A Z-basis measurement now has a 50% chance of returning 0 or 1.
             return MResetZ(q); // Measure the qubit value.
@@ -147,12 +147,12 @@ Once imported into your program, the `qsharp` package allows Q# namespaces to ap
     ```
 
     ```python
-    from HostPython import Qrng
+    from HostPython import CreateQuantumRNG
     
-    print(Qrng.simulate())
+    print(CreateQuantumRNG.simulate())
     ```
     
-    Because the `Qrng` operation generates a random result, the outcome will be either 0 or 1. If you run the program repeatedly, you should see each result approximately half the time.
+Because the `CreateQuantumRNG` operation generates a random result, the outcome will be either 0 or 1. If you run the program repeatedly, you should see each result approximately half the time.
     
 ## The \%\%qsharp magic command
 
@@ -251,7 +251,7 @@ In addition to the `%%qsharp` magic command, the `qsharp` package also provides 
 ```python
 sample_qrng = qsharp.compile("""
     open Microsoft.Quantum.Measurement; // namespace required for MResetZ operation
-    operation Qrng() : Result {
+    operation CreateQuantumRNG() : Result {
         use q = Qubit();
         H(q);
         return MResetZ(q);
