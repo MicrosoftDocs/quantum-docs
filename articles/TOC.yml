@@ -264,6 +264,8 @@
     href: how-to-work-with-jobs.md
   - name: Add or remove a provider
     href: how-to-add-a-provider.md
+  - name: Bulk add users
+    href: bulk-add-users-to-a-workspace.md
   - name: Authenticate using a service principal
     href: optimization-authenticate-service-principal.md
   - name: Authenticate using a managed identity
