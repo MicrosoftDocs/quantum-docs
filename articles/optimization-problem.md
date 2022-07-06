@@ -142,7 +142,7 @@ problem.serialize()
 
 ### Problem.deserialize
 
-Deserilaizes a problem from the uploaded input data to an instance of Problem. 
+Deserializes a problem from the uploaded input data to an instance of Problem. 
 
 ```py
 
