@@ -146,7 +146,7 @@ Deserilaizes a problem from the uploaded input data to an instance of Problem.
 
 ```py
 
-deserialized_problem = Problem.deserialize(input_poblem = "your_problem")
+deserialized_problem = Problem.deserialize(input_problem = "your_problem")
 ```
 
 ### Problem.upload
