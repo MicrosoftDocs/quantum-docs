@@ -44,11 +44,9 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
 ## Bulk invite users to the Azure Active Directory
 
-1. Go to [Users - Microsoft Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/MsGraphUsers).
+1. Go to [Users - Microsoft Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/MsGraphUsers). On the left side menu, go to **All users**.
 
 1. Select **Bulk Operations**, and then **Bulk invite**.
-
-    :::image type="content" source="media/bulk-invite-users.png" alt-text="Screen shot showing how to select bulk invite users to the Azure Active Directory.":::
 
 1. On the **Bulk invite users** pane, select **Download** to get a valid CSV template with invitation properties.
  
@@ -66,35 +64,23 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
 1. On the **Bulk invite users** pane, under **Upload your csv file**, browse to the file. When you select the file, validation of the CSV file starts. Once the **File uploaded successfully** message appears, select **Submit** to start the bulk invite operation.
 
-    :::image type="content" source="media/bulk-invite-users-upload-csv.png" alt-text="Screen shot showing how to upload the CSV file.":::
-
-    :::image type="content" source="media/bulk-invite-users-upload-csv-in-progess.png" alt-text="Screen shot showing the CSV upload in progress.":::
-
     :::image type="content" source="media/bulk-invite-users-upload-csv-successful.png" alt-text="Screen shot showing that the CSV uploaded successfully.":::
 
 ## Bulk import members to your group
 
-1. After the bulk invite is complete, download all Azure Active Directory users into a CSV. Select **Bulk operations**, and then **Download users**. 
-
-    :::image type="content" source="media/bulk-invite-users-select-download-users.png" alt-text="Screen shot showing how to select download users.":::
+1. After the bulk invite is complete, download all Azure Active Directory users into a CSV file. Go to **All users**, and select **Bulk operations**, and then **Download users**. 
 
 1. In the **Download users** pane, select **Start**.
 
     :::image type="content" source="media/bulk-invite-users-download-users.png" alt-text="Screen shot showing how to download users into a CSV.":::
+    
+1. After the bulk users export is complete, click on **Download results** to download the CSV file with all the Azure Active Directory users.
 
-    :::image type="content" source="media/bulk-invite-users-download-users-in-progess.png" alt-text="Screen shot showing the CSV download in progress.":::
-
-    :::image type="content" source="media/bulk-invite-users-download-users-succesful.png" alt-text="Screen shot showing the CSV download was successful.":::
-
-    :::image type="content" source="media/bulk-invite-users-download-users-results.png" alt-text="Screen shot showing the CSV download results.":::
-
-1. After the download is complete, import your group members. Go to [Groups - Microsoft Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/GroupsManagementMenuBlade/AllGroups). Select your group and then select **Members**. In this blade, select **Bulk operations**, and then **Import members**.
+1. After the download is complete, import your group members. Go to [Groups - Microsoft Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/GroupsManagementMenuBlade/AllGroups). Select your group, on the left side menu go to **Members**. In this blade, select **Bulk operations**, and then **Import members**.
 
 1. On the **Bulk import group** pane, select **Download** to get a valid CSV template.
 
-    :::image type="content" source="media/bulk-invite-users-import-group.png" alt-text="Screen shot showing how to bulk import group members.":::
-
-1. Open the CSV template and add a line for each user you want to invite to the group. Copy and paste their User Principal Names from the CSV that we downloaded in step 1.
+1. Open the CSV template and add a line for each user you want to invite to the group. Copy and paste their User Principal Names from the CSV that you downloaded in step 1.
 
     :::image type="content" source="media/bulk-invite-users-CSV-user-principal-names.png" alt-text="Screen shot showing the group import members template CSV.":::
 
@@ -104,13 +90,9 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
 1. Once the **File uploaded successfully** message appears, select **Submit** to start the bulk import operation.
 
-    :::image type="content" source="media/bulk-invite-users-import-group-successful.png" alt-text="Screen shot showing the CSV upload was successful.":::
-
-1. After the bulk import group operation completes, your group members will receive an invitation email.
-
-    :::image type="content" source="media/bulk-invite-users-invite-email.png" alt-text="Screen shot showing the invitation email.":::
+1. After the bulk import group operation completes, your group members will receive an invitation email. They want to accept the invitation.
 
 1. On the **Review permissions** page, users must select **Accept** before they can continue.
 
-    :::image type="content" source="media/bulk-invite-users-review-permissions.png" alt-text="Screen shot showing the review permissions page.":::
+1. After permissions are accepted, your group members will be added to the group succesfully. 
 
