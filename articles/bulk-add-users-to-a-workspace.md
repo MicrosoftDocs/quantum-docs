@@ -1,14 +1,14 @@
 ---
 author: sonialopezbravo
-description: Learn how bulk add users to an Azure Quantum workspace.
+description: Learn how bulk add users to an Azure Quantum workspace from a CSV file.
 ms.author: sonialopez
 ms.date: 07/01/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Bulk add users to an Azure Quantum workspace
-uid: microsoft.quantum.how-to.notebooks
+title: How to bulk add users to an Azure Quantum workspace
+uid: microsoft.quantum.how-to.bulk-add-users
 ---
 
 # Bulk add users to an Azure Quantum workspace
