@@ -44,7 +44,7 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
 ## Bulk invite users to the Azure Active Directory
 
-1. Go to [Users - Microsoft Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/MsGraphUsers). On the left side menu, go to **All users**.
+1. Go to [Users - Microsoft Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/MsGraphUsers). On the left-side menu, go to **All users**.
 
 1. Select **Bulk Operations**, and then **Bulk invite**.
 
@@ -76,7 +76,7 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
     
 1. After the bulk users export is complete, click on **Download results** to download the CSV file with all the Azure Active Directory users.
 
-1. After the download is complete, import your group members. Go to [Groups - Microsoft Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/GroupsManagementMenuBlade/AllGroups). Select your group, on the left side menu go to **Members**. In this blade, select **Bulk operations**, and then **Import members**.
+1. After the download is complete, import your group members. Go to [Groups - Microsoft Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/GroupsManagementMenuBlade/AllGroups). Select your group, on the left-side menu, go to **Members**. In this blade, select **Bulk operations**, and then **Import members**.
 
 1. On the **Bulk import group** pane, select **Download** to get a valid CSV template.
 
