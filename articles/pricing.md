@@ -19,8 +19,8 @@ In Azure Quantum, hardware and software providers define and control the pricing
  
 To see the different pricing plans in your local currency: 
 
-1. Sign in to the [Azure portal](https://portal.azure.com), using the credentials for your Azure subscription.
-2. Create a new [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). 
+1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
+2. Create a new [**Azure Quantum workspace**](xref:microsoft.quantum.how-to.workspace). 
 3. Go to the **Providers** tab in your Quantum workspace and click on **Add a Provider**. Then, select the provider you want to add.
 
  :::image type="content" source="media/add-providers-portal.png" alt-text="Screen shot showing how to select a provider to add to an Azure Quantum workspace.":::
@@ -43,7 +43,9 @@ To see the different pricing plans in your local currency:
 
 ## Next Steps
 
+- [Azure Quantum Credits](xref:microsoft.quantum.credits)
 - [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq)
+- [Azure Quantum quotas](xref:microsoft.quantum.quotas)
 - [Quantum computing target list](xref:microsoft.quantum.reference.qc-target-list)
 - [Optimization target list](xref:microsoft.quantum.reference.qio-target-list)
 

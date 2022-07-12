@@ -58,7 +58,19 @@ For the most up-to-date pricing information on Microsoft's QIO offering, please 
 
 ## Limits & Quotas
 
-Up to date information on the various limits for each Microsoft QIO pricing plan are available via the general [Azure subscription limits, quotas, and constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-quantum-limits) article. 
+Microsoft QIO'S quotas are tracked based on the number of computing hours per month. 
+
+- FPGA Job Hours: The amount of FPGA solver time you may use. Tracked both at workspace level and “region x subscription” level. 
+- CPU Solver Hours: The amount of CPU solver time you may use. Tracked both at workspace level and “region x subscription” level.
+
+Microsoft QIO also have quotas for job concurrency – separate for CPU and FPGA jobs.  
+
+Up to date information on the various usage limits for each Microsoft QIO plan are available via the general [Azure subscription limits, quotas, and constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-quantum-limits) article. 
+
+Quotas are based on plan selection and can be increased with a support ticket. For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
+
+To see your current limits and quotas, go to the “Credits and quotas” blade and select the “Quotas” tab of your workspace on the [Azure portal](https://portal.azure.com).
+
 
 ## General advice for Microsoft QIO solvers
 
