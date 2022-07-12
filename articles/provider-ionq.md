@@ -27,7 +27,7 @@ GPU-accelerated idealized simulator supporting up to 29 qubits, using the same s
 - Job type: `Simulation`
 - Data Format: `ionq.circuit.v1`
 - Target ID: `ionq.simulator`
-- Q# Profile: `No Control Flow`
+- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles)
 
 ### Quantum computer
 The IonQ QPU is a trapped ion quantum computer and is dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair.
@@ -35,7 +35,7 @@ The IonQ QPU is a trapped ion quantum computer and is dynamically reconfigurable
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
 - Target ID: `ionq.qpu`
-- Q# Profile: `No Control Flow`
+- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles)
 
 | Parameter Name | Type     | Required | Description |
 |----------------|----------|----------|-------------|
@@ -62,19 +62,21 @@ The IonQ QPU is a trapped ion quantum computer and is dynamically reconfigurable
 | SPAM | 99.3 - 99.8% |
 | Geometric mean op | 98.34% |
 
+*State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.*
+
 ## Pricing
 
 To see IonQ billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
 ## Native gates support and usage
 
-By default IonQ allows you to specify a quantum circuit using an abstract set of quantum gates, which allows flexibility and portability when writing an algorithm without worrying too much about optimization for the hardware.
+By default IonQ allows you to specify a quantum circuit using an abstract set of quantum gates, called `qis`, which allows flexibility and portability when writing an algorithm without worrying about optimization for the hardware.
 
-However, in some advanced usage cases, you might want to define a circuit directly on native gates in order to be closer to the hardware and bypass optimization.
+However, in some advanced usage cases, you might want to define a circuit directly on native gates in order to be closer to the hardware and bypass optimization. The native gate set is the set of quantum gates that are physically executed in the quantum processor, and they map the circuit to those as part of the execution.
 
-For more details about this feature, you can refer to the [Getting started with native gates](https://ionq.com/docs/getting-started-with-native-gates) guide from IonQ.
+For more information, see [Getting Started With Native Gates (ionq.com)](https://ionq.com/docs/getting-started-with-native-gates).
 
-In order to use those gates when submitting Qiskit jobs to Azure Quantum, specify the `gateset` parameter when initializing the backend as in the example below:
+In order to use the native gate set when submitting Qiskit jobs to Azure Quantum, you specify the `gateset` parameter when initializing the backend as in the example below:
 
 ```python
 # Here 'provider' is an instance of AzureQuantumProvider
@@ -85,8 +87,8 @@ backend = provider.get_backend("ionq.qpu", gateset="native")
 |----------------|----------|----------|-------------|
 | `gateset`   | string    | No | Specifies the set of gates that will be used to define a circuit. A value of `qis` corresponds to the abstract gates (default behavior) and `native` to the [IonQ hardware native gates](https://ionq.com/docs/getting-started-with-native-gates#introducing-the-native-gates).|
 
-For a more detailed explanation on how to submit Qiskit jobs using Azure Quantum, please refer to [this guide](xref:microsoft.quantum.quickstarts.computing.qiskit).
+For more information about Qiskit jobs, see [Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit).
 
 ## IonQ best practices and connectivity graph
 
-To see recommended best practices for the IonQ QPU, we recommend reading their [best practices](https://ionq.com/best-practices).
+To see recommended best practices for the IonQ QPU, see [IonQ Best Practices (ionq.com)](https://ionq.com/best-practices).
