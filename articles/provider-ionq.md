@@ -66,6 +66,27 @@ The IonQ QPU is a trapped ion quantum computer and is dynamically reconfigurable
 
 To see IonQ billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
+## Native gates support and usage
+
+By default IonQ allows you to specify a quantum circuit using an abstract set of quantum gates, which allows flexibility and portability when writing an algorithm without worrying too much about optimization for the hardware.
+
+However, in some advanced usage cases, you might want to define a circuit directly on native gates in order to be closer to the hardware and bypass optimization.
+
+For more details about this feature, you can refer to the [Getting started with native gates](https://ionq.com/docs/getting-started-with-native-gates) guide from IonQ.
+
+In order to use those gates when submitting Qiskit jobs to Azure Quantum, specify the `gateset` parameter when initializing the backend as in the example below:
+
+```python
+# Here 'provider' is an instance of AzureQuantumProvider
+backend = provider.get_backend("ionq.qpu", gateset="native")
+```
+
+| Parameter Name | Type     | Required | Description |
+|----------------|----------|----------|-------------|
+| `gateset`   | string    | No | Specifies the set of gates that will be used to define a circuit. A value of `qis` corresponds to the abstract gates (default behavior) and `native` to the [IonQ hardware native gates](https://ionq.com/docs/getting-started-with-native-gates#introducing-the-native-gates).|
+
+For a more detailed explanation on how to submit Qiskit jobs using Azure Quantum, please refer to [this guide](xref:microsoft.quantum.quickstarts.computing.qiskit).
+
 ## IonQ best practices and connectivity graph
 
 To see recommended best practices for the IonQ QPU, we recommend reading their [best practices](https://ionq.com/best-practices).
