@@ -6,7 +6,7 @@ ms.date: 12/01/2021
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
-title: IonQ provider
+title: IonQ provider 
 uid: microsoft.quantum.providers.ionq
 ---
 
@@ -64,10 +64,6 @@ The IonQ QPU is a trapped ion quantum computer and is dynamically reconfigurable
 
 *State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.*
 
-## Pricing
-
-To see IonQ billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
-
 ## Native gates support and usage
 
 By default IonQ allows you to specify a quantum circuit using an abstract set of quantum gates, called `qis`, which allows flexibility and portability when writing an algorithm without worrying about optimization for the hardware.
@@ -88,6 +84,30 @@ backend = provider.get_backend("ionq.qpu", gateset="native")
 | `gateset`   | string    | No | Specifies the set of gates that will be used to define a circuit. A value of `qis` corresponds to the abstract gates (default behavior) and `native` to the [IonQ hardware native gates](https://ionq.com/docs/getting-started-with-native-gates#introducing-the-native-gates).|
 
 For more information about Qiskit jobs, see [Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit).
+
+## Pricing
+
+To see IonQ billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
+
+## Limits & Quotas
+
+IonQ quotas are tracked based on the QPU usage unit, which is *qubit-gate-shot (QGS)*. The resource usage is credited against your account.
+
+Every quantum program consists of $N$ quantum logical gates of one or more qubits, and is executed for a certain number of shots. The number of gate-shots is calculated by the following formula:
+
+$$
+QGS = N · C
+$$
+
+where:
+
+- $N$ is the number of one- or two-qubit gates submitted
+- $C$ is the number of execution shots requested
+
+Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the “Credits and quotas” blade and select the “Quotas” tab of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
+
+> [!NOTE]
+> If you are using an [Azure Quantum Credits](xref:microsoft.quantum.credits) plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
 
 ## IonQ best practices and connectivity graph
 
