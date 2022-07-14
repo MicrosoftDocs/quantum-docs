@@ -13,9 +13,9 @@ where:
 - $N$ is the number of one- or two-qubit gates submitted
 - $C$ is the number of execution shots requested
 
-Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with 3 controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
+Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with 3 controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. One-qubit gates are billed as 1/5 of a two-qubit gate (rounded down). To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
 
-All new Azure Quantum customers benefit of a one-time $500 free Azure Quantum credits toward IonQ provider. Besides Azure Quantum credits, IonQ offers a **Pay-as-you-go** plan with no monthly subscription fees. 
+All new Azure Quantum customers benefit of a one-time $500 (USD) free Azure Quantum credits toward IonQ provider. Besides Azure Quantum credits, IonQ offers a **Pay-as-you-go** plan with no monthly subscription fees. 
 
 ### [Azure Quantum Credits](#tab/tabid-AQcredits)
 
@@ -37,7 +37,7 @@ Minimum of $1 (USD) per program execution, deducted from your credits.
  
 ### [Pay As You Go](#tab/tabid-paygo)
 
-The Pay-as-you-go plan consists of *a la carte* access to trapped ion quantum computers and simulators, charged on a resource-usage model.  
+The Pay-as-you-go plan consists of *a la carte* access to the trapped ion quantum computer and simulator, charged on a resource-usage model.  
 
 |Pricing | Use is charged based on the number of QGSs executed + Azure infrastructure costs |
 |---|---|  
@@ -45,6 +45,22 @@ The Pay-as-you-go plan consists of *a la carte* access to trapped ion quantum co
 ||<ul><li>1-qubit gate shot: $0.00003 (USD) </li><li>2-qubit gate shot: $0.0003 (USD) </li></ul>|
 
 Minimum of $1 (USD) per program execution.  
+
+For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
+
+### [Aria plan](#tab/tabid-aria)
+
+The Aria plan is a monthly subscription plan to the IonQ Aria quantum computer. It also includes access to IonQ simulator and IonQ 
+
+|Pricing | $25,000 (USD)/Month + Azure infrastructure costs |
+|---|---|  
+|Includes access to | <ul><li>IonQ QPU</li><li>IonQ Aria</li><li>IonQ Simulator (free)</li></ul>|
+||2-qubit gate shot: $0.00098 (USD)|
+
+Minimum of $1 (USD) per program execution.  
+
+> [!NOTE]
+> Once you have consumed the equivalent cost of the monthly subscription, the over-spending will be charge as pay-as-you-go plan. 
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -72,7 +88,7 @@ where:
 
 To learn more about Quantinuum, visit the [Quantinuum provider page](xref:microsoft.quantum.providers.quantinuum).
 
-All new Azure customers benefit from $500 in free credits towards the Quantinuum provider. Besides Azure Quantum credits, Quantinuum provides two plans: **Standard Subscription** and **Premium Subscription**.
+All new Azure customers benefit from $500 (USD) in free credits towards the Quantinuum provider. Besides Azure Quantum credits, Quantinuum provides two plans: **Standard Subscription** and **Premium Subscription**.
 
 ### [Azure Quantum Credits](#tab/tabid-AQcreditsQ)
 
