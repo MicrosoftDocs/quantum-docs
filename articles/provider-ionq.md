@@ -2,11 +2,11 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the IonQ provider
 ms.author: sonialopez
-ms.date: 12/01/2021
+ms.date: 07/16/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
-title: IonQ provider 
+title: IonQ quantum computing provider for Azure Quantum
 uid: microsoft.quantum.providers.ionq
 ---
 
@@ -63,6 +63,14 @@ The IonQ QPU is a trapped ion quantum computer and is dynamically reconfigurable
 | Geometric mean op | 98.34% |
 
 *State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.*
+
+### IonQ Aria
+
+IonQ Aria is IonQ’s most advanced commercially available quantum computer. Featuring [20 Algorithmic Qubits (#AQ)](https://ionq.com/posts/february-23-2022-algorithmic-qubits), it is also the industry’s most powerful quantum computer based on standard application-oriented industry benchmarks. IonQ Aria can run hundreds of accurate quantum gates in a single algorithm, compared to other quantum systems capable of running only dozens of gates at a time. For more information, see [IonQ Aria (ionq.com)](https://ionq.com/news/february-23-2022-ionq-aria-furthers-lead).
+
+Azure Quantum is the first cloud platform to enable access to IonQ Aria. With IonQ Aria, you'll have the ability to execute quantum circuits with more gates, pursuing the development and exploration of larger quantum programs. 
+
+IonQ Aria is available through a separate billing plan. For more information, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
 ## Native gates support and usage
 
