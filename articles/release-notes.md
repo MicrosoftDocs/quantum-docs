@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 06/28/2022
+ms.date: 07/15/2022
 author: bradben
 ms.author: brbenefield
 ms.service: azure-quantum
@@ -24,7 +24,6 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 - The latest version of the QDK has new magic commands for Q# Jupyter notebooks: [`%azure.target-capability`](/qsharp/api/iqsharp-magic/azure.target-capability), [`%qir`](/qsharp/api/iqsharp-magic/qir). The new commands will allow you to target specific diagnostics and will show in each notebook cell if the target is set.
 - We've improved the Q# compiler diagnostics in Jupyter notebooks. Upon cell compilation, the compiler will now point to lines that cause errors and warnings, and will also direct you to Q# documentation for the given error or warning message.
 - This release also adds support for continuous-angle rotations to the open systems simulator (e.g. Microsoft.Quantum.Intrinsic.Rx and Microsoft.Quantum.Intrinsic.Exp), enabling the simulation of more Q# programs. See GitHub feature request [microsoft/qsharp-runtime#914](https://github.com/microsoft/qsharp-runtime/issues/914) for more details.
-- We've added support for [IonQ Native Gates](https://ionq.com/docs/getting-started-with-native-gates) when creating a qiskit job.
 - All Microsoft QIO CPU solvers now support [squared linear combination](/azure/quantum/optimization-slc-term) terms and [protobuf binary format](/azure/quantum/optimization-problem#input-problem-serialization-to-protobuf-binary-format). Additionally, several solvers now benefit from performance improvements, resulting in reduced memory usage and shortened runtimes. These solvers only use input format `microsoft.qio.v2`, the default format for all problems submitted via the Azure Quantum Python SDK.
 - The latest update also enables calling [Parity()](/qsharp/api/qsharp/microsoft.quantum.bitwise.parity) with a negative argument, fixing GitHub issue [microsoft/qsharp-runtime#993](https://github.com/microsoft/qsharp-runtime/issues/993).
 - We've added a new Azure CLI quantum extension, version 0.16.0
