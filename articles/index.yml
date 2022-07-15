@@ -35,7 +35,7 @@ landingContent:
             url: quickstart-microsoft-qiskit-portal.md
 
   # Q# programming
-  - title: Q# quantum programing language
+  - title: Q# programing language
     linkLists:
       - linkListType: overview
         links:
@@ -89,13 +89,3 @@ landingContent:
             url: tutorial-qdk-explore-entanglement.md
           - text: Write a quantum random number generator in Q#
             url: tutorial-qdk-quantum-random-number-generator.md
-
-  #  Community
-  - title: Community and contribution
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Contribute to the QDK
-            url: contributing-overview.md
-          - text: Microsoft Quantum blog
-            url: https://cloudblogs.microsoft.com/quantum
