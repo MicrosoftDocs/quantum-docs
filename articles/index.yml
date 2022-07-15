@@ -29,7 +29,7 @@ landingContent:
         links:
           - text: Create an Azure Quantum workspace
             url: how-to-create-workspace.md
-          - text: Get started with Q# and an Azure Quantum notebook
+          - text: Run Q# code in an Azure Quantum notebook
             url: get-started-jupyter-notebook.md
           - text: Submit a circuit with Qiskit to Azure Quantum
             url: quickstart-microsoft-qiskit-portal.md
@@ -87,7 +87,7 @@ landingContent:
         links:
           - text: Explore entanglement with Q#
             url: tutorial-qdk-explore-entanglement.md
-          - text: Implement a quantum random number generator in Q#
+          - text: Write a quantum random number generator in Q#
             url: tutorial-qdk-quantum-random-number-generator.md
 
   #  Community
