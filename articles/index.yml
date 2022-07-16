@@ -10,7 +10,7 @@ metadata:
   ms.collection: collection
   author: bradben
   ms.author: brbenefield
-  ms.date: 05/02/2022
+  ms.date: 07/15/2022
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -29,19 +29,27 @@ landingContent:
         links:
           - text: Create an Azure Quantum workspace
             url: how-to-create-workspace.md
-          - text: Get started with Q# and an Azure Quantum notebook
+          - text: Run Q# code in an Azure Quantum notebook
             url: get-started-jupyter-notebook.md
-          - text: Solve an optimization problem in Azure Quantum
-            url: quickstart-microsoft-qio.md
-          - text: Understanding job costs in Azure Quantum
-            url: azure-quantum-job-costs.md
-      - linkListType: learn
-        links:
-          - text: Microsoft Learn
-            url: /learn/paths/quantum-computing-fundamentals/
-          - text: Learn with the Quantum Katas
-            url: tutorial-qdk-intro-to-katas.md
+          - text: Submit a circuit with Qiskit to Azure Quantum
+            url: quickstart-microsoft-qiskit-portal.md
 
+  # Q# programming
+  - title: Q# programing language
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What are Q# and Quantum Development Kit (QDK)?
+            url: overview-what-is-qsharp-and-qdk.md
+      - linkListType: quickstart
+        links:
+          - text: The Q# user guide
+            url: user-guide/index.md
+          - text: Set up a local development environment
+            url: install-overview-qdk.md
+          - text: Set up a Q# standalone environment
+            url: install-command-line-qdk.md
+  
   # Computing
   - title: Quantum computing
     linkLists:
@@ -49,48 +57,35 @@ landingContent:
         links:
           - text: What is quantum computing?
             url: overview-understanding-quantum-computing.md
-          - text: What are the Q# programming language and Quantum Development Kit (QDK)?
-            url: overview-what-is-qsharp-and-qdk.md
-      - linkListType: quickstart
+      - linkListType: concept
         links:
-          - text: Submit a circuit with Qiskit to Azure Quantum
-            url: quickstart-microsoft-qiskit-portal.md
-          - text: Submit a circuit with Cirq to Azure Quantum
-            url: quickstart-microsoft-cirq-portal.md
-          - text: Set up a local development environment
-            url: install-overview-qdk.md
-          - text: Create a quantum-based random number generator in Azure Quantum
-            url: quickstart-microsoft-qc.md
+          - text: Quantum computing history and background
+            url: concepts-overview.md
+          - text: The qubit
+            url: concepts-the-qubit.md
+          - text: Linear algebra for quantum computing
+            url: overview-algebra-for-quantum-computing.md
+          - text: Dirac notation
+            url: concepts-dirac-notation.md
+          - text: What is optimization?
+            url: optimization-overview-introduction.md
+      
+  # Learn
+  - title: Learn by building
+    linkLists:      
+      - linkListType: learn
+        links:
+          - text: Quantum computing foundations
+            url: /learn/paths/quantum-computing-fundamentals/
+          - text: Learn Q# with the Quantum Katas
+            url: tutorial-qdk-intro-to-katas.md
+      
+  # Tutorials
+  - title: Write Q# programs
+    linkLists:  
       - linkListType: tutorial
         links:
           - text: Explore entanglement with Q#
             url: tutorial-qdk-explore-entanglement.md
-          - text: Implement a quantum random number generator in Q#
+          - text: Write a quantum random number generator in Q#
             url: tutorial-qdk-quantum-random-number-generator.md
-          - text: Implement Grover's search algorithm in Q#
-            url: tutorial-qdk-grovers-search.md
-          - text: Write and simulate qubit-level programs in Q#
-            url: tutorial-qdk-qubit-level-program.md
-
-
-  # OPTIMIZATION
-  - title: Optimization
-    linkLists:
-      - linkListType: overview
-        links:
-        - text: What is optimization?
-          url: optimization-overview-introduction.md
-      - linkListType: quickstart 
-        links:
-          - text: Solve an optimization problem in Azure Quantum
-            url: quickstart-microsoft-qio.md
-
-  #  Community
-  - title: Community and contribution
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Contribute to the QDK
-            url: contributing-overview.md
-          - text: Microsoft Quantum blog
-            url: https://cloudblogs.microsoft.com/quantum
