@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Learn how quantum computing works, how it compares to classical computing, and how it uses the principles of quantum mechanics.
-ms.date: 05/16/2022
+ms.date: 07/19/2022
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -32,6 +32,8 @@ Learn how to create an [Azure Quantum workspace](xref:microsoft.quantum.how-to.w
 A quantum computer isn't a supercomputer that can do everything faster. One of the goals of quantum computing research is to study which problems can be solved by a quantum computer faster than a classical computer and how large the speedup can be.
 
 Quantum computers do exceptionally well with problems that require calculating a large number of possible combinations. These types of problems can be found in many areas, such as quantum simulation, cryptography, quantum machine learning, and search problems.
+
+For the latest information about Microsoft's quantum computing research, see the [Microsoft Research Quantum Computing](https://www.microsoft.com/research/research-area/quantum-computing/?) page.
 
 ### Quantum simulation
 
