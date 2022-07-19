@@ -35,7 +35,7 @@ landingContent:
             url: quickstart-microsoft-qiskit-portal.md
 
   # Q# programming
-  - title: Q# programing language
+  - title: Q# programming language
     linkLists:
       - linkListType: overview
         links:
