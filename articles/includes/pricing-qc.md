@@ -80,7 +80,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 
 |Pricing | Use is deducted from the Azure Quantum Credits based on the HQC equation described above |
 |---|---|  
-|Includes access to | <ul><li> 40 HQCs for use on the System Model H1 hardware</li><li>160 eHQCs for use on the System H1 Emulator</li></ul>|
+|Includes access to | <ul><li> 40 HQCs for use on the System Model H1 hardware</li><li>400 eHQCs for use on the System H1 Emulator</li></ul>|
 
 > [!NOTE]
 > Once you have consumed all the credits you need to explicitly switch to a different plan to continue using Quantinuum. Azure Quantum won’t start charging you once you reach your credit limit. 
