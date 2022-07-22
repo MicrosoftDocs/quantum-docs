@@ -20,12 +20,12 @@
     href: concatenation.md  
 - name: Modifiers and combinators
   items:
-  - name: Partial application
-    href: partialapplication.md
   - name: Functor application
     href: functorapplication.md
   - name: Item access expressions
     href: itemaccessexpressions.md
+- name: Closures
+  href: closures.md
 - name: Contextual expressions
   href: contextualexpressions.md
 - name: Value literals and default values
