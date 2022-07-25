@@ -234,6 +234,11 @@
 			"source_path": "articles/tutorial-portal-explore-entanglement.md",
 			"redirect_url": "/azure/quantum/tutorial-qdk-explore-entanglement",
 			"redirect_document_id": true
-		}		
+		},
+		{
+			"source_path": "articles/user-guide/language/Expressions/partialapplication.md",
+			"redirect_url": "/azure/quantum/user-guide/language/expressions/closures",
+			"redirect_document_id": false
+		}
 	]
 }
