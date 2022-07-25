@@ -163,62 +163,62 @@
 	 	{
 			"source_path": "articles/user-guide/machines/index.md",
 			"redirect_url": "/azure/quantum/machines/",
-			"redirect_document_id": true
+			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/user-guide/machines/full-state-simulator.md",
 			"redirect_url": "/azure/quantum/machines/full-state-simulator",
-			"redirect_document_id": true
+			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/user-guide/machines/noise-simulator.md",
 			"redirect_url": "/azure/quantum/machines/noise-simulator",
-			"redirect_document_id": true
+			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/user-guide/machines/resources-estimator.md",
 			"redirect_url": "/azure/quantum/machines/resources-estimator",
-			"redirect_document_id": true
+			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/user-guide/machines/sparse-simulator.md",
 			"redirect_url": "/azure/quantum/machines/sparse-simulator",
-			"redirect_document_id": true
+			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/user-guide/machines/toffoli-simulator.md",
 			"redirect_url": "/azure/quantum/machines/toffoli-simulator",
-			"redirect_document_id": true
+			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/user-guide/machines/qc-trace-simulator/index.md",
 			"redirect_url": "/azure/quantum/machines/qc-trace-simulator/",
-			"redirect_document_id": true
+			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/user-guide/machines/qc-trace-simulator/depth-counter.md",
 			"redirect_url": "/azure/quantum/machines/qc-trace-simulator/depth-counter",
-			"redirect_document_id": true
+			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/user-guide/machines/qc-trace-simulator/distinct-inputs-checker.md",
 			"redirect_url": "/azure/quantum/machines/qc-trace-simulator/distinct-inputs-checker",
-			"redirect_document_id": true
+			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/user-guide/machines/qc-trace-simulator/invalidated-qubits-use-checker.md",
 			"redirect_url": "/azure/quantum/machines/qc-trace-simulator/invalidated-qubits-use-checker",
-			"redirect_document_id": true
+			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/user-guide/machines/qc-trace-simulator/primitive-operations-counter.md",
 			"redirect_url": "/azure/quantum/machines/qc-trace-simulator/primitive-operations-counter",
-			"redirect_document_id": true
+			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/user-guide/machines/qc-trace-simulator/width-counter.md",
 			"redirect_url": "/azure/quantum/machines/qc-trace-simulator/width-counter",
-			"redirect_document_id": true
+			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/tutorial-explore-entanglement.md",
