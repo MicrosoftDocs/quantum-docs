@@ -23,9 +23,7 @@
       "template_folder": "_themes"
     }
   ],
-  "notification_subscribers": [
-    "tedhudek@microsoft.com"
-  ],
+  "notification_subscribers": [],
   "sync_notification_subscribers": [
     "kitty@microsoft.com",
     "tedhudek@microsoft.com"
@@ -68,13 +66,13 @@
       "Pdf"
     ]
   },
-  "need_generate_pdf_url_template": true,
   "targets": {
     "pdf": {
       "template_folder": "_themes.pdf"
     }
   },
   "docs_build_engine": {},
+  "need_generate_pdf_url_template": true,
   "contribution_branch_mappings": {},
   "JoinTOCPlugin": [
     {
