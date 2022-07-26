@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 07/15/2022
+ms.date: 07/26/2022
 author: bradben
 ms.author: brbenefield
 ms.service: azure-quantum
@@ -17,6 +17,15 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
+## 2022-07-26
+
+### QDK version 0.25.222597
+
+- Added support for [IonQ Native Gates](https://ionq.com/docs/getting-started-with-native-gates) when creating a Qiskit job.
+- Added two new operations [`SmallestFixedPoint` and `LargestFixedPoint`](https://github.com/microsoft/QuantumLibraries/issues/594) to compute the numerical value for the smallest and largest fixed point given a number of integer and fractional bits.
+- Fixed Q# project loading for users of .NET 6.0.302 or above by addressing issue [qsharp-compiler/1470](https://github.com/microsoft/qsharp-compiler/issues/1470).
+- Allowed the use of array items as steps of a ranged expression without causing a type-checking error by fixing [qsharp-compiler/1430](https://github.com/microsoft/qsharp-compiler/issues/1430).
+
 ## 2022-06-28
 
 ### QDK version 0.25.218240
@@ -29,7 +38,6 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 - We've added a new Azure CLI quantum extension, version 0.16.0
   - Lastly, any providers participating in the ‘Credits for All’ program will be automatically  added when you create a workspace with the CLI. See
 [Azure Quantum Credits FAQ](/azure/quantum/credits-faq)
-
 
 ## 2022-05-23
 
