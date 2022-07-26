@@ -19,7 +19,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 ## 2022-07-26
 
-### QDK version 0.25.222415 (TBD)
+### QDK version 0.25.222597
 
 - Added support for [IonQ Native Gates](https://ionq.com/docs/getting-started-with-native-gates) when creating a Qiskit job.
 - Added two new operations [`SmallestFixedPoint` and `LargestFixedPoint`](https://github.com/microsoft/QuantumLibraries/issues/594) to compute the numerical value for the smallest and largest fixed point given a number of integer and fractional bits.
