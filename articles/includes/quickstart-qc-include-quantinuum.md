@@ -1,6 +1,6 @@
 ---
-author: mblouin
-ms.author: mblouin
+author: bradben
+ms.author: brbenefield
 ms.date: 01/27/2022
 ms.service: azure-quantum
 ms.subservice: computing
