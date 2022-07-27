@@ -1,7 +1,7 @@
 ---
-author: bettinaheim
+author: bradben
 description: Learn how operations and functions, or callables, are declared in the Q# programming language.
-ms.author: beheim
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
