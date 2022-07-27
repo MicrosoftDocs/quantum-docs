@@ -1,10 +1,9 @@
 ---
-# Mandatory fields. See more on aka.ms/skyeye/meta.
 title: Microsoft Quantum Development Kit license 
 description: License terms, disclaimers and user rights for the Microsoft Quantum Development Kit.
 author: bradben
-ms.author: cpalmer
-ms.date: 11/04/2019
+ms.author: brbenefield
+ms.date: 07/27/2022
 no-loc: ['Q#', '$$v']
 ---
 

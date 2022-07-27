@@ -1,8 +1,8 @@
 ---
 title: Publish a QIO job as an Azure Function
 description: This article describes how you can publish your QIO job as an Azure Function and make it callable via RESTful API. 
-author: hsirtl
-ms.author: hsirtl
+author: bradben
+ms.author: brbenefield
 ms.service: azure-quantum
 ms.topic: how-to
 ms.date: 04/06/2022
