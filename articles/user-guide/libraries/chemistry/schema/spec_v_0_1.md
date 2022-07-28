@@ -2,7 +2,7 @@
 author: cgranade
 description: Details the specifications for the Broombridge quantum chemistry schema v0.1 for the Microsoft quantum chemistry library.
 ms.author: chgranad
-ms.date: 02/01/2021
+ms.date: 07/28/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -22,6 +22,9 @@ Any sidebar with the headings "NOTE," "INFORMATION," or "WARNING" is informative
 This section is informative.
 
 Broombridge documents are intended to communicate instances of simulation problems in quantum chemistry for processing using quantum simulation and programming toolchains.
+
+> [!NOTE]
+> To view a sample YAML document formatted with all the required sections described in this specification, see [schema-example.yaml](https://github.com/microsoft/Quantum/blob/master/samples/chemistry/IntegralData/YAML/schema-example.yaml) in the Azure Quantum Samples GitHub repository.
 
 ## Serialization ##
 
@@ -226,6 +229,7 @@ If the `index_convention` property of a `two_electron_integrals` object is equal
 - `[k, l, i, j]`
 - `[k, l, j, i]`
 - `[l, k, j, i]`
+- `[l, k, i, j]`
 
 > [!NOTE]
 > Because the `index_convention` property is a sparse quantity object, no indices may be repeated on different elements.
