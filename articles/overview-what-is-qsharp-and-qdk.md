@@ -21,7 +21,7 @@ With the Quantum Development Kit, you can build programs that run on quantum har
 
 ## Get started with Q\#
 
-To jump right in, you can explore Q# in the Azure Quantum portal, with no installation required, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
+To jump right in, you can explore Q# in the Azure Quantum portal with no installation required. For more information, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
 For other development environment options, see [Configure your quantum development environment ](xref:microsoft.quantum.install-qdk.overview)
 
