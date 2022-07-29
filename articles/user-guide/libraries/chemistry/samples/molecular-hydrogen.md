@@ -1,8 +1,8 @@
 ---
-author: guanghaolow
-description: Walk through a sample Q# program that estimates the energy level values of molecular hydrogen.
-ms.author: gulow
-ms.date: 02/01/2021
+author: bradben
+description: Walk through a sample Q# quantum program in that estimates the energy level values of molecular hydrogen.
+ms.author: brbenefield
+ms.date: 07/29/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: sample

@@ -1,8 +1,8 @@
 ---
-author: guanghaolow
-description: Learn how to install the Quantum chemistry library and use it with the NWChem computational chemistry platform.
-ms.author: gulow
-ms.date: 02/01/2021
+author: bradben
+description: Learn how to install the Azure Quantum chemistry library and use it with the NWChem computational chemistry platform.
+ms.author: brbenefield
+ms.date: 07/29/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -25,17 +25,17 @@ This section details how to use the Quantum Development Kit with either NWChem a
 To get up and running using NWChem together with the Quantum Development Kit, use one of the following methods:
 
 - Get started using existing Broombridge files provided with the samples at [IntegralData/YAML](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/IntegralData/YAML).
-- Use the [EMSL Arrows Builder for the Quantum Development Kit](https://arrows.emsl.pnnl.gov/api/qsharp_chem) which is a web-based frontend to NWChem, to generate new Broombridge-formated molecular input files.  
+- Use the [EMSL Arrows Builder for the Quantum Development Kit](https://arrows.emsl.pnnl.gov/api/qsharp_chem) which is a web-based frontend to NWChem, to generate new Broombridge-formatted molecular input files.  
 - Use the [Docker image](https://hub.docker.com/r/nwchemorg/nwchem-qc/) provided by PNNL to run NWChem, or
 - [Compile NWChem](http://www.nwchem-sw.org/index.php/Compiling_NWChem) for your platform.
 
-See [End-to-end with NWChem](xref:microsoft.quantum.libraries.overview-chemistry.examples.overview.endtoend) for more information on how to work with NWChem to chemical models to analyze with the Quantum Developmen Kit chemistry library.
+See [End-to-end with NWChem](xref:microsoft.quantum.libraries.overview-chemistry.examples.overview.endtoend) for more information on how to work with NWChem to chemical models to analyze with the Quantum Development Kit chemistry library.
 
 ### Getting started using Broombridge files provided with the samples
 
-The [IntegralData/YAML](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/IntegralData/YAML) folder in the Quantum Development Kit Samples repository contains Broombridge-formated molecule data files.  
+The [IntegralData/YAML](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/IntegralData/YAML) folder in the Quantum Development Kit Samples repository contains Broombridge-formatted molecule data files.  
 
-As a simple example, use the chemistry library sample, [GetGateCount](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/GetGateCount) to load the Hamiltonian from one of Broombridge files and perform gate estimates of quantum simulation algorigthms:
+As a simple example, use the chemistry library sample, [GetGateCount](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/GetGateCount) to load the Hamiltonian from one of Broombridge files and perform gate estimates of quantum simulation algorithms:
 
 ```bash
 cd Quantum/Chemistry/GetGateCount
@@ -48,25 +48,25 @@ See [Obtaining resource counts](xref:microsoft.quantum.libraries.overview-chemis
 
 ### Getting started using the EMSL Arrows Builder
 
-EMSL Arrows is a tool that uses NWChem and chemical computational databases to generate molecule data.  [EMSL Arrows Builder for the Quantum Development Kit](https://arrows.emsl.pnnl.gov/api/qsharp_chem) allows you to enter your model using multiple molecular model builders and generate the Broombridge datafile to be used by the Quantum Development Kit.  
+EMSL Arrows is a tool that uses NWChem and chemical computational databases to generate molecule data.  [EMSL Arrows Builder for the Quantum Development Kit](https://arrows.emsl.pnnl.gov/api/qsharp_chem) allows you to enter your model using multiple molecular model builders and generate the Broombridge data file to be used by the Quantum Development Kit.  
 
-From the EMSL page, click the ['Instuctions'] tab, and follow the ['Simple Examples'] instructions to generate Broombridge files.  Then try running the ['GetGateCount'] to see the quantum resource estimates for these molecules.
+From the EMSL page, click the **Instructions** tab, and follow the **Simple Examples** instructions to generate Broombridge files.  Then try running the `GetGateCount` to see the quantum resource estimates for these molecules.
 
 ### Installing NWChem from source
 
-Full instructions on how to install NWChem from source [are provided by PNNL](http://www.nwchem-sw.org/index.php/Compiling_NWChem).
+Full instructions on how to install NWChem from source are provided by [PNNL](http://www.nwchem-sw.org/index.php/Compiling_NWChem).
 
 > [!TIP]
 > If you wish to use NWChem from Windows 10, the Windows Subsystem for Linux is a great option.
 > Once you have installed [Ubuntu 18.04 LTS for Windows](https://www.microsoft.com/p/ubuntu-1804-lts/9n9tngvndl3q#activetab=pivot:overviewtab), run `ubuntu18.04` from your favorite terminal and follow the instructions above to install NWChem from source.
 
-Once you have compiled NWChem from source, you can run the `yaml_driver` script provided with NWChem to quickly produce Broombridge instances from NWChem input decks:
+Once you have compiled NWChem from source, you can run the *yaml_driver* script provided with NWChem to quickly produce Broombridge instances from NWChem input decks:
 
 ```bash
 $NWCHEM_TOP/contrib/quasar/yaml_driver input.nw
 ```
 
-This command will create a new `input.yaml` file in the Broombridge format within your current directory.
+This command will create a new *input.yaml* file in the Broombridge format within your current directory.
 
 ### Using NWChem with Docker
 
@@ -115,7 +115,7 @@ Convert-NWChemToBroombridge -?
 Get-Help Convert-NWChemToBroombridge -Full
 ```
 
-## Using the Quantum Development Kit with `qdk-chem`
+## Using the Quantum Development Kit with the qdk-chem tool
 
 To install `qdk-chem`, you can use the .NET Core SDK at the command line:
 
