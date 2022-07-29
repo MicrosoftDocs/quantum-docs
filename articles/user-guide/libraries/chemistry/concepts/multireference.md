@@ -1,8 +1,8 @@
 ---
-author: guanghaolow
-description: Learn about dynamic and non-dynamic correlations in wavefunctions using the Microsoft Quantum chemistry library.
-ms.author: gulow
-ms.date: 02/01/2021
+author: bradben
+description: Learn about dynamic and non-dynamic correlations in wavefunctions using the Azure Quantum chemistry library.
+ms.author: brbenefield
+ms.date: 07/29/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -16,11 +16,11 @@ uid: microsoft.quantum.libraries.overview-chemistry.concepts.multireference
 For many systems, particularly those near the equilibrium geometry, [Hartree–Fock](xref:microsoft.quantum.libraries.overview-chemistry.concepts.hartreefock) theory provides a qualitative description of molecular properties through a single-determinant reference state.
 However, in order to achieve quantitative accuracy, one must also consider correlation effects.
 
-In this context, it is important to distinguish between dynamic and non-dynamic correlations.
+In this context, it's important to distinguish between dynamic and non-dynamic correlations.
 Dynamical correlations arise from the tendency of electrons to stay apart, such as due to interelectronic repulsion.
-This effect can be modelled by considering excitations of electrons out of the reference state.
+This effect can be modeled by considering excitations of electrons out of the reference state.
 Non-dynamic correlations arise when the wavefunction is dominated by two or more configurations at zeroth order, even to achieve only a qualitative description of the system.
-This necessitates a superposition of determinants and is an example of a multireference wavefunction.
+This scenario necessitates a superposition of determinants and is an example of a multireference wavefunction.
 
 The chemistry library provides a way to specify a zeroth order wavefunction for the multireference problem as a superposition of determinants.
 This approach, which we call sparse multireference wavefunctions, is effective when only a few components suffice to specify the superposition.
@@ -56,12 +56,12 @@ using Microsoft.Quantum.Chemistry.Fermion;
 ```
 
 This explicit representation of the superposition components is effective when only a few components need to be specified.
-One should avoid using this representation when many components are required to accurately capture the desired state.
-The reason for this is the gate cost of quantum circuit that prepares this state on a quantum computer, which scales at least linearly with the number of superposition components, and at most quadratically with the one-norm of the superposition amplitudes.
+You should avoid using this representation when many components are required to accurately capture the desired state.
+The reason for this is the gate cost of the quantum circuit that prepares this state on a quantum computer. The gate cost scales at least linearly with the number of superposition components, and at most quadratically with the one-norm of the superposition amplitudes.
 
 ## Unitary coupled-cluster wavefunction
 
-It is also possible to specify a unitary coupled-cluster wavefunction $\ket{\psi_{\rm {UCC}}}$ using the chemistry library.
+It's also possible to specify a unitary coupled-cluster wavefunction $\ket{\psi_{\rm {UCC}}}$ using the chemistry library.
 In this situation, we have a single-determinant reference state, say, $\ket{\psi_{\rm{SCF}}}$.
 The components of the unitary coupled-cluster wavefunction are then specified implicitly through a unitary operator acting on a reference state.
 This unitary operator is commonly written as $e^{T-T^\dagger}$, where $T-T^\dagger$ is the anti-Hermitian cluster operator.
@@ -71,7 +71,7 @@ Thus
     \ket{\psi_{\rm {UCC}}} = e^{T-T^\dagger}\ket{\psi_{\rm{SCF}}}.
 \end{align}
 
-It is also common to split the cluster operator $T = T_1 + T_2 + \cdots$ into parts, where each part $T_j$ contains $j$-body terms. In generalized coupled-cluster theory, the one-body cluster operator (singles) is of the form
+It's also common to split the cluster operator $T = T_1 + T_2 + \cdots$ into parts, where each part $T_j$ contains $j$-body terms. In generalized coupled-cluster theory, the one-body cluster operator (singles) is of the form
 
 \begin{align}
     T_1 = \sum_{pq}t^{p}_{q} a^\dagger_p a_q,
@@ -115,7 +115,7 @@ using System.Linq;
     };
 
     // Create a fermion wavefunction object that represents the 
-    // unitary coupled-cluster wavefunction. It is assumed implicitly
+    // unitary coupled-cluster wavefunction. It's assumed implicitly
     // that the exponent of the unitary coupled-cluster operator
     // is the cluster operator minus its Hermitian conjugate.
     var wavefunction = new FermionWavefunction<int>(reference, clusterOperator);
@@ -140,7 +140,7 @@ Spin conservation may be made explicit by instead specifying `SpinOrbital` indic
     }.Select(o => (o.Item1.ToSpinOrbitals(), o.Item2));
 
     // Create a fermion wavefunction object that represents the
-    // unitary coupled-cluster wavefunction. It is assumed implicitly
+    // unitary coupled-cluster wavefunction. It's assumed implicitly
     // that the exponent of the unitary coupled-cluster operator
     // is the cluster operator minus its Hermitian conjugate.
     var wavefunctionSpinOrbital = new FermionWavefunction<SpinOrbital>(reference, clusterOperator);

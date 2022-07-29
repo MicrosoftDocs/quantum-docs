@@ -1,8 +1,8 @@
 ---
-author: guanghaolow
-description: Learn how to obtain resource estimates using a quantum trace simulator.
-ms.author: gulow
-ms.date: 02/01/2021
+author: bradben
+description: Learn how to obtain resource estimates using a quantum trace simulator in Azure Quantum
+ms.author: brbenefield
+ms.date: 07/29/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: sample
