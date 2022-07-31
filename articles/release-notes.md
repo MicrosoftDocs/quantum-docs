@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 07/26/2022
+ms.date: 08/01/2022
 author: bradben
 ms.author: brbenefield
 ms.service: azure-quantum
@@ -25,6 +25,12 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 - Added two new operations [`SmallestFixedPoint` and `LargestFixedPoint`](https://github.com/microsoft/QuantumLibraries/issues/594) to compute the numerical value for the smallest and largest fixed point given a number of integer and fractional bits.
 - Fixed Q# project loading for users of .NET 6.0.302 or above by addressing issue [qsharp-compiler/1470](https://github.com/microsoft/qsharp-compiler/issues/1470).
 - Allowed the use of array items as steps of a ranged expression without causing a type-checking error by fixing [qsharp-compiler/1430](https://github.com/microsoft/qsharp-compiler/issues/1430).
+
+### Azure Quantum service update
+
+- Improved the Azure Quantum Portal experience so that you can easily check how much Azure Quantum Credits you have used, how much is remaining, and quota status if applicable.
+- Added a new advanced sample that will help you explore the execution of hidden shift problems on a quantum computer.
+- Prevented long waiting times by rejecting job submission if Target is in 'Unavailable' state.
 
 ## 2022-06-28
 
