@@ -28,16 +28,6 @@ The following targets are available from this provider:
 - [System Model H1 Emulator](#system-model-h1-emulators)
 - [System Model H1](#system-model-h1)
 
-## Target Availability
-
-A target's status indicates its current ability to process jobs. The possible states of a target include:
-
-- **Available**: The target is processing jobs at a normal rate.
-- **Degraded**: The target is currently processing jobs at a slower rate than usual.
-- **Unavailable**: The target currently does not process jobs.
-
-Current status information may be retrieved from the *Providers* tab of a workspace on the [Azure portal](https://portal.azure.com).
-
 ## Syntax Checkers
 
 We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-2 syntax checker uses the same compiler as H1-2. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker will return a `success` status and a result of all 0s. If the code does not compile, the syntax checker will return a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
@@ -79,6 +69,24 @@ Both System Model H1 hardware H1-1 and H1-2 are continuously upgraded throughout
 ### Technical Specifications
 
 Technical details for the System Model H1 and System Model H1 Emulators can be found in Quantinuum's [product data sheets](https://www.quantinuum.com/products/h1).
+
+## Target Availability
+
+The Quantinuum H-Series quantum computers were designed to be continuously upgraded, which allows customers to have access to the latest and greatest hardware capabilities as our teams continually improve gate fidelities, memory errors, and system speed. 
+
+The Quantinuum hardware cycles through commercial and development cycles. During commercial weeks, hardware is available to process jobs via a queue system. During development weeks, the hardware is offline as upgrades are completed.
+
+A calendar is sent to Quantinuum users monthly with information on the commercial and development cycles. If you have not received this please email QCsupport@quantinuum.com.
+
+A target's status indicates its current ability to process jobs. The possible states of a target include:
+
+- **Available**: The target is online, available for submitting jobs.
+- **Degraded**: The target is currently accepting jobs, but not currently processing them.
+- **Unavailable**: The target is currently not accepting jobs.
+
+For the Quantinuum quantum computer targets, **Available** and **Degraded** correspond to commercial cycles, while **Unavailable** corresponds to development cycles while the machine is offline for upgrades.
+
+Current status information may be retrieved from the *Providers* tab of a workspace on the [Azure portal](https://portal.azure.com).
 
 ## Pricing
 
