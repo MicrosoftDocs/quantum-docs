@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 08/01/2022
+ms.date: 08/02/2022
 author: bradben
 ms.author: brbenefield
 ms.service: azure-quantum
@@ -28,7 +28,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 ### Azure Quantum service update
 
-- Improved the Azure Quantum Portal experience so that you can easily check how much Azure Quantum Credits you have used, how much is remaining, and quota status if applicable.
+- Improved the Azure Quantum Portal experience so that you can easily check how much [Azure Quantum Credits](xref:microsoft.quantum.credits) you have used, how much is remaining, and [quota](xref:microsoft.quantum.quotas) status if applicable.
 - Added a new advanced sample that will help you explore the execution of hidden shift problems on a quantum computer.
 - Prevented long waiting times by rejecting job submission if Target is in 'Unavailable' state.
 
