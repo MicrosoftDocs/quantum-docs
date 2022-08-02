@@ -72,11 +72,11 @@ Technical details for the System Model H1 and System Model H1 Emulators can be f
 
 ## Target Availability
 
-The Quantinuum H-Series quantum computers were designed to be continuously upgraded, which allows customers to have access to the latest and greatest hardware capabilities as our teams continually improve gate fidelities, memory errors, and system speed. 
+The Quantinuum H-Series quantum computers are designed to be continuously upgraded, which allows customers to have access to the latest hardware capabilities as Quantinuum continually improves gate fidelities, memory errors, and system speed. 
 
-The Quantinuum hardware cycles through commercial and development cycles. During commercial weeks, hardware is available to process jobs via a queue system. During development weeks, the hardware is offline as upgrades are completed.
+Quantinuum hardware cycles through commercial periods and development periods. During commercial periods, the hardware is available to process jobs via a queue system. During development periods, the hardware is offline as upgrades are applied.
 
-A calendar is sent to Quantinuum users monthly with information on the commercial and development cycles. If you have not received this please email QCsupport@quantinuum.com.
+Every month, a calendar is sent to Quantinuum users with information on the commercial and development periods. If you have not received this calendar, please email QCsupport@quantinuum.com.
 
 A target's status indicates its current ability to process jobs. The possible states of a target include:
 
@@ -84,7 +84,7 @@ A target's status indicates its current ability to process jobs. The possible st
 - **Degraded**: The target is accepting jobs, but not currently processing them.
 - **Unavailable**: The target is offline, not accepting new job submissions.
 
-For the Quantinuum quantum computer targets, **Available** and **Degraded** correspond to commercial cycles, while **Unavailable** corresponds to development cycles while the machine is offline for upgrades.
+For the Quantinuum quantum computer targets, **Available** and **Degraded** correspond to commercial periods, while **Unavailable** corresponds to development periods where the machine is offline for upgrades.
 
 Current status information may be retrieved from the *Providers* tab of a workspace on the [Azure portal](https://portal.azure.com).
 
