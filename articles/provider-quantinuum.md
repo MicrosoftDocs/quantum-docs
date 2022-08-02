@@ -80,9 +80,9 @@ A calendar is sent to Quantinuum users monthly with information on the commercia
 
 A target's status indicates its current ability to process jobs. The possible states of a target include:
 
-- **Available**: The target is online, available for submitting jobs.
-- **Degraded**: The target is currently accepting jobs, but not currently processing them.
-- **Unavailable**: The target is currently not accepting jobs.
+- **Available**: The target is online, processing submitted jobs and accepting new ones.
+- **Degraded**: The target is accepting jobs, but not currently processing them.
+- **Unavailable**: The target is offline, not accepting new job submissions.
 
 For the Quantinuum quantum computer targets, **Available** and **Degraded** correspond to commercial cycles, while **Unavailable** corresponds to development cycles while the machine is offline for upgrades.
 
