@@ -1,7 +1,7 @@
 ---
-author: cgranade
+author: bradben
 description: Learn about the classical math functions in the Q# standard libraries that are used with the built-in data types.
-ms.author: chgranad
+ms.author: brbenefield
 ms.date: 08/29/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

@@ -1,7 +1,7 @@
 ---
-author: cgranade
+author: bradben
 description: Learn about the diagnostic functions and operations in the Q# standard libraries used to catch mistakes or errors in quantum programs.
-ms.author: chgranad
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
