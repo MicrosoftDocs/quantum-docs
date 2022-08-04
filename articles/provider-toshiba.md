@@ -1,7 +1,7 @@
 ---
-author: anraman
+author: SoniaLopezBravo
 description: This document provides the technical details of the Toshiba SQBM+ provider
-ms.author: anraman
+ms.author: sonialopez
 ms.date: 05/17/2022
 ms.service: azure-quantum
 ms.subservice: optimization

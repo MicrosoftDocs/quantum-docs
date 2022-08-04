@@ -1,7 +1,7 @@
 ---
-author: cgranade
+author: bradben
 description: Learn the naming, input, documentation and formatting conventions for Q# programming language applications and libraries.
-ms.author: chgranad
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk

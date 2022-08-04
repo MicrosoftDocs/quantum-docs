@@ -1,7 +1,7 @@
 ---
-author: anraman
+author: SoniaLopezBravo
 description: Learn about optimization and key terms
-ms.author: anraman
+ms.author: sonialopez
 ms.date: 09/27/2021
 ms.service: azure-quantum
 ms.subservice: optimization

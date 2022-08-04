@@ -1,7 +1,7 @@
 ---
-author: anraman
+author: SoniaLopezBravo
 description: Support Policy for Toshiba SQBM+ in Azure Quantum
-ms.author: anraman
+ms.author: sonialopez
 ms.date: 05/16/2022
 ms.service: azure-quantum
 ms.subservice: optimization

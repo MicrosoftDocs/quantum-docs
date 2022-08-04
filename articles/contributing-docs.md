@@ -1,7 +1,7 @@
 ---
-author: cgranade
+author: bradben
 description: Learn how to contribute conceptual or API content to the Microsoft Quantum documentation set.
-ms.author: chgranad
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk

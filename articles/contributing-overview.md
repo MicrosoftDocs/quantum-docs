@@ -1,7 +1,7 @@
 ---
-author: cgranade
+author: bradben
 description: Learn how to contribute to the Quantum Development Kit (QDK) and the quantum development community.
-ms.author: chgranad
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk

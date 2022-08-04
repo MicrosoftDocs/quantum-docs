@@ -1,7 +1,7 @@
 ---
-author: cgranade
+author: bradben
 description: Learn about common and user-defined type conversion functions in the Q# standard libraries.
-ms.author: chgranad
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

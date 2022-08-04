@@ -1,7 +1,7 @@
 ---
-author: cgranade
+author: bradben
 description: Learn how to contribute sample and library code to the Microsoft Quantum Development Kit (QDK).
-ms.author: chgranad
+ms.author: brbenefield
 ms.date: 05/12/2022
 ms.service: azure-quantum
 ms.subservice: qdk

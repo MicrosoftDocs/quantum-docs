@@ -1,7 +1,7 @@
 ---
-author: cgranade
+author: bradben
 description: Using an NWChem input deck, walk through an example of getting gate counts for quantum chemistry simulation.
-ms.author: chgranad
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

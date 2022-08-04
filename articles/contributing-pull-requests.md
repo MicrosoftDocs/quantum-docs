@@ -1,7 +1,7 @@
 ---
-author: cgranade
+author: bradben
 description: Learn how to submit a GitHub pull request to contribute code or documentation to the Microsoft Quantum Development Kit.
-ms.author: chgranad
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
