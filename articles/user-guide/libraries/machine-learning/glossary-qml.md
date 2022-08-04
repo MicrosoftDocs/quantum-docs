@@ -1,7 +1,7 @@
 ---
-author: alexeib2
+author: bradben
 description: Glossary of quantum machine learning terms
-ms.author: alexeib
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

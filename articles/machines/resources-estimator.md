@@ -1,7 +1,7 @@
 ---
-author: anpaz
+author: SoniaLopezBravo
 description: Learn about the Microsoft QDK resources estimator, which estimates the resources required to run a given instance of a Q# operation on a quantum computer.
-ms.author: anpaz
+ms.author: sonialopez
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

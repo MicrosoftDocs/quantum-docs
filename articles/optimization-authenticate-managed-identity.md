@@ -1,7 +1,7 @@
 ---
-author: frtibble
+author: SoniaLopezBravo
 description: This document provides instructions on how to authenticate using a managed identity.
-ms.author: frtibble
+ms.author: sonialopez
 ms.date: 10/20/2021
 ms.service: azure-quantum
 ms.subservice: core

@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Learn about two fundamental applications in quantum computing - Hamiltonian simulation and Shor's search algorithm.
-ms.author: martinro
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

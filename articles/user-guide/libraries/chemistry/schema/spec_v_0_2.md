@@ -1,7 +1,7 @@
 ---
-author: guanghaolow
+author: bradben
 description: Details the specifications for the Broombridge quantum chemistry schema v0.2 for the Microsoft quantum chemistry library.
-ms.author: gulow
+ms.author: brbenefield
 ms.date: 07/28/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

@@ -1,7 +1,7 @@
 ---
-author: martinro
+author: bradben
 description: Overview of the Broombridge quantum chemistry schema, used to model real-world chemistry problems with the Microsoft Quantum Development Kit.
-ms.author: martinro
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
