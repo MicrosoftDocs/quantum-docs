@@ -1,6 +1,6 @@
 ---
 author: SoniaLopezBravo
-description: This document provides the technical details of the IonQ provider
+description: This document provides the technical details of the IonQ quantum computing provider
 ms.author: sonialopez
 ms.date: 07/16/2022
 ms.service: azure-quantum
@@ -29,8 +29,8 @@ GPU-accelerated idealized simulator supporting up to 29 qubits, using the same s
 - Target ID: `ionq.simulator`
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles)
 
-### Quantum computer
-The IonQ QPU is a trapped ion quantum computer and is dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair.
+### IonQ Harmony quantum computer
+The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair.
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
@@ -64,11 +64,14 @@ The IonQ QPU is a trapped ion quantum computer and is dynamically reconfigurable
 
 *State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.*
 
-### IonQ Aria
+### IonQ Aria quantum computer
 
 IonQ Aria is IonQ’s most advanced commercially available quantum computer. Featuring [20 Algorithmic Qubits (#AQ)](https://ionq.com/posts/february-23-2022-algorithmic-qubits), it is also the industry’s most powerful quantum computer based on standard application-oriented industry benchmarks. IonQ Aria can run hundreds of accurate quantum gates in a single algorithm, compared to other quantum systems capable of running only dozens of gates at a time. For more information, see [IonQ Aria (ionq.com)](https://ionq.com/news/february-23-2022-ionq-aria-furthers-lead).
 
-Azure Quantum is the first cloud platform to enable access to IonQ Aria. With IonQ Aria, you'll have the ability to execute quantum circuits with more gates, pursuing the development and exploration of larger quantum programs. 
+- Job type: `Quantum Program`
+- Data Format: `ionq.circuit.v1`
+- Target ID: `ionq.qpu.aria-1`
+- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles)
 
 IonQ Aria is available through a separate billing plan. For more information, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
