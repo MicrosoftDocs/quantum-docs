@@ -36,7 +36,6 @@ All solvers set default values for their parameters but we strongly recommend se
 |seed|A random integer.|Specifies a random value to start the simulation.|
 |timeout|integer|Specifies the maximum number of seconds to run the core solver loop. Initialization time does not respect this value, so the solver may run longer than the value specified.|
 |restarts|integers|Specifies the number of iterations of the simulation to run.|
-|platform|enum|Defaults to `HardwarePlatform.CPU`. Specifies the hardware platform that the solver should use. The options are `HardwarePlatform.FPGA` and `HardwarePlatform.CPU`.|
 
 ## Population Annealing
 

@@ -12,7 +12,7 @@ uid: microsoft.quantum.reference.qio-target-list
 
 # Optimization providers on Azure Quantum
 
-Azure Quantum offers various optimization targets to solve binary optimization problems on classical CPUs, GPUs, hardware annealers, or hardware accelerated on field-programmable gate arrays (FPGA). There is no one algorithm that fits every [optimization problem](xref:microsoft.quantum.optimization.concepts.overview.introduction). Having a full portfolio is important when tuning optimization solutions for the best outcome and the highest impact.
+Azure Quantum offers various optimization targets to solve binary optimization problems on classical CPUs, GPUs and hardware annealers. There is no one algorithm that fits every [optimization problem](xref:microsoft.quantum.optimization.concepts.overview.introduction). Having a full portfolio is important when tuning optimization solutions for the best outcome and the highest impact.
 
 > [!NOTE]
 > Optimization targets can't run Q# applications or any other type of quantum computing program. Optimization solvers are optimization algorithms that run on specialized classical hardware.
