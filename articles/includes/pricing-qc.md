@@ -13,9 +13,9 @@ where:
 - $N$ is the number of one- or two-qubit gates submitted
 - $C$ is the number of execution shots requested
 
-Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with 3 controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. One-qubit gates are billed as 1/5 of a two-qubit gate (rounded down). To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
+Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with 3 controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. One-qubit gates are billed as 0.225 of a two-qubit gate (rounded down). To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
 
-All new Azure Quantum customers benefit of a one-time $500 (USD) free Azure Quantum credits toward IonQ provider. Besides Azure Quantum credits, IonQ offers a **Pay-as-you-go** plan with no monthly subscription fees. 
+All new Azure Quantum customers benefit of a one-time $500 (USD) free Azure Quantum credits toward IonQ provider. Besides the Azure Quantum Credits plan, IonQ offers a **pay-as-you-go** plan, and a **monthly susbcription** plan which enables access to IonQ Aria quantum computer. 
 
 ### [Azure Quantum Credits](#tab/tabid-AQcredits)
 
@@ -50,7 +50,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ### [Aria plan](#tab/tabid-aria)
 
-The Aria plan is a monthly subscription plan to the IonQ Aria quantum computer. It also includes access to IonQ simulator and IonQ 
+The Aria plan is a monthly subscription plan with access to the IonQ Aria 21-qubit quantum computer. The subscription also includes access to IonQ simulator and IonQ Harmony 11-qubit quantum computer.
 
 |Pricing | $25,000 (USD)/Month + Azure infrastructure costs |
 |---|---|  
@@ -60,7 +60,7 @@ The Aria plan is a monthly subscription plan to the IonQ Aria quantum computer. 
 Minimum of $1 (USD) per program execution.  
 
 > [!NOTE]
-> Once you have consumed the equivalent cost of the monthly subscription, the over-spending will be charge as pay-as-you-go plan. 
+> Once you have consumed the equivalent cost of the monthly subscription, the over-spending will be charge as a pay-as-you-go plan. 
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
