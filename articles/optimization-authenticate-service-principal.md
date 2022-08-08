@@ -1,7 +1,7 @@
 ---
-author: anraman
+author: SoniaLopezBravo
 description: This document provides instructions on how to authenticate using a service principal.
-ms.author: anraman
+ms.author: sonialopez
 ms.date: 11/22/2021
 ms.service: azure-quantum
 ms.subservice: core

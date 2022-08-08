@@ -1,7 +1,7 @@
 ---
-author: bettinaheim
+author: bradben
 description: Learn how to declare specialization to support certain functors in Q# operations.
-ms.author: beheim
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

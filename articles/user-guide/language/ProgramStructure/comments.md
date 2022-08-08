@@ -1,7 +1,7 @@
 ---
-author: bettinaheim
+author: bradben
 description: Learn how to use comments in the Q# programming language.
-ms.author: beheim
+ms.author: brbenefield
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

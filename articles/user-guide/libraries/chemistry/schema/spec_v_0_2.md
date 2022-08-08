@@ -2,7 +2,7 @@
 author: guanghaolow
 description: Details the specifications for the Broombridge quantum chemistry schema v0.2 for the Microsoft quantum chemistry library.
 ms.author: gulow
-ms.date: 02/01/2021
+ms.date: 07/28/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -22,6 +22,9 @@ Any sidebar with the headings "NOTE," "INFORMATION," or "WARNING" is informative
 This section is informative.
 
 Broombridge documents are intended to communicate instances of simulation problems in quantum chemistry for processing using quantum simulation and programming toolchains.
+
+> [!NOTE]
+> To view a sample YAML document formatted with all the required sections described in this specification, see [broombridge_v0.2_minimal.yaml](https://github.com/microsoft/Quantum/blob/master/samples/chemistry/IntegralData/Broombridge_v0.2/broombridge_v0.2_minimal.yaml) in the Azure Quantum Samples GitHub repository. 
 
 ## Serialization ##
 
@@ -174,9 +177,9 @@ Each problem description object MUST have a property `hamiltonian` whose value i
 The value of the `hamiltonian` property is known as a Hamiltonian object, and MUST have the properties `one_electron_integrals` and `two_electron_integrals` as described in the remainder of this section.
 
 Each problem description object MUST have a property `coulomb_repulsion` whose value is a simple quantity object.
-Each problem description object MUST have a property `energy_offet` whose value is a simple quantity object.
+Each problem description object MUST have a property `energy_offset` whose value is a simple quantity object.
 > [!NOTE]
-> The values of `coulomb_repulsion` and `energy_offet` added together capture the identity term of the Hamiltonian.
+> The values of `coulomb_repulsion` and `energy_offset` added together capture the identity term of the Hamiltonian.
 
 ##### One-Electron Integrals Object #####
 
@@ -234,6 +237,7 @@ If the `index_convention` property of a `two_electron_integrals` object is equal
 - `[k, l, i, j]`
 - `[k, l, j, i]`
 - `[l, k, j, i]`
+- `[l, k, i, j]`
 
 > [!NOTE]
 > Because the `two_electron_integrals` property is a sparse array quantity object, no indices may be repeated on different elements.

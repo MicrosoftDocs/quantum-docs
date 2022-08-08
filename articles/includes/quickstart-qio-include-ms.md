@@ -1,6 +1,6 @@
 ---
-author: anraman
-ms.author: anraman
+author: SoniaLopezBravo
+ms.author: sonialopez
 ms.date: 11/16/2021
 ms.service: azure-quantum
 ms.subservice: optimization

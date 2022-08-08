@@ -1,7 +1,7 @@
 ---
-author: cgranade
+author: bradben
 description: API design principles for programming with Q#
-ms.author: chgranad
+ms.author: brbenefield
 ms.date: 05/13/2022
 ms.service: azure-quantum
 ms.subservice: qdk

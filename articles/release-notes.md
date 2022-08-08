@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 06/28/2022
+ms.date: 08/01/2022
 author: bradben
 ms.author: brbenefield
 ms.service: azure-quantum
@@ -17,6 +17,21 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
+## 2022-07-26
+
+### QDK version 0.25.222597
+
+- Added support for [IonQ Native Gates](https://ionq.com/docs/getting-started-with-native-gates) when creating a Qiskit job.
+- Added two new operations [`SmallestFixedPoint` and `LargestFixedPoint`](https://github.com/microsoft/QuantumLibraries/issues/594) to compute the numerical value for the smallest and largest fixed point given a number of integer and fractional bits.
+- Fixed Q# project loading for users of .NET 6.0.302 or above by addressing issue [qsharp-compiler/1470](https://github.com/microsoft/qsharp-compiler/issues/1470).
+- Allowed the use of array items as steps of a ranged expression without causing a type-checking error by fixing [qsharp-compiler/1430](https://github.com/microsoft/qsharp-compiler/issues/1430).
+
+### Azure Quantum service update
+
+- Improved the Azure Quantum Portal experience so that you can easily check how much Azure Quantum Credits you have used, how much is remaining, and quota status if applicable.
+- Added a new advanced sample that will help you explore the execution of hidden shift problems on a quantum computer.
+- Prevented long waiting times by rejecting job submission if Target is in 'Unavailable' state.
+
 ## 2022-06-28
 
 ### QDK version 0.25.218240
@@ -24,13 +39,11 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 - The latest version of the QDK has new magic commands for Q# Jupyter notebooks: [`%azure.target-capability`](/qsharp/api/iqsharp-magic/azure.target-capability), [`%qir`](/qsharp/api/iqsharp-magic/qir). The new commands will allow you to target specific diagnostics and will show in each notebook cell if the target is set.
 - We've improved the Q# compiler diagnostics in Jupyter notebooks. Upon cell compilation, the compiler will now point to lines that cause errors and warnings, and will also direct you to Q# documentation for the given error or warning message.
 - This release also adds support for continuous-angle rotations to the open systems simulator (e.g. Microsoft.Quantum.Intrinsic.Rx and Microsoft.Quantum.Intrinsic.Exp), enabling the simulation of more Q# programs. See GitHub feature request [microsoft/qsharp-runtime#914](https://github.com/microsoft/qsharp-runtime/issues/914) for more details.
-- We've added support for [IonQ Native Gates](https://ionq.com/docs/getting-started-with-native-gates) when creating a qiskit job.
 - All Microsoft QIO CPU solvers now support [squared linear combination](/azure/quantum/optimization-slc-term) terms and [protobuf binary format](/azure/quantum/optimization-problem#input-problem-serialization-to-protobuf-binary-format). Additionally, several solvers now benefit from performance improvements, resulting in reduced memory usage and shortened runtimes. These solvers only use input format `microsoft.qio.v2`, the default format for all problems submitted via the Azure Quantum Python SDK.
 - The latest update also enables calling [Parity()](/qsharp/api/qsharp/microsoft.quantum.bitwise.parity) with a negative argument, fixing GitHub issue [microsoft/qsharp-runtime#993](https://github.com/microsoft/qsharp-runtime/issues/993).
 - We've added a new Azure CLI quantum extension, version 0.16.0
   - Lastly, any providers participating in the ‘Credits for All’ program will be automatically  added when you create a workspace with the CLI. See
 [Azure Quantum Credits FAQ](/azure/quantum/credits-faq)
-
 
 ## 2022-05-23
 
