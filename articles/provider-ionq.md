@@ -73,7 +73,7 @@ IonQ Aria is a 21-qubit trapped ion quantum computer. For more information, see 
 - Target ID: `ionq.qpu.aria-1`
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles)
 
-IonQ Aria is available through a separate billing plan. For more information, see [Azure Quantum pricing](https://docs.microsoft.com/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-AQcreditsQ%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing).
+IonQ Aria is available through a separate billing plan. For more information, see [Azure Quantum pricing](https://docs.microsoft.com/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-AQcreditsQ%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#ionq).
 
 ## Native gates support and usage
 
