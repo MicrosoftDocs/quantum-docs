@@ -55,7 +55,7 @@ The Aria plan is a monthly subscription plan with access to the IonQ Aria 21-qub
 |Pricing | $25,000 (USD)/Month + Azure infrastructure costs |
 |---|---|  
 |Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
-||2-qubit gate shot: $0.00098 (USD)|
+||<ul><li>1-qubit gate shot: $0.000022 (USD) </li><li>2-qubit gate shot: $0.00098 (USD) </li></ul>|
 
 Minimum of $1 (USD) per program execution.  
 
