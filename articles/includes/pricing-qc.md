@@ -95,7 +95,7 @@ The Standard Subscription is a monthly subscription plan available through queue
 
 |Pricing|  $125,000 (USD)/Month + Azure infrastructure costs |
 |---|---|
-|Includes access to | <ul><li>10k HQCs for use on the System Model H1 hardware</li><li>100k eHQCs for use on the H1 Emulator</li></ul>|
+|Includes access to | <ul><li>10k HQCs for use on the System Model H1 hardware</li><li>100k eHQCs for use on the System Model H1 Emulator</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
