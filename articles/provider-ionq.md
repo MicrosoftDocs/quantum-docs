@@ -66,14 +66,14 @@ The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigur
 
 ### IonQ Aria quantum computer
 
-IonQ Aria is IonQ’s most advanced commercially available quantum computer. Featuring [20 Algorithmic Qubits (#AQ)](https://ionq.com/posts/february-23-2022-algorithmic-qubits), it is also the industry’s most powerful quantum computer based on standard application-oriented industry benchmarks. IonQ Aria can run hundreds of accurate quantum gates in a single algorithm, compared to other quantum systems capable of running only dozens of gates at a time. For more information, see [IonQ Aria (ionq.com)](https://ionq.com/news/february-23-2022-ionq-aria-furthers-lead).
+IonQ Aria is a 21-qubit trapped ion quantum computer. For more information, see [IonQ Aria (ionq.com)](https://ionq.com/news/february-23-2022-ionq-aria-furthers-lead).
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
 - Target ID: `ionq.qpu.aria-1`
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles)
 
-IonQ Aria is available through a separate billing plan. For more information, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
+IonQ Aria is available through a separate billing plan. For more information, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#tab/tabid-aria&pivots=ide-computing).
 
 ## Native gates support and usage
 
