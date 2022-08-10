@@ -1,7 +1,7 @@
 ---
-author: alexeib2
+author: bradben
 description: Learn how machine learning is used on quantum systems
-ms.author: alexeib
+ms.author: brbenefield
 ms.date: 01/19/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

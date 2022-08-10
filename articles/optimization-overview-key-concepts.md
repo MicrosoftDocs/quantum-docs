@@ -1,7 +1,7 @@
 ---
 description: Learn about the key concepts of optimization, including cost functions, search spaces, and landscapes. 
-author: frtibble
-ms.author: frtibble
+author: SoniaLopezBravo
+ms.author: sonialopez
 ms.date: 09/28/2021
 ms.service: azure-quantum
 ms.subservice: optimization

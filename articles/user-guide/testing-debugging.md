@@ -2,8 +2,8 @@
 
 title: Test and debug quantum programs
 description: Learn how to use unit tests, facts and assertions, and dump functions to test and debug quantum programs. 
-author: tcNickolas
-ms.author: mamykhai
+author: bradben
+ms.author: brbenefield
 ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
