@@ -16,9 +16,9 @@ Select the tab for each provider to view its availability by country.
 
 ## [IonQ](#tab/tabid-ionq)
 
-IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program and a Pay-As-You-Go plan. 
+IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program and a Pay-As-You-Go plan. For more information about IonQ resources on Azure Quantum, see [IonQ provider and targets](xref:microsoft.quantum.providers.ionq).
 
-| Country | Enabled (Y/N) |
+| Country | Available (Y/N) |
 | ---- | ---- | ---- |
 | Afghanistan     | No     |
 | Albania     | No     |
@@ -164,9 +164,9 @@ IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program a
 
 ## [Quantinuum](#tab/tabid-quantinuum)
 
-Quantinuum offers three plans through Azure Quantum: the Azure Quantum Credits program, and Standard and Premium plans.
+Quantinuum offers three plans through Azure Quantum: the Azure Quantum Credits program, and Standard and Premium plans. For more information about Quantinuum resources on Azure Quantum, see [Quantinuum provider and targets](xref:microsoft.quantum.providers.quantinuum).
 
-| Country | Enabled (Y/N) |
+| Country | Available (Y/N) |
 | ---- | ---- | ---- |
 | Afghanistan     | No     |
 | Albania     | No     |
@@ -312,9 +312,9 @@ Quantinuum offers three plans through Azure Quantum: the Azure Quantum Credits p
 
 ## [Microsoft QIO](#tab/tabid-qio)
 
-Microsoft QIO offers two pay-as-you-go plans through Azure Quantum: a Learn and Develop plan and a Scale plan for larger projects.
+Microsoft QIO offers two pay-as-you-go plans through Azure Quantum: a Learn and Develop plan and a Scale plan for larger projects. For more information about Microsoft QIO resources on Azure Quantum, see [Microsoft QIO provider](xref:microsoft.quantum.optimization.providers.microsoft.qio).
 
-| Country | Enabled (Y/N) |
+| Country | Available (Y/N) |
 | ---- | ---- | ---- |
 | Afghanistan     | No     |
 | Albania     | No     |
@@ -460,9 +460,9 @@ Microsoft QIO offers two pay-as-you-go plans through Azure Quantum: a Learn and 
 
 ## [1Qbit](#tab/tabid-1qbit)
 
-1Qbit offers two plans through Azure Quantum: a Fixed Monthly plan and a Pay-As-You-Go plan.
+1Qbit offers two plans through Azure Quantum: a Fixed Monthly plan and a Pay-As-You-Go plan. For more information about 1Qbit resources on Azure Quantum, see [1QBit provider and targets](xref:microsoft.quantum.providers.optimization.1qbit).
 
-| Country | Enabled (Y/N) |
+| Country | Available (Y/N) |
 | ---- | ---- | ---- |
 | Afghanistan     | No     |
 | Albania     | No     |

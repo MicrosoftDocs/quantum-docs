@@ -294,6 +294,8 @@
     href: pricing.md
   - name: Azure Quantum quotas
     href: azure-quantum-quotas.md
+  - name: Azure Quantum provider availability
+    href: provider-global-availability.md
   - name: Glossary
     href: azure-quantum-glossary.md
   - name: Common issues
