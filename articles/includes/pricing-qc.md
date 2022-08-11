@@ -1,3 +1,12 @@
+---
+author: sonialopezbravo
+ms.author: sonialopez
+ms.date: 08/10/2022
+ms.service: azure-quantum
+ms.subservice: computing
+ms.topic: include
+---
+
 ## IonQ 
 
 [IonQ](https://ionq.com/) charges based on the number of gates in your program, the complexity of the gates you use, and the number of shots. These units are called *gate-shots*.
@@ -13,7 +22,7 @@ where:
 - $N$ is the number of one- or two-qubit gates submitted
 - $C$ is the number of execution shots requested
 
-Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with 3 controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
+Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with three controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
 
 All new Azure Quantum customers benefit of a one-time $500 free Azure Quantum credits toward IonQ provider. Besides Azure Quantum credits, IonQ offers a **Pay-as-you-go** plan with no monthly subscription fees. 
 
