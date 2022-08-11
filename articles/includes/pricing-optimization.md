@@ -1,3 +1,12 @@
+---
+author: sonialopezbravo
+ms.author: sonialopez
+ms.date: 08/10/2022
+ms.service: azure-quantum
+ms.subservice: optimization
+ms.topic: include
+---
+
 ## 1Qbit 
 
 1QBit offers two plans: a Pay-as-you-go model based on the runtime of your optimization problem, and a fixed monthly plan.
