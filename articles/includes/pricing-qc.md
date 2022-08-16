@@ -15,7 +15,7 @@ where:
 
 Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with 3 controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. One-qubit gates are billed as 0.225 of a two-qubit gate (rounded down). To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
 
-All new Azure Quantum customers benefit of a one-time $500 (USD) free Azure Quantum credits toward IonQ provider. Besides the Azure Quantum Credits plan, IonQ offers a **pay-as-you-go** plan with access to the quantum simulator and the IonQ Harmony 11-qubit quantum computer, and a **monthly susbcription** plan which expands the access to the IonQ Aria 21-qubit quantum computer. 
+All new Azure Quantum customers benefit of a one-time $500 (USD) free Azure Quantum credits toward IonQ provider to use in IonQ QPUs Harmony and Aria, and quantum simulator. Besides the Azure Quantum Credits plan, IonQ offers a **pay-as-you-go** plan with access to the quantum simulator and the IonQ Harmony 11-qubit quantum computer, and a **monthly susbcription** plan which expands the access to the IonQ Aria 23-qubit quantum computer. 
 
 ### [Azure Quantum Credits](#tab/tabid-AQcredits)
 
@@ -23,8 +23,9 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 
 |Pricing | Use is deducted from the Azure Quantum Credits based on the number of QGSs executed |
 |---|---|  
-|Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Simulator (free)</li></ul>|
-| |<ul><li>1-Qubit Gate Shot: $0.00003 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.0003 (USD) deducted from your credits</li></ul>|
+|Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
+| IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.0003 (USD) deducted from your credits</li></ul>|
+| IonQ Aria |<ul><li>1-Qubit Gate Shot: $0.000022 (USD) </li><li>2-Qubit Gate Shot: $0.00098 (USD) </li></ul>|
 
 Minimum of $1 (USD) per program execution, deducted from your credits. 
 
@@ -42,7 +43,7 @@ The Pay-as-you-go plan consists of *a la carte* access to the 11-qubit trapped i
 |Pricing | Use is charged based on the number of QGSs executed + Azure infrastructure costs |
 |---|---|  
 |Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Simulator (free)</li></ul>|
-||<ul><li>1-qubit gate shot: $0.00003 (USD) </li><li>2-qubit gate shot: $0.0003 (USD) </li></ul>|
+||<ul><li>1-Qubit Gate Shot: $0.00003 (USD) </li><li>2-Qubit Gate Shot: $0.0003 (USD) </li></ul>|
 
 Minimum of $1 (USD) per program execution.  
 
@@ -55,7 +56,7 @@ The Aria plan is a monthly subscription plan with access to the IonQ Aria 21-qub
 |Pricing | $25,000 (USD)/Month + Azure infrastructure costs |
 |---|---|  
 |Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
-||<ul><li>1-qubit gate shot: $0.000022 (USD) </li><li>2-qubit gate shot: $0.00098 (USD) </li></ul>|
+||<ul><li>1-Qubit Gate Shot: $0.000022 (USD) </li><li>2-Qubit Gate Shot: $0.00098 (USD) </li></ul>|
 
 Minimum of $1 (USD) per program execution.  
 
