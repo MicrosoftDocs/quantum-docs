@@ -1,7 +1,7 @@
 ---
-author: george-moussa
+author: SoniaLopezBravo
 description: Reference for azure.quantum.Job
-ms.author: georgenm
+ms.author: sonialopez
 ms.date: 07/26/2021
 ms.service: azure-quantum
 ms.subservice: optimization

@@ -1,7 +1,7 @@
 ---
-author: frtibble
+author: SoniaLopezBravo
 description: Reference for azure.quantum.optimization.Term
-ms.author: frtibble
+ms.author: sonialopez
 ms.date: 03/02/2021
 ms.service: azure-quantum
 ms.subservice: optimization

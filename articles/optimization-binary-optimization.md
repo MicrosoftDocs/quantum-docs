@@ -1,7 +1,7 @@
 ---
-author: aminbarzegar
+author: SoniaLopezBravo
 description: This document describes binary optimization and its use in formulating optimization problems.
-ms.author: ambarzeg
+ms.author: sonialopez
 ms.date: 10/05/2021
 ms.service: azure-quantum
 ms.subservice: optimization
