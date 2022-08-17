@@ -1,12 +1,12 @@
 ---
 author: SoniaLopezBravo
-description: This document provides the technical details of the IonQ provider
+description: This document provides the technical details of the IonQ quantum computing provider
 ms.author: sonialopez
 ms.date: 07/26/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
-title: IonQ provider 
+title: IonQ quantum computing provider for Azure Quantum
 uid: microsoft.quantum.providers.ionq
 ---
 
@@ -29,8 +29,8 @@ GPU-accelerated idealized simulator supporting up to 29 qubits, using the same s
 - Target ID: `ionq.simulator`
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles)
 
-### Quantum computer
-The IonQ QPU is a trapped ion quantum computer and is dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair.
+### IonQ Harmony quantum computer
+The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair.
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
@@ -64,6 +64,17 @@ The IonQ QPU is a trapped ion quantum computer and is dynamically reconfigurable
 
 *State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.*
 
+### IonQ Aria quantum computer
+
+IonQ Aria is IonQ's latest generation of trapped-ion quantum computer. With a 23-qubit dynamically reconfigurable sytem, IonQ Aria is available exclusively on Azure Quantum. For more information, see [IonQ Aria (ionq.com)](https://ionq.com/news/february-23-2022-ionq-aria-furthers-lead) .
+
+- Job type: `Quantum Program`
+- Data Format: `ionq.circuit.v1`
+- Target ID: `ionq.qpu.aria-1`
+- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles)
+
+IonQ Aria is available through Azure Quantum Credits plan and a separate billing plan. For more information, see [Azure Quantum pricing](https://docs.microsoft.com/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-AQcreditsQ%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#ionq).
+
 ## Native gates support and usage
 
 By default IonQ allows you to specify a quantum circuit using an abstract set of quantum gates, called `qis`, which allows flexibility and portability when writing an algorithm without worrying about optimization for the hardware.
@@ -87,7 +98,7 @@ For more information about Qiskit jobs, see [Submit a circuit with Qiskit using 
 
 ## Pricing
 
-To see IonQ billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
+To see IonQ billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#ionq).
 
 ## Limits & Quotas
 
