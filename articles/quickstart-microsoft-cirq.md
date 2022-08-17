@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to submit Cirq quantum circuits to the Azure Quantum service.
 ms.author: brbenefield
-ms.date: 05/31/2022
+ms.date: 08/17/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -14,7 +14,9 @@ uid: microsoft.quantum.quickstarts.computing.cirq
 
 # Quickstart: Submit a circuit with Cirq to Azure Quantum
 
-Learn how to use the `azure-quantum` Python package to submit Cirq quantum circuits to an IonQ or Quantinuum quantum computing target via the Azure Quantum service. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
+Learn how to use the [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview.python-only) to submit [Cirq](https://github.com/quantumlib/Cirq) quantum circuits to an IonQ or Quantinuum quantum computing target via the Azure Quantum service. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
+
+For information on how to submit a circuit with Qiskit, see [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit).
 
 ## Prerequisites
 
