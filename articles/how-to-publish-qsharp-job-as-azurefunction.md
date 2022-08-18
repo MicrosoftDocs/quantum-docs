@@ -73,6 +73,7 @@ When using an editor other than Visual Studio or VS Code, follow the command pro
 - [Optional] Create a solution for both projects
 
   ```dotnetcli
+  cd..
   dotnet new sln -n function-qsharp
   dotnet sln function-qsharp.sln add .\Service.Qsharp\Service.Qsharp.csproj
   dotnet sln function-qsharp.sln add .\Function.Csharp\Function_Csharp.csproj
