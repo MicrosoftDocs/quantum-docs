@@ -303,7 +303,7 @@ You can now test the function by using the direct URL or by passing the paramete
 
 ### Call the function and pass parameters in the request
 
-1. In Visual Studio Code, select the Azure icon in the Activity bar, and expand **Resources -> <subscription> -> Function App -> <your Function App name> -> Functions**. Right-click  the `SplitWeights` function and choose **Execute Function Now...**.
+1. In Visual Studio Code, select the Azure icon in the Activity bar, and expand **Resources -> \<subscription\> -> Function App -> \<your Function App name\> -> Functions**. Right-click  the `SplitWeights` function and choose **Execute Function Now...**.
 
     :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/execute-function-1.png" alt-text="Execute the Function via Visual Studio Code":::
 
