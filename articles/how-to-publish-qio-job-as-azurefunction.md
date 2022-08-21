@@ -7,6 +7,7 @@ ms.service: azure-quantum
 ms.topic: how-to
 ms.date: 04/06/2022
 uid: microsoft.quantum.publish-qio-as-azure-function
+ms.custom: vscode-azure-extension-update-completed
 #Customer intent: As a researcher, I want to make my quantum algorithm accessible via API so that developers without further quantum knowledge can call it via classical API-calls.
 ---
 
