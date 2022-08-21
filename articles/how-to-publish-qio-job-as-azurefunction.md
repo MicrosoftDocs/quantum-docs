@@ -210,7 +210,7 @@ So far, you've prepared the function to load the necessary Python libraries and 
         return Problem(name="Freight Balancing Problem", problem_type=ProblemType.ising, terms=terms)
     ```
 
-Your function now contains two functions. The `main` function is executed when an HTTP request is received. It parses the request and looks at the request URL. If a `mineralWeights` parameter is found in the URL, these weights are processed. If the URL doesn't contain this parameter, the request body is analyzed. If a `mineralWeights` parameter is found in the body, these weights are processed. Weights are passed to the `createProblemForMineralWeights` function that creates an Azure Quantum `Problem` object. The `main` function passes this `Problem` object to an Azure Quantum solver and returns the results.
+Your function now contains two function definitions. The `main` function is executed when an HTTP request is received. It parses the request and looks at the request URL. If a `mineralWeights` parameter is found in the URL, these weights are processed. If the URL doesn't contain this parameter, the request body is analyzed. If a `mineralWeights` parameter is found in the body, these weights are processed. Weights are passed to the `createProblemForMineralWeights` function that creates an Azure Quantum `Problem` object. The `main` function passes this `Problem` object to an Azure Quantum solver and returns the results.
 
 ## Prepare your Azure environment
 
@@ -227,7 +227,7 @@ You can now prepare the Azure target environment that will host the function. Pr
 1. Provide the following information:
 
     - **Subscription**: Choose the subscription to use. Use the subscription that contains your Azure Quantum workspace.
-    - **Resource Group**: Choose the one that also contains your Azure Quantum workspace.
+    - **Resource Group**: Choose the resource group that also contains your Azure Quantum workspace.
     - **Function App name**: Enter a globally unique name for the Function App. The name must be valid in a URL path. The name is validated to make sure that it's unique in Azure Functions.
     - **Publish**: Select `Code`.
     - **Runtime stack**: Select `Python`.
@@ -324,7 +324,7 @@ If you are done testing your Function App, you can use the following steps to de
 1. The following resource types were created automatically when you created the Function App:
 
     - a Function App
-    - a Application Insights resource
+    - an Application Insights
     - an App Service Plan
     - a Storage account
 
