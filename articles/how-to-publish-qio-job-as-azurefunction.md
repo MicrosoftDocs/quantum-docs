@@ -12,27 +12,27 @@ uid: microsoft.quantum.publish-qio-as-azure-function
 
 # Publish a QIO job as an Azure Function
 
-Learn how to deploy your QIO model as a web service. You'll accomplish this task by using an Azure Function that can be called via a Web-API. The Function receives model input via request-URL or via request-body. It then calls an Azure Quantum Solver and returns the result as JSON-string.
+Learn how to deploy your QIO job as a web service. You'll accomplish this task by using an Azure Function that can be called via a web API. The function receives input via a request URL or a request body. It then calls an Azure Quantum optimization solver and returns the result as a JSON string.
 
-You can make your QIO model and its functionality available to other developers, who will be able to integrate it into their classic code. This integration can be possible without any further knowledge of quantum concepts or QDK libraries. One for exposing the QIO functionality for that purpose is via an Azure Function that can be called via Web-API.
+You can make your QIO job and its functionality available to other developers, who will be able to integrate it into their classic code. This integration can be possible without any further knowledge of quantum concepts or QDK libraries. One method for exposing the QIO functionality for that purpose is via an Azure Function that can be called via a web API.
 
-Azure Functions is a serverless solution that allows you to host your functionality in Azure without worrying about underlying infrastructure.
+Azure Functions is a serverless solution that allows you to host your functionality in Azure without worrying about underlying infrastructure. For more information, see [Azure Functions](/azure/azure-functions/).
 
-The QIO job that will be published as an Azure Function implements the so called *number partitioning problem*. It splits a given set of integer numbers into two subsets with equal (or similar) sum of their elements. Have a look at following **MS Learn Module** to learn more about this problem and its implementation: [Solve optimization problems by using quantum-inspired optimization](/learn/modules/solve-quantum-inspired-optimization-problems/).
+The QIO job that will be published as an Azure Function implements what is called the *number partitioning problem*. It splits a given set of integer numbers into two subsets with an equal (or very close) sum of their elements. For more information about this problem and its implementation, see [Solve optimization problems by using quantum-inspired optimization](/learn/modules/solve-quantum-inspired-optimization-problems/).
 
 ## Prerequisites
 
-You need the following prerequisites to follow the steps in this article.
+You need the following configuration to complete the steps in this article.
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
-  see [Create an Azure Quantum workspace](xref:microsoft.quantum.quickstarts.optimization.qio).
+  see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - The latest version of the [Quantum Development Kit for Python](xref:microsoft.quantum.install-qdk.overview.python#install-the-qsharp-python-package).
 - The [Azure Functions Core Tools](/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools) version 3.x.
 - [Python versions that are supported by Azure Functions](/azure/azure-functions/supported-languages#languages-by-runtime-version).
 - [Visual Studio Code](https://code.visualstudio.com/) on one of the [supported platforms](https://code.visualstudio.com/docs/supporting/requirements#_platforms).
 - The [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) for Visual Studio Code.
-- The [Azure Functions extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) for Visual Studio Code.
+- The [Azure Functions extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) for Visual Studio Code, which is also available as part of the [Azure Tools extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack).
 
 ## Create a new Azure Function project
 
