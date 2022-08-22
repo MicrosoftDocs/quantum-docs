@@ -41,7 +41,7 @@ Microsoft QIO'S quotas are tracked based on the number of computing hours per mo
 
 - CPU Solver Hours: The amount of CPU solver time you may use. Tracked both at workspace level and “region x subscription” level.
 
-Microsoft QIO also have quotas for job concurrency.  
+Microsoft QIO also has quotas for job concurrency.  
 
 Up to date information on the various usage limits for each Microsoft QIO plan are available via the general [Azure subscription limits, quotas, and constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-quantum-limits) article. 
 
