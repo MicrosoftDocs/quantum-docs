@@ -23,7 +23,6 @@ This article
 + [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas):a collection of self-paced Q# quantum programming tutorials.
 + [Q# code samples](https://docs.microsoft.com/samples/browse/?languages=qsharp):
 + [Q# blog](https://devblogs.microsoft.com/qsharp/): a blog written by developers for developers. You can read about last QDK functionalities, and know about quantum challenges and hackathons. 
-+ 
 
 ## Community made content
 
@@ -45,7 +44,7 @@ Check out the following learning courses.
 
 ## Bibliography for beginners 
 
-If you are a quantum enthusiast and want to go the extra mile, the following books  will help you to learn more about quantum physics, computer science and linear albegra. 
+If you are a quantum enthusiast and want to go the extra mile, the following books  will help you to learn more about quantum physics, computer science and linear algebra. 
 
 ### Quantum Computing
 
@@ -66,7 +65,7 @@ The following publications might be good starting points to understand the mathe
 ### Elementary techniques for building controlled gates
 
 + Barenco, A., Bennett, C. H., Cleve, R., DiVincenzo, D. P., Margolus, N., Shor, P., ... & Weinfurter, H. (1995). Elementary gates for quantum computation. Physical Review A, 52(5), 3457.
-+ Jones, C. (2013). Low-overhead constructions for the fault-tolerant Toﬀoli gate. Physical Review A, 87(2), 022328
++ Jones, C. (2013). Low-overhead constructions for the fault-tolerant Toﬀoli gate. Physical Review A, 87(2), 022328.
 
 ### Techniques for preparing quantum states
 
