@@ -13,14 +13,16 @@ uid: microsoft.quantum.more-information
 
 # Further reading: Quantum computing learning resources
 
-While the tools discussed in the [quantum computing concepts](xref:microsoft.quantum.concepts.intro) section are foundational for any developer of quantum software, they by no means span the depth or breadth of what is known about quantum computer programming and algorithm design.  Since quantum computing remains a rapidly developing field, there is no one resource that has all of the information needed to learn how to best use these tools in order to solve problems.  
+In the [quantum computing concepts](xref:microsoft.quantum.concepts.intro) you will find foundational concepts for any developer of quantum software. However they don't span the depth or breadth of what is known about quantum computer programming. Since quantum computing remains a rapidly developing field, there is no one resource that has all of the information needed to learn how to best use these tools in order to solve problems.  
+
+This article 
 
 ## Microsoft Q# resources 
 
 + [MS Learn Quantum Computing modules](/learn/paths/quantum-computing-fundamentals/): an interactive, hands-on learning path. In these modules you will learn how to use the power of quantum computing and the Azure Quantum service to complete different tasks that are crucial for the space mission.
 + [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas):a collection of self-paced Q# quantum programming tutorials.
 + [Q# code samples](https://docs.microsoft.com/samples/browse/?languages=qsharp):
-+ [Q# dev blog](https://devblogs.microsoft.com/qsharp/): last QDK functionalities, quantum challenges and hackathons
++ [Q# blog](https://devblogs.microsoft.com/qsharp/): a blog written by developers for developers. You can read about last QDK functionalities, and know about quantum challenges and hackathons. 
 + 
 
 ## Community made content
@@ -43,12 +45,14 @@ Check out the following learning courses.
 
 ## Bibliography for beginners 
 
+If you are a quantum enthusiast and want to go the extra mile, the following books  will help you to learn more about quantum physics, computer science and linear albegra. 
+
 ### Quantum Computing
 
 + Nielsen, M. A. & Chuang, I. L. (2010). Quantum Computation and Quantum Information. Quantum Computation and Quantum Information, UK: Cambridge University Press, 2010.
 + Kaye, P., Laﬂamme, R., & Mosca, M. (2007). An introduction to quantum computing. Oxford University Press.
 + Rieﬀel, E. G., & Polak, W. H. (2011). Quantum computing: A gentle introduction. MIT Press.
-+ Sarah C. Kaiser and Christopher E. Granade (Manning Early Access Program began April 2019  Publication in Fall 2020). [Learn Quantum Computing with Python and Q# - A hands-on approach](https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp).
++ Sarah C. Kaiser and Christopher E. Granade. [Learn Quantum Computing with Python and Q# - A hands-on approach](https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp).
 
 ### Optimization 
 
