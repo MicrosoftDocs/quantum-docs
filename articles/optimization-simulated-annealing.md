@@ -94,7 +94,7 @@ solver = SimulatedAnnealing(workspace, sweeps=2, beta_start=0.1, beta_stop=1, re
 > [!NOTE]
 > The FPGA hardware platform option for Microsoft QIO solvers has been deprecated. Please contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com) if you have any questions.
 
-To migrate your existing Azure Quantum code to use CPU hardware instead of FPGA, simply remove the `platform` parameter as shown below:
+To migrate your existing Azure Quantum code to use CPU hardware instead of FPGA, simply remove the `platform` parameter:
 
 ```python
 # Code using FPGA solver (parameter-free)
