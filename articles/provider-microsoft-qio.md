@@ -37,7 +37,7 @@ For the most up-to-date pricing information on Microsoft's QIO offering, please 
 
 ## Limits & Quotas
 
-Microsoft QIO'S quotas are tracked based on the number of computing hours per month.
+Microsoft QIO quotas are tracked based on the number of computing hours per month.
 
 - CPU Solver Hours: The amount of CPU solver time you may use. Tracked both at workspace level and “region x subscription” level.
 
