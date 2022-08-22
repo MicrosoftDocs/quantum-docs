@@ -1,13 +1,13 @@
 ---
 author: SoniaLopezBravo
-description: This article describes Quantum Intermediate Representation QIR Alliance
+description: This article describes Microsoft Quantum Intermediate Representation for quantum computing, its relevance, use cases, and the QIR Alliance
 ms.author: sonialopez
 ms.date: 08/18/2022
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '\Bigg' ,'|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', '\rho', '\quad', '\sim', '\left\','\right\', '\%', '%']
-title: Microsoft's Quantum Intermediate Representation
+title: Microsoft Quantum Intermediate Representation | Microsoft Docs
 uid: microsoft.quantum.concepts.qir
 ---
 
@@ -65,12 +65,12 @@ entry:
   ret void
 }
 ```
-In this snippet, a few QIR features are apparent:
+In this snippet, you can see a few QIR features:
 
 - Operations in Q# (or any other quantum programming language) are represented by LLVM functionsn starting with the prefix __quantum__qis__.
 - Qubits are represented as pointers to a named opaque structure type called %Qubit.
 
-While the QIR for this trivial sample is very simple, QIR inherits all of the capabilities of LLVM to express loops, conditionals, and other complex control flow. QIR also inherits LLVM’s ability to express arbitrary classical computation.
+While the QIR for the `BellPair` operation is very simple, QIR inherits all of the capabilities of LLVM to express loops, conditionals, and other complex control flow. QIR also inherits LLVM’s ability to express arbitrary classical computation.
 
 ## Why is Quantum Intermediate Representation important
 
