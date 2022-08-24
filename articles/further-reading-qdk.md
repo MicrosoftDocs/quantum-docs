@@ -22,8 +22,8 @@ This article compiles some of the most popular resources that you may find usefu
 Learn how to develop and apply quantum computing solutions with the Quantum Development Kit and Azure Quantum services.
 
 + [MS Learn Quantum Computing modules](/learn/paths/quantum-computing-fundamentals/): an interactive, free, hands-on learning path. In these modules you will learn how to use the power of quantum computing and the Azure Quantum service to complete different tasks that are crucial for the space mission.
-+ [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas):a collection of self-paced Q# quantum programming tutorials.
-+ [Q# code samples](https://docs.microsoft.com/samples/browse/?languages=qsharp):
++ [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas): a collection of self-paced Q# quantum programming tutorials.
++ [Q# code samples](https://docs.microsoft.com/samples/browse/?languages=qsharp): start building your first quantum solution with this collection of ready-to-use code samples.
 + [Q# blog](https://devblogs.microsoft.com/qsharp/): a blog written by developers for developers. You can read about the lastest QDK and Q# insights, and quantum challenges and hackathons announcements.
 + [Research publications](https://www.microsoft.com/research/research-area/quantum-computing/?facet%5Btax%5D%5Bmsr-content-type%5D[]=3&facet%5Btax%5D%5Bmsr-research-area%5D[]=243138&sort_by=most-recent): read about the latest advancement in quantum hardware and algorithms developed by Microsoft researchers.
 
