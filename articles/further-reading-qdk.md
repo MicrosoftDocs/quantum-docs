@@ -2,7 +2,7 @@
 author: bradben
 description: A reference list with deep coverage of quantum computing topics if you want to learn more about quantum computer programming.
 ms.author: brbenefield
-ms.date: 08/22/2022
+ms.date: 08/24/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
@@ -13,40 +13,46 @@ uid: microsoft.quantum.more-information
 
 # Further reading: Quantum computing learning resources
 
-In the [quantum computing concepts](xref:microsoft.quantum.concepts.intro) you will find foundational concepts for any developer of quantum software. However they don't span the depth or breadth of what is known about quantum computer programming. Since quantum computing remains a rapidly developing field, there is no one resource that has all of the information needed to learn how to best use these tools in order to solve problems.  
+In the [quantum computing concepts](xref:microsoft.quantum.concepts.intro) you'll find foundational concepts for any developer of quantum software. However they don't span the depth or breadth of what is known about quantum computer programming. Since quantum computing remains a rapidly developing field, there is no one resource that has all of the information needed.  
 
-This article 
+This article compiles some of the most popular resources that you may find useful when learning quantum computing. 
 
-## Microsoft Q# resources 
+## Microsoft quantum computing resources 
 
-+ [MS Learn Quantum Computing modules](/learn/paths/quantum-computing-fundamentals/): an interactive, hands-on learning path. In these modules you will learn how to use the power of quantum computing and the Azure Quantum service to complete different tasks that are crucial for the space mission.
+Learn how to develop and apply quantum computing solutions with the Quantum Development Kit and Azure Quantum services.
+
++ [MS Learn Quantum Computing modules](/learn/paths/quantum-computing-fundamentals/): an interactive, free, hands-on learning path. In these modules you will learn how to use the power of quantum computing and the Azure Quantum service to complete different tasks that are crucial for the space mission.
 + [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas):a collection of self-paced Q# quantum programming tutorials.
 + [Q# code samples](https://docs.microsoft.com/samples/browse/?languages=qsharp):
-+ [Q# blog](https://devblogs.microsoft.com/qsharp/): a blog written by developers for developers. You can read about last QDK functionalities, and know about quantum challenges and hackathons. 
++ [Q# blog](https://devblogs.microsoft.com/qsharp/): a blog written by developers for developers. You can read about the lastest QDK and Q# insights, and quantum challenges and hackathons announcements.
++ [Research publications](https://www.microsoft.com/research/research-area/quantum-computing/?facet%5Btax%5D%5Bmsr-content-type%5D[]=3&facet%5Btax%5D%5Bmsr-research-area%5D[]=243138&sort_by=most-recent): read about the latest advancement in quantum hardware and algorithms developed by Microsoft researchers.
 
-## Community made content
+These and more quantum computing resources can be found in the [Microsoft's quantum learning page](https://azure.microsoft.com/resources/quantum-computing/).
 
-The following sites are created and developed by the quantum community. 
+## Q# community made content
+
+The following sites are created and developed by the quantum community who is excited about quantum programming. 
 
 + [Awesome qsharp](https://github.com/ebraminio/awesome-qsharp/): an open source list of Q# code and resources.
 + [Quantum computing StackExchange](https://quantumcomputing.stackexchange.com/questions/tagged/q%23): an online community for quantum developers to learn, and share their knowledge.
 + [Subreddit for the Q# programming language](https://www.reddit.com/r/qsharp/): an online community in Reddit to discuss the latest news and developments of Q#.
 + [Subreddit for the quantum computing](https://www.reddit.com/r/quantumcomputing/): an online community in Reddit to discuss the latest news and developments of quantum computing.
-+ [Q# Community](https://qsharp.community/): a community group that collects and maintains projects related to the Q# programming language by a community of folks who are excited about quantum programming.
++ [Q# Community](https://qsharp.community/): a community group that collects and maintains Q# programming language projects, including new libraries, algorithm implementations, and tutorials.
 
-## Quantum computing free online courses
 
-Check out the following learning courses.
+## Quantum computing online courses
 
-+ [Quantum Computing - Brilliant Course](https://brilliant.org/courses/quantum-computing/): learn to build quantum algorithms from the ground up with a quantum computer simulated in your browser.
-+ [Introduction to Quantum Computing - LinkedIn Learning](https://www.linkedin.com/learning/introduction-to-quantum-computing):  1h25m video introduction. 
-+ [Quantum Computing through Comics](https://hackaday.io/project/168554-introduction-to-quantum-computing): sunday weekly hands-on community class. 
+Check out the following quantum computing learning courses.
+
++ [Quantum Computing - Brilliant Course](https://brilliant.org/courses/quantum-computing/): learn to build quantum algorithms from the ground up with a quantum computer simulated in your browser in this course, created in collaboration with quantum researchers and practitioners from Microsoft, X, and Caltech's IQIM.
++ [Introduction to Quantum Computing - LinkedIn Learning](https://www.linkedin.com/learning/introduction-to-quantum-computing):  a 1h25m video introduction to  quantum computing when you'll see some application cases of quantum computing, opportunities and risks. 
++ [Quantum Computing through Comics - HackadayU classes](https://hackaday.io/project/168554-introduction-to-quantum-computing): learn about quantum computing concepts and algorithm programming through classroom discussion and intuitive comics.
 
 ## Bibliography for beginners 
 
-If you are a quantum enthusiast and want to go the extra mile, the following books  will help you to learn more about quantum physics, computer science and linear algebra. 
-
 ### Quantum Computing
+
+If you are a quantum enthusiast and want to start learning the theory behind quantum computing, the following publications will instruct you in topics such as quantum physics, computer science and linear algebra. 
 
 + Nielsen, M. A. & Chuang, I. L. (2010). Quantum Computation and Quantum Information. Quantum Computation and Quantum Information, UK: Cambridge University Press, 2010.
 + Kaye, P., Laﬂamme, R., & Mosca, M. (2007). An introduction to quantum computing. Oxford University Press.
@@ -61,6 +67,8 @@ The following publications might be good starting points to understand the mathe
 + Lucas, Andrew. (2014) Ising formulations of many NP problems. Frontiers in Physics.
 
 ## Advanced topics
+
+If you want to go the extra mile, the following publications go deeper into more specific concepts and at a scientific research level.
 
 ### Elementary techniques for building controlled gates
 
