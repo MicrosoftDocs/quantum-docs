@@ -28,7 +28,7 @@
     - name: What are Q# and the Quantum Development Kit
       href: overview-what-is-qsharp-and-qdk.md
     - name: Microsoft's quantum computer
-      href: overview-microsoft-quantum-computer.md
+      href: overview-microsoft-quantum-machine.md
   - name: Quickstarts
     items:
     - name: Submit a circuit with Cirq
