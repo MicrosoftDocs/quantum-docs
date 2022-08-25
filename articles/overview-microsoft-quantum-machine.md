@@ -7,17 +7,17 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
 no-loc: ['Q#', '$$v']
-title: Microsoft's quantum computing
+title: Microsoft's quantum machine
 uid: microsoft.quantum.overview.ms-computing
 ---
 
-# Microsoft's quantum computing
+# Microsoft's quantum machine
 
 Recently, Microsoft had a major scientific breakthrough that cleared a significant hurdle toward building a scaled quantum machine with topological qubits. While engineering challenges remain, this new discovery proves out a fundamental building block for its approach to scaled quantum computing.
 
 Microsoft is on the path to deliver a quantum machine as part of the Azure Quantum service. This is part of a comprehensive plan to empower innovators with quantum solutions for breakthrough impact. For more information about this scientific discovery, see the [Microsoft Research blog](https://www.microsoft.com/research/blog/microsoft-has-demonstrated-the-underlying-physics-required-to-create-a-new-kind-of-qubit/) or read the [preprint](https://arxiv.org/abs/2207.02472) of the paper.
 
-The Azure Quantum team has created a Jupyter Notebook, written with the `azure-quantum` Python package, which performs all the analysis and generates the plots that appear in the paper. All you need to load and run the notebook is a free Azure account.
+The Azure Quantum team has created a Jupyter Notebook which performs all the analysis and generates the plots that appear in the paper. All you need to load and run the notebook is a free Azure account.
 
 ## Create an Azure account
 
@@ -25,7 +25,6 @@ To start, you'll need an Azure account with an active subscription. You can [cre
 
 > [!NOTE]
 > If you have any questions regarding the workspace creation process or run into any issue at any point using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Standard Time zone (PST).
-> TBD - WHERE ELSE CAN THEY POST IF THEY HAVE QUESTIONS?
 
 ## Create an Azure Quantum workspace
 
