@@ -27,7 +27,7 @@
       href: overview-understanding-quantum-computing.md
     - name: What are Q# and the Quantum Development Kit
       href: overview-what-is-qsharp-and-qdk.md
-    - name: Microsoft's quantum computer
+    - name: Microsoft's quantum machine
       href: overview-microsoft-quantum-machine.md
   - name: Quickstarts
     items:
