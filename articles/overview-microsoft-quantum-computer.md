@@ -1,6 +1,6 @@
 ---
 author: bradben
-description: Learn how quantum computing works, how it compares to classical computing, and how it uses the principles of quantum mechanics.
+description: Load and run a Jupyter Notebook with the device data from Microsoft's research into a scaled quantum machines using topological qubits.
 ms.date: 08/24/2022
 ms.author: brbenefield
 ms.service: azure-quantum
