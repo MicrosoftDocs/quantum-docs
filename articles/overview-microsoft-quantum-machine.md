@@ -8,12 +8,12 @@ ms.subservice: qdk
 ms.topic: overview
 no-loc: ['Q#', '$$v']
 title: Microsoft's quantum machine
-uid: microsoft.quantum.overview.ms-computing
+uid: microsoft.quantum.overview.ms-machine
 ---
 
 # Microsoft's quantum machine
 
-Recently, Microsoft had a major scientific breakthrough that cleared a significant hurdle toward building a scaled quantum machine with topological qubits. While engineering challenges remain, this new discovery proves out a fundamental building block for its approach to scaled quantum computing.
+Recently, Microsoft had a major scientific breakthrough that cleared a significant hurdle toward building a scaled quantum machine with topological qubits. While engineering challenges remain, this new discovery demonstrates a fundamental building block for its approach to scaled quantum computing.
 
 Microsoft is on the path to deliver a quantum machine as part of the Azure Quantum service. This is part of a comprehensive plan to empower innovators with quantum solutions for breakthrough impact. For more information about this scientific discovery, see the [Microsoft Research blog](https://www.microsoft.com/research/blog/microsoft-has-demonstrated-the-underlying-physics-required-to-create-a-new-kind-of-qubit/) or read the [preprint](https://arxiv.org/abs/2207.02472) of the paper.
 
@@ -48,10 +48,10 @@ To create an Azure Quantum workspace, follow these steps.
 
 To view and run the notebook: 
 
-1. In your new workspace, select **Notebooks** and then select **Microsoft's quantum computer**. 
+1. In your new workspace, select **Notebooks** and then select **Microsoft's quantum machine**. 
 1. In **Microsoft's Device Data**, select **Copy to my notebooks**.
 
-    :::image type="content" source="media/mscomputer-copy-notebook.png" alt-text="Copy sample notebook.":::
+    :::image type="content" source="media/ms-machine-copy-notebook.png" alt-text="Copy sample notebook.":::
 
 1. To run all the cells in the notebook, select **Run all** (or **Alt-R**) at the top of the notebook. To step through the notebook cell-by-cell, select **Run cell** (or **Ctrl+Enter**) next to each notebook cell. 
 
@@ -62,4 +62,3 @@ To view and run the notebook:
 - [What are the Q# programming language and Quantum Development Kit (QDK)?](xref:microsoft.quantum.overview.q-sharp)
 - [Quickstart: Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal)
 - [Quickstart: Solve an optimization problem using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.optimization.qio.portal)
-
