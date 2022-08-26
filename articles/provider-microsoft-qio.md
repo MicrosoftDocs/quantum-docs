@@ -31,39 +31,17 @@ In the following table you can find a brief description and a comparison between
 | [Substochastic Monte Carlo](xref:microsoft.quantum.optimization.substochastic-monte-carlo)| Substochastic Monte Carlo is a diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It simulates the diffusion of a population of walkers in search space, while walkers are removed or duplicated based on how they perform according to the cost function.                                                                                                                                   | <ul><li>The algorithm is suitable for rough optimization landscapes where Simulated Annealing or Tabu Search might return a diverse set of solutions.</li></ul>         |
 | [Tabu Search](xref:microsoft.quantum.optimization.tabu)| Tabu Search looks at neighboring configurations.  It can accept worsening moves if no improving moves are available and prohibit moves to previously visited solutions                                                                                                        | <ul><li>Convex landscapes, high-density problems, QUBO problems.</li></ul>                                                                       |
 
-## FPGA vs. CPU
-
-For some solvers we offer two versions: an unlabeled version that runs on traditional CPUs and a labeled FPGA version. In the following table you can see the pros and cons of using FPGA solvers:
-
-| Pros/Cons  | FPGA solvers                                                                                                                                                                                                                                                                                                                                                                                           |
-|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Pros       | <ul><li>FPGA solvers run on highly-optimized hardware that enables algorithms to parallelize very efficiently. This efficiency can provide a significant performance gain when comparing CPU and FPGA solvers.</li><li>FPGA solvers use very condensed memory representation. This means that problems with a large number of terms may fail on a CPU solver due to a lack of memory, but still run on an FPGA implementation of that solver.</li></ul> |
-| Cons       | <ul><li>Microsoft FPGA solvers support up to 65535 variables. This is a hard limitation.</li><li>To achieve the best performance, FPGA solvers use 32-bit floating point operations. As a result, the accuracy of FPGA solvers is a little lower than for other CPU solvers.</li></ul>                                                                                                                                  |
-
-### FPGA Regional Availability
-
-FPGA-based solvers are only available in a limited set of Azure regions. When creating your Azure Quantum workspace, you can see if FPGA targets are available in the region that you selected by accessing the Microsoft QIO provider blade on the **Create** screen. Regions that offer access to FPGA solvers will display **FPGA simulated annealing** in their list of available targets. 
-
-For existing workspaces, you can check the **Providers** blade. Select **Modify** to view your Microsoft QIO plan. If your workspace is in a region where FPGA solvers are available, **FPGA simulated annealing** will be available in the list of targets. 
-
-### Recommendations for FPGA solvers
-
-FPGA solvers use the same parameters as their corresponding CPU solvers. However, for the best performance you should tune the parameters of FPGA solvers instead of directly using the CPU solvers' parameters. For example, FPGA solvers build about 200 parallel pipelines, and each pipeline can handle one restart, so the restarts of FPGA solver should be no less than 200.
-
-FPGA solvers have an initialization time that may take a large percentage of the total runtime for small problems. If your problem can be solved on a CPU solver within a number of seconds, then you will likely not see a performance gain by switching to FPGA. We recommend using FPGA solvers when the execution timing on CPU is at least several minutes.
-
 ## Pricing
 
-For the most up-to-date pricing information on Microsoft's QIO offering, please refer to the Providers tab of your workspace on the [Azure portal](https://portal.azure.com/) or visit the [Microsoft optimization pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
+For the most up-to-date pricing information on Microsoft's QIO offering, please refer to the **Providers** tab of your workspace in the [Azure portal](https://portal.azure.com/) or visit the [Microsoft optimization pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
 
 ## Limits & Quotas
 
-Microsoft QIO'S quotas are tracked based on the number of computing hours per month. 
+Microsoft QIO quotas are tracked based on the number of computing hours per month.
 
-- FPGA Job Hours: The amount of FPGA solver time you may use. Tracked both at workspace level and “region x subscription” level. 
 - CPU Solver Hours: The amount of CPU solver time you may use. Tracked both at workspace level and “region x subscription” level.
 
-Microsoft QIO also have quotas for job concurrency – separate for CPU and FPGA jobs.  
+Microsoft QIO also has quotas for job concurrency.  
 
 Up to date information on the various usage limits for each Microsoft QIO plan are available via the general [Azure subscription limits, quotas, and constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-quantum-limits) article. 
 

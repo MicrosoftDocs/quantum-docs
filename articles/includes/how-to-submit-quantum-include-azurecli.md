@@ -80,8 +80,6 @@ You will also find a full reference for all commands and features available thro
    Microsoft   microsoft.paralleltempering.cpu                 Available  0
    Microsoft   microsoft.simulatedannealing-parameterfree.cpu  Available  0
    Microsoft   microsoft.simulatedannealing.cpu                Available  0
-   Microsoft   microsoft.paralleltempering.fpga                Available  0
-   Microsoft   microsoft.simulatedannealing.fpga               Available  0
    ionq        ionq.qpu                                        Available  0
    ionq        ionq.simulator                                  Available  0
    ```
