@@ -19,7 +19,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 ## 2022-08-26
 
-### QDK version 0.25.22????
+### QDK version 0.25.227214
 
 - Added support for IonQ Aria QPU in Azure Quantum.
 - The quantum libraries contain now the operation `ApplyFunctionWithTableLookup` ([QuantumLibraries#607](https://github.com/microsoft/QuantumLibraries/issues/607)) that allows you to implement classical real-valued functions up to a given precision using table lookup techniques. Thanks to Rajiv Krishnakumar (@rajkk1) for contributing this new feature to the Q# libraries.
