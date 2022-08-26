@@ -32,7 +32,7 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
 ## Create a group in the Azure Active Directory
 
-1. Sign in to the [Azure portal](https://portal.azure.com) using a Global administrator account for the directory.
+1. Sign in to the [Azure portal](https://portal.azure.com).
 
 1. Search for and select **Azure Active Directory**.
 
@@ -98,9 +98,15 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
     :::image type="content" source="media/bulk-invite-users-upload-csv-successful.png" alt-text="Screen shot showing that the CSV uploaded successfully.":::
 
+1. After the bulk invite users operation completes, your users will receive an invitation email. They want to accept the invitation.
+
+1. On the **Review permissions** page, users must select **Accept** before they can continue.
+
+1. After permissions are accepted, your users will be added to the Azure Active Directory.
+
 ## Bulk import members to your group
 
-1. After the bulk invite is complete, download all Azure Active Directory users into a CSV file. Go to **All users**, and select **Bulk operations**, and then **Download users**. 
+1. After the bulk invite is complete, download all Azure Active Directory users into a CSV file. Go to **All users**, and select **Download users**. 
 
 1. In the **Download users** pane, select **Start**.
 
@@ -112,7 +118,7 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
 1. On the **Bulk import group** pane, select **Download** to get a valid CSV template.
 
-1. Open the CSV template and add a line for each user you want to invite to the group. Copy and paste their User Principal Names from the CSV that you downloaded in step 1.
+1. Open the CSV template and add a line for each user you want to invite to the group. Copy and paste your users' User Principal Names from the CSV that you downloaded in step 1. The third row provides an example value. You must remove the example row and replace it with your own entry.
 
     :::image type="content" source="media/bulk-invite-users-CSV-user-principal-names.png" alt-text="Screen shot showing the group import members template CSV.":::
 
@@ -122,9 +128,5 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
 1. Once the **File uploaded successfully** message appears, select **Submit** to start the bulk import operation.
 
-1. After the bulk import group operation completes, your group members will receive an invitation email. They want to accept the invitation.
-
-1. On the **Review permissions** page, users must select **Accept** before they can continue.
-
-1. After permissions are accepted, your group members will be added to the group succesfully. 
+1. After the bulk import group operation completes, your group members will be added to the group successfully.
 
