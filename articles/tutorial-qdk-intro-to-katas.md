@@ -85,8 +85,7 @@ Each kata explores a fundamental concept of quantum computing, with some coverin
 |[GHZ game](https://github.com/microsoft/QuantumKatas/tree/main/GHZGame)|The GHZ game is another nonlocal game, but involves three players.|
 |[Mermin-Peres magic square game](https://github.com/microsoft/QuantumKatas/tree/main/MagicSquareGame)|A series of exercises that explores [quantum pseudo-telepathy](https://en.wikipedia.org/wiki/Quantum_pseudo-telepathy#The_Mermin%E2%80%93Peres_magic_square_game) to solve a magic square game.  |
 
-## Resources
+## Next steps
 
-See the full series of [Quantum Katas](https://github.com/microsoft/QuantumKatas)
-
-[Run the katas online](https://aka.ms/try-quantum-katas)
+* Explore the full series of [Quantum Katas](https://github.com/microsoft/QuantumKatas)
+* Run the Quantum Katas [online](https://aka.ms/try-quantum-katas)
