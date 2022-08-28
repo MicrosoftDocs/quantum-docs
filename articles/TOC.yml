@@ -79,6 +79,8 @@
         href: concepts-open-systems.md
       - name: Theory of Grover's algorithm
         href: concepts-grovers.md
+      - name: Quantum Intermediate Representation
+        href: concepts-qir.md
   - name: Resources
     items: 
     - name: Provider reference
