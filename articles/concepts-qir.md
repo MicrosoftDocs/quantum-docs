@@ -17,7 +17,10 @@ Quantum Intermediate Representation (QIR) is a Microsoft-developed intermediate 
 
 ## What is an intermediate representation
 
-An intermediate representation is – as its name indicates – an intermediary step in the workflow between the source code and the hardware itself. A common pattern in compilers is to start by compiling the source language into an intermediate representation. 
+A common pattern in classical compilers is to start by compiling the source language into an intermediate representation. An intermediate representation is – as its name indicates – an intermediary step in the workflow between the source code and the hardware itself. 
+
+An intermediate representation acts as an abstract representation of a program. All programs, irrespective of the language they are written in, are translated into this intermediate representation by a so-called front-end compiler, while a back-end component is responsible for translating that intermediate representation into a machine representation. The intermediate representation allows thus to decouple source languages from hardware platforms and makes it possible to build a compiler in a modular way, where each new language only requires a new front-end to be supported on all platforms for which a back-end is available.
+
 The intermediate representation is typically designed to allow many different source languages to be represented. Moreover, at this intermediate level it is also possible to perform some optimization and circuit rearrangement that makes the final implementation more efficient. 
 Once the final target execution platform is known, the intermediate representation can be compiled to actual executable code.
 
@@ -31,16 +34,13 @@ QIR is based on the popular open-source [LLVM](https://llvm.org/) compiler. LLVM
 
 The fact that LLVM is the underlying toolchain means that QIR is naturally able to process both classical and quantum logic. This feature is essential for hybrid quantum–classical algorithms, which have become increasing important for applications of quantum computing.
 
-For more information, see [QIR Specification](https://github.com/qir-alliance/qir-spec). If you are interested in compiler tools and projects leveraging QIR, please take a look at other [QIR repositories](https://github.com/qir-alliance#contributing).
+For more information, see [QIR Specification](https://github.com/qir-alliance/qir-spec). If you are interested in compiler tools and projects leveraging QIR, please take a look at these [QIR repositories](https://github.com/qir-alliance#contributing).
 
 Quantum SDKs and languages appear and evolve at a fast pace, along with new quantum processors with unique and distinct capabilities from each other. To provide interoperability between new languages and new hardware capabilities it is imperative for the ecosystem to develop and share a forward-looking intermediate representation that works with present and future quantum hardware. In an attempt to meet these objectives the Quantum Intermediate Representation Alliance has been created.
 
 ### What is the Quantum Intermediate Representation Alliance
 
 The [Quantum Intermediate Representation Alliance](https://qir-alliance.org) is a joint effort to develop a forward-looking quantum intermediate representation with the goal to enable full interoperability within the quantum ecosystem, reduce development effort from all parties, and provide a representation suitable for current and future heterogenous quantum processors.
-
-The QIR Alliance is part of the [Linux Foundation’s Joint Development Foundation](https://linuxfoundation.org/press-release/new-quantum-intermediate-representation-alliance-serves-as-common-interface-for-quantum-computing-development/#:~:text=%E2%80%9CThe%20Quantum-Intermediate%20Representation%20Alliance%2C%20also%20known%20as%20QIRA%2C,said%20Alex%20Chernoguzov%2C%20Honeywell%20Quantum%20Chief%20Engineer%2C%20Honeywell) 
-work on open standards. Founding members include Microsoft, as well as Honeywell, Oak Ridge National Laboratory, Quantum Circuits Inc. and Rigetti Computing.
 
 With their collective work and partnership, the QIR Alliance aim to:
 
@@ -49,6 +49,9 @@ With their collective work and partnership, the QIR Alliance aim to:
 - Build on state-of-the-art compiler technology and leverage existing tools, libraries and learnings from high-performance computing.
 - Allow for incremental and progressive evolution in how classical and quantum computations can interact at the hardware level.
 - Provide the flexibility to easily connect emerging technologies in a way that permits to experiment with distinct and differentiated hardware capabilities.
+
+The QIR Alliance is part of the [Linux Foundation’s Joint Development Foundation](https://linuxfoundation.org/press-release/new-quantum-intermediate-representation-alliance-serves-as-common-interface-for-quantum-computing-development/#:~:text=%E2%80%9CThe%20Quantum-Intermediate%20Representation%20Alliance%2C%20also%20known%20as%20QIRA%2C,said%20Alex%20Chernoguzov%2C%20Honeywell%20Quantum%20Chief%20Engineer%2C%20Honeywell) 
+work on open standards. Founding members include Microsoft, as well as Honeywell, Oak Ridge National Laboratory, Quantum Circuits Inc. and Rigetti Computing.
 
 ## What does Quantum Intermediate Representation look like
 
@@ -85,34 +88,12 @@ For more information, watch the Microsoft’s developer session from [the 2021 Q
 
 ## Why is Quantum Intermediate Representation important
 
-QIR opens up a number of interesting possibilities. For example, using clang, LLVM C front-end, it would be possible to compile QIR into executable code for classical hardware,
+QIR is an essential tool when running quantum algorithms on real hardware. But even if you don't want to go that far and just want to develope algorithms at a more theoretical level, intermediate representations can play an important role.
 
-One application enabled by QIR is to use the clang compiler to compile QIR into executable machine code for a classical target. This provides an easy path to building a simulator in C or C++ by implementing the quantum instruction set functions mentioned above.
+For example, one application enabled by QIR is to use [the Clang compiler](https://clang.llvm.org/), a C language frontend for LLVM, to compile QIR into executable machine code for a classical target. This provides an easy path to building a simulator in C or C++ by implementing the quantum instructions,  which could simplify the creation of quantum simulators. 
 
-Another application is to use the standard LLVM “pass” infrastructure to write quantum optimizers that operate on QIR. The source- and target-independent approach of QIR allows optimizations to be used with many different computation languages and computing platforms.
+Moreover, you could use the intermediate representation to generate code that is later on given as input into a quantum simulator – instead of a real device – which could potentially use a different language than your source one. In this way, you can easily compare and benchmark different languages or simulators using a common framework.
 
-QIR has been shared with some partners already to get early feedback. For instance, Oak Ridge National Laboratory’s Quantum Computer Scientist and XACC Project Alex McCaskey says “ORNL is working closely with the Microsoft quantum compiler team to enable compilation of high-level Q# programs to the diverse set of OLCF quantum hardware platforms via integration with the XACC quantum programming framework.”
+In terms of optimization, there are optimization steps that can be performed at the intermediate level that can make the overall algorithm implementation more efficient. Investigating this optimization of your input code can help to get a better understanding of where you can make algorithms more efficient and how to improve the quantum programming languages.
 
-
-
-
-
-
-QIR is an essential tool when running quantum algorithms on real hardware. But even if we do not want to go that far and are just developing algorithms at a more theoretical level, intermediate representations can play an important role!
-
-First, there are optimization steps that can be performed at the intermediate level that can make the overall implementation more efficient. Investigating this optimisation of your input code can help to get a better understanding of where we can make algorithms more efficient and how to improve the quantum programming languages.
-
-Moreover, you could use the intermediate representation to generate code that is later on given as input into a quantum simulator – instead of a real device – which could potentially use a different language than your source one. In this way, we can easily compare and benchmark different languages or simulators using a common framework.
-
-
-
-
- which could simplify the creation of quantum simulators. In addition, it would be possible to create quantum optimizers to transform the intermediate representation in a language- and hardware-independent way, which would enable reusing those optimizers for different languages and computing platforms with almost no effort.
-
-The idea of a language-independent intermediate representation for programs is at the very heart of LLVM and other compilers and is key to enable them to support many different programming languages. In short, an intermediate representation acts as an abstract representation of a program. All programs, irrespective of the language they are written in, are translated into this intermediate representation by a so-called front-end compiler, while a back-end component is responsible for translating that intermediate representation into a machine representation. The intermediate representation allows thus to decouple source languages from hardware platforms and makes it possible to build a compiler in a modular way, where each new language only requires a new front-end to be supported on all platforms for which a back-end is available.
-
-
- 
-
-
-
+Another application is to use the standard LLVM “pass” infrastructure to create quantum optimizers that operate on QIR. The language- and hardware-independent approach of QIR enables reusing those optimizers for different computation languages and computing platforms with almost no effort. 
