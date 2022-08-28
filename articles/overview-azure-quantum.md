@@ -1,12 +1,12 @@
 ---
 author: SoniaLopezBravo
 description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs or solve optimization problems in the cloud.
-ms.date: 07/27/2022
+ms.date: 08/29/2022
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
-title: What is Azure Quantum?
+title: What is Azure Quantum? | Microsoft Docs
 uid: microsoft.quantum.azure-quantum-overview
 ---
 
@@ -23,6 +23,14 @@ Azure Quantum provides the best development environment to create quantum algori
 > **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) (check out free Azure accounts [for students](https://azure.microsoft.com/free/students/)). With Azure you can create, deploy, and manage applications across multiple clouds, on-premises, and at the edge. You will get 200 USD Azure credit to use in other Azure services. 
 
 
+- [The parts of Azure Quantum](#the-parts-of-azure-quantum)
+- [How to get started with Azure Quantum?](#how-to-get-started-with-azure-quantum)
+- [Who is Azure Quantum for?](#who-is-azure-quantum-for)
+- [Why use quantum computing?](#why-use-quantum-computing)
+- [What are Q# and the Quantum Development Kit?](#what-are-q-and-the-quantum-development-kit)
+- [Workflow of the quantum software development](#workflow-of-the-quantum-software-development)
+- [Quantum cloud solutions available on Azure Quantum](#quantum-cloud-solutions-available-on-azure-quantum)
+
 ## The parts of Azure Quantum
 
 Azure Quantum offers you two main paths of quantum solutions:
@@ -32,11 +40,30 @@ Azure Quantum offers you two main paths of quantum solutions:
 
 With Azure Quantum and the [Quantum Development Kit toolset](xref:microsoft.quantum.overview.q-sharp), you will be able to program your quantum algorithms and optimization solutions, then apply those quantum solutions within the existing Azure platform to achieve real-world impacts even before the development of a general-purpose quantum computer. 
 
+## How to get started with Azure Quantum?
+
+[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
+
+Start using Azure Quantum is very easy and free of cost for new users. To submit you quantum programs and optimization solutions to Azure Quantum you want to create a quantum workspace
+
+1. Azure account: If you don't have one yet, you can [create an Azure account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) for free. 
+
+1. Subscription: When you create an Azure account, you will get a free trial subscription. you can create a new one, or use an existing one. 
+
+1. Resource group, which is like a container for all the resources you may need. You can select an existing resource group or create a new one.  
+
+1. Quantum workspace. When creating a workspace from the Azure portal, you can select “Quick Create” and it automatically creates the resource group and adds the default providers. Or you can select “Advance create” and choose the resource group and the providers. Azure Quantum offers first and third-party providers for quantum computing and optimization. Learn more in [Create an Azure Quantum workspace]().
+
+1. 
+
+ 
+
+When you create your quantum workspace, you will automatically get free 500 US Dollars in Azure Quantum Credits for use with each quantum hardware provider. That is right, you have 500 US Dollars for each one.  
+
+
 ## Who is Azure Quantum for?
 
 Azure Quantum is for individuals and teams who want to take a step forward and bring quantum computation into production.
-
-[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 ### Industry solutions
 
@@ -65,7 +92,7 @@ To learn more about research resources and career opportunities, see the [Micros
 
 If you are an educator, a student, or quantum enthusiast, Azure Quantum is a great tool for teaching quantum computing and quantum applications. You will broaden your learning through the access to the most diverse set of quantum technologies, learn the basics of quantum computing and the quantum programming language Q#, and discover the areas where quantum computers have the potential to make a big impact.  In addition to using the default USD 500 in Azure Quantum credits for a class project, an [Azure for Students](https://azure.microsoft.com/free/students/) account will jumpstart the learning journey with an additional USD 100 in traditional Azure credits.
 
-## Why use quantum computing
+## Why use quantum computing?
 
 Quantum computers harness the unique behavior of quantum physics—such as superposition, entanglement, and quantum interference—and apply it to computing. This introduces new concepts to traditional programming methods. Quantum effects empower quantum computers for calculating exponentially more information and solve more complicated problems. When designed to scale, quantum computers will have capabilities that exceed today's most powerful supercomputers. 
 
