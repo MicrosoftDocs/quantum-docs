@@ -78,7 +78,7 @@ entry:
 ```
 In this snippet, you can see a few QIR features:
 
-- Operations in Q# (or any other quantum programming language) are represented by LLVM functionsn starting with the prefix __quantum__qis__.
+- Operations in Q# (or any other quantum programming language) are represented by LLVM functions starting with the prefix __quantum__qis__.
 - Qubits are represented as pointers to a named opaque structure type called %Qubit.
 
 While the QIR for the `CreateBellPair` operation is very simple, QIR inherits all of the capabilities of LLVM to express loops, conditionals, and other complex control flow. QIR also inherits LLVM’s ability to express arbitrary classical computation.
