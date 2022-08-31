@@ -32,7 +32,7 @@ QIR is an intermediate representation for quantum programs developed by the QIR 
 
 QIR is based on the popular open-source [LLVM](https://llvm.org/) compiler. LLVM  is a collection of modular and reusable compiler and toolchain technologies that has been adapted by a wide set of languages. QIR specifies a set of rules for representing quantum constructs in LLVM, however it does not require any extensions or modifications to LLVM. For more information about LLVM-based compilers, see [this Gitbook about mapping to LLVM IR](https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/README.html).
 
-The fact that LLVM is the underlying toolchain means that QIR is naturally able to process both classical and quantum logic. This feature is essential for hybrid quantum–classical algorithms, which have become increasing important for applications of quantum computing.
+The fact that LLVM is the underlying toolchain means that QIR is naturally able to process both classical and quantum logic. This feature is essential for hybrid quantum–classical algorithms, which have become increasingly important for applications of quantum computing.
 
 For more information, see [QIR Specification](https://github.com/qir-alliance/qir-spec). If you are interested in compiler tools and projects leveraging QIR, please take a look at these [QIR repositories](https://github.com/qir-alliance#contributing).
 
