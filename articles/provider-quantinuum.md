@@ -24,9 +24,15 @@ Quantinuum provides access to trapped-ion systems with high-fidelity, fully conn
 
 The following targets are available from this provider:
 
-- [Syntax Checker](#syntax-checkers)
-- [System Model H1 Emulator](#system-model-h1-emulators)
-- [System Model H1](#system-model-h1)
+
+|Target name|	Target ID|	Number of qubits|	Description|
+|---|---|---|---|
+|[H1-1 Syntax Checker](#syntax-checkers) |	quantinuum.hqs-lt-s1-apival	|20 qubits| Use this to validate quantum programs against the H1-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
+|[H1-2 Syntax Checker](#syntax-checkers) |	quantinuum.hqs-lt-s2-apival |	12 qubits	|Use this to validate quantum programs against the H1-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
+|[H1-1 Emulator](#system-model-h1-emulators) |	quantinuum.hqs-lt-s1-sim |	20 qubits	| Uses a realistic physical model and noise model of H1-1.|
+|[H1-2 Emulator](#system-model-h1-emulators)|	quantinuum.hqs-lt-s2-sim |	12 qubits	|Quantinuum's H1-2 Emulator. Uses a realistic physical model and noise model of H1-2.|
+|[H1-1](#system-model-h1)|	quantinuum.hqs-lt-s1 |	20 qubits|	Quantinuum's H1-1 trapped ion device.|
+|[H1-2](#system-model-h1)|	quantinuum.hqs-lt-s2	| 12 qubits	|Quantinuum's H1-2 trapped ion device.|
 
 ## Syntax Checkers
 
@@ -34,10 +40,12 @@ We recommend that users first validate their code using a Syntax Checker. This i
 
 - Job type: `Simulation`
 - Data Format: `quantinuum.openqasm.v1`
-- Target ID: `quantinuum.hqs-lt-s1-apival` or `quantinuum.hqs-lt-s2-apival`
+- Target ID:
+  - H1-1 Syntax Checker: `quantinuum.hqs-lt-s1-apival` 
+  - H1-2 Syntax Checker: `quantinuum.hqs-lt-s2-apival`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
-Billing information:  No charge for usage.
+Syntax Checkers usage is offered free-of-charge.
 
 ## System Model H1 Emulators
 
@@ -45,10 +53,12 @@ After validating the syntax of their code with a Syntax Checker, users can take 
 
 - Job type: `Simulation`
 - Data Format: `quantinuum.openqasm.v1`
-- Target ID:  `quantinuum.hqs-lt-s1-sim` or `quantinuum.hqs-lt-s2-sim`
+- Target ID: 
+  - H1-1 Emulator: `quantinuum.hqs-lt-s1-sim` 
+  - H1-2 Emulator: `quantinuum.hqs-lt-s2-sim`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
-Billing information: H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see Billing information for the [System Model H1](#system-model-h1).
+H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
 ## System Model H1
 
@@ -63,7 +73,6 @@ Both System Model H1 hardware H1-1 and H1-2 are continuously upgraded throughout
 - Target ID:
   - H1-1: `quantinuum.hqs-lt-s1` 
   - H1-2: `quantinuum.hqs-lt-s2`
-  - H1 machine family: `quantinuum.hqs-lt`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
 ### Technical Specifications
@@ -109,7 +118,7 @@ where:
 - $N_{m}$ is the number of state preparation and measurement (SPAM) operations in a circuit including initial implicit state preparation and any intermediate and final measurements and state resets.
 - $C$ is the shot count.
 
-Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the “Credits and quotas” blade and select the “Quotas” tab of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
+Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the **Credits and quotas** blade and select the **Quotas** tab of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
 
 > [!NOTE]
 > If you are using an [Azure Quantum Credits](xref:microsoft.quantum.credits) plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
