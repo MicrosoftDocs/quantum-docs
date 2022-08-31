@@ -28,19 +28,21 @@ This approach allows many source languages to share a common set of optimizers a
 
 ## What is Quantum Intermediate Representation?
 
-QIR is an intermediate representation for quantum programs developed by the QIR Alliance, to which Microsoft belongs. It provides a common interface that supports many languages and target platforms for quantum computation. While it supports Q#, QIR is not specific to Q#: any programming language for gate-based quantum computing can be represented in QIR. It is hardware-agnostic, which means that it does not specify a quantum instruction or gate set, leaving that to the target computing environment. 
+QIR is an intermediate representation for quantum programs developed by the QIR Alliance, to which Microsoft belongs. It provides a common interface that supports many languages and target platforms for quantum computation. You can think of QIR as a universal mid-layer language that enables communication between high-level languages and machines. While it supports Q#, QIR is not specific to Q#: any programming language for gate-based quantum computing can be represented in QIR. It is hardware-agnostic, which means that it does not specify a quantum instruction or gate set, leaving that to the target computing environment. 
 
-QIR is based on the popular open-source [LLVM](https://llvm.org/) compiler. LLVM  is a collection of modular and reusable compiler and toolchain technologies that has been adapted by a wide set of languages. QIR specifies a set of rules for representing quantum constructs in LLVM, however it does not require any extensions or modifications to LLVM. For more information about LLVM-based compilers, see [this Gitbook about mapping to LLVM IR](https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/README.html).
+QIR is based on the popular open-source [LLVM](https://llvm.org/) classical compiler. LLVM  is a collection of modular and reusable compiler and toolchain technologies that has been adapted by a wide set of languages. QIR specifies a set of rules for representing quantum constructs in LLVM, however it does not require any extensions or modifications to LLVM. For more information about LLVM-based compilers, see [this Gitbook about mapping to LLVM IR](https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/README.html).
 
-The fact that LLVM is the underlying toolchain means that QIR is naturally able to process both classical and quantum logic. This feature is essential for hybrid quantum–classical algorithms, which have become increasingly important for applications of quantum computing.
+The fact that LLVM is the underlying toolchain means that QIR is naturally able to process both classical and quantum logic. This feature is essential for hybrid quantum–classical algorithms, which have become increasingly important for applications of quantum computing. In addition, it allows you to leverage compilation and optimization tools from the classical computing industry, and, therefore, to reduce the cost of writing translations.
+
+Many leading quantum computing industries have adopted QIR already. For example, Quantum Circuits Inc., Quantinuum, Rigetti, Nvidia and Oak Ridge National Laboratory have announced that they’re going to build their compilers through QIR.
 
 For more information, see [QIR Specification](https://github.com/qir-alliance/qir-spec). If you are interested in compiler tools and projects that use QIR, please take a look at these [QIR repositories](https://github.com/qir-alliance#contributing).
-
-Quantum SDKs and languages appear and evolve at a fast pace, along with new quantum processors with unique and distinct capabilities from each other. To provide interoperability between new languages and new hardware capabilities it is imperative for the ecosystem to develop and share a forward-looking intermediate representation that works with present and future quantum hardware. In an attempt to meet these objectives the Quantum Intermediate Representation Alliance has been created.
 
 ### What is the Quantum Intermediate Representation Alliance?
 
 The [Quantum Intermediate Representation Alliance](https://qir-alliance.org) is a joint effort to develop a forward-looking quantum intermediate representation with the goal to enable full interoperability within the quantum ecosystem, reduce development effort from all parties, and provide a representation suitable for current and future heterogenous quantum processors.
+
+Quantum SDKs and languages appear and evolve at a fast pace, along with new quantum processors with unique and distinct capabilities from each other. To provide interoperability between new languages and new hardware capabilities it is imperative for the ecosystem to develop and share a forward-looking intermediate representation that works with present and future quantum hardware.
 
 With their collective work and partnership, the QIR Alliance aim to:
 
