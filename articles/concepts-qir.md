@@ -17,7 +17,7 @@ Quantum Intermediate Representation (QIR) is an intermediate representation whic
 
 ## What is an intermediate representation?
 
-A common pattern in classical compilers is to start by compiling the source language into an intermediate representation. An intermediate representation is – as its name indicates – an intermediary step in the workflow between the source code and the hardware itself. 
+A common pattern in classical compilers is to start by compiling the source language into an intermediate representation. An intermediate representation is – as its name indicates – an intermediary step in the conversion of instructions from source code to machine language. 
 
 An intermediate representation acts as an abstract representation of a program. All programs, irrespective of the language they are written in, are translated into this intermediate representation by a so-called front-end compiler, while a back-end component is responsible for translating that intermediate representation into a machine representation. The intermediate representation allows thus to decouple source languages from hardware platforms and makes it possible to build a compiler in a modular way, where each new language only requires a new front-end to be supported on all platforms for which a back-end is available.
 
