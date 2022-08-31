@@ -48,7 +48,7 @@ With their collective work and partnership, the QIR Alliance aim to:
 - Enable the development of shared libraries both for quantum application development, and for quantum compiler development.
 - Build on state-of-the-art compiler technology and leverage existing tools, libraries and learnings from high-performance computing.
 - Allow for incremental and progressive evolution in how classical and quantum computations can interact at the hardware level.
-- Provide the flexibility to easily connect emerging technologies in a way that permits to experiment with distinct and differentiated hardware capabilities.
+- Provide the flexibility to easily connect emerging technologies in a way that permits experimentation with distinct and differentiated hardware capabilities.
 
 The QIR Alliance is part of the [Linux Foundation’s Joint Development Foundation](https://linuxfoundation.org/press-release/new-quantum-intermediate-representation-alliance-serves-as-common-interface-for-quantum-computing-development/#:~:text=%E2%80%9CThe%20Quantum-Intermediate%20Representation%20Alliance%2C%20also%20known%20as%20QIRA%2C,said%20Alex%20Chernoguzov%2C%20Honeywell%20Quantum%20Chief%20Engineer%2C%20Honeywell) 
 work on open standards. Founding members include Microsoft, as well as Honeywell, Oak Ridge National Laboratory, Quantum Circuits Inc. and Rigetti Computing.
