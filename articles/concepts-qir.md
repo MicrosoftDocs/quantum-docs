@@ -89,7 +89,7 @@ For more information, watch Microsoft’s developer session from [the 2021 Q2B e
 
 QIR is an essential tool when running quantum algorithms on real hardware. But intermediate representations can play an important role even if you just want to develop algorithms at a more theoretical level,
 
-For example, one application enabled by QIR is to use [the Clang compiler](https://clang.llvm.org/), a C language frontend for LLVM, to compile QIR into executable machine code for a classical target. This provides an easy path to building a simulator in C or C++ by implementing the quantum instructions,  which could simplify the creation of quantum simulators. 
+For example, one application enabled by QIR is to use [the Clang compiler](https://clang.llvm.org/), a C language front end for LLVM, to compile QIR into executable machine code for a classical target. This provides an easy path to building a simulator in C or C++ by implementing the quantum instructions,  which could simplify the creation of quantum simulators. 
 
 Moreover, you could use the intermediate representation to generate code that is later on given as input into a quantum simulator – instead of a real device – which could potentially use a different language than your source one. In this way, you can easily compare and benchmark different languages or simulators using a common framework.
 
