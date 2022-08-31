@@ -83,7 +83,7 @@ In this snippet, you can see a few QIR features:
 
 While the QIR for the `CreateBellPair` operation is very simple, QIR inherits all of the capabilities of LLVM to express loops, conditionals, and other complex control flow. QIR also inherits LLVM’s ability to express arbitrary classical computation.
 
-For more information, watch the Microsoft’s developer session from [the 2021 Q2B event](https://www.youtube.com/watch?v=nVy5BBDKxOU).
+For more information, watch Microsoft’s developer session from [the 2021 Q2B event](https://www.youtube.com/watch?v=nVy5BBDKxOU).
 
 ## Why is Quantum Intermediate Representation important?
 
