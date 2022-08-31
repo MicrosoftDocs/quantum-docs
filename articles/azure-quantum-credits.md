@@ -19,7 +19,7 @@ Azure Quantum Credits can be used to run programs on quantum hardware.
 
 First-time users automatically get **$500 (USD) free Azure Quantum Credits** for use with each participating quantum hardware provider. Your free Azure Quantum Credits become available once you [create a new Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
-Credits are shared for all workspaces within a single subscription and region. That is, you will get free $500 (USD) Azure Quantum credits for each quantum hardware provider when you create your first Azure Quantum workspace, but the following workspaces you create within the same subscription and region will share the credits plan.
+Credits are shared for all workspaces within a single subscription and region. That is, you will get $500 (USD) free Azure Quantum credits for each quantum hardware provider when you create your first Azure Quantum workspace, but the following workspaces you create within the same subscription and region will share the credits plan.
 
 Once you have consumed all the credits, you will get error messages when submitting new jobs, and you can then upgrade to a new plan to keep using the selected quantum hardware providers.
 
