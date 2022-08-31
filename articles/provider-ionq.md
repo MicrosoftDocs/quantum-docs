@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the IonQ quantum computing provider
 ms.author: sonialopez
-ms.date: 07/26/2022
+ms.date: 08/26/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -19,9 +19,16 @@ IonQ’s quantum computers perform calculations by manipulating the hyperfine en
 - Publisher: [IonQ](https://ionq.com)
 - Provider ID: `ionq`
 
-## Targets
+The following targets are available from this provider:
 
-### Quantum simulator
+|Target name |	Target ID|	Number of qubits|	Description|
+|---|---|---|---|
+|[Quantum simulator](#quantum-simulator)	|ionq.simulator|	29 qubits|	IonQ's cloud-based idealized simulator. Free of cost.|
+|[IonQ Harmony](#ionq-harmony-quantum-computer) |	ionq.qpu	|11 qubits	|IonQ's trapped-ion quantum computer.|
+|[IonQ Aria](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|23 qubits	|IonQ's Aria  trapped-ion quantum computer.|
+
+
+## Quantum simulator
 GPU-accelerated idealized simulator supporting up to 29 qubits, using the same set of gates IonQ provide on its quantum hardware—a great place to preflight jobs before running them on an actual quantum computer.
 
 - Job type: `Simulation`
@@ -29,7 +36,7 @@ GPU-accelerated idealized simulator supporting up to 29 qubits, using the same s
 - Target ID: `ionq.simulator`
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles)
 
-### IonQ Harmony quantum computer
+## IonQ Harmony quantum computer
 The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair.
 
 - Job type: `Quantum Program`
@@ -41,7 +48,7 @@ The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigur
 |----------------|----------|----------|-------------|
 | `shots`   | int    | No | Number of experimental shots. Defaults to 500. |
 
-#### System timing
+### System timing
 
 | Measure | Average time duration (µs) |
 |---------|----------------------------|
@@ -53,7 +60,7 @@ The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigur
 | Register reset | 25 | 
 | Coherence time / gate duration | 1667 | 
 
-#### System fidelity
+### System fidelity
 
 | Operation | Average fidelity |
 |-----------|------------------|
@@ -64,7 +71,7 @@ The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigur
 
 *State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.*
 
-### IonQ Aria quantum computer
+## IonQ Aria quantum computer
 
 IonQ Aria is IonQ's latest generation of trapped-ion quantum computer. With a 23-qubit dynamically reconfigurable sytem, IonQ Aria is available exclusively on Azure Quantum. For more information, see [IonQ Aria (ionq.com)](https://ionq.com/news/february-23-2022-ionq-aria-furthers-lead) .
 
@@ -115,7 +122,7 @@ where:
 - $N$ is the number of one- or two-qubit gates submitted
 - $C$ is the number of execution shots requested
 
-Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the “Credits and quotas” blade and select the “Quotas” tab of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
+Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the **Credits and quotas** blade and select the **Quotas** tab of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
 
 > [!NOTE]
 > If you are using an [Azure Quantum Credits](xref:microsoft.quantum.credits) plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
