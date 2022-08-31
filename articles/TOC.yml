@@ -111,7 +111,7 @@
       href: https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum
     - name: Azure Quantum Credits
       href: azure-quantum-credits.md
-    - name: Azure Quantum Credits Program FAQ
+    - name: Azure Quantum Credits program FAQ
       href: credits-faq.md
     - name: Q# compiler messages
       href: qs-compiler-messages/toc.yml
