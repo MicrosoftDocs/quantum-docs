@@ -34,7 +34,7 @@ QIR is based on the popular open-source [LLVM](https://llvm.org/) compiler. LLVM
 
 The fact that LLVM is the underlying toolchain means that QIR is naturally able to process both classical and quantum logic. This feature is essential for hybrid quantum–classical algorithms, which have become increasingly important for applications of quantum computing.
 
-For more information, see [QIR Specification](https://github.com/qir-alliance/qir-spec). If you are interested in compiler tools and projects leveraging QIR, please take a look at these [QIR repositories](https://github.com/qir-alliance#contributing).
+For more information, see [QIR Specification](https://github.com/qir-alliance/qir-spec). If you are interested in compiler tools and projects that use QIR, please take a look at these [QIR repositories](https://github.com/qir-alliance#contributing).
 
 Quantum SDKs and languages appear and evolve at a fast pace, along with new quantum processors with unique and distinct capabilities from each other. To provide interoperability between new languages and new hardware capabilities it is imperative for the ecosystem to develop and share a forward-looking intermediate representation that works with present and future quantum hardware. In an attempt to meet these objectives the Quantum Intermediate Representation Alliance has been created.
 
