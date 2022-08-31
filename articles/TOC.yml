@@ -10,6 +10,8 @@
   items:
   - name: Create an Azure Quantum workspace
     href: how-to-create-workspace.md
+  - name: Share access to your Azure Quantum workspace
+    href: how-to-share-access-quantum-workspace.md
   - name: Get started with Q# and an Azure Quantum notebook
     href: get-started-jupyter-notebook.md
   - name: Create and run a Qiskit circuit
