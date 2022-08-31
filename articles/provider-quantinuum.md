@@ -30,7 +30,7 @@ The following targets are available from this provider:
 |[H1-1 Syntax Checker](#syntax-checkers) |	quantinuum.hqs-lt-s1-apival	|20 qubits| Use this to validate quantum programs against the H1-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
 |[H1-2 Syntax Checker](#syntax-checkers) |	quantinuum.hqs-lt-s2-apival |	12 qubits	|Use this to validate quantum programs against the H1-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
 |[H1-1 Emulator](#system-model-h1-emulators) |	quantinuum.hqs-lt-s1-sim |	20 qubits	| Uses a realistic physical model and noise model of H1-1.|
-|[H1-2 Emulator](#system-model-h1-emulators)|	quantinuum.hqs-lt-s2-sim |	12 qubits	|Quantinuum's H1-2 Emulator. Uses a realistic physical model and noise model of H1-2.|
+|[H1-2 Emulator](#system-model-h1-emulators)|	quantinuum.hqs-lt-s2-sim |	12 qubits	|Uses a realistic physical model and noise model of H1-2.|
 |[H1-1](#system-model-h1)|	quantinuum.hqs-lt-s1 |	20 qubits|	Quantinuum's H1-1 trapped ion device.|
 |[H1-2](#system-model-h1)|	quantinuum.hqs-lt-s2	| 12 qubits	|Quantinuum's H1-2 trapped ion device.|
 
