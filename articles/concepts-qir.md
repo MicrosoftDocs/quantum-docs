@@ -91,7 +91,7 @@ QIR is an essential tool when running quantum algorithms on real hardware. But i
 
 For example, one application enabled by QIR is to use [the Clang compiler](https://clang.llvm.org/), a C language front end for LLVM, to compile QIR into executable machine code for a classical target. This provides an easy path to building a simulator in C or C++ by implementing the quantum instructions,  which could simplify the creation of quantum simulators. 
 
-Moreover, you could use the intermediate representation to generate code that is later on given as input into a quantum simulator – instead of a real device – which could potentially use a different language than your source one. In this way, you can easily compare and benchmark different languages or simulators using a common framework.
+Moreover, you could use the intermediate representation to generate code that is later provided as input into a quantum simulator – instead of a real device – which could potentially use a different language than the source code. In this way, you can easily compare and benchmark different languages or simulators using a common framework.
 
 In terms of optimization, there are optimization steps that can be performed at the intermediate level that can make the overall algorithm implementation more efficient. Investigating this optimization of your input code can help you get a better understanding of where to make algorithms more efficient and how to improve the quantum programming languages.
 
