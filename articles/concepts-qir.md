@@ -13,7 +13,7 @@ uid: microsoft.quantum.concepts.qir
 
 # Quantum Intermediate Representation
 
-Quantum Intermediate Representation (QIR) is an intermediate representation which serves as a common interface between programming languages for gate-based quantum computing and target quantum computation platforms. QIR is based on the popular open source [LLVM](https://llvm.org/) compiler toolchain. QIR specifies a set of rules for representing quantum programs using a language and hardware agnostic format within the LLVM IR. The QIR is a project developed by the QIR Alliance of which Microsoft is one of its members.
+Quantum Intermediate Representation (QIR) is an intermediate representation which serves as a common interface between programming languages for gate-based quantum computing and target quantum computation platforms. QIR specifies a set of rules for representing quantum programs using a language and hardware agnostic format within the LLVM IR compiler toolchain. The QIR is a project developed by the QIR Alliance of which Microsoft is one of its members.
 
 ## What is an intermediate representation?
 
@@ -87,7 +87,7 @@ For more information, watch Microsoft’s developer session from [the 2021 Q2B e
 
 ## Why is Quantum Intermediate Representation important?
 
-QIR is an essential tool when running quantum algorithms on real hardware. But intermediate representations can play an important role even if you just want to develop algorithms at a more theoretical level,
+QIR is an essential tool when running quantum algorithms on real hardware. But intermediate representations can play an important role even if you just want to develop algorithms at a more theoretical level.
 
 For example, one application enabled by QIR is to use [the Clang compiler](https://clang.llvm.org/), a C language front end for LLVM, to compile QIR into executable machine code for a classical target. This provides an easy path to building a simulator in C or C++ by implementing the quantum instructions,  which could simplify the creation of quantum simulators. 
 
