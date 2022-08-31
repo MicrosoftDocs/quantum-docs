@@ -13,7 +13,7 @@ uid: microsoft.quantum.concepts.qir
 
 # Quantum Intermediate Representation
 
-Quantum Intermediate Representation (QIR) is an intermediate representation which serves as a common interface between programming languages for gate-based quantum computing and target quantum computation platforms. QIR is based on the popular open source [LLVM](https://llvm.org/) compiler toolchain. QIR specifies a set of rules for representing quantum programs of language and harware agnostic format within the LLVM IR. The QIR is a project developed by the QIR Alliance of which Microsoft is one of its members.
+Quantum Intermediate Representation (QIR) is an intermediate representation which serves as a common interface between programming languages for gate-based quantum computing and target quantum computation platforms. QIR is based on the popular open source [LLVM](https://llvm.org/) compiler toolchain. QIR specifies a set of rules for representing quantum programs using a language and hardware agnostic format within the LLVM IR. The QIR is a project developed by the QIR Alliance of which Microsoft is one of its members.
 
 ## What is an intermediate representation?
 
