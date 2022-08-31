@@ -87,7 +87,7 @@ For more information, watch Microsoft’s developer session from [the 2021 Q2B e
 
 ## Why is Quantum Intermediate Representation important?
 
-QIR is an essential tool when running quantum algorithms on real hardware. But even if you don't want to go that far and just want to develope algorithms at a more theoretical level, intermediate representations can play an important role.
+QIR is an essential tool when running quantum algorithms on real hardware. But intermediate representations can play an important role even if you just want to develop algorithms at a more theoretical level,
 
 For example, one application enabled by QIR is to use [the Clang compiler](https://clang.llvm.org/), a C language frontend for LLVM, to compile QIR into executable machine code for a classical target. This provides an easy path to building a simulator in C or C++ by implementing the quantum instructions,  which could simplify the creation of quantum simulators. 
 
