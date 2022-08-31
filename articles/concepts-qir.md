@@ -93,6 +93,6 @@ For example, one application enabled by QIR is to use [the Clang compiler](https
 
 Moreover, you could use the intermediate representation to generate code that is later on given as input into a quantum simulator – instead of a real device – which could potentially use a different language than your source one. In this way, you can easily compare and benchmark different languages or simulators using a common framework.
 
-In terms of optimization, there are optimization steps that can be performed at the intermediate level that can make the overall algorithm implementation more efficient. Investigating this optimization of your input code can help to get a better understanding of where you can make algorithms more efficient and how to improve the quantum programming languages.
+In terms of optimization, there are optimization steps that can be performed at the intermediate level that can make the overall algorithm implementation more efficient. Investigating this optimization of your input code can help you get a better understanding of where to make algorithms more efficient and how to improve the quantum programming languages.
 
 Another application is to use the standard LLVM “pass” infrastructure to create quantum optimizers that operate on QIR. The language- and hardware-independent approach of QIR enables reusing those optimizers for different computation languages and computing platforms with almost no effort. 
