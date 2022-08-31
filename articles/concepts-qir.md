@@ -24,7 +24,7 @@ An intermediate representation acts as an abstract representation of a program. 
 The intermediate representation is typically designed to allow many different source languages to be represented. Moreover, at this intermediate level it is also possible to perform some optimization and circuit rearrangement that makes the final implementation more efficient. 
 Once the final target execution platform is known, the intermediate representation can be compiled to actual executable code.
 
-This approach allows many source languages to share a common set of optimizers and executable generators. It also makes it easy to compile a single source language for many different targets. The intermediate representation provides a common platform that can be shared across many sources and targets and allows a great deal of re-use in compiler machinery.
+This approach allows many source languages to share a common set of optimizers and executable generators. It also makes it easy to compile a single source language for many different targets. The intermediate representation provides a common platform that can be shared across many sources and targets and allows a great deal of reuse in compiler machinery.
 
 ## What is Quantum Intermediate Representation?
 
