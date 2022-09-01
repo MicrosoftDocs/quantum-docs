@@ -1,7 +1,6 @@
 ---
 author: kalzoo
 description: Rigetti provider technical documentation
-ms.author: kalzoo
 ms.date: 08/29/2022
 ms.service: azure-quantum
 ms.subservice: computing
