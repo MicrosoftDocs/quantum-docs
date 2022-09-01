@@ -137,3 +137,15 @@ The Premium Subscription is a monthly subscription plan available through queued
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 ***
+
+## Rigetti
+
+[**Rigetti's**](https://rigetti.com) pricing model is simple.
+
+Rigetti's simulator, [**Quantum Virtual Machine (QVM)**] ([https://pyquil-docs.rigetti.com/en/1.9/qvm.html]) is free for all users.
+
+Rigetti's live quantum processors, Aspen-11 and Aspen-M-2, are billed by job execution time only: $0.02 per 10 millisecond increment. There is no added charge per job, per shot, or per gate.
+
+All new Azure Quantum customers benefit from $500 (USD) free Azure Quantum credits to use specifically for Rigetti target(s). To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
+
+In addition to the Azure Quantum Credits plan, Rigetti offers a pay-as-you-go plan for live quantum processors, so you pay only for what you use.

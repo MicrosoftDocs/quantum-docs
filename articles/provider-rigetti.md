@@ -39,6 +39,7 @@ The Rigetti provider makes the following targets available:
 - Job Type: `Simulation`
 - Data Format: `rigetti.quil.v1`
 - Target ID: `rigetti.sim.qvm`
+- Pricing: Free ($0)
 
 ### Quantum Computers
 
@@ -51,7 +52,7 @@ A single-chip 40-qubit processor.
 - Job Type: `Quantum Program`
 - Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.qpu.aspen-11`
-
+- Pricing: $0.02 per 10 millisecond increment of job execution time
 #### Aspen-M-2
 
 A multi-chip 80-qubit processor.
@@ -59,10 +60,18 @@ A multi-chip 80-qubit processor.
 - Job Type: `Quantum Program`
 - Data Formats: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.qpu.aspen-m-2`
-
+- Pricing: $0.02 per 10 millisecond increment of job execution time
 ### Pricing
 
-TBD Eric Ostby
+[**Rigetti's**](https://rigetti.com) pricing model is simple.
+
+Rigetti's simulator, [**Quantum Virtual Machine (QVM)**] ([https://pyquil-docs.rigetti.com/en/1.9/qvm.html]) is free for all users.
+
+Rigetti's live quantum processors, Aspen-11 and Aspen-M-2, are billed by job execution time only: $0.02 per 10 millisecond increment. There is no added charge per job, per shot, or per gate.
+
+All new Azure Quantum customers benefit from $500 (USD) free Azure Quantum credits to use specifically for Rigetti target(s). To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
+
+In addition to the Azure Quantum Credits plan, Rigetti offers a pay-as-you-go plan for live quantum processors, so you pay only for what you use.
 
 ## Input Format
 
@@ -78,11 +87,11 @@ All Rigetti **hardware** (i.e. live) targets support execution of QIR compliant 
 
 ### Selecting the Right Input Format
 
-Should you use Quil or QIR? It comes down to your end use case. 
+Should you use Quil or QIR? It comes down to your end use case. QIR is more accessible for many users; Quil is more powerful today.
 
-If you're using Qiskit, Q#, or another toolkit that supports QIR generation, and your application works on Rigetti targets, then QIR is right for you! QIR is a rapidly evolving specification, and Rigetti will continue to increase support for more advanced QIR programs as time passes, so what can't be compiled today may well compile tomorrow.
+If you're using Qiskit, Q#, or another toolkit that supports QIR generation, and your application works on Rigetti targets via Azure Quantum, then QIR is right for you! QIR has a rapidly evolving specification, and Rigetti will continue to increase support for more advanced QIR programs as time passes. What can't be compiled today may well compile tomorrow.
 
-On the other hand, Quil programs express the full set of functionality available to users of Rigetti systems from any platform including Microsoft Azure. If you're looking to tailor the decomposition of your quantum gates or write programs at the pulse level, then you'll want to work in Quil.
+On the other hand, Quil programs express the full set of functionality available to users of Rigetti systems from any platform including Microsoft Azure. If you're looking to tailor the decomposition of your quantum gates or write programs at the pulse level, then you'll want to work in Quil, because those capabilities are not yet available through QIR.
 
 ## Example Using [`pyquil-for-azure-quantum`]
 
