@@ -15,7 +15,7 @@ uid: microsoft.quantum.overview.ms-machine
 
 Recently, Microsoft had a major scientific breakthrough that cleared a significant hurdle toward building a scaled quantum machine with topological qubits. While engineering challenges remain, this new discovery demonstrates a fundamental building block for its approach to scaled quantum computing.
 
-Microsoft is on the path to deliver a quantum machine as part of the Azure Quantum service. This is part of a comprehensive plan to empower innovators with quantum solutions for breakthrough impact. For more information about this scientific discovery, see the [Microsoft Research blog](https://www.microsoft.com/research/blog/microsoft-has-demonstrated-the-underlying-physics-required-to-create-a-new-kind-of-qubit/) or read the [preprint](https://arxiv.org/abs/2207.02472) of the paper.
+Microsoft is on the path to deliver a quantum machine as part of the Azure Quantum service. This is part of a comprehensive plan to empower innovators with quantum solutions for breakthrough impact. For more information about this scientific discovery, read the [blog](https://www.microsoft.com/research/blog/microsoft-has-demonstrated-the-underlying-physics-required-to-create-a-new-kind-of-qubit/), watch a [video](https://www.youtube.com/watch?v=Q8CHms4ixYc), or read the [preprint](https://arxiv.org/abs/2207.02472) of the paper.
 
 The Azure Quantum team has created a Jupyter Notebook which performs all the analysis and generates the plots that appear in the paper. All you need to load and run the notebook is a free Azure account.
 
