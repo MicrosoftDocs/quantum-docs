@@ -22,9 +22,7 @@ Any search problem can be mathematically formulated with an abstract function $f
 > [!NOTE]
 > This tutorial is intended for people who are already familiar with
 > Grover's algorithm and want to learn how to implement it in Q#. For a more
-> introductory tutorial, see the Microsoft Learn module [Solve graph
-> coloring problems by using Grover's
-> search](/learn/modules/solve-graph-coloring-problems-grovers-search/).
+> introductory tutorial, see the Learn module [Solve graphcoloring problems by using Grover's search](/learn/modules/solve-graph-coloring-problems-grovers-search/).
 > For an in-depth explanation of the theory behind Grover's algorithm, see the [Theory of Grover's algorithm](xref:microsoft.quantum.concepts.grovers).
 
 In this tutorial, you'll learn how to:
@@ -235,7 +233,7 @@ operation ApplyMarkingOracleAsPhaseOracle(
 }
 ```
 
-This famous transformation is often known as the *phase kickback* and it's widely used in many quantum computing algorithms. You can find a detailed explanation of this technique in this [Microsoft Learn module](/learn/modules/solve-graph-coloring-problems-grovers-search/4-implement-quantum-oracle).
+This famous transformation is often known as the *phase kickback* and it's widely used in many quantum computing algorithms. You can find a detailed explanation of this technique in this [Learn module](/learn/modules/solve-graph-coloring-problems-grovers-search/4-implement-quantum-oracle).
 
 ## Run the final code
 
@@ -489,4 +487,3 @@ As you can see in the histogram, the algorithm outputs the solutions to the sear
 ## Next steps
 
 For more Q# code samples that use Grover's algorithm, see the [Samples Browser](/samples/browse/?languages=qsharp&terms=grovers), or try to transform a mathematical problem of your own into a search problem and solve it with Q# and Grover's algorithm.
-
