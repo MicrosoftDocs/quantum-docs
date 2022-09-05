@@ -44,22 +44,12 @@ With Azure Quantum and the [Quantum Development Kit toolset](xref:microsoft.quan
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
-Start using Azure Quantum is very easy and free of cost for new users. To submit you quantum programs and optimization solutions to Azure Quantum you want to create a quantum workspace
+Start using Azure Quantum is very easy and free of cost for new users. To submit your quantum programs and optimization solutions to Azure Quantum you only need two things:
 
-1. Azure account: If you don't have one yet, you can [create an Azure account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) for free. 
+1. **Azure account**: If you don't have one yet, you can [create an Azure account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) for free. 
+1. **Azure Quantum workspace**: An Azure Quantum workspace is a collection of assets associated with running quantum or optimization applications. To create an Azure Quantum workspace, go to the [Azure portal](https://ms.portal.azure.com/#create/Microsoft.AzureQuantum), select **Quick create** and it automatically creates the workspace and adds the default providers. Or select **Advance create**, and enter the details of your workspace and choose the providers. . 
 
-1. Subscription: When you create an Azure account, you will get a free trial subscription. you can create a new one, or use an existing one. 
-
-1. Resource group, which is like a container for all the resources you may need. You can select an existing resource group or create a new one.  
-
-1. Quantum workspace. When creating a workspace from the Azure portal, you can select “Quick Create” and it automatically creates the resource group and adds the default providers. Or you can select “Advance create” and choose the resource group and the providers. Azure Quantum offers first and third-party providers for quantum computing and optimization. Learn more in [Create an Azure Quantum workspace]().
-
-1. 
-
- 
-
-When you create your quantum workspace, you will automatically get free 500 US Dollars in Azure Quantum Credits for use with each quantum hardware provider. That is right, you have 500 US Dollars for each one.  
-
+For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Who is Azure Quantum for?
 
