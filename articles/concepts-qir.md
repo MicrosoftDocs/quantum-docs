@@ -34,7 +34,7 @@ QIR is based on the popular open-source [LLVM](https://llvm.org/) classical comp
 
 The fact that LLVM is the underlying toolchain means that QIR is naturally able to process both classical and quantum logic. This feature is essential for hybrid quantum–classical algorithms, which have become increasingly important for applications of quantum computing. In addition, it allows you to leverage compilation and optimization tools from the classical computing industry, and, therefore, to reduce the cost of writing translations.
 
-Many leading quantum computing industries have adopted QIR already. For example, Quantum Circuits Inc., Quantinuum, Rigetti, Nvidia and Oak Ridge National Laboratory have announced that they’re going to build their compilers through QIR.
+Many leading quantum computing industries have adopted QIR already. For example, NVIDIA, Oak Ridge National Laboratory, Quantinuum, Quantum Circuits Inc., and Rigetti Computing are building toolchains that leverage QIR.
 
 For more information, see [QIR Specification](https://github.com/qir-alliance/qir-spec). If you are interested in compiler tools and projects that use QIR, please take a look at these [QIR repositories](https://github.com/qir-alliance#contributing).
 
