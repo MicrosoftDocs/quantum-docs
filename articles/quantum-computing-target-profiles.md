@@ -66,6 +66,7 @@ Presently, these No Control Flow targets are available for Azure Quantum:
 - **Provider:** IonQ
   - [IonQ simulator](xref:microsoft.quantum.providers.ionq#quantum-simulator) (`ionq.simulator`)
   - [IonQ QPU](xref:microsoft.quantum.providers.ionq##quantum-computer) (`ionq.qpu`)
+  - [Rigetti Simulator & QPUs](xref:microsoft.quantum.providers.rigetti) (`rigetti.sim.*`, `rigetti.qpu.*`)
 
 ### Create and run applications for Basic Measurement Feedback targets
 

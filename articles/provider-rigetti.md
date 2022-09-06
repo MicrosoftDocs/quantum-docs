@@ -39,6 +39,7 @@ The Rigetti provider makes the following targets available:
 - Job Type: `Simulation`
 - Data Format: `rigetti.quil.v1`
 - Target ID: `rigetti.sim.qvm`
+- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles)
 - Pricing: Free ($0)
 
 ### Quantum Computers
@@ -52,6 +53,7 @@ A single-chip 40-qubit processor.
 - Job Type: `Quantum Program`
 - Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.qpu.aspen-11`
+- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles)
 - Pricing: $0.02 per 10 millisecond increment of job execution time
 #### Aspen-M-2
 
@@ -60,6 +62,7 @@ A multi-chip 80-qubit processor.
 - Job Type: `Quantum Program`
 - Data Formats: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.qpu.aspen-m-2`
+- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles)
 - Pricing: $0.02 per 10 millisecond increment of job execution time
 ### Pricing
 
