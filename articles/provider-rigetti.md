@@ -1,5 +1,6 @@
 ---
 author: kalzoo
+ms.author: brbenefield
 description: Rigetti provider technical documentation
 ms.date: 08/29/2022
 ms.service: azure-quantum

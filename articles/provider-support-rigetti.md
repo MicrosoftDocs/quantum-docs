@@ -1,5 +1,6 @@
 ---
 author: kalzoo
+ms.author: brbenefield
 description: This document provides details on the support policy for the Rigetti provider in Azure Quantum
 ms.date: 08/29/2022
 ms.service: azure-quantum
