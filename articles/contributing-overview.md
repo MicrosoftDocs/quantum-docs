@@ -57,7 +57,7 @@ Each of these different pieces finds its home on a different repository, so the 
 - [**microsoft/iqsharp**](https://github.com/microsoft/iqsharp): Jupyter kernel and Python host functionality for Q#, as well as Docker images for using IQ# in cloud environments.
 - [**microsoft/qdk-python**](https://github.com/microsoft/qdk-python): Python packages `qdk` and `azure-quantum`.
 - [**microsoft/qsharp-language**](https://github.com/microsoft/qsharp-language): This is where new Q# features are developed and specified, and where you can share ideas and suggestions about the future evolution of the Q# language and core libraries.
-- [**MicrosoftDocs/quantum-docs**](https://github.com/MicrosoftDocs/quantum-docs): Source code for the documentation published at [docs.microsoft.com](xref:microsoft.quantum.azure-quantum-overview).
+- [**MicrosoftDocs/quantum-docs**](https://github.com/MicrosoftDocs/quantum-docs): Source code for [Azure Quantum documentation](xref:microsoft.quantum.azure-quantum-overview).
 
 > [!NOTE]
 > We unfortunately cannot accept code and documentation contributions on the [**microsoft/Quantum-NC**](https://github.com/microsoft/Quantum-NC) repository at this time, but we still very much appreciate bug reports.
