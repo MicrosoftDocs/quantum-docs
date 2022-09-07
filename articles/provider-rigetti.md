@@ -10,7 +10,7 @@ title: Rigetti provider
 uid: microsoft.quantum.providers.rigetti
 ---
 
-# Rigetti Provider
+# Rigetti provider
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
@@ -23,13 +23,6 @@ The Aspen chip topology is octagonal with 3-fold (2-fold for edges) connectivity
 
 ## Targets
 
-All Rigetti targets currently accept two formats:
-
-* `rigetti.quil.v1`, which is the text of a [Quil] program. 
-* `rigetti.qir.v1`, which is QIR bitcode.
- 
-All targets also take the optional `count` integer parameter for defining the number of shots to run. If omitted, the program will only be run once.
-
 The Rigetti provider makes the following targets available:
 
 ### Simulators
@@ -41,10 +34,10 @@ The Rigetti provider makes the following targets available:
 - Job Type: `Simulation`
 - Data Format: `rigetti.quil.v1`
 - Target ID: `rigetti.sim.qvm`
-- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles)
+- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 - Pricing: Free ($0)
 
-### Quantum Computers
+### Quantum computers
 
 All of Rigetti's publicly available [QPUs](https://qcs.rigetti.com/qpus) are available through Azure Quantum. Note that this list is subject to frequent change over time without advance notice.
 
@@ -55,8 +48,9 @@ A single-chip 40-qubit processor.
 - Job Type: `Quantum Program`
 - Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.qpu.aspen-11`
-- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles)
+- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 - Pricing: $0.02 per 10 millisecond increment of job execution time
+
 #### Aspen-M-2
 
 A multi-chip 80-qubit processor.
@@ -64,13 +58,21 @@ A multi-chip 80-qubit processor.
 - Job Type: `Quantum Program`
 - Data Formats: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.qpu.aspen-m-2`
-- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles)
+- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 - Pricing: $0.02 per 10 millisecond increment of job execution time
+
 ### Pricing
 
-To see Rigetti's billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
+To see Rigetti's billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#rigetti).
 
-## Input Format
+## Input format
+
+All Rigetti targets currently accept two formats:
+
+* `rigetti.quil.v1`, which is the text of a [Quil] program. 
+* `rigetti.qir.v1`, which is QIR bitcode.
+ 
+All targets also take the optional `count` integer parameter for defining the number of shots to run. If omitted, the program will only run once.
 
 ### Quil
 
@@ -82,9 +84,9 @@ To make constructing a Quil program easier, you can use [`pyQuil`] along with th
 
 All Rigetti **hardware**, that is, live QPU targets, support the execution of QIR compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`.
 
-### Selecting the Right Input Format
+### Selecting the right input format
 
-Should you use Quil or QIR? It comes down to your end use case. QIR is more accessible for many users; Quil is more powerful today.
+Should you use Quil or QIR? It comes down to your end use case. QIR is more accessible for many users, while Quil is more powerful today.
 
 If you're using Qiskit, Q#, or another toolkit that supports QIR generation, and your application works on Rigetti targets via Azure Quantum, then QIR is right for you! QIR has a rapidly evolving specification, and Rigetti will continue to increase support for more advanced QIR programs as time passes. What can't be compiled today may well compile tomorrow.
 
