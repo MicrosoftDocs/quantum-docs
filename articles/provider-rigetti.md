@@ -27,8 +27,6 @@ The Rigetti provider makes the following targets available:
 
 ### Simulators
 
-#### QVM
-
 [QVM] is an open-source simulator for [Quil]. The `rigetti.sim.qvm` target accepts a Quil program as text and runs that program on QVM hosted in the cloud, returning simulated results.
 
 - Job Type: `Simulation`
@@ -39,7 +37,7 @@ The Rigetti provider makes the following targets available:
 
 ### Quantum computers
 
-All of Rigetti's publicly available [QPUs](https://qcs.rigetti.com/qpus) are available through Azure Quantum. This list is subject to change over time without advance notice.
+All of Rigetti's publicly available [QPUs](https://qcs.rigetti.com/qpus) are available through Azure Quantum. This list is subject to change without advance notice.
 
 #### Aspen-11
 
