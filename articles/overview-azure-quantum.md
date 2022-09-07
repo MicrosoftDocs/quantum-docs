@@ -47,7 +47,7 @@ With Azure Quantum and the [Quantum Development Kit toolset](xref:microsoft.quan
 Start using Azure Quantum is very easy and free of cost for new users. To submit your quantum programs and optimization solutions to Azure Quantum you only need two things:
 
 1. **Azure account**: If you don't have one yet, you can [create an Azure account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) for free. 
-1. **Azure Quantum workspace**: An Azure Quantum workspace is a collection of assets associated with running quantum or optimization applications. To create an Azure Quantum workspace, go to the [Azure portal](https://ms.portal.azure.com/#create/Microsoft.AzureQuantum), select **Quick create** and it automatically creates the workspace and adds the default providers. Or select **Advance create**, and enter the details of your workspace and choose the providers. . 
+1. **Azure Quantum workspace**: An Azure Quantum workspace is a collection of assets associated with running quantum or optimization applications. To create an Azure Quantum workspace, go to the [Azure portal](https://ms.portal.azure.com/#create/Microsoft.AzureQuantum), select **Quick create** and it automatically creates the workspace and adds the default providers. Or select **Advance create**, and enter the details of your workspace and choose the providers.
 
 For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
