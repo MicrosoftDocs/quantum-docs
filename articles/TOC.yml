@@ -101,6 +101,12 @@
           href: provider-quantinuum.md
         - name: Quantinuum support policy
           href: provider-support-quantinuum.md
+      - name: Rigetti
+        items:
+        - name: Rigetti provider & targets
+          href: provider-rigetti.md
+        - name: Rigetti support policy
+          href: provider-support-rigetti.md
       - name: Honeywell (Deprecated)
         items:
         - name: Migration Guide
