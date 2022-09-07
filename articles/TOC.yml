@@ -226,18 +226,16 @@
         href: optimization-async-io.md
 - name: Use a local development environment
   items:
-  - name: Configuration
-    items:
-    - name: Configure your local environment
-      href: install-overview-qdk.md
-    - name: Set up a Q# standalone or .NET environment
-      href: install-command-line-qdk.md
-    - name: Set up a Q# + Python environment
-      href: install-python-qdk.md
-    - name: Use Python without Q#
-      href: install-python-optimization.md
+  - name: Configure your local environment
+    href: install-overview-qdk.md
   - name: Quickstarts
     items: 
+    - name: Write a Q# program to run on local simulator
+      href: how-to-command-line-local.md
+    - name: Write a Q# and Python program to run on local simulator
+      href: how-to-python-qdk-local.md
+    - name: Write a Q# and .NET program to run on local simulator
+      href: how-to-csharp-qdk-local.md    
     - name: Create a quantum-based random number generator
       href: quickstart-microsoft-qc.md
     - name: Solve a simple optimization problem
@@ -248,14 +246,6 @@
       href: quickstart-microsoft-cirq.md
     - name: Submit a circuit in provider-specific format
       href: quickstart-microsoft-provider-format.md
-  - name: How-to guides
-    items:
-    - name: Write a Q# program to run on local simulator
-      href: how-to-command-line-local.md
-    - name: Write a Q# and Python program to run on local simulator
-      href: how-to-python-qdk-local.md
-    - name: Write a Q# and .NET program to run on local simulator
-      href: how-to-csharp-qdk-local.md    
   - name: Use a Binder environment
     href: install-binder-qdk.md
 - name: Manage Azure Quantum
