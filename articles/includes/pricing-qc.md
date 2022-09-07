@@ -140,11 +140,10 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ## Rigetti
 
-[**Rigetti's**](https://rigetti.com) pricing model is simple.
+[**Rigetti's**](https://rigetti.com) pricing model is simple:
 
-Rigetti's simulator, [**Quantum Virtual Machine (QVM)**] ([https://pyquil-docs.rigetti.com/en/1.9/qvm.html]) is free for all users.
-
-Rigetti's live quantum processors, Aspen-11 and Aspen-M-2, are billed by job execution time only: $0.02 per 10 millisecond increment. There is no added charge per job, per shot, or per gate.
+- Their simulator, [**Quantum Virtual Machine (QVM)**] ([https://pyquil-docs.rigetti.com/en/1.9/qvm.html]) is free for all users.
+- The Rigetti live quantum processors, Aspen-11 and Aspen-M-2, are billed by job execution time only: $0.02 per 10 millisecond increment. There is no added charge per job, per shot, or per gate.
 
 All new Azure Quantum customers benefit from $500 (USD) free Azure Quantum credits to use specifically for Rigetti target(s). To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
 

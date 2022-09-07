@@ -12,7 +12,7 @@ uid: microsoft.quantum.providers.rigetti.support
 
 # Support Policy for Rigetti in Azure Quantum
 
-This article describes the Microsoft support policy that applies when you use the Rigetti provider in Azure Quantum. The article applies to any of the targets under this provider.
+This article describes the Microsoft support policy that applies when you use the Rigetti provider in Azure Quantum. The article applies to any of the [targets](xref:microsoft.quantum.providers.rigetti#targets) offered by the Rigetti provider.
 
 If you're using the Rigetti provider and experience unexpected issues, you can contact the Azure Support team for help 
 
@@ -32,5 +32,5 @@ Rigetti will always attempt to resolve issues with the Microsoft Azure integrati
 | Medium | Performance degradation | 2 business days |
 | Low | Application-related concerns and questions | 5 business days |
 
-"Business days" are defined as Monday through Friday, not counting US holidays. Example: if a medium-severity incident is reported on a Tuesday, a response will be returned by the end of the business day on Thursday, if the intervening days are also business days.
+*Business days* are defined as Monday through Friday, not counting US holidays. For example, if a medium-severity incident is reported on a Tuesday, a response will be returned by the end of the business day on Thursday, if the intervening days are also business days.
 

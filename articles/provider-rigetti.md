@@ -1,7 +1,7 @@
 ---
 author: kalzoo
 ms.author: brbenefield
-description: Rigetti provider technical documentation
+description: This document provides the technical details of the Rigetti provider
 ms.date: 08/29/2022
 ms.service: azure-quantum
 ms.subservice: computing
@@ -11,6 +11,8 @@ uid: microsoft.quantum.providers.rigetti
 ---
 
 # Rigetti Provider
+
+[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 [Rigetti quantum processors](https://qcs.rigetti.com/qpus) are universal, gate-model machines based on tunable superconducting qubits. Rigetti's latest Aspen-M family processor is based on proprietary scalable multi-chip technology. System features and device characteristics include enhanced readout capabilities, a speedup in quantum processing times, fast gate times for multiple entangling gate families, rapid sampling via active register reset, and parametric control.
 
@@ -34,7 +36,7 @@ The Rigetti provider makes the following targets available:
 
 #### QVM
 
-[QVM is an open-source simulator][QVM] for [Quil]. The `rigetti.sim.qvm` target accepts a [Quil] program as text and runs that program on [QVM] hosted in the cloud, returning simulated results.
+[QVM] is an open-source simulator for [Quil]. The `rigetti.sim.qvm` target accepts a Quil program as text and runs that program on QVM hosted in the cloud, returning simulated results.
 
 - Job Type: `Simulation`
 - Data Format: `rigetti.quil.v1`
@@ -44,7 +46,7 @@ The Rigetti provider makes the following targets available:
 
 ### Quantum Computers
 
-All of Rigetti's [publicly available QPUs](https://qcs.rigetti.com/qpus) are available through Azure Quantum. QPU targets optionally take a `skipQuilc` parameter for skipping the default compilation stage. Note that this list is subject to frequent change over time without advance notice.
+All of Rigetti's publicly available [QPUs](https://qcs.rigetti.com/qpus) are available through Azure Quantum. Note that this list is subject to frequent change over time without advance notice.
 
 #### Aspen-11
 
@@ -66,27 +68,19 @@ A multi-chip 80-qubit processor.
 - Pricing: $0.02 per 10 millisecond increment of job execution time
 ### Pricing
 
-[**Rigetti's**](https://rigetti.com) pricing model is simple.
-
-Rigetti's simulator, [**Quantum Virtual Machine (QVM)**] ([https://pyquil-docs.rigetti.com/en/1.9/qvm.html]) is free for all users.
-
-Rigetti's live quantum processors, Aspen-11 and Aspen-M-2, are billed by job execution time only: $0.02 per 10 millisecond increment. There is no added charge per job, per shot, or per gate.
-
-All new Azure Quantum customers benefit from $500 (USD) free Azure Quantum credits to use specifically for Rigetti target(s). To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
-
-In addition to the Azure Quantum Credits plan, Rigetti offers a pay-as-you-go plan for live quantum processors, so you pay only for what you use.
+To see Rigetti's billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
 ## Input Format
 
 ### Quil
 
-All Rigetti targets accept the `rigetti.quil.v1` input format, which is the text of a [Quil] program. By default, the program will be compiled using [quilc] before running. However, [quilc] does not support the pulse level control features ([Quil-T]), so if you want to use those features you must provide a [Native Quil] program (also containing [Quil-T]) as input and specify the `skipQuilc` input parameter.
+All Rigetti targets accept the `rigetti.quil.v1` input format, which is the text of a [Quil] program. By default, the program will be compiled using [quilc] before running. However, quilc does not support the pulse level control features ([Quil-T]), so if you want to use those features you must provide a [Native Quil] program (also containing Quil-T) as input and specify the input parameter `skipQuilc: true`.
 
-To make constructing a [Quil] program easier, you can use [`pyQuil`] along with the [`pyquil-for-azure-quantum`] package. Without this package, [`pyQuil`] can be used to _construct_ Quil programs but not submit them to Microsoft Azure.
+To make constructing a Quil program easier, you can use [`pyQuil`] along with the [`pyquil-for-azure-quantum`] package. Without this package, `pyQuil` can be used to _construct_ Quil programs but not submit them to Azure Quantum.
 
 ### QIR
 
-All Rigetti **hardware** (i.e. live) targets support execution of QIR compliant with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`.
+All Rigetti **hardware**, that is, live QPU targets, support the execution of QIR compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`.
 
 ### Selecting the Right Input Format
 
@@ -94,12 +88,15 @@ Should you use Quil or QIR? It comes down to your end use case. QIR is more acce
 
 If you're using Qiskit, Q#, or another toolkit that supports QIR generation, and your application works on Rigetti targets via Azure Quantum, then QIR is right for you! QIR has a rapidly evolving specification, and Rigetti will continue to increase support for more advanced QIR programs as time passes. What can't be compiled today may well compile tomorrow.
 
-On the other hand, Quil programs express the full set of functionality available to users of Rigetti systems from any platform including Microsoft Azure. If you're looking to tailor the decomposition of your quantum gates or write programs at the pulse level, then you'll want to work in Quil, because those capabilities are not yet available through QIR.
+On the other hand, Quil programs express the full set of functionality available to users of Rigetti systems from any platform including Azure Quantum. If you're looking to tailor the decomposition of your quantum gates or write programs at the pulse level, then you'll want to work in Quil, because those capabilities are not yet available through QIR.
 
-## Example Using [`pyquil-for-azure-quantum`]
+## Examples
 
 The easiest way to submit Quil jobs is using the [`pyquil-for-azure-quantum`] package, as it allows you to leverage the tools and documentation of the [`pyQuil`] library.
 
+You can also construct Quil programs manually and submit them using the `azure-quantum` package directly.
+
+### [Use pyquil-for-azure-quantum](#tab/tabid-pyquil)
 ```python
 from pyquil.gates import CNOT, MEASURE, H
 from pyquil.quil import Program
@@ -132,9 +129,8 @@ for i, shot in enumerate(data_per_shot):
     print(f"Shot {i}: {shot}")
 ```
 
-## Example Using `azure-quantum` Python SDK
+### [Use azure-quantum Python SDK](#tab/tabid-azquantum) 
 
-You can also construct Quil programs manually and submit them using the `azure-quantum` package directly.
 
 ```python
 from azure.quantum import Workspace
@@ -190,6 +186,7 @@ print(f"Data from '{readout}' register:")
 for i, shot in enumerate(data_per_shot):
     print(f"Shot {i}: {shot}")
 ```
+***
 
 [Quil]: https://github.com/quil-lang/quil
 [QVM]: https://github.com/quil-lang/qvm
