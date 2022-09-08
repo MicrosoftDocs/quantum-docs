@@ -49,7 +49,7 @@ The Azure Quantum portal provides a built-in development environment where you c
 
 ## Use your preferred IDE and language locally and submit jobs to Azure Quantum
 
-Installing the QDK on your local computer provides support for Jupyter Notebooks, Python, and C#, along with extensions for Visual Studio Code and Visual Studio. Develop quantum computing applications in your preferred IDE and language and run them on local quantum simulators or quantum hardware and optimization solvers using the Azure Quantum service.
+Installing the QDK on your local computer provides support for Jupyter Notebooks, Python, and C#, along with extensions for Visual Studio Code and Visual Studio. Develop quantum computing applications in your preferred IDE and language and run them on local quantum simulators, cloud simulators, quantum hardware, or optimization solvers using the Azure Quantum service.
 
 :::image type="content" source="./media/install-portal-2.svg" alt-text="Portal installation options":::
 
