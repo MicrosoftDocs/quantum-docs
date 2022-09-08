@@ -80,7 +80,7 @@ To make constructing a Quil program easier, you can use [`pyQuil`] along with th
 
 ### QIR
 
-All Rigetti **hardware**, that is, live QPU targets, support the execution of QIR compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`.
+All Rigetti **hardware**, that is, live QPU targets, support the execution of Quantum Intermediate Representation (QIR) compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`. For more information, see [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir).
 
 ### Selecting the right input format
 
