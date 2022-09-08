@@ -187,16 +187,16 @@ To install the `azure-quantum` Python package
    pip install --upgrade azure-quantum
    ```
 
-   To install the optional dependencies required for submitting Qiskit programs, install using the `\[qiskit\]` tag:
+   To install the optional dependencies required for submitting Qiskit programs, install using the `[qiskit]` tag:
 
    ```Shell
-   pip install --upgrade azure-quantum\[qiskit\]
+   pip install --upgrade azure-quantum[qiskit]
    ```
 
-   To install the optional dependencies required for submitting Cirq programs, install using the `\[cirq\]` tag:
+   To install the optional dependencies required for submitting Cirq programs, install using the `[cirq]` tag:
 
    ```Shell
-   pip install --upgrade azure-quantum\[cirq\]
+   pip install --upgrade azure-quantum[cirq]
    ```
 
 To test your environment, see [Submit a circuit with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) or [Submit a circuit with Cirq](xref:microsoft.quantum.quickstarts.computing.cirq).

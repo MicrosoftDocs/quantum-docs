@@ -226,7 +226,7 @@
         href: optimization-async-io.md
 - name: Use a local development environment
   items:
-  - name: Configure your local environment
+  - name: Configure your quantum environment
     href: install-overview-qdk.md
   - name: Quickstarts
     items: 
