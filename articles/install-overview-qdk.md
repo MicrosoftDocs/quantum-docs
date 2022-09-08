@@ -34,7 +34,7 @@ Choose from several development environment options:
 - [Use a temporary Binder environment](#use-the-qdk-with-a-temporary-binder-environment)
 - [Use a pre-configured Docker image](#use-the-qdk-with-a-pre-configured-docker-image)
 
-### Jupyter Notebooks
+## Jupyter Notebooks
 
 Jupyter Notebooks allow running code in-place alongside instructions, notes, and other content. This environment is ideal for writing Python and Q# code with embedded explanations or creating quantum computing interactive tutorials. The Jupyter Notebooks environment is build-in to the Azure Quantum portal or can be installed easily on your local computer.
 
@@ -64,40 +64,39 @@ Some scenarios where you may prefer a local environment:
  
 Select your preferred IDE: 
 
-- [Use Python with Qiskit or Cirq](#use-python-with-qiskit-or-cirq)
-- [Use Q# and Python with Jupyter Notebooks](#use-q-and-python-with-jupyter-notebooks)
 - [Use Q# and Python with Visual Studio Code or Visual Studio](#use-q-and-python-with-visual-studio-and-visual-studio-code)
+- [Use Q# and Python with Jupyter Notebooks](#use-q-and-python-with-jupyter-notebooks)
+- [Use Python with Qiskit or Cirq](#use-python-with-qiskit-or-cirq)
 - [Use Q# with command line options](#use-q-with-command-line-options)
 
-### Use Python with Qiskit or Cirq
 
-You can use the `azure-quantum` Python package to submit and run Qiskit or Cirq jobs on Azure Quantum. 
+### Use Q# and Python with Visual Studio and Visual Studio Code 
 
-To install the `azure-quantum` Python package 
+While you can build Q# applications in any IDE, we recommend using Visual Studio Code (VS Code) or Visual Studio IDE for developing your Q# applications. Developing in these environments leverages the rich functionality of the Quantum Development Kit (QDK) extension, which includes submitting quantum jobs via the Azure CLI or the .NET CLI, warnings, syntax highlighting, project templates, and more.
 
-1. Install [Python](https://www.python.org/downloads/) 3.6 or later if you haven't already.
-1. Install [PIP](https://pip.pypa.io/en/stable/) and ensure you have **version 19.2 or higher**.
-1. Install the `azure-quantum` python package. Use the `--upgrade` flag to make sure to get the latest version.
+#### Prerequisite
 
-   To install the `azure-quantum` package without any optional dependencies, run:
+- [.NET SDK 6.0](https://dotnet.microsoft.com/download)
 
-   ```Shell
-   pip install --upgrade azure-quantum
-   ```
+Configure the QDK for your preferred environment from one of the following options:
 
-   To install the optional dependencies required for submitting Qiskit programs, install using the `[qiskit]` tag:
+#### VS Code
 
-   ```Shell
-   pip install --upgrade azure-quantum[qiskit]
-   ```
+1. Download and install [VS Code](https://code.visualstudio.com/download) 1.52.0 or greater (Windows, Linux and Mac).
+1. Install the [QDK for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
-   To install the optional dependencies required for submitting Cirq programs, install using the `[cirq]` tag:
+> [!NOTE]
+> If you are a Arm-based Mac user, make sure you install [.NET SDK](https://dotnet.microsoft.com/download) 6.0 or greater, as older versions are not supported on this architecture. 
 
-   ```Shell
-   pip install --upgrade azure-quantum[cirq]
-   ```
+#### Visual Studio (Windows only)
 
-To test your environment, see [Submit a circuit with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) or [Submit a circuit with Cirq](xref:microsoft.quantum.quickstarts.computing.cirq).
+1. Download and install [Visual Studio](https://visualstudio.microsoft.com/downloads/) 17.0 or greater, with the .NET Core cross-platform development workload enabled.
+1. Download and install the [QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64).
+
+> [!NOTE]
+> Although there is Visual Studio for Mac, the QDK extension is only compatible with Visual Studio for Windows.
+
+To test your environment, see [Write a Q# standalone program](xref:microsoft.quantum.how-to.standalone-local) or [Write a Q# and .NET program](xref:microsoft.quantum.how-to.csharp-local). 
 
 ### Use Q# and Python with Jupyter Notebooks 
 
@@ -170,35 +169,37 @@ All the necessary components for a Juptyer Notebooks environment can be set up w
 
 ***
 
-You now have both the qsharp Python package and the IQ# kernel for Jupyter, allowing you to compile and run Q# operations from Python and Q# Jupyter Notebooks. To test your environment, see [Write a Q# standalone program](xref:microsoft.quantum.how-to.standalone-local) or [Write a Q# and Python program](xref:microsoft.quantum.how-to.python-local). 
+You now have both the qsharp Python package and the IQ# kernel for Jupyter, allowing you to compile and run Q# operations from Python and Q# Jupyter Notebooks. To test your environment, see [Write a Q# standalone program](xref:microsoft.quantum.how-to.standalone-local) or [Write a Q# and Python program](xref:microsoft.quantum.how-to.python-local).
 
-### Use Q# and Python with Visual Studio and Visual Studio Code 
+### Use Python with Qiskit or Cirq
 
-While you can build Q# applications in any IDE, we recommend using Visual Studio Code (VS Code) or Visual Studio IDE for developing your Q# applications if you are running them via a .NET console. Developing in these environments leverages the rich functionality of the Quantum Development Kit (QDK) extension, which includes warnings, syntax highlighting, project templates, and more.
+You can use the `azure-quantum` Python package to submit and run Qiskit or Cirq jobs on Azure Quantum. 
 
-#### Prerequisite
+To install the `azure-quantum` Python package 
 
-- [.NET SDK 6.0](https://dotnet.microsoft.com/download)
+1. Install [Python](https://www.python.org/downloads/) 3.6 or later if you haven't already.
+1. Install [PIP](https://pip.pypa.io/en/stable/) and ensure you have **version 19.2 or higher**.
+1. Install the `azure-quantum` python package. Use the `--upgrade` flag to make sure to get the latest version.
 
-Configure the QDK for your preferred environment from one of the following options:
+   To install the `azure-quantum` package without any optional dependencies, run:
 
-#### VS Code
+   ```Shell
+   pip install --upgrade azure-quantum
+   ```
 
-1. Download and install [VS Code](https://code.visualstudio.com/download) 1.52.0 or greater (Windows, Linux and Mac).
-1. Install the [QDK for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
+   To install the optional dependencies required for submitting Qiskit programs, install using the `\[qiskit\]` tag:
 
-> [!NOTE]
-> If you are a Arm-based Mac user, make sure you install [.NET SDK](https://dotnet.microsoft.com/download) 6.0 or greater, as older versions are not supported on this architecture. 
+   ```Shell
+   pip install --upgrade azure-quantum\[qiskit\]
+   ```
 
-#### Visual Studio (Windows only)
+   To install the optional dependencies required for submitting Cirq programs, install using the `\[cirq\]` tag:
 
-1. Download and install [Visual Studio](https://visualstudio.microsoft.com/downloads/) 17.0 or greater, with the .NET Core cross-platform development workload enabled.
-1. Download and install the [QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64).
+   ```Shell
+   pip install --upgrade azure-quantum\[cirq\]
+   ```
 
-> [!NOTE]
-> Although there is Visual Studio for Mac, the QDK extension is only compatible with Visual Studio for Windows.
-
-To test your environment, see [Write a Q# standalone program](xref:microsoft.quantum.how-to.standalone-local) or [Write a Q# and .NET program](xref:microsoft.quantum.how-to.csharp-local). 
+To test your environment, see [Submit a circuit with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) or [Submit a circuit with Cirq](xref:microsoft.quantum.quickstarts.computing.cirq).
 
 ### Use Q# with command line options 
 
@@ -206,7 +207,7 @@ You can also run quantum programs and manage your Azure Quantum workspaces with 
 
 #### .NET CLI
 
-**Prequisite**: [.NET SDK 6.0](https://dotnet.microsoft.com/download)
+**Prerequisite**: [.NET SDK 6.0](https://dotnet.microsoft.com/download)
 
 1. Enter the following at the command prompt
 
@@ -218,7 +219,7 @@ To test your environment, see [Write a Q# and .NET program](xref:microsoft.quant
 
 #### Azure CLI
 
-**Prequisite**: An Azure account with an active subscription. You can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+**Prerequisite**: An Azure account with an active subscription. You can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 - Install the [Azure CLI](/cli/azure/install-azure-cli).
 - Install the Azure CLI `quantum` extension. Open a command prompt and run the following command:
