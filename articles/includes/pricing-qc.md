@@ -165,7 +165,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
  
 ### [Pay As You Go](#tab/tabid-paygoRigetti)
 
-The Pay-as-you-go plan consists of *a la carte* access to the Rigetti Aspen-11 and Aspen-M-2 quantum processors.   
+The Pay-as-you-go plan consists of *a la carte* access to the Rigetti Aspen-11 and Aspen-M-2 quantum processors at $0.02 per 10-millisecond increment.
 
 |Pricing | Use is charged based on the job execution time only |
 |---|---|  
