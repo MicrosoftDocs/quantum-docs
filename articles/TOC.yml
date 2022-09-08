@@ -53,7 +53,7 @@
     href: machines/toc.yml  
   - name: The Q# user guide
     href: user-guide/toc.yml
-  - name: Quantum Computing Concepts
+  - name: Quantum computing concepts
     items:
       - name: "Quantum computing history & background"
         href: concepts-overview.md
