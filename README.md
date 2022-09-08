@@ -8,7 +8,7 @@ This repository contains open-source documentation articles.  The main folder is
 > For more information, see [Improving the documentation](https://docs.microsoft.com/azure/quantum/contributing-docs).
 
 > :pencil: If your changes are only editorial, without association to the API, this is the right place to do it. You can directly edit 
-> the `*.md` and `*.yml` files here. You can also submit minor changes directly through the documentation page. For more information, see [Improving the documentation](https://docs.microsoft.com/azure/quantum/contributing-docs).
+> the `*.md` and `*.yml` files here. You can also submit minor changes directly through the documentation page. For more information, see [Quick edits to documentation](https://docs.microsoft.com/contribute/#quick-edits-to-documentation).
 
 ## Getting started
 If you are new to the Azure Quantum documentation and want to learn how to contribute, you can follow our [Contributors Guide](https://docs.microsoft.com/azure/quantum/contributing-overview).
