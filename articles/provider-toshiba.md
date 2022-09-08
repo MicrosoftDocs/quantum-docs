@@ -121,8 +121,10 @@ Quotas are based on billing plan selection and can be increased with a support t
 
 |Billing plan | Quota  |
 |---|---|
-|Learn & Develop| Up to 1 concurrent job<br />1 hour of compute per month |
-|Performance at Scale | Up to 3 concurrent jobs<br />2,500 hours of compute per month |
+|Learn & Develop| Up to 1 concurrent job*<br />1 hour of compute per month |
+|Performance at Scale | Up to 3 concurrent jobs*<br />2,500 hours of compute per month |
+
+\* The number of concurrent jobs is the number of jobs that can be queued per workspace at any one time.
 
 To see your current limits and quotas, go to the “Credits and quotas” blade and select the “Quotas” tab of your workspace on the [Azure portal](https://portal.azure.com).
 
