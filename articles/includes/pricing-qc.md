@@ -154,7 +154,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 
 |Pricing | Use is deducted from the Azure Quantum Credits based on the job execution time only |
 |---|---|  
-|Includes access to | <ul><li>Rigetti Aspen-11</li><li>Rigetti Aspen-M-2</li><li>Rigetti QVM (free)</li></ul>|
+|Includes access to | <ul><li>Rigetti Aspen-11 QPU</li><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
 
 > [!NOTE]
 > Once you have consumed all the credits you need to switch to a different plan to continue using Rigetti. Azure Quantum won’t start charging you once you reach your credit limit. 
@@ -169,6 +169,6 @@ The Pay-as-you-go plan consists of *a la carte* access to the Rigetti Aspen-11 a
 
 |Pricing | Use is charged based on the job execution time only |
 |---|---|  
-|Includes access to | <ul><li>Rigetti Aspen-11</li><li>Rigetti Aspen-M-2</li><li>Rigetti QVM (free)</li></ul>|
+|Includes access to | <ul><li>Rigetti Aspen-11 QPU</li><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
 
 ***
