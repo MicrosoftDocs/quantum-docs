@@ -62,7 +62,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ### [Aria plan](#tab/tabid-aria)
 
-The Aria plan is a monthly subscription plan with access to the IonQ Aria 21-qubit quantum computer. The subscription also includes access to IonQ simulator and IonQ Harmony 11-qubit quantum computer.
+The Aria plan is a monthly subscription plan with access to the IonQ Aria 23-qubit quantum computer. The subscription also includes access to IonQ simulator and IonQ Harmony 11-qubit quantum computer.
 
 |Pricing | $25,000 (USD)/Month + Azure infrastructure costs |
 |---|---|  
