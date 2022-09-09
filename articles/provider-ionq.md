@@ -25,7 +25,7 @@ The following targets are available from this provider:
 |---|---|---|---|
 |[Quantum simulator](#quantum-simulator)	|ionq.simulator|	29 qubits|	IonQ's cloud-based idealized simulator. Free of cost.|
 |[IonQ Harmony](#ionq-harmony-quantum-computer) |	ionq.qpu	|11 qubits	|IonQ's trapped-ion quantum computer.|
-|[IonQ Aria](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|23 qubits	|IonQ's Aria  trapped-ion quantum computer.|
+|[IonQ Aria](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|23 qubits	|IonQ's Aria trapped-ion quantum computer.|
 
 
 ## Quantum simulator
@@ -66,10 +66,10 @@ The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigur
 |-----------|------------------|
 | Single-qubit gate | 99.35% (SPAM corrected) |
 | Two-qubit gate | 96.02% (not SPAM corrected) |
-| SPAM | 99.3 - 99.8% |
+| SPAM* | 99.3 - 99.8% |
 | Geometric mean op | 98.34% |
 
-*State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.*
+\* State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.
 
 ## IonQ Aria quantum computer
 
