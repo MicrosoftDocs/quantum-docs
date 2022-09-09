@@ -1,26 +1,28 @@
 ---
 author: sonialopezbravo
-description: Learn how bulk add users to an Azure Quantum workspace from a CSV file.
+description: Learn how to add a group of users to your Azure Quantum workspace from a CSV file.
 ms.author: sonialopez
-ms.date: 08/26/2022
+ms.date: 08/31/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: How to bulk add users to an Azure Quantum workspace
+title: Add a group to your Azure Quantum workspace
 uid: microsoft.quantum.how-to.bulk-add-users
 ---
 
-# Bulk add users to an Azure Quantum workspace
+# Add a group to your Azure Quantum workspace
 
-Learn how to bulk add users to an Azure Quantum workspace.
+Learn how to grant a group of users access to your Azure Quantum workspace. For example, a professor may need to share workspace access with a group of students. 
+
+We recommend using the instructions in this article if you need to grant access to 10 or more users. For a smaller number of users, see [Share access to your Azure Quantum workspace](xref:microsoft.quantum.how-to.share-access-workspace).
 
 In this article you'll:
 
-1. Create a group using the Azure Active Directory portal.
-1. Add the group as a contributor to your Quantum workspace.
-1. Bulk invite your users to the Azure Active Directory.
-1. Bulk import those users to your group.
+1. [Create a group using the Azure Active Directory portal.](#create-a-group-in-the-azure-active-directory)
+1. [Add the group as a contributor to your Quantum workspace.](#add-your-group-as-a-contributor-to-your-quantum-workspace)
+1. [Bulk invite your users to the Azure Active Directory.](#bulk-invite-users-to-the-azure-active-directory)
+1. [Bulk import those users to your group.](#bulk-import-members-to-your-group)
 
 ## Prerequisites
 
@@ -112,7 +114,7 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
     :::image type="content" source="media/bulk-invite-users-download-users.png" alt-text="Screen shot showing how to download users into a CSV.":::
     
-1. After the bulk users export is complete, click on **Download results** to download the CSV file with all the Azure Active Directory users.
+1. After the bulk users export is complete, click on **Download results** to download the CSV file with all your Azure Active Directory users.
 
 1. After the download is complete, import your group members. Go to [Groups - Microsoft Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/GroupsManagementMenuBlade/AllGroups). Select your group, on the left-side menu, go to **Members**. In this blade, select **Bulk operations**, and then **Import members**.
 
