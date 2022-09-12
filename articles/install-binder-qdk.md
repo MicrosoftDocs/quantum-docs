@@ -45,7 +45,7 @@ You will find that the different Jupyter samples might use either of the two sty
 In addition to notebooks, you can also run Q# console applications via Binder. You'll notice notice that there are different types of console applications present in the samples:
 
 - the *Q# standalone* application, which uses an `EntryPoint` function/operation in a `.qs` file to run the Q# program from the command line (see [developing with Q# applications](xref:microsoft.quantum.install-qdk.overview.standalone)).
-- the *Q# + .NET* application, which uses a .NET language (C# or F#) host program to call into operations from a `.qs` file (see [developing with Q# and .NET](xref:microsoft.quantum.install-qdk.overview.cs)).
+- the *Q# + .NET* application, which uses a .NET language (C# or F#) host program to call into operations from a `.qs` file (see [Write Q# and .NET program to run on a local simulator](xref:microsoft.quantum.how-to.csharp-local)).
 - while not directly shown in the samples overview, a lot of samples are also available as Python console applications. These contain the same Python code as a *Q# + Python* Jupyter Notebook would, just without the notebook part (see [developing with Q# and Python](xref:microsoft.quantum.install-qdk.overview.python)).
 
 To run the samples, you can open a terminal in the Jupyter interface by selecting **New▾ → Terminal** from the directory view. You may then run any bash commands from within the Binder environment, for example to run the CHSH sample via `python host.py` as shown below.
