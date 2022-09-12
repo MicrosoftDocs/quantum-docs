@@ -1,11 +1,11 @@
 ---
 author: bradben
-description: Learn how to contribute conceptual or API content to the Microsoft Quantum documentation set.
+description: Learn how to contribute conceptual or API content to the Azure Quantum documentation set.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 09/07/2022
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: conceptual
+ms.topic: contributor-guide
 no-loc: ['Q#', '$$v']
 title: Contributing documentation to the Microsoft QDK
 uid: microsoft.quantum.contributing-qdk.overview.docs
@@ -18,7 +18,6 @@ The documentation for the Quantum Development Kit takes on several different for
 Following the principles of [Docs as Code](https://www.writethedocs.org/guide/docs-as-code/), all Quantum Development Kit documentation is formatted as code and is managed using Git in the same way as the source code that is used to build the Quantum Development Kit.
 For the most part, the code backing documentation consists of various forms of [Markdown](https://daringfireball.net/projects/markdown/), a language for writing out richly formatted text in a plain text format that's easy to use at the command line, in IDEs, and with source control.
 We similarly adopt the [MathJax](https://www.mathjax.org/) library to allow for formatting mathematics in documentation using the LaTeX language, as detailed further below.
-
 
 That said, each form of documentation does vary somewhat in the details:
 

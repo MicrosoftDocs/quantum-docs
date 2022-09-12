@@ -1,21 +1,21 @@
 ---
 author: bradben
-description: Learn how to submit a GitHub pull request to contribute code or documentation to the Microsoft Quantum Development Kit.
+description: Learn how to submit a GitHub pull request to contribute code or documentation to Azure Quantum.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 09/07/2022
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: conceptual
+ms.topic: contributor-guide
 ms.custom: kr2b-contr-experiment
 no-loc: ['Q#', '$$v']
 title: Opening pull requests for the Quantum Development Kit
 uid: microsoft.quantum.contributing-qdk.overview.pulls
 ---
 
-# Opening pull requests for Quantum Development Kit contributions
+# Opening pull requests for Azure Quantum contributions
 
-All of the documentation for the Quantum Development Kit (QDK) is managed using the Git version control system through the use of several repositories hosted on GitHub.
-Using Git and GitHub together makes it easy to collaborate widely on the QDK.
+All of the documentation for Azure Quantum is managed using the Git version control system through the use of several repositories hosted on GitHub.
+Using Git and GitHub together makes it easy to collaborate widely on Azure Quantum.
 In particular, any Git repository can be cloned or forked to make a completely independent copy of that repository.
 This allows you to work on your contribution with the tools and at a pace that you prefer.
 
@@ -34,7 +34,11 @@ The page for each pull request includes details of all the changes that make you
 
 ## What is a pull request? ##
 
-Having said the above, it's helpful to take a few moments to say what a pull request **is**.
+Having said the above, it's helpful to take a few moments to say what a pull request **is**. In short, you are *requesting* that the admin of the repository *pull* your changes into the repository. 
+
+> [!NOTE]
+> For a overall primer on how Git and GitHub work with the Microsoft publishing system, including definitions of terms such as *push*, *pull*, *branch*, *upstream*, and so on, see the [GitHub contribution workflow](https://docs.microsoft.com/contribute/how-to-write-workflows-major).
+
 When working with Git, any changes are represented as _commits_ that describe how those changes are related to the state of the repository before those changes.
 We'll often draw diagrams in which commits are drawn as circles with arrows from previous commits.
 
@@ -60,7 +64,11 @@ Using this process helps us use GitHub functionality to improve contributions an
 ## How to make a pull request ##
 
 There are two main ways to make a pull request.  
-For small changes that only affect a single file, the GitHub web interface can be used to make a pull request entirely online. Simply navigate to the file you want to edit and use the edit icon.  
+For small changes that only affect a single file, the GitHub web interface can be used to make a pull request entirely online. You can access the GitHub web interface by:
+
+- Navigating to the file in the GitHub repository and selecting the edit icon. 
+- Navigating to the public-facing documentation page on *docs.microsoft.com* and selecting the edit icon. For more information, see [Quick edits to documentation](https://docs.microsoft.com/contribute/#quick-edits-to-documentation).
+-
 For more complicated contributions, it's most often easier to clone the repository to your local computer to prepare for a pull request first.
 
 <!--
