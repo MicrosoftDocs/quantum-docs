@@ -500,7 +500,7 @@ This release contains the following:
 
 > [!NOTE]
 > Q# applications using the new [`@EntryPoint()`](xref:Microsoft.Quantum.Core.EntryPoint) attribute currently cannot be called from Python or .NET host programs.
-> See the [Python](xref:microsoft.quantum.install-qdk.overview.python) and [.NET interoperability](xref:microsoft.quantum.install-qdk.overview.cs) guides for more information.
+> See the [Python](xref:microsoft.quantum.install-qdk.overview.python) and [.NET interoperability](xref:microsoft.quantum.how-to.csharp-local) guides for more information.
 
 ## 2020-03-31
 
