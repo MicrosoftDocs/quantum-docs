@@ -144,8 +144,8 @@ First, you need the Q# quantum application that you want to run in
 Azure Quantum.
 
 > [!TIP]
-> If this is your first time creating Q# quantum applications, see our [Microsoft Learn
-> module](/learn/modules/qsharp-create-first-quantum-development-kit/).
+> If this is your first time creating Q# quantum applications, see our [Microsoft training
+> module](/training/modules/qsharp-create-first-quantum-development-kit/).
 
 In this case, we will use a simple quantum random bit generator. Create a Q#
 project and substitute the content of `Program.qs` with the following code:
