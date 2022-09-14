@@ -33,7 +33,7 @@ The Rigetti provider makes the following targets available:
 
 ## Simulators
 
-The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.html) is an open-source simulator for [Quil]. The `rigetti.sim.qvm` target accepts a Quil program as text and runs that program on QVM hosted in the cloud, returning simulated results.
+The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.html) is an open-source simulator for [Quil]. The `rigetti.sim.qvm` target accepts a [Quil program](#quil) as text and runs that program on QVM hosted in the cloud, returning simulated results.
 
 - Job Type: `Simulation`
 - Data Format: `rigetti.quil.v1`
@@ -64,8 +64,13 @@ A multi-chip 80-qubit processor.
 - Target ID: `rigetti.qpu.aspen-m-2`
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 
-
-
+> [!IMPORTANT]
+>  To submit your quantum program to Rigetti's Aspen-M-2 quantum processor, verify that you have the lastest version of QDK installed. If you are running a [Qiskit circuit in an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal), copy and run the following code in a cell in your notebook.
+>  
+> ```python
+> !pip install azure-quantum[qiskit]==0.25.228311
+> ````
+> 
 ## Pricing
 
 To see Rigetti's billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#rigetti).
