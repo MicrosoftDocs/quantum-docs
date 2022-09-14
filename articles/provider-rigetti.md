@@ -65,7 +65,7 @@ A multi-chip 80-qubit processor.
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 
 > [!IMPORTANT]
->  To submit your quantum program to Rigetti's Aspen-M-2 quantum processor, verify that you have the lastest version of QDK installed. If you are running a [Qiskit circuit in an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal), copy and run the following code in a cell in your notebook.
+>  To submit your quantum program to Rigetti's Aspen-M-2 quantum processor, verify that you have the lastest version of QDK installed. If you are running a [Qiskit circuit in an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal), copy and run the following code in a cell in your notebook to install the lastest version of QDK and `azure-quantum` package.
 >  
 > ```python
 > !pip install azure-quantum[qiskit]==0.25.228311
