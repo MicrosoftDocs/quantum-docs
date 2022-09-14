@@ -312,13 +312,13 @@
     href: further-reading-qdk.md
   - name: Azure CLI commands >>
     href: /cli/azure/quantum
-  - name: Contributing to the Quantum Development Kit
+  - name: Contribute to Azure Quantum
     items:
-    - name: Contributing to the QDK
+    - name: How to contribute to Azure Quantum
       href: contributing-overview.md
     - name: Report bugs
       href: contributing-reporting-bugs.md
-    - name: Improving documentation
+    - name: Contribute to documentation
       href: contributing-docs.md
     - name: Opening pull requests
       href: contributing-pull-requests.md
@@ -326,9 +326,9 @@
       href: contributing-code.md
     - name: Contribute samples
       href: contributing-samples.md
-    - name: Style guide for contributors
+    - name: Q# style guide for contributors
       href: contributing-style-guide.md
-    - name: API design principles for Q#
+    - name: Q# API design guide for contributors
       href: contributing-api-design-principles.md
 - name: Release notes
   href: release-notes.md

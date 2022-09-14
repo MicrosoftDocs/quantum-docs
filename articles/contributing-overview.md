@@ -7,23 +7,24 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: contributor-guide
 no-loc: ['Q#', '$$v']
-title: Contributing to Azure Quantum
+title: Contributing to Azure Quantum documentation
 uid: microsoft.quantum.contributing-qdk.overview
 ---
 
 # Contributing to Azure Quantum
 
-The Azure Quantum documentation set and the Quantum Development Kit (QDK) is more than a collection of tools and resources for writing quantum programs.
-It's part of a broad community of people discovering quantum computing, performing research in quantum algorithms, developing new applications for quantum devices, and otherwise working to make the most out of the quantum programming.
+The Azure Quantum documentation set and the Quantum Development Kit (QDK) are more than a collection of tools and resources for writing quantum programs.
+They're part of a broad community of people discovering quantum computing, performing research in quantum algorithms, developing new applications for quantum devices, and otherwise working to make the most out of the quantum programming.
+
 As a member of that community, Azure Quantum aims to offer quantum developers across a wide range of backgrounds with the features they need.
 Your contributions to the documentation and the QDK help in realizing that goal by improving the tools used by other quantum developers, how those tools are documented, and even by creating new features and functionality that helps make the entire quantum programming community a better place to discover and create.
 We're very thankful for your kind contributions, and for the opportunity to work with you to make our community the best that it can be. 
 
-In this guide, we provide some advice on how to make your contribution as useful as possible to the broader quantum programming community.
+This article provides some advice on how to make your contribution as useful as possible to the broader quantum programming community.
 
 ## Building community
 
-The very first thing about making a contribution is to always keep in mind the community that you are contributing to.
+The first thing when making a contribution is to always keep in mind the community that you are contributing to.
 By acting respectfully and professionally towards your peers in the quantum programming community and more broadly, you can help to make sure that your efforts build the best and most welcoming community possible.
 
 As a part of that effort, all Azure Quantum projects have adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
@@ -33,7 +34,7 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 ## What kinds of contributions help the community?
 
 There are lots of different ways to help the quantum programming community through your contributions.
-In this guide, we'll focus on three ways that are especially relevant to Azure Quantum and the Quantum Development Kit.
+This guide focuses on three ways that are especially relevant to Azure Quantum and the Quantum Development Kit.
 All of these ways are critical to building a quantum community that empowers people.
 That said, this is definitely not an exhaustive list — we encourage you to explore other ways to help the community build on the promise of quantum programming!
 
@@ -72,11 +73,6 @@ There are also a few other, more specialized repositories focusing on auxiliary 
 Thanks for being a part of the Azure Quantum community, we're excited for your contributions!
 If you'd like to learn more about contributing, please continue with one of the following guides.
 
-> [!div class="nextstepaction"]
-> [Learn how to report bugs](xref:microsoft.quantum.contributing-qdk.overview.reporting)
-
-> [!div class="nextstepaction"]
-> [Learn how to contribute documentation](xref:microsoft.quantum.contributing-qdk.overview.docs)
-
-> [!div class="nextstepaction"]
-> [Learn how to open pull requests](xref:microsoft.quantum.contributing-qdk.overview.pulls)
+- [Learn how to report bugs](xref:microsoft.quantum.contributing-qdk.overview.reporting)
+- [Learn how to contribute documentation](xref:microsoft.quantum.contributing-qdk.overview.docs)
+- [Learn how to open pull requests](xref:microsoft.quantum.contributing-qdk.overview.pulls)

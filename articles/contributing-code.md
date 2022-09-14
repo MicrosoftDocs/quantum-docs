@@ -1,14 +1,14 @@
 ---
 author: bradben
-description: Learn how to contribute sample and library code to the Microsoft Quantum Development Kit (QDK).
+description: Learn how to contribute sample and library code to the Azure Quantum documentation.
 ms.author: brbenefield
 ms.date: 05/12/2022
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: conceptual
+ms.topic: contributor-guide
 ms.custom: kr2b-contr-experiment
 no-loc: ['Q#', '$$v']
-title: Contribute code to the Quantum Development Kit
+title: Contribute code to the Azure Quantum documentation
 uid: microsoft.quantum.contributing-qdk.overview.code
 ---
 

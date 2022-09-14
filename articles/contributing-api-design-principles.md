@@ -2,30 +2,30 @@
 author: bradben
 description: API design principles for programming with Q#
 ms.author: brbenefield
-ms.date: 05/13/2022
+ms.date: 09/15/2022
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: conceptual
+ms.topic: contributor-guide
 ms.custom: kr2b-contr-experiment
 no-loc: ['Q#', '$$v']
-title: API design principles for Q# programming
+title: API design principles for the Q# language
 uid: microsoft.quantum.contributing-qdk.overview.api-design
 ---
 
-# API design principles for Q# programming
+# API design principles for the Q# language
 
 ## Introduction
 
-As a language and as a platform, Q# empowers users to write, run, understand, and explore quantum applications.
-In order to empower users, when we design Q# libraries, we follow a set of API design principles to guide our designs and to help us make usable libraries for the the quantum development community.
+As a programming language and as a platform, Q# enables users to write, run, understand, and explore quantum applications.
+In order to empower users, Q# libraries follow a set of API design principles that guide our designs and help us make usable libraries for the the quantum development community.
 This article lists these principles, and gives examples to help guide how to apply them when designing Q# APIs.
 
 > [!TIP]
 > This is a fairly detailed document that's intended to help guide library development and in-depth library contributions.
 > You'll probably find it most useful if you're writing your own libraries in Q#, or if you're contributing larger features to the [Q# libraries repository](https://github.com/microsoft/QuantumLibraries).
 >
-> On the other hand, if you're looking to learn how to contribute to the Quantum Development Kit more generally, we suggest starting with the [contribution guide](xref:microsoft.quantum.contributing-qdk.overview).
-> If you're looking for more general information about how we recommend formatting your Q# code, you may be interested in checking out the [style guide](xref:microsoft.quantum.contributing-qdk.overview.style).
+> On the other hand, if you're looking to learn how to contribute to Azure Quantum and the Quantum Development Kit more generally, you can start with the [Contribution guide overview](xref:microsoft.quantum.contributing-qdk.overview).
+> If you're looking for more general recommendations about formatting your Q# code, see the [Q# style guide](xref:microsoft.quantum.contributing-qdk.overview.style).
 
 ## General principles
 
@@ -45,7 +45,7 @@ This article lists these principles, and gives examples to help guide how to app
     case they are useful, but make sure that each part of an API has
     a *concrete* example in which it will be useful.
 
-  *Examples:*
+  *Example:*
   - @"Microsoft.Quantum.Canon.ApplyToEachCA" can be used as `ApplyToEachCA(H, _)` to prepare
       registers in a uniform superposition state, a common task in
       many quantum algorithms. The same operation can also be used
@@ -80,7 +80,7 @@ This article lists these principles, and gives examples to help guide how to app
 - ✅ **DO** provide "shim" operations and functions that allow
     existing user code to operate correctly during deprecation.
 
-  *Examples:*
+  *Example:*
   - When renaming an operation called `EstimateExpectation` to
       `EstimateAverage`, introduce a new operation called
       `EstimateExpectation` that calls the original operation at
@@ -109,7 +109,7 @@ This article lists these principles, and gives examples to help guide how to app
     functions and operations, both in the same API and in previously
     existing libraries.
 
-  *Examples:*
+  *Example:*
   - The @"Microsoft.Quantum.Canon.Delay" operation makes minimal assumptions
       about its input, and thus can be used to delay applications of either
       operations across the Q# standard library or as defined by users.
@@ -123,7 +123,7 @@ This article lists these principles, and gives examples to help guide how to app
       written deterministically, and so should be exposed to the
       user as `Squared : Double -> Double` rather than as an
       operation `Square : Double => Double`. This allows for the
-      subroutine to be called in more places (for example: inside of
+      subroutine to be called in more places (for example, inside of
       other functions), and provides useful optimization
       information to the compiler that can affect performance and
       optimizations.
@@ -139,7 +139,7 @@ This article lists these principles, and gives examples to help guide how to app
 - ✅ **DO** generalize the input type as much as reasonable for each
     function and operation, using type parameters as needed.
 
-  *Examples:*
+  *Example:*
   - `ApplyToEach` has type `<'T>(('T => Unit), 'T[]) => Unit`
       rather than the specific type of its most common
       application, `((Qubit => Unit), Qubit[]) => Unit`.
@@ -169,7 +169,7 @@ This article lists these principles, and gives examples to help guide how to app
 - ✅ **DO** order items in input and output tuples consistently
     across different functions and operations.
 
-  *Examples:*
+  *Example:*
   - If considering two or functions or operations that each take
       a rotation angle and a target qubit as inputs, ensure that
       they are ordered the same in each input tuple. That is,
@@ -203,7 +203,7 @@ This article lists these principles, and gives examples to help guide how to app
 - ✅ **DO** introduce new user-defined types to provide helpful
     shorthand for long and/or complicated types.
 
-  *Examples:*
+  *Example:*
   - In cases where an operation type with three qubit array
       inputs is commonly taken as an input or returned as an
       output, providing a UDT such as
@@ -213,17 +213,17 @@ This article lists these principles, and gives examples to help guide how to app
 - ✅ **DO** introduce new user-defined types to indicate that a given
     base type should only be used in a very particular sense.
 
-  *Examples:*
+  *Example:*
   - An operation that should be interpreted specifically as an
       operation that encodes classical data into a quantum
       register may be appropriate to label with a user-defined
       type `newtype InputEncoder = (Apply : (Qubit[] => Unit))`.
 
 - ✅ **DO** introduce new user-defined types with named items that
-    allow for future extensibility (for example: a results structure that
+    allow for future extensibility (for example, a results structure that
     may contain additional named items in the future).
 
-  *Examples:*
+  *Example:*
   - When an operation `TrainModel` exposes a large number of
       configuration options, exposing these options as a new
       `TrainingOptions` UDT and providing a new function
@@ -236,7 +236,7 @@ This article lists these principles, and gives examples to help guide how to app
     preference to requiring users to know the correct tuple
     deconstruction.
 
-  *Examples:*
+  *Example:*
   - When representing a complex number in its polar
       decomposition, prefer
       `newtype ComplexPolar = (Magnitude: Double, Argument: Double)` to
@@ -272,7 +272,7 @@ This article lists these principles, and gives examples to help guide how to app
 - ⛔️ **DON'T** introduce accessor functions unless strictly required;
     strongly prefer named items in this case.
 
-  *Examples:*
+  *Example:*
   - When introducing a UDT `newtype Complex = (Double, Double)`,
       prefer modifying the definition to
       `newtype Complex = (Real : Double, Imag : Double)` to introducing
@@ -339,7 +339,7 @@ This article lists these principles, and gives examples to help guide how to app
     (`_`) to visually distinguish private and internal operations and
     functions from public callables.
 
-  *Examples:*
+  *Example:*
   - The operation name `_Features` indicates a function that is
       private to a given namespace and assembly, and should be
       accompanied by either the `internal` keyword.
@@ -369,7 +369,7 @@ This article lists these principles, and gives examples to help guide how to app
     or that require significant quantum algorithms knowledge to
     read.
 
-  *Examples:*
+  *Example:*
   - Prefer "amplitude amplification iteration" to "Grover
       iteration."
 
@@ -378,7 +378,7 @@ This article lists these principles, and gives examples to help guide how to app
     implementation. Note that the implementation can and should be
     documented in [API documentation comments](xref:microsoft.quantum.qsharp.comments#documentation-comments).
 
-  *Examples:*
+  *Example:*
   - Prefer "estimate overlap" to "Hadamard test," as the latter
       communicates how the former is implemented.
 
@@ -441,9 +441,9 @@ This article lists these principles, and gives examples to help guide how to app
         inputs and not on the state of a target machine, its
       environment, or the state of the machine's qubits. By
       contrast with an assertion, a fact is only sensitive to
-      the *values* provided to that fact. For example:
+      the *values* provided to that fact.
 
-      *Examples:*
+      *Example:*
       - @"Microsoft.Quantum.Diagnostics.EqualityFactI":
         represents an equality fact about two
         integer inputs; either the integers provided as
@@ -452,18 +452,18 @@ This article lists these principles, and gives examples to help guide how to app
 
     - **Options:** A UDT containing several named items that
         can act as "optional arguments" to a function or
-        operation. For example:
+        operation. 
 
-      *Examples:*
+      *Example:*
       - The @"Microsoft.Quantum.MachineLearning.TrainingOptions" UDT includes
         named items for learning rate, minibatch size, and other
-        configurable parameters for ML training.
+        configurable parameters for Machine Learning training.
 
   - **Adjectives**:
 
     - ⛔️ **New**: This adjective **SHOULD NOT** be used, as to avoid confusion
         with its usage as a verb in many
-        programming languages (e.g.: C++, C#, Java, TypeScript, PowerShell).
+        programming languages, for example, C++, C#, Java, TypeScript, PowerShell.
 
   - **Prepositions:** In some cases, prepositions can be used to
       further disambiguate or clarify the roles of nouns and verbs
@@ -476,7 +476,7 @@ This article lists these principles, and gives examples to help guide how to app
         original representation. This is especially common for
         type conversion functions.
 
-      *Examples:*
+      *Example:*
       - `IntAsDouble(2)`
           indicates that both the input (`2`) and the output (`2.0`)
           represent qualitatively the same information, but using

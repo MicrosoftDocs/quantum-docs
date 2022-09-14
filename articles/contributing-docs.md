@@ -7,15 +7,15 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: contributor-guide
 no-loc: ['Q#', '$$v']
-title: Contributing documentation to the Microsoft QDK
+title: Contributing documentation to Microsoft Azure Quantum 
 uid: microsoft.quantum.contributing-qdk.overview.docs
 ---
 
-# Improving documentation
+#  documentation
 
-The documentation for the Quantum Development Kit takes on several different forms, such that information is readily available to quantum developers.
+The documentation for Azure Quantum takes on several different forms, such that information is readily available to quantum developers.
 
-Following the principles of [Docs as Code](https://www.writethedocs.org/guide/docs-as-code/), all Quantum Development Kit documentation is formatted as code and is managed using Git in the same way as the source code that is used to build the Quantum Development Kit.
+Following the principles of [Docs as Code](https://www.writethedocs.org/guide/docs-as-code/), all Azure Quantum documentation (in fact, all Azure documentation) is formatted as code and is managed using Git in the same way as the source code that is used to build the Quantum Development Kit.
 For the most part, the code backing documentation consists of various forms of [Markdown](https://daringfireball.net/projects/markdown/), a language for writing out richly formatted text in a plain text format that's easy to use at the command line, in IDEs, and with source control.
 We similarly adopt the [MathJax](https://www.mathjax.org/) library to allow for formatting mathematics in documentation using the LaTeX language, as detailed further below.
 
@@ -24,6 +24,10 @@ That said, each form of documentation does vary somewhat in the details:
 - The **conceptual documentation** consists of a set of articles that are published to [Microsoft Docs](xref:microsoft.quantum.azure-quantum-overview), and that describe everything from the basics of quantum computing to the technical specifications for interchange formats. These articles are written in [DocFX-Flavored Markdown (DFM)](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html), a Markdown variant used for creating rich documentation sets.
 - The **API reference** is a set of pages for each Q# function, operation, and user-defined type, published to </qsharp/api/>. These pages document the inputs and operations to each callable, along with examples and links to more information. The API reference is automatically extracted from small DFM documents in Q# source code as a part of each release.
 - The **README<!---->.md** files included with each sample and kata describe how to use that sample or kata is used, what it covers, and how it relates to the rest of the Quantum Development Kit. These files are written using [GitHub Flavored Markdown (GFM)](https://github.github.com/gfm/), a more lightweight alternative to DFM that's popular for attaching documentation directly to code repositories.
+
+## Reporting issues
+
+
 
 ## Contributing to the conceptual documentation
 

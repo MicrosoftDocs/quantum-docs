@@ -8,7 +8,7 @@ ms.subservice: qdk
 ms.topic: contributor-guide
 ms.custom: kr2b-contr-experiment
 no-loc: ['Q#', '$$v']
-title: Opening pull requests for the Quantum Development Kit
+title: Opening pull requests for Azure Quantum documentation
 uid: microsoft.quantum.contributing-qdk.overview.pulls
 ---
 
@@ -36,7 +36,7 @@ The page for each pull request includes details of all the changes that make you
 
 Having said the above, it's helpful to take a few moments to say what a pull request **is**. In short, you are *requesting* that the admin of the repository *pull* your changes into the repository. 
 
-> [!NOTE]
+> [!IMPORTANT]
 > For a overall primer on how Git and GitHub work with the Microsoft publishing system, including definitions of terms such as *push*, *pull*, *branch*, *upstream*, and so on, see the [GitHub contribution workflow](https://docs.microsoft.com/contribute/how-to-write-workflows-major).
 
 When working with Git, any changes are represented as _commits_ that describe how those changes are related to the state of the repository before those changes.
@@ -64,12 +64,11 @@ Using this process helps us use GitHub functionality to improve contributions an
 ## How to make a pull request ##
 
 There are two main ways to make a pull request.  
-For small changes that only affect a single file, the GitHub web interface can be used to make a pull request entirely online. You can access the GitHub web interface by:
 
-- Navigating to the file in the GitHub repository and selecting the edit icon. 
-- Navigating to the public-facing documentation page on *docs.microsoft.com* and selecting the edit icon. For more information, see [Quick edits to documentation](https://docs.microsoft.com/contribute/#quick-edits-to-documentation).
--
-For more complicated contributions, it's most often easier to clone the repository to your local computer to prepare for a pull request first.
+- For small changes that only affect a single file, the GitHub web interface can be used to make a pull request entirely online. You can access the GitHub web interface by:
+  - Navigating to the file in the GitHub repository and selecting the edit icon, or
+  - Navigating to the public-facing documentation page on *docs.microsoft.com* and selecting the edit icon. For more information, see [Quick edits to documentation](https://docs.microsoft.com/contribute/#quick-edits-to-documentation).
+- For larger contributions, it's usually easier to *fork* the repository and *clone* it to your local computer to submit pull request. For a step-by-step guide on how to fork and clone a local repository, see [Set up Git repository locally for documentation](https://docs.microsoft.com/contribute/get-started-setup-local).
 
 <!--
 ### Using the Web Interface ###
@@ -93,8 +92,8 @@ This way, you can edit your personal fork to your heart's content before making 
 
 ## Next steps ##
 
-Congratulations on using Git to help out the Quantum Development Kit community!
-To learn more about how to contribute code, please continue with the following guide.
+Congratulations on using Git to help out the Azure Quantum community!
+To learn more about how to contribute code and samples to Azure Quantum, see the following articles. 
 
-> [!div class="nextstepaction"]
-> [Learn how to contribute code](contributing-code.md)
+- [Contribute code to the Quantum Development Kit](xref:microsoft.quantum.contributing-qdk.overview.code)
+- [Contribute samples to the Quantum Development Kit](xref:microsoft.quantum.contributing-qdk.overview.samples)
