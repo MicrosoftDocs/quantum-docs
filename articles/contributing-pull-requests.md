@@ -37,7 +37,7 @@ The page for each pull request includes details of all the changes that make you
 Having said the above, it's helpful to take a few moments to say what a pull request **is**. In short, you are *requesting* that the admin of the repository *pull* your changes into the repository. 
 
 > [!IMPORTANT]
-> For a overall primer on how Git and GitHub work with the Microsoft publishing system, including definitions of terms such as *push*, *pull*, *branch*, *upstream*, and so on, see the [GitHub contribution workflow](https://docs.microsoft.com/contribute/how-to-write-workflows-major).
+> For a overall primer on how Git and GitHub work with the Microsoft publishing system, including definitions of terms such as *push*, *pull*, *branch*, *upstream*, and so on, see the [GitHub contribution workflow](/contribute/how-to-write-workflows-major).
 
 When working with Git, any changes are represented as _commits_ that describe how those changes are related to the state of the repository before those changes.
 We'll often draw diagrams in which commits are drawn as circles with arrows from previous commits.
@@ -67,8 +67,8 @@ There are two main ways to make a pull request.
 
 - For small changes that only affect a single file, the GitHub web interface can be used to make a pull request entirely online. You can access the GitHub web interface by:
   - Navigating to the file in the GitHub repository and selecting the edit icon, or
-  - Navigating to the public-facing documentation page on *docs.microsoft.com* and selecting the edit icon. For more information, see [Quick edits to documentation](https://docs.microsoft.com/contribute/#quick-edits-to-documentation).
-- For larger contributions, it's usually easier to *fork* the repository and *clone* it to your local computer to submit pull request. For a step-by-step guide on how to fork and clone a local repository, see [Set up Git repository locally for documentation](https://docs.microsoft.com/contribute/get-started-setup-local).
+  - Navigating to the public-facing documentation page on *docs.microsoft.com* and selecting the edit icon. For more information, see [Quick edits to documentation](/contribute/#quick-edits-to-documentation).
+- For larger contributions, it's usually easier to *fork* the repository and *clone* it to your local computer to submit pull request. For a step-by-step guide on how to fork and clone a local repository, see [Set up Git repository locally for documentation](/contribute/get-started-setup-local).
 
 <!--
 ### Using the Web Interface ###
