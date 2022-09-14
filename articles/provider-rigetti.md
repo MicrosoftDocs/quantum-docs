@@ -21,13 +21,19 @@ The Aspen chip topology is octagonal with 3-fold (2-fold for edges) connectivity
 - Publisher: [Rigetti](https://rigetti.com)
 - Provider ID: `rigetti`
 
-## Targets
 
 The Rigetti provider makes the following targets available:
 
-### Simulators
+|Target name|	Target ID|	Number of qubits|	Description|
+|---|---|---|---|
+|[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil programs. Free of cost.|
+|[Aspen-11](#aspen-11) |	rigetti.qpu.aspen-11 | 40 qubits | Rigetti's single-chip quantum processor.	|
+|[Aspen-M-2](#aspen-m-2) |	rigetti.qpu.aspen-m-2|	80 qubits	| Rigetti's multi-chip quantum processor. |
 
-[QVM] is an open-source simulator for [Quil]. The `rigetti.sim.qvm` target accepts a Quil program as text and runs that program on QVM hosted in the cloud, returning simulated results.
+
+## Simulators
+
+The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.html) is an open-source simulator for [Quil]. The `rigetti.sim.qvm` target accepts a Quil program as text and runs that program on QVM hosted in the cloud, returning simulated results.
 
 - Job Type: `Simulation`
 - Data Format: `rigetti.quil.v1`
@@ -35,11 +41,11 @@ The Rigetti provider makes the following targets available:
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 - Pricing: Free ($0)
 
-### Quantum computers
+## Quantum computers
 
 All of Rigetti's publicly available [QPUs](https://qcs.rigetti.com/qpus) are available through Azure Quantum. This list is subject to change without advance notice.
 
-#### Aspen-11
+### Aspen-11
 
 A single-chip 40-qubit processor.
 
@@ -47,9 +53,9 @@ A single-chip 40-qubit processor.
 - Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.qpu.aspen-11`
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
-- Pricing: $0.02 per 10-millisecond increment of job execution time
 
-#### Aspen-M-2
+
+### Aspen-M-2
 
 A multi-chip 80-qubit processor.
 
@@ -57,9 +63,10 @@ A multi-chip 80-qubit processor.
 - Data Formats: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.qpu.aspen-m-2`
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
-- Pricing: $0.02 per 10-millisecond increment of job execution time
 
-### Pricing
+
+
+## Pricing
 
 To see Rigetti's billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#rigetti).
 
@@ -74,7 +81,7 @@ All targets also take the optional `count` integer parameter for defining the nu
 
 ### Quil
 
-All Rigetti targets accept the `rigetti.quil.v1` input format, which is the text of a [Quil] program. By default, the program will be compiled using [quilc] before running. However, quilc doesn't support the pulse level control features ([Quil-T]), so if you want to use those features you must provide a [Native Quil] program (also containing Quil-T) as input and specify the input parameter `skipQuilc: true`.
+All Rigetti targets accept the `rigetti.quil.v1` input format, which is the text of a [Quil] program, which stands for Quantum Instruction Language. By default, the program will be compiled using [quilc] before running. However, quilc doesn't support the pulse level control features ([Quil-T]), so if you want to use those features you must provide a [Native Quil] program (also containing Quil-T) as input and specify the input parameter `skipQuilc: true`.
 
 To make constructing a Quil program easier, you can use [`pyQuil`] along with the [`pyquil-for-azure-quantum`] package. Without this package, `pyQuil` can be used to _construct_ Quil programs but not to submit them to Azure Quantum.
 
