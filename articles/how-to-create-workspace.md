@@ -42,6 +42,8 @@ You need the following prerequisites to create a workspace.
 
 If your organization has an Enterprise Agreement (EA) purchasing contract with Microsoft, your organization's Account Owners can create [Enterprise Dev/Test subscriptions](https://azure.microsoft.com/en-us/offers/ms-azr-0148p/) for active Visual Studio subscribers under the EA.
 
+---
+
 > [!NOTE]
 > If you have any questions regarding the workspace creation process or run into any issue at any point using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Standard Time zone (PST).
 
