@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to create an Azure Quantum workspace.
 ms.author: brbenefield
-ms.date: 02/23/2022
+ms.date: 09/14/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -28,7 +28,19 @@ First-time users automatically get free Azure Quantum Credits for use with each 
 
 You need the following prerequisites to create a workspace.
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. When you sign up for an Azure account, a subscription is created by default. Choose from one of the following subscriptions, or for a full list see [Microsoft Azure Offer Details](https://azure.microsoft.com/en-us/support/legal/offer-details/).
+
+### [Free Trial](#tab/free)
+
+[Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). We offer eligible customers $200 in Azure credits to be used within the first 30 days of sign-up and 12 months of select free services. Within 30 days of sign-up or upon exhaustion of the credits (whichever occurs first), you must upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/en-us/offers/ms-azr-0003p/).
+
+### [Students](#tab/student)
+
+[Sign up for an Azure for Students subscription](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). Azure for Students gets you started with $100 in Azure credits to be used within the first 12 months, plus select free services without requiring a credit card at sign-up. If you exhaust your available credits, your Azure subscription will be disabled. You may then upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/en-us/offers/ms-azr-0003p/).
+
+### [Enterprise Agreement](#tab/EA)
+
+If your organization has an Enterprise Agreement (EA) purchasing contract with Microsoft, your organization's Account Owners can create [Enterprise Dev/Test subscriptions](https://azure.microsoft.com/en-us/offers/ms-azr-0148p/) for active Visual Studio subscribers under the EA.
 
 > [!NOTE]
 > If you have any questions regarding the workspace creation process or run into any issue at any point using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Standard Time zone (PST).
