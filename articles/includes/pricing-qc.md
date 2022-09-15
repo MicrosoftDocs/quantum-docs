@@ -80,12 +80,12 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ## Quantinuum
 
-[Quantinuum](https://www.quantinuum.com/) uses a credit system that charges each job depending on the number of operations in the job, and the number of shots you run. The usage units are *H-System Quantum Credits (HQCs)* for jobs submitted to System Model H1 quantum computers, Powered by Honeywell, and *Emulator Quantum Credits (eHQC)* for jobs submitted to System Model H1 Emulators.
+[Quantinuum](https://www.quantinuum.com/) uses a credit system that charges each job depending on the number of operations in the job, and the number of shots you run. The usage units are *H-System Quantum Credits (HQCs)* for jobs submitted to System Model H1 quantum computers, Powered by Honeywell, and emulator HQCs (eHQCs) for jobs submitted to System Model H1 emulators.
 
 > [!NOTE]
 > Do not confuse the Quantinuum HQCs with the Azure Quantum credits. Quantinuum HQCs are a usage unit defined by the provider to track the usage and quotas of their targets.
 
-HQC and eHQC are used to calculate the cost of running a job, and they are calculated based on the following formula:
+HQCs and eHQCs are used to calculate the cost of running a job, and they are calculated based on the following formula:
 
 $$
 HQC = 5 + C(N_{1q} + 10 N_{2q} + 5 N_m)/5000
