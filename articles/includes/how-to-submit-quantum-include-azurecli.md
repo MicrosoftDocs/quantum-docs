@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 11/12/2021
+ms.date: 09/15/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -18,8 +18,11 @@ Ensure that the following items are installed on your computer:
 
 ## Submit a job to Azure Quantum with the Azure CLI
 
-These steps show how to use the Azure CLI to run a Q# application and select a target from
+These steps show how to use the Azure CLI to run a quantum application and select a target from
 the different providers of your Azure Quantum workspace.
+
+> [!TIP]
+> With the Azure Quantum extension for Visual Studio Code installed, you have full Azure CLI functionality from a terminal window within VS Code.
 
 You will also find a full reference for all commands and features available through the `az quantum` extension in the corresponding section of the [Azure CLI documentation](/cli/azure/quantum).
 

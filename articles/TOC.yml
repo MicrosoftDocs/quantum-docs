@@ -18,12 +18,14 @@
     href: quickstart-microsoft-qio-portal.md
   - name: Understanding job costs in Azure Quantum
     href: azure-quantum-job-costs.md
+  - name: Configure your quantum environment
+    href: install-overview-qdk.md
 - name: Quantum computing
   expanded: true
   items:
   - name: Overview
     items:
-    - name: Understanding Quantum Computing
+    - name: Understanding Quantum computing
       href: overview-understanding-quantum-computing.md
     - name: What are Q# and the Quantum Development Kit
       href: overview-what-is-qsharp-and-qdk.md
@@ -45,7 +47,7 @@
       href: tutorial-qdk-qubit-level-program.md
   - name: How-to guides
     items: 
-    - name: Submit Q# jobs
+    - name: Submit quantum jobs
       href: how-to-submit-jobs.md
     - name: Publish a Q# job as an Azure Function
       href: how-to-publish-qsharp-job-as-azurefunction.md
@@ -224,11 +226,9 @@
         href: optimization-solve-long-running-problems.md
       - name: Solve a batch of problems using asyncio
         href: optimization-async-io.md
-- name: Use a local development environment
+- name: Use a local development environment (HOLD)
   items:
-  - name: Configure your quantum environment
-    href: install-overview-qdk.md
-  - name: Quickstarts
+  - name: (HOLD)
     items: 
     - name: Write a Q# program to run on local simulator
       href: how-to-command-line-local.md
@@ -246,8 +246,6 @@
       href: quickstart-microsoft-cirq.md
     - name: Submit a circuit in provider-specific format
       href: quickstart-microsoft-provider-format.md
-  - name: Use a Binder environment
-    href: install-binder-qdk.md
 - name: Manage Azure Quantum
   items:
   - name: Run Azure Quantum notebooks
