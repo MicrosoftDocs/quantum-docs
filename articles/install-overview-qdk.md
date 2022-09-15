@@ -23,16 +23,14 @@ The QDK provides:
 - The Q# programming language and libraries 
 - The IQ# kernel for running Q# on Jupyter Notebooks 
 - Extensions for Visual Studio Code and Visual Studio 
-- Azure CLI extension to manage the Aure Quantum service and submit Q# applications
+- Azure CLI extension to manage the Azure Quantum service and submit Q# applications
 - APIs for using Python and .NET languages (C#, F#, and VB.NET) with Q#
 
 Choose from several development environment options: 
 
 - [Use a Jupyter Notebook in the Azure Quantum portal and submit jobs to Azure Quantum (recommended)](#use-a-jupyter-notebook-in-the-azure-quantum-portal-and-submit-jobs-to-azure-quantum-recommended)
 - [Use your preferred IDE and language locally and submit jobs to Azure Quantum](#use-your-preferred-ide-and-language-locally-and-submit-jobs-to-azure-quantum)
-- [Use your preferred IDE and language locally and submit jobs to local simulators](#use-your-preferred-ide-and-language-locally-and-submit-jobs-to-local-simulators)
-- [Use a temporary Binder environment](#use-the-qdk-with-a-temporary-binder-environment)
-- [Use a pre-configured Docker image](#use-the-qdk-with-a-pre-configured-docker-image)
+- [Use a pre-configured Docker image](#use-the-qdk-with-a-pre-configured-docker-image-advanced)
 
 ## Jupyter Notebooks
 
@@ -65,8 +63,9 @@ Some scenarios where you may prefer a local environment:
 Select your preferred IDE: 
 
 - [Use Q# and Python with Visual Studio Code or Visual Studio](#use-q-and-python-with-visual-studio-and-visual-studio-code)
-- [Use Python with Qiskit or Cirq](#use-python-with-qiskit-or-cirq)
+- [Use Python with Qiskit, Cirq, or Azure Quantum optimization solvers](#use-python-with-qiskit-or-cirq-or-azure-quantum-optimization-solvers)
 - [Use Q# and Python with Jupyter Notebooks](#use-q-and-python-with-jupyter-notebooks)
+- [Use the QDK with a pre-configured Docker image](#use-the-qdk-with-a-pre-configured-docker-image-advanced)
 
 ### Use Q# and Python with Visual Studio and Visual Studio Code 
 
