@@ -324,7 +324,7 @@ You can now use the updated IQ# kernel to run your existing Q# Jupyter Notebooks
 
 ## Update the azure-quantum Python package
 
-1. Update to the latest `azure-quantum` Python package by using the Python Package Installer (PIP)
+1. Update to the latest `azure-quantum` Python package by using the package installer fo Python (PIP)
 
    ```Shell
    pip install --upgrade azure-quantum

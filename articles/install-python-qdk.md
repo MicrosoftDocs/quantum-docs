@@ -36,7 +36,7 @@ The `qsharp` Python package, which includes the IQ# kernel, contains the necessa
 
     **(Linux)** If haven't done so during installation, you can still initialize conda now. Open a terminal and navigate to the `bin` directory inside your selected install location (for example, `/home/ubuntu/miniconda3/bin`). Then run the appropriate command for your shell, for example,`./conda init bash`. Close your terminal for the changes to take effect.
 
-1. From a new terminal, create and activate a new conda environment named `qsharp-env` with the required packages (including Jupyter Notebook and IQ#) by running the following commands:
+1. From a new terminal, create and activate a new conda environment named `qsharp-env` with the required packages (including Jupyter Notebooks and IQ#) by running the following commands:
 
     ```shell
     conda create -n qsharp-env -c microsoft qsharp notebook
@@ -51,7 +51,7 @@ The `qsharp` Python package, which includes the IQ# kernel, contains the necessa
 1. Prerequisites:
 
     - [Python](https://www.python.org/downloads/) 3.6 or later
-    - The [PIP](https://pip.pypa.io/en/stable/installing) Python package manager
+    - The [PIP](https://pip.pypa.io/en/stable/installation/) Python package manager (installed automatically if you installed Python from python.org)
     - [.NET SDK 6.0](https://dotnet.microsoft.com/download/)
 
 1. Install the `qsharp` package, a Python package that enables interop between Q# and Python.
@@ -60,7 +60,7 @@ The `qsharp` Python package, which includes the IQ# kernel, contains the necessa
     pip install qsharp
     ```
 
-1. Install IQ#, a kernel used by Jupyter and Python that provides the core functionality for compiling and running Q# operations.
+1. Install IQ#, a kernel used by Jupyter Notebooks and Python that provides the core functionality for compiling and running Q# operations.
 
     ```dotnetcli
     dotnet tool install -g Microsoft.Quantum.IQSharp
@@ -82,7 +82,7 @@ The `qsharp` Python package, which includes the IQ# kernel, contains the necessa
 
 ***
 
-That's it! You now have both the `qsharp` Python package and the IQ# kernel for Jupyter, allowing you to compile and run Q# operations from Python and Q# Jupyter Notebooks.
+That's it! You now have both the `qsharp` Python package and the IQ# kernel for Jupyter Notebooks, allowing you to compile and run Q# operations from Python and Q# Jupyter Notebooks.
 
 ## Next steps
 
