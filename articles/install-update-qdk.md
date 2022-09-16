@@ -155,8 +155,8 @@ Select your development environment below.
 
 * [Python: update the `qsharp` package](#update-the-qsharp-python-package)
 * [Jupyter Notebooks: update the IQ# kernel](#update-the-iq-jupyter-kernel)
-* [Visual Studio: update the QDK extension](#update-the-visual-studio-qdk-extension)
-* [VS Code: update the QDK extension](#update-the-vs-code-qdk-extension)
+* [Visual Studio: update the QDK extension](#update-the-qdk-for-visual-studio-extension)
+* [VS Code: update the QDK extension](#update-the-qdk-for-vs-code-extension)
 * [Command line and C#: update project templates](#c-using-the-dotnet-command-line-tool)
 * [Python: Update the *azure-quantum* Python package](#update-the-azure-quantum-python-package)
 
