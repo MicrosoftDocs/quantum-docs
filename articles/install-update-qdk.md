@@ -73,7 +73,7 @@ Regardless of whether you are using C# or Python to host Q# operations, follow t
 
 9. Close the command prompt and select **Build** -> **Build Solution** (do *not* select Rebuild Solution).
 
-You can now skip ahead to [update your Visual Studio QDK extension](#update-the-visual-studio-qdk-extension).
+You can now skip ahead to [update your Visual Studio QDK extension](#update-the-qdk-for-visual-studio-extension).
 
 
 ### Update Q# projects in Visual Studio Code
@@ -317,7 +317,7 @@ You can now use the updated IQ# kernel to run your existing Q# Jupyter Notebooks
 
    Alternatively, if you intend to use the command-line templates, and already have the QDK extension for VS Code installed, you can update the project templates from the extension itself:
 
-   - [Update the QDK extension](#update-the-vs-code-qdk-extension)
+   - [Update the QDK extension](#update-the-qdk-for-vs-code-extension)
    - In VS Code, go to **View** -> **Command Palette**
    - Select **Q#: Install command line project templates**
    - After a few seconds you should get a popup confirming "project templates installed successfully"
