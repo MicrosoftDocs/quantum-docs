@@ -2,7 +2,7 @@
 author: sonialopezbravo
 description: Learn how to add a group of users to your Azure Quantum workspace from a CSV file.
 ms.author: sonialopez
-ms.date: 08/31/2022
+ms.date: 09/15/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -13,9 +13,9 @@ uid: microsoft.quantum.how-to.bulk-add-users
 
 # Add a group to your Azure Quantum workspace
 
-Learn how to grant a group of users access to your Azure Quantum workspace. For example, a professor may need to share workspace access with a group of students. 
+Learn how to grant a group of users access to your Azure Quantum workspace. For example, you may need to grant your team members or students access to your workspace.
 
-We recommend using the instructions in this article if you need to grant access to 10 or more users. For a smaller number of users, see [Share access to your Azure Quantum workspace](xref:microsoft.quantum.how-to.share-access-workspace).
+We recommend using the instructions in this article if you need to grant access to more than 10 users. For a smaller number of users, see [Share access to your Azure Quantum workspace](xref:microsoft.quantum.how-to.share-access-workspace).
 
 In this article you'll:
 
@@ -67,7 +67,7 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
     :::image type="content" source="media/bulk-invite-users-add-contributor.png" alt-text="Screen shot showing how to create a contributor to your Azure Quantum workspace.":::
 
-1. On the **Members** pane, select **Assign access to User, group, or service principal**. Then select **+Select members**. The **Select members** blade opens. Search for your group name and select your group. Then select **Select**.
+1. On the **Members** pane, select Assign access to **User, group, or service principal**. Then select **+Select members**. The **Select members** blade opens. Search for your group name and select your group. Then select **Select**.
 
 
     :::image type="content" source="media/bulk-invite-users-add-group-contributor.png" alt-text="Screen shot showing how to select your group to add to your Azure Quantum workspace.":::

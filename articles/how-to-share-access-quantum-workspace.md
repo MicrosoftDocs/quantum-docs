@@ -2,7 +2,7 @@
 author: sonialopezbravo
 description: Learn how to share access to your Azure Quantum workspace.
 ms.author: sonialopez
-ms.date: 09/09/2022
+ms.date: 09/15/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -13,7 +13,7 @@ uid: microsoft.quantum.how-to.share-access-workspace
 
 # Share access to your Azure Quantum workspace
 
-Learn how to share access to your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). For example, a professor may need to grant students access to their workspace. 
+Learn how to share access to your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). For example, you may need to grant your team members or students access to your workspace. 
 
 We recommend using the instructions in this article if you need to grant access to 10 or less users. For a larger number of users, it may be easier for you or your IT department to create a group of users and then grant it access to your workspace. For instructions, see [Add a group to your Azure Quantum workspace](xref:microsoft.quantum.how-to.bulk-add-users).
 
