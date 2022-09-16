@@ -50,7 +50,7 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
     - **Group description**. Add an optional description to your group.
     - Select **Assigned** as the **Membership type**.
 
-    :::image type="content" source="media/bulk-invite-users-new-group-create.png" alt-text="Screen shot showing how to select new group.":::
+    :::image type="content" source="media/bulk-invite-users-new-group-create.png" alt-text="Screen shot showing how to fill out new group information.":::
 
 1. Select **Create**. You should get a notification that you've successfully created your group.
 
