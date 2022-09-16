@@ -2,7 +2,7 @@
 author: sonialopezbravo
 description: Learn how to share access to your Azure Quantum workspace.
 ms.author: sonialopez
-ms.date: 09/15/2022
+ms.date: 09/16/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to

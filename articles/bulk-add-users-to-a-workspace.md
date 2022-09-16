@@ -2,7 +2,7 @@
 author: sonialopezbravo
 description: Learn how to add a group of users to your Azure Quantum workspace from a CSV file.
 ms.author: sonialopez
-ms.date: 09/15/2022
+ms.date: 09/16/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
