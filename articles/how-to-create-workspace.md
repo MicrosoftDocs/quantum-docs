@@ -36,7 +36,7 @@ You need the following prerequisites to create a workspace.
 
 ### [Students](#tab/student)
 
-[Sign up for an Azure for Students subscription](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). Azure for Students gets you started with $100 in Azure credits to be used within the first 12 months, plus select free services without requiring a credit card at sign-up. If you exhaust your available credits, your Azure subscription will be disabled. You may then upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/).
+[Sign up for an Azure for Students subscription](https://azure.microsoft.com/offers/ms-azr-0170p/). Azure for Students gets you started with $100 in Azure credits to be used within the first 12 months, plus select free services without requiring a credit card at sign-up. If you exhaust your available credits, your Azure subscription will be disabled. You may then upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/).
 
 ### [Enterprise Agreement](#tab/EA)
 
