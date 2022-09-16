@@ -232,7 +232,7 @@ The update procedure depends on whether you originally installed using conda or 
 
 ***
 
-You can now use the updated `qsharp` Python package to run your existing quantum programs.
+You can now use the updated `qsharp` Python package to run your existing Python quantum programs.
 
 ## Update the IQ# Jupyter kernel
 
@@ -286,19 +286,19 @@ The update procedure depends on whether you originally installed using conda or 
 
 You can now use the updated IQ# kernel to run your existing Q# Jupyter Notebooks.
 
-## Update the Visual Studio QDK extension
+## Update the QDK for Visual Studio extension
 
-1. Update the Q# Visual Studio extension
+1. Update the QDK for Visual Studio extension
 
-    - Visual Studio prompts you to accept updates to the [Quantum Visual Studio extension](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64)
+    - Visual Studio prompts you to accept updates to the [QDK for Visual Studio extension](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64)
     - Accept the update
 
     > [!NOTE]
     > The project templates are updated with the extension. The updated templates apply to newly created projects only. The code for your existing projects is not updated when the extension is updated.
 
-## Update the VS Code QDK extension
+## Update the QDK for VS Code extension
 
-1. Update the Quantum VS Code extension
+1. Update the QDK for VS Code extension
 
     - Restart VS Code
     - Navigate to the **Extensions** tab
@@ -307,7 +307,7 @@ You can now use the updated IQ# kernel to run your existing Q# Jupyter Notebooks
 
 ## C# using the `dotnet` command-line tool
 
-1. Update the Quantum project templates for .NET
+1. Update the QDK project templates for .NET
 
     From the command prompt:
 
@@ -315,7 +315,7 @@ You can now use the updated IQ# kernel to run your existing Q# Jupyter Notebooks
     dotnet new -i Microsoft.Quantum.ProjectTemplates
     ```
 
-   Alternatively, if you intend to use the command-line templates, and already have the VS Code QDK extension installed, you can update the project templates from the extension itself:
+   Alternatively, if you intend to use the command-line templates, and already have the QDK extension for VS Code installed, you can update the project templates from the extension itself:
 
    - [Update the QDK extension](#update-the-vs-code-qdk-extension)
    - In VS Code, go to **View** -> **Command Palette**
@@ -324,10 +324,10 @@ You can now use the updated IQ# kernel to run your existing Q# Jupyter Notebooks
 
 ## Update the azure-quantum Python package
 
-1. Update to the latest `azure-quantum` Python package by using the package installer fo Python (PIP)
+1. Update to the latest `azure-quantum` Python package by using the package installer fo Python (pip)
 
    ```Shell
    pip install --upgrade azure-quantum
    ```
    
-1. If you encounter any issues please ensure that Python and PIP are up to date. For information on the latest version requirements, [Install the azure-quantum Python package](xref:microsoft.quantum.install-qdk.overview.python-only)
+1. If you encounter any issues please ensure that Python and pip are up to date. For information on the latest version requirements, [Install the azure-quantum Python package](xref:microsoft.quantum.install-qdk.overview.python-only)
