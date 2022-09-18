@@ -57,9 +57,9 @@ Trying to run this operation on a No Control Flow target will fail because it ev
 to control the computation flow with an `if` statement.
 
 > [!NOTE]
-> Currently, there is an additional limitation for this type of profile target: you can't apply operations on qubits that have been measured, even
+> Currently, you can't apply operations on qubits that have been measured in No Control Flow targets, even
 > if you don't use the results to control the program flow. This limitation is
-> not inherent to this profile type but is circumstantial to the situation of the c.
+> not inherent to this profile type but is circumstantial to the situation of the current hardware.
 
 Presently, these No Control Flow targets are available for Azure Quantum:
 
