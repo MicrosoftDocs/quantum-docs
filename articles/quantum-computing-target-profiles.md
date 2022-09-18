@@ -1,6 +1,6 @@
 ---
 author: bradben
-description: This document provides an overview of targets and target profile types in Azure Quantum.
+description: This document provides an overview of target profile types in Azure Quantum and their limitations .
 ms.date: 09/07/2022
 ms.author: brbenefield
 ms.service: azure-quantum
@@ -14,18 +14,18 @@ uid: microsoft.quantum.target-profiles
 
 This article discusses the different type of target profile types available in the quantum computing providers in Azure Quantum. At this time, because of the early development stage of the field, quantum devices have some limitations and requirements for programs that run on them. 
 
-## Quantum Processing Units (QPU): different profiles
+## Quantum Processing Units (QPU): different profiles and their limitations 
 
 A Quantum Processing Unit (QPU) is a physical or simulated processor that contains a number of interconnected qubits that can be manipulated to compute
 quantum algorithms. It's the central component of a quantum computer or quantum simulator.
 
 Quantum devices are still an emerging technology, and not all of them can run all Q# code. As such, you need to keep some restrictions in mind when developing programs for different targets. Currently, Azure Quantum and the QDK manage three different profiles for QPUs:
 
-- **Full**: This profile can run any Q# program within the limits of memory for simulators or the number of qubits for physical quantum computers.
-- **No Control Flow**: This profile can run any Q# program that doesn't require the use of the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, values of type `Result` don't support equality comparison.
-- **Basic Measurement Feedback**: This profile has limited ability to use the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, you can only compare values of type `Result` as part of conditions within `if` statements in operations. The corresponding conditional blocks might not contain `return` or `set` statements.
+- [**Full**](#create-and-run-applications-for-full-profile-targets): This profile can run any Q# program within the limits of memory for simulators or the number of qubits for physical quantum computers.
+- [**No Control Flow**](#create-and-run-applications-for-no-control-flow-profile-targets): This profile can run any Q# program that doesn't require the use of the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, values of type `Result` don't support equality comparison.
+- [**Basic Measurement Feedback**](#create-and-run-applications-for-basic-measurement-feedback-profile-targets): This profile has limited ability to use the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, you can compare values of type `Result` as part of conditions within `if` statements in operations, allowing mid-circuit measurement. The corresponding conditional blocks might not contain `return` or `set` statements.
 
-### Create and run applications for Full profile targets
+## Create and run applications for Full profile targets
 
 Full profile targets can run any Q# program, meaning you can
 write programs without functionality restrictions. Azure Quantum does not provide
@@ -36,14 +36,14 @@ If you need help setting up your environment to run Q# programs locally, see [Se
 
 You can also explore different [Q# code samples](/samples/browse/?languages=qsharp) to run locally with the QDK.
 
-### Create and run applications for No Control Flow profile targets
+## Create and run applications for No Control Flow profile targets
 
 No Control Flow profile targets can run a wide variety of Q# applications, with
 the constraint that they can't use results from qubit measurements to control
 the program flow. More specifically, values of type `Result` do not support
 equality comparison.
 
-For example, this operation can NOT be run on a No Control Flow target:
+For example, this operation can **NOT** be run on a No Control Flow target:
 
 ```qsharp
     operation SetQubitState(desired : Result, q : Qubit) : Result {
@@ -57,10 +57,9 @@ Trying to run this operation on a No Control Flow target will fail because it ev
 to control the computation flow with an `if` statement.
 
 > [!NOTE]
-> Currently, there is an additional limitation for this type of profile target: *you can't apply operations on qubits that have been measured, even
-> if you don't use the results to control the program flow.* This limitation is
-> not inherent to this profile type but is circumstantial to the situation of the Public
-> Preview.
+> Currently, there is an additional limitation for this type of profile target: you can't apply operations on qubits that have been measured, even
+> if you don't use the results to control the program flow. This limitation is
+> not inherent to this profile type but is circumstantial to the situation of the c.
 
 Presently, these No Control Flow targets are available for Azure Quantum:
 
@@ -72,15 +71,41 @@ Presently, these No Control Flow targets are available for Azure Quantum:
   - [Rigetti Simulator](xref:microsoft.quantum.providers.rigetti#simulators) (`rigetti.sim.*`)
   - [Rigetti QPU](xref:microsoft.quantum.providers.rigetti#quantum-computers) (`rigetti.qpu.*`)
 
-### Create and run applications for Basic Measurement Feedback targets
+## Create and run applications for Basic Measurement Feedback targets
 
-Basic Measurement Feedback profile targets can run a wide variety of Q#
-applications, with the constraint that you can only compare values of type `Result` as part of conditions within `if` statements in operations. The
-corresponding conditional blocks may not contain `return` or `set` statements. This profile type supposes an improvement over No Control Flow profiles, but still is subject to
-some limitations.
+Basic Measurement Feedback profile targets can run a wide variety of Q# applications, with the constraint that you can only compare values of type `Result` as part of conditions within `if` statements in operations. This profile type supposes an improvement over No Control Flow profiles, but still is subject to some limitations.
 
+Basic Measurement Feedback profile targets allow **mid-circuit measurement**, meaning that qubits can be selectively measured at a point other than the final statement of a quantum program, and the output of the measurement can be used in other operations.  Mid-circuit measurement enables multiple measurements at any point throughout the quantum program. The quantum information of the measured qubits collaps to a classical state (zero or one), but the non-measured qubits retain their quantum state.
 
-For example, the preceding `SetQubitState`operation can be used in a Basic Measurement Feedback target as long as you don't include any `return` or `set` statement within the `if` block. For example, the following operation can't be used in a Basic Measurement Feedback target:
+In Q# when measuring a qubit, a value of type `Result` is returned. If you want to use this result in a conditional statement, you have to directly compare in the conditional statement. The corresponding conditional blocks may not contain `return` or `set` statements. 
+
+For example, the following Q# code would be allowed in a Basic Measurement Feedback target:
+```qsharp
+operation MeasureQubit(q : Qubit) : Result { 
+return M(q); 
+}
+
+operation SetToZero(q : Qubit) : Unit {
+
+     if(MeasureQubit(q) == One) { X(q); )
+
+}
+```
+ 
+However, the same code with the Boolean evaluation moved would **NOT** be allowed:
+
+ 
+```qsharp
+operation IsOne(q : Qubit) : Bool {
+     return M(q) == One;
+}
+
+operation SetToZeroUsingIsOne(q : Qubit) : Unit {
+     if(IsOne(q)) { X(q); }
+}
+```
+
+The `SetQubitState `operation in [No Control Flow target profile](#create-and-run-applications-for-no-control-flow-profile-targets) can be used in a Basic Measurement Feedback target as long as you don't include any `return` or `set` statement within the `if` block. For example, the following operation can **NOT** be used in a Basic Measurement Feedback target:
 
 ```qsharp
     operation SetQubitState(desired : Result, q : Qubit) : Result {
