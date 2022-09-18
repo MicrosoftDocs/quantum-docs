@@ -22,8 +22,8 @@ Quantinuum provides access to trapped-ion systems with high-fidelity, fully conn
 > [!NOTE]
 > The Quantinuum provider replaces the old Honeywell provider. New customers must use the Quantinuum provider in their workspaces. All previously available targets and systems are available with the Quantinuum provider. If you previously used the Honeywell provider you may follow the [migration guide to switch to the Quantinuum provider](xref:microsoft.quantum.providers.honeywell.migration).
 
-The following targets are available from this provider:
 
+The following targets are available from this provider:
 
 |Target name|	Target ID|	Number of qubits|	Description|
 |---|---|---|---|
@@ -34,6 +34,10 @@ The following targets are available from this provider:
 |[H1-1](#system-model-h1)|	quantinuum.hqs-lt-s1 |	20 qubits|	Quantinuum's H1-1 trapped ion device.|
 |[H1-2](#system-model-h1)|	quantinuum.hqs-lt-s2	| 12 qubits	|Quantinuum's H1-2 trapped ion device.|
 
+
+Quantinuum's targets correspond to [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-targets) profile. 
+
+
 ## Syntax Checkers
 
 We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-2 syntax checker uses the same compiler as H1-2. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker will return a `success` status and a result of all 0s. If the code does not compile, the syntax checker will return a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
@@ -43,7 +47,7 @@ We recommend that users first validate their code using a Syntax Checker. This i
 - Target ID:
   - H1-1 Syntax Checker: `quantinuum.hqs-lt-s1-apival` 
   - H1-2 Syntax Checker: `quantinuum.hqs-lt-s2-apival`
-- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
+- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-targets)
 
 Syntax Checkers usage is offered free-of-charge.
 
@@ -56,7 +60,7 @@ After validating the syntax of their code with a Syntax Checker, users can take 
 - Target ID: 
   - H1-1 Emulator: `quantinuum.hqs-lt-s1-sim` 
   - H1-2 Emulator: `quantinuum.hqs-lt-s2-sim`
-- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
+- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-targets)
 
 H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
@@ -73,7 +77,7 @@ Both System Model H1 hardware H1-1 and H1-2 are continuously upgraded throughout
 - Target ID:
   - H1-1: `quantinuum.hqs-lt-s1` 
   - H1-2: `quantinuum.hqs-lt-s2`
-- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
+- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-targets)
 
 ### Technical Specifications
 
