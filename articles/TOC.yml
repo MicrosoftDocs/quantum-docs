@@ -308,8 +308,8 @@
     href: azure-quantum-glossary.md
   - name: Common issues
     href: azure-quantum-common-issues.md
-  - name: Build your skills with MS Learn >>
-    href: /learn/paths/quantum-computing-fundamentals/
+  - name: Build your skills with Microsoft training >>
+    href: /training/paths/quantum-computing-fundamentals/
   - name: Learn Q# with the Quantum Katas
     href: tutorial-qdk-intro-to-katas.md
   - name: Q# code samples >>
