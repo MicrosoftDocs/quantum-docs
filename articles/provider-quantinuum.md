@@ -34,6 +34,8 @@ The following targets are available from this provider:
 |[H1-1](#system-model-h1)|	quantinuum.hqs-lt-s1 |	20 qubits|	Quantinuum's H1-1 trapped ion device.|
 |[H1-2](#system-model-h1)|	quantinuum.hqs-lt-s2	| 12 qubits	|Quantinuum's H1-2 trapped ion device.|
 
+To get started using the Quantinuum provider on Azure Quantum, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
+
 ## Syntax Checkers
 
 We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-2 syntax checker uses the same compiler as H1-2. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker will return a `success` status and a result of all 0s. If the code does not compile, the syntax checker will return a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.

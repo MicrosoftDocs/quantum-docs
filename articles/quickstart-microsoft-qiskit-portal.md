@@ -8,7 +8,7 @@ ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Python', '$$v']
 title: Submit Qiskit quantum circuits to Azure Quantum using an online notebook
-zone_pivot_groups: quantum-computing-platforms
+zone_pivot_groups: quantum-computing-platforms-rigetti
 uid: microsoft.quantum.quickstarts.computing.qiskit.portal
 --- 
 

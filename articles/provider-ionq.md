@@ -27,6 +27,7 @@ The following targets are available from this provider:
 |[IonQ Harmony](#ionq-harmony-quantum-computer) |	ionq.qpu	|11 qubits	|IonQ's trapped-ion quantum computer.|
 |[IonQ Aria](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|23 qubits	|IonQ's Aria trapped-ion quantum computer.|
 
+To get started using the IonQ provider on Azure Quantum, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
 ## Quantum simulator
 GPU-accelerated idealized simulator supporting up to 29 qubits, using the same set of gates IonQ provide on its quantum hardware—a great place to preflight jobs before running them on an actual quantum computer.
