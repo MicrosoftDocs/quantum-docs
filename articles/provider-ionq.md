@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the IonQ quantum computing provider
 ms.author: sonialopez
-ms.date: 08/26/2022
+ms.date: 09/21/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference

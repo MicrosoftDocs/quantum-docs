@@ -87,13 +87,17 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
+- ionq.qpu
+- ionq.simulator
 - quantinuum.hqs-lt-s1
 - quantinuum.hqs-lt-s1-apival
 - quantinuum.hqs-lt-s2
 - quantinuum.hqs-lt-s2-apival
 - quantinuum.hqs-lt-s1-sim
-- ionq.qpu
-- ionq.simulator
+- quantinuum.hqs-lt-s2-sim
+- rigetti.sim.qvm
+- rigetti.qpu.aspen-11
+- rigetti.qpu.aspen-m-2
 ```
 
 Next, create an object to represent the [Quantinuum System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.honeywell#system-model-h1-powered-by-honeywell):
@@ -116,7 +120,7 @@ Estimated cost: 5.72
 
 This displays the estimated cost in H-System Quantum Credits (HQCs).
 
-For the most current pricing details, see [System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.honeywell#system-model-h1-powered-by-honeywell), or view pricing options in the **Providers** blade of your workspace. To see your current credit status and usage, select **Credits and quotas**.
+For the most current pricing details, see [Quantinuum Pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or view pricing options in the **Providers** blade of your workspace. To see your current credit status and usage, select **Credits and quotas**.
 
 ## Run on a Quantinuum QPU 
 
