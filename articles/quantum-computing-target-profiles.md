@@ -1,7 +1,7 @@
 ---
 author: bradben
-description: This document provides an overview of target profile types in Azure Quantum and their limitations .
-ms.date: 09/07/2022
+description: This document provides an overview of target profile types in Azure Quantum and their limitations
+ms.date: 09/21/2022
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: core
@@ -57,9 +57,9 @@ Trying to run this operation on a No Control Flow target will fail because it ev
 to control the computation flow with an `if` statement.
 
 > [!NOTE]
-> Currently, you can't apply operations on qubits that have been measured in No Control Flow targets, even
+> Currently, you can't submit quantum programs that apply operations on qubits that have been measured in No Control Flow targets, even
 > if you don't use the results to control the program flow. This limitation is
-> not inherent to this profile type but is circumstantial to the situation of the current hardware.
+> not inherent to this profile type but is circumstantial to the current situation of the hardware.
 
 Presently, these No Control Flow targets are available for Azure Quantum:
 
