@@ -20,7 +20,7 @@ apival_backend = provider.get_backend("quantinuum.hqs-lt-s1-apival")
 
 ## Run on the API validator 
 
-To run your circuit on the API validator, add the following code which uses the `run` method of the target to submit your job, and then monitors the job status. 
+To run your circuit on the API validator, add the following code, which uses the `run` method of the target to submit your job, and then monitors the job status. 
 
 ```python
 # Submit the circuit to run on Azure Quantum
@@ -32,7 +32,7 @@ print("Job id", job_id)
 job_monitor(job)
 ```
 
-The job status is displayed in realtime:
+The job status is displayed in real time:
 
 ```output
 Job id 89511b08-9691-11ec-be32-00155d00ae89
@@ -71,7 +71,7 @@ plot_histogram(counts)
 
 ![Qiskit circuit result on Quantinuum API validator](../media/azure-quantum-qiskit-hw-result-1.png)
 
-Looking at the histogram, you may notice that the random number generator returned 0 every time, which is not very random. This is because that, while the API Validator ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
+Looking at the histogram, you may notice that the random number generator returned 0 every time, which isn't very random. This is because that, while the API Validator ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
 
 ## Estimate job cost
 
@@ -118,13 +118,13 @@ print(f"Estimated cost: {cost.estimated_total}")
 Estimated cost: 5.72
 ```
 
-This displays the estimated cost in H-System Quantum Credits (HQCs).
+The output displays the estimated cost in H-System Quantum Credits (HQCs).
 
 For the most current pricing details, see [Quantinuum Pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or view pricing options in the **Providers** blade of your workspace. To see your current credit status and usage, select **Credits and quotas**.
 
 ## Run on a Quantinuum QPU 
 
-After running successfully on the API validator and estimating the QPU cost, it's time to run your circuit on the hardware. 
+After running your circuit successfully on the API validator and estimating the QPU cost, it's time to run it on the hardware. 
 
 > [!NOTE] 
 > The time required to run a circuit on the QPU depends on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
