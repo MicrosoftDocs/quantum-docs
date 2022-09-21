@@ -71,7 +71,7 @@ Presently, these No Control Flow targets are available for Azure Quantum:
   - [Rigetti Simulator](xref:microsoft.quantum.providers.rigetti#simulators) (`rigetti.sim.*`)
   - [Rigetti QPU](xref:microsoft.quantum.providers.rigetti#quantum-computers) (`rigetti.qpu.*`)
 
-## Create and run applications for Basic Measurement Feedback targets
+## Create and run applications for Basic Measurement Feedback profile targets
 
 Basic Measurement Feedback profile targets can run a wide variety of Q# applications, with the constraint that you can only compare values of type `Result` as part of conditions within `if` statements in operations. This profile type supposes an improvement over No Control Flow profiles, but still is subject to some limitations.
 
