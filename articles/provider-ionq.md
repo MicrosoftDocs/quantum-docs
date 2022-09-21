@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the IonQ quantum computing provider
 ms.author: sonialopez
-ms.date: 08/26/2022
+ms.date: 09/21/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -104,6 +104,21 @@ backend = provider.get_backend("ionq.qpu", gateset="native")
 | `gateset`   | string    | No | Specifies the set of gates that will be used to define a circuit. A value of `qis` corresponds to the abstract gates (default behavior) and `native` to the [IonQ hardware native gates](https://ionq.com/docs/getting-started-with-native-gates#introducing-the-native-gates).|
 
 For more information about Qiskit jobs, see [Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit).
+
+## Input format
+
+In Q#, the output of a quantum measurement is a value of type `Result`, which can only take the values `Zero` and `One`. When you define a Q# operation, it can only be submitted to IonQ hardware if the return type is a collection of `Results`, that is, if the output of the operation is the result of a quantum measurement. The reason for this is because IonQ builds a histogram from the returned values, so it restricts the return type to `Results` to simplify creating this histogram.
+
+IonQ's targets correspond to [No Control Flow profile](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). This profile can't run quantum operations that require the use of the results from qubit measurements to control the program flow. 
+
+> [!NOTE]
+> Currently, you can't submit quantum programs that apply operations on qubits that have been measured in No Control Flow targets, even
+> if you don't use the results to control the program flow. This limitation is
+> not inherent to this profile type but is circumstantial to the current situation of the hardware.
+
+## Output format
+
+When submitting a quantum program on the IonQ QPUs and simulator, they return the probability histogram created by the measurement. The IonQ QPUs and simulator will not sample the distribution created by a quantum program but instead return the distribution scaled to the number of shots. This is most apparent when you submit a single shot circuit. You will see multiple measurement results in the probability histogram for one shot. This behaivour is inherent of IonQ's hardware.
 
 ## Pricing
 
