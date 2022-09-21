@@ -27,8 +27,8 @@ The Rigetti provider makes the following targets available:
 |Target name|	Target ID|	Number of qubits|	Description|
 |---|---|---|---|
 |[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil programs. Free of cost.|
-|[Aspen-11](#aspen-11) |	rigetti.qpu.aspen-11 | 40 qubits | Rigetti's single-chip quantum processor.	|
-|[Aspen-M-2](#aspen-m-2) |	rigetti.qpu.aspen-m-2|	80 qubits	| Rigetti's multi-chip quantum processor. |
+|[Aspen-11](#aspen-11) |rigetti.qpu.aspen-11 | 40 qubits | Rigetti's single-chip quantum processor.	|
+|[Aspen-M-2](#aspen-m-2) |rigetti.qpu.aspen-m-2 |	80 qubits	| Rigetti's multi-chip quantum processor. |
 
 To get started using the Rigetti provider on Azure Quantum, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
@@ -93,7 +93,7 @@ To make constructing a Quil program easier, you can use [`pyQuil`] along with th
 
 ### QIR
 
-All Rigetti **hardware**, that is, live QPU targets, supports the execution of Quantum Intermediate Representation (QIR) compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`. QIR provides a common interface that supports many quantum languages and target platforms for quantum computation and enables communication between high-level languages and machines. For example, you can submit Q#, Quil, or Qiskit jobs to Azure Quantum, and Azure Quantum will automatically handle the input for you. For more information, see [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir).
+All Rigetti hardware supports the execution of Quantum Intermediate Representation (QIR) compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`. QIR provides a common interface that supports many quantum languages and target platforms for quantum computation and enables communication between high-level languages and machines. For example, you can submit Q#, Quil, or Qiskit jobs to Rigetti hardware, and Azure Quantum will automatically handle the input for you. For more information, see [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir).
 
 ### Selecting the right input format
 

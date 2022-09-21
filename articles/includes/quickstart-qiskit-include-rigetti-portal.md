@@ -71,7 +71,7 @@ plot_histogram(counts)
 
 ![Qiskit circuit result on Rigetti Simulator](../media/azure-quantum-qiskit-rigetti-result-1.png)
 
-
+<!---
 ## Estimate job cost
 
 Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you can estimate how much it will cost to run. 
@@ -117,9 +117,11 @@ This displays the estimated cost in USD.
 
 For the most current pricing details, see [Rigetti Pricing](xref:microsoft.quantum.providers-pricing#rigetti), or find your workspace and view pricing options in the **Providers** blade of your workspace.
 
+--->
+
 ## Run on Rigetti QPU
 
-After running successfully on the Rigetti simulator and estimating the QPU cost, it's time to run your circuit on the hardware. 
+After running successfully on the Rigetti simulator, it's time to run your circuit on the hardware. 
 
 > [!NOTE] 
 > The time required to run a circuit on the QPU varies depending on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
