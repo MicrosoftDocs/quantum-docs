@@ -35,7 +35,7 @@ The following targets are available from this provider:
 |[H1-2](#system-model-h1)|	quantinuum.hqs-lt-s2	| 12 qubits	|Quantinuum's H1-2 trapped ion device.|
 
 
-Quantinuum's targets correspond to **Basic Measurement Feedback** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-targets).
+Quantinuum's targets correspond to **Basic Measurement Feedback** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
 
 ## Syntax Checkers
 
