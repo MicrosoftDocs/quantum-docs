@@ -34,6 +34,10 @@ You need the following prerequisites to create a workspace.
 
 [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). We offer eligible customers $200 in Azure credits to be used within the first 30 days of sign-up and 12 months of select free services. Within 30 days of sign-up or upon exhaustion of the credits (whichever occurs first), you must upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/).
 
+### [Pay-as-you-go](#tab/payg)
+ 
+[Sign up for a pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/). Pay only for what you use and cancel anytime. If you've exhausted your credits on another subscription you can upgrade to a pay-as-you-go subscription.
+
 ### [Students](#tab/student)
 
 [Sign up for an Azure for Students subscription](https://azure.microsoft.com/offers/ms-azr-0170p/). Azure for Students gets you started with $100 in Azure credits to be used within the first 12 months, plus select free services without requiring a credit card at sign-up. If you exhaust your available credits, your Azure subscription will be disabled. You may then upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/).
