@@ -27,11 +27,11 @@ You need the following prerequisites to share access to your Azure Quantum works
 
 ## Azure Active Directory
 
-Each user must have an account in your organization's Azure Active Directory before you can grant them access to your workspace. To add new users, you must be a User Administrator or Global Administrator. For instructions, see [Add a new user](/azure/active-directory/fundamentals/add-users-azure-active-directory#add-a-new-user).
+Each user must have an account in your organization's Azure Active Directory before you can grant them access to your workspace. To add new users, you must be a **User Administrator** or **Global Administrator**. For instructions, see [Add a new user](/azure/active-directory/fundamentals/add-users-azure-active-directory#add-a-new-user).
 
 ## Add users as contributors to your Azure Quantum workspace
 
-1. Sign in to the [Azure portal](https://portal.azure.com) and navigate to your Azure Quantum workspace. You must be an Owner of the workspace in order to add users.
+1. Sign in to the [Azure portal](https://portal.azure.com) and navigate to your Azure Quantum workspace. You must be an **Owner** of the workspace in order to add users.
 
 1. Select **Access control (IAM)** from the left-side menu. Select **Add**, and then **Add role assignment**.
     :::image type="content" source="media/bulk-invite-users-add-assignment.png" alt-text="Screen shot showing how to add a new role assignment to your Azure Quantum workspace.":::
