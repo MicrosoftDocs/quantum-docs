@@ -36,7 +36,7 @@ You need the following prerequisites to create a workspace.
 
 ### [Pay-as-you-go](#tab/payg)
  
-[Sign up for a pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/). Pay only for what you use and cancel anytime. If you've exhausted your credits on another subscription you can upgrade to a pay-as-you-go subscription.
+[Sign up for a pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/). Pay only for what you use and cancel anytime. If you've exhausted your credits on another subscription, you can upgrade to a pay-as-you-go subscription.
 
 ### [Students](#tab/student)
 
