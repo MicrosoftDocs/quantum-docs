@@ -17,6 +17,13 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
+## 2022-09-xx
+
+### QDK version 0.26.xxxxxx
+
+- Updated all Microsoft Quantum Development Kit components to Python 3.9
+- The [Quantinuum target names](TODO: link to documentation) have been updated for clarity and consistency. The old target names will continue to be available.
+
 ## 2022-09-01
 
 ### QDK version 0.25.228311
