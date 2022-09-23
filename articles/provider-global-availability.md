@@ -378,7 +378,7 @@ Rigetti offers two plans through Azure Quantum: the Azure Quantum Credits progra
 | Israel     | No     |
 | Italy     | Yes     |
 | Jamaica     | No      |
-| Japan     | Yes     |
+| Japan     | No     |
 | Jordan     | No     |
 | Kazakhstan     | No     |
 | Kenya     | No     |
