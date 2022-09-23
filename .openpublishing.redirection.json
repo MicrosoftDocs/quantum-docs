@@ -234,6 +234,21 @@
 			"source_path": "articles/user-guide/language/Expressions/partialapplication.md",
 			"redirect_url": "/azure/quantum/user-guide/language/expressions/closures",
 			"redirect_document_id": false
-		}
+		},
+		{
+			"source_path": "articles/how-to-command-line-local.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/quickstart-microsoft-qc.md",
+			"redirect_url": "/azure/quantum/tutorial-qdk-quantum-random-number-generator",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/quickstart-microsoft-qio.md",
+			"redirect_url": "/azure/quantum/quickstart-microsoft-qio-portal",
+			"redirect_document_id": false
+		},
 	]
 }
