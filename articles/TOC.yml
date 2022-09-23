@@ -18,7 +18,7 @@
     href: quickstart-microsoft-qio-portal.md
   - name: Understanding job costs in Azure Quantum
     href: azure-quantum-job-costs.md
-  - name: Configure your quantum environment
+  - name: Setup the Quantum Development Kit
     href: install-overview-qdk.md
 - name: Quantum computing
   expanded: true
@@ -47,10 +47,18 @@
       href: tutorial-qdk-qubit-level-program.md
   - name: How-to guides
     items: 
-    - name: Submit quantum jobs
+    - name: Submit quantum jobs to Azure Quantum
       href: how-to-submit-jobs.md
+    - name: Write a Q# and Python program to run on a simulator
+      href: how-to-python-qdk-local.md
     - name: Publish a Q# job as an Azure Function
       href: how-to-publish-qsharp-job-as-azurefunction.md
+    - name: Submit a circuit with Cirq
+      href: quickstart-microsoft-cirq.md
+    - name: Submit a circuit in provider-specific format
+      href: quickstart-microsoft-provider-format.md
+    - name: Write a Q# and .NET program to run on a simulator
+      href: how-to-csharp-qdk-local.md  
   - name: Simulators and resource estimators
     href: machines/toc.yml  
   - name: The Q# user guide
@@ -232,20 +240,12 @@
     items: 
     - name: Write a Q# program to run on local simulator
       href: how-to-command-line-local.md
-    - name: Write a Q# and Python program to run on local simulator
-      href: how-to-python-qdk-local.md
-    - name: Write a Q# and .NET program to run on local simulator
-      href: how-to-csharp-qdk-local.md    
     - name: Create a quantum-based random number generator
       href: quickstart-microsoft-qc.md
     - name: Solve a simple optimization problem
       href: quickstart-microsoft-qio.md
     - name: Submit a circuit with Qiskit
       href: quickstart-microsoft-qiskit.md
-    - name: Submit a circuit with Cirq
-      href: quickstart-microsoft-cirq.md
-    - name: Submit a circuit in provider-specific format
-      href: quickstart-microsoft-provider-format.md
 - name: Manage Azure Quantum
   items:
   - name: Run Azure Quantum notebooks
