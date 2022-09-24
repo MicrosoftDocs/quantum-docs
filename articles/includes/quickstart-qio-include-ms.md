@@ -13,7 +13,7 @@ To complete this tutorial, you need
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - An Azure Quantum workspace with the **Microsoft QIO** provider enabled. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The latest [azure-quantum Python package](xref:microsoft.quantum.install-qdk.overview.python-only).
+- The latest [azure-quantum Python package](xref:microsoft.quantum.install-qdk.overview).
 
 ## Jupyter Notebooks installation
 

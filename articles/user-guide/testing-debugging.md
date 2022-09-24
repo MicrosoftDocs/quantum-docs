@@ -427,7 +427,7 @@ For the sake of simplicity, in the previous testing and debugging tools we displ
 
 In this example for <xref:Microsoft.Quantum.Diagnostics.DumpMachine>, we explicitly show the development using a Q# Jupyter Notebook, as it offers more visualization tools for testing and debugging quantum programs.
 
-1. To run `DumpMachine` on a Jupyter Notebook, open a [new Jupyter Notebook with a Q# kernel](xref:microsoft.quantum.how-to.standalone-local) and copy the following code to the first notebook cell:
+1. To run `DumpMachine` on a Jupyter Notebook, open a [new Jupyter Notebook with a Q# kernel](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter) and copy the following code to the first notebook cell:
 
  ```qsharp
 open Microsoft.Quantum.Diagnostics;

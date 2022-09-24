@@ -149,6 +149,6 @@ If you have an Azure account, in the sample gallery of your Azure Quantum worksp
 - [Quantum Computing History and Background](xref:microsoft.quantum.concepts.intro)
 - [What are the Q# programming language and Quantum Development Kit (QDK)?](xref:microsoft.quantum.overview.q-sharp)
 - [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview)
-- [Creating a quantum-based random number generator in Azure Quantum](xref:icrosoft.quantum.tutorial-qdk.random-number)
+- [Creating a quantum-based random number generator in Azure Quantum](xref:microsoft.quantum.tutorial-qdk.random-number)
 - [Quantum Simulators](xref:microsoft.quantum.machines.overview)
 - [The Q# libraries](xref:microsoft.quantum.libraries.overview)

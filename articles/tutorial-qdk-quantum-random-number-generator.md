@@ -24,15 +24,15 @@ In this tutorial, you'll learn how to
 
 ## Prerequisites
 
-- Install the Quantum Development Kit (QDK) using your preferred language and development environment. This tutorial presents the solution in three different formats:
-    - Q# standalone ([Set up a Q# standalone environment](xref:microsoft.quantum.install-qdk.overview.standalone))
-    - Q# and Python ([Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview.python))
-    - Q# and C# ([Set up a Q# and .NET environment](xref:microsoft.quantum.install-qdk.overview.standalone#q-and-other-ides))
+- [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) (QDK) using your preferred language and development environment. This tutorial presents the solution in three different formats:
+    - Q# standalone 
+    - Q# and Python 
+    - Q# and C# 
 - If you already have the QDK installed, make sure you have [updated the QDK](xref:microsoft.quantum.update-qdk) (and the [Python qsharp package](xref:microsoft.quantum.update-qdk#update-the-qsharp-python-package), if applicable) to the latest version.
 
 ## Creating a Q# project
 
-The first thing you need to do is to create a new Q# project. This tutorial uses the environment based on [Q# applications with VS Code](xref:microsoft.quantum.install-qdk.overview.standalone#q-and-other-ides), but you can use your preferred IDE. 
+The first thing you need to do is to create a new Q# project. This tutorial uses the environment based on [Q# applications with VS Code](xref:microsoft.quantum.install-qdk.overview), but you can use your preferred IDE. 
 
 To create a new project in Visual Studio Code: 
 
