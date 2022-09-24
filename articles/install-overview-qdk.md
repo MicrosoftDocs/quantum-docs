@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to set up an Azure Quantum environment for different languages and platforms.
 ms.author: brbenefield
-ms.date: 09/23/2022
+ms.date: 09/07/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -77,7 +77,7 @@ While you can build Q# applications in any IDE, we recommend using Visual Studio
 
 Configure the QDK for your preferred environment from one of the following options:
 
-#### [Azure CLI](#tab/tabid-azcli)
+#### Azure CLI
 
 The Azure CLI is the preferred method for submitting quantum jobs using a terminal window in VS Code or Visual Studio. 
 
@@ -87,7 +87,7 @@ The Azure CLI is the preferred method for submitting quantum jobs using a termin
     ```azurecli
     az extension add --upgrade -n quantum
 
-#### [VS Code](#tab/tabid-vscode)
+#### VS Code
 
 1. Download and install [VS Code](https://code.visualstudio.com/download) 1.52.0 or greater (Windows, Linux and Mac).
 1. Install the [QDK for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
@@ -95,15 +95,13 @@ The Azure CLI is the preferred method for submitting quantum jobs using a termin
 > [!NOTE]
 > If you are a Arm-based Mac user, make sure you install [.NET SDK](https://dotnet.microsoft.com/download) 6.0 or greater, as older versions are not supported on this architecture. 
 
-#### [Visual Studio (Windows only)](#tab/tabid-vs)
+#### Visual Studio (Windows only)
 
 1. Download and install [Visual Studio](https://visualstudio.microsoft.com/downloads/) 17.0 or greater, with the .NET Core cross-platform development workload enabled.
 1. Download and install the [QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64).
 
 > [!NOTE]
 > Although there is Visual Studio for Mac, the QDK extension is only compatible with Visual Studio for Windows.
-
-***
 
 To test your environment, see [Submit Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-azurecli).
 
@@ -135,7 +133,7 @@ To install the `azure-quantum` Python package
    pip install --upgrade azure-quantum[cirq]
    ```
 
-To test your environment, see [Submit a circuit with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit.portal) or [Submit a circuit with Qiskit](xref:microsoft.quantum.quickstarts.computing.cirq.portal).
+To test your environment, see [Submit a circuit with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) or [Submit optimization jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs-optimization).
 
 ### Use Q# and Python with Jupyter Notebooks 
 
@@ -143,6 +141,7 @@ All the necessary components for a Juptyer Notebooks environment can be set up w
 
 > [!NOTE]
 > If you want to use Jupyter Notebooks locally but prefer not to install conda, you can set up [Jupyter Notebooks with the .NET CLI](xref:microsoft.quantum.install-qdk.overview.python). 
+
 
 #### [Install using conda (recommended)](#tab/tabid-conda)
 
