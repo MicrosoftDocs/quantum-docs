@@ -2,12 +2,12 @@
 	"redirections": [
 		{
 			"source_path": "articles/install-jupyter-qkd.md",
-			"redirect_url": "/azure/quantum/install-jupyter-qdk",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
 			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/install-jupyter-qdk.md",
-			"redirect_url": "/azure/quantum/install-command-line-qdk",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
 			"redirect_document_id": false
 		},
 		{
@@ -248,6 +248,36 @@
 		{
 			"source_path": "articles/quickstart-microsoft-qio.md",
 			"redirect_url": "/azure/quantum/quickstart-microsoft-qio-portal",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/quickstart-microsoft-cirq.md",
+			"redirect_url": "/azure/quantum/quickstart-microsoft-cirq-portal",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/quickstart-microsoft-provider-format.md",
+			"redirect_url": "/azure/quantum/quickstart-microsoft-provider-format-portal",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/quickstart-microsoft-qiskit.md",
+			"redirect_url": "/azure/quantum/quickstart-microsoft-qiskit-portal",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/install-command-line-qdk.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/install-python-qdk.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/install-python-optimization.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
 			"redirect_document_id": false
 		}
 	]

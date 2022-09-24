@@ -7,11 +7,11 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Q#', '$$v']
-title: Configure your quantum development environment 
+title: Set up the Quantum Development Kit 
 uid: microsoft.quantum.install-qdk.overview
 ---
 
-# Configure your quantum development environment 
+# Set up the Quantum Development Kit
 
 Learn about the different environment options available to develop quantum computing and optimization applications using the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) service.
 
@@ -69,7 +69,7 @@ Select your preferred IDE:
 
 ### Use Q# and Python with Visual Studio and Visual Studio Code 
 
-While you can build Q# applications in any IDE, we recommend using Visual Studio Code (VS Code) or Visual Studio IDE for developing your Q# applications. Developing in these environments leverages the rich functionality of the Quantum Development Kit (QDK) extension, which includes submitting quantum jobs via the Azure CLI, warnings, syntax highlighting, project templates, and more.
+While you can build Q# applications in any IDE, we recommend using Visual Studio Code (VS Code) or Visual Studio IDE for developing your Q# applications. Developing in either of these environments leverages the rich functionality of the Quantum Development Kit (QDK) extension, which includes submitting quantum jobs via the Azure CLI, warnings, syntax highlighting, project templates, and more.
 
 #### Prerequisite
 
@@ -77,7 +77,7 @@ While you can build Q# applications in any IDE, we recommend using Visual Studio
 
 Configure the QDK for your preferred environment from one of the following options:
 
-#### Azure CLI
+#### [Azure CLI](#tab/tabid-azcli)
 
 The Azure CLI is the preferred method for submitting quantum jobs using a terminal window in VS Code or Visual Studio. 
 
@@ -87,7 +87,7 @@ The Azure CLI is the preferred method for submitting quantum jobs using a termin
     ```azurecli
     az extension add --upgrade -n quantum
 
-#### VS Code
+#### [VS Code](#tab/tabid-vscode)
 
 1. Download and install [VS Code](https://code.visualstudio.com/download) 1.52.0 or greater (Windows, Linux and Mac).
 1. Install the [QDK for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
@@ -95,13 +95,15 @@ The Azure CLI is the preferred method for submitting quantum jobs using a termin
 > [!NOTE]
 > If you are a Arm-based Mac user, make sure you install [.NET SDK](https://dotnet.microsoft.com/download) 6.0 or greater, as older versions are not supported on this architecture. 
 
-#### Visual Studio (Windows only)
+#### [Visual Studio (Windows only)](#tab/tabid-vs)
 
 1. Download and install [Visual Studio](https://visualstudio.microsoft.com/downloads/) 17.0 or greater, with the .NET Core cross-platform development workload enabled.
 1. Download and install the [QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64).
 
 > [!NOTE]
 > Although there is Visual Studio for Mac, the QDK extension is only compatible with Visual Studio for Windows.
+
+***
 
 To test your environment, see [Submit Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-azurecli).
 
@@ -133,7 +135,7 @@ To install the `azure-quantum` Python package
    pip install --upgrade azure-quantum[cirq]
    ```
 
-To test your environment, see [Submit a circuit with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) or [Submit optimization jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs-optimization).
+To test your environment, see [Submit a circuit with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit.portal), [Submit a circuit with Cirq](xref:microsoft.quantum.quickstarts.computing.cirq.portal), or [Submit a simple optimization problem](xref:mmicrosoft.quantum.quickstarts.optimization.qio.portal).
 
 ### Use Q# and Python with Jupyter Notebooks 
 
