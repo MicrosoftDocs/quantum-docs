@@ -110,7 +110,7 @@ Before moving on to the procedures for superposition and entanglement, test the 
 In order to run the code as a standalone program, the Q# compiler needs to know *where* to start the program when you run the `dotnet run` command. This is done in the Q# file by adding an `@EntryPoint()` directly preceding the operation that you want to run: the `TestBellState` operation in this case. 
 
 > [!NOTE]
-> `@EntryPoint()` is only required for standalone Q# programs. When running a Q# program in [Jupyter Notebooks](xref:microsoft.quantum.how-to.standalone-local), or calling a Q# program from a [Python](xref:microsoft.quantum.how-to.python-local) or [.NET](xref:microsoft.quantum.how-to.csharp-local) host file, it is not required and will throw an error if included. 
+> `@EntryPoint()` is only required for standalone Q# programs. When running a Q# program in Jupyter Notebooks, or calling a Q# program from a Python or .NET host file, it is not required and will throw an error if included. 
 
 Your `program.qs` file should now look like this:
 
