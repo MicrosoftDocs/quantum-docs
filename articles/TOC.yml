@@ -49,16 +49,16 @@
     items: 
     - name: Submit quantum jobs to Azure Quantum
       href: how-to-submit-jobs.md
-    - name: Write a Q# and Python program to run on a simulator
-      href: how-to-python-qdk-local.md
     - name: Publish a Q# job as an Azure Function
       href: how-to-publish-qsharp-job-as-azurefunction.md
-    - name: Submit a circuit with Cirq
-      href: quickstart-microsoft-cirq.md
-    - name: Submit a circuit in provider-specific format
-      href: quickstart-microsoft-provider-format.md
-    - name: Write a Q# and .NET program to run on a simulator
+  - name: Development resources
+    items: 
+    - name: Develop with Q# and Python 
+      href: how-to-python-qdk-local.md
+    - name: Develop with Q# and .NET 
       href: how-to-csharp-qdk-local.md  
+    - name: Develop with Q# and Binder
+      href: install-binder-qdk.md
   - name: Simulators and resource estimators
     href: machines/toc.yml  
   - name: The Q# user guide
@@ -234,18 +234,6 @@
         href: optimization-solve-long-running-problems.md
       - name: Solve a batch of problems using asyncio
         href: optimization-async-io.md
-- name: Use a local development environment (HOLD)
-  items:
-  - name: (HOLD)
-    items: 
-    - name: Write a Q# program to run on local simulator
-      href: how-to-command-line-local.md
-    - name: Create a quantum-based random number generator
-      href: quickstart-microsoft-qc.md
-    - name: Solve a simple optimization problem
-      href: quickstart-microsoft-qio.md
-    - name: Submit a circuit with Qiskit
-      href: quickstart-microsoft-qiskit.md
 - name: Manage Azure Quantum
   items:
   - name: Run Azure Quantum notebooks
