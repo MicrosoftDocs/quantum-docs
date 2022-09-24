@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide of what Azure Quantum quotas are, how to review remaining quotas and how to apply to get more. 
 ms.author: sonialopez
-ms.date: 06/22/2022
+ms.date: 09/22/2022
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
@@ -98,7 +98,7 @@ The "Period" column indicates the period when your quota is renewed.
 
 ### [Using Python SDK](#tab/tabid-python)
 
-1. Install the latest version of the [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview.python-only).
+1. Install the latest version of the [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview).
 
 1. Open a new Python file. Instantiate a **`Workspace` object**, which allows you to connect to the workspace you've previously deployed in Azure.
 

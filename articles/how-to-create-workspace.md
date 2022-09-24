@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to create an Azure Quantum workspace.
 ms.author: brbenefield
-ms.date: 02/23/2022
+ms.date: 09/23/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -95,5 +95,5 @@ Deployment of your workspace may take a few minutes. The status and deployment d
 ## Next steps
 
 - [Get started with Jupyter Notebooks in Azure Quantum](xref:microsoft.quantum.get-started.notebooks)
-- [Quickstart: Solve an optimization problem in Azure Quantum](xref:microsoft.quantum.quickstarts.optimization.qio)
-- [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)
+- [Quickstart: Solve an optimization problem in Azure Quantum](xref:microsoft.quantum.quickstarts.optimization.qio.portal)
+- [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit.portal)

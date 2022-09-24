@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 09/15/2022
+ms.date: 09/23/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -13,8 +13,8 @@ Ensure that the following items are installed on your computer:
 
 - An Azure Quantum workspace in your Azure subscription. To create
   a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The latest version of the [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview.standalone).
-- The [Azure CLI and the quantum CLI extension](xref:microsoft.quantum.install-qdk.overview.standalone#azure-cli-net-core-sdk-31-not-required).
+- The latest version of the [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+- The [Azure CLI and the quantum CLI extension](xref:microsoft.quantum.install-qdk.overview).
 
 ## Submit a job to Azure Quantum with the Azure CLI
 

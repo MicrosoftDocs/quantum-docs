@@ -135,14 +135,14 @@ To install the `azure-quantum` Python package
    pip install --upgrade azure-quantum[cirq]
    ```
 
-To test your environment, see [Submit a circuit with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit.portal), [Submit a circuit with Cirq](xref:microsoft.quantum.quickstarts.computing.cirq.portal), or [Submit a simple optimization problem](xref:mmicrosoft.quantum.quickstarts.optimization.qio.portal).
+To test your environment, see [Submit a circuit with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit.portal), [Submit a circuit with Cirq](xref:microsoft.quantum.quickstarts.computing.cirq.portal), or [Submit a simple optimization problem](xref:microsoft.quantum.quickstarts.optimization.qio.portal).
 
 ### Use Q# and Python with Jupyter Notebooks 
 
 All the necessary components for a Juptyer Notebooks environment can be set up with a single conda installation. 
 
 > [!NOTE]
-> If you want to use Jupyter Notebooks locally but prefer not to install conda, you can set up [Jupyter Notebooks with the .NET CLI](xref:microsoft.quantum.install-qdk.overview.python). 
+> If you want to use Jupyter Notebooks locally but prefer not to install conda, you can set up [Jupyter Notebooks with the .NET CLI](xref:microsoft.quantum.install-qdk.overview). 
 
 
 #### [Install using conda (recommended)](#tab/tabid-conda)
@@ -221,5 +221,5 @@ You can also use Docker with a Visual Studio Code Remote Development Container t
 ## Next steps
 
 - [Run Jupyter notebooks on Azure Quantum](xref:microsoft.quantum.how-to.notebooks)
-- [Create and submit a quantum program](xref:microsoft.quantum.quickstarts.computing) to quantum hardware.
-- [Create and submit an optimization problem](xref:microsoft.quantum.quickstarts.optimization.qio) to Azure Quantum. 
+- [Create and submit a quantum program](xref:microsoft.quantum.quickstarts.computing.qiskit.portal) to quantum hardware.
+- [Create and submit an optimization problem](xref:microsoft.quantum.quickstarts.optimization.qio.portal) to Azure Quantum. 

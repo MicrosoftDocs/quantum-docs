@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 11/12/2021
+ms.date: 09/23/2022
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: include
@@ -10,7 +10,7 @@ ms.topic: include
 ## Prerequisites
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The latest version of the [*azure-quantum* Python package](xref:microsoft.quantum.install-qdk.overview.python-only).
+- The latest version of the [*azure-quantum* Python package](xref:microsoft.quantum.install-qdk.overview).
 
 ## Set up
 
