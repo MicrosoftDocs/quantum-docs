@@ -111,6 +111,12 @@
           href: provider-quantinuum.md
         - name: Quantinuum support policy
           href: provider-support-quantinuum.md
+      - name: Rigetti
+        items:
+        - name: Rigetti provider & targets
+          href: provider-rigetti.md
+        - name: Rigetti support policy
+          href: provider-support-rigetti.md
       - name: Honeywell (Deprecated)
         items:
         - name: Migration Guide
@@ -290,8 +296,8 @@
     href: azure-quantum-glossary.md
   - name: Common issues
     href: azure-quantum-common-issues.md
-  - name: Build your skills with MS Learn >>
-    href: /learn/paths/quantum-computing-fundamentals/
+  - name: Build your skills with Microsoft training >>
+    href: /training/paths/quantum-computing-fundamentals/
   - name: Learn Q# with the Quantum Katas
     href: tutorial-qdk-intro-to-katas.md
   - name: Q# code samples >>

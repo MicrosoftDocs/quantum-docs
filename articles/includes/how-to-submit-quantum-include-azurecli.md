@@ -27,8 +27,7 @@ the different providers of your Azure Quantum workspace.
 You will also find a full reference for all commands and features available through the `az quantum` extension in the corresponding section of the [Azure CLI documentation](/cli/azure/quantum).
 
 > [!NOTE]
-> A provider is a partner quantum service consisting of quantum
-> hardware, a simulator, or an optimization service.
+> A provider is a partner quantum service consisting of quantum hardware, a simulator, or an optimization service.
 
 1. Log in to Azure using your credentials. You'll get a list of subscriptions associated with your account.
 
@@ -115,8 +114,7 @@ You will also find a full reference for all commands and features available thro
    ```
 
 > [!TIP]
-> To see all the jobs in the workspace, use the command `az quantum
-> job list -o table`.
+> To see all the jobs in the workspace, use the command `az quantum job list -o table`.
 
 1. Once the job finishes, display the job's results with the command `az quantum
    job output`:
@@ -136,8 +134,7 @@ You will also find a full reference for all commands and features available thro
 
 > [!TIP]
 > To submit a job synchronously, for example, waiting for the job to complete and
-> showing results, use the command `az quantum execute --target-id
-> MyProvider.MyTarget`.
+> showing results, use the command `az quantum execute --target-id MyProvider.MyTarget`.
 
 ## Example
 
@@ -147,8 +144,7 @@ First, you need the Q# quantum application that you want to run in
 Azure Quantum.
 
 > [!TIP]
-> If this is your first time creating Q# quantum applications, see our [Microsoft Learn
-> module](/learn/modules/qsharp-create-first-quantum-development-kit/).
+> If this is your first time creating Q# quantum applications, see our [Learn module](/training/modules/qsharp-create-first-quantum-development-kit/).
 
 In this case, we will use a simple quantum random bit generator. Create a Q#
 project and substitute the content of `Program.qs` with the following code:

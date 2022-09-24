@@ -42,14 +42,14 @@ for contributors:
   
 ## Broken links prevention
 
-The URL of an article page on Microsoft Docs is generated from the relative path to the **articles** folder on the GitHub repository where the source files are stored. For example, the article located at `https://github.com/MicrosoftDocs/quantum-docs/blob/main/articles/user-guide/programs.md` is assigned the URL `https://docs.microsoft.com/azure/quantum/user-guide/programs`. This means that any time you change an article's path, either because of a relocation, deletion, or change in the file name, the URL will change accordingly. If you don't redirect the original link to a working page, customers that have bookmarked the original article, and other pages that link to the original article, will get a **404 Page not found** error. To avoid this:
+The URL of an article page on Microsoft Docs is generated from the relative path to the **articles** folder on the GitHub repository where the source files are stored. For example, the article located at `https://github.com/MicrosoftDocs/quantum-docs/blob/main/articles/user-guide/programs.md` is assigned the URL `https://learn.microsoft.com/azure/quantum/user-guide/programs`. This means that any time you change an article's path, either because of a relocation, deletion, or change in the file name, the URL will change accordingly. If you don't redirect the original link to a working page, customers that have bookmarked the original article, and other pages that link to the original article, will get a **404 Page not found** error. To avoid this:
 
 - If possible, do not rename or relocate articles.
 - If you need to rename, remove or relocate an article, you must add a *redirect* from the previous article location to the URL of the new article to avoid creating  broken links.
 
 ### Redirects
 
-A redirect captures a customer's request to a non-existent or outdated web location and redirects it to a working page, preventing **404 Page not found** errors. For example, if a customer has bookmarked the article  *<https://docs.microsoft.com/azure/quantum/old-article>*, a redirect can capture that URL and automatically redirect the user to *<https://docs.microsoft.com/azure/quantum/new-article>*.
+A redirect captures a customer's request to a non-existent or outdated web location and redirects it to a working page, preventing **404 Page not found** errors. For example, if a customer has bookmarked the article  *<https://learn.microsoft.com/azure/quantum/old-article>*, a redirect can capture that URL and automatically redirect the user to *<https://learn.microsoft.com/azure/quantum/new-article>*.
 
 At the root of every repository there is a file named **.openpublishing.redirection.json**, which contains a `redirections` array:
 
@@ -87,7 +87,7 @@ To create a redirect, you need to add an entry to the [.openpublishing.redirecti
 
     - **source_path** is the relative repository path (relative to the root of the repository, *<https://github.com/MicrosoftDocs/quantum-docs/>*) to the old article that you're removing or renaming. Be sure the path starts with **articles** and ends with **.md**. A majority of our files live in the root **/articles** folder, so the path would be **articles/old-article.md**. If the file lives in a sub-folder, indicate the folder in the path, for example, **articles/user-guide/old-article.md**.
       > :pencil: Verify that **source_path** is unique in the **.openpublishing.redirection.json** file. Multiple source_paths can redirect to a single target URL, but a single source_path cannot redirect to multiple targets.
-    - **redirect_url** is the relative public URL to the new article (relative to *<https://docs.microsoft.com/azure/quantum/>*). Be sure that this URL **does not** end in **.md**, as it refers to the public URL and not the repository path. Linking to a section within the new article using `#section` is allowed, for example, **/azure/quantum/new-article#specific-section**. You can also use an absolute path to another site, for example, *<https://azure.microsoft.com/services/quantum/>*.
+    - **redirect_url** is the relative public URL to the new article (relative to *<https://learn.microsoft.com/azure/quantum/>*). Be sure that this URL **does not** end in **.md**, as it refers to the public URL and not the repository path. Linking to a section within the new article using `#section` is allowed, for example, **/azure/quantum/new-article#specific-section**. You can also use an absolute path to another site, for example, *<https://azure.microsoft.com/services/quantum/>*.
     - **redirect_document_id** indicates whether to keep the document ID from the previous file. When set to **true**, you preserve the document ID, and data, such as page views and rankings, is transferred to the target article. Do this if the redirect is primarily a rename, and not a pointer to different article that only covers some of the same content.
       > :pencil: If there are multiple redirect entries that go to the same target (for example, three old articles were merged into one new article), **redirect_document_id** can only be **true** for **one** of the entries.
 

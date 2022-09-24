@@ -1,7 +1,7 @@
 ---
 author: sonialopezbravo
 ms.author: sonialopez
-ms.date: 08/10/2022
+ms.date: 09/07/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -26,7 +26,7 @@ where:
 Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with three controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. One-qubit gates are billed as 0.225 of a two-qubit gate (rounded down). To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
 
 
-All new Azure Quantum customers benefit of a one-time $500 (USD) free Azure Quantum credits toward IonQ provider to use in IonQ QPUs Harmony and Aria, and quantum simulator. Besides the Azure Quantum Credits plan, IonQ offers a **pay-as-you-go** plan with access to the quantum simulator and the IonQ Harmony 11-qubit quantum computer, and a **monthly susbcription** plan which expands the access to the IonQ Aria 23-qubit quantum computer. 
+All new Azure Quantum customers benefit of a one-time $500 (USD) free Azure Quantum credits toward IonQ provider to use in IonQ QPUs Harmony and Aria, and quantum simulator. Besides the Azure Quantum Credits plan, IonQ offers a **pay-as-you-go** plan with access to the quantum simulator and the IonQ Harmony 11-qubit quantum computer, and a **monthly subscription** plan which expands the access to the IonQ Aria 23-qubit quantum computer. 
 
 ### [Azure Quantum Credits](#tab/tabid-AQcredits)
 
@@ -62,7 +62,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ### [Aria plan](#tab/tabid-aria)
 
-The Aria plan is a monthly subscription plan with access to the IonQ Aria 21-qubit quantum computer. The subscription also includes access to IonQ simulator and IonQ Harmony 11-qubit quantum computer.
+The Aria plan is a monthly subscription plan with access to the IonQ Aria 23-qubit quantum computer. The subscription also includes access to IonQ simulator and IonQ Harmony 11-qubit quantum computer.
 
 |Pricing | $25,000 (USD)/Month + Azure infrastructure costs |
 |---|---|  
@@ -80,12 +80,12 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ## Quantinuum
 
-[Quantinuum](https://www.quantinuum.com/) uses a credit system that charges each job depending on the number of operations in the job, and the number of shots you run. The usage units are *H-System Quantum Credits (HQCs)* for jobs submitted to System Model H1 quantum computers, Powered by Honeywell, and *Emulator Quantum Credits (eHQC)* for jobs submitted to System Model H1 Emulators.
+[Quantinuum](https://www.quantinuum.com/) uses a credit system that charges each job depending on the number of operations in the job, and the number of shots you run. The usage units are *H-System Quantum Credits (HQCs)* for jobs submitted to System Model H1 quantum computers, Powered by Honeywell, and emulator HQCs (eHQCs) for jobs submitted to System Model H1 emulators.
 
 > [!NOTE]
 > Do not confuse the Quantinuum HQCs with the Azure Quantum credits. Quantinuum HQCs are a usage unit defined by the provider to track the usage and quotas of their targets.
 
-HQC and eHQC are used to calculate the cost of running a job, and they are calculated based on the following formula:
+HQCs and eHQCs are used to calculate the cost of running a job, and they are calculated based on the following formula:
 
 $$
 HQC = 5 + C(N_{1q} + 10 N_{2q} + 5 N_m)/5000
@@ -136,4 +136,40 @@ The Premium Subscription is a monthly subscription plan available through queued
 |Includes access to | <ul><li>17k HQCs for use on System Model H1 hardware</li><li>170k eHQCs for use on the System Model H1 Emulator</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
+***
+
+## Rigetti
+
+[Rigetti](https://rigetti.com) charges for job execution time on their quantum processors, Aspen-11 of 40 qubits and Aspen-M-2 of 80 qubits. There is no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.html) simulator is free for all users.
+
+To learn more about Riggeti, visit the [Rigetti provider page](xref:microsoft.quantum.providers.rigetti).
+
+All new Azure Quantum customers benefit from $500 (USD) free Azure Quantum credits to use specifically for Rigetti targets. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
+
+In addition to the Azure Quantum Credits plan, Rigetti offers a pay-as-you-go plan for live quantum processors, so you pay only for what you use.
+
+### [Azure Quantum Credits](#tab/tabid-AQcreditsRigetti)
+
+Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
+
+|Pricing | Use is deducted from the Azure Quantum Credits based on the job execution time only |
+|---|---|  
+|Includes access to | <ul><li>Rigetti Aspen-11 QPU</li><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
+
+> [!NOTE]
+> Once you have consumed all the credits you need to switch to a different plan to continue using Rigetti. Azure Quantum won’t start charging you once you reach your credit limit. 
+
+> [!IMPORTANT]
+> There are no costs or charges to using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
+> For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
+ 
+### [Pay As You Go](#tab/tabid-paygoRigetti)
+
+The Pay-as-you-go plan consists of *a la carte* access to the Rigetti Aspen-11 and Aspen-M-2 quantum processors.
+
+|Pricing | Use is charged based on the job execution time only |
+|---|---|  
+|Includes access to | <ul><li>Rigetti Aspen-11 QPU</li><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
+|  | $0.02 (USD) per 10-millisecond increment of job execution time|
+
 ***

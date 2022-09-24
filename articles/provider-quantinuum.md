@@ -103,9 +103,9 @@ To see Quantinuum's billing plans, visit [Azure Quantum pricing](xref:microsoft.
 
 ## Limits & Quotas
 
-Quantinuum's quotas are tracked based on the QPU usage credit unit, which is *H1 Quantum Credit (HQC)* for jobs submitted to System Model H1 quantum computer, and *Quantinuum Emulator Quantum Credits (eHQC)* for jobs submitted to System Model H1 emulator.
+Quantinuum's quotas are tracked based on the QPU usage credit unit, *H-System Quantum Credit (HQC)*, for jobs submitted to System Model H1 quantum computers, and emulator HQCs (eHQCs) for jobs submitted to System Model H1 emulators.
 
-HQC and eHQC are used to calculate the cost of running a job, and they are calculated based on the following formula (same for eHQC):
+HQCs and eHQCs are used to calculate the cost of running a job, and they are calculated based on the following formula:
 
 $$
 HQC = 5 + C(N_{1q} + 10 N_{2q} + 5 N_m)/5000
