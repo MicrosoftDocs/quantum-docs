@@ -27,7 +27,7 @@ measure q[2] -> c0[2];
 
 ## List all targets
 
-[!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)]
+[!INCLUDE [Quantinuum target name update](quantinuum-name-change.md)]
 
 List all the targets that you have access to, including the
 current queue time and availability.

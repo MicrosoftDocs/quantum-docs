@@ -109,7 +109,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
    the available targets with the command `az quantum target list -o table`:
 
 
-   [!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)]
+   [!INCLUDE [Quantinuum target name update](quantinuum-name-change.md)]
 
    ```azurecli
    az quantum target list -o table
