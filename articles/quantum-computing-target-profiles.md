@@ -12,7 +12,9 @@ uid: microsoft.quantum.target-profiles
 
 # Target profile types in Azure Quantum
 
-This article discusses the different type of target profile types available in the quantum computing providers in Azure Quantum. At this time, because of the early development stage of the field, quantum devices have some limitations and requirements for programs that run on them. 
+This article discusses the different type of target profile types available in the quantum computing providers in Azure Quantum. At this time, because of the early development stage of the field, quantum devices have some limitations and requirements for programs that run on them.
+
+[!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)] 
 
 ## Quantum Processing Units (QPU): different profiles
 

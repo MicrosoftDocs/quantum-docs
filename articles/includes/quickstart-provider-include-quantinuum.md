@@ -37,7 +37,7 @@ workspace = Workspace(
 ## Submit a quantum circuit to the Quantinuum API validator
 
 > [!NOTE]
-> The [Quantinuum API validator](xref:microsoft.quantum.providers.quantinuum#api-validator) target will always return 0 on measurement.
+> The [Quantinuum API validator](xref:microsoft.quantum.providers.quantinuum#syntax-checkers) target will always return 0 on measurement.
 
 1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For example, the following example creates a Teleportation circuit:
 

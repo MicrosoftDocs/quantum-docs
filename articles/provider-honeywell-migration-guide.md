@@ -2,7 +2,7 @@
 author: bradben
 description: This document details how to migrate from the Honeywell provide to the Quantinuum provider.
 ms.author: brbenefield
-ms.date: 02/24/2022
+ms.date: 09/26/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: how-to
@@ -16,6 +16,8 @@ The Honeywell provider has been replaced by the Quantinuum provider in Azure Qua
 
 > [!Note]
 > Existing Honeywell customers who have received Azure Quantum Credits grants will be able to use the Honeywell provider through to the expiration of their grant. For more information, please see your onboarding email for your grant expiry date.
+
+[!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)]
 
 ## Step 1: Update your Azure Quantum workspace
 

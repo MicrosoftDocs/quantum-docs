@@ -32,6 +32,8 @@ print(circuit)
 
 ## List all targets
 
+[!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)]
+
 You can now list all the targets that you have access to, including the
 current queue time and availability.
 

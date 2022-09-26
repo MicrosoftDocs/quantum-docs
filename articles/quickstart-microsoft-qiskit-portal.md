@@ -113,6 +113,8 @@ c: 3/════════════════╩══╩══╩═
 
 ## List all targets
 
+[!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)]
+
 You can now display all of the quantum computing targets, or backends, that are
 available in your workspace. Add a new cell and run the following line:
 

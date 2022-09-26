@@ -108,6 +108,9 @@ Next, we'll prepare your environment to run the program against the workspace yo
    providers that you added when you created the workspace. You can display a list of all
    the available targets with the command `az quantum target list -o table`:
 
+
+   [!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)]
+
    ```azurecli
    az quantum target list -o table
    ```

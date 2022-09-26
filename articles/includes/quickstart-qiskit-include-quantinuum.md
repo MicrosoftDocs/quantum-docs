@@ -39,6 +39,8 @@ provider = AzureQuantumProvider(
 
 ### List all backends
 
+[!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)]
+
 You can now print all of the quantum computing backends that are
 available on your workspace:
 

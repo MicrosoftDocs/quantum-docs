@@ -85,6 +85,8 @@ Some things to note:
 - **5th cell**: Sets the target and submits the job. 
 - **6th and 7th cells**: Plots and displays the result.
 
+[!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)]
+
 Looking at the histogram, you may notice that the program returned 0 every time, which is not very random. This is because the notebook was pre-populated to use the **Quantinuum Syntax Checker**, *quantinuum.sim.h1-1sc*. Using the Syntax Checker ensures that your code will run successfully on Quantinuum hardware, but also returns 0 for every quantum measurement. 
 
 To create a true random number generator, modify the code in the 5th cell to use the **System Model H1 Emulator** target, *quantinuum.sim.h1-1e*
