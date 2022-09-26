@@ -21,6 +21,8 @@ Azure Functions is a serverless solution that allows you to host your functional
 
 The QIO job that will be published as an Azure Function implements what is called the *number partitioning problem*. It splits a given set of integer numbers into two subsets with an equal (or very close) sum of their elements. For more information about this problem and its implementation, see [Solve optimization problems by using quantum-inspired optimization](/learn/modules/solve-quantum-inspired-optimization-problems/).
 
+To learn how to deploy a Q# job as a web service using Azure Functions, see [Publish a Q# job as an Azure Function](xref:microsoft.quantum.publish-qc-as-azure-function).
+
 ## Prerequisites
 
 You need the following configuration to complete the steps in this article.
@@ -67,7 +69,7 @@ Even though the function doesn't do much yet, this is a good time to test the ba
 
     If you have trouble running on Windows, make sure that the default terminal for Visual Studio Code isn't set to **WSL Bash**.
 
-1. Select the Azure icon in the Activity bar and select **Workspace (local)**. Expand **Local Project > Functions**, right-click the **SplitWeights** function and select **Execute Function Now...**.
+1. Select the Azure icon in the Activity bar and select **Workspace (local)**. You may need to select the **Refresh** icon if nothing appears below it. Expand **Local Project > Functions**, right-click the **SplitWeights** function and select **Execute Function Now...**.
 
     :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/run-azure-function-locally-2.png" alt-text="Call the function":::
 
@@ -242,13 +244,15 @@ You can now prepare the Azure target environment that will host the function. Pr
 
 Next, you'll configure a managed identity for the Function App. A managed identity allows the Function App to access other Azure resources, such as the Azure Quantum workspace.
 
-1. Select **Identity**, set **Status** to **On** and then select **Save** and **Yes**. 
+1. In the Azure portal, navigate to your Function App page and select **Identity**, set **Status** to **On** and then select **Save** and **Yes**. 
 
     :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-2.png" alt-text="Create a managed identity for the Function App":::
 
 1. Navigate to your Azure Quantum workspace (**Home** -> **Resources**) and select **Access control (IAM)** from the left menu. Select **Add** and **Add role assignment**.
 
-:::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-3.png" alt-text="Create a new role assignment on your Azure Quantum workspace":::
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-3.png" alt-text="Create a new role assignment on your Azure Quantum workspace":::
+    > [!NOTE]
+    > You must have Owner or RBAC administrator rights to add role assignment. Otherwise the options under *Add* will appear as disabled.
 
 1. On the **Add role assignment** page, select **Contributor** and select **Next**.
 1. On the **Members** tab, in **Assign access to**, select **Managed Identity**, and then select **+ Select members**.
@@ -320,7 +324,7 @@ You can now test the function by using the direct URL or by passing the paramete
 
 If you are done testing your Function App, you can use the following steps to delete it and its related resources from your Azure subscription to avoid incurring extra costs.
 
-1. In the Azure portal, select **Home -> Resources** and select the resource group where you created the Function App. 
+1. In the Azure portal, navigate to the Home screen. In the **Resources** section on this page, select the resource group where you created the Function App. 
 1. The following resource types were created automatically when you created the Function App:
 
     - a Function App
