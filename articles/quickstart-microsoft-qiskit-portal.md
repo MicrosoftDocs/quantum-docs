@@ -124,13 +124,17 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
-- quantinuum.hqs-lt-s1
-- quantinuum.hqs-lt-s1-apival
-- quantinuum.hqs-lt-s2
-- quantinuum.hqs-lt-s2-apival
-- quantinuum.hqs-lt-s1-sim
+- quantinuum.qpu.h1-1
+- quantinuum.sim.h1-1sc
+- quantinuum.qpu.h1-2
+- quantinuum.sim.h1-2sc
+- quantinuum.sim.h1-1e
+- quantinuum.sim.h1-2e
 - ionq.qpu
 - ionq.simulator
+- ionq.qpu.aria-1
+- rigetti.sim.qvm
+- rigetti.qpu.aspen-11
 ```
 
 ::: zone pivot="platform-ionq"

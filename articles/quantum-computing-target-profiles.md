@@ -94,6 +94,4 @@ For example, the preceding `SetQubitState`operation can be used in a Basic Measu
 Presently, these Basic Measurement Feedback targets are available for Azure Quantum:
 
 - **Provider:** Quantinuum
-  - [Quantinuum System Model H1-1](xref:microsoft.quantum.providers.quantinuum#system-model-h1-powered-by-honeywell) (`quantinuum.hqs-lt-s1`)
-  - [Quantinuum System Model H1-2](xref:microsoft.quantum.providers.quantinuum#system-model-h1-powered-by-honeywell) (`quantinuum.hqs-lt-s2`)
-
+  - [Quantinuum System Model H1-1 and H1-2](xref:microsoft.quantum.providers.quantinuum#system-model-h1) (`quantinuum.qpu.h1-1`, `quantinuum.qpu.h1-2`)
