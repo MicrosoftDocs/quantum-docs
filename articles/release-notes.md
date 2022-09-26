@@ -23,6 +23,8 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 - Updated all Microsoft Quantum Development Kit components to Python 3.9
 - The [Quantinuum target names](TODO: link to documentation) have been updated for clarity and consistency. The old target names will continue to be available.
+- Add support for multiple classical registers in Qiskit by addressing issues [microsoft/qdk-python#361](https://github.com/microsoft/qdk-python/issues/361) and [microsoft/qdk-python#375](https://github.com/microsoft/qdk-python/issues/375).
+- Corrected the number of qubits for Quantinuum H1-2 target references by fixing [microsoft/qdk-python#391](https://github.com/microsoft/qdk-python/issues/391)
 
 ## 2022-09-01
 
