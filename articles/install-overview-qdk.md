@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to set up an Azure Quantum environment for different languages and platforms.
 ms.author: brbenefield
-ms.date: 09/07/2022
+ms.date: 09/23/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -75,9 +75,7 @@ While you can build Q# applications in any IDE, we recommend using Visual Studio
 
 - [.NET SDK 6.0](https://dotnet.microsoft.com/download)
 
-Configure the QDK for your preferred environment from one of the following options:
-
-#### [Azure CLI](#tab/tabid-azcli)
+#### Azure CLI 
 
 The Azure CLI is the preferred method for submitting quantum jobs using a terminal window in VS Code or Visual Studio. 
 
@@ -86,6 +84,8 @@ The Azure CLI is the preferred method for submitting quantum jobs using a termin
 
     ```azurecli
     az extension add --upgrade -n quantum
+
+Configure the QDK for your preferred environment from one of the following options:
 
 #### [VS Code](#tab/tabid-vscode)
 
