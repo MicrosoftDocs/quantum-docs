@@ -58,7 +58,7 @@ Not all samples will have the exact same set of files (for example, some samples
 
 One especially important file, though, is the `README.md` file, as that's what users need to get started with your sample!
 
-Each `README.md` should start with some metadata that helps `docs.microsoft.com/samples` find your contribution.
+Each `README.md` should start with some metadata that helps `learn.microsoft.com/samples` find your contribution.
 
 > [!div class="nextstepaction"]
 > [See how the chsh-game sample is rendered](/samples/microsoft/quantum/validating-quantum-mechanics/)
@@ -80,7 +80,7 @@ This metadata is provided as a [YAML header](https://dotnet.github.io/docfx/spec
 ```
 
 > [!IMPORTANT]
-> The `page_type: sample` key in the header is required for your sample to appear at `docs.microsoft.com/samples`.
+> The `page_type: sample` key in the header is required for your sample to appear at `learn.microsoft.com/samples`.
 > Similarly, the `product` and `language` keys are critical for helping users to find and run your sample.
 
 After that, it's helpful to give a short intro that says what your new sample does:

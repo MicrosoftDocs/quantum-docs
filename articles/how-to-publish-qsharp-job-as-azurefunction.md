@@ -319,4 +319,4 @@ You can now test the function in the cloud.
 ## Next steps
 
 - Now that you know how to publish Q# jobs using Azure Functions, you can publish other jobs from our [samples collection](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum) or publish your own job.
-- When you're finished testing your job in a simulator environment, try using other targets available on Azure Quantum (for example, other quantum simulators or quantum hardware). For learning more about how to target quantum hardware, see the MS Learn Module [Run algorithms on quantum hardware by using Azure Quantum](/learn/modules/run-algorithms-quantum-hardware-azure-quantum/).
+- When you're finished testing your job in a simulator environment, try using other targets available on Azure Quantum (for example, other quantum simulators or quantum hardware). For learning more about how to target quantum hardware, see the MS Learn Module [Run algorithms on quantum hardware by using Azure Quantum](/training/modules/run-algorithms-quantum-hardware-azure-quantum/).

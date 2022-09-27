@@ -19,7 +19,7 @@ You can make your QIO job and its functionality available to other developers, w
 
 Azure Functions is a serverless solution that allows you to host your functionality in Azure without worrying about underlying infrastructure. For more information, see [Azure Functions](/azure/azure-functions/).
 
-The QIO job that will be published as an Azure Function implements what is called the *number partitioning problem*. It splits a given set of integer numbers into two subsets with an equal (or very close) sum of their elements. For more information about this problem and its implementation, see [Solve optimization problems by using quantum-inspired optimization](/learn/modules/solve-quantum-inspired-optimization-problems/).
+The QIO job that will be published as an Azure Function implements what is called the *number partitioning problem*. It splits a given set of integer numbers into two subsets with an equal (or very close) sum of their elements. For more information about this problem and its implementation, see [Solve optimization problems by using quantum-inspired optimization](/training/modules/solve-quantum-inspired-optimization-problems/).
 
 To learn how to deploy a Q# job as a web service using Azure Functions, see [Publish a Q# job as an Azure Function](xref:microsoft.quantum.publish-qc-as-azure-function).
 
@@ -318,7 +318,7 @@ You can now test the function by using the direct URL or by passing the paramete
     :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/execute-function-2.png" alt-text="Result after Function call":::
 
 > [!TIP]
-> The function you just deployed implements the *number partitioning problem*. It allows you to split a given set of numbers into two subsets with equal (or similar) sum of their elements. To learn more about this problem and its implementation, see the [MS Learn Module: Solve optimization problems by using quantum-inspired optimization](/learn/modules/solve-quantum-inspired-optimization-problems/).
+> The function you just deployed implements the *number partitioning problem*. It allows you to split a given set of numbers into two subsets with equal (or similar) sum of their elements. To learn more about this problem and its implementation, see the [MS Learn Module: Solve optimization problems by using quantum-inspired optimization](/training/modules/solve-quantum-inspired-optimization-problems/).
 
 ## Clean up resources
 

@@ -76,7 +76,7 @@ landingContent:
       - linkListType: learn
         links:
           - text: Quantum computing foundations
-            url: /learn/paths/quantum-computing-fundamentals/
+            url: /training/paths/quantum-computing-fundamentals/
           - text: Learn Q# with the Quantum Katas
             url: tutorial-qdk-intro-to-katas.md
       
