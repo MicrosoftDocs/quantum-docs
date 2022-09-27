@@ -22,7 +22,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 ### QDK version 0.26.xxxxxx
 
 - Updated all Microsoft Quantum Development Kit components to Python 3.9
-- The [Quantinuum target names](TODO: link to documentation) have been updated for clarity and consistency. The old target names will continue to be available.
+- The [Quantinuum target names](https://learn.microsoft.com/azure/quantum/provider-quantinuum) have been updated for clarity and consistency. The old target names will continue to be available.
 - Added support for multiple classical registers in Qiskit by addressing issues [microsoft/qdk-python#361](https://github.com/microsoft/qdk-python/issues/361) and [microsoft/qdk-python#375](https://github.com/microsoft/qdk-python/issues/375).
 - Corrected the number of qubits for Quantinuum H1-2 target references by fixing [microsoft/qdk-python#391](https://github.com/microsoft/qdk-python/issues/391)
 - Added support for [Rigetti](https://review.learn.microsoft.com/azure/quantum/provider-rigetti) in Azure Quantum, that includes the Rigetti [Aspen-M-2](https://review.learn.microsoft.com/azure/quantum/provider-rigetti?tabs=tabid-pyquil#aspen-m-2), [Aspen-11](https://review.learn.microsoft.com/azure/quantum/provider-rigetti?tabs=tabid-pyquil#aspen-11) and [Quantum Virtual Machine](https://review.learn.microsoft.com/azure/quantum/provider-rigetti?tabs=tabid-pyquil#simulators)
