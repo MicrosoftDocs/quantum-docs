@@ -26,6 +26,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 - The [Quantinuum target names](https://learn.microsoft.com/azure/quantum/provider-quantinuum) have been updated for clarity and consistency. The old target names will continue to be available.
 - Added support for multiple classical registers in Qiskit by addressing issues [microsoft/qdk-python#361](https://github.com/microsoft/qdk-python/issues/361) and [microsoft/qdk-python#375](https://github.com/microsoft/qdk-python/issues/375).
 - Corrected the number of qubits for Quantinuum H1-2 target references by fixing [microsoft/qdk-python#391](https://github.com/microsoft/qdk-python/issues/391)
+- Optimizations to reduce job submission time
 
 ## 2022-09-01
 
