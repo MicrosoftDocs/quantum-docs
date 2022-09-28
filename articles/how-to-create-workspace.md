@@ -28,7 +28,7 @@ First-time users automatically get free Azure Quantum Credits for use with each 
 
 You need the following prerequisites to create a workspace.
 
-- An Azure account with an active subscription. When you sign up for an Azure account, a subscription is created by default. Choose from one of the following subscriptions, or for a full list see [Microsoft Azure Offer Details](https://azure.microsoft.com/support/legal/offer-details/).
+- An Azure account with an active subscription. Choose from one of the following subscriptions, or for a full list see [Microsoft Azure Offer Details](https://azure.microsoft.com/support/legal/offer-details/).
 
 ### [Free Trial](#tab/free)
 
