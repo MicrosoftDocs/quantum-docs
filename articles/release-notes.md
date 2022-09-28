@@ -17,9 +17,9 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
-## 2022-09-xx
+## 2022-09-28
 
-### QDK version 0.26.xxxxxx
+### QDK version 0.26.232864
 
 - Added support for [Rigetti](https://review.learn.microsoft.com/azure/quantum/provider-rigetti) in Azure Quantum, that includes the Rigetti [Aspen-M-2](https://review.learn.microsoft.com/azure/quantum/provider-rigetti?tabs=tabid-pyquil#aspen-m-2), [Aspen-11](https://review.learn.microsoft.com/azure/quantum/provider-rigetti?tabs=tabid-pyquil#aspen-11) and [Quantum Virtual Machine](https://review.learn.microsoft.com/azure/quantum/provider-rigetti?tabs=tabid-pyquil#simulators)
 - Updated all Microsoft Quantum Development Kit components to Python 3.9
