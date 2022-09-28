@@ -17,25 +17,27 @@ uid: microsoft.quantum.providers.quantinuum
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
+> [!IMPORTANT]
+> Quantinuum target IDs were updated as of \<TBD - DATE\>. Both the old and new IDs will be valid until \<TBD - DATE\>, when the old IDs will expire. Please update any code or job scripts to reflect the new IDs.
+
+| Old target name | New target name |
+| ---- | ---- |
+| quantinuum.hqs-lt-s1 | quantinuum.qpu.h1-1 |
+| quantinuum.hqs-lt-s1-apival | quantinuum.sim.h1-1sc |
+| quantinuum.hqs-lt-s2 | quantinuum.qpu.h1-2 |
+| quantinuum.hqs-lt-s2-apival | quantinuum.sim.h1-2sc |
+| quantinuum.hqs-lt-s1-sim | quantinuum.sim.h1-1e |
+| quantinuum.hqs-lt-s2-sim | quantinuum.sim.h1-2e |
+| quantinuum.hqs-lt | quantinuum.qpu.h1 |
+
 Quantinuum provides access to trapped-ion systems with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurement.
 
 - Publisher: [Quantinuum](https://www.quantinuum.com)
 - Provider ID: `quantinuum`
 
+## Targets
+
 The following targets are available from this provider:
-
-> [!IMPORTANT]
-> Quantinuum target IDs were updated as of \<TBD - DATE\>. Both the old and new IDs will be valid until \<TBD - DATE\>, when the old IDs will expire. Please update any code or job scripts to reflect the new IDs.
-> | Old target name | New target name |
-> | ---- | ---- |
-> | quantinuum.hqs-lt-s1 | quantinuum.qpu.h1-1 |
-> | quantinuum.hqs-lt-s1-apival | quantinuum.sim.h1-1sc |
-> | quantinuum.hqs-lt-s2 | quantinuum.qpu.h1-2 |
-> | quantinuum.hqs-lt-s2-apival | quantinuum.sim.h1-2sc |
-> | quantinuum.hqs-lt-s1-sim | quantinuum.sim.h1-1e |
-> | quantinuum.hqs-lt-s2-sim | quantinuum.sim.h1-2e |
-> | quantinuum.hqs-lt | quantinuum.qpu.h1 |
-
 
 |Target name|	Target ID|	Number of qubits|	Description|
 |---|---|---|---|
