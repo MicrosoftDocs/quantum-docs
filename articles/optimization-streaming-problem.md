@@ -77,7 +77,7 @@ print(problem.stats)
 - `min_coupling`: The smallest coupling (number of variable indices) in any term
 - `num_terms`: The total number of terms
 
-These statistics are also set as metadata on the uploaded blob in Azure Storage. For more information, see the [Azure Storage documentation](/learn/modules/organize-blobs-properties-metadata/) for more information on accessing these properties.
+These statistics are also set as metadata on the uploaded blob in Azure Storage. For more information, see the [Azure Storage documentation](/training/modules/organize-blobs-properties-metadata/) for more information on accessing these properties.
 
 ## Constructor
 

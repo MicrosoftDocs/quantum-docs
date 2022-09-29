@@ -50,8 +50,9 @@ The `qsharp` Python package, which includes the IQ# kernel, contains the necessa
 
 1. Prerequisites:
 
-    - [Python](https://www.python.org/downloads/) 3.6 or later
-    - The [PIP](https://pip.pypa.io/en/stable/installing) Python package manager
+    - [Python](https://www.python.org/downloads/) 3.9 or later
+    - The [PIP](https://pip.pypa.io/en/stable/installation/) Python package manager (installed automatically if you installed Python from python.org)
+
     - [.NET SDK 6.0](https://dotnet.microsoft.com/download/)
 
 1. Install the `qsharp` package, a Python package that enables interop between Q# and Python.
