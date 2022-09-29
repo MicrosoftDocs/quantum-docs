@@ -113,7 +113,7 @@ You can use the `azure-quantum` Python package to submit and run Qiskit or Cirq 
 
 To install the `azure-quantum` Python package 
 
-1. Install [Python](https://www.python.org/downloads/) 3.6 or later if you haven't already.
+1. Install [Python](https://www.python.org/downloads/) 3.9 or later if you haven't already.
 1. Install [PIP](https://pip.pypa.io/en/stable/) and ensure you have **version 19.2 or higher**.
 1. Install the `azure-quantum` python package. Use the `--upgrade` flag to make sure to get the latest version.
 
@@ -176,7 +176,7 @@ All the necessary components for a Juptyer Notebooks environment can be set up w
 
 1. Prerequisites:
 
-    - [Python](https://www.python.org/downloads/) 3.6 or later
+    - [Python](https://www.python.org/downloads/) 3.9 or later
     - The [PIP](https://pip.pypa.io/en/stable/installing) Python package manager
     - [.NET SDK 6.0](https://dotnet.microsoft.com/download/)
 
