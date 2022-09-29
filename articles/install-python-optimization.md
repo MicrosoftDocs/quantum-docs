@@ -17,7 +17,7 @@ There are some processes that you can run on Azure Quantum that use Python witho
 
 ## Install the `azure-quantum` Python package
 
-1. Install [Python](https://www.python.org/downloads/) 3.6 or later if you haven't already.
+1. Install [Python](https://www.python.org/downloads/) 3.9 or later if you haven't already.
 1. Install [PIP](https://pip.pypa.io/en/stable/installation/) and ensure you have **version 19.2 or higher**.  (PIP is installed automatically if you installed Python from python.org)
 1. Install the `azure-quantum` python package. Use the `--upgrade` flag to make sure to get the latest version.
 

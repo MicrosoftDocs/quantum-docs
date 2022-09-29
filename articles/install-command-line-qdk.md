@@ -80,7 +80,7 @@ If you want to run your programs in Jupyter Notebooks but don't want to install 
 
 1. Prerequisites:
 
-    - [Python](https://www.python.org/downloads/) 3.6 or later
+    - [Python](https://www.python.org/downloads/) 3.9 or later
     - [Jupyter Notebook](https://jupyter.readthedocs.io/en/latest/install.html)
 
 1. Install IQ# via the .NET `Microsoft.Quantum.IQSharp` package.
