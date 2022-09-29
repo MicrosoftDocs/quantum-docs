@@ -24,7 +24,7 @@ The Azure Quantum team has created a Jupyter Notebook which performs all the ana
 To start, you'll need an Azure account with an active subscription. You can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) and run the Jupyter Notebook without incurring any charges. 
 
 > [!NOTE]
-> If you have any questions regarding the workspace creation process or run into any issue at any point using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Standard Time zone (PST).
+> If you have any questions regarding the workspace creation process or run into any issue at any point using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Time.
 
 ## Create an Azure Quantum workspace
 
@@ -44,12 +44,18 @@ To create an Azure Quantum workspace, follow these steps.
 1. Click **Create**.
 1. Deployment of your workspace may take a few minutes. When the deployment is complete, select **Go to resource**. 
 
-## View the Jupyter Notebook
+## View a Jupyter Notebook
 
-To view and run the notebook: 
+There are three notebooks available to review:
 
-1. In your new workspace, select **Notebooks** and then select **Microsoft's quantum machine**. 
-1. In **Microsoft's Device Data**, select **Copy to my notebooks**.
+- Analysis of device data from preprint paper
+- First stage of topological gap protocol
+- Second stage of topological gap protocol 
+
+To view and run a notebook: 
+
+1. In your new workspace, select **Notebooks** and then select **Topological quantum computing**. 
+1. Select your desired notebook, and select **Copy to my notebooks**.
 
     :::image type="content" source="media/ms-machine-copy-notebook.png" alt-text="Copy sample notebook.":::
 
