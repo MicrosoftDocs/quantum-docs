@@ -20,6 +20,8 @@ The function receives input via a request URL or via a request body. It then exe
 
 The Q# job that you'll publish as an Azure function implements a quantum random number generator. The algorithm uses the nature of quantum mechanics to produce a random number. To learn more about this algorithm, see the [Tutorial: Implement a Quantum Random Number Generator in Q#](xref:microsoft.quantum.tutorial-qdk.random-number).
 
+To learn how to deploy your [quantum inspired optimization (QIO)](xref:microsoft.quantum.optimization.concepts.overview.introduction) job as a web service, see [Publish a QIO job as an Azure Function](xref:microsoft.quantum.publish-qio-as-azure-function).
+
 ## Prerequisites
 
 You need the following prerequisites to follow the steps in this article:
@@ -317,4 +319,4 @@ You can now test the function in the cloud.
 ## Next steps
 
 - Now that you know how to publish Q# jobs using Azure Functions, you can publish other jobs from our [samples collection](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum) or publish your own job.
-- When you're finished testing your job in a simulator environment, try using other targets available on Azure Quantum (for example, other quantum simulators or quantum hardware). For learning more about how to target quantum hardware, see the MS Learn Module [Run algorithms on quantum hardware by using Azure Quantum](/learn/modules/run-algorithms-quantum-hardware-azure-quantum/).
+- When you're finished testing your job in a simulator environment, try using other targets available on Azure Quantum (for example, other quantum simulators or quantum hardware). For learning more about how to target quantum hardware, see the MS Learn Module [Run algorithms on quantum hardware by using Azure Quantum](/training/modules/run-algorithms-quantum-hardware-azure-quantum/).
