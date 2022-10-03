@@ -27,7 +27,7 @@ The following targets are available from this provider:
 |[IonQ Harmony](#ionq-harmony-quantum-computer) |	ionq.qpu	|11 qubits	|IonQ's trapped-ion quantum computer.|
 |[IonQ Aria](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|23 qubits	|IonQ's Aria trapped-ion quantum computer.|
 
-IonQ's targets correspond to **No Control Flow** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
+IonQ's targets correspond to a **No Control Flow** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
 
 
 ## Quantum simulator
