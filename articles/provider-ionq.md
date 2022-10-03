@@ -118,7 +118,7 @@ IonQ's targets correspond to [No Control Flow profile](xref:microsoft.quantum.ta
 
 ## Output format
 
-When submitting a quantum program on the IonQ QPUs and simulator, they return the probability histogram created by the measurement. The IonQ QPUs and simulator will not sample the distribution created by a quantum program but instead return the distribution scaled to the number of shots. This is most apparent when you submit a single shot circuit. You will see multiple measurement results in the probability histogram for one shot. This behaivour is inherent of IonQ's hardware.
+When you submit a quantum program to the IonQ QPUs and simulator, they return the probability histogram created by the measurement. The IonQ QPUs and simulator do not sample the distribution created by a quantum program but instead return the distribution scaled to the number of shots. This is most apparent when you submit a single shot circuit. You will see multiple measurement results in the probability histogram for one shot. This behavior is inherent to IonQ's hardware.
 
 ## Pricing
 
