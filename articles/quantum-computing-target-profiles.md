@@ -82,7 +82,7 @@ In Q# when measuring a qubit, a value of type `Result` is returned. If you want 
 For example, the following Q# code would be allowed in a Basic Measurement Feedback target:
 ```qsharp
 operation MeasureQubit(q : Qubit) : Result { 
-return M(q); 
+    return M(q); 
 }
 
 operation SetToZero(q : Qubit) : Unit {
