@@ -98,7 +98,7 @@ operation IsOne(q : Qubit) : Bool {
 }
 
 operation SetToZeroUsingIsOne(q : Qubit) : Unit {
-     if(IsOne(q)) { X(q); }
+     if IsOne(q) { X(q); }
 }
 ```
 
