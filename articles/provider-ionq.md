@@ -113,12 +113,23 @@ IonQ's targets correspond to the [No Control Flow profile](xref:microsoft.quantu
 
 > [!NOTE]
 > Currently, you can't submit quantum programs that apply operations on qubits that have been measured in No Control Flow targets, even
-> if you don't use the results to control the program flow. This limitation is
-> not inherent to this profile type but is circumstantial to the current situation of the hardware.
+> if you don't use the results to control the program flow. That is, No Control Flow targets don't allow mid-circuit measurements.
+>
+> For example, the following code can **not** be run on a No Control Flow target:
+> ```qsharp
+> operation MeasureQubit(q : Qubit) : Result { 
+>    return M(q); 
+> }
+>
+> operation SampleMeasuredQubit(q : Qubit) : Result {
+>     H(MeasureQubit(q));
+>     return M(MeasureQubit(q));
+> }
+> ```
 
 ## Output format
 
-When you submit a quantum program to the IonQ simulator, it returns the probability histogram created by the measurement. The IonQ simulator doesn't sample the distribution created by a quantum program but instead returns the distribution scaled to the number of shots. This is most apparent when you submit a single shot circuit. You will see multiple measurement results in the probability histogram for one shot. This behavior is inherent to IonQ simulator, while IonQ QPU actually runs the program and aggregates the results.
+When you submit a quantum program to the IonQ simulator, it returns the histogram created by the measurements. The IonQ simulator doesn't sample the probability distribution created by a quantum program but instead returns the distribution scaled to the number of shots. This is most apparent when you submit a single shot circuit. You will see multiple measurement results in the histogram for one shot. This behavior is inherent to IonQ simulator, while IonQ QPU actually runs the program and aggregates the results.
 
 ## Pricing
 
