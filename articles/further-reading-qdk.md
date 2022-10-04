@@ -4,8 +4,8 @@ description: A reference list with deep coverage of quantum computing topics if 
 ms.author: brbenefield
 ms.date: 08/24/2022
 ms.service: azure-quantum
-ms.subservice: qdk
-ms.topic: conceptual
+ms.subservice: computing
+ms.topic: reference
 no-loc: ['Q#', '$$v']
 title: Quantum computing learning resources
 uid: microsoft.quantum.more-information
