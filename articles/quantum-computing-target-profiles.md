@@ -43,7 +43,7 @@ the constraint that they can't use results from qubit measurements to control
 the program flow. More specifically, values of type `Result` do not support
 equality comparison.
 
-For example, this operation can **NOT** be run on a No Control Flow target:
+For example, this operation can **not** be run on a No Control Flow target:
 
 ```qsharp
     operation SetQubitState(desired : Result, q : Qubit) : Result {
@@ -54,12 +54,23 @@ For example, this operation can **NOT** be run on a No Control Flow target:
 ```
 
 Trying to run this operation on a No Control Flow target will fail because it evaluates a comparison between two results (`desired != M(q)`)
-to control the computation flow with an `if` statement.
+to control the computation flow with an `if` statement. This will be applicable to any type of [conditional branching](xref:microsoft.quantum.qsharp.conditionalbranching), such as `elif` and `else` statements. 
 
 > [!NOTE]
 > Currently, you can't submit quantum programs that apply operations on qubits that have been measured in No Control Flow targets, even
-> if you don't use the results to control the program flow. This limitation is
-> not inherent to this profile type but is circumstantial to the current situation of the hardware.
+> if you don't use the results to control the program flow. That is, No Control Flow targets don't allow mid-circuit measurements.
+>
+> For example, the following code can **not** be run on a No Control Flow target:
+> ```qsharp
+> operation MeasureQubit(q : Qubit) : Result { 
+>    return M(q); 
+> }
+>
+> operation SampleMeasuredQubit(q : Qubit) : Result {
+>     H(MeasureQubit(q));
+>     return M(MeasureQubit(q));
+> }
+> ```
 
 Presently, these No Control Flow targets are available for Azure Quantum:
 
@@ -90,19 +101,19 @@ operation SetToZero(q : Qubit) : Unit {
 }
 ```
  
-However, the same code with the Boolean evaluation moved would **NOT** be allowed:
+However, the same code with the Boolean evaluation moved would **not** be allowed:
  
 ```qsharp
-operation IsOne(q : Qubit) : Bool {
+operation BeOne(q : Qubit) : Bool {
      return M(q) == One;
 }
 
-operation SetToZeroUsingIsOne(q : Qubit) : Unit {
-     if IsOne(q) { X(q); }
+operation SetToZeroUsingBeOne(q : Qubit) : Unit {
+     if BeOne(q) { X(q); }
 }
 ```
 
-The `SetQubitState `operation in [No Control Flow target profile](#create-and-run-applications-for-no-control-flow-profile-targets) can be used in a Basic Measurement Feedback target as long as you don't include any `return` or `set` statement within the `if` block. For example, the following operation can **NOT** be used in a Basic Measurement Feedback target:
+The `SetQubitState `operation in [No Control Flow target profile](#create-and-run-applications-for-no-control-flow-profile-targets) can be used in a Basic Measurement Feedback target as long as you don't include any `return` or `set` statement within the `if` statement. This will be applicable to any type of [conditional branching](xref:microsoft.quantum.qsharp.conditionalbranching), such as `elif` and `else` statements.  For example, the following operation can **not** be used in a Basic Measurement Feedback target:
 
 ```qsharp
     operation SetQubitState(desired : Result, q : Qubit) : Result {
