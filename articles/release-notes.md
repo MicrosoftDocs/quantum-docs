@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 09/01/2022
+ms.date: 10/04/2022
 author: bradben
 ms.author: brbenefield
 ms.service: azure-quantum
@@ -17,15 +17,21 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
+## 2022-10-04
+
+### QDK version 0.26.233415
+
+- Improved adherence to the Jupyter messaging protocol by fixing issue [microsoft/iqsharp#732](https://github.com/microsoft/iqsharp/issues/732).
+
 ## 2022-09-28
 
 ### QDK version 0.26.232864
 
-- Added support for [Rigetti](https://review.learn.microsoft.com/azure/quantum/provider-rigetti) in Azure Quantum, that includes the Rigetti [Aspen-M-2](https://review.learn.microsoft.com/azure/quantum/provider-rigetti?tabs=tabid-pyquil#aspen-m-2), [Aspen-11](https://review.learn.microsoft.com/azure/quantum/provider-rigetti?tabs=tabid-pyquil#aspen-11) and [Quantum Virtual Machine](https://review.learn.microsoft.com/azure/quantum/provider-rigetti?tabs=tabid-pyquil#simulators)
-- Updated all Microsoft Quantum Development Kit components to Python 3.9
+- Added support for [Rigetti](https://review.learn.microsoft.com/azure/quantum/provider-rigetti) in Azure Quantum, that includes the Rigetti [Aspen-M-2](https://review.learn.microsoft.com/azure/quantum/provider-rigetti?tabs=tabid-pyquil#aspen-m-2), [Aspen-11](https://review.learn.microsoft.com/azure/quantum/provider-rigetti?tabs=tabid-pyquil#aspen-11) and [Quantum Virtual Machine](https://review.learn.microsoft.com/azure/quantum/provider-rigetti?tabs=tabid-pyquil#simulators).
+- Updated all Microsoft Quantum Development Kit components to Python 3.9.
 - The [Quantinuum target names](https://learn.microsoft.com/azure/quantum/provider-quantinuum) have been updated for clarity and consistency. The old target names will continue to be available.
 - Added support for multiple classical registers in Qiskit by addressing issues [microsoft/qdk-python#361](https://github.com/microsoft/qdk-python/issues/361) and [microsoft/qdk-python#375](https://github.com/microsoft/qdk-python/issues/375).
-- Corrected the number of qubits for Quantinuum H1-2 target references by fixing [microsoft/qdk-python#391](https://github.com/microsoft/qdk-python/issues/391)
+- Corrected the number of qubits for Quantinuum H1-2 target references by fixing [microsoft/qdk-python#391](https://github.com/microsoft/qdk-python/issues/391).
 
 ### Azure Quantum service update
 - Optimizations to reduce job submission time
