@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to work with Q# or Python in a Jupyter notebook in an Azure Quantum workspace.
 ms.author: brbenefield
-ms.date: 05/23/2022
+ms.date: 10/05/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -93,6 +93,9 @@ You can upload one or more existing Jupyter Notebooks to an Azure Quantum worksp
     :::image type="content" source="media/upload-notebook.png" alt-text="Upload notebook to Azure Quantum.":::
 
 After the notebooks have been uploaded, you can find them under **My notebooks**.
+
+> [!NOTE]
+> If you are uploading a notebook that was saved from another Azure Quantum workspace, you may need to update the connection information, such as *subscription_id*, *resource_group*, *name*, *location*, and *resource_id*, before running the notebook. 
 
 ## Manage notebooks
 
