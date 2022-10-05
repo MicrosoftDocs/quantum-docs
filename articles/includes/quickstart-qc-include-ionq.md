@@ -62,7 +62,7 @@ To complete this tutorial, you need
     ```
 
 > [!NOTE] 
-> If you would like to learn more about this program code, see [Create your first Q# program by using the Quantum Development Kit](/learn/modules/qsharp-create-first-quantum-development-kit/).
+> If you would like to learn more about this program code, see [Create your first Q# program by using the Quantum Development Kit](/training/modules/qsharp-create-first-quantum-development-kit/).
 
 ## Prepare the Azure CLI
 

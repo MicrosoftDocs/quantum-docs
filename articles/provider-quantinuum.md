@@ -48,6 +48,9 @@ The following targets are available from this provider:
 |[H1-1](#system-model-h1)|	quantinuum.qpu.h1-1 |	20 qubits|	Quantinuum's H1-1 trapped ion device.|
 |[H1-2](#system-model-h1)|	quantinuum.qpu.h1-2	| 12 qubits	|Quantinuum's H1-2 trapped ion device.|
 
+
+Quantinuum's targets correspond to a **Basic Measurement Feedback** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
+
 ## Syntax Checkers
 
 We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-2 syntax checker uses the same compiler as H1-2. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker will return a `success` status and a result of all 0s. If the code does not compile, the syntax checker will return a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
@@ -58,6 +61,7 @@ We recommend that users first validate their code using a Syntax Checker. This i
   - H1-1 Syntax Checker: `quantinuum.sim.h1-1sc` 
   - H1-2 Syntax Checker: `quantinuum.sim.h1-2sc`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
+
 
 Syntax Checkers usage is offered free-of-charge.
 
@@ -88,6 +92,7 @@ Both System Model H1 hardware H1-1 and H1-2 are continuously upgraded throughout
   - H1-1: `quantinuum.qpu.h1-1` 
   - H1-2: `quantinuum.qpu.h1-2`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
+
 
 ### Technical Specifications
 

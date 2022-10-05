@@ -9,8 +9,7 @@ Development Kit (QDK). This directory contains:
   - Every directory contains a `toc.yml` file to display the content of the directory
     in the main Table Of Contents (TOC).
   - Markdown articles that contain the documentation. These articles
-    should follow the guidelines of the [Microsoft Docs contributor
-    guide](xref:microsoft.quantum.contributing-qdk.overview).
+    should follow the guidelines of the [Microsoft Docs contributor guide](xref:microsoft.quantum.contributing-qdk.overview).
   - Articles sub-directories. These
     sub-directories should also contain their own `toc.yml` file.
 
@@ -42,7 +41,7 @@ for contributors:
   
 ## Broken links prevention
 
-The URL of an article page on Microsoft Docs is generated from the relative path to the **articles** folder on the GitHub repository where the source files are stored. For example, the article located at `https://github.com/MicrosoftDocs/quantum-docs/blob/main/articles/user-guide/programs.md` is assigned the URL `https://learn.microsoft.com/azure/quantum/user-guide/programs`. This means that any time you change an article's path, either because of a relocation, deletion, or change in the file name, the URL will change accordingly. If you don't redirect the original link to a working page, customers that have bookmarked the original article, and other pages that link to the original article, will get a **404 Page not found** error. To avoid this:
+The URL of an article page on Microsoft Learn is generated from the relative path to the **articles** folder on the GitHub repository where the source files are stored. For example, the article located at `https://github.com/MicrosoftDocs/quantum-docs/blob/main/articles/user-guide/programs.md` is assigned the URL `https://learn.microsoft.com/azure/quantum/user-guide/programs`. This means that any time you change an article's path, either because of a relocation, deletion, or change in the file name, the URL will change accordingly. If you don't redirect the original link to a working page, customers that have bookmarked the original article, and other pages that link to the original article, will get a **404 Page not found** error. To avoid this:
 
 - If possible, do not rename or relocate articles.
 - If you need to rename, remove or relocate an article, you must add a *redirect* from the previous article location to the URL of the new article to avoid creating  broken links.
