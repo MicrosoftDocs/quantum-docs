@@ -18,7 +18,7 @@ uid: microsoft.quantum.providers.quantinuum
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 > [!IMPORTANT]
-> Quantinuum target IDs were updated as of \<TBD - DATE\>. Both the old and new IDs will be valid until \<TBD - DATE\>, when the old IDs will expire. Please update any code or job scripts to reflect the new IDs.
+> Quantinuum target IDs were updated as of October, 2022. Currently, both the old and new target IDs are valid, however, the old target IDs will eventually be phased out. Please use the new target IDs to submit jobs, and update any code or job scripts to reflect the new IDs.
 
 | Old target name | New target name |
 | ---- | ---- |
