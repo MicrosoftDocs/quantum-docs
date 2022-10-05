@@ -95,7 +95,7 @@ You can upload one or more existing Jupyter Notebooks to an Azure Quantum worksp
 After the notebooks have been uploaded, you can find them under **My notebooks**.
 
 > [!NOTE]
-> If you are uploading a notebook that was saved from another Azure Quantum workspace, you may need to update the connection information, such as *subscription_id*, *resource_group*, *name*, *location*, and *resource_id*, before running the notebook. 
+> If you are uploading a notebook that was saved from another Azure Quantum workspace, you may need to update the connection information, such as Subscription, Resource group, workspace name, Location, or Resource ID, before running the notebook. 
 
 ## Manage notebooks
 
