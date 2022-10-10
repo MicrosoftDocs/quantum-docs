@@ -1,7 +1,7 @@
 ---
 author: bbdenver
 ms.author: brbenefield
-description: This document provides the technical details of the Rigetti provider
+description: This document provides the technical details of the NEW provider
 ms.date: 09/07/2022
 ms.service: azure-quantum
 ms.subservice: computing
