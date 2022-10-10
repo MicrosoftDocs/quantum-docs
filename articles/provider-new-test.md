@@ -6,7 +6,7 @@ ms.date: 09/07/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
-title: Rigetti provider
+title: new provider
 uid: microsoft.quantum.providers.new
 ---
 
