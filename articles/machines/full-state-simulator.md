@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to run your Q# programs on the Microsoft Quantum Development Kit full state simulator.
 ms.author: sonialopez
-ms.date: 02/01/2021
+ms.date: 10/11/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -55,7 +55,7 @@ dotnet run -s QuantumSimulator
 
 Use the IQ# magic command [%simulate](xref:microsoft.quantum.iqsharp.magic-ref.simulate) to run the Q# operation.
 
-```IQ#
+```qsharp
 %simulate myOperation
 ```
 
@@ -75,9 +75,14 @@ By default, the full state simulator uses a random number generator to simulate 
 
 The behavior of the full state simulator can be adjusted via the following parameters to the C# constructor:
 
-- `throwOnReleasingQubitsNotInZeroState`: The simulator can warn you if qubits have not been returned to the `zero` state before release by throwing an exception. Resetting or measuring qubits before release is required by the Q# spec - not doing so may lead to computational errors! The default is `true`.
-- `randomNumberGeneratorSeed`: Obtain deterministic behavior by seeding the simulator as described above.
-- `disableBorrowing`: If you don't want to use [borrowed qubits](xref:microsoft.quantum.qsharp.quantummemorymanagement#borrow-statement) for this simulation, you can disable this feature by setting this parameter to `true`. Borrowed qubits will instead be replaced with regular clean qubits. The default is `false`.
+|Parameter|Description|
+|------|-------|
+|`throwOnReleasingQubitsNotInZeroState`| The simulator can warn you if qubits have not been returned to the `zero` state before release by throwing an exception. The default is `true`.|
+|`randomNumberGeneratorSeed`| Obtain deterministic behavior by [seeding the simulator](#seeding-the-simulator).|
+|`disableBorrowing`| If you don't want to use [borrowed qubits](xref:microsoft.quantum.qsharp.quantummemorymanagement#borrow-statement) for this simulation, you can disable this feature by setting this parameter to `true`. Borrowed qubits will instead be replaced with regular clean qubits. The default is `false`.|
+
+> [!NOTE]
+> Resetting or measuring qubits before release is required by the Q# spec - not doing so may lead to computational errors. 
 
 The code below shows a possible configuration of the parameters.
 
