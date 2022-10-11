@@ -15,7 +15,7 @@ uid: microsoft.quantum.optimization.quantum-monte-carlo
 [Quantum Monte Carlo](https://en.wikipedia.org/wiki/Quantum_Monte_Carlo) is a Metropolis annealing algorithm, similar in concept to [simulated annealing](xref:microsoft.quantum.optimization.simulated-annealing) that starts at a low temperature and improves the solution by searching across barriers with some probability as an external perturbation is applied to the system.
 As this external field is varied over every Monte Carlo step, the configuration may be able to tunnel through energy barriers and evolve towards a desired ground state (without possessing the thermal energy needed to climb the barriers, as would be required in simulated annealing).
 
-In Azure Quantum, the core of algorithmic approach to the Quantum Monte Carlo (QMC) implementation is based on the [Wolff algorithm](https://en.wikipedia.org/wiki/Wolff_algorithm) for annealing and this approach is extended with various improvement for computational efficiency.
+In Azure Quantum, the core of algorithmic approach to the Quantum Monte Carlo implementation is based on the [Wolff algorithm](https://en.wikipedia.org/wiki/Wolff_algorithm) for annealing and this approach is extended with various improvement for computational efficiency.
 
 ## Prerequisites
 
@@ -32,8 +32,8 @@ In Azure Quantum, the core of algorithmic approach to the Quantum Monte Carlo (Q
 
 This algorithm should perform best in the following two scenarios:
 
-- When there are tall, narrow barriers in the energy landscape (cost function)
-- If the solution is already at a feasible configuration at a low temperature and the user wishes to improve the solution
+- When there are tall, narrow barriers in the energy landscape (cost function).
+- If the solution is already at a feasible configuration at a low temperature and the user wishes to improve the solution.
 
 > [!NOTE]
 > For further information on determining which solver to use, refer to [Which optimization solver should I use?](xref:microsoft.quantum.optimization.choose-solver).
