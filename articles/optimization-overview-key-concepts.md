@@ -2,7 +2,7 @@
 description: Learn about the key concepts of optimization, including cost functions, search spaces, and landscapes. 
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 09/28/2021
+ms.date: 10/11/2022
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: overview
@@ -38,7 +38,7 @@ Consider the following example of traffic minimization. The aim of this optimiza
 
 Each configuration represents a different combination of routes assigned to the vehicles in the system. The cost to minimize is the overall traffic level (or congestion level).
 
-![Graph showing a cost function with local optima corresponding to different traffic levels in a vehicle routing simulation](./media/optimization-intro-traffic-optima.png)
+:::image type="content" source="./media/optimization-intro-traffic-optima.png" alt-text="Graph showing a cost function with local optima corresponding to different traffic levels in a vehicle routing simulation":::
 
 This graph highlights some examples of different system configurations, each of which has a different cost value. The costs are visualized here cost using color: the redder the road segment, the higher the traffic level and, therefore, the greater the cost. Conversely, greener road segments have fewer vehicles simultaneously occupying them and, therefore, lower traffic and cost values.
 
@@ -52,7 +52,8 @@ Let's explore a few different optimization landscapes and see which are good can
 
 Consider the following plot of a cost function of two continuous variables, which looks like a single, smooth valley:
 
-![Smooth landspace](./media/smooth-landscape.png)
+:::image type="content" source="./media/smooth-landscape.png" alt-text="Smooth landspace":::
+
 
 This kind of problem is easily solved with classical optimization techniques such as gradient descent, where you begin from an initial starting point and greedily move to any solution with a lower cost. After a few moves, the solution converges to the global minimum, the lowest point in the optimization landscape. Azure Quantum optimization solvers offer no advantages over other techniques with these straightforward problems.
 
@@ -60,7 +61,7 @@ This kind of problem is easily solved with classical optimization techniques suc
 
 Consider the following plot of a cost function of two continuous variables where the landscape is rugged, with many hills and valleys:
 
-![Structured landspace](./media/structured-landscape.png)
+:::image type="content" source="./media/structured-landscape.png" alt-text="Structured landspace":::
 
 In this scenario, one of the greatest challenges is to avoid getting stuck at any of the sub-optimal local minima. A rugged landscape can have multiple valleys. Each of these valleys has a lowest point, which is called a *local minimum*. One of these points will be the lowest of them all, and that point is the global minimum.
 
@@ -70,7 +71,7 @@ Such rugged landscapes present situations where **quantum-inspired optimization 
 
 The following plot corresponds to a random, unstructured landscape: 
 
-![Scattered landspace](./media/scattered-landscape.png)
+:::image type="content" source="./media/scattered-landscape.png" alt-text="Scattered landspace":::
 
 In these cases, where the solutions are completely random, there is no optimization algorithm that can improve on a brute force search.
 
@@ -178,6 +179,6 @@ can be merged into
 merged_term = Term(c=5, indices=[0,1])
 ```
 
-where the *azure-quantum* Python package is used to [express the terms of an optimization problem](/azure/quantum/optimization-express-optimization-problem).
+where the `azure-quantum` Python package is used to [express the terms of an optimization problem](/azure/quantum/optimization-express-optimization-problem).
 
 Merging terms may significantly improve the performance of quantum-inspired optimization, if your problem has many such terms. You can either use a hash map or sort algorithm to do the merging.
