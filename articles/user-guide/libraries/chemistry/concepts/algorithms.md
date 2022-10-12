@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to use Trotter-Suzuki formulas and qubitization to work with Hamiltonian simulations.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 10/10/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -13,9 +13,10 @@ uid: microsoft.quantum.libraries.overview-chemistry.concepts.simulationalgorithm
 
 # Simulating Hamiltonian Dynamics
 
-Once the Hamiltonian has been expressed as a sum of elementary operators the dynamics can then be compiled into fundamental gate operations using a host of well-known techniques.
+Once the Hamiltonian has been expressed as a sum of elementary operators using the [Jordan-Wigner representation](xref:microsoft.quantum.libraries.overview-chemistry.concepts.jordanwigner), the dynamics can then be compiled into fundamental gate operations using a host of well-known techniques.
 Three efficient approaches include Trotter–Suzuki formulas, linear combinations of unitaries, and qubitization.
-We explain these three approaches below and give concrete Q# examples of how to implement these methods using the Hamiltonian simulation library.
+
+This article examines these three approaches, along with concrete Q# examples of how to implement these methods using the Hamiltonian simulation library.
 
 ## Trotter–Suzuki Formulas
 
@@ -33,7 +34,7 @@ This error occurs because $e^{-iHt}$ is an operator exponential and as a result 
 
 If $t$ is large, Trotter–Suzuki formulas can still be used to simulate the dynamics accurately by breaking it up into a sequence of short time-steps.
 Let $r$ be the number of steps taken in the time evolution, so each time step runs for time $t/r$.
-Then, we have that
+Then, you have that
 
 $$
     e^{-i\sum_{j=1}^m H_j t} =\left(\prod_{j=1}^m e^{-iH_j t/r}\right)^r + O(m^2 t^2/r),
@@ -67,8 +68,8 @@ $$
 where $s_2 = (4-4^{1/3})^{-1}$.
 In general, arbitrarily high-order formulas can be similarly constructed; however, the costs incurred from using more complex integrators often outweigh the benefits beyond fourth order for most practical problems.
 
-In order to make the above strategies work, we need to have a method for simulating a wide class of $e^{-iH_j t}$.
-The simplest family of Hamiltonians, and arguably most useful, that we could use here are Pauli operators.
+In order to make the above strategies work, you need to have a method for simulating a wide class of $e^{-iH_j t}$.
+The simplest family of Hamiltonians, and arguably most useful, that you could use here are Pauli operators.
 Pauli operators can be easily simulated because they can be diagonalized using Clifford operations (which are standard gates in quantum computing).
 Further, once they have been diagonalized, their eigenvalues can be found by computing the parity of the qubits on which they act.
 
@@ -105,7 +106,7 @@ Exp(pauliString, - evolutionTime, qubits);
 For Fermionic Hamiltonians, the [Jordan–Wigner decomposition](xref:microsoft.quantum.libraries.overview-chemistry.concepts.jordanwigner) conveniently maps the Hamiltonian into a sum of Pauli operators.
 This means that the above approach can easily be adapted to simulating chemistry.
 Rather than manually looping over all Pauli terms in the Jordan-Wigner representation, below is a simple example of how running such a simulation within the chemistry would look.
-Our starting point is a [Jordan–Wigner encoding](xref:microsoft.quantum.libraries.overview-chemistry.concepts.jordanwigner) of the Fermionic Hamiltonian, which we convert to a format suitable for Q#.
+Our starting point is a [Jordan–Wigner encoding](xref:microsoft.quantum.libraries.overview-chemistry.concepts.jordanwigner) of the Fermionic Hamiltonian, which you convert to a format suitable for Q#.
 
 ```csharp
 // Make sure to load these namespaces at the top of your file or namespace.
@@ -117,21 +118,21 @@ using Microsoft.Quantum.Chemistry.QSharpFormat;
 ```
 
 ```csharp
-    // We create an instance of the `FermionHamiltonian` object class to store the terms.
+    // Create an instance of the `FermionHamiltonian` object class to store the terms.
     var hamiltonian = new OrbitalIntegralHamiltonian(new[]
     {
         new OrbitalIntegral(new[] { 0, 1, 2, 3 }, 0.123),
         new OrbitalIntegral(new[] { 0, 1 }, 0.456)
     }).ToFermionHamiltonian(IndexConvention.UpDown);
 
-    // We convert this fermion Hamiltonian to a Jordan-Wigner representation.
+    // Convert this fermion Hamiltonian to a Jordan-Wigner representation.
     var jordanWignerEncoding = hamiltonian.ToPauliHamiltonian(QubitEncoding.JordanWigner);
 
-    // We also need to specify an initial quantum state to invoke Q# simulation oracles,
+    // You also need to specify an initial quantum state to invoke Q# simulation oracles,
     // such as the HartreeFock state on 2 electrons.
     var fermionWavefunction = hamiltonian.CreateHartreeFockState(2);
 
-    // We now convert the Jordan Wigner representation into a format consumable by Q#.
+    // Now convert the Jordan Wigner representation into a format consumable by Q#.
     var qSharpHamiltonianData = jordanWignerEncoding.ToQSharpFormat();
     var qSharpWavefunctionData = fermionWavefunction.ToQSharpFormat();
     var qSharpData = Convert.ToQSharpFormat(qSharpHamiltonianData, qSharpWavefunctionData);
@@ -156,7 +157,7 @@ operation TrotterExample (qSharpData: JordanWignerEncodingData) : Unit {
     // `nQubits` is the number of qubits that must be allocated to run the `oracle` operation.
     let (nQubits, (rescale, oracle)) =  TrotterStepOracle (qSharpData, stepSize, integratorOrder);
 
-    // Let us now apply a single time-step.
+    // Now apply a single time-step.
     use qubits = Qubit[nQubits];
     // Apply single step of time-evolution
     oracle(qubits);
@@ -210,7 +211,7 @@ $$
     \operatorname{Prepare}\ket{0} = \sum_j \sqrt{\frac{h_j}{|h|_1}}\ket{j}.
 $$
 
-Then, by using a multiply controlled phase gate, we see that
+Then, by using a multiply controlled phase gate, you see that
 
 $$
     \Lambda\ket{0}^{\otimes n} = \begin{cases}
@@ -249,7 +250,7 @@ operation QubitizationExample(qSharpData: JordanWignerEncodingData) : Unit {
     // `nQubits` is the number of qubits that must be allocated to run the `oracle` operation.
     let (nQubits, (rescale, oracle)) =  QubitizationOracle(qSharpData);
 
-    // Let us now apply a single step of the quantum walk.
+    // Now apply a single step of the quantum walk.
     use qubits = Qubit[nQubits];
     // Apply single step of quantum walk.
     oracle(qubits);
