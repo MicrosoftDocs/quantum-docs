@@ -29,8 +29,8 @@ $$
 $$
 
 which is to say that, if $t\ll 1$, then the error in this approximation becomes negligible.
-Note that if $e^{-i H t}$ were an ordinary exponential then the error in this approximation would not be $O(m^2 t^2)$: it would be zero.
-This error occurs because $e^{-iHt}$ is an operator exponential and as a result there is an error incurred when using this formula due to the fact that the $H_j$ terms do not, in general, commute (e.g. $H_j H_k \ne H_k H_j$).
+If $e^{-i H t}$ is an ordinary exponential, then the error in this approximation wouldn't be $O(m^2 t^2)$: it would be zero.
+This error occurs because $e^{-iHt}$ is an operator exponential, and as a result there's an error incurred when using this formula because $H_j$ terms don't, in general, commute (for example, $H_j H_k \ne H_k H_j$).
 
 If $t$ is large, Trotter–Suzuki formulas can still be used to simulate the dynamics accurately by breaking it up into a sequence of short time-steps.
 Let $r$ be the number of steps taken in the time evolution, so each time step runs for time $t/r$.
@@ -71,7 +71,7 @@ In general, arbitrarily high-order formulas can be similarly constructed; howeve
 In order to make the above strategies work, you need to have a method for simulating a wide class of $e^{-iH_j t}$.
 The simplest family of Hamiltonians, and arguably most useful, that you could use here are Pauli operators.
 Pauli operators can be easily simulated because they can be diagonalized using Clifford operations (which are standard gates in quantum computing).
-Further, once they have been diagonalized, their eigenvalues can be found by computing the parity of the qubits on which they act.
+Further, once they've been diagonalized, their eigenvalues can be found by computing the parity of the qubits on which they act.
 
 For example,
 
@@ -167,7 +167,7 @@ operation TrotterExample (qSharpData: JordanWignerEncodingData) : Unit {
 }
 ```
 
-Importantly, this implementation applies some optimizations discussed in [Simulation of Electronic Structure Hamiltonians Using Quantum Computers](https://arxiv.org/abs/1001.3855) and [Improving Quantum Algorithms for Quantum Chemistry](https://arxiv.org/abs/1403.1539) to minimize the number of single-qubit rotations required, as well as reduce simulation errors.
+Importantly, this implementation applies some optimizations discussed in [Simulation of Electronic Structure Hamiltonians Using Quantum Computers](https://arxiv.org/abs/1001.3855) and [Improving Quantum Algorithms for Quantum Chemistry](https://arxiv.org/abs/1403.1539) to minimize the number of single-qubit rotations required, and reduce simulation errors.
 
 ## Qubitization
 
@@ -185,7 +185,7 @@ $$
 
 where $|h|_1 = \sum_j |h_j|$.
 The next step involves transforming the eigenvalues of the walk operator from $e^{i\pm \cos^{-1}(E_k/|h|_1)}$, where $E_k$ are the eigenvalues of $H$ to $e^{-iE_k t}$.
-This can be achieved using a variety of quantum singular value transformation methods including [quantum signal processing](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.010501).
+This can be achieved using various quantum singular value transformation methods including [quantum signal processing](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.010501).
 
 Alternatively, if only static quantities are desired (such as the ground state energy of the Hamiltonian) then it suffices to apply [phase estimation](xref:microsoft.quantum.libraries.overview.characterization) directly to $W$ to estimate the ground state energy from the result by taking the cosine of the result.
 This is significant because it allows the spectral transformation to be performed classically rather than using a quantum singular value transformation method.
@@ -193,7 +193,7 @@ This is significant because it allows the spectral transformation to be performe
 On a more detailed level, the implementation of qubitization requires two subroutines that provide the interfaces for the Hamiltonian.
 Unlike Trotter–Suzuki methods, these subroutines are quantum not classical and their implementation will necessitate using logarithmically more qubits than would be required for a Trotter-based simulation.
 
-The first quantum subroutine that qubitization uses is called $\operatorname{Select}$ and it is promised to yield
+The first quantum subroutine that qubitization uses is called $\operatorname{Select}$ and it's promised to yield
 
 $$
     \operatorname{Select} \ket{j} \ket{\psi} = \ket{j} H_j \ket{\psi},
@@ -220,7 +220,7 @@ $$
     \end{cases}.
 $$
 
-The $\operatorname{Prepare}$ operation is not used directly in qubitization, but rather is used to implement a reflection about the state that $\operatorname{Prepare}$ creates
+The $\operatorname{Prepare}$ operation isn't used directly in qubitization, but rather is used to implement a reflection about the state that $\operatorname{Prepare}$ creates
 
 \begin{align}
     R &= 1 - 2\operatorname{Prepare} \ket{0}\bra{0} \operatorname{Prepare}^{-1} \\\\
@@ -236,7 +236,7 @@ $$
 which again can be seen to implement an operator that is equivalent (up to an isometry) to $e^{\pm i \cos^{-1}(H/|h|_1)}$.
 
 These subroutines are easy to set up in Q#.
-As an example, consider the simple qubit transverse-Ising Hamiltonian where $H = X_1 + X_2 + Z_1 Z_2$.
+As an example, consider the qubit transverse-Ising Hamiltonian where $H = X_1 + X_2 + Z_1 Z_2$.
 In this case, Q# code that would implement the $\operatorname{Select}$ operation is invoked by <xref:Microsoft.Quantum.Canon.MultiplexOperations>, whereas the $\operatorname{Prepare}$ operation can be implemented using <xref:Microsoft.Quantum.Preparation.PrepareArbitraryState>.
 An example that involves simulating the Hubbard model can be found as a [Q# sample](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
 
