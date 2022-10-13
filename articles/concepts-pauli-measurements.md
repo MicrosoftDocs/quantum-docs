@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to work with single- and multi-qubit Pauli measurement operations.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 10/10/2022
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -13,9 +13,9 @@ uid: microsoft.quantum.concepts.pauli
 
 # Single- and multi-qubit Pauli measurement operations
 
-As you work with Q#, *Pauli measurements* are a common kind of measurement, which generalize computational basis measurements to include measurements in other bases and of parity between different qubits. In such cases, it is common to discuss measuring a Pauli operator, in general an operator such as $X,Y,Z$ or $Z\otimes Z, X\otimes X, X\otimes Y$, and so forth. 
+As you work with Q#, you will see that *Pauli measurements* are a common type of measurement. Pauli measurements generalize computational basis measurements to include measurements in other bases and of parity between different qubits. In such cases, it is common to discuss measuring a Pauli operator, which is an operator such as $X,Y,Z$ or $Z\otimes Z, X\otimes X, X\otimes Y$, and so forth. 
 
-Discussing measurement in terms of Pauli operators is especially common in the subfield of quantum error correction.  
+Discussing measurement in terms of Pauli operators is common in the subfield of quantum error correction.  
 Q# guide follows a similar convention; this article explains this alternative view of measurements.
 
 
@@ -27,7 +27,7 @@ Q# guide follows a similar convention; this article explains this alternative vi
 Before delving into the details of how to think of a Pauli measurement, it is useful to think about what measuring a single qubit inside a quantum computer does to the quantum state.
 Imagine a $n$-qubit quantum state; then measuring one qubit immediately rules out half of the $2^n$ possibilities that state could be in.
 In other words, the measurement projects the quantum state onto one of two half-spaces.
-One can generalize the way we think about measurement to reflect this intuition.
+You can generalize the way you think about measurement to reflect this intuition.
 
 In order to concisely identify these subspaces, one needs a language for describing them.
 One way to describe the two subspaces is by specifying them through a matrix that just has two unique eigenvalues, taken by convention to be $\pm 1$.
@@ -40,8 +40,8 @@ $$
 $$
 
 By reading the diagonal elements of the Pauli-$Z$ matrix, one can see that $Z$ has two eigenvectors, $\ket{0}$ and $\ket{1}$, with corresponding eigenvalues $\pm 1$.
-Thus, if a measurement of the qubit results in `Zero` (corresponding to the state $\ket{0}$), it is known that the state of our qubit is a $+1$ eigenstate of the $Z$ operator.
-Similarly, if the result is `One`, it is known that the state of our qubit is a $-1$ eigenstate of $Z$.
+Thus, if a measurement of the qubit results in `Zero` (corresponding to the state $\ket{0}$), it is known that the state of the qubit is a $+1$ eigenstate of the $Z$ operator.
+Similarly, if the result is `One`, it is known that the state of the qubit is a $-1$ eigenstate of $Z$.
 This process is referred to in the language of Pauli measurements as "measuring Pauli $Z$," and is entirely equivalent to performing a computational basis measurement.
 
 Any $2\times 2$ matrix that is a unitary transformation of $Z$ also satisfies this criteria.
@@ -164,9 +164,8 @@ Measuring $X\otimes \id$ lets you look at information that is locally stored in 
 While both types of measurements are equally valuable in quantum computing, the former illuminates the power of quantum computing.
 It reveals that in quantum computing, often the information you wish to learn is not stored in any single qubit but rather stored non-locally in all the qubits at once, and therefore only by looking at it through a joint measurement (e.g. $Z\otimes Z$) does this information become manifest.
 
-For example, in error correction, one often wish to learn what error occurred while learning nothing about the state that we're trying to protect.
+For example, in error correction, you often wish to learn what error occurred without learning anything about the state that you're trying to protect.
 The [bit-flip code sample](https://github.com/microsoft/Quantum/tree/main/samples/error-correction/bit-flip-code) shows an example of how you can do that using measurements like $Z \otimes Z \otimes \id$ and $\id \otimes Z \otimes Z$.
-<!-- TODO: change this to a link to the samples browser as soon as the bit-flip code sample is on-boarded. -->
 
 Arbitrary Pauli operators such as $X\otimes Y \otimes Z \otimes \boldone$ can also be measured.
 All such tensor products of Pauli operators have only two eigenvalues $\pm 1$ and both eigenspaces constitute half-spaces of the entire vector space.
@@ -181,14 +180,14 @@ For more information, see the [`Measure`](xref:Microsoft.Quantum.Intrinsic.Measu
 ## The No-Cloning Theorem
 
 Quantum information is powerful.
-It enables us to do amazing things such as factor numbers exponentially faster than the best known classical algorithms, or efficiently simulate correlated electron systems that classically require exponential cost to simulate accurately.
+It enables you to do amazing things such as factor numbers exponentially faster than the best known classical algorithms, or efficiently simulate correlated electron systems that classically require exponential cost to simulate accurately.
 However, there are limitations to the power of quantum computing.
 One such limitation is given by the *No-Cloning Theorem*.
 
 The No-Cloning Theorem is aptly named.
 It disallows cloning of generic quantum states by a quantum computer.
 The proof of the theorem is remarkably straightforward.
-While a full proof of the no-cloning theorem is a little too technical for our discussion here, the proof in the case of no additional auxiliary qubits is within our scope.
+While a full proof of the no-cloning theorem is too technical for this article, the proof in the case of no additional auxiliary qubits is within the scope.
 
 For such a quantum computer, the cloning operation must be described by a unitary matrix.
 Quantum measurement is disallowed, since it would corrupt the quantum state to be cloned.
@@ -219,7 +218,6 @@ $$
 
 This provides the fundamental intuition behind the No-Cloning Theorem: any device that copies an unknown quantum state must induce errors on at least some of the states it copies.
 While the key assumption that the cloner acts linearly on the input state can be violated through the addition and measurement of auxiliary qubits, such interactions also leak information about the system through the measurement statistics and prevent exact cloning in such cases as well.
-For a more complete proof of the No-Cloning Theorem see [For more information](xref:microsoft.quantum.more-information).
 
 The No-Cloning Theorem is important for qualitative understanding of quantum computing because if you could clone quantum states inexpensively then you would be granted a near-magical ability to learn from quantum states.
 Indeed, you could violate Heisenberg's vaunted uncertainty principle.
