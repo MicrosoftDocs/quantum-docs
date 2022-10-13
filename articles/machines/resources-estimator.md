@@ -13,13 +13,13 @@ uid: microsoft.quantum.machines.overview.resources-estimator
 
 # Quantum Development Kit (QDK) resources estimator
 
-As the name implies, the `ResourcesEstimator` class estimates the resources required to run a given instance of a Q# operation on a quantum computer. It accomplishes this by running the quantum operation without actually simulating the state of a quantum computer; for this reason, it is able to estimate resources for Q# operations that use thousands of qubits, provided that the classical part of the code runs in a reasonable time.
+As the name implies, the `ResourcesEstimator` class estimates the resources required to run a given instance of a Q# operation on a quantum computer. It accomplishes this task by running the quantum operation without actually simulating the state of a quantum computer. For this reason, it is able to estimate resources for Q# operations that use thousands of qubits, if the classical part of the code runs in a reasonable time.
 
 The resources estimator is built on top of the [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro), which provides a richer set of metrics and tools to help debug Q# programs.
 
 ## Invoking and running the resources estimator
 
-The resources estimator can be thought of as another type of simulation target. As such, there exists a variety of methods with which to invoke this target, which are presented below. For additional details, you can also have a look at the [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
+The resources estimator can be thought of as another type of simulation target. As such, there exists a variety of methods with which to invoke this target, which are presented below. For more details, you can also have a look at the [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
 
 ### Invoking the resources estimator from C#
 
@@ -45,7 +45,7 @@ namespace Quantum.MyProgram
 }
 ```
 
-As the example shows, `ResourcesEstimator` provides the `ToTSV()` method, which generates a table with tab-separated values (TSV). You can save the table to a file or display it to the console for analysis. The following is a sample output from the preceding program:
+As the example shows, `ResourcesEstimator` provides the `ToTSV()` method, which generates a table with tab-separated values (TSV). You can save the table to a file or display it to the console for analysis. For example, the output from the preceding program is the following:
 
 ```output
 Metric          Sum             Max
@@ -128,8 +128,8 @@ The resources estimator tracks the following metrics:
 |__Measure__    |The run count of any measurements.  |
 |__R__    |The run count of any single-qubit rotations, excluding `T`, Clifford and Pauli operations.  |
 |__T__    |The run count of `T` operations and their conjugates, including the `T` operations, T_x = H.T.H, and T_y = Hy.T.Hy.  |
-|__Depth__|Depth of the quantum circuit run by the Q# operation (see [below](#depth-width-and-qubitcount)). By default, the depth metric only counts `T` gates. For more details, see [Depth Counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.depth-counter).   |
-|__Width__|Width of the quantum circuit run by the Q# operation (see [below](#depth-width-and-qubitcount)). By default, the depth metric only counts `T` gates. For more details, see [Width Counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.width-counter).   |
+|__Depth__|Depth of the quantum circuit run by the Q# operation (see [below](#depth-width-and-qubitcount)). By default, the depth metric only counts `T` gates. For more information, see [Depth Counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.depth-counter).   |
+|__Width__|Width of the quantum circuit run by the Q# operation (see [below](#depth-width-and-qubitcount)). By default, the depth metric only counts `T` gates. For more information, see [Width Counter](xref:microsoft.quantum.machines.overview.qc-trace-simulator.width-counter).   |
 |__QubitCount__    |The lower bound for the maximum number of qubits allocated during the run of the Q# operation. This metric might not be compatible with __Depth__ (see below).  |
 |__BorrowedWidth__    |The maximum number of qubits borrowed inside the Q# operation.  |
 
@@ -146,23 +146,23 @@ For the root operation - time it takes to execute it assuming specific gate time
 For operations called or subsequent operations - time difference between latest qubit availability time at the beginning and the end of the operation.
 
 __Width:__
-For the root operation - number of qubits actually used to execute it (and operation it calls).
+For the root operation - number of qubits used to execute it (and operation it calls).
 For operations called or subsequent operations - how many more qubits were used in addition to the qubits already used at the beginning of the operation.
 
-Please note, that reused qubits do not contribute to this number.
-For example, if a few qubits have been released before operation *A* starts, and all qubit demanded by this operation *A* (and operations called from *A*) were satisfied by reusing previously release qubits, the __Width__ of operation *A* is reported as 0. Successfully borrowed qubits do not contribute to the Width either.
+Note, that reused qubits do not contribute to this number.
+For example, if a few qubits have been released before operation *A* starts, and all qubits demanded by this operation *A* (and operations called from *A*) were satisfied by reusing previously release qubits, the __Width__ of operation *A* is reported as 0. Successfully borrowed qubits do not contribute to the Width either.
 
 __QubitCount:__
 For the root operation - minimum number of qubits that would be sufficient to execute this operation (and operations called from it).
 For operations called or subsequent operations - minimum number of qubits that would be sufficient to execute this operation separately. This number doesn't include input qubits. It does include borrowed qubits.
 
-Two modes of operation are supported. Mode is selected by setting QCTraceSimulatorConfiguration.OptimizeDepth.
+Two modes of operation are supported. Mode is selected by setting `QCTraceSimulatorConfiguration.OptimizeDepth`.
 
 __OptimizeDepth=true:__
-QubitManager is discouraged from qubit reuse and allocates new qubit every time it is asked for a qubit. For the root operation __Depth__ becomes the minimum depth (lower bound). Compatible __Width__ is reported for this depth (both can be achieved at the same time). Note that this width will likely be not optimal given this depth. __QubitCount__ may be lower than __Width__ for the root operation because it assumes reuse.
+QubitManager is discouraged from qubit reuse and allocates new qubit every time it is asked for a qubit. For the root operation, __Depth__ becomes the minimum depth (lower bound). Compatible __Width__ is reported for this depth (both can be achieved at the same time). Note that this width will likely be not optimal given this depth. __QubitCount__ may be lower than __Width__ for the root operation because it assumes reuse.
 
 __OptimizeDepth=false:__
-QubitManager is encouraged to reuse qubits and will reuse released qubits before allocating new ones. For the root operation __Width__ becomes the minimal width (lower bound). Compatible __Depth__ is reported on which it can be achieved. __QubitCount__ will be the same as __Width__ for the root operation assuming no borrowing.
+QubitManager is encouraged to reuse qubits and will reuse released qubits before allocating new ones. For the root operation, __Width__ becomes the minimal width (lower bound). Compatible __Depth__ is reported on which it can be achieved. __QubitCount__ will be the same as __Width__ for the root operation assuming no borrowing.
 
 ## Providing the probability of measurement outcomes
 
