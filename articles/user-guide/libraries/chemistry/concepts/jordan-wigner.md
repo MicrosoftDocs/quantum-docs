@@ -38,7 +38,7 @@ where $X_j$ and $Y_j$ are the Pauli-$X$ and -$Y$ operators acting on qubit $j$.
 The Azure Quantum chemistry library uses $\ket{0}$ to represent an unoccupied spin-orbital.
 This shows that for a single spin orbital it is easy to represent creation and annihilation operators in terms of unitary matrices that quantum computers understand.
  Note that while $X$ and $Y$ are unitary $a^\dagger$ and $a$ are not.
- YOu will see later that this does not pose a challenge for simulation.
+ You will see later that this does not pose a challenge for simulation.
 
 One problem that remains is that while the above construction works for a single spin orbital, it fails for systems with two or more spin orbitals.
 Since Fermions are antisymmetric, you know that $a^\dagger_j a^\dagger_k = - a^\dagger_k a^\dagger_j$ for any $j$ and $k$.
