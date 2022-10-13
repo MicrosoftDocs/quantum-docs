@@ -59,7 +59,7 @@ Quantum-inspired optimization makes use of the techniques for solving combinator
 
 *Quantum annealing* is a quantum algorithm that is similar in spirit to simulated annealing, but it differs in a few ways. In simulated annealing, the search space is explored by making thermal jumps from one solution to the next, while quantum annealing makes use of a quantum effect called *quantum tunneling*, which allows the walker to travel through these energy barriers.
 
- :::image type="content" source="media/quantum-annealing.png" alt-text="Quantum Annealing":::
+ :::image type="content" source="media/quantum-annealing.png" alt-text="Diagram that shows the plot of a cost function and the local and global minimum, where quantum annealing overcomes the barrier and finds the global minimum.":::
 
 In this graph, you can see the difference between the classical and the quantum approach. In simulated annealing thermal fluctuations help a walker overcome an energy barrier, and in quantum tunneling, quantum effects allow a walker to pass through the energy barrier.
 
