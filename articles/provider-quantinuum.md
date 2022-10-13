@@ -13,7 +13,7 @@ uid: microsoft.quantum.providers.quantinuum
 # Quantinuum provider
 
 > [!NOTE]
-> The Quantinuum provider replaces the old Honeywell provider. New customers must use the Quantinuum provider in their workspaces. All previously available targets and systems are available with the Quantinuum provider. If you previously used the Honeywell provider, see the [Honeywell to Quantinuum migration guide](xref:microsoft.quantum.providers.honeywell.migration).
+> The Quantinuum provider replaces the old Honeywell provider. If you previously used the Honeywell provider, see the [Honeywell to Quantinuum migration guide](xref:microsoft.quantum.providers.honeywell.migration).
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 

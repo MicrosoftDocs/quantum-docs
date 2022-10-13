@@ -14,9 +14,6 @@ uid: microsoft.quantum.providers.honeywell.migration
 
 The Honeywell provider has been replaced by the Quantinuum provider in Azure Quantum. This guide is for users who previously used the Honeywell provider and need to migrate to the Quantinuum provider.
 
-> [!Note]
-> Existing Honeywell customers who have received Azure Quantum Credits grants will be able to use the Honeywell provider through to the expiration of their grant. For more information, please see your onboarding email for your grant expiry date.
-
 [!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)]
 
 ## Step 1: Update your Azure Quantum workspace
@@ -63,7 +60,7 @@ Old `.csproj` file:
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
-    <ExecutionTarget>quantinuum.hqs-lt-s1</ExecutionTarget>
+    <ExecutionTarget>honeywell.hqs-lt-s1</ExecutionTarget>
   </PropertyGroup>
 </Project>
 ```
