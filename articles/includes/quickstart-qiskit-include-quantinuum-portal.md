@@ -98,6 +98,7 @@ This workspace's targets:
 - ionq.qpu.aria-1
 - rigetti.sim.qvm
 - rigetti.qpu.aspen-11
+- rigetti.qpu.aspen-m-2
 ```
 
 Next, create an object to represent the [Quantinuum System Model H1](xref:microsoft.quantum.providers.quantinuum#system-model-h1):
