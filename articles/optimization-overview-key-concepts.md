@@ -52,7 +52,7 @@ Let's explore a few different optimization landscapes and see which are good can
 
 Consider the following plot of a cost function of two continuous variables, which looks like a single, smooth valley:
 
-:::image type="content" source="./media/smooth-landscape.png" alt-text="Smooth landspace":::
+:::image type="content" source="./media/smooth-landscape.png" alt-text="Diagram that shows a smooth landspace with no ups and downs.":::
 
 
 This kind of problem is easily solved with classical optimization techniques such as gradient descent, where you begin from an initial starting point and greedily move to any solution with a lower cost. After a few moves, the solution converges to the global minimum, the lowest point in the optimization landscape. Azure Quantum optimization solvers offer no advantages over other techniques with these straightforward problems.
@@ -61,7 +61,7 @@ This kind of problem is easily solved with classical optimization techniques suc
 
 Consider the following plot of a cost function of two continuous variables where the landscape is rugged, with many hills and valleys:
 
-:::image type="content" source="./media/structured-landscape.png" alt-text="Structured landspace":::
+:::image type="content" source="./media/structured-landscape.png" alt-text="Diagram that shows a structured landspace with ordered and localized maximums and minimums.":::
 
 In this scenario, one of the greatest challenges is to avoid getting stuck at any of the sub-optimal local minima. A rugged landscape can have multiple valleys. Each of these valleys has a lowest point, which is called a *local minimum*. One of these points will be the lowest of them all, and that point is the global minimum.
 
@@ -71,7 +71,7 @@ Such rugged landscapes present situations where **quantum-inspired optimization 
 
 The following plot corresponds to a random, unstructured landscape: 
 
-:::image type="content" source="./media/scattered-landscape.png" alt-text="Scattered landspace":::
+:::image type="content" source="./media/scattered-landscape.png" alt-text="Diagram that shows a scattered landspace with chaotic and unstructured points.":::
 
 In these cases, where the solutions are completely random, there is no optimization algorithm that can improve on a brute force search.
 
