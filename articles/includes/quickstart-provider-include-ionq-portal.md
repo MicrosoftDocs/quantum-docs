@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 03/08/2022
+ms.date: 09/26/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -35,6 +35,8 @@ circuit = {
 
 ## List all targets
 
+[!INCLUDE [Quantinuum target name update](quantinuum-name-change.md)]
+
 List all the targets that you have access to, including the
 current queue time and availability.
 
@@ -48,14 +50,16 @@ for target in service.targets():
 
 ```output
 This workspace's targets:
-<Target name="quantinuum.hqs-lt-s1", avg. queue time=0 s, Unavailable>
-<Target name="quantinuum.hqs-lt-s1-apival", avg. queue time=1 s, Available>
-<Target name="quantinuum.hqs-lt-s2", avg. queue time=75362 s, Available>
-<Target name="quantinuum.hqs-lt-s2-apival", avg. queue time=0 s, Available>
-<Target name="quantinuum.hqs-lt-s1-sim", avg. queue time=195 s, Available>
-<Target name="quantinuum.hqs-lt", avg. queue time=0 s, Available>
+<Target name="quantinuum.qpu.h1-1", avg. queue time=0 s, Degraded>
+<Target name="quantinuum.sim.h1-1sc", avg. queue time=1 s, Available>
+<Target name="quantinuum.qpu.h1-2", avg. queue time=217300 s, Unavailable>
+<Target name="quantinuum.sim.h1-2sc", avg. queue time=0 s, Available>
+<Target name="quantinuum.sim.h1-1e", avg. queue time=40 s, Available>
+<Target name="quantinuum.sim.h1-2e", avg. queue time=64 s, Available>
+<Target name="quantinuum.qpu.h1", avg. queue time=0 s, Unavailable>
 <Target name="ionq.qpu", avg. queue time=229 s, Available>
 <Target name="ionq.simulator", avg. queue time=3 s, Available>
+<Target name="ionq.qpu.aria-1", avg. queue time=1136774 s, Available>
 ```
 
 ## Select a target and run your program

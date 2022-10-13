@@ -2,7 +2,7 @@
 author: bradben
 description: Learn what basic linear algebra concepts are needed to understand quantum computing
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 10/10/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
@@ -62,6 +62,9 @@ A matrix that represents a quantum operation has one requirement – it must be 
 
 In the examples above, the state of one qubit was described using a single column matrix $\begin{bmatrix} a \\\\  b \end{bmatrix}$, and applying an operation to it was described by multiplying the two matrices. However, quantum computers use more than one qubit, so how do you describe the combined state of two qubits? 
 
+> [!NOTE]
+> The real power of quantum computing comes from leveraging multiple qubits to perform computations. For a deeper dive into this topic, see [Operations on multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits).
+
 Remember that each qubit is a vector space, so they can't just be multiplied. Instead, you use a **tensor product**, which is a related operation that creates a new vector space from individual vector spaces, and is represented by the $\otimes$ symbol. For example, the tensor product of two qubit states $\begin{bmatrix} a \\\\  b \end{bmatrix}$ and $\begin{bmatrix} c \\\\  d \end{bmatrix}$ is calculated
 
 $$ \begin{bmatrix} a \\\\  b \end{bmatrix} \otimes \begin{bmatrix} c \\\\  d \end{bmatrix} =\begin{bmatrix} a \begin{bmatrix} c \\\\  d \end{bmatrix} \\\\ b \begin{bmatrix}c \\\\  d \end{bmatrix} \end{bmatrix} = \begin{bmatrix} ac \\\\  ad \\\\  bc \\\\  bd \end{bmatrix}. $$
@@ -69,6 +72,7 @@ $$ \begin{bmatrix} a \\\\  b \end{bmatrix} \otimes \begin{bmatrix} c \\\\  d \en
 The result is a four-dimensional matrix, with each element representing a probability. For example, $ac$ is the probability of the two qubits collapsing to 0 and 0, $ad$ is the probability of 0 and 1, and so on. 
 
 Just as a single qubit state $\begin{bmatrix} a \\\\  b \end{bmatrix}$ must meet the requirement that $|a|^2 + |b|^2 = 1$ in order to represent a quantum state, a two-qubit state $\begin{bmatrix} ac \\\\  ad \\\\  bc \\\\  bd \end{bmatrix}$ must meet the requirement that $|ac|^2 + |ad|^2 + |bc|^2+ |bd|^2 = 1$.
+
 
 ## Summary
 

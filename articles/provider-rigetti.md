@@ -30,7 +30,7 @@ The Rigetti provider makes the following targets available:
 |[Aspen-11](#aspen-11) |rigetti.qpu.aspen-11 | 40 qubits | Rigetti's single-chip quantum processor.	|
 |[Aspen-M-2](#aspen-m-2) |rigetti.qpu.aspen-m-2 |	80 qubits	| Rigetti's multi-chip quantum processor. |
 
-To get started using the Rigetti provider on Azure Quantum, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
+Rigetti's targets correspond to a **No Control Flow** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
 
 ## Simulators
 

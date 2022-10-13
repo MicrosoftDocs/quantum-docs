@@ -113,6 +113,8 @@ c: 3/════════════════╩══╩══╩═
 
 ## List all targets
 
+[!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)]
+
 You can now display all of the quantum computing targets, or backends, that are
 available in your workspace. Add a new cell and run the following line:
 
@@ -124,17 +126,17 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
+- quantinuum.qpu.h1-1
+- quantinuum.sim.h1-1sc
+- quantinuum.qpu.h1-2
+- quantinuum.sim.h1-2sc
+- quantinuum.sim.h1-1e
+- quantinuum.sim.h1-2e
 - ionq.qpu
 - ionq.simulator
-- quantinuum.hqs-lt-s1
-- quantinuum.hqs-lt-s1-apival
-- quantinuum.hqs-lt-s2
-- quantinuum.hqs-lt-s2-apival
-- quantinuum.hqs-lt-s1-sim
-- quantinuum.hqs-lt-s2-sim
+- ionq.qpu.aria-1
 - rigetti.sim.qvm
 - rigetti.qpu.aspen-11
-- rigetti.qpu.aspen-m-2
 ```
 
 ::: zone pivot="platform-ionq"

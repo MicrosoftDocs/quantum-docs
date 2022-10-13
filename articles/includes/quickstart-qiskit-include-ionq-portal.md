@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 02/28/2022
+ms.date: 09/26/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -86,17 +86,17 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
+- quantinuum.qpu.h1-1
+- quantinuum.sim.h1-1sc
+- quantinuum.qpu.h1-2
+- quantinuum.sim.h1-2sc
+- quantinuum.sim.h1-1e
+- quantinuum.sim.h1-2e
 - ionq.qpu
 - ionq.simulator
-- quantinuum.hqs-lt-s1
-- quantinuum.hqs-lt-s1-apival
-- quantinuum.hqs-lt-s2
-- quantinuum.hqs-lt-s2-apival
-- quantinuum.hqs-lt-s1-sim
-- quantinuum.hqs-lt-s2-sim
+- ionq.qpu.aria-1
 - rigetti.sim.qvm
 - rigetti.qpu.aspen-11
-- rigetti.qpu.aspen-m-2
 ```
 
 Next, create an object to represent the [IonQ quantum computer](xref:microsoft.quantum.providers.ionq#quantum-computer):
