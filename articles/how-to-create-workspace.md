@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to create an Azure Quantum workspace.
 ms.author: brbenefield
-ms.date: 09/14/2022
+ms.date: 09/21/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -67,10 +67,9 @@ To create an Azure Quantum workspace, follow these steps.
 
    |Option | Description |
    |--- | --- |
-   | Quick create | This option is the easiest path to creating a workspace. It automatically creates the necessary resource group and storage account, adds the Quantinuum, IonQ, and Microsoft QIO providers, and includes free Azure Quantum Credits for Quantinuum and IonQ hardware (USD 500 each). You workspace can still be customized after creation, if needed. |
-   |Advanced create | Use this option to manually configure your resource group and storage account, select other payment options for your providers, and set tags to categorize resources. By default, this option also adds the Quantinuum, IonQ, and Microsoft QIO providers, and includes free Azure Quantum Credits for Quantinuum and IonQ hardware (USD 500 each). |
+   | Quick create | This option is the easiest path to creating a workspace. It automatically creates the necessary resource group and storage account, adds the IonQ, Quantinuum, Rigetti, and Microsoft QIO providers, and includes free Azure Quantum Credits for IonQ, Quantinuum, and Rigetti hardware (USD 500 each). You workspace can still be customized after creation, if needed. |
+   |Advanced create | Use this option to manually configure your resource group and storage account, select other payment options for your providers, and set tags to categorize resources. By default, this option also adds the IonQ, Quantinuum, Rigetti, and Microsoft QIO providers, and includes free Azure Quantum Credits for IonQ, Quantinuum, and Rigetti hardware (USD 500 each). |
    
-
 ### [Quick create](#tab/tabid-quick)
 
 1. Enter a name for the workspace.

@@ -29,7 +29,6 @@ The following targets are available from this provider:
 
 IonQ's targets correspond to a **No Control Flow** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
 
-
 ## Quantum simulator
 GPU-accelerated idealized simulator supporting up to 29 qubits, using the same set of gates IonQ provide on its quantum hardware—a great place to preflight jobs before running them on an actual quantum computer.
 
