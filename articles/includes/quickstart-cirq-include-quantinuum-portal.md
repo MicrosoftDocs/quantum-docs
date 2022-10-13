@@ -31,6 +31,8 @@ print(circuit)
 
 ## List all targets
 
+[!INCLUDE [Quantinuum target name update](quantinuum-name-change.md)]
+
 You can now list all the targets that you have access to, including the
 current queue time and availability.
 
@@ -42,19 +44,20 @@ for target in service.targets():
 
 ```output
 This workspace's targets:
-<Target name="quantinuum.hqs-lt-s1", avg. queue time=0 s, Unavailable>
-<Target name="quantinuum.hqs-lt-s1-apival", avg. queue time=1 s, Available>
-<Target name="quantinuum.hqs-lt-s2", avg. queue time=75362 s, Available>
-<Target name="quantinuum.hqs-lt-s2-apival", avg. queue time=0 s, Available>
-<Target name="quantinuum.hqs-lt-s1-sim", avg. queue time=195 s, Available>
-<Target name="quantinuum.hqs-lt", avg. queue time=0 s, Available>
+<Target name="quantinuum.qpu.h1-1", avg. queue time=0 s, Degraded>
+<Target name="quantinuum.sim.h1-1sc", avg. queue time=1 s, Available>
+<Target name="quantinuum.qpu.h1-2", avg. queue time=217300 s, Unavailable>
+<Target name="quantinuum.sim.h1-2sc", avg. queue time=0 s, Available>
+<Target name="quantinuum.sim.h1-1e", avg. queue time=40 s, Available>
+<Target name="quantinuum.sim.h1-2e", avg. queue time=64 s, Available>
 <Target name="ionq.qpu", avg. queue time=229 s, Available>
 <Target name="ionq.simulator", avg. queue time=3 s, Available>
+<Target name="ionq.qpu.aria-1", avg. queue time=1136774 s, Available>
 ```
 
 ## Select a target and run your program
 
-To check your circuit before running it on actual quantum hardware, you can use the Quantinuum API Validator, `quantinuum.hqs-lt-s1-apival`.
+To check your circuit before running it on actual quantum hardware, you can use the Quantinuum API Validator, `quantinuum.qpu.h1-1sc`.
 
 Add the following cell that submits a job to run the circuit with
 100 shots, or repititions, waits until the job is complete, and returns the results:
@@ -63,7 +66,7 @@ Add the following cell that submits a job to run the circuit with
 result = service.run(
     program=circuit,
     repetitions=100,
-    target="quantinuum.hqs-lt-s1-apival"
+    target="quantinuum.qpu.h1-1sc"
 )
 ```
 
@@ -97,7 +100,7 @@ Before running a job on actual quantum hardware, or a [quantum processing unit](
 cost = service.estimate_cost(
     program=circuit,
     repetitions=100,
-    target="quantinuum.hqs-lt-s1"
+    target="quantinuum.qpu.h1-1"
 )
 
 print(f"Estimated cost: {cost.estimated_total}")
@@ -109,7 +112,7 @@ Estimated cost: 5.42
 
 This prints the estimated cost in H-System Quantum Credits (HQCs).
 
-For the most current pricing details, see [System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.quantinuum#quantinuum-system-model-h1), or view pricing options in the **Providers** blade of your workspace. To see your current credit status and usage, select **Credits and quotas**.
+For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or view pricing options in the **Providers** blade of your workspace. To see your current credit status and usage, select **Credits and quotas**.
 
 ## Run on a Quantinuum QPU
 
@@ -124,7 +127,7 @@ Use the same `run` method and operations that you used previously with the API V
 result = service.run(
     program=circuit,
     repetitions=100,
-    target="quantinuum.hqs-lt-s1"
+    target="quantinuum.qpu.h1-1"
 )
 ```
 
@@ -146,7 +149,7 @@ get the results after the job has run successfully.
 job = service.create_job(
     program=circuit,
     repetitions=100,
-    target="quantinuum.hqs-lt-s1-sim"
+    target="quantinuum.qpu.h1-1"
 )
 ```
 
