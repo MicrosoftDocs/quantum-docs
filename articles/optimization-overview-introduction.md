@@ -67,7 +67,7 @@ In this graph, you can see the difference between the classical and the quantum 
 
 Once you have created your optimization problem, you can submit it to one of the quantum-inspired optimization solvers in Azure Quantum. See [How to submit optimization jobs](xref:microsoft.quantum.submit-jobs-optimization).
 
-Azure Quantum offers a range of quantum-inspired techniques to solve discrete and combinatorial optimization problems. However, it is not possible to determine which solver will perform best for a new optimization problem. You can explore the specifications of each target to develop your strategy, and in [Which optimization solver should I use?](xref:microsoft.quantum.optimization.choose-solver). article you can find some guidelines to find a suitable solver by benchmarking. 
+Azure Quantum offers a range of quantum-inspired techniques to solve discrete and combinatorial optimization problems. However, it is not possible to determine which solver will perform best for a new optimization problem. You can explore the specifications of each target to develop your strategy, and in the article [Which optimization solver should I use?](xref:microsoft.quantum.optimization.choose-solver), you'll find guidelines on how to use benchmarking to find a suitable solver. 
 
 For optimization solutions, these are the available providers you can choose from:
 
