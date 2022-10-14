@@ -40,12 +40,12 @@ The table below shows the value to replace in your code to use the equivalent Qu
 
 | Honeywell Target Name | Honeywell Target ID | Quantinuum Target ID |
 |-----------------------|---------------------|----------------------|
-| Honeywell System Model: H1        | honeywell.hqs-lt-s1        | quantinuum.sim.h1-1        |
-| Honeywell System Model: H1-2      | honeywell.hqs-lt-s2        | quantinuum.sim.h1-2        |
-| Honeywell System Model: H1 Family | honeywell.hqs-lt           | quantinuum.sim.h1           |
-| H1 API Validator                  | honeywell.hqs-lt-s1-apival | quantinuum.sim.h1-1sc |
-| H1-2 API Validator                | honeywell.hqs-lt-s2-apival | quantinuum.sim.h1-2sc |
-| H1 Simulator                      | honeywell.hqs-lt-s1-sim    | quantinuum.sim.h1-1e    |
+| Honeywell System Model: H1        | honeywell.hqs-lt-s1        | quantinuum.qpu.h1-1       |
+| Honeywell System Model: H1-2      | honeywell.hqs-lt-s2        | quantinuum.qpu.h1-2       |
+| Honeywell System Model: H1 Family | honeywell.hqs-lt           | quantinuum.qpu.h1         |
+| H1 API Validator                  | honeywell.hqs-lt-s1-apival | quantinuum.sim.h1-1sc     |
+| H1-2 API Validator                | honeywell.hqs-lt-s2-apival | quantinuum.sim.h1-2sc     |
+| H1 Simulator                      | honeywell.hqs-lt-s1-sim    | quantinuum.sim.h1-1e      |
 
 ### Migrating a Q# Project with Visual Studio Code or Visual Studio
 
