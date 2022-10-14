@@ -2,7 +2,7 @@
 author: bradben
 description: A list of Azure Quantum hardware providers and their availability by country.
 ms.author: brbenefield
-ms.date: 09/23/2022
+ms.date: 10/14/2022
 ms.service: azure-quantum
 ms.subservice: core  
 ms.topic: reference
@@ -125,7 +125,7 @@ IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program a
 | Puerto Rico     | Yes     |
 | Qatar     | No    |
 | Romania     | Yes     |
-| Russia     | Yes     |
+| Russia     | No     |
 | Rwanda     |  No    |
 | Saint Kitts and Nevis     | No     |
 | Saudi Arabia     | Yes      |
@@ -421,7 +421,7 @@ Rigetti offers two plans through Azure Quantum: the Azure Quantum Credits progra
 | Puerto Rico     | Yes     |
 | Qatar     | No    |
 | Romania     | Yes     |
-| Russia     | Yes     |
+| Russia     | No     |
 | Rwanda     |  No    |
 | Saint Kitts and Nevis     | No     |
 | Saudi Arabia     | Yes      |
