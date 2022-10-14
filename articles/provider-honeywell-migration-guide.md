@@ -14,9 +14,6 @@ uid: microsoft.quantum.providers.honeywell.migration
 
 The Honeywell provider has been replaced by the Quantinuum provider in Azure Quantum. This guide is for users who previously used the Honeywell provider and need to migrate to the Quantinuum provider.
 
-> [!Note]
-> Existing Honeywell customers who have received Azure Quantum Credits grants will be able to use the Honeywell provider through to the expiration of their grant. For more information, please see your onboarding email for your grant expiry date.
-
 [!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)]
 
 ## Step 1: Update your Azure Quantum workspace
@@ -43,12 +40,12 @@ The table below shows the value to replace in your code to use the equivalent Qu
 
 | Honeywell Target Name | Honeywell Target ID | Quantinuum Target ID |
 |-----------------------|---------------------|----------------------|
-| Honeywell System Model: H1        | honeywell.hqs-lt-s1        | quantinuum.sim.h1-1        |
-| Honeywell System Model: H1-2      | honeywell.hqs-lt-s2        | quantinuum.sim.h1-2        |
-| Honeywell System Model: H1 Family | honeywell.hqs-lt           | quantinuum.sim.h1           |
-| H1 API Validator                  | honeywell.hqs-lt-s1-apival | quantinuum.sim.h1-1sc |
-| H1-2 API Validator                | honeywell.hqs-lt-s2-apival | quantinuum.sim.h1-2sc |
-| H1 Simulator                      | honeywell.hqs-lt-s1-sim    | quantinuum.sim.h1-1e    |
+| Honeywell System Model: H1        | honeywell.hqs-lt-s1        | quantinuum.qpu.h1-1       |
+| Honeywell System Model: H1-2      | honeywell.hqs-lt-s2        | quantinuum.qpu.h1-2       |
+| Honeywell System Model: H1 Family | honeywell.hqs-lt           | quantinuum.qpu.h1         |
+| H1 API Validator                  | honeywell.hqs-lt-s1-apival | quantinuum.sim.h1-1sc     |
+| H1-2 API Validator                | honeywell.hqs-lt-s2-apival | quantinuum.sim.h1-2sc     |
+| H1 Simulator                      | honeywell.hqs-lt-s1-sim    | quantinuum.sim.h1-1e      |
 
 ### Migrating a Q# Project with Visual Studio Code or Visual Studio
 
@@ -63,7 +60,7 @@ Old `.csproj` file:
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
-    <ExecutionTarget>quantinuum.hqs-lt-s1</ExecutionTarget>
+    <ExecutionTarget>honeywell.hqs-lt-s1</ExecutionTarget>
   </PropertyGroup>
 </Project>
 ```
