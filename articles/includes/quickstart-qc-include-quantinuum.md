@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 01/27/2022
+ms.date: 09/26/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -38,7 +38,7 @@ To complete this tutorial, you need
       <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
-        <ExecutionTarget>quantinuum.hqs-lt</ExecutionTarget>
+        <ExecutionTarget>quantinuum.qpu.h1-1</ExecutionTarget>
       </PropertyGroup>
     </Project>
     ```
@@ -108,6 +108,9 @@ Next, we'll prepare your environment to run the program against the workspace yo
    providers that you added when you created the workspace. You can display a list of all
    the available targets with the command `az quantum target list -o table`:
 
+
+   [!INCLUDE [Quantinuum target name update](quantinuum-name-change.md)]
+
    ```azurecli
    az quantum target list -o table
    ```
@@ -115,10 +118,17 @@ Next, we'll prepare your environment to run the program against the workspace yo
    which gives you the output
 
    ```output
-   Provider    Target-id                                       Current Availability  Average Queue Time
-   ----------  ----------------------------------------------  --------------------  --------------------
-   quantinuum  quantinuum.hqs-lt                           Available             0
-   quantinuum  quantinuum.hqs-lt-apival                    Available             0
+   Provider    Target-id                                     Current Availability  Average Queue Time
+   ----------  -------------------------------------------   --------------------  --------------------
+   ionq        ionq.qpu                                      Available             0
+   ionq        ionq.qpu.aria-1                               Available             0
+   ionq        ionq.simulator                                Available             0
+   quantinuum  quantinuum.qpu.h1-1                           Available             0
+   quantinuum  quantinuum.qpu.h1-1sc                         Available             0
+   quantinuum  quantinuum.qpu.h1-1e                          Available             0
+   quantinuum  quantinuum.qpu.h1-2                           Available             0
+   quantinuum  quantinuum.qpu.h1-2sc                         Available             0
+   quantinuum  quantinuum.qpu.h1-2e                          Available             0
    ```
 
 
@@ -134,13 +144,13 @@ To run the program on hardware, we'll use the asynchronous job submission comman
 
 
    ```azurecli
-   az quantum job submit --target-id quantinuum.hqs-lt -o table
+   az quantum job submit --target-id quantinuum.qpu.h1-1 -o table
    ```
 
    ```output
     Name        ID                                    Status    Target                Submission time
     ----------  ------------------------------------  --------  --------              ---------------------------------
-    QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   quantinuum.hqs-lt  2020-01-12T22:41:27.8855301+00:00
+    QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   quantinuum.qpu.h1-1   2020-01-12T22:41:27.8855301+00:00
    ```
 
 The tables above show that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the Id output by the previous command, for example:
@@ -150,9 +160,9 @@ The tables above show that your job has been submitted and is waiting for its tu
    ```
 
    ```output
-    Name        ID                                    Status    Target    Submission time
-    ----------  ------------------------------------  --------  --------  ---------------------------------
-    QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   quantinuum.hqs-lt  2020-10-22T22:41:27.8855301+00:00
+    Name        ID                                    Status    Target               Submission time
+    ----------  ------------------------------------  --------  --------             ---------------------------------
+    QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   quantinuum.qpu.h1-1  2020-10-22T22:41:27.8855301+00:00
    ```
 
 `Status` in the above table changes to `Succeeded`. Once that's done you can get the results from the job by running `az quantum job output`:

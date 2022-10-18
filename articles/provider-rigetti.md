@@ -2,7 +2,7 @@
 author: kalzoo
 ms.author: brbenefield
 description: This document provides the technical details of the Rigetti provider
-ms.date: 09/07/2022
+ms.date: 09/21/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -27,18 +27,17 @@ The Rigetti provider makes the following targets available:
 |Target name|	Target ID|	Number of qubits|	Description|
 |---|---|---|---|
 |[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil programs. Free of cost.|
-|[Aspen-11](#aspen-11) |	rigetti.qpu.aspen-11 | 40 qubits | Rigetti's single-chip quantum processor.	|
-|[Aspen-M-2](#aspen-m-2) |	rigetti.qpu.aspen-m-2|	80 qubits	| Rigetti's multi-chip quantum processor. |
+|[Aspen-11](#aspen-11) |rigetti.qpu.aspen-11 | 40 qubits | Rigetti's single-chip quantum processor.	|
+|[Aspen-M-2](#aspen-m-2) |rigetti.qpu.aspen-m-2 |	80 qubits	| Rigetti's multi-chip quantum processor. |
 
 Rigetti's targets correspond to a **No Control Flow** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
-
 
 ## Simulators
 
 The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.html) is an open-source simulator for [Quil]. The `rigetti.sim.qvm` target accepts a [Quil program](#quil) as text and runs that program on QVM hosted in the cloud, returning simulated results.
 
 - Job Type: `Simulation`
-- Data Format: `rigetti.quil.v1`
+- Data Formats: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.sim.qvm`
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 - Pricing: Free ($0)
@@ -94,11 +93,11 @@ To make constructing a Quil program easier, you can use [`pyQuil`] along with th
 
 ### QIR
 
-All Rigetti **hardware**, that is, live QPU targets, support the execution of Quantum Intermediate Representation (QIR) compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`. For more information, see [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir).
+All Rigetti hardware supports the execution of Quantum Intermediate Representation (QIR) compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`. QIR provides a common interface that supports many quantum languages and target platforms for quantum computation and enables communication between high-level languages and machines. For example, you can submit Q#, Quil, or Qiskit jobs to Rigetti hardware, and Azure Quantum will automatically handle the input for you. For more information, see [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir).
 
 ### Selecting the right input format
 
-Should you use Quil or QIR? It comes down to your end use case. QIR is more accessible for many users, while Quil is more powerful today.
+Should you use Quil or another QIR compliant language? It comes down to your end use case. QIR is more accessible for many users, while Quil is more powerful today.
 
 If you're using Qiskit, Q#, or another toolkit that supports QIR generation, and your application works on Rigetti targets via Azure Quantum, then QIR is right for you! QIR has a rapidly evolving specification, and Rigetti will continue to increase support for more advanced QIR programs as time passes - what can't be compiled today may well compile tomorrow.
 
