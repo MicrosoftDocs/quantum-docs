@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide about how to use the Quantum Monte Carlo solver.
 ms.author: sonialopez
-ms.date: 02/01/2021
+ms.date: 10/18/2022
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
@@ -16,6 +16,11 @@ uid: microsoft.quantum.optimization.quantum-monte-carlo
 As this external field is varied over every Monte Carlo step, the configuration may be able to tunnel through energy barriers and evolve towards a desired ground state (without possessing the thermal energy needed to climb the barriers, as would be required in simulated annealing).
 
 In Azure Quantum the core of algorithmic approach to our QMC implementation is based on the [Wolff algorithm](https://en.wikipedia.org/wiki/Wolff_algorithm) for annealing and we extended this approach with various improvement in our computational efficiency.
+
+## Prerequisites
+
+- An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- The latest version of the [`azure-quantum` Python package](xref:mmicrosoft.quantum.update-qdk#update-the-azure-quantum-python-package) (if you're working in an Azure Quantum notebook, this step is not required).
 
 ## Features of Quantum Monte Carlo on Azure Quantum
 
