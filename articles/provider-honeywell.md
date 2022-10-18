@@ -15,8 +15,8 @@ uid: microsoft.quantum.providers.honeywell
 - Publisher: [Quantinuum](https://www.quantinuum.com)
 - Provider ID: `honeywell`
 
-> [!Note]
-> The Honeywell provider has been replaced by the Quantinuum Provider. New customers must use the [Quantinuum provider](xref:microsoft.quantum.providers.quantinuum). Existing customers may continue using the Honeywell provider or may follow the [migration guide to switch to the Quantinuum provider](xref:microsoft.quantum.providers.honeywell.migration).
+> [!Warning]
+> The Honeywell provider has been replaced by the Quantinuum Provider. All customers using the Honeywell provider must use the [Quantinuum provider](xref:microsoft.quantum.providers.quantinuum) instead. If you are still using the Honeywell provider, please check the [migration guide to switch to the Quantinuum provider](xref:microsoft.quantum.providers.honeywell.migration).
 
 ## Targets
 

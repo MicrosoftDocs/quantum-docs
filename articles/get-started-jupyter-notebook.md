@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to run a Q# and Python sample notebook in an Azure Quantum workspace.
 ms.author: brbenefield
-ms.date: 01/18/2022
+ms.date: 09/26/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -85,15 +85,17 @@ Some things to note:
 - **5th cell**: Sets the target and submits the job. 
 - **6th and 7th cells**: Plots and displays the result.
 
-Looking at the histogram, you may notice that the program returned 0 every time, which is not very random. This is because the notebook was prepopulated to use the **Quantinuum Syntax Checker**, *quantinuum.hqs-lt-s1-apival*. Using the Syntax Checker ensures that your code will run successfully on Quantinuum hardware, but also returns 0 for every quantum measurement. 
+[!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)]
 
-To create a true random number generator, modify the code in the 5th cell to use the **System Model H1 Emulator** target, *quantinuum.hqs-lt-s1-sim*
+Looking at the histogram, you may notice that the program returned 0 every time, which is not very random. This is because the notebook was pre-populated to use the **Quantinuum Syntax Checker**, *quantinuum.sim.h1-1sc*. Using the Syntax Checker ensures that your code will run successfully on Quantinuum hardware, but also returns 0 for every quantum measurement. 
+
+To create a true random number generator, modify the code in the 5th cell to use the **System Model H1 Emulator** target, *quantinuum.sim.h1-1e*
 
 > [!NOTE]
 > Running the program against the H1 Emulator or the System Model H1 computer will use H-System Quantum Credits (HQC) from your account. A single run of this example program costs approximately 5.3 HQC.
 
 ```python
-qsharp.azure.target("quantinuum.hqs-lt-s1-sim")
+qsharp.azure.target("quantinuum.sim.h1-1e")
 ```
 
 Re-run that cell and the following cells. Now, the results should be roughly split between 0 and 1. 

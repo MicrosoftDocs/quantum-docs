@@ -2,7 +2,7 @@
 description: Learn about the key concepts of optimization, including cost functions, search spaces, and landscapes. 
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 09/28/2021
+ms.date: 10/11/2022
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: overview
@@ -24,27 +24,27 @@ The *search space* contains all the feasible solutions to an optimization proble
 
 ## Walker
 
-You can imagine a person or a particle in the *search space*, and each step taken creates a path, or walk, through the optimization landscape. Often, this will be referred to as a *walker*. Walkers can be used in various ways: for example, you may choose to have many walkers begin from the same starting point, or have them begin from different locations, and so on.
+You can imagine a person or a particle in the *search space*, and each step taken creates a path, or walk, through the optimization landscape. Often, this particle will be referred to as a *walker*. Walkers can be used in various ways: for example, you may choose to have many walkers begin from the same starting point, or have them begin from different locations, and so on.
 
 ## Problem configuration
 
-Usually, an optimization problem involves a lot of variables that can interact in many ways to influence the final cost. A particular arrangement of the variables is called the *configuration* of the problem, and to each configuration there is a cost associated. The set of all possible configurations and their costs form the search space. 
+Usually, an optimization problem involves a lot of variables that can interact in many ways to influence the final cost. A particular arrangement of the variables is called the *configuration* of the problem, and to each configuration there is a cost associated. The set of all possible configurations and their costs together is referred to as the search space. 
 
 Because there are so many possible configurations to choose from, it is sometimes difficult to identify the best solution, particularly when the problem space is very large. It can be easy to get stuck in a local optimum. 
 
 The goal of the optimization is to find the minimum point on the cost function (or as close to the minimum point as possible, given a reasonable amount of time).
 
-Consider the following example of traffic minimization. The aim of this optimization task is to reduce congestion in a road system, thereby reducing the amount of time drivers and passengers spend waiting in traffic.
+Consider the following example of traffic minimization. The aim of this optimization task is to reduce congestion in a road system, thereby reducing the time that drivers and passengers spend waiting in traffic.
 
 Each configuration represents a different combination of routes assigned to the vehicles in the system. The cost to minimize is the overall traffic level (or congestion level).
 
-![Graph showing a cost function with local optima corresponding to different traffic levels in a vehicle routing simulation](./media/optimization-intro-traffic-optima.png)
+:::image type="content" source="./media/optimization-intro-traffic-optima.png" alt-text="Graph showing a cost function with local optima corresponding to different traffic levels in a vehicle routing simulation":::
 
 This graph highlights some examples of different system configurations, each of which has a different cost value. The costs are visualized here cost using color: the redder the road segment, the higher the traffic level and, therefore, the greater the cost. Conversely, greener road segments have fewer vehicles simultaneously occupying them and, therefore, lower traffic and cost values.
 
 ## Optimization landscapes
 
-Together, the search space and the cost function are often referred to as an optimization landscape. In the case of a problem that involves two continuous variables, the analogy to a landscape is quite direct.
+Together, the search space and the cost function are often referred to as an optimization landscape. In the case of a problem that involves two continuous variables, the analogy to a landscape is direct.
 
 Let's explore a few different optimization landscapes and see which are good candidates for Azure Quantum optimization.
 
@@ -52,7 +52,8 @@ Let's explore a few different optimization landscapes and see which are good can
 
 Consider the following plot of a cost function of two continuous variables, which looks like a single, smooth valley:
 
-![Smooth landspace](./media/smooth-landscape.png)
+:::image type="content" source="./media/smooth-landscape.png" alt-text="Diagram that shows a smooth landscape with no ups and downs.":::
+
 
 This kind of problem is easily solved with classical optimization techniques such as gradient descent, where you begin from an initial starting point and greedily move to any solution with a lower cost. After a few moves, the solution converges to the global minimum, the lowest point in the optimization landscape. Azure Quantum optimization solvers offer no advantages over other techniques with these straightforward problems.
 
@@ -60,7 +61,7 @@ This kind of problem is easily solved with classical optimization techniques suc
 
 Consider the following plot of a cost function of two continuous variables where the landscape is rugged, with many hills and valleys:
 
-![Structured landspace](./media/structured-landscape.png)
+:::image type="content" source="./media/structured-landscape.png" alt-text="Diagram that shows a structured landscape with ordered and localized maximums and minimums.":::
 
 In this scenario, one of the greatest challenges is to avoid getting stuck at any of the sub-optimal local minima. A rugged landscape can have multiple valleys. Each of these valleys has a lowest point, which is called a *local minimum*. One of these points will be the lowest of them all, and that point is the global minimum.
 
@@ -70,9 +71,9 @@ Such rugged landscapes present situations where **quantum-inspired optimization 
 
 The following plot corresponds to a random, unstructured landscape: 
 
-![Scattered landspace](./media/scattered-landscape.png)
+:::image type="content" source="./media/scattered-landscape.png" alt-text="Diagram that shows a scattered landscape with chaotic and unstructured points.":::
 
-In these cases, where the solutions are completely random, there is no optimization algorithm that can improve on a brute force search.
+In these cases, where the solutions are random, there is no optimization algorithm that can improve on a brute force search.
 
 ## Defining a cost function
 
@@ -84,7 +85,7 @@ However, certain optimization methods may expect the cost function to be in a pa
 
 ### Variables
 
-Let's see how to define the cost function for a simple problem. Consider a set of *i* variables, such that they can be indixed individually as $x_{i}$. For example, the set of five variables can be written as $x_{0}, x_{1}, x_{2}, x_{3}, x_{4}$.
+Let's see how to define the cost function for a simple problem. Consider a set of *i* variables, such that they can be indexed individually as $x_{i}$. For example, the set of five variables can be written as $x_{0}, x_{1}, x_{2}, x_{3}, x_{4}$.
 
 These variables can take specific values. In the case of a binary optimization problem they can only take two. In particular, if your problem is considering these variables a in the [Ising model](xref:microsoft.quantum.optimization.concepts.ising-model), then the values of the variables can be either +1 or -1.
 
@@ -141,7 +142,7 @@ The cost functions you will be working with will be *polynomial* functions of va
 
 - In some cases, the cost function will be linear. This means that the highest power any of the terms is raised to is *1*. $x + y + 1$ is an example of a linear function. Linear terms are said to have a *degree* of *1*.
 
-- In other cases, you may have a *quadratic* cost function. In this case, the highest power any of the terms is raised to is *2*. For example, $x^2 + y^2 + x + 1$ is a quadratic function and has a degree of *2* You may also see quadratic functions referred to as *Quadratic Unconstrained Binary Optimization (QUBO)* problems.
+- In other cases, you may have a *quadratic* cost function. In this case, the highest power any of the terms is raised to is *2*. For example, $x^2 + y^2 + x + 1$ is a quadratic function and has a degree of *2*. You may also see quadratic functions referred to as *Quadratic Unconstrained Binary Optimization (QUBO)* problems.
 
 - When a cost function has terms raised to higher powers than *2*, we refer to them as *Polynomial Unconstrained Binary Optimization (PUBO)* or *Higher Order Binary Optimization (HOBO)* problems. These cost functions have degrees higher than *2*. $x^3 + xy + x^2 + y^2 + x + 1$ is an example of a higher order polynomial function.
 
@@ -178,6 +179,6 @@ can be merged into
 merged_term = Term(c=5, indices=[0,1])
 ```
 
-where the *azure-quantum* Python package is used to [express the terms of an optimization problem](/azure/quantum/optimization-express-optimization-problem).
+where the `azure-quantum` Python package is used to [express the terms of an optimization problem](/azure/quantum/optimization-express-optimization-problem).
 
 Merging terms may significantly improve the performance of quantum-inspired optimization, if your problem has many such terms. You can either use a hash map or sort algorithm to do the merging.

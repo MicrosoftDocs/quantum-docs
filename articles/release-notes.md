@@ -34,6 +34,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 - Corrected the number of qubits for Quantinuum H1-2 target references by fixing [microsoft/qdk-python#391](https://github.com/microsoft/qdk-python/issues/391).
 
 ### Azure Quantum service update
+
 - Optimizations to reduce job submission time
 
 ## 2022-09-01
