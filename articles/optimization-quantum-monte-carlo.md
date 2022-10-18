@@ -20,12 +20,7 @@ In Azure Quantum, the core of algorithmic approach to the Quantum Monte Carlo im
 ## Prerequisites
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The latest version of the [`azure-quantum` Python package](xref:microsoft.quantum.update-qdk) (if you're working in an Azure Quantum notebook, this step is not required).
-
-## Prerequisites
-
-- An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The latest version of the [`azure-quantum` Python package](xref:mmicrosoft.quantum.update-qdk#update-the-azure-quantum-python-package) (if you're working in an Azure Quantum notebook, this step is not required).
+- The latest version of the [`azure-quantum` Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-package) (if you're working in an Azure Quantum notebook, this step is not required).
 
 ## Features of Quantum Monte Carlo on Azure Quantum
 
