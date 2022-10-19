@@ -20,7 +20,7 @@ Azure Quantum provides the best development environment to create quantum algori
 - Quantum impact today, allowing you to simultaneously explore today’s quantum systems and be ready for the scaled quantum systems of the future, and with pre-built solutions that run on classical and accelerated compute resources (also referred to as optimization solutions).
 
 > [!Tip]
-> **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) (check out free Azure accounts [for students](https://azure.microsoft.com/free/students/)). With Azure you can create, deploy, and manage applications across multiple clouds, on-premises, and at the edge. You will get 200 USD Azure credit to use in other Azure services. 
+> If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/). With the Azure Quantum Credits, you'll have $500 (USD) to use in each quantum hardware provider. If you are a students, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
 
 
 - [The parts of Azure Quantum](#the-parts-of-azure-quantum)
@@ -46,7 +46,7 @@ With Azure Quantum and the [Quantum Development Kit toolset](xref:microsoft.quan
 
 Start using Azure Quantum is very easy and free of cost for new users. To submit your quantum programs and optimization solutions to Azure Quantum you only need two things:
 
-1. **Azure account**: If you don't have one yet, you can [create an Azure account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) for free. 
+1. **Azure account**: If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/).
 1. **Azure Quantum workspace**: An Azure Quantum workspace is a collection of assets associated with running quantum or optimization applications. To create an Azure Quantum workspace, go to the [Azure portal](https://ms.portal.azure.com/#create/Microsoft.AzureQuantum), select **Quick create** and it automatically creates the workspace and adds the default providers. Or select **Advance create**, and enter the details of your workspace and choose the providers.
 
 For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
