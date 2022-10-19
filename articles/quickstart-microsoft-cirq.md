@@ -20,8 +20,8 @@ For information on how to submit a circuit with Qiskit, see [Quickstart: Submit 
 
 ## Prerequisites
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- Create an Azure Quantum workspace and enable your preferred provider, Quantinuum or IonQ (or both), for this scenario. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/).
+- An Azure Quantum workspace with your preferred provider enabled, Quantinuum or IonQ (or both), for this scenario. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - Install the latest [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview.python-only) using the \[cirq\] tag.
 
     > [!TIP]
