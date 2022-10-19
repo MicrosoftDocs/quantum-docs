@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide of what Azure Quantum Credits are, how to use them, and how to review credit balance 
 ms.author: sonialopez
-ms.date: 08/31/2022
+ms.date: 10/19/2022
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
@@ -13,7 +13,7 @@ uid: microsoft.quantum.credits
 # Azure Quantum Credits
 
 > [!Tip]
-> If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/). With the Azure Quantum Credits you'll have $500 (USD) to use in each quantum hardware provider. If yo are a students, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
+> If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/). With the Azure Quantum Credits, you'll have $500 (USD) to use in each quantum hardware provider. If you are a students, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
 
 Azure Quantum Credits can be used to run programs on quantum hardware.
 
