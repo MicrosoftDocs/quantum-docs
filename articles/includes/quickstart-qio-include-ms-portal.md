@@ -11,7 +11,7 @@ ms.topic: include
 
 To complete this procedure, you need
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/).
 - An Azure Quantum workspace with the **Microsoft QIO** provider enabled. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Create a new Notebook in your workspace
