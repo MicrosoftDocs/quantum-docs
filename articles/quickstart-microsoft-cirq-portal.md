@@ -7,12 +7,12 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Python', '$$v']
-title: Submit Cirq quantum circuits to Azure Quantum using an online notebook
+title: Create & submit Cirq circuits with online notebooks
 zone_pivot_groups: quantum-computing-platforms
 uid: microsoft.quantum.quickstarts.computing.cirq.portal
 --- 
 
-# Quickstart: Submit a circuit with Cirq  using an Azure Quantum notebook
+# Quickstart: Submit a circuit with Cirq using an Azure Quantum notebook
 
 Learn how to use the Azure Quantum service to submit a Cirq quantum circuits to an IonQ or Quantinuum quantum computing target via the Azure Quantum service. This example uses an Azure Quantum notebook and the built-in *azure-quantum* Python package - no installation or configuration is required. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
