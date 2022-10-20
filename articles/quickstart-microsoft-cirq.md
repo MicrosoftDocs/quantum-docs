@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Python', '$$v']
-title: Submit Cirq quantum circuits to Azure Quantum
+title: Create & submit Cirq circuits 
 zone_pivot_groups: quantum-computing-platforms
 uid: microsoft.quantum.quickstarts.computing.cirq
 --- 
