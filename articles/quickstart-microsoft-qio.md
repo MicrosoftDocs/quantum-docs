@@ -1,10 +1,10 @@
 ---
-title: Quickstart - Solve an optimization problem in Azure Quantum
+title: Quickstart - Solve an optimization problem 
 description: This document provides a step-by-step guide to get you started with optimization on Azure Quantum
 author: SoniaLopezBravo
 ms.author: sonialopez
 ms.topic: quickstart
-ms.date: 11/12/2021
+ms.date: 10/20/2022
 ms.service: azure-quantum
 ms.subservice: optimization
 uid: microsoft.quantum.quickstarts.optimization.qio
