@@ -109,7 +109,7 @@ To test your environment, see [Submit Q# jobs to Azure Quantum](xref:microsoft.q
 
 ### Use Python with Qiskit or Cirq, or Azure Quantum optimization solvers
 
-You can use the `azure-quantum` Python package to submit and run Qiskit or Cirq jobs, or submit [quantum quantum-inspired optimization](xref:microsoft.quantum.optimization.concepts.overview.introduction) jobs to the Azure Quantum optimization solvers. 
+You can use the `azure-quantum` Python package to submit and run Qiskit or Cirq jobs, or submit [quantum-inspired optimization](xref:microsoft.quantum.optimization.concepts.overview.introduction) jobs to the Azure Quantum optimization solvers. 
 
 To install the `azure-quantum` Python package 
 
