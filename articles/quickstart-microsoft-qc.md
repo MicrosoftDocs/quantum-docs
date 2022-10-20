@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: quickstart
 ms.custom: mode-api
-title: 'Quickstart: Create a quantum random number generator'
+title: Quickstart - Create a quantum random number generator
 uid: microsoft.quantum.quickstarts.computing
 zone_pivot_groups: quantum-computing-platforms
 ---
