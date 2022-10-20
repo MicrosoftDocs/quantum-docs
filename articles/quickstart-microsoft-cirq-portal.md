@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Python', '$$v']
-title: Create & submit Cirq circuits with online notebooks
+title: Quickstart - Create Cirq circuits with online notebooks
 zone_pivot_groups: quantum-computing-platforms
 uid: microsoft.quantum.quickstarts.computing.cirq.portal
 --- 
