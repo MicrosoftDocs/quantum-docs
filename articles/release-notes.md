@@ -17,14 +17,6 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
-## 2022-10-24
-
-### QDK version 0.27.236950
-
-- Added a new advanced sample that will help you learn about QSP with a simple singe-qubit application that can be executed on a quantum computer.
-- Made the DumpMachine consistent between the full-state simulator and sparse simulator by fixing a GitHub issue [microsoft/qsharp-runtime#1081](https://github.com/microsoft/qsharp-runtime/issues/1081) in Q# runtime.
-- Honeywell provider and targets are no longer supported. Customers should use the Quantinuum provider and targets. See more at [Honeywell to Quantinuum migration guide](xref:microsoft.quantum.providers.honeywell.migration).
-
 ## 2022-10-04
 
 ### QDK version 0.26.233415
