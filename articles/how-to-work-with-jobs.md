@@ -2,11 +2,11 @@
 author: bradben
 description: This document provides a basic guide to working with jobs in Azure Quantum.
 ms.author: brbenefield
-ms.date: 06/24/2021
+ms.date: 10/20/2022
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: how-to
-title: Working with jobs in Azure Quantum
+ms.topic: overview
+title: Introduction to jobs
 uid: microsoft.quantum.work-with-jobs
 ---
 
@@ -59,7 +59,8 @@ The `succeeded`, `failed`, and `cancelled` states are considered **final states*
 
 This diagram shows the possible job state transitions:
 
-![Azure Quantum job submission diagram](./media/aq-diagram.png)
+:::image type="content" source="./media/aq-diagram.png" alt-text="Diagram showing the workflow of a job submission to Azure Qauntum.":::
+
 
 After a job completes successfully, it displays a link to the output data in your Azure Storage account. How you access this data depends on the SDK or tool you used to [submit the job](xref:microsoft.quantum.submit-jobs).
 
