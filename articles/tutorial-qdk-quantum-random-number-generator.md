@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
 no-loc: ['Q#', '$$v']
-title: Tutorial: Create a Quantum Random Number Generator
+title: Tutorial - Create a Quantum Random Number Generator
 uid: microsoft.quantum.tutorial-qdk.random-number
 ---
 
