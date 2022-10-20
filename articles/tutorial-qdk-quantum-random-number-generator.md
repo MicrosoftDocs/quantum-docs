@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
 no-loc: ['Q#', '$$v']
-title: Create a Quantum Random Number Generator
+title: Tutorial: Create a Quantum Random Number Generator
 uid: microsoft.quantum.tutorial-qdk.random-number
 ---
 
@@ -86,17 +86,17 @@ By putting the qubit in superposition with the [`H`](xref:Microsoft.Quantum.Intr
 
 In the [Bloch sphere](xref:microsoft.quantum.glossary-qdk#bloch-sphere), the north pole represents the classical value **0** and the south pole represents the classical value **1**. Any superposition can be represented by a point on the sphere (represented by an arrow). The closer the end of the arrow to a pole the higher the probability the qubit collapses into the classical value assigned to that pole when measured. For example, the qubit state represented by the arrow in the following figure has a higher probability of giving the value **0** if you measure it.
 
-<img src="~/media/qrng-Bloch.png" width="175" alt="A qubit state with a high probability of measuring zero">
+<img src="~/media/qrng-Bloch.png" width="175" alt="A diagram showing a qubit state with a high probability of measuring zero.">
 
 You can use this representation to visualize what the code is doing:
 
 * First, start with a qubit initialized in the state **0** and apply an [`H`](xref:Microsoft.Quantum.Intrinsic.H) operation to create an equal superposition in which the probabilities for **0** and **1** are the same.
 
-<img src="~/media/qrng-H.png" width="450" alt="Preparing a qubit in superposition">
+<img src="~/media/qrng-H.png" width="450" alt="A diagram showing the preparation of a qubit in superposition by applying the hadamard gate.">
 
 * Then measure the qubit and save the output:
 
-<img src="~/media/qrng-meas.png" width="450" alt="Measuring a qubit and saving the output">
+<img src="~/media/qrng-meas.png" width="450" alt="A diagram showing the measurement of a qubit and saving the output.">
 
 Since the outcome of the measurement is random and the probabilities of measuring **0** and **1** are the same, you have obtained a completely random bit. You can call this operation several times to create integers. For example, if you call the operation three times to obtain three random bits, you can build random 3-bit numbers (that is, a random number between 0 and 7).
 
