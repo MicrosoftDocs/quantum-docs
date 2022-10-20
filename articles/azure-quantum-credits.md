@@ -5,7 +5,7 @@ ms.author: sonialopez
 ms.date: 08/31/2022
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: reference
+ms.topic: conceptual
 title: Azure Quantum Credits
 uid: microsoft.quantum.credits
 ---
