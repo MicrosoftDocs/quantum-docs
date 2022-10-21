@@ -21,7 +21,6 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 ### QDK version 0.27.236950
 
-- Added a new advanced sample that will help you learn about QSP with a simple singe-qubit application that can be executed on a quantum computer.
 - Made the DumpMachine consistent between the full-state simulator and sparse simulator by fixing a GitHub issue [microsoft/qsharp-runtime#1081](https://github.com/microsoft/qsharp-runtime/issues/1081) in Q# runtime.
 - Honeywell provider and targets are no longer supported. Customers should use the Quantinuum provider and targets. See more at [Honeywell to Quantinuum migration guide](xref:microsoft.quantum.providers.honeywell.migration).
 
