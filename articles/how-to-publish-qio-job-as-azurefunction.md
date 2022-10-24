@@ -27,9 +27,8 @@ To learn how to deploy a Q# job as a web service using Azure Functions, see [Pub
 
 You need the following configuration to complete the steps in this article.
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- An Azure Quantum workspace in your Azure subscription. To create a workspace,
-  see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
+- An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - The latest version of the [Quantum Development Kit for Python](xref:microsoft.quantum.install-qdk.overview.python#install-the-qsharp-python-package).
 - The [Azure Functions Core Tools](/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools) version 3.x.
 - [Python versions that are supported by Azure Functions](/azure/azure-functions/supported-languages#languages-by-runtime-version).
@@ -43,7 +42,7 @@ First, use Visual Studio Code to create a local Azure Functions project in Pytho
 
 1. Select the Azure icon in the Activity bar, then in the **Workspace (local)** area, select the **+** icon, and choose **Create Function...** in the dropdown. When prompted, choose **Create new project...**.
 
-    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/create-new-project.png" alt-text="Create a new project":::
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/create-new-project.png" alt-text="Screenshot of Visual Studio Code showing how to create a new Azure Function project.":::
 
 1. Select a directory location for your project workspace and choose **Select**.
 1. Provide the following information at the prompts:
@@ -65,13 +64,13 @@ Even though the function doesn't do much yet, this is a good time to test the ba
 
 1. To call your function, press **F5** to start the project. Your app starts in the **Terminal** panel and displays the output as it loads. You can see the URL endpoint of your HTTP-triggered function running locally.
 
-    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/run-azure-function-locally-1.png" alt-text="Run the Azure Function locally":::
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/run-azure-function-locally-1.png" alt-text="Screenshot showing how to run the Azure Function locally in the Visual Studio Code terminal.":::
 
     If you have trouble running on Windows, make sure that the default terminal for Visual Studio Code isn't set to **WSL Bash**.
 
 1. Select the Azure icon in the Activity bar and select **Workspace (local)**. You may need to select the **Refresh** icon if nothing appears below it. Expand **Local Project > Functions**, right-click the **SplitWeights** function and select **Execute Function Now...**.
 
-    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/run-azure-function-locally-2.png" alt-text="Call the function":::
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/run-azure-function-locally-2.png" alt-text="Screenshot showing how to call the Azure function.":::
 
 1. In **Enter request body** at the top of VS Code, note the request message body value of **{ "name": "Azure" }**. Press **Enter** to send this request message to your function.
 1. When the function executes locally and returns a response, a notification is displayed. Information about the function execution is shown in **Terminal** panel.
@@ -223,7 +222,7 @@ You can now prepare the Azure target environment that will host the function. Pr
 1. Go to the [Azure portal](https://portal.azure.com) and sign in to your Azure account.
 1. Select **Create a resource** from the portal menu in the upper left.
 
-    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-1.png" alt-text="Create a resource":::
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-1.png" alt-text="Screenshot showing how to create a new resource in Azure portal.":::
 
 1. Search for **Function App** and select **Create**.
 1. Provide the following information:
@@ -246,11 +245,11 @@ Next, you'll configure a managed identity for the Function App. A managed identi
 
 1. In the Azure portal, navigate to your Function App page and select **Identity**, set **Status** to **On** and then select **Save** and **Yes**. 
 
-    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-2.png" alt-text="Create a managed identity for the Function App":::
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-2.png" alt-text="Screenshot of the identity pane showing how to create a managed identity for the Function App.":::
 
 1. Navigate to your Azure Quantum workspace (**Home** -> **Resources**) and select **Access control (IAM)** from the left menu. Select **Add** and **Add role assignment**.
 
-    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-3.png" alt-text="Create a new role assignment on your Azure Quantum workspace":::
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-3.png" alt-text="Screenshot of the Access control pane showing how to create a new role assignment on your Azure Quantum workspace.":::
     > [!NOTE]
     > You must have Owner or RBAC administrator rights to add role assignment. Otherwise the options under *Add* will appear as disabled.
 
@@ -259,7 +258,7 @@ Next, you'll configure a managed identity for the Function App. A managed identi
 1. In the **Managed identity** dropdown, select **Function App**. 
 1. Select the Function App you created earlier and choose **Select**.
 
-    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-4.png" alt-text="Add your Function App as a Contributor to your Azure Quantum workspace":::
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-4.png" alt-text="Screenshot showing how to select the Function App as a Contributor to your Azure Quantum workspace.":::
 
 1. Select **Next** and then select **Review and assign**.
 
@@ -269,12 +268,12 @@ In this step, you'll deploy your function code to the Azure Function App you jus
 
 1. In Visual Studio Code, select the Azure icon in the Activity bar, and expand **Workspace (local)**.  Select the **Deploy...** icon and then select **Deploy to Function App...**.
 
-    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/deploy-function-1.png" alt-text="Deploy the Function":::
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/deploy-function-1.png" alt-text="Screenshot of Visual Studio Code showing how to deploy the Azure Function.":::
 
 1. At the prompt, select your Azure subscription, if applicable, and then select the Function App that you previously created.
 1. A notification is displayed after your function is deployed. Select **View Output** to display the status information and the URL that you can use to call the function.
 
-:::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/deploy-function-2.png" alt-text="Notification after successful deployment":::
+:::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/deploy-function-2.png" alt-text="Screenshot of a notification after successful deployment of the Azure function in Visual Studio Code.":::
 
 ## Call your QIO algorithm via the Azure Function
 
@@ -310,12 +309,12 @@ You can now test the function by using the direct URL or by passing the paramete
 
 1. In Visual Studio Code, select the Azure icon in the Activity bar, and expand **Resources -> \<subscription\> -> Function App -> \<your Function App name\> -> Functions**. Right-click  the `SplitWeights` function and select **Execute Function Now...**.
 
-    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/execute-function-1.png" alt-text="Execute the Function via Visual Studio Code":::
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/execute-function-1.png" alt-text="Screenshot showing how to execute the Azure Function via Visual Studio Code.":::
 
 1. In the input field **Enter request body**, you'll see the request message body. Enter the value of `{ "mineralWeights": [5,11,8,7,1,1] }`. Press **Enter** to send this request message to your function.
 1. The following confirmation message should appear after a few seconds:
 
-    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/execute-function-2.png" alt-text="Result after Function call":::
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/execute-function-2.png" alt-text="Screensshot of the confirmation message after the Azure Function call.":::
 
 > [!TIP]
 > The function you just deployed implements the *number partitioning problem*. It allows you to split a given set of numbers into two subsets with equal (or similar) sum of their elements. To learn more about this problem and its implementation, see the [MS Learn Module: Solve optimization problems by using quantum-inspired optimization](/training/modules/solve-quantum-inspired-optimization-problems/).
@@ -335,7 +334,7 @@ If you are done testing your Function App, you can use the following steps to de
     > [!IMPORTANT]
     > Your quantum workspace also has a storage account connected to it which you may not want to delete yet. To determine which storage account belongs to the quantum workspace, select the workspace resource and view the properties on the overview page. 
 
-    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/cleanup-resources.png" alt-text="Clean up Azure resources":::
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/cleanup-resources.png" alt-text="Screenshot of the Azure resources in a workspace.":::
 
 1. Select the resources you want to delete and select **Delete**. Deletion may take a couple of minutes. When it's done, a notification appears. You can also select the bell icon at the top of the page to view the notification.
 
