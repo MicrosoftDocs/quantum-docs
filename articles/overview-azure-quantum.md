@@ -20,7 +20,7 @@ Azure Quantum provides the best development environment to create quantum algori
 - Quantum impact today, allowing you to simultaneously explore today’s quantum systems and be ready for the scaled quantum systems of the future, and with pre-built solutions that run on classical and accelerated compute resources (also referred to as optimization solutions).
 
 > [!Tip]
-> If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/). With the Azure Quantum Credits, you'll have $500 (USD) to use in each quantum hardware provider. If you are a students, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
+> If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). With the Azure Quantum Credits, you'll have $500 (USD) to use in each quantum hardware provider. If you are a student, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
 
 
 - [The parts of Azure Quantum](#the-parts-of-azure-quantum)
