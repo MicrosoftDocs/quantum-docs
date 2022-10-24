@@ -25,7 +25,7 @@ For more information about using Jupyter notebooks with Azure Quantum, see [Run 
 
 Before you begin, you need the following prerequisites to use Jupyter notebooks in an Azure Quantum workspace.
 
-- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/).
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Copy a sample notebook
