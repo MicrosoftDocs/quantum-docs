@@ -1,9 +1,10 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.prod: azure-quantum
+ms.service: azure-quantum
+ms.subservice: core
 ms.topic: include
-ms.date: 10/19/2021
+ms.date: 10/24/2022
 ---
 
 > [!TIP]
