@@ -18,7 +18,7 @@ In this guide, learn to use the Azure Command-Line Interface (Azure CLI) to crea
 
 To use the Azure Quantum service, you will need:
 
-- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/).
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure resource group where the quantum workspace will live.
 - A storage account in the resource group to be associated with the quantum workspace. Multiple workspaces can be associated with the same account.
 - The [Azure CLI](/cli/azure/install-azure-cli).
