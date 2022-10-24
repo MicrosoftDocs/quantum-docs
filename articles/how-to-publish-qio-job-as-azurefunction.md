@@ -273,7 +273,7 @@ In this step, you'll deploy your function code to the Azure Function App you jus
 1. At the prompt, select your Azure subscription, if applicable, and then select the Function App that you previously created.
 1. A notification is displayed after your function is deployed. Select **View Output** to display the status information and the URL that you can use to call the function.
 
-:::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/deploy-function-2.png" alt-text="Screenshot of a notification after successful deployment of the Azre function in Visual Studio Code.":::
+:::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/deploy-function-2.png" alt-text="Screenshot of a notification after successful deployment of the Azure function in Visual Studio Code.":::
 
 ## Call your QIO algorithm via the Azure Function
 
