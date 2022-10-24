@@ -42,7 +42,7 @@ In addition, the free Azure trial gets you started with $200 (USD) in Azure cred
 
 ### [Students](#tab/student)
 
-Sign up for an [Azure for Students subscription](https://azure.microsoft.com/offers/ms-azr-0170p/). With the Azure Quantum Credits you'll have $500 (USD) to use in each quantum hardware provider. Once you've consumed all your credits, you must upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/), and you can cancel anytime.
+Sign up for an [Azure for Students subscription](https://azure.microsoft.com/offers/ms-azr-0170p/). With the Azure Quantum Credits you'll have $500 (USD) to use in each quantum hardware provider. Once you've consumed all your credits, you must upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go), and you can cancel anytime.
 
 Azure for Students gets you started with $100 (USD) in Azure credits to be used in Azure 1st-party services (Azure Quantum is not elegible), and you don't need a credit card to sign-up.  
 
