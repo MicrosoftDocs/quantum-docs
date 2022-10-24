@@ -20,7 +20,7 @@ An ARM template is a JavaScript Object Notation (JSON) file that defines the inf
 
 ### Azure account
 
-Before you begin, you must have an Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/offers/ms-azr-0003p/).
+Before you begin, you must have an Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 
 ### Editor
 
