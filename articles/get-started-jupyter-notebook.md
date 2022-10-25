@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to run a Q# and Python sample notebook in an Azure Quantum workspace.
 ms.author: brbenefield
-ms.date: 01/18/2022
+ms.date: 09/26/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -25,7 +25,7 @@ For more information about using Jupyter notebooks with Azure Quantum, see [Run 
 
 Before you begin, you need the following prerequisites to use Jupyter notebooks in an Azure Quantum workspace.
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Copy a sample notebook
@@ -37,7 +37,7 @@ To get started, copy a sample notebook from the notebook gallery.
 1. In the **Sample gallery**, locate the **Hello, world: Q#** notebook tile, select either the **IonQ** or **Quantinuum** provider (the sample code is identical) and select **Copy to my notebooks**.
 1. The sample notebook can be found under **My notebooks** and you can now run the notebook.
 
-    :::image type="content" source="media/create_notebook_steps.png" alt-text="Load a sample Jupyter notebook.":::
+    :::image type="content" source="media/create_notebook_steps.png" alt-text="Screenshot of the sample Jupyter notebook gallery showing how to copy a notebook in your gallery.":::
 
 ## Run the notebook
 
@@ -49,7 +49,7 @@ To run the sample notebook, follow these steps for your selected provider.
 1. To run the full program from top to bottom, select **Run all**. 
 1. To walk through the example and run each cell individually from top to bottom, select the cell you want to run and select the **run icon**.
 
-    :::image type="content" source="media/run_or_run_all.png" alt-text="Run a Jupyter notebook.":::
+    :::image type="content" source="media/run_or_run_all.png" alt-text="Screenshot of the Jupyter notebook showing how to run it.":::
 
 ### Stepping through the program on IonQ
 
@@ -70,7 +70,7 @@ Some things to note:
 1. To run the full program from top to bottom, select **Run all**. 
 1. To walk through the example and run each cell individually from top to bottom, select the cell you want to run and select the **run icon**.
 
-    :::image type="content" source="media/run_or_run_all.png" alt-text="Run a Jupyter notebook.":::
+    :::image type="content" source="media/run_or_run_all.png" alt-text="Screenshot of the Jupyter notebook showing how to run it":::
 
 ### Stepping through the program on Quantinuum
 
@@ -85,15 +85,17 @@ Some things to note:
 - **5th cell**: Sets the target and submits the job. 
 - **6th and 7th cells**: Plots and displays the result.
 
-Looking at the histogram, you may notice that the program returned 0 every time, which is not very random. This is because the notebook was prepopulated to use the **Quantinuum Syntax Checker**, *quantinuum.hqs-lt-s1-apival*. Using the Syntax Checker ensures that your code will run successfully on Quantinuum hardware, but also returns 0 for every quantum measurement. 
+[!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)]
 
-To create a true random number generator, modify the code in the 5th cell to use the **System Model H1 Emulator** target, *quantinuum.hqs-lt-s1-sim*
+Looking at the histogram, you may notice that the program returned 0 every time, which is not very random. This is because the notebook was pre-populated to use the **Quantinuum Syntax Checker**, *quantinuum.sim.h1-1sc*. Using the Syntax Checker ensures that your code will run successfully on Quantinuum hardware, but also returns 0 for every quantum measurement. 
+
+To create a true random number generator, modify the code in the 5th cell to use the **System Model H1 Emulator** target, *quantinuum.sim.h1-1e*
 
 > [!NOTE]
 > Running the program against the H1 Emulator or the System Model H1 computer will use H-System Quantum Credits (HQC) from your account. A single run of this example program costs approximately 5.3 HQC.
 
 ```python
-qsharp.azure.target("quantinuum.hqs-lt-s1-sim")
+qsharp.azure.target("quantinuum.sim.h1-1e")
 ```
 
 Re-run that cell and the following cells. Now, the results should be roughly split between 0 and 1. 
@@ -101,7 +103,7 @@ Re-run that cell and the following cells. Now, the results should be roughly spl
 ***
 
 > [!NOTE]
-> If you have any questions regarding the workspace creation process or run into any issue at any point using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Standard Time zone (PST).
+> If you have any questions or run into any issue using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Standard Time zone (PST).
 
 ## Next steps
 

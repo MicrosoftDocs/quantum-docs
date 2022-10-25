@@ -8,6 +8,16 @@ groups:
     title: IonQ
   - id: platform-quantinuum
     title: Quantinuum
+- id: quantum-computing-platforms-rigetti
+  title: Provider platforms
+  prompt: Choose a provider platform
+  pivots:
+  - id: platform-ionq
+    title: IonQ
+  - id: platform-quantinuum
+    title: Quantinuum
+  - id: platform-rigetti
+    title: Rigetti
 - id: optimization-platforms
   title: Provider platforms
   prompt: Choose a provider platform

@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 11/16/2021
+ms.date: 10/19/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: include
@@ -11,7 +11,7 @@ ms.topic: include
 
 To complete this tutorial, you need
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace with the **Microsoft QIO** provider enabled. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - The latest [azure-quantum Python package](xref:microsoft.quantum.install-qdk.overview.python-only).
 
@@ -86,7 +86,7 @@ problem.add_terms(terms=terms)
 
 ## Apply an optimization solver
 
- For the Microsoft QIO provider, we'll use a parameter-free version of parallel tempering. You can find documentation on this solver and the other available solvers in the [Microsoft QIO provider reference](xref:microsoft.quantum.optimization.providers.microsoft.qio).
+For the Microsoft QIO provider, you'll use a parameter-free version of parallel tempering. You can find documentation on this solver and the other available solvers in the [Microsoft QIO provider reference](xref:microsoft.quantum.optimization.providers.microsoft.qio).
 
 ```py
 from azure.quantum.optimization import ParallelTempering

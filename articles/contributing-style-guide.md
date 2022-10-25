@@ -386,7 +386,7 @@ We suggest:
 
 The Q# language allows for attaching documentation to operations, functions, and user-defined types through the use of specially formatted documentation comments.
 Denoted by triple-slashes (`///`), these documentation comments are small [DocFX-flavored Markdown](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html) documents that can be used to describing the purpose of each operation, function, and user-defined type, what inputs each expects, and so forth.
-The compiler provided with the Quantum Development Kit extracts these comments and uses them to help typeset documentation similar to that at [Microsoft Docs](/documentation/).
+The compiler provided with the Quantum Development Kit extracts these comments and uses them to help typeset documentation similar to that used in [Microsoft Learn documentation](/docs/).
 Similarly, the language server provided with the Quantum Development Kit uses these comments to provide help to users when they hover over symbols in their Q# code.
 Making use of documentation comments can thus help users to make sense of code by providing a useful reference for details that are not easily expressed using the other conventions in this document. For more information, see the [documentation comment syntax reference](xref:microsoft.quantum.qsharp.comments#documentation-comments).
 

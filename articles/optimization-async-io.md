@@ -127,8 +127,8 @@ The `azure.quantum.aio.optimization` package contains asyncio-compatible version
   - [1QBit](https://github.com/microsoft/qio-samples/tree/main/samples/getting-started/1qbit)
   - [Microsoft QIO](https://github.com/microsoft/qio-samples/tree/main/samples/getting-started/microsoft-qio/)
 - Ship loading sample problem
-  - [End-to-end Learn module](/learn/modules/solve-quantum-inspired-optimization-problems/)
+  - [End-to-end Learn module](/training/modules/solve-quantum-inspired-optimization-problems/)
   - [Sample code](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/)
 - Job shop scheduling sample problem
-  - [End-to-end Learn module](/learn/modules/solve-job-shop-optimization-azure-quantum/)
+  - [End-to-end Learn module](/training/modules/solve-job-shop-optimization-azure-quantum/)
   - [Sample code](https://github.com/microsoft/qio-samples/tree/main/samples/job-shop-scheduling/)

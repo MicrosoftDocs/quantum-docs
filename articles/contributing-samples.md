@@ -88,6 +88,7 @@ Your `README.md` should start with some metadata that helps `docs.microsoft.com/
 > The `page_type: sample` key in the header is **required** for your sample to appear at `docs.microsoft.com/samples`.
 > Similarly, the `product` and `language` keys are critical for helping users to search for and find your sample.
 
+
 After that, it's helpful to give a short intro that says what your new sample does:
 
 ```markdown

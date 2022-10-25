@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 01/27/2022
+ms.date: 09/26/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -39,6 +39,8 @@ provider = AzureQuantumProvider(
 
 ### List all backends
 
+[!INCLUDE [Quantinuum target name update](quantinuum-name-change.md)]
+
 You can now print all of the quantum computing backends that are
 available on your workspace:
 
@@ -47,7 +49,7 @@ print([backend.name() for backend in provider.backends()])
 ```
 
 ```output
-    ['ionq.simulator', 'ionq.qpu', 'quantinuum.hqs-lt-s1', 'quantinuum.hqs-lt-s1-apival', 'quantinuum.hqs-lt-s1-sim']
+    ['ionq.simulator', 'ionq.qpu', 'quantinuum.qpu.h1-1', 'quantinuum.qpu.h1-1sc', 'quantinuum.qpu.h1-1e', 'quantinuum.qpu.h1-2', 'quantinuum.qpu.h1-2sc', 'quantinuum.qpu.h1-2e', 'rigetti.sim.qvm', 'rigetti.qpu.aspen-11']
 ```
 
 ## Run on the API validator 
@@ -57,7 +59,7 @@ print([backend.name() for backend in provider.backends()])
 
 ```python
 # Get Quantinuum's API validator backend:
-apival_backend = provider.get_backend("quantinuum.hqs-lt-s1-apival")
+apival_backend = provider.get_backend("quantinuum.qpu.h1-1sc")
 ```
 
 ```python
@@ -115,7 +117,7 @@ plot_histogram(counts)
 ```output
 Job id 00000000-0000-0000-0000-000000000000
 Job Status: job has successfully run
-Result(backend_name='quantinuum.hqs-lt-s1-apival', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 1024}, probabilities={'000': 1.0}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
+Result(backend_name='quantinuum.qpu.h1-1sc', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 1024}, probabilities={'000': 1.0}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
 {'000': 1024, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
 ```
 
@@ -127,7 +129,7 @@ Result(backend_name='quantinuum.hqs-lt-s1-apival', backend_version='1', qobj_id=
 Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
 
 ```python
-qpu_backend = provider.get_backend("quantinuum.hqs-lt-s1")
+qpu_backend = provider.get_backend("quantinuum.qpu.h1-1")
 cost = qpu_backend.estimate_cost(circuit, shots=1024)
 
 print(f"Estimated cost: {cost.estimated_total}")
@@ -135,7 +137,7 @@ print(f"Estimated cost: {cost.estimated_total}")
 
 This prints the estimated cost in H-System Quantum Credits (HQCs).
 
-For the most current pricing details, see [System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.quantinuum#quantinuum-system-model-h1), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
+For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or find your workspace and view pricing options in the **Provider** tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
 
 ## Run on a Quantinuum QPU 
@@ -147,7 +149,7 @@ After running successfully on the API validator, you can run your job on one of 
 
 ```python
 # Get Quantinuum's QPU backend:
-qpu_backend = provider.get_backend("quantinuum.hqs-lt-s1")
+qpu_backend = provider.get_backend("quantinuum.qpu.h1-1")
 ```
 
 ```python
@@ -176,7 +178,7 @@ plot_histogram(counts)
 ```
 
 ```output
-Result(backend_name='quantinuum.hqs-lt-s1-apival', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'011': 16, '010': 5, '001': 1, '000': 500, '111': 471, '101': 6, '100': 17, '110': 8}, probabilities={'011': 0.015625, '010': 0.0048828125, '001': 0.0009765625, '000': 0.48828125, '111': 0.4599609375, '101': 0.005859375, '100': 0.0166015625, '110': 0.0078125}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
+Result(backend_name='quantinuum.qpu.h1-1', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'011': 16, '010': 5, '001': 1, '000': 500, '111': 471, '101': 6, '100': 17, '110': 8}, probabilities={'011': 0.015625, '010': 0.0048828125, '001': 0.0009765625, '000': 0.48828125, '111': 0.4599609375, '101': 0.005859375, '100': 0.0166015625, '110': 0.0078125}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
 {'000': 500, '001': 1, '010': 5, '011': 16, '100': 17, '101': 6, '110': 8, '111': 471}
 ```
 

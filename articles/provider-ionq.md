@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the IonQ quantum computing provider
 ms.author: sonialopez
-ms.date: 08/26/2022
+ms.date: 09/21/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -11,6 +11,9 @@ uid: microsoft.quantum.providers.ionq
 ---
 
 # IonQ provider
+
+> [!IMPORTANT]
+> As of Friday, October 21, 2022, the IonQ Aria is offline for maintenance. Microsoft will update this notice once an ETA for the system to be back online is available.
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
@@ -25,8 +28,9 @@ The following targets are available from this provider:
 |---|---|---|---|
 |[Quantum simulator](#quantum-simulator)	|ionq.simulator|	29 qubits|	IonQ's cloud-based idealized simulator. Free of cost.|
 |[IonQ Harmony](#ionq-harmony-quantum-computer) |	ionq.qpu	|11 qubits	|IonQ's trapped-ion quantum computer.|
-|[IonQ Aria](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|23 qubits	|IonQ's Aria  trapped-ion quantum computer.|
+|[IonQ Aria](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|23 qubits	|IonQ's Aria trapped-ion quantum computer.|
 
+IonQ's targets correspond to a **No Control Flow** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
 
 ## Quantum simulator
 GPU-accelerated idealized simulator supporting up to 29 qubits, using the same set of gates IonQ provide on its quantum hardware—a great place to preflight jobs before running them on an actual quantum computer.
@@ -66,10 +70,10 @@ The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigur
 |-----------|------------------|
 | Single-qubit gate | 99.35% (SPAM corrected) |
 | Two-qubit gate | 96.02% (not SPAM corrected) |
-| SPAM | 99.3 - 99.8% |
+| SPAM* | 99.3 - 99.8% |
 | Geometric mean op | 98.34% |
 
-*State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.*
+\* State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.
 
 ## IonQ Aria quantum computer
 
@@ -102,6 +106,32 @@ backend = provider.get_backend("ionq.qpu", gateset="native")
 | `gateset`   | string    | No | Specifies the set of gates that will be used to define a circuit. A value of `qis` corresponds to the abstract gates (default behavior) and `native` to the [IonQ hardware native gates](https://ionq.com/docs/getting-started-with-native-gates#introducing-the-native-gates).|
 
 For more information about Qiskit jobs, see [Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit).
+
+## Input format
+
+In Q#, the output of a quantum measurement is a value of type `Result`, which can only take the values `Zero` and `One`. When you define a Q# operation, it can only be submitted to IonQ hardware if the return type is a collection of `Result`s, that is, if the output of the operation is the result of a quantum measurement. The reason for this is because IonQ builds a histogram from the returned values, so it restricts the return type to `Result`s to simplify creating this histogram.
+
+IonQ's targets correspond to the [No Control Flow profile](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). This profile can't run quantum operations that require the use of the results from qubit measurements to control the program flow. 
+
+> [!NOTE]
+> Currently, you can't submit quantum programs that apply operations on qubits that have been measured in No Control Flow targets, even
+> if you don't use the results to control the program flow. That is, No Control Flow targets don't allow mid-circuit measurements.
+>
+> For example, the following code can **not** be run on a No Control Flow target:
+> ```qsharp
+> operation MeasureQubit(q : Qubit) : Result { 
+>    return M(q); 
+> }
+>
+> operation SampleMeasuredQubit(q : Qubit) : Result {
+>     H(MeasureQubit(q));
+>     return M(MeasureQubit(q));
+> }
+> ```
+
+## Output format
+
+When you submit a quantum program to the IonQ simulator, it returns the histogram created by the measurements. The IonQ simulator doesn't sample the probability distribution created by a quantum program but instead returns the distribution scaled to the number of shots. This is most apparent when you submit a single shot circuit. You will see multiple measurement results in the histogram for one shot. This behavior is inherent to IonQ simulator, while IonQ QPU actually runs the program and aggregates the results.
 
 ## Pricing
 

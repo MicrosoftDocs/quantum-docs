@@ -2,15 +2,15 @@
 author: sonialopezbravo
 description: Understand the job cost reporting functionality in Azure Quantum.
 ms.author: sonialopez
-ms.date: 02/17/2021
+ms.date: 10/11/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: conceptual
-title: Azure Quantum job costs
+title: Understanding job costs in Azure Quantum
 uid: microsoft.quantum.azure.job-costs
 ---
 
-# Azure Quantum job costs
+# Understanding job costs in Azure Quantum
 
 This article helps you understand the cost of jobs in Azure Quantum. 
 
@@ -25,7 +25,7 @@ Azure Quantum makes hardware and solutions available from Microsoft and from our
 |Free Azure Credits| When you create a [new Azure account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), you get $200 (USD) free **Azure Credits** to use on Microsoft services. You can only use general-purpose Azure Credits with the Microsoft providers. 3rd-party providers (providers that aren't owned by Microsoft) aren't eligible.|
 |Free Azure Quantum Credits| When you create a new Azure Quantum workspace, you get $500 (USD) free **Azure Quantum credits** for use with each participating quantum hardware provider. For more information, see [Azure Quantum credits](xref:microsoft.quantum.credits)|
 |Azure Quantum Credits program| If you have consumed all the credits and you need more, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits). Microsoft offers up to $10,000 (USD) extra Azure Quantum Credits for use on quantum hardware. For more information,see [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq).|
-|Billing plans| Most providers bill based on the resources you consume by running a job (pay-as-you-go), though some also offer subscription plans. For more information about how each each provider charges, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).|
+|Billing plans| When you consumed all your Azure Quantum credits, you have to switch to a billing plan. Most providers bill based on the resources you consume by running a job (pay-as-you-go), though some also offer subscription plans. For more information about how each each provider charges, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).|
 
 ## Before you run: Estimate job cost
 
@@ -50,8 +50,7 @@ To review job costs, navigate to the **Job Management** blade within your Azure 
 
 _Prices below are shown for example purposes only._
 
-> [!div class="mx-imgBorder"]
-> [ ![The Job Management blade, with the Cost Estimate column highlighted](./media/job-costs/job-table-with-costs.png) ](./media/job-costs/job-table-with-costs.png#lightbox)
+:::image type="content" source="./media/job-costs/job-table-with-costs.png" alt-text="Screenshot of the Job Management blade, with the Cost Estimate column highlighted." lightbox="./media/job-costs/job-table-with-costs.png":::
 
 > [!NOTE]
 > Some Azure Quantum providers do not support reporting per-job costs, however you can still see your bill under **Cost Management** in the Azure portal.
@@ -60,8 +59,7 @@ To review detailed cost estimate information for a job, select the job in the Jo
 
 _Prices below are shown for example purposes only._
 
-> [!div class="mx-imgBorder"]
-> ![The Job Details pane for a quantum job, with the Cost Estimation tab selected](./media/job-costs/job-cost-details.png)
+:::image type="content" source="./media/job-costs/job-cost-details.png" alt-text="Screenshot of the Job Details pane for a quantum job, with the Cost Estimation tab selected.":::
 
 > [!NOTE]
 > IonQ has $1 (USD) minimum cost to run a job on the IonQ QPU. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.

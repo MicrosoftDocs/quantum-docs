@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 01/27/2022
+ms.date: 09/26/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -33,11 +33,13 @@ from azure.quantum.cirq import AzureQuantumService
 service = AzureQuantumService(
     resource_id="",
     location="",
-    default_target="quantinuum.hqs-lt-s1-apival"
+    default_target="quantinuum.sim.h1-1sc"
 )
 ```
 
 ### List all targets
+
+[!INCLUDE [Quantinuum target name update](quantinuum-name-change.md)]
 
 You can now list all the targets that you have access to, including the
 current queue time and availability.
@@ -47,13 +49,15 @@ print(service.targets())
 ```
 
 ```output
-[<Target name="ionq.qpu", avg. queue time=345 s, Available>,
-<Target name="ionq.simulator", avg. queue time=4 s, Available>,
-<Target name="quantinuum.hqs-lt-s1", avg. queue time=0 s, Available>,
-<Target name="quantinuum.hqs-lt-s1-apival", avg. queue time=0 s, Available>,
-<Target name="quantinuum.hqs-lt-s2", avg. queue time=313169 s, Available>,
-<Target name="quantinuum.hqs-lt-s2-apival", avg. queue time=0 s, Available>,
-<Target name="quantinuum.hqs-lt-s1-sim", avg. queue time=1062 s, Available>]
+[<Target name="quantinuum.qpu.h1-1", avg. queue time=0 s, Degraded>,
+<Target name="quantinuum.sim.h1-1sc", avg. queue time=1 s, Available>,
+<Target name="quantinuum.qpu.h1-2", avg. queue time=217300 s, Unavailable>,
+<Target name="quantinuum.sim.h1-2sc", avg. queue time=0 s, Available>,
+<Target name="quantinuum.sim.h1-1e", avg. queue time=40 s, Available>,
+<Target name="quantinuum.sim.h1-2e", avg. queue time=64 s, Available>,
+<Target name="ionq.qpu", avg. queue time=229 s, Available>,
+<Target name="ionq.simulator", avg. queue time=3 s, Available>,
+<Target name="ionq.qpu.aria-1", avg. queue time=1136774 s, Available>]
 ```
 
 ## Run a simple circuit on the API validator
@@ -115,7 +119,7 @@ Before running a job on the QPU, you can estimate how much it will cost to run. 
 cost = service.estimate_cost(
     program=circuit,
     repetitions=100e,
-    target="quantinuum.hqs-lt-s1"
+    target="quantinuum.sim.h1-1sc"
 )
 
 print(f"Estimated cost: {cost.estimated_total}")
@@ -123,7 +127,7 @@ print(f"Estimated cost: {cost.estimated_total}")
 
 This prints the estimated cost in H-System Credits (HQCs).
 
-For the most current pricing details, see [System Model H1, Powered by Honeywell](xref:microsoft.quantum.providers.quantinuum#quantinuum-system-model-h1), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
+For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
 
 ## Asynchronous workflow using Jobs
