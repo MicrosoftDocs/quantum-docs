@@ -1,6 +1,6 @@
 ---
 author: bradben
-description: Learn how to contribute sample code to the Azure Quantum documentation
+description: Learn how to contribute sample code to Azure Quantum
 ms.author: brbenefield
 ms.date: 09/15/2022
 ms.service: azure-quantum
