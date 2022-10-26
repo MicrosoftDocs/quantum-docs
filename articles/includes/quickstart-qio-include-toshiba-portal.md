@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 05/17/2022
+ms.date: 10/17/2022
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: include
@@ -11,7 +11,7 @@ ms.topic: include
 
 To complete this tutorial, you need
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace with the **Toshiba SQBM+** provider enabled. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Create a new Notebook in your workspace

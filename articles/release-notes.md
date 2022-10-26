@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 10/04/2022
+ms.date: 10/24/2022
 author: bradben
 ms.author: brbenefield
 ms.service: azure-quantum
@@ -16,6 +16,13 @@ uid: microsoft.quantum.relnotes-qdk
 This article outlines updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview).
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
+
+## 2022-10-24
+
+### QDK version 0.27.236950
+
+- Made the DumpMachine consistent between the full-state simulator and sparse simulator by fixing a GitHub issue [microsoft/qsharp-runtime#1081](https://github.com/microsoft/qsharp-runtime/issues/1081) in Q# runtime.
+- Honeywell provider and targets are no longer supported. Customers should use the Quantinuum provider and targets. See more at [Honeywell to Quantinuum migration guide](xref:microsoft.quantum.providers.honeywell.migration).
 
 ## 2022-10-04
 

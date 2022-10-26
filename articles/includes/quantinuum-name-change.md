@@ -1,9 +1,10 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.prod: azure-quantum
+ms.service: azure-quantum
+ms.subservice: core
 ms.topic: include
-ms.date: 09/26/2022
+ms.date: 10/24/2022
 ---
 
 > [!NOTE]

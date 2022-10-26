@@ -26,7 +26,7 @@ To learn how to deploy your [quantum inspired optimization (QIO)](xref:microsoft
 
 You need the following prerequisites to follow the steps in this article:
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - The latest version of the [Quantum Development Kit for Q# and .NET](/azure/quantum/install-overview-qdk?tabs=tabid-local).
 - The [Azure Functions Core Tools](/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools) version 3.x.
 - [Visual Studio Code (VS Code)](https://code.visualstudio.com/) on one of the [supported platforms](https://code.visualstudio.com/docs/supporting/requirements#_platforms).
@@ -143,7 +143,7 @@ When using an editor other than Visual Studio or VS Code, follow the command pro
 
 1. Copy the URL of your `RandomNumber` function from this output to a browser. To the function URL, append the query string *?name=<YOUR_NAME>*, making the full URL *http://http://localhost:7071/api/RandomNumber?name=Alice*. The browser should display a response message that echoes back your query string value. The terminal in which you started your project also displays log output as you make requests.
 
-    :::image type="content" source="media/how-to-publish-qsharp-job-as-azurefunction/run-azure-function-locally-1.png" alt-text="Local execution of the function":::
+    :::image type="content" source="media/how-to-publish-qsharp-job-as-azurefunction/run-azure-function-locally-1.png" alt-text="Screenshot of the result of a local execution of the function in your browser.":::
 
 1. When the function executes locally and returns a response, a notification is raised in VS Code. Information about the function execution is shown in **Terminal** panel.
 1. Press **Ctrl + C** to stop Core Tools and disconnect the debugger.
@@ -249,7 +249,7 @@ You can now prepare the target environment that will host the function. Preparat
 1. Go to the [Azure portal](https://portal.azure.com) and sign in to your Azure account.
 1. Create a function app. Select **Create a resource** in the upper left corner of the portal.
 
-    :::image type="content" source="media/how-to-publish-qsharp-job-as-azurefunction/prepare-cloud-env-1.png" alt-text="Create a resource":::
+    :::image type="content" source="media/how-to-publish-qsharp-job-as-azurefunction/prepare-cloud-env-1.png" alt-text="Screenshot showing how to create a new resource in Azure portal.":::
 
 1. Search for **Function App** and select **Create**.
 1. Provide the following information:
@@ -267,7 +267,7 @@ You can now prepare the target environment that will host the function. Preparat
 1. Validate your input and select **Create**. Deployment will take a few seconds. Wait until a confirmation is displayed.
 1. Navigate to the new function. Select **Configuration** from the *Settings* menu and select **General settings** .  For the **Platform**, select **64 Bit**.
 
-    :::image type="content" source="media/how-to-publish-qsharp-job-as-azurefunction/prepare-cloud-env-2.png" alt-text="Configure 64-Bit-Platform setting":::
+    :::image type="content" source="media/how-to-publish-qsharp-job-as-azurefunction/prepare-cloud-env-2.png" alt-text="Screenshot of the configuration pane showing how to configure 64-Bit-Platform settings for an Azure function.":::
 
     > [!IMPORTANT]
     > Failing to configure the function for a 64-bit platform will result in errors when the compiler tries to load the quantum libraries. These libraries require a 64-bit environment and won't load in a 32-bit environment.
