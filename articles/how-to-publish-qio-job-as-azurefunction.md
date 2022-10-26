@@ -29,7 +29,7 @@ You need the following configuration to complete the steps in this article.
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The latest version of the [Quantum Development Kit for Python](xref:microsoft.quantum.install-qdk.overview.python#install-the-qsharp-python-package).
+- The latest version of the [Quantum Development Kit for Python](xref:microsoft.quantum.install-qdk.overview).
 - The [Azure Functions Core Tools](/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools) version 3.x.
 - [Python versions that are supported by Azure Functions](/azure/azure-functions/supported-languages#languages-by-runtime-version).
 - [Visual Studio Code](https://code.visualstudio.com/) on one of the [supported platforms](https://code.visualstudio.com/docs/supporting/requirements#_platforms).
