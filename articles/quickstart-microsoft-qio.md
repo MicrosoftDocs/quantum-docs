@@ -1,5 +1,5 @@
 ---
-title: Quickstart - Solve an optimization problem 
+title: 'Quickstart: Solve an optimization problem' 
 description: This document provides a step-by-step guide to get you started with optimization on Azure Quantum
 author: SoniaLopezBravo
 ms.author: sonialopez
