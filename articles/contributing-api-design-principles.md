@@ -17,14 +17,14 @@ uid: microsoft.quantum.contributing-qdk.overview.api-design
 ## Introduction
 
 As a programming language and as a platform, Q# enables users to write, run, understand, and explore quantum applications.
-In order to empower users, Q# libraries follow a set of API design principles that guide our designs and help us make usable libraries for the the quantum development community.
+In order to empower users, Q# libraries follow a set of API design principles that guide the designs and help make usable libraries for the the quantum development community.
 This article lists these principles, and gives examples to help guide how to apply them when designing Q# APIs.
 
 > [!TIP]
 > This is a fairly detailed document that's intended to help guide library development and in-depth library contributions.
 > You'll probably find it most useful if you're writing your own libraries in Q#, or if you're contributing larger features to the [Q# libraries repository](https://github.com/microsoft/QuantumLibraries).
 >
-> On the other hand, if you're looking to learn how to contribute to Azure Quantum and the Quantum Development Kit more generally, you can start with the [Contribution guide overview](xref:microsoft.quantum.contributing-qdk.overview).
+> On the other hand, if you're looking to learn how to contribute to Azure Quantum more generally, you can start with the [Contribution guide overview](xref:microsoft.quantum.contributing-qdk.overview).
 > If you're looking for more general recommendations about formatting your Q# code, see the [Q# style guide](xref:microsoft.quantum.contributing-qdk.overview.style).
 
 ## General principles
@@ -289,12 +289,10 @@ This article lists these principles, and gives examples to help guide how to app
 
   *Examples:*
   - Functions, operations, and UDTs published by Microsoft as a
-      part of the quantum simulation feature of the Quantum
-      Development Kit are placed in the
+      part of the quantum simulation feature Azure Quantum are placed in the
       `Microsoft.Quantum.Simulation` namespace.
   - `Microsoft.Quantum.Math` represents a namespace
-      published by Microsoft as part of the Quantum Development
-      Kit pertaining to the mathematics domain area.
+      published by Microsoft as part of Azure Quantum pertaining to the mathematics domain area.
 
 - ✅ **DO** place operations, functions, and user-defined types used
     for specific functionality into a namespace that describes that
@@ -303,10 +301,9 @@ This article lists these principles, and gives examples to help guide how to app
 
   *Examples:*
   - State preparation APIs published by Microsoft as a part of
-      the Quantum Development Kit would be placed into
+      Azure Quantum would be placed into
       `Microsoft.Quantum.Preparation`.
-  - Quantum simulation APIs published by Microsoft as a part of the Quantum
-      Development Kit would be placed into
+  - Quantum simulation APIs published by Microsoft as a part of Azure Quantum would be placed into
       `Microsoft.Quantum.Simulation`.
 
 - ✅ **DO** place operations, functions, and user-defined types used
@@ -320,7 +317,7 @@ This article lists these principles, and gives examples to help guide how to app
       datasets are provided by the @"Microsoft.Quantum.MachineLearning.Datasets"
       namespace.
   - Quantum chemistry APIs published by Microsoft as a part of
-      the Quantum Development Kit should be placed into
+      Azure Quantum should be placed into
       the @"Microsoft.Quantum.Chemistry" namespace. Functionality specific to
       implementing the Jordan--Wigner decomposition may be placed
       in the @"Microsoft.Quantum.Chemistry.JordanWigner" namespace, so that the

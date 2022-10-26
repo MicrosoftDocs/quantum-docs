@@ -1,24 +1,23 @@
 ---
 author: bradben
-description: Learn how to contribute to the Quantum Development Kit (QDK), the Azure Quantum documentation, and the quantum development community.
+description: Learn how to contribute to Azure Quantum, the Azure Quantum documentation, and the quantum development community.
 ms.author: brbenefield
 ms.date: 09/07/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: contributor-guide
 no-loc: ['Q#', '$$v']
-title: Contributing to Azure Quantum documentation
+title: Contributing to Azure Quantum 
 uid: microsoft.quantum.contributing-qdk.overview
 ---
 
 # Contributing to Azure Quantum
 
-The Azure Quantum documentation set and the Quantum Development Kit (QDK) are more than a collection of tools and resources for writing quantum programs.
+As part of the Azure Quantum service, the Azure Quantum documentation set and the Quantum Development Kit (QDK) are more than a collection of tools and resources for writing quantum programs.
 They're part of a broad community of people discovering quantum computing, performing research in quantum algorithms, developing new applications for quantum devices, and otherwise working to make the most out of the quantum programming.
 
 As a member of that community, Azure Quantum aims to offer quantum developers across a wide range of backgrounds with the features they need.
-Your contributions to the documentation and the QDK help in realizing that goal by improving the tools used by other quantum developers, how those tools are documented, and even by creating new features and functionality that helps make the entire quantum programming community a better place to discover and create.
-We're very thankful for your kind contributions, and for the opportunity to work with you to make our community the best that it can be. 
+Your contributions to Azure Quantum help in realizing that goal by improving the tools used by other quantum developers, how those tools are documented, and even by creating new features and functionality that helps make the entire quantum programming community a better place to discover and create.
 
 This article provides some advice on how to make your contribution as useful as possible to the broader quantum programming community.
 
@@ -34,16 +33,13 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 ## What kinds of contributions help the community?
 
 There are lots of different ways to help the quantum programming community through your contributions.
-This guide focuses on three ways that are especially relevant to Azure Quantum and the Quantum Development Kit.
+This guide focuses on three ways that are especially relevant to Azure Quantum.
 All of these ways are critical to building a quantum community that empowers people.
-That said, this is definitely not an exhaustive list — we encourage you to explore other ways to help the community build on the promise of quantum programming!
+That said, this is definitely not an exhaustive list — you are encouraged to explore other ways to help the community build on the promise of quantum programming!
 
-- **Reporting bugs.** The first step in fixing bugs and other kinds of problems is to identify them. If you've found a bug in the documentation or in the QDK, letting us know helps us fix it and make a better set of tools for the quantum programming community.
-- **Improving documentation.** Any documentation set can always be better, can cover more details, and be made more accessible.
-- **Contributing code.** Of course, one of the most direct ways to contribute is by adding new code to the Quantum Development Kit.
-
-These different kinds of contributions are all immensely valuable, and are greatly appreciated.
-In the rest of the guide, we'll offer advice on how to make each kind of contribution.
+- **[Reporting bugs](xref:microsoft.quantum.contributing-qdk.overview.reporting)** - The first step in fixing bugs and other kinds of problems is to identify them. If you've found a bug in Azure Quantum, reporting it helps make a better set of tools for the quantum programming community.
+- **[Improving documentation](xref:microsoft.quantum.contributing-qdk.overview.docs)** - Any documentation set can always be better, can cover more details, and be made more accessible.
+- **[Contributing code](xref:microsoft.quantum.contributing-qdk.overview.code)** - Of course, one of the most direct ways to contribute is by adding new code to the Quantum Development Kit.
 
 ## Where do contributions go?
 
@@ -61,7 +57,7 @@ Each of these different pieces finds its home in a different GitHub repository, 
 - [**MicrosoftDocs/quantum-docs**](https://github.com/MicrosoftDocs/quantum-docs): Source code for [Azure Quantum documentation](xref:microsoft.quantum.azure-quantum-overview).
 
 > [!NOTE]
-> We unfortunately cannot accept code and documentation contributions on the [**microsoft/Quantum-NC**](https://github.com/microsoft/Quantum-NC) repository at this time, but we still very much appreciate bug reports.
+> Unfortunately, code and documentation contributions cannot be accepted on the [**microsoft/Quantum-NC**](https://github.com/microsoft/Quantum-NC) repository at this time, but  bug reports are still very much appreciated.
 
 There are also a few other, more specialized repositories focusing on auxiliary functionality related to Azure Quantum.
 
@@ -70,7 +66,7 @@ There are also a few other, more specialized repositories focusing on auxiliary 
 
 ## Next steps
 
-Thanks for being a part of the Azure Quantum community, we're excited for your contributions!
+Thanks for being a part of the Azure Quantum community!
 If you'd like to learn more about contributing, please continue with one of the following guides.
 
 - [Learn how to report bugs](xref:microsoft.quantum.contributing-qdk.overview.reporting)

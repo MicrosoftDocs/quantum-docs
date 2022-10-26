@@ -8,17 +8,17 @@ ms.subservice: qdk
 ms.topic: contributor-guide
 ms.custom: kr2b-contr-experiment
 no-loc: ['Q#', '$$v']
-title: Contribute samples to the Azure Quantum documentation
+title: Contribute samples to Azure Quantum 
 uid: microsoft.quantum.contributing-qdk.overview.samples
 ---
 
-# Contribute samples to the Quantum Development Kit
+# Contribute samples to Azure Quantum
 
-Thank you for your interest in contributing samples to the Azure Quantum [samples repository](https://github.com/Microsoft/Quantum) and making the quantum development community a better place!
+Thank you for your interest in contributing samples to the [Microsoft Quantum Development Kit samples](https://github.com/Microsoft/Quantum) and making the quantum development community a better place!
 
 For additional resources on creating your sample, see
 
-- [Contributing code to the Quantum Development Kit](xref:microsoft.quantum.contributing-qdk.overview.code)
+- [Contributing code to Azure Quantum](xref:microsoft.quantum.contributing-qdk.overview.code)
 - [The  Q# programming language style guide](xref:microsoft.quantum.contributing-qdk.overview.style)
 - [The Q# quantum programming language user guide](xref:microsoft.quantum.user-guide-qdk.overview)
 - [API design principles for the Q# language](xref:microsoft.quantum.contributing-qdk.overview.api-design)
@@ -63,9 +63,9 @@ Not all samples will have the exact same set of files (for example, some samples
 
 ## Anatomy of a sample README file
 
-A `README.md` file is not only helpful for users to get started with your sample, but is required for `docs.microsoft.com/samples` to find and publish your contribution. There should only be one `README.md` file per sample.
+A `README.md` file is not only helpful for users to get started with your sample, but is required for `learn.microsoft.com/samples` to find and publish your contribution. There should only be one `README.md` file per sample.
 
-Your `README.md` should start with some metadata that helps `docs.microsoft.com/samples` find and publish your sample. This metadata is provided as a [YAML header](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html#yaml-header) that indicates what languages your sample covers (typically, this will be `qsharp`, `csharp`, and `python`), and what products your sample covers (typically, just `qdk`).
+Your `README.md` should start with some metadata that helps `learn.microsoft.com/samples` find and publish your sample. This metadata is provided as a [YAML header](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html#yaml-header) that indicates what languages your sample covers (typically, this will be `qsharp`, `csharp`, and `python`), and what products your sample covers (typically, just `qdk`).
 
 > [!NOTE]
 > To view how this sample renders live, see [Validating Quantum Mechanics with the CHSH Game](/samples/microsoft/quantum/validating-quantum-mechanics/).
@@ -85,7 +85,7 @@ Your `README.md` should start with some metadata that helps `docs.microsoft.com/
 ```
 
 > [!IMPORTANT]
-> The `page_type: sample` key in the header is **required** for your sample to appear at `docs.microsoft.com/samples`.
+> The `page_type: sample` key in the header is **required** for your sample to appear at `learn.microsoft.com/samples`.
 > Similarly, the `product` and `language` keys are critical for helping users to search for and find your sample.
 
 
@@ -100,7 +100,7 @@ After that, it's helpful to give a short intro that says what your new sample do
     - Using Q# to understand superposition and entanglement.
 
     In this sample, you can use Q# to prepare qubits in an entangled state, and to check that measuring these qubits lets you win a game known as the _CHSH game_ more often than you can without entanglement.
-    This game helps us understand entanglement, and has even been used experimentally to help test that the universe really is quantum mechanical in nature.
+    This game helps you understand entanglement, and has even been used experimentally to help test that the universe really is quantum mechanical in nature.
 ```
 
 Users of your sample will also appreciate knowing what they need to run it (for example, do users just need the Quantum Development Kit itself, or do they need additional resources such as node.js or a Microsoft Azure subscription?):

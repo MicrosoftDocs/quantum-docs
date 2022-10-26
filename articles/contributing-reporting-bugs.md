@@ -11,16 +11,16 @@ title: Reporting Azure Quantum bugs
 uid: microsoft.quantum.contributing-qdk.overview.reporting
 ---
 
-# Reporting Quantum Development Kit bugs #
+# Reporting Azure Quantum bugs #
 
-If you think you've found a bug in a component of the Quantum Development Kit, we would very much appreciate a report.
-After all, someone else may be struggling with the same issue as well; letting us know helps us to get to fixing it for everyone.
-The first step in reporting a bug is to start by looking through the existing issues found on each repository, as it's very possible that someone else has reported the same problem.
+If you think you've found a bug in a component of Azure Quantum, report the issue is very much appreciated.
+After all, someone else may be struggling with the same issue as well; reporting the issue helps to get it fixed for everyone.
+The first step in reporting a bug is to start by looking through the existing issues found on each repository, as it's very possible that someone else has reported the same problem. For a list of Azure Quantum repositories and what is stored in each one, see [Contributing to Azure Quantum](xref:microsoft.quantum.contributing-qdk.overview#where-do-contributions-go).
 
-If the issue has already been found before, it may be helpful to provide additional information or context that can help us to diagnose and solve the problem.
+If the issue has been found previously, it may be helpful to provide additional information or context that can help to diagnose and solve the problem.
 In that case, please feel free to participate in discussions on the issue.
 
-If your bug hasn't been reported before, then we'd appreciate if you open a new issue on the repository for the component in question.
+If your bug hasn't been reported before, then you can open a new issue in the [repository for the component in question](xref:microsoft.quantum.contributing-qdk.overview#where-do-contributions-go). 
 When creating a new issue, you'll be prompted with a template that suggests some information that is often helpful in making informative bug reports:
 
 - Steps to reproduce the problem
