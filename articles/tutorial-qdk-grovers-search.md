@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
 no-loc: ['Q#', '$$v']
-title: Tutorial - Implement Grover's search algorithm in Q# 
+title: 'Tutorial: Implement Grover's algorithm in Q#'
 uid: microsoft.quantum.tutorial-qdk.grovers
 ---
 
@@ -480,7 +480,7 @@ if __name__ == "__main__":
 
 The program generates the following histogram:
 
-:::image type="content" source="~/media/grovers-histogram.png" alt-text="Histogram with the results of running several time the Grover's algorithm." :::
+:::image type="content" source="~/media/grovers-histogram.png" alt-text="Histogram with the results of running several times the Grover's algorithm." :::
 
 As you can see in the histogram, the algorithm outputs the solutions to the search problem (1, 3, 7 and 21) with much higher probability than the non-solutions. You can think of Grover's algorithm as a quantum random generator that is purposefully biased towards those indices that are solutions to the search problem.
 
