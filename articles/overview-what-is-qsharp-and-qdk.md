@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
 no-loc: ['Q#', '$$v']
-title: What are the Q# programming language & QDK?
+title: Introduction to Q# & Quantum Development Kit
 uid: microsoft.quantum.overview.q-sharp
 ---
 
@@ -75,6 +75,7 @@ Everything you need to write and run Q# programs, including the Q# compiler, the
 
 The following diagram shows the stages through which a quantum program goes from idea to complete implementation on Azure Quantum, and the tools offered by the QDK for each stage.
 
+:::image type="content" source="~/media/quantum-development-kit-flow-diagram.svg" alt-text="Diagram showing the workflow of quantum programming development.":::
 ![qdk workflow](~/media/quantum-development-kit-flow-diagram.svg)
 
 > [!Note]
@@ -114,7 +115,7 @@ Once you’ve created an Azure Quantum workspace, you can submit your Q# program
 
 The following diagram shows the basic workflow after you submit your job:
 
-![azure quantum job flow](~/media/azure-quantum-flow-diagram-providers.svg)
+:::image type="content" source="~/media/azure-quantum-flow-diagram-providers.svg" alt-text="Diagram showing the worklow after a job submission to Azure Quantum.":::
 
 Azure Quantum offers some of the most compelling and diverse quantum resources available today from industry leaders. With Azure Quantum and the QDK you can write [quantum computing](xref:microsoft.quantum.overview.understanding) and [quantum-inspired optimization](xref:microsoft.quantum.optimization.concepts.overview.introduction) programs, and submit them to Azure Quantum to run on [quantum hardware](xref:microsoft.quantum.reference.qc-target-list) and [optimization solvers](xref:microsoft.quantum.reference.qio-target-list). 
 
