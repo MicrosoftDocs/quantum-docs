@@ -1,5 +1,5 @@
 ---
-title: Quickstart - Solve an optimization problem with online notebooks
+title: 'Quickstart: Solve an optimization problem with online notebooks'
 description: This document provides a step-by-step guide to get you started with optimization in the Azure Quantum portal
 author: bradben
 ms.author: brbenefield
