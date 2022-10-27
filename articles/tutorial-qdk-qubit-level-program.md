@@ -1,6 +1,6 @@
 ---
 
-title: Tutorial - Write & simulate qubit-level programs in Q#
+title: 'Tutorial: Write & simulate qubit-level programs in Q#'
 description: In this tutorial, learn how to write and simulate a quantum program that operates at the individual qubit level.
 author: bradben
 ms.author: brbenefield
