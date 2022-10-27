@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Q#', '$$v']
-title: Get started with Q# and an Azure Quantum notebook
+title: 'Quickstart: Run a Q# and Python notebook'
 uid: microsoft.quantum.get-started.notebooks
 ---
 
