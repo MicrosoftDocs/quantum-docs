@@ -91,7 +91,7 @@ If this happens to you, it doesn't mean that it's a bad contribution, as there a
 Perhaps most commonly, a contribution to the quantum programming community is a really good one, but the QDK repositories aren't the right place to develop it.
 In such cases, you are strongly encourage you to make your own repository --- part of the strength of the QDK is that it's easy to make and distribute your own libraries using GitHub and NuGet.org, the same way that Azure Quantum distributes the [libraries](xref:microsoft.quantum.apiref-intro) today.
 
-At other times, a good contribution may be rejected simply because th Azure Quantum team isn't yet ready to maintain and develop it.
+At other times, a good contribution may be rejected simply because the Azure Quantum team isn't yet ready to maintain and develop it.
 It can be difficult to do everything, so features are planned out as a roadmap.
 This can be another case where releasing a feature as a third-party library can make a lot of sense.
 Alternatively, you may be asked for your help in modifying a feature to better fit into the roadmap so that the best work can be done with it.
