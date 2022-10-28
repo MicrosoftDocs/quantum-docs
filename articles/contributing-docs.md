@@ -2,12 +2,12 @@
 author: bradben
 description: Learn how to contribute conceptual or API content to the Azure Quantum documentation set.
 ms.author: brbenefield
-ms.date: 09/07/2022
+ms.date: 10/28/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: contributor-guide
 no-loc: ['Q#', '$$v']
-title: Contributing documentation to Microsoft Azure Quantum 
+title: Contributing documentation
 uid: microsoft.quantum.contributing-qdk.overview.docs
 ---
 

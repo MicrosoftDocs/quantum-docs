@@ -2,12 +2,12 @@
 author: bradben
 description: Learn how to report bugs or issues with the Quantum Development Kit (QDK).
 ms.author: brbenefield
-ms.date: 05/13/2022
+ms.date: 10/28/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: contributor-guide
 no-loc: ['Q#', '$$v']
-title: Reporting Azure Quantum bugs
+title: Reporting bugs
 uid: microsoft.quantum.contributing-qdk.overview.reporting
 ---
 

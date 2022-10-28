@@ -8,7 +8,7 @@ ms.subservice: qdk
 ms.topic: contributor-guide
 ms.custom: kr2b-contr-experiment
 no-loc: ['Q#', '$$v']
-title: Contribute code to Azure Quantum 
+title: Contribute code
 uid: microsoft.quantum.contributing-qdk.overview.code
 ---
 

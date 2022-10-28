@@ -2,13 +2,13 @@
 author: bradben
 description: Learn how to contribute sample code to Azure Quantum
 ms.author: brbenefield
-ms.date: 09/15/2022
+ms.date: 10/28/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: contributor-guide
 ms.custom: kr2b-contr-experiment
 no-loc: ['Q#', '$$v']
-title: Contribute samples to Azure Quantum 
+title: Contribute samples
 uid: microsoft.quantum.contributing-qdk.overview.samples
 ---
 

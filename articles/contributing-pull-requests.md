@@ -8,7 +8,7 @@ ms.subservice: qdk
 ms.topic: contributor-guide
 ms.custom: kr2b-contr-experiment
 no-loc: ['Q#', '$$v']
-title: Opening pull requests for Azure Quantum
+title: Opening pull requests
 uid: microsoft.quantum.contributing-qdk.overview.pulls
 ---
 
