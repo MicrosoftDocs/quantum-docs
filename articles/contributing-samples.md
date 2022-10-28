@@ -1,24 +1,31 @@
 ---
 author: bradben
-description: Learn how to contribute sample code to the Quantum Development Kit (QDK).
+description: Learn how to contribute sample code to Azure Quantum
 ms.author: brbenefield
-ms.date: 05/13/2022
+ms.date: 10/28/2022
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: conceptual
+ms.topic: contributor-guide
 ms.custom: kr2b-contr-experiment
 no-loc: ['Q#', '$$v']
-title: Contribute samples to the Quantum Development Kit
+title: Contribute samples
 uid: microsoft.quantum.contributing-qdk.overview.samples
 ---
 
-# Contribute samples to the Quantum Development Kit
+# Contribute samples to Azure Quantum
 
-If you're interested in [contributing code](contributing-code.md) to the [samples repository](https://github.com/Microsoft/Quantum), thank you for making the quantum development community a better place!
+Thank you for your interest in contributing samples to the [Microsoft Quantum Development Kit samples](https://github.com/Microsoft/Quantum) and making the quantum development community a better place!
+
+For additional resources on creating your sample, see
+
+- [Contributing code to Azure Quantum](xref:microsoft.quantum.contributing-qdk.overview.code)
+- [The  Q# programming language style guide](xref:microsoft.quantum.contributing-qdk.overview.style)
+- [The Q# quantum programming language user guide](xref:microsoft.quantum.user-guide-qdk.overview)
+- [API design principles for the Q# language](xref:microsoft.quantum.contributing-qdk.overview.api-design)
 
 ## The QDK samples repository
 
-To help you prepare your contribution to help out as much as possible, it's helpful to take a quick look at how the samples repository is laid out:
+To help you prepare your contribution, let's take a look at how the samples repository is laid out:
 
 ```plaintext
 microsoft/Quantum
@@ -37,12 +44,12 @@ microsoft/Quantum
    ⋮
 ```
 
-That is, the samples in the [microsoft/Quantum repository](https://github.com/microsoft/Quantum) are broken down by subject area into different folders such as `algorithms/`, `arithmetic/`, or `characterization/`.
-Within the folder for each subject area, each sample consists of a single folder that collects everything a user will need to explore and make use of that sample.
+The samples in the [microsoft/Quantum] (https://github.com/microsoft/Quantum) repository are broken down by subject area into different folders such as `algorithms/`, `arithmetic/`, or `characterization/`.
+Within the folder for each subject area, each sample consists of a single folder that contains all the resources that a user needs to explore and make use of that sample.
 
 ## How samples are structured
 
-Looking at the files that make up each folder, let's dive into the [`algorithms/chsh-game/`](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/chsh-game) sample.
+For an example, navigate to the [`algorithms/chsh-game/`](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/chsh-game) sample project and look at the files in the folder. 
 
 | File              | Description                                                |
 |-------------------|------------------------------------------------------------|
@@ -52,18 +59,16 @@ Looking at the files that make up each folder, let's dive into the [`algorithms/
 | `host.py`         | Python host program used to run the sample                 |
 | `README.md`       | Documentation on what the sample does and how to use it    |
 
-Not all samples will have the exact same set of files (for example, some samples may be C#-only, others may not have a Python host, or some samples may require auxillary data files to work).
+Not all samples will have the exact same set of files (for example, some samples may be C# only, others may not have a Python host, or some samples may require auxillary data files to work).
 
-## Anatomy of a helpful README file
+## Anatomy of a sample README file
 
-One especially important file, though, is the `README.md` file, as that's what users need to get started with your sample!
+A `README.md` file is not only helpful for users to get started with your sample, but is required for `learn.microsoft.com/samples` to find and publish your contribution. There should only be one `README.md` file per sample.
 
-Each `README.md` should start with some metadata that helps `learn.microsoft.com/samples` find your contribution.
+Your `README.md` should start with some metadata that helps `learn.microsoft.com/samples` find and publish your sample. This metadata is provided as a [YAML header](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html#yaml-header) that indicates what languages your sample covers (typically, this will be `qsharp`, `csharp`, and `python`), and what products your sample covers (typically, just `qdk`).
 
-> [!div class="nextstepaction"]
-> [See how the chsh-game sample is rendered](/samples/microsoft/quantum/validating-quantum-mechanics/)
-
-This metadata is provided as a [YAML header](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html#yaml-header) that indicates what languages your sample covers (typically, this will be `qsharp`, `csharp`, and `python`), and what products your sample covers (typically, just `qdk`).
+> [!NOTE]
+> To view how this sample renders live, see [Validating Quantum Mechanics with the CHSH Game](/samples/microsoft/quantum/validating-quantum-mechanics/).
 
 ```markdown
     ---
@@ -80,8 +85,9 @@ This metadata is provided as a [YAML header](https://dotnet.github.io/docfx/spec
 ```
 
 > [!IMPORTANT]
-> The `page_type: sample` key in the header is required for your sample to appear at `learn.microsoft.com/samples`.
-> Similarly, the `product` and `language` keys are critical for helping users to find and run your sample.
+> The `page_type: sample` key in the header is **required** for your sample to appear at `learn.microsoft.com/samples`.
+> Similarly, the `product` and `language` keys are critical for helping users to search for and find your sample.
+
 
 After that, it's helpful to give a short intro that says what your new sample does:
 
@@ -94,10 +100,10 @@ After that, it's helpful to give a short intro that says what your new sample do
     - Using Q# to understand superposition and entanglement.
 
     In this sample, you can use Q# to prepare qubits in an entangled state, and to check that measuring these qubits lets you win a game known as the _CHSH game_ more often than you can without entanglement.
-    This game helps us understand entanglement, and has even been used experimentally to help test that the universe really is quantum mechanical in nature.
+    This game helps you understand entanglement, and has even been used experimentally to help test that the universe really is quantum mechanical in nature.
 ```
 
-Users of your sample will also appreciate knowing what they need to run it (for example, do users just need the Quantum Development Kit itself, or do they need additional software such as node.js?):
+Users of your sample will also appreciate knowing what they need to run it (for example, do users just need the Quantum Development Kit itself, or do they need additional resources such as node.js or a Microsoft Azure subscription?):
 
 ```markdown
     ## Prerequisites
@@ -132,10 +138,10 @@ With all that in place, you can tell users how to run your sample:
 
     ### C# in Visual Studio 2022
 
-    Open the folder containing this sample in Visual Studio ("Open a local folder"
-    from the Getting Started screen or "File → Open → Folder..." from the menu bar)
+    Open the folder containing this sample in Visual Studio (**Open a local folder**
+    from the **Getting Started** screen or **File → Open → Folder...** from the menu bar)
     and set `CHSHGame.csproj` as the startup project. 
-    Press Start in Visual Studio to run the sample. 
+    Press **Start** in Visual Studio to run the sample. 
 ```
 
 Finally, it's helpful to tell users what each file in your sample does, and where they can go for more information:
@@ -154,4 +160,4 @@ Finally, it's helpful to tell users what each file in your sample does, and wher
 ```
 
 > [!WARNING]
-> Make sure to use absolute URLs here, since your sample will appear at a different URL when rendered at [Browse code samples](/samples)!
+> Make sure to use absolute URLs here, since your sample will appear at a different URL when rendered at [Microsoft sample browser](/samples)!
