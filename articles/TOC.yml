@@ -322,18 +322,18 @@
     href: /cli/azure/quantum
   - name: Contribute to Azure Quantum
     items:
-    - name: How to contribute to Azure Quantum
+    - name: How to contribute
       href: contributing-overview.md
     - name: Report bugs
       href: contributing-reporting-bugs.md
-    - name: Contribute to documentation
+    - name: Contribute documentation
       href: contributing-docs.md
-    - name: Opening pull requests
-      href: contributing-pull-requests.md
     - name: Contribute code
       href: contributing-code.md
     - name: Contribute samples
       href: contributing-samples.md
+    - name: Open pull requests
+      href: contributing-pull-requests.md
     - name: Q# style guide for contributors
       href: contributing-style-guide.md
     - name: Q# API design guide for contributors
