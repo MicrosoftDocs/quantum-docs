@@ -39,7 +39,7 @@ We try to respond to all applications for credits within one (1) month of the ap
 
 Your approval notice will contain a link to an onboarding survey, which you will need to fill out completely. Once you have completed the survey, your credits will be made available within two (2) weeks or on the start date of your credits grant, whichever is later.
 
-You will receive a notice once your credits are available to be used, with detailed instruction to do so.
+When your credits are available to be used, you will receive detailed instructions on to do so.
 
 ### My credits are available to use. What is the onboarding process?
 
