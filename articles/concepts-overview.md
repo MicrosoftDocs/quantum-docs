@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
-title: Quantum computing history and background
+title: Quantum computing history 
 uid: microsoft.quantum.concepts.intro
 ---
 
@@ -31,7 +31,6 @@ A quantum computer isn't a supercomputer that can do everything faster or that c
 
 
 ## Use Azure Quantum and the Quantum Development Kit to do quantum computing
-
 
 Quantum computing is evolving quickly. [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) is an open, flexible, and future-proofed cloud ecosystem for quantum computing that empowers you to deliver impact with your quantum applications, exploration, and research. Azure Quantum provides a diverse set of quantum computing solutions and technologies.
 
