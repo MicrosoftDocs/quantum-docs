@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: Learn about using Dirac notation to represent quantum states and to simulate quantum operations.
-ms.author: brbenefield
+ms.author: sonialopez
 ms.date: 11/18/2021
 ms.service: azure-quantum
 ms.subservice: core
