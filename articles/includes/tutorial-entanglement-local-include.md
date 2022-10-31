@@ -1,6 +1,6 @@
 ---
-author: bradben
-ms.author: brbenefield
+author: SoniaLopezBravo
+ms.author: sonialopez
 ms.date: 05/09/2022
 ms.service: azure-quantum
 ms.subservice: qdk
