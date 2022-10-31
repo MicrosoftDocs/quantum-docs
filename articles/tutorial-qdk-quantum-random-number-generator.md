@@ -2,7 +2,7 @@
 author: bradben
 description: Build a Q# project that demonstrates fundamental quantum concepts like superposition by creating a quantum random number generator.
 ms.author: brbenefield
-ms.date: 04/06/2022
+ms.date: 10/31/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -86,7 +86,7 @@ By putting the qubit in superposition with the [`H`](xref:Microsoft.Quantum.Intr
 
 In the [Bloch sphere](xref:microsoft.quantum.glossary-qdk#bloch-sphere), the north pole represents the classical value **0** and the south pole represents the classical value **1**. Any superposition can be represented by a point on the sphere (represented by an arrow). The closer the end of the arrow to a pole the higher the probability the qubit collapses into the classical value assigned to that pole when measured. For example, the qubit state represented by the arrow in the following figure has a higher probability of giving the value **0** if you measure it.
 
-<img src="~/media/qrng-Bloch.png" width="175" alt="A diagram showing a qubit state with a high probability of measuring zero.">
+:::image type="content" source="~/media/qrng-Bloch.png>" alt-text="A diagram showing a qubit state with a high probability of measuring zero." width="175":::
 
 You can use this representation to visualize what the code is doing:
 
