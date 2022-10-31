@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: Build a Q# project that demonstrates fundamental quantum concepts like superposition by creating a quantum random number generator.
-ms.author: brbenefield
+ms.author: sonialopez
 ms.date: 10/31/2022
 ms.service: azure-quantum
 ms.subservice: qdk
