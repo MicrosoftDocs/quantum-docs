@@ -72,7 +72,7 @@ The Aria plan is a monthly subscription plan with access to the IonQ Aria 23-qub
 Minimum of $1 (USD) per program execution.  
 
 > [!NOTE]
-> Once you have consumed the equivalent cost of the monthly subscription, the over-spending will be charge as a pay-as-you-go plan. 
+> Once you have consumed the equivalent cost of the monthly subscription, any overspending is charged as a pay-as-you-go plan.
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
