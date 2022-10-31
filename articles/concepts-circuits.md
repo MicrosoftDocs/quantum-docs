@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: Learn how to visually represent simple and complex quantum operations with quantum circuit diagrams.
-ms.author: brbenefield
+ms.author: sonialopez
 ms.date: 10/04/2021
 ms.service: azure-quantum
 ms.subservice: core
