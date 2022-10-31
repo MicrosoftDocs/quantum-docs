@@ -2,11 +2,11 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the IonQ quantum computing provider
 ms.author: sonialopez
-ms.date: 10/19/2022
+ms.date: 10/31/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
-title: IonQ quantum computing provider for Azure Quantum
+title: IonQ quantum computing provider
 uid: microsoft.quantum.providers.ionq
 ---
 
@@ -93,9 +93,7 @@ IonQ Aria is IonQ's latest generation of trapped-ion quantum computer. With a 23
 | T2 | 1 s| 
 | Single-qubit gate | 135 µs | 
 | Two-qubit gate | 600 µs | 
-| Readout |  | 
-| Register reset |  | 
-| Coherence time / gate duration |  | 
+
 
 ### System fidelity
 
@@ -104,7 +102,7 @@ IonQ Aria is IonQ's latest generation of trapped-ion quantum computer. With a 23
 | Single-qubit gate | 99.95% (SPAM corrected) |
 | Two-qubit gate | 99.6% (not SPAM corrected) |
 | SPAM* | 99.61% |
-| Geometric mean op ||
+
 
 \* State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.
 
