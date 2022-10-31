@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: Learn about the Microsoft QDK width counter, which uses the Quantum trace simulator to count the number of qubits allocated and borrowed by operations in a Q# program.
-ms.author: brbenefield
+ms.author: sonialopez
 ms.date: 05/11/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
