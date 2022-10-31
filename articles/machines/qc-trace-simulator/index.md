@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: Learn how to use the Microsoft quantum computer trace simulator to debug classical code and to estimate resource requirements of a Q# program.
-ms.author: brbenefield
+ms.author: sonialopez
 ms.date: 05/11/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
