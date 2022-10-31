@@ -1,6 +1,6 @@
 ---
 
-title: Write and simulate qubit-level programs in Q#
+title: 'Tutorial: Write & simulate qubit-level programs in Q#'
 description: In this tutorial, learn how to write and simulate a quantum program that operates at the individual qubit level.
 author: bradben
 ms.author: brbenefield
@@ -21,8 +21,9 @@ Although Q# was primarily created as a high-level programming language for large
 
 
 > [!NOTE]
->This lower level view of quantum information processing is often described in terms of [**quantum circuits**](xref:microsoft.quantum.concepts.circuits), which represent the sequential application of gates, or *operations*, to specific qubits of a system. Thus, the single- and multi-qubit operations you sequentially apply can be readily represented in [circuit diagrams](xref:microsoft.quantum.glossary-qdk#quantum-circuit-diagram). For example, the full three-qubit quantum Fourier transform used in this tutorial has the following representation as a circuit:
->![QFT circuit](./media/qft_full.PNG)
+> This lower level view of quantum information processing is often described in terms of [**quantum circuits**](xref:microsoft.quantum.concepts.circuits), which represent the sequential application of gates, or *operations*, to specific qubits of a system. Thus, the single- and multi-qubit operations you sequentially apply can be readily represented in [circuit diagrams](xref:microsoft.quantum.glossary-qdk#quantum-circuit-diagram). For example, the full three-qubit quantum Fourier transform used in this tutorial has the following representation as a circuit:
+> :::image type="content" source="./media/qft_full.PNG" alt-text="Diagram of a Quantum Fourier Transform circuit." :::
+
 
 In this tutorial, you'll learn how to
 
@@ -96,7 +97,7 @@ Next, apply the operations that comprise the `Perform3qubitQFT` operation itself
 
 The first operation applied is the `H` (Hadamard) operation to the first qubit:
 
-![Circuit diagram for three qubit QFT through first Hadamard](./media/qft_firstH.PNG)
+:::image type="content" source="./media/qft_firstH.PNG" alt-text="Diagram showing a circuit for three qubit QFT through first Hadamard.":::
 
 To apply an operation to a specific qubit from a register (for example, a single `Qubit` from an array `Qubit[]`), use standard index notation.
 So, applying the `H` operation to the first qubit of the register `qs` takes the form:
@@ -119,7 +120,7 @@ Note that the control qubit argument must be an array, even if it is for a singl
 
 The next operations are the `R1` operations that act on the first qubit (and controlled by the second and third qubits):
 
-![Circuit diagram for three qubit QFT through first qubit](./media/qft_firstqubit.PNG)
+:::image type="content" source="./media/qft_firstqubit.PNG" alt-text="Diagram showing a circuit for three qubit Quantum Fourier Transform through first qubit." :::
 
 In your Q# file, call these operations with these statements:
 
@@ -151,7 +152,8 @@ This is necessary because the nature of the quantum Fourier transform outputs th
 
 Now you have finished writing the qubit-level operations of the quantum Fourier transform into your Q# operation:
 
-![Three qubit quantum Fourier transform circuit diagram](./media/qft_full.PNG)
+:::image type="content" source="./media/qft_full.PNG" alt-text="Diagram showing a circuit for three qubit Quantum Fourier Transform." :::
+
 
 ### Deallocate qubits
 

@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
-title: Quantum resources estimator - Quantum Development Kit
+title: Resources estimator - Quantum Development Kit
 uid: microsoft.quantum.machines.overview.resources-estimator
 ---
 

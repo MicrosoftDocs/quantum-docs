@@ -5,9 +5,9 @@ ms.author: brbenefield
 ms.date: 04/29/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
-ms.topic: conceptual
+ms.topic: overview
 no-loc: ['Q#', '$$v']
-title: The Q# programming language user guide
+title: The Q# user guide
 uid: microsoft.quantum.user-guide-qdk.overview
 ---
 

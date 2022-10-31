@@ -6,7 +6,7 @@ ms.date: 03/09/2022
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
-title: Submit Q# jobs to Azure Quantum
+title: Submit Q# jobs 
 uid: microsoft.quantum.submit-jobs
 zone_pivot_groups: azurequantum-quantumcomputing-ide
 ---

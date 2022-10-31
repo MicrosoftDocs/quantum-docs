@@ -584,7 +584,7 @@ signal_wo_noise = [
 print(plt.plot(ns, signal_wo_noise))
 ```
 
-![ramsey signal ideal](~/media/ramsey-signal-ideal-model.png)
+:::image type="content" source="media/ramsey-signal-ideal-model.png" alt-text="Plot of the Ramsey signal in the absense of noise.":::
 
 On the other hand, if the $S$ operation has some finite amplitude damping noise, then the signal will eventually decay:
 
@@ -617,15 +617,15 @@ print(plt.plot(ns, signal, label='With Amplitude Damping Noise'))
 plt.legend()
 ```
 
-![ramsey signal noise](~/media/ramsey-signal-noise-model.png)
+:::image type="content" source="media/ramsey-signal-noise-model.png" alt-text="Plot of the ideal Ramsey signal and in the presence of noise.":::
 
 ## Representing noise in continuous-time rotations
 
-So far, we have mostly considered quantum operations such as [`H`](xref:Microsoft.Quantum.Intrinsic.H) or [`X`](xref:Microsoft.Quantum.Intrinsic.X).
+So far, you have mostly considered quantum operations such as [`H`](xref:Microsoft.Quantum.Intrinsic.H) or [`X`](xref:Microsoft.Quantum.Intrinsic.X).
 In particular, these operations are both of type `Qubit => Unit is Adj + Ctl`, indicating that they do not have any additional parameters beyond the target qubit that they act upon.
 
 By contrast, the [`Rz` operation](xref:Microsoft.Quantum.Intrinsic.Rz) has type `(Double, Qubit) => Unit is Adj + Ctl`, representing the angle of the rotation to be performed as well as the target.
-In general, the noise incurred by `Rz(0.123)` need not be the same as the noise incurred by `Rz(0.456)`, such that we also require a way to represent *continuous-time* noise as well as the discrete case considered above.
+In general, the noise incurred by `Rz(0.123)` need not be the same as the noise incurred by `Rz(0.456)`, such that you also require a way to represent *continuous-time* noise as well as the discrete case considered above.
 
 In closed quantum systems (that is, quantum systems that evolve without noise), continuous-time evolution is given by a Hamiltonian operator $H$ that represents the time derivative of a quantum state as per the Schrödinger equation:
 $$
@@ -641,7 +641,7 @@ $$
 \end{aligned}
 $$
 
-By analogy, we can represent the derivative of a density operator in the absence of noise by rearranging the Schrödinger equation:
+By analogy, you can represent the derivative of a density operator in the absence of noise by rearranging the Schrödinger equation:
 $$
 \begin{equation*}
     \frac{\partial}{\partial t} \rho(t) = -i[H, \rho],
@@ -658,12 +658,12 @@ $$
 $$
 where $\{A, B\} \mathrel{:=} AB + BA$ is the *anticommutator* of $A$ with $B$.
 
-To represent the above derivative as a single matrix as we did with $U(t)$ in the closed systems case, we need a way to turn left- and right-multiplication of a matrix into left-multiplication of a vector. We can use what's known as the *column-stacking convention* to turn $\rho$ into a vector $|\rho⟫$; for example,
+To represent the above derivative as a single matrix as you did with $U(t)$ in the closed systems case, you need a way to turn left- and right-multiplication of a matrix into left-multiplication of a vector. You can use what's known as the *column-stacking convention* to turn $\rho$ into a vector $|\rho⟫$; for example,
 $$
     \Bigg|\left(\begin{matrix} a & b \\ c & d \end{matrix}\right)\Bigg\rangle\!\!\!\!\Bigg\rangle =
     \left(\begin{matrix}a \\ c \\ b \\ d\end{matrix}\right).
 $$
-We can then use the identity that $|ABC⟫ = C^\mathrm{T} \otimes A |B⟫$ to turn the above open systems derivative into a single matrix
+You can then use the identity that $|ABC⟫ = C^\mathrm{T} \otimes A |B⟫$ to turn the above open systems derivative into a single matrix
 $$
     G = -i(𝟙 \otimes H - H^\mathrm{T} \otimes I) + \sum_i \left(
         L_i^* \otimes L_i
@@ -676,7 +676,7 @@ $$
     \rho(t) = \exp(tG) \rho(0).
 $$
 
-We can assign such generators to a noise model using the `to_generator` function provided by the `qsharp` package.
+You can assign such generators to a noise model using the `to_generator` function provided by the `qsharp` package.
 For example, the ideal action of the `Rz` operation is given by the Hamiltonian $H = -\frac12 Z$; we can represent a misalignment of this Hamiltonian together with $T_1$ and $T_2$ processes by passing each to `to_generator`:
 
 ```python
@@ -690,7 +690,7 @@ qsharp.set_noise_model_by_name(
 )
 ```
 
-We can also add in fixed quantum processes that apply before and after continuous-time evolution using the `pre` and `post` keyword arguments:
+You can also add in fixed quantum processes that apply before and after continuous-time evolution using the `pre` and `post` keyword arguments:
 
 ```python
 qsharp.set_noise_model_by_name(
@@ -708,7 +708,7 @@ qsharp.set_noise_model_by_name(
 
 The [`S` operation](xref:Microsoft.Quantum.Intrinsic.S) used in our Ramsey example above is a special case of the [`Rz` operation](xref:Microsoft.Quantum.Intrinsic.Rz); specifically, `S` applies a rotation about the $Z$-axis by an angle of $\pi / 4$. By representing continuous-time noise, we can consider the more general case as well.
 
-Let's go on and define a new Q# operation for our continuous-time Ramsey example:
+Let's go on and define a new Q# operation for the continuous-time Ramsey example:
 
 ```qsharp
 open Microsoft.Quantum.Measurement;
@@ -730,7 +730,7 @@ operation MeasureRamsey(nShots : Int, t : Double) : Int {
 }
 ```
 
-We can then assign a continuous-time noise process to the `Rz` operation:
+You can then assign a continuous-time noise process to the `Rz` operation:
 
 ```python
 import qsharp
@@ -747,10 +747,11 @@ qsharp.set_noise_model_by_name(
 )
 ```
 
-![ramsey signal noise](~/media/ramsey-signal-noise-model.png)
+
+:::image type="content" source="media/ramsey-signal-noise-model.png" alt-text="Plot of the ideal Ramsey signal and in the presence of noise.":::
 
 
-Finally, we can simulate at a variety of different evolution times and plot the effect of the above noise:
+Finally, you can simulate at a variety of different evolution times and plot the effect of the above noise:
 
 ```python
 import numpy as np
@@ -760,9 +761,7 @@ n_ups_noiseless = np.array([MeasureRamsey.simulate(nShots=500, t=t) for t in ts]
 n_ups = np.array([MeasureRamsey.simulate_noise(nShots=500, t=t) for t in ts])
 ```
 
-
-
-Here, we note that the elements of `ts` are not even multiples of $\pi / 4$, such that we cannot reproduce the above results without assigning a continuous-time generator to describe the noise incurred by calling `Rz`.
+Here, note that the elements of `ts` are not even multiples of $\pi / 4$, such that you can't reproduce the above results without assigning a continuous-time generator to describe the noise incurred by calling `Rz`.
 
 ## Next steps
 

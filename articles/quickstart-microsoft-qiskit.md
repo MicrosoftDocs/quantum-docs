@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Python', '$$v']
-title: Submit Qiskit quantum circuits to Azure Quantum
+title: 'Quickstart: Create Qiskit circuits'
 zone_pivot_groups: quantum-computing-platforms
 uid: microsoft.quantum.quickstarts.computing.qiskit
 --- 
