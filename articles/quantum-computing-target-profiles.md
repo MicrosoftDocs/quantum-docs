@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: This document provides an overview of target profile types in Azure Quantum and their limitations
 ms.date: 09/21/2022
-ms.author: brbenefield
+ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
