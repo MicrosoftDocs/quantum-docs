@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
 no-loc: ['Q#', '$$v']
-title: 'Tutorial: Implement Grover's algorithm in Q#'
+title: "Tutorial: Implement Grover's algorithm in Q#"
 uid: microsoft.quantum.tutorial-qdk.grovers
 ---
 
