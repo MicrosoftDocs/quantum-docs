@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: Learn what basic linear algebra concepts are needed to understand quantum computing
-ms.author: brbenefield
+ms.author: sonialopez
 ms.date: 10/10/2022
 ms.service: azure-quantum
 ms.subservice: qdk
