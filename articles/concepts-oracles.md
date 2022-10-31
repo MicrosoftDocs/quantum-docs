@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: Learn how to work with and define quantum oracles, black box operations that are used as input to another algorithm.
-ms.author: brbenefield
+ms.author: sonialopez
 ms.date: 10/10/2022
 ms.service: azure-quantum
 ms.subservice: core
