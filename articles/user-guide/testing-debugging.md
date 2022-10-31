@@ -172,7 +172,7 @@ The intrinsic function <xref:Microsoft.Quantum.Intrinsic.Message> has type `(Str
 
 After you run a test in Test Explorer and click the test name, a panel displays with information about test run: Pass/fail status, elapsed time, and a link to the output. Click **Output** to open the test output in a new window.
 
-:::image type="content" source="media/unit-test-output.png" alt-text="Screenshot of Test Explorer showung the output of a run.":::
+:::image type="content" source="../media/unit-test-output.png" alt-text="Screenshot of Test Explorer showung the output of a run.":::
 
 
 #### [Command Line / Visual Studio Code](#tab/tabid-vscode)
@@ -399,7 +399,7 @@ The following examples show `DumpMachine` for some common states:
   > [!TIP]
   > You can locate a qubit id in Visual Studio by putting a breakpoint in your code and inspecting the value of a qubit variable, for example:
   > 
-  > :::image type="content" source="media/qubit_id.png" alt-text="Screenshot of Visual Studio showing how to locate qubit id.":::
+  > :::image type="content" source="../media/qubit_id.png" alt-text="Screenshot of Visual Studio showing how to locate qubit id.":::
   >
   > the qubit with index `0` on `register2` has id=`3`, the qubit with index `1` has id=`2`.
 
@@ -447,7 +447,7 @@ operation MultiQubitDumpMachineDemo() : Unit {
 ```
 1. In a new cell, run the `MultiQubitDumpMachineDemo` operation on a full state quantum simulator by using the `%simulate` magic command. The `DumpMachine` call prints the information about the quantum state of the program after the Controlled Ry gate as a set of lines, one per basis state, showing their complex amplitudes, phases, and measurement probabilities.
 
-:::image type="content" source="media/dumpmachine-output.png" alt-text="Screenshot of the DumpMachine operation output in Jupyter Notebooks.":::
+:::image type="content" source="../media/dumpmachine-output.png" alt-text="Screenshot of the DumpMachine operation output in Jupyter Notebooks.":::
 
 > [!NOTE]
 > You can use <xref:microsoft.quantum.iqsharp.magic-ref.config> (available only in Q# Jupyter Notebooks) to tweak the format of the `DumpMachine` output. It offers many settings that you can use in different scenarios. For example, by default `DumpMachine` uses little-endian integers to denote the basis states (the first column of the output); if you find raw bit strings easier to read, you can use `%config dump.basisStateLabelingConvention="Bitstring"` to switch.
@@ -455,14 +455,14 @@ operation MultiQubitDumpMachineDemo() : Unit {
 
 1. Jupyter Notebooks offers the option to visualize the run of the quantum program as a quantum circuit by using <xref:microsoft.quantum.iqsharp.magic-ref.trace> (available only in Q# Jupyter Notebooks). This command traces one run of the Q# programs and build a circuit based on that run. This is the circuit resulting from the running of `%trace MultiQubitDumpMachineDemo`, 
 
-:::image type="content" source="media/dumpmachine-trace-output.png" alt-text="Screenshot of the DumpMachine operation using the trace magic command in Jupyter Notebooks.":::
+:::image type="content" source="../media/dumpmachine-trace-output.png" alt-text="Screenshot of the DumpMachine operation using the trace magic command in Jupyter Notebooks.":::
 
 
    The visualization is interactive, allowing you to click on each block to drill down to the intrinsic gates.
 
 1. Finally, <xref:microsoft.quantum.iqsharp.magic-ref.debug> (available only in Q# Jupyter Notebooks) allows you to combine tracing the program execution (as a circuit) and observing the program state as it evolves at the same time. The visualization is also interactive; you can click through each of the steps until the program run is complete, and switch to observe real and imaginary components of the amplitudes, instead of measurement probabilities in the beginning of the program.
 
-:::image type="content" source="media/dumpmachine-debug-output.png" alt-text="Screenshot of the DumpMachine operation using the debug magic command in Jupyter Notebooks.":::
+:::image type="content" source="../media/dumpmachine-debug-output.png" alt-text="Screenshot of the DumpMachine operation using the debug magic command in Jupyter Notebooks.":::
 
 
 ### DumpRegister
