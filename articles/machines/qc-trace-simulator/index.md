@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
-title: Quantum trace simulator - Quantum Development Kit
+title: Quantum trace simulator
 uid: microsoft.quantum.machines.overview.qc-trace-simulator.intro
 ---
 

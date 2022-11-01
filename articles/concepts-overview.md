@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
-title: Quantum computing history and background
+title: Quantum computing history 
 uid: microsoft.quantum.concepts.intro
 ---
 
@@ -32,7 +32,6 @@ A quantum computer isn't a supercomputer that can do everything faster or that c
 
 ## Use Azure Quantum and the Quantum Development Kit to do quantum computing
 
-
 Quantum computing is evolving quickly. [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) is an open, flexible, and future-proofed cloud ecosystem for quantum computing that empowers you to deliver impact with your quantum applications, exploration, and research. Azure Quantum provides a diverse set of quantum computing solutions and technologies.
 
 - Free Azure Quantum Credits to power your development.
@@ -41,7 +40,7 @@ Quantum computing is evolving quickly. [Azure Quantum](xref:microsoft.quantum.az
 - Write once and run on multiple hardware architectures.
 
 > [!Tip]
-> **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) (check out free Azure accounts [for students](https://azure.microsoft.com/free/students/)). With Azure you can create, deploy, and manage applications across multiple clouds, on-premises, and at the edge. You will get 200 USD Azure credit to use in other Azure services. 
+> If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). With the Azure Quantum Credits, you'll have $500 (USD) to use in each quantum hardware provider. If you are a student, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
 
 Designing a quantum program to harness interference may sound like a daunting challenge, and while it is, many techniques and tools, including the Quantum Development Kit (QDK), have been introduced to make quantum programming and algorithm development more accessible. There are a handful of basic strategies that can be used to manipulate quantum interference in a way useful for computing, while at the same time not causing the solution to be lost in a tangle of quantum possibilities. Quantum programming is a distinct art from classical programming requiring very different tools to understand and express quantum algorithmic thinking. Indeed, without general tools to aid a quantum developer in tackling the art of quantum programming, quantum algorithmic development is not so easy.
 

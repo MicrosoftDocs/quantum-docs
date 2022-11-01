@@ -5,8 +5,8 @@ ms.author: sonialopez
 ms.date: 09/22/2022
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: reference
-title: Azure Quantum usage quotas
+ms.topic: conceptual
+title: Limits & quotas
 uid: microsoft.quantum.quotas
 ---
 

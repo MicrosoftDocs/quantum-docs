@@ -252,7 +252,7 @@ bloch = qt.bloch.Bloch()
 bloch.add_states([rho_pure], kind='point')
 print(bloch.show())
 ```
-![bloch rho pure](~/media/bloch-rho-pure.png)
+:::image type="content" source="media/bloch-rho-pure.png" alt-text="Plot of a pure quantum state in the Bloch sphere, where the quantum state is in the X-axis.":::
 
 ```python
 plt.figure(figsize=(6, 6))
@@ -261,7 +261,7 @@ bloch.add_states([rho_mixed], kind='point')
 bloch.show()
 ```
 
-![bloch rho mixed](~/media/bloch-rho-mixed.png)
+:::image type="content" source="media/bloch-rho-mixed.png" alt-text="Plot of a mixed quantum state in the Bloch sphere, where the quantm state is in the center of the sphere.":::
 
 The state at the center of the Bloch sphere is the *maximally mixed state*. Unlike pure states, the maximally mixed state returns 50/50 outcomes for any ideal Pauli measurement.
 

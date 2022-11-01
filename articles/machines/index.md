@@ -2,10 +2,10 @@
 author: tedhudek
 description: Describes the quantum simulators available as target machines for Q# programs.
 ms.author: tedhudek
-ms.date: 10/05/2021
+ms.date: 10/26/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
-ms.topic: conceptual
+ms.topic: overview
 no-loc: ['Q#', '$$v']
 title: Quantum simulators and Q# programs
 uid: microsoft.quantum.machines.overview

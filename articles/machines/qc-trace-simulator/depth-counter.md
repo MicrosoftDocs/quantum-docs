@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
-title: Depth counter - Quantum Development Kit
+title: 'Trace simulator: Depth counter'
 uid: microsoft.quantum.machines.overview.qc-trace-simulator.depth-counter
 ---
 

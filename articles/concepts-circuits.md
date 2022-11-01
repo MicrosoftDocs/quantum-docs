@@ -24,9 +24,7 @@ In a circuit diagram, each solid line depicts a qubit, or more generally, a qubi
 Operations are represented by *quantum gates*. The term quantum gate is analogous to classical logic gates. Gates acting on one or more qubit registers are denoted as a box.
 For example, the symbol
 
-<!--- ![](.\media\2.svg) --->
-<!-- Can't find a way to easily center this... probably an extension needed:  -->
-![Symbol for a Hadamard operation acting on a single-qubit register](~/media/2.svg)
+:::image type="content" source="media\2.svg" alt-text="Symbol for a Hadamard operation acting on a single-qubit register.":::
 
 is a [Hadamard](xref:Microsoft.Quantum.Intrinsic.H) operation acting on a single-qubit register.
 
@@ -34,9 +32,7 @@ In a quantum circuit, time flows from left to right. Quantum gates are ordered i
 In other words, if you picture the wires as holding the quantum state, the wires bring the quantum state through each of the gates in the diagram from left to right.
 That is to say 
 
-<!--- ![](.\media\3.svg) --->
-<!-- Can't find a way to easily center this... probably an extension needed:  -->
-![Diagram of quantum gates being applied left-to-right](~/media/3.svg)
+:::image type="content" source="media\3.svg" alt-text="Diagram of quantum gates being applied left-to-right in a quantum circuit.":::
 
 is the unitary matrix $CBA$.
 
@@ -55,9 +51,7 @@ Operations with this or greater complexity are ubiquitous in quantum algorithms 
 
 The circuit diagram for preparing this maximally entangled quantum state is:
 
-<!--- ![](.\media\1.svg) --->
-<!-- Can't find a way to easily center this... probably an extension needed:  -->
-![Circuit diagram for a maximally entangled two-qubit state](~/media/1.svg)
+:::image type="content" source="media\1.svg" alt-text="Circuit diagram for a maximally entangled two-qubit state.":::
 
 The symbol behind the Hadamard gate represents a [CNOT gate](xref:Microsoft.Quantum.Intrinsic.CNOT), where the black circle indicates the control qubit and the cross within a circle indicates the target qubit. This quantum circuit is depicted as acting on two qubits (or equivalently two registers consisting of one qubit).
 
@@ -72,9 +66,7 @@ For this reason any box drawn in a circuit diagram must have precisely the same 
 Multi-qubit circuit diagrams follow similar conventions to single-qubit ones.
 As a clarifying example, a two-qubit unitary operation $B$ can be defined to be $(H S\otimes X)$, so the equivalent quantum circuit is:
 
-<!--- ![](.\media\4.svg) --->
-<!-- Can't find a way to easily center this... probably an extension needed:  -->
-![Circuit diagram of a two-qubit unitary operation](~/media/4.svg)
+:::image type="content" source="media\4.svg" alt-text="Circuit diagram of a two-qubit unitary operation.":::
 
 You can also view $B$ as having an action on a single two-qubit register rather than two one-qubit registers depending on the context in which the circuit is used. 
 
@@ -89,16 +81,12 @@ $$\Lambda(G) (\alpha \ket{0} + \beta \ket{1}) \ket{\psi} = \alpha \ket{0} \ket{\
 
 That is to say, the controlled gate applies $G$ to the register containing $\psi$ if and only if the control qubit takes the value $1$. In general, such controlled operations are described in circuit diagrams as
 
-<!--- ![](.\media\5.svg) --->
-<!-- Can't find a way to easily center this... probably an extension needed:  -->
-![Circuit diagram of a singly controlled gate](~/media/5.svg)
+:::image type="content" source="media\5.svg" alt-text="Circuit diagram of a singly controlled gate.":::
 
 Here the black circle denotes the quantum bit on which the gate is controlled and a vertical wire denotes the unitary that is applied when the control qubit takes the value $1$.
 For the special cases where $G=X$ and $G=Z$, the following notation is used to describe the controlled version of the gates (note that the controlled-X gate is the [CNOT gate](xref:Microsoft.Quantum.Intrinsic.CNOT)):
 
-<!--- ![](.\media\6.svg) --->
-<!-- Can't find a way to easily center this... probably an extension needed:  -->
-![Circuit diagram for special cases of controlled gates](~/media/6.svg)
+:::image type="content" source="media\6.svg" alt-text="Circuit diagram for special cases of controlled gates.":::
 
 Q# provides methods to automatically generate the controlled version of an operation, which saves the programmer from having to hand code these operations. An example of this is shown below:
 
@@ -115,18 +103,13 @@ The remaining operation to visualize in circuit diagrams is measurement. Measure
 A measurement operation is denoted by a meter symbol and always takes as input a qubit register (denoted by a solid line) and outputs classical information (denoted by a double line).
 Specifically, such a subcircuit looks like:
 
-<!--- ![](.\media\7.svg) ---->
-<!-- Can't find a way to easily center this... probably an extension needed:  -->
-![Symbol representing a measurement operation](~/media/7.svg)
+:::image type="content" source="media\7.svg" alt-text="Symbol representing a measurement operation.":::
 
-Q# implements a [Measure operator](xref:Microsoft.Quantum.Intrinsic.Measure) for this purpose.
-See the [section on measurements](xref:microsoft.quantum.libraries.overview.standard.prelude#measurements) for more information.
+Q# implements a [Measure operator](xref:Microsoft.Quantum.Intrinsic.Measure) for this purpose. See the [section on measurements](xref:microsoft.quantum.libraries.overview.standard.prelude#measurements) for more information.
 
 Similarly, the subcircuit
 
-<!--- ![](.\media\8.svg) --->
-<!-- Can't find a way to easily center this... probably an extension needed:  -->
-![Circuit diagram representing a controlled operation](~/media/8.svg)
+:::image type="content" source="media\8.svg" alt-text="Circuit diagram representing a controlled operation.":::
 
 gives a classically controlled gate, where $G$ is applied conditioned on the classical control bit being value $1$.
 
@@ -141,5 +124,5 @@ This is necessary for the protocol to work according to the laws of quantum mech
 
 The quantum teleportation circuit is shown here along with an annotated version of the circuit to illustrate how to read the quantum circuit.
 
-<!--- ![](.\media\tp2.svg){ width=50% } --->
-![Quantum teleportation circuit](~/media/tp2.svg)
+:::image type="content" source="media\tp2.svg" alt-text="Diagram of a quantum teleportation circuit.":::
+

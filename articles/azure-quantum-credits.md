@@ -5,7 +5,7 @@ ms.author: sonialopez
 ms.date: 10/19/2022
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: reference
+ms.topic: conceptual
 title: Azure Quantum Credits
 uid: microsoft.quantum.credits
 ---
@@ -17,19 +17,20 @@ uid: microsoft.quantum.credits
 
 Azure Quantum Credits can be used to run programs on quantum hardware.
 
-First-time users automatically get **$500 (USD) free Azure Quantum Credits** for use with each participating quantum hardware provider. Your free Azure Quantum Credits become available once you [create a new Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). Once you've consumed all your credits, you'll only pay for the services you use and you can cancel anytime.
+First-time users automatically get **$500 (USD) free Azure Quantum Credits** for use with each participating quantum hardware provider within 6 months. Your free Azure Quantum Credits become available once you [create a new Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). Once you've consumed all your credits, you'll only pay for the services you use and you can cancel anytime.
 
 Credits are shared for all workspaces within a single subscription and region. That is, you will get $500 (USD) free Azure Quantum credits for each quantum hardware provider when you create your first Azure Quantum workspace, but the following workspaces you create within the same subscription and region will share the credits plan.
-
 
 > [!NOTE]
 > Note that Azure credits and Azure Quantum Credits are different grants and shouldn't be confused. When you create a [new Azure account](https://azure.microsoft.com/free/), you get $200 (USD) free Azure Credits to use on all Azure services. You can only use general-purpose Azure Credits with the Microsoft quantum providers - third-party providers (providers that aren't owned by Microsoft) aren't eligible.
 
 ## How to use your Azure Quantum Credits
 
-Azure Quantum Credits may be used with any programming language or framework that is supported by Azure Quantum. 
+Azure Quantum Credits may be used with any programming language or framework that is supported by Azure Quantum. Once you've created an Azure Quantum workspace, you can use your $500 (USD) free Azure Quantum Credits within 6 months.
 
 To use your Azure Quantum Credits with a provider, submit a job in a workspace that uses an Azure Quantum Credits plan for that provider. All jobs submitted from a workspace targeting a provider that uses an Azure Quantum Credits plan will be free. If a job happens to go over the current credit allocation, it will be rejected.
+
+
 
 > [!IMPORTANT]
 > There are no costs or charges to use your free Azure Quantum Credits. However, there may be some small storage costs, as the input and output of your jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 

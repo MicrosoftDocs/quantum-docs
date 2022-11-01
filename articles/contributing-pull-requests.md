@@ -1,29 +1,29 @@
 ---
 author: bradben
-description: Learn how to submit a GitHub pull request to contribute code or documentation to the Microsoft Quantum Development Kit.
+description: Learn how to submit a GitHub pull request to contribute code or documentation to Azure Quantum.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 10/25/2022
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: conceptual
+ms.topic: contributor-guide
 ms.custom: kr2b-contr-experiment
 no-loc: ['Q#', '$$v']
-title: Opening pull requests for the Quantum Development Kit
+title: Opening pull requests
 uid: microsoft.quantum.contributing-qdk.overview.pulls
 ---
 
-# Opening pull requests for Quantum Development Kit contributions
+# Opening pull requests for Azure Quantum contributions
 
-All of the documentation for the Quantum Development Kit (QDK) is managed using the Git version control system through the use of several repositories hosted on GitHub.
-Using Git and GitHub together makes it easy to collaborate widely on the QDK.
+All of the documentation for Azure Quantum is managed using the Git version control system through the use of several repositories hosted on GitHub.
+Using Git and GitHub together makes it easy to collaborate widely on Azure Quantum.
 In particular, any Git repository can be cloned or forked to make a completely independent copy of that repository.
 This allows you to work on your contribution with the tools and at a pace that you prefer.
 
-When you're ready, you can send us a request to include your contribution into our repos, using GitHub's _pull request_ functionality.
+When you're ready, you can send a request to include your contribution into the repos, using GitHub's _pull request_ functionality.
 The page for each pull request includes details of all the changes that make your contribution, a list of comments on your contribution, and a set of review tools that other members of the community can use to provide feedback and advice.
 
 > [!NOTE]
-> While a full tutorial on Git is beyond the scope of this guide, we can suggest the following links for more resources on learning Git:
+> While a full tutorial on Git is beyond the scope of this guide, the following links offer more resources on learning Git:
 >
 > - [Learn Git](https://www.atlassian.com/git): A set of Git tutorials from Atlassian.
 > - [Version Control in Visual Studio Code](https://code.visualstudio.com/docs/editor/versioncontrol): A guide on how to use Visual Studio Code as a GUI for Git.
@@ -34,7 +34,11 @@ The page for each pull request includes details of all the changes that make you
 
 ## What is a pull request? ##
 
-Having said the above, it's helpful to take a few moments to say what a pull request **is**.
+Having said the above, it's helpful to take a few moments to say what a pull request **is**. In short, you are *requesting* that the admin of the repository *pull* your changes into the repository. 
+
+> [!IMPORTANT]
+> For a overall primer on how Git and GitHub work with the Microsoft publishing system, including definitions of terms such as *push*, *pull*, *branch*, *upstream*, and so on, see the [GitHub contribution workflow](/contribute/how-to-write-workflows-major).
+
 When working with Git, any changes are represented as _commits_ that describe how those changes are related to the state of the repository before those changes.
 We'll often draw diagrams in which commits are drawn as circles with arrows from previous commits.
 
@@ -51,42 +55,22 @@ Pull requests work the same way, but in reverse: when you open a pull request, y
 
 ![Diagram of changes pulled back into the original repo.](./media/git-workflow-step2.png)
 
-When you open a pull request to one of our repositories, GitHub will offer an opportunity for others in the community to see a summary of your changes, to comment on them, and to make suggestions for how to help make an even better contribution.
+When you open a pull request to one of the repositories, GitHub will offer an opportunity for others in the community to see a summary of your changes, to comment on them, and to make suggestions for how to help make an even better contribution.
 
 ![Screenshot of a pull request in GitHub.](./media/pull-request-header.png)
 
-Using this process helps us use GitHub functionality to improve contributions and to maintain a high-quality product for the quantum programming community.
+Using this process helps to improve contributions and to maintain a high-quality product for the quantum programming community.
 
 ## How to make a pull request ##
 
 There are two main ways to make a pull request.  
-For small changes that only affect a single file, the GitHub web interface can be used to make a pull request entirely online. Simply navigate to the file you want to edit and use the edit icon.  
-For more complicated contributions, it's most often easier to clone the repository to your local computer to prepare for a pull request first.
 
-<!--
-### Using the Web Interface ###
-
-**TODO**
-
-### Command-Line and GitHub Flow ###
-
-Most of the time, it's easier to prepare a pull request on your own computer; that makes it easier to work incrementally, and to test your changes.
-If you haven't already done so, the first step is to _fork_ the repository that you'd like to contribute to.
-Forking makes a complete clone of the original repository, but under your GitHub account instead of under [Microsoft](http://github.com/Microsoft/) or [MicrosoftDocs](http://github.com/MicrosoftDocs/).
-This way, you can edit your personal fork to your heart's content before making a pull request for your work.
-
-**TODO: pick up here**
-
-## Code Review and Etiquette ##
-
-**TODO: PR ettiquette, reviews, etc.**
-
--->
+- For small changes that only affect a single file, the GitHub web interface can be used to make a pull request entirely online. You can access the GitHub web interface by:
+  - Navigating to the file in the GitHub repository and selecting the edit icon, or
+  - Navigating to the public-facing documentation page on *learn.microsoft.com* and selecting the edit icon. For more information, see [Quick edits to documentation](/contribute/#quick-edits-to-documentation).
+- For larger contributions, it's usually easier to *fork* the repository and *clone* it to your local computer to submit pull request. For a step-by-step guide on how to fork and clone a local repository, see [Set up Git repository locally for documentation](/contribute/get-started-setup-local).
 
 ## Next steps ##
 
-Congratulations on using Git to help out the Quantum Development Kit community!
-To learn more about how to contribute code, please continue with the following guide.
-
-> [!div class="nextstepaction"]
-> [Learn how to contribute code](contributing-code.md)
+- [Contribute code to Azure Quantum](xref:microsoft.quantum.contributing-qdk.overview.code)
+- [Contribute samples to Azure Quantum](xref:microsoft.quantum.contributing-qdk.overview.samples)

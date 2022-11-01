@@ -2,12 +2,12 @@
 author: SoniaLopezBravo
 description: Learn how to run your Q# programs on the Microsoft Quantum Development Kit sparse simulator.
 ms.author: sonialopez
-ms.date: 02/18/2022
+ms.date: 10/31/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
-title: Sparse simulator - Quantum Development Kit
+title: Sparse simulator 
 uid: microsoft.quantum.machines.overview.sparse-simulator
 ---
 
