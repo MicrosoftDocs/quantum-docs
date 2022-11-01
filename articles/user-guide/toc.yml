@@ -11,8 +11,8 @@
 - name: Local development 
   items:
   - name: Develop with Q# and Python
-    href: ..how-to-python-qdk-local.md
+    href: ../how-to-python-qdk-local.md
   - name: Develop with Q# and .NET
-    href: ..how-to-csharp-qdk-local.md
+    href: ../how-to-csharp-qdk-local.md
   - name: Develop with Q# and Binder
-    href: ..install-binder-qdk.md  
+    href: ../install-binder-qdk.md  
