@@ -8,3 +8,11 @@
   href: language/toc.yml
 - name: Q# libraries
   href: libraries/toc.yml
+- name: Local development 
+  items:
+  - name: Develop with Q# and Python
+    href: ..how-to-python-qdk-local.md
+  - name: Develop with Q# and .NET
+    href: ..how-to-csharp-qdk-local.md
+  - name: Develop with Q# and Binder
+    href: ..install-binder-qdk.md  
