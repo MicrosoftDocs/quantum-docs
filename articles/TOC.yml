@@ -80,6 +80,10 @@
         href: concepts-grovers.md
       - name: Quantum Intermediate Representation
         href: concepts-qir.md
+  - name: Troubleshooting
+    items:
+    - name: Q# compiler messages
+      href: qs-compiler-messages/toc.yml
   - name: Quantum hardware provider reference
     items:
     - name: Quantum computing providers
@@ -112,10 +116,6 @@
         href: provider-honeywell.md
       - name: Honeywell support policy
         href: provider-support-honeywell.md
-  - name: Troubleshooting
-    items:
-    - name: Q# compiler messages
-      href: qs-compiler-messages/toc.yml
 - name: Optimization
   items:
   - name: Overview
