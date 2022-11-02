@@ -85,3 +85,31 @@ Some recommendations to avoid those problems are:
 The last released version of the [QDK extension for Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit) was `0.23.195983`. You can continue using this extension with projects targeting up to that QDK version; however, there are no plans to continue upgrading this extension regularly.
 
 In order to use newer versions of the QDK for quantum projects with version `0.24.201332` or higher, you should use either the [extension for Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or the [extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
+
+## Creating an Azure Quantum workspace
+
+The following issues may occur when you attempt to create a workspace. 
+
+### Issue: (You created an Azure free account but )the Azure portal asks you to sign up for a subscription when you try to create a workspace 
+
+
+### Issue: "Deployment Validation Failed" error message appears after you select **Create**
+
+This error message may include more details such as "The client does not have authorization to perform action."
+Maybe just say : check role level and access
+*Refer to a chart outlining roles? Or jut say you must be a subscription owner or contributor to create a workspace. If you are a subscription contributor, you must either own the resource group you select or you need to own the storage account you select. (The latter isn't directly relvant, better to refer to chart or explanation of role requirements)
+If access was recently granted, you may need to refresh the page. 
+
+### Issue: The **Quick create** option is unavailable
+
+You must be an **Owner** of the subscription you select in order to use the **Quick create** option. To use **Quick create**, you can request that the existing subscription owner assign you an **Owner** role on the subscription or choose another subscription that you are owner of. Otherwise, use the **Advanced create** option.
+
+Add link to check sub role/access.
+
+### Issue: You're unable to create or select a resource group
+
+You must be owner or contributor of the subscription you select
+Link to check your access
+
+### Issue: You're unable to create or select a storage account
+
