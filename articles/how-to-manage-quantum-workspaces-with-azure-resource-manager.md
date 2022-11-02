@@ -2,7 +2,7 @@
 title: Manage quantum workspaces with the Azure Resource Manager
 description: This guide shows you how to create and delete quantum workspaces using the Azure Resource Manager. 
 author: bradben
-ms.author: brbenefield
+author: aviviano
 ms.service: azure-quantum
 ms.topic: how-to
 ms.date: 04/20/2022
