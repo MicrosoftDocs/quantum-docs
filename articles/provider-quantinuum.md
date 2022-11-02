@@ -78,6 +78,8 @@ After validating the syntax of their code with a Syntax Checker, users can take 
   - H1-2 Emulator: `quantinuum.sim.h1-2e`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
+For more information about the System Model H1 Emulator, see the [Quantinuum product data sheet](https://assets-global.website-files.com/617730fbcf7b7c387194556a/633af5b6ef0513fe5a5615af_Quantinuum%20H1%20Emulator%20Product%20Data%20Sheet%20v5-1%2003OCT22.pdf). For a more in-depth analysis of quantum error correction, see [Realization of real-time fault-tolerant quantum error correction](https://arxiv.org/abs/2107.07505).
+
 H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
 ## System Model H1
