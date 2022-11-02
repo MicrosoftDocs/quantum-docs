@@ -27,7 +27,7 @@
       href: overview-what-is-qsharp-and-qdk.md
   - name: Quickstarts
     items:
-    - name: Create and run a Qiskit circuit
+    - name: Submit a circuit with Qiskit
       href: quickstart-microsoft-qiskit-portal.md
     - name: Submit a circuit with Cirq
       href: quickstart-microsoft-cirq-portal.md
@@ -49,11 +49,11 @@
       href: how-to-submit-jobs.md
     - name: Publish a Q# job as an Azure Function
       href: how-to-publish-qsharp-job-as-azurefunction.md
-  - name: Simulators and resource estimators
-    href: machines/toc.yml  
   - name: The Q# user guide
     href: user-guide/toc.yml
-  - name: Quantum computing concepts
+  - name: Simulators and resource estimators
+    href: machines/toc.yml  
+  - name: Concepts
     items:
       - name: "Quantum computing history & background"
         href: concepts-overview.md
@@ -113,10 +113,10 @@
         href: provider-honeywell.md
       - name: Honeywell support policy
         href: provider-support-honeywell.md
-    - name: Troubleshooting
-      items:
-      - name: Q# compiler messages
-        href: qs-compiler-messages/toc.yml
+  - name: Troubleshooting
+    items:
+    - name: Q# compiler messages
+      href: qs-compiler-messages/toc.yml
 - name: Optimization
   expanded: true
   items:
@@ -240,7 +240,7 @@
       href: /cli/azure/quantum
     - name: Work with Azure Quantum using the Azure Resource Manager 
       href: how-to-manage-quantum-workspaces-with-azure-resource-manager.md
-  - name: Pricing, quotas, and credits 
+  - name: Credits, pricing, and quotas
     items: 
     - name: Azure Quantum Credits
       href: azure-quantum-credits.md
@@ -266,8 +266,6 @@
       href: install-update-qdk.md
     - name: Add or remove a provider
       href: how-to-add-a-provider.md
-    - name: Azure Quantum provider availability
-      href: provider-global-availability.md
   - name: Integrate with Azure Architecture
     items:
     - name: DevOps for quantum computing
@@ -282,6 +280,8 @@
   items:
   - name: Glossary
     href: azure-quantum-glossary.md
+  - name: Azure Quantum provider global availability
+    href: provider-global-availability.md
   - name: Common issues
     href: azure-quantum-common-issues.md
   - name: Build your skills with Microsoft training >>

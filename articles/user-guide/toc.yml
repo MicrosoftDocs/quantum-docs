@@ -8,7 +8,7 @@
   href: language/toc.yml
 - name: Q# libraries
   href: libraries/toc.yml
-- name: Local development 
+- name: Develop in a local environment
   items:
   - name: Develop with Q# and Python
     href: ../how-to-python-qdk-local.md
