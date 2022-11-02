@@ -17,7 +17,6 @@
   - name: Setup the Quantum Development Kit
     href: install-overview-qdk.md
 - name: Quantum computing
-  expanded: true
   items:
   - name: Overview
     items:
@@ -118,7 +117,6 @@
     - name: Q# compiler messages
       href: qs-compiler-messages/toc.yml
 - name: Optimization
-  expanded: true
   items:
   - name: Overview
     items:
