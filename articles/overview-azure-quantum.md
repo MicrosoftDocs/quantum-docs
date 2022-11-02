@@ -122,7 +122,7 @@ The QDK offers a set of tools that will assist you in the quantum software devel
 - Interoperability with [Python](xref:microsoft.quantum.install-qdk.overview) and other [.NET languages](xref:microsoft.quantum.how-to.csharp-local)), as well as integration with [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit.portal) and [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq.portal), so quantum developers that are already working in other development languages can also run their circuits on Azure Quantum.
 
 > [!NOTE]
-> Azure Quantum is an flexible ecosystem. You can run Python code on Azure Quantum without explicitly calling any Q# code, such as submitting Qiskit or Cirq circuits, or submitting [optimization problems](xref:microsoft.quantum.submit-jobs-optimization). To use these features, you must install the [`azure-quantum´ Python package](xref:microsoft.quantum.install-qdk.overview).
+> Azure Quantum is a flexible ecosystem. You can run Python code on Azure Quantum without explicitly calling any Q# code, such as submitting Qiskit or Cirq circuits, or submitting [optimization problems](xref:microsoft.quantum.submit-jobs-optimization). To use these features, you must install the [`azure-quantum´ Python package](xref:microsoft.quantum.install-qdk.overview).
 
 ### The quantum programming language Q\#
 

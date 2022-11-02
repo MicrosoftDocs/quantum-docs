@@ -15,7 +15,7 @@ uid: microsoft.quantum.concepts.circuits
 
 This article covers conventions for quantum circuit diagrams. Some quantum algorithms are easier to understand in a circuit diagram than in the equivalent written matrix representation once you understand the visual conventions.
 
-With Azure Quantum, you can use the `azure-quantum` Python package to submit quantum circuits with [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit.portal), [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq.portal), and also [provider-specific formatted circuits](xref:microsoft.quantum.quickstarts.computing.provider.porta).
+With Azure Quantum, you can use the `azure-quantum` Python package to submit quantum circuits with [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit.portal), [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq.portal), and also [provider-specific formatted circuits](xref:microsoft.quantum.quickstarts.computing.provider.portal).
 
 ## Quantum circuit diagram conventions
 
