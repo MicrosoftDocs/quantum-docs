@@ -5,7 +5,7 @@ author: bradben
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.topic: how-to
-ms.date: 09/07/2022
+ms.date: 09/23/2022
 uid: microsoft.quantum.publish-qio-as-azure-function
 ms.custom: vscode-azure-extension-update-completed
 #Customer intent: As a researcher, I want to make my quantum algorithm accessible via API so that developers without further quantum knowledge can call it via classical API-calls.
@@ -29,7 +29,7 @@ You need the following configuration to complete the steps in this article.
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The latest version of the [Quantum Development Kit for Python](xref:microsoft.quantum.install-qdk.overview.python#install-the-qsharp-python-package).
+- The latest version of the [Quantum Development Kit for Python](xref:microsoft.quantum.install-qdk.overview).
 - The [Azure Functions Core Tools](/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools) version 3.x.
 - [Python versions that are supported by Azure Functions](/azure/azure-functions/supported-languages#languages-by-runtime-version).
 - [Visual Studio Code](https://code.visualstudio.com/) on one of the [supported platforms](https://code.visualstudio.com/docs/supporting/requirements#_platforms).

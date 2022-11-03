@@ -9,7 +9,7 @@ ms.topic: quickstart
 no-loc: ['Python', '$$v']
 title: 'Quickstart: Submit provider-formatted circuits with online notebooks'
 zone_pivot_groups: quantum-computing-platforms
-uid: microsoft.quantum.quickstarts.computing.provider.porta
+uid: microsoft.quantum.quickstarts.computing.provider.portal
 --- 
 
 # Quickstart: Submit a circuit with a provider-specific format using an Azure Quantum notebook.

@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 11/12/2021
+ms.date: 09/23/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -11,7 +11,7 @@ ms.topic: include
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The latest version of the [Quantum Development Kit for Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.python#install-the-qsharp-python-package). This installs Jupyter Notebook and the IQ# kernel, which powers the Q# Jupyter Notebook and
+- The latest version of the [Quantum Development Kit for Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview). This installs Jupyter Notebook and the IQ# kernel, which powers the Q# Jupyter Notebook and
 Python experiences.
 
 ## Quantum computing with Q# Jupyter Notebooks
@@ -19,7 +19,7 @@ Python experiences.
 1. Run `jupyter notebook` from the terminal where your conda environment is
    activated. This starts the notebook server and opens Jupyter in a browser.
 1. Create your Q# notebook (via **New** → **Q#**) and write your Q# program.
-1. If you've never used Q# with Jupyter, follow the steps in [Run a Q# program](xref:microsoft.quantum.how-to.standalone-local#run-a-q-program).
+1. If you've never used Q# with Jupyter, follow the steps in [Submit a quantum program](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter).
 1. Write your Q# operations directly in the notebook. Running the cells will
    compile the Q# code and report whether there are any errors.
     - For example, you could write a Q# operation that looks like this:

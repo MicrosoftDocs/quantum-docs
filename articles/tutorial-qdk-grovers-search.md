@@ -36,10 +36,10 @@ In this tutorial, you'll learn how to:
 - [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview?tabs=tabid-local#install-the-qdk-and-develop-quantum-applications-locally) using your preferred language and development environment.
 - If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update-qdk) to the latest version.
 - This tutorial requires the Microsoft.Quantum.Numerics library. For more information, follow the steps to [install additional quantum libraries](xref:microsoft.quantum.libraries.overview#installation).
-- Create a Q# project for a [Q# standalone application](xref:microsoft.quantum.how-to.standalone-local) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local), or use a [Python host program](xref:microsoft.quantum.install-qdk.overview.python) in your preferred Python environment.
+- Create a Q# project for a [Q# standalone application](xref:microsoft.quantum.submit-jobs?pivots=ide-azurecli) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local), or use a [Python host program](xref:microsoft.quantum.install-qdk.overview) in your preferred Python environment.
 
 > [!NOTE]
-> To use the optional procedure [Extra: verify the statistics with Python](#extra-verify-the-statistics-with-python), you will need a Python development environment for Q# set up. For more information, see [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview.python).
+> To use the optional procedure [Extra: verify the statistics with Python](#extra-verify-the-statistics-with-python), you will need a Python development environment for Q# set up. For more information, see [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview).
 
 ## Grover's algorithm task and background
 
@@ -394,7 +394,7 @@ How can you verify that the algorithm is behaving correctly? For example, if you
 This example shows how to write a short Python script to verify that the program is working as it should.
 
 > [!TIP]
-> If you need help running Q# applications with Python, see [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview.python) and [Write a Q# and Python program](xref:microsoft.quantum.how-to.python-local).
+> If you need help running Q# applications with Python, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) and [Develop with Q# and Python](xref:microsoft.quantum.how-to.python-local).
 
 First, replace your main operation, `FactorizeWithGrovers`, with the following operation, `FactorizeWithGrovers2`:
 

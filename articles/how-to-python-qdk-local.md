@@ -1,26 +1,26 @@
 ---
 author: bradben
-description: Learn how to develop and run Python host programs that call Q# operations on a local simulator.
+description: Learn how to develop and run Python host programs that call Q# operations on a simulator.
 ms.author: brbenefield
-ms.date: 06/28/2022
+ms.date: 09/22/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Write a Q# and Python program to run on a local quantum simulator
+title: Develop with Q# and Python
 uid: microsoft.quantum.how-to.python-local
 ---
 
-# Write a Q# and Python program to run on a local quantum simulator
+# Develop with Q# and Python
 
-Learn how you can run a Q# program using a Python host program or Jupyter Notebook, which invokes the Q# code and further processes return results. The Microsoft Quantum Development Kit (QDK) contains several [quantum simulators](xref:microsoft.quantum.machines.overview) that allow you to test and run quantum programs locally, without having to access the Azure Quantum service.
+Learn how you can run a Q# program using a Python host program or Jupyter Notebook, which invokes the Q# code and further processes return results. This topic uses [quantum simulators](xref:microsoft.quantum.machines.overview) from Microsoft Quantum Development Kit (QDK) to test and run quantum programs locally.
 
 > [!NOTE]
 > A Python host program is just a normal Python program. You can use any Python environment, including Python-based Jupyter Notebooks, to write the Python program and call Q# operations. The Python host program can also import Q# operations from any Q# (`.qs`) files located in the same folder as the Python code itself.
 
 ## Prerequisite
 
-Set up a Python environment, or configure your existing Python environment, to use the Microsoft QDK and Jupyter Notebooks following the steps in [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview.python). 
+Set up a Python environment, or configure your existing Python environment, to use the Microsoft QDK and Jupyter Notebooks following the steps in [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview). 
 
 ## Choose your IDE
 
@@ -297,6 +297,7 @@ Now that you have tested the Quantum Development Kit in your environment, you ca
 
 For more information on how to run Q# programs with Python, see the following articles:
 
+- [Submit a Q# + Python program to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-python)
 - [Q# with a Python host program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs?tabs=tabid-python#q-with-host-programs)
 - [Run Q# on a local simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
 - [Run Q# on quantum hardware](xref:microsoft.quantum.submit-jobs) through Azure Quantum

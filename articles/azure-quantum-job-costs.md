@@ -78,5 +78,4 @@ The total row at the bottom shows the total cost of all dimensions for processin
 
 - [Azure Quantum Credits](xref:microsoft.quantum.credits)
 - [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing)
-- [Submit a job with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit)
-- [Submit a job with Q#](xref:microsoft.quantum.quickstarts.computing)
+- [Submit a job with Q#](xref:microsoft.quantum.submit-jobs)
