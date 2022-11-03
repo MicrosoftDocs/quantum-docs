@@ -14,7 +14,7 @@ To complete this tutorial, you need
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - [Visual Studio Code](https://code.visualstudio.com/download), which you can download and use for free.
 - The [Microsoft QDK for VS Code extension](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
-- The [Azure CLI and the quantum CLI extension](xref:microsoft.quantum.install-qdk.overview.).
+- The [Azure CLI and the quantum CLI extension](xref:microsoft.quantum.install-qdk.overview#azure-cli).
 - An Azure Quantum workspace with the **Quantinuum** provider enabled. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Create a Q# project in Visual Studio Code

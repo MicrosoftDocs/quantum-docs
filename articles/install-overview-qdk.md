@@ -49,17 +49,17 @@ The Azure Quantum portal provides a built-in development environment where you c
 
 Installing the QDK on your local computer provides support for Jupyter Notebooks, Python, and Q#, along with extensions for Visual Studio Code and Visual Studio. Develop quantum computing applications in your preferred IDE and language and run them on quantum simulators, quantum hardware, or optimization solvers using the Azure Quantum service.
 
+Some scenarios where you may prefer a local environment:
+
+- You have a customized environment or preferred tools that are not available online. 
+- You require source control on your project.
+- You are working with a multi-file project.
+
 :::image type="content" source="./media/install-portal-3.svg" alt-text="Portal installation options":::
 
 > [!NOTE]
 > Accessing remote quantum hardware and submitting jobs to the Azure Quantum service requires an Azure account with an active subscription. You can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-Some scenarios where you may prefer a local environment: 
-
-- You have a customized environment or preferred tools that are not available online. 
-- You require source control on your project.
-- You are working with a multi-file project.
- 
 Select your preferred IDE: 
 
 - [Use Q# and Python with Visual Studio Code or Visual Studio](#use-q-and-python-with-visual-studio-and-visual-studio-code)
@@ -135,7 +135,7 @@ To install the `azure-quantum` Python package
    pip install --upgrade azure-quantum[cirq]
    ```
 
-To test your environment, see [Submit a circuit with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit.portal), [Submit a circuit with Cirq](xref:microsoft.quantum.quickstarts.computing.cirq.portal), or [Submit a simple optimization problem](xref:microsoft.quantum.quickstarts.optimization.qio.portal).
+To test your environment, see [Create a quantum-based random number generator](xref:microsoft.quantum.quickstarts.computing) or [Submit a circuit with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit).
 
 ### Use Q# and Python with Jupyter Notebooks 
 
@@ -220,6 +220,13 @@ You can also use Docker with a Visual Studio Code Remote Development Container t
 
 ## Next steps
 
+Using the Azure portal:
+
 - [Run Jupyter notebooks on Azure Quantum](xref:microsoft.quantum.how-to.notebooks)
-- [Create and submit a quantum program](xref:microsoft.quantum.quickstarts.computing.qiskit.portal) to quantum hardware.
+- [Create and submit a Qiskit circuit](xref:microsoft.quantum.quickstarts.computing.qiskit.portal) to quantum hardware.
 - [Create and submit an optimization problem](xref:microsoft.quantum.quickstarts.optimization.qio.portal) to Azure Quantum. 
+
+Using your local environment:
+
+- [Explore development with Q# and Python](xref:microsoft.quantum.how-to.python-local)
+- [Create and submit an optimization problem](xref:microsoft.quantum.quickstarts.optimization.qio) to Azure Quantum. 

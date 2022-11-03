@@ -15,4 +15,16 @@
   - name: Develop with Q# and .NET
     href: ../how-to-csharp-qdk-local.md
   - name: Develop with Q# and Binder
-    href: ../install-binder-qdk.md  
+    href: ../install-binder-qdk.md
+  - name: Quickstarts
+    items:
+    - name: Create a quantum-based random number generator
+      href: ../quickstart-microsoft-qc.md
+    - name: Solve a simple optimization problem
+      href: ../quickstart-microsoft-qio.md
+    - name: Submit a circuit with Qiskit
+      href: ../quickstart-microsoft-qiskit.md
+    - name: Submit a circuit with Cirq
+      href: ../quickstart-microsoft-cirq.md
+    - name: Submit a circuit in a provider-specific format
+      href: ../quickstart-microsoft-provider-format.md
