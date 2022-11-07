@@ -60,6 +60,6 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 You can find more information about Toshiba's offering on the [Toshiba SQBM+ Provider Page](xref:microsoft.quantum.providers.optimization.toshiba).
 
-## Microsoft
+## Microsoft QIO
 
 Charges for the Microsoft QIO provider are based on the runtime of your optimization problem, in seconds. Per-second rates are based on the plan you select and the volume of optimization jobs you run within a month. For detailed Microsoft QIO pricing in your region, see [Microsoft Optimization Pricing Page](https://azure.microsoft.com/pricing/details/azure-quantum/).
