@@ -36,15 +36,15 @@ Register for free and sign up for a [pay-as-you-go subscription](https://azure.m
 
 ### [Free Trial](#tab/free)
 
-Sign up for a [free trial subscription for 30 days](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). With the Azure Quantum Credits you'll have $500 (USD) to use in each quantum hardware provider. After 30 days of sign-up or once you've consumed all you Azure Quantum Credits (whichever occurs first), you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using the Azure Quantum services. After the exhaustion of your Azure Quantum Credits, you'll only pay for the services you use and you can cancel anytime. 
+Sign up for a [free trial subscription for 30 days](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). With the Azure Quantum Credits you'll have $500 (USD) to use in each quantum hardware provider. After 30 days of sign-up or once you've consumed all your Azure Quantum Credits (whichever occurs first), you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using the Azure Quantum services. After the exhaustion of your Azure Quantum Credits, you'll only pay for the services you use and you can cancel anytime. 
 
-In addition, the free Azure trial gets you started with $200 (USD) in Azure credits to be used in Azure 1st-party services (Azure Quantum is not elegible) within the first 30 days of sign-up.
+In addition, the free Azure trial gets you started with $200 (USD) in Azure credits to be used in Azure 1st-party services (Azure Quantum is not eligible) within the first 30 days of sign-up.
 
 ### [Students](#tab/student)
 
 Sign up for an [Azure for Students subscription](https://azure.microsoft.com/offers/ms-azr-0170p/). With the Azure Quantum Credits you'll have $500 (USD) to use in each quantum hardware provider. Once you've consumed all your credits, you must upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go), and you can cancel anytime.
 
-Azure for Students gets you started with $100 (USD) in Azure credits to be used in Azure 1st-party services (Azure Quantum is not elegible), and you don't need a credit card to sign-up.  
+Azure for Students gets you started with $100 (USD) in Azure credits to be used in Azure 1st-party services (Azure Quantum is not eligible), and you don't need a credit card to sign-up.  
 
 ### [Enterprise Agreement](#tab/EA)
 
@@ -55,7 +55,7 @@ If your organization has an Enterprise Agreement (EA) purchasing contract with M
 > [!NOTE]
 > Note that Azure credits and Azure Quantum Credits are different grants and shouldn't be confused. You can only use general-purpose Azure Credits with the Microsoft quantum providers - third-party providers (providers that aren't owned by Microsoft) aren't eligible.
 
-If you have any questions or run into any issue using Azure Quantum, join our [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) every Thursday 8∶30 AM Pacific Standard Time zone (PST).
+If you have any questions or run into any issue using Azure Quantum, join our [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) every Thursday 8∶30 AM Pacific Time zone (PT).
 
 ## Create the workspace
 
@@ -121,6 +121,6 @@ Deployment of your workspace may take a few minutes. The status and deployment d
 ## Next steps
 
 - [Get started with Jupyter Notebooks in Azure Quantum](xref:microsoft.quantum.get-started.notebooks)
-- [Quickstart: Create a quantum-based random number generator in Azure Quantum](xref:microsoft.quantum.quickstarts.computing)
-- [Quickstart: Solve an optimization problem in Azure Quantum](xref:microsoft.quantum.quickstarts.optimization.qio)
-- [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)
+- [Quickstart: Solve an optimization problem in Azure Quantum](xref:microsoft.quantum.quickstarts.optimization.qio.portal)
+- [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit.portal)
+- [Quickstart: Create a quantum random-number generator in a local development environment](xref:microsoft.quantum.quickstarts.computing)

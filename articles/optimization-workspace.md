@@ -21,7 +21,7 @@ from azure.quantum import Workspace
 To create a `Workspace` object, you must supply the following arguments in order
 to connect. If you have not already created a workspace, follow the steps in
 [Creating an Azure Quantum workspace
-guide](xref:microsoft.quantum.quickstarts.optimization.qio) using the following values:
+guide](xref:microsoft.quantum.quickstarts.optimization.qio.portal) using the following values:
 
 - `subscription_id`: The subscription ID where the workspace is deployed.
 - `resource_group`: The name of the resource group where the workspace is deployed.
@@ -84,7 +84,7 @@ f0c8de58-68f1-11ea-a565-2a16a847b8a3 Executing
 The `Workspace.list_jobs` method also allows the user to filter on the creation date, status and name properties of a job when listing. Filters can be combined. 
 
 > [!NOTE]
-> To use the filter feature, you must have **version 0.18.2107** or newer of the [*azure-quantum* Python package](xref:microsoft.quantum.quickstarts.optimization.qio#install-the-python-sdk-for-azure-quantum). 
+> To use the filter feature, you must have **version 0.18.2107** or newer of the [*azure-quantum* Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-package). 
 
 ### Filtering by creation time on list_jobs
 

@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide about how to use the Quantum Monte Carlo QIO solver.
 ms.author: sonialopez
-ms.date: 10/11/2022
+ms.date: 10/18/2022
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
@@ -20,7 +20,7 @@ In Azure Quantum, the core of algorithmic approach to the Quantum Monte Carlo im
 ## Prerequisites
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The latest version of the [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview.python-only) (if you're working on Azure Quantum notebook, this step is not required).
+- The latest version of the [`azure-quantum` Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-package) (if you're working in an Azure Quantum notebook, this step is not required).
 
 ## Features of Quantum Monte Carlo on Azure Quantum
 

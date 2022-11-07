@@ -718,7 +718,7 @@ BorrowedWidth   0
 Q# Jupyter Notebooks make use of the IQ# kernel, which allows you to define, compile, and run Q# callables in a single notebook---all alongside instructions, notes, and other content.
 This means that while it's possible to import and use the contents of `*.qs` Q# files, they are not necessary in the run model.
 
-Here, it's detailed how to run the Q# operations defined above. But a more broad introduction to using Q# Jupyter Notebooks is provided at [Set up a Q# standalone environment](xref:microsoft.quantum.install-qdk.overview.standalone).
+Here, it's detailed how to run the Q# operations defined above. But a more broad introduction to using Q# Jupyter Notebooks is provided in [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
 ### Defining operations
 

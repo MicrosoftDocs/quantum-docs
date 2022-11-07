@@ -65,7 +65,7 @@ To learn more about how real-life problems can be solved using Azure Quantum and
 
 ### Developers
 
-As a developer, you will use familiar programming tools to create quantum applications. You can start with the language and SDK that you’re most familiar with, such as [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) or [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq) Python packages, as well as explore and learn the full-featured, built-for-quantum language, Q#. With Azure Quantum and the Quantum Development Kit, developers can explore quantum programming and learn more about quantum applications, such as data search, quantum machine learning, or optimization solutions. 
+As a developer, you will use familiar programming tools to create quantum applications. You can start with the language and SDK that you’re most familiar with, such as [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit.portal) or [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq.portal) Python packages, as well as explore and learn the full-featured, built-for-quantum language, Q#. With Azure Quantum and the Quantum Development Kit, developers can explore quantum programming and learn more about quantum applications, such as data search, quantum machine learning, or optimization solutions. 
 
 You can build on code and work in your favorite [local development environment](xref:microsoft.quantum.install-qdk.overview), such as Visual Studio and Visual Studio Code, or work directly in the Azure Quantum portal with the [hosted Jupyter notebooks](xref:microsoft.quantum.how-to.notebooks).
 
@@ -118,11 +118,11 @@ The QDK offers a set of tools that will assist you in the quantum software devel
 - Local and cloud-based [quantum computing simulators](xref:microsoft.quantum.machines.overview) that simulate current and future quantum machines, so that you can run and debug your quantum algorithms written in Q#.  
 - [Noise simulators](xref:microsoft.quantum.machines.overview.noise-simulator) that allow for simulating the behavior of Q# programs under the influence of noise and the stabilizer representation. 
 - A [resource estimator](xref:microsoft.quantum.machines.overview.resources-estimator) that provides real world costs to run your solutions, for example, how many qubits you need and how long your program will take.
-- Extensions for [Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) and [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode), and integration with [Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview.standalone).
-- Interoperability with [Python](xref:microsoft.quantum.install-qdk.overview.python) and other [.NET languages](xref:microsoft.quantum.how-to.csharp-local)), as well as integration with [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) and [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq), so quantum developers that are already working in other development languages can also run their circuits on Azure Quantum.
+- Extensions for [Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) and [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode), and integration with [Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview).
+- Interoperability with [Python](xref:microsoft.quantum.install-qdk.overview) and other [.NET languages](xref:microsoft.quantum.how-to.csharp-local)), as well as integration with [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit.portal) and [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq.portal), so quantum developers that are already working in other development languages can also run their circuits on Azure Quantum.
 
 > [!NOTE]
-> Azure Quantum is an flexible ecosystem. You can run Python code on Azure Quantum without explicitly calling any Q# code, such as submitting Qiskit or Cirq circuits, or submitting [optimization problems](xref:microsoft.quantum.submit-jobs-optimization). To use these features, you must install the [`azure-quantum´ Python package](xref:microsoft.quantum.install-qdk.overview.python-only).
+> Azure Quantum is a flexible ecosystem. You can run Python code on Azure Quantum without explicitly calling any Q# code, such as submitting Qiskit or Cirq circuits, or submitting [optimization problems](xref:microsoft.quantum.submit-jobs-optimization). To use these features, you must install the [`azure-quantum´ Python package](xref:microsoft.quantum.install-qdk.overview).
 
 ### The quantum programming language Q\#
 

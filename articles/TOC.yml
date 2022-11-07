@@ -14,23 +14,20 @@
     href: how-to-share-access-quantum-workspace.md
   - name: Get started with Q# and an Azure Quantum notebook
     href: get-started-jupyter-notebook.md
-  - name: Create and run a Qiskit circuit
-    href: quickstart-microsoft-qiskit-portal.md
-  - name: Create and run a simple optimization job
-    href: quickstart-microsoft-qio-portal.md
-  - name: Understanding job costs in Azure Quantum
-    href: azure-quantum-job-costs.md
+  - name: Setup the Quantum Development Kit
+    href: install-overview-qdk.md
 - name: Quantum computing
-  expanded: true
   items:
   - name: Overview
     items:
-    - name: Understanding Quantum Computing
+    - name: Understanding Quantum computing
       href: overview-understanding-quantum-computing.md
     - name: What are Q# and the Quantum Development Kit
       href: overview-what-is-qsharp-and-qdk.md
   - name: Quickstarts
     items:
+    - name: Submit a circuit with Qiskit
+      href: quickstart-microsoft-qiskit-portal.md
     - name: Submit a circuit with Cirq
       href: quickstart-microsoft-cirq-portal.md
     - name: Submit a circuit in provider-specific format
@@ -47,15 +44,15 @@
       href: tutorial-qdk-qubit-level-program.md
   - name: How-to guides
     items: 
-    - name: Submit Q# jobs
+    - name: Submit quantum jobs to Azure Quantum
       href: how-to-submit-jobs.md
     - name: Publish a Q# job as an Azure Function
       href: how-to-publish-qsharp-job-as-azurefunction.md
-  - name: Simulators and resource estimators
-    href: machines/toc.yml  
   - name: The Q# user guide
     href: user-guide/toc.yml
-  - name: Quantum Computing Concepts
+  - name: Simulators and resource estimators
+    href: machines/toc.yml  
+  - name: Concepts
     items:
       - name: "Quantum computing history & background"
         href: concepts-overview.md
@@ -83,50 +80,43 @@
         href: concepts-grovers.md
       - name: Quantum Intermediate Representation
         href: concepts-qir.md
-  - name: Resources
-    items: 
-    - name: Provider reference
-      items:
-      - name: Quantum computing providers
-        href: qc-target-list.md
-      - name: Quantum computing profile targets
-        href: quantum-computing-target-profiles.md 
-      - name: IonQ
-        items:
-        - name: IonQ provider & targets
-          href: provider-ionq.md
-        - name: IonQ support policy
-          href: provider-support-ionq.md
-      - name: Quantinuum
-        items:
-        - name: Quantinuum provider & targets
-          href: provider-quantinuum.md
-        - name: Quantinuum support policy
-          href: provider-support-quantinuum.md
-      - name: Rigetti
-        items:
-        - name: Rigetti provider & targets
-          href: provider-rigetti.md
-        - name: Rigetti support policy
-          href: provider-support-rigetti.md
-      - name: Honeywell (Deprecated)
-        items:
-        - name: Migration Guide
-          href: provider-honeywell-migration-guide.md
-        - name: Honeywell provider & targets
-          href: provider-honeywell.md
-        - name: Honeywell support policy
-          href: provider-support-honeywell.md
-    - name: Samples for using Azure Quantum Computing >>
-      href: https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum
-    - name: Azure Quantum Credits
-      href: azure-quantum-credits.md
-    - name: Azure Quantum Credits program FAQ
-      href: credits-faq.md
+  - name: Troubleshooting
+    items:
     - name: Q# compiler messages
       href: qs-compiler-messages/toc.yml
+  - name: Quantum hardware provider reference
+    items:
+    - name: Quantum computing providers
+      href: qc-target-list.md
+    - name: Quantum computing profile targets
+      href: quantum-computing-target-profiles.md 
+    - name: IonQ
+      items:
+      - name: IonQ provider & targets
+        href: provider-ionq.md
+      - name: IonQ support policy
+        href: provider-support-ionq.md
+    - name: Quantinuum
+      items:
+      - name: Quantinuum provider & targets
+        href: provider-quantinuum.md
+      - name: Quantinuum support policy
+        href: provider-support-quantinuum.md
+    - name: Rigetti
+      items:
+      - name: Rigetti provider & targets
+        href: provider-rigetti.md
+      - name: Rigetti support policy
+        href: provider-support-rigetti.md
+    - name: Honeywell (Deprecated)
+      items:
+      - name: Migration Guide
+        href: provider-honeywell-migration-guide.md
+      - name: Honeywell provider & targets
+        href: provider-honeywell.md
+      - name: Honeywell support policy
+        href: provider-support-honeywell.md
 - name: Optimization
-  expanded: true
   items:
   - name: Overview
     items:
@@ -134,6 +124,10 @@
       href: optimization-overview-introduction.md
     - name: Key concepts
       href: optimization-overview-key-concepts.md 
+  - name: Quickstarts
+    items:
+    - name: Create and run a simple optimization job
+      href: quickstart-microsoft-qio-portal.md
   - name: How-to guides
     items:
     - name: Submit optimization jobs
@@ -154,42 +148,38 @@
     items:
     - name: Troubleshoot optimization solvers
       href: optimization-troubleshooting.md
-  - name: Resources
+  - name: Optimization provider reference
     items:
-    - name: Provider reference
+    - name: Optimization providers
+      href: qio-target-list.md
+    - name: Microsoft QIO
       items:
-      - name: Optimization providers
-        href: qio-target-list.md
-      - name: Microsoft QIO
-        items:
-        - name: Overview
-          href: provider-microsoft-qio.md
-        - name: Simulated Annealing
-          href: optimization-simulated-annealing.md
-        - name: Population Annealing
-          href: optimization-population-annealing.md          
-        - name: Parallel Tempering
-          href: optimization-parallel-tempering.md
-        - name: Tabu Search
-          href: optimization-tabu-search.md
-        - name: Quantum Monte Carlo
-          href: optimization-quantum-monte-carlo.md
-        - name: Substochastic Monte Carlo
-          href: optimization-substochastic-monte-carlo.md
-      - name: 1QBit
-        items:
-        - name: 1QBit provider & targets
-          href: provider-1qbit.md
-        - name: 1QBit support policy
-          href: provider-support-1qbit.md
-      - name: Toshiba SQBM+
-        items:
-        - name: Toshiba SQBM+ provider & targets
-          href: provider-toshiba.md
-        - name: Toshiba SQBM+ support policy
-          href: provider-support-toshiba.md
-    - name: Samples for using Azure Quantum optimization solvers >>
-      href: https://github.com/microsoft/qio-samples
+      - name: Overview
+        href: provider-microsoft-qio.md
+      - name: Simulated Annealing
+        href: optimization-simulated-annealing.md
+      - name: Population Annealing
+        href: optimization-population-annealing.md          
+      - name: Parallel Tempering
+        href: optimization-parallel-tempering.md
+      - name: Tabu Search
+        href: optimization-tabu-search.md
+      - name: Quantum Monte Carlo
+        href: optimization-quantum-monte-carlo.md
+      - name: Substochastic Monte Carlo
+        href: optimization-substochastic-monte-carlo.md
+    - name: 1QBit
+      items:
+      - name: 1QBit provider & targets
+        href: provider-1qbit.md
+      - name: 1QBit support policy
+        href: provider-support-1qbit.md
+    - name: Toshiba SQBM+
+      items:
+      - name: Toshiba SQBM+ provider & targets
+        href: provider-toshiba.md
+      - name: Toshiba SQBM+ support policy
+        href: provider-support-toshiba.md
   - name: Python SDK
     items:
     - name: Azure.Quantum
@@ -232,62 +222,48 @@
         href: optimization-solve-long-running-problems.md
       - name: Solve a batch of problems using asyncio
         href: optimization-async-io.md
-- name: Use a local development environment
-  items:
-  - name: Configuration
-    items:
-    - name: Configure your local environment
-      href: install-overview-qdk.md
-    - name: Set up a Q# standalone or .NET environment
-      href: install-command-line-qdk.md
-    - name: Set up a Q# + Python environment
-      href: install-python-qdk.md
-    - name: Use Python without Q#
-      href: install-python-optimization.md
-  - name: Quickstarts
-    items: 
-    - name: Create a quantum-based random number generator
-      href: quickstart-microsoft-qc.md
-    - name: Solve a simple optimization problem
-      href: quickstart-microsoft-qio.md
-    - name: Submit a circuit with Qiskit
-      href: quickstart-microsoft-qiskit.md
-    - name: Submit a circuit with Cirq
-      href: quickstart-microsoft-cirq.md
-    - name: Submit a circuit in provider-specific format
-      href: quickstart-microsoft-provider-format.md
-  - name: How-to guides
-    items:
-    - name: Write a Q# program to run on local simulator
-      href: how-to-command-line-local.md
-    - name: Write a Q# and Python program to run on local simulator
-      href: how-to-python-qdk-local.md
-    - name: Write a Q# and .NET program to run on local simulator
-      href: how-to-csharp-qdk-local.md    
-  - name: Use a Binder environment
-    href: install-binder-qdk.md
 - name: Manage Azure Quantum
   items:
-  - name: Run Azure Quantum notebooks
-    href: how-to-run-notebooks-workspace.md
-  - name: Update the QDK
-    href: install-update-qdk.md
-  - name: Work with jobs
-    href: how-to-work-with-jobs.md
-  - name: Add or remove a provider
-    href: how-to-add-a-provider.md
-  - name: Add a group to your Azure Quantum workspace
-    href: bulk-add-users-to-a-workspace.md
-  - name: Authenticate using a service principal
-    href: optimization-authenticate-service-principal.md
-  - name: Authenticate using a managed identity
-    href: optimization-authenticate-managed-identity.md
-  - name: Work with Azure Quantum using the Azure CLI 
-    href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
-  - name: Work with Azure Quantum using the Azure Resource Manager 
-    href: how-to-manage-quantum-workspaces-with-azure-resource-manager.md
-  - name: Protect Azure Quantum with resource locks
-    href: how-to-set-resource-locks.md
+  - name: Users and workspaces
+    items:  
+    - name: Run Azure Quantum notebooks
+      href: how-to-run-notebooks-workspace.md
+    - name: Add a group to your Azure Quantum workspace
+      href: bulk-add-users-to-a-workspace.md
+    - name: Work with jobs
+      href: how-to-work-with-jobs.md
+    - name: Work with Azure Quantum using the Azure CLI 
+      href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
+    - name: Azure CLI commands >>
+      href: /cli/azure/quantum
+    - name: Work with Azure Quantum using the Azure Resource Manager 
+      href: how-to-manage-quantum-workspaces-with-azure-resource-manager.md
+  - name: Credits, pricing, and quotas
+    items: 
+    - name: Azure Quantum Credits
+      href: azure-quantum-credits.md
+    - name: Azure Quantum Credits program FAQ
+      href: credits-faq.md
+    - name: Azure Quantum pricing 
+      href: pricing.md
+    - name: Azure Quantum quotas
+      href: azure-quantum-quotas.md
+    - name: Understanding job costs in Azure Quantum
+      href: azure-quantum-job-costs.md
+  - name: Security
+    items:  
+    - name: Authenticate using a service principal
+      href: optimization-authenticate-service-principal.md
+    - name: Authenticate using a managed identity
+      href: optimization-authenticate-managed-identity.md
+    - name: Protect Azure Quantum with resource locks
+      href: how-to-set-resource-locks.md
+  - name: Maintenance
+    items:  
+    - name: Update the QDK
+      href: install-update-qdk.md
+    - name: Add or remove a provider
+      href: how-to-add-a-provider.md
   - name: Integrate with Azure Architecture
     items:
     - name: DevOps for quantum computing
@@ -300,26 +276,18 @@
       href: /azure/architecture/example-scenario/quantum/tightly-coupled-quantum-computing-job?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
 - name: Resources
   items:
-  - name: Azure Quantum pricing 
-    href: pricing.md
-  - name: Azure Quantum quotas
-    href: azure-quantum-quotas.md
-  - name: Azure Quantum provider availability
-    href: provider-global-availability.md
   - name: Glossary
     href: azure-quantum-glossary.md
+  - name: Azure Quantum provider global availability
+    href: provider-global-availability.md
   - name: Common issues
     href: azure-quantum-common-issues.md
   - name: Build your skills with Microsoft training >>
     href: /training/paths/quantum-computing-fundamentals/
   - name: Learn Q# with the Quantum Katas
     href: tutorial-qdk-intro-to-katas.md
-  - name: Q# code samples >>
-    href: /samples/browse/?languages=qsharp
   - name: Further reading
     href: further-reading-qdk.md
-  - name: Azure CLI commands >>
-    href: /cli/azure/quantum
   - name: Contribute to Azure Quantum
     items:
     - name: How to contribute
@@ -338,5 +306,13 @@
       href: contributing-style-guide.md
     - name: Q# API design guide for contributors
       href: contributing-api-design-principles.md
+- name: Samples
+  items:
+  - name: Samples for using Azure Quantum Computing >>
+    href: https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum
+  - name: Samples for using Azure Quantum optimization solvers >>
+    href: https://github.com/microsoft/qio-samples
+  - name: Q# code samples >>
+    href: /samples/browse/?languages=qsharp
 - name: Release notes
   href: release-notes.md
