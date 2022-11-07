@@ -1,7 +1,7 @@
 ---
-author: tedhudek
+author: SoniaLopezBravo
 description: Learn how to run your Q# programs on the Microsoft Quantum Development Kit noise simulator.
-ms.author: tedhudek
+ms.author: sonialopez
 ms.date: 10/26/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

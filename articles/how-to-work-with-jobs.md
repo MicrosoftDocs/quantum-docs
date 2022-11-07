@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: aviviano
 description: This document provides a basic guide to working with jobs in Azure Quantum.
-ms.author: brbenefield
+ms.author: amvivian
 ms.date: 10/20/2022
 ms.service: azure-quantum
 ms.subservice: core

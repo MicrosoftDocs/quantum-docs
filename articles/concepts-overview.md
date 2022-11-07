@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: Learn about the history of quantum computing, some background describing how it works, and about Azure Quantum and the Quantum Development Kit (QDK).
-ms.author: brbenefield
+ms.author: sonialopez
 ms.date: 05/16/2022
 ms.service: azure-quantum
 ms.subservice: core

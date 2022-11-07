@@ -1,10 +1,8 @@
 ---
-author: andrist
+author: SoniaLopezBravo
 description: This article describes the definition and purpose of the cost function for optimization problems.
-ms.author: tedhudek
-
+ms.author: sonialopez
 ms.date: 10/05/2021
-
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: conceptual

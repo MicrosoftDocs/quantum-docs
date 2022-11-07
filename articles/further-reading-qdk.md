@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: A reference list with deep coverage of quantum computing topics if you want to learn more about quantum computer programming.
-ms.author: brbenefield
+ms.author: sonialopez
 ms.date: 08/24/2022
 ms.service: azure-quantum
 ms.subservice: computing

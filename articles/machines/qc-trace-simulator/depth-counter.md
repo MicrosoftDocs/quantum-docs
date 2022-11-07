@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: Learn about the Microsoft QDK depth counter, which uses the Quantum trace simulator to gather counts of the depth of every operation invoked in a Q# program.
-ms.author: brbenefield
+ms.author: sonialopez
 ms.date: 05/11/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
