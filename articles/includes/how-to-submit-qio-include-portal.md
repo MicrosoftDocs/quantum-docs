@@ -21,9 +21,9 @@ ms.topic: include
 1. Type a name for the file, for example *submit-optimization-job.ipynb*, and click **Create file**. 
 
 > [!NOTE]
-> You can also upload a Notebook to your Azure Quantum workspace. For more information, see [Upload notebooks](xref:microsoft.quantum.how-to.notebooks#upload-notebooks).
+> You can also upload a Jupyter Notebook to your Azure Quantum workspace. For more information, see [Upload notebooks](xref:microsoft.quantum.how-to.notebooks#upload-notebooks).
 
-When your new Notebook opens, it automatically creates the code for the first cell, based on your subscription and workspace information.
+When your new notebook opens, it automatically creates the code for the first cell, based on your subscription and workspace information.
 
 ```py
 from azure.quantum import Workspace

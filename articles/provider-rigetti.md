@@ -86,7 +86,7 @@ To make constructing a Quil program easier, you can use [`pyQuil`] along with th
 
 ### QIR
 
-All Rigetti hardware supports the execution of Quantum Intermediate Representation (QIR) compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`. QIR provides a common interface that supports many quantum languages and target platforms for quantum computation and enables communication between high-level languages and machines. For example, you can submit Q#, Quil, or Qiskit jobs to Rigetti hardware, and Azure Quantum will automatically handle the input for you. For more information, see [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir).
+All Rigetti hardware supports the execution of quantum intermediate representation (QIR) compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`. QIR provides a common interface that supports many quantum languages and target platforms for quantum computation and enables communication between high-level languages and machines. For example, you can submit Q#, Quil, or Qiskit jobs to Rigetti hardware, and Azure Quantum will automatically handle the input for you. For more information, see [Quantum intermediate representation](xref:microsoft.quantum.concepts.qir).
 
 ### Selecting the right input format
 

@@ -20,7 +20,7 @@ A workspace is needed to [get started with Jupyter Notebooks in Azure Quantum](x
 > [!TIP]
 > You can also create an Azure Quantum workspace using the Azure command-line interface (CLI). For more information, see [Manage quantum workspaces with the Azure CLI](xref:microsoft.quantum.workspaces-cli).
 
-## Free Azure Quantum credits
+## Free Azure Quantum Credits
 
 First-time users automatically get $500 (USD) free [Azure Quantum Credits](xref:microsoft.quantum.credits) for use with each participating quantum hardware provider (see the [full quantum provider list](xref:microsoft.quantum.reference.qc-target-list)). Your free Azure Quantum Credits become available once you create a new Azure Quantum workspace. If you need more credits, you can apply to the [Azure Quantum Credits program](xref:microsoft.quantum.credits.credits-faq).
 
@@ -44,7 +44,7 @@ In addition, the free Azure trial gets you started with $200 (USD) in Azure cred
 
 Sign up for an [Azure for Students subscription](https://azure.microsoft.com/offers/ms-azr-0170p/). With the Azure Quantum Credits you'll have $500 (USD) to use in each quantum hardware provider. Once you've consumed all your credits, you must upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go), and you can cancel anytime.
 
-Azure for Students gets you started with $100 (USD) in Azure credits to be used in Azure 1st-party services (Azure Quantum is not eligible), and you don't need a credit card to sign-up.  
+Azure for Students gets you started with $100 (USD) in Azure Credits to be used in Azure 1st-party services (Azure Quantum is not eligible), and you don't need a credit card to sign-up.  
 
 ### [Enterprise Agreement](#tab/EA)
 
@@ -53,7 +53,7 @@ If your organization has an Enterprise Agreement (EA) purchasing contract with M
 ---
 
 > [!NOTE]
-> Note that Azure credits and Azure Quantum Credits are different grants and shouldn't be confused. You can only use general-purpose Azure Credits with the Microsoft quantum providers - third-party providers (providers that aren't owned by Microsoft) aren't eligible.
+> Note that Azure Credits and Azure Quantum Credits are different grants and shouldn't be confused. You can only use general-purpose Azure Credits with the Microsoft quantum providers - third-party providers (providers that aren't owned by Microsoft) aren't eligible.
 
 If you have any questions or run into any issue using Azure Quantum, join our [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) every Thursday 8∶30 AM Pacific Time zone (PT).
 
