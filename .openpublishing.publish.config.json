@@ -64,7 +64,8 @@
       "Publish",
       "Intellisense",
       "Pdf"
-    ]
+    ],
+    "pr-en-us-952": ["Publish", "Pdf"]
   },
   "targets": {
     "pdf": {
