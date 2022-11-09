@@ -78,7 +78,7 @@
         href: concepts-open-systems.md
       - name: Theory of Grover's algorithm
         href: concepts-grovers.md
-      - name: Quantum Intermediate Representation
+      - name: Quantum intermediate representation
         href: concepts-qir.md
   - name: Troubleshooting
     items:
@@ -308,7 +308,7 @@
       href: contributing-api-design-principles.md
 - name: Samples
   items:
-  - name: Samples for using Azure Quantum Computing >>
+  - name: Samples for using Azure Quantum for quantum computing >>
     href: https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum
   - name: Samples for using Azure Quantum optimization solvers >>
     href: https://github.com/microsoft/qio-samples
