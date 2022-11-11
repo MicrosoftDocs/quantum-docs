@@ -13,9 +13,14 @@ uid: microsoft.quantum.machines.overview.resources-estimator
 
 # Quantum Development Kit (QDK) resources estimator
 
-As the name implies, the `ResourcesEstimator` class estimates the resources required to run a given instance of a Q# operation on a quantum computer. It accomplishes this task by running the quantum operation without actually simulating the state of a quantum computer. For this reason, it is able to estimate resources for Q# operations that use thousands of qubits, if the classical part of the code runs in a reasonable time.
+As the name implies, the `ResourcesEstimator` class estimates the resources required to run a given instance of a Q# operation on a quantum computer. It accomplishes this task by running the quantum operation without actually simulating the state of a quantum computer; that is it computes pre-layout logical resources estimation. For this reason, it is able to estimate resources for Q# operations that use thousands of qubits, provided that the classical part of the code runs in a reasonable time.
 
 The resources estimator is built on top of the [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro), which provides a richer set of metrics and tools to help debug Q# programs.
+
+> [!NOTE]
+> The QDK resources estimator and the Azure Quantum Resource Estimator are different targets and shouldn't be confused. 
+> - The QDK resources estimator is a class of the `Microsoft.Quantum.Simulation.Simulators` namespace of the Quantum Development Kit, computes pre-layout logical resources estimation, and doesn't require an Azure account. 
+> - The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator) is available through Azure Quantum and requires an Azure account. The Azure Quantum Resource Estimator provides major capabilities over the QDK version, it computes post-layout physical resource estimates by taking assumptions about qubit parameters, quantum error correcting codes, and an error budget into account. 
 
 ## Invoking and running the resources estimator
 

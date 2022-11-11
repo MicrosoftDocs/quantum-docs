@@ -16,8 +16,10 @@ uid: microsoft.quantum.machines.overview.qc-trace-simulator.intro
 The QDK <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> class runs a quantum program without actually simulating the state of a quantum computer. For this reason, the quantum trace simulator is able to run quantum programs that use thousands of qubits.  It is useful for two main purposes: 
 
 * Debugging classical code that is part of a quantum program. 
-* Estimating the resources required to run a given instance of a quantum program
-  on a quantum computer. In fact, the [Resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator), which provides a more limited set of metrics, is built upon the trace simulator.
+* Estimating the resources required to run a given instance of a quantum program on a quantum computer. 
+
+> [!WARNING]
+> The QDK resources estimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace has been deprecated.
 
 ## Invoking the quantum trace simulator
 
@@ -93,7 +95,6 @@ Each of these tools is enabled by setting appropriate flags in `QCTraceSimulator
 
 ## See also
 
-- [Quantum resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)
 - [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
 - [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
 - [Quantum noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator)

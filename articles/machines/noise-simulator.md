@@ -410,6 +410,5 @@ $$\left\langle X_{0}X_{1}, Z_{0}Z_{1}, Z_{2}, Z_{3} \right\rangle $$
 
 - [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
 - [Quantum sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator)
-- [Quantum resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)
 - [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
 - [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)

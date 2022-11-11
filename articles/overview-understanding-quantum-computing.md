@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how quantum computing works, how it compares to classical computing, and how it uses the principles of quantum mechanics.
-ms.date: 07/19/2022
+ms.date: 11/09/2022
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -34,6 +34,16 @@ A quantum computer isn't a supercomputer that can do everything faster. One of t
 Quantum computers do exceptionally well with problems that require calculating a large number of possible combinations. These types of problems can be found in many areas, such as quantum simulation, cryptography, quantum machine learning, and search problems.
 
 For the latest information about Microsoft's quantum computing research, see the [Microsoft Research Quantum Computing](https://www.microsoft.com/research/research-area/quantum-computing/?) page.
+
+### Resource estimation
+
+The quantum computers available today are enabling interesting experimentation and research but they are unable to accelerate computations necessary to solve real-world problems. While the industry awaits hardware advances, quantum software innovators are eager to make progress and prepare for a quantum future. Creating algorithms today that will eventually run on tomorrow's fault-tolerant scaled quantum computers is a daunting task. These innovators are faced with questions such as what hardware resources are required? How many physical and logical qubits are needed and what type? How long is the run time?
+
+This is why Microsoft is providing the Azure Quantum Resource Estimator. This unique tool in the industry is designed specifically to answer these questions. Understanding this data will help you create, test, and refine your algorithms and ultimately lead to practical solutions that take advantage of scaled quantum computers when they become available.
+
+To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
+
+Learn more about assessing requirements to scale to practical quantum advantage in this published [scientific paper](https://aka.ms/AQ/RE/Paper).
 
 ### Quantum simulation
 

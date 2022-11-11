@@ -98,7 +98,6 @@ By default, the sparse simulator uses a random number generator to simulate quan
 ## See also
 
 - [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
-- [Quantum resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)
 - [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
 - [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)
 - [Quantum noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator)

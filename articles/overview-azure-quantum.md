@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs or solve optimization problems in the cloud.
-ms.date: 08/29/2022
+ms.date: 10/26/2022
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -27,6 +27,7 @@ Azure Quantum provides the best development environment to create quantum algori
 - [How to get started with Azure Quantum?](#how-to-get-started-with-azure-quantum)
 - [Who is Azure Quantum for?](#who-is-azure-quantum-for)
 - [Why use quantum computing?](#why-use-quantum-computing)
+- [Resource estimation in quantum computing](#resource-estimation-in-quantum-computing)
 - [What are Q# and the Quantum Development Kit?](#what-are-q-and-the-quantum-development-kit)
 - [Workflow of the quantum software development](#workflow-of-the-quantum-software-development)
 - [Quantum cloud solutions available on Azure Quantum](#quantum-cloud-solutions-available-on-azure-quantum)
@@ -106,6 +107,23 @@ Azure Quantum gives you access to a broad set of state-of-the-art quantum-inspir
 
 To learn more about the optimization solutions in Azure Quantum, see [What is optimization?](xref:microsoft.quantum.optimization.concepts.overview.introduction).
 
+## Resource estimation in quantum computing
+
+In quantum computing, resource estimation is the ability to understand the resources, that is the number of qubits, number of quantum gates, processing time, etc., that will be required for a given algorithm, assuming (or taking as parameters) certain hardware characteristics. Understanding the number of qubits required for a quantum solution and the differences between qubit technologies allows innovators to prepare and refine their quantum solutions to run on future scaled quantum machines and ultimately accelerate their quantum impact.
+
+Azure Quantum offers a first-party resource estimation target that computes and outputs wall clock execution time and physical resource estimates for a program, assuming it is executed on a fault-tolerant error-corrected quantum computer. Designed specifically for scaled quantum (post-NISQ, fault-tolerant systems), the **Azure Quantum Resource Estimator** allows you to assess architectural decisions, compare qubit technologies, and determine the resources needed to execute a given quantum algorithm. You can choose from pre-defined fault-tolerant protocols and specify assumptions of the underlying physical qubit model. 
+
+The Azure Quantum Resource Estimator computes post-layout physical resource estimation by taking assumptions about qubit parameters, quantum error correction (QEC) codes, and an error budget into account. It takes a [Quantum Intermediate Representation (QIR)](xref:microsoft.quantum.concepts.qir) program as input and, therefore, supports any language that translates to QIR, for example, you can use the Azure Quantum Resource Estimator with popular quantum SDKs and languages such as Q# and Qiskit.
+
+The Azure Quantum Resource Estimator takes a set of inputs, with pre-defined values to easily get you started: 
+
+- Physical qubit parameters
+- A Quantum Error Correction (QEC) scheme  
+- An error budget 
+
+For more information, see [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator) reference page.
+
+
 ## What are Q\# and the Quantum Development Kit?
 
 The Microsoft Quantum Development Kit (QDK) is an **open-source** development kit for Azure Quantum. It is built-in to the Azure Quantum portal, where you can develop programs using hosted Jupyter Notebooks. You can also install the QDK to your own local environment and work both online with the Azure Quantum service and offline. The QDK includes the [quantum programming language Q#](xref:microsoft.quantum.overview.q-sharp), a high-level programming language that allows you to focus your work at the algorithm and application level to create quantum programs.
@@ -148,7 +166,7 @@ The following diagram shows the stages through which a quantum program goes from
 
 4. **Run your quantum code in simulation.**  Once you’ve written your program, you’ll want to use [quantum simulators](xref:microsoft.quantum.machines.overview) – classical programs that simulate the behavior of a quantum system, so that you can run a small instance of your program and see what it does without actual hardware access.
 
-5. **Estimate resources.**  Before running on quantum hardware, you’ll need to figure out whether your program can run on existing hardware. You can use [QDK resource estimators](xref:microsoft.quantum.machines.overview.resources-estimator) to tell you how many qubits you need and how long your program will take.
+5. **Estimate resources.**  Before running on quantum hardware, you’ll need to figure out whether your program can run on existing hardware. You can use the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator) to tell you the physical resource estimates you need and how long your program will take.
 
 6. **Run your code on quantum hardware.** Finally, the last step is using [Azure Quantum](xref:microsoft.quantum.submit-jobs) to run your program on quantum hardware!
 

@@ -254,6 +254,11 @@
 			"source_path": "articles/install-python-optimization.md",
 			"redirect_url": "/azure/quantum/install-overview-qdk",
 			"redirect_document_id": false
+		},
+		{
+			"source_path": "artiles/machines/resources-estimator.md",
+			"redirect_url": "/azure/quantum/machines/qc-trace-simulator/",
+			"redirect_document_id": false
 		}
 	]
 }

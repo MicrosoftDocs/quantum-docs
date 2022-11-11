@@ -24,6 +24,22 @@
       href: overview-understanding-quantum-computing.md
     - name: What are Q# and the Quantum Development Kit
       href: overview-what-is-qsharp-and-qdk.md
+  - name: Resource Estimation
+    items: 
+    - name: An introduction to resource estimation
+      href: intro-to-resource-estimation.md
+    - name: Run your first resource estimate
+      href: quickstart-microsoft-resources-estimator.md
+    - name: Use different SDKs and IDEs with Resource Estimator
+      href: how-to-submit-re-jobs.md  
+    - name: Customize resource estimates to machine characteristics
+      href: overview-resources-estimator.md
+    - name: Learn how the Resource Estimator works
+      href: learn-how-the-resource-estimator-works.md
+    - name: Get the most out of the Resource Estimator
+      href: how-to-work-with-re.md
+    - name: Resource Estimation with QIR
+      href: tutorial-resource-estimator-qir.md
   - name: Quickstarts
     items:
     - name: Submit a circuit with Qiskit
@@ -50,7 +66,7 @@
       href: how-to-publish-qsharp-job-as-azurefunction.md
   - name: The Q# user guide
     href: user-guide/toc.yml
-  - name: Simulators and resource estimators
+  - name: Quantum simulators
     href: machines/toc.yml  
   - name: Concepts
     items:

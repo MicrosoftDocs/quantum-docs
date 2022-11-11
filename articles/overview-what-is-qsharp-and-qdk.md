@@ -76,7 +76,6 @@ Everything you need to write and run Q# programs, including the Q# compiler, the
 The following diagram shows the stages through which a quantum program goes from idea to complete implementation on Azure Quantum, and the tools offered by the QDK for each stage.
 
 :::image type="content" source="~/media/quantum-development-kit-flow-diagram.svg" alt-text="Diagram showing the workflow of quantum programming development.":::
-![qdk workflow](~/media/quantum-development-kit-flow-diagram.svg)
 
 > [!Note]
 > You use the same Q# code for all steps of the workflow. In the short term you might have to tweak some portions of the code to account for the current hardware limitations. But in the long run you’ll be able to switch between various simulators and hardware providers without any code modifications.
@@ -99,11 +98,15 @@ In addition to the standard library, the QDK includes a [quantum chemistry libra
 
 ### Run programs in simulators
 
-Once you’ve written your program, the QDK offers a set of [quantum simulators](xref:microsoft.quantum.machines.overview) - classical programs that simulate the behavior of a quantum system - so that you can run a small instance of your program and see what it does without actual hardware access. You can run your quantum programs on a [full-state quantum simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), a limited-scope [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator), a [sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator) for systems with larger number of qubits, and even use the [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulating the behavior of Q# programs under the influence of noisy environments. 
-
-Before running on quantum hardware, you’ll need to figure out whether your program can run on existing hardware, and how many resources it will consume. You can use the [resource estimator](xref:microsoft.quantum.machines.overview.resources-estimator) to tell you how many qubits and quantum gates you need, and how long your program will take, and the [trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro) to do an advanced analysis of resources consumption and  debug classical code that is part of your quantum program.
+Once you’ve written your program, the QDK offers a set of [quantum simulators](xref:microsoft.quantum.machines.overview) - classical programs that simulate the behavior of a quantum system - so that you can run a small instance of your program and see what it does without actual hardware access. You can run your quantum programs on a [full-state quantum simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), a limited-scope [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator), a [sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator) for systems with larger number of qubits, and even use the [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulating the behavior of Q# programs under the influence of noisy environments.
 
 See the full list of [quantum simulators](xref:microsoft.quantum.machines.overview).
+
+### Estimate resources
+
+Before running on quantum hardware, you’ll need to figure out whether your program can run on existing hardware, and how many resources it will consume. You can use the [trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro) to estimate how many qubits and quantum gates you need and debug classical code that is part of your quantum program. 
+
+You can also submit your quantum program to the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator) target in Azure portal. The Azure Quantum Resource Estimator computes post-layout physical resource estimation by taking assumptions about qubit parameters, quantum error correction codes, and an error budget into account. It is free of charge and requires an Azure account.
 
 ### Submit jobs to the Azure Quantum service
 
