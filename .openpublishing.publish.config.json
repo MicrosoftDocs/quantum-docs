@@ -64,8 +64,7 @@
       "Publish",
       "Intellisense",
       "Pdf"
-    ],
-    "th/pdf": ["Publish", "Pdf"]
+    ]
   },
   "targets": {
     "pdf": {
