@@ -68,7 +68,7 @@ namespace TestProject {
 ```
 
 Any Q# operation or function that takes an argument of type `Unit` and returns `Unit` can be marked as a unit test via the `@Test("...")` attribute.
-In the previous example, the argument to that attribute, `"QuantumSimulator"`, specifies the target on which the test runs. A single test can run on multiple targets. For example, add an attribute `@Test("ResourcesEstimator")` before `AllocateQubit`.
+In the previous example, the argument to that attribute, `"QuantumSimulator"`, specifies the target on which the test runs. A single test can run on multiple targets. For example, add an attribute `@Test("ToffoliSimulator")` before `AllocateQubit`.
 
 ```qsharp
 namespace TestProject {
@@ -77,16 +77,16 @@ namespace TestProject {
     open Microsoft.Quantum.Intrinsic;
     
     @Test("QuantumSimulator")
-    @Test("ResourcesEstimator")
+    @Test("ToffoliSimulator")
     operation AllocateQubit () : Unit {
         ...
     }
 }
 ```
 
-After saving the file you will see two unit tests when running the tests: one where `AllocateQubit` runs on the `QuantumSimulator`, and one where it runs in the `ResourcesEstimator`.
+After saving the file you will see two unit tests when running the tests: one where `AllocateQubit` runs on the `QuantumSimulator`, and one where it runs in the `ToffoliSimulator`.
 
-The Q# compiler recognizes the built-in targets `"QuantumSimulator"`, `"ToffoliSimulator"`, and `"ResourcesEstimator"` as valid run targets for unit tests. It is also possible to specify any fully qualified simulator name to define a custom run target.
+The Q# compiler recognizes the built-in targets `"QuantumSimulator"`, and `"ToffoliSimulator"`, as valid run targets for unit tests. It is also possible to specify any fully qualified simulator name to define a custom run target.
 
 Besides the code file, the test project template includes the `.csproj` file with the following contents:
 
@@ -445,7 +445,7 @@ operation MultiQubitDumpMachineDemo() : Unit {
     }
 
 ```
-1. In a new cell, run the `MultiQubitDumpMachineDemo` operation on a full state quantum simulator by using the `%simulate` magic command. The `DumpMachine` call prints the information about the quantum state of the program after the Controlled Ry gate as a set of lines, one per basis state, showing their complex amplitudes, phases, and measurement probabilities.
+2. In a new cell, run the `MultiQubitDumpMachineDemo` operation on a full state quantum simulator by using the `%simulate` magic command. The `DumpMachine` call prints the information about the quantum state of the program after the Controlled Ry gate as a set of lines, one per basis state, showing their complex amplitudes, phases, and measurement probabilities.
 
 :::image type="content" source="../media/dumpmachine-output.png" alt-text="Screenshot of the DumpMachine operation output in Jupyter Notebooks.":::
 
@@ -453,14 +453,14 @@ operation MultiQubitDumpMachineDemo() : Unit {
 > You can use <xref:microsoft.quantum.iqsharp.magic-ref.config> (available only in Q# Jupyter Notebooks) to tweak the format of the `DumpMachine` output. It offers many settings that you can use in different scenarios. For example, by default `DumpMachine` uses little-endian integers to denote the basis states (the first column of the output); if you find raw bit strings easier to read, you can use `%config dump.basisStateLabelingConvention="Bitstring"` to switch.
 
 
-1. Jupyter Notebooks offers the option to visualize the run of the quantum program as a quantum circuit by using <xref:microsoft.quantum.iqsharp.magic-ref.trace> (available only in Q# Jupyter Notebooks). This command traces one run of the Q# programs and build a circuit based on that run. This is the circuit resulting from the running of `%trace MultiQubitDumpMachineDemo`, 
+3. Jupyter Notebooks offers the option to visualize the run of the quantum program as a quantum circuit by using <xref:microsoft.quantum.iqsharp.magic-ref.trace> (available only in Q# Jupyter Notebooks). This command traces one run of the Q# programs and build a circuit based on that run. This is the circuit resulting from the running of `%trace MultiQubitDumpMachineDemo`, 
 
 :::image type="content" source="../media/dumpmachine-trace-output.png" alt-text="Screenshot of the DumpMachine operation using the trace magic command in Jupyter Notebooks.":::
 
 
    The visualization is interactive, allowing you to click on each block to drill down to the intrinsic gates.
 
-1. Finally, <xref:microsoft.quantum.iqsharp.magic-ref.debug> (available only in Q# Jupyter Notebooks) allows you to combine tracing the program execution (as a circuit) and observing the program state as it evolves at the same time. The visualization is also interactive; you can click through each of the steps until the program run is complete, and switch to observe real and imaginary components of the amplitudes, instead of measurement probabilities in the beginning of the program.
+4. Finally, <xref:microsoft.quantum.iqsharp.magic-ref.debug> (available only in Q# Jupyter Notebooks) allows you to combine tracing the program execution (as a circuit) and observing the program state as it evolves at the same time. The visualization is also interactive; you can click through each of the steps until the program run is complete, and switch to observe real and imaginary components of the amplitudes, instead of measurement probabilities in the beginning of the program.
 
 :::image type="content" source="../media/dumpmachine-debug-output.png" alt-text="Screenshot of the DumpMachine operation using the debug magic command in Jupyter Notebooks.":::
 
