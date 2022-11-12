@@ -46,13 +46,13 @@ Create a new project in Visual Studio Code:
 
 1. Select **View** -> **Command Palette** and select **Q#: Create New Project**.
 2. Select **Standalone console application**.
-3. Select a location to save the project, name it **Qrng**, and select **Create Project**.
+3. Select a location to save the project, name it **EstimateMultiplication**, and select **Create Project**.
 4. When the project is successfully created, select **Open new project...** in the
-   lower right. This generates two files: the project file, *Qrng.csproj*, and a Q# program template, *Program.qs*.
-5. In Qrng.csproj, if it does not exist, add the ItemGroup reference to Microsoft.Quantum.Numerics:
+   lower right. This generates two files: the project file, *EstimateMultiplication.csproj*, and a Q# program template, *Program.qs*.
+5. In EstimateMultiplication.csproj, if it does not exist, add the ItemGroup reference to Microsoft.Quantum.Numerics:
 
     ```xml
-    <Project Sdk="Microsoft.Quantum.Sdk/0.27.238334">
+    <Project Sdk="Microsoft.Quantum.Sdk/X.XX.XXXXXX">
      
       <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -60,7 +60,7 @@ Create a new project in Visual Studio Code:
       </PropertyGroup>
      
       <ItemGroup>
-        <PackageReference Include="Microsoft.Quantum.Numerics" Version="0.27.238334" />
+        <PackageReference Include="Microsoft.Quantum.Arithmetic" Version="X.XX.XXXXXX" />
       </ItemGroup>
      
     </Project>
@@ -106,7 +106,7 @@ az quantum job output -j <job-id> -o table
 |Logical qubit parameter|Value|
 |----|---|
 |QEC scheme | surface_code |
-|ECC distance  | 13 |
+|Code distance  | 13 |
 |Physical qubits    |            338 |
 |Logical cycle time   |   5us 200ns |
 |Logical qubit error rate  |     3.00E-9 |
@@ -123,8 +123,8 @@ For example, see that the time to perform a single-qubit measurement and a singl
 |Qubit name     |                    qubit_gate_ns_e3 |
 |Instruction set                      |     GateBased  |
 |Single-qubit measurement time         |       100 ns |
-|T-gate time	                            |      50 ns|
-|T-gate error rate                       |      0.001 |
+|T gate time	                            |      50 ns|
+|T gate error rate                       |      0.001 |
 |Single-qubit measurement error rate      |     0.001 |
 |Single-qubit gate time                    |    50 ns |
 |Single-qubit error rate                   |    0.001 |
@@ -171,38 +171,38 @@ For example, you can show a breakdown of the estimates by clicking on the *Break
 
 |Name|Value |
 |-----|-----|
-|Logical qubits (Algorithm)|	84	|
-|Logical depth (Algorithm)|	608	|
+|Logical algorithmic qubits |	84	|
+|Logical algorithmic depth |	608	|
 |Adjusted logical depth	|608|	
-|Number of T-states|	800	|
-|T-factory count|	10	|
-|T-factory runs	|80|
-|Physical qubits (Algorithm)	|4200	|
-|Physical qubits (T-factories)|	164160	|
-|Physical qubits (T-factory fraction)	|97.50 %	|
+|Number of T states|	800	|
+|Number of T factories|	10	|
+|Number of T factory invocations	|80|
+|Physical algorithmic qubits|4200	|
+|Physical T factory qubits|	164160	|
+|Physical T factory qubits (fraction)	|97.50 %	|
 |Required logical qubit error rate	|9.79e-9	|
-|Required logical T-state error rate	|6.25e-7|	
-|Number of T-gates per rotation|	No rotations in algorithm|
+|Required logical Tstate error rate	|6.25e-7|	
+|Number of T gates per rotation|	No rotations in algorithm|
 
-You can also explore details about the T-factory that was created to execute this algorithm.
+You can also explore details about the T factory that was created to execute this algorithm.
 
 
-|T-factory parameters| Value|
+|T factory parameters| Value|
 |-----|-----|
 |Physical qubits|	16416	|
 |Runtime	|72us 900ns	|
-|Number of T-states per run	|1	|
-|Number of input T-stats per run	|20520	|
+|Number of output T states per run	|1	|
+|Number of input T states per run	|20520	|
 |Distillation rounds|	3	|
-|Modules per distillation round |	1368, 20, 1	|
-|Distillation modules|	15-to-1 space efficient physical, 15-to-1 RM prep physical, 15-to-1 RM prep logical	|
-|Distillation ECC distances|	1, 1, 3	|
-|Physical qubits per round	|12, 31, 558	|
+|Distillation units per round|	1368, 20, 1	|
+|Distillation units|	15-to-1 space efficient physical, 15-to-1 RM prep physical, 15-to-1 RM prep logical	|
+|Distillation code distances|	1, 1, 3	|
+|Number of physical qubits per round	|12, 31, 558	|
 |Runtime per round|	4us 500ns, 2us 400ns, 66us |
-|Logical T-state error rate|	2.52e-07|
+|Logical T state error rate|	2.52e-07|
 
 
-A single T-factory produces 1 T-state. Notice that the logical error rate for an output T-state (2.52e-07) is smaller than the required T state error rate in the physical counts breakdown (6.25e-07). The T-factory is copied 10 times such that they can run in parallel to produce 10 T-states. These copies are run 80 times in sequence, producing in total $10 \cdot 80 = 800$ T-states that are required by the algorithm. A single T-factory is composed of 3 rounds of distillation, where in:
+A single T factory produces 1 T state. Notice that the logical error rate for an output T-state (2.52e-07) is smaller than the required T state error rate in the physical counts breakdown (6.25e-07). The T factory is copied 10 times such that they can run in parallel to produce 10 T states. These copies are run 80 times in sequence, producing in total $10 \cdot 80 = 800$ T states that are required by the algorithm. A single T factory is composed of 3 rounds of distillation, where in:
 
 - 1368 copies of *15-to-1 space efficient physical* distillation modules were used 
 - 20 copies of *15-to-1 RM prep physical* distillation modules were used 
