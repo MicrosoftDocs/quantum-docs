@@ -118,7 +118,7 @@ Once you’ve created an Azure Quantum workspace, you can submit your Q# program
 
 The following diagram shows the basic workflow after you submit your job:
 
-:::image type="content" source="~/media/azure-quantum-flow-diagram-providers.png" alt-text="Diagram showing the worklow after a job submission to Azure Quantum.":::
+:::image type="content" source="~/media/azure-quantum-flow-diagram-providers.svg" alt-text="Diagram showing the worklow after a job submission to Azure Quantum.":::
 
 Azure Quantum offers some of the most compelling and diverse quantum resources available today from industry leaders. With Azure Quantum and the QDK you can write [quantum computing](xref:microsoft.quantum.overview.understanding) and [quantum-inspired optimization](xref:microsoft.quantum.optimization.concepts.overview.introduction) programs, and submit them to Azure Quantum to run on [quantum hardware](xref:microsoft.quantum.reference.qc-target-list) and [optimization solvers](xref:microsoft.quantum.reference.qio-target-list). 
 
