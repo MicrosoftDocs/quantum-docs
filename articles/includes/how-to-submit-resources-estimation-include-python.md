@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 10/27/2022
+ms.date: 11/12/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -488,7 +488,7 @@ HTML(html)
 |Physical qubits |	13520	|13520	|16416|
 |Runtime|	67us 600ns|	33ms 833us 800ns|	16us 800ns|
 |Number of ouput T states per run|	1	|1|	1|
-|Number of input T-stats per run|	30	|30|	20520|
+|Number of input T states per run|	30	|30|	20520|
 |Distillation rounds|	1|	1|	3|
 |Distillation units per round|	2|	2|	1368, 20, 1|
 |Distillation units|	15-to-1 space efficient logical|	15-to-1 space efficient logical|	15-to-1 space efficient physical, 15-to-1 RM prep physical, 15-to-1 RM prep logical|
