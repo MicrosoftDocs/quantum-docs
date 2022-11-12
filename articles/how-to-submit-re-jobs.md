@@ -19,8 +19,19 @@ In this article, you'll learn to work with the [Azure Quantum Resource Estimator
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The Azure Quantum Resource Estimator target enabled in your workspace. If you don't know how to do it, see [Enabling the Resource Estimator target](xref:microsoft.quantum.work-with-resource-estimator#enable-the-resources-estimator-in-your-workspace).
+- The Azure Quantum Resource Estimator target enabled in your workspace. If you don't know how to do it, see [Enabling the Resource Estimator target](xref:microsoft.quantum.quickstarts.computing.resources-estimator#enable-the-resources-estimator-in-your-workspace).
 
+## Run the Azure Quantum Resource Estimator
+
+Usage of the Azure Quantum Resource Estimator is similar to submitting a job against other software and hardware providers in Azure Quantum.
+You define your program, set a target, and submit your job for computation. To use the Azure Quantum Resource Estimator, the target is the `microsoft.estimator`. 
+
+When you set the target, you can provide additional optional parameters such as the qubit type, one qubit gate time, etc. 
+The Azure Quantum Resource Estimator will return detailed output that can be visually rendered or programmatically parsed. For more information about input and output parameters, see [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator).
+
+- Job type: Simulation (Estimation)
+- Provider Id: `microsoft`
+- Target ID: `microsoft.estimator`
 
 ::: zone pivot="ide-python-qsharp"
 

@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 10/27/2022
+ms.date: 11/12/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -106,8 +106,8 @@ For example, see that the time to perform a single-qubit measurement and a singl
 |Qubit name     |                    qubit_gate_ns_e3 |
 |Instruction set                      |     GateBased  |
 |Single-qubit measurement time         |       100 ns |
-|T-gate time	                            |      50 ns|
-|T-gate error rate                       |      0.001 |
+|T gate time	                            |      50 ns|
+|T gate error rate                       |      0.001 |
 |Single-qubit measurement error rate      |     0.001 |
 |Single-qubit gate time                    |    50 ns |
 |Single-qubit error rate                   |    0.001 |
@@ -200,11 +200,11 @@ result['tfactory']
 ```output
 {'eccDistancePerRound': [1, 1, 3],
  'logicalErrorRate': 2.5244447992120037e-07,
- 'moduleNamePerRound': ['15-to-1 space efficient physical',
+ 'unitNamePerRound': ['15-to-1 space efficient physical',
   '15-to-1 RM prep physical',
   '15-to-1 RM prep logical'],
  'numInputTstates': 20520,
- 'numModulesPerRound': [1368, 20, 1],
+ 'numUnitsPerRound': [1368, 20, 1],
  'numRounds': 3,
  'numTstates': 1,
  'physicalQubits': 16416,
@@ -285,14 +285,25 @@ from matplotlib import pyplot as plt     # To plot experimental results
 from matplotlib.colors import hsv_to_rgb # To automatically find colors for plots
 ```
 
-You'll use three of the six pre-defined qubit parameter models. For the Majorana-based model, use the Floquet code as pre-defined QEC scheme. Further, you are choosing bitwidths that are powers-of-2 ranging from 8 to 64.
+You'll use two of the six pre-defined qubit parameter models, and one customized model based on the model qubit_gate_nds_e3, in which you'll set the error rates to 
+$10^{-3.5}$. In your own experiments, you can change the number of items, and also the parameters. You may use other pre-defined models or define custom models. 
+
+
+Further, you are choosing bitwidths that are powers-of-2 ranging from 8 to 64.
 
 ```python
 input_params = {
-    "gate_ns": {"qubitParams": {"name": "qubit_gate_ns_e3"}},
-    "gate_us": {"qubitParams": {"name": "qubit_gate_us_e4"}},
-    "maj_ns": {"qubitParams": {"name": "qubit_maj_ns_e6"}, "qecScheme": {"name": "floquet_code"}}
+    "Gate-based ns, 10⁻³": {"qubitParams": {"name": "qubit_gate_ns_e3"}},
+    "Gate-based ns, 10⁻³ᐧ⁵": {"qubitParams": {"name": "qubit_gate_ns_e3", "oneQubitMeasurementErrorRate": 0.00032, "oneQubitGateErrorRate": 0.00032, "twoQubitGateErrorRate": 0.00032, "tGateErrorRate": 0.00032}},
+    "Gate-based ns, 10⁻⁴": {"qubitParams": {"name": "qubit_gate_ns_e4"}}
 }
+
+bitwidths = [8, 16, 32, 64]
+
+# We also store the names of the experiments; if you like to force some order
+# you can explicitly initialize the list with names from the `input_params`
+# dictionary.
+names = list(input_params.keys())
 
 bitwidths = [8, 16, 32, 64]
 
@@ -316,7 +327,7 @@ You'll then submit this wrapper operation for each experiment configuration usin
 # empty arrays as values
 jobs = {name: [] for name in names}
 
-progress_bar = IntProgress(min=0, max=len(input_params) * len(bitwidths) - 1)
+progress_bar = IntProgress(min=0, max=len(input_params) * len(bitwidths) - 1, style={'description_width': 'initial'}, layout=Layout(width='75%'))
 display(progress_bar)
 
 for bitwidth in bitwidths:
@@ -339,7 +350,7 @@ do that, it will first wait for a job to have succeeded, whenever it is still in
 # and empty arrays as values
 results = {name: [] for name in names}
 
-progress_bar = IntProgress(min=0, style={'description_width': '150px'}, max=len(input_params) * len(bitwidths) - 1)
+progress_bar = IntProgress(min=0, max=len(input_params) * len(bitwidths) - 1, style={'description_width': 'initial'}, layout=Layout(width='75%'))
 display(progress_bar)
 
 for name, job_ids in jobs.items():
@@ -363,7 +374,7 @@ for name, job_ids in jobs.items():
 
 
 
-Now that you have all results, let's extract some data from it. You can extract the number of physical qubits, the total runtime in nanoseconds, and the QEC code distance for the logical qubits. In addition to the total number of physical qubits, you can extract their breakdown into number of physical qubits for executing the algorithm and the number of physical qubits required for the T-factories that produce the required T states.
+Now that you have all results, let's extract some data from it. You can extract the number of physical qubits, the total runtime in nanoseconds, and the QEC code distance for the logical qubits. In addition to the total number of physical qubits, you can extract their breakdown into number of physical qubits for executing the algorithm and the number of physical qubits required for the T factories that produce the required T states.
 
 ```python
 names = list(input_params.keys())
@@ -382,7 +393,7 @@ for bitwidth_index, bitwidth in enumerate(bitwidths):
 
         runtime[(name_index, bitwidth_index)] = data['physicalCounts']['runtime']
 
-        distances[(name_index, bitwidth_index)] = data['logicalQubit']['eccDistance']
+        distances[(name_index, bitwidth_index)] = data['logicalQubit']['codeDistance']
 ```
 
 Finally, you can use [Matplotlib](https://matplotlib.org/) to plot the number of physical qubits and the runtime as bar plots, and the QEC code distances as a
@@ -417,12 +428,11 @@ ax_runtime.set_title("Runtime (ms)")
 ax_runtime.set_xlabel("Bitwidth")
 ax_runtime.set_xticks(xs)
 ax_runtime.set_xticklabels(bitwidths)
-ax_runtime.set_yscale("log")
 ax_runtime.legend()
 
 # Plot code distances
 for i in range(num_experiments):
-    ax_code_distance.scatter(xs, distances[i,:], label=names[i], marker=i, color=hsv_to_rgb((i / num_experiments, 1.0, 0.8)))
+    ax_code_distance.scatter(xs, distances[i,:], label=names[i], marker='*', color=hsv_to_rgb((i / num_experiments, 1.0, 0.8)))
 ax_code_distance.set_title("QEC code distance")
 ax_code_distance.set_xlabel("Bitwidth")
 ax_code_distance.set_xticks(xs)
@@ -451,7 +461,7 @@ bitwidth_index = bitwidths.index(bitwidth)
 data = [results[name][bitwidth_index] for name in names]
 
 # From each result get the group that contains data about "T-factory parameters"
-groups = [group for group in result['reportData']['groups'] for result in data if group['title'] == "T factory parameters"]
+groups = [group for result in data for group in result['reportData']['groups'] if group['title'] == "T factory parameters"]
 
 html = "<table><thead><tr><th></th>"
 
@@ -487,14 +497,14 @@ HTML(html)
 |---|---|---|---|
 |Physical qubits |	13520	|13520	|16416|
 |Runtime|	67us 600ns|	33ms 833us 800ns|	16us 800ns|
-|Number of T-states per run|	1	|1|	1|
-|Number of input T-stats per run|	30	|30|	20520|
+|Number of ouput T states per run|	1	|1|	1|
+|Number of input T states per run|	30	|30|	20520|
 |Distillation rounds|	1|	1|	3|
-|Modules per distillation round|	2|	2|	1368, 20, 1|
-|Distillation modules|	15-to-1 space efficient logical|	15-to-1 space efficient logical|	15-to-1 space efficient physical, 15-to-1 RM prep physical, 15-to-1 RM prep logical|
-|Distillation ECC distances|	13|	13	|1, 1, 3|
-|Physical qubits per round|	6760|	6760|	12, 31, 1612|
+|Distillation units per round|	2|	2|	1368, 20, 1|
+|Distillation units|	15-to-1 space efficient logical|	15-to-1 space efficient logical|	15-to-1 space efficient physical, 15-to-1 RM prep physical, 15-to-1 RM prep logical|
+|Distillation code distances|	13|	13	|1, 1, 3|
+|Number of physical qubits per round|	6760|	6760|	12, 31, 1612|
 |Runtime per round|	67us 600ns|	33ms 833us 800ns|	4us 500ns, 2us 400ns, 9us 900ns|
-|Logical T-state error rate	|5.63e-8|	5.63e-8	4.97e-9|
+|Logical T state error rate	|5.63e-8|	5.63e-8	4.97e-9|
 
 

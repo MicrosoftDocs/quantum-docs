@@ -78,7 +78,7 @@ The *Estimates with Q# input* program runs a multiplier and analyzes the physica
     |Logical qubit parameter| Value |
     |----|---|
     |QEC scheme                                                |                           surface_code |
-    |ECC distance                                                                       |            13 |
+    |Code distance                                                                       |            13 |
     |Physical qubits                                                                   |            338 |
     |Logical cycle time                                                                   |   5us 200 ns |
     |Logical qubit error rate                                                            |     3.00E-9 |
@@ -96,8 +96,8 @@ The *Estimates with Q# input* program runs a multiplier and analyzes the physica
     |Qubit name     |                    qubit_gate_ns_e3 |
     |Instruction set                      |     GateBased  |
     |Single-qubit measurement time         |       100 ns |
-    |T-gate time	                            |      50 ns|
-    |T-gate error rate                       |      0.001 |
+    |T gate time	                            |      50 ns|
+    |T gate error rate                       |      0.001 |
     |Single-qubit measurement error rate      |     0.001 |
     |Single-qubit gate time                    |    50 ns |
     |Single-qubit error rate                   |    0.001 |
@@ -153,7 +153,7 @@ The pre-defined qubit parameters can also be customized by specifying the name a
 
 Run the following cells of the notebook and learn how to customize the quantum error correction code (QED), `qecScheme`, and the error budget, `errorBudget`.
 
-The full functionality of the Azure Quantum Resource Estimator is beyond the scope of this quickstart. For more information, see [How to submit jobs to the Azure Quantum Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs#resources-estimation-with-q-and-python).
+The full functionality of the Azure Quantum Resource Estimator is beyond the scope of this quickstart. For more information, see [Submitting jobs to the Azure Quantum Resource Estimator with different SDKs and IDEs](xref:microsoft.quantum.submit-resource-estimation-jobs#resources-estimation-with-q-and-python).
 
 ## Load and run other sample notebooks
 

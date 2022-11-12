@@ -215,28 +215,6 @@ The error message also provides other options that can be used, including how to
 As the outputs from our operations thus far have been the expected results of their action on real qubits, it's clear that the default target machine from the command line is the full-state quantum simulator, `QuantumSimulator`.
 However, callables can be instructed to run on a specific target machine with the option `--simulator` (or the shorthand `-s`).
 
-For example, one could run it on [`ResourcesEstimator`](xref:microsoft.quantum.machines.overview.resources-estimator):
-
-```dotnetcli
-dotnet run -n 4 -s ResourcesEstimator
-```
-
-The printed output is then
-
-```output
-Metric          Sum
-CNOT            0
-QubitClifford   4
-R               0
-Measure         4
-T               0
-Depth           0
-Width           4
-BorrowedWidth   0
-```
-
-For details on what these metrics indicate, see [Resource estimator: metrics reported](xref:microsoft.quantum.machines.overview.resources-estimator#metrics-reported).
-
 ### Command line run summary
 
 <br/>
@@ -394,7 +372,6 @@ Running Q# operations on a specific target machine is done by invoking Python me
 
 - `.simulate(<args>)` uses the [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) to simulate the operation for an ideal quantum computer. ([API reference for `.simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#qsharp-loader-qsharpcallable-simulate)).
 - `.simulate_sparse(<args>)` uses the [sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator) to simulate the operation for an ideal quantum computer. ([API reference for `.simulate_sparse()`](/python/qsharp-core/qsharp.loader.qsharpcallable#qsharp-loader-qsharpcallable-simulate_sparse)).
-- `.estimate_resources(<args>)` uses the [resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator) to compute various quantum resources required by the program. ([API reference for `.estimate_resources()`](/python/qsharp-core/qsharp.loader.qsharpcallable#qsharp-loader-qsharpcallable-estimate-resources)).
 - `.toffoli_simulate(<args>)` uses the [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator) to provide a more efficient simulation method for a restricted class of quantum programs. ([API reference for `.toffoli_simulate()`](/python/qsharp-core/qsharp.loader.qsharpcallable#qsharp-loader-qsharpcallable-toffoli-simulate)).
 - `.simulate_noise(<args>)` uses the [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) to simulate the operation in an open quantum system under the influence of noise. You can enable the use of the noise simulator by calling `qsharp.experimental.enable_noisy_simulation()`.
 
@@ -530,7 +507,7 @@ Getting back to Q#, to create an instance of whatever target machine you'll run 
 ```
 
 Using other target machines is as simple as instantiating a different one, although the manner of doing so and processing the returns can be slightly different.
-For brevity, this section sticks to the [`QuantumSimulator`](xref:microsoft.quantum.machines.overview.full-state-simulator) for now, and includes the [`ResourcesEstimator`](xref:microsoft.quantum.machines.overview.resources-estimator) [below](#including-the-resources-estimator).
+For brevity, this section sticks to the [`QuantumSimulator`](xref:microsoft.quantum.machines.overview.full-state-simulator) for now.
 
 Each C# class generated from the Q# operations have a `Run` method, the first argument of which must be the target machine instance.
 So, to run `MeasureSuperposition` on the `QuantumSimulator`, one uses `MeasureSuperposition.Run(sim)`.
@@ -623,95 +600,6 @@ Multiple qubit result: [One,One,Zero,Zero]
 > [!NOTE]
 > Due to the compiler's interoperability with namespaces, we could alternatively make our Q# callables available without the `using Superposition;` statement, and simply matching the C# namespace title to it.
 > That is, by replacing `namespace host` with `namespace Superposition`.
-
-#### Including the resources estimator
-
-The [`ResourcesEstimator`](xref:microsoft.quantum.machines.overview.resources-estimator) requires a slightly different implementation to retrieve the output.
-
-Firstly, instead of instantiating them as a variable with a `using` statement (as we do with the `QuantumSimulator`), one can directly instantiate objects of the class via
-
-```csharp
-            var estimatorSingleQ = new ResourcesEstimator();
-            var estimatorMultiQ = new ResourcesEstimator();
-```
-
-Notice that instead of a single target simulator to be used by multiple Q# operations, the program instantiated one for each.
-This is because the objects themselves are modified when used as target machines, and their results can then be retrieved afterwards with the class method `.ToTSV()`.
-
-To run the operations on the resource estimators, you need to run
-
-```csharp
-            await MeasureSuperposition.Run(estimatorSingleQ);
-            await MeasureSuperpositionArray.Run(estimatorMultiQ, 4);
-```
-
-and then fetch the results as tab-separated-values (TSV) with `estimatorSingleQ.ToTSV()` and `estimatorMultiQ.ToTSV()`.
-
-So, a full C# host program making use of both the `QuantumSimulator` and `ResourcesEstimator` could take the form:
-
-```csharp
-using System;
-using System.Threading.Tasks;
-using Microsoft.Quantum.Simulation.Simulators;
-using Superposition;
-
-namespace host
-{
-    static class Program
-    {
-        static async Task Main(string[] args)
-        {
-            using var sim = new QuantumSimulator();
-            var estimatorSingleQ = new ResourcesEstimator();
-            var estimatorMultiQ = new ResourcesEstimator();
-
-            var singleQubitResult = await MeasureSuperposition.Run(sim);
-            var multiQubitResult = await MeasureSuperpositionArray.Run(sim, 4);
-
-            await MeasureSuperposition.Run(estimatorSingleQ);
-            await MeasureSuperpositionArray.Run(estimatorMultiQ, 4);
-
-            Console.WriteLine($"Single qubit result: {singleQubitResult}");
-            Console.WriteLine("Single qubit resources:");
-            Console.WriteLine(estimatorSingleQ.ToTSV());
-
-            Console.WriteLine($"\nMultiple qubit result: {multiQubitResult}");
-            Console.WriteLine("Multiple qubit resources:");
-            Console.WriteLine(estimatorMultiQ.ToTSV());
-        }
-    }
-}
-```
-
-which would yield output similar to
-
-```output
-Single qubit result: One
-Single qubit resources:
-Metric          Sum
-CNOT            0
-QubitClifford   1
-R               0
-Measure         1
-T               0
-Depth           0
-Width           1
-BorrowedWidth   0
-
-Multiple qubit result: [One,One,One,Zero]
-Multiple qubit resources:
-Metric          Sum
-CNOT            0
-QubitClifford   4
-R               0
-Measure         4
-T               0
-Depth           0
-Width           4
-BorrowedWidth   0
-```
-
-***
 
 ## Q# Jupyter Notebooks
 

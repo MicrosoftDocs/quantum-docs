@@ -19,7 +19,7 @@ The QDK <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceS
 * Estimating the resources required to run a given instance of a quantum program on a quantum computer. 
 
 > [!WARNING]
-> The QDK resources estimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace has been deprecated.
+> The QDK resources estimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace has been deprecated. Use the <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> to run pre-layout resource estimation.
 
 ## Invoking the quantum trace simulator
 

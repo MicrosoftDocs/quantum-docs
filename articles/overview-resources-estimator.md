@@ -50,17 +50,14 @@ You can specify pre-defined qubit parameters by selecting the qubit model name f
 For reference, the complete pre-defined qubit parameters are as follows:
 
 ```JSON
-// qubit_gate_ns_e3
 {
     "qubitParams": {
         "name": "qubit_gate_ns_e3",
         "instructionSet": "GateBased",
-        // measurement and gate operation times
         "oneQubitMeasurementTime": "100 ns",
         "oneQubitGateTime": "50 ns",
         "twoQubitGateTime": "50 ns",
         "tGateTime": "50 ns",
-        // measurement and gate error rates
         "oneQubitMeasurementErrorRate": 1e-3,
         "oneQubitGateErrorRate": 1e-3,
         "twoQubitGateErrorRate": 1e-3,
@@ -68,17 +65,14 @@ For reference, the complete pre-defined qubit parameters are as follows:
     }
 }
 
-// qubit_gate_ns_e4
 {
     "qubitParams": {
         "name": "qubit_gate_ns_e4",
         "instructionSet": "GateBased",
-        // measurement and gate operation times
         "oneQubitMeasurementTime": "100 ns",
         "oneQubitGateTime": "50 ns",
         "twoQubitGateTime": "50 ns",
         "tGateTime": "50 ns",
-        // measurement and gate error rates
         "oneQubitMeasurementErrorRate": 1e-4,
         "oneQubitGateErrorRate": 1e-4,
         "twoQubitGateErrorRate": 1e-4,
@@ -86,17 +80,14 @@ For reference, the complete pre-defined qubit parameters are as follows:
     }
 }
 
-// qubit_gate_us_e3
 {
     "qubitParams": {
         "name": "qubit_gate_us_e3",
         "instructionSet": "GateBased",
-        // measurement and gate operation times
         "oneQubitMeasurementTime": "100 µs",
         "oneQubitGateTime": "100 µs",
         "twoQubitGateTime": "100 µs",
         "tGateTime": "100 µs",
-        // measurement and gate error rates
         "oneQubitMeasurementErrorRate": 1e-3,
         "oneQubitGateErrorRate": 1e-3,
         "twoQubitGateErrorRate": 1e-3,
@@ -104,17 +95,14 @@ For reference, the complete pre-defined qubit parameters are as follows:
     }
 }
 
-// qubit_gate_us_e4
 {
     "qubitParams": {
         "name": "qubit_gate_us_e4",
         "instructionSet": "GateBased",
-        // measurement and gate operation times
         "oneQubitMeasurementTime": "100 µs",
         "oneQubitGateTime": "100 µs",
         "twoQubitGateTime": "100 µs",
         "tGateTime": "100 µs",
-        // measurement and gate error rates
         "oneQubitMeasurementErrorRate": 1e-4,
         "oneQubitGateErrorRate": 1e-4,
         "twoQubitGateErrorRate": 1e-4,
@@ -122,32 +110,26 @@ For reference, the complete pre-defined qubit parameters are as follows:
     }
 }
 
-// qubit_maj_ns_e4
 {
     "qubitParams": {
         "name": "qubit_maj_ns_e4",
-        // measurement and gate operation times
         "instructionSet": "Majorana",
         "oneQubitMeasurementTime": "100 ns",
         "twoQubitJointMeasurementTime": "100 ns",
         "tGateTime": "100 ns",
-        // measurement and gate error rates
         "oneQubitMeasurementErrorRate": 1e-4,
         "twoQubitJointMeasurementErrorRate": 1e-4,
         "tGateErrorRate": 0.05
     }
 }
 
-// qubit_maj_ns_e6
 {
     "qubitParams": {
         "name": "qubit_maj_ns_e6",
-        // measurement and gate operation times
         "instructionSet": "Majorana",
         "oneQubitMeasurementTime": "100 ns",
         "twoQubitJointMeasurementTime": "100 ns",
         "tGateTime": "100 ns",
-        // measurement and gate error rates
         "oneQubitMeasurementErrorRate": 1e-6,
         "twoQubitJointMeasurementErrorRate": 1e-6,
         "tGateErrorRate": 0.05
@@ -238,11 +220,9 @@ You can specify pre-defined QEC schemes by selecting the QEC scheme name for the
 The exact parameters for each pre-defined QEC scheme (including a crossing pre-factor $a$, which can be extracted numerically for simulations) are listed below.
 
 ```JSON
-// surface_code for gate-based qubit parameters
 {
     "qubitParams": {
         "instructionSet": "GateBased",
-        // ...
     }
     "qecScheme": {
         "name": "surface_code",
@@ -253,11 +233,9 @@ The exact parameters for each pre-defined QEC scheme (including a crossing pre-f
     }
 }
 
-// surface_code for Majorana qubits
 {
     "qubitParams": {
         "instructionSet": "Majorana",
-        // ...
     }
     "qecScheme": {
         "name": "surface_code",
@@ -268,11 +246,9 @@ The exact parameters for each pre-defined QEC scheme (including a crossing pre-f
     }
 }
 
-// floquet_code for Majorana qubits
 {
     "qubitParams": {
         "instructionSet": "Majorana",
-        // ...
     }
     "qecScheme": {
         "name": "floquet_code",
