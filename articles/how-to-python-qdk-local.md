@@ -301,5 +301,5 @@ For more information on how to run Q# programs with Python, see the following ar
 - [Q# with a Python host program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs?tabs=tabid-python#q-with-host-programs)
 - [Run Q# on a local simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
 - [Run Q# on quantum hardware](xref:microsoft.quantum.submit-jobs) through Azure Quantum
-- [Estimate quantum resources](xref:microsoft.quantum.machines.overview.resources-estimator) required by your program
+- [Estimate quantum resources](xref:microsoft.quantum.quickstarts.computing.resources-estimator) required by your program
 - [Testing and debugging](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging)
