@@ -106,8 +106,8 @@ For example, see that the time to perform a single-qubit measurement and a singl
 |Qubit name     |                    qubit_gate_ns_e3 |
 |Instruction set                      |     GateBased  |
 |Single-qubit measurement time         |       100 ns |
-|T-gate time	                            |      50 ns|
-|T-gate error rate                       |      0.001 |
+|T gate time	                            |      50 ns|
+|T gate error rate                       |      0.001 |
 |Single-qubit measurement error rate      |     0.001 |
 |Single-qubit gate time                    |    50 ns |
 |Single-qubit error rate                   |    0.001 |
@@ -487,14 +487,14 @@ HTML(html)
 |---|---|---|---|
 |Physical qubits |	13520	|13520	|16416|
 |Runtime|	67us 600ns|	33ms 833us 800ns|	16us 800ns|
-|Number of T-states per run|	1	|1|	1|
+|Number of ouput T states per run|	1	|1|	1|
 |Number of input T-stats per run|	30	|30|	20520|
 |Distillation rounds|	1|	1|	3|
-|Modules per distillation round|	2|	2|	1368, 20, 1|
-|Distillation modules|	15-to-1 space efficient logical|	15-to-1 space efficient logical|	15-to-1 space efficient physical, 15-to-1 RM prep physical, 15-to-1 RM prep logical|
-|Distillation ECC distances|	13|	13	|1, 1, 3|
-|Physical qubits per round|	6760|	6760|	12, 31, 1612|
+|Distillation units per round|	2|	2|	1368, 20, 1|
+|Distillation units|	15-to-1 space efficient logical|	15-to-1 space efficient logical|	15-to-1 space efficient physical, 15-to-1 RM prep physical, 15-to-1 RM prep logical|
+|Distillation code distances|	13|	13	|1, 1, 3|
+|Number of physical qubits per round|	6760|	6760|	12, 31, 1612|
 |Runtime per round|	67us 600ns|	33ms 833us 800ns|	4us 500ns, 2us 400ns, 9us 900ns|
-|Logical T-state error rate	|5.63e-8|	5.63e-8	4.97e-9|
+|Logical T state error rate	|5.63e-8|	5.63e-8	4.97e-9|
 
 
