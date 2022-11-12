@@ -19,7 +19,7 @@ In this article, you'll learn to work with the [Azure Quantum Resource Estimator
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The Azure Quantum Resource Estimator target enabled in your workspace. If you don't know how to do it, see [Enabling the Resource Estimator target](xref:microsoft.quantum.work-with-resource-estimator#enable-the-resources-estimator-in-your-workspace).
+- The Azure Quantum Resource Estimator target enabled in your workspace. If you don't know how to do it, see [Enabling the Resource Estimator target](xref:microsoft.quantum.quickstarts.computing.resources-estimator#enable-the-resources-estimator-in-your-workspace).
 
 
 ::: zone pivot="ide-python-qsharp"
