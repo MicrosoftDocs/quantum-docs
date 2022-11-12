@@ -202,7 +202,7 @@ You can also explore details about the T factory that was created to execute thi
 |Logical T state error rate|	2.52e-07|
 
 
-A single T factory produces 1 T state. Notice that the logical error rate for an output T-state (2.52e-07) is smaller than the required T state error rate in the physical counts breakdown (6.25e-07). The T factory is copied 10 times such that they can run in parallel to produce 10 T states. These copies are run 80 times in sequence, producing in total $10 \cdot 80 = 800$ T states that are required by the algorithm. A single T factory is composed of 3 rounds of distillation, where in:
+A single T factory produces 1 T state. Notice that the logical error rate for an output T state (2.52e-07) is smaller than the required T state error rate in the physical counts breakdown (6.25e-07). The T factory is copied 10 times such that they can run in parallel to produce 10 T states. These copies are run 80 times in sequence, producing in total $10 \cdot 80 = 800$ T states that are required by the algorithm. A single T factory is composed of 3 rounds of distillation, where in:
 
 - 1368 copies of *15-to-1 space efficient physical* distillation modules were used 
 - 20 copies of *15-to-1 RM prep physical* distillation modules were used 
