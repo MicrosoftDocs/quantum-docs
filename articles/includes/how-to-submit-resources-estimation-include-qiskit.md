@@ -121,8 +121,8 @@ For example, see that the time to perform a single-qubit measurement and a singl
 |Qubit name     |                    qubit_gate_ns_e3 |
 |Instruction set                      |     GateBased  |
 |Single-qubit measurement time         |       100 ns |
-|T-gate time	                            |      50 ns|
-|T-gate error rate                       |      0.001 |
+|T gate time	                            |      50 ns|
+|T gate error rate                       |      0.001 |
 |Single-qubit measurement error rate      |     0.001 |
 |Single-qubit gate time                    |    50 ns |
 |Single-qubit error rate                   |    0.001 |
@@ -185,7 +185,7 @@ result
 ```
 
 Let's inspect the physical counts programmatically. For example, you can show all physical resource estimates and their breakdown using the `physicalCounts` field 
-in the result data. This will show the logical qubit error and logical T-state error rates required to match the error budget. By default runtimes are shown in nanoseconds.
+in the result data. This will show the logical qubit error and logical T state error rates required to match the error budget. By default runtimes are shown in nanoseconds.
 
 ```python
 result.data()["physicalCounts"]
@@ -207,7 +207,7 @@ result.data()["physicalCounts"]
  'runtime': 61680000}
  ```
 
-You can also explore details about the T-factory that was created to execute this algorithm.
+You can also explore details about the T factory that was created to execute this algorithm.
 
 ```python
 result.data()["tfactory"]
