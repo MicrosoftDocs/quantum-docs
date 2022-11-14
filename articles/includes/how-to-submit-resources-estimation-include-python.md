@@ -493,18 +493,18 @@ html += "</tbody></table>"
 HTML(html)
 ```
 
-| Name |gate_ns |	gate_us	|maj_ns|
+| Name |Gate-based ns, 10⁻³	|	Gate-based ns, 10⁻³ᐧ⁵	|Gate-based ns, 10⁻⁴|
 |---|---|---|---|
-|Physical qubits |	13520	|13520	|16416|
-|Runtime|	67us 600ns|	33ms 833us 800ns|	16us 800ns|
+|Physical qubits |	13520	|3240	|1960|
+|Runtime|	67us 600ns|	46us 800ns|	36us 400ns|
 |Number of ouput T states per run|	1	|1|	1|
-|Number of input T states per run|	30	|30|	20520|
-|Distillation rounds|	1|	1|	3|
-|Distillation units per round|	2|	2|	1368, 20, 1|
-|Distillation units|	15-to-1 space efficient logical|	15-to-1 space efficient logical|	15-to-1 space efficient physical, 15-to-1 RM prep physical, 15-to-1 RM prep logical|
-|Distillation code distances|	13|	13	|1, 1, 3|
-|Number of physical qubits per round|	6760|	6760|	12, 31, 1612|
-|Runtime per round|	67us 600ns|	33ms 833us 800ns|	4us 500ns, 2us 400ns, 9us 900ns|
-|Logical T state error rate	|5.63e-8|	5.63e-8	4.97e-9|
+|Number of input T states per run|	30	|15|15|
+|Distillation rounds|	1|	1|	1|
+|Distillation units per round|	2|	1|	1|
+|Distillation units|	15-to-1 space efficient logical|	15-to-1 space efficient logical|	15-to-1 space efficient logical|
+|Distillation code distances|	13|	9|7|
+|Number of physical qubits per round|	13520|	3240|1960|
+|Runtime per round|	67us 600ns|	46us 800ns|	36us 400ns|
+|Logical T state error rate	|5.63e-8|	8.29e-9	| 2.16e-9|
 
 
