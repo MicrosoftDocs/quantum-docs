@@ -13,9 +13,13 @@ uid: microsoft.quantum.learn-how-resource-estimator-works
 
 # Learn how the Resource Estimator works
 
-The Azure Quantum Resource Estimator takes as input a QIR quantum algorithm, for example a program written in Q#, Qiskit, or a QIR generator as [PyQIR](https://github.com/qir-alliance/pyqir), and a set of job parameters, `{qubitParams, qecScheme, errorBudget}`, to evaluate the resource estimates of the quantum algorithm.
+The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) computes pre- and post-layout estimation of the logical resources. It takes as input a QIR quantum algorithm, for example a program written in Q#, Qiskit, or a QIR generator as [PyQIR](https://github.com/qir-alliance/pyqir), and a set of [job parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters) to evaluate the resource estimates of the quantum algorithm. 
 
-The Resource Estimator takes the job parameters, and, on the one hand, calculates the QEC code distance, the number of physical qubits needed to encode one logical qubit and the runtime of one logical depth or cycle. On the other hand, it calculates how many physical qubits are needed to run one T factory and for how long the T factory runs. These values are reserved and will be used in subsequent steps of the workflow.
+In this article, you'll learn the workflow of the Resource Estimator and how the [output data](xref:microsoft.quantum.overview.resources-estimator#output-data) is extracted at different levels of the evaluation of the quantum program.
+
+## Code distance and T factory estimation
+
+The Resource Estimator takes the job parameters `{qubitParams, qecScheme, errorBudget}` to compute a resource estimation of qubit technology and architecture. On the one hand, it calculates the QEC code distance, the number of physical qubits needed to encode one logical qubit and the runtime of one logical depth or cycle. On the other hand, it calculates how many physical qubits are needed to run one T factory and for how long the T factory runs. These values are reserved and will be used in subsequent steps of the workflow.
 
 :::image type="content" source="media/resource-estimator-workflow.png" alt-text="Diagram showing the workflow of the resource estimator. The resource estimation is done based on the job parameters and quantum program, and the output data is extracted at different levels of the evaluation of the quantum program.":::
 
