@@ -22,9 +22,9 @@ Quantum resource estimation allows you to understand the simulated resources req
 ## Why is resource estimation important in the development of quantum computing?
 
 Quantum operations at
-the physical level are noisy, and so the long computations required for practical quantum advantage necessarily require error correction to achieve fault tolerance. Quantum error correction is
+the physical level are noisy, and so the long computations required for practical quantum advantage necessarily require error correction to achieve fault tolerance. Quantum error correction is
 both time and space intensive, requiring both increased execution time for an algorithm-level, or
-so-called logical, operation and an additional number of physical qubits to store and compute information at the logical level
+so-called logical, operation and an additional number of physical qubits to store and compute information at the logical level
 
 
 
