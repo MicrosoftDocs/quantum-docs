@@ -13,7 +13,7 @@ zone_pivot_groups: azurequantum-quantumcomputing-re-ide
 
 # Use different SDKs and IDEs with Resource Estimator
 
-In this article, you'll learn to work with the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator) using different SDKs and development environments. As a running example, you'll estimate and analyze the physical resource estimates of a quantum program targeted on a fault-tolerant quantum computer.
+In this article, you'll learn to work with the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) using different SDKs and development environments. As a running example, you'll estimate and analyze the physical resource estimates of a quantum program targeted on a fault-tolerant quantum computer.
 
 ## Prerequisites
 
