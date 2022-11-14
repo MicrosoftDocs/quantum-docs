@@ -1,19 +1,19 @@
 ---
 author: SoniaLopezBravo
-description: Learn about the technical details and workflow of the Resource Estimator target in Azure Quantum
+description: Learn about the input and outpu parameters of the Resource Estimator target in Azure Quantum and how to customized them
 ms.date: 11/05/2022
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: reference
 no-loc: ['Q#', '$$v']
-title: Introduction to the Resource Estimator target
+title: Resource Estimator input and ouput parameters
 uid: microsoft.quantum.overview.resources-estimator
 ---
 
 # Customize resource estimates to machine characteristics
 
-In this article, you'll learn how to customize the input parameters to match the machine characteristics that you're targeting.
+In this article, you'll learn how to customize the input parameters of the Azure Quantum Resource Estimator to match the machine characteristics that you're targeting. You'll also see the output data of a resource estimates and their definitions. 
 
 ## Input parameters
 
@@ -307,6 +307,10 @@ is uniformly distributed and applies to errors $\epsilon_{\log}$ to implement lo
 Note that for distillation and rotation synthesis, the respective error budgets $\epsilon_{\rm dis}$ and $\epsilon_{\rm syn}$ are uniformly distributed among all required T states and all required rotation gates, respectively. If there aren't rotation gates in the input algorithm, the error budget is uniformly distributed to logical errors and T state errors.
 
 ## Output data
+
+The Azure Quantum Resource Estimator takes the job parameters, `{qubitParams, qecScheme, errorBudget}`, to evaluate the resource estimates of the requested QIR quantum algorithm. The result of the resource estimation job is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget.
+
+For more information, see [how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
 
 ### Physical qubits
 
