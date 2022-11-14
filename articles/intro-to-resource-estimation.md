@@ -1,13 +1,13 @@
 ---
 author: SoniaLopezBravo
-description: Introduction to the Azure Quantum Resource Estimator
+description: Introduction to resources estimation in quantum computing  and the Azure Quantum Resource Estimator
 ms.author: sonialopez
 ms.date: 11/09/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: overview
 no-loc: ['Python', '$$v']
-title: An introduction to resource estimation
+title: Introduction to resource estimation
 uid: microsoft.quantum.overview.intro-resource-estimator
 --- 
 
