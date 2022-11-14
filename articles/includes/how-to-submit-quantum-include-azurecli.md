@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 11/12/2021
+ms.date: 09/23/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -13,19 +13,21 @@ Ensure that the following items are installed on your computer:
 
 - An Azure Quantum workspace in your Azure subscription. To create
   a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The latest version of the [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview.standalone).
-- The [Azure CLI and the quantum CLI extension](xref:microsoft.quantum.install-qdk.overview.standalone#azure-cli-net-core-sdk-31-not-required).
+- The latest version of the [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+- The [Azure CLI and the quantum CLI extension](xref:microsoft.quantum.install-qdk.overview).
 
 ## Submit a job to Azure Quantum with the Azure CLI
 
-These steps show how to use the Azure CLI to run a Q# application and select a target from
+These steps show how to use the Azure CLI to run a quantum application and select a target from
 the different providers of your Azure Quantum workspace.
+
+> [!TIP]
+> With the Azure Quantum extension for Visual Studio Code installed, you have full Azure CLI functionality from a terminal window within VS Code.
 
 You will also find a full reference for all commands and features available through the `az quantum` extension in the corresponding section of the [Azure CLI documentation](/cli/azure/quantum).
 
 > [!NOTE]
-> A provider is a partner quantum service consisting of quantum
-> hardware, a simulator, or an optimization service.
+> A provider is a partner quantum service consisting of quantum hardware, a simulator, or an optimization service.
 
 1. Log in to Azure using your credentials. You'll get a list of subscriptions associated with your account.
 
@@ -80,8 +82,6 @@ You will also find a full reference for all commands and features available thro
    Microsoft   microsoft.paralleltempering.cpu                 Available  0
    Microsoft   microsoft.simulatedannealing-parameterfree.cpu  Available  0
    Microsoft   microsoft.simulatedannealing.cpu                Available  0
-   Microsoft   microsoft.paralleltempering.fpga                Available  0
-   Microsoft   microsoft.simulatedannealing.fpga               Available  0
    ionq        ionq.qpu                                        Available  0
    ionq        ionq.simulator                                  Available  0
    ```
@@ -114,8 +114,7 @@ You will also find a full reference for all commands and features available thro
    ```
 
 > [!TIP]
-> To see all the jobs in the workspace, use the command `az quantum
-> job list -o table`.
+> To see all the jobs in the workspace, use the command `az quantum job list -o table`.
 
 1. Once the job finishes, display the job's results with the command `az quantum
    job output`:
@@ -135,8 +134,7 @@ You will also find a full reference for all commands and features available thro
 
 > [!TIP]
 > To submit a job synchronously, for example, waiting for the job to complete and
-> showing results, use the command `az quantum execute --target-id
-> MyProvider.MyTarget`.
+> showing results, use the command `az quantum execute --target-id MyProvider.MyTarget`.
 
 ## Example
 
@@ -146,8 +144,7 @@ First, you need the Q# quantum application that you want to run in
 Azure Quantum.
 
 > [!TIP]
-> If this is your first time creating Q# quantum applications, see our [Microsoft Learn
-> module](/learn/modules/qsharp-create-first-quantum-development-kit/).
+> If this is your first time creating Q# quantum applications, see our [Learn module](/training/modules/qsharp-create-first-quantum-development-kit/).
 
 In this case, we will use a simple quantum random bit generator. Create a Q#
 project and substitute the content of `Program.qs` with the following code:

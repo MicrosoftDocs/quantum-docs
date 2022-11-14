@@ -7,9 +7,9 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Python', '$$v']
-title: Submit provider-formatted quantum circuits to Azure Quantum using an online notebook.
+title: 'Quickstart: Submit provider-formatted circuits with online notebooks'
 zone_pivot_groups: quantum-computing-platforms
-uid: microsoft.quantum.quickstarts.computing.provider.porta
+uid: microsoft.quantum.quickstarts.computing.provider.portal
 --- 
 
 # Quickstart: Submit a circuit with a provider-specific format using an Azure Quantum notebook.
@@ -18,8 +18,8 @@ Learn how to use the `azure-quantum` Python package to submit provider-specific 
 
 ## Prerequisites
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- Create an Azure Quantum workspace, or use an existing workspace if you have one. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
+- An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 
 ## Create a new Notebook in your workspace
@@ -78,7 +78,7 @@ location of your Azure Quantum workspace:
 1. Paste the resource ID into the value for *resource_id*, and then add the location string from the first cell to *location*.
 1. Run the cell.
 
-![How to retrieve the resource ID and location from an Azure Quantum workspace](media/azure-quantum-resource-id.png)
+ :::image type="content" source="media/azure-quantum-resource-id.png" alt-text="Screenshot of the overview pane showing the details such as resource ID and location of you Azure Quantum workspace.":::
 
 ::: zone pivot="platform-ionq"
 

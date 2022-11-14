@@ -1,13 +1,13 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: In this tutorial, you will build a Q# project that demonstrates Grover's search algorithm, one of the canonical quantum algorithms.
-ms.author: brbenefield
+ms.author: sonialopez
 ms.date: 12/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
 no-loc: ['Q#', '$$v']
-title: Implement Grover's search algorithm in Q# - Quantum Development Kit
+title: "Tutorial: Implement Grover's algorithm in Q#"
 uid: microsoft.quantum.tutorial-qdk.grovers
 ---
 
@@ -22,9 +22,7 @@ Any search problem can be mathematically formulated with an abstract function $f
 > [!NOTE]
 > This tutorial is intended for people who are already familiar with
 > Grover's algorithm and want to learn how to implement it in Q#. For a more
-> introductory tutorial, see the Microsoft Learn module [Solve graph
-> coloring problems by using Grover's
-> search](/learn/modules/solve-graph-coloring-problems-grovers-search/).
+> introductory tutorial, see the Learn module [Solve graphcoloring problems by using Grover's search](/training/modules/solve-graph-coloring-problems-grovers-search/).
 > For an in-depth explanation of the theory behind Grover's algorithm, see the [Theory of Grover's algorithm](xref:microsoft.quantum.concepts.grovers).
 
 In this tutorial, you'll learn how to:
@@ -38,10 +36,10 @@ In this tutorial, you'll learn how to:
 - [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview?tabs=tabid-local#install-the-qdk-and-develop-quantum-applications-locally) using your preferred language and development environment.
 - If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update-qdk) to the latest version.
 - This tutorial requires the Microsoft.Quantum.Numerics library. For more information, follow the steps to [install additional quantum libraries](xref:microsoft.quantum.libraries.overview#installation).
-- Create a Q# project for a [Q# standalone application](xref:microsoft.quantum.how-to.standalone-local) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local), or use a [Python host program](xref:microsoft.quantum.install-qdk.overview.python) in your preferred Python environment.
+- Create a Q# project for a [Q# standalone application](xref:microsoft.quantum.submit-jobs?pivots=ide-azurecli) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local), or use a [Python host program](xref:microsoft.quantum.install-qdk.overview) in your preferred Python environment.
 
 > [!NOTE]
-> To use the optional procedure [Extra: verify the statistics with Python](#extra-verify-the-statistics-with-python), you will need a Python development environment for Q# set up. For more information, see [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview.python).
+> To use the optional procedure [Extra: verify the statistics with Python](#extra-verify-the-statistics-with-python), you will need a Python development environment for Q# set up. For more information, see [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview).
 
 ## Grover's algorithm task and background
 
@@ -235,7 +233,7 @@ operation ApplyMarkingOracleAsPhaseOracle(
 }
 ```
 
-This famous transformation is often known as the *phase kickback* and it's widely used in many quantum computing algorithms. You can find a detailed explanation of this technique in this [Microsoft Learn module](/learn/modules/solve-graph-coloring-problems-grovers-search/4-implement-quantum-oracle).
+This famous transformation is often known as the *phase kickback* and it's widely used in many quantum computing algorithms. You can find a detailed explanation of this technique in this [Learn module](/training/modules/solve-graph-coloring-problems-grovers-search/4-implement-quantum-oracle).
 
 ## Run the final code
 
@@ -396,7 +394,7 @@ How can you verify that the algorithm is behaving correctly? For example, if you
 This example shows how to write a short Python script to verify that the program is working as it should.
 
 > [!TIP]
-> If you need help running Q# applications with Python, see [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview.python) and [Write a Q# and Python program](xref:microsoft.quantum.how-to.python-local).
+> If you need help running Q# applications with Python, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) and [Develop with Q# and Python](xref:microsoft.quantum.how-to.python-local).
 
 First, replace your main operation, `FactorizeWithGrovers`, with the following operation, `FactorizeWithGrovers2`:
 
@@ -482,11 +480,10 @@ if __name__ == "__main__":
 
 The program generates the following histogram:
 
-![Histogram with the results of running several time the Grover's algorithm](~/media/grovers-histogram.png)
+:::image type="content" source="~/media/grovers-histogram.png" alt-text="Histogram with the results of running several times the Grover's algorithm." :::
 
 As you can see in the histogram, the algorithm outputs the solutions to the search problem (1, 3, 7 and 21) with much higher probability than the non-solutions. You can think of Grover's algorithm as a quantum random generator that is purposefully biased towards those indices that are solutions to the search problem.
 
 ## Next steps
 
 For more Q# code samples that use Grover's algorithm, see the [Samples Browser](/samples/browse/?languages=qsharp&terms=grovers), or try to transform a mathematical problem of your own into a search problem and solve it with Q# and Grover's algorithm.
-

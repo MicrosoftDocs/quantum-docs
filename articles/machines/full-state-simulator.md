@@ -2,22 +2,22 @@
 author: SoniaLopezBravo
 description: Learn how to run your Q# programs on the Microsoft Quantum Development Kit full state simulator.
 ms.author: sonialopez
-ms.date: 02/01/2021
+ms.date: 10/11/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
-title: Full state quantum simulator - Quantum Development Kit
+title: Full state quantum simulator 
 uid: microsoft.quantum.machines.overview.full-state-simulator
 ---
 
 # Quantum Development Kit (QDK) full state simulator
 
-The QDK provides a full state simulator that simulates a quantum machine on your local computer. You can use the full state simulator to run and debug quantum algorithms written in Q#, utilizing up to 30 qubits. The full state simulator in its functionality is similar to the quantum simulator used in the [LIQ$Ui|\rangle$](http://stationq.github.io/Liquid/) platform from Microsoft Research.
+The QDK provides a full state simulator that simulates a quantum machine on your local computer. You can use the full state simulator to run and debug quantum algorithms written in Q#, utilizing up to 30 qubits. The functionality of the full state simulator is similar to the quantum simulator used in the [LIQ$Ui|\rangle$](http://stationq.github.io/Liquid/) platform from Microsoft Research.
 
 ## Invoking and running the full state simulator
 
-You expose the full state simulator via the `QuantumSimulator` class. For additional details, see [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
+You expose the full state simulator via the `QuantumSimulator` class. For more information, see [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
 
 ### Invoking the simulator from C\#
 
@@ -32,7 +32,7 @@ of a quantum operation, along with any additional parameters.
     }
 ```
 
-Because the `QuantumSimulator` class implements the <xref:System.IDisposable> interface, you must call the `Dispose` method once you do not need the instance of the simulator anymore. The best way to do this is to wrap the simulator declaration and operations within a [using](/dotnet/csharp/language-reference/keywords/using-statement) statement, which automatically calls the `Dispose` method.
+Because the `QuantumSimulator` class implements the <xref:System.IDisposable> interface, you must call the `Dispose` method once you don't need the instance of the simulator anymore. The best way to do it is to wrap the simulator declaration and operations within a [using](/dotnet/csharp/language-reference/keywords/using-statement) statement, which automatically calls the `Dispose` method.
 
 ### Invoking the simulator from Python
 
@@ -55,13 +55,13 @@ dotnet run -s QuantumSimulator
 
 Use the IQ# magic command [%simulate](xref:microsoft.quantum.iqsharp.magic-ref.simulate) to run the Q# operation.
 
-```IQ#
+```qsharp
 %simulate myOperation
 ```
 
 ## Seeding the simulator
 
-By default, the full state simulator uses a random number generator to simulate quantum randomness. For testing purposes, it is sometimes useful to have deterministic results. In a C# program, you can accomplish this by providing a seed for the random number generator in the `QuantumSimulator` constructor via the `randomNumberGeneratorSeed` parameter.
+By default, the full state simulator uses a random number generator to simulate quantum randomness. For testing purposes, it's sometimes useful to have deterministic results. In a C# program, you can accomplish this by providing a seed for the random number generator in the `QuantumSimulator` constructor via the `randomNumberGeneratorSeed` parameter.
 
 ```csharp
     using (var sim = new QuantumSimulator(randomNumberGeneratorSeed: 42))
@@ -75,9 +75,14 @@ By default, the full state simulator uses a random number generator to simulate 
 
 The behavior of the full state simulator can be adjusted via the following parameters to the C# constructor:
 
-- `throwOnReleasingQubitsNotInZeroState`: The simulator can warn you if qubits have not been returned to the `zero` state before release by throwing an exception. Resetting or measuring qubits before release is required by the Q# spec - not doing so may lead to computational errors! The default is `true`.
-- `randomNumberGeneratorSeed`: Obtain deterministic behavior by seeding the simulator as described above.
-- `disableBorrowing`: If you don't want to use [borrowed qubits](xref:microsoft.quantum.qsharp.quantummemorymanagement#borrow-statement) for this simulation, you can disable this feature by setting this parameter to `true`. Borrowed qubits will instead be replaced with regular clean qubits. The default is `false`.
+|Parameter|Description|
+|------|-------|
+|`throwOnReleasingQubitsNotInZeroState`| The simulator can warn you if qubits have not been returned to the `zero` state before release by throwing an exception. The default is `true`.|
+|`randomNumberGeneratorSeed`| Obtain deterministic behavior by [seeding the simulator](#seeding-the-simulator).|
+|`disableBorrowing`| If you don't want to use [borrowed qubits](xref:microsoft.quantum.qsharp.quantummemorymanagement#borrow-statement) for this simulation, you can disable this feature by setting this parameter to `true`. Borrowed qubits will instead be replaced with regular clean qubits. The default is `false`.|
+
+> [!NOTE]
+> Resetting or measuring qubits before release is required by the Q# spec - not doing so may lead to computational errors. 
 
 The code below shows a possible configuration of the parameters.
 
@@ -91,12 +96,11 @@ The code below shows a possible configuration of the parameters.
 
 ## Configuring threads
 
-The full state simulator uses [OpenMP](http://www.openmp.org/) to parallelize the linear algebra required. By default, OpenMP uses all available hardware threads, which means that programs with small numbers of qubits often runs slowly because the coordination that is required dwarfs the actual work. You can fix this by setting the environment variable `OMP_NUM_THREADS` to a small number. As a rule of thumb, configure one thread for up to four qubits, and then one additional thread per qubit. You might need to adjust the variable depending on your algorithm.
+The full state simulator uses [OpenMP](http://www.openmp.org/) to parallelize the linear algebra required. By default, OpenMP uses all available hardware threads, which means that programs with small numbers of qubits often run slowly because the coordination that is required dwarfs the actual work. You can fix this by setting the environment variable `OMP_NUM_THREADS` to a small number. As a rule of thumb, configure one thread for up to four qubits, and then one additional thread per qubit. You might need to adjust the variable depending on your algorithm.
 
 ## See also
 
 - [Quantum sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator)
-- [Quantum resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)
 - [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
 - [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)
 - [Quantum noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator)

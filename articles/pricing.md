@@ -6,7 +6,7 @@ ms.date: 03/10/2022
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
-title: Azure Quantum providers pricing
+title: Pricing & billing plans
 uid: microsoft.quantum.providers-pricing
 zone_pivot_groups: azurequantum-providers
 ---

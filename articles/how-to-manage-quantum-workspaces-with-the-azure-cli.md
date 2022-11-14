@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: aviviano
 description: This guide shows you how to create and delete quantum workspaces using the Azure command-line tool.
-ms.author: brbenefield
+ms.author: amvivian
 ms.date: 07/26/2021
 ms.service: azure-quantum
 ms.subservice: core
@@ -18,7 +18,7 @@ In this guide, learn to use the Azure Command-Line Interface (Azure CLI) to crea
 
 To use the Azure Quantum service, you will need:
 
-- An active Azure account and subscription. For more information, see the Microsoft Learn module [Create an Azure account](/learn/modules/create-an-azure-account/).
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure resource group where the quantum workspace will live.
 - A storage account in the resource group to be associated with the quantum workspace. Multiple workspaces can be associated with the same account.
 - The [Azure CLI](/cli/azure/install-azure-cli).

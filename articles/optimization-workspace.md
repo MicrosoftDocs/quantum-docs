@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Reference for azure.quantum.Workspace
 ms.author: sonialopez
-ms.date: 07/26/2021
+ms.date: 09/26/2021
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -21,7 +21,7 @@ from azure.quantum import Workspace
 To create a `Workspace` object, you must supply the following arguments in order
 to connect. If you have not already created a workspace, follow the steps in
 [Creating an Azure Quantum workspace
-guide](xref:microsoft.quantum.quickstarts.optimization.qio) using the following values:
+guide](xref:microsoft.quantum.quickstarts.optimization.qio.portal) using the following values:
 
 - `subscription_id`: The subscription ID where the workspace is deployed.
 - `resource_group`: The name of the resource group where the workspace is deployed.
@@ -84,7 +84,7 @@ f0c8de58-68f1-11ea-a565-2a16a847b8a3 Executing
 The `Workspace.list_jobs` method also allows the user to filter on the creation date, status and name properties of a job when listing. Filters can be combined. 
 
 > [!NOTE]
-> To use the filter feature, you must have **version 0.18.2107** or newer of the [*azure-quantum* Python package](xref:microsoft.quantum.quickstarts.optimization.qio#install-the-python-sdk-for-azure-quantum). 
+> To use the filter feature, you must have **version 0.18.2107** or newer of the [*azure-quantum* Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-package). 
 
 ### Filtering by creation time on list_jobs
 
@@ -180,13 +180,17 @@ targets
  <Target name="microsoft.substochasticmontecarlo.cpu", avg. queue time=0 s, Available>,
  <Target name="ionq.qpu", avg. queue time=669 s, Available>,
  <Target name="ionq.simulator", avg. queue time=1 s, Available>,
+ <Target name="ionq.qpu.aria-1", avg. queue time=1136774 s, Available>,
  <Target name="1qbit.tabu", avg. queue time=0 s, Available>,
  <Target name="1qbit.pathrelinking", avg. queue time=0 s, Available>,
  <Target name="1qbit.pticm", avg. queue time=0 s, Available>,
  <Target name="toshiba.sbm.ising", avg. queue time=5 s, Available>,
- <Target name="quantinuum.hqs-lt-s1", avg. queue time=0 s, Unavailable>,
- <Target name="quantinuum.hqs-lt-s1-apival", avg. queue time=1 s, Available>,
- <Target name="quantinuum.hqs-lt-s1-sim", avg. queue time=6 s, Available>]
+<Target name="quantinuum.qpu.h1-1", avg. queue time=0 s, Degraded>,
+<Target name="quantinuum.sim.h1-1sc", avg. queue time=1 s, Available>,
+<Target name="quantinuum.qpu.h1-2", avg. queue time=217300 s, Unavailable>,
+<Target name="quantinuum.sim.h1-2sc", avg. queue time=0 s, Available>,
+<Target name="quantinuum.sim.h1-1e", avg. queue time=40 s, Available>,
+<Target name="quantinuum.sim.h1-2e", avg. queue time=64 s, Available>]
 ```
 
 To filter by provider, specify the `provider_id` input argument:

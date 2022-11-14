@@ -1,38 +1,42 @@
 ---
 author: bradben
-description: Learn about the katas (training exercises) provided with the Microsoft Quantum Development Kit (QDK)
+description: Learn about the Quantum Katas - hands-on training exercises and tutorials for programming in Q# with the Azure Quantum service and the Microsoft Quantum Development Kit.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 08/26/2022
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: tutorial
+ms.topic: resources
 no-loc: ['Q#', '$$v']
-title: Introduction to the Quantum Katas
+title: Introduction to Quantum Katas
 uid: microsoft.quantum.tutorial-qdk.katas
 ---
 
 # Learn quantum computing with the Quantum Katas
 
-[The Quantum Katas](https://github.com/Microsoft/QuantumKatas/) are open-source, self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
+**ka·​ta** | *kah-tuh* 
+
+*A pattern for learning, practicing and implementing new skills, methods and processes.*
+
+The Quantum Katas are open-source, self-paced tutorials and programming exercises that teach the elements of quantum computing and the Q# programming language at the same time.
 
 ## Learning by doing
 
-The tutorials and exercises collected in this project emphasize learning by doing: they offer programming tasks that cover certain topics which progress from very simple to quite challenging. Each task asks you to fill in some code; the first tasks might require just one line, and the later ones might require a sizable fragment of code.
+The tutorials and exercises collected in the [Quantum Katas](https://github.com/Microsoft/QuantumKatas/) emphasize hands-on experience to reinforce learning the concepts. The programming tasks cover a variety of quantum concepts which progress from very simple to quite challenging. For each task, you need to fill in some missing code; the first katas might require just one line, while later exercises might require a sizable fragment of code.
 
-Most importantly, the katas include testing frameworks that set up, run and validate the solutions to the tasks. This allows you to get immediate feedback on your solution and to reconsider your approach if it is incorrect.
+Most importantly, the katas include testing frameworks that run and validate your solutions to the exercises. This allows you to get immediate feedback on your solutions and to reconsider your approach if it is incorrect. And if you get stuck, most katas have an accompanying workbook with the correct solutions and explanations.
 
-You can use the katas for learning in your environment of choice:
+You can use the katas in your choice of environments:
 
-* Jupyter Notebooks online within the Binder environment
+* Jupyter Notebooks in a pre-configured online Binder environment, with no setup needed
 * Jupyter Notebooks running on your local machine
-* Visual Studio
-* Visual Studio Code
+* Visual Studio on your local machine
+* Visual Studio Code on your local machine
 
-## What can I learn with the Quantum Katas?
+## What concepts do the Quantum Katas cover?
 
-Explore the basics and fundamentals of quantum computing or dive deeper into quantum algorithms and protocols. We recommend you to follow this learning path in the beginning to make sure you have a solid grasp on the fundamental concepts of quantum computing. Of course, you can skip the topics you're comfortable with, such as complex arithmetic, and learn the algorithms in any order you want.
+Each kata explores a fundamental concept of quantum computing, with some covering the basics and some diving deeper into quantum algorithms and protocols. The following learning path is recommended to get started and to make sure you have a solid grasp on the fundamental concepts of quantum computing. Of course, you can skip the topics you're comfortable with and explore the katas in any order you want.
 
-### Introduction to quantum computing concepts
+### Introduction to quantum computing
 
 | Kata | Description |
 |:-----|-------------|
@@ -52,7 +56,7 @@ Explore the basics and fundamentals of quantum computing or dive deeper into qua
 |[Distinguishing quantum states using measurements](https://github.com/microsoft/QuantumKatas/tree/main/Measurements)|Solve these exercises while learning about quantum measurement and orthogonal and non-orthogonal states. |
 |[Joint measurements](https://github.com/microsoft/QuantumKatas/tree/main/JointMeasurements)|Learn about joint parity measurements and how to use the [Measure](xref:Microsoft.Quantum.Intrinsic.Measure) operation to distinguish quantum states.|
 
-### Algorithms
+### Quantum algorithms
 
 | Kata | Description |
 |:-----|-------------|
@@ -64,7 +68,7 @@ Explore the basics and fundamentals of quantum computing or dive deeper into qua
 |[Solving real problems using Grover's algorithm: SAT problems](https://github.com/microsoft/QuantumKatas/tree/main/SolveSATWithGrover)|A series of exercises that uses Grover's algorithm to solve realistic problems, using [boolean satisfiability problems](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) (SAT) as an example.  |
 |[Solving real problems using Grover's algorithm: Graph coloring problems](https://github.com/microsoft/QuantumKatas/tree/main/GraphColoring)| This kata further explores Grover's algorithm, this time to solve [constraint satisfaction problems](https://en.wikipedia.org/wiki/Constraint_satisfaction_problem), using a graph coloring problem as an example. |
 
-### Protocols and libraries
+### Quantum protocols and libraries
 
 | Kata | Description |
 |:-----|-------------|
@@ -73,7 +77,7 @@ Explore the basics and fundamentals of quantum computing or dive deeper into qua
 |[Phase estimation](https://github.com/microsoft/QuantumKatas/blob/main/PhaseEstimation)|Phase estimation algorithms are some of the most fundamental building blocks of quantum computing. Learn about phase estimation with these exercises that cover quantum phase estimation and how to prepare and run phase estimation routines in Q#.|
 |[Quantum arithmetic: Building ripple-carry adders](https://github.com/microsoft/QuantumKatas/blob/main/RippleCarryAdder)|An in-depth series of exercises that explores [ripple carry](https://en.wikipedia.org/wiki/Adder_(electronics)#Ripple-carry_adder) addition on a quantum computer. Build an in-place quantum adder, expand on it with a different algorithm, and finally, build an in-place quantum subtractor.   |
 
-### Entanglement games
+### Quantum entanglement games
 
 | Kata | Description |
 |:-----|-------------|
@@ -81,8 +85,7 @@ Explore the basics and fundamentals of quantum computing or dive deeper into qua
 |[GHZ game](https://github.com/microsoft/QuantumKatas/tree/main/GHZGame)|The GHZ game is another nonlocal game, but involves three players.|
 |[Mermin-Peres magic square game](https://github.com/microsoft/QuantumKatas/tree/main/MagicSquareGame)|A series of exercises that explores [quantum pseudo-telepathy](https://en.wikipedia.org/wiki/Quantum_pseudo-telepathy#The_Mermin%E2%80%93Peres_magic_square_game) to solve a magic square game.  |
 
-## Resources
+## Next steps
 
-See the full series of [Quantum Katas](https://github.com/microsoft/QuantumKatas)
-
-[Run the katas online](https://aka.ms/try-quantum-katas)
+* Explore the full series of [Quantum Katas](https://github.com/microsoft/QuantumKatas)
+* Run the Quantum Katas [online](https://aka.ms/try-quantum-katas)

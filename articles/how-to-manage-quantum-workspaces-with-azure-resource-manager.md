@@ -1,8 +1,8 @@
 ---
+author: aviviano
 title: Manage quantum workspaces with the Azure Resource Manager
 description: This guide shows you how to create and delete quantum workspaces using the Azure Resource Manager. 
-author: bradben
-ms.author: brbenefield
+ms.author: amvivian
 ms.service: azure-quantum
 ms.topic: how-to
 ms.date: 04/20/2022
@@ -20,7 +20,7 @@ An ARM template is a JavaScript Object Notation (JSON) file that defines the inf
 
 ### Azure account
 
-Before you begin, you must have an Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/).
+Before you begin, you must have an Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 
 ### Editor
 

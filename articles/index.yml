@@ -17,7 +17,6 @@ metadata:
 
 landingContent:
 
-
   # Get started
   - title: Get started with Azure Quantum
     linkLists:
@@ -45,10 +44,10 @@ landingContent:
         links:
           - text: The Q# user guide
             url: user-guide/index.md
-          - text: Set up a local development environment
+          - text: Setup the Quantum Development Kit
             url: install-overview-qdk.md
-          - text: Set up a Q# standalone environment
-            url: install-command-line-qdk.md
+          - text: Set up a local development environment
+            url: install-command-line-qdk.md#use-your-preferred-ide-and-language-locally-and-submit-jobs-to-azure-quantum
   
   # Computing
   - title: Quantum computing
@@ -76,7 +75,7 @@ landingContent:
       - linkListType: learn
         links:
           - text: Quantum computing foundations
-            url: /learn/paths/quantum-computing-fundamentals/
+            url: /training/paths/quantum-computing-fundamentals/
           - text: Learn Q# with the Quantum Katas
             url: tutorial-qdk-intro-to-katas.md
       

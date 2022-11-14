@@ -42,19 +42,9 @@ This method will submit the problem to Azure Quantum for optimization and synchr
 
 See [Solve long running problems](xref:microsoft.quantum.optimization.solve-long-running-problems) for solving problems asynchronously.
 
-## Using CPU vs FPGA solvers
-
-By default, the CPU version of a solver is used. In order to specify a different version, such as FPGA, specify a `platform` parameter:
-
-```py
-solver =  SimulatedAnnealing(workspace, timeout=100, platform=HardwarePlatform.FPGA)
-```
-
-For more information about FPGA, see [FPGA vs. CPU](xref:microsoft.quantum.optimization.providers.microsoft.qio#fpga-vs-cpu)
-
 ## Returning multiple solutions
 
-Both FPGA and CPU solvers in the Microsoft QIO provider support the option to return more than one solution during a single run. 
+Solvers in the Microsoft QIO provider support the option to return more than one solution during a single run. 
 Use `set_number_of_solutions` to set this option.
 
 ```py

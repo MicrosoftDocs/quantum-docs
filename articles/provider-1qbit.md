@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: This document provides the technical details of the 1QBit provider
-ms.author: brbenefield
+ms.author: sonialopez
 ms.date: 07/26/2021
 ms.service: azure-quantum
 ms.subservice: optimization

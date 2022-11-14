@@ -1,6 +1,6 @@
 ---
-author: bradben
-ms.author: brbenefield
+author: SoniaLopezBravo
+ms.author: sonialopez
 ms.date: 05/09/2022
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -11,7 +11,7 @@ ms.topic: include
 
 * [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview) using your preferred language and development environment.
 * If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update-qdk) to the latest version.
-* Create a Q# project named **Bell** for either a [Q# application](xref:microsoft.quantum.how-to.standalone-local) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local). Alternatively, you can run your Q# code directly in [Juptyer Notebooks](xref:microsoft.quantum.how-to.standalone-local) or from a [Python host program](xref:microsoft.quantum.how-to.python-local).
+* Create a Q# project named **Bell** for either a [Q# application](xref:microsoft.quantum.submit-jobs?pivots=ide-azurecli) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local). Alternatively, you can run your Q# code directly in [Juptyer Notebooks](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter) or from a [Python host program](xref:microsoft.quantum.how-to.python-local).
 
 In this tutorial, you'll learn how to
 
@@ -110,7 +110,7 @@ Before moving on to the procedures for superposition and entanglement, test the 
 In order to run the code as a standalone program, the Q# compiler needs to know *where* to start the program when you run the `dotnet run` command. This is done in the Q# file by adding an `@EntryPoint()` directly preceding the operation that you want to run: the `TestBellState` operation in this case. 
 
 > [!NOTE]
-> `@EntryPoint()` is only required for standalone Q# programs. When running a Q# program in [Jupyter Notebooks](xref:microsoft.quantum.how-to.standalone-local), or calling a Q# program from a [Python](xref:microsoft.quantum.how-to.python-local) or [.NET](xref:microsoft.quantum.how-to.csharp-local) host file, it is not required and will throw an error if included. 
+> `@EntryPoint()` is only required for standalone Q# programs. When running a Q# program in Jupyter Notebooks, or calling a Q# program from a Python or .NET host file, it is not required and will throw an error if included. 
 
 Your `program.qs` file should now look like this:
 

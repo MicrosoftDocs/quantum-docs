@@ -2,24 +2,24 @@
 author: bradben
 description: Learn how to submit Qiskit quantum circuits to the Azure Quantum service using an online notebook.
 ms.author: brbenefield
-ms.date: 02/28/2022
+ms.date: 09/21/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Python', '$$v']
-title: Submit Qiskit quantum circuits to Azure Quantum using an online notebook
-zone_pivot_groups: quantum-computing-platforms
+title: 'Quickstart: Create Qiskit circuits with online notebooks'
+zone_pivot_groups: quantum-computing-platforms-rigetti
 uid: microsoft.quantum.quickstarts.computing.qiskit.portal
 --- 
 
 # Quickstart: Submit a circuit with Qiskit using an Azure Quantum notebook
 
-Learn how to use the Azure Quantum service to submit a Qiskit quantum circuit to an IonQ or Quantinuum quantum computing target. This example uses an Azure Quantum notebook and the built-in *azure-quantum* Python package - no installation or configuration is required. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
+Learn how to use the Azure Quantum service to submit a Qiskit quantum circuit to an IonQ, Quantinuum, or Rigetti quantum computing target. This example uses an Azure Quantum notebook and the built-in *azure-quantum* Python package - no installation or configuration is required. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
 ## Prerequisites
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- Create an Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
+- An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Create a new Notebook in your workspace
 
@@ -80,7 +80,7 @@ location of your Azure Quantum workspace:
 1. Paste the resource ID into the value for *resource_id*, and then add the location string from the first cell to *location*.
 1. Run the cell.
 
-![How to retrieve the resource ID and location from an Azure Quantum workspace](media/azure-quantum-resource-id.png) 
+ :::image type="content" source="media/azure-quantum-resource-id.png" alt-text="Screenshot of the overview pane showing how to retrieve the resource ID and location from an Azure Quantum workspace.":::
 
 ## Define a simple circuit
 
@@ -113,6 +113,8 @@ c: 3/════════════════╩══╩══╩═
 
 ## List all targets
 
+[!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)]
+
 You can now display all of the quantum computing targets, or backends, that are
 available in your workspace. Add a new cell and run the following line:
 
@@ -124,13 +126,18 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
-- quantinuum.hqs-lt-s1
-- quantinuum.hqs-lt-s1-apival
-- quantinuum.hqs-lt-s2
-- quantinuum.hqs-lt-s2-apival
-- quantinuum.hqs-lt-s1-sim
+- quantinuum.qpu.h1-1
+- quantinuum.sim.h1-1sc
+- quantinuum.qpu.h1-2
+- quantinuum.sim.h1-2sc
+- quantinuum.sim.h1-1e
+- quantinuum.sim.h1-2e
 - ionq.qpu
 - ionq.simulator
+- ionq.qpu.aria-1
+- rigetti.sim.qvm
+- rigetti.qpu.aspen-11
+- rigetti.qpu.aspen-m-2
 ```
 
 ::: zone pivot="platform-ionq"
@@ -142,6 +149,12 @@ This workspace's targets:
 ::: zone pivot="platform-quantinuum"
 
 [!INCLUDE [quantinuum-procedure](includes/quickstart-qiskit-include-quantinuum-portal.md)]
+
+::: zone-end
+
+::: zone pivot="platform-rigetti"
+
+[!INCLUDE [rigetti-procedure](includes/quickstart-qiskit-include-rigetti-portal.md)]
 
 ::: zone-end
 

@@ -1,5 +1,5 @@
 ---
-title: Quickstart - Solve an optimization problem in the Azure Quantum portal
+title: 'Quickstart: Solve an optimization problem with online notebooks'
 description: This document provides a step-by-step guide to get you started with optimization in the Azure Quantum portal
 author: bradben
 ms.author: brbenefield
@@ -59,8 +59,8 @@ For more information about solver results, see [Interpreting solver results](xre
   - [1QBit](https://github.com/microsoft/qio-samples/tree/main/samples/getting-started/1qbit)
   - [Microsoft QIO](https://github.com/microsoft/qio-samples/tree/main/samples/getting-started/microsoft-qio/)
 - Ship loading sample problem
-  - [End-to-end Microsoft Learn Module](/learn/modules/solve-quantum-inspired-optimization-problems/)
+  - [End-to-end Learn module](/training/modules/solve-quantum-inspired-optimization-problems/)
   - [Sample code](https://github.com/microsoft/qio-samples/tree/main/samples/ship-loading/)
 - Job shop scheduling sample problem
-  - [End-to-end Microsoft Learn Module](/learn/modules/solve-job-shop-optimization-azure-quantum/)
+  - [End-to-end Learn module](/training/modules/solve-job-shop-optimization-azure-quantum/)
   - [Sample code](https://github.com/microsoft/qio-samples/tree/main/samples/job-shop-scheduling/)

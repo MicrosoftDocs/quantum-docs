@@ -1,35 +1,35 @@
 ---
 author: bradben
-description: Learn how to contribute conceptual or API content to the Microsoft Quantum documentation set.
+description: Learn how to contribute conceptual or API content to the Azure Quantum documentation set.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 10/28/2022
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: conceptual
+ms.topic: contributor-guide
 no-loc: ['Q#', '$$v']
-title: Contributing documentation to the Microsoft QDK
+title: Contributing documentation
 uid: microsoft.quantum.contributing-qdk.overview.docs
 ---
 
 # Improving documentation
 
-The documentation for the Quantum Development Kit takes on several different forms, such that information is readily available to quantum developers.
+The documentation for Azure Quantum takes on several different forms, such that information is readily available to quantum developers.
 
-Following the principles of [Docs as Code](https://www.writethedocs.org/guide/docs-as-code/), all Quantum Development Kit documentation is formatted as code and is managed using Git in the same way as the source code that is used to build the Quantum Development Kit.
+Following the principles of [Docs as Code](https://www.writethedocs.org/guide/docs-as-code/), all Azure Quantum documentation (in fact, all Azure documentation) is formatted as code and is managed using Git in the same way as the source code that is used to build the Quantum Development Kit.
 For the most part, the code backing documentation consists of various forms of [Markdown](https://daringfireball.net/projects/markdown/), a language for writing out richly formatted text in a plain text format that's easy to use at the command line, in IDEs, and with source control.
 We similarly adopt the [MathJax](https://www.mathjax.org/) library to allow for formatting mathematics in documentation using the LaTeX language, as detailed further below.
 
-
 That said, each form of documentation does vary somewhat in the details:
 
-- The **conceptual documentation** consists of a set of articles that are published to [docs.microsoft.com](xref:microsoft.quantum.azure-quantum-overview), and that describe everything from the basics of quantum computing to the technical specifications for interchange formats. These articles are written in [DocFX-Flavored Markdown (DFM)](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html), a Markdown variant used for creating rich documentation sets.
-- The **API reference** is a set of pages for each Q# function, operation, and user-defined type, published to </qsharp/api/>. These pages document the inputs and operations to each callable, along with examples and links to more information. The API reference is automatically extracted from small DFM documents in Q# source code as a part of each release.
-- The **README<!---->.md** files included with each sample and kata describe how to use that sample or kata is used, what it covers, and how it relates to the rest of the Quantum Development Kit. These files are written using [GitHub Flavored Markdown (GFM)](https://github.github.com/gfm/), a more lightweight alternative to DFM that's popular for attaching documentation directly to code repositories.
+- The **conceptual documentation** consists of the set of articles that are published to [Microsoft Learn](xref:microsoft.quantum.azure-quantum-overview) and cover getting started with Azure Quantum, tutorials to learn Q#, and managing your quantum workspaces, along with deep dives into quantum computing history, the Azure Quantum libraries, and the Q# language. These articles are written in [DocFX-Flavored Markdown (DFM)](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html), a Markdown variant used for creating rich documentation sets.
+- The **API reference** is a set of topics for each Q# function, operation, and user-defined type. In addition to the Q# libraries, the reference includes APIs for the .NET, Python, IQ# and REST libraries, and ARM templates. These topics document the inputs and operations to each callable, along with examples and links to more information, and are accessed from the conceptual documentation table of contents. The API reference is automatically generated from small DFM documents in Q# source code as a part of each release.
+- The **README<!---->.md** files included with each sample and kata describe how to use that sample or kata is used, what it covers, and how it relates to the rest of Azure Quantum. These files are written using [GitHub Flavored Markdown (GFM)](https://github.github.com/gfm/), a more lightweight alternative to DFM that's popular for attaching documentation directly to code repositories.
 
 ## Contributing to the conceptual documentation
 
-To contribute an improvement to the conceptual or README documentation, then, starts with a pull request onto either [**MicrosoftDocs/quantum-docs**](https://github.com/MicrosoftDocs/quantum-docs/), [**Microsoft/Quantum**](https://github.com/Microsoft/Quantum), or [**Microsoft/QuantumKatas**](https://github.com/Microsoft/QuantumKatas), as is appropriate.
-We'll describe more about pull requests below, but for now there's a few things that are good to keep in mind as you improve documentation:
+To contribute an improvement to the conceptual or README documentation, then, starts with a pull request in the relevant GitHub repository. For more information about the Azure Quantum repositories, see [Contributing to Azure Quantum](xref:microsoft.quantum.contributing-qdk.overview#where-do-contributions-go). For more information about submitting a pull request, see [Opening pull requests](xref:microsoft.quantum.contributing-qdk.overview.pulls).
+
+Here are a few things to keep in mind as you improve documentation:
 
 - Readers come to the Quantum Development Kit documentation from a very wide range of backgrounds. Everyone from high school students looking to learn something new and exciting through to tenured faculty performing quantum computing research should be able to get something out of reading the documentation. To the extent that's possible, please don't assume extensive knowledge on the part of your readers, as they may just be starting out. It's most helpful if you can provide clear and accessible descriptions, or can provide links to other resources for more information.
 - Documentation sets aren't laid out like books or papers, in that readers will arrive in what might seem like the "middle." For example, search engines might not suggest the index, or they might have been sent a link by a friend trying to help them out. Try to help your reader by always providing a clear context, along with links where appropriate.
@@ -66,16 +66,16 @@ Using this command, you can avoid duplicating code between conceptual articles a
 
 To contribute an improvement to the API references, it's most helpful to open a pull request directly on the code being documented.
 Each function, operation, or user-defined type supports a documentation comment (denoted with `///` instead of `//`).
-When we compile each release of the Quantum Development Kit, these comments are used to generate the API reference at [https://docs.microsoft.com/qsharp/api/](/qsharp/api/), including details about the inputs to and outputs from each callable, the assumptions each callable makes, and examples of how to use them.
+When each release of the Quantum Development Kit is compiled, these comments are used to generate the API reference in [Q# API reference](/qsharp/api/), including details about the inputs to and outputs from each callable, the assumptions each callable makes, and examples of how to use them.
 
 > [!IMPORTANT]
 > Please make sure to not manually edit the generated API documentation, as these files are overwritten with each new release.
-> We value your contribution to the community, and want to make sure that your changes continue to help users release after release.
+> Your contribution to the community is valued, and you want to make sure that your changes continue to help users release after release.
 
 For example, consider the function `ControlledOnBitString<'T> (bits : Bool[], oracle : ('T => Unit is Adj + Ctl)) : ((Qubit[], 'T) => Unit is Adj + Ctl)`.
 A documentation comment should help a user learn how to interpret `bits` and `oracle` and what the function is for.
 Each of these different pieces of information can be provided to the Q# compiler by a specially named Markdown section in the documentation comment.
-For the example of `ControlledOnBitString`, we might write something like the following:
+For the example of `ControlledOnBitString`, you might write something like the following:
 
 ```qsharp
  /// # Summary

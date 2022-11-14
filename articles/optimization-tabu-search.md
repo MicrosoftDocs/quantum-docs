@@ -1,8 +1,8 @@
 ---
 title: Tabu search optimization solver
 description: This document provides a basic guide about how to use the Tabu  search optimization solver in Azure Quantum.
-author: bradben
-ms.author: brbenefield
+author: SoniaLopezBravo
+ms.author: sonialopez
 ms.date: 02/01/2022
 ms.service: azure-quantum
 ms.subservice: optimization

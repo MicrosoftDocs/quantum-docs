@@ -1,8 +1,8 @@
 ---
 title: Population Annealing
 description: This document provides a basic guide about how to use the Population Annealing solver in Azure Quantum.
-author: andrist
-ms.author: tedhudek
+author: SoniaLopezBravo
+ms.author: sonialopez
 ms.date: 05/25/2021
 ms.topic: article
 uid: microsoft.quantum.optimization.population-annealing

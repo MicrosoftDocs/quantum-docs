@@ -11,9 +11,9 @@ ms.topic: include
 
 To complete this tutorial, you need
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace with the **1Qbit** provider enabled. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The latest [azure-quantum Python package](xref:microsoft.quantum.install-qdk.overview.python-only).
+- The latest [azure-quantum Python package](xref:microsoft.quantum.install-qdk.overview).
 
 ## Jupyter Notebooks installation
 

@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: Learn how quantum computing works, how it compares to classical computing, and how it uses the principles of quantum mechanics.
-ms.date: 07/19/2022
-ms.author: brbenefield
+ms.date: 11/09/2022
+ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
@@ -34,6 +34,16 @@ A quantum computer isn't a supercomputer that can do everything faster. One of t
 Quantum computers do exceptionally well with problems that require calculating a large number of possible combinations. These types of problems can be found in many areas, such as quantum simulation, cryptography, quantum machine learning, and search problems.
 
 For the latest information about Microsoft's quantum computing research, see the [Microsoft Research Quantum Computing](https://www.microsoft.com/research/research-area/quantum-computing/?) page.
+
+### Resource estimation
+
+The quantum computers available today are enabling interesting experimentation and research but they are unable to accelerate computations necessary to solve real-world problems. While the industry awaits hardware advances, quantum software innovators are eager to make progress and prepare for a quantum future. Creating algorithms today that will eventually run on tomorrow's fault-tolerant scaled quantum computers is a daunting task. These innovators are faced with questions such as what hardware resources are required? How many physical and logical qubits are needed and what type? How long is the run time?
+
+This is why Microsoft is providing the Azure Quantum Resource Estimator. This unique tool in the industry is designed specifically to answer these questions. Understanding this data will help you create, test, and refine your algorithms and ultimately lead to practical solutions that take advantage of scaled quantum computers when they become available.
+
+To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
+
+Learn more about assessing requirements to scale to practical quantum advantage in this published [scientific paper](https://aka.ms/AQ/RE/Paper).
 
 ### Quantum simulation
 
@@ -130,6 +140,7 @@ Microsoft is partnering with quantum hardware companies to provide cloud access 
 
 - [Quantinuum](xref:microsoft.quantum.providers.quantinuum): **Trapped-ion** system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurements.
 - [IonQ](xref:microsoft.quantum.providers.ionq): Dynamically reconfigurable **trapped-ion** quantum computer for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
+- [Rigetti](xref:microsoft.quantum.providers.rigetti): Gate-based superconducting processors will be available in Azure Quantum soon and utilize [Quantum Intermediate Representation (QIR)](xref:microsoft.quantum.concepts.qir) to enable low latency and parallel execution.
 
 For more information, see the full [quantum computing target list](xref:microsoft.quantum.reference.qc-target-list).
 
@@ -139,7 +150,7 @@ For the moment, the use of real quantum hardware is limited due to resources and
 
 Quantum simulators are software programs that run on classical computers and make it possible to run and test quantum programs in an environment that predicts how qubits react to different operations, making it easy to test and debug an algorithm and then run it on real hardware with confidence that the result will match the expectations. 
 
-The Quantum Development Kit (QDK) includes different classes of quantum simulators representing different ways of simulating the same quantum algorithm, such as a [sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator) for simulating large systems, a [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulating quantum algorithms under the presence of noise, and a [resource estimator](xref:microsoft.quantum.machines.overview.resources-estimator). For more information, see [quantum simulators](xref:microsoft.quantum.machines.overview).
+The Quantum Development Kit (QDK) includes different classes of quantum simulators representing different ways of simulating the same quantum algorithm, such as a [sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator) for simulating large systems, a [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulating quantum algorithms under the presence of noise. For more information, see [quantum simulators](xref:microsoft.quantum.machines.overview).
 
 If you have an Azure account, in the sample gallery of your Azure Quantum workspace you will find several Jupyter Notebook samples that use quantum simulators. See [how to get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
@@ -149,6 +160,6 @@ If you have an Azure account, in the sample gallery of your Azure Quantum worksp
 - [Quantum Computing History and Background](xref:microsoft.quantum.concepts.intro)
 - [What are the Q# programming language and Quantum Development Kit (QDK)?](xref:microsoft.quantum.overview.q-sharp)
 - [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview)
-- [Creating a quantum-based random number generator in Azure Quantum](xref:microsoft.quantum.quickstarts.computing)
+- [Creating a quantum-based random number generator in Azure Quantum](xref:microsoft.quantum.tutorial-qdk.random-number)
 - [Quantum Simulators](xref:microsoft.quantum.machines.overview)
 - [The Q# libraries](xref:microsoft.quantum.libraries.overview)

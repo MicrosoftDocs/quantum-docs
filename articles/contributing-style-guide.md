@@ -2,19 +2,23 @@
 author: bradben
 description: Learn the naming, input, documentation and formatting conventions for Q# programming language applications and libraries.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 09/15/2022
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: conceptual
+ms.topic: contributor-guide
 no-loc: ['Q#', '$$v']
-title: Q# Style Guide
+title: Q# style guide
 uid: microsoft.quantum.contributing-qdk.overview.style
 ---
 
-# Q# style guide #
+# Q# programming language style guide #
+
 ## General conventions ##
 
 The conventions suggested in this guide are intended to help make programs and libraries written in Q# programming language easier to read and understand.
+
+> [!TIP]
+> For detailed user guidance for Q#, see the [Q# quantum programming language user guide](xref:microsoft.quantum.user-guide-qdk.overview).
 
 ## Guidance
 
@@ -58,7 +62,7 @@ In such cases, the action taken by the input operation is not clear when the out
 We recommend the verb `Apply`, as in `ApplyIf`, `ApplyToEach`, and `ApplyToFirst`.
 Other verbs may be useful in this case as well, as in `IterateThroughCartesianPower`.
 
-| Verb | Expected Effect |
+| Verb | Expected effect |
 | ---- | ------ |
 | Apply | An operation provided as input is called |
 | Assert | A hypothesis about the outcome of a possible quantum measurement is checked by a simulator |
@@ -67,7 +71,7 @@ Other verbs may be useful in this case as well, as in `IterateThroughCartesianPo
 | Prepare | A given register of qubits is initialized into a particular state |
 | Sample | A classical value is returned at random from some distribution |
 
-For functions, we suggest avoiding the use of verbs in favor of common nouns (see guidance on proper nouns below) or adjectives:
+For functions, we suggest avoiding the use of verbs in favor of common nouns (see guidance on [proper nouns](#proper-nouns-in-names) or adjectives:
 
 - `ConstantArray`
 - `Head`
@@ -75,7 +79,8 @@ For functions, we suggest avoiding the use of verbs in favor of common nouns (se
 
 In particular, in almost all cases, we suggest using past participles where appropriate to indicate that a function name is strongly connected to an action or side effect elsewhere in a quantum program.
 For example,  `ControlledOnInt` uses the part participle form of the verb "control" to indicate that the function acts as an adjective to modify its argument.
-This name has the additional benefit of matching the semantics of the built-in `Controlled` functor, as discussed further below.
+This name has the additional benefit of matching the semantics of the built-in `Controlled` functor, as discussed [later in this article](#input-conventions).
+
 Similarly, _agent nouns_ can be used to construct function and UDT names from operation names, as in the case of the name `Encoder` for a UDT that is strongly associated with `Encode`.
 
 # [Guidance](#tab/guidance)
@@ -108,18 +113,20 @@ We suggest:
 
 ### Entry points
 
-When defining an entry point into a Q# program, the Q# compiler recognizes the [`@EntryPoint()` attribute](xref:Microsoft.Quantum.Core.EntryPoint) rather requiring that entry points have a particular name (for example: `main`, `Main`, or `__main__`).
-That is, from the perspective of a Q# developer, entry points are ordinary operations annotated with `@EntryPoint()`.
-Moreover, Q# entry points may be entry points for an entire application (for example, in Q# standalone executable programs), or may be an interface between a Q# program and the host program for an application (for example, when using Q# with Python or .NET), such that the name "main" could be misleading when applied to a Q# entry point.
+> [!NOTE]
+> Entry points are only required for standalone Q# programs. For more information, see [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs)
 
-We suggest using naming entry points to reflect the use of the `@EntryPoint()` attribute by using the general advice for naming operations listed above.
+When defining an entry point into a Q# program, the Q# compiler recognizes the [`@EntryPoint()` attribute](xref:Microsoft.Quantum.Core.EntryPoint) rather than requiring that entry points have a particular name, for example, `main`, `Main`, or `__main__`.
+That is, from the perspective of a Q# developer, entry points are ordinary operations annotated with `@EntryPoint()`.
+
+We suggest naming entry points to reflect the use of the `@EntryPoint()` attribute by using the advice for [naming operations](#operations-and-functions).
 
 
 # [Guidance](#tab/guidance)
 
 We suggest:
 
-- Do not name entry point operations as "main."
+- Do not name entry point operations as `main`.
 - Name entry point operations as ordinary operations.
 
 # [Examples](#tab/examples)
@@ -133,7 +140,7 @@ We suggest:
 
 ### Shorthand and abbreviations ###
 
-The above advice notwithstanding, there are many forms of shorthand that see common and pervasive use in quantum computing.
+The previous advice notwithstanding, there are many forms of shorthand that see common and pervasive use in quantum computing.
 We suggest using existing and common shorthand where it exists, especially for operations that are intrinsic to the operation of a target machine.
 For example, we choose the name `X` instead of `ApplyX`, and `Rz` instead of `RotateAboutZ`.
 When using such shorthand, operation names should be all uppercase (for example, `MAJ`).
@@ -175,9 +182,7 @@ We suggest:
 | ☑ | `QFT` | Common initialism "QFT" appears as a part of a shorthand name. |
 
 
-
 ***
-
 
 ### Proper nouns in names ###
 
@@ -210,7 +215,7 @@ We suggest:
 Since Q# is a strongly and statically typed language, a value of one type can only be used as a value of another type by using an explicit call to a type conversion function.
 This is in contrast to languages which allow for values to change types implicitly (for example, type promotion), or through casting.
 As a result, type conversion functions play an important role in Q# library development, and comprise one of the more commonly encountered decisions about naming.
-We note, however, that since type conversions are always _deterministic_, they can be written as functions and thus fall under the advice above.
+We note, however, that since type conversions are always _deterministic_, they can be written as functions and thus fall under the earlier advice.
 In particular, we suggest that type conversion functions should never be named as verbs (for example, `ConvertToX`) or adverb prepositional phrases (`ToX`), but should be named as adjective prepositional phrases that indicate the source and destination types (`XAsY`).
 When listing array types in type conversion function names, we recommend the shorthand `Arr`.
 Barring exceptional circumstances, we recommend that all type conversion functions be named using `As` so that they can be quickly identified.
@@ -271,7 +276,7 @@ These groups can be distinguished by using the same root name, followed by one o
 We suggest:
 
 - If a function or operation is not related to any similar functions or operations by the types and functor support of their inputs, do not use a suffix.
-- If a function or operation is related to any similar functions or operations by the types and functor support of their inputs, use suffixes as in the table above to distinguish variants.
+- If a function or operation is related to any similar functions or operations by the types and functor support of their inputs, use suffixes as in the previous table to distinguish variants.
 
 # [Examples](#tab/examples)
 
@@ -360,6 +365,7 @@ operation ApplyPhaseEstimationIteration(
 : Unit
 ...
 ```
+
 As a special case of minimizing surprise, some functions and operations mimic the behavior of the built-in functors `Adjoint` and `Controlled`.
 For instance, `ControlledOnInt<'T>` has type `(Int, ('T => Unit is Adj + Ctl)) => ((Qubit[], 'T) => Unit is Adj + Ctl)`, such that `ControlledOnInt<Qubit[]>(5, _)` acts like the `Controlled` functor, but on the condition that the control register represents the state $\ket{5} = \ket{101}$.
 Thus, a developer expects that the inputs to `ControlledOnInt` place the callable being transformed last, and that the resulting operation takes as its input `(Qubit[], 'T)` --- the same order as followed by the output of the `Controlled` functor.
@@ -380,12 +386,9 @@ We suggest:
 
 The Q# language allows for attaching documentation to operations, functions, and user-defined types through the use of specially formatted documentation comments.
 Denoted by triple-slashes (`///`), these documentation comments are small [DocFX-flavored Markdown](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html) documents that can be used to describing the purpose of each operation, function, and user-defined type, what inputs each expects, and so forth.
-The compiler provided with the Quantum Development Kit extracts these comments and uses them to help typeset documentation similar to that at [docs.microsoft.com](/documentation/).
+The compiler provided with the Quantum Development Kit extracts these comments and uses them to help typeset documentation similar to that used in [Microsoft Learn documentation](/docs/).
 Similarly, the language server provided with the Quantum Development Kit uses these comments to provide help to users when they hover over symbols in their Q# code.
-Making use of documentation comments can thus help users to make sense of code by providing a useful reference for details that are not easily expressed using the other conventions in this document.
-
-> [!div class="nextstepaction"]
-> [Documentation comment syntax reference](xref:microsoft.quantum.qsharp.comments#documentation-comments).
+Making use of documentation comments can thus help users to make sense of code by providing a useful reference for details that are not easily expressed using the other conventions in this document. For more information, see the [documentation comment syntax reference](xref:microsoft.quantum.qsharp.comments#documentation-comments).
 
 In order to effectively use this functionality to help users, we recommend keeping a few things in mind as you write documentation comments.
 
@@ -395,9 +398,9 @@ We suggest:
 
 - Each public function, operation, and user-defined type should be immediately preceded by a documentation comment.
 - At a minimum, each documentation comment should include the following sections:
-    - Summary
-    - Input
-    - Output (if applicable)
+  - Summary
+  - Input
+  - Output (if applicable)
 - Ensure that all summaries are two sentences or less. If more room is needed, provide a `# Description` section immediately following `# Summary` with complete details.
 - Where reasonable, do not include math in summaries, as not all clients support TeX notation in summaries. Note that when writing prose documents (for example, TeX or Markdown), it may be preferable to use longer line lengths.
 - Provide all relevant mathematical expressions in the `# Description` section.
@@ -410,8 +413,6 @@ We suggest:
 - Leave a blank comment line between level-1 (`/// #`) sections, but do not leave a blank line between level-2 (`/// ##`) sections.
 
 # [Examples](#tab/examples)
-
-#### ☑ ####
 
 ```
 /// # Summary
@@ -461,10 +462,12 @@ We suggest:
 
 - Use four spaces instead of tabs for portability.
   For instance, in VS Code:
+
   ```json
     "editor.insertSpaces": true,
     "editor.tabSize": 4
   ```
+
 - Line wrap at 79 characters where reasonable.
 - Use spaces around binary operators.
 - Use spaces on either side of colons used for type annotations.
@@ -474,12 +477,12 @@ We suggest:
 
 # [Examples](#tab/examples)
 
-| &nbsp; | Snippet | Description |
-|---|---------|-------------|
-| ☒ | <s>`2+3`</s> | Use spaces around binary operators. |
-| ☒ | <s>`target:Qubit`</s> | Use spaces around type annotation colons. |
-| ☑ | `Example(a, b, c)` | Items in input tuple are correctly spaced for readability. |
-| ☒ | <s>`Example (a, b, c)`</s> | Spaces should be suppressed after function, operation, or UDT names in calls. |
-| ☒ | <s>`operation GenerateRandomBit ()`</s> | Spaces should be suppressed after function, operation, or UDT names in declaration. |
+| Instead of | Use | Description |
+---------|---------|-------------|
+| `2+3` | `2 + 3`| Use spaces around binary operators. |
+| `target:Qubit`| `target : Qubit`  | Use spaces around type annotation colons. |
+| `Example(a,b,c)` | `Example(a, b, c)` | Items in input tuple are correctly spaced for readability. |
+| `Example (a, b, c)` | `Example(a, b, c)` | Spaces should be suppressed after function, operation, or UDT names in calls. |
+| `operation GenerateRandomBit ()` | `operation GenerateRandomBit()` | Spaces should be suppressed after function, operation, or UDT names in declaration. |
 
 ***

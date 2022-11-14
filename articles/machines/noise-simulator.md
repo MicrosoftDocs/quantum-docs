@@ -1,13 +1,13 @@
 ---
-author: tedhudek
+author: SoniaLopezBravo
 description: Learn how to run your Q# programs on the Microsoft Quantum Development Kit noise simulator.
-ms.author: tedhudek
-ms.date: 10/05/2021
+ms.author: sonialopez
+ms.date: 10/26/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
-title: Noise quantum simulator - Quantum Development Kit
+title: Noise simulator 
 uid: microsoft.quantum.machines.overview.noise-simulator
 ---
 
@@ -410,6 +410,5 @@ $$\left\langle X_{0}X_{1}, Z_{0}Z_{1}, Z_{2}, Z_{3} \right\rangle $$
 
 - [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
 - [Quantum sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator)
-- [Quantum resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)
 - [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
 - [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)

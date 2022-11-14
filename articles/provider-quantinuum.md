@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides the technical details of the Quantinuum quantum provider
 ms.author: brbenefield
-ms.date: 02/24/2022
+ms.date: 09/26/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -12,21 +12,46 @@ uid: microsoft.quantum.providers.quantinuum
 
 # Quantinuum provider
 
+> [!NOTE]
+> The Quantinuum provider replaces the old Honeywell provider. If you previously used the Honeywell provider, see the [Honeywell to Quantinuum migration guide](xref:microsoft.quantum.providers.honeywell.migration).
+
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
+
+> [!IMPORTANT]
+> Quantinuum target IDs were updated as of October, 2022. Currently, both the old and new target IDs are valid, however, the old target IDs will eventually be phased out. Please use the new target IDs to submit jobs, and update any code or job scripts to reflect the new IDs.
+
+| Old target name | New target name |
+| ---- | ---- |
+| quantinuum.hqs-lt-s1 | quantinuum.qpu.h1-1 |
+| quantinuum.hqs-lt-s1-apival | quantinuum.sim.h1-1sc |
+| quantinuum.hqs-lt-s2 | quantinuum.qpu.h1-2 |
+| quantinuum.hqs-lt-s2-apival | quantinuum.sim.h1-2sc |
+| quantinuum.hqs-lt-s1-sim | quantinuum.sim.h1-1e |
+| quantinuum.hqs-lt-s2-sim | quantinuum.sim.h1-2e |
+| quantinuum.hqs-lt | quantinuum.qpu.h1 |
 
 Quantinuum provides access to trapped-ion systems with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurement.
 
 - Publisher: [Quantinuum](https://www.quantinuum.com)
 - Provider ID: `quantinuum`
 
-> [!NOTE]
-> The Quantinuum provider replaces the old Honeywell provider. New customers must use the Quantinuum provider in their workspaces. All previously available targets and systems are available with the Quantinuum provider. If you previously used the Honeywell provider you may follow the [migration guide to switch to the Quantinuum provider](xref:microsoft.quantum.providers.honeywell.migration).
+## Targets
 
 The following targets are available from this provider:
 
-- [Syntax Checker](#syntax-checkers)
-- [System Model H1 Emulator](#system-model-h1-emulators)
-- [System Model H1](#system-model-h1)
+|Target name|	Target ID|	Number of qubits|	Description|
+|---|---|---|---|
+|[H1-1 Syntax Checker](#syntax-checkers) |	quantinuum.sim.h1-1sc	|20 qubits| Use this to validate quantum programs against the H1-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
+|[H1-2 Syntax Checker](#syntax-checkers) |	quantinuum.sim.h1-2sc |	12 qubits	|Use this to validate quantum programs against the H1-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
+|[H1-1 Emulator](#system-model-h1-emulators) |	quantinuum.sim.h1-1e | 20 qubits	| Uses a realistic physical model and noise model of H1-1.|
+|[H1-2 Emulator](#system-model-h1-emulators)|	quantinuum.sim.h1-2e | 12 qubits	|Uses a realistic physical model and noise model of H1-2.|
+|[H1-1](#system-model-h1)|	quantinuum.qpu.h1-1 |	20 qubits|	Quantinuum's H1-1 trapped ion device.|
+|[H1-2](#system-model-h1)|	quantinuum.qpu.h1-2	| 12 qubits	|Quantinuum's H1-2 trapped ion device.|
+
+
+Quantinuum's targets correspond to a **Basic Measurement Feedback** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
+
+To get started using the Quantinuum provider on Azure Quantum, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
 ## Syntax Checkers
 
@@ -34,10 +59,13 @@ We recommend that users first validate their code using a Syntax Checker. This i
 
 - Job type: `Simulation`
 - Data Format: `quantinuum.openqasm.v1`
-- Target ID: `quantinuum.hqs-lt-s1-apival` or `quantinuum.hqs-lt-s2-apival`
+- Target ID:
+  - H1-1 Syntax Checker: `quantinuum.sim.h1-1sc` 
+  - H1-2 Syntax Checker: `quantinuum.sim.h1-2sc`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
-Billing information:  No charge for usage.
+
+Syntax Checkers usage is offered free-of-charge.
 
 ## System Model H1 Emulators
 
@@ -45,10 +73,14 @@ After validating the syntax of their code with a Syntax Checker, users can take 
 
 - Job type: `Simulation`
 - Data Format: `quantinuum.openqasm.v1`
-- Target ID:  `quantinuum.hqs-lt-s1-sim` or `quantinuum.hqs-lt-s2-sim`
+- Target ID: 
+  - H1-1 Emulator: `quantinuum.sim.h1-1e` 
+  - H1-2 Emulator: `quantinuum.sim.h1-2e`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
-Billing information: H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see Billing information for the [System Model H1](#system-model-h1).
+For more information about the System Model H1 Emulator, see the [Quantinuum product data sheet](https://assets-global.website-files.com/617730fbcf7b7c387194556a/633af5b6ef0513fe5a5615af_Quantinuum%20H1%20Emulator%20Product%20Data%20Sheet%20v5-1%2003OCT22.pdf). For a more in-depth analysis of quantum error correction, see [Realization of real-time fault-tolerant quantum error correction](https://arxiv.org/abs/2107.07505).
+
+H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
 ## System Model H1
 
@@ -61,10 +93,10 @@ Both System Model H1 hardware H1-1 and H1-2 are continuously upgraded throughout
 - Job type: `Quantum Program`
 - Data Format: `quantinuum.openqasm.v1`
 - Target ID:
-  - H1-1: `quantinuum.hqs-lt-s1` 
-  - H1-2: `quantinuum.hqs-lt-s2`
-  - H1 machine family: `quantinuum.hqs-lt`
+  - H1-1: `quantinuum.qpu.h1-1` 
+  - H1-2: `quantinuum.qpu.h1-2`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
+
 
 ### Technical Specifications
 
@@ -94,9 +126,9 @@ To see Quantinuum's billing plans, visit [Azure Quantum pricing](xref:microsoft.
 
 ## Limits & Quotas
 
-Quantinuum's quotas are tracked based on the QPU usage credit unit, which is *H1 Quantum Credit (HQC)* for jobs submitted to System Model H1 quantum computer, and *Quantinuum Emulator Quantum Credits (eHQC)* for jobs submitted to System Model H1 emulator.
+Quantinuum's quotas are tracked based on the QPU usage credit unit, *H-System Quantum Credit (HQC)*, for jobs submitted to System Model H1 quantum computers, and emulator HQCs (eHQCs) for jobs submitted to System Model H1 emulators.
 
-HQC and eHQC are used to calculate the cost of running a job, and they are calculated based on the following formula (same for eHQC):
+HQCs and eHQCs are used to calculate the cost of running a job, and they are calculated based on the following formula:
 
 $$
 HQC = 5 + C(N_{1q} + 10 N_{2q} + 5 N_m)/5000
@@ -109,11 +141,7 @@ where:
 - $N_{m}$ is the number of state preparation and measurement (SPAM) operations in a circuit including initial implicit state preparation and any intermediate and final measurements and state resets.
 - $C$ is the shot count.
 
-Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the “Credits and quotas” blade and select the “Quotas” tab of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
+Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the **Credits and quotas** blade and select the **Quotas** tab of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
 
 > [!NOTE]
 > If you are using an [Azure Quantum Credits](xref:microsoft.quantum.credits) plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
-
-
-
-

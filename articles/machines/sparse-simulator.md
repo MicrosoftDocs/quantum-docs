@@ -2,12 +2,12 @@
 author: SoniaLopezBravo
 description: Learn how to run your Q# programs on the Microsoft Quantum Development Kit sparse simulator.
 ms.author: sonialopez
-ms.date: 02/18/2022
+ms.date: 10/31/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
-title: Sparse simulator - Quantum Development Kit
+title: Sparse simulator 
 uid: microsoft.quantum.machines.overview.sparse-simulator
 ---
 
@@ -98,7 +98,6 @@ By default, the sparse simulator uses a random number generator to simulate quan
 ## See also
 
 - [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
-- [Quantum resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)
 - [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
 - [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)
 - [Quantum noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator)

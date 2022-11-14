@@ -8,6 +8,16 @@ groups:
     title: IonQ
   - id: platform-quantinuum
     title: Quantinuum
+- id: quantum-computing-platforms-rigetti
+  title: Provider platforms
+  prompt: Choose a provider platform
+  pivots:
+  - id: platform-ionq
+    title: IonQ
+  - id: platform-quantinuum
+    title: Quantinuum
+  - id: platform-rigetti
+    title: Rigetti
 - id: optimization-platforms
   title: Provider platforms
   prompt: Choose a provider platform
@@ -56,3 +66,13 @@ groups:
     title: Azure Quantum portal
   - id: ide-local
     title: Local computer
+- id: azurequantum-quantumcomputing-re-ide
+  title: IDE for submitting quantum computing jobs to RE 
+  prompt: Select the option for your language and development environment
+  pivots:
+  - id: ide-python-qsharp
+    title: Q# + Python in Azure Portal
+  - id: ide-portal-qiskit
+    title: Qiskit in Azure Portal
+  - id: ide-vscode-qsharp
+    title: Q# in VS Code

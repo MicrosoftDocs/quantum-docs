@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to create an Azure Quantum workspace.
 ms.author: brbenefield
-ms.date: 02/23/2022
+ms.date: 10/19/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -20,18 +20,42 @@ A workspace is needed to [get started with Jupyter Notebooks in Azure Quantum](x
 > [!TIP]
 > You can also create an Azure Quantum workspace using the Azure command-line interface (CLI). For more information, see [Manage quantum workspaces with the Azure CLI](xref:microsoft.quantum.workspaces-cli).
 
-## Free Azure Quantum credits
+## Free Azure Quantum Credits
 
-First-time users automatically get free Azure Quantum Credits for use with each participating quantum hardware provider (500 USD each) when creating your workspace. If you need more credits, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
+First-time users automatically get $500 (USD) free [Azure Quantum Credits](xref:microsoft.quantum.credits) for use with each participating quantum hardware provider (see the [full quantum provider list](xref:microsoft.quantum.reference.qc-target-list)). Your free Azure Quantum Credits become available once you create a new Azure Quantum workspace. If you need more credits, you can apply to the [Azure Quantum Credits program](xref:microsoft.quantum.credits.credits-faq).
 
 ## Prerequisites
 
 You need the following prerequisites to create a workspace.
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. Choose from one of the following subscriptions, or for a full list see [Microsoft Azure Offer Details](https://azure.microsoft.com/support/legal/offer-details/).
+
+### [Pay-as-you-go (recommended)](#tab/payg)
+ 
+Register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). With the Azure Quantum Credits you'll have $500 (USD) to use in each quantum hardware provider. Once you've consumed all your credits, you'll only pay for the services you use and you can cancel anytime. 
+
+### [Free Trial](#tab/free)
+
+Sign up for a [free trial subscription for 30 days](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). With the Azure Quantum Credits you'll have $500 (USD) to use in each quantum hardware provider. After 30 days of sign-up or once you've consumed all your Azure Quantum Credits (whichever occurs first), you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using the Azure Quantum services. After the exhaustion of your Azure Quantum Credits, you'll only pay for the services you use and you can cancel anytime. 
+
+In addition, the free Azure trial gets you started with $200 (USD) in Azure credits to be used in Azure 1st-party services (Azure Quantum is not eligible) within the first 30 days of sign-up.
+
+### [Students](#tab/student)
+
+Sign up for an [Azure for Students subscription](https://azure.microsoft.com/offers/ms-azr-0170p/). With the Azure Quantum Credits you'll have $500 (USD) to use in each quantum hardware provider. Once you've consumed all your credits, you must upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go), and you can cancel anytime.
+
+Azure for Students gets you started with $100 (USD) in Azure Credits to be used in Azure 1st-party services (Azure Quantum is not eligible), and you don't need a credit card to sign-up.  
+
+### [Enterprise Agreement](#tab/EA)
+
+If your organization has an Enterprise Agreement (EA) purchasing contract with Microsoft, your organization's Account Owners can create [Enterprise Dev/Test subscriptions](https://azure.microsoft.com/offers/ms-azr-0148p/) for active Visual Studio subscribers under the EA.
+
+---
 
 > [!NOTE]
-> If you have any questions regarding the workspace creation process or run into any issue at any point using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Standard Time zone (PST).
+> Note that Azure Credits and Azure Quantum Credits are different grants and shouldn't be confused. You can only use general-purpose Azure Credits with the Microsoft quantum providers - third-party providers (providers that aren't owned by Microsoft) aren't eligible.
+
+If you have any questions or run into any issue using Azure Quantum, join our [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) every Thursday 8∶30 AM Pacific Time zone (PT).
 
 ## Create the workspace
 
@@ -49,10 +73,9 @@ To create an Azure Quantum workspace, follow these steps.
 
    |Option | Description |
    |--- | --- |
-   | Quick create | This option is the easiest path to creating a workspace. It automatically creates the necessary resource group and storage account, adds the Quantinuum, IonQ, and Microsoft QIO providers, and includes free Azure Quantum Credits for Quantinuum and IonQ hardware (USD 500 each). You workspace can still be customized after creation, if needed. |
-   |Advanced create | Use this option to manually configure your resource group and storage account, select other payment options for your providers, and set tags to categorize resources. By default, this option also adds the Quantinuum, IonQ, and Microsoft QIO providers, and includes free Azure Quantum Credits for Quantinuum and IonQ hardware (USD 500 each). |
+   | Quick create | This option is the easiest path to creating a workspace. It automatically creates the necessary resource group and storage account, adds the IonQ, Quantinuum, Rigetti, and Microsoft QIO providers, and includes free Azure Quantum Credits for IonQ, Quantinuum, and Rigetti hardware ($500 USD each). You workspace can still be customized after creation, if needed. |
+   |Advanced create | Use this option to manually configure your resource group and storage account, select other payment options for your providers, and set tags to categorize resources. By default, this option also adds the IonQ, Quantinuum, Rigetti, and Microsoft QIO providers, and includes free Azure Quantum Credits for IonQ, Quantinuum, and Rigetti hardware ($500 USD each). |
    
-
 ### [Quick create](#tab/tabid-quick)
 
 1. Enter a name for the workspace.
@@ -92,9 +115,12 @@ To create an Azure Quantum workspace, follow these steps.
 
 Deployment of your workspace may take a few minutes. The status and deployment details will be updated in the portal.
 
+> [!NOTE]
+> If you run into any issue, see [Azure Quantum common issues](xref:microsoft.quantum.azure.common-issues).
+
 ## Next steps
 
 - [Get started with Jupyter Notebooks in Azure Quantum](xref:microsoft.quantum.get-started.notebooks)
-- [Quickstart: Create a quantum-based random number generator in Azure Quantum](xref:microsoft.quantum.quickstarts.computing)
-- [Quickstart: Solve an optimization problem in Azure Quantum](xref:microsoft.quantum.quickstarts.optimization.qio)
-- [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)
+- [Quickstart: Solve an optimization problem in Azure Quantum](xref:microsoft.quantum.quickstarts.optimization.qio.portal)
+- [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit.portal)
+- [Quickstart: Create a quantum random-number generator in a local development environment](xref:microsoft.quantum.quickstarts.computing)

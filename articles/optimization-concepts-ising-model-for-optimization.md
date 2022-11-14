@@ -1,7 +1,7 @@
 ---
-author: andrist
+author: SoniaLopezBravo
 description: This document describes the Ising model and its use in formulating optimization problems.
-ms.author: tedhudek
+ms.author: sonialopez
 ms.date: 10/05/2021
 ms.service: azure-quantum
 ms.subservice: optimization
@@ -18,7 +18,7 @@ substance, for example, a refrigerator magnet. These moments, called *spins*, ar
 point either "up" ($+1$) or "down" ($-1$) and interact with other spins
 depending on their relative position.
 
-![2D Ising model states at different temperatures](~/media/optimization-ising-model.png)
+:::image type="content" source="media/optimization-ising-model.png" alt-text="Plot of the 2D Ising model states at different temperatures":::
 
 The behavior of such a magnetic material is temperature-dependent:
 

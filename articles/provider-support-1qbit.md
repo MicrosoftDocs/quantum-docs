@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: This document provides details on the support policy for the 1QBit provider in Azure Quantum
-ms.author: brbenefield
+ms.author: sonialopez
 ms.date: 06/09/2022
 ms.service: azure-quantum
 ms.subservice: optimization

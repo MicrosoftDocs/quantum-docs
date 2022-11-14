@@ -1,10 +1,10 @@
 ---
 title: Theory of Grover's search algorithm 
 description: Learn about the theory behind Grover's algorithm.
-author: bradben
+author: SoniaLopezBravo
 uid: microsoft.quantum.concepts.grovers
-ms.author: brbenefield
-ms.date: 12/11/2017
+ms.author: sonialopez
+ms.date: 10/11/2022
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -15,7 +15,7 @@ no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots'
 
 In this article you'll find a detailed theoretical explanation of the mathematical principles that make Grover's algorithm work.
 
-For a practical implementation of Grover's algorithm to solve mathematical problems you can read our [guide to implement Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers).
+For a practical implementation of Grover's algorithm to solve mathematical problems, see [Implement Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers).
 
 ## Statement of the problem
 
@@ -68,7 +68,7 @@ To illustrate the process, let's follow the mathematical transformations of the 
 1. Finally, the first Grover iteration ends by applying $H$ again to get:
    $$|\text{register}\rangle = \ket{01}$$
 
-   By following the above steps, the valid item is found in a single iteration. As it will be seen later, this is because for N=4 and a single valid item, $N_\text{optimal}=1$.
+   By following the above steps, the valid item is found in a single iteration. As you will see later, this is because for N=4 and a single valid item, $N_\text{optimal}=1$.
 
 ## Geometrical explanation
 
@@ -82,7 +82,7 @@ $$\ket{\text{good}}=\frac{1}{\sqrt{M}}\sum_{x:f(x)=1}\ket{x}$$
 
 Since *good* and *bad* are mutually exclusive sets because an item cannot be valid and not valid, the states $\ket{\text{good}}$ and $\ket{\text{bad}}$ are orthogonal. Both states form the orthogonal basis of a plane in the vector space. One can use this plane to visualize the algorithm.
 
-![The plane projected by the orthogonal good and bad vectors.](./media/plane-grovers.png)
+:::image type="content" source="media/plane-grovers.png" alt-text="Plot of the plane in the Bloch sphere projected by the orthogonal good and bad vectors.":::
 
 Now, suppose $\ket{\psi}$ is an arbitrary state that lives in the plane spanned by $\ket{\text{good}}$ and $\ket{\text{bad}}$. Any state living in that plane can be expressed as:
 
@@ -102,15 +102,15 @@ $$R_{\ket{\psi}}\ket{\xi}=\mu \ket{\psi} - \nu {\ket{\psi^{\perp}}}$$
 
 The operator $R_\ket{\psi}$ inverts the component orthogonal to $\ket{\psi}$ but leaves the $\ket{\psi}$ component unchanged. Therefore, $R_\ket{\psi}$ is a reflection about $\ket{\psi}$.
 
-![The reflection operator about psi visualized in the plane.](./media/reflection-operator.png)
+:::image type="content" source="media/reflection-operator.png" alt-text="Plot of the reflection operator about the quantum state visualized in the plane.":::
 
 Grover's algorithm, after the first application of $H$ to every qubit, starts with an uniform superposition of all states. This can be written as:
 
 $$\ket{\text{all}} = \sqrt{\frac{M}{N}}\ket{\text{good}} + \sqrt{\frac{N-M}{N}}\ket{\text{bad}}$$
 
-![The starting state as a superposition of the good and bad states in the plane.](./media/starting-state.png)
+:::image type="content" source="media/starting-state.png" alt-text="Plot of the starting state as a superposition of the good and bad states in the plane.":::
 
-And thus the state lives in the plane. Note that the probability of obtaining a correct result when measuring from the equal superposition is just $|\braket{\text{good}|{\text{all}}}|^2=M/N$, that is what we expect from a random guess.
+And thus the state lives in the plane. Note that the probability of obtaining a correct result when measuring from the equal superposition is just $|\braket{\text{good}|{\text{all}}}|^2=M/N$, which is what you would expect from a random guess.
 
 The oracle $O_f$ adds a negative phase to any solution to the search problem. Therefore, it can be written as a reflection about the $\ket{\text{bad}}$ axis:
 
@@ -126,13 +126,13 @@ $$-H^{\otimes n} O_0 H^{\otimes n}=2H^{\otimes n}\ket{0}\bra{0}H^{\otimes n} -H^
 
 It has been demonstrated that each iteration of Grover's algorithm is a composition of two reflections $R_\ket{\text{bad}}$ and $R_\ket{\text{all}}$.
 
-![The Grover iteration visualized as a sequence of two reflections in the plane.](./media/grovers-iteration.png)
+:::image type="content" source="media/grovers-iteration.png" alt-text="Plot of the Grover iteration visualized as a sequence of two reflections in the plane.":::
 
 The combined effect of each Grover iteration is a counterclockwise rotation of an angle $2\theta$. Fortunately, the angle $\theta$ is easy to find. Since $\theta$ is just the angle between $\ket{\text{all}}$ and $\ket{\text{bad}}$, one can use the scalar product to find the angle. It is known that $\cos{\theta}=\braket{\text{all}|\text{bad}}$, so one needs to calculate $\braket{\text{all}|\text{bad}}$. From the decomposition of $\ket{\text{all}}$ in terms of $\ket{\text{bad}}$ and $\ket{\text{good}}$, it follows:
 
 $$\theta = \arccos{\left(\braket{\text{all}|\text{bad}}\right)}= \arccos{\left(\sqrt{\frac{N-M}{N}}\right)} $$
 
-The angle between the state of the register and the $\ket{\text{good}}$ state will decrease with each iteration, resulting in a higher probability of measuring a valid result. To calculate this probability one just needs to calculate $|\braket{\text{good}|\text{register}}|^2$. Denoting the angle between $\ket{\text{good}}$ and $\ket{\text{register}}$ $\gamma (k)$, where $k$ is the iteration count:
+The angle between the state of the register and the $\ket{\text{good}}$ state decreases with each iteration, resulting in a higher probability of measuring a valid result. To calculate this probability, you just need to calculate $|\braket{\text{good}|\text{register}}|^2$. Denoting the angle between $\ket{\text{good}}$ and $\ket{\text{register}}$ $\gamma (k)$, where $k$ is the iteration count:
 
 $$\gamma (k) = \frac{\pi}{2}-\theta -k2\theta = \frac{\pi}{2} -(2k + 1) \theta $$
 
@@ -144,7 +144,7 @@ $$P(\text{success}) = \cos^2(\gamma(k)) = \sin^2\left[(2k +1)\arccos \left( \sqr
 
 As the probability of success can be written as a function of the number of iterations, the optimal number of iterations $N_{\text{optimal}}$ can be found by computing the smallest positive integer that (approximately) maximizes the success probability function.
 
-![A sinusoidal graph of the success probability as a function of Grover iterations. The optimal number of iterations is near the first peak.](./media/success-probability-grovers.png)
+:::image type="content" source="media/success-probability-grovers.png" alt-text="A sinusoidal plot of the success probability as a function of Grover iterations. The optimal number of iterations is near the first peak.":::
 
 It is known that $\sin^2{x}$ reaches its first maximum for $x=\frac{\pi}{2}$, so:
 
@@ -156,13 +156,13 @@ $$k_{\text{optimal}} = \frac{\pi}{4\arccos\left(\sqrt{1-M/N}\right)}-1/2 = \frac
 
 Where in the last step, $\arccos \sqrt{1-x} = \sqrt{x} + O(x^{3/2})$.
 
-Therefore one can pick $N_\text{optimal}$ to be $N_\text{optimal} = \left\lfloor \frac{\pi}{4}\sqrt{\frac{N}{M}}-\frac{1}{2} \right\rfloor$.
+Therefore, you can pick $N_\text{optimal}$ to be $N_\text{optimal} = \left\lfloor \frac{\pi}{4}\sqrt{\frac{N}{M}}-\frac{1}{2} \right\rfloor$.
 
 ## Complexity analysis
 
 From the previous analysis, $O\left(\sqrt{\frac{N}{M}}\right)$ queries of the oracle $O_f$ are needed to find a valid item. However, can the algorithm be implemented efficiently in terms of time complexity? $O_0$ is based on computing Boolean operations on $n$ bits and is known to be implementable using $O(n)$ gates. There are also two layers of $n$ Hadamard gates. Both of these components thus require only $O(n)$ gates per iteration. Because $N=2^n$, it follows that $O(n)=O(log(N))$. Therefore, if $O\left(\sqrt{\frac{N}{M}}\right)$ iterations and $O(log(N))$ gates per iteration are needed, the total time complexity (without taking into account the oracle implementation) is $O\left(\sqrt{\frac{N}{M}}log(N)\right)$.
 
-The overall complexity of the algorithm will ultimately depend on the complexity of the implementation of the oracle $O_f$. If a function evaluation is much more complicated on a quantum computer than on a classical one, the overall algorithm runtime will be longer in the quantum case, even though technically, it will use fewer queries.
+The overall complexity of the algorithm ultimately depends on the complexity of the implementation of the oracle $O_f$. If a function evaluation is much more complicated on a quantum computer than on a classical one, the overall algorithm runtime will be longer in the quantum case, even though technically, it uses fewer queries.
 
 ## References
 
