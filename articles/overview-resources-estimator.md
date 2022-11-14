@@ -1,19 +1,19 @@
 ---
 author: SoniaLopezBravo
-description: Learn about the technical details and workflow of the Resource Estimator target in Azure Quantum
+description: Learn about the input and outpu parameters of the Resource Estimator target in Azure Quantum and how to customized them
 ms.date: 11/05/2022
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: reference
 no-loc: ['Q#', '$$v']
-title: Introduction to the Resource Estimator target
+title: Resource Estimator input and ouput parameters
 uid: microsoft.quantum.overview.resources-estimator
 ---
 
 # Customize resource estimates to machine characteristics
 
-In this article, you'll learn how to customize the input parameters to match the machine characteristics that you're targeting.
+In this article, you'll learn how to customize the input parameters of the Azure Quantum Resource Estimator to match the machine characteristics that you're targeting. You'll also see the output data of a resource estimates and their definitions. 
 
 ## Input parameters
 
@@ -152,35 +152,35 @@ Pre-defined qubit parameters can be customized by specifying the name and then u
 
 **Qubit parameters for Gate-based qubits**
 
-| Field                        | Default value                                          | Description                                                        |
-|----------------------------- |------------------------------------------------------- |  ------------------------------------------------------------------|
-| `name`                       | `qubit_maj_ns_e4`                                    | Name for the qubit model                          |
-| `instructionSet`              | `GateBased`                                           | Underlying qubit technology (gate-based or Majorana) |
-| `oneQubitMeasurementTime`     | 100 ns                                                | Operation time for single-qubit measurement ($t_{\rm meas}$) in ns |
-| `oneQubitGateTime`             | 50 ns                                                 | Operation time for single-qubit gate ($t_{\rm gate}$) in ns        |
-| `twoQubitGateTime`             |  `oneQubitGateTime`                                    | Operation time for two-qubit gate in ns                            |
-| `tGateTime`             |  `oneQubitGateTime`                                           | Operation time for single-qubit non-Clifford gate in ns|
-| `oneQubitMeasurementErrorRate` | 0.001                                              | Error rate for single-qubit measurement   |
-| `oneQubitGateErrorRate`        | 0.001                                                  | Error rate for single-qubit Clifford gate ($p$)                    |
-| `twoQubitGateErrorRate`        |  `oneQubitErrorRate`                        | Error rate for two-qubit Clifford gate                             |
-| `tGateErrorRate`              | 0.001                                                 | Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
+| Field                        | Description                                                        |
+|----------------------------- | ------------------------------------------------------------------|
+| `name`                       |  Name for the qubit model                          |
+| `instructionSet`              |  Underlying qubit technology (gate-based or Majorana) |
+| `oneQubitMeasurementTime`     |  Operation time for single-qubit measurement ($t_{\rm meas}$) in ns |
+| `oneQubitGateTime`             |  Operation time for single-qubit gate ($t_{\rm gate}$) in ns        |
+| `twoQubitGateTime`             |  Operation time for two-qubit gate in ns                            |
+| `tGateTime`             |  Operation time for single-qubit non-Clifford gate in ns|
+| `oneQubitMeasurementErrorRate` |Error rate for single-qubit measurement   |
+| `oneQubitGateErrorRate`        |  Error rate for single-qubit Clifford gate ($p$)                    |
+| `twoQubitGateErrorRate`        |  Error rate for two-qubit Clifford gate                             |
+| `tGateErrorRate`              | Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
 
+When not specified, the values for `twoQubitGateTime` and `tGateTime` default to `oneQubitGateTime` and the values for `twoQubitGateErrorRate` and `tGateErrorRate` default to `oneQubitGateErrorRate`.
 
 **Qubit parameters for Majorana qubits**
 
-| Field                        | Default value                                          | Description                                                        |
-|----------------------------- |------------------------------------------------------- |  ------------------------------------------------------------------|
-| `name`                       | `qubit_gate_ns_e3`                                    | Name for the qubit model                          |
-| `instructionSet`              | `Majorana`                                           | Underlying qubit technology (gate-based or Majorana) |
-| `oneQubitMeasurementTime`     | 100 ns                                                | Operation time for single-qubit measurement ($t_{\rm meas}$) in ns |
-| `twoQubitJointMeasurementTime`      |  `oneQubitMeasurementTime`                  | Operation time for two-qubit measurement in ns                     |
-| `tGateTime`             |  50 ns                                         | Operation time for single-qubit non-Clifford gate in ns|
-| `oneQubitMeasurementErrorRate` | 0.000001                                          | Error rate for single-qubit measurement   |
-| `twoQubitJointMeasurementErrorRate` |  `oneQubitMeasurementErrorRate`             | Error rate for two-qubit measurement                               |
-| `tGateErrorRate`              | 0.05                                             | Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
+| Field                        | Description                                                        |
+|----------------------------- | ------------------------------------------------------------------|
+| `name`                       |  Name for the qubit model                          |
+| `instructionSet`              | Underlying qubit technology (gate-based or Majorana) |
+| `oneQubitMeasurementTime`     | Operation time for single-qubit measurement ($t_{\rm meas}$) in ns |
+| `twoQubitJointMeasurementTime`           | Operation time for two-qubit measurement in ns                     |
+| `tGateTime`       | Operation time for single-qubit non-Clifford gate in ns|
+| `oneQubitMeasurementErrorRate`  | Error rate for single-qubit measurement   |
+| `twoQubitJointMeasurementErrorRate`  | Error rate for two-qubit measurement                               |
+| `tGateErrorRate`              | Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
 
-> [!NOTE]
-> Notice that the default values for qubit parameters change when choosing `GateBased` or `Majorana` as qubit type. 
+When not specified, the values for `twoQubitJointMeasurementTime` and `tGateTime` default to `oneQubitGateTime` and the value for `twoQubitJointMeasurementErrorRate` defaults to `oneQubitMeasurementErrorRate`.
 
 > [!IMPORTANT]
 > All values that aren't specified will take a default value, for example, specifying `"qubit": {"oneQubitGateTime":"200 ns"}` will model a gate-based qubit in which both the two-qubit gate time and the one-qubit gate time are 200 ns. For units, you need to specify time strings, which are double-precision floating point numbers, followed by a space and the time unit for such values, where possible time suffixes are `ns`, `µs` (or `us`), `ms`, and `s`.  
@@ -307,6 +307,10 @@ is uniformly distributed and applies to errors $\epsilon_{\log}$ to implement lo
 Note that for distillation and rotation synthesis, the respective error budgets $\epsilon_{\rm dis}$ and $\epsilon_{\rm syn}$ are uniformly distributed among all required T states and all required rotation gates, respectively. If there aren't rotation gates in the input algorithm, the error budget is uniformly distributed to logical errors and T state errors.
 
 ## Output data
+
+The Azure Quantum Resource Estimator takes the job parameters, `{qubitParams, qecScheme, errorBudget}`, to evaluate the resource estimates of the requested QIR quantum algorithm. The result of the resource estimation job is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget.
+
+For more information, see [how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
 
 ### Physical qubits
 
