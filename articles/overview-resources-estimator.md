@@ -13,7 +13,7 @@ uid: microsoft.quantum.overview.resources-estimator
 
 # Customize resource estimates to machine characteristics
 
-In this article, you'll learn how to customize the input parameters of the Azure Quantum Resource Estimator to match the machine characteristics that you're targeting. You'll also see the output data of a resource estimates and their definitions. 
+In this article, you'll learn how to customize the input parameters of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to match the machine characteristics that you're targeting. You'll also see the output data of a resource estimates and their definitions. 
 
 ## Input parameters
 
