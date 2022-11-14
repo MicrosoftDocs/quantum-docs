@@ -152,35 +152,35 @@ Pre-defined qubit parameters can be customized by specifying the name and then u
 
 **Qubit parameters for Gate-based qubits**
 
-| Field                        | Default value                                          | Description                                                        |
-|----------------------------- |------------------------------------------------------- |  ------------------------------------------------------------------|
-| `name`                       | `qubit_maj_ns_e4`                                    | Name for the qubit model                          |
-| `instructionSet`              | `GateBased`                                           | Underlying qubit technology (gate-based or Majorana) |
-| `oneQubitMeasurementTime`     | 100 ns                                                | Operation time for single-qubit measurement ($t_{\rm meas}$) in ns |
-| `oneQubitGateTime`             | 50 ns                                                 | Operation time for single-qubit gate ($t_{\rm gate}$) in ns        |
-| `twoQubitGateTime`             |  `oneQubitGateTime`                                    | Operation time for two-qubit gate in ns                            |
-| `tGateTime`             |  `oneQubitGateTime`                                           | Operation time for single-qubit non-Clifford gate in ns|
-| `oneQubitMeasurementErrorRate` | 0.001                                              | Error rate for single-qubit measurement   |
-| `oneQubitGateErrorRate`        | 0.001                                                  | Error rate for single-qubit Clifford gate ($p$)                    |
-| `twoQubitGateErrorRate`        |  `oneQubitErrorRate`                        | Error rate for two-qubit Clifford gate                             |
-| `tGateErrorRate`              | 0.001                                                 | Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
+| Field                        | Description                                                        |
+|----------------------------- | ------------------------------------------------------------------|
+| `name`                       |  Name for the qubit model                          |
+| `instructionSet`              |  Underlying qubit technology (gate-based or Majorana) |
+| `oneQubitMeasurementTime`     |  Operation time for single-qubit measurement ($t_{\rm meas}$) in ns |
+| `oneQubitGateTime`             |  Operation time for single-qubit gate ($t_{\rm gate}$) in ns        |
+| `twoQubitGateTime`             |  Operation time for two-qubit gate in ns                            |
+| `tGateTime`             |  Operation time for single-qubit non-Clifford gate in ns|
+| `oneQubitMeasurementErrorRate` |Error rate for single-qubit measurement   |
+| `oneQubitGateErrorRate`        |  Error rate for single-qubit Clifford gate ($p$)                    |
+| `twoQubitGateErrorRate`        |  Error rate for two-qubit Clifford gate                             |
+| `tGateErrorRate`              | Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
 
+When not specified, the values for `twoQubitGateTime` and `tGateTime` default to `oneQubitGateTime` and the values for `twoQubitGateErrorRate` and `tGateErrorRate` default to `oneQubitGateErrorRate`.
 
 **Qubit parameters for Majorana qubits**
 
-| Field                        | Default value                                          | Description                                                        |
-|----------------------------- |------------------------------------------------------- |  ------------------------------------------------------------------|
-| `name`                       | `qubit_gate_ns_e3`                                    | Name for the qubit model                          |
-| `instructionSet`              | `Majorana`                                           | Underlying qubit technology (gate-based or Majorana) |
-| `oneQubitMeasurementTime`     | 100 ns                                                | Operation time for single-qubit measurement ($t_{\rm meas}$) in ns |
-| `twoQubitJointMeasurementTime`      |  `oneQubitMeasurementTime`                  | Operation time for two-qubit measurement in ns                     |
-| `tGateTime`             |  50 ns                                         | Operation time for single-qubit non-Clifford gate in ns|
-| `oneQubitMeasurementErrorRate` | 0.000001                                          | Error rate for single-qubit measurement   |
-| `twoQubitJointMeasurementErrorRate` |  `oneQubitMeasurementErrorRate`             | Error rate for two-qubit measurement                               |
-| `tGateErrorRate`              | 0.05                                             | Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
+| Field                        | Description                                                        |
+|----------------------------- | ------------------------------------------------------------------|
+| `name`                       |  Name for the qubit model                          |
+| `instructionSet`              | Underlying qubit technology (gate-based or Majorana) |
+| `oneQubitMeasurementTime`     | Operation time for single-qubit measurement ($t_{\rm meas}$) in ns |
+| `twoQubitJointMeasurementTime`           | Operation time for two-qubit measurement in ns                     |
+| `tGateTime`       | Operation time for single-qubit non-Clifford gate in ns|
+| `oneQubitMeasurementErrorRate`  | Error rate for single-qubit measurement   |
+| `twoQubitJointMeasurementErrorRate`  | Error rate for two-qubit measurement                               |
+| `tGateErrorRate`              | Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
 
-> [!NOTE]
-> Notice that the default values for qubit parameters change when choosing `GateBased` or `Majorana` as qubit type. 
+When not specified, the values for `twoQubitJointMeasurementTime` and `tGateTime` default to `oneQubitGateTime` and the value for `twoQubitJointMeasurementErrorRate` defaults to `oneQubitMeasurementErrorRate`.
 
 > [!IMPORTANT]
 > All values that aren't specified will take a default value, for example, specifying `"qubit": {"oneQubitGateTime":"200 ns"}` will model a gate-based qubit in which both the two-qubit gate time and the one-qubit gate time are 200 ns. For units, you need to specify time strings, which are double-precision floating point numbers, followed by a space and the time unit for such values, where possible time suffixes are `ns`, `µs` (or `us`), `ms`, and `s`.  
