@@ -43,7 +43,7 @@ This is why Microsoft is providing the Azure Quantum Resource Estimator. This un
 
 To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
 
-Learn more about assessing requirements to scale to practical quantum advantage in this published [scientific paper](https://aka.ms/AQ/RE/Paper).
+Learn more about assessing requirements to scale to practical quantum advantage using the Azure Quantum Resource Estimator in [arXiv:2211.07629](https://aka.ms/AQ/RE/Paper).
 
 ### Quantum simulation
 
