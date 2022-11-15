@@ -134,7 +134,7 @@ For reference, the complete pre-defined qubit parameters are as follows:
         "tGateTime": "100 ns",
         "oneQubitMeasurementErrorRate": 1e-6,
         "twoQubitJointMeasurementErrorRate": 1e-6,
-        "tGateErrorRate": 0.05
+        "tGateErrorRate": 0.01
     }
 }
 ```
