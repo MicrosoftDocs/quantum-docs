@@ -62,26 +62,33 @@ To achieve practical quantum advantage, quantum computers will require an underl
 
 ### Quantum dynamics
 
-Some of the most compelling quantum algorithms with scientific and commercial interest are those which leverage the ability of a quantum computer to efficiently simulate quantum systems, with applications across chemistry, materials science, condensed matter, and nuclear
-physics. The exact simulation time of the dynamics of such quantum systems scales exponentially
-with classical algorithms, but has a favorable polynomial scaling for quantum algorithms. The earliest application of scientific interest may be simulating the dynamics of around one hundred quantum spins in a quantum magnet. 
+Some of the most compelling quantum algorithms with scientific and commercial interest are those which leverage the ability of a quantum computer to efficiently simulate quantum systems such as complex molecules, biological reactions, and material formations, which often involve many-body quantum interactions. The simulation time of the dynamics of quantum systems scales exponentially with classical algorithms, but has a polynomial scaling for quantum algorithms. 
 
- quantum dynamics of a simple
-quantum magnet, the so-called two-dimensional (2D) transverse field Ising model, where we consider a parameter regime that is on the boundary of what can be done by classical computation
+The earliest application of scientific interest may be simulating the dynamics of around one hundred quantum spins in a quantum magnet. 
 
-You can run this sample in the notebook gallery sample in Azure portal, and in 
+
+Using the Azure Quantum Resource Estimator, Microsoft Quantum researches estimate the resources needed to simulate the quantum spin of a simple quantum magnet, the so-called two-dimensional transverse field Ising model.
+
+You can find the sample of **quantum dynamics** in the [Resource estimation sample notebooks](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation), or run it in the notebook gallery sample of your Azure Quantum workspace. 
+
 ### Quantum chemistry
 
-The earliest commercially relevant applications will
-likely be quantum simulations of chemistry and materials science problems, where a quantum-accelerated elucidation of catalytic reaction mechanisms has applications to fertilizer production, carbon fixation, among many other problems. 
+Another commercially relevant applications of quantum computing might be quantum simulations of chemistry and materials science problems. A mechanism to develop quantum-accelerated catalytic reactions has applications such as fertilizer production and carbon fixation, among many other problems. 
 
+In the context of climate change and global warming , finding an efficient catalyst for carbon fixation has become a main issue. Carbon fixation is a natural process by which carbon dioxide is turned into valuable chemicals for storing energy. The most well-known example of carbon fixation is photosynthesis: conversion of carbon dioxide into glucose in plants.
 
+Microsoft Quantum researches develop a new quantum algorithm to simulate catalytic processes. They focus on a well-known catalytic process, based on the transition metal ruthenium, to convert carbon dioxide into methanol. For more information, see [Quantum computing enhanced computational catalysis](https://arxiv.org/abs/2007.14460).
+
+Using the Azure Quantum Resource Estimator, Microsoft Quantum researches estimate the resources needed to analyze the activation energy of a ruthenium-based catalyst for carbon fixation.
+
+You can find the sample of **quantum chemistry** in the [Resource estimation sample notebooks](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation), or run it in the notebook gallery sample of your Azure Quantum workspace. 
 
 ### Factoring large numbers
 
-One algorithm with superquadratic speedup and for which the cost of error correction is well
-studied is Shor’s algorithm. Estimating the resources required for Shor’s
-algorithm is important for assessing the vulnerability of some of today’s public key cryptosystems
-to future quantum threats. With the fastest quantum hardware operations proposed to date,
-factoring a 2048-bit integer using Shor’s algorithm would require about 20 minutes with 25000 perfect, noiseless qubits. Yet in reality, qubits are noisy and must have error correction to enable long computation, and the implementation cost increases to one day with tens of millions of qubits.
+One quantum algorithm with superquadratic speedup and for which the cost of error correction is well studied is Shor’s algorithm. Estimating the resources required for Shor’s algorithm is important for assessing the vulnerability of some of today’s classical cryptographic schemes that are based on assumptions of the difficulty of factoring large numbers.
 
+With the fastest quantum hardware operations proposed to date, factoring a 2048-bit integer using Shor’s algorithm would require about 20 minutes with 25000 perfect, noiseless qubits. However, qubits are noisy and must have error correction to enable long computation.  and the implementation cost increases to one day with tens of millions of qubits.
+
+In the paper [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629), Microsoft Quantum researches estimate the resources needed to factorize a 2048-bit number using the Azure Quantum Resource Estimator. 
+
+You can find the sample of **factoring large numbers** in the [Resource estimation sample notebooks](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation), or run it in the notebook gallery sample of your Azure Quantum workspace. 
