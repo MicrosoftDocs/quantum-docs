@@ -58,7 +58,7 @@ One of the applications of quantum algorithms with scientific and commercial int
 
 The earliest application of scientific interest may be simulating the dynamics of around one hundred quantum spins in a quantum magnet. Using the Azure Quantum Resource Estimator, Microsoft Quantum researches estimate the resources needed to simulate the quantum spin of a simple quantum magnet, the so-called two-dimensional transverse field Ising model.
 
-You can find the sample of **quantum dynamics** in the [Resource estimation sample notebooks](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation), or run it in the notebook gallery sample of your Azure Quantum workspace. 
+You can find the sample of **quantum dynamics** in the [Resource estimation sample notebooks](https://github.com/microsoft/Quantum/blob/main/samples/azure-quantum/resource-estimation/estimation-dynamics.ipynb), or run it in the notebook gallery sample of your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). 
 
 ### Quantum chemistry
 
@@ -68,7 +68,7 @@ In the context of climate change and global warming , finding an efficient catal
 
 Microsoft Quantum researches develop a [new quantum algorithm to simulate catalytic processes](https://arxiv.org/abs/2007.14460). They focus on a well-known catalytic process, based on the transition metal ruthenium, to convert carbon dioxide into methanol. Using the Azure Quantum Resource Estimator, they estimate the resources needed to analyze the activation energy of a ruthenium-based catalyst for carbon fixation.
 
-You can find the sample of **quantum chemistry** in the [Resource estimation sample notebooks](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation), or run it in the notebook gallery sample of your Azure Quantum workspace. 
+You can find the sample of **quantum chemistry** in the [Resource estimation sample notebooks](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation/estimation-chemistry.ipynb), or run it in the notebook gallery sample of your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). 
 
 ### Factoring large numbers
 
@@ -76,4 +76,4 @@ One quantum algorithm with superquadratic speedup and for which the cost of erro
 
 With the fastest quantum hardware operations proposed to date, factoring a 2048-bit integer using Shor’s algorithm would require about 20 minutes with 25000 perfect, noiseless qubits. However, qubits are noisy and must have error correction to enable long computation. In the paper [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629), Microsoft Quantum researches estimate the resources needed to factorize a 2048-bit number using the Azure Quantum Resource Estimator. 
 
-You can find the sample of **factoring large numbers** in the [Resource estimation sample notebooks](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation), or run it in the notebook gallery sample of your Azure Quantum workspace. 
+You can find the sample of **factoring large numbers** in the [Resource estimation sample notebooks](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation/estimation-factoring.ipynb), or run it in the notebook gallery sample of your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). 
