@@ -47,7 +47,7 @@ landingContent:
           - text: Set up the Quantum Development Kit
             url: install-overview-qdk.md
           - text: Run the QDK in a local development environment
-          - url: install-command-line-qdk.md#use-your-preferred-ide-and-language-locally-and-submit-jobs-to-azure-quantum
+            url: install-command-line-qdk.md#use-your-preferred-ide-and-language-locally-and-submit-jobs-to-azure-quantum
  
   # Computing
   - title: Quantum computing
