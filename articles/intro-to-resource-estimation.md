@@ -24,11 +24,6 @@ That is, a quantum computer capable of allowing a large number of qubits, in sup
 
 Quantum operations at the physical level are noisy, and so the long computations required for practical quantum advantage necessarily require error correction to achieve fault tolerance. Quantum error correction is both time and space intensive, requiring increased execution time for an algorithm-level, operation and an additional number of physical qubits to store and compute information at the logical level. 
 
-To achieve practical quantum advantage, quantum computers require an underlying qubit technology that at scale is:
-- Controllable: Quantum error correction requires reliable control of more than a million well-connected qubits, with parallel operations that fail in under one part in a thousand.
-- Fast: To achieve a practical runtime of one month or less, while targeting a physical qubit count of around one million, operations will need to be performed in under a microsecond.
-- Small: Scaling to a million and more qubits constrains the size of the qubit to tens of microns in diameter; this size is determined to avoid the complexity of coherent high-bandwidth quantum interconnects between qubits on different modules.
-
 Understanding the impact of architecture design choices and quantum error correction schemes for a scaled quantum stack for specific applications, prior to full realization of the quantum system, is an important open challenge. Many questions arise, for example, how large does a quantum computer need to be to achieve practical quantum advantage? How long will the computation take? Are some qubit technologies better suited than others for solving such problems? What are the best architecture choices across the hardware and software stacks to enable scaled quantum computation?
 
 Estimating the running time, number of qubits and other resources needed by realistic models of quantum computers is the first necessary step to reducing these resource requirements. Understanding the number of qubits required for a quantum solution and the differences between qubit technologies allows innovators to prepare and refine their quantum solutions to run on future scaled quantum machines and ultimately accelerate their quantum impact. 
@@ -49,7 +44,13 @@ To get started, see [Run your first resource estimate](xref:microsoft.quantum.qu
 
 ## Resource estimation of practical quantum applications
 
-In [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629), Microsoft Quantum researches analyze the required resources to implement three select applications with the potential for practical quantum advantage, using qubit parameters that are relevant for prominent qubit technologies.
+In [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629), Microsoft Quantum researches reveals that to achieve practical quantum advantage, quantum computers require an underlying qubit technology that at scale is:
+
+- Controllable: Quantum error correction requires reliable control of more than a million well-connected qubits, with parallel operations that fail in under one part in a thousand.
+- Fast: To achieve a practical runtime of one month or less, while targeting around one million of physical qubits, operations need to be performed in under a microsecond.
+- Small: Scaling to a million and more qubits constrains the size of the qubit to tens of microns in diameter.
+
+Microsoft Quantum researches implement the Azure Quantum Resource Estimator to analyze the required resources of three applications with potential for practical quantum advantage, using qubit parameters that are relevant for prominent qubit technologies. 
 
 ### Quantum dynamics
 
