@@ -35,8 +35,8 @@ First, you need to enable the Azure Quantum Resource Estimator as a provider in 
     1. Open your workspace in the [Azure portal](https://portal.azure.com/) 
     2. On the left panel, under **Operations**, select **Providers** 
     3. Select **+ Add a provider** 
-    4. Select **Microsoft Quantum Computing**
-    5. Select **Learn & Develop** and select **Save**
+    4. Select **+ Add** for **Microsoft Quantum Computing**
+    5. Select **Learn & Develop** and select **Add**
 
 
 ## Copy a sample notebook
