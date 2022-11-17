@@ -47,7 +47,7 @@ To get started, see [Run your first resource estimate](xref:microsoft.quantum.qu
 In [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629), Microsoft Quantum research team reveals that to achieve practical quantum advantage, quantum computers require an underlying qubit technology that at scale is:
 
 - Controllable: Quantum error correction requires reliable control of more than a million well-connected qubits, with parallel operations that fail in under one part in a thousand.
-- Fast: To achieve a practical runtime of one month or less, while targeting around one million of physical qubits, operations need to be performed in under a microsecond.
+- Fast: To achieve a practical runtime of one month or less, while targeting around one million physical qubits, operations need to be performed in under a microsecond.
 - Small: Scaling to a million and more qubits constrains the size of the qubit to tens of microns in diameter.
 
 Microsoft Quantum research team implement the Azure Quantum Resource Estimator to analyze the required resources of three applications with potential for practical quantum advantage, using qubit parameters that are relevant for prominent qubit technologies. 
