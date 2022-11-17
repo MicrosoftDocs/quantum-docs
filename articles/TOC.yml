@@ -24,6 +24,8 @@
       href: overview-understanding-quantum-computing.md
     - name: What are Q# and the Quantum Development Kit
       href: overview-what-is-qsharp-and-qdk.md
+    - name: Microsoft's quantum machine
+      href: overview-microsoft-quantum-machine.md
   - name: Resource Estimation
     items: 
     - name: An introduction to resource estimation
