@@ -66,7 +66,7 @@ Another commercially relevant application of quantum computing might be quantum 
 
 In the context of climate change and global warming , finding an efficient catalyst for carbon fixation has become a main issue. Carbon fixation is a natural process by which carbon dioxide is turned into valuable chemicals for storing energy. The most well-known example of carbon fixation is photosynthesis: conversion of carbon dioxide into glucose in plants.
 
-Microsoft Quantum research team develop a [new quantum algorithm to simulate catalytic processes](https://arxiv.org/abs/2007.14460). They focused on a well-known catalytic process, based on the transition metal ruthenium, to convert carbon dioxide into methanol. Using the Azure Quantum Resource Estimator, they estimated the resources needed to analyze the activation energy of a ruthenium-based catalyst for carbon fixation.
+The Microsoft Quantum research team developed a [new quantum algorithm to simulate catalytic processes](https://arxiv.org/abs/2007.14460). They focused on a well-known catalytic process, based on the transition metal ruthenium, to convert carbon dioxide into methanol. Using the Azure Quantum Resource Estimator, they estimated the resources needed to analyze the activation energy of a ruthenium-based catalyst for carbon fixation.
 
 You can find the sample of **quantum chemistry** in the [Resource estimation sample notebooks](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation/estimation-chemistry.ipynb), or run it in the notebook gallery sample of your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). 
 
