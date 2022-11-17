@@ -50,7 +50,7 @@ In [Assessing requirements to scale to practical quantum advantage](https://arxi
 - Fast: To achieve a practical runtime of one month or less, while targeting around one million physical qubits, operations need to be performed in under a microsecond.
 - Small: Scaling to a million and more qubits constrains the size of the qubit to tens of microns in diameter.
 
-Microsoft Quantum research team implement the Azure Quantum Resource Estimator to analyze the required resources of three applications with potential for practical quantum advantage, using qubit parameters that are relevant for prominent qubit technologies. 
+The Microsoft Quantum research team implemented the Azure Quantum Resource Estimator to analyze the required resources of three applications with potential for practical quantum advantage, using qubit parameters that are relevant for prominent qubit technologies. 
 
 ### Quantum dynamics
 
