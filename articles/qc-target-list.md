@@ -12,7 +12,7 @@ uid: microsoft.quantum.reference.qc-target-list
 
 # Quantum computing providers on Azure Quantum
 
-Azure Quantum offers various quantum solutions, such as different quantum hardware devices and quantum simulators that you can use to run your quantum computing programs. This topic has the latest capabilities available through Azure Quantum.
+Azure Quantum offers various quantum solutions, such as different quantum hardware devices and quantum simulators that you can use to run your quantum computing programs. This article lists the providers that you can access with Azure Quantum and provides details on what each one offers.
 
 | Provider | Description |
 |---|---|
