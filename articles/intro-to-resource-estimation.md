@@ -13,7 +13,7 @@ uid: microsoft.quantum.overview.intro-resource-estimator
 
 # An introduction to resource estimation
 
-In quantum computing, resource estimation is the ability to understand the resources, that is the number of qubits, number of quantum gates, processing time, etc., that will be required for a given algorithm, assuming (or taking as parameters) certain hardware characteristics. 
+In quantum computing, resource estimation is the process to determine the resources, that is the number of qubits, number of quantum gates, processing time, etc., that will be required for a given quantum program, assuming (or taking as parameters) certain hardware characteristics. 
 
 Quantum resource estimation allows you to understand the simulated resources required to run a particular algorithm. By continuously evaluating a quantum program against a common set of metrics, you can understand the improvement of your theoretical approaches.
 
