@@ -62,7 +62,7 @@ You can find the sample of **quantum dynamics** in the [Resource estimation samp
 
 ### Quantum chemistry
 
-Another commercially relevant applications of quantum computing might be quantum simulations of chemistry and materials science problems. A mechanism to develop quantum-accelerated catalytic reactions has applications such as fertilizer production and carbon fixation, among many other problems. 
+Another commercially relevant application of quantum computing might be quantum simulations of chemistry and materials science problems. A mechanism to develop quantum-accelerated catalytic reactions has applications such as fertilizer production and carbon fixation, among many other problems. 
 
 In the context of climate change and global warming , finding an efficient catalyst for carbon fixation has become a main issue. Carbon fixation is a natural process by which carbon dioxide is turned into valuable chemicals for storing energy. The most well-known example of carbon fixation is photosynthesis: conversion of carbon dioxide into glucose in plants.
 
