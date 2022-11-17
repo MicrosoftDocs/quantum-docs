@@ -13,11 +13,13 @@ uid: microsoft.quantum.overview.resources-estimator
 
 # Customize resource estimates to machine characteristics
 
-In this article, you'll learn how to customize the input parameters of the Azure Quantum Resource Estimator to match the machine characteristics that you're targeting. You'll also see the output data of a resource estimates and their definitions. 
+In this article, you'll learn how to customize the input parameters of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to match the machine characteristics that you're targeting. You'll also see the output data of a resource estimates and their definitions. 
 
 ## Input parameters
 
-The Azure Quantum Resource Estimator takes a set of inputs, with pre-defined values to easily get you started:
+The Azure Quantum Resource Estimator computes the estimation of resources, such the number of qubits, the run time
+and the power consumption, which would be required to implement a given quantum algorithm using a given qubit technology and with a fixed set of architectural choices.  
+Therefore, the Resource Estimator takes a set of inputs, with pre-defined values to easily get you started:
 
 - A physical qubit model, `qubitParams`, which are the properties of the underlying physical qubits
 - A Quantum Error Correction (QEC) scheme, `qecScheme`, which is the assumed quantum error correction scheme
@@ -27,7 +29,7 @@ The Azure Quantum Resource Estimator takes a set of inputs, with pre-defined val
 
 When the Resource Estimator models the physical qubit assumptions, it uses two different physical instruction sets to operate the qubits. The physical instruction set can be either *gate-based* or *Majorana*. A gate-based instruction set provides single-qubit measurement, single-qubit gates (including T gates), and two-qubit gates. A Majorana instruction set provides a physical T gate, single-qubit measurement and two-qubit joint measurement operations.
 
-You can choose from six pre-defined qubit parameters, four of which have gate-based instruction sets and two with a Majorana instruction set.
+You can choose from six pre-defined qubit parameters, four of which have gate-based instruction sets and two with a Majorana instruction set. These qubit models cover a range of operation times and error rates, enabling sufficient exploration of the resource costs needed to enable practical quantum applications.
 
 |Qubit model|Physical instruction|Description|
 |----|----|-----|
@@ -132,7 +134,7 @@ For reference, the complete pre-defined qubit parameters are as follows:
         "tGateTime": "100 ns",
         "oneQubitMeasurementErrorRate": 1e-6,
         "twoQubitJointMeasurementErrorRate": 1e-6,
-        "tGateErrorRate": 0.05
+        "tGateErrorRate": 0.01
     }
 }
 ```

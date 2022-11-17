@@ -44,11 +44,11 @@ landingContent:
         links:
           - text: The Q# user guide
             url: user-guide/index.md
-          - text: Setup the Quantum Development Kit
+          - text: Set up the Quantum Development Kit
             url: install-overview-qdk.md
-          - text: Set up a local development environment
+          - text: Run the QDK in a local development environment
             url: install-command-line-qdk.md#use-your-preferred-ide-and-language-locally-and-submit-jobs-to-azure-quantum
-  
+ 
   # Computing
   - title: Quantum computing
     linkLists:
@@ -78,13 +78,27 @@ landingContent:
             url: /training/paths/quantum-computing-fundamentals/
           - text: Learn Q# with the Quantum Katas
             url: tutorial-qdk-intro-to-katas.md
-      
-  # Tutorials
-  - title: Write Q# programs
-    linkLists:  
       - linkListType: tutorial
         links:
           - text: Explore entanglement with Q#
             url: tutorial-qdk-explore-entanglement.md
           - text: Write a quantum random number generator in Q#
             url: tutorial-qdk-quantum-random-number-generator.md
+            
+  # Resource Estimator
+  - title: Resource Estimator
+    linkLists:      
+      - linkListType: overview
+        links:
+          - text: Introduction to resource estimation
+            url: intro-to-resource-estimation.md
+      - linkListType: get-started
+        links:
+          - text: Run your first resource estimate
+            url: quickstart-microsoft-resources-estimator.md
+          - text: Use different SDKs and IDEs with Resource Estimator
+            url: how-to-submit-re-jobs.md
+
+      
+
+
