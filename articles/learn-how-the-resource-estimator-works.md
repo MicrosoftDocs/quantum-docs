@@ -19,7 +19,7 @@ In this article, you'll learn the workflow of the Resource Estimator and how the
 
 ## Code distance and T factory estimation
 
-The Resource Estimator takes the job parameters `{qubitParams, qecScheme, errorBudget}` to compute a resource estimation of qubit technology and architecture. On the one hand, it calculates the QEC code distance, the number of physical qubits needed to encode one logical qubit and the runtime of one logical depth or cycle. On the other hand, it calculates how many physical qubits are needed to run one T factory and for how long the T factory runs. These values are reserved and will be used in subsequent steps of the workflow.
+The Resource Estimator takes the job parameters `{qubitParams, qecScheme, errorBudget}` to compute a resource estimation of qubit technology and architecture. It calculates the QEC code distance, and from it, the number of physical qubits needed to encode one logical qubit and the runtime of one logical depth or cycle. The Resource Estimator also calculates how many physical qubits are needed to run one T factory and for how long the T factory runs. These values are reserved and will be used in subsequent steps of the workflow.
 
 :::image type="content" source="media/resource-estimator-workflow.png" alt-text="Diagram showing the workflow of the resource estimator. The resource estimation is done based on the job parameters and quantum program, and the output data is extracted at different levels of the evaluation of the quantum program.":::
 
