@@ -57,7 +57,7 @@ To view and run a notebook:
 1. In your new workspace, select **Notebooks** and then select **Topological quantum computing**. 
 1. Select your desired notebook, and select **Copy to my notebooks**.
 
-    :::image type="content" source="media/ms-machine-copy-notebook.png" alt-text="Copy sample notebook.":::
+    :::image type="content" source="media/ms-machine-copy-notebook_2.png" alt-text="Copy sample notebook.":::
 
 1. To run all the cells in the notebook, select **Run all** (or **Alt-R**) at the top of the notebook. To step through the notebook cell-by-cell, select **Run cell** (or **Ctrl+Enter**) next to each notebook cell. 
 
