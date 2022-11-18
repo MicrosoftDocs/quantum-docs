@@ -13,7 +13,7 @@ uid: microsoft.quantum.providers.ionq
 # IonQ provider
 
 > [!IMPORTANT]
-> As of Friday, October 21, 2022, the IonQ Aria is offline for maintenance. Microsoft will update this notice once an ETA for the system to be back online is available.
+> The IonQ Aria system will be offline for maintenance from Friday, November 18, 2022, to Monday, December 5, 2022. We recommend that you don't submit jobs during this period, as they will likely not be processed. Microsoft will update this notice when the system is back online. 
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
