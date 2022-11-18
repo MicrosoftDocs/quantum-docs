@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Introduction to resources estimation in quantum computing and the Azure Quantum Resource Estimator
 ms.author: sonialopez
-ms.date: 11/09/2022
+ms.date: 11/18/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: overview
@@ -15,7 +15,7 @@ uid: microsoft.quantum.overview.intro-resource-estimator
 
 In quantum computing, resource estimation is the process to determine the resources, that is the number of qubits, number of quantum gates, processing time, etc., that will be required for a given quantum program, assuming (or taking as parameters) certain hardware characteristics. 
 
-Quantum resource estimation allows you to understand the simulated resources required to run a particular algorithm instance. By continuously evaluating your quantum program against a common set of metrics, you can understand how changes to the program implementation impact practicality by observing the changes in physical resources.
+We introduce the Azure Quantum Resource Estimator that allows you to understand the simulated resources required to run a particular algorithm instance. By incorporating the Azure Quantum Resource Estimator in your development workflow and continuously evaluating your quantum program with respect to its physical resource requirements at scale, you can understand how changes to the program implementation impact its practicality.
 
 ## Why is resource estimation important in the development of quantum computing?
 
@@ -44,13 +44,13 @@ To get started, see [Run your first resource estimate](xref:microsoft.quantum.qu
 
 ## Resource estimation of practical quantum applications
 
-In [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629), Microsoft Quantum research team reveals that to achieve practical quantum advantage, quantum computers require an underlying qubit technology that at scale is:
+To achieve practical quantum advantage, quantum computers require an underlying qubit technology that at scale is:
 
 - Controllable: Quantum error correction requires reliable control of more than a million well-connected qubits, with parallel operations that fail in under one part in a thousand.
 - Fast: To achieve a practical runtime of one month or less, while targeting around one million physical qubits, operations need to be performed in under a microsecond.
 - Small: Scaling to a million and more qubits constrains the size of the qubit to tens of microns in diameter.
 
-The Microsoft Quantum research team implemented the Azure Quantum Resource Estimator to analyze the required resources of three applications with potential for practical quantum advantage, using qubit parameters that are relevant for prominent qubit technologies. 
+The Azure Quantum Resource Estimator has been used to analyze the required resources of three applications with potential practical quantum advantage, using qubit parameters that are relevant for prominent qubit technologies. For more information, see [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629).
 
 ### Quantum dynamics
 
