@@ -110,6 +110,9 @@ The **Scope** column indicates whether the quota refers to the current workspace
 The **Period** column indicates the period when your quota is renewed. For Azure Quantum Credits, the period is infinite, meaning that your credits are never reset.
 ***
 
+> [!NOTE]
+> If you have any questions regarding the workspace creation process, or any issue using Azure Quantum, bookmark the [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday at 8:30am PST.
+
 ## Next Steps
 
 - [FAQ: Applications to the Azure Quantum Credits program](xref:microsoft.quantum.credits.credits-faq)
