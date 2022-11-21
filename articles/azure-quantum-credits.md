@@ -12,29 +12,41 @@ uid: microsoft.quantum.credits
 
 # Azure Quantum Credits
 
+In this article you'll find the guidelines to understand Azure Quantum credits and how to use them to run your programs on quantum hardware.
+
 > [!Tip]
-> If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). With the Azure Quantum Credits, you'll have $500 (USD) to use in each quantum hardware provider. If you are a student, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
+> If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). If you are a student, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
 
-Azure Quantum Credits can be used to run programs on quantum hardware.
+## How to get your Azure Quantum credits?
 
-First-time users automatically get **$500 (USD) free Azure Quantum Credits** for use with each participating quantum hardware provider within 6 months. Your free Azure Quantum Credits become available once you [create a new Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). Once you've consumed all your credits, you'll only pay for the services you use and you can cancel anytime.
+First-time users automatically get **$500 (USD) free Azure Quantum Credits** for use with each participating quantum hardware provider within six months. Your free Azure Quantum Credits become available once you [create a new Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). When you've consumed all your credits, you'll only pay for the services you use and you can cancel anytime.
 
 Credits are shared for all workspaces within a single subscription and region. That is, you will get $500 (USD) free Azure Quantum credits for each quantum hardware provider when you create your first Azure Quantum workspace, but the following workspaces you create within the same subscription and region will share the credits plan.
 
 > [!NOTE]
-> Note that Azure credits and Azure Quantum Credits are different grants and shouldn't be confused. When you create a [new Azure account](https://azure.microsoft.com/free/), you get $200 (USD) free Azure Credits to use on all Azure services. You can only use general-purpose Azure Credits with the Microsoft quantum providers - third-party providers (providers that aren't owned by Microsoft) aren't eligible.
+> Note that Azure credits and Azure Quantum credits are different grants and shouldn't be confused. When you create a [free trial Azure account](https://azure.microsoft.com/free/), you get $200 (USD) free Azure Credits to use on Azure services. Azure credits aren't eligible to use on quantum hardware providers.
+
+## How long are credits valid for
+
+Azure Quantum credits are valid six months from the creation of your Azure Quantum workspace. 
 
 ## How to use your Azure Quantum Credits
 
-Azure Quantum Credits may be used with any programming language or framework that is supported by Azure Quantum. Once you've created an Azure Quantum workspace, you can use your $500 (USD) free Azure Quantum Credits within 6 months.
+Azure Quantum Credits may be used with any programming language or framework that is supported by Azure Quantum. Once you've created an Azure Quantum workspace, you can use your $500 (USD) free Azure Quantum Credits within six months.
 
 To use your Azure Quantum Credits with a provider, submit a job in a workspace that uses an Azure Quantum Credits plan for that provider. All jobs submitted from a workspace targeting a provider that uses an Azure Quantum Credits plan will be free. If a job happens to go over the current credit allocation, it will be rejected.
-
-
 
 > [!IMPORTANT]
 > There are no costs or charges to use your free Azure Quantum Credits. However, there may be some small storage costs, as the input and output of your jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
 > For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
+
+## How credit consumption is calculated
+
+Azure Quantum Credits consumption is based on a resource-usage model defined by each quantum provider and cost of use is deducted from your credits. To see the offering of each quantum hardware provider and how they track the credits usage, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
+
+## How to get more credits
+
+If your Azure Quantum credits have expired, or you consumed all and need more, you can apply to the [**Azure Quantum Credits program**](https://aka.ms/aq/credits). Microsoft offers up to $10,000 (USD) extra Azure Quantum Credits for use on quantum hardware. For more information about applications and terms of use, see [FAQ: Azure Quantum Credits program](xref:microsoft.quantum.credits.credits-faq).
 
 ## How to view your credit balance 
 
@@ -97,13 +109,6 @@ The **Scope** column indicates whether the quota refers to the current workspace
 
 The **Period** column indicates the period when your quota is renewed. For Azure Quantum Credits, the period is infinite, meaning that your credits are never reset.
 ***
-
-## How credit consumption is calculated
-
-Azure Quantum Credits consumption is based on a resource-usage model defined by each provider and cost of use is deducted from your credits. To see the offering of each quantum hardware provider and how they track the credits usage, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
-
-> [!TIP]
-> If you have consumed all the credits and you need more, you can apply to the [**Azure Quantum Credits program**](https://aka.ms/aq/credits). Microsoft offers up to $10,000 (USD) extra Azure Quantum Credits for use on quantum hardware. For more information, see [Applications to the Azure Quantum Credits program](xref:microsoft.quantum.credits.credits-faq).
 
 ## Next Steps
 
