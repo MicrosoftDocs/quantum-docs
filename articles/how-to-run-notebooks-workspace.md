@@ -2,7 +2,7 @@
 author: aviviano
 description: Learn how to work with Q# or Python in a Jupyter notebook in an Azure Quantum workspace.
 ms.author: amvivian
-ms.date: 10/05/2022
+ms.date: 11/22/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -31,7 +31,7 @@ To get started, you can use use a sample notebook from the sample gallery.
 1. Select **Sample gallery**.
 1. Select the sample you want to use, and select **Copy to my notebooks**.
 
-    :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-gallery.gif" alt-text="GIF showing how to select a sample Jupyter notebook in the sample notebookgallery in Azure portal.":::
+    :::image type="content" source="media/create_notebook_steps.png" alt-text="Screenshot of the sample Jupyter Notebook gallery showing how to copy a notebook in your gallery.":::
 
 The sample notebook can be found under **My notebooks** and you can now run the notebook.
 
@@ -103,7 +103,7 @@ You can rename, delete, duplicate, and download existing notebooks.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Notebooks**.
-1. Select your notebook in **My notebooks** and select the context pane (**...**).
+1. Select your notebook in **My notebooks** and left-click the context pane (**...**).
 1. Select **Rename Notebook**, **Delete Notebook**, **Duplicate Notebook**, or **Download Notebook**.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-context-pane.png" alt-text="Screenshot of the notebook context pane in Azure Quantum.":::
