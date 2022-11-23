@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to submit a Q# program to the Azure Quantum Resource Estimator
 ms.author: sonialopez
-ms.date: 11/07/2022
+ms.date: 11/22/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: quickstart
