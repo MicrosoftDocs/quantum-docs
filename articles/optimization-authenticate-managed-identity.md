@@ -37,8 +37,7 @@ In order to allow the resource to access your Azure Quantum workspace:
 1. Navigate to your Azure Quantum workspace and select **Access control (IAM)** from the left-side menu.
 1. Select **Add** and **Add role assignment**.
 
-
-:::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-3.png" alt-text="Screenshot showing how to create a new role assignment on your Azure Quantum workspace.":::
+    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-3.png" alt-text="Screenshot showing how to create a new role assignment on your Azure Quantum workspace.":::
 
 1. On the **Add role assignment** page, select **Contributor** and select **Next**.
 1. On the **Members** tab, in **Assign access to**, select **Managed Identity**, and then select **+ Select members**.
