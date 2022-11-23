@@ -93,14 +93,13 @@ Both System Model H1 hardware H1-1 and H1-2 are continuously upgraded throughout
 - Job type: `Quantum Program`
 - Data Format: `quantinuum.openqasm.v1`
 - Target ID:
-  - H1-1: `quantinuum.qpu.h1-1` 
+  - H1-1: `quantinuum.qpu.h1-1`
   - H1-2: `quantinuum.qpu.h1-2`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
-
 ### Technical Specifications
 
-Technical details for the System Model H1 and System Model H1 Emulators can be found in Quantinuum's [product data sheets](https://www.quantinuum.com/products/h1).
+Technical details for the System Model H1 and System Model H1 Emulators can be found in Quantinuum's product data sheets on the [System Model H1](https://www.quantinuum.com/products/h1) page alongside links to Quantinuum data repositories and how to cite usage of Quantinuum systems.
 
 ## Target Availability
 
