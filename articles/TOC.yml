@@ -1,21 +1,18 @@
 - name: Azure Quantum documentation
   href: index.yml
-- name: Overview
+- name: Get started
   expanded: true
   items:
   - name: What is Azure Quantum?
     href: overview-azure-quantum.md
-- name: Get started
-  expanded: true
-  items:
   - name: Create an Azure Quantum workspace
     href: how-to-create-workspace.md
+  - name: Run your first quantum program 
+    href: get-started-jupyter-notebook.md
+  - name: Set up a local environment with the QDK
+    href: install-overview-qdk.md
   - name: Share access to your Azure Quantum workspace
     href: how-to-share-access-quantum-workspace.md
-  - name: Get started with Q# and an Azure Quantum notebook
-    href: get-started-jupyter-notebook.md
-  - name: Setup the Quantum Development Kit
-    href: install-overview-qdk.md
 - name: Quantum computing
   items:
   - name: Overview
@@ -42,7 +39,7 @@
       href: how-to-work-with-re.md
     - name: Resource Estimation with QIR
       href: tutorial-resource-estimator-qir.md
-  - name: Quickstarts
+  - name: Run quantum circuits with Python
     items:
     - name: Submit a circuit with Qiskit
       href: quickstart-microsoft-qiskit-portal.md
