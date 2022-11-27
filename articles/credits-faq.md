@@ -18,7 +18,6 @@ When you create a new Azure Quantum workspace, you automatically get [$500 (USD)
 
 The Azure Quantum Credits program provides sponsored access to quantum hardware through Azure. You will not be charged for usage created under the credits program, up to the limit of your credit grant.
 
-
 ## Who can apply for the Azure Quantum Credits program?
 
 Educational institutions, companies, and some other approved organizations may apply for Azure Quantum Credits. Applicants may be based in the United States, or in any other market that is currently served by Microsoft Azure. For more information, see the [Azure Quantum Credits program terms](https://aka.ms/aq/credits/terms).
