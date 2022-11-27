@@ -20,26 +20,35 @@ Azure Quantum provides the best development environment to create quantum algori
 - Quantum impact today, allowing you to simultaneously explore today’s quantum systems and be ready for the scaled quantum systems of the future, and with pre-built solutions that run on classical and accelerated compute resources (also referred to as optimization solutions).
 
 > [!TIP]
-> If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). With the Azure Quantum Credits, you'll have $500 (USD) to use in each quantum hardware provider. If you are a student, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
+> If you don’t have an Azure account, register for **free** and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). If you are a student, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
 
 
 - [The parts of Azure Quantum](#the-parts-of-azure-quantum)
 - [How to get started with Azure Quantum?](#how-to-get-started-with-azure-quantum)
 - [Who is Azure Quantum for?](#who-is-azure-quantum-for)
-- [Why use quantum computing?](#why-use-quantum-computing)
 - [Resource estimation in quantum computing](#resource-estimation-in-quantum-computing)
 - [What are Q# and the Quantum Development Kit?](#what-are-q-and-the-quantum-development-kit)
 - [Workflow of the quantum software development](#workflow-of-the-quantum-software-development)
-- [Quantum cloud solutions available on Azure Quantum](#quantum-cloud-solutions-available-on-azure-quantum)
+- [Providers available on Azure Quantum](#providers-available-on-azure-quantum)
+
 
 ## The parts of Azure Quantum
 
-Azure Quantum offers you two main paths of quantum solutions:
+With Azure Quantum, you can make use of the advantages of quantum computing today in a full-stack open cloud ecosystem with access to software, hardware, and pre-built solutions. Azure Quantum offers two types of quantum solutions: quantum computing and optimization.
 
-- [Quantum Computing](xref:microsoft.quantum.overview.understanding): Learn, experiment and prototype with a variety of quantum hardware providers to help you get ready for the future of scaled quantum machines. Unlike other solutions, you are not siloed to a single hardware technology, and you benefit from a full stack approach protecting your long-term investments. 
-- [Optimization](xref:microsoft.quantum.optimization.concepts.overview.introduction): Develop solutions that help you reduce the cost of operation in a broad range of fields such as finance, energy cost, fleet management, scheduling, and more. 
+### Quantum computing
 
-With Azure Quantum and the [Quantum Development Kit toolset](xref:microsoft.quantum.overview.q-sharp), you will be able to program your quantum algorithms and optimization solutions, then apply those quantum solutions within the existing Azure platform to achieve real-world impacts even before the development of a general-purpose quantum computer. 
+If you aim to simulate quantum mechanical problems, such as chemical reactions, biological reactions, or material formations, quantum computers work exceptionally well because they use quantum phenomena in their computation. Quantum computers can also aid to speed up progress in diverse areas such as financial services, machine learning, and unstructured data searches, where lots of calculations are needed.
+
+With Azure Quantum, researchers and businesses can use quantum computing to model complex scenarios in risk management, cybersecurity, network analysis, data search, vaccine development, or materials science. To learn more about how you can use quantum computing and quantum algorithms, see [Understanding Quantum Computing](xref:microsoft.quantum.overview.understanding).  
+
+### Optimization
+
+Decades of simulation of the quantum effects on classical computers has led to the development of new types of quantum solutions named *quantum-inspired optimization*. Optimization is the process of finding the best solution to a problem given its desired outcome and constraints. Complex optimization problems exist across every industry: vehicle routing, supply chain management, scheduling, portfolio optimization, power grid management, and many others. Solving these real-world problems results in high-value benefits, such as reduced costs, accelerated processes, or reduced risks. 
+
+Quantum-inspired optimization algorithms exploit some of the advantages of quantum computing on classical hardware, providing a speedup over traditional approaches.
+
+Azure Quantum gives you access to a broad set of state-of-the-art quantum-inspired optimization algorithms developed by Microsoft and its partners. To learn more about the optimization solutions in Azure Quantum, see [What is optimization?](xref:microsoft.quantum.optimization.concepts.overview.introduction).
 
 ## How to get started with Azure Quantum?
 
@@ -83,29 +92,6 @@ To learn more about research resources and career opportunities, see the [Micros
 
 If you are an educator, a student, or quantum enthusiast, Azure Quantum is a great tool for teaching quantum computing and quantum applications. You will broaden your learning through the access to the most diverse set of quantum technologies, learn the basics of quantum computing and the quantum programming language Q#, and discover the areas where quantum computers have the potential to make a big impact.  In addition to using the default USD 500 in Azure Quantum Credits for a class project, an [Azure for Students](https://azure.microsoft.com/free/students/) account will jumpstart the learning journey with an additional USD 100 in traditional Azure credits.
 
-## Why use quantum computing?
-
-Quantum computers harness the unique behavior of quantum physics—such as superposition, entanglement, and quantum interference—and apply it to computing. This introduces new concepts to traditional programming methods. Quantum effects empower quantum computers for calculating exponentially more information and solve more complicated problems. When designed to scale, quantum computers will have capabilities that exceed today's most powerful supercomputers. 
-
-With Azure Quantum, you can make use of the advantages of quantum computing today in a full-stack open cloud ecosystem with access to software, hardware, and pre-built solutions. Azure Quantum offers two types of solutions: quantum computing and optimization.
-
-### Quantum computing
-
-If you aim to simulate quantum mechanical problems, such as chemical reactions, biological reactions, or material formations, quantum computers work exceptionally well because they use quantum phenomena in their computation. Quantum computers can also aid to speed up progress in diverse areas such as financial services, machine learning, and unstructured data searches, where lots of calculations are needed.
-
-With Azure Quantum, researchers and businesses can use quantum computing to model complex scenarios in risk management, cybersecurity, network analysis, data search, vaccine development, or materials science. To learn more about how you can use quantum computing and quantum algorithms, see [Understanding Quantum Computing](xref:microsoft.quantum.overview.understanding).  
-
-### Optimization
-
-Optimization is the process of finding the best solution to a problem given its desired outcome and constraints. Complex optimization problems exist across every industry: vehicle routing, supply chain management, scheduling, portfolio optimization, power grid management, and many others. Solving these real-world problems results in high-value benefits, such as reduced costs, accelerated processes, or reduced risks. 
-
-In Azure Quantum, you can already implement optimization problems to run on various classical computing silicon solutions, such as CPU, FPGA, GPU, or custom silicon, faster than many other classical optimization techniques. 
-
-On the other hand, simulating the quantum effects on classical computers has led to the development of new types of quantum solutions. **Quantum-inspired optimization** algorithms exploit some of the advantages of quantum computing on classical hardware, providing a speedup over traditional approaches.
-
-Azure Quantum gives you access to a broad set of state-of-the-art quantum-inspired optimization algorithms developed by Microsoft and its partners. 
-
-To learn more about the optimization solutions in Azure Quantum, see [What is optimization?](xref:microsoft.quantum.optimization.concepts.overview.introduction).
 
 ## Resource estimation in quantum computing
 
@@ -172,7 +158,7 @@ The following diagram shows the stages through which a quantum program goes from
 > [!Note]
 > You use the same Q# code for all steps of the workflow. In the short term you might have to tweak some portions of the code to account for the current hardware limitations. But in the long run you’ll be able to switch between various simulators and hardware providers without any code modifications.
 
-## Quantum cloud solutions available on Azure Quantum
+## Providers available on Azure Quantum
 
 Azure Quantum offers some of the most compelling and diverse quantum resources available today from industry leaders. Azure Quantum currently partners with the following providers to enable you to run your Q# quantum programs on real hardware, and the option to test your code on simulated quantum computers.
 
