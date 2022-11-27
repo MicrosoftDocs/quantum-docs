@@ -30,7 +30,7 @@ The noise simulators are **not yet** supported by:
 
 ## Invoking the preview simulators from Python
 
-You need to create a Python host program that invokes the quantum program, and can further process returned results. For additional details, see [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
+You need to create a Python host program that invokes the quantum program, and can further process returned results. For more information, see [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
 
 1. You start by importing the [QuTiP library](https://qutip.org/), a popular Python library for manipulating states and processes of closed and open quantum systems.
 
@@ -283,7 +283,7 @@ You can configure the preview simulator to be used with stabilizer circuits (or 
     print(DumpPlus.simulate_noise())
     ```
 
-    The visualization of the output is the following:
+    The visualization of the output is:
 
     $$
     \begin{align}
@@ -305,7 +305,7 @@ You can configure the preview simulator to be used with stabilizer circuits (or 
     print(DumpPlus.simulate_noise())
     ```
 
-    The visualization of the output is the following:
+    The visualization of the output is:
 
     $$
     \begin{align}
@@ -359,7 +359,7 @@ You can configure the preview simulator to be used with stabilizer circuits (or 
     DumpBellPair.simulate_noise()
     ```
 
-    The visualization of the output is the following:
+    The visualization of the output is:
 
     $$
     \begin{align}
