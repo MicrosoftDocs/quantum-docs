@@ -9,6 +9,8 @@
     href: how-to-create-workspace.md
   - name: Run your first quantum program 
     href: get-started-jupyter-notebook.md
+  - name: Use different SDKs and IDEs with Azure Quantum
+    href: how-to-submit-jobs.md
   - name: Set up a local environment with the QDK
     href: install-overview-qdk.md
   - name: Share access to your Azure Quantum workspace
@@ -57,12 +59,6 @@
       href: tutorial-qdk-grovers-search.md
     - name: Qubit-level programming
       href: tutorial-qdk-qubit-level-program.md
-  - name: How-to guides
-    items: 
-    - name: Submit quantum jobs to Azure Quantum
-      href: how-to-submit-jobs.md
-    - name: Publish a Q# job as an Azure Function
-      href: how-to-publish-qsharp-job-as-azurefunction.md
   - name: The Q# user guide
     href: user-guide/toc.yml
   - name: Quantum simulators
@@ -281,6 +277,8 @@
       href: how-to-add-a-provider.md
   - name: Integrate with Azure Architecture
     items:
+    - name: Publish a Q# job as an Azure Function
+      href: how-to-publish-qsharp-job-as-azurefunction.md
     - name: DevOps for quantum computing
       href: /azure/architecture/guide/quantum/devops-for-quantum-computing?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
     - name: CI/CD for quantum computing jobs
