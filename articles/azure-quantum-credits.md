@@ -12,12 +12,12 @@ uid: microsoft.quantum.credits
 
 # Azure Quantum Credits
 
-In this article you'll find the guidelines to understand Azure Quantum credits and how to use them to run your programs on quantum hardware.
+In this article you'll find the guidelines to understand Azure Quantum Credits and how to use them to run your programs on quantum hardware.
 
 > [!Tip]
-> If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). If you are a student, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
+> If you don’t have an Azure account, register for **free** and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). If you are a student, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
 
-## How to get your Azure Quantum credits?
+## How to get your Azure Quantum Credits
 
 First-time users automatically get **$500 (USD) free Azure Quantum Credits** for use with each participating quantum hardware provider within six months. Your free Azure Quantum Credits become available once you [create a new Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). When you've consumed all your credits, you'll only pay for the services you use and you can cancel anytime.
 
