@@ -9,7 +9,7 @@ ms.topic: how-to
 title: Honeywell to Quantinuum migration guide
 uid: microsoft.quantum.providers.honeywell.migration
 ---
-
+https://review.learn.microsoft.com/en-us/azure/quantum/pricing?branch=pr-en-us-991&tabs=tabid-AQcredits%2Ctabid-AQcreditsQ%2Ctabid-AQcreditsRigetti%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#quantinuum
 # Honeywell to Quantinuum migration guide
 
 The Honeywell provider has been replaced by the [Quantinuum provider](xref:microsoft.quantum.providers.quantinuum) in Azure Quantum. This guide is for users who previously used the Honeywell provider and need to migrate to the Quantinuum provider.
@@ -18,7 +18,7 @@ The Honeywell provider has been replaced by the [Quantinuum provider](xref:micro
 
 ## Step 1: Update your Azure Quantum workspace
 
-The first step is to open the [Azure portal](https://portal.azure.com) and navigate to your Azure Quantum workspace. Once you have opened your workspace, follow the steps below:
+The first step is to open the [Azure portal](https://portal.azure.com) and navigate to your Azure Quantum workspace. Once you have opened your workspace, follow these steps:
 
 1. Select **Providers** in the left pane.
 2. Locate the Honeywell provider and select **Remove** and then select **Yes** 
@@ -28,16 +28,16 @@ The first step is to open the [Azure portal](https://portal.azure.com) and navig
 
 3. Select **+ Add a provider**.
 4. Select **+ Add** for the Quantinuum provider.
-5. Select a Billing Plan from Quantinuum. If this is your first time with the Quantinuum provider you are eligible for the $500 free Azure Quantum credit offer with Quantinuum. For more information, see [Quantinuum pricing](xref:microsoft.quantum.providers-pricing#quantinuum).
+5. Select a Billing Plan from Quantinuum. If this is your first time using the Quantinuum provider, you are eligible for the $500 free Azure Quantum credit offer with Quantinuum. For more information, see [Quantinuum pricing](xref:microsoft.quantum.providers-pricing&pivots=ide-computing#quantinuum).
 6. Select **Add**. 
 
-Once the deployment completes, you are now ready to use the Quantinuum provider. If you have existing Honeywell code that needs to be migrated to Quantinuum, see [step 2](#step-2-update-existing-code-to-use-the-quantinuum-provider).
+Once the deployment completes, you are ready to use the Quantinuum provider. If you have existing Honeywell code that needs to be migrated to Quantinuum, see [step 2](#step-2-update-existing-code-to-use-the-quantinuum-provider).
 
 ## Step 2: Update existing code to use the Quantinuum Provider
 
 If you have existing code targeting the Honeywell provider, updating to the Quantinuum provider only requires changing the target referenced and updating the version of the Azure Quantum tools you are using.
 
-The table below shows the value to replace in your code to use the equivalent Quantinuum target. Find the target you are using the in `Honeywell Target ID` column, and replace it with the value in the `Quantinuum Target ID` column. 
+This target ID table shows the value to replace in your code to use the equivalent Quantinuum target. Find the target you are using the in `Honeywell Target ID` column, and replace it with the value in the `Quantinuum Target ID` column. 
 
 | Honeywell Target Name | Honeywell Target ID | Quantinuum Target ID |
 |-----------------------|---------------------|----------------------|
@@ -50,7 +50,7 @@ The table below shows the value to replace in your code to use the equivalent Qu
 
 ### Migrating a Q# Project with Visual Studio Code or Visual Studio
 
-To migrate a Q# project, open the `project.csproj` file in the root folder of your solution, and update the value of `ExecutionTarget` per the table above.
+To migrate a Q# project, open the `project.csproj` file in the root folder of your solution, and update the value of `ExecutionTarget` per the target ID table.
 
 > [!NOTE]
 > If your .csproj file has a fixed SDK version such as `<Project Sdk="Microsoft.Quantum.Sdk/0.17.2105143879">`, ensure you replace the version number with at least `Microsoft.Quantum.Sdk/0.23.195983`.
@@ -84,7 +84,7 @@ Updated `.csproj` file:
 
 ### Migrating a Q# Project with Jupyter Notebooks
 
-To migrate a Q# project in Jupyter Notebooks, update the value used in the `%azure.target` magic command per the table above.
+To migrate a Q# project in Jupyter Notebooks, update the value used in the `%azure.target` magic command per the target ID table.
 
 Old target command:
 
@@ -102,7 +102,7 @@ You will also need to update your qsharp package by following the instructions i
 
 ### Migrating a Qiskit Project
 
-To migrate a Qiskit project, find the line(s) in your Python file that reference the Honeywell backend, and replace it with the appropriate Quantinuum backend per the table above.
+To migrate a Qiskit project, find the line(s) in your Python file that reference the Honeywell backend, and replace it with the appropriate Quantinuum backend per the target ID table.
 
 Old backend initialization:
 
@@ -126,7 +126,7 @@ The minimum supported `azure-quantum[qiskit]` version is `0.23.195983`.
 
 ### Migrating a Cirq Project
 
-To migrate a Cirq project, find the line(s) in your Python file that reference the Honeywell target, and replace it with the appropriate Quantinuum target per the table above.
+To migrate a Cirq project, find the line(s) in your Python file that reference the Honeywell target, and replace it with the appropriate Quantinuum target per the target ID table.
 
 Old service initialization:
 
@@ -160,7 +160,7 @@ The minimum supported `azure-quantum[cirq]` version is `0.23.195983`.
 
 ### Migrating a Passthrough Project
 
-To migrate a passthrough project using the `azure-quantum` python package, find the line(s) in your Python file that reference the Honeywell target, and replace it with the appropriate Quantinuum target per the table above.
+To migrate a passthrough project using the `azure-quantum` python package, find the line(s) in your Python file that reference the Honeywell target, and replace it with the appropriate Quantinuum target per the target ID table.
 
 Old service initialization:
 
