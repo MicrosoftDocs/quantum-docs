@@ -135,13 +135,11 @@
       href: optimization-overview-introduction.md
     - name: Key concepts
       href: optimization-overview-key-concepts.md 
-  - name: Quickstarts
+  - name: Tutorials
     items:
-    - name: Create and run a simple optimization job
+    - name: Run your first optimization job
       href: quickstart-microsoft-qio-portal.md
-  - name: How-to guides
-    items:
-    - name: Submit optimization jobs
+    - name: Use different SDKs to submit optimization jobs
       href: how-to-submit-jobs-optimization.md
     - name: Publish a QIO job as an Azure Function
       href: how-to-publish-qio-job-as-azurefunction.md
