@@ -9,7 +9,7 @@ ms.topic: how-to
 title: Honeywell to Quantinuum migration guide
 uid: microsoft.quantum.providers.honeywell.migration
 ---
-https://review.learn.microsoft.com/en-us/azure/quantum/pricing?branch=pr-en-us-991&tabs=tabid-AQcredits%2Ctabid-AQcreditsQ%2Ctabid-AQcreditsRigetti%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#quantinuum
+
 # Honeywell to Quantinuum migration guide
 
 The Honeywell provider has been replaced by the [Quantinuum provider](xref:microsoft.quantum.providers.quantinuum) in Azure Quantum. This guide is for users who previously used the Honeywell provider and need to migrate to the Quantinuum provider.
@@ -28,7 +28,7 @@ The first step is to open the [Azure portal](https://portal.azure.com) and navig
 
 3. Select **+ Add a provider**.
 4. Select **+ Add** for the Quantinuum provider.
-5. Select a Billing Plan from Quantinuum. If this is your first time using the Quantinuum provider, you are eligible for the $500 free Azure Quantum credit offer with Quantinuum. For more information, see [Quantinuum pricing](xref:microsoft.quantum.providers-pricing&pivots=ide-computing#quantinuum).
+5. Select a Billing Plan from Quantinuum. If this is your first time using the Quantinuum provider, you are eligible for the $500 free Azure Quantum credit offer with Quantinuum. For more information, see [Quantinuum pricing](xref:microsoft.quantum.providers-pricing#quantinuum).
 6. Select **Add**. 
 
 Once the deployment completes, you are ready to use the Quantinuum provider. If you have existing Honeywell code that needs to be migrated to Quantinuum, see [step 2](#step-2-update-existing-code-to-use-the-quantinuum-provider).
