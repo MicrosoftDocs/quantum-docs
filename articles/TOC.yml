@@ -130,10 +130,6 @@
       items:
       - name: Migration Guide
         href: provider-honeywell-migration-guide.md
-      - name: Honeywell provider & targets
-        href: provider-honeywell.md
-      - name: Honeywell support policy
-        href: provider-support-honeywell.md
 - name: Optimization
   items:
   - name: Overview
