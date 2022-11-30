@@ -13,7 +13,7 @@ ms.custom: vscode-azure-extension-update-completed
 
 # Tutorial: Publish a QIO job as an Azure Function
 
-In this artcile, you'll learn how to deploy your [quantum inspired optimization (QIO)](xref:microsoft.quantum.optimization.concepts.overview.introduction) job as a web service. You'll accomplish this task by using an Azure Function that can be called via a web API. The function receives input via a request URL or a request body. It then calls an Azure Quantum optimization solver and returns the result as a JSON string.
+In this article, you'll learn how to deploy your [quantum inspired optimization (QIO)](xref:microsoft.quantum.optimization.concepts.overview.introduction) job as a web service. You'll accomplish this task by using an Azure Function that can be called via a web API. The function receives input via a request URL or a request body. It then calls an Azure Quantum optimization solver and returns the result as a JSON string.
 
 You can make your QIO job and its functionality available to other developers, who will be able to integrate it into their classic code. This integration can be possible without any further knowledge of quantum concepts or QDK libraries. One method for exposing the QIO functionality for that purpose is via an Azure Function that can be called via a web API.
 
