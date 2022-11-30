@@ -1,5 +1,5 @@
 ---
-title: 'Quickstart: Solve an optimization problem with online notebooks'
+title: 'Tutorial: Solve an optimization problem with online notebooks'
 description: This document provides a step-by-step guide to get you started with optimization in the Azure Quantum portal
 author: bradben
 ms.author: brbenefield
@@ -11,9 +11,9 @@ uid: microsoft.quantum.quickstarts.optimization.qio.portal
 zone_pivot_groups: optimization-platforms
 ---
 
-# Quickstart: Solve an optimization problem using an Azure Quantum notebook
+# Tutorial: Solve an optimization problem using an Azure Quantum notebook
 
-Learn how to use Azure Quantum optimization solvers to solve a simple binary optimization problem. This procedure uses Notebooks in the Azure Quantum portal. 
+Learn how to use Azure Quantum optimization solvers to solve a simple binary optimization problem. This tutorial uses free hosted notebooks in the Azure Quantum portal. 
 
 ::: zone pivot="platform-microsoft"
 

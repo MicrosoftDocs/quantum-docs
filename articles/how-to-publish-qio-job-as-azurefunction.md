@@ -1,5 +1,5 @@
 ---
-title: Publish a QIO job as an Azure Function
+title: 'Tutorial: Publish a QIO job as an Azure Function'
 description: This article describes how you can publish your QIO job as an Azure Function and make it callable via RESTful API. 
 author: bradben
 ms.author: brbenefield
@@ -11,13 +11,14 @@ ms.custom: vscode-azure-extension-update-completed
 #Customer intent: As a researcher, I want to make my quantum algorithm accessible via API so that developers without further quantum knowledge can call it via classical API-calls.
 ---
 
-# Publish a QIO job as an Azure Function
+# Tutorial: Publish a QIO job as an Azure Function
 
-Learn how to deploy your [quantum inspired optimization (QIO)](xref:microsoft.quantum.optimization.concepts.overview.introduction) job as a web service. You'll accomplish this task by using an Azure Function that can be called via a web API. The function receives input via a request URL or a request body. It then calls an Azure Quantum optimization solver and returns the result as a JSON string.
+In this article, you'll learn how to deploy your [quantum inspired optimization (QIO)](xref:microsoft.quantum.optimization.concepts.overview.introduction) job as a web service. You'll accomplish this task by using an Azure Function that can be called via a web API. The function receives input via a request URL or a request body. It then calls an Azure Quantum optimization solver and returns the result as a JSON string.
 
 You can make your QIO job and its functionality available to other developers, who will be able to integrate it into their classic code. This integration can be possible without any further knowledge of quantum concepts or QDK libraries. One method for exposing the QIO functionality for that purpose is via an Azure Function that can be called via a web API.
 
-Azure Functions is a serverless solution that allows you to host your functionality in Azure without worrying about underlying infrastructure. For more information, see [Azure Functions](/azure/azure-functions/).
+> [!NOTE]
+> Azure Functions is a serverless solution that allows you to host your functionality in Azure without worrying about underlying infrastructure. For more information, see [Azure Functions](/azure/azure-functions/).
 
 The QIO job that will be published as an Azure Function implements what is called the *number partitioning problem*. It splits a given set of integer numbers into two subsets with an equal (or very close) sum of their elements. For more information about this problem and its implementation, see [Solve optimization problems by using quantum-inspired optimization](/training/modules/solve-quantum-inspired-optimization-problems/).
 
@@ -25,7 +26,7 @@ To learn how to deploy a Q# job as a web service using Azure Functions, see [Pub
 
 ## Prerequisites
 
-You need the following configuration to complete the steps in this article.
+You need the following configuration to complete the steps in this tutorial.
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).

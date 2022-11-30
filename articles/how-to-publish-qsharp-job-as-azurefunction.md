@@ -1,5 +1,5 @@
 ---
-title: Publish a Q# job as an Azure Function
+title: 'Tutorial: Publish a Q# job as an Azure Function'
 description: This article describes how you can publish your Q# job as an Azure Function and make it callable via RESTful API. 
 author: bradben
 ms.author: brbenefield
@@ -10,7 +10,7 @@ uid: microsoft.quantum.publish-qc-as-azure-function
 #Customer intent: As a researcher, I want to make my quantum algorithm accessible via API so that developers without further quantum knowledge can call it via classical API-calls.
 ---
 
-# Publish a Q# job as an Azure Function
+# Tutorial: Publish a Q# job as an Azure Function
 
 Learn how to deploy your Q# job as a web service using Azure Functions.  Azure Functions is a serverless solution that allows you to host your functionality in Azure without worrying about underlying infrastructure.
 
