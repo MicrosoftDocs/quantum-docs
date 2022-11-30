@@ -59,6 +59,8 @@
       href: tutorial-qdk-grovers-search.md
     - name: Qubit-level programming
       href: tutorial-qdk-qubit-level-program.md
+    - name: Publish a Q# job as an Azure Function
+      href: how-to-publish-qsharp-job-as-azurefunction.md
   - name: The Q# user guide
     href: user-guide/toc.yml
   - name: Quantum simulators
@@ -275,8 +277,6 @@
       href: how-to-add-a-provider.md
   - name: Integrate with Azure Architecture
     items:
-    - name: Publish a Q# job as an Azure Function
-      href: how-to-publish-qsharp-job-as-azurefunction.md
     - name: DevOps for quantum computing
       href: /azure/architecture/guide/quantum/devops-for-quantum-computing?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
     - name: CI/CD for quantum computing jobs
