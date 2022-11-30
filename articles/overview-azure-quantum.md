@@ -25,7 +25,6 @@ Azure Quantum provides the best development environment to create quantum algori
 
 - [The parts of Azure Quantum](#the-parts-of-azure-quantum)
 - [How to get started with Azure Quantum?](#how-to-get-started-with-azure-quantum)
-- [Who is Azure Quantum for?](#who-is-azure-quantum-for)
 - [Resource estimation in quantum computing](#resource-estimation-in-quantum-computing)
 - [What are Q# and the Quantum Development Kit?](#what-are-q-and-the-quantum-development-kit)
 - [Workflow of the quantum software development](#workflow-of-the-quantum-software-development)
@@ -60,38 +59,6 @@ Start using Azure Quantum is very easy and free of cost for new users. To submit
 1. **Azure Quantum workspace**: An Azure Quantum workspace is a collection of assets associated with running quantum or optimization applications. To create an Azure Quantum workspace, go to the [Azure portal](https://ms.portal.azure.com/#create/Microsoft.AzureQuantum), select **Quick create** and it automatically creates the workspace and adds the default providers. Or select **Advance create**, and enter the details of your workspace and choose the providers.
 
 For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-
-## Who is Azure Quantum for?
-
-Azure Quantum is for individuals and teams who want to take a step forward and bring quantum computation into production.
-
-### Industry solutions
-
-For businesses, incorporating quantum type solutions can help to be more competitive and be at the forefront of innovation. To build industry solutions, Azure Quantum is the best path to apply the latest optimization technologies, as you seek long term cost-saving solutions. Azure Quantum offers the advantages of the most diverse quantum resources available today with applications for a wide range of industries. 
-
-Enterprises or other organizations can work directly with the Azure Quantum team through the **Enterprise Acceleration Program** to tackle difficult, but high-reward, problems using high-performance hybrid quantum classical systems and a rich set of quantum hardware.
-
-To learn more about how real-life problems can be solved using Azure Quantum and quantum applications, see the following [case studies](https://azure.microsoft.com/resources/whitepapers/search/?term=quantum).
-
-### Developers
-
-As a developer, you will use familiar programming tools to create quantum applications. You can start with the language and SDK that you’re most familiar with, such as [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit.portal) or [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq.portal) Python packages, as well as explore and learn the full-featured, built-for-quantum language, Q#. With Azure Quantum and the Quantum Development Kit, developers can explore quantum programming and learn more about quantum applications, such as data search, quantum machine learning, or optimization solutions. 
-
-You can build on code and work in your favorite [local development environment](xref:microsoft.quantum.install-qdk.overview), such as Visual Studio and Visual Studio Code, or work directly in the Azure Quantum portal with the [hosted Jupyter Notebooks](xref:microsoft.quantum.how-to.notebooks).
-
-### Researchers
-
-As a researcher, Azure Quantum can help you test your quantum algorithms and theories and efficiently simulate quantum systems such as superconductivity and complex molecular formations. Azure Quantum enables you to learn, build, and deploy impactful solutions towards industrial-scale quantum computing, helping you harness quantum computing and benefit from the latest innovations. 
-
-In addition to the default Azure Quantum Credit grant of USD 500 per quantum hardware provider, Microsoft offers up to USD 10,000 in Azure Quantum Credits towards use of quantum hardware to explore new algorithms, investigate use cases, and experiment with leading hardware platforms. Credits are awarded based on an application’s value to the quantum ecosystem from a research, education, or industry perspective. For more information, see [FAQ: Azure Quantum Credits program](xref:microsoft.quantum.credits.credits-faq).
-
-To learn more about research resources and career opportunities, see the [Microsoft Quantum Computing research area](https://www.microsoft.com/research/research-area/quantum-computing/?facet%5Btax%5D%5Bmsr-research-area%5D%5B0%5D=243138&sort_by=most-recent). 
-
-
-### Quantum enthusiasts
-
-If you are an educator, a student, or quantum enthusiast, Azure Quantum is a great tool for teaching quantum computing and quantum applications. You will broaden your learning through the access to the most diverse set of quantum technologies, learn the basics of quantum computing and the quantum programming language Q#, and discover the areas where quantum computers have the potential to make a big impact.  In addition to using the default USD 500 in Azure Quantum Credits for a class project, an [Azure for Students](https://azure.microsoft.com/free/students/) account will jumpstart the learning journey with an additional USD 100 in traditional Azure credits.
-
 
 ## Resource estimation in quantum computing
 
