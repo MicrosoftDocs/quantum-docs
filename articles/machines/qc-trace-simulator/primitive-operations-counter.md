@@ -1,13 +1,13 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: Learn about the Microsoft QDK primitive operation counter, which uses the quantum trace simulator to track primitive processes used by operations in a Q# program.
-ms.author: brbenefield
-ms.date: 05/11/2022
+ms.author: sonialopez
+ms.date: 10/31/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
-title: Primitive operation counter - Quantum Development Kit
+title: 'Trace simulator: Primitive operation counter'
 uid: microsoft.quantum.machines.overview.qc-trace-simulator.primitive-counter
 ---
 

@@ -1,13 +1,13 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: Learn about the Microsoft QDK distinct inputs checker, which uses the Quantum trace simulator to check your Q# code for potential conflicts with shared qubits.
-ms.author: brbenefield
-ms.date: 05/11/2022
+ms.author: sonialopez
+ms.date: 10/31/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
-title: Distinct inputs checker - Quantum Development Kit
+title: 'Trace simulator: Distinct inputs checker'
 uid: microsoft.quantum.machines.overview.qc-trace-simulator.distinct-inputs
 ---
 

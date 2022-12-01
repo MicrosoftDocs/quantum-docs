@@ -2,12 +2,12 @@
 	"redirections": [
 		{
 			"source_path": "articles/install-jupyter-qkd.md",
-			"redirect_url": "/azure/quantum/install-jupyter-qdk",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
 			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/install-jupyter-qdk.md",
-			"redirect_url": "/azure/quantum/install-command-line-qdk",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
 			"redirect_document_id": false
 		},
 		{
@@ -236,9 +236,39 @@
 			"redirect_document_id": false
 		},
 		{
-			"source_path": "articles/install-csharp-qdk.md",
-			"redirect_url": "/azure/quantum/how-to-csharp-qdk-local",
-			"redirect_document_id": true
+			"source_path": "articles/how-to-command-line-local.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/install-command-line-qdk.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/install-python-qdk.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/install-python-optimization.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/machines/resources-estimator.md",
+			"redirect_url": "/azure/quantum/machines/qc-trace-simulator/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/provider-honeywell.md",
+			"redirect_url": "/azure/quantum/provider-quantinuum",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/provider-support-honeywell.md",
+			"redirect_url": "/azure/quantum/provider-support-quantinuum.md",
+			"redirect_document_id": false
 		}
 	]
 }

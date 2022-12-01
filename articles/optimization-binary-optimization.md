@@ -74,7 +74,7 @@ might increase the hardness of the problem.
 
 The following example shows the QUBO mapping for the famous Traveling Salesperson Problem (TSP).
 
-![The traveling salesperson problem.](~/media/travelling-salesperson.png)
+:::image type="content" source="media/travelling-salesperson.png" alt-text="Diagram of the mapping solution of traveling salesperson problem in the United States map.":::
 
 The TSP is a simple, yet important, problem with applications in transportation. 
 It consists of trying to find the shortest closed path between a set of $N$

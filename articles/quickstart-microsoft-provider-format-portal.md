@@ -7,9 +7,9 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Python', '$$v']
-title: Submit provider-formatted quantum circuits to Azure Quantum using an online notebook.
+title: 'Quickstart: Submit provider-formatted circuits with online notebooks'
 zone_pivot_groups: quantum-computing-platforms
-uid: microsoft.quantum.quickstarts.computing.provider.porta
+uid: microsoft.quantum.quickstarts.computing.provider.portal
 --- 
 
 # Quickstart: Submit a circuit with a provider-specific format using an Azure Quantum notebook.

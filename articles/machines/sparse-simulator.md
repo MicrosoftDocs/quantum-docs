@@ -2,12 +2,12 @@
 author: SoniaLopezBravo
 description: Learn how to run your Q# programs on the Microsoft Quantum Development Kit sparse simulator.
 ms.author: sonialopez
-ms.date: 02/18/2022
+ms.date: 10/31/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
-title: Sparse simulator - Quantum Development Kit
+title: Sparse simulator 
 uid: microsoft.quantum.machines.overview.sparse-simulator
 ---
 
@@ -21,7 +21,32 @@ For more information about the sparse simulator, please see [Jaques and Häner (
 
 The sparse simulator is exposed via the `SparseSimulator` class. For more information, see [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
 
-### Invoking the simulator from C\#
+### [Using Python](#tab/tabid-python)
+
+Use the [simulate_sparse()](/python/qsharp-core/qsharp.loader.qsharpcallable) method from the [Q# Python library](/python/qsharp-core/qsharp) with the imported Q# operation:
+
+```python
+qubit_result = RunMyOperation.simulate_sparse()
+```
+### [Using commmand line](#tab/tabid-commandline)
+
+You can use the `--simulator` (or `-s` shortcut) parameter to specify the desired target machine.
+
+```dotnetcli
+dotnet run -s SparseSimulator
+```
+
+### [Using Jupyter Notebooks](#tab/tabid-jupyter)
+
+Use the IQ# magic command [%simulate_sparse](xref:microsoft.quantum.iqsharp.magic-ref.simulate_sparse) to run the Q# operation.
+
+```IQ#
+%simulate_sparse RunMyOperation
+```
+
+For an example of sparse simulator usage in Jupyter Notebook see the [LargeSimulation Sample](https://github.com/microsoft/Quantum/tree/main/samples/getting-started/simulation).
+
+### [Using C#](#tab/tabid-csharp)
 
 Create an instance of the `SparseSimulator` class and then pass it to the `Run` method of a quantum operation, along with any parameters.
 
@@ -57,32 +82,7 @@ The code below shows a possible configuration of the parameters.
     )
 ```
 
-### Invoking the simulator from Python
-
-Use the [simulate_sparse()](/python/qsharp-core/qsharp.loader.qsharpcallable) method from the [Q# Python library](/python/qsharp-core/qsharp) with the imported Q# operation:
-
-```python
-qubit_result = RunMyOperation.simulate_sparse()
-```
-
-### Invoking the simulator from the command line
-
-You can use the `--simulator` (or `-s` shortcut) parameter to specify the desired target machine.
-
-```dotnetcli
-dotnet run -s SparseSimulator
-```
-
-### Invoking the simulator from Jupyter Notebooks
-
-Use the IQ# magic command [%simulate_sparse](xref:microsoft.quantum.iqsharp.magic-ref.simulate_sparse) to run the Q# operation.
-
-```IQ#
-%simulate_sparse RunMyOperation
-```
-
-For an example of sparse simulator usage in Jupyter Notebook see the [LargeSimulation Sample](https://github.com/microsoft/Quantum/tree/main/samples/getting-started/simulation).
-
+***
 ## Seeding the simulator
 
 By default, the sparse simulator uses a random number generator to simulate quantum randomness. For testing purposes, it's sometimes useful to have deterministic results. In a C# program, you can accomplish this determinism by providing a seed for the random number generator in the `SparseSimulator` constructor via the `randomNumberGeneratorSeed` parameter.
@@ -98,7 +98,6 @@ By default, the sparse simulator uses a random number generator to simulate quan
 ## See also
 
 - [Quantum full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
-- [Quantum resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator)
 - [Quantum Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)
 - [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)
 - [Quantum noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator)

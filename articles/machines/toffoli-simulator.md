@@ -1,13 +1,13 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: Learn about the Microsoft QDK Toffoli simulator, a special purpose quantum simulator that can be used with millions of qubits.
-ms.author: brbenefield
-ms.date: 05/11/2022
+ms.author: sonialopez
+ms.date: 10/26/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
-title: Quantum Toffoli simulator - Quantum Development Kit
+title: Toffoli simulator 
 uid: microsoft.quantum.machines.overview.toffoli-simulator
 ---
 
@@ -85,7 +85,6 @@ For example:
 
 ## See also
 
-- [Quantum Resources Estimator](xref:microsoft.quantum.machines.overview.resources-estimator)
 - [Quantum Trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)
 - [Quantum Full State simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)
 - [Quantum noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator)

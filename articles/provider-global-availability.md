@@ -27,7 +27,7 @@ IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program a
 | Angola     | No     |
 | Argentina     | No     |
 | Armenia     | Yes     |
-| Australia      | No     |
+| Australia      | Yes     |
 | Austria     | Yes     |
 | Azerbaijan     | No     |
 | Bahrain   | No      |

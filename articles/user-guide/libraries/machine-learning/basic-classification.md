@@ -18,7 +18,7 @@ In this guide, you will learn how to run a quantum sequential classifier written
 ## Prerequisites
 
 - The Microsoft [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
-- Create a Q# project for either a [Python host program](xref:microsoft.quantum.install-qdk.overview.python) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local).
+- Create a Q# project for either a [Python host program](xref:microsoft.quantum.submit-jobs?pivots=ide-python) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local).
 - To add the [Microsoft.Quantum.MachineLearning](https://www.nuget.org/packages/Microsoft.Quantum.MachineLearning) package to your Q# project, run the following command from the root of your project folder:
 
 ```dotnetcli

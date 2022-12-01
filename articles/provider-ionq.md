@@ -2,18 +2,18 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the IonQ quantum computing provider
 ms.author: sonialopez
-ms.date: 09/21/2022
+ms.date: 10/31/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
-title: IonQ quantum computing provider for Azure Quantum
+title: IonQ quantum computing provider
 uid: microsoft.quantum.providers.ionq
 ---
 
 # IonQ provider
 
 > [!IMPORTANT]
-> As of Friday, October 21, 2022, the IonQ Aria is offline for maintenance. Microsoft will update this notice once an ETA for the system to be back online is available.
+> The IonQ Aria system will be offline for maintenance from Friday, November 18, 2022, to Monday, December 5, 2022. We recommend that you don't submit jobs during this period, as they will likely not be processed. Microsoft will update this notice when the system is back online. 
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
@@ -84,6 +84,32 @@ IonQ Aria is IonQ's latest generation of trapped-ion quantum computer. With a 23
 - Target ID: `ionq.qpu.aria-1`
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles)
 
+| Parameter Name | Type     | Required | Description |
+|----------------|----------|----------|-------------|
+| `shots`   | int    | No | Number of experimental shots.  |
+
+### System timing
+
+| Measure | Average time duration  |
+|---------|----------------------------|
+| T1 | 10-100 s  |
+| T2 | 1 s| 
+| Single-qubit gate | 135 µs | 
+| Two-qubit gate | 600 µs | 
+
+
+### System fidelity
+
+| Operation | Average fidelity |
+|-----------|------------------|
+| Single-qubit gate | 99.95% (SPAM corrected) |
+| Two-qubit gate | 99.6% (not SPAM corrected) |
+| SPAM* | 99.61% |
+
+
+\* State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.
+
+
 IonQ Aria is available through Azure Quantum Credits plan and a separate billing plan. For more information, see [Azure Quantum pricing](/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-AQcreditsQ%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#ionq).
 
 ## Native gates support and usage
@@ -105,7 +131,7 @@ backend = provider.get_backend("ionq.qpu", gateset="native")
 |----------------|----------|----------|-------------|
 | `gateset`   | string    | No | Specifies the set of gates that will be used to define a circuit. A value of `qis` corresponds to the abstract gates (default behavior) and `native` to the [IonQ hardware native gates](https://ionq.com/docs/getting-started-with-native-gates#introducing-the-native-gates).|
 
-For more information about Qiskit jobs, see [Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit).
+For more information about Qiskit jobs, see [Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal).
 
 ## Input format
 

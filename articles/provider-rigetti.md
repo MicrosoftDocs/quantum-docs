@@ -2,7 +2,7 @@
 author: kalzoo
 ms.author: brbenefield
 description: This document provides the technical details of the Rigetti provider
-ms.date: 09/21/2022
+ms.date: 11/02/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -65,13 +65,6 @@ A multi-chip 80-qubit processor.
 - Target ID: `rigetti.qpu.aspen-m-2`
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 
-> [!IMPORTANT]
->  To submit your quantum program to Rigetti's Aspen-M-2 quantum processor, verify that you have the lastest version of QDK installed. If you are running a [Qiskit circuit in an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal), copy and run the following code in a cell in your notebook to install the lastest version of QDK and `azure-quantum` package.
->  
-> ```python
-> !pip install azure-quantum[qiskit]==0.25.228311
-> ````
-> 
 ## Pricing
 
 To see Rigetti's billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#rigetti).
@@ -93,7 +86,7 @@ To make constructing a Quil program easier, you can use [`pyQuil`] along with th
 
 ### QIR
 
-All Rigetti hardware supports the execution of Quantum Intermediate Representation (QIR) compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`. QIR provides a common interface that supports many quantum languages and target platforms for quantum computation and enables communication between high-level languages and machines. For example, you can submit Q#, Quil, or Qiskit jobs to Rigetti hardware, and Azure Quantum will automatically handle the input for you. For more information, see [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir).
+All Rigetti hardware supports the execution of quantum intermediate representation (QIR) compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`. QIR provides a common interface that supports many quantum languages and target platforms for quantum computation and enables communication between high-level languages and machines. For example, you can submit Q#, Quil, or Qiskit jobs to Rigetti hardware, and Azure Quantum will automatically handle the input for you. For more information, see [Quantum intermediate representation](xref:microsoft.quantum.concepts.qir).
 
 ### Selecting the right input format
 

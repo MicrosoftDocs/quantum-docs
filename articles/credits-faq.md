@@ -2,20 +2,21 @@
 author: sonialopezbravo
 description: Frequently Asked Questions regarding the Azure Quantum Credits program
 ms.author: sonialopez
-ms.date: 08/31/2022
+ms.date: 11/21/2022
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: faq
-title: Azure Quantum Credits FAQ
+ms.topic: troubleshooting
+title: 'FAQ: Azure Quantum Credits program'
 uid: microsoft.quantum.credits.credits-faq
 ---
 
 # FAQ: Applications to the Azure Quantum Credits program
 
-Besides the [$500 (USD) free Azure Quantum Credits](xref:microsoft.quantum.credits) that you automatically get when you create a new Azure Quantum workspace, Microsoft offers up to **$10,000 (USD) extra Azure Quantum Credits** for use on quantum hardware. 
+In this article you'll find the answer to the most common questions about the Azure Quantum Credits program.
 
-To receive this credit, you can apply for the [Azure Quantum Credits program](https://aka.ms/aq/credits). The Azure Quantum Credits program provides sponsored access to quantum hardware through Azure. You will not be charged for usage created under the credits program, up to the limit of your credit grant.
+When you create a new Azure Quantum workspace, you automatically get [$500 (USD) free Azure Quantum Credits](xref:microsoft.quantum.credits) for use on quantum hardware. In addition, Microsoft offers up to **$10,000 (USD) extra Azure Quantum Credits**. To receive this credit, you can apply for the [Azure Quantum Credits program](https://aka.ms/aq/credits). 
 
+The Azure Quantum Credits program provides sponsored access to quantum hardware through Azure. You will not be charged for usage created under the credits program, up to the limit of your credit grant.
 
 ## Who can apply for the Azure Quantum Credits program?
 
@@ -29,7 +30,7 @@ To use Azure Quantum Credits you must also accept the relevant usage terms for M
 
 ## How long are credits valid for?
 
-Credits are valid six months from your project start date. Extensions are optionally available on a case-by-case basis.
+Credits are valid six (6) months from your project start date. Extensions are optionally available on a case-by-case basis.
 
 ## How long after I apply will it take to hear back on my application?
 
@@ -39,26 +40,23 @@ We try to respond to all applications for credits within one (1) month of the ap
 
 Your approval notice will contain a link to an onboarding survey, which you will need to fill out completely. Once you have completed the survey, your credits will be made available within two (2) weeks or on the start date of your credits grant, whichever is later.
 
-You will receive a notice once your credits are available to be used, with detailed instruction to do so.
+When your credits are available to be used, you will receive detailed instructions on to do so.
 
 ### My credits are available to use. What is the onboarding process?
 
 Instructions for configuring your Azure Quantum workspace to access Azure Quantum Credits program:
 
-1. Open the [**Azure Quantum workspace Create page**](https://portal.azure.com/#create/Microsoft.AzureQuantum) in the Azure portal.
-1. On the **Basics** tab while configuring your workspace, ensure the selected **Subscription** matches the subscription you supplied in your onboarding information. The subscription information is also copied in the onboarding mail you received.
+1. Create a new [**Azure Quantum workspace**](https://portal.azure.com/#create/Microsoft.AzureQuantum) in the Azure portal.
+2. On the **Basics** tab while configuring your workspace, ensure the selected **Subscription** matches the subscription you supplied in your onboarding information. The subscription information is also copied in the onboarding mail you received.
+3. On the **Basics** tab while configuring your workspace, ensure the selected **Region** matches the subscription you supplied in your onboarding information. The region information is also copied in the onboarding mail you received.
+4. On the **Providers** tab, select the provider for which you have been granted credits. When the plan/pricing selector opens, ensure you select **Azure Quantum Credits**. If you have received grants towards more than one provider, you may add all of them to the same Azure Quantum workspace or you may create multiple workspaces.
 
 > [!TIP]
 > Not sure how to find the subscription with the ID specified in the email? View the [list of your Azure subscriptions](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) to identify which should be selected.
 
-1. On the **Basics** tab while configuring your workspace, ensure the selected **Region** matches the subscription you supplied in your onboarding information. The region information is also copied in the onboarding mail you received.
-1. On the **Providers** tab, select the provider for which you have been granted credits. When the plan/pricing selector opens, ensure you select **Azure Quantum Credits**.
-
 > [!IMPORTANT] 
 > If you select any plan other than **Azure Quantum Credits**, you may be charged for usage. If you do not see the Azure Quantum Credits plan, please double check that you have selected the correct **Subscription** and **Region**, then send an email to the support email address specified in your credits onboarding email if you cannot see the plan.
 
-> [!TIP]
-> If you have received grants towards more than one provider, you may add all of them to the same Azure Quantum workspace or you may create multiple workspaces.
 
 ## My application was rejected. Can I appeal the decision or reapply?
 

@@ -1,9 +1,9 @@
 ---
 title: Theory of Grover's search algorithm 
 description: Learn about the theory behind Grover's algorithm.
-author: bradben
+author: SoniaLopezBravo
 uid: microsoft.quantum.concepts.grovers
-ms.author: brbenefield
+ms.author: sonialopez
 ms.date: 10/11/2022
 ms.service: azure-quantum
 ms.subservice: core
@@ -82,7 +82,7 @@ $$\ket{\text{good}}=\frac{1}{\sqrt{M}}\sum_{x:f(x)=1}\ket{x}$$
 
 Since *good* and *bad* are mutually exclusive sets because an item cannot be valid and not valid, the states $\ket{\text{good}}$ and $\ket{\text{bad}}$ are orthogonal. Both states form the orthogonal basis of a plane in the vector space. One can use this plane to visualize the algorithm.
 
-![The plane projected by the orthogonal good and bad vectors.](./media/plane-grovers.png)
+:::image type="content" source="media/plane-grovers.png" alt-text="Plot of the plane in the Bloch sphere projected by the orthogonal good and bad vectors.":::
 
 Now, suppose $\ket{\psi}$ is an arbitrary state that lives in the plane spanned by $\ket{\text{good}}$ and $\ket{\text{bad}}$. Any state living in that plane can be expressed as:
 
@@ -102,13 +102,13 @@ $$R_{\ket{\psi}}\ket{\xi}=\mu \ket{\psi} - \nu {\ket{\psi^{\perp}}}$$
 
 The operator $R_\ket{\psi}$ inverts the component orthogonal to $\ket{\psi}$ but leaves the $\ket{\psi}$ component unchanged. Therefore, $R_\ket{\psi}$ is a reflection about $\ket{\psi}$.
 
-![The reflection operator about psi visualized in the plane.](./media/reflection-operator.png)
+:::image type="content" source="media/reflection-operator.png" alt-text="Plot of the reflection operator about the quantum state visualized in the plane.":::
 
 Grover's algorithm, after the first application of $H$ to every qubit, starts with an uniform superposition of all states. This can be written as:
 
 $$\ket{\text{all}} = \sqrt{\frac{M}{N}}\ket{\text{good}} + \sqrt{\frac{N-M}{N}}\ket{\text{bad}}$$
 
-![The starting state as a superposition of the good and bad states in the plane.](./media/starting-state.png)
+:::image type="content" source="media/starting-state.png" alt-text="Plot of the starting state as a superposition of the good and bad states in the plane.":::
 
 And thus the state lives in the plane. Note that the probability of obtaining a correct result when measuring from the equal superposition is just $|\braket{\text{good}|{\text{all}}}|^2=M/N$, which is what you would expect from a random guess.
 
@@ -126,7 +126,7 @@ $$-H^{\otimes n} O_0 H^{\otimes n}=2H^{\otimes n}\ket{0}\bra{0}H^{\otimes n} -H^
 
 It has been demonstrated that each iteration of Grover's algorithm is a composition of two reflections $R_\ket{\text{bad}}$ and $R_\ket{\text{all}}$.
 
-![The Grover iteration visualized as a sequence of two reflections in the plane.](./media/grovers-iteration.png)
+:::image type="content" source="media/grovers-iteration.png" alt-text="Plot of the Grover iteration visualized as a sequence of two reflections in the plane.":::
 
 The combined effect of each Grover iteration is a counterclockwise rotation of an angle $2\theta$. Fortunately, the angle $\theta$ is easy to find. Since $\theta$ is just the angle between $\ket{\text{all}}$ and $\ket{\text{bad}}$, one can use the scalar product to find the angle. It is known that $\cos{\theta}=\braket{\text{all}|\text{bad}}$, so one needs to calculate $\braket{\text{all}|\text{bad}}$. From the decomposition of $\ket{\text{all}}$ in terms of $\ket{\text{bad}}$ and $\ket{\text{good}}$, it follows:
 
@@ -144,7 +144,7 @@ $$P(\text{success}) = \cos^2(\gamma(k)) = \sin^2\left[(2k +1)\arccos \left( \sqr
 
 As the probability of success can be written as a function of the number of iterations, the optimal number of iterations $N_{\text{optimal}}$ can be found by computing the smallest positive integer that (approximately) maximizes the success probability function.
 
-![A sinusoidal graph of the success probability as a function of Grover iterations. The optimal number of iterations is near the first peak.](./media/success-probability-grovers.png)
+:::image type="content" source="media/success-probability-grovers.png" alt-text="A sinusoidal plot of the success probability as a function of Grover iterations. The optimal number of iterations is near the first peak.":::
 
 It is known that $\sin^2{x}$ reaches its first maximum for $x=\frac{\pi}{2}$, so:
 

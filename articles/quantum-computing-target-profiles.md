@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: SoniaLopezBravo
 description: This document provides an overview of target profile types in Azure Quantum and their limitations
 ms.date: 09/21/2022
-ms.author: brbenefield
+ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
@@ -32,7 +32,7 @@ Quantum devices are still an emerging technology, and not all of them can run al
 Full profile targets can run any Q# program, meaning you can
 write programs without functionality restrictions. Azure Quantum does not provide
 any target with this profile yet, but you can try any Q# program locally using the
-[full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) or the [resources estimator](xref:microsoft.quantum.machines.overview.resources-estimator) from the QDK. 
+[full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator). 
 
 If you need help setting up your environment to run Q# programs locally, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview).
 

@@ -78,6 +78,8 @@ After validating the syntax of their code with a Syntax Checker, users can take 
   - H1-2 Emulator: `quantinuum.sim.h1-2e`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
+For more information about the System Model H1 Emulator, see the [Quantinuum product data sheet](https://assets-global.website-files.com/617730fbcf7b7c387194556a/633af5b6ef0513fe5a5615af_Quantinuum%20H1%20Emulator%20Product%20Data%20Sheet%20v5-1%2003OCT22.pdf). For a more in-depth analysis of quantum error correction, see [Realization of real-time fault-tolerant quantum error correction](https://arxiv.org/abs/2107.07505).
+
 H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
 ## System Model H1
@@ -91,14 +93,13 @@ Both System Model H1 hardware H1-1 and H1-2 are continuously upgraded throughout
 - Job type: `Quantum Program`
 - Data Format: `quantinuum.openqasm.v1`
 - Target ID:
-  - H1-1: `quantinuum.qpu.h1-1` 
+  - H1-1: `quantinuum.qpu.h1-1`
   - H1-2: `quantinuum.qpu.h1-2`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
-
 ### Technical Specifications
 
-Technical details for the System Model H1 and System Model H1 Emulators can be found in Quantinuum's [product data sheets](https://www.quantinuum.com/products/h1).
+Technical details for the System Model H1 and System Model H1 Emulators can be found in Quantinuum's product data sheets on the [System Model H1](https://www.quantinuum.com/products/h1) page alongside links to Quantinuum data repositories and how to cite usage of Quantinuum systems.
 
 ## Target Availability
 
