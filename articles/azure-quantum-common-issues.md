@@ -1,16 +1,16 @@
 ---
 author: bradben
-description: List of common issues of the Azure Quantum service.
+description: Troubleshoot common Azure Quantum issues.
 ms.author: brbenefield
 ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
-title: Azure Quantum common issues
+title: Troubleshoot Azure Quantum
 uid: microsoft.quantum.azure.common-issues
 ---
 
-# Azure Quantum common issues
+# Troubleshoot Azure Quantum
 
 When you first start working with Azure Quantum, you may run into these common issues. 
 
