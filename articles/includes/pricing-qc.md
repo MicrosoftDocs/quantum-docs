@@ -1,7 +1,7 @@
 ---
 author: sonialopezbravo
 ms.author: sonialopez
-ms.date: 09/07/2022
+ms.date: 12/01/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include

@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to submit Qiskit quantum circuits to the Azure Quantum service using an online notebook.
 ms.author: brbenefield
-ms.date: 09/21/2022
+ms.date: 12/01/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart

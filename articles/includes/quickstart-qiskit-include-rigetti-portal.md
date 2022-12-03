@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 09/21/2022
+ms.date: 12/01/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
