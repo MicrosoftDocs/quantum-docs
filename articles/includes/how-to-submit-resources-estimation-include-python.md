@@ -7,8 +7,8 @@ ms.subservice: computing
 ms.topic: include
 ---
 
-
 ## Resource estimation with Q# and Python
+
 In this example, you'll create a multiplier and estimate its costs on a fault-tolerant quantum computer.
 
 ### Create a new Notebook in your workspace
@@ -33,19 +33,19 @@ workspace = Workspace (
 
 ### Load the required imports
 
-You'll need to import some modules. Import the `Microsoft.Quantum.Numerics` package that you'll require for this example algorithm, and select the **Azure Quantum Resource Estimator** as target. 
+You'll need to import some modules. Import the `Microsoft.Quantum.Numerics` package that is required for this example algorithm, and select the Resource Estimator as the target. 
 
 Click **+ Code** to add a new cell, then add and run the following code:
 
 ```python
 import qsharp
 qsharp.packages.add("Microsoft.Quantum.Numerics") # To create the multiplier for this example
-qsharp.azure.target("microsoft.estimator") # To set Azure Quantum Resource Estimator as target
+qsharp.azure.target("microsoft.estimator") # To set Resource Estimator as target
 ```
 
 ### Create the quantum algorithm
 
-You'll create a multiplier using the [MultiplyI](/qsharp/api/qsharp/microsoft.quantum.arithmetic.multiplyi) operation.  You can configure the size of the multiplier with a `bitwidth` parameter. The operation will have two input registers with that bitwidth, and one output register with the size of twice the bitwidth.
+Next, create a multiplier using the [MultiplyI](/qsharp/api/qsharp/microsoft.quantum.arithmetic.multiplyi) operation.  You can configure the size of the multiplier with a `bitwidth` parameter. The operation will have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`.
 
 Click **+ Code** to add a new cell, then add the following Q# code using the [%%qsharp magic command](xref:microsoft.quantum.how-to.python-local#the-qsharp-magic-command).
 
@@ -62,9 +62,10 @@ operation EstimateMultiplication(bitwidth : Int) : Unit {
     MultiplyI(LittleEndian(factor1), LittleEndian(factor2), LittleEndian(product));
 }
 ```
+
 ### Estimate the quantum algorithm
 
-In order to estimate an operation using the Azure Quantum Resource Estimator target, it can't take any input arguments, and must have a `Unit` return value. You can create a new instance for a specific bitwidth, for example 8 in this case.
+In order to estimate an operation using the  Resource Estimator, the operation can't take any input arguments, and must have a `Unit` return value. You can create a new instance for a specific bitwidth, for example `8` in this case.
 
 ```python
 %%qsharp
@@ -75,15 +76,16 @@ operation EstimateMultiplication8() : Unit {
 ```
 
 > [!IMPORTANT]
-> To submit an Q# operation to the Azure Quantum Resource Estimator target, it cannot take any input arguments and must have a `Unit` return value. 
+> To submit an Q# operation to the Resource Estimator, the operation cannot take any input arguments and must have a `Unit` return value. 
 
-Let's now estimate the physical resources for this operation using the default assumptions. You can submit the operation to the resource estimation target using the `qsharp.azure.execute` function.
+Now, estimate the physical resources for this operation using the default assumptions. You can submit the operation to the Resource Estimator target using the `qsharp.azure.execute` function.
 
 ```python
 result = qsharp.azure.execute(EstimateMultiplication8)
 result
 ```
-This will create a table that shows the overall physical resource counts. You can further inspect cost details by collapsing the groups, which have more information. 
+
+This creates a table that shows the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. 
 For example, if you collapse the *Logical qubit parameters* group, you can more easily see that the error correction code distance is 13. 
 
 |Logical qubit parameter | Value |
@@ -99,7 +101,7 @@ For example, if you collapse the *Logical qubit parameters* group, you can more 
 |Physical qubits formula|2 * `codeDistance` * `codeDistance`|
 
 In the *Physical qubit parameters* group, you can see the physical qubit properties that were assumed for this estimation. 
-For example, see that the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
+For example, the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
 
 |Physical qubit parameter | Value |
 |---|---|
@@ -121,11 +123,11 @@ For example, see that the time to perform a single-qubit measurement and a singl
 > result.data()
 > ```
 
-For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) of the Azure Quantum Resource Estimator.
+For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) of the Resource Estimator.
 
 ### Change the default values and estimate the algorithm
 
-When submitting a resource estimate request for your program, you can optionally specify some characteristics. Use the `jobParams` field to access all the values that can be passed to the job execution and see which default values were assumed:
+When submitting a resource estimate request for your program, you can specify some optional parameters. Use the `jobParams` field to access all the values that can be passed to the job execution and see which default values were assumed:
 
 ```python
 result['jobParams']
@@ -150,15 +152,17 @@ result['jobParams']
   'twoQubitGateTime': '50 ns'}}
  ```
 
+There are three top-level input parameters that can be customized: 
 
-You see that there are three top-level input parameters that can be customized: `errorBudget`, which is the overall allowed error, `qecScheme`, which is the quantum error correction (QEC) scheme, and `qubitParams`, which are the physical qubit parameters.
+* `errorBudget` - the overall allowed error budget
+* `qecScheme` - the quantum error correction (QEC) scheme
+* `qubitParams` - the physical qubit parameters 
 
-For more information about the pre-defined input parameters, see [Input parameters of the Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator#input-parameters).
-
+For more information, see [Input parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters) for the Resource Estimator.
 
 #### Change qubit model
 
-Let's estimate the cost for the same algorithm using the Majorana-based qubit parameter, `qubitParams`, "qubit_maj_ns_e6".
+Next, estimate the cost for the same algorithm using the Majorana-based qubit parameter, `qubitParams`, "qubit_maj_ns_e6".
 
 ```python
 result = qsharp.azure.execute(EstimateMultiplication8,
@@ -169,11 +173,12 @@ result = qsharp.azure.execute(EstimateMultiplication8,
 result
 ```
 
-Let's inspect the physical counts programmatically. For example, you can show all physical resource estimates and its breakdown using the `physicalCounts` field in the result's data. Here you'll learn what logical qubit error and logical T state error rate are required to match the error budget. Runtimes are by default in nanoseconds.
+Inspect the physical counts programmatically. For example, you can show all physical resource estimates and its breakdown using the `physicalCounts` field in the result's data. Here you'll learn what logical qubit error and logical T state error rates are required to match the error budget. By default, runtimes are shown in nanoseconds.
 
 ```python
 result['physicalCounts']
 ```
+
 ```output
 {'breakdown': {'adjustedLogicalDepth': 608,
   'cliffordErrorRate': 1e-06,
@@ -191,12 +196,12 @@ result['physicalCounts']
  'runtime': 6080000}
  ```
  
- 
-You can also explore details about the T factory that was created to execute this algorithm.
+You can also explore details about the T factory that was created to execute the algorithm.
  
 ```python
 result['tfactory']
 ```
+
 ```output
 {'eccDistancePerRound': [1, 1, 3],
  'logicalErrorRate': 2.5244447992120037e-07,
@@ -238,7 +243,7 @@ A single T factory is composed of 3 rounds of distillation:
 
 #### Change quantum error correction scheme
 
-Let's rerun the resource estimation job for the same runnignexample on the Majorana-based qubit parameters with a floqued QEC scheme, `qecScheme`.
+You can rerun the resource estimation job for the same example on the Majorana-based qubit parameters with a floqued QEC scheme, `qecScheme`.
 
 ```python
 result_maj_floquet = qsharp.azure.execute(EstimateMultiplication8,
@@ -254,7 +259,7 @@ result_maj_floquet
 
 #### Change error budget
 
-Let's rerun the same quantum circuit with an error budget `errorBudget` of 10%.
+Next, rerun the same quantum circuit with an `errorBudget` of 10%.
 
 ```python
 result_maj_floquet_e1 = qsharp.azure.execute(EstimateMultiplication8,
@@ -269,10 +274,9 @@ result_maj_floquet_e1 = qsharp.azure.execute(EstimateMultiplication8,
 result_maj_floquet_e1
 ```
 
-
 ### Advanced analysis of the resource estimation results
 
-Now that you’ve learned how to retrieve physical resource estimates and how to access them programmatically, you can perform more elaborate experiments. In this part, you'll evaluate the costs for the Quantum Fourier Transform based multiplier for different bitwidths, qubit parameters and quantum error correction codes.
+Now that you’ve learned how to retrieve physical resource estimates and how to access them programmatically, you can perform more elaborate experiments. In this part, you'll evaluate the costs for the Quantum Fourier Transform based multiplier for different bitwidths, qubit parameters, and quantum error correction codes.
 
 Add a new cell and import the following required packages.
 
@@ -288,8 +292,7 @@ from matplotlib.colors import hsv_to_rgb # To automatically find colors for plot
 You'll use two of the six pre-defined qubit parameter models, and one customized model based on the model qubit_gate_nds_e3, in which you'll set the error rates to 
 $10^{-3.5}$. In your own experiments, you can change the number of items, and also the parameters. You may use other pre-defined models or define custom models. 
 
-
-Further, you are choosing bitwidths that are powers-of-2 ranging from 8 to 64.
+Further, you are choosing bitwidths that are powers-of-2, ranging from 8 to 64.
 
 ```python
 input_params = {
@@ -314,13 +317,13 @@ names = list(input_params.keys())
 ```
 
 > [!NOTE]
-> When submittting jobs to the Azure Quantum Resource Estimator, you can't pass input parameters for operations.
+> When submitting jobs to the Resource Estimator, you can't pass input parameters for operations.
 
 Now, you submit the quantum circuit to the Azure Quantum Resource Estimator for all combinations of job parameters and input arguments.
 
-Since the Azure Quantum Resource Estimator doesn't support input parameters for operations, you'll create a wrapper operation on the fly by inserting the bitwidth directly into the source code and then compiling it using `qsharp.compile`. This is a generic method that you can use to generate operations for resource estimation from Python.
+Since the Resource Estimator doesn't support input parameters for operations, you'll create a wrapper operation on the fly by inserting the bitwidth directly into the source code and then compiling it using `qsharp.compile`. This is a generic method that you can use to generate operations for resource estimation from Python.
 
-You'll then submit this wrapper operation for each experiment configuration using `qsharp.azure.submit`. This will return a job object from which you can extract the Job ID and store it in the `jobs` dictionary.  Note that loop will not wait for jobs to be finished.
+Next, submit this wrapper operation for each experiment configuration using `qsharp.azure.submit`. This will return a `job` object from which you can extract the `job_id` and store it in the `jobs` dictionary.  Note that the loop will not wait for jobs to be finished.
 
 ```python
 # This initializes a `jobs` dictionary with the same keys as `input_params` and
@@ -343,7 +346,7 @@ for bitwidth in bitwidths:
 ```
 
 All jobs have been submitted now, but they may have not been finished.  The next code cell is extracting the resource estimation results from each job.  To
-do that, it will first wait for a job to have succeeded, whenever it is still in a waiting or executing state.  All results are saved to a `results` dictionary, that has an array for each experiment name that has all corresponding results sorted by bitwidth.
+do that, it first waits for a job to have succeeded, whenever it is still in a waiting or executing state.  All results are saved to a `results` dictionary, that has an array for each experiment name that has all corresponding results sorted by bitwidth.
 
 ```python
 # This initializes a `results` dictionary with the same keys as `input_params`
@@ -372,9 +375,7 @@ for name, job_ids in jobs.items():
         progress_bar.value += 1
 ```
 
-
-
-Now that you have all results, let's extract some data from it. You can extract the number of physical qubits, the total runtime in nanoseconds, and the QEC code distance for the logical qubits. In addition to the total number of physical qubits, you can extract their breakdown into number of physical qubits for executing the algorithm and the number of physical qubits required for the T factories that produce the required T states.
+Now that you have all the results, you can extract some data from it, such as the number of physical qubits, the total runtime in nanoseconds, and the QEC code distance for the logical qubits. In addition to the total number of physical qubits, you can extract their breakdown into number of physical qubits for executing the algorithm, and the number of physical qubits required for the T factories that produce the required T states.
 
 ```python
 names = list(input_params.keys())
@@ -506,5 +507,3 @@ HTML(html)
 |Number of physical qubits per round|	13520|	3240|1960|
 |Runtime per round|	67us 600ns|	46us 800ns|	36us 400ns|
 |Logical T state error rate	|5.63e-8|	8.29e-9	| 2.16e-9|
-
-

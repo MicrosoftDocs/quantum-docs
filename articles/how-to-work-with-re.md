@@ -11,15 +11,15 @@ title: Work with the Resource Estimator
 uid: microsoft.quantum.work-with-resource-estimator
 ---
 
-# Get the most out of the Resource Estimator
+# Get the most out of the Azure Quantum Resource Estimator
 
-Now that you've learned how to run and customize runs with the Resource Estimator, read about optimizing the execution time of resource estimations.
+Once you've learned how to [customize](xref:microsoft.quantum.overview.resources-estimator) and [submit](xref:microsoft.quantum.quickstarts.computing.resources-estimator) jobs to the Resource Estimator, you can learn how to optimize the execution time of resource estimation jobs.
 
 ## Handle large programs
 
-When you submit a resource estimation job to the Azure Quantum Resource Estimator, the quantum program is evaluated completely to extract the resource estimates. Therefore, large programs or programs that have loops with many iterations may take a long time to complete the resource estimation job.
+When you submit a resource estimation job to the Resource Estimator, the quantum program is evaluated completely to extract the resource estimates. As such, large programs or programs that have loops with many iterations may take a long time to complete the resource estimation job.
 
-One way to overcome long execution times is to perform resource estimation caching, a dedicated technique for Azure Quantum Resource Estimator to reduce execution time in Q# programs. 
+One way to reduce long execution times is to perform *resource estimation caching*, a dedicated technique for the Resource Estimator to reduce execution time in Q# programs. 
 
 ```qsharp
 if BeginCaching(id) {
@@ -28,22 +28,22 @@ if BeginCaching(id) {
 }
 ```
 
-The two special operations `BeginCaching` and `EndCaching` are intrinsic operations for the Azure Quantum Resource Estimator. They both take as input an identifier `id`, which should be an integer unique for every code block that should be cached. `BeginCaching` should be used as a condition to an if-block that will contain the block to be cached. These operations will instruct resource counting such that the if-block will be executed only once, its resources will be cached, and appended in every other iteration.
+The two special operations `BeginCaching` and `EndCaching` are intrinsic operations for the Resource Estimator. They both take as input an identifier `id`, which should be an integer unique for every code block that should be cached. `BeginCaching` should be used as a condition to an if-block that will contain the block to be cached. These operations will instruct resource counting such that the if-block will be executed only once, its resources will be cached, and appended in every other iteration.
 
-When `BeginCaching` is called for the first time, it will return `true` and record all resources until `EndCaching` is called for the same ID. `EndCaching` should be placed at the end of the condition, and it will store the cached resources in a dictionary with the ID as a key. All subsequent times that `BeginCaching` is called with an ID that is already cached, the cached resources will be added to the existing ones, instead of executing the code again.
+When `BeginCaching` is called for the first time, it will return `true` and record all resources until `EndCaching` is called for the same `id`. `EndCaching` should be placed at the end of the condition, and it will store the cached resources in a dictionary with the `id` as a key. All subsequent times that `BeginCaching` is called with an `id` that is already cached, the cached resources will be added to the existing ones, instead of executing the code again.
 
-There is no verification that resources are the same in every iteration. In fact, generally, the resources are approximately the same, such that the improvement in runtime is a good trade-off.
+There is no verification that resources are the same in every iteration. However, the resources are approximately the same, such that the improvement in runtime is a good trade-off.
 
 > [!IMPORTANT]
-> Currently special operations `BeginCaching` and `EndCaching` are only supported from Q# programs and Azure CLI. 
+> Currently, special operations `BeginCaching` and `EndCaching` are only supported from Q# programs and the Azure CLI. 
 
 ### How to avoid rerunning the same job
  
 If you've already submitted a resource estimation job for a quantum program, you can retrieve the results in the future and avoid rerunning the same job.
 
 - After running the jobs in the same notebook, you can print the jobs using the `print`
-  command and then paste it into the cell. In this way, you can easily access the job IDs in future sessions without needing to resubmit jobs.
-- After running jobs in some other notebook, you can paste the job IDs that you can access from the _Job management_ page in your _Azure Quantum Workspace_ and collect the results in your current notebook.
+  command and then paste it into the cell. This way, you can easily access the job IDs in future sessions without needing to resubmit jobs.
+- After running jobs in some other notebook, you can paste the job IDs that you can access from the **Job management** page in your Azure Quantum workspace and collect the results in your current notebook.
 
 ```python
 # Use the following line to print all job IDs and then update them in the bottom of the cell

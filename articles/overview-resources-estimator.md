@@ -1,23 +1,23 @@
 ---
 author: SoniaLopezBravo
-description: Learn about the input and outpu parameters of the Resource Estimator target in Azure Quantum and how to customized them
+description: Learn about the input and output parameters of the Resource Estimator in Azure Quantum and how to customized them
 ms.date: 11/05/2022
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: reference
 no-loc: ['Q#', '$$v']
-title: Resource Estimator input and ouput parameters
+title: Resource Estimator input and output parameters
 uid: microsoft.quantum.overview.resources-estimator
 ---
 
 # Customize resource estimates to machine characteristics
 
-In this article, you'll learn how to customize the input parameters of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to match the machine characteristics that you're targeting. You'll also see the output data of a resource estimates and their definitions. 
+In this article, you'll learn how to customize the input parameters of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to match the machine characteristics that you're targeting. You'll also see the output data of resource estimates and their definitions. 
 
 ## Input parameters
 
-The Azure Quantum Resource Estimator computes the estimation of resources, such the number of qubits, the run time
+The Resource Estimator computes the estimation of resources, such the number of qubits, the run time
 and the power consumption, which would be required to implement a given quantum algorithm using a given qubit technology and with a fixed set of architectural choices.  
 Therefore, the Resource Estimator takes a set of inputs, with pre-defined values to easily get you started:
 
@@ -193,7 +193,7 @@ To execute practical-scale quantum applications, quantum operations should have 
 
 The error correction code distance (or just code distance in short) is a parameter that controls the number of errors that can be corrected, and thus the error rate of the logical qubits and the number of physical qubits required to encode them. Both accuracy and the number of physical qubits increase with code distance. The goal is to find the minimum code distance that can achieve the required error rate set for a particular application. Later, we explain how a global error budget is provided as input and how it's distributed throughout the estimation, including the logical error rate of logical qubits.
 
-The Azure Quantum Resource Estimator uses the following formula for modeling logical error rates using an exponential model, 
+The Resource Estimator uses the following formula for modeling logical error rates using an exponential model, 
 
 $$ P = a\left(\frac{p}{p^\*}\right)^{\frac{d+1}{2}} $$
 
@@ -275,9 +275,10 @@ Pre-defined QEC schemes can be customized by specifying the name and then updati
     }
 }
 ````
+
 #### Custom your QEC schemes
 
-The Azure Quantum Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `crossingPrefactor` $a$ and the `errorCorrectionThreshold` $p^\*$. Further, you need to specify the `logicalCycleTime`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `physicalQubitsPerLogicalQubit`, that is, the number of physical qubits required to encode one logical qubit based on the code distance. 
+The Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `crossingPrefactor` $a$ and the `errorCorrectionThreshold` $p^\*$. Further, you need to specify the `logicalCycleTime`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `physicalQubitsPerLogicalQubit`, that is, the number of physical qubits required to encode one logical qubit based on the code distance. 
 
 You can use the following code as a template for QEC schemes:
 
@@ -291,7 +292,8 @@ You can use the following code as a template for QEC schemes:
     }
 }
 ```
-Inside the formulas, you can use the variables `oneQubitGateTime`, `twoQubitGateTime`, `oneQubitMeasurementTime`, and `twoQubitJointMeasurementTime`, whose value is taken from the corresponding field from the [physical qubit parameters](#custom-pre-defined-qubit-parameters), as well as the variable `eccDistance` for the code distance computed for the logical qubit, based on the physical qubit properties, the error correction threshold, and the crossing prefactor. The time variables and `eccDistance` can be used to describe the `logicalCycleTime` formula. For the formula `physicalQubitsPerLogicalQubit` only the `eccDistance` can be used.
+
+Inside the formulas, you can use the variables `oneQubitGateTime`, `twoQubitGateTime`, `oneQubitMeasurementTime`, and `twoQubitJointMeasurementTime`, whose values are taken from the corresponding field from the [physical qubit parameters](#custom-pre-defined-qubit-parameters), as well as the variable `eccDistance` for the code distance computed for the logical qubit, based on the physical qubit properties, the error correction threshold, and the crossing prefactor. The time variables and `eccDistance` can be used to describe the `logicalCycleTime` formula. For the formula `physicalQubitsPerLogicalQubit` only the `eccDistance` can be used.
 
 
 ### Error budget 
@@ -310,9 +312,9 @@ Note that for distillation and rotation synthesis, the respective error budgets 
 
 ## Output data
 
-The Azure Quantum Resource Estimator takes the job parameters, `{qubitParams, qecScheme, errorBudget}`, to evaluate the resource estimates of the requested QIR quantum algorithm. The result of the resource estimation job is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget.
+The Resource Estimator takes the job parameters `{qubitParams, qecScheme, errorBudget}` to evaluate the resource estimates of the requested QIR quantum algorithm. The result of the resource estimation job is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget.
 
-For more information, see [how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
+For more information, see [How the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
 
 ### Physical qubits
 
@@ -394,6 +396,6 @@ For more information, see [how the Resource Estimator works](xref:microsoft.quan
 - [Get the most out of the Resource Estimator](xref:microsoft.quantum.work-with-resource-estimator)
 - [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator)
 - [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
-- [Tutorial: Submit a QIR program to the Azure Quantum Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir)
+- [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir)
 - [Sample: Resource estimation with Q# and VS Code](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation/integer-factorization-with-cli)
 

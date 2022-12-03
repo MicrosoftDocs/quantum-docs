@@ -11,7 +11,7 @@ ms.topic: include
 
 In this example, you'll create a quantum circuit for a multiplier based on the construction presented in [Ruiz-Perez and Garcia-Escartin (arXiv:1411.5949)](https://arxiv.org/abs/1411.5949) which uses the Quantum Fourier Transform to implement arithmetic. 
 
-### Create a new Notebook in your workspace
+### Create a new notebook in your workspace
 
 1. Log in to the [Azure portal](https://portal.azure.com/) and select your Azure Quantum workspace.
 1. Under **Operations**, select **Notebooks**
@@ -36,6 +36,7 @@ workspace = Workspace (
 First, you'll need to import an additional modules from `azure-quantum` and `qiskit`.
 
 Click **+ Code** to add a new cell, then add and run the following code:
+
 ```python
 from azure.quantum.qiskit import AzureQuantumProvider
 from qiskit import QuantumCircuit, transpile
@@ -44,14 +45,15 @@ from qiskit.tools.monitor import job_monitor
 from qiskit_qir import SUPPORTED_INSTRUCTIONS
 ```
 
-Create a backend instance and set the **Azure Quantum Resource Estimator** as your target. 
+Create a backend instance and set the Resource Estimator as your target. 
+
 ```python
 backend = provider.get_backend('microsoft.estimator')
 ```
 
 ### Create the quantum algorithm
 
-You can adjust the size of the multiplier by changing the `bitwidth` variable. The circuit generation is wrapped in a function that can be called with the bitwidth of the multiplier. The circuit will have two input registers with that bitwidth, and one output register with the size of twice the bitwidth. 
+You can adjust the size of the multiplier by changing the `bitwidth` variable. The circuit generation is wrapped in a function that can be called with the `bitwidth` value of the multiplier. The operation will have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`.
 The function will also print some logical resource counts for the multiplier extracted directly from the quantum circuit.
 
 ```python
@@ -80,18 +82,19 @@ def create_algorithm(bitwidth):
 
     return circ
   ```
- 
+
 ### Estimate the quantum algorithm
   
-Create an instance of our algorithm using the `create_algorithm` function. You can adjust the size of the multiplier by changing the `bitwidth` variable.
+Create an instance of your algorithm using the `create_algorithm` function. You can adjust the size of the multiplier by changing the `bitwidth` variable.
 
 ```python
 bitwidth = 4
 
 circ = create_algorithm(bitwidth)
 ```
-Estimate the physical resources for this operation using the default assumptions. You can submit the circuit to the Resource Estimation backend using the `run` method. 
-Afterwards, you’ll run `job_monitor` to await completion.
+
+Estimate the physical resources for this operation using the default assumptions. You can submit the circuit to the Resource Estimator backend using the `run` method, and then run `job_monitor` to await completion.
+
 ```python
 job = backend.run(circ)
 job_monitor(job)
@@ -99,7 +102,7 @@ result = job.result()
 result
 ```
 
-This will create a table that shows the overall physical resource counts. You can further inspect cost details by collapsing the groups, which have more information. For example, if you collapse the *Logical qubit parameters* group, you can more easily see that the error correction code distance is 15. 
+This creates a table that shows the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. For example, if you collapse the *Logical qubit parameters* group, you can more easily see that the error correction code distance is 15. 
 
 |Logical qubit parameter | Value |
 |----|---|
@@ -114,7 +117,7 @@ This will create a table that shows the overall physical resource counts. You ca
 |Physical qubits formula	      | 2 * `codeDistance` * `codeDistance`|
 
 In the *Physical qubit parameters* group you can see the physical qubit properties that were assumed for this estimation. 
-For example, see that the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
+For example, the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
 
 |Physical qubit parameter | Value |
 |---|---|
@@ -131,17 +134,17 @@ For example, see that the time to perform a single-qubit measurement and a singl
 
 
 > [!NOTE]
-> You can access the output of the Azure Quantum Resource Estimator in JSON format using the `result.data()` method.
+> You can also access the output of the Resource Estimator in JSON format using the `result.data()` method.
 > 
 > ```python
 > result.data()
 > ```
 
-For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) of the Azure Quantum Resource Estimator.
+For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) for the Resource Estimator.
 
 ### Change the default values and estimate the algorithm
 
-When submitting a resource estimate request for your program, you can optionally specify some characteristics. Use the `jobParams` field to acccess all the values that can be passed to the job execution and see which default values were assumed:
+When submitting a resource estimate request for your program, you can specify some optional parameters. Use the `jobParams` field to access all the values that can be passed to the job execution and see which default values were assumed:
 
 ```python
 result.data()["jobParams"]
@@ -166,13 +169,17 @@ result.data()["jobParams"]
   'twoQubitGateTime': '50 ns'}}
  ```
 
-You see that there are three top-level input parameters that can be customized: `errorBudget`, which is the overall allowed error, `qecScheme`, which is the quantum error correction (QEC) scheme, and `qubitParams`, which are the physical qubit parameters.
+There are three top-level input parameters that can be customized: 
 
-For more information about the pre-defined input parameters, see [Input parameters of the Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator#input-parameters).
+* `errorBudget` - the overall allowed error budget
+* `qecScheme` - the quantum error correction (QEC) scheme
+* `qubitParams` - the physical qubit parameters 
+
+For more information, see [Input parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters) for the Resource Estimator.
 
 #### Change qubit model
 
-Let's estimate the cost for the same algorithm using the Majorana-based qubit parameter `qubit_maj_ns_e6`
+Next, estimate the cost for the same algorithm using the Majorana-based qubit parameter `qubit_maj_ns_e6`
 
 ```python
 job = backend.run(circ,
@@ -184,12 +191,13 @@ result = job.result()
 result
 ```
 
-Let's inspect the physical counts programmatically. For example, you can show all physical resource estimates and their breakdown using the `physicalCounts` field 
-in the result data. This will show the logical qubit error and logical T state error rates required to match the error budget. By default runtimes are shown in nanoseconds.
+You can nspect the physical counts programmatically. For example, you can show all physical resource estimates and their breakdown using the `physicalCounts` field 
+in the result data. This will show the logical qubit error and logical T state error rates required to match the error budget. By default, runtimes are shown in nanoseconds.
 
 ```python
 result.data()["physicalCounts"]
 ```
+
 ```output
 {'breakdown': {'adjustedLogicalDepth': 6168,
   'cliffordErrorRate': 1e-06,
@@ -207,7 +215,7 @@ result.data()["physicalCounts"]
  'runtime': 61680000}
  ```
 
-You can also explore details about the T factory that was created to execute this algorithm.
+You can also explore details about the T factory that was created to execute the algorithm.
 
 ```python
 result.data()["tfactory"]
@@ -246,7 +254,7 @@ for round in range(tfactory["numRounds"]):
 
 ```output
 A single T factory produces 1.68e-10 T states with an error rate of (required T state error rate is 2.77e-08).
-23 copie(s) of a T factory are executed 523 time(s) to produce 12029 T states (12017 are required by the algorithm).
+23 copies of a T factory are executed 523 time(s) to produce 12029 T states (12017 are required by the algorithm).
 A single T factory is composed of 3 rounds of distillation:
 - 1368 15-to-1 space efficient physical unit(s)
 - 20 15-to-1 RM prep physical unit(s)
@@ -255,7 +263,7 @@ A single T factory is composed of 3 rounds of distillation:
 
 #### Change quantum error correction scheme
 
-Let's rerun the resource estimation job for the same runnignexample on the Majorana-based qubit parameters with a floqued QEC scheme, `qecScheme`.
+Now, rerun the resource estimation job for the same example on the Majorana-based qubit parameters with a floqued QEC scheme, `qecScheme`.
 
 ```python
 job = backend.run(circ,
@@ -272,7 +280,7 @@ result_maj_floquet
 
 #### Change error budget
 
-Let's rerun the same quantum circuit with an error budget `errorBudget` of 10%.
+Let's rerun the same quantum circuit with an `errorBudget` of 10%.
 
 ```python
 job = backend.run(circ,
@@ -287,5 +295,3 @@ job_monitor(job)
 result_maj_floquet_e1 = job.result()
 result_maj_floquet_e1
 ```
-
-
