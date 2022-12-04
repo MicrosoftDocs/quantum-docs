@@ -140,7 +140,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ## Rigetti
 
-[Rigetti](https://rigetti.com) charges for job execution time on their quantum processors, Aspen-11 of 40 qubits and Aspen-M-2 of 80 qubits. There is no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.html) simulator is free for all users.
+[Rigetti](https://rigetti.com) charges for job execution time on their quantum processors, the 80-qubit Aspen-M-2. There is no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.html) simulator is free for all users.
 
 To learn more about Riggeti, visit the [Rigetti provider page](xref:microsoft.quantum.providers.rigetti).
 
@@ -154,7 +154,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 
 |Pricing | Use is deducted from the Azure Quantum Credits based on the job execution time only |
 |---|---|  
-|Includes access to | <ul><li>Rigetti Aspen-11 QPU</li><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
+|Includes access to | <ul><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
 
 > [!NOTE]
 > Once you have consumed all the credits you need to switch to a different plan to continue using Rigetti. Azure Quantum won’t start charging you once you reach your credit limit. 
@@ -165,11 +165,11 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
  
 ### [Pay As You Go](#tab/tabid-paygoRigetti)
 
-The Pay-as-you-go plan consists of *a la carte* access to the Rigetti Aspen-11 and Aspen-M-2 quantum processors.
+The Pay-as-you-go plan consists of *a la carte* access to the Aspen-M-2 quantum processor.
 
 |Pricing | Use is charged based on the job execution time only |
 |---|---|  
-|Includes access to | <ul><li>Rigetti Aspen-11 QPU</li><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
+|Includes access to | <ul><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
 |  | $0.02 (USD) per 10-millisecond increment of job execution time|
 
 ***

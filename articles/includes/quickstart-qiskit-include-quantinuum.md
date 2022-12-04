@@ -49,7 +49,7 @@ print([backend.name() for backend in provider.backends()])
 ```
 
 ```output
-    ['ionq.simulator', 'ionq.qpu', 'quantinuum.qpu.h1-1', 'quantinuum.qpu.h1-1sc', 'quantinuum.qpu.h1-1e', 'quantinuum.qpu.h1-2', 'quantinuum.qpu.h1-2sc', 'quantinuum.qpu.h1-2e', 'rigetti.sim.qvm', 'rigetti.qpu.aspen-11']
+    ['ionq.simulator', 'ionq.qpu', 'quantinuum.qpu.h1-1', 'quantinuum.qpu.h1-1sc', 'quantinuum.qpu.h1-1e', 'quantinuum.qpu.h1-2', 'quantinuum.qpu.h1-2sc', 'quantinuum.qpu.h1-2e', 'rigetti.sim.qvm']
 ```
 
 ## Run on the API validator 

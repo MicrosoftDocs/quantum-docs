@@ -27,7 +27,6 @@ The Rigetti provider makes the following targets available:
 |Target name|	Target ID|	Number of qubits|	Description|
 |---|---|---|---|
 |[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil programs. Free of cost.|
-|[Aspen-11](#aspen-11) |rigetti.qpu.aspen-11 | 40 qubits | Rigetti's single-chip quantum processor.	|
 |[Aspen-M-2](#aspen-m-2) |rigetti.qpu.aspen-m-2 |	80 qubits	| Rigetti's multi-chip quantum processor. |
 
 Rigetti's targets correspond to a **No Control Flow** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
@@ -46,16 +45,6 @@ The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.h
 
 All of Rigetti's publicly available [QPUs](https://qcs.rigetti.com/qpus) are available through Azure Quantum. This list is subject to change without advance notice.
 
-### Aspen-11
-
-A single-chip 40-qubit processor.
-
-- Job Type: `Quantum Program`
-- Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
-- Target ID: `rigetti.qpu.aspen-11`
-- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
-
-
 ### Aspen-M-2
 
 A multi-chip 80-qubit processor.
@@ -64,6 +53,19 @@ A multi-chip 80-qubit processor.
 - Data Formats: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.qpu.aspen-m-2`
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
+
+<!---
+
+### Aspen-M-3
+
+A multi-chip 80-qubit processor.
+
+- Job Type: `Quantum Program`
+- Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
+- Target ID: `rigetti.qpu.aspen-m-3`
+- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
+
+--->
 
 ## Pricing
 

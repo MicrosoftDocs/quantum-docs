@@ -96,7 +96,6 @@ This workspace's targets:
 - ionq.simulator
 - ionq.qpu.aria-1
 - rigetti.sim.qvm
-- rigetti.qpu.aspen-11
 - rigetti.qpu.aspen-m-2
 ```
 
