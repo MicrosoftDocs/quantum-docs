@@ -17,6 +17,14 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
+## 2022-12-07
+
+### QDK version 0.27.244707
+
+- Azure Quantum now supports CCX native gates.
+- [Submitting](https://learn.microsoft.com/en-us/python/qsharp-core/qsharp.azure#qsharp-azure-submit) a job to Azure Quantum now supports passing arrays from Python to Q#.
+- Added support for Rigetti M3 target.
+
 ## 2022-10-27
 
 ### QDK version 0.27.238334
