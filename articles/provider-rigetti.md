@@ -29,6 +29,15 @@ The Rigetti provider makes the following targets available:
 |[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil programs. Free of cost.|
 |[Aspen-M-2](#aspen-m-2) |rigetti.qpu.aspen-m-2 |	80 qubits	| Rigetti's multi-chip quantum processor. |
 
+<!--- stubbed for future rollout, details TBD 
+
+|[Aspen-M-2](#aspen-m-2) |rigetti.qpu.aspen-m-2 |	80 qubits	| Rigetti's multi-chip quantum processor. | 
+
+--->
+
+> [!NOTE]
+> The Aspen-11 QPU has been deprecated. Details TBD.
+
 Rigetti's targets correspond to a **No Control Flow** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
 
 ## Simulators
@@ -54,7 +63,7 @@ A multi-chip 80-qubit processor.
 - Target ID: `rigetti.qpu.aspen-m-2`
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 
-<!---
+<!--- stubbed for future rollout, details TBD
 
 ### Aspen-M-3
 
