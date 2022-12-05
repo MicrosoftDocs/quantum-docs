@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 09/21/2022
+ms.date: 12/01/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -71,10 +71,12 @@ plot_histogram(counts)
 
 ![Qiskit circuit result on Rigetti Simulator](../media/azure-quantum-qiskit-rigetti-result-1.png)
 
-<!---
-## Estimate job cost
+## Run on Rigetti QPU
 
-Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you can estimate how much it will cost to run. 
+After running successfully on the Rigetti simulator, it's time to run your circuit on the hardware. 
+
+> [!NOTE] 
+> The time required to run a circuit on the QPU varies depending on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
 
 First, get the list of available providers again:
 
@@ -86,47 +88,26 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
+- quantinuum.qpu.h1-1
+- quantinuum.sim.h1-1sc
+- quantinuum.qpu.h1-2
+- quantinuum.sim.h1-2sc
+- quantinuum.sim.h1-1e
+- quantinuum.sim.h1-2e
 - ionq.qpu
 - ionq.simulator
-- quantinuum.hqs-lt-s1
-- quantinuum.hqs-lt-s1-apival
-- quantinuum.hqs-lt-s2
-- quantinuum.hqs-lt-s2-apival
-- quantinuum.hqs-lt-s1-sim
-- quantinuum.hqs-lt-s2-sim
+- ionq.qpu.aria-1
 - rigetti.sim.qvm
-- rigetti.qpu.aspen-11
 - rigetti.qpu.aspen-m-2
 ```
 
 Next, create an object to represent the [Rigetti quantum computer](xref:microsoft.quantum.providers.rigetti#quantum-computers):
 
 ```python
-qpu_backend = provider.get_backend("rigetti.qpu.aspen-11")
+qpu_backend = provider.get_backend("rigetti.qpu.aspen-m-2")
 ```
 
-To estimate the cost of running a job on the QPU, add and run a new cell using the `estimate_cost` method of the target:
-
-```python
-cost = qpu_backend.estimate_cost(circuit, shots=100)
-
-print(f"Estimated cost: {cost.estimated_total}")
-```
-
-This displays the estimated cost in USD.
-
-For the most current pricing details, see [Rigetti Pricing](xref:microsoft.quantum.providers-pricing#rigetti), or find your workspace and view pricing options in the **Providers** blade of your workspace.
-
---->
-
-## Run on Rigetti QPU
-
-After running successfully on the Rigetti simulator, it's time to run your circuit on the hardware. 
-
-> [!NOTE] 
-> The time required to run a circuit on the QPU varies depending on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
-
-Use the same `run` method and operations that you used previously with the API Validator to submit and monitor your job:
+Use the same `run` method and operations that you used previously with the Rigetti quantum simulator to submit and monitor your job:
 
 ```python
 # Submit the circuit to run on Azure Quantum
@@ -157,7 +138,7 @@ plot_histogram(counts)
 ```output
 Job id cd4800f4-39e5-11ed-bd56-00155d76e336
 Job Status: job has successfully run
-Result(backend_name='rigetti.qpu.aspen-11', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='cd4800f4-39e5-11ed-bd56-00155d76e336', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'[0, 0, 0]': 415.0, '[1, 1, 1]': 280.0, '[1, 1, 0]': 103.0, '[0, 1, 1]': 83.0, '[1, 0, 1]': 8.0, '[0, 1, 0]': 36.0, '[1, 0, 0]': 74.0, '[0, 0, 1]': 25.0}, probabilities={'[0, 0, 0]': 0.4052734375, '[1, 1, 1]': 0.2734375, '[1, 1, 0]': 0.1005859375, '[0, 1, 1]': 0.0810546875, '[1, 0, 1]': 0.0078125, '[0, 1, 0]': 0.03515625, '[1, 0, 0]': 0.072265625, '[0, 0, 1]': 0.0244140625}), header=QobjExperimentHeader(metadata=None, name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits='3', qiskit='True'))])
+Result(backend_name='rigetti.qpu.aspen-m-2', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='cd4800f4-39e5-11ed-bd56-00155d76e336', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'[0, 0, 0]': 415.0, '[1, 1, 1]': 280.0, '[1, 1, 0]': 103.0, '[0, 1, 1]': 83.0, '[1, 0, 1]': 8.0, '[0, 1, 0]': 36.0, '[1, 0, 0]': 74.0, '[0, 0, 1]': 25.0}, probabilities={'[0, 0, 0]': 0.4052734375, '[1, 1, 1]': 0.2734375, '[1, 1, 0]': 0.1005859375, '[0, 1, 1]': 0.0810546875, '[1, 0, 1]': 0.0078125, '[0, 1, 0]': 0.03515625, '[1, 0, 0]': 0.072265625, '[0, 0, 1]': 0.0244140625}), header=QobjExperimentHeader(metadata=None, name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits='3', qiskit='True'))])
 {'000': 0, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0, '[0, 0, 0]': 415.0, '[1, 1, 1]': 280.0, '[1, 1, 0]': 103.0, '[0, 1, 1]': 83.0, '[1, 0, 1]': 8.0, '[0, 1, 0]': 36.0, '[1, 0, 0]': 74.0, '[0, 0, 1]': 25.0}
 ```
 

@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 09/26/2022
+ms.date: 12/01/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -97,7 +97,6 @@ This workspace's targets:
 - ionq.simulator
 - ionq.qpu.aria-1
 - rigetti.sim.qvm
-- rigetti.qpu.aspen-11
 - rigetti.qpu.aspen-m-2
 ```
 
