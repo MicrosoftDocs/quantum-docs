@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to submit a GitHub pull request to contribute code or documentation to Azure Quantum.
 ms.author: brbenefield
-ms.date: 10/25/2022
+ms.date: 12/05/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: contributor-guide
@@ -27,7 +27,7 @@ The page for each pull request includes details of all the changes that make you
 >
 > - [Learn Git](https://www.atlassian.com/git): A set of Git tutorials from Atlassian.
 > - [Version Control in Visual Studio Code](https://code.visualstudio.com/docs/editor/versioncontrol): A guide on how to use Visual Studio Code as a GUI for Git.
-> - [GitHub Learning Lab](https://lab.github.com/): A set of online courses for using Git, GitHub, and related technologies.
+> - [GitHub Learning Lab](https://github.com/apps/github-learning-lab): A set of online courses for using Git, GitHub, and related technologies.
 > - [Visualizing Git](https://git-school.github.io/visualizing-git/): An interactive tool for visualizing how Git commands change the state of a repository.
 > - [Version Control with Git (EPQIS 2016)](https://nbviewer.jupyter.org/github/QuinnPhys/PythonWorkshop-science/blob/master/lecture-1-scicomp-tools-part1.ipynb#Version-Control-with-Git-(50-Minutes)): A Git tutorial oriented towards scientific computing.
 > - [Learn Git Branching](https://learngitbranching.js.org/): An interactive set of branching and rebasing puzzles to help learn new Git features.
