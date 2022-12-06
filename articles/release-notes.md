@@ -21,9 +21,8 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 ### QDK version 0.27.244707
 
-- Azure Quantum now supports CCX native gates.
+- Azure Quantum now supports CCX native gates, this fixes GitHub issue [microsoft/qiskit-qir#19](https://github.com/microsoft/qiskit-qir/issues/19).
 - [Submitting](/python/qsharp-core/qsharp.azure#qsharp-azure-submit) a job to Azure Quantum now supports passing arrays from Python to Q#.
-- Added support for Rigetti M3 target.
 
 ## 2022-10-27
 
