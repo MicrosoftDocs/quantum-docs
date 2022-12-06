@@ -19,7 +19,7 @@ In this article, you'll learn the workflow of the Resource Estimator and how the
 
 ## Code distance and T factory estimation
 
-The Resource Estimator takes the job parameters `{qubitParams, qecScheme, errorBudget}` to compute a resource estimation of qubit technology and architecture. It calculates the QEC code distance, and from it, the number of physical qubits needed to encode one logical qubit and the runtime of one logical depth or cycle. The Resource Estimator also calculates how many physical qubits are needed to run one T factory and for how long the T factory runs. These values are reserved and will be used in subsequent steps of the workflow.
+The Resource Estimator takes the optional job parameters `{qubitParams, qecScheme, errorBudget}` to compute a resource estimation of qubit technology and architecture. It calculates the QEC code distance, and from it, the number of physical qubits needed to encode one logical qubit and the runtime of one logical depth or cycle. The Resource Estimator also calculates how many physical qubits are needed to run one T factory and for how long the T factory runs. These values are reserved and will be used in subsequent steps of the workflow.
 
 :::image type="content" source="media/resource-estimator-workflow.png" alt-text="Diagram showing the workflow of the resource estimator. The resource estimation is done based on the job parameters and quantum program, and the output data is extracted at different levels of the evaluation of the quantum program.":::
 
@@ -39,13 +39,13 @@ Finally, the Resource Estimator calculates the total number of required T states
 
 From the code distance of the QEC, the Resource Estimator has calculated the number of physical qubits required for one logical qubit and the runtime of one logical depth. 
 
-In the previous step, *Algorithmic logical estimation*, the Resource Estimator has calculated the number of logical qubits required. Then, the number of physical qubits required to run the algorithm after layout is $ \text{Number of logical qubits} \times \text{Number of physical qubits for one logical qubit}$.
+In the previous step, [Algorithmic logical estimation](#algorithmic-logical-estimation), the Resource Estimator has calculated the number of logical qubits required. Then, the number of physical qubits required to run the algorithm after layout is $ \text{Number of logical qubits} \times \text{Number of physical qubits for one logical qubit}$.
 
 Similarly, the runtime of the algorithm is $\text{Number of algorithmic logical depths} \times \text{Runtime of one logical depth}$.
 
 ## T factory physical estimation
 
-In the *Algorithmic logical estimation* step, the Resource Estimator calculates the total number of T states needed to run the algorithm. From the job parameters, the Resource Estimator has calculated the number of physical qubits for a single T factory and its runtime. 
+In the [Algorithmic logical estimation](#algorithmic-logical-estimation) step, the Resource Estimator calculates the total number of T states needed to run the algorithm. From the job parameters, the Resource Estimator has calculated the number of physical qubits for a single T factory and its runtime. 
 
 The following diagram shows an example of the runtime of the algorithm (red) and the runtime of one T factory (blue). You can see that the runtime of the T factory is shorter than the runtime of the algorithm. In this example, one T factory can distill one T state. Two questions arise:
 
@@ -54,21 +54,21 @@ The following diagram shows an example of the runtime of the algorithm (red) and
 
 <img src="~/media/resource-estimator-tfactory-plot.png" width="400" alt="Diagram showing the runtime of the algorithm (red) versus the runtime of one T factory (blue). Before the end of the algorithm, the T factory can run 8 times. If we need 30 T states, and T factory can run 8 times during runtime, then we need 4 copies of the T factories running in parallel to distill 30 T states.">
 
-Before the end of the algorithm, the T factory can run eight times in a distillation round. For example, if the *Algorithmic logical estimation* step calculates 30 T states, and a T factory can run eight times during runtime of the algorithm, then you need four copies of the T factory distillation round running in parallel to distill the 30 T states needed.
+Before the end of the algorithm, the T factory can run eight times in a distillation round. For example, if the [Algorithmic logical estimation](#algorithmic-logical-estimation) step calculates 30 T states, and a T factory can run eight times during runtime of the algorithm, then you need four copies of the T factory distillation round running in parallel to distill the 30 T states needed.
 
-Since qubits are reused by different rounds, the number of physical qubits for one T-factory is the maximum number of physical qubits used for one round. The runtime of the T factory is the sum of the runtimes in all rounds.
+Since qubits are reused by different rounds, the number of physical qubits for one T factory is the maximum number of physical qubits used for one round. The runtime of the T factory is the sum of the runtimes in all rounds.
 
 ## Physical resource estimation
 
-In the last step, the Resource Estimator computes the total number of physical qubits from the number of physical qubits required by the T factories that are responsible to produce the required T states that are consumed by the algorithm, plus the number of algorithmic physical qubits required to implement the algorithm logic
+In the previous step, the Resource Estimator computes the total number of physical qubits from the number of physical qubits required by the T factories that are responsible to produce the required T states that are consumed by the algorithm, plus the number of algorithmic physical qubits required to implement the algorithm logic.
 
-The total runtime of the algorithm is the runtime calculated in the *Algorithmic physical estimation* step.
+The total runtime of the algorithm is the runtime calculated in the [Algorithmic physical estimation](#algorithmic-physical-estimation) step.
 
 ## Assumptions
 
 The following assumptions are taken into account for the simulation of the resource estimation.
 
-- **Uniform independent physical noise**: The noise on physical qubits and physical qubit operations is the standard circuit noise model. In particular, we assume error events at different space-time locations are independent and that error rates are uniform across the system in time and space.
+- **Uniform independent physical noise**: The noise on physical qubits and physical qubit operations is the standard circuit noise model. In particular, it is assumed that error events at different space-time locations are independent and that error rates are uniform across the system in time and space.
 - **Efficient classical computation**: Classical overhead (compilation, control, feedback, readout, decoding, etc.) doesn't dominate the overall cost of implementing the full quantum algorithm.
 - **Extraction circuits for planar quantum ISA (instruction set architecture)**: Stabilizer extraction circuits with similar depth and error correction performance to those for standard surface and Floquet code patches can be constructed to implement all operations of the planar quantum ISA. 
 - **Uniform independent logical noise**: The error rate of a logical operation is approximately equal to its space-time volume (the number of tiles multiplied by the number of logical cycles) multiplied by the error rate of a logical qubit in a standard one-tile patch in one logical cycle.
@@ -81,5 +81,5 @@ The following assumptions are taken into account for the simulation of the resou
 - [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator)
 - [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
 - [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
-- [Tutorial: Submit a QIR program to the Azure Quantum Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir)
+- [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir)
 - [Sample: Resource estimation with Q# and VS Code](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation/integer-factorization-with-cli)
