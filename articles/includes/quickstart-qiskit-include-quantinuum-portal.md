@@ -87,18 +87,20 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
+- ionq.qpu
+- ionq.simulator
+- ionq.qpu.aria-1
+- microsoft.estimator
 - quantinuum.qpu.h1-1
 - quantinuum.sim.h1-1sc
 - quantinuum.qpu.h1-2
 - quantinuum.sim.h1-2sc
 - quantinuum.sim.h1-1e
 - quantinuum.sim.h1-2e
-- ionq.qpu
-- ionq.simulator
-- ionq.qpu.aria-1
 - rigetti.sim.qvm
 - rigetti.qpu.aspen-m-2
 ```
+<!--- rigetti.qpu.aspen-m-3 --->
 
 Next, create an object to represent the [Quantinuum System Model H1](xref:microsoft.quantum.providers.quantinuum#system-model-h1):
 
