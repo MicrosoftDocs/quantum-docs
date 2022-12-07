@@ -114,13 +114,16 @@ Looking at the histogram, you may notice that the random number generator return
 
 ## Estimate job cost
 
-Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
+Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method.
+
+> [!NOTE]
+> To run a cost estimate against a Quantinuum target, you must first reload the *azure-quantum* Python package with the *\[qiskit\]* parameter. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-package).
 
 ```python
 cost = service.estimate_cost(
     program=circuit,
     repetitions=100,
-    target="quantinuum.qpu.h1-1sc"
+    target="quantinuum.qpu.h1-1"
 )
 
 print(f"Estimated cost: {cost.estimated_total}")
@@ -139,7 +142,8 @@ get the results after the job has run successfully.
 ```python
 job = service.create_job(
     program=circuit,
-    repetitions=100
+    repetitions=100,
+    target="quantinuum.sim.h1-1sc"
 )
 ```
 
