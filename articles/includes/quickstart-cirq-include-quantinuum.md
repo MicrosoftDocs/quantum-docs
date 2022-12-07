@@ -62,9 +62,6 @@ print(service.targets())
 
 ## Run a simple circuit on the API validator
 
-> [!NOTE]
-> The [Quantinuum API validator](xref:microsoft.quantum.providers.quantinuum#api-validator) target will always return 0 on measurement.
-
 Next, create a simple Cirq circuit to run.
 
 ```python
