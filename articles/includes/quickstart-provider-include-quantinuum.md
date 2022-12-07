@@ -36,9 +36,6 @@ workspace = Workspace(
 
 ## Submit a quantum circuit to the Quantinuum API validator
 
-> [!NOTE]
-> The [Quantinuum API validator](xref:microsoft.quantum.providers.quantinuum#syntax-checkers) target will always return 0 on measurement.
-
 1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For example, the following example creates a Teleportation circuit:
 
     ```py
@@ -100,13 +97,16 @@ workspace = Workspace(
 
 ![Quantinuum job output](../media/quantinuum-results.png)
 
+Looking at the histogram, you may notice that the random number generator returned 0 every time, which is not very random. This is because that, while the API Validator ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
+
+<!---
 
 ## Estimate job cost
 
 Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
 
 ```python
-target = workspace.get_targets(name="quantinuum.sim.h1-1")
+target = workspace.get_targets(name="quantinuum.qpu.h1-1")
 cost = target.estimate_cost(circuit, num_shots=500)
 
 print(f"Estimated cost: {cost.estimated_total}")
@@ -115,3 +115,5 @@ print(f"Estimated cost: {cost.estimated_total}")
 This prints the estimated cost in H-System Quantum Credits (HQCs).
 
 For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
+
+--->

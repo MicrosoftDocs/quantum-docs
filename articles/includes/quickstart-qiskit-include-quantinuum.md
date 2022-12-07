@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 12/01/2022
+ms.date: 12/06/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -49,7 +49,7 @@ print([backend.name() for backend in provider.backends()])
 ```
 
 ```output
-    ['ionq.simulator', 'ionq.qpu', 'quantinuum.qpu.h1-1', 'quantinuum.qpu.h1-1sc', 'quantinuum.qpu.h1-1e', 'quantinuum.qpu.h1-2', 'quantinuum.qpu.h1-2sc', 'quantinuum.qpu.h1-2e', 'rigetti.sim.qvm']
+    ['ionq.qpu', 'ionq.qpu.aria-1', 'ionq.simulator', 'microsoft.estimator',  'quantinuum.qpu.h1-1', 'quantinuum.sim.h1-1sc, 'quantinuum.qpu.h1-2', 'quantinuum.sim.h1-2sc', 'quantinuum.sim.h1-1e', 'quantinuum.sim.h1-2e', 'rigetti.sim.qvm', 'rigetti.qpu.aspen-m-2']
 ```
 
 ## Run on the API validator 
@@ -59,7 +59,7 @@ print([backend.name() for backend in provider.backends()])
 
 ```python
 # Get Quantinuum's API validator backend:
-apival_backend = provider.get_backend("quantinuum.qpu.h1-1sc")
+apival_backend = provider.get_backend("quantinuum.sim.h1-1sc")
 ```
 
 ```python
@@ -123,6 +123,7 @@ Result(backend_name='quantinuum.qpu.h1-1sc', backend_version='1', qobj_id='Qiski
 
 ![Qiskit circuit result on Quantinuum API validator](../media/azure-quantum-qiskit-hw-result-1.png)
 
+Looking at the histogram, you may notice that the random number generator returned 0 every time, which isn't very random. This is because that, while the API Validator ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
 
 ## Estimate job cost
 
