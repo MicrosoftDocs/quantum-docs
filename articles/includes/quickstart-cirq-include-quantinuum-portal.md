@@ -139,6 +139,8 @@ pl.xlabel("Result")
 
 You can see that the results now are roughly divided between 0 and 1.
 
+![Cirq circuit result on Quantinuum QPU](../media/azure-quantum-qiskit-hw-result-2.png)
+
 ## Asynchronous workflow using Jobs
 
 For long-running circuits, it can be useful to run them asynchronously.
