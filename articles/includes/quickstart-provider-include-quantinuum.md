@@ -100,13 +100,14 @@ workspace = Workspace(
 
 ![Quantinuum job output](../media/quantinuum-results.png)
 
+Looking at the histogram, you may notice that the random number generator returned 0 every time, which is not very random. This is because that, while the API Validator ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
 
 ## Estimate job cost
 
 Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
 
 ```python
-target = workspace.get_targets(name="quantinuum.sim.h1-1")
+target = workspace.get_targets(name="quantinuum.qpu.h1-1")
 cost = target.estimate_cost(circuit, num_shots=500)
 
 print(f"Estimated cost: {cost.estimated_total}")

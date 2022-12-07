@@ -106,10 +106,14 @@ print(result)
 You can plot the results in a histogram:
 
 ```python
+import pylab as pl
+
 pl.hist(result.data)
 pl.ylabel("Counts")
 pl.xlabel("Result")
 ```
+
+Looking at the histogram, you may notice that the random number generator returned 0 every time, which is not very random. This is because that, while the API Validator ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
 
 ## Estimate job cost
 
@@ -118,8 +122,8 @@ Before running a job on the QPU, you can estimate how much it will cost to run. 
 ```python
 cost = service.estimate_cost(
     program=circuit,
-    repetitions=100e,
-    target="quantinuum.sim.h1-1sc"
+    repetitions=100,
+    target="quantinuum.qpu.h1-1sc"
 )
 
 print(f"Estimated cost: {cost.estimated_total}")
