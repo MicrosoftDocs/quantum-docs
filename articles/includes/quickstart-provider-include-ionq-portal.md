@@ -37,8 +37,11 @@ circuit = {
 
 [!INCLUDE [Quantinuum target name update](quantinuum-name-change.md)]
 
-List all the targets that you have access to, including the
+Use the `targets()`method to list all the targets in your workspace that can run your circuit, including the
 current queue time and availability.
+
+> [!NOTE]
+> All the targets in your workspace may not be listed - only the targets that can accept a Cirq or OpenQASM circuit will be listed here. 
 
 In a new cell, run:
 
