@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 12/01/2022
+ms.date: 12/07/2022
 author: SoniaLopezBravo
 ms.author: sonialopez
 ms.service: azure-quantum
@@ -16,6 +16,13 @@ uid: microsoft.quantum.relnotes-qdk
 This article outlines updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview).
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
+
+## 2022-12-07
+
+### QDK version 0.27.244707
+
+- Azure Quantum now supports CCX native gates, this fixes GitHub issue [microsoft/qiskit-qir#19](https://github.com/microsoft/qiskit-qir/issues/19).
+- [Submitting](/python/qsharp-core/qsharp.azure#qsharp-azure-submit) a job to Azure Quantum now supports passing arrays from Python to Q#.
 
 ## 2022-10-27
 
@@ -421,7 +428,7 @@ This release disables IntelliSense features for Q# files in Visual Studio and Vi
 
 This release contains the following:
 
-- Resource estimation now emits simultaneously achievable depth and width estimates also to the qubit count. See [here](xref:microsoft.quantum.machines.overview.resources-estimator#metrics-reported) for details.
+- Resource estimation now emits simultaneously achievable depth and width estimates also to the qubit count. See [here](xref:microsoft.quantum.machines.overview) for details.
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22).
 
@@ -806,7 +813,7 @@ This release contains the following:
 
 - Adds support for a new primitive type, BigInt, which represents a signed integer of arbitrary size.  Learn more about [BigInt](xref:microsoft.quantum.qsharp.valueliterals#bigint-literals).
 - Adds new Toffoli simulator, a special purpose fast simulator that can simulate X, CNOT and multi-controlled X quantum operations with very large numbers of qubits.  Learn more about [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator).
-- Adds a simple resource estimator that estimates the resources required to run a given instance of a Q# operation on a quantum computer.  Learn more about the [Resource Estimator](xref:microsoft.quantum.machines.overview.resources-estimator).
+- Adds a simple resource estimator that estimates the resources required to run a given instance of a Q# operation on a quantum computer.  Learn more about the [Resource Estimator](xref:microsoft.quantum.machines.overview).
 
 ## 2018-11-28
 
