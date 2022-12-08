@@ -140,7 +140,7 @@ Microsoft is partnering with quantum hardware companies to provide cloud access 
 
 - [Quantinuum](xref:microsoft.quantum.providers.quantinuum): **Trapped-ion** system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurements.
 - [IonQ](xref:microsoft.quantum.providers.ionq): Dynamically reconfigurable **trapped-ion** quantum computer for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
-- [Rigetti](xref:microsoft.quantum.providers.rigetti): Gate-based superconducting processors will be available in Azure Quantum soon and utilize [Quantum Intermediate Representation (QIR)](xref:microsoft.quantum.concepts.qir) to enable low latency and parallel execution.
+- [Rigetti](xref:microsoft.quantum.providers.rigetti): Gate-based superconducting processors that utilize [Quantum Intermediate Representation (QIR)](xref:microsoft.quantum.concepts.qir) to enable low latency and parallel execution.
 
 For more information, see the full [quantum computing target list](xref:microsoft.quantum.reference.qc-target-list).
 
@@ -150,7 +150,9 @@ For the moment, the use of real quantum hardware is limited due to resources and
 
 Quantum simulators are software programs that run on classical computers and make it possible to run and test quantum programs in an environment that predicts how qubits react to different operations, making it easy to test and debug an algorithm and then run it on real hardware with confidence that the result will match the expectations. 
 
-The Quantum Development Kit (QDK) includes different classes of quantum simulators representing different ways of simulating the same quantum algorithm, such as a [sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator) for simulating large systems, a [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulating quantum algorithms under the presence of noise. For more information, see [quantum simulators](xref:microsoft.quantum.machines.overview).
+The Quantum Development Kit (QDK) includes different classes of quantum simulators representing different ways of simulating the same quantum algorithm, such as a [sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator) for simulating large systems, a [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulating quantum algorithms under the presence of noise. For more information, see [quantum simulators](xref:microsoft.quantum.machines.overview). 
+
+In addition, each of Microsoft's quantum hardware partners offers a quantum simulator as a target. 
 
 If you have an Azure account, in the sample gallery of your Azure Quantum workspace you will find several Jupyter Notebook samples that use quantum simulators. See [how to get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
