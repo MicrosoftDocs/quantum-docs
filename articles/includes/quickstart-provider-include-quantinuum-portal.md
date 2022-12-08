@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 09/26/2022
+ms.date: 12/07/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -103,10 +103,10 @@ Looking at the histogram, you may notice that all the measurements are 0.  This 
 
 Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method.
 
-The following code changes the target to the System Model H1, `quantinuum.sim.h1-1`, and uses the `estimate_cost` method to estimate the cost of running the job:
+The following code changes the target to the System Model H1, `quantinuum.qpu.h1-1`, and uses the `estimate_cost` method to estimate the cost of running the job:
 
 ```python
-target = workspace.get_targets(name="quantinuum.sim.h1-1")
+target = workspace.get_targets(name="quantinuum.qpu.h1-1")
 cost = target.estimate_cost(circuit, num_shots=500)
 
 print(f"Estimated cost: {cost.estimated_total}")
@@ -130,7 +130,7 @@ After running successfully on the API validator and estimating the QPU cost, it'
 Use the same `submit` method and operations that you used previously with the API Validator to submit your job and display the results:
 
 ```python
-target = workspace.get_targets(name="quantinuum.sim.h1-1")
+target = workspace.get_targets(name="quantinuum.qpu.h1-1")
 job = target.submit(circuit, num_shots=500)
 ```
 

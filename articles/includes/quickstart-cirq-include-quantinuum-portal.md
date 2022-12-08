@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 03/07/2022
+ms.date: 12/07/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -57,16 +57,16 @@ This workspace's targets:
 
 ## Select a target and run your program
 
-To check your circuit before running it on actual quantum hardware, you can use the Quantinuum API Validator, `quantinuum.qpu.h1-1sc`.
+To check your circuit before running it on actual quantum hardware, you can use the Quantinuum API Validator, `quantinuum.sim.h1-1sc`.
 
 Add the following cell that submits a job to run the circuit with
-100 shots, or repititions, waits until the job is complete, and returns the results:
+100 shots, or repetitions, waits until the job is complete, and returns the results:
 
 ```python
 result = service.run(
     program=circuit,
     repetitions=100,
-    target="quantinuum.qpu.h1-1sc"
+    target="quantinuum.sim.h1-1sc"
 )
 ```
 
@@ -138,6 +138,8 @@ pl.xlabel("Result")
 ```
 
 You can see that the results now are roughly divided between 0 and 1.
+
+![Cirq circuit result on Quantinuum QPU](../media/azure-quantum-qiskit-hw-result-2.png)
 
 ## Asynchronous workflow using Jobs
 
