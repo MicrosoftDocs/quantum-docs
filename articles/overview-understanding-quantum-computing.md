@@ -139,7 +139,7 @@ Quantum computers face a multitude of challenges to operate correctly. Error cor
 Microsoft is partnering with quantum hardware companies to provide cloud access to quantum hardware. With the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) platform and the QDK, you can explore and run quantum programs on different types of quantum hardware. These are the currently available quantum targets:
 
 - [Quantinuum](xref:microsoft.quantum.providers.quantinuum): **Trapped-ion** system with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurements.
-- [IonQ](xref:microsoft.quantum.providers.ionq): Dynamically reconfigurable **trapped-ion** quantum computer for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
+- [IonQ](xref:microsoft.quantum.providers.ionq): Dynamically reconfigurable **trapped-ion** quantum computers for up to 23 fully connected qubits, that lets you run a two-qubit gate between any pair.
 - [Rigetti](xref:microsoft.quantum.providers.rigetti): Gate-based superconducting processors that utilize [Quantum Intermediate Representation (QIR)](xref:microsoft.quantum.concepts.qir) to enable low latency and parallel execution.
 
 For more information, see the full [quantum computing target list](xref:microsoft.quantum.reference.qc-target-list).
