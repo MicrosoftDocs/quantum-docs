@@ -59,7 +59,7 @@ from azure.quantum.cirq import AzureQuantumService
 
 ## Connect to the Azure Quantum service
 
-Next, use an `AzureQuantumProvider` constructor to create a `provider` object that connects to your Azure Quantum workspace.  Add a new cell, but don't run it yet, with the following code:
+Next, use an `AzureQuantumService` constructor to create a `service` object that connects to your Azure Quantum workspace.  Add a new cell, but don't run it yet, with the following code:
 
 ```python
 service = AzureQuantumService(
