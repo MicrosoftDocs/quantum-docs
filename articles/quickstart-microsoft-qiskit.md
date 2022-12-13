@@ -50,7 +50,7 @@ Learn how to use the `azure-quantum` Python package to submit Qiskit quantum cir
 
 ::: zone pivot="platform-rigetti"
 
-[!INCLUDE [rigetti-procedure](includes/quickstart-qc-include-rigetti.md)]
+[!INCLUDE [rigetti-procedure](includes/quickstart-qiskit-include-rigetti.md)]
 
 ::: zone-end
 
