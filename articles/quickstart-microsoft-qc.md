@@ -28,6 +28,8 @@ Learn how to use Azure Quantum to create a simple quantum-based random number ge
 
 ::: zone-end
 
+::: zone pivot="platform-rigetti"
+
 [!INCLUDE [rigetti-procedure](includes/quickstart-qc-include-rigetti.md)]
 
 ::: zone-end
