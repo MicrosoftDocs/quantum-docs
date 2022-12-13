@@ -2,13 +2,13 @@
 author: bradben
 description: Learn how to submit Qiskit quantum circuits to the Azure Quantum service.
 ms.author: brbenefield
-ms.date: 05/31/2022
+ms.date: 12/13/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Python', '$$v']
 title: Submit Qiskit quantum circuits to Azure Quantum
-zone_pivot_groups: quantum-computing-platforms
+zone_pivot_groups: quantum-computing-platforms-rigetti
 uid: microsoft.quantum.quickstarts.computing.qiskit
 --- 
 
@@ -45,6 +45,11 @@ Learn how to use the `azure-quantum` Python package to submit Qiskit quantum cir
 ::: zone pivot="platform-quantinuum"
 
 [!INCLUDE [quantinuum-procedure](includes/quickstart-qiskit-include-quantinuum.md)]
+
+::: zone-end
+
+
+[!INCLUDE [rigetti-procedure](includes/quickstart-qc-include-rigetti.md)]
 
 ::: zone-end
 
