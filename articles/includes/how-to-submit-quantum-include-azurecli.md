@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 09/23/2022
+ms.date: 12/13/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -76,14 +76,40 @@ You will also find a full reference for all commands and features available thro
    ```
 
    ```output
-      Provider    Target-id                                       Status     Average Queue Time
-   ----------  ----------------------------------------------  ---------  --------------------
-   Microsoft   microsoft.paralleltempering-parameterfree.cpu   Available  0
-   Microsoft   microsoft.paralleltempering.cpu                 Available  0
-   Microsoft   microsoft.simulatedannealing-parameterfree.cpu  Available  0
-   Microsoft   microsoft.simulatedannealing.cpu                Available  0
-   ionq        ionq.qpu                                        Available  0
-   ionq        ionq.simulator                                  Available  0
+     Provider      Target-id                                            Current Availability    Average Queue Time (seconds)
+    ------------  ---------------------------------------------------  ----------------------  ------------------------------
+    ionq          ionq.qpu                                             Available               510467
+    ionq          ionq.qpu.aria-1                                      Available               176345
+    ionq          ionq.simulator                                       Available               2
+    microsoft-qc  microsoft.estimator                                  Available               0
+    quantinuum    quantinuum.hqs-lt-s1                                 Degraded                0
+    quantinuum    quantinuum.hqs-lt-s1-apival                          Available               5
+    quantinuum    quantinuum.hqs-lt-s2                                 Unavailable             0
+    quantinuum    quantinuum.hqs-lt-s2-apival                          Available               3
+    quantinuum    quantinuum.hqs-lt-s1-sim                             Available               431
+    quantinuum    quantinuum.hqs-lt-s2-sim                             Available               74
+    quantinuum    quantinuum.hqs-lt                                    Degraded                0
+    quantinuum    quantinuum.qpu.h1-1                                  Degraded                0
+    quantinuum    quantinuum.sim.h1-1sc                                Available               5
+    quantinuum    quantinuum.qpu.h1-2                                  Unavailable             0
+    quantinuum    quantinuum.sim.h1-2sc                                Available               3
+    quantinuum    quantinuum.sim.h1-1e                                 Available               431
+    quantinuum    quantinuum.sim.h1-2e                                 Available               74
+    quantinuum    quantinuum.qpu.h1                                    Unavailable             0
+    rigetti       rigetti.sim.qvm                                      Available               5
+    rigetti       rigetti.qpu.aspen-11                                 Unavailable             0
+    rigetti       rigetti.qpu.aspen-m-2                                Available               5
+    Microsoft     microsoft.paralleltempering-parameterfree.cpu        Available               0
+    Microsoft     microsoft.paralleltempering.cpu                      Available               0
+    Microsoft     microsoft.simulatedannealing-parameterfree.cpu       Available               0
+    Microsoft     microsoft.simulatedannealing.cpu                     Available               0
+    Microsoft     microsoft.tabu-parameterfree.cpu                     Available               0
+    Microsoft     microsoft.tabu.cpu                                   Available               0
+    Microsoft     microsoft.qmc.cpu                                    Available               0
+    Microsoft     microsoft.populationannealing.cpu                    Available               0
+    Microsoft     microsoft.populationannealing-parameterfree.cpu      Available               0
+    Microsoft     microsoft.substochasticmontecarlo.cpu                Available               0
+    Microsoft     microsoft.substochasticmontecarlo-parameterfree.cpu  Available               0
    ```
 
 1. To submit a new job, navigate to the directory containing your project using
