@@ -21,19 +21,13 @@ The Aspen chip topology is octagonal with 3-fold (2-fold for edges) connectivity
 - Publisher: [Rigetti](https://rigetti.com)
 - Provider ID: `rigetti`
 
-
 The Rigetti provider makes the following targets available:
 
 |Target name|	Target ID|	Number of qubits|	Description|
 |---|---|---|---|
 |[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil programs. Free of cost.|
 |[Aspen-M-2](#aspen-m-2) |rigetti.qpu.aspen-m-2 |	80 qubits	| Rigetti's multi-chip quantum processor. |
-
-<!--- stubbed for future rollout, details TBD 
-
-|[Aspen-M-2](#aspen-m-2) |rigetti.qpu.aspen-m-2 |	80 qubits	| Rigetti's multi-chip quantum processor. | 
-
---->
+|[Aspen-M-3](#aspen-m-3) |rigetti.qpu.aspen-m-3 |	80 qubits	| Rigetti's multi-chip quantum processor. |
 
 > [!NOTE]
 > The Aspen-11 QPU has been deprecated.
@@ -63,18 +57,14 @@ A multi-chip 80-qubit processor.
 - Target ID: `rigetti.qpu.aspen-m-2`
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 
-<!--- stubbed for future rollout, details TBD
-
 ### Aspen-M-3
 
-A multi-chip 80-qubit processor.
+A multi-chip 80-qubit processor offering improved CZ and XY gate performance.
 
 - Job Type: `Quantum Program`
 - Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.qpu.aspen-m-3`
 - Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
-
---->
 
 ## Pricing
 
@@ -114,6 +104,7 @@ The easiest way to submit Quil jobs is using the [`pyquil-for-azure-quantum`] pa
 You can also construct Quil programs manually and submit them using the `azure-quantum` package directly.
 
 ### [Use pyquil-for-azure-quantum](#tab/tabid-pyquil)
+
 ```python
 from pyquil.gates import CNOT, MEASURE, H
 from pyquil.quil import Program
@@ -122,7 +113,7 @@ from pyquil_for_azure_quantum import get_qpu, get_qvm
 
 # Note that some environment variables must be set to authenticate with Azure Quantum
 qc = get_qvm()  # For simulation
-# qc = get_qpu("Aspen-M-2")  # For QPU
+# qc = get_qpu("Aspen-M-2")  or qc = get_qpu("Aspen-M-3") for submitting to a QPU
 
 program = Program(
     Declare("ro", "BIT", 2),
