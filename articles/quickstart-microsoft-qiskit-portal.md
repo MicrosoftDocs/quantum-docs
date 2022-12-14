@@ -138,8 +138,8 @@ This workspace's targets:
 - quantinuum.sim.h1-2e
 - rigetti.sim.qvm
 - rigetti.qpu.aspen-m-2
+- rigetti.qpu.aspen-m-3
 ```
-<!--- rigetti.qpu.aspen-m-3 --->
 
 ::: zone pivot="platform-ionq"
 

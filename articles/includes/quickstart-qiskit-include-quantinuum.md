@@ -49,7 +49,7 @@ print([backend.name() for backend in provider.backends()])
 ```
 
 ```output
-    ['ionq.qpu', 'ionq.qpu.aria-1', 'ionq.simulator', 'microsoft.estimator',  'quantinuum.qpu.h1-1', 'quantinuum.sim.h1-1sc, 'quantinuum.qpu.h1-2', 'quantinuum.sim.h1-2sc', 'quantinuum.sim.h1-1e', 'quantinuum.sim.h1-2e', 'rigetti.sim.qvm', 'rigetti.qpu.aspen-m-2']
+    ['ionq.qpu', 'ionq.qpu.aria-1', 'ionq.simulator', 'microsoft.estimator',  'quantinuum.qpu.h1-1', 'quantinuum.sim.h1-1sc, 'quantinuum.qpu.h1-2', 'quantinuum.sim.h1-2sc', 'quantinuum.sim.h1-1e', 'quantinuum.sim.h1-2e', 'rigetti.sim.qvm', 'rigetti.qpu.aspen-m-2', `rigetti.qpu.aspen-m-3`]
 ```
 
 ## Run on the API validator 
