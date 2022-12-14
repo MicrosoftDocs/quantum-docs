@@ -78,7 +78,7 @@ To create an Azure Quantum workspace, follow these steps.
    
 ### [Quick create](#tab/tabid-quick)
 
-**Note:** To use **Quick create**, you must be an **Owner** of the subscription you select in step 4. To see a list of your subscriptions and access levels, see [Check your role assignments](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-role-assignments).
+**Note:** To use **Quick create**, you must be an **Owner** of the subscription you selected in the previous step. To see a list of your subscriptions and access, see [Check your role assignments](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-role-assignments).
 
 1. Enter a name for the workspace.
 1. Select the region for the workspace.
