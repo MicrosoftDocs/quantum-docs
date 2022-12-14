@@ -2,7 +2,7 @@
 author: bradben
 description: Troubleshoot common Azure Quantum issues.
 ms.author: brbenefield
-ms.date: 03/30/2022
+ms.date: 12/14/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
@@ -21,17 +21,17 @@ When you first start working with Azure Quantum, you may run into these common i
 Steps to resolve this issue:
 
 1. Open your Azure portal (https://portal.azure.com) and authenticate your account. 
-2. Under **Navigate**, click **Subscriptions** and select your subscription.
-3. Click **Access control (IAM)**.
+2. Under **Navigate**, select **Subscriptions** and select your subscription.
+3. Select **Access control (IAM)**.
 4. Under **Check access**, search for your email address and select the account.
-5. You should not see an **Owner** or a **Contributor** role listed.
-6. Click the **Role assignments** tab.
+5. You shouldn't see an **Owner** or a **Contributor** role listed.
+6. Select the **Role assignments** tab.
 
     > [!NOTE]
     > If you don't see the **Role assignments** tab, you may need to expand the portal to full screen or close the **\<your name\> assignments** pane. 
 
-7. Click the **Role** dropdown, select either **Owner** or **Contributor**, then enter your email address and select your account.
-8. Click **Save**.
+7. Select the **Role** dropdown, select either **Owner** or **Contributor**, then enter your email address and select your account.
+8. Select **Save**.
 9. You should now see your account set configured with either the **Owner** or **Contributor** role.
 10. Create your Azure Quantum workspace again and then submit a job against this new Workspace.
 
@@ -45,7 +45,7 @@ Failed to compile program.
 Command ran in 21.181 seconds (init: 0.457, invoke: 20.724)
 ```
 
-This error occurs when there is a problem with the Q# program that causes the compilation to fail. To see the specific error that is causing the failure, run `dotnet build` in the same folder. 
+This error occurs when there's a problem with the Q# program that causes the compilation to fail. To see the specific error that is causing the failure, run `dotnet build` in the same folder. 
 
 ### Issue: Operation returned an invalid status code 'Forbidden'
 
@@ -54,14 +54,14 @@ When you submit your first job you may get a ‘forbidden’ error code.
 This issue may originate during the workspace creation: Azure Quantum fails to complete the role assignment linking the new workspace to the storage account that was specified.
 A typical scenario for this situation happens if the tab or web browser window is closed before the workspace creation is completed.
 
-You can verify that you are running into this role assignment issue by following these steps:
+You can verify that you're running into this role assignment issue by following these steps:
 
 * Navigate to your new quantum workspace in Azure Portal
-* Under **Overview** > **Essentials** > **Storage account**, click on the storage account link
+* Under **Overview** > **Essentials** > **Storage account**, select on the storage account link
 * In the left navigation bar, select **Access Control (IAM)**
 * Select **Role Assignments**
 * Verify that your workspace appears as a **Contributor**
-* If the workspace does not appear as a **Contributor** you can either:
+* If the workspace doesn't appear as a **Contributor** you can either:
   * Create a new workspace and make sure to wait for the workspace creation to be completed before closing the web browser tab or window.
   * Add the proper role assignment under the storage account     
     * Access Control (IAM) > Add role assignments
@@ -78,9 +78,9 @@ Some recommendations to avoid those problems are:
 
 * Install the latest version of [.NET 6.0](https://dotnet.microsoft.com/download) even if you have .NETCore 3.1 already. Multiple versions can coexist side-by-side in the same environment, so you don't have to uninstall older ones.
 * If you're upgrading an application or test project to a QDK version equal or greater than `0.24.201332`, update the target framework from `netcoreapp3.1` to `net6.0`. Leave the framework as is if you want to keep using older versions of the QDK.
-* If you are a Visual Studio user, you will need to upgrade to [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) to develop projects targeting .NET 6.0. We also have a [Q# extension](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) available for this product.
+* If you're a Visual Studio user, you'll need to upgrade to [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) to develop projects targeting .NET 6.0. We also have a [Q# extension](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) available for this product.
 
-### Issue: Visual Studio 2019 extension is not being updated
+### Issue: Visual Studio 2019 extension isn't being updated
 
 The last released version of the [QDK extension for Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit) was `0.23.195983`. You can continue using this extension with projects targeting up to that QDK version; however, there are no plans to continue upgrading this extension regularly.
 
@@ -88,28 +88,33 @@ In order to use newer versions of the QDK for quantum projects with version `0.2
 
 ## Creating an Azure Quantum workspace
 
-The following issues may occur when you attempt to create a workspace. 
+The following issues may occur when you use the Azure portal to create a workspace.
 
-### Issue: (You created an Azure free account but )the Azure portal asks you to sign up for a subscription when you try to create a workspace 
+### Issue: You can't access the workspace creation form in the Azure portal; you are asked to sign up for a subscription instead
+
+This issue occurs because you don't have an active subscription.
+
+For example, you may have signed up for the [30 day free trial Azure subscription](https://azure.microsoft.com/free/), which includes $200 (USD) free Azure Credits to use on Azure services. Note that these Azure credits aren't the same as [Azure Quantum Credits](xref:microsoft.quantum.credits) and aren't eligible to use on quantum hardware providers. After 30 days of sign-up or once you've consumed the $200 of free Azure credits (whichever occurs first), you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using Azure Quantum services. Once you have an active subscription, the Azure portal will allow you to access the workspace creation form.
+
+ To see a list of your subscriptions and associated roles, see [Check your subscriptions](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-subscriptions).
+
+### Issue: The **Quick create** option is unavailable
+
+You must be an **Owner** of the subscription you select in order to use the **Quick create** option. To see a list of your subscriptions and associated roles, see [Check your subscriptions](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-subscriptions). If you're a subscription **Contributor**, you can use the **Advanced create** option to create a workspace.
+
+### Issue: You're unable to create or select a resource group or storage account
+
+This issue occurs because you don't have the authorization required at the subscription, resource group, or storage account level. For more information on required access levels, see [Role requirements for creating a workspace](xref:microsoft.quantum.how-to.manage-workspace-access#role-requirements-for-creating-a-workspace).
 
 
 ### Issue: "Deployment Validation Failed" error message appears after you select **Create**
 
 This error message may include more details such as "The client does not have authorization to perform action."
-Maybe just say : check role level and access
-*Refer to a chart outlining roles? Or jut say you must be a subscription owner or contributor to create a workspace. If you are a subscription contributor, you must either own the resource group you select or you need to own the storage account you select. (The latter isn't directly relvant, better to refer to chart or explanation of role requirements)
-If access was recently granted, you may need to refresh the page. 
 
-### Issue: The **Quick create** option is unavailable
+This issue occurs because you don't have the authorization required at the subscription, resource group, or storage account level. For more information on required access levels, see [Role requirements for creating a workspace](xref:microsoft.quantum.how-to.manage-workspace-access#role-requirements-for-creating-a-workspace).
 
-You must be an **Owner** of the subscription you select in order to use the **Quick create** option. To use **Quick create**, you can request that the existing subscription owner assign you an **Owner** role on the subscription or choose another subscription that you are owner of. Otherwise, use the **Advanced create** option.
+If access was recently granted, you may need to refresh the page. It can sometimes take up to one hour for new role assignments to take effect over cached permissions across the stack.
 
-Add link to check sub role/access.
+### Issue: You don't see a specific quantum hardware provider on the Providers tab
 
-### Issue: You're unable to create or select a resource group
-
-You must be owner or contributor of the subscription you select
-Link to check your access
-
-### Issue: You're unable to create or select a storage account
-
+This issue occurs because the provider doesn't support the billing region your subscription is set in. For example, if your subscription is set in Israel, the Providers tab won't list Rigetti as an available provider. For a list of providers and their availability by country, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability). 
