@@ -30,7 +30,7 @@ To complete this tutorial, you need
 
 1. From the window that appears at the bottom, select **Open new project**.
 
-1. You should see two files: the project file and **Program.qs**, which contains starter code. Open **Program.qs**.
+1. You should see two files: **QuantumRNG.csproj**, the project file, and **Program.qs**, which contains starter code.
 
 1. Start by opening the **QuantumRNG.csproj** file and adding the `ExecutionTarget` property, which will give you design-time feedback on the compatibility of your program for IonQ's hardware.
 
