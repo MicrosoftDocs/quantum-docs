@@ -98,8 +98,8 @@ This workspace's targets:
 - quantinuum.sim.h1-2e
 - rigetti.sim.qvm
 - rigetti.qpu.aspen-m-2
+- rigetti.qpu.aspen-m-3
 ```
-<!--- rigetti.qpu.aspen-m-3 --->
 
 Next, create an object to represent the [IonQ quantum computer](xref:microsoft.quantum.providers.ionq#quantum-computer):
 
