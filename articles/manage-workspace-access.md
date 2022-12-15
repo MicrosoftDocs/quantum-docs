@@ -17,17 +17,41 @@ uid: microsoft.quantum.how-to.manage-workspace-access
 Learn how to manage access (authorization) to an Azure Quantum workspace.
  
 ## Azure role-based access control
-[Azure role-based access control (Azure RBAC)](/azure/role-based-access-control/overview) is the authorization system you use to manage access to Azure resources. To grant access, you assign roles to users, groups, service principals, or managed identities at a particular scope.
+[Azure role-based access control (Azure RBAC)](/azure/role-based-access-control/overview) is the authorization system you use to manage access to Azure resources. To grant access, you assign roles to a security principal. 
 
-Scope is the set of resources that the access applies to. Scopes are structured in a parent-child relationship. Each level of hierarchy makes the scope more specific. The level you select determines how widely the role is applied. Lower levels inherit role permissions from higher levels. You can assign roles at any of these four levels of scope: 
+### Security principal
+
+A security principal is an object that represents a user, group, service principal, or managed identity.
+
+|Security principal|Definition|
+|--|--|
+|User|An individual user account that signs in to Azure to create, manage, and use resources.|
+|Group|A defined group of users.|
+|[Service principal](xref:microsoft.quantum.optimization.authenticate-managed-identity)|A user identity for an application, service, or platform that needs to access resources.|
+|[Managed identity](xref:microsoft.quantum.optimization.authenticate-service-principal)| An automatically managed identity in Azure Active Directory for applications to use when connecting to resources that support Azure Active Directory (Azure AD) authentication.|
+
+### Built-in roles
+
+Azure provides both [built-in roles](/azure/role-based-access-control/built-in-roles) and the ability to create [custom roles](/azure/role-based-access-control/custom-roles). The most commonly used built-in roles are **Owner**, **Contributor**, and **Reader**.
+
+|Role|Access level|
+|--|--|
+|Owner|Grants full access to manage all resources, including the ability to assign roles in Azure RBAC.|
+|Contributor|Grants full access to manage all resources, but does not allow you to assign roles in Azure RBAC..|
+|Reader|View all resources, but does not allow you to make any changes.|
+
+### Scope
+
+Roles are assigned at a particular scope. Scope is the set of resources that the access applies to. Scopes are structured in a parent-child relationship. Each level of hierarchy makes the scope more specific. The level you select determines how widely the role is applied. Lower levels inherit role permissions from higher levels. You can assign roles at any of these four levels of scope: 
 
 - [Management group](/azure/governance/management-groups/overview): Helps you manage access, policy, and compliance for multiple subscriptions. All subscriptions in a management group automatically inherit the conditions that are applied to the management group. You may need a management group if your organization has multiple subscriptions.
-- Subscription: Logically associates [user accounts](/azure/role-based-access-control/rbac-and-directory-admin-roles#azure-account-and-azure-subscriptions) with the resources that they create. Each subscription has limits or quotas on the amount of resources that it can create and use. You must have an Azure account with an active subscription to create Azure resources. For subscription options, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace#prerequisites).
-- [Resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal): A container that holds related resources for an Azure solution. The resource group includes those resources that you want to manage as a group.
-- Resource: An instance of a service that you can create. Your workspace and the associated storage account are examples of resources that live in a single resource group. 
+- Subscription: Logically associates [Azure accounts](/azure/role-based-access-control/rbac-and-directory-admin-roles#azure-account-and-azure-subscriptions) with the resources that they create. An Azure account is a user identity and one or more Azure subscriptions. A subscription represents a grouping of Azure resources. An invoice is generated at the subscription scope. You must have an Azure account with an active subscription to create Azure resources. For subscription options, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace#prerequisites).
+- [Resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal): A container that holds related resources for an Azure solution. The resource group includes those resources that you want to manage as a group. For example, the following resources are required to run applications in Azure Quantum and live in a single resource group:
+  - [Azure storage account](/azure/storage/blobs/): stores input and output data for quantum jobs.
+  - [Azure Quantum workspace](/azure/quantum/how-to-create-workspace): a collection of assets associated with running quantum or optimization applications.
+- Resource: An instance of a service that you can create, such as a workspace or storage account.
 
 :::image type="content" source="media/manage-workspace-access-scope.png" alt-text="Diagram showing the four levels of scope.":::
-
 
 **Note:** Because access can be scoped to multiple levels in Azure, a user may have different roles at each level. For example, someone with owner access to a workspace may not have owner access to the resource group that contains the workspace.
  
@@ -84,8 +108,8 @@ When adding users to a workspace, workspace owners can assign new users one of t
 |Role|Access level|
 |--|--|
 |Owner|Full access to the workspace, including the ability to view, create, edit, or delete (where applicable) assets in the workspace. Additionally, you can change role assignments.|
-|Contributor|Grants full access to view, create, edit, or delete (where applicable) assets in the workspace. Doesn't allow you to assign roles.
-Reader|Readers can list and view assets in the workspace. Readers can't create or update these assets.|
+|Contributor|Grants full access to view, create, edit, or delete (where applicable) assets in the workspace. Doesn't allow you to assign roles.|
+|Reader|Readers can list and view assets in the workspace. Readers can't create or update these assets.|
 
 ## Troubleshooting
 
