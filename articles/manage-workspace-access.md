@@ -17,7 +17,7 @@ uid: microsoft.quantum.how-to.manage-workspace-access
 Learn how to manage access (authorization) to an Azure Quantum workspace.
  
 ## Azure role-based access control
-[Azure role-based access control (Azure RBAC)](/azure/role-based-access-control/overview) is the authorization system you use to manage access to Azure resources. To grant access, you assign roles to a security principal. 
+[Azure role-based access control (Azure RBAC)](/azure/role-based-access-control/overview) is the authorization system you use to manage access to Azure resources, such as a workspace. To grant access, you assign roles to a security principal. 
 
 ### Security principal
 
@@ -25,20 +25,20 @@ A security principal is an object that represents a user, group, service princip
 
 |Security principal|Definition|
 |--|--|
-|User|An individual user account that signs in to Azure to create, manage, and use resources.|
-|Group|A defined group of users.|
+|User|A user account that signs in to Azure to create, manage, and use resources.|
+|Group|A group of users. Used to manage users that need the same access and permissions to resources.|
 |[Service principal](xref:microsoft.quantum.optimization.authenticate-managed-identity)|A user identity for an application, service, or platform that needs to access resources.|
-|[Managed identity](xref:microsoft.quantum.optimization.authenticate-service-principal)| An automatically managed identity in Azure Active Directory for applications to use when connecting to resources that support Azure Active Directory (Azure AD) authentication.|
+|[Managed identity](xref:microsoft.quantum.optimization.authenticate-service-principal)| An automatically managed identity in Azure Active Directory (Azure AD) for applications to use when connecting to resources that support Azure AD authentication.|
 
-### Built-in roles
+### Role
 
-Azure provides both [built-in roles](/azure/role-based-access-control/built-in-roles) and the ability to create [custom roles](/azure/role-based-access-control/custom-roles). The most commonly used built-in roles are **Owner**, **Contributor**, and **Reader**.
+When you grant access to a security principal, you assign a [built-in role](/azure/role-based-access-control/built-in-roles) or create a [custom role](/azure/role-based-access-control/custom-roles). The most commonly used built-in roles are **Owner**, **Contributor**, and **Reader**.
 
 |Role|Access level|
 |--|--|
 |Owner|Grants full access to manage all resources, including the ability to assign roles in Azure RBAC.|
-|Contributor|Grants full access to manage all resources, but does not allow you to assign roles in Azure RBAC..|
-|Reader|View all resources, but does not allow you to make any changes.|
+|Contributor|Grants full access to manage all resources, but doesn't allow you to assign roles in Azure RBAC.|
+|Reader|View all resources, but doesn't allow you to make any changes.|
 
 ### Scope
 
@@ -57,7 +57,7 @@ Roles are assigned at a particular scope. Scope is the set of resources that the
  
 ## Role requirements for creating a workspace
 
-When you [create a workspace](xref:microsoft.quantum.how-to.workspace), you first select a subscription, resource group, and storage account to associate with the workspace. Starting at the subscription scope, you must have the following levels of access to create a workspace. 
+When you [create a workspace](xref:microsoft.quantum.how-to.workspace), you first select a subscription, resource group, and storage account to associate with the workspace. Your ability to create a workspace depends on the levels of access you have, starting at the subscription scope. To view your authorization for various resources, see [Check your role assignments](#check-your-role-assignments). 
 
 ### Subscription Owner
 
@@ -70,8 +70,6 @@ Subscription contributors can create workspaces using the **Advanced create** op
 - To create a new storage account, you must select an existing resource group that you're an owner of.
 
 - To select an existing storage account, you must be an owner of the storage account. You must also select the existing resource group that the storage account belongs to.
-
-To view your authorization for various resources, see [Check your role assignments](#check-your-role-assignments). 
 
 Subscription contributors can't assign roles to others.
 
@@ -96,14 +94,14 @@ To check the role assignment you or another user has for a particular resource, 
 
 ## Assign roles
 
-To grant access to 10 or less users to your workspace, see [Share access to your Azure Quantum workspace](xref:microsoft.quantum.how-to.share-access-workspace). To grant access to more than 10 users, see [Add a group to your Azure Quantum workspace](xref:microsoft.quantum.how-to.bulk-add-users).
+To add new users to a workspace, you must be an owner of the workspace. To grant access to 10 or less users to your workspace, see [Share access to your Azure Quantum workspace](xref:microsoft.quantum.how-to.share-access-workspace). To grant access to more than 10 users, see [Add a group to your Azure Quantum workspace](xref:microsoft.quantum.how-to.bulk-add-users).
 
 
 To assign roles for any resource at any scope, including the subscription level, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
 
 ## Workspace roles and access levels
 
-When adding users to a workspace, workspace owners can assign new users one of the following built-in roles:
+When you add new users to a workspace, you can assign them one of the following built-in roles:
 
 |Role|Access level|
 |--|--|
