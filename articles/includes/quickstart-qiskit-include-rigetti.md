@@ -86,14 +86,14 @@ c: 3/════════════════╩══╩══╩═
 
 <!--- DOES TRANSPILING ALSO APPLY TO RIGETTI? --->
 
-Quantinuum backends support gates from a defined gateset which are compiled to run optimally on the hardware. If your circuit contains gates that are not in this list, you will need to transpile your circuit first into the supported gateset. For that, you can use the `transpile` function provided by Qiskit:
+Quantinuum backends support gates from a defined gateset that is compiled to run optimally on the hardware. If your circuit contains gates that aren't in this list, you'll need to transpile your circuit first into the supported gateset. To transpile your circuit, you can use the `transpile` function provided by Qiskit:
 
 ```python
 from qiskit import transpile
 circuit = transpile(circuit, apival_backend)
 ```
 
-This will return a new circuit object where gates are decomposed into gates that are supported by the specified backend.
+The transpile operation returns a new circuit object where gates are decomposed into gates that are supported by the specified backend.
 
 <!--- --->
 
@@ -135,7 +135,7 @@ cost = qpu_backend.estimate_cost(circuit, shots=1024)
 print(f"Estimated cost: {cost.estimated_total}")
 ```
 
-This displays the estimated cost in USD.
+The estimated cost is displayed in USD.
 
 For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#rigetti), or find your workspace and view pricing options in the **Provider** tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
