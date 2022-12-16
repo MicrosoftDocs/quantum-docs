@@ -26,7 +26,7 @@ A security principal is an object that represents a user, group, service princip
 |Security principal|Definition|
 |--|--|
 |User|A user account that signs in to Azure to create, manage, and use resources.|
-|Group|A group of users. Used to manage users that need the same access and permissions to resources.|
+|[Group](xref:microsoft.quantum.how-to.bulk-add-users)|A group of users. Used to manage users that need the same access and permissions to resources.|
 |[Service principal](xref:microsoft.quantum.optimization.authenticate-managed-identity)|A user identity for an application, service, or platform that needs to access resources.|
 |[Managed identity](xref:microsoft.quantum.optimization.authenticate-service-principal)| An automatically managed identity in Azure Active Directory (Azure AD) for applications to use when connecting to resources that support Azure AD authentication.|
 
@@ -42,14 +42,14 @@ When you grant access to a security principal, you assign a [built-in role](/azu
 
 ### Scope
 
-Roles are assigned at a particular scope. Scope is the set of resources that the access applies to. Scopes are structured in a parent-child relationship. Each level of hierarchy makes the scope more specific. The level you select determines how widely the role is applied. Lower levels inherit role permissions from higher levels. You can assign roles at any of these four levels of scope: 
+Roles are assigned at a particular scope. Scope is the set of resources that the access applies to. Scopes are structured in a parent-child relationship. Each level of hierarchy makes the scope more specific. The level you select determines how widely the role is applied. Lower levels inherit role permissions from higher levels. You can assign roles at four levels of scope: management group, subscription, resource group, or resource.
 
-- [Management group](/azure/governance/management-groups/overview): Helps you manage access, policy, and compliance for multiple subscriptions. All subscriptions in a management group automatically inherit the conditions that are applied to the management group. You may need a management group if your organization has multiple subscriptions.
-- Subscription: Logically associates [Azure accounts](/azure/role-based-access-control/rbac-and-directory-admin-roles#azure-account-and-azure-subscriptions) with the resources that they create. An Azure account is a user identity and one or more Azure subscriptions. A subscription represents a grouping of Azure resources. An invoice is generated at the subscription scope. You must have an Azure account with an active subscription to create Azure resources. For subscription options, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace#prerequisites).
-- [Resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal): A container that holds related resources for an Azure solution. The resource group includes those resources that you want to manage as a group. For example, the following resources are required to run applications in Azure Quantum and live in a single resource group:
-  - [Azure storage account](/azure/storage/blobs/): stores input and output data for quantum jobs.
-  - [Azure Quantum workspace](/azure/quantum/how-to-create-workspace): a collection of assets associated with running quantum or optimization applications.
-- Resource: An instance of a service that you can create, such as a workspace or storage account.
+|Scope|Description|
+|-|-|
+|[Management group](/azure/governance/management-groups/overview)| Helps you manage access, policy, and compliance for multiple subscriptions. All subscriptions in a management group automatically inherit the conditions that are applied to the management group. You may need a management group if your organization has multiple subscriptions.|
+|Subscription|Logically associates [user accounts](/azure/role-based-access-control/rbac-and-directory-admin-roles#azure-account-and-azure-subscriptions) with the resources that they create. A user account is a user identity and one or more subscriptions. A subscription represents a grouping of Azure resources. An invoice is generated at the subscription scope. You must have an account with an active subscription to create Azure resources. For subscription options, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace#prerequisites).|
+|[Resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal)|A container that holds related resources for an Azure solution. The resource group includes those resources that you want to manage as a group. For example, the following resources are required to run applications in Azure Quantum:<ul><li>[Azure storage account](/azure/storage/blobs/): stores input and output data for quantum jobs.</li><li>[Azure Quantum workspace](/azure/quantum/how-to-create-workspace): a collection of assets associated with running quantum or optimization applications.</li></ul> These resources live in a single resource group.|
+|Resource|An instance of a service that you can create, such as a workspace or storage account.|
 
 :::image type="content" source="media/manage-workspace-access-scope.png" alt-text="Diagram showing the four levels of scope.":::
 
