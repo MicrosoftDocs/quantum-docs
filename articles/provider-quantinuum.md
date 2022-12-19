@@ -42,11 +42,11 @@ The following targets are available from this provider:
 |Target name|	Target ID|	Number of qubits|	Description|
 |---|---|---|---|
 |[H1-1 Syntax Checker](#syntax-checkers) |	quantinuum.sim.h1-1sc	|20 qubits| Use this to validate quantum programs against the H1-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
-|[H1-2 Syntax Checker](#syntax-checkers) |	quantinuum.sim.h1-2sc |	12 qubits	|Use this to validate quantum programs against the H1-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
+|[H1-2 Syntax Checker](#syntax-checkers) |	quantinuum.sim.h1-2sc |	20 qubits	|Use this to validate quantum programs against the H1-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
 |[H1-1 Emulator](#system-model-h1-emulators) |	quantinuum.sim.h1-1e | 20 qubits	| Uses a realistic physical model and noise model of H1-1.|
-|[H1-2 Emulator](#system-model-h1-emulators)|	quantinuum.sim.h1-2e | 12 qubits	|Uses a realistic physical model and noise model of H1-2.|
+|[H1-2 Emulator](#system-model-h1-emulators)|	quantinuum.sim.h1-2e | 20 qubits	|Uses a realistic physical model and noise model of H1-2.|
 |[H1-1](#system-model-h1)|	quantinuum.qpu.h1-1 |	20 qubits|	Quantinuum's H1-1 trapped ion device.|
-|[H1-2](#system-model-h1)|	quantinuum.qpu.h1-2	| 12 qubits	|Quantinuum's H1-2 trapped ion device.|
+|[H1-2](#system-model-h1)|	quantinuum.qpu.h1-2	| 20 qubits	|Quantinuum's H1-2 trapped ion device.|
 
 
 Quantinuum's targets correspond to a **Basic Measurement Feedback** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
