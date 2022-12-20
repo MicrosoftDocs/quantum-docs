@@ -192,7 +192,7 @@ In such a state, only two outcomes are possible when you measure the state of bo
 > [!NOTE]
 > This examples uses two qubits, but quantum entanglement is not limited to two qubits. In general it's possible that multiple-qubit systems share entanglement.
 
-Entangled qubits are correlated such that they cannot be described independently from each other. That is, whatever operation happens to the state of one qubit in an entangled pair, also effects to the state of the other qubit.
+Entangled qubits are correlated such that they cannot be described independently from each other. That is, whatever operation happens to the state of one qubit in an entangled pair, also affects to the state of the other qubit.
 
 For a practical implementation, see the tutorial [exploring quantum entanglement with Q# and Azure Quantum](xref:microsoft.quantum.tutorial-qdk.entanglement).
 
@@ -213,18 +213,20 @@ the state $\ket{\psi}_{AB}$  is a product state, therefore it's not entangled.
 
 ### Entanglement in mixed states
 
-Mixed quantum states are a statistical ensemble of pure states. A mixed state [$\rho$](xref:microsoft.quantum.concepts.dirac#density-operators) is separable if it can be written as a convex combination of product states of the subsystems, such as $\rho = \sum_j p_j \rho^{A}_{j} \otimes \rho^{B}_{j}$ where $p_j \geq 0, \sum p_j = 1$ and $\rho^{A}_{j} \geq 0, \rho^{B}_{j} \geq 0$.
+Mixed quantum states are a statistical ensemble of pure states. A mixed state $\rho$ has neither quantum nor classical correlations if it can be written as a product state $\rho = \rho^{A} \otimes \rho^{B}$ for some [density matrices](xref:microsoft.quantum.concepts.dirac#density-operators) $\rho^{A} \qeq 0 , \rho^{B} \geq 0$.
 
-A mixed state $\rho$ is entangled if it's not separable, that is it cannot be written as a convex combination of product states. 
+A mixed state $\rho$ is separable if it can be written as a convex combination of product states of the subsystems, such as $\rho = \sum_j p_j \rho^{A}_{j} \otimes \rho^{B}_{j}$ where $p_j \geq 0, \sum p_j = 1$ and $\rho^{A}_{j} \geq 0, \rho^{B}_{j} \geq 0$.
+
+A mixed state $\rho$ is entangled if it's not separable, that is, it cannot be written as a convex combination of product states. 
 
 > [!TIP]
 > A separable state contains only classical correlations.
 
-#### Understanding classical correlations
+### Understanding classical correlations
 
-Classical correlations are due to our lack of knowledge of the state of the system. That is, there's some randomness associated to classical correlation, but it can be eliminated ny gaining knowledge. 
+Classical correlations are due to our lack of knowledge of the state of the system. That is, there's some randomness associated to classical correlation, but it can be eliminated by gaining knowledge. 
 
-For example, consider two boxes, each containing one ball. We know that both balls are the same color, either blue or red. If we open one boxand find out that the ball inside is blue, then we know than the other ball is blue too. Therefore, they are correlated. However, the uncertainty that we have when opening the box is fue to our lack of knowlegde, it's not fundamental. The ball was blue before we opened the box. Thus, this is a classical correlation, not a quantum correlation. 
+For example, consider two boxes, each containing one ball. We know that both balls are the same color, either blue or red. If we open one box and find out that the ball inside is blue, then we know that the other ball is blue too. Therefore, they are correlated. However, the uncertainty that we have when opening the box is due to our lack of knowledge, it's not fundamental. The ball was blue before we opened the box. Thus, this is a classical correlation, not a quantum correlation. 
 
 The mixed quantum state of the system formed by the two boxes $\rho_{boxes}$ can be written as
 
@@ -238,7 +240,7 @@ Now, consider the following state:
 
 $$ \rho = \frac{1}{4} (\ket{00}\bra{00} + \ket{00}\bra{11} + \ket{11}\bra{00} + \ket{11}\bra{11}) = \ket{\phi^+}\bra{\phi^+}$$
 
-In this case, our knowledge of the state is perfect, we know with maximal certainty that the system $AB$ is in the Bell state $\ket{\phi^+}$ and $\rho$ is a pure state. Therefore, there aren't classical correlations. But if we measure an observable on subsystem $A$, we obtain a random result which gives us information about the state of the subsytem $B$. This randonmess is fundamental, namely these are quantum correlations. 
+In this case, our knowledge of the state is perfect, we know with maximal certainty that the system $AB$ is in the Bell state $\ket{\phi^+}$ and $\rho$ is a pure state. Therefore, there aren't classical correlations. But if we measure an observable on subsystem $A$, we obtain a random result which gives us information about the state of the subsystem $B$. This randomness is fundamental, namely these are quantum correlations. 
 
 An example of a quantum state that contains both classical and quantum correlations is
 
