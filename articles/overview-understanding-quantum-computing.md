@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how quantum computing works, how it compares to classical computing, and how it uses the principles of quantum mechanics.
-ms.date: 11/09/2022
+ms.date: 12/21/2022
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -105,12 +105,12 @@ For more information, see [the qubit in quantum computing](xref:microsoft.quantu
 
 ### Entanglement
 
-One of the most interesting phenomenon of quantum mechanics is the ability of two or more quantum systems to become **entangled** with each other. Entanglement is a quantum correlation between quantum systems. When qubits become entangled, they form a global system such that the quantum state of individual subsystems cannot be described independently. Two systems are entangled when the state of the global system cannot be written as a linear combination of the subsystems.
+One of the most interesting phenomenon of quantum mechanics is the ability of two or more quantum systems to become **entangled** with each other. Entanglement is a quantum correlation between quantum systems. When qubits become entangled, they form a global system such that the quantum state of individual subsystems cannot be described independently. Two systems are entangled when the state of the global system cannot be written as a combination of the state of the subsystems, in particular, two systems are entangled when the state of the global system cannot be written as the [tensor product](xref:microsoft.quantum.concepts.vectors#tensor-product) of states of the subsystems. A product state contains no correlations. 
 
-Entangled quantum systems can maintain this correlation even when separated over large distances. This means that whatever operation or process you apply to one subsystem correlates to the other subsystem as well. Because there is a correlation between the entangled qubits, measuring the state of one qubit provides information about the state of the other qubit – this particular property is very helpful in quantum computing.
+Entangled quantum systems maintain this correlation even when separated over large distances. This means that whatever operation or process you apply to one subsystem correlates to the other subsystem as well. Because there is a correlation between the entangled qubits, measuring the state of one qubit provides information about the state of the other qubit – this particular property is very helpful in quantum computing.
 
 > [!NOTE]
-> Not every correlation between the measurements of two qubits means that the two qubits are entangled. Classical bits can also be correlated. Two qubits are entangled when they present correlations that can't be reproduced by using classical bits. This difference between classical and quantum correlations is subtle, but it's essential for the speedup provided by quantum computers. 
+> Not every correlation between the measurements of two qubits means that the two qubits are entangled. Besides quantum correlations, there exist also classical correlations.  This difference between classical and quantum correlations is subtle, but it's essential for the speedup provided by quantum computers. 
 
 If you want to learn more, see the tutorial [exploring quantum entanglement with Q# and Azure Quantum](xref:microsoft.quantum.tutorial-qdk.entanglement).
 
