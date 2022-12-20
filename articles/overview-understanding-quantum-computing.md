@@ -110,7 +110,7 @@ One of the most interesting phenomenon of quantum mechanics is the ability of tw
 Entangled quantum systems maintain this correlation even when separated over large distances. This means that whatever operation or process you apply to one subsystem correlates to the other subsystem as well. Because there is a correlation between the entangled qubits, measuring the state of one qubit provides information about the state of the other qubit – this particular property is very helpful in quantum computing.
 
 > [!NOTE]
-> Not every correlation between the measurements of two qubits means that the two qubits are entangled. Besides quantum correlations, there exist also classical correlations.  This difference between classical and quantum correlations is subtle, but it's essential for the speedup provided by quantum computers. 
+> Not every correlation between the measurements of two qubits means that the two qubits are entangled. Besides quantum correlations, there exist also classical correlations. The difference between classical and quantum correlations is subtle, but it's essential for the speedup provided by quantum computers. For more information, see [Understanding classical correlations](xref:microsoft.quantum.concepts.multiple-qubits#understanding-classical-correlations).
 
 If you want to learn more, see the tutorial [exploring quantum entanglement with Q# and Azure Quantum](xref:microsoft.quantum.tutorial-qdk.entanglement).
 
