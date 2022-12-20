@@ -58,16 +58,6 @@ This notion of universality is akin to the notion of universality for traditiona
 In quantum computing, the valid transformations that we are allowed to perform on a qubit are unitary transformations and measurement.
 The *adjoint operation* or the complex conjugate transpose is of crucial importance to quantum computing because it is needed to invert quantum transformations.
 
-There are only four functions that map one bit to one bit on a classical computer. In contrast, there are an infinite number of unitary transformations on a single qubit on a quantum computer. Therefore, no finite set of primitive quantum operations, called [*gates*](https://en.wikipedia.org/wiki/Quantum_logic_gate), can exactly replicate the infinite set of unitary transformations allowed in quantum computing. This means, unlike classical computing, it is impossible for a quantum computer to implement every possible quantum program exactly using a finite number of gates. Thus quantum computers cannot be universal in the same sense of classical computers. As a result, when we say that a set of gates is *universal* for quantum computing we actually mean something slightly weaker than we mean with classical computing.
-For universality, we require that a quantum computer only *approximate* every unitary matrix within a finite error using a finite length gate sequence.
-In other words, a set of gates is a universal gate set if any unitary transformation can be approximately written as a product of gates from this set. It is required that for any prescribed error bound, there exist gates $G_{1}, G_{2}, \ldots, G_N$ from the gate set such that
-
-$$
-G_N G_{N-1} \cdots G_2 G_1 \approx U.
-$$
-
-Note that because the convention for matrix multiplication is to multiply from right to left the first gate operation in this sequence, $G_N$, is actually the last one applied to the quantum state vector. More formally, such a gate set is said to be universal if for every error tolerance $\epsilon>0$ there exists $G_1, \ldots, G_N$ such that  the distance between $G_N\ldots G_1$ and $U$ is at most $\epsilon$. Ideally the value of $N$ needed to reach this distance of $\epsilon$ should scale poly-logarithmically with $1/\epsilon$.
-
 What does such a universal gate set look like in practice?  The simplest such universal gate set for single-qubit gates consists of only two gates: the Hadamard gate $H$ and the so-called $T$-gate (also known as the $\pi/8$ gate):
 
 $$
@@ -75,8 +65,7 @@ H=\frac{1}{\sqrt{2}}\begin{bmatrix} 1 & 1 \\\\  1 &-1  \end{bmatrix}, \qquad T=\
 $$
 
 However, for practical reasons related to quantum error correction it can be more convenient to consider a larger gate set, namely one that can be generated using $H$ and $T$.
-One can classify the quantum gates into two categories: Clifford gates and the $T$-gate.
-This subdivision is useful because in many quantum error correction schemes the so-called Clifford gates are easy to implement, that is they require very few resources in terms of operations and qubits to implement fault tolerantly, whereas non-Clifford gates are quite costly when requiring fault tolerance. The standard set of single-qubit Clifford gates, [included by default in Q#](xref:microsoft.quantum.libraries.overview.standard.prelude), include
+One can classify the quantum gates into two categories: Clifford gates and the $T$-gate. The standard set of single-qubit Clifford gates, [included by default in Q#](xref:microsoft.quantum.libraries.overview.standard.prelude), include
 
 $$
 H=\frac{1}{\sqrt{2}}\begin{bmatrix} 1 & 1 \\\\  1 &-1  \end{bmatrix} , \qquad S =\begin{bmatrix} 1 & 0 \\\\  0 & i \end{bmatrix}= T^2, \qquad X=\begin{bmatrix} 0 &1 \\\\  1& 0 \end{bmatrix}= HT^4H,
