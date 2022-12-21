@@ -19,7 +19,11 @@ In this article, you'll learn the workflow of the Resource Estimator and how the
 
 ## Code distance and T factory estimation
 
-The Resource Estimator takes the optional job parameters `{qubitParams, qecScheme, errorBudget}` to compute a resource estimation of qubit technology and architecture. It calculates the QEC code distance, and from it, the number of physical qubits needed to encode one logical qubit and the runtime of one logical depth or cycle. The Resource Estimator also calculates how many physical qubits are needed to run one T factory and for how long the T factory runs. These values are reserved and will be used in subsequent steps of the workflow.
+The Resource Estimator takes the optional job parameters `{qubitParams, qecScheme, errorBudget}` to compute a resource estimation of qubit technology and architecture. It calculates the QEC code distance, and from it, the number of physical qubits needed to encode one logical qubit and the runtime of one logical depth or cycle.
+
+The Resource Estimator uses a logical layer called *planar quantum ISA* that acts as the interface between the software and hardware layers. It abstracts the details of how QEC is implemented in the layer below, retaining only a set of fault-tolerant logical operations as its instruction set. For more information, see [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629).
+
+It is crucial that the quantum gate set of a fault-tolerant quantum computer is [universal](xref:microsoft.quantum.concepts.tfactories#universal-set-of-quantum-gates), meaning it is complete for quantum computing. In the Azure Quantum Resource Estimator, the preparation of T gates is crucial because the other quantum operations are not sufficient for universal quantum computation. This is achieved via the generation of T states using [T factories](xref:microsoft.quantum.concepts.tfactories#t-factories-in-the-azure-quantum-resource-estimator). The Resource Estimator calculates how many physical qubits are needed to run one T factory and for how long the T factory runs. These values are reserved and will be used in subsequent steps of the workflow.
 
 :::image type="content" source="media/resource-estimator-workflow.png" alt-text="Diagram showing the workflow of the resource estimator. The resource estimation is done based on the job parameters and quantum program, and the output data is extracted at different levels of the evaluation of the quantum program.":::
 
@@ -45,7 +49,7 @@ Similarly, the runtime of the algorithm is $\text{Number of algorithmic logical 
 
 ## T factory physical estimation
 
-In the [Algorithmic logical estimation](#algorithmic-logical-estimation) step, the Resource Estimator calculates the total number of T states needed to run the algorithm. From the job parameters, the Resource Estimator has calculated the number of physical qubits for a single T factory and its runtime. 
+In the [Algorithmic logical estimation](#algorithmic-logical-estimation) step, the Resource Estimator calculates the total number of T states needed to run the algorithm. From the job parameters, the Resource Estimator has calculated the number of physical qubits for a single [T factory](xref:microsoft.quantum.concepts.tfactories) and its runtime. 
 
 The following diagram shows an example of the runtime of the algorithm (red) and the runtime of one T factory (blue). You can see that the runtime of the T factory is shorter than the runtime of the algorithm. In this example, one T factory can distill one T state. Two questions arise:
 
