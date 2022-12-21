@@ -235,6 +235,8 @@
     items:  
     - name: Run Azure Quantum notebooks
       href: how-to-run-notebooks-workspace.md
+    - name: Manage Azure Quantum workspace access
+      href: manage-workspace-access.md
     - name: Add a group to your Azure Quantum workspace
       href: bulk-add-users-to-a-workspace.md
     - name: Work with jobs
