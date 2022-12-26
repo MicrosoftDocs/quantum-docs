@@ -58,14 +58,13 @@ This notion of universality is akin to the notion of universality for traditiona
 In quantum computing, the valid transformations that we are allowed to perform on a qubit are unitary transformations and measurement.
 The *adjoint operation* or the complex conjugate transpose is of crucial importance to quantum computing because it is needed to invert quantum transformations.
 
-What does such a universal gate set look like in practice?  The simplest such universal gate set for single-qubit gates consists of only two gates: the Hadamard gate $H$ and the so-called $T$-gate (also known as the $\pi/8$ gate):
+Single-qubit operations, or single-qubit quantum gates can be classified into two categories: Clifford gates and the non-Clifford gates. Non-Clifford gates consist only of  $T$-gate (also known as the $\pi/8$ gate).
 
 $$
-H=\frac{1}{\sqrt{2}}\begin{bmatrix} 1 & 1 \\\\  1 &-1  \end{bmatrix}, \qquad T=\begin{bmatrix} 1 & 0 \\\\  0 & e^{i\pi/4} \end{bmatrix}.
+T=\begin{bmatrix} 1 & 0 \\\\  0 & e^{i\pi/4} \end{bmatrix}.
 $$
 
-However, for practical reasons related to quantum error correction it can be more convenient to consider a larger gate set, namely one that can be generated using $H$ and $T$.
-One can classify the quantum gates into two categories: Clifford gates and the $T$-gate. The standard set of single-qubit Clifford gates, [included by default in Q#](xref:microsoft.quantum.libraries.overview.standard.prelude), include
+The standard set of single-qubit Clifford gates, [included by default in Q#](xref:microsoft.quantum.libraries.overview.standard.prelude), include
 
 $$
 H=\frac{1}{\sqrt{2}}\begin{bmatrix} 1 & 1 \\\\  1 &-1  \end{bmatrix} , \qquad S =\begin{bmatrix} 1 & 0 \\\\  0 & i \end{bmatrix}= T^2, \qquad X=\begin{bmatrix} 0 &1 \\\\  1& 0 \end{bmatrix}= HT^4H,
@@ -75,12 +74,9 @@ $$
 Y = \begin{bmatrix} 0 & -i \\\\  i & 0 \end{bmatrix}=T^2HT^4  HT^6, \qquad Z=\begin{bmatrix}1&0\\\\ 0&-1 \end{bmatrix}=T^4.
 $$
 
-Here the operations $X$, $Y$ and $Z$ are used especially frequently and are named [*Pauli operators*](https://en.wikipedia.org/wiki/Pauli_matrices) after their creator Wolfgang Pauli.
-Together with the non-Clifford gate (the $T$-gate), these operations can be composed to approximate any unitary transformation on a single qubit.
+Here the operations $X$, $Y$ and $Z$ are used especially frequently and are named [*Pauli operators*](https://en.wikipedia.org/wiki/Pauli_matrices) after their creator Wolfgang Pauli. Together with the non-Clifford gate (the $T$-gate), these operations can be composed to approximate any unitary transformation on a single qubit.
 
 For more information on these operations, their Bloch sphere representations and Q# implementations, see [Intrinsic Operations and Functions](xref:microsoft.quantum.libraries.overview.standard.prelude#intrinsic-operations-and-functions).
-
-As an example of how unitary transformations can be built from these primitives, the three transformations pictured in the Bloch spheres above correspond to the gate sequence $\begin{bmatrix} 1 \\\\  0 \end{bmatrix} \mapsto HZH \begin{bmatrix} 1 \\\\  0 \end{bmatrix} = \begin{bmatrix} 0 \\\\  1 \end{bmatrix}$.
 
 While the previous constitute the most popular primitive gates for describing operations on the logical level of the stack (think of the logical level as the level of the quantum algorithm), it is often convenient to consider less basic operations at the algorithmic level, for example operations closer to a function description level. Fortunately, Q# also has methods available for implementing higher-level unitaries, which in turn allow high-level algorithms to be implemented without explicitly decomposing everything down to Clifford and $T$-gates.
 
