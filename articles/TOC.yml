@@ -83,6 +83,8 @@
         href: concepts-dirac-notation.md
       - name: Pauli measurements
         href: concepts-pauli-measurements.md
+      - name: T gates & T factories
+        href: concepts-tfactories.md
       - name: Quantum circuits
         href: concepts-circuits.md
       - name: Quantum oracles
