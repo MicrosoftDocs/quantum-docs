@@ -37,7 +37,9 @@ $$
 H=\frac{1}{\sqrt{2}}\begin{bmatrix} 1 & 1 \\\\  1 &-1  \end{bmatrix}, \qquad T=\begin{bmatrix} 1 & 0 \\\\  0 & e^{i\pi/4} \end{bmatrix}.
 $$
 
-In a quantum computer, quantum gates can be classified into two categories: Clifford gates and the $T$-gate. This subdivision is useful because in many quantum error correction (QEC)schemes the so-called Clifford gates are easy to implement, that is they require very few resources in terms of operations and qubits to implement fault tolerantly, whereas non-Clifford gates are quite costly when requiring fault tolerance. The standard set of single-qubit Clifford gates, [included by default in Q#](xref:microsoft.quantum.libraries.overview.standard.prelude), include
+In a quantum computer, quantum gates can be classified into two categories: Clifford gates and non-Clifford gate $T$-gate. Quantum programs made from only Clifford gates can be simulated efficiently using a classical computer, and therefore, non-Clifford gates are required to obtain quantum advantage. In many quantum error correction (QEC)schemes the so-called Clifford gates are easy to implement, that is they require very few resources in terms of operations and qubits to implement fault tolerantly, whereas non-Clifford gates are quite costly when requiring fault tolerance. In a universal quantum gate set, the T gate is commonly used as the non-Clifford gate.
+
+The standard set of single-qubit Clifford gates, [included by default in Q#](xref:microsoft.quantum.libraries.overview.standard.prelude), include
 
 $$
 H=\frac{1}{\sqrt{2}}\begin{bmatrix} 1 & 1 \\\\  1 &-1  \end{bmatrix} , \qquad S =\begin{bmatrix} 1 & 0 \\\\  0 & i \end{bmatrix}= T^2, \qquad X=\begin{bmatrix} 0 &1 \\\\  1& 0 \end{bmatrix}= HT^4H,
