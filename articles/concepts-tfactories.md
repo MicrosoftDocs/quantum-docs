@@ -21,7 +21,8 @@ According to [DiVincenzo's criteria](https://arxiv.org/pdf/cond-mat/9612126v2.pd
 
 There are only four functions that map one bit to one bit on a classical computer. In contrast, there are an infinite number of unitary transformations on a single qubit on a quantum computer. Therefore, no finite set of primitive quantum operations or gates, can exactly replicate the infinite set of unitary transformations allowed in quantum computing. This means, unlike classical computing, it is impossible for a quantum computer to implement every possible quantum program exactly using a finite number of gates. Thus quantum computers cannot be universal in the same sense of classical computers. As a result, when we say that a set of gates is *universal* for quantum computing we actually mean something slightly weaker than we mean with classical computing.
 
-For universality, we require that a quantum computer only *approximate* every unitary matrix within a finite error using a finite length gate sequence.
+For universality, we require that a quantum computer only *approximates* every unitary matrix within a finite error using a finite length gate sequence.
+
 In other words, a set of gates is a universal gate set if any unitary transformation can be approximately written as a product of gates from this set. It is required that for any prescribed error bound, there exist gates $G_{1}, G_{2}, \ldots, G_N$ from the gate set such that
 
 $$
