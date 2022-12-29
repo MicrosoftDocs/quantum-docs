@@ -2,7 +2,7 @@
 author: bradben
 description: Troubleshoot common Azure Quantum issues.
 ms.author: brbenefield
-ms.date: 12/14/2022
+ms.date: 12/29/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
@@ -15,6 +15,11 @@ uid: microsoft.quantum.azure.common-issues
 When you first start working with Azure Quantum, you may run into these common issues. 
 
 ## Submitting jobs
+
+### Issue: Missing targets
+
+If the target where you want to run your job is missing from the available target list, you likely need to update to the latest version of the [Quantum Development Kit (Visual Studio 2022)](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or [Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
+
 
 ### Issue: Operation returns an invalid status code 'Unauthorized'
 
