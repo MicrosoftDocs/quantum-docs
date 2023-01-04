@@ -20,7 +20,6 @@ Just like being familiar with the [basic concepts of quantum physics](xref:micro
 - [Jupyter notebook tutorial on linear algebra](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/LinearAlgebra)
 - [Jupyter notebook tutorial on complex arithmetic](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/ComplexArithmetic)
 - [Linear Algebra for Quantum Computation](https://cds.cern.ch/record/1522001/files/978-1-4614-6336-8_BookBackMatter.pdf)
-- [Fundamentals of Linear Algebra](https://www.math.ubc.ca/~carrell/NB.pdf)
 - [Quantum Computation Primer](https://www.codeproject.com/Articles/5155638/Quantum-Computation-Primer-Part-1#exploring-quantum-superposition)
 
 ## Vectors and matrices in quantum computing
