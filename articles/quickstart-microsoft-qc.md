@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides a step-by-step guide to get you started with quantum computing on Azure Quantum
 ms.author: brbenefield
-ms.date: 12/13/2022
+ms.date: 01/09/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: quickstart

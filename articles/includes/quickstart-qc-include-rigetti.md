@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 12/13/2022
+ms.date: 01/09/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -29,7 +29,7 @@ To complete this tutorial, you need
 
 1. From the window that appears at the bottom, select **Open new project**.
 
-1. You should see two files: the project file and **Program.qs**, which contains starter code. Open **Program.qs**.
+1. You should see two files: **QuantumRNG.csproj**, the project file, and **Program.qs**, which contains starter code.
 
 1. Start by opening the **QuantumRNG.csproj** file and adding the `ExecutionTarget` property, which provides design-time feedback on the compatibility of your program for Rigetti's hardware.
 
@@ -38,7 +38,7 @@ To complete this tutorial, you need
       <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
-        <ExecutionTarget>rigetti.qpu.aspen-m-2</ExecutionTarget>
+        <ExecutionTarget>rigetti.qpu.aspen-m-3</ExecutionTarget>
       </PropertyGroup>
     </Project>
     ```
@@ -53,9 +53,19 @@ To complete this tutorial, you need
 
         @EntryPoint()
         operation GenerateRandomBits() : Result[] {
+
             use qubits = Qubit[4];
-            ApplyToEach(H, qubits);
-            return MultiM(qubits);
+
+            H(qubits[0]);
+            let a = M(qubits[0]);
+            H(qubits[1]);
+            let b = M(qubits[1]);
+            H(qubits[2]);
+            let c = M(qubits[2]);
+            H(qubits[3]);
+            let d = M(qubits[3]);
+            
+            return[a,b,c,d];
         }
     }
     ```
@@ -130,8 +140,8 @@ Next, we'll prepare your environment to run the program against the workspace yo
    rigetti         rigetti.sim.qvm                               Available             5
    rigetti         rigetti.qpu.aspen-11                          Unavailable           0
    rigetti         rigetti.qpu.aspen-m-2                         Available             5
+   rigetti         rigetti.qpu.aspen-m-3                         Available             5
    ```
-
 
     > [!NOTE]
     > When you submit a job in Azure Quantum it will wait in a queue until the
@@ -139,22 +149,54 @@ Next, we'll prepare your environment to run the program against the workspace yo
     > the target list command shows you how many seconds recently run jobs waited
     > in the queue. This can give you an idea of how long you might have to wait.
 
+## Simulate the program in the Rigetti simulator
+
+Before you run a program against real hardware, we recommend running it against a quantum simulator first (if possible, based on the number of qubits required) to help ensure that your algorithm is doing what you want.
+
+To run your program with the Rigetti QVM simulator, submit the following command:
+
+```azurecli
+az quantum execute --target-id rigetti.sim.qvm -o table
+```
+
+This command compiles your program, submits it to the Rigetti QVM simulator, and waits until it has finished simulating the program. Once it's done, it outputs a histogram similar to this:
+
+```output
+Result        Frequency
+------------  -----------  ----------------------[0, 0, 0, 0]  0.06600000   |█                   |
+[1, 1, 1, 1]  0.05800000   |█                   |
+[0, 0, 0, 1]  0.06000000   |█                   |
+[0, 1, 1, 1]  0.07400000   |█                   |
+[0, 0, 1, 1]  0.05800000   |█                   |
+[1, 0, 1, 0]  0.06400000   |█                   |
+[1, 1, 0, 1]  0.07600000   |██                  |
+[1, 1, 0, 0]  0.04400000   |█                   |
+[0, 1, 0, 1]  0.06000000   |█                   |
+[1, 0, 1, 1]  0.07400000   |█                   |
+[0, 1, 0, 0]  0.05800000   |█                   |
+[0, 0, 1, 0]  0.07200000   |█                   |
+[0, 1, 1, 0]  0.06800000   |█                   |
+[1, 1, 1, 0]  0.05600000   |█                   |
+[1, 0, 0, 0]  0.05600000   |█                   |
+[1, 0, 0, 1]  0.05600000   |█                   |
+```
+
 ## Run the program on hardware
 
 To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command this will compile and submit your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long that may be, you can run `az quantum target list -o table` as described above. Depending on the provider you selected, you'll see:
 
 
    ```azurecli
-   az quantum job submit --target-id rigetti.qpu.aspen-m-2 -o table
+   az quantum job submit --target-id rigetti.qpu.aspen-m-3 -o table
    ```
 
    ```output
     Name        ID                                    Status    Target                Submission time
     ----------  ------------------------------------  --------  --------              ---------------------------------
-    QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   quantinuum.qpu.h1-1   2020-01-12T22:41:27.8855301+00:00
+    QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   rigetti.qpu.aspen-m-3   2020-01-12T22:41:27.8855301+00:00
    ```
 
-The tables above show that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the Id output by the previous command, for example:
+The tables above show that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the ID output by the previous command, for example:
 
    ```azurecli
     az quantum job show -o table --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
@@ -163,10 +205,10 @@ The tables above show that your job has been submitted and is waiting for its tu
    ```output
     Name        ID                                    Status    Target               Submission time
     ----------  ------------------------------------  --------  --------             ---------------------------------
-    QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   rigetti.qpu.aspen-m-2  2020-10-22T22:41:27.8855301+00:00
+    QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   rigetti.qpu.aspen-m-3  2020-10-22T22:41:27.8855301+00:00
    ```
 
-`Status` in the above table changes to `Succeeded`. Once that's done you can get the results from the job by running `az quantum job output`:
+Eventually, you'll see `Status` in the above table change to `Succeeded`. Once that's done, you can get the results from the job by running `az quantum job output`:
 
    ```azurecli
    az quantum job output -o table --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
