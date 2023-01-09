@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to create an Azure Quantum workspace.
 ms.author: brbenefield
-ms.date: 11/22/2022
+ms.date: 12/14/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -38,13 +38,13 @@ Register for free and sign up for a [pay-as-you-go subscription](https://azure.m
 
 Sign up for a [free trial subscription for 30 days](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). With the Azure Quantum Credits you'll have $500 (USD) to use in each quantum hardware provider. After 30 days of sign-up or once you've consumed all your Azure Quantum Credits (whichever occurs first), you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using the Azure Quantum services. After the exhaustion of your Azure Quantum Credits, you'll only pay for the services you use and you can cancel anytime. 
 
-In addition, the free Azure trial gets you started with $200 (USD) in Azure credits to be used in Azure 1st-party services (Azure Quantum is not eligible) within the first 30 days of sign-up.
+In addition, the free Azure trial gets you started with $200 (USD) in Azure credits to be used in Azure 1st-party services (Azure Quantum isn't eligible) within the first 30 days of sign-up.
 
 ### [Students](#tab/student)
 
 Sign up for an [Azure for Students subscription](https://azure.microsoft.com/offers/ms-azr-0170p/). With the Azure Quantum Credits you'll have $500 (USD) to use in each quantum hardware provider. Once you've consumed all your credits, you must upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go), and you can cancel anytime.
 
-Azure for Students gets you started with $100 (USD) in Azure Credits to be used in Azure 1st-party services (Azure Quantum is not eligible), and you don't need a credit card to sign-up.  
+Azure for Students gets you started with $100 (USD) in Azure Credits to be used in Azure 1st-party services (Azure Quantum isn't eligible), and you don't need a credit card to sign-up.  
 
 ### [Enterprise Agreement](#tab/EA)
 
@@ -73,16 +73,20 @@ To create an Azure Quantum workspace, follow these steps.
 
    |Option | Description |
    |--- | --- |
-   | Quick create | This option is the easiest path to creating a workspace. It automatically creates the necessary resource group and storage account, adds the IonQ, Quantinuum, Rigetti, Microsoft Quantum Computing, and Microsoft QIO providers, and includes free Azure Quantum Credits for IonQ, Quantinuum, and Rigetti hardware ($500 USD each). You workspace can still be customized after creation, if needed. |
+   | Quick create | This option is the easiest path to creating a workspace. It automatically creates the necessary resource group and storage account, adds the IonQ, Quantinuum, Rigetti, Microsoft Quantum Computing, and Microsoft QIO providers, and includes free Azure Quantum Credits for IonQ, Quantinuum, and Rigetti hardware ($500 USD each). Your workspace can still be customized after creation, if needed. |
    |Advanced create | Use this option to manually configure your resource group and storage account, select other payment options for your providers, and set tags to categorize resources. By default, this option also adds the IonQ, Quantinuum, Rigetti, Microsoft Quantum Computing, and Microsoft QIO providers, and includes free Azure Quantum Credits for IonQ, Quantinuum, and Rigetti hardware ($500 USD each). |
    
 ### [Quick create](#tab/tabid-quick)
 
+**Note:** To use **Quick create**, you must be an **Owner** of the subscription you selected in the previous step. To see a list of your subscriptions and access, see [Check your role assignments](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-role-assignments).
+
 1. Enter a name for the workspace.
 1. Select the region for the workspace.
-1. Click **Create**.
+1. Select **Create**.
 
 ### [Advanced create](#tab/tabid-advanced)
+
+**Note:** If you're unable to create or select a resource group or storage account as described in the following steps, you don't have the access required at the subscription, resource group, or storage account level. For more information on authorization, see [Role requirements for creating a workspace](xref:microsoft.quantum.how-to.manage-workspace-access#role-requirements-for-creating-a-workspace).
 
 1. Select an existing [resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) or create a new one.
 
@@ -95,19 +99,17 @@ To create an Azure Quantum workspace, follow these steps.
    - To have Azure automatically create a storage account, select **Create a new storage account with default settings**.
    - To use an existing storage account in your subscription or to create a new one manually, select **Customize storage account settings**.
 
-   > [!IMPORTANT]
-   > You must be an **Owner** of the resource group you use to create a new storage account. For more information about how resource groups work in Azure, see [Manage Azure resource groups by using the Azure portal](/azure/azure-resource-manager/management/manage-resource-groups-portal).
 
-1. Click **Next**.
+1. Select **Next**.
 
-1. The IonQ, Quantinuum, Rigetti, Microsoft Quantum Computing, and Microsoft QIO providers are automatically added to the workspace. To add another available provider, click **Add** on that provider's tile. To modify the pricing plan for any of the selected providers, click **Modify**.
+1. The IonQ, Quantinuum, Rigetti, Microsoft Quantum Computing, and Microsoft QIO providers are automatically added to the workspace. To add another available provider, select **Add** on that provider's tile. To modify the pricing plan for any of the selected providers, select **Modify**.
 
    > [!NOTE]
    > Pricing for Azure Quantum varies by provider. Please consult the information in the Providers tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information, or visit the [Azure Quantum pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
 
-1. Click **Next**.
+1. Select **Next**.
 
-1. To add optional tags to your workspace, enter a name/value pair, or click **Next**.
+1. To add optional tags to your workspace, enter a name/value pair, or select **Next**.
 
 1. Review the settings you've selected and if everything is correct, select **Create** to create your workspace.
 
@@ -116,7 +118,7 @@ To create an Azure Quantum workspace, follow these steps.
 Deployment of your workspace may take a few minutes. The status and deployment details will be updated in the portal.
 
 > [!NOTE]
-> If you run into any issue, see [Azure Quantum common issues](xref:microsoft.quantum.azure.common-issues).
+> If you run into any issues, see [Azure Quantum common issues: Creating an Azure Quantum workspace](xref:microsoft.quantum.azure.common-issues#creating-an-azure-quantum-workspace).
 
 ## Next steps
 

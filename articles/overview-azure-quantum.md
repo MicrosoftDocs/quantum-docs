@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs or solve optimization problems in the cloud.
-ms.date: 10/26/2022
+ms.date: 01/08/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -79,13 +79,15 @@ For more information, see [Azure Quantum Resource Estimator](xref:microsoft.quan
 
 ## What are Q\# and the Quantum Development Kit?
 
-The Microsoft Quantum Development Kit (QDK) is an **open-source** development kit for Azure Quantum. It is built-in to the Azure Quantum portal, where you can develop programs using hosted Jupyter Notebooks. You can also install the QDK to your own local environment and work both online with the Azure Quantum service and offline. The QDK includes the [quantum programming language Q#](xref:microsoft.quantum.overview.q-sharp), a high-level programming language that allows you to focus your work at the algorithm and application level to create quantum programs.
+The Microsoft Quantum Development Kit (QDK) is the SDK required to interface with the Azure Quantum service. You can install the QDK locally on your computer, or use it as a pre-installed component in the free hosted Jupyter notebooks part of the Azure Quantum service.
+
+The QDK includes the [quantum programming language Q#](xref:microsoft.quantum.overview.q-sharp), a high-level **open-source** programming language that allows you to focus your work at the algorithm and application level to create quantum programs.
 
 ### The Quantum Development Kit
 
-The QDK offers a set of tools that will assist you in the quantum software development process: 
+The QDK offers a set of tools that will assist you in the quantum software development process and that can be used standalone, independently from the Azure Quantum service: 
 
-- [Ready-to-use libraries](xref:microsoft.quantum.libraries.overview) to help you keep your code high-level, including both “standard” libraries that implement patterns common for a lot of quantum algorithms, and domain-specific libraries, such as chemistry and machine learning. 
+- [Open-source libraries](xref:microsoft.quantum.libraries.overview) to help you keep your code high-level, including both “standard” libraries that implement patterns common for a lot of quantum algorithms, and domain-specific libraries, such as chemistry and machine learning. 
 - Local and cloud-based [quantum computing simulators](xref:microsoft.quantum.machines.overview) that simulate current and future quantum machines, so that you can run and debug your quantum algorithms written in Q#.  
 - [Noise simulators](xref:microsoft.quantum.machines.overview.noise-simulator) that allow for simulating the behavior of Q# programs under the influence of noise and the stabilizer representation. 
 - Extensions for [Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) and [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode), and integration with [Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview).
