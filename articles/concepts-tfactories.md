@@ -21,15 +21,15 @@ According to [DiVincenzo's criteria](https://arxiv.org/pdf/cond-mat/9612126v2.pd
 
 There are only four functions that map one bit to one bit on a classical computer. In contrast, there are an infinite number of unitary transformations on a single qubit on a quantum computer. Therefore, no finite set of primitive quantum operations or gates, can exactly replicate the infinite set of unitary transformations allowed in quantum computing. This means, unlike classical computing, it is impossible for a quantum computer to implement every possible quantum program exactly using a finite number of gates. Thus quantum computers cannot be universal in the same sense of classical computers. As a result, when we say that a set of gates is *universal* for quantum computing we actually mean something slightly weaker than we mean with classical computing.
 
-For universality, we require that a quantum computer only *approximates* every unitary matrix within a finite error using a finite length gate sequence.
+For universality, it's required that a quantum computer only *approximates* every unitary matrix within a finite error using a finite length gate sequence.
 
-In other words, a set of gates is a universal gate set if any unitary transformation can be approximately written as a product of gates from this set. It is required that for any prescribed error bound, there exist gates $G_{1}, G_{2}, \ldots, G_N$ from the gate set such that
+In other words, a set of gates is a universal gate set if any unitary transformation can be approximately written as a product of gates from this set. It's required that for any prescribed error bound, there exist gates $G_{1}, G_{2}, \ldots, G_N$ from the gate set such that
 
 $$
 G_N G_{N-1} \cdots G_2 G_1 \approx U.
 $$
 
-Note that because the convention for matrix multiplication is to multiply from right to left the first gate operation in this sequence, $G_N$, is actually the last one applied to the quantum state vector. More formally, such a gate set is said to be universal if for every error tolerance $\epsilon>0$ there exists $G_1, \ldots, G_N$ such that  the distance between $G_N\ldots G_1$ and $U$ is at most $\epsilon$. Ideally the value of $N$ needed to reach this distance of $\epsilon$ should scale poly-logarithmically with $1/\epsilon$.
+Because the convention for matrix multiplication is to multiply from right to left the first gate operation in this sequence, $G_N$, is actually the last one applied to the quantum state vector. More formally, such a gate set is said to be universal if for every error tolerance $\epsilon>0$ there exists $G_1, \ldots, G_N$ such that  the distance between $G_N\ldots G_1$ and $U$ is at most $\epsilon$. Ideally the value of $N$ needed to reach this distance of $\epsilon$ should scale poly-logarithmically with $1/\epsilon$.
 
 For example, the set formed by Hadamard, CNOT and T gates is a universal set, from which any quantum computation (on any number of qubits) can be generated. The Hadamard and the T gate set generates any single-qubit gate:
 
@@ -37,7 +37,7 @@ $$
 H=\frac{1}{\sqrt{2}}\begin{bmatrix} 1 & 1 \\\\  1 &-1  \end{bmatrix}, \qquad T=\begin{bmatrix} 1 & 0 \\\\  0 & e^{i\pi/4} \end{bmatrix}.
 $$
 
-In a quantum computer, quantum gates can be classified into two categories: Clifford gates and non-Clifford gate $T$-gate. Quantum programs made from only Clifford gates can be simulated efficiently using a classical computer, and therefore, non-Clifford gates are required to obtain quantum advantage. In many quantum error correction (QEC)schemes the so-called Clifford gates are easy to implement, that is they require very few resources in terms of operations and qubits to implement fault tolerantly, whereas non-Clifford gates are quite costly when requiring fault tolerance. In a universal quantum gate set, the T gate is commonly used as the non-Clifford gate.
+In a quantum computer, quantum gates can be classified into two categories: Clifford gates and non-Clifford gates, in this case, the T gate. Quantum programs made from only Clifford gates can be simulated efficiently using a classical computer, and therefore, non-Clifford gates are required to obtain quantum advantage. In many quantum error correction (QEC) schemes the so-called Clifford gates are easy to implement, that is they require very few resources in terms of operations and qubits to implement fault tolerantly, whereas non-Clifford gates are quite costly when requiring fault tolerance. In a universal quantum gate set, the T gate is commonly used as the non-Clifford gate.
 
 The standard set of single-qubit Clifford gates, [included by default in Q#](xref:microsoft.quantum.libraries.overview.standard.prelude), include
 
@@ -53,7 +53,7 @@ Together with the non-Clifford gate (the T gate), these operations can be compos
 
 ## T factories in the Azure Quantum Resource Estimator 
 
-The non-Clifford T gate preparation is crucial because the other operations are not sufficient for universal quantum computation. To implement non-Clifford operations for practical-scale algorithms, we require low error rate T gates or T states, however these can be difficult to directly implement on logical qubits, and can also be difficult for some physical qubits.
+The non-Clifford T gate preparation is crucial because the other quantum gates are not sufficient for universal quantum computation. To implement non-Clifford operations for practical-scale algorithms, we require low error rate T gates or T states, however these can be difficult to directly implement on logical qubits, and can also be difficult for some physical qubits.
 
 In the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator), the required low error rate T states are produced using a T state distillation factory, or T factory for short. These T factories typically involve a sequence of rounds of distillation, where each round takes in many noisy T states encoded in a smaller distance code, processes them using a distillation unit, and outputs fewer less noisy T states encoded in a larger distance code, with the number of rounds, distillation units, and distances all being parameters which can be varied. This procedure is iterated, where the output T states of one round are fed into the next round as inputs. 
 
