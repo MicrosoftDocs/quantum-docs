@@ -71,7 +71,7 @@ To complete this tutorial, you need
     ```
 
 > [!NOTE] 
-> If you would like to learn more about this program code, see [Create your first Q# program by using the Quantum Development Kit](/training/modules/qsharp-create-first-quantum-development-kit/).
+> You may notice that the sample code for Rigetti differs from the other samples in this Quickstart. Currently, Rigetti targets do not support mutable arrays, and therefore do not support the `ApplyToEach` or `MultiM` operations.
 
 ## Prepare the Azure CLI
 
