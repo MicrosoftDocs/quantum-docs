@@ -43,11 +43,33 @@ You can now print all of the quantum computing backends that are
 available on your workspace:
 
 ```python
-print([backend.name() for backend in provider.backends()])
+print("This workspace's targets:")
+for backend in provider.backends():
+    print("- " + backend.name())
 ```
 
 ```output
-['ionq.qpu', 'ionq.simulator']
+This workspace's targets:
+- ionq.qpu
+- ionq.qpu.aria-1
+- ionq.simulator
+- microsoft.estimator
+- quantinuum.hqs-lt-s1
+- quantinuum.hqs-lt-s1-apival
+- quantinuum.hqs-lt-s2
+- quantinuum.hqs-lt-s2-apival
+- quantinuum.hqs-lt-s1-sim
+- quantinuum.hqs-lt-s2-sim
+- quantinuum.qpu.h1-1
+- quantinuum.sim.h1-1sc
+- quantinuum.qpu.h1-2
+- quantinuum.sim.h1-2sc
+- quantinuum.sim.h1-1e
+- quantinuum.sim.h1-2e
+- rigetti.sim.qvm
+- rigetti.qpu.aspen-11
+- rigetti.qpu.aspen-m-2
+- rigetti.qpu.aspen-m-3
 ```
 
 ## Run a simple circuit

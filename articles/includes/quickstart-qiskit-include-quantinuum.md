@@ -45,21 +45,45 @@ You can now print all of the quantum computing backends that are
 available on your workspace:
 
 ```python
-print([backend.name() for backend in provider.backends()])
+print("This workspace's targets:")
+for backend in provider.backends():
+    print("- " + backend.name())
 ```
 
 ```output
-    ['ionq.qpu', 'ionq.qpu.aria-1', 'ionq.simulator', 'microsoft.estimator',  'quantinuum.qpu.h1-1', 'quantinuum.sim.h1-1sc, 'quantinuum.qpu.h1-2', 'quantinuum.sim.h1-2sc', 'quantinuum.sim.h1-1e', 'quantinuum.sim.h1-2e', 'rigetti.sim.qvm', 'rigetti.qpu.aspen-m-2', `rigetti.qpu.aspen-m-3`]
+This workspace's targets:
+- ionq.qpu
+- ionq.qpu.aria-1
+- ionq.simulator
+- microsoft.estimator
+- quantinuum.hqs-lt-s1
+- quantinuum.hqs-lt-s1-apival
+- quantinuum.hqs-lt-s2
+- quantinuum.hqs-lt-s2-apival
+- quantinuum.hqs-lt-s1-sim
+- quantinuum.hqs-lt-s2-sim
+- quantinuum.qpu.h1-1
+- quantinuum.sim.h1-1sc
+- quantinuum.qpu.h1-2
+- quantinuum.sim.h1-2sc
+- quantinuum.sim.h1-1e
+- quantinuum.sim.h1-2e
+- rigetti.sim.qvm
+- rigetti.qpu.aspen-11
+- rigetti.qpu.aspen-m-2
+- rigetti.qpu.aspen-m-3
 ```
 
-## Run on the API validator 
+## Run on the syntax checker 
+
+To test the program before running it on the hardware, first run it on the Quantinuum syntax checker. 
 
 > [!NOTE]
-> The [Quantinuum API validator](xref:microsoft.quantum.providers.quantinuum#api-validator) backend will always return 0 on measurement.
+> The [Quantinuum syntax checker](xref:microsoft.quantum.providers.quantinuum#api-validator) backend will always return 0 on measurement.
 
 ```python
-# Get Quantinuum's API validator backend:
-apival_backend = provider.get_backend("quantinuum.sim.h1-1sc")
+# Get Quantinuum's syntax checker backend:
+syntax_backend = provider.get_backend("quantinuum.sim.h1-1sc")
 ```
 
 ```python
@@ -87,18 +111,13 @@ c: 3/════════════════╩══╩══╩═
                      0  1  2 
 ```
 
-Quantinuum backends support gates from a defined gateset which are compiled to run optimally on the hardware. If your circuit contains gates that are not in this list, you will need to transpile your circuit first into the supported gateset. For that, you can use the `transpile` function provided by Qiskit:
-
-```python
-from qiskit import transpile
-circuit = transpile(circuit, apival_backend)
-```
-
-This will return a new circuit object where gates are decomposed into gates that are supported by the specified backend.
+You can now run the program via the Azure Quantum service and get the
+result. The following cell submits a job that runs the circuit with
+1024 shots:
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = apival_backend.run(circuit, shots=1024)
+job = syntax_backend.run(circuit, shots=1024)
 job_id = job.id()
 print("Job id", job_id)
 
