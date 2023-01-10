@@ -115,7 +115,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
 
    Depending on the provider you selected, you will see:
 
-   ```output
+```output
 Provider      Target-id                                            Current Availability    Average Queue Time (seconds)
 ------------  ---------------------------------------------------  ----------------------  ------------------------------
 ionq          ionq.qpu                                             Available               38715
@@ -151,13 +151,13 @@ Microsoft     microsoft.populationannealing.cpu                    Available    
 Microsoft     microsoft.populationannealing-parameterfree.cpu      Available               0
 Microsoft     microsoft.substochasticmontecarlo.cpu                Available               0
 Microsoft     microsoft.substochasticmontecarlo-parameterfree.cpu  Available               0
-    ```    
+```    
 
-    > [!NOTE]
-    > When you submit a job in Azure Quantum it will wait in a queue until the
-    > provider is ready to run your program. The **Average Queue Time** column of
-    > the target list command shows you how many seconds recently run jobs waited
-    > in the queue. This can give you an idea of how long you might have to wait.
+> [!NOTE]
+> When you submit a job in Azure Quantum it will wait in a queue until the
+> provider is ready to run your program. The **Average Queue Time** column of
+> the target list command shows you how many seconds recently run jobs waited
+> in the queue. This can give you an idea of how long you might have to wait.
 
 ## Simulate the program in the IonQ provider
 
