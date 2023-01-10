@@ -9,7 +9,7 @@ ms.topic: include
 
 ## Load the required imports
 
-First, run the following cell to load the required imports:
+In Jupyter Notebooks, create a new notebook that uses the **Python 3** kernel. In the first cell, run the following code to load the required imports:
 
 ```python
 from qiskit import QuantumCircuit
@@ -192,7 +192,7 @@ Before running a job on the QPU, you can estimate how much it will cost to run. 
 
 ```python
 backend = provider.get_backend("ionq.qpu")
-cost = backend.estimate_cost(circuit, shots=100)
+cost = backend.estimate_cost(circuit, shots=1024)
 
 print(f"Estimated cost: {cost.estimated_total}")
 ```

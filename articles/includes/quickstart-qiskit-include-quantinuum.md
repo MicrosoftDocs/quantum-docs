@@ -9,7 +9,7 @@ ms.topic: include
 
 ## Load the required imports
 
-First, run the following cell to load the required imports:
+In Jupyter Notebooks, create a new notebook that uses the **Python 3** kernel. In the first cell, run the following code to load the required imports:
 
 ```python
 from qiskit import QuantumCircuit
@@ -174,7 +174,7 @@ qpu_backend = provider.get_backend("quantinuum.qpu.h1-1")
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = qpu_backend.run(circuit, shots=500)
+job = qpu_backend.run(circuit, shots=1024)
 job_id = job.id()
 print("Job id", job_id)
 
