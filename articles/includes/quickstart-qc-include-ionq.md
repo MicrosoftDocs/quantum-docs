@@ -116,10 +116,41 @@ Next, we'll prepare your environment to run the program against the workspace yo
    Depending on the provider you selected, you will see:
 
    ```output
-    Provider    Target-id                                       Status     Average Queue Time
-    ----------  ----------------------------------------------  ---------  --------------------
-    ionq        ionq.qpu                                        Available  0
-    ionq        ionq.simulator                                  Available  0
+Provider      Target-id                                            Current Availability    Average Queue Time (seconds)
+------------  ---------------------------------------------------  ----------------------  ------------------------------
+ionq          ionq.qpu                                             Available               38715
+ionq          ionq.qpu.aria-1                                      Available               2042052
+ionq          ionq.simulator                                       Available               2
+microsoft-qc  microsoft.estimator                                  Available               0
+quantinuum    quantinuum.hqs-lt-s1                                 Available               232817
+quantinuum    quantinuum.hqs-lt-s1-apival                          Available               331
+quantinuum    quantinuum.hqs-lt-s2                                 Unavailable             0
+quantinuum    quantinuum.hqs-lt-s2-apival                          Available               7
+quantinuum    quantinuum.hqs-lt-s1-sim                             Available               19488
+quantinuum    quantinuum.hqs-lt-s2-sim                             Available               1577
+quantinuum    quantinuum.hqs-lt                                    Available               0
+quantinuum    quantinuum.qpu.h1-1                                  Available               232817
+quantinuum    quantinuum.sim.h1-1sc                                Available               331
+quantinuum    quantinuum.qpu.h1-2                                  Unavailable             0
+quantinuum    quantinuum.sim.h1-2sc                                Available               7
+quantinuum    quantinuum.sim.h1-1e                                 Available               19488
+quantinuum    quantinuum.sim.h1-2e                                 Available               1577
+quantinuum    quantinuum.qpu.h1                                    Unavailable             0
+rigetti       rigetti.sim.qvm                                      Available               5
+rigetti       rigetti.qpu.aspen-11                                 Unavailable             0
+rigetti       rigetti.qpu.aspen-m-2                                Available               5
+rigetti       rigetti.qpu.aspen-m-3                                Available               5
+Microsoft     microsoft.paralleltempering-parameterfree.cpu        Available               0
+Microsoft     microsoft.paralleltempering.cpu                      Available               0
+Microsoft     microsoft.simulatedannealing-parameterfree.cpu       Available               0
+Microsoft     microsoft.simulatedannealing.cpu                     Available               0
+Microsoft     microsoft.tabu-parameterfree.cpu                     Available               0
+Microsoft     microsoft.tabu.cpu                                   Available               0
+Microsoft     microsoft.qmc.cpu                                    Available               0
+Microsoft     microsoft.populationannealing.cpu                    Available               0
+Microsoft     microsoft.populationannealing-parameterfree.cpu      Available               0
+Microsoft     microsoft.substochasticmontecarlo.cpu                Available               0
+Microsoft     microsoft.substochasticmontecarlo-parameterfree.cpu  Available               0
     ```    
 
     > [!NOTE]

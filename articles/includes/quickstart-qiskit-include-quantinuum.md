@@ -142,7 +142,8 @@ Result(backend_name='quantinuum.qpu.h1-1sc', backend_version='1', qobj_id='Qiski
 
 ![Qiskit circuit result on Quantinuum API validator](../media/azure-quantum-qiskit-hw-result-1.png)
 
-Looking at the histogram, you may notice that the random number generator returned 0 every time, which isn't very random. This is because that, while the API Validator ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
+> [!NOTE]
+> While the syntax checker ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true quantum measurement, you need to run your circuit on quantum hardware.
 
 ## Estimate job cost
 
