@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Work with the Resource Estimator
+title: Harness the Resource Estimator
 uid: microsoft.quantum.work-with-resource-estimator
 ---
 
