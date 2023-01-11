@@ -30,7 +30,7 @@ To complete this tutorial, you need
 
 1. From the window that appears at the bottom, select **Open new project**.
 
-1. You should see two files: the project file and **Program.qs**, which contains starter code. Open **Program.qs**.
+1. You should see two files: **QuantumRNG.csproj**, the project file, and **Program.qs**, which contains starter code.
 
 1. Start by opening the **QuantumRNG.csproj** file and adding the `ExecutionTarget` property, which will give you design-time feedback on the compatibility of your program for IonQ's hardware.
 
@@ -115,18 +115,49 @@ Next, we'll prepare your environment to run the program against the workspace yo
 
    Depending on the provider you selected, you will see:
 
-   ```output
-    Provider    Target-id                                       Status     Average Queue Time
-    ----------  ----------------------------------------------  ---------  --------------------
-    ionq        ionq.qpu                                        Available  0
-    ionq        ionq.simulator                                  Available  0
-    ```    
+```output
+Provider      Target-id                                            Current Availability    Average Queue Time (seconds)
+------------  ---------------------------------------------------  ----------------------  ------------------------------
+ionq          ionq.qpu                                             Available               38715
+ionq          ionq.qpu.aria-1                                      Available               2042052
+ionq          ionq.simulator                                       Available               2
+microsoft-qc  microsoft.estimator                                  Available               0
+quantinuum    quantinuum.hqs-lt-s1                                 Available               232817
+quantinuum    quantinuum.hqs-lt-s1-apival                          Available               331
+quantinuum    quantinuum.hqs-lt-s2                                 Unavailable             0
+quantinuum    quantinuum.hqs-lt-s2-apival                          Available               7
+quantinuum    quantinuum.hqs-lt-s1-sim                             Available               19488
+quantinuum    quantinuum.hqs-lt-s2-sim                             Available               1577
+quantinuum    quantinuum.hqs-lt                                    Available               0
+quantinuum    quantinuum.qpu.h1-1                                  Available               232817
+quantinuum    quantinuum.sim.h1-1sc                                Available               331
+quantinuum    quantinuum.qpu.h1-2                                  Unavailable             0
+quantinuum    quantinuum.sim.h1-2sc                                Available               7
+quantinuum    quantinuum.sim.h1-1e                                 Available               19488
+quantinuum    quantinuum.sim.h1-2e                                 Available               1577
+quantinuum    quantinuum.qpu.h1                                    Unavailable             0
+rigetti       rigetti.sim.qvm                                      Available               5
+rigetti       rigetti.qpu.aspen-11                                 Unavailable             0
+rigetti       rigetti.qpu.aspen-m-2                                Available               5
+rigetti       rigetti.qpu.aspen-m-3                                Available               5
+Microsoft     microsoft.paralleltempering-parameterfree.cpu        Available               0
+Microsoft     microsoft.paralleltempering.cpu                      Available               0
+Microsoft     microsoft.simulatedannealing-parameterfree.cpu       Available               0
+Microsoft     microsoft.simulatedannealing.cpu                     Available               0
+Microsoft     microsoft.tabu-parameterfree.cpu                     Available               0
+Microsoft     microsoft.tabu.cpu                                   Available               0
+Microsoft     microsoft.qmc.cpu                                    Available               0
+Microsoft     microsoft.populationannealing.cpu                    Available               0
+Microsoft     microsoft.populationannealing-parameterfree.cpu      Available               0
+Microsoft     microsoft.substochasticmontecarlo.cpu                Available               0
+Microsoft     microsoft.substochasticmontecarlo-parameterfree.cpu  Available               0
+```    
 
-    > [!NOTE]
-    > When you submit a job in Azure Quantum it will wait in a queue until the
-    > provider is ready to run your program. The **Average Queue Time** column of
-    > the target list command shows you how many seconds recently run jobs waited
-    > in the queue. This can give you an idea of how long you might have to wait.
+> [!NOTE]
+> When you submit a job in Azure Quantum it will wait in a queue until the
+> provider is ready to run your program. The **Average Queue Time** column of
+> the target list command shows you how many seconds recently run jobs waited
+> in the queue. This can give you an idea of how long you might have to wait.
 
 ## Simulate the program in the IonQ provider
 
@@ -166,7 +197,7 @@ This shows an equal frequency for each of the 16 possible states for measuring 4
 
 ## Run the program on hardware
 
-To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command this will compile and submit your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long that may be, you can run `az quantum target list -o table` as described above. Depending on the provider you selected, you will see:
+To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command, this will compile and submit your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long that may be, you can run `az quantum target list -o table` as described earlier.
 
 
    ```azurecli
@@ -179,7 +210,7 @@ To run the program on hardware, we'll use the asynchronous job submission comman
     QuantumRNG  5aa8ce7a-25d2-44db-bbc3-87e48a97249c  Waiting   ionq.qpu  2020-10-22T22:41:27.8855301+00:00
    ```
 
-The tables above show that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the ID output by the previous command, for example:
+The table shows that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the ID output by the previous command, for example:
 
    ```azurecli
     az quantum job show -o table --job-id 5aa8ce7a-25d2-44db-bbc3-87e48a97249c 
