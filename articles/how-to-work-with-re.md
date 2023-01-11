@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Work with the Resource Estimator
+title: Harness the Resource Estimator
 uid: microsoft.quantum.work-with-resource-estimator
 ---
 
@@ -37,7 +37,7 @@ There is no verification that resources are the same in every iteration. However
 > [!IMPORTANT]
 > Currently, special operations `BeginCaching` and `EndCaching` are only supported from Q# programs and the Azure CLI. 
 
-### How to avoid rerunning the same job
+## How to avoid rerunning the same job
  
 If you've already submitted a resource estimation job for a quantum program, you can retrieve the results in the future and avoid rerunning the same job.
 
