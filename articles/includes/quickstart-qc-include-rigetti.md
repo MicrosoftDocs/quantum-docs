@@ -45,33 +45,25 @@ To complete this tutorial, you need
 
 1. Replace the contents of **Program.qs** with the program:
 
-    ```qsharp
-    namespace QuantumRNG {
-        open Microsoft.Quantum.Intrinsic;
-        open Microsoft.Quantum.Measurement;
-        open Microsoft.Quantum.Canon;
+```qsharp
+namespace QuantumRNG {
+   open Microsoft.Quantum.Intrinsic;
+   open Microsoft.Quantum.Measurement;
+   open Microsoft.Quantum.Canon;
 
-        @EntryPoint()
-        operation GenerateRandomBits() : Result[] {
-
-            use qubits = Qubit[4];
-
-            H(qubits[0]);
-            let a = M(qubits[0]);
-            H(qubits[1]);
-            let b = M(qubits[1]);
-            H(qubits[2]);
-            let c = M(qubits[2]);
-            H(qubits[3]);
-            let d = M(qubits[3]);
-            
-            return[a,b,c,d];
-        }
-    }
-    ```
+   @EntryPoint()
+   operation GenerateRandomBits() : Result[] {
+      use qubits = Qubit[4];
+      for q in qubits {
+         H(q);
+      }
+      return MeasureEachZ(qubits);
+   }
+}
+```
 
 > [!NOTE] 
-> You may notice that the sample code for Rigetti differs from the other samples in this Quickstart. Currently, Rigetti targets do not support mutable arrays, and therefore do not support the `ApplyToEach` or `MultiM` operations.
+> While achieving the same results, this sample code for Rigetti differs from the other samples in this Quickstart, using a `for` loop to perform the quantum `H` operation and `MeasureEachZ` to measure the results. Currently, Rigetti targets do not support mutable arrays, and therefore do not support the `ApplyToEach` or `MultiM` operations.
 
 ## Prepare the Azure CLI
 
