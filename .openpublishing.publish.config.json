@@ -73,6 +73,7 @@
   },
   "docs_build_engine": {},
   "need_generate_pdf_url_template": true,
+  "need_generate_pdf": false,
   "contribution_branch_mappings": {},
   "JoinTOCPlugin": [
     {
