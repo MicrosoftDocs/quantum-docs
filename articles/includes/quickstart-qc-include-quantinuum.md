@@ -184,7 +184,7 @@ Looking at the histogram, you may notice that the random number generator return
 
 ## Run the program on hardware
 
-To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command this will compile and submit your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long that may be, you can run `az quantum target list -o table` as described above. Depending on the provider you selected, you'll see:
+To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command, this will compile and submit your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long that may be, you can run `az quantum target list -o table` as described earlier.
 
 
    ```azurecli
@@ -197,7 +197,7 @@ To run the program on hardware, we'll use the asynchronous job submission comman
     QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   quantinuum.qpu.h1-1   2020-01-12T22:41:27.8855301+00:00
    ```
 
-The tables above show that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the Id output by the previous command, for example:
+The table shows that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the Id output by the previous command, for example:
 
    ```azurecli
     az quantum job show -o table --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 

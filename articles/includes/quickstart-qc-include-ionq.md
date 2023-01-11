@@ -197,7 +197,7 @@ This shows an equal frequency for each of the 16 possible states for measuring 4
 
 ## Run the program on hardware
 
-To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command this will compile and submit your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long that may be, you can run `az quantum target list -o table` as described above. Depending on the provider you selected, you will see:
+To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command, this will compile and submit your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long that may be, you can run `az quantum target list -o table` as described earlier.
 
 
    ```azurecli
@@ -210,7 +210,7 @@ To run the program on hardware, we'll use the asynchronous job submission comman
     QuantumRNG  5aa8ce7a-25d2-44db-bbc3-87e48a97249c  Waiting   ionq.qpu  2020-10-22T22:41:27.8855301+00:00
    ```
 
-The tables above show that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the ID output by the previous command, for example:
+The table shows that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the ID output by the previous command, for example:
 
    ```azurecli
     az quantum job show -o table --job-id 5aa8ce7a-25d2-44db-bbc3-87e48a97249c 

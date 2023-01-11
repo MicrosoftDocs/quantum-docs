@@ -45,25 +45,25 @@ To complete this tutorial, you need
 
 1. Replace the contents of **Program.qs** with the program:
 
-```qsharp
-namespace QuantumRNG {
-   open Microsoft.Quantum.Intrinsic;
-   open Microsoft.Quantum.Measurement;
-   open Microsoft.Quantum.Canon;
-
-   @EntryPoint()
-   operation GenerateRandomBits() : Result[] {
-      use qubits = Qubit[4];
-      for q in qubits {
-         H(q);
-      }
-      return MeasureEachZ(qubits);
-   }
-}
-```
-
-> [!NOTE] 
-> While achieving the same results, this sample code for Rigetti differs from the other samples in this Quickstart, using a `for` loop to perform the quantum `H` operation and `MeasureEachZ` to measure the results. Currently, Rigetti targets do not support mutable arrays, and therefore do not support the `ApplyToEach` or `MultiM` operations.
+    ```qsharp
+    namespace QuantumRNG {
+       open Microsoft.Quantum.Intrinsic;
+       open Microsoft.Quantum.Measurement;
+       open Microsoft.Quantum.Canon;
+    
+       @EntryPoint()
+       operation GenerateRandomBits() : Result[] {
+          use qubits = Qubit[4];
+          for q in qubits {
+             H(q);
+          }
+          return MeasureEachZ(qubits);
+       }
+    }
+    ```
+    
+    > [!NOTE] 
+    > While achieving the same results, the example code for Rigetti differs from the other examples in this Quickstart, using a `for` loop to perform the quantum `H` operation and `MeasureEachZ` to measure the results. Currently, Rigetti targets do not support mutable arrays, and therefore do not support the `ApplyToEach` or `MultiM` operations.
 
 ## Prepare the Azure CLI
 
@@ -175,7 +175,7 @@ Result        Frequency
 
 ## Run the program on hardware
 
-To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command this will compile and submit your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long that may be, you can run `az quantum target list -o table` as described above. Depending on the provider you selected, you'll see:
+To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command, this will compile and submit your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long that may be, you can run `az quantum target list -o table` as described earlier. 
 
 
    ```azurecli
@@ -188,7 +188,7 @@ To run the program on hardware, we'll use the asynchronous job submission comman
     QuantumRNG  b4d17c63-2119-4d92-91d9-c18d1a07e08f  Waiting   rigetti.qpu.aspen-m-3   2020-01-12T22:41:27.8855301+00:00
    ```
 
-The tables above show that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the ID output by the previous command, for example:
+The table shows that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the ID output by the previous command, for example:
 
    ```azurecli
     az quantum job show -o table --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
