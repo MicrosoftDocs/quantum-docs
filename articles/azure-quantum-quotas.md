@@ -147,6 +147,92 @@ The `period` item indicates the period when your quota is renewed.
 
 ***
 
+### Tracking quota at subscription level
+
+1. Copy the following 
+
+```python
+# This gathers usage against quota for the various providers (quota is set at the subscription level).
+# Note that a provider may have mutiple quotas, such as Quantinuum that limits usage of their Emulator.
+
+rigetti_quota = 0
+ionq_quota = 0
+quantinuum_hqc_quota = 0
+quantinuum_ehqc_quota = 0
+
+rigetti_quota_utilization = 0
+ionq_quota_utilization = 0
+quantinuum_hqc_quota_utilization = 0
+quantinuum_ehqc_quota_utilization = 0
+
+for quota in workspace.get_quotas():
+    if (quota['provider_id'] == 'rigetti'):
+        rigetti_quota = quota['limit']
+        rigetti_quota_utilization = quota['utilization']
+    if (quota['provider_id'] == 'ionq'):
+        ionq_quota = quota['limit']
+        ionq_quota_utilization = quota['utilization']
+    if (quota['dimension'] == 'hqc'):
+        quantinuum_hqc_quota = quota['limit']
+        quantinuum_hqc_quota_utilization = quota['utilization']
+    if (quota['dimension'] == 'ehqc'):
+        quantinuum_ehqc_quota = quota['limit']
+        quantinuum_ehqc_quota_utilization = quota['utilization']
+
+print('Rigetti quota use: ', "{:,}".format(rigetti_quota_utilization), '/', "{:,}".format(rigetti_quota))
+print('IonQ quota use:', "{:,}".format(ionq_quota_utilization), '/', "{:,}".format(ionq_quota))
+print('Quantinuum HQC quota use:', "{:,}".format(quantinuum_hqc_quota_utilization), '/', "{:,}".format(quantinuum_hqc_quota))
+print('Quantinuum eHQC quota use:', "{:,}".format(quantinuum_ehqc_quota_utilization), '/', "{:,}".format(quantinuum_ehqc_quota))
+```
+```output
+Rigetti quota use:  179.0 / 25,000.0
+IonQ quota use: 16,524,900.0 / 16,666,667.0
+Quantinuum HQC quota use: 0.0 / 40.0
+Quantinuum eHQC quota use: 340.4 / 400.0
+```
+### Tracking quota at workspace level
+
+```python
+# This gathers usage against quota for the various providers for the current workspace
+# As there can be multiple workspaces in a subscription, the quota usage for the workspace is less or equal to usage against quota at the subscription level
+
+amount_utilized_rigetti = 0
+amount_utilized_ionq = 0
+amount_utilized_quantinuum_hqc = 0
+amount_utilized_quantinuum_ehqc = 0
+
+for job in workspace.list_jobs():
+    if (job.details.cost_estimate != None):
+        for event in job.details.cost_estimate.events:
+            if (event.amount_consumed > 0):
+                #print(event.amount_consumed, event.dimension_name, 'on', job.details.provider_id)
+                if (job.details.provider_id == 'rigetti'):
+                    amount_utilized_rigetti += event.amount_consumed
+                if (job.details.provider_id == 'ionq'):
+                    amount_utilized_ionq += event.amount_consumed
+
+                if (job.details.provider_id == 'quantinuum'):
+                    #print(event.amount_consumed, event.dimension_name, 'on', job.details.provider_id)
+                    #print(event)
+                    if (event.dimension_id == 'hqc'):
+                        amount_utilized_quantinuum_hqc += event.amount_consumed
+                    else:
+                        amount_utilized_quantinuum_ehqc += event.amount_consumed
+                        print(job.id, event)
+
+
+
+print('Rigetti quota use in current workspace: ', "{:,}".format(amount_utilized_rigetti), '/', "{:,}".format(rigetti_quota))
+print('IonQ quota use in current workspace:', "{:,}".format(amount_utilized_ionq), '/', "{:,}".format(ionq_quota))
+print('Quantinuum HQC quota use in current workspace:', "{:,}".format(amount_utilized_quantinuum_hqc), '/', "{:,}".format(quantinuum_hqc_quota))
+print('Quantinuum eHQC quota use in current workspace:', "{:,}".format(amount_utilized_quantinuum_ehqc), '/', "{:,}".format(quantinuum_ehqc_quota))
+```
+```ouput
+Rigetti quota use in current workspace:  179.0 / 25,000.0
+IonQ quota use in current workspace: 2,106,900.0 / 16,666,667.0
+Quantinuum HQC quota use in current workspace: 29.96 / 40.0
+Quantinuum eHQC quota use in current workspace: 988.4000000000002 / 400.0
+```
 
 
 ## Requesting additional quota
