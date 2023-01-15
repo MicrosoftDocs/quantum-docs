@@ -13,7 +13,7 @@ uid: microsoft.quantum.concepts.tfactories
 
 # T gates and T factories
 
-This article describes the role of T gates and T factories in the workflow of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). For more information, see [how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
+This article describes the role of T gates and T factories in fault tolerant quantum computing. Giving a quantum algorithm, the estimation of required resources for running the T gates and T factories becomes crucial. For more information, see [how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
 
 ## Universal set of quantum gates
 
@@ -53,10 +53,10 @@ Together with the non-Clifford gate (the T gate), these operations can be compos
 
 ## T factories in the Azure Quantum Resource Estimator 
 
-The non-Clifford T gate preparation is crucial because the other quantum gates are not sufficient for universal quantum computation. To implement non-Clifford operations for practical-scale algorithms, we require low error rate T gates or T states, however these can be difficult to directly implement on logical qubits, and can also be difficult for some physical qubits.
+The non-Clifford T gate preparation is crucial because the other quantum gates are not sufficient for universal quantum computation. To implement non-Clifford operations for practical-scale algorithms, low error rate T gates (or T states) is required. However, they can be difficult to directly implement on logical qubits, and can also be difficult for some physical qubits.
 
-In the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator), the required low error rate T states are produced using a T state distillation factory, or T factory for short. These T factories typically involve a sequence of rounds of distillation, where each round takes in many noisy T states encoded in a smaller distance code, processes them using a distillation unit, and outputs fewer less noisy T states encoded in a larger distance code, with the number of rounds, distillation units, and distances all being parameters which can be varied. This procedure is iterated, where the output T states of one round are fed into the next round as inputs. 
+In a fault tolerant quantum computer, the required low error rate T states are produced using a T state distillation factory, or T factory for short. These T factories typically involve a sequence of rounds of distillation, where each round takes in many noisy T states encoded in a smaller distance code, processes them using a distillation unit, and outputs fewer less noisy T states encoded in a larger distance code, with the number of rounds, distillation units, and distances all being parameters which can be varied. This procedure is iterated, where the output T states of one round are fed into the next round as inputs. 
 
-The T state distillation factories are implemented in a sequence of rounds, where each round consists of a set of identical distillation units run in parallel. For more details, see [physical estimation of the T factories](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).
+The T state distillation factories are implemented in a sequence of rounds, where each round consists of a set of identical distillation units run in parallel. The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) calculates how many physical qubits are needed to run one T factory and for how long the T factory runs, among other required parameters. For more details, see [physical estimation of the T factories](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).
 
 For more information, see Appendix C of [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629).
