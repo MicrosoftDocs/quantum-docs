@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 11/23/2022
+ms.date: 01/17/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -13,6 +13,9 @@ ms.topic: include
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - The latest version of the [Quantum Development Kit for Python](xref:microsoft.quantum.install-qdk.overview#use-q-and-python-with-jupyter-notebooks). This installs the `qsharp` Python package and the IQ# kernel, which powers the Q# Jupyter Notebook and
 Python experiences.
+
+> [!NOTE]
+> When installing Python, the option to **Install using conda** is recommended. The steps in this article assume a conda installation. 
 
 ## Quantum computing with Q# and Python
 
