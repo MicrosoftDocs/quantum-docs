@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to set up an Azure Quantum environment for different languages and platforms.
 ms.author: brbenefield
-ms.date: 11/17/2022
+ms.date: 01/17/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -142,7 +142,7 @@ To test your environment, see [Create a quantum-based random number generator](x
 All the necessary components for a Juptyer Notebooks environment can be set up with a single conda installation. 
 
 > [!NOTE]
-> If you want to use Jupyter Notebooks locally but prefer not to install conda, you can set up [Jupyter Notebooks with the .NET CLI](xref:microsoft.quantum.install-qdk.overview). 
+> While a conda installion is recommended, if you prefer not to install conda, you can also set up your environment using the .NET CLI.
 
 
 #### [Install using conda (recommended)](#tab/tabid-conda)
