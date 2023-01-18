@@ -209,7 +209,7 @@ In particular, $p = {}$ max(`oneQubitMeasurementErrorRate`, `oneQubitGateErrorRa
 
 You can specify pre-defined QEC schemes by selecting the QEC scheme name for the `qecScheme` parameter in the top-level parameters, for example: 
 
-```python
+``JSON
 {
     "qecScheme": { "name": "surface_code" }
 }
@@ -266,7 +266,7 @@ The exact parameters for each pre-defined QEC scheme (including a crossing pre-f
 
 Pre-defined QEC schemes can be customized by specifying the name and then updating any of the other values. For example, to increase the crossing pre-factor in the floquet code, write:
 
-```python
+```JSON
 {
     "qecScheme": {
         "name": "floquet_code",
