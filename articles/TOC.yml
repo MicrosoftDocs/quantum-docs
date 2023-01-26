@@ -41,6 +41,22 @@
       href: how-to-work-with-re.md
     - name: Resource Estimation with QIR
       href: tutorial-resource-estimator-qir.md
+  - name: Hybrid quantum computing
+    items: 
+    - name: An introduction to hybrid quantum computing
+      href: hybrid-computing-overview.md
+    - name: Batch quantum computing
+      href: hybrid-computing-batch.md
+    - name: Interactive quantum computing
+      href: hybrid-computing-interactive-batch.md
+    - name: Integrated quantum computing
+      href: hybrid-computing-integrated.md
+    - name: High-performance quantum computing
+      href: hybrid-computing-high-performance.md
+    - name: Distributed quantum computing
+      href: hybrid-computing-distributed.md
+    - name: Concepts for hybrid quantum computing
+      href: hybrid-computing-concepts.md
   - name: Run quantum circuits with Python
     items:
     - name: Submit a circuit with Qiskit

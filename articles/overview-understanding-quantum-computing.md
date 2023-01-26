@@ -144,6 +144,10 @@ Microsoft is partnering with quantum hardware companies to provide cloud access 
 
 For more information, see the full [quantum computing target list](xref:microsoft.quantum.reference.qc-target-list).
 
+### Hybrid quantum computing
+
+
+
 ### Azure Quantum simulators
 
 For the moment, the use of real quantum hardware is limited due to resources and budget. Quantum simulators serve to the purpose of running quantum algorithms, making it easy to test and debug an algorithm and then run it on real hardware with confidence that the result will match the expectations.
