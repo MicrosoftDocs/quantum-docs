@@ -18,11 +18,11 @@ Links to papers
 
 ## Examples
 
-Nested conditionals 
-Mid-circuit measurement
-Qubit re-use 
-Looping with statically bounded iteration counts 
-Classical function calls 
+- Nested conditionals 
+- Mid-circuit measurement
+- Qubit re-use 
+- Looping with statically bounded iteration counts 
+- Classical function calls 
 
 ## Supported hardware
 

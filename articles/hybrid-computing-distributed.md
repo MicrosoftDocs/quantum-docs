@@ -1,21 +1,23 @@
 ---
 author: bradben
-description: Understand the architecture and implementation of distributed quantum computing.
+description: Understand the different implementations of distributed hybrid quantum computing.
 ms.date: 01/25/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: concepts
+ms.topic: overview
 no-loc: ['Q#', '$$v']
-title: Overview of distributed quantum computing
+title: Overview of high-performance hybrid computing
 uid: microsoft.quantum.hybrid.distributed
 ---
 
-# Distributed quantum computing
+# High-performance hybrid computing
 
 Description, art
 
-## TBD
+## Fault tolerance
+
+## Resource estimation
 
 ## Next steps
 

@@ -13,7 +13,13 @@ uid: microsoft.quantum.concepts.hybrid
 
 # Hybrid quantum computing concepts
 
-## TBD
+Blurb
+
+## Mid-circuit measurement
+
+## Qubit re-use and optimizing the number of qubits
+
+## Error correction and fault tolerance
 
 ## Next steps
 
