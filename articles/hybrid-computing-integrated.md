@@ -14,7 +14,8 @@ uid: microsoft.quantum.hybrid.integrated
 # Integrated quantum computing
 
 Description, capabilities, art
-Links to papers
+
+![Integrated batch quantum computing](~/media/hybrid/integrated.png)
 
 ## Examples
 

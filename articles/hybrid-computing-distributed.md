@@ -15,6 +15,8 @@ uid: microsoft.quantum.hybrid.distributed
 
 Description, art
 
+![Distributed quantum computing](~/media/hybrid/distributed.png)
+
 ## Fault tolerance
 
 ## Resource estimation

@@ -15,6 +15,8 @@ uid: microsoft.quantum.hybrid.batch
 
 Description, art
 
+![Batch quantum computing](~/media/hybrid/batch.png)
+
 ## Examples
 
 Snippets

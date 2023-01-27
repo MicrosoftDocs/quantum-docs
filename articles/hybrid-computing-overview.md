@@ -15,70 +15,43 @@ uid: microsoft.quantum.overview.hybrid
 
 Hybrid quantum computing refers to the processes and architecture of a classical computer and a quantum computer working together to solve a problem. Classical computers have always been used in quantum computing to define quantum gates, control configuration of the quantum computer, submit jobs, and process results from the quantum computer. With hybrid quantum computing, however, classical and quantum computers work together in a back-and-forth collaboration, with each platform performing tasks at different stages of the solution. 
 
-As quantum technology evolves and advances, hybrid quantum computing  
+\<VIDEO LINK?\>
 
-VIDEO LINK
+## Levels of hybrid quantum computing
 
-## Five levels of hybrid computing
-
-BLURB
+As quantum technology evolves and advances, the integration between the classical and quantum processing will become increasingly more integrated. At Microsoft, we see this evolution evolving in four levels:
 
 ### Batch quantum computing
 
-Description - Local clients enable quantum circuits with classical pre- and post-processing
-
-Shor's, simple quantum phase estimation
+This is how most quantum computing is done today. Local clients define circuits and submit them as jobs to the QPU, which returns the result to the client. Examples of problems include Shor's algorithm and simple quantum phase estimation.  
 
 ![Batch quantum computing](~/media/hybrid/batch.png)
 
+For more information, see [Batch quantum computing](xref:microsoft.quantum.hybrid.batch).
+
 ### Interactive quantum hybrid computing
 
-Description - Cloud-based clients enable parameterized quantum circuits in a classical driver loop that runs in the cloud. Move classical computation to the cloud, 
-
-- long running programs without interruption
-- access to more powerful compute
-- prioritzed access to QPU, with shorter queue times
-- no real time computation with QPU
-
-Variational quantum eigensolvers, Quantum approximation optimization algorithms
-
-Prioritized loop
+In this model, the client is moved to the cloud, resulting in lower-latency and a repeated execution of the quantum circuit with different parameters. Although this allows for shorter queue times and longer running problems, the qubit states do not persist between each loop iteration. Examples of problems that can leverage this approach are variational quantum eigensolvers (VQE) and quantum approximation optimization algorithms (QAOA).
 
 ![Interactive batch quantum computing](~/media/hybrid/interactive-batch.png)
 
+For more information, see [Interactive quantum computing](xref:microsoft.quantum.hybrid.interactive).
+
 ### Integrated quantum computing
 
-Description - Parameterized quantum co-routines with a classical driver loop, Physical qubit remains alive, Limited classical control. 
-You can do mid-circuit measurement, re-use qubits, branch and adapt in real-time what will be the next computation performed by the QPU.
-
-
-
-Adaptive phase estimation (random walk, Bayesian), error correction
+With integrated quantum computing, the classical and quantum architectures are tightly coupled, allowing qubits to persist their state between computations. Though limited by qubit life and error correction, this allows for programs to perform mid-circuit measurements, optimize and re-use qubits, and adapt in real-time to the QPU. Examples of scenarios that can take advantage of this are adaptive phase estimation, machine learning, and advanced error correction. 
 
 ![Integrated batch quantum computing](~/media/hybrid/integrated.png)
 
+For more information, see [Integrated quantum computing](xref:microsoft.quantum.hybrid.integrated).
+
 ### Distributed quantum computing
 
-Description - The highest level of maturity for Hybrid quantum computing will be reached once Logical qubits are available.
-The classical control is not bounded anymore by the lifespan of the qubit.
-
-It can perform richer computation on its own, distribute elements of computation to external resources, harnessing the full power of what a public cloud provider such as Azure can offer.
-
-Longer lived qubits enable full classical compute next to the QPU
-
-- Logical qubit with indefinite lifetime enables full classical control
-- Real-time cloud processing
-
-
-Full data center integration enables complex distributed hybrid jobs across quantum & HPC resources
-
-
-
-Complex materials modelling, Evaluation of a full catalytic reaction
-
+With fully integrated classical control and longer lived logical qubits, distributed quantum computing will enable real-time computations across quantum and distributed resources. The classical controls will no longer be limited to looping, allowing for scenarios such as complex materials modeling or the evaluation of full catalytic reactions. 
 
 ![Distributed quantum computing](~/media/hybrid/distributed.png)
 
+For more information, see [Distributed quantum computing](xref:microsoft.quantum.hybrid.distributed).
 
 ## Next steps
 

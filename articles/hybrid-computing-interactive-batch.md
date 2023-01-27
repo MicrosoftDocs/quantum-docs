@@ -15,6 +15,8 @@ uid: microsoft.quantum.hybrid.interactive-batch
 
 Description, art
 
+![Interactive batch quantum computing](~/media/hybrid/interactive-batch.png)
+
 ## Examples
 
 Session API
