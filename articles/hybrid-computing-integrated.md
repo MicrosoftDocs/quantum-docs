@@ -13,19 +13,34 @@ uid: microsoft.quantum.hybrid.integrated
 
 # Integrated quantum computing
 
-Description, capabilities, art
+- Description
+- Exponential reduction in shots
+- quantum machine
+  - arbitrary control flow and loops
+  - classical computations by back end while qubits still alive
+  - mid-circuit measurement
+  - qubit re-use
+  - powered by QIR and Q#
 
 ![Integrated batch quantum computing](~/media/hybrid/integrated.png)
 
 ## Examples
 
-- Nested conditionals 
-- Mid-circuit measurement
-- Qubit re-use 
-- Looping with statically bounded iteration counts 
-- Classical function calls 
+### Nested conditionals 
+
+### Mid-circuit measurement
+
+### Qubit re-use 
+
+### Looping with statically bounded iteration counts 
+
+### Classical function calls 
 
 ## Supported hardware
+
+### Quantinuum
+
+### QCI
 
 ## Next steps
 

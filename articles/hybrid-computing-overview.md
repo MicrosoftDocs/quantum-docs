@@ -23,19 +23,19 @@ As quantum technology evolves and advances, the integration between the classica
 
 ### Batch quantum computing
 
-This is how most quantum computing is done today. Local clients define circuits and submit them as jobs to the QPU, which returns the result to the client. Examples of problems include Shor's algorithm and simple quantum phase estimation.  
+This is how most quantum computing is done today. Local clients define circuits and submit them as jobs to the QPU, which returns the result to the client. By batching multiple circuits into one job, however, eliminated the wait between job submissions, allowing you to run multiple jobs significantly faster. Examples of problems include Shor's algorithm and simple quantum phase estimation.  
 
 ![Batch quantum computing](~/media/hybrid/batch.png)
 
 For more information, see [Batch quantum computing](xref:microsoft.quantum.hybrid.batch).
 
-### Interactive quantum hybrid computing
+### Interactive batch quantum hybrid computing
 
-In this model, the client is moved to the cloud, resulting in lower-latency and a repeated execution of the quantum circuit with different parameters. Although this allows for shorter queue times and longer running problems, the qubit states do not persist between each loop iteration. Examples of problems that can leverage this approach are variational quantum eigensolvers (VQE) and quantum approximation optimization algorithms (QAOA).
+In this model, the client is moved to the cloud, resulting in lower-latency and a repeated execution of the quantum circuit with different parameters. Jobs can be grouped logically into one session, and prioritized within that session.  Although this allows for shorter queue times and longer running problems, the qubit states do not persist between each loop iteration. Examples of problems that can leverage this approach are variational quantum eigensolvers (VQE) and quantum approximation optimization algorithms (QAOA).
 
 ![Interactive batch quantum computing](~/media/hybrid/interactive-batch.png)
 
-For more information, see [Interactive quantum computing](xref:microsoft.quantum.hybrid.interactive-batch).
+For more information, see [Interactive batch quantum computing](xref:microsoft.quantum.hybrid.interactive-batch).
 
 ### Integrated quantum computing
 
