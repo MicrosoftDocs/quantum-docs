@@ -11,7 +11,7 @@ title: Overview of high-performance hybrid computing
 uid: microsoft.quantum.hybrid.distributed
 ---
 
-# High-performance hybrid computing
+# Distributed hybrid computing
 
 Description, art
 
