@@ -35,7 +35,7 @@ In this model, the client is moved to the cloud, resulting in lower-latency and 
 
 ![Interactive batch quantum computing](~/media/hybrid/interactive-batch.png)
 
-For more information, see [Interactive quantum computing](xref:microsoft.quantum.hybrid.interactive).
+For more information, see [Interactive quantum computing](xref:microsoft.quantum.hybrid.interactive-batch).
 
 ### Integrated quantum computing
 
