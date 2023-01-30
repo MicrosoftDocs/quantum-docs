@@ -209,7 +209,7 @@ In particular, $p = {}$ max(`oneQubitMeasurementErrorRate`, `oneQubitGateErrorRa
 
 You can specify pre-defined QEC schemes by selecting the QEC scheme name for the `qecScheme` parameter in the top-level parameters, for example: 
 
-``JSON
+```JSON
 {
     "qecScheme": { "name": "surface_code" }
 }
@@ -274,7 +274,7 @@ Pre-defined QEC schemes can be customized by specifying the name and then updati
         "crossingPrefactor": 0.08
     }
 }
-````
+```
 
 #### Custom your QEC schemes
 
