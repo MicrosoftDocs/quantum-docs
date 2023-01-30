@@ -21,10 +21,10 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 ### QDK version 0.27.253010
 
-- Added support for Rigetti [Aspen-M-3](https://learn.microsoft.com/en-us/azure/quantum/provider-rigetti?tabs=tabid-pyquil#aspen-m-3) Quantum Processor.
+- Added support for Rigetti [Aspen-M-3](https://learn.microsoft.com/azure/quantum/provider-rigetti?tabs=tabid-pyquil#aspen-m-3) Quantum Processor.
 - Compiler errors related to hardware capabilities are now warnings by default. Programs with these warnings may or may not run on a specific target, but they will be validated by the Azure Quantum service before execution and users will not be charged if the program does not pass validation.
 - The Q# compiler now uses LLVM 14 to generate QIR.
-- In the [iqsharp-base](https://mcr.microsoft.com/en-us/product/quantum/iqsharp-base/about) image, removed support for .NET Core 3.1, since it is [end-of-life](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). Upgraded various packages in the image and made small improvements to decrease container size. Fixes microsoft/iqsharp#757.
+- In the [iqsharp-base](https://mcr.microsoft.com/product/quantum/iqsharp-base/about) image, removed support for .NET Core 3.1, since it is [end-of-life](https://dotnet.microsoft.com/platform/support/policy/dotnet-core). Upgraded various packages in the image and made small improvements to decrease container size. Fixes [microsoft/iqsharp#757](https://github.com/microsoft/iqsharp/pull/754).
 
 ## 2022-12-07
 
