@@ -2,7 +2,7 @@
 author: bradben
 description: Troubleshoot common Azure Quantum issues.
 ms.author: brbenefield
-ms.date: 12/29/2022
+ms.date: 01/31/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
@@ -12,7 +12,7 @@ uid: microsoft.quantum.azure.common-issues
 
 # Troubleshoot Azure Quantum
 
-When you first start working with Azure Quantum, you may run into these common issues. 
+When working with Azure Quantum, you may run into these common issues. 
 
 ## Submitting jobs
 
@@ -123,3 +123,15 @@ If access was recently granted, you may need to refresh the page. It can sometim
 ### Issue: You don't see a specific quantum hardware provider on the Providers tab
 
 This issue occurs because the provider doesn't support the billing region your subscription is set in. For example, if your subscription is set in Israel, the Providers tab won't list Rigetti as an available provider. For a list of providers and their availability by country, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability). 
+
+## The Azure Quantum portal
+
+### Issue: Saved notebooks don't load
+
+After selecting **Notebooks** in your workspace, the list of your saved notebooks displays a progress bar but never loads.
+
+This can happen for two reasons:
+
+1. If the storage account no longer exists. This can happen if the storage account linked to the workspace was deleted. To verify, select the **Overview** page for the workspace and select the link to the storage account. If the storage account has been deleted, you will see a **404 - Not found** error.
+
+1. If the managed identity of the workspace is not a **Contributor** to the storage account. Please check that the workspace identity (which uses the same name as the workspace) still has the **Contributor** role assignment to the storage account. To verify, select the **Overview** page for the workspace and select the link to the storage account. On the **Overview** page for the storage account, select **Access control (IAM)** and verify that the workspace is listed under **Contributor**.
