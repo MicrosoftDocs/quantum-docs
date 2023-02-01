@@ -82,6 +82,9 @@ def create_algorithm(bitwidth):
 
     return circ
   ```
+  
+> [!NOTE]
+> You can submit physical resource estimation jobs for algorithms that have no T states, but that have at least one measurement. 
 
 ### Estimate the quantum algorithm
   
