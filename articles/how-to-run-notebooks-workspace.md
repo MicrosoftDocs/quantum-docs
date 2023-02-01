@@ -1,8 +1,8 @@
 ---
-author: aviviano
+author: bradben
 description: Learn how to work with Q# or Python in a Jupyter notebook in an Azure Quantum workspace.
-ms.author: amvivian
-ms.date: 11/22/2022
+ms.author: brbenefield
+ms.date: 01/31/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -133,6 +133,8 @@ The following are limitations with Jupyter Notebooks in an Azure Quantum workspa
 - Notebook instances have pre-allocated 2 vCPU and 4 GB of memory.
 - Idle kernels are terminated after 30 minutes. After that time, you will need to rerun the cells.
 - The location of your storage account and workspace will affect the performance of Jupyter Notebooks in an Azure Quantum workspace. When possible, try to create the storage account and workspace in a region close to where you will be using your notebooks.
+- There can be no more than 10 notebooks open concurrently in one workspace region per subscription. To open more than 10 notebooks concurrently, you should allocate the workspaces used across regions. 
+- A single user can open no more than five notebooks concurrently in one workspace region. 
 
 ## Next steps
 
