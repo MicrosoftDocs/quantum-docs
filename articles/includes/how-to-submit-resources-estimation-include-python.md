@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 11/12/2022
+ms.date: 01/31/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -63,9 +63,12 @@ operation EstimateMultiplication(bitwidth : Int) : Unit {
 }
 ```
 
+> [!NOTE]
+> You can submit physical resource estimation jobs for algorithms that have no T states, but that have at least one measurement. 
+
 ### Estimate the quantum algorithm
 
-In order to estimate an operation using the  Resource Estimator, the operation can't take any input arguments, and must have a `Unit` return value. You can create a new instance for a specific bitwidth, for example `8` in this case.
+In order to estimate an operation using the Resource Estimator, it must have a `Unit` return value. You can create a new instance for a specific bitwidth, for example `8` in this case.
 
 ```python
 %%qsharp
@@ -76,7 +79,7 @@ operation EstimateMultiplication8() : Unit {
 ```
 
 > [!IMPORTANT]
-> To submit an Q# operation to the Resource Estimator, the operation cannot take any input arguments and must have a `Unit` return value. 
+> To submit an Q# operation to the Resource Estimator, the operation must have a `Unit` return value. 
 
 Now, estimate the physical resources for this operation using the default assumptions. You can submit the operation to the Resource Estimator target using the `qsharp.azure.execute` function.
 
@@ -85,8 +88,7 @@ result = qsharp.azure.execute(EstimateMultiplication8)
 result
 ```
 
-This creates a table that shows the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. 
-For example, if you collapse the *Logical qubit parameters* group, you can more easily see that the error correction code distance is 13. 
+The `qsharp.azure.execute` function creates a table that shows the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. For example, if you collapse the *Logical qubit parameters* group, you can see that the error correction code distance is 13. 
 
 |Logical qubit parameter | Value |
 |----|---|
