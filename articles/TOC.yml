@@ -305,7 +305,7 @@
     href: azure-quantum-glossary.md
   - name: Azure Quantum provider global availability
     href: provider-global-availability.md
-  - name: Common issues
+  - name: Troubleshooting issues
     href: azure-quantum-common-issues.md
   - name: Build your skills with Microsoft training >>
     href: /training/paths/quantum-computing-fundamentals/

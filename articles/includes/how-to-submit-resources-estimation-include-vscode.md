@@ -85,6 +85,8 @@ Create a new project in Visual Studio Code.
         }
     }
     ```
+> [!NOTE]
+> You can submit physical resource estimation jobs for algorithms that have no T states, but that have at least one measurement. 
 
 ### Estimate the quantum algorithm
 
