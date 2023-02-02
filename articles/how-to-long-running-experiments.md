@@ -20,7 +20,13 @@ If your quantum program requires many iterations or loops, each loop is submited
 > [!IMPORTANT]
 > Azure Quantum hosted notebooks are free of cost, but they still have some limitations. The kernel of Azure Quantum notebooks remains alive only for a few hours. If your quantum program is waiting on the queue for a provider for too long, you may have to submit your job again. 
 
+See the following suggestion to run long runtime experiments in Azure Quantum.
+
+## Program with few loops
+
 If your program doesn't required many loops but the QPU queue time is high, you may wait a couple of hours and submit your job later, or submit your program to a different provider from the ones available in Azure Quantum. 
+
+## Resource Estimation jobs
 
 For running long resource estimation jobs on Azure Quantum, see [Handling large programs with the Resource Estimator](xref:microsoft.quantum.work-with-resource-estimator#handle-large-programs).
 
