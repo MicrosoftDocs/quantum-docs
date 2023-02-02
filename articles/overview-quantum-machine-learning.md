@@ -17,26 +17,6 @@ Quantum computing and machine learning have converged towards a new discipline, 
 
 This article describe the origin and difficulties of quantum machine learning, and shows you how to use Azure Quantum to run your quantum machine learning experiments.
 
-## What is quantum machine learning? 
-
-Classical machine learning methods, such as deep neural networks, can both recognize statistical patterns in data, and produce data that have the same statistical patterns: machine learning algorithms recognize the patterns that they produce. If quantum processors can produce statistical patterns that are computationally difficult to be produced by a classical computer, then perhaps quantum computers can also recognize patterns that are difficult to recognize by classical means. Quantum machine learning brings together concepts from both fields to come up with enhanced solutions, either improving machine learning algorithms, quantum experiments, or both. 
-
-The machines that learn can be either classical or quantum computers, and the data they analyze can be either classical or quantum states. In quantum machine learning, the data that the quantum computer analyzes can be either classical data, which ends up encoded as quantum states, or quantum data. This leads to two main approaches of quantum machine learning: 
-
-- Quantum computing resources used to compute immense quantities of data and improve machine learning algorithms in terms of speed-up and/or performance. This includes the implementation of machine learning algorithms in quantum computers, including adiabatic quantum annealers, and hybrid methods that involve both classical and quantum processing. The analysis of classical data by machine learning algorithms executed on a quantum computer is known as *quantum-enhanced* machine learning. 
-
-- Machine learning methods applied to data generated from quantum experiments, that is machine learning of quantum systems, such as learning the phase transitions of a quantum system.
-
-Quantum machine learning is a very active field of research. While its real potential isn't completely clear yet, there are reasons to be optimistic that quantum computers can recognize patterns in data that classical computers can't do. The determination of whether there's a scaling advantage contrasting quantum and classical machine learning rely on the existence of a fault-tolerant, full-scale quantum computer, making it a benchmarking problem. 
-
-
-### The barren plateau
-
- Most machine learning algorithms solve an [optimization task](xref:microsoft.quantum.optimization.concepts.overview.introduction) represented by a cost function, where the posible solutions are contained in a problem-solving landscape, and the valleys are the low energy values. To find the solution, the algorithm trains itself about the landscape, thereby navigating to the global minimum of the cost function. For more information, see [Key concepts of optimization](xref:microsoft.quantum.optimization.concepts.overview.key-concepts).
-
-A *barren plateau* is a problem that occurs in machine learning optimization algorithms when the problem-solving space turns flat as the algorithm is run. In that situation, the algorithm can't find its way to the global minimum of the cost function. Lacking landscape features, the machine learning can't train itself to find the solution.
-
-
 ## Quantum machine learning with Qiskit and Azure Quantum 
 
 You can adapt any Qiskit sample to run on Azure Quantum, and in particular, you can adapt any sample from [Qiskit/qiskit-machine-learning](https://github.com/Qiskit/qiskit-machine-learning). See [Adapting Qiskit samples to run on Azure Quantum](xref:microsoft.quantum.how-to.adapting-qiskit) and follow to steps to adapt your sample. 
