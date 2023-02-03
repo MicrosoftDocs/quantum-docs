@@ -40,7 +40,8 @@ uid: microsoft.quantum.hybrid.integrated
 
 ### Quantinuum
 
-### QCI
+## Cost estimation
+
 
 ## Next steps
 
