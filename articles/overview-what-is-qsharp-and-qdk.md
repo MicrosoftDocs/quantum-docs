@@ -72,7 +72,7 @@ To learn more about the QDK features and the general pieces that fit within a Q#
 
 ## Quantum development workflow with the QDK
 
-When you compile and run a quantum program, th QDK creates an instance of the quantum simulator and passes the Q# code to it. The simulator uses the Q# code to create qubits (simulations of quantum particles) and apply transformations to modify their state. The results of the quantum operations in the simulator are then returned to the program. Isolating the Q# code in the simulator ensures that the algorithms follow the laws of quantum physics and can run correctly on quantum computers.
+When you compile and run a quantum program, the QDK creates an instance of the quantum simulator and passes the Q# code to it. The simulator uses the Q# code to create qubits (simulations of quantum particles) and apply transformations to modify their state. The results of the quantum operations in the simulator are then returned to the program. Isolating the Q# code in the simulator ensures that the algorithms follow the laws of quantum physics and can run correctly on quantum computers.
 
 Everything you need to write and run Q# programs, including the Q# compiler, the Q# libraries, and the quantum simulators, is pre-deployed in the hosted Jupyter Notebooks in the Azure portal. The QDK can also be installed and run from your local computer, so you can use your preferred IDE and language locally and submit jobs to quantum hardware or cloud-based simulators on Azure Quantum, or work with local simulators. For more information, see [configure your quantum development environment](xref:microsoft.quantum.install-qdk.overview).
 
