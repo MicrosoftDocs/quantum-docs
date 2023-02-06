@@ -70,9 +70,9 @@ Most samples are configured to run by default against the `aer_simulator`, which
     > The location and resource ID of your workspace can be found in the **Overview** tab of your Azure Quantum workspace. 
     >  :::image type="content" source="media/azure-quantum-resource-id.png" alt-text="Screenshot of the overview blade of a workspace in Azure portal. Location and resource ID are marked inside a red rectangle.":::
 
-## Add a QuantumInstance (only if no default backend)
+## Add a quantum instance (only if no default backend)
 
-If the Qiskit sample doesn't have a default backend, you have to add a `QuantumInstance` with the Azure Quantum backend to the code.  
+If the Qiskit sample doesn't have a default backend, you have to add a `QuantumInstance` to the code with the Azure Quantum backend.  
 
 As an example, consider the following Qiskit sample that uses a Variational Quantum Classifier (VQC) algorithm to train and test samples from a data set. You can find this code in [Qiskit/qiskit-machine-learning](https://github.com/Qiskit/qiskit-machine-learning#creating-your-first-machine-learning-programming-experiment-in-qiskit). 
 To run this sample on Azure Quantum, you have to copy the code after the Azure Quantum backend, and add a line with `quantum_instance = QuantumInstance(backend)` when creating the VQC object.
