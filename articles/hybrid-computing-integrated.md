@@ -13,7 +13,7 @@ uid: microsoft.quantum.hybrid.integrated
 
 # Integrated quantum computing
 
-Integrated quantum computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on measurement results while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Leveraging qubit re-use techniques, larger programs can be run on machines with a smaller number of qubits.
+Integrated quantum computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on measurement results while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Leveraging qubit re-use techniques, larger programs can be run on machines utilizing a smaller number of qubits.
 
 ![Integrated batch quantum computing](~/media/hybrid/integrated-2.png)
 
@@ -21,11 +21,11 @@ Integrated quantum computing brings the classical and quantum processes together
 
 Currently, the integrated quantum computing model in Azure Quantum is supported on [Quantinuum](https://www.quantinuum.com/) and [Quantum Circuits, Inc.](https://quantumcircuits.com/) (QCI) targets. Both providers support the QIR Alliance [Basic Measurement Feedback](https://github.com/qir-alliance/qir-spec/blob/main/specification/v0.1/7_Profiles.md#profile-b-basic-measurement-feedback) (Profile B), which allows limited capabilities to control the execution of quantum operations based on prior measurement results. 
 
-## Adaptive Profile
+### Adaptive Profile
 
 Quantinuum and QCI also support various elements of the upcoming [Adaptive Profile](https://github.com/qir-alliance/.github/pull/31), which supports defining and executing quantum programs that permit for limited classical computations and control flow during execution.
 
-### Limitations
+#### Limitations
 
 The following are currently not supported by the Adaptive Profile:
 
@@ -59,8 +59,7 @@ The following are currently not supported by the Adaptive Profile:
 
 ## Implementation
 
-Each L3 routine has a single job ID that can be queried the same way L1 jobs are queried. A single result is a single histogram.
-Jobs are submitted and cancelled (and managed?) just like L1 jobs.
+Integrated quantum programs on Azure Quantum are managed (that is,submitted, queried, or cancelled) just as a regular batch job is. Each job has a single job ID and the result is a single histogram.
 
 ### IQ\#
 
@@ -78,7 +77,7 @@ When using the *quantum* Python package, use the qsharp.azure.target_capability 
 qsharp.azure.target_capability("AdaptiveExecution")
 ```
 
-Azure CLI
+### Azure CLI
 
 When using the Azure CLI to submit a program, use the \<TBD\>.
 
