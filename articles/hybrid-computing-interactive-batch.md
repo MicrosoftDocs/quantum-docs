@@ -15,7 +15,7 @@ uid: microsoft.quantum.hybrid.interactive-batch
 
 Description, art
 
-![Interactive quantum computing](~/media/hybrid/interactive-batch.png){ width=50% }
+![Interactive quantum computing](~/media/hybrid/interactive-batch.png)
 
 ## Examples
 

@@ -15,7 +15,7 @@ uid: microsoft.quantum.hybrid.distributed
 
 Description, art
 
-![Distributed quantum computing](~/media/hybrid/distributed.png){ width=50% }
+![Distributed quantum computing](~/media/hybrid/distributed.png)
 
 ## Fault tolerance
 
