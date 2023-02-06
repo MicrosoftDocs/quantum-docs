@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand what hybrid quantum computing is and the different implementation types.Hybrid quantum computing 
-ms.date: 01/25/2023
+ms.date: 02/05/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -13,7 +13,7 @@ uid: microsoft.quantum.overview.hybrid
 
 # Hybrid quantum computing
 
-Hybrid quantum computing refers to the processes and architecture of a classical computer and a quantum computer working together to solve a problem. Classical computers have always been used in quantum computing to define quantum gates, control configuration of the quantum computer, submit jobs, and process results from the quantum computer. With hybrid quantum computing, however, classical and quantum computers work together in a back-and-forth collaboration, with each platform performing tasks at different stages of the solution. Hybrid quantum computing will require higher-performance architectures, but will foster new and powerful hybrid algorithms. 
+Hybrid quantum computing refers to the processes and architecture of a classical computer and a quantum computer working together to solve a problem. Classical computers have always been used in quantum computing to define quantum gates, control configuration of the quantum computer, submit jobs, and process results from the quantum computer. With hybrid quantum computing, however, classical and quantum computers work together in a back-and-forth collaboration, with each platform performing tasks at different stages of the solution. Hybrid quantum computing will require higher-performance architectures and fault-tolerant quantum computers, but will foster the creation of new and powerful hybrid algorithms. 
 
 ## Levels of hybrid quantum computing
 
