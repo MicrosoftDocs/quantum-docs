@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand the concepts and techniques used in hybrid quantum computing.
-ms.date: 01/25/2023
+ms.date: 02/06/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk

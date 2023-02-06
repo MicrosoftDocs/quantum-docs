@@ -15,7 +15,7 @@ uid: microsoft.quantum.hybrid.batch
 
 Description, art
 
-![Batch quantum computing](~/media/hybrid/batch.png)
+![Batch quantum computing](~/media/hybrid/batch.png){ width=50% }
 
 ## Examples
 
