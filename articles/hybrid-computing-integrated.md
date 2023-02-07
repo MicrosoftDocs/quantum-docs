@@ -13,7 +13,7 @@ uid: microsoft.quantum.hybrid.integrated
 
 # Integrated quantum computing
 
-Integrated quantum computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Leveraging qubit re-use techniques, larger programs can be run on machines utilizing a smaller number of qubits.
+Integrated quantum computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Leveraging qubit re-use techniques, larger programs can run on machines utilizing a smaller number of qubits.
 
 ![Integrated batch quantum computing](~/media/hybrid/integrated-2.png)
 
@@ -21,29 +21,23 @@ Integrated quantum computing brings the classical and quantum processes together
 
 Currently, the integrated quantum computing model in Azure Quantum is supported on [Quantinuum](https://www.quantinuum.com/) and [Quantum Circuits, Inc.](https://quantumcircuits.com/) (QCI) targets. Both providers support the QIR Alliance [Basic Measurement Feedback](https://github.com/qir-alliance/qir-spec/blob/main/specification/v0.1/7_Profiles.md#profile-b-basic-measurement-feedback) (Profile B), which allows limited capabilities to control the execution of quantum operations based on prior measurement results. 
 
-### Quantinuum
+### Quantinuum <!-- Make these into tables -->
 
-- Supported
-  - aaa
-  - bbb
-- Not supported
-  - doubles
-  - bbb
-- Limitations
-  - Loops are un-rolled
-  - Limits on number of classical registers
+|Feature| Supported |  Limitations |
+|---|---|---|
+|Loops |Yes|Loops are un-rolled|
+|doubles |No|<nbsp>|
+|TBD |<nbsp>|Limits on number of classical registers|
+|TBD |<nbsp>|<nbsp>|
 
 ### QCI
 
-- Supported
-  - aaa
-  - bbb
-- Not supported
-  - aaa
-  - bbb
-- Limitations
-  - 18bit integers
-  - bbb
+|Feature| Supported |  Limitations |
+|---|---|---|
+|Data types  |Yes|18bit integers|
+|TBD |<nbsp>|<nbsp>|
+|TBD |<nbsp>|<nbsp>|
+|TBD |<nbsp>|<nbsp>|
 
 ### Adaptive Profile
 
@@ -59,7 +53,7 @@ The following are currently not supported by the Adaptive Profile:
 
 ## Implementation
 
-Integrated quantum programs on Azure Quantum are managed (that is,submitted, queried, or cancelled) just as a regular batch job is. Each job has a single job ID and the result is a single histogram.
+Integrated quantum programs on Azure Quantum are managed just as regular batch jobs are. Each job has a single job ID and the result is a single histogram.
 
 ### IQ\#
 
@@ -154,11 +148,9 @@ result = qsharp.azure.execute(CheckGHZ, shots=50, jobName="CheckGHZ", timeout=24
 
 ![GHZ output](~/media/hybrid/ghz-output.png)
 
-***
 
 ### [Error correction](#tab/tabid-qec)
 
-***
 
 ### [KPMG](#tab/tabid-kpmg)  
 
