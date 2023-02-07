@@ -13,7 +13,7 @@ uid: microsoft.quantum.hybrid.integrated
 
 # Integrated quantum computing
 
-Integrated quantum computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on measurement results while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Leveraging qubit re-use techniques, larger programs can be run on machines utilizing a smaller number of qubits.
+Integrated quantum computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Leveraging qubit re-use techniques, larger programs can be run on machines utilizing a smaller number of qubits.
 
 ![Integrated batch quantum computing](~/media/hybrid/integrated-2.png)
 
@@ -27,11 +27,11 @@ Currently, the integrated quantum computing model in Azure Quantum is supported 
   - aaa
   - bbb
 - Not supported
-  - aaa
+  - doubles
   - bbb
 - Limitations
   - Loops are un-rolled
-  - bbb
+  - Limits on number of classical registers
 
 ### QCI
 
@@ -42,7 +42,7 @@ Currently, the integrated quantum computing model in Azure Quantum is supported 
   - aaa
   - bbb
 - Limitations
-  - aaa
+  - 18bit integers
   - bbb
 
 ### Adaptive Profile
@@ -97,27 +97,30 @@ TBD
 
 ## Examples
 
-### Check GHZ 
+The following examples demonstrate the available integrated hybrid feature set. For more examples, see the Hybrid Quantum Computing notebook samples in the Azure Quantum portal. 
 
-This example checks the states of three qubits entangled in a GHZ state. 
+- Verify an entangled GHZ state. 
+- View how error correction works with integrate hybrid. 
+- KPMG (TBD)
 
-The first cell connects to the Azure Quantum service, specifies the target hardware, and then specifies the Adaptive profile capability of the target. 
+### [Check GHZ](#tab/tabid-ghz) 
 
-```qsharp
-%azure.connect "/subscriptions/f5300c84-19ad-4e7f-98c4-f2557bf622ee/resourceGroups/AzureQuantum/providers/Microsoft.Quantum/Workspaces/AQuantumWorkspace" location="westus2"
-%azure.target quantinuum.sim.h1-1e-preview
-%azure.target-capability AdaptiveExecution 
-```
+This example verifies a 3-qubit [Greenberger-Horne-Zeilinger](https://en.wikipedia.org/wiki/Greenberger%E2%80%93Horne%E2%80%93Zeilinger_state#:~:text=In%20physics%2C%20in%20the%20area%20of%20quantum%20information,Greenberger%2C%20Michael%20Horne%20and%20Anton%20Zeilinger%20in%201989) (GHZ) state, counting the number of times it sees the entanglement fail out of 10 attempts. Without noise, this would return 0 for every shot, but with noise, you can get back failures. 
 
-```output
-Target capability AdaptiveExecution
-Classical computation	Integral
-Result opacity	Transparent
-```
+Feature to note about this example:
 
-The next cell creates the entanglement, then measures and resets the qubits. 
+- The loop and qubit measurements happen while the qubits remain coherent.
+- The routine mixes classical and quantum compute operations. 
+- You do not need to learn to program for specialized high-performance hardware running next to the QPU (such as FPGAs).
+- Running an equivalent program without the integrated hybrid features would require returning every intermediate measurement result and then running post-processing on the data. 
 
-```qsharp
+```python
+import qsharp.azure
+
+# Enter your Azure Quantum workspace details here
+qsharp.azure.connect(resourceId = "", location = "")
+
+%%qsharp
 open Microsoft.Quantum.Measurement;
 open Microsoft.Quantum.Arrays;
 open Microsoft.Quantum.Convert;
@@ -141,30 +144,25 @@ operation CheckGHZ() : Int {
     return mismatch;
 }
 
-@EntryPoint()
-operation EP() : Int {
-    return CheckGHZ();
-    }
-```
+# Set a Quantinuum target back-end with the Adaptive Execution flag
+qsharp.azure.target("quantinuum.sim.h1-1e")
+qsharp.azure.target_capability("AdaptiveExecution")
 
-```output
-CheckGHZ
-EP
-```
-
-The last cell submits the job and displays the resulting histogram. 
-
-```qsharp
-%azure.execute EP shots=50 jobName="CheckGHZ with L3" timeout=240
+# Submit the job. This run will use approximately 10 HQC's (Quantinuum billing unit)
+result = qsharp.azure.execute(CheckGHZ, shots=50, jobName="CheckGHZ", timeout=240)
 ```
 
 ![GHZ output](~/media/hybrid/ghz-output.png)
 
+***
 
-### Error correction
+### [Error correction](#tab/tabid-qec)
 
-### KPMG  
+***
 
+### [KPMG](#tab/tabid-kpmg)  
+
+***
 
 ## Next steps
 
