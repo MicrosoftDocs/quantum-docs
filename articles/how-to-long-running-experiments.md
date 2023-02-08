@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to run experiments with long runtimes on Azure Quantum
 ms.author: sonialopez
-ms.date: 01/28/2023
+ms.date: 02/08/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
@@ -18,7 +18,7 @@ When you submit a quantum program to Azure Quantum, the job is uploaded to the A
 If your quantum program requires many iterations each one is submitted as a single job. For some quantum experiments, such as variational algorithms (VQE) and optimization algorithms (QAOA), it's common to run for hours or days, in particular when QPU queue times are high and the programs require many iterations.
 
 > [!IMPORTANT]
-> Azure Quantum hosted notebooks offer a free no-installation experience to run small scale experiments lasting less than [Ask Xinyi what we should put here]. 
+> Azure Quantum hosted notebooks offer a free no-installation experience to run small scale experiments lasting less than one hour. 
 
 See the following suggestion to run long runtime experiments in Azure Quantum.
 
