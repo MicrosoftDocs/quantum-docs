@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn what quantum machine learning is and how you can experiment with it using Azure Quantum
-ms.date: 01/28/2023
+ms.date: 02/08/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -26,7 +26,7 @@ You can adapt any Qiskit sample to run on Azure Quantum, and in particular, you 
 > 
 > ```python
 > # Restart the kernel after running that cell
-> !pip install qiskit-machine-learning qiskit-terra==0.20.1
+> !pip install qiskit-machine-learning
 > ```
 
 ## Quantum machine learning with Q# and Azure Quantum 
@@ -46,7 +46,7 @@ For more information, see:
 - [How to load your own data sets](xref:microsoft.quantum.libraries.overview.machine-learning.load) to train a classifier model with the QDK.
 
 > [!NOTE]
-> The Q# libraries and samples are designed to only run against a fault-tolerant quantum computer. Currently this is only possible in simulators.
+> The Q# libraries and samples are designed to only run against a fault-tolerant quantum computer. Currently this is only possible in the QDK quantum simulators.
 
 ## Next steps
 
