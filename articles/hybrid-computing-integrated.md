@@ -21,23 +21,23 @@ Integrated quantum computing brings the classical and quantum processes together
 
 Currently, the integrated quantum computing model in Azure Quantum is supported on [Quantinuum](https://www.quantinuum.com/) and [Quantum Circuits, Inc.](https://quantumcircuits.com/) (QCI) targets. Both providers support the QIR Alliance [Basic Measurement Feedback](https://github.com/qir-alliance/qir-spec/blob/main/specification/v0.1/7_Profiles.md#profile-b-basic-measurement-feedback) (Profile B), which allows limited capabilities to control the execution of quantum operations based on prior measurement results. 
 
-### Quantinuum <!-- Make these into tables -->
+### Quantinuum 
 
-|Feature| Supported |  Limitations |
+|Feature| Supported | Limitations |
 |---|---|---|
-|Loops |Yes|Loops are un-rolled|
-|doubles |No|<nbsp>|
-|TBD |<nbsp>|Limits on number of classical registers|
-|TBD |<nbsp>|<nbsp>|
+|TBD |Y/N|<nbsp>|
+|TBD |Y/N|<nbsp>|
+|TBD |Y/N|<nbsp>|
+|TBD |Y/N|<nbsp>|
 
 ### QCI
 
-|Feature| Supported |  Limitations |
+|Feature| Supported | Limitations |
 |---|---|---|
-|Data types  |Yes|18bit integers|
-|TBD |<nbsp>|<nbsp>|
-|TBD |<nbsp>|<nbsp>|
-|TBD |<nbsp>|<nbsp>|
+|TBD |Y/N|<nbsp>|
+|TBD |Y/N|<nbsp>|
+|TBD |Y/N|<nbsp>|
+|TBD |Y/N|<nbsp>|
 
 ### Adaptive Profile
 
