@@ -25,11 +25,10 @@ Currently, the integrated quantum computing model in Azure Quantum is supported 
 
 |Feature| Supported | Limitations |
 |---|---|---|
-|TBD |Y/N|<nbsp>|
-|TBD |Y/N|<nbsp>|
-|TBD |Y/N|<nbsp>|
-|TBD |Y/N|<nbsp>|
-
+|TBD |Y/N|  |
+|TBD |Y/N|  |
+|TBD |Y/N|  |
+|TBD |Y/N|  |
 
 ### Adaptive Profile
 
