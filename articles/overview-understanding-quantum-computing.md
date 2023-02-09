@@ -74,6 +74,10 @@ Machine learning on classical computers is revolutionizing the world of science 
 
 The Quantum Development Kit (QDK) comes with the [quantum machine learning library](xref:microsoft.quantum.libraries.overview#quantum-machine-learning-library) that gives you the ability to run hybrid quantum-classical machine learning experiments. The library includes samples and tutorials, and provides the necessary tools to implement a new hybrid quantum–classical algorithm, the circuit-centric quantum classifier, to solve supervised classification problems.
 
+### Hybrid quantum computing
+
+Azure Quantum now the ability to mix classical and quantum computation and unlock a new generation of hybrid algorithms, bringing research and experimentation with the current generation of quantum computers into a new and exciting phase. The [Integrated hybrid model](xref:microsoft.quantum.hybrid.integrated) allows you to write your quantum program to make real-time decisions based on mid-circuit measurements while the qubits remain alive. For more information, see [Hybrid quantum computing](xref:microsoft.quantum.overview.hybrid).
+
 ## How does quantum computing solve problems?
 
 Quantum computers are controllable quantum mechanical devices that exploit the properties of quantum physics to perform computations. For some computational tasks, quantum computing provides exponential speedups. These speedups are possible thanks to three phenomena from quantum mechanics: superposition, interference, and entanglement.
@@ -144,10 +148,6 @@ Microsoft is partnering with quantum hardware companies to provide cloud access 
 - [Rigetti](xref:microsoft.quantum.providers.rigetti): Gate-based superconducting processors that utilize [Quantum Intermediate Representation (QIR)](xref:microsoft.quantum.concepts.qir) to enable low latency and parallel execution.
 
 For more information, see the full [quantum computing target list](xref:microsoft.quantum.reference.qc-target-list).
-
-### Hybrid quantum computing
-
-In a first for the industry, Azure Quantum, in partnership with Quantinuum, is releasing the ability to mix classical and quantum computation and unlock a new generation of hybrid algorithms, bringing research and experimentation with the current generation of quantum computers into a new and exciting phase. The [Integrated hybrid model](xref:microsoft.quantum.hybrid.integrated) allows you to write your quantum program to make real-time decisions based on mid-circuit measurements while the qubit remain alive. For more information, see [Hybrid quantum computing](xref:microsoft.quantum.overview.hybrid).
 
 ### Azure Quantum simulators
 
