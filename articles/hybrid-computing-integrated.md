@@ -19,7 +19,7 @@ Integrated quantum computing brings the classical and quantum processes together
 
 ## Supported hardware
 
-Currently, the integrated quantum computing model in Azure Quantum is supported on [Quantinuum](https://www.quantinuum.com/) and [Quantum Circuits, Inc.](https://quantumcircuits.com/) (QCI) targets. Both providers support the QIR Alliance [Basic Measurement Feedback](https://github.com/qir-alliance/qir-spec/blob/main/specification/v0.1/7_Profiles.md#profile-b-basic-measurement-feedback) (Profile B), which allows limited capabilities to control the execution of quantum operations based on prior measurement results. 
+Currently, the integrated quantum computing model in Azure Quantum is supported on [Quantinuum](https://www.quantinuum.com/) targets. Quantinuum supports the QIR Alliance [Basic Measurement Feedback](https://github.com/qir-alliance/qir-spec/blob/main/specification/v0.1/7_Profiles.md#profile-b-basic-measurement-feedback) (Profile B), which allows limited capabilities to control the execution of quantum operations based on prior measurement results. 
 
 ### Quantinuum 
 
@@ -30,18 +30,10 @@ Currently, the integrated quantum computing model in Azure Quantum is supported 
 |TBD |Y/N|<nbsp>|
 |TBD |Y/N|<nbsp>|
 
-### QCI
-
-|Feature| Supported | Limitations |
-|---|---|---|
-|TBD |Y/N|<nbsp>|
-|TBD |Y/N|<nbsp>|
-|TBD |Y/N|<nbsp>|
-|TBD |Y/N|<nbsp>|
 
 ### Adaptive Profile
 
-Quantinuum and QCI also support various elements of the upcoming [Adaptive Profile](https://github.com/qir-alliance/.github/pull/31), which supports defining and executing quantum programs that permit for limited classical computations and control flow during execution.
+Quantinuum also supports various elements of the upcoming [Adaptive Profile](https://github.com/qir-alliance/.github/pull/31), which supports defining and executing quantum programs that permit for limited classical computations and control flow during execution.
 
 #### Limitations
 
