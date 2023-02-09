@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand the best practices for writing and submitting hybrid quantum programs with Q# and the QDK.
-ms.date: 02/05/2023
+ms.date: 02/09/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk

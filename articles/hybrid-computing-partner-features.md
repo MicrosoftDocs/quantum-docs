@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand what hybrid quantum computing features are available for each Azure Quantum partner. 
-ms.date: 02/05/2023
+ms.date: 02/09/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
