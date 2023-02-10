@@ -15,6 +15,8 @@
     href: install-overview-qdk.md
   - name: Share access to your Azure Quantum workspace
     href: how-to-share-access-quantum-workspace.md
+  - name: Perform Long running experiments
+    href: how-to-long-running-experiments.md
 - name: Quantum computing
   items:
   - name: Overview
@@ -41,6 +43,8 @@
       href: how-to-work-with-re.md
     - name: Resource Estimation with QIR
       href: tutorial-resource-estimator-qir.md
+  - name: Quantum Machine Learning
+    href: overview-quantum-machine-learning.md
   - name: Run quantum circuits with Python
     items:
     - name: Submit a circuit with Qiskit
@@ -49,6 +53,8 @@
       href: quickstart-microsoft-cirq-portal.md
     - name: Submit a circuit in provider-specific format
       href: quickstart-microsoft-provider-format-portal.md
+    - name: Adapt Qiskit samples to Azure Quantum
+      href: how-to-adapt-qiskit.md
   - name: Tutorials
     items:
     - name: Quantum random number generator
@@ -83,6 +89,8 @@
         href: concepts-dirac-notation.md
       - name: Pauli measurements
         href: concepts-pauli-measurements.md
+      - name: T gates & T factories
+        href: concepts-tfactories.md
       - name: Quantum circuits
         href: concepts-circuits.md
       - name: Quantum oracles
@@ -235,6 +243,8 @@
     items:  
     - name: Run Azure Quantum notebooks
       href: how-to-run-notebooks-workspace.md
+    - name: Manage Azure Quantum workspace access
+      href: manage-workspace-access.md
     - name: Add a group to your Azure Quantum workspace
       href: bulk-add-users-to-a-workspace.md
     - name: Work with jobs
@@ -287,7 +297,7 @@
     href: azure-quantum-glossary.md
   - name: Azure Quantum provider global availability
     href: provider-global-availability.md
-  - name: Common issues
+  - name: Troubleshooting issues
     href: azure-quantum-common-issues.md
   - name: Build your skills with Microsoft training >>
     href: /training/paths/quantum-computing-fundamentals/

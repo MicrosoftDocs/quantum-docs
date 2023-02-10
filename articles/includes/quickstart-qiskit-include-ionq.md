@@ -9,7 +9,7 @@ ms.topic: include
 
 ## Load the required imports
 
-First, run the following cell to load the required imports:
+In Jupyter Notebooks, create a new notebook that uses the **Python 3** kernel. In the first cell, run the following code to load the required imports:
 
 ```python
 from qiskit import QuantumCircuit
@@ -43,11 +43,33 @@ You can now print all of the quantum computing backends that are
 available on your workspace:
 
 ```python
-print([backend.name() for backend in provider.backends()])
+print("This workspace's targets:")
+for backend in provider.backends():
+    print("- " + backend.name())
 ```
 
 ```output
-['ionq.qpu', 'ionq.simulator']
+This workspace's targets:
+- ionq.qpu
+- ionq.qpu.aria-1
+- ionq.simulator
+- microsoft.estimator
+- quantinuum.hqs-lt-s1
+- quantinuum.hqs-lt-s1-apival
+- quantinuum.hqs-lt-s2
+- quantinuum.hqs-lt-s2-apival
+- quantinuum.hqs-lt-s1-sim
+- quantinuum.hqs-lt-s2-sim
+- quantinuum.qpu.h1-1
+- quantinuum.sim.h1-1sc
+- quantinuum.qpu.h1-2
+- quantinuum.sim.h1-2sc
+- quantinuum.sim.h1-1e
+- quantinuum.sim.h1-2e
+- rigetti.sim.qvm
+- rigetti.qpu.aspen-11
+- rigetti.qpu.aspen-m-2
+- rigetti.qpu.aspen-m-3
 ```
 
 ## Run a simple circuit
@@ -170,7 +192,7 @@ Before running a job on the QPU, you can estimate how much it will cost to run. 
 
 ```python
 backend = provider.get_backend("ionq.qpu")
-cost = backend.estimate_cost(circuit, shots=100)
+cost = backend.estimate_cost(circuit, shots=1024)
 
 print(f"Estimated cost: {cost.estimated_total}")
 ```

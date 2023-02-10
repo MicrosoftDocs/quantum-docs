@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn about the input and output parameters of the Resource Estimator in Azure Quantum and how to customized them
-ms.date: 11/05/2022
+ms.date: 12/26/2022
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -33,8 +33,8 @@ You can choose from six pre-defined qubit parameters, four of which have gate-ba
 
 |Qubit model|Physical instruction|Description|
 |----|----|-----|
-|`qubit_gate_ns_e3` , `qubit_gate_ns_e4`|gate-based |Operation times and fidelities may correspond to future versions of [superconducting transmon qubits](https://arxiv.org/abs/2003.00024), or [spin qubits](https://arxiv.org/abs/2111.11937), which typically have operation times in the nanosecond regime. For these qubits, gate and measurement operations are assumed to take 50 ns and 100 ns, respectively. Two-qubit gate error rates are assumed to be $10^{-3}$ as a realistic target, and $10^{-4}$ as an optimistic target for a scaled up system.|
-|`qubit_gate_us_e3` , `qubit_gate_us_e4`|gate-based|Operation times and fidelities may correspond to future versions of qubits based on [ions](https://arxiv.org/abs/1701.04195), which typically have operations times in the microsecond regime. Based on typical assumptions for ion qubits, gate and measurement operations are assumed to take 100 µs. Error rate for single-qubit gates is $10^{-6}$, and for two-qubit gates is $10^{-3}$ as a realistic target and $10^{-4}$ as an optimistic target. |
+|`qubit_gate_ns_e3` , `qubit_gate_ns_e4`|gate-based |Operation times and fidelities may correspond to future versions of [superconducting transmon qubits](https://arxiv.org/abs/2003.00024), or [spin qubits](https://arxiv.org/abs/2111.11937), which typically have operation times in the nanosecond regime. For these qubits, gate and measurement operations are assumed to take 50 ns and 100 ns, respectively. Single-qubit and two-qubit gate error rates are assumed to be $10^{-3}$ as a realistic target, and $10^{-4}$ as an optimistic target for a scaled up system.|
+|`qubit_gate_us_e3` , `qubit_gate_us_e4`|gate-based|Operation times and fidelities may correspond to future versions of qubits based on [ions](https://arxiv.org/abs/1701.04195), which typically have operations times in the microsecond regime. Based on typical assumptions for ion qubits, gate and measurement operations are assumed to take 100 µs. Error rate for single-qubit Clifford gates is $10^{-3}$ as a realistic target and $10^{-4}$ as an optimistic target, while the error rate for single-qubit non-Clifford gates (T gate) is $10^{-6}$. For two-qubit gates, the error rate is $10^{-3}$ as a realistic target and $10^{-4}$ as an optimistic target. |
 |`qubit_maj_ns_e4` , `qubit_maj_ns_e6`|Majorana|Operation times and fidelities may correspond to future improved versions of [Majorana qubits](https://arxiv.org/abs/1610.05289). For these qubits, gate and measurement operations are assumed to take 100 ns. To account for topological protection in the hardware, single-qubit and two-qubit joint measurement error rates (Clifford error rates) are assumed to be $10^{-4}$ as a realistic target, and $10^{-6}$ as an optimistic target. Non-Clifford operations in this architecture don't have topological protection, error rate for non-Clifford physical T gates is 5%.|
 
 You can specify pre-defined qubit parameters by selecting the qubit model name for the `qubitParams` parameter in the top-level parameters, for example: 
@@ -209,7 +209,7 @@ In particular, $p = {}$ max(`oneQubitMeasurementErrorRate`, `oneQubitGateErrorRa
 
 You can specify pre-defined QEC schemes by selecting the QEC scheme name for the `qecScheme` parameter in the top-level parameters, for example: 
 
-```python
+```JSON
 {
     "qecScheme": { "name": "surface_code" }
 }
@@ -266,7 +266,7 @@ The exact parameters for each pre-defined QEC scheme (including a crossing pre-f
 
 Pre-defined QEC schemes can be customized by specifying the name and then updating any of the other values. For example, to increase the crossing pre-factor in the floquet code, write:
 
-```python
+```JSON
 {
     "qecScheme": {
         "name": "floquet_code",
@@ -274,7 +274,7 @@ Pre-defined QEC schemes can be customized by specifying the name and then updati
         "crossingPrefactor": 0.08
     }
 }
-````
+```
 
 #### Custom your QEC schemes
 

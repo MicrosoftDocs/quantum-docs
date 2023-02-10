@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide of what Azure Quantum quotas are, how to review remaining quotas and how to apply to get more. 
 ms.author: sonialopez
-ms.date: 09/22/2022
+ms.date: 01/15/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -33,7 +33,7 @@ The Azure Quantum usage and quotas are measured in terms of each provider's unit
 > [!NOTE]
 > If you are using an Azure Quantum Credits plan, and not a billing plan, the quota information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
 
-### [Using portal](#tab/tabid-portal)
+### Track quota using Azure portal
 
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
 2. Select your **Azure Quantum workspace**.
@@ -47,7 +47,7 @@ The Azure Quantum usage and quotas are measured in terms of each provider's unit
 
 In this view, [Azure Quantum Credits](xref:microsoft.quantum.credits) are included as quotas. This enables the user to see the credit information expressed in terms of the units that the provider tracks, as well as the interval associated.
 
-### [Using Azure CLI](#tab/tabid-cli)
+### Track quota using Azure CLI
 
 You can see your quotas by using the Azure Command-Line Interface (Azure CLI). For more information, see [How to manage quantum workspaces with the Azure CLI](xref:microsoft.quantum.workspaces-cli).
 
@@ -96,7 +96,7 @@ The **Period** column indicates the period when your quota is renewed.
 - *Monthly*: The usage is reset on the 1st of every month.
 - *Infinite*: The usage is never reset (also referred as *one-time* in the [Azure Portal](https://portal.azure.com) view).
 
-### [Using Python SDK](#tab/tabid-python)
+### Track quota using Python SDK
 
 1. Install the latest version of the [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview).
 
@@ -145,9 +145,81 @@ The `period` item indicates the period when your quota is renewed.
 - *Monthly*: The usage is reset on the 1st of every month.
 - *Infinite*: The usage is never reset (also referred as *one-time* in the [Azure Portal](https://portal.azure.com) view).
 
-***
-
-
+> [!TIP]
+> The `get_quotas` method return the results in the form of a Python dictionary. For a more human-readable format, use the following code samples to print a summary of > the remaining quotas at subscription and workspace level.
+> 
+> Copy the following code to track quota at **subscription level**.
+> 
+> ```python
+> # This gathers usage against quota for the various providers (quota is set at the subscription level).
+> # Note that a provider may have mutiple quotas, such as Quantinuum that limits usage of their Emulator.
+> 
+> rigetti_quota = 0
+> ionq_quota = 0
+> quantinuum_hqc_quota = 0
+> quantinuum_ehqc_quota = 0
+>
+> rigetti_quota_utilization = 0
+> ionq_quota_utilization = 0
+> quantinuum_hqc_quota_utilization = 0
+> quantinuum_ehqc_quota_utilization = 0
+>
+> for quota in workspace.get_quotas():
+>     if (quota['provider_id'] == 'rigetti'):
+>         rigetti_quota = quota['limit']
+>         rigetti_quota_utilization = quota['utilization']
+>     if (quota['provider_id'] == 'ionq'):
+>         ionq_quota = quota['limit']
+>         ionq_quota_utilization = quota['utilization']
+>     if (quota['dimension'] == 'hqc'):
+>         quantinuum_hqc_quota = quota['limit']
+>         quantinuum_hqc_quota_utilization = quota['utilization']
+>     if (quota['dimension'] == 'ehqc'):
+>         quantinuum_ehqc_quota = quota['limit']
+>         quantinuum_ehqc_quota_utilization = quota['utilization']
+> 
+> print('Rigetti quota use: ', "{:,}".format(rigetti_quota_utilization), '/', "{:,}".format(rigetti_quota))
+> print('IonQ quota use:', "{:,}".format(ionq_quota_utilization), '/', "{:,}".format(ionq_quota))
+> print('Quantinuum HQC quota use:', "{:,}".format(quantinuum_hqc_quota_utilization), '/', "{:,}".format(quantinuum_hqc_quota))
+> print('Quantinuum eHQC quota use:', "{:,}".format(quantinuum_ehqc_quota_utilization), '/', "{:,}".format(quantinuum_ehqc_quota))
+> ```
+>
+> Copy the following code to track quota at **workspace level**.
+>
+> ```python
+> # This gathers usage against quota for the various providers for the current workspace
+> # As there can be multiple workspaces in a subscription, the quota usage for the workspace is less or equal to usage against quota at the subscription level
+> 
+> amount_utilized_rigetti = 0
+> amount_utilized_ionq = 0
+> amount_utilized_quantinuum_hqc = 0
+> amount_utilized_quantinuum_ehqc = 0
+>
+> for job in workspace.list_jobs():
+>     if (job.details.cost_estimate != None):
+>         for event in job.details.cost_estimate.events:
+>             if (event.amount_consumed > 0):
+>                 #print(event.amount_consumed, event.dimension_name, 'on', job.details.provider_id)
+>                 if (job.details.provider_id == 'rigetti'):
+>                     amount_utilized_rigetti += event.amount_consumed
+>                 if (job.details.provider_id == 'ionq'):
+>                     amount_utilized_ionq += event.amount_consumed
+> 
+>                 if (job.details.provider_id == 'quantinuum'):
+>                     #print(event.amount_consumed, event.dimension_name, 'on', job.details.provider_id)
+>                     #print(event)
+>                     if (event.dimension_id == 'hqc'):
+>                         amount_utilized_quantinuum_hqc += event.amount_consumed
+>                     else:
+>                         amount_utilized_quantinuum_ehqc += event.amount_consumed
+>                         print(job.id, event)
+>
+>
+> print('Rigetti quota use in current workspace: ', "{:,}".format(amount_utilized_rigetti), '/', "{:,}".format(rigetti_quota))
+> print('IonQ quota use in current workspace:', "{:,}".format(amount_utilized_ionq), '/', "{:,}".format(ionq_quota))
+> print('Quantinuum HQC quota use in current workspace:', "{:,}".format(amount_utilized_quantinuum_hqc), '/', "{:,}".format(quantinuum_hqc_quota))
+> print('Quantinuum eHQC quota use in current workspace:', "{:,}".format(amount_utilized_quantinuum_ehqc), '/', "{:,}".format(quantinuum_ehqc_quota))
+> ```
 
 ## Requesting additional quota
 

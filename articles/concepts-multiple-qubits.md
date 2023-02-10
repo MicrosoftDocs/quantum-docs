@@ -21,7 +21,7 @@ The true power of quantum computing only becomes evident as you increase the num
 
 Quantum computing power arises, in part, because the dimension of the vector space of quantum state vectors grows exponentially with the number of qubits. This means that while a single qubit can be trivially modeled, simulating a fifty-qubit quantum computation would arguably push the limits of existing supercomputers. Increasing the size of the computation by only one additional qubit *doubles* the memory required to store the state and roughly *doubles* the computational time. This rapid doubling of computational power is why a quantum computer with a relatively small number of qubits can far surpass the most powerful supercomputers of today, tomorrow, and beyond for some computational tasks.
 
-## Representing two qubits
+## Two-qubit states
 
 If you are given two separate qubits, one in the state $\psi=\begin{bmatrix} \alpha \\\\  \beta \end{bmatrix}$ and the other in the state  $\phi=\begin{bmatrix} \gamma \\\\  \delta \end{bmatrix}$, the corresponding two-qubit state is given by the tensor product (or [Kronecker product](https://en.wikipedia.org/wiki/Kronecker_product) of vectors, which is defined as follows 
 
@@ -54,7 +54,7 @@ $$\psi\otimes \phi = \begin{bmatrix} 1/\sqrt{2} \\\\  0 \\\\  0 \\\\  1/\sqrt{2}
 
 Such a two-qubit state, which cannot be written as the tensor product of single-qubit states, is called an "entangled state"; the two qubits are said to be [*entangled*](https://en.wikipedia.org/wiki/Quantum_entanglement).  Loosely speaking, because the quantum state cannot be thought of as a tensor product of single qubit states, the information that the state holds is not confined to either of the qubits individually.  Rather, the information is stored non-locally in the correlations between the two states.  This non-locality of information is one of the major distinguishing features of quantum computing over classical computing and is essential for a number of quantum protocols including [quantum teleportation](https://github.com/microsoft/Quantum/tree/main/samples/getting-started/teleportation) and [quantum error correction](xref:microsoft.quantum.libraries.overview.error-correction).
 
-## Measure two-qubit states ##
+### Measuring two-qubit states 
 Measuring two-qubit states is very similar to single-qubit measurements. Measuring the state
 
 $$
@@ -127,7 +127,7 @@ $$
 
 again in accordance with our intuition.
 
-## Two-qubit operations
+### Two-qubit operations
 As in the single-qubit case, any unitary transformation is a valid operation on qubits. In general, a unitary transformation on $n$ qubits is a matrix $U$ of size $2^n \times 2^n$ (so that it acts on vectors of size $2^n$), such that $U^{-1} = U^\dagger$.
 For example, the CNOT (controlled-NOT) gate is a commonly used two-qubit gate and is represented by the following unitary matrix:
 
@@ -181,6 +181,76 @@ Gates can also be controlled using classical information.  A classically control
 As in the single-qubit case, a two-qubit gate set is universal if any $4\times 4$ unitary matrix can be approximated by a product of gates from this set to arbitrary precision.
 One example of a universal gate set is the Hadamard gate, the T gate, and the CNOT gate. By taking products of these gates, you can approximate any unitary matrix on two qubits.
 
+## Quantum entanglement 
+
+Consider two qubits $A$ and $B$ in superpositions such that the state of the global system is
+
+$$\ket{\psi}_{AB}=\frac1{\sqrt2}\ket{00}\frac1{\sqrt2}\ket{11}$$
+
+In such a state, only two outcomes are possible when you measure the state of both qubits in the standard basis: **$|00\rangle$** and **$|11\rangle$**. Notice that each outcome has the same probability of $\frac{1}{2}$. There's zero probability of obtaining **$|01\rangle$** and **$|10\rangle$**. If you measure the first qubit and you get that it is in **$|0\rangle$** state, then you can be positive that the second qubit is also in **$|0\rangle$** state, even without measuring it. The measurement outcomes are correlated, and the qubits are *entangled*.
+
+> [!NOTE]
+> This examples uses two qubits, but quantum entanglement is not limited to two qubits. In general it's possible that multiple-qubit systems share entanglement.
+
+Entangled qubits are correlated such that they cannot be described independently from each other. That is, whatever operation happens to the state of one qubit in an entangled pair, also affects to the state of the other qubit.
+
+For a practical implementation, see the tutorial [exploring quantum entanglement with Q# and Azure Quantum](xref:microsoft.quantum.tutorial-qdk.entanglement).
+
+### Entanglement in pure states
+
+Pure quantum states are those that are characterized by a single ket vector or wavefunction, and cannot be written as a statistical mixture (or *convex combination*) of other quantum states. On the [Bloch sphere](xref:microsoft.quantum.concepts.qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere), pure states are represented by a point on the surface of the sphere, whereas mixed states are represented by an interior point. 
+
+A pure state $\ket{\phi}_{AB}$ is entangled if it cannot be written as a combination of product states of the subsystems, that is $\ket{\phi}_{AB} = \ket{a}_A \otimes \ket{b}_B$. 
+
+For example, consider the state
+$$ \ket{\psi}_{AB} = \frac{1}{2} (\ket{00} + \ket{10} +\ket{01} +\ket{11})$$
+
+At first, the state $\ket{\psi}_{AB}$ doesn't look like a product state, but if we rewrite the state as
+
+$$ \ket{\psi}_{AB} = \frac{1}{\sqrt{2}} (\ket{0}_A +\ket{1}_A) \otimes \frac{1}{\sqrt{2}} (\ket{0}_B +\ket{1}_B)= \ket{+}_A \ket{+}_B$$
+
+the state $\ket{\psi}_{AB}$  is a product state, therefore it's not entangled.  
+
+### Entanglement in mixed states
+
+Mixed quantum states are a statistical ensemble of pure states. A mixed state $\rho$ has neither quantum nor classical correlations if it can be written as a product state $\rho = \rho^{A} \otimes \rho^{B}$ for some [density matrices](xref:microsoft.quantum.concepts.dirac#density-operators) $\rho^{A} \qeq 0 , \rho^{B} \geq 0$.
+
+A mixed state $\rho$ is separable if it can be written as a convex combination of product states of the subsystems, such as $\rho = \sum_j p_j \rho^{A}_{j} \otimes \rho^{B}_{j}$ where $p_j \geq 0, \sum p_j = 1$ and $\rho^{A}_{j} \geq 0, \rho^{B}_{j} \geq 0$.
+
+A mixed state $\rho$ is entangled if it's not separable, that is, it cannot be written as a convex combination of product states. 
+
+> [!TIP]
+> A separable state contains only classical correlations.
+
+### Understanding classical correlations
+
+Classical correlations are due to our lack of knowledge of the state of the system. That is, there's some randomness associated to classical correlation, but it can be eliminated by gaining knowledge. 
+
+For example, consider two boxes, each containing one ball. We know that both balls are the same color, either blue or red. If we open one box and find out that the ball inside is blue, then we know that the other ball is blue too. Therefore, they are correlated. However, the uncertainty that we have when opening the box is due to our lack of knowledge, it's not fundamental. The ball was blue before we opened the box. Thus, this is a classical correlation, not a quantum correlation. 
+
+The mixed quantum state of the system formed by the two boxes $\rho_{boxes}$ can be written as
+
+$$ \rho_{boxes} = \frac{1}{2} (\ket{red}\bra{red}_A \otimes \ket{red}\bra{red}_B) +\frac{1}{2} (\ket{blue}\bra{blue}_A \otimes \ket{blue}\bra{blue}_B)
+
+Notice that the state $\rho_{boxes}$ is separable, where $p_1 = p_2 = \frac{1}{2}$ then it contains only classical correlations. Another example of a mixed separable state is
+
+$$ \rho = \frac{1}{2} (\ket{0}\bra{0}_A \otimes \ket{0}\bra{0}_B) +\frac{1}{2} (\ket{1}\bra{1}_A \otimes \ket{1}\bra{1}_B)
+
+Now, consider the following state:
+
+$$ \rho = \frac{1}{4} (\ket{00}\bra{00} + \ket{00}\bra{11} + \ket{11}\bra{00} + \ket{11}\bra{11}) = \ket{\phi^+}\bra{\phi^+}$$
+
+In this case, our knowledge of the state is perfect, we know with maximal certainty that the system $AB$ is in the Bell state $\ket{\phi^+}$ and $\rho$ is a pure state. Therefore, there aren't classical correlations. But if we measure an observable on subsystem $A$, we obtain a random result which gives us information about the state of the subsystem $B$. This randomness is fundamental, namely these are quantum correlations. 
+
+An example of a quantum state that contains both classical and quantum correlations is
+
+$$ \rho = \frac{1}{2} (\ket{\phi^+}\bra{\phi^+} + \ket{\phi^-}\bra{\phi^-})$$
+
+> [!TIP]
+> - If an entangled state $\rho$ is pure, then it contains only quantum correlations. 
+> - If an entangled state $\rho$ is mixed, then it contains both classical and quantum correlations. 
+
+
 ## Many-qubit systems
 
 We follow exactly the same patterns explored in the two-qubit case to build many-qubit quantum states from smaller systems.  Such states are built by forming tensor products of smaller states.  For example, consider encoding the bit string $1011001$ in a quantum computer.  You can encode this as
@@ -202,3 +272,4 @@ Finally, although new gates needed to be added to our gate set to achieve univer
 
 > [!NOTE]
 > While the linear algebraic notation that has been used thus far can certainly be used to describe multi-qubit states, it becomes increasingly cumbersome as you increase the size of the states.  The resulting column-vector for a length 7 bit string, for example, is $128$ dimensional, which makes expressing it using the notation described previously very cumbersome.  Instead, *Dirac notation*, a symbolic shorthand that simplifies the representation of quantum states, is used. For more information, see [Dirac notation](xref:microsoft.quantum.concepts.dirac).
+

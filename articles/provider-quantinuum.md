@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides the technical details of the Quantinuum quantum provider
 ms.author: brbenefield
-ms.date: 09/26/2022
+ms.date: 01/17/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -11,9 +11,6 @@ uid: microsoft.quantum.providers.quantinuum
 ---
 
 # Quantinuum provider
-
-> [!NOTE]
-> The Quantinuum provider replaces the old Honeywell provider. If you previously used the Honeywell provider, see the [Honeywell to Quantinuum migration guide](xref:microsoft.quantum.providers.honeywell.migration).
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
