@@ -13,31 +13,17 @@ uid: microsoft.quantum.partner-features
 
 # Hybrid quantum computing feature availability 
 
-
-## Batch quantum computing
-
-|Provider| Feature | Feature | Feature |
-|---|---|---|---|
-| Quantinuum | Y/N | Y/N  | Y/N  |
-| IonQ | Y/N  | Y/N  | Y/N  |
-
-## Interactive batch quantum computing
-
-|Provider| Feature | Feature | Feature |
-|---|---|---|---|
-| Quantinuum | Y/N | Y/N  | Y/N  |
-| IonQ | Y/N  | Y/N  | Y/N  |
-
-Etc.
-
-Or...
+Each Azure Quantum partner provides unique hardware and emulator targets with various levels of feature support. This page is updated as each provider adds updates and enhancements to their targets. 
 
 ## Supported features by provider
 
-|Provider| Batch| Interactive batch | Integrated 
+|Provider| Batch| Interactive (sessions)| Integrated |
 |---|---|---|---|
-| Quantinuum | feature<br>feature<br>feature | feature<br>feature<br>feature  | feature<br>feature<br>feature  |
-| IonQ | feature<br>feature<br>feature | feature<br>feature<br>feature  | feature<br>feature<br>feature  |
+| [Quantinuum](xref:microsoft.quantum.providers.quantinuum) | feature<br>feature<br>feature | feature<br>feature<br>feature  | feature<br>feature<br>feature  |
+<!--
+| [IonQ](xref:microsoft.quantum.providers.ionq) | feature<br>feature<br>feature | feature<br>feature<br>feature  | feature<br>feature<br>feature  |
+| [QCI](https://quantumcircuits.com/) | feature<br>feature<br>feature | feature<br>feature<br>feature  | feature<br>feature<br>feature  |
+-->
 
 ## Next steps
 
