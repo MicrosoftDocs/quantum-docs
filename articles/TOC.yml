@@ -15,7 +15,7 @@
     href: install-overview-qdk.md
   - name: Share access to your Azure Quantum workspace
     href: how-to-share-access-quantum-workspace.md
-  - name: Perform Long running experiments
+  - name: Perform long running experiments
     href: how-to-long-running-experiments.md
 - name: Quantum computing
   items:
