@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to run the Resource Estimator target in Azure Quantum and tips to make your work and job submission more efficient 
-ms.date: 11/05/2022
+ms.date: 02/12/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -14,6 +14,96 @@ uid: microsoft.quantum.work-with-resource-estimator
 # Get the most out of the Azure Quantum Resource Estimator
 
 Once you've learned how to [customize](xref:microsoft.quantum.overview.resources-estimator) and [submit](xref:microsoft.quantum.quickstarts.computing.resources-estimator) jobs to the Resource Estimator, you can learn how to optimize the execution time of resource estimation jobs.
+
+## Run multiple configurations as a single job
+
+A resource estimation job consist of two types of job parameters: [input parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters), that is qubit model, QEC schemes, and error budget; and operation arguments, that is arguments that can be passed to the QIR program. The Azure Quantum Resource Estimator allows you to submit jobs with multiple configuration of job parameters, or *items*, as a single job to avoid rerunning multiple jobs on the same input program.
+
+One item consists of job parameters. Several items are represented as an array of job parameters. 
+
+- Submit multiple target parameters with *same* operation arguments in all items.
+- Submit multiple target parameters with *different* operation arguments in all items.
+- Easily compare multiple results in a tabular format.
+- Easily compare multiple results in a chart.
+
+For example, consider the following Q# operation that creates multiplier with a `bitwidth` parameter. The operation have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`. 
+
+```python 
+%%qsharp 
+operation Multiply(bitwidth : Int) : Unit { 
+
+    use factor1 = Qubit[bitwidth]; 
+    use factor2 = Qubit[bitwidth]; 
+    use product = Qubit[2 * bitwidth]; 
+    MultiplyI(factor1, factor2, product); 
+
+} 
+```
+You want to estimate the resources of the operation `Multiply` using four different bit widths [8, 16, 32, 64], and for four different qubit models ["qubit_gate_ns_e3", "qubit_gate_ns_e4", "qubit_gate_us_e3", "qubit_gate_us_e4"]. 
+
+```python
+bitwidths = [8, 16, 32, 64] // operation arguments  
+
+estimation_params = [ 
+    {"qubitParams": {"name": "qubit_gate_ns_e3"}}, 
+    {"qubitParams": {"name": "qubit_gate_ns_e4"}}, 
+    {"qubitParams": {"name": "qubit_gate_us_e3"}}, 
+    {"qubitParams": {"name": "qubit_gate_us_e4"}} 
+] // input parameters  
+
+```
+
+
+```python
+items = [] 
+
+for bitwidth in bitwidths: 
+    for params in estimation_params: 
+        items.append({ 
+            "arguments": [{ 
+                "name": "bitwidth", 
+                "value": bitwidth, 
+                "type": "Int" 
+            }], 
+            **params 
+        }) 
+
+results = qsharp.azure.execute(Multiply, {"items": items}) 
+```
+
+Example with Qiskit.
+
+```python
+from azure.quantum.qiskit import AzureQuantumProvider 
+
+provider = AzureQuantumProvider ( 
+    resource_id = "", 
+    location = "" 
+) 
+
+backend = provider.get_backend('microsoft.estimator') 
+
+from qiskit import QuantumCircuit 
+from qiskit.tools.monitor import job_monitor 
+
+circ = QuantumCircuit(3) 
+circ.ccx(0, 1, 2) 
+
+items = [ 
+    {"qubitParams": {"name": "qubit_gate_ns_e3"}, "errorBudget": 0.0001}, 
+    {"qubitParams": {"name": "qubit_gate_ns_e4"}, "errorBudget": 0.0001}, 
+    {"qubitParams": {"name": "qubit_maj_ns_e4"}, "errorBudget": 0.0001}, 
+    {"qubitParams": {"name": "qubit_maj_ns_e6"}, "errorBudget": 0.0001}, 
+] 
+
+job = backend.run(circ, items=items) 
+job_monitor(job) 
+results = job.result() 
+results 
+```
+
+
+
 
 ## Handle large programs
 
@@ -36,6 +126,7 @@ There is no verification that resources are the same in every iteration. However
 
 > [!IMPORTANT]
 > Currently, special operations `BeginCaching` and `EndCaching` are only supported from Q# programs and the Azure CLI. 
+
 
 ## How to avoid rerunning the same job
  
