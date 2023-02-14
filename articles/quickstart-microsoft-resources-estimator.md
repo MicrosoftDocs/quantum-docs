@@ -57,17 +57,13 @@ If you are using an *existing* Azure Quantum workspace:
 The *Estimates with Q# input* program runs a multiplier and analyzes the physical resource estimates targeted on a fault-tolerant quantum computer.
 
 - **1st and 2nd cell**: Preloads `qsharp` package and your subscription information to connect to the Azure Quantum service. 
-- **3rd cell**: Selects the Resource Estimator* as the target using the `microsoft.estimator` target ID and loads some required packages.
-- **4th cell**: The Q# code that defines the quantum algorithm. It creates a multiplier using the [MultiplyI](/qsharp/api/qsharp/microsoft.quantum.arithmetic.multiplyi) operation. You can configure the size of the multiplier with a `bitwidth` parameter. The operation will have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`.
+- **3rd cell**: Selects the *Resource Estimator* as the target using the `microsoft.estimator` target ID and loads some required packages.
+- **4th cell**: The Q# code that defines the quantum algorithm. It creates a multiplier using the [MultiplyI](/qsharp/api/qsharp/microsoft.quantum.arithmetic.multiplyi) operation. You can configure the size of the multiplier by passing an input parameter `bitwidth` to the operation. The operation will have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`.
 
     > [!NOTE]
     > The *%%qsharp* magic command allows you to enter Q# code directly into the notebook when using the **Python 3 (ipykernel)**. For more information, see [%%qsharp magic command](xref:microsoft.quantum.how-to.python-local#the-qsharp-magic-command).
 
-- **5th and 6th cells**: Submits the quantum algorithm to the Resource Estimator using the `qsharp.azure.execute` function. You can create a new instance for a specific bit width, for example, `8` in this example.
-
-    > [!IMPORTANT]
-    > To submit an Q# operation to the Resource Estimator, the operation can't take any input arguments and must have a `Unit` return value. 
-   
+- **5th and 6th cells**: Submits the quantum algorithm to the Resource Estimator using the `qsharp.azure.execute` function. The function calls the Q# operation `EstimateMultiplication` and passes the input parameter `bitwidth=8`. 
 - **8th cell**: Retrieves the results of the resource estimation job and shows a table with overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. For example, if you collapse the **Logical qubit parameters** group, you can more easily see that the error correction code distance is 13. 
 
     |Logical qubit parameter| Value |
@@ -101,17 +97,17 @@ The *Estimates with Q# input* program runs a multiplier and analyzes the physica
 
 For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) for the Resource Estimator.
 
-- **From 9th cell to the end**: Changes the input parameters of the program and estimates the same quantum algorithm.
+- **From 9th cell to the end**: Changes the target parameters of the program and estimates the same quantum algorithm.
 
 ### Input parameters
 
-When submitting a resource estimate request for your program, you can specify some optional parameters. There are three top-level input parameters that can be customized: 
+When submitting a resource estimate request for your program, you can specify some optional parameters. There are three top-level target parameters that can be customized: 
 
 * `errorBudget` - the overall allowed error budget
 * `qecScheme` - the quantum error correction (QEC) scheme
 * `qubitParams` - the physical qubit parameters 
 
-For more information, see [Input parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters) for the Resource Estimator.
+For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters) for the Resource Estimator.
 
  In the **9th cell** of the notebook, you can see the defaults and access all the values that can be passed to a job execution.
 
