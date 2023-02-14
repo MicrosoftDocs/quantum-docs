@@ -36,15 +36,17 @@ Quantinuum provides access to trapped-ion systems with high-fidelity, fully conn
 
 The following targets are available from this provider:
 
-|Target name|	Target ID|	Number of qubits|	Description|
+|Target name|Target ID|Number of qubits|Description|
 |---|---|---|---|
-|[H1-1 Syntax Checker](#syntax-checkers) |	quantinuum.sim.h1-1sc	|20 qubits| Use this to validate quantum programs against the H1-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
-|[H1-2 Syntax Checker](#syntax-checkers) |	quantinuum.sim.h1-2sc |	12 qubits	|Use this to validate quantum programs against the H1-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
-|[H1-1 Emulator](#system-model-h1-emulators) |	quantinuum.sim.h1-1e | 20 qubits	| Uses a realistic physical model and noise model of H1-1.|
-|[H1-2 Emulator](#system-model-h1-emulators)|	quantinuum.sim.h1-2e | 12 qubits	|Uses a realistic physical model and noise model of H1-2.|
-|[H1-1](#system-model-h1)|	quantinuum.qpu.h1-1 |	20 qubits|	Quantinuum's H1-1 trapped ion device.|
-|[H1-2](#system-model-h1)|	quantinuum.qpu.h1-2	| 12 qubits	|Quantinuum's H1-2 trapped ion device.|
-
+|[H1-1 Syntax Checker](#syntax-checkers) |quantinuum.sim.h1-1sc|20 qubits| Use this to validate quantum programs against the H1-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
+|[H1-2 Syntax Checker](#syntax-checkers) |quantinuum.sim.h1-2sc |12 qubits|Use this to validate quantum programs against the H1-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
+|[H2-1 Syntax Checker](#syntax-checkers) |quantinuum.sim.h2-1sc |32 qubits|Use this to validate quantum programs against the H2-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
+|[H1-1 Emulator](#system-model-h1-emulators) |quantinuum.sim.h1-1e | 20 qubits| Uses a realistic physical model and noise model of H1-1.|
+|[H1-2 Emulator](#system-model-h1-emulators)|quantinuum.sim.h1-2e | 12 qubits|Uses a realistic physical model and noise model of H1-2.|
+|[H2-1 Emulator](#system-model-h2-emulators)|quantinuum.sim.h2-1e | 32 qubits|Uses a realistic physical model and noise model of H2-1.|
+|[H1-1](#system-model-h1)|quantinuum.qpu.h1-1 |20 qubits|Quantinuum's H1-1 trapped ion device.|
+|[H1-2](#system-model-h1)|quantinuum.qpu.h1-2| 12 qubits|Quantinuum's H1-2 trapped ion device.|
+|[H2-1](#system-model-h2)|quantinuum.qpu.h2-1| 32 qubits|Quantinuum's H2-1 trapped ion device.|
 
 Quantinuum's targets correspond to a **Basic Measurement Feedback** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
 
@@ -57,10 +59,10 @@ We recommend that users first validate their code using a Syntax Checker. This i
 - Job type: `Simulation`
 - Data Format: `quantinuum.openqasm.v1`
 - Target ID:
-  - H1-1 Syntax Checker: `quantinuum.sim.h1-1sc` 
+  - H1-1 Syntax Checker: `quantinuum.sim.h1-1sc`
   - H1-2 Syntax Checker: `quantinuum.sim.h1-2sc`
+  - H2-1 Syntax Checker: `quantinuum.sim.h2-1sc`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
-
 
 Syntax Checkers usage is offered free-of-charge.
 
@@ -70,14 +72,12 @@ After validating the syntax of their code with a Syntax Checker, users can take 
 
 - Job type: `Simulation`
 - Data Format: `quantinuum.openqasm.v1`
-- Target ID: 
-  - H1-1 Emulator: `quantinuum.sim.h1-1e` 
+- Target ID:
+  - H1-1 Emulator: `quantinuum.sim.h1-1e`
   - H1-2 Emulator: `quantinuum.sim.h1-2e`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
-For more information about the System Model H1 Emulator, see the [Quantinuum product data sheet](https://assets-global.website-files.com/617730fbcf7b7c387194556a/633af5b6ef0513fe5a5615af_Quantinuum%20H1%20Emulator%20Product%20Data%20Sheet%20v5-1%2003OCT22.pdf). For a more in-depth analysis of quantum error correction, see [Realization of real-time fault-tolerant quantum error correction](https://arxiv.org/abs/2107.07505).
-
-H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
+System Model H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
 ## System Model H1
 
@@ -94,13 +94,39 @@ Both System Model H1 hardware H1-1 and H1-2 are continuously upgraded throughout
   - H1-2: `quantinuum.qpu.h1-2`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
+## System Model H2 Emulator
+
+After validating the syntax of their code with the H2-1 Syntax Checker, users can take advantage of Quantinuum's System Model H2 Emulator, an emulation tool which contains a detailed physical model and realistic noise model of the actual System Model H2 hardware. More information about the noise model can be found in the *System Model H2 Emulator Product Data Sheet* found on the [System Model H2](https://www.quantinuum.com/products/h2) page. The System Model H2 Emulator uses an identical API for job submission as the System Model H2 hardware, enabling seamless transition from emulation to hardware. To help maximize productivity and shorten development time, the H2 Emulator is available even while the hardware is offline.
+
+- Job type: `Simulation`
+- Data Format: `quantinuum.openqasm.v1`
+- Target ID:
+  - H2-1 Emulator: `quantinuum.sim.h2-1e`
+- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
+
+System Model H2 Emulator usage is offered free-of-charge with a hardware subscription. For details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
+
+## System Model H2
+
+The Quantinuum System Model H2 generation of quantum computers, Powered by Honeywell, is comprised of a Quantum charge-coupled device (QCCD) with two connected linear sections and currently has 1 machine, the H2-1. More information can be found in the *System Model H2 Product Data Sheet* found on the [System Model H2](https://www.quantinuum.com/products/h2) page. Users are encouraged to test compatibility of their code by submitting jobs to a [syntax checker](#syntax-checkers) and [System Model H2 Emulator](#system-model-h2-emulator) prior to submitting them to the target machines.  
+
+If a user submits a job to the H2-1 machine and the H2-1 machine is not available, the job will remain in that machine's queue until the machine becomes available.
+
+System Model H2 hardware is continuously upgraded throughout it's product lifecycle. Users are given access to the most up-to-date, advanced, and capable hardware available.
+
+- Job type: `Quantum Program`
+- Data Format: `quantinuum.openqasm.v1`
+- Target ID:
+  - H2-1: `quantinuum.qpu.h2-1`
+- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
+
 ### Technical Specifications
 
-Technical details for the System Model H1 and System Model H1 Emulators can be found in Quantinuum's product data sheets on the [System Model H1](https://www.quantinuum.com/products/h1) page alongside links to Quantinuum data repositories and how to cite usage of Quantinuum systems.
+Technical details for System Model H1 and System Model H2 can be found in Quantinuum's product data sheets on the [System Model H1](https://www.quantinuum.com/products/h1) and [System Model H2](https://www.quantinuum.com/products/h2) pages alongside links to Quantinuum specification and quantum volume data repositories and how to cite usage of Quantinuum systems.
 
 ## Target Availability
 
-The Quantinuum H-Series quantum computers are designed to be continuously upgraded, which allows customers to have access to the latest hardware capabilities as Quantinuum continually improves gate fidelities, memory errors, and system speed. 
+The Quantinuum H-Series quantum computers are designed to be continuously upgraded, which allows customers to have access to the latest hardware capabilities as Quantinuum continually improves gate fidelities, memory errors, and system speed.
 
 Quantinuum hardware cycles through commercial periods and development periods. During commercial periods, the hardware is available to process jobs via a queue system. During development periods, the hardware is offline as upgrades are applied.
 
