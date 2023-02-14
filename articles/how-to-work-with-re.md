@@ -102,9 +102,6 @@ results = job.result()
 results 
 ```
 
-
-
-
 ## Handle large programs
 
 When you submit a resource estimation job to the Resource Estimator, the quantum program is evaluated completely to extract the resource estimates. As such, large programs or programs that have loops with many iterations may take a long time to complete the resource estimation job.
@@ -127,22 +124,6 @@ There is no verification that resources are the same in every iteration. However
 > [!IMPORTANT]
 > Currently, special operations `BeginCaching` and `EndCaching` are only supported from Q# programs and the Azure CLI. 
 
-
-## How to avoid rerunning the same job
- 
-If you've already submitted a resource estimation job for a quantum program, you can retrieve the results in the future and avoid rerunning the same job.
-
-- After running the jobs in the same notebook, you can print the jobs using the `print`
-  command and then paste it into the cell. This way, you can easily access the job IDs in future sessions without needing to resubmit jobs.
-- After running jobs in some other notebook, you can paste the job IDs that you can access from the **Job management** page in your Azure Quantum workspace and collect the results in your current notebook.
-
-```python
-# Use the following line to print all job IDs and then update them in the bottom of the cell
-print(f"jobs = {jobs}")
-
-# These job ids are not complete and are just printed to provide an idea of what to expect from the output.
-jobs = {'gate_ns': ['fdd354d9-...', ...], 'gate_us': ['453f7039-...', ...], 'maj_ns': ['cf273c84-...', ...]} 
-```
 
 ## Next steps
 
