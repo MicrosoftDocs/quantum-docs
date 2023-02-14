@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 01/31/2023
+ms.date: 02/14/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -45,7 +45,7 @@ qsharp.azure.target("microsoft.estimator") # To set Resource Estimator as target
 
 ### Create the quantum algorithm
 
-Next, create a multiplier using the [MultiplyI](/qsharp/api/qsharp/microsoft.quantum.arithmetic.multiplyi) operation.  You can configure the size of the multiplier with a `bitwidth` parameter. The operation will have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`.
+Next, create a multiplier using the [MultiplyI](/qsharp/api/qsharp/microsoft.quantum.arithmetic.multiplyi) operation.  You can configure the size of the multiplier with a `bitwidth` parameter that can be passed as input argument. The `EstimateMultiplication` operation will have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`.
 
 Click **+ Code** to add a new cell, then add the following Q# code using the [%%qsharp magic command](xref:microsoft.quantum.how-to.python-local#the-qsharp-magic-command).
 
@@ -68,23 +68,10 @@ operation EstimateMultiplication(bitwidth : Int) : Unit {
 
 ### Estimate the quantum algorithm
 
-In order to estimate an operation using the Resource Estimator, it must have a `Unit` return value. You can create a new instance for a specific bitwidth, for example `8` in this case.
+Now, estimate the physical resources for this operation using the default assumptions. You can submit the operation to the Resource Estimator target using the `qsharp.azure.execute` function. This function calls the `EstimateMultiplication` operation and passes the input argument `bitwidth=8`.
 
 ```python
-%%qsharp
-
-operation EstimateMultiplication8() : Unit {
-    EstimateMultiplication(8);
-}
-```
-
-> [!IMPORTANT]
-> To submit an Q# operation to the Resource Estimator, the operation must have a `Unit` return value. 
-
-Now, estimate the physical resources for this operation using the default assumptions. You can submit the operation to the Resource Estimator target using the `qsharp.azure.execute` function.
-
-```python
-result = qsharp.azure.execute(EstimateMultiplication8)
+result = qsharp.azure.execute(EstimateMultiplication, bitwidth=8)
 result
 ```
 
@@ -154,13 +141,13 @@ result['jobParams']
   'twoQubitGateTime': '50 ns'}}
  ```
 
-There are three top-level input parameters that can be customized: 
+There are three top-level target parameters that can be customized: 
 
 * `errorBudget` - the overall allowed error budget
 * `qecScheme` - the quantum error correction (QEC) scheme
 * `qubitParams` - the physical qubit parameters 
 
-For more information, see [Input parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters) for the Resource Estimator.
+For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters) for the Resource Estimator.
 
 #### Change qubit model
 
@@ -278,7 +265,7 @@ result_maj_floquet_e1
 
 ### Advanced analysis of the resource estimation results
 
-Now that you’ve learned how to retrieve physical resource estimates and how to access them programmatically, you can perform more elaborate experiments. In this part, you'll evaluate the costs for the Quantum Fourier Transform based multiplier for different bitwidths, qubit parameters, and quantum error correction codes.
+Now that you’ve learned how to retrieve physical resource estimates and how to access them programmatically, you can perform more elaborate experiments. In this part, you'll evaluate the costs for the Quantum Fourier Transform based multiplier for different bit widths, qubit parameters, and quantum error correction codes.
 
 Add a new cell and import the following required packages.
 
