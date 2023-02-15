@@ -276,9 +276,7 @@ from matplotlib.colors import hsv_to_rgb # To automatically find colors for plot
 ```
 
 You'll use two of the six pre-defined qubit parameter models, and one customized model based on the model "qubit_gate_ns_e3", in which you'll set the error rates to 
-$10^{-3.5}$. In your own experiments, you can change the number of items, and also the parameters. You may use other pre-defined models or define custom models. 
-
-Further, you are choosing bitwidths that are powers-of-2, ranging from 8 to 64.
+$10^{-3.5}$. In your own experiments, you can change the number of items, and also the parameters. You may use other pre-defined models or define custom models. Further, you are choosing bitwidths that are powers-of-2, ranging from 8 to 64.
 
 ```python
 target_params = [
@@ -293,7 +291,7 @@ bitwidths = [8, 16, 32, 64]
 names = list(input_params.keys())
 ```
 
-Now, you submit the quantum circuit to the Azure Quantum Resource Estimator for all combinations of target parameters and input arguments.
+Next, you submit the quantum circuit to the Azure Quantum Resource Estimator for all combinations of target parameters and input arguments.
 
 
 ```python
@@ -302,7 +300,7 @@ items = [{"arguments": [{"name": "bitwidth", "value": bitwidth, "type": "Int"}],
 results = qsharp.azure.execute(EstimateMultiplication, jobParams={"items": items})   
 ```
 
-
+#### Plotting the results
 
 Now that you have all the results, you can extract some data from it, such as the number of physical qubits, the total runtime in nanoseconds, and the QEC code distance for the logical qubits. In addition to the total number of physical qubits, you can extract their breakdown into number of physical qubits for executing the algorithm, and the number of physical qubits required for the T factories that produce the required T states.
 
@@ -373,3 +371,12 @@ plt.show()
 ```
 
 :::image type="content" source="../media/plot-resource-estimation-multiplication.png" alt-text="Plot showing a bar chart of the physical resource estimation of physical qubits, runtime and code distance for three different settings of input parameters.":::
+
+#### Accessing the results table
+
+Now, you can display all estimation results for the first bit width in a side-by-side table. Note that the results are ordered by target parameters first, then by bit width. 
+
+```python
+bitwidth_index = 0
+results[bitwidth_index::len(bitwidths)]
+```
