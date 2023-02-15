@@ -270,112 +270,51 @@ Now that you’ve learned how to retrieve physical resource estimates and how to
 Add a new cell and import the following required packages.
 
 ```python
-from ipywidgets import IntProgress       # To show interactive progress while job submission
-from IPython.display import HTML         # To display HTML inside Jupyter notebooks
-import time                              # To sleep while polling for job completion
 import numpy as np                       # To store experimental data from job results
 from matplotlib import pyplot as plt     # To plot experimental results
 from matplotlib.colors import hsv_to_rgb # To automatically find colors for plots
 ```
 
-You'll use two of the six pre-defined qubit parameter models, and one customized model based on the model qubit_gate_nds_e3, in which you'll set the error rates to 
+You'll use two of the six pre-defined qubit parameter models, and one customized model based on the model "qubit_gate_ns_e3", in which you'll set the error rates to 
 $10^{-3.5}$. In your own experiments, you can change the number of items, and also the parameters. You may use other pre-defined models or define custom models. 
 
 Further, you are choosing bitwidths that are powers-of-2, ranging from 8 to 64.
 
 ```python
-input_params = {
-    "Gate-based ns, 10⁻³": {"qubitParams": {"name": "qubit_gate_ns_e3"}},
-    "Gate-based ns, 10⁻³ᐧ⁵": {"qubitParams": {"name": "qubit_gate_ns_e3", "oneQubitMeasurementErrorRate": 0.00032, "oneQubitGateErrorRate": 0.00032, "twoQubitGateErrorRate": 0.00032, "tGateErrorRate": 0.00032}},
-    "Gate-based ns, 10⁻⁴": {"qubitParams": {"name": "qubit_gate_ns_e4"}}
-}
+target_params = [
+    ("Gate-based ns, 10⁻³", {"qubitParams": {"name": "qubit_gate_ns_e3"}}),
+    ("Gate-based ns, 10⁻³ᐧ⁵", {"qubitParams": {"name": "qubit_gate_ns_e3", "oneQubitMeasurementErrorRate": 0.00032, "oneQubitGateErrorRate": 0.00032, "twoQubitGateErrorRate": 0.00032, "tGateErrorRate": 0.00032}}),
+    ("Gate-based ns, 10⁻⁴", {"qubitParams": {"name": "qubit_gate_ns_e4"}})
+]
 
 bitwidths = [8, 16, 32, 64]
 
-# We also store the names of the experiments; if you like to force some order
-# you can explicitly initialize the list with names from the `input_params`
-# dictionary.
-names = list(input_params.keys())
-
-bitwidths = [8, 16, 32, 64]
-
-# We also store the names of the experiments; if you like to force some order
-# you can explicitly initialize the list with names from the `input_params`
-# dictionary.
+# This is to access the names of the target parameters
 names = list(input_params.keys())
 ```
 
-> [!NOTE]
-> When submitting jobs to the Resource Estimator, you can't pass input parameters for operations.
+Now, you submit the quantum circuit to the Azure Quantum Resource Estimator for all combinations of target parameters and input arguments.
 
-Now, you submit the quantum circuit to the Azure Quantum Resource Estimator for all combinations of job parameters and input arguments.
-
-Since the Resource Estimator doesn't support input parameters for operations, you'll create a wrapper operation on the fly by inserting the bitwidth directly into the source code and then compiling it using `qsharp.compile`. This is a generic method that you can use to generate operations for resource estimation from Python.
-
-Next, submit this wrapper operation for each experiment configuration using `qsharp.azure.submit`. This will return a `job` object from which you can extract the `job_id` and store it in the `jobs` dictionary.  Note that the loop will not wait for jobs to be finished.
 
 ```python
-# This initializes a `jobs` dictionary with the same keys as `input_params` and
-# empty arrays as values
-jobs = {name: [] for name in names}
+items = [{"arguments": [{"name": "bitwidth", "value": bitwidth, "type": "Int"}], **params} for (_, params) in target_params for bitwidth in bitwidths]
 
-progress_bar = IntProgress(min=0, max=len(input_params) * len(bitwidths) - 1, style={'description_width': 'initial'}, layout=Layout(width='75%'))
-display(progress_bar)
-
-for bitwidth in bitwidths:
-    callable = qsharp.compile(f"""operation EstimateMultiplication{bitwidth}() : Unit {{ EstimateMultiplication({bitwidth}); }}""");
-    print(callable)
-
-    for name, params in input_params.items():
-        progress_bar.description = f"{bitwidth}: {name}"
-
-        result = qsharp.azure.submit(callable, jobParams=params)
-        jobs[name].append(result.id)
-        progress_bar.value += 1
+results = qsharp.azure.execute(EstimateMultiplication, jobParams={"items": items})   
 ```
 
-All jobs have been submitted now, but they may have not been finished.  The next code cell is extracting the resource estimation results from each job.  To
-do that, it first waits for a job to have succeeded, whenever it is still in a waiting or executing state.  All results are saved to a `results` dictionary, that has an array for each experiment name that has all corresponding results sorted by bitwidth.
 
-```python
-# This initializes a `results` dictionary with the same keys as `input_params`
-# and empty arrays as values
-results = {name: [] for name in names}
-
-progress_bar = IntProgress(min=0, max=len(input_params) * len(bitwidths) - 1, style={'description_width': 'initial'}, layout=Layout(width='75%'))
-display(progress_bar)
-
-for name, job_ids in jobs.items():
-    for job_id in job_ids:
-        progress_bar.description = job_id
-
-        # Wait until a job has succeeded or failed
-        while True:
-            status = qsharp.azure.status(job_id)
-            if status.status in ["Waiting", "Executing"]:
-                time.sleep(1) # Waits one second
-            elif status.status == "Succeeded":
-                break
-            else:
-                raise Exception(f"{status.status} job {job_id} in {name}")
-
-        result = qsharp.azure.output(job_id)
-        results[name].append(result)
-        progress_bar.value += 1
-```
 
 Now that you have all the results, you can extract some data from it, such as the number of physical qubits, the total runtime in nanoseconds, and the QEC code distance for the logical qubits. In addition to the total number of physical qubits, you can extract their breakdown into number of physical qubits for executing the algorithm, and the number of physical qubits required for the T factories that produce the required T states.
 
 ```python
-names = list(input_params.keys())
-
 qubits = np.zeros((len(names), len(bitwidths), 3))
 runtime = np.zeros((len(names), len(bitwidths)))
 distances = np.zeros((len(names), len(bitwidths)))
 
 for bitwidth_index, bitwidth in enumerate(bitwidths):
     for name_index, name in enumerate(names):
-        data = results[names[name_index]][bitwidth_index]
+        # Note that the results are ordered by target parameters first, then by bitwidth
+        data = results.data(name_index * len(bitwidths) + bitwidth_index)
 
         qubits[(name_index, bitwidth_index, 0)] = data['physicalCounts']['physicalQubits']
         qubits[(name_index, bitwidth_index, 1)] = data['physicalCounts']['breakdown']['physicalQubitsForAlgorithm']
@@ -434,65 +373,3 @@ plt.show()
 ```
 
 :::image type="content" source="../media/plot-resource-estimation-multiplication.png" alt-text="Plot showing a bar chart of the physical resource estimation of physical qubits, runtime and code distance for three different settings of input parameters.":::
-
-### How to show the resource estimation data in custom tables
-
-The data required to display the output of the resource estimation in an HTML table is also part of the resource estimation results. You can access that
-data using the `reportData` key from the results dictionary, and use this data to create your own tables.  
-
-The next code block shows how to create a side-to-side comparison table for the _T factory parameters_ from the resource
-estimation results. This is done for all input parameters and a fixed bitwidth.
-
-```python
-bitwidth = 16 # Choose one of the bitwidths here
-bitwidth_index = bitwidths.index(bitwidth)
-
-# Get all results from all input parameters for given bitwidth
-data = [results[name][bitwidth_index] for name in names]
-
-# From each result get the group that contains data about "T-factory parameters"
-groups = [group for result in data for group in result['reportData']['groups'] if group['title'] == "T factory parameters"]
-
-html = "<table><thead><tr><th></th>"
-
-# Produce a table header using the experiment names
-for name in names:
-    html += f"<td>{name}</th>"
-
-html += "</tr></thead><tbody>"
-
-# Iterate through all entries (we extract the count from the first group, and then iterate through all of them)
-for entry_index in range(len(groups[0]['entries'])):
-    # Extract the entry label from the first group
-    html += f"""<tr><td style="text-align: left; font-weight: bold">{groups[0]['entries'][entry_index]['label']}</td>"""
-
-    # Iterate through all experiments
-    for group_index in range(len(groups)):
-        # The 'path' variable in the entry is a '/'-separated path to access the
-        # result dictionary. So we start from the result dictionary of the
-        # current experiment and then access the field based on the path part.
-        # Eventually we obtain the final value.
-        value = data[group_index]
-        for key in groups[group_index]['entries'][entry_index]['path'].split("/"):
-            value = value[key]
-        html += f"<td>{value}</td>"
-    html += "</tr>"
-
-html += "</tbody></table>"
-
-HTML(html)
-```
-
-| Name |Gate-based ns, 10⁻³	|	Gate-based ns, 10⁻³ᐧ⁵	|Gate-based ns, 10⁻⁴|
-|---|---|---|---|
-|Physical qubits |	13520	|3240	|1960|
-|Runtime|	67us 600ns|	46us 800ns|	36us 400ns|
-|Number of ouput T states per run|	1	|1|	1|
-|Number of input T states per run|	30	|15|15|
-|Distillation rounds|	1|	1|	1|
-|Distillation units per round|	2|	1|	1|
-|Distillation units|	15-to-1 space efficient logical|	15-to-1 space efficient logical|	15-to-1 space efficient logical|
-|Distillation code distances|	13|	9|7|
-|Number of physical qubits per round|	13520|	3240|1960|
-|Runtime per round|	67us 600ns|	46us 800ns|	36us 400ns|
-|Logical T state error rate	|5.63e-8|	8.29e-9	| 2.16e-9|
