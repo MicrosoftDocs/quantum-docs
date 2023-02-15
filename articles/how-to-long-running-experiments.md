@@ -26,6 +26,18 @@ See the following suggestion to run long runtime experiments in Azure Quantum.
 
 If your program doesn't required many loops and the QPU queue time is high, you may wait a couple of hours and submit your job later, or submit your program to a different provider from the ones available in Azure Quantum. 
 
+## Local development
+
+Installing the QDK on your local computer provides support for Jupyter Notebooks, Python, and Q#, along with extensions for Visual Studio Code and Visual Studio. You can develop quantum computing applications in your preferred IDE and language and run them on quantum simulators and quantum hardware using the Azure Quantum service.
+
+Some scenarios where you may prefer a local environment:
+
+- You have a customized environment or preferred tools that are not available online.
+- You require source control on your project.
+- You are working with a multi-file project.
+
+For more information, see [Set up a local environment with the QDK](xref:microsoft.quantum.install-qdk.overview#use-your-preferred-ide-and-language-locally-and-submit-jobs-to-azure-quantum). 
+
 ## Docker image running inside a cloud provider
 
 Docker containers are a great tool that allows you to run your applications across any OS, including cloud platforms, without installing anything. You can use the QDK Docker image in your local Docker installation or in the cloud via any service that supports Docker images, such as ACI.
