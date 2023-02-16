@@ -54,7 +54,7 @@ To get started using the Quantinuum provider on Azure Quantum, see [Get started 
 
 ## Syntax Checkers
 
-We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-2 syntax checker uses the same compiler as H1-2. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker will return a `success` status and a result of all 0s. If the code does not compile, the syntax checker will return a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline
+We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-2 syntax checker uses the same compiler as H1-2. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker will return a `success` status and a result of all 0s. If the code does not compile, the syntax checker will return a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
 
 - Job type: `Simulation`
 - Data Format: `quantinuum.openqasm.v1`
@@ -144,7 +144,7 @@ result = qsharp.azure.execute(GenerateRandomBit,
                               jobParams = option_params)
 ```
 
-### [Emulator Noise Parameters with Qiskit Provider](##tab/tabid-emulator-noise-parameters-with-qiskit-provider)
+#### [Emulator Noise Parameters with Qiskit Provider](##tab/tabid-emulator-noise-parameters-with-qiskit-provider)
 
 ```python
 # Specify the emulator backend target to submit to
@@ -206,7 +206,7 @@ result = qsharp.azure.execute(GenerateRandomBit,
                               jobParams = option_params)
 ```
 
-### [TKET Compilation with Qiskit Provider](##tab/tabid-tket-compilation-with-qiskit-provider)
+#### [TKET Compilation with Qiskit Provider](##tab/tabid-tket-compilation-with-qiskit-provider)
 
 ```python
 # Specify the backend target to submit to
