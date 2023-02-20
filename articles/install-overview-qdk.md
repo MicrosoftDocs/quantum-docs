@@ -67,9 +67,15 @@ Select your preferred IDE:
 - [Use Q# and Python with Jupyter Notebooks](#use-q-and-python-with-jupyter-notebooks)
 - [Use the QDK with a pre-configured Docker image](#use-the-qdk-with-a-pre-configured-docker-image-advanced)
 
+
+
 ### Use Q# and Python with Visual Studio and Visual Studio Code 
 
 While you can build Q# applications in any IDE, we recommend using Visual Studio Code (VS Code) or Visual Studio IDE for developing your Q# applications. Developing in either of these environments leverages the rich functionality of the Quantum Development Kit (QDK) extension, which includes submitting quantum jobs via the Azure CLI, warnings, syntax highlighting, project templates, and more.
+
+Alternatively, you can go to [Azure portal](https://portal.azure.com/#home) and under your **Quantum workspace > Overview**, you'll find a link to local configuration install guide at the bottom of the page. 
+
+:::image type="content" source="./media/local-guide-overview.png" alt-text="Screenshot of Azure portal showing how to find a link to a local configuration install guide.":::
 
 #### Prerequisite
 
