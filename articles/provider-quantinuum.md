@@ -310,7 +310,7 @@ Circuits submitted to Quantinuum H-Series systems are automatically run through 
 
 More information on the specific compilation passes applied can be found in the [`pytket-quantinuum`] documentation, specifically the [`pytket-quantinuum` Compilation Passes] section. 
 
-In the H-Series software stack, the optimization level applied is set with the `tket-opt-level` parameter. *The default compilation setting for all circuits submitted to H-Series sytems is optimization level 2.*
+In the H-Series software stack, the optimization level applied is set with the `tket-opt-level` parameter. *The default compilation setting for all circuits submitted to H-Series systems is optimization level 2.*
 
 Users who would like to experiment with the TKET compilation passes and see what optimizations would apply to their circuits *before* submitting any jobs can see the *Quantinuum_compile_without_api.ipynb* notebook in the [`pytket-quantinuum` Examples] folder.
 
