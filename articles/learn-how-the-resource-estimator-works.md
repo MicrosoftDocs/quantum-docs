@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how the Azure Quantum Resource Estimator calculates estimates
-ms.date: 11/10/2022
+ms.date: 02/21/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -13,13 +13,13 @@ uid: microsoft.quantum.learn-how-resource-estimator-works
 
 # Learn how the Resource Estimator works
 
-The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) computes pre- and post-layout estimation of the logical resources. It takes as input a QIR quantum algorithm, for example a program written in Q#, Qiskit, or a QIR generator as [PyQIR](https://github.com/qir-alliance/pyqir), and a set of [job parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters) to evaluate the resource estimates of the quantum algorithm. 
+The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) computes pre- and post-layout estimation of the logical resources. It takes a QIR quantum algorithm, for example a program written in Q#, Qiskit, or a QIR generator as [PyQIR](https://github.com/qir-alliance/pyqir), and a set of [target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) to evaluate the resource estimates of the quantum algorithm. Optionally, the Resource Estimator can take operation arguments, that is arguments that can be passed to the QIR program. 
 
 In this article, you'll learn the workflow of the Resource Estimator and how the [output data](xref:microsoft.quantum.overview.resources-estimator#output-data) is extracted at different levels of the evaluation of the quantum program.
 
 ## Code distance and T factory estimation
 
-The Resource Estimator takes the optional job parameters `{qubitParams, qecScheme, errorBudget}` to compute a resource estimation of qubit technology and architecture. It calculates the QEC code distance, and from it, the number of physical qubits needed to encode one logical qubit and the runtime of one logical depth or cycle.
+The Resource Estimator takes the target parameters `{qubitParams, qecScheme, errorBudget}` to compute a resource estimation of qubit technology and architecture. It calculates the QEC code distance, and from it, the number of physical qubits needed to encode one logical qubit and the runtime of one logical depth or cycle.
 
 The Resource Estimator uses a logical layer called *planar quantum ISA* that acts as the interface between the software and hardware layers. It abstracts the details of how QEC is implemented in the layer below, retaining only a set of fault-tolerant logical operations as its instruction set. For more information, see [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629).
 
@@ -49,7 +49,7 @@ Similarly, the runtime of the algorithm is $\text{Number of algorithmic logical 
 
 ## T factory physical estimation
 
-In the [Algorithmic logical estimation](#algorithmic-logical-estimation) step, the Resource Estimator calculates the total number of T states needed to run the algorithm. From the job parameters, the Resource Estimator has calculated the number of physical qubits for a single [T factory](xref:microsoft.quantum.concepts.tfactories) and its runtime. 
+In the [Algorithmic logical estimation](#algorithmic-logical-estimation) step, the Resource Estimator calculates the total number of T states needed to run the algorithm. From the target parameters, the Resource Estimator has calculated the number of physical qubits for a single [T factory](xref:microsoft.quantum.concepts.tfactories) and its runtime. 
 
 The following diagram shows an example of the runtime of the algorithm (red) and the runtime of one T factory (blue). You can see that the runtime of the T factory is shorter than the runtime of the algorithm. In this example, one T factory can distill one T state. Two questions arise:
 
