@@ -24,7 +24,7 @@ You need the following prerequisites to use Jupyter Notebooks in an Azure Quantu
 
 ## Get a sample notebook
 
-To get started, you can use use a sample notebook from the sample gallery.
+To get started, you can use a sample notebook from the sample gallery.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Notebooks**.
@@ -66,13 +66,13 @@ Follow these steps to create a new Jupyter Notebook using Q# or Python.
 
 The first cell of the notebook is populated automatically with the connection string to the Azure Quantum workspace.
 
-For Q#, the first cell will look like this:
+For Q#, the first cell looks like this:
 
 :::image type="content" source="media/how-to-run-notebooks-workspace/new-qsharp-notebook-snippet.png" alt-text="Screenshot of the fisrt cell in a new Q# notebook in Azure Quantum.":::
 
-For Python, the first cell will look like this:
+For Python, the first cell looks like this:
 
-:::image type="content" source="media/how-to-run-notebooks-workspace/new-python-notebook-snippet.png" alt-text="Screenshot of the fisrt cell in a new Python notebook in Azure Quantum.":::
+:::image type="content" source="media/how-to-run-notebooks-workspace/new-python-notebook-snippet.png" alt-text="Screenshot of the first cell in a new Python notebook in Azure Quantum.":::
 
 Select **+ Code** or **+ Markdown** to add a code or markdown text cell.
 
@@ -99,7 +99,7 @@ You can upload one or more existing Jupyter Notebooks to an Azure Quantum worksp
 After the notebooks have been uploaded, you can find them under **My notebooks**.
 
 > [!NOTE]
-> If you are uploading a notebook that was saved from another Azure Quantum workspace, you may need to update the connection information, such as Subscription, Resource group, workspace name, Location, or Resource ID, before running the notebook. 
+> If you're uploading a notebook that was saved from another Azure Quantum workspace, you may need to update the connection information, such as Subscription, Resource group, workspace name, Location, or Resource ID, before running the notebook. 
 
 ## Manage notebooks
 
@@ -133,7 +133,7 @@ Jupyter Notebooks are stored in an [Azure Storage](/azure/storage/) account link
 The following are limitations with Jupyter Notebooks in an Azure Quantum workspace.
 
 - As it is free, the Jupyter Notebook instance will live up to a maximum of 12 hours (after that time, your instance will be deleted or recreated, and you will need to reinstall any custom packages).
-  - Azure Quantum may need to delete your Jupyter Notebook instance to apply security patches or roll out emergency changes. When possible, it will not interrupt your workflow.
+- Azure Quantum may need to delete your Jupyter Notebook instance to apply security patches or roll out emergency changes. When possible, it will not interrupt your workflow.
 - Notebook instances have pre-allocated 2 vCPU and 4 GB of memory.
 - Idle kernels are terminated after 30 minutes. After that time, you will need to rerun the cells.
 - The location of your storage account and workspace will affect the performance of Jupyter Notebooks in an Azure Quantum workspace. When possible, try to create the storage account and workspace in a region close to where you will be using your notebooks.
