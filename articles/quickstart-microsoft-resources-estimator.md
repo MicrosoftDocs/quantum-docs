@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to submit a Q# program to the Azure Quantum Resource Estimator
 ms.author: sonialopez
-ms.date: 11/22/2022
+ms.date: 02/21/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: quickstart
@@ -99,7 +99,7 @@ For more information, see [the full list of output data](xref:microsoft.quantum.
 
 - **From 9th cell to the end**: Changes the target parameters of the program and estimates the same quantum algorithm.
 
-### Input parameters
+### Target parameters
 
 When submitting a resource estimate request for your program, you can specify some optional parameters. There are three top-level target parameters that can be customized: 
 
@@ -107,7 +107,7 @@ When submitting a resource estimate request for your program, you can specify so
 * `qecScheme` - the quantum error correction (QEC) scheme
 * `qubitParams` - the physical qubit parameters 
 
-For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters) for the Resource Estimator.
+For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the Resource Estimator.
 
  In the **9th cell** of the notebook, you can see the defaults and access all the values that can be passed to a job execution.
 
