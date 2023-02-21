@@ -77,37 +77,6 @@ results = qsharp.azure.execute(Multiply, {"items": items})
 The result of the resource estimation job is displayed in a table with multiple results coming from the list of items. By default the max number of items to be displayed is $N = 5$. To display a list of items where $N > 5$, use `results[0:N]`. 
 
 
-Example with Qiskit.
-
-```python
-from azure.quantum.qiskit import AzureQuantumProvider 
-
-provider = AzureQuantumProvider ( 
-    resource_id = "", 
-    location = "" 
-) 
-
-backend = provider.get_backend('microsoft.estimator') 
-
-from qiskit import QuantumCircuit 
-from qiskit.tools.monitor import job_monitor 
-
-circ = QuantumCircuit(3) 
-circ.ccx(0, 1, 2) 
-
-items = [ 
-    {"qubitParams": {"name": "qubit_gate_ns_e3"}, "errorBudget": 0.0001}, 
-    {"qubitParams": {"name": "qubit_gate_ns_e4"}, "errorBudget": 0.0001}, 
-    {"qubitParams": {"name": "qubit_maj_ns_e4"}, "errorBudget": 0.0001}, 
-    {"qubitParams": {"name": "qubit_maj_ns_e6"}, "errorBudget": 0.0001}, 
-] 
-
-job = backend.run(circ, items=items) 
-job_monitor(job) 
-results = job.result() 
-results 
-```
-
 ## Handle large programs
 
 When you submit a resource estimation job to the Resource Estimator, the quantum program is evaluated completely to extract the resource estimates. As such, large programs or programs that have loops with many iterations may take a long time to complete the resource estimation job.
