@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to work with Q# or Python in a Jupyter notebook in an Azure Quantum workspace.
 ms.author: brbenefield
-ms.date: 01/31/2023
+ms.date: 02/21/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -35,6 +35,9 @@ To get started, you can use use a sample notebook from the sample gallery.
 
 The sample notebook can be found under **My notebooks** and you can now run the notebook.
 
+> [!TIP]
+> The **Data management** notebook shows you how to connect and use Azure Quantum notebooks with external datasources such as Azure Blob Storage. Check this sample to access local files, and upload or download data between your local computer and the Portal.
+
 ## Run a notebook
 
 To run Q# or Python code in a Jupyter Notebook, follow these steps.
@@ -45,6 +48,7 @@ To run Q# or Python code in a Jupyter Notebook, follow these steps.
 1. Select the cell you want to run and select the **run icon** to run the code in the cell, or select **Run all** to run all cells in the notebook.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/run-notebook.png" alt-text="Screenshot of a Jupyter notebook showing how to run it.":::
+    
 
 ## Create a new notebook
 
