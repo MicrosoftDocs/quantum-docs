@@ -61,8 +61,6 @@
       href: hybrid-computing-concepts.md
     - name: Best practices for programming hybrid quantum computing
       href: hybrid-computing-programming.md
-    - name: Hybrid quantum computing feature availability
-      href: hybrid-computing-partner-features.md
   - name: Run quantum circuits with Python
     items:
     - name: Submit a circuit with Qiskit

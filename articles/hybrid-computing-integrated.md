@@ -23,53 +23,12 @@ Currently, the integrated quantum computing model in Azure Quantum is supported 
 
 ### Quantinuum 
 
-|Feature| Supported | Limitations |
-|---|---|---|
-|TBD |Y/N|  |
-|TBD |Y/N|  |
-|TBD |Y/N|  |
-|TBD |Y/N|  |
-
-### Adaptive Profile
-
-Quantinuum also supports various elements of the upcoming [Adaptive Profile](https://github.com/qir-alliance/.github/pull/31), which supports defining and executing quantum programs that permit for limited classical computations and control flow during execution.
-
-#### Limitations
-
-The following are currently not supported by the Adaptive Profile:
-
-- **Composite data types** - The use of composite data types such as structure types, such as tuples, and sequential types, including arrays, is not supported within an Adaptive Profile. This also precludes the use of such data structures for callable values. For example, the usage of subroutines as first class values is not supported within the Adaptive Profile, and the use of function types is limited to globally declared [LLVM](https://llvm.org/) functions that may be called as part of program execution.
-- **Unbounded loops or recursions** - The Adaptive Profile requires that any profile compliant program is known to terminate. That is, it must be possible to statically bind resources and schedule QPU instructions. Supporting direct or indirect function recursions is out of scope for the Adaptive Profile.
-- **Dynamic qubit allocations and access** - Within the Base Profile, all qubit uses refer directly to a unique qubit ID (requires an update of the full specification as part of this workstream). Runtime functions for qubit allocation and release are not available, and the lack of support for local variables and composite data types prevents any qubit aliasing. Dynamic qubit access is further prevented by prohibiting classical computations and branching that are based on measurement results.
-
-## Implementation
-
-Integrated quantum programs on Azure Quantum are managed just as regular batch jobs are. Each job has a single job ID and the result is a single histogram.
-
-### IQ\#
-
-When using the IQ# kernel in a Jupyter Notebook, use the [%azure.target-capability](xref:microsoft.quantum.iqsharp.magic-ref.azure.target-capability) magic command. 
-
-```qsharp
-%azure.target-capability AdaptiveExecution
-```
-
-### Python + Q\#
-
-When using the *quantum* Python package, use the qsharp.azure.target_capability function. 
-
-```python
-qsharp.azure.target_capability("AdaptiveExecution")
-```
-
-### Azure CLI
-
-When using the Azure CLI to submit a program, use the \<TBD\>.
-
-```azurecli
-TBD
-```
-
+|Supported feature| Notes |
+|---|---|
+|TBD |TBD  |
+|TBD |TBD  |
+|TBD |TBD  |
+|TBD |TBD  |
 
 ## Cost estimation
 
@@ -82,7 +41,7 @@ TBD
 
 ## Examples
 
-The following examples demonstrate the available integrated hybrid feature set. For more examples, see the Hybrid Quantum Computing notebook samples in the Azure Quantum portal. 
+The following examples demonstrate the available integrated feature set. For more examples, see the Integrated Quantum Computing notebook samples in the Azure Quantum portal, and [Integrated quantum computing programming best practices](xref:microsoft.quantum.hybrid.programming). 
 
 - Verify an entangled GHZ state. 
 - View how error correction works with integrate hybrid. 
@@ -143,7 +102,9 @@ result = qsharp.azure.execute(CheckGHZ, shots=50, jobName="CheckGHZ", timeout=24
 ### [Error correction](#tab/tabid-qec)
 
 
-### [KPMG](#tab/tabid-kpmg)  
+### [Quantum machine learning](#tab/tabid-qml)
+
+Add appropriate credit to KPMG
 
 ***
 

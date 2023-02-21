@@ -40,7 +40,7 @@ Quantinuum provides access to trapped-ion systems with high-fidelity, fully conn
 
 The following targets are available from this provider:
 
-|Target name|	Target ID|	Number of qubits| Integrated support |Description|
+|Target name|	Target ID| Number of qubits| Integrated support |Description|
 |---|---|---|---|
 |[H1-1 Syntax Checker](#syntax-checkers) |	quantinuum.sim.h1-1sc	|20 qubits| Yes | Use this to validate quantum programs against the H1-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
 |[H1-2 Syntax Checker](#syntax-checkers) |	quantinuum.sim.h1-2sc |	12 qubits	| Yes | Use this to validate quantum programs against the H1-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
@@ -91,7 +91,7 @@ H1 Emulator usage is offered free-of-charge with a hardware subscription. For de
 
 ## System Model H1
 
-The System Model H1 generation of quantum computers, Powered by Honeywell, includes two machine targets: H1-1 and H1-2. Both quantum computers have fundamentally the same design and both meet a nominal set of technical requirements. However, they may have system-to-system variability in exact performance and features, such as the maximum number of available qubits. Users are encouraged to test compatibility of their code by submitting jobs to the [syntax checker](#syntax-checkers) and [System Model H1 Emulator](#system-model-h1-emulators) prior to submitting them to the target machines.  
+The System Model H1 generation of quantum computers, Powered by Honeywell, includes two machine targets: H1-1 and H1-2. Both quantum computers have fundamentally the same design and both meet a nominal set of technical requirements. However, they may have system-to-system variability in exact performance and features, such as the maximum number of available qubits, and the number of classical registers available for integrated quantum programs. Users are encouraged to test compatibility of their code by submitting jobs to the [syntax checker](#syntax-checkers) and [System Model H1 Emulator](#system-model-h1-emulators) prior to submitting them to the target machines.  
 
 Users may submit jobs to a specific machine (H1-1 or H1-2), or submit them to the *machine family*.  Submission to the machine family enables the submitted job to run on the first available, compatible machine. The only condition for compatibility is the number of qubits. If a user submits a job to a specific machine that is not available, the job will remain in that machine's queue until the machine becomes available.
 

@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand what hybrid quantum computing is and the different implementation types.Hybrid quantum computing 
-ms.date: 02/05/2023
+ms.date: 02/21/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -22,11 +22,11 @@ As quantum technology evolves and advances, the integration between the classica
 |Hybrid level | Description|
 |---|---|
 | [**Batch quantum computing**](xref:microsoft.quantum.hybrid.batch) | This is how most quantum computing is done today. Local clients define circuits and submit them as jobs to the QPU, which returns the result to the client. Batching multiple circuits into one job, however, eliminates the wait between job submissions, allowing you to run multiple jobs significantly faster. Examples of problems that can take advantage of batch quantum computing include Shor's algorithm and simple quantum phase estimation.  |
-| [**Interactive batch quantum computing**](xref:microsoft.quantum.hybrid.interactive-batch) | In this model, the client compute resource is moved to the cloud, resulting in lower-latency and a repeated execution of the quantum circuit with different parameters. Jobs can be grouped logically into one session, and prioritized within that session.  Although this allows for shorter queue times and longer running problems, the qubit states do not persist between each loop iteration. Examples of problems that can leverage this approach are variational quantum eigensolvers (VQE) and quantum approximation optimization algorithms (QAOA).   |
+| [**Interactive (sessions) quantum computing**](xref:microsoft.quantum.hybrid.interactive) | In this model, the client compute resource is moved to the cloud, resulting in lower-latency and a repeated execution of the quantum circuit with different parameters. Jobs can be grouped logically into one session, and prioritized within that session.  Although this allows for shorter queue times and longer running problems, the qubit states do not persist between each loop iteration. Examples of problems that can leverage this approach are variational quantum eigensolvers (VQE) and quantum approximation optimization algorithms (QAOA).   |
 | [**Integrated quantum computing**](xref:microsoft.quantum.hybrid.integrated) | With integrated quantum computing, the classical and quantum architectures are tightly coupled, allowing qubits to persist their state between computations. Though limited by qubit life and error correction, this allows for quantum programs to move away from just circuits and use common programming constructs to perform mid-circuit measurements, optimize and re-use qubits, and adapt in real-time to the QPU. Examples of scenarios that can take advantage of this are adaptive phase estimation, machine learning, and advanced error correction.   |
 | [**Distributed quantum computing**](xref:microsoft.quantum.hybrid.distributed) | With fully integrated classical control and longer lived logical qubits, distributed quantum computing will enable real-time computations across quantum and distributed resources. The classical controls will no longer be limited to looping, and will allow for scenarios such as complex materials modeling or the evaluation of full catalytic reactions.  |
 
-![Hybrid quantum computing models](~/media/hybrid/hybrid-5.gif)
+![Hybrid quantum computing models](~/media/hybrid/hybrid-6.gif)
 
 <!-- 
 ### Batch quantum computing
