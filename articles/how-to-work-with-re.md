@@ -17,16 +17,18 @@ Once you've learned how to [customize](xref:microsoft.quantum.overview.resources
 
 ## Run multiple configurations as a single job
 
-A resource estimation job consist of two types of job parameters: [input parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters), that is qubit model, QEC schemes, and error budget; and operation arguments, that is arguments that can be passed to the QIR program. The Azure Quantum Resource Estimator allows you to submit jobs with multiple configuration of job parameters, or *items*, as a single job to avoid rerunning multiple jobs on the same input program.
+A resource estimation job consist of two types of job parameters: [target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters), that is qubit model, QEC schemes, and error budget; and, optionally, operation arguments, that is arguments that can be passed to the QIR program. The Azure Quantum Resource Estimator allows you to submit jobs with multiple configuration of job parameters, or multiple *items*, as a single job to avoid rerunning multiple jobs on the same quantum program.
 
-One item consists of job parameters. Several items are represented as an array of job parameters. 
+One item consists of one configuration of job parameters, that is one configuration of target parameters and operation arguments. Several items are represented as an array of job parameters. 
+
+Some scenarios where you may want to submit multiple items as a single job:
 
 - Submit multiple target parameters with *same* operation arguments in all items.
 - Submit multiple target parameters with *different* operation arguments in all items.
 - Easily compare multiple results in a tabular format.
 - Easily compare multiple results in a chart.
 
-For example, consider the following Q# operation that creates multiplier with a `bitwidth` parameter. The operation have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`. 
+For example, consider the following Q# operation that creates multiplier with a `bitwidth` parameter that can be passed to the operation. The operation have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`. 
 
 ```python 
 %%qsharp 
@@ -39,7 +41,7 @@ operation Multiply(bitwidth : Int) : Unit {
 
 } 
 ```
-You want to estimate the resources of the operation `Multiply` using four different bit widths [8, 16, 32, 64], and for four different qubit models ["qubit_gate_ns_e3", "qubit_gate_ns_e4", "qubit_gate_us_e3", "qubit_gate_us_e4"]. 
+You want to estimate the resources of the operation `Multiply` using four different bit widths [8, 16, 32, 64], and for four different qubit models ["qubit_gate_ns_e3", "qubit_gate_ns_e4", "qubit_gate_us_e3", "qubit_gate_us_e4"]. Each configuration consists of one operation argument and one target parameter.
 
 ```python
 bitwidths = [8, 16, 32, 64] // operation arguments  
@@ -49,10 +51,11 @@ estimation_params = [
     {"qubitParams": {"name": "qubit_gate_ns_e4"}}, 
     {"qubitParams": {"name": "qubit_gate_us_e3"}}, 
     {"qubitParams": {"name": "qubit_gate_us_e4"}} 
-] // input parameters  
+] // target parameters  
 
 ```
-
+By running each configuration as a single job, this would lead to the submission of 16 jobs, which means 16 separate compilations for the same program. 
+Instead, you want to run one resource estimation job with multiple items. 
 
 ```python
 items = [] 
@@ -70,6 +73,9 @@ for bitwidth in bitwidths:
 
 results = qsharp.azure.execute(Multiply, {"items": items}) 
 ```
+
+The result of the resource estimation job is displayed in a table with multiple results coming from the list of items. By default the max number of items to be displayed is $N = 5$. To display a list of items where $N > 5$, use `results[0:N]`. 
+
 
 Example with Qiskit.
 
