@@ -68,7 +68,7 @@ operation EstimateMultiplication(bitwidth : Int) : Unit {
 
 ### Estimate the quantum algorithm
 
-Now, estimate the physical resources for this operation using the default assumptions. You can submit the operation to the Resource Estimator target using the `qsharp.azure.execute` function. This function calls the `EstimateMultiplication` operation and passes the input argument `bitwidth=8`.
+Now, estimate the physical resources for this operation using the default assumptions. You can submit the operation to the Resource Estimator target using the `qsharp.azure.execute` function. This function calls the `EstimateMultiplication` operation and passes the operation argument `bitwidth=8`.
 
 ```python
 result = qsharp.azure.execute(EstimateMultiplication, bitwidth=8)
@@ -116,7 +116,7 @@ For more information, see [the full list of output data](xref:microsoft.quantum.
 
 ### Change the default values and estimate the algorithm
 
-When submitting a resource estimate request for your program, you can specify some optional parameters. Use the `jobParams` field to access all the values that can be passed to the job execution and see which default values were assumed:
+When submitting a resource estimate request for your program, you can specify some optional parameters. Use the `jobParams` field to access all the target parameters that can be passed to the job execution and see which default values were assumed:
 
 ```python
 result['jobParams']
@@ -267,6 +267,9 @@ result_maj_floquet_e1
 
 Now that you’ve learned how to retrieve physical resource estimates and how to access them programmatically, you can perform more elaborate experiments. In this part, you'll evaluate the costs for the Quantum Fourier Transform based multiplier for different bit widths, qubit parameters, and quantum error correction codes.
 
+
+
+
 Add a new cell and import the following required packages.
 
 ```python
@@ -275,23 +278,26 @@ from matplotlib import pyplot as plt     # To plot experimental results
 from matplotlib.colors import hsv_to_rgb # To automatically find colors for plots
 ```
 
-You'll use two of the six pre-defined qubit parameter models, and one customized model based on the model "qubit_gate_ns_e3", in which you'll set the error rates to 
-$10^{-3.5}$. In your own experiments, you can change the number of items, and also the parameters. You may use other pre-defined models or define custom models. Further, you are choosing bitwidths that are powers-of-2, ranging from 8 to 64.
+#### Batching with the Resource Estimator
+
+A resource estimation job consist of two types of job parameters: [target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters), that is qubit model, QEC schemes, and error budget; and, optionally, operation arguments, that is arguments that can be passed to the QIR program. The Azure Quantum Resource Estimator allows you to submit jobs with multiple configuration of job parameters, or multiple *items*, as a single job to avoid rerunning multiple jobs on the same quantum program. For more information, see [Run multiple configurations as a single job](xref:microsoft.quantum.work-with-resource-estimator#run-multiple-configurations-as-a-single-job).
+
+In the following example, you use two of the six pre-defined qubit parameter models, and one customized model based on the model "qubit_gate_ns_e3", in which you'll set the error rates to $10^{-3.5}$. As operation arguments, you are choosing bitwidths that are powers-of-2, ranging from 8 to 64.
 
 ```python
+# target parameters
 target_params = [
     ("Gate-based ns, 10⁻³", {"qubitParams": {"name": "qubit_gate_ns_e3"}}),
     ("Gate-based ns, 10⁻³ᐧ⁵", {"qubitParams": {"name": "qubit_gate_ns_e3", "oneQubitMeasurementErrorRate": 0.00032, "oneQubitGateErrorRate": 0.00032, "twoQubitGateErrorRate": 0.00032, "tGateErrorRate": 0.00032}}),
     ("Gate-based ns, 10⁻⁴", {"qubitParams": {"name": "qubit_gate_ns_e4"}})
 ]
-
-bitwidths = [8, 16, 32, 64]
+# operation arguments
+bitwidths = [8, 16, 32, 64] 
 
 # This is to access the names of the target parameters
-names = list(input_params.keys())
+names = list(target_params.keys())
 ```
-
-Next, you submit the quantum circuit to the Azure Quantum Resource Estimator for all combinations of target parameters and input arguments.
+Next, you submit the quantum circuit to the Azure Quantum Resource Estimator for all configurations or items.
 
 
 ```python
@@ -374,9 +380,13 @@ plt.show()
 
 #### Accessing the results table
 
-Now, you can display all estimation results for the first bit width in a side-by-side table. Note that the results are ordered by target parameters first, then by bit width. 
+The result of the resource estimation job is displayed in a table with multiple results coming from the list of items.  Notice that the items are ordered by target parameters first, then by bitwidths. Therefore, all items with `bitwidth = 8` are at indices ${0, 4, 8}$, items with `bitwidth = 16` are at indices ${1, 5, 9}$, items with `bitwidth = 32` are at indices ${2, 6, 10}$, and items with `bitwidth = 48` are at indices ${3, 7, 11}$. The step size of 4 corresponds to the number of different bit widths.
+
+You can display all estimation results for the first bit width in a side-by-side table.  
 
 ```python
 bitwidth_index = 0
 results[bitwidth_index::len(bitwidths)]
 ```
+
+You can also access individual results by providing a number as index. For example, `results[1]` to show the results table of the configuration with the first set of target parameters and bit width 16.
