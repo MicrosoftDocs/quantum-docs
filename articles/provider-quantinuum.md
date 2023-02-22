@@ -69,7 +69,7 @@ Syntax Checkers usage is offered free-of-charge.
 After validating the syntax of their code with a Syntax Checker, users can take advantage of Quantinuum's H1 Emulators, emulation tools which contains a detailed physical model and realistic noise model of the actual System Model H1 hardware. The noise model is derived from a detailed characterization of the H1-1 hardware and is also representative of H1-2 hardware performance. The System Model H1 Emulator uses an identical API for job submission as the System Model H1 hardware, enabling seamless transition from emulation to hardware. To help maximize productivity and shorten development time, the H1 Emulator is available even while the hardware is offline.
 
 - Job type: `Simulation`
-- Data Format: `quantinuum.openqasm.v1`
+- Data Format: `honeywell.openqasm.v1`
 - Target ID: 
   - H1-1 Emulator: `quantinuum.sim.h1-1e` 
   - H1-2 Emulator: `quantinuum.sim.h1-2e`
