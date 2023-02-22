@@ -63,30 +63,43 @@ TBD
 
 ### Compiler warnings
 
+By default, target-specific errors compiler errors are converted to warnings.  Be sure to validate your code on the simulator, emulator, or validator provided by the
+targeted hardware provider to detect issues prior to running on quantum hardware.
+
+### Avoid partial applications
+
+TBD
+
+### Use ranges rather than arrays when possible
+
+TBD
+
+### Supported libraries
+
+As of this release, not all libraries in the QDK support the Adaptive Profile. This table lists the common supported functions and operations.
 
 
+| Function or operation | Library |
+| --- | --- |
+| TBD | TBD |
+| TBD | TBD |
+| TBD | TBD |
 
+### Integer support
 
+Current integer support is limitied to 32-bit unsigned values, even though Q# integers are treated as 64-bit signed in the code. This can affect some bitwise operations and comparisons. It is recommended to use positive values when using the hybrid integer support.
 
-- Set capability and target early? 
-- Opt-in mechanism for partially supported features
-  - Opt to convert compiler error to warnings
-  - https://ms-quantum.visualstudio.com/Quantum%20Program/_workitems/edit/48242
-- Emulator first
-  - Will emulators validate for compiler errors above?
-- Link to troubleshooting
-- Command line arguments
-- Avoid partial applications
-- Use ranges rather than arrays when possible
-- Which functions/operations have the capability attributes?
-  - Q# core and standard libraries
-  - Chem, ML, numerics, etc. not this time
-  - Not katas (assume, not samples on /learn/samples, either?)
-- Partner TBD: 
-  - integer support
-  - returning constant values
+### Returing constant values
 
+TBD
 
+### Loops and classical register limitations
+
+Each supported target has hardware-specific classical register counts, and your compilation may fail if the underlying program uses more classical registers than are available.
+
+### Troubleshooting
+
+TBD
 
 ## Next steps
 
