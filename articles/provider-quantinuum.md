@@ -57,7 +57,7 @@ To get started using the Quantinuum provider on Azure Quantum, see [Get started 
 We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-2 syntax checker uses the same compiler as H1-2. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker will return a `success` status and a result of all 0s. If the code does not compile, the syntax checker will return a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
 
 - Job type: `Simulation`
-- Data Format: `quantinuum.openqasm.v1`
+- Data Format: `honeywell.openqasm.v1`
 - Target ID:
   - H1-1 Syntax Checker: `quantinuum.sim.h1-1sc`
   - H1-2 Syntax Checker: `quantinuum.sim.h1-2sc`
@@ -72,9 +72,9 @@ After validating the syntax of their code with a Syntax Checker, users can take 
 More information can be found in the *System Model H1 Emulator Product Data Sheet* found on the [System Model H1] page.
 
 - Job type: `Simulation`
-- Data Format: `quantinuum.openqasm.v1`
-- Target ID:
-  - H1-1 Emulator: `quantinuum.sim.h1-1e`
+- Data Format: `honeywell.openqasm.v1`
+- Target ID: 
+  - H1-1 Emulator: `quantinuum.sim.h1-1e` 
   - H1-2 Emulator: `quantinuum.sim.h1-2e`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
@@ -89,7 +89,7 @@ Both System Model H1 machines, H1-1 and H1-2, are continuously upgraded througho
 More information can be found in the *System Model H1 Product Data Sheet* found on the [System Model H1] page.
 
 - Job type: `Quantum Program`
-- Data Format: `quantinuum.openqasm.v1`
+- Data Format: `honeywell.openqasm.v1`
 - Target ID:
   - H1-1: `quantinuum.qpu.h1-1`
   - H1-2: `quantinuum.qpu.h1-2`
