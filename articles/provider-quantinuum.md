@@ -101,7 +101,7 @@ Additional capabilities available via the Quantinuum API are listed here.
 
 | Capability | Description |
 | ---- | ---- |
-| Mid-Circuit Measurement and Qubit Reuse (MCMR) | Measure qubits in the middle of a circuit and re-use them |
+| Mid-Circuit Measurement and Qubit Reuse (MCMR) | Measure qubits in the middle of a circuit and reuse them |
 | Arbitrary Angle ZZ Gates | Directly perform 2-qubit arbitrary angle gate rotations |
 | Emulator Noise Parameters | Experiment with the noise parameters used in the Quantinuum H-Series emulators |
 | TKET Optimizations in H-Series Stack | Experiment with turning on different levels of TKET optimizations in the H-Series stack |
@@ -110,9 +110,9 @@ Users can take advantage of these additional capabilities via circuit functions 
 
 ### Mid-circuit Measurement and Qubit Reuse
 
-Mid-circuit Measurement and Qubit Reuse (MCMR) enables users to measure qubits in the middle of a circuit and re-use them. 
+Mid-circuit Measurement and Qubit Reuse (MCMR) enables users to measure qubits in the middle of a circuit and re-use them.
 
-Due to the internal level structure of trapped-ion qubits, a mid-circuit measurement may leave the qubit in a non-computational state. All mid-circuit measurements should be followed by initialization if the qubit is to be used again in that circuit. The code examples below demonstrate this. 
+Due to the internal level structure of trapped-ion qubits, a mid-circuit measurement may leave the qubit in a non-computational state. All mid-circuit measurements should be followed by initialization if the qubit is to be used again in that circuit. The code examples below demonstrate this.
 
 When a subset of qubits is measured in the middle of the circuit, the classical information from these measurements can be used to condition future elements of the circuit. The examples also highlight this usage. 
 
@@ -120,10 +120,11 @@ For information on Mid-circuit Measurement and Qubit Reuse (MCMR) in Quantinuum 
 
 #### [MCMR with Q# Provider](##tab/tabid-mcmr-with-q-provider)
 
-In Q#, the `MResetZ` function can be used both to measure a qubit and reset it to the 0 computational basis state. For more information on this function, see [`MResetZ`] in the Q# documentation.
+In Q#, the `MResetZ` function can be used both to measure a qubit and reset it. For more information on this function, see [`MResetZ`] in the Q# documentation.
 
 ```python
 %%qsharp
+open Microsoft.Quantum.Intrinsic;
 open Microsoft.Quantum.Measurement;
 
 operation ContinueComputationAfterReset() : Result[] {
@@ -134,23 +135,24 @@ operation ContinueComputationAfterReset() : Result[] {
     H(qubits[0]);
     CNOT(qubits[0], qubits[1]);
 
-    # Measure Qubit 1 and reset it back to the |0> state
+    # Measure Qubit 1 and reset it
     let res1 = MResetZ(qubits[1]);
 
-    # Continue additional computation
-    H(qubits[0]);
-    X(qubits[0]);
+    # Continue additional computation, conditioned on Qubit 1's measurement outcome
+    If res1 == 1 {
+         X(qubits[0]);
+    }
     CNOT(qubits[0], qubits[1]);
 
     # Measure qubits and return results
     let res2 = Measure([PauliZ, PauliZ], qubits);
-    return [res0, res1, res2];
+    return [res1, res2];
 }
 ```
 
 #### [MCMR with Qiskit Provider](##tab/tabid-mcmr-with-qiskit-provider)
 
-In Qiskit, we explicitly measure and reset the qubit. Conditional operations can be specified using the `c_if` function following a gate.
+In Qiskit, qubits are explicitly measured and reset. Conditional operations can be specified using the `c_if` function following a gate.
 
 ```python
 from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
@@ -240,9 +242,7 @@ circuit.measure_all()
 
 ### Emulator Noise Parameters
 
-Users have the option of experimenting with the noise parameters of the Quantinuum emulators.
-
-**Only a few of the available noise parameters are highlighted** here demonstrating how to pass through the parameters in the Azure Quantum providers.
+Users have the option of experimenting with the noise parameters of the Quantinuum emulators. **Only a few of the available noise parameters are highlighted** here demonstrating how to pass through the parameters in the Azure Quantum providers.
 
 For more information on the full set of noise parameters available, see the *System Model H1 Emulator Product Data Sheet* on the [System Model H1] page.
 
@@ -263,8 +263,8 @@ option_params = {
         "p_init": 4e-5,
         "p_crosstalk_meas": 1e-5,
         "p_crosstalk_init": 3e-5,
-        "p1_emission": 6e-6,
-        "p2_emission": 2e-4
+        "p1_emission_ratio": 6e-6,
+        "p2_emission_ratio": 2e-4
     }
 }
 
@@ -293,8 +293,8 @@ option_params = {
         "p_init": 4e-5,
         "p_crosstalk_meas": 1e-5,
         "p_crosstalk_init": 3e-5,
-        "p1_emission": 6e-6,
-        "p2_emission": 2e-4
+        "p1_emission_ratio": 6e-6,
+        "p2_emission_ratio": 2e-4
     }
 }
 backend.options.update_options(**option_params)
@@ -310,7 +310,7 @@ Circuits submitted to Quantinuum H-Series systems are automatically run through 
 
 More information on the specific compilation passes applied can be found in the [`pytket-quantinuum`] documentation, specifically the [`pytket-quantinuum` Compilation Passes] section. 
 
-In the H-Series software stack, the optimization level applied is set with the `tket-opt-level` parameter. *The default compilation setting for all circuits submitted to H-Series sytems is optimization level 2.*
+In the H-Series software stack, the optimization level applied is set with the `tket-opt-level` parameter. *The default compilation setting for all circuits submitted to H-Series systems is optimization level 2.*
 
 Users who would like to experiment with the TKET compilation passes and see what optimizations would apply to their circuits *before* submitting any jobs can see the *Quantinuum_compile_without_api.ipynb* notebook in the [`pytket-quantinuum` Examples] folder.
 
