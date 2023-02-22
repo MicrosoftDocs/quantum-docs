@@ -101,16 +101,148 @@ Additional capabilities available via the Quantinuum API are listed here.
 
 | Capability | Description |
 | ---- | ---- |
+| Mid-Circuit Measurement and Qubit Reuse (MCMR) | Measure qubits in the middle of a circuit and reuse them |
+| Arbitrary Angle ZZ Gates | Directly perform 2-qubit arbitrary angle gate rotations |
 | Emulator Noise Parameters | Experiment with the noise parameters used in the Quantinuum H-Series emulators |
 | TKET Optimizations in H-Series Stack | Experiment with turning on different levels of TKET optimizations in the H-Series stack |
 
-Users can pass through these additional capabilities via parameters in the Azure Quantum Q# and Qiskit providers.
+Users can take advantage of these additional capabilities via circuit functions or pass-through parameters in the Azure Quantum Q# and Qiskit providers.
+
+### Mid-circuit Measurement and Qubit Reuse
+
+Mid-circuit Measurement and Qubit Reuse (MCMR) enables users to measure qubits in the middle of a circuit and re-use them.
+
+Due to the internal level structure of trapped-ion qubits, a mid-circuit measurement may leave the qubit in a non-computational state. All mid-circuit measurements should be followed by initialization if the qubit is to be used again in that circuit. The code examples below demonstrate this.
+
+When a subset of qubits is measured in the middle of the circuit, the classical information from these measurements can be used to condition future elements of the circuit. The examples also highlight this usage. 
+
+For information on Mid-circuit Measurement and Qubit Reuse (MCMR) in Quantinuum systems, see the *System Model H1 Product Data Sheet* on the [System Model H1] page.
+
+#### [MCMR with Q# Provider](##tab/tabid-mcmr-with-q-provider)
+
+In Q#, the `MResetZ` function can be used both to measure a qubit and reset it. For more information on this function, see [`MResetZ`] in the Q# documentation.
+
+```python
+%%qsharp
+open Microsoft.Quantum.Intrinsic;
+open Microsoft.Quantum.Measurement;
+
+operation ContinueComputationAfterReset() : Result[] {
+    # Set up circuit with 2 qubits
+    use qubits = Qubit[2];
+
+    # Peform Bell Test
+    H(qubits[0]);
+    CNOT(qubits[0], qubits[1]);
+
+    # Measure Qubit 1 and reset it
+    let res1 = MResetZ(qubits[1]);
+
+    # Continue additional computation, conditioned on Qubit 1's measurement outcome
+    If res1 == 1 {
+         X(qubits[0]);
+    }
+    CNOT(qubits[0], qubits[1]);
+
+    # Measure qubits and return results
+    let res2 = Measure([PauliZ, PauliZ], qubits);
+    return [res1, res2];
+}
+```
+
+#### [MCMR with Qiskit Provider](##tab/tabid-mcmr-with-qiskit-provider)
+
+In Qiskit, qubits are explicitly measured and reset. Conditional operations can be specified using the `c_if` function following a gate.
+
+```python
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+
+# Set up quantum circuit
+q = QuantumRegister(2)
+c = ClassicalRegister(2)
+circuit = QuantumCircuit(q, c)
+circuit.name = "MCMR Example with Conditional Logic"
+
+# Perform Bell Test
+circuit.h(q[0])
+circuit.cnot(q[0], q[1])
+
+# Measure and reset Qubit 1
+circuit.measure(q[1], c[1])
+circuit.reset(q[1])
+
+# Continue additional computation, conditioned on Qubit 1's measurement outcome
+circuit.x(q[0]).c_if(c, 1)
+circuit.cnot(q[0], q[1])
+
+# Measure all qubits
+circuit.measure(q, c)
+
+# Print out the circuit
+circuit.draw()
+```
+
+### Arbitrary Angle ZZ Gates
+
+Quantinuum's native gate set includes arbitrary angle ZZ gates. This is beneficial for reducing the 2-qubit gate count for many quantum algorithms and gate sequences. For information on Arbitrary Angle ZZ gates in Quantinuum systems, see the *System Model H1 Product Data Sheet* on the [System Model H1] page.
+
+#### [Arbitrary Angle ZZ Gates with Q# Provider](##tab/tabid-arbitrary-angle-zz-gates-with-q-provider)
+
+```python
+%%qsharp
+open Microsoft.Quantum.Intrinsic;
+open Microsoft.Quantum.Measurement;
+open Microsoft.Quantum.Arrays;
+
+operation ContinueComputationAfterReset(theta) : Result[] {
+    
+    # Set up circuit with 2 qubits
+    use qubits = Qubit[2];
+
+    H(qubits[0]);
+    Rz(theta, qubits[0]);
+    Rz(theta, qubits[1]);
+    X(qubits[1])
+
+    # Add Arbitrary Angle ZZ gate
+    Rzz(theta, qubits[0], qubits[1]);
+
+    # Measure qubits and return results
+    for i in IndexRange(qubits) {
+        set resultArray w/= i <- M(qubits[i]);
+    }
+    
+    return resultArray;
+}
+```
+
+#### [Arbitrary Angle ZZ Gates with Qiskit Provider](##tab/tabid-arbitrary-angle-zz-gates-with-qiskit-provider)
+
+In Qiskit, the arbitrary angle ZZ gate is implemented with the [`rzz`] function.
+
+```python
+from qiskit import QuantumCircuit
+
+theta = 0.25
+
+# Set up quantum circuit
+circuit = QuantumCircuit(2, 2)
+circuit.name = "Arbitrary Angle ZZ Gate Example"
+
+circuit.h(0)
+circuit.rz(theta, 0)
+circuit.rz(theta, 1)
+circuit.x(1)
+
+# Add arbitrary angle ZZ gate
+circuit.rzz(theta, 0, 1)
+
+circuit.measure_all()
+```
 
 ### Emulator Noise Parameters
 
-Users have the option of experimenting with the noise parameters of the Quantinuum emulators.
-
-Only a few of the available noise parameters are highlighted here demonstrating how to pass through the parameters in the Azure Quantum providers.
+Users have the option of experimenting with the noise parameters of the Quantinuum emulators. **Only a few of the available noise parameters are highlighted** here demonstrating how to pass through the parameters in the Azure Quantum providers.
 
 For more information on the full set of noise parameters available, see the *System Model H1 Emulator Product Data Sheet* on the [System Model H1] page.
 
@@ -131,8 +263,8 @@ option_params = {
         "p_init": 4e-5,
         "p_crosstalk_meas": 1e-5,
         "p_crosstalk_init": 3e-5,
-        "p1_emission": 6e-6,
-        "p2_emission": 2e-4
+        "p1_emission_ratio": 6e-6,
+        "p2_emission_ratio": 2e-4
     }
 }
 
@@ -161,8 +293,8 @@ option_params = {
         "p_init": 4e-5,
         "p_crosstalk_meas": 1e-5,
         "p_crosstalk_init": 3e-5,
-        "p1_emission": 6e-6,
-        "p2_emission": 2e-4
+        "p1_emission_ratio": 6e-6,
+        "p2_emission_ratio": 2e-4
     }
 }
 backend.options.update_options(**option_params)
@@ -178,7 +310,7 @@ Circuits submitted to Quantinuum H-Series systems are automatically run through 
 
 More information on the specific compilation passes applied can be found in the [`pytket-quantinuum`] documentation, specifically the [`pytket-quantinuum` Compilation Passes] section. 
 
-In the H-Series software stack, the optimization level applied is set with the `tket-opt-level` parameter. *The default compilation setting for all circuits submitted to H-Series sytems is optimization level 2.*
+In the H-Series software stack, the optimization level applied is set with the `tket-opt-level` parameter. *The default compilation setting for all circuits submitted to H-Series systems is optimization level 2.*
 
 Users who would like to experiment with the TKET compilation passes and see what optimizations would apply to their circuits *before* submitting any jobs can see the *Quantinuum_compile_without_api.ipynb* notebook in the [`pytket-quantinuum` Examples] folder.
 
@@ -275,6 +407,8 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 
 [Quantinuum]: https://www.quantinuum.com
 [System Model H1]: https://www.quantinuum.com/products/h1
+[`MResetZ`]: https://learn.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.measurement.mresetz
+[`rzz`]: https://qiskit.org/documentation/stubs/qiskit.circuit.QuantumCircuit.rzz.html
 [`pytket-quantinuum`]: https://github.com/CQCL/pytket-quantinuum
 [`pytket`]: https://cqcl.github.io/tket/pytket/api/#
 [`pytket` User Manual]: https://cqcl.github.io/pytket/manual/index.html
