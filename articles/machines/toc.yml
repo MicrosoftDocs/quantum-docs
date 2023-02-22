@@ -4,6 +4,8 @@
   href: full-state-simulator.md
 - name: Sparse simulator
   href: sparse-simulator.md
+- name: Resources estimator
+  href: resources-estimator.md
 - name: Noise simulator
   href: noise-simulator.md
 - name: Trace simulator
