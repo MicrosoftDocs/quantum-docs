@@ -118,7 +118,7 @@ When a subset of qubits is measured in the middle of the circuit, the classical 
 
 For information on Mid-circuit Measurement and Qubit Reuse (MCMR) in Quantinuum systems, see the *System Model H1 Product Data Sheet* on the [System Model H1] page.
 
-#### [MCMR with Q# Provider](##tab/tabid-mcmr-with-q-provider)
+#### [MCMR with Q# Provider](#tab/tabid-mcmr-with-q-provider)
 
 In Q#, the `MResetZ` function can be used both to measure a qubit and reset it. For more information on this function, see [`MResetZ`] in the Q# documentation.
 
@@ -150,7 +150,7 @@ operation ContinueComputationAfterReset() : Result[] {
 }
 ```
 
-#### [MCMR with Qiskit Provider](##tab/tabid-mcmr-with-qiskit-provider)
+#### [MCMR with Qiskit Provider](#tab/tabid-mcmr-with-qiskit-provider)
 
 In Qiskit, qubits are explicitly measured and reset. Conditional operations can be specified using the `c_if` function following a gate.
 
@@ -186,7 +186,7 @@ circuit.draw()
 
 Quantinuum's native gate set includes arbitrary angle ZZ gates. This is beneficial for reducing the 2-qubit gate count for many quantum algorithms and gate sequences. For information on Arbitrary Angle ZZ gates in Quantinuum systems, see the *System Model H1 Product Data Sheet* on the [System Model H1] page.
 
-#### [Arbitrary Angle ZZ Gates with Q# Provider](##tab/tabid-arbitrary-angle-zz-gates-with-q-provider)
+#### [Arbitrary Angle ZZ Gates with Q# Provider](#tab/tabid-arbitrary-angle-zz-gates-with-q-provider)
 
 ```python
 %%qsharp
@@ -216,7 +216,7 @@ operation ContinueComputationAfterReset(theta) : Result[] {
 }
 ```
 
-#### [Arbitrary Angle ZZ Gates with Qiskit Provider](##tab/tabid-arbitrary-angle-zz-gates-with-qiskit-provider)
+#### [Arbitrary Angle ZZ Gates with Qiskit Provider](#tab/tabid-arbitrary-angle-zz-gates-with-qiskit-provider)
 
 In Qiskit, the arbitrary angle ZZ gate is implemented with the [`rzz`] function.
 
@@ -246,7 +246,7 @@ Users have the option of experimenting with the noise parameters of the Quantinu
 
 For more information on the full set of noise parameters available, see the *System Model H1 Emulator Product Data Sheet* on the [System Model H1] page.
 
-#### [Emulator Noise Parameters with Q# Provider](##tab/tabid-emulator-noise-parameters-with-q-provider)
+#### [Emulator Noise Parameters with Q# Provider](#tab/tabid-emulator-noise-parameters-with-q-provider)
 
 ```python
 # Set the emulator target to submit to
@@ -276,7 +276,7 @@ result = qsharp.azure.execute(GenerateRandomBit,
                               jobParams = option_params)
 ```
 
-#### [Emulator Noise Parameters with Qiskit Provider](##tab/tabid-emulator-noise-parameters-with-qiskit-provider)
+#### [Emulator Noise Parameters with Qiskit Provider](#tab/tabid-emulator-noise-parameters-with-qiskit-provider)
 
 ```python
 # Specify the emulator backend target to submit to
@@ -319,7 +319,7 @@ For more information on `pytket`, see the following links:
 - [`pytket`]
 - [`pytket` User Manual]
 
-#### [TKET Compilation with Q# Provider](##tab/tabid-tket-compilation-with-q-provider)
+#### [TKET Compilation with Q# Provider](#tab/tabid-tket-compilation-with-q-provider)
 
 ```python
 # Set the target to submit to
@@ -338,7 +338,7 @@ result = qsharp.azure.execute(GenerateRandomBit,
                               jobParams = option_params)
 ```
 
-#### [TKET Compilation with Qiskit Provider](##tab/tabid-tket-compilation-with-qiskit-provider)
+#### [TKET Compilation with Qiskit Provider](#tab/tabid-tket-compilation-with-qiskit-provider)
 
 ```python
 # Specify the backend target to submit to
@@ -407,7 +407,7 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 
 [Quantinuum]: https://www.quantinuum.com
 [System Model H1]: https://www.quantinuum.com/products/h1
-[`MResetZ`]: https://learn.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.measurement.mresetz
+[`MResetZ`]: /qsharp/api/qsharp/microsoft.quantum.measurement.mresetz
 [`rzz`]: https://qiskit.org/documentation/stubs/qiskit.circuit.QuantumCircuit.rzz.html
 [`pytket-quantinuum`]: https://github.com/CQCL/pytket-quantinuum
 [`pytket`]: https://cqcl.github.io/tket/pytket/api/#
