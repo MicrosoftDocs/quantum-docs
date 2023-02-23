@@ -142,7 +142,7 @@ operation ContinueComputationAfterReset() : Result[] {
     // Measure Qubit 1 and reset it
     let res1 = MResetZ(qubits[1]);
 
-    // Continue additional computation, conditioned on Qubit 1's measurement outcome
+    // Continue additional computation, conditioned on qubits[1] measurement outcome
     if res1 == One {
          X(qubits[0]);
     }
