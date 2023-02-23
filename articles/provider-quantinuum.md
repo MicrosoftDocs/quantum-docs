@@ -132,23 +132,23 @@ open Microsoft.Quantum.Intrinsic;
 open Microsoft.Quantum.Measurement;
 
 operation ContinueComputationAfterReset() : Result[] {
-    # Set up circuit with 2 qubits
+    // Set up circuit with 2 qubits
     use qubits = Qubit[2];
 
-    # Peform Bell Test
+    // Perform Bell Test
     H(qubits[0]);
     CNOT(qubits[0], qubits[1]);
 
-    # Measure Qubit 1 and reset it
+    // Measure Qubit 1 and reset it
     let res1 = MResetZ(qubits[1]);
 
-    # Continue additional computation, conditioned on Qubit 1's measurement outcome
-    If res1 == 1 {
+    // Continue additional computation, conditioned on Qubit 1's measurement outcome
+    if res1 == One {
          X(qubits[0]);
     }
     CNOT(qubits[0], qubits[1]);
 
-    # Measure qubits and return results
+    // Measure qubits and return results
     let res2 = Measure([PauliZ, PauliZ], qubits);
     return [res1, res2];
 }
@@ -198,22 +198,22 @@ open Microsoft.Quantum.Intrinsic;
 open Microsoft.Quantum.Measurement;
 open Microsoft.Quantum.Arrays;
 
-operation ContinueComputationAfterReset(theta) : Result[] {
+operation ContinueComputationAfterReset(theta : Double) : Result[] {
     
-    # Set up circuit with 2 qubits
+    // Set up circuit with 2 qubits
     use qubits = Qubit[2];
 
     H(qubits[0]);
     Rz(theta, qubits[0]);
     Rz(theta, qubits[1]);
-    X(qubits[1])
+    X(qubits[1]);
 
-    # Add Arbitrary Angle ZZ gate
-    Rzz(theta, qubits[0], qubits[1]);
+    // Add Arbitrary Angle ZZ gate
+    Rzz(theta, qubits[0], qubits[1]);              //(bradben) Unknown Q# operation?
 
-    # Measure qubits and return results
+    // Measure qubits and return results
     for i in IndexRange(qubits) {
-        set resultArray w/= i <- M(qubits[i]);
+        set resultArray w/= i <- M(qubits[i]);     //(bradben) mutable arrays of Result type not supported? Use MultiM() instead?
     }
     
     return resultArray;
@@ -251,6 +251,32 @@ Users have the option of experimenting with the noise parameters of the Quantinu
 For more information on the full set of noise parameters available, see the *System Model H1 Emulator Product Data Sheet* on the [System Model H1] page.
 
 #### [Emulator Noise Parameters with Q# Provider](#tab/tabid-emulator-noise-parameters-with-q-provider)
+
+First, declare the function we will define in Q# as a callable so that Python recognizes the symbol.
+
+```python
+GenerateRandomBit: any = None
+```
+
+Next, define the function.
+
+```python
+%%qsharp
+open Microsoft.Quantum.Measurement;
+open Microsoft.Quantum.Arrays;
+open Microsoft.Quantum.Convert;
+
+operation GenerateRandomBit() : Result {
+    use target = Qubit();
+
+    // Apply an H-gate and measure.
+    H(target);
+    return M(target);
+}
+
+```
+
+Now, configure the noise parameters for the emulator and submit the job. 
 
 ```python
 # Set the emulator target to submit to
@@ -324,6 +350,32 @@ For more information on `pytket`, see the following links:
 - [`pytket` User Manual]
 
 #### [TKET Compilation with Q# Provider](#tab/tabid-tket-compilation-with-q-provider)
+
+First, declare the function we will define in Q# as a callable so that Python recognizes the symbol.
+
+```python
+GenerateRandomBit: any = None
+```
+
+Next, define the function.
+
+```python
+%%qsharp
+open Microsoft.Quantum.Measurement;
+open Microsoft.Quantum.Arrays;
+open Microsoft.Quantum.Convert;
+
+operation GenerateRandomBit() : Result {
+    use target = Qubit();
+
+    // Apply an H-gate and measure.
+    H(target);
+    return M(target);
+}
+
+```
+
+Now, configure the TKET optimization level parameter and submit the job. 
 
 ```python
 # Set the target to submit to
