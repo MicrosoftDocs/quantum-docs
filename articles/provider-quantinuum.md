@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides the technical details of the Quantinuum quantum provider
 ms.author: brbenefield
-ms.date: 01/17/2023
+ms.date: 02/23/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -17,6 +17,8 @@ uid: microsoft.quantum.providers.quantinuum
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
+<!--
+
 > [!IMPORTANT]
 > Quantinuum target IDs were updated as of October, 2022. Currently, both the old and new target IDs are valid, however, the old target IDs will eventually be phased out. Please use the new target IDs to submit jobs, and update any code or job scripts to reflect the new IDs.
 
@@ -29,6 +31,8 @@ uid: microsoft.quantum.providers.quantinuum
 | quantinuum.hqs-lt-s1-sim | quantinuum.sim.h1-1e |
 | quantinuum.hqs-lt-s2-sim | quantinuum.sim.h1-2e |
 | quantinuum.hqs-lt | quantinuum.qpu.h1 |
+
+-->
 
 Quantinuum provides access to trapped-ion systems with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurement.
 
