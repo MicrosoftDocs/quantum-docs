@@ -13,7 +13,7 @@ uid: microsoft.quantum.hybrid.programming
 
 # Integrated quantum computing programming best practices
 
-To start exploring integrated quantum programming, we suggest walking through the examples in the [Integrated quantum computing](xref:microsoft.quantum.hybrid.integrated) article, or in the **Hybrid computing** sample gallery in the Azure Portal.
+To start exploring integrated quantum programming, we suggest walking through the examples in the [Integrated quantum computing](xref:microsoft.quantum.hybrid.integrated) article, or in the **Hybrid quantum computing** sample gallery in the Azure Portal.
 
 To adapt your own code to run on the integrated quantum supported hardware, see [QIR Alliance Profile B: Basic Measure Feedback](https://github.com/qir-alliance/qir-spec/blob/main/specification/v0.1/7_Profiles.md#profile-b-basic-measurement-feedback) documentation. 
 

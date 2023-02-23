@@ -41,13 +41,13 @@ TBD
 
 ## Examples
 
-The following examples demonstrate the available integrated feature set. For more examples, see the Integrated Quantum Computing notebook samples in the Azure Quantum portal, and [Integrated quantum computing programming best practices](xref:microsoft.quantum.hybrid.programming). 
+The following examples demonstrate the available integrated feature set. For more examples, see the **Hybrid quantum computing** notebook samples in the Azure Quantum portal, and [Integrated quantum computing programming best practices](xref:microsoft.quantum.hybrid.programming). 
 
 - Verify an entangled GHZ state. 
-- View how error correction works with integrate hybrid. 
-- KPMG (TBD)
+- Error correction with integrated hybrid. 
+- Iterative phase estimation
 
-### [Check GHZ](#tab/tabid-ghz) 
+### [Check GHZ state](#tab/tabid-ghz) 
 
 This example verifies a 3-qubit [Greenberger-Horne-Zeilinger](https://en.wikipedia.org/wiki/Greenberger%E2%80%93Horne%E2%80%93Zeilinger_state#:~:text=In%20physics%2C%20in%20the%20area%20of%20quantum%20information,Greenberger%2C%20Michael%20Horne%20and%20Anton%20Zeilinger%20in%201989) (GHZ) state, counting the number of times it sees the entanglement fail out of 10 attempts. Without noise, this would return 0 for every shot, but with noise, you can get back failures. 
 
@@ -99,7 +99,7 @@ result = qsharp.azure.execute(CheckGHZ, shots=50, jobName="CheckGHZ", timeout=24
 ![GHZ output](~/media/hybrid/ghz-output.png)
 
 
-### [Error correction](#tab/tabid-qec)
+### [Dynamic rror correction](#tab/tabid-qec)
 
 This error correction routine sets up two logical qubits, performs an operation on them, and then measures and error corrects using hybrid branching. 
 
@@ -395,6 +395,7 @@ Specify the target. The target requires a target execution profile that supports
 
 ```python
 %azure.target-capability AdaptiveExecution
+%azure.shots 100
 ```
 
 Submit the job to the target.
@@ -414,6 +415,7 @@ When the job is complete, output a histogram of results.
 ```python
 %azure.output
 ```
+
 ***
 
 ## Next steps
