@@ -99,7 +99,7 @@ result = qsharp.azure.execute(CheckGHZ, shots=50, jobName="CheckGHZ", timeout=24
 ![GHZ output](~/media/hybrid/ghz-output.png)
 
 
-### [Dynamic rror correction](#tab/tabid-qec)
+### [Dynamic error correction](#tab/tabid-qec)
 
 This error correction routine sets up two logical qubits, performs an operation on them, and then measures and error corrects using hybrid branching. 
 
