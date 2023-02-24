@@ -209,11 +209,11 @@ operation ContinueComputationAfterReset(theta : Double) : Result[] {
     X(qubits[1]);
 
     // Add Arbitrary Angle ZZ gate
-    Rzz(theta, qubits[0], qubits[1]);              //(bradben) Unknown Q# operation?
+    Rzz(theta, qubits[0], qubits[1]);     //(bradben) Unknown Q# operation?
 
     // Measure qubits and return results
     for i in IndexRange(qubits) {
-        set resultArray w/= i <- M(qubits[i]);     //(bradben) mutable arrays of Result type not supported? Use MultiM() instead?
+        set resultArray w/= i <- M(qubits[i]);  
     }
     
     return resultArray;
