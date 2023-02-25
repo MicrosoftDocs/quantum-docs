@@ -15,7 +15,7 @@ uid: microsoft.quantum.hybrid.integrated
 
 Integrated quantum computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Leveraging qubit re-use techniques, larger programs can run on machines utilizing a smaller number of qubits.
 
-![Integrated batch quantum computing](~/media/hybrid/integrated-2.png)
+![Integrated batch quantum computing](~/media/hybrid/integrated.png)
 
 ## Supported hardware
 
@@ -41,7 +41,10 @@ TBD
 
 ## Examples
 
-The following examples demonstrate the available integrated feature set. For more examples, see the **Hybrid quantum computing** notebook samples in the Azure Quantum portal, and [Integrated quantum computing programming best practices](xref:microsoft.quantum.hybrid.programming). 
+The following examples demonstrate the current feature set for integrated quantum computing. For more examples, see the **Hybrid quantum computing** notebook samples in the Azure Quantum portal, and [Integrated quantum computing programming best practices](xref:microsoft.quantum.hybrid.programming). 
+
+> [!NOTE]
+> For help setting up Azure Quantum and the Quantum Development Kit in your local environment, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview). 
 
 - Verify an entangled GHZ state. 
 - Error correction with integrated hybrid. 
@@ -49,7 +52,7 @@ The following examples demonstrate the available integrated feature set. For mor
 
 ### [Check GHZ state](#tab/tabid-ghz) 
 
-This example verifies a 3-qubit [Greenberger-Horne-Zeilinger](https://en.wikipedia.org/wiki/Greenberger%E2%80%93Horne%E2%80%93Zeilinger_state#:~:text=In%20physics%2C%20in%20the%20area%20of%20quantum%20information,Greenberger%2C%20Michael%20Horne%20and%20Anton%20Zeilinger%20in%201989) (GHZ) state, counting the number of times it sees the entanglement fail out of 10 attempts. Without noise, this would return 0 for every shot, but with noise, you can get back failures. 
+This example verifies a 3-qubit [Greenberger-Horne-Zeilinger](https://en.wikipedia.org/wiki/Greenberger%E2%80%93Horne%E2%80%93Zeilinger_state#:~:text=In%20physics%2C%20in%20the%20area%20of%20quantum%20information,Greenberger%2C%20Michael%20Horne%20and%20Anton%20Zeilinger%20in%201989) (GHZ) state, counting how many times it sees the entanglement fail out of 10 attempts. Without noise, this would return 0 for every shot, but with noise, you can get back failures.
 
 Feature to note about this example:
 
@@ -80,7 +83,7 @@ operation CheckGHZ() : Int {
         // Measures and resets the 3 qubits
         let (r0, r1, r2) = (MResetZ(q[0]), MResetZ(q[1]), MResetZ(q[2]));
 
-        // Adjusts classical code based on measurement results
+        // Adjusts value based on measurement results
         if not (r0 == r1 and r1 == r2) {
             set mismatch += 1;
         }
@@ -92,7 +95,7 @@ operation CheckGHZ() : Int {
 qsharp.azure.target("quantinuum.sim.h1-1e")
 qsharp.azure.target_capability("AdaptiveExecution")
 
-# Submit the job. This run will use approximately 10 HQC's (Quantinuum billing unit)
+# Submit the job. This run will use approximately 10 EHQC's (Quantinuum emulator billing units)
 result = qsharp.azure.execute(CheckGHZ, shots=50, jobName="CheckGHZ", timeout=240)
 ```
 
@@ -124,12 +127,14 @@ namespace EC {
 
     @EntryPoint()
     operation DynamicBitFlipCode() : (Result, Result){
+
         // Create two registers, each one representing a logical qubit.
         use registerA = Qubit[3];
         use registerB = Qubit[3];
 
         // Apply several unitary operations to the encoded qubits performing error correction between each application.
         within {
+
             // Encode/Decode into logical qubits.
             Encode(registerA);
             Encode(registerB);
@@ -138,6 +143,7 @@ namespace EC {
             InitializeRegisters(registerA, registerB);
             let iterations = 5;
             for _ in 1 .. iterations {
+
                 // Apply unitary operations.
                 ApplyLogicalOperation(registerA);
                 ApplyLogicalOperation(registerB);
@@ -152,6 +158,7 @@ namespace EC {
 
         // Measure the first qubit in each register and return value.
         // N.B. This could be a majority and potentially improve results
+
         let resultA = MResetZ(registerA[0]);
         let resultB = MResetZ(registerB[0]);
         ResetAll(registerA);
@@ -160,6 +167,7 @@ namespace EC {
     }
 
     operation InitializeRegisters(registerA : Qubit[], registerB : Qubit[]) : Unit {
+
         // Do nothing on first register.
         // Do a bit flip on second register.
         for qubitB in registerB {
@@ -177,6 +185,7 @@ namespace EC {
     }
 
     operation CorrectError(register : Qubit[], parity01 : Result, parity12 : Result) : Unit {
+
         // Hybrid: branching based on measurement.
         if (parity01 == One and parity12 == Zero) { X(register[0]); }
         elif (parity01 == One and parity12 == One) { X(register[1]); }
@@ -189,6 +198,7 @@ namespace EC {
     }
 
     operation MeasureSyndrome(register : Qubit[]) : (Result, Result) {
+
         // Verify parity between qubits.
         let parity01 = Measure([PauliZ, PauliZ, PauliI], register);
         let parity12 = Measure([PauliI, PauliZ, PauliZ], register);
@@ -231,13 +241,19 @@ $$\\ket{\\Psi} = \\frac{1}{2}(\\ket{v}+\\ket{c})\\ket{0}+\\frac{1}{2}(\\ket{v}-\
 Note that the angles represented as $\\theta_1$ and $\\theta_2$ are applied as $\\frac{\\theta_1}{2}$ and $\\frac{\\theta_2}{2}$. While the reason for this is not important, it is important to mention that coded values of  $\\theta_1=0.0$ and $\\theta_2=2.0\\pi$ will calculate the inner product between vectors with actual angles $0$ and $\\pi$ respectively (ie, anti-parallel).
 
 ```qsharp
-operation StateInitialisation(TargetReg : Qubit, AncilReg : Qubit, Theta1 : Double, Theta2 : Double) : Unit is Adj + Ctl { //This is state preperation operator A for encoding the 2D vector (page 7)
+
+//This is state preparation operator A for encoding the 2D vector
+operation StateInitialisation(TargetReg : Qubit, AncilReg : Qubit, Theta1 : Double, Theta2 : Double) : Unit is Adj + Ctl { 
     H(AncilReg);
 
-    Controlled R([AncilReg], (PauliY, -Theta1, TargetReg));        // Arbitray controlled rotation based on theta. This is vector v.
-                                                        
-    X(AncilReg);                                                   // X gate on ancilla to change from |+> to |->.
-    Controlled R([AncilReg], (PauliY, -Theta2, TargetReg));        // Arbitray controlled rotation based on theta. This is vector c.
+    // Arbitray controlled rotation based on theta. This is vector v.
+    Controlled R([AncilReg], (PauliY, -Theta1, TargetReg));       
+    
+    // X gate on ancilla to change from |+> to |->.                                                    
+    X(AncilReg);       
+
+    // Arbitray controlled rotation based on theta. This is vector c.                                            
+    Controlled R([AncilReg], (PauliY, -Theta2, TargetReg));        
     X(AncilReg);                                                  
     H(AncilReg);                                                  
 }
@@ -263,7 +279,9 @@ $$\\ket{\\Psi_\\text{Control Qubit}} = \\frac {1}{\\sqrt{2}} (\\ket 0 + e^{2\\pi
 operation GOracle(TargetReg : Qubit, AncilReg : Qubit, Theta1 : Double, Theta2 : Double) : Unit is Adj + Ctl {
     Z(AncilReg);                                                      
     Adjoint StateInitialisation(TargetReg, AncilReg, Theta1, Theta2);
-    X(AncilReg);                                                        // Apply X gates individually here as currently ApplyAll is not Adj + Ctl
+
+    // Apply X gates individually here as currently ApplyAll is not Adj + Ctl
+    X(AncilReg);                                                        
     X(TargetReg);
     Controlled Z([AncilReg],TargetReg);
     X(AncilReg);
@@ -272,7 +290,7 @@ operation GOracle(TargetReg : Qubit, AncilReg : Qubit, Theta1 : Double, Theta2 :
 }
 ```
 
-Now for the iterative part of the circuit. For n measurements, consider that the phase can be represented as a binary value $\\theta$, and that applying $2^n$ oracles makes the nth binary point of the phase observable (through simple binary multiplication, and modulus $2\\pi$). The value of the control qubit can be readout, placed in a classical register and the qubit reset for use in the next iteration. The next iteration applies $2^{n-1}$ oracles, correcting phase on the control qubit dependent on the nth measurement. The state on the control qubit can be represented as
+Now for the iterative part of the circuit. For *n* measurements, consider that the phase can be represented as a binary value $\\theta$, and that applying $2^n$ oracles makes the *nth* binary point of the phase observable (through simple binary multiplication, and modulus $2\\pi$). The value of the control qubit can be readout, placed in a classical register, and then reset for use in the next iteration. The next iteration applies $2^{n-1}$ oracles, correcting phase on the control qubit dependent on the *nth* measurement. The state on the control qubit can be represented as
 
 $$ \\ket {\\Psi_{\\text{Control Qubit}}} = \\ket 0 + e^{2\\pi i\\theta}\\ket 1 $$
 
@@ -286,7 +304,7 @@ Consider that the phase has no terms deeper than $\\theta_n$ (ie, terms $\\theta
 
 $$ O^{2^n}\\ket {\\Psi_{\\text{Control Qubit}}} = \\ket 0 + e^{2\\pi i 0.\\theta_n}\\ket 1 $$
 
-Now the value $\\theta_n$ can be observed with a H gate and a measurement projecting along the Z axis. Resetting the control qubit and applying the oracle $2^{n-1}$ times
+Now the value $\\theta_n$ can be observed with an H gate and a measurement projecting along the Z axis. Resetting the control qubit and applying the oracle $2^{n-1}$ times
 
 $$ O^{2^{n-1}}\\ket {\\Psi_{\\text{Control Qubit}}} = \\ket 0 + e^{2\\pi i 0.\\theta_{n-1}\\theta_n}\\ket 1 $$
 
@@ -294,20 +312,28 @@ Using the previous measured value for $\\theta_n$, the additional binary point c
 
 $$ RZ(-2\\pi \\times 0.0\\theta_n)O^{n-1}\\ket {\\Psi_{\\text{Control Qubit}}} = \\ket 0 + e^{2\\pi i 0.\\theta_{n-1}}\\ket 1 $$
 
-"This process is iteratively applied for some bit precision n to obtain the phase $0.\\theta_0\\theta_1\\theta_2...\\theta_{n}$. The value is stored as a binary value $x = \\theta_0\\theta_1\\theta_2...\\theta_{n}$ as only integers are manipulatable at runtime currently.
+This process is iteratively applied for some bit precision *n* to obtain the phase $0.\\theta_0\\theta_1\\theta_2...\\theta_{n}$. The value is stored as a binary value $x = \\theta_0\\theta_1\\theta_2...\\theta_{n}$, as only integers are currently manipulatable at runtime.
 
-As the readout tells nothing of either vector, only the inner product between them, the states on the target qubit and ancilla qubit **remain in the same state** throughout the process!
+As the readout tells nothing of either vector except the inner product between them, the states on the target qubit and ancilla qubit **remain in the same state** throughout the process!
 
 ```qsharp
 operation IterativePhaseEstimation(TargetReg : Qubit, AncilReg : Qubit, Theta1 : Double, Theta2 : Double, Measurements : Int) : Int{
     use ControlReg = Qubit();
-    mutable MeasureControlReg = ConstantArray(Measurements, Zero);                                  //Set up array of measurement results of zero
+
+    //Set up array of measurement results of zero
+    mutable MeasureControlReg = ConstantArray(Measurements, Zero);                                  
     mutable bitValue = 0;
-    StateInitialisation(TargetReg, AncilReg, Theta1, Theta2);                                       //Apply to initialise state, this is defined by the angles theta1 and theta2
+
+    //Apply to initialize the state as defined by the angles theta1 and theta2
+    StateInitialisation(TargetReg, AncilReg, Theta1, Theta2);                                       
     for index in 0 .. Measurements - 1{                                                             
-        H(ControlReg);                                                                              
-        if index > 0 {                                                                              //Don't apply rotation on first set of oracles
-            for index2 in 0 .. index - 1{                                                           //Loop through previous results
+        H(ControlReg);        
+
+        //Don't apply rotation on first set of oracles                                                               
+        if index > 0 {          
+
+            //Loop through previous results                                                       
+            for index2 in 0 .. index - 1{                                                           
                 if MeasureControlReg[Measurements - 1 - index2] == One{                             
                     R(PauliZ, -IntAsDouble(2^(index2))*PI()/(2.0^IntAsDouble(index)), ControlReg);  
                 }
@@ -315,17 +341,25 @@ operation IterativePhaseEstimation(TargetReg : Qubit, AncilReg : Qubit, Theta1 :
             
         }
         let powerIndex = (1 <<< (Measurements - 1 - index));
-        for _ in 1 .. powerIndex{                                                                   //Apply a number of oracles equal to 2^index, where index is the number or measurements left
+
+        //Apply a number of oracles equal to 2^index, where index is the number of measurements left
+        for _ in 1 .. powerIndex{                                                                   
                 Controlled GOracle([ControlReg],(TargetReg, AncilReg, Theta1, Theta2));
             }
         H(ControlReg);
-        set MeasureControlReg w/= (Measurements - 1 - index) <- MResetZ(ControlReg);                //Make a measurement mid circuit 
+
+        //Make a measurement mid circuit
+        set MeasureControlReg w/= (Measurements - 1 - index) <- MResetZ(ControlReg);                 
         if MeasureControlReg[Measurements - 1 - index] == One{
-            set bitValue += 2^(index);                                                              //Assign bitValue based on previous measurement
+
+            //Assign bitValue based on previous measurement
+            set bitValue += 2^(index);                                                              
                                                                                                     
         }
     }
-    Reset(ControlReg);                                                                              //Reset qubits for end of circuit.
+
+    //Reset qubits for end of circuit.
+    Reset(ControlReg);                                                                             
     Reset(TargetReg);                                           
     Reset(AncilReg); 
     return bitValue;
@@ -339,31 +373,43 @@ $$\\braket {v|c} = -cos(2\\pi x / 2^n)$$
 where $x = \\theta_0\\theta_1\\theta_2...\\theta_{n}$. The denominator within the cosine function is to shift the binary point to match the original value $\\theta$.
 
 > [!NOTE] 
-> For measured values that are not $\\ket {000...000} \\text{ or } \\ket  {111...111}$, the solutions are paired with a value difference of $2^{n-1}$. For example, for 3 measurements, the measured value of 2 would also have a pair solution of 6. Either of these values produces the same value of the inner product when passed as the variable to the even function cosine (resulting in an inner product of 0 in this example).
+> For measured values that are not $\\ket {000...000} \\text{ or } \\ket  {111...111}$, the solutions are paired with a value difference of $2^{n-1}$. For example, for three measurements, the measured value of *2* would also have a pair solution of *6*. Either of these values produces the same value of the inner product when passed as the variable to the even function cosine (resulting in an inner product of 0 in this example).
 
 > For inner product solutions between the discrete bit precision, a distribution of results will be produced based on where the inner product lies between the discrete bit value.
 
 ```qsharp
 operation SimulateInnerProduct() : Int{
-    let Theta1 = 0.0;                                                                           //Specify the angles for inner product
+
+    //Specify the angles for inner product
+    let Theta1 = 0.0;                                                                           
     let Theta2 = 0.0;
-    let Measurements = 3;                                                                       //Specify the bit resolution in the iterative phase estimation
-                                                                                                //For Jobs on hardware the suggested number of measurements is 3
-    use TargetReg = Qubit();                                                                    //TargetReg has states v and c qubits contained on it
-    use AncilReg = Qubit();                                                                     //Create ancilla
-    let Results = IterativePhaseEstimation(TargetReg, AncilReg, Theta1, Theta2, Measurements);  //This runs iterative phase estimation
+
+    //Specify the bit resolution in the iterative phase estimation
+    //For Jobs on hardware the suggested number of measurements is 3
+    let Measurements = 3;                                                                       
+                                  
+    //TargetReg has states v and c qubits contained on it                                                              
+    use TargetReg = Qubit();                 
+
+    //Create ancilla                                                   
+    use AncilReg = Qubit();        
+
+    //This runs iterative phase estimation                                                             
+    let Results = IterativePhaseEstimation(TargetReg, AncilReg, Theta1, Theta2, Measurements);  
     
 
     let DoubleVal = PI() * IntAsDouble(Results) / IntAsDouble(2 ^ (Measurements-1));
-    let InnerProductValue = -Cos(DoubleVal);                                                      //Convert to the final inner product
+
+    //Convert to the final inner product
+    let InnerProductValue = -Cos(DoubleVal);                                                      
     Message("The Inner Product is:");
     Message($"{InnerProductValue}");
     Message("The True Inner Product is:");
     Message($"{Cos(Theta1/2.0)*Cos(Theta2/2.0)+Sin(Theta1/2.0)*Sin(Theta2/2.0)}");
     Message("The Bit Value measured is");
 
-                                                                            
-    return Results;                                                                             //Return Measured values
+    //Return Measured values                                                                            
+    return Results;                                                                             
 }
 ```
 
@@ -375,15 +421,27 @@ The inner product operation is reconstructed to fit within the requirements of t
 
 ```qsharp
 operation InnerProduct() : Int{
-    let Theta1 = 0.0;                                                                           //Specify the angles for inner product
+
+    //Specify the angles for inner product
+    let Theta1 = 0.0;                                                                           
     let Theta2 = 0.0;
-    let Measurements = 3;                                                                       //Specify the bit resolution in the iterative phase estimation
-                                                                                                //For Jobs on hardware the suggested number of measurements is 3
-    use TargetReg = Qubit();                                                                    //TargetReg has states v and c qubits contained on it
-    use AncilReg = Qubit();                                                                     //Create ancilla
-    let Results = IterativePhaseEstimation(TargetReg, AncilReg, Theta1, Theta2, Measurements);  //This runs iterative phase estimation
-                                                                           
-    return Results;                                                                             //Return Measured values
+
+    //Specify the bit resolution in the iterative phase estimation
+    //For Jobs on hardware the suggested number of measurements is 3
+    let Measurements = 3;                                                                       
+                                                                                                
+
+    //TargetReg has states v and c qubits contained on it
+    use TargetReg = Qubit();         
+                                                           
+    //Create ancilla
+    use AncilReg = Qubit();      
+                                                              
+    //This runs iterative phase estimation
+    let Results = IterativePhaseEstimation(TargetReg, AncilReg, Theta1, Theta2, Measurements);  
+    
+/    /Return Measured values                                                                       
+    return Results;                                                                             
 }
 ```
 
