@@ -11,11 +11,11 @@ title: Programming guide for integrated quantum computing
 uid: microsoft.quantum.hybrid.programming
 ---
 
-# Integrated quantum computing programming best practices
+# Integrated hybrid programming best practices
 
-To start exploring integrated quantum programming, we suggest walking through the examples in the [Integrated quantum computing](xref:microsoft.quantum.hybrid.integrated) article, or in the **Hybrid quantum computing** sample gallery in the Azure Portal.
+To start exploring integrated hybrid programming, we suggest walking through the examples in the [Integrated quantum computing](xref:microsoft.quantum.hybrid.integrated) article, or in the **Hybrid quantum computing** sample gallery in the Azure Portal.
 
-To adapt your own code to run on the integrated quantum supported hardware, see [QIR Alliance Profile B: Basic Measure Feedback](https://github.com/qir-alliance/qir-spec/blob/main/specification/v0.1/7_Profiles.md#profile-b-basic-measurement-feedback) documentation. 
+To adapt your own code to run on integrated hybrid supported hardware, see [QIR Alliance Profile B: Basic Measure Feedback](https://github.com/qir-alliance/qir-spec/blob/main/specification/v0.1/7_Profiles.md#profile-b-basic-measurement-feedback) documentation. 
 
 This article provides some best practices for adapting and creating quantum code to run on Azure Quantum's supported hardware.
 
@@ -37,7 +37,7 @@ Integrated quantum programs on Azure Quantum are run and managed just as regular
 
 ### IQ\#
 
-When using the IQ# kernel in a Jupyter Notebook, use the [%azure.target-capability](xref:microsoft.quantum.iqsharp.magic-ref.azure.target-capability) magic command. 
+When using the IQ# kernel in a Jupyter Notebook, use the [%azure.target-capability](xref:microsoft.quantum.iqsharp.magic-ref.azure.target-capability) magic command with the `AdaptiveExecution` parameter. 
 
 ```qsharp
 %azure.target-capability AdaptiveExecution
@@ -45,7 +45,7 @@ When using the IQ# kernel in a Jupyter Notebook, use the [%azure.target-capabili
 
 ### Python + Q\#
 
-When using the *quantum* Python package, use the qsharp.azure.target_capability function. 
+When using the *quantum* Python package, use the `qsharp.azure.target_capability` function with the `AdaptiveExecution` parameter. 
 
 ```python
 qsharp.azure.target_capability("AdaptiveExecution")
@@ -61,6 +61,18 @@ TBD
 
 ## Best practices
 
+Developing and running hybrid algorithms on the latest supported hardware is a new and quickly evolving field. These best practices outline the tools and methods currently available, and will be updated as new features are supported. 
+
+### Supported libraries
+
+As of this release, not all libraries in the QDK support the Adaptive Profile. This table lists the common supported functions and operations.
+
+| Function or operation | Library |
+| --- | --- |
+| TBD | TBD |
+| TBD | TBD |
+| TBD | TBD |
+
 ### Compiler warnings
 
 By default, target-specific errors compiler errors are converted to warnings.  Be sure to validate your code on the simulator, emulator, or validator provided by the
@@ -74,22 +86,11 @@ TBD
 
 TBD
 
-### Supported libraries
-
-As of this release, not all libraries in the QDK support the Adaptive Profile. This table lists the common supported functions and operations.
-
-
-| Function or operation | Library |
-| --- | --- |
-| TBD | TBD |
-| TBD | TBD |
-| TBD | TBD |
-
 ### Integer support
 
-Current integer support is limitied to 32-bit unsigned values, even though Q# integers are treated as 64-bit signed in the code. This can affect some bitwise operations and comparisons. It is recommended to use positive values when using the hybrid integer support.
+Current integer support is limited to 32-bit unsigned values, even though Q# integers are treated as 64-bit signed in the code. This can affect some bitwise operations and comparisons. It is recommended to use positive values when using the hybrid integer support.
 
-### Returing constant values
+### Returning constant values
 
 TBD
 
@@ -99,9 +100,4 @@ Each supported target has hardware-specific classical register counts, and your 
 
 ### Troubleshooting
 
-TBD
-
-## Next steps
-
-- [Batch quantum computing](xref:microsoft.quantum.hybrid.batch)
-- LINK TO PAPER
+TBD - list of error messages and actions for known/common scenarios. 
