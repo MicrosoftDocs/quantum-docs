@@ -19,7 +19,7 @@ uid: microsoft.quantum.overview.hybrid
 
 As quantum technology evolves and advances, the classical and quantum processes will become increasingly more integrated. Microsoft has developed a precise taxonomy to understand each architecture and its benefits.
 
-|Hybrid level | Description|
+|Architecture | Description|
 |---|---|
 | [**Batch quantum computing**](xref:microsoft.quantum.hybrid.batch) | Local clients define circuits and submit them as jobs to the quantum processing unit (QPU), which returns the result to the client. Batching multiple circuits into one job, however, eliminates the wait between job submissions, allowing you to run multiple jobs significantly faster. Examples of problems that can take advantage of batch quantum computing include Shor's algorithm and simple quantum phase estimation.  |
 | [**Interactive (sessions) quantum computing**](xref:microsoft.quantum.hybrid.interactive) | In this model, the client compute resource is moved to the cloud, resulting in lower latency and repeated execution of the quantum circuit with different parameters. Jobs can be grouped logically into one session and prioritized over non-session jobs.  Although this allows for shorter queue times and longer running problems, the qubit states do not persist between each iteration. Examples of problems that can leverage this approach are variational quantum eigensolvers (VQE) and quantum approximation optimization algorithms (QAOA).   |
@@ -66,4 +66,3 @@ For more information, see [Distributed quantum computing](xref:microsoft.quantum
 ## Next steps
 
 - [Batch quantum computing](xref:microsoft.quantum.hybrid.batch)
-- LINK TO PAPER

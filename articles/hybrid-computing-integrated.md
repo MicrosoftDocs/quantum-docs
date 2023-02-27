@@ -13,7 +13,12 @@ uid: microsoft.quantum.hybrid.integrated
 
 # Integrated quantum computing
 
-Integrated quantum computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Leveraging qubit re-use techniques, larger programs can run on machines utilizing a smaller number of qubits.
+Integrated quantum computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Leveraging qubit re-use techniques, larger programs can run on machines utilizing a smaller number of qubits. 
+
+For more discussion, see
+
+- [Grande & Weibe, "Using Random Walks for Iterative Phase Estimation"](https://arxiv.org/pdf/2208.04526.pdf).
+- [Lubinski, et al., "Advancing Hybrid Quantum–Classical Computation with Real-Time Execution"](https://arxiv.org/pdf/2206.12950.pdf)
 
 ![Integrated batch quantum computing](~/media/hybrid/integrated.png)
 
@@ -96,11 +101,10 @@ qsharp.azure.target("quantinuum.sim.h1-1e")
 qsharp.azure.target_capability("AdaptiveExecution")
 
 # Submit the job. This run will use approximately 10 EHQC's (Quantinuum emulator billing units)
-result = qsharp.azure.execute(CheckGHZ, shots=50, jobName="CheckGHZ", timeout=240)
+result = qsharp.azure.execute(CheckGHZ, shots=100, jobName="CheckGHZ", timeout=240)
 ```
 
 ![GHZ output](~/media/hybrid/ghz-output.png)
-
 
 ### [Dynamic error correction](#tab/tabid-qec)
 
@@ -213,7 +217,7 @@ namespace EC {
 
 (This sample code courtesy of [KPMG](https://kpmg.com/xx/en/home/about/alliances/microsoft/kpmg-and-microsoft-azure-quantum.html))
 
-This notebook demonstrates an iterative phase estimation within Q#. The basic calculation it makes will be to calculate an inner product between two 2-dimensional vectors encoded on a target qubit and an ancilla qubit. An additional control qubit is also initialised, with a subsequent H gate applied. This control qubit will be used to readout the inner product via an iterative phase estimation.
+This notebook demonstrates an iterative phase estimation within Q#. The basic calculation it makes will be to calculate an inner product between two 2-dimensional vectors encoded on a target qubit and an ancilla qubit. An additional control qubit is also initialized, with a subsequent H gate applied. This control qubit will be used to readout the inner product via an iterative phase estimation.
 
 The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit. The Oracle operator generates a eigenphase on the target and ancilla qubit register, which when controlled generates a phase on the |1> state of the control qubit. This can then be read by applying another H gate to the controlled qubit to make the phase observable when measuring the Z projection.
 
@@ -477,6 +481,5 @@ When the job is complete, output a histogram of results.
 ***
 
 ## Next steps
-
 
 

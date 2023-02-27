@@ -90,7 +90,7 @@ TBD
 
 ### Integer support
 
-Current integer support is limited to 32-bit unsigned values, even though Q# integers are treated as 64-bit signed in the code. This can affect some bitwise operations and comparisons. It is recommended to use positive values when using the hybrid integer support.
+Current integer support is limited to 32-bit unsigned values, even though Q# integers are treated as 64-bit signed in the code. This can affect some bitwise operations and comparisons. It is recommended to use positive values when using hybrid integer support.
 
 ### Returning constant values
 
