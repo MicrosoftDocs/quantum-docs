@@ -33,13 +33,14 @@ The following are currently not supported by the Adaptive Profile:
 
 ## Implementation
 
-Integrated quantum programs on Azure Quantum are run and managed just as regular batch jobs. Each job has a single job ID and the result is a single histogram.
+When submitting an integrated hybrid job, you need to add a *target capability* parameter. Other than that, integrated hybrid programs on Azure Quantum are run and managed just as regular batch jobs. Each job has a single job ID and the result is a single histogram. 
 
 ### IQ\#
 
 When using the IQ# kernel in a Jupyter Notebook, use the [%azure.target-capability](xref:microsoft.quantum.iqsharp.magic-ref.azure.target-capability) magic command with the `AdaptiveExecution` parameter. 
 
 ```qsharp
+%azure.target quantinuum.sim.h1-1e
 %azure.target-capability AdaptiveExecution
 ```
 
@@ -48,20 +49,21 @@ When using the IQ# kernel in a Jupyter Notebook, use the [%azure.target-capabili
 When using the *quantum* Python package, use the `qsharp.azure.target_capability` function with the `AdaptiveExecution` parameter. 
 
 ```python
+qsharp.azure.target("quantinuum.sim.h1-1e")
 qsharp.azure.target_capability("AdaptiveExecution")
 ```
 
 ### Azure CLI
 
-When using the Azure CLI to submit a program, use the \<TBD\>.
+When using the Azure CLI to submit a program, add the `--target-capability` parameter with the value `AdaptiveExecution`.
 
 ```azurecli
-TBD
+az quantum job submit --target-capability AdaptiveExecution --target-id quantinuum.sim.h1-1e --job-name IterativePhaseEstimation --shots 100 --output table
 ```
 
 ## Best practices
 
-Developing and running hybrid algorithms on the latest supported hardware is a new and quickly evolving field. These best practices outline the tools and methods currently available, and will be updated as new features are supported. 
+Developing and running integrated hybrid algorithms on the latest supported hardware is a new and quickly evolving field. These best practices outline the tools and methods currently available, and will be updated as new features are supported. 
 
 ### Supported libraries
 
