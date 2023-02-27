@@ -20,7 +20,7 @@ The resources estimator is built on top of the [Quantum trace simulator](xref:mi
 > [!IMPORTANT]
 > **Error message**: "The local Resources Estimator will be removed in March 2023. The Resources Estimator is now available through Azure Quantum."
 > 
-> The QDK resources estimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace will be deprecated in March 2023. To compute physical and logical resource estimation, we recommend using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) tool.
+> The QDK resources estimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace is deprecated and will be removed in March 2023. To compute physical and logical resource estimation, we recommend using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) tool.
 > 
 > You can use the <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> to run pre-layout resource estimation. The QDK trace simulator will continue to run after the resources estimator deprecation. 
 
