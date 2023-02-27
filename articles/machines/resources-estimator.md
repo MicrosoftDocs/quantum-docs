@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn about the Microsoft QDK resources estimator, which estimates the resources required to run a given instance of a Q# operation on a quantum computer.
 ms.author: sonialopez
-ms.date: 10/11/2022
+ms.date: 02/11/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -18,11 +18,11 @@ As the name implies, the `ResourcesEstimator` class estimates the resources requ
 The resources estimator is built on top of the [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro), which provides a richer set of metrics and tools to help debug Q# programs.
 
 > [!IMPORTANT]
-> **Error message**: "The local Resources Estimator will be removed in March 2023. The Resources Estimator is now available through Azure Quantum."
+> **QDK warning message**: "The local Resources Estimator will be removed in March 2023. The Resources Estimator is now available through Azure Quantum."
 > 
-> The QDK resources estimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace is deprecated and will be removed in March 2023. To compute physical and logical resource estimation, we recommend using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) tool.
+> The QDK ResourcesEstimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace is deprecated. To compute physical and logical resource estimation and runtime, we recommend using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) tool.
 > 
-> You can use the <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> to run pre-layout resource estimation. The QDK trace simulator will continue to run after the resources estimator deprecation. 
+> You can use the [QCTraceSimulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro) to run pre-layout resource estimation with detailed call stack information. The QCTraceSimulator will continue to run after removing the QDK ResourcesEstimator class. 
 
 ## Invoking and running the resources estimator
 
