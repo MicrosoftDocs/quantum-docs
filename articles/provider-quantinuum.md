@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides the technical details of the Quantinuum quantum provider
 ms.author: brbenefield
-ms.date: 02/23/2023
+ms.date: 02/27/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -16,23 +16,6 @@ uid: microsoft.quantum.providers.quantinuum
 > The Quantinuum provider replaces the old Honeywell provider. If you previously used the Honeywell provider, see the [Honeywell to Quantinuum migration guide](xref:microsoft.quantum.providers.honeywell.migration).
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
-
-<!--
-
-> [!IMPORTANT]
-> Quantinuum target IDs were updated as of October, 2022. Currently, both the old and new target IDs are valid, however, the old target IDs will eventually be phased out. Please use the new target IDs to submit jobs, and update any code or job scripts to reflect the new IDs.
-
-| Old target name | New target name |
-| ---- | ---- |
-| quantinuum.hqs-lt-s1 | quantinuum.qpu.h1-1 |
-| quantinuum.hqs-lt-s1-apival | quantinuum.sim.h1-1sc |
-| quantinuum.hqs-lt-s2 | quantinuum.qpu.h1-2 |
-| quantinuum.hqs-lt-s2-apival | quantinuum.sim.h1-2sc |
-| quantinuum.hqs-lt-s1-sim | quantinuum.sim.h1-1e |
-| quantinuum.hqs-lt-s2-sim | quantinuum.sim.h1-2e |
-| quantinuum.hqs-lt | quantinuum.qpu.h1 |
-
--->
 
 Quantinuum provides access to trapped-ion systems with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurement.
 
@@ -190,6 +173,8 @@ circuit.draw()
 
 Quantinuum's native gate set includes arbitrary angle ZZ gates. This is beneficial for reducing the 2-qubit gate count for many quantum algorithms and gate sequences. For information on Arbitrary Angle ZZ gates in Quantinuum systems, see the *System Model H1 Product Data Sheet* on the [System Model H1] page.
 
+In Q\#, the arbitrary angle ZZ gate is implemented with the [Rzz](xref:Microsoft.Quantum.Intrinsic.Rz) operation. 
+
 #### [Arbitrary Angle ZZ Gates with Q# Provider](#tab/tabid-arbitrary-angle-zz-gates-with-q-provider)
 
 ```python
@@ -203,13 +188,16 @@ operation ContinueComputationAfterReset(theta : Double) : Result[] {
     // Set up circuit with 2 qubits
     use qubits = Qubit[2];
 
+    // Create array for measurement results
+    mutable resultArray = [Zero, size = 2];
+
     H(qubits[0]);
     Rz(theta, qubits[0]);
     Rz(theta, qubits[1]);
     X(qubits[1]);
 
     // Add Arbitrary Angle ZZ gate
-    Rzz(theta, qubits[0], qubits[1]);     //(bradben) Unknown Q# operation?
+    Rzz(theta, qubits[0], qubits[1]);  
 
     // Measure qubits and return results
     for i in IndexRange(qubits) {
