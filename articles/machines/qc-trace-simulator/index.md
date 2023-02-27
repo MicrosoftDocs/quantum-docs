@@ -18,13 +18,6 @@ The QDK <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceS
 * Debugging classical code that is part of a quantum program. 
 * Estimating the resources required to run a given instance of a quantum program on a quantum computer. 
 
-> [!IMPORTANT]
-> **Error message**: "The local Resources Estimator will be removed in March 2023. The Resources Estimator is now available through Azure Quantum."
-> 
-> The QDK resources estimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace is deprecated. To compute physical and logical resource estimation, we recommend using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) tool.
-> 
-> You can use the <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> to run pre-layout resource estimation. The QDK trace simulator will continue to run after the resources estimator deprecation. 
-
 ## Invoking the quantum trace simulator
 
 You can use the quantum trace simulator to run any Q# operation.
