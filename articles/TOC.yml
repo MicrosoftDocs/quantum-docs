@@ -53,14 +53,14 @@
       href: hybrid-computing-batch.md
     - name: Interactive quantum computing
       href: hybrid-computing-interactive.md
-    - name: Integrated quantum computing
+    - name: Integrated hybrid computing
       href: hybrid-computing-integrated.md
     - name: Distributed quantum computing
       href: hybrid-computing-distributed.md
     - name: Concepts for hybrid quantum computing
       href: hybrid-computing-concepts.md
-    - name: Best practices for programming hybrid quantum computing
-      href: hybrid-computing-programming.md
+    - name: Integrated hybrid known issues
+      href: hybrid-computing-known-issues.md
   - name: Run quantum circuits with Python
     items:
     - name: Submit a circuit with Qiskit

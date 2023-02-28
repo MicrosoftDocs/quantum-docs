@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand the different implementations of distributed hybrid quantum computing.
-ms.date: 02/21/2023
+ms.date: 02/27/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk

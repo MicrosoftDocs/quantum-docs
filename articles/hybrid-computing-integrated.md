@@ -34,30 +34,76 @@ Currently, the integrated quantum computing model in Azure Quantum is supported 
 |TBD |TBD  |
 |TBD |TBD  |
 |TBD |TBD  |
+|TBD |TBD  |
 
-## Cost estimation
+## Get started
 
-TBD
+To start exploring integrated hybrid programming, we suggest walking through the examples in the [Integrated hybrid](xref:microsoft.quantum.hybrid.integrated) article, or in the **Integrated hybrid** sample gallery in the Azure Portal.
 
-- Can't be calculated before submission
-- Samples that reduce the risk of any cost over-run?
-- Does Quantinuum bill for only what is run or the entire unrolled circuit for instance?
-- Ability to stop execution when cost exceeds customer limit?
+To adapt your own code to run on integrated hybrid supported hardware, see the [QIR Alliance Profile B: Basic Measure Feedback](https://github.com/qir-alliance/qir-spec/blob/main/specification/v0.1/7_Profiles.md#profile-b-basic-measurement-feedback) documentation. 
 
-## Examples
+## Submitting integrated hybrid jobs
 
-The following examples demonstrate the current feature set for integrated quantum computing. For more examples, see the **Hybrid quantum computing** notebook samples in the Azure Quantum portal, and [Integrated quantum computing programming best practices](xref:microsoft.quantum.hybrid.programming). 
+When submitting an integrated hybrid job, you need to add a *target capability* parameter after specifying the target. Other than that, integrated hybrid programs on Azure Quantum are run and managed just as regular quantum jobs. Each job has a single job ID and the result is a single histogram. 
+
+### IQ\#
+
+When using the IQ# kernel in a Jupyter Notebook, use the [%azure.target-capability](xref:microsoft.quantum.iqsharp.magic-ref.azure.target-capability) magic command with the `AdaptiveExecution` parameter. 
+
+```qsharp
+%azure.target quantinuum.sim.h1-1e
+%azure.target-capability AdaptiveExecution
+```
+
+### Python + Q\#
+
+When using the *quantum* Python package, use the `qsharp.azure.target_capability` function with the `AdaptiveExecution` parameter. 
+
+```python
+qsharp.azure.target("quantinuum.sim.h1-1e")
+qsharp.azure.target_capability("AdaptiveExecution")
+```
+
+### Azure CLI
+
+When using the Azure CLI to submit a program, add the `--target-capability` parameter with the value `AdaptiveExecution`.
+
+```azurecli
+az quantum job submit --target-capability AdaptiveExecution --target-id quantinuum.sim.h1-1e --job-name IterativePhaseEstimation --shots 100 --output table
+```
+
+## Estimating the cost of an integrated hybrid job
+
+You can estimate the cost of running an integrated hybrid job on Quantinuum hardware by running it on an emulator first. 
+
+After a successful run on the emulator:
+
+1. In your Azure Quantum workspace, select **Job management**.
+1. Select the job you just submitted. 
+1. In the **Job details** popup, select **Cost Estimation** to view how many HQC's (Quantinuum quantum credits) will be needed to run the job on Quantinuum hardware.
+
+![Cost estimation](~/media/hybrid/cost-estimation.png)
+
+> ![NOTE]
+> Quantinuum unrolls the entire circuit and calculates the cost on all iterations, whether they are run or not. 
+
+## Integrated hybrid samples
+
+The following examples demonstrate the current feature set for integrated hybrid computing. For more examples, see the **Integrated hybrid** notebook samples in the Azure Quantum portal. For known issues and best practices for working with integrated hybrid programs, see [Integrated hybrid known issues](xref:microsoft.quantum.hybrid.known-issues). 
 
 > [!NOTE]
-> For help setting up Azure Quantum and the Quantum Development Kit in your local environment, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview). 
+> For help setting up Azure Quantum and the Quantum Development Kit in your local environment, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview). For information about submitting jobs, see [Submitting quantum jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs).
 
-- Verify an entangled GHZ state. 
-- Error correction with integrated hybrid. 
+- Verify an entangled GHZ state.
+- Error correction with integrated hybrid.
 - Iterative phase estimation
 
 ### [Check GHZ state](#tab/tabid-ghz) 
 
 This example verifies a 3-qubit [Greenberger-Horne-Zeilinger](https://en.wikipedia.org/wiki/Greenberger%E2%80%93Horne%E2%80%93Zeilinger_state#:~:text=In%20physics%2C%20in%20the%20area%20of%20quantum%20information,Greenberger%2C%20Michael%20Horne%20and%20Anton%20Zeilinger%20in%201989) (GHZ) state, counting how many times it sees the entanglement fail out of 10 attempts. Without noise, this would return 0 for every shot, but with noise, you can get back failures.
+
+> [!NOTE]
+> This example is set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of this example, login in to your Azure Portal workspace and load the **Check GHZ state** sample from the **Integrated hybrid** tab. You can either run the notebook in the cloud or download it and run it locally.  
 
 Feature to note about this example:
 
@@ -66,42 +112,54 @@ Feature to note about this example:
 - You do not need to learn to program for specialized high-performance hardware running next to the QPU (such as FPGAs).
 - Running an equivalent program without the integrated hybrid features would require returning every intermediate measurement result and then running post-processing on the data. 
 
-```python
-import qsharp.azure
+```qsharp
+namespace CheckGHZ {
 
-# Enter your Azure Quantum workspace details here
-qsharp.azure.connect(resourceId = "", location = "")
+    open Microsoft.Quantum.Measurement;
+    open Microsoft.Quantum.Arrays;
+    open Microsoft.Quantum.Convert;
+    open Microsoft.Quantum.Intrinsic;
+    open Microsoft.Quantum.Math;
+    
+    @EntryPoint()
+    operation CheckGHZ() : Int {
+        use q = Qubit[3];
+        mutable mismatch = 0;
+        for _ in 1..10 {
+            H(q[0]);
+            CNOT(q[0], q[1]);
+            CNOT(q[1], q[2]);
 
-%%qsharp
-open Microsoft.Quantum.Measurement;
-open Microsoft.Quantum.Arrays;
-open Microsoft.Quantum.Convert;
+            // Measures and resets the 3 qubits
+            let (r0, r1, r2) = (MResetZ(q[0]), MResetZ(q[1]), MResetZ(q[2]));
 
-operation CheckGHZ() : Int {
-    use q = Qubit[3];
-    mutable mismatch = 0;
-    for _ in 1..10 {
-        H(q[0]);
-        CNOT(q[0], q[1]);
-        CNOT(q[1], q[2]);
-
-        // Measures and resets the 3 qubits
-        let (r0, r1, r2) = (MResetZ(q[0]), MResetZ(q[1]), MResetZ(q[2]));
-
-        // Adjusts value based on measurement results
-        if not (r0 == r1 and r1 == r2) {
-            set mismatch += 1;
+            // Adjusts classical code based on measurement results
+            if not (r0 == r1 and r1 == r2) {
+                set mismatch += 1;
+            }
         }
+        return mismatch;
     }
-    return mismatch;
+
 }
+```
 
-# Set a Quantinuum target back-end with the Adaptive Execution flag
-qsharp.azure.target("quantinuum.sim.h1-1e")
-qsharp.azure.target_capability("AdaptiveExecution")
+From a terminal window in VS Code, connect to your Azure Quantum workspace and set the default resources.
 
-# Submit the job. This run will use approximately 10 EHQC's (Quantinuum emulator billing units)
-result = qsharp.azure.execute(CheckGHZ, shots=100, jobName="CheckGHZ", timeout=240)
+```azurecli
+az login
+
+az account set --subscription <MySubscriptionID>
+
+az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
+```
+
+Submit the job and view the results. This run will use approximately 10.65 eHQC's (Quantinuum emulator billing units)
+
+```azurecli
+az quantum job submit --target-id quantinuum.sim.h1-1e --job-name CheckGHZ --target-capability AdaptiveExecution --shots 50
+
+az quantum job output -o table --job-id [job-id]
 ```
 
 ![GHZ output](~/media/hybrid/ghz-output.png)
@@ -109,6 +167,9 @@ result = qsharp.azure.execute(CheckGHZ, shots=100, jobName="CheckGHZ", timeout=2
 ### [Dynamic error correction](#tab/tabid-qec)
 
 This error correction routine sets up two logical qubits, performs an operation on them, and then measures and error corrects using hybrid branching. 
+
+> [!NOTE]
+> This example is set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of this example, login in to your Azure Portal workspace and load the **Dynamic error correction** sample from the **Integrated hybrid** tab. You can either run the notebook in the cloud or download it and run it locally.
 
 ```xml
 <Project Sdk="Microsoft.Quantum.Sdk/0.27.253010">
@@ -125,91 +186,112 @@ This error correction routine sets up two logical qubits, performs an operation 
 ```qsharp
 namespace EC {
 
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Math;
-    open Microsoft.Quantum.Measurement;
+   open Microsoft.Quantum.Intrinsic;
+   open Microsoft.Quantum.Math;
+   open Microsoft.Quantum.Measurement;
 
-    @EntryPoint()
-    operation DynamicBitFlipCode() : (Result, Result){
+   @EntryPoint()
+   operation DynamicBitFlipCode() : (Result, Int) {
+       // Create a register that represents a logical qubit.
+       use logicalRegister = Qubit[3];
 
-        // Create two registers, each one representing a logical qubit.
-        use registerA = Qubit[3];
-        use registerB = Qubit[3];
+       // Apply several unitary operations to the encoded qubits performing error correction between each application.
+       mutable corrections = 0;
+       within {
+           // Encode/Decode logical qubit.
+           Encode(logicalRegister);
+       }
+       apply {
+           LogicalX(logicalRegister); // |111⟩
+           let iterations = 5;
+           for _ in 1 .. iterations {
+               // Apply unitary operations.
+               ApplyLogicalOperation(logicalRegister);
 
-        // Apply several unitary operations to the encoded qubits performing error correction between each application.
-        within {
+               // Perform error correction and increase the counter if a correction was made.
+               let (parity01, parity12) = MeasureSyndrome(logicalRegister);
+               let correctedError = CorrectError(logicalRegister, parity01, parity12);
+               if (correctedError) {
+                   set corrections += 1;
+               }
+           }
+       }
 
-            // Encode/Decode into logical qubits.
-            Encode(registerA);
-            Encode(registerB);
-        }
-        apply {
-            InitializeRegisters(registerA, registerB);
-            let iterations = 5;
-            for _ in 1 .. iterations {
+       // Measure the first qubit in each register, return the measurement result and the corrections count.
+       let result = MResetZ(logicalRegister[0]);
+       ResetAll(logicalRegister);
+       return (result, corrections);
+   }
 
-                // Apply unitary operations.
-                ApplyLogicalOperation(registerA);
-                ApplyLogicalOperation(registerB);
+   operation LogicalX(register : Qubit[]) : Unit
+   {
+       for qubit in register
+       {
+           X(qubit);
+       }
+   }
 
-                // Perform error correction.
-                let (parityA01, parityA12) = MeasureSyndrome(registerA);
-                CorrectError(registerA, parityA01, parityA12);
-                let (parityB01, parityB12) = MeasureSyndrome(registerB);
-                CorrectError(registerB, parityB01, parityB12);
-            }
-        }
+   operation ApplyLogicalOperation(register : Qubit[]) : Unit is Adj
+   {
+       // Rx has a 4 x pi period so this effectively leaves the qubit in the same state at the end if no noise is present.
+       let theta = PI() * 0.5;
+       for i in 1 .. 8 {
+           for qubit in register
+           {
+               Rx(theta, qubit);
+           }
+       }
+   }
 
-        // Measure the first qubit in each register and return value.
-        // N.B. This could be a majority and potentially improve results
+   operation CorrectError(register : Qubit[], parity01 : Result, parity12 : Result) : Bool
+   {
+       if (parity01 == One and parity12 == Zero) {
+           X(register[0]);
+       }
+       elif (parity01 == One and parity12 == One) {
+           X(register[1]);
+       }
+       elif (parity01 == Zero and parity12 == One) {
+           X(register[2]);
+       }
 
-        let resultA = MResetZ(registerA[0]);
-        let resultB = MResetZ(registerB[0]);
-        ResetAll(registerA);
-        ResetAll(registerB);
-        return (resultA, resultB);
-    }
+       return parity01 == One or parity12 == One;
+   }
 
-    operation InitializeRegisters(registerA : Qubit[], registerB : Qubit[]) : Unit {
+   operation Encode(register : Qubit[]) : Unit is Adj
+   {
+       CNOT(register[0], register[1]);
+       CNOT(register[0], register[2]);
+   }
 
-        // Do nothing on first register.
-        // Do a bit flip on second register.
-        for qubitB in registerB {
-            X(qubitB);
-        }
-    }
-
-    operation ApplyLogicalOperation(register : Qubit[]) : Unit is Adj {
-        let theta = PI() * 0.5;
-        for i in 1 .. 8 {
-            for qubit in register {
-                Rx(theta, qubit);
-            }
-        }
-    }
-
-    operation CorrectError(register : Qubit[], parity01 : Result, parity12 : Result) : Unit {
-
-        // Hybrid: branching based on measurement.
-        if (parity01 == One and parity12 == Zero) { X(register[0]); }
-        elif (parity01 == One and parity12 == One) { X(register[1]); }
-        elif (parity01 == Zero and parity12 == One) { X(register[2]); }
-    }
-
-    operation Encode(register : Qubit[]) : Unit is Adj {
-        CNOT(register[0], register[1]);
-        CNOT(register[0], register[2]);
-    }
-
-    operation MeasureSyndrome(register : Qubit[]) : (Result, Result) {
-
-        // Verify parity between qubits.
-        let parity01 = Measure([PauliZ, PauliZ, PauliI], register);
-        let parity12 = Measure([PauliI, PauliZ, PauliZ], register);
-        return (parity01, parity12);
-    }
+   operation MeasureSyndrome(register : Qubit[]) : (Result, Result)
+   {
+       // Verify parity between qubits.
+       let parity01 = Measure([PauliZ, PauliZ, PauliI], register);
+       let parity12 = Measure([PauliI, PauliZ, PauliZ], register);
+       return (parity01, parity12);
+   }
 }
 ```
+
+From a terminal window in VS Code, connect to your Azure Quantum workspace and set the default resources.
+
+```azurecli
+az login
+
+az account set --subscription <MySubscriptionID>
+
+az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
+```
+
+Submit the job and view the results. This run will use approximately 11.31 eHQC's (Quantinuum emulator billing units)
+
+```azurecli
+az quantum job submit --target-id quantinuum.sim.h1-1e --job-name ErrorCorrection --target-capability AdaptiveExecution --shots 50
+
+az quantum job output -o table --job-id [job-id]
+```
+
 
 ### [Iterative phase estimation](#tab/tabid-qml)
 
@@ -220,6 +302,11 @@ namespace EC {
 This notebook demonstrates an iterative phase estimation within Q#. The basic calculation it makes will be to calculate an inner product between two 2-dimensional vectors encoded on a target qubit and an ancilla qubit. An additional control qubit is also initialized, with a subsequent H gate applied. This control qubit will be used to readout the inner product via an iterative phase estimation.
 
 The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit. The Oracle operator generates a eigenphase on the target and ancilla qubit register, which when controlled generates a phase on the |1> state of the control qubit. This can then be read by applying another H gate to the controlled qubit to make the phase observable when measuring the Z projection.
+
+> [!NOTE]
+> This example is set up to run as a Jupyter Notebook in your local environment and submit the job to Azure Quantum. Optionally, you can run this program from your Azure Portal workspace by loading the **Iterative phase estimation** sample from the **Integrated hybrid** tab.
+
+First, connect to your Azure Quantum workspace and load the necessary libraries. 
 
 ```python
 %azure.connect "<resource_id>" location = ""
@@ -242,18 +329,18 @@ which also takes the more readable form
 
 $$\\ket{\\Psi} = \\frac{1}{2}(\\ket{v}+\\ket{c})\\ket{0}+\\frac{1}{2}(\\ket{v}-\\ket{c})\\ket{1}.$$
 
-Note that the angles represented as $\\theta_1$ and $\\theta_2$ are applied as $\\frac{\\theta_1}{2}$ and $\\frac{\\theta_2}{2}$. While the reason for this is not important, it is important to mention that coded values of  $\\theta_1=0.0$ and $\\theta_2=2.0\\pi$ will calculate the inner product between vectors with actual angles $0$ and $\\pi$ respectively (ie, anti-parallel).
+Note that the angles represented as $\\theta_1$ and $\\theta_2$ are applied as $\\frac{\\theta_1}{2}$ and $\\frac{\\theta_2}{2}$. While the reason for this is not important, it is important to note that coded values of  $\\theta_1=0.0$ and $\\theta_2=2.0\\pi$ will calculate the inner product between vectors with actual angles $0$ and $\\pi$ respectively (that is, anti-parallel).
 
 ```qsharp
 
 //This is state preparation operator A for encoding the 2D vector
-operation StateInitialisation(TargetReg : Qubit, AncilReg : Qubit, Theta1 : Double, Theta2 : Double) : Unit is Adj + Ctl { 
+operation StateInitialization(TargetReg : Qubit, AncilReg : Qubit, Theta1 : Double, Theta2 : Double) : Unit is Adj + Ctl { 
     H(AncilReg);
 
     // Arbitray controlled rotation based on theta. This is vector v.
     Controlled R([AncilReg], (PauliY, -Theta1, TargetReg));       
     
-    // X gate on ancilla to change from |+> to |->.                                                    
+    // X gate on ancilla to change from |+> to |->                                                   
     X(AncilReg);       
 
     // Arbitray controlled rotation based on theta. This is vector c.                                            
@@ -265,7 +352,7 @@ operation StateInitialisation(TargetReg : Qubit, AncilReg : Qubit, Theta1 : Doub
 
 #### The Oracle
 
-An oracle G needs to be constructed such that it generates an eigenphase on the state encoded on the target qubit and the ancilla qubit. The construction of this oracle is unimportant to the demonstration within this notebook, but the operation it applies is,
+An oracle G needs to be constructed such that it generates an eigenphase on the state encoded on the target qubit and the ancilla qubit. The construction of this oracle is unimportant to the demonstration within this notebook, but the operation it applies is
 
 $$G\\ket \\Psi = e^{2\\pi i\\theta} \\ket \\Psi.$$
 
@@ -282,7 +369,7 @@ $$\\ket{\\Psi_\\text{Control Qubit}} = \\frac {1}{\\sqrt{2}} (\\ket 0 + e^{2\\pi
 ```qsharp
 operation GOracle(TargetReg : Qubit, AncilReg : Qubit, Theta1 : Double, Theta2 : Double) : Unit is Adj + Ctl {
     Z(AncilReg);                                                      
-    Adjoint StateInitialisation(TargetReg, AncilReg, Theta1, Theta2);
+    Adjoint StateInitialization(TargetReg, AncilReg, Theta1, Theta2);
 
     // Apply X gates individually here as currently ApplyAll is not Adj + Ctl
     X(AncilReg);                                                        
@@ -290,7 +377,7 @@ operation GOracle(TargetReg : Qubit, AncilReg : Qubit, Theta1 : Double, Theta2 :
     Controlled Z([AncilReg],TargetReg);
     X(AncilReg);
     X(TargetReg);
-    StateInitialisation(TargetReg, AncilReg, Theta1, Theta2);         
+    StateInitialization(TargetReg, AncilReg, Theta1, Theta2);         
 }
 ```
 
@@ -329,7 +416,7 @@ operation IterativePhaseEstimation(TargetReg : Qubit, AncilReg : Qubit, Theta1 :
     mutable bitValue = 0;
 
     //Apply to initialize the state as defined by the angles theta1 and theta2
-    StateInitialisation(TargetReg, AncilReg, Theta1, Theta2);                                       
+    StateInitialization(TargetReg, AncilReg, Theta1, Theta2);                                       
     for index in 0 .. Measurements - 1{                                                             
         H(ControlReg);        
 
