@@ -38,7 +38,7 @@ Currently, the integrated quantum computing model in Azure Quantum is supported 
 
 ## Get started
 
-To start exploring integrated hybrid programming, we suggest walking through the examples in the [Integrated hybrid](xref:microsoft.quantum.hybrid.integrated) article, or in the **Integrated hybrid** sample gallery in the Azure Portal.
+To start exploring integrated hybrid programming, we suggest walking through the esamples in the [Integrated hybrid](xref:microsoft.quantum.hybrid.integrated) article, or in the **Integrated hybrid** sample gallery in the Azure Portal.
 
 To adapt your own code to run on integrated hybrid supported hardware, see the [QIR Alliance Profile B: Basic Measure Feedback](https://github.com/qir-alliance/qir-spec/blob/main/specification/v0.1/7_Profiles.md#profile-b-basic-measurement-feedback) documentation. 
 
@@ -84,28 +84,32 @@ After a successful run on the emulator:
 
 ![Cost estimation](~/media/hybrid/cost-estimation.png)
 
-> ![NOTE]
+> [!NOTE]
 > Quantinuum unrolls the entire circuit and calculates the cost on all iterations, whether they are run or not. 
 
 ## Integrated hybrid samples
 
-The following examples demonstrate the current feature set for integrated hybrid computing. For more examples, see the **Integrated hybrid** notebook samples in the Azure Quantum portal. For known issues and best practices for working with integrated hybrid programs, see [Integrated hybrid known issues](xref:microsoft.quantum.hybrid.known-issues). 
-
-> [!NOTE]
-> For help setting up Azure Quantum and the Quantum Development Kit in your local environment, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview). For information about submitting jobs, see [Submitting quantum jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs).
+The following samples demonstrate the current feature set for integrated hybrid computing. 
 
 - Verify an entangled GHZ state.
 - Error correction with integrated hybrid.
 - Iterative phase estimation
 
-### [Check GHZ state](#tab/tabid-ghz) 
-
-This example verifies a 3-qubit [Greenberger-Horne-Zeilinger](https://en.wikipedia.org/wiki/Greenberger%E2%80%93Horne%E2%80%93Zeilinger_state#:~:text=In%20physics%2C%20in%20the%20area%20of%20quantum%20information,Greenberger%2C%20Michael%20Horne%20and%20Anton%20Zeilinger%20in%201989) (GHZ) state, counting how many times it sees the entanglement fail out of 10 attempts. Without noise, this would return 0 for every shot, but with noise, you can get back failures.
+For more samples, see the **Integrated hybrid** notebook samples in the Azure Quantum portal. For known issues and best practices for working with integrated hybrid programs, see [Integrated hybrid known issues](xref:microsoft.quantum.hybrid.known-issues).
 
 > [!NOTE]
-> This example is set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of this example, login in to your Azure Portal workspace and load the **Check GHZ state** sample from the **Integrated hybrid** tab. You can either run the notebook in the cloud or download it and run it locally.  
+> For help setting up Azure Quantum and the Quantum Development Kit in your local environment, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview). For information about submitting jobs, see [Submitting quantum jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs).
 
-Feature to note about this example:
+
+
+### [Check GHZ state](#tab/tabid-ghz) 
+
+This sample verifies a 3-qubit [Greenberger-Horne-Zeilinger](https://en.wikipedia.org/wiki/Greenberger%E2%80%93Horne%E2%80%93Zeilinger_state#:~:text=In%20physics%2C%20in%20the%20area%20of%20quantum%20information,Greenberger%2C%20Michael%20Horne%20and%20Anton%20Zeilinger%20in%201989) (GHZ) state, counting how many times it sees the entanglement fail out of 10 attempts. Without noise, this would return 0 for every shot, but with noise, you can get back failures.
+
+> [!NOTE]
+> This sample is set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of this sample, login in to your Azure Portal workspace and load the **Check GHZ state** sample from the **Integrated hybrid** tab. You can either run the notebook in the cloud or download it and run it locally.  
+
+Feature to note about this sample:
 
 - The loop and qubit measurements happen while the qubits remain coherent.
 - The routine mixes classical and quantum compute operations. 
@@ -169,7 +173,7 @@ az quantum job output -o table --job-id [job-id]
 This error correction routine sets up two logical qubits, performs an operation on them, and then measures and error corrects using hybrid branching. 
 
 > [!NOTE]
-> This example is set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of this example, login in to your Azure Portal workspace and load the **Dynamic error correction** sample from the **Integrated hybrid** tab. You can either run the notebook in the cloud or download it and run it locally.
+> This sample is set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of this sample, login in to your Azure Portal workspace and load the **Dynamic error correction** sample from the **Integrated hybrid** tab. You can either run the notebook in the cloud or download it and run it locally.
 
 ```xml
 <Project Sdk="Microsoft.Quantum.Sdk/0.27.253010">
@@ -304,7 +308,7 @@ This notebook demonstrates an iterative phase estimation within Q#. The basic ca
 The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit. The Oracle operator generates a eigenphase on the target and ancilla qubit register, which when controlled generates a phase on the |1> state of the control qubit. This can then be read by applying another H gate to the controlled qubit to make the phase observable when measuring the Z projection.
 
 > [!NOTE]
-> This example is set up to run as a Jupyter Notebook in your local environment and submit the job to Azure Quantum. Optionally, you can run this program from your Azure Portal workspace by loading the **Iterative phase estimation** sample from the **Integrated hybrid** tab.
+> This sample is set up to run as a Jupyter Notebook in your local environment and submit the job to Azure Quantum. Optionally, you can run this program from your Azure Portal workspace by loading the **Iterative phase estimation** sample from the **Integrated hybrid** tab.
 
 First, connect to your Azure Quantum workspace and load the necessary libraries. 
 
@@ -312,7 +316,8 @@ First, connect to your Azure Quantum workspace and load the necessary libraries.
 %azure.connect "<resource_id>" location = ""
 ```
 
-```qsharp
+```python
+%%qsharp
 open Microsoft.Quantum.Convert;
 open Microsoft.Quantum.Math;
 open Microsoft.Quantum.Arrays;
@@ -331,8 +336,8 @@ $$\\ket{\\Psi} = \\frac{1}{2}(\\ket{v}+\\ket{c})\\ket{0}+\\frac{1}{2}(\\ket{v}-\
 
 Note that the angles represented as $\\theta_1$ and $\\theta_2$ are applied as $\\frac{\\theta_1}{2}$ and $\\frac{\\theta_2}{2}$. While the reason for this is not important, it is important to note that coded values of  $\\theta_1=0.0$ and $\\theta_2=2.0\\pi$ will calculate the inner product between vectors with actual angles $0$ and $\\pi$ respectively (that is, anti-parallel).
 
-```qsharp
-
+```python
+%%qsharp
 //This is state preparation operator A for encoding the 2D vector
 operation StateInitialization(TargetReg : Qubit, AncilReg : Qubit, Theta1 : Double, Theta2 : Double) : Unit is Adj + Ctl { 
     H(AncilReg);
@@ -366,7 +371,8 @@ Now the control qubit contains the phase which relates to the inner product $\\b
 
 $$\\ket{\\Psi_\\text{Control Qubit}} = \\frac {1}{\\sqrt{2}} (\\ket 0 + e^{2\\pi i\\theta}\\ket 1)$$
 
-```qsharp
+```python
+%%qsharp
 operation GOracle(TargetReg : Qubit, AncilReg : Qubit, Theta1 : Double, Theta2 : Double) : Unit is Adj + Ctl {
     Z(AncilReg);                                                      
     Adjoint StateInitialization(TargetReg, AncilReg, Theta1, Theta2);
@@ -407,7 +413,8 @@ This process is iteratively applied for some bit precision *n* to obtain the pha
 
 As the readout tells nothing of either vector except the inner product between them, the states on the target qubit and ancilla qubit **remain in the same state** throughout the process!
 
-```qsharp
+```python
+%%qsharp
 operation IterativePhaseEstimation(TargetReg : Qubit, AncilReg : Qubit, Theta1 : Double, Theta2 : Double, Measurements : Int) : Int{
     use ControlReg = Qubit();
 
@@ -468,7 +475,8 @@ where $x = \\theta_0\\theta_1\\theta_2...\\theta_{n}$. The denominator within th
 
 > For inner product solutions between the discrete bit precision, a distribution of results will be produced based on where the inner product lies between the discrete bit value.
 
-```qsharp
+```python
+%%qsharp
 operation SimulateInnerProduct() : Int{
 
     //Specify the angles for inner product
@@ -510,7 +518,8 @@ operation SimulateInnerProduct() : Int{
 
 The inner product operation is reconstructed to fit within the requirements of the target. In this case, calls like `Message` and manipulation of doubles is not allowed. Therefore, the output will be the bit value as generated by the `IterativePhaseEstimation` operation.
 
-```qsharp
+```python
+%%qsharp
 operation InnerProduct() : Int{
 
     //Specify the angles for inner product
@@ -548,6 +557,9 @@ Specify the target. The target requires a target execution profile that supports
 ```
 
 Submit the job to the target.
+
+> [!NOTE]
+> The cost of this job is approximately 610 eHQC's (Quantinuum emulator units).
 
 ```python
 %azure.submit InnerProduct
