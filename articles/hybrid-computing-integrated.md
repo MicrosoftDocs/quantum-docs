@@ -28,23 +28,14 @@ Currently, the integrated quantum computing model in Azure Quantum is supported 
 
 ### Quantinuum 
 
-1.	Loops (statically bounded)
-2.	Arbitrary control flow
-3.	Mid-circuit measurement
-4.	Qubit re-use
-5.	Classical function calls
-
-<!--
-
 |Supported feature| Notes |
 |---|---|
-|Qubit reuse |TBD  |
-|Mid-circuit measurement |TBD  |
-|Classical loops |bounded loops only, no infinite loops  |
-|Classical | integer limits |
-|TBD |TBD  |
+| Classical oops | Bounded loops only |
+| Arbitrary control flow | Use of if/else branching  |
+| Mid-circuit measurement | TBD |
+| Qubit re-use | TBD |
+| Classical function calls | TBD |
 
--->
 
 ## Get started
 
