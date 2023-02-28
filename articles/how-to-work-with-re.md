@@ -17,7 +17,7 @@ Once you've learned how to [customize](xref:microsoft.quantum.overview.resources
 
 ## Run multiple configurations as a single job
 
-A resource estimation job consist of two types of job parameters: [target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters), that is qubit model, QEC schemes, and error budget; and, optionally, operation arguments, that is arguments that can be passed to the QIR program. The Azure Quantum Resource Estimator allows you to submit jobs with multiple configuration of job parameters, or multiple *items*, as a single job to avoid rerunning multiple jobs on the same quantum program.
+A resource estimation job consist of two types of job parameters: [target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters), that is qubit model, QEC schemes, and error budget; and, optionally, operation arguments, that is arguments that can be passed to the QIR program. The Azure Quantum Resource Estimator allows you to submit jobs with multiple configuration of job parameters, or multiple *items*, as a single job to avoid rerunning multiple jobs on the same quantum program. This is also known as *batching*.
 
 One item consists of one configuration of job parameters, that is one configuration of target parameters and operation arguments. Several items are represented as an array of job parameters. 
 
@@ -28,7 +28,9 @@ Some scenarios where you may want to submit multiple items as a single job:
 - Easily compare multiple results in a tabular format.
 - Easily compare multiple results in a chart.
 
-For example, consider the following Q# operation that creates multiplier with a `bitwidth` parameter that can be passed to the operation. The operation have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`. 
+
+
+For example, consider the following Q# operation that creates multiplier with a `bitwidth` parameter that can be passed to the operation as argument. The operation have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`. 
 
 ```python 
 %%qsharp 
@@ -76,6 +78,35 @@ results = qsharp.azure.execute(Multiply, {"items": items})
 
 The result of the resource estimation job is displayed in a table with multiple results coming from the list of items. By default the max number of items to be displayed is $N = 5$. To display a list of items where $N > 5$, use `results[0:N]`. 
 
+Consider the following Qiskit circuit
+
+```python
+from azure.quantum.qiskit import AzureQuantumProvider 
+provider = AzureQuantumProvider ( 
+    resource_id = "", 
+    location = "" 
+) 
+
+backend = provider.get_backend('microsoft.estimator') 
+
+from qiskit import QuantumCircuit 
+from qiskit.tools.monitor import job_monitor 
+
+circ = QuantumCircuit(3) 
+circ.ccx(0, 1, 2) 
+items = [ 
+
+    {"qubitParams": {"name": "qubit_gate_ns_e3"}, "errorBudget": 0.0001}, 
+    {"qubitParams": {"name": "qubit_gate_ns_e4"}, "errorBudget": 0.0001}, 
+    {"qubitParams": {"name": "qubit_maj_ns_e4"}, "errorBudget": 0.0001}, 
+    {"qubitParams": {"name": "qubit_maj_ns_e6"}, "errorBudget": 0.0001}, 
+] // target parameters 
+
+job = backend.run(circ, items=items) 
+job_monitor(job) 
+results = job.result() 
+results 
+```
 
 ## Handle large programs
 
