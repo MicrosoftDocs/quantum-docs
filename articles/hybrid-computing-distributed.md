@@ -17,15 +17,3 @@ With fully integrated classical control and longer lived logical qubits, distrib
 
 ![Distributed quantum computing](~/media/hybrid/distributed.png)
 
-<!-- 
-
-## Fault tolerance
-
-## Resource estimation
-
--->
-
-## Next steps
-
-
-

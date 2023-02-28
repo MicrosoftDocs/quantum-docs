@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides the technical details of the Quantinuum quantum provider
 ms.author: brbenefield
-ms.date: 02/10/2023
+ms.date: 02/28/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -13,23 +13,6 @@ uid: microsoft.quantum.providers.quantinuum
 # Quantinuum provider
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
-
-<!--
-
-> [!IMPORTANT]
-> Quantinuum target IDs were updated as of October, 2022. Currently, both the old and new target IDs are valid, however, the old target IDs will eventually be phased out. Please use the new target IDs to submit jobs, and update any code or job scripts to reflect the new IDs.
-
-| Old target name | New target name |
-| ---- | ---- |
-| quantinuum.hqs-lt-s1 | quantinuum.qpu.h1-1 |
-| quantinuum.hqs-lt-s1-apival | quantinuum.sim.h1-1sc |
-| quantinuum.hqs-lt-s2 | quantinuum.qpu.h1-2 |
-| quantinuum.hqs-lt-s2-apival | quantinuum.sim.h1-2sc |
-| quantinuum.hqs-lt-s1-sim | quantinuum.sim.h1-1e |
-| quantinuum.hqs-lt-s2-sim | quantinuum.sim.h1-2e |
-| quantinuum.hqs-lt | quantinuum.qpu.h1 |
-
--->
 
 Quantinuum provides access to trapped-ion systems with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurement.
 
@@ -45,20 +28,13 @@ The following targets are available from this provider:
 |[H1-1 Syntax Checker](#syntax-checkers) |	quantinuum.sim.h1-1sc	|20 qubits| Yes | Use this to validate quantum programs against the H1-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
 |[H1-2 Syntax Checker](#syntax-checkers) |	quantinuum.sim.h1-2sc |	12 qubits	| Yes | Use this to validate quantum programs against the H1-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
 |[H1-1 Emulator](#system-model-h1-emulators) |	quantinuum.sim.h1-1e | 20 qubits	| Yes |  Uses a realistic physical model and noise model of H1-1.|
-|[H1-2 Emulator](#system-model-h1-emulators)|	quantinuum.sim.h1-2e | 12 qubits	|Uses a realistic physical model and noise model of H1-2.|
+|[H1-2 Emulator](#system-model-h1-emulators)|	quantinuum.sim.h1-2e | 12 qubits	| Yes | Uses a realistic physical model and noise model of H1-2.|
 |[H1-1](#system-model-h1)|	quantinuum.qpu.h1-1 |	20 qubits| Yes | 	Quantinuum's H1-1 trapped ion device.|
 |[H1-2](#system-model-h1)|	quantinuum.qpu.h1-2	| 12 qubits	| Yes | Quantinuum's H1-2 trapped ion device.|
 
 Quantinuum's targets correspond to a **Basic Measurement Feedback** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
 
 To get started using the Quantinuum provider on Azure Quantum, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
-
-## Hybrid computing
-
-- Architecture?
-- Models supported?
-- Data type support?
-- Classical memory?
 
 ## Syntax Checkers
 

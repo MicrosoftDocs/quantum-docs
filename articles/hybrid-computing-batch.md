@@ -15,26 +15,10 @@ uid: microsoft.quantum.hybrid.batch
 
 Typically, quantum jobs, or circuits, are sent one at a time to a quantum hardware target. When that job is complete, the next job is added to the queue. 
 
-However, by batching multiple circuits into one job, the circuits are submitted to the quantum hardware as soon as the previous one is complete, eliminating the wait between job submissions and allowing you to run multiple jobs significantly faster.
-
-## Parameterized quantum circuits
-
-Parameterized quantum circuits are the best example of using hybrid quantum computing with today's *noisy intermediate-scale quantum (NISQ)* hardware. Parameterized quantum circuits depend on adjustable parameters that the classical computer provides to encode different quantum states or perform different quantum operations. Withing the closed loop, the classical computer can evaluate the quantum measurements and adjust the parameters accordingly. Parameterized circuits excel at optimization problems, machine learning, and chemistry simulations. 
+However, by batching multiple circuits into one job, the circuits are submitted to the quantum hardware as soon as the previous circuit is complete, eliminating the wait between job submissions and allowing you to run multiple jobs significantly faster. In this mode, you can submit batches of non-parameterized circuits, that is, circuits with a fixed number of predefined gates. Batches of parameterized circuits, in which gates depend on adjustable parameters that the classical computer provides to encode different quantum states, are part of the [Interactive quantum computing](xref:microsoft.quantum.hybrid.interactive) model.
 
 ![Batch quantum computing](~/media/hybrid/batch.png)
 
-<!-- 
-## Examples
-
-Snippets
-
-## Batching with QIR API
-
-## Portal experience
-
--->
-
 ## Next steps
 
-
-
+[Interactive quantum computing](xref:microsoft.quantum.hybrid.interactive)

@@ -28,17 +28,27 @@ Currently, the integrated quantum computing model in Azure Quantum is supported 
 
 ### Quantinuum 
 
+1.	Loops (statically bounded)
+2.	Arbitrary control flow
+3.	Mid-circuit measurement
+4.	Qubit re-use
+5.	Classical function calls
+
+<!--
+
 |Supported feature| Notes |
 |---|---|
+|Qubit reuse |TBD  |
+|Mid-circuit measurement |TBD  |
+|Classical loops |bounded loops only, no infinite loops  |
+|Classical | integer limits |
 |TBD |TBD  |
-|TBD |TBD  |
-|TBD |TBD  |
-|TBD |TBD  |
-|TBD |TBD  |
+
+-->
 
 ## Get started
 
-To start exploring integrated hybrid programming, we suggest walking through the esamples in the [Integrated hybrid](xref:microsoft.quantum.hybrid.integrated) article, or in the **Integrated hybrid** sample gallery in the Azure Portal.
+To start exploring integrated hybrid programming, we suggest walking through the samples in the [Integrated hybrid](xref:microsoft.quantum.hybrid.integrated) article, or in the **Integrated hybrid** sample gallery in the Azure Portal.
 
 To adapt your own code to run on integrated hybrid supported hardware, see the [QIR Alliance Profile B: Basic Measure Feedback](https://github.com/qir-alliance/qir-spec/blob/main/specification/v0.1/7_Profiles.md#profile-b-basic-measurement-feedback) documentation. 
 
@@ -80,7 +90,7 @@ After a successful run on the emulator:
 
 1. In your Azure Quantum workspace, select **Job management**.
 1. Select the job you just submitted. 
-1. In the **Job details** popup, select **Cost Estimation** to view how many HQC's (Quantinuum quantum credits) will be needed to run the job on Quantinuum hardware.
+1. In the **Job details** popup, select **Cost Estimation** to view how many eHQC's (Quantinuum emulator credits) were used. This translates directly to the number of HQC's (Quantinnum quantum credits) that will be needed to run the job on Quantinuum hardware.
 
 ![Cost estimation](~/media/hybrid/cost-estimation.png)
 
@@ -578,7 +588,3 @@ When the job is complete, output a histogram of results.
 ```
 
 ***
-
-## Next steps
-
-
