@@ -17,7 +17,7 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
-## 2023-02-24
+## 2023-03-01
 
 ### QDK version 0.27.258160
 
