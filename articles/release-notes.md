@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 01/31/2023
+ms.date: 02/28/2023
 author: SoniaLopezBravo
 ms.author: sonialopez
 ms.service: azure-quantum
@@ -17,11 +17,20 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
+## 2023-02-24
+
+### QDK version 0.27.258160
+
+- You can now submit multiple items in a single resource estimation job; each item can have different target parameters and operation arguments.
+- Removed support for Rigetti Aspen-11 Quantum Processor due to deprecation. For other targets available, please see the [Rigetti provider](/azure/quantum/provider-rigetti?tabs=tabid-pyquil) documentation.
+- In Q# Jupyter notebooks, fixed an issue where `%azure.connect` would take several minutes before succeeding in certain environments. See [microsoft/Quantum#762](https://github.com/microsoft/Quantum/issues/762) for more details.
+- Added a warning that the [local Resources Estimator](/azure/quantum/machines/resources-estimator) will be removed in March 2023. The Resources Estimator is now available through [Azure Quantum](/azure/quantum/intro-to-resource-estimation).
+
 ## 2023-01-31
 
 ### QDK version 0.27.253010
 
-- Added support for Rigetti [Aspen-M-3](https://learn.microsoft.com/azure/quantum/provider-rigetti?tabs=tabid-pyquil#aspen-m-3) Quantum Processor.
+- Added support for Rigetti [Aspen-M-3](/azure/quantum/provider-rigetti?tabs=tabid-pyquil#aspen-m-3) Quantum Processor.
 - Compiler errors related to hardware capabilities are now warnings by default. Programs with these warnings may or may not run on a specific target, but they will be validated by the Azure Quantum service before execution and users will not be charged if the program does not pass validation.
 - The Q# compiler now uses LLVM 14 to generate QIR.
 - In the [iqsharp-base](https://mcr.microsoft.com/product/quantum/iqsharp-base/about) image, removed support for .NET Core 3.1, since it is [end-of-life](https://dotnet.microsoft.com/platform/support/policy/dotnet-core). Upgraded various packages in the image and made small improvements to decrease container size. Fixes [microsoft/iqsharp#757](https://github.com/microsoft/iqsharp/pull/754).
