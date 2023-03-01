@@ -17,14 +17,14 @@ Integrated quantum computing brings the classical and quantum processes together
 
 For more discussion, see
 
-- [Grande & Weibe, "Using Random Walks for Iterative Phase Estimation"](https://arxiv.org/pdf/2208.04526.pdf).
+- [Granade & Weibe, "Using Random Walks for Iterative Phase Estimation"](https://arxiv.org/pdf/2208.04526.pdf).
 - [Lubinski, et al., "Advancing Hybrid Quantum–Classical Computation with Real-Time Execution"](https://arxiv.org/pdf/2206.12950.pdf)
 
 ![Integrated batch quantum computing](~/media/hybrid/integrated.png)
 
 ## Supported hardware
 
-Currently, the integrated quantum computing model in Azure Quantum is supported on [Quantinuum](https://www.quantinuum.com/) targets. Quantinuum supports the QIR Alliance [Basic Measurement Feedback](https://github.com/qir-alliance/qir-spec/blob/main/specification/v0.1/7_Profiles.md#profile-b-basic-measurement-feedback) (Profile B), which allows limited capabilities to control the execution of quantum operations based on prior measurement results. 
+Currently, the integrated quantum computing model in Azure Quantum is supported on [Quantinuum](https://www.quantinuum.com/) targets. 
 
 ### Quantinuum 
 
@@ -40,8 +40,6 @@ Currently, the integrated quantum computing model in Azure Quantum is supported 
 ## Get started
 
 To start exploring integrated hybrid programming, we suggest walking through the samples in the [Integrated hybrid](xref:microsoft.quantum.hybrid.integrated) article, or in the **Integrated hybrid** sample gallery in the Azure Portal.
-
-To adapt your own code to run on integrated hybrid supported hardware, see the [QIR Alliance Profile B: Basic Measure Feedback](https://github.com/qir-alliance/qir-spec/blob/main/specification/v0.1/7_Profiles.md#profile-b-basic-measurement-feedback) documentation. 
 
 ## Submitting integrated hybrid jobs
 
@@ -67,7 +65,7 @@ qsharp.azure.target_capability("AdaptiveExecution")
 
 ### Azure CLI
 
-When using the Azure CLI to submit a program, add the `--target-capability` parameter with the value `AdaptiveExecution`.
+When using the Azure CLI to submit a job, add the `--target-capability` parameter with the value `AdaptiveExecution`.
 
 ```azurecli
 az quantum job submit --target-capability AdaptiveExecution --target-id quantinuum.sim.h1-1e --job-name IterativePhaseEstimation --shots 100 --output table
@@ -546,7 +544,7 @@ operation InnerProduct() : Int{
 }
 ```
 
-Specify the target. The target requires a target execution profile that supports basic measurement feedback.
+Specify the target. The target requires a target execution profile that supports [basic measurement feedback](xref:microsoft.quantum.target-profiles##create-and-run-applications-for-basic-measurement-feedback-profile-targets).
 
 ```python
 %azure.target quantinuum.sim.h1-1e
