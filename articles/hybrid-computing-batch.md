@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand the architecture and implementation of batch quantum computing.
-ms.date: 02/21/2023
+ms.date: 03/01/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -13,9 +13,11 @@ uid: microsoft.quantum.hybrid.batch
 
 # Batch quantum computing
 
-Typically, quantum jobs, or circuits, are sent one at a time to a quantum hardware target. When that job is complete, the next job is added to the queue. 
+Typically, quantum circuits are sent one at a time to a quantum hardware target. When the result of the circuit is received by the client, the next one is added to the queue. You can parameterize your circuits by binding a variable to your circuit so that the variable’s value is not required when defining your circuit. 
 
-However, by batching multiple circuits into one job, the circuits are submitted to the quantum hardware as soon as the previous circuit is complete, eliminating the wait between job submissions and allowing you to run multiple jobs significantly faster. In this mode, you can submit batches of non-parameterized circuits, that is, circuits with a fixed number of predefined gates. Batches of parameterized circuits, in which gates depend on adjustable parameters that the classical computer provides to encode different quantum states, are part of the [Interactive quantum computing](xref:microsoft.quantum.hybrid.interactive) model.
+You can also batch multiple pre-defined circuits into one job. The circuits are submitted to the quantum hardware as soon as the previous circuit is complete, reducing the wait between job submissions. 
+
+In this architecture, the state of the qubits is lost between each circuit submission.
 
 ![Batch quantum computing](~/media/hybrid/batch.png)
 
