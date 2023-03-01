@@ -12,9 +12,6 @@ uid: microsoft.quantum.providers.quantinuum
 
 # Quantinuum provider
 
-> [!NOTE]
-> The Quantinuum provider replaces the old Honeywell provider. If you previously used the Honeywell provider, see the [Honeywell to Quantinuum migration guide](xref:microsoft.quantum.providers.honeywell.migration).
-
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 Quantinuum provides access to trapped-ion systems with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurement.
