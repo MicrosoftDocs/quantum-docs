@@ -415,3 +415,4 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 [`pytket-quantinuum` Compilation Passes]: https://cqcl.github.io/pytket-quantinuum/api/#default-compilation
 [`pytket-quantinuum` Examples]: https://github.com/CQCL/pytket-quantinuum/tree/develop/examples
 [Azure portal]: https://portal.azure.com
+[Azure Quantum pricing]: https://learn.microsoft.com/en-us/azure/quantum/pricing
