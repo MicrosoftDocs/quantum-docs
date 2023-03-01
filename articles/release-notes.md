@@ -21,9 +21,8 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 ### QDK version 0.27.258160
 
-- You can now submit multiple items in a single resource estimation job; each item can have different target parameters and operation arguments.
-- Removed support for Rigetti Aspen-11 Quantum Processor due to deprecation. For other targets available, please see the [Rigetti provider](/azure/quantum/provider-rigetti?tabs=tabid-pyquil) documentation.
 - In Q# Jupyter notebooks, fixed an issue where `%azure.connect` would take several minutes before succeeding in certain environments. See [microsoft/Quantum#762](https://github.com/microsoft/Quantum/issues/762) for more details.
+- Removed support for Rigetti Aspen-11 Quantum Processor due to deprecation. For other targets available, please see the [Rigetti provider](/azure/quantum/provider-rigetti?tabs=tabid-pyquil) documentation.
 - Added a warning that the [local Resources Estimator](/azure/quantum/machines/resources-estimator) will be removed in March 2023. The Resources Estimator is now available through [Azure Quantum](/azure/quantum/intro-to-resource-estimation).
 
 ## 2023-01-31
