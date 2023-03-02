@@ -30,7 +30,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 ### QDK version 0.27.253010
 
 - Added support for Rigetti [Aspen-M-3](/azure/quantum/provider-rigetti?tabs=tabid-pyquil#aspen-m-3) Quantum Processor.
-- Compiler errors related to hardware capabilities are now warnings by default. Programs with these warnings may or may not run on a specific target, but they will be validated by the Azure Quantum service before execution and users will not be charged if the program does not pass validation.
+- Compiler errors related to hardware capabilities are now warnings by default. Programs with these warnings may or may not run on a specific target, but they are validated by the Azure Quantum service before execution and users are not be charged if the program does not pass validation.
 - The Q# compiler now uses LLVM 14 to generate QIR.
 - In the [iqsharp-base](https://mcr.microsoft.com/product/quantum/iqsharp-base/about) image, removed support for .NET Core 3.1, since it is [end-of-life](https://dotnet.microsoft.com/platform/support/policy/dotnet-core). Upgraded various packages in the image and made small improvements to decrease container size. Fixes [microsoft/iqsharp#757](https://github.com/microsoft/iqsharp/pull/754).
 - In the azure-quantum package, fixed `cost_estimate()` pricing for IonQ Aria from $0.00022 per 1 qgs to $0.0002205 per 1 qgs.
@@ -67,7 +67,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 - Added support for [Rigetti](xref:microsoft.quantum.providers.rigetti) in Azure Quantum, that includes the Rigetti [Aspen-M-2](xref:microsoft.quantum.providers.rigetti#aspen-m-2) and [Quantum Virtual Machine](xref:microsoft.quantum.providers.rigetti#simulators).
 - Updated all Microsoft Quantum Development Kit components to Python 3.9.
-- The [Quantinuum target names](xref:microsoft.quantum.providers.quantinuum) have been updated for clarity and consistency. The old target names will continue to be available.
+- The [Quantinuum target names](xref:microsoft.quantum.providers.quantinuum) have been updated for clarity and consistency. The old target names continue to be available.
 - Added support for multiple classical registers in Qiskit by addressing issues [microsoft/qdk-python#361](https://github.com/microsoft/qdk-python/issues/361) and [microsoft/qdk-python#375](https://github.com/microsoft/qdk-python/issues/375).
 - Corrected the number of qubits for Quantinuum H1-2 target references by fixing [microsoft/qdk-python#391](https://github.com/microsoft/qdk-python/issues/391).
 
@@ -95,20 +95,20 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 ### Azure Quantum service update
 
 - Improved the Azure Quantum Portal experience so that you can easily check how much [Azure Quantum Credits](xref:microsoft.quantum.credits) you have used, how much is remaining, and [quota](xref:microsoft.quantum.quotas) status if applicable.
-- Added a new advanced sample that will help you explore the execution of hidden shift problems on a quantum computer.
+- Added a new advanced sample that helps you explore the execution of hidden shift problems on a quantum computer.
 - Prevented long waiting times by rejecting job submission if Target is in 'Unavailable' state.
 
 ## 2022-06-28
 
 ### QDK version 0.25.218240
 
-- The latest version of the QDK has new magic commands for Q# Jupyter notebooks: [`%azure.target-capability`](/qsharp/api/iqsharp-magic/azure.target-capability), [`%qir`](/qsharp/api/iqsharp-magic/qir). The new commands will allow you to target specific diagnostics and will show in each notebook cell if the target is set.
-- We've improved the Q# compiler diagnostics in Jupyter notebooks. Upon cell compilation, the compiler will now point to lines that cause errors and warnings, and will also direct you to Q# documentation for the given error or warning message.
+- The latest version of the QDK has new magic commands for Q# Jupyter notebooks: [`%azure.target-capability`](/qsharp/api/iqsharp-magic/azure.target-capability), [`%qir`](/qsharp/api/iqsharp-magic/qir). The new commands allow you to target specific diagnostics and show in each notebook cell if the target is set.
+- We've improved the Q# compiler diagnostics in Jupyter notebooks. Upon cell compilation, the compiler now points to lines that cause errors and warnings, and also directs you to Q# documentation for the given error or warning message.
 - This release also adds support for continuous-angle rotations to the open systems simulator (e.g. Microsoft.Quantum.Intrinsic.Rx and Microsoft.Quantum.Intrinsic.Exp), enabling the simulation of more Q# programs. See GitHub feature request [microsoft/qsharp-runtime#914](https://github.com/microsoft/qsharp-runtime/issues/914) for more details.
 - All Microsoft QIO CPU solvers now support [squared linear combination](/azure/quantum/optimization-slc-term) terms and [protobuf binary format](/azure/quantum/optimization-problem#input-problem-serialization-to-protobuf-binary-format). Additionally, several solvers now benefit from performance improvements, resulting in reduced memory usage and shortened runtimes. These solvers only use input format `microsoft.qio.v2`, the default format for all problems submitted via the Azure Quantum Python SDK.
 - The latest update also enables calling [Parity()](/qsharp/api/qsharp/microsoft.quantum.bitwise.parity) with a negative argument, fixing GitHub issue [microsoft/qsharp-runtime#993](https://github.com/microsoft/qsharp-runtime/issues/993).
 - We've added a new Azure CLI quantum extension, version 0.16.0
-  - Lastly, any providers participating in the ‘Credits for All’ program will be automatically  added when you create a workspace with the CLI. See
+  - Lastly, any providers participating in the ‘Credits for All’ program are automatically  added when you create a workspace with the CLI. See
 [Azure Quantum Credits FAQ](/azure/quantum/credits-faq)
 
 ## 2022-05-23
@@ -116,7 +116,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 ### QDK version 0.24.210930
 
 - In the May release, we've added names to access fields in `FixedPoint` user-defined type ([microsoft/QuantumLibraries#549](https://github.com/microsoft/QuantumLibraries/issues/549)).
-- We've added two new operations `SubtractFxP` and `InvertFxP`. These will allow you to subtract and invert quantum fixed-point numbers, respectively  ([microsoft/QuantumLibraries#555](https://github.com/microsoft/QuantumLibraries/issues/555)).
+- We've added two new operations `SubtractFxP` and `InvertFxP`. These allow you to subtract and invert quantum fixed-point numbers, respectively  ([microsoft/QuantumLibraries#555](https://github.com/microsoft/QuantumLibraries/issues/555)).
 - The release has added utility functions to convert between floating-point and fixed-point representation [microsoft/QuantumLibraries#559](https://github.com/microsoft/QuantumLibraries/issues/559).
 - Lastly, we've fixed issue [microsoft/qdk-python#323](https://github.com/microsoft/qdk-python/issues/323), addressing an apparent inconsistency in results returned by `job.result()` on a Qiskit job.
 
@@ -183,7 +183,7 @@ demonstrating the use of the sparse simulator.
 ### QDK version 0.23.195983
 
 - This release addresses the following GitHub issues:
-  - [microsoft/qsharp-compiler#1235](https://github.com/microsoft/qsharp-compiler/issues/1235), Visual Studio and Visual Studio Code extensions no longer throw an unhandled exception if the .NET SDK isn't found. The Language Server will fall back to purely syntactic diagnostics.
+  - [microsoft/qsharp-compiler#1235](https://github.com/microsoft/qsharp-compiler/issues/1235), Visual Studio and Visual Studio Code extensions no longer throw an unhandled exception if the .NET SDK isn't found. The Language Server falls back to purely syntactic diagnostics.
   - Q# now supports lambda expressions. See the [Q# language documentation](https://github.com/microsoft/qsharp-compiler/issues/1113) for information about how to use them.
   - [microsoft/qsharp-compiler#1300](https://github.com/microsoft/qsharp-compiler/issues/1300) - This fixes the issue where the Q# compiler would log an exception in addition to an error message for operations that return a non-unit type when incorrectly defined to be adjointable and/or controllable.
   - [microsoft/qsharp-compiler#1346](https://github.com/microsoft/qsharp-compiler/issues/1346) - Fixes the issue where the Q# Formatter was removing parentheses around for-loop conditions without ensuring spacing around the condition.
@@ -219,7 +219,7 @@ demonstrating the use of the sparse simulator.
 - You can now estimate the price of your job in azure-quantum package by using [estimate_cost](xref:microsoft.quantum.quickstarts.computing.provider.portal#estimate-job-cost) for the target that you're using with the Qiskit, Cirq and pass-through feature.
 - The azure-quantum package now supports submitting Qiskit lists of length 1. 
 - Fixed GitHub issue [microsoft/qdk-python#198](https://github.com/microsoft/qdk-python/issues/198) in the azure-quantum package where the Qiskit jobs were causing incorrect results in circuits with helper qubits.
-- In azure-quantum package, the perform_icm parameter of the 1QBit `PticmSolver` was deprecated, using it will now return a deprecation warning. A `seed` parameter was added to all other 1QBit solvers that specifies a random seed.
+- In azure-quantum package, the perform_icm parameter of the 1QBit `PticmSolver` was deprecated, using it now returns a deprecation warning. A `seed` parameter was added to all other 1QBit solvers that specifies a random seed.
 - Fixed GitHub issue [microsoft/qdk-python#178](https://github.com/microsoft/qdk-python/issues/178) in the azure-quantum package so errors returned by the Azure Quantum service when using the Qiskit or Cirq feature are now propagated up.
 - Fixed GitHub issue [microsoft/qsharp-compiler#1297](https://github.com/microsoft/qsharp-compiler/issues/1297) where the IntelliSense information wasn't updated when the ExecutionTarget property was modified in the project file.
 
@@ -227,7 +227,7 @@ demonstrating the use of the sparse simulator.
 
 ### QDK version 0.21.2112.180703
 
-- Released Azure CLI quantum extension version 0.11.0: Job result histograms will be left-aligned (not centered) in console output.
+- Released Azure CLI quantum extension version 0.11.0: Job result histograms are left-aligned (not centered) in console output.
 
 ## 2021-11-23
 
@@ -248,7 +248,7 @@ demonstrating the use of the sparse simulator.
 - IQ# kernel [%azure.connect](/qsharp/api/iqsharp-magic/azure.connect) command no longer sets "West US" as the default location. Location parameter is now required.
 - The `azure-quantum` package now supports asynchronous I/O via the new `azure.quantum.aio` package. For more information, see [Solve a batch of problems](xref:microsoft.quantum.optimization.async-io).
 - Fixed an [issue](https://github.com/microsoft/qdk-python/issues/160): Qiskit jobs fetched with `AzureQuantumProvider.get_job()` can now use `job.result()` without running into a `KeyError`.
-- Fixed an [issue](https://github.com/microsoft/qdk-python/issues/164) that caused `azure.quantum.cirq` and `azure.quantum.qiskit` not to be recognized by [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). The `azure.quantum.plugins` package is deprecated and will be removed next release.  
+- Fixed an [issue](https://github.com/microsoft/qdk-python/issues/164) that caused `azure.quantum.cirq` and `azure.quantum.qiskit` not to be recognized by [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). The `azure.quantum.plugins` package is deprecated.  
 - Fixed an [issue](https://github.com/microsoft/iqsharp/issues/531) in IQ# in which job execution would fail if any operation defined in an external file wasn't supported on the given target.
 - Fixed an [issue](https://github.com/microsoft/qsharp-compiler/issues/1163) in the Visual Studio extension that caused incorrect indentation in some cases when a closing bracket was typed.
 - Refactored the [quantum intermediate representation (QIR) runtime](https://www.nuget.org/packages/Microsoft.Quantum.Qir.Runtime) DLLs to use static VC runtime, removing dependency on msvcrt.dll and Visual Studio installation.
@@ -267,7 +267,7 @@ demonstrating the use of the sparse simulator.
 - Fixed issues with Q# compiler's diagnostics appearing in incorrect places: [1133](https://github.com/microsoft/qsharp-compiler/issues/1133) and [1172](https://github.com/microsoft/qsharp-compiler/issues/1172).
 - **Breaking change:** The order of arguments in `ApplyIf`, `ApplyIfA`, `ApplyIfC`, and `ApplyIfCA` [has been changed](https://github.com/microsoft/QuantumLibraries/issues/377) to be consistent with related operations such as `ApplyIfElseB` and [Q# API design principles](/azure/quantum/contributing-api-design-principles).
 - `Problem.serialize()` of the `azure.quantum.optimization` Python package now serializes the name of the Optimization Problem in a new optional metadata field, so you don't have to specify it again when deserializing the problem as detailed in this [issue](https://github.com/microsoft/qdk-python/issues/153).
-- Released Azure CLI quantum extension version 0.8.0: Users will receive recommendation at most once a day, to update the az quantum extension if the version installed is out-of-date.
+- Released Azure CLI quantum extension version 0.8.0: Users receive recommendations, at most once a day, to update the az quantum extension if the version installed is out-of-date.
 
 ## 2021-09-10
 
@@ -322,7 +322,7 @@ demonstrating the use of the sparse simulator.
 ### QDK version 0.18.2106.148911
 
 - You can now [configure](xref:microsoft.quantum.optimization.apply-solver#returning-multiple-solutions) how many solutions you want returned from a solver run.
-- A new NuGet package [Microsoft.Quantum.AutoSubstitution](https://www.nuget.org/packages/Microsoft.Quantum.AutoSubstitution/), which when added to a Q# project, allows you to annotate operations with the `SubstitutableOnTarget(AltOp, Sim)` attribute. It will then call `AltOp` instead of the annotated operation, whenever it's executed using `Sim`.
+- A new NuGet package [Microsoft.Quantum.AutoSubstitution](https://www.nuget.org/packages/Microsoft.Quantum.AutoSubstitution/), which when added to a Q# project, allows you to annotate operations with the `SubstitutableOnTarget(AltOp, Sim)` attribute. It then calls `AltOp` instead of the annotated operation, whenever it's executed using `Sim`.
 - Integration with Azure-Identity provides more mechanisms to [authenticate](xref:microsoft.quantum.iqsharp.magic-ref.azure.connect) with Azure.
 - The .NET [Microsoft.Azure.Management.Quantum](https://www.nuget.org/packages/Microsoft.Azure.Management.Quantum) now returns the Restricted Access URL so you can know more/apply for a restricted access plan.
 - Preview support for noisy simulation in open systems and stabilizer representations [qsharp-runtime#714](https://github.com/microsoft/qsharp-runtime/issues/714). See [here](https://github.com/microsoft/qsharp-runtime/blob/0826903c0842ba99a923e79be9f072054fe44a43/documentation/preview-simulators.md) for documentation on preview simulators.
@@ -536,10 +536,10 @@ This release fixes a bug-affecting compilation of Q# projects.
 
 This release contains the following:
 
-- Q# notebooks and Python host programs will no longer fail when a Q# entry point is present
+- Q# notebooks and Python host programs no longer fail when a Q# entry point is present.
 - Updates to [Standard library](xref:microsoft.quantum.libraries.overview.standard.intro) to use access modifiers
 - Compiler now allows plug-in of rewrite steps between built-in rewrite steps
-- Several deprecated functions and operations have been removed following the schedule described in our [API principles](xref:microsoft.quantum.contributing-qdk.overview.api-design). Q# programs and libraries that build without warnings in version 0.11.2004.2825 will continue to work unmodified.
+- Several deprecated functions and operations have been removed following the schedule described in our [API principles](xref:microsoft.quantum.contributing-qdk.overview.api-design). Q# programs and libraries that build without warnings in version 0.11.2004.2825 continue to work unmodified.
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
@@ -594,7 +594,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 This release contains the following:
 
-- New Microsoft.Quantum.SDK NuGet package which will replace Microsoft.Quantum.Development.Kit NuGet package when creating new projects. Microsoft.Quantum.Development.Kit NuGet package will continue to be supported for existing projects. 
+- New Microsoft.Quantum.SDK NuGet package which replace Microsoft.Quantum.Development.Kit NuGet package when creating new projects. Microsoft.Quantum.Development.Kit NuGet package continues to be supported for existing projects. 
 - Support for Q# compiler extensions, enabled by the new Microsoft.Quantum.SDK NuGet package, for more information see the [documentation on GitHub](https://github.com/microsoft/qsharp-compiler/tree/main/src/QuantumSdk#extending-the-q-compiler), the [compiler extensions sample](https://github.com/microsoft/qsharp-compiler/tree/main/examples/CompilerExtensions) and the [Q# Dev Blog](https://devblogs.microsoft.com/qsharp/extending-the-q-compiler/)
 - Added support for .NET Core 3.1, it's highly recommended to have version 3.1.100 installed since building with older .NET Core SDK versions may cause issues
 - New compiler transformations available under Microsoft.Quantum.QsCompiler.Experimental
@@ -728,18 +728,18 @@ The changes are summarized here and instructions for upgrading your existing pro
 
 This release adds new Q# language syntax:
 
-- Add a [shorthand way to express specializations of quantum operations](xref:microsoft.quantum.qsharp.specializationdeclarations) (control and adjoints) with `+` operators.  The old syntax is deprecated.  Programs that use the old syntax (for example, `: adjoint`) will continue to work, but a compile-time warning will be generated.  
+- Add a [shorthand way to express specializations of quantum operations](xref:microsoft.quantum.qsharp.specializationdeclarations) (control and adjoints) with `+` operators.  The old syntax is deprecated.  Programs that use the old syntax (for example, `: adjoint`) continue to work, but a compile-time warning is generated.  
 - Add a new ternary operator for [copy-and-update](xref:microsoft.quantum.qsharp.copyandupdateexpressions#copy-and-update-expressions), `w/` `<-`, can be used to express array creation as a modification of an existing array.
 - Add the common [apply-and-reassign statement](xref:microsoft.quantum.qsharp.variabledeclarationsandreassignments#evaluate-and-reassign-statements), for example, `+=`, `w/=`.
 - Add a way to specify a short name for namespaces in [open directives](xref:microsoft.quantum.qsharp.namespaces#open-directives).
 
-With this release, we no longer allow an array element to be specified on the left side of a set statement.  This is because that syntax implies that arrays are mutable when in fact, the result of the operation has always been the creation of a new array with the modification.  Instead, a compiler error will be generated with a suggestion to use the new copy-and-update operator, `w/`, to accomplish the same result.  
+With this release, we no longer allow an array element to be specified on the left side of a set statement.  This is because that syntax implies that arrays are mutable when in fact, the result of the operation has always been the creation of a new array with the modification.  Instead, a compiler error is generated with a suggestion to use the new copy-and-update operator, `w/`, to accomplish the same result.  
 
 #### Library restructuring
 
 This release reorganizes the libraries to enable their growth in a consistent way:
 
-- Renames the Microsoft.Quantum.Primitive namespace  to Microsoft.Quantum.Intrinsic.  These operations are implemented by the target machine.  The Microsoft.Quantum.Primitive namespace is deprecated.  A runtime warning will advise when programs call operations and functions using deprecated names.
+- Renames the Microsoft.Quantum.Primitive namespace  to Microsoft.Quantum.Intrinsic.  These operations are implemented by the target machine.  The Microsoft.Quantum.Primitive namespace is deprecated.  A runtime warning advises when programs call operations and functions using deprecated names.
 
 - Renames the Microsoft.Quantum.Canon package to Microsoft.Quantum.Standard.  This package contains namespaces that are common to most Q# programs.  This includes:  
   - Microsoft.Quantum.Canon for common operations
@@ -749,11 +749,11 @@ This release reorganizes the libraries to enable their growth in a consistent wa
 
 With this change, programs that include a single "open" statement for the namespace Microsoft.Quatum.Canon may find build errors if the program references operations that were moved to the other three new namespaces.  Adding the additional open statements for the three new namespaces is a straightforward way to resolve this issue.  
 
-- Several namespaces have been deprecated as the operations within have been reorganized to other namespaces. Programs that use these namespaces will continue to work, and a compile-time warning will denote the namespace where the operation is defined.  
+- Several namespaces have been deprecated as the operations within have been reorganized to other namespaces. Programs that use these namespaces continue to work, and a compile-time warning denotes the namespace where the operation is defined.  
 
 - The Microsoft.Quantum.Arithmetic namespace has been normalized to use the <xref:Microsoft.Quantum.Arithmetic.LittleEndian> user-defined type. Use the function [BigEndianAsLittleEndian](xref:Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian) when needed to convert to little endian.  
 
-- The names of several callables (functions and operations) have been changed to conform to the [Q# Style Guide](xref:microsoft.quantum.contributing-qdk.overview.style).  The old callable names are deprecated.  Programs that use the old callables will continue to work with a compile-time warning.
+- The names of several callables (functions and operations) have been changed to conform to the [Q# Style Guide](xref:microsoft.quantum.contributing-qdk.overview.style).  The old callable names are deprecated.  Programs that use the old callables continue to work with a compile-time warning.
 
 #### New samples
 
@@ -778,7 +778,7 @@ If you have existing Q# projects from version 0.5 of the Quantum Development Kit
     <PackageReference Include="Microsoft.Quantum.Development.Kit" Version="0.6.1905.301" />
     ```
 4. From the command prompt, run this command: `dotnet msbuild`  
-5. After running this, you might still need to manually address errors because of the changes listed above.  In many cases, these errors will also be reported by IntelliSense in Visual Studio or Visual Studio Code.
+5. After running this, you might still need to manually address errors because of the changes listed above.  In many cases, these errors are also reported by IntelliSense in Visual Studio or Visual Studio Code.
     - Open the root folder of the project or the containing solution in Visual Studio 2019 or Visual Studio Code.
     - After opening a `.qs` file in the editor, you should see the output of the Q# language extension in the output window.
     - After the project has loaded successfully (indicated in the output window) open each file and manually to address all remaining issues.
@@ -830,7 +830,7 @@ This release contains the following:
 This release contains the following:
 
 - Adds support for a new primitive type, BigInt, which represents a signed integer of arbitrary size.  Learn more about [BigInt](xref:microsoft.quantum.qsharp.valueliterals#bigint-literals).
-- Adds new Toffoli simulator, a special purpose fast simulator that can simulate X, CNOT and multi-controlled X quantum operations with very large numbers of qubits.  Learn more about [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator).
+- Adds new Toffoli simulator, a special purpose fast simulator that can simulate X, CNOT and multi-controlled X quantum operations with large numbers of qubits.  Learn more about [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator).
 - Adds a simple resource estimator that estimates the resources required to run a given instance of a Q# operation on a quantum computer.  Learn more about the [Resource Estimator](xref:microsoft.quantum.machines.overview).
 
 ## 2018-11-28
@@ -967,7 +967,7 @@ To update project templates for the command line, run the following command:
 dotnet new -i "Microsoft.Quantum.ProjectTemplates::0.2.1806.1503-preview"
 ```
 
-After running this command, any new projects created using `dotnet new <project-type> -lang Q#` will automatically use this version of the Quantum Development Kit.
+After running this command, any new projects created using `dotnet new <project-type> -lang Q#` automatically use this version of the Quantum Development Kit.
 
 To update an existing project to use the newest version, run the following command from within the directory for each project:
 
@@ -1021,7 +1021,7 @@ Since previous releases of the Quantum Development Kit only supported .NET Frame
 
 #### Project migration
 
-Projects created using previous versions of Quantum Development Kit will still work, as long as you don't update the NuGet packages used in them. To migrate existing code to the new version, do the following steps:
+Projects created using previous versions of Quantum Development Kit still work, as long as you don't update the NuGet packages used in them. To migrate existing code to the new version, do the following steps:
 
 1. Create a new .NET Core project using the right type of Q# project template (Application, Library or Test Project).
 2. Copy existing `.qs` and `.cs`/`.fs` files from the old project to the new project (using Add > Existing Item). Don't copy the AssemblyInfo.cs file.
@@ -1057,7 +1057,7 @@ This release fixes some issues reported by the community. Namely:
 
 ##### Project creation
 
-- When creating a solution (.sln) that will use Q#, the solution must be one directory higher than each project (`.csproj`) in the solution. When creating a new solution, this can be accomplished by making sure that the "Create directory for solution" checkbox on the "New Project" dialog box is checked. If this isn't done, the Quantum Development Kit NuGet packages will need to be installed manually.
+- When creating a solution (.sln) that uses Q#, the solution must be one directory higher than each project (`.csproj`) in the solution. When creating a new solution, this can be accomplished by making sure that the "Create directory for solution" checkbox on the "New Project" dialog box is checked. If this isn't done, the Quantum Development Kit NuGet packages need to be installed manually.
 
 ##### Q#
 
@@ -1069,12 +1069,12 @@ This release fixes some issues reported by the community. Namely:
 
 ##### Simulation
 
-- The Quantum Simulator uses OpenMP to parallelize the linear algebra required. By default OpenMP uses all available hardware threads, which means that programs with small numbers of qubits will often run slowly because the coordination required will dwarf the actual work. This can be fixed by setting the environment variable OMP_NUM_THREADS to a small number. As a very rough rule of thumb, 1 thread is good for up to about 4 qubits, and then an additional thread per qubit is good, although this is highly dependent on your algorithm.
+- The Quantum Simulator uses OpenMP to parallelize the linear algebra required. By default OpenMP uses all available hardware threads, which means that programs with small numbers of qubits often run slowly because the coordination required dwarfs the actual work. This can be fixed by setting the environment variable OMP_NUM_THREADS to a small number. As a rough rule of thumb, one thread is good for up to about 4 qubits, and then an additional thread per qubit is good, although this is highly dependent on your algorithm.
 
 ##### Debugging
 
 - F11 (step in) doesn't work in Q# code.
-- Code highlighting in Q# code at a breakpoint or single-step pause is sometimes inaccurate. The correct line will be highlighted, but sometimes the highlight will start and end at incorrect columns on the line.
+- Code highlighting in Q# code at a breakpoint or single-step pause is sometimes inaccurate. The correct line is highlighted, but sometimes the highlight starts and ends at incorrect columns on the line.
 
 ##### Testing
 
