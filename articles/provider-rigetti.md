@@ -2,7 +2,7 @@
 author: kalzoo
 ms.author: brbenefield
 description: This document provides the technical details of the Rigetti provider
-ms.date: 12/01/2022
+ms.date: 03/02/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -23,13 +23,14 @@ The Aspen chip topology is octagonal with 3-fold (2-fold for edges) connectivity
 
 The Rigetti provider makes the following targets available:
 
-|Target name|	Target ID|	Number of qubits|	Description|
+|Target name|Target ID|Number of qubits|Description|
 |---|---|---|---|
-|[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil programs. Free of cost.|
-|[Aspen-M-2](#aspen-m-2) |rigetti.qpu.aspen-m-2 |	80 qubits	| Rigetti's multi-chip quantum processor. |
-|[Aspen-M-3](#aspen-m-3) |rigetti.qpu.aspen-m-3 |	80 qubits	| Rigetti's multi-chip quantum processor. |
+|[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil, Q\#, and Qiskit programs. Free of cost.|
+|[Aspen-M-2](#aspen-m-2) |rigetti.qpu.aspen-m-2 |80 qubits| Rigetti's multi-chip quantum processor. |
+|[Aspen-M-3](#aspen-m-3) |rigetti.qpu.aspen-m-3 |80 qubits| Rigetti's multi-chip quantum processor. |
 
 > [!NOTE]
+> The QVM simulator does not support Cirq programs. 
 > The Aspen-11 QPU has been deprecated.
 
 Rigetti's targets correspond to a **No Control Flow** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
