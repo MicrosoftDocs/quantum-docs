@@ -15,10 +15,11 @@ uid: microsoft.quantum.concepts.hybrid
 
 All quantum computing is hybrid in some sense. The earliest quantum systems used classical processes to send instructions to the quantum computer, and receive and process the resulting data. *Hybrid quantum computing* refers to the tight and symbiotic integration between classical and quantum processors, such that computations and results are shared back and forth in real time during the run of a program. For example, classical computing is often faster and more efficient than quantum computing for certain tasks, such as data processing and analysis, while quantum computing performs better for certain types of optimization and simulation problems.
 
-This article describes three techniques that are necessary for hybrid quantum computing:
+This article describes four techniques that are necessary for hybrid quantum computing:
 
 - Mid-circuit measurement
 - Qubit re-use
+- Error mitigation
 - Quantum error correction
 
 ## Mid-circuit measurement
@@ -33,9 +34,9 @@ TBD - ARTWORK
 
 ## Qubit re-use
 
-Even though today's quantum computers are able to support an increasing number of qubits, we are still far from the millions of qubits needed to run fully fault-tolerant computations (learn more about the scale of quantum computers needed in the Introduction to resource estimation), and it is desirable to use as few qubits as possible
+Even though today's quantum computers are able to support an increasing number of qubits, we are still far from the millions of qubits needed to run fully fault-tolerant computations and it is desirable to use as few qubits as possible. For more information about the scale of quantum computers needed, see the [Introduction to resource estimation](xref:microsoft.quantum.overview.intro-resource-estimator).
 
-Qubit re-use is the practice of using the same qubit multiple times in a quantum computation to minimize the total qubits needed to run your program. Instead of allocating a new qubit for each step of your computation, qubit re-use allows for qubits to be used multiple times in a computation, while still preserving their quantum properties and avoiding errors.  There are various techniques for re-using qubits in quantum computing, such as quantum teleportation, quantum error correction, and measurement-based quantum computing.
+Qubit re-use is the practice of designing circuits to use the same qubit multiple times in a quantum computation to minimize the total qubits needed to run your program. For example, after performing a [mid-circuit measurement](#mid-circuit-measurement) and processing the result, that qubit can be reset and reused for another computation instead of allocating a new qubit. There are various techniques for re-using qubits in quantum computing, such as quantum teleportation, quantum error correction, and measurement-based quantum computing.
 
 <!--
 The following diagram shows how qubit re-use and mid-circuit measurement are used together to make a measurement, and then reset the qubit to be used later in the program. 
@@ -51,6 +52,6 @@ In addition to using logical qubits, errors in quantum computations can be mitig
 
 ## Error correction and fault tolerance
 
-Error correction and fault tolerance are critical aspects of quantum computing, as quantum bits (qubits) are more prone to errors than classical bits due to the delicate nature of quantum states, and highly fault tolerant systems are needed to achieve the full benefits of [distributed hybrid quantum computing](xref:microsoft.quantum.hybrid.distributed). In classical computing, errors can be corrected by adding redundancy to the computation and using error-correction codes. However, traditional error-correction techniques are not directly applicable to quantum computing, as they rely on being able to repeat the computation multiple times, which is not possible in quantum computing due to the no-cloning theorem.
+Error correction and fault tolerance are critical aspects of quantum computing, as qubits are more prone to errors than classical bits due to the delicate nature of quantum states, and highly fault tolerant systems are needed to achieve the full benefits of [distributed hybrid quantum computing](xref:microsoft.quantum.hybrid.distributed). In classical computing, errors can be corrected by adding redundancy to the computation and using error-correction codes. However, traditional error-correction techniques are not directly applicable to quantum computing, as they rely on being able to repeat the computation multiple times, which is not possible in quantum computing due to the no-cloning theorem.
 
 *Floquet codes* are a new class of error correction codes that respond to noise and errors dynamically, instead of traditional correction codes that protect against static errors. For more information, see [Error correction with Floquet codes](https://www.microsoft.com/research/blog/azure-quantum-innovation-efficient-error-correction-of-topological-qubits-with-floquet-codes/).

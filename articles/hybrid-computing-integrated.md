@@ -1,45 +1,44 @@
 ---
 author: bradben
-description: Understand the architecture and implementation of integrated quantum computing.
+description: Understand the architecture and implementation of integrated hybrid quantum computing.
 ms.date: 02/21/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: concepts
 no-loc: ['Q#', '$$v']
-title: Overview of integrated quantum computing
+title: Working with integrated hybrid computing
 uid: microsoft.quantum.hybrid.integrated
 ---
 
-# Integrated quantum computing
+# Integrated hybrid computing
 
-Integrated quantum computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Leveraging qubit re-use techniques, larger programs can run on machines utilizing a smaller number of qubits. 
+Integrated hybrid computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Leveraging qubit re-use techniques, larger programs can run on machines utilizing a smaller number of qubits. 
 
 For more discussion, see
 
 - [Granade & Weibe, "Using Random Walks for Iterative Phase Estimation"](https://arxiv.org/pdf/2208.04526.pdf).
 - [Lubinski, et al., "Advancing Hybrid Quantum–Classical Computation with Real-Time Execution"](https://arxiv.org/pdf/2206.12950.pdf)
 
-![Integrated batch quantum computing](~/media/hybrid/integrated.png)
+![Integrated hybrid quantum computing](~/media/hybrid/integrated.png)
 
 ## Supported hardware
 
-Currently, the integrated quantum computing model in Azure Quantum is supported on [Quantinuum](https://www.quantinuum.com/) targets. 
+Currently, the integrated hybrid computing model in Azure Quantum is supported on [Quantinuum](https://www.quantinuum.com/) targets. 
 
 ### Quantinuum 
 
 |Supported feature| Notes |
 |---|---|
-| Classical oops | Bounded loops only |
+| Classical loops | Bounded loops only |
 | Arbitrary control flow | Use of if/else branching  |
-| Mid-circuit measurement | TBD |
-| Qubit re-use | TBD |
-| Classical function calls | TBD |
-
+| Mid-circuit measurement | Utilizes classical register resources |
+| Qubit re-use | N/A |
+| Real-time classical compute| 32-bit unsigned integer arithmetic <br>Utilizes classical register resources |
 
 ## Get started
 
-To start exploring integrated hybrid programming, we suggest walking through the samples in the [Integrated hybrid](xref:microsoft.quantum.hybrid.integrated) article, or in the **Integrated hybrid** sample gallery in the Azure Portal.
+To start exploring integrated hybrid programming, we suggest walking through the samples in the [Integrated hybrid](xref:microsoft.quantum.hybrid.integrated) article, or in the **Hybrid quantum computing** sample gallery in the Azure Portal.
 
 ## Submitting integrated hybrid jobs
 
@@ -56,7 +55,7 @@ When using the IQ# kernel in a Jupyter Notebook, use the [%azure.target-capabili
 
 ### Python + Q\#
 
-When using the *quantum* Python package, use the `qsharp.azure.target_capability` function with the `AdaptiveExecution` parameter. 
+When using the *qsharp* Python package, use the `qsharp.azure.target_capability` function with the `AdaptiveExecution` parameter. 
 
 ```python
 qsharp.azure.target("quantinuum.sim.h1-1e")
@@ -136,7 +135,7 @@ namespace CheckGHZ {
             // Measures and resets the 3 qubits
             let (r0, r1, r2) = (MResetZ(q[0]), MResetZ(q[1]), MResetZ(q[2]));
 
-            // Adjusts classical code based on measurement results
+            // Adjusts classical variable based on measurement results
             if not (r0 == r1 and r1 == r2) {
                 set mismatch += 1;
             }
