@@ -129,10 +129,6 @@
         href: provider-rigetti.md
       - name: Rigetti support policy
         href: provider-support-rigetti.md
-    - name: Honeywell (Deprecated)
-      items:
-      - name: Migration Guide
-        href: provider-honeywell-migration-guide.md
 - name: Optimization
   items:
   - name: Overview
