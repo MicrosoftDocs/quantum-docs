@@ -30,8 +30,8 @@ The Rigetti provider makes the following targets available:
 |[Aspen-M-3](#aspen-m-3) |rigetti.qpu.aspen-m-3 |80 qubits| Rigetti's multi-chip quantum processor. |
 
 > [!NOTE]
-> The QVM simulator does not support Cirq programs. 
-> The Aspen-11 QPU has been deprecated.
+> - The QVM simulator does not support Cirq programs. 
+> - The Aspen-11 QPU has been deprecated.
 
 Rigetti's targets correspond to a **No Control Flow** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
 
