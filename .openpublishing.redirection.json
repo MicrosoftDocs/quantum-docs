@@ -1,4 +1,4 @@
-{
+F{
 	"redirections": [
 		{
 			"source_path": "articles/install-jupyter-qkd.md",
@@ -263,6 +263,11 @@
 		{
 			"source_path": "articles/provider-support-honeywell.md",
 			"redirect_url": "/azure/quantum/provider-support-quantinuum.md",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/provider-honeywell-migration-guide.md",
+			"redirect_url": "/azure/quantum/provider-quantinuum.md",
 			"redirect_document_id": false
 		}
 	]
