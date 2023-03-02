@@ -78,23 +78,23 @@ All Rigetti targets currently accept two formats:
 * `rigetti.quil.v1`, which is the text of a [Quil] program. 
 * `rigetti.qir.v1`, which is QIR bitcode.
  
-All targets also take the optional `count` integer parameter for defining the number of shots to run. If omitted, the program will only run once.
+All targets also take the optional `count` integer parameter for defining the number of shots to run. If omitted, the program only runs once.
 
 ### Quil
 
-All Rigetti targets accept the `rigetti.quil.v1` input format, which is the text of a [Quil] program, which stands for Quantum Instruction Language. By default, the program will be compiled using [quilc] before running. However, quilc doesn't support the pulse level control features ([Quil-T]), so if you want to use those features you must provide a [Native Quil] program (also containing Quil-T) as input and specify the input parameter `skipQuilc: true`.
+All Rigetti targets accept the `rigetti.quil.v1` input format, which is the text of a [Quil] program, which stands for Quantum Instruction Language. By default, programs are compiled using [quilc] before running. However, quilc doesn't support the pulse level control features ([Quil-T]), so if you want to use those features you must provide a [Native Quil] program (also containing Quil-T) as input and specify the input parameter `skipQuilc: true`.
 
 To make constructing a Quil program easier, you can use [`pyQuil`] along with the [`pyquil-for-azure-quantum`] package. Without this package, `pyQuil` can be used to _construct_ Quil programs but not to submit them to Azure Quantum.
 
 ### QIR
 
-All Rigetti hardware supports the execution of quantum intermediate representation (QIR) compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`. QIR provides a common interface that supports many quantum languages and target platforms for quantum computation and enables communication between high-level languages and machines. For example, you can submit Q#, Quil, or Qiskit jobs to Rigetti hardware, and Azure Quantum will automatically handle the input for you. For more information, see [Quantum intermediate representation](xref:microsoft.quantum.concepts.qir).
+All Rigetti hardware supports the execution of quantum intermediate representation (QIR) compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`. QIR provides a common interface that supports many quantum languages and target platforms for quantum computation and enables communication between high-level languages and machines. For example, you can submit Q#, Quil, or Qiskit jobs to Rigetti hardware, and Azure Quantum automatically handles the input for you. For more information, see [Quantum intermediate representation](xref:microsoft.quantum.concepts.qir).
 
 ### Selecting the right input format
 
 Should you use Quil or another QIR compliant language? It comes down to your end use case. QIR is more accessible for many users, while Quil is more powerful today.
 
-If you're using Qiskit, Q#, or another toolkit that supports QIR generation, and your application works on Rigetti targets via Azure Quantum, then QIR is right for you! QIR has a rapidly evolving specification, and Rigetti will continue to increase support for more advanced QIR programs as time passes - what can't be compiled today may well compile tomorrow.
+If you're using Qiskit, Q#, or another toolkit that supports QIR generation, and your application works on Rigetti targets via Azure Quantum, then QIR is right for you! QIR has a rapidly evolving specification, and Rigetti continues to increase support for more advanced QIR programs as time passes - what can't be compiled today may well compile tomorrow.
 
 On the other hand, Quil programs express the full set of functionality available to users of Rigetti systems from any platform including Azure Quantum. If you're looking to tailor the decomposition of your quantum gates or write programs at the pulse level, then you'll want to work in Quil, because those capabilities aren't yet available through QIR.
 
