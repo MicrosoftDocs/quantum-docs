@@ -402,6 +402,8 @@ job = backend.run(circuit, count=100)
 print("Job id:", job.id())
 ```
 
+***
+
 ## Technical Specifications
 
 Technical details for the System Model H1 and System Model H1 Emulators can be found in Quantinuum's product data sheets on the [System Model H1] page alongside links to Quantinuum specification and quantum volume data repositories and how to cite usage of Quantinuum systems.
@@ -449,8 +451,6 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 
 > [!NOTE]
 > If you are using an [Azure Quantum Credits](xref:microsoft.quantum.credits) plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
-
-***
 
 [Quantinuum]: https://www.quantinuum.com
 [System Model H1]: https://www.quantinuum.com/products/h1
