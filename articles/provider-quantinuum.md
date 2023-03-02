@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides the technical details of the Quantinuum quantum provider
 ms.author: brbenefield
-ms.date: 02/27/2023
+ms.date: 03/01/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -85,10 +85,10 @@ Additional capabilities available via the Quantinuum API are listed here.
 
 | Capability | Description |
 | ---- | ---- |
-| Mid-Circuit Measurement and Qubit Reuse (MCMR) | Measure qubits in the middle of a circuit and reuse them |
-| Arbitrary Angle ZZ Gates | Directly perform 2-qubit arbitrary angle gate rotations |
-| Emulator Noise Parameters | Experiment with the noise parameters used in the Quantinuum H-Series emulators |
-| TKET Optimizations in H-Series Stack | Experiment with turning on different levels of TKET optimizations in the H-Series stack |
+| [Mid-Circuit Measurement and Qubit Reuse (MCMR)](#mid-circuit-measurement-and-qubit-reuse) | Measure qubits in the middle of a circuit and reuse them |
+| [Arbitrary Angle ZZ Gates](#arbitrary-angle-zz-gates) | Directly perform 2-qubit arbitrary angle gate rotations |
+| [Emulator Noise Parameters](#emulator-noise-parameters) | Experiment with the noise parameters used in the Quantinuum H-Series emulators |
+| [TKET Optimizations in H-Series Stack](#tket-compilation-in-h-series-stack) | Experiment with turning on different levels of TKET optimizations in the H-Series stack |
 
 Users can take advantage of these additional capabilities via circuit functions or pass-through parameters in the Azure Quantum Q# and Qiskit providers.
 
@@ -166,6 +166,8 @@ circuit.measure(q, c)
 circuit.draw()
 ```
 
+***
+
 ### Arbitrary Angle ZZ Gates
 
 Quantinuum's native gate set includes arbitrary angle ZZ gates. This is beneficial for reducing the 2-qubit gate count for many quantum algorithms and gate sequences. For information on Arbitrary Angle ZZ gates in Quantinuum systems, see the *System Model H1 Product Data Sheet* on the [System Model H1] page.
@@ -228,6 +230,8 @@ circuit.rzz(theta, 0, 1)
 
 circuit.measure_all()
 ```
+
+***
 
 ### Emulator Noise Parameters
 
@@ -318,6 +322,8 @@ backend.options.update_options(**option_params)
 job = backend.run(circuit, count=100)
 print("Job id:", job.id())
 ```
+
+***
 
 ### TKET Compilation in H-Series Stack
 
