@@ -13,7 +13,7 @@ uid: microsoft.quantum.hybrid.integrated
 
 # Integrated hybrid computing
 
-Integrated hybrid computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Leveraging qubit re-use techniques, larger programs can run on machines utilizing a smaller number of qubits. 
+Integrated hybrid computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Using qubit reuse techniques, larger programs can run on machines utilizing a smaller number of qubits. 
 
 For more discussion, see
 
@@ -33,7 +33,7 @@ Currently, the integrated hybrid computing model in Azure Quantum is supported o
 | Classical loops | Bounded loops only |
 | Arbitrary control flow | Use of if/else branching  |
 | Mid-circuit measurement | Utilizes classical register resources |
-| Qubit re-use | N/A |
+| Qubit reuse | N/A |
 | Real-time classical compute| 32-bit unsigned integer arithmetic <br>Utilizes classical register resources |
 
 ## Get started
@@ -77,8 +77,8 @@ You can estimate the cost of running an integrated hybrid job on Quantinuum hard
 After a successful run on the emulator:
 
 1. In your Azure Quantum workspace, select **Job management**.
-1. Select the job you just submitted. 
-1. In the **Job details** popup, select **Cost Estimation** to view how many eHQC's (Quantinuum emulator credits) were used. This translates directly to the number of HQC's (Quantinnum quantum credits) that will be needed to run the job on Quantinuum hardware.
+1. Select the job you submitted. 
+1. In the **Job details** popup, select **Cost Estimation** to view how many eHQC's (Quantinuum emulator credits) were used. This number translates directly to the number of HQC's (Quantinnum quantum credits) that are needed to run the job on Quantinuum hardware.
 
 ![Cost estimation](~/media/hybrid/cost-estimation.png)
 
@@ -156,7 +156,7 @@ az account set --subscription <MySubscriptionID>
 az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
 ```
 
-Submit the job and view the results. This run will use approximately 10.65 eHQC's (Quantinuum emulator billing units)
+Submit the job and view the results. This run uses approximately 10.65 eHQC's (Quantinuum emulator billing units)
 
 ```azurecli
 az quantum job submit --target-id quantinuum.sim.h1-1e --job-name CheckGHZ --target-capability AdaptiveExecution --shots 50
@@ -286,7 +286,7 @@ az account set --subscription <MySubscriptionID>
 az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
 ```
 
-Submit the job and view the results. This run will use approximately 11.31 eHQC's (Quantinuum emulator billing units)
+Submit the job and view the results. This run uses approximately 11.31 eHQC's (Quantinuum emulator billing units)
 
 ```azurecli
 az quantum job submit --target-id quantinuum.sim.h1-1e --job-name ErrorCorrection --target-capability AdaptiveExecution --shots 50
@@ -301,7 +301,7 @@ az quantum job output -o table --job-id [job-id]
 
 (This sample code courtesy of [KPMG](https://kpmg.com/xx/en/home/about/alliances/microsoft/kpmg-and-microsoft-azure-quantum.html))
 
-This notebook demonstrates an iterative phase estimation within Q#. The basic calculation it makes will be to calculate an inner product between two 2-dimensional vectors encoded on a target qubit and an ancilla qubit. An additional control qubit is also initialized, with a subsequent H gate applied. This control qubit will be used to readout the inner product via an iterative phase estimation.
+This notebook demonstrates an iterative phase estimation within Q#. The basic calculation it makes will be to calculate an inner product between two 2-dimensional vectors encoded on a target qubit and an ancilla qubit. Another control qubit is also initialized, with a subsequent H gate applied. This control qubit will be used to readout the inner product via an iterative phase estimation.
 
 The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit. The Oracle operator generates a eigenphase on the target and ancilla qubit register, which when controlled generates a phase on the |1> state of the control qubit. This can then be read by applying another H gate to the controlled qubit to make the phase observable when measuring the Z projection.
 
@@ -332,7 +332,7 @@ which also takes the more readable form
 
 $$\\ket{\\Psi} = \\frac{1}{2}(\\ket{v}+\\ket{c})\\ket{0}+\\frac{1}{2}(\\ket{v}-\\ket{c})\\ket{1}.$$
 
-Note that the angles represented as $\\theta_1$ and $\\theta_2$ are applied as $\\frac{\\theta_1}{2}$ and $\\frac{\\theta_2}{2}$. While the reason for this is not important, it is important to note that coded values of  $\\theta_1=0.0$ and $\\theta_2=2.0\\pi$ will calculate the inner product between vectors with actual angles $0$ and $\\pi$ respectively (that is, anti-parallel).
+Note that the angles represented as $\\theta_1$ and $\\theta_2$ are applied as $\\frac{\\theta_1}{2}$ and $\\frac{\\theta_2}{2}$. While the reason for this is not important, it is important to note that coded values of  $\\theta_1=0.0$ and $\\theta_2=2.0\\pi$  calculate the inner product between vectors with actual angles $0$ and $\\pi$ respectively (that is, anti-parallel).
 
 ```python
 %%qsharp
@@ -471,7 +471,7 @@ where $x = \\theta_0\\theta_1\\theta_2...\\theta_{n}$. The denominator within th
 > [!NOTE] 
 > For measured values that are not $\\ket {000...000} \\text{ or } \\ket  {111...111}$, the solutions are paired with a value difference of $2^{n-1}$. For example, for three measurements, the measured value of *2* would also have a pair solution of *6*. Either of these values produces the same value of the inner product when passed as the variable to the even function cosine (resulting in an inner product of 0 in this example).
 
-> For inner product solutions between the discrete bit precision, a distribution of results will be produced based on where the inner product lies between the discrete bit value.
+> For inner product solutions between the discrete bit precision, a distribution of results is produced based on where the inner product lies between the discrete bit value.
 
 ```python
 %%qsharp
@@ -514,7 +514,7 @@ operation SimulateInnerProduct() : Int{
 %simulate SimulateInnerProduct
 ```
 
-The inner product operation is reconstructed to fit within the requirements of the target. In this case, calls like `Message` and manipulation of doubles is not allowed. Therefore, the output will be the bit value as generated by the `IterativePhaseEstimation` operation.
+The inner product operation is reconstructed to fit within the requirements of the target. In this case, calls like `Message` and manipulation of doubles is not allowed. Therefore, the output is the bit value as generated by the `IterativePhaseEstimation` operation.
 
 ```python
 %%qsharp
