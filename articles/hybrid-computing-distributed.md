@@ -13,7 +13,7 @@ uid: microsoft.quantum.hybrid.distributed
 
 # Distributed hybrid computing
 
-With fully integrated classical control and longer lived logical qubits, distributed quantum computing will enable real-time computations across quantum and distributed resources. The classical controls will no longer be limited to looping, and will allow for scenarios such as complex materials modeling or the evaluation of full catalytic reactions.
+With fully integrated classical control and longer lived logical qubits, the distributed quantum computing model enables real-time computations across quantum and distributed resources. The classical controls are longer be limited to loops, and allow for scenarios such as complex materials modeling or the evaluation of full catalytic reactions.
 
 ![Distributed quantum computing](~/media/hybrid/distributed.png)
 
