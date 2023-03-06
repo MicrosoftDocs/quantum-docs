@@ -62,20 +62,20 @@ By running each configuration as a single job, this would lead to the submission
 Instead, you want to run one resource estimation job with multiple items. 
 
 ```python
-items = [] 
+items = []
 
-for bitwidth in bitwidths: 
-    for params in estimation_params: 
-        items.append({ 
-            "arguments": [{ 
-                "name": "bitwidth", 
-                "value": bitwidth, 
-                "type": "Int" 
-            }], 
-            **params 
-        }) 
+for bitwidth in bitwidths:
+    for params in estimation_params:
+        items.append({
+            "arguments": [{
+                "name": "bitwidth",
+                "value": bitwidth,
+                "type": "Int"
+            }],
+            **params
+        })
 
-results = qsharp.azure.execute(Multiply, {"items": items}) 
+results = qsharp.azure.execute(Multiply, jobParams={"items": items})
 ```
 
 The result of the resource estimation job is displayed in a table with multiple results coming from the list of items. By default the max number of items to be displayed is $N = 5$. To display a list of items where $N > 5$, use `results[0:N]`. 
