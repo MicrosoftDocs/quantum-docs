@@ -41,7 +41,7 @@ operation Multiply(bitwidth : Int) : Unit {
     use factor1 = Qubit[bitwidth]; 
     use factor2 = Qubit[bitwidth]; 
     use product = Qubit[2 * bitwidth]; 
-    MultiplyI(factor1, factor2, product); 
+    MultiplyI(LittleEndian(factor1), LittleEndian(factor2), LittleEndian(product)); 
 
 } 
 ```
