@@ -34,6 +34,8 @@ For example, consider the following Q# operation that creates multiplier with a 
 
 ```python 
 %%qsharp 
+open Microsoft.Quantum.Arithmetic;
+
 operation Multiply(bitwidth : Int) : Unit { 
 
     use factor1 = Qubit[bitwidth]; 
