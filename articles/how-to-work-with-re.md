@@ -54,7 +54,7 @@ estimation_params = [
     {"qubitParams": {"name": "qubit_gate_ns_e4"}},
     {"qubitParams": {"name": "qubit_gate_us_e3"}},
     {"qubitParams": {"name": "qubit_gate_us_e4"}}
-]
+] # target parameters 
 
 ```
 By running each configuration as a single job, this would lead to the submission of 16 jobs, which means 16 separate compilations for the same program. 
