@@ -85,8 +85,8 @@ Consider the following Qiskit circuit
 ```python
 from azure.quantum.qiskit import AzureQuantumProvider 
 provider = AzureQuantumProvider ( 
-    resource_id = "", 
-    location = "" 
+    resource_id = "", 
+    location = "" 
 ) 
 
 backend = provider.get_backend('microsoft.estimator') 
