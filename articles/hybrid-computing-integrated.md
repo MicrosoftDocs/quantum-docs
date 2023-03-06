@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand the architecture and implementation of integrated hybrid quantum computing.
-ms.date: 02/21/2023
+ms.date: 03/06/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -98,14 +98,12 @@ For more samples, see the **Integrated hybrid** notebook samples in the Azure Qu
 > [!NOTE]
 > For help setting up Azure Quantum and the Quantum Development Kit in your local environment, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview). For information about submitting jobs, see [Submitting quantum jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs).
 
-
-
-### [Check GHZ state](#tab/tabid-ghz) 
+## [Check GHZ state](#tab/tabid-ghz) 
 
 This sample verifies a 3-qubit [Greenberger-Horne-Zeilinger](https://en.wikipedia.org/wiki/Greenberger%E2%80%93Horne%E2%80%93Zeilinger_state#:~:text=In%20physics%2C%20in%20the%20area%20of%20quantum%20information,Greenberger%2C%20Michael%20Horne%20and%20Anton%20Zeilinger%20in%201989) (GHZ) state, counting how many times it sees the entanglement fail out of 10 attempts. Without noise, this would return 0 for every shot, but with noise, you can get back failures.
 
 > [!NOTE]
-> This sample is set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of this sample, login in to your Azure Portal workspace and load the **Check GHZ state** sample from the **Integrated hybrid** tab. You can either run the notebook in the cloud or download it and run it locally.  
+> This sample is set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of this sample, login in to your Azure Portal workspace and load the **Check GHZ state** sample from the **Integrated hybrid** tab. You can either run the notebook in the cloud or download it and run it locally.  For help setting up VS Code and the Quantum Development Kit in your local environment, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#use-q-and-python-with-visual-studio-and-visual-studio-code).
 
 Feature to note about this sample:
 
@@ -114,39 +112,59 @@ Feature to note about this sample:
 - You do not need to learn to program for specialized high-performance hardware running next to the QPU (such as FPGAs).
 - Running an equivalent program without the integrated hybrid features would require returning every intermediate measurement result and then running post-processing on the data. 
 
-```qsharp
-namespace CheckGHZ {
+## Create a VS Code project
 
-    open Microsoft.Quantum.Measurement;
-    open Microsoft.Quantum.Arrays;
-    open Microsoft.Quantum.Convert;
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Math;
+1. In VS Code, create a new Q# standalone console application project named **CheckGHZ**. 
+1. Replace the configuration in **CheckGHZ.proj** with the following:
+
+    ```xml
+    <Project Sdk="Microsoft.Quantum.Sdk/0.27.253010">
+      <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <ExecutionTarget>quantinuum.qpu.h1</ExecutionTarget>
+      </PropertyGroup>
+    </Project>
+    ```
+
+1. Replace the code in **Program.qs** with the following:
+
+    ```qsharp
+    namespace CheckGHZ {
     
-    @EntryPoint()
-    operation CheckGHZ() : Int {
-        use q = Qubit[3];
-        mutable mismatch = 0;
-        for _ in 1..10 {
-            H(q[0]);
-            CNOT(q[0], q[1]);
-            CNOT(q[1], q[2]);
-
-            // Measures and resets the 3 qubits
-            let (r0, r1, r2) = (MResetZ(q[0]), MResetZ(q[1]), MResetZ(q[2]));
-
-            // Adjusts classical variable based on measurement results
-            if not (r0 == r1 and r1 == r2) {
-                set mismatch += 1;
+        open Microsoft.Quantum.Measurement;
+        open Microsoft.Quantum.Arrays;
+        open Microsoft.Quantum.Convert;
+        open Microsoft.Quantum.Intrinsic;
+        open Microsoft.Quantum.Math;
+        
+        @EntryPoint()
+        operation CheckGHZ() : Int {
+            use q = Qubit[3];
+            mutable mismatch = 0;
+            for _ in 1..10 {
+                H(q[0]);
+                CNOT(q[0], q[1]);
+                CNOT(q[1], q[2]);
+    
+                // Measures and resets the 3 qubits
+                let (r0, r1, r2) = (MResetZ(q[0]), MResetZ(q[1]), MResetZ(q[2]));
+    
+                // Adjusts classical variable based on measurement results
+                if not (r0 == r1 and r1 == r2) {
+                    set mismatch += 1;
+                }
             }
+            return mismatch;
         }
-        return mismatch;
+    
     }
-
-}
-```
+    ```
 
 From a terminal window in VS Code, connect to your Azure Quantum workspace and set the default resources.
+
+> [!NOTE]
+> Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace. 
 
 ```azurecli
 az login
@@ -166,117 +184,127 @@ az quantum job output -o table --job-id [job-id]
 
 ![GHZ output](~/media/hybrid/ghz-output.png)
 
-### [Dynamic error correction](#tab/tabid-qec)
+## [Dynamic error correction](#tab/tabid-qec)
 
 This error correction routine sets up two logical qubits, performs an operation on them, and then measures and error corrects using hybrid branching. 
 
 > [!NOTE]
-> This sample is set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of this sample, login in to your Azure Portal workspace and load the **Dynamic error correction** sample from the **Integrated hybrid** tab. You can either run the notebook in the cloud or download it and run it locally.
+> This sample is set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of this sample, login in to your Azure Portal workspace and load the **Dynamic error correction** sample from the **Integrated hybrid** tab. You can either run the notebook in the cloud or download it and run it locally. For help setting up VS Code and the Quantum Development Kit in your local environment, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#use-q-and-python-with-visual-studio-and-visual-studio-code).
 
-```xml
-<Project Sdk="Microsoft.Quantum.Sdk/0.27.253010">
+## Create a VS Code project
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
-    <ExecutionTarget>quantinuum.qpu.h1</ExecutionTarget>
-  </PropertyGroup>
+1. In VS Code, create a new Q# standalone console application project named **EC**. 
+1. Replace the configuration in **EC.proj** with the following:
 
-</Project>
-```
+    ```xml
+    <Project Sdk="Microsoft.Quantum.Sdk/0.27.253010">
+    
+      <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <ExecutionTarget>quantinuum.qpu.h1</ExecutionTarget>
+      </PropertyGroup>
+    
+    </Project>
+    ```
 
-```qsharp
-namespace EC {
+1. Replace the code in **Program.qs** with the following:
 
-   open Microsoft.Quantum.Intrinsic;
-   open Microsoft.Quantum.Math;
-   open Microsoft.Quantum.Measurement;
-
-   @EntryPoint()
-   operation DynamicBitFlipCode() : (Result, Int) {
-       // Create a register that represents a logical qubit.
-       use logicalRegister = Qubit[3];
-
-       // Apply several unitary operations to the encoded qubits performing error correction between each application.
-       mutable corrections = 0;
-       within {
-           // Encode/Decode logical qubit.
-           Encode(logicalRegister);
+    ```qsharp
+    namespace EC {
+    
+       open Microsoft.Quantum.Intrinsic;
+       open Microsoft.Quantum.Math;
+       open Microsoft.Quantum.Measurement;
+    
+       @EntryPoint()
+       operation DynamicBitFlipCode() : (Result, Int) {
+           // Create a register that represents a logical qubit.
+           use logicalRegister = Qubit[3];
+    
+           // Apply several unitary operations to the encoded qubits performing error correction between each application.
+           mutable corrections = 0;
+           within {
+               // Encode/Decode logical qubit.
+               Encode(logicalRegister);
+           }
+           apply {
+               LogicalX(logicalRegister); // |111⟩
+               let iterations = 5;
+               for _ in 1 .. iterations {
+                   // Apply unitary operations.
+                   ApplyLogicalOperation(logicalRegister);
+    
+                   // Perform error correction and increase the counter if a correction was made.
+                   let (parity01, parity12) = MeasureSyndrome(logicalRegister);
+                   let correctedError = CorrectError(logicalRegister, parity01, parity12);
+                   if (correctedError) {
+                       set corrections += 1;
+                   }
+               }
+           }
+    
+           // Measure the first qubit in each register, return the measurement result and the corrections count.
+           let result = MResetZ(logicalRegister[0]);
+           ResetAll(logicalRegister);
+           return (result, corrections);
        }
-       apply {
-           LogicalX(logicalRegister); // |111⟩
-           let iterations = 5;
-           for _ in 1 .. iterations {
-               // Apply unitary operations.
-               ApplyLogicalOperation(logicalRegister);
-
-               // Perform error correction and increase the counter if a correction was made.
-               let (parity01, parity12) = MeasureSyndrome(logicalRegister);
-               let correctedError = CorrectError(logicalRegister, parity01, parity12);
-               if (correctedError) {
-                   set corrections += 1;
+    
+       operation LogicalX(register : Qubit[]) : Unit
+       {
+           for qubit in register
+           {
+               X(qubit);
+           }
+       }
+    
+       operation ApplyLogicalOperation(register : Qubit[]) : Unit is Adj
+       {
+           // Rx has a 4 x pi period so this effectively leaves the qubit in the same state at the end if no noise is present.
+           let theta = PI() * 0.5;
+           for i in 1 .. 8 {
+               for qubit in register
+               {
+                   Rx(theta, qubit);
                }
            }
        }
-
-       // Measure the first qubit in each register, return the measurement result and the corrections count.
-       let result = MResetZ(logicalRegister[0]);
-       ResetAll(logicalRegister);
-       return (result, corrections);
-   }
-
-   operation LogicalX(register : Qubit[]) : Unit
-   {
-       for qubit in register
+    
+       operation CorrectError(register : Qubit[], parity01 : Result, parity12 : Result) : Bool
        {
-           X(qubit);
-       }
-   }
-
-   operation ApplyLogicalOperation(register : Qubit[]) : Unit is Adj
-   {
-       // Rx has a 4 x pi period so this effectively leaves the qubit in the same state at the end if no noise is present.
-       let theta = PI() * 0.5;
-       for i in 1 .. 8 {
-           for qubit in register
-           {
-               Rx(theta, qubit);
+           if (parity01 == One and parity12 == Zero) {
+               X(register[0]);
            }
+           elif (parity01 == One and parity12 == One) {
+               X(register[1]);
+           }
+           elif (parity01 == Zero and parity12 == One) {
+               X(register[2]);
+           }
+    
+           return parity01 == One or parity12 == One;
        }
-   }
-
-   operation CorrectError(register : Qubit[], parity01 : Result, parity12 : Result) : Bool
-   {
-       if (parity01 == One and parity12 == Zero) {
-           X(register[0]);
+    
+       operation Encode(register : Qubit[]) : Unit is Adj
+       {
+           CNOT(register[0], register[1]);
+           CNOT(register[0], register[2]);
        }
-       elif (parity01 == One and parity12 == One) {
-           X(register[1]);
+    
+       operation MeasureSyndrome(register : Qubit[]) : (Result, Result)
+       {
+           // Verify parity between qubits.
+           let parity01 = Measure([PauliZ, PauliZ, PauliI], register);
+           let parity12 = Measure([PauliI, PauliZ, PauliZ], register);
+           return (parity01, parity12);
        }
-       elif (parity01 == Zero and parity12 == One) {
-           X(register[2]);
-       }
-
-       return parity01 == One or parity12 == One;
-   }
-
-   operation Encode(register : Qubit[]) : Unit is Adj
-   {
-       CNOT(register[0], register[1]);
-       CNOT(register[0], register[2]);
-   }
-
-   operation MeasureSyndrome(register : Qubit[]) : (Result, Result)
-   {
-       // Verify parity between qubits.
-       let parity01 = Measure([PauliZ, PauliZ, PauliI], register);
-       let parity12 = Measure([PauliI, PauliZ, PauliZ], register);
-       return (parity01, parity12);
-   }
-}
-```
+    }
+    ```
 
 From a terminal window in VS Code, connect to your Azure Quantum workspace and set the default resources.
+
+> [!NOTE]
+> Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace. 
 
 ```azurecli
 az login
@@ -294,153 +322,192 @@ az quantum job submit --target-id quantinuum.sim.h1-1e --job-name ErrorCorrectio
 az quantum job output -o table --job-id [job-id]
 ```
 
+## [Iterative phase estimation](#tab/tabid-qml)
 
-### [Iterative phase estimation](#tab/tabid-qml)
+This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/about/alliances/microsoft/kpmg-and-microsoft-azure-quantum.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of Basic Measurement Feedback targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements and qubit reuse.
 
-#### Two Dimensional Inner Product Using Three Qubits
+## Two Dimensional Inner Product Calculation Using Iterative Phase Estimation on Three Qubits
 
-(This sample code courtesy of [KPMG](https://kpmg.com/xx/en/home/about/alliances/microsoft/kpmg-and-microsoft-azure-quantum.html))
+This notebook demonstrates an iterative phase estimation within Q#. It will use iterative phase estimation to calculate an inner product between two 2-dimensional vectors encoded on a target qubit and an ancilla qubit. An additional control qubit is also initialized which will be the only qubit used for measurement.
 
-This notebook demonstrates an iterative phase estimation within Q#. The basic calculation it makes will be to calculate an inner product between two 2-dimensional vectors encoded on a target qubit and an ancilla qubit. Another control qubit is also initialized, with a subsequent H gate applied. This control qubit will be used to readout the inner product via an iterative phase estimation.
-
-The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit. The Oracle operator generates a eigenphase on the target and ancilla qubit register, which when controlled generates a phase on the |1> state of the control qubit. This can then be read by applying another H gate to the controlled qubit to make the phase observable when measuring the Z projection.
+The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit, which is set up in the $\ket +$ state. The controlled Oracle operator generates a phase on the $\ket 1$ state of the control qubit. This can then be read by applying an H gate to the control qubit to make the phase observable when measuring.
 
 > [!NOTE]
-> This sample is set up to run as a Jupyter Notebook in your local environment and submit the job to Azure Quantum. Optionally, you can run this program from your Azure Portal workspace by loading the **Iterative phase estimation** sample from the **Integrated hybrid** tab.
+> This sample is set up to run in VS Code in your local environment and submit the job to Azure Quantum. Optionally, you can run this program from your Azure Portal workspace by loading the **Iterative phase estimation** sample from the **Integrated hybrid** tab. For help setting up VS Code and the Quantum Development Kit in your local environment, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#use-q-and-python-with-visual-studio-and-visual-studio-code).
 
-First, connect to your Azure Quantum workspace and load the necessary libraries. 
+## Create a VS Code project
 
-```python
-%azure.connect "<resource_id>" location = ""
-```
+1. In VS Code, create a new Q# standalone console application project named **IPE**. 
+1. Replace the configuration in **IPE.proj** with the following:
 
-```python
-%%qsharp
-open Microsoft.Quantum.Convert;
-open Microsoft.Quantum.Math;
-open Microsoft.Quantum.Arrays;
-open Microsoft.Quantum.Measurement;
-```
+    ```xml
+    <Project Sdk="Microsoft.Quantum.Sdk/0.27.253010">
+    
+      <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <ExecutionTarget>quantinuum.qpu.h1</ExecutionTarget>
+      </PropertyGroup>
+    
+    </Project>
+    ```
 
-#### Encoding vectors
+1. Replace the code in **Program.qs** with the following:
 
-The vectors v and c are to be encoded onto the target qubit. In two dimensions, the vectors are the angle about the Y axis on the Bloch Sphere. The state to be created is
+    ```qsharp
+    namespace IPE {
+    
+        //IMPORT LIBRARIES
+        open Microsoft.Quantum.Intrinsic;
+        open Microsoft.Quantum.Math;
+        open Microsoft.Quantum.Arrays;
+        open Microsoft.Quantum.Measurement;
+        open Microsoft.Quantum.Convert;
 
-$$\\ket{\\Psi}=\\frac{1}{\\sqrt{2}}(\\ket{+}\\ket{v}+\\ket{-}\\ket{c},$$
 
-which also takes the more readable form
+        // additional code added here
 
-$$\\ket{\\Psi} = \\frac{1}{2}(\\ket{v}+\\ket{c})\\ket{0}+\\frac{1}{2}(\\ket{v}-\\ket{c})\\ket{1}.$$
 
-Note that the angles represented as $\\theta_1$ and $\\theta_2$ are applied as $\\frac{\\theta_1}{2}$ and $\\frac{\\theta_2}{2}$. While the reason for this is not important, it is important to note that coded values of  $\\theta_1=0.0$ and $\\theta_2=2.0\\pi$  calculate the inner product between vectors with actual angles $0$ and $\\pi$ respectively (that is, anti-parallel).
+    }
+    ```
 
-```python
-%%qsharp
+## Encoding vectors
+
+The vectors v and c are to be encoded onto the target qubit and the ancilla qubit. The vector $v = (cos(\frac{\theta_1}{2}),sin(\frac{\theta_1}{2}))$ can be represented by the quantum state $\ket v = cos(\frac{\theta_1}{2})\ket 0 + sin(\frac{\theta_1}{2})\ket 1$, similarly $c$ can be constructed using $\theta_2$. 
+
+A Y rotation applied to a target qubit in the $\ket 0$ state:
+
+$$RY(\theta)\ket 0 = e^{iY\theta/2}\ket 0 = cos(\frac{\theta}{2})\ket 0 + sin(\frac{\theta}{2})\ket 1$$
+
+> [!NOTE]
+> **A factor of 2** is present here on theta. An application of a $RY(2\pi)$ gate on $\ket 0$ gives the state $-\ket 0$ and would encode the vector $(-1,0)$. This phase cannot be considered a global phase and is removed as the entire register will be entangled.
+
+The register of the target qubit and ancilla qubit is
+
+$$\ket  \Psi = \ket {\Psi_\text{Target qubit}}\ket {\Psi_\text{Ancilla qubit}}$$
+
+The state to be created is on the target qubit and the ancilla qubit is
+
+$$\ket{\Psi}=\frac{1}{\sqrt{2}}(\ket{v}\ket{+}+\ket{c}\ket{-}),$$
+
+which also takes the form
+
+$$\ket{\Psi} = \frac{1}{2}(\ket{v}+\ket{c})\ket{0}+\frac{1}{2}(\ket{v}-\ket{c})\ket{1}.$$
+
+Add the following operation to the **Program.qs** file. 
+
+```qsharp
 //This is state preparation operator A for encoding the 2D vector
-operation StateInitialization(TargetReg : Qubit, AncilReg : Qubit, Theta1 : Double, Theta2 : Double) : Unit is Adj + Ctl { 
+operation StateInitialisation(TargetReg : Qubit, AncilReg : Qubit, theta_1 : Double, theta_2 : Double) : Unit is Adj + Ctl { 
     H(AncilReg);
 
     // Arbitray controlled rotation based on theta. This is vector v.
-    Controlled R([AncilReg], (PauliY, -Theta1, TargetReg));       
+    Controlled R([AncilReg], (PauliY, theta_1, TargetReg));      
     
     // X gate on ancilla to change from |+> to |->                                                   
     X(AncilReg);       
 
     // Arbitray controlled rotation based on theta. This is vector c.                                            
-    Controlled R([AncilReg], (PauliY, -Theta2, TargetReg));        
+    Controlled R([AncilReg], (PauliY, theta_2, TargetReg));        
     X(AncilReg);                                                  
     H(AncilReg);                                                  
 }
 ```
 
-#### The Oracle
+## The Oracle
 
-An oracle G needs to be constructed such that it generates an eigenphase on the state encoded on the target qubit and the ancilla qubit. The construction of this oracle is unimportant to the demonstration within this notebook, but the operation it applies is
+An oracle G needs to be constructed such that it generates an eigenphase on the state encoded on the target qubit and the ancilla qubit. The construction of this oracle is unimportant to the demonstration within this example, but the operation it applies is
 
-$$G\\ket \\Psi = e^{2\\pi i\\theta} \\ket \\Psi.$$
+$$G\ket \Psi = e^{2\pi i\phi} \ket \Psi.$$
 
-where the inner product $\\braket {v|c}$ is contained within $\\theta$. When applied controlled on the control qubit which begins in that state $\\ket{\\Psi_\\text{Control Qubit}} = \\ket +$
+where the inner product $\braket {v|c}$ is contained within the phase $\phi$, which is bound between [0,1]. When applied controlled on the control qubit which begins in that state $\ket{\Psi_\text{Control Qubit}} = \ket +$
 
-\\begin{split}
-    \\text{Controlled }G \\ket{\\Psi_\\text{Control Qubit}} \\ket \\Psi  & = \\frac {1}{\\sqrt{2}} (\\ket 0 \\ket \\Psi + e^{2\\pi i\\theta}\\ket 1 \\ket \\Psi )\\\\& =\\frac {1}{\\sqrt{2}} (\\ket 0 + e^{2\\pi i\\theta}\\ket 1) \\ket \\Psi
-\\end{split}
+$$\begin{aligned}
+    \text{Controlled }G \ket{\Psi_\text{Control Qubit}} \ket \Psi  & = \frac {1}{\sqrt{2}} (\ket 0 \ket \Psi + e^{2\pi i\phi}\ket 1 \ket \Psi )\\
+    & =\frac {1}{\sqrt{2}} (\ket 0 + e^{2\pi i\phi}\ket 1) \ket \Psi
+\end{aligned}$$
 
 Now the control qubit contains the phase which relates to the inner product $\\braket {v|c}$
 
-$$\\ket{\\Psi_\\text{Control Qubit}} = \\frac {1}{\\sqrt{2}} (\\ket 0 + e^{2\\pi i\\theta}\\ket 1)$$
+$$\ket{\Psi_\text{Control Qubit}} = \frac {1}{\sqrt{2}} (\ket 0 + e^{2\pi i\phi}\ket 1)$$
 
-```python
-%%qsharp
-operation GOracle(TargetReg : Qubit, AncilReg : Qubit, Theta1 : Double, Theta2 : Double) : Unit is Adj + Ctl {
+Add the following operation to the **Program.qs** file. 
+
+```qsharp
+operation GOracle(TargetReg : Qubit, AncilReg : Qubit, theta_1 : Double, theta_2 : Double) : Unit is Adj + Ctl {
     Z(AncilReg);                                                      
-    Adjoint StateInitialization(TargetReg, AncilReg, Theta1, Theta2);
+        within {
+            Adjoint StateInitialisation(TargetReg, AncilReg, theta_1, theta_2);
 
-    // Apply X gates individually here as currently ApplyAll is not Adj + Ctl
-    X(AncilReg);                                                        
-    X(TargetReg);
-    Controlled Z([AncilReg],TargetReg);
-    X(AncilReg);
-    X(TargetReg);
-    StateInitialization(TargetReg, AncilReg, Theta1, Theta2);         
-}
+            // Apply X gates individually here as currently ApplyAll is not Adj + Ctl
+            X(AncilReg);                                                        
+            X(TargetReg);
+        }   
+        apply {
+            Controlled Z([AncilReg],TargetReg);
+        }
+    }
 ```
 
-Now for the iterative part of the circuit. For *n* measurements, consider that the phase can be represented as a binary value $\\theta$, and that applying $2^n$ oracles makes the *nth* binary point of the phase observable (through simple binary multiplication, and modulus $2\\pi$). The value of the control qubit can be readout, placed in a classical register, and then reset for use in the next iteration. The next iteration applies $2^{n-1}$ oracles, correcting phase on the control qubit dependent on the *nth* measurement. The state on the control qubit can be represented as
+## Iteration
 
-$$ \\ket {\\Psi_{\\text{Control Qubit}}} = \\ket 0 + e^{2\\pi i\\theta}\\ket 1 $$
+Now for the iterative part of the circuit. For n measurements, consider that the phase can be represented as a binary value $\phi$, and that applying $2^n$ oracles makes the nth binary point of the phase observable (through simple binary multiplication, and modulus $2\pi$). The value of the control qubit can be readout, placed in a classical register and the qubit reset for use in the next iteration. The next iteration applies $2^{n-1}$ oracles, correcting phase on the control qubit dependent on the nth measurement. The state on the control qubit can be represented as
 
-where $\\theta = 0.\\theta_0\\theta_1\\theta_2\\theta_3...$.
+$$ \ket {\Psi_{\text{Control Qubit}}} = \ket 0 + e^{2\pi i\phi}\ket 1 $$
 
-Applying $2^n$ oracles gives
+where $\phi = 0.\phi_0\phi_1\phi_2\phi_3$...
 
-$$ O^{2^n}\\ket {\\Psi_{\\text{Control Qubit}}} = \\ket 0 + e^{2\\pi i 0.\\theta_n\\theta_{n+1}\\theta_{n+2}\\theta_{n+3}...}\\ket 1 $$
+Applying $2^n$ controlled oracles gives the state on the control qubit
 
-Consider that the phase has no terms deeper than $\\theta_n$ (ie, terms $\\theta_{n+1},\\theta_{n+2}, \\text{etc}$),
+$$ G^{2^n}\ket {\Psi_{\text{Control Qubit}}} = \ket 0 + e^{2\pi i 0.\phi_n\phi_{n+1}\phi_{n+2}\phi_{n+3}...}\ket 1 $$
 
-$$ O^{2^n}\\ket {\\Psi_{\\text{Control Qubit}}} = \\ket 0 + e^{2\\pi i 0.\\theta_n}\\ket 1 $$
+Consider that the phase has no terms deeper than $\phi_n$ (ie, terms $\phi_{n+1},\phi_{n+2}, \text{etc}$)
 
-Now the value $\\theta_n$ can be observed with an H gate and a measurement projecting along the Z axis. Resetting the control qubit and applying the oracle $2^{n-1}$ times
+$$ G^{2^n}\ket {\Psi_{\text{Control Qubit}}} = \ket 0 + e^{2\pi i 0.\phi_n}\ket 1 $$
 
-$$ O^{2^{n-1}}\\ket {\\Psi_{\\text{Control Qubit}}} = \\ket 0 + e^{2\\pi i 0.\\theta_{n-1}\\theta_n}\\ket 1 $$
+Now the value $\phi_n$ can be observed with an H gate and a measurement projecting along the Z axis. Resetting the control qubit and applying the oracle $2^{n-1}$ times
 
-Using the previous measured value for $\\theta_n$, the additional binary point can be rotated out.
+$$ G^{2^{n-1}}\ket {\Psi_{\text{Control Qubit}}} = \ket 0 + e^{2\pi i 0.\phi_{n-1}\phi_n}\ket 1 $$
 
-$$ RZ(-2\\pi \\times 0.0\\theta_n)O^{n-1}\\ket {\\Psi_{\\text{Control Qubit}}} = \\ket 0 + e^{2\\pi i 0.\\theta_{n-1}}\\ket 1 $$
+Using the previous measured value for $\phi_n$, the additional binary point can be rotated out
 
-This process is iteratively applied for some bit precision *n* to obtain the phase $0.\\theta_0\\theta_1\\theta_2...\\theta_{n}$. The value is stored as a binary value $x = \\theta_0\\theta_1\\theta_2...\\theta_{n}$, as only integers are currently manipulatable at runtime.
+$$ RZ(-2\pi \times 0.0\phi_n)G^{n-1}\ket {\Psi_{\text{Control Qubit}}} = \ket 0 + e^{2\pi i 0.\phi_{n-1}}\ket 1 $$
 
-As the readout tells nothing of either vector except the inner product between them, the states on the target qubit and ancilla qubit **remain in the same state** throughout the process!
+This process is iteratively applied for some bit precision n to obtain the phase $0.\phi_0\phi_1\phi_2...\phi_{n}$. The value is stored as a binary value $x = \phi_0\phi_1\phi_2...\phi_{n}$, as only integers are manipulatable at runtime currently.
 
-```python
-%%qsharp
-operation IterativePhaseEstimation(TargetReg : Qubit, AncilReg : Qubit, Theta1 : Double, Theta2 : Double, Measurements : Int) : Int{
+As the readout tells nothing of either vector, only the inner product between them, the states on the target qubit and ancilla qubit *remain in the same state* throughout the process!
+
+Add the following operation to the **Program.qs** file. 
+
+```qsharp
+operation IterativePhaseEstimation(TargetReg : Qubit, AncilReg : Qubit, theta_1 : Double, theta_2 : Double, Measurements : Int) : Int{
     use ControlReg = Qubit();
-
-    //Set up array of measurement results of zero
-    mutable MeasureControlReg = ConstantArray(Measurements, Zero);                                  
+    mutable MeasureControlReg = [Zero, size = Measurements];
     mutable bitValue = 0;
 
-    //Apply to initialize the state as defined by the angles theta1 and theta2
-    StateInitialization(TargetReg, AncilReg, Theta1, Theta2);                                       
+    //Apply to initialise state, this is defined by the angles theta_1 and theta_2
+    StateInitialisation(TargetReg, AncilReg, theta_1, theta_2);                                       
     for index in 0 .. Measurements - 1{                                                             
-        H(ControlReg);        
+        H(ControlReg);
+        
+        //Don't apply rotation on first set of oracles                                                                              
+        if index > 0 {   
 
-        //Don't apply rotation on first set of oracles                                                               
-        if index > 0 {          
-
-            //Loop through previous results                                                       
+            //Loop through previous results                                                                           
             for index2 in 0 .. index - 1{                                                           
-                if MeasureControlReg[Measurements - 1 - index2] == One{                             
-                    R(PauliZ, -IntAsDouble(2^(index2))*PI()/(2.0^IntAsDouble(index)), ControlReg);  
+                if MeasureControlReg[Measurements - 1 - index2] == One{
+                    let angle = -IntAsDouble(2^(index2))*PI()/(2.0^IntAsDouble(index));   
+
+                    //Rotate control qubit dependent on previous measurements and number of measurements                
+                    R(PauliZ, angle, ControlReg);                                                   
                 }
-            }
-            
+            }     
         }
         let powerIndex = (1 <<< (Measurements - 1 - index));
 
-        //Apply a number of oracles equal to 2^index, where index is the number of measurements left
+        //Apply a number of oracles equal to 2^index, where index is the number or measurements left
         for _ in 1 .. powerIndex{                                                                   
-                Controlled GOracle([ControlReg],(TargetReg, AncilReg, Theta1, Theta2));
+                Controlled GOracle([ControlReg],(TargetReg, AncilReg, theta_1, theta_2));
             }
         H(ControlReg);
 
@@ -453,126 +520,133 @@ operation IterativePhaseEstimation(TargetReg : Qubit, AncilReg : Qubit, Theta1 :
                                                                                                     
         }
     }
-
-    //Reset qubits for end of circuit.
-    Reset(ControlReg);                                                                             
-    Reset(TargetReg);                                           
-    Reset(AncilReg); 
     return bitValue;
 }
 ```
 
+## Calculate the inner product
+
 Finally, calculate the inner product from the measured value
 
-$$\\braket {v|c} = -cos(2\\pi x / 2^n)$$
+$$\braket {v|c} = -cos(2\pi x / 2^n)$$
 
-where $x = \\theta_0\\theta_1\\theta_2...\\theta_{n}$. The denominator within the cosine function is to shift the binary point to match the original value $\\theta$.
+where $x = \phi_0\phi_1\phi_2...\phi_{n}$. The denominator within the cosine function is to shift the binary point to match the original value $\phi$.
 
 > [!NOTE] 
-> For measured values that are not $\\ket {000...000} \\text{ or } \\ket  {111...111}$, the solutions are paired with a value difference of $2^{n-1}$. For example, for three measurements, the measured value of *2* would also have a pair solution of *6*. Either of these values produces the same value of the inner product when passed as the variable to the even function cosine (resulting in an inner product of 0 in this example).
+> For inner product that are not -1 or 1, the solutions are paired with a value difference of $2^{n-1}$. For example for n=3 measurements, the measured bit value of 2 would also have a pair solution of 6. Either of these values produce the same value of the inner product when input as the variable to the even function cosine (resulting in an inner product of 0 in this example).
 
-> For inner product solutions between the discrete bit precision, a distribution of results is produced based on where the inner product lies between the discrete bit value.
+> For inner product solutions between the discrete bit precision, a distribution of results will be produced based on where the inner product lies between the discrete bit value. 
 
-```python
-%%qsharp
-operation SimulateInnerProduct() : Int{
+Add the following operation to the **Program.qs** file. 
 
-    //Specify the angles for inner product
-    let Theta1 = 0.0;                                                                           
-    let Theta2 = 0.0;
-
-    //Specify the bit resolution in the iterative phase estimation
-    //For Jobs on hardware the suggested number of measurements is 3
-    let Measurements = 3;                                                                       
-                                  
-    //TargetReg has states v and c qubits contained on it                                                              
-    use TargetReg = Qubit();                 
-
-    //Create ancilla                                                   
-    use AncilReg = Qubit();        
-
-    //This runs iterative phase estimation                                                             
-    let Results = IterativePhaseEstimation(TargetReg, AncilReg, Theta1, Theta2, Measurements);  
-    
-
+```qsharp
+function CalculateInnerProduct(Results : Int, theta_1 : Double, theta_2 : Double, Measurements : Int): Unit{
     let DoubleVal = PI() * IntAsDouble(Results) / IntAsDouble(2 ^ (Measurements-1));
 
     //Convert to the final inner product
     let InnerProductValue = -Cos(DoubleVal);                                                      
+    Message("The Bit Value measured is:");
+    Message($"{Results}");
     Message("The Inner Product is:");
     Message($"{InnerProductValue}");
     Message("The True Inner Product is:");
-    Message($"{Cos(Theta1/2.0)*Cos(Theta2/2.0)+Sin(Theta1/2.0)*Sin(Theta2/2.0)}");
-    Message("The Bit Value measured is");
-
-    //Return Measured values                                                                            
-    return Results;                                                                             
+    Message($"{Cos(theta_1/2.0)*Cos(theta_2/2.0)+Sin(theta_1/2.0)*Sin(theta_2/2.0)}");
 }
+
 ```
 
-```python
-%simulate SimulateInnerProduct
-```
+## Run the program 
 
-The inner product operation is reconstructed to fit within the requirements of the target. In this case, calls like `Message` and manipulation of doubles is not allowed. Therefore, the output is the bit value as generated by the `IterativePhaseEstimation` operation.
+Now, you can test the program. First, you'll run the program using a simulation operation locally, and then you'll connect to Azure Quantum and run it against a hardware target. 
 
-```python
-%%qsharp
-operation InnerProduct() : Int{
+### Simulating iterative phase estimation
+
+Q# programs require an `@EntryPoint()` to tell the compiler where to start the execution of the program. Add the following code to **Programs.qs** to start the program with the `SimulateInnerProduct()` operation.  This version of the inner product operation outputs additional information, including the manipulation of doubles of which the output is displayed in the terminal.
+
+```qsharp
+@EntryPoint()
+
+//Operation for calculating the inner product on local simulators
+operation SimulateInnerProduct() : Unit{   
+
+    //This operation will output additional classical calculations                                                     
+    let (Results, theta_1, theta_2, Measurements) = InnerProduct();                             
+    CalculateInnerProduct(Results, theta_1, theta_2, Measurements);                             
+}
+
+operation InnerProduct() : (Int, Double, Double, Int){
 
     //Specify the angles for inner product
-    let Theta1 = 0.0;                                                                           
-    let Theta2 = 0.0;
+    let theta_1 = 0.0;                                                                           
+    let theta_2 = 0.0;
+    let Measurements = 3;
 
-    //Specify the bit resolution in the iterative phase estimation
-    //For Jobs on hardware the suggested number of measurements is 3
-    let Measurements = 3;                                                                       
-                                                                                                
+    //Create target register
+    use TargetReg = Qubit(); 
 
-    //TargetReg has states v and c qubits contained on it
-    use TargetReg = Qubit();         
-                                                           
-    //Create ancilla
-    use AncilReg = Qubit();      
-                                                              
-    //This runs iterative phase estimation
-    let Results = IterativePhaseEstimation(TargetReg, AncilReg, Theta1, Theta2, Measurements);  
-    
-/    /Return Measured values                                                                       
+    //Create ancilla register                                                                   
+    use AncilReg = Qubit();  
+
+    //This runs iterative phase estimation                                                                   
+    let Results = IterativePhaseEstimation(TargetReg, AncilReg, theta_1, theta_2, Measurements);
+    Reset(TargetReg);                                           
+    Reset(AncilReg);
+    return (Results, theta_1, theta_2, Measurements);
+}  
+```
+
+To run the program, open a terminal window in VS Code and run
+
+```azurecli
+    dotnet run
+```
+
+### Running on an Azure Quantum target
+
+To run against a hardware target, replace the `SimulateInnerProduct()` operation with the following `HardwareInnerProduct()` operation:
+
+```qsharp
+//Operation for calculating the inner product on hardware or emulators
+operation HardwareInnerProduct() : Int{                                                         
+    let (Results,_,_,_) = InnerProduct();
     return Results;                                                                             
 }
 ```
 
-Specify the target. The target requires a target execution profile that supports [basic measurement feedback](xref:microsoft.quantum.target-profiles##create-and-run-applications-for-basic-measurement-feedback-profile-targets).
-
-```python
-%azure.target quantinuum.sim.h1-1e
-```
-
-```python
-%azure.target-capability AdaptiveExecution
-%azure.shots 100
-```
-
-Submit the job to the target.
+Next, connect to your Azure Quantum workspace and set the default resources.
 
 > [!NOTE]
-> The cost of this job is approximately 610 eHQC's (Quantinuum emulator units).
+> Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace. 
 
-```python
-%azure.submit InnerProduct
+```azurecli
+az login
+
+az account set --subscription <MySubscriptionID>
+
+az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
 ```
 
-Check the status of the job.
+Submit the job with the following parameters:
 
-```python
-%azure.status
+```azurecli
+az quantum job submit --target-id quantinuum.sim.h1-1e --target-capability AdaptiveExecution --shots 128 --job-name IterativePhaseEstimation
 ```
 
-When the job is complete, output a histogram of results.
+> [!NOTE]
+> The specified target requires a target execution profile that supports [basic measurement feedback](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
 
-```python
-%azure.output
+> [!IMPORTANT]
+> It is not recommended to increase the value of `Measurements` beyond **3** when running on Azure targets as the EHCs can increase significantly. 
+
+You can view the status of the job with
+
+```azurecli
+az quantum job output -o table --job-id [job-id]
 ```
+
+replacing \[job-id\] with the displayed job id. The results show a solution in the state with the majority population. The final inner product from the integer results can be calculated by $\braket {v|c} = -cos(2\pi x / 2^n)$, where n is the number of measurements specified in the job.
+
+> [!NOTE]
+> Selecting input parameters which only have one solution state (inner products of -1 or 1) are ideal for visibility when using a low number of shots.
 
 ***
