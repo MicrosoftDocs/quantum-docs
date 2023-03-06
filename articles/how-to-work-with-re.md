@@ -48,14 +48,13 @@ operation Multiply(bitwidth : Int) : Unit {
 You want to estimate the resources of the operation `Multiply` using four different bit widths [8, 16, 32, 64], and for four different qubit models ["qubit_gate_ns_e3", "qubit_gate_ns_e4", "qubit_gate_us_e3", "qubit_gate_us_e4"]. Each configuration consists of one operation argument and one target parameter.
 
 ```python
-bitwidths = [8, 16, 32, 64] // operation arguments  
-
-estimation_params = [ 
-    {"qubitParams": {"name": "qubit_gate_ns_e3"}}, 
-    {"qubitParams": {"name": "qubit_gate_ns_e4"}}, 
-    {"qubitParams": {"name": "qubit_gate_us_e3"}}, 
-    {"qubitParams": {"name": "qubit_gate_us_e4"}} 
-] // target parameters  
+bitwidths = [8, 16, 32, 64] 
+estimation_params = [
+    {"qubitParams": {"name": "qubit_gate_ns_e3"}},
+    {"qubitParams": {"name": "qubit_gate_ns_e4"}},
+    {"qubitParams": {"name": "qubit_gate_us_e3"}},
+    {"qubitParams": {"name": "qubit_gate_us_e4"}}
+]
 
 ```
 By running each configuration as a single job, this would lead to the submission of 16 jobs, which means 16 separate compilations for the same program. 
