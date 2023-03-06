@@ -38,7 +38,7 @@ Currently, the integrated hybrid computing model in Azure Quantum is supported o
 
 ## Get started
 
-To start exploring integrated hybrid programming, we suggest walking through the samples in the [Integrated hybrid](xref:microsoft.quantum.hybrid.integrated) article, or in the **Hybrid quantum computing** sample gallery in the Azure Portal.
+To start exploring integrated hybrid programming, we suggest walking through the [samples](#integrated-hybrid-samples) in this article, or in the **Hybrid quantum computing** sample gallery in the Azure Quantum portal.
 
 ## Submitting integrated hybrid jobs
 
@@ -83,7 +83,7 @@ After a successful run on the emulator:
 ![Cost estimation](~/media/hybrid/cost-estimation.png)
 
 > [!NOTE]
-> Quantinuum unrolls the entire circuit and calculates the cost on all iterations, whether they are run or not. 
+> Quantinuum unrolls the entire circuit and calculates the cost on all code paths, whether they are conditionally executed or not. 
 
 ## Integrated hybrid samples
 
@@ -93,17 +93,15 @@ The following samples demonstrate the current feature set for integrated hybrid 
 - Error correction with integrated hybrid.
 - Iterative phase estimation
 
-For more samples, see the **Integrated hybrid** notebook samples in the Azure Quantum portal. For known issues and best practices for working with integrated hybrid programs, see [Integrated hybrid known issues](xref:microsoft.quantum.hybrid.known-issues).
-
 > [!NOTE]
-> For help setting up Azure Quantum and the Quantum Development Kit in your local environment, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview). For information about submitting jobs, see [Submitting quantum jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs).
+> The samples in this article are set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of these and other samples, login in to your Azure Portal workspace and view the samples from the **Integrated hybrid** tab. You can either run the notebook in the cloud or download it and run it locally.  For help setting up VS Code and the Quantum Development Kit in your local environment, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#use-q-and-python-with-visual-studio-and-visual-studio-code).  For information about submitting jobs, see [Submitting quantum jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs).
 
-## [Check GHZ state](#tab/tabid-ghz) 
+For known issues and best practices for working with integrated hybrid programs, see [Integrated hybrid known issues](xref:microsoft.quantum.hybrid.known-issues).
+
+
+### [Check GHZ state](#tab/tabid-ghz) 
 
 This sample verifies a 3-qubit [Greenberger-Horne-Zeilinger](https://en.wikipedia.org/wiki/Greenberger%E2%80%93Horne%E2%80%93Zeilinger_state#:~:text=In%20physics%2C%20in%20the%20area%20of%20quantum%20information,Greenberger%2C%20Michael%20Horne%20and%20Anton%20Zeilinger%20in%201989) (GHZ) state, counting how many times it sees the entanglement fail out of 10 attempts. Without noise, this would return 0 for every shot, but with noise, you can get back failures.
-
-> [!NOTE]
-> This sample is set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of this sample, login in to your Azure Portal workspace and load the **Check GHZ state** sample from the **Integrated hybrid** tab. You can either run the notebook in the cloud or download it and run it locally.  For help setting up VS Code and the Quantum Development Kit in your local environment, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#use-q-and-python-with-visual-studio-and-visual-studio-code).
 
 Feature to note about this sample:
 
@@ -112,7 +110,7 @@ Feature to note about this sample:
 - You do not need to learn to program for specialized high-performance hardware running next to the QPU (such as FPGAs).
 - Running an equivalent program without the integrated hybrid features would require returning every intermediate measurement result and then running post-processing on the data. 
 
-## Create a VS Code project
+### Create a VS Code project
 
 1. In VS Code, create a new Q# standalone console application project named **CheckGHZ**. 
 1. Replace the configuration in **CheckGHZ.proj** with the following:
@@ -184,14 +182,11 @@ az quantum job output -o table --job-id [job-id]
 
 ![GHZ output](~/media/hybrid/ghz-output.png)
 
-## [Dynamic error correction](#tab/tabid-qec)
+### [Three-qubit repetition code](#tab/tabid-qec)
 
 This error correction routine sets up two logical qubits, performs an operation on them, and then measures and error corrects using hybrid branching. 
 
-> [!NOTE]
-> This sample is set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of this sample, login in to your Azure Portal workspace and load the **Dynamic error correction** sample from the **Integrated hybrid** tab. You can either run the notebook in the cloud or download it and run it locally. For help setting up VS Code and the Quantum Development Kit in your local environment, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#use-q-and-python-with-visual-studio-and-visual-studio-code).
-
-## Create a VS Code project
+### Create a VS Code project
 
 1. In VS Code, create a new Q# standalone console application project named **EC**. 
 1. Replace the configuration in **EC.proj** with the following:
@@ -322,7 +317,7 @@ az quantum job submit --target-id quantinuum.sim.h1-1e --job-name ErrorCorrectio
 az quantum job output -o table --job-id [job-id]
 ```
 
-## [Iterative phase estimation](#tab/tabid-qml)
+### [Iterative phase estimation](#tab/tabid-qml)
 
 This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/about/alliances/microsoft/kpmg-and-microsoft-azure-quantum.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of Basic Measurement Feedback targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements and qubit reuse.
 
@@ -332,10 +327,7 @@ This notebook demonstrates an iterative phase estimation within Q#. It will use 
 
 The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit, which is set up in the $\ket +$ state. The controlled Oracle operator generates a phase on the $\ket 1$ state of the control qubit. This can then be read by applying an H gate to the control qubit to make the phase observable when measuring.
 
-> [!NOTE]
-> This sample is set up to run in VS Code in your local environment and submit the job to Azure Quantum. Optionally, you can run this program from your Azure Portal workspace by loading the **Iterative phase estimation** sample from the **Integrated hybrid** tab. For help setting up VS Code and the Quantum Development Kit in your local environment, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#use-q-and-python-with-visual-studio-and-visual-studio-code).
-
-## Create a VS Code project
+### Create a VS Code project
 
 1. In VS Code, create a new Q# standalone console application project named **IPE**. 
 1. Replace the configuration in **IPE.proj** with the following:
@@ -371,7 +363,7 @@ The circuit begins by encoding the pair of vectors on the target qubit and the a
     }
     ```
 
-## Encoding vectors
+### Encoding vectors
 
 The vectors v and c are to be encoded onto the target qubit and the ancilla qubit. The vector $v = (cos(\frac{\theta_1}{2}),sin(\frac{\theta_1}{2}))$ can be represented by the quantum state $\ket v = cos(\frac{\theta_1}{2})\ket 0 + sin(\frac{\theta_1}{2})\ket 1$, similarly $c$ can be constructed using $\theta_2$. 
 
@@ -414,7 +406,7 @@ operation StateInitialisation(TargetReg : Qubit, AncilReg : Qubit, theta_1 : Dou
 }
 ```
 
-## The Oracle
+### The Oracle
 
 An oracle G needs to be constructed such that it generates an eigenphase on the state encoded on the target qubit and the ancilla qubit. The construction of this oracle is unimportant to the demonstration within this example, but the operation it applies is
 
@@ -449,7 +441,7 @@ operation GOracle(TargetReg : Qubit, AncilReg : Qubit, theta_1 : Double, theta_2
     }
 ```
 
-## Iteration
+### Iteration
 
 Now for the iterative part of the circuit. For n measurements, consider that the phase can be represented as a binary value $\phi$, and that applying $2^n$ oracles makes the nth binary point of the phase observable (through simple binary multiplication, and modulus $2\pi$). The value of the control qubit can be readout, placed in a classical register and the qubit reset for use in the next iteration. The next iteration applies $2^{n-1}$ oracles, correcting phase on the control qubit dependent on the nth measurement. The state on the control qubit can be represented as
 
@@ -524,7 +516,7 @@ operation IterativePhaseEstimation(TargetReg : Qubit, AncilReg : Qubit, theta_1 
 }
 ```
 
-## Calculate the inner product
+### Calculate the inner product
 
 Finally, calculate the inner product from the measured value
 
@@ -555,11 +547,11 @@ function CalculateInnerProduct(Results : Int, theta_1 : Double, theta_2 : Double
 
 ```
 
-## Run the program 
+### Run the program 
 
 Now, you can test the program. First, you'll run the program using a simulation operation locally, and then you'll connect to Azure Quantum and run it against a hardware target. 
 
-### Simulating iterative phase estimation
+#### Simulating iterative phase estimation
 
 Q# programs require an `@EntryPoint()` to tell the compiler where to start the execution of the program. Add the following code to **Programs.qs** to start the program with the `SimulateInnerProduct()` operation.  This version of the inner product operation outputs additional information, including the manipulation of doubles of which the output is displayed in the terminal.
 
@@ -601,7 +593,7 @@ To run the program, open a terminal window in VS Code and run
     dotnet run
 ```
 
-### Running on an Azure Quantum target
+#### Running on an Azure Quantum target
 
 To run against a hardware target, replace the `SimulateInnerProduct()` operation with the following `HardwareInnerProduct()` operation:
 

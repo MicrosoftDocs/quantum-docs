@@ -13,14 +13,15 @@ uid: microsoft.quantum.concepts.hybrid
 
 # Hybrid quantum computing concepts
 
-All quantum computing is hybrid in some sense. The earliest quantum systems used classical processes to send instructions to the quantum computer, and receive and process the resulting data. *Hybrid quantum computing* is the tight and symbiotic integration between classical and quantum processors, such that they share computations and results back and forth in real time during the run of a program. For example, classical computing is often faster and more efficient than quantum computing for certain tasks, such as data processing and analysis. However, quantum computing performs better for certain types of optimization and simulation problems.
+All quantum computing is hybrid in some sense. The earliest quantum systems used classical processes to send instructions to the quantum computer, and receive and process the resulting data. The most advanced hybrid architectures bring a tighter and richer integration between classical and quantum computation, speeding up the execution time and opening the door to new generation of algorithms. For example, classical computing is often faster and more efficient than quantum computing for certain tasks, such as data processing and analysis. However, quantum computing performs better for certain types of optimization and simulation problems.
 
-This article describes four techniques that are necessary for hybrid quantum computing:
+## Classical and quantum registers
 
-- Mid-circuit measurement
-- Qubit reuse
-- Error mitigation
-- Quantum error correction
+In quantum computing, even though the classical and quantum processors are tightly integrated, they are still separate physical entities, and hybrid quantum computing programs can take advantage of each of their capabilities.
+
+A classical register uses the familiar silicon chip-based architecture and is best suited for operations such as sending instructions to the quantum processor, capturing measurement results, and using those results to determine the next set of instructions. 
+ 
+A quantum register is a system comprised of multiple [qubits](xref:microsoft.quantum.glossary-qdk#qubit). Quantum computers excel at performing complex calculations by manipulating their qubits within a quantum register.
 
 ## Mid-circuit measurement
 
@@ -36,10 +37,18 @@ Qubit reuse is the practice of designing circuits to use the same qubit multiple
 
 To make current quantum hardware more robust against error and noise, *logical qubits* can be used. Logical qubits are created using multiple physical qubits to encode and protect quantum information. However, because multiple qubits must be used to create one logical qubit, the overall number of qubits that can be used for computations is reduced. As the ability of hardware to support more physical qubits increases, so will the fault tolerance capabilities. 
 
-In addition to using logical qubits, errors in quantum computations can be mitigated by using techniques such as multiple measurements, designing algorithms that reduce the number of operations needed, or adjusting parameter on quantum gates to reduce the impact of noise.
+In addition to using logical qubits, errors in quantum computations can be mitigated by using techniques such as multiple measurements, designing algorithms that reduce the number of operations needed, or adjusting parameters on quantum gates to reduce the impact of noise.
 
 ## Error correction and fault tolerance
 
-Error correction and fault tolerance are critical aspects of quantum computing, as qubits are more prone to errors than classical bits due to the delicate nature of quantum states, and highly fault tolerant systems are needed to achieve the full benefits of [distributed hybrid quantum computing](xref:microsoft.quantum.hybrid.distributed). In classical computing, errors can be corrected by adding redundancy to the computation and using error-correction codes. However, traditional error-correction techniques aren't directly applicable to quantum computing, as they rely on being able to repeat the computation multiple times, which isn't possible in quantum computing due to the no-cloning theorem.
+Error correction and fault tolerance are critical aspects of quantum computing, as qubits are more prone to errors than classical bits due to the delicate nature of quantum states, and highly fault tolerant systems are needed to achieve the full benefits of [distributed hybrid quantum computing](xref:microsoft.quantum.hybrid.distributed). In classical computing, errors can be corrected by adding redundancy to the computation and using error-correction codes. However, traditional error-correction techniques aren't directly applicable to quantum computing, as they rely on being able to repeat the computation multiple times, which isn't possible in quantum computing due to the [no-cloning theorem](xref:microsoft.quantum.concepts.pauli#the-no-cloning-theorem).
 
 *Floquet codes* are a new class of error correction codes that respond to noise and errors dynamically, instead of traditional correction codes that protect against static errors. For more information, see [Error correction with Floquet codes](https://www.microsoft.com/research/blog/azure-quantum-innovation-efficient-error-correction-of-topological-qubits-with-floquet-codes/).
+
+## Hybrid algorithms
+
+VQE
+
+QAOA
+
+
