@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: A glossary of common terms, actions and objects used in Azure Quantum.
 ms.author: sonialopez
-ms.date: 07/01/2021
+ms.date: 03/06/2023
 ms.service: azure-quantum
 ms.subservice: core  
 ms.topic: reference
@@ -41,6 +41,10 @@ Microsoft’s quantum service for Azure, enabling customers access to quantum so
 
 Azure’s deployment and management service. For more information, see [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview).
 
+## Batch hybrid quantum computing
+
+A model of [hybrid quantum computing](#hybrid-quantum-computing) where jobs from a local client are batched into one job, eliminating the waits between job submissions. 
+
 ## Bell state
 
 One of four specific maximally [entangled](xref:microsoft.quantum.glossary-qdk#entanglement) [quantum states](xref:microsoft.quantum.glossary-qdk#quantum-state) of two qubits. The four states are defined $\ket{\beta_{ij}} = (\mathbb{I} \otimes X^iZ^j) (\ket{00} + \ket{11}) / \sqrt{2}$. A Bell state is also known as an [EPR pair](xref:microsoft.quantum.glossary-qdk#epr-pair).
@@ -66,6 +70,10 @@ A quantum [operation](xref:microsoft.quantum.glossary-qdk#operation) that takes 
 
 A symbolic shorthand that simplifies the representation of [quantum states](xref:microsoft.quantum.glossary-qdk#quantum-state), also called *bra-ket* notation.  The *bra* portion represents a row vector, for example  $\bra{A} = \begin{bmatrix} A{_1} & A{_2} \end{bmatrix}$ and the *ket* portion represents a column vector, $\ket{B} = \begin{bmatrix} B{_1} \\\\ B{_2} \end{bmatrix}$. For more information, see [Dirac Notation](xref:microsoft.quantum.concepts.dirac).
 
+## Distributed hybrid quantum computing
+
+A model of [hybrid quantum computing](#hybrid-quantum-computing) that runs classical processes alongside [logical qubits](#logical-qubit) with long coherence times and distributed computation across heterogenous cloud resources. 
+
 ## Eigenvalue
 
 The factor by which the magnitude of an [eigenvector](xref:microsoft.quantum.glossary-qdk#eigenvector) of a given transformation is changed by the application of the transformation.  Given a square matrix $M$ and an eigenvector $v$, then $Mv = cv$, where $c$ is the eigenvalue and can be a complex number of any argument. For more information, see [Advanced matrix concepts](xref:microsoft.quantum.concepts.matrix-advanced).
@@ -86,7 +94,12 @@ One of four specific maximally entangled [quantum states](xref:microsoft.quantum
 
 How a [quantum state](xref:microsoft.quantum.glossary-qdk#quantum-state) changes over time. For more information, see [Matrix exponentials](xref:microsoft.quantum.concepts.matrix-advanced#matrix-exponentials).
 
+## Floquet codes
+
+Floquet codes are a new class of error correction codes that respond to noise and errors dynamically, as compared to traditional correction codes that protect against static errors.
+
 ## Function
+
 A type of subroutine in the Q# language that is purely deterministic. While functions are used within quantum algorithms, they cannot act on [qubits](xref:microsoft.quantum.glossary-qdk#qubit) or call [operations](xref:microsoft.quantum.glossary-qdk#operation). 
 For more information, see [The Q# user guide](xref:microsoft.quantum.user-guide-qdk.overview)
 
@@ -96,23 +109,43 @@ A legacy term for certain intrinsic quantum [operations](xref:microsoft.quantum.
 
 ## Global phase
 
-When two [states](xref:microsoft.quantum.glossary-qdk#quantum-state) are identical up to a multiple of a complex number $e^{i\phi}$, they are said to differ up to a global phase. Unlike local phases, global phases cannot be observed through any [measurment](xref:microsoft.quantum.glossary-qdk#measurement). For more information, see [The Qubit](xref:microsoft.quantum.concepts.qubit).
+When two [states](xref:microsoft.quantum.glossary-qdk#quantum-state) are identical up to a multiple of a complex number $e^{i\phi}$, they are said to differ up to a global phase. Unlike local phases, global phases cannot be observed through any [measurement](xref:microsoft.quantum.glossary-qdk#measurement). For more information, see [The Qubit](xref:microsoft.quantum.concepts.qubit).
 
 ## Hadamard
 
 The Hadamard operation (also referred to as the Hadamard gate or transform) acts on a single [qubit](xref:microsoft.quantum.glossary-qdk#qubit) and puts it in an even [superposition](xref:microsoft.quantum.glossary-qdk#superposition) of $\ket{0}$ or $\ket{1}$ if the qubit is initially in the $\ket{0}$ state. In Q#, this operation is applied by the pre-defined [`H`](xref:Microsoft.Quantum.Intrinsic.H) operation.
 
+## Hybrid quantum computing
+
+The tight integration of classical and quantum processes and architectures. Models of hybrid quantum computing are [batch hybrid](#batch-hybrid-quantum-computing), [iterative hybrid](#iterative-hybrid-quantum-computing), [integrated hybrid](#integrated-hybrid-quantum-computing), and [distributed hybrid](#distributed-hybrid-quantum-computing). For more information, see [Introduction to hybrid quantum computing](xref:icrosoft.quantum.overview.hybrid).
+
 ## Immutable
 
 A variable whose value cannot be changed. An immutable variable in Q# is created using the `let` keyword. To declare variables that *can* be changed, use the [mutable](xref:microsoft.quantum.glossary-qdk#immutable) keyword to declare and the `set` keyword to modify the value. 
+
+## Iterative hybrid quantum computing
+
+A model of [hybrid quantum computing](#hybrid-quantum-computing) where the classical compute resides in the cloud, resulting in lower latency and repeated execution of a quantum circuit with different parameters. Quantum jobs can be grouped in [sessions](#sessions), allowing for longer runs and prioritized access to quantum hardware. 
+
+## Integrated hybrid quantum computing
+
+A model of [hybrid quantum computing](#hybrid-quantum-computing) where the classical and quantum processors are physically close, allowing classical computations to be performed while physical qubits are coherent. Integrated hybrid makes use of [mid-circuit measurement](#mid-circuit-measurement) and [qubit reuse](#qubit-reuse). 
 
 ## Job
 
 A [program](#quantum-program), [problem](#quantum-inspired-optimization-problem), or application, submitted to Azure Quantum for processing by an Azure Quantum [provider](#provider).
 
+## Logical qubit
+
+Logical qubits are created by grouping together multiple physical qubits to encode and protect quantum information. They are used to make quantum hardware more robust against errors and noise.
+
 ## Measurement
 
 A manipulation of a [qubit](xref:microsoft.quantum.glossary-qdk#qubit) (or set of qubits) that yields the result of an observation, in effect obtaining a classical bit. For more information, see [The Qubit](xref:microsoft.quantum.concepts.qubit#measuring-a-qubit).
+
+## Mid-circuit measurement
+
+The process of performing quantum state measurements at various points during the execution of the program, rather than only at the end. This allows for making decisions by the classical program about the circuit flow. Closely related to [Qubit reuse](#qubit-reuse).
 
 ## Mutable
 
@@ -140,7 +173,11 @@ A set of three 2 x 2 unitary matrices known as the `X`, `Y` and `Z` quantum oper
 
 ## Provider
 
-A component in Azure Quantum that provides the ability to run [jobs](#job) on selected [targets](#target-machine). Providers may be made available by Microsoft or by third-party partners.
+A component in Azure Quantum that provides the ability to run [jobs](#job) on selected [targets](#target-machine). Providers include Microsoft and a variety of third-party partners.
+
+## Quantum approximate optimization algorithm (QAOA)
+
+A variational quantum algorithm used for finding approximate solutions to combinatorial optimization problems - problems where the number of possible solutions grows extremely large with the size of the problem.
 
 ## Quantum circuit diagram
 
@@ -152,7 +189,7 @@ For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.cir
 
 ## Quantum Development Kit (QDK)
 
-Microsoft’s software development kit for developing quantum applications in the Azure Quantum service. The QDK contains Q\#, Microsoft's programming language for quantum computing, along with Q\# libraries, samples and tutorials. It also contains developer APIs for running jobs on the Azure Quantum service. For more information, see the [Microsoft QDK Documentation](xref:microsoft.quantum.overview.q-sharp).
+Microsoft’s software development kit for developing quantum applications in the Azure Quantum service. The QDK contains Q\#, Microsoft's programming language for quantum computing, and Q\# Python packages, along with Q\# libraries, samples and tutorials. It also contains developer APIs for running jobs on the Azure Quantum service. For more information, see the [Microsoft QDK Documentation](xref:microsoft.quantum.overview.q-sharp).
 
 ## Quantum-inspired optimization (QIO)
 
@@ -178,9 +215,17 @@ The precise state of an isolated quantum system, from which [measurement](xref:m
 
 A basic unit of quantum information, analogous to a *bit* in classical computing. For more information, see [The Qubit](xref:microsoft.quantum.concepts.qubit).
 
+## Qubit reuse
+
+Related to [Mid-circuit measurement](#measurement), qubit reuse is the practice of designing circuits to use the same qubit multiple times in a quantum computation to minimize the total qubits needed to run your program. After a mid-circuit measurement, a qubit can be reset and reused, allowing you to run more complex computations on hardware with fewer qubits.  
+
 ## Repeat-until-success
 
 A concept often used in quantum algorithms that consists of repeatedly applying a computation until a certain condition is satisfied. When the condition is not satisfied, often a fixup is required before retrying by entering the next iteration. For more information, see the [Q# user guide](xref:microsoft.quantum.user-guide-qdk.overview)
+
+## Sessions
+
+Part of the [iterative hybrid quantum computing](#iterative-hybrid-quantum-computing) model, sessions are prioritized, logical groups of quantum jobs. The ability to repeat the execution of the quantum circuit with different parameters makes this a good model for [VQE](#variational-quantum-eigensolver-vqe) and [QAOA](#quantum-approximate-optimization-algorithm-qaoa) algorithms. 
 
 ## Standard libraries
 
@@ -209,3 +254,7 @@ An operator whose inverse is equal to its [adjoint](xref:microsoft.quantum.gloss
 ## User-defined type
 
 A custom type that may contain one or more named or anonymous items. For more information, see  [Type declarations](xref:microsoft.quantum.qsharp.typedeclarations).
+
+## Variational quantum eigensolver (VQE)
+
+A [hybrid quantum](#hybrid-quantum-computing) algorithm that is used to find the ground state of a given physical system. It uses a classical program to modify and refine quantum circuit parameters based on the results of previous measurements. 
