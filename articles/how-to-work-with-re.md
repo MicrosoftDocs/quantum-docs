@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
-description: Learn how to run the Resource Estimator target in Azure Quantum and tips to make your work and job submission more efficient 
-ms.date: 02/12/2023
+description: Learn how to make your work and job submission more efficient with the Resource Estimator target
+ms.date: 03/06/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -28,7 +28,7 @@ Some scenarios where you may want to submit multiple items as a single job:
 - Easily compare multiple results in a tabular format.
 - Easily compare multiple results in a chart.
 
-
+### Batching with Q#
 
 For example, consider the following Q# operation that creates multiplier with a `bitwidth` parameter that can be passed to the operation as argument. The operation have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`. 
 
@@ -79,7 +79,13 @@ results = qsharp.azure.execute(Multiply, jobParams={"items": items})
 
 The result of the resource estimation job is displayed in a table with multiple results coming from the list of items. By default the max number of items to be displayed is $N = 5$. To display a list of items where $N > 5$, use `results[0:N]`. 
 
-Consider the following Qiskit circuit
+ :::image type="content" source="media/batching-qsharp.png" alt-text="Screenshot of the credits blade in Azure portal.":::
+
+You can also access individual results by providing a number as index. For example, `results[0]` to show the results table of the first configuration, which has the first set of target parameters and bit width 8. 
+
+### Batching with Qiskit
+
+Consider the following Qiskit circuit that takes three qubits and apply a CCX or Toffoli gate using the third qubit as target. In this case, you want to estimate the resources of this quantum circuit for four different target parameters, so each configuration consists of one target parameter. Batching allows you to submit all configurations at the same time.
 
 ```python
 from azure.quantum.qiskit import AzureQuantumProvider 
@@ -107,7 +113,8 @@ job_monitor(job)
 results = job.result() 
 results 
 ```
-
+ :::image type="content" source="media/batching-qiskit.png" alt-text="":::
+ 
 ## Handle large programs
 
 When you submit a resource estimation job to the Resource Estimator, the quantum program is evaluated completely to extract the resource estimates. As such, large programs or programs that have loops with many iterations may take a long time to complete the resource estimation job.
