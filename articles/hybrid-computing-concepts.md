@@ -29,7 +29,7 @@ Mid-circuit measurement is the process of performing quantum state measurements 
 
 ## Qubit reuse
 
-Even though today's quantum computers are able to support an increasing number of qubits, we're still far from the millions of qubits needed to run fully fault-tolerant computations and it's desirable to use as few qubits as possible. For more information about the scale of quantum computers needed, see the [Introduction to resource estimation](xref:microsoft.quantum.overview.intro-resource-estimator).
+Today's quantum computers are able to support an increasing number of qubits. However, we're still far from being able to support the millions of qubits needed to run fully fault-tolerant computations. For more information about the scale of quantum computers needed, see the [Introduction to resource estimation](xref:microsoft.quantum.overview.intro-resource-estimator). Additionally, it's desirable to use as few qubits as possible. 
 
 Qubit reuse is the practice of designing circuits to use the same qubit multiple times in a quantum computation to minimize the total qubits needed to run your program. For example, after performing a [mid-circuit measurement](#mid-circuit-measurement) and processing the result, that qubit can be reset and reused for another computation instead of allocating a new qubit. There are various techniques for re-using qubits in quantum computing, such as quantum teleportation, quantum error correction, and measurement-based quantum computing.
 

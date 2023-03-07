@@ -117,7 +117,7 @@ The Hadamard operation (also referred to as the Hadamard gate or transform) acts
 
 ## Hybrid quantum computing
 
-The tight integration of classical and quantum processes and architectures. Models of hybrid quantum computing are [batch hybrid](#batch-hybrid-quantum-computing), [iterative hybrid](#iterative-hybrid-quantum-computing), [integrated hybrid](#integrated-hybrid-quantum-computing), and [distributed hybrid](#distributed-hybrid-quantum-computing). For more information, see [Introduction to hybrid quantum computing](xref:icrosoft.quantum.overview.hybrid).
+The tight integration of classical and quantum processes and architectures. Models of hybrid quantum computing are [batch hybrid](#batch-hybrid-quantum-computing), [iterative hybrid](#iterative-hybrid-quantum-computing), [integrated hybrid](#integrated-hybrid-quantum-computing), and [distributed hybrid](#distributed-hybrid-quantum-computing). For more information, see [Introduction to hybrid quantum computing](xref:microsoft.quantum.overview.hybrid).
 
 ## Immutable
 
