@@ -77,7 +77,7 @@ for bitwidth in bitwidths:
 results = qsharp.azure.execute(Multiply, jobParams={"items": items})
 ```
 
-The result of the resource estimation job is displayed in a table with multiple results coming from the list of items. By default the max number of items to be displayed is $N = 5$. To display a list of items where $N > 5$, use `results[0:N]`. 
+The result of the resource estimation job is displayed in a table with multiple results coming from the list of items. By default the maximum number of items to be displayed is five. To display a list of $N$ items where $N > 5$, use `results[0:N]`. 
 
  :::image type="content" source="media/batching-qsharp.png" alt-text="Screenshot of the table of results of a resource estimation job for 16 configurations.":::
 
