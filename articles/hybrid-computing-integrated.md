@@ -15,7 +15,7 @@ uid: microsoft.quantum.hybrid.integrated
 
 Integrated hybrid computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Using qubit reuse techniques, larger programs can run on machines utilizing a smaller number of qubits. 
 
-For more discussion, see
+For more discussion, see:
 
 - [Granade & Weibe, "Using Random Walks for Iterative Phase Estimation"](https://arxiv.org/pdf/2208.04526.pdf).
 - [Lubinski, et al., "Advancing Hybrid Quantum–Classical Computation with Real-Time Execution"](https://arxiv.org/pdf/2206.12950.pdf)
@@ -89,20 +89,24 @@ After a successful run on the emulator:
 
 The following samples demonstrate the current feature set for integrated hybrid computing. 
 
-- Verify an entangled GHZ state.
-- Error correction with integrated hybrid.
+- Verify an entangled GHZ state
+- Three-bit qubit repetition
 - Iterative phase estimation
 
 > [!NOTE]
 > If you are new to Azure Quantum, you will need an Azure subscription and an Azure Quantum workspace to run the samples against quantum hardware. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
-The samples in this article are set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of these and other samples, login in to your Azure Portal workspace and view the samples from the **Hybrid quantum computing** tab in the Samples gallery. You can either run the notebook in the cloud or download it and run it locally. 
+### Prerequisites
 
-For help setting up VS Code and the Quantum Development Kit in your local environment, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#use-q-and-python-with-visual-studio-and-visual-studio-code).  For information about submitting jobs, see [Submitting quantum jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs).
+- If you are new to Azure Quantum, you will need an Azure subscription and an Azure Quantum workspace to run the samples against quantum hardware. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- VS Code and the Quantum Development Kit set up in your local environment. For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#use-q-and-python-with-visual-studio-and-visual-studio-code).
+- Ensure that VS Code has latest version of the Quantum Development Kit (0.27.258160). 
+
+The samples in this article are set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of these and other samples, login in to your Azure Portal workspace and view the samples from the **Hybrid quantum computing** tab in the Samples gallery. You can either run the notebook in the cloud or download it and run it locally. 
 
 To troubleshooting issues with integrated hybrid programs, see [Troubleshooting integrated hybrid](xref:microsoft.quantum.hybrid.troubleshooting).
 
-### [Check GHZ state](#tab/tabid-ghz) 
+### [Check GHZ state](#tab/tabid-ghz)
 
 In this sample, you will discover how to blend classical and quantum instructions in the same program, all fully processed by the quantum computing backend. 
 
@@ -116,6 +120,7 @@ Features to note about this sample:
 ### Create a VS Code project
 
 1. In VS Code, create a new Q# standalone console application project named **CheckGHZ**. 
+    1. Select **View > Command Pallete > Q#: Create new project > Standalone console application**
 1. Replace the configuration in **CheckGHZ.proj** with the following:
 
     ```xml
@@ -196,6 +201,7 @@ It leverages integrated hybrid computing features to count the number of times e
 ### Create a VS Code project
 
 1. In VS Code, create a new Q# standalone console application project named **ThreeQubit**. 
+    1. Select **View > Command Pallete > Q#: Create new project > Standalone console application**
 1. Replace the configuration in **ThreeQubit.proj** with the following:
 
     ```xml
@@ -667,3 +673,7 @@ replacing \[job-id\] with the displayed job id. The results show a solution in t
 -->
 
 ***
+
+## Next steps
+
+[Distributed hybrid computing](xref:microsoft.quantum.hybrid.distributed)

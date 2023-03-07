@@ -17,3 +17,6 @@ With fully integrated classical control and longer lived logical qubits, the dis
 
 ![Distributed quantum computing](~/media/hybrid/distributed.png)
 
+## Next steps
+
+[Hybrid quantum computing concepts](xref:microsoft.quantum.concepts.hybrid)

@@ -42,7 +42,7 @@ The following table lists the currently known limitations and restrictions of th
 - [Warning QS5026](#warning-qs5026)
 - [Warning QS5027](#warning-qs5027)
 - [Warning QS5028](#warning-qs5028)
-- [QIR isn't valid within the defined adaptor](#target-specific-transformation-failed)
+- [Target specific transformation failed](#target-specific-transformation-failed)
 
 #### Incomplete compilation 
 
@@ -106,7 +106,7 @@ This error can occur when a program that implements any of the following scenari
 - Type: **Job error**
 - Source: **Target compiler**
 
-This error can occur when a program that requires a significant number of classical registers is submitted. Some patterns that can cause this issue are **for** loops with many iterations, deeply nested **if** statements, and a large number of qubit measurements. 
+This error can occur when a program that requires a significant number of classical registers is submitted. Some patterns that can cause this issue are **for** loops that contain a large number of iterations, deeply nested **if** statements, or a large number of qubit measurements.
 
 ```qsharp
 operation ClassicalRegisterUsage() : Result { 
