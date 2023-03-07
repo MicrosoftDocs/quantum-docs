@@ -180,14 +180,52 @@ TBD
 
 This warning indicates that the Q# program is using advanced classical features, which must be optimized out during [QIR](xref:microsoft.quantum.concepts.qir) processing. If this optimization cannot occur, the program execution may fail at a later compilation step.
 
-#### QIR isn't valid within the defined adaptor
+#### Target specific transformation failed
 
-- Error code: 
-- Error message: **External call 'llvm.assume:void (i1)' isn't allowed for this adaptor (generic) / Fatal error: QIR isn't valid within the defined adaptor** 
-- Type: **Error**
-- Source: **Target compiler**
+- Error code: **QATTransformationFailed**
+- Error message: **The message will be specific to the program**
+- Type: **Job error**
+- Source: **Azure Quantum service**
 
-For some classical compute that is not compatible with the chosen target, the Azure Quantum service was unable to transform it into a classical or quantum instruction set.
+This error can occur because the Azure Quantum service could not transform the program’s [quantum intermediate representation](xref:microsoft.quantum.concepts.qir) (QIR) enough to be able to run the program on the specified target. The error message contains the details about QIR that represent the program and what caused the validation to fail. However, it does not provide details on how the error is related to the source code.
+
+The scenarios that can cause this error to occur are very broad. The following list does not contain all of them, but it enumerates some of the most common ones: 
+
+- Accessing array elements that are outside of the array’s range. 
+
+    ```qsharp
+    operation IndexOutOfRange() : Result { 
+        use register = Qubit[1]; 
+        H(register[1]); 
+        return MResetZ(register[1]); 
+    } 
+    ```
+
+- Using arithmetic operations that are not supported by the target. 
+
+    ```qsharp
+    operation UnsupportedArithmetic() : Result { 
+        use q = Qubit(); 
+        mutable theta = 0.0; 
+        for _ in 1 .. 10 { 
+            Rx(theta, q); 
+            set theta += (0.25 * PI()); 
+        } 
+        return MResetZ(q); 
+    } 
+    ```
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!--
 ## Errors: table option
