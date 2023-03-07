@@ -119,7 +119,7 @@ Features to note about this sample:
 
 1. In VS Code, create a new Q# standalone console application project named **CheckGHZ**. 
     1. Select **View > Command Pallete > Q#: Create new project > Standalone console application**
-1. Replace the configuration in **CheckGHZ.proj** with the following:
+1. Replace the configuration in **CheckGHZ.csproj** with the following:
 
     ```xml
     <Project Sdk="Microsoft.Quantum.Sdk/0.27.258160">
@@ -200,7 +200,7 @@ It leverages integrated hybrid computing features to count the number of times e
 
 1. In VS Code, create a new Q# standalone console application project named **ThreeQubit**. 
     1. Select **View > Command Pallete > Q#: Create new project > Standalone console application**
-1. Replace the configuration in **ThreeQubit.proj** with the following:
+1. Replace the configuration in **ThreeQubit.csproj** with the following:
 
     ```xml
     <Project Sdk="Microsoft.Quantum.Sdk/0.27.258160">
@@ -339,7 +339,7 @@ It leverages integrated hybrid computing features to count the number of times e
     az quantum job submit --target-id quantinuum.sim.h1-1e --job-name ErrorCorrection --target-capability AdaptiveExecution --shots 50
     
     az quantum job output -o table --job-id [job-id]
-```
+    ```
 
 ### [Iterative phase estimation](#tab/tabid-qml)
 
@@ -359,7 +359,7 @@ The circuit begins by encoding the pair of vectors on the target qubit and the a
 ### Create a VS Code project
 
 1. In VS Code, create a new Q# standalone console application project named **IPE**. 
-1. Replace the configuration in **IPE.proj** with the following:
+1. Replace the configuration in **IPE.csproj** with the following:
 
     ```xml
     <Project Sdk="Microsoft.Quantum.Sdk/0.27.253010">
