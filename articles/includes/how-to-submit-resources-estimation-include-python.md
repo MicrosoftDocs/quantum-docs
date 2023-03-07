@@ -267,9 +267,6 @@ result_maj_floquet_e1
 
 Now that you’ve learned how to retrieve physical resource estimates and how to access them programmatically, you can perform more elaborate experiments. In this part, you'll evaluate the costs for the Quantum Fourier Transform based multiplier for different bit widths, qubit parameters, and quantum error correction codes.
 
-
-
-
 Add a new cell and import the following required packages.
 
 ```python
@@ -389,4 +386,16 @@ bitwidth_index = 0
 results[bitwidth_index::len(bitwidths)]
 ```
 
+ :::image type="content" source="media/advance-estimation-index0.png" alt-text="Screenshot of the table of results for the configuration with index 0.":::
+
 You can also access individual results by providing a number as index. For example, `results[1]` to show the results table of the configuration with the first set of target parameters and bit width 16.
+
+Further, you can plot all items in the result object using the `plot()` function. That function takes as optional parameter an array of labels for the plot's legend. Here, the labels are derived from the names and bitwidths, similar to how the items were created.
+
+```python
+results.plot(labels=[f"{name} ({bitwidth} bit)" for name in names for bitwidth in bitwidths])
+```
+
+ :::image type="content" source="media/advance-estimation-plot.png" alt-text="Plot of runtime versus number of physical qubits for every configuration.":::
+
+
