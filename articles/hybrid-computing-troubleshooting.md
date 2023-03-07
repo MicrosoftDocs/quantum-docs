@@ -27,7 +27,7 @@ The following table lists the currently known limitations and restrictions of th
 | **Unbounded loops or recursions** | Unbounded loops, and direct or indirect function recursions are out of scope for this release. |
 | **Dynamic qubit allocations and access** | Runtime functions for qubit allocation and release are not available, and the lack of support for local variables and composite data types prevents any qubit aliasing. |
 | **Partial applications** | Using a partial application to define a callable visible at a namespace scope is not supported. |
-| **Arrays** | Use ranges rather than arrays, when possible.   |
+| **Arrays** | Use ranges rather than arrays, when possible. For small loops where performance isn't a concern, the user may prefer to use ranges (contiguous memory) to avoid going outside of allocated memory. |
 | **Integer support** | Current Quantinuum hardware support for integers is limited to 32-bit unsigned values, even though Q# integers are treated as 64-bit signed in the code. This limitation can affect some bitwise operations and comparisons. It's recommended to use positive integer values for integrated hybrid programs. |
 | **Returning constant values** | Programs that return constant `Result` values (i.e., `Zero` or `One`) are not supported. |
 | **Classical register limitations** | Each supported target has hardware-specific classical register counts, and your compilation may fail if the underlying program uses more classical registers than are available. These failures usually occur with loop structures. |
@@ -42,7 +42,7 @@ The following table lists the currently known limitations and restrictions of th
 - [Warning QS5026](#warning-qs5026)
 - [Warning QS5027](#warning-qs5027)
 - [Warning QS5028](#warning-qs5028)
-- [QIR isn't valid within the defined adaptor](#qir-isnt-valid-within-the-defined-adaptor)
+- [QIR isn't valid within the defined adaptor](#target-specific-transformation-failed)
 
 #### Incomplete compilation 
 
@@ -220,34 +220,4 @@ The scenarios that can cause this error to occur are very broad. The following l
 
 
 
-
-
-
-
-
-
-
-<!--
-## Errors: table option
-
-| Message | Type | Source | Notes |
-| --- | --- |--- | --- |
-| Compile error: Internal Error: Incomplete Compilation | Error | Target compiler | Quantinuum hardware supports comparison operations for unsigned integers only. |
-| Job ID \[JobID\] failed or was cancelled with the message: 1000: Compile error:  | Error | Target compiler |- Quantinuum hardware supports comparison operations for unsigned integers only.<br>- The amount of classical registers exceeded what the hardware supports. Try to reduce the loop count or move logic from within the loop to the outside of the loop, if possible.<br>- Neither unbounded loops or recursion are supported. |
-| Warning QS5028: Warning QS5028: This construct requires a classical runtime capability that is not supported by the target  | Warning |Target compiler | This warning indicates that the Q# program is using advanced classical features, which must be optimized out during [QIR](xref:microsoft.quantum.concepts.qir) processing. If this optimization cannot occur, the program execution may fail at a later compilation step. |
-| Job ID \[JobId\] failed or was cancelled with the message: <br>error - /controller/artifacts/labeledQir.bc:10257,61 - External call 'llvm.assume:void (i1)' isn't allowed for this adaptor (generic). <br>error - /controller/artifacts/labeledQir.bc:10257,61 - Fatal error: QIR isn't valid within the defined adaptor | Error | Target compiler | For some classical compute that is not compatible with the chosen target, the Azure Quantum service was unable to transform it into a classical or quantum instruction set. |
-
-
-| Job ID \[JobID\] failed or was cancelled with the message: 1000: Compile error:  **Exceeded max allowed number of classical registers** | Error | Azure Quantum service | TBD |
-
-| Warning QS5027: The callable {0} requires runtime capabilities which are not supported by the target {1}. | Warning |TBD | TBD |
-
-| Warning QS5026: "The variable \"{0}\" cannot be reassigned here." + "In conditional blocks that depend on a measurement result, the target {1} only supports reassigning variables that were declared within the block." | Warning |TBD | TBD |
-
-| Warning QS5025: "A return statement cannot be used here." + "The target {0} doesn't support return statements in conditional blocks that depend on a measurement result." | Warning |TBD | TBD |
-
-| Warning QS5024: "Measurement results cannot be compared here." + "The target {0} only supports comparing measurement results as part of the condition of an if- or elif-statement in an operation." | Warning |TBD | TBD |
-
-| Warning QS5023: "The target {0} doesn't support comparing measurement results." | Warning |TBD | TBD |
-
--->
+[def]: #warning-qs5028
