@@ -79,7 +79,7 @@ results = qsharp.azure.execute(Multiply, jobParams={"items": items})
 
 The result of the resource estimation job is displayed in a table with multiple results coming from the list of items. By default the max number of items to be displayed is $N = 5$. To display a list of items where $N > 5$, use `results[0:N]`. 
 
- :::image type="content" source="media/batching-qsharp.png" alt-text="Screenshot of the credits blade in Azure portal.":::
+ :::image type="content" source="media/batching-qsharp.png" alt-text="Screenshot of the table of results of a resource estimation job for multiple configurations.":::
 
 You can also access individual results by providing a number as index. For example, `results[0]` to show the results table of the first configuration, which has the first set of target parameters and bit width 8. 
 
@@ -113,7 +113,7 @@ job_monitor(job)
 results = job.result() 
 results 
 ```
- :::image type="content" source="media/batching-qiskit.png" alt-text="":::
+ :::image type="content" source="media/batching-qiskit.png" alt-text="Screenshot of the table of results of a resource estimation job for multiple configurations.":::
  
 ## Handle large programs
 
