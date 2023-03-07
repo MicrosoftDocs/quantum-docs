@@ -29,7 +29,6 @@ When you set the target, you can provide additional optional parameters such as 
 The Resource Estimator returns detailed output that can be visually rendered or programmatically parsed. For more information about input and output parameters, see [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator).
 
 - Job type: Simulation (Estimation)
-- Provider Id: `microsoft`
 - Target ID: `microsoft.estimator`
 
 ::: zone pivot="ide-python-qsharp"
