@@ -96,14 +96,14 @@ The following samples demonstrate the current feature set for integrated hybrid 
 > [!NOTE]
 > The samples in this article are set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of these and other samples, login in to your Azure Portal workspace and view the samples from the **Integrated hybrid** tab. You can either run the notebook in the cloud or download it and run it locally.  For help setting up VS Code and the Quantum Development Kit in your local environment, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#use-q-and-python-with-visual-studio-and-visual-studio-code).  For information about submitting jobs, see [Submitting quantum jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs).
 
-For known issues and best practices for working with integrated hybrid programs, see [Integrated hybrid known issues](xref:microsoft.quantum.hybrid.known-issues).
+For troubleshooting issues with integrated hybrid programs, see [Troubleshooting integrated hybrid](xref:microsoft.quantum.hybrid.troubleshooting).
 
 
 ### [Check GHZ state](#tab/tabid-ghz) 
 
-This sample verifies a 3-qubit [Greenberger-Horne-Zeilinger](https://en.wikipedia.org/wiki/Greenberger%E2%80%93Horne%E2%80%93Zeilinger_state#:~:text=In%20physics%2C%20in%20the%20area%20of%20quantum%20information,Greenberger%2C%20Michael%20Horne%20and%20Anton%20Zeilinger%20in%201989) (GHZ) state, counting how many times it sees the entanglement fail out of 10 attempts. Without noise, this would return 0 for every shot, but with noise, you can get back failures.
+In this sample, you will discover how to blend classical and quantum instructions in the same program, all fully processed by the quantum computing backend. 
 
-Feature to note about this sample:
+Features to note about this sample:
 
 - The loop and qubit measurements happen while the qubits remain coherent.
 - The routine mixes classical and quantum compute operations. 
@@ -116,11 +116,12 @@ Feature to note about this sample:
 1. Replace the configuration in **CheckGHZ.proj** with the following:
 
     ```xml
-    <Project Sdk="Microsoft.Quantum.Sdk/0.27.253010">
+    <Project Sdk="Microsoft.Quantum.Sdk/0.27.258160">
       <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
-        <ExecutionTarget>quantinuum.qpu.h1</ExecutionTarget>
+        <ExecutionTarget>quantinuum</ExecutionTarget>
+        <TargetCapability>AdaptiveExecution</TargetCapability>
       </PropertyGroup>
     </Project>
     ```
@@ -128,19 +129,19 @@ Feature to note about this sample:
 1. Replace the code in **Program.qs** with the following:
 
     ```qsharp
-    namespace CheckGHZ {
+    namespace Microsoft.Quantum.Samples {
     
         open Microsoft.Quantum.Measurement;
-        open Microsoft.Quantum.Arrays;
-        open Microsoft.Quantum.Convert;
         open Microsoft.Quantum.Intrinsic;
-        open Microsoft.Quantum.Math;
-        
-        @EntryPoint()
+    
+        /// # Summary
+        /// Counts the number of times measurements of a prepared GHZ state did not match the expected correlations.
+        @EntryPoint() // The EntryPoint attribute is used to mark that this operation is where a quantum program will start running.
         operation CheckGHZ() : Int {
             use q = Qubit[3];
             mutable mismatch = 0;
             for _ in 1..10 {
+                // Prepare the GHZ state.
                 H(q[0]);
                 CNOT(q[0], q[1]);
                 CNOT(q[1], q[2]);
@@ -148,25 +149,26 @@ Feature to note about this sample:
                 // Measures and resets the 3 qubits
                 let (r0, r1, r2) = (MResetZ(q[0]), MResetZ(q[1]), MResetZ(q[2]));
     
-                // Adjusts classical variable based on measurement results
+                // Adjusts classical value based on qubit measurement results
                 if not (r0 == r1 and r1 == r2) {
                     set mismatch += 1;
                 }
             }
             return mismatch;
         }
-    
     }
     ```
 
 From a terminal window in VS Code, connect to your Azure Quantum workspace and set the default resources.
 
+```azurecli
+az login
+```
+
 > [!NOTE]
 > Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace. 
 
 ```azurecli
-az login
-
 az account set --subscription <MySubscriptionID>
 
 az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
@@ -184,20 +186,23 @@ az quantum job output -o table --job-id [job-id]
 
 ### [Three-qubit repetition code](#tab/tabid-qec)
 
-This error correction routine sets up two logical qubits, performs an operation on them, and then measures and error corrects using hybrid branching. 
+This sample demonstrates how to create a 3-qubit repetition code that can be used to detect and correct bit flip errors.
+
+It leverages integrated hybrid computing features to count the number of times error correction was performed while the state of a logical qubit register is coherent.
 
 ### Create a VS Code project
 
-1. In VS Code, create a new Q# standalone console application project named **EC**. 
-1. Replace the configuration in **EC.proj** with the following:
+1. In VS Code, create a new Q# standalone console application project named **ThreeQubit**. 
+1. Replace the configuration in **ThreeQubit.proj** with the following:
 
     ```xml
-    <Project Sdk="Microsoft.Quantum.Sdk/0.27.253010">
+    <Project Sdk="Microsoft.Quantum.Sdk/0.27.258160">
     
       <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
-        <ExecutionTarget>quantinuum.qpu.h1</ExecutionTarget>
+        <ExecutionTarget>quantinuum</ExecutionTarget>
+        <TargetCapability>AdaptiveExecution</TargetCapability>
       </PropertyGroup>
     
     </Project>
@@ -206,93 +211,103 @@ This error correction routine sets up two logical qubits, performs an operation 
 1. Replace the code in **Program.qs** with the following:
 
     ```qsharp
-    namespace EC {
+    namespace Microsoft.Quantum.Samples {
     
-       open Microsoft.Quantum.Intrinsic;
-       open Microsoft.Quantum.Math;
-       open Microsoft.Quantum.Measurement;
+        open Microsoft.Quantum.Intrinsic;
+        open Microsoft.Quantum.Math;
+        open Microsoft.Quantum.Measurement;
     
-       @EntryPoint()
-       operation DynamicBitFlipCode() : (Result, Int) {
-           // Create a register that represents a logical qubit.
-           use logicalRegister = Qubit[3];
+        @EntryPoint()
+        operation ThreeQubitRepetitionCode() : (Bool, Int) {
+            // Use two qubit registers, one for encoding and an auxiliary one for syndrome measurements.
+            use encodedRegister = Qubit[3];
+            use auxiliaryRegister = Qubit[2];
     
-           // Apply several unitary operations to the encoded qubits performing error correction between each application.
-           mutable corrections = 0;
-           within {
-               // Encode/Decode logical qubit.
-               Encode(logicalRegister);
-           }
-           apply {
-               LogicalX(logicalRegister); // |111⟩
-               let iterations = 5;
-               for _ in 1 .. iterations {
-                   // Apply unitary operations.
-                   ApplyLogicalOperation(logicalRegister);
+            // Initialize the first qubit in the register to a |-〉 state.
+            H(encodedRegister[0]);
+            Z(encodedRegister[0]);
     
-                   // Perform error correction and increase the counter if a correction was made.
-                   let (parity01, parity12) = MeasureSyndrome(logicalRegister);
-                   let correctedError = CorrectError(logicalRegister, parity01, parity12);
-                   if (correctedError) {
-                       set corrections += 1;
-                   }
-               }
-           }
+            // Apply several unitary operations to the encoded qubits performing bit flip detection and correction between
+            // each application.
+            mutable bitFlipCount = 0;
+            within {
+                // The 3 qubit register is used as a repetition code.
+                Encode(encodedRegister);
+            }
+            apply {
+                let iterations = 5;
+                for _ in 1 .. iterations {
+                    // Apply a sequence of rotations to the encoded register that effectively perform an identity operation.
+                    ApplyRotationalIdentity(encodedRegister);
     
-           // Measure the first qubit in each register, return the measurement result and the corrections count.
-           let result = MResetZ(logicalRegister[0]);
-           ResetAll(logicalRegister);
-           return (result, corrections);
-       }
+                    // Measure the bit flip error syndrome, revert the bit flip if needed, and increase the count if a bit flip occurred.
+                    let (parity01, parity12) = MeasureBitFlipSyndrome(encodedRegister, auxiliaryRegister);
+                    let bitFlipReverted = RevertBitFlip(encodedRegister, parity01, parity12);
+                    if (bitFlipReverted) {
+                        set bitFlipCount += 1;
+                    }
+                }
+            }
     
-       operation LogicalX(register : Qubit[]) : Unit
-       {
-           for qubit in register
-           {
-               X(qubit);
-           }
-       }
+            // Transform the qubit to the |1〉 state and measure it in the computational basis.
+            H(encodedRegister[0]);
+            let result = MResetZ(encodedRegister[0]) == One;
+            ResetAll(encodedRegister);
     
-       operation ApplyLogicalOperation(register : Qubit[]) : Unit is Adj
-       {
-           // Rx has a 4 x pi period so this effectively leaves the qubit in the same state at the end if no noise is present.
-           let theta = PI() * 0.5;
-           for i in 1 .. 8 {
-               for qubit in register
-               {
-                   Rx(theta, qubit);
-               }
-           }
-       }
+            // The output of the program is a boolean-integer tuple where the boolean represents whether the qubit
+            // measurement result was the expected one and the integer represents the number of times bit flips occurred
+            // throughout the program.
+            return (result, bitFlipCount);
+        }
     
-       operation CorrectError(register : Qubit[], parity01 : Result, parity12 : Result) : Bool
-       {
-           if (parity01 == One and parity12 == Zero) {
-               X(register[0]);
-           }
-           elif (parity01 == One and parity12 == One) {
-               X(register[1]);
-           }
-           elif (parity01 == Zero and parity12 == One) {
-               X(register[2]);
-           }
+        operation ApplyRotationalIdentity(register : Qubit[]) : Unit is Adj
+        {
+            // This operation implements an identity operation using rotations about the x-axis.
+            // The Rx operation has a period of $2\pi$ (given that it is not possible to measure the difference between
+            // states $|\\psi〉$ and $-|\\psi〉$). Using it to apply 4 $\frac{\pi}{2}$ rotations about the x-axis, effectively
+            // leaves the qubit register in its original state.
+            let theta = PI() * 0.5;
+            for i in 1 .. 4 {
+                for qubit in register
+                {
+                    Rx(theta, qubit);
+                }
+            }
+        }
     
-           return parity01 == One or parity12 == One;
-       }
+        operation RevertBitFlip(register : Qubit[], parity01 : Result, parity12 : Result) : Bool
+        {
+            if (parity01 == One and parity12 == Zero) {
+                X(register[0]);
+            }
+            elif (parity01 == One and parity12 == One) {
+                X(register[1]);
+            }
+            elif (parity01 == Zero and parity12 == One) {
+                X(register[2]);
+            }
     
-       operation Encode(register : Qubit[]) : Unit is Adj
-       {
-           CNOT(register[0], register[1]);
-           CNOT(register[0], register[2]);
-       }
+            return parity01 == One or parity12 == One;
+        }
     
-       operation MeasureSyndrome(register : Qubit[]) : (Result, Result)
-       {
-           // Verify parity between qubits.
-           let parity01 = Measure([PauliZ, PauliZ, PauliI], register);
-           let parity12 = Measure([PauliI, PauliZ, PauliZ], register);
-           return (parity01, parity12);
-       }
+        operation Encode(register : Qubit[]) : Unit is Adj
+        {
+            CNOT(register[0], register[1]);
+            CNOT(register[0], register[2]);
+        }
+    
+        operation MeasureBitFlipSyndrome(encodedRegister : Qubit[], auxiliaryRegister : Qubit[]) : (Result, Result)
+        {
+            // Measure the bit flip syndrome by checking the parities between qubits 0 and 1, and between qubits 1 and 2.
+            ResetAll(auxiliaryRegister);
+            CNOT(encodedRegister[0], auxiliaryRegister[0]);
+            CNOT(encodedRegister[1], auxiliaryRegister[0]);
+            CNOT(encodedRegister[1], auxiliaryRegister[1]);
+            CNOT(encodedRegister[2], auxiliaryRegister[1]);
+            let parity01 = MResetZ(auxiliaryRegister[0]);
+            let parity12 = MResetZ(auxiliaryRegister[1]);
+            return (parity01, parity12);
+        }
     }
     ```
 
@@ -319,13 +334,17 @@ az quantum job output -o table --job-id [job-id]
 
 ### [Iterative phase estimation](#tab/tabid-qml)
 
-This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/about/alliances/microsoft/kpmg-and-microsoft-azure-quantum.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of Basic Measurement Feedback targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements and qubit reuse.
+*This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/about/alliances/microsoft/kpmg-and-microsoft-azure-quantum.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of Basic Measurement Feedback targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.*
 
-## Two Dimensional Inner Product Calculation Using Iterative Phase Estimation on Three Qubits
+## Two dimensional inner product calculation using iterative phase estimation on three qubits
 
-This notebook demonstrates an iterative phase estimation within Q#. It will use iterative phase estimation to calculate an inner product between two 2-dimensional vectors encoded on a target qubit and an ancilla qubit. An additional control qubit is also initialized which will be the only qubit used for measurement.
+This sample program demonstrates an iterative phase estimation within Q#. It uses iterative phase estimation to calculate an inner product between two 2-dimensional vectors encoded on a target qubit and an ancilla qubit. An additional control qubit is also initialized which will be the only qubit used for measurement.
 
 The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit, which is set up in the $\ket +$ state. The controlled Oracle operator generates a phase on the $\ket 1$ state of the control qubit. This can then be read by applying an H gate to the control qubit to make the phase observable when measuring.
+
+Due to the size of this code sample, the files are hosted on GitHub. You can download the source files, setup instructions, and accompanying documentation [here]. 
+
+<!--
 
 ### Create a VS Code project
 
@@ -640,5 +659,7 @@ replacing \[job-id\] with the displayed job id. The results show a solution in t
 
 > [!NOTE]
 > Selecting input parameters which only have one solution state (inner products of -1 or 1) are ideal for visibility when using a low number of shots.
+
+-->
 
 ***

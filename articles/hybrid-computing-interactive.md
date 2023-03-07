@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand the architecture and implementation of interactive (sessions) quantum computing.
-ms.date: 02/27/2023
+ms.date: 03/06/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk

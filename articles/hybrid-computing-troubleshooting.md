@@ -1,17 +1,17 @@
 ---
 author: bradben
 description: Understand the known issues of integrated hybrid programs with Q# and the QDK and supported hardware.
-ms.date: 03/02/2023
+ms.date: 03/06/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
 no-loc: ['Q#', '$$v']
 title: Known issues for integrated hybrid computing
-uid: microsoft.quantum.hybrid.known-issues
+uid: microsoft.quantum.hybrid.troubleshooting
 ---
 
-# Integrated hybrid known issues
+# Troubleshooting integrated hybrid issues
 
 Developing and running integrated hybrid algorithms on the latest supported hardware is a new and quickly evolving field. This article outlines the tools and methods currently available, along with known issues, and is updated as new features are supported.
 
@@ -21,7 +21,7 @@ As of this release, not all libraries in the QDK support integrated hybrid progr
 
 | Function or operation | Library |
 | --- | --- |
-| TBD | TBD |
+| SO WE NEED TO KEEP THIS TABLE? | TBD |
 | TBD | TBD |
 | TBD | TBD |
 
@@ -35,10 +35,10 @@ The following table lists the currently known limitations and restrictions of th
 | **Composite data types** | The use of composite data types, such as structure types, tuples, and sequential types, including arrays, isn't currently supported with integrated hybrid programs. This limitation also precludes the use of such data structures for callable values. Additionally, integrated programs can't use subroutines as first class values, and the use of function types is limited to globally declared [LLVM](https://llvm.org/) functions that may be called as part of program execution. |
 | **Unbounded loops or recursions** | Unbounded loops, and direct or indirect function recursions are out of scope for this release. |
 | **Dynamic qubit allocations and access** | Runtime functions for qubit allocation and release are not available, and the lack of support for local variables and composite data types prevents any qubit aliasing. |
-| **Partial applications** | TBD |
-| **Arrays** | Use ranges rather than arrays, when possible. TBD |
+| **Partial applications** | TBD<br>WHY - WHAT ARE THE RISKS OR LIMITATIONS? |
+| **Arrays** | Use ranges rather than arrays, when possible.<br>WHY - WHAT ARE THE RISKS OR LIMITATIONS?  |
 | **Integer support** | Current Quantinuum hardware support for integers is limited to 32-bit unsigned values, even though Q# integers are treated as 64-bit signed in the code. This limitation can affect some bitwise operations and comparisons. It's recommended to use positive integer values for integrated hybrid programs. |
-| **Returning constant values** | TBD |
+| **Returning constant values** | TBD<br>WHY - WHAT ARE THE RISKS OR LIMITATIONS? |
 | **Classical register limitations** | Each supported target has hardware-specific classical register counts, and your compilation may fail if the underlying program uses more classical registers than are available. These failures usually occur with loop structures. |
 
 ## Error messages and troubleshooting
@@ -60,7 +60,6 @@ This error can occur for multiple scenarios:
 - A comparison operation between signed integers. Current hardware supports comparison operations for unsigned integers only.
 - The amount of classical registers exceeded what the hardware supports. Try to reduce the loop count or move logic from within the loop to the outside of the loop, if possible.
 - An unbounded loop or a recursion was detected. Neither unbounded loops or recursion are supported.
-- 
 
 ### Warning QS5023: The target {0} doesn't support comparing measurement results.
 

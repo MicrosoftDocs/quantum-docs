@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand the concepts and techniques used in hybrid quantum computing.
-ms.date: 02/06/2023
+ms.date: 03/06/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -47,8 +47,6 @@ Error correction and fault tolerance are critical aspects of quantum computing, 
 
 ## Hybrid algorithms
 
-VQE
-
-QAOA
-
+- **Variational quantum eigensolver (VQE)** - a quantum algorithm for quantum chemistry, quantum simulations and optimization problems and is used to find the ground state of a given physical system. The classical computer is used to define quantum circuits with certain parameters. After the quantum state is measured, the classical computer evaluates how to improve the parameters and then resubmits the circuits. VQEs are usually long-running programs that can benefit from the tighter integration of hybrid quantum computing. 
+- **Quantum approximate optimization algorithm (QAOA)** - also a variational quantum algorithm, it is used for finding approximate solutions to combinatorial optimization problems - problems where the number of possible solutions grows extremely large with the size of the problem. Some examples of real-world applications are air traffic control, shipping or delivery routes, or financial optimizations.
 
