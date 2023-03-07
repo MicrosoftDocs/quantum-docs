@@ -36,10 +36,10 @@ The following table lists the currently known limitations and restrictions of th
 
 ### Incomplete Compilation 
 
-- Error code: honeywell - 1000
-- Error message: 1000: Compile error: Internal Error: Incomplete Compilation 
-- Type: Job error
-- Source: Target compiler
+- Error code: **honeywell - 1000**
+- Error message: **1000: Compile error: Internal Error: Incomplete Compilation** 
+- Type: **Job error**
+- Source: **Target compiler**
 
 This error can occur when a program that implements any of the following scenarios is submitted: 
 
@@ -91,10 +91,10 @@ This error can occur when a program that implements any of the following scenari
 
 ### Exceeded max allowed number of classical registers 
 
-- Error code: honeywell - 1000
-- Error message: 1000: Compile error: Exceeded max allowed number of classical registers 
-- Type: Job error
-- Source: Target compiler
+- Error code: **honeywell - 1000**
+- Error message: **1000: Compile error: Exceeded max allowed number of classical registers** 
+- Type: **Job error**
+- Source: **Target compiler**
 
 This error can occur when a program that requires a significant number of classical registers is submitted. Some patterns that can cause this issue are **for** loops with many iterations, deeply nested **if** statements, and a large number of qubit measurements. 
 
