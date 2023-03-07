@@ -345,7 +345,8 @@ This sample program demonstrates an iterative phase estimation within Q#. It use
 
 The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit, which is set up in the $\ket +$ state. The controlled Oracle operator generates a phase on the $\ket 1$ state of the control qubit. This can then be read by applying an H gate to the control qubit to make the phase observable when measuring.
 
-Due to the size of this code sample, the files are hosted on GitHub. You can download the source files, setup instructions, and accompanying documentation [here]. 
+> [!NOTE]
+> The files for this sample are hosted on GitHub. You can download the source files, setup instructions, and accompanying documentation [here]. 
 
 <!--
 
