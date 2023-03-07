@@ -76,8 +76,7 @@ This warning indicates that the Q# program is using advanced classical features,
 For some classical compute that is not compatible with the chosen target, the Azure Quantum service was unable to transform it into a classical or quantum instruction set.
 
 
-----------------------------------------------------------------------------------------------------
-
+## Errors: table option
 
 | Message | Type | Source | Notes |
 | --- | --- |--- | --- |
