@@ -43,7 +43,40 @@ The following table lists the currently known limitations and restrictions of th
 
 ## Error messages and troubleshooting
 
-The following table lists error messages you may encounter when compiling and submitting integrated hybrid programs.  
+### Compile error: Internal Error: Incomplete Compilation 
+
+- Type: Error
+- Source: Target compiler
+
+This error most likely occurs because of a comparison operation between signed integers. Current hardware supports comparison operations for unsigned integers only.
+
+### 1000: Compile error
+
+- Type: Error
+- Source: Target compiler
+
+This error can occur for multiple scenarios:
+
+- A comparison operation between signed integers. Current hardware supports comparison operations for unsigned integers only.
+- The amount of classical registers exceeded what the hardware supports. Try to reduce the loop count or move logic from within the loop to the outside of the loop, if possible.
+- An unbounded loop or a recursion was detected. Neither unbounded loops or recursion are supported.
+
+### Warning QS5028: This construct requires a classical runtime capability that is not supported by the target
+
+- Type: Warning
+- Source: Target compiler
+
+This warning indicates that the Q# program is using advanced classical features, which must be optimized out during [QIR](xref:microsoft.quantum.concepts.qir) processing. If this optimization cannot occur, the program execution may fail at a later compilation step.
+
+### External call 'llvm.assume:void (i1)' isn't allowed for this adaptor (generic) / Fatal error: QIR isn't valid within the defined adaptor
+
+- Type: Error
+- Source: Target compiler
+
+For some classical compute that is not compatible with the chosen target, the Azure Quantum service was unable to transform it into a classical or quantum instruction set.
+
+
+----------------------------------------------------------------------------------------------------
 
 
 | Message | Type | Source | Notes |
@@ -52,16 +85,9 @@ The following table lists error messages you may encounter when compiling and su
 | Job ID \[JobID\] failed or was cancelled with the message: 1000: Compile error:  | Error | Target compiler |- Quantinuum hardware supports comparison operations for unsigned integers only.<br>- The amount of classical registers exceeded what the hardware supports. Try to reduce the loop count or move logic from within the loop to the outside of the loop, if possible.<br>- Neither unbounded loops or recursion are supported. |
 | Warning QS5028: Warning QS5028: This construct requires a classical runtime capability that is not supported by the target  | Warning |Target compiler | This warning indicates that the Q# program is using advanced classical features, which must be optimized out during [QIR](xref:microsoft.quantum.concepts.qir) processing. If this optimization cannot occur, the program execution may fail at a later compilation step. |
 | Job ID \[JobId\] failed or was cancelled with the message: <br>error - /controller/artifacts/labeledQir.bc:10257,61 - External call 'llvm.assume:void (i1)' isn't allowed for this adaptor (generic). <br>error - /controller/artifacts/labeledQir.bc:10257,61 - Fatal error: QIR isn't valid within the defined adaptor | Error | Target compiler | For some classical compute that is not compatible with the chosen target, the Azure Quantum service was unable to transform it into a classical or quantum instruction set. |
-
-
-
-<!--
-
 | Job ID \[JobID\] failed or was cancelled with the message: 1000: Compile error:  **Exceeded max allowed number of classical registers** | Error | Azure Quantum service | TBD |
 | Warning QS5027: The callable {0} requires runtime capabilities which are not supported by the target {1}. | Warning |TBD | TBD |
 | Warning QS5026: "The variable \"{0}\" cannot be reassigned here." + "In conditional blocks that depend on a measurement result, the target {1} only supports reassigning variables that were declared within the block." | Warning |TBD | TBD |
 | Warning QS5025: "A return statement cannot be used here." + "The target {0} doesn't support return statements in conditional blocks that depend on a measurement result." | Warning |TBD | TBD |
 | Warning QS5024: "Measurement results cannot be compared here." + "The target {0} only supports comparing measurement results as part of the condition of an if- or elif-statement in an operation." | Warning |TBD | TBD |
 | Warning QS5023: "The target {0} doesn't support comparing measurement results." | Warning |TBD | TBD |
-
--->
