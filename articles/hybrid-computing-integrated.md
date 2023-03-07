@@ -167,28 +167,28 @@ Features to note about this sample:
     }
     ```
 
-From a terminal window in VS Code, connect to your Azure Quantum workspace and set the default resources.
+1. From a terminal window in VS Code, connect to your Azure Quantum workspace and set the default resources.
 
-```azurecli
-az login
-```
+    ```azurecli
+    az login
+    ```
+    
+    > [!NOTE]
+    > Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace. 
+    
+    ```azurecli
+    az account set --subscription <MySubscriptionID>
+    
+    az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
+    ```
 
-> [!NOTE]
-> Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace. 
+1. Submit the job and view the results. This run uses approximately 10.65 eHQC's (Quantinuum emulator billing units)
 
-```azurecli
-az account set --subscription <MySubscriptionID>
-
-az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
-```
-
-Submit the job and view the results. This run uses approximately 10.65 eHQC's (Quantinuum emulator billing units)
-
-```azurecli
-az quantum job submit --target-id quantinuum.sim.h1-1e --job-name CheckGHZ --target-capability AdaptiveExecution --shots 50
-
-az quantum job output -o table --job-id [job-id]
-```
+    ```azurecli
+    az quantum job submit --target-id quantinuum.sim.h1-1e --job-name CheckGHZ --target-capability AdaptiveExecution --shots 50
+    
+    az quantum job output -o table --job-id [job-id]
+    ```
 
 ![GHZ output](~/media/hybrid/ghz-output.png)
 
@@ -320,25 +320,27 @@ It leverages integrated hybrid computing features to count the number of times e
     }
     ```
 
-From a terminal window in VS Code, connect to your Azure Quantum workspace and set the default resources.
+1. From a terminal window in VS Code, connect to your Azure Quantum workspace and set the default resources.
 
-> [!NOTE]
-> Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace. 
+    ```azurecli
+    az login
+    ```
 
-```azurecli
-az login
+    > [!NOTE]
+    > Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace. 
+    
+    ```azurecli
+    az account set --subscription <MySubscriptionID>
+    
+    az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
+    ```
 
-az account set --subscription <MySubscriptionID>
+1. Submit the job and view the results. This run uses approximately 11.31 eHQC's (Quantinuum emulator billing units)
 
-az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
-```
-
-Submit the job and view the results. This run uses approximately 11.31 eHQC's (Quantinuum emulator billing units)
-
-```azurecli
-az quantum job submit --target-id quantinuum.sim.h1-1e --job-name ErrorCorrection --target-capability AdaptiveExecution --shots 50
-
-az quantum job output -o table --job-id [job-id]
+    ```azurecli
+    az quantum job submit --target-id quantinuum.sim.h1-1e --job-name ErrorCorrection --target-capability AdaptiveExecution --shots 50
+    
+    az quantum job output -o table --job-id [job-id]
 ```
 
 ### [Iterative phase estimation](#tab/tabid-qml)
