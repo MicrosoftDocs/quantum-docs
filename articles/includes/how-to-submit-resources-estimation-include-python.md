@@ -154,7 +154,7 @@ For more information, see [Target parameters](xref:microsoft.quantum.overview.re
 Next, estimate the cost for the same algorithm using the Majorana-based qubit parameter, `qubitParams`, "qubit_maj_ns_e6".
 
 ```python
-result = qsharp.azure.execute(EstimateMultiplication8,
+result = qsharp.azure.execute(EstimateMultiplication, bitwidth=8, 
             jobParams={
                 "qubitParams": {
                     "name": "qubit_maj_ns_e6"
@@ -235,7 +235,7 @@ A single T factory is composed of 3 rounds of distillation:
 You can rerun the resource estimation job for the same example on the Majorana-based qubit parameters with a floqued QEC scheme, `qecScheme`.
 
 ```python
-result_maj_floquet = qsharp.azure.execute(EstimateMultiplication8,
+result_maj_floquet = qsharp.azure.execute(EstimateMultiplication, bitwidth=8,
             jobParams={
                 "qubitParams": {
                     "name": "qubit_maj_ns_e6"
@@ -251,7 +251,7 @@ result_maj_floquet
 Next, rerun the same quantum circuit with an `errorBudget` of 10%.
 
 ```python
-result_maj_floquet_e1 = qsharp.azure.execute(EstimateMultiplication8,
+result_maj_floquet_e1 = qsharp.azure.execute(EstimateMultiplication, bitwidth=8,
             jobParams={
                 "qubitParams": {
                     "name": "qubit_maj_ns_e6"
