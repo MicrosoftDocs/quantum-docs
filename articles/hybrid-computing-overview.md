@@ -26,7 +26,7 @@ As quantum technology evolves and advances, the classical and quantum processes 
 | [**Integrated quantum computing**](xref:microsoft.quantum.hybrid.integrated) | With integrated quantum computing, the classical and quantum architectures are tightly coupled, allowing classical computations to be performed while physical qubits are coherent. Though limited by qubit life and error correction, this allows for quantum programs to move away from just circuits. Programs can now use common programming constructs to perform mid-circuit measurements, optimize and reuse qubits, and adapt in real-time to the QPU. Examples of scenarios that can take advantage of this model are adaptive phase estimation and machine learning.   |
 | [**Distributed quantum computing**](xref:microsoft.quantum.hybrid.distributed) | In this architecture, classical computation is working alongside logical qubits. The long coherence time provided by logical qubits enables complex and distributed computation across heterogenous cloud resources. Paired with a QPU composed of a large number of qubits, you can expect this architecture to be used to solve problems such as evaluation of full catalytic reactions that can benefit commercial applications and the hardest problems facing humanity including carbon capture and discovery of new drugs.  |
 
-![Hybrid quantum computing models](~/media/hybrid/hybrid-7.gif)
+![Hybrid quantum computing models](~/media/hybrid/overview.png)
 
 
 ## Next steps
