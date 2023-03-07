@@ -90,17 +90,15 @@ After a successful run on the emulator:
 The following samples demonstrate the current feature set for integrated hybrid computing. 
 
 - Verify an entangled GHZ state
-- Three-bit qubit repetition
+- Three-qubit repetition
 - Iterative phase estimation
-
-> [!NOTE]
-> If you are new to Azure Quantum, you will need an Azure subscription and an Azure Quantum workspace to run the samples against quantum hardware. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ### Prerequisites
 
 - If you are new to Azure Quantum, you will need an Azure subscription and an Azure Quantum workspace to run the samples against quantum hardware. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - VS Code and the Quantum Development Kit set up in your local environment. For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#use-q-and-python-with-visual-studio-and-visual-studio-code).
 - Ensure that VS Code has latest version of the Quantum Development Kit (0.27.258160). 
+  - In VS Code, select **Ctrl + Shift + X** and search for "Microsoft Quantum Development Kit".
 
 The samples in this article are set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of these and other samples, login in to your Azure Portal workspace and view the samples from the **Hybrid quantum computing** tab in the Samples gallery. You can either run the notebook in the cloud or download it and run it locally. 
 
