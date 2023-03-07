@@ -17,7 +17,7 @@ Once you've learned how to [customize](xref:microsoft.quantum.overview.resources
 
 ## Run multiple configurations as a single job
 
-A resource estimation job consist of two types of job parameters: [target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters), that is qubit model, QEC schemes, and error budget; and, optionally, operation arguments, that is arguments that can be passed to the QIR program. The Azure Quantum Resource Estimator allows you to submit jobs with multiple configuration of job parameters, or multiple *items*, as a single job to avoid rerunning multiple jobs on the same quantum program. This is also known as *batching*.
+A resource estimation job consist of two types of job parameters: [**target parameters**](xref:microsoft.quantum.overview.resources-estimator#target-parameters), that is qubit model, QEC schemes, and error budget; and, optionally, **operation arguments**, that is arguments that can be passed to the QIR program. The Azure Quantum Resource Estimator allows you to submit jobs with multiple configuration of job parameters, or multiple *items*, as a single job to avoid rerunning multiple jobs on the same quantum program. This is also known as *batching*.
 
 One item consists of one configuration of job parameters, that is one configuration of target parameters and operation arguments. Several items are represented as an array of job parameters. 
 
@@ -81,7 +81,7 @@ The result of the resource estimation job is displayed in a table with multiple 
 
  :::image type="content" source="media/batching-qsharp.png" alt-text="Screenshot of the table of results of a resource estimation job for 16 configurations.":::
 
-You can also access individual results by providing a number as index. For example, `results[0]` to show the results table of the first configuration, which has the first set of target parameters and bit width 8. 
+You can also access individual results by providing a number as index. For example, `results[0]` to show the results table of the first configuration, which has the first set of target parameters and bit width of 8. 
 
 ### Batching with Qiskit
 
