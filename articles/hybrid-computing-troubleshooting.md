@@ -45,7 +45,7 @@ The following table lists the currently known limitations and restrictions of th
 - [QIR isn't valid within the defined adaptor](#external-call-llvmassumevoid-i1-isnt-allowed-for-this-adaptor-generic--fatal-error-qir-isnt-valid-within-the-defined-adaptor)
 
 
-### Incomplete compilation 
+#### Incomplete compilation 
 
 - Error code: **honeywell - 1000**
 - Error message: **1000: Compile error: Internal Error: Incomplete Compilation** 
@@ -100,7 +100,7 @@ This error can occur when a program that implements any of the following scenari
     } 
     ```
 
-### Exceeded max allowed number of classical registers 
+#### Exceeded max allowed number of classical registers 
 
 - Error code: **honeywell - 1000**
 - Error message: **1000: Compile error: Exceeded max allowed number of classical registers** 
@@ -127,52 +127,66 @@ operation ClassicalRegisterUsage() : Result {
 } 
 ```
 
-### Warning QS5023: The target {0} doesn't support comparing measurement results.
+#### Warning QS5023
 
-- Type: Warning
-- Source: Target compiler
-
-TBD
-
-### Warning QS5024: Measurement results cannot be compared here. The target {0} only supports comparing measurement results as part of the condition of an if- or elif-statement in an operation.
-
-- Type: Warning
-- Source: Target compiler
+- Error code: **Warning QS5023**
+- Error message: **The target {0} doesn't support comparing measurement results** 
+- Type: **Warning**
+- Source: **Target compiler**
 
 TBD
 
-### Warning QS5025: A return statement cannot be used here. The target {0} doesn't support return statements in conditional blocks that depend on a measurement result.
+#### Warning QS5024
 
-- Type: Warning
-- Source: Target compiler
-
-TBD
-
-### Warning QS5026: The variable "{0}" cannot be reassigned here. In conditional blocks that depend on a measurement result, the target {1} only supports reassigning variables that were declared within the block.
-
-- Type: Warning
-- Source: Target compiler
+- Error code: **Warning QS5024**
+- Error message: **Measurement results cannot be compared here. The target {0} only supports comparing measurement results as part of the condition of an if- or elif-statement in an operation.** 
+- Type: **Warning**
+- Source: **Target compiler**
 
 TBD
 
-### Warning QS5027: The callable {0} requires runtime capabilities which are not supported by the target {1}.
+#### Warning QS5025
 
-- Type: Warning
-- Source: Target compiler
+- Error code: **Warning QS5025**
+- Error message: **A return statement cannot be used here. The target {0} doesn't support return statements in conditional blocks that depend on a measurement result.** 
+- Type: **Warning**
+- Source: **Target compiler**
 
 TBD
 
-### Warning QS5028: This construct requires a classical runtime capability that is not supported by the target
+#### Warning QS5026
 
-- Type: Warning
-- Source: Target compiler
+- Error code: **Warning QS5026**
+- Error message: **The variable "{0}" cannot be reassigned here. In conditional blocks that depend on a measurement result, the target {1} only supports reassigning variables that were declared within the block.** 
+- Type: **Warning**
+- Source: **Target compiler**
+
+TBD
+
+#### Warning QS5027
+
+- Error code: **Warning QS5027**
+- Error message: **The callable {0} requires runtime capabilities which are not supported by the target {1}.** 
+- Type: **Warning**
+- Source: **Target compiler**
+
+TBD
+
+#### Warning QS5028
+
+- Error code: **Warning QS5028**
+- Error message: **This construct requires a classical runtime capability that is not supported by the target.** 
+- Type: **Warning**
+- Source: **Target compiler**
 
 This warning indicates that the Q# program is using advanced classical features, which must be optimized out during [QIR](xref:microsoft.quantum.concepts.qir) processing. If this optimization cannot occur, the program execution may fail at a later compilation step.
 
-### External call 'llvm.assume:void (i1)' isn't allowed for this adaptor (generic) / Fatal error: QIR isn't valid within the defined adaptor
+#### QIR isn't valid within the defined adaptor
 
-- Type: Error
-- Source: Target compiler
+- Error code: 
+- Error message: **External call 'llvm.assume:void (i1)' isn't allowed for this adaptor (generic) / Fatal error: QIR isn't valid within the defined adaptor** 
+- Type: **Error**
+- Source: **Target compiler**
 
 For some classical compute that is not compatible with the chosen target, the Azure Quantum service was unable to transform it into a classical or quantum instruction set.
 
