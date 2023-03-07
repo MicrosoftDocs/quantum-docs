@@ -386,7 +386,7 @@ bitwidth_index = 0
 results[bitwidth_index::len(bitwidths)]
 ```
 
- :::image type="content" source="media/advance-estimation-index0.PNG" alt-text="Screenshot of the table of results for the configuration with index 0.":::
+ :::image type="content" source="../media/advance-estimation-index0.PNG" alt-text="Screenshot of the table of results for the configuration with index 0.":::
 
 You can also access individual results by providing a number as index. For example, `results[1]` to show the results table of the configuration with the first set of target parameters and bit width 16.
 
@@ -396,6 +396,6 @@ Further, you can plot all items in the result object using the `plot()` function
 results.plot(labels=[f"{name} ({bitwidth} bit)" for name in names for bitwidth in bitwidths])
 ```
 
- :::image type="content" source="media/advance-estimation-plot.PNG" alt-text="Plot of runtime versus number of physical qubits for every configuration.":::
+ :::image type="content" source="../media/advance-estimation-plot.PNG" alt-text="Plot of runtime versus number of physical qubits for every configuration.":::
 
 
