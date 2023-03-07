@@ -36,14 +36,13 @@ The following table lists the currently known limitations and restrictions of th
 
 - [Incomplete compilation](#incomplete-compilation)
 - [Exceeded max allowed number of classical registers](#exceeded-max-allowed-number-of-classical-registers)
-- [Warning QS5023](#warning-qs5023-the-target-0-doesnt-support-comparing-measurement-results)
-- [Warning QS5024](#warning-qs5024-measurement-results-cannot-be-compared-here-the-target-0-only-supports-comparing-measurement-results-as-part-of-the-condition-of-an-if--or-elif-statement-in-an-operation)
-- [Warning QS5025](#warning-qs5025-a-return-statement-cannot-be-used-here-the-target-0-doesnt-support-return-statements-in-conditional-blocks-that-depend-on-a-measurement-result)
-- [Warning QS5026](#warning-qs5026-the-variable-0-cannot-be-reassigned-here-in-conditional-blocks-that-depend-on-a-measurement-result-the-target-1-only-supports-reassigning-variables-that-were-declared-within-the-block)
-- [Warning QS5027](#warning-qs5027-the-callable-0-requires-runtime-capabilities-which-are-not-supported-by-the-target-1)
-- [Warning QS5028](#warning-qs5028-this-construct-requires-a-classical-runtime-capability-that-is-not-supported-by-the-target)
-- [QIR isn't valid within the defined adaptor](#external-call-llvmassumevoid-i1-isnt-allowed-for-this-adaptor-generic--fatal-error-qir-isnt-valid-within-the-defined-adaptor)
-
+- [Warning QS5023](#warning-qs5023)
+- [Warning QS5024](#warning-qs5024)
+- [Warning QS5025](#warning-qs5025)
+- [Warning QS5026](#warning-qs5026)
+- [Warning QS5027](#warning-qs5027)
+- [Warning QS5028](#warning-qs5028)
+- [QIR isn't valid within the defined adaptor](#qir-isnt-valid-within-the-defined-adaptor)
 
 #### Incomplete compilation 
 
@@ -84,7 +83,7 @@ This error can occur when a program that implements any of the following scenari
     } 
     ```
 
-- Loops that depend on qubit measurement results. 
+- Unsupported loops that depend on qubit measurement results. 
 
     ```qsharp
     operation UnboundedLoops() : Result { 
