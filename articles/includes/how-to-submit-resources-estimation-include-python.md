@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 02/14/2023
+ms.date: 03/07/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -377,12 +377,14 @@ plt.show()
 
 #### Accessing the results table
 
-The result of the resource estimation job is displayed in a table with multiple results coming from the list of items. By default the max number of items to be displayed is $N = 5$. To display a list of items where $N > 5$, use `results[0:N]`.  Notice that the items are ordered by target parameters first, then by bitwidths. Therefore, all items with `bitwidth = 8` are at indices ${0, 4, 8}$, items with `bitwidth = 16` are at indices ${1, 5, 9}$, items with `bitwidth = 32` are at indices ${2, 6, 10}$, and items with `bitwidth = 48` are at indices ${3, 7, 11}$. The step size of 4 corresponds to the number of different bit widths.
+The result of the resource estimation job is displayed in a table with multiple results coming from the list of items. By default the maximum number of items to be displayed is five. To display a list of $N$ items where $N > 5$, use `results[0:N]`.  
+
+Notice that the items are ordered by target parameters first, then by bitwidths. Therefore, all items with `bitwidth = 8` are at indices ${0, 4, 8}$, items with `bitwidth = 16` are at indices ${1, 5, 9}$, items with `bitwidth = 32` are at indices ${2, 6, 10}$, and items with `bitwidth = 48` are at indices ${3, 7, 11}$. The step size of 4 corresponds to the number of different bit widths.
 
 You can display all estimation results for the first bit width in a side-by-side table.  
 
 ```python
-bitwidth_index = 0
+bitwidth_index = 0 # items using the first bith width, that is bitwidth = 8
 results[bitwidth_index::len(bitwidths)]
 ```
 
