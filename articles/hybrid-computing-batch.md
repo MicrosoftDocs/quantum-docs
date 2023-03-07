@@ -13,7 +13,7 @@ uid: microsoft.quantum.hybrid.batch
 
 # Batch quantum computing
 
-Typically, quantum circuits are sent one at a time to a quantum hardware target. When the result of the circuit is received by the client, the next one is added to the queue. You can parameterize your circuits by binding a variable to your circuit so that the variable’s value is not required when defining your circuit. 
+Typically, quantum circuits are sent one at a time as single jobs to a quantum hardware target. When the result of one circuit is received by the client, the next one is added as a new job to the queue. You can parameterize your circuits by binding a variable to your circuit so that the variable’s value is not required when defining your circuit. 
 
 You can also batch multiple pre-defined circuits into one job. The circuits are submitted to the quantum hardware as soon as the previous circuit is complete, reducing the wait between job submissions. 
 
