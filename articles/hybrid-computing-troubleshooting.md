@@ -15,22 +15,13 @@ uid: microsoft.quantum.hybrid.troubleshooting
 
 Developing and running integrated hybrid algorithms on the latest supported hardware is a new and quickly evolving field. This article outlines the tools and methods currently available, along with known issues, and is updated as new features are supported.
 
-## Supported libraries
-
-As of this release, not all libraries in the QDK support integrated hybrid programs. This table lists the common supported functions and operations.
-
-| Function or operation | Library |
-| --- | --- |
-| SO WE NEED TO KEEP THIS TABLE? | TBD |
-| TBD | TBD |
-| TBD | TBD |
-
 ## Feature limitations and restrictions
 
 The following table lists the currently known limitations and restrictions of the integrated hybrid feature set. Being aware of these limitations can help prevent errors as you explore integrated hybrid programs. This table is updated as the functionality is expanded.
 
 | Item | Notes |
 | --- | --- |
+| **Supported libraries** | As of this release, not all libraries in the QDK support integrated hybrid programs. |
 | **Compiler warnings** | By default, target-specific compiler errors are converted to warnings.  Be sure to validate your code on the simulator, emulator, or validator provided by the targeted hardware provider to detect issues prior to running on quantum hardware. |
 | **Composite data types** | The use of composite data types, such as structure types, tuples, and sequential types, including arrays, isn't currently supported with integrated hybrid programs. This limitation also precludes the use of such data structures for callable values. Additionally, integrated programs can't use subroutines as first class values, and the use of function types is limited to globally declared [LLVM](https://llvm.org/) functions that may be called as part of program execution. |
 | **Unbounded loops or recursions** | Unbounded loops, and direct or indirect function recursions are out of scope for this release. |
@@ -43,23 +34,87 @@ The following table lists the currently known limitations and restrictions of th
 
 ## Error messages and troubleshooting
 
-### Compile error: Internal Error: Incomplete Compilation 
+### Incomplete Compilation 
 
-- Type: Error
+- Error code: honeywell - 1000
+- Error message: 1000: Compile error: Internal Error: Incomplete Compilation 
+- Type: Job error
 - Source: Target compiler
 
-This error most likely occurs because of a comparison operation between signed integers. Current hardware supports comparison operations for unsigned integers only.
+This error can occur when a program that implements any of the following scenarios is submitted: 
 
-### 1000: Compile error
+- An unsupported integer comparison. 
 
-- Type: Error
+    ```qsharp
+    operation IntegerComparisons() : Bool[] { 
+        use register = Qubit[2]; 
+        mutable i = 0; 
+        if (MResetZ(register[0]) == Zero) { 
+            set i += 1; 
+        } 
+        mutable j = 0; 
+        if (MResetZ(register[1]) == One) { 
+            set j += 1; 
+        } 
+        let logicalResults = [ 
+            // Supported: equality comparisons with non-negative constants. 
+            i == 0, 
+            // Supported: equality comparisons between integer variables. 
+            i == j, 
+            // Not supported: equality comparisons with negative constants. 
+            i == -1, 
+            // Not supported: non-equality integer comparisons. 
+            i < 0, 
+            i <= i, 
+            i > 0, 
+            i >= j 
+        ]; 
+        return logicalResults; 
+    } 
+    ```
+
+- Loops that depend on qubit measurement results. 
+
+    ```qsharp
+    operation UnboundedLoops() : Result { 
+        use q = Qubit(); 
+        H(q); 
+        use t = Qubit(); 
+        repeat { 
+            X(t); 
+            H(q); 
+        } 
+        until MResetZ(q) == One; 
+        return MResetZ(t); 
+    } 
+    ```
+
+### Exceeded max allowed number of classical registers 
+
+- Error code: honeywell - 1000
+- Error message: 1000: Compile error: Exceeded max allowed number of classical registers 
+- Type: Job error
 - Source: Target compiler
 
-This error can occur for multiple scenarios:
+This error can occur when a program that requires a significant number of classical registers is submitted. Some patterns that can cause this issue are **for** loops with many iterations, deeply nested **if** statements, and a large number of qubit measurements. 
 
-- A comparison operation between signed integers. Current hardware supports comparison operations for unsigned integers only.
-- The amount of classical registers exceeded what the hardware supports. Try to reduce the loop count or move logic from within the loop to the outside of the loop, if possible.
-- An unbounded loop or a recursion was detected. Neither unbounded loops or recursion are supported.
+```qsharp
+operation ClassicalRegisterUsage() : Result { 
+    use q = Qubit(); 
+    use t = Qubit(); 
+    mutable count = 0; 
+    for _ in 1 .. 100 { 
+        H(q); 
+        if (MResetZ(q) == One) { 
+            X(t); 
+        } 
+        if (MResetZ(t) == One) { 
+            set count += 1; 
+        } 
+    } 
+    return MResetZ(t); 
+} 
+```
 
 ### Warning QS5023: The target {0} doesn't support comparing measurement results.
 
