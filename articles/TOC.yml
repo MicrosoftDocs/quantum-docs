@@ -45,6 +45,22 @@
       href: tutorial-resource-estimator-qir.md
   - name: Quantum Machine Learning
     href: overview-quantum-machine-learning.md
+  - name: Hybrid quantum computing (QC)
+    items: 
+    - name: An introduction to hybrid QC
+      href: hybrid-computing-overview.md
+    - name: Batch hybrid QC
+      href: hybrid-computing-batch.md
+    - name: Interactive hybrid QC
+      href: hybrid-computing-interactive.md
+    - name: Integrated hybrid QC
+      href: hybrid-computing-integrated.md
+    - name: Distributed hybrid QC
+      href: hybrid-computing-distributed.md
+    - name: Concepts for hybrid QC
+      href: hybrid-computing-concepts.md
+    - name: Troubleshooting integrated hybrid QC
+      href: hybrid-computing-troubleshooting.md
   - name: Run quantum circuits with Python
     items:
     - name: Submit a circuit with Qiskit
