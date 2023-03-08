@@ -15,7 +15,11 @@ uid: microsoft.quantum.overview.hybrid
 
 *Hybrid quantum computing* refers to the processes and architecture of a classical computer and a quantum computer working together to solve a problem. Classical computers have always been used in quantum computing to define quantum gates, control configuration of the quantum computer, submit jobs, and process results from the quantum computer. With the latest generation of hybrid quantum computing architecture available in Azure Quantum, Integrated Hybrid, you can start programming quantum computers by mixing classical and quantum instructions together.
 
+> [!VIDEO 18bede0d-b000-4938-99e5-6c22282df594]
+
+<!--
 ![Hybrid quantum computing models](~/media/hybrid/overview.png)
+-->
 
 ## Hybrid quantum computing architectures
 
