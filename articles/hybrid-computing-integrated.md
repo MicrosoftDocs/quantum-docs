@@ -351,14 +351,10 @@ This sample program demonstrates an iterative phase estimation within Q#. It use
 
 The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit, which is set up in the $\ket +$ state. The controlled Oracle operator generates a phase on the $\ket 1$ state of the control qubit. This can then be read by applying an H gate to the control qubit to make the phase observable when measuring.
 
-> [!NOTE]
-> The files for this sample are hosted on GitHub. You can download the source files, setup instructions, and accompanying documentation [here]. 
-
-<!--
-
 ### Create a VS Code project
 
 1. In VS Code, create a new Q# standalone console application project named **IPE**. 
+    1. Select **View > Command Pallete > Q#: Create new project > Standalone console application**
 1. Replace the configuration in **IPE.csproj** with the following:
 
     ```xml
@@ -636,12 +632,14 @@ operation HardwareInnerProduct() : Int{
 
 Next, connect to your Azure Quantum workspace and set the default resources.
 
+```azurecli
+az login
+```
+
 > [!NOTE]
 > Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace. 
 
 ```azurecli
-az login
-
 az account set --subscription <MySubscriptionID>
 
 az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
@@ -669,8 +667,6 @@ replacing \[job-id\] with the displayed job id. The results show a solution in t
 
 > [!NOTE]
 > Selecting input parameters which only have one solution state (inner products of -1 or 1) are ideal for visibility when using a low number of shots.
-
--->
 
 ***
 
