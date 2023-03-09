@@ -133,16 +133,12 @@ operation ClassicalRegisterUsage() : Result {
 - Type: **Warning**
 - Source: **Target compiler**
 
-
-
 #### Warning QS5024
 
 - Error code: **Warning QS5024**
 - Error message: **Measurement results cannot be compared here. The target {0} only supports comparing measurement results as part of the condition of an if- or elif-statement in an operation.** 
 - Type: **Warning**
 - Source: **Target compiler**
-
-
 
 #### Warning QS5025
 
@@ -151,7 +147,7 @@ operation ClassicalRegisterUsage() : Result {
 - Type: **Warning**
 - Source: **Target compiler**
 
-
+The warning suggests that you should have your return statement in the last block.
 
 #### Warning QS5026
 
@@ -160,7 +156,7 @@ operation ClassicalRegisterUsage() : Result {
 - Type: **Warning**
 - Source: **Target compiler**
 
-
+This warning indicates that your program needs to be adapted to run on the target hardware. Please define an operation for just the body of the loop that prepares a state and measures it, and run that as a job.
 
 #### Warning QS5027
 
@@ -169,7 +165,7 @@ operation ClassicalRegisterUsage() : Result {
 - Type: **Warning**
 - Source: **Target compiler**
 
-
+This warning indicates that your program is using callables attempting to perform classical computations that aren't supported on the target hardware. For example, some hardware providers don't support classical computation with `Boolean` or `Int` data types.
 
 #### Warning QS5028
 
