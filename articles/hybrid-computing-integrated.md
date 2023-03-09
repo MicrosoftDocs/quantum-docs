@@ -13,7 +13,7 @@ uid: microsoft.quantum.hybrid.integrated
 
 # Integrated hybrid computing
 
-Integrated hybrid computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Using qubit reuse techniques, larger programs can run on machines utilizing a smaller number of qubits. 
+Integrated hybrid computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Using qubit reuse techniques, larger programs can run on machines utilizing a smaller number of qubits.
 
 For more discussion, see:
 
@@ -24,9 +24,9 @@ For more discussion, see:
 
 ## Supported hardware
 
-Currently, the integrated hybrid computing model in Azure Quantum is supported on [Quantinuum](xref:microsoft.quantum.providers.quantinuum) targets. 
+Currently, the integrated hybrid computing model in Azure Quantum is supported on [Quantinuum](xref:microsoft.quantum.providers.quantinuum) targets.
 
-### Quantinuum 
+### Quantinuum
 
 |Supported feature| Notes |
 |---|---|
@@ -42,11 +42,11 @@ To start exploring integrated hybrid programming, we suggest walking through the
 
 ## Submitting integrated hybrid jobs
 
-When submitting an integrated hybrid job, you need to add a *target capability* parameter after specifying the target. Other than that, integrated hybrid programs on Azure Quantum are run and managed just as regular quantum jobs. Each job has a single job ID and the result is a single histogram. 
+When submitting an integrated hybrid job, you need to add a *target capability* parameter after specifying the target. Other than that, integrated hybrid programs on Azure Quantum are run and managed just as regular quantum jobs. Each job has a single job ID and the result is a single histogram.
 
 ### IQ\#
 
-When using the IQ# kernel in a Jupyter Notebook, use the [%azure.target-capability](xref:microsoft.quantum.iqsharp.magic-ref.azure.target-capability) magic command with the `AdaptiveExecution` parameter. 
+When using the IQ# kernel in a Jupyter Notebook, use the [%azure.target-capability](xref:microsoft.quantum.iqsharp.magic-ref.azure.target-capability) magic command with the `AdaptiveExecution` parameter.
 
 ```qsharp
 %azure.target quantinuum.sim.h1-1e
@@ -55,7 +55,7 @@ When using the IQ# kernel in a Jupyter Notebook, use the [%azure.target-capabili
 
 ### Python + Q\#
 
-When using the *qsharp* Python package, use the `qsharp.azure.target_capability` function with the `AdaptiveExecution` parameter. 
+When using the *qsharp* Python package, use the `qsharp.azure.target_capability` function with the `AdaptiveExecution` parameter.
 
 ```python
 qsharp.azure.target("quantinuum.sim.h1-1e")
@@ -72,22 +72,22 @@ az quantum job submit --target-capability AdaptiveExecution --target-id quantinu
 
 ## Estimating the cost of an integrated hybrid job
 
-You can estimate the cost of running an integrated hybrid job on Quantinuum hardware by running it on an emulator first. 
+You can estimate the cost of running an integrated hybrid job on Quantinuum hardware by running it on an emulator first.
 
 After a successful run on the emulator:
 
 1. In your Azure Quantum workspace, select **Job management**.
-1. Select the job you submitted. 
+1. Select the job you submitted.
 1. In the **Job details** popup, select **Cost Estimation** to view how many eHQC's (Quantinuum emulator credits) were used. This number translates directly to the number of HQC's (Quantinnum quantum credits) that are needed to run the job on Quantinuum hardware.
 
 ![Cost estimation](~/media/hybrid/cost-estimation.png)
 
 > [!NOTE]
-> Quantinuum unrolls the entire circuit and calculates the cost on all code paths, whether they are conditionally executed or not. 
+> Quantinuum unrolls the entire circuit and calculates the cost on all code paths, whether they are conditionally executed or not.
 
 ## Integrated hybrid samples
 
-The following samples demonstrate the current feature set for integrated hybrid computing. 
+The following samples demonstrate the current feature set for integrated hybrid computing.
 
 - Verify an entangled GHZ state
 - Three-qubit repetition
@@ -97,27 +97,27 @@ The following samples demonstrate the current feature set for integrated hybrid 
 
 - If you are new to Azure Quantum, you will need an Azure subscription and an Azure Quantum workspace to run the samples against quantum hardware. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - VS Code and the Quantum Development Kit set up in your local environment. For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#use-q-and-python-with-visual-studio-and-visual-studio-code).
-- Ensure that VS Code has latest version of the Quantum Development Kit (0.27.258160). 
+- Ensure that VS Code has latest version of the Quantum Development Kit (0.27.258160).
   - In VS Code, select **Ctrl + Shift + X** and search for "Microsoft Quantum Development Kit".
 
-The samples in this article are set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of these and other samples, login in to your Azure Portal workspace and view the samples from the **Hybrid quantum computing** tab in the Samples gallery. You can either run the notebook in the cloud or download it and run it locally. 
+The samples in this article are set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of these and other samples, login in to your Azure Portal workspace and view the samples from the **Hybrid quantum computing** tab in the Samples gallery. You can either run the notebook in the cloud or download it and run it locally.
 
 To troubleshooting issues with integrated hybrid programs, see [Troubleshooting integrated hybrid](xref:microsoft.quantum.hybrid.troubleshooting).
 
 ### [Check GHZ state](#tab/tabid-ghz)
 
-In this sample, you will discover how to blend classical and quantum instructions in the same program, all fully processed by the quantum computing backend. 
+In this sample, you will discover how to blend classical and quantum instructions in the same program, all fully processed by the quantum computing backend.
 
 Features to note about this sample:
 
 - The loop and qubit measurements happen while the qubits remain coherent.
-- The routine mixes classical and quantum compute operations. 
+- The routine mixes classical and quantum compute operations.
 - You do not need to learn to program for specialized high-performance hardware running next to the QPU (such as FPGAs).
-- Running an equivalent program without the integrated hybrid features would require returning every intermediate measurement result and then running post-processing on the data. 
+- Running an equivalent program without the integrated hybrid features would require returning every intermediate measurement result and then running post-processing on the data.
 
 ### Create a VS Code project
 
-1. In VS Code, create a new Q# standalone console application project named **CheckGHZ**. 
+1. In VS Code, create a new Q# standalone console application project named **CheckGHZ**.
     1. Select **View > Command Pallete > Q#: Create new project > Standalone console application**
 1. Replace the configuration in **CheckGHZ.csproj** with the following:
 
@@ -136,10 +136,10 @@ Features to note about this sample:
 
     ```qsharp
     namespace Microsoft.Quantum.Samples {
-    
+
         open Microsoft.Quantum.Measurement;
         open Microsoft.Quantum.Intrinsic;
-    
+
         /// # Summary
         /// Counts the number of times measurements of a prepared GHZ state did not match the expected correlations.
         @EntryPoint() // The EntryPoint attribute is used to mark that this operation is where a quantum program will start running.
@@ -151,10 +151,10 @@ Features to note about this sample:
                 H(q[0]);
                 CNOT(q[0], q[1]);
                 CNOT(q[1], q[2]);
-    
+
                 // Measures and resets the 3 qubits
                 let (r0, r1, r2) = (MResetZ(q[0]), MResetZ(q[1]), MResetZ(q[2]));
-    
+
                 // Adjusts classical value based on qubit measurement results
                 if not (r0 == r1 and r1 == r2) {
                     set mismatch += 1;
@@ -170,13 +170,13 @@ Features to note about this sample:
     ```azurecli
     az login
     ```
-    
+
     > [!NOTE]
-    > Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace. 
-    
+    > Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace.
+
     ```azurecli
     az account set --subscription <MySubscriptionID>
-    
+
     az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
     ```
 
@@ -184,7 +184,7 @@ Features to note about this sample:
 
     ```azurecli
     az quantum job submit --target-id quantinuum.sim.h1-1e --job-name CheckGHZ --target-capability AdaptiveExecution --shots 50
-    
+
     az quantum job output -o table --job-id [job-id]
     ```
 
@@ -198,20 +198,20 @@ It leverages integrated hybrid computing features to count the number of times e
 
 ### Create a VS Code project
 
-1. In VS Code, create a new Q# standalone console application project named **ThreeQubit**. 
+1. In VS Code, create a new Q# standalone console application project named **ThreeQubit**.
     1. Select **View > Command Pallete > Q#: Create new project > Standalone console application**
 1. Replace the configuration in **ThreeQubit.csproj** with the following:
 
     ```xml
     <Project Sdk="Microsoft.Quantum.Sdk/0.27.258160">
-    
+
       <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
         <ExecutionTarget>quantinuum</ExecutionTarget>
         <TargetCapability>AdaptiveExecution</TargetCapability>
       </PropertyGroup>
-    
+
     </Project>
     ```
 
@@ -219,21 +219,21 @@ It leverages integrated hybrid computing features to count the number of times e
 
     ```qsharp
     namespace Microsoft.Quantum.Samples {
-    
+
         open Microsoft.Quantum.Intrinsic;
         open Microsoft.Quantum.Math;
         open Microsoft.Quantum.Measurement;
-    
+
         @EntryPoint()
         operation ThreeQubitRepetitionCode() : (Bool, Int) {
             // Use two qubit registers, one for encoding and an auxiliary one for syndrome measurements.
             use encodedRegister = Qubit[3];
             use auxiliaryRegister = Qubit[2];
-    
+
             // Initialize the first qubit in the register to a |-〉 state.
             H(encodedRegister[0]);
             Z(encodedRegister[0]);
-    
+
             // Apply several unitary operations to the encoded qubits performing bit flip detection and correction between
             // each application.
             mutable bitFlipCount = 0;
@@ -246,7 +246,7 @@ It leverages integrated hybrid computing features to count the number of times e
                 for _ in 1 .. iterations {
                     // Apply a sequence of rotations to the encoded register that effectively perform an identity operation.
                     ApplyRotationalIdentity(encodedRegister);
-    
+
                     // Measure the bit flip error syndrome, revert the bit flip if needed, and increase the count if a bit flip occurred.
                     let (parity01, parity12) = MeasureBitFlipSyndrome(encodedRegister, auxiliaryRegister);
                     let bitFlipReverted = RevertBitFlip(encodedRegister, parity01, parity12);
@@ -255,18 +255,18 @@ It leverages integrated hybrid computing features to count the number of times e
                     }
                 }
             }
-    
+
             // Transform the qubit to the |1〉 state and measure it in the computational basis.
             H(encodedRegister[0]);
             let result = MResetZ(encodedRegister[0]) == One;
             ResetAll(encodedRegister);
-    
+
             // The output of the program is a boolean-integer tuple where the boolean represents whether the qubit
             // measurement result was the expected one and the integer represents the number of times bit flips occurred
             // throughout the program.
             return (result, bitFlipCount);
         }
-    
+
         operation ApplyRotationalIdentity(register : Qubit[]) : Unit is Adj
         {
             // This operation implements an identity operation using rotations about the x-axis.
@@ -281,7 +281,7 @@ It leverages integrated hybrid computing features to count the number of times e
                 }
             }
         }
-    
+
         operation RevertBitFlip(register : Qubit[], parity01 : Result, parity12 : Result) : Bool
         {
             if (parity01 == One and parity12 == Zero) {
@@ -293,16 +293,16 @@ It leverages integrated hybrid computing features to count the number of times e
             elif (parity01 == Zero and parity12 == One) {
                 X(register[2]);
             }
-    
+
             return parity01 == One or parity12 == One;
         }
-    
+
         operation Encode(register : Qubit[]) : Unit is Adj
         {
             CNOT(register[0], register[1]);
             CNOT(register[0], register[2]);
         }
-    
+
         operation MeasureBitFlipSyndrome(encodedRegister : Qubit[], auxiliaryRegister : Qubit[]) : (Result, Result)
         {
             // Measure the bit flip syndrome by checking the parities between qubits 0 and 1, and between qubits 1 and 2.
@@ -325,11 +325,11 @@ It leverages integrated hybrid computing features to count the number of times e
     ```
 
     > [!NOTE]
-    > Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace. 
-    
+    > Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace.
+
     ```azurecli
     az account set --subscription <MySubscriptionID>
-    
+
     az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
     ```
 
@@ -337,7 +337,7 @@ It leverages integrated hybrid computing features to count the number of times e
 
     ```azurecli
     az quantum job submit --target-id quantinuum.sim.h1-1e --job-name ErrorCorrection --target-capability AdaptiveExecution --shots 50
-    
+
     az quantum job output -o table --job-id [job-id]
     ```
 
@@ -353,19 +353,19 @@ The circuit begins by encoding the pair of vectors on the target qubit and the a
 
 ### Create a VS Code project
 
-1. In VS Code, create a new Q# standalone console application project named **IPE**. 
+1. In VS Code, create a new Q# standalone console application project named **IPE**.
     1. Select **View > Command Pallete > Q#: Create new project > Standalone console application**
 1. Replace the configuration in **IPE.csproj** with the following:
 
     ```xml
     <Project Sdk="Microsoft.Quantum.Sdk/0.27.253010">
-    
+
       <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
         <ExecutionTarget>quantinuum.qpu.h1</ExecutionTarget>
       </PropertyGroup>
-    
+
     </Project>
     ```
 
@@ -373,7 +373,7 @@ The circuit begins by encoding the pair of vectors on the target qubit and the a
 
     ```qsharp
     namespace IPE {
-    
+
         //IMPORT LIBRARIES
         open Microsoft.Quantum.Intrinsic;
         open Microsoft.Quantum.Math;
@@ -390,7 +390,7 @@ The circuit begins by encoding the pair of vectors on the target qubit and the a
 
 ### Encoding vectors
 
-The vectors v and c are to be encoded onto the target qubit and the ancilla qubit. The vector $v = (cos(\frac{\theta_1}{2}),sin(\frac{\theta_1}{2}))$ can be represented by the quantum state $\ket v = cos(\frac{\theta_1}{2})\ket 0 + sin(\frac{\theta_1}{2})\ket 1$, similarly $c$ can be constructed using $\theta_2$. 
+The vectors v and c are to be encoded onto the target qubit and the ancilla qubit. The vector $v = (cos(\frac{\theta_1}{2}),sin(\frac{\theta_1}{2}))$ can be represented by the quantum state $\ket v = cos(\frac{\theta_1}{2})\ket 0 + sin(\frac{\theta_1}{2})\ket 1$, similarly $c$ can be constructed using $\theta_2$.
 
 A Y rotation applied to a target qubit in the $\ket 0$ state:
 
@@ -411,23 +411,23 @@ which also takes the form
 
 $$\ket{\Psi} = \frac{1}{2}(\ket{v}+\ket{c})\ket{0}+\frac{1}{2}(\ket{v}-\ket{c})\ket{1}.$$
 
-Add the following operation to the **Program.qs** file. 
+Add the following operation to the **Program.qs** file.
 
 ```qsharp
 //This is state preparation operator A for encoding the 2D vector
-operation StateInitialisation(TargetReg : Qubit, AncilReg : Qubit, theta_1 : Double, theta_2 : Double) : Unit is Adj + Ctl { 
+operation StateInitialisation(TargetReg : Qubit, AncilReg : Qubit, theta_1 : Double, theta_2 : Double) : Unit is Adj + Ctl {
     H(AncilReg);
 
     // Arbitray controlled rotation based on theta. This is vector v.
-    Controlled R([AncilReg], (PauliY, theta_1, TargetReg));      
-    
-    // X gate on ancilla to change from |+> to |->                                                   
-    X(AncilReg);       
+    Controlled R([AncilReg], (PauliY, theta_1, TargetReg));
 
-    // Arbitray controlled rotation based on theta. This is vector c.                                            
-    Controlled R([AncilReg], (PauliY, theta_2, TargetReg));        
-    X(AncilReg);                                                  
-    H(AncilReg);                                                  
+    // X gate on ancilla to change from |+> to |->
+    X(AncilReg);
+
+    // Arbitray controlled rotation based on theta. This is vector c.
+    Controlled R([AncilReg], (PauliY, theta_2, TargetReg));
+    X(AncilReg);
+    H(AncilReg);
 }
 ```
 
@@ -448,18 +448,18 @@ Now the control qubit contains the phase which relates to the inner product $\\b
 
 $$\ket{\Psi_\text{Control Qubit}} = \frac {1}{\sqrt{2}} (\ket 0 + e^{2\pi i\phi}\ket 1)$$
 
-Add the following operation to the **Program.qs** file. 
+Add the following operation to the **Program.qs** file.
 
 ```qsharp
 operation GOracle(TargetReg : Qubit, AncilReg : Qubit, theta_1 : Double, theta_2 : Double) : Unit is Adj + Ctl {
-    Z(AncilReg);                                                      
+    Z(AncilReg);
         within {
             Adjoint StateInitialisation(TargetReg, AncilReg, theta_1, theta_2);
 
             // Apply X gates individually here as currently ApplyAll is not Adj + Ctl
-            X(AncilReg);                                                        
+            X(AncilReg);
             X(TargetReg);
-        }   
+        }
         apply {
             Controlled Z([AncilReg],TargetReg);
         }
@@ -494,7 +494,7 @@ This process is iteratively applied for some bit precision n to obtain the phase
 
 As the readout tells nothing of either vector, only the inner product between them, the states on the target qubit and ancilla qubit *remain in the same state* throughout the process!
 
-Add the following operation to the **Program.qs** file. 
+Add the following operation to the **Program.qs** file.
 
 ```qsharp
 operation IterativePhaseEstimation(TargetReg : Qubit, AncilReg : Qubit, theta_1 : Double, theta_2 : Double, Measurements : Int) : Int{
@@ -503,38 +503,38 @@ operation IterativePhaseEstimation(TargetReg : Qubit, AncilReg : Qubit, theta_1 
     mutable bitValue = 0;
 
     //Apply to initialise state, this is defined by the angles theta_1 and theta_2
-    StateInitialisation(TargetReg, AncilReg, theta_1, theta_2);                                       
-    for index in 0 .. Measurements - 1{                                                             
+    StateInitialisation(TargetReg, AncilReg, theta_1, theta_2);
+    for index in 0 .. Measurements - 1{
         H(ControlReg);
-        
-        //Don't apply rotation on first set of oracles                                                                              
-        if index > 0 {   
 
-            //Loop through previous results                                                                           
-            for index2 in 0 .. index - 1{                                                           
+        //Don't apply rotation on first set of oracles
+        if index > 0 {
+
+            //Loop through previous results
+            for index2 in 0 .. index - 1{
                 if MeasureControlReg[Measurements - 1 - index2] == One{
-                    let angle = -IntAsDouble(2^(index2))*PI()/(2.0^IntAsDouble(index));   
+                    let angle = -IntAsDouble(2^(index2))*PI()/(2.0^IntAsDouble(index));
 
-                    //Rotate control qubit dependent on previous measurements and number of measurements                
-                    R(PauliZ, angle, ControlReg);                                                   
+                    //Rotate control qubit dependent on previous measurements and number of measurements
+                    R(PauliZ, angle, ControlReg);
                 }
-            }     
+            }
         }
         let powerIndex = (1 <<< (Measurements - 1 - index));
 
         //Apply a number of oracles equal to 2^index, where index is the number or measurements left
-        for _ in 1 .. powerIndex{                                                                   
+        for _ in 1 .. powerIndex{
                 Controlled GOracle([ControlReg],(TargetReg, AncilReg, theta_1, theta_2));
             }
         H(ControlReg);
 
         //Make a measurement mid circuit
-        set MeasureControlReg w/= (Measurements - 1 - index) <- MResetZ(ControlReg);                 
+        set MeasureControlReg w/= (Measurements - 1 - index) <- MResetZ(ControlReg);
         if MeasureControlReg[Measurements - 1 - index] == One{
 
             //Assign bitValue based on previous measurement
-            set bitValue += 2^(index);                                                              
-                                                                                                    
+            set bitValue += 2^(index);
+
         }
     }
     return bitValue;
@@ -549,19 +549,19 @@ $$\braket {v|c} = -cos(2\pi x / 2^n)$$
 
 where $x = \phi_0\phi_1\phi_2...\phi_{n}$. The denominator within the cosine function is to shift the binary point to match the original value $\phi$.
 
-> [!NOTE] 
+> [!NOTE]
 > For inner product that are not -1 or 1, the solutions are paired with a value difference of $2^{n-1}$. For example for n=3 measurements, the measured bit value of 2 would also have a pair solution of 6. Either of these values produce the same value of the inner product when input as the variable to the even function cosine (resulting in an inner product of 0 in this example).
 
-> For inner product solutions between the discrete bit precision, a distribution of results will be produced based on where the inner product lies between the discrete bit value. 
+> For inner product solutions between the discrete bit precision, a distribution of results will be produced based on where the inner product lies between the discrete bit value.
 
-Add the following operation to the **Program.qs** file. 
+Add the following operation to the **Program.qs** file.
 
 ```qsharp
 function CalculateInnerProduct(Results : Int, theta_1 : Double, theta_2 : Double, Measurements : Int): Unit{
     let DoubleVal = PI() * IntAsDouble(Results) / IntAsDouble(2 ^ (Measurements-1));
 
     //Convert to the final inner product
-    let InnerProductValue = -Cos(DoubleVal);                                                      
+    let InnerProductValue = -Cos(DoubleVal);
     Message("The Bit Value measured is:");
     Message($"{Results}");
     Message("The Inner Product is:");
@@ -572,9 +572,9 @@ function CalculateInnerProduct(Results : Int, theta_1 : Double, theta_2 : Double
 
 ```
 
-### Run the program 
+### Run the program
 
-Now, you can test the program. First, you'll run the program using a simulation operation locally, and then you'll connect to Azure Quantum and run it against a hardware target. 
+Now, you can test the program. First, you'll run the program using a simulation operation locally, and then you'll connect to Azure Quantum and run it against a hardware target.
 
 #### Simulating iterative phase estimation
 
@@ -584,32 +584,32 @@ Q# programs require an `@EntryPoint()` to tell the compiler where to start the e
 @EntryPoint()
 
 //Operation for calculating the inner product on local simulators
-operation SimulateInnerProduct() : Unit{   
+operation SimulateInnerProduct() : Unit{
 
-    //This operation will output additional classical calculations                                                     
-    let (Results, theta_1, theta_2, Measurements) = InnerProduct();                             
-    CalculateInnerProduct(Results, theta_1, theta_2, Measurements);                             
+    //This operation will output additional classical calculations
+    let (Results, theta_1, theta_2, Measurements) = InnerProduct();
+    CalculateInnerProduct(Results, theta_1, theta_2, Measurements);
 }
 
 operation InnerProduct() : (Int, Double, Double, Int){
 
     //Specify the angles for inner product
-    let theta_1 = 0.0;                                                                           
+    let theta_1 = 0.0;
     let theta_2 = 0.0;
     let Measurements = 3;
 
     //Create target register
-    use TargetReg = Qubit(); 
+    use TargetReg = Qubit();
 
-    //Create ancilla register                                                                   
-    use AncilReg = Qubit();  
+    //Create ancilla register
+    use AncilReg = Qubit();
 
-    //This runs iterative phase estimation                                                                   
+    //This runs iterative phase estimation
     let Results = IterativePhaseEstimation(TargetReg, AncilReg, theta_1, theta_2, Measurements);
-    Reset(TargetReg);                                           
+    Reset(TargetReg);
     Reset(AncilReg);
     return (Results, theta_1, theta_2, Measurements);
-}  
+}
 ```
 
 To run the program, open a terminal window in VS Code and run
@@ -624,9 +624,9 @@ To run against a hardware target, replace the `SimulateInnerProduct()` operation
 
 ```qsharp
 //Operation for calculating the inner product on hardware or emulators
-operation HardwareInnerProduct() : Int{                                                         
+operation HardwareInnerProduct() : Int{
     let (Results,_,_,_) = InnerProduct();
-    return Results;                                                                             
+    return Results;
 }
 ```
 
@@ -637,7 +637,7 @@ az login
 ```
 
 > [!NOTE]
-> Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace. 
+> Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace.
 
 ```azurecli
 az account set --subscription <MySubscriptionID>
@@ -655,7 +655,7 @@ az quantum job submit --target-id quantinuum.sim.h1-1e --target-capability Adapt
 > The specified target requires a target execution profile that supports [basic measurement feedback](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
 
 > [!IMPORTANT]
-> It is not recommended to increase the value of `Measurements` beyond **3** when running on Azure targets as the EHCs can increase significantly. 
+> It is not recommended to increase the value of `Measurements` beyond **3** when running on Azure targets as the EHQCs can increase significantly.
 
 You can view the status of the job with
 
