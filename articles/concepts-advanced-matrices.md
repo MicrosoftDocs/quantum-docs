@@ -44,10 +44,6 @@ In quantum computing, there are essentially only two matrices that you encounter
 There's a general result known as the [*spectral theorem*](https://en.wikipedia.org/wiki/Spectral_theorem), which implies the following: for any Hermitian or unitary matrix $M$, there exists a unitary $U$ such that $M=U^\dagger D U$ for some diagonal matrix $D$. Furthermore, the diagonal entries of $D$ will be the eigenvalues of $M$, and columns of $U^\dagger$ will be the corresponding eigenvectors.
 This factorization is known as [*spectral decomposition* or *eigendecomposition*](https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix).
 
-Using this theorem to compute the eigenvalues and eigenvectors of a diagonal matrix $D$, if $v$ is an eigenvector of $D$ with eigenvalue $c$, for example, $Dv = cv$, then $U^\dagger v$ will be an eigenvector of $M$ with eigenvalue $c$. This is because
-
-$$M(U^\dagger v) = U^\dagger D U  (U^\dagger v) =U^\dagger D (U  U^\dagger) v = U^\dagger D v = c U^\dagger v.$$
-
 ## Matrix exponentials
 
 A [*matrix exponential*](https://en.wikipedia.org/wiki/Matrix_exponential) can also be defined in exact analogy to the exponential function.  The matrix exponential of a matrix $A$ can be expressed as
