@@ -213,7 +213,7 @@ the state $\ket{\psi}_{AB}$  is a product state, therefore it's not entangled.
 
 ### Entanglement in mixed states
 
-Mixed quantum states are a statistical ensemble of pure states. A mixed state $\rho$ has neither quantum nor classical correlations if it can be written as a product state $\rho = \rho^{A} \otimes \rho^{B}$ for some [density matrices](xref:microsoft.quantum.concepts.dirac#density-operators) $\rho^{A} \qeq 0 , \rho^{B} \geq 0$.
+Mixed quantum states are a statistical ensemble of pure states. A mixed state $\rho$ has neither quantum nor classical correlations if it can be written as a product state $\rho = \rho^{A} \otimes \rho^{B}$ for some [density matrices](xref:microsoft.quantum.concepts.dirac#density-operators) $\rho^{A} \geq 0 , \rho^{B} \geq 0$.
 
 A mixed state $\rho$ is separable if it can be written as a convex combination of product states of the subsystems, such as $\rho = \sum_j p_j \rho^{A}_{j} \otimes \rho^{B}_{j}$ where $p_j \geq 0, \sum p_j = 1$ and $\rho^{A}_{j} \geq 0, \rho^{B}_{j} \geq 0$.
 
