@@ -21,13 +21,20 @@ This article describe the origin and difficulties of quantum machine learning, a
 
 You can adapt any Qiskit sample to run on Azure Quantum, and in particular, you can adapt any sample from [Qiskit/qiskit-machine-learning](https://github.com/Qiskit/qiskit-machine-learning). See [Adapting Qiskit samples to run on Azure Quantum](xref:microsoft.quantum.how-to.adapting-qiskit) and follow to steps to adapt your sample. 
 
+If you don't have Qiskit Machine Learning installed, copy the following code at the top of your Qiskit quantum machine learning sample. 
+
+```python
+# Restart the kernel after running that cell
+!pip install qiskit-machine-learning
+```
+
 > [!NOTE]
-> If you don't have Qiskit Machine Learning installed, copy the following code at the top of your Qiskit quantum machine learning sample. 
-> 
+> If you get the error message `ModuleNotFoundError: No module named 'qiskit_machine_learning'` while running a Qiskit sample on the Azure Quantum notebooks, add a new and the top of the notebook and copy: 
 > ```python
-> # Restart the kernel after running that cell
+> !pip install qiskit
 > !pip install qiskit-machine-learning
-> ```
+> ``` 
+> Then click on **Run all** on the top left of the notebook.
 
 ## Quantum machine learning with Q# and Azure Quantum 
 
