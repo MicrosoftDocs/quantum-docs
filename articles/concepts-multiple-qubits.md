@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn the rules used to build multi-qubit states out of single-qubit states. Also learn about gate operations needed to form a many-qubit quantum computer.
 ms.author: sonialopez
-ms.date: 10/10/2022
+ms.date: 03/13/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -13,13 +13,13 @@ uid: microsoft.quantum.concepts.multiple-qubits
 
 # Operations on multiple qubits
 
-This article reviews the rules used to build multi-qubit states out of single-qubit states and discusses the gate operations needed to include in a gate set to form a universal many-qubit quantum computer. These tools are absolutely necessary to understand the gate sets that are commonly used in Q# code, and also to gain intuition about why quantum effects such as entanglement or interference render quantum computing more powerful than classical computing.
+This article reviews the rules used to build multi-qubit states out of single-qubit states and discusses the gate operations needed to include in a gate set to form a universal many-qubit quantum computer. These tools are necessary to understand the gate sets that are commonly used in Q# code. They're also important to gain intuition about why quantum effects such as entanglement or interference render quantum computing more powerful than classical computing.
 
 ## Single-qubit vs. multi-qubit gates
 
 The true power of quantum computing only becomes evident as you increase the number of qubits. Single-qubit gates possess some counter-intuitive features, such as the ability to be in more than one state at a given time. However, if all you had in a quantum computer were single-qubit gates, then a calculator and certainly a classical supercomputer would dwarf its computational power. 
 
-Quantum computing power arises, in part, because the dimension of the vector space of quantum state vectors grows exponentially with the number of qubits. This means that while a single qubit can be trivially modeled, simulating a fifty-qubit quantum computation would arguably push the limits of existing supercomputers. Increasing the size of the computation by only one additional qubit *doubles* the memory required to store the state and roughly *doubles* the computational time. This rapid doubling of computational power is why a quantum computer with a relatively small number of qubits can far surpass the most powerful supercomputers of today, tomorrow, and beyond for some computational tasks.
+Quantum computing power arises, in part, because the dimension of the vector space of quantum state vectors grows exponentially with the number of qubits. This means that while a single qubit can be trivially modeled, simulating a fifty-qubit quantum computation would arguably push the limits of existing supercomputers. Increasing the size of the computation by only one extra qubit *doubles* the memory required to store the state and roughly *doubles* the computational time. This rapid doubling of computational power is why a quantum computer with a relatively small number of qubits can far surpass the most powerful supercomputers of today, tomorrow, and beyond for some computational tasks.
 
 ## Two-qubit states
 
@@ -187,7 +187,7 @@ Consider two qubits $A$ and $B$ in superpositions such that the state of the glo
 
 $$\ket{\psi}_{AB}=\frac1{\sqrt2}\ket{00}\frac1{\sqrt2}\ket{11}$$
 
-In such a state, only two outcomes are possible when you measure the state of both qubits in the standard basis: **$|00\rangle$** and **$|11\rangle$**. Notice that each outcome has the same probability of $\frac{1}{2}$. There's zero probability of obtaining **$|01\rangle$** and **$|10\rangle$**. If you measure the first qubit and you get that it is in **$|0\rangle$** state, then you can be positive that the second qubit is also in **$|0\rangle$** state, even without measuring it. The measurement outcomes are correlated, and the qubits are *entangled*.
+In such a state, only two outcomes are possible when you measure the state of both qubits in the standard basis: $|00\rangle$ and $|11\rangle$. Notice that each outcome has the same probability of $\frac{1}{2}$. There's zero probability of obtaining $|01\rangle$ and $|10\rangle$. If you measure the first qubit and you get that it is in $|0\rangle$ state, then you can be positive that the second qubit is also in $|0\rangle$ state, even without measuring it. The measurement outcomes are correlated, and the qubits are *entangled*.
 
 > [!NOTE]
 > This examples uses two qubits, but quantum entanglement is not limited to two qubits. In general it's possible that multiple-qubit systems share entanglement.
@@ -200,7 +200,7 @@ For a practical implementation, see the tutorial [exploring quantum entanglement
 
 Pure quantum states are those that are characterized by a single ket vector or wavefunction, and cannot be written as a statistical mixture (or *convex combination*) of other quantum states. On the [Bloch sphere](xref:microsoft.quantum.concepts.qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere), pure states are represented by a point on the surface of the sphere, whereas mixed states are represented by an interior point. 
 
-A pure state $\ket{\phi}_{AB}$ is entangled if it cannot be written as a combination of product states of the subsystems, that is $\ket{\phi}_{AB} = \ket{a}_A \otimes \ket{b}_B$. 
+A pure state $\ket{\phi}\_{AB}$ is entangled if it cannot be written as a combination of product states of the subsystems, that is $\ket{\phi}\_{AB} = \ket{a}\_A \otimes \ket{b}\_B$. 
 
 For example, consider the state
 $$ \ket{\psi}_{AB} = \frac{1}{2} (\ket{00} + \ket{10} +\ket{01} +\ket{11})$$
@@ -216,11 +216,12 @@ the state $\ket{\psi}_{AB}$  is a product state, therefore it's not entangled.
 Mixed quantum states are a statistical ensemble of pure states. A mixed state $\rho$ has neither quantum nor classical correlations if it can be written as a product state $\rho = \rho^{A} \otimes \rho^{B}$ for some [density matrices](xref:microsoft.quantum.concepts.dirac#density-operators) $\rho^{A} \geq 0 , \rho^{B} \geq 0$.
 
 A mixed state $\rho$ is separable if it can be written as a convex combination of product states of the subsystems, such as 
+
 $$
 \rho = \sum_j p_j \rho^{A}_{j} \otimes \rho^{B}_{j}
 $$ 
 
-where $p_j \geq 0, \sum p_j = 1$ and $\rho^{A}_{j} \geq 0, \rho^{B}_{j} \geq 0$.
+where $p_j \geq 0, \sum p_j = 1$ and $\rho^{A}\_{j} \geq 0, \rho^{B}\_{j} \geq 0$.
 
 A mixed state $\rho$ is entangled if it's not separable, that is, it cannot be written as a convex combination of product states. 
 
