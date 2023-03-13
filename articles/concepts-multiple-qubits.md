@@ -213,9 +213,14 @@ the state $\ket{\psi}_{AB}$  is a product state, therefore it's not entangled.
 
 ### Entanglement in mixed states
 
-Mixed quantum states are a statistical ensemble of pure states. A mixed state $\rho$ has neither quantum nor classical correlations if it can be written as a product state $\rho = \rho^{A} \otimes \rho^{B}$ for some [density matrices](xref:microsoft.quantum.concepts.dirac#density-operators) $\rho^{A} \qeq 0 , \rho^{B} \geq 0$.
+Mixed quantum states are a statistical ensemble of pure states. A mixed state $\rho$ has neither quantum nor classical correlations if it can be written as a product state $\rho = \rho^{A} \otimes \rho^{B}$ for some [density matrices](xref:microsoft.quantum.concepts.dirac#density-operators) $\rho^{A} \geq 0 , \rho^{B} \geq 0$.
 
-A mixed state $\rho$ is separable if it can be written as a convex combination of product states of the subsystems, such as $\rho = \sum_j p_j \rho^{A}_{j} \otimes \rho^{B}_{j}$ where $p_j \geq 0, \sum p_j = 1$ and $\rho^{A}_{j} \geq 0, \rho^{B}_{j} \geq 0$.
+A mixed state $\rho$ is separable if it can be written as a convex combination of product states of the subsystems, such as 
+$$
+\rho = \sum_j p_j \rho^{A}_{j} \otimes \rho^{B}_{j}
+$$ 
+
+where $p_j \geq 0, \sum p_j = 1$ and $\rho^{A}_{j} \geq 0, \rho^{B}_{j} \geq 0$.
 
 A mixed state $\rho$ is entangled if it's not separable, that is, it cannot be written as a convex combination of product states. 
 
@@ -230,15 +235,15 @@ For example, consider two boxes, each containing one ball. We know that both bal
 
 The mixed quantum state of the system formed by the two boxes $\rho_{boxes}$ can be written as
 
-$$ \rho_{boxes} = \frac{1}{2} (\ket{red}\bra{red}_A \otimes \ket{red}\bra{red}_B) +\frac{1}{2} (\ket{blue}\bra{blue}_A \otimes \ket{blue}\bra{blue}_B)
+$$ \rho_{boxes} = \frac{1}{2} (\ket{red}\bra{red}_{A} \otimes \ket{red}\bra{red}_B) +\frac{1}{2} (\ket{blue}\bra{blue}_A \otimes \ket{blue}\bra{blue}_B) $$
 
 Notice that the state $\rho_{boxes}$ is separable, where $p_1 = p_2 = \frac{1}{2}$ then it contains only classical correlations. Another example of a mixed separable state is
 
-$$ \rho = \frac{1}{2} (\ket{0}\bra{0}_A \otimes \ket{0}\bra{0}_B) +\frac{1}{2} (\ket{1}\bra{1}_A \otimes \ket{1}\bra{1}_B)
+$$ \rho = \frac{1}{2} (\ket{0}\bra{0}_A \otimes \ket{0}\bra{0}_B) +\frac{1}{2} (\ket{1}\bra{1}_A \otimes \ket{1}\bra{1}_B) $$
 
 Now, consider the following state:
 
-$$ \rho = \frac{1}{4} (\ket{00}\bra{00} + \ket{00}\bra{11} + \ket{11}\bra{00} + \ket{11}\bra{11}) = \ket{\phi^+}\bra{\phi^+}$$
+$$ \rho = \frac{1}{4} (\ket{00}\bra{00} + \ket{00}\bra{11} + \ket{11}\bra{00} + \ket{11}\bra{11}) = \ket{\phi^+}\bra{\phi^+} $$
 
 In this case, our knowledge of the state is perfect, we know with maximal certainty that the system $AB$ is in the Bell state $\ket{\phi^+}$ and $\rho$ is a pure state. Therefore, there aren't classical correlations. But if we measure an observable on subsystem $A$, we obtain a random result which gives us information about the state of the subsystem $B$. This randomness is fundamental, namely these are quantum correlations. 
 
