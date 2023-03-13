@@ -64,7 +64,7 @@ $$
 In other words, if you transform to the eigenbasis of the matrix $A$, then computing the matrix exponential is equivalent to computing the ordinary exponential of the eigenvalues of the matrix.  As many operations in quantum computing involve performing matrix exponentials, this trick of transforming into the eigenbasis of a matrix to simplify performing the operator exponential appears frequently. It's the basis behind many quantum algorithms such as Trotter–Suzuki-style quantum simulation methods discussed later in this guide.
 
 Another useful property holds for [*involutory matrices*](https://en.wikipedia.org/wiki/Involutory_matrix).
-An involutory matrix is a square matrix equal to its own inverse ($B^2=\boldone$).
+An involutory matrix $B$ is both unitary and Hermitian, that is, $B=B^{-1}=B^\dagger$. Then, an involutory matrix is a  square matrix equal to its own inverse, $B^2=\boldone$.
 Notice that every matrix being both unitary and Hermitian is involutory.
 By applying this property to the above expansion of the matrix exponential, grouping the $\boldone$ and the $B$ terms together, and applying [Maclaurin's theorem to the cosine and sine functions](https://en.wikibooks.org/wiki/Trigonometry/Power_Series_for_Cosine_and_Sine), the identity
 
