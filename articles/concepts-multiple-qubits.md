@@ -52,7 +52,7 @@ For example, there are no states $\psi=\begin{bmatrix} \alpha \\\\  \beta \end{b
 
 $$\psi\otimes \phi = \begin{bmatrix} 1/\sqrt{2} \\\\  0 \\\\  0 \\\\  1/\sqrt{2} \end{bmatrix}.$$ 
 
-Such a two-qubit state, which cannot be written as the tensor product of single-qubit states, is called an "entangled state"; the two qubits are said to be [*entangled*](https://en.wikipedia.org/wiki/Quantum_entanglement).  Loosely speaking, because the quantum state cannot be thought of as a tensor product of single qubit states, the information that the state holds is not confined to either of the qubits individually.  Rather, the information is stored non-locally in the correlations between the two states.  This non-locality of information is one of the major distinguishing features of quantum computing over classical computing and is essential for a number of quantum protocols including [quantum teleportation](https://github.com/microsoft/Quantum/tree/main/samples/getting-started/teleportation) and [quantum error correction](xref:microsoft.quantum.libraries.overview.error-correction).
+Such a two-qubit state, which cannot be written as the tensor product of single-qubit states, is called an "entangled state"; the two qubits are said to be [*entangled*](https://en.wikipedia.org/wiki/Quantum_entanglement).  Loosely speaking, because the quantum state cannot be thought of as a tensor product of single qubit states, the information that the state holds is not confined to either of the qubits individually.  Rather, the information is stored nonlocally in the correlations between the two states.  This nonlocality of information is one of the major distinguishing features of quantum computing over classical computing and is essential for a number of quantum protocols including [quantum teleportation](https://github.com/microsoft/Quantum/tree/main/samples/getting-started/teleportation) and [quantum error correction](xref:microsoft.quantum.libraries.overview.error-correction).
 
 ### Measuring two-qubit states 
 Measuring two-qubit states is very similar to single-qubit measurements. Measuring the state
@@ -78,7 +78,7 @@ $$
     \end{bmatrix}.
 $$
 
-It is also possible to measure just one qubit of a two-qubit quantum state. In cases where you measure only one of the qubits, the impact of measurement is subtly different because the entire state is not collapsed to a computational basis state, rather it is collapsed to only one sub-system.  In other words, in such cases measuring only one qubit only collapses one of the subsystems but not all of them.  
+It is also possible to measure just one qubit of a two-qubit quantum state. In cases where you measure only one of the qubits, the impact of measurement is subtly different because the entire state is not collapsed to a computational basis state, rather it is collapsed to only one subsystem.  In other words, in such cases measuring only one qubit only collapses one of the subsystems but not all of them.  
 
 To see this consider measuring the first qubit of the following state, which is formed by applying the Hadamard transform $H$ on two qubits initially set to the "0" state:
 $$
@@ -217,9 +217,7 @@ Mixed quantum states are a statistical ensemble of pure states. A mixed state $\
 
 A mixed state $\rho$ is separable if it can be written as a convex combination of product states of the subsystems, such as 
 
-$$
-\rho = \sum_j p_j \rho^{A}_{j} \otimes \rho^{B}_{j}
-$$ 
+$$\rho = \sum_j p_j \rho^{A}\_{j} \otimes \rho^{B}\_{j}$$ 
 
 where $p_j \geq 0, \sum p_j = 1$ and $\rho^{A}\_{j} \geq 0, \rho^{B}\_{j} \geq 0$.
 
