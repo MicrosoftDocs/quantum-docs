@@ -29,7 +29,8 @@ If you don't have Qiskit Machine Learning installed, copy the following code at 
 ```
 
 > [!NOTE]
-> If you get the error message `ModuleNotFoundError: No module named 'qiskit_machine_learning'` when running a Qiskit sample on the Azure Quantum notebooks, add a new and the top of the notebook and copy: 
+> If you get the error message `ModuleNotFoundError: No module named 'qiskit_machine_learning'` when running a Qiskit sample on the Azure Quantum notebooks, add a new cell at the top of the notebook and copy: 
+> 
 > ```python
 > !pip install qiskit
 > !pip install qiskit-machine-learning
