@@ -65,7 +65,6 @@ In other words, if you transform to the eigenbasis of the matrix $A$, then compu
 
 Another useful property holds for [*involutory matrices*](https://en.wikipedia.org/wiki/Involutory_matrix).
 An involutory matrix $B$ is both unitary and Hermitian, that is, $B=B^{-1}=B^\dagger$. Then, an involutory matrix is a  square matrix equal to its own inverse, $B^2=\boldone$.
-Notice that every matrix being both unitary and Hermitian is involutory.
 By applying this property to the above expansion of the matrix exponential, grouping the $\boldone$ and the $B$ terms together, and applying [Maclaurin's theorem to the cosine and sine functions](https://en.wikibooks.org/wiki/Trigonometry/Power_Series_for_Cosine_and_Sine), the identity
 
 $$e^{iBx}=\boldone \cos(x)+ iB\sin(x)$$
