@@ -15,7 +15,7 @@ uid: microsoft.quantum.how-to.adapting-qiskit
 
 If you have some experience with quantum computing or just starting, it is likely that you use some samples from [Qiskit.org](https://qiskit.org/). This article shows you how to adapt a Qiskit sample to run against any of the Azure Quantum backends. You can either download the sample or copy the code of it. 
 
-## Prerequisistes
+## Prerequisites
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
@@ -47,8 +47,8 @@ Most samples are configured to run by default against the `aer_simulator`, which
     ```python
     from azure.quantum.qiskit import AzureQuantumProvider
     provider = AzureQuantumProvider (
-        resource_id = "", # The resourceID of your workspace
-        location = "" # The location of your workspace (for example "westus")
+        resource_id = "", # Add the resourceID of your workspace
+        location = "" # Add the location of your workspace (for example "westus")
     )
 
     # Create IonQ simulator and QPU backends
@@ -84,7 +84,7 @@ To run this sample on Azure Quantum, you have to copy the code after the Azure Q
 > !pip install qiskit-machine-learning
 > ```
 
-[!code-qsharp[](includes/qiskit-qml-sample.py?highlight=28)]
+[!code-python[](includes/qiskit-qml-sample.py?highlight=28)]
 
 ## Verify the update
 
