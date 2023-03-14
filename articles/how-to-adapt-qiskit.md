@@ -84,7 +84,7 @@ To run this sample on Azure Quantum, you have to copy the code after the Azure Q
 > !pip install qiskit-machine-learning
 > ```
 
-[!code-qsharp[](includes/qiskit-qml-sample.py?highlight=28)]
+[!code-python[](includes/qiskit-qml-sample.py?highlight=28)]
 
 ## Verify the update
 
