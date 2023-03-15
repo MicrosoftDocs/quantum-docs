@@ -33,7 +33,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 - Compiler errors related to hardware capabilities are now warnings by default. Programs with these warnings may or may not run on a specific target, but they are validated by the Azure Quantum service before execution and users are not be charged if the program does not pass validation.
 - The Q# compiler now uses LLVM 14 to generate QIR.
 - In the [iqsharp-base](https://mcr.microsoft.com/product/quantum/iqsharp-base/about) image, removed support for .NET Core 3.1, since it is [end-of-life](https://dotnet.microsoft.com/platform/support/policy/dotnet-core). Upgraded various packages in the image and made small improvements to decrease container size. Fixes [microsoft/iqsharp#757](https://github.com/microsoft/iqsharp/pull/754).
-- In the azure-quantum package, fixed `cost_estimate()` pricing for IonQ Aria from `$0.00022` per 1 qgs to `$0.0002205` per 1 qgs.
+- In the azure-quantum package, fixed `cost_estimate()` pricing for IonQ Aria from $<b></b>0.00022 per 1 qgs to $<b></b>0.0002205 per 1 qgs.
 
 ## 2022-12-07
 
