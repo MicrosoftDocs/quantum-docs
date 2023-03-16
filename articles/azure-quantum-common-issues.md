@@ -2,7 +2,7 @@
 author: bradben
 description: Troubleshoot common Azure Quantum issues.
 ms.author: brbenefield
-ms.date: 01/31/2023
+ms.date: 03/16/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
@@ -51,6 +51,27 @@ Command ran in 21.181 seconds (init: 0.457, invoke: 20.724)
 ```
 
 This error occurs when there's a problem with the Q# program that causes the compilation to fail. To see the specific error that is causing the failure, run `dotnet build` in the same folder. 
+
+### Issue: Compiler error "Wrong number of gate parameters"
+
+When submitting a job to Quantinuum from a local Jupyter Notebook or command line environment, and using the legacy QASM translator (OPENQASM 2.0), you may encounter this error:
+
+```
+Job ID <jobId> failed or was cancelled with the message: 1000: Compile error: [<file, line>] Wrong number of gate parameters
+```
+
+This error occurs when a comma **","** or another non-period character is used as a decimal separator, as is common in many languages. Replace any non-period decimal separators with periods **"."**. 
+
+```qsharp
+// replace this line:
+rx(1,5707963267948966) q[0];
+
+// with this:
+rx(1.5707963267948966) q[0];
+```
+
+> [!NOTE]
+> This issue does not occur in hosted notebooks in the Azure Quantum portal, only in local development environments. 
 
 ### Issue: Operation returned an invalid status code 'Forbidden'
 
