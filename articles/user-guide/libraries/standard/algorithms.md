@@ -118,7 +118,7 @@ $$
 
 The integers $a$ and $b$ can then be added by performing controlled-phase rotation on each of the qubits in the decomposition using the bits of $b$ as controls.
 
-This expansion can be further simplified by notingthat $e^{i2\pi x /2^k} = e^{i2\pi 0.x\_k \ldots x\_1}$ where $0.x\_k \ldots x\_1$ is a binary fraction. This is because for any integer $j$ and real number $x$, $e^{i2\pi(x+j)}=e^{i2\pi x}$. If you rotate $360^{\circ}$ degrees ($2\pi$ radians) in a circle then you end up precisely where you started.  The only important part of $x$ for $e^{i2\pi x}$ is therefore the fractional part of $x$.  Specifically, if we have a binary expansion of the form $x=y+0.x\_1x\_2\ldots x\_n$ then $e^{i2\pi x}=e^{i2\pi (0.x\_1x\_2\ldots x\_n)}$.
+This expansion can be further simplified by noting that $e^{i2\pi x /2^k} = e^{i2\pi 0.x\_k \ldots x\_1}$ where $0.x\_k \ldots x\_1$ is a binary fraction. This is because for any integer $j$ and real number $x$, $e^{i2\pi(x+j)}=e^{i2\pi x}$. If you rotate $360^{\circ}$ degrees ($2\pi$ radians) in a circle then you end up precisely where you started.  The only important part of $x$ for $e^{i2\pi x}$ is therefore the fractional part of $x$.  Specifically, if we have a binary expansion of the form $x=y+0.x\_1x\_2\ldots x\_n$ then $e^{i2\pi x}=e^{i2\pi (0.x\_1x\_2\ldots x\_n)}$.
 
 Therefore, 
 
