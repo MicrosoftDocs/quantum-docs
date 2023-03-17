@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand the architecture and implementation of integrated hybrid quantum computing.
-ms.date: 03/06/2023
+ms.date: 03/17/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -363,7 +363,7 @@ The circuit begins by encoding the pair of vectors on the target qubit and the a
       <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
-        <ExecutionTarget>quantinuum.qpu.h1</ExecutionTarget>
+        <ExecutionTarget>quantinuum.sim.h1-1e</ExecutionTarget>
       </PropertyGroup>
 
     </Project>
@@ -648,7 +648,7 @@ az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorks
 Submit the job with the following parameters:
 
 ```azurecli
-az quantum job submit --target-id quantinuum.sim.h1-1e --target-capability AdaptiveExecution --shots 128 --job-name IterativePhaseEstimation
+az quantum job submit --target-id quantinuum.sim.h1-1e --target-capability AdaptiveExecution --shots 50 --job-name IterativePhaseEstimation
 ```
 
 > [!NOTE]
