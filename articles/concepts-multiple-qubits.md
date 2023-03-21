@@ -82,7 +82,7 @@ $$
     \end{bmatrix}.
 $$
 
-It is also possible to measure just one qubit of a two-qubit quantum state. In such case, the impact is subtly different; only the related subsystem, not the entire state, is collapsed to a computational basis state.  
+It's also possible to measure just one qubit of a two-qubit quantum state. When you measure only one qubit of a two-qubit state, the impact of measurement is subtly different than measuring two qubits. This is because the entire state isn't collapsed to a computational basis state, rather it's collapsed to only one subsystem.  In other words, measuring one qubit of a two-qubit state only collapses the related subsystem to a computational basis state. 
 
 To see this, consider measuring the first qubit of the following state, which is formed by applying the Hadamard transform $H$ on two qubits initially set to the "0" state:
 $$
