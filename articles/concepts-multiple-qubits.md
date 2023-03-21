@@ -107,7 +107,7 @@ $$
 \psi \mapsto \frac{\sum_{e_k \text{ in the set } S} e_k e_k^\dagger \psi}{\sqrt{P(\text{outcome}=1)}}.
 $$
 
-The cautious reader may worry about what happens if the denominator is zero.  While such state is undefined, it cannot occur because the probability is zero!
+The cautious reader may worry about what happens if the denominator is zero.  While such state is undefined, you don't need to worry about such eventualities because the probability is zero! 
 
 
 If you take $\psi$ to be the uniform state vector given above and are interested in measuring the first qubit then 
