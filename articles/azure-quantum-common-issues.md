@@ -112,6 +112,22 @@ The last released version of the [QDK extension for Visual Studio 2019](https://
 
 In order to use newer versions of the QDK for quantum projects with version `0.24.201332` or higher, you should use either the [extension for Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or the [extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
+
+### Job fails with error code: QIRPreProcessingFailed
+
+When submitting a job to a Rigetti provider, the job fails and is reported in the Job management console in the Azure portal:
+
+```output
+Error code: QIRPreProcessingFailed
+Error message: No match found for output recording set converter from outputrecordingset.v2.labeled to outputrecordingset.v1.nonlabeled
+```
+
+This may be caused by a dependency conflict with a previous version of *pyqir* or *qiskit-qir*. Uninstall all versions of *pyqir*, *pyqir-*\*, and *qiskit-qir* on your local machine, and then install or update the *azure-quantum* Python package using the [qiskit] parameter:
+
+```Shell
+pip install --upgrade azure-quantum[qiskit]
+```
+
 ## Creating an Azure Quantum workspace
 
 The following issues may occur when you use the Azure portal to create a workspace.
