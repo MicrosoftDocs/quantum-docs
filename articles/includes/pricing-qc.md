@@ -171,9 +171,8 @@ The Pay-as-you-go plan consists of *a la carte* access to the Aspen-M-3 and Aspe
 |---|---|  
 |Includes access to | <ul><li>Rigetti Aspen-M-3 QPU</li><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
 |  | $0.02 (USD) per 10-millisecond increment of job execution time|
-
 ***
 
 ## QCI
 
-<TBD>
+TBD

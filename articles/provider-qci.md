@@ -1,6 +1,6 @@
 ---
 author: qci-author
-ms.author: bradben
+ms.author: brbenefield
 description: This document provides the technical details of the QCI provider 
 ms.date: 03/23/2023
 ms.service: azure-quantum
