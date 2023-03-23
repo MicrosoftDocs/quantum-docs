@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about fundamental quantum computing algorithms, including amplitude amplification, Fourier transform, Draper and Beauregard adders, and phase estimation.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 03/17/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -115,15 +115,20 @@ The path towards performing an adder then becomes clear after observing that the
 $$
 \ket{a+b}=\operatorname{QFT}^{-1}\ket{\phi\_1(a+b)}\otimes \cdots \otimes \ket{\phi\_n(a+b)}.
 $$
-The integers $b$ and $a$ can then be added by performing controlled-phase rotation on each of the qubits in the decomposition using the bits of $b$ as controls.
 
-This expansion can be further simplified by noting that for any integer $j$ and real number $x$, $e^{i2\pi(x+j)}=e^{i2\pi x}$.  This is because if you rotate $360^{\circ}$ degrees ($2\pi$ radians) in a circle then you end up precisely where you started.  The only important part of $x$ for $e^{i2\pi x}$ is therefore the fractional part of $x$.  Specifically, if we have a binary expansion of the form $x=y+0.x\_0x\_2\ldots x\_n$ then $e^{i2\pi x}=e^{i2\pi (0.x\_0x\_2\ldots x\_{n-1})}$ and hence
+The integers $a$ and $b$ can then be added by performing controlled-phase rotation on each of the qubits in the decomposition using the bits of $b$ as controls.
+
+This expansion can be further simplified by noting that $e^{i2\pi x /2^k} = e^{i2\pi 0.x\_k \ldots x\_1}$ where $0.x\_k \ldots x\_1$ is a binary fraction. This is because for any integer $j$ and real number $x$, $e^{i2\pi(x+j)}=e^{i2\pi x}$. If you rotate $360^{\circ}$ degrees ($2\pi$ radians) in a circle then you end up precisely where you started.  The only important part of $x$ for $e^{i2\pi x}$ is therefore the fractional part of $x$.  Specifically, if we have a binary expansion of the form $x=y+0.x\_1x\_2\ldots x\_n$ then $e^{i2\pi x}=e^{i2\pi (0.x\_1x\_2\ldots x\_n)}$.
+
+Therefore, 
+
 $$\ket{\phi\_k(a+b)}=\frac{1}{\sqrt{2}}\left(\ket{0} + e^{i2\pi [a/2^k+0.b\_k\ldots b\_1]}\ket{1} \right).$$
+
 This means that if we perform addition by incrementing each of the tensor factors in the expansion of the Fourier transform of $\ket{a}$ then the number of rotations shrinks as $k$ decreases.  This substantially reduces the number of quantum gates needed in the adder.  We denote the Fourier transform, phase addition and the inverse Fourier transform steps that comprise the Draper adder as $\operatorname{QFT}^{-1} \left(\phi\\\!\operatorname{ADD}\right) \operatorname{QFT}$. A quantum circuit that uses this simplification to implement the entire process can be seen below.
 
 ![Draper adder shown as circuit diagram](~/media/draper.svg)
 
-Each controlled $e^{i2\pi/k}$ gate in the circuit refers to a controlled-phase gate.  Such gates have the property that on the pair of qubits on which they act, $\ket{00}\mapsto \ket{00}$ but $\ket{11}\mapsto e^{i2\pi/k}\ket{11}$.  This circuit allows us to perform addition using no additional qubits apart from those needed to store the inputs and the outputs.
+Each controlled $e^{i2\pi/2^k}$ gate in the circuit refers to a controlled-phase gate.  Such gates have the property that on the pair of qubits on which they act, $\ket{00}\mapsto \ket{00}$ but $\ket{11}\mapsto e^{i2\pi/2^k}\ket{11}$.  This circuit allows us to perform addition using no additional qubits apart from those needed to store the inputs and the outputs.
 
 ### Beauregard Adder ###
 

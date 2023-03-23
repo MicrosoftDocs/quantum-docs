@@ -2,7 +2,7 @@
 author: bradben
 description: Troubleshoot common Azure Quantum issues.
 ms.author: brbenefield
-ms.date: 01/31/2023
+ms.date: 03/16/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
@@ -51,6 +51,27 @@ Command ran in 21.181 seconds (init: 0.457, invoke: 20.724)
 ```
 
 This error occurs when there's a problem with the Q# program that causes the compilation to fail. To see the specific error that is causing the failure, run `dotnet build` in the same folder. 
+
+### Issue: Compiler error "Wrong number of gate parameters"
+
+When submitting a job to Quantinuum from a local Jupyter Notebook or command line environment, and using the legacy QASM translator (OPENQASM 2.0), you may encounter this error:
+
+```
+Job ID <jobId> failed or was cancelled with the message: 1000: Compile error: [<file, line>] Wrong number of gate parameters
+```
+
+This error occurs when a comma **","** or another non-period character is used as a decimal separator, as is common in many languages. Replace any non-period decimal separators with periods **"."**. 
+
+```qsharp
+// replace this line:
+rx(1,5707963267948966) q[0];
+
+// with this:
+rx(1.5707963267948966) q[0];
+```
+
+> [!NOTE]
+> This issue does not occur in hosted notebooks in the Azure Quantum portal, only in local development environments. 
 
 ### Issue: Operation returned an invalid status code 'Forbidden'
 
@@ -124,7 +145,7 @@ If access was recently granted, you may need to refresh the page. It can sometim
 
 This issue occurs because the provider doesn't support the billing region your subscription is set in. For example, if your subscription is set in Israel, the Providers tab won't list Rigetti as an available provider. For a list of providers and their availability by country, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability). 
 
-## The Azure Quantum portal
+## Azure Quantum portal
 
 ### Issue: Saved notebooks don't load
 
@@ -135,3 +156,13 @@ This can happen for two reasons:
 1. If the storage account no longer exists. This can happen if the storage account linked to the workspace was deleted. To verify, select the **Overview** page for the workspace and select the link to the storage account. If the storage account has been deleted, you will see a **404 - Not found** error.
 
 1. If the managed identity of the workspace is not a **Contributor** to the storage account. Please check that the workspace identity (which uses the same name as the workspace) still has the **Contributor** role assignment to the storage account. To verify, select the **Overview** page for the workspace and select the link to the storage account. On the **Overview** page for the storage account, select **Access control (IAM)** and verify that the workspace is listed under **Contributor**.
+
+### Issue: "ModuleNotFoundErrorr: No module named 'qiskit_machine_learning'" when runnig Qiskit sample in Azure Quantum notebook
+
+This error can happen if you haven't installed Qiskit when running a Qiskit Machine Learning sample on the Azure Quantum notebooks. To solve this issue add a new cell at the top of the notebook and copy: 
+
+ ```python
+ !pip install qiskit
+ !pip install qiskit-machine-learning
+ ``` 
+ Then click on **Run all** on the top left of the notebook.

@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
-description: Learn how to run the Resource Estimator target in Azure Quantum and tips to make your work and job submission more efficient 
-ms.date: 11/05/2022
+description: Learn how to make your work and job submission more efficient with the Resource Estimator target
+ms.date: 03/06/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -15,6 +15,106 @@ uid: microsoft.quantum.work-with-resource-estimator
 
 Once you've learned how to [customize](xref:microsoft.quantum.overview.resources-estimator) and [submit](xref:microsoft.quantum.quickstarts.computing.resources-estimator) jobs to the Resource Estimator, you can learn how to optimize the execution time of resource estimation jobs.
 
+## Run multiple configurations as a single job
+
+A resource estimation job consist of two types of job parameters: [**target parameters**](xref:microsoft.quantum.overview.resources-estimator#target-parameters), that is qubit model, QEC schemes, and error budget; and, optionally, **operation arguments**, that is arguments that can be passed to the QIR program. The Azure Quantum Resource Estimator allows you to submit jobs with multiple configuration of job parameters, or multiple *items*, as a single job to avoid rerunning multiple jobs on the same quantum program.
+
+One item consists of one configuration of job parameters, that is one configuration of target parameters and operation arguments. Several items are represented as an array of job parameters. 
+
+Some scenarios where you may want to submit multiple items as a single job:
+
+- Submit multiple target parameters with *same* operation arguments in all items.
+- Submit multiple target parameters with *different* operation arguments in all items.
+- Easily compare multiple results in a tabular format.
+- Easily compare multiple results in a chart.
+
+### Batching with Q#
+
+For example, consider the following Q# operation that creates multiplier with a `bitwidth` parameter that can be passed to the operation as argument. The operation have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`. 
+
+```python 
+%%qsharp 
+open Microsoft.Quantum.Arithmetic;
+
+operation Multiply(bitwidth : Int) : Unit { 
+
+    use factor1 = Qubit[bitwidth]; 
+    use factor2 = Qubit[bitwidth]; 
+    use product = Qubit[2 * bitwidth]; 
+    MultiplyI(LittleEndian(factor1), LittleEndian(factor2), LittleEndian(product)); 
+
+} 
+```
+You want to estimate the resources of the operation `Multiply` using four different bit widths [8, 16, 32, 64], and for four different qubit models ["qubit_gate_ns_e3", "qubit_gate_ns_e4", "qubit_gate_us_e3", "qubit_gate_us_e4"]. Each configuration consists of one operation argument and one target parameter.
+
+```python
+bitwidths = [8, 16, 32, 64] # operation arguments
+estimation_params = [
+    {"qubitParams": {"name": "qubit_gate_ns_e3"}},
+    {"qubitParams": {"name": "qubit_gate_ns_e4"}},
+    {"qubitParams": {"name": "qubit_gate_us_e3"}},
+    {"qubitParams": {"name": "qubit_gate_us_e4"}}
+] # target parameters 
+
+```
+By running each configuration as a single job, this would lead to the submission of 16 jobs, which means 16 separate compilations for the same program. 
+Instead, you want to run one resource estimation job with multiple items. 
+
+```python
+items = []
+
+for bitwidth in bitwidths:
+    for params in estimation_params:
+        items.append({
+            "arguments": [{
+                "name": "bitwidth",
+                "value": bitwidth,
+                "type": "Int"
+            }],
+            **params
+        })
+
+results = qsharp.azure.execute(Multiply, jobParams={"items": items})
+```
+
+The result of the resource estimation job is displayed in a table with multiple results coming from the list of items. By default the maximum number of items to be displayed is five. To display a list of $N$ items where $N > 5$, use `results[0:N]`. 
+
+ :::image type="content" source="media/batching-qsharp.png" alt-text="Screenshot of the table of results of a resource estimation job for 16 configurations.":::
+
+You can also access individual results by providing a number as index. For example, `results[0]` to show the results table of the first configuration, which has the first set of target parameters and bit width of 8. 
+
+### Batching with Qiskit
+
+Consider the following Qiskit circuit that takes three qubits and apply a CCX or Toffoli gate using the third qubit as target. In this case, you want to estimate the resources of this quantum circuit for four different target parameters, so each configuration consists of one target parameter. Batching allows you to submit all configurations at the same time.
+
+```python
+from azure.quantum.qiskit import AzureQuantumProvider 
+provider = AzureQuantumProvider ( 
+    resource_id = "", 
+    location = "" 
+) 
+
+backend = provider.get_backend('microsoft.estimator') 
+
+from qiskit import QuantumCircuit 
+from qiskit.tools.monitor import job_monitor 
+
+circ = QuantumCircuit(3) 
+circ.ccx(0, 1, 2) 
+items = [ 
+    {"qubitParams": {"name": "qubit_gate_ns_e3"}, "errorBudget": 0.0001}, 
+    {"qubitParams": {"name": "qubit_gate_ns_e4"}, "errorBudget": 0.0001}, 
+    {"qubitParams": {"name": "qubit_maj_ns_e4"}, "errorBudget": 0.0001}, 
+    {"qubitParams": {"name": "qubit_maj_ns_e6"}, "errorBudget": 0.0001}, 
+] # target parameters 
+
+job = backend.run(circ, items=items) 
+job_monitor(job) 
+results = job.result() 
+results 
+```
+ :::image type="content" source="media/batching-qiskit.png" alt-text="Screenshot of the table of results of a resource estimation job for four configurations.":::
+ 
 ## Handle large programs
 
 When you submit a resource estimation job to the Resource Estimator, the quantum program is evaluated completely to extract the resource estimates. As such, large programs or programs that have loops with many iterations may take a long time to complete the resource estimation job.
@@ -37,21 +137,6 @@ There is no verification that resources are the same in every iteration. However
 > [!IMPORTANT]
 > Currently, special operations `BeginCaching` and `EndCaching` are only supported from Q# programs and the Azure CLI. 
 
-## How to avoid rerunning the same job
- 
-If you've already submitted a resource estimation job for a quantum program, you can retrieve the results in the future and avoid rerunning the same job.
-
-- After running the jobs in the same notebook, you can print the jobs using the `print`
-  command and then paste it into the cell. This way, you can easily access the job IDs in future sessions without needing to resubmit jobs.
-- After running jobs in some other notebook, you can paste the job IDs that you can access from the **Job management** page in your Azure Quantum workspace and collect the results in your current notebook.
-
-```python
-# Use the following line to print all job IDs and then update them in the bottom of the cell
-print(f"jobs = {jobs}")
-
-# These job ids are not complete and are just printed to provide an idea of what to expect from the output.
-jobs = {'gate_ns': ['fdd354d9-...', ...], 'gate_us': ['453f7039-...', ...], 'maj_ns': ['cf273c84-...', ...]} 
-```
 
 ## Next steps
 

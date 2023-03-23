@@ -23,16 +23,18 @@ Quantinuum provides access to trapped-ion systems with high-fidelity, fully conn
 
 The following targets are available from this provider:
 
-|Target name|Target ID|Number of qubits|Description|
+|Target name|	Target ID| Number of qubits| Integrated hybrid support |Description|
 |---|---|---|---|
-|[H1-1 Syntax Checker](#syntax-checkers)|quantinuum.sim.h1-1sc|20 qubits|Use this to validate quantum programs against the H1-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
-|[H1-2 Syntax Checker](#syntax-checkers)|quantinuum.sim.h1-2sc |12 qubits|Use this to validate quantum programs against the H1-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
-|[H1-1 Emulator](#system-model-h1-emulators)|quantinuum.sim.h1-1e |20 qubits|Uses a realistic physical model and noise model of H1-1.|
-|[H1-2 Emulator](#system-model-h1-emulators)|quantinuum.sim.h1-2e |12 qubits|Uses a realistic physical model and noise model of H1-2.|
-|[H1-1](#system-model-h1)|quantinuum.qpu.h1-1|20 qubits|Quantinuum's H1-1 trapped ion device.|
-|[H1-2](#system-model-h1)|quantinuum.qpu.h1-2|12 qubits|Quantinuum's H1-2 trapped ion device.|
+|[H1-1 Syntax Checker](#syntax-checkers) | quantinuum.sim.h1-1sc| 20 qubits| Yes | Use this to validate quantum programs against the H1-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
+|[H1-2 Syntax Checker](#syntax-checkers) | quantinuum.sim.h1-2sc | 12 qubits| Yes | Use this to validate quantum programs against the H1-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
+|[H1-1 Emulator](#system-model-h1-emulators) | quantinuum.sim.h1-1e | 20 qubits| Yes | Uses a realistic physical model and noise model of H1-1.|
+|[H1-2 Emulator](#system-model-h1-emulators)|quantinuum.sim.h1-2e | 12 qubits| Yes | Uses a realistic physical model and noise model of H1-2.|
+|[H1-1](#system-model-h1)| quantinuum.qpu.h1-1 | 20 qubits| Yes | Quantinuum's H1-1 trapped ion device.|
+|[H1-2](#system-model-h1)| quantinuum.qpu.h1-2 |12 qubits| Yes | Quantinuum's H1-2 trapped ion device.|
 
 Quantinuum's targets correspond to a **Basic Measurement Feedback** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
+
+All of Quantinuum's targets now support Integrated hybrid circuits. For more information about submitting integrated hybrid jobs, see [Integrated hybrid computing](xref:microsoft.quantum.hybrid.integrated).
 
 To get started using the Quantinuum provider on Azure Quantum, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
@@ -41,7 +43,7 @@ To get started using the Quantinuum provider on Azure Quantum, see [Get started 
 We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-2 syntax checker uses the same compiler as H1-2. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker will return a `success` status and a result of all 0s. If the code does not compile, the syntax checker will return a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
 
 - Job type: `Simulation`
-- Data Format: `honeywell.openqasm.v1`, `honeywell.qir.v1`
+- Data Formats: `honeywell.openqasm.v1`, `honeywell.qir.v1`
 - Target ID:
   - H1-1 Syntax Checker: `quantinuum.sim.h1-1sc`
   - H1-2 Syntax Checker: `quantinuum.sim.h1-2sc`
@@ -327,7 +329,7 @@ print("Job id:", job.id())
 
 ### TKET Compilation in H-Series Stack
 
-Circuits submitted to Quantinuum H-Series systems are automatically run through TKET compilation passes for H-Series hardware. This enables circuits to be automatically optimized for H-Series systems and run more efficiently.
+Circuits submitted to Quantinuum H-Series systems, **except for integrated hybrid submissions**, are automatically run through TKET compilation passes for H-Series hardware. This enables circuits to be automatically optimized for H-Series systems and run more efficiently.
 
 More information on the specific compilation passes applied can be found in the [`pytket-quantinuum`] documentation, specifically the [`pytket-quantinuum` Compilation Passes] section. 
 
@@ -446,6 +448,9 @@ where:
 - $N_{2q}$ is the number of native two-qubit operations in a circuit. Native gate is equivalent to CNOT up to several one-qubit gates.
 - $N_{m}$ is the number of state preparation and measurement (SPAM) operations in a circuit including initial implicit state preparation and any intermediate and final measurements and state resets.
 - $C$ is the shot count.
+
+> [!NOTE]
+> The total cost in HQCs includes all gates and measurements across any conditional branches or control flows. This may have a higher impact on integrated hybrid jobs. 
 
 Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the **Credits and quotas** blade and select the **Quotas** tab of your workspace on the [Azure portal]. For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
 

@@ -6,7 +6,7 @@ ms.author: brbenefield
 ms.service: azure-quantum
 ms.topic: how-to
 ms.date: 04/27/2022
-ms.custom: lock-how-to
+ms.custom: lock-how-to, devx-track-azurecli, devx-track-azurepowershell
 uid: microsoft.quantum.workspaces-locks
 ---
 
