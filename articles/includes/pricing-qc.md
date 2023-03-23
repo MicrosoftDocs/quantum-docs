@@ -1,7 +1,7 @@
 ---
 author: sonialopezbravo
 ms.author: sonialopez
-ms.date: 12/01/2022
+ms.date: 03/23/0223
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -173,3 +173,7 @@ The Pay-as-you-go plan consists of *a la carte* access to the Aspen-M-3 and Aspe
 |  | $0.02 (USD) per 10-millisecond increment of job execution time|
 
 ***
+
+## QCI
+
+<TBD>
