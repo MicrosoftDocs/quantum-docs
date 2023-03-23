@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand the known issues of integrated hybrid programs with Q# and the QDK and supported hardware.
-ms.date: 03/06/2023
+ms.date: 03/23/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
