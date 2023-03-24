@@ -113,7 +113,8 @@ The last released version of the [QDK extension for Visual Studio 2019](https://
 In order to use newer versions of the QDK for quantum projects with version `0.24.201332` or higher, you should use either the [extension for Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or the [extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
 
-### Job fails with error code: QIRPreProcessingFailed
+
+### Issue: Job fails with error code: QIRPreProcessingFailed
 
 When submitting a job to a Rigetti provider, the job fails and is reported in the Job management console in the Azure portal:
 
@@ -149,6 +150,7 @@ You must be an **Owner** of the subscription you select in order to use the **Qu
 This issue occurs because you don't have the authorization required at the subscription, resource group, or storage account level. For more information on required access levels, see [Role requirements for creating a workspace](xref:microsoft.quantum.how-to.manage-workspace-access#role-requirements-for-creating-a-workspace).
 
 
+
 ### Issue: "Deployment Validation Failed" error message appears after you select **Create**
 
 This error message may include more details such as "The client does not have authorization to perform action."
@@ -177,8 +179,9 @@ This can happen for two reasons:
 
 This error can happen if you haven't installed Qiskit when running a Qiskit Machine Learning sample on the Azure Quantum notebooks. To solve this issue add a new cell at the top of the notebook and copy: 
 
- ```python
- !pip install qiskit
- !pip install qiskit-machine-learning
- ``` 
+```python
+!pip install qiskit
+!pip install qiskit-machine-learning
+```
  Then click on **Run all** on the top left of the notebook.
+
