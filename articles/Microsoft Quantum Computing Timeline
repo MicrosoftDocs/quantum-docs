@@ -1,0 +1,30 @@
+This article encapsulates all the major developments done by Microsoft over the years 
+
+Microsoft: Microsoft is working on making a topological quantum computer, which will use topological qubits to make the computer more resistant to errors and faults. They also made the Quantum Development Kit (QDK), which has the Q# computer language, libraries, and tools for making quantum algorithms that can be run on quantum simulators or quantum hardware that is compatible with QDK.
+Microsoft has been putting money into research and development in quantum computing for a long time. 
+Here is a timeline of the most important Milestones Microsoft has had on its way in quantum computing:
+
+2005 - The Station Q
+Station Q is a research lab that Microsoft set up at the University of California, Santa Barbara. Its main goal is to study topological quantum computing. Researchers from different fields got together at the center to work on projects related to quantum computing.
+
+2016 - Quantum Research at Microsoft
+Microsoft's interest in quantum computing grew when it created a new team called Microsoft Quantum to advance research in the area. The company also said it would work with Purdue University, TU Delft, and the University of Sydney, among other academic and business partners.
+
+2017: Quantum Development Kit and Q#
+Microsoft came out with the Quantum Development Kit and the Q# computer language. (QDK). Developers could write quantum algorithms and programs with Q#, and the QDK gave them the tools, libraries, and models they needed to test and fix quantum code.
+
+2018 - Azure Quantum
+Microsoft launched Azure Quantum, which is a full-stack quantum computing service that runs in the cloud. The platform gave users access to quantum technology from Microsoft's partners, like IonQ, Honeywell, and QCI, as well as a variety of quantum software and tools.
+
+2019: Microsoft's Quantum Network
+With the launch of the Microsoft Quantum Network, organizations, startups, and academic institutions working on quantum computing can now link with each other. The network's goal was to make it easier for people to work together, give them access to tools, and support quantum education and workforce development.
+
+2020 - Azure Quantum Public Preview
+Microsoft made the public preview of Azure Quantum available. This means that developers and researchers can now use the Azure cloud platform to access quantum hardware and software tools.
+
+2021 - Quantum Intermediate Representation (QIR)
+Microsoft made the Quantum Intermediate Representation (QIR), which is an open-source interface for languages, compilers, and devices for quantum computing. QIR was made to improve interoperability and allow current development tools and platforms to work together more easily.
+
+As of 2021, Microsoft was still putting money into study, software development, and working with partners to move quantum computing forward. 
+Focusing on topological qubits, a more fault-tolerant qubit technology, is what the company is doing. 
+This could lead to more reliable and scalable quantum computing options in the future.
