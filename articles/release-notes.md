@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 03/15/2023
+ms.date: 03/28/2023
 author: SoniaLopezBravo
 ms.author: sonialopez
 ms.service: azure-quantum
@@ -17,13 +17,23 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
+## 2023-03-29
+
+### QDK version 0.28.263081
+
+- Added [Q# Azure Quantum Resource Estimator API](/azure/quantum/how-to-work-with-re#handle-large-programs) to aid with estimation of large programs.
+- In the azure-quantum package, we simplified the experience to submit QIR jobs to the resource estimator.
+- In the azure-quantum package, the Qiskit provider object now provides a list of backends and ability to filter and acquire backends.
+- Fixed the hard-coded tolerance in [AssertOperationsEqualInPlace](/qsharp/api/qsharp/microsoft.quantum.diagnostics.assertoperationsequalinplace) and added a call to reset all auxiliary qubits at the end of their scope. Fixes [microsoft/qsharp-runtime#1129](https://github.com/microsoft/qsharp-runtime/issues/1129).
+- The local Resources Estimator has been removed. [The Azure Quantum Resource Estimator](/azure/quantum/intro-to-resource-estimation) is now available through Azure Quantum.
+
 ## 2023-03-01
 
 ### QDK version 0.27.258160
 
 - In Q# Jupyter notebooks, fixed an issue where `%azure.connect` would take several minutes before succeeding in certain environments. See [microsoft/Quantum#762](https://github.com/microsoft/Quantum/issues/762) for more details.
 - Removed support for Rigetti Aspen-11 Quantum Processor due to deprecation. For other targets available, see the [Rigetti provider](/azure/quantum/provider-rigetti?tabs=tabid-pyquil) documentation.
-- Added a warning that the [local Resources Estimator](/azure/quantum/machines/resources-estimator) will be removed in March 2023. The Resources Estimator is now available through [Azure Quantum](/azure/quantum/intro-to-resource-estimation).
+- Added a warning that the [local Resources Estimator](/azure/quantum/machines/resources-estimator) will be removed in March 2023. The Azure Quantum Resource Estimator is now available through [Azure Quantum](/azure/quantum/intro-to-resource-estimation).
 
 ## 2023-01-31
 
