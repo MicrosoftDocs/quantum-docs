@@ -45,7 +45,7 @@ qsharp.azure.target("microsoft.estimator") # To set Resource Estimator as target
 
 ### Create the quantum algorithm
 
-Next, create a multiplier using the [MultiplyI](/qsharp/api/qsharp/microsoft.quantum.arithmetic.multiplyi) operation.  You can configure the size of the multiplier with a `bitwidth` parameter that can be passed as input argument. The `EstimateMultiplication` operation will have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`.
+Next, create a multiplier using the [MultiplyI](/qsharp/api/qsharp/microsoft.quantum.arithmetic.multiplyi) operation.  You can configure the size of the multiplier with a `bitwidth` parameter that can be passed as operation argument. The `EstimateMultiplication` operation will have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`.
 
 Click **+ Code** to add a new cell, then add the following Q# code using the [%%qsharp magic command](xref:microsoft.quantum.how-to.python-local#the-qsharp-magic-command).
 
