@@ -28,7 +28,7 @@ For information about IonQ support, please see the [IonQ Support website](http:/
 ### Q: What happens if I raise a support issue with the Azure support team and it turns out that a third party provider (like IonQ) needs to troubleshoot the issue further?
 
 The support engineer will create a redirection package for you. This is a PDF document that contains information about your case which you can provide to the IonQ support team.
-The support engineer will also give you advice and guidance on how to reach out to IonQ to continue troubleshooting.
+The support engineer will also give you advice and guidance on how to reach out to IonQ to continue troubleshooting. For more information, see [IonQ status page](https://status.ionq.co/).
 
 ### Q: What happens if I raise a support issue with the IonQ team and it turns out that there is an issue with the Azure Quantum service?
 
