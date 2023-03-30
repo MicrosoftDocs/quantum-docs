@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the IonQ quantum computing provider
 ms.author: sonialopez
-ms.date: 10/31/2022
+ms.date: 03/30/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -28,6 +28,8 @@ The following targets are available from this provider:
 |[IonQ Aria](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|23 qubits	|IonQ's Aria trapped-ion quantum computer.|
 
 IonQ's targets correspond to a **No Control Flow** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
+
+
 
 ## Quantum simulator
 GPU-accelerated idealized simulator supporting up to 29 qubits, using the same set of gates IonQ provide on its quantum hardware—a great place to preflight jobs before running them on an actual quantum computer.
@@ -179,6 +181,10 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 
 > [!NOTE]
 > If you are using an [Azure Quantum Credits](xref:microsoft.quantum.credits) plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
+
+## IonQ status
+
+For information about IonQ QPU job processing delays, see [IonQ status page](https://status.ionq.co/). 
 
 ## IonQ best practices and connectivity graph
 
