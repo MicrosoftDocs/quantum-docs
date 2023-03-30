@@ -20,6 +20,11 @@ When working with Azure Quantum, you may run into these common issues.
 
 If the target where you want to run your job is missing from the available target list, you likely need to update to the latest version of the [Quantum Development Kit (Visual Studio 2022)](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or [Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
+### Issue: Local Resources Estimator is missing
+
+When running a program that uses the QDK ResourcesEstimator, you encounter the following error message: `The local Resources Estimator will be removed in March 2023. The Resources Estimator is now available through Azure Quantum.`
+
+The QDK ResourcesEstimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace is deleted. To compute physical and logical resource estimation and runtime, we recommend using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) tool.
 
 ### Issue: Operation returns an invalid status code 'Unauthorized'
 
