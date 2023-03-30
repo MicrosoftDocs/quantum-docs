@@ -20,6 +20,18 @@ When working with Azure Quantum, you may run into these common issues.
 
 If the target where you want to run your job is missing from the available target list, you likely need to update to the latest version of the [Quantum Development Kit (Visual Studio 2022)](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or [Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
+### Issue: Local Resources Estimator is missing
+
+When running a program that uses the QDK ResourcesEstimator class, you encounter the following error message: `Error CS0246: The type or namespace name 'ResourcesEstimator' could not be found (are you missing a using directive or an assembly reference?)`.
+
+If you try to use command line option to call the ResourcesEstimator class, you get: 
+
+```
+> -s ResourcesEstimator
+The simulator 'ResourcesEstimator' could not be found.
+```
+
+The QDK ResourcesEstimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace is deleted from March 2023. To compute physical and logical resource estimation and runtime, we recommend using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) tool.
 
 ### Issue: Operation returns an invalid status code 'Unauthorized'
 
