@@ -22,16 +22,17 @@ If the target where you want to run your job is missing from the available targe
 
 ### Issue: Local Resources Estimator is missing
 
-When running a program that uses the QDK ResourcesEstimator class, you encounter the following error message: `Error CS0246: The type or namespace name 'ResourcesEstimator' could not be found (are you missing a using directive or an assembly reference?)`.
+The QDK ResourcesEstimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace is removed from March 2023. When running a program that uses the QDK ResourcesEstimator class, you encounter the following error message: `Error CS0246: The type or namespace name 'ResourcesEstimator' could not be found (are you missing a using directive or an assembly reference?)`.
 
-If you try to use command line option to call the ResourcesEstimator class, you get: 
+Other possible error messages might happen when running local ResourcesEstimator. If you try to use command line option to call the ResourcesEstimator class, you get: 
 
 ```
 > -s ResourcesEstimator
 The simulator 'ResourcesEstimator' could not be found.
 ```
+If you try to use the `%estimate` magic command from Jupyter notebooks, you encounter the following error messages: `UsageError: Line magic function `%estimate` not found.`, or `No such magic command %estimate.` for Q# kernel.
 
-The QDK ResourcesEstimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace is deleted from March 2023. To compute physical and logical resource estimation and runtime, we recommend using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) tool.
+To compute physical and logical resource estimation and runtime, we recommend using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) tool instead.
 
 ### Issue: Operation returns an invalid status code 'Unauthorized'
 
