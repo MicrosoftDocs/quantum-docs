@@ -15,7 +15,7 @@ uid: microsoft.quantum.work-with-resource-estimator
 
 Once you've learned how to [customize](xref:microsoft.quantum.overview.resources-estimator) and [submit](xref:microsoft.quantum.quickstarts.computing.resources-estimator) jobs to the Resource Estimator, you can learn how to optimize the execution time of resource estimation jobs.
 
-## Run multiple configurations as a single job
+## How to run multiple configurations as a single job
 
 A resource estimation job consist of two types of job parameters: [**target parameters**](xref:microsoft.quantum.overview.resources-estimator#target-parameters), that is qubit model, QEC schemes, and error budget; and, optionally, **operation arguments**, that is arguments that can be passed to the QIR program. The Azure Quantum Resource Estimator allows you to submit jobs with multiple configuration of job parameters, or multiple *items*, as a single job to avoid rerunning multiple jobs on the same quantum program.
 
@@ -115,27 +115,81 @@ results
 ```
  :::image type="content" source="media/batching-qiskit.png" alt-text="Screenshot of the table of results of a resource estimation job for four configurations.":::
  
-## Handle large programs
+## How to handle large programs
 
 When you submit a resource estimation job to the Resource Estimator, the quantum program is evaluated completely to extract the resource estimates. As such, large programs or programs that have loops with many iterations may take a long time to complete the resource estimation job.
 
-One way to reduce long execution times is to perform *resource estimation caching*, a dedicated technique for the Resource Estimator to reduce execution time in Q# programs. 
+### Use known estimates for an operation
+
+If you already knwow some estimates for an operation. for example from a published paper, one way to reduce the execution time is taking the knonw estimates and incorporate them into the overall program cost.
+
+You can use the `AccountForEstimates` operation to incorporate known estimates into the overall cost of the program.
+
+```
+operation AccountForEstimates(estimates: (Int, Int)[], layout: Int, arguments: Qubit[]): Unit is Adj
+```
+The `AccountForEstimates` operation takes an array of `estimates` that need to be incorporated into the final, a `layout` scheme used to derive physical estimates
+costs of the program, and array of qubits, which unimplemented operation is using as its `arguments`.
+
+Some scenarios where you may want to use `AccountForEstimates` operation:
+- You want to try an algorithms described in a paper to improve performance of your program, but it would take long execution time to implement it
+- 
+
+
+
 
 ```qsharp
-if BeginCaching(id) {
-    // Code block to be cached
-    EndCaching(id);
+use q = Qubit();
+AccountForEstimates([AuxQubitCount(1), MeasurementCount(3)], PSSPCLayout(), [q]);
+```
+
+```qsharp
+operation AddInPlace(operand1 : Qubit[], operand2 : Qubit[]) : Unit {
+    let n = Length(operand1);
+    // n-bit in-place adder requires n-1 helper qubits, 4n−4 T gates, and n−1 measurements:
+    AccountForEstimates([ AuxQubitCount(n-1), TCount(4*n-4), MeasurementCount(n-1) ], PSSPCLayout(), operand1 + operand2);
 }
 ```
 
-The two special operations `BeginCaching` and `EndCaching` are intrinsic operations for the Resource Estimator. They both take as input an identifier `id`, which should be an integer unique for every code block that should be cached. `BeginCaching` should be used as a condition to an if-block that will contain the block to be cached. These operations will instruct resource counting such that the if-block will be executed only once, its resources will be cached, and appended in every other iteration.
+In this example `PSSPCLayout()` is the only layout scheme available at this time. `AuxQubitCount()`, `TCount()`, `MeasurementCount()` are the functions
+defined in `ResourceEstimation` namespace. They are used to indicate which specific cost value is provided by constructing an appropriate tuple.
 
-When `BeginCaching` is called for the first time, it will return `true` and record all resources until `EndCaching` is called for the same `id`. `EndCaching` should be placed at the end of the condition, and it will store the cached resources in a dictionary with the `id` as a key. All subsequent times that `BeginCaching` is called with an `id` that is already cached, the cached resources will be added to the existing ones, instead of executing the code again.
+### Caching
 
-There is no verification that resources are the same in every iteration. However, the resources are approximately the same, such that the improvement in runtime is a good trade-off.
+One way to reduce long execution times is to perform maual caching, a dedicated technique for the Resource Estimator to reduce execution time in Q# programs. 
+
+```qsharp
+operation ExpensiveOperation(c: Int, b : Bool): Unit {
+    if BeginEstimateCaching("MyNamespace.ExpensiveOperation", SingleVariant()) {
+        // Code block to be cached
+        EndEstimateCaching();
+    }
+}
+```
+> [!NOTE]
+> The two special operations `BeginEstimateCaching` and `EndEstimateCaching` are intrinsic operations for the Resource Estimator. 
+
+When `ExpensiveOperation` is used repeatedly, `BeginEstimateCaching` is called each time. When `BeginEstimateCaching` is called for the first time, it returns `true`  and begins accumulation of cost data until `EndEstimateCaching` is called. This causes code to proceed with execution of the expensive code fragment. When `EndEstimateCaching` is called cost data is stored for the future use and is incorporated into overall cost of the program.
+
+When `ExpensiveOperation` is called the second time (and subsequently), the Resource Estimator finds the stored (cached) cost data, incorporates it into overall cost of the program and returns `false`. This causes expensive code fragment to be skipped therefore the Resource Estimator executes program faster. `EndEstimateCaching` should be placed at the end of the condition, and regions enclosed in `BeginEstimateCaching-EndEstimateCaching` can be nested.
+
+`SingleVariant()` indicates that the cost data collected on the first execution can be reused in all subsequent executions of the code fragment. This might be not always the case. For example, let's say your code have different cost for odd and even values of  a variable 'c'. In this case, the code can be changed to
+provide a `variant` value:
+
+```qsharp
+operation ExpensiveOperation(c: Int, b : Bool): Unit {
+    if BeginEstimateCaching("MyNamespace.ExpensiveOperation", c % 2) {
+        … Some code …
+        EndEstimateCaching();
+    }
+}
+```
+In this case the cache will be different for odd and even values of `c`. In other words, data collected for even values of `c` will only be reused for even values of `c`, and the same applies for odd values of `c`.
+
+
 
 > [!IMPORTANT]
-> Currently, special operations `BeginCaching` and `EndCaching` are only supported from Q# programs and the Azure CLI. 
+> Currently, special operations `BeginEstimateCaching` and `EndEstimateCaching` are only supported from Q# programs and the Azure CLI. 
 
 
 ## Next steps
