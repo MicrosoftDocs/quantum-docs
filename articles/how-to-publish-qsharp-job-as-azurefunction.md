@@ -168,11 +168,11 @@ Follow the instructions in the tab corresponding to your development environment
     ...
     ```
 
-If you encounter a build warning *MSB3720* about a processor mismatch, add the following item to the \<*PropertyGroup*\> section in the **Function.Csharp.csproj** file:
-
-  ```xml
-      <PlatformTarget>x64</PlatformTarget>
-  ```
+    If you encounter a build warning *MSB3720* about a processor mismatch, add the following item to the \<*PropertyGroup*\> section in the **Function.Csharp.csproj** file:
+    
+    ```xml
+        <PlatformTarget>x64</PlatformTarget>
+    ```
 
 1. Copy the URL of your `RandomNumber` function from this output to a browser. To the function URL, append the query string *?name=<YOUR_NAME>*, making the full URL *http://http://localhost:7071/api/RandomNumber?name=Alice*. The browser should display a response message that echoes back your query string value. The terminal in which you started your project also displays log output as you make requests.
 
@@ -351,6 +351,7 @@ Functions in <APP_NAME>:
         Invoke url: https://<APP_NAME>.azurewebsites.net/api/randomnumber
 ...
 ```
+***
 
 ## Call your Q# algorithm via Azure Functions
 
