@@ -20,7 +20,10 @@ The function receives input via a request URL or via a request body. It then exe
 
 The Q# job that you'll publish as an Azure function implements a quantum random number generator. The algorithm uses the nature of quantum mechanics to produce a random number. To learn more about this algorithm, see the [Tutorial: Implement a Quantum Random Number Generator in Q#](xref:microsoft.quantum.tutorial-qdk.random-number).
 
+<!--
 To learn how to deploy your [quantum inspired optimization (QIO)](xref:microsoft.quantum.optimization.concepts.overview.introduction) job as a web service, see [Publish a QIO job as an Azure Function](xref:microsoft.quantum.publish-qio-as-azure-function).
+
+-->
 
 ## Prerequisites
 
@@ -28,8 +31,8 @@ You need the following prerequisites to follow the steps in this article:
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - The latest version of the [Quantum Development Kit for Q# and .NET](/azure/quantum/install-overview-qdk?tabs=tabid-local).
-- The [Azure Functions Core Tools](/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools) version 3.x.
 - The latest [Azure CLI](/cli/azure/install-azure-cli) with the latest [`quantum` extension](xref:microsoft.quantum.install-qdk.overview#azure-cli).
+- The [Azure Functions Core Tools](/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools) version 3.x.
 - [Visual Studio Code (VS Code)](https://code.visualstudio.com/) on one of the [supported platforms](https://code.visualstudio.com/docs/supporting/requirements#_platforms), with the latest [Quantum Development Kit for VS Code](/azure/quantum/install-overview-qdk?tabs=tabid-local) and the latest Q# project templates.
 - The [Azure Functions extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) for VS Code.
 
@@ -37,7 +40,8 @@ You need the following prerequisites to follow the steps in this article:
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
-A workspace is only required if you intend to run your Q# job on a target other than a simulator. This document describes how to execute the quantum algorithm on a simulator.
+> [!NOTE]
+> A quantum workspace is only required if you intend to run your Q# job on a hardware target rather than a simulator. This document describes how to execute the quantum algorithm on a simulator.
 
 ## Create a Q# library and an Azure Function host
 
@@ -60,7 +64,7 @@ Follow the instructions in the tab corresponding to your development environment
   1. Type **Azure Functions: Create New Project...**.
   1. Select **Browse** and create a new folder named **Function.Csharp** at the same level as the **Service.Qsharp** folder you created earlier, and select that folder for your project.
   1. Select **C\#** for the language.
-  1. Select **.NET 6.0 LTS** for the runtime version.
+  1. Select **.NET 6.0 (LTS)** for the runtime version.
   1. Select **HTTP trigger** for the template.
   1. Name the function **RandomNumber**.
   1. Use the default namespace. 
@@ -167,25 +171,24 @@ Follow the instructions in the tab corresponding to your development environment
     For detailed output, run func with --verbose flag.
     ...
     ```
+      If you encounter a build warning *MSB3720* about a processor mismatch, add the following item to the \<*PropertyGroup*\> section in the **Function.Csharp.csproj** file and rebuild the project: 
 
-    If you encounter a build warning *MSB3720* about a processor mismatch, add the following item to the \<*PropertyGroup*\> section in the **Function.Csharp.csproj** file:
-    
-    ```xml
-        <PlatformTarget>x64</PlatformTarget>
-    ```
+      ```xml
+          <PlatformTarget>x64</PlatformTarget>
+      ```
 
-1. Copy the URL of your `RandomNumber` function from this output to a browser. To the function URL, append the query string *?name=<YOUR_NAME>*, making the full URL *http://http://localhost:7071/api/RandomNumber?name=Alice*. The browser should display a response message that echoes back your query string value. The terminal in which you started your project also displays log output as you make requests.
+1. Copy the URL of your `RandomNumber` function from this output to a browser. To the function URL, append the query string *?name=\<YOUR_NAME\>*, for example, *http://localhost:7071/api/RandomNumber?name=Alice*. The browser should display a response message that echoes back your query string value. The terminal in which you started your project also displays log output as you make requests.
 
     :::image type="content" source="media/how-to-publish-qsharp-job-as-azurefunction/run-azure-function-locally-1.png" alt-text="Screenshot of the result of a local execution of the function in your browser.":::
 
-1. When the function executes locally and returns a response, a notification is raised in VS Code. Information about the function execution is shown in **Terminal** panel.
-1. Press **Ctrl + C** to stop Core Tools and disconnect the debugger.
+1. When the function executes locally and returns a response, a notification is raised in VS Code. Information about the function execution is shown in the **Terminal** panel.
+1. Press **Ctrl + C** to stop the Azure Core Tools and disconnect the debugger.
 
 ## Add the Q# algorithm code
 
 It's time to add some useful quantum algorithm code.
 
-1. Open the **Library.qs** file located in the **Service.Qsharp** directory.
+1. In VS Code, open the **Library.qs** file located in the **Service.Qsharp** directory.
 1. Replace the entire contents with the following code.
 
     ```qsharp
@@ -237,7 +240,7 @@ Once you have your projects set up, you can call into Q# from your Azure functio
     using Service.Qsharp;
     ```
 
-    The second statement references the namespace defined in your Q# algorithm file.
+    The second statement references the namespace defined in your Q# algorithm file, **LIbrary.qs**.
 
 1. Change the body of the ``Run`` method as follows:
 
@@ -270,7 +273,7 @@ Once you have your projects set up, you can call into Q# from your Azure functio
     }
     ```
 
-This code instantiates a ``QuantumSimulator`` object, where the random number generation occurs. You can use other target machines by instantiating them here, although the manner of doing so and the processing of the returns can be slightly different. For brevity, this section uses the ``QuantumSimulator``.  For information about other quantum computing targets, see [Quantum simulators](xref:microsoft.quantum.machines.overview) and [Quantum computing providers](xref:microsoft.quantum.reference.qc-target-list).
+This code instantiates a ``QuantumSimulator`` object, where the random number generation occurs. If you created the [optional Azure Quantum workspace](#optional), you can use other target machines by instantiating them here, although the manner of doing so and the processing of the returns can be slightly different. For brevity, this section uses the ``QuantumSimulator``.  For information about other quantum computing targets, see [Quantum simulators](xref:microsoft.quantum.machines.overview) and [Quantum computing providers](xref:microsoft.quantum.reference.qc-target-list).
 
 > [!NOTE]
 > The ``Run`` method is run asynchronously because this will be the case for real quantum hardware, and therefore the ``await`` keyword blocks further processing until the task completes.
@@ -280,7 +283,7 @@ This code instantiates a ``QuantumSimulator`` object, where the random number ge
 You can now prepare the target environment that will host the function. Preparation includes the creation of an empty Azure function app.
 
 1. Go to the [Azure portal](https://portal.azure.com) and sign in to your Azure account.
-1. Create a function app. Select **Create a resource** in the upper left corner of the portal.
+1. To create a function app, select **Create a resource** in the upper left corner of the portal.
 
     :::image type="content" source="media/how-to-publish-qsharp-job-as-azurefunction/prepare-cloud-env-1.png" alt-text="Screenshot showing how to create a new resource in Azure portal.":::
 
@@ -288,25 +291,25 @@ You can now prepare the target environment that will host the function. Preparat
 1. Provide the following information:
 
     - **Subscription**: Select the subscription that contains your (optional) Azure Quantum workspace.
-    - **Resource Group**: Select the resource group that contains your  (optional) Azure Quantum workspace.
+    - **Resource Group**: Select the resource group that contains your (optional) Azure Quantum workspace.
     - **Function App name**: Enter a globally unique name for the function app. You will use this name in a URL, so ensure that it is valid in a URL path. The name you type is validated to make sure that it's unique in Azure Functions.
-    - **Publish**: Select ``Code (LTS)``.
-    - **Runtime stack**: Select ``.NET``.
-    - **Version**: Select ``6.0``.
-    - **Region**: Select the region that contains your Azure Quantum workspace.
+    - **Publish**: Select **Code**.
+    - **Runtime stack**: Select **.NET**.
+    - **Version**: Select **6 (LTS)**.
+    - **Region**: Select the region that contains your resource group or your Azure Quantum workspace.
     - **Plan type**: use the default *Consumption (Serverless)*.
 
     Select **Review + Create** to confirm your input.
 
-1. Validate your input and select **Create**. Deployment will take a few seconds. Wait until a confirmation is displayed.
-1. Navigate to the new function. Select **Configuration** from the *Settings* menu and select **General settings** .  For the **Platform**, select **64 Bit** and save your configuration setting.
+1. Validate your input and select **Create**. Deployment will take a minute or two. Wait until a confirmation is displayed.
+1. Navigate to the new function. Select **Configuration** from the **Settings** menu and select **General settings** .  For **Platform**, select **64 Bit** and save your configuration settings.
 
     :::image type="content" source="media/how-to-publish-qsharp-job-as-azurefunction/prepare-cloud-env-2.png" alt-text="Screenshot of the configuration pane showing how to configure 64-Bit-Platform settings for an Azure function.":::
 
     > [!IMPORTANT]
     > Failing to configure the function for a 64-bit platform will result in errors when the compiler tries to load the quantum libraries. These libraries require a 64-bit environment and won't load in a 32-bit environment.
 
-Because this sample only uses simulated hardware, a Quantum workspace is optional. When executing a quantum algorithm on quantum hardware, make sure that the Azure Function is properly authenticated to the Quantum workspace. For more information and steps, see [Publish a QIO job as an Azure Function](/azure/quantum/how-to-publish-qio-job-as-azurefunction).
+Because this example only uses a quantum simulator, an Azure Quantum workspace is optional. When executing a quantum algorithm on quantum hardware, make sure that the Azure Function is properly authenticated to the Quantum workspace. For more information and steps, see [Publish a QIO job as an Azure Function](/azure/quantum/how-to-publish-qio-job-as-azurefunction).
 
 ## Deploy the Azure Function to the cloud
 
@@ -355,7 +358,7 @@ Functions in <APP_NAME>:
 
 ## Call your Q# algorithm via Azure Functions
 
-You can now test the function in the cloud.
+You can now test your function in the cloud, using the URL that was returned after the successful deployment.
 
 1. Call the function by entering the function's URL in a browser:
 
@@ -363,9 +366,9 @@ You can now test the function in the cloud.
     https://<APP_NAME>.azurewebsites.net/api/randomnumber
     ```
 
-    This call should generate a random integer between 0 and 100. 100 is the maximum value, if no ``maxValue`` parameter is passed.
+    This call should generate a random integer between 0 and 100. 100 is the maximum value, because no ``maxValue`` parameter is passed.
 
-1. Call the function again, using the ``maxValue`` parameter:
+1. Call the function again, appending the ``maxValue`` parameter to the URL:
 
     ```text
     https://<APP_NAME>.azurewebsites.net/api/randomnumber?maxValue=10
