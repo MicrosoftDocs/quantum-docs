@@ -5,7 +5,7 @@ author: bradben
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.topic: how-to
-ms.date: 03/30/2022
+ms.date: 03/30/2023
 uid: microsoft.quantum.publish-qc-as-azure-function
 #Customer intent: As a researcher, I want to make my quantum algorithm accessible via API so that developers without further quantum knowledge can call it via classical API-calls.
 ---
@@ -29,7 +29,8 @@ You need the following prerequisites to follow the steps in this article:
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - The latest version of the [Quantum Development Kit for Q# and .NET](/azure/quantum/install-overview-qdk?tabs=tabid-local).
 - The [Azure Functions Core Tools](/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools) version 3.x.
-- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) on one of the [supported platforms](https://code.visualstudio.com/docs/supporting/requirements#_platforms).
+- The latest [Azure CLI](/cli/azure/install-azure-cli) with the latest [`quantum` extension](xref:microsoft.quantum.install-qdk.overview#azure-cli).
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) on one of the [supported platforms](https://code.visualstudio.com/docs/supporting/requirements#_platforms), with the latest [Quantum Development Kit for VS Code](/azure/quantum/install-overview-qdk?tabs=tabid-local) and the latest Q# project templates.
 - The [Azure Functions extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) for VS Code.
 
 ### Optional
@@ -43,9 +44,41 @@ A workspace is only required if you intend to run your Q# job on a target other 
 The first step is to create projects for your Q# library and for the Azure Function host that will call into the operations and functions defined in your Q# library.
 
 Follow the instructions in the tab corresponding to your development environment.
-When using an editor other than Visual Studio or VS Code, follow the command prompt steps.
 
-### [VS Code or command prompt](#tab/tabid-cmdline)
+### [VS Code](#tab/tabid-vscode)
+
+- Create a new Q# library
+
+  1. In VS Code, select the **View** menu and select **Command Palette**.
+  1. Type **Q#: Create New Project**.
+  1. Select **Quantum library**.
+  1. Select a directory and create a project named **Service.Qsharp**.
+
+- Create a new C#-based Azure function app project
+
+  1. Select the **View** menu and select **Command Palette**.
+  1. Type **Azure Functions: Create New Project...**.
+  1. Select **Browse** and create a new folder named **Function.Csharp** at the same level as the **Service.Qsharp** folder you created earlier, and select that folder for your project.
+  1. Select **C\#** for the language.
+  1. Select **.NET 6.0 LTS** for the runtime version.
+  1. Select **HTTP trigger** for the template.
+  1. Name the function **RandomNumber**.
+  1. Use the default namespace. 
+  1. Select **Anonymous** for the access rights.
+  1. Select **Open in current window**.
+
+- Add your Q# library as a reference from your function app project
+
+  1. In the **Function.Csharp** folder, edit the **Function.Csharp.csproj** file and add the following \<*ItemGroup*\>:
+  
+  ```xml
+    <ItemGroup>
+      <ProjectReference Include="..\Service.Qsharp\Service.Qsharp.csproj" />
+    </ItemGroup>
+  ```
+
+
+### [.NET CLI or VS Code command prompt](#tab/tabid-cmdline)
 
 - Create a new Q# library
 
@@ -105,7 +138,7 @@ When using an editor other than Visual Studio or VS Code, follow the command pro
 
 ## Test the Azure Function in your local environment
 
-1. Delete any reference to an Azure storage account. Navigate to the local.settings.json file located in the function app project directory. Replace any string configured for ``AzureWebJobsStorage`` by the empty string. The file should look as follows:
+1. Delete any reference to an Azure storage account. Navigate to the **local.settings.json** file located in the **Function.Csharp** folder. Replace any string configured for ``AzureWebJobsStorage`` with the empty string. The file should look as follows:
 
     ```json
     {
@@ -117,13 +150,7 @@ When using an editor other than Visual Studio or VS Code, follow the command pro
     }
     ```
 
-1. Navigate into the function app project folder
-
-    ```dotnetcli
-    cd .\Function.Csharp\
-    ```
-
-1. Run the function by starting the local Azure Functions runtime host.
+1. Select **F5** to run the function in the local Azure Functions runtime host, or from the command line, run:
 
     ```dotnetcli
     func start
@@ -141,6 +168,12 @@ When using an editor other than Visual Studio or VS Code, follow the command pro
     ...
     ```
 
+If you encounter a build warning *MSB3720* about a processor mismatch, add the following item to the \<*PropertyGroup*\> section in the **Function.Csharp.csproj** file:
+
+  ```xml
+      <PlatformTarget>x64</PlatformTarget>
+  ```
+
 1. Copy the URL of your `RandomNumber` function from this output to a browser. To the function URL, append the query string *?name=<YOUR_NAME>*, making the full URL *http://http://localhost:7071/api/RandomNumber?name=Alice*. The browser should display a response message that echoes back your query string value. The terminal in which you started your project also displays log output as you make requests.
 
     :::image type="content" source="media/how-to-publish-qsharp-job-as-azurefunction/run-azure-function-locally-1.png" alt-text="Screenshot of the result of a local execution of the function in your browser.":::
@@ -152,8 +185,8 @@ When using an editor other than Visual Studio or VS Code, follow the command pro
 
 It's time to add some useful quantum algorithm code.
 
-1. Open the Library.qs file located in the Service.Qsharp directory.
-1. Replace its content by the following code.
+1. Open the **Library.qs** file located in the **Service.Qsharp** directory.
+1. Replace the entire contents with the following code.
 
     ```qsharp
     namespace Service.Qsharp {
@@ -177,7 +210,7 @@ It's time to add some useful quantum algorithm code.
         operation SampleRandomNumberInRange(max : Int) : Int {
             mutable output = 0; 
             repeat {
-                mutable bits = new Result[0]; 
+                mutable bits = []; 
                 for idxBit in 1..BitSizeI(max) {
                     set bits += [GenerateRandomBit()]; 
                 }
@@ -196,7 +229,7 @@ The function now contains two callables: The ``GenerateRandomBit`` operation gen
 
 Once you have your projects set up, you can call into Q# from your Azure function app. The Q# compiler creates .NET classes for both Q# operations that allow you to run your quantum programs on a simulator. To call this operation from .NET on a quantum simulator, use the ``Run`` method of the ``RunAlgorithm`` .NET class generated by the Q# compiler.
 
-1. Open the RandomNumber.cs file located in the function app project directory.
+1. Open the **RandomNumber.cs** file located in the **Function.Csharp** directory.
 1. Add references to the required namespaces by appending the following statements to the existing ``using`` statements.
 
     ```csharp
@@ -254,29 +287,52 @@ You can now prepare the target environment that will host the function. Preparat
 1. Search for **Function App** and select **Create**.
 1. Provide the following information:
 
-    - **Subscription**: Select the subscription that contains your Azure Quantum workspacee.
-    - **Resource Group**: Select the resource group that contains your Azure Quantum workspace.
-    - **Function App name**: Enter a globally unique name for the function app. Type a name that is valid in a URL path. The name you type is validated to make sure that it's unique in Azure Functions.
-    - **Publish**: Select ``Code``.
+    - **Subscription**: Select the subscription that contains your (optional) Azure Quantum workspace.
+    - **Resource Group**: Select the resource group that contains your  (optional) Azure Quantum workspace.
+    - **Function App name**: Enter a globally unique name for the function app. You will use this name in a URL, so ensure that it is valid in a URL path. The name you type is validated to make sure that it's unique in Azure Functions.
+    - **Publish**: Select ``Code (LTS)``.
     - **Runtime stack**: Select ``.NET``.
     - **Version**: Select ``6.0``.
     - **Region**: Select the region that contains your Azure Quantum workspace.
+    - **Plan type**: use the default *Consumption (Serverless)*.
 
     Select **Review + Create** to confirm your input.
 
 1. Validate your input and select **Create**. Deployment will take a few seconds. Wait until a confirmation is displayed.
-1. Navigate to the new function. Select **Configuration** from the *Settings* menu and select **General settings** .  For the **Platform**, select **64 Bit**.
+1. Navigate to the new function. Select **Configuration** from the *Settings* menu and select **General settings** .  For the **Platform**, select **64 Bit** and save your configuration setting.
 
     :::image type="content" source="media/how-to-publish-qsharp-job-as-azurefunction/prepare-cloud-env-2.png" alt-text="Screenshot of the configuration pane showing how to configure 64-Bit-Platform settings for an Azure function.":::
 
-    > [!IMPORTANT]
+    > [!IMPORTANT]`
     > Failing to configure the function for a 64-bit platform will result in errors when the compiler tries to load the quantum libraries. These libraries require a 64-bit environment and won't load in a 32-bit environment.
 
 Because this sample only uses simulated hardware, a Quantum workspace is optional. When executing a quantum algorithm on quantum hardware, make sure that the Azure Function is properly authenticated to the Quantum workspace. For more information and steps, see [Publish a QIO job as an Azure Function](/azure/quantum/how-to-publish-qio-job-as-azurefunction).
 
 ## Deploy the Azure Function to the cloud
 
-After you've successfully created your function app in Azure, you're now ready to deploy your local functions project by using the ``func azure functionapp publish`` command.
+After you've successfully created your function app in Azure, you're now ready to deploy your local functions project. This can be done in VS Code or at the command prompt.
+
+### [VS Code](#tab/tabid-deploy-vsc)
+
+  1. In VS Code, select the **View** menu and select **Command Palette**.
+  1. Type **Azure Functions: Deploy to Function App**.
+  1. Select your subscription.
+  1. Select the function app that you created earlier.
+  1. Select **Deploy** to confirm the deployment. 
+
+Towards the end of the console output, the following lines should display:
+
+```dotnetcli
+...
+Deployment completed successfully.
+Syncing triggers...
+Functions in <APP_NAME>:
+    RandomNumber - [httpTrigger]
+        Invoke url: https://<APP_NAME>.azurewebsites.net/api/randomnumber
+...
+```
+
+### [.NET CLI](#tab/tabid-deploy-cli)
 
 In the following example, replace ``<APP_NAME>`` with the name of your app that you created in the previous steps.
 
