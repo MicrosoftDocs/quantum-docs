@@ -303,7 +303,7 @@ You can now prepare the target environment that will host the function. Preparat
 
     :::image type="content" source="media/how-to-publish-qsharp-job-as-azurefunction/prepare-cloud-env-2.png" alt-text="Screenshot of the configuration pane showing how to configure 64-Bit-Platform settings for an Azure function.":::
 
-    > [!IMPORTANT]`
+    > [!IMPORTANT]
     > Failing to configure the function for a 64-bit platform will result in errors when the compiler tries to load the quantum libraries. These libraries require a 64-bit environment and won't load in a 32-bit environment.
 
 Because this sample only uses simulated hardware, a Quantum workspace is optional. When executing a quantum algorithm on quantum hardware, make sure that the Azure Function is properly authenticated to the Quantum workspace. For more information and steps, see [Publish a QIO job as an Azure Function](/azure/quantum/how-to-publish-qio-job-as-azurefunction).
