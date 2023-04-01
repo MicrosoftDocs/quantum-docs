@@ -285,7 +285,7 @@ It has signature (`Qubit[] => Result[])`.
 `MultiM(qs)` is equivalent to:
 
 ```qsharp
-mutable rs = new Result[Length(qs)];
+mutable rs = [Zero, size = Length(qs)];
 for (index in 0..Length(qs)-1)
 {
     set rs[index] = M(qs[index]);
