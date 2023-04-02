@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the intrinsic operations and functions in the QDK, including classical functions and unitary, rotation and measurement operations.
 ms.author: brbenefield
-ms.date: 01/19/2022
+ms.date: 04/01/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -25,11 +25,11 @@ The intrinsic operations defined in the standard library roughly fall into one o
 - Operations implementing measurements.
 
 Since the Clifford + $T$ gate set is [universal](xref:microsoft.quantum.concepts.multiple-qubits) for quantum computing, these operations suffice to approximately implement any quantum algorithm within negligibly small error.
-By providing rotations as well, Q# allows the programmer to work within the single qubit unitary and CNOT gate library. This library is much easier to think about because it does not  require the programmer to directly express the Clifford + $T$ decomposition and because highly efficient methods exist for compiling single qubit unitaries into Clifford and $T$ gates (see [here](xref:microsoft.quantum.more-information) for more information).
+By providing rotations as well, Q# allows the programmer to work within the single qubit unitary and CNOT gate library. This library is easier to think about because it does not require the programmer to express the Clifford + $T$ decomposition directly, and because highly efficient methods exist for compiling single qubit unitaries into Clifford and $T$ gates. See [Approaches for synthesizing circuits out of H, T and CNOT gates](xref:microsoft.quantum.more-information#approaches-for-synthesizing-circuits-out-of-h-t-and-cnot-gates) for more information.
 
-Where possible, the operations defined in the prelude which act on qubits allow for applying the `Controlled` variant, such that the target machine will perform the appropriate decomposition.
+Where possible, any operation that acts on qubits allows for applying the `Controlled` variant, such that the target machine performs the appropriate decomposition.
 
-Many of the functions and operations defined in this portion of the prelude are in the <xref:Microsoft.Quantum.Intrinsic> namespace, such that most Q# source files will have an `open Microsoft.Quantum.Intrinsic;` directive immediately following the initial namespace declaration.
+Many of the functions and operations defined in this portion of the prelude are in the <xref:Microsoft.Quantum.Intrinsic> namespace, such that most Q# source files have an `open Microsoft.Quantum.Intrinsic;` directive immediately following the initial namespace declaration.
 The <xref:Microsoft.Quantum.Core> namespace is automatically opened, so that functions such as <xref:Microsoft.Quantum.Core.Length> can be used without an `open` statement at all.
 
 ### Common Single-Qubit Unitary Operations ###
@@ -73,17 +73,17 @@ It corresponds to the single-qubit unitary:
     \end{bmatrix}
 \end{equation}
 
-Below we see these transformations mapped to the [Bloch sphere](xref:microsoft.quantum.concepts.qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere) (the rotation axis in each case is highlighted red):
+In the following representation, we see these transformations mapped to the [Bloch sphere](xref:microsoft.quantum.concepts.qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere) (the rotation axis in each case is highlighted red):
 
 ![Pauli operations mapped onto the Bloch sphere](~/media/prelude_pauliBloch.png)
 
-It is important to note that applying the same Pauli gate twice to the same qubit cancels out the operation (because you have now performed a full rotation of 2π (360°) over the surface to the Bloch Sphere, thus arriving back at the starting point). This brings us to the following identity:
+It is important to note that applying the same Pauli gate twice to the same qubit cancels out the operation. This is because you have now performed a full rotation of 2π (360°) over the surface to the Bloch Sphere, thus arriving back at the starting point, which brings us to the following identity:
 
 $$
 X^2=Y^2=Z^2=\boldone
 $$
 
-This can be visualised on the Bloch sphere:
+This can be visualized on the Bloch sphere:
 
 ![XX = I](~/media/prelude_blochIdentity.png)
 
@@ -106,8 +106,7 @@ The Hadamard gate is particularly important as it can be used to create a superp
 
 ![Hadamard operation mapped onto the Bloch sphere](~/media/prelude_hadamardBloch.png)
 
-The <xref:Microsoft.Quantum.Intrinsic.S> operation implements the phase gate $S$.
-This is the matrix square root of the Pauli $Z$ operation.
+The <xref:Microsoft.Quantum.Intrinsic.S> operation implements the phase gate $S$, which is the matrix square root of the Pauli $Z$ operation.
 That is, $S^2 = Z$.
 It has signature `(Qubit => Unit is Adj + Ctl)`,
 and corresponds to the single-qubit unitary:
@@ -121,7 +120,7 @@ and corresponds to the single-qubit unitary:
 
 #### Rotations ####
 
-In addition to the Pauli and Clifford operations above, the Q# prelude provides a variety of ways of expressing rotations.
+In addition to the Pauli and Clifford operations described earlier, the Q# prelude provides various ways of expressing rotations.
 As described in [single-qubit operations](xref:microsoft.quantum.concepts.qubit#single-qubit-operations), the ability to rotate is critical to quantum algorithms.
 
 We start by recalling that we can express any single-qubit operation using the $H$ and $T$ gates, where $H$ is the Hadamard operation, and where 
@@ -135,8 +134,8 @@ We start by recalling that we can express any single-qubit operation using the $
 This is the square root of the <xref:Microsoft.Quantum.Intrinsic.S> operation, such that $T^2 = S$.
 The $T$ gate is in turn implemented by the <xref:Microsoft.Quantum.Intrinsic.T> operation, and has signature `(Qubit => Unit is Adj + Ctl)`, indicating that it is a unitary operation on a single-qubit.
 
-Even though this is in principle sufficient to describe any arbitrary single-qubit operation, different target machines may have more efficient representations for rotations about Pauli operators, such that the prelude includes a variety of ways to convienently express such rotations.
-The most basic of these is the <xref:Microsoft.Quantum.Intrinsic.R> operation, which implements a rotation around a specified Pauli axis,
+Even though this is in principle sufficient to describe any arbitrary single-qubit operation, different target machines may have more efficient representations for rotations about Pauli operators, such that the prelude includes various ways to conveniently express such rotations.
+The most basic of these ways is the <xref:Microsoft.Quantum.Intrinsic.R> operation, which implements a rotation around a specified Pauli axis,
 \begin{equation}
     R(\sigma, \phi) \mathrel{:=}
     \exp(-i \phi \sigma / 2),
@@ -188,13 +187,13 @@ Z=1 eigenstate.
 It has signature `((Int,Int, Qubit) => Unit is Adj + Ctl)`.
 `R1Frac(k,n,_)` is the same as `RFrac(PauliZ,-k.n+1,_)` followed by `RFrac(PauliI,k,n+1,_)`.
 
-An example of a rotation operation (around the Pauli $Z$ axis, in this instance) mapped onto the Bloch sphere is shown below:
+An example of a rotation operation (around the Pauli $Z$ axis, in this instance) mapped onto the Bloch sphere is shown here:
 
 ![Rotation operation mapped onto the Bloch sphere](~/media/prelude_rotationBloch.png)
 
 #### Multi-Qubit Operations ####
 
-In addition to the single-qubit operations above, the prelude also defines several multi-qubit operations.
+In addition to the single-qubit operations described earlier, the prelude also defines several multi-qubit operations.
 
 First, the <xref:Microsoft.Quantum.Intrinsic.CNOT> operation performs a standard controlled-`NOT` gate,
 \begin{equation}
@@ -243,7 +242,7 @@ The <xref:Microsoft.Quantum.Intrinsic.Exp> operation performs a rotation based o
 where $\vec{\sigma} = (\sigma_0, \sigma_1, \dots, \sigma_n)$ is a sequence of single-qubit Pauli operators, and where $\phi$ is an angle.
 The `Exp` rotation represents $\vec{\sigma}$ as an array of `Pauli` elements, such that it has signature `((Pauli[], Double, Qubit[]) => Unit is Adj + Ctl)`.
 
-The <xref:Microsoft.Quantum.Intrinsic.ExpFrac> operation performs the same rotation, using the dyadic fraction notation discussed above.
+The <xref:Microsoft.Quantum.Intrinsic.ExpFrac> operation performs the same rotation, using the dyadic fraction notation discussed earlier.
 It has signature `((Pauli[], Int, Int, Qubit[]) => Unit is Adj + Ctl)`.
 
 > [!WARNING]
@@ -285,7 +284,7 @@ It has signature (`Qubit[] => Result[])`.
 `MultiM(qs)` is equivalent to:
 
 ```qsharp
-mutable rs = new Result[Length(qs)];
+mutable rs = [Zero, size = Length(qs)];
 for (index in 0..Length(qs)-1)
 {
     set rs[index] = M(qs[index]);

@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn about the Microsoft QDK invalidated qubits use checker, which uses the Quantum trace simulator to check your Q# code for potentially invalid qubits.
 ms.author: sonialopez
-ms.date: 10/31/2022
+ms.date: 04/01/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -21,7 +21,7 @@ Consider the following piece of Q# code to illustrate the issues detected by the
 
 ```qsharp
 operation UseReleasedQubit() : Unit {
-    mutable q = new Qubit[1];
+    mutable q = []];
     use ans = Qubit() {
         set q w/= 0 <- ans;
     }
