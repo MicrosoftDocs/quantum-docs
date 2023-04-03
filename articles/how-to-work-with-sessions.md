@@ -15,8 +15,7 @@ uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 
 ## Manual methods of creating/ending Sessions
 
-We recomend to follow the steps in [Get started with Sessions](xref:microsoft.quantum.hybrid.interactive-get-started-with-sessions) to create a new Session. However, for advanced 
-you can also manually create Sessions. 
+We recomend to follow the steps in [Get started with Sessions](xref:microsoft.quantum.hybrid.interactive-get-started-with-sessions) to create a new Session. However, for advanced features you can also manually create Sessions. 
 
 1. First, you create a **Session object**. 
 
