@@ -123,9 +123,9 @@ When you submit a resource estimation job to the Resource Estimator, the quantum
 
 If you already knwow some estimates for an operation, for example from a published paper, one way to reduce the execution time is taking the known estimates and incorporate them into the overall program cost.
 
-You can use the `AccountForEstimates` operation to incorporate known estimates into the overall cost of the program.
+You can use the `AccountForEstimates` Q# operation to incorporate known estimates into the overall cost of the program.
 
-```
+```qsharp
 operation AccountForEstimates(estimates: (Int, Int)[], layout: Int, arguments: Qubit[]): Unit is Adj
 ```
 The `AccountForEstimates` operation takes as inputs an array of known `estimates` that need to be incorporated into the final cost of the program, a `layout` scheme  that is used to derive physical estimates, and array of qubits, which the unimplemented operation is using as its `arguments`.
@@ -138,21 +138,25 @@ Some scenarios where you may want to use `AccountForEstimates` operation:
 For example, consider the following Q# operation: 
 
 ```qsharp
-use q = Qubit();
-AccountForEstimates([AuxQubitCount(1), MeasurementCount(3)], PSSPCLayout(), [q]);
+use q = Qubit(); # allocate one qubit
+use anc = Qubit(); # use an auxiliary qubit
+M(q); M(q); M(anc); # apply 3 measurements in total
+
+operation AddInPlace(operand1 : Qubit[], operand2 : Qubit[]) : Unit {
+    let n = Length(operand1);
+    // n-bit in-place adder requires n-1 helper qubits, 4n−4 T gates, and n−1 measurements:
+    AccountForEstimates([ AuxQubitCount(n-1), TCount(4*n-4), MeasurementCount(n-1) ], PSSPCLayout(), operand1 + operand2);
+}
 ```
 
 In this example `PSSPCLayout()` is the only layout scheme available at this time. `AuxQubitCount()`, `TCount()`, `MeasurementCount()` are the functions
 defined in `ResourceEstimation` namespace. They are used to indicate which specific cost value is provided by constructing an appropriate tuple.
 
-> [!IMPORTANT]
-> Currently, special operation `AccountForEstimates` is only supported from Q# programs and the Azure CLI. 
-
 ### Caching
 
 If you want estimate the resources of a Q# operation that is invoked many times, for example, in a loop with many iterations, the execution of the resource estimation job may take a long time. One way to reduce long execution times is to run the operation once, compute and cache its costs, and use the data on subsequent calls. This technique is called manual caching.
 
-The Resource Estimator target support two functions to perform manual caching: `BeginEstimateCaching(name: String, variant: Int): Bool` and `EndEstimateCaching(): Unit`. `BeginEstimateCaching` function takes as inputs a `name` which is the name of the code fragment we want to cache its costs, and an integer `variant` that distinguishes different variants of cost for the same fragment.
+The Resource Estimator target support two Q# functions to perform manual caching: `BeginEstimateCaching(name: String, variant: Int): Bool` and `EndEstimateCaching(): Unit`. `BeginEstimateCaching` function takes as inputs a `name` which is the name of the code fragment we want to cache its costs, and an integer `variant` that distinguishes different variants of cost for the same fragment.
 
 > [!NOTE]
 > The two special operations `BeginEstimateCaching` and `EndEstimateCaching` are intrinsic operations for the Resource Estimator. 
@@ -185,8 +189,6 @@ operation ExpensiveOperation(c: Int, b : Bool): Unit {
 
 In this case, the cache is different for odd and even values of `c`. In other words, data collected for even values of `c` is only reused for even values of `c`, and the same applies for odd values of `c`.
 
-> [!IMPORTANT]
-> Currently, special operations `BeginEstimateCaching` and `EndEstimateCaching` are only supported from Q# programs and the Azure CLI. 
 
 ## Next steps
 
