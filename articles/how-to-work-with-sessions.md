@@ -13,8 +13,6 @@ uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 
 # How to manage Sessions
 
-
-
 ## Manual methods of creating/ending Sessions
 
 We recomend to follow the steps in [Get started with Sessions](xref:microsoft.quantum.hybrid.interactive-get-started-with-sessions) to create a new Session. However, for advanced 
