@@ -19,9 +19,7 @@ In this model, the client compute resource is moved to the cloud, resulting in l
 
 ## What is a Session?
 
-A Session is a logical grouping of any combination of one or more jobs against a single target. It has a unique ID, attached to each job submitted to a provider. 
-
-
+A Session is a logical grouping of any combination of one or more jobs against a single target. Each Session has a unique ID, `sessionID`, attached to each job submitted to a provider. 
 
 Sessions allow users to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. Sessions allow you running complex algorithms to better organize and track your individual quantum computing jobs.
 
@@ -31,18 +29,25 @@ User scenarios where you may want to combine jobs in a Session:
 
 
 
+You can list all top-level submitted items within your Quantum Workspace, that is, Sessions and individual jobs that aren't associated with any Session.
+1. Select **Job Management** blade
+1. Identify the jobs of type **Session**. 
+1. You can see the Unique ID of a Session in column **Id**. 
+3. Click on the Session to see the list of all jobs. 
+
+For more information, see [Provider support](#provider-support).
+
 ## Get started with Sessions
 
-### [IQ# ](#tab/tabid-iqsharp)
-
-### [Q# + Python](#tab/tabid-qsharppy)
+### [Q# + Python in hosted Notebooks](#tab/tabid-iqsharp)
 
 
-You'll need to import some modules. Import the Microsoft.Quantum.Numerics package that is required for this example algorithm, 
+1. First, import 
+
 ```python
 import qsharp
 ```
-Consider the following Q# program
+Write your Q# program. For exmaple, the following Q# program generates a random bit. 
 ```python
 %%qsharp
 open Microsoft.Quantum.Intrinsic;
@@ -54,8 +59,8 @@ operation GenerateRandomBit_Inline() : Result {
 }
 ```
 
-Select 
-```pyhton
+Next, elec. In this example, you're using Rigetti simulator. 
+```python
 target = workspace.get_targets("rigetti.sim.qvm")
 target.input_data_format = "qir.v1"
 target.content_type = "qir.v1"
@@ -165,6 +170,10 @@ session_jobs = workspace.list_session_jobs(session_id=session_id)
 
 ### [QIO](#tab/tabid-qio)
 
+You can create a Session with QIO jobs, and in that case it can only contain optimization jobs. 
+
+First, create an optimization problem. 
+
 ```python
 import azure.quantum.optimization as optimization
 
@@ -177,6 +186,8 @@ problem = optimization.Problem(
         ]
     )
 ```
+
+Then, you choose the solver against you want to run the optimization problem. In this example, you're using [Parallel Tempering target](xref:microsoft.quantum.optimization.parallel-tempering) from QIO. 
 
 ```python
 from azure.quantum.optimization import ParallelTempering
@@ -195,11 +206,14 @@ session_jobs = workspace.list_session_jobs(session_id=session_id)
 
 [session_job.details.name for session_job in session_jobs]
 ```
-
-
-
 ***
 
+## Provider support
+
+Every job within a Session is proritized to run as close as possible from the previously queued job. Each quantum hardware provider define their own heuristics to best manage the prioritization of jobs within a Session. 
+If you choose to submit jobs within a Session to [Quantinuum target](xref.microsoft.quantum.providers.quantinuum)
+
+Jobs submitted under a session will have exclusive access to our hardware until the 1 minute timeout. After that, any job will be accepted and handled with the standard queueing and prioritization logic. 
 
 ## Next steps
 
