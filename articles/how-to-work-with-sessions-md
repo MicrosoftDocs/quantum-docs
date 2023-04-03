@@ -1,0 +1,70 @@
+---
+author: SoniaLopezBravo
+description: Learn how to work with jobs and Sessions
+ms.date: 03/30/2023
+ms.author: sonialopez
+ms.service: azure-quantum
+ms.subservice: qdk
+ms.topic: concepts
+no-loc: ['Q#', '$$v']
+title: Work with Sessions
+uid: microsoft.quantum.hybrid.interactive.how-to-sessions
+---
+
+# How to work with Sessions
+
+## Retrieve sessions, list sessions, and list jobs of sessions
+
+
+
+### [Q# + Python from Notebooks](#tab/tabid-iqsharp)
+
+
+|Magic command|Description|
+|---|---|
+|%azure.jobs| Retrieve a list of all jobs in a Quantum Workspace|
+|%azure.session list| Retrieve a list of all Sessions in a Quantum Workspace|
+|%azure.session show <sessionId>|
+|%azure.jobs list sessionId=<sessionId>|
+
+### [Qiskit](#tab/tabid-qiskit)
+
+|Function|Description|
+|---|---|
+|backend.start_session() -> AzureQuantumSession|
+
+Generates a GUID and invokes the PUT /Sessions/{sessionId} API with the generated GUID as the sessionId. Return a session object if the server responds with a HTTP 200/201, throw an error otherwise. Subsequent Job submissions made as part of the backend.run(.) call will include the sessionId in the body. 
+
+|session.exit()| |
+
+
+
+### [Azure CLI](#tab/tabid-cli)
+
+|CLI command|Description|
+|---|---|
+|az quantum jobs| Retrieve a list of all jobs in a Quantum Workspace|
+|az quantum session list| Retrieve a list of all Sessions in a Quantum Workspace|
+|az quantum session show --session <sessionId>|
+|az quantum job list --session <sessionId>| 
+
+
+## Retrieve all top-level items (sessions and individual jobs not associated with sessions)
+
+
+
+## Session timeouts
+
+Azure Quantum enforces a max time between the submission of each job within a session (currently equal to 10 minutes). If a partner implements a shorter default time-out, jobs should continue to be processed without any error. Only overall throughput would be affected. 
+
+Azure Quantum does not enforce an overall maximum duration for a Session. 
+
+## Job failure policy within sessions
+
+## Manual methods of creating/ending sessions
+
+## Unsupported scenarios
+
+## Next steps
+
+[Integrated quantum computing](xref:microsoft.quantum.hybrid.integrated)
