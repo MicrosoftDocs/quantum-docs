@@ -13,41 +13,7 @@ uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 
 # How to manage Sessions
 
-## Manual methods of creating/ending Sessions
-
-We recomend to follow the steps in [Get started with Sessions](xref:microsoft.quantum.hybrid.interactive-get-started-with-sessions) to create a new Session. However, for advanced features you can also manually create Sessions. 
-
-1. First, you create a **Session object**. 
-
-  ```python
-  from azure.quantum.job.session import Session, SessionDetails, SessionJobFailurePolicy
-  import uuid
-
-  session = Session(
-      workspace=workspace, # required
-      id=f"{uuid.uuid1()}", # optional, if not passed will use uuid.uuid1()
-      name="", # optional, will be blank if not passed
-      provider_id="ionq", # optional, if not passed will try to parse from the target
-      target="ionq.simulator", # required
-      job_failure_policy=SessionJobFailurePolicy.ABORT # optional, detaults to abort
-      )
-
-  print(f"Session status: {session.details.status}")
-  ```
-  To this point, the session only exists in the client and you see that the status is **None**. You need to create the Session in the service.
-
-2. To **create** a Session in the service, you can use `workspace.open_session(session)` or `session.open()`.
-
-3. You can refresh the **status** of a Session and the Session details with `session.refresh()`, or by getting a new Session object from a Session ID. 
-
-  ```python
-  same_session = workspace.get_session(session.id) 
-  print(f"Session: {session.details} \n")
-  print(f"Session: {same_session.details} \n")
-  ```
-
-4. You can **close** a Session with `session.close()` or `workspace.close_session(session)`. 
-
+In this article, you'll learn how to work with Sessions. With Sessions you can group one or more jobs against a single target, which allows you to manage jobs effectively. For more information, see [Interactive quantum computing: Sessions](xref:microsoft.quantum.hybrid.interactive).
 
 ## Retrieve Sessions, list Sessions, and list jobs of Sessions
 
@@ -122,6 +88,43 @@ for tli in all_tli[0:10]:
     print(f"Type: {tli.item_type}, Id: {tli.id}, Name={tli.details.name}")
 ```
 
+## Manual methods of creating/ending Sessions
+
+We recomend to follow the steps in [Get started with Sessions](xref:microsoft.quantum.hybrid.interactive-get-started-with-sessions) to create a new Session. However, for advanced features it's also possible to manually create Sessions. 
+
+1. First, you create a **Session object**. 
+
+  ```python
+  from azure.quantum.job.session import Session, SessionDetails, SessionJobFailurePolicy
+  import uuid
+
+  session = Session(
+      workspace=workspace, # required
+      id=f"{uuid.uuid1()}", # optional, if not passed will use uuid.uuid1()
+      name="", # optional, will be blank if not passed
+      provider_id="ionq", # optional, if not passed will try to parse from the target
+      target="ionq.simulator", # required
+      job_failure_policy=SessionJobFailurePolicy.ABORT # optional, detaults to abort
+      )
+
+  print(f"Session status: {session.details.status}")
+  ```
+  To this point, the session only exists in the client and you see that the status is **None**. You need to create the Session in the service.
+
+2. To **create** a Session in the service, you can use `workspace.open_session(session)` or `session.open()`.
+
+3. You can refresh the **status** of a Session and the Session details with `session.refresh()`, or by getting a new Session object from a Session ID. 
+
+  ```python
+  same_session = workspace.get_session(session.id) 
+  print(f"Session: {session.details} \n")
+  print(f"Session: {same_session.details} \n")
+  ```
+
+4. You can **close** a Session with `session.close()` or `workspace.close_session(session)`.   
+  
+  
+  
 ## Session timeouts
 
 A Session times out if no new job is submitted within the Session for 10 minutes. The Session reports a status of **TimedOut**. To avoid that, you can add a `with` block so the Session close() is invoked at the end of the code block. 
@@ -140,6 +143,8 @@ If the Session is never closed and times out, the status is **TimedOut** even if
 
 
 ## Unsupported scenarios
+  
+Sessions are not supported for quantum targets not supporting QIR
 
 ## Next steps
 
