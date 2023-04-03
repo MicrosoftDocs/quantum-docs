@@ -17,7 +17,16 @@ In this article, you'll learn how to work with Sessions. With Sessions you can g
 
 ## Retrieve Sessions, list Sessions, and list jobs of Sessions
 
-You can get the list of all jobs for a given Session. 
+You can get the list of all Sessions and all jobs for a given Session. 
+
+### [Python](#tab/tabid-python)
+
+|Command|Description|
+|---|---|
+|`workspace.list_sessions()`| Retrieve a list of all Sessions in a Quantum Workspace.|
+|`workspace.list_session(session.id)` | Retrieve the Session with ID `sessionID`. Each Session has a unique ID. |
+|`workspace.list_session_jobs(session.id)` | Retrieve a list of all jobs in the Session with ID `sessionID`. Each Session has a unique ID.|
+
 
 ```python
 def get_a_session_with_jobs(min_jobs):
@@ -36,7 +45,7 @@ for job in session_jobs[0:10]:
     print(f"Id: {job.id}, Name={job.details.name}")
 ```
 
-You can list all Sessions.
+
 
 ```python
 all_sessions = workspace.list_sessions()
@@ -52,7 +61,7 @@ session = workspace.get_session(session.id)
 > [!NOTE]
 > Filter functionality is currently not supported. 
 
-### [Q# + Python from Notebooks](#tab/tabid-iqsharp)
+### [Jupyter Notebooks](#tab/tabid-iqsharp)
 
 |Magic command|Description|
 |---|---|
@@ -71,22 +80,6 @@ session = workspace.get_session(session.id)
 |az quantum job list --session <sessionId>| Retrieve a list of all jobs in the Session with ID `sessionID`. Each Session has a unique ID.|
 
 ***
-
-## Retrieve all top-level items 
-
-You can list all top-level submitted items within your Quantum Workspace, that is, Sessions and individual jobs that aren't associated with any Session.
-This is a new API primarily used to populate the **Job Management** blade in the Portal.
-
-```python
-# You can list all the top level-items of the workspace
-# Note: Filter is not yet implemented
-all_tli = workspace.list_top_level_items() 
-
-print(f"Top-Level item count: {len(all_tli)}")
-print(f"First 10 top-level items:")
-for tli in all_tli[0:10]:
-    print(f"Type: {tli.item_type}, Id: {tli.id}, Name={tli.details.name}")
-```
 
 ## Manual methods of creating/ending Sessions
 
