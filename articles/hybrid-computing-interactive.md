@@ -5,7 +5,7 @@ ms.date: 03/30/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: concepts
+ms.topic: overview
 no-loc: ['Q#', '$$v']
 title: Introduction to Sessions
 uid: microsoft.quantum.hybrid.interactive
