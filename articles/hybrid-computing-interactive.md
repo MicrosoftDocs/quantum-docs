@@ -39,7 +39,7 @@ For more information, see [Provider support](#provider-support).
 
 ## Get started with Sessions
 
-### [Q# + Python in hosted Notebooks](#tab/tabid-iqsharp)
+### [Q# + Python](#tab/tabid-iqsharp)
 
 
 1. First, import 
@@ -47,92 +47,106 @@ For more information, see [Provider support](#provider-support).
 ```python
 import qsharp
 ```
-Write your Q# program. For exmaple, the following Q# program generates a random bit. 
-```python
-%%qsharp
-open Microsoft.Quantum.Intrinsic;
+2. Write your Q# program. For example, the following Q# program generates a random bit. 
 
-operation GenerateRandomBit_Inline() : Result {
-    use q0 = Qubit();
-    H(q0);
-    return M(q0);
-}
-```
+    ```python
+    %%qsharp
+    open Microsoft.Quantum.Intrinsic;
 
-Next, elec. In this example, you're using Rigetti simulator. 
-```python
-target = workspace.get_targets("rigetti.sim.qvm")
-target.input_data_format = "qir.v1"
-target.content_type = "qir.v1"
-target.output_data_format = "microsoft.quantum-results.v1"
-input_params = {
-    "entryPoint": "ENTRYPOINT__GenerateRandomBit_Inline",
-    "arguments": []
-}
+    operation GenerateRandomBit_Inline() : Result {
+        use q0 = Qubit();
+        H(q0);
+        return M(q0);
+    }
+    ```
 
-# These line won't be necessary very soon. They will be inside the target.submit
-qir_bitcode = GenerateRandomBit_Inline._repr_qir_(target=target.name)
-input_params = {
-    "entryPoint": "ENTRYPOINT__GenerateRandomBit_Inline",
-    "arguments": []
-}
-#################################################################################
+3. Next, elec. In this example, you're using Rigetti simulator as target. 
 
-with target.open_session(name="Q# Inline Session") as session:
-    target.submit(input_data=qir_bitcode, name="Job 1", input_params=input_params)
-    target.submit(input_data=qir_bitcode, name="Job 2", input_params=input_params)
-    target.submit(input_data=qir_bitcode, name="Job 3", input_params=input_params)
+    ```python
+    target = workspace.get_targets("rigetti.sim.qvm")
+    target.input_data_format = "qir.v1"
+    target.content_type = "qir.v1"
+    target.output_data_format = "microsoft.quantum-results.v1"
+    input_params = {
+        "entryPoint": "ENTRYPOINT__GenerateRandomBit_Inline",
+        "arguments": []
+    }
 
-session_id = target.get_latest_session_id()
-session_jobs = workspace.list_session_jobs(session_id=session_id)
+    # These line won't be necessary very soon. They will be inside the target.submit
+    qir_bitcode = GenerateRandomBit_Inline._repr_qir_(target=target.name)
+    input_params = {
+        "entryPoint": "ENTRYPOINT__GenerateRandomBit_Inline",
+        "arguments": []
+    }
 
-[session_job.details.name for session_job in session_jobs]
-```
+
+    with target.open_session(name="Q# Inline Session") as session:
+        target.submit(input_data=qir_bitcode, name="Job 1", input_params=input_params)
+        target.submit(input_data=qir_bitcode, name="Job 2", input_params=input_params)
+        target.submit(input_data=qir_bitcode, name="Job 3", input_params=input_params)
+
+    session_id = target.get_latest_session_id()
+    session_jobs = workspace.list_session_jobs(session_id=session_id)
+
+    [session_job.details.name for session_job in session_jobs]
+    ```
 
 ### [Qiskit](#tab/tabid-qiskit)
 
+1. First, you need to create a `provider` object with your workspace information.
 
+    ```python
+    from qiskit import QuantumCircuit
+    from qiskit.tools.monitor import job_monitor
+    from azure.quantum.qiskit import AzureQuantumProvider
 
-```python
-from qiskit import QuantumCircuit
-from qiskit.tools.monitor import job_monitor
-from azure.quantum.qiskit import AzureQuantumProvider
+    provider = AzureQuantumProvider(
+                resource_id = "", # add your resource ID
+                location = "") ## add your location
+    ```
 
-provider = AzureQuantumProvider(
-            resource_id = "",
-            location = "")
-```
-```python
-circuit = QuantumCircuit(2, 2)
-circuit.name = "GenerateRandomBit"
-circuit.h(0)
-circuit.cnot(0,1)
-circuit.measure([0,1], [0,1])
-circuit.draw()
-```
-```python
-backend = provider.get_backend("ionq.simulator")
-with backend.open_session(name="Qiskit Session") as session:
-    job1 = backend.run(circuit=circuit, shots=100, job_name="Job 1")
-    job_monitor(job1)
-    job2 = backend.run(circuit=circuit, shots=100, job_name="Job 2")
-    job_monitor(job2)
-    job3 = backend.run(circuit=circuit, shots=100, job_name="Job 3")
-    job_monitor(job3)
+2. Write your quantum circuit. 
 
-session_id = backend.get_latest_session_id()
-session_jobs = workspace.list_session_jobs(session_id=session_id)
+    ```python
+    circuit = QuantumCircuit(2, 2)
+    circuit.name = "GenerateRandomBit"
+    circuit.h(0)
+    circuit.cnot(0,1)
+    circuit.measure([0,1], [0,1])
+    circuit.draw()
+    ```
+3. Next, you create a backend instance. In this example, you're setting IonQ simulator as target. Let's say you want to run your quantum circuit three times, so you set
 
-[session_job.details.name for session_job in session_jobs]
-```
-```pyhton
-print("Session Id is " + session_id)
-```
+    ```python
+    backend = provider.get_backend("ionq.simulator")
+    ```
+    ```python
+    with backend.open_session(name="Qiskit Session") as session:
+        job1 = backend.run(circuit=circuit, shots=100, job_name="Job 1")
+        job_monitor(job1)
+        job2 = backend.run(circuit=circuit, shots=100, job_name="Job 2")
+        job_monitor(job2)
+        job3 = backend.run(circuit=circuit, shots=100, job_name="Job 3")
+        job_monitor(job3)
+
+    session_id = backend.get_latest_session_id()
+    session_jobs = workspace.list_session_jobs(session_id=session_id)
+
+    [session_job.details.name for session_job in session_jobs]
+    ```
+4. After creating the Session, you can print the Session ID. 
+
+    ```python
+    print("Session Id is " + session_id)
+    ```
 
 > [!NOTE]
 > Check the status of the Session in the **Job Management** blade. Make sure you have "https://ms.portal.azure.com/?Microsoft_Azure_Quantum_sessionapi=true" in the URL.
 
 ### [Cirq](#tab/tabid-cirq)
+
+1. First, write your quantum circuit. 
+
 ```python
 import cirq
 
@@ -157,6 +171,8 @@ service = AzureQuantumService(
 
 ```python
 target = service.get_target("ionq.simulator")
+```
+```python
 with target.open_session(name="Cirq Session") as session:
     target.submit(program=circuit, name="Job 1")
     target.submit(program=circuit, name="Job 2")
@@ -170,29 +186,32 @@ session_jobs = workspace.list_session_jobs(session_id=session_id)
 
 ### [QIO](#tab/tabid-qio)
 
-You can create a Session with QIO jobs, and in that case it can only contain optimization jobs. 
+You can create a Session with QIO jobs, and in that case the Session can only contain optimization jobs. 
 
-First, create an optimization problem. 
+1. First, create an optimization problem. 
 
-```python
-import azure.quantum.optimization as optimization
+    ```python
+    import azure.quantum.optimization as optimization
 
-problem = optimization.Problem(
-    name="Ising Problem",
-    problem_type=optimization.ProblemType.ising,
-    terms=[
-        optimization.Term(c=1, indices=[0]),
-        optimization.Term(c=2, indices=[1,0])
-        ]
-    )
-```
-
-Then, you choose the solver against you want to run the optimization problem. In this example, you're using [Parallel Tempering target](xref:microsoft.quantum.optimization.parallel-tempering) from QIO. 
+    problem = optimization.Problem(
+        name="Ising Problem",
+        problem_type=optimization.ProblemType.ising,
+        terms=[
+            optimization.Term(c=1, indices=[0]),
+            optimization.Term(c=2, indices=[1,0])
+            ]
+        )
+    ```
+2. Then, you choose the solver against you want to run the optimization problem. In this example, you're using [Parallel Tempering target](xref:microsoft.quantum.optimization.parallel-tempering) from QIO. 
 
 ```python
 from azure.quantum.optimization import ParallelTempering
 solver = ParallelTempering(workspace)
+```
 
+3. 
+
+```python
 with solver.open_session(name="QIO Session") as session:
     problem.name = "Problem 1"
     solver.optimize(problem)
