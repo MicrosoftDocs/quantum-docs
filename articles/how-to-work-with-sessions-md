@@ -5,39 +5,98 @@ ms.date: 03/30/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: concepts
+ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Work with Sessions
+title: Manage your Sessions
 uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 ---
 
-# How to work with Sessions
-
-## Retrieve sessions, list sessions, and list jobs of sessions
+# How to manage Sessions
 
 
+
+## Manual methods of creating/ending Sessions
+
+We recomend to follow the steps in [Get started with Sessions](xref:microsoft.quantum.hybrid.interactive-get-started-with-sessions) to create a new Session. However, for advanced 
+you can also manually create Sessions. 
+
+1. First, you create a **Session object**. 
+
+  ```python
+  from azure.quantum.job.session import Session, SessionDetails, SessionJobFailurePolicy
+  import uuid
+
+  session = Session(
+      workspace=workspace, # required
+      id=f"{uuid.uuid1()}", # optional, if not passed will use uuid.uuid1()
+      name="", # optional, will be blank if not passed
+      provider_id="ionq", # optional, if not passed will try to parse from the target
+      target="ionq.simulator", # required
+      job_failure_policy=SessionJobFailurePolicy.ABORT # optional, detaults to abort
+      )
+
+  print(f"Session status: {session.details.status}")
+  ```
+  To this point, the session only exists in the client and you see that the status is **None**. You need to create the Session in the service.
+
+2. To **create** a Session in the service, you can use `workspace.open_session(session)` or `session.open()`.
+
+3. You can refresh the **status** of a Session and the Session details with `session.refresh()`, or by getting a new Session object from a Session ID. 
+
+  ```python
+  same_session = workspace.get_session(session.id) 
+  print(f"Session: {session.details} \n")
+  print(f"Session: {same_session.details} \n")
+  ```
+
+4. You can **close** a Session with `session.close()` or `workspace.close_session(session)`. 
+
+
+## Retrieve Sessions, list Sessions, and list jobs of Sessions
+
+You can get the list of all jobs for a given Session. 
+
+```python
+def get_a_session_with_jobs(min_jobs):
+    all_sessions = workspace.list_sessions()
+    for session in all_sessions:
+        if len(workspace.list_session_jobs(session.id)) >= min_jobs:
+            return session
+
+session = get_a_session_with_jobs(min_jobs=3)
+
+session_jobs = workspace.list_session_jobs(session.id) 
+
+print(f"Job count: {len(session_jobs)} \n")
+print(f"First 10 jobs for session {session.id}:")
+for job in session_jobs[0:10]:
+    print(f"Id: {job.id}, Name={job.details.name}")
+```
+
+You can list all Sessions.
+
+```python
+all_sessions = workspace.list_sessions()
+
+print(f"Session count: {len(all_sessions)}")
+print(f"First 10 sessions:")
+for session in all_sessions[0:10]:
+    print(f"Id: {session.id}, Name={session.details.name}")
+
+session = workspace.get_session(session.id)
+```
+
+> [!NOTE]
+> Filter functionality is currently not supported. 
 
 ### [Q# + Python from Notebooks](#tab/tabid-iqsharp)
-
 
 |Magic command|Description|
 |---|---|
 |%azure.jobs| Retrieve a list of all jobs in a Quantum Workspace|
 |%azure.session list| Retrieve a list of all Sessions in a Quantum Workspace|
-|%azure.session show <sessionId>|
-|%azure.jobs list sessionId=<sessionId>|
-
-### [Qiskit](#tab/tabid-qiskit)
-
-|Function|Description|
-|---|---|
-|backend.start_session() -> AzureQuantumSession|
-
-Generates a GUID and invokes the PUT /Sessions/{sessionId} API with the generated GUID as the sessionId. Return a session object if the server responds with a HTTP 200/201, throw an error otherwise. Subsequent Job submissions made as part of the backend.run(.) call will include the sessionId in the body. 
-
-|session.exit()| |
-
-
+|%azure.session show <sessionId>| Retrieve the Session with ID `sessionID`. Each Session has a unique ID. |
+|%azure.jobs list sessionId=<sessionId>| Retrieve a list of all jobs in the Session with ID `sessionID`. Each Session has a unique ID.|
 
 ### [Azure CLI](#tab/tabid-cli)
 
@@ -45,23 +104,43 @@ Generates a GUID and invokes the PUT /Sessions/{sessionId} API with the generate
 |---|---|
 |az quantum jobs| Retrieve a list of all jobs in a Quantum Workspace|
 |az quantum session list| Retrieve a list of all Sessions in a Quantum Workspace|
-|az quantum session show --session <sessionId>|
-|az quantum job list --session <sessionId>| 
+|az quantum session show --session <sessionId>|  Retrieve the Session with ID `sessionID`. Each Session has a unique ID. |
+|az quantum job list --session <sessionId>| Retrieve a list of all jobs in the Session with ID `sessionID`. Each Session has a unique ID.|
 
+***
 
-## Retrieve all top-level items (sessions and individual jobs not associated with sessions)
+## Retrieve all top-level items 
 
+You can list all top-level submitted items within your Quantum Workspace, that is, Sessions and individual jobs that aren't associated with any Session.
+This is a new API primarily used to populate the **Job Management** blade in the Portal.
 
+```python
+# You can list all the top level-items of the workspace
+# Note: Filter is not yet implemented
+all_tli = workspace.list_top_level_items() 
+
+print(f"Top-Level item count: {len(all_tli)}")
+print(f"First 10 top-level items:")
+for tli in all_tli[0:10]:
+    print(f"Type: {tli.item_type}, Id: {tli.id}, Name={tli.details.name}")
+```
 
 ## Session timeouts
 
-Azure Quantum enforces a max time between the submission of each job within a session (currently equal to 10 minutes). If a partner implements a shorter default time-out, jobs should continue to be processed without any error. Only overall throughput would be affected. 
+A Session times out if no new job is submitted within the Session for 10 minutes. The Session reports a status of **TimedOut**. To avoid that, you can add a `with` block so the Session close() is invoked at the end of the code block. 
 
-Azure Quantum does not enforce an overall maximum duration for a Session. 
+> [!NOTE]
+> If there're errors or bugs in your program, it might be possible that your code takes more than 10 minutes to submit a new job after their previous jobs in the Session have all completed. 
 
-## Job failure policy within sessions
+## Job failure policy within Sessions
 
-## Manual methods of creating/ending sessions
+The default policy for a Session when a job fails is to end that Session. If you try to submit any subsequent job within the same Session, they'll be rejected by the service and the Session'll report a status of **Failed**. Any in progress job is attempted to be cancelled.
+
+However, this behavior can be changed by specifying a job failure policy of `job_failure_policy=SessionJobFailurePolicy.CONTINUE`, instead of the default `SessionJobFailurePolicy.ABORT`, when creating the Session. When the job failure policy is `CONTINUE`, the service continues to accept jobs. The Session reports a status of **Failure(s)** in this case, which will change to **Failed** once the Session is closed.
+If the Session is never closed and times out, the status is **TimedOut** even if there's been job failures. 
+
+
+
 
 ## Unsupported scenarios
 
