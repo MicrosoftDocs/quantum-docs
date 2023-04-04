@@ -19,9 +19,9 @@ In this model, the client compute resource is moved to the cloud, resulting in l
 
 ## What is a Session?
 
-A Session is a logical grouping of any combination of one or more jobs against a single target. Each Session has a unique ID, `sessionID`, attached to each job submitted to a provider. 
+A Session is a logical grouping of any combination of one or more jobs against a single target. Each Session has a unique ID, `sessionID`, attached to each job submitted to a provider. Every job within a Session is proritized to run as close as possible from the previously queued job.
 
-Sessions allow users to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. Sessions allow you running complex algorithms to better organize and track your individual quantum computing jobs.
+Sessions allow you to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. You'll be able to run complex algorithms to better organize and track your individual quantum computing jobs.
 
 User scenarios where you may want to combine jobs in a Session:
 
@@ -229,10 +229,11 @@ session_jobs = workspace.list_session_jobs(session_id=session_id)
 
 ## Provider support
 
-Every job within a Session is proritized to run as close as possible from the previously queued job. Each quantum hardware provider define their own heuristics to best manage the prioritization of jobs within a Session. 
-If you choose to submit jobs within a Session to [Quantinuum target](xref.microsoft.quantum.providers.quantinuum)
+Each quantum hardware provider define their own heuristics to best manage the prioritization of jobs within a Session. 
 
-Jobs submitted under a session will have exclusive access to our hardware until the 1 minute timeout. After that, any job will be accepted and handled with the standard queueing and prioritization logic. 
+### Quantinuum 
+
+If you choose to submit jobs within a Session to [Quantinuum target](xref.microsoft.quantum.providers.quantinuum). you'll have exclusive access to Quantinuum hardware until the 1 minute timeout. After that, any job will be accepted and handled with the standard queueing and prioritization logic. 
 
 ## Next steps
 
