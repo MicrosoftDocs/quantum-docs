@@ -114,14 +114,10 @@ results = job.result()
 results 
 ```
  :::image type="content" source="media/batching-qiskit.png" alt-text="Screenshot of the table of results of a resource estimation job for four configurations.":::
- 
-## How to handle large programs
 
-When you submit a resource estimation job to the Resource Estimator, the quantum program is evaluated completely to extract the resource estimates. As such, large programs or programs that have loops with many iterations may take a long time to complete the resource estimation job.
+## Use known estimates for an operation
 
-### Use known estimates for an operation
-
-If you already knwow some estimates for an operation, for example from a published paper, one way to reduce the execution time is taking the known estimates and incorporate them into the overall program cost.
+If you already know some estimates for an operation, for example from a published paper, one way to reduce the execution time is taking the known estimates and incorporate them into the overall program cost.
 
 You can use the `AccountForEstimates` Q# operation to incorporate known estimates into the overall cost of the program.
 
@@ -135,13 +131,9 @@ Some scenarios where you may want to use `AccountForEstimates` operation:
 - You want to try a novel algorithm described in a paper to check if it improves the performance of your program. You can take estimates from the paper and incorporated them into the program by calling `AccountForEstimates`.
 - You want to develop [program top-down](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design#Programming), that is, start developing from main function and then implement lower levels. You can use `AccoutForEstimates` at the top level with expected estimates for the entire program. As development process progresses, new components start calling to `AccountForEstimates` and expected estimates are replaced by the actual implementation. In this way, estimates for the entire program are known upfront and get more precise as development progresses.
 
-For example, consider the following Q# operation: 
+For example, consider the following Q# operation called `AddInPlace`. The operation takes two arrays of qubits as input. Suppose you've read on a paper that  estimating the resources of such $n$-bit in-place adder requires $n-1$ auxiliary qubits, $4n−4$ T gates, and $n−1$ measurements. Then, you want to use `AccountForEstimates` operation to estimate the resources including the number of auxiliary qubits, T gates, and measurements needed. 
 
 ```qsharp
-use q = Qubit(); # allocate one qubit
-use anc = Qubit(); # use an auxiliary qubit
-M(q); M(q); M(anc); # apply 3 measurements in total
-
 operation AddInPlace(operand1 : Qubit[], operand2 : Qubit[]) : Unit {
     let n = Length(operand1);
     // n-bit in-place adder requires n-1 helper qubits, 4n−4 T gates, and n−1 measurements:
@@ -152,11 +144,12 @@ operation AddInPlace(operand1 : Qubit[], operand2 : Qubit[]) : Unit {
 In this example `PSSPCLayout()` is the only layout scheme available at this time. `AuxQubitCount()`, `TCount()`, `MeasurementCount()` are the functions
 defined in `ResourceEstimation` namespace. They are used to indicate which specific cost value is provided by constructing an appropriate tuple.
 
-### Caching
 
-If you want estimate the resources of a Q# operation that is invoked many times, for example, in a loop with many iterations, the execution of the resource estimation job may take a long time. One way to reduce long execution times is to run the operation once, compute and cache its costs, and use the data on subsequent calls. This technique is called manual caching.
+## How to handle large programs
 
-The Resource Estimator target support two Q# functions to perform manual caching: `BeginEstimateCaching(name: String, variant: Int): Bool` and `EndEstimateCaching(): Unit`. `BeginEstimateCaching` function takes as inputs a `name` which is the name of the code fragment we want to cache its costs, and an integer `variant` that distinguishes different variants of cost for the same fragment.
+When you submit a resource estimation job to the Resource Estimator, the quantum program is evaluated completely to extract the resource estimates. If you want estimate the resources of a Q# operation that is invoked many times, for example, in a loop with many iterations, the execution of the resource estimation job may take a long time. One way to reduce long execution times is to run the operation once, compute and cache its costs, and use the data on subsequent calls. This technique is called manual caching.
+
+The Resource Estimator target support two Q# functions to perform manual caching: `BeginEstimateCaching(name: String, variant: Int): Bool` and `EndEstimateCaching(): Unit`. `BeginEstimateCaching` function takes as inputs a `name` which is the unique name of the code fragment you want to cache its costs, and an integer `variant` that distinguishes different variants of cost for the same fragment.
 
 > [!NOTE]
 > The two special operations `BeginEstimateCaching` and `EndEstimateCaching` are intrinsic operations for the Resource Estimator. 
