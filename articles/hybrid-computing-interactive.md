@@ -39,28 +39,42 @@ For more information, see [Provider support](#provider-support).
 
 ## Get started with Sessions
 
+
+
+### Prerequisites
+
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
+- An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+
+> [!NOTE]
+> Sessions are not supported for quantum targets not supporting QIR. 
+
 ### [Q# + Python](#tab/tabid-iqsharp)
 
+This example shows how to create a Session with Q# inline code using hosted Notebooks in Azure portal. You can also create Sessions using a Python host program that invokes an adjacent Q# program. 
 
-1. First, import 
+1. Select **Notebooks** blade on your Quantum workspace, and in **My Notebooks** click on **Add New**.
+2. In **Kernel Type**, select **IPython**.
+3. Type a name for the file, and click **Create file**. 
+5. Click **+ Code** to add a new cell in the notebook and import `qsharp` Python SDK. 
 
-```python
-import qsharp
-```
-2. Write your Q# program. For example, the following Q# program generates a random bit. 
+    ```python
+    import qsharp
+    ```
+5. Write your Q# program. For example, the following Q# program generates a random bit. 
 
     ```python
     %%qsharp
     open Microsoft.Quantum.Intrinsic;
 
-    operation GenerateRandomBit_Inline() : Result {
+    operation GenerateRandomBit() : Result {
         use q0 = Qubit();
         H(q0);
         return M(q0);
     }
     ```
 
-3. Next, elec. In this example, you're using Rigetti simulator as target. 
+3. Choose the . In this example, you're using Rigetti simulator as target. 
 
     ```python
     target = workspace.get_targets("rigetti.sim.qvm")
@@ -68,18 +82,15 @@ import qsharp
     target.content_type = "qir.v1"
     target.output_data_format = "microsoft.quantum-results.v1"
     input_params = {
-        "entryPoint": "ENTRYPOINT__GenerateRandomBit_Inline",
+        "entryPoint": "ENTRYPOINT__GenerateRandomBit",
         "arguments": []
     }
 
     # These line won't be necessary very soon. They will be inside the target.submit
-    qir_bitcode = GenerateRandomBit_Inline._repr_qir_(target=target.name)
-    input_params = {
-        "entryPoint": "ENTRYPOINT__GenerateRandomBit_Inline",
-        "arguments": []
-    }
-
-
+    qir_bitcode = GenerateRandomBit._repr_qir_(target=target.name)
+    ```
+    
+    ```python
     with target.open_session(name="Q# Inline Session") as session:
         target.submit(input_data=qir_bitcode, name="Job 1", input_params=input_params)
         target.submit(input_data=qir_bitcode, name="Job 2", input_params=input_params)
@@ -115,11 +126,12 @@ import qsharp
     circuit.measure([0,1], [0,1])
     circuit.draw()
     ```
-3. Next, you create a backend instance. In this example, you're setting IonQ simulator as target. Let's say you want to run your quantum circuit three times, so you set
+3. Next, you create a backend instance. In this example, you're setting IonQ simulator as target. 
 
     ```python
     backend = provider.get_backend("ionq.simulator")
     ```
+4. Let's say you want to run your quantum circuit three times, so you set
     ```python
     with backend.open_session(name="Qiskit Session") as session:
         job1 = backend.run(circuit=circuit, shots=100, job_name="Job 1")
@@ -134,7 +146,7 @@ import qsharp
 
     [session_job.details.name for session_job in session_jobs]
     ```
-4. After creating the Session, you can print the Session ID. 
+5. After creating the Session, you can print the Session ID. 
 
     ```python
     print("Session Id is " + session_id)
@@ -227,13 +239,18 @@ session_jobs = workspace.list_session_jobs(session_id=session_id)
 ```
 ***
 
+
+
+
+
+
 ## Provider support
 
 Each quantum hardware provider define their own heuristics to best manage the prioritization of jobs within a Session. 
 
 ### Quantinuum 
 
-If you choose to submit jobs within a Session to [Quantinuum target](xref.microsoft.quantum.providers.quantinuum). you'll have exclusive access to Quantinuum hardware until the 1 minute timeout. After that, any job will be accepted and handled with the standard queueing and prioritization logic. 
+If you choose to submit jobs within a Session to [Quantinuum target](xref.microsoft.quantum.providers.quantinuum), you'll have exclusive access to Quantinuum hardware until the 1 minute timeout. After that, any job will be accepted and handled with the standard queueing and prioritization logic. 
 
 ## Next steps
 
