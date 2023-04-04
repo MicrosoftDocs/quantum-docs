@@ -96,13 +96,6 @@ The default policy for a Session when a job fails is to end that Session. If you
 However, this behavior can be changed by specifying a job failure policy of `job_failure_policy=SessionJobFailurePolicy.CONTINUE`, instead of the default `SessionJobFailurePolicy.ABORT`, when creating the Session. When the job failure policy is `CONTINUE`, the service continues to accept jobs. The Session reports a status of **Failure(s)** in this case, which will change to **Failed** once the Session is closed.
 If the Session is never closed and times out, the status is **TimedOut** even if there's been job failures. 
 
-
-
-
-## Unsupported scenarios
-  
-Sessions are not supported for quantum targets not supporting QIR
-
 ## Next steps
 
 [Integrated quantum computing](xref:microsoft.quantum.hybrid.integrated)
