@@ -13,7 +13,7 @@ In this example, you'll create a multiplier and estimate its costs on a fault-to
 
 ### Create a new Notebook in your workspace
 
-1. Log in to the [Azure portal](https://portal.azure.com/) and select the workspace from the previous step.
+1. Log in to the [Azure portal](https://portal.azure.com/).
 1. In the left blade, select **Notebooks**.
 1. Click **My Notebooks** and click **Add New**.
 1. In **Kernel Type**, select **IPython**.
