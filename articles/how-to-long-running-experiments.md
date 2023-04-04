@@ -1,8 +1,8 @@
 ---
 author: SoniaLopezBravo
-description: Learn how to run experiments with long runtimes on Azure Quantum
+description: Learn how to run experiments with long runtimes on Azure Quantum 
 ms.author: sonialopez
-ms.date: 02/15/2023
+ms.date: 04/04/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
@@ -25,6 +25,16 @@ See the following suggestion to run long runtime experiments in Azure Quantum.
 ## Program with few loops
 
 If your program doesn't require many loops and the QPU queue time is high, you may wait a couple of hours and submit your job later, or submit your program to a different provider from the ones available in Azure Quantum. 
+
+## Sessions
+
+A Session is a logical grouping of any combination of one or more jobs against a single target. Every job within a Session is proritized to run as close as possible from the previously queued job.
+
+Sessions allow you to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. You'll be able to run complex algorithms to better organize and track your individual quantum computing jobs.
+
+Each quantum hardware provider define their own heuristics to best manage the prioritization of jobs within a Session. 
+
+For more information, see [Get started with Sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions) and [How to work with Sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions).
 
 ## Local development
 
