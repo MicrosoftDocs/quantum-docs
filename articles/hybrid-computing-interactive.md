@@ -250,7 +250,7 @@ Each quantum hardware provider define their own heuristics to best manage the pr
 
 ### Quantinuum 
 
-If you choose to submit jobs within a Session to [Quantinuum target](xref.microsoft.quantum.providers.quantinuum), you'll have exclusive access to Quantinuum hardware until the 1 minute timeout. After that, any job will be accepted and handled with the standard queueing and prioritization logic. 
+If you choose to submit jobs within a Session to [Quantinuum target](xref:microsoft.quantum.providers.quantinuum), you'll have exclusive access to Quantinuum hardware until the 1 minute timeout. After that, any job will be accepted and handled with the standard queueing and prioritization logic. 
 
 ## Next steps
 
