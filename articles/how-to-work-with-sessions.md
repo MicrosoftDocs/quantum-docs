@@ -49,7 +49,7 @@ for job in session_jobs[0:10]:
 
 ## Manual methods of creating/ending Sessions
 
-We recomend to follow the steps in [Get started with Sessions](xref:microsoft.quantum.hybrid.interactive-get-started-with-sessions) to create a new Session. However, for advanced features it's also possible to manually create Sessions. 
+We recomend to follow the steps in [Get started with Sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions) to create a new Session. However, for advanced features it's also possible to manually create Sessions. 
 
 1. First, you create a **Session object**. 
 
