@@ -174,7 +174,7 @@ When `ExpensiveOperation` is called the second time (and subsequently), the Reso
 ```qsharp
 operation ExpensiveOperation(c: Int, b : Bool): Unit {
     if BeginEstimateCaching("MyNamespace.ExpensiveOperation", c % 2) {
-        … Some code …
+        // Some code
         EndEstimateCaching();
     }
 }
