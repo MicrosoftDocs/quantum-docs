@@ -25,7 +25,7 @@ The following table shows the Python commands to get the list of all Sessions an
 |`workspace.list_session(session.id)` | Retrieve the Session with ID `sessionID`. Each Session has a unique ID. |
 |`workspace.list_session_jobs(session.id)` | Retrieve a list of all jobs in the Session with ID `sessionID`. Each Session has a unique ID.|
 
-For example, the following code defines an operation that 
+For example, the following code defines a function that get a Session with a minimum number of jobs. Then, it lists all jobs within that Session, and prints out the number of jobs and the first 10 jobs for that Session. 
 
 ```python
 def get_a_session_with_jobs(min_jobs):
@@ -34,9 +34,9 @@ def get_a_session_with_jobs(min_jobs):
         if len(workspace.list_session_jobs(session.id)) >= min_jobs:
             return session
 
-session = get_a_session_with_jobs(min_jobs=3) 
+session = get_a_session_with_jobs(min_jobs=3) # Get a Session with at least 3 jobs
 
-session_jobs = workspace.list_session_jobs(session.id) # list of all jobs within Session ID
+session_jobs = workspace.list_session_jobs(session.id) # List of all jobs within Session ID
 
 print(f"Job count: {len(session_jobs)} \n")
 print(f"First 10 jobs for session {session.id}:")
