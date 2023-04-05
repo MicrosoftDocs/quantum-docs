@@ -28,9 +28,9 @@ If your program doesn't require many loops and the QPU queue time is high, you m
 
 ## Sessions
 
-A Session is a logical grouping of any combination of one or more jobs against a single target. Every job within a Session is proritized to run as close as possible from the previously queued job. Sessions allow you to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. You'll be able to run complex algorithms to better organize and track your individual quantum computing jobs.
+A Session is a logical grouping of any combination of one or more jobs against a single target. Every job within a Session is prioritized to run as close as possible from the previously queued job. Sessions allow you to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. You'll be able to run complex algorithms to better organize and track your individual quantum computing jobs.
 
-Each quantum hardware provider define their own heuristics to best manage the prioritization of jobs within a Session. In some cases, jobs submitted within a Session are prioritized on the queue.
+Each quantum hardware provider define their own heuristics to best manage the prioritization of jobs within a Session. In some cases, jobs submitted within a Session are prioritized on the queue of that target.
 
 For more information, see [Get started with Sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions) and [How to work with Sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions).
 
