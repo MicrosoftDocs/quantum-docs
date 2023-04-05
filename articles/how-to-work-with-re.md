@@ -142,7 +142,7 @@ operation AddInPlace(operand1 : Qubit[], operand2 : Qubit[]) : Unit {
 ```
 
 In this example `PSSPCLayout()` is the only layout scheme available at this time. `AuxQubitCount()`, `TCount()`, `MeasurementCount()` are the functions
-defined in [`ResourceEstimation` namespace](/microsoft/qsharp-runtime/blob/main/src/Simulation/QSharpFoundation/Estimation/AccountForEstimates.qs). They are used to indicate which specific cost value is provided by constructing an appropriate tuple.
+defined in [`ResourceEstimation` namespace](https://github.com/microsoft/qsharp-runtime/blob/main/src/Simulation/QSharpFoundation/Estimation/AccountForEstimates.qs). They are used to indicate which specific cost value is provided by constructing an appropriate tuple.
 
 |Functions with `AccountForEstimates`| Description|
 |---|---|
