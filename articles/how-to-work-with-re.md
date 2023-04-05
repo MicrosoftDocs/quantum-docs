@@ -142,7 +142,19 @@ operation AddInPlace(operand1 : Qubit[], operand2 : Qubit[]) : Unit {
 ```
 
 In this example `PSSPCLayout()` is the only layout scheme available at this time. `AuxQubitCount()`, `TCount()`, `MeasurementCount()` are the functions
-defined in `ResourceEstimation` namespace. They are used to indicate which specific cost value is provided by constructing an appropriate tuple.
+defined in [`ResourceEstimation` namespace](/microsoft/qsharp-runtime/blob/main/src/Simulation/QSharpFoundation/Estimation/AccountForEstimates.qs). They are used to indicate which specific cost value is provided by constructing an appropriate tuple.
+
+|Functions with `AccountForEstimates`| Description|
+|---|---|
+|`AuxQubitCount(amount : Int)`| Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of auxilliary qubits is equal to the `amount`.|
+|`TCount(amount : Int)`|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of T gates is equal to the `amount`.|
+|`MeasurementCount(amount : Int)`|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of measurements is equal to the `amount`.|
+|`RotationCount(amount : Int)`|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of rotations is equal to the `amount`.|
+|`RotationDepth(amount : Int)`|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the rotation depth is equal to the `amount`.|
+|`CczCount(amount : Int)`|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of CCZ gates is equal to the `amount`.|
+|`PSSPCLayout()`| Indicate Parallel Synthesis Sequential Pauli Computation (PSSPC) layout. For more information, see [arXiv:2211.0769](https://arxiv.org/pdf/2211.07629.pdf).|
+
+
 
 
 ## How to handle large programs
