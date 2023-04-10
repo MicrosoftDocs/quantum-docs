@@ -139,9 +139,7 @@ This example shows how to create a Session with Q# inline code using hosted Note
         job3 = backend.run(circuit=circuit, shots=100, job_name="Job 3") # Third job submission
         job_monitor(job3)
 
-    session_id = backend.get_latest_session_id()
-    session_jobs = workspace.list_session_jobs(session_id=session_id)
-
+    session_jobs = workspace.list_session_jobs(session_id=session.id)
     [session_job.details.name for session_job in session_jobs]
     ```
 5. After creating the Session, you can print the Session ID. 
