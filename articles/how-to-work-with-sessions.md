@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Manage your Sessions
+title: Manage your sessions
 uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 ---
 
@@ -22,7 +22,7 @@ The following table shows the Python commands to get the list of all sessions an
 |Command|Description|
 |---|---|
 |`workspace.list_sessions()`| Retrieve a list of all sessions in a Quantum Workspace.|
-|`workspace.list_session(session.id)` | Retrieve the session with ID `session-.id`. Each session has a unique ID. |
+|`workspace.list_session(session.id)` | Retrieve the session with ID `session.id`. Each session has a unique ID. |
 |`workspace.list_session_jobs(session.id)` | Retrieve a list of all jobs in the session with ID `session.id`. Each session has a unique ID.|
 
 For example, the following code defines a function that get a session with a minimum number of jobs. Then, it lists all jobs within that Session, and prints out the number of jobs and the first 10 jobs for that session. 
