@@ -29,7 +29,7 @@ User scenarios where you may want to combine jobs in a Session:
 
 ## Get started with Sessions
 
-Sessions can be created for jobs running [QIR](xref:microsoft.quantum.concepts.qir) programs, such as Q#, Qiskit and Cirq programs, and for Quantum-Inspired Optimizations (QIO) jobs. 
+Sessions can be created for quantum programs written in Q# or Python (Qiskit, Cirq etc.) 
 
 > [!NOTE]
 > Sessions are not supported for quantum targets not supporting QIR. 
