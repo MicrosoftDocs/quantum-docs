@@ -23,7 +23,7 @@ A session is a logical grouping of one or more jobs submitted to a single target
 
 Sessions allow you to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. You'll be able to run complex algorithms to better organize and track your individual quantum computing jobs.
 
-A key user scenario where you may want to combine jobs in a session is parameterized quantum algorithms where the output of one quantum computing job informs the parameters of the next quantum computing job. The most common examples of this type of algorithm are Variational Quantum Eigensolver (VQE) and Quantum Approximate Optimization Algorithm (QAOA).
+A key user scenario where you may want to combine jobs in a session is *parameterized* quantum algorithms where the output of one quantum computing job informs the parameters of the next quantum computing job. The most common examples of this type of algorithm are Variational Quantum Eigensolver (VQE) and Quantum Approximate Optimization Algorithm (QAOA).
 
 ## Get started with sessions
 
@@ -111,7 +111,7 @@ This example shows how to create a session with Q# inline code using hosted Note
     ```python
     backend = provider.get_backend("ionq.simulator")
     ```
-4. Next, create a session. Let's say you want to run your quantum circuit three times, so you use `backend.run` to submit the Qiskit circuit, and you repeat the code three times. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
+4. Next, create a session. Let's say you want to run your quantum circuit three times, so you use `backend.run` to submit the Qiskit circuit, and you repeat the code three times - in a real world scenario, you may want to submit different programs instead of the same code. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
 
     ```python
     with backend.open_session(name="Qiskit Session") as session:
@@ -156,7 +156,7 @@ This example shows how to create a session with Q# inline code using hosted Note
     ```python
     target = service.get_target("ionq.simulator")
     ```
-4. Next, you create a session. Let's say you want to run your quantum circuit three times, so you use `target.submit` to submit the Cirq circuit, and you repeat the code three times. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
+4. Next, you create a session. Let's say you want to run your quantum circuit three times, so you use `target.submit` to submit the Cirq circuit, and you repeat the code three times - in a real world scenario, you may want to submit different programs instead of the same code.. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
     
     ```python
     with target.open_session(name="Cirq Session") as session:
@@ -173,12 +173,12 @@ This example shows how to create a session with Q# inline code using hosted Note
 
 ## Monitoring sessions
 
-You can list all top-level submitted items within your Quantum workspace in **Job Management** blade, that is, Sessions and individual jobs that aren't associated with any Session.
+You can list all top-level submitted items within your Quantum workspace in **Job Management** blade, that is, sessions and individual jobs that aren't associated with any session.
 
 1. Select **Job Management** blade in your Quantum workspace.
 1. Identify the jobs of type **Session**. In this view you can see the Unique ID of a Session in column **Id** and monitor its **Status**. 
-1. Click on a Session's name for more details.
-1. You can see the list of **All jobs** within the Session and monitor their status.
+1. Click on a session's name for more details.
+1. You can see the list of **All jobs** within the session and monitor their status.
 
 ## Provider support
 
@@ -186,7 +186,7 @@ Each quantum hardware provider define their own heuristics to best manage the pr
 
 ### Quantinuum 
 
-If you choose to submit jobs within a session to [Quantinuum target](xref:microsoft.quantum.providers.quantinuum), you'll have exclusive access to Quantinuum hardware until the 1 minute timeout. After that, any job will be accepted and handled with the standard queueing and prioritization logic. 
+If you choose to submit jobs within a session to [Quantinuum target](xref:microsoft.quantum.providers.quantinuum), you'll have exclusive access to Quantinuum hardware as long as you queue jobs within one minute from each other. After that, any job will be accepted and handled with the standard queueing and prioritization logic. 
 
 ## Next steps
 
