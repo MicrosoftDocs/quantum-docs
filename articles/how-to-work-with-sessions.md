@@ -49,7 +49,7 @@ for job in session_jobs[0:10]:
 
 We recomend to follow the steps in [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions) to create a new session. However, for advanced features it's also possible to manually create sessions. 
 
-1. First, you create a **Session object**. 
+1. First, create a **Session object**. 
 
   ```python
   from azure.quantum.job.session import Session, SessionDetails, SessionJobFailurePolicy
