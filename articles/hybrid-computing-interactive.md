@@ -128,7 +128,7 @@ This example shows how to create a Session with Q# inline code using hosted Note
     ```python
     backend = provider.get_backend("ionq.simulator")
     ```
-4. Next, you create a Session. Let's say you want to run your quantum circuit three times, so you use `backend.run` to submit the Qiskit circuit, and you repeat the code three times. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the Session. For more information, see [How to manage Sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
+4. Next, create a Session. Let's say you want to run your quantum circuit three times, so you use `backend.run` to submit the Qiskit circuit, and you repeat the code three times. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the Session. For more information, see [How to manage Sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
 
     ```python
     with backend.open_session(name="Qiskit Session") as session:
