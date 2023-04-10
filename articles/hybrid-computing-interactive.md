@@ -1,49 +1,47 @@
 ---
 author: SoniaLopezBravo
-description: Understand the architecture of interactive (sessions) quantum computing and learn ho to create a new Session.
-ms.date: 03/30/2023
+description: Understand the architecture of interactive (sessions) quantum computing and learn ho to create a new session.
+ms.date: 04/10/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
 no-loc: ['Q#', '$$v']
-title: Introduction to Sessions
+title: Introduction to sessions
 uid: microsoft.quantum.hybrid.interactive
 ---
 
-# Interactive quantum computing: Sessions
+# Interactive quantum computing: sessions
 
-In this model, the client compute resource is moved to the cloud, resulting in lower-latency and the ability to repeat execution of the quantum circuit with different parameters. Jobs can be grouped logically into one session, and the jobs in that session can be prioritized over non-session jobs.  Although the qubit states do not persist between jobs, a session allows for shorter queue times for jobs and longer running problems.
+In this model, the client compute resource may be moved to the cloud, resulting in lower-latency and the ability to repeat execution of the quantum circuit with different parameters. Jobs can be grouped logically into one session, and the jobs in that session can be prioritized over non-session jobs.  Although the qubit states do not persist between jobs, a session allows for shorter queue times for jobs and longer running problems.
 
 ![Interactive quantum computing](~/media/hybrid/interactive.png)
 
-## What is a Session?
+## What is a session?
 
 A session is a logical grouping of one or more jobs submitted to a single target. Each session has a unique ID attached to each job in that session. In some cases, jobs submitted within a session are prioritized in the queue of that target. For more information, see [Provider support](#provider-support).
 
 Sessions allow you to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. You'll be able to run complex algorithms to better organize and track your individual quantum computing jobs.
 
-User scenarios where you may want to combine jobs in a Session:
+A key user scenario where you may want to combine jobs in a session is parameterized quantum algorithms where the output of one quantum computing job informs the parameters of the next quantum computing job. The most common examples of this type of algorithm are Variational Quantum Eigensolver (VQE) and Quantum Approximate Optimization Algorithm (QAOA).
 
-- Running parameterized quantum algorithms where the output of one quantum computing job informs the parameters of the next quantum computing job. The most common example of this type of algorithm is the Variational Quantum Eigensolver, or VQE. 
-
-## Get started with Sessions
+## Get started with sessions
 
 Sessions can be created for quantum programs written in Q# or Python (Qiskit, Cirq etc.) 
 
 > [!NOTE]
-> Sessions are not supported for quantum targets not supporting QIR. 
+> For Q# programs, sessions are not supported for quantum targets not supporting QIR. 
 
 ### Prerequisites
 
-To create a Session, you need the following prerequisites:
+To create a session, you need the following prerequisites:
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ### [Q# + Python](#tab/tabid-iqsharp)
 
-This example shows how to create a Session with Q# inline code using hosted Notebooks in the Azure portal. You can also create Sessions using a [Python host program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs) that invokes an adjacent Q# program. 
+This example shows how to create a session with Q# inline code using hosted Notebooks in the Azure portal. You can also create sessions using a [Python host program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs) that invokes an adjacent Q# program. 
 
 1. Select the **Notebooks** blade in your Quantum workspace, and in **My Notebooks** click on **Add New**.
 2. In **Kernel Type**, select **IPython**.
@@ -70,18 +68,9 @@ This example shows how to create a Session with Q# inline code using hosted Note
 
     ```python
     target = workspace.get_targets("rigetti.sim.qvm")
-    target.input_data_format = "qir.v1"
-    target.content_type = "qir.v1"
-    target.output_data_format = "microsoft.quantum-results.v1"
-    input_params = {
-        "entryPoint": "ENTRYPOINT__GenerateRandomBit",
-        "arguments": []
-    }
-
-    # These line won't be necessary very soon. They will be inside the target.submit
-    qir_bitcode = GenerateRandomBit._repr_qir_(target=target.name)
     ```
- 7. Next, you create a Session. Let's say you want to run `GenerateRandomBit` operation three times, so you use `target.submit` to submit the Q# operation with the target data and you repeat the code three times. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the Session. For more information, see [How to manage Sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
+    
+ 7. Next, you create a session. Let's say you want to run `GenerateRandomBit` operation three times, so you use `target.submit` to submit the Q# operation with the target data and you repeat the code three times - in a real world scenario, you may want to submit different programs instead of the same code. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
  
     ```python
     with target.open_session(name="Q# Session") as session:
@@ -92,14 +81,8 @@ This example shows how to create a Session with Q# inline code using hosted Note
     session_jobs = workspace.list_session_jobs(session_id=session.id)
     [session_job.details.name for session_job in session_jobs]
     ```
-8. After creating the Session, you can print the Session ID. 
-
-    ```python
-    print("Session Id is " + session_id)
-    ```
 
 ### [Qiskit](#tab/tabid-qiskit)
-
 
 1. First, you need to import additional modules from `azure-quantum` and `qiskit`. Next, create a `provider` object with your Quantum workspace information.
 
@@ -128,7 +111,7 @@ This example shows how to create a Session with Q# inline code using hosted Note
     ```python
     backend = provider.get_backend("ionq.simulator")
     ```
-4. Next, create a Session. Let's say you want to run your quantum circuit three times, so you use `backend.run` to submit the Qiskit circuit, and you repeat the code three times. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the Session. For more information, see [How to manage Sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
+4. Next, create a session. Let's say you want to run your quantum circuit three times, so you use `backend.run` to submit the Qiskit circuit, and you repeat the code three times. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
 
     ```python
     with backend.open_session(name="Qiskit Session") as session:
@@ -142,12 +125,6 @@ This example shows how to create a Session with Q# inline code using hosted Note
     session_jobs = workspace.list_session_jobs(session_id=session.id)
     [session_job.details.name for session_job in session_jobs]
     ```
-5. After creating the Session, you can print the Session ID. 
-
-    ```python
-    print("Session Id is " + session_id)
-    ```
-
 ### [Cirq](#tab/tabid-cirq)
 
 1. First, write your quantum circuit. For example, the following circuit generates a random bit. 
@@ -179,7 +156,7 @@ This example shows how to create a Session with Q# inline code using hosted Note
     ```python
     target = service.get_target("ionq.simulator")
     ```
-4. Next, you create a Session. Let's say you want to run your quantum circuit three times, so you use `target.submit` to submit the Cirq circuit, and you repeat the code three times. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the Session. For more information, see [How to manage Sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
+4. Next, you create a session. Let's say you want to run your quantum circuit three times, so you use `target.submit` to submit the Cirq circuit, and you repeat the code three times. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
     
     ```python
     with target.open_session(name="Cirq Session") as session:
@@ -192,61 +169,9 @@ This example shows how to create a Session with Q# inline code using hosted Note
 
     [session_job.details.name for session_job in session_jobs]
     ```
-5. After creating the Session, you can print the Session ID. 
-
-    ```python
-    print("Session Id is " + session_id)
-    ```
-
-### [QIO](#tab/tabid-qio)
-
-You can create a Session with QIO jobs, and in that case the Session can only contain optimization jobs. 
-
-1. First, create an optimization problem. For example, the following program solves an Ising type optimization problem. 
-
-    ```python
-    import azure.quantum.optimization as optimization
-
-    problem = optimization.Problem(
-        name="Ising Problem",
-        problem_type=optimization.ProblemType.ising,
-        terms=[
-            optimization.Term(c=1, indices=[0]),
-            optimization.Term(c=2, indices=[1,0])
-            ]
-        )
-    ```
-2. Select the [QIO target](xref:microsoft.quantum.reference.qio-target-list) of your choice. In this example, you're using [Parallel Tempering target](xref:microsoft.quantum.optimization.parallel-tempering) from Microsoft QIO. 
-
-    ```python
-    from azure.quantum.optimization import ParallelTempering
-    solver = ParallelTempering(workspace)
-    ```
-
-3. Next, you create a Session. Let's say you want to run your optimization program three times, so you use `solver.open_session` to create a Session, and you repeat the code `solver.optimize(problem)` three times to sumit three jobs. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the Session. For more information, see [How to manage Sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
-
-    ```python
-    with solver.open_session(name="QIO Session") as session:
-        problem.name = "Problem 1"
-        solver.optimize(problem) # First job submission
-        problem.name = "Problem 2"
-        solver.optimize(problem) # Second job submission
-        problem.name = "Problem 3"
-        solver.optimize(problem) # Third job submission
-
-    session_id = solver.get_latest_session_id()
-    session_jobs = workspace.list_session_jobs(session_id=session_id)
-
-    [session_job.details.name for session_job in session_jobs]
-    ```
-4. After creating the Session, you can print the Session ID. 
-
-    ```python
-    print("Session Id is " + session_id)
-    ```
 ***
 
-## Monitoring Sessions
+## Monitoring sessions
 
 You can list all top-level submitted items within your Quantum workspace in **Job Management** blade, that is, Sessions and individual jobs that aren't associated with any Session.
 
@@ -257,13 +182,13 @@ You can list all top-level submitted items within your Quantum workspace in **Jo
 
 ## Provider support
 
-Each quantum hardware provider define their own heuristics to best manage the prioritization of jobs within a Session. 
+Each quantum hardware provider define their own heuristics to best manage the prioritization of jobs within a session. 
 
 ### Quantinuum 
 
-If you choose to submit jobs within a Session to [Quantinuum target](xref:microsoft.quantum.providers.quantinuum), you'll have exclusive access to Quantinuum hardware until the 1 minute timeout. After that, any job will be accepted and handled with the standard queueing and prioritization logic. 
+If you choose to submit jobs within a session to [Quantinuum target](xref:microsoft.quantum.providers.quantinuum), you'll have exclusive access to Quantinuum hardware until the 1 minute timeout. After that, any job will be accepted and handled with the standard queueing and prioritization logic. 
 
 ## Next steps
 
-- [How to work with Sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions)
+- [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions)
 - [Integrated quantum computing](xref:microsoft.quantum.hybrid.integrated)
