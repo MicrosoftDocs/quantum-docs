@@ -85,9 +85,9 @@ This example shows how to create a Session with Q# inline code using hosted Note
  
     ```python
     with target.open_session(name="Q# Session") as session:
-        target.submit(input_data=qir_bitcode, name="Job 1", input_params=input_params) # First job submission
-        target.submit(input_data=qir_bitcode, name="Job 2", input_params=input_params) # Second job submission
-        target.submit(input_data=qir_bitcode, name="Job 3", input_params=input_params) # Third job submission 
+        target.submit(input_data=GenerateRandomBit, name="Job 1", input_params={"count":100}) # First job submission
+        target.submit(input_data=GenerateRandomBit, name="Job 2", input_params={"count":100}) # Second job submission
+        target.submit(input_data=GenerateRandomBit, name="Job 3", input_params={"count":100}) # Third job submission 
 
     session_id = target.get_latest_session_id()
     session_jobs = workspace.list_session_jobs(session_id=session_id)
