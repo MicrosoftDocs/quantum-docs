@@ -39,7 +39,8 @@ All of Quantinuum's targets now support Integrated hybrid circuits. For more inf
 To get started using the Quantinuum provider on Azure Quantum, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
 > [!TIP]
-> Quantum jobs submitted under a Session have **exclusive access** to Quantinuum hardware until the 1 minute timeout. After that, any job will be accepted and handled with the standard queueing and prioritization logic. For more information, see [Sessions in Azure Quantum](xref:microsoft.quantum.hybrid.interactive).
+> Quantum jobs submitted under a session have **exclusive access** to Quantinuum hardware as long as you queue jobs within one minute from each other. After that, any job will be accepted and handled with the standard queueing and prioritization logic. For more information, see [sessions in Azure Quantum](xref:microsoft.quantum.hybrid.interactive).
+
 
 ## Syntax Checkers
 
