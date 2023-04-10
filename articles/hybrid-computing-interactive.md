@@ -123,7 +123,7 @@ This example shows how to create a Session with Q# inline code using hosted Note
     circuit.measure([0,1], [0,1])
     circuit.draw()
     ```
-3. Next, you create a backend instance with the [quantum target](xref:microsoft.quantum.reference.qc-target-list)  of you choice. In this example, you're setting [IonQ simulator](xref:microsoft.quantum.providers.ionq) as target. 
+3. Next, create a backend instance with the [quantum target](xref:microsoft.quantum.reference.qc-target-list)  of your choice. In this example, set [IonQ simulator](xref:microsoft.quantum.providers.ionq) as the target. 
 
     ```python
     backend = provider.get_backend("ionq.simulator")
