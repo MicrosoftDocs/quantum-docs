@@ -19,7 +19,7 @@ In this model, the client compute resource is moved to the cloud, resulting in l
 
 ## What is a Session?
 
-A Session is a logical grouping of any combination of one or more jobs against a single target. Each Session has a unique ID, `sessionID`, attached to each job submitted to a provider. Every job within a Session is prioritized to run as close as possible from the previously queued job. In some cases, jobs submitted within a Session are prioritized on the queue of that target. For more information, see [Provider support](#provider-support).
+A session is a logical grouping of one or more jobs submitted to a single target. Each session has a unique ID attached to each job in that session. In some cases, jobs submitted within a session are prioritized in the queue of that target. For more information, see [Provider support](#provider-support).
 
 Sessions allow you to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. You'll be able to run complex algorithms to better organize and track your individual quantum computing jobs.
 
