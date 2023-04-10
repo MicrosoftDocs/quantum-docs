@@ -66,7 +66,7 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
 
   print(f"Session status: {session.details.status}")
   ```
-  To this point, the session only exists in the client and you see that the status is **None**. You need to create the session in the service.
+  At this point, the session only exists in the client and you see that the status is **None**. You need to create the session in the service.
 
 2. To **create** a session in the service, you can use `workspace.open_session(session)` or `session.open()`.
 
@@ -82,17 +82,18 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
   
 ## Session timeouts
 
-A session times out if no new job is submitted within the Session for 10 minutes. The session reports a status of **TimedOut**. To avoid that, you can add a `with` block so the session close() is invoked at the end of the code block. 
+A session times out if no new job is submitted within the Session for 10 minutes. The session reports a status of **TimedOut**. To avoid this, add a `with` block so the session close() is invoked at the end of the code block. 
 
 > [!NOTE]
 > If there are errors or bugs in your program, it might take more than 10 minutes to submit a new job after the previous jobs in the Session have all completed. 
 
 ## Job failure policy within sessions
 
-The default policy for a session when a job fails is to end that Session. If you try to submit any subsequent job within the same session, they'll be rejected by the service and the session'll report a status of **Failed**. Any in progress job is attempted to be cancelled.
+The default policy for a session when a job fails is to end that Session. If you submit an additional job within the same session, the service rejects it and the session reports a status of **Failed**. Any in progress jobs are cancelled.
 
 However, this behavior can be changed by specifying a job failure policy of `job_failure_policy=SessionJobFailurePolicy.CONTINUE`, instead of the default `SessionJobFailurePolicy.ABORT`, when creating the session. When the job failure policy is `CONTINUE`, the service continues to accept jobs. The session reports a status of **Failure(s)** in this case, which will change to **Failed** once the session is closed.
-If the session is never closed and times out, the status is **TimedOut** even if there's been job failures. 
+
+If the session is never closed and times out, the status is **TimedOut** even if jobs have failed. 
 
 ## Next steps
 
