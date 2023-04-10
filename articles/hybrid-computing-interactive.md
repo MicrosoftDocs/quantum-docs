@@ -19,7 +19,7 @@ In this model, the client compute resource may be moved to the cloud, resulting 
 
 ## What is a session?
 
-A session is a logical grouping of one or more jobs submitted to a single target. Each session has a unique ID attached to each job in that session. In some cases, jobs submitted within a session are prioritized in the queue of that target. For more information, see [Provider support](#provider-support).
+A session is a logical grouping of one or more jobs submitted to a single target. Each session has a unique ID attached to each job in that session. In some cases, jobs submitted within a session are prioritized in the queue of that target. For more information, see [Supported hardware](#supported-hardware).
 
 Sessions allow you to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. You'll be able to run complex algorithms to better organize and track your individual quantum computing jobs.
 
@@ -180,7 +180,7 @@ You can list all top-level submitted items within your Quantum workspace in **Jo
 1. Click on a session's name for more details.
 1. You can see the list of **All jobs** within the session and monitor their status.
 
-## Provider support
+## Supported hardware
 
 Each quantum hardware provider define their own heuristics to best manage the prioritization of jobs within a session. 
 
