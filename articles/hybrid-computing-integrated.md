@@ -70,6 +70,19 @@ When using the Azure CLI to submit a job, add the `--target-capability` paramete
 az quantum job submit --target-capability AdaptiveExecution --target-id quantinuum.sim.h1-1e --job-name IterativePhaseEstimation --shots 100 --output table
 ```
 
+### Submitting integrated hybrid jobs within a session
+
+You can combine multiple integrated hybrid jobs within a [session](xref:microsoft.quantum.hybrid.interactive) using Q# and Python. When submitting a session, add the `targetCapability` input parameter with the value `AdaptiveExecution`. 
+
+```python
+with target.open_session(name="Q# session") as session:
+    target.submit(input_data=QuantumOperation, name="Job 1", input_params={"count":100, "targetCapability":"AdaptiveExecution"}) # First job submission
+    target.submit(input_data=QuantumOperation, name="Job 2", input_params={"count":200, "targetCapability":"AdaptiveExecution"}) # Second job submission
+    target.submit(input_data=QuantumOperation, name="Job 3", input_params={"count":300, "targetCapability":"AdaptiveExecution"}) # Third job submission
+```
+
+For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
+
 ## Estimating the cost of an integrated hybrid job
 
 You can estimate the cost of running an integrated hybrid job on Quantinuum hardware by running it on an emulator first.
