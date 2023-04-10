@@ -13,7 +13,7 @@ uid: microsoft.quantum.hybrid.interactive
 
 # Interactive quantum computing: Sessions
 
-In this model, the client compute resource is moved to the cloud, resulting in lower-latency and the ability to repeat execution of the quantum circuit with different parameters. Jobs can be grouped logically into one session, and the jobs in that session can be prioritized over non-session jobs.  Although the qubit states do not persist between jobs, a job Session allows for shorter queue times and longer running problems.
+In this model, the client compute resource is moved to the cloud, resulting in lower-latency and the ability to repeat execution of the quantum circuit with different parameters. Jobs can be grouped logically into one session, and the jobs in that session can be prioritized over non-session jobs.  Although the qubit states do not persist between jobs, a session allows for shorter queue times for jobs and longer running problems.
 
 ![Interactive quantum computing](~/media/hybrid/interactive.png)
 
