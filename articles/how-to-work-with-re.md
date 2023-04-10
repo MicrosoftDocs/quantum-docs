@@ -131,7 +131,7 @@ operation AccountForEstimates(estimates: (Int, Int)[], layout: Int, arguments: Q
 The `AccountForEstimates` operation takes as inputs an array of known `estimates` that need to be incorporated into the final cost of the program, a `layout` scheme  that is used to derive physical estimates, and array of qubits, which the unimplemented operation is using as its `arguments`.
 
 > [!NOTE]
-> The special operation `AccountForEsyimates` is an intrinsic operation for the Resource Estimator. It's not supported by other execution targets.
+> The special operation `AccountForEstimates` is an intrinsic operation for the Resource Estimator. It's not supported by other execution targets.
 
 Some scenarios where you may want to use `AccountForEstimates` operation:
 
