@@ -85,7 +85,7 @@ We recomend to follow the steps in [Get started with sessions](xref:microsoft.qu
 A session times out if no new job is submitted within the Session for 10 minutes. The session reports a status of **TimedOut**. To avoid that, you can add a `with` block so the session close() is invoked at the end of the code block. 
 
 > [!NOTE]
-> If there're errors or bugs in your program, it might be possible that your code takes more than 10 minutes to submit a new job after their previous jobs in the Session have all completed. 
+> If there are errors or bugs in your program, it might take more than 10 minutes to submit a new job after the previous jobs in the Session have all completed. 
 
 ## Job failure policy within sessions
 
