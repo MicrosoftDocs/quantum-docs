@@ -53,9 +53,9 @@
       href: hybrid-computing-batch.md
     - name: Interactive hybrid QC
       items:
-      - name: Get started with Sessions
+      - name: Get started with sessions
         href: hybrid-computing-interactive.md
-      - name: Manage Sessions
+      - name: Manage sessions
         href: how-to-work-with-sessions.md    
     - name: Integrated hybrid QC
       href: hybrid-computing-integrated.md
