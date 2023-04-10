@@ -101,7 +101,7 @@ This example shows how to create a Session with Q# inline code using hosted Note
 ### [Qiskit](#tab/tabid-qiskit)
 
 
-1. First, you need to import an additional modules from `azure-quantum` and `qiskit`. Next, you create a `provider` object with your Quantum workspace information.
+1. First, you need to import additional modules from `azure-quantum` and `qiskit`. Next, create a `provider` object with your Quantum workspace information.
 
     ```python
     from qiskit import QuantumCircuit
