@@ -1,5 +1,5 @@
 ---
-author: SoniaLopezBravo
+author: contributor-provider-id (DO NOT USE A GITHUB ALIAS THAT IS CONNECTED TO AN MS ACCOUNT IN THE PUBLIC REPO - PRMERGER WILL CLOSE THE PR AUTOMATICALLY)
 description: This document provides a list of the available quantum computing providers on Azure Quantum.
 ms.date: 04/11/2023
 ms.author: sonialopez
