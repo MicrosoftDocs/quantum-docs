@@ -172,7 +172,7 @@ This example shows how to create a session with Q# inline code using hosted Note
 
 ## Monitoring sessions
 
-You can list all top-level submitted items within your Quantum workspace in **Job Management** blade, that is, sessions and individual jobs that aren't associated with any session.
+You can use the **Job management** blade in your Quantum workspace to view all top-level submitted items, including sessions and individual jobs that aren't associated with any session.
 
 1. Select **Job Management** blade in your Quantum workspace.
 1. Identify the jobs of type **Session**. In this view you can see the Unique ID of a Session in column **Id** and monitor its **Status**. 
