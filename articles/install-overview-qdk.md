@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to set up an Azure Quantum environment for different languages and platforms.
 ms.author: brbenefield
-ms.date: 01/17/2023
+ms.date: 04/10/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -30,7 +30,7 @@ Choose from several development environment options:
 
 - [Use a Jupyter Notebook in the Azure Quantum portal and submit jobs to Azure Quantum (recommended)](#use-a-jupyter-notebook-in-the-azure-quantum-portal-and-submit-jobs-to-azure-quantum-recommended)
 - [Use your preferred IDE and language locally and submit jobs to Azure Quantum](#use-your-preferred-ide-and-language-locally-and-submit-jobs-to-azure-quantum)
-- [Use a pre-configured Docker image](#use-the-qdk-with-a-pre-configured-docker-image-advanced)
+- [Use GitHub Codespaces](#use-the-qdk-with-github-codespaces)
 
 ## Jupyter Notebooks
 
@@ -223,6 +223,59 @@ You can use our QDK Docker image in your local Docker installation or in the clo
 You can download the IQ# Docker image from <https://github.com/microsoft/iqsharp/#using-iq-as-a-container>. 
 
 You can also use Docker with a Visual Studio Code Remote Development Container to quickly define development environments. For more information about VS Code Development Containers, see <https://github.com/microsoft/Quantum/tree/master/.devcontainer>.
+
+## Use the QDK with GitHub Codespaces
+
+[GitHub Codespaces](https://docs.github.com/en/codespaces/overview) is a secure and configurable cloud-powered development environment. There is no local setup involved and the default compute instances are available free of charge, with options to increase the number of cores and the amount of RAM and storage.
+
+### Prerequisites
+
+- You will need a GitHub account (https://github.com/join) and access to the GitHub repository you want to work with.
+- Install the [Azure CLI](/cli/azure/install-azure-cli) for web-based authentication.
+
+### Configuring your codespace
+
+1. From the root page of your repository, select **Code > Codespaces > ... > Configure dev container**.
+1. Replace the contents of the default *devcontainer.json* file with the following:
+
+    ```json
+    {    
+        "image": "mcr.microsoft.com/devcontainers/universal:2",
+        "extensions": [
+            "quantum.quantum-devkit-vscode",
+            "ms-vscode.csharp",
+            "editorconfig.editorconfig",
+            "ms-python.python"
+        ],
+        "features": {
+            "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.11.2",
+            "installJupyterlab": "true"
+            },
+        "ghcr.io/devcontainers/features/azure-cli:1": {
+            "extensions": "quantum"
+            }
+        },
+        "postCreateCommand": "wget https://dot.net/v1/dotnet-install.sh && chmod +x dotnet-install.sh && ./dotnet-install.sh -c 6.0 && rm dotnet-install.sh && pip install azure-quantum[qiskit]"
+    }
+    
+    ```
+
+    > [!TIP]
+    > You can customize your GitHub Codespaces at any time after setup. For more information, see [Introduction to dev containers](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers).
+
+1. Select **Start commit > Commit directly to the main branch**, then select **Commit new file**. GitHub creates a folder named **.devcontainer** with your new configuration file.
+1. If you want to create your codespace on a branch other than **main**, select that branch.
+1. Select **Code > Codespaces > Create codespace on main** (or your preferred branch). The initial setup may take 5-10 minutes.
+1. When the setup is complete, the codespace development shell opens. Wait for the *postCreateCommand* to complete.
+1. Enable web-based authentication:
+    1. From a command prompt, run **az login --use-device-code**.
+    1. Copy the device code and use it to authenticate at **https://microsoft.com/devicelogin**.
+
+### Additional configurations (optional)
+
+- Codespaces uses a randomly generated name when it creates a new codespace. You can rename a codespace to a friendlier name by selecting **Code > Codespaces > ... > Rename** next to the codespace name.
+- By default, your codespace is created with a minimal compute setup. You can increase the compute resources by selecting **Code > Codespaces > ... > Change machine type** next to the codespace name. For more information about fees for additional compute usage, see [Pricing for paid usage](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces#pricing-for-paid-usage).
 
 ## Next steps
 
