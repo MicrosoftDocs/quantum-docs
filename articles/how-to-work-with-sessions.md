@@ -17,7 +17,7 @@ In this article, you'll learn how to work with sessions. With sessions, you can 
 
 ## Retrieve sessions, list sessions, and list jobs of sessions
 
-The following table shows the Python commands to get the list of all sessions and all jobs for a given Session. 
+The following table shows the Python commands to get the list of all sessions and all jobs for a given session. 
 
 |Command|Description|
 |---|---|
@@ -82,18 +82,50 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
   
 ## Session timeouts
 
-A session times out if no new job is submitted within the Session for 10 minutes. The session reports a status of **TimedOut**. To avoid this, add a `with` block so the session close() is invoked at the end of the code block. 
+A session times out if no new job is submitted within the session for 10 minutes. The session reports a status of **TimedOut**. To avoid this, add a `with` block using `backend.open_session(name="Name")`, so the session `close()` is invoked by the service at the end of the code block. 
 
 > [!NOTE]
-> If there are errors or bugs in your program, it might take more than 10 minutes to submit a new job after the previous jobs in the Session have all completed. 
+> If there are errors or bugs in your program, it might take more than 10 minutes to submit a new job after the previous jobs in the session have all completed. 
+
+The following code snippets show an example of a session times out after 10 minutes because no new jobs are submitted. To avoid that, the next code snippet shows how to use a `with` block to create a session. 
+
+```python
+#Example of a session that times out 
+
+session = backend.open_session(name="Qiskit circuit session") # Session times out because only contains one job
+backend.run(circuit=circuit, shots=100, job_name="Job 1")
+```
+
+```python
+#Example of a session that includes a with block to avoid timeout
+
+with backend.open_session(name="Qiskit circuit session") as session:  # Use a with block to submit multiple jobs within a session
+    job1 = backend.run(circuit=circuit, shots=100, job_name="Job 1") # First job submission
+    job_monitor(job1)
+    job2 = backend.run(circuit=circuit, shots=100, job_name="Job 2") # Second job submission
+    job_monitor(job2)
+    job3 = backend.run(circuit=circuit, shots=100, job_name="Job 3") # Third job submission
+    job_monitor(job3)
+```
 
 ## Job failure policy within sessions
 
-The default policy for a session when a job fails is to end that Session. If you submit an additional job within the same session, the service rejects it and the session reports a status of **Failed**. Any in progress jobs are cancelled.
+The default policy for a session when a job fails is to end that session. If you submit an additional job within the same session, the service rejects it and the session reports a status of **Failed**. Any in progress jobs are cancelled.
 
 However, this behavior can be changed by specifying a job failure policy of `job_failure_policy=SessionJobFailurePolicy.CONTINUE`, instead of the default `SessionJobFailurePolicy.ABORT`, when creating the session. When the job failure policy is `CONTINUE`, the service continues to accept jobs. The session reports a status of **Failure(s)** in this case, which will change to **Failed** once the session is closed.
 
 If the session is never closed and times out, the status is **TimedOut** even if jobs have failed. 
+
+For example, the following program creates a session with three jobs. The first job fails because it specifies `"garbage"` as input data. To avoid the end of the session at this point, the program shows how to add `job_failure_policy=SessionJobFailurePolicy.CONTINUE` when creating the session. 
+
+```python
+#Example of a session that does not close but reports Failure(s) when a jobs fails
+
+with target.open_session(name="JobFailurePolicy Continue", job_failure_policy=SessionJobFailurePolicy.CONTINUE) as session:
+    target.submit(input_data="garbage", name="Job 1") #Input data is missing, this job fails
+    target.submit(input_data=quil_program, name="Job 2") #Subsequent jobs are accepted beacuse of CONTINUE policy
+    target.submit(input_data=quil_program, name="Job 3")
+```
 
 ## Next steps
 
