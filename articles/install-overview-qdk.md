@@ -274,8 +274,9 @@ You can also use Docker with a Visual Studio Code Remote Development Container t
 
 ### Additional configurations (optional)
 
-- Codespaces uses a randomly generated name when it creates a new codespace. You can rename a codespace to a friendlier name by selecting **Code > Codespaces > ... > Rename** next to the codespace name.
-- By default, your codespace is created with a minimal compute setup. You can increase the compute resources by selecting **Code > Codespaces > ... > Change machine type** next to the codespace name. For more information about fees for additional compute usage, see [Pricing for paid usage](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces#pricing-for-paid-usage).
+- **Codespace names** - Codespaces uses a randomly generated name when it creates a new codespace. You can rename a codespace to a friendlier name by selecting **Code > Codespaces > ... > Rename** next to the codespace name.
+- **Compute resources** - By default, each codespace is created with a minimal compute setup. You can increase the compute resources by selecting **Code > Codespaces > ... > Change machine type** next to the codespace name. For more information about fees for additional compute usage, see [Pricing for paid usage](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces#pricing-for-paid-usage).
+- **Billing configuration** - By default, usage costs for GitHub Codespaces are automatically billed to the GitHub account that created the codespace. Optionally, you can connect an Azure subscription to pay for GitHub Codespaces and other GitHub services. For more information and requirements, see [Connecting an Azure subscription to your enterprise](https://docs.github.com/en/enterprise-cloud@latest/billing/managing-billing-for-your-github-account/connecting-an-azure-subscription-to-your-enterprise).
 
 ## Next steps
 
