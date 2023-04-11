@@ -231,7 +231,6 @@ You can also use Docker with a Visual Studio Code Remote Development Container t
 ### Prerequisites
 
 - You will need a GitHub account (https://github.com/join) and access to the GitHub repository you want to work with.
-- Install the [Azure CLI](/cli/azure/install-azure-cli) for web-based authentication.
 
 ### Configuring your codespace
 
