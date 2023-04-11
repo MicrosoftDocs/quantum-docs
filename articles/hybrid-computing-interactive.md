@@ -181,7 +181,7 @@ You can use the **Job management** blade in your Quantum workspace to view all t
 
 ## Target behavior 
 
-Each quantum hardware provider define their own heuristics to best manage the prioritization of jobs within a session. 
+Each quantum hardware provider defines their own heuristics to best manage the prioritization of jobs within a session. 
 
 ### Quantinuum 
 
