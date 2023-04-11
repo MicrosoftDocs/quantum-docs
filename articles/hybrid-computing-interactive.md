@@ -38,7 +38,7 @@ To create a session, you need the following prerequisites:
 
 ### [Q# + Python](#tab/tabid-iqsharp)
 
-This example shows how to create a session with Q# inline code using hosted Notebooks in the Azure portal. You can also create sessions using a [Python host program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs) that invokes an adjacent Q# program. 
+This example shows how to create a session with Q# inline code using hosted Notebooks in the Azure portal. You can also create sessions using a [Python host program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs#q-with-host-programs) that invokes an adjacent Q# program. 
 
 1. Select the **Notebooks** blade in your Quantum workspace, and in **My Notebooks** click on **Add New**.
 2. In **Kernel Type**, select **IPython**.
