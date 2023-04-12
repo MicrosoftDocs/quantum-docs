@@ -159,9 +159,9 @@ This example shows how to create a session with Q# inline code using hosted Note
     
     ```python
     with target.open_session(name="Cirq Session") as session:
-        target.submit(program=circuit, name="Job 1") # First job submission
-        target.submit(program=circuit, name="Job 2") # Second job submission
-        target.submit(program=circuit, name="Job 3") # Third job submission
+        target.submit(program=circuit, name="Job 1", repetitions=100) # First job submission
+        target.submit(program=circuit, name="Job 2", repetitions=100) # Second job submission
+        target.submit(program=circuit, name="Job 3", repetitions=100) # Third job submission
 
     session_jobs = workspace.list_session_jobs(session_id=session.id)
     [session_job.details.name for session_job in session_jobs]
