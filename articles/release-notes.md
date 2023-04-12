@@ -21,7 +21,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 ### QDK version 0.28.263081
 
-- Added [Q# Azure Quantum Resource Estimator API](/azure/quantum/how-to-work-with-re#handle-large-programs) to aid with estimation of large programs.
+- Added [Q# Azure Quantum Resource Estimator API](/azure/quantum/how-to-work-with-re#how-to-handle-large-programs) to aid with estimation of large programs.
 - In the azure-quantum package, we simplified the experience to submit QIR jobs to the resource estimator.
 - In the azure-quantum package, the Qiskit provider object now provides a list of backends and ability to filter and acquire backends.
 - Fixed the hard-coded tolerance in [AssertOperationsEqualInPlace](/qsharp/api/qsharp/microsoft.quantum.diagnostics.assertoperationsequalinplace) and added a call to reset all auxiliary qubits at the end of their scope. Fixes [microsoft/qsharp-runtime#1129](https://github.com/microsoft/qsharp-runtime/issues/1129).
