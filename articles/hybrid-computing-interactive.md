@@ -163,9 +163,7 @@ This example shows how to create a session with Q# inline code using hosted Note
         target.submit(program=circuit, name="Job 2") # Second job submission
         target.submit(program=circuit, name="Job 3") # Third job submission
 
-    session_id = target.get_latest_session_id()
-    session_jobs = workspace.list_session_jobs(session_id=session_id)
-
+    session_jobs = workspace.list_session_jobs(session_id=session.id)
     [session_job.details.name for session_job in session_jobs]
     ```
 ***
