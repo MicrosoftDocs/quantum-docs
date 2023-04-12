@@ -163,7 +163,7 @@ This example shows how to create a session with Q# inline code using hosted Note
         target.submit(program=circuit, name="Job 2", repetitions=100) # Second job submission
         target.submit(program=circuit, name="Job 3", repetitions=100) # Third job submission
 
-    session_jobs = workspace.list_session_jobs(session_id=session.id)
+    session_jobs = session.list_jobs()
     [session_job.details.name for session_job in session_jobs]
     ```
 ***
@@ -183,7 +183,7 @@ Each quantum hardware provider defines their own heuristics to best manage the p
 
 ### Quantinuum 
 
-If you choose to submit jobs within a session to a [Quantinuum target](xref:microsoft.quantum.providers.quantinuum), your session will have exclusive access to the hardware as long as you queue jobs within one minute from each other. After that, any job will be accepted and handled with the standard queueing and prioritization logic. 
+If you choose to submit jobs within a session to a [Quantinuum target](xref:microsoft.quantum.providers.quantinuum), your session will have exclusive access to the hardware as long as you queue jobs within one minute from each other. After that, your jobs will be accepted and handled with the standard queueing and prioritization logic. 
 
 ## Next steps
 
