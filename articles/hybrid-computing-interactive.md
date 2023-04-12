@@ -77,7 +77,7 @@ This example shows how to create a session with Q# inline code using hosted Note
         target.submit(input_data=GenerateRandomBit, name="Job 2", input_params={"count":100}) # Second job submission
         target.submit(input_data=GenerateRandomBit, name="Job 3", input_params={"count":100}) # Third job submission 
 
-    session_jobs = workspace.list_session_jobs(session_id=session.id)
+    session_jobs = session.list_jobs()
     [session_job.details.name for session_job in session_jobs]
     ```
 
