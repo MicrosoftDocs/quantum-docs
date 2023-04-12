@@ -121,7 +121,7 @@ This example shows how to create a session with Q# inline code using hosted Note
         job3 = backend.run(circuit=circuit, shots=100, job_name="Job 3") # Third job submission
         job_monitor(job3)
 
-    session_jobs = workspace.list_session_jobs(session_id=session.id)
+    session_jobs = session.list_jobs()
     [session_job.details.name for session_job in session_jobs]
     ```
 ### [Cirq](#tab/tabid-cirq)
