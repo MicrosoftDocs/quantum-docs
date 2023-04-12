@@ -22,8 +22,8 @@ The following table shows the Python commands to get the list of all sessions an
 |Command|Description|
 |---|---|
 |`workspace.list_sessions()`| Retrieve a list of all sessions in a Quantum Workspace.|
-|`workspace.list_session(session.id)` | Retrieve the session with ID `session.id`. Each session has a unique ID. |
-|`workspace.list_session_jobs(session.id)` | Retrieve a list of all jobs in the session with ID `session.id`. Each session has a unique ID.|
+|`workspace.get_session(sessionId)` | Retrieve the session with ID `sessionId`. Each session has a unique ID. |
+|`workspace.list_session_jobs(sessionId)` | Retrieve a list of all jobs in the session with ID `sessionId`. Each session has a unique ID.|
 
 For example, the following code defines a function that gets a session with a minimum number of jobs. Then, for that session, it lists all the jobs, the total number of jobs, and the first 10 jobs. 
 
@@ -45,7 +45,7 @@ for job in session_jobs[0:10]:
 ```
 
 
-## Manual methods of creating/ending sessions
+## Manual methods of opening/closing sessions
 
 We recommend following the steps in [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions) to create a new session. However,  you can manually create sessions. 
 
