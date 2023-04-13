@@ -24,7 +24,7 @@ The goal of support is to identify and remedy defects or malfunctions causing th
 
 ### 1.1	Contacting technical support within Quantinuum
 
-To create a support request with Quantinuum, submit an incident report via email to <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a>. The on-call engineer will respond within the appropriate SLA (Table 2). Note that only incident reports that contain all of the following information will notify the Quantinuum team and have the appropriate SLA resolution window. Reports without the necessary information will not trigger this response. All requests must be provided in the English language and will be answered in the English language.
+To create a support request with Quantinuum, submit an incident report via email to <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a>. The on-call engineer will respond within the appropriate SLA (Table 2). Note that only incident reports that contain all of the following information will notify the Quantinuum team and have the appropriate SLA resolution window. Reports without the necessary information do not trigger this response. All requests must be provided in the English language and are answered in the English language.
 
 _Table 1: Support contact information and standard operating hours_
 
@@ -34,15 +34,15 @@ _Table 1: Support contact information and standard operating hours_
 
 _<sup>1</sup> “Business days” means Monday to Friday but excluding national, legal, or bank holidays._
 
-The incident report will require the following information:
+The incident report requires the following information:
 
 - **Description**: A detailed description of the issue you're facing, what you're observing, and any steps you have already taken to triage/understand the issue
 - **Primary contact**: A primary contact name and phone number in case we require more information
 - **Incident severity**: the severity of the incident, according to our severity definitions
 
-Once a report is filed, the Quantinuum team will be notified and will respond within the required SLA window. You will receive an acknowledgment of the issue once it has been received and the on-call engineer has been notified. The on-call engineer may request more information, or may call you at the contact number listed in the report depending on the severity. 
+Once a report is filed, the Quantinuum team is notified and responds within the required SLA window. You will receive an acknowledgment of the issue once it has been received and the on-call engineer has been notified. The on-call engineer may request more information, or may call you at the contact number listed in the report depending on the severity. 
 
-During Reserved (dedicated) Sessions, Quantinuum will provide at least one quantum specialist available to you for customer support for the entirety of your dedicated session. Quantinuum reserves the right to change out the specialist during your session, but will use commercially reasonable efforts to ensure the new specialist is prepared to continue providing support.
+During Reserved (dedicated) Sessions, Quantinuum provides at least one quantum specialist available to you for customer support for the entirety of your dedicated session. Quantinuum reserves the right to change out the specialist during your session, but will use commercially reasonable efforts to ensure the new specialist is prepared to continue providing support.
 
 During queued runs, if your job is running in the general queue and you encounter an issue, you may submit your issue request online at: <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a>. You can expect to receive an answer within three (3) business days.  
 
@@ -60,7 +60,7 @@ _Table 2: Definition of severity index_
 | Severity 2| Urgent or high impact | Job status has not updated; issues retrieving data |
 | Severity 3| Not urgent | Miscellaneous  |
 
-The following table shows the Response SLA that will be adhered to by Quantinuum for incident reports of the corresponding severity. Note that these define how fast we'll respond to issues – resolution times are not guaranteed.
+The following table shows the Response SLA that is adhered to by Quantinuum for incident reports of the corresponding severity. Note that these define how fast we'll respond to issues – resolution times are not guaranteed.
 
 _Table 3: Response SLA for various severity_
 
@@ -74,12 +74,12 @@ _Table 3: Response SLA for various severity_
 
 ### Q: What happens if I raise a support issue with the Azure support team and it turns out that a third party provider (like Quantinuum) needs to troubleshoot the issue further?
 
-The support engineer will create a redirection package for you. This is a PDF document that contains information about your case which you can provide to the Quantinuum support team.
-The support engineer will also give you advice and guidance on how to reach out to Quantinuum to continue troubleshooting.
+The support engineer creates a redirection package for you. This is a PDF document that contains information about your case which you can provide to the Quantinuum support team.
+The support engineer also gives you advice and guidance on how to reach out to Quantinuum to continue troubleshooting.
 
 ### Q: What happens if I raise a support issue with the Quantinuum team and it turns out that there is an issue with the Azure Quantum service?
 
-The Quantinuum support team will help you reach out to Microsoft and provide you with a redirection package. This is a PDF document that you can use when continuing your support inquiry with the Azure support team.
+The Quantinuum support team helps you reach out to Microsoft and provide you with a redirection package. This is a PDF document that you can use when continuing your support inquiry with the Azure support team.
 
 ## Third-party information disclaimer
 
