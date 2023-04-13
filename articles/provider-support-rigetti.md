@@ -1,8 +1,8 @@
 ---
-author: kalzoo
+author: bradben
 ms.author: brbenefield
 description: This document provides details on the support policy for the Rigetti provider in Azure Quantum
-ms.date: 09/07/2022
+ms.date: 04/13/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -14,9 +14,9 @@ uid: microsoft.quantum.providers.rigetti.support
 
 This article describes the Microsoft support policy that applies when you use the Rigetti provider in Azure Quantum. The article applies to any of the [targets](xref:microsoft.quantum.providers.rigetti#targets) offered by the Rigetti provider.
 
-If you're using the Rigetti provider and experience unexpected issues, you can contact the Azure Support team for help 
+If you're using the Rigetti provider and experience unexpected issues, you can contact the Azure Support team for help.
 
-In some situations, the Azure Support team will need to redirect you to Rigetti's support team. You may receive a quicker response by reaching out to Rigetti directly. This article details this process and answers some frequently asked questions.
+In some situations, the Azure Support team will need to redirect you to Rigetti's support team. You may receive a quicker response by reaching out to Rigetti directly at [https://rigetti.zendesk.com/hc/](https://rigetti.zendesk.com/hc/). This article details this process and answers some frequently asked questions.
 
 ## Support points of contact
 
