@@ -38,6 +38,10 @@ All of Quantinuum's targets now support Integrated hybrid circuits. For more inf
 
 To get started using the Quantinuum provider on Azure Quantum, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
+> [!TIP]
+> Quantum jobs submitted under a session have **exclusive access** to Quantinuum hardware as long as you queue jobs within one minute from each other. After that, any job will be accepted and handled with the standard queueing and prioritization logic. For more information, see [sessions in Azure Quantum](xref:microsoft.quantum.hybrid.interactive).
+
+
 ## Syntax Checkers
 
 We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-2 syntax checker uses the same compiler as H1-2. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker will return a `success` status and a result of all 0s. If the code does not compile, the syntax checker will return a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
