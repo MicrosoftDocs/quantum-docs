@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how the Azure Quantum Resource Estimator calculates estimates
-ms.date: 02/21/2023
+ms.date: 04/21/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -61,6 +61,9 @@ The following diagram shows an example of the runtime of the algorithm (red) and
 Before the end of the algorithm, the T factory can run eight times in a distillation round. For example, if the [Algorithmic logical estimation](#algorithmic-logical-estimation) step calculates 30 T states, and a T factory can run eight times during runtime of the algorithm, then you need four copies of the T factory distillation round running in parallel to distill the 30 T states needed.
 
 Since qubits are reused by different rounds, the number of physical qubits for one T factory is the maximum number of physical qubits used for one round. The runtime of the T factory is the sum of the runtimes in all rounds. 
+
+> [!NOTE]
+> If the physical T gate error rate is lower than the required logical T state error rate, the Resource Estimator cannot perform a good resource estimation. When you submit a resource estimation job, you may encounter that the T factory cannot be found because the required logical T state error rate is either too low or too high. 
 
 For more information, see Appendix C of [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629).
 
