@@ -59,4 +59,7 @@ In a fault tolerant quantum computer, the required low error rate T states are p
 
 The T state distillation factories are implemented in a sequence of rounds, where each round consists of a set of identical distillation units run in parallel. The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) calculates how many physical qubits are needed to run one T factory and for how long the T factory runs, among other required parameters. For more details, see [physical estimation of the T factories](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).
 
+> [!NOTE]
+> If the physical T gate error rate is lower than the required logical T state error rate, the Resource Estimator cannot perform a good resource estimation. When you submit a resource estimation job, you may encounter that the T factory cannot be found because the required logical T state error rate is either too low or too high. 
+
 For more information, see Appendix C of [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629).
