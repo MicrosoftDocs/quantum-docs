@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how the Azure Quantum Resource Estimator calculates estimates
-ms.date: 02/21/2023
+ms.date: 04/21/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -17,7 +17,9 @@ The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-res
 
 In this article, you'll learn the workflow of the Resource Estimator and how the [output data](xref:microsoft.quantum.overview.resources-estimator#output-data) is extracted at different levels of the evaluation of the quantum program.
 
-## Code distance and T factory estimation
+## Workflow of the Resource Estimator
+
+### Code distance and T factory estimation
 
 The Resource Estimator takes the target parameters `{qubitParams, qecScheme, errorBudget}` to compute a resource estimation of qubit technology and architecture. It calculates the QEC code distance, and from it, the number of physical qubits needed to encode one logical qubit and the runtime of one logical depth or cycle.
 
@@ -27,11 +29,11 @@ It is crucial that the quantum gate set of a fault-tolerant quantum computer is 
 
 :::image type="content" source="media/resource-estimator-workflow.png" alt-text="Diagram showing the workflow of the resource estimator. The resource estimation is done based on the job parameters and quantum program, and the output data is extracted at different levels of the evaluation of the quantum program.":::
 
-## Pre-layout resource estimation
+### Pre-layout resource estimation
 
 The Resource Estimator takes the QIR quantum program and computes a pre-layout estimation of the logical resources. It calculates the number of logical qubits, T gates, rotation gates, CCZ gates, CCiX gates, and measurements in the input quantum program. The number of T gates includes all T gates and adjoint T gates, but not T gates required to implement rotation gates, CCZ gates, or CCiX gates.
 
-## Algorithmic logical estimation
+### Algorithmic logical estimation
 
 In the previous step, the Resource Estimator has calculated the number of logical qubits in the input algorithm. Laying out the logical qubits in the presence of nearest-neighbor constraints requires extra logical qubits. In this step, the Resource Estimator takes the number of pre-layout logical qubits and calculates the number of logical qubits required for the algorithm after layout.
 
@@ -39,7 +41,7 @@ The Resource Estimator also calculates the algorithmic logical depth, that is th
 
 Finally, the Resource Estimator calculates the total number of required T states. To execute the algorithm, you need one T state for each T gate, four T states for each CCZ and CCiX gates, and $ 0.53 \log_2(\text{Number of rotation gates(pre-layout)} / \text{Rotation synthesis error probability}) + 5.3$ for each single-qubit rotation gates. 
 
-## Algorithmic physical estimation
+### Algorithmic physical estimation
 
 From the code distance of the QEC, the Resource Estimator has calculated the number of physical qubits required for one logical qubit and the runtime of one logical depth. 
 
@@ -47,7 +49,7 @@ In the previous step, [Algorithmic logical estimation](#algorithmic-logical-esti
 
 Similarly, the runtime of the algorithm is $\text{Number of algorithmic logical depths} \times \text{Runtime of one logical depth}$.
 
-## T factory physical estimation
+### T factory physical estimation
 
 In the [Algorithmic logical estimation](#algorithmic-logical-estimation) step, the Resource Estimator calculates the total number of T states needed to run the algorithm. From the target parameters, the Resource Estimator has calculated the number of physical qubits for a single [T factory](xref:microsoft.quantum.concepts.tfactories) and its runtime. 
 
@@ -62,9 +64,12 @@ Before the end of the algorithm, the T factory can run eight times in a distilla
 
 Since qubits are reused by different rounds, the number of physical qubits for one T factory is the maximum number of physical qubits used for one round. The runtime of the T factory is the sum of the runtimes in all rounds. 
 
+> [!NOTE]
+> If the physical T gate error rate is lower than the required logical T state error rate, the Resource Estimator cannot perform a good resource estimation. When you submit a resource estimation job, you may encounter that the T factory cannot be found because the required logical T state error rate is either too low or too high. 
+
 For more information, see Appendix C of [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629).
 
-## Physical resource estimation
+### Physical resource estimation
 
 In the previous step, the Resource Estimator computes the total number of physical qubits from the number of physical qubits required by the T factories that are responsible to produce the required T states that are consumed by the algorithm, plus the number of algorithmic physical qubits required to implement the algorithm logic.
 
@@ -80,6 +85,14 @@ The following assumptions are taken into account for the simulation of the resou
 - **Uniform independent logical noise**: The error rate of a logical operation is approximately equal to its space-time volume (the number of tiles multiplied by the number of logical cycles) multiplied by the error rate of a logical qubit in a standard one-tile patch in one logical cycle.
 - **Negligible Clifford costs for synthesis**: The space overhead for synthesis and space and time overhead for transport of magic states within magic state factories and to synthesis qubits are all negligible.
 - **Smooth magic state consumption rate**: The rate of T state consumption throughout the compiled algorithm is almost constant, or can be made almost constant without significantly impacting the resources.
+
+## Common issues 
+
+ The following scenarios may prevent the resource estimates job to complete. 
+
+- Quantum algorithm must contain at least one measurement.
+- Physical T gate error rate is either too low or too high.
+- Invalid values for error rate, it must be a number between 0 and 1. 
 
 ## Next steps
 
