@@ -1,6 +1,6 @@
 ---
-author: contributor-provider-id (DO NOT USE A GITHUB ALIAS THAT IS CONNECTED TO AN MS ACCOUNT IN THE PUBLIC REPO - PRMERGER WILL CLOSE THE PR AUTOMATICALLY)
-ms.author: sonialopez
+author: aviviano
+ms.author: amvivian
 description: This document provides the technical details of the Pasqal provider.
 ms.date: 04/11/2023
 ms.service: azure-quantum
