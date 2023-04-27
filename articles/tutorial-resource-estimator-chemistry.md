@@ -1,18 +1,18 @@
 ---
 author: SoniaLopezBravo
-description: In this tutorial, you'll learn how to 
+description: In this tutorial, you'll estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa, using the double-factorized qubitization algorithm .
 ms.author: sonialopez
 ms.date: 04/24/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: tutorial
-title: 'Tutorial: '
+title: 'Tutorial: Estimate the resources of a quantum chemistry problem'
 uid: microsoft.quantum.tutorial.resource-estimator.chemistry
 ---
 
 # Tutorial: Estimate the resources of a quantum chemistry problem
 
-This tutorial shows how to estimate the physical resources needed to calculate the energy of a Hamiltonian using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator). The quantum algorithm used to calculate the energy is based on *double-factorized qubitization*. The Hamiltonian is described in terms of one- and two-electron integrals in the FCIDUMP (full configuration interaction) files that are available via an HTTPS URI. 
+This tutorial shows how to estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator). The quantum algorithm that calculates the energy of the Hamiltonian is based on *double-factorized qubitization*. The Hamiltonian is described in terms of one- and two-electron integrals in the FCIDUMP (full configuration interaction) files that are available via an HTTPS URI. 
 
 The *qubitization* approach is based on quantum phase estimation, but instead of constructing the standard $U = \\exp{(-i H/\\alpha)}$ from the Hamiltonian matrix $H$, one takes $U = \\exp{(-i \\sin^{-1} (H/\\alpha))}$, which can typically be implemented with fewer resources. Using *double-factorization*, $H$ is represented compactly through a combination of a judicious choice of orbitals and compression. The tolerated total error budget is $\\epsilon = 0.01$, corresponding to $1\\%$.
 
@@ -91,12 +91,11 @@ For example, one of the files provided with this sample describes the nitrogenas
 |<https://aka.ms/fcidump/polyyne-24e-24o>|polyyne-24e-24o|24 electron, 24 orbital active space of the polyyne molecule.|
 |<https://aka.ms/fcidump/n2-10e-8o>|n2-10e-8o|10 electron, 8 orbital active space of he dissociated nitrogen at 3 Angstrom distance.|
 
-
-You can also pass your own FCIDUMP files via:
-
-- [Raw links to files in Github](https://docs.github.com/repositories/working-with-files/using-files/viewing-a-file#viewing-or-copying-the-raw-file-content) repositories (see [how to add files to Github repositories](https://docs.github.com/repositories/working-with-files/managing-files/creating-new-files)).
-- [Files on Github gists](https://docs.github.com/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists).
-- [Files in Azure Blob Storage](https://learn.microsoft.com/azure/storage/blobs/storage-blobs-introduction) using SAS tokens
+> [!NOTE]
+> You can also pass your own FCIDUMP files via:
+> - [Raw links to files in Github](https://docs.github.com/repositories/working-with-files/using-files/viewing-a-file#viewing-or-copying-the-raw-file-content) repositories (see [how to add files to Github repositories](https://docs.github.com/repositories/working-with-files/managing-files/creating-new-files)).
+> - [Files on Github gists](https://docs.github.com/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists).
+> - [Files in Azure Blob Storage](https://learn.microsoft.com/azure/storage/blobs/storage-blobs-introduction) using SAS tokens
 
 
 The URI is passed to the algorithm as operation arguments with the name `"fcidumpUri"`. For example, let's choose XVIII-cas4-fb-64e56o FCIDUMP file.
@@ -130,7 +129,9 @@ params.items[5].qec_scheme.name = "floquet_code"
 
 ## Estimate the quantum algorithm
 
-The parameters are now all set up, and you're ready to submit the resource estimation job. As quantum program, you use the double-factorization based quantum chemistry algorithm, which is provided via the `df_chemistry` function. 
+The parameters are now all set up, and you're ready to submit the resource estimation job. You can submit multiple configuration of job parameters as a single job to avoid rerunning multiple jobs on the same quantum program. For more information, see [Run multiple configurations as a single job](xref:microsoft.quantum.work-with-resource-estimator).
+
+As quantum program, you use the double-factorization based quantum chemistry algorithm, which is provided via the `df_chemistry` function. 
 
 > [!NOTE]
 > The execution of this cell may take a few minutes depending on program size. 
@@ -141,6 +142,10 @@ results = job.get_results()
 ```
 
 ## Analyzing the results
+
+Now that the results have been computed, we display them in a summary table. For this purpose we are creating a reusable dashboard function that is creating an HTML display from a pandas data frame and the resource estimation tables.
+
+
 
 ## Next steps
 
