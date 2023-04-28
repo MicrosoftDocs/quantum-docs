@@ -1,6 +1,6 @@
 ---
 author: SoniaLopezBravo
-description: In this tutorial, you'll estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa, using the double-factorized qubitization algorithm .
+description: In this tutorial, you'll estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa, using the double-factorized qubitization algorithm.
 ms.author: sonialopez
 ms.date: 04/24/2023
 ms.service: azure-quantum
@@ -114,7 +114,7 @@ params.error_budget = 0.01
 
 ### Set the qubit parameters
 
-Finally, you specify the qubit parameters. You choose six [pre-defined qubit parameter models](xref:microsoft.quantum.overview.resources-estimator#physical-qubit-parameters), four are gate-based and two are Majorana based models. For the Majorana based models we assume a Floquet code as QEC scheme. For more information, see [QEC schemes](xref:microsoft.quantum.overview.resources-estimator#quantum-error-correction-schemes).
+Finally, you specify the qubit parameters. You choose six [pre-defined qubit parameter models](xref:microsoft.quantum.overview.resources-estimator#physical-qubit-parameters), four are gate-based and two are Majorana based models. For the Majorana based models, you assume a Floquet code as QEC scheme. For more information, see [QEC schemes](xref:microsoft.quantum.overview.resources-estimator#quantum-error-correction-schemes).
 
 ```python
 params.items[0].qubit_params.name = "qubit_gate_us_e3"
@@ -143,15 +143,82 @@ results = job.get_results()
 
 ## Analyzing the results
 
-Now that the results have been computed, we display them in a summary table. For this purpose we are creating a reusable dashboard function that is creating an HTML display from a pandas data frame and the resource estimation tables.
+Now that the results have been computed, you can display them in a summary table. The following code includes a dashboard function that creates an HTML display from a pandas data frame and the resource estimation tables. You can copy and reuse this function in other resource estimates jobs. 
+
+```python
+labels = ["Gate-based µs, 10⁻³", "Gate-based µs, 10⁻⁴", "Gate-based ns, 10⁻³", "Gate-based ns, 10⁻⁴", "Majorana ns, 10⁻⁴", "Majorana ns, 10⁻⁶"]
+
+def dashboard(results):
+    def get_row(result):
+        # Extract raw data from result dictionary
+        logical_qubits = result["physicalCounts"]["breakdown"]["algorithmicLogicalQubits"]
+        logical_depth = result["physicalCounts"]["breakdown"]["logicalDepth"]
+        num_tstates = result["physicalCounts"]["breakdown"]["numTstates"]
+        code_distance = result["logicalQubit"]["codeDistance"]
+        num_tfactories = result["physicalCounts"]["breakdown"]["numTfactories"]
+        tfactory_fraction = (result["physicalCounts"]["breakdown"]["physicalQubitsForTfactories"] / result["physicalCounts"]["physicalQubits"]) * 100
+        physical_qubits = result["physicalCounts"]["physicalQubits"]
+        runtime = result["physicalCounts"]["runtime"]
+
+        # Format some entries
+        logical_depth_formatted = f"{logical_depth:.1e}"
+        num_tstates_formatted = f"{num_tstates:.1e}"
+        tfactory_fraction_formatted = f"{tfactory_fraction:.1f}%"
+        physical_qubits_formatted = f"{physical_qubits / 1e6:.2f}M"
+
+        # Make runtime human readable; we find the largest units for which the
+        # runtime has a value that is larger than 1.0.  For that unit we are
+        # rounding the value and append the unit suffix.
+        units = [("nanosecs", 1), ("microsecs", 1000), ("millisecs", 1000), ("secs", 1000), ("mins", 60), ("hours", 60), ("days", 24), ("years", 365)]
+        runtime_formatted = runtime
+        for idx in range(1, len(units)):
+            if runtime_formatted / units[idx][1] < 1.0:
+                runtime_formatted = f"{round(runtime_formatted) % units[idx][1]} {units[idx - 1][0]}"
+                break
+            else:
+                runtime_formatted = runtime_formatted / units[idx][1]
+
+        # special case for years
+        if isinstance(runtime_formatted, float):
+            runtime_formatted = f"{round(runtime_formatted)} {units[-1][0]}"
+
+        # Append all extracted and formatted data to data array
+        return (logical_qubits, logical_depth_formatted, num_tstates_formatted, code_distance, num_tfactories, tfactory_fraction_formatted, physical_qubits_formatted, runtime_formatted)
+
+    data = [get_row(results.data(index)) for index in range(len(results))]
+
+    # Create data frame with explicit column names and configuration names extracted from array
+    import pandas as pd
+    df = pd.DataFrame(data, columns=["Logical qubits", "Logical depth", "T states", "Code distance", "T factories", "T factory fraction", "Physical qubits", "Physical runtime"], index=labels)
+
+    return df
+
+dashboard(results)
+```
 
 
+Each row corresponds to one of the six qubit parameter configurations, where the first column shows a textual description for the model. The next three columns show technology-independent resources, which are the number of logical qubits, the logical depth, which is the number of logical operations performed in sequence, as well as the number of T states that are consumed by the logical operations. T states originate from complex operations in the quantum algorithm, e.g., Toffoli gates or rotation gates.
+
+Next, the code distance indicates the error correction overhead to guarantee a sufficient logical error rate for the logical operations. The number of T factories indicates how many T factories are executed in parallel to produce the total number of T states. The T factory fraction describes the percentage of the number of qubits that are used to execute T factories, the rest is used to execute the logical operations of the algorithm. Finally, the last two columns show the total number of physical qubits and the wall clock runtime to execute the quantum algorithm given the assumed qubit parameters.
+
+
+We can also have a more detailed look into the resource estimates. Here we show the details for the last configuration (index 5). The output is a table with the overall physical resource counts. You can further inspect more details about the resource estimates by collapsing various groups which have more information. For example, if you collapse the Logical qubit parameters group, you can see how the overhead to represent a logical qubit using physical qubits is derived. The last group shows the physical qubit properties that were assumed for this estimation.
+
+We can also compare different configurations. In this case we compare the gate-based nanosecond model with the Majorana based model for an error rate of 
+. These correspond to indices 3 and 4, not that intervals in Python are half-open.
 
 ## Next steps
 
+If you want to deepen your knowledge, here are some experiments you can try:
+
+- Estimate some custom FCIDUMP files
+- Investigate the details of resource estimation by exploring the detailed resource estimation tables
+- Modify the assumptions on the target quantum computer by providing custom qubit parameters
+- Check out the other resource estimation sample notebooks in the Azure Quantum sample gallery
+
 Continue to explore other quantum algorithms and techniques:
 
-* The tutorial [Implement Grover’s search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm to solve a graph coloring problem.
-* The tutorial [Write and simulate qubit-level programs in Q#](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
-* The tutorial [Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to operate on qubits with Q# to change their state, and demonstrates the effects of superposition and entanglement.
-* The [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas) are Jupyter Notebook-based, self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
+- The tutorial [Implement Grover’s search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm to solve a graph coloring problem.
+- The tutorial [Write and simulate qubit-level programs in Q#](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
+- The tutorial [Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to operate on qubits with Q# to change their state, and demonstrates the effects of superposition and entanglement.
+- The [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas) are Jupyter Notebook-based, self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
