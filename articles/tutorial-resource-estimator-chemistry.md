@@ -91,7 +91,7 @@ In this example, the Hamiltonian is described in terms of one- and two-electron 
 > You can also pass your own FCIDUMP files via:
 > - [Raw links to files in Github](https://docs.github.com/repositories/working-with-files/using-files/viewing-a-file#viewing-or-copying-the-raw-file-content) repositories (see [how to add files to Github repositories](https://docs.github.com/repositories/working-with-files/managing-files/creating-new-files)).
 > - [Files on Github gists](https://docs.github.com/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists).
-> - [Files in Azure Blob Storage](https://learn.microsoft.com/azure/storage/blobs/storage-blobs-introduction) using SAS tokens
+> - [Files in Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) using SAS tokens
 
 
 The URI is passed to the algorithm as operation arguments with the name `"fcidumpUri"`. For example, let's choose XVIII-cas4-fb-64e56o FCIDUMP file.
