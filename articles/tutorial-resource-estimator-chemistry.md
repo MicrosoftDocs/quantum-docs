@@ -1,6 +1,6 @@
 ---
 author: SoniaLopezBravo
-description: In this tutorial, you'll estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa, using the double-factorized qubitization algorithm.
+description: In this tutorial, you estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa, using the double-factorized qubitization algorithm.
 ms.author: sonialopez
 ms.date: 04/24/2023
 ms.service: azure-quantum
@@ -12,7 +12,7 @@ uid: microsoft.quantum.tutorial.resource-estimator.chemistry
 
 # Tutorial: Estimate the resources of a quantum chemistry problem
 
-This tutorial shows how to estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator). The quantum algorithm that calculates the energy of the Hamiltonian is based on *double-factorized qubitization*. The Hamiltonian is described in terms of one- and two-electron integrals in the FCIDUMP (full configuration interaction) files that are available via an HTTPS URI. 
+This tutorial shows how to estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator). The quantum algorithm that calculates the energy of the Hamiltonian is based on *double-factorized qubitization*. The Hamiltonian is described in terms of one- and two-electron integrals in provided FCIDUMP (full configuration interaction) files that are available via an HTTPS URI. 
 
 The *qubitization* approach is based on quantum phase estimation, but instead of constructing the standard $U = \\exp{(-i H/\\alpha)}$ from the Hamiltonian matrix $H$, one takes $U = \\exp{(-i \\sin^{-1} (H/\\alpha))}$, which can typically be implemented with fewer resources. Using *double-factorization*, $H$ is represented compactly through a combination of a judicious choice of orbitals and compression. The tolerated total error budget is $\\epsilon = 0.01$, corresponding to $1\\%$.
 
@@ -24,12 +24,6 @@ In this tutorial, you will:
 > * Use FCIDUMP files as argument parameters for chemical modelling and simulation applications.
 > * Create a reusable function to display resource estimates in HTML format table. 
 
-## Why chemistry applications of quantum computing are important? 
-
-This tutorial represents a first step to integrate resource estimation of quantum solutions to electronic structure problems. One of the most impactful applications of scaled quantum computers is quantum chemistry problems.The ability to accurately simulate complex, correlated quantum mechanical systems has the potential to unlock breakthroughs in areas as diverse as carbon capture, food insecurity, and designing better fuels and materials to enable a greener future.  
-
-For example, one of the files provided in the table, *nitrogenase_54orbital*, describes the nitrogenase enzyme. If one could accurately simulate how this enzyme works at a quantum level, it could help us to understand how to manufacture it at scale, paving the way to replace the highly energy-intensive process currently used to produce enough fertilizer to feed the planet. This has the potential to not only significantly reduce the global carbon footprint, but also to help address concerns regarding food insecurity in the face of a growing population.
-
 ## Prerequisites
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
@@ -38,7 +32,7 @@ For example, one of the files provided in the table, *nitrogenase_54orbital*, de
 
 ## Get started
 
-Using the Resource Estimator is exactly the same as submitting a job against other software and hardware provider targets in Azure Quantum - define your program, set a target, and submit your job for computation.
+Using the Resource Estimator is the same as submitting a job against other software and hardware provider targets in Azure Quantum - define your program, set a target, and submit your job for computation.
 
 ### Load the required imports
 
@@ -54,8 +48,7 @@ from azure.quantum.chemistry import df_chemistry
 
 ### Connect to the Azure Quantum service
 
-To connect to the Azure Quantum service, your program will need the resource ID and the
-location of your workspace, which you can obtain from the **Overview** page in your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
+To connect to the Azure Quantum service, your program need the resource ID and the location of your workspace, which you can obtain from the **Overview** page in your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 
 :::image type="content" source="media/azure-quantum-resource-id.png" alt-text="Screenshot showing how to retrieve the resource ID and location from an Azure Quantum workspace":::
 
@@ -79,7 +72,7 @@ You want to estimate the resources on a fault-tolerant quantum computer and with
 
 A resource estimation job consist of two types of job parameters:
 
-- Target parameters, which consist on three pre-defined parameters: qubit model, QEC schemes, and error budget. For more information, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
+- Target parameters, which consist on three predefined parameters: qubit model, QEC schemes, and error budget. For more information, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
 - Operation arguments, that is arguments that can be passed to the quantum program. In this case, the FCIDUMP files are passed as operation arguments. 
 
 ### Select and pass a FCIDUMP file
@@ -109,7 +102,7 @@ params.file_uris["fcidumpUri"] = "https://aka.ms/fcidump/XVIII-cas4-fb-64e-56o"
 
 ### Set the error budget
 
-The quantum algorithms requires a total accuracy if 0.01, i.e., 1%, in order to obtain a chemical accuracy of 1 mHa. We can instruct the resource estimator to use a total error budget of 0.01, which is distributed to all possible sub components in the execution of the quantum algorithm that may fail. (More details on the error budget can be found in the Azure Quantum documentation.)
+The quantum algorithms requires a total accuracy if 0.01, that is, 1%, to obtain a chemical accuracy of 1 mHa. For more information, see [Error budget](xref:microsoft.quantum.overview.resources-estimator#error-budget).
 
 ```python
 params.error_budget = 0.01
@@ -117,7 +110,7 @@ params.error_budget = 0.01
 
 ### Set the qubit parameters
 
-Finally, you specify the qubit parameters. You choose six [pre-defined qubit parameter models](xref:microsoft.quantum.overview.resources-estimator#physical-qubit-parameters), four are gate-based and two are Majorana based models. For the Majorana based models, you assume a Floquet code as QEC scheme. For more information, see [QEC schemes](xref:microsoft.quantum.overview.resources-estimator#quantum-error-correction-schemes).
+Finally, you specify the qubit parameters. You choose six [predefined qubit parameter models](xref:microsoft.quantum.overview.resources-estimator#physical-qubit-parameters), four are gate-based and two are Majorana based models. For the Majorana based models, you assume a Floquet code as QEC scheme. For more information, see [QEC schemes](xref:microsoft.quantum.overview.resources-estimator#quantum-error-correction-schemes).
 
 ```python
 params.items[0].qubit_params.name = "qubit_gate_us_e3"
@@ -199,13 +192,28 @@ def dashboard(results):
 dashboard(results)
 ```
 
-Each row of the table corresponds to one of the six qubit parameter configurations, where the first column shows a textual description for the model. The next three columns show technology-independent resources, which are the number of logical qubits, the logical depth, which is the number of logical operations performed in sequence, as well as the number of T states that are consumed by the logical operations. T states originate from complex operations in the quantum algorithm, for example Toffoli gates or rotation gates.
+|Configuration | Logical qubits |	Logical depth |	T states |	Code distance |	T factories  |	T factory fraction |	Physical qubits |	Physical runtime |
+|--- |--- |--- |--- |--- |--- |--- |--- |--- |
+|Gate-based µs, 10⁻³ |	2844	 |4.0e+11 |	5.4e+11	 |33 |	15	 |6.6% | 	6.63M |	254 years |
+|Gate-based µs, 10⁻⁴	 |2844 |	4.0e+11 |	5.4e+11 |	17 |	14 |	5.4% |	1.74M	 |131 years |
+|Gate-based ns, 10⁻³	 |2844 |	4.0e+11 |	5.4e+11 |	33 |	17 |	13.1% |	7.13M	 |62 days |
+|Gate-based ns, 10⁻⁴	 |2844	 |4.0e+11	 |5.4e+11 |	17 |	17 |	14.2% |	1.92M |	32 days |
+|Majorana ns, 10⁻⁴	 |2844 |	4.0e+11	 |5.4e+11	 |17	 |19 |	21.6%	 | 4.65M	 |24 days |
+|Majorana ns, 10⁻⁶	 |2844 |	4.0e+11 |	5.4e+11	 |9 |	19 |	22.3%	 |1.42M |	13 days |
 
-The code distance indicates the error correction overhead to guarantee a sufficient logical error rate for the logical operations. The number of T factories indicates how many T factories are executed in parallel to produce the total number of T states. The T factory fraction describes the percentage of the number of qubits that are used to execute T factories, the rest is used to execute the logical operations of the algorithm. Finally, the last two columns show the total number of physical qubits and the wall clock runtime to execute the quantum algorithm given the assumed qubit parameters.
+
+1. Each row of the table corresponds to one of the six qubit parameter configurations, where the first column shows a textual description for the model. 
+2. The next three columns show technology-independent resources, which are the number of *logical qubits*, the *logical depth*, which is the number of logical operations performed in sequence, and the number of *T states* that are consumed by the logical operations. 
+4. The *code distance* indicates the error correction overhead to guarantee a sufficient logical error rate for the logical operations. 
+5. The number of *T factories* indicates how many T factories are executed in parallel to produce the total number of T states. 
+6. The *T factory fraction* describes the percentage of the number of qubits that are used to execute T factories, the rest is used to execute the logical operations of the algorithm. 
+7. The last two columns show the total number of *physical qubits* and the *runtime* to execute the quantum algorithm given the assumed qubit parameters.
+
+For more information, see [Output data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator#output-data). If you're interested in the workflow of the Resource Estimator, see [How the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
 
 ### Access the results table
 
-The result of the resource estimation job is displayed in a table with multiple results coming from the list of items. By default the maximum number of items to be displayed is five. To display a list of $N$ items where $N > 5$, use `results[0:N]`.  
+The results of the resource estimation job are displayed in a table with multiple results coming from the list of items. By default the maximum number of items to be displayed is five. To display a list of $N$ items where $N > 5$, use `results[0:N]`.  
 
 You can also access individual results by providing a number as index. For exmample, the last configuration has index 5. You can further inspect more details about the resource estimates by collapsing various groups which have more information. For example, if you collapse the Logical qubit parameters group, you can see how the overhead to represent a logical qubit using physical qubits is derived. The last group shows the physical qubit properties that were assumed for this estimation.
 
@@ -213,20 +221,26 @@ You can also access individual results by providing a number as index. For exmam
 results[5]
 ```
 
-You can also compare different configurations. In this example, you compare the gate-based nanosecond model with the Majorana based model for an error rate of $10^-4$. These correspond to indices 3 and 4.
+You can also compare different configurations.For example, lets' compare the gate-based nanosecond model with the Majorana based model for an error rate of $10^-4$. These configurations correspond to indices 3 and 4.
 
 ```python
 results[3:5]
 ```
 
+## Why chemistry applications of quantum computing are important? 
+
+This tutorial represents a first step to integrate resource estimation of quantum solutions to electronic structure problems. One of the most important applications of scaled quantum computers is solving quantum chemistry problems. The simulation of complex quantum mechanical systems has the potential to unlock breakthroughs in areas such as carbon capture, food insecurity, and designing better fuels and materials.  
+
+For example, one of the FCIDUMP files provided in this sample, *nitrogenase_54orbital*, describes the nitrogenase enzyme. If you could accurately simulate how this enzyme works at a quantum level, it could help us to understand how to produce it at scale. You could replace the highly energy-intensive process which is used to produce enough fertilizer to feed the planet. This has the potential to reduce the global carbon footprint and also to help address concerns regarding food insecurity in a growing population.
+
 ## Next steps
 
 If you want to deepen your knowledge, here are some experiments you can try:
 
-- Estimate some custom FCIDUMP files
-- Investigate the details of resource estimation by exploring the detailed resource estimation tables
-- Modify the assumptions on the target quantum computer by providing custom qubit parameters
-- Check out the other resource estimation sample notebooks in the Azure Quantum sample gallery
+- Estimate some custom FCIDUMP files.
+- Investigate the details of resource estimation by exploring the detailed resource estimation tables.
+- Modify the assumptions on the target quantum computer by providing custom qubit parameters.
+- Check out the other resource estimation sample notebooks in the Azure Quantum sample gallery.
 
 Continue to explore other quantum algorithms and techniques:
 
