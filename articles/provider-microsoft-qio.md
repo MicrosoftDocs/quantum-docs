@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the Microsoft QIO provider
 ms.author: sonialopez
-ms.date: 10/25/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.providers.microsoft.qio
 ---
 
 # Microsoft QIO provider
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 The Microsoft QIO provider is enabled in every Quantum workspace.
 

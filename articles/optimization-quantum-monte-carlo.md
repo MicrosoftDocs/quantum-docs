@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide about how to use the Quantum Monte Carlo QIO solver.
 ms.author: sonialopez
-ms.date: 10/18/2022
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.quantum-monte-carlo
 ---
 
 # Quantum Monte Carlo
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 [Quantum Monte Carlo](https://en.wikipedia.org/wiki/Quantum_Monte_Carlo) is a Metropolis annealing algorithm, similar in concept to [simulated annealing](xref:microsoft.quantum.optimization.simulated-annealing). It starts at a low temperature and improves the solution by searching across barriers with some probability as an external perturbation applied to the system.
 As this external field is varied over every Monte Carlo step, the configuration may be able to tunnel through energy barriers and evolve towards a desired ground state without possessing the thermal energy that it needs to climb the barriers, as would be required in simulated annealing.

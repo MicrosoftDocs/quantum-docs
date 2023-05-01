@@ -5,12 +5,14 @@ author: SoniaLopezBravo
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.date: 04/06/2022
+ms.date: 05/01/2023
 ms.topic: conceptual
 uid: microsoft.quantum.optimization.choose-solver
 ---
 
 # Which optimization solver should I use?
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 Azure Quantum offers a broad range of solvers for optimization problems. You can consult the full list in the [reference page](xref:microsoft.quantum.reference.qio-target-list). However, it is unfortunately not possible to determine *a priori* which solver will perform best for a new optimization problem. This article describes Microsoft's suggested strategy to find a suitable solver by benchmarking.
 

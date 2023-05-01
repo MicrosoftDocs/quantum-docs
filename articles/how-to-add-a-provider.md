@@ -2,7 +2,7 @@
 author: bradben
 description: Add or remove a provider in an existing Azure Quantum workspace
 ms.author: brbenefield
-ms.date: 11/22/2022
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
@@ -11,6 +11,8 @@ uid: microsoft.quantum.add-provider
 ---
 
 # Add or remove a provider
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 Providers are usually added to an Azure Quantum workspace when the workspace is created. However, additional providers can be added (or existing providers removed) anytime after that. If you submit a quantum job to a provider that is not yet in your workspace, you will receive an error message prompting you to install the necessary provider.
  

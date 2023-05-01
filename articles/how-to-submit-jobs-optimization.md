@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides a basic guide to submit and run optimization jobs to Azure Quantum using the Azure portal, Python, or Jupyter Notebooks. 
 ms.author: sonialopez
-ms.date: 03/09/2022
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
@@ -12,6 +12,8 @@ zone_pivot_groups: azurequantum-ide
 ---
 
 # Tutorial: Submit optimization jobs to Azure Quantum
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 In this tutorial you will find the steps for how to submit optimization jobs to Azure Quantum using the Azure portal, Python, or Jupyter Notebooks.
 

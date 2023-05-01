@@ -3,7 +3,7 @@ author: SoniaLopezBravo
 description: This document provides a basic guide about how to use parallel tempering
   solver in Azure Quantum.
 ms.author: sonialopez
-ms.date: 02/01/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
@@ -12,6 +12,8 @@ uid: microsoft.quantum.optimization.parallel-tempering
 ---
 
 # Parallel tempering
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 Parallel tempering can be regarded as a variant of the [simulated annealing](xref:microsoft.quantum.optimization.simulated-annealing) algorithm, or more generally Monte Carlo Markov Chain methods. Azure Quantum's Parallel Tempering solvers are designed to solve binary optimization problems through random sampling.
 
