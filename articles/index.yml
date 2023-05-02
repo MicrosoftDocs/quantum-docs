@@ -56,6 +56,8 @@ landingContent:
         links:
           - text: What is quantum computing?
             url: overview-understanding-quantum-computing.md
+          - text: Hybrid quantum computing
+            url: hybrid-computing-overview.md            
       - linkListType: concept
         links:
           - text: Quantum computing history and background

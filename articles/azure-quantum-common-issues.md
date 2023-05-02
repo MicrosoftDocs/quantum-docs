@@ -2,7 +2,7 @@
 author: bradben
 description: Troubleshoot common Azure Quantum issues.
 ms.author: brbenefield
-ms.date: 01/31/2023
+ms.date: 03/16/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
@@ -20,6 +20,19 @@ When working with Azure Quantum, you may run into these common issues.
 
 If the target where you want to run your job is missing from the available target list, you likely need to update to the latest version of the [Quantum Development Kit (Visual Studio 2022)](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or [Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
+### Issue: Local Resources Estimator is missing
+
+The QDK ResourcesEstimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace is removed from March 2023. When running a program that uses the QDK ResourcesEstimator class, you encounter the following error message: `Error CS0246: The type or namespace name 'ResourcesEstimator' could not be found (are you missing a using directive or an assembly reference?)`.
+
+Other possible error messages might happen when running local ResourcesEstimator. If you try to use command line option to call the ResourcesEstimator class, you get: 
+
+```
+> -s ResourcesEstimator
+The simulator 'ResourcesEstimator' could not be found.
+```
+If you try to use the `%estimate` magic command from Jupyter notebooks, you encounter the following error messages: `UsageError: Line magic function `%estimate` not found.`, or `No such magic command %estimate.` for Q# kernel.
+
+To compute physical and logical resource estimation and runtime, we recommend using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) tool instead.
 
 ### Issue: Operation returns an invalid status code 'Unauthorized'
 
@@ -51,6 +64,27 @@ Command ran in 21.181 seconds (init: 0.457, invoke: 20.724)
 ```
 
 This error occurs when there's a problem with the Q# program that causes the compilation to fail. To see the specific error that is causing the failure, run `dotnet build` in the same folder. 
+
+### Issue: Compiler error "Wrong number of gate parameters"
+
+When submitting a job to Quantinuum from a local Jupyter Notebook or command line environment, and using the legacy QASM translator (OPENQASM 2.0), you may encounter this error:
+
+```
+Job ID <jobId> failed or was cancelled with the message: 1000: Compile error: [<file, line>] Wrong number of gate parameters
+```
+
+This error occurs when a comma **","** or another non-period character is used as a decimal separator, as is common in many languages. Replace any non-period decimal separators with periods **"."**. 
+
+```qsharp
+// replace this line:
+rx(1,5707963267948966) q[0];
+
+// with this:
+rx(1.5707963267948966) q[0];
+```
+
+> [!NOTE]
+> This issue does not occur in hosted notebooks in the Azure Quantum portal, only in local development environments. 
 
 ### Issue: Operation returned an invalid status code 'Forbidden'
 
@@ -91,6 +125,23 @@ The last released version of the [QDK extension for Visual Studio 2019](https://
 
 In order to use newer versions of the QDK for quantum projects with version `0.24.201332` or higher, you should use either the [extension for Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or the [extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
+
+
+### Issue: Job fails with error code: QIRPreProcessingFailed
+
+When submitting a job to a Rigetti provider, the job fails and is reported in the Job management console in the Azure portal:
+
+```output
+Error code: QIRPreProcessingFailed
+Error message: No match found for output recording set converter from outputrecordingset.v2.labeled to outputrecordingset.v1.nonlabeled
+```
+
+This may be caused by a dependency conflict with a previous version of *pyqir* or *qiskit-qir*. Uninstall all versions of *pyqir*, *pyqir-*\*, and *qiskit-qir* on your local machine, and then install or update the *azure-quantum* Python package using the [qiskit] parameter:
+
+```Shell
+pip install --upgrade azure-quantum[qiskit]
+```
+
 ## Creating an Azure Quantum workspace
 
 The following issues may occur when you use the Azure portal to create a workspace.
@@ -112,6 +163,7 @@ You must be an **Owner** of the subscription you select in order to use the **Qu
 This issue occurs because you don't have the authorization required at the subscription, resource group, or storage account level. For more information on required access levels, see [Role requirements for creating a workspace](xref:microsoft.quantum.how-to.manage-workspace-access#role-requirements-for-creating-a-workspace).
 
 
+
 ### Issue: "Deployment Validation Failed" error message appears after you select **Create**
 
 This error message may include more details such as "The client does not have authorization to perform action."
@@ -124,7 +176,7 @@ If access was recently granted, you may need to refresh the page. It can sometim
 
 This issue occurs because the provider doesn't support the billing region your subscription is set in. For example, if your subscription is set in Israel, the Providers tab won't list Rigetti as an available provider. For a list of providers and their availability by country, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability). 
 
-## The Azure Quantum portal
+## Azure Quantum portal
 
 ### Issue: Saved notebooks don't load
 
@@ -135,3 +187,14 @@ This can happen for two reasons:
 1. If the storage account no longer exists. This can happen if the storage account linked to the workspace was deleted. To verify, select the **Overview** page for the workspace and select the link to the storage account. If the storage account has been deleted, you will see a **404 - Not found** error.
 
 1. If the managed identity of the workspace is not a **Contributor** to the storage account. Please check that the workspace identity (which uses the same name as the workspace) still has the **Contributor** role assignment to the storage account. To verify, select the **Overview** page for the workspace and select the link to the storage account. On the **Overview** page for the storage account, select **Access control (IAM)** and verify that the workspace is listed under **Contributor**.
+
+### Issue: "ModuleNotFoundErrorr: No module named 'qiskit_machine_learning'" when runnig Qiskit sample in Azure Quantum notebook
+
+This error can happen if you haven't installed Qiskit when running a Qiskit Machine Learning sample on the Azure Quantum notebooks. To solve this issue add a new cell at the top of the notebook and copy: 
+
+```python
+!pip install qiskit
+!pip install qiskit-machine-learning
+```
+ Then click on **Run all** on the top left of the notebook.
+

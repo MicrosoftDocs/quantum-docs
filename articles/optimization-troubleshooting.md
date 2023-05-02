@@ -3,7 +3,7 @@ title: Troubleshooting user errors in optimization solvers
 description: This document provides a basic guide for users on how to troubleshoot common errors when using optimization solvers with Azure Quantum. 
 author: bradben
 ms.author: brbenefield
-ms.date: 10/25/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: troubleshooting
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.troubleshooting
 ---
 
 # Troubleshooting user errors in optimization solvers
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 This document lists the common user errors returned by the Azure Quantum optimization solvers, and troubleshooting steps for each error. The error messages returned by solvers have an error code in the form _\<code\> that you can use to find the specific issue. The code is prefixed with "AZQ".
 

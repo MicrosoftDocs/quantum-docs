@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn about the input and output parameters of the Resource Estimator in Azure Quantum and how to customized them
-ms.date: 12/26/2022
+ms.date: 02/21/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -13,9 +13,9 @@ uid: microsoft.quantum.overview.resources-estimator
 
 # Customize resource estimates to machine characteristics
 
-In this article, you'll learn how to customize the input parameters of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to match the machine characteristics that you're targeting. You'll also see the output data of resource estimates and their definitions. 
+In this article, you'll learn how to customize the target parameters of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to match the machine characteristics that you're targeting. You'll also see the output data of resource estimates and their definitions. 
 
-## Input parameters
+## Target parameters
 
 The Resource Estimator computes the estimation of resources, such the number of qubits, the run time
 and the power consumption, which would be required to implement a given quantum algorithm using a given qubit technology and with a fixed set of architectural choices.  
@@ -278,7 +278,7 @@ Pre-defined QEC schemes can be customized by specifying the name and then updati
 
 #### Custom your QEC schemes
 
-The Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `crossingPrefactor` $a$ and the `errorCorrectionThreshold` $p^\*$. Further, you need to specify the `logicalCycleTime`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `physicalQubitsPerLogicalQubit`, that is, the number of physical qubits required to encode one logical qubit based on the code distance. 
+The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `crossingPrefactor` $a$ and the `errorCorrectionThreshold` $p^\*$. Further, you need to specify the `logicalCycleTime`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `physicalQubitsPerLogicalQubit`, that is, the number of physical qubits required to encode one logical qubit based on the code distance. 
 
 You can use the following code as a template for QEC schemes:
 
@@ -312,7 +312,7 @@ Note that for distillation and rotation synthesis, the respective error budgets 
 
 ## Output data
 
-The Resource Estimator takes the job parameters `{qubitParams, qecScheme, errorBudget}` to evaluate the resource estimates of the requested QIR quantum algorithm. The result of the resource estimation job is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget.
+The Resource Estimator takes the target parameters `{qubitParams, qecScheme, errorBudget}` to evaluate the resource estimates of the requested QIR quantum algorithm. The result of the resource estimation job is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget.
 
 For more information, see [How the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
 

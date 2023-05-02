@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides a list of the available optimization providers on Azure Quantum.
 ms.author: sonialopez
-ms.date: 04/26/2022
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
@@ -11,6 +11,8 @@ uid: microsoft.quantum.reference.qio-target-list
 ---
 
 # Optimization providers on Azure Quantum
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 Azure Quantum offers various optimization targets to solve binary optimization problems on classical CPUs, GPUs and hardware annealers. There is no one algorithm that fits every [optimization problem](xref:microsoft.quantum.optimization.concepts.overview.introduction). Having a full portfolio is important when tuning optimization solutions for the best outcome and the highest impact.
 

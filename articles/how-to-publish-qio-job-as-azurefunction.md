@@ -5,13 +5,15 @@ author: bradben
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.topic: how-to
-ms.date: 09/23/2022
+ms.date: 05/01/2023
 uid: microsoft.quantum.publish-qio-as-azure-function
 ms.custom: vscode-azure-extension-update-completed
 #Customer intent: As a researcher, I want to make my quantum algorithm accessible via API so that developers without further quantum knowledge can call it via classical API-calls.
 ---
 
 # Tutorial: Publish a QIO job as an Azure Function
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 In this article, you'll learn how to deploy your [quantum inspired optimization (QIO)](xref:microsoft.quantum.optimization.concepts.overview.introduction) job as a web service. You'll accomplish this task by using an Azure Function that can be called via a web API. The function receives input via a request URL or a request body. It then calls an Azure Quantum optimization solver and returns the result as a JSON string.
 

@@ -2,7 +2,7 @@
 author: aviviano
 description: This document provides a basic guide to working with jobs in Azure Quantum.
 ms.author: amvivian
-ms.date: 10/20/2022
+ms.date: 02/20/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
@@ -63,6 +63,17 @@ This diagram shows the possible job state transitions:
 
 
 After a job completes successfully, it displays a link to the output data in your Azure Storage account. How you access this data depends on the SDK or tool you used to [submit the job](xref:microsoft.quantum.submit-jobs).
+
+## Job counts
+
+To get counts that result from a large number of jobs, you may want to perform a [local install of the Quantum Development Kit tools](xref:microsoft.quantum.install-qdk.overview). With a local install, you can store the job IDs locally. 
+
+You can copy the following code to get the list of jobs and their results:
+
+```python
+for job in workspace.list_jobs():
+    print(job.id, job.details.name, job.details.output_data_uri)
+```
 
 ## Job cancellation
 

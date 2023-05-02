@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide about how to use the simulated annealing solver in Azure Quantum.
 ms.author: sonialopez
-ms.date: 04/05/2022
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.simulated-annealing
 ---
 
 # Simulated annealing 
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 [Simulated annealing](https://en.wikipedia.org/wiki/Simulated_annealing) is a Monte Carlo search method named from the heating-cooling methodology of metal annealing. The algorithm simulates a state of varying temperatures where the temperature of a state influences the decision-making probability at each step. In the implementation of this solver, the temperature of a state is represented by parameter beta - the inverse of temperature with the Boltzmann constant set to 1 ($\beta = 1 / T$).
 In the context of optimization problems, the algorithm starts at an initial high-temperature state where "bad" moves in the system are accepted with a higher probability (low beta, or `beta_start`), and then slowly "cools" on each sweep until the state reaches the lowest specified temperature (high beta, or `beta_stop`). At lower temperatures, moves that don't improve the objective value are less likely to be accepted.

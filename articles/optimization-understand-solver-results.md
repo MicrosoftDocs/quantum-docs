@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides a basic guide to interpreting results of optimization problems solved in Azure Quantum using Python.
 ms.author: brbenefield
-ms.date: 10/25/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.understand-solver-results
 ---
 
 # Understand solver results
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 The result of a solver job is a `JobOutput` object which can be examined to obtain useful information. 
 

@@ -6,7 +6,7 @@ ms.date: 01/09/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: quickstart
-ms.custom: mode-api
+ms.custom: mode-api, devx-track-azurecli
 title: 'Quickstart: Create a quantum random number generator'
 uid: microsoft.quantum.quickstarts.computing
 zone_pivot_groups: quantum-computing-platforms-rigetti

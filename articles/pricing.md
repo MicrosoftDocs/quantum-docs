@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Azure Quantum providers pricing and billing plans
 ms.author: sonialopez
-ms.date: 03/10/2022
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
@@ -34,6 +34,8 @@ To see the different pricing plans in your local currency:
 ::: zone-end
 
 ::: zone pivot="ide-optimization"
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 [!INCLUDE [pricing-optimization](includes/pricing-optimization.md)]
 

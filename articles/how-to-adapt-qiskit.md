@@ -15,7 +15,7 @@ uid: microsoft.quantum.how-to.adapting-qiskit
 
 If you have some experience with quantum computing or just starting, it is likely that you use some samples from [Qiskit.org](https://qiskit.org/). This article shows you how to adapt a Qiskit sample to run against any of the Azure Quantum backends. You can either download the sample or copy the code of it. 
 
-## Prerequisistes
+## Prerequisites
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
@@ -47,8 +47,8 @@ Most samples are configured to run by default against the `aer_simulator`, which
     ```python
     from azure.quantum.qiskit import AzureQuantumProvider
     provider = AzureQuantumProvider (
-        resource_id = "", # The resourceID of your workspace
-        location = "" # The location of your workspace (for example "westus")
+        resource_id = "", # Add the resourceID of your workspace
+        location = "" # Add the location of your workspace (for example "westus")
     )
 
     # Create IonQ simulator and QPU backends
@@ -77,7 +77,14 @@ If the Qiskit sample doesn't have a default backend, you have to add a `QuantumI
 As an example, consider the following Qiskit sample that uses a Variational Quantum Classifier (VQC) algorithm to train and test samples from a data set. You can find this code in [Qiskit/qiskit-machine-learning](https://github.com/Qiskit/qiskit-machine-learning#creating-your-first-machine-learning-programming-experiment-in-qiskit). 
 To run this sample on Azure Quantum, you have to copy the code after the Azure Quantum backend, and add a line with `quantum_instance = QuantumInstance(backend)` when creating the VQC object.
 
-[!code-qsharp[](includes/qiskit-qml-sample.py?highlight=28)]
+> [!NOTE]
+> To run the following sample you need to install Qiskit Machine Learning module.
+> 
+> ```python
+> !pip install qiskit-machine-learning
+> ```
+
+[!code-python[](includes/qiskit-qml-sample.py?highlight=28)]
 
 ## Verify the update
 

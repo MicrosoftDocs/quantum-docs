@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: In this tutorial, learn how to create and submit a QIR program to the Azure Quantum Resource Estimator target.
 ms.author: sonialopez
-ms.date: 10/26/2022
+ms.date: 02/14/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: tutorial
@@ -65,16 +65,16 @@ provider = AzureQuantumProvider(
 
 The Resource Estimator is a target of the Microsoft Quantum Computing provider. Using the Resource Estimator is exactly the same as submitting a job against other software and hardware provider targets in Azure Quantum - define your program, set a target, and submit your job for computation. 
 
-When submitting a resource estimate request for your program, you can specify some optional parameters. There are three top-level input parameters that can be customized: 
+When submitting a resource estimate request for your program, you can specify some optional parameters. There are three top-level target parameters that can be customized: 
 
 * `errorBudget` - the overall allowed error budget
 * `qecScheme` - the quantum error correction (QEC) scheme
 * `qubitParams` - the physical qubit parameters
 
-For more information about the pre-defined input parameters, see [Input parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator#input-parameters).
+For more information about the pre-defined input parameters, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator#input-parameters).
 
 For this example, you will implement a generic function that takes as input the `provider` object that connects to your Azure Quantum workspace and the QIR bitcode of the quantum program.  It returns as result an Azure Quantum job. 
-The Resource Estimator input parameters can be passed via keyword arguments to the function.
+The Resource Estimator target parameters can be passed via keyword arguments to the function.
 
 ```python
 def resource_estimation_job_from_qir(provider: AzureQuantumProvider, bitcode: bytes, **kwargs):
@@ -126,7 +126,7 @@ qis.t_adj(b)
 qis.cx(a, b)
 ```
   
-You can use the function you defined above together with the `bitcode()` function from PyQIR to generate a resource estimation job. You can also pass Resource Estimator specific arguments. This example uses `errorBudget` to set the error rate to 5%. (For more information about the pre-defined input parameters, see [Input parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator#input-parameters)).
+You can use the function you defined above together with the `bitcode()` function from PyQIR to generate a resource estimation job. You can also pass Resource Estimator specific arguments. This example uses `errorBudget` to set the error rate to 5%. (For more information about the pre-defined target parameters, see [Input parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator#input-parameters)).
 
 ```python
 job = resource_estimation_job_from_qir(provider, module.bitcode(), errorBudget=0.05)

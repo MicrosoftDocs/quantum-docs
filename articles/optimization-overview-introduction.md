@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn about quantum-inspired optimization and key terms
 ms.author: sonialopez
-ms.date: 10/11/2022
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: overview
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.concepts.overview.introduction
 ---
 
 # What is optimization?
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 Optimization is the process of finding the best solution to a problem from a set of possible options, given its desired outcome and constraints. 
 

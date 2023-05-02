@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Reference for azure.quantum.Job
 ms.author: sonialopez
-ms.date: 07/26/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.job-reference
 ---
 
 # Azure Quantum Job
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 ```py
 from azure.quantum import Job

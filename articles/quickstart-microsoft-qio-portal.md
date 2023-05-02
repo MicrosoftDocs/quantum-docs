@@ -4,7 +4,7 @@ description: This document provides a step-by-step guide to get you started with
 author: bradben
 ms.author: brbenefield
 ms.topic: quickstart
-ms.date: 05/31/2022
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 uid: microsoft.quantum.quickstarts.optimization.qio.portal
@@ -12,6 +12,8 @@ zone_pivot_groups: optimization-platforms
 ---
 
 # Tutorial: Solve an optimization problem using an Azure Quantum notebook
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 Learn how to use Azure Quantum optimization solvers to solve a simple binary optimization problem. This tutorial uses free hosted notebooks in the Azure Quantum portal. 
 

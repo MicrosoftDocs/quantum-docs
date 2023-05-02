@@ -4,6 +4,7 @@ ms.author: brbenefield
 ms.date: 01/09/2023
 ms.service: azure-quantum
 ms.subservice: computing
+ms.custom: devx-track-azurecli
 ms.topic: include
 ---
 
