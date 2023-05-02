@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides details on the support policy for the 1QBit provider in Azure Quantum
 ms.author: sonialopez
-ms.date: 06/09/2022
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -11,6 +11,8 @@ uid: microsoft.quantum.providers.optimization.1qbit.support
 ---
 
 # Support Policy for 1QBit in Azure Quantum
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 This article describes the Microsoft support policy that applies when you use the 1QBit provider in Azure Quantum. The article applies to any of the targets under this provider.
 

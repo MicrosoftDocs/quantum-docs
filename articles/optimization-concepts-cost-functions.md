@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This article describes the definition and purpose of the cost function for optimization problems.
 ms.author: sonialopez
-ms.date: 10/05/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: conceptual
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.concepts.cost-function
 ---
 
 # Cost functions
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 An *optimization problem* is described by a set of *variables*, each having a set, or range, of possible values. They describe the decisions that the optimization solver must make.
 

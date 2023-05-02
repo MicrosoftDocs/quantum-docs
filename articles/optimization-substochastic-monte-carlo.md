@@ -3,12 +3,14 @@ title: Substochastic Monte Carlo
 description: This document provides a basic guide about how to use the Substochastic Monte Carlo solver in Azure Quantum.
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 05/25/2021
+ms.date: 05/01/2023
 ms.topic: article
 uid: microsoft.quantum.optimization.substochastic-monte-carlo
 ---
 
 # Substochastic Monte Carlo
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 [Substochastic Monte Carlo](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.94.042318) is a
 diffusion Monte Carlo algorithm inspired by adiabatic quantum computation. It

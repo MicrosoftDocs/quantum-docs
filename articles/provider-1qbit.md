@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the 1QBit provider
 ms.author: sonialopez
-ms.date: 07/26/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -11,6 +11,8 @@ uid: microsoft.quantum.providers.optimization.1qbit
 ---
 
 # 1QBit provider
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 - Publisher: [1QBit](https://1qbit.com)
 - Provider ID: `1qbit`

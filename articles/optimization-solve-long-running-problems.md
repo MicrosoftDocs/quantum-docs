@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides a basic guide to solving long-running problems in Azure Quantum using Python.
 ms.author: brbenefield
-ms.date: 10/25/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.solve-long-running-problems
 ---
 
 # Solve long-running problems
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 In the example in [Apply solvers to solve optimization problems](xref:microsoft.quantum.optimization.apply-solver), a problem was submitted to Azure Quantum and solved synchronously. This is convenient for certain environments, but unsuitable for others where there is a need to either submit a problem and check on it later, or submit many problems and compare the results.
 

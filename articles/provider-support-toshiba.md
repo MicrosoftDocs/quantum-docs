@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Support Policy for Toshiba SQBM+ in Azure Quantum
 ms.author: sonialopez
-ms.date: 05/16/2022
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -11,6 +11,8 @@ uid: microsoft.quantum.providers.optimization.toshiba.support
 ---
 
 # Support Policy for Toshiba SQBM+ Cloud on Azure Quantum
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 Toshiba SQBM+ team of Toshiba Digital Solutions Corporation (TDSL) provides Support Services under the terms of this support policy as long as you maintain a current subscription to SQBM+ Cloud on Azure Quantum.
 

@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document describes the Ising model and its use in formulating optimization problems.
 ms.author: sonialopez
-ms.date: 10/05/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: conceptual
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.concepts.ising-model
 ---
 
 # Ising model
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 In statistical mechanics, the *Ising model* is a simplified representation of
 the interaction between individual magnetic moments in a ferromagnetic

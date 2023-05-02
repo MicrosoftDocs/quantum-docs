@@ -2,7 +2,7 @@
 description: Learn about the key concepts of optimization, including cost functions, search spaces, and landscapes. 
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 10/11/2022
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: overview
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.concepts.overview.key-concepts
 ---
 
 # Key concepts for optimization
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 To understand optimization problems, you first need to learn some basic terms and concepts.
 

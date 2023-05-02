@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the Toshiba SQBM+ provider
 ms.author: sonialopez
-ms.date: 05/17/2022
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -11,6 +11,8 @@ uid: microsoft.quantum.providers.optimization.toshiba
 ---
 
 # Toshiba SQBM+ provider
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 - Publisher: [Toshiba Digital Solutions Corporation](https://www.global.toshiba/jp/company/digitalsolution.html)
 - Provider ID: `toshiba`
