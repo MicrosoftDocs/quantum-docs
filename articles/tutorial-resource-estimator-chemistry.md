@@ -55,7 +55,7 @@ To connect to the Azure Quantum service, your program need the resource ID and t
 Paste the values into the following `Workspace` constructor to create a `workspace` object that connects to your Azure Quantum workspace.
 
 ```python
-provider = AzureQuantumProvider(
+workspace = Workspace(
   resource_id="",
   location=""
 )
