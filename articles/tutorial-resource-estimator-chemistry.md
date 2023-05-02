@@ -81,9 +81,9 @@ In this example, the Hamiltonian is described in terms of one- and two-electron 
 
 |URI|Instance name|Description|
 |---|---|---|
-|<https://aka.ms/fcidump/XVIII-cas4-fb-64e-56o> |XVIII-cas4-fb-64e56o | 64 electron, 56 orbital active space of one of the stable intermediates in the ruthenium-catalyzed carbon fixation cycl. |
-|<https://aka.ms/fcidump/nitrogenase-54e-54o>|nitrogenase_54orbital | 54 electron, 54 orbital active space of the active core of the nitrogenase that is used in this paper|
-|<https://aka.ms/fcidump/fe2s2-10e-40o>|	fe2s2-10e-40o|10 electron, 40 orbital active space of [2Fe, 2S] cluster that is shown in this paper.|
+|<https://aka.ms/fcidump/XVIII-cas4-fb-64e-56o> |XVIII-cas4-fb-64e56o | 64 electron, 56 orbital active space of one of the stable intermediates in [the ruthenium-catalyzed carbon fixation cycle.](https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.3.033055) |
+|<https://aka.ms/fcidump/nitrogenase-54e-54o>|nitrogenase_54orbital | 54 electron, 54 orbital active space of the active core of [the nitrogenase](https://www.pnas.org/doi/10.1073/pnas.1619152114).|
+|<https://aka.ms/fcidump/fe2s2-10e-40o>|	fe2s2-10e-40o|10 electron, 40 orbital active space of [[2Fe, 2S] cluster](https://www.pnas.org/doi/10.1073/pnas.1619152114).|
 |<https://aka.ms/fcidump/polyyne-24e-24o>|polyyne-24e-24o|24 electron, 24 orbital active space of the polyyne molecule.|
 |<https://aka.ms/fcidump/n2-10e-8o>|n2-10e-8o|10 electron, 8 orbital active space of he dissociated nitrogen at 3 Angstrom distance.|
 
@@ -91,7 +91,7 @@ In this example, the Hamiltonian is described in terms of one- and two-electron 
 > You can also pass your own FCIDUMP files via:
 > - [Raw links to files in Github](https://docs.github.com/repositories/working-with-files/using-files/viewing-a-file#viewing-or-copying-the-raw-file-content) repositories (see [how to add files to Github repositories](https://docs.github.com/repositories/working-with-files/managing-files/creating-new-files)).
 > - [Files on Github gists](https://docs.github.com/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists).
-> - [Files in Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) using SAS tokens
+> - [Files in Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) using SAS tokens.
 
 
 The URI is passed to the algorithm as operation arguments with the name `"fcidumpUri"`. For example, let's choose XVIII-cas4-fb-64e56o FCIDUMP file.
