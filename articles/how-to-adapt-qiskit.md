@@ -25,7 +25,7 @@ If you have some experience with quantum computing or are just starting, it is l
 1. Log in to the [Azure portal](https://portal.azure.com/) and select your Azure Quantum workspace.
 1. In the left blade, select **Notebooks** and click **My Notebooks**.
 1. Click **Upload New** if you've downloaded a sample, or click **Add New** to copy the code to a new notebook.
-    - If you are create a new notebook, select **IPython** as the **Kernel type**.
+    - If you are creating a new notebook, select **IPython** as the **Kernel type**.
 
 ## Locate the default backend
 
@@ -43,7 +43,7 @@ Most samples are configured to run by default against the `aer_simulator`, which
 ## Create an Azure Quantum backend
 
 1. Click **+ Code** to add a new code cell *before* the code sample.
-1. Replace the existing backend with an Azure Quantum backend. The following code configures an Azure Quantum backend from one of the backends available in your Azure Quantum workspace. For example, if you want to run the sample against a Quantinuum processor, use `backend = quantinuum_qpu_backend`. 
+1. Replace the existing backend with an Azure Quantum backend. The following code configures an Azure Quantum backend from one of the providers available in your Azure Quantum workspace. For example, if you want to run the sample against a Quantinuum processor, use `backend = quantinuum_qpu_backend`. 
 
     ```python
     from azure.quantum.qiskit import AzureQuantumProvider
