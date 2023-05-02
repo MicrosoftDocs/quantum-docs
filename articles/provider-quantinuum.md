@@ -115,7 +115,7 @@ System Model H2 hardware is continuously upgraded throughout it's product lifecy
   - H2-1: `quantinuum.qpu.h2-1`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
-### Technical Specifications
+## Technical Specifications
 
 Technical details for System Model H1 and System Model H2 can be found in Quantinuum's product data sheets on the [System Model H1](https://www.quantinuum.com/products/h1) and [System Model H2](https://www.quantinuum.com/products/h2) pages alongside links to Quantinuum specification and quantum volume data repositories and how to cite usage of Quantinuum systems.
 ## Additional Capabilities
@@ -445,7 +445,7 @@ print("Job id:", job.id())
 
 ## Technical Specifications
 
-Technical details for the System Model H1 and System Model H1 Emulators can be found in Quantinuum's product data sheets on the [System Model H1] page alongside links to Quantinuum specification and quantum volume data repositories and how to cite usage of Quantinuum systems.
+Technical details for the System Model H1 and H2 and System Model H1 and H2 Emulators can be found in Quantinuum's product data sheets on the [System Model H1] and [System Model H2] page alongside links to Quantinuum specification and quantum volume data repositories and how to cite usage of Quantinuum systems.
 
 ## Target Availability
 
@@ -471,7 +471,7 @@ To see Quantinuum's billing plans, visit [Azure Quantum pricing](xref:microsoft.
 
 ## Limits & Quotas
 
-Quantinuum's quotas are tracked based on the QPU usage credit unit, *H-System Quantum Credit (HQC)*, for jobs submitted to System Model H1 quantum computers, and emulator HQCs (eHQCs) for jobs submitted to System Model H1 emulators.
+Quantinuum's quotas are tracked based on the QPU usage credit unit, *H-System Quantum Credit (HQC)*, for jobs submitted to Quantinuum quantum computers, and emulator HQCs (eHQCs) for jobs submitted to emulators.
 
 HQCs and eHQCs are used to calculate the cost of running a job, and they are calculated based on the following formula:
 
@@ -496,6 +496,7 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 
 [Quantinuum]: https://www.quantinuum.com
 [System Model H1]: https://www.quantinuum.com/products/h1
+[System Model H2]: https://www.quantinuum.com/hardware/h2
 [`MResetZ`]: /qsharp/api/qsharp/microsoft.quantum.measurement.mresetz
 [`rzz`]: https://qiskit.org/documentation/stubs/qiskit.circuit.QuantumCircuit.rzz.html
 [`pytket-quantinuum`]: https://github.com/CQCL/pytket-quantinuum
