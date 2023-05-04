@@ -63,24 +63,24 @@ This example shows how to create a session with Q# inline code using hosted Note
 
 1. Select the [quantum target](xref:microsoft.quantum.reference.qc-target-list) of your choice. In this example, you're using [Rigetti simulator](xref:microsoft.quantum.providers.rigetti) as target. 
 
-```python
-target = workspace.get_targets("rigetti.sim.qvm")
-```
+    ```python
+    target = workspace.get_targets("rigetti.sim.qvm")
+    ```
 
-> [!NOTE]
-> For Q# programs, sessions are not currently supported for IonQ targets. 
+    > [!NOTE]
+    > For Q# programs, sessions are not currently supported for IonQ targets. 
 
 1. Next, you create a session. Let's say you want to run `GenerateRandomBit` operation three times, so you use `target.submit` to submit the Q# operation with the target data and you repeat the code three times - in a real world scenario, you may want to submit different programs instead of the same code. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
  
-```python
-with target.open_session(name="Q# Session") as session:
-    target.submit(input_data=GenerateRandomBit, name="Job 1", input_params={"count":100}) # First job submission
-    target.submit(input_data=GenerateRandomBit, name="Job 2", input_params={"count":100}) # Second job submission
-    target.submit(input_data=GenerateRandomBit, name="Job 3", input_params={"count":100}) # Third job submission 
-
-session_jobs = session.list_jobs()
-[session_job.details.name for session_job in session_jobs]
-```
+    ```python
+    with target.open_session(name="Q# Session") as session:
+        target.submit(input_data=GenerateRandomBit, name="Job 1", input_params={"count":100}) # First job submission
+        target.submit(input_data=GenerateRandomBit, name="Job 2", input_params={"count":100}) # Second job submission
+        target.submit(input_data=GenerateRandomBit, name="Job 3", input_params={"count":100}) # Third job submission 
+    
+    session_jobs = session.list_jobs()
+    [session_job.details.name for session_job in session_jobs]
+    ```
 
 ### [Qiskit](#tab/tabid-qiskit)
 
@@ -158,24 +158,24 @@ session_jobs = session.list_jobs()
 
 3. Select the [quantum target](xref:microsoft.quantum.reference.qc-target-list) of your choice. In this example, you're using [IonQ simulator](xref:microsoft.quantum.providers.ionq) as target. 
 
-> [!NOTE]
-> Cirq circuits can only use IonQ or Quantinuum targets. 
+    > [!NOTE]
+    > Cirq circuits can only use IonQ or Quantinuum targets. 
 
-```python
-target = service.get_target("ionq.simulator")
-```
+    ```python
+    target = service.get_target("ionq.simulator")
+    ```
 
 4. Next, you create a session. Let's say you want to run your quantum circuit three times, so you use `target.submit` to submit the Cirq circuit, and you repeat the code three times - in a real world scenario, you may want to submit different programs instead of the same code.. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
 
-```python
-with target.open_session(name="Cirq Session") as session:
-    target.submit(program=circuit, name="Job 1", repetitions=100) # First job submission
-    target.submit(program=circuit, name="Job 2", repetitions=100) # Second job submission
-    target.submit(program=circuit, name="Job 3", repetitions=100) # Third job submission
-
-session_jobs = session.list_jobs()
-[session_job.details.name for session_job in session_jobs]
-```
+    ```python
+    with target.open_session(name="Cirq Session") as session:
+        target.submit(program=circuit, name="Job 1", repetitions=100) # First job submission
+        target.submit(program=circuit, name="Job 2", repetitions=100) # Second job submission
+        target.submit(program=circuit, name="Job 3", repetitions=100) # Third job submission
+    
+    session_jobs = session.list_jobs()
+    [session_job.details.name for session_job in session_jobs]
+    ```
 
 ***
 
