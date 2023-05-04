@@ -105,11 +105,13 @@ This example shows how to create a session with Q# inline code using hosted Note
     circuit.measure([0,1], [0,1])
     circuit.draw()
     ```
+
 3. Next, create a backend instance with the [quantum target](xref:microsoft.quantum.reference.qc-target-list)  of your choice. In this example, set [IonQ simulator](xref:microsoft.quantum.providers.ionq) as the target. 
 
     ```python
     backend = provider.get_backend("ionq.simulator")
     ```
+
 4. Next, create a session. Let's say you want to run your quantum circuit three times, so you use `backend.run` to submit the Qiskit circuit, and you repeat the code three times - in a real world scenario, you may want to submit different programs instead of the same code. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
 
     ```python
@@ -124,6 +126,7 @@ This example shows how to create a session with Q# inline code using hosted Note
     session_jobs = session.list_jobs()
     [session_job.details.name for session_job in session_jobs]
     ```
+
 ### [Cirq](#tab/tabid-cirq)
 
 1. First, write your quantum circuit. For example, the following circuit generates a random bit. 
@@ -141,6 +144,7 @@ This example shows how to create a session with Q# inline code using hosted Note
     )
     print(circuit)
     ```
+
 2. Then, create a `service` object with your Quantum workspace information. 
 
     ```python
@@ -150,11 +154,17 @@ This example shows how to create a session with Q# inline code using hosted Note
                 resource_id = "", # add your resource ID
                 location = "") # add your location
     ```
+
 3. Select the [quantum target](xref:microsoft.quantum.reference.qc-target-list) of your choice. In this example, you're using [IonQ simulator](xref:microsoft.quantum.providers.ionq) as target. 
+
+> [!NOTE]
+> Cirq circuits can only use IonQ or Quantinuum targets. 
 
     ```python
     target = service.get_target("ionq.simulator")
     ```
+
+
 4. Next, you create a session. Let's say you want to run your quantum circuit three times, so you use `target.submit` to submit the Cirq circuit, and you repeat the code three times - in a real world scenario, you may want to submit different programs instead of the same code.. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
     
     ```python
