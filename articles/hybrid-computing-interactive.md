@@ -41,14 +41,14 @@ To create a session, you need the following prerequisites:
 This example shows how to create a session with Q# inline code using hosted Notebooks in the Azure portal. You can also create sessions using a [Python host program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs#q-with-host-programs) that invokes an adjacent Q# program. 
 
 1. Select the **Notebooks** blade in your Quantum workspace, and in **My Notebooks** click on **Add New**.
-2. In **Kernel Type**, select **IPython**.
-3. Type a name for the file, and click **Create file**. 
-4. Click **+ Code** to add a new cell in the notebook and import `qsharp` Python SDK. 
+1. In **Kernel Type**, select **IPython**.
+1. Type a name for the file, and click **Create file**. 
+1. Click **+ Code** to add a new cell in the notebook and import `qsharp` Python SDK. 
 
     ```python
     import qsharp
     ```
-5. Write your Q# program. For example, the following Q# program generates a random bit. 
+1. Write your Q# program. For example, the following Q# program generates a random bit. 
 
     ```python
     %%qsharp
@@ -61,25 +61,26 @@ This example shows how to create a session with Q# inline code using hosted Note
     }
     ```
 
-6. Select the [quantum target](xref:microsoft.quantum.reference.qc-target-list) of your choice. In this example, you're using [Rigetti simulator](xref:microsoft.quantum.providers.rigetti) as target. 
+1. Select the [quantum target](xref:microsoft.quantum.reference.qc-target-list) of your choice. In this example, you're using [Rigetti simulator](xref:microsoft.quantum.providers.rigetti) as target. 
 
-    ```python
-    target = workspace.get_targets("rigetti.sim.qvm")
-    ```
-    > [!NOTE]
-    > For Q# programs, sessions are not currently supported for IonQ targets. 
-    
- 7. Next, you create a session. Let's say you want to run `GenerateRandomBit` operation three times, so you use `target.submit` to submit the Q# operation with the target data and you repeat the code three times - in a real world scenario, you may want to submit different programs instead of the same code. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
+```python
+target = workspace.get_targets("rigetti.sim.qvm")
+```
+
+> [!NOTE]
+> For Q# programs, sessions are not currently supported for IonQ targets. 
+
+1. Next, you create a session. Let's say you want to run `GenerateRandomBit` operation three times, so you use `target.submit` to submit the Q# operation with the target data and you repeat the code three times - in a real world scenario, you may want to submit different programs instead of the same code. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
  
-    ```python
-    with target.open_session(name="Q# Session") as session:
-        target.submit(input_data=GenerateRandomBit, name="Job 1", input_params={"count":100}) # First job submission
-        target.submit(input_data=GenerateRandomBit, name="Job 2", input_params={"count":100}) # Second job submission
-        target.submit(input_data=GenerateRandomBit, name="Job 3", input_params={"count":100}) # Third job submission 
+```python
+with target.open_session(name="Q# Session") as session:
+    target.submit(input_data=GenerateRandomBit, name="Job 1", input_params={"count":100}) # First job submission
+    target.submit(input_data=GenerateRandomBit, name="Job 2", input_params={"count":100}) # Second job submission
+    target.submit(input_data=GenerateRandomBit, name="Job 3", input_params={"count":100}) # Third job submission 
 
-    session_jobs = session.list_jobs()
-    [session_job.details.name for session_job in session_jobs]
-    ```
+session_jobs = session.list_jobs()
+[session_job.details.name for session_job in session_jobs]
+```
 
 ### [Qiskit](#tab/tabid-qiskit)
 
@@ -160,22 +161,22 @@ This example shows how to create a session with Q# inline code using hosted Note
 > [!NOTE]
 > Cirq circuits can only use IonQ or Quantinuum targets. 
 
-    ```python
-    target = service.get_target("ionq.simulator")
-    ```
-
+```python
+target = service.get_target("ionq.simulator")
+```
 
 4. Next, you create a session. Let's say you want to run your quantum circuit three times, so you use `target.submit` to submit the Cirq circuit, and you repeat the code three times - in a real world scenario, you may want to submit different programs instead of the same code.. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
-    
-    ```python
-    with target.open_session(name="Cirq Session") as session:
-        target.submit(program=circuit, name="Job 1", repetitions=100) # First job submission
-        target.submit(program=circuit, name="Job 2", repetitions=100) # Second job submission
-        target.submit(program=circuit, name="Job 3", repetitions=100) # Third job submission
 
-    session_jobs = session.list_jobs()
-    [session_job.details.name for session_job in session_jobs]
-    ```
+```python
+with target.open_session(name="Cirq Session") as session:
+    target.submit(program=circuit, name="Job 1", repetitions=100) # First job submission
+    target.submit(program=circuit, name="Job 2", repetitions=100) # Second job submission
+    target.submit(program=circuit, name="Job 3", repetitions=100) # Third job submission
+
+session_jobs = session.list_jobs()
+[session_job.details.name for session_job in session_jobs]
+```
+
 ***
 
 ## Monitoring sessions
