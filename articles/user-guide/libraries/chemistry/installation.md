@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to install the Azure Quantum chemistry library and use it with the NWChem computational chemistry platform.
 ms.author: brbenefield
-ms.date: 07/29/2022
+ms.date: 05/06/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -39,7 +39,7 @@ As a simple example, use the chemistry library sample, [GetGateCount](https://gi
 
 ```bash
 cd Quantum/Chemistry/GetGateCount
-dotnet run -- --path=../IntegralData/YAML/h2.yaml --format=YAML
+dotnet run -- --path=../IntegralData/YAML/h2.yaml --format=Broombridge
 ```
 
 See [Loading a Hamiltonian from file](xref:microsoft.quantum.libraries.overview-chemistry.examples.overview.loadhamiltonian) for more information on how to input molecules represented by the Broombridge schema.  
