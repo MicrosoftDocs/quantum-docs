@@ -6,7 +6,7 @@ ms.date: 02/20/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
-no-loc: [Quantum Development Kit]
+no-loc: [Quantum Development Kit, target, targets]
 title: Introduction to jobs
 uid: microsoft.quantum.work-with-jobs
 ---

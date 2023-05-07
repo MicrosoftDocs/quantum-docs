@@ -6,7 +6,7 @@ ms.date: 03/23/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
-no-loc: ['Python', '$$v']
+no-loc: ['Python', '$$v', target, targets]
 title: Submit Qiskit quantum circuits to Azure Quantum
 zone_pivot_groups: quantum-computing-platforms-rigetti
 uid: microsoft.quantum.quickstarts.computing.qiskit

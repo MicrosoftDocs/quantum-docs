@@ -6,6 +6,7 @@ ms.date: 01/15/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
+no-loc: [target, targets]
 title: Limits & quotas
 uid: microsoft.quantum.quotas
 ---

@@ -6,6 +6,7 @@ ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
+no-loc: [target, targets]
 title: Solve a batch of problems using asyncio
 uid: microsoft.quantum.optimization.async-io
 ---

@@ -6,7 +6,7 @@ ms.date: 12/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
-no-loc: ['Q#', '$$v', Quantum Development Kit]
+no-loc: ['Q#', '$$v', Quantum Development Kit,target, targets]
 title: "Tutorial: Implement Grover's algorithm in Q#"
 uid: microsoft.quantum.tutorial-qdk.grovers
 ---

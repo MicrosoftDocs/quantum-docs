@@ -6,7 +6,7 @@ ms.date: 01/19/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v', Quantum Development Kit]
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Open source licensing for the QDK
 uid: microsoft.quantum.libraries.overview.licensing
 ---

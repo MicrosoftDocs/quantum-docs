@@ -6,7 +6,7 @@ ms.date: 10/26/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: overview
-no-loc: ['Q#', '$$v', Quantum Development Kit]
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Quantum simulators and Q# programs
 uid: microsoft.quantum.machines.overview
 ---

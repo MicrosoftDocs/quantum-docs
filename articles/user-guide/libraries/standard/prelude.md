@@ -6,7 +6,7 @@ ms.date: 04/01/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v', Quantum Development Kit]
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Intrinsic operations and functions in the QDK
 uid: microsoft.quantum.libraries.overview.standard.prelude
 ---

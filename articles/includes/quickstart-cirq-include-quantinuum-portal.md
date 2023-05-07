@@ -4,6 +4,7 @@ ms.author: brbenefield
 ms.date: 12/07/2022
 ms.service: azure-quantum
 ms.subservice: qdk
+no-loc: [target, targets]
 ms.topic: include
 ---
 

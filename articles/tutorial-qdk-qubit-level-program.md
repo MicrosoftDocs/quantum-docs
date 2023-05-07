@@ -9,7 +9,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 uid: microsoft.quantum.tutorial-qdk.circuit
 ms.topic: tutorial
-no-loc: ['Q#', '$$v', Quantum Development Kit]
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 ---
 
 

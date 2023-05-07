@@ -6,6 +6,7 @@ ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
+no-loc: [target, targets]
 title: Pricing & billing plans
 uid: microsoft.quantum.providers-pricing
 zone_pivot_groups: azurequantum-providers

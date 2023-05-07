@@ -6,7 +6,7 @@ ms.date: 09/22/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
-no-loc: ['Q#', '$$v', Quantum Development Kit]
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Develop with Q# and Python
 uid: microsoft.quantum.how-to.python-local
 ---

@@ -6,7 +6,7 @@ ms.date: 10/26/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v', Quantum Development Kit]
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Toffoli simulator 
 uid: microsoft.quantum.machines.overview.toffoli-simulator
 ---

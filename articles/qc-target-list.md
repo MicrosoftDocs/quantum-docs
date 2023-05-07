@@ -6,7 +6,7 @@ ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
-no-loc: [Quantum Intermediate Representation]
+no-loc: [Quantum Intermediate Representation, target, targets]
 title: List of quantum computing targets on Azure Quantum
 uid: microsoft.quantum.reference.qc-target-list
 ---

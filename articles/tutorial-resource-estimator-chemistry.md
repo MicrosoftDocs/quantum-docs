@@ -6,6 +6,7 @@ ms.date: 04/24/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: tutorial
+no-loc: [target, targets]
 title: 'Tutorial: Estimate the resources of a quantum chemistry problem'
 uid: microsoft.quantum.tutorial.resource-estimator.chemistry
 ---

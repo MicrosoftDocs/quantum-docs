@@ -6,7 +6,7 @@ ms.date: 11/15/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v', Quantum Development Kit]
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Ways to run a Q# program
 uid: microsoft.quantum.user-guide-qdk.overview.host-programs
 ---

@@ -8,6 +8,7 @@ ms.subservice: core
 ms.custom: devx-track-azurecli
 ms.topic: how-to
 title: Submit Q# jobs 
+no-loc: [target, targets]
 uid: microsoft.quantum.submit-jobs
 zone_pivot_groups: azurequantum-quantumcomputing-ide
 ---

@@ -5,6 +5,7 @@ ms.date: 12/01/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
+no-loc: [target, targets]
 ---
 
 ## Select a target to run your program
