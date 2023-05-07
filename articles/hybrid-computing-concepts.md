@@ -6,7 +6,7 @@ ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: concepts
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Variational Quantum Eigensolver]
 title: Hybrid quantum computing concepts
 uid: microsoft.quantum.concepts.hybrid
 ---
