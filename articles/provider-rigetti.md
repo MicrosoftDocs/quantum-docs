@@ -6,7 +6,7 @@ ms.date: 03/02/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
-no-loc: [Quantum Intermediate Representation]
+no-loc: [Quantum Intermediate Representation, No control flow]
 title: Rigetti provider
 uid: microsoft.quantum.providers.rigetti
 ---
