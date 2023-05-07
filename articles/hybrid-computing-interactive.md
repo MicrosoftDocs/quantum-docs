@@ -6,7 +6,7 @@ ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
-no-loc: ['Q#', '$$v', Variational Quantum Eigensolver]
+no-loc: ['Q#', '$$v', Variational Quantum Eigensolver, Quantum Approximate Optimization Algorithm]
 title: Introduction to sessions
 uid: microsoft.quantum.hybrid.interactive
 ---
