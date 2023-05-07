@@ -6,7 +6,7 @@ ms.date: 04/29/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: overview
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: The Q# user guide
 uid: microsoft.quantum.user-guide-qdk.overview
 ---

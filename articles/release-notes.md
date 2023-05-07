@@ -7,7 +7,7 @@ ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 uid: microsoft.quantum.relnotes-qdk
 ---
 

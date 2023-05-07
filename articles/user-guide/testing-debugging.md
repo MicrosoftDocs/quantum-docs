@@ -9,7 +9,7 @@ ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
 uid: microsoft.quantum.user-guide-qdk.overview.testingdebugging
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 ---
 
 # Testing and debugging

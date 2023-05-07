@@ -6,7 +6,7 @@ ms.date: 09/15/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: contributor-guide
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: Q# style guide
 uid: microsoft.quantum.contributing-qdk.overview.style
 ---

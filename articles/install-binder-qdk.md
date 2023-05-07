@@ -6,7 +6,7 @@ ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: Develop with Q# and Binder
 uid: microsoft.quantum.install-qdk.overview.binder
 ---

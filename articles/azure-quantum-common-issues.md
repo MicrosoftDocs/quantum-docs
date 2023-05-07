@@ -6,6 +6,7 @@ ms.date: 03/16/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
+no-loc: [Quantum Development Kit]
 title: Troubleshoot Azure Quantum
 uid: microsoft.quantum.azure.common-issues
 ---

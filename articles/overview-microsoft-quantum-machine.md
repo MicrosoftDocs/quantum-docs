@@ -6,7 +6,7 @@ ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: Microsoft's quantum machine
 uid: microsoft.quantum.overview.ms-machine
 ---

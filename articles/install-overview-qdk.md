@@ -6,7 +6,7 @@ ms.date: 04/10/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: Set up the Quantum Development Kit 
 uid: microsoft.quantum.install-qdk.overview
 ---

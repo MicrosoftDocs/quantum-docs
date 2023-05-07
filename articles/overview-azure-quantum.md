@@ -6,6 +6,7 @@ ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
+no-loc: [Quantum Development Kit]
 title: What is Azure Quantum?
 uid: microsoft.quantum.azure-quantum-overview
 ---

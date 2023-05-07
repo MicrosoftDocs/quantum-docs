@@ -6,7 +6,7 @@ ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: Quantum Development Kit Libraries
 uid: microsoft.quantum.libraries.overview
 ---

@@ -6,7 +6,7 @@ ms.date: 10/31/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: 'Tutorial: Create a Quantum Random Number Generator'
 uid: microsoft.quantum.tutorial-qdk.random-number
 ---

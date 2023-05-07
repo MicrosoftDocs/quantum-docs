@@ -6,6 +6,7 @@ ms.author: brbenefield
 ms.service: azure-quantum
 ms.topic: how-to
 ms.date: 03/30/2023
+no-loc: [Quantum Development Kit]
 uid: microsoft.quantum.publish-qc-as-azure-function
 #Customer intent: As a researcher, I want to make my quantum algorithm accessible via API so that developers without further quantum knowledge can call it via classical API-calls.
 ---
