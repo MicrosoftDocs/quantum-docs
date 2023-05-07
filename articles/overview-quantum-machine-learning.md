@@ -6,7 +6,7 @@ ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
-no-loc: ['Q#', '$$v', Quantum Development Kit]
+no-loc: ['Q#', '$$v', Quantum Development Kit, Quantum machine learning]
 title: Understanding quantum machine learning
 uid: microsoft.quantum.overview.qml
 ---

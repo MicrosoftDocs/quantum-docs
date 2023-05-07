@@ -6,7 +6,7 @@ ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum machine learning]
 title: Design your own classifier with the QDK
 uid: microsoft.quantum.libraries.overview.machine-learning.design
 ---

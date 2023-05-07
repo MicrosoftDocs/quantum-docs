@@ -6,7 +6,7 @@ ms.date: 01/08/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
-no-loc: ['Q#', '$$v', Quantum Development Kit]
+no-loc: ['Q#', '$$v', Quantum Development Kit, Quantum machine learning]
 title: Introduction to Q# & Quantum Development Kit
 uid: microsoft.quantum.overview.q-sharp
 ---

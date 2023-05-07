@@ -6,7 +6,7 @@ ms.date: 03/17/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum machine learning]
 title: Quantum algorithms in Q#
 uid: microsoft.quantum.libraries.overview.standard.algorithms
 ---
