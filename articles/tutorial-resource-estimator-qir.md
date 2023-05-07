@@ -6,6 +6,7 @@ ms.date: 02/14/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: tutorial
+no-loc: [Quantum Intermediate Representation]
 title: 'Tutorial: Resource Estimation with QIR'
 uid: microsoft.quantum.tutorial.resource-estimator.qir
 ---
