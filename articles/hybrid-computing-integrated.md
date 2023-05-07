@@ -6,7 +6,7 @@ ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: concepts
-no-loc: ['Q#', '$$v', Quantum Development Kit]
+no-loc: ['Q#', '$$v', Quantum Development Kit, Basic measurement feedback]
 title: Working with integrated hybrid computing
 uid: microsoft.quantum.hybrid.integrated
 ---
