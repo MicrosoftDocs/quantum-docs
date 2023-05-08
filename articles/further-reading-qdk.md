@@ -6,7 +6,7 @@ ms.date: 08/24/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: resources
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Approximate Optimization Algorithm, Quantum Development Kit]
 title: Quantum computing learning resources
 uid: microsoft.quantum.more-information
 ---

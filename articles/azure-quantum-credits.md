@@ -6,6 +6,7 @@ ms.date: 10/19/2022
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
+no-loc: [target, targets]
 title: Azure Quantum Credits
 uid: microsoft.quantum.credits
 ---

@@ -6,7 +6,7 @@ ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: sample
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: Sample NWChem quantum program
 uid: microsoft.quantum.libraries.overview-chemistry.examples.overview.endtoend
 ---

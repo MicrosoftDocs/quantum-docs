@@ -6,7 +6,7 @@ ms.date: 12/14/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', target, targets]
 title: Create an Azure Quantum workspace
 uid: microsoft.quantum.how-to.workspace
 ---

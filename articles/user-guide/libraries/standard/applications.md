@@ -6,7 +6,7 @@ ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Variational Quantum Eigensolver, target, targets]
 title: Applications in the Q# standard libraries
 uid: microsoft.quantum.libraries.overview.applications
 ---

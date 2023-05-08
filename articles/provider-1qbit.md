@@ -6,6 +6,7 @@ ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
+no-loc: [target, targets]
 title: 1QBit provider
 uid: microsoft.quantum.providers.optimization.1qbit
 ---

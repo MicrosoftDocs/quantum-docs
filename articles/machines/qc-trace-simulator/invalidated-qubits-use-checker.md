@@ -6,7 +6,7 @@ ms.date: 04/01/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: 'Trace simulator: Invalidated qubits use checker'
 uid: microsoft.quantum.machines.overview.qc-trace-simulator.invalidated-qubits
 ---

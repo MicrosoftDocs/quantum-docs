@@ -6,7 +6,7 @@ ms.date: 10/11/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Full state quantum simulator 
 uid: microsoft.quantum.machines.overview.full-state-simulator
 ---

@@ -6,7 +6,7 @@ ms.date: 11/18/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: overview
-no-loc: ['Python', '$$v']
+no-loc: ['Python', '$$v', Quantum Intermediate Representation, target, targets]
 title: Introduction to resource estimation
 uid: microsoft.quantum.overview.intro-resource-estimator
 --- 

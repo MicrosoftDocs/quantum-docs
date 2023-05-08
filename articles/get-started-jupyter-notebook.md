@@ -6,7 +6,7 @@ ms.date: 02/21/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', target, targets]
 title: 'Quickstart: Run a Q# and Python notebook'
 uid: microsoft.quantum.get-started.notebooks
 ---

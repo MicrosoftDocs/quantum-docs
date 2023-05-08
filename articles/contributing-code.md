@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: contributor-guide
 ms.custom: kr2b-contr-experiment
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', target, targets]
 title: Contribute code
 uid: microsoft.quantum.contributing-qdk.overview.code
 ---

@@ -5,6 +5,7 @@ ms.date: 11/23/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
+no-loc: [Quantum Development Kit, target, targets]
 ---
 
 ## Prerequisites

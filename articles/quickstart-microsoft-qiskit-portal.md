@@ -6,7 +6,7 @@ ms.date: 12/01/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
-no-loc: ['Python', '$$v']
+no-loc: ['Python', '$$v', target, targets]
 title: 'Quickstart: Create Qiskit circuits with online notebooks'
 zone_pivot_groups: quantum-computing-platforms-rigetti
 uid: microsoft.quantum.quickstarts.computing.qiskit.portal

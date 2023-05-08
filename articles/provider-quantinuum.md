@@ -6,6 +6,7 @@ ms.date: 03/01/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
+no-loc: [Basic measurement feedback, target, targets]
 title: Quantinuum provider
 uid: microsoft.quantum.providers.quantinuum
 ---

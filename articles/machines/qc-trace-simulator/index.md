@@ -6,7 +6,7 @@ ms.date: 02/15/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Quantum trace simulator
 uid: microsoft.quantum.machines.overview.qc-trace-simulator.intro
 ---

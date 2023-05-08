@@ -6,7 +6,7 @@ ms.date: 05/06/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: Q# Chemistry Library Installation
 uid: microsoft.quantum.libraries.overview-chemistry.concepts.installation
 ---

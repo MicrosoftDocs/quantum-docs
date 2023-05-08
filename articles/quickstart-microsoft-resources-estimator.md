@@ -6,7 +6,7 @@ ms.date: 02/21/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: quickstart
-no-loc: ['Python', '$$v']
+no-loc: ['Python', '$$v', Quantum Intermediate Representation, target, targets]
 title: 'Quickstart: Submit a quantum program to the Resource Estimator'
 uid: microsoft.quantum.quickstarts.computing.resources-estimator
 --- 

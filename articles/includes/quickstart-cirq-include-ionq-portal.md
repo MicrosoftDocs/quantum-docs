@@ -5,6 +5,7 @@ ms.date: 09/26/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
+no-loc: [target, targets]
 ---
 
 ## Define a simple circuit

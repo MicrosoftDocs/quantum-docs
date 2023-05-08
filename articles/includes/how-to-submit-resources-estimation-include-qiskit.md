@@ -5,6 +5,7 @@ ms.date: 10/21/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
+no-loc: [target, targets]
 ---
 
 ## Resource estimation with Qiskit in Azure Quantum notebook

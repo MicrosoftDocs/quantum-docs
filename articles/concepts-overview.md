@@ -6,7 +6,7 @@ ms.date: 05/16/2022
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: Quantum computing history 
 uid: microsoft.quantum.concepts.intro
 ---

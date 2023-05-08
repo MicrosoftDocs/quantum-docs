@@ -7,7 +7,7 @@ ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit, Quantum machine learning, Quantum Intermediate Representation, Basic measurement feedback, target, targets]
 uid: microsoft.quantum.relnotes-qdk
 ---
 
@@ -769,7 +769,7 @@ With this change, programs that include a single "open" statement for the namesp
 
 We added a [sample of using Q# with F# driver](https://github.com/Microsoft/Quantum/pull/164).  
 
-**"Thank you!"** to the following contributor to our open code base at http://github.com/Microsoft/Quantum. These contributions add to the rich samples of Q# code:
+**"Thank you!"** to the following contributor to our open code base at https://github.com/Microsoft/Quantum. These contributions add to the rich samples of Q# code:
 
 - Mathias Soeken ([@msoeken](https://github.com/msoeken)): Oracle function synthesis. [PR #135](https://github.com/Microsoft/Quantum/pull/135).
 
@@ -902,7 +902,7 @@ This release includes bug fixes and features for issues reported by the communit
 
 #### Community contributions
 
-**"Thank you!"** to the following contributors to our open code base at http://github.com/Microsoft/Quantum. These contributions add to the rich samples of Q# code:
+**"Thank you!"** to the following contributors to our open code base at https://github.com/Microsoft/Quantum. These contributions add to the rich samples of Q# code:
 
 - Rolf Huisman ([@RolfHuisman](https://github.com/RolfHuisman)): Improved the experience for QASM/Q# developers by creating a QASM to Q# translator. [PR #58](https://github.com/Microsoft/Quantum/pull/58).
 
@@ -947,7 +947,7 @@ Learn more about [Testing and Debugging](xref:microsoft.quantum.user-guide-qdk.o
 
 #### Community contributions
 
-The Q# coder community is growing and we're thrilled to see the first user contributed libraries and samples that were submitted to our open code base at http://github.com/Microsoft/quantum.  **A big "Thank you!"** to the following contributors:
+The Q# coder community is growing and we're thrilled to see the first user contributed libraries and samples that were submitted to our open code base at https://github.com/Microsoft/quantum.  **A big "Thank you!"** to the following contributors:
 - Mathias Soeken ([@msoeken](https://github.com/msoeken)):  contributed a sample defining a transformation-based logic synthesis method that constructs Toffoli networks to implement a given permutation. The code is written entirely in Q# functions and operations.  [PR #41](https://github.com/Microsoft/Quantum/pull/41).
 - RolfHuisman ([@RolfHuisman](https://github.com/RolfHuisman)): Microsoft MVP Rolf Huisman contributed a sample that generates flat QASM code from Q# code for a restricted class of programs that don't have classical control flow and restricted quantum operations. [PR #59](https://github.com/Microsoft/Quantum/pull/59)
 - Sarah Kasier ([@crazy4pi314](https://github.com/crazy4pi314)): helped to improve our code base by submitting a library function for controlled operations. [PR #53](https://github.com/Microsoft/Quantum/pull/53)

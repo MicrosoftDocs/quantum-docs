@@ -6,7 +6,7 @@ ms.date: 01/27/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
-no-loc: ['Python', '$$v']
+no-loc: ['Python', '$$v', target, targets]
 title: Submit provider-formatted quantum circuits to Azure Quantum
 zone_pivot_groups: quantum-computing-platforms
 uid: microsoft.quantum.quickstarts.computing.provider
