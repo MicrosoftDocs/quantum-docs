@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
-description: Learn about the input and output parameters of the Resource Estimator in Azure Quantum and how to customized them
-ms.date: 02/21/2023
+description: Learn about the input and output parameters of the Resource Estimator in Azure Quantum and how to customized them.
+ms.date: 05/11/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -298,17 +298,30 @@ Inside the formulas, you can use the variables `oneQubitGateTime`, `twoQubitGate
 
 ### Error budget 
 
-The total error budget $\epsilon$ sets the overall allowed error for the algorithm, that is, the number of times it's allowed to unsuccess. Its value must be between 0 and 1 and the default value is 0.001, which corresponds to 0.1%. In other words, the algorithm is allowed to fail once in 1000 executions. This parameter is highly application specific. 
+The total error budget $\epsilon$ sets the overall allowed error for the algorithm, that is, the number of times it's allowed to unsuccess. Its global value must be between 0 and 1 and the default value is 0.001, which corresponds to 0.1%. In other words, the algorithm is allowed to fail once in 1000 executions. This parameter is highly application specific. 
 
 For example, if you're running Shor’s algorithm for factoring integers, a large value for the error budget may be tolerated as one can check that the outputs are indeed the prime factors of the input. On the other hand, a much smaller error budget may be needed for an algorithm solving a problem with a solution, which can't be efficiently verified. 
 
-This budget
+The error budget $\epsilon$ corresponds to the sum of three parts:
 
 $$ \epsilon = \epsilon_{\log} + \epsilon_{\rm dis} + \epsilon_{\rm syn} $$
 
-is uniformly distributed and applies to errors $\epsilon_{\log}$ to implement logical qubits, an error budget $\epsilon_{\rm dis}$ to produce T states through distillation, and an error budget $\epsilon_{\rm syn}$ to synthesize rotation gates with arbitrary angles. 
+You can individually specify an error budget $\epsilon_{\log}$ to implement logical qubits, an error budget $\epsilon_{\rm dis}$ to produce T states through distillation, and an error budget $\epsilon_{\rm syn}$ to synthesize rotation gates with arbitrary angles. The sum of all values must be 1. 
 
 Note that for distillation and rotation synthesis, the respective error budgets $\epsilon_{\rm dis}$ and $\epsilon_{\rm syn}$ are uniformly distributed among all required T states and all required rotation gates, respectively. If there aren't rotation gates in the input algorithm, the error budget is uniformly distributed to logical errors and T state errors.
+
+```JSON
+{
+    "errorBudget": {
+        "logical": <double>,
+        "tStates": <double>,
+        "rotations": <double>
+    }
+}
+```
+
+If the quantum algorithm doesn't contain T states or rotations, then the values of `"tstates"` and `"rotations"` may be 0 respectively. 
+
 
 ## Output data
 
