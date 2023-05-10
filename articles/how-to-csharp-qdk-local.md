@@ -30,6 +30,11 @@ If you are using an editor other than Visual Studio or VS Code, simply follow th
 
 ### [Visual Studio Code or command prompt](#tab/tabid-cmdline)
 
+- Install the QDK templates package
+
+  ```dotnetcli
+  dotnet new -i Microsoft.Quantum.ProjectTemplates
+  ```
 - Create a new Q# library
 
   ```dotnetcli
