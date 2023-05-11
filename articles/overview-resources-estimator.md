@@ -24,6 +24,7 @@ Therefore, the Resource Estimator takes a set of inputs, with pre-defined values
 - A physical qubit model, `qubitParams`, which are the properties of the underlying physical qubits
 - A Quantum Error Correction (QEC) scheme, `qecScheme`, which is the assumed quantum error correction scheme
 - An error budget, `errorBudget`, which is the overall allowed error, that is, the number of times the program is allowed to unsuccess
+- Some constraints on the component-level, `constraints`, which
 
 ### Physical qubit parameters
 
@@ -308,8 +309,6 @@ $$ \epsilon = \epsilon_{\log} + \epsilon_{\rm dis} + \epsilon_{\rm syn} $$
 
 You can individually specify an error budget $\epsilon_{\log}$ to implement logical qubits, an error budget $\epsilon_{\rm dis}$ to produce T states through distillation, and an error budget $\epsilon_{\rm syn}$ to synthesize rotation gates with arbitrary angles. The sum of all values must be 1. 
 
-Note that for distillation and rotation synthesis, the respective error budgets $\epsilon_{\rm dis}$ and $\epsilon_{\rm syn}$ are uniformly distributed among all required T states and all required rotation gates, respectively. If there aren't rotation gates in the input algorithm, the error budget is uniformly distributed to logical errors and T state errors.
-
 ```JSON
 {
     "errorBudget": {
@@ -320,7 +319,24 @@ Note that for distillation and rotation synthesis, the respective error budgets 
 }
 ```
 
-If the quantum algorithm doesn't contain T states or rotations, then the values of `"tstates"` and `"rotations"` may be 0 respectively. 
+If a quantum algorithm doesn't contain T states or rotations, then the values of `tstates` and `rotations` may be 0 respectively. 
+
+### Constraints
+
+You can use `constraints` parameters to apply constraints on the component-level.
+
+```JSON
+{
+    "constraints": {
+        "logicalDepthFactor": <double>,
+        "maxTFactories": <int>
+    }
+}
+```
+If `logicalDepthFactor` has a value greater than 1, the initial number of logical cycles, also called logical depth, is multiplied by this number. The additional cycles are considered NOOPs, which increases the algorithm runtime accordingly. Note that the scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.
+
+As an alternative, you can set a limit on the number of T factory copies using `maxTFactories`. This will limit the maximum number of copies and therefore adjust the number of logical cycles accordingly.
+
 
 
 ## Output data
