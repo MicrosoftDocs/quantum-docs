@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Understand the architecture of interactive (sessions) quantum computing and learn ho to create a new session.
-ms.date: 04/10/2023
+ms.date: 05/17/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -19,11 +19,17 @@ In this model, the client compute resource may be moved to the cloud, resulting 
 
 ## What is a session?
 
-A session is a logical grouping of one or more jobs submitted to a single target. Each session has a unique ID attached to each job in that session. In some cases, jobs submitted within a session are prioritized in the queue of that target. For more information, see [Target behavior](#target-behavior).
+A session is a logical grouping of one or more jobs submitted to a single target. Each session has a unique ID attached to each job in that session. 
 
 Sessions allow you to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. You'll be able to run complex algorithms to better organize and track your individual quantum computing jobs.
 
 A key user scenario where you may want to combine jobs in a session is *parameterized* quantum algorithms where the output of one quantum computing job informs the parameters of the next quantum computing job. The most common examples of this type of algorithm are Variational Quantum Eigensolver (VQE) and Quantum Approximate Optimization Algorithm (QAOA).
+
+## Supported hardware
+
+Sessions are supported on all quantum computing hardware providers, currently [IonQ](xref:microsoft.quantum.providers.ionq), [Quantinuum](xref:microsoft.quantum.providers.quantinuum) and [Rigetti](xref:microsoft.quantum.providers.rigetti). In some cases, jobs submitted within a session are prioritized in the queue of that target. For more information, see [Target behavior](#target-behavior).
+
+**Exception**: IonQ targets (QPU or simulators) currently don't support sessions that use Q# code. IonQ targets will run sessions using Qiskit or Cirq.
 
 ## Get started with sessions
 
