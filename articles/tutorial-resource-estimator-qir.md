@@ -65,13 +65,14 @@ provider = AzureQuantumProvider(
 
 The Resource Estimator is a target of the Microsoft Quantum Computing provider. Using the Resource Estimator is exactly the same as submitting a job against other software and hardware provider targets in Azure Quantum - define your program, set a target, and submit your job for computation. 
 
-When submitting a resource estimate request for your program, you can specify some optional parameters. There are three top-level target parameters that can be customized: 
+When submitting a resource estimate request for your program, you can specify some target parameters.
 
 * `errorBudget` - the overall allowed error budget
 * `qecScheme` - the quantum error correction (QEC) scheme
 * `qubitParams` - the physical qubit parameters
+* `constraints` - the constraints on the component-level
 
-For more information about the pre-defined input parameters, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator#input-parameters).
+For more information about the input parameters, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator#input-parameters).
 
 For this example, you will implement a generic function that takes as input the `provider` object that connects to your Azure Quantum workspace and the QIR bitcode of the quantum program.  It returns as result an Azure Quantum job. 
 The Resource Estimator target parameters can be passed via keyword arguments to the function.
