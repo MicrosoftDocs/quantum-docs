@@ -84,7 +84,7 @@ with target.open_session(name="Q# session") as session:
 For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
 
 > [!NOTE]
-> Tought sessions are available to all quantum computing hardware providers, notice that integrated hybrid quantum computing jobs are currently supported on Quantinuum targets. 
+> Although sessions are available for all quantum computing hardware providers, notice that integrated hybrid quantum computing jobs are currently supported on Quantinuum targets. 
 
 ## Estimating the cost of an integrated hybrid job
 
