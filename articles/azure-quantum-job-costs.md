@@ -2,7 +2,7 @@
 author: sonialopezbravo
 description: Understand the job cost reporting functionality in Azure Quantum.
 ms.author: sonialopez
-ms.date: 10/11/2022
+ms.date: 05/17/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: conceptual
@@ -52,7 +52,7 @@ _Prices below are shown for example purposes only._
 
 :::image type="content" source="./media/job-costs/job-table-with-costs.png" alt-text="Screenshot of the Job Management blade, with the Cost Estimate column highlighted." lightbox="./media/job-costs/job-table-with-costs.png":::
 
-> [!NOTE]
+> [!TIP]
 > Some Azure Quantum providers do not support reporting per-job costs, however you can still see your bill under **Cost Management** in the Azure portal.
 
 To review detailed cost estimate information for a job, select the job in the Job Management pane and then open the "Cost Estimation" tab. The table displays the billing dimensions used by the job and their associated cost.
@@ -62,7 +62,12 @@ _Prices below are shown for example purposes only._
 :::image type="content" source="./media/job-costs/job-cost-details.png" alt-text="Screenshot of the Job Details pane for a quantum job, with the Cost Estimation tab selected.":::
 
 > [!NOTE]
+> If you're using an Azure Quantum Credits plan, you'll see cost estimate equal to $0. In this case, the estimated cost isn't reflected in the Job details because there’s no effective charge against your Azure bill.
+
+> [!NOTE]
 > IonQ has $1 (USD) minimum cost to run a job on the IonQ QPU. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
+
+
 
 How to interpret the **Cost Estimation** table columns:
 
