@@ -17,8 +17,7 @@ In this article, you'll learn how to customize the target parameters of the [Azu
 
 ## Target parameters
 
-The Resource Estimator computes the estimation of resources, such the number of qubits, the run time
-and the power consumption, which would be required to implement a given quantum algorithm using a given qubit technology and with a fixed set of architectural choices.  
+The Resource Estimator computes the estimation of resources, such the number of qubits and the run time, which would be required to implement a given quantum algorithm using a given qubit technology and with a fixed set of architectural choices.  
 Therefore, the Resource Estimator takes a set of inputs, with pre-defined values to easily get you started:
 
 - A physical qubit model, `qubitParams`, which are the properties of the underlying physical qubits.
