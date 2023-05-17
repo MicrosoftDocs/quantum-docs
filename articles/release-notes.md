@@ -261,7 +261,7 @@ demonstrating the use of the sparse simulator.
 - Fixed an [issue](https://github.com/microsoft/qdk-python/issues/164) that causes `azure.quantum.cirq` and `azure.quantum.qiskit`  to not be recognized by [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). The `azure.quantum.plugins` package is deprecated.  
 - Fixed an [issue](https://github.com/microsoft/iqsharp/issues/531) in IQ# in which job execution would fail if any operation defined in an external file wasn't supported on the given target.
 - Fixed an [issue](https://github.com/microsoft/qsharp-compiler/issues/1163) in the Visual Studio extension that caused incorrect indentation in some cases when a closing bracket was typed.
-- Refactored the [quantum intermediate representation (QIR) runtime](https://www.nuget.org/packages/Microsoft.Quantum.Qir.Runtime) DLLs to use static VC runtime, removing dependency on msvcrt.dll and Visual Studio installation.
+- Refactored the [Quantum Intermediate Representation (QIR) runtime](https://www.nuget.org/packages/Microsoft.Quantum.Qir.Runtime) DLLs to use static VC runtime, removing dependency on msvcrt.dll and Visual Studio installation.
 - Refactored [QIR Runtime](https://www.nuget.org/packages/Microsoft.Quantum.Qir.Runtime) to use `intptr_t` for Qubit ID types consistently.
 - Updated Azure CLI Extensions to version 0.9.0.
 

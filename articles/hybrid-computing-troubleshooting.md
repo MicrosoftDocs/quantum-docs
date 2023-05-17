@@ -183,7 +183,7 @@ This warning indicates that the Q# program is using advanced classical features,
 - Type: **Job error**
 - Source: **Azure Quantum service**
 
-This error can occur because the Azure Quantum service could not transform the program’s [quantum intermediate representation](xref:microsoft.quantum.concepts.qir) (QIR) enough to be able to run the program on the specified target. The error message contains the details about QIR that represent the program and what caused the validation to fail. However, it does not provide details on how the error is related to the source code.
+This error can occur because the Azure Quantum service could not transform the program’s [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir) (QIR) enough to be able to run the program on the specified target. The error message contains the details about QIR that represent the program and what caused the validation to fail. However, it does not provide details on how the error is related to the source code.
 
 The scenarios that can cause this error to occur are very broad. The following list does not contain all of them, but it enumerates some of the most common ones: 
 
