@@ -256,6 +256,6 @@ An operator whose inverse is equal to its [adjoint](xref:microsoft.quantum.gloss
 
 A custom type that may contain one or more named or anonymous items. For more information, see  [Type declarations](xref:microsoft.quantum.qsharp.typedeclarations).
 
-## Variational quantum eigensolver (VQE)
+## Variational Quantum Eigensolver (VQE)
 
 A [hybrid quantum](#hybrid-quantum-computing) algorithm that is used to find the ground state of a given physical system. It uses a classical program to modify and refine quantum circuit parameters based on the results of previous measurements. 
