@@ -21,10 +21,10 @@ The Resource Estimator computes the estimation of resources, such the number of 
 and the power consumption, which would be required to implement a given quantum algorithm using a given qubit technology and with a fixed set of architectural choices.  
 Therefore, the Resource Estimator takes a set of inputs, with pre-defined values to easily get you started:
 
-- A physical qubit model, `qubitParams`, which are the properties of the underlying physical qubits
-- A Quantum Error Correction (QEC) scheme, `qecScheme`, which is the assumed quantum error correction scheme
-- An error budget, `errorBudget`, which is the overall allowed error, that is, the number of times the program is allowed to unsuccess
-- Some constraints on the component-level, `constraints`, which
+- A physical qubit model, `qubitParams`, which are the properties of the underlying physical qubits.
+- A Quantum Error Correction (QEC) scheme, `qecScheme`, which is the assumed quantum error correction scheme.
+- An error budget, `errorBudget`, which is the overall allowed error, that is, the number of times the program is allowed to unsuccess.
+- Constraints on the component-level, `constraints`, which are the number of logical cycles and the number of T factory copies.
 
 ### Physical qubit parameters
 
@@ -312,9 +312,9 @@ You can individually specify an error budget $\epsilon_{\log}$ to implement logi
 ```JSON
 {
     "errorBudget": {
-        "logical": <double>,
-        "tStates": <double>,
-        "rotations": <double>
+        "logical": <double>, // Required
+        "tStates": <double>, // Optional
+        "rotations": <double> // Optional
     }
 }
 ```
@@ -333,11 +333,9 @@ You can use `constraints` parameters to apply constraints on the component-level
     }
 }
 ```
-If `logicalDepthFactor` has a value greater than 1, the initial number of logical cycles, also called logical depth, is multiplied by this number. The additional cycles are considered NOOPs, which increases the algorithm runtime accordingly. Note that the scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.
+If `logicalDepthFactor` has a value greater than 1, the initial number of logical cycles, also called *logical depth*, is multiplied by this number. The algorithm runtime increases accordingly. Note that the scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.
 
-As an alternative, you can set a limit on the number of T factory copies using `maxTFactories`. This will limit the maximum number of copies and therefore adjust the number of logical cycles accordingly.
-
-
+As an alternative, you can set a limit on the number of T factory copies using `maxTFactories`. This parameter limits the maximum number of copies and therefore adjust the number of logical cycles accordingly.
 
 ## Output data
 
