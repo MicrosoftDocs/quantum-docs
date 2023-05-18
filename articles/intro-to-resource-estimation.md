@@ -6,7 +6,7 @@ ms.date: 11/18/2022
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: overview
-no-loc: ['Python', '$$v']
+no-loc: ['Python', '$$v', Quantum Intermediate Representation, target, targets]
 title: Introduction to resource estimation
 uid: microsoft.quantum.overview.intro-resource-estimator
 --- 
@@ -55,13 +55,13 @@ You can find the sample of **quantum dynamics** in the [Resource estimation samp
 
 ### Quantum chemistry
 
-Another commercially relevant application of quantum computing might be quantum simulations of chemistry and materials science problems. A mechanism to develop quantum-accelerated catalytic reactions has applications such as fertilizer production and carbon fixation, among many other problems. 
+If we gain the ability to accurately simulate complex, correlated quantum mechanical systems, we could unlock breakthroughs in areas as diverse as carbon capture, food insecurity and designing better fuels and materials to enable a greener future.
 
-In the context of climate change and global warming , finding an efficient catalyst for carbon fixation has become a main issue. Carbon fixation is a natural process by which carbon dioxide is turned into valuable chemicals for storing energy. The most well-known example of carbon fixation is photosynthesis: conversion of carbon dioxide into glucose in plants.
+For example, in the context of climate change and global warming , finding an efficient catalyst for carbon fixation has become a main issue. Carbon fixation is a natural process by which carbon dioxide is turned into valuable chemicals for storing energy. The most well-known example of carbon fixation is photosynthesis: conversion of carbon dioxide into glucose in plants.
 
 The Microsoft Quantum research team developed a [new quantum algorithm to simulate catalytic processes](https://arxiv.org/abs/2007.14460). They focused on a well-known catalytic process, based on the transition metal ruthenium, to convert carbon dioxide into methanol. Using the Resource Estimator, they estimated the resources needed to analyze the activation energy of a ruthenium-based catalyst for carbon fixation.
 
-You can find the sample of **quantum chemistry** in the [Resource estimation sample notebooks](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation/estimation-chemistry.ipynb), or run it in the notebook gallery sample of your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). 
+You can find a sample of **quantum chemistry** in the tutorial [Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry), or run the sample in the notebook gallery sample of your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). This sample represents the first step in the quantum chemistry journey, allowing us to understand in more detail what computational resources would be required to simulate certain quantum mechanical systems.
 
 ### Factoring large numbers
 

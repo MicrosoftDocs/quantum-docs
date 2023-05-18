@@ -2,10 +2,11 @@
 author: bradben
 description: Troubleshoot common Azure Quantum issues.
 ms.author: brbenefield
-ms.date: 03/16/2023
+ms.date: 05/08/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
+no-loc: [Quantum Development Kit, target, targets]
 title: Troubleshoot Azure Quantum
 uid: microsoft.quantum.azure.common-issues
 ---
@@ -20,6 +21,19 @@ When working with Azure Quantum, you may run into these common issues.
 
 If the target where you want to run your job is missing from the available target list, you likely need to update to the latest version of the [Quantum Development Kit (Visual Studio 2022)](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or [Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
+### Issue: Local Resources Estimator is missing
+
+The QDK ResourcesEstimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace is removed from March 2023. When running a program that uses the QDK ResourcesEstimator class, you encounter the following error message: `Error CS0246: The type or namespace name 'ResourcesEstimator' could not be found (are you missing a using directive or an assembly reference?)`.
+
+Other possible error messages might happen when running local ResourcesEstimator. If you try to use command line option to call the ResourcesEstimator class, you get: 
+
+```
+> -s ResourcesEstimator
+The simulator 'ResourcesEstimator' could not be found.
+```
+If you try to use the `%estimate` magic command from Jupyter notebooks, you encounter the following error messages: `UsageError: Line magic function `%estimate` not found.`, or `No such magic command %estimate.` for Q# kernel.
+
+To compute physical and logical resource estimation and runtime, we recommend using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) tool instead.
 
 ### Issue: Operation returns an invalid status code 'Unauthorized'
 
@@ -112,6 +126,23 @@ The last released version of the [QDK extension for Visual Studio 2019](https://
 
 In order to use newer versions of the QDK for quantum projects with version `0.24.201332` or higher, you should use either the [extension for Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or the [extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
+
+
+### Issue: Job fails with error code: QIRPreProcessingFailed
+
+When submitting a job to a Rigetti provider, the job fails and is reported in the Job management console in the Azure portal:
+
+```output
+Error code: QIRPreProcessingFailed
+Error message: No match found for output recording set converter from outputrecordingset.v2.labeled to outputrecordingset.v1.nonlabeled
+```
+
+This may be caused by a dependency conflict with a previous version of *pyqir* or *qiskit-qir*. Uninstall all versions of *pyqir*, *pyqir-*\*, and *qiskit-qir* on your local machine, and then install or update the *azure-quantum* Python package using the [qiskit] parameter:
+
+```Shell
+pip install --upgrade azure-quantum[qiskit]
+```
+
 ## Creating an Azure Quantum workspace
 
 The following issues may occur when you use the Azure portal to create a workspace.
@@ -133,6 +164,7 @@ You must be an **Owner** of the subscription you select in order to use the **Qu
 This issue occurs because you don't have the authorization required at the subscription, resource group, or storage account level. For more information on required access levels, see [Role requirements for creating a workspace](xref:microsoft.quantum.how-to.manage-workspace-access#role-requirements-for-creating-a-workspace).
 
 
+
 ### Issue: "Deployment Validation Failed" error message appears after you select **Create**
 
 This error message may include more details such as "The client does not have authorization to perform action."
@@ -144,6 +176,12 @@ If access was recently granted, you may need to refresh the page. It can sometim
 ### Issue: You don't see a specific quantum hardware provider on the Providers tab
 
 This issue occurs because the provider doesn't support the billing region your subscription is set in. For example, if your subscription is set in Israel, the Providers tab won't list Rigetti as an available provider. For a list of providers and their availability by country, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability). 
+
+### Issue: Workspace creation or adding/removing providers fails with "ResourceDeploymentFailure" or "ProviderDeploymentFailure"
+
+This issue may include more details such as "ResourceDeploymentFailure - The 'AzureAsyncOperationWaiting' resource operation completed with terminal provisioning state 'Failed'.", or "ProviderDeploymentFailure - Failed to create plan for provider: [Name of the provider]".
+
+This occurs because the tenant has not enabled Azure Marketplace purchases. Follow the steps in [Enabling Azure Marketplace purchases](/azure/cost-management-billing/manage/ea-azure-marketplace#enabling-azure-marketplace-purchases) to enable Azure Marketplace purchases. 
 
 ## Azure Quantum portal
 
@@ -161,8 +199,9 @@ This can happen for two reasons:
 
 This error can happen if you haven't installed Qiskit when running a Qiskit Machine Learning sample on the Azure Quantum notebooks. To solve this issue add a new cell at the top of the notebook and copy: 
 
- ```python
- !pip install qiskit
- !pip install qiskit-machine-learning
- ``` 
+```python
+!pip install qiskit
+!pip install qiskit-machine-learning
+```
  Then click on **Run all** on the top left of the notebook.
+

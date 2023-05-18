@@ -2,15 +2,18 @@
 author: bradben
 description: This article provides a basic guide to managing jobs submitted for solving optimization problems in Azure Quantum using Python.
 ms.author: brbenefield
-ms.date: 08/12/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
+no-loc: [target, targets]
 title: Manage optimization jobs
 uid: microsoft.quantum.optimization.job-management
 ---
 
 # Job management
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 When a problem is submitted to a solver, a `Job` is created in Azure Quantum. The `Workspace` object provides the following methods for managing jobs:
 

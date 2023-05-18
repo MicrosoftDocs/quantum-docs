@@ -6,7 +6,7 @@ ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Update the Quantum Development Kit (QDK)
 uid: microsoft.quantum.update-qdk
 ---
@@ -312,7 +312,7 @@ You can now use the updated IQ# kernel to run your existing Q# Jupyter Notebooks
     From the command prompt:
 
     ```dotnetcli
-    dotnet new -i Microsoft.Quantum.ProjectTemplates
+    dotnet new install Microsoft.Quantum.ProjectTemplates
     ```
 
    Alternatively, if you intend to use the command-line templates, and already have the QDK extension for VS Code installed, you can update the project templates from the extension itself:

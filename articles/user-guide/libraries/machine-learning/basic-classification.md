@@ -6,7 +6,7 @@ ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit, Quantum machine learning]
 title: Basic classification with the Quantum Machine Learning library
 uid: microsoft.quantum.libraries.overview.machine-learning.basics
 ---

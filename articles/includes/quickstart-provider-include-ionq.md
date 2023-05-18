@@ -5,6 +5,7 @@ ms.date: 03/21/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
+no-loc: [target, targets]
 ---
 
 ## Load the required imports

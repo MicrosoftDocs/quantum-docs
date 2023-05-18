@@ -2,15 +2,18 @@
 author: SoniaLopezBravo
 description: This article gives an overview of the valid input formats when submitting optimization problems.
 ms.author: sonialopez
-ms.date: 09/09/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
+no-loc: [target, targets]
 title: Input format for optimization problems
 uid: microsoft.quantum.optimization.input-format
 ---
 
 # Input format for optimization problems
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 This article explains how the parameters to optimization problems may be specified for all the different solvers.
 

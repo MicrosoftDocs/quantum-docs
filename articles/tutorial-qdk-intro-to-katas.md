@@ -6,7 +6,7 @@ ms.date: 08/26/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: resources
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: Introduction to Quantum Katas
 uid: microsoft.quantum.tutorial-qdk.katas
 ---

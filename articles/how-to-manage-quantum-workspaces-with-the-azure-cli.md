@@ -7,6 +7,7 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.custom: devx-track-azurecli
 ms.topic: how-to
+no-loc: [Quantum Development Kit, target, targets]
 title: Manage quantum workspaces with the Azure CLI
 uid: microsoft.quantum.workspaces-cli
 ---

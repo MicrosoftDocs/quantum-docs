@@ -6,6 +6,7 @@ ms.date: 03/01/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
+no-loc: [Basic measurement feedback, target, targets]
 title: Quantinuum provider
 uid: microsoft.quantum.providers.quantinuum
 ---
@@ -37,6 +38,10 @@ Quantinuum's targets correspond to a **Basic Measurement Feedback** profile. For
 All of Quantinuum's targets now support Integrated hybrid circuits. For more information about submitting integrated hybrid jobs, see [Integrated hybrid computing](xref:microsoft.quantum.hybrid.integrated).
 
 To get started using the Quantinuum provider on Azure Quantum, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
+
+> [!TIP]
+> Quantum jobs submitted under a session have **exclusive access** to Quantinuum hardware as long as you queue jobs within one minute from each other. After that, any job will be accepted and handled with the standard queueing and prioritization logic. For more information, see [sessions in Azure Quantum](xref:microsoft.quantum.hybrid.interactive).
+
 
 ## Syntax Checkers
 

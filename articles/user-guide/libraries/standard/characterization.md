@@ -6,7 +6,7 @@ ms.date: 04/05/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', target, targets]
 title: Quantum characterization and statistics
 uid: microsoft.quantum.libraries.overview.characterization
 ---

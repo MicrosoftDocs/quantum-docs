@@ -1,11 +1,12 @@
 ---
 author: SoniaLopezBravo
-description: This document provides a basic guide of what Azure Quantum Credits are, how to use them, and how to review credit balance 
+description: This document provides a basic guide of what Azure Quantum Credits are, how to use them, and how to review credit balance.
 ms.author: sonialopez
-ms.date: 10/19/2022
+ms.date: 05/17/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
+no-loc: [target, targets]
 title: Azure Quantum Credits
 uid: microsoft.quantum.credits
 ---
@@ -58,6 +59,9 @@ If your Azure Quantum credits have expired, or you consumed all and need more, y
 4. See the consumed and the remaining credits for each selected provider. Credits are expressed in US dollars. 
 
  :::image type="content" source="media/portal-credits-blade.png" alt-text="Screenshot of the credits blade in Azure portal.":::
+ 
+ > [!NOTE]
+> When using Azure Quantum Credits, the cost estimation in the **Job Management** blade within your Azure Quantum workspace is equal to $0. In this case, the estimated cost isn't reflected in the Job details because there’s no effective charge against your Azure bill.
  
 ### [Using the Azure CLI](#tab/tabid-cli)
 

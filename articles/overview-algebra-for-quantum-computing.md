@@ -6,7 +6,7 @@ ms.date: 10/10/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: Linear algebra for quantum computing
 uid: microsoft.quantum.overview.algebra
 ---

@@ -52,7 +52,8 @@
       "uhfHeaderId": "azure",
       "breadcrumb_path": "/azure/quantum/breadcrumb/toc.json",
       "extendBreadcrumb": true,
-      "zone_pivot_group_filename": "/quantum/zone-pivot-groups.json"
+      "zone_pivot_group_filename": "/quantum/zone-pivot-groups.json",
+      "no-loc": "Quantum Approximate Optimization Algorithm"
     },
     "fileMetadata": {
       "latex_macros": {

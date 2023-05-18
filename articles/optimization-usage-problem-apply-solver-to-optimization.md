@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides a basic guide to applying a optimization solver in Azure Quantum using Python.
 ms.author: brbenefield
-ms.date: 10/25/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: conceptual
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.apply-solver
 ---
 
 # Apply solvers to solve optimization problems
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 Once you have [expressed an optimization `Problem`](xref:microsoft.quantum.optimization.express-problem), you're ready to solve it by applying a **solver**. 
 

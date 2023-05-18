@@ -6,7 +6,7 @@ ms.date: 10/28/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: contributor-guide
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: Reporting bugs
 uid: microsoft.quantum.contributing-qdk.overview.reporting
 ---

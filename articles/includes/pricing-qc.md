@@ -5,6 +5,7 @@ ms.date: 03/23/0223
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
+no-loc: [target, targets]
 ---
 
 ## IonQ 

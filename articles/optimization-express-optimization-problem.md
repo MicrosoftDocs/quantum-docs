@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides a basic guide to express an optimization problem that could be later used with a solver in Azure Quantum.
 ms.author: brbenefield
-ms.date: 10/25/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.express-problem
 ---
 
 # Express an optimization problem
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 To express a problem to be solved, create an instance of a `Problem` and set the `problem_type`
 to one of `ProblemType.ising`, `ProblemType.pubo`, or their grouped analogues,

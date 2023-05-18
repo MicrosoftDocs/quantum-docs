@@ -1,13 +1,13 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 03/15/2023
+ms.date: 03/28/2023
 author: SoniaLopezBravo
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit, Quantum machine learning, Quantum Intermediate Representation, Basic measurement feedback, target, targets]
 uid: microsoft.quantum.relnotes-qdk
 ---
 
@@ -17,13 +17,23 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
+## 2023-03-29
+
+### QDK version 0.28.263081
+
+- Added [Q# Azure Quantum Resource Estimator API](/azure/quantum/how-to-work-with-re#how-to-handle-large-programs) to aid with estimation of large programs.
+- In the azure-quantum package, we simplified the experience to submit QIR jobs to the resource estimator.
+- In the azure-quantum package, the Qiskit provider object now provides a list of backends and ability to filter and acquire backends.
+- Fixed the hard-coded tolerance in [AssertOperationsEqualInPlace](/qsharp/api/qsharp/microsoft.quantum.diagnostics.assertoperationsequalinplace) and added a call to reset all auxiliary qubits at the end of their scope. Fixes [microsoft/qsharp-runtime#1129](https://github.com/microsoft/qsharp-runtime/issues/1129).
+- The local Resources Estimator has been removed. [The Azure Quantum Resource Estimator](/azure/quantum/intro-to-resource-estimation) is now available through Azure Quantum.
+
 ## 2023-03-01
 
 ### QDK version 0.27.258160
 
 - In Q# Jupyter notebooks, fixed an issue where `%azure.connect` would take several minutes before succeeding in certain environments. See [microsoft/Quantum#762](https://github.com/microsoft/Quantum/issues/762) for more details.
 - Removed support for Rigetti Aspen-11 Quantum Processor due to deprecation. For other targets available, see the [Rigetti provider](/azure/quantum/provider-rigetti?tabs=tabid-pyquil) documentation.
-- Added a warning that the [local Resources Estimator](/azure/quantum/machines/resources-estimator) will be removed in March 2023. The Resources Estimator is now available through [Azure Quantum](/azure/quantum/intro-to-resource-estimation).
+- Added a warning that the [local Resources Estimator](/azure/quantum/machines/resources-estimator) will be removed in March 2023. The Azure Quantum Resource Estimator is now available through [Azure Quantum](/azure/quantum/intro-to-resource-estimation).
 
 ## 2023-01-31
 
@@ -759,7 +769,7 @@ With this change, programs that include a single "open" statement for the namesp
 
 We added a [sample of using Q# with F# driver](https://github.com/Microsoft/Quantum/pull/164).  
 
-**"Thank you!"** to the following contributor to our open code base at http://github.com/Microsoft/Quantum. These contributions add to the rich samples of Q# code:
+**"Thank you!"** to the following contributor to our open code base at https://github.com/Microsoft/Quantum. These contributions add to the rich samples of Q# code:
 
 - Mathias Soeken ([@msoeken](https://github.com/msoeken)): Oracle function synthesis. [PR #135](https://github.com/Microsoft/Quantum/pull/135).
 
@@ -892,7 +902,7 @@ This release includes bug fixes and features for issues reported by the communit
 
 #### Community contributions
 
-**"Thank you!"** to the following contributors to our open code base at http://github.com/Microsoft/Quantum. These contributions add to the rich samples of Q# code:
+**"Thank you!"** to the following contributors to our open code base at https://github.com/Microsoft/Quantum. These contributions add to the rich samples of Q# code:
 
 - Rolf Huisman ([@RolfHuisman](https://github.com/RolfHuisman)): Improved the experience for QASM/Q# developers by creating a QASM to Q# translator. [PR #58](https://github.com/Microsoft/Quantum/pull/58).
 
@@ -937,7 +947,7 @@ Learn more about [Testing and Debugging](xref:microsoft.quantum.user-guide-qdk.o
 
 #### Community contributions
 
-The Q# coder community is growing and we're thrilled to see the first user contributed libraries and samples that were submitted to our open code base at http://github.com/Microsoft/quantum.  **A big "Thank you!"** to the following contributors:
+The Q# coder community is growing and we're thrilled to see the first user contributed libraries and samples that were submitted to our open code base at https://github.com/Microsoft/quantum.  **A big "Thank you!"** to the following contributors:
 - Mathias Soeken ([@msoeken](https://github.com/msoeken)):  contributed a sample defining a transformation-based logic synthesis method that constructs Toffoli networks to implement a given permutation. The code is written entirely in Q# functions and operations.  [PR #41](https://github.com/Microsoft/Quantum/pull/41).
 - RolfHuisman ([@RolfHuisman](https://github.com/RolfHuisman)): Microsoft MVP Rolf Huisman contributed a sample that generates flat QASM code from Q# code for a restricted class of programs that don't have classical control flow and restricted quantum operations. [PR #59](https://github.com/Microsoft/Quantum/pull/59)
 - Sarah Kasier ([@crazy4pi314](https://github.com/crazy4pi314)): helped to improve our code base by submitting a library function for controlled operations. [PR #53](https://github.com/Microsoft/Quantum/pull/53)

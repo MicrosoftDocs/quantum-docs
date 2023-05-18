@@ -2,7 +2,7 @@
 author: bradben
 description: Reference for azure.quantum.optimization.SlcTerm
 ms.author: brbenefield
-ms.date: 06/09/2022
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.slc-term
 ---
 
 # Azure Quantum Optimization squared linear combination terms
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 ## SlcTerm
 

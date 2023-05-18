@@ -3,12 +3,14 @@ title: Population Annealing
 description: This document provides a basic guide about how to use the Population Annealing solver in Azure Quantum.
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 05/25/2021
+ms.date: 05/01/2023
 ms.topic: article
 uid: microsoft.quantum.optimization.population-annealing
 ---
 
 # Population Annealing
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 
 [Population Annealing](https://arxiv.org/abs/1006.0252) is a sequential Monte

@@ -41,6 +41,8 @@
       href: learn-how-the-resource-estimator-works.md
     - name: Get the most out of the Resource Estimator
       href: how-to-work-with-re.md
+    - name: Resource Estimation for double-factorized chemistry
+      href: tutorial-resource-estimator-chemistry.md
     - name: Resource Estimation with QIR
       href: tutorial-resource-estimator-qir.md
   - name: Quantum Machine Learning
@@ -52,7 +54,11 @@
     - name: Batch hybrid QC
       href: hybrid-computing-batch.md
     - name: Interactive hybrid QC
-      href: hybrid-computing-interactive.md
+      items:
+      - name: Get started with sessions
+        href: hybrid-computing-interactive.md
+      - name: Manage sessions
+        href: how-to-work-with-sessions.md    
     - name: Integrated hybrid QC
       href: hybrid-computing-integrated.md
     - name: Distributed hybrid QC

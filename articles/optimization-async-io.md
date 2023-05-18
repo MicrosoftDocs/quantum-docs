@@ -2,15 +2,18 @@
 author: bradben
 description: Learn how to solve a batch of problems using Azure Quantum and the Python asyncio library.
 ms.author: brbenefield
-ms.date: 10/21/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
+no-loc: [target, targets]
 title: Solve a batch of problems using asyncio
 uid: microsoft.quantum.optimization.async-io
 ---
 
 # Solve a batch of optimization problems using asyncio
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 Learn how to solve a batch of optimization problems using Azure Quantum and the Python asyncio library.
 
