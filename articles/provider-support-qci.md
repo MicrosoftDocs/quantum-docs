@@ -1,5 +1,5 @@
 ---
-author: bradben
+author: sonialopezbravo
 ms.author: brbenefield
 description: This document provides details on the support policy for the CI provider in Azure Quantum
 ms.date: 05/18/0223

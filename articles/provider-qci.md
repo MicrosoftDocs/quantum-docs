@@ -1,5 +1,5 @@
 ---
-author: bradben
+author: sonialopezbravo
 ms.author: brbenefield
 description: This document provides the technical details of the QCI provider 
 ms.date: 05/18/0223
