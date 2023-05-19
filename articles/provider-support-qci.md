@@ -1,8 +1,8 @@
 ---
-author: qci-author
+author: bradben
 ms.author: brbenefield
 description: This document provides details on the support policy for the CI provider in Azure Quantum
-ms.date: 03/23/2023
+ms.date: 05/18/0223
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference

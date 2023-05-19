@@ -1,8 +1,8 @@
 ---
-author: qci-author
+author: bradben
 ms.author: brbenefield
 description: This document provides the technical details of the QCI provider 
-ms.date: 03/23/2023
+ms.date: 05/18/0223
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -46,7 +46,7 @@ The QCI provider makes the following targets available:
 
 ## Pricing
 
-To see the QCI billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#qci).
+For QCI billing plans, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#qci).
 
 ## Misc other information as applicable
 

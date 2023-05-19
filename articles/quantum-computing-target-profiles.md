@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: This document provides an overview of target profile types in Azure Quantum and their limitations
-ms.date: 05/08/2023
+ms.date: 05/18/0223
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -14,8 +14,6 @@ uid: microsoft.quantum.target-profiles
 # Target profile types in Azure Quantum
 
 This article discusses the different type of target profile types available in the quantum computing providers in Azure Quantum. At this time, because of the early development stage of the field, quantum devices have some limitations and requirements for programs that run on them.
-
-[!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)] 
 
 ## Quantum Processing Units (QPU): different profiles and their limitations 
 
@@ -63,7 +61,7 @@ to control the computation flow with an `if` statement. This will be applicable 
 > Currently, you can't submit quantum programs that apply operations on qubits that have been measured in No Control Flow targets, even
 > if you don't use the results to control the program flow. That is, No Control Flow targets don't allow mid-circuit measurements.
 >
-> For example, the following code can **not** be run on a No Control Flow target:
+> For example, the following code **cannot** be run on a No Control Flow target:
 > ```qsharp
 > operation MeasureQubit(q : Qubit) : Result { 
 >    return M(q); 
@@ -81,6 +79,10 @@ Presently, these No Control Flow targets are available for Azure Quantum:
   - [IonQ simulator](xref:microsoft.quantum.providers.ionq#quantum-simulator) (`ionq.simulator`)
   - [IonQ QPU](xref:microsoft.quantum.providers.ionq##quantum-computer) (`ionq.qpu`)
 
+- **Provider:** QCI
+  - [QCI Simulator](xref:microsoft.quantum.providers.qci#simulators) (`qci.sim.*`)
+  - [QCI QPU](xref:microsoft.quantum.providers.qci#quantum-computers) (`qci.qpu.*`)
+
 - **Provider:** Rigetti
   - [Rigetti Simulator](xref:microsoft.quantum.providers.rigetti#simulators) (`rigetti.sim.*`)
   - [Rigetti QPU](xref:microsoft.quantum.providers.rigetti#quantum-computers) (`rigetti.qpu.*`)
@@ -94,6 +96,7 @@ Basic Measurement Feedback profile targets allow measurement-based conditional o
 In Q# when measuring a qubit, a value of type `Result` is returned. If you want to use this result in a conditional statement, you have to directly compare in the conditional statement. The corresponding conditional blocks may not contain `return` or `set` statements. 
 
 For example, the following Q# code would be allowed in a Basic Measurement Feedback target:
+
 ```qsharp
 operation MeasureQubit(q : Qubit) : Result { 
     return M(q); 
@@ -116,7 +119,7 @@ operation SetToZeroUsingBeOne(q : Qubit) : Unit {
 }
 ```
 
-The `SetQubitState `operation in [No Control Flow target profile](#create-and-run-applications-for-no-control-flow-profile-targets) can be used in a Basic Measurement Feedback target as long as you don't include any `return` or `set` statement within the `if` statement. This will be applicable to any type of [conditional branching](xref:microsoft.quantum.qsharp.conditionalbranching), such as `elif` and `else` statements.  For example, the following operation can **not** be used in a Basic Measurement Feedback target:
+The `SetQubitState` operation in [No Control Flow target profile](#create-and-run-applications-for-no-control-flow-profile-targets) can be used in a Basic Measurement Feedback target as long as you don't include any `return` or `set` statement within the `if` statement. This will be applicable to any type of [conditional branching](xref:microsoft.quantum.qsharp.conditionalbranching), such as `elif` and `else` statements.  For example, the following operation can **not** be used in a Basic Measurement Feedback target:
 
 ```qsharp
     operation SetQubitState(desired : Result, q : Qubit) : Result {

@@ -1,7 +1,7 @@
 ---
 author: sonialopezbravo
 ms.author: sonialopez
-ms.date: 03/23/0223
+ms.date: 05/18/0223
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -78,6 +78,33 @@ Minimum of $1 (USD) per program execution.
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ***
+
+
+<!-- QCI PRICING  -->
+
+## QCI
+
+<----DESCRIPTION OF QCI PRICING POLICY---->
+
+To learn more about QCI, visit the [QCI provider page](xref:microsoft.quantum.providers.qci).
+
+All new Azure customers benefit from $500 (USD) in free credits towards the QCI provider. 
+
+### [Azure Quantum Credits](#tab/tabid-AQcreditsQCI)
+
+Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
+
+|Pricing | <----USAGE POLICY AND RATE-----> |
+|---|---|  
+|Includes access to | <----TARGETS-----> |
+
+
+### [OPTIONAL PLAN](#tab/tabid-OPTIONAL-PLAN)
+
+
+***
+
+<!----------->
 
 ## Quantinuum
 
@@ -174,6 +201,4 @@ The Pay-as-you-go plan consists of *a la carte* access to the Aspen-M-3 and Aspe
 |  | $0.02 (USD) per 10-millisecond increment of job execution time|
 ***
 
-## QCI
 
-TBD
