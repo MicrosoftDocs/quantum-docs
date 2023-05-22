@@ -176,7 +176,7 @@ A set of three 2 x 2 unitary matrices known as the `X`, `Y` and `Z` quantum oper
 
 A component in Azure Quantum that provides the ability to run [jobs](#job) on selected [targets](#target-machine). Providers include Microsoft and a variety of third-party partners.
 
-## Quantum approximate optimization algorithm (QAOA)
+## Quantum Approximate Optimization Algorithm (QAOA)
 
 A variational quantum algorithm used for finding approximate solutions to combinatorial optimization problems - problems where the number of possible solutions grows extremely large with the size of the problem.
 
@@ -256,6 +256,6 @@ An operator whose inverse is equal to its [adjoint](xref:microsoft.quantum.gloss
 
 A custom type that may contain one or more named or anonymous items. For more information, see  [Type declarations](xref:microsoft.quantum.qsharp.typedeclarations).
 
-## Variational quantum eigensolver (VQE)
+## Variational Quantum Eigensolver (VQE)
 
 A [hybrid quantum](#hybrid-quantum-computing) algorithm that is used to find the ground state of a given physical system. It uses a classical program to modify and refine quantum circuit parameters based on the results of previous measurements. 

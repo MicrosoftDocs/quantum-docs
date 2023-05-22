@@ -359,7 +359,7 @@ It leverages integrated hybrid computing features to count the number of times e
 
 ### [Iterative phase estimation](#tab/tabid-qml)
 
-*This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/about/alliances/microsoft/kpmg-and-microsoft-azure-quantum.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of Basic Measurement Feedback targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.*
+*This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/about/alliances/microsoft/kpmg-and-microsoft-azure-quantum.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of B:::no-loc text="Basic Measurement Feedback"::: targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.*
 
 ## Two dimensional inner product calculation using iterative phase estimation on three qubits
 
@@ -668,7 +668,7 @@ az quantum job submit --target-id quantinuum.sim.h1-1e --target-capability Adapt
 ```
 
 > [!NOTE]
-> The specified target requires a target execution profile that supports [basic measurement feedback](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
+> The specified target requires a target execution profile that supports [:::no-loc text="Basic Measurement Feedback":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
 
 > [!IMPORTANT]
 > It is not recommended to increase the value of `Measurements` beyond **3** when running on Azure targets as the EHQCs can increase significantly.
