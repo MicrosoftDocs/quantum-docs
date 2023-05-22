@@ -24,7 +24,7 @@ quantum algorithms. It's the central component of a quantum computer or quantum 
 
 Quantum devices are still an emerging technology, and not all of them can run all Q# code. As such, you need to keep some restrictions in mind when developing programs for different targets. Currently, Azure Quantum and the QDK manage three different profiles for QPUs:
 
-- [**:::no-loc text="Full":::**](#create-and-run-applications-for-full-profile-targets): This profile can run any Q# program within the limits of memory for simulators or the number of qubits for physical quantum computers.
+- [**:::no-loc text="Full":::**](#create-and-run-applications-for--profile-targets): This profile can run any Q# program within the limits of memory for simulators or the number of qubits for physical quantum computers.
 - [**:::no-loc text="No Control Flow":::**](#create-and-run-applications-for-no-control-flow-profile-targets): This profile can run any Q# program that doesn't require the use of the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, values of type `Result` don't support equality comparison.
 - [**:::no-loc text="Basic Measurement Feedback":::**](#create-and-run-applications-for-basic-measurement-feedback-profile-targets): This profile has limited ability to use the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, you can compare values of type `Result` as part of conditions within `if` statements in operations, allowing mid-circuit measurement. The corresponding conditional blocks might not contain `return` or `set` statements.
 
