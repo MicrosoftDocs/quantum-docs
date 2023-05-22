@@ -23,7 +23,7 @@ Therefore, the Resource Estimator takes a set of inputs, with pre-defined values
 - A [physical qubit model](#physical-qubit-parameters), `qubitParams`, which are the properties of the underlying physical qubits.
 - A [Quantum Error Correction (QEC) scheme](#quantum-error-correction-schemes), `qecScheme`, which is the assumed quantum error correction scheme.
 - An [error budget](#error-budget), `errorBudget`, which is the overall allowed error, that is, the number of times the program is allowed to unsuccess.
-- [Constraints](#constrains) on the component-level, `constraints`, which are the number of logical cycles and the number of T factory copies.
+- [Constraints](#constraints) on the component-level, `constraints`, which are the number of logical cycles and the number of T factory copies.
 
 ### Physical qubit parameters
 
