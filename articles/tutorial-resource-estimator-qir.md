@@ -13,7 +13,7 @@ uid: microsoft.quantum.tutorial.resource-estimator.qir
 
 # Tutorial: Submit a QIR program to the Azure Quantum Resource Estimator
 
-The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator) is build on [Quantum intermediate representation (QIR)](xref:microsoft.quantum.concepts.qir), the forward-looking, fully interoperable specification for quantum programs. QIR serves as a common interface between quantum programming languages and frameworks, and targeted quantum computation platforms. Because the Resource Estimator takes a QIR program as input, it supports any language that translates to QIR. For example, it can be used by popular quantum SDKs and languages such as Q# and Qiskit.  
+The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator) is build on [Quantum Intermediate Representation (QIR)](xref:microsoft.quantum.concepts.qir), the forward-looking, fully interoperable specification for quantum programs. QIR serves as a common interface between quantum programming languages and frameworks, and targeted quantum computation platforms. Because the Resource Estimator takes a QIR program as input, it supports any language that translates to QIR. For example, it can be used by popular quantum SDKs and languages such as Q# and Qiskit.  
 
 This tutorial shows how to write and submit a QIR program to the Resource Estimator. This tutorial uses [PyQIR](https://github.com/qir-alliance/pyqir) to generate QIR, however, you can use any other source of QIR.
 

@@ -121,7 +121,7 @@
         href: concepts-open-systems.md
       - name: Theory of Grover's algorithm
         href: concepts-grovers.md
-      - name: Quantum intermediate representation
+      - name: Quantum Intermediate Representation
         href: concepts-qir.md
   - name: Troubleshooting
     items:

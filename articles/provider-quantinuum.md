@@ -33,7 +33,7 @@ The following targets are available from this provider:
 |[H1-1](#system-model-h1)| quantinuum.qpu.h1-1 | 20 qubits| Yes | Quantinuum's H1-1 trapped ion device.|
 |[H1-2](#system-model-h1)| quantinuum.qpu.h1-2 |12 qubits| Yes | Quantinuum's H1-2 trapped ion device.|
 
-Quantinuum's targets correspond to a **Basic Measurement Feedback** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
+Quantinuum's targets correspond to a **:::no-loc text="Basic Measurement Feedback":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
 
 All of Quantinuum's targets now support Integrated hybrid circuits. For more information about submitting integrated hybrid jobs, see [Integrated hybrid computing](xref:microsoft.quantum.hybrid.integrated).
 
@@ -52,7 +52,7 @@ We recommend that users first validate their code using a Syntax Checker. This i
 - Target ID:
   - H1-1 Syntax Checker: `quantinuum.sim.h1-1sc`
   - H1-2 Syntax Checker: `quantinuum.sim.h1-2sc`
-- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
+- Target Execution Profile: [:::no-loc text="Basic Measurement Feedback":::](xref:microsoft.quantum.target-profiles)
 
 Syntax Checkers usage is offered free-of-charge.
 
@@ -67,7 +67,7 @@ More information can be found in the *System Model H1 Emulator Product Data Shee
 - Target ID: 
   - H1-1 Emulator: `quantinuum.sim.h1-1e` 
   - H1-2 Emulator: `quantinuum.sim.h1-2e`
-- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
+- Target Execution Profile: [:::no-loc text="Basic Measurement Feedback":::](xref:microsoft.quantum.target-profiles)
 
 System Model H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
@@ -84,7 +84,7 @@ More information can be found in the *System Model H1 Product Data Sheet* found 
 - Target ID:
   - H1-1: `quantinuum.qpu.h1-1`
   - H1-2: `quantinuum.qpu.h1-2`
-- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
+- Target Execution Profile: [:::no-loc text="Basic Measurement Feedback":::](xref:microsoft.quantum.target-profiles)
 
 ## Additional Capabilities
 
