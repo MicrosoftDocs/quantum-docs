@@ -23,7 +23,6 @@ where:
 - $N$ is the number of one- or two-qubit gates submitted
 - $C$ is the number of execution shots requested
 
-
 Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with three controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. One-qubit gates are billed as 0.225 of a two-qubit gate (rounded down). To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
 
 
@@ -78,33 +77,6 @@ Minimum of $1 (USD) per program execution.
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ***
-
-
-<!-- QCI PRICING  -->
-
-## QCI
-
-<----DESCRIPTION OF QCI PRICING POLICY---->
-
-To learn more about QCI, visit the [QCI provider page](xref:microsoft.quantum.providers.qci).
-
-All new Azure customers benefit from $500 (USD) in free credits towards the QCI provider. 
-
-### [Azure Quantum Credits](#tab/tabid-AQcreditsQCI)
-
-Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
-
-|Pricing | <----USAGE POLICY AND RATE-----> |
-|---|---|  
-|Includes access to | <----TARGETS-----> |
-
-
-### [OPTIONAL PLAN](#tab/tabid-OPTIONAL-PLAN)
-
-
-***
-
-<!----------->
 
 ## Quantinuum
 

@@ -79,10 +79,6 @@ Presently, these :::no-loc text="No Control Flow"::: targets are available for A
   - [IonQ simulator](xref:microsoft.quantum.providers.ionq#quantum-simulator) (`ionq.simulator`)
   - [IonQ QPU](xref:microsoft.quantum.providers.ionq##quantum-computer) (`ionq.qpu`)
 
-- **Provider:** QCI
-  - [QCI Simulator](xref:microsoft.quantum.providers.qci#simulators) (`qci.sim.*`)
-  - [QCI QPU](xref:microsoft.quantum.providers.qci#quantum-computers) (`qci.qpu.*`)
-
 - **Provider:** Rigetti
   - [Rigetti Simulator](xref:microsoft.quantum.providers.rigetti#simulators) (`rigetti.sim.*`)
   - [Rigetti QPU](xref:microsoft.quantum.providers.rigetti#quantum-computers) (`rigetti.qpu.*`)
@@ -135,3 +131,6 @@ Presently, these :::no-loc text="Basic Measurement Feedback"::: targets are avai
 
 - **Provider:** Quantinuum
   - [Quantinuum System Model H1-1 and H1-2](xref:microsoft.quantum.providers.quantinuum#system-model-h1) (`quantinuum.qpu.h1-1`, `quantinuum.qpu.h1-2`)
+
+- **Provider:** Quantum Circuits, Inc. (QCI)
+  - [QCI Simulator](xref:microsoft.quantum.providers.quantinuum) (`qci.simulator`)  <!-- link TBD -->
