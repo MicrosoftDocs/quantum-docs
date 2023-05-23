@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand the architecture and implementation of integrated hybrid quantum computing.
-ms.date: 03/17/2023
+ms.date: 05/23/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -22,9 +22,19 @@ For more discussion, see:
 
 ![Integrated hybrid quantum computing](~/media/hybrid/integrated.png)
 
-## Supported hardware
+## Supported providers
 
-Currently, the integrated hybrid computing model in Azure Quantum is supported on [Quantinuum](xref:microsoft.quantum.providers.quantinuum) targets.
+Currently, the integrated hybrid computing model in Azure Quantum is supported on [Quantum Circuits Inc. (QCI)](xref:microsoft.quantum.providers.quantinuum) and [Quantinuum](xref:microsoft.quantum.providers.quantinuum) targets.
+
+### Quantum Circuits Inc. (QCI)
+
+|Supported feature| Notes |
+|---|---|
+| TBD | TBD |
+| TBD | TBD |
+| TBD | TBD |
+| TBD | TBD |
+| TBD | TBD |
 
 ### Quantinuum
 
@@ -38,7 +48,7 @@ Currently, the integrated hybrid computing model in Azure Quantum is supported o
 
 ## Get started
 
-To start exploring integrated hybrid programming, we suggest walking through the [samples](#integrated-hybrid-samples) in this article, or explore the **Hybrid quantum computing** tab in the Samples gallery of the Azure Quantum portal.
+To start exploring integrated hybrid programming, we suggest walking through the [samples](#integrated-hybrid-samples) in this article, or explore the **Hybrid quantum computing** tab in the **Samples** gallery of the Azure Quantum portal.
 
 ## Submitting integrated hybrid jobs
 
@@ -46,16 +56,16 @@ When submitting an integrated hybrid job, you need to add a *target capability* 
 
 ### IQ\#
 
-When using the IQ# kernel in a Jupyter Notebook, use the [%azure.target-capability](xref:microsoft.quantum.iqsharp.magic-ref.azure.target-capability) magic command with the `AdaptiveExecution` parameter.
+When using the IQ# kernel in a Jupyter Notebook, use the [%azure.target-capability](xref:microsoft.quantum.iqsharp.magic-ref.azure.target-capability) magic command with the `AdaptiveExecution` parameter, for example
 
 ```qsharp
-%azure.target quantinuum.sim.h1-1e
+%azure.target qci.simulator
 %azure.target-capability AdaptiveExecution
 ```
 
 ### Python + Q\#
 
-When using the *qsharp* Python package, use the `qsharp.azure.target_capability` function with the `AdaptiveExecution` parameter.
+When using the *qsharp* Python package, use the `qsharp.azure.target_capability` function with the `AdaptiveExecution` parameter, for example
 
 ```python
 qsharp.azure.target("quantinuum.sim.h1-1e")
@@ -64,10 +74,10 @@ qsharp.azure.target_capability("AdaptiveExecution")
 
 ### Azure CLI
 
-When using the Azure CLI to submit a job, add the `--target-capability` parameter with the value `AdaptiveExecution`.
+When using the Azure CLI to submit a job, add the `--target-capability` parameter with the value `AdaptiveExecution`, for example
 
 ```azurecli
-az quantum job submit --target-capability AdaptiveExecution --target-id quantinuum.sim.h1-1e --job-name IterativePhaseEstimation --shots 100 --output table
+az quantum job submit --target-capability AdaptiveExecution --target-id qci.simulator --job-name IterativePhaseEstimation --shots 100 --output table
 ```
 
 ### Submitting integrated hybrid jobs within a session
@@ -84,11 +94,17 @@ with target.open_session(name="Q# session") as session:
 For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
 
 > [!NOTE]
-> Although sessions are available for all quantum computing hardware providers, notice that integrated hybrid quantum computing jobs are currently supported on Quantinuum targets. 
+> Although sessions are available for all quantum computing hardware providers, note that integrated hybrid quantum computing jobs are currently supported on QCI and Quantinuum targets only.
 
 ## Estimating the cost of an integrated hybrid job
 
-You can estimate the cost of running an integrated hybrid job on Quantinuum hardware by running it on an emulator first.
+### [QCI](#tab/tabid-qci-cost)
+
+Currently, integrated hybrid jobs can be run free of charge on the QCI simulator.
+
+### [Quantinuum](#tab/tabid-qunatinuum-cost)
+
+To estimate the cost of running an integrated hybrid job on Quantinuum hardware, you should run it on an emulator first.
 
 After a successful run on the emulator:
 
@@ -100,6 +116,8 @@ After a successful run on the emulator:
 
 > [!NOTE]
 > Quantinuum unrolls the entire circuit and calculates the cost on all code paths, whether they are conditionally executed or not.
+
+***
 
 ## Integrated hybrid samples
 
@@ -130,12 +148,13 @@ Features to note about this sample:
 - The routine mixes classical and quantum compute operations.
 - You do not need to learn to program for specialized high-performance hardware running next to the QPU (such as FPGAs).
 - Running an equivalent program without the integrated hybrid features would require returning every intermediate measurement result and then running post-processing on the data.
+- This example uses a Quantinuum target, but you can also run it on the QCI simulator. 
 
 ### Create a VS Code project
 
 1. In VS Code, create a new Q# standalone console application project named **CheckGHZ**.
     1. Select **View > Command Pallete > Q#: Create new project > Standalone console application**
-1. Replace the configuration in **CheckGHZ.csproj** with the following:
+1. Replace the configuration in **CheckGHZ.csproj** with the following, using either *qci* or *quantinuum* for the \<ExecutionTarget\>. 
 
     ```xml
     <Project Sdk="Microsoft.Quantum.Sdk/0.27.258160">
@@ -196,7 +215,7 @@ Features to note about this sample:
     az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
     ```
 
-1. Submit the job and view the results. This run uses approximately 10.65 eHQC's (Quantinuum emulator billing units)
+1. Submit the job and view the results. If you are using a Quantinuum target, this run uses approximately 10.65 eHQC's (Quantinuum emulator billing units). There is no charge for using the QCI simulator. 
 
     ```azurecli
     az quantum job submit --target-id quantinuum.sim.h1-1e --job-name CheckGHZ --target-capability AdaptiveExecution --shots 50
@@ -212,11 +231,13 @@ This sample demonstrates how to create a 3-qubit repetition code that can be use
 
 It leverages integrated hybrid computing features to count the number of times error correction was performed while the state of a logical qubit register is coherent.
 
+This example uses the QCI simulator, but you can also run it on Quantinuum targets. 
+
 ### Create a VS Code project
 
 1. In VS Code, create a new Q# standalone console application project named **ThreeQubit**.
     1. Select **View > Command Pallete > Q#: Create new project > Standalone console application**
-1. Replace the configuration in **ThreeQubit.csproj** with the following:
+1. Replace the configuration in **ThreeQubit.csproj** with the following, using either *qci* or *quantinuum* for the \<ExecutionTarget\>.
 
     ```xml
     <Project Sdk="Microsoft.Quantum.Sdk/0.27.258160">
@@ -224,7 +245,7 @@ It leverages integrated hybrid computing features to count the number of times e
       <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
-        <ExecutionTarget>quantinuum</ExecutionTarget>
+        <ExecutionTarget>qci</ExecutionTarget>
         <TargetCapability>AdaptiveExecution</TargetCapability>
       </PropertyGroup>
 
@@ -349,10 +370,10 @@ It leverages integrated hybrid computing features to count the number of times e
     az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
     ```
 
-1. Submit the job and view the results. This run uses approximately 11.31 eHQC's (Quantinuum emulator billing units)
+1. Submit the job and view the results. There is no cost to run the job on the QCI simulator. If you are using Quantinuum targets, this run uses approximately 11.31 eHQC's (Quantinuum emulator billing units).
 
     ```azurecli
-    az quantum job submit --target-id quantinuum.sim.h1-1e --job-name ErrorCorrection --target-capability AdaptiveExecution --shots 50
+    az quantum job submit --target-id qci.simulator --job-name ErrorCorrection --target-capability AdaptiveExecution --shots 50
 
     az quantum job output -o table --job-id [job-id]
     ```
@@ -367,11 +388,13 @@ This sample program demonstrates an iterative phase estimation within Q#. It use
 
 The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit, which is set up in the $\ket +$ state. The controlled Oracle operator generates a phase on the $\ket 1$ state of the control qubit. This can then be read by applying an H gate to the control qubit to make the phase observable when measuring.
 
+This example uses a Quantinuum targets, but you can also run it on the QCI simulator. 
+
 ### Create a VS Code project
 
 1. In VS Code, create a new Q# standalone console application project named **IPE**.
     1. Select **View > Command Pallete > Q#: Create new project > Standalone console application**
-1. Replace the configuration in **IPE.csproj** with the following:
+1. Replace the configuration in **IPE.csproj** with the following, using either *qci* or *quantinuum* for the \<ExecutionTarget\>.
 
     ```xml
     <Project Sdk="Microsoft.Quantum.Sdk/0.27.253010">
@@ -379,7 +402,7 @@ The circuit begins by encoding the pair of vectors on the target qubit and the a
       <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
-        <ExecutionTarget>quantinuum.sim.h1-1e</ExecutionTarget>
+        <ExecutionTarget>quantinuum</ExecutionTarget>
       </PropertyGroup>
 
     </Project>
