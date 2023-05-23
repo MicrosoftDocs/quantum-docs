@@ -1,5 +1,5 @@
 ---
-author: bradben
+author: sonialopezbravo
 description: Understand the architecture and implementation of integrated hybrid quantum computing.
 ms.date: 05/23/2023
 ms.author: brbenefield
