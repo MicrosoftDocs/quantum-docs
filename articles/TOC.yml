@@ -127,7 +127,7 @@
       href: qs-compiler-messages/toc.yml
   - name: Quantum simulators
     href: machines/toc.yml
-  - name: Quantum hardware providers
+  - name: Quantum providers
     items:
     - name: Quantum computing providers
       href: qc-target-list.md
