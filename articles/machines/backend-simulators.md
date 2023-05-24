@@ -13,7 +13,7 @@ uid: microsoft.quantum.machines.overview.backend-simulators
 
 # Backend quantum simulators
 
-Backend simulators are provided by ...
+Backend quantum simulators are provided by third-party Microsoft partners as part of the Azure Quantum service, and represent the state-of-the-art of quantum processing. 
 
 ## IonQ
 
