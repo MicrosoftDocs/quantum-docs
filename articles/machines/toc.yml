@@ -1,13 +1,25 @@
 - name: Quantum simulators
   href: index.md
-- name: Full state simulator
-  href: full-state-simulator.md
-- name: Sparse simulator
-  href: sparse-simulator.md
-- name: Noise simulator
-  href: noise-simulator.md
-- name: Trace simulator
-  topicHref: qc-trace-simulator/index.md
-  href: qc-trace-simulator/toc.yml
-- name: Toffoli simulator
-  href: toffoli-simulator.md
+- name: IonQ 
+- href: ionq-simulator.md
+- name: Microsoft
+  items: 
+  - name: Full state simulator
+    href: full-state-simulator.md
+  - name: Sparse simulator
+    href: sparse-simulator.md
+  - name: Noise simulator
+    href: noise-simulator.md
+  - name: Trace simulator
+    topicHref: qc-trace-simulator/index.md
+    href: qc-trace-simulator/toc.yml
+  - name: Toffoli simulator
+    href: toffoli-simulator.md
+- name: QCI 
+- href: qci-simulator.md
+- name: Quantinuum 
+- href: quantinuum-simulator.md
+- name: Rigetti 
+- href: rigetti-simulator.md
+
+
