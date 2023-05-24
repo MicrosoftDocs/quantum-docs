@@ -23,16 +23,14 @@ The QCI provider makes the following target available:
 
 |Target name| Target ID|Number of qubits | Description |
 |---|---|---|---|
-|[SIMULATORS](#simulators) | `qci.simulator` | # of qubits | description |
+|[QCI simulator](#simulators) | `qci.simulator` | # of qubits | description |
 
 ## Simulators
 
-<!-- SEE EXISTING PROVIDER DOCS FOR EXAMPLES -->
-
-- Job Type:
-- Data Format:
-- Target ID:
-- Target Execution Profile:
+- Job Type: `simulator`
+- Data Format: TBD
+- Target ID: `qci.simulator`
+- Target Execution Profile: Basic Measurement Feedback
 
 ## Pricing
 

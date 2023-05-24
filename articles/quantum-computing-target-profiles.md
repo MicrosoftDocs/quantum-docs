@@ -94,6 +94,7 @@ Presently, these :::no-loc text="No Control Flow"::: targets are available for A
 In Q# when measuring a qubit, a value of type `Result` is returned. If you want to use this result in a conditional statement, you have to directly compare in the conditional statement. The corresponding conditional blocks may not contain `return` or `set` statements. 
 
 For example, the following Q# code would be allowed in a :::no-loc text="Basic Measurement Feedback"::: target:
+
 ```qsharp
 operation MeasureQubit(q : Qubit) : Result { 
     return M(q); 
@@ -131,3 +132,5 @@ Presently, these :::no-loc text="Basic Measurement Feedback"::: targets are avai
 
 - **Provider:** Quantinuum
   - [Quantinuum System Model H1-1 and H1-2](xref:microsoft.quantum.providers.quantinuum#system-model-h1) (`quantinuum.qpu.h1-1`, `quantinuum.qpu.h1-2`)
+- **Provider:** QCI
+  - [QCI simulator](xref:microsoft.quantum.providers.qci) (`qci.simulator`)
