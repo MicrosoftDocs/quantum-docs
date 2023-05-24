@@ -5,16 +5,16 @@
 - name: Microsoft simulators
   items: 
   - name: Full state simulator
-    href: full-state-simulator.md
+    href: ./machines/full-state-simulator.md
   - name: Sparse simulator
-    href: sparse-simulator.md
+    href: ./machines/sparse-simulator.md
   - name: Noise simulator
-    href: noise-simulator.md
+    href: ./machines/noise-simulator.md
   - name: Trace simulator
-    topicHref: qc-trace-simulator/index.md
-    href: qc-trace-simulator/toc.yml
+    topicHref: ./machines/qc-trace-simulator/index.md
+    href: ./machines/qc-trace-simulator/toc.yml
   - name: Toffoli simulator
-    href: toffoli-simulator.md
+    href: ./machines/toffoli-simulator.md
 
 
 
