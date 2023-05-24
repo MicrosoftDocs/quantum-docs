@@ -6,14 +6,14 @@ ms.date: 08/24/2022
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
-no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '\Bigg' ,'|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', '\rho', '\quad', '\sim', '\left\','\right\', '\%', '%']
+no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '\Bigg' ,'|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', '\rho', '\quad', '\sim', '\left\','\right\', '\%', '%', Quantum Intermediate Representation, target, targets]
 title: Microsoft Quantum intermediate representation
 uid: microsoft.quantum.concepts.qir
 ---
 
 # Quantum intermediate representation
 
-Quantum intermediate representation (QIR) is an intermediate representation which serves as a common interface between quantum programming languages/frameworks and targeted quantum computation platforms. QIR specifies a set of rules for representing quantum programs using a language and hardware agnostic format within the LLVM IR. The QIR is a project developed by the QIR Alliance of which Microsoft is one of its members.
+Quantum Intermediate Representation (QIR) is an intermediate representation which serves as a common interface between quantum programming languages/frameworks and targeted quantum computation platforms. QIR specifies a set of rules for representing quantum programs using a language and hardware agnostic format within the LLVM IR. The QIR is a project developed by the QIR Alliance of which Microsoft is one of its members.
 
 ## What is an intermediate representation?
 
@@ -26,11 +26,11 @@ Once the final target execution platform is known, the intermediate representati
 
 This approach allows many source languages to share a common set of optimizers and executable generators. It also makes it easy to compile a single source language for many different targets. The intermediate representation provides a common platform that can be shared across many sources and targets and allows a great deal of reuse in compiler machinery.
 
-## What is quantum intermediate representation?
+## What is Quantum Intermediate Representation?
 
 QIR is an intermediate representation for quantum programs developed by the [QIR Alliance](http://qir-alliance.org/), to which Microsoft belongs. It provides a common interface that supports many languages and target platforms for quantum computation. You can think of QIR as a universal mid-layer language that enables communication between high-level languages and machines. While Q# compiles to QIR, QIR is not specific to Q#: any quantum programming framework can leverage QIR to represent a quantum program. It is hardware-agnostic, which means that it does not specify a quantum instruction or gate set, leaving that to the target computing environment. 
 
-QIR is based on the popular open-source [LLVM](https://llvm.org/) classical compiler. LLVM  is a collection of modular and reusable compiler and toolchain technologies that has been adapted by a wide set of languages. QIR specifies a set of rules for representing quantum constructs in LLVM, however it does not require any extensions or modifications to LLVM. For more information about LLVM-based compilers, see [this Gitbook about mapping to LLVM IR](https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/README.html).
+QIR is based on the popular open-source [LLVM](https://llvm.org/) classical compiler. LLVM  is a collection of modular and reusable compiler and toolchain technologies that has been adapted by a wide set of languages. QIR specifies a set of rules for representing quantum constructs in LLVM, however it does not require any extensions or modifications to LLVM. 
 
 The fact that LLVM is the underlying toolchain means that QIR is naturally able to process both classical and quantum logic. This feature is essential for hybrid quantum–classical algorithms, which have become increasingly important for applications of quantum computing. In addition, it allows you to leverage compilation and optimization tools from the classical computing industry, and, therefore, to reduce the cost of writing translations.
 
@@ -55,7 +55,7 @@ With their collective work and partnership, the QIR Alliance aims to:
 The QIR Alliance is part of the [Linux Foundation’s Joint Development Foundation](https://linuxfoundation.org/press-release/new-quantum-intermediate-representation-alliance-serves-as-common-interface-for-quantum-computing-development/#:~:text=%E2%80%9CThe%20Quantum-Intermediate%20Representation%20Alliance%2C%20also%20known%20as%20QIRA%2C,said%20Alex%20Chernoguzov%2C%20Honeywell%20Quantum%20Chief%20Engineer%2C%20Honeywell) 
 work on open standards. Founding members include Microsoft, as well as Quantinuum (formerly Honeywell), Oak Ridge National Laboratory, Quantum Circuits Inc. and Rigetti Computing.
 
-## What does quantum intermediate representation look like?
+## What does Quantum Intermediate Representation look like?
 
 Since QIR is based on LLVM, QIR looks like LLVM.
 
@@ -88,7 +88,7 @@ While the QIR for the `CreateBellPair` operation is very simple, QIR inherits al
 
 For more information, watch Microsoft’s developer session from [the 2021 Q2B event](https://www.youtube.com/watch?v=nVy5BBDKxOU).
 
-## Why is quantum intermediate representation important?
+## Why is Quantum Intermediate Representation important?
 
 QIR is an essential tool when running quantum algorithms on real hardware. But intermediate representations can play an important role even if you just want to develop algorithms at a more theoretical level.
 

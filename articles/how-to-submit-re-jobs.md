@@ -8,6 +8,7 @@ ms.subservice: computing
 ms.topic: how-to
 title: Submit jobs to the Resource Estimator target
 uid: microsoft.quantum.submit-resource-estimation-jobs
+no-loc: [target, targets]
 zone_pivot_groups: azurequantum-quantumcomputing-re-ide
 ---
 

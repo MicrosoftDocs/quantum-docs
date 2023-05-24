@@ -6,7 +6,7 @@ ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: concepts
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit, Basic measurement feedback, target, targets]
 title: Working with integrated hybrid computing
 uid: microsoft.quantum.hybrid.integrated
 ---
@@ -82,6 +82,9 @@ with target.open_session(name="Q# session") as session:
 ```
 
 For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
+
+> [!NOTE]
+> Although sessions are available for all quantum computing hardware providers, notice that integrated hybrid quantum computing jobs are currently supported on Quantinuum targets. 
 
 ## Estimating the cost of an integrated hybrid job
 
@@ -356,7 +359,7 @@ It leverages integrated hybrid computing features to count the number of times e
 
 ### [Iterative phase estimation](#tab/tabid-qml)
 
-*This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/about/alliances/microsoft/kpmg-and-microsoft-azure-quantum.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of Basic Measurement Feedback targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.*
+*This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/about/alliances/microsoft/kpmg-and-microsoft-azure-quantum.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of B:::no-loc text="Basic Measurement Feedback"::: targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.*
 
 ## Two dimensional inner product calculation using iterative phase estimation on three qubits
 
@@ -665,7 +668,7 @@ az quantum job submit --target-id quantinuum.sim.h1-1e --target-capability Adapt
 ```
 
 > [!NOTE]
-> The specified target requires a target execution profile that supports [basic measurement feedback](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
+> The specified target requires a target execution profile that supports [:::no-loc text="Basic Measurement Feedback":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
 
 > [!IMPORTANT]
 > It is not recommended to increase the value of `Measurements` beyond **3** when running on Azure targets as the EHQCs can increase significantly.

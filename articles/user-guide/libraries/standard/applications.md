@@ -6,7 +6,7 @@ ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Variational Quantum Eigensolver, target, targets]
 title: Applications in the Q# standard libraries
 uid: microsoft.quantum.libraries.overview.applications
 ---
@@ -121,7 +121,7 @@ function TimeDependentTrotterSimulationAlgorithm(
 
 ### Adiabatic state preparation & phase estimation ###
 
-One common application of Hamiltonian simulation is adiabatic state preparation. Here, one is provided with two Hamiltonians $H\_{\text{start}}$ and $H\_{\text{end}}$, and a quantum state $\ket{\psi(0)}$ that is a ground state of the start Hamiltonian $H\_{\text{start}}$. Typically, $H\_{\text{start}}$ is chosen such that $\ket{\psi(0)}$ is easy to prepare from a computational basis state $\ket{0\cdots 0}$. By interpolating between these Hamiltonians in the time-dependent simulation problem sufficiently slowly, it is possible to end up, with high probability, in a ground state of the final Hamiltonian $H\_{\text{end}}$. Though preparing good approximations to Hamiltonian ground states could proceed in this manner by calling upon on time-dependent Hamiltonian simulation algorithms as a subroutine, other conceptually different approaches such as the variational quantum eigensolver are possible.
+One common application of Hamiltonian simulation is adiabatic state preparation. Here, one is provided with two Hamiltonians $H\_{\text{start}}$ and $H\_{\text{end}}$, and a quantum state $\ket{\psi(0)}$ that is a ground state of the start Hamiltonian $H\_{\text{start}}$. Typically, $H\_{\text{start}}$ is chosen such that $\ket{\psi(0)}$ is easy to prepare from a computational basis state $\ket{0\cdots 0}$. By interpolating between these Hamiltonians in the time-dependent simulation problem sufficiently slowly, it is possible to end up, with high probability, in a ground state of the final Hamiltonian $H\_{\text{end}}$. Though preparing good approximations to Hamiltonian ground states could proceed in this manner by calling upon on time-dependent Hamiltonian simulation algorithms as a subroutine, other conceptually different approaches such as the Variational Quantum Eigensolver are possible.
 
 Yet another application ubiquitous in quantum chemistry is estimating the ground state energy of Hamiltonians representing the intermediate steps of chemical reaction. Such a scheme could, for instance, rely on adiabatic state preparation to create the ground state, and then incorporate time-independent Hamiltonian simulation as a subroutine in phase estimation characterization to extract this energy with some finite error and probability of success. 
 

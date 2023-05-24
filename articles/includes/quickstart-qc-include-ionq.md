@@ -6,6 +6,7 @@ ms.service: azure-quantum
 ms.subservice: computing
 ms.custom: devx-track-azurecli
 ms.topic: include
+no-loc: [Quantum Development Kit, target, targets]
 ---
 
 ## Prerequisites
@@ -165,7 +166,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
 Before you run a program against real hardware, we recommend simulating it first (if possible, based on the number of qubits required) to help ensure that your algorithm is doing what you want. Fortunately, IonQ provides an idealized simulator that you can use.
 
 > [!NOTE]
-> You can also simulate Q# programs locally using the [Full State Simulator](xref:microsoft.quantum.machines.overview.full-state-simulator).
+> You can also simulate Q# programs locally using the [:::no-loc text="Full state::: simulator](xref:microsoft.quantum.machines.overview.full-state-simulator).
 
 Run your program with `az quantum execute --target-id ionq.simulator -o table`. This command will compile your program, submit it to Azure Quantum, and wait until IonQ has finished simulating the program. Once it's done it will output a histogram which should look like the one below:
 

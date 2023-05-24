@@ -5,6 +5,7 @@ ms.date: 03/07/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
+no-loc: [target, targets]
 ---
 
 ## Resource estimation with Q# and Python

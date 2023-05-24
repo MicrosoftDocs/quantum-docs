@@ -7,7 +7,7 @@ ms.author: brbenefield
 ms.date: 10/09/2017
 ms.topic: conceptual
 ms.service: azure-quantum
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 ---
 
 # THIRD-PARTY SOFTWARE NOTICES AND INFORMATION

@@ -6,7 +6,7 @@ ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', target, targets]
 title: Manage your sessions
 uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 ---

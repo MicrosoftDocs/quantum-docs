@@ -7,6 +7,7 @@ ms.service: azure-quantum
 ms.topic: how-to
 ms.date: 04/20/2022
 ms.custom: template-how-to, devx-track-arm-template
+no-loc: [target, targets]
 uid: microsoft.quantum.workspaces-arm
 ---
 

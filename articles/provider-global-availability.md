@@ -6,6 +6,7 @@ ms.date: 10/14/2022
 ms.service: azure-quantum
 ms.subservice: core  
 ms.topic: reference
+no-loc: [target, targets]
 title: Global availability of Azure Quantum providers
 uid: microsoft.quantum.provider-availability
 ---

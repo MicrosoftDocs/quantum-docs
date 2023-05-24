@@ -41,6 +41,8 @@
       href: learn-how-the-resource-estimator-works.md
     - name: Get the most out of the Resource Estimator
       href: how-to-work-with-re.md
+    - name: Resource Estimation for double-factorized chemistry
+      href: tutorial-resource-estimator-chemistry.md
     - name: Resource Estimation with QIR
       href: tutorial-resource-estimator-qir.md
   - name: Quantum Machine Learning
@@ -119,7 +121,7 @@
         href: concepts-open-systems.md
       - name: Theory of Grover's algorithm
         href: concepts-grovers.md
-      - name: Quantum intermediate representation
+      - name: Quantum Intermediate Representation
         href: concepts-qir.md
   - name: Troubleshooting
     items:

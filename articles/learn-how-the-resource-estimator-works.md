@@ -6,7 +6,7 @@ ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: reference
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', target, targets]
 title: Learn how the Resource Estimator works
 uid: microsoft.quantum.learn-how-resource-estimator-works
 ---

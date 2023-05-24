@@ -6,7 +6,7 @@ ms.date: 04/10/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', target, targets]
 title: Performing long running experiments
 uid: microsoft.quantum.long-running-experiments
 ---

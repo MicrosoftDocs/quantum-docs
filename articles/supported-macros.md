@@ -6,7 +6,7 @@ ms.author: brbenefield
 ms.date: 09/04/2019
 ms.topic: conceptual
 uid: microsoft.quantum.contribute.macros
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 ---
 
 # Supported Macros

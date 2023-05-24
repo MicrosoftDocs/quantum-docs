@@ -6,6 +6,7 @@ ms.date: 04/13/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
+no-loc: [target, targets]
 title: Support policy for IonQ in Azure Quantum
 uid: microsoft.quantum.providers.computing.ionq.support
 ---

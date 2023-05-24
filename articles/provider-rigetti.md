@@ -6,6 +6,7 @@ ms.date: 03/02/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
+no-loc: [Quantum Intermediate Representation, No control flow, target, targets]
 title: Rigetti provider
 uid: microsoft.quantum.providers.rigetti
 ---
@@ -30,10 +31,10 @@ The Rigetti provider makes the following targets available:
 |[Aspen-M-3](#aspen-m-3) |rigetti.qpu.aspen-m-3 |80 qubits| Rigetti's multi-chip quantum processor. |
 
 > [!NOTE]
-> - The QVM simulator does not support Cirq programs. 
+> - Rigetti simulators and hardware targets do not support Cirq programs. 
 > - The Aspen-11 QPU has been deprecated.
 
-Rigetti's targets correspond to a **No Control Flow** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
+Rigetti's targets correspond to a **:::no-loc text="No Control Flow":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
 
 ## Simulators
 
@@ -42,7 +43,7 @@ The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.h
 - Job Type: `Simulation`
 - Data Formats: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.sim.qvm`
-- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
+- Target Execution Profile: [:::no-loc text="No Control Flow":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 - Pricing: Free ($0)
 
 ## Quantum computers
@@ -56,7 +57,7 @@ A multi-chip 80-qubit processor.
 - Job Type: `Quantum Program`
 - Data Formats: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.qpu.aspen-m-2`
-- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
+- Target Execution Profile: [:::no-loc text="No Control Flow":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 
 ### Aspen-M-3
 
@@ -65,7 +66,7 @@ A multi-chip 80-qubit processor offering improved CZ and XY gate performance.
 - Job Type: `Quantum Program`
 - Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.qpu.aspen-m-3`
-- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
+- Target Execution Profile: [:::no-loc text="No Control Flow":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 
 ## Pricing
 
@@ -88,7 +89,7 @@ To make constructing a Quil program easier, you can use [`pyQuil`] along with th
 
 ### QIR
 
-All Rigetti hardware supports the execution of quantum intermediate representation (QIR) compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`. QIR provides a common interface that supports many quantum languages and target platforms for quantum computation and enables communication between high-level languages and machines. For example, you can submit Q#, Quil, or Qiskit jobs to Rigetti hardware, and Azure Quantum automatically handles the input for you. For more information, see [Quantum intermediate representation](xref:microsoft.quantum.concepts.qir).
+All Rigetti hardware supports the execution of Quantum Intermediate Representation (QIR) compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`. QIR provides a common interface that supports many quantum languages and target platforms for quantum computation and enables communication between high-level languages and machines. For example, you can submit Q#, Quil, or Qiskit jobs to Rigetti hardware, and Azure Quantum automatically handles the input for you. For more information, see [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir).
 
 ### Selecting the right input format
 

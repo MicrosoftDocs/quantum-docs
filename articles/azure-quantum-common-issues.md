@@ -2,10 +2,11 @@
 author: bradben
 description: Troubleshoot common Azure Quantum issues.
 ms.author: brbenefield
-ms.date: 03/16/2023
+ms.date: 05/08/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
+no-loc: [Quantum Development Kit, target, targets]
 title: Troubleshoot Azure Quantum
 uid: microsoft.quantum.azure.common-issues
 ---
@@ -175,6 +176,12 @@ If access was recently granted, you may need to refresh the page. It can sometim
 ### Issue: You don't see a specific quantum hardware provider on the Providers tab
 
 This issue occurs because the provider doesn't support the billing region your subscription is set in. For example, if your subscription is set in Israel, the Providers tab won't list Rigetti as an available provider. For a list of providers and their availability by country, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability). 
+
+### Issue: Workspace creation or adding/removing providers fails with "ResourceDeploymentFailure" or "ProviderDeploymentFailure"
+
+This issue may include more details such as "ResourceDeploymentFailure - The 'AzureAsyncOperationWaiting' resource operation completed with terminal provisioning state 'Failed'.", or "ProviderDeploymentFailure - Failed to create plan for provider: [Name of the provider]".
+
+This occurs because the tenant has not enabled Azure Marketplace purchases. Follow the steps in [Enabling Azure Marketplace purchases](/azure/cost-management-billing/manage/ea-azure-marketplace#enabling-azure-marketplace-purchases) to enable Azure Marketplace purchases. 
 
 ## Azure Quantum portal
 

@@ -6,7 +6,7 @@ ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', target, targets]
 title: Flow controls in the Q# standard libararies
 uid: microsoft.quantum.libraries.overview-standard.control-flow
 ---

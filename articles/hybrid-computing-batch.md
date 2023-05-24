@@ -6,7 +6,7 @@ ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: concepts
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', target, targets]
 title: Overview of batch quantum computing
 uid: microsoft.quantum.hybrid.batch
 ---

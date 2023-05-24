@@ -6,7 +6,7 @@ ms.date: 10/31/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: 'Trace simulator: Primitive operation counter'
 uid: microsoft.quantum.machines.overview.qc-trace-simulator.primitive-counter
 ---

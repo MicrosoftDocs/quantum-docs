@@ -6,7 +6,7 @@ ms.date: 04/10/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Set up the Quantum Development Kit 
 uid: microsoft.quantum.install-qdk.overview
 ---
@@ -55,7 +55,7 @@ Some scenarios where you may prefer a local environment:
 - You require source control on your project.
 - You are working with a multi-file project.
 
-:::image type="content" source="./media/install-portal-3.svg" alt-text="Portal installation options":::
+:::image type="content" source="./media/install-portal-3.png" alt-text="Portal installation options":::
 
 > [!NOTE]
 > Accessing remote quantum hardware and submitting jobs to the Azure Quantum service requires an Azure account with an active subscription. You can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).

@@ -7,7 +7,7 @@ ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit, Quantum machine learning, Quantum Intermediate Representation, Basic measurement feedback, target, targets]
 uid: microsoft.quantum.relnotes-qdk
 ---
 
@@ -224,7 +224,7 @@ demonstrating the use of the sparse simulator.
 
 ### QDK version 0.22.187631
 
-- The Full State Simulator has been migrated from the platform-specific compiler to Clang to fix [GitHub issue #876](https://github.com/microsoft/qsharp-runtime/issues/876). 
+- The :::no-loc text="Full state::: Simulator has been migrated from the platform-specific compiler to Clang to fix [GitHub issue #876](https://github.com/microsoft/qsharp-runtime/issues/876). 
 - When submitting a job to Azure Quantum via the CLI, Python, IQ# and other Azure Quantum SDKs, the job details may include the cost estimate of the job (if supported by the provider). The final cost on your bill might be slightly different due to added taxes and currency conversion rates. 
 - You can now estimate the price of your job in azure-quantum package by using [estimate_cost](xref:microsoft.quantum.quickstarts.computing.provider.portal#estimate-job-cost) for the target that you're using with the Qiskit, Cirq and pass-through feature.
 - The azure-quantum package now supports submitting Qiskit lists of length 1. 
@@ -261,7 +261,7 @@ demonstrating the use of the sparse simulator.
 - Fixed an [issue](https://github.com/microsoft/qdk-python/issues/164) that causes `azure.quantum.cirq` and `azure.quantum.qiskit`  to not be recognized by [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). The `azure.quantum.plugins` package is deprecated.  
 - Fixed an [issue](https://github.com/microsoft/iqsharp/issues/531) in IQ# in which job execution would fail if any operation defined in an external file wasn't supported on the given target.
 - Fixed an [issue](https://github.com/microsoft/qsharp-compiler/issues/1163) in the Visual Studio extension that caused incorrect indentation in some cases when a closing bracket was typed.
-- Refactored the [quantum intermediate representation (QIR) runtime](https://www.nuget.org/packages/Microsoft.Quantum.Qir.Runtime) DLLs to use static VC runtime, removing dependency on msvcrt.dll and Visual Studio installation.
+- Refactored the [Quantum Intermediate Representation (QIR) runtime](https://www.nuget.org/packages/Microsoft.Quantum.Qir.Runtime) DLLs to use static VC runtime, removing dependency on msvcrt.dll and Visual Studio installation.
 - Refactored [QIR Runtime](https://www.nuget.org/packages/Microsoft.Quantum.Qir.Runtime) to use `intptr_t` for Qubit ID types consistently.
 - Updated Azure CLI Extensions to version 0.9.0.
 
@@ -316,7 +316,7 @@ demonstrating the use of the sparse simulator.
 - Improved error message on IQ# `%azure.*` magic commands when no quantum computing targets are available.
 - `azure-quantum` Python package fixes an [issue](https://github.com/microsoft/qdk-python/issues/80) with MSAL Credentials on Windows and now requires minimum versions for all dependencies to mitigate other potential issues with older dependencies.
 - Fixed a [bug in IQ#](https://github.com/microsoft/iqsharp/issues/448) in which job execution would fail if any operation was defined that wasn't supported on the given target.
-- Fixed a [bug in IQ#](https://github.com/microsoft/iqsharp/issues/484) in which some programs targeting hardware that supports the [Basic Measurement Feedback profile](xref:microsoft.quantum.target-profiles) were incorrectly being reported as not supported by the Azure Quantum target.
+- Fixed a [bug in IQ#](https://github.com/microsoft/iqsharp/issues/484) in which some programs targeting hardware that supports the [:::no-loc text="Basic Measurement Feedback"::: profile](xref:microsoft.quantum.target-profiles) were incorrectly being reported as not supported by the Azure Quantum target.
 - Released Azure CLI quantum extension version 0.6.1:
   - Added command to request job cancellation: `az quantum job cancel`.
   - Fixed a bug in which job submissions in Azure Quantum that emit standard output were reported as failed, even if the job succeeded.
@@ -769,7 +769,7 @@ With this change, programs that include a single "open" statement for the namesp
 
 We added a [sample of using Q# with F# driver](https://github.com/Microsoft/Quantum/pull/164).  
 
-**"Thank you!"** to the following contributor to our open code base at http://github.com/Microsoft/Quantum. These contributions add to the rich samples of Q# code:
+**"Thank you!"** to the following contributor to our open code base at https://github.com/Microsoft/Quantum. These contributions add to the rich samples of Q# code:
 
 - Mathias Soeken ([@msoeken](https://github.com/msoeken)): Oracle function synthesis. [PR #135](https://github.com/Microsoft/Quantum/pull/135).
 
@@ -902,7 +902,7 @@ This release includes bug fixes and features for issues reported by the communit
 
 #### Community contributions
 
-**"Thank you!"** to the following contributors to our open code base at http://github.com/Microsoft/Quantum. These contributions add to the rich samples of Q# code:
+**"Thank you!"** to the following contributors to our open code base at https://github.com/Microsoft/Quantum. These contributions add to the rich samples of Q# code:
 
 - Rolf Huisman ([@RolfHuisman](https://github.com/RolfHuisman)): Improved the experience for QASM/Q# developers by creating a QASM to Q# translator. [PR #58](https://github.com/Microsoft/Quantum/pull/58).
 
@@ -947,7 +947,7 @@ Learn more about [Testing and Debugging](xref:microsoft.quantum.user-guide-qdk.o
 
 #### Community contributions
 
-The Q# coder community is growing and we're thrilled to see the first user contributed libraries and samples that were submitted to our open code base at http://github.com/Microsoft/quantum.  **A big "Thank you!"** to the following contributors:
+The Q# coder community is growing and we're thrilled to see the first user contributed libraries and samples that were submitted to our open code base at https://github.com/Microsoft/quantum.  **A big "Thank you!"** to the following contributors:
 - Mathias Soeken ([@msoeken](https://github.com/msoeken)):  contributed a sample defining a transformation-based logic synthesis method that constructs Toffoli networks to implement a given permutation. The code is written entirely in Q# functions and operations.  [PR #41](https://github.com/Microsoft/Quantum/pull/41).
 - RolfHuisman ([@RolfHuisman](https://github.com/RolfHuisman)): Microsoft MVP Rolf Huisman contributed a sample that generates flat QASM code from Q# code for a restricted class of programs that don't have classical control flow and restricted quantum operations. [PR #59](https://github.com/Microsoft/Quantum/pull/59)
 - Sarah Kasier ([@crazy4pi314](https://github.com/crazy4pi314)): helped to improve our code base by submitting a library function for controlled operations. [PR #53](https://github.com/Microsoft/Quantum/pull/53)

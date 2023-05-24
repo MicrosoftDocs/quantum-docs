@@ -6,7 +6,7 @@ ms.date: 02/21/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: quickstart
-no-loc: ['Python', '$$v']
+no-loc: ['Python', '$$v', Quantum Intermediate Representation, target, targets]
 title: 'Quickstart: Submit a quantum program to the Resource Estimator'
 uid: microsoft.quantum.quickstarts.computing.resources-estimator
 --- 
@@ -157,12 +157,12 @@ You'll find more sample notebooks in the **Resource estimation** tab of the samp
 
 - **Advanced analysis of estimates**: This sample uses the implementations from the *Estimates with Q#* notebook to compute advance analysis of the results such as computing multiple resource estimates, plot and compare their results. 
 - **Estimates with Qiskit input**: This sample estimates the resources of a quantum circuit for a multiplier written in Qiskit that uses the Quantum Fourier Transform to implement arithmetic.
-- **Estimates with tools producing QIR**: This sample shows how to generate and submit a quantum intermediate representation (QIR) program to the Resource Estimator using the QIR generator [PyQIR](https://github.com/qir-alliance/pyqir). You can also find this sample in the [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir).
+- **Estimates with tools producing QIR**: This sample shows how to generate and submit a Quantum Intermediate Representation (QIR) program to the Resource Estimator using the QIR generator [PyQIR](https://github.com/qir-alliance/pyqir). You can also find this sample in the [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir).
 
 The following sample notebooks assess requirements for scaling quantum computers in real-world scenarios. You can learn about the context of these samples in the paper [Accessing requirements for scaling quantum computers and their applications](https://aka.ms/AQ/RE/Paper).
 
 - **Quantum dynamics**: This sample estimates the resources needed to simulate the quantum spin in a quantum magnet. 
-- **Quantum chemistry**: This sample estimates the resources needed to analyze the activation energy of a ruthenium-based catalyst for carbon fixation, which could have implications for reversing the effects of global warming.
+- **Quantum chemistry**: This sample estimates the resources needed to calculate the energy of a user provided Hamiltonian to chemical accuracy of 1 mHa, to using the so-called double-factorized qubitization algorithm described in [Phys. Rev. Research 3, 033055 (2021)](https://doi.org/10.1103/PhysRevResearch.3.033055). The Hamiltonian is provided in terms of an FCIDUMP file that is accessible via an HTTPS URI.
 - **Factoring**: This sample estimates the resources needed to factorize a 2048-bit number, which could have implications in quantum cryptography.
 
 > [!NOTE]
