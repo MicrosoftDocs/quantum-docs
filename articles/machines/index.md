@@ -11,7 +11,7 @@ title: Quantum simulators and Q# programs
 uid: microsoft.quantum.machines.overview
 ---
 
-# Quantum simulators
+# In-memory quantum simulators
 
 Quantum simulators are software programs that run on classical computers and act as the *target machine* for a Q# program, making it possible to run and test quantum programs in an environment that predicts how qubits will react to different operations. 
 

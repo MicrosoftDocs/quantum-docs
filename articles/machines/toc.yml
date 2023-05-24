@@ -1,9 +1,7 @@
-- name: Quantum simulators overview
-  href: index.md
-- name: Partner simulators 
-  href: partner-simulators.md
-- name: Microsoft simulators
-  items: 
+- name: In-memory simulators
+  items:
+  - name: In-memory simulators
+    href: index.md
   - name: Full state simulator
     href: full-state-simulator.md
   - name: Sparse simulator
@@ -15,6 +13,8 @@
     href: qc-trace-simulator/toc.yml
   - name: Toffoli simulator
     href: toffoli-simulator.md
+- name: Backend simulators 
+  href: backend-simulators.md
 
 
 
