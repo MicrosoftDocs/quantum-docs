@@ -1,6 +1,6 @@
 - name: Quantum simulators overview
   href: index.md
-- name: Partner simulators 
+- name: Partner simulators
   href: partner-simulators.md
 - name: Microsoft simulators
   items: 
