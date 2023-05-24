@@ -1,7 +1,7 @@
 - name: Quantum simulators
   href: index.md
 - name: IonQ 
-- href: ionq-simulator.md
+  href: ionq-simulator.md
 - name: Microsoft
   items: 
   - name: Full state simulator
@@ -16,10 +16,10 @@
   - name: Toffoli simulator
     href: toffoli-simulator.md
 - name: QCI 
-- href: qci-simulator.md
+  href: qci-simulator.md
 - name: Quantinuum 
-- href: quantinuum-simulator.md
+  href: quantinuum-simulator.md
 - name: Rigetti 
-- href: rigetti-simulator.md
+  href: rigetti-simulator.md
 
 
