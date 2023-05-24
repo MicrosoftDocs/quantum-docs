@@ -1,30 +1,29 @@
 ---
-author:  bradben
-ms.author: bradben
+author: sonialopezbravo
+ms.author: brbenefield
 description: This document provides the technical details of the QCI provider 
-ms.date: 05/15/2023
+ms.date: 05/24/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
-title: [NEW] provider    
-uid: microsoft.quantum.providers.[NEW]     
+title: QCI provider    
+uid: microsoft.quantum.providers.qci    
 ---
 
-# [NEW] provider
+# QCI provider
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
-[NEW](https://[NEW].com) SUMMARY PARAGRAPH
+Quantum Circuits, Inc. ([QCI](https://quantumcircuits.com/)) originated out of the world-leading quantum computing research labs at Yale University in late 2015. QCI systems are based on a modular architecture that networks superconducting quantum processors, providing a robust and hardware-efficient approach that obtains more computational power with fewer elements.  
 
-- Publisher: [NEW](https://[NEW].com)
-- Provider ID: `new`
+- Publisher: [QCI](https://quantumcircuits.com/)
+- Provider ID: `qci`
 
-The [NEW] provider makes the following targets available:
+The QCI provider makes the following target available:
 
 |Target name| Target ID|Number of qubits | Description |
 |---|---|---|---|
-|[SIMULATORS](#simulators) | target_name | # of qubits | description |
-|[QPU1](#quantum-computers) | target_name | # of qubits | description |
+|[SIMULATORS](#simulators) | `qci.simulator` | # of qubits | description |
 
 ## Simulators
 
@@ -35,20 +34,11 @@ The [NEW] provider makes the following targets available:
 - Target ID:
 - Target Execution Profile:
 
-## Quantum computers
-
-<!-- SEE EXISTING PROVIDER DOCS FOR EXAMPLES -->
-
-- Job Type:
-- Data Format:
-- Target ID:
-- Target Execution Profile:
-
 ## Pricing
 
-To see the [NEW] billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#[NEW]).
+The QCI simulator is offered free of charge.
 
-## Misc other information 
+## Misc other information as applicable
 
 <!-- SEE EXISTING PROVIDER DOCS FOR EXAMPLES -->
 
