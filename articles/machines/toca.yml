@@ -1,0 +1,20 @@
+- name: Quantum simulators overview
+  href: index.md
+- name: Partner simulators 
+  href: partner-simulators.md
+- name: Microsoft simulators
+  items: 
+  - name: Full state simulator
+    href: full-state-simulator.md
+  - name: Sparse simulator
+    href: sparse-simulator.md
+  - name: Noise simulator
+    href: noise-simulator.md
+  - name: Trace simulator
+    topicHref: qc-trace-simulator/index.md
+    href: qc-trace-simulator/toc.yml
+  - name: Toffoli simulator
+    href: toffoli-simulator.md
+
+
+

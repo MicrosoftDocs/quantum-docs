@@ -125,7 +125,9 @@
     items:
     - name: Q# compiler messages
       href: qs-compiler-messages/toc.yml
-  - name: Quantum simulators
+  - name: Quantum simulators (a)
+    href: machines/toca.yml  
+  - name: Quantum simulators (b)
     href: machines/toc.yml  
   - name: Quantum hardware providers
     items:
