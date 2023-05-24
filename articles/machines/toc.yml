@@ -1,8 +1,8 @@
-- name: Quantum simulators
+- name: Quantum simulators overview
   href: index.md
-- name: IonQ 
-  href: ionq-simulator.md
-- name: Microsoft
+- name: Partner simulators 
+  href: partner-simulators.md
+- name: Microsoft simulators
   items: 
   - name: Full state simulator
     href: full-state-simulator.md
@@ -15,11 +15,6 @@
     href: qc-trace-simulator/toc.yml
   - name: Toffoli simulator
     href: toffoli-simulator.md
-- name: QCI 
-  href: qci-simulator.md
-- name: Quantinuum 
-  href: quantinuum-simulator.md
-- name: Rigetti 
-  href: rigetti-simulator.md
+
 
 
