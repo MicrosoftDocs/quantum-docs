@@ -23,7 +23,7 @@ A session is a logical grouping of one or more jobs submitted to a single target
 
 Sessions allow you to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. You'll be able to run complex algorithms to better organize and track your individual quantum computing jobs.
 
-A key user scenario where you may want to combine jobs in a session is *parameterized* quantum algorithms where the output of one quantum computing job informs the parameters of the next quantum computing job. The most common examples of this type of algorithm are Variational Quantum Eigensolver (VQE) and Quantum Approximate Optimization Algorithm (QAOA).
+A key user scenario where you may want to combine jobs in a session is *parameterized* quantum algorithms where the output of one quantum computing job informs the parameters of the next quantum computing job. The most common examples of this type of algorithm are :::no-loc text="Variational Quantum Eigensolver"::: (VQE) and Quantum Approximate Optimization Algorithm (QAOA).
 
 ## Supported hardware
 
