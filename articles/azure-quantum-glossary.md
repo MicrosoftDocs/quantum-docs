@@ -176,7 +176,7 @@ A set of three 2 x 2 unitary matrices known as the `X`, `Y` and `Z` quantum oper
 
 A component in Azure Quantum that provides the ability to run [jobs](#job) on selected [targets](#target-machine). Providers include Microsoft and a variety of third-party partners.
 
-## Quantum Approximate Optimization Algorithm (QAOA)
+## :::no-loc text="Quantum Approximate Optimization Algorithm"::: (QAOA)
 
 A variational quantum algorithm used for finding approximate solutions to combinatorial optimization problems - problems where the number of possible solutions grows extremely large with the size of the problem.
 
