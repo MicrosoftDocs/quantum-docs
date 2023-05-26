@@ -226,7 +226,7 @@ A concept often used in quantum algorithms that consists of repeatedly applying 
 
 ## Sessions
 
-Part of the [iterative hybrid quantum computing](#iterative-hybrid-quantum-computing) model, sessions are prioritized, logical groups of quantum jobs. The ability to repeat the execution of the quantum circuit with different parameters makes this a good model for [VQE](#variational-quantum-eigensolver-vqe) and [QAOA](#quantum-approximate-optimization-algorithm-qaoa) algorithms. 
+Part of the [iterative hybrid quantum computing](#iterative-hybrid-quantum-computing) model, sessions are prioritized, logical groups of quantum jobs. The ability to repeat the execution of the quantum circuit with different parameters makes this a good model for :::no-loc text="Variational Quantum Eigensolvers"::: and :::no-loc text="Quantum Approximate Optimization Algorithms":::. 
 
 ## Standard libraries
 
