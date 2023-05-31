@@ -22,9 +22,16 @@ For more discussion, see:
 
 ![Integrated hybrid quantum computing](~/media/hybrid/integrated.png)
 
-## Supported hardware
+## Supported targets
 
-Currently, the integrated hybrid computing model in Azure Quantum is supported on [Quantinuum](xref:microsoft.quantum.providers.quantinuum) targets.
+Currently, the integrated hybrid computing model in Azure Quantum is supported on [QCI](xref:microsoft.quantum.providers.qci) and [Quantinuum](xref:microsoft.quantum.providers.quantinuum) targets.
+
+### QCI
+
+|Supported feature| Notes |
+|---|---|
+| TBD | TBD |
+| TBD | TBD |
 
 ### Quantinuum
 
