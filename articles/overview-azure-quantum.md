@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs or solve optimization problems in the cloud.
-ms.date: 01/08/2023
+ms.date: 05/31/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -51,6 +51,12 @@ Quantum-inspired optimization algorithms exploit some of the advantages of quant
 Azure Quantum gives you access to a broad set of state-of-the-art quantum-inspired optimization algorithms developed by Microsoft and its partners. To learn more about the optimization solutions in Azure Quantum, see [What is optimization?](xref:microsoft.quantum.optimization.concepts.overview.introduction).
 
 ## How to get started with Azure Quantum?
+
+### The Azure Quantum website
+
+[Azure Quantum (quantum.microsoft.com)](https://quantum.microsoft.com) is a central resource for all things Azure Quantum. Explore blogs, conceptual articles, and videos, run Q# code samples in the online code editor, or use the Quantum Copilot to dive deeper into your quantum questions. All that's required is a Microsoft (MSA) email account. For more information, see [Get started with Azure Quantum](xref: )
+
+### The Azure portal
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
