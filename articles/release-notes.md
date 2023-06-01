@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 03/28/2023
+ms.date: 06/05/2023
 author: SoniaLopezBravo
 ms.author: sonialopez
 ms.service: azure-quantum
@@ -16,6 +16,15 @@ uid: microsoft.quantum.relnotes-qdk
 This article outlines updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview).
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
+
+## 2023-06-05
+
+### QDK version 0.28.275773
+
+- Added support for [sessions](azure/quantum/hybrid-computing-interactive?tabs=tabid-iqsharp) to improve experience for interactive hybrid algorithms.
+- You can now use a unified and convenient resource estimation client API to submit jobs from Q#, Qiskit, and QIR.
+- In Q# Jupyter notebooks, fixed an issue [microsoft/iqsharp#776](https://github.com/microsoft/iqsharp/pull/776) where Q# exceptions would cause the notebook kernel to run out of memory.
+- Removed references to previously deprecated Rigetti Aspen M-2 target.
 
 ## 2023-03-29
 
