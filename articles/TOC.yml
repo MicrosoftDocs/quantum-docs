@@ -139,12 +139,6 @@
         href: provider-ionq.md
       - name: IonQ support policy
         href: provider-support-ionq.md
-    - name: QCI
-      items:
-      - name: QCI provider & targets
-        href: provider-qci.md
-      - name: QCI support policy
-        href: provider-support-qci.md
     - name: Quantinuum
       items:
       - name: Quantinuum provider & targets

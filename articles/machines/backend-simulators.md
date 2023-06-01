@@ -26,17 +26,6 @@ IonQ provides a GPU-accelerated idealized simulator supporting up to 29 qubits, 
 
 For more information, see the [IonQ provider](xref:microsoft.quantum.providers.ionq) page.
 
-## QCI
-
-The QCI simulator...
-
-- Job type: `Simulation`
-- Data Format: TBD
-- Target ID: `qci.simulator`
-- Target Execution Profile: Basic Measurement Feedback
-
-For more information, see the [QCI provider](xref:microsoft.quantum.providers.qci) page.
-
 ## Quantinuum
 
 Quantinuum provides two emulator tools:
