@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Learn how to run your Q# programs on the backend simulators from Microsoft partners.
-ms.author: brbenefield
+ms.author: sonialopez
 ms.date: 067/01/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

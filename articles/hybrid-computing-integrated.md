@@ -2,7 +2,7 @@
 author: bradben
 description: Understand the architecture and implementation of integrated hybrid quantum computing.
 ms.date: 06/01/2023
-ms.author: brbenefield
+ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: concepts
