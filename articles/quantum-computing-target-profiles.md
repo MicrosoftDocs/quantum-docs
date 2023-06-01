@@ -132,3 +132,6 @@ Presently, these :::no-loc text="Basic Measurement Feedback"::: targets are avai
 
 - **Provider:** Quantinuum
   - [Quantinuum System Model H1-1 and H1-2](xref:microsoft.quantum.providers.quantinuum#system-model-h1) (`quantinuum.qpu.h1-1`, `quantinuum.qpu.h1-2`)
+- **Provider:** QCI
+  - [QCI simulator](xref:microsoft.quantum.machines.overview.backend-simulators#qci)  <!-- IS THERE A SPECIFIC NAME FOR SIMULATOR? -->
+

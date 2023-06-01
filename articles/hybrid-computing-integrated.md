@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand the architecture and implementation of integrated hybrid quantum computing.
-ms.date: 03/17/2023
+ms.date: 06/01/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -24,7 +24,16 @@ For more discussion, see:
 
 ## Supported targets
 
-Currently, the integrated hybrid computing model in Azure Quantum is supported on [Quantinuum](xref:microsoft.quantum.providers.quantinuum) targets.
+Currently, the integrated hybrid computing model in Azure Quantum is supported only on [QCI](xref:microsoft.quantum.machines.overview.backend-simulators#qci) and [Quantinuum](xref:microsoft.quantum.providers.quantinuum) targets.
+
+### QCI
+
+<!-- YOU CAN ALSO ADD ANY CONTENT HERE THAT HELPS DESCRIBE YOUR INTEGRATED HYBRID FEATURES -->
+
+|Supported feature| Notes |
+|---|---|
+| TBD | TBD |
+| TBD | TBD |
 
 ### Quantinuum
 
