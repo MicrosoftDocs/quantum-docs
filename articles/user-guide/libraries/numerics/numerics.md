@@ -32,7 +32,7 @@ open Microsoft.Quantum.Arithmetic;
 
 ## Prerequisites
 
-- The [Microsoft Quantum Development kit](xref:microsoft.quantum.install-qdk.overview)
+- The [Microsoft Quantum Development kit](xref:microsoft.quantum.install-qdk.overview) or an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - The `Microsoft.Quantum.Numerics` library. For information on installing additional Q# libraries, see [Q# libraries](xref:microsoft.quantum.libraries.overview).
 
 ## Types
