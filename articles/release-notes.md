@@ -25,6 +25,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 - You can now use a unified and convenient resource estimation client API to submit jobs from Q#, Qiskit, and QIR.
 - In Q# Jupyter notebooks, fixed an issue [microsoft/iqsharp#776](https://github.com/microsoft/iqsharp/pull/776) where Q# exceptions would cause the notebook kernel to run out of memory.
 - Removed references to previously deprecated Rigetti Aspen M-2 target.
+- Added a warning that Microsoft QIO solvers will be deprecated and no longer available in Azure Quantum after June 30th 2023.
 
 ## 2023-03-29
 
