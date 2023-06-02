@@ -19,7 +19,7 @@ In this guide, you will learn how to run a quantum sequential classifier written
 
 - The Microsoft [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) or an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - Create a Q# project for either a [Python host program](xref:microsoft.quantum.submit-jobs?pivots=ide-python) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local).
-- The `Microsoft.Quantum.MachineLearning` library. For information on installing additional Q# libraries, see [Q# libraries](xref:microsoft.quantum.libraries.overview).
+- The `Microsoft.Quantum.MachineLearning` library. For information on installing additional Q# libraries, see [Q# libraries](xref:microsoft.quantum.libraries.overview#installation).
 
 ## Q\# classifier code
 

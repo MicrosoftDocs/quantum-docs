@@ -23,7 +23,7 @@ This section details how to use the Quantum Development Kit with either NWChem a
 ## Prerequisites
 
 - The Microsoft [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) or an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The `Microsoft.Quantum.Chemistry` library. For information on installing additional Q# libraries, see [Q# libraries](xref:microsoft.quantum.libraries.overview).
+- The `Microsoft.Quantum.Chemistry` library. For information on installing additional Q# libraries, see [Q# libraries](xref:microsoft.quantum.libraries.overview#installation).
 
 ## Using the Quantum Development Kit with NWChem
 
