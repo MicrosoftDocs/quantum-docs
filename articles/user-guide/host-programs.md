@@ -601,6 +601,8 @@ Multiple qubit result: [One,One,Zero,Zero]
 > Due to the compiler's interoperability with namespaces, we could alternatively make our Q# callables available without the `using Superposition;` statement, and simply matching the C# namespace title to it.
 > That is, by replacing `namespace host` with `namespace Superposition`.
 
+***
+
 ## Q# Jupyter Notebooks
 
 Q# Jupyter Notebooks make use of the IQ# kernel, which allows you to define, compile, and run Q# callables in a single notebook---all alongside instructions, notes, and other content.
