@@ -91,8 +91,6 @@
       href: how-to-publish-qsharp-job-as-azurefunction.md
   - name: The Q# user guide
     href: user-guide/toc.yml
-  - name: Quantum simulators
-    href: machines/toc.yml  
   - name: Concepts
     items:
       - name: "Quantum computing history & background"
@@ -127,7 +125,9 @@
     items:
     - name: Q# compiler messages
       href: qs-compiler-messages/toc.yml
-  - name: Quantum hardware provider reference
+  - name: Quantum simulators
+    href: machines/toc.yml
+  - name: Quantum providers
     items:
     - name: Quantum computing providers
       href: qc-target-list.md
