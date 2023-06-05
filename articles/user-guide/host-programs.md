@@ -1,8 +1,8 @@
 ---
 author: SoniaLopezBravo
-description: Overview of the different ways to run Q# programs. From the command prompt, Q# Jupyter Notebooks, and classical host programs in Python or a .NET language.
+description: Overview of the different ways to run Q# programs: from the command prompt, Q# Jupyter Notebooks, the Azure Quantum Copilot and classical host programs in Python or a .NET language.
 ms.author: sonialopez
-ms.date: 11/15/2021
+ms.date: 05/06/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -15,14 +15,20 @@ uid: microsoft.quantum.user-guide-qdk.overview.host-programs
 
 One of the Quantum Development Kit's greatest strengths is its flexibility across platforms and development environments.
 However, this flexibility also means that new Q# users may find themselves confused or overwhelmed by the numerous options found in the [install guide](xref:microsoft.quantum.install-qdk.overview).
-This page explains what happens when a Q# program is run and compares the different ways in which users can do so.
+This page explains the different ways that you can run a quantum program and what happens when the program is run.
 
-A primary distinction is that Q# can be run:
+Using the QDK and the Azure Quantum service, you can create quantum programs:
 
-- as a *standalone application*, where Q# is the only language involved and the program is invoked directly. Two methods actually fall in this category:
-  - the command-line interface
-  - Q# Jupyter Notebooks
-- with an extra *host program*, written in Python or a .NET language (for example, C# or F#), which then invokes the program and can further process returned results.
+- using Q# only
+- using Q# along with the Azure Quantum Python library or a .NET language, such as C#
+- using Qiskit along with Azure Quantum Python library
+
+You can run these programs:
+
+- from the command-line interface
+- from a locally-hosted Jupyter Notebook
+- from a Jupyter Notebook in the Azure portal
+- from the Azure Quantum Copilot
 
 To understand these processes and their differences better, let's consider a Q# program and compare the ways it can be run.
 
@@ -299,6 +305,7 @@ A Python host program is constructed as follows:
     random_bit = MeasureSuperposition.simulate()
     print(random_bit)
     ```
+
 #### Diagnostics
 
 As with Q# standalone notebooks, you can also use diagnostics like `DumpMachine` and `DumpOperation` from Python notebooks to learn how your Q# program work and to help diagnose issues and bugs in your Q# programs.
@@ -317,10 +324,12 @@ namespace DumpOperation {
     }
 }
 ```
+
 ```python
 from  DumpOperation import DumpPlusState
 print(DumpPlusState.simulate())
 ```
+
 Calling <xref:Microsoft.Quantum.Diagnostics.DumpMachine> generates the following output:
 
 ```output
@@ -328,6 +337,7 @@ Calling <xref:Microsoft.Quantum.Diagnostics.DumpMachine> generates the following
 ∣0❭:     0.707107 +  0.000000 i  ==     ***********          [ 0.500000 ]     --- [  0.00000 rad ]
 ∣1❭:     0.707107 +  0.000000 i  ==     ***********          [ 0.500000 ]     --- [  0.00000 rad ]
 ```
+
 The Q# package also allows you to capture these diagnostics and manipulate them as Python objects:
 
 ```python
@@ -335,6 +345,7 @@ with qsharp.capture_diagnostics() as diagnostics:
     DumpPlusState.simulate()
 print(diagnostics)
 ```
+
 ```output
 [{'diagnostic_kind': 'state-vector',
   'div_id': 'dump-machine-div-7d3eac24-85c5-4080-b123-4a76cacaf58f',
@@ -349,6 +360,7 @@ print(diagnostics)
     'Magnitude': 0.7071067811865476,
     'Phase': 0.0}]}]
 ```
+
 Working with raw JSON for diagnostics can be inconvenient, so the capture_diagnostics function also supports converting diagnostics into quantum objects using the [QuTiP library](https://qutip.org/):
 
 ```python
@@ -357,6 +369,7 @@ with qsharp.capture_diagnostics(as_qobj=True) as diagnostics:
     DumpPlusState.simulate()
 diagnostics[0]
 ```
+
 ```output
 Quantum object: dims = [[2], [1]], shape = (2, 1), type = ket
 Qobj data =
@@ -600,6 +613,8 @@ Multiple qubit result: [One,One,Zero,Zero]
 > [!NOTE]
 > Due to the compiler's interoperability with namespaces, we could alternatively make our Q# callables available without the `using Superposition;` statement, and simply matching the C# namespace title to it.
 > That is, by replacing `namespace host` with `namespace Superposition`.
+
+***
 
 ## Q# Jupyter Notebooks
 

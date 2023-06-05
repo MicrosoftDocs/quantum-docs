@@ -54,7 +54,7 @@ Azure Quantum gives you access to a broad set of state-of-the-art quantum-inspir
 
 ### The Azure Quantum website
 
-[Azure Quantum (quantum.microsoft.com)](https://quantum.microsoft.com) is a central resource for all things Azure Quantum. Explore blogs, conceptual articles, and videos, run Q# code samples in the online code editor, or use the Quantum Copilot to dive deeper into your quantum questions. All that's required is a Microsoft (MSA) email account. For more information, see [Get started with Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
+[Azure Quantum (quantum.microsoft.com)](https://quantum.microsoft.com) is a central resource for all things Azure Quantum. Explore blogs, conceptual articles and videos, run Q# code samples in the online code editor, or use the Quantum Copilot to dive deeper into your quantum questions. All that's required is a Microsoft (MSA) email account. For more information, see [Get started with Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
 
 ### The Azure portal
 
