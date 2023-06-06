@@ -19,7 +19,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 ## 2023-06-05
 
-### QDK version 0.28.275773
+### QDK version 0.28.277227
 
 - Added support for [sessions](/azure/quantum/hybrid-computing-interactive?tabs=tabid-iqsharp) to improve experience for interactive hybrid algorithms.
 - You can now use a unified and convenient resource estimation client API to submit jobs from Q#, Qiskit, and QIR.
