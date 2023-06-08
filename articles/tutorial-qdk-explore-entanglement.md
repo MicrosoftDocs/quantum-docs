@@ -17,11 +17,11 @@ zone_pivot_groups: ide-platforms
 This tutorial shows you how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement. 
 
 * Where classical bits hold a single binary value such as a 0 or 1, the state of a [qubit](xref:microsoft.quantum.glossary-qdk#qubit) can be in a [superposition](xref:microsoft.quantum.glossary-qdk#superposition) of two quantum states, 0 and 1. Each possible quantum state has an associated probability amplitude.
-* The act of [measuring](xref:microsoft.quantum.glossary-qdk#measurement) a qubit produces a binary result, either 0 or 1, with a certain probability, and changes the state of the qubit out of superposition. 
-* Multiple qubits can be [entangled](xref:microsoft.quantum.glossary-qdk#entanglement) such that they cannot be described independently from each other. That is, whatever happens to one qubit in an entangled pair also happens to the other qubit.
+* The act of [measuring](xref:microsoft.quantum.glossary-qdk#measurement) a qubit produces a binary result with a certain probability, and changes the state of the qubit out of superposition. 
+* Multiple qubits can be [entangled](xref:microsoft.quantum.glossary-qdk#entanglement) such that they can't be described independently from each other. That is, whatever happens to one qubit in an entangled pair also happens to the other qubit.
 
-In this tutorial, you will prepare two qubits in a specific quantum state, learn how to operate on qubits with Q# to change their state, and demonstrate the effects
-of superposition and entanglement. You will build your Q# program piece-by-piece to introduce qubit states, operations, and measurements.
+In this tutorial, you prepare two qubits in a specific quantum state, learn how to operate on qubits with Q# to change their state, and demonstrate the effects
+of superposition and entanglement. You build your Q# program piece-by-piece to introduce qubit states, operations, and measurements.
 
 ::: zone pivot="ide-azure-portal"
 

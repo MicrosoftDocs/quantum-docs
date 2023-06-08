@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the resources available on the Azure Quantum website.
 ms.author: brbenefield
-ms.date: 05/31/2023
+ms.date: 06/08/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -11,20 +11,75 @@ title: Azure Quantum
 uid: microsoft.quantum.get-started.azure-quantum
 ---
 
-# Get started with Azure Quantum
+# Explore Azure Quantum
 
-Overview and feature blurb
+The [Azure Quantum homepage](https://quantum.microsoft.com) is a centralized resource for exploring quantum computing concepts, keeping up with the latest advances in quantum technology, and even using the Quantum Copilot to generate and run quantum programs. 
 
-Prereqs - MSA account
+- [Quantum Copilot](https://quantum.microsoft.com/en-us/experience/quantum-coding) - AI meets the world of quantum. With a built-in code window and Q# compiler, the Quantum Copilot can not only run your code, but also generate Q# code from your prompts, and engage in conversations about quantum computing. 
+- [Quantum Elements](https://azure.microsoft.com/solutions/quantum-applications/#overview) - One of the most important applications of quantum computing will be in the field of chemistry. Currently in private preview, Quantum Elements uses the Quantum Copilot to design, code, and render molecular models.
+- [Code samples](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum) - The Azure Quantum code library is a rich set of samples utilizing Q#, Python, and Qiskit code demonstrate quantum scenarios.
+- [Quantum concepts](https://quantum.microsoft.com/en-us/explore/concepts) - From the basics of quantum theory to advanced techniques of quantum computing, the Concepts library is a crash course to bring you up to speed on quantum computing. 
+- [Videos](https://quantum.microsoft.com/en-us/explore/playlist) - Browse the video library for interviews with leading quantum computing researchers and innovators.
+- [Azure Quantum blogs](https://cloudblogs.microsoft.com/quantum/) - Stay up to date with the latest quantum computing research and innovations. 
 
-Caveats - can't save work, no Python, no hardware?
-
+All you need to start exploring Azure Quantum is a Microsoft (MSA) email account. You can create an MSA for free at [https://account.microsoft.com/]( https://account.microsoft.com/).
+ 
 ## Run a Q# program 
 
-- Basic program
-- Explain the output area 
-- Edit the program to show changes in the output
-- Prompt the copilot to make a change
+To start exploring the Quantum Copilot, you can copy and paste a simple Q# program into the code window.
+
+1. Navigate to the Quantum Copilot using any Microsoft (MSA) account.
+1. Copy and paste the following code into the code window. This program generates a random integer between 0 and 50.
+
+    ```qsharp
+    namespace Qrng {
+        open Microsoft.Quantum.Canon;
+        open Microsoft.Quantum.Intrinsic;
+        open Microsoft.Quantum.Measurement;
+        open Microsoft.Quantum.Math;
+        open Microsoft.Quantum.Convert;
+    
+        operation SampleQuantumRandomNumberGenerator() : Result {
+            // Allocate a qubit.
+            use q = Qubit();
+            // Put the qubit to superposition.
+            H(q);
+            // It now has a 50% chance of being measured 0 or 1.
+            // Measure the qubit value.
+            return MResetZ(q);
+        }
+        operation SampleRandomNumberInRange(max : Int) : Int {
+            mutable output = 0; 
+            repeat {
+                mutable bits = []; 
+                for idxBit in 1..BitSizeI(max) {
+                    set bits += [SampleQuantumRandomNumberGenerator()]; 
+                }
+                set output = ResultArrayAsInt(bits);
+            } until (output <= max);
+            return output;
+        }
+        @EntryPoint()
+        operation SampleRandomNumber() : Int {
+            let max = 50;
+            Message($"Sampling a random number between 0 and {max}: ");
+            return SampleRandomNumberInRange(max);
+        }
+    }
+    ```
+
+1. Click **Run**.
+
+- The results are displayed in the **Results** field, and a histogram of the results is displayed below the code window. 
+- You can move the slider for **Select number of shots** to specify how many times the program is run.
+- The **Shots** field displays the result for each shot. 
+- Click **Explain code** to prompt the Quantum Copilot to generate an analysis of the code sample.
+
+You can prompt the Quantum Copilot for almost anything quantum related, for example:
+
+- "Explain the MResetZ operation"
+- "Write Q# code that entangles two qubits"
+- "Explain quantum interference"
 
 ## Next steps
 
