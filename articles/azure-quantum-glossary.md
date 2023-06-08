@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: A glossary of common terms, actions and objects used in Azure Quantum.
 ms.author: sonialopez
-ms.date: 03/06/2023
+ms.date: 06/06/2023
 ms.service: azure-quantum
 ms.subservice: core  
 ms.custom: devx-track-arm-template
@@ -134,7 +134,7 @@ A model of [hybrid quantum computing](#hybrid-quantum-computing) where the class
 
 ## Job
 
-A [program](#quantum-program), [problem](#quantum-inspired-optimization-problem), or application, submitted to Azure Quantum for processing by an Azure Quantum [provider](#provider).
+A [program](#quantum-program), or application, submitted to Azure Quantum for processing by an Azure Quantum [provider](#provider).
 
 ## Logical qubit
 
@@ -192,13 +192,6 @@ For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.cir
 
 Microsoft’s software development kit for developing quantum applications in the Azure Quantum service. The QDK contains Q\#, Microsoft's programming language for quantum computing, and Q\# Python packages, along with Q\# libraries, samples and tutorials. It also contains developer APIs for running jobs on the Azure Quantum service. For more information, see the [Microsoft QDK Documentation](xref:microsoft.quantum.overview.q-sharp).
 
-## Quantum-inspired optimization (QIO)
-
-The emulation of quantum algorithms on classical computing hardware to find optimal solutions to complex problems. For more information, see [What is quantum-inspired optimization](xref:microsoft.quantum.overview.q-sharp).
-
-## Quantum-inspired optimization problem
-
-A problem expressed using the Python optimization library and solved using Azure Quantum. Problems may be expressed as PUBOs (Polynomial Unconstrained Binary Optimization) or Ising forms. For more information, see [Binary optimization](xref:microsoft.quantum.optimization.concepts.binary-optimization).
 
 ## Quantum libraries
 

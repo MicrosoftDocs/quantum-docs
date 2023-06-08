@@ -19,7 +19,7 @@ Every environment uses the [Quantum Development Kit (QDK)](xref:microsoft.quantu
 
 The QDK provides: 
 
-- Python packages to submit Qiskit and Cirq applications, Q# applications, or [optimization problems (QIO)](xref:microsoft.quantum.optimization.concepts.overview.introduction) to the Azure Quantum service
+- Python packages to submit Qiskit, Cirq and Q# applications to the Azure Quantum service
 - The Q# programming language and libraries 
 - The IQ# kernel for running Q# on Jupyter Notebooks 
 - Extensions for Visual Studio Code and Visual Studio 
@@ -115,7 +115,7 @@ To test your environment, see [Submit Q# jobs to Azure Quantum](xref:microsoft.q
 
 ### Use Python with Qiskit or Cirq, or Azure Quantum optimization solvers
 
-You can use the `azure-quantum` Python package to submit and run Qiskit or Cirq jobs, or submit [quantum-inspired optimization](xref:microsoft.quantum.optimization.concepts.overview.introduction) jobs to the Azure Quantum optimization solvers. 
+You can use the `azure-quantum` Python package to submit and run Qiskit or Cirq jobs.
 
 To install the `azure-quantum` Python package 
 

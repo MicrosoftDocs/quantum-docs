@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
-description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs or solve optimization problems in the cloud.
-ms.date: 01/08/2023
+description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs in the cloud.
+ms.date: 06/08/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -18,7 +18,7 @@ Azure Quantum is the cloud quantum computing service of Azure, with a diverse se
 Azure Quantum provides the best development environment to create quantum algorithms for multiple platforms at once while preserving flexibility to tune the same algorithms for specific systems. You can write your code once and run it with little to no change against multiple targets of the same family which allows you to focus your programming at the algorithm level.
 
 - An **open ecosystem**, enabling you to access diverse quantum software, hardware, and solutions from Microsoft and its partners. You can pick from quantum programming languages such as Qiskit, Cirq, and Q# and run your algorithms on multiple quantum systems.
-- Quantum impact today, allowing you to simultaneously explore today’s quantum systems and be ready for the scaled quantum systems of the future, and with pre-built solutions that run on classical and accelerated compute resources (also referred to as optimization solutions).
+- Quantum impact today, allowing you to simultaneously explore today’s quantum systems and be ready for the scaled quantum systems of the future.
 
 > [!TIP]
 > If you don’t have an Azure account, register for **free** and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). If you are a student, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
@@ -42,13 +42,6 @@ If you aim to simulate quantum mechanical problems, such as chemical reactions, 
 
 With Azure Quantum, researchers and businesses can use quantum computing to model complex scenarios in risk management, cybersecurity, network analysis, data search, vaccine development, or materials science. To learn more about how you can use quantum computing and quantum algorithms, see [Understanding Quantum Computing](xref:microsoft.quantum.overview.understanding).  
 
-### Optimization
-
-Decades of simulation of the quantum effects on classical computers has led to the development of new types of quantum solutions named *quantum-inspired optimization*. Optimization is the process of finding the best solution to a problem given its desired outcome and constraints. Complex optimization problems exist across every industry: vehicle routing, supply chain management, scheduling, portfolio optimization, power grid management, and many others. Solving these real-world problems results in high-value benefits, such as reduced costs, accelerated processes, or reduced risks. 
-
-Quantum-inspired optimization algorithms exploit some of the advantages of quantum computing on classical hardware, providing a speedup over traditional approaches.
-
-Azure Quantum gives you access to a broad set of state-of-the-art quantum-inspired optimization algorithms developed by Microsoft and its partners. To learn more about the optimization solutions in Azure Quantum, see [What is optimization?](xref:microsoft.quantum.optimization.concepts.overview.introduction).
 
 ## How to get started with Azure Quantum?
 
@@ -132,8 +125,6 @@ The following diagram shows the stages through which a quantum program goes from
 
 Azure Quantum offers some of the most compelling and diverse quantum resources available today from industry leaders. Azure Quantum currently partners with the following providers to enable you to run your Q# quantum programs on real hardware, and the option to test your code on simulated quantum computers.
 
-### Quantum computing providers
-
 Choose the provider that best suits the characteristics of your problem and your needs. 
 
 - [Quantinuum](https://www.quantinuum.com): Trapped-ion system with high-fidelity, fully connected qubits, low error rates, qubit reuse, and the ability to perform mid-circuit measurements.
@@ -144,15 +135,6 @@ Choose the provider that best suits the characteristics of your problem and your
 
 For more information on the specifications of each provider, see the full [Quantum computing target list](xref:microsoft.quantum.reference.qc-target-list).
 
-### Optimization providers
-
-For optimization solutions, these are the available providers you can choose from:
-
-- [1QBit](https://1qbit.com/): Iterative heuristic algorithms that use search techniques to solve QUBO problems.
-- [Microsoft QIO](xref:microsoft.quantum.optimization.providers.microsoft.qio): A set of multiple targets that rephrase the optimization problem inspired by decades of quantum research.
-- [Toshiba SQBM+](https://www.toshiba-sol.co.jp/en/pro/sbm/index.htm): Toshiba Simulated Quantum Bifurcation Machine is a GPU-powered ISING machine that solves large-scale combinatorial optimization problems at high speed.
-
-For more information on the specifications of each provider, see the full [Optimization target list](xref:microsoft.quantum.reference.qio-target-list).
 
 ## Next steps
 

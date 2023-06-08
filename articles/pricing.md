@@ -34,16 +34,6 @@ To see the different pricing plans in your local currency:
 
 ::: zone-end
 
-::: zone pivot="ide-optimization"
-
-[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
-
-[!INCLUDE [pricing-optimization](includes/pricing-optimization.md)]
-
-::: zone-end
-
-
-
 ## Next Steps
 
 - [Azure Quantum Credits](xref:microsoft.quantum.credits)
