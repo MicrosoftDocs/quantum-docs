@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Build a Q# project that demonstrates fundamental quantum concepts like superposition by creating a quantum random number generator.
 ms.author: sonialopez
-ms.date: 10/31/2022
+ms.date: 06/06/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -25,9 +25,9 @@ In this tutorial, you'll learn how to
 ## Prerequisites
 
 - [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) (QDK) using your preferred language and development environment. This tutorial presents the solution in three different formats:
-    - Q# standalone 
-    - Q# and Python 
-    - Q# and C# 
+  - Q# standalone 
+  - Q# and Python 
+  - Q# and C# 
 - If you already have the QDK installed, make sure you have [updated the QDK](xref:microsoft.quantum.update-qdk) (and the [Python qsharp package](xref:microsoft.quantum.update-qdk#update-the-qsharp-python-package), if applicable) to the latest version.
 
 ## Creating a Q# project
@@ -62,8 +62,8 @@ namespace Qrng {
         // Put the qubit to superposition
         // It now has a 50% chance of being measured 0 or 1  
         H(q);      
-        // Measure the qubit value            
-        return M(q); 
+        // Measure the qubit value and reset the qubit          
+        return MResetZ(q); 
     }
 }
 ```
@@ -74,13 +74,13 @@ Now take a look at new code.
 - You define the `SampleQuantumRandomNumberGenerator` operation, which takes no input and produces a value of type [`Result`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types). The `Result` type represents the result of a measurement and can have two possible values: `Zero` or `One`.  
 - Allocate a single [qubit](xref:microsoft.quantum.glossary-qdk#qubit) with the `use` keyword. 
 - Use the [`H`](xref:Microsoft.Quantum.Intrinsic.H) ([Hadamard](xref:microsoft.quantum.glossary-qdk#hadamard)) operation to place the qubit in an equal [superposition](xref:microsoft.quantum.glossary-qdk#superposition). 
-- Use the [`M`](xref:Microsoft.Quantum.Intrinsic.M) operation to measure the qubit and return the measured value (`Zero` or `One`). 
+- Use the [`MResetZ`](xref:Microsoft.Quantum.Intrinsic.MResetZ) operation to measure the qubit, return the measured value (`Zero` or `One`), and then reset the qubit so it may be used again. 
 
 As discussed in the [Understanding quantum computing](xref:microsoft.quantum.overview.understanding) article, a qubit is a unit of quantum information that can be in [superposition](xref:microsoft.quantum.glossary-qdk#superposition). When measured, a qubit can only be either in the **0** state or in the **1** state. However, before measurement, the state of the qubit represents the *probability* of reading either a **0** or a **1** with a measurement. In this example, before the measurement the qubit is in an equal superposition, that is there is a probability of 50% of reading  **0** and 50% of reading **1**.  You can use this probability to generate random numbers.
 
 The user-defined `SampleQuantumRandomNumberGenerator` operation introduces the [`Qubit`](xref:microsoft.quantum.qsharp.quantumdatatypes#qubits) datatype, which is native to Q#. You can only allocate a `Qubit` with a `use` statement. When it gets allocated, a qubit is always in the `Zero` state. 
 
-By putting the qubit in superposition with the [`H`](xref:Microsoft.Quantum.Intrinsic.H) operation and measuring it with the [`M`](xref:Microsoft.Quantum.Intrinsic.M) operation, the result is a different value each time the code is invoked.
+By putting the qubit in superposition with the [`H`](xref:Microsoft.Quantum.Intrinsic.H) operation and measuring it with the [`MResetZ`](xref:Microsoft.Quantum.Intrinsic.MResetZ) operation, the result is a different value each time the code is invoked.
 
 ### Visualizing the code with the Bloch sphere
 
@@ -136,7 +136,7 @@ namespace Qrng {
         // It now has a 50% chance of being measured 0 or 1  
         H(q);      
         // Measure the qubit value            
-        return M(q);           
+        return MResetZ(q);           
     }
 
     operation SampleRandomNumberInRange(max : Int) : Int {
@@ -183,7 +183,7 @@ namespace Qrng {
         // It now has a 50% chance of being measured 0 or 1  
         H(q);      
         // Measure the qubit value            
-        return M(q);           
+        return MResetZ(q);           
     }
 
     operation SampleRandomNumberInRange(max : Int) : Int {
@@ -202,7 +202,9 @@ namespace Qrng {
 
 select the tab for your preferred language and environment and follow the instructions for running or calling your Q# program. 
 
-### [Standalone Q# application with Visual Studio or Visual Studio Code](#tab/tabid-qsharp)
+### [Quantum Copilot](#tab/tabid-copilot)
+
+You can test your Q# code with the Quantum Copilot free of charge - all you need is a Microsoft (MSA) email account. For more information about the Copilot, see [Get started with Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
 A standalone Q# application requires an `EntryPoint` so the Q# compiler knows where to start the program. To create the full Q# application, add the following entry point to your Q# program, *Program.qs*:
 
@@ -222,7 +224,7 @@ namespace Qrng {
         H(q);
         // It now has a 50% chance of being measured 0 or 1.
         // Measure the qubit value.
-        return M(q);
+        return MResetZ(q);
     }
 
     operation SampleRandomNumberInRange(max : Int) : Int {
@@ -246,7 +248,59 @@ namespace Qrng {
 }
 ```
 
-The program runs the operation or function marked with the `@EntryPoint()` attribute on a simulator or resource estimator, depending on the project configuration and command-line options.
+The program runs the operation or function marked with the `@EntryPoint()` attribute on the default full state simulator.
+
+Copy and paste the full code sample into the [Quantum Copilot](https://quantum.microsoft.com/en-us/experience/coding), select the number of shots to run, and click **Run**. The results are displayed in the histogram and in the **Results** fields.
+
+> [!NOTE]
+> A project file is not necessary to run the Q# code in the Copilot. Likewise, installing the QDK is not necessary, as the Copilot already runs the latest QDK.
+
+
+### [Standalone Q# application with Visual Studio or Visual Studio Code](#tab/tabid-qsharp)
+
+A standalone Q# application requires an `EntryPoint` so the Q# compiler knows where to start the program. To create the full Q# application, add the following entry point to your Q# program, *Program.qs*:
+
+```qsharp
+namespace Qrng {
+
+    open Microsoft.Quantum.Canon;
+    open Microsoft.Quantum.Intrinsic;
+    open Microsoft.Quantum.Measurement;
+    open Microsoft.Quantum.Math;
+    open Microsoft.Quantum.Convert;
+
+    operation SampleQuantumRandomNumberGenerator() : Result {
+        // Allocate a qubit.
+        use q = Qubit();
+        // Put the qubit to superposition.
+        H(q);
+        // It now has a 50% chance of being measured 0 or 1.
+        // Measure the qubit value.
+        return MResetZ(q);
+    }
+
+    operation SampleRandomNumberInRange(max : Int) : Int {
+        mutable output = 0; 
+        repeat {
+            mutable bits = []; 
+            for idxBit in 1..BitSizeI(max) {
+                set bits += [SampleQuantumRandomNumberGenerator()]; 
+            }
+            set output = ResultArrayAsInt(bits);
+        } until (output <= max);
+        return output;
+    }
+
+    @EntryPoint()
+    operation SampleRandomNumber() : Int {
+        let max = 50;
+        Message($"Sampling a random number between 0 and {max}: ");
+        return SampleRandomNumberInRange(max);
+    }
+}
+```
+
+The program runs the operation or function marked with the `@EntryPoint()` attribute on the default simulator or another specified Azure Quantum target.
 
 In Visual Studio, simply press **Ctrl + F5** to run the script.
 

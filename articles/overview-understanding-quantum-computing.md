@@ -21,6 +21,8 @@ For more information about the beginnings and motivation of quantum computing, s
 
 [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) is an open ecosystem to build quantum computing solutions on a diverse selection of today’s quantum hardware, and it offers flexibility to use your preferred development tools with support for Cirq, Qiskit, and Q#. You can use the familiar and trusted Azure platform to learn how to develop quantum algorithms and how to program and run them on real hardware from multiple providers.
 
+Get started quickly with the [Azure Quantum website](https://quantum.microsoft.com) and explore blogs, videos, conceptual articles, and dig deeper into quantum computing with the Quantum Copilot. 
+
 Learn how to create an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace) and start submitting your quantum programs on real quantum hardware. First-time users automatically get free Azure Quantum Credits for use with each participating quantum hardware provider (500 USD each) when creating your workspace. If you need more credits, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
 
 > [!Tip]
@@ -66,7 +68,7 @@ Like Shor's algorithm for factoring, the hidden shift problem is a natural sourc
 - Database search problem: Does the database table contain a record $x$?
 - Integer factorization problem: Is the fixed number $N$ divisible by the number $x$?
 
-For a practical implementation of Grover's algorithm to solve mathematical problems take a look at the [Grover's Search Jupyter notebook](xref:microsoft.quantum.get-started.notebooks) in the sample gallery of your Azure Quantum workspace (an Azure account is required), or see this [tutorial to implement Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers).
+For a practical implementation of Grover's algorithm to solve mathematical problems, take a look at the Grover's Search Jupyter notebook in the **Sample gallery** of your Azure Quantum workspace (an Azure account is required). For more information on setting up a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.get-started.notebooks). For a more in-depth examination of Grover's algorithm, see the tutorial [Implement Grover's search algorithm in Q#](xref:microsoft.quantum.tutorial-qdk.grovers).
 
 For more quantum algorithm samples, see the [code samples](/samples/browse/?expanded=azure&products=azure-quantum%2Cqdk&languages=qsharp).
 
@@ -103,7 +105,7 @@ The qubit's probability of collapsing one way or the other is determined by **qu
 
 For example, with two bits in a classical computer, each bit can store 1 or 0, so together you can store four possible values – **00**, **01**, **10**, and **11** – but only one of those at a time. With two qubits in superposition, however, each qubit can be 1 or 0 or *both*, so you can represent the same four values simultaneously. With three qubits, you can represent eight values, with four qubits, you can represent 16 values, and so on.
 
-For more information, see [the qubit in quantum computing](xref:microsoft.quantum.concepts.qubit).
+For more information, see [The qubit in quantum computing](xref:microsoft.quantum.concepts.qubit).
 
 ### Entanglement
 
@@ -114,7 +116,7 @@ Entangled quantum systems maintain this correlation even when separated over lar
 > [!NOTE]
 > Not every correlation between the measurements of two qubits means that the two qubits are entangled. Besides quantum correlations, there exist also classical correlations. The difference between classical and quantum correlations is subtle, but it's essential for the speedup provided by quantum computers. For more information, see [Understanding classical correlations](xref:microsoft.quantum.concepts.multiple-qubits#understanding-classical-correlations).
 
-If you want to learn more, see the tutorial [exploring quantum entanglement with Q# and Azure Quantum](xref:microsoft.quantum.tutorial-qdk.entanglement).
+If you want to learn more, see the tutorial [Exploring quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement).
 
 ## Quantum computers vs quantum simulators
 
@@ -153,18 +155,19 @@ For the moment, the use of real quantum hardware is limited due to resources and
 
 Quantum simulators are software programs that run on classical computers and make it possible to run and test quantum programs in an environment that predicts how qubits react to different operations, making it easy to test and debug an algorithm and then run it on real hardware with confidence that the result will match the expectations. 
 
-The Quantum Development Kit (QDK) includes different classes of quantum simulators representing different ways of simulating the same quantum algorithm, such as a [sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator) for simulating large systems, a [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulating quantum algorithms under the presence of noise. For more information, see [quantum simulators](xref:microsoft.quantum.machines.overview). 
+The Quantum Development Kit (QDK) includes different classes of quantum simulators representing different ways of simulating the same quantum algorithm, such as a [sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator) for simulating large systems, a [noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator) for simulating quantum algorithms under the presence of noise. For more information, see [in-memory simulators](xref:microsoft.quantum.machines.overview). 
 
 In addition, each of Microsoft's quantum hardware partners offers a quantum simulator as a target. 
 
-If you have an Azure account, in the sample gallery of your Azure Quantum workspace you will find several Jupyter Notebook samples that use quantum simulators. See [how to get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
+If you have an Azure account, in the sample gallery of your Azure Quantum workspace you will find several Jupyter Notebook samples that use quantum simulators. See [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
 
 ## Next Steps
 
-- [Quantum Computing History and Background](xref:microsoft.quantum.concepts.intro)
+- [Get started with Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
+- [Quantum computing history and background](xref:microsoft.quantum.concepts.intro)
 - [What are the Q# programming language and Quantum Development Kit (QDK)?](xref:microsoft.quantum.overview.q-sharp)
-- [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview)
-- [Creating a quantum-based random number generator in Azure Quantum](xref:microsoft.quantum.tutorial-qdk.random-number)
-- [Quantum Simulators](xref:microsoft.quantum.machines.overview)
+- [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
+- [Tutorial: Implement a quantum random number generator in Q#](xref:microsoft.quantum.tutorial-qdk.random-number)
+- [In-memory quantum simulators](xref:microsoft.quantum.machines.overview)
 - [The Q# libraries](xref:microsoft.quantum.libraries.overview)

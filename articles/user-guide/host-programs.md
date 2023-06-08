@@ -1,6 +1,6 @@
 ---
 author: SoniaLopezBravo
-description: Overview of the different ways to run Q# programs: from the command prompt, Q# Jupyter Notebooks, the Azure Quantum Copilot and classical host programs in Python or a .NET language.
+description: Overview of the different ways to run Q# programs from the command prompt, Q# Jupyter Notebooks, the Azure Quantum Copilot in Python or a .NET language.
 ms.author: sonialopez
 ms.date: 05/06/2023
 ms.service: azure-quantum
@@ -21,14 +21,14 @@ Using the QDK and the Azure Quantum service, you can create quantum programs:
 
 - using Q# only
 - using Q# along with the Azure Quantum Python library or a .NET language, such as C#
-- using Qiskit along with Azure Quantum Python library
+- using Qiskit along with the Azure Quantum Python library
 
 You can run these programs:
 
 - from the command-line interface
 - from a locally-hosted Jupyter Notebook
-- from a Jupyter Notebook in the Azure portal
-- from the Azure Quantum Copilot
+- from a Jupyter Notebook in the Azure portal. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.get-started.notebooks).
+- from the Azure Quantum Copilot. For more information, see [Get started with Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
 To understand these processes and their differences better, let's consider a Q# program and compare the ways it can be run.
 

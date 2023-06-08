@@ -5,6 +5,8 @@
   items:
   - name: What is Azure Quantum?
     href: overview-azure-quantum.md
+  - name: Get started with Azure Quantum
+    href: get-started-azure-quantum.md
   - name: Create an Azure Quantum workspace
     href: how-to-create-workspace.md
   - name: Get started with Azure notebooks 
