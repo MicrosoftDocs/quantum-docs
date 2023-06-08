@@ -142,6 +142,6 @@ You'll find more sample notebooks in the **Getting started** tab of the sample g
 > If you have any questions or run into any issue using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Time zone (PT).
 ## Next steps
 
-- [Get started with Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
+- [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
 - [Quickstart: Solve an optimization problem in the Azure Quantum portal](xref:microsoft.quantum.quickstarts.optimization.qio.portal)
 - [Quickstart: Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal)

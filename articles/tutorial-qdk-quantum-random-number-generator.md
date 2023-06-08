@@ -207,7 +207,7 @@ Select the tab for your preferred language and environment and follow the instru
 
 ### [Quantum Copilot](#tab/tabid-copilot)
 
-You can test your Q# code with the Quantum Copilot free of charge - all you need is a Microsoft (MSA) email account. For more information about the Quantum Copilot, see [Get started with Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
+You can test your Q# code with the Quantum Copilot free of charge - all you need is a Microsoft (MSA) email account. For more information about the Quantum Copilot, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
 A standalone Q# application requires an `EntryPoint` so the Q# compiler knows where to start the program. To create the full Q# application, add the following entry point to your Q# program, *Program.qs*:
 

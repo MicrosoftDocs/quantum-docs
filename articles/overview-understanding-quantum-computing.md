@@ -164,7 +164,7 @@ If you have an Azure account, in the sample gallery of your Azure Quantum worksp
 
 ## Next Steps
 
-- [Get started with Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
+- [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
 - [Quantum computing history and background](xref:microsoft.quantum.concepts.intro)
 - [What are the Q# programming language and Quantum Development Kit (QDK)?](xref:microsoft.quantum.overview.q-sharp)
 - [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)

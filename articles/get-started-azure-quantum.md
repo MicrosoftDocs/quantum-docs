@@ -15,12 +15,12 @@ uid: microsoft.quantum.get-started.azure-quantum
 
 The [Azure Quantum homepage](https://quantum.microsoft.com) is a centralized resource for exploring quantum computing concepts, keeping up with the latest advances in quantum technology, and even using the Quantum Copilot to generate and run quantum programs. 
 
-- [Quantum Copilot](https://quantum.microsoft.com/en-us/experience/quantum-coding) - AI meets the world of quantum. With a built-in code window and Q# compiler, the Quantum Copilot can not only run your code, but also generate Q# code from your prompts, and engage in conversations about quantum computing. 
-- [Quantum Elements](https://azure.microsoft.com/solutions/quantum-applications/#overview) - One of the most important applications of quantum computing will be in the field of chemistry. Currently in private preview, Quantum Elements uses the Quantum Copilot to design, code, and render molecular models.
-- [Code samples](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum) - The Azure Quantum code library is a rich set of samples utilizing Q#, Python, and Qiskit code demonstrate quantum scenarios.
-- [Quantum concepts](https://quantum.microsoft.com/en-us/explore/concepts) - From the basics of quantum theory to advanced techniques of quantum computing, the Concepts library is a crash course to bring you up to speed on quantum computing. 
-- [Videos](https://quantum.microsoft.com/en-us/explore/playlist) - Browse the video library for interviews with leading quantum computing researchers and innovators.
-- [Azure Quantum blogs](https://cloudblogs.microsoft.com/quantum/) - Stay up to date with the latest quantum computing research and innovations. 
+- Quantum Copilot - AI meets the world of quantum. With a built-in code window and Q# compiler, the Quantum Copilot can not only run your code, but also generate Q# code from your prompts, and engage in conversations about quantum computing.
+- Quantum Elements - One of the most important applications of quantum computing will be in the field of chemistry. Currently in private preview, Quantum Elements uses the Quantum Copilot to design, code, and render molecular models.
+- Code samples - The Azure Quantum code library is a rich set of samples utilizing Q#, Python, and Qiskit code demonstrate quantum scenarios.
+- Quantum concepts - From the basics of quantum theory to advanced techniques of quantum computing, the Concepts library is a crash course to bring you up to speed on quantum computing. 
+- Videos - Browse the video library for interviews with leading quantum computing researchers and innovators.
+- Azure Quantum blogs - Stay up to date with the latest quantum computing research and innovations. 
 
 All you need to start exploring Azure Quantum is a Microsoft (MSA) email account. You can create an MSA for free at [https://account.microsoft.com/]( https://account.microsoft.com/).
  
@@ -28,7 +28,7 @@ All you need to start exploring Azure Quantum is a Microsoft (MSA) email account
 
 To start exploring the Quantum Copilot, you can copy and paste a simple Q# program into the code window.
 
-1. Navigate to the Quantum Copilot using any Microsoft (MSA) account.
+1. Navigate to the [Quantum Copilot](https://quantum.microsoft.com/en-us/experience/quantum-coding) using any Microsoft (MSA) account.
 1. Copy and paste the following code into the code window. This program generates a random integer between 0 and 50.
 
     ```qsharp
