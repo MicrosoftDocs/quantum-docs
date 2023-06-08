@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to develop and run Python host programs that call Q# operations on a simulator.
 ms.author: brbenefield
-ms.date: 09/22/2022
+ms.date: 06/08/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -234,6 +234,7 @@ The `PrepareBellPair` operation is defined in the `OperationSamples.qs` file, bu
 ```py
 %%qsharp
 open Microsoft.Quantum.Samples;
+open Microsoft.Quantum.Measurement;
 
 operation PrepareAndMeasureBellPair() : (Result, Result) {
     use left = Qubit();
