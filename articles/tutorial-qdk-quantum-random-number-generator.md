@@ -74,13 +74,13 @@ Now take a look at new code.
 - You define the `SampleQuantumRandomNumberGenerator` operation, which takes no input and produces a value of type [`Result`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types). The `Result` type represents the result of a measurement and can have two possible values: `Zero` or `One`.  
 - Allocate a single [qubit](xref:microsoft.quantum.glossary-qdk#qubit) with the `use` keyword. 
 - Use the [`H`](xref:Microsoft.Quantum.Intrinsic.H) ([Hadamard](xref:microsoft.quantum.glossary-qdk#hadamard)) operation to place the qubit in an equal [superposition](xref:microsoft.quantum.glossary-qdk#superposition). 
-- Use the [`MResetZ`](xref:Microsoft.Quantum.Intrinsic.MResetZ) operation to measure the qubit, return the measured value (`Zero` or `One`), and then reset the qubit so it may be used again. 
+- Use the [`MResetZ`](xref:Microsoft.Quantum.Measurement.MResetZ) operation to measure the qubit, return the measured value (`Zero` or `One`), and then reset the qubit so it may be used again. 
 
 As discussed in the [Understanding quantum computing](xref:microsoft.quantum.overview.understanding) article, a qubit is a unit of quantum information that can be in [superposition](xref:microsoft.quantum.glossary-qdk#superposition). When measured, a qubit can only be either in the **0** state or in the **1** state. However, before measurement, the state of the qubit represents the *probability* of reading either a **0** or a **1** with a measurement. In this example, before the measurement the qubit is in an equal superposition, that is there is a probability of 50% of reading  **0** and 50% of reading **1**.  You can use this probability to generate random numbers.
 
 The user-defined `SampleQuantumRandomNumberGenerator` operation introduces the [`Qubit`](xref:microsoft.quantum.qsharp.quantumdatatypes#qubits) datatype, which is native to Q#. You can only allocate a `Qubit` with a `use` statement. When it gets allocated, a qubit is always in the `Zero` state. 
 
-By putting the qubit in superposition with the [`H`](xref:Microsoft.Quantum.Intrinsic.H) operation and measuring it with the [`MResetZ`](xref:Microsoft.Quantum.Intrinsic.MResetZ) operation, the result is a different value each time the code is invoked.
+By putting the qubit in superposition with the [`H`](xref:Microsoft.Quantum.Intrinsic.H) operation and measuring it with the [`MResetZ`](xref:Microsoft.Quantum.Measurement.MResetZ) operation, the result is a different value each time the code is invoked.
 
 ### Visualizing the code with the Bloch sphere
 

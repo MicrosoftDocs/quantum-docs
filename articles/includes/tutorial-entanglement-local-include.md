@@ -354,7 +354,7 @@ In order to run the code as a standalone program, the Q# compiler needs to know 
 Your `program.qs` file should now look like this:
 
 > [!NOTE]
-> Currently, you cannot submit Q# programs to the Quantum Copilot that take arguments. The code here is modified slightly from the command prompt version by declaring the loop count and the initial qubit setting in the code instead of passing them to the program.
+> Currently, you cannot submit Q# programs to the Quantum Copilot that take arguments. The code here is modified slightly from the command prompt version by declaring the loop count and the initial qubit setting in the code instead of passing them as arguments.
 
 ```qsharp
 namespace Bell {
@@ -434,7 +434,7 @@ Q2 - Ones: 1000
 
 ## Put a qubit in superposition
 
-Currently, the qubits in the program are all in a **classical state**, that is, they are either 1 or 0. You know this because the program initializes the qubits to a known state, and you haven't added any processes to manipulate them.  Before entangling the qubits, you will put the first qubit into a **superposition state**, where a measurement of the qubit will return `Zero` 50% of the time and `One` 50% of the time. Conceptually, the qubit can be thought of as halfway between the `Zero` and `One`.
+Currently, the qubits in the program are all in a **classical state**, that is, they are either 1 or 0. You know this because the program initializes the qubits to a known state, and you haven't added any processes to manipulate them.  Before entangling the qubits, you will put the first qubit into a **superposition state**, where a measurement of the qubit will return `Zero` ~50% of the time and `One` ~50% of the time. Conceptually, the qubit can be thought of as having an equal probability of measuring either `Zero` or `One`.
 
 To put a qubit in superposition, Q# provides the [`H`](xref:Microsoft.Quantum.Intrinsic.H), or *Hadamard*, operation. Recall the `X` operation from the [Initialize a qubit using measurement](#initialize-a-qubit-using-measurement) procedure earlier, which flipped a qubit from 0 to 1 (or vice versa); the `H` operation flips the qubit *halfway* into a state of equal probabilities of 0 or 1. When measured, a qubit in superposition should return roughly an equal number of `Zero` and `One` results.
 
@@ -505,9 +505,11 @@ namespace Bell {
        }
 
     @EntryPoint()
-    operation TestBellState(count : Int, initial : Result) : (Int, Int, Int, Int) {
+    operation TestBellState() : (Int, Int, Int, Int) {
         mutable numOnesQ1 = 0;
         mutable numOnesQ2 = 0;
+        let count = 100;
+        let initial = Zero;
 
         // allocate the qubits
         use (q1, q2) = (Qubit(), Qubit());   
@@ -548,11 +550,7 @@ namespace Bell {
 
 ```
 
-Now when you run the program:
-
-```dotnetcli
-dotnet run --count 1000 --initial One
-```
+Now when you run the program you should see something like
 
 ```output
 Q1 - Zeros: 502           
@@ -561,6 +559,6 @@ Q2 - Zeros: 502
 Q2 - Ones: 498
 ```
 
-The statistics for the first qubit haven't changed (a 50/50 chance of a `Zero` or a `One` after measurement), but the measurement results for the second qubit are **always** the same as the measurement of the first qubit. The `CNOT` operation has entangled the two qubits, so that whatever happens to one of them, happens to the other. 
+Notice that the statistics for the first qubit haven't changed (a ~50/50 chance of a `Zero` or a `One` after measurement), but the measurement results for the second qubit are **always** the same as the measurement of the first qubit. The `CNOT` operation has entangled the two qubits, so that whatever happens to one of them, happens to the other. 
 
 ***
