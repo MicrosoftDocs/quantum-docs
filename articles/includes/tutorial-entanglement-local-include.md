@@ -13,7 +13,7 @@ no-loc: [Quantum Development Kit, target, targets]
 - To run the code sample in the [Quantum Copilot](https://quantum.microsoft.com/en-us/experience/coding):
   - A Microsoft (MSA) email account.
 
-- To develop and run the code sample in your local dev environment:
+- To develop and run the code sample in your local development environment:
   - [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview) using your preferred language and development environment.
   - If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update-qdk) to the latest version.
   - Create a Q# project named **Bell** for either a [Q# application](xref:microsoft.quantum.submit-jobs?pivots=ide-azurecli) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local). Alternatively, you can run your Q# code directly in [Juptyer Notebooks](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter) or from a [Python host program](xref:microsoft.quantum.how-to.python-local).

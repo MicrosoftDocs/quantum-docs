@@ -24,11 +24,15 @@ In this tutorial, you'll learn how to
 
 ## Prerequisites
 
-- [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) (QDK) using your preferred language and development environment. This tutorial presents the solution in three different formats:
-  - Q# standalone 
-  - Q# and Python 
-  - Q# and C# 
-- If you already have the QDK installed, make sure you have [updated the QDK](xref:microsoft.quantum.update-qdk) (and the [Python qsharp package](xref:microsoft.quantum.update-qdk#update-the-qsharp-python-package), if applicable) to the latest version.
+- To run the code sample in the [Quantum Copilot](https://quantum.microsoft.com/en-us/experience/coding):
+  - A Microsoft (MSA) email account.
+
+- To develop and run the code sample in your local dev environment:
+  - [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) (QDK) using your preferred language and development environment. This tutorial presents the solution in three different formats:
+    - Q# standalone 
+    - Q# and Python 
+    - Q# and C# 
+  - If you already have the QDK installed, make sure you have [updated the QDK](xref:microsoft.quantum.update-qdk) (and the [Python qsharp package](xref:microsoft.quantum.update-qdk#update-the-qsharp-python-package), if applicable) to the latest version.
 
 ## Creating a Q# project
 
@@ -55,7 +59,6 @@ namespace Qrng {
     open Microsoft.Quantum.Measurement;
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Intrinsic;
-    
     operation SampleQuantumRandomNumberGenerator() : Result {
         // Allocate a qubit        
         use q = Qubit();  
@@ -76,7 +79,7 @@ Now take a look at new code.
 - Use the [`H`](xref:Microsoft.Quantum.Intrinsic.H) ([Hadamard](xref:microsoft.quantum.glossary-qdk#hadamard)) operation to place the qubit in an equal [superposition](xref:microsoft.quantum.glossary-qdk#superposition). 
 - Use the [`MResetZ`](xref:Microsoft.Quantum.Measurement.MResetZ) operation to measure the qubit, return the measured value (`Zero` or `One`), and then reset the qubit so it may be used again. 
 
-As discussed in the [Understanding quantum computing](xref:microsoft.quantum.overview.understanding) article, a qubit is a unit of quantum information that can be in [superposition](xref:microsoft.quantum.glossary-qdk#superposition). When measured, a qubit can only be either in the **0** state or in the **1** state. However, before measurement, the state of the qubit represents the *probability* of reading either a **0** or a **1** with a measurement. In this example, before the measurement the qubit is in an equal superposition, that is there is a probability of 50% of reading  **0** and 50% of reading **1**.  You can use this probability to generate random numbers.
+ A qubit is a unit of quantum information that can be in [superposition](xref:microsoft.quantum.glossary-qdk#superposition). (For more information about qubits and superposition, see [Understanding quantum computing](xref:microsoft.quantum.overview.understanding).) When measured, a qubit can only be either in the **0** state or in the **1** state. However, before measurement, the state of the qubit represents the *probability* of reading either a **0** or a **1** with a measurement. In this example, before the measurement the qubit is in an equal superposition, that is there is a probability of 50% of reading  **0** and 50% of reading **1**.  You can use this probability to generate random numbers.
 
 The user-defined `SampleQuantumRandomNumberGenerator` operation introduces the [`Qubit`](xref:microsoft.quantum.qsharp.quantumdatatypes#qubits) datatype, which is native to Q#. You can only allocate a `Qubit` with a `use` statement. When it gets allocated, a qubit is always in the `Zero` state. 
 
