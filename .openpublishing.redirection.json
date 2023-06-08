@@ -359,6 +359,11 @@
 			"source_path": "articles/provider-microsoft-qio.md",
 			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
 			"redirect_document_id": false
-		}
+		},
+		{
+			"source_path": "articles/how-to-publish-qio-job-as-azurefunction.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
 	]
 }
