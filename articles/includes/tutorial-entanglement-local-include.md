@@ -10,17 +10,21 @@ no-loc: [Quantum Development Kit, target, targets]
 
 ## Prerequisites
 
-* [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview) using your preferred language and development environment.
-* If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update-qdk) to the latest version.
-* Create a Q# project named **Bell** for either a [Q# application](xref:microsoft.quantum.submit-jobs?pivots=ide-azurecli) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local). Alternatively, you can run your Q# code directly in [Juptyer Notebooks](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter) or from a [Python host program](xref:microsoft.quantum.how-to.python-local).
+- To run the code sample in the [Quantum Copilot](https://quantum.microsoft.com/en-us/experience/coding):
+  - A Microsoft (MSA) email account.
+
+- To develop and run the code sample in your local dev environment:
+  - [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview) using your preferred language and development environment.
+  - If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update-qdk) to the latest version.
+  - Create a Q# project named **Bell** for either a [Q# application](xref:microsoft.quantum.submit-jobs?pivots=ide-azurecli) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local). Alternatively, you can run your Q# code directly in [Juptyer Notebooks](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter) or from a [Python host program](xref:microsoft.quantum.how-to.python-local).
 
 In this tutorial, you'll learn how to
 
 > [!div class="checklist"]
-> * Create Q# operations to measure and initialize a qubit to a desired state.
-> * Create qubits and test your program.
-> * Put a qubit in superposition.
-> * Entangle a pair of qubits. 
+> - Create Q# operations to measure and initialize a qubit to a desired state.
+> - Create qubits and test your program.
+> - Put a qubit in superposition.
+> - Entangle a pair of qubits. 
 
 ## Initialize a qubit using measurement
 
@@ -483,7 +487,7 @@ Q2 - Ones: 0
 ```
 
 > [!NOTE]
-> By moving the slider and increasing the number of shots, you can see how the superposition results vary slightly over the distribution of the shots.
+> By moving the slider in the Quantum Copilot and increasing the number of shots, you can see how the superposition results vary slightly over the distribution of the shots.
 
 ## Entangle two qubits
 
@@ -559,6 +563,6 @@ Q2 - Zeros: 502
 Q2 - Ones: 498
 ```
 
-Notice that the statistics for the first qubit haven't changed (a ~50/50 chance of a `Zero` or a `One` after measurement), but the measurement results for the second qubit are **always** the same as the measurement of the first qubit. The `CNOT` operation has entangled the two qubits, so that whatever happens to one of them, happens to the other. 
+Notice that the statistics for the first qubit haven't changed (there is still a ~50/50 chance of a `Zero` or a `One` after measurement), but the measurement results for the second qubit are **always** the same as the measurement of the first qubit. The `CNOT` operation has entangled the two qubits, so that whatever happens to one of them, happens to the other. 
 
 ***
