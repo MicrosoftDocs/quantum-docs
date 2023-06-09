@@ -175,32 +175,20 @@
       href: optimization-problem-type.md
     - name: StreamingProblem
       href: optimization-streaming-problem.md
-    - name : Solver inputs
-      href: optimization-input-formats.md
     - name: Term
       href: optimization-term.md
-    - name: SlcTerm
-      href: optimization-slc-term.md
     - name: RangeSchedule
       href: optimization-rangeschedule.md
-    - name: GroupType
-      href: optimization-group-type.md
   - name: Usage
     items:
     - name: Express a problem
       href: optimization-express-optimization-problem.md
-    - name: Apply a solver
-      href: optimization-usage-problem-apply-solver-to-optimization.md
-    - name: Understand solver results
-      href: optimization-understand-solver-results.md
     - name: Job management
       href: optimization-job-management.md
     - name: Re-use problem definitions
       href: optimization-reuse-problem-definitions.md
     - name: Solve long-running problems
       href: optimization-solve-long-running-problems.md
-    - name: Solve a batch of problems using asyncio
-      href: optimization-async-io.md
 - name: Manage Azure Quantum
   items:
   - name: Users and workspaces
