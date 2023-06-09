@@ -70,3 +70,11 @@ By applying this property to the above expansion of the matrix exponential, grou
 $$e^{iBx}=\boldone \cos(x)+ iB\sin(x)$$
 
 holds for any real value $x$. This trick is especially useful because it allows you to reason about the actions that matrix exponentials have, even if the dimension of $B$ is exponentially large, for the special case when $B$ is involutory.
+
+## Next steps
+
+- [The qubit](xref:microsoft.quantum.concepts.qubit)
+- [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)
+- [Dirac notation](xref:microsoft.quantum.concepts.dirac)
+- [Pauli measurements](xref:microsoft.quantum.concepts.pauli)
+- [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)

@@ -104,3 +104,11 @@ Choosing the best way to implement an oracle depends heavily on how this oracle 
 For example, [Deutsch-Jozsa algorithm](https://en.wikipedia.org/wiki/Deutsch%E2%80%93Jozsa_algorithm) relies on the oracle implemented in the first way, while [Grover's algorithm](https://en.wikipedia.org/wiki/Grover's_algorithm) relies on the oracle implemented in the second way.
 
 For more information, see the discussion in [Gilyén *et al*. 1711.00465](https://arxiv.org/abs/1711.00465).
+
+## Next steps
+
+- [Open quantum systems](xref:microsoft.quantum.concepts.opensystems)
+- [Grover's algorithm](xref:microsoft.quantum.concepts.grovers)
+- [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir)
+- [Vectors and matrices](xref:microsoft.quantum.concepts.vectors)
+- [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)

@@ -281,3 +281,10 @@ Finally, although new gates needed to be added to our gate set to achieve univer
 > [!NOTE]
 > While the linear algebraic notation that has been used thus far can certainly be used to describe multi-qubit states, it becomes increasingly cumbersome as you increase the size of the states.  The resulting column-vector for a length 7 bit string, for example, is $128$ dimensional, which makes expressing it using the notation described previously very cumbersome.  Instead, *Dirac notation*, a symbolic shorthand that simplifies the representation of quantum states, is used. For more information, see [Dirac notation](xref:microsoft.quantum.concepts.dirac).
 
+## Next steps
+
+- [Dirac notation](xref:microsoft.quantum.concepts.dirac)
+- [Pauli measurements](xref:microsoft.quantum.concepts.pauli)
+- [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)
+- [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
+- [Quantum oracles](xref:microsoft.quantum.concepts.oracles)

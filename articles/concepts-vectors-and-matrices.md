@@ -208,9 +208,8 @@ A final useful notational convention surrounding tensor products is that, for an
 ## Next Steps 
 
 - [Advanced matrix concepts](xref:microsoft.quantum.concepts.matrix-advanced)
-- [The qubit in quantum computing](xref:microsoft.quantum.concepts.qubit)
-- [Operations on multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)
+- [The qubit](xref:microsoft.quantum.concepts.qubit)
+- [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)
 - [Dirac notation](xref:microsoft.quantum.concepts.dirac)
 - [Pauli measurements](xref:microsoft.quantum.concepts.pauli)
-- [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
-- [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
+

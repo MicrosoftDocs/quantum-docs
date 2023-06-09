@@ -765,6 +765,8 @@ Here, note that the elements of `ts` are not even multiples of $\pi / 4$, such t
 
 ## Next steps
 
+- [Grover's algorithm](xref:microsoft.quantum.concepts.grovers)
+- [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir)
+- [Vectors and matrices](xref:microsoft.quantum.concepts.vectors)
+- [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)
 * [QDK noise simulators](xref:microsoft.quantum.machines.overview.noise-simulator)
-* [Understanding quantum computing](xref:microsoft.quantum.overview.understanding)
-* [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra)

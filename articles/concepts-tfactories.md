@@ -63,3 +63,11 @@ The T state distillation factories are implemented in a sequence of rounds, wher
 > If the physical T gate error rate is lower than the required logical T state error rate, the Resource Estimator cannot perform a good resource estimation. When you submit a resource estimation job, you may encounter that the T factory cannot be found because the required logical T state error rate is either too low or too high. 
 
 For more information, see Appendix C of [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629).
+
+## Next steps
+
+- [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
+- [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
+- [Open quantum systems](xref:microsoft.quantum.concepts.opensystems)
+- [Grover's algorithm](xref:microsoft.quantum.concepts.grovers)
+- [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir)

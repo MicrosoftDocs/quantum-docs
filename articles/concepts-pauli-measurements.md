@@ -227,3 +227,11 @@ Similarly, without prior information one cannot perfectly clone a quantum state 
 
 Information is not free in quantum computing.
 Each qubit measured gives a single bit of information, and the No-Cloning Theorem shows that there is no backdoor that can be exploited to get around the fundamental tradeoff between information gained about the system and the disturbance invoked upon it.
+
+## Next steps
+
+- [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)
+- [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
+- [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
+- [Open quantum systems](xref:microsoft.quantum.concepts.opensystems)
+- [Grover's algorithm](xref:microsoft.quantum.concepts.grovers)

@@ -89,3 +89,11 @@ The simplest such primitive is the single qubit-rotation. Three single-qubit rot
 \end{align*}
 
 Just as any three rotations can be combined together to perform an arbitrary rotation in three dimensions, it can be seen from the Bloch sphere representation that any unitary matrix can be written as a sequence of three rotations as well. Specifically, for every unitary matrix $U$ there exists $\alpha,\beta,\gamma,\delta$ such that $U= e^{i\alpha} R_x(\beta)R_z(\gamma)R_x(\delta)$. Thus $R_z(\theta)$ and $H$ also form a universal gate set although it is not a discrete set because $\theta$ can take any value. For this reason, and due to applications in quantum simulation, such continuous gates are crucial for quantum computation, especially at the quantum algorithm design level. To achieve fault-tolerant hardware implementation, they will ultimately be compiled into discrete gate sequences that closely approximate these rotations.
+
+## Next steps
+
+- [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)
+- [Dirac notation](xref:microsoft.quantum.concepts.dirac)
+- [Pauli measurements](xref:microsoft.quantum.concepts.pauli)
+- [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)
+- [Quantum circuits](xref:microsoft.quantum.concepts.circuits)

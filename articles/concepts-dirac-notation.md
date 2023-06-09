@@ -272,3 +272,11 @@ If you are interested in learning more about density operators and pure and mixe
 ## Q# gate sequences equivalent to quantum states
 
 A final point worth raising about quantum notation and the Q# programming language: the beginning of this document mentioned that the quantum state is the fundamental object of information in quantum computing.  It may then come as a surprise that in Q# there is no notion of a quantum state.  Instead, all states are described only by the operations used to prepare them.  The previous example is an excellent illustration of this.  Rather than expressing a uniform superposition over every quantum bit string in a register, you can represent the result as $H^{\otimes n} \ket{0}$.  This exponentially shorter description of the state not only has the advantage that you can classically reason about it, but it also concisely defines the operations needed to be propagated through the software stack to implement the algorithm.  For this reason, Q# is designed to emit gate sequences rather than quantum states; however, at a theoretical level the two perspectives are equivalent.
+
+## Next steps
+
+- [Pauli measurements](xref:microsoft.quantum.concepts.pauli)
+- [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)
+- [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
+- [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
+- [Open quantum systems](xref:microsoft.quantum.concepts.opensystems)

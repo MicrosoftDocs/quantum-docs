@@ -126,3 +126,10 @@ The quantum teleportation circuit is shown here along with an annotated version 
 
 :::image type="content" source="media\tp2.svg" alt-text="Diagram of a quantum teleportation circuit.":::
 
+## Next steps
+
+- [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
+- [Open quantum systems](xref:microsoft.quantum.concepts.opensystems)
+- [Grover's algorithm](xref:microsoft.quantum.concepts.grovers)
+- [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir)
+- [Vectors and matrices](xref:microsoft.quantum.concepts.vectors)
