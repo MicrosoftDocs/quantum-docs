@@ -8,7 +8,6 @@ ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 uid: microsoft.quantum.quickstarts.optimization.qio.portal
-zone_pivot_groups: optimization-platforms
 ---
 
 # Tutorial: Solve an optimization problem using an Azure Quantum notebook
