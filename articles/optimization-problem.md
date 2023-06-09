@@ -163,4 +163,3 @@ The OnlineProblem class creates a problem from the url of the blob storage where
 It does not support client-side analysis, for example, the `evaluate` and `set_fixed_variables` functions. It allows you to download the problem from the blob storage as an instance of the `Problem` class to do any of the client-side operations.
 For an example of how to use the `OnlineProblem` class, have a look at [reusing problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions).
 
-```
