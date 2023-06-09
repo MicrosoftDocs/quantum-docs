@@ -56,39 +56,6 @@ coefficient = 0.13
 problem.add_term(c=coefficient, indices=[2,0])
 ```
 
-### Problem.add_slc_term
-
-Adds a single squared linear combination (SLC) term to
-the problem. It accepts a list of monomial terms that make up the squared linear combination term and a
-lead coefficient. 
-
-```py
-subterms_Term = [
-    Term(c=1, indices=[0]),
-    Term(c=-2, indices=[1]),
-    Term(c=1, indices=[2]),
-    Term(c=-1, indices=[])
-]
-coefficient = 2
-problem.add_slc_term(terms=subterms_Term, c=coefficient)
-```
-In addition to using a list of `Term` objects, a list of tuples, with each
-tuple containing a monomial term coefficient followed by the
-variable index for the monomial (or `None` if a constant) can be used instead. 
-
-```py
-subterms_tuple = [
-    (1, 0),
-    (-2, 1),
-    (1, 2),
-    (-1, None)
-]
-coefficient = 2
-problem.add_slc_term(terms=subterms_tuple, c=coefficient)
-```
-
-For more information, see [SlcTerm](xref:microsoft.quantum.optimization.slc-term).
-
 ### Problem.add_terms
 
 Adds multiple terms to the problem using a list of `Terms`.
@@ -120,36 +87,6 @@ problem.add_terms([
 )
 ```
 
-### Problem.serialize
-
-Serializes a problem to a JSON string or Protobuf. 
-For more information about the usage of Protobuf, see [Handling large input with Protobuf](#handling-large-input-with-protobuf).
-
-```py
-problem = Problem("My Problem", [Term(c=1, indices=[0,1])])
-problem.serialize()
-
-> {"cost_function": {"version": "1.0", "type": "ising", "terms": [{"c": 1, "ids": [0, 1]}]}}
-```
-
-To serialize to Protobuf you need to specify the optional `content_type` parameter. 
-Protobuf is supported on a [subset of optimization solvers](#protobuf-serialization-availability).
-
-```py
-from azure.quantum.job.base_job import ContentType
-
-problem = Problem(name = "protobuf_problem", terms = [Term(c=1, indices=[0,1])], content_type=ContentType.protobuf)
-problem.serialize()
-```
-
-### Problem.deserialize
-
-Deserializes a problem from the uploaded input data to an instance of Problem. 
-
-```py
-
-deserialized_problem = Problem.deserialize(input_problem = "your_problem")
-```
 
 ### Problem.upload
 

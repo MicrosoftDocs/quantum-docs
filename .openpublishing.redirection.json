@@ -394,6 +394,16 @@
 			"source_path": "articles/optimization-async-io.md",
 			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
 			"redirect_document_id": false
-		}
+		},
+		{
+			"source_path": "articles/optimization-simulated-annealing.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/quickstart-microsoft-qio.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
 	]
 }

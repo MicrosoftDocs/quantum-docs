@@ -31,6 +31,5 @@ For more information about solver results, see [Interpreting solver results](xre
 - [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)
 - [Interpreting solver results](xref:microsoft.quantum.optimization.understand-solver-results)
 - [Job management](xref:microsoft.quantum.optimization.job-management)
-- [Solve long-running problems (async problem submission)](xref:microsoft.quantum.optimization.solve-long-running-problems)
 - [Reuse problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions)
 - [Authenticating with a service principal](xref:microsoft.quantum.optimization.authenticate-service-principal)
