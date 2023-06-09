@@ -33,9 +33,7 @@ Once you create a job, various metadata is available about its state and run his
 
 ## Job lifecycle
 
-You typically create jobs for either [quantum computing](xref:microsoft.quantum.overview.understanding) or [quantum inspired optimization(QIO)](xref:microsoft.quantum.optimization.concepts.overview.introduction). Once you've written
-your quantum program or expressed your QIO problem, you can select a target and
-submit your job.
+Once you've written your quantum program, you can select a target and submit your job.
 
 This diagram shows the basic workflow after you submit your job:
 

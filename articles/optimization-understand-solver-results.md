@@ -61,7 +61,5 @@ Here is an example of a small problem where two solutions are returned.
 ## Next steps
 
 - [Re-use problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions)
-- [Solve long-running problems](xref:microsoft.quantum.optimization.solve-long-running-problems)
-- [Solver overview](xref:microsoft.quantum.reference.qio-target-list)
 - [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)
 - [Understand solver results](xref:microsoft.quantum.optimization.understand-solver-results)

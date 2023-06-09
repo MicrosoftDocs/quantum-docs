@@ -283,9 +283,8 @@ Using the Azure portal:
 
 - [Run Jupyter notebooks on Azure Quantum](xref:microsoft.quantum.how-to.notebooks)
 - [Create and submit a Qiskit circuit](xref:microsoft.quantum.quickstarts.computing.qiskit.portal) to quantum hardware.
-- [Create and submit an optimization problem](xref:microsoft.quantum.quickstarts.optimization.qio.portal) to Azure Quantum. 
 
 Using your local environment:
 
 - [Explore development with Q# and Python](xref:microsoft.quantum.how-to.python-local)
-- [Create and submit an optimization problem](xref:microsoft.quantum.quickstarts.optimization.qio) to Azure Quantum. 
+
