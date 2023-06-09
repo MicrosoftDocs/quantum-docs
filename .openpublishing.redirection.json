@@ -365,5 +365,35 @@
 			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
 			"redirect_document_id": false
 		},
+		{
+			"source_path": "articles/optimization-slc-term.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-solve-long-running-problems.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-usage-problem-apply-solver-to-optimization.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-input-formats.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-group-type.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-async-io.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		}
 	]
 }
