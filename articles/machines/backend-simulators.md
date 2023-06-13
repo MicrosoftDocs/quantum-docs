@@ -28,12 +28,19 @@ For more information, see the [IonQ provider](xref:microsoft.quantum.providers.i
 
 ## QCI
 
-The QCI simulator... <!-- ADD ANY CONTENT THAT YOU WANT TO USE TO DESCRIBE YOUR SERVICES AND COMPANY -->
+The QCI simulator is designed to model QCI hardware. Although the simulator is
+ideal with regard to quantum noise, it accurately reflects precision and
+accuracy of classical calculations on 18 bit signed arithmetic on integers and
+fixed-point registers. Before simulating, it completes a full compilation and
+thereby validates the program against hardware constraints.
+
+<!-- ADD ANY CONTENT THAT YOU WANT TO USE TO DESCRIBE YOUR SERVICES AND COMPANY -->
 
 - Job type: `Simulation`
-- Data Format: [TBD]
+- Data Format: `microsoft.qir.v1`
 - Target ID: `qci.simulator`
 - Target Execution Profile: Basic Measurement Feedback
+- Pricing: Free ($0)
 
 ## Quantinuum
 
