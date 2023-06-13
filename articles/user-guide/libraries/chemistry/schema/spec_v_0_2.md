@@ -2,7 +2,7 @@
 author: bradben
 description: Details the specifications for the Broombridge quantum chemistry schema v0.2 for the Microsoft quantum chemistry library.
 ms.author: brbenefield
-ms.date: 07/28/2022
+ms.date: 05/29/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -246,11 +246,11 @@ If the `index_convention` property of a `two_electron_integrals` object is equal
 
 <!-- h_{ijkl} = h_{ijlk}=h_{jikl}=h_{jilk}=h_{klij}=h_{klji}=h_{lkji}. -->
 
-###### Example #######
+###### Examples #######
 
 This section is informative.
 
-The following object specifies the Hamiltonian
+The following object specifies the Hamiltonian, where all indices `[i, j, k, l]` are the same or unique.
 
 $$
 H = \frac12 \sum\_{\sigma,\rho\in\\{\uparrow,\downarrow\\}}\Biggr(
@@ -268,6 +268,24 @@ two_electron_integrals:
         - [1, 1, 1, 1,  1.6]
         - [6, 1, 3, 2, -0.1]
 ```
+The following object specifies the Hamiltonian, where indices `[i, j, k, l]` include duplication. 
+
+$$
+H = \frac12 \sum\_{\sigma,\rho\in\\{\uparrow,\downarrow\\}}\Biggr(
+1.6 a^{\dagger}\_{1,\sigma} a^{\dagger}\_{1,\rho} a\_{1,\rho} a\_{1,\sigma}- 0.19 a^{\dagger}\_{2,\sigma} a^{\dagger}\_{1,\rho} a\_{1,\rho} a\_{1,\sigma}+ 0.05 a^{\dagger}\_{2,\sigma} a^{\dagger}\_{1,\rho} a\_{2,\rho} a\_{1,\sigma}+ 0.05 a^{\dagger}\_{2,\sigma} a^{\dagger}\_{2,\rho} a\_{1,\rho} a\_{,\sigma} + 0.05 a^{\dagger}\_{1,\sigma} a^{\dagger}\_{1,\rho} a\_{2,\rho} a\_{2,\sigma}\Biggr)\\,\textrm{Ha}.
+$$
+
+```yaml
+two_electron_integrals:
+    index_convention: mulliken
+    units: hartree
+    format: sparse
+    values:
+        - [1, 1, 1, 1,  1.6]
+        - [2, 1, 1, 1, -0.19]
+        - [2, 1, 2, 1,  0.05]
+```
+
 
 ### Initial State Section ###
 
