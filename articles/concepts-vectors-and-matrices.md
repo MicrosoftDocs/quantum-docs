@@ -13,7 +13,7 @@ uid: microsoft.quantum.concepts.vectors
 
 # Work with vectors and matrices in quantum computing
 
-Some familiarity with vectors and matrices is essential to understand quantum computing. This article provides a brief introduction, and interested readers are recommended to read a standard reference on linear algebra such as *Strang, G. (1993). Introduction to linear algebra (Vol. 3). Wellesley, MA: Wellesley-Cambridge Press* or an online reference such as [Linear Algebra](http://joshua.smcvt.edu/linearalgebra/).
+Some familiarity with vectors and matrices is essential to understand quantum computing. The article [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra) provides a brief refresher, and readers who want to dive deeper are recommended to read a standard reference on linear algebra such as *Strang, G. (1993). Introduction to linear algebra (Vol. 3). Wellesley, MA: Wellesley-Cambridge Press* or an online reference such as [Linear Algebra](http://joshua.smcvt.edu/linearalgebra/).
 
 ## Vectors
 

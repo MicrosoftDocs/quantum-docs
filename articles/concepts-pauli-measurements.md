@@ -13,7 +13,7 @@ uid: microsoft.quantum.concepts.pauli
 
 # Single- and multi-qubit Pauli measurement operations
 
-As you work with Q#, you will see that *Pauli measurements* are a common type of measurement. Pauli measurements generalize computational basis measurements to include measurements in other bases and of parity between different qubits. In such cases, it is common to discuss measuring a Pauli operator, which is an operator such as $X,Y,Z$ or $Z\otimes Z, X\otimes X, X\otimes Y$, and so forth. 
+As you work with Q#, you will see that *Pauli measurements* are a common type of measurement. Pauli measurements generalize computational basis measurements to include measurements in other bases and of parity between different qubits. In such cases, it is common to discuss measuring a Pauli operator, which is an operator such as $X,Y,Z$ or $Z\otimes Z, X\otimes X, X\otimes Y$, and so forth. For the basics of quantum measurement, see [The qubit](xref:microsoft.quantum.concepts.qubit) and [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits).
 
 Discussing measurement in terms of Pauli operators is common in the subfield of quantum error correction.  
 Q# guide follows a similar convention; this article explains this alternative view of measurements.

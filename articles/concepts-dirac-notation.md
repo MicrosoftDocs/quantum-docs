@@ -17,7 +17,7 @@ uid: microsoft.quantum.concepts.dirac
 
 ## Limitations of column vector notation
 
-While column vector notation is common in linear algebra, it's often cumbersome in quantum computing, especially when dealing with multiple qubits.  For example, when you define $\psi$ to be a vector it's not explicitly clear whether $\psi$ is a row or a column vector.  Thus, if $\phi$ and $\psi$ are vectors, then it's equally unclear if $\phi \psi$ is even defined, because the shapes of $\phi$ and $\psi$ may be unclear in the context.  Beyond the ambiguity about the shapes of vectors, expressing even simple vectors using linear algebraic notation can be cumbersome. For example, if you wish to describe an $n$-qubit state where each qubit takes the value $0$, then you would formally express the state as 
+While column vector notation is common in [linear algebra](xref:microsoft.quantum.overview.algebra), it's often cumbersome in quantum computing, especially when dealing with multiple qubits.  For example, when you define $\psi$ to be a vector it's not explicitly clear whether $\psi$ is a row or a column vector.  Thus, if $\phi$ and $\psi$ are vectors, then it's equally unclear if $\phi \psi$ is even defined, because the shapes of $\phi$ and $\psi$ may be unclear in the context.  Beyond the ambiguity about the shapes of vectors, expressing even simple vectors using linear algebraic notation can be cumbersome. For example, if you wish to describe an $n$-qubit state where each qubit takes the value $0$, then you would formally express the state as 
 
 $$\begin{bmatrix}1 \\\\  0 \end{bmatrix}\otimes \cdots \otimes\begin{bmatrix}1 \\\\  0 \end{bmatrix}. $$  
 
@@ -38,7 +38,7 @@ $$
 
 ## Example: Represent the Hadamard operation with Dirac notation
 
-The following notation is often used to describe the states that result from applying the Hadamard gate to $\ket{0}$ and $\ket{1}$. These states correspond to the unit vectors in the $+x$ and $-x$ directions on the Bloch sphere:
+The following notation is often used to describe the states that result from applying the [Hadamard](xref:Microsoft.Quantum.Intrinsic.H) gate to $\ket{0}$ and $\ket{1}$. These states correspond to the unit vectors in the $+x$ and $-x$ directions on the Bloch sphere:
 
 $$
 \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\\\  1 \end{bmatrix}=H\ket{0} = \ket{+},\qquad
@@ -75,7 +75,7 @@ $$
 
 ## Tensor product notation
 
-Dirac notation also includes an implicit tensor product structure.  This structure is important because in quantum computing, the state vector described by two uncorrelated quantum registers is the tensor products of the two state vectors.  Concisely describing the tensor product structure, or lack thereof, is vital if you want to explain a quantum computation.  The tensor product structure implies that you can write $\psi \otimes \phi$ for any two quantum state vectors $\phi$ and $\psi$ as $\ket{\psi} \otimes \ket{\phi}$. However, by convention writing $\otimes$ in between the vectors is unnecessary, and you can write $\ket{\psi} \ket{\phi} = \ket{\psi \phi} $. For more information about vectors and tensor products, see [Vectors and Matrices in Quantum Computing](xref:microsoft.quantum.concepts.vectors). For example, the state with two qubits initialized to the zero state is given by
+Dirac notation also includes an implicit [tensor product](xref:microsoft.quantum.concepts.vectors#tensor-product) structure.  This structure is important because in quantum computing, the state vector described by two uncorrelated quantum registers is the tensor products of the two state vectors.  Concisely describing the tensor product structure, or lack thereof, is vital if you want to explain a quantum computation.  The tensor product structure implies that you can write $\psi \otimes \phi$ for any two quantum state vectors $\phi$ and $\psi$ as $\ket{\psi} \otimes \ket{\phi}$. However, by convention writing $\otimes$ in between the vectors is unnecessary, and you can write $\ket{\psi} \ket{\phi} = \ket{\psi \phi} $. For more information about vectors and tensor products, see [Vectors and Matrices in Quantum Computing](xref:microsoft.quantum.concepts.vectors). For example, the state with two qubits initialized to the zero state is given by
 
 $$
 \ket{0} \otimes \ket{0} = \ket{0} \ket{0} = \ket{00} = \begin{bmatrix} 1 \\\\  0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\  0 \end{bmatrix} = \begin{bmatrix} 1 \\\\  0 \\\\  0 \\\\  0 \end{bmatrix}.
@@ -97,7 +97,7 @@ where $\ket{0}^{\otimes n}$ represents the tensor product of $n$ $\ket{0}$ quant
 
 ## Example: Describe superposition with Dirac notation
 
-As another example of how you can use Dirac notation to describe a quantum state, consider the following equivalent ways of writing a quantum state that is an equal superposition over every possible bit string of length $n$
+As another example of how you can use Dirac notation to describe a quantum state, consider the following equivalent ways of writing a quantum state that is an equal [superposition](xref:microsoft.quantum.overview.understanding#superposition) over every possible bit string of length $n$
 
 $$
 H^{\otimes n} \ket{0} = \frac{1}{2^{n/2}} \sum_{j=0}^{2^n-1} \ket{j} = \ket{+}^{\otimes n}.

@@ -13,7 +13,7 @@ uid: microsoft.quantum.concepts.matrix-advanced
 
 # Advanced matrix concepts #
 
-This article explores the concepts of [*eigenvalues, eigenvectors*,](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) and [*exponentials*](https://en.wikipedia.org/wiki/Matrix_exponential). These concepts form a fundamental set of matrix tools that are used to describe and implement quantum algorithms.
+This article explores the concepts of [*eigenvalues, eigenvectors*,](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) and [*exponentials*](https://en.wikipedia.org/wiki/Matrix_exponential). These concepts form a fundamental set of matrix tools that are used to describe and implement quantum algorithms. For the basics of vectors and matrices as they apply to quantum computing, see [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra) and [Vectors and matrices](xref:microsoft.quantum.concepts.vectors). 
 
 ## Eigenvalues and eigenvectors ##
 

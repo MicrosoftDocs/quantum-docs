@@ -19,7 +19,7 @@ Just as bits are the fundamental object of information in classical computing, [
 
 While a bit, or binary digit, can have a value either $0$ or $1$, a qubit can have a value that is either $0$, $1$  or a quantum superposition of $0$ and $1$.
 
-The state of a single qubit can be described by a two-dimensional column vector of unit norm, that is, the magnitude squared of its entries must sum to $1$. This vector, called the quantum state vector, holds all the information needed to describe the one-qubit quantum system just as a single bit holds all of the information needed to describe the state of a binary variable.
+The state of a single qubit can be described by a two-dimensional column vector of unit norm, that is, the magnitude squared of its entries must sum to $1$. This vector, called the quantum state vector, holds all the information needed to describe the one-qubit quantum system just as a single bit holds all of the information needed to describe the state of a binary variable. For the basics of vectors and matrices in quantum computing, see [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra) and [Vector and matrices](xref:microsoft.quantum.concepts.vectors).
 
 Any two-dimensional column vector of real or complex numbers with norm $1$ represents a possible quantum state held by a qubit. Thus $\begin{bmatrix} \alpha \\\\  \beta \end{bmatrix}$ represents a qubit state if $\alpha$ and $\beta$ are complex numbers satisfying $|\alpha|^2 + |\beta|^2 = 1$. Some examples of valid quantum state vectors representing qubits include
 
