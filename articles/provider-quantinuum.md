@@ -43,12 +43,11 @@ All of Quantinuum's targets now support Integrated hybrid circuits. For more inf
 To get started using the Quantinuum provider on Azure Quantum, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
 > [!TIP]
-> Quantum jobs submitted under a session have **exclusive access** to Quantinuum hardware as long as you queue jobs within one minute from each other. After that, any job will be accepted and handled with the standard queueing and prioritization logic. For more information, see [sessions in Azure Quantum](xref:microsoft.quantum.hybrid.interactive).
-
+> Quantum jobs submitted under a session have **exclusive access** to Quantinuum hardware as long as you queue jobs within one minute from each other. After that, any job is accepted and handled with the standard queueing and prioritization logic. For more information, see [sessions in Azure Quantum](xref:microsoft.quantum.hybrid.interactive).
 
 ## Syntax Checkers
 
-We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-2 syntax checker uses the same compiler as H1-2. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker will return a `success` status and a result of all 0s. If the code does not compile, the syntax checker will return a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
+We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-2 syntax checker uses the same compiler as H1-2. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker returns a `success` status and a result of all 0s. If the code does not compile, the syntax checker returns a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
 
 - Job type: `Simulation`
 - Data Formats: `honeywell.openqasm.v1`, `honeywell.qir.v1`
@@ -62,7 +61,7 @@ Syntax Checkers usage is offered free-of-charge.
 
 ## System Model H1 Emulators
 
-After validating the syntax of their code with a Syntax Checker, users can take advantage of Quantinuum's System Model H1 Emulators, emulation tools which contain a detailed physical model and realistic noise model of the actual System Model H1 hardware. The noise models are derived from a detailed characterization of the hardware. The System Model H1 Emulators use an identical API for job submission as the System Model H1 hardware, enabling seamless transition from emulation to hardware. To help maximize productivity and shorten development time, the System Model H1 Emulators are available even while the hardware is offline.
+After validating the syntax of their code with a Syntax Checker, users can take advantage of Quantinuum's System Model H1 Emulators, emulation tools that contain a detailed physical model and realistic noise model of the actual System Model H1 hardware. The noise models are derived from a detailed characterization of the hardware. The System Model H1 Emulators use an identical API for job submission as the System Model H1 hardware, enabling seamless transition from emulation to hardware. To help maximize productivity and shorten development time, the System Model H1 Emulators are available even while the hardware is offline.
 
 More information can be found in the *System Model H1 Emulator Product Data Sheet* found on the [System Model H1] page.
 
@@ -106,7 +105,7 @@ System Model H2 Emulator usage is offered free-of-charge with a hardware subscri
 
 The Quantinuum System Model H2 generation of quantum computers, Powered by Honeywell, is comprised of a Quantum charge-coupled device (QCCD) with two connected linear sections and currently has 1 machine, the H2-1. More information can be found in the *System Model H2 Product Data Sheet* found on the [System Model H2](https://www.quantinuum.com/hardware/h2) page. Users are encouraged to test compatibility of their code by submitting jobs to a [syntax checker](#syntax-checkers) and [System Model H2 Emulator](#system-model-h2-emulator) prior to submitting them to the target machines.  
 
-If a user submits a job to the H2-1 machine and the H2-1 machine is not available, the job will remain in that machine's queue until the machine becomes available.
+If a user submits a job to the H2-1 machine and the H2-1 machine is not available, the job remains in that machine's queue until the machine becomes available.
 
 System Model H2 hardware is continuously upgraded throughout it's product lifecycle. Users are given access to the most up-to-date, advanced, and capable hardware available.
 
@@ -136,7 +135,7 @@ Users can take advantage of these additional capabilities via circuit functions 
 
 Mid-circuit Measurement and Qubit Reuse (MCMR) enables users to measure qubits in the middle of a circuit and re-use them.
 
-Due to the internal level structure of trapped-ion qubits, a mid-circuit measurement may leave the qubit in a non-computational state. All mid-circuit measurements should be followed by initialization if the qubit is to be used again in that circuit. The code examples below demonstrate this.
+Due to the internal level structure of trapped-ion qubits, a mid-circuit measurement may leave the qubit in a non-computational state. All mid-circuit measurements should be followed by initialization if the qubit is to be used again in that circuit. The following code examples demonstrate this.
 
 When a subset of qubits is measured in the middle of the circuit, the classical information from these measurements can be used to condition future elements of the circuit. The examples also highlight this usage. 
 
@@ -281,7 +280,7 @@ For more information on the full set of noise parameters available, see the *Sys
 
 #### [Emulator Noise Parameters with Q# Provider](#tab/tabid-emulator-noise-parameters-with-q-provider)
 
-First, declare the function we will define in Q# as a callable so that Python recognizes the symbol.
+First, declare the function to define in Q# as a callable so that Python recognizes the symbol.
 
 ```python
 GenerateRandomBit: any = None
@@ -382,7 +381,7 @@ For more information on `pytket`, see the following links:
 
 #### [TKET Compilation with Q# Provider](#tab/tabid-tket-compilation-with-q-provider)
 
-First, declare the function we will define in Q# as a callable so that Python recognizes the symbol.
+First, declare the function to define in Q# as a callable so that Python recognizes the symbol.
 
 ```python
 GenerateRandomBit: any = None
