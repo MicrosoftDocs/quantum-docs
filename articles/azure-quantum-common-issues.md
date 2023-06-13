@@ -2,7 +2,7 @@
 author: bradben
 description: Troubleshoot common Azure Quantum issues.
 ms.author: brbenefield
-ms.date: 05/08/2023
+ms.date: 06/06/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
@@ -13,7 +13,7 @@ uid: microsoft.quantum.azure.common-issues
 
 # Troubleshoot Azure Quantum
 
-When working with Azure Quantum, you may run into these common issues. 
+When working with the Azure Quantum service, you may run into these common issues. 
 
 ## Submitting jobs
 

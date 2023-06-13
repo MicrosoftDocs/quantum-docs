@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to install the Azure Quantum chemistry library and use it with the NWChem computational chemistry platform.
 ms.author: brbenefield
-ms.date: 05/06/2023
+ms.date: 06/02/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -19,6 +19,11 @@ In particular, the [**Microsoft.Quantum.Chemistry** package](https://www.nuget.o
 The Quantum Development Kit chemistry library also provides a command-line tool, `qdk-chem`, for converting between legacy formats and [Broombridge](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge).
 
 This section details how to use the Quantum Development Kit with either NWChem and Broombridge, or legacy formats and `qdk-chem`.
+
+## Prerequisites
+
+- The Microsoft [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) or an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- The `Microsoft.Quantum.Chemistry` library. For information on installing additional Q# libraries, see [Q# libraries](xref:microsoft.quantum.libraries.overview#installation).
 
 ## Using the Quantum Development Kit with NWChem
 

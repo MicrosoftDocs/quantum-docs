@@ -2,7 +2,7 @@
 author: bradben
 description: A list of Azure Quantum hardware providers and their availability by country.
 ms.author: brbenefield
-ms.date: 10/14/2022
+ms.date: 06/05/2023
 ms.service: azure-quantum
 ms.subservice: core  
 ms.topic: reference
@@ -176,7 +176,7 @@ Quantinuum offers three plans through Azure Quantum: the Azure Quantum Credits p
 | Angola     | No     |
 | Argentina     | No     |
 | Armenia     | Yes     |
-| Australia      | No     |
+| Australia      | Yes     |
 | Austria     | Yes     |
 | Azerbaijan     | No     |
 | Bahrain   | No      |

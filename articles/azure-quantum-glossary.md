@@ -176,7 +176,7 @@ A set of three 2 x 2 unitary matrices known as the `X`, `Y` and `Z` quantum oper
 
 A component in Azure Quantum that provides the ability to run [jobs](#job) on selected [targets](#target-machine). Providers include Microsoft and a variety of third-party partners.
 
-## Quantum Approximate Optimization Algorithm (QAOA)
+## :::no-loc text="Quantum Approximate Optimization Algorithm"::: (QAOA)
 
 A variational quantum algorithm used for finding approximate solutions to combinatorial optimization problems - problems where the number of possible solutions grows extremely large with the size of the problem.
 
@@ -226,7 +226,7 @@ A concept often used in quantum algorithms that consists of repeatedly applying 
 
 ## Sessions
 
-Part of the [iterative hybrid quantum computing](#iterative-hybrid-quantum-computing) model, sessions are prioritized, logical groups of quantum jobs. The ability to repeat the execution of the quantum circuit with different parameters makes this a good model for [VQE](#variational-quantum-eigensolver-vqe) and [QAOA](#quantum-approximate-optimization-algorithm-qaoa) algorithms. 
+Part of the [iterative hybrid quantum computing](#iterative-hybrid-quantum-computing) model, sessions are prioritized, logical groups of quantum jobs. The ability to repeat the execution of the quantum circuit with different parameters makes this a good model for :::no-loc text="Variational Quantum Eigensolvers"::: and :::no-loc text="Quantum Approximate Optimization Algorithms":::. 
 
 ## Standard libraries
 
@@ -256,6 +256,6 @@ An operator whose inverse is equal to its [adjoint](xref:microsoft.quantum.gloss
 
 A custom type that may contain one or more named or anonymous items. For more information, see  [Type declarations](xref:microsoft.quantum.qsharp.typedeclarations).
 
-## Variational Quantum Eigensolver (VQE)
+## :::no-loc text="Variational Quantum Eigensolver"::: (VQE)
 
 A [hybrid quantum](#hybrid-quantum-computing) algorithm that is used to find the ground state of a given physical system. It uses a classical program to modify and refine quantum circuit parameters based on the results of previous measurements. 
