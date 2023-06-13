@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn about qubits, the fundamental unit of information in quantum computing. This article examines the single qubit.
 ms.author: sonialopez
-ms.date: 12/15/2021
+ms.date: 06/09/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual

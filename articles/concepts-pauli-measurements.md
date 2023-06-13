@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to work with single- and multi-qubit Pauli measurement operations.
 ms.author: sonialopez
-ms.date: 10/10/2022
+ms.date: 06/09/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual

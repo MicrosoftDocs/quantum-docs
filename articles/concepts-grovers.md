@@ -4,7 +4,7 @@ description: Learn about the theory behind Grover's algorithm.
 author: SoniaLopezBravo
 uid: microsoft.quantum.concepts.grovers
 ms.author: sonialopez
-ms.date: 10/11/2022
+ms.date: 06/09/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
