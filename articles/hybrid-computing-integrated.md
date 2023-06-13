@@ -22,7 +22,7 @@ For more discussion, see:
 
 ![Integrated hybrid quantum computing](~/media/hybrid/integrated.png)
 
-## Supported providers
+## Supported targets
 
 Currently, the integrated hybrid computing model in Azure Quantum is supported on [Quantum Circuits Inc. (QCI)](xref:microsoft.quantum.providers.quantinuum) and [Quantinuum](xref:microsoft.quantum.providers.quantinuum) targets.
 

@@ -1,8 +1,8 @@
 ---
 author: bradben
-description: Overview of the standard, chemistry, numerics, and machine learning libraries included in the Quantum Development Kit (QDK).
+description: Overview and installation of the standard, chemistry, numerics, and machine learning libraries included in the Quantum Development Kit (QDK).
 ms.author: brbenefield
-ms.date: 03/30/2022
+ms.date: 06/02/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -14,6 +14,9 @@ uid: microsoft.quantum.libraries.overview
 # The Q# Libraries
 
 The Quantum Development Kit (QDK) provides additional domain-specific functionality through _NuGet packages_ that can be added to your Q# projects.
+
+> [!NOTE]
+> NuGet is the Microsoft-supported package manager for .NET. For more information, see the [NuGet documentation](/nuget/what-is-nuget).
 
 | Q# Library  | NuGet package | Notes |
 |---------|---------|--------|
@@ -84,14 +87,16 @@ Once you have installed the Quantum Development Kit for use with your preferred 
 > Some Q# libraries may work well with additional tools that work alongside your Q# programs, or that integrate with your host applications.
 > For example, the [chemistry library installation instructions](xref:microsoft.quantum.libraries.overview-chemistry.concepts.installation) describe how to use the [**Microsoft.Quantum.Chemistry** package](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) together with the NWChem computational chemistry platform, and how to install the `qdk-chem` command-line tools for working with quantum chemistry data.
 
-## [Q# applications or .NET interopability](#tab/tabid-csproj)
+## [.NET CLI or Visual Studio Code](#tab/tabid-clivscode)
 
 **Command prompt or Visual Studio Code:** Using the command prompt on its own or from within Visual Studio Code, you can use the `dotnet` command to add a NuGet package reference to your project.
-For example, to add the [**Microsoft.Quantum.Numerics**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) package, run the following command:
+For example, to add the [**Microsoft.Quantum.Numerics**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) package, run the following command from your project folder:
 
 ```dotnetcli
 dotnet add package Microsoft.Quantum.Numerics
 ```
+
+## [Visual Studio](#tab/tabid-csproj)
 
 **Visual Studio:** If you are using Visual Studio 2022 or later, you can add additional Q# packages using the NuGet Package Manager.
 To load a package: 
