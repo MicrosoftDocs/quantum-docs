@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides the technical details of the Quantinuum quantum provider
 ms.author: brbenefield
-ms.date: 03/01/2023
+ms.date: 06/12/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -92,7 +92,7 @@ More information can be found in the *System Model H1 Product Data Sheet* found 
 
 ## System Model H2 Emulator
 
-After validating the syntax of their code with the H2-1 Syntax Checker, users can take advantage of Quantinuum's System Model H2 Emulator, an emulation tool which contains a detailed physical model and realistic noise model of the actual System Model H2 hardware. More information about the noise model can be found in the *System Model H2 Emulator Product Data Sheet* found on the [System Model H2](https://www.quantinuum.com/products/h2) page. The System Model H2 Emulator uses an identical API for job submission as the System Model H2 hardware, enabling seamless transition from emulation to hardware. To help maximize productivity and shorten development time, the H2 Emulator is available even while the hardware is offline.
+After validating the syntax of their code with the H2-1 Syntax Checker, users can take advantage of Quantinuum's System Model H2 Emulator, an emulation tool which contains a detailed physical model and realistic noise model of the actual System Model H2 hardware. More information about the noise model can be found in the *System Model H2 Emulator Product Data Sheet* found on the [System Model H2](https://www.quantinuum.com/hardware/h2) page. The System Model H2 Emulator uses an identical API for job submission as the System Model H2 hardware, enabling seamless transition from emulation to hardware. To help maximize productivity and shorten development time, the H2 Emulator is available even while the hardware is offline.
 
 - Job type: `Simulation`
 - Data Format: `quantinuum.openqasm.v1`
@@ -118,7 +118,7 @@ System Model H2 hardware is continuously upgraded throughout it's product lifecy
 
 ## System Model H1 and H2 Technical Specifications 
 
-Technical details for System Model H1 and System Model H2 can be found in Quantinuum's product data sheets on the [System Model H1](https://www.quantinuum.com/products/h1) and [System Model H2](https://www.quantinuum.com/products/h2) pages alongside links to Quantinuum specification and quantum volume data repositories and how to cite usage of Quantinuum systems.
+Technical details for System Model H1 and System Model H2 can be found in Quantinuum's product data sheets on the [System Model H1](https://www.quantinuum.com/hardware/h1) and [System Model H2](https://www.quantinuum.com/hardware/h2) pages alongside links to Quantinuum specification and quantum volume data repositories and how to cite usage of Quantinuum systems.
 ## Additional Capabilities
 
 Additional capabilities available via the Quantinuum API are listed here.
@@ -496,7 +496,7 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 > If you are using an [Azure Quantum Credits](xref:microsoft.quantum.credits) plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
 
 [Quantinuum]: https://www.quantinuum.com
-[System Model H1]: https://www.quantinuum.com/products/h1
+[System Model H1]: https://www.quantinuum.com/hardware/h1
 [System Model H2]: https://www.quantinuum.com/hardware/h2
 [`MResetZ`]: /qsharp/api/qsharp/microsoft.quantum.measurement.mresetz
 [`rzz`]: https://qiskit.org/documentation/stubs/qiskit.circuit.QuantumCircuit.rzz.html
