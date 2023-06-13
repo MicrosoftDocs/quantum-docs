@@ -105,7 +105,7 @@ System Model H2 Emulator usage is offered free-of-charge with a hardware subscri
 
 ## System Model H2
 
-The Quantinuum System Model H2 generation of quantum computers, Powered by Honeywell, is comprised of a Quantum charge-coupled device (QCCD) with two connected linear sections and currently has 1 machine, the H2-1. More information can be found in the *System Model H2 Product Data Sheet* found on the [System Model H2](https://www.quantinuum.com/products/h2) page. Users are encouraged to test compatibility of their code by submitting jobs to a [syntax checker](#syntax-checkers) and [System Model H2 Emulator](#system-model-h2-emulator) prior to submitting them to the target machines.  
+The Quantinuum System Model H2 generation of quantum computers, Powered by Honeywell, is comprised of a Quantum charge-coupled device (QCCD) with two connected linear sections and currently has 1 machine, the H2-1. More information can be found in the *System Model H2 Product Data Sheet* found on the [System Model H2](https://www.quantinuum.com/hardware/h2) page. Users are encouraged to test compatibility of their code by submitting jobs to a [syntax checker](#syntax-checkers) and [System Model H2 Emulator](#system-model-h2-emulator) prior to submitting them to the target machines.  
 
 If a user submits a job to the H2-1 machine and the H2-1 machine is not available, the job will remain in that machine's queue until the machine becomes available.
 
