@@ -10,18 +10,18 @@ no-loc: [target, targets]
 
 ## Select a target to run your program
 
-To check your code before running it on actual quantum hardware, you can use one of the Quantinuum API Validators, `quantinuum.sim.h1-1sc`.
+To check your code before running it on actual quantum hardware, you can use one of the Quantinuum Syntax Checkers, `quantinuum.sim.h1-1sc`.
 
-Add a new cell and create an object to represent the Quantinuum API validator target:
+Add a new cell and create an object to represent the Quantinuum Syntax Checker target:
 
 ```python
-# Get Quantinuum's API validator target:
+# Get Quantinuum's Syntax Checker target:
 apival_backend = provider.get_backend("quantinuum.sim.h1-1sc")
 ```
 
-## Run on the API validator 
+## Run on the Syntax Checker
 
-To run your circuit on the API validator, add the following code, which uses the `run` method of the target to submit your job, and then monitors the job status. 
+To run your circuit on the Syntax Checker, add the following code, which uses the `run` method of the target to submit your job, and then monitors the job status. 
 
 ```python
 # Submit the circuit to run on Azure Quantum
@@ -70,9 +70,9 @@ plot_histogram(counts)
 {'000': 100, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
 ```
 
-![Qiskit circuit result on Quantinuum API validator](../media/azure-quantum-qiskit-hw-result-1.png)
+![Qiskit circuit result on Quantinuum Syntax Checker](../media/azure-quantum-qiskit-hw-result-1.png)
 
-Looking at the histogram, you may notice that the random number generator returned 0 every time, which isn't very random. This is because that, while the API Validator ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
+Looking at the histogram, you may notice that the random number generator returned 0 every time, which isn't very random. This is because that, while the Syntax Checker ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
 
 ## Estimate job cost
 
@@ -128,12 +128,12 @@ For the most current pricing details, see [Azure Quantum pricing](xref:microsoft
 
 ## Run on a Quantinuum QPU 
 
-After running your circuit successfully on the API validator and estimating the QPU cost, it's time to run it on the hardware. 
+After running your circuit successfully on the Syntax Checker and estimating the QPU cost, it's time to run it on the hardware. 
 
 > [!NOTE] 
 > The time required to run a circuit on the QPU depends on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
 
-Use the same `run` method and operations that you used previously with the API Validator to submit and monitor your job:
+Use the same `run` method and operations that you used previously with the Syntax Checker to submit and monitor your job:
 
 ```python
 # Submit the circuit to run on Azure Quantum
