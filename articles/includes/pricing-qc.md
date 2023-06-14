@@ -77,7 +77,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ## Quantinuum
 
-[Quantinuum](https://www.quantinuum.com/) uses a credit system that charges each job depending on the number of operations in the job, and the number of shots you run. The usage units are *H-System Quantum Credits (HQCs)* for jobs submitted to System Model H1 quantum computers, Powered by Quantinuum, and emulator HQCs (eHQCs) for jobs submitted to System Model H1 emulators.
+[Quantinuum](https://www.quantinuum.com/) uses a credit system that charges each job depending on the number of operations in the job, and the number of shots you run. The usage units are *H-System Quantum Credits (HQCs)* for jobs submitted to quantum computers and emulator HQCs (eHQCs) for jobs submitted to emulators.
 
 > [!NOTE]
 > Do not confuse the Quantinuum HQCs with the Azure Quantum credits. Quantinuum HQCs are a usage unit defined by the provider to track the usage and quotas of their targets.
@@ -137,7 +137,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ### [Standard H1 + H2 Subscription](#tab/tabid-standard-H1+h2)
 
-The Standard H1+ H2 Subscription is a monthly subscription plan available through queued access.
+The Standard H1 + H2 Subscription is a monthly subscription plan available through queued access.
 
 |Pricing|  $135,000 (USD)/Month + Azure infrastructure costs |
 |---|---|
