@@ -135,6 +135,28 @@ The Premium Subscription is a monthly subscription plan available through queued
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 ***
 
+### [Standard H1 + H2 Subscription](#tab/tabid-standard-H1+H2)
+
+The Standard H1 + H2 Subscription is a monthly subscription plan available through queued access.
+
+| Pricing | $135,000 (USD)/Month + Azure infrastructure costs |
+|---|---|
+|Includes access to | <ul><li>10k HQCs for use on System Model H1 and H2 hardware</li><li>100k eHQCs for use on the System Model H2 Emulator and unlimited eHQCs for the System Model H1 Emulator </li></ul>|
+
+For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
+***
+
+### [Premium H1 + H2 Subscription](#tab/tabid-premium-H1+H2)
+
+The Premium H1 + H2 Subscription is a monthly subscription plan available through queued access.
+
+| Pricing | $185,000 (USD)/Month + Azure infrastructure costs |
+|---|---|
+|Includes access to | <ul><li>17k HQCs for use on System Model H1 and H2 hardware</li><li>170k eHQCs for use on the System Model H2 Emulator and unlimited eHQCs for the System Model H1 Emulator</li></ul>|
+
+For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
+***
+
 ## Rigetti
 
 [Rigetti](https://rigetti.com) charges for job execution time on their quantum processors, the 80-qubit Aspen-M-2 and Aspen-M-3. There is no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.html) simulator is free for all users.
