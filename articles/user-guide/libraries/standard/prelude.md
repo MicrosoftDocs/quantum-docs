@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the intrinsic operations and functions in the QDK, including classical functions and unitary, rotation and measurement operations.
 ms.author: brbenefield
-ms.date: 04/01/2023
+ms.date: 06/13/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -73,7 +73,7 @@ It corresponds to the single-qubit unitary:
     \end{bmatrix}
 \end{equation}
 
-In the following representation, we see these transformations mapped to the [Bloch sphere](xref:microsoft.quantum.concepts.qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere) (the rotation axis in each case is highlighted red):
+In the following representation, you see these transformations map to the [Bloch sphere](xref:microsoft.quantum.concepts.qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere) (the rotation axis in each case is highlighted red):
 
 ![Pauli operations mapped onto the Bloch sphere](~/media/prelude_pauliBloch.png)
 
@@ -123,7 +123,7 @@ and corresponds to the single-qubit unitary:
 In addition to the Pauli and Clifford operations described earlier, the Q# prelude provides various ways of expressing rotations.
 As described in [single-qubit operations](xref:microsoft.quantum.concepts.qubit#single-qubit-operations), the ability to rotate is critical to quantum algorithms.
 
-We start by recalling that we can express any single-qubit operation using the $H$ and $T$ gates, where $H$ is the Hadamard operation, and where 
+Start by recalling that you can express any single-qubit operation using the $H$ and $T$ gates, where $H$ is the Hadamard operation, and where 
 \begin{equation}
     T \mathrel{:=}
     \begin{bmatrix}
@@ -142,7 +142,7 @@ The most basic of these ways is the <xref:Microsoft.Quantum.Intrinsic.R> operati
 \end{equation}
 where $\sigma$ is a Pauli operator, $\phi$ is an angle, and where $\exp$ represents the matrix exponential.
 It has signature `((Pauli, Double, Qubit) => Unit is Adj + Ctl)`, where the first two parts of the input represent the classical arguments $\sigma$ and $\phi$ needed to specify the unitary operator $R(\sigma, \phi)$.
-We can partially apply $\sigma$ and $\phi$ to obtain an operation whose type is that of a single-qubit unitary.
+You can partially apply $\sigma$ and $\phi$ to obtain an operation whose type is that of a single-qubit unitary.
 For example, `R(PauliZ, PI() / 4, _)` has type `(Qubit => Unit is Adj + Ctl)`.
 
 > [!NOTE]
@@ -207,7 +207,7 @@ First, the <xref:Microsoft.Quantum.Intrinsic.CNOT> operation performs a standard
 \end{equation}
 It has signature `((Qubit, Qubit) => Unit is Adj + Ctl)`, representing that $\operatorname{CNOT}$ acts unitarily on two individual qubits.
 `CNOT(q1, q2)` is the same as `(Controlled X)([q1], q2)`.
-Since the `Controlled` functor allows for controlling on a register, we use the array literal `[q1]` to indicate that we want only the one control.
+Since the `Controlled` functor allows for controlling on a register, you use the array literal `[q1]` to indicate that you want only the one control.
 
 The <xref:Microsoft.Quantum.Intrinsic.CCNOT> operation performs doubly-controlled NOT gate, sometimes also known as the Toffoli gate.
 It has signature `((Qubit, Qubit, Qubit) => Unit is Adj + Ctl)`.
@@ -229,8 +229,8 @@ It has signature `((Qubit, Qubit) => Unit is Adj + Ctl)`.
 
 > [!NOTE]
 > The SWAP gate is *not* the same as rearranging the elements of a variable with type `Qubit[]`.
-> Applying `SWAP(q1, q2)` causes a change to the state of the qubits referred to by `q1` and `q2`, while `let swappedRegister = [q2, q1];` only affects how we refer to those qubits.
-> Moreover, `(Controlled SWAP)([q0], (q1, q2))` allows for `SWAP` to be conditioned on the state of a third qubit, which we cannot represent by rearranging elements.
+> Applying `SWAP(q1, q2)` causes a change to the state of the qubits referred to by `q1` and `q2`, while `let swappedRegister = [q2, q1];` only affects how you refer to those qubits.
+> Moreover, `(Controlled SWAP)([q0], (q1, q2))` allows for `SWAP` to be conditioned on the state of a third qubit, which you cannot represent by rearranging elements.
 > The controlled-SWAP gate, also known as the Fredkin gate, is powerful enough to include all classical computation.
 
 Finally, the prelude provides two operations for representing exponentials of multi-qubit Pauli operators.
@@ -256,7 +256,7 @@ When measuring, the +1 eigenvalue of the operator being measured corresponds to 
 > [!NOTE]
 > While this convention might seem odd, it has two very nice advantages.
 > First, observing the outcome $\ket{0}$ is represented by the `Result` value `Zero`, while observing $\ket{1}$ corresponds to `One`.
-> Second, we can write out that the eigenvalue $\lambda$ corresponding to a result $r$ is $\lambda = (-1)^r$.
+> Second, you can write out that the eigenvalue $\lambda$ corresponding to a result $r$ is $\lambda = (-1)^r$.
 
 Measurement operations support neither the `Adjoint` nor the `Controlled` functor.
 
@@ -267,11 +267,11 @@ then the operation fails.
 
 Note that a joint measurement is not the same as measuring each qubit individually.
 For example, consider the state $\ket{11} = \ket{1} \otimes \ket{1} = X\otimes X \ket{00}$.
-Measuring $Z_0$ and $Z_1$ each individually, we get the results $r_0 = 1$ and $r_1 = 1$.
-Measuring $Z_0 Z_1$, however, we get the single result $r_{\textrm{joint}} = 0$, representing that the pairity of $\ket{11}$ is positive.
+Measuring $Z_0$ and $Z_1$ each individually, you get the results $r_0 = 1$ and $r_1 = 1$.
+Measuring $Z_0 Z_1$, however, you get the single result $r_{\textrm{joint}} = 0$, representing that the pairity of $\ket{11}$ is positive.
 Put differently, $(-1)^{r_0 + r_1} = (-1)^r_{\textrm{joint}})$.
-Critically, since we *only* learn the parity from this measurement, any quantum information represented in the superposition between the two two-qubit states of positive parity, $\ket{00}$ and $\ket{11}$, is preserved.
-This property will be essential later, as we discuss error correction.
+Critically, since you *only* learn the parity from this measurement, any quantum information represented in the superposition between the two two-qubit states of positive parity, $\ket{00}$ and $\ket{11}$, is preserved.
+This property is essential to quantum error correction.
 
 For convenience, the prelude also provides two other operations for measuring qubits.
 First, since performing single-qubit measurements is quite common, the prelude defines a shorthand for this case.
