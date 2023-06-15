@@ -157,21 +157,21 @@ namespace Superposition {
 
     @EntryPoint()
     operation MeasureSuperposition() : Result {
-        use q = Qubit();     // allocates qubit for use (automatically in |0>)
+        use q = Qubit();     // allocates a single qubit for use (automatically in |0>)
         H(q);                // puts qubit in superposition of |0> and |1>
         return MResetZ(q);   // measures qubit, returns result (and resets it to |0> before deallocation)
     }
 }
 ```
 
-Copy and paste this code into the Quantom Copilot code window and select **Run**. 
+To test the code sample so far on the Quantum Copilot's built-in [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), copy and paste the code into the Quantum Copilot code window, set the slider for **Select number of shots** to "1", and select **Run**. The **Result** field and the histogram should show a `Zero` or a `One`. Click **Run** a few more times and you should see random results of `Zero` or `One`.
 
-It doesn't matter if you have more callables defined below it, only `MeasureSuperposition` will be run.
-Additionally, it's no problem if your callable includes [documentation comments](xref:microsoft.quantum.qsharp.comments#documentation-comments) before its declaration, the `@EntryPoint()` attribute can be placed above them.
+> [!TIP]
+> Using the **Select number of shots** slider, you can adjust the number of times the operation is run. On average, the total number of `Zero` and `One` should be roughly equal. 
 
-### Callable arguments
+### Multiple qubits
 
-So far, this article has only considered an operation that takes no inputs. Suppose you wanted to perform a similar operation, but on multiple qubits---the number of which is provided as an argument.
+So far, the sample code has only considered an operation that takes no inputs. Suppose you wanted to perform a similar operation, but on multiple qubit - the number of which is provided as an argument.
 Such an operation can be written as:
 
 ```qsharp
@@ -193,45 +193,9 @@ namespace MultiSuperposition {
 where the returned value is an array of the measurement results.
 The [`ApplyToEach`](xref:Microsoft.Quantum.Canon.ApplyToEach) and [`ForEach`](xref:Microsoft.Quantum.Arrays.ForEach) are in the [`Microsoft.Quantum.Canon`](xref:Microsoft.Quantum.Canon) and [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) namespaces, requiring another `open` statement for each.
 
-If one moves the `@EntryPoint()` attribute to precede this new operation (note there can only be one such line in a file), attempting to run it with simply `dotnet run` results in an error message that indicates what command-line options are required, and how to express them.
 
-The general format for the command line is actually `dotnet run [options]`, and callable arguments are provided there.
-In this case, the argument `n` is missing, and it shows that we need to provide the option `-n <n>`.
-To run `MeasureSuperpositionArray` for `n=4` qubits, you need to run:
 
-```dotnetcli
-dotnet run -n 4
-```
 
-yielding an output similar to
-
-```output
-[Zero,One,One,One]
-```
-
-This of course extends to multiple arguments.
-
-> [!NOTE]
-> Argument names defined in `camelCase` are slightly altered by the compiler to be accepted as Q# inputs.
-> For example, if instead of `n`, you decided to use the name `numQubits` above, then this input would be provided in the command line via `--num-qubits 4` instead of `-n 4`.
-
-The error message also provides other options that can be used, including how to change the target machine.
-
-### Different target machines
-
-As the outputs from our operations thus far have been the expected results of their action on real qubits, it's clear that the default target machine from the command line is the full-state quantum simulator, `QuantumSimulator`.
-However, callables can be instructed to run on a specific target machine with the option `--simulator` (or the shorthand `-s`).
-
-### Command line run summary
-
-<br/>
-<img src="~/media/hostprograms_command_line_diagram.png" alt="Q# program from command line" width="700">
-
-### Non-Q# `dotnet run` options
-
-As it's briefly mentioned above with the `--project` option, the [`dotnet run` command](/dotnet/core/tools/dotnet-run) also accepts options unrelated to the Q# callable arguments.
-If providing both kinds of options, the `dotnet`-specific options must be provided first, followed by a delimiter `--`, and then the Q#-specific options.
-For example, specifying a path along with a number of qubits for the operation above would be run via `dotnet run --project <PATH> -- -n <n>`.
 
 
 
