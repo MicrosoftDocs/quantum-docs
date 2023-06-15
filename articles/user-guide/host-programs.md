@@ -148,7 +148,7 @@ Using the [Quantum Copilot](https://quantum.microsoft.com/experience/quantum-cod
 Most Q# files will contain more than one callable, so naturally we need to let the compiler know *which* callable to run when we provide the `dotnet run` command.
 This specification is done with a simple change to the Q# file itself; you need to add a line with `@EntryPoint()` directly preceding the callable.
 
-The file from above would therefore become:
+The earlier code sample would therefore become:
 
 ```qsharp
 namespace Superposition {
@@ -164,8 +164,7 @@ namespace Superposition {
 }
 ```
 
-Now, a call of `dotnet run` from the command prompt leads to `MeasureSuperposition` being run, and the returned value is then printed directly to the terminal.
-So, you'll see either `One` or `Zero` printed.
+Copy and paste this code into the Quantom Copilot code window and select **Run**. 
 
 It doesn't matter if you have more callables defined below it, only `MeasureSuperposition` will be run.
 Additionally, it's no problem if your callable includes [documentation comments](xref:microsoft.quantum.qsharp.comments#documentation-comments) before its declaration, the `@EntryPoint()` attribute can be placed above them.
