@@ -34,6 +34,10 @@ accuracy of classical calculations on 18 bit signed arithmetic on integers and
 fixed-point registers. Before simulating, it completes a full compilation and
 thereby validates the program against hardware constraints.
 
+The QCI simulator currently supports 8 qubits in a ring topology and will let you
+simulate up to X shots. The simulator is always available and never in a degraded
+or unavailable state. Contact support@quantumcircuits.com for help.
+
 <!-- ADD ANY CONTENT THAT YOU WANT TO USE TO DESCRIBE YOUR SERVICES AND COMPANY -->
 
 - Job type: `Simulation`
