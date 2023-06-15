@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Overview of the different ways to run Q# programs from the command prompt, Q# Jupyter Notebooks, the Azure Quantum Copilot in Python or a .NET language.
 ms.author: sonialopez
-ms.date: 05/06/2023
+ms.date: 06/15/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -171,7 +171,7 @@ To test the code sample so far on the Quantum Copilot's built-in [full state sim
 
 ### Multiple qubits
 
-So far, the sample code has only considered an operation that takes no inputs. Suppose you wanted to perform a similar operation, but on multiple qubit - the number of which is provided as an argument.
+So far, the sample code has only considered an operation on one qubit. Suppose you want to perform a similar operation, but on multiple qubits, which you can provide as an array of qubits.
 Such an operation can be written as:
 
 ```qsharp
@@ -182,53 +182,25 @@ namespace MultiSuperposition {
     open Microsoft.Quantum.Arrays;        // for ForEach
     
     @EntryPoint()
-    operation MeasureSuperpositionArray(n : Int) : Result[] {
-        use qubits = Qubit[n];               // allocate a register of n qubits in |0> 
+    operation MeasureSuperpositionArray() : Result[] {
+        use qubits = Qubit[4];               // allocate a register of 4 qubits in |0> 
         ApplyToEach(H, qubits);              // apply H to each qubit in the register
         return ForEach(MResetZ, qubits);     // perform MResetZ on each qubit, returns the resulting array
     }
 }
 ```
 
-where the returned value is an array of the measurement results.
-The [`ApplyToEach`](xref:Microsoft.Quantum.Canon.ApplyToEach) and [`ForEach`](xref:Microsoft.Quantum.Arrays.ForEach) are in the [`Microsoft.Quantum.Canon`](xref:Microsoft.Quantum.Canon) and [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) namespaces, requiring another `open` statement for each.
+where the operation is run on an array of four qubits and the returned value is an array of the measurement results.
 
+The [`ApplyToEach`](xref:Microsoft.Quantum.Canon.ApplyToEach) and [`ForEach`](xref:Microsoft.Quantum.Arrays.ForEach) operations are in the [`Microsoft.Quantum.Canon`](xref:Microsoft.Quantum.Canon) and [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) namespaces respectively, requiring an `open` statement for each one.
 
+> [!NOTE]
+> For an example of passing the number of qubits to the operation as an argument, see the code sample in the Q# in the command prompt tab. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Copy and paste the code into the Quantum Copilot code window, set the slider for **Select number of shots** to "1", and select **Run**. The **Result** field and the histogram should show one result, but that result is a 4-bit binary number - the measurements of each qubit in the array. You can see that by simply converting this binary number, you can create a truly random number generator. Click **Run** a few more times and you should see random results from |0000> to |1111>.  You can also increase the number of shots to see a wider distribution, and modify the code to increase the number of qubits in the array.
 
 ## [Q# from the command prompt](#tab/tabid-cli)
 
-One of the easiest ways to get started writing Q# programs is to avoid worrying about separate files and a second language altogether.
 Using Visual Studio Code or Visual Studio with the QDK extension allows for a seamless work flow in which we run Q# callables from only a single Q# file.
 
 For this, you'll ultimately run the program by entering
@@ -331,10 +303,6 @@ However, callables can be instructed to run on a specific target machine with th
 As it's briefly mentioned above with the `--project` option, the [`dotnet run` command](/dotnet/core/tools/dotnet-run) also accepts options unrelated to the Q# callable arguments.
 If providing both kinds of options, the `dotnet`-specific options must be provided first, followed by a delimiter `--`, and then the Q#-specific options.
 For example, specifying a path along with a number of qubits for the operation above would be run via `dotnet run --project <PATH> -- -n <n>`.
-
-
-
-
 
 ## Q# with host programs
 

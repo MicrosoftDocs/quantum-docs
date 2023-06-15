@@ -53,6 +53,8 @@ Quantum mechanics is the underlying "operating system" of our universe. It descr
 
 The Quantum Development Kit (QDK) comes with the [quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview) to simulate electronic structure problems and quantum dynamics on a quantum computer. An example of such simulations is the [simple molecular energy estimation of the ground state of a molecule](/samples/microsoft/quantum/simple-molecular-energy-estimation-with-the-azure-quantum-service/). This and more QDK and Azure Quantum samples can be found in the [code samples](/samples/browse/?expanded=azure&products=azure-quantum%2Cqdk&languages=qsharp).
 
+[Azure Quantum Elements](https://quantum.microsoft.com/en-us/our-story/quantum-elements-overview) is a feature that accelerates scientific discovery by reinventing productivity for chemistry and materials science research and development through scaled simulations with Azure HPC, accelerated calculations with AI, and unprecedented accuracy with quantum-grounded technology and future quantum supercomputers. Azure Quantum Elements is currently in private preview. For more information, see [Unlocking the power of Azure for Molecular Dynamics](https://cloudblogs.microsoft.com/quantum/2023/06/01/unlocking-the-power-of-azure-for-molecular-dynamics/).
+
 ### Quantum speedups
 
 One of the goals of quantum computing research is to study which problems can be solved by a quantum computer faster than a classical computer and how large the speedup can be. Two well-known examples are Grover's algorithm and Shor's algorithm, which yield a polynomial and an exponential speedup, respectively, over their classical counterparts. 
