@@ -24,7 +24,7 @@ In this tutorial, you'll learn how to
 
 ## Prerequisites
 
-- To run the code sample in the [Quantum Copilot](https://quantum.microsoft.com/en-us/experience/coding):
+- To run the code sample in the [Quantum Copilot](https://quantum.microsoft.com/en-us/experience/quantum-coding):
   - A Microsoft (MSA) email account.
 
 - To develop and run the code sample in your local dev environment:

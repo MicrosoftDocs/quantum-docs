@@ -120,13 +120,150 @@ More specifically, the differences revolve around:
 - Specifying the target machine on which to run it
 - How any results are returned
 
-In the following sections, you'll learn how this is done with the Q# standalone application from the command prompt. Then you'll proceed to using Python and C# host programs.
+In the following sections, you'll learn how this is done with the Q# standalone application in the Quantum Copilot or from the command prompt. Then you'll proceed to using Python and C# host programs.
 The standalone application of Q# Jupyter Notebooks will be reserved for last, because unlike the first three, its primary functionality doesn't center around a local Q# file.
 
 > [!NOTE]
 > Although it is not illustrated in these examples, one commonality between the run methods is that any messages printed from inside the Q# program (by way of [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) or [`DumpMachine`](xref:Microsoft.Quantum.Diagnostics.DumpMachine), for example) will typically always be printed to the respective console.
 
-## Q# from the command prompt
+
+
+
+
+
+
+
+
+
+## [Q# in the Quantum Copilot](#tab/tabid-copilot)
+
+One of the easiest ways to get started writing Q# programs is to avoid worrying about separate files and a second language altogether.
+Using the [Quantum Copilot](https://quantum.microsoft.com/experience/quantum-coding) allows for a seamless work flow in which you can run Q# callables from a single Q# file.
+
+> [!NOTE]
+> The [Quantum Copilot](https://quantum.microsoft.com/experience/quantum-coding) is available free of charge. All you need to access it is a Microsoft (MSA) email account. You can create an MSA for free at https://account.microsoft.com/.
+
+### Add entry point to Q# file
+
+Most Q# files will contain more than one callable, so naturally we need to let the compiler know *which* callable to run when we provide the `dotnet run` command.
+This specification is done with a simple change to the Q# file itself; you need to add a line with `@EntryPoint()` directly preceding the callable.
+
+The file from above would therefore become:
+
+```qsharp
+namespace Superposition {
+    open Microsoft.Quantum.Intrinsic;     // for the H operation
+    open Microsoft.Quantum.Measurement;   // for MResetZ
+
+    @EntryPoint()
+    operation MeasureSuperposition() : Result {
+        use q = Qubit();     // allocates qubit for use (automatically in |0>)
+        H(q);                // puts qubit in superposition of |0> and |1>
+        return MResetZ(q);   // measures qubit, returns result (and resets it to |0> before deallocation)
+    }
+}
+```
+
+Now, a call of `dotnet run` from the command prompt leads to `MeasureSuperposition` being run, and the returned value is then printed directly to the terminal.
+So, you'll see either `One` or `Zero` printed.
+
+It doesn't matter if you have more callables defined below it, only `MeasureSuperposition` will be run.
+Additionally, it's no problem if your callable includes [documentation comments](xref:microsoft.quantum.qsharp.comments#documentation-comments) before its declaration, the `@EntryPoint()` attribute can be placed above them.
+
+### Callable arguments
+
+So far, this article has only considered an operation that takes no inputs. Suppose you wanted to perform a similar operation, but on multiple qubits---the number of which is provided as an argument.
+Such an operation can be written as:
+
+```qsharp
+namespace MultiSuperposition {
+    open Microsoft.Quantum.Intrinsic;     // for the H operation
+    open Microsoft.Quantum.Measurement;   // for MResetZ
+    open Microsoft.Quantum.Canon;         // for ApplyToEach
+    open Microsoft.Quantum.Arrays;        // for ForEach
+    
+    @EntryPoint()
+    operation MeasureSuperpositionArray(n : Int) : Result[] {
+        use qubits = Qubit[n];               // allocate a register of n qubits in |0> 
+        ApplyToEach(H, qubits);              // apply H to each qubit in the register
+        return ForEach(MResetZ, qubits);     // perform MResetZ on each qubit, returns the resulting array
+    }
+}
+```
+
+where the returned value is an array of the measurement results.
+The [`ApplyToEach`](xref:Microsoft.Quantum.Canon.ApplyToEach) and [`ForEach`](xref:Microsoft.Quantum.Arrays.ForEach) are in the [`Microsoft.Quantum.Canon`](xref:Microsoft.Quantum.Canon) and [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) namespaces, requiring another `open` statement for each.
+
+If one moves the `@EntryPoint()` attribute to precede this new operation (note there can only be one such line in a file), attempting to run it with simply `dotnet run` results in an error message that indicates what command-line options are required, and how to express them.
+
+The general format for the command line is actually `dotnet run [options]`, and callable arguments are provided there.
+In this case, the argument `n` is missing, and it shows that we need to provide the option `-n <n>`.
+To run `MeasureSuperpositionArray` for `n=4` qubits, you need to run:
+
+```dotnetcli
+dotnet run -n 4
+```
+
+yielding an output similar to
+
+```output
+[Zero,One,One,One]
+```
+
+This of course extends to multiple arguments.
+
+> [!NOTE]
+> Argument names defined in `camelCase` are slightly altered by the compiler to be accepted as Q# inputs.
+> For example, if instead of `n`, you decided to use the name `numQubits` above, then this input would be provided in the command line via `--num-qubits 4` instead of `-n 4`.
+
+The error message also provides other options that can be used, including how to change the target machine.
+
+### Different target machines
+
+As the outputs from our operations thus far have been the expected results of their action on real qubits, it's clear that the default target machine from the command line is the full-state quantum simulator, `QuantumSimulator`.
+However, callables can be instructed to run on a specific target machine with the option `--simulator` (or the shorthand `-s`).
+
+### Command line run summary
+
+<br/>
+<img src="~/media/hostprograms_command_line_diagram.png" alt="Q# program from command line" width="700">
+
+### Non-Q# `dotnet run` options
+
+As it's briefly mentioned above with the `--project` option, the [`dotnet run` command](/dotnet/core/tools/dotnet-run) also accepts options unrelated to the Q# callable arguments.
+If providing both kinds of options, the `dotnet`-specific options must be provided first, followed by a delimiter `--`, and then the Q#-specific options.
+For example, specifying a path along with a number of qubits for the operation above would be run via `dotnet run --project <PATH> -- -n <n>`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [Q# from the command prompt](#tab/tabid-cli)
 
 One of the easiest ways to get started writing Q# programs is to avoid worrying about separate files and a second language altogether.
 Using Visual Studio Code or Visual Studio with the QDK extension allows for a seamless work flow in which we run Q# callables from only a single Q# file.
@@ -231,6 +368,10 @@ However, callables can be instructed to run on a specific target machine with th
 As it's briefly mentioned above with the `--project` option, the [`dotnet run` command](/dotnet/core/tools/dotnet-run) also accepts options unrelated to the Q# callable arguments.
 If providing both kinds of options, the `dotnet`-specific options must be provided first, followed by a delimiter `--`, and then the Q#-specific options.
 For example, specifying a path along with a number of qubits for the operation above would be run via `dotnet run --project <PATH> -- -n <n>`.
+
+
+
+
 
 ## Q# with host programs
 
