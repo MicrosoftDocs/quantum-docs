@@ -130,8 +130,10 @@ The `SetQubitState `operation in :::no-loc text="No Control Flow"::: can be used
 
 Presently, these :::no-loc text="Basic Measurement Feedback"::: targets are available for Azure Quantum:
 
-- **Provider:** Quantinuum
-  - [Quantinuum System Model H1-1 and H1-2](xref:microsoft.quantum.providers.quantinuum#system-model-h1) (`quantinuum.qpu.h1-1`, `quantinuum.qpu.h1-2`)
-- **Provider:** QCI
-  - [QCI simulator](xref:microsoft.quantum.machines.overview.backend-simulators#qci)
+**Provider:** Quantinuum
+- [Quantinuum Emulators](xref:microsoft.quantum.providers.quantinuum) (`quantinuum.sim.h1-1e`, `quantinuum.sim.h1-2e`, `quantinuum.sim.h2-1e`)
+- [Quantinuum QPUs](xref:microsoft.quantum.providers.quantinuum) (`quantinuum.qpu.h1-1`, `quantinuum.qpu.h1-2`, `quantinuum.qpu.h2-1`)
+
+**Provider:** QCI
+- [QCI simulator](xref:microsoft.quantum.machines.overview.backend-simulators#qci)
 
