@@ -24,7 +24,7 @@ In this tutorial, you'll learn how to
 
 ## Prerequisites
 
-- To run the code sample in the [Quantum Copilot](https://quantum.microsoft.com/en-us/experience/quantum-coding):
+- To run the code sample in the [Copilot in Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding):
   - A Microsoft (MSA) email account.
 
 - To develop and run the code sample in your local dev environment:
@@ -205,9 +205,9 @@ namespace Qrng {
 
 Select the tab for your preferred language and environment and follow the instructions for running or calling your Q# program. 
 
-### [Quantum Copilot](#tab/tabid-copilot)
+### [Copilot in Azure Quantum](#tab/tabid-copilot)
 
-You can test your Q# code with the Quantum Copilot free of charge - all you need is a Microsoft (MSA) email account. For more information about the Quantum Copilot, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
+You can test your Q# code with the Copilot in Azure Quantum free of charge - all you need is a Microsoft (MSA) email account. For more information about the Copilot in Azure Quantum, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
 A standalone Q# application requires an `EntryPoint` so the Q# compiler knows where to start the program. To create the full Q# application, add the following entry point to your Q# program, *Program.qs*:
 
@@ -253,11 +253,10 @@ namespace Qrng {
 
 The program runs the operation or function marked with the `@EntryPoint()` attribute on the default full state simulator.
 
-Copy and paste the full code sample into the [Quantum Copilot](https://quantum.microsoft.com/en-us/experience/quantum-coding), select the number of shots to run, and click **Run**. The results are displayed in the histogram and in the **Results** fields.
+Copy and paste the full code sample into the [Copilot in Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding), select the number of shots to run, and click **Run**. The results are displayed in the histogram and in the **Results** fields.
 
 > [!NOTE]
-> A project file is not necessary to run the Q# code in the Copilot. Likewise, installing the QDK is not necessary, as the Copilot already runs the latest QDK.
-
+> A project file is not necessary to run the Q# code in the Copilot in Azure Quantum. Likewise, installing the QDK is not necessary, as the copilot already runs the latest QDK.
 
 ### [Standalone Q# application with Visual Studio or Visual Studio Code](#tab/tabid-qsharp)
 

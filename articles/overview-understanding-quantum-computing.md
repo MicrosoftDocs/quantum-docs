@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how quantum computing works, how it compares to classical computing, and how it uses the principles of quantum mechanics.
-ms.date: 12/21/2022
+ms.date: 06/21/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -21,11 +21,11 @@ For more information about the beginnings and motivation of quantum computing, s
 
 [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) is an open ecosystem to build quantum computing solutions on a diverse selection of today’s quantum hardware, and it offers flexibility to use your preferred development tools with support for Cirq, Qiskit, and Q#. You can use the familiar and trusted Azure platform to learn how to develop quantum algorithms and how to program and run them on real hardware from multiple providers.
 
-Get started quickly with the [Azure Quantum website](https://quantum.microsoft.com) and explore blogs, videos, conceptual articles, and dig deeper into quantum computing with the Quantum Copilot. 
+Discover the power of quantum computing with the [Copilot in Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding), a unique feature of the [Azure Quantum website](https://quantum.microsoft.com/). The Copilot in Azure Quantum can help you create and run quantum programs, as well as chat with you about quantum concepts. You can also find blogs, videos, and articles to learn more about quantum computing and the Azure Quantum service.
 
 Learn how to create an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace) and start submitting your quantum programs on real quantum hardware. First-time users automatically get free Azure Quantum Credits for use with each participating quantum hardware provider (500 USD each) when creating your workspace. If you need more credits, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
 
-> [!Tip]
+> [!TIP]
 > **Free trial.** If you don’t have an Azure subscription, you can [create an Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) (check out free Azure accounts [for students](https://azure.microsoft.com/free/students/)). 
 
 
@@ -53,7 +53,7 @@ Quantum mechanics is the underlying "operating system" of our universe. It descr
 
 The Quantum Development Kit (QDK) comes with the [quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview) to simulate electronic structure problems and quantum dynamics on a quantum computer. An example of such simulations is the [simple molecular energy estimation of the ground state of a molecule](/samples/microsoft/quantum/simple-molecular-energy-estimation-with-the-azure-quantum-service/). This and more QDK and Azure Quantum samples can be found in the [code samples](/samples/browse/?expanded=azure&products=azure-quantum%2Cqdk&languages=qsharp).
 
-[Azure Quantum Elements](https://quantum.microsoft.com/en-us/our-story/quantum-elements-overview) is a feature that accelerates scientific discovery by reinventing productivity for chemistry and materials science research and development through scaled simulations with Azure HPC, accelerated calculations with AI, and unprecedented accuracy with quantum-grounded technology and future quantum supercomputers. Azure Quantum Elements is currently in private preview. For more information, see [Unlocking the power of Azure for Molecular Dynamics](https://cloudblogs.microsoft.com/quantum/2023/06/01/unlocking-the-power-of-azure-for-molecular-dynamics/).
+[Azure Quantum Elements](https://quantum.microsoft.com/en-us/our-story/quantum-elements-overview) is purpose-built to accelerate scientific discovery. Reinvent your research and development productivity with simulation workflows optimized for scaling on Azure High-Performance Computing (HPC) clusters, AI-accelerated computing, augmented reasoning using AI, integration with quantum tools to start experimenting with existing quantum hardware, and access in the future to Microsoft’s quantum supercomputer. For more information, see [Unlocking the power of Azure for Molecular Dynamics](https://cloudblogs.microsoft.com/quantum/2023/06/01/unlocking-the-power-of-azure-for-molecular-dynamics/).
 
 ### Quantum speedups
 

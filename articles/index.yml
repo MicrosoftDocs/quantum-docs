@@ -26,8 +26,8 @@ landingContent:
             url: overview-azure-quantum.md
       - linkListType: get-started
         links:
-          - text: Explore Azure Quantum and Quantum Copilot
-            url: https://quantum.microsoft.com/en-us/experience/quantum-coding
+          - text: Explore Azure Quantum and the Copilot in Azure Quantum
+            url: get-started-azure-quantum.md
           - text: Create an Azure Quantum workspace
             url: how-to-create-workspace.md
           - text: Run Q# code in an Azure Quantum notebook
