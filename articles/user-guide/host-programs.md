@@ -1,8 +1,8 @@
 ---
 author: SoniaLopezBravo
-description: Overview of the different ways to run Q# programs from the command prompt, Q# Jupyter Notebooks, the Azure Quantum Copilot in Python or a .NET language.
+description: Overview of the different ways to run Q# programs from the command prompt, Q# Jupyter Notebooks, the Copilot for Azure Quantum in Python or a .NET language.
 ms.author: sonialopez
-ms.date: 06/15/2023
+ms.date: 06/21/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -28,7 +28,7 @@ You can run these programs:
 - from the command-line interface
 - from a locally-hosted Jupyter Notebook
 - from a Jupyter Notebook in the Azure portal. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.get-started.notebooks).
-- from the Azure Quantum Copilot. For more information, see [Get started with Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
+- from the Copilot for Azure Quantum. For more information, see [Get started with Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
 To understand these processes and their differences better, let's consider a Q# program and compare the ways it can be run.
 
@@ -120,28 +120,19 @@ More specifically, the differences revolve around:
 - Specifying the target machine on which to run it
 - How any results are returned
 
-In the following sections, you'll learn how this is done with the Q# standalone application in the Quantum Copilot or from the command prompt. Then you'll proceed to using Python and C# host programs.
+In the following sections, you'll learn how this is done with the Q# standalone application in the Copilot for Azure Quantum or from the command prompt. Then you'll proceed to using Python and C# host programs.
 The standalone application of Q# Jupyter Notebooks will be reserved for last, because unlike the first three, its primary functionality doesn't center around a local Q# file.
 
 > [!NOTE]
 > Although it is not illustrated in these examples, one commonality between the run methods is that any messages printed from inside the Q# program (by way of [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) or [`DumpMachine`](xref:Microsoft.Quantum.Diagnostics.DumpMachine), for example) will typically always be printed to the respective console.
 
-
-
-
-
-
-
-
-
-
-## [Q# in the Quantum Copilot](#tab/tabid-copilot)
+## [Q# in the Copilot for Azure Quantum](#tab/tabid-copilot)
 
 One of the easiest ways to get started writing Q# programs is to avoid worrying about separate files and a second language altogether.
-Using the [Quantum Copilot](https://quantum.microsoft.com/experience/quantum-coding) allows for a seamless work flow in which you can run Q# callables from a single Q# file.
+Using the [Copilot for Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding) allows for a seamless work flow in which you can run Q# callables from a single Q# file.
 
 > [!NOTE]
-> The [Quantum Copilot](https://quantum.microsoft.com/experience/quantum-coding) is available free of charge. All you need to access it is a Microsoft (MSA) email account. You can create an MSA for free at https://account.microsoft.com/.
+> The [Copilot for Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding) is available free of charge. All you need to access it is a Microsoft (MSA) email account. You can create an MSA for free at https://account.microsoft.com/.
 
 ### Add entry point to Q# file
 
@@ -164,7 +155,7 @@ namespace Superposition {
 }
 ```
 
-To test the code sample so far on the Quantum Copilot's built-in [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), copy and paste the code into the Quantum Copilot code window, set the slider for **Select number of shots** to "1", and select **Run**. The **Result** field and the histogram should show a `Zero` or a `One`. Click **Run** a few more times and you should see random results of `Zero` or `One`.
+To test the code sample so far in the Copilot for Azure Quantum's built-in [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), copy and paste the code into the Copilot for Azure Quantum code window, set the slider for **Select number of shots** to "1", and select **Run**. The **Result** field and the histogram should show a `Zero` or a `One`. Click **Run** a few more times and you should see random results of `Zero` or `One`.
 
 > [!TIP]
 > Using the **Select number of shots** slider, you can adjust the number of times the operation is run. On average, the total number of `Zero` and `One` should be roughly equal. 
@@ -197,7 +188,7 @@ The [`ApplyToEach`](xref:Microsoft.Quantum.Canon.ApplyToEach) and [`ForEach`](xr
 > [!NOTE]
 > For an example of passing the number of qubits to the operation as an argument, see the code sample in the Q# in the command prompt tab. 
 
-Copy and paste the code into the Quantum Copilot code window, set the slider for **Select number of shots** to "1", and select **Run**. The **Result** field and the histogram should show one result, but that result is a 4-bit binary number - the measurements of each qubit in the array. You can see that by simply converting this binary number, you can create a truly random number generator. Click **Run** a few more times and you should see random results from |0000> to |1111>.  You can also increase the number of shots to see a wider distribution, and modify the code to increase the number of qubits in the array.
+Copy and paste the code into the Copilot for Azure Quantum code window, set the slider for **Select number of shots** to "1", and select **Run**. The **Result** field and the histogram should show one result, but that result is a 4-bit binary number - the measurements of each qubit in the array. You can see that by simply converting this binary number, you can create a truly random number generator. Click **Run** a few more times and you should see random results from |0000> to |1111>.  You can also increase the number of shots to see a wider distribution, and modify the code to increase the number of qubits in the array.
 
 ## [Q# from the command prompt](#tab/tabid-cli)
 

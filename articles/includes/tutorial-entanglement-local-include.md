@@ -10,7 +10,7 @@ no-loc: [Quantum Development Kit, target, targets]
 
 ## Prerequisites
 
-- To run the code sample in the [Quantum Copilot](https://quantum.microsoft.com/en-us/experience/coding):
+- To run the code sample in the [Copilot for Azure Quantum](https://quantum.microsoft.com/en-us/experience/coding):
   - A Microsoft (MSA) email account.
 
 - To develop and run the code sample in your local development environment:
@@ -344,9 +344,9 @@ Q2 - Ones: 498
 
 The statistics for the first qubit haven't changed (a 50/50 chance of a `Zero` or a `One` after measurement), but the measurement results for the second qubit are **always** the same as the measurement of the first qubit. The `CNOT` operation has entangled the two qubits, so that whatever happens to one of them, happens to the other. 
 
-### [Run the code in the Quantum Copilot](#tab/tabid-copilot)
+### [Run the code in the Copilot for Azure Quantum](#tab/tabid-copilot)
 
-You can test your Q# code with the [Quantum Copilot](https://quantum.microsoft.com/en-us/experience/coding) free of charge - all you need is a Microsoft (MSA) email account. For more information about the Copilot, see [Get started with Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
+You can test your Q# code with the [Copilot for Azure Quantum](https://quantum.microsoft.com/en-us/experience/coding) free of charge - all you need is a Microsoft (MSA) email account. For more information about the Copilot, see [Get started with Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
 Before moving on to the procedures for superposition and entanglement, test the code up to this point to see the initialization and measurement of the qubits. 
 
@@ -358,7 +358,7 @@ In order to run the code as a standalone program, the Q# compiler needs to know 
 Your `program.qs` file should now look like this:
 
 > [!NOTE]
-> Currently, you cannot submit Q# programs to the Quantum Copilot that take arguments. The code here is modified slightly from the command prompt version by declaring the loop count and the initial qubit setting in the code instead of passing them as arguments.
+> Currently, you cannot submit Q# programs to the Copilot for Azure Quantum that take arguments. The code here is modified slightly from the command prompt version by declaring the loop count and the initial qubit setting in the code instead of passing them as arguments.
 
 ```qsharp
 namespace Bell {
@@ -416,7 +416,7 @@ namespace Bell {
 
 In the code, the `count` and `initial` variables are set to `1000` and `One` respectively. This initializes the first qubit to `One` and measures each qubit 1000 times. 
 
-Copy and paste the code sample into the [Quantum Copilot](https://quantum.microsoft.com/en-us/experience/coding), set the number of shots to "1", and click **Run**. The results are displayed in the histogram and in the **Results** fields.
+Copy and paste the code sample into the [Copilot for Azure Quantum](https://quantum.microsoft.com/en-us/experience/coding), set the number of shots to "1", and click **Run**. The results are displayed in the histogram and in the **Results** fields.
 
 ```output
 Q1 - Zeros: 0
@@ -487,7 +487,7 @@ Q2 - Ones: 0
 ```
 
 > [!NOTE]
-> By moving the slider in the Quantum Copilot and increasing the number of shots, you can see how the superposition results vary slightly over the distribution of the shots.
+> By moving the slider in the Copilot for Azure Quantum and increasing the number of shots, you can see how the superposition results vary slightly over the distribution of the shots.
 
 ## Entangle two qubits
 
