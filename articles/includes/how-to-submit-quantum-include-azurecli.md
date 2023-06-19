@@ -97,7 +97,6 @@ You will also find a full reference for all commands and features available thro
     quantinuum    quantinuum.sim.h1-2sc                                Available               3
     quantinuum    quantinuum.sim.h1-1e                                 Available               431
     quantinuum    quantinuum.sim.h1-2e                                 Available               74
-    quantinuum    quantinuum.qpu.h1                                    Unavailable             0
     rigetti       rigetti.sim.qvm                                      Available               5
     rigetti       rigetti.qpu.aspen-11                                 Unavailable             0
     rigetti       rigetti.qpu.aspen-m-2                                Available               5
