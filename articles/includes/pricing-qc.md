@@ -1,7 +1,7 @@
 ---
 author: sonialopezbravo
 ms.author: sonialopez
-ms.date: 06/07/2023
+ms.date: 06/20/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -133,7 +133,6 @@ The Premium Subscription is a monthly subscription plan available through queued
 |Includes access to | <ul><li>17k HQCs for use on System Model H1 hardware</li><li>170k eHQCs for use on the System Model H1 Emulator</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
-***
 
 ### [Standard H1 + H2 Subscription](#tab/tabid-standard-H1+h2)
 
