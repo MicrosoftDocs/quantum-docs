@@ -149,7 +149,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 The Premium H1 + H2 Subscription is a monthly subscription plan available through queued access.
 
-| Pricing | $175,000 (USD)/Month + Azure infrastructure costs |
+| Pricing | $185,000 (USD)/Month + Azure infrastructure costs |
 |---|---|
 |Includes access to | <ul><li>17k HQCs for use on System Model H1 and H2 hardware</li><li>170k eHQCs for use on the System Model H2 Emulator and unlimited eHQCs for use on the System Model H1 emulator</li></ul>|
 
