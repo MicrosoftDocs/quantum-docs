@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: In this tutorial, write a quantum program in Q# that demonstrates the superposition and entanglement of qubits.
 ms.author: sonialopez
-ms.date: 06/07/2023
+ms.date: 06/21/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -26,6 +26,12 @@ of superposition and entanglement. You build your Q# program piece-by-piece to i
 ::: zone pivot="ide-azure-portal"
 
 [!INCLUDE [portal-procedure](includes/tutorial-entanglement-portal-include.md)]
+
+::: zone-end
+
+::: zone pivot="ide-local"
+
+[!INCLUDE [copilot-procedure](includes/tutorial-entanglement-copilot-include.md)]
 
 ::: zone-end
 
