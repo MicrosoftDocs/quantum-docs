@@ -1,7 +1,7 @@
 ---
 author: sonialopezbravo
 ms.author: sonialopez
-ms.date: 06/07/2023
+ms.date: 06/20/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -133,7 +133,6 @@ The Premium Subscription is a monthly subscription plan available through queued
 |Includes access to | <ul><li>17k HQCs for use on System Model H1 hardware</li><li>170k eHQCs for use on the System Model H1 Emulator</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
-***
 
 ### [Standard H1 + H2 Subscription](#tab/tabid-standard-H1+h2)
 
@@ -141,7 +140,7 @@ The Standard H1 + H2 Subscription is a monthly subscription plan available throu
 
 |Pricing|  $135,000 (USD)/Month + Azure infrastructure costs |
 |---|---|
-|Includes access to | <ul><li>10k HQCs for use on the System Model H1 and H2 hardware</li><li>100k eHQCs for use on the System Model H2 Emulator and unlimited eHQCs for use on the System Model H1 emulator</li></ul>|
+|Includes access to | <ul><li>10k HQCs for use on the System Model H1 and H2 hardware</li><li>100k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -149,9 +148,9 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 The Premium H1 + H2 Subscription is a monthly subscription plan available through queued access.
 
-| Pricing | $175,000 (USD)/Month + Azure infrastructure costs |
+| Pricing | $185,000 (USD)/Month + Azure infrastructure costs |
 |---|---|
-|Includes access to | <ul><li>17k HQCs for use on System Model H1 and H2 hardware</li><li>170k eHQCs for use on the System Model H2 Emulator and unlimited eHQCs for use on the System Model H1 emulator</li></ul>|
+|Includes access to | <ul><li>17k HQCs for use on System Model H1 and H2 hardware</li><li>170k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 ***
