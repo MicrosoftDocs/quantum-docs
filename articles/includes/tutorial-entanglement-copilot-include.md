@@ -10,9 +10,9 @@ no-loc: [Quantum Development Kit, target, targets]
 
 ## Prerequisites
 
-- To run the code sample in the [Copilot for Azure Quantum](https://quantum.microsoft.com/en-us/experience/coding):
+- To run the code sample in the [Copilot for Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding):
   - A Microsoft (MSA) email account.
-  - For more information about the Copilot, see [Get started with Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
+  - For more information about the Copilot, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
 In this tutorial, you'll learn how to
 
@@ -108,7 +108,7 @@ The `TestBellState`operation:
 allocate the qubits in a known state. This is required by the `use` statement. 
 1. Finally, it uses the [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) function to print results to the Copilot output windows before returning the results.
 
-## Run the code in the Copilot for Azure Quantum
+## Test the code in the Copilot for Azure Quantum
 
 Before moving on to the procedures for superposition and entanglement, you can test the code up to this point to see the initialization and measurement of the qubits. 
 
@@ -175,7 +175,7 @@ namespace Bell {
 
 In the code, the `count` and `initial` variables are set to `1000` and `One` respectively. This initializes the first qubit to `One` and measures each qubit 1000 times. 
 
-Copy and paste the complete code sample into the [Copilot for Azure Quantum](https://quantum.microsoft.com/en-us/experience/coding) code window, set the slide for the number of shots to "1", and click **Run**. The results are displayed in the histogram and in the **Results** fields.
+Copy and paste the complete code sample into the [Copilot for Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding) code window, set the slide for the number of shots to "1", and click **Run**. The results are displayed in the histogram and in the **Results** fields.
 
 ```output
 Q1 - Zeros: 0
@@ -201,7 +201,7 @@ Currently, the qubits in the program are all in a **classical state**, that is, 
 
 To put a qubit in superposition, Q# provides the [`H`](xref:Microsoft.Quantum.Intrinsic.H), or *Hadamard*, operation. Recall the `X` operation from the [Initialize a qubit using measurement](#initialize-a-qubit-using-measurement) procedure earlier, which flipped a qubit from 0 to 1 (or vice versa); the `H` operation flips the qubit *halfway* into a state of equal probabilities of `Zero` or `One`. When measured, a qubit in superposition should return roughly an equal number of `Zero` and `One` results.
 
-Modify the code in the `TestBellState` operation by inserting a line for the `H` operation:
+Modify the code in the `TestBellState` operation by resetting the initial value to `One` and inserting a line for the `H` operation:
 
 ```qsharp
     for test in 1..count {
