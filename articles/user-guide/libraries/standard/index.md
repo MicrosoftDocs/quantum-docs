@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the Microsoft Q# standard libraries that define the operations, functions and data types used in quantum programs.
 ms.author: brbenefield
-ms.date: 10/07/2021
+ms.date: 06/21/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -24,11 +24,11 @@ This section describes the most salient features of each part of the standard li
 
 The [prelude](xref:microsoft.quantum.libraries.overview.standard.prelude) provides a set of essential and very useful functions and operations that can be used when writing quantum programs in Q#.
 
-For example, the <xref:Microsoft.Quantum.Intrinsic> includes the Pauli operators (<xref:Microsoft.Quantum.Intrinsic.X>, <xref:Microsoft.Quantum.Intrinsic.Y> and <xref:Microsoft.Quantum.Intrinsic.Z>), the [Hadamard operation](xref:Microsoft.Quantum.Intrinsic.H), rotations such as <xref:Microsoft.Quantum.Intrinsic.S>, <xref:Microsoft.Quantum.Intrinsic.T> and the general <xref:Microsoft.Quantum.Intrinsic.R>. You can also find two-qubit operations such as <xref:Microsoft.Quantum.Intrinsic.CNOT> and <xref:Microsoft.Quantum.Intrinsic.SWAP>. This section it also defines the <xref:Microsoft.Quantum.Intrinsic.Measure> which performs a joint measurement of one or more qubits. 
+For example, the <xref:Microsoft.Quantum.Intrinsic> includes the Pauli operators (<xref:Microsoft.Quantum.Intrinsic.X>, <xref:Microsoft.Quantum.Intrinsic.Y> and <xref:Microsoft.Quantum.Intrinsic.Z>), the [Hadamard operation](xref:Microsoft.Quantum.Intrinsic.H), rotations such as the <xref:Microsoft.Quantum.Intrinsic.S>, the <xref:Microsoft.Quantum.Intrinsic.T> and the general <xref:Microsoft.Quantum.Intrinsic.R>. You can also find two-qubit operations such as the <xref:Microsoft.Quantum.Intrinsic.CNOT> and the <xref:Microsoft.Quantum.Intrinsic.SWAP>. This section it also defines the <xref:Microsoft.Quantum.Intrinsic.Measure> which performs a joint measurement of one or more qubits. 
 
 ## Classical mathematics
 
-The standard libraries offer the posibility of doing [classical mathematics](xref:microsoft.quantum.libraries.overview.math). The <xref:Microsoft.Quantum.Math> contains classical mathematical functions and data types, which are primarily used to work with the Q# built-in data types `Int`, `Double`, and `Range`.
+The standard libraries offer the possibility of doing [classical mathematics](xref:microsoft.quantum.libraries.overview.math). The <xref:Microsoft.Quantum.Math> contains classical mathematical functions and data types, which are primarily used to work with the Q# built-in data types `Int`, `Double`, and `Range`.
  
 ## Type conversions
 

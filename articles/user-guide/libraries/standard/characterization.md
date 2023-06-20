@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how measurement statistics from phase estimations are used to estimate result values in quantum programming.
 ms.author: sonialopez
-ms.date: 04/05/2022
+ms.date: 06/21/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
