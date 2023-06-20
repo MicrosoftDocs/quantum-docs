@@ -29,7 +29,7 @@ of superposition and entanglement. You build your Q# program piece-by-piece to i
 
 ::: zone-end
 
-::: zone pivot="ide-local"
+::: zone pivot="ide-azure-copilot"
 
 [!INCLUDE [copilot-procedure](includes/tutorial-entanglement-copilot-include.md)]
 
