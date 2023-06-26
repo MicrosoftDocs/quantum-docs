@@ -193,7 +193,7 @@ You can use the **Job management** blade in your Quantum workspace to view all t
 1. Identify the jobs of type **Session**. In this view you can see the Unique ID of a Session in column **Id** and monitor its **Status**. The states of a sesion are: 
    - **Waiting**: Jobs within the session are being executed. 
    - **Succeeded**: Session has ended successfully. 
-   - **TimeOut**:If no new job is submitted within the session for 10 minutes, that session times out. For more information, see [Session timeouts](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#session-timeouts).
+   - **TimeOut**: If no new job is submitted within the session for 10 minutes, that session times out. For more information, see [Session timeouts](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#session-timeouts).
    - **Failed**: If a job within a session fails, that session ends and reports a status of *Failed*. For more information, see [Job failure policy within sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#job-failure-policy-within-sessions).
 1. Click on a session's name for more details.
 1. You can see the list of **All jobs** within the session and monitor their status.
