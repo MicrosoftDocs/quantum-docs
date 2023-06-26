@@ -1,8 +1,8 @@
 ---
 author: bradben
-description: Learn about the Second Quantization approach to modeling electronic structures in quantum programming.
+description: Learn about the Second quantization approach to modeling electronic structures in quantum programming.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 06/21/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -11,7 +11,7 @@ title: Second Quantization
 uid: microsoft.quantum.libraries.overview-chemistry.concepts.secondquantization
 ---
 
-# Second Quantization
+# Second quantization
 
 Second quantization looks at the problem of electronic structure through a different lens.
 Rather than assigning each of the $N_e$ electrons to a specific state (or orbital), second quantization tracks each orbital and stores whether there is an electron present in each of them and at the same time automatically ensures symmetry properties of the corresponding wave function.
@@ -23,7 +23,7 @@ A common example of such orbitals are atomic orbitals which form an eigenbasis f
 Because electrons have two spin states, two electrons can be crammed into each such spatial orbital.
 That is to say, the valid basis states are of the form $\psi_{0,\uparrow},\ldots,\psi_{N-1,\uparrow}, \psi_{0,\downarrow},\ldots,\psi_{N-1,\downarrow}$ where $\uparrow$ and $\downarrow$ are labels that specify the two eigenstates of the spin degree of freedom.
 This combined index of $(j,\sigma)$ for $\sigma \in \{\uparrow,\downarrow\}$ is called a spin-orbital because it stores both the spatial as well as the spin degree of freedom.
-In the chemistry library, spin-orbitals are stored in a `SpinOrbital` data structure, and are created as follows.
+In the chemistry library, spin-orbitals are stored in a `SpinOrbital` data structure, and are created as follows:
 
 ```csharp
 // The code snippets in this section require the following namespaces.
@@ -51,10 +51,10 @@ using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
     SpinOrbital spinOrbital1 = tuple;
 ```
 
-This means that we can formally think of the basis for both the spin and spatial part of the wave function as $\psi_{0} \cdots \psi_{2N-1}$ where each of the indices now is an enumeration of a $(j,\sigma)$.
+This means that you can formally think of the basis for both the spin and spatial part of the wave function as $\psi_{0} \cdots \psi_{2N-1}$ where each of the indices now is an enumeration of a $(j,\sigma)$.
 One possible enumeration is $g(j,\sigma) = j+N\sigma'$.
 Another possible enumeration is $h(j,\sigma) = 2*j + \sigma$.
-The quantum chemistry library can use these conventions, and the spin-orbitals in such an encoding can be instantiated as follows.
+The quantum chemistry library can use these conventions, and the spin-orbitals in such an encoding can be instantiated as follows:
 
 ```csharp
     // Let us use the spin orbital created in the previous snippet.
@@ -76,14 +76,14 @@ The quantum chemistry library can use these conventions, and the spin-orbitals i
 ```
 
 For fermionic systems, the Pauli exclusion principle prevents more than one electron from being present in any spin-orbital at the same time.
-This means that we can write the two legal states for $\psi_1$ as
+This means that you can write the two legal states for $\psi_1$ as
 
 \begin{equation}
-\psi_1 \rightarrow \begin{cases} \ket{0}_1 & \text{if $\psi_1$ is not occupied,} \\\\
+\psi_1 \rightarrow \begin{cases} \ket{0}_1 & \text{if $\psi_1$ isn't occupied,} \\\\
 \ket{1}_1 & \text{if $\psi_1$ is occupied.} \end{cases}
 \end{equation}
 
-This encoding is great for quantum computers because it means that we can store the electronic occupation as a single quantum bit.
+This encoding is great for quantum computers because it means that you can store the electronic occupation as a single quantum bit.
 
 The occupation states for the $2N$ spin orbitals can similarly be stored in $2N$ qubits.
 As an example, if $N=2$ then the state
@@ -101,8 +101,8 @@ $$
 
 has no electrons and is known as the 'vacuum state'.
 
-A beautiful side-effect of second quantization is that we no longer have to explicitly keep track of the anti-symmetry of the quantum state.
-This is because, as we will see, the anti-symmetry of the state represents itself instead through the anti-commutation rules of the operators that create and destroy electronic occupations of a spin orbital.
+A beautiful side-effect of second quantization is that you no longer have to explicitly keep track of the anti-symmetry of the quantum state.
+This is because the anti-symmetry of the state represents itself through the anti-commutation rules of the operators that create and destroy electronic occupations of a spin orbital.
 
 ## Fermionic operators
 
@@ -113,13 +113,13 @@ These are denoted $a^\dagger_j$ and $a_j$ respectively.
 For example,
 
 $$
-a^\dagger_1 \ket{0}_1 = \ket{1}_1,\quad a^\dagger_1 \ket{1}_1 = 0,\quad a_1 \ket{0}_1 = 0,\quad a_1 \ket{1}_1 = \ket{0}_1.
+a^\dagger_1 \ket{0}_1 = \ket{1}_1,\quad a^\dagger_1 \ket{1}_1 = 0,\quad a_1 \ket{0}_1 = 0,\quad a_1 \ket{1}_1 = \ket{0}_1
 $$
 
 Note that here $a^\dagger_1 \ket{1}_1=0$ and $a_1 \ket{0}_1$ yield the zero-vector not $\ket{0}_1$.
 Such operators are therefore neither Hermitian nor unitary.
-We represent general creation and annihilation operators using the <xref:Microsoft.Quantum.Chemistry.LadderOperators.LadderOperator`1> type.
-For instance, a single creation operator is represented as follow.
+General creation and annihilation operators are represented using the [LadderOperator<TIndex> Class](xref:Microsoft.Quantum.Chemistry.LadderOperators.LadderOperator`1).
+For example, a single creation operator is represented as 
 
 ```csharp
 // The code snippets in this section require the following namespaces.
@@ -152,13 +152,13 @@ using System.Linq;
     var ladderOperator1 = new LadderOperator<int>((creationEnum, spinOrbitalInteger));
 ```
 
-Also using such operators we can express
+Also using such operators you can express
 
 $$
 \ket{0} \ket{1} \ket{1} \ket{0} = a^\dagger_1 a^\dagger_2 \ket{0}^{\otimes 4}.
 $$
 
-This sequence of operators would be constructed within the Hamiltonian simulation library using C# code that is similar to the single-spin orbital case considered above:
+This sequence of operators would be constructed within the Hamiltonian simulation library using C# code that is similar to the single-spin orbital case considered earlier:
 
 ```csharp
     // Let us initialize an array of tuples representing the
@@ -204,7 +204,7 @@ n_i \ket{0}_i &= 0\nonumber\\\\
 n_i \ket{1}_i &= \ket{1}_i.
 \end{align}
 
-Similar to the above `FermionTerm` examples, this number operator is constructed as follows.
+Similar to the earlier `FermionTerm` examples, this number operator is constructed as follows:
 
 ```csharp
     // Let us use a new method to compactly create a sequence of ladder
@@ -219,8 +219,7 @@ Similar to the above `FermionTerm` examples, this number operator is constructed
     var fermionTerm0 = new FermionTerm(indices);
 ```
 
-A subtlety emerges though when using creation or annihilation operators in fermionic systems.
-We require that any valid quantum state is anti-symmetric under exchange of labels.
+A subtlety emerges, though, when using creation or annihilation operators in fermionic systems - any valid quantum state is required to be anti-symmetric under exchange of labels.
 This means that
 
 $$
@@ -233,7 +232,7 @@ $$
 a^\dagger_i a^\dagger_j  = -(1-\delta_{i,j})a^\dagger_j a^\dagger_i,\quad a^\dagger_i a_j =\delta_{i,j} - a_j a^\dagger_i.
 $$
 
-Thus the following two <xref:Microsoft.Quantum.Chemistry.LadderOperators.LadderSequence`1> instances are considered inequivalent
+Thus the following two [LadderOperator<TIndex> Class](xref:Microsoft.Quantum.Chemistry.LadderOperators.LadderOperator`1) instances are considered inequivalent
 
 ```csharp
     // Let us initialize an array of tuples representing the
@@ -250,12 +249,12 @@ Thus the following two <xref:Microsoft.Quantum.Chemistry.LadderOperators.LadderS
 ```
 
 The requirement that each of the creation operators anti-commute means that using a second quantized representation does obviate the challenges faced by the anti-symmetry of Fermions.
-Instead the challenge re-emerges in our definition of the creation operators.
+Instead the challenge re-emerges in the definition of the creation operators.
 
 Using the anti-commutation rules, some `LadderSequence` instances actually correspond to the same sequence of fermionic operators, sometimes up to a minus sign.
-For instance, consider the Hamiltonian $a_0^\dagger a_1^\dagger a_1 a_0 = - a_1^\dagger a_0^\dagger a_1 a_0$.
+For example, consider the Hamiltonian $a_0^\dagger a_1^\dagger a_1 a_0 = - a_1^\dagger a_0^\dagger a_1 a_0$.
 This motivates us to define a canonical ordering for every `FermionTerm`.
-Any `FermionTerm` is automatically put into canonical order as follows.
+Any `FermionTerm` is automatically put into canonical order as follows:
 
 ```csharp
     // We now construct two `FermionTerms` that are equivalent with respect to
@@ -266,7 +265,7 @@ Any `FermionTerm` is automatically put into canonical order as follows.
     // The following Boolean is `true`.
     var sequenceEqual = fermionTerm0 == fermionTerm1;
 
-    // The change in sign is not compared above, but is an internally tracked
+    // The change in sign isn't compared above, but is an internally tracked
     // property of `FermionTerm`.
     int sign0 = fermionTerm0.Coefficient;
     var sign1 = fermionTerm1.Coefficient;
@@ -304,12 +303,12 @@ The two-electron integrals on the other hand describe the interactions between t
 An intuition for what these terms mean can be gleaned from the creation and annihilation operators that comprise each of them.
 For example, $h_{pq}a^\dagger_p a_q$ describes the electron hopping from spin orbital $q$ to spin orbital $p$.
 Similarly, the term $h_{pqrs} a^\dagger_p a^\dagger_q a_r a_s$ (for distinct $p,q,r,s$) describes two electrons in spin orbitals $r$ and $s$ scattering off of each other and ending up in spin orbitals $p$ and $q$.
-If $r=q$ and $p=s$ then $h_{prrp} a^\dagger_p a^\dagger_r a_r a_p = h_{prrp} n_p n_r$ gives the energy penalty associated with the two electrons being near each other, but does not describe a dynamical process.
+If $r=q$ and $p=s$ then $h_{prrp} a^\dagger_p a^\dagger_r a_r a_p = h_{prrp} n_p n_r$ gives the energy penalty associated with the two electrons being near each other, but doesn't describe a dynamical process.
 
-We may represent such Hamiltonians using the `FermionHamiltonian` class, which is essentially a list containing all the desired `FermionTerm` instances.
-As Hamiltonians are Hermitian by definition, we index terms using the more specialized type `HermitianFermionTerm` that also uses Hermitian symmetry when checking whether terms are equivalent.
+You may represent such Hamiltonians using the `FermionHamiltonian` class, which is essentially a list containing all the desired `FermionTerm` instances.
+As Hamiltonians are Hermitian by definition, terms are indexed using the more specialized type `HermitianFermionTerm` that also uses Hermitian symmetry when checking whether terms are equivalent.
 
-Let us construct a few illustrative examples.
+Here are a few illustrative examples.
 Consider the Hamiltonian $\hat{H} = a_0^\dagger a_1 + a_1^\dagger a_0$.
 
 ```csharp
@@ -330,7 +329,7 @@ using System.Linq;
     var fermionTerm0 = new FermionTerm(new[] { 1, 0 }.ToLadderSequence());
     var fermionTerm1 = new FermionTerm(new[] { 0, 1 }.ToLadderSequence());
 
-    // These fermion terms are not equal. The following Boolean is `false`.
+    // These fermion terms aren't equal. The following Boolean is `false`.
     var sequenceEqual = fermionTerm0 == fermionTerm1;
 
     // However, these terms are equal under Hermitian symmetry.
@@ -348,7 +347,7 @@ using System.Linq;
     hamiltonian.Add(hermitianFermionTerm1, 1.0);
 ```
 
-We may simplify this construction using the fact that Hamiltonian operators are Hermitian operators.
+This construction can be simplified using the fact that Hamiltonian operators are Hermitian operators.
 When adding terms to the Hamiltonian using `Add`, any non-Hermitian term such as `fermionTerm0` is assumed to be paired with its Hermitian conjugate.
 Thus the following snippet also represents the same Hamiltonian:
 
@@ -361,10 +360,10 @@ Thus the following snippet also represents the same Hamiltonian:
 ```
 
 Using the anti-commutation rules, some `FermionTerm` instances in the Hamiltonian actually correspond to the same sequence of fermionic operators, sometimes up to a minus sign.
-For instance, consider the Hamiltonian $H=a_0^\dagger a_1^\dagger a_1 a_0 - a_1^\dagger a_0^\dagger a_1 a_0 =2a_0^\dagger a_1^\dagger a_1 a_0$, which is a sum of terms constructed above.
+For example, consider the Hamiltonian $H=a_0^\dagger a_1^\dagger a_1 a_0 - a_1^\dagger a_0^\dagger a_1 a_0 =2a_0^\dagger a_1^\dagger a_1 a_0$, which is a sum of terms constructed earlier.
 It may not always be clear to the user that these are equivalent terms, and so they may be added to the Hamiltonian separately.
 Alternatively, one may be interested in modifying already-existing terms in the Hamiltonian.
-In these cases, we may combine equivalent terms as follows.
+In these cases, you may combine equivalent terms as follows:
 
 ```csharp
     // We create a `FermionHamiltonian` instance to store the fermion terms.
@@ -384,10 +383,10 @@ In these cases, we may combine equivalent terms as follows.
     var nTerms = hamiltonian.CountTerms();
 ```
 
-By combining coefficients of equivalent terms, we reduce the total number of terms in the Hamiltonian.
+By combining coefficients of equivalent terms, you reduce the total number of terms in the Hamiltonian.
 Later on, this reduces the number of quantum gates required to simulate the Hamiltonian.
 
-### Internal Representation
+### Internal representation
 
 A fermionic Hamiltonian with one- and two-body interactions is represented in second-quantized notation as
 
@@ -397,7 +396,7 @@ $$
 
 In this notation, there are at most $N^2+N^4$ coefficients.
 However, many of these coefficients may be collected as they correspond to the same operator.
-For instance, in the case where $p,q,r,s$ are distinct indices, we may use the anti-commutation rules to show that:
+For example, in the case where $p,q,r,s$ are distinct indices, you may use the anti-commutation rules to show that:
 
 $$
 a^\dagger\_{p}a^\dagger\_{q}a\_{r}a\_{s} =
@@ -406,14 +405,14 @@ a^\dagger\_{p}a^\dagger\_{q}a\_{r}a\_{s} =
 a^\dagger\_{q}a^\dagger\_{p}a\_{s}a\_{r}.
 $$
 
-Furthermore, as $H$ is Hermitian, every non-Hermitian fermionic operator, say $h\_{pqrs}a^\dagger\_{p}a^\dagger\_{q}a\_{r}a\_{s}$, has a Hermitian conjugate that is also found in $H$. In order to uniquely index groups of terms characterized by these symmetries, we define a canonical ordering on the indices $(i\_1,\cdots,i\_n,j\_1,\cdots,j\_m)$ of any sequence of $n+m$ fermionic operators $a^\dagger\_{i\_1}\cdots a^\dagger\_{i\_n}a\_{j\_1}\cdots a\_{j\_m}$as follows:
+Furthermore, as $H$ is Hermitian, every non-Hermitian fermionic operator, say $h\_{pqrs}a^\dagger\_{p}a^\dagger\_{q}a\_{r}a\_{s}$, has a Hermitian conjugate that is also found in $H$. In order to uniquely index groups of terms characterized by these symmetries, a canonical ordering is defined on the indices $(i\_1,\cdots,i\_n,j\_1,\cdots,j\_m)$ of any sequence of $n+m$ fermionic operators $a^\dagger\_{i\_1}\cdots a^\dagger\_{i\_n}a\_{j\_1}\cdots a\_{j\_m}$as follows:
 
 - All creation operators $a^\dagger\_{i\_\cdot}$ are placed before all annihilation operators $a\_{j\_\cdot}$.
 - All creation operator indices are sorted in ascending order, that is $i\_1< i\_2< \cdots < i\_n$.
 - All annihilation operator indices are sorted in descending order, that is $j\_1> j\_2 \cdots > j\_m$.
 - The left-most index is less than or equal to the right-most index, that is $i\_1\le j\_m$.
 
-Let us identify this set of canonically ordered indices as
+You can identify this set of canonically ordered indices as
 
 $$
 (i\_1,\cdots,i\_n,j\_1,\cdots,j\_m) \in S\_{n,m}.

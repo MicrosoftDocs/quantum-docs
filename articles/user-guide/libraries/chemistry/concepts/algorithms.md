@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to use Trotter-Suzuki formulas and qubitization to work with Hamiltonian simulations.
 ms.author: brbenefield
-ms.date: 10/10/2022
+ms.date: 06/21/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -11,14 +11,14 @@ title: Simulating Hamiltonian Dynamics
 uid: microsoft.quantum.libraries.overview-chemistry.concepts.simulationalgorithms
 ---
 
-# Simulating Hamiltonian Dynamics
+# Simulating Hamiltonian dynamics
 
 Once the Hamiltonian has been expressed as a sum of elementary operators using the [Jordan-Wigner representation](xref:microsoft.quantum.libraries.overview-chemistry.concepts.jordanwigner), the dynamics can then be compiled into fundamental gate operations using a host of well-known techniques.
 Three efficient approaches include Trotter–Suzuki formulas, linear combinations of unitaries, and qubitization.
 
 This article examines these three approaches, along with concrete Q# examples of how to implement these methods using the Hamiltonian simulation library.
 
-## Trotter–Suzuki Formulas
+## Trotter–Suzuki formulas
 
 The idea behind Trotter–Suzuki formulas is simple: express the Hamiltonian as a sum of easy to simulate Hamiltonians and then approximate the total evolution as a sequence of these simpler evolutions.
 In particular, let $H=\sum_{j=1}^m H_j$ be the Hamiltonian.
@@ -68,7 +68,7 @@ $$
 where $s_2 = (4-4^{1/3})^{-1}$.
 In general, arbitrarily high-order formulas can be similarly constructed; however, the costs incurred from using more complex integrators often outweigh the benefits beyond fourth order for most practical problems.
 
-In order to make the above strategies work, you need to have a method for simulating a wide class of $e^{-iH_j t}$.
+In order to make these strategies work, you need to have a method for simulating a wide class of $e^{-iH_j t}$.
 The simplest family of Hamiltonians, and arguably most useful, that you could use here are Pauli operators.
 Pauli operators can be easily simulated because they can be diagonalized using Clifford operations (which are standard gates in quantum computing).
 Further, once they've been diagonalized, their eigenvalues can be found by computing the parity of the qubits on which they act.
@@ -92,7 +92,7 @@ $$
 
 Here, $e^{-iHt} \ket{00} = e^{it} \ket{00}$ and $e^{-iHt} \ket{01} = e^{-it} \ket{01}$, which can be seen directly as a consequence of the fact that the parity of $00$ is $0$ while the parity of the bit string $01$ is $1$.
 
-Exponentials of Pauli operators can be implemented directly in Q# using the <xref:Microsoft.Quantum.Intrinsic.Exp> operation:
+Exponentials of Pauli operators can be implemented directly in Q# using the [Exp](xref:Microsoft.Quantum.Intrinsic.Exp) operation:
 
 ```qsharp
 use qubits = Qubit[2];
@@ -104,8 +104,8 @@ Exp(pauliString, - evolutionTime, qubits);
 ```
 
 For Fermionic Hamiltonians, the [Jordan–Wigner decomposition](xref:microsoft.quantum.libraries.overview-chemistry.concepts.jordanwigner) conveniently maps the Hamiltonian into a sum of Pauli operators.
-This means that the above approach can easily be adapted to simulating chemistry.
-Rather than manually looping over all Pauli terms in the Jordan-Wigner representation, below is a simple example of how running such a simulation within the chemistry would look.
+This means that this approach can easily be adapted to simulating chemistry.
+Rather than manually looping over all Pauli terms in the Jordan-Wigner representation, the following is a simple example of how running such a simulation within the chemistry would look.
 Our starting point is a [Jordan–Wigner encoding](xref:microsoft.quantum.libraries.overview-chemistry.concepts.jordanwigner) of the Fermionic Hamiltonian, which you convert to a format suitable for Q#.
 
 ```csharp
@@ -191,7 +191,7 @@ Alternatively, if only static quantities are desired (such as the ground state e
 This is significant because it allows the spectral transformation to be performed classically rather than using a quantum singular value transformation method.
 
 On a more detailed level, the implementation of qubitization requires two subroutines that provide the interfaces for the Hamiltonian.
-Unlike Trotter–Suzuki methods, these subroutines are quantum not classical and their implementation will necessitate using logarithmically more qubits than would be required for a Trotter-based simulation.
+Unlike Trotter–Suzuki methods, these subroutines are quantum not classical and their implementation necessitates using logarithmically more qubits than would be required for a Trotter-based simulation.
 
 The first quantum subroutine that qubitization uses is called $\operatorname{Select}$ and it's promised to yield
 
@@ -237,11 +237,11 @@ which again can be seen to implement an operator that is equivalent (up to an is
 
 These subroutines are easy to set up in Q#.
 As an example, consider the qubit transverse-Ising Hamiltonian where $H = X_1 + X_2 + Z_1 Z_2$.
-In this case, Q# code that would implement the $\operatorname{Select}$ operation is invoked by <xref:Microsoft.Quantum.Canon.MultiplexOperations>, whereas the $\operatorname{Prepare}$ operation can be implemented using <xref:Microsoft.Quantum.Preparation.PrepareArbitraryState>.
-An example that involves simulating the Hubbard model can be found as a [Q# sample](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
+In this case, Q# code that would implement the $\operatorname{Select}$ operation is invoked by the [MultiplexOperations](xref:Microsoft.Quantum.Canon.MultiplexOperations) operation, whereas the $\operatorname{Prepare}$ operation can be implemented using the [PrepareArbitraryState](xref:Microsoft.Quantum.Preparation.PrepareArbitraryState) operation.
+An Q# example that involves simulating the Hubbard model can be found in the [Hubbard Simulation sample](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
 
 Manually specifying these steps for arbitrary chemistry problems would require much effort, which is avoided using the chemistry library.
-Similarly to the Trotter–Suzuki simulation algorithm above, the `JordanWignerEncodingData` is passed to the convenience function `QubitizationOracle` that returns the walk-operator, in addition to other parameters required for its run.
+Similarly to the Trotter–Suzuki simulation algorithm shown earlier, the `JordanWignerEncodingData` is passed to the convenience function `QubitizationOracle` that returns the walk-operator, in addition to other parameters required for its run.
 
 ```qsharp
 operation QubitizationExample(qSharpData: JordanWignerEncodingData) : Unit {
@@ -260,6 +260,6 @@ operation QubitizationExample(qSharpData: JordanWignerEncodingData) : Unit {
 }
 ```
 
-Importantly, the implementation <xref:Microsoft.Quantum.Chemistry.JordanWigner.QubitizationOracle> is applicable to arbitrary Hamiltonians specified as a linear combination of Pauli strings.
-A version optimized for chemistry simulations is invoked using <xref:Microsoft.Quantum.Chemistry.JordanWigner.OptimizedQubitizationOracle>.
+Importantly, the [QubitizationOracle](xref:Microsoft.Quantum.Chemistry.JordanWigner.QubitizationOracle) function is applicable to arbitrary Hamiltonians specified as a linear combination of Pauli strings.
+A version optimized for chemistry simulations is invoked using the [OptimizedQubitizationOracle](xref:Microsoft.Quantum.Chemistry.JordanWigner.OptimizedQubitizationOracle) function.
 This version is optimized to minimize the number of T gates using techniques discussed in [Encoding Electronic Spectra in Quantum Circuits with Linear T Complexity](https://arxiv.org/abs/1805.03662).
