@@ -129,10 +129,10 @@ The standalone application of Q# Jupyter Notebooks will be reserved for last, be
 ## [Q# in the Copilot for Azure Quantum](#tab/tabid-copilot)
 
 One of the easiest ways to get started writing Q# programs is to avoid worrying about separate files and a second language altogether.
-Using the [Copilot for Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding) allows for a seamless work flow in which you can run Q# callables from a single Q# file.
+Using the [Copilot for Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding) allows for a seamless work flow in which you can run Q# callables from a single Q# file.
 
 > [!NOTE]
-> The [Copilot for Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding) is available free of charge. All you need to access it is a Microsoft (MSA) email account. You can create an MSA for free at https://account.microsoft.com/.
+> The [Copilot for Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding) is available free of charge. All you need to access it is a Microsoft (MSA) email account. You can create an MSA for free at https://account.microsoft.com/.
 
 ### Add entry point to Q# file
 
