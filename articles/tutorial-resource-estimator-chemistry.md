@@ -73,7 +73,7 @@ You want to estimate the resources on a fault-tolerant quantum computer and with
 
 A resource estimation job consist of two types of job parameters:
 
-- Target parameters, which consist on three predefined parameters: qubit model, QEC schemes, and error budget. For more information, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
+- Target parameters, which consist on four parameters: qubit model, QEC schemes, error budget, and constraints on the component-level (optional). For more information, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
 - Operation arguments, that is arguments that can be passed to the quantum program. In this case, the FCIDUMP files are passed as operation arguments. 
 
 ### Select and pass a FCIDUMP file
