@@ -1,7 +1,7 @@
 ---
 author: sonialopezbravo
 ms.author: sonialopez
-ms.date: 12/01/2022
+ms.date: 06/20/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -27,7 +27,7 @@ where:
 Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with three controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. One-qubit gates are billed as 0.225 of a two-qubit gate (rounded down). To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
 
 
-All new Azure Quantum customers benefit of a one-time $500 (USD) free Azure Quantum credits toward IonQ provider to use in IonQ QPUs Harmony and Aria, and quantum simulator. Besides the Azure Quantum Credits plan, IonQ offers a **pay-as-you-go** plan with access to the quantum simulator and the IonQ Harmony 11-qubit quantum computer, and a **monthly subscription** plan which expands the access to the IonQ Aria 23-qubit quantum computer. 
+All new Azure Quantum customers benefit of a one-time $500 (USD) free Azure Quantum credits toward IonQ provider to use in IonQ QPUs Harmony and Aria, and quantum simulator. Besides the Azure Quantum Credits plan, IonQ offers a **pay-as-you-go** plan with access to the quantum simulator and the IonQ Harmony 11-qubit quantum computer, and a **monthly subscription** plan which expands the access to the IonQ Aria 1 25-qubit quantum computer. 
 
 ### [Azure Quantum Credits](#tab/tabid-AQcredits)
 
@@ -36,10 +36,8 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 |Pricing | Use is deducted from the Azure Quantum Credits based on the number of QGSs executed |
 |---|---|  
 |Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
-| IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.0003 (USD) deducted from your credits</li></ul>|
-| IonQ Aria |<ul><li>1-Qubit Gate Shot: $0.0002205 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.00098 (USD) deducted from your credits</li></ul>|
-
-Minimum of $1 (USD) per program execution, deducted from your credits. 
+| IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.0003 (USD) deducted from your credits</li><li>Minimum price per program execution: $1 (USD)</ul>|
+| IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.0002196 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.000975 (USD) deducted from your credits</li><li>Minimum price per program execution: $97.50 (USD)</li></ul>|
 
 > [!NOTE]
 > Once you have consumed all the credits you need to switch to a different plan to continue using IonQ. Azure Quantum won’t start charging you once you reach your credit limit. 
@@ -54,23 +52,21 @@ The Pay-as-you-go plan consists of *a la carte* access to the 11-qubit trapped i
 
 |Pricing | Use is charged based on the number of QGSs executed + Azure infrastructure costs |
 |---|---|  
-|Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Simulator (free)</li></ul>|
-||<ul><li>1-Qubit Gate Shot: $0.00003 (USD) </li><li>2-Qubit Gate Shot: $0.0003 (USD) </li></ul>|
-
-Minimum of $1 (USD) per program execution.  
+| Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria 1 QPU</li><li>IonQ Simulator (free)</li></ul>|
+| IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD)</li><li>2-Qubit Gate Shot: $0.0003 (USD)</li><li>Minimum price per program execution: $1 (USD)</li></ul>|
+| IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.0002196 (USD)</li><li>2-Qubit Gate Shot: $0.000975 (USD)</li><li>Minimum price per program execution: $97.50 (USD)</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ### [Aria plan](#tab/tabid-aria)
 
-The Aria plan is a monthly subscription plan with access to the IonQ Aria 23-qubit quantum computer. The subscription also includes access to IonQ simulator and IonQ Harmony 11-qubit quantum computer.
+The Aria plan is a monthly subscription plan with access to the IonQ Aria 1 25-qubit quantum computer. The subscription also includes access to the IonQ simulator and IonQ Harmony 11-qubit quantum computer.
 
 |Pricing | $25,000 (USD)/Month + Azure infrastructure costs |
 |---|---|  
 |Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
-||<ul><li>1-Qubit Gate Shot: $0.0002205 (USD) </li><li>2-Qubit Gate Shot: $0.00098 (USD) </li></ul>|
-
-Minimum of $1 (USD) per program execution.  
+| IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD)</li><li>2-Qubit Gate Shot: $0.0003 (USD)</li><li>Minimum price per program execution: $1 (USD)</li></ul>|
+| IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.0002196 (USD)</li><li>2-Qubit Gate Shot: $0.000975 (USD)</li><li>Minimum price per program execution: $97.50 (USD)</li></ul>|  
 
 > [!NOTE]
 > Once you have consumed the equivalent cost of the monthly subscription, any overspending is charged as a pay-as-you-go plan.
@@ -81,7 +77,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ## Quantinuum
 
-[Quantinuum](https://www.quantinuum.com/) uses a credit system that charges each job depending on the number of operations in the job, and the number of shots you run. The usage units are *H-System Quantum Credits (HQCs)* for jobs submitted to System Model H1 quantum computers, Powered by Quantinuum, and emulator HQCs (eHQCs) for jobs submitted to System Model H1 emulators.
+[Quantinuum](https://www.quantinuum.com/) uses a credit system that charges each job depending on the number of operations in the job, and the number of shots you run. The usage units are *H-System Quantum Credits (HQCs)* for jobs submitted to quantum computers and emulator HQCs (eHQCs) for jobs submitted to emulators.
 
 > [!NOTE]
 > Do not confuse the Quantinuum HQCs with the Azure Quantum credits. Quantinuum HQCs are a usage unit defined by the provider to track the usage and quotas of their targets.
@@ -135,6 +131,26 @@ The Premium Subscription is a monthly subscription plan available through queued
 | Pricing | $175,000 (USD)/Month + Azure infrastructure costs |
 |---|---|
 |Includes access to | <ul><li>17k HQCs for use on System Model H1 hardware</li><li>170k eHQCs for use on the System Model H1 Emulator</li></ul>|
+
+For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
+
+### [Standard H1 + H2 Subscription](#tab/tabid-standard-H1+h2)
+
+The Standard H1 + H2 Subscription is a monthly subscription plan available through queued access.
+
+|Pricing|  $135,000 (USD)/Month + Azure infrastructure costs |
+|---|---|
+|Includes access to | <ul><li>10k HQCs for use on the System Model H1 and H2 hardware</li><li>100k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
+
+For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
+
+### [Premium H1 + H2 Subscription](#tab/tabid-premium-H1+H2)
+
+The Premium H1 + H2 Subscription is a monthly subscription plan available through queued access.
+
+| Pricing | $185,000 (USD)/Month + Azure infrastructure costs |
+|---|---|
+|Includes access to | <ul><li>17k HQCs for use on System Model H1 and H2 hardware</li><li>170k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 ***

@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides the technical details of the Quantinuum quantum provider
 ms.author: brbenefield
-ms.date: 03/01/2023
+ms.date: 06/12/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -24,14 +24,17 @@ Quantinuum provides access to trapped-ion systems with high-fidelity, fully conn
 
 The following targets are available from this provider:
 
-|Target name|	Target ID| Number of qubits| Integrated hybrid support |Description|
+|Target name|Target ID|Number of qubits|Description|
 |---|---|---|---|
-|[H1-1 Syntax Checker](#syntax-checkers) | quantinuum.sim.h1-1sc| 20 qubits| Yes | Use this to validate quantum programs against the H1-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
-|[H1-2 Syntax Checker](#syntax-checkers) | quantinuum.sim.h1-2sc | 12 qubits| Yes | Use this to validate quantum programs against the H1-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
-|[H1-1 Emulator](#system-model-h1-emulators) | quantinuum.sim.h1-1e | 20 qubits| Yes | Uses a realistic physical model and noise model of H1-1.|
-|[H1-2 Emulator](#system-model-h1-emulators)|quantinuum.sim.h1-2e | 12 qubits| Yes | Uses a realistic physical model and noise model of H1-2.|
-|[H1-1](#system-model-h1)| quantinuum.qpu.h1-1 | 20 qubits| Yes | Quantinuum's H1-1 trapped ion device.|
-|[H1-2](#system-model-h1)| quantinuum.qpu.h1-2 |12 qubits| Yes | Quantinuum's H1-2 trapped ion device.|
+|[H1-1 Syntax Checker](#syntax-checkers) |quantinuum.sim.h1-1sc|20 qubits| Use this to validate quantum programs against the H1-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
+|[H1-2 Syntax Checker](#syntax-checkers) |quantinuum.sim.h1-2sc |20 qubits|Use this to validate quantum programs against the H1-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
+|[H2-1 Syntax Checker](#syntax-checkers) |quantinuum.sim.h2-1sc |32 qubits|Use this to validate quantum programs against the H2-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
+|[H1-1 Emulator](#system-model-h1-emulators) |quantinuum.sim.h1-1e | 20 qubits| Uses a realistic physical model and noise model of H1-1.|
+|[H1-2 Emulator](#system-model-h1-emulators)|quantinuum.sim.h1-2e | 20 qubits|Uses a realistic physical model and noise model of H1-2.|
+|[H2-1 Emulator](#system-model-h2-emulator)|quantinuum.sim.h2-1e | 32 qubits|Uses a realistic physical model and noise model of H2-1.|
+|[H1-1](#system-model-h1)|quantinuum.qpu.h1-1 |20 qubits|Quantinuum's H1-1 trapped ion device.|
+|[H1-2](#system-model-h1)|quantinuum.qpu.h1-2| 20 qubits|Quantinuum's H1-2 trapped ion device.|
+|[H2-1](#system-model-h2)|quantinuum.qpu.h2-1| 32 qubits|Quantinuum's H2-1 trapped ion device.|
 
 Quantinuum's targets correspond to a **:::no-loc text="Basic Measurement Feedback":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
 
@@ -40,32 +43,32 @@ All of Quantinuum's targets now support Integrated hybrid circuits. For more inf
 To get started using the Quantinuum provider on Azure Quantum, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
 > [!TIP]
-> Quantum jobs submitted under a session have **exclusive access** to Quantinuum hardware as long as you queue jobs within one minute from each other. After that, any job will be accepted and handled with the standard queueing and prioritization logic. For more information, see [sessions in Azure Quantum](xref:microsoft.quantum.hybrid.interactive).
-
+> Quantum jobs submitted under a session have **exclusive access** to Quantinuum hardware as long as you queue jobs within one minute from each other. After that, any job is accepted and handled with the standard queueing and prioritization logic. For more information, see [sessions in Azure Quantum](xref:microsoft.quantum.hybrid.interactive).
 
 ## Syntax Checkers
 
-We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-2 syntax checker uses the same compiler as H1-2. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker will return a `success` status and a result of all 0s. If the code does not compile, the syntax checker will return a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
+We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-2 syntax checker uses the same compiler as H1-2. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker returns a `success` status and a result of all 0s. If the code does not compile, the syntax checker returns a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
 
 - Job type: `Simulation`
 - Data Formats: `honeywell.openqasm.v1`, `honeywell.qir.v1`
 - Target ID:
   - H1-1 Syntax Checker: `quantinuum.sim.h1-1sc`
   - H1-2 Syntax Checker: `quantinuum.sim.h1-2sc`
-- Target Execution Profile: [:::no-loc text="Basic Measurement Feedback":::](xref:microsoft.quantum.target-profiles)
+  - H2-1 Syntax Checker: `quantinuum.sim.h2-1sc`
+- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
 Syntax Checkers usage is offered free-of-charge.
 
 ## System Model H1 Emulators
 
-After validating the syntax of their code with a Syntax Checker, users can take advantage of Quantinuum's System Model H1 Emulators, emulation tools which contain a detailed physical model and realistic noise model of the actual System Model H1 hardware. The noise models are derived from a detailed characterization of the hardware. The System Model H1 Emulators use an identical API for job submission as the System Model H1 hardware, enabling seamless transition from emulation to hardware. To help maximize productivity and shorten development time, the System Model H1 Emulators are available even while the hardware is offline.
+After validating the syntax of their code with a Syntax Checker, users can take advantage of Quantinuum's System Model H1 Emulators, emulation tools that contain a detailed physical model and realistic noise model of the actual System Model H1 hardware. The noise models are derived from a detailed characterization of the hardware. The System Model H1 Emulators use an identical API for job submission as the System Model H1 hardware, enabling seamless transition from emulation to hardware. To help maximize productivity and shorten development time, the System Model H1 Emulators are available even while the hardware is offline.
 
 More information can be found in the *System Model H1 Emulator Product Data Sheet* found on the [System Model H1] page.
 
 - Job type: `Simulation`
-- Data Format: `honeywell.openqasm.v1`, `honeywell.qir.v1`
-- Target ID: 
-  - H1-1 Emulator: `quantinuum.sim.h1-1e` 
+- Data Format: `quantinuum.openqasm.v1`
+- Target ID:
+  - H1-1 Emulator: `quantinuum.sim.h1-1e`
   - H1-2 Emulator: `quantinuum.sim.h1-2e`
 - Target Execution Profile: [:::no-loc text="Basic Measurement Feedback":::](xref:microsoft.quantum.target-profiles)
 
@@ -86,6 +89,35 @@ More information can be found in the *System Model H1 Product Data Sheet* found 
   - H1-2: `quantinuum.qpu.h1-2`
 - Target Execution Profile: [:::no-loc text="Basic Measurement Feedback":::](xref:microsoft.quantum.target-profiles)
 
+## System Model H2 Emulator
+
+After validating the syntax of their code with the H2-1 Syntax Checker, users can take advantage of Quantinuum's System Model H2 Emulator, an emulation tool which contains a detailed physical model and realistic noise model of the actual System Model H2 hardware. More information about the noise model can be found in the *System Model H2 Emulator Product Data Sheet* found on the [System Model H2](https://www.quantinuum.com/hardware/h2) page. The System Model H2 Emulator uses an identical API for job submission as the System Model H2 hardware, enabling seamless transition from emulation to hardware. To help maximize productivity and shorten development time, the H2 Emulator is available even while the hardware is offline.
+
+- Job type: `Simulation`
+- Data Format: `quantinuum.openqasm.v1`
+- Target ID:
+  - H2-1 Emulator: `quantinuum.sim.h2-1e`
+- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
+
+System Model H2 Emulator usage is offered free-of-charge with a hardware subscription. For details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
+
+## System Model H2
+
+The Quantinuum System Model H2 generation of quantum computers, Powered by Honeywell, is comprised of a Quantum charge-coupled device (QCCD) with two connected linear sections and currently has 1 machine, the H2-1. More information can be found in the *System Model H2 Product Data Sheet* found on the [System Model H2](https://www.quantinuum.com/hardware/h2) page. Users are encouraged to test compatibility of their code by submitting jobs to a [syntax checker](#syntax-checkers) and [System Model H2 Emulator](#system-model-h2-emulator) prior to submitting them to the target machines.  
+
+If a user submits a job to the H2-1 machine and the H2-1 machine is not available, the job remains in that machine's queue until the machine becomes available.
+
+System Model H2 hardware is continuously upgraded throughout it's product lifecycle. Users are given access to the most up-to-date, advanced, and capable hardware available.
+
+- Job type: `Quantum Program`
+- Data Format: `quantinuum.openqasm.v1`
+- Target ID:
+  - H2-1: `quantinuum.qpu.h2-1`
+- Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
+
+## System Model H1 and H2 Technical Specifications 
+
+Technical details for System Model H1 and System Model H2 can be found in Quantinuum's product data sheets on the [System Model H1](https://www.quantinuum.com/hardware/h1) and [System Model H2](https://www.quantinuum.com/hardware/h2) pages alongside links to Quantinuum specification and quantum volume data repositories and how to cite usage of Quantinuum systems.
 ## Additional Capabilities
 
 Additional capabilities available via the Quantinuum API are listed here.
@@ -103,7 +135,7 @@ Users can take advantage of these additional capabilities via circuit functions 
 
 Mid-circuit Measurement and Qubit Reuse (MCMR) enables users to measure qubits in the middle of a circuit and re-use them.
 
-Due to the internal level structure of trapped-ion qubits, a mid-circuit measurement may leave the qubit in a non-computational state. All mid-circuit measurements should be followed by initialization if the qubit is to be used again in that circuit. The code examples below demonstrate this.
+Due to the internal level structure of trapped-ion qubits, a mid-circuit measurement may leave the qubit in a non-computational state. All mid-circuit measurements should be followed by initialization if the qubit is to be used again in that circuit. The following code examples demonstrate this.
 
 When a subset of qubits is measured in the middle of the circuit, the classical information from these measurements can be used to condition future elements of the circuit. The examples also highlight this usage. 
 
@@ -248,7 +280,7 @@ For more information on the full set of noise parameters available, see the *Sys
 
 #### [Emulator Noise Parameters with Q# Provider](#tab/tabid-emulator-noise-parameters-with-q-provider)
 
-First, declare the function we will define in Q# as a callable so that Python recognizes the symbol.
+First, declare the function to define in Q# as a callable so that Python recognizes the symbol.
 
 ```python
 GenerateRandomBit: any = None
@@ -349,7 +381,7 @@ For more information on `pytket`, see the following links:
 
 #### [TKET Compilation with Q# Provider](#tab/tabid-tket-compilation-with-q-provider)
 
-First, declare the function we will define in Q# as a callable so that Python recognizes the symbol.
+First, declare the function to define in Q# as a callable so that Python recognizes the symbol.
 
 ```python
 GenerateRandomBit: any = None
@@ -413,11 +445,11 @@ print("Job id:", job.id())
 
 ## Technical Specifications
 
-Technical details for the System Model H1 and System Model H1 Emulators can be found in Quantinuum's product data sheets on the [System Model H1] page alongside links to Quantinuum specification and quantum volume data repositories and how to cite usage of Quantinuum systems.
+Technical details for the System Model H1 and H2 and System Model H1 and H2 Emulators can be found in Quantinuum's product data sheets on the [System Model H1] and [System Model H2] page alongside links to Quantinuum specification and quantum volume data repositories and how to cite usage of Quantinuum systems.
 
 ## Target Availability
 
-The Quantinuum H-Series quantum computers are designed to be continuously upgraded, which allows customers to have access to the latest hardware capabilities as Quantinuum continually improves gate fidelities, memory errors, and system speed. 
+The Quantinuum H-Series quantum computers are designed to be continuously upgraded, which allows customers to have access to the latest hardware capabilities as Quantinuum continually improves gate fidelities, memory errors, and system speed.
 
 Quantinuum hardware cycles through commercial periods and development periods. During commercial periods, the hardware is available to process jobs via a queue system. During development periods, the hardware is offline as upgrades are applied.
 
@@ -439,7 +471,7 @@ To see Quantinuum's billing plans, visit [Azure Quantum pricing](xref:microsoft.
 
 ## Limits & Quotas
 
-Quantinuum's quotas are tracked based on the QPU usage credit unit, *H-System Quantum Credit (HQC)*, for jobs submitted to System Model H1 quantum computers, and emulator HQCs (eHQCs) for jobs submitted to System Model H1 emulators.
+Quantinuum's quotas are tracked based on the QPU usage credit unit, *H-System Quantum Credit (HQC)*, for jobs submitted to Quantinuum quantum computers, and emulator HQCs (eHQCs) for jobs submitted to emulators.
 
 HQCs and eHQCs are used to calculate the cost of running a job, and they are calculated based on the following formula:
 
@@ -463,7 +495,8 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 > If you are using an [Azure Quantum Credits](xref:microsoft.quantum.credits) plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
 
 [Quantinuum]: https://www.quantinuum.com
-[System Model H1]: https://www.quantinuum.com/products/h1
+[System Model H1]: https://www.quantinuum.com/hardware/h1
+[System Model H2]: https://www.quantinuum.com/hardware/h2
 [`MResetZ`]: /qsharp/api/qsharp/microsoft.quantum.measurement.mresetz
 [`rzz`]: https://qiskit.org/documentation/stubs/qiskit.circuit.QuantumCircuit.rzz.html
 [`pytket-quantinuum`]: https://github.com/CQCL/pytket-quantinuum

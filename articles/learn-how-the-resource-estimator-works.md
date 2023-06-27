@@ -21,7 +21,7 @@ In this article, you'll learn the workflow of the Resource Estimator and how the
 
 ### Code distance and T factory estimation
 
-The Resource Estimator takes the target parameters `{qubitParams, qecScheme, errorBudget}` to compute a resource estimation of qubit technology and architecture. It calculates the QEC code distance, and from it, the number of physical qubits needed to encode one logical qubit and the runtime of one logical depth or cycle.
+The Resource Estimator takes the target parameters `{qubitParams, qecScheme, errorBudget, constraints}` to compute a resource estimation of qubit technology and architecture. It calculates the QEC code distance, and from it, the number of physical qubits needed to encode one logical qubit and the runtime of one logical depth or cycle.
 
 The Resource Estimator uses a logical layer called *planar quantum ISA* that acts as the interface between the software and hardware layers. It abstracts the details of how QEC is implemented in the layer below, retaining only a set of fault-tolerant logical operations as its instruction set. For more information, see [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629).
 

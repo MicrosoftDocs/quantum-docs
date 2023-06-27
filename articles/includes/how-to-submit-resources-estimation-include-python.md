@@ -142,11 +142,12 @@ result['jobParams']
   'twoQubitGateTime': '50 ns'}}
  ```
 
-There are three top-level target parameters that can be customized: 
+There are target parameters that can be customized: 
 
 * `errorBudget` - the overall allowed error budget
 * `qecScheme` - the quantum error correction (QEC) scheme
 * `qubitParams` - the physical qubit parameters 
+* `constraints` - the constraints on the component-level
 
 For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters) for the Resource Estimator.
 
