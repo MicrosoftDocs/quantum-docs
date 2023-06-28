@@ -34,8 +34,8 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 |Pricing | Use is deducted from the Azure Quantum Credits based on the number of QGSs executed |
 |---|---|  
 |Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
-| IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.0003 (USD) deducted from your credits</li><li>Minimum price per program execution: $1 (USD)</ul>|
-| IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.0002196 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.000975 (USD) deducted from your credits</li><li>Minimum price per program execution: $97.50 (USD)</li></ul>|
+| IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.0003 (USD) deducted from your credits</li><li>Minimum price per program execution: $1 (USD)<li>Minimum price per program execution with error mitigation: $5 (USD)</li></ul>|
+| IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.0002196 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.000975 (USD) deducted from your credits</li><li>Minimum price per program execution (with or without error mitigation): $97.50 (USD)</li></ul>|
 
 > [!NOTE]
 > Once you have consumed all the credits you need to switch to a different plan to continue using IonQ. Azure Quantum won’t start charging you once you reach your credit limit. 
