@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to create an Azure Quantum workspace.
 ms.author: brbenefield
-ms.date: 12/14/2022
+ms.date: 06/06/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -13,9 +13,9 @@ uid: microsoft.quantum.how-to.workspace
 
 # Create an Azure Quantum workspace
 
-Learn how to create an [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) workspace. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum or optimization applications.
+Learn how to create an [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) workspace in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum applications.
 
-A workspace is needed to [get started with Jupyter Notebooks in Azure Quantum](xref:microsoft.quantum.get-started.notebooks), submit optimization problems, or quantum programs on quantum hardware.
+A workspace is needed to [get started with Jupyter Notebooks in the Azure portal](xref:microsoft.quantum.get-started.notebooks) or quantum programs on quantum hardware.
 
 > [!TIP]
 > You can also create an Azure Quantum workspace using the Azure command-line interface (CLI). For more information, see [Manage quantum workspaces with the Azure CLI](xref:microsoft.quantum.workspaces-cli).
@@ -122,6 +122,7 @@ Deployment of your workspace may take a few minutes. The status and deployment d
 
 ## Next steps
 
+- [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
 - [Get started with Jupyter Notebooks in Azure Quantum](xref:microsoft.quantum.get-started.notebooks)
 - [Quickstart: Solve an optimization problem in Azure Quantum](xref:microsoft.quantum.quickstarts.optimization.qio.portal)
 - [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit.portal)

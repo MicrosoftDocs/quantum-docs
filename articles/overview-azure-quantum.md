@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
-description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs in the cloud.
-ms.date: 06/08/2023
+description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs problems in the cloud.
+ms.date: 01/08/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -24,6 +24,12 @@ If you aim to simulate quantum mechanical problems, such as chemical reactions, 
 
   
 ## How to get started with Azure Quantum?
+
+### The Azure Quantum website
+
+[Azure Quantum (quantum.microsoft.com)](https://quantum.microsoft.com/) is a central resource for exploring quantum computing. You can play with the Copilot in Azure Quantum, a quantum-focused chatbot that helps you write code and better understand concepts. You can also learn from experts and enthusiasts through blogs, articles and videos. And you can try out some Q# code samples in the online code editor, free of charge - all you need is a Microsoft (MSA) email account. To get started, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
+
+### The Azure portal
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 

@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to work with jobs and sessions.
-ms.date: 04/10/2023
+ms.date: 06/26/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -78,7 +78,18 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
   print(f"Session: {same_session.details} \n")
   ```
 
-4. You can **close** a session with `session.close()` or `workspace.close_session(session)`.   
+4. You can **close** a session with `session.close()` or `workspace.close_session(session)`.
+   
+5. You can wait for a session to be completed:
+ ```python
+session_jobs = session.list_jobs()
+[session_job.id for session_job in session_jobs]
+
+import time
+while (session.details.status != "Succeeded" and session.details.status != "Failed" and session.details.status != "TimedOut"):
+   session.refresh()
+   time.sleep(5)
+  ```
   
 ## Session timeouts
 
