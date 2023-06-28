@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the IonQ quantum computing provider
 ms.author: sonialopez
-ms.date: 03/30/2023
+ms.date: 06/30/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -30,9 +30,8 @@ The following targets are available from this provider:
 
 IonQ's targets correspond to a **:::no-loc text="No Control Flow":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
 
-
-
 ## Quantum simulator
+
 GPU-accelerated idealized simulator supporting up to 29 qubits, using the same set of gates IonQ provide on its quantum hardware—a great place to preflight jobs before running them on an actual quantum computer.
 
 - Job type: `Simulation`
@@ -41,6 +40,7 @@ GPU-accelerated idealized simulator supporting up to 29 qubits, using the same s
 - Target Execution Profile: [:::no-loc text="No Control Flow":::](xref:microsoft.quantum.target-profiles)
 
 ## IonQ Harmony quantum computer
+
 The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair.
 
 - Job type: `Quantum Program`
@@ -97,7 +97,6 @@ IonQ Aria is IonQ's latest generation of trapped-ion quantum computer. With a 23
 | Single-qubit gate | 135 µs | 
 | Two-qubit gate | 600 µs | 
 
-
 ### System fidelity
 
 | Operation | Average fidelity |
@@ -106,32 +105,9 @@ IonQ Aria is IonQ's latest generation of trapped-ion quantum computer. With a 23
 | Two-qubit gate | 99.6% (not SPAM corrected) |
 | SPAM* | 99.61% |
 
-
 \* State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.
 
-
 IonQ Aria is available through Azure Quantum Credits plan and a separate billing plan. For more information, see [Azure Quantum pricing](/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-AQcreditsQ%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#ionq).
-
-## Native gates support and usage
-
-By default IonQ allows you to specify a quantum circuit using an abstract set of quantum gates, called `qis`, which allows flexibility and portability when writing an algorithm without worrying about optimization for the hardware.
-
-However, in some advanced usage cases, you might want to define a circuit directly on native gates in order to be closer to the hardware and bypass optimization. The native gate set is the set of quantum gates that are physically executed in the quantum processor, and they map the circuit to those as part of the execution.
-
-For more information, see [Getting Started With Native Gates (ionq.com)](https://ionq.com/docs/getting-started-with-native-gates).
-
-In order to use the native gate set when submitting Qiskit jobs to Azure Quantum, you specify the `gateset` parameter when initializing the backend as in the example below:
-
-```python
-# Here 'provider' is an instance of AzureQuantumProvider
-backend = provider.get_backend("ionq.qpu", gateset="native")
-```
-
-| Parameter Name | Type     | Required | Description |
-|----------------|----------|----------|-------------|
-| `gateset`   | string    | No | Specifies the set of gates that will be used to define a circuit. A value of `qis` corresponds to the abstract gates (default behavior) and `native` to the [IonQ hardware native gates](https://ionq.com/docs/getting-started-with-native-gates#introducing-the-native-gates).|
-
-For more information about Qiskit jobs, see [Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal).
 
 ## Input format
 
@@ -158,6 +134,89 @@ IonQ's targets correspond to the [:::no-loc text="No Control Flow"::: profile](x
 ## Output format
 
 When you submit a quantum program to the IonQ simulator, it returns the histogram created by the measurements. The IonQ simulator doesn't sample the probability distribution created by a quantum program but instead returns the distribution scaled to the number of shots. This is most apparent when you submit a single shot circuit. You will see multiple measurement results in the histogram for one shot. This behavior is inherent to IonQ simulator, while IonQ QPU actually runs the program and aggregates the results.
+
+## Additional Capabilities
+
+Additional capabilities supported by IonQ hardware are listed here.
+
+| Capability | Description |
+| ---- | ---- |
+| [Error mitigation](#error-mitigation) | Use debiasing to minimize noise and maximize algorithmic performance on IonQ hardware |
+| [Native gates support](#native-gates-support-and-usage) | Define and execute circuits directly on IonQ hardware-native gates |
+
+Users can take advantage of these additional capabilities via pass-through parameters in the Azure Quantum Q# and Qiskit providers.
+
+### Error mitigation
+
+IonQ provides the option to enable *quantum error mitigation* when submitting jobs to IonQ hardware. Error mitigation is a compiler-level process that runs and executes multiple symmetric variations of a circuit, and then aggregates the outcomes while mitigating the impact of hardware errors and qubit decoherence. Unlike *quantum error correction* techniques, error mitigation does not require large gate and qubit overhead. 
+
+*Debiasing* is the process of creating slight variations of a given circuit that *should* be identical on an ideal noiseless machine, using techniques such as different qubit assignments, gate decompositions, and pulse solutions, and then executing those variations. 
+
+*Sharpening* and *Averaging* are options for aggregating the results of the variations. Averaging is based equally on all the variation results, whereas Sharpening filters out the erroneous results, and can be more reliable for certain types of algorithms. 
+
+For more information, see [Debiasing and Sharpening](https://ionq.com/resources/debiasing-and-sharpening). For error mitigation pricing, see [IonQ pricing](xref:microsoft.quantum.providers-pricing#ionq).
+
+On Azure Quantum, error mitigation can be enabled for jobs submitted with Q# or with Qiskit.
+
+To enable error mitigation, you need to import `ErrorMitigation` and define a set of optional parameters for the target machine. 
+
+```python
+
+from qiskit_ionq import ErrorMitigation  
+
+option_params = {
+    "error-mitigation": {
+        "debias": True
+    },
+    "noise": {
+        "model": "harmony",
+        "seed": 100
+    }
+}
+```
+
+In Q#, you pass the optional parameters with the job:
+
+```python
+result = qsharp.azure.execute(GenerateRandomBit, shots=100, jobName="Generate one random bit", timeout=240, jobParams = option_params)
+```
+
+In Qiskit, you pass the optional parameters to target machine configuration before submitting the job:
+
+```python
+circuit.name = "Single qubit random - Debias: True"
+backend.options.update_options(**option_params)
+job = backend.run(circuit, shots=100)
+
+```
+
+When you run a job with error mitigation enabled, IonQ makes both aggregate results, Sharpened and Averaged, available. The Average result is returned by default. To view the Sharpened result, pass `sharpen=True` with the `job_result()` call:
+
+```python
+result = job.result(sharpen=True)
+print(result)
+``` 
+
+### Native gates support and usage
+
+By default IonQ allows you to specify a quantum circuit using an abstract set of quantum gates, called `qis`, which allows flexibility and portability when writing an algorithm without worrying about optimization for the hardware.
+
+However, in some advanced usage cases, you might want to define a circuit directly on native gates in order to be closer to the hardware and bypass optimization. The native gate set is the set of quantum gates that are physically executed in the quantum processor, and they map the circuit to those as part of the execution.
+
+For more information, see [Getting Started With Native Gates (ionq.com)](https://ionq.com/docs/getting-started-with-native-gates).
+
+In order to use the native gate set when submitting Qiskit jobs to Azure Quantum, you specify the `gateset` parameter when initializing the backend as in the example below:
+
+```python
+# Here 'provider' is an instance of AzureQuantumProvider
+backend = provider.get_backend("ionq.qpu", gateset="native")
+```
+
+| Parameter Name | Type     | Required | Description |
+|----------------|----------|----------|-------------|
+| `gateset`   | string    | No | Specifies the set of gates that will be used to define a circuit. A value of `qis` corresponds to the abstract gates (default behavior) and `native` to the [IonQ hardware native gates](https://ionq.com/docs/getting-started-with-native-gates#introducing-the-native-gates).|
+
+For more information about Qiskit jobs, see [Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal).
 
 ## Pricing
 

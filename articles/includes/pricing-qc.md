@@ -1,7 +1,7 @@
 ---
 author: sonialopezbravo
 ms.author: sonialopez
-ms.date: 06/20/2023
+ms.date: 06/30/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -23,9 +23,7 @@ where:
 - $N$ is the number of one- or two-qubit gates submitted
 - $C$ is the number of execution shots requested
 
-
 Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with three controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. One-qubit gates are billed as 0.225 of a two-qubit gate (rounded down). To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
-
 
 All new Azure Quantum customers benefit of a one-time $500 (USD) free Azure Quantum credits toward IonQ provider to use in IonQ QPUs Harmony and Aria, and quantum simulator. Besides the Azure Quantum Credits plan, IonQ offers a **pay-as-you-go** plan with access to the quantum simulator and the IonQ Harmony 11-qubit quantum computer, and a **monthly subscription** plan which expands the access to the IonQ Aria 1 25-qubit quantum computer. 
 
@@ -53,8 +51,8 @@ The Pay-as-you-go plan consists of *a la carte* access to the 11-qubit trapped i
 |Pricing | Use is charged based on the number of QGSs executed + Azure infrastructure costs |
 |---|---|  
 | Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria 1 QPU</li><li>IonQ Simulator (free)</li></ul>|
-| IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD)</li><li>2-Qubit Gate Shot: $0.0003 (USD)</li><li>Minimum price per program execution: $1 (USD)</li></ul>|
-| IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.0002196 (USD)</li><li>2-Qubit Gate Shot: $0.000975 (USD)</li><li>Minimum price per program execution: $97.50 (USD)</li></ul>|
+| IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD)</li><li>2-Qubit Gate Shot: $0.0003 (USD)</li><li>Minimum price per program execution: $1 (USD)</li><li>Minimum price per program execution with error mitigation: $5 (USD)</li></ul>|
+| IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.0002196 (USD)</li><li>2-Qubit Gate Shot: $0.000975 (USD)</li><li>Minimum price per program execution (with or without error mitigation): $97.50 (USD)</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -65,8 +63,8 @@ The Aria plan is a monthly subscription plan with access to the IonQ Aria 1 25-q
 |Pricing | $25,000 (USD)/Month + Azure infrastructure costs |
 |---|---|  
 |Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
-| IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD)</li><li>2-Qubit Gate Shot: $0.0003 (USD)</li><li>Minimum price per program execution: $1 (USD)</li></ul>|
-| IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.0002196 (USD)</li><li>2-Qubit Gate Shot: $0.000975 (USD)</li><li>Minimum price per program execution: $97.50 (USD)</li></ul>|  
+| IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD)</li><li>2-Qubit Gate Shot: $0.0003 (USD)</li><li>Minimum price per program execution: $1 (USD)</li><li>Minimum price per program execution with error mitigation: $5 (USD)</li></ul>|
+| IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.0002196 (USD)</li><li>2-Qubit Gate Shot: $0.000975 (USD)</li><li>Minimum price per program execution (with or without error mitigation): $97.50 (USD)</li></ul>|  
 
 > [!NOTE]
 > Once you have consumed the equivalent cost of the monthly subscription, any overspending is charged as a pay-as-you-go plan.
