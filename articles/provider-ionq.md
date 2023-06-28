@@ -160,11 +160,9 @@ For more information, see [Debiasing and Sharpening](https://ionq.com/resources/
 
 On Azure Quantum, error mitigation can be enabled for jobs submitted with Q# or with Qiskit.
 
-To enable error mitigation, you need to import `ErrorMitigation` and define a set of optional parameters for the target machine. 
+To enable error mitigation, you need to define a set of optional parameters for the target machine. 
 
 ```python
-
-from qiskit_ionq import ErrorMitigation  
 
 option_params = {
     "error-mitigation": {
@@ -192,13 +190,14 @@ job = backend.run(circuit, shots=500)
 
 ```
 
+<!--
 When you run a job with error mitigation enabled, IonQ makes both aggregate results, Sharpened and Averaged, available. The Average result is returned by default. To view the Sharpened result, pass `sharpen=True` with the `job_result()` call:
 
 ```python
 result = job.result(sharpen=True)
 print(result)
 ``` 
-
+-->
 ### Native gates support and usage
 
 By default IonQ allows you to specify a quantum circuit using an abstract set of quantum gates, called `qis`, which allows flexibility and portability when writing an algorithm without worrying about optimization for the hardware.
