@@ -156,6 +156,8 @@ IonQ provides the option to enable *quantum error mitigation* when submitting jo
 
 For more information, see [Debiasing and Sharpening](https://ionq.com/resources/debiasing-and-sharpening). For error mitigation pricing, see [IonQ pricing](xref:microsoft.quantum.providers-pricing#ionq).
 
+#### Enabling error mitigation
+
 On Azure Quantum, error mitigation can be enabled for jobs submitted with Q# or with Qiskit.
 
 To enable error mitigation, you need to import `ErrorMitigation` and define a set of optional parameters for the target machine. 
@@ -178,15 +180,15 @@ option_params = {
 In Q#, you pass the optional parameters with the job:
 
 ```python
-result = qsharp.azure.execute(GenerateRandomBit, shots=100, jobName="Generate one random bit", timeout=240, jobParams = option_params)
+result = qsharp.azure.execute(GenerateRandomBit, shots=500, jobName="Generate one random bit", timeout=240, jobParams = option_params)
 ```
 
-In Qiskit, you pass the optional parameters to target machine configuration before submitting the job:
+In Qiskit, you pass the optional parameters to the target machine configuration before submitting the job:
 
 ```python
 circuit.name = "Single qubit random - Debias: True"
 backend.options.update_options(**option_params)
-job = backend.run(circuit, shots=100)
+job = backend.run(circuit, shots=500)
 
 ```
 
