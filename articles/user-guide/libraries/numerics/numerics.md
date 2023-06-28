@@ -1,8 +1,8 @@
 ---
-author: thomashaener
+author: bradben
 description: Learn about the types and operations available in the Microsoft Quantum Numerics library.
-ms.author: tedhudek
-ms.date: 02/01/2021
+ms.author: brbenefield
+ms.date: 06/02/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -25,9 +25,15 @@ The Numerics library consists of three components
     addition, multiplication, reciprocal, polynomial evaluation, and measurement.
 
 All of these components can be accessed using a single `open` statement:
+
 ```qsharp
 open Microsoft.Quantum.Arithmetic;
 ```
+
+## Prerequisites
+
+- The [Microsoft Quantum Development kit](xref:microsoft.quantum.install-qdk.overview) or an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- The `Microsoft.Quantum.Numerics` library. For information on installing additional Q# libraries, see [Q# libraries](xref:microsoft.quantum.libraries.overview#installation).
 
 ## Types
 

@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs or solve optimization problems in the cloud.
-ms.date: 01/08/2023
+ms.date: 06/21/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -51,6 +51,12 @@ Quantum-inspired optimization algorithms exploit some of the advantages of quant
 Azure Quantum gives you access to a broad set of state-of-the-art quantum-inspired optimization algorithms developed by Microsoft and its partners. To learn more about the optimization solutions in Azure Quantum, see [What is optimization?](xref:microsoft.quantum.optimization.concepts.overview.introduction).
 
 ## How to get started with Azure Quantum?
+
+### The Azure Quantum website
+
+[Azure Quantum (quantum.microsoft.com)](https://quantum.microsoft.com/) is a central resource for exploring quantum computing. You can play with the Copilot in Azure Quantum, a quantum-focused chatbot that helps you write code and better understand concepts. You can also learn from experts and enthusiasts through blogs, articles and videos. And you can try out some Q# code samples in the online code editor, free of charge - all you need is a Microsoft (MSA) email account. To get started, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
+
+### The Azure portal
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
@@ -140,7 +146,7 @@ Choose the provider that best suits the characteristics of your problem and your
 - [IONQ](https://ionq.com/): Dynamically reconfigurable trapped-ion quantum computer for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
 - [Rigetti](https://www.rigetti.com/): Gate-based superconducting processors that utilize [Quantum Intermediate Representation (QIR)](xref:microsoft.quantum.concepts.qir) to enable low latency and parallel execution.
 - [Pasqal](https://pasqal.io/): Neutral atom-based quantum processors operating at room temperature, with long coherence times and impressive qubit connectivity.  You can pre-register today for Azure Quantum’s [private preview](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxm1OO5DJVRBs-fh9Rmd-nRURVRKVUJDM05WV1hDRlU2OFFZUlhUN1Q4SCQlQCN0PWcu) of Pasqal.
-- [Quantum Circuits, Inc](https://quantumcircuits.com/): Full-stack superconducting circuits, with real-time feedback that enables error correction, encoding-agnostic entangling gates. You can pre-register today for Azure Quantum’s [private preview](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxm1OO5DJVRBs-fh9Rmd-nRURVRKVUJDM05WV1hDRlU2OFFZUlhUN1Q4SCQlQCN0PWcu) of QCI.
+- [Quantum Circuits, Inc](https://quantumcircuits.com/): Full-stack superconducting circuits, with real-time feedback that enables error correction, encoding-agnostic entangling gates. 
 
 For more information on the specifications of each provider, see the full [Quantum computing target list](xref:microsoft.quantum.reference.qc-target-list).
 

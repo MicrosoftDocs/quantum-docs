@@ -37,8 +37,7 @@ The following sites are created and developed by the quantum community who is ex
 + [Quantum computing StackExchange](https://quantumcomputing.stackexchange.com/questions/tagged/q%23): an online community for quantum developers to learn, and share their knowledge.
 + [Subreddit for the Q# programming language](https://www.reddit.com/r/qsharp/): an online community in Reddit to discuss the latest news and developments of Q#.
 + [Subreddit for the quantum computing](https://www.reddit.com/r/quantumcomputing/): an online community in Reddit to discuss the latest news and developments of quantum computing.
-+ [Q# Community](https://qsharp.community/): a community group that collects and maintains Q# programming language projects, including new libraries, algorithm implementations, and tutorials.
-
++ [Q# Community](https://github.com/qsharp-community): a GitHub space for community-driven projects and contrib libraries.
 
 ## Quantum computing online courses
 
