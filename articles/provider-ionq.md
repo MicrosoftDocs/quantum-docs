@@ -77,7 +77,10 @@ The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigur
 
 ## IonQ Aria quantum computer
 
-IonQ Aria is IonQ's latest generation of trapped-ion quantum computer. With a 23-qubit dynamically reconfigurable sytem, IonQ Aria is available exclusively on Azure Quantum. For more information, see [IonQ Aria (ionq.com)](https://ionq.com/news/february-23-2022-ionq-aria-furthers-lead) .
+IonQ Aria is IonQ's latest generation of trapped-ion quantum computer. With a 23-qubit dynamically reconfigurable system, IonQ Aria is available exclusively on Azure Quantum. For more information, see [IonQ Aria (ionq.com)](https://ionq.com/news/february-23-2022-ionq-aria-furthers-lead).
+
+> [!IMPORTANT]
+> *Debiasing* is enabled on the Aria system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
@@ -143,6 +146,7 @@ Additional capabilities supported by IonQ hardware are listed here.
 | ---- | ---- |
 | [Error mitigation](#error-mitigation) | Use debiasing to minimize noise and maximize algorithmic performance on IonQ hardware |
 | [Native gates support](#native-gates-support-and-usage) | Define and execute circuits directly on IonQ hardware-native gates |
+| [Noise simulation](#noise-simulation)|   sf;lskjdf;k  |
 
 Users can take advantage of these additional capabilities via pass-through parameters in the Azure Quantum Q# and Qiskit providers.
 
@@ -158,19 +162,29 @@ For more information, see [Debiasing and Sharpening](https://ionq.com/resources/
 
 #### Enabling error mitigation
 
-On Azure Quantum, error mitigation can be enabled for jobs submitted with Q# or with Qiskit.
+> [!NOTE]
+> *Debiasing* is enabled by default on Aria systems, and disabled by default on Harmony systems.
 
-To enable error mitigation, you need to define a set of optional parameters for the target machine. 
+On Azure Quantum, error mitigation can be enabled or disabled for jobs submitted with Q# or with Qiskit.
+
+To enable error mitigation, add an optional parameter for the target machine:
 
 ```python
 
 option_params = {
     "error-mitigation": {
         "debias": True
-    },
-    "noise": {
-        "model": "harmony",
-        "seed": 100
+    }
+}
+```
+
+To disable error mitigation, set the parameter to `False`:
+
+```python
+
+option_params = {
+    "error-mitigation": {
+        "debias": False
     }
 }
 ```
@@ -189,6 +203,9 @@ backend.options.update_options(**option_params)
 job = backend.run(circuit, shots=500)
 
 ```
+
+> [!NOTE]
+> If you do not pass in the `error-mitigation` parameter, the target machine will use its default setting: *enabled* for Aria systems, and *disabled* for Harmony systems.
 
 <!--
 When you run a job with error mitigation enabled, IonQ makes both aggregate results, Sharpened and Averaged, available. The Average result is returned by default. To view the Sharpened result, pass `sharpen=True` with the `job_result()` call:
@@ -218,6 +235,10 @@ backend = provider.get_backend("ionq.qpu", gateset="native")
 | `gateset`   | string    | No | Specifies the set of gates that will be used to define a circuit. A value of `qis` corresponds to the abstract gates (default behavior) and `native` to the [IonQ hardware native gates](https://ionq.com/docs/getting-started-with-native-gates#introducing-the-native-gates).|
 
 For more information about Qiskit jobs, see [Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal).
+
+### Noise simulation
+
+
 
 ## Pricing
 
