@@ -69,23 +69,25 @@ Run on our systems and discover something new.
 
 Quantinuum provides two emulator tools:
 
-**Syntax Checkers** - These tools verify proper syntax, compilation completion, and machine compatibility, using the same compiler as the quantum computer they target. There are Syntax Checkers for System Models H1-1 ad H1-2.
+**Syntax Checkers** - These tools verify proper syntax, compilation completion, and machine compatibility, using the same compiler as the quantum computer they target. There are Syntax Checkers for System Model H1 and H2.
 
 - Job type: `Simulation`
 - Data Formats: `honeywell.openqasm.v1`, `honeywell.qir.v1`
 - Target ID:
   - H1-1 Syntax Checker: `quantinuum.sim.h1-1sc`
   - H1-2 Syntax Checker: `quantinuum.sim.h1-2sc`
+  - H2-1 Syntax Checker: `quantinuum.sim.h2-1sc`
 - Target Execution Profile: Basic Measurement Feedback
 - Pricing: Free ($0)
 
-**System Model H1 emulators** - These tools contain a detailed physical model and realistic noise model of the actual System Model H1 hardware. There are emulators for System Models H1-1 ad H1-2.
+**Emulators** - These tools contain a detailed physical model and realistic noise model of the actual System Model H1 and H2 hardware. There are emulators for each machine, H1-1, H1-2, and H2-1.
  
 - Job type: `Simulation`
 - Data Format: `honeywell.openqasm.v1, honeywell.qir.v1`
 - Target ID:
   - H1-1 Emulator: `quantinuum.sim.h1-1e`
   - H1-2 Emulator: `quantinuum.sim.h1-2e`
+  - H2-1 Emulator: `quantinuum.sim.h2-1e`
 - Target Execution Profile: Basic Measurement Feedback
 
 For more information, see the [Quantinuum provider](xref:microsoft.quantum.providers.quantinuum) page.

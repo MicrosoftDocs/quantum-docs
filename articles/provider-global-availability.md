@@ -165,7 +165,7 @@ IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program a
 
 ## [Quantinuum](#tab/tabid-quantinuum)
 
-Quantinuum offers three plans through Azure Quantum: the Azure Quantum Credits program, and Standard and Premium plans. For more information about Quantinuum resources on Azure Quantum, see [Quantinuum provider and targets](xref:microsoft.quantum.providers.quantinuum).
+Quantinuum offers five plans through Azure Quantum: the Azure Quantum Credits program, Standard and Premium plans with access to System Model H1, and Standard and Premium plan with access to System Models H1 and H2. For more information about Quantinuum resources on Azure Quantum, see [Quantinuum provider and targets](xref:microsoft.quantum.providers.quantinuum).
 
 | Country | Available (Y/N) |
 | ---- | ---- | ---- |

@@ -61,7 +61,7 @@ Most samples are configured to run by default against the `aer_simulator`, which
     rigetti_qpu_backend = provider.get_backend("rigetti.qpu.aspen-m-3")
 
     # Create Quantinuum simulator and QPU backends
-    quantinuum_simulator_backend = provider.get_backend("quantinuum.sim.h1-2sc")
+    quantinuum_simulator_backend = provider.get_backend("quantinuum.sim.h1-2e")
     quantinuum_qpu_backend = provider.get_backend("quantinuum.qpu.h1-2")
 
     # Set your backend of choice
