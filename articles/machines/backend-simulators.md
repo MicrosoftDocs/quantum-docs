@@ -38,11 +38,30 @@ The QCI simulator currently supports 8 qubits in a ring topology and will let yo
 simulate up to X shots. The simulator is always available and never in a degraded
 or unavailable state. Contact support@quantumcircuits.com for help.
 
-<!-- ADD ANY CONTENT THAT YOU WANT TO USE TO DESCRIBE YOUR SERVICES AND COMPANY -->
+Quantum Circuits, Inc. (QCI) is a full stack quantum computing start-up that's
+on a mission to deliver the world's first useful quantum computers. At QCI,
+we’re building full-stack quantum computing systems based on superconducting
+circuit technology.  Unique to our hardware is the use of resonators as the core
+of our quantum computing resource.  These elements provide an efficient means of
+encoding quantum information in superpositions of microwave photons, which
+unlocks powerful error correction capability.
+
+Measurement-based feedback and real-time classical calculations are key features
+of our control paradigm.  We’ve integrated this functionality into our advanced
+Quantum Intermediate Representation (QIR) profile, which enables users to unlock
+new classes of quantum applications.
+
+Tightly couple your classical and quantum calculations to craft efficient and
+fast hybrid algorithms.  Implement control logic with mathematical expressions
+based on measurement results in real-time.
+
+Run on our systems and discover something new.
 
 - Job type: `Simulation`
 - Data Format: `microsoft.qir.v1`
 - Target ID: `qci.simulator`
+- Publisher: [QCI](https://quantumcircuits.com/)
+- Provider ID: qci
 - Target Execution Profile: Basic Measurement Feedback
 - Pricing: Free ($0)
 
