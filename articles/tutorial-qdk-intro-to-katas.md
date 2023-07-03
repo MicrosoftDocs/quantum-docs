@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the Quantum Katas - hands-on training exercises and tutorials for programming in Q# with the Azure Quantum service and the Microsoft Quantum Development Kit.
 ms.author: brbenefield
-ms.date: 08/26/2022
+ms.date: 07/03/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: resources
@@ -27,7 +27,6 @@ Most importantly, the katas include testing frameworks that run and validate you
 
 You can use the katas in your choice of environments:
 
-* Jupyter Notebooks in a pre-configured online Binder environment, with no setup needed
 * Jupyter Notebooks running on your local machine
 * Visual Studio on your local machine
 * Visual Studio Code on your local machine
