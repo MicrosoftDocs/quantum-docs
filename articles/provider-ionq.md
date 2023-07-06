@@ -194,13 +194,13 @@ option_params = {
 > 
 > ```python
 > option_params = {
-  >     "error-mitigation": {
-     >         "debias": False
-   >     },
-   >     "noise": {
-     >     "model": "harmony",
-     >     "seed": 100
-   >     }
+>     "error-mitigation": {
+>         "debias": False
+>     },
+>     "noise": {
+>     "model": "harmony",
+>     "seed": 100
+>     }
 > }
 > ```
 >
@@ -294,13 +294,13 @@ option_params = {
 > 
 > ```python
 > option_params = {
-  >     "error-mitigation": {
-     >         "debias": False
-   >     },
-   >     "noise": {
-     >     "model": "harmony",
-     >     "seed": 1000
-   >     }
+>     "error-mitigation": {
+>         "debias": False
+>     },
+>     "noise": {
+>     "model": "harmony",
+>     "seed": 1000
+>     }
 > }
 > ```
 >
