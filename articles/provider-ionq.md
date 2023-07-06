@@ -266,11 +266,11 @@ Even the best of today's quantum hardware has inherent noise, and knowing the no
 | `noise`        | `model`, `seed` |  Enables the noise model simulation  |
 | `model`        | `ideal`, `harmony`, `aria-1` | Specifies the noise model for the target hardware.<ul><li>`ideal` - No noise is introduced into the circuit. This is the same as not enabling the noise simulation.</li><li>`harmony` - Uses the noise model for the IonQ Harmony quantum computer.</li><li>`aria-1` - Uses the noise model for the IonQ Aria quantum computer. |
 | `seed`        | Integer between 1 and $2^{31}$ (2,147,483,648) | Allows you to specify a seed value for pseudo-random noise and shot-sampling, creating reproducible noisy results. If the parameter is not specified, a random `seed` value is created. |
-| `shots`        | TBD - Is there a range? | Noise model simulation is shot-aware; that is, it samples “measurements” from the output state based on the number of shots provided.<br><br>Required for `harmony` and `aria-1` noise models. If no value is specified, the default value of `1000` is used. If the `ideal` noise model is used, the `shots` parameter is ignored. |
 
 > [!NOTE]
-> While the `ideal` noise model allows you to simulate up to 29 qubits, the hardware specific noise models are limited the actual qubit capacity of the target hardware: 11 qubits for the `harmony` noise model and 25 qubits for the `aria-` noise model.
- 
+> While the `ideal` noise model allows you to simulate up to 29 qubits, the hardware specific noise models are limited to the actual qubit capacity of the target hardware: 11 qubits for the `harmony` noise model and 25 qubits for the `aria-1` noise model.
+
+Noise model simulation is *shot-aware*; that is, it samples measurements from the output state based on the number of shots provided. The `shots` parameter is submitted with the job, and is required for `harmony` and `aria-1` noise models. If no `shot` value is specified, a default value of `1000` is used. If the `ideal` noise model is used, the `shots` parameter is ignored. |
 
 #### Enabling noise model simulation
 
@@ -328,7 +328,7 @@ job = backend.run(circuit, shots=500)
 
 To see IonQ billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#ionq).
 
-## Limits & Quotas
+## Limits and quotas
 
 IonQ quotas are tracked based on the QPU usage unit, which is *qubit-gate-shot (QGS)*. The resource usage is credited against your account.
 
