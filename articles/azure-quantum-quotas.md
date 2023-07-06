@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide of what Azure Quantum quotas are, how to review remaining quotas and how to apply to get more. 
 ms.author: sonialopez
-ms.date: 01/15/2023
+ms.date: 06/08/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -24,8 +24,8 @@ In Azure Quantum, hardware and software providers define and control the quotas 
 
 |Quantum Computing providers | Optimization providers|
 |---|---|  
-|[IonQ quota](xref:microsoft.quantum.providers.ionq#limits--quotas) | [Microsoft QIO quota](xref:microsoft.quantum.optimization.providers.microsoft.qio#limits--quotas)|
-|[Quantinuum quota](xref:microsoft.quantum.providers.quantinuum#limits--quotas) |[Toshiba SQBM+ quota](xref:microsoft.quantum.providers.optimization.toshiba#limits--quotas)|
+|[IonQ quota](xref:microsoft.quantum.providers.ionq#limits--quotas) |[Toshiba SQBM+ quota](xref:microsoft.quantum.providers.optimization.toshiba#limits--quotas)|
+|[Quantinuum quota](xref:microsoft.quantum.providers.quantinuum#limits--quotas) ||
 
 ## Viewing remaining quota
 

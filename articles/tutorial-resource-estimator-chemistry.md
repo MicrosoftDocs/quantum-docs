@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: In this tutorial, you estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa, using the double-factorized qubitization algorithm.
 ms.author: sonialopez
-ms.date: 04/24/2023
+ms.date: 07/06/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: tutorial
@@ -73,7 +73,7 @@ You want to estimate the resources on a fault-tolerant quantum computer and with
 
 A resource estimation job consist of two types of job parameters:
 
-- Target parameters, which consist on three predefined parameters: qubit model, QEC schemes, and error budget. For more information, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
+- Target parameters, which consist on four parameters: qubit model, QEC schemes, error budget, and constraints on the component-level (optional). For more information, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
 - Operation arguments, that is arguments that can be passed to the quantum program. In this case, the FCIDUMP files are passed as operation arguments. 
 
 ### Select and pass a FCIDUMP file
@@ -140,57 +140,12 @@ results = job.get_results()
 
 ## Analyze the results
 
-Now that the results have been computed, you can display them in a summary table. The following code includes a dashboard function that creates an HTML display from a pandas data frame and the resource estimation tables. You can copy and reuse this function in other resource estimates jobs. 
+Now that the results have been computed, you can display them in a summary table using the `summary_data_frame` function. 
 
 ```python
 labels = ["Gate-based µs, 10⁻³", "Gate-based µs, 10⁻⁴", "Gate-based ns, 10⁻³", "Gate-based ns, 10⁻⁴", "Majorana ns, 10⁻⁴", "Majorana ns, 10⁻⁶"]
 
-def dashboard(results):
-    def get_row(result):
-        # Extract raw data from result dictionary
-        logical_qubits = result["physicalCounts"]["breakdown"]["algorithmicLogicalQubits"]
-        logical_depth = result["physicalCounts"]["breakdown"]["logicalDepth"]
-        num_tstates = result["physicalCounts"]["breakdown"]["numTstates"]
-        code_distance = result["logicalQubit"]["codeDistance"]
-        num_tfactories = result["physicalCounts"]["breakdown"]["numTfactories"]
-        tfactory_fraction = (result["physicalCounts"]["breakdown"]["physicalQubitsForTfactories"] / result["physicalCounts"]["physicalQubits"]) * 100
-        physical_qubits = result["physicalCounts"]["physicalQubits"]
-        runtime = result["physicalCounts"]["runtime"]
-
-        # Format some entries
-        logical_depth_formatted = f"{logical_depth:.1e}"
-        num_tstates_formatted = f"{num_tstates:.1e}"
-        tfactory_fraction_formatted = f"{tfactory_fraction:.1f}%"
-        physical_qubits_formatted = f"{physical_qubits / 1e6:.2f}M"
-
-        # Make runtime human readable; we find the largest units for which the
-        # runtime has a value that is larger than 1.0.  For that unit we are
-        # rounding the value and append the unit suffix.
-        units = [("nanosecs", 1), ("microsecs", 1000), ("millisecs", 1000), ("secs", 1000), ("mins", 60), ("hours", 60), ("days", 24), ("years", 365)]
-        runtime_formatted = runtime
-        for idx in range(1, len(units)):
-            if runtime_formatted / units[idx][1] < 1.0:
-                runtime_formatted = f"{round(runtime_formatted) % units[idx][1]} {units[idx - 1][0]}"
-                break
-            else:
-                runtime_formatted = runtime_formatted / units[idx][1]
-
-        # special case for years
-        if isinstance(runtime_formatted, float):
-            runtime_formatted = f"{round(runtime_formatted)} {units[-1][0]}"
-
-        # Append all extracted and formatted data to data array
-        return (logical_qubits, logical_depth_formatted, num_tstates_formatted, code_distance, num_tfactories, tfactory_fraction_formatted, physical_qubits_formatted, runtime_formatted)
-
-    data = [get_row(results.data(index)) for index in range(len(results))]
-
-    # Create data frame with explicit column names and configuration names extracted from array
-    import pandas as pd
-    df = pd.DataFrame(data, columns=["Logical qubits", "Logical depth", "T states", "Code distance", "T factories", "T factory fraction", "Physical qubits", "Physical runtime"], index=labels)
-
-    return df
-
-dashboard(results)
+results.summary_data_frame(labels=labels)
 ```
 
 |Configuration | Logical qubits |	Logical depth |	T states |	Code distance |	T factories  |	T factory fraction |	Physical qubits |	Physical runtime |

@@ -20,8 +20,6 @@
     items:
     - name: Create a quantum-based random number generator
       href: ../quickstart-microsoft-qc.md
-    - name: Solve a simple optimization problem
-      href: ../quickstart-microsoft-qio.md
     - name: Submit a circuit with Qiskit
       href: ../quickstart-microsoft-qiskit.md
     - name: Submit a circuit with Cirq

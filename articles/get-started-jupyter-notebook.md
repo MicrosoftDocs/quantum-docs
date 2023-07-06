@@ -15,11 +15,11 @@ uid: microsoft.quantum.get-started.notebooks
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
-Learn how to run Q# code in a Jupyter Notebook in the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) portal. A [Jupyter](https://jupyter.org/) Notebook is a document that contains both rich text and code and can run in your browser, and can run Q# and Python code in Azure Quantum.  Notebooks can be created directly in the Azure Quantum portal, and offer features such as preloaded connection information and standard Q# libraries. 
+Learn how to run Q# code in a Jupyter Notebook in the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) portal. A [Jupyter](https://jupyter.org/) Notebook is a document that contains both rich text and code and can run in your browser using Q# and Python code.  Notebooks can be created directly in the Azure Quantum portal, and offer features such as preloaded connection information and standard Q# libraries. 
 
-In this article, you will run a sample notebook on Azure Quantum that executes a simple quantum random number generator written in Q# and Python. 
+In this article, you will run a sample notebook in the Azure portal that executes a simple quantum random number generator written in Q# and Python. 
 
-For more information about using Jupyter Notebooks with Azure Quantum, see [Work with Jupyter Notebooks in an Azure Quantum workspace](xref:microsoft.quantum.how-to.notebooks).
+For more information about using Jupyter Notebooks with the Azure Quantum service, see [Work with Jupyter Notebooks in an Azure Quantum workspace](xref:microsoft.quantum.how-to.notebooks).
 
 ## Prerequisites
 
@@ -142,5 +142,6 @@ You'll find more sample notebooks in the **Getting started** tab of the sample g
 > If you have any questions or run into any issue using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Time zone (PT).
 ## Next steps
 
+- [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
 - [Quickstart: Solve an optimization problem in the Azure Quantum portal](xref:microsoft.quantum.quickstarts.optimization.qio.portal)
 - [Quickstart: Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal)

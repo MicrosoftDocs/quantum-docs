@@ -13,7 +13,7 @@ uid: microsoft.quantum.overview.q-sharp
 
 # What are Q# and the Quantum Development Kit?
 
-The Quantum Development Kit (QDK) is the SDK required to interface with the Azure Quantum service. It is built-in to the Azure Quantum portal, where you can develop programs using the free hosted Jupyter Notebooks. You can also install the QDK locally on your computer to use your own local development environment and work both online and offline with the Azure Quantum service. With the Quantum Development Kit, you can build programs that run on quantum hardware or formulate problems that run on [quantum-inspired optimization](xref:microsoft.quantum.optimization.concepts.overview.introduction) solvers in [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview).
+The Quantum Development Kit (QDK) is the SDK required to interface with the Azure Quantum service. It is built-in to the Azure Quantum portal, where you can develop programs using the free hosted Jupyter Notebooks. You can also install the QDK locally on your computer to use your own local development environment and work both online and offline with the Azure Quantum service. With the Quantum Development Kit, you can build programs that run on quantum hardware in [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview).
 
 The QDK includes the quantum programming language Q#, a high-level, **open-source** programming language that allows you to focus your work at the algorithm and application level to create quantum programs. 
 
@@ -125,7 +125,7 @@ The following diagram shows the basic workflow after you submit your job:
 
 :::image type="content" source="~/media/azure-quantum-flow-diagram.png" alt-text="Diagram showing the worklow after a job submission to Azure Quantum.":::
 
-Azure Quantum offers some of the most compelling and diverse quantum resources available today from industry leaders. With Azure Quantum and the QDK you can write [quantum computing](xref:microsoft.quantum.overview.understanding) and [quantum-inspired optimization](xref:microsoft.quantum.optimization.concepts.overview.introduction) programs, and submit them to Azure Quantum to run on [quantum hardware](xref:microsoft.quantum.reference.qc-target-list) and [optimization solvers](xref:microsoft.quantum.reference.qio-target-list). 
+Azure Quantum offers some of the most compelling and diverse quantum resources available today from industry leaders. With Azure Quantum and the QDK you can write [quantum computing](xref:microsoft.quantum.overview.understanding) programs, and submit them to Azure Quantum to run on [quantum hardware](xref:microsoft.quantum.reference.qc-target-list). 
 
 ## Next Steps
 
