@@ -68,6 +68,3 @@ credential=ManagedIdentityCredential())
 
 ```
 
-## Next steps
-
-- Now that you know how to configure a managed identity, see how it can be used to [Publish a QIO job as an Azure Function](xref:microsoft.quantum.publish-qio-as-azure-function).

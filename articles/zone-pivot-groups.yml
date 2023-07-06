@@ -64,6 +64,8 @@ groups:
   pivots:
   - id: ide-azure-portal
     title: Azure Quantum portal
+  - id: ide-azure-copilot
+    title: Copilot for Azure Quantum
   - id: ide-local
     title: Local computer
 - id: azurequantum-quantumcomputing-re-ide

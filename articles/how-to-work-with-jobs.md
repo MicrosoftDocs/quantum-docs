@@ -33,13 +33,11 @@ Once you create a job, various metadata is available about its state and run his
 
 ## Job lifecycle
 
-You typically create jobs for either [quantum computing](xref:microsoft.quantum.overview.understanding) or [quantum inspired optimization(QIO)](xref:microsoft.quantum.optimization.concepts.overview.introduction). Once you've written
-your quantum program or expressed your QIO problem, you can select a target and
-submit your job.
+Once you've written your quantum program, you can select a target and submit your job.
 
 This diagram shows the basic workflow after you submit your job:
 
-![azure quantum job flow](~/media/azure-quantum-flow-diagram-providers.svg)
+![azure quantum job flow](~/media/azure-quantum-flow-diagram.png)
 
 First, Azure Quantum uploads the job to the Azure Storage account that you configured in the workspace. Then, the job is added to the job queue for the provider that you specified in the job. Azure Quantum then downloads your program and translates it for the provider. The provider processes the job and returns the output to Azure Storage, where it is available for download. 
 

@@ -1,8 +1,8 @@
 ---
 author: SoniaLopezBravo
-description: Overview of the different ways to run Q# programs. From the command prompt, Q# Jupyter Notebooks, and classical host programs in Python or a .NET language.
+description: Overview of the different ways to run Q# programs from the command prompt, Q# Jupyter Notebooks, the Copilot for Azure Quantum in Python or a .NET language.
 ms.author: sonialopez
-ms.date: 11/15/2021
+ms.date: 06/21/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -15,14 +15,20 @@ uid: microsoft.quantum.user-guide-qdk.overview.host-programs
 
 One of the Quantum Development Kit's greatest strengths is its flexibility across platforms and development environments.
 However, this flexibility also means that new Q# users may find themselves confused or overwhelmed by the numerous options found in the [install guide](xref:microsoft.quantum.install-qdk.overview).
-This page explains what happens when a Q# program is run and compares the different ways in which users can do so.
+This page explains the different ways that you can run a quantum program and what happens when the program is run.
 
-A primary distinction is that Q# can be run:
+Using the QDK and the Azure Quantum service, you can create quantum programs:
 
-- as a *standalone application*, where Q# is the only language involved and the program is invoked directly. Two methods actually fall in this category:
-  - the command-line interface
-  - Q# Jupyter Notebooks
-- with an extra *host program*, written in Python or a .NET language (for example, C# or F#), which then invokes the program and can further process returned results.
+- using Q# only
+- using Q# along with the Azure Quantum Python library or a .NET language, such as C#
+- using Qiskit along with the Azure Quantum Python library
+
+You can run these programs:
+
+- from the command-line interface
+- from a locally-hosted Jupyter Notebook
+- from a Jupyter Notebook in the Azure portal. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.get-started.notebooks).
+- from the Copilot for Azure Quantum. For more information, see [Get started with Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
 To understand these processes and their differences better, let's consider a Q# program and compare the ways it can be run.
 
@@ -114,15 +120,78 @@ More specifically, the differences revolve around:
 - Specifying the target machine on which to run it
 - How any results are returned
 
-In the following sections, you'll learn how this is done with the Q# standalone application from the command prompt. Then you'll proceed to using Python and C# host programs.
+In the following sections, you'll learn how this is done with the Q# standalone application in the Copilot for Azure Quantum or from the command prompt. Then you'll proceed to using Python and C# host programs.
 The standalone application of Q# Jupyter Notebooks will be reserved for last, because unlike the first three, its primary functionality doesn't center around a local Q# file.
 
 > [!NOTE]
 > Although it is not illustrated in these examples, one commonality between the run methods is that any messages printed from inside the Q# program (by way of [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) or [`DumpMachine`](xref:Microsoft.Quantum.Diagnostics.DumpMachine), for example) will typically always be printed to the respective console.
 
-## Q# from the command prompt
+## [Q# in the Copilot for Azure Quantum](#tab/tabid-copilot)
 
 One of the easiest ways to get started writing Q# programs is to avoid worrying about separate files and a second language altogether.
+Using the [Copilot for Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding) allows for a seamless work flow in which you can run Q# callables from a single Q# file.
+
+> [!NOTE]
+> The [Copilot for Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding) is available free of charge. All you need to access it is a Microsoft (MSA) email account. You can create an MSA for free at https://account.microsoft.com/.
+
+### Add entry point to Q# file
+
+Most Q# files will contain more than one callable, so naturally we need to let the compiler know *which* callable to run when we provide the `dotnet run` command.
+This specification is done with a simple change to the Q# file itself; you need to add a line with `@EntryPoint()` directly preceding the callable.
+
+The earlier code sample would therefore become:
+
+```qsharp
+namespace Superposition {
+    open Microsoft.Quantum.Intrinsic;     // for the H operation
+    open Microsoft.Quantum.Measurement;   // for MResetZ
+
+    @EntryPoint()
+    operation MeasureSuperposition() : Result {
+        use q = Qubit();     // allocates a single qubit for use (automatically in |0>)
+        H(q);                // puts qubit in superposition of |0> and |1>
+        return MResetZ(q);   // measures qubit, returns result (and resets it to |0> before deallocation)
+    }
+}
+```
+
+To test the code sample so far in the Copilot for Azure Quantum's built-in [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), copy and paste the code into the Copilot for Azure Quantum code window, set the slider for **Select number of shots** to "1", and select **Run**. The **Result** field and the histogram should show a `Zero` or a `One`. Click **Run** a few more times and you should see random results of `Zero` or `One`.
+
+> [!TIP]
+> Using the **Select number of shots** slider, you can adjust the number of times the operation is run. On average, the total number of `Zero` and `One` should be roughly equal. 
+
+### Multiple qubits
+
+So far, the sample code has only considered an operation on one qubit. Suppose you want to perform a similar operation, but on multiple qubits, which you can provide as an array of qubits.
+Such an operation can be written as:
+
+```qsharp
+namespace MultiSuperposition {
+    open Microsoft.Quantum.Intrinsic;     // for the H operation
+    open Microsoft.Quantum.Measurement;   // for MResetZ
+    open Microsoft.Quantum.Canon;         // for ApplyToEach
+    open Microsoft.Quantum.Arrays;        // for ForEach
+    
+    @EntryPoint()
+    operation MeasureSuperpositionArray() : Result[] {
+        use qubits = Qubit[4];               // allocate a register of 4 qubits in |0> 
+        ApplyToEach(H, qubits);              // apply H to each qubit in the register
+        return ForEach(MResetZ, qubits);     // perform MResetZ on each qubit, returns the resulting array
+    }
+}
+```
+
+where the operation is run on an array of four qubits and the returned value is an array of the measurement results.
+
+The [`ApplyToEach`](xref:Microsoft.Quantum.Canon.ApplyToEach) and [`ForEach`](xref:Microsoft.Quantum.Arrays.ForEach) operations are in the [`Microsoft.Quantum.Canon`](xref:Microsoft.Quantum.Canon) and [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) namespaces respectively, requiring an `open` statement for each one.
+
+> [!NOTE]
+> For an example of passing the number of qubits to the operation as an argument, see the code sample in the Q# in the command prompt tab. 
+
+Copy and paste the code into the Copilot for Azure Quantum code window, set the slider for **Select number of shots** to "1", and select **Run**. The **Result** field and the histogram should show one result, but that result is a 4-bit binary number - the measurements of each qubit in the array. You can see that by simply converting this binary number, you can create a truly random number generator. Click **Run** a few more times and you should see random results from |0000> to |1111>.  You can also increase the number of shots to see a wider distribution, and modify the code to increase the number of qubits in the array.
+
+## [Q# from the command prompt](#tab/tabid-cli)
+
 Using Visual Studio Code or Visual Studio with the QDK extension allows for a seamless work flow in which we run Q# callables from only a single Q# file.
 
 For this, you'll ultimately run the program by entering
@@ -299,6 +368,7 @@ A Python host program is constructed as follows:
     random_bit = MeasureSuperposition.simulate()
     print(random_bit)
     ```
+
 #### Diagnostics
 
 As with Q# standalone notebooks, you can also use diagnostics like `DumpMachine` and `DumpOperation` from Python notebooks to learn how your Q# program work and to help diagnose issues and bugs in your Q# programs.
@@ -317,10 +387,12 @@ namespace DumpOperation {
     }
 }
 ```
+
 ```python
 from  DumpOperation import DumpPlusState
 print(DumpPlusState.simulate())
 ```
+
 Calling <xref:Microsoft.Quantum.Diagnostics.DumpMachine> generates the following output:
 
 ```output
@@ -328,6 +400,7 @@ Calling <xref:Microsoft.Quantum.Diagnostics.DumpMachine> generates the following
 ∣0❭:     0.707107 +  0.000000 i  ==     ***********          [ 0.500000 ]     --- [  0.00000 rad ]
 ∣1❭:     0.707107 +  0.000000 i  ==     ***********          [ 0.500000 ]     --- [  0.00000 rad ]
 ```
+
 The Q# package also allows you to capture these diagnostics and manipulate them as Python objects:
 
 ```python
@@ -335,6 +408,7 @@ with qsharp.capture_diagnostics() as diagnostics:
     DumpPlusState.simulate()
 print(diagnostics)
 ```
+
 ```output
 [{'diagnostic_kind': 'state-vector',
   'div_id': 'dump-machine-div-7d3eac24-85c5-4080-b123-4a76cacaf58f',
@@ -349,6 +423,7 @@ print(diagnostics)
     'Magnitude': 0.7071067811865476,
     'Phase': 0.0}]}]
 ```
+
 Working with raw JSON for diagnostics can be inconvenient, so the capture_diagnostics function also supports converting diagnostics into quantum objects using the [QuTiP library](https://qutip.org/):
 
 ```python
@@ -357,6 +432,7 @@ with qsharp.capture_diagnostics(as_qobj=True) as diagnostics:
     DumpPlusState.simulate()
 diagnostics[0]
 ```
+
 ```output
 Quantum object: dims = [[2], [1]], shape = (2, 1), type = ket
 Qobj data =

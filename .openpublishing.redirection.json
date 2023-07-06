@@ -274,6 +274,136 @@
 			"source_path": "articles/machines/resources-estimator.md",
 			"redirect_url": "/azure/quantum/intro-to-resource-estimation",
 			"redirect_document_id": false
-		}
+		},
+		{
+			"source_path": "articles/how-to-submit-jobs-optimization.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-binary-optimization.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-concepts-cost-functions.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-concepts-ising-model-for-optimization.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-overview-introduction.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-overview-key-concepts.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-parallel-tempering.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-population-annealing.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-quantum-monte-carlo.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-substochastic-monte-carlo.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-tabu-search.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-troubleshooting.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-which-solver-should-you-use.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/provider-1qbit.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/provider-support-1qbit.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/qio-target-list.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/provider-microsoft-qio.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/how-to-publish-qio-job-as-azurefunction.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-slc-term.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-solve-long-running-problems.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-usage-problem-apply-solver-to-optimization.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-input-formats.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-group-type.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-async-io.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/optimization-simulated-annealing.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/quickstart-microsoft-qio.md",
+			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
+			"redirect_document_id": false
+		},
 	]
 }
