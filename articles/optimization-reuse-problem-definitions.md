@@ -37,6 +37,4 @@ problem = online_problem.download(workspace)
 ## Next steps
 
 - [Understand Solver results](xref:microsoft.quantum.optimization.understand-solver-results)
-- [Solve long-running problems](xref:microsoft.quantum.optimization.solve-long-running-problems)
-- [Solver overview](xref:microsoft.quantum.reference.qio-target-list)
 - [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)

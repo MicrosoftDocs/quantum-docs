@@ -58,13 +58,6 @@ If you are a quantum enthusiast and want to start learning the theory behind qua
 + Rieﬀel, E. G., & Polak, W. H. (2011). Quantum computing: A gentle introduction. MIT Press.
 + Sarah C. Kaiser and Christopher E. Granade. [Learn Quantum Computing with Python and Q# - A hands-on approach](https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp).
 
-### Optimization 
-
-The following publications might be good starting points to understand the mathematical principles behind the quantum-inspired optimization solvers:
-
-+ Glover F., Kochenberger G., Du Y. (2019). A Tutorial on Formulating and Using QUBO Models.
-+ Lucas, Andrew. (2014) Ising formulations of many NP problems. Frontiers in Physics.
-
 ## Advanced topics
 
 If you want to go the extra mile, the following publications go deeper into more specific concepts and at a scientific research level.

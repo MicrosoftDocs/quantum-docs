@@ -358,5 +358,5 @@ Remove-AzResourceGroup -Name myResourceGroup
 
 ## Next steps
 
-Now that you can create and delete workspaces, learn about the different [targets to run quantum algorithms in Azure Quantum](xref:microsoft.quantum.reference.qio-target-list).
+Now that you can create and delete workspaces, learn about the different [targets to run quantum algorithms in Azure Quantum](xref:microsoft.quantum.reference.qc-target-list).
 You now also have the tools to do workspace deployments from within [Azure Pipelines](/azure/azure-resource-manager/templates/add-template-to-azure-pipelines) or [GitHub Actions](/azure/azure-resource-manager/templates/deploy-github-actions).
