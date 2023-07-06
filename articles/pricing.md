@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Azure Quantum providers pricing and billing plans
 ms.author: sonialopez
-ms.date: 05/01/2023
+ms.date: 07/06/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: reference
@@ -96,7 +96,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ## Quantinuum
 
-[Quantinuum](https://www.quantinuum.com/) uses a credit system that charges each job depending on the number of operations in the job, and the number of shots you run. The usage units are *H-System Quantum Credits (HQCs)* for jobs submitted to System Model H1 quantum computers, Powered by Quantinuum, and emulator HQCs (eHQCs) for jobs submitted to System Model H1 emulators.
+[Quantinuum](https://www.quantinuum.com/) uses a credit system that charges each job depending on the number of operations in the job, and the number of shots you run. The usage units are *H-System Quantum Credits (HQCs)* for jobs submitted to quantum computers and emulator HQCs (eHQCs) for jobs submitted to emulators.
 
 > [!NOTE]
 > Do not confuse the Quantinuum HQCs with the Azure Quantum credits. Quantinuum HQCs are a usage unit defined by the provider to track the usage and quotas of their targets.
@@ -116,7 +116,7 @@ where:
 
 To learn more about Quantinuum, visit the [Quantinuum provider page](xref:microsoft.quantum.providers.quantinuum).
 
-All new Azure customers benefit from $500 (USD) in free credits towards the Quantinuum provider. Besides Azure Quantum credits, Quantinuum provides two plans: **Standard Subscription** and **Premium Subscription**.
+All new Azure customers benefit from $500 (USD) in free credits towards the Quantinuum provider. Besides Azure Quantum credits, Quantinuum provides four plans: **Standard**, **Premium**, **Standard H1 + H2**, and **Premium H1 + H2**.
 
 ### [Azure Quantum Credits](#tab/tabid-AQcreditsQ)
 
@@ -150,6 +150,24 @@ The Premium Subscription is a monthly subscription plan available through queued
 | Pricing | $175,000 (USD)/Month + Azure infrastructure costs |
 |---|---|
 |Includes access to | <ul><li>17k HQCs for use on System Model H1 hardware</li><li>170k eHQCs for use on the System Model H1 Emulator</li></ul>|
+
+### [Standard H1 + H2 Subscription](#tab/tabid-standard-H1+h2)
+
+The Standard H1 + H2 Subscription is a monthly subscription plan available through queued access.
+
+|Pricing|  $135,000 (USD)/Month + Azure infrastructure costs |
+|---|---|
+|Includes access to | <ul><li>10k HQCs for use on the System Model H1 and H2 hardware</li><li>100k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
+
+For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
+
+### [Premium H1 + H2 Subscription](#tab/tabid-premium-H1+H2)
+
+The Premium H1 + H2 Subscription is a monthly subscription plan available through queued access.
+
+| Pricing | $185,000 (USD)/Month + Azure infrastructure costs |
+|---|---|
+|Includes access to | <ul><li>17k HQCs for use on System Model H1 and H2 hardware</li><li>170k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 ***
