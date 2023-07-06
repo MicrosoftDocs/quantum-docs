@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the IonQ quantum computing provider
 ms.author: sonialopez
-ms.date: 06/30/2023
+ms.date: 07/06/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -26,7 +26,7 @@ The following targets are available from this provider:
 |---|---|---|---|
 |[Quantum simulator](#quantum-simulator)	|ionq.simulator|	29 qubits|	IonQ's cloud-based idealized simulator. Free of cost.|
 |[IonQ Harmony](#ionq-harmony-quantum-computer) |	ionq.qpu	|11 qubits	|IonQ's trapped-ion quantum computer.|
-|[IonQ Aria](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|23 qubits	|IonQ's Aria trapped-ion quantum computer.|
+|[IonQ Aria](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
 
 IonQ's targets correspond to a **:::no-loc text="No Control Flow":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
 
@@ -77,7 +77,7 @@ The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigur
 
 ## IonQ Aria quantum computer
 
-IonQ Aria is IonQ's latest generation of trapped-ion quantum computer. With a 23-qubit dynamically reconfigurable system, IonQ Aria is available exclusively on Azure Quantum. For more information, see [IonQ Aria (ionq.com)](https://ionq.com/news/february-23-2022-ionq-aria-furthers-lead).
+IonQ Aria is IonQ's latest generation of trapped-ion quantum computer. With a 25-qubit dynamically reconfigurable system, IonQ Aria is available exclusively on Azure Quantum. For more information, see [IonQ Aria (ionq.com)](https://ionq.com/news/february-23-2022-ionq-aria-furthers-lead).
 
 > [!IMPORTANT]
 > *Debiasing* is enabled on the Aria system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
@@ -146,7 +146,7 @@ Additional capabilities supported by IonQ hardware are listed here.
 | ---- | ---- |
 | [Error mitigation](#error-mitigation) | Use debiasing to minimize noise and maximize algorithmic performance on IonQ hardware |
 | [Native gates support](#native-gates-support-and-usage) | Define and execute circuits directly on IonQ hardware-native gates |
-| [Noise simulation](#noise-simulation)|   sf;lskjdf;k  |
+| [Noise model simulation](#noise-model-simulation)|  Simulate the noise profile that circuits will encounter when you run them on different IonQ hardware.  |
 
 Users can take advantage of these additional capabilities via pass-through parameters in the Azure Quantum Q# and Qiskit providers.
 
@@ -189,7 +189,26 @@ option_params = {
 }
 ```
 
-In Q#, you pass the optional parameters with the job:
+> [!NOTE]
+> If you are also using IonQ's noise model simulation, noise parameters can be included here, too, for example:
+> 
+> ```python
+> option_params = {
+  >     "error-mitigation": {
+     >         "debias": False
+   >     },
+   >     "noise": {
+     >     "model": "harmony",
+     >     "seed": 100
+   >     }
+> }
+> ```
+>
+> For more information, see [Noise model simulation](#noise-model-simulation).
+
+#### Running a job with error mitigation
+
+In Q#, you pass the optional parameters when you submit the job:
 
 ```python
 result = qsharp.azure.execute(GenerateRandomBit, shots=500, jobName="Generate one random bit", timeout=240, jobParams = option_params)
@@ -236,8 +255,73 @@ backend = provider.get_backend("ionq.qpu", gateset="native")
 
 For more information about Qiskit jobs, see [Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal).
 
-### Noise simulation
+### Noise model simulation
 
+Even the best of today's quantum hardware has inherent noise, and knowing the noise characteristics of your target system can help you refine your algorithms and get a more realistic prediction of results when running the circuit on hardware. IonQ provides a *noise model simulation* that introduces noise into the circuit using a "noise fingerprint" specific to the target hardware. For more information, see [Get Started with Hardware Noise Model Simulation](https://ionq.com/docs/get-started-with-hardware-noise-model-simulation).
+
+#### Noise model parameters
+
+| Parameter Name | Values     | Description |
+|----------------|------------|-------------|
+| `noise`        | `model`, `seed` |  Enables the noise model simulation  |
+| `model`        | `ideal`, `harmony`, `aria-1` | Specifies the noise model for the target hardware.<ul><li>`ideal` - No noise is introduced into the circuit. This is the same as not enabling the noise simulation.</li><li>`harmony` - Uses the noise model for the IonQ Harmony quantum computer.</li><li>`aria-1` - Uses the noise model for the IonQ Aria quantum computer. |
+| `seed`        | Integer between 1 and $2^{31}$ (2,147,483,648) | Allows you to specify a seed value for pseudo-random noise and shot-sampling, creating reproducible noisy results. If the parameter is not specified, a random `seed` value is created. |
+| `shots`        | TBD - Is there a range? | Noise model simulation is shot-aware; that is, it samples “measurements” from the output state based on the number of shots provided.<br><br>Required for `harmony` and `aria-1` noise models. If no value is specified, the default value of `1000` is used. If the `ideal` noise model is used, the `shots` parameter is ignored. |
+
+> [!NOTE]
+> While the `ideal` noise model allows you to simulate up to 29 qubits, the hardware specific noise models are limited the actual qubit capacity of the target hardware: 11 qubits for the `harmony` noise model and 25 qubits for the `aria-` noise model.
+ 
+
+#### Enabling noise model simulation
+
+On Azure Quantum, noise model simulation can be enabled or disabled for jobs submitted with Q# or with Qiskit.
+
+To enable noise model simulation, add an optional parameter for the target machine, for example:
+
+```python
+
+option_params = {
+    "noise": {
+        "model": "harmony",   # targets the Harmony quantum computer
+        "seed" : 1000         # If seed isn't specified, a random value is used  
+    }
+}
+
+```
+
+> [!NOTE]
+> If you are also using IonQ's error mitigation, those parameters can be included here, too, for example:
+> 
+> ```python
+> option_params = {
+  >     "error-mitigation": {
+     >         "debias": False
+   >     },
+   >     "noise": {
+     >     "model": "harmony",
+     >     "seed": 1000
+   >     }
+> }
+> ```
+>
+> For more information, see [Error mitigation](#error-mitigation).
+
+#### Running a job with noise model simulation
+
+In Q#, you pass the optional parameters when you submit the job: 
+
+```python
+result = qsharp.azure.execute(GenerateRandomBit, shots=500, jobName="Generate one random bit", timeout=240, jobParams = option_params)
+```
+
+In Qiskit, you pass the optional parameters to the target machine configuration before submitting the job:
+
+```python
+circuit.name = "Single qubit random - Debias: True"
+backend.options.update_options(**option_params)
+job = backend.run(circuit, shots=500)
+
+```
 
 
 ## Pricing
