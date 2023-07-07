@@ -190,7 +190,7 @@ option_params = {
 ```
 
 > [!NOTE]
-> If you are also using IonQ's noise model simulation, noise parameters can be included here, too, for example:
+> If you are also using IonQ's noise model simulation, those parameters can be included here, for example:
 > 
 > ```python
 > option_params = {
@@ -267,10 +267,13 @@ Even the best of today's quantum hardware has inherent noise, and knowing the no
 | `model`        | `ideal`, `harmony`, `aria-1` | Specifies the noise model for the target hardware.<ul><li>`ideal` - No noise is introduced into the circuit. This is the same as not enabling the noise simulation.</li><li>`harmony` - Uses the noise model for the IonQ Harmony quantum computer.</li><li>`aria-1` - Uses the noise model for the IonQ Aria quantum computer. |
 | `seed`        | Integer between 1 and $2^{31}$ (2,147,483,648) | Allows you to specify a seed value for pseudo-random noise and shot-sampling, creating reproducible noisy results. If the parameter is not specified, a random `seed` value is created. |
 
-> [!NOTE]
-> While the `ideal` noise model allows you to simulate up to 29 qubits, the hardware specific noise models are limited to the actual qubit capacity of the target hardware: 11 qubits for the `harmony` noise model and 25 qubits for the `aria-1` noise model.
+#### Shot awareness
 
-Noise model simulation is *shot-aware*; that is, it samples measurements from the output state based on the number of shots provided. The `shots` parameter is submitted with the job, and is required for `harmony` and `aria-1` noise models. If no `shot` value is specified, a default value of `1000` is used. If the `ideal` noise model is used, the `shots` parameter is ignored. |
+Noise model simulation is *shot-aware*; that is, it samples measurements from the output state based on the number of shots provided. In Azure Quantum, the `shots` parameter is submitted with the job, and is required for `harmony` and `aria-1` noise models. If no `shot` value is specified, a default value of `1000` is used. If the `ideal` noise model is used, the `shots` parameter is ignored.
+
+#### Qubit capacity
+
+While the `ideal` noise model allows you to simulate up to 29 qubits with the IonQ quantum simulator, the hardware specific noise models are limited to the actual qubit capacity of the target hardware: 11 qubits for the `harmony` noise model and 25 qubits for the `aria-1` noise model.
 
 #### Enabling noise model simulation
 
@@ -290,7 +293,7 @@ option_params = {
 ```
 
 > [!NOTE]
-> If you are also using IonQ's error mitigation, those parameters can be included here, too, for example:
+> If you are also using IonQ's error mitigation, those parameters can be included here, for example:
 > 
 > ```python
 > option_params = {
