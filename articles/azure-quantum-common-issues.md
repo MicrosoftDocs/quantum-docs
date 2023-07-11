@@ -183,7 +183,7 @@ If access was recently granted, you may need to refresh the page. It can sometim
 
 ### Issue: You don't see a specific quantum hardware provider on the Providers tab
 
-This issue occurs because the provider doesn't support the billing region your subscription is set in. For example, if your subscription is set in Israel, the Providers tab won't list Rigetti as an available provider. For a list of providers and their availability by country, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability). 
+This issue occurs because the provider doesn't support the billing region your subscription is set in. For example, if your subscription is set in Israel, the Providers tab won't list Rigetti as an available provider. For a list of providers and their availability by country/region, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability). 
 
 ### Issue: Workspace creation or adding/removing providers fails with "ResourceDeploymentFailure" or "ProviderDeploymentFailure"
 
