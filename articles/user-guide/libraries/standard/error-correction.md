@@ -11,9 +11,7 @@ title: Error correction in the Q# standard libraries
 uid: microsoft.quantum.libraries.overview.error-correction
 ---
 
-# Error Correction
-
-## Introduction
+# Error correction
 
 In classical computing, if one wants to protect a bit against errors, it can often suffice to represent that bit by a *logical bit* by repeating the data bit.
 For instance, let $\overline{0} = 000$ be the encoding of the data bit 0, where you use the line above the label 0 to indicate that it is an encoding of a bit in the 0 state.
@@ -22,7 +20,7 @@ That is, if any of the three bits are flipped, then you can recover the state of
 Though classical error correction is a much richer subject that this particular example (see [Lint's introduction to coding theory](https://www.springer.com/us/book/9783540641339)), the earlier repetition code already points to a possible problem in protecting quantum information.
 Namely, the [no-cloning theorem](xref:microsoft.quantum.concepts.pauli#the-no-cloning-theorem) implies that if you measure each individual qubit and take a majority vote by analogy to classical code here, then you've lost the precise information that you're trying to protect.
 
-In the quantum setting, you will see that the measurement is problematic. However, you can still implement the previous encoding.
+In the quantum setting, you see that the measurement is problematic. However, you can still implement the previous encoding.
 It is helpful to do so to see how you can generalize error correction to the quantum case.
 Thus, let $\ket{\overline{0}} = \ket{000} = \ket{0} \otimes \ket{0} \otimes \ket{0}$, and let $\ket{\overline{1}} = \ket{111}$.
 Then, by linearity, you have defined your repetition code for all inputs; for instance, $\ket{\overline{+}} = (\ket{\overline{0}} + \ket{\overline{1}}) / \sqrt{2} = (\ket{000} + \ket{111}) / \sqrt{2}$.
@@ -38,7 +36,7 @@ $$
 \end{align}
 $$
 
-To see how you can identify that this is the case without measuring the very state you are trying to protect, it is helpful to write down what each different bit flip error does to our logical states:
+To see how you can identify that this is the case without measuring the very state you are trying to protect, it is helpful to write down what each different bit flip error does to the logical states:
 
 | Error $E$ | $E\ket{\overline{0}}$ | $E\ket{\overline{1}}$ |
 | --- | --- | --- |
@@ -70,8 +68,8 @@ In particular, recovery is a *classical* inference procedure which takes as its 
 
 > [!NOTE]
 > The bit-flip code shown here can only correct against single bit-flip errors; that is, an `X` operation acting on a single qubit.
-> Applying `X` to more than one qubit will map $\ket{\overline{0}}$ to $\ket{\overline{1}}$ following recovery.
-> Similarly, applying a phase flip operation `Z` will map $\ket{\overline{1}}$ to $-\ket{\overline{1}}$, and hence will map $\ket{\overline{+}}$ to $\ket{\overline{-}}$.
+> Applying `X` to more than one qubit maps $\ket{\overline{0}}$ to $\ket{\overline{1}}$ following recovery.
+> Similarly, applying a phase flip operation `Z` maps $\ket{\overline{1}}$ to $-\ket{\overline{1}}$, and hence maps $\ket{\overline{+}}$ to $\ket{\overline{-}}$.
 > More generally, codes can be created to handle larger number of errors, and to handle $Z$ errors as well as $X$ errors.
 
 The insight that you can describe measurements in quantum error correction that act the same way on all code states, is the essence of the *stabilizer formalism*.
@@ -82,18 +80,19 @@ This section describes this framework and its application to a few simple quantu
 > A full introduction to the stabilizer formalism is beyond the scope of this section.
 > To learn more, see [Gottesman 2009](https://arxiv.org/abs/0904.2557).
 
-## Representing error correcting codes in Q
+## Representing error correcting codes in Q\#
 
 To help specify error correcting codes, the Q# libraries provide several distinct user-defined types:
 
-- <xref:Microsoft.Quantum.ErrorCorrection.LogicalRegister> `= Qubit[]`: Denotes that a register of qubits should be interpreted as the code block of an error-correcting code.
-- <xref:Microsoft.Quantum.ErrorCorrection.Syndrome> `= Result[]`: Denotes that an array of measurement results should be interpreted as the syndrome measured on a code block.
-- <xref:Microsoft.Quantum.ErrorCorrection.RecoveryFn> `= (Syndrome -> Pauli[])`: Denotes that a *classical* function should be used to interpret a syndrome and return a correction that should be applied.
-- <xref:Microsoft.Quantum.ErrorCorrection.EncodeOp> `= ((Qubit[], Qubit[]) => LogicalRegister)`: Denotes that an operation takes qubits representing data along with fresh auxiliary qubits in order to produce a code block of an error-correcting code.
-- <xref:Microsoft.Quantum.ErrorCorrection.DecodeOp> `= (LogicalRegister => (Qubit[], Qubit[]))`: Denotes than an operation decomposes a code block of an error correcting code into the data qubits and the auxiliary qubits used to represent syndrome information.
-- <xref:Microsoft.Quantum.ErrorCorrection.SyndromeMeasOp> `= (LogicalRegister => Syndrome)`: Denotes an operation that should be used to extract syndrome information from a code block, without disturbing the state protected by the code.
+- [LogicalRegister](xref:Microsoft.Quantum.ErrorCorrection.LogicalRegister) `= Qubit[]`: Denotes that a register of qubits should be interpreted as the code block of an error-correcting code.
+- [Syndrome](xref:Microsoft.Quantum.ErrorCorrection.Syndrome) `= Result[]`: Denotes that an array of measurement results should be interpreted as the syndrome measured on a code block.
+- [RecoveryFn](xref:Microsoft.Quantum.ErrorCorrection.RecoveryFn) `= (Syndrome -> Pauli[])`: Denotes that a *classical* function should be used to interpret a syndrome and return a correction that should be applied.
+- [EncodeOp](xref:Microsoft.Quantum.ErrorCorrection.EncodeOp) `= ((Qubit[], Qubit[]) => LogicalRegister)`: Denotes that an operation takes qubits representing data along with fresh auxiliary qubits in order to produce a code block of an error-correcting code.
+- [DecodeOp](xref:Microsoft.Quantum.ErrorCorrection.DecodeOp) `= (LogicalRegister => (Qubit[], Qubit[]))`: Denotes than an operation decomposes a code block of an error correcting code into the data qubits and the auxiliary qubits used to represent syndrome information.
+- [SyndromeMeasOp](xref:Microsoft.Quantum.ErrorCorrection.SyndromeMeasOp) `= (LogicalRegister => Syndrome)`: Denotes an operation that should be used to extract syndrome information from a code block, without disturbing the state protected by the code.
 
-Finally, Q# provides the <xref:Microsoft.Quantum.ErrorCorrection.QECC> to collect the other types required to define a quantum error-correcting code. Associated with each stabilizer quantum code is the code length $n$, the number $k$ of logical qubits, and the minimum distance $d$, often conveniently grouped together in the notation ⟦$n$, $k$, $d$⟧. For example, the [BitFlipCode](xref:Microsoft.Quantum.ErrorCorrection.BitFlipCode) function defines the ⟦3, 1, 1⟧ bit flip code:
+Finally, Q# provides the xref:Microsoft.Quantum.ErrorCorrection.QECC) to collect the other types required to define a quantum error-correcting code. Associated with each stabilizer quantum code is the code length $n$, the number $k$ of logical qubits, and the minimum distance $d$, often conveniently grouped together in the notation ⟦$n$, $k$, $d$⟧. For example, the [BitFlipCode](xref:Microsoft.Quantum.ErrorCorrection.BitFlipCode) function defines the ⟦3, 1, 1⟧ bit flip code:
+Finally, Q# provides the [QECC](xref:Microsoft.Quantum.ErrorCorrection.QECC) to collect the other types required to define a quantum error-correcting code. Associated with each stabilizer quantum code is the code length $n$, the number $k$ of logical qubits, and the minimum distance $d$, often conveniently grouped together in the notation ⟦$n$, $k$, $d$⟧. For example, the [BitFlipCode](xref:Microsoft.Quantum.ErrorCorrection.BitFlipCode) function defines the ⟦3, 1, 1⟧ bit flip code:
 
 ```qsharp
 let encodeOp = EncodeOp(BitFlipEncoder);
@@ -108,7 +107,7 @@ let code = QECC(encodeOp, decodeOp, syndMeasOp);
 Notice that the `QECC` type does *not* include a recovery function.
 This allows you to change the recovery function that is used in correcting errors without changing the definition of the code itself; this ability is in particular useful when incorporating feedback from characterization measurements into the model assumed by recovery.
 
-Once a code is defined in this way, you can use the <xref:Microsoft.Quantum.ErrorCorrection.Recover> to recover from errors:
+Once a code is defined in this way, you can use the [Recover](xref:Microsoft.Quantum.ErrorCorrection.Recover) operation to recover from errors:
 
 ```qsharp
 let code = BitFlipCode();

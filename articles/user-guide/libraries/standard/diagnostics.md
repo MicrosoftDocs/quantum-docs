@@ -11,17 +11,17 @@ title: Diagnostics in the Q# standard libraries
 uid: microsoft.quantum.libraries.overview.diagnostics
 ---
 
-# Diagnostics #
+# Diagnostics
 
 As with classical development, it is important to be able to diagnose mistakes and errors in quantum programs.
-The Q# standard libraries provide a variety of different ways to ensure the correctness of quantum programs, as detailed in <xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging>.
+The Q# standard libraries provide a variety of different ways to ensure the correctness of quantum programs, as detailed in [Testing and debugging](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging).
 Largely speaking, this support comes in the form of functions and operations that either instruct the target machine to provide additional diagnostic information to the host program or developer, or enforce the correctness of conditions and invariants expressed by the function or operation call.
 
-## Machine diagnostics ##
+## Machine diagnostics
 
-Diagnostics about classical values can be obtained by using the <xref:Microsoft.Quantum.Intrinsic.Message> to log a message in a machine-dependent way.
+Diagnostics about classical values can be obtained by using the [Message](xref:Microsoft.Quantum.Intrinsic.Message) function to log a message in a machine-dependent way.
 By default, this writes the string to the console.
-Used together with interpolated strings, the <xref:Microsoft.Quantum.Intrinsic.Message> makes it easy to report diagnostic information about classical values:
+Used together with interpolated strings, the [Message](xref:Microsoft.Quantum.Intrinsic.Message) function makes it easy to report diagnostic information about classical values:
 
 ```Q#
 let angle = Microsoft.Quantum.Math.PI() * 2.0 / 3.0;
@@ -31,15 +31,15 @@ Message($"About to rotate by an angle of {angle}...");
 > [!NOTE]
 > `Message` has signature `(String -> Unit)`, again representing that emitting a debug log message cannot be observed from within Q#.
 
-The <xref:Microsoft.Quantum.Diagnostics.DumpMachine> and <xref:Microsoft.Quantum.Diagnostics.DumpRegister> callables instruct target machines to provide diagnostic information about all currently allocated qubits or about a specific register of qubits, respectively.
+The [DumpMachine](xref:Microsoft.Quantum.Diagnostics.DumpMachine) and [DumpRegister](xref:Microsoft.Quantum.Diagnostics.DumpRegister) functions instruct target machines to provide diagnostic information about all currently allocated qubits or about a specific register of qubits, respectively.
 Each target machine varies in what diagnostic information is provided in response to a dump instruction.
 The [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) target machine, for instance, provides the host program with the state vector that it uses internally to represent a register of qubits.
 By comparison, the [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator) target machine provides a single classical bit for each qubit.
 
- To learn more about the [full state simulator's](xref:microsoft.quantum.machines.overview.full-state-simulator) `DumpMachine` output, take a look at the dump functions section of our [testing and debugging article](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging#dump-functions).
+ To learn more about the [full state simulator's](xref:microsoft.quantum.machines.overview.full-state-simulator) `DumpMachine` output, see [Dump functions](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging#dump-functions).
 
 
-## Facts and assertions ##
+## Facts and assertions
 
 As discussed in [Testing and Debugging](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging), a function or operation with signature `Unit -> Unit` or `Unit => Unit`, respectively, can be marked as a *unit test*.
 Each unit test generally consists of a small quantum program, along with one or more conditions that check the correctness of that program.
@@ -50,19 +50,18 @@ In the former case, you can check the correctness of the condition given only it
 
 The Q# standard libraries provide several different functions for representing facts, including the:
 
-- <xref:Microsoft.Quantum.Diagnostics.Fact>
-- <xref:Microsoft.Quantum.Diagnostics.EqualityWithinToleranceFact>
-- <xref:Microsoft.Quantum.Diagnostics.NearEqualityFactC>
-- <xref:Microsoft.Quantum.Diagnostics.EqualityFactI>
+- [Fact](xref:Microsoft.Quantum.Diagnostics.Fact) function
+- [EqualityWithinToleranceFact](xref:Microsoft.Quantum.Diagnostics.EqualityWithinToleranceFact) function
+- [NearEqualityFactC](xref:Microsoft.Quantum.Diagnostics.NearEqualityFactC) function
+- [EqualityFactI](xref:Microsoft.Quantum.Diagnostics.EqualityFactI) function
 
-
-### Testing qubit states ###
+### Testing qubit states
 
 In practice, assertions rely on the fact that classical simulations of quantum mechanics need not obey the [no-cloning theorem](https://arxiv.org/abs/quant-ph/9607018), such that you can make unphysical measurements and assertions when using a simulator for our target machine.
 Thus, you can test individual operations on a classical simulator before deploying on hardware.
-On target machines which do not allow evaluation of assertions, calls to the <xref:Microsoft.Quantum.Diagnostics.AssertMeasurement> can be safely ignored.
+On target machines which do not allow evaluation of assertions, calls to the [AssertMeasurement](xref:Microsoft.Quantum.Diagnostics.AssertMeasurement) operation can be safely ignored.
 
-More generally, the <xref:Microsoft.Quantum.Diagnostics.AssertMeasurement> asserts that measuring the given qubits in the
+More generally, the [AssertMeasurement](xref:Microsoft.Quantum.Diagnostics.AssertMeasurement) operation asserts that measuring the given qubits in the
 given Pauli basis always has the given result.
 If the assertion fails, the run ends by calling `fail` with the
 given message.
@@ -71,7 +70,7 @@ should provide an implementation that performs runtime checking.
 `AssertMeasurement` has signature `((Pauli[], Qubit[], Result, String) -> ())`.
 Since `AssertMeasurement` is a function with an empty tuple as its output type, no effects from having called `AssertMeasurement` are observable within a Q# program.
 
-The <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> asserts that measuring the given qubits in the
+The [AssertMeasurementProbability](xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability) operation asserts that measuring the given qubits in the
 given Pauli basis has the given result with the given probability,
 within some tolerance.
 Tolerance is additive (for example, `abs(expected-actual) < tol`).
@@ -94,7 +93,7 @@ That is,
 Using the primitive operations defined in the prelude, you can directly perform a measurement that returns `Zero` if $\ket{\psi}$ is an eigenstate of one of the Pauli operators.
 
 
-The <xref:Microsoft.Quantum.Diagnostics.AssertQubit> provides a particularly useful shorthand to do so in the case that you wish to test the assertion $\ket{\psi} = \ket{0}$.
+The [AssertQubit](xref:Microsoft.Quantum.Diagnostics.AssertQubit) operation provides a particularly useful shorthand to do so in the case that you wish to test the assertion $\ket{\psi} = \ket{0}$.
 This is common, for instance, when you have uncomputed to return auxiliary qubits to $\ket{0}$ before releasing them.
 Asserting against $\ket{0}$ is also useful when you wish to assert that two state preparation `P` and `Q` operations both prepare the same state, and when `Q` supports `Adjoint`.
 In particular,
@@ -109,7 +108,7 @@ AssertQubit(Zero, register);
 ```
 
 More generally, however, you may not have access to assertions about states that do not coincide with eigenstates of Pauli operators.
-For example, $\ket{\psi} = (\ket{0} + e^{i \pi / 8} \ket{1}) / \sqrt{2}$ is not an eigenstate of any Pauli operator, such that you cannot use the <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> to uniquely determine that a state $\ket{\psi'}$ is equal to $\ket{\psi}$.
+For example, $\ket{\psi} = (\ket{0} + e^{i \pi / 8} \ket{1}) / \sqrt{2}$ is not an eigenstate of any Pauli operator, such that you cannot use the [AssertMeasurementProbability](xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability) operation to uniquely determine that a state $\ket{\psi'}$ is equal to $\ket{\psi}$.
 Instead, you must decompose the assertion $\ket{\psi'} = \ket{\psi}$ into assumptions that can be directly tested using  the primitives supported by our simulator.
 To do so, let $\ket{\psi} = \alpha \ket{0} + \beta \ket{1}$ for complex numbers $\alpha = a\_r + a\_i i$ and $\beta$.
 Note that this expression requires four real numbers $\{a\_r, a\_i, b\_r, b\_i\}$ to specify, as each complex number can be expressed as the sum of a real and imaginary part.
@@ -128,10 +127,10 @@ Then, using the likelihood function for quantum measurements,
         \right).
 \end{align}
 
-The <xref:Microsoft.Quantum.Diagnostics.AssertQubitIsInStateWithinTolerance> implements these assertions given representations of $\alpha$ and $\beta$ as values of the  <xref:Microsoft.Quantum.Math.Complex>.
+The [AssertQubitIsInStateWithinTolerance](xref:Microsoft.Quantum.Diagnostics.AssertQubitIsInStateWithinTolerance) implements these assertions given representations of $\alpha$ and $\beta$ as values of the  [Complex](xref:Microsoft.Quantum.Math.Complex) users defined type.
 This is helpful when the expected state can be computed mathematically.
 
-### Asserting equality of quantum operations ###
+### Asserting equality of quantum operations
 
 Thus far, you have been concerned with testing operations which are intended to prepare particular states.
 Often, however, you are interested in how an operation acts for arbitrary inputs rather than for a single fixed input.
@@ -141,19 +140,19 @@ You may be interested in asserting that $U^\dagger(t) = U(-t)$, as expected if $
 Broadly speaking, there are two different strategies that you can follow in making the assertion that two operations `U` and `V` act identically.
 First, you can check that `U(target); (Adjoint V)(target);` preserves each state in a given basis.
 Second, you can check that `U(target); (Adjoint V)(target);` acting on half of an entangled state preserves that entanglement.
-These strategies are implemented by the <xref:Microsoft.Quantum.Diagnostics.AssertOperationsEqualInPlace> and <xref:Microsoft.Quantum.Diagnostics.AssertOperationsEqualReferenced>, respectively.
+These strategies are implemented by the [AssertOperationsEqualInPlace](xref:Microsoft.Quantum.Diagnostics.AssertOperationsEqualInPlace) operation and [AssertOperationsEqualReferenced](xref:Microsoft.Quantum.Diagnostics.AssertOperationsEqualReferenced) operation, respectively.
 
 > [!NOTE]
 > The referenced assertion discussed earlier works based on the [Choi–Jamiłkowski isomorphism](https://en.wikipedia.org/wiki/Channel-state_duality), a mathematical framework which relates operations on $n$ qubits to entangled states on $2n$ qubits.
 > In particular, the identity operation on $n$ qubits is represented by $n$ copies of the entangled state $\ket{\beta_{00}} \mathrel{:=} (\ket{00} + \ket{11}) / \sqrt{2}$.
-> The <xref:Microsoft.Quantum.Preparation.PrepareChoiState> implements this isomorphism, preparing a state that represents a given operation.
+> The [PrepareChoiState](xref:Microsoft.Quantum.Preparation.PrepareChoiState) operation implements this isomorphism, preparing a state that represents a given operation.
 
 Roughly, these strategies are distinguished by a time–space tradeoff.
 Iterating through each input state takes additional time, while using entanglement as a reference requires storing additional qubits.
-In cases where an operation implements a reversible classical operation, such that you are only interested in its behavior on computational basis states, the <xref:Microsoft.Quantum.Diagnostics.AssertOperationsEqualInPlaceCompBasis> tests equality on this restricted set of inputs.
+In cases where an operation implements a reversible classical operation, such that you are only interested in its behavior on computational basis states, the [AssertOperationsEqualInPlaceCompBasis](xref:Microsoft.Quantum.Diagnostics.AssertOperationsEqualInPlaceCompBasis) operation tests equality on this restricted set of inputs.
 
 > [!TIP]
-> The iteration over input states is handled by the enumeration <xref:Microsoft.Quantum.Canon.IterateThroughCartesianProduct> and <xref:Microsoft.Quantum.Canon.IterateThroughCartesianPower>.
+> The iteration over input states is handled by the enumeration operations [IterateThroughCartesianProduct](xref:Microsoft.Quantum.Canon.IterateThroughCartesianProduct) and [IterateThroughCartesianPower](xref:Microsoft.Quantum.Canon.IterateThroughCartesianPower).
 > These operations are useful more generally for applying an operation to each element of the Cartesian product between two or more sets.
 
 More critically, however, the two approaches test different properties of the operations under examination.
@@ -162,7 +161,7 @@ By contrast, the referenced assertion calls each operation exactly once, such th
 Both of these tests are useful in ensuring the correctness of quantum programs.
 
 
-## Next steps ##
+## Next steps
 
-- <xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging>
-- <xref:Microsoft.Quantum.Diagnostics>
+- [Testing and debugging](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging)
+- [Diagnostics](xref:Microsoft.Quantum.Diagnostics)

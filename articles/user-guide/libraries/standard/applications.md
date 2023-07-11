@@ -54,7 +54,7 @@ $$
 Moreover, it is assumed that each part, a Hamiltonian $H\_j$, is easy to simulate. This means that the unitary $e^{-iH\_j t}$ for any time $t$ may be implemented exactly using $\mathcal{O}(1)$ primitive quantum gates. For instance, this is true in the special case where each $H\_j$ are local Pauli operators, meaning that they are of tensor products of $\mathcal{O}(1)$ non-identity Pauli operators that act on spatially close qubits. This model is particularly applicable to physical systems with bounded and local interaction, as the number of terms is $d=\mathcal{O}(\text{polylog}(N))$, and may clearly be written down, that is, classically described, in polynomial time.
 
 > [!TIP]
-> Hamiltonians that decompose into a sum of parts may be described using the Dynamical Generator Representation library. For more information, see the Dynamical Generator Representation section in [data structures](xref:microsoft.quantum.libraries.overview.data-structures).
+> Hamiltonians that decompose into a sum of parts may be described using the Dynamical Generator Representation library. For more information, see [Dynamical Generator Representation](xref:microsoft.quantum.libraries.overview.data-structures#dynamical-generator-representation).
 
 ### Simulation algorithms
 
@@ -89,7 +89,7 @@ using a product of $2rd$ terms. Larger orders involve even more terms, and optim
 newtype SimulationAlgorithm = ((Double, EvolutionGenerator, Qubit[]) => Unit is Adj + Ctl);
 ```
 
-The first parameter `Double` is the time of simulation, the second parameter `EvolutionGenerator`, covered in the Dynamical Generator Representation section of [data-structures](xref:microsoft.quantum.libraries.overview.data-structures), is a classical description of a time-independent Hamiltonian packaged with instructions on how each term in the Hamiltonian may be simulated by a quantum circuit. Types of this form approximate the unitary operation $e^{-iHt}$ on the third parameter `Qubit[]`, which is the register storing the quantum state of the simulated system. Similarly for the time-dependent case, you define a user-defined type with an `EvolutionSchedule` type instead, which is a classical description of a time-dependent Hamiltonian.
+The first parameter `Double` is the time of simulation, the second parameter `EvolutionGenerator`, covered in [Dynamical Generator Representation](xref:microsoft.quantum.libraries.overview.data-structures#dynamical-generator-representation), is a classical description of a time-independent Hamiltonian packaged with instructions on how each term in the Hamiltonian may be simulated by a quantum circuit. Types of this form approximate the unitary operation $e^{-iHt}$ on the third parameter `Qubit[]`, which is the register storing the quantum state of the simulated system. Similarly for the time-dependent case, you define a user-defined type with an `EvolutionSchedule` type instead, which is a classical description of a time-dependent Hamiltonian.
 
 ```qsharp
 newtype TimeDependentSimulationAlgorithm = ((Double, EvolutionSchedule, Qubit[]) => Unit : Adjoint, Controlled);
@@ -204,7 +204,7 @@ Luckily, it turns out that $1/\sqrt{r} \sum\_{s=0}^{r-1} \ket{x\_s} = \ket{1}$ -
 You can just prepare a quantum register of $n$ qubits in state $\ket{1}$. 
 
 The circuit contains the QFT and several controlled gates.
-The QFT gate has been described [previously](xref:microsoft.quantum.libraries.overview.standard.algorithms).
+(The QFT gate is described in [Quantum algorithms](xref:microsoft.quantum.libraries.overview.standard.algorithms)).
 The controlled-$U_a$ gate maps $\ket{x}$ to $\ket{(ax)\text{ mod } N}$ if the control qubit is $\ket{1}$, and maps $\ket{x}$ to $\ket{x}$ otherwise.
 
 To achieve $(a^nx)\text{ mod } N$, you can simply apply controlled-$U_{a^n}$, where you calculate $a^n \text{ mod } N$ classically to plug into the quantum circuit.  

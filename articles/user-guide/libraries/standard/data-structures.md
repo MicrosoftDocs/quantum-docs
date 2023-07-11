@@ -11,16 +11,16 @@ title: Data structures in the Q# standard libraries
 uid: microsoft.quantum.libraries.overview.data-structures
 ---
 
-# Data Structures and Modeling #
+# Data Structures and Modeling
 
-## Classical Data Structures ##
+## Classical Data Structures
 
 Along with user-defined types for representing quantum concepts, the canon also provides operations, functions, and types for working with classical data used in the control of quantum systems.
-For instance, the <xref:Microsoft.Quantum.Arrays.Reversed> takes an array as input and returns the same array in reverse order.
+For instance, the [Reversed](xref:Microsoft.Quantum.Arrays.Reversed) function takes an array as input and returns the same array in reverse order.
 This can then be used on an array of type `Qubit[]` to avoid having to apply unnecessary $\operatorname{SWAP}$ gates when converting between quantum representations of integers.
-Similarly, you saw in the previous section that types of the form `(Int, Int -> T)` can be useful for representing random access collections, so the <xref:Microsoft.Quantum.Arrays.LookupFunction> provides a convenient way of constructing such types from array types.
+Similarly, types of the form `(Int, Int -> T)` can be useful for representing random access collections, so the [LookupFunction](xref:Microsoft.Quantum.Arrays.LookupFunction) function provides a convenient way of constructing such types from array types.
 
-### Pairs ###
+### Pairs
 
 The canon supports functional-style notation for pairs, complementing accessing tuples by deconstruction:
 
@@ -29,11 +29,11 @@ let pair = (PauliZ, register); // type (Pauli, Qubit[])
 ApplyToEach(H, Snd(pair)); // No need to deconstruct to access the register.
 ```
 
-### Arrays ###
+### Arrays
 
 The canon provides several functions for manipulating arrays.
 These functions are type-parameterized, and thus can be used with arrays of any Q# type.
-For instance, the <xref:Microsoft.Quantum.Arrays.Reversed> returns a new array whose elements are in reverse order from its input.
+For instance, the [Reversed](xref:Microsoft.Quantum.Arrays.Reversed) function returns a new array whose elements are in reverse order from its input.
 This can be used to change how a quantum register is represented when calling operations:
 
 ```qsharp
@@ -44,14 +44,14 @@ QFT(BigEndian(Reversed(leRegister!)));
 QFT(LittleEndianAsBigEndian(leRegister));
 ```
 
-Similarly, the <xref:Microsoft.Quantum.Arrays.Subarray>  can be used to reorder or take subsets of the elements of an array:
+Similarly, the [Subarray](xref:Microsoft.Quantum.Arrays.Subarray) function can be used to reorder or take subsets of the elements of an array:
 
 ```qsharp
 // Applies H to qubits 2 and 5.
 ApplyToEach(H, Subarray([2, 5], register));
 ```
 
-When combined with flow control, array manipulation functions such as the <xref:Microsoft.Quantum.Arrays.Zipped> can provide a powerful way to express quantum programs:
+When combined with flow control, array manipulation functions such as [Zipped](xref:Microsoft.Quantum.Arrays.Zipped) can provide a powerful way to express quantum programs:
 
 ```qsharp
 // Applies X₃ Y₁ Z₇ to a register of any size.
@@ -64,7 +64,7 @@ ApplyToEach(
 );
 ```
 
-## Oracles ##
+## Oracles
 
 In the [phase estimation](https://en.wikipedia.org/wiki/Quantum_phase_estimation_algorithm) and [amplitude amplification](https://en.wikipedia.org/wiki/Amplitude_amplification) literature the concept of an oracle appears frequently.
 Here the term oracle refers to a quantum subroutine that acts upon a set of qubits and returns the answer as a phase.
@@ -76,7 +76,7 @@ Moreover, user-defined types are used to label the different oracle representati
 Such oracles appear in a number of different contexts, including famous examples such as [Grover's search](https://en.wikipedia.org/wiki/Grover%27s_algorithm) and quantum simulation algorithms.
 Here, the focus is on the oracles needed for just two applications: amplitude amplification and phase estimation.
 
-### Amplitude amplification oracles ###
+### Amplitude amplification oracles
 
 The amplitude amplification algorithm aims to perform a rotation between an initial state and a final state by applying a sequence of reflections of the state.
 In order for the algorithm to function, it needs a specification of both of these states.
@@ -99,9 +99,9 @@ This process allows you to prepare a state in the marked subspace using quadrati
 This is why amplitude amplification is a significant building block for many applications of quantum computing.
 
 In order to understand how to use the algorithm, it is useful to provide an example that gives a construction of the oracles.  Consider performing Grover's algorithm for database searches in this setting.
-In Grover's search the goal is to transform the state $\ket{+}^{\otimes n} = H^{\otimes n} \ket{0}$ into one of (potentially) many marked states.
-To further simplify, let's just look at the case where the only marked state is $\ket{0}$.
-Then we have design two oracles: one that only marks the initial state $\ket{+}^{\otimes n}$ with a minus sign and another that marks the marked state $\ket{0}$ with a minus sign.
+In Grover's search, the goal is to transform the state $\ket{+}^{\otimes n} = H^{\otimes n} \ket{0}$ into one of (potentially) many marked states.
+To further simplify, look at the case where the only marked state is $\ket{0}$.
+Then, you design two oracles: one that only marks the initial state $\ket{+}^{\otimes n}$ with a minus sign and another that marks the marked state $\ket{0}$ with a minus sign.
 The latter gate can be implemented using the following process operation, by using the control flow operations in the canon:
 
 ```qsharp
@@ -121,8 +121,8 @@ is Adj + Ctl {
 }
 ```
 
-This oracle is then a special case of the <xref:Microsoft.Quantum.Canon.RAll1>, which allows for rotating by an arbitrary phase instead of the reflection case $\phi = \pi$.
-In this case, `RAll1` is similar to the <xref:Microsoft.Quantum.Intrinsic.R1>, in that it rotates about $\ket{11\cdots1}$ instead of the single-qubit state $\ket{1}$.
+This oracle is then a special case of the [RAll1](xref:Microsoft.Quantum.Canon.RAll1) operation, which allows for rotating by an arbitrary phase instead of the reflection case $\phi = \pi$.
+In this case, `RAll1` is similar to the [R1](xref:Microsoft.Quantum.Intrinsic.R1) operation, in that it rotates about $\ket{11\cdots1}$ instead of the single-qubit state $\ket{1}$.
 
 The oracle that marks the initial subspace is constructed similarly.
 In pseudocode:
@@ -133,7 +133,7 @@ In pseudocode:
 4. Apply $X$ gates to every qubit.
 5. Apply $H$ gates to every qubit.
 
-This example demonstrates using the <xref:Microsoft.Quantum.Canon.ApplyWith> together with the <xref:Microsoft.Quantum.Canon.RAll1> discussed earlier:
+This example demonstrates using the [ApplyWith](xref:Microsoft.Quantum.Canon.ApplyWith) operation together with the [RAll1](xref:Microsoft.Quantum.Canon.RAll1) operation discussed earlier:
 
 ```qsharp
 operation ReflectAboutInitial(register : Qubit[]) : Unit
@@ -144,7 +144,7 @@ is Adj + Ctl {
 
 You can combine these two oracles together to rotate between the two states and deterministically transform $\ket{+}^{\otimes n}$ to $\ket{0}$ using a number of layers of Hadamard gates that is proportional to $\sqrt{2^n}$ (ie $m\propto \sqrt{2^n}$), versus the roughly $2^n$ layers that would be needed to non-deterministically prepare the $\ket{0}$ state by preparing and measuring the initial state until the outcome $0$ is observed.
 
-### Phase estimation oracles ###
+### Phase estimation oracles
 
 For phase estimation the oracles are somewhat more natural.
 The aim in phase estimation is to design a subroutine that is capable of sampling from the eigenvalues of a unitary matrix.
@@ -157,7 +157,7 @@ This unitary is customarily described by one of two types of oracles.
 > To learn more about continuous query oracles, please see the [**PhaseEstimation** sample](https://github.com/microsoft/Quantum/tree/main/samples/characterization/phase-estimation).
 > To learn more about discrete query oracles, please see the [**IsingPhaseEstimation** sample](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
 
-The first type of oracle, called a discrete query oracle and represent with the <xref:Microsoft.Quantum.Oracles.DiscreteOracle>, simply involves a unitary matrix.
+The first type of oracle, called a discrete query oracle and represent with the [DiscreteOracle](xref:Microsoft.Quantum.Oracles.DiscreteOracle) user defined type, simply involves a unitary matrix.
 If $U$ is the unitary whose eigenvalues you wish to estimate, then the oracle for $U$ is simply a stand-in for a subroutine that implements $U$.
 For example, you could take $U$ to be the oracle $Q$ defined earlier for amplitude estimation.
 The eigenvalues of this matrix can be used to estimate the overlap between the initial and target states, $\sin^2(\theta)$, using quadratically fewer samples than you would need otherwise.
@@ -175,7 +175,7 @@ $$
 \end{align}
 $$
 
-The second type of oracle used in phase estimation is the continuous query oracle, represented by the <xref:Microsoft.Quantum.Oracles.ContinuousOracle>.
+The second type of oracle used in phase estimation is the continuous query oracle, represented by the [ContinuousOracle](xref:Microsoft.Quantum.Oracles.ContinuousOracle) user defined type.
 A continuous query oracle for phase estimation takes the form $U(t)$, where $t$ is a classically known real number.
 If you let $U$ be a fixed unitary, then the continuous query oracle takes the form $U(t) = U^t$.
 This allows you to query matrices such as $\sqrt{U}$, which could not be implemented directly in the discrete query model.
@@ -196,7 +196,7 @@ Such a continuous model also has the property that frequencies greater than $2\p
 Thus for problems such as this continuous query models for the phase estimation oracle are not only appropriate but are also preferable to the discrete query model.
 For this reason Q# has functionality for both forms of queries and leave it to the user to decide upon a phase estimation algorithm to fit their needs and the type of oracle that is available.
 
-## Dynamical generator modeling ##
+## Dynamical generator modeling
 
 Generators of time-evolution describe how states evolve through time. For instance, the dynamics of a quantum state $\ket{\psi}$ is governed by the Schrödinger equation
 $$
@@ -237,7 +237,7 @@ The dynamical generator modeling library provides a framework for systematically
 > For an example based on the Ising model, please see the [**IsingGenerators** sample](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/generators).
 > For an example based on molecular Hydrogen, please see the [**H2SimulationCmdLine**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line) and [**H2SimulationGUI**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/gui) samples.
 
-### Complete description of a generator ###
+### Complete description of a generator
 
 At the top level, a complete description of a Hamiltonian is contained in the `EvolutionGenerator` user-defined type which has two components.:
 
@@ -261,7 +261,7 @@ This is resolved by specifying an `EvolutionSet` user-defined type that maps any
 newtype EvolutionSet = (GeneratorIndex -> EvolutionUnitary);
 ```
 
-### Pauli operator generators ###
+### Pauli operator generators
 
 A concrete and useful example of generators are Hamiltonians that are a sum of Pauli operators, each possibly with a different coefficient.
 $$
@@ -275,7 +275,7 @@ where each $\hat H_j$ is now drawn from the Pauli group. For such systems, you p
 newtype GeneratorIndex = ((Int[], Double[]), Int[]);
 ```
 
-In our encoding, the first parameter `Int[]` specifies a Pauli string, where $\hat I\rightarrow 0$, $\hat X\rightarrow 1$, $\hat Y\rightarrow 2$, and $\hat Z\rightarrow 3$. The second parameter `Double[]` stores the coefficient of the Pauli string in the Hamiltonian. Note that only the first element of this array is used. The third parameter `Int[]` indexes the qubits that this Pauli string acts on, and must have no duplicate elements. Thus the Hamiltonian term $0.4 \hat X_0 \hat Y_8\hat I_2\hat Z_1$ may be represented as
+In this encoding, the first parameter `Int[]` specifies a Pauli string, where $\hat I\rightarrow 0$, $\hat X\rightarrow 1$, $\hat Y\rightarrow 2$, and $\hat Z\rightarrow 3$. The second parameter `Double[]` stores the coefficient of the Pauli string in the Hamiltonian. Note that only the first element of this array is used. The third parameter `Int[]` indexes the qubits that this Pauli string acts on, and must have no duplicate elements. Thus the Hamiltonian term $0.4 \hat X_0 \hat Y_8\hat I_2\hat Z_1$ may be represented as
 
 ```qsharp
 let generatorIndexExample = GeneratorIndex(([1,2,0,3], [0.4]]), [0,8,2,1]);
@@ -289,7 +289,7 @@ newtype EvolutionUnitary = ((Double, Qubit[]) => Unit is Adj + Ctl);
 
 The first parameter represents a time-duration, that is multiplied by the coefficient in the `GeneratorIndex`, of unitary evolution. The second parameter is the qubit register the unitary acts on. 
 
-### Time-dependent generators ###
+### Time-dependent generators
 
 In many cases, it might also be interesting to model time-dependent generators, as might occur in the Schrödinger equation
 $$

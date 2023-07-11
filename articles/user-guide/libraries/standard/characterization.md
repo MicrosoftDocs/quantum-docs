@@ -19,7 +19,7 @@ Quantum states are especially vexing because the [no-cloning theorem](xref:micro
 This obfuscation of the quantum state from the user is reflected in the fact that Q# does not expose or even define what a state *is* to quantum programs.
 Q# approaches quantum characterization by treating operations and states as black-box; this approach shares much in common with the experimental practice of quantum characterization, verification and validation (QCVV).
 
-Characterization is distinct from many of the other libraries discussed previously.
+Characterization is distinct from many of the other standard libraries.
 The aim here is less to learn classical information about the system, rather than to perform a unitary transformation on a state vector.
 These libraries must therefore blend both classical and quantum information processing.
 
@@ -32,7 +32,7 @@ This has the advantage that you only require a single additional qubit to perfor
 Each of the methods proposed here uses a different strategy for designing experiments and different data processing methods to learn the phase.  They each have unique advantage ranging from having rigorous error bounds, to the abilities to incorporate prior information, tolerate errors or run on memory limited classical computers.
 
 In discussing iterative phase estimation, consider a unitary $U$ given as a black-box operation.
-As described in the section on oracles in [data structures](xref:microsoft.quantum.libraries.overview.data-structures), the Q# canon models such operations by the <xref:Microsoft.Quantum.Oracles.DiscreteOracle> user-defined type, defined by the tuple type `((Int, Qubit[]) => Unit : Adjoint, Controlled)`.
+As described in [Oracles]](xref:microsoft.quantum.libraries.overview.data-structures#oracles), the Q# canon models such operations by the [DiscreteOracle](xref:Microsoft.Quantum.Oracles.DiscreteOracle) user-defined type, defined by the tuple type `((Int, Qubit[]) => Unit : Adjoint, Controlled)`.
 Concretely, if `U : DiscreteOracle`, then `U(m)` implements $U^m$ for `m : Int`.
 
 With this definition in place, each step of iterative phase estimation proceeds by preparing an auxiliary qubit in the $\ket{+}$ state along with the initial state $\ket{\phi}$ that is assumed to be an [eigenvector](xref:microsoft.quantum.concepts.matrix-advanced) of $U(m)$, for example, $U(m)\ket{\phi}= e^{im\phi}\ket{\phi}$.  
@@ -60,7 +60,7 @@ Bayes' theorem further suggests that the state that results from phase estimatio
 \begin{align}
     \frac{\sqrt{\Pr(\phi\_j)}\sqrt{\Pr(\text{Result}|\phi\_j)}\ket{\phi\_j}}{\sqrt{\sum\_k \Pr(\text{Result}|\phi\_k)\Pr(\phi\_k)}}=\sum_j \sqrt{\Pr(\phi\_j|\text{Result})} \ket{\phi\_j}.
 \end{align}
-Here $\Pr(\phi\_j|\text{Result})$ can be interpreted as the probability that one would ascribe to each hypothesis about the eigenstates given:
+Here $\Pr(\phi\_j|\text{Result})$ can be interpreted as the probability that you would ascribe to each hypothesis about the eigenstates given:
 
 1. knowledge of the quantum state prior to measurement,
 2. knowledge of the eigenstates of $U$ and,
@@ -136,19 +136,18 @@ $$
 $$
 where the lower bound is reached in the limit of asymptotically large $Q$, and the upper bound is guaranteed even for small sample sizes.  Note that $n$ selected by the `bitsPrecision` input, which implicitly defines $Q$.
 
-Other relevant details include, say, the small space overhead of just $1$ auxiliary qubit, or that the procedure is non-adaptive, meaning the required sequence of quantum experiments is independent of the intermediate measurement outcomes. In this and forthcoming examples where the choice of phase estimation algorithm is important, one should refer to the documentation, for example the <xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation>, and the referenced publications therein for more information and for their the implementation.
+Other relevant details include, say, the small space overhead of just $1$ auxiliary qubit, or that the procedure is non-adaptive, meaning the required sequence of quantum experiments is independent of the intermediate measurement outcomes. In this and other examples where the choice of a phase estimation algorithm is important, you should refer to the documentation, for example the [RobustPhaseEstimation](xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation) operation, and the referenced publications therein for more information and for their the implementation.
 
 > [!TIP]
 > There are many samples where robust phase estimation is used. For phase estimation in extracting the ground state energy of various physical system, 
-> please see the [**H2 simulation** sample](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line), 
-> the [**SimpleIsing** sample](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/simple), 
-> and the [**Hubbard model** sample](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
+> please see the [**H2 simulation**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line), [**SimpleIsing**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/simple), 
+> and [**Hubbard model**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard) samples.
 
 ## Continuous oracles
 
-You can also generalize from the oracle model used earlier to allow for continuous-time oracles, modeled by the <xref:Microsoft.Quantum.Oracles.ContinuousOracle>.
+You can also generalize from the oracle model used earlier to allow for continuous-time oracles, modeled by the [ContinuousOracle](xref:Microsoft.Quantum.Oracles.ContinuousOracle) user defined type.
 Consider that instead of a single unitary operator $U$, you have a family of unitary operators $U(t)$ for $t \in \mathbb{R}$ such that $U(t) U(s)$ = $U(t + s)$.
-This is a weaker statement than in the discrete case, since you can construct a <xref:Microsoft.Quantum.Oracles.DiscreteOracle> by restricting $t = m\,\delta t$ for some fixed $\delta t$.
+This is a weaker statement than in the discrete case, since you can construct a [DiscreteOracle](xref:Microsoft.Quantum.Oracles.DiscreteOracle) user defined type by restricting $t = m\,\delta t$ for some fixed $\delta t$.
 By [Stone's theorem](https://en.wikipedia.org/wiki/Stone%27s_theorem_on_one-parameter_unitary_groups), $U(t) = \exp(i H t)$ for some operator $H$, where $\exp$ is the matrix exponential as described in [advanced matrices](xref:microsoft.quantum.concepts.matrix-advanced).
 An eigenstate $\ket{\phi}$ of $H$ such that $H \ket{\phi} = \phi \ket{\phi}$ is then also an eigenstate of $U(t)$ for all $t$,
 \begin{equation}
@@ -180,7 +179,7 @@ The ability to step backwards also allows the algorithm to learn even if the ini
 
 Each phase estimation operation provided with Q# takes a different set of inputs parameterizing the quality that is demanded out of the final estimate $\hat{\phi}$.
 These various inputs, however, all share several inputs in common, such that partial application over the quality parameters results in a common signature.
-For example, the <xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation> discussed in the next section has the following signature:
+For example, the [RobustPhaseEstimation](xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation) operation has the following signature:
 
 ```qsharp
 operation RobustPhaseEstimation(bitsPrecision : Int, oracle : DiscreteOracle, eigenstate : Qubit[])  : Double
