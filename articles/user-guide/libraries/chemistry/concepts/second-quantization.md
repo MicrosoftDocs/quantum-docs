@@ -17,7 +17,7 @@ Second quantization looks at the problem of electronic structure through a diffe
 Rather than assigning each of the $N_e$ electrons to a specific state (or orbital), second quantization tracks each orbital and stores whether there is an electron present in each of them and at the same time automatically ensures symmetry properties of the corresponding wave function.
 This is important because it allows quantum chemistry models to be specified without having to worry about anti-symmetrizing the input state (as is required for fermions) and also because second quantization allows such models to be simulated using small quantum computers.
 
-As an example of second quantization in action, let's assume that $\psi_0\cdots \psi_{N-1}$ are an orthonormal set of spatial orbitals.
+As an example of second quantization in action, assume that $\psi_0\cdots \psi_{N-1}$ are an orthonormal set of spatial orbitals.
 These orbitals are chosen to represent the system as accurately as possible within the finite basis set considered.
 A common example of such orbitals are atomic orbitals which form an eigenbasis for the hydrogen atom.
 Because electrons have two spin states, two electrons can be crammed into each such spatial orbital.
@@ -33,11 +33,11 @@ using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
 ```
 
 ```csharp
-    // First, we assign an orbital index, say `5`. Note that we use 0-indexing,
+    // First, assign an orbital index, say `5`. Note that 0-indexing is used,
     // so this is the 6th orbital.
     var orbitalIdx = 5;
 
-    // Second, we assign a spin index, say `Spin.u` for spin up or `Spin.d` for spin down.
+    // Second, assign a spin index, say `Spin.u` for spin up or `Spin.d` for spin down.
     var spin = Spin.d;
 
     // the spin-orbital (5, ↓) is then
@@ -46,7 +46,7 @@ using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
     // A tuple `(int, Spin)` is also implicitly recognized as a spin-orbital.
     (int, Spin) tuple = (orbitalIdx, spin);
 
-    // We explicitly specify the type of `spinOrbital1` to demonstrate
+    // Explicitly specify the type of `spinOrbital1` to demonstrate
     // the implicit cast to `SpinOrbital`.
     SpinOrbital spinOrbital1 = tuple;
 ```
@@ -57,10 +57,10 @@ Another possible enumeration is $h(j,\sigma) = 2*j + \sigma$.
 The quantum chemistry library can use these conventions, and the spin-orbitals in such an encoding can be instantiated as follows:
 
 ```csharp
-    // Let us use the spin orbital created in the previous snippet.
+    // Use the spin orbital created in the previous snippet.
     var spinOrbital = new SpinOrbital(5, Spin.d);
 
-    // Let us set the total number of orbitals to be say, `7`.
+    // Set the total number of orbitals to be say, `7`.
     var nOrbitals = 7;
 
     // This converts a spin-orbital index to a unique integer, in this case `12`,
@@ -118,7 +118,7 @@ $$
 
 Note that here $a^\dagger_1 \ket{1}_1=0$ and $a_1 \ket{0}_1$ yield the zero-vector not $\ket{0}_1$.
 Such operators are therefore neither Hermitian nor unitary.
-General creation and annihilation operators are represented using the [LadderOperator<TIndex> Class](xref:Microsoft.Quantum.Chemistry.LadderOperators.LadderOperator`1).
+General creation and annihilation operators are represented using the [LadderOperator\<TIndex\> Class](xref:Microsoft.Quantum.Chemistry.LadderOperators.LadderOperator`1).
 For example, a single creation operator is represented as 
 
 ```csharp
@@ -128,22 +128,22 @@ using Microsoft.Quantum.Chemistry;
 using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
 using Microsoft.Quantum.Chemistry.LadderOperators;
 using Microsoft.Quantum.Chemistry.Fermion;
-// We load this namespace for convenience methods for manipulating arrays.
+// Load this namespace for convenience methods for manipulating arrays.
 using System.Linq;
 ```
 
 ```csharp
-    // Let us use the spin orbital created in the previous snippet.
+    // Use the spin orbital created in the previous snippet.
     var spinOrbitalInteger = new SpinOrbital(5, Spin.d).ToInt();
 
-    // We specify either a creation or annihilation operator using 
+    // Specify either a creation or annihilation operator using 
     // the enumerable type `RaisingLowering.u` or `RaisingLowering.d`
     // respectively;
     var creationEnum = RaisingLowering.u;
 
     // The type representing a creation operator is then initialized 
-    // as follows. Here, we index these operators with integers.
-    // Hence we initialize the generic ladder operator with an
+    // as follows. Here, you index these operators with integers,
+    // initializing the generic ladder operator with an
     // integer index type.
     var ladderOperator0 = new LadderOperator<int>(creationEnum, spinOrbitalInteger);
 
@@ -161,17 +161,17 @@ $$
 This sequence of operators would be constructed within the Hamiltonian simulation library using C# code that is similar to the single-spin orbital case considered earlier:
 
 ```csharp
-    // Let us initialize an array of tuples representing the
+    // Initialize an array of tuples representing the
     // desired sequence of creation operators.
     var indices = new[] { (RaisingLowering.u, 1), (RaisingLowering.u, 2) };
 
-    // We can convert this array of tuples to a sequence of ladder
+    // Convert this array of tuples to a sequence of ladder
     // operators using the `ToLadderSequence()` methods.
     var ladderSequences = indices.ToLadderSequence();
 
     // Sequences of ladder operators are quite general. For instance,
     // they could be bosonic operators, instead of fermionic operators.
-    // We specialize them by constructing a `FermionTerm` representing 
+    // Specialize them by constructing a `FermionTerm` representing 
     // a fermion creation operator on the index `2` followed by `1`.
     var fermionTerm = new FermionTerm(ladderSequences);
 ```
@@ -207,14 +207,14 @@ n_i \ket{1}_i &= \ket{1}_i.
 Similar to the earlier `FermionTerm` examples, this number operator is constructed as follows:
 
 ```csharp
-    // Let us use a new method to compactly create a sequence of ladder
-    // operators. Note that we have omitted specifying whether the 
+    // Use a new method to compactly create a sequence of ladder
+    // operators. Note that it isn't specified whether the 
     // operators are raising or lowering. In this case, the first half
-    // will be raising operators, and the second half will be lowering 
+    // are raising operators, and the second half are lowering 
     // operators.
     var indices = new[] { 1, 1 }.ToLadderSequence();
 
-    // We now construct a `FermionTerm` representing an annihilation operator
+    // Use construct a `FermionTerm` representing an annihilation operator
     // on the index 1 followed by the creation operator on the index 1.
     var fermionTerm0 = new FermionTerm(indices);
 ```
@@ -226,20 +226,20 @@ $$
 a^\dagger_2 a^\dagger_1 \ket{0} = -a^\dagger_1 a^\dagger_2 \ket{0}.
 $$
 
-Such operators are said to 'anti-commute' and in general for any $i, j$ we have that
+Such operators are said to *anti-commute* and in general for any $i, j$ you have that
 
 $$
 a^\dagger_i a^\dagger_j  = -(1-\delta_{i,j})a^\dagger_j a^\dagger_i,\quad a^\dagger_i a_j =\delta_{i,j} - a_j a^\dagger_i.
 $$
 
-Thus the following two [LadderOperator<TIndex> Class](xref:Microsoft.Quantum.Chemistry.LadderOperators.LadderOperator`1) instances are considered inequivalent
+Thus the following two [LadderOperator\<TIndex\> Class](xref:Microsoft.Quantum.Chemistry.LadderOperators.LadderOperator`1) instances are considered inequivalent
 
 ```csharp
-    // Let us initialize an array of tuples representing the
+    // Initialize an array of tuples representing the
     // desired sequence of creation operators.
     var indices = new[] { (RaisingLowering.u, 1), (RaisingLowering.u, 2) };
 
-    // We now construct a `LadderSequence` representing a creation operator
+    // C construct a `LadderSequence` representing a creation operator
     // on the index 1 followed by 2, then a term with the reverse ordering.
     var ladderSequence = indices.ToLadderSequence();
     var ladderSequenceReversed = indices.Reverse().ToLadderSequence();
@@ -257,7 +257,7 @@ This motivates us to define a canonical ordering for every `FermionTerm`.
 Any `FermionTerm` is automatically put into canonical order as follows:
 
 ```csharp
-    // We now construct two `FermionTerms` that are equivalent with respect to
+    // Use construct two `FermionTerms` that are equivalent with respect to
     // anti-commutation up to a sign change.
     var fermionTerm0 = new FermionTerm(new[] { 0, 1, 1, 0 }.ToLadderSequence());
     var fermionTerm1 = new FermionTerm(new[] { 1, 0, 1, 0 }.ToLadderSequence());
@@ -274,7 +274,7 @@ Any `FermionTerm` is automatically put into canonical order as follows:
     var signEqual = sign0 == sign1;
 ```
 
-## Second-Quantized Fermionic Hamiltonian
+## Second-quantized fermionic Hamiltonian
 
 It is perhaps unsurprising that the Hamiltonian in [Quantum Models for Electronic Systems](xref:microsoft.quantum.libraries.overview-chemistry.concepts.quantummodels) can be written in terms of creation and annihilation operators.
 In particular, if $\psi\_j$ are the spin orbitals that form the basis then
@@ -317,15 +317,15 @@ Consider the Hamiltonian $\hat{H} = a_0^\dagger a_1 + a_1^\dagger a_0$.
 using Microsoft.Quantum.Chemistry;
 using Microsoft.Quantum.Chemistry.LadderOperators;
 using Microsoft.Quantum.Chemistry.Fermion;
-// We load this namespace for convenience methods for manipulating arrays.
+// Load this namespace for convenience methods for manipulating arrays.
 using System.Linq;
 ```
 
 ```csharp
-    // We create a `FermionHamiltonian` instance to store the fermion terms.
+    // Create a `FermionHamiltonian` instance to store the fermion terms.
     var hamiltonian = new FermionHamiltonian();
 
-    // We construct the terms to be added.
+    // Construct the terms to be added.
     var fermionTerm0 = new FermionTerm(new[] { 1, 0 }.ToLadderSequence());
     var fermionTerm1 = new FermionTerm(new[] { 0, 1 }.ToLadderSequence());
 
@@ -333,7 +333,7 @@ using System.Linq;
     var sequenceEqual = fermionTerm0 == fermionTerm1;
 
     // However, these terms are equal under Hermitian symmetry.
-    // We also take the opportunity to demonstrate equivalent constructors
+    // Also take the opportunity to demonstrate equivalent constructors
     // for hermitian fermion terms
     var hermitianFermionTerm0 = new HermitianFermionTerm(fermionTerm0);
     var hermitianFermionTerm1 = new HermitianFermionTerm(new[] { 0, 1 });
@@ -341,7 +341,7 @@ using System.Linq;
     // These Hermitian fermion terms are equal. The following Boolean is `true`.
     var hermitianSequenceEqual = hermitianFermionTerm0 == hermitianFermionTerm1;
 
-    // We add the terms to the Hamiltonian with the appropriate coefficient.
+    // Add the terms to the Hamiltonian with the appropriate coefficient.
     // Note that these terms are identical.
     hamiltonian.Add(hermitianFermionTerm0, 1.0);
     hamiltonian.Add(hermitianFermionTerm1, 1.0);
@@ -352,10 +352,10 @@ When adding terms to the Hamiltonian using `Add`, any non-Hermitian term such as
 Thus the following snippet also represents the same Hamiltonian:
 
 ```csharp
-    // We create a `FermionHamiltonian` instance to store the fermion terms.
+    // Create a `FermionHamiltonian` instance to store the fermion terms.
     var hamiltonian = new FermionHamiltonian();
 
-    // We construct the term to be added -- note the doubled coefficient.
+    // Construct the term to be added -- note the doubled coefficient.
     hamiltonian.Add(new HermitianFermionTerm(new[] { 1, 0 }), 2.0);
 ```
 
@@ -366,10 +366,10 @@ Alternatively, one may be interested in modifying already-existing terms in the 
 In these cases, you may combine equivalent terms as follows:
 
 ```csharp
-    // We create a `FermionHamiltonian` instance to store the fermion terms.
+    // Create a `FermionHamiltonian` instance to store the fermion terms.
     var hamiltonian = new FermionHamiltonian();
 
-    // We now create two Hermitian fermion terms that are equivalent with respect to
+    // Now create two Hermitian fermion terms that are equivalent with respect to
     // anti-commutation and Hermitian symmetry.
     var terms = new[] {
         (new[] { 0, 1, 1, 0 }, 1.0),

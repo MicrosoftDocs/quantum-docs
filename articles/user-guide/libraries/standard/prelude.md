@@ -278,7 +278,7 @@ First, since performing single-qubit measurements is quite common, the prelude d
 The [M](xref:Microsoft.Quantum.Intrinsic.M) operation measures the Pauli $Z$ operator on a single qubit, and has signature `(Qubit => Result)`.
 `M(q)` is equivalent to `Measure([PauliZ], [q])`.
 
-The [MultiM](xref:Microsoft.Quantum.Intrinsic.MultiM) operation measures the Pauli $Z$ operator *separately* on each of an array of qubits, returning the *array* of `Result` values obtained for each qubit.
+The [MultiM](xref:Microsoft.Quantum.Measurement.MultiM) operation measures the Pauli $Z$ operator *separately* on each of an array of qubits, returning the *array* of `Result` values obtained for each qubit.
 In some cases this can be optimized. 
 It has signature (`Qubit[] => Result[])`.
 `MultiM(qs)` is equivalent to:

@@ -42,11 +42,11 @@ A simple quantum classifier design can be compared to a traditional support vect
 
 By contrast, a quantum classifier uses the predictor $p(y│x,U(\theta))=〈U(\theta)x|M|U(\theta)x〉$, which is similar in spirit but technically quite different. Thus, when a straightforward amplitude encoding is used,  $p(y│x,U(\theta))$ is a quadratic form in the amplitudes of $x$, but the coefficients of this form are no longer learned independently; they are instead aggregated from the matrix elements of the circuit $U(\theta)$, which typically has significantly fewer learnable parameters $\theta$ than the dimension of the vector $x$. The polynomial degree of $p(y│x,U(\theta))$ in the original features can be increased to $2^l$ by using a quantum product encoding on $l$ copies of $x$.
 
-Our architecture explores relatively shallow circuits, which therefore must be *rapidly entangling* in order to capture all the correlations between the data features at all ranges. An example of the most useful rapidly entangling circuit component is shown on figure below. Even though a circuit with this geometry consists of only $3 n+1$ gates, the unitary weight matrix that it computes ensures significant cross-talk between $2^n$ features.
+Our architecture explores relatively shallow circuits, which therefore must be *rapidly entangling* in order to capture all the correlations between the data features at all ranges. An example of the most useful rapidly entangling circuit component is shown in the following figure. Even though a circuit with this geometry consists of only $3 n+1$ gates, the unitary weight matrix that it computes ensures significant cross-talk between $2^n$ features.
 
 ![Rapidly entangling quantum circuit on 5 qubits (with two cyclic layers).](~/media/5-qubit-qccc.png)
 
-The circuit in the above example consists of 6 single-qubit gates $(G_1,\ldots,G_5; G_{16})$ and 10 two-qubits gates $(G_6,\ldots,G_{15})$. Assuming that each of the gates is defined with one learnable parameter we have 16 learnable parameters, while the dimension of the 5-qubit Hilbert space is 32. Such circuit geometry can be easily generalized to any $n$-qubit register, when $n$ is odd, yielding circuits with $3 n+1$ parameters for $2^n$-dimensional feature space.
+The circuit in the earlier example consists of six single-qubit gates $(G_1,\ldots,G_5; G_{16})$ and ten two-qubits gates $(G_6,\ldots,G_{15})$. Assuming that each of the gates is defined with one learnable parameter we have 16 learnable parameters, while the dimension of the 5-qubit Hilbert space is 32. Such circuit geometry can be easily generalized to any $n$-qubit register, when $n$ is odd, yielding circuits with $3 n+1$ parameters for $2^n$-dimensional feature space.
 
 ## Classifier training as a supervised learning task
 
@@ -70,6 +70,7 @@ Here, it suffices to understand that the likelihood function $\mathcal{L}(\theta
 ### Classifier bias and training score
 
 Given some intermediate (or final) values of the parameters in $\theta$, we need to identify a single real value $b$ know as *classifier bias* to do the inference. The label inference rule works as follows: 
+
 - A sample $x$ is assigned label $y_2$ if and only if $P(M=y_2|U(\theta) x) + b > 0.5$  (RULE1) (otherwise it is assigned label $y_1$)
 
 Clearly $b$ must be in the interval $(-0.5,+0.5)$ to be meaningful.
@@ -80,4 +81,4 @@ A training case $(x,y) \in \mathcal{D}$ is considered a *misclassification* give
 
 This information should be enough to start playing with the code. However, if you want to learn more about this model, please read the original proposal: [*'Circuit-centric quantum classifiers', Maria Schuld, Alex Bocharov, Krysta Svore and Nathan Wiebe*](https://arxiv.org/abs/1804.00633)
 
-In addition to the code sample you will see in the next steps, you can also start exploring quantum classification in [this tutorial](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/QuantumClassification)
+In addition to the code sample described in [Basic classification](xref:microsoft.quantum.libraries.overview.machine-learning.basics), you can also start exploring quantum classification in this [Quantum classification tutorial](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/QuantumClassification).
