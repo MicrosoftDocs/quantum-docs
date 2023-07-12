@@ -2,7 +2,7 @@
 author: bradben
 description: A list of Azure Quantum hardware providers and their availability by country/region.
 ms.author: brbenefield
-ms.date: 06/05/2023
+ms.date: 07/12/2023
 ms.service: azure-quantum
 ms.subservice: core  
 ms.topic: reference
@@ -86,7 +86,7 @@ IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program a
 | Japan     | No     |
 | Jordan     | No     |
 | Kazakhstan     | No     |
-| Kenya     | No     |
+| Kenya     | Yes     |
 | Korea     | Yes    |
 | Kuwait     | No     |
 | Kyrgyzstan     | No     |
@@ -158,7 +158,7 @@ IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program a
 | Uzbekistan     | No     |
 | Vatican City     | No     |
 | Venezuela     | No     |
-| Vietnam     | No     |
+| Vietnam     | Yes     |
 | Yemen     | No     |
 | Zambia     | No     |
 | Zimbabwe     | No     |
