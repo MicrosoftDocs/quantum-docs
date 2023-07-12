@@ -67,7 +67,7 @@ $$
 
 This example says that $\ket{0}$ and $\ket{1}$ are orthogonal vectors, meaning that $\braket{0 | 1} = \braket{1 | 0} =0$.  Also, by definition $\braket{0 | 0} = \braket{1 | 1}=1$, which means that the two computational basis vectors can also be called *orthonormal*.
 
-These orthonormal properties will be useful in the following example. If you have a state $\ket{\psi} = {\frac{3}{5}} \ket{1} + {\frac{4}{5}} \ket{0}$, then because $\braket{1 | 0} =0$ the probability of measuring $1$ is 
+These orthonormal properties are used in the following example. If you have a state $\ket{\psi} = {\frac{3}{5}} \ket{1} + {\frac{4}{5}} \ket{0}$, then because $\braket{1 | 0} =0$ the probability of measuring $1$ is 
 
 $$
 \big|\braket{1 | \psi}\big|^2= \left|\frac{3}{5}\braket{1 | 1} +\frac{4}{5}\braket{1 | 0}\right|^2=\frac{9}{25}.
@@ -75,7 +75,7 @@ $$
 
 ## Tensor product notation
 
-Dirac notation also includes an implicit [tensor product](xref:microsoft.quantum.concepts.vectors#tensor-product) structure.  This structure is important because in quantum computing, the state vector described by two uncorrelated quantum registers is the tensor products of the two state vectors.  Concisely describing the tensor product structure, or lack thereof, is vital if you want to explain a quantum computation.  The tensor product structure implies that you can write $\psi \otimes \phi$ for any two quantum state vectors $\phi$ and $\psi$ as $\ket{\psi} \otimes \ket{\phi}$. However, by convention writing $\otimes$ in between the vectors is unnecessary, and you can write $\ket{\psi} \ket{\phi} = \ket{\psi \phi} $. For more information about vectors and tensor products, see [Vectors and Matrices in Quantum Computing](xref:microsoft.quantum.concepts.vectors). For example, the state with two qubits initialized to the zero state is given by
+Dirac notation also includes an implicit [tensor product](xref:microsoft.quantum.concepts.vectors#tensor-product) structure.  This structure is important because in quantum computing, the state vector described by two uncorrelated quantum registers is the tensor products of the two state vectors.  Concisely describing the tensor product structure, or lack thereof, is vital if you want to explain a quantum computation.  The tensor product structure implies that you can write $\psi \otimes \phi$ for any two quantum state vectors $\phi$ and $\psi$ as $\ket{\psi} \otimes \ket{\phi}$. However, by convention writing $\otimes$ in between the vectors is unnecessary, and you can write $\ket{\psi} \ket{\phi} = \ket{\psi \phi} $. For more information about vectors and tensor products, see [Vectors and Matrices in Quantum Computing](xref:microsoft.quantum.concepts.vectors). For example, the state with two qubits initialized to the zero state is:
 
 $$
 \ket{0} \otimes \ket{0} = \ket{0} \ket{0} = \ket{00} = \begin{bmatrix} 1 \\\\  0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\  0 \end{bmatrix} = \begin{bmatrix} 1 \\\\  0 \\\\  0 \\\\  0 \end{bmatrix}.
@@ -87,7 +87,7 @@ $$
 \ket{1}\ket{0}\ket{1} = \ket{101} = \ket{5}.
 $$
 
-Within this notation, $\ket{0}$ need not refer to a single-qubit state but rather to a *qubit register* that stores a binary encoding of $0$.  The differences between these two notations is usually clear from the context.  This convention is useful for simplifying the first example which can be written in any of the following ways:
+Within this notation, $\ket{0}$ need not refer to a single-qubit state but rather to a *qubit register* that stores a binary encoding of $0$.  The differences between these two notations are clear from the context.  This convention is useful for simplifying the first example, which can be written in any of the following ways:
 
 $$
 \begin{bmatrix}1 \\\\  0 \end{bmatrix}\otimes \cdots \otimes\begin{bmatrix}1 \\\\  0 \end{bmatrix} = \ket{0} \otimes \cdots \otimes \ket{0}= |0\cdots 0\rangle = \ket{0}^{\otimes n}
@@ -104,7 +104,7 @@ H^{\otimes n} \ket{0} = \frac{1}{2^{n/2}} \sum_{j=0}^{2^n-1} \ket{j} = \ket{+}^{
 $$
 
 Here you may wonder why the sum goes from $0$ to $2^{n}-1$ for $n$ bits.  First, note that there are $2^{n}$ different configurations that $n$ bits can take.  You can see this by noting that one bit can take $2$ values but two bits can take $4$ values and so forth. In general, this means that there are $2^n$ different possible bit strings but the largest value encoded in any of them $1\cdots 1=2^n-1$ and hence it is the upper limit for the sum.
-As a side note, in this example you did not use $\ket{+}^{\otimes n}=\ket{+}$ in analogy to $\ket{0}^{\otimes n} = \ket{0}$. This notational convention is usually reserved for the computational basis state with every qubit initialized to zero.  While such a convention would be sensible in this case, it's not employed in the quantum computing literature.
+As a side note, in this example you did not use $\ket{+}^{\otimes n}=\ket{+}$ in analogy to $\ket{0}^{\otimes n} = \ket{0}$. This notational convention is reserved for the computational basis state with every qubit initialized to zero.  While such a convention is sensible in this case, it's not employed in the quantum computing literature.
 
 ## Express linearity with Dirac notation
 
@@ -134,7 +134,7 @@ Ketbras are often called projectors because they project a quantum state onto a 
 
   $$\ket{\psi} \rightarrow \frac{(\ket{0} \bra{0})\ket{\psi}}{|\braket{0 | \psi}|}= \ket{0},$$
 
-as you would expect if you were to measure the state and find it to be $\ket{0}$.  To reiterate, such projectors cannot be applied on a state in a quantum computer deterministically.  Instead, they can at best be applied randomly with the result $\ket{0}$ appearing with some fixed probability.  The probability of such a measurement succeeding can be written as the expectation value of the quantum projector in the state
+as you would expect if you measured the state and found it to be $\ket{0}$.  To reiterate, such projectors cannot be applied on a state in a quantum computer deterministically.  Instead, they can at best be applied randomly with the result $\ket{0}$ appearing with some fixed probability.  The probability of such a measurement succeeding can be written as the expectation value of the quantum projector in the state
 
 $$
 \bra{\psi} (\ket{0} \bra{0})\ket{\psi} = |\braket{\psi | 0}|^2,
@@ -183,9 +183,9 @@ Together, these conditions guarantee that $\rho$ can be thought of as an ensembl
 
 Pure quantum states are those that are characterized by a single ket vector or wavefunction, and cannot be written as a statistical mixture (or *convex combination*) of other quantum states. A mixed quantum state is a statistical ensemble of pure states. 
 
-On a Bloch sphere, pure states are represented by a point on the surface of the sphere, whereas mixed states are represented by an interior point. The completely mixed state of a single qubit is represented by the center of the sphere, by symmetry. The purity of a state can be visualized as the degree in which it is close to the surface of the sphere.
+On a Bloch sphere, pure states are represented by a point on the surface of the sphere, whereas mixed states are represented by an interior point. The mixed state of a single qubit is represented by the center of the sphere, by symmetry. The purity of a state can be visualized as the degree in which it is close to the surface of the sphere.
 
-This concept of representing the state as a matrix, rather than a vector, is often convenient because it gives a convenient way of representing probability calculations, and also allows one to describe both statistical uncertainty as well as quantum uncertainty within the same formalism.
+This concept of representing the state as a matrix, rather than a vector, is often convenient because it gives a convenient way of representing probability calculations, and also allows you to describe both statistical uncertainty and quantum uncertainty within the same formalism.
 
 >[!TIP]
 > The QuTiP library is a helpful Python library when working with quantum states. You can write quantum states in QuTiP notation, using qt.basis(2, i) to represent $\ket{i}$ on a single qubit. To learn more about QuTiP methods and features, see the [QuTiP user guide](https://qutip.org/docs/latest/guide/guide.html).
