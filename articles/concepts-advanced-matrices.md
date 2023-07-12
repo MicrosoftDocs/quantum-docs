@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn about eigenvectors, eigenvalues, and matrix exponentials, the fundamental tools used to describe and simulate quantum algorithms.
 ms.author: sonialopez
-ms.date: 02/01/2021
+ms.date: 06/09/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -13,7 +13,7 @@ uid: microsoft.quantum.concepts.matrix-advanced
 
 # Advanced matrix concepts #
 
-This article explores the concepts of [*eigenvalues, eigenvectors*,](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) and [*exponentials*](https://en.wikipedia.org/wiki/Matrix_exponential). These concepts form a fundamental set of matrix tools that are used to describe and implement quantum algorithms.
+This article explores the concepts of [*eigenvalues, eigenvectors*,](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) and [*exponentials*](https://en.wikipedia.org/wiki/Matrix_exponential). These concepts form a fundamental set of matrix tools that are used to describe and implement quantum algorithms. For the basics of vectors and matrices as they apply to quantum computing, see [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra) and [Vectors and matrices](xref:microsoft.quantum.concepts.vectors). 
 
 ## Eigenvalues and eigenvectors ##
 
@@ -70,3 +70,11 @@ By applying this property to the above expansion of the matrix exponential, grou
 $$e^{iBx}=\boldone \cos(x)+ iB\sin(x)$$
 
 holds for any real value $x$. This trick is especially useful because it allows you to reason about the actions that matrix exponentials have, even if the dimension of $B$ is exponentially large, for the special case when $B$ is involutory.
+
+## Next steps
+
+- [The qubit](xref:microsoft.quantum.concepts.qubit)
+- [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)
+- [Dirac notation](xref:microsoft.quantum.concepts.dirac)
+- [Pauli measurements](xref:microsoft.quantum.concepts.pauli)
+- [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)

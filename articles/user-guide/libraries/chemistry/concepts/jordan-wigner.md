@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the Jordan-Wigner Representation, which maps Hamiltonian operators to unitary matrices that can more easily implemented on a quantum computer.
 ms.author: brbenefield
-ms.date: 10/10/2022
+ms.date: 06/21/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -11,9 +11,9 @@ title: Jordan-Wigner Representation
 uid: microsoft.quantum.libraries.overview-chemistry.concepts.jordanwigner
 ---
 
-# Jordan-Wigner Representation
+# Jordan-Wigner representation
 
-While second quantized Hamiltonians are conveniently represented in terms of $a^\dagger$ (creation) and $a$ (annihilation), these operations are not fundamental operations in quantum computers.
+While [second quantized Hamiltonians](xref:microsoft.quantum.libraries.overview-chemistry.concepts.secondquantization) are conveniently represented in terms of $a^\dagger$ (creation) and $a$ (annihilation), these operations aren't fundamental operations in quantum computers.
 As a result, if you wish it implement them on a quantum computer, you need to map the operators to unitary matrices that can be implemented on a quantum computer.
 The Jordan–Wigner representation gives one such map.
 However, others such as the Bravyi–Kitaev representation also exist and have their own relative advantages and disadvantages.
@@ -37,10 +37,10 @@ where $X_j$ and $Y_j$ are the Pauli-$X$ and -$Y$ operators acting on qubit $j$.
 
 The Azure Quantum chemistry library uses $\ket{0}$ to represent an unoccupied spin-orbital.
 This shows that for a single spin orbital it is easy to represent creation and annihilation operators in terms of unitary matrices that quantum computers understand.
- Note that while $X$ and $Y$ are unitary $a^\dagger$ and $a$ are not.
- You will see later that this does not pose a challenge for simulation.
+ Note that while $X$ and $Y$ are unitary, $a^\dagger$ and $a$ are not.
+ You'll see later that this doesn't pose a challenge for simulation.
 
-One problem that remains is that while the above construction works for a single spin orbital, it fails for systems with two or more spin orbitals.
+One problem that remains is that while the previous construction works for a single spin orbital, it fails for systems with two or more spin orbitals.
 Since Fermions are antisymmetric, you know that $a^\dagger_j a^\dagger_k = - a^\dagger_k a^\dagger_j$ for any $j$ and $k$.
 However,
 
@@ -48,7 +48,7 @@ $$
 \left(\frac{X_j - iY_j}{2}\right)\left(\frac{X_k - iY_k}{2}\right) = \left(\frac{X_k - iY_k}{2}\right) \left(\frac{X_j - iY_j}{2}\right).
 $$
 
-In other words, the two creation operators do not anti-commute as required.
+In other words, the two creation operators don't anti-commute as required.
 This can be remedied though in a straightforward, if inelegant fashion.
 The fix is to note that Pauli operators naturally anti-commute.
 In particular, $XZ = -ZX$ and $YZ=-ZY$.
@@ -71,13 +71,23 @@ $$
 n_j = a^\dagger_j a_j = \frac{(1-Z_j)}{2}.
 $$
 
-## Constructing Hamiltonians in Jordan-Wigner Representation
+## Constructing Hamiltonians in Jordan-Wigner representation
 
-Once you have invoked the Jordan-Wigner representation translating the Hamiltonian to a sum of Pauli operators is straight forward.
-One simply has to replace each of the $a^\dagger$ and $a$ operators in the Fermionic Hamiltonian with the strings of Pauli-operators given above.
-When one performs this substitution, there are only five classes of terms within the Hamiltonian.
+Once you have invoked the Jordan-Wigner representation, translating the Hamiltonian to a sum of Pauli operators is straight forward.
+You simply have to replace each of the $a^\dagger$ and $a$ operators in the Fermionic Hamiltonian with the strings of Pauli-operators shown earlier.
+When you perform this substitution, there are only five classes of terms within the Hamiltonian.
 These five classes correspond to the different ways you can pick the $p,q$ and $p,q,r,s$ in the one-body and the two-body terms in the Hamiltonian.
 These five classes, for the case where $p>q>r>s$ and real-valued orbitals, are
+
+
+1. h_{pp}a_p^\dagger a_p &= \sum_p \frac{h_{pp}}{2}(1 - Z_p)\\\\
+2. h_{pq}(a_p^\dagger a_q + a^\dagger_q a_p) &= \frac{h_{pq}}{2}\left(\prod_{j=q+1}^{p-1} Z_j \right)\left( X_pX_q + Y_pY_q\right)\\\\
+3. h_{pqqp} n_p n_q &=  \frac{h_{pqqp}}{4}\left(1-Z_p - Z_q +Z_pZ_q \right)\\\\
+4. H_{pqqr} &= \frac{h_{pqqr}}{2}\left(\prod_{j=r+1}^{p-1} Z_j \right)\left( X_pX_r + Y_pY_r\right)\left(\frac{1-Z_q}{2}\right)\\\\
+5. H_{pqrs} &= \frac{h_{pqrs}}{8}\prod_{j=s+1}^{r-1} Z_j\prod_{k=q+1}^{p-1} Z_k \Big(XXXX - XXYY+XYXY\nonumber\\\\
+&\qquad\qquad\qquad\qquad\qquad+YXXY+YXYX-YYXX\nonumber\\\\
+&\qquad\qquad\qquad\qquad\qquad+XYYX+YYYY\Big)
+
 
 \begin{align}
 h_{pp}a_p^\dagger a_p &= \sum_p \frac{h_{pp}}{2}(1 - Z_p)\\\\
