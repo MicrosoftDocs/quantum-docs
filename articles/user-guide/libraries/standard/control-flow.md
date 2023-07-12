@@ -33,7 +33,7 @@ for idxQubit in 0..nQubits - 2 {
 }
 ```
 
-Expressed in terms of the [ApplyToEachCA](xref:Microsoft.Quantum.Canon.ApplyToEachCA) operation and array manipulation functions such as the[Zipped](xref:Microsoft.Quantum.Arrays.Zipped) function, however, this is much shorter and easier to read:
+Expressed in terms of the [ApplyToEachCA](xref:Microsoft.Quantum.Canon.ApplyToEachCA) operation and array manipulation functions such as the [Zipped](xref:Microsoft.Quantum.Arrays.Zipped) function, however, this is much shorter and easier to read:
 
 ```qsharp
 ApplyToEachCA(CNOT, Zip(register[0..nQubits - 2], register[1..nQubits - 1]));
