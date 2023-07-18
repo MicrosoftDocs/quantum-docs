@@ -405,5 +405,15 @@
 			"redirect_url": "/azure/quantum/optimization-deprecation-warning",
 			"redirect_document_id": false
 		},
+		{
+			"source_path": "articles/optimization-workspace.md",
+			"redirect_url": "/azure/quantum/workspace-reference",
+			"redirect_document_id": true
+		},
+		{
+			"source_path": "articles/optimization-job-reference.md",
+			"redirect_url": "/azure/quantum/job-reference",
+			"redirect_document_id": true
+		}
 	]
 }
