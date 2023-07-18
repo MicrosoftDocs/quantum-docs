@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to work with jobs and sessions.
-ms.date: 06/26/2023
+ms.date: 07/18/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -14,6 +14,9 @@ uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 # How to manage sessions
 
 In this article, you'll learn how to work with sessions. With sessions, you can group one or more jobs against a single target, which allows you to manage jobs effectively. For more information, see [Interactive quantum computing: sessions](xref:microsoft.quantum.hybrid.interactive).
+
+> [!NOTE]
+>  Sessions are managed with Python, even when running Q# inline code. Currently sessions can’t be initiated directly by Q#, for more information see “Q# + Python” section of [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
 
 ## Retrieve sessions, list sessions, and list jobs of sessions
 
