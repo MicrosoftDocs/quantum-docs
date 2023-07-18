@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn about the input and output parameters of the Resource Estimator in Azure Quantum and how to customized them.
-ms.date: 06/22/2023
+ms.date: 07/18/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -139,7 +139,7 @@ For reference, the complete predefined qubit parameters are as follows:
 }
 ```
 
-#### Custom predefined qubit parameters
+#### Customize predefined qubit parameters
 
 You can customize predefined qubit parameters by specifying the name and then updating any of the other values. For example, to decrease the error rate of two-qubit joint measurement in `qubit_maj_ns_e4`, write:
 
@@ -262,7 +262,7 @@ The exact parameters for each predefined QEC scheme (including a crossing pre-fa
 }
 ```
 
-#### Custom predefined QEC schemes
+#### Customize predefined QEC schemes
 
 You can customize predefined QEC schemes by specifying the name and then updating any of the other values. For example, to increase the crossing pre-factor in the floquet code, write:
 
@@ -276,7 +276,7 @@ You can customize predefined QEC schemes by specifying the name and then updatin
 }
 ```
 
-#### Custom your QEC schemes
+#### Customize your QEC schemes
 
 The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `crossingPrefactor` $a$ and the `errorCorrectionThreshold` $p^\*$. Further, you need to specify the `logicalCycleTime`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `physicalQubitsPerLogicalQubit`, that is, the number of physical qubits required to encode one logical qubit based on the code distance. 
 
@@ -293,12 +293,12 @@ You can use the following code as a template for QEC schemes:
 }
 ```
 
-Inside the formulas, you can use the variables `oneQubitGateTime`, `twoQubitGateTime`, `oneQubitMeasurementTime`, and `twoQubitJointMeasurementTime`, whose values are taken from the corresponding field from the [physical qubit parameters](#custom-predefined-qubit-parameters), as well as the variable `eccDistance` for the code distance computed for the logical qubit, based on the physical qubit properties, the error correction threshold, and the crossing prefactor. The time variables and `eccDistance` can be used to describe the `logicalCycleTime` formula. For the formula `physicalQubitsPerLogicalQubit` only the `eccDistance` can be used.
+Inside the formulas, you can use the variables `oneQubitGateTime`, `twoQubitGateTime`, `oneQubitMeasurementTime`, and `twoQubitJointMeasurementTime`, whose values are taken from the corresponding field from the [physical qubit parameters](#customize-predefined-qubit-parameters), as well as the variable `eccDistance` for the code distance computed for the logical qubit, based on the physical qubit properties, the error correction threshold, and the crossing prefactor. The time variables and `eccDistance` can be used to describe the `logicalCycleTime` formula. For the formula `physicalQubitsPerLogicalQubit` only the `eccDistance` can be used.
 
 
 ### Error budget 
 
-The total error budget $\epsilon$ sets the overall allowed error for the algorithm, that is, the number of times it's allowed to unsuccess. Its global value must be between 0 and 1 and the default value is 0.001, which corresponds to 0.1%. In other words, the algorithm is allowed to fail once in 1000 executions. This parameter is highly application specific. 
+The total error budget $\epsilon$ sets the overall tolerated error for the algorithm, that is, the allowed failure probability of the algorithm. Its global value must be between 0 and 1 and the default value is 0.001, which corresponds to 0.1%. In other words, the algorithm is allowed to unsuccess a maximum of once in 1000 executions. This parameter is highly application specific. 
 
 For example, if you're running Shor’s algorithm for factoring integers, a large value for the error budget may be tolerated as one can check that the outputs are indeed the prime factors of the input. On the other hand, a smaller error budget may be needed for an algorithm solving a problem with a solution, which can't be efficiently verified. 
 
@@ -348,7 +348,7 @@ For more information, see [How the Resource Estimator works](xref:microsoft.quan
 |Output data name|Description|
 |---|----|
 |Runtime|This is a runtime estimate in nanoseconds for the execution time of the algorithm. In general, the execution time corresponds to the duration of one logical cycle multiplied by the logical depth, that is, the number of logical cycles to run the algorithm. If however the duration of a single T-factory (T factory runtime) is larger than the algorithm runtime, the number of logical cycles is extended artificially in order to exceed the runtime of a single T-factory.|
-|Quantum operations per second (rQOPS)| The number of reliable quantum operations, that is, operations that are implemented using quantum error correction in order to achieve operational error rates. rQOPS is normalized to seconds to quantify the capability of a machine without being tied to the runtime of any particular algorithm. This number is computed as $\text{Logical qubits}*\text{Clock frequency}$, where \text{Clock frequency}$ is the number of logical cycles per second.|
+|Quantum operations per second (rQOPS)| The number of reliable quantum operations, that is, operations that are implemented using quantum error correction in order to achieve operational error rates. rQOPS is normalized to seconds to quantify the capability of a machine without being tied to the runtime of any particular algorithm. This number is computed as $\text{Logical qubits}*\text{Clock frequency}$, where $\text{Clock frequency}$ is the number of logical cycles per second.|
 |Physical qubits |Total number of physical qubits, which is the sum of the number of physical qubits to implement the algorithm logic, and the number of physical qubits for running the T factories that are responsible to produce the required T states that are consumed by the algorithm.|
 
 rQOPS provides a simple way to capture the overall system capability by combining several aspects of the system. The number of logical qubits captures the size of the largest application that can be run. The clock frequency distills the underlying physical qubit's gate speeds and the performance of the error correction scheme that runs on top of the physical qubits.
@@ -415,8 +415,8 @@ rQOPS provides a simple way to capture the overall system capability by combinin
 
 |Output data name|Description|
 |---|----|
-|Total error budget | The total error budget sets the overall allowed error for the algorithm, that is, the number of times it is allowed to fail. Its value must be between 0 and 1 and the default value is 0.001 (corresponding to 0.1%), which means that the algorithm is allowed to fail once in 1000 executions. If there are no rotation gates in the input algorithm, the error budget is uniformly distributed to logical errors and T state errors.|
-|Logical error probability | Probability of at least one logical error, which is one third of the total error budget if the input algorithm contains rotation with gates with arbitrary angles, or one half of it, otherwise.|
+|Total error budget | The total error budget sets the overall tolerated error for the algorithm, that is, the allowed failure probability of the algorithm. Its value must be between 0 and 1. The default value is 0.001 (corresponding to 0.1%), which means that the algorithm is allowed to unsuccess a maximum of once in 1000 executions. If there are no rotation gates in the input algorithm, the error budget is uniformly distributed to logical errors and T state errors.|
+|Logical error probability | Probability of at least one logical error. It's one third of the total error budget if the input algorithm contains rotation gates with arbitrary angles, or one half of it, otherwise.|
 |T distillation error probability | Probability of at least one faulty T distillation, which  is one third of the total error budget if the input algorithm contains rotation with gates with arbitrary angles, or one half of it, otherwise.|
 |Rotation synthesis error probability | Probability of at least one failed rotation synthesis, which is one third of the total error budget.|
 
