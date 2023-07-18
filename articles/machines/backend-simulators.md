@@ -28,34 +28,28 @@ For more information, see the [IonQ provider](xref:microsoft.quantum.providers.i
 
 ## QCI
 
-The QCI simulator is designed to model QCI hardware. Although the simulator is
-ideal with regard to quantum noise, it accurately reflects precision and
-accuracy of classical calculations on 18 bit signed arithmetic on integers and
-fixed-point registers. Before simulating, it completes a full compilation and
-thereby validates the program against hardware constraints.
-
-The QCI simulator currently supports 8 qubits in a ring topology and will let you
-simulate up to X shots. The simulator is always available and never in a degraded
-or unavailable state. Contact support@quantumcircuits.com for help.
-
-Quantum Circuits, Inc. (QCI) is a full stack quantum computing start-up that's
-on a mission to deliver the world's first useful quantum computers. At QCI,
-we’re building full-stack quantum computing systems based on superconducting
-circuit technology.  Unique to our hardware is the use of resonators as the core
-of our quantum computing resource.  These elements provide an efficient means of
-encoding quantum information in superpositions of microwave photons, which
-unlocks powerful error correction capability.
+Quantum Circuits, Inc. (QCI) is building full-stack quantum computing systems
+based on superconducting circuit technology. Unique to QCI hardware is the use
+of resonators as the core of their quantum computing resource. These elements
+provide an efficient means of encoding quantum information in superpositions of
+microwave photons, which unlocks powerful error correction capability.
 
 Measurement-based feedback and real-time classical calculations are key features
-of our control paradigm.  We’ve integrated this functionality into our advanced
-Quantum Intermediate Representation (QIR) profile, which enables users to unlock
-new classes of quantum applications.
+of QCI's control paradigm. They are integrated into its advanced Quantum
+Intermediate Representation (QIR) profile.  This enables users to unlock new
+classes of quantum applications.
 
-Tightly couple your classical and quantum calculations to craft efficient and
-fast hybrid algorithms.  Implement control logic with mathematical expressions
-based on measurement results in real-time.
+The QCI simulator is designed to model QCI hardware. Although the simulator is
+ideal with regard to quantum noise, it reflects precision and accuracy of
+classical arithmetic on 18-bit signed integer and fixed-point registers. Before
+simulating, it completes a full compilation and thereby validates the program
+against hardware constraints.
 
-Run on our systems and discover something new.
+The QCI simulator currently supports eight qubits in a ring topology and lets
+you simulate up to 1000000 shots. The simulator is always available.
+
+Please contact support@quantumcircuits.com for support and visit
+www.quantumcircuits.com for more information.
 
 - Job type: `Simulation`
 - Data Format: `microsoft.qir.v1`
