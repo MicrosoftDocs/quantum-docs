@@ -16,7 +16,7 @@ uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 In this article, you learn how to work with sessions. With sessions, you can group one or more jobs against a single target, which allows you to manage jobs effectively. For more information, see [Interactive quantum computing: sessions](xref:microsoft.quantum.hybrid.interactive).
 
 > [!NOTE]
->  Sessions are managed with Python, even when running Q# inline code. Currently sessions can’t be initiated directly by Q#, for more information, see “Q# + Python” section of [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
+>  Sessions are managed with Python, even when running Q# inline code. For more information, see “Q# + Python” section of [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
 
 ## Retrieve sessions, list sessions, and list jobs of sessions
 
@@ -119,7 +119,7 @@ operation GenerateRandomBits(n: Int, angle: Double[]) : Result[] {
 1. If you use the `n` parameter as the size of the qubit array, its size isn't known until runtime. To solve it, use qubit registers whose size is known at compile time, `use qubits = Qubit[2]`.
 1. If you use arrays as entry-point parameters, the size of these arrays isn't known until runtime. To solve it, use individual `Double` parameters instead of an array, `operation GenerateRandomBits(angle1: Double[], angle2: Double[]) : Result[]`.
 
-Sessions need to be submitted in Python even when using inline Q# code. You can use `"arguments"` to pass arguments individually to each job submission. 
+Currently sessions are managed exclusively with Python. You can use `"arguments"` to pass arguments individually into your Q# operation to each job submission. 
 
 ```python
 with target.open_session(name="Q# session of three jobs") as session:
