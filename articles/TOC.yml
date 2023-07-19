@@ -23,150 +23,6 @@
     href: how-to-submit-jobs.md
   - name: Set up a local environment with the QDK
     href: install-overview-qdk.md
-- name: Resource Estimation
-  items: 
-  - name: An introduction to resource estimation
-    href: intro-to-resource-estimation.md
-  - name: Run your first resource estimate
-    href: quickstart-microsoft-resources-estimator.md
-  - name: Use different SDKs and IDEs with Resource Estimator
-    href: how-to-submit-re-jobs.md  
-  - name: Customize resource estimates to machine characteristics
-    href: overview-resources-estimator.md
-  - name: Learn how the Resource Estimator works
-    href: learn-how-the-resource-estimator-works.md
-  - name: Get the most out of the Resource Estimator
-    href: how-to-work-with-re.md
-  - name: Resource Estimation for double-factorized chemistry
-    href: tutorial-resource-estimator-chemistry.md
-  - name: Resource Estimation with QIR
-    href: tutorial-resource-estimator-qir.md
-- name: Quantum Machine Learning
-  href: overview-quantum-machine-learning.md
-- name: Hybrid quantum computing (QC)
-  items: 
-  - name: An introduction to hybrid QC
-    href: hybrid-computing-overview.md
-  - name: Batch hybrid QC
-    href: hybrid-computing-batch.md
-  - name: Interactive hybrid QC
-    items:
-    - name: Get started with sessions
-      href: hybrid-computing-interactive.md
-    - name: Manage sessions
-      href: how-to-work-with-sessions.md    
-  - name: Integrated hybrid QC
-    href: hybrid-computing-integrated.md
-  - name: Distributed hybrid QC
-    href: hybrid-computing-distributed.md
-  - name: Concepts for hybrid QC
-    href: hybrid-computing-concepts.md
-- name: Quantum programming
-  href: user-guide/toc.yml
-- name: Concepts
-  items:
-    - name: "Quantum computing history & background"
-      href: concepts-overview.md
-    - name: Linear algebra for quantum computing
-      href: overview-algebra-for-quantum-computing.md
-    - name: Vectors and matrices
-      href: concepts-vectors-and-matrices.md
-    - name: Advanced matrix concepts
-      href: concepts-advanced-matrices.md
-    - name: The qubit
-      href: concepts-the-qubit.md
-    - name: Multiple qubits
-      href: concepts-multiple-qubits.md
-    - name: Dirac notation
-      href: concepts-dirac-notation.md
-    - name: Pauli measurements
-      href: concepts-pauli-measurements.md
-    - name: T gates & T factories
-      href: concepts-tfactories.md
-    - name: Quantum circuits
-      href: concepts-circuits.md
-    - name: Quantum oracles
-      href: concepts-oracles.md
-    - name: Open quantum systems
-      href: concepts-open-systems.md
-    - name: Theory of Grover's algorithm
-      href: concepts-grovers.md
-    - name: Quantum Intermediate Representation
-      href: concepts-qir.md
-- name: Troubleshooting
-  items:
-  - name: Troubleshooting integrated hybrid QC
-    href: hybrid-computing-troubleshooting.md
-  - name: Troubleshooting issues
-    href: azure-quantum-common-issues.md
-  - name: Q# compiler messages
-    href: qs-compiler-messages/toc.yml
-- name: Quantum simulators
-  href: machines/toc.yml
-- name: Quantum providers
-  items:
-  - name: Quantum computing providers
-    href: qc-target-list.md
-  - name: Quantum computing profile targets
-    href: quantum-computing-target-profiles.md 
-  - name: IonQ
-    items:
-    - name: IonQ provider & targets
-      href: provider-ionq.md
-    - name: IonQ support policy
-      href: provider-support-ionq.md
-  - name: Quantinuum
-    items:
-    - name: Quantinuum provider & targets
-      href: provider-quantinuum.md
-    - name: Quantinuum support policy
-      href: provider-support-quantinuum.md
-  - name: Rigetti
-    items:
-    - name: Rigetti provider & targets
-      href: provider-rigetti.md
-    - name: Rigetti support policy
-      href: provider-support-rigetti.md
-- name: Optimization
-  items:
-  - name: Deprecation message
-    href: optimization-deprecation-warning.md
-  - name: Toshiba SQBM+
-    items:
-    - name: Toshiba SQBM+ provider & targets
-      href: provider-toshiba.md
-    - name: Toshiba SQBM+ support policy
-      href: provider-support-toshiba.md
-  - name: Run your first optimization job
-    href: quickstart-microsoft-qio-portal.md
-- name: Python SDK
-  items:
-  - name: Azure.Quantum
-    items:
-    - name: Workspace
-      href: workspace-reference.md
-    - name: Job
-      href: job-reference.md
-  - name: Azure.Quantum.Optimization
-    items:
-    - name: Problem
-      href: optimization-problem.md
-    - name: ProblemType
-      href: optimization-problem-type.md
-    - name: StreamingProblem
-      href: optimization-streaming-problem.md
-    - name: Term
-      href: optimization-term.md
-    - name: RangeSchedule
-      href: optimization-rangeschedule.md
-  - name: Usage
-    items:
-    - name: Express a problem
-      href: optimization-express-optimization-problem.md
-    - name: Job management
-      href: optimization-job-management.md
-    - name: Re-use problem definitions
-      href: optimization-reuse-problem-definitions.md
 - name: Manage Azure Quantum
   items:
   - name: Users and workspaces
@@ -223,6 +79,120 @@
       href: /azure/architecture/example-scenario/quantum/loosely-coupled-quantum-computing-job?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
     - name: Tightly coupled quantum computing
       href: /azure/architecture/example-scenario/quantum/tightly-coupled-quantum-computing-job?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
+- name: Hybrid quantum computing (QC)
+  items: 
+  - name: An introduction to hybrid QC
+    href: hybrid-computing-overview.md
+  - name: Batch hybrid QC
+    href: hybrid-computing-batch.md
+  - name: Interactive hybrid QC
+    items:
+    - name: Get started with sessions
+      href: hybrid-computing-interactive.md
+    - name: Manage sessions
+      href: how-to-work-with-sessions.md    
+  - name: Integrated hybrid QC
+    href: hybrid-computing-integrated.md
+  - name: Distributed hybrid QC
+    href: hybrid-computing-distributed.md
+  - name: Concepts for hybrid QC
+    href: hybrid-computing-concepts.md
+- name: Resource Estimation
+  items: 
+  - name: An introduction to resource estimation
+    href: intro-to-resource-estimation.md
+  - name: Run your first resource estimate
+    href: quickstart-microsoft-resources-estimator.md
+  - name: Use different SDKs and IDEs with Resource Estimator
+    href: how-to-submit-re-jobs.md  
+  - name: Customize resource estimates to machine characteristics
+    href: overview-resources-estimator.md
+  - name: Learn how the Resource Estimator works
+    href: learn-how-the-resource-estimator-works.md
+  - name: Get the most out of the Resource Estimator
+    href: how-to-work-with-re.md
+  - name: Resource Estimation for double-factorized chemistry
+    href: tutorial-resource-estimator-chemistry.md
+  - name: Resource Estimation with QIR
+    href: tutorial-resource-estimator-qir.md
+- name: Quantum programming
+  href: user-guide/toc.yml
+- name: Quantum simulators
+  href: machines/toc.yml
+- name: Quantum providers
+  items:
+  - name: Quantum computing providers
+    href: qc-target-list.md
+  - name: Quantum computing profile targets
+    href: quantum-computing-target-profiles.md 
+  - name: IonQ
+    items:
+    - name: IonQ provider & targets
+      href: provider-ionq.md
+    - name: IonQ support policy
+      href: provider-support-ionq.md
+  - name: Quantinuum
+    items:
+    - name: Quantinuum provider & targets
+      href: provider-quantinuum.md
+    - name: Quantinuum support policy
+      href: provider-support-quantinuum.md
+  - name: Rigetti
+    items:
+    - name: Rigetti provider & targets
+      href: provider-rigetti.md
+    - name: Rigetti support policy
+      href: provider-support-rigetti.md
+- name: Concepts
+  items:
+    - name: "Quantum computing history & background"
+      href: concepts-overview.md
+    - name: Linear algebra for quantum computing
+      href: overview-algebra-for-quantum-computing.md
+    - name: Vectors and matrices
+      href: concepts-vectors-and-matrices.md
+    - name: Advanced matrix concepts
+      href: concepts-advanced-matrices.md
+    - name: The qubit
+      href: concepts-the-qubit.md
+    - name: Multiple qubits
+      href: concepts-multiple-qubits.md
+    - name: Dirac notation
+      href: concepts-dirac-notation.md
+    - name: Pauli measurements
+      href: concepts-pauli-measurements.md
+    - name: T gates & T factories
+      href: concepts-tfactories.md
+    - name: Quantum circuits
+      href: concepts-circuits.md
+    - name: Quantum oracles
+      href: concepts-oracles.md
+    - name: Open quantum systems
+      href: concepts-open-systems.md
+    - name: Theory of Grover's algorithm
+      href: concepts-grovers.md
+    - name: Quantum Intermediate Representation
+      href: concepts-qir.md
+- name: Troubleshooting
+  items:
+  - name: Troubleshooting integrated hybrid QC
+    href: hybrid-computing-troubleshooting.md
+  - name: Troubleshooting issues
+    href: azure-quantum-common-issues.md
+  - name: Q# compiler messages
+    href: qs-compiler-messages/toc.yml
+- name: Optimization
+  items:
+  - name: Deprecation message
+    href: optimization-deprecation-warning.md
+  - name: Toshiba SQBM+
+    items:
+    - name: Toshiba SQBM+ provider & targets
+      href: provider-toshiba.md
+    - name: Toshiba SQBM+ support policy
+      href: provider-support-toshiba.md
+  - name: Run your first optimization job
+    href: quickstart-microsoft-qio-portal.md
 - name: Resources
   items:
   - name: Glossary
