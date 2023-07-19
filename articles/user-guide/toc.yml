@@ -28,7 +28,7 @@
     href: quickstart-microsoft-provider-format-portal.md
   - name: Adapt Qiskit samples to Azure Quantum
     href: how-to-adapt-qiskit.md
-- name: Learn Q# with the Quantum Katas
+  - name: Learn Q# with the Quantum Katas
     href: tutorial-qdk-intro-to-katas.md
 - name: Q# language guide
   href: language/toc.yml
