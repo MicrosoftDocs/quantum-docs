@@ -4,6 +4,20 @@
   href: host-programs.md
 - name: Testing and debugging
   href: testing-debugging.md
+- name: Perform long running experiments
+  href: ../how-to-long-running-experiments.md
+- name: Tutorials
+  items:
+  - name: Quantum random number generator
+    href: ../tutorial-qdk-quantum-random-number-generator.md
+  - name: Explore entanglement with Q#
+    href: ../tutorial-qdk-explore-entanglement.md
+  - name: Implement Grover's search algorithm
+    href: ../tutorial-qdk-grovers-search.md
+  - name: Qubit-level programming
+    href: ../tutorial-qdk-qubit-level-program.md
+  - name: Publish a Q# job as an Azure Function
+    href: ../how-to-publish-qsharp-job-as-azurefunction.md
 - name: Q# language guide
   href: language/toc.yml
 - name: Q# libraries
@@ -26,3 +40,11 @@
       href: ../quickstart-microsoft-cirq.md
     - name: Submit a circuit in a provider-specific format
       href: ../quickstart-microsoft-provider-format.md
+- name: Samples
+  items:
+  - name: Samples for using Azure Quantum for quantum computing >>
+    href: https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum
+  - name: Samples for using Azure Quantum optimization solvers >>
+    href: https://github.com/microsoft/qio-samples
+  - name: Q# code samples >>
+    href: /samples/browse/?languages=qsharp

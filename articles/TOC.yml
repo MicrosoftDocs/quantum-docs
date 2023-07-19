@@ -3,8 +3,6 @@
 - name: Get started
   expanded: true
   items:
-  - name: What is Azure Quantum?
-    href: overview-azure-quantum.md
   - name: Explore Azure Quantum
     href: get-started-azure-quantum.md
   - name: Create an Azure Quantum workspace
@@ -15,12 +13,10 @@
     href: how-to-submit-jobs.md
   - name: Set up a local environment with the QDK
     href: install-overview-qdk.md
-  - name: Share access to your Azure Quantum workspace
-    href: how-to-share-access-quantum-workspace.md
-  - name: Perform long running experiments
-    href: how-to-long-running-experiments.md
 - name: Overview
   items:
+  - name: What is Azure Quantum?
+    href: overview-azure-quantum.md
   - name: Understanding Quantum computing
     href: overview-understanding-quantum-computing.md
   - name: What are Q# and the Quantum Development Kit
@@ -65,8 +61,6 @@
     href: hybrid-computing-distributed.md
   - name: Concepts for hybrid QC
     href: hybrid-computing-concepts.md
-  - name: Troubleshooting integrated hybrid QC
-    href: hybrid-computing-troubleshooting.md
 - name: Run quantum circuits with Python
   items:
   - name: Submit a circuit with Qiskit
@@ -77,19 +71,7 @@
     href: quickstart-microsoft-provider-format-portal.md
   - name: Adapt Qiskit samples to Azure Quantum
     href: how-to-adapt-qiskit.md
-- name: Tutorials
-  items:
-  - name: Quantum random number generator
-    href: tutorial-qdk-quantum-random-number-generator.md
-  - name: Explore entanglement with Q#
-    href: tutorial-qdk-explore-entanglement.md
-  - name: Implement Grover's search algorithm
-    href: tutorial-qdk-grovers-search.md
-  - name: Qubit-level programming
-    href: tutorial-qdk-qubit-level-program.md
-  - name: Publish a Q# job as an Azure Function
-    href: how-to-publish-qsharp-job-as-azurefunction.md
-- name: The Q# user guide
+- name: Quantum programming
   href: user-guide/toc.yml
 - name: Concepts
   items:
@@ -123,6 +105,10 @@
       href: concepts-qir.md
 - name: Troubleshooting
   items:
+  - name: Troubleshooting integrated hybrid QC
+    href: hybrid-computing-troubleshooting.md
+  - name: Troubleshooting issues
+    href: azure-quantum-common-issues.md
   - name: Q# compiler messages
     href: qs-compiler-messages/toc.yml
 - name: Quantum simulators
@@ -201,6 +187,8 @@
       href: manage-workspace-access.md
     - name: Add a group to your Azure Quantum workspace
       href: bulk-add-users-to-a-workspace.md
+    - name: Share access to your Azure Quantum workspace
+      href: how-to-share-access-quantum-workspace.md
     - name: Work with jobs
       href: how-to-work-with-jobs.md
     - name: Work with Azure Quantum using the Azure CLI 
@@ -251,8 +239,6 @@
     href: azure-quantum-glossary.md
   - name: Azure Quantum provider global availability
     href: provider-global-availability.md
-  - name: Troubleshooting issues
-    href: azure-quantum-common-issues.md
   - name: Build your skills with Microsoft training >>
     href: /training/paths/quantum-computing-fundamentals/
   - name: Learn Q# with the Quantum Katas
@@ -277,13 +263,5 @@
       href: contributing-style-guide.md
     - name: Q# API design guide for contributors
       href: contributing-api-design-principles.md
-- name: Samples
-  items:
-  - name: Samples for using Azure Quantum for quantum computing >>
-    href: https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum
-  - name: Samples for using Azure Quantum optimization solvers >>
-    href: https://github.com/microsoft/qio-samples
-  - name: Q# code samples >>
-    href: /samples/browse/?languages=qsharp
 - name: Release notes
   href: release-notes.md
