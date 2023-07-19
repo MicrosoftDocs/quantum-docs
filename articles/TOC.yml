@@ -1,5 +1,15 @@
 - name: Azure Quantum documentation
   href: index.yml
+- name: Overview
+  items:
+  - name: What is Azure Quantum?
+    href: overview-azure-quantum.md
+  - name: Understanding Quantum computing
+    href: overview-understanding-quantum-computing.md
+  - name: What are Q# and the Quantum Development Kit
+    href: overview-what-is-qsharp-and-qdk.md
+  - name: Microsoft's quantum machine
+    href: overview-microsoft-quantum-machine.md
 - name: Get started
   expanded: true
   items:
@@ -13,16 +23,6 @@
     href: how-to-submit-jobs.md
   - name: Set up a local environment with the QDK
     href: install-overview-qdk.md
-- name: Overview
-  items:
-  - name: What is Azure Quantum?
-    href: overview-azure-quantum.md
-  - name: Understanding Quantum computing
-    href: overview-understanding-quantum-computing.md
-  - name: What are Q# and the Quantum Development Kit
-    href: overview-what-is-qsharp-and-qdk.md
-  - name: Microsoft's quantum machine
-    href: overview-microsoft-quantum-machine.md
 - name: Resource Estimation
   items: 
   - name: An introduction to resource estimation
@@ -61,16 +61,6 @@
     href: hybrid-computing-distributed.md
   - name: Concepts for hybrid QC
     href: hybrid-computing-concepts.md
-- name: Run quantum circuits with Python
-  items:
-  - name: Submit a circuit with Qiskit
-    href: quickstart-microsoft-qiskit-portal.md
-  - name: Submit a circuit with Cirq
-    href: quickstart-microsoft-cirq-portal.md
-  - name: Submit a circuit in provider-specific format
-    href: quickstart-microsoft-provider-format-portal.md
-  - name: Adapt Qiskit samples to Azure Quantum
-    href: how-to-adapt-qiskit.md
 - name: Quantum programming
   href: user-guide/toc.yml
 - name: Concepts
@@ -241,8 +231,6 @@
     href: provider-global-availability.md
   - name: Build your skills with Microsoft training >>
     href: /training/paths/quantum-computing-fundamentals/
-  - name: Learn Q# with the Quantum Katas
-    href: tutorial-qdk-intro-to-katas.md
   - name: Further reading
     href: further-reading-qdk.md
   - name: Contribute to Azure Quantum
