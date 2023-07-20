@@ -21,13 +21,13 @@
 - name: Run quantum circuits with Python
   items:
   - name: Submit a circuit with Qiskit
-    href: quickstart-microsoft-qiskit-portal.md
+    href: ../quickstart-microsoft-qiskit-portal.md
   - name: Submit a circuit with Cirq
-    href: quickstart-microsoft-cirq-portal.md
+    href: ../quickstart-microsoft-cirq-portal.md
   - name: Submit a circuit in provider-specific format
-    href: quickstart-microsoft-provider-format-portal.md
+    href: ../quickstart-microsoft-provider-format-portal.md
   - name: Adapt Qiskit samples to Azure Quantum
-    href: how-to-adapt-qiskit.md
+    href: ../how-to-adapt-qiskit.md
 - name: Python SDK
   items:
   - name: Azure.Quantum
@@ -79,7 +79,7 @@
     - name: Submit a circuit in a provider-specific format
       href: ../quickstart-microsoft-provider-format.md
 - name: Quantum Machine Learning
-  href: overview-quantum-machine-learning.md
+  href: ../overview-quantum-machine-learning.md
 - name: Learn Q# with the Quantum Katas
   href: ../tutorial-qdk-intro-to-katas.md
 - name: Samples
