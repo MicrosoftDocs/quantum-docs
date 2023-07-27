@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 06/05/2023
+ms.date: 07/31/2023
 author: SoniaLopezBravo
 ms.author: sonialopez
 ms.service: azure-quantum
@@ -16,6 +16,16 @@ uid: microsoft.quantum.relnotes-qdk
 This article outlines updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview).
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
+
+## 2023-07-31
+
+### QDK version 0.28.??????
+
+- Breaking change: Removed the ability to submit jobs to Microsoft QIO targets or 1QBit targets, as these have now been deprecated.
+- Added rQOPS to results summary output table.
+- Added a support of custom distillation units. Resource Estimator now accepts your custom definitions of distillation algorithms which can be applied to physical or logical qubits.
+- Added more granularity of physical qubit error definitions: idle error rates for all types of qubits and 'readout' and 'process' error rates for Majorana qubit measurements.
+- You can now use the result.diagram endpoint to visualize your algorithm's estimated runtime and space requirements.
 
 ## 2023-06-05
 
