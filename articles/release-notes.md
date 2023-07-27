@@ -21,11 +21,11 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 ### QDK version 0.28.??????
 
-- Breaking change: Removed the ability to submit jobs to Microsoft QIO targets or 1QBit targets, as these have now been deprecated.
-- Added rQOPS to results summary output table.
 - Added a support of custom distillation units. Resource Estimator now accepts your custom definitions of distillation algorithms that can be applied to physical or logical qubits.
 - Added more granularity of physical qubit error definitions: idle error rates for all types of qubits and 'readout' and 'process' error rates for Majorana qubit measurements.
 - You can now use the result.diagram endpoint to visualize your algorithm's estimated runtime and space requirements.
+- Added [rQOPS](/azure/quantum/overview-resources-estimator#physical-qubits) to the resource estimation results summary.
+- Breaking change: Removed the ability to submit jobs to Microsoft QIO targets or 1QBit targets, as these have now been deprecated.
 
 ## 2023-06-05
 
