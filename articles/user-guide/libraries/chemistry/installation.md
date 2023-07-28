@@ -32,7 +32,7 @@ To get up and running using NWChem together with the Quantum Development Kit, us
 - Get started using existing Broombridge files provided with the samples at [IntegralData/YAML](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/IntegralData/YAML).
 - Use the [EMSL Arrows Builder for the Quantum Development Kit](https://arrows.emsl.pnnl.gov/api/qsharp_chem) which is a web-based frontend to NWChem, to generate new Broombridge-formatted molecular input files.  
 - Use the [Docker image](https://hub.docker.com/r/nwchemorg/nwchem-qc/) provided by PNNL to run NWChem, or
-- [Compile NWChem](http://www.nwchem-sw.org/index.php/Compiling_NWChem) for your platform.
+- [Compile NWChem](https://nwchemgit.github.io/Compiling-NWChem.html) for your platform.
 
 See [End-to-end with NWChem](xref:microsoft.quantum.libraries.overview-chemistry.examples.overview.endtoend) for more information on how to work with NWChem to chemical models to analyze with the Quantum Development Kit chemistry library.
 
