@@ -19,7 +19,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 ## 2023-07-31
 
-### QDK version 0.28.??????
+### QDK version 0.28.291394
 
 - Added a support of custom distillation units. Resource Estimator now accepts your custom definitions of distillation algorithms that can be applied to physical or logical qubits.
 - Added more granularity of physical qubit error definitions: idle error rates for all types of qubits and 'readout' and 'process' error rates for Majorana qubit measurements.
