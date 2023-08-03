@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn about the input and output parameters of the Resource Estimator in Azure Quantum and how to customized them.
-ms.date: 07/18/2023
+ms.date: 08/03/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -24,6 +24,7 @@ Therefore, the Resource Estimator takes a set of inputs, with pre-defined values
 - A [Quantum Error Correction (QEC) scheme](#quantum-error-correction-schemes), `qecScheme`, which is the assumed quantum error correction scheme.
 - An [error budget](#error-budget), `errorBudget`, which is the overall allowed error, that is, the number of times the program is allowed to unsuccess.
 - [Constraints](#constraints) on the component-level, `constraints`, which are the number of logical cycles and the number of T factory copies.
+- A [distillation units](#distillation-units) parameter, `distillationUnitSpecifications `, to specify T factories distillation algorithms.
 
 ### Physical qubit parameters
 
@@ -336,6 +337,83 @@ You can use `constraints` parameters to apply constraints on the component-level
 - Logical depth:  If `logicalDepthFactor` has a value greater than 1, the initial number of logical cycles, also called *logical depth*, is multiplied by this number. By considering the logical depth, you can increase the number of T factories executed in a given time, resulting in fewer T factory copies needed to produce the same number of T states. When you reduce the number of T factory copies, the algorithm runtime increases accordingly. The scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.
 
 - Maximum number of T factories: You can set a limit on the number of T factory copies using `maxTFactories`. The Resource Estimator determines the resources required by selecting the optimal number of T factory copies that minimizes the number of physical qubits used, without considering the time overhead. The `maxTFactories` parameter limits the maximum number of copies, and therefore adjust the number of logical cycles accordingly.
+
+### Distillation units
+
+You can provide custom specifications for T factories distillation algorithms with the `distillationUnitSpecifications` parameter.
+
+```JSON
+{
+    "distillationUnitSpecifications": [
+        specification1,
+        specification2,
+        ...
+    ]
+}
+```
+Each specification can be either predefined or custom. Predefined specifications can be defined with the following schema:
+
+```JSON
+{
+    "distillationUnitSpecifications": [
+        "name": <String>,
+    ]
+}
+```
+
+with the value for the `name` parameter from the following list: `15-1 RM` and 15-1 space-efficient. 
+
+#### Customize your distillation units
+
+Custom distillation units can be defined as follows:
+
+```JSON
+{
+    "distillationUnitSpecifications": [
+        "displayName": <String>, 
+        "numInputTs": <int>,
+        "numOutputTs": <int>,
+        "failureProbabilityFormula": <String>,
+        "outputErrorRateFormula": <String>,
+        "physicalQubitSpecification": <protocol specific parameters>,
+        "logicalQubitSpecification": <protocol specific parameters>,
+        "logicalQubitSpecificationFirstRoundOverride": <protocol specific parameters>,
+    ]
+}
+```
+
+All numeric parameters expected to be positive. The `displayName` specifies how the distillation unit will be displayed in output results.
+
+> [!NOTE]
+> Using predefined distillation units provides better performance comparing with custom ones.
+
+The formulas for `failureProbabilityFormula` and `outputErrorRateFormula` are custom formulas with basic arithmetic operations, constants and only three parameters:
+
+- `cliffordErrorRate`, also denoted as `c`.
+- `readoutErrorRate`, also denoted as `r`.
+- `inputErrorRate`, also denoted as `z`.
+  
+See the following examples of custom formulas using long and short notation.
+
+|Parameter|Long formula|Short formula|
+|---|---|---|
+|`failureProbabilityFormula`| {"Custom": "15.0 * inputErrorRate + 356.0 * cliffordErrorRate"} | {"Custom": "15.0 * z + 356.0 * c"} |
+|`outputErrorRateFormula`| {"Custom": "35.0 * inputErrorRate ^ 3 + 7.1 * cliffordErrorRate"} | {"Custom": "35.0 * z ^ 3 + 7.1 * c"}|
+
+Those examples illustrate formulas used by default within the standard implementation.
+Parameters `physicalQubitSpecification`, `logicalQubitSpecification`, `logicalQubitSpecificationFirstRoundOverride` are optional. At least one of parameters `physicalQubitSpecification` or `logicalQubitSpecification` should be provided. If the former only is provided, the distillation unit can be applied to physical qubits. If the latter is provided, the distillation unit can be applied to logical qubits. If both are provided, the distillation unit can be applied to both types of qubits.
+
+`logicalQubitSpecificationFirstRoundOverride` can be provided only if `logicalQubitSpecification` specified. If so, it overrides values of `logicalQubitSpecification` in case if applied at the first round of distillation.
+
+The value <protocol specific parameters> should follow the scheme:
+
+{
+    "numUnitQubits": <int>,
+    "durationInQubitCycleTime": <double>
+}
+All numeric parameters expected to be positive.
+
+
 
 ## Output data
 
