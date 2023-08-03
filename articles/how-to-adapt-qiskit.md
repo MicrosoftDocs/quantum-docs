@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to adapt any Qiskit sample to run on Azure Quantum service. 
-ms.date: 05/02/2023
+ms.date: 08/02/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -81,9 +81,10 @@ As an example, consider the following Qiskit sample that uses a Variational Quan
 To run this sample on Azure Quantum, add this code after you have created the Azure Quantum backend, and add a line with `quantum_instance = QuantumInstance(backend)` when creating the VQC object.
 
 > [!NOTE]
-> To run the following sample you need to install Qiskit Machine Learning module.
+> To run the following sample you need to install Qiskit Machine Learning module. Run the following code and then restart the kernel.
 > 
 > ```python
+> # Restart the kernel after running this cell
 > !pip install qiskit-machine-learning
 > ```
 
