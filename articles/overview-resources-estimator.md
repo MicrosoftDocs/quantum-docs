@@ -340,18 +340,7 @@ You can use `constraints` parameters to apply constraints on the component-level
 
 ### Distillation units
 
-You can provide custom specifications for T factories distillation algorithms with the `distillationUnitSpecifications` parameter.
-
-```JSON
-{
-    "distillationUnitSpecifications": [
-        specification1,
-        specification2,
-        ...
-    ]
-}
-```
-Each specification can be either predefined or custom. Predefined specifications can be defined with the following schema:
+You can provide custom specifications for T factories distillation algorithms with the `distillationUnitSpecifications` parameter. The specification can be either predefined or custom. You can specify a predefined specification by selecting the distillation unit name: `15-1 RM` or `15-1 space-efficient`. 
 
 ```JSON
 {
@@ -360,12 +349,14 @@ Each specification can be either predefined or custom. Predefined specifications
     ]
 }
 ```
+In both cases, notation *15-1* stands for 15 input T states and 1 output T state. The `15-1 space-efficient` distillation unit uses fewer qubits than `15-1 RM` but requires more runtime. For more information, see [Table VI](https://arxiv.org/pdf/2211.07629.pdf#page=24).
 
-with the value for the `name` parameter from the following list: `15-1 RM` and 15-1 space-efficient. 
+> [!NOTE]
+> Using predefined distillation units provides better performance comparing with custom ones.
 
 #### Customize your distillation units
 
-Custom distillation units can be defined as follows:
+You can defined your custom distillation units as follows:
 
 ```JSON
 {
@@ -375,17 +366,25 @@ Custom distillation units can be defined as follows:
         "numOutputTs": <int>,
         "failureProbabilityFormula": <String>,
         "outputErrorRateFormula": <String>,
-        "physicalQubitSpecification": <protocol specific parameters>,
-        "logicalQubitSpecification": <protocol specific parameters>,
-        "logicalQubitSpecificationFirstRoundOverride": <protocol specific parameters>,
+        "physicalQubitSpecification": <protocol specific parameters>, 
+        "logicalQubitSpecification": <protocol specific parameters>, 
+        "logicalQubitSpecificationFirstRoundOverride": <protocol specific parameters>, // Only if "logicalQubitSpecification"
     ]
 }
 ```
 
 All numeric parameters expected to be positive. The `displayName` specifies how the distillation unit will be displayed in output results.
 
-> [!NOTE]
-> Using predefined distillation units provides better performance comparing with custom ones.
+At least one of parameters `physicalQubitSpecification` or `logicalQubitSpecification` should be provided. If the former only is provided, the distillation unit can be applied to physical qubits. If the latter is provided, the distillation unit can be applied to logical qubits. If both are provided, the distillation unit can be applied to both types of qubits.
+
+The parameter `logicalQubitSpecificationFirstRoundOverride` can be provided only if `logicalQubitSpecification` specified. If so, it overrides values of `logicalQubitSpecification` in case if applied at the first round of distillation. The value `<protocol specific parameters> ` that is required for `logicalQubitSpecificationFirstRoundOverride`should follow the scheme:
+
+```JSON
+{
+    "numUnitQubits": <int>,
+    "durationInQubitCycleTime": <double>
+}
+```
 
 The formulas for `failureProbabilityFormula` and `outputErrorRateFormula` are custom formulas with basic arithmetic operations, constants and only three parameters:
 
@@ -393,27 +392,12 @@ The formulas for `failureProbabilityFormula` and `outputErrorRateFormula` are cu
 - `readoutErrorRate`, also denoted as `r`.
 - `inputErrorRate`, also denoted as `z`.
   
-See the following examples of custom formulas using long and short notation.
+See the following examples of custom formulas using long and short notation. These examples illustrate formulas used by default within the standard implementation.
 
 |Parameter|Long formula|Short formula|
 |---|---|---|
 |`failureProbabilityFormula`| {"Custom": "15.0 * inputErrorRate + 356.0 * cliffordErrorRate"} | {"Custom": "15.0 * z + 356.0 * c"} |
 |`outputErrorRateFormula`| {"Custom": "35.0 * inputErrorRate ^ 3 + 7.1 * cliffordErrorRate"} | {"Custom": "35.0 * z ^ 3 + 7.1 * c"}|
-
-Those examples illustrate formulas used by default within the standard implementation.
-Parameters `physicalQubitSpecification`, `logicalQubitSpecification`, `logicalQubitSpecificationFirstRoundOverride` are optional. At least one of parameters `physicalQubitSpecification` or `logicalQubitSpecification` should be provided. If the former only is provided, the distillation unit can be applied to physical qubits. If the latter is provided, the distillation unit can be applied to logical qubits. If both are provided, the distillation unit can be applied to both types of qubits.
-
-`logicalQubitSpecificationFirstRoundOverride` can be provided only if `logicalQubitSpecification` specified. If so, it overrides values of `logicalQubitSpecification` in case if applied at the first round of distillation.
-
-The value <protocol specific parameters> should follow the scheme:
-
-{
-    "numUnitQubits": <int>,
-    "durationInQubitCycleTime": <double>
-}
-All numeric parameters expected to be positive.
-
-
 
 ## Output data
 
