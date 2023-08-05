@@ -111,7 +111,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 - Added support for [IonQ Aria QPU](https://cloudblogs.microsoft.com/quantum/2022/08/16/ionq-aria-is-available-now-exclusively-on-azure-quantum/) in Azure Quantum.
 - The operation `ApplyFunctionWithTableLookup` ([QuantumLibraries#607](https://github.com/microsoft/QuantumLibraries/issues/607)) has been added to the quantum libraries. This operation allows you to implement classical, real-valued functions up to a given precision using table lookup techniques. Thanks to Rajiv Krishnakumar (@rajkk1) for contributing this new feature to the Q# libraries.
-- The FPGA hardware option for Microsoft QIO solvers has been deprecated. Migration details can be found in the [Simulated Annealing solver documentation](xref:microsoft.quantum.optimization.simulated-annealing#simulated-annealing-fpga---deprecated).
+- The FPGA hardware option for Microsoft QIO solvers has been deprecated.
 
 ## 2022-07-26
 
@@ -276,7 +276,7 @@ demonstrating the use of the sparse simulator.
 ### QDK version 0.20.2110.171573
 
 - IQ# kernel [%azure.connect](/qsharp/api/iqsharp-magic/azure.connect) command no longer sets "West US" as the default location. Location parameter is now required.
-- The `azure-quantum` package now supports asynchronous I/O via the new `azure.quantum.aio` package. For more information, see [Solve a batch of problems](xref:microsoft.quantum.optimization.async-io).
+- The `azure-quantum` package now supports asynchronous I/O via the new `azure.quantum.aio` package.
 - Fixed an [issue](https://github.com/microsoft/qdk-python/issues/160): Qiskit jobs fetched with `AzureQuantumProvider.get_job()` can now use `job.result()` without running into a `KeyError`.
 - Fixed an [issue](https://github.com/microsoft/qdk-python/issues/164) that causes `azure.quantum.cirq` and `azure.quantum.qiskit`  to not be recognized by [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). The `azure.quantum.plugins` package is deprecated.  
 - Fixed an [issue](https://github.com/microsoft/iqsharp/issues/531) in IQ# in which job execution would fail if any operation defined in an external file wasn't supported on the given target.
@@ -351,7 +351,7 @@ demonstrating the use of the sparse simulator.
 
 ### QDK version 0.18.2106.148911
 
-- You can now [configure](xref:microsoft.quantum.optimization.apply-solver#returning-multiple-solutions) how many solutions you want returned from a solver run.
+- You can now configure how many solutions you want returned from a solver run.
 - A new NuGet package [Microsoft.Quantum.AutoSubstitution](https://www.nuget.org/packages/Microsoft.Quantum.AutoSubstitution/), which when added to a Q# project, allows you to annotate operations with the `SubstitutableOnTarget(AltOp, Sim)` attribute. It then calls `AltOp` instead of the annotated operation, whenever it's executed using `Sim`.
 - Integration with Azure-Identity provides more mechanisms to [authenticate](xref:microsoft.quantum.iqsharp.magic-ref.azure.connect) with Azure.
 - The .NET [Microsoft.Azure.Management.Quantum](https://www.nuget.org/packages/Microsoft.Azure.Management.Quantum) now returns the Restricted Access URL so you can know more/apply for a restricted access plan.
