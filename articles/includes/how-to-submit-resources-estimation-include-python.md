@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 03/07/2023
+ms.date: 08/07/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -69,14 +69,19 @@ operation EstimateMultiplication(bitwidth : Int) : Unit {
 
 ### Estimate the quantum algorithm
 
-Now, estimate the physical resources for this operation using the default assumptions. You can submit the operation to the Resource Estimator target using the `qsharp.azure.execute` function. This function calls the `EstimateMultiplication` operation and passes the operation argument `bitwidth=8`.
+Now, you estimate the physical resources for this operation using the default assumptions. You can submit the operation to the Resource Estimator target using the `qsharp.azure.execute` function. This function calls the `EstimateMultiplication` operation and passes the operation argument `bitwidth=8`.
 
 ```python
 result = qsharp.azure.execute(EstimateMultiplication, bitwidth=8)
 result
 ```
 
-The `qsharp.azure.execute` function creates a table that shows the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. For example, if you collapse the *Logical qubit parameters* group, you can see that the error correction code distance is 13. 
+The `qsharp.azure.execute` function creates a table that shows the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information.
+
+> [!TIP]
+> For a more compact version of the output table, you can use `result.summary`
+
+For example, if you collapse the *Logical qubit parameters* group of the results table, you can see that the error correction code distance is 13. 
 
 |Logical qubit parameter | Value |
 |----|---|
@@ -114,6 +119,22 @@ For example, the time to perform a single-qubit measurement and a single-qubit g
 > ```
 
 For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) of the Resource Estimator.
+
+#### Space-time diagrams
+
+The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can visualize this distribution to better understand the estimated space requirements for the algorithm.
+
+```python
+result.diagram.space
+```
+You can can also visualize the time required to execute the algorithm as it relates to each T factory invocation runtime and the number of T factory invocations.
+
+```python
+result.diagram.time
+```
+
+> [!NOTE]
+> You can't visualize the time and space diagrams in the same cell.
 
 ### Change the default values and estimate the algorithm
 
