@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn about the input and output parameters of the Resource Estimator in Azure Quantum and how to customized them.
-ms.date: 08/03/2023
+ms.date: 08/07/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -167,8 +167,23 @@ You can customize predefined qubit parameters by specifying the name and then up
 | `oneQubitGateErrorRate`        |  Error rate for single-qubit Clifford gate ($p$)                    |
 | `twoQubitGateErrorRate`        |  Error rate for two-qubit Clifford gate                             |
 | `tGateErrorRate`              | Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
+| `idleErrorRate`                 | Error rate corresponding to idling                                   |
 
-When not specified, the values for `twoQubitGateTime` and `tGateTime` default to `oneQubitGateTime` and the values for `twoQubitGateErrorRate` and `tGateErrorRate` default to `oneQubitGateErrorRate`.
+A minimum template for gate-based instrucition set with all required values is:
+
+```json
+{
+    "qubitParams": {
+        "instructionSet": "GateBased",
+        "oneQubitMeasurementTime": <time string>,
+        "oneQubitGateTime": <time string>,
+        "oneQubitMeasurementErrorRate": <double>,
+        "oneQubitGateErrorRate": <double>
+    }
+}
+```
+
+When not specified, the values for `twoQubitGateTime` and `tGateTime` default to `oneQubitGateTime`, the values for `twoQubitGateErrorRate` and `tGateErrorRate` default to `oneQubitGateErrorRate, and the value for `idleErrorRate` defaults to `oneQubitMeasurementErrorRate`.
 
 **Qubit parameters for Majorana qubits**
 
@@ -182,8 +197,44 @@ When not specified, the values for `twoQubitGateTime` and `tGateTime` default to
 | `oneQubitMeasurementErrorRate`  | Error rate for single-qubit measurement   |
 | `twoQubitJointMeasurementErrorRate`  | Error rate for two-qubit measurement                               |
 | `tGateErrorRate`              | Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
+| `idleErrorRate`                     | Error rate corresponding to idling                                  |
 
-When not specified, the values for `twoQubitJointMeasurementTime` and `tGateTime` default to `oneQubitGateTime` and the value for `twoQubitJointMeasurementErrorRate` defaults to `oneQubitMeasurementErrorRate`.
+A minimum template for Majorana based instruction set with all required values is:
+
+```json
+{
+    "qubitParams": {
+        "instructionSet": "Majorana",
+        "oneQubitMeasurementTime": <time string>,
+        "oneQubitMeasurementErrorRate": <double>,
+        "tGateErrorRate": <double>
+    }
+}
+```
+
+For `oneQubitMeasurementErrorRate` and `twoQubitJointMeasurementErrorRate`, you can specify the error rates corresponding to measurement readouts, `readout`, and measurement processing, `process`. These values can be either `<double>` numbers or pairs of numbers.
+
+```json
+{
+    "oneQubitMeasurementErrorRate": {
+        "process": <double>,
+        "readout": <double>
+    }
+}
+```
+and
+```json
+{
+    "twoQubitJointMeasurementErrorRate": {
+        "process": <double>,
+        "readout": <double>
+    }
+}
+```
+> [|NOTE]
+> If you specify a single numeric value for single-qubit and two-qubit error rates in Majorana qubit measurement, both readout and process error rates may be equal.
+
+When not specified, the values for `twoQubitJointMeasurementTime` and `tGateTime` default to `oneQubitGateTime`, and the value for `twoQubitJointMeasurementErrorRate` (both `readout` and `process`) and `idleErrorRate` default to `oneQubitMeasurementErrorRate`.
 
 > [!IMPORTANT]
 > All values that aren't specified will take a default value, for example, specifying `"qubit": {"oneQubitGateTime":"200 ns"}` will model a gate-based qubit in which both the two-qubit gate time and the one-qubit gate time are 200 ns. For units, you need to specify time strings, which are double-precision floating point numbers, followed by a space and the time unit for such values, where possible time suffixes are `ns`, `µs` (or `us`), `ms`, and `s`.  
