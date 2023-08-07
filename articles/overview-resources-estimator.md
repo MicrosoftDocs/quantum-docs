@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn about the input and output parameters of the Resource Estimator in Azure Quantum and how to customized them.
-ms.date: 07/18/2023
+ms.date: 08/07/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -24,6 +24,7 @@ Therefore, the Resource Estimator takes a set of inputs, with pre-defined values
 - A [Quantum Error Correction (QEC) scheme](#quantum-error-correction-schemes), `qecScheme`, which is the assumed quantum error correction scheme.
 - An [error budget](#error-budget), `errorBudget`, which is the overall allowed error, that is, the number of times the program is allowed to unsuccess.
 - [Constraints](#constraints) on the component-level, `constraints`, which are the number of logical cycles and the number of T factory copies.
+- A [distillation units](#distillation-units) parameter, `distillationUnitSpecifications`, to specify T factories distillation algorithms.
 
 ### Physical qubit parameters
 
@@ -166,8 +167,23 @@ You can customize predefined qubit parameters by specifying the name and then up
 | `oneQubitGateErrorRate`        |  Error rate for single-qubit Clifford gate ($p$)                    |
 | `twoQubitGateErrorRate`        |  Error rate for two-qubit Clifford gate                             |
 | `tGateErrorRate`              | Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
+| `idleErrorRate`                 | Error rate corresponding to idling                                   |
 
-When not specified, the values for `twoQubitGateTime` and `tGateTime` default to `oneQubitGateTime` and the values for `twoQubitGateErrorRate` and `tGateErrorRate` default to `oneQubitGateErrorRate`.
+A minimum template for gate-based instrucition set with all required values is:
+
+```json
+{
+    "qubitParams": {
+        "instructionSet": "GateBased",
+        "oneQubitMeasurementTime": <time string>,
+        "oneQubitGateTime": <time string>,
+        "oneQubitMeasurementErrorRate": <double>,
+        "oneQubitGateErrorRate": <double>
+    }
+}
+```
+
+When not specified, the values for `twoQubitGateTime` and `tGateTime` default to `oneQubitGateTime`, the values for `twoQubitGateErrorRate` and `tGateErrorRate` default to `oneQubitGateErrorRate`, and the value for `idleErrorRate` defaults to `oneQubitMeasurementErrorRate`.
 
 **Qubit parameters for Majorana qubits**
 
@@ -181,8 +197,44 @@ When not specified, the values for `twoQubitGateTime` and `tGateTime` default to
 | `oneQubitMeasurementErrorRate`  | Error rate for single-qubit measurement   |
 | `twoQubitJointMeasurementErrorRate`  | Error rate for two-qubit measurement                               |
 | `tGateErrorRate`              | Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
+| `idleErrorRate`                     | Error rate corresponding to idling                                  |
 
-When not specified, the values for `twoQubitJointMeasurementTime` and `tGateTime` default to `oneQubitGateTime` and the value for `twoQubitJointMeasurementErrorRate` defaults to `oneQubitMeasurementErrorRate`.
+A minimum template for Majorana based instruction set with all required values is:
+
+```json
+{
+    "qubitParams": {
+        "instructionSet": "Majorana",
+        "oneQubitMeasurementTime": <time string>,
+        "oneQubitMeasurementErrorRate": <double>,
+        "tGateErrorRate": <double>
+    }
+}
+```
+
+For `oneQubitMeasurementErrorRate` and `twoQubitJointMeasurementErrorRate`, you can specify the error rates corresponding to measurement readouts, `readout`, and measurement processing, `process`. These values can be either `<double>` numbers or pairs of numbers.
+
+```json
+{
+    "oneQubitMeasurementErrorRate": {
+        "process": <double>,
+        "readout": <double>
+    }
+}
+```
+and
+```json
+{
+    "twoQubitJointMeasurementErrorRate": {
+        "process": <double>,
+        "readout": <double>
+    }
+}
+```
+> [|NOTE]
+> If you specify a single numeric value for single-qubit and two-qubit error rates in Majorana qubit measurement, both readout and process error rates may be equal.
+
+When not specified, the values for `twoQubitJointMeasurementTime` and `tGateTime` default to `oneQubitGateTime`, and the value for `twoQubitJointMeasurementErrorRate` (both `readout` and `process`) and `idleErrorRate` default to `oneQubitMeasurementErrorRate`.
 
 > [!IMPORTANT]
 > All values that aren't specified will take a default value, for example, specifying `"qubit": {"oneQubitGateTime":"200 ns"}` will model a gate-based qubit in which both the two-qubit gate time and the one-qubit gate time are 200 ns. For units, you need to specify time strings, which are double-precision floating point numbers, followed by a space and the time unit for such values, where possible time suffixes are `ns`, `µs` (or `us`), `ms`, and `s`.  
@@ -336,6 +388,67 @@ You can use `constraints` parameters to apply constraints on the component-level
 - Logical depth:  If `logicalDepthFactor` has a value greater than 1, the initial number of logical cycles, also called *logical depth*, is multiplied by this number. By considering the logical depth, you can increase the number of T factories executed in a given time, resulting in fewer T factory copies needed to produce the same number of T states. When you reduce the number of T factory copies, the algorithm runtime increases accordingly. The scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.
 
 - Maximum number of T factories: You can set a limit on the number of T factory copies using `maxTFactories`. The Resource Estimator determines the resources required by selecting the optimal number of T factory copies that minimizes the number of physical qubits used, without considering the time overhead. The `maxTFactories` parameter limits the maximum number of copies, and therefore adjust the number of logical cycles accordingly.
+
+### Distillation units
+
+You can provide custom specifications for T factories distillation algorithms with the `distillationUnitSpecifications` parameter. The specification can be either predefined or custom. You can specify a predefined specification by selecting the distillation unit name: `15-1 RM` or `15-1 space-efficient`. 
+
+```JSON
+{
+    "distillationUnitSpecifications": [
+        "name": <string>,
+    ]
+}
+```
+In both cases, notation *15-1* stands for 15 input T states and 1 output T state. The `15-1 space-efficient` distillation unit uses fewer qubits than `15-1 RM` but requires more runtime. For more information, see [Table VI](https://arxiv.org/pdf/2211.07629.pdf#page=24).
+
+> [!NOTE]
+> Using predefined distillation units provides better performance comparing with custom ones.
+
+#### Customize your distillation units
+
+You can defined your custom distillation units as follows:
+
+```JSON
+{
+    "distillationUnitSpecifications": [
+        "displayName": <string>, 
+        "numInputTs": <int>,
+        "numOutputTs": <int>,
+        "failureProbabilityFormula": <string>,
+        "outputErrorRateFormula": <string>,
+        "physicalQubitSpecification": <protocol specific parameters>, 
+        "logicalQubitSpecification": <protocol specific parameters>, 
+        "logicalQubitSpecificationFirstRoundOverride": <protocol specific parameters>, // Only if "logicalQubitSpecification"
+    ]
+}
+```
+
+All numeric parameters are expected to be positive. The `displayName` specifies how the distillation unit will be displayed in output results.
+
+At least one of the parameters `physicalQubitSpecification` or `logicalQubitSpecification` should be provided. If only the former is provided, the distillation unit can be applied to physical qubits. If only the latter is provided, the distillation unit can be applied to logical qubits. If both are provided, the distillation unit can be applied to both types of qubits.
+
+The parameter `logicalQubitSpecificationFirstRoundOverride` can be provided only if `logicalQubitSpecification` is specified. If so, it overrides values of `logicalQubitSpecification` in case if applied at the first round of distillation. The value `<protocol specific parameters> ` that is required for `logicalQubitSpecificationFirstRoundOverride` should follow the scheme:
+
+```JSON
+{
+    "numUnitQubits": <int>,
+    "durationInQubitCycleTime": <double>
+}
+```
+
+The formulas for `failureProbabilityFormula` and `outputErrorRateFormula` are custom formulas with basic arithmetic operations, constants and only three parameters:
+
+- `cliffordErrorRate`, also denoted as `c`.
+- `readoutErrorRate`, also denoted as `r`.
+- `inputErrorRate`, also denoted as `z`.
+  
+See the following examples of custom formulas using long and short notation. These examples illustrate formulas used by default within the standard implementation.
+
+|Parameter|Long formula|Short formula|
+|---|---|---|
+|`failureProbabilityFormula`| {"Custom": "15.0 * inputErrorRate + 356.0 * cliffordErrorRate"} | {"Custom": "15.0 * z + 356.0 * c"} |
+|`outputErrorRateFormula`| {"Custom": "35.0 * inputErrorRate ^ 3 + 7.1 * cliffordErrorRate"} | {"Custom": "35.0 * z ^ 3 + 7.1 * c"}|
 
 ## Output data
 
