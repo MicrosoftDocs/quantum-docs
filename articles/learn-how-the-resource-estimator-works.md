@@ -60,7 +60,10 @@ The following diagram shows an example of the runtime of the algorithm (red) and
 
 <img src="~/media/resource-estimator-tfactory-plot.png" width="400" alt="Diagram showing the runtime of the algorithm (red) versus the runtime of one T factory (blue). Before the end of the algorithm, the T factory can run 8 times. If we need 30 T states, and T factory can run 8 times during runtime, then we need 4 copies of the T factories running in parallel to distill 30 T states.">
 
-Before the end of the algorithm, the T factory can run eight times in a distillation round. For example, if the [Algorithmic logical estimation](#algorithmic-logical-estimation) step calculates 30 T states, and a T factory can run eight times during runtime of the algorithm, then you need four copies of the T factory distillation round running in parallel to distill the 30 T states needed.
+Before the end of the algorithm, the T factory is invoked eight times in a distillation round. For example, if the [Algorithmic logical estimation](#algorithmic-logical-estimation) step calculates 30 T states, and a single T factory is invoked eight times during runtime of the algorithm, then you need four copies of the T factory distillation round running in parallel to distill the 30 T states needed.
+
+> [!NOTE]
+> Note that T factory copies and T factory invocations are not the same. 
 
 Since qubits are reused by different rounds, the number of physical qubits for one T factory is the maximum number of physical qubits used for one round. The runtime of the T factory is the sum of the runtimes in all rounds. 
 
@@ -71,18 +74,22 @@ For more information, see Appendix C of [Assessing requirements to scale to prac
 
 ### Physical resource estimation
 
-Finally, the overall physical resource estimation consists of total number of physical qubits and the runtime. The total number of physical qubits is calculated from the sum of the number of physical qubits required by the T factory copies that produce the T states that are consumed by the algorithm, plus the number of physical qubits required to execute the algorithm. 
-
-The total runtime of the algorithm is decided based on the number of instructions that need to be performed to run the algorithm. It's the runtime calculated in the [Algorithmic physical estimation](#algorithmic-physical-estimation) step. 
-
-
-The time chart shows the runtimes for the algorithm, and the runtime of a single T factory with all its invocations (possibly capped if there are too many invocations). The table lists the most important metrics that are used to compute these numbers. Note that the total runtime informs us about the number of T factory invocations.
-
-
+Finally, the overall physical resource estimation consists of total number of physical qubits and the runtime. The total number of physical qubits is calculated from the sum of the number of physical qubits required by the T factory copies that produce the T states that are consumed by the algorithm, plus the number of physical qubits required to execute the algorithm. The total runtime of the algorithm is decided based on the number of instructions that need to be performed to run the algorithm. It's the runtime calculated in the [Algorithmic physical estimation](#algorithmic-physical-estimation) step. 
 
 You can inspect the distribution of physical qubits used for the algorithm and the T factories using the space-time diagrams. The space diagram shows the proportion of these two. Note that the number of T factory copies contributes to the number of physical qubits for T factories.
 
-The time diagram shows the time required to execute the algorithm as it relates to each T factory invocation runtime and the number of T factory invocation. 
+```python
+result.diagram.space
+```
+
+:::image type="content" source="media/resource-estimator-space-diagram.png" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
+
+The time diagram shows the time required to execute the algorithm as it relates to each T factory invocation runtime and the number of T factory invocation (possibly capped if there are too many invocations). The table on the right side lists the most important metrics that are used to compute these numbers, which are described in the [T factory physical estimation](#t-factory-physical-estimation) previous step. Note that the number of T factory invocations is calculated based on the the total runtime.
+
+```python
+result.diagram.time
+```
+:::image type="content" source="media/resource-estimator-time-diagram.png" alt-text="Diagram showing the number of T factory invocations duirng the runtime of the algorithm. There's also a table with the breakdown of the number of T factory copies, number of T factory invocations, T states per invocation, etc.":::
 
 ## Assumptions
 
