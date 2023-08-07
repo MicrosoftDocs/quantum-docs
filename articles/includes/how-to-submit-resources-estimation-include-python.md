@@ -122,16 +122,21 @@ For more information, see [the full list of output data](xref:microsoft.quantum.
 
 #### Space-time diagrams
 
-The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can visualize this distribution to better understand the estimated space requirements for the algorithm.
+The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can visualize this distribution to better understand the estimated space requirements for the algorithm. 
 
 ```python
 result.diagram.space
 ```
-You can can also visualize the time required to execute the algorithm as it relates to each T factory invocation runtime and the number of T factory invocations.
+:::image type="content" source="media/resource-estimator-space-diagram.png" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
+
+You can can also visualize the time required to execute the algorithm, the T factory runtime and how many T factory invocations can run during the runtime of the algorithm. For more information, see [T factory physical estimation](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).
 
 ```python
 result.diagram.time
 ```
+:::image type="content" source="media/resource-estimator-time-diagram.png" alt-text="Diagram showing the number of T factory invocations during the runtime of the algorithm. There's also a table with the breakdown of the number of T factory copies, number of T factory invocations, T states per invocation, etc.":::
+
+Sinc the T factoy runtime is 83 microsecs, during the runtime of the algorithm, 6 milisecs, The T factory can be invoked a total of 73 times in a distillation round. Each invocation of the T factory produces 11 T states. Therefore, you need 11 copies of the T factory distillation round to get 
 
 > [!NOTE]
 > You can't visualize the time and space diagrams in the same cell.
