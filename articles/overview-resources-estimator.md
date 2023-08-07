@@ -412,11 +412,11 @@ You can defined your custom distillation units as follows:
 ```JSON
 {
     "distillationUnitSpecifications": [
-        "displayName": <String>, 
+        "displayName": <string>, 
         "numInputTs": <int>,
         "numOutputTs": <int>,
-        "failureProbabilityFormula": <String>,
-        "outputErrorRateFormula": <String>,
+        "failureProbabilityFormula": <string>,
+        "outputErrorRateFormula": <string>,
         "physicalQubitSpecification": <protocol specific parameters>, 
         "logicalQubitSpecification": <protocol specific parameters>, 
         "logicalQubitSpecificationFirstRoundOverride": <protocol specific parameters>, // Only if "logicalQubitSpecification"
