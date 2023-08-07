@@ -339,9 +339,11 @@ You can use `constraints` parameters to apply constraints on the component-level
 
 ## Output data
 
-The Resource Estimator takes the target parameters `{qubitParams, qecScheme, errorBudget, constraints}` to evaluate the resource estimates of the requested quantum algorithm. The result of the resource estimation job is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget.
+The Resource Estimator takes the target parameters to evaluate the resource estimates of the requested quantum algorithm. The result of the resource estimation job is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget.
 
 For more information, see [How the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
+
+
 
 ### Physical qubits
 
