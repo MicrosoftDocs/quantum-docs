@@ -424,7 +424,7 @@ You can defined your custom distillation units as follows:
 }
 ```
 
-All numeric parameters expected to be positive. The `displayName` specifies how the distillation unit will be displayed in output results.
+All numeric parameters are expected to be positive. The `displayName` specifies how the distillation unit will be displayed in output results.
 
 At least one of the parameters `physicalQubitSpecification` or `logicalQubitSpecification` should be provided. If only the former is provided, the distillation unit can be applied to physical qubits. If only the latter is provided, the distillation unit can be applied to logical qubits. If both are provided, the distillation unit can be applied to both types of qubits.
 
