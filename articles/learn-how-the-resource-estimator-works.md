@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how the Azure Quantum Resource Estimator calculates estimates
-ms.date: 04/21/2023
+ms.date: 08/07/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -71,9 +71,18 @@ For more information, see Appendix C of [Assessing requirements to scale to prac
 
 ### Physical resource estimation
 
-In the previous step, the Resource Estimator computes the total number of physical qubits from the number of physical qubits required by the T factories that are responsible to produce the required T states that are consumed by the algorithm, plus the number of algorithmic physical qubits required to implement the algorithm logic.
+Finally, the overall physical resource estimation consists of total number of physical qubits and the runtime. The total number of physical qubits is calculated from the sum of the number of physical qubits required by the T factory copies that produce the T states that are consumed by the algorithm, plus the number of physical qubits required to execute the algorithm. 
 
-The total runtime of the algorithm is the runtime calculated in the [Algorithmic physical estimation](#algorithmic-physical-estimation) step.
+The total runtime of the algorithm is decided based on the number of instructions that need to be performed to run the algorithm. It's the runtime calculated in the [Algorithmic physical estimation](#algorithmic-physical-estimation) step. 
+
+
+The time chart shows the runtimes for the algorithm, and the runtime of a single T factory with all its invocations (possibly capped if there are too many invocations). The table lists the most important metrics that are used to compute these numbers. Note that the total runtime informs us about the number of T factory invocations.
+
+
+
+You can inspect the distribution of physical qubits used for the algorithm and the T factories using the space-time diagrams. The space diagram shows the proportion of these two. Note that the number of T factory copies contributes to the number of physical qubits for T factories.
+
+The time diagram shows the time required to execute the algorithm as it relates to each T factory invocation runtime and the number of T factory invocation. 
 
 ## Assumptions
 
