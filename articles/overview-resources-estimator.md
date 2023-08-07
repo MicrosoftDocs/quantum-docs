@@ -396,7 +396,7 @@ You can provide custom specifications for T factories distillation algorithms wi
 ```JSON
 {
     "distillationUnitSpecifications": [
-        "name": <String>,
+        "name": <string>,
     ]
 }
 ```
