@@ -183,7 +183,7 @@ A minimum template for gate-based instrucition set with all required values is:
 }
 ```
 
-When not specified, the values for `twoQubitGateTime` and `tGateTime` default to `oneQubitGateTime`, the values for `twoQubitGateErrorRate` and `tGateErrorRate` default to `oneQubitGateErrorRate, and the value for `idleErrorRate` defaults to `oneQubitMeasurementErrorRate`.
+When not specified, the values for `twoQubitGateTime` and `tGateTime` default to `oneQubitGateTime`, the values for `twoQubitGateErrorRate` and `tGateErrorRate` default to `oneQubitGateErrorRate`, and the value for `idleErrorRate` defaults to `oneQubitMeasurementErrorRate`.
 
 **Qubit parameters for Majorana qubits**
 
