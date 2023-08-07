@@ -426,7 +426,7 @@ You can defined your custom distillation units as follows:
 
 All numeric parameters expected to be positive. The `displayName` specifies how the distillation unit will be displayed in output results.
 
-At least one of parameters `physicalQubitSpecification` or `logicalQubitSpecification` should be provided. If the former only is provided, the distillation unit can be applied to physical qubits. If the latter is provided, the distillation unit can be applied to logical qubits. If both are provided, the distillation unit can be applied to both types of qubits.
+At least one of the parameters `physicalQubitSpecification` or `logicalQubitSpecification` should be provided. If only the former is provided, the distillation unit can be applied to physical qubits. If only the latter is provided, the distillation unit can be applied to logical qubits. If both are provided, the distillation unit can be applied to both types of qubits.
 
 The parameter `logicalQubitSpecificationFirstRoundOverride` can be provided only if `logicalQubitSpecification` is specified. If so, it overrides values of `logicalQubitSpecification` in case if applied at the first round of distillation. The value `<protocol specific parameters> ` that is required for `logicalQubitSpecificationFirstRoundOverride` should follow the scheme:
 
