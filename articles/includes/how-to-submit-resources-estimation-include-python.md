@@ -79,7 +79,7 @@ result
 The `qsharp.azure.execute` function creates a table that shows the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information.
 
 > [!TIP]
-> For a more compact version of the output table, you can use `result.summary`
+> For a more compact version of the output table, you can use `result.summary`.
 
 For example, if you collapse the *Logical qubit parameters* group of the results table, you can see that the error correction code distance is 13. 
 
@@ -98,25 +98,8 @@ For example, if you collapse the *Logical qubit parameters* group of the results
 In the *Physical qubit parameters* group, you can see the physical qubit properties that were assumed for this estimation. 
 For example, the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
 
-|Physical qubit parameter | Value |
-|---|---|
-|Qubit name     |                    qubit_gate_ns_e3 |
-|Instruction set                      |     GateBased  |
-|Single-qubit measurement time         |       100 ns |
-|T gate time	                            |      50 ns|
-|T gate error rate                       |      0.001 |
-|Single-qubit measurement error rate      |     0.001 |
-|Single-qubit gate time                    |    50 ns |
-|Single-qubit error rate                   |    0.001 |
-|Two-qubit gate time                       |    50 ns |
-|Two-qubit error rate                        |  0.001 |
-
-> [!NOTE]
+> [!TIP]
 > You can access the output of the Azure Quantum Resources Estimator in JSON format using the `result.data()` method.
-> 
-> ```python
-> result.data()
-> ```
 
 For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) of the Resource Estimator.
 
@@ -168,14 +151,15 @@ result['jobParams']
   'twoQubitGateTime': '50 ns'}}
  ```
 
-There are target parameters that can be customized: 
+These are the target parameters that can be customized: 
 
 * `errorBudget` - the overall allowed error budget
 * `qecScheme` - the quantum error correction (QEC) scheme
 * `qubitParams` - the physical qubit parameters 
 * `constraints` - the constraints on the component-level
+* `distillationUnitSpecifications` - the specifications for T factories distillation algorithms
 
-For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters) for the Resource Estimator.
+For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the Resource Estimator.
 
 #### Change qubit model
 
