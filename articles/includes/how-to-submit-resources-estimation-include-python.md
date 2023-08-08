@@ -105,7 +105,7 @@ For more information, see [the full list of output data](xref:microsoft.quantum.
 
 #### Space-time diagrams
 
-The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can visualize this distribution to better understand the estimated space requirements for the algorithm. 
+The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can use `result.diagram.space` to visualize this distribution to better understand the estimated space requirements for the algorithm. 
 
 ```python
 result.diagram.space
@@ -119,7 +119,7 @@ result.diagram.time
 ```
 :::image type="content" source="media/resource-estimator-time-diagram.png" alt-text="Diagram showing the number of T factory invocations during the runtime of the algorithm. There's also a table with the breakdown of the number of T factory copies, number of T factory invocations, T states per invocation, etc.":::
 
-Sinc the T factoy runtime is 83 microsecs, during the runtime of the algorithm, 6 milisecs, The T factory can be invoked a total of 73 times in a distillation round. Each invocation of the T factory produces 11 T states. Therefore, you need 11 copies of the T factory distillation round to get 
+Since the T factoy runtime is 83 microsecs, during the runtime of the algorithm, 6 milisecs, the T factory can be invoked a total of 73 times in a distillation round. Each invocation of the T factory produces 11 T states. Therefore, you need 11 copies of the T factory distillation round to get 
 
 > [!NOTE]
 > You can't visualize the time and space diagrams in the same cell.
