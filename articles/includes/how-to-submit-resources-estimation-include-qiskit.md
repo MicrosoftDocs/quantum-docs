@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 10/21/2022
+ms.date: 08/08/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -23,13 +23,10 @@ In this example, you'll create a quantum circuit for a multiplier based on the c
 When your new notebook opens, it automatically creates the code for the first cell, based on your subscription and workspace information.
 
 ```python
-from azure.quantum import Workspace
-workspace = Workspace (
-    subscription_id = <your subscription ID>, 
-    resource_group = <your resource group>,   
-    name = <your workspace name>,          
-    location = <your location>        
-    )
+provider = AzureQuantumProvider (
+    resource_id = "",
+    location = ""
+)
 ```
 
 ### Load the required imports
@@ -43,7 +40,6 @@ from azure.quantum.qiskit import AzureQuantumProvider
 from qiskit import QuantumCircuit, transpile
 from qiskit.circuit.library import RGQFTMultiplier
 from qiskit.tools.monitor import job_monitor
-from qiskit_qir import SUPPORTED_INSTRUCTIONS
 ```
 
 Create a backend instance and set the Resource Estimator as your target. 
@@ -106,7 +102,12 @@ result = job.result()
 result
 ```
 
-This creates a table that shows the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. For example, if you collapse the *Logical qubit parameters* group, you can more easily see that the error correction code distance is 15. 
+This creates a table that shows the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. 
+
+> [!TIP]
+> For a more compact version of the output table, you can use `result.summary`.
+
+For example, if you collapse the *Logical qubit parameters* group, you can more easily see that the error correction code distance is 15. 
 
 |Logical qubit parameter | Value |
 |----|---|
@@ -120,31 +121,33 @@ This creates a table that shows the overall physical resource counts. You can in
 |Logical cycle time formula | (4 * `twoQubitGateTime` + 2 * `oneQubitMeasurementTime`) * `codeDistance`|
 |Physical qubits formula	      | 2 * `codeDistance` * `codeDistance`|
 
-In the *Physical qubit parameters* group you can see the physical qubit properties that were assumed for this estimation. 
-For example, the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
+In the *Physical qubit parameters* group you can see the physical qubit properties that were assumed for this estimation. For example, the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
 
-|Physical qubit parameter | Value |
-|---|---|
-|Qubit name     |                    qubit_gate_ns_e3 |
-|Instruction set                      |     GateBased  |
-|Single-qubit measurement time         |       100 ns |
-|T gate time	                            |      50 ns|
-|T gate error rate                       |      0.001 |
-|Single-qubit measurement error rate      |     0.001 |
-|Single-qubit gate time                    |    50 ns |
-|Single-qubit error rate                   |    0.001 |
-|Two-qubit gate time                       |    50 ns |
-|Two-qubit error rate                        |  0.001 |
-
-
-> [!NOTE]
+> [!TIP]
 > You can also access the output of the Resource Estimator in JSON format using the `result.data()` method.
-> 
-> ```python
-> result.data()
-> ```
 
 For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) for the Resource Estimator.
+
+#### Space-time diagrams
+
+The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can visualize this distribution to better understand the estimated space requirements for the algorithm. 
+
+```python
+result.diagram.space
+```
+:::image type="content" source="media/resource-estimator-space-diagram-qiskit.png" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
+
+You can can also visualize the time required to execute the algorithm, the T factory runtime and how many T factory invocations can run during the runtime of the algorithm. For more information, see [T factory physical estimation](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).
+
+```python
+result.diagram.time
+```
+:::image type="content" source="media/resource-estimator-time-diagram-qiskit.png" alt-text="Diagram showing the number of T factory invocations during the runtime of the algorithm. There's also a table with the breakdown of the number of T factory copies, number of T factory invocations, T states per invocation, etc.":::
+
+Sinc the T factoy runtime is 83 microsecs, during the runtime of the algorithm, 6 milisecs, The T factory can be invoked a total of 73 times in a distillation round. Each invocation of the T factory produces 11 T states. Therefore, you need 11 copies of the T factory distillation round to get 
+
+> [!NOTE]
+> You can't visualize the time and space diagrams in the same cell.
 
 ### Change the default values and estimate the algorithm
 
@@ -173,13 +176,15 @@ result.data()["jobParams"]
   'twoQubitGateTime': '50 ns'}}
  ```
 
-There are three top-level input parameters that can be customized: 
+These are the Target parameters that can be customized: 
 
 * `errorBudget` - the overall allowed error budget
 * `qecScheme` - the quantum error correction (QEC) scheme
-* `qubitParams` - the physical qubit parameters 
+* `qubitParams` - the physical qubit parameters
+* `constraints` - the constraints on the component-level
+* `distillationUnitSpecifications` - the specifications for T factories distillation algorithms
 
-For more information, see [Input parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters) for the Resource Estimator.
+For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the Resource Estimator.
 
 #### Change qubit model
 
