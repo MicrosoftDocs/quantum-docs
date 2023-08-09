@@ -110,7 +110,7 @@ The distribution of physical qubits used for the algorithm and the T factories i
 ```python
 result.diagram.space
 ```
-:::image type="content" source="media/resource-estimator-space-diagram.PNG" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
+:::image type="content" source="../media/resource-estimator-space-diagram.PNG" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
 
 The space diagram shows the proportion of algorithm qubits and T factory qubits. Note that the number of T factory copies, 15, contributes to the number of physical qubits for T factories as $\text{T factories} ⋅ \text{physical qubit per T factory}= 15 ⋅  9,680 = 145,200$.
 
@@ -119,7 +119,7 @@ You can can also visualize the time required to execute the algorithm, the T fac
 ```python
 result.diagram.time
 ```
-:::image type="content" source="media/resource-estimator-time-diagram.PNG" alt-text="Diagram showing the number of T factory invocations during the runtime of the algorithm. There's also a table with the breakdown of the number of T factory copies, number of T factory invocations, T states per invocation, etc.":::
+:::image type="content" source="../media/resource-estimator-time-diagram.PNG" alt-text="Diagram showing the number of T factory invocations during the runtime of the algorithm. There's also a table with the breakdown of the number of T factory copies, number of T factory invocations, T states per invocation, etc.":::
 
 Since the T factoy runtime is 57 microsecs, the T factory can be invoked a total of 54 times during the runtime of the algorithm. One T factory produces one T state, and to execute the algorihtm you need a total of 800 T states. Therefore, you need 15 copies of the T factories executed in parallel. The total number of T factory copies is computed as $ \frac{\text{T states} ⋅ \text{T factory duration}{\text{T states per T factory}⋅
 \text{algorithm runtime}}=\frac{800 ⋅ 57,200 ns}{1 ⋅ 3,161,600 ns}=15$. Note that in the diagram, each blue arrow represents the 15 copies of the T factory repeatedly invoked 54 times.
