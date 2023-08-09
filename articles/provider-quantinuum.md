@@ -118,28 +118,29 @@ System Model H2 hardware is continuously upgraded throughout it's product lifecy
 ## System Model H1 and H2 Technical Specifications 
 
 Technical details for System Model H1 and System Model H2 can be found in Quantinuum's product data sheets on the [System Model H1](https://www.quantinuum.com/hardware/h1) and [System Model H2](https://www.quantinuum.com/hardware/h2) pages alongside links to Quantinuum specification and quantum volume data repositories and how to cite usage of Quantinuum systems.
+
 ## Additional Capabilities
 
 Additional capabilities available via the Quantinuum API are listed here.
 
 | Capability | Description |
 | ---- | ---- |
-| [Mid-Circuit Measurement and Qubit Reuse (MCMR)](#mid-circuit-measurement-and-qubit-reuse) | Measure qubits in the middle of a circuit and reuse them |
+| [Mid-Circuit Measurement and Reset (MCMR)](#mid-circuit-measurement-and-reset) | Measure qubits in the middle of a circuit and reuse them |
 | [Arbitrary Angle ZZ Gates](#arbitrary-angle-zz-gates) | Directly perform 2-qubit arbitrary angle gate rotations |
 | [Emulator Noise Parameters](#emulator-noise-parameters) | Experiment with the noise parameters used in the Quantinuum H-Series emulators |
 | [TKET Optimizations in H-Series Stack](#tket-compilation-in-h-series-stack) | Experiment with turning on different levels of TKET optimizations in the H-Series stack |
 
 Users can take advantage of these additional capabilities via circuit functions or pass-through parameters in the Azure Quantum Q# and Qiskit providers.
 
-### Mid-circuit Measurement and Qubit Reuse
+### Mid-circuit Measurement and Reset
 
-Mid-circuit Measurement and Qubit Reuse (MCMR) enables users to measure qubits in the middle of a circuit and re-use them.
+Mid-circuit Measurement and Reset (MCMR) enables users to measure qubits in the middle of a circuit and reset them. This enables functionality for quantum error correction as well as the ability to reuse qubits within the circuit.
 
-Due to the internal level structure of trapped-ion qubits, a mid-circuit measurement may leave the qubit in a non-computational state. All mid-circuit measurements should be followed by initialization if the qubit is to be used again in that circuit. The following code examples demonstrate this.
+Due to the internal level structure of trapped-ion qubits, a mid-circuit measurement may leave the qubit in a non-computational state. All mid-circuit measurements should be followed by a reset if the qubit is to be used again in that circuit. The following code examples demonstrate this.
 
-When a subset of qubits is measured in the middle of the circuit, the classical information from these measurements can be used to condition future elements of the circuit. The examples also highlight this usage. 
+When a subset of qubits is measured in the middle of the circuit, the classical information from these measurements can be used to condition future elements of the circuit. The examples also highlight this usage.
 
-For information on Mid-circuit Measurement and Qubit Reuse (MCMR) in Quantinuum systems, see the *System Model H1 Product Data Sheet* on the [System Model H1] page.
+For information on MCMR in Quantinuum systems, see the H-series product data sheets on the [System Model H1] and [System Model H2] pages.
 
 #### [MCMR with Q# Provider](#tab/tabid-mcmr-with-q-provider)
 
@@ -209,7 +210,7 @@ circuit.draw()
 
 ### Arbitrary Angle ZZ Gates
 
-Quantinuum's native gate set includes arbitrary angle ZZ gates. This is beneficial for reducing the 2-qubit gate count for many quantum algorithms and gate sequences. For information on Arbitrary Angle ZZ gates in Quantinuum systems, see the *System Model H1 Product Data Sheet* on the [System Model H1] page.
+Quantinuum's native gate set includes arbitrary angle ZZ gates. This is beneficial for reducing the 2-qubit gate count for many quantum algorithms and gate sequences. For information on Arbitrary Angle ZZ gates in Quantinuum systems, see the H-series product data sheets on the [System Model H1] and [System Model H2] pages.
 
 #### [Arbitrary Angle ZZ Gates with Q# Provider](#tab/tabid-arbitrary-angle-zz-gates-with-q-provider)
 
@@ -276,7 +277,7 @@ circuit.measure_all()
 
 Users have the option of experimenting with the noise parameters of the Quantinuum emulators. **Only a few of the available noise parameters are highlighted** here demonstrating how to pass through the parameters in the Azure Quantum providers.
 
-For more information on the full set of noise parameters available, see the *System Model H1 Emulator Product Data Sheet* on the [System Model H1] page.
+For more information on the full set of noise parameters available, see the H-series emulator product data sheets on the [System Model H1] and [System Model H2] pages.
 
 #### [Emulator Noise Parameters with Q# Provider](#tab/tabid-emulator-noise-parameters-with-q-provider)
 
@@ -453,7 +454,7 @@ The Quantinuum H-Series quantum computers are designed to be continuously upgrad
 
 Quantinuum hardware cycles through commercial periods and development periods. During commercial periods, the hardware is available to process jobs via a queue system. During development periods, the hardware is offline as upgrades are applied.
 
-Every month, a calendar is sent to Quantinuum users with information on the commercial and development periods. If you have not received this calendar, please email QCsupport@quantinuum.com.
+Every month, a calendar is sent to Quantinuum users with information on the commercial and development periods. If you have not received this calendar, please email [QCsupport@quantinuum.com](mailto:QCsupport@quantinuum.com).
 
 A target's status indicates its current ability to process jobs. The possible states of a target include:
 
