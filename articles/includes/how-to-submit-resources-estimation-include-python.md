@@ -112,14 +112,17 @@ result.diagram.space
 ```
 :::image type="content" source="media/resource-estimator-space-diagram.png" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
 
-You can can also visualize the time required to execute the algorithm, the T factory runtime and how many T factory invocations can run during the runtime of the algorithm. For more information, see [T factory physical estimation](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).
+The space diagram shows the proportion of algorithm qubits and T factory qubits. Note that the number of T factory copies, 15, contributes to the number of physical qubits for T factories as $\text{T factories} ⋅ \text{physical qubit per T factory}= 15 ⋅  9,680 = 145,200$.
+
+You can can also visualize the time required to execute the algorithm, the T factory runtime and how often the T factory invocations can be invoked during the runtime of the algorithm. For more information, see [T factory physical estimation](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).
 
 ```python
 result.diagram.time
 ```
 :::image type="content" source="media/resource-estimator-time-diagram.png" alt-text="Diagram showing the number of T factory invocations during the runtime of the algorithm. There's also a table with the breakdown of the number of T factory copies, number of T factory invocations, T states per invocation, etc.":::
 
-Since the T factoy runtime is 83 microsecs, during the runtime of the algorithm, 6 milisecs, the T factory can be invoked a total of 73 times in a distillation round. Each invocation of the T factory produces 11 T states. Therefore, you need 11 copies of the T factory distillation round to get 
+Since the T factoy runtime is 57 microsecs, the T factory can be invoked a total of 54 times during the runtime of the algorithm. One T factory produces one T state, and to execute the algorihtm you need a total of 800 T states. Therefore, you need 15 copies of the T factories executed in parallel. The total number of T factory copies is computed as $ \frac{\text{T states} ⋅ \text{T factory duration}{\text{T states per T factory}⋅
+\text{algorithm runtime}}=\frac{800 ⋅ 57,200 ns}{1 ⋅ 3,161,600 ns}=15$. Note that in the diagram, each blue arrow represents the 15 copies of the T factory repeatly invoked 54 times.
 
 > [!NOTE]
 > You can't visualize the time and space diagrams in the same cell.
