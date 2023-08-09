@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn about the role of T gates and T factories in quantum computing
 ms.author: sonialopez
-ms.date: 06/09/2023
+ms.date: 08/09/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
