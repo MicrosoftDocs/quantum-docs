@@ -146,7 +146,7 @@ result.diagram.time
 ```
 :::image type="content" source="../media/resource-estimator-time-diagram-qiskit.PNG" alt-text="Diagram showing the number of T factory invocations during the runtime of the algorithm. There's also a table with the breakdown of the number of T factory copies, number of T factory invocations, T states per invocation, etc.":::
 
-Since the T factoy runtime is 83 microsecs, the T factory can be invoked a total of 543 times during the runtime of the algorithm. One T factory produces one T state, and to execute the algorihtm you need a total of 15,180 T states. Therefore, you need 28 copies of the T factories executed in parallel. The total number of T factory copies is computed as $ \frac{\text{T states} ⋅ \text{T factory duration}{\text{T states per T factory}⋅
+Since the T factoy runtime is 83 microsecs, the T factory can be invoked a total of 543 times during the runtime of the algorithm. One T factory produces one T state, and to execute the algorihtm you need a total of 15,180 T states. Therefore, you need 28 copies of the T factories executed in parallel. The total number of T factory copies is computed as $ \frac{\text{T states} ⋅ \text{T factory duration}}{\text{T states per T factory}⋅
 \text{algorithm runtime}}=\frac{15,180 ⋅ 83,200 ns}{1 ⋅ 45,270,000 ns}=28$. Note that in the diagram, each blue arrow represents the 28 copies of the T factory repeatedly invoked 543 times.
 
 > [!NOTE]
