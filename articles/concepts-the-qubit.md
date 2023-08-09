@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn about qubits, the fundamental unit of information in quantum computing. This article examines the single qubit.
 ms.author: sonialopez
-ms.date: 12/15/2021
+ms.date: 06/09/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -19,7 +19,7 @@ Just as bits are the fundamental object of information in classical computing, [
 
 While a bit, or binary digit, can have a value either $0$ or $1$, a qubit can have a value that is either $0$, $1$  or a quantum superposition of $0$ and $1$.
 
-The state of a single qubit can be described by a two-dimensional column vector of unit norm, that is, the magnitude squared of its entries must sum to $1$. This vector, called the quantum state vector, holds all the information needed to describe the one-qubit quantum system just as a single bit holds all of the information needed to describe the state of a binary variable.
+The state of a single qubit can be described by a two-dimensional column vector of unit norm, that is, the magnitude squared of its entries must sum to $1$. This vector, called the quantum state vector, holds all the information needed to describe the one-qubit quantum system just as a single bit holds all of the information needed to describe the state of a binary variable. For the basics of vectors and matrices in quantum computing, see [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra) and [Vector and matrices](xref:microsoft.quantum.concepts.vectors).
 
 Any two-dimensional column vector of real or complex numbers with norm $1$ represents a possible quantum state held by a qubit. Thus $\begin{bmatrix} \alpha \\\\  \beta \end{bmatrix}$ represents a qubit state if $\alpha$ and $\beta$ are complex numbers satisfying $|\alpha|^2 + |\beta|^2 = 1$. Some examples of valid quantum state vectors representing qubits include
 
@@ -89,3 +89,11 @@ The simplest such primitive is the single qubit-rotation. Three single-qubit rot
 \end{align*}
 
 Just as any three rotations can be combined together to perform an arbitrary rotation in three dimensions, it can be seen from the Bloch sphere representation that any unitary matrix can be written as a sequence of three rotations as well. Specifically, for every unitary matrix $U$ there exists $\alpha,\beta,\gamma,\delta$ such that $U= e^{i\alpha} R_x(\beta)R_z(\gamma)R_x(\delta)$. Thus $R_z(\theta)$ and $H$ also form a universal gate set although it is not a discrete set because $\theta$ can take any value. For this reason, and due to applications in quantum simulation, such continuous gates are crucial for quantum computation, especially at the quantum algorithm design level. To achieve fault-tolerant hardware implementation, they will ultimately be compiled into discrete gate sequences that closely approximate these rotations.
+
+## Next steps
+
+- [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)
+- [Dirac notation](xref:microsoft.quantum.concepts.dirac)
+- [Pauli measurements](xref:microsoft.quantum.concepts.pauli)
+- [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)
+- [Quantum circuits](xref:microsoft.quantum.concepts.circuits)

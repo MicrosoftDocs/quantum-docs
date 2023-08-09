@@ -1,8 +1,8 @@
 ---
 author: bradben
-description: A list of Azure Quantum hardware providers and their availability by country.
+description: A list of Azure Quantum hardware providers and their availability by country/region.
 ms.author: brbenefield
-ms.date: 06/05/2023
+ms.date: 07/12/2023
 ms.service: azure-quantum
 ms.subservice: core  
 ms.topic: reference
@@ -13,13 +13,13 @@ uid: microsoft.quantum.provider-availability
 
 # Global availability of Azure Quantum providers
 
-Select the tab for each provider to view its availability by country. 
+Select the tab for each provider to view its availability by country/region. 
 
 ## [IonQ](#tab/tabid-ionq)
 
 IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program and a Pay-As-You-Go plan. For more information about IonQ resources on Azure Quantum, see [IonQ provider and targets](xref:microsoft.quantum.providers.ionq).
 
-| Country | Available (Y/N) |
+| Country/Region | Available (Y/N) |
 | ---- | ---- | ---- |
 | Afghanistan     | No     |
 | Albania     | No     |
@@ -86,7 +86,7 @@ IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program a
 | Japan     | No     |
 | Jordan     | No     |
 | Kazakhstan     | No     |
-| Kenya     | No     |
+| Kenya     | Yes     |
 | Korea     | Yes    |
 | Kuwait     | No     |
 | Kyrgyzstan     | No     |
@@ -158,16 +158,16 @@ IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program a
 | Uzbekistan     | No     |
 | Vatican City     | No     |
 | Venezuela     | No     |
-| Vietnam     | No     |
+| Vietnam     | Yes     |
 | Yemen     | No     |
 | Zambia     | No     |
 | Zimbabwe     | No     |
 
 ## [Quantinuum](#tab/tabid-quantinuum)
 
-Quantinuum offers three plans through Azure Quantum: the Azure Quantum Credits program, and Standard and Premium plans. For more information about Quantinuum resources on Azure Quantum, see [Quantinuum provider and targets](xref:microsoft.quantum.providers.quantinuum).
+Quantinuum offers five plans through Azure Quantum: the Azure Quantum Credits program, Standard and Premium plans with access to System Model H1, and Standard and Premium plan with access to System Models H1 and H2. For more information about Quantinuum resources on Azure Quantum, see [Quantinuum provider and targets](xref:microsoft.quantum.providers.quantinuum).
 
-| Country | Available (Y/N) |
+| Country/Region | Available (Y/N) |
 | ---- | ---- | ---- |
 | Afghanistan     | No     |
 | Albania     | No     |
@@ -315,7 +315,7 @@ Quantinuum offers three plans through Azure Quantum: the Azure Quantum Credits p
 
 Rigetti offers two plans through Azure Quantum: the Azure Quantum Credits program and a Pay-As-You-Go plan. For more information about Rigetti resources on Azure Quantum, see [Rigetti provider and targets](xref:microsoft.quantum.providers.rigetti).
 
-| Country | Available (Y/N) |
+| Country/Region | Available (Y/N) |
 | ---- | ---- | ---- |
 | Afghanistan     | No     |
 | Albania     | No     |

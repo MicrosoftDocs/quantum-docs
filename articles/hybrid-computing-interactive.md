@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Understand the architecture of interactive (sessions) quantum computing and learn ho to create a new session.
-ms.date: 05/17/2023
+ms.date: 07/17/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -45,6 +45,9 @@ To create a session, you need the following prerequisites:
 ### [Q# + Python](#tab/tabid-iqsharp)
 
 This example shows how to create a session with Q# inline code using hosted Notebooks in the Azure portal. You can also create sessions using a [Python host program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs#q-with-host-programs) that invokes an adjacent Q# program. 
+
+> [!NOTE]
+>  Sessions are managed with Python, even when running Q# inline code. 
 
 1. Select the **Notebooks** blade in your Quantum workspace, and in **My Notebooks** click on **Add New**.
 1. In **Kernel Type**, select **IPython**.
@@ -190,7 +193,11 @@ This example shows how to create a session with Q# inline code using hosted Note
 You can use the **Job management** blade in your Quantum workspace to view all top-level submitted items, including sessions and individual jobs that aren't associated with any session.
 
 1. Select the **Job management** blade in your Quantum workspace.
-1. Identify the jobs of type **Session**. In this view you can see the Unique ID of a Session in column **Id** and monitor its **Status**. 
+1. Identify the jobs of type **Session**. In this view you can see the Unique ID of a Session in column **Id** and monitor its **Status**. The states of a sesion are: 
+   - **Waiting**: Jobs within the session are being executed. 
+   - **Succeeded**: Session has ended successfully. 
+   - **TimeOut**: If no new job is submitted within the session for 10 minutes, that session times out. For more information, see [Session timeouts](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#session-timeouts).
+   - **Failed**: If a job within a session fails, that session ends and reports a status of *Failed*. For more information, see [Job failure policy within sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#job-failure-policy-within-sessions).
 1. Click on a session's name for more details.
 1. You can see the list of **All jobs** within the session and monitor their status.
 

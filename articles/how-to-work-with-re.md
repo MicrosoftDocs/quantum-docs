@@ -18,7 +18,7 @@ Once you've learned how to [customize](xref:microsoft.quantum.overview.resources
 ## How to run multiple configurations as a single job
 
 A resource estimation job consist of two types of job parameters: 
-- [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters): qubit model, QEC schemes, and error budget.
+- [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters): qubit model, QEC schemes, error budget, and constraints on the component-level.
 - Operation arguments (optional): arguments that can be passed to the program. 
 
 The Azure Quantum Resource Estimator allows you to submit jobs with multiple configuration of job parameters, also referred as *items*, as a single job to avoid rerunning multiple jobs on the same quantum program.

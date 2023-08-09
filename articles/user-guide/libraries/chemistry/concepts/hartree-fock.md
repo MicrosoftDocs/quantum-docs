@@ -35,7 +35,7 @@ $$
 with an anti-Hermitian (for example, $u= -u^\dagger$) matrix $u = \sum_{pq} u_{pq} a^\dagger_p a_q$. It should be noted that the matrix $u$ represents the orbital rotations and $\widetilde{a}^\dagger_j$ and $\widetilde{a}_j$ represent creation and annihilation operators for electrons occupying Hartree–Fock molecular spin-orbitals.
 
 The matrix $u$ is then optimized to minimize the expected energy $\bra{0} \prod_{j=0}^{N-1}  \widetilde{a}\_j  H \prod\_{k=0}^{N-1}  \widetilde{a}^\dagger_k\ket{0}$.
-While such optimization problems may be generically hard, in practice the Hartree–Fock algorithm tends to rapidly converge to a near-optimal solution to the optimization problem, especially for closed-shell molecules in the equilibrium geometries. We may specify these states as an instance of the `FermionWavefunction` object. For instance, the state $a^\dagger_{1}a^\dagger_{2}a^\dagger_{6}\ket{0}$ is instantiated in the chemistry library as follows.
+While such optimization problems may be generically hard, in practice the Hartree–Fock algorithm tends to rapidly converge to a near-optimal solution to the optimization problem, especially for closed-shell molecules in the equilibrium geometries. You may specify these states as an instance of the `FermionWavefunction` object. For instance, the state $a^\dagger_{1}a^\dagger_{2}a^\dagger_{6}\ket{0}$ is instantiated in the chemistry library as follows.
 
 ```csharp
 // The code snippets in this section require the following namespaces.
@@ -50,7 +50,7 @@ using Microsoft.Quantum.Chemistry.Fermion;
     var indices = new[] { 1, 2, 6 };
 
     // Convert the list of indices to a `FermionWavefunction` object.
-    // In this case, the indices are integers, so we use the `int`
+    // In this case, the indices are integers, so use the `int`
     // type specialization.
     var wavefunction = new FermionWavefunction<int>(indices);
 ```
@@ -75,7 +75,7 @@ This means that it often provides a suitable qualitative description of properti
 The Hartree-Fock state may also be reconstructed from a `FermionHamiltonian`  as follows.
 
 ```csharp
-    // We initialize a fermion Hamiltonian.
+    // Initialize a fermion Hamiltonian.
     var fermionHamiltonian = new FermionHamiltonian();
 
     // Create a Hartree-Fock state from the Hamiltonian 

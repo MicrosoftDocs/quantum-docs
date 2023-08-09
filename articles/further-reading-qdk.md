@@ -37,8 +37,7 @@ The following sites are created and developed by the quantum community who is ex
 + [Quantum computing StackExchange](https://quantumcomputing.stackexchange.com/questions/tagged/q%23): an online community for quantum developers to learn, and share their knowledge.
 + [Subreddit for the Q# programming language](https://www.reddit.com/r/qsharp/): an online community in Reddit to discuss the latest news and developments of Q#.
 + [Subreddit for the quantum computing](https://www.reddit.com/r/quantumcomputing/): an online community in Reddit to discuss the latest news and developments of quantum computing.
-+ [Q# Community](https://qsharp.community/): a community group that collects and maintains Q# programming language projects, including new libraries, algorithm implementations, and tutorials.
-
++ [Q# Community](https://github.com/qsharp-community): a GitHub space for community-driven projects and contrib libraries.
 
 ## Quantum computing online courses
 
@@ -58,13 +57,6 @@ If you are a quantum enthusiast and want to start learning the theory behind qua
 + Kaye, P., Laﬂamme, R., & Mosca, M. (2007). An introduction to quantum computing. Oxford University Press.
 + Rieﬀel, E. G., & Polak, W. H. (2011). Quantum computing: A gentle introduction. MIT Press.
 + Sarah C. Kaiser and Christopher E. Granade. [Learn Quantum Computing with Python and Q# - A hands-on approach](https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp).
-
-### Optimization 
-
-The following publications might be good starting points to understand the mathematical principles behind the quantum-inspired optimization solvers:
-
-+ Glover F., Kochenberger G., Du Y. (2019). A Tutorial on Formulating and Using QUBO Models.
-+ Lucas, Andrew. (2014) Ising formulations of many NP problems. Frontiers in Physics.
 
 ## Advanced topics
 

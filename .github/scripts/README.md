@@ -1,13 +1,13 @@
 # Automatic broken links scan documentation
 
 To keep track of the broken links that might appear in our documentation we run a 
-[Powershell script](https://github.com/MicrosoftDocs/quantum-docs-private/blob/quantum-docs-scan/.github/scripts/Verify-Links.ps1)
+[Powershell script](https://github.com/MicrosoftDocs/quantum-docs-private/blob/main/.github/scripts/Verify-Links.ps1)
 that scans links through the `*.md` and `*.yml` files of the docs repositories and flags those links that are broken. The script is programmed to
 run with each push to the "live" branch of the repo **MicrosoftDocs/quantum-docs-private**.
 
 ## The script
 
-We use a [Powershell script](https://github.com/MicrosoftDocs/quantum-docs-private/blob/quantum-docs-scan/.github/scripts/Verify-Links.ps1) that takes
+We use a [Powershell script](https://github.com/MicrosoftDocs/quantum-docs-private/blob/main/.github/scripts/Verify-Links.ps1) that takes
 a list of paths as input and tries every link of the files listed out in the path. This script stores the number of broken links in the variable `$badLinks.Count`.
 
 For more information, you can read the script and the parameter descriptions in the `*.ps1` file.
@@ -27,7 +27,7 @@ If there's any broken link in the repository `$badLinks.Count` will be different
 
 ### The GitHub action for `quantum-docs-private`
 
-You can find the GitHub action to scan the `quantum-docs-private` repo [here](https://github.com/MicrosoftDocs/quantum-docs-private/blob/quantum-docs-scan/.github/workflows/broken-links-quantum-docs.yml).
+You can find the GitHub action to scan the `quantum-docs-private` repo [here](https://github.com/MicrosoftDocs/quantum-docs-private/blob/main/.github/workflows/broken-links-quantum-docs.yml).
 The `YAML` commands for the action are:
 
 ```yaml
@@ -58,7 +58,7 @@ Comments:
 - We use the parameters of the `Get-ChildItem` cmdlet to curate the list of paths, together with the `ignoreLinksFile` parameter of the `Verify-Links.ps1` script.
 - We remove some links from the list to avoid false-positives:
   - All the files from the [`user-guide\language`](https://github.com/MicrosoftDocs/quantum-docs-private/tree/main/articles/user-guide/language) directory. The content of those files is not stored in our repository and is maintained by another team. Also, the script flags the include links of the stub files as broken links.
-  - The file [`ignorelinks.txt`](https://github.com/MicrosoftDocs/quantum-docs-private/blob/quantum-docs-scan/.github/scripts/ignorelinks.txt) contains links to be ignored, for example links to private repositories, since the program flags them as 404. Also the link <https://ionq.com/best-practices> as it was giving a false 404 of unknown origin.
+  - The file [`ignorelinks.txt`](https://github.com/MicrosoftDocs/quantum-docs-private/blob/main/.github/scripts/ignorelinks.txt) contains links to be ignored, for example links to private repositories, since the program flags them as 404. Also the link <https://ionq.com/best-practices> as it was giving a false 404 of unknown origin.
 
 > 📝
 > For more information on the `Get-ChildItem` cmdlet, visit the [official documentation](https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1)

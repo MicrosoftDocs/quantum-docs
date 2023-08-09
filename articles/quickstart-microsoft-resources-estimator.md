@@ -101,11 +101,12 @@ For more information, see [the full list of output data](xref:microsoft.quantum.
 
 ### Target parameters
 
-When submitting a resource estimate request for your program, you can specify some optional parameters. There are three top-level target parameters that can be customized: 
+When submitting a resource estimate request for your program, you can specify some target parameters.
 
 * `errorBudget` - the overall allowed error budget
 * `qecScheme` - the quantum error correction (QEC) scheme
 * `qubitParams` - the physical qubit parameters 
+* `constraints` - the constraints on the component-level
 
 For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the Resource Estimator.
 

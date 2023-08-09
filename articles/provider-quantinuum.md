@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides the technical details of the Quantinuum quantum provider
 ms.author: brbenefield
-ms.date: 06/12/2023
+ms.date: 08/07/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -249,7 +249,7 @@ operation ContinueComputationAfterReset(theta : Double) : Result[] {
 
 #### [Arbitrary Angle ZZ Gates with Qiskit Provider](#tab/tabid-arbitrary-angle-zz-gates-with-qiskit-provider)
 
-In Qiskit, the arbitrary angle ZZ gate is implemented with the [`rzz`] function.
+In Qiskit, the arbitrary angle ZZ gate is implemented with the [`rzz`] method.
 
 ```python
 from qiskit import QuantumCircuit
@@ -499,7 +499,7 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 [System Model H1]: https://www.quantinuum.com/hardware/h1
 [System Model H2]: https://www.quantinuum.com/hardware/h2
 [`MResetZ`]: /qsharp/api/qsharp/microsoft.quantum.measurement.mresetz
-[`rzz`]: https://qiskit.org/documentation/stubs/qiskit.circuit.QuantumCircuit.rzz.html
+[`rzz`]: https://qiskit.org/documentation/stubs/qiskit.circuit.library.RZZGate.html 
 [`pytket-quantinuum`]: https://github.com/CQCL/pytket-quantinuum
 [`pytket`]: https://cqcl.github.io/tket/pytket/api/#
 [`pytket` User Manual]: https://cqcl.github.io/pytket/manual/index.html

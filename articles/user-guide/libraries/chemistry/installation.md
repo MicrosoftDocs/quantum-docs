@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to install the Azure Quantum chemistry library and use it with the NWChem computational chemistry platform.
 ms.author: brbenefield
-ms.date: 06/02/2023
+ms.date: 06/21/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -63,7 +63,7 @@ Full instructions on how to install NWChem from source are provided by [PNNL](ht
 
 > [!TIP]
 > If you wish to use NWChem from Windows 10, the Windows Subsystem for Linux is a great option.
-> Once you have installed [Ubuntu 18.04 LTS for Windows](https://www.microsoft.com/p/ubuntu-1804-lts/9n9tngvndl3q#activetab=pivot:overviewtab), run `ubuntu18.04` from your favorite terminal and follow the instructions above to install NWChem from source.
+> Once you have installed [Ubuntu 18.04 LTS for Windows](https://www.microsoft.com/p/ubuntu-1804-lts/9n9tngvndl3q#activetab=pivot:overviewtab), run `ubuntu18.04` from your favorite terminal and follow the earlier instructions to install NWChem from source.
 
 Once you have compiled NWChem from source, you can run the *yaml_driver* script provided with NWChem to quickly produce Broombridge instances from NWChem input decks:
 
@@ -71,7 +71,7 @@ Once you have compiled NWChem from source, you can run the *yaml_driver* script 
 $NWCHEM_TOP/contrib/quasar/yaml_driver input.nw
 ```
 
-This command will create a new *input.yaml* file in the Broombridge format within your current directory.
+This command creates a new *input.yaml* file in the Broombridge format within your current directory.
 
 ### Using NWChem with Docker
 
@@ -83,14 +83,14 @@ To get started, follow the Docker installation instructions for your platform:
 - [Install Docker for Windows 10](https://docs.docker.com/docker-for-windows/install/)
 
 > [!TIP]
-> If you are using Docker for Windows, you will need to share the drive containing your temporary directory (usually this is the `C:\` drive) with the Docker daemon. See the [Docker documentation](https://docs.docker.com/docker-for-windows/#shared-drives) for more details.
+> If you are using Docker for Windows, you need to share the drive containing your temporary directory (usually this is the `C:\` drive) with the Docker daemon. See the [Docker documentation](https://docs.docker.com/docker-for-windows/#shared-drives) for more details.
 
 Once you have Docker installed, you can either use the PowerShell module provided with the Quantum Development Kit samples to run the image, or you can run the image manually.
-We detail using PowerShell here; if you would like to use the Docker image manually, please see the [documentation provided with the image](https://hub.docker.com/r/nwchemorg/nwchem-qc/).
+The steps for using PowerShell are detailed here; if you would like to use the Docker image manually, please see the [documentation provided with the image](https://hub.docker.com/r/nwchemorg/nwchem-qc/).
 
 #### Running NWChem through PowerShell Core
 
-To use the NWChem Docker image with the Quantum Development Kit, we provide a small PowerShell module that handles moving files in and out of NWChem for you.
+To use the NWChem Docker image with the Quantum Development Kit, a small PowerShell module that handles moving files in and out of NWChem for you is provided.
 If you don't already have PowerShell Core installed, you can download it cross-platform from the [PowerShell repository on GitHub](https://github.com/PowerShell/PowerShell#get-powershell).
 
 > [!NOTE]
@@ -103,15 +103,15 @@ cd Quantum/utilities/
 Import-Module ./InvokeNWChem.psm1
 ```
 
-This will make the `Convert-NWChemToBroombridge` command available in your current PowerShell session.
+This makes the `Convert-NWChemToBroombridge` command available in your current PowerShell session.
 To download any needed images from Docker and use them to run NWChem input decks and capture output to Broombridge, run the following:
 
 ```powershell
 Convert-NWChemToBroombridge ./input.nw
 ```
 
-This will create a Broombridge file by running NWChem on `input.nw`.
-By default, the Broombridge output will have the same name and path as the input deck, with the `.nw` extension replaced by `.yaml`.
+This creates a Broombridge file by running NWChem on `input.nw`.
+By default, the Broombridge output has the same name and path as the input deck, with the `.nw` extension replaced by `.yaml`.
 This can be overridden by using the `-DestinationPath` parameter to `Convert-NWChemToBroombridge`.
 More information can be obtained by using PowerShell's built-in help functionality:
 

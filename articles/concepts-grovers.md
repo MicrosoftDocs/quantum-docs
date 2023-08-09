@@ -4,7 +4,7 @@ description: Learn about the theory behind Grover's algorithm.
 author: SoniaLopezBravo
 uid: microsoft.quantum.concepts.grovers
 ms.author: sonialopez
-ms.date: 10/11/2022
+ms.date: 06/09/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -171,3 +171,11 @@ If you want to continue learning about Grover's algorithm, you can check any of 
 - [Original paper by Lov K. Grover](https://arxiv.org/abs/quant-ph/9605043)
 - Quantum search algorithms section of Nielsen, M. A. & Chuang, I. L. (2010). Quantum Computation and Quantum Information.
 - [Grover's algorithm on Arxiv.org](https://arxiv.org/search/?searchtype=all&query=Grover%27s+algorithm&abstracts=show&size=50&order=announced_date_first)
+
+## Next steps
+
+- [Sample code: Grover's search using Q#](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/grover)
+- [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir)
+- [Vectors and matrices](xref:microsoft.quantum.concepts.vectors)
+- [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)
+- [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)

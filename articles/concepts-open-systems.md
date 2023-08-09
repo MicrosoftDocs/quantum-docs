@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how quantum operations affect the states of open systems.
 ms.author: sonialopez
-ms.date: 03/30/2022
+ms.date: 06/09/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -765,6 +765,8 @@ Here, note that the elements of `ts` are not even multiples of $\pi / 4$, such t
 
 ## Next steps
 
+- [Grover's algorithm](xref:microsoft.quantum.concepts.grovers)
+- [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir)
+- [Vectors and matrices](xref:microsoft.quantum.concepts.vectors)
+- [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)
 * [QDK noise simulators](xref:microsoft.quantum.machines.overview.noise-simulator)
-* [Understanding quantum computing](xref:microsoft.quantum.overview.understanding)
-* [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra)

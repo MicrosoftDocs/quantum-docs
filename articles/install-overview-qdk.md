@@ -17,9 +17,12 @@ Learn about the different environment options available to develop quantum compu
 
 Every environment uses the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp), an open-source set of tools that includes the quantum programming language Q# and accompanying libraries. With the QDK, you can develop quantum computing applications using different IDEs and languages, and run them on quantum simulators or quantum hardware using Azure Quantum. 
 
+> [!NOTE]
+> With the [Azure Quantum website](https://quantum.microsoft.com/), you can run Q# code in your browser with no setup required. For more information, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
+
 The QDK provides: 
 
-- Python packages to submit Qiskit and Cirq applications, Q# applications, or [optimization problems (QIO)](xref:microsoft.quantum.optimization.concepts.overview.introduction) to the Azure Quantum service
+- Python packages to submit Qiskit, Cirq and Q# applications to the Azure Quantum service
 - The Q# programming language and libraries 
 - The IQ# kernel for running Q# on Jupyter Notebooks 
 - Extensions for Visual Studio Code and Visual Studio 
@@ -115,7 +118,7 @@ To test your environment, see [Submit Q# jobs to Azure Quantum](xref:microsoft.q
 
 ### Use Python with Qiskit or Cirq, or Azure Quantum optimization solvers
 
-You can use the `azure-quantum` Python package to submit and run Qiskit or Cirq jobs, or submit [quantum-inspired optimization](xref:microsoft.quantum.optimization.concepts.overview.introduction) jobs to the Azure Quantum optimization solvers. 
+You can use the `azure-quantum` Python package to submit and run Qiskit or Cirq jobs.
 
 To install the `azure-quantum` Python package 
 
@@ -283,9 +286,8 @@ Using the Azure portal:
 
 - [Run Jupyter notebooks on Azure Quantum](xref:microsoft.quantum.how-to.notebooks)
 - [Create and submit a Qiskit circuit](xref:microsoft.quantum.quickstarts.computing.qiskit.portal) to quantum hardware.
-- [Create and submit an optimization problem](xref:microsoft.quantum.quickstarts.optimization.qio.portal) to Azure Quantum. 
 
 Using your local environment:
 
 - [Explore development with Q# and Python](xref:microsoft.quantum.how-to.python-local)
-- [Create and submit an optimization problem](xref:microsoft.quantum.quickstarts.optimization.qio) to Azure Quantum. 
+
