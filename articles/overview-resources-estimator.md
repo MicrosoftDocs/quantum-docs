@@ -452,7 +452,9 @@ See the following examples of custom formulas using long and short notation. The
 
 ## Output data
 
-The Resource Estimator takes the target parameters `{qubitParams, qecScheme, errorBudget, constraints}` to evaluate the resource estimates of the requested quantum algorithm. The result of the resource estimation job is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget.
+The Resource Estimator takes the target parameters to evaluate the resource estimates of the requested quantum algorithm. The result of the resource estimation job is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget. 
+
+The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can visualize this distribution to better understand the estimated space requirements for the algorithm using the [space-time diagrams](xref:microsoft.quantum.submit-resource-estimation-jobs#space-time-diagrams). 
 
 For more information, see [How the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
 
