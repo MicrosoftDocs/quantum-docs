@@ -83,7 +83,7 @@ result.diagram.space
 ```
 :::image type="content" source="media/resource-estimator-space-diagram.png" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
 
-The time diagram shows the time required to execute the algorithm as it relates to each T factory invocation runtime and the number of T factory invocation (possibly capped if there are too many invocations). The table on the right side lists the most important metrics that are used to compute these numbers, which are described in the [T factory physical estimation](#t-factory-physical-estimation) previous step. Note that the number of T factory invocations is calculated based on the the total runtime.
+The time diagram shows the time required to execute the algorithm as it relates to each T factory invocation runtime and the number of T factory invocation (possibly capped if there are too many invocations). The table on the right side lists the most important metrics that are used to compute these numbers, which are described in the [T factory physical estimation](#t-factory-physical-estimation) previous step. Note that the number of T factory invocations is calculated based on the total runtime.
 
 ```python
 result.diagram.time
