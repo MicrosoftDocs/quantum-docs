@@ -124,7 +124,7 @@ For example, if you collapse the *Logical qubit parameters* group, you can more 
 In the *Physical qubit parameters* group you can see the physical qubit properties that were assumed for this estimation. For example, the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
 
 > [!TIP]
-> You can also access the output of the Resource Estimator in JSON format using the `result.data()` method.
+> You can also access the output of the Resource Estimator as a Python dictionary using the `result.data()` method.
 
 For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) for the Resource Estimator.
 
