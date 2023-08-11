@@ -112,7 +112,7 @@ result.diagram.space
 ```
 :::image type="content" source="../media/resource-estimator-space-diagram.PNG" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
 
-The space diagram shows the proportion of algorithm qubits and T factory qubits. Note that the number of T factory copies, 15, contributes to the number of physical qubits for T factories as $\text{T factories} ⋅ \text{physical qubit per T factory}= 15 ⋅  9,680 = 145,200$.
+The space diagram shows the proportion of algorithm qubits and T factory qubits. Note that the number of T factory copies, 15, contributes to the number of physical qubits for T factories as $\text{T factories} ⋅ \text{physical qubit per T factory}= 15 ⋅ 9,680 = 145,200$.
 
 You can can also visualize the time required to execute the algorithm, the T factory runtime and how often the T factory invocations can be invoked during the runtime of the algorithm. For more information, see [T factory physical estimation](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).
 
