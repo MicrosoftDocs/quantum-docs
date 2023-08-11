@@ -2,21 +2,21 @@
 author: aviviano
 description: Learn how to manage access to your Azure Quantum workspace.
 ms.author: amvivian
-ms.date: 12/14/2022
+ms.date: 08/11/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Manage workspace access
+title: Understanding workspace access
 uid: microsoft.quantum.how-to.manage-workspace-access
 ---
 
-
-# Manage Azure Quantum workspace access
+# Understanding Azure Quantum workspace access
 
 Learn how to manage access (authorization) to an Azure Quantum workspace.
- 
+
 ## Azure role-based access control
+
 [Azure role-based access control (Azure RBAC)](/azure/role-based-access-control/overview) is the authorization system you use to manage access to Azure resources, such as a workspace. To grant access, you assign roles to a security principal. 
 
 ### Security principal
@@ -46,7 +46,6 @@ Roles are assigned at a particular scope. Scope is the set of resources that the
 
 :::image type="content" source="media/manage-workspace-access-scope.png" alt-text="Diagram showing the four levels of scope.":::
 
-
 |Scope|Description|
 |-|-|
 |[Management group](/azure/governance/management-groups/overview)| Helps you manage access, policy, and compliance for multiple subscriptions. All subscriptions in a management group automatically inherit the conditions that are applied to the management group. You may need a management group if your organization has multiple subscriptions.|
@@ -55,7 +54,7 @@ Roles are assigned at a particular scope. Scope is the set of resources that the
 |Resource|An instance of a service that you can create, such as a workspace or storage account.|
 
 **Note:** Because access can be scoped to multiple levels in Azure, a user may have different roles at each level. For example, someone with owner access to a workspace may not have owner access to the resource group that contains the workspace.
- 
+
 ## Role requirements for creating a workspace
 
 When you [create a workspace](xref:microsoft.quantum.how-to.workspace), you first select a subscription, resource group, and storage account to associate with the workspace. Your ability to create a workspace depends on the levels of access you have, starting at the subscription scope. To view your authorization for various resources, see [Check your role assignments](#check-your-role-assignments). 

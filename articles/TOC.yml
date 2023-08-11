@@ -19,22 +19,24 @@
     href: how-to-create-workspace.md
   - name: Get started with Azure notebooks 
     href: get-started-jupyter-notebook.md
-  - name: Use different SDKs and IDEs with Azure Quantum
+  - name: Use different IDEs with Azure Quantum
     href: how-to-submit-jobs.md
-  - name: Set up a local environment with the QDK
+  - name: Set up the Quantum Development Kit
     href: install-overview-qdk.md
 - name: Manage Azure Quantum
   items:
   - name: Users and workspaces
     items:  
-    - name: Run Azure Quantum notebooks
+    - name: Work with Azure Quantum notebooks
       href: how-to-run-notebooks-workspace.md
-    - name: Manage Azure Quantum workspace access
-      href: manage-workspace-access.md
-    - name: Add a group to your Azure Quantum workspace
-      href: bulk-add-users-to-a-workspace.md
-    - name: Share access to your Azure Quantum workspace
-      href: how-to-share-access-quantum-workspace.md
+    - name: Work with Azure Quantum workspaces
+      items:
+      - name: Understanding Azure Quantum workspace access
+        href: manage-workspace-access.md
+      - name: Add a group to your Azure Quantum workspace
+        href: bulk-add-users-to-a-workspace.md
+      - name: Share access to your Azure Quantum workspace
+        href: how-to-share-access-quantum-workspace.md
     - name: Work with jobs
       href: how-to-work-with-jobs.md
     - name: Work with Azure Quantum using the Azure CLI 
