@@ -99,7 +99,7 @@ In the *Physical qubit parameters* group, you can see the physical qubit propert
 For example, the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
 
 > [!TIP]
-> You can access the output of the Azure Quantum Resources Estimator in JSON format using the `result.data()` method.
+> You can access the output of the Azure Quantum Resources Estimator as a Python dictionary using the `result.data()` method.
 
 For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) of the Resource Estimator.
 
