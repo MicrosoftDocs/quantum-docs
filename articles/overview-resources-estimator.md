@@ -24,7 +24,7 @@ Therefore, the Resource Estimator takes a set of inputs, with pre-defined values
 - A [Quantum Error Correction (QEC) scheme](#quantum-error-correction-schemes), `qecScheme`, which is the assumed quantum error correction scheme.
 - An [error budget](#error-budget), `errorBudget`, which is the overall allowed error, that is, the number of times the program is allowed to unsuccess.
 - [Constraints](#constraints) on the component-level, `constraints`, which are the number of logical cycles and the number of T factory copies.
-- A [distillation units](#distillation-units) parameter, `distillationUnitSpecifications`, to specify T factories distillation algorithms.
+- [Distillation units](#distillation-units), `distillationUnitSpecifications`, to specify T factories distillation algorithms.
 
 ### Physical qubit parameters
 
@@ -374,7 +374,7 @@ If a quantum algorithm doesn't contain T states or rotations, then the values of
 
 ### Constraints
 
-You can use `constraints` parameters to apply constraints on the component-level. By adjusting constraints, you can optimize the estimates toward reducing the number of qubits or toward reducing the runtime. 
+You can use `constraints` parameters to apply constraints on the T factory component-level. By adjusting constraints, you can optimize the estimates toward reducing the number of qubits or toward reducing the runtime. 
 
 ```JSON
 {
@@ -385,9 +385,9 @@ You can use `constraints` parameters to apply constraints on the component-level
 }
 ```
 
-- Logical depth:  If `logicalDepthFactor` has a value greater than 1, the initial number of logical cycles, also called *logical depth*, is multiplied by this number. By considering the logical depth, you can increase the number of T factories executed in a given time, resulting in fewer T factory copies needed to produce the same number of T states. When you reduce the number of T factory copies, the algorithm runtime increases accordingly. The scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.
+- Logical depth:  If `logicalDepthFactor` has a value greater than 1, the initial number of logical cycles, also called *logical depth*, is multiplied by this number. By reducing the logical depth, you can increase the number of T factories executed in a given time, resulting in fewer T factory copies needed to produce the same number of T states. When you reduce the number of T factory copies, the algorithm runtime increases accordingly. The scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.
 
-- Maximum number of T factories: You can set a limit on the number of T factory copies using `maxTFactories`. The Resource Estimator determines the resources required by selecting the optimal number of T factory copies that minimizes the number of physical qubits used, without considering the time overhead. The `maxTFactories` parameter limits the maximum number of copies, and therefore adjust the number of logical cycles accordingly.
+- Maximum number of T factory copies: You can set a limit on the number of T factory copies using `maxTFactories`. The Resource Estimator determines the resources required by selecting the optimal number of T factory copies that minimizes the number of physical qubits used, without considering the time overhead. The `maxTFactories` parameter limits the maximum number of copies, and therefore adjust the number of logical cycles accordingly.
 
 ### Distillation units
 
