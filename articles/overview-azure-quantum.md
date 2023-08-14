@@ -74,21 +74,21 @@ For more information, see [Introduction to Q\# and the Quantum Development Kit](
 
 ## Workflow of the quantum software development
 
-Azure Quantum provides the best development environment to create quantum algorithms for multiple platforms at once while preserving flexibility to tune the same algorithms for specific systems. You can pick from quantum programming languages such as Qiskit, Cirq, and Q# and run your algorithms on multiple quantum systems. With Azure Quantum, it’s easy to simultaneously explore today’s quantum systems and be ready for the scaled quantum systems of the future.
+Azure Quantum provides the best development environment to create quantum algorithms for multiple platforms at once while preserving flexibility to tune the same algorithms for specific systems. You can pick from quantum programming languages such as Qiskit, Cirq, and Q# and run your algorithms on multiple quantum systems.
 
 The following diagram shows the stages through which a quantum program goes from idea to complete implementation on Azure Quantum, and the tools offered by the QDK for each stage.
 
 ![qdk workflow](~/media/quantum-development-kit-flow-diagram.svg)
 
-1. **Write your quantum code.** You can write your Q# program with the [hosted Jupyter Notebooks](xref:microsoft.quantum.get-started.notebooks) available in your Azure Quantum workspace. If you prefer a local development environment, you can [create your Q# program](xref:microsoft.quantum.install-qdk.overview) using the QDK extensions for [Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64), [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode). 
+1. **Write your quantum code.** You can write your Q# program with the [hosted Jupyter Notebooks](xref:microsoft.quantum.get-started.notebooks) available in your Azure Quantum workspace. If you prefer a local development environment, you can [create your Q# program](xref:microsoft.quantum.install-qdk.overview) using the QDK extensions for [Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) and [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode). 
 
-2. **Use libraries to keep your code high level.** The open-source [quantum libraries](xref:microsoft.quantum.libraries.overview) help you keep your code high-level, doing a lot of the heavy lifting in implementation for you so that you can focus on the logic of your algorithms. They include “standard” libraries that implement patterns common for a lot of quantum algorithms, and domain-specific libraries, such as chemistry and machine learning. 
+2. **Use libraries to keep your code high level.** The open-source [quantum libraries](xref:microsoft.quantum.libraries.overview) help you keep your code high-level, doing a lot of the heavy lifting in implementation for you so that you can focus on the logic of your algorithms. They include [standard libraries](xref:microsoft.quantum.libraries.overview.standard.intro) that implement patterns common for a lot of quantum algorithms, and domain-specific libraries, such as a [chemistry](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview) and [machine learning](xref:microsoft.quantum.libraries.overview.machine-learning.intro) libraries. 
 
 3. **Integrate with classical software.** The Quantum Development Kit allows you to [integrate Q# programs with Python and .NET](xref:microsoft.quantum.user-guide-qdk.overview.host-programs), enabling a quantum software developer to take advantage of a lot of the advances made in classical computing in the past 70 years. You can also reuse and submit your existing [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit.portal) and [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq.portal) source code with little to no change.
 
 4. **Run your quantum code in simulation.**  Once you’ve written your program, you’ll want to use [quantum simulators](xref:microsoft.quantum.machines.overview) – classical programs that simulate the behavior of a quantum system, so that you can run and debug your quantum algorithms written in Q#.
 
-5. **Estimate resources.**  Before running on quantum hardware, you’ll need to figure out whether your program can run on existing hardware. You can use the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator) to tell you the physical resource estimates you need and how long your program will take.
+5. **Estimate resources.**  You need to understand how the implementation of your quantum program changes to the resource consumption. You can use the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator) to tell you the physical resource estimates you need and how long your program will take to run.
 
 6. **Run your code on quantum hardware.** Finally, the last step is using [Azure Quantum](xref:microsoft.quantum.submit-jobs) to run your program on [quantum hardware](xref:microsoft.quantum.reference.qc-target-list). 
 
