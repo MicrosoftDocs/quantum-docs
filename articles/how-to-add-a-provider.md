@@ -26,7 +26,7 @@ To add a provider to an existing workspace:
     :::image type="content" source="media/add-providers-portal.png" alt-text="Screen shot showing how to select a provider to add to an Azure Quantum workspace.":::
 
     > [!NOTE]
-    > If the provider you want to add is not in the list of available providers, then your billing account may be located in a country that is not supported by that provider. For more information, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability).
+    > If the provider you want to add is not in the list of available providers, then your billing account may be located in a country/region that is not supported by that provider. For more information, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability).
 
 5. Select **+Add** next to the desired provider, select a pricing option, and then click **Add**. 
 6. Once the provider is deployed, it appears in your provider list. To ensure that the deployment is complete, wait until the **Status** for the provider displays a green checkmark. 

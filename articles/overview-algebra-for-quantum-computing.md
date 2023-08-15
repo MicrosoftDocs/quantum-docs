@@ -79,4 +79,8 @@ Linear algebra is the standard language for describing quantum computing and qua
 
 ## Next steps
 
-- [Install the QDK](xref:microsoft.quantum.install-qdk.overview)
+- [Vectors and matrices](xref:microsoft.quantum.concepts.vectors)
+- [Advanced matrix concepts](xref:microsoft.quantum.concepts.matrix-advanced)
+- [The qubit](xref:microsoft.quantum.concepts.qubit)
+- [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)
+- [Dirac notation](xref:microsoft.quantum.concepts.dirac)

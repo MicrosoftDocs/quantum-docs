@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn about the history of quantum computing, some background describing how it works, and about Azure Quantum and the Quantum Development Kit (QDK).
 ms.author: sonialopez
-ms.date: 05/16/2022
+ms.date: 06/09/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -48,19 +48,10 @@ The [Quantum Development Kit](xref:microsoft.quantum.overview.q-sharp) empowers 
 
 Before approaching the programming language, it's helpful to review the basic principles on which quantum computing is based. Check out some important quantum computing concepts, such as [the qubit](xref:microsoft.quantum.concepts.qubit), [Pauli measurements](xref:microsoft.quantum.concepts.pauli), or [linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra). If a deeper study of quantum computing history and principles is desired, we refer you to the [reference section](xref:microsoft.quantum.more-information) containing more information.
 
-
 ## Next Steps
 
 - [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra)
 - [Vectors and matrices](xref:microsoft.quantum.concepts.vectors)
-- [Advanced matrix concets](xref:microsoft.quantum.concepts.matrix-advanced)
+- [Advanced matrix concepts](xref:microsoft.quantum.concepts.matrix-advanced)
 - [The qubit](xref:microsoft.quantum.concepts.qubit)
 - [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)
-- [Dirac notation](xref:microsoft.quantum.concepts.dirac)
-- [Pauli measurements](xref:microsoft.quantum.concepts.pauli)
-- [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
-- [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
-- [Open quantum systems](xref:microsoft.quantum.concepts.opensystems)
-- [Grover's algorithm](xref:microsoft.quantum.concepts.grovers)
-
-

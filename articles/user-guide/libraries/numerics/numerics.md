@@ -15,7 +15,7 @@ uid: microsoft.quantum.libraries-numerics.usage
 
 ## Overview
 
-The Numerics library consists of three components
+The Numerics library consists of three components:
 
 1. **Basic integer arithmetic** with integer adders and comparators
 1. **High-level integer functionality** that is built on top of the basic 
@@ -48,7 +48,7 @@ in the same way as `SignedLittleEndian`.
 
 ## Operations
 
-For each of the three types above, a variety of operations is available:
+For each of the three supported types, a variety of operations is available:
 
 1. **`LittleEndian`**
     - Addition
@@ -116,7 +116,7 @@ the input `x : FixedPoint` and the output `y : FixedPoint` (initially zero):
 ```qsharp
 EvaluatePolynomialFxP([1.0, 2.0], x, y);
 ```
-The result, $P(x)=1+2x$, will be stored in `yFxP`.
+The result, $P(x)=1+2x$, is stored in `yFxP`.
 
 The second, `EvaluateEvenPolynomialFxP`, and the third, `EvaluateOddPolynomialFxP`, are specializations
 for the cases of even and odd functions, respectively. That is, for an even/odd function $f(x)$ and

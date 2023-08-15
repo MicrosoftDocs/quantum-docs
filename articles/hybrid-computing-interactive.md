@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Understand the architecture of interactive (sessions) quantum computing and learn ho to create a new session.
-ms.date: 05/17/2023
+ms.date: 07/17/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -45,6 +45,9 @@ To create a session, you need the following prerequisites:
 ### [Q# + Python](#tab/tabid-iqsharp)
 
 This example shows how to create a session with Q# inline code using hosted Notebooks in the Azure portal. You can also create sessions using a [Python host program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs#q-with-host-programs) that invokes an adjacent Q# program. 
+
+> [!NOTE]
+>  Sessions are managed with Python, even when running Q# inline code. 
 
 1. Select the **Notebooks** blade in your Quantum workspace, and in **My Notebooks** click on **Add New**.
 1. In **Kernel Type**, select **IPython**.

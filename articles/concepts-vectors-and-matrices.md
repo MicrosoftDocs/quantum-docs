@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn the basics of how to work with vectors and matrices in quantum computing.
 ms.author: sonialopez
-ms.date: 10/20/2021
+ms.date: 06/09/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -13,7 +13,7 @@ uid: microsoft.quantum.concepts.vectors
 
 # Work with vectors and matrices in quantum computing
 
-Some familiarity with vectors and matrices is essential to understand quantum computing. This article provides a brief introduction, and interested readers are recommended to read a standard reference on linear algebra such as *Strang, G. (1993). Introduction to linear algebra (Vol. 3). Wellesley, MA: Wellesley-Cambridge Press* or an online reference such as [Linear Algebra](http://joshua.smcvt.edu/linearalgebra/).
+Some familiarity with vectors and matrices is essential to understand quantum computing. The article [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra) provides a brief refresher, and readers who want to dive deeper are recommended to read a standard reference on linear algebra such as *Strang, G. (1993). Introduction to linear algebra (Vol. 3). Wellesley, MA: Wellesley-Cambridge Press* or an online reference such as [Linear Algebra](http://joshua.smcvt.edu/linearalgebra/).
 
 ## Vectors
 
@@ -208,9 +208,8 @@ A final useful notational convention surrounding tensor products is that, for an
 ## Next Steps 
 
 - [Advanced matrix concepts](xref:microsoft.quantum.concepts.matrix-advanced)
-- [The qubit in quantum computing](xref:microsoft.quantum.concepts.qubit)
-- [Operations on multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)
+- [The qubit](xref:microsoft.quantum.concepts.qubit)
+- [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)
 - [Dirac notation](xref:microsoft.quantum.concepts.dirac)
 - [Pauli measurements](xref:microsoft.quantum.concepts.pauli)
-- [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
-- [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
+

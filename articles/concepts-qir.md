@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This article describes the Quantum intermediate representation developed by the QIR Alliance for quantum computing, its relevance, and use cases
 ms.author: sonialopez
-ms.date: 08/24/2022
+ms.date: 06/09/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -99,3 +99,9 @@ Moreover, you could use the intermediate representation to generate code that is
 In terms of code optimization, there are optimization steps that can be performed at the intermediate level that can make the overall algorithm implementation more efficient. Investigating this optimization of your input code can help you get a better understanding of where to make algorithms more efficient and how to improve the quantum programming languages.
 
 Another application is to use the standard LLVM “pass” infrastructure to create quantum code optimizers that operate on QIR. The language- and hardware-independent approach of QIR enables reusing those optimizers for different computation languages and computing platforms with almost no effort. 
+
+## Next steps
+
+- [The Q# programming user guide](xref:microsoft.quantum.user-guide-qdk.overview)
+- [Introduction to resource estimation](xref:microsoft.quantum.overview.intro-resource-estimator)
+- [Rigetti provider](xref:microsoft.quantum.providers.rigetti)

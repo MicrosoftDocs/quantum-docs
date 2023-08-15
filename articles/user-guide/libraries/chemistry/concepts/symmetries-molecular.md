@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about using the Q# OrbitalIntegral type to enumerate molecular symmetries.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 06/21/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -11,25 +11,25 @@ title: Symmetries of Molecular Integrals
 uid: microsoft.quantum.libraries.overview-chemistry.concepts.symmetries
 ---
 
-# Symmetries of Molecular Integrals
+# Symmetries of molecular integrals
 
-The inherent symmetry of the Coulomb Hamiltonian, which is the Hamiltonian given in [Quantum Models for Electronic Systems](xref:microsoft.quantum.libraries.overview-chemistry.concepts.quantummodels), that describes electrons interacting electrically with each other and with the nuclei, leads to a number of symmetries that can be exploited to compress the terms in the Hamiltonian.
-In general if no further assumptions are made about the basis functions $\psi_j$ then we only have that
+The inherent symmetry of the Coulomb Hamiltonian (the Hamiltonian given in [Quantum Models for Electronic Systems](xref:microsoft.quantum.libraries.overview-chemistry.concepts.quantummodels)) that describes electrons interacting electrically with each other and with the nuclei, leads to a number of symmetries that can be exploited to compress the terms in the Hamiltonian.
+In general, if no further assumptions are made about the basis functions $\psi_j$, then you only have that
 
 $$
 h_{pqrs}= h_{qpsr},\tag{★}\label{eq:hpqrs}
 $$
 
-which can be immediately seen from the integrals in [Quantum Models for Electronic Systems](xref:microsoft.quantum.libraries.overview-chemistry.concepts.quantummodels) upon noting that their values remain identical if $p,q$ and $r,s$ are interchanged from anti-commutation.
+which can be immediately seen from the integrals in [Quantum models for electronic systems](xref:microsoft.quantum.libraries.overview-chemistry.concepts.quantummodels) upon noting that their values remain identical if $p,q$ and $r,s$ are interchanged from anti-commutation.
 
-If we assume that the spin-orbitals are real-valued (as they are for Gaussian orbital bases) then we further have that
+If you assume that the spin-orbitals are real-valued (as they are for Gaussian orbital bases) then you further have that
 
 $$
 h_{pqrs} = h_{qpsr} = h_{srqp} = h_{rspq}=h_{rqps}=h_{psrq}=h_{spqr}=h_{qrsp}.\tag{★}\label{eq:hpqrsreal}
 $$
 
-Given such assumptions hold, we can use the above symmetries to reduce the data needed to store the matrix elements of the Hamiltonian by a factor of $8$; although doing so makes importing data in a consistent way slightly more challenging.
-Fortunately the Hamiltonian simulation library has subroutines that can be used to import integral files from either [LIQUI$|\rangle$](https://www.microsoft.com/research/project/language-integrated-quantum-operations-liqui/) or directly from [NWChem](http://www.nwchem-sw.org/index.php/Main_Page).
+Given such assumptions hold, you can use these symmetries to reduce the data needed to store the matrix elements of the Hamiltonian by a factor of $8$; although doing so makes importing data in a consistent way slightly more challenging.
+Fortunately, the Hamiltonian simulation library has subroutines that can be used to import integral files from either [LIQUI$|\rangle$](https://www.microsoft.com/research/project/language-integrated-quantum-operations-liqui/) or directly from [NWChem](http://www.nwchem-sw.org/index.php/Main_Page).
 
 Molecular orbital integrals such as these (for example, the $h\_{pq}$ and $h\_{pqrs}$ terms) are represented using the `OrbitalIntegral` type, which provides a number of helpful functions to express this symmetry.
 
@@ -75,7 +75,7 @@ In addition to enumerating over all orbital integrals that are numerically ident
     var twoElectronSpinOrbitalIndices = twoElectronIntegral.EnumerateSpinOrbitals();
 ```
 
-## Constructing Fermionic Hamiltonians from Molecular Integrals
+## Constructing Fermionic Hamiltonians from molecular integrals
 
 Rather than constructing a Fermionic Hamiltonian by adding `FermionTerm`s, all terms corresponding to each orbital integral may be added automatically.
 For example, the following code automatically enumerates over all permutational symmetries and orders the terms in canonical order:
@@ -86,7 +86,7 @@ For example, the following code automatically enumerates over all permutational 
 using Microsoft.Quantum.Chemistry;
 using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
 using Microsoft.Quantum.Chemistry.Fermion;
-// We load this namespace for convenience methods for manipulating arrays.
+// Load this namespace for convenience methods for manipulating arrays.
 using System.Linq;
 ```
 

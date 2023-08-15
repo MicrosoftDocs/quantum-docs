@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the Microsoft Quantum Chemistry Library and how it is used to simulate electronic structure problems on quantum computers.
 ms.author: brbenefield
-ms.date: 10/22/2021
+ms.date: 06/21/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -11,13 +11,17 @@ title: Introduction to the Quantum Chemistry Library
 uid: microsoft.quantum.libraries.overview-chemistry.concepts.overview
 ---
 
-# Introduction to the Quantum Chemistry Library
+# Introduction to the quantum chemistry library
 
 The quantum chemistry library for the Quantum Development Kit is designed to work well with computational chemistry packages, most notably the [**NWChem**](http://www.nwchem-sw.org/) computational chemistry platform developed by the Environmental Molecular Sciences Laboratory (EMSL) at Pacific Northwest National Laboratory.
 
 In particular, the [**Microsoft.Quantum.Chemistry** package](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) provides tools for loading instances of quantum chemistry simulation problems represented in the [Broombridge schema](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge), also supported for export by recent versions of NWChem.
 
 For more information about how to use the Quantum Development Kit with either NWChem and Broombridge, see [Installation of the Quantum Chemistry Library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.installation)
+
+## Azure Quantum Elements
+
+ Currently in private preview, Azure Quantum Elements uses the [Copilot in Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-elements) to design, code, and render molecular models. For more information, see [Azure Quantum Elements](https://quantum.microsoft.com/en-us/our-story/quantum-elements-overview).
 
 ## Quantum chemistry concepts
 
@@ -44,7 +48,7 @@ Instead of specifying terms of the Hamiltonian one-by-one, you can work through 
 - [Obtaining resource counts](xref:microsoft.quantum.libraries.overview-chemistry.examples.overview.resourcecounts) of a quantum chemistry simulation, such as the number of T-gates or CNOT gates.
 - [End-to-end with NWChem](xref:microsoft.quantum.libraries.overview-chemistry.examples.overview.endtoend).
 
-## Broombridge Quantum Chemistry Schema
+## Broombridge quantum chemistry schema
 
 The examples load a chemistry Hamiltonian encoded in the [Broombridge schema](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge), which is a [YAML](https://en.wikipedia.org/wiki/YAML)-based schema.
 
@@ -54,7 +58,7 @@ The [Broombridge Quantum Chemistry Schema](xref:microsoft.quantum.libraries.over
 - Ground and excited states can be presented using creation sequences.
 - Upper and lower bounds of energy levels can be specified.
 
-## Next Steps
+## Next steps
 
 - [Installation of the Quantum Chemistry Library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.installation)
 - [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs)

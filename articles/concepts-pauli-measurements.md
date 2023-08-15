@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to work with single- and multi-qubit Pauli measurement operations.
 ms.author: sonialopez
-ms.date: 10/10/2022
+ms.date: 06/09/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -13,7 +13,7 @@ uid: microsoft.quantum.concepts.pauli
 
 # Single- and multi-qubit Pauli measurement operations
 
-As you work with Q#, you will see that *Pauli measurements* are a common type of measurement. Pauli measurements generalize computational basis measurements to include measurements in other bases and of parity between different qubits. In such cases, it is common to discuss measuring a Pauli operator, which is an operator such as $X,Y,Z$ or $Z\otimes Z, X\otimes X, X\otimes Y$, and so forth. 
+As you work with Q#, you find that *Pauli measurements* are a common type of measurement. Pauli measurements generalize computational basis measurements to include measurements in other bases and of parity between different qubits. In such cases, it is common to discuss measuring a Pauli operator, which is an operator such as $X,Y,Z$ or $Z\otimes Z, X\otimes X, X\otimes Y$, and so forth. For the basics of quantum measurement, see [The qubit](xref:microsoft.quantum.concepts.qubit) and [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits).
 
 Discussing measurement in terms of Pauli operators is common in the subfield of quantum error correction.  
 Q# guide follows a similar convention; this article explains this alternative view of measurements.
@@ -47,7 +47,7 @@ This process is referred to in the language of Pauli measurements as "measuring 
 Any $2\times 2$ matrix that is a unitary transformation of $Z$ also satisfies this criteria.
 That is, one could also use a matrix $A=U^\dagger Z U$, where $U$ is any other unitary matrix, to give a matrix that defines the two outcomes of a measurement in its $\pm 1$ eigenvectors.
 The notation of Pauli measurements references this unitary equivalence by identifying $X,Y,Z$ measurements as equivalent measurements that one could do to gain information from a qubit.
-These measurements are given below for convenience.
+These measurements are given here for convenience.
 
 
 |Pauli Measurement  |Unitary transformation  |
@@ -56,7 +56,7 @@ These measurements are given below for convenience.
 | $X$               | $H$                    |
 | $Y$               | $HS^{\dagger}$         |
 
-That is, using this language, "measure $Y$" is equivalent to applying $HS^\dagger$ and then measuring in the computational basis, where [`S`](xref:Microsoft.Quantum.Intrinsic.S) is an intrinsic quantum operation sometimes called the "phase gate," and can be simulated by the unitary matrix
+That is, using this language, "measure $Y$" is equivalent to applying $HS^\dagger$ and then measuring in the computational basis, where [`S`](xref:Microsoft.Quantum.Intrinsic.S) is an intrinsic quantum operation sometimes called the "phase gate," and can be simulated using the unitary matrix
 
 $$
 \begin{align}
@@ -81,9 +81,9 @@ operation MeasureY(qubit : Qubit) : Result {
 }
 ```
 
-The correct state would then be found by transforming back to the computational basis, which amounts to applying $SH$ to the quantum state vector; in the above snippet, the transformation back to the computational basis is handled automatically by the use of the `within … apply` block.
+The correct state is then found by transforming back to the computational basis, which amounts to applying $SH$ to the quantum state vector; in the code snippet, the transformation back to the computational basis is handled automatically with the use of the `within … apply` block.
 
-In Q#, the outcome---that is, the classical information extracted from interacting with the state---is given by a `Result` value $j \in \\{\texttt{Zero}, \texttt{One}\\}$ indicating if the result is in the $(-1)^j$ eigenspace of the Pauli operator measured.
+In Q#, the outcome---that is, the classical information extracted from interacting with the state---is given using a `Result` value $j \in \\{\texttt{Zero}, \texttt{One}\\}$ indicating if the result is in the $(-1)^j$ eigenspace of the Pauli operator measured.
 
 
 ## Multiple-qubit measurements
@@ -110,13 +110,13 @@ $$
 \end{align}
 $$
 
-As before, any unitary transformation of such matrices also describes two half-spaces labeled by $\pm 1$ eigenvalues.
+As before, any unitary transformation of such matrices also describes two half-spaces labeled with $\pm 1$ eigenvalues.
 For example, $X\otimes X = H\otimes H(Z\otimes Z)H\otimes H$  from the identity that $Z=HXH$.
-Similar to the one-qubit case, all two-qubit Pauli-measurements can be written as $U^\dagger (Z\otimes \id) U$ for $4\times 4$ unitary matrices $U$. 
+Similar to the one-qubit case, all two-qubit Pauli-measurements may be written as $U^\dagger (Z\otimes \id) U$ for $4\times 4$ unitary matrices $U$. 
 The transformations are enumerated in the following table.
 
 > [!NOTE]
-> In the table below, $\operatorname{SWAP}$ is used to indicate the matrix
+> In this table, $\operatorname{SWAP}$ is used to indicate the matrix
 > $$
 > \begin{align}
 >     \operatorname{SWAP} & =
@@ -149,11 +149,11 @@ The transformations are enumerated in the following table.
 | $Y\otimes Y$ | $\operatorname{CNOT}\_{10}(HS^\dagger\otimes HS^\dagger)$ |
 
 Here, the [`CNOT`](xref:Microsoft.Quantum.Intrinsic.CNOT) operation appears for the following reason.
-Each Pauli measurement that does not include the $\boldone$ matrix is equivalent up to a unitary to $Z\otimes Z$ by the above reasoning.
+Each Pauli measurement that does not include the $\boldone$ matrix is equivalent up to a unitary to $Z\otimes Z$ by the earlier reasoning.
 The eigenvalues of $Z\otimes Z$ only depend on the parity of the qubits that comprise each computational basis vector, and the controlled-not operations serve to compute this parity and store it in the first bit.
 Then once the first bit is measured, one can recover the identity of the resultant half-space, which is equivalent to measuring the Pauli operator.
 
-One additional note: while it may be tempting to assume that measuring $Z\otimes Z$ is the same as sequentially measuring $Z\otimes \mathbb{1}$ and then $\mathbb{1} \otimes Z$, this assumption would be false.
+Also, while it may be tempting to assume that measuring $Z\otimes Z$ is the same as sequentially measuring $Z\otimes \mathbb{1}$ and then $\mathbb{1} \otimes Z$, this assumption would be false.
 The reason is that measuring $Z\otimes Z$ projects the quantum state into either the $+1$ or $-1$ eigenstate of these operators.
 Measuring $Z\otimes \mathbb{1}$ and then $\mathbb{1} \otimes Z$ projects the quantum state vector first onto a half space of $Z\otimes \mathbb{1}$ and then onto a half space of $\mathbb{1} \otimes Z$.
 As there are four computational basis vectors, performing both measurements reduces the state to a quarter-space and hence reduces it to a single computational basis vector.
@@ -169,7 +169,7 @@ The [bit-flip code sample](https://github.com/microsoft/Quantum/tree/main/sample
 
 Arbitrary Pauli operators such as $X\otimes Y \otimes Z \otimes \boldone$ can also be measured.
 All such tensor products of Pauli operators have only two eigenvalues $\pm 1$ and both eigenspaces constitute half-spaces of the entire vector space.
-Thus they coincide with the requirements stated above.
+Thus they coincide with the requirements stated earlier.
 
 In Q#, such measurements return $j$ if the measurement yields a result in the eigenspace of sign $(-1)^j$.
 Having Pauli measurements as a built-in feature in Q# is helpful because measuring such operators requires long chains of controlled-NOT gates and basis transformations to describe the diagonalizing $U$ gate needed to express the operation as a tensor product of $Z$ and $\id$.
@@ -189,7 +189,7 @@ It disallows cloning of generic quantum states by a quantum computer.
 The proof of the theorem is remarkably straightforward.
 While a full proof of the no-cloning theorem is too technical for this article, the proof in the case of no additional auxiliary qubits is within the scope.
 
-For such a quantum computer, the cloning operation must be described by a unitary matrix.
+For such a quantum computer, the cloning operation must be described with a unitary matrix.
 Quantum measurement is disallowed, since it would corrupt the quantum state to be cloned.
 To simulate the cloning operation, the unitary matrix used needs to have the property that
 $$
@@ -222,8 +222,16 @@ While the key assumption that the cloner acts linearly on the input state can be
 The No-Cloning Theorem is important for qualitative understanding of quantum computing because if you could clone quantum states inexpensively then you would be granted a near-magical ability to learn from quantum states.
 Indeed, you could violate Heisenberg's vaunted uncertainty principle.
 Alternatively, you could use an optimal cloner to take a single sample from a complex quantum distribution and learn everything you could possibly learn about that distribution from just one sample.
-This would be like you flipping a coin and observing heads and then upon telling a friend about the result having them respond "Ah the distribution of that coin must be Bernoulli with $p=0.512643\ldots$!"  Such a statement would be non-sensical because one bit of information (the heads outcome) simply cannot provide the many bits of information needed to encode the distribution without substantial prior information.
+This would be like you flipping a coin and observing heads and then upon telling a friend about the result having them respond "Ah the distribution of that coin must be Bernoulli with $p=0.512643\ldots$!"  Such a statement would be nonsensical because one bit of information (the heads outcome) simply cannot provide the many bits of information needed to encode the distribution without substantial prior information.
 Similarly, without prior information one cannot perfectly clone a quantum state just as one cannot prepare an ensemble of such coins without knowing $p$.
 
 Information is not free in quantum computing.
 Each qubit measured gives a single bit of information, and the No-Cloning Theorem shows that there is no backdoor that can be exploited to get around the fundamental tradeoff between information gained about the system and the disturbance invoked upon it.
+
+## Next steps
+
+- [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)
+- [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
+- [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
+- [Open quantum systems](xref:microsoft.quantum.concepts.opensystems)
+- [Grover's algorithm](xref:microsoft.quantum.concepts.grovers)

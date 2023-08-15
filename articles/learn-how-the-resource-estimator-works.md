@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how the Azure Quantum Resource Estimator calculates estimates
-ms.date: 04/21/2023
+ms.date: 08/07/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -53,27 +53,47 @@ Similarly, the runtime of the algorithm is $\text{Number of algorithmic logical 
 
 In the [Algorithmic logical estimation](#algorithmic-logical-estimation) step, the Resource Estimator calculates the total number of T states needed to run the algorithm. From the target parameters, the Resource Estimator has calculated the number of physical qubits for a single [T factory](xref:microsoft.quantum.concepts.tfactories) and its runtime. 
 
-The following diagram shows an example of the runtime of the algorithm (red) and the runtime of one T factory (blue). You can see that the runtime of the T factory is shorter than the runtime of the algorithm. In this example, one T factory can distill one T state. Two questions arise:
+The goal is to produce all T states within the algorithm runtime with as few T factory copies as possible. The following diagram shows an example of the runtime of the algorithm (red) and the runtime of one T factory (blue). You can see that the runtime of the T factory is shorter than the runtime of the algorithm. In this example, one T factory can distill one T state. Two questions arise:
 
-- How many times can the T factory run before the end of the algorithm?
+- How often can the T factory be invoked before the end of the algorithm?
 - How many copies of the T factory distillation round are necessary to create the number of T states required during the algorithm's runtime?
 
 <img src="~/media/resource-estimator-tfactory-plot.png" width="400" alt="Diagram showing the runtime of the algorithm (red) versus the runtime of one T factory (blue). Before the end of the algorithm, the T factory can run 8 times. If we need 30 T states, and T factory can run 8 times during runtime, then we need 4 copies of the T factories running in parallel to distill 30 T states.">
 
-Before the end of the algorithm, the T factory can run eight times in a distillation round. For example, if the [Algorithmic logical estimation](#algorithmic-logical-estimation) step calculates 30 T states, and a T factory can run eight times during runtime of the algorithm, then you need four copies of the T factory distillation round running in parallel to distill the 30 T states needed.
+Before the end of the algorithm, the T factory can be invoked eight times, which is called a distillation round. For example, let's say that based on the [Algorithmic logical estimation](#algorithmic-logical-estimation) step, you need 30 T states. A single T factory is invoked eight times during runtime of the algorithm and thus, it creates eight T states. Then you need four copies of the T factory distillation round running in parallel to distill the 30 T states needed.
 
-Since qubits are reused by different rounds, the number of physical qubits for one T factory is the maximum number of physical qubits used for one round. The runtime of the T factory is the sum of the runtimes in all rounds. 
+> [!NOTE]
+> Note that T factory copies and T factory invocations aren't the same.
+
+You can only do full invocations of a T factory. Therefore, there may be situations in which the accumulated runtime of all T factory invocations is less than the algorithm runtime. Since qubits are reused by different rounds, the number of physical qubits for one T factory is the maximum number of physical qubits used for one round. The runtime of the T factory is the sum of the runtimes in all rounds. 
 
 > [!NOTE]
 > If the physical T gate error rate is lower than the required logical T state error rate, the Resource Estimator cannot perform a good resource estimation. When you submit a resource estimation job, you may encounter that the T factory cannot be found because the required logical T state error rate is either too low or too high. 
 
 For more information, see Appendix C of [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629).
 
-### Physical resource estimation
+### Space-time diagrams
 
-In the previous step, the Resource Estimator computes the total number of physical qubits from the number of physical qubits required by the T factories that are responsible to produce the required T states that are consumed by the algorithm, plus the number of algorithmic physical qubits required to implement the algorithm logic.
+Finally, the overall physical resource estimation consists of total number of physical qubits and the runtime. The total number of physical qubits is calculated from the sum of the number of physical qubits required by the T factory copies that produce the T states that are consumed by the algorithm, plus the number of physical qubits required to execute the algorithm. The total runtime of the algorithm is decided based on the number of instructions that need to be performed to run the algorithm. It's the runtime calculated in the [Algorithmic physical estimation](#algorithmic-physical-estimation) step. 
 
-The total runtime of the algorithm is the runtime calculated in the [Algorithmic physical estimation](#algorithmic-physical-estimation) step.
+You can inspect the distribution of physical qubits used for the algorithm and the T factories using the space-time diagrams. The space diagram shows the proportion of these two. Note that the number of T factory copies contributes to the number of physical qubits for T factories.
+
+```python
+result.diagram.space
+```
+:::image type="content" source="media/resource-estimator-space-diagram.png" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
+
+The time diagram shows the time required to execute the algorithm as it relates to each T factory invocation runtime and the number of T factory invocation (possibly capped if there are too many invocations). The table on the right side lists the most important metrics that are used to compute these numbers, which are described in the [T factory physical estimation](#t-factory-physical-estimation) previous step. Note that the number of T factory invocations is calculated based on the total runtime.
+
+```python
+result.diagram.time
+```
+:::image type="content" source="media/resource-estimator-time-diagram.png" alt-text="Diagram showing the number of T factory invocations during the runtime of the algorithm. There's also a table with the breakdown of the number of T factory copies, number of T factory invocations, T states per invocation, etc.":::
+
+Consider the example shown in the time diagram. Since the T factoy runtime is 57 microsecs, the T factory can be invoked a total of 54 times during the runtime of the algorithm. One T factory produces one T state, and to execute the algorihtm you need a total of 800 T states. Therefore, you need 15 copies of the T factories executed in parallel. The total number of T factory copies is computed as $ \frac{\text{T states} \cdot \text{T factory duration}}{\text{T states per T factory}\cdot\text{algorithm runtime}}=\frac{800 \cdot 57,200 ns}{1 \cdot 3,161,600 ns}=15$. 
+
+> [!NOTE]
+> In the time diagram, each blue arrow represents the total number of copies of the T factory repeatedly invoked.
 
 ## Assumptions
 

@@ -25,7 +25,7 @@ The Quantum Development Kit (QDK) provides additional domain-specific functional
 | [Quantum machine learning library](xref:microsoft.quantum.libraries.overview.machine-learning.intro) | [**Microsoft.Quantum.MachineLearning**](https://www.nuget.org/packages/Microsoft.Quantum.MachineLearning) | |
 | [Quantum numerics library](xref:microsoft.quantum.libraries-numerics.usage) | [**Microsoft.Quantum.Numerics**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) | |
 
-## Standard Libraries
+## Standard libraries
 
 The [`Microsoft.Quantum.Sdk` NuGet package](https://www.nuget.org/packages/Microsoft.Quantum.Sdk/) installed during [installation and validation](xref:microsoft.quantum.install-qdk.overview) automatically provides the Q# standard library. The standard libraries provide a set of essential and very useful functions and operations that can be used when writing quantum programs in Q#.
 
@@ -33,7 +33,7 @@ The functionality of the standard libraries includes classical mathematics, type
 
 For more information, see [Standard Libraries](xref:microsoft.quantum.libraries.overview.standard.intro).
 
-## Quantum Chemistry Library
+## Quantum chemistry library
 
 Simulation of physical systems has long played a central role in quantum computing. This is because quantum dynamics are widely believed to be intractable to simulate on classical computers, meaning that the complexity of simulating the system scales exponentially with the size of the quantum system in question. Simulating problems in chemistry and material science remains perhaps the most evocative application of quantum computing and would allow us to probe chemical reaction mechanisms that hitherto were beyond our ability to measure or simulate. It would also allow us to simulate correlated electronic materials such as high-temperature superconductors. The list of applications in this space is vast.
 
@@ -42,7 +42,7 @@ The documentation of the quantum chemistry library for the Quantum Development K
 The quantum chemistry library for the Quantum Development Kit is designed to work well with computational chemistry packages, most notably the [**NWChem**](http://www.nwchem-sw.org/) computational chemistry platform developed by the Environmental Molecular Sciences Laboratory (EMSL) at Pacific Northwest National Laboratory.
 For more information, see [Installation of quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.installation).
 
-## Quantum Machine Learning Library
+## Quantum machine learning library
 
 The Quantum Machine Learning Library is an API, written in Q#, that gives you the ability to run hybrid quantum/classical machine learning experiments. The library gives you the ability to:
 
@@ -59,7 +59,7 @@ The quantum machine learning library documentation provides an implementation of
 - How to [load your own data sets](xref:microsoft.quantum.libraries.overview.machine-learning.load) to train a classifier model with the Quantum Development Kit (QDK).
 - Finally, a [quantum machine learning glossary](xref:microsoft.quantum.libraries.overview.machine-learning.training), with the main concepts and ingredients of the training process.
 
-## Quantum Numerics Library
+## Quantum numerics library
 
 Many quantum algorithms rely on [oracles](xref:microsoft.quantum.concepts.oracles) that evaluate mathematical functions on a superposition of inputs.
 The main component of Shor's algorithm, for example, evaluates $f(x) = a^x\operatorname{mod} N$ for a fixed $a$, the number to factor $N$, and $x$ a $2n$-qubit integer in a uniform superposition over all $2n$-bit strings.
@@ -164,8 +164,8 @@ Sources of the libraries as well as code samples can be obtained from GitHub. Se
 
 - [Ways to run a Q# program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs)
 - [Testing and debugging quantum programs](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging)
-- [Standard Libraries](xref:microsoft.quantum.libraries.overview.standard.intro)
-- [Quantum Chemistry Library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview)
-- [Quantum Machine Learning Library](xref:microsoft.quantum.libraries.overview.machine-learning.intro)
-- [Quantum Numerics Library](xref:microsoft.quantum.libraries-numerics.usage)
-- [Quantum Simulators](xref:microsoft.quantum.machines.overview)
+- [Standard libraries](xref:microsoft.quantum.libraries.overview.standard.intro)
+- [Quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview)
+- [Quantum machine learning library](xref:microsoft.quantum.libraries.overview.machine-learning.intro)
+- [Quantum numerics library](xref:microsoft.quantum.libraries-numerics.usage)
+- [In-memory simulators](xref:microsoft.quantum.machines.overview)

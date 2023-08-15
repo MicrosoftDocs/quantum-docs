@@ -2,15 +2,15 @@
 author: SoniaLopezBravo
 description: Reference for azure.quantum.Job
 ms.author: sonialopez
-ms.date: 05/01/2023
+ms.date: 07/17/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
-title: Quantum optimization job
+title: Azure Quantum job reference
 uid: microsoft.quantum.optimization.job-reference
 ---
 
-# Azure Quantum Job
+# Azure Quantum job reference
 
 [!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 

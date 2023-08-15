@@ -23,8 +23,8 @@ Non-dynamic correlations arise when the wavefunction is dominated by two or more
 This scenario necessitates a superposition of determinants and is an example of a multireference wavefunction.
 
 The chemistry library provides a way to specify a zeroth order wavefunction for the multireference problem as a superposition of determinants.
-This approach, which we call sparse multireference wavefunctions, is effective when only a few components suffice to specify the superposition.
-The library also provides a method to include dynamic correlations on top of a single-determinant reference via the generalized unitary coupled-cluster ansatz. Furthermore, it also constructs quantum circuits that generate these states on a quantum computer. These states may be specified in the [Broombridge schema](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge), and we also provide the functionality to manually specify these states through the chemistry
+This approach, called *sparse multireference wavefunctions*, is effective when only a few components suffice to specify the superposition.
+The library also provides a method to include dynamic correlations on top of a single-determinant reference via the generalized unitary coupled-cluster ansatz. Furthermore, it also constructs quantum circuits that generate these states on a quantum computer. These states may be specified in the [Broombridge schema](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge), which also provides the functionality to manually specify these states through the chemistry
 library.
 
 ## Sparse multi-reference wavefunction
@@ -62,7 +62,7 @@ The reason for this is the gate cost of the quantum circuit that prepares this s
 ## Unitary coupled-cluster wavefunction
 
 It's also possible to specify a unitary coupled-cluster wavefunction $\ket{\psi_{\rm {UCC}}}$ using the chemistry library.
-In this situation, we have a single-determinant reference state, say, $\ket{\psi_{\rm{SCF}}}$.
+In this situation, you have a single-determinant reference state, say, $\ket{\psi_{\rm{SCF}}}$.
 The components of the unitary coupled-cluster wavefunction are then specified implicitly through a unitary operator acting on a reference state.
 This unitary operator is commonly written as $e^{T-T^\dagger}$, where $T-T^\dagger$ is the anti-Hermitian cluster operator.
 Thus
@@ -93,8 +93,8 @@ For example, let $\ket{\psi_{\rm{SCF}}} = a^\dagger_1 a^\dagger_2\ket{0}$, and l
 using Microsoft.Quantum.Chemistry;
 using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
 using Microsoft.Quantum.Chemistry.LadderOperators;
-using Microsoft.Quantum.Chemistry.Fermion;
-// We load this namespace for convenience methods for manipulating arrays.
+using Microsoft.Quantum.Chemistry.Fermion
+// Load this namespace for convenience methods for manipulating arrays.
 using System.Linq;
 ```
 

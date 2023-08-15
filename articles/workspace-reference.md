@@ -2,15 +2,15 @@
 author: SoniaLopezBravo
 description: Reference for azure.quantum.Workspace
 ms.author: sonialopez
-ms.date: 05/01/2023
+ms.date: 07/17/2023
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: reference
-title: Azure Quantum workspace
+ms.topic: reference 
+title: Azure Quantum workspace reference
 uid: microsoft.quantum.optimization.workspace
 ---
 
-# Azure Quantum workspace
+# Azure Quantum workspace reference
 
 [!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
