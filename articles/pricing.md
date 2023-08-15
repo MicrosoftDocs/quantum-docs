@@ -53,8 +53,8 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 |Pricing | Use is deducted from the Azure Quantum Credits based on the number of QGSs executed |
 |---|---|  
 |Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
-| IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.0003 (USD) deducted from your credits</li><li>Minimum price per program execution: \$1.00 (USD) if error mitigation is off, \$5.00 (USD) if error mitigation is on.</ul>|
-| IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.000220 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.000975 (USD) deducted from your credits</li><li>Minimum price per program execution: \$97.50 (USD) (default setting, error mitigation is on). \$12.4166 (USD) if error mitigation is off.</li></ul>|
+|IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.0003 (USD) deducted from your credits</li><li>Minimum price per program execution:<ul><li> \$1.00 (USD) if error mitigation is off</li><li>$5.00 (USD) if error mitigation is on</li></ul></ul>|
+|IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.000220 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.000975 (USD) deducted from your credits</li><li>Minimum price per program execution:<ul><li>$97.50 (USD) - default setting, error mitigation is on</li><li> $12.4166 (USD) if error mitigation is off</li></ul></ul>|
 
 > [!NOTE]
 > Once you have consumed all the credits you need to switch to a different plan to continue using IonQ. Azure Quantum won’t start charging you once you reach your credit limit. 
@@ -69,9 +69,9 @@ The Pay-as-you-go plan consists of *a la carte* access to the 11-qubit trapped i
 
 |Pricing | Use is charged based on the number of QGSs executed + Azure infrastructure costs |
 |---|---|  
-| Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria 1 QPU</li><li>IonQ Simulator (free)</li></ul>|
-| IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD)</li><li>2-Qubit Gate Shot: $0.0003 (USD)</li><li>Minimum price per program execution: \$1.00 (USD) if error mitigation is off, \$5.00 (USD) if error mitigation is on.</li></ul>|
-| IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.000220 (USD)</li><li>2-Qubit Gate Shot: $0.000975 (USD)</li><li>Minimum price per program execution: \$97.50 (USD) (default setting, error mitigation is on). \$12.4166 (USD) if error mitigation is off.</li></ul>|
+|Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria 1 QPU</li><li>IonQ Simulator (free)</li></ul>|
+|IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD)</li><li>2-Qubit Gate Shot: $0.0003 (USD)</li><li>Minimum price per program execution:<ul><li> \$1.00 (USD) if error mitigation is off</li><li>$5.00 (USD) if error mitigation is on</li></ul></ul>|
+|IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.000220 (USD)</li><li>2-Qubit Gate Shot: $0.000975 (USD)</li><li>Minimum price per program execution:<ul><li>$97.50 (USD) - default setting, error mitigation is on</li><li> $12.4166 (USD) if error mitigation is off</li></ul></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -82,8 +82,8 @@ The Aria plan is a monthly subscription plan with access to the IonQ Aria 1 25-q
 |Pricing | $25,000 (USD)/Month + Azure infrastructure costs |
 |---|---|  
 |Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
-| IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD)</li><li>2-Qubit Gate Shot: $0.0003 (USD)</li><li>Minimum price per program execution: \$1.00 (USD) if error mitigation is off, \$5.00 (USD) if error mitigation is on.</li></ul>|
-| IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.000220 (USD)</li><li>2-Qubit Gate Shot: $0.000975 (USD)</li><li>Minimum price per program execution: \$97.50 (USD) (default setting, error mitigation is on). \$12.4166 (USD) if error mitigation is off.</li></ul>|  
+|IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD)</li><li>2-Qubit Gate Shot: $0.0003 (USD)</li><li>Minimum price per program execution:<ul><li> \$1.00 (USD) if error mitigation is off</li><li>$5.00 (USD) if error mitigation is on</li></ul></ul>|
+|IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.000220 (USD)</li><li>2-Qubit Gate Shot: $0.000975 (USD)</li><li>Minimum price per program execution:<ul><li>$97.50 (USD) - default setting, error mitigation is on</li><li> $12.4166 (USD) if error mitigation is off</li></ul></ul>|  
 
 > [!NOTE]
 > Once you have consumed the equivalent cost of the monthly subscription, any overspending is charged as a pay-as-you-go plan.
