@@ -13,7 +13,7 @@ uid: microsoft.quantum.overview.resources-estimator
 
 # Customize resource estimates to machine characteristics
 
-This article shows how to customize the target parameters of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to match the machine characteristics that you're targeting. You also see the output data of resource estimates and their definitions. 
+This article shows how to customize the target parameters of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to match the machine characteristics that you're targeting. You also see the output data of resource estimates and their definitions.
 
 ## Target parameters
 
@@ -45,10 +45,9 @@ You can specify predefined qubit parameters by selecting the qubit model name fo
     "qubitParams": { "name": "qubit_gate_ns_e3" }
 }
 ```
+
 > [!NOTE]
 > If no value is provided for the `qubitParams` parameter, `qubit_gate_ns_e3` is chosen as the default qubit parameters.
-
-
 
 For reference, the complete predefined qubit parameters are as follows:
 
@@ -153,7 +152,7 @@ You can customize predefined qubit parameters by specifying the name and then up
 }
 ```
 
-**Qubit parameters for Gate-based qubits**
+##### Qubit parameters for Gate-based qubits
 
 | Field                        | Description                                                        |
 |----------------------------- | ------------------------------------------------------------------|
@@ -169,7 +168,7 @@ You can customize predefined qubit parameters by specifying the name and then up
 | `tGateErrorRate`              | Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
 | `idleErrorRate`                 | Error rate corresponding to idling                                   |
 
-A minimum template for gate-based instrucition set with all required values is:
+A minimum template for gate-based instruction set with all required values is:
 
 ```json
 {
@@ -185,7 +184,7 @@ A minimum template for gate-based instrucition set with all required values is:
 
 When not specified, the values for `twoQubitGateTime` and `tGateTime` default to `oneQubitGateTime`, the values for `twoQubitGateErrorRate` and `tGateErrorRate` default to `oneQubitGateErrorRate`, and the value for `idleErrorRate` defaults to `oneQubitMeasurementErrorRate`.
 
-**Qubit parameters for Majorana qubits**
+##### Qubit parameters for Majorana qubits
 
 | Field                        | Description                                                        |
 |----------------------------- | ------------------------------------------------------------------|
@@ -222,7 +221,9 @@ For `oneQubitMeasurementErrorRate` and `twoQubitJointMeasurementErrorRate`, you 
     }
 }
 ```
+
 and
+
 ```json
 {
     "twoQubitJointMeasurementErrorRate": {
@@ -231,6 +232,7 @@ and
     }
 }
 ```
+
 > [|NOTE]
 > If you specify a single numeric value for single-qubit and two-qubit error rates in Majorana qubit measurement, both readout and process error rates may be equal.
 
@@ -239,17 +241,17 @@ When not specified, the values for `twoQubitJointMeasurementTime` and `tGateTime
 > [!IMPORTANT]
 > All values that aren't specified will take a default value, for example, specifying `"qubit": {"oneQubitGateTime":"200 ns"}` will model a gate-based qubit in which both the two-qubit gate time and the one-qubit gate time are 200 ns. For units, you need to specify time strings, which are double-precision floating point numbers, followed by a space and the time unit for such values, where possible time suffixes are `ns`, `µs` (or `us`), `ms`, and `s`.  
 
-### Quantum error correction schemes 
+### Quantum error correction schemes
 
-To execute practical-scale quantum applications, quantum operations should have low error rates. These error rate targets are typically beyond the capabilities of raw physical qubits. To overcome this limitation, quantum error correction (QEC) and fault-tolerant computation are two crucial techniques that form the building blocks of large-scale quantum computers. First, QEC allows us to compose multiple error-prone physical qubits and build a more reliable logical qubit that preserves quantum information better than the underlying physical qubits. 
+To execute practical-scale quantum applications, quantum operations should have low error rates. These error rate targets are typically beyond the capabilities of raw physical qubits. To overcome this limitation, quantum error correction (QEC) and fault-tolerant computation are two crucial techniques that form the building blocks of large-scale quantum computers. First, QEC allows us to compose multiple error-prone physical qubits and build a more reliable logical qubit that preserves quantum information better than the underlying physical qubits.
 
-The error correction code distance (or just code distance for short) is a parameter that controls the number of errors that can be corrected. Thus, the error rate of the logical qubits and the number of physical qubits that are required to encode them. Both accuracy and the number of physical qubits increase with code distance. The goal is to find the minimum code distance that can achieve the required error rate set for a particular application. 
+The error correction code distance (or just code distance for short) is a parameter that controls the number of errors that can be corrected. Thus, the error rate of the logical qubits and the number of physical qubits that are required to encode them. Both accuracy and the number of physical qubits increase with code distance. The goal is to find the minimum code distance that can achieve the required error rate set for a particular application.
 
-The Resource Estimator uses the following formula for modeling logical error rates using an exponential model, 
+The Resource Estimator uses the following formula for modeling logical error rates using an exponential model,
 
 $$ P = a\left(\frac{p}{p^\*}\right)^{\frac{d+1}{2}} $$
 
-where $d$ is the code distance, $p$ is the physical error rate, and $p^\*$ is the quantum error correction threshold. The physical error rate $p$ is extracted from the qubit parameters as the worst-case error rate any physical Clifford operation in the device. 
+where $d$ is the code distance, $p$ is the physical error rate, and $p^\*$ is the quantum error correction threshold. The physical error rate $p$ is extracted from the qubit parameters as the worst-case error rate any physical Clifford operation in the device.
 
 In particular, $p = {}$ max(`oneQubitMeasurementErrorRate`, `oneQubitGateErrorRate`, `twoQubitGateErrorRate`) for qubit parameters with a gate-based instruction set, and $p = {}$ max(`oneQubitMeasurementErrorRate`, `twoQubitJointMeasurementErrorRate`) for qubit parameters with a Majorana instruction set. QEC schemes typically have an error rate threshold $p^\*$ below which error correction suppresses errors.
 
@@ -258,8 +260,7 @@ In particular, $p = {}$ max(`oneQubitMeasurementErrorRate`, `oneQubitGateErrorRa
 |`surface_code`|GateBased and Majorana| The gate-based surface code is based on [arXiv:1208.0928](https://arxiv.org/abs/1208.0928) and [arXiv:1009.3686](https://arxiv.org/abs/1009.3686). The Majorana surface code is based on [arXiv:1909.03002](https://arxiv.org/abs/1909.03002) and [arXiv:2007.00307](https://arxiv.org/abs/2007.00307).|
 |`floquet_code`| Majorana|The floquet code is based on [arXiv:2202.11829](https://arxiv.org/abs/2202.11829).|
 
-
-You can specify predefined QEC schemes by selecting the QEC scheme name for the `qecScheme` parameter in the top-level parameters, for example: 
+You can specify predefined QEC schemes by selecting the QEC scheme name for the `qecScheme` parameter in the top-level parameters, for example:
 
 ```JSON
 {
@@ -269,7 +270,6 @@ You can specify predefined QEC schemes by selecting the QEC scheme name for the 
 
 > [!NOTE]
 > If no value is provided for the `qecScheme` parameter, `surface_code` for the gate-based qubit is chosen as the default QEC.
-
 
 The exact parameters for each predefined QEC scheme (including a crossing pre-factor $a$, which can be extracted numerically for simulations) are the following.
 
@@ -330,7 +330,7 @@ You can customize predefined QEC schemes by specifying the name and then updatin
 
 #### Customize your QEC schemes
 
-The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `crossingPrefactor` $a$ and the `errorCorrectionThreshold` $p^\*$. Further, you need to specify the `logicalCycleTime`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `physicalQubitsPerLogicalQubit`, that is, the number of physical qubits required to encode one logical qubit based on the code distance. 
+The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `crossingPrefactor` $a$ and the `errorCorrectionThreshold` $p^\*$. Further, you need to specify the `logicalCycleTime`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `physicalQubitsPerLogicalQubit`, that is, the number of physical qubits required to encode one logical qubit based on the code distance.
 
 You can use the following code as a template for QEC schemes:
 
@@ -347,10 +347,9 @@ You can use the following code as a template for QEC schemes:
 
 Inside the formulas, you can use the variables `oneQubitGateTime`, `twoQubitGateTime`, `oneQubitMeasurementTime`, and `twoQubitJointMeasurementTime`, whose values are taken from the corresponding field from the [physical qubit parameters](#customize-predefined-qubit-parameters), as well as the variable `eccDistance` for the code distance computed for the logical qubit, based on the physical qubit properties, the error correction threshold, and the crossing prefactor. The time variables and `eccDistance` can be used to describe the `logicalCycleTime` formula. For the formula `physicalQubitsPerLogicalQubit` only the `eccDistance` can be used.
 
+### Error budget
 
-### Error budget 
-
-The total error budget $\epsilon$ sets the overall tolerated error for the algorithm, that is, the allowed failure probability of the algorithm. Its global value must be between 0 and 1 and the default value is 0.001, which corresponds to 0.1%. In other words, the algorithm is allowed to fail a maximum of once in 1000 executions. This parameter is highly application specific. 
+The total error budget $\epsilon$ sets the overall tolerated error for the algorithm, that is, the allowed failure probability of the algorithm. Its global value must be between 0 and 1 and the default value is 0.001, which corresponds to 0.1%. In other words, the algorithm is allowed to fail a maximum of once in 1000 executions. This parameter is highly application specific.
 
 For example, if you're running Shor’s algorithm for factoring integers, a large value for the error budget may be tolerated as one can check that the outputs are indeed the prime factors of the input. On the other hand, a smaller error budget may be needed for an algorithm solving a problem with a solution, which can't be efficiently verified. 
 
@@ -374,7 +373,7 @@ If a quantum algorithm doesn't contain T states or rotations, then the values of
 
 ### Constraints
 
-You can use `constraints` parameters to apply constraints on the T factory component-level. By adjusting constraints, you can optimize the estimates toward reducing the number of qubits or toward reducing the runtime. 
+You can use `constraints` parameters to apply constraints on the [T factory](xref:microsoft.quantum.concepts.tfactories#t-factories-in-the-azure-quantum-resource-estimator) component-level. By adjusting constraints, you can optimize the estimates toward reducing the number of qubits or toward reducing the runtime.
 
 ```JSON
 {
@@ -385,13 +384,15 @@ You can use `constraints` parameters to apply constraints on the T factory compo
 }
 ```
 
-- Logical depth:  If `logicalDepthFactor` has a value greater than 1, the initial number of logical cycles, also called *logical depth*, is multiplied by this number. By reducing the logical depth, you can increase the number of T factories executed in a given time, resulting in fewer T factory copies needed to produce the same number of T states. When you reduce the number of T factory copies, the algorithm runtime increases accordingly. The scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.
+- Logical depth:  If `logicalDepthFactor` has a value greater than 1, the initial number of logical cycles, also called *logical depth*, is multiplied by this number. By reducing the logical depth, you can increase the number of invocation of the T factory in a given time, resulting in fewer T factory copies needed to produce the same number of T states. When you reduce the number of T factory copies, the algorithm runtime increases accordingly. The scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.
 
 - Maximum number of T factory copies: You can set a limit on the number of T factory copies using `maxTFactories`. The Resource Estimator determines the resources required by selecting the optimal number of T factory copies that minimizes the number of physical qubits used, without considering the time overhead. The `maxTFactories` parameter limits the maximum number of copies, and therefore adjust the number of logical cycles accordingly.
 
+For more information, see [T factory physical estimation](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).
+
 ### Distillation units
 
-You can provide custom specifications for T factories distillation algorithms with the `distillationUnitSpecifications` parameter. The specification can be either predefined or custom. You can specify a predefined specification by selecting the distillation unit name: `15-1 RM` or `15-1 space-efficient`. 
+You can provide custom specifications for T factories distillation algorithms with the `distillationUnitSpecifications` parameter. The specification can be either predefined or custom. You can specify a predefined specification by selecting the distillation unit name: `15-1 RM` or `15-1 space-efficient`.
 
 ```JSON
 {
@@ -400,6 +401,7 @@ You can provide custom specifications for T factories distillation algorithms wi
     ]
 }
 ```
+
 In both cases, notation *15-1* stands for 15 input T states and 1 output T state. The `15-1 space-efficient` distillation unit uses fewer qubits than `15-1 RM` but requires more runtime. For more information, see [Table VI](https://arxiv.org/pdf/2211.07629.pdf#page=24).
 
 > [!NOTE]
@@ -447,14 +449,14 @@ See the following examples of custom formulas using long and short notation. The
 
 |Parameter|Long formula|Short formula|
 |---|---|---|
-|`failureProbabilityFormula`| {"Custom": "15.0 * inputErrorRate + 356.0 * cliffordErrorRate"} | {"Custom": "15.0 * z + 356.0 * c"} |
-|`outputErrorRateFormula`| {"Custom": "35.0 * inputErrorRate ^ 3 + 7.1 * cliffordErrorRate"} | {"Custom": "35.0 * z ^ 3 + 7.1 * c"}|
+|`failureProbabilityFormula`| `{"Custom": "15.0 * inputErrorRate + 356.0 * cliffordErrorRate"}` | `{"Custom": "15.0 * z + 356.0 * c"}` |
+|`outputErrorRateFormula`| `{"Custom": "35.0 * inputErrorRate ^ 3 + 7.1 * cliffordErrorRate"}` | `{"Custom": "35.0 * z ^ 3 + 7.1 * c"}` |
 
 ## Output data
 
-The Resource Estimator takes the target parameters to evaluate the resource estimates of the requested quantum algorithm. The result of the resource estimation job is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget. 
+The Resource Estimator takes the target parameters to evaluate the resource estimates of the requested quantum algorithm. The result of the resource estimation job is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget.
 
-The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can visualize this distribution to better understand the estimated space requirements for the algorithm using the [space-time diagrams](xref:microsoft.quantum.submit-resource-estimation-jobs#space-time-diagrams). 
+The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can visualize this distribution to better understand the estimated space requirements for the algorithm using the [space-time diagrams](xref:microsoft.quantum.submit-resource-estimation-jobs#space-time-diagrams).
 
 For more information, see [How the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
 
@@ -466,7 +468,7 @@ For more information, see [How the Resource Estimator works](xref:microsoft.quan
 |Quantum operations per second (rQOPS)| The number of reliable quantum operations, that is, operations that are implemented using quantum error correction in order to achieve operational error rates. rQOPS is normalized to seconds to quantify the capability of a machine without being tied to the runtime of any particular algorithm. This number is computed as $\text{Logical qubits}*\text{Clock frequency}$, where $\text{Clock frequency}$ is the number of logical cycles per second.|
 |Physical qubits |Total number of physical qubits, which is the sum of the number of physical qubits to implement the algorithm logic, and the number of physical qubits for running the T factories that are responsible to produce the required T states that are consumed by the algorithm.|
 
-rQOPS provides a simple way to capture the overall system capability by combining several aspects of the system. The number of logical qubits captures the size of the largest application that can be run. The clock frequency distills the underlying physical qubit's gate speeds and the performance of the error correction scheme that runs on top of the physical qubits.
+Th quantity rQOPS provides a simple way to capture the overall system capability by combining several aspects of the system. The number of logical qubits captures the size of the largest application that can be run. The clock frequency distills the underlying physical qubit's gate speeds and the performance of the error correction scheme that runs on top of the physical qubits.
 
 ### Resource estimates breakdown
 
@@ -511,7 +513,7 @@ rQOPS provides a simple way to capture the overall system capability by combinin
 |Distillation units|These are the types of distillation units that are executed in each round. The units can be either physical or logical, depending on what type of qubit they are operating. Space-efficient units require fewer qubits for the cost of longer runtime compared to Reed-Muller preparation units.|
 |Distillation code distances|This is the code distance used for the units in each round. If the code distance is 1, then the distillation unit operates on physical qubits instead of error-corrected logical qubits.|
 |Number of physical qubits per round| The maximum number of physical qubits over all rounds is the number of physical qubits required for the T factory, since qubits are reused by different rounds.|
-|Runtime per round|The runtime of the T factory is the sum of the runtimes in all rounds.|
+|Runtime per round|The runtime of the T factory is the sum of the runtime in all rounds.|
 |Logical T state error rate |  This is the logical T state error rate achieved by the T factory which is equal or smaller than the required error rate physicalCountsFormatted/requiredLogicalTstateErrorRate.|
 
 ### Pre-layout logical resources
@@ -522,7 +524,7 @@ rQOPS provides a simple way to capture the overall system capability by combinin
 |T gates |This includes all T gates and adjoint T gates, but not T gates required to implement rotation gates with arbitrary angle, CCZ gates, or CCiX gates.|
 |Rotation gates| Number of all rotation gates. If an angle corresponds to a Pauli, Clifford, or T gate, it is not accounted for in this number.|
 |Rotation depth | Number of all non-Clifford layers that include at least one single-qubit rotation gate with an arbitrary angle.|
-|CCZ gates  | Number of CCZ gates in the input quantum program. | 
+|CCZ gates  | Number of CCZ gates in the input quantum program. |
 |CCiX gates  | Number of CCiX gates in the input quantum program, which applies $-iX$ controlled on two control qubits.|
 |Measurement operations | Number of single qubit measurements in Pauli basis that are used in the input program. Note that all measurements are counted, however, the measurement result is is determined randomly (with a fixed seed) to be 0 or 1 with a probability of 50%.|
 
@@ -543,4 +545,3 @@ rQOPS provides a simple way to capture the overall system capability by combinin
 - [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
 - [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir)
 - [Sample: Resource estimation with Q# and VS Code](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation/integer-factorization-with-cli)
-
