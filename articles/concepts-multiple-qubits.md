@@ -189,7 +189,7 @@ One example of a universal gate set is the Hadamard gate, the T gate, and the CN
 
 Consider two qubits $A$ and $B$ in superpositions such that the state of the global system is
 
-$$\ket{\psi}_{AB}=\frac1{\sqrt2}\ket{00}\frac1{\sqrt2}\ket{11}$$
+$$\ket{\psi}_{AB}=\frac1{\sqrt2}\ket{00} + \frac1{\sqrt2}\ket{11}$$
 
 In such a state, only two outcomes are possible when you measure the state of both qubits in the standard basis: $|00\rangle$ and $|11\rangle$. Notice that each outcome has the same probability of $\frac{1}{2}$. There's zero probability of obtaining $|01\rangle$ and $|10\rangle$. If you measure the first qubit and you get that it is in $|0\rangle$ state, then you can be positive that the second qubit is also in $|0\rangle$ state, even without measuring it. The measurement outcomes are correlated, and the qubits are *entangled*.
 
