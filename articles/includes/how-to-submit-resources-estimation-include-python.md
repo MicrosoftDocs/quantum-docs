@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 03/07/2023
+ms.date: 08/07/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -69,14 +69,19 @@ operation EstimateMultiplication(bitwidth : Int) : Unit {
 
 ### Estimate the quantum algorithm
 
-Now, estimate the physical resources for this operation using the default assumptions. You can submit the operation to the Resource Estimator target using the `qsharp.azure.execute` function. This function calls the `EstimateMultiplication` operation and passes the operation argument `bitwidth=8`.
+Now, you estimate the physical resources for this operation using the default assumptions. You can submit the operation to the Resource Estimator target using the `qsharp.azure.execute` function. This function calls the `EstimateMultiplication` operation and passes the operation argument `bitwidth=8`.
 
 ```python
 result = qsharp.azure.execute(EstimateMultiplication, bitwidth=8)
 result
 ```
 
-The `qsharp.azure.execute` function creates a table that shows the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. For example, if you collapse the *Logical qubit parameters* group, you can see that the error correction code distance is 13. 
+The `qsharp.azure.execute` function creates a result object, which can be used to display a table with the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information.
+
+> [!TIP]
+> For a more compact version of the output table, you can use `result.summary`.
+
+For example, if you collapse the *Logical qubit parameters* group of the results table, you can see that the error correction code distance is 13. 
 
 |Logical qubit parameter | Value |
 |----|---|
@@ -93,27 +98,34 @@ The `qsharp.azure.execute` function creates a table that shows the overall physi
 In the *Physical qubit parameters* group, you can see the physical qubit properties that were assumed for this estimation. 
 For example, the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
 
-|Physical qubit parameter | Value |
-|---|---|
-|Qubit name     |                    qubit_gate_ns_e3 |
-|Instruction set                      |     GateBased  |
-|Single-qubit measurement time         |       100 ns |
-|T gate time	                            |      50 ns|
-|T gate error rate                       |      0.001 |
-|Single-qubit measurement error rate      |     0.001 |
-|Single-qubit gate time                    |    50 ns |
-|Single-qubit error rate                   |    0.001 |
-|Two-qubit gate time                       |    50 ns |
-|Two-qubit error rate                        |  0.001 |
-
-> [!NOTE]
-> You can access the output of the Azure Quantum Resources Estimator in JSON format using the `result.data()` method.
-> 
-> ```python
-> result.data()
-> ```
+> [!TIP]
+> You can access the output of the Azure Quantum Resources Estimator as a Python dictionary using the `result.data()` method.
 
 For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) of the Resource Estimator.
+
+#### Space-time diagrams
+
+The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can use `result.diagram.space` to visualize this distribution to better understand the estimated space requirements for the algorithm. 
+
+```python
+result.diagram.space
+```
+:::image type="content" source="../media/resource-estimator-space-diagram.PNG" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
+
+The space diagram shows the proportion of algorithm qubits and T factory qubits. Note that the number of T factory copies, 15, contributes to the number of physical qubits for T factories as $\text{T factories} \cdot \text{physical qubit per T factory}= 15 \cdot 9,680 = 145,200$.
+
+You can can also visualize the time required to execute the algorithm, the T factory runtime and how often the T factory invocations can be invoked during the runtime of the algorithm. For more information, see [T factory physical estimation](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).
+
+```python
+result.diagram.time
+```
+:::image type="content" source="../media/resource-estimator-time-diagram.PNG" alt-text="Diagram showing the number of T factory invocations during the runtime of the algorithm. There's also a table with the breakdown of the number of T factory copies, number of T factory invocations, T states per invocation, etc.":::
+
+Since the T factoy runtime is 57 microsecs, the T factory can be invoked a total of 54 times during the runtime of the algorithm. One T factory produces one T state, and to execute the algorihtm you need a total of 800 T states. Therefore, you need 15 copies of the T factories executed in parallel. The total number of T factory copies is computed as $ \frac{\text{T states} \cdot \text{T factory duration}}{\text{T states per T factory} \cdot
+\text{algorithm runtime}}=\frac{800 \cdot 57,200 \text{ns}}{1 \cdot 3,161,600 \text{ns}}=15$. Note that in the diagram, each blue arrow represents the 15 copies of the T factory repeatedly invoked 54 times.
+
+> [!NOTE]
+> You can't visualize the time and space diagrams in the same cell.
 
 ### Change the default values and estimate the algorithm
 
@@ -142,14 +154,15 @@ result['jobParams']
   'twoQubitGateTime': '50 ns'}}
  ```
 
-There are target parameters that can be customized: 
+These are the target parameters that can be customized: 
 
 * `errorBudget` - the overall allowed error budget
 * `qecScheme` - the quantum error correction (QEC) scheme
 * `qubitParams` - the physical qubit parameters 
 * `constraints` - the constraints on the component-level
+* `distillationUnitSpecifications` - the specifications for T factories distillation algorithms
 
-For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters) for the Resource Estimator.
+For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the Resource Estimator.
 
 #### Change qubit model
 

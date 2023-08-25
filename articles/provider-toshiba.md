@@ -84,8 +84,7 @@ The auto tuning functionality will help you find a better setting. For detailed 
 > - High-accuracy **Discrete Simulated Bifurcation algorithm (dSB)**, which [finds more accurate solutions at a calculation speed that surpasses that of other machines](https://www.science.org/doi/10.1126/sciadv.abe7953) (both classical and quantum).
 >
 > **When selecting which algorithm to use with the `algo` parameter, `"1.5"` corresponds to the bSB algorithm and `"2.0"` corresponds to dSB.**
->
-> For more information, please refer to the [getting started sample for Toshiba SQBM+](https://github.com/microsoft/qio-samples/tree/main/samples/getting-started/toshiba-sqbm).
+
 
 ### Maximum problem size
 
