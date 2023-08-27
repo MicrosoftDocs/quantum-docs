@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: tutorial
 no-loc: [target, targets]
-title: 'Tutorial: Resource estimation of a quantum adder'
+title: 'Tutorial: Profiling of a quantum adder'
 uid: microsoft.quantum.tutorial.resource-estimator.profiling
 ---
 
@@ -68,7 +68,7 @@ To connect to the Azure Quantum service, your program need the resource ID and t
 
 ## Implement the quantum adders
 
-In quantum computing, the ability to perform addition of qubit registers is crucial for a wide range of applications. Given two qubit $n$-bit registers $\ket{x} = \ket{(x_{n-1}\dots x_1x_0)_2}$ and $\ket{y} = \ket{(y_{n-1}\dots y_1y_0)_2}$, the goal is compute an $n+1$ bit register $\ket{z}=\ket{x+y}$.
+In quantum computing, the ability to perform addition of qubit registers is crucial for a wide range of applications. Given two qubit $n$-bit registers $\ket{x} = \ket{x_{n-1}\dots x_1 x_0}$ and $\ket{y} = \ket{y_{n-1}\dots y_1 y_0}$, the goal is compute an $n+1$ bit register $\ket{z}=\ket{x+y}$.
 
 In this tutorial, you implement two different quantum adders that can be used to perform addition in quantum computing: the *ripple-carry adder* and the *carry-lookahead adder*. The quantum adders are implemented as Q# operations `RippleCarryAdd` and `LookAheadAdd` together with estimation entry points `EstimateRippleCarryAdd` and `EstimateLookAheadAdd`, respectively. Each entry point can be provided a bit width.
 
@@ -291,12 +291,6 @@ In order to minimize the number of`AND` gates, these intermediate products can b
 
 The profiling feature in [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) creates a resource estimation profile that shows how the subroutine operations in the program, for example the `FullAdder` inside `RippleCarryAdd`, contribute to the overall costs.
 
-There are two important concepts to review to best understand the outputs of the profiling feature, a call graph and a call tree.
-
-* **Call graph**: The call graph is static representation of the quantum program which informs which operations call which other operations. For example, `RippleCarryAdder` calls `FullAdder`, but both of these operations call `CNOT`. The call graph contains a node for each operation and a directed edge for each calling relation. The call graph may contain cycles, for example, in the case of recursive operations.
-
-* **Call tree**: The call tree is a dynamic representation of the program execution in which there are no cycles and for each node there is a clear path from the root node. For example, distinguishes the calls to `CCNOT` from `GRounds` and `CRounds` within the `ComputeCarries` operation in the carry-lookahead adder.
-
 1. You can enable profiling by setting the `call_stack_depth` variable in the `profiling` group. The `call_stack_depth` variable is a number that indicates the maximum level up to which subroutine operations are tracked. The entry point operation is at level 0. Thus, any operation called from the entry point is at level 1, any operation therein at 2, and so on. The call stack depth is setting a maximum value to an operation's level in the call stack for tracking resources in the profile.
 
     ```python
@@ -311,6 +305,13 @@ There are two important concepts to review to best understand the outputs of the
     job = estimator.submit(EstimateRippleCarryAdd, input_params=params)
     result_rca = job.get_results()
     ```
+
+    There are two important concepts to review to best understand the outputs of the profiling feature, a call graph and a call tree.
+    
+    * **Call graph**: The call graph is static representation of the quantum program which informs which operations call which other operations. For example, `RippleCarryAdder` calls `FullAdder`, but both of these operations call `CNOT`. The call graph contains a node for each operation and a directed edge for each calling relation. The call graph may contain cycles, for example, in the case of recursive operations.
+    
+    * **Call tree**: The call tree is a dynamic representation of the program execution in which there are no cycles and for each node there is a clear path from the root node. For example, distinguishes the calls to `CCNOT` from `GRounds` and `CRounds` within the `ComputeCarries` operation in the carry-lookahead adder.
+
 
 3. You can inspect the call graph by calling the `call_graph` property on the result object. It displays the call graph with the node corresponding to the entry point operation at the top and aligns other operations top-down according to their level.
 
