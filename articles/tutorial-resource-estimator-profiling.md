@@ -15,13 +15,13 @@ uid: microsoft.quantum.tutorial.resource-estimator.profiling
 
 In this tutorial, you will implement two quantum adders and then inspect them using the profiling feature in the Azure Quantum Resource Estimator. The profiling feature allows you to analyze how subroutine operations in the quantum algorithm impact the overall resources.
 
-In this tutorial, you will:
+In this tutorial, you'll learn how to:
 
 > [!div class="checklist"]
-
 > * Connect to the Azure Quantum service.
 > * Implement two quantum adders.
 > * Inspect the quantum adders using the profiling feature in the Azure Quantum Resource Estimator.
+> * 
 
 ## Prerequisites
 
