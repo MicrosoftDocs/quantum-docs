@@ -13,7 +13,7 @@ uid: microsoft.quantum.tutorial.resource-estimator.profiling
 
 # Tutorial: Estimate the resources of a quantum adder using the profiling feature
 
-In this tutorial, you will implement two quantum adders and then inspect them using the profiling feature in the Azure Quantum Resource Estimator. The profiling feature allows you to analyze how subroutine operations in the quantum algorithm impact the overall resources.
+In this tutorial, you will implement two quantum adders and then inspect them using the [profiling feature](xref:microsoft.quantum.work-with-resource-estimator#use-profiling-to-analyze-the-structure-of-your-program) in the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). The profiling feature allows you to analyze how subroutine operations in the quantum algorithm impact the overall resources.
 
 In this tutorial, you'll learn how to:
 
@@ -21,7 +21,7 @@ In this tutorial, you'll learn how to:
 > * Connect to the Azure Quantum service.
 > * Implement two quantum adders.
 > * Inspect the quantum adders using the profiling feature in the Azure Quantum Resource Estimator.
-> * 
+> * Analyze the profiling results and detect the impact of subroutine operations.
 
 ## Prerequisites
 
@@ -68,9 +68,9 @@ To connect to the Azure Quantum service, your program need the resource ID and t
 
 ## Implement the quantum adders
 
-In quantum computing, the ability to perform addition of qubit registers is crucial for a wide range of applications. Given two qubit $n$-bit registers $\ket{x} = \ket{(x_{n-1}\dots x_1x_0)_2}$ and $\ket{y} = \ket{(y_{n-1}\dots y_1y_0)_2}$, the goal is compute an $n+1$ bit register $$\ket{z}=\ket{x+y}$.
+In quantum computing, the ability to perform addition of qubit registers is crucial for a wide range of applications. Given two qubit $n$-bit registers $\ket{x} = \ket{(x_{n-1}\dots x_1x_0)_2}$ and $\ket{y} = \ket{(y_{n-1}\dots y_1y_0)_2}$, the goal is compute an $n+1$ bit register $\ket{z}=\ket{x+y}$.
 
-In this tutorial, you implement two different quantum adders that can be used to perform addition in quantum computing: the **ripple-carry adder** and the **carry-lookahead adder**. The quantum adders are implemented as Q# operations `RippleCarryAdd` and `LookAheadAdd` together with estimation entry points `EstimateRippleCarryAdd` and `EstimateLookAheadAdd`, respectively. Each entry point can be provided a bit-width.
+In this tutorial, you implement two different quantum adders that can be used to perform addition in quantum computing: the *ripple-carry adder* and the *carry-lookahead adder*. The quantum adders are implemented as Q# operations `RippleCarryAdd` and `LookAheadAdd` together with estimation entry points `EstimateRippleCarryAdd` and `EstimateLookAheadAdd`, respectively. Each entry point can be provided a bit width.
 
 Both ripple-carry and carry-lookahead adders support the overflowing variant, in which the output register has $n$ bits and $\ket{z}= \ket{(x+y) \mod 2^n}$.
 
@@ -141,16 +141,16 @@ For more information, see the ripple-carry adder described in [Halving the cost 
 
 The idea of carry-lookahead adder is to compute all carry bits $c_i$ based on propagate bits $p_i = x_i \oplus y_i$ and generate bits $g_i= x_i \land y_i$, without requiring other carry bits except for the carry-in $c_0$.
 
-For example, the first carry bit $c_1$ can be computed as $c_1 =g_0 \osum (p_0 \land c_0)$. 
+For example, the first carry bit $c_1$ can be computed as $c_1 =g_0 \oplus (p_0 \land c_0)$. 
 
 * If both $x_0$ and $y_0$ are 1, then $g_0 =1$, and therefore $c_1 =1$.
 * If either $x_0$ or $y_0$ is 1, then $p_0 =1$, and therefore carry bit $c_0$ is propagated. 
 
-More significant carry bits are computed in a similar way, for example $c_3 =g_2 \osum (g_1 \land p_2) \osum (g_0 \land p_1 \land p_2) \osum (c_0 \land p_0 \land p_1 \land p_2)$. That is, $c_3$ is either generated from bits at index 2, or generated from bits at index 1 _and_ propagated from bits at index 2, and so on.
+More significant carry bits are computed in a similar way, for example $c_3 =g_2 \oplus (g_1 \land p_2) \oplus (g_0 \land p_1 \land p_2) \oplus (c_0 \land p_0 \land p_1 \land p_2)$. That is, $c_3$ is either generated from bits at index 2, or generated from bits at index 1 _and_ propagated from bits at index 2, and so on.
 
 For more information, see the carry-lookahead adder described in [A logarithmic-depth quantum carry-lookahead adder](https://arxiv.org/abs/quant-ph/0406142).
 
-In order to minimize AND gates, these intermediate products can be computed in a clever way, as well as in logarithmic depth.
+In order to minimize the number of`AND` gates, these intermediate products can be computed in a clever way, as well as in logarithmic depth.
 
 1. First, you create a helper function to compute the number of 1-bits in an integer, also called _Hamming weight_, using a compact implementation based on a sequence of bitwise manipulations.
 
@@ -467,7 +467,7 @@ Finally, you can access the profiling data and examine the impact of `PRounds`, 
     ax.set_xticklabels([Text(b, 0, b) for b in bitwidths]);
     ```
 
-Note how the total runtime grows much faster compared to the runtime of the rounds. The reason is that we need $\mathcal{o}(n)$ `AND` gates in the preparation part of `LookAheadAdd` but only $\mathcal{o}(\log n)$ `AND` and `CCNOT` gates in the `ComputeCarries` operation.
+Note how the total runtime grows much faster compared to the runtime of the rounds. The reason is that we need $\mathcal{O}(n)$ `AND` gates in the preparation part of `LookAheadAdd` but only $\mathcal{O}(\log n)$ `AND` and `CCNOT` gates in the `ComputeCarries` operation.
 
 Further note that logical depth of a the carry-lookahead adder is also logarithmic in $n$, since on the logical level, all `AND` and `CCNOT` gates, in both the preparation parts and in the rounds can be applied in parallel. However, when mapping to surface code operations using Parallel Synthesis Sequential Pauli Computation (PSSPC), these operations are sequentialized. For more information, see Appendix D in [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/pdf/2211.07629.pdf).
 
