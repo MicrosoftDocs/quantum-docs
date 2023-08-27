@@ -41,9 +41,11 @@
     href: learn-how-the-resource-estimator-works.md
   - name: Get the most out of the Resource Estimator
     href: how-to-work-with-re.md
-  - name: Resource Estimation for double-factorized chemistry
+  - name: Tutorial: Profiling in resource estimation
+    href: tutorial-resource-estimator-profiling.md
+  - name: Tutorial: Double-factorized chemistry
     href: tutorial-resource-estimator-chemistry.md
-  - name: Resource Estimation with QIR
+  - name: Tutorial: Resource estimation with QIR
     href: tutorial-resource-estimator-qir.md
 - name: Quantum Machine Learning
   href: overview-quantum-machine-learning.md
