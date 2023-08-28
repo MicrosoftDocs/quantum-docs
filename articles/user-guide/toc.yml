@@ -4,6 +4,58 @@
   href: host-programs.md
 - name: Testing and debugging
   href: testing-debugging.md
+- name: Perform long running experiments
+  href: ../how-to-long-running-experiments.md
+- name: Tutorials
+  items:
+  - name: Quantum random number generator
+    href: ../tutorial-qdk-quantum-random-number-generator.md
+  - name: Explore entanglement with Q#
+    href: ../tutorial-qdk-explore-entanglement.md
+  - name: Implement Grover's search algorithm
+    href: ../tutorial-qdk-grovers-search.md
+  - name: Qubit-level programming
+    href: ../tutorial-qdk-qubit-level-program.md
+  - name: Publish a Q# job as an Azure Function
+    href: ../how-to-publish-qsharp-job-as-azurefunction.md
+- name: Run quantum circuits with Python
+  items:
+  - name: Submit a circuit with Qiskit
+    href: ../quickstart-microsoft-qiskit-portal.md
+  - name: Submit a circuit with Cirq
+    href: ../quickstart-microsoft-cirq-portal.md
+  - name: Submit a circuit in provider-specific format
+    href: ../quickstart-microsoft-provider-format-portal.md
+  - name: Adapt Qiskit samples to Azure Quantum
+    href: ../how-to-adapt-qiskit.md
+- name: Python SDK
+  items:
+  - name: Azure.Quantum
+    items:
+    - name: Workspace
+      href: ../workspace-reference.md
+    - name: Job
+      href: ../job-reference.md
+  - name: Azure.Quantum.Optimization
+    items:
+    - name: Problem
+      href: ../optimization-problem.md
+    - name: ProblemType
+      href: ../optimization-problem-type.md
+    - name: StreamingProblem
+      href: ../optimization-streaming-problem.md
+    - name: Term
+      href: ../optimization-term.md
+    - name: RangeSchedule
+      href: ../optimization-rangeschedule.md
+  - name: Usage
+    items:
+    - name: Express a problem
+      href: ../optimization-express-optimization-problem.md
+    - name: Job management
+      href: ../optimization-job-management.md
+    - name: Re-use problem definitions
+      href: ../optimization-reuse-problem-definitions.md
 - name: Q# language guide
   href: language/toc.yml
 - name: Q# libraries
@@ -26,3 +78,15 @@
       href: ../quickstart-microsoft-cirq.md
     - name: Submit a circuit in a provider-specific format
       href: ../quickstart-microsoft-provider-format.md
+- name: Quantum Machine Learning
+  href: ../overview-quantum-machine-learning.md
+- name: Learn Q# with the Quantum Katas
+  href: ../tutorial-qdk-intro-to-katas.md
+- name: Samples
+  items:
+  - name: Samples for using Azure Quantum for quantum computing >>
+    href: https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum
+  - name: Samples for using Azure Quantum optimization solvers >>
+    href: https://github.com/microsoft/qio-samples
+  - name: Q# code samples >>
+    href: /samples/browse/?languages=qsharp
