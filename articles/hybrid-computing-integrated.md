@@ -35,7 +35,6 @@ Currently, the integrated hybrid computing model in Azure Quantum is supported o
 | Classical loops | Bounded loops only |
 | Arbitrary control flow | Use of if/else branching  |
 | Mid-circuit measurement | Utilizes classical register resources |
-| Real-time parameterized gates | Compute angles and pass them to gates |
 | Qubit reuse | N/A |
 | Real-time classical compute| 18-bit signed arithmetic on either integer or fix-point registers |
 

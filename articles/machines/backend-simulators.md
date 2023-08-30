@@ -56,7 +56,7 @@ www.quantumcircuits.com for more information.
 - Target ID: `qci.simulator`
 - Publisher: [QCI](https://quantumcircuits.com/)
 - Provider ID: qci
-- Target Execution Profile: Basic Measurement Feedback
+- Target Execution Profile: Adaptive Execution
 - Pricing: Free ($0)
 
 ## Quantinuum
