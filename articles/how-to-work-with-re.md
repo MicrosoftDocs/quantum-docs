@@ -41,7 +41,7 @@ The profiling feature creates a resource estimation profile that shows how the s
     job = estimator.submit(program, input_params=params)
     result = job.get_results()
     ```
-    The `call_stack_depth` variable is a number that indicates the maximum level up to which subroutine operations are tracked. The entry point operation is at level 0. Thus, any operation called from the entry point is at level 1, any operation therein at 2, and so on. The call stack depth is setting a maximum value to an operation's level in the call stack for tracking resources in the profile.
+    The `call_stack_depth` variable is a number that indicates the maximum level up to which subroutine operations are tracked. The entry point operation is at level 0. Thus, any operation called from the entry point is at level 1, any operation therein at 2, and so on. The call stack depth is setting a maximum value to an operation's level in the call stack for tracking resources in the profile. Note that a higher value leads to a larger estimation time, the maximum value for the `call_stack_depth` is 30.
 
 2. You can inspect the call graph by calling the `call_graph` property. It displays the call graph with the node corresponding to the entry point operation at the top and aligns other operations top-down according to their level.
 
