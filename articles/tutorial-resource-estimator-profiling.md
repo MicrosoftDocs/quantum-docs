@@ -310,7 +310,7 @@ The profiling feature in [Azure Quantum Resource Estimator](xref:microsoft.quant
     
     * **Call graph**: The call graph is a static representation of the quantum program which informs which operations call which other operations. For example, `RippleCarryAdder` calls `FullAdder`, but both of these operations call `CNOT`. The call graph contains a node for each operation and a directed edge for each calling relation. The call graph may contain cycles, for example, in the case of recursive operations.
     
-    * **Call tree**: The call tree is a dynamic representation of the program execution in which there are no cycles and for each node there is a clear path from the root node. For example, distinguishes the calls to `CCNOT` from `GRounds` and `CRounds` within the `ComputeCarries` operation in the carry-lookahead adder.
+    * **Profile**: The profile is a dynamic tree representation of the program execution in which there are no cycles and for each node there is a clear path from the root node. For example, distinguishes the calls to `CCNOT` from `GRounds` and `CRounds` within the `ComputeCarries` operation in the carry-lookahead adder.
 
 
 3. You can inspect the call graph by calling the `call_graph` property on the result object. It displays the call graph with the node corresponding to the entry point operation at the top and aligns other operations top-down according to their level.
