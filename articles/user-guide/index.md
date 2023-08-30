@@ -2,7 +2,7 @@
 author: bradben
 description: A guide to the Q# programming language, the Q# libraries, and how to develop quantum programs.
 ms.author: brbenefield
-ms.date: 04/29/2022
+ms.date: 08/29/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: overview
@@ -169,9 +169,9 @@ operation MeasureOneQubit() : Result {
     // It now has a 50% chance of being measured 0 or 1  
     H(q);      
     // Now we measure the qubit in Z-basis.
-    let result = M(qubit);
+    let result = M(q);
     // We reset the qubit before releasing it.
-    if result == One { X(qubit); }
+    if result == One { X(q); }
     // Finally, we return the result of the measurement.
     return result;
     
