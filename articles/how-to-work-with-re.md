@@ -25,7 +25,7 @@ Some scenarios where you may want to inspect the resource estimation profile or 
 - Find bottlenecks of the implementation and starting point for optimizations.
 - Understand the underlying structure of the program.
 
-The profiling feature creates a resource estimation profile that shows how the subroutine operations in the program contribute to the overall costs. There are two important outputs of a resource estimation profile, a call graph and a call tree.
+The profiling feature creates a resource estimation profile that shows how the subroutine operations in the program contribute to the overall costs. There are two important outputs of a resource estimation profile, a call graph and a profile.
 
 - Call graph: The call graph is static representation of the quantum program which informs which operations call which other operations. The call graph contains a node for each operation and a directed edge for each calling relation. The call graph may contain cycles, for example, in the case of recursive operations.
 
