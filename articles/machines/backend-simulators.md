@@ -41,12 +41,14 @@ classes of quantum applications.
 
 The QCI simulator is designed to model QCI hardware. Although the simulator is
 ideal with regard to quantum noise, it reflects precision and accuracy of
-classical arithmetic on 18-bit signed integer and fixed-point registers. Before
-simulating, it completes a full compilation and thereby validates the program
-against hardware constraints.
+classical arithmetic on 18-bit signed integer and Q2.16 fixed-point registers.
+These registers have ranges of `[-131072, 131071]` and `[-2, 2 - 2^-16]`
+respectively. They are implemented as 2's complement and would underflow or wrap
+around without warning at run-time. Before simulating, it completes a full
+compilation and thereby validates the program against hardware constraints.
 
 The QCI simulator currently supports eight qubits in a ring topology and lets
-you simulate up to 1000000 shots. The simulator is always available.
+you simulate up to 1,000,000 shots. The simulator is always available.
 
 Please contact support@quantumcircuits.com for support and visit
 www.quantumcircuits.com for more information.
