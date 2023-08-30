@@ -152,7 +152,7 @@ For more information, see the carry-lookahead adder described in [A logarithmic-
 
 In order to minimize the number of`AND` gates, these intermediate products can be computed in a clever way, as well as in logarithmic depth.
 
-1. First, you create a helper function to compute the number of 1-bits in an integer, also called _Hamming weight_, using a compact implementation based on a sequence of bitwise manipulations.
+1. First, you create a helper function to compute the number of 1-bits in an integer, also called _Hamming weight_, using a compact implementation based on a sequence of bitwise manipulations. For more information, see [Hamming weight](https://en.wikipedia.org/wiki/Hamming_weight#Efficient_implementation).
 
     ```python
     %%qsharp
@@ -462,7 +462,7 @@ Finally, you can access the profiling data and examine the impact of `PRounds`, 
         ])
     
     df = pandas.DataFrame(data=entries, index=bitwidths, columns=["PRounds", "GRounds", "CRounds", "Total"])
-    ax = df.plot(logx=True, xticks=bitwidths)
+    ax = df.plot(logx=True, xticks=bitwidths, xlabel="Bitwidth", ylabel="Runtime (ns)")
     # show all xticks
     from matplotlib.text import Text
     ax.set_xticklabels([Text(b, 0, b) for b in bitwidths]);
