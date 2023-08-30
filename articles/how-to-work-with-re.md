@@ -66,7 +66,7 @@ Sometimes, QIR generation creates a lot of helper functions that do nothing but 
 
 ```python
 params.profiling.inline_functions = True
-job = estimator.submit(QIRprogram, input_params=params)
+job = estimator.submit(program, input_params=params)
 result = job.get_results()
 
 result.call_graph
