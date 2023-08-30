@@ -78,7 +78,7 @@ The Azure Quantum Resource Estimator allows you to submit jobs with multiple con
 
 A resource estimation job consist of two types of job parameters:
 
-- [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters): qubit model, QEC schemes, error budget, and constraints on the component-level.
+- [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters): qubit model, QEC schemes, error budget, constraints on the component-level, and profiling parameters.
 - Operation arguments (optional): arguments that can be passed to the program.
 
 One item consists of one configuration of job parameters, that is one configuration of target parameters and operation arguments. Several items are represented as an array of job parameters.
