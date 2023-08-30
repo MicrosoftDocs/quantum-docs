@@ -38,7 +38,7 @@ The profiling feature creates a resource estimation profile that shows how the s
     ```python
     params = estimator.make_params()
     params.profiling.call_stack_depth = 2 # entry point operation is at level 0
-    job = estimator.submit(QIRprogram, input_params=params)
+    job = estimator.submit(program, input_params=params)
     result = job.get_results()
     ```
     The `call_stack_depth` variable is a number that indicates the maximum level up to which subroutine operations are tracked. The entry point operation is at level 0. Thus, any operation called from the entry point is at level 1, any operation therein at 2, and so on. The call stack depth is setting a maximum value to an operation's level in the call stack for tracking resources in the profile.
