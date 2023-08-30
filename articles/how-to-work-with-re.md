@@ -19,7 +19,7 @@ Once you've learned how to [customize](xref:microsoft.quantum.overview.resources
 
 Quantum programs are complex and sometimes you want to understand how the different parts of the program contribute to the overall resource estimates. The profiling feature allows you to analyze how subroutine operations in the program impact the overall resources.
 
-Some scenarios where you may want to inspect the call graph of the program:
+Some scenarios where you may want to inspect the resource estimation profile or call graph of the program:
 
 - See which parts of the program contribute how much to the total resource estimates.
 - Find bottlenecks of the implementation and starting point for optimizations.
