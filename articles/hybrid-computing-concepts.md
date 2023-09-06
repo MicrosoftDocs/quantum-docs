@@ -5,7 +5,7 @@ ms.date: 03/06/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: concepts
+ms.topic: conceptual
 no-loc: ['Q#', '$$v', Variational Quantum Eigensolver, Quantum Approximate Optimization Algorithm]
 title: Hybrid quantum computing concepts
 uid: microsoft.quantum.concepts.hybrid

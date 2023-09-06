@@ -5,7 +5,7 @@ ms.author: brbenefield
 ms.date: 07/03/2023
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: resources
+ms.topic: reference
 no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: Introduction to Quantum Katas
 uid: microsoft.quantum.tutorial-qdk.katas

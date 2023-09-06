@@ -5,7 +5,7 @@ ms.date: 03/06/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: concepts
+ms.topic: conceptual
 no-loc: ['Q#', '$$v', target, targets]
 title: Overview of batch quantum computing
 uid: microsoft.quantum.hybrid.batch
