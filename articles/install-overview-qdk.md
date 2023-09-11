@@ -188,6 +188,7 @@ All the necessary components for a Juptyer Notebooks environment can be set up w
     - [Python](https://www.python.org/downloads/) 3.9 or later
     - The [PIP](https://pip.pypa.io/en/stable/installing) Python package manager
     - [.NET SDK 6.0](https://dotnet.microsoft.com/download/)
+    - [Jupyter](https://jupyter.org/install)
 
 1. Install the `qsharp` package, a Python package that enables interop between Q# and Python.
 
