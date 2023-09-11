@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to get the most out of the Resource Estimator and make your job submission more efficient. 
-ms.date: 03/31/2023
+ms.date: 09/11/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -143,7 +143,7 @@ The result of the resource estimation job is displayed in a table with multiple 
 
 ### [Batching with PyQIR](#tab/tabid-batching-pyqir)
 
-Consider that you want to estimate the resources of a quantum operation using all six pre-defined qubit parameters. As pre-defined QEC scheme we are using `surface_code` with gate-based qubit parameters, and `floquet_code` with Majorana based qubit parameters. The operation takes six different arguments. By running each configuration as a single job, this would lead to the submission of six jobs, which means six separate compilations for the same program. Instead, you create one batching job with multiple items.
+Consider that you want to estimate the resources of a quantum operation using all six pre-defined qubit parameters. As pre-defined QEC scheme we are using `surface_code` with gate-based qubit parameters, and `floquet_code` with Majorana based qubit parameters. The operation takes six different arguments.
 
 This code is based on the sample Quantum dynamics, which you can find at the Resource Estimation tab of the sample gallery in the [Azure Quantum portal](https://portal.azure.com).
 
@@ -186,7 +186,7 @@ This code is based on the sample Quantum dynamics, which you can find at the Res
     params.items[5].qec_scheme.name = QECScheme.FLOQUET_CODE
     ```
 
-5. Finally, you submit the batching job to the Resource Estimator.
+5. By running each configuration as a single job, this would lead to the submission of six jobs, which means six separate compilations for the same program. Instead, you submit one batching job with multiple items.
 
     ```python
     job = estimator.submit(Operation, input_params=params, name="My operation")
