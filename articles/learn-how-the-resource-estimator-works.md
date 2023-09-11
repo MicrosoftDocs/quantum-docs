@@ -5,7 +5,7 @@ ms.date: 08/07/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: reference
+ms.topic: conceptual
 no-loc: ['Q#', '$$v', target, targets]
 title: Learn how the Resource Estimator works
 uid: microsoft.quantum.learn-how-resource-estimator-works

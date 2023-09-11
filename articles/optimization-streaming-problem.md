@@ -5,7 +5,7 @@ ms.author: sonialopez
 ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: reference
+ms.topic: troubleshooting
 title: Streaming upload of large optimization problems
 uid: microsoft.quantum.optimization.streaming-problem
 ---

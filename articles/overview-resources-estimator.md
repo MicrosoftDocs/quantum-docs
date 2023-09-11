@@ -5,7 +5,7 @@ ms.date: 08/07/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: reference
+ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
 title: Resource Estimator input and output parameters
 uid: microsoft.quantum.overview.resources-estimator

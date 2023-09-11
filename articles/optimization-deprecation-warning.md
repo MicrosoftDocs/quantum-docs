@@ -5,7 +5,7 @@ ms.author: sonialopez
 ms.date: 06/28/2023
 ms.service: azure-quantum
 ms.subservice: core  
-ms.topic: reference
+ms.topic: troubleshooting
 title: Deprecation notice for optimization
 uid: microsoft.quantum.optimization.deprecation-redirect
 ---

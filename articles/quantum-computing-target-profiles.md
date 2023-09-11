@@ -5,7 +5,7 @@ ms.date: 05/08/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: reference
+ms.topic: conceptual
 no-loc: [No control flow, Basic measurement feedback, target, targets, full]
 title: Understanding target profile types in Azure Quantum
 uid: microsoft.quantum.target-profiles

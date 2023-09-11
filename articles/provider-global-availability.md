@@ -5,7 +5,7 @@ ms.author: brbenefield
 ms.date: 07/12/2023
 ms.service: azure-quantum
 ms.subservice: core  
-ms.topic: reference
+ms.topic: feature-availability
 no-loc: [target, targets]
 title: Global availability of Azure Quantum providers
 uid: microsoft.quantum.provider-availability

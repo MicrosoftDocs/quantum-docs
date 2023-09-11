@@ -5,7 +5,7 @@ ms.date: 09/07/2022
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: reference
+ms.topic: conceptual
 no-loc: [Quantum Intermediate Representation, target, targets]
 title: List of quantum computing providers on Azure Quantum
 uid: microsoft.quantum.reference.qc-target-list
