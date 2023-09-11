@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
-description: Learn how to make your work and job submission more efficient with the Resource Estimator target.
-ms.date: 08/27/2023
+description: Learn how to get the most out of the Resource Estimator and make your job submission more efficient. 
+ms.date: 09/11/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -14,6 +14,12 @@ uid: microsoft.quantum.work-with-resource-estimator
 # Get the most out of the Azure Quantum Resource Estimator
 
 Once you've learned how to [customize](xref:microsoft.quantum.overview.resources-estimator) and [submit](xref:microsoft.quantum.quickstarts.computing.resources-estimator) jobs to the Resource Estimator, you can learn how to optimize the execution time of resource estimation jobs.
+
+## Prerequisites
+
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
+- An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- The **Microsoft Quantum Computing** provider added to your workspace. For more information, see [Enabling the Resource Estimator target](xref:microsoft.quantum.quickstarts.computing.resources-estimator#enable-the-resources-estimator-in-your-workspace).
 
 ## Use profiling to analyze the structure of your program
 
@@ -90,11 +96,11 @@ Some scenarios where you may want to submit multiple items as a single job:
 - Easily compare multiple results in a tabular format.
 - Easily compare multiple results in a chart.
 
-### Batching with Q\#
+### [Batching with Q\#](#tab/tabid-batching-qsharp)
 
 For example, consider the following Q# operation that creates multiplier with a `bitwidth` parameter that can be passed to the operation as argument. The operation have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`.
 
-```python 
+```python
 %%qsharp 
 open Microsoft.Quantum.Arithmetic;
 
@@ -108,47 +114,58 @@ operation Multiply(bitwidth : Int) : Unit {
 } 
 ```
 
-You want to estimate the resources of the operation `Multiply` using four different bit widths [8, 16, 32, 64], and for four different qubit models ["qubit_gate_ns_e3", "qubit_gate_ns_e4", "qubit_gate_us_e3", "qubit_gate_us_e4"]. Each configuration consists of one operation argument and one target parameter.
+1. You import some packages to use the Resource Estimator target and the `MicrosoftEstimatorQubitParams` class, which is used to specify the target parameters.
 
-```python
-bitwidths = [8, 16, 32, 64] # operation arguments
-estimation_params = [
-    {"qubitParams": {"name": "qubit_gate_ns_e3"}},
-    {"qubitParams": {"name": "qubit_gate_ns_e4"}},
-    {"qubitParams": {"name": "qubit_gate_us_e3"}},
-    {"qubitParams": {"name": "qubit_gate_us_e4"}}
-] # target parameters 
+    ```python
+    from azure.quantum.target.microsoft import MicrosoftEstimator, QubitParams
+    from azure.quantum.target.microsoft.target import MicrosoftEstimatorQubitParams
+    ```
 
-```
+2. You want to estimate the resources of the operation `Multiply` using four different bit widths [8, 16, 32, 64], and for four different qubit models ["qubit_gate_ns_e3", "qubit_gate_ns_e4", "qubit_gate_us_e3", "qubit_gate_us_e4"]. Each configuration consists of one operation argument and one target parameter.
 
-By running each configuration as a single job, this would lead to the submission of 16 jobs, which means 16 separate compilations for the same program.
+    ```python
+    target_params = [
+        ("Gate-based ns, 10⁻³", MicrosoftEstimatorQubitParams(name=QubitParams.GATE_NS_E3)),
+        ("Gate-based ns, 10⁻⁴", MicrosoftEstimatorQubitParams(name=QubitParams.GATE_NS_E4)),
+        ("Gate-based us, 10⁻³", MicrosoftEstimatorQubitParams(name=QubitParams.GATE_US_E3)),
+        ("Gate-based us, 10⁻⁴", MicrosoftEstimatorQubitParams(name=QubitParams.GATE_US_E4)),
+    ]
+    
+    bitwidths = [8, 16, 32, 64]
+    
+    # This is to access the names of the target parameters
+    names = [name for (name, _) in target_params]
+    
+    ```
 
-Instead, you want to run one resource estimation job with multiple items. To do this, you need to create an array of items, where each item is a configuration of job parameters.
+    > [!NOTE]
+    > Note that `target_params` are a tuple of the label and the qubit parameter. The qubit parameter is an instance of the class `MicrosoftEstimatorQubitParams`. The `name` field is the only required field. The rest of the fields are optional and will be set to the default values if not specified.
 
-```python
-items = []
+3. By running each configuration as a single job, this would lead to the submission of 16 jobs, which means 16 separate compilations for the same program. Instead, you create one batching job with multiple items. The bit width is assigned by accessing it through the `arguments` field of the item.
 
-for bitwidth in bitwidths:
-    for params in estimation_params:
-        items.append({
-            "arguments": [{
-                "name": "bitwidth",
-                "value": bitwidth,
-                "type": "Int"
-            }],
-            **params
-        })
+    ```python
+    params = estimator.make_params(num_items=len(bitwidths) * len(target_params))
+    
+    for i, (_, target_param) in enumerate(target_params):
+        for j, bitwidth in enumerate(bitwidths):
+            params.items[i * len(bitwidths) + j].qubit_params = target_param
+            params.items[i * len(bitwidths) + j].arguments["bitwidth"] = bitwidth
+    
+    job = estimator.submit(EstimateMultiplication, input_params=params, name="Multiplier estimation")
+    
+    results = job.get_results()
+    ```
 
-results = qsharp.azure.execute(Multiply, jobParams={"items": items})
-```
+    > [!NOTE]
+    > You can set a name for the job by passing the `name` parameter to the `submit` method.
+    >
+    > ```python
+    > job = estimator.submit(operation, input_params=params, name="My operation")
+    > ```
 
-The result of the resource estimation job is displayed in a table with multiple results coming from the list of items. By default the maximum number of items to be displayed is five. To display a list of $N$ items where $N > 5$, use `results[0:N]`.
+4. The result of the resource estimation job is displayed in a table with multiple results coming from the list of items. By default the maximum number of items to be displayed is five. To display a list of $N$ items where $N > 5$, use `results[0:N]`. You can also access individual results by providing a number as index. For example, `results[0]` to show the results table of the first configuration.
 
- :::image type="content" source="media/batching-qsharp.png" alt-text="Screenshot of the table of results of a resource estimation job for 16 configurations.":::
-
-You can also access individual results by providing a number as index. For example, `results[0]` to show the results table of the first configuration, which has the first set of target parameters and bit width of 8.
-
-### Batching with Qiskit
+### [Batching with Qiskit](#tab/tabid-batching-qiskit)
 
 Consider the following Qiskit circuit that takes three qubits and apply a CCX or Toffoli gate using the third qubit as target. In this case, you want to estimate the resources of this quantum circuit for four different target parameters, so each configuration consists of one target parameter. Batching allows you to submit all configurations at the same time.
 
@@ -179,7 +196,68 @@ results = job.result()
 results 
 ```
 
- :::image type="content" source="media/batching-qiskit.png" alt-text="Screenshot of the table of results of a resource estimation job for four configurations.":::
+The result of the resource estimation job is displayed in a table with multiple results coming from the list of items. By default the maximum number of items to be displayed is five. To display a list of $N$ items where $N > 5$, use `results[0:N]`. You can also access individual results by providing a number as index. For example, `results[0]` to show the results table of the first configuration.
+
+### [Batching with PyQIR](#tab/tabid-batching-pyqir)
+
+Consider that you want to estimate the resources of a quantum operation using all six pre-defined qubit parameters. As pre-defined QEC scheme we are using `surface_code` with gate-based qubit parameters, and `floquet_code` with Majorana based qubit parameters. The operation takes six different arguments.
+
+This code is based on the sample Quantum dynamics, which you can find at the Resource Estimation tab of the sample gallery in the [Azure Quantum portal](https://portal.azure.com).
+
+1. You import some packages to use the Resource Estimator target and the `QubitParams` class.
+
+    ```python
+    from azure.quantum.target.microsoft import MicrosoftEstimator, QubitParams, QECScheme
+    ```
+
+2. You define the labels for the qubit parameters. The labels are used to identify the qubit parameters in the results table. You set a number of items for the job by passing the `num_items` parameter to the `make_params` method. In this case, the number of items is six, one for each pre-defined qubit parameter.
+
+    ```python
+    estimator = MicrosoftEstimator(workspace)
+
+    labels = ["Gate-based µs, 10⁻³", "Gate-based µs, 10⁻⁴", "Gate-based ns, 10⁻³", "Gate-based ns, 10⁻⁴", "Majorana ns, 10⁻⁴", "Majorana ns, 10⁻⁶"]
+    params = estimator.make_params(num_items=6)
+    ```
+
+3. The arguments are passed as a dictionary. The keys are the names of the arguments and the values are the values of the arguments. Arguments can be numbers or arrays of numbers. In this case, you pass the following arguments:
+
+    ```python
+    params.arguments["N"] = 10
+    params.arguments["J"] = 1.0
+    params.arguments["g"] = 1.0
+    params.arguments["totTime"] = 20.0
+    params.arguments["dt"] = 0.25
+    params.arguments["eps"] = 0.001
+    ```
+
+4. Next, you can pass the qubit parameters for each configuration by specifying the item in `items[]`, and then use `qubit_params.name` or `qec_scheme.name`.
+
+    ```python
+    params.items[0].qubit_params.name = QubitParams.GATE_US_E3
+    params.items[1].qubit_params.name = QubitParams.GATE_US_E4
+    params.items[2].qubit_params.name = QubitParams.GATE_NS_E3
+    params.items[3].qubit_params.name = QubitParams.GATE_NS_E4
+    params.items[4].qubit_params.name = QubitParams.MAJ_NS_E4
+    params.items[4].qec_scheme.name = QECScheme.FLOQUET_CODE
+    params.items[5].qubit_params.name = QubitParams.MAJ_NS_E6
+    params.items[5].qec_scheme.name = QECScheme.FLOQUET_CODE
+    ```
+
+5. By running each configuration as a single job, this would lead to the submission of six jobs, which means six separate compilations for the same program. Instead, you submit one batching job with multiple items.
+
+    ```python
+    job = estimator.submit(Operation, input_params=params, name="My operation")
+    results = job.get_results()
+    ```
+
+    > [!NOTE]
+    > You can set a name for the job by passing the `name` parameter to the `submit` method.
+    >
+    > ```python
+    > job = estimator.submit(operation, input_params=params, name="My operation")
+    > ```
+
+***
 
 ## Use known estimates for an operation
 
