@@ -29,7 +29,7 @@ Designed specifically for post-NISQ, fault-tolerant quantum systems, the Resourc
 
 The Resource Estimator is built on community supported Quantum Intermediate Representation (QIR), so it's extensible and portable. Because it takes a QIR program as input, it supports any language that translates to QIR. For example, you can use the Resource Estimator with popular quantum SDKs and languages such as Q# and Qiskit. 
 
-:::image type="content" source="media/Resource-Estimation-component-overview.png" alt-text="Diagram showing components provided by Resource Estimator and corresponding customizations. Provided aspects are Application Input, Compilation Tools, QIR, QEC models, Qubit models, and Analysis. Customer can bring Application Program, Compilation or Optimization Tools, QIR Code, QEC models, Qubit parameters, and Analysis and Visualization Tools":::
+:::image type="content" source="media/Resource-Estimation-component-overview.png" alt-text="Diagram showing components provided by Resource Estimator and corresponding customizations. Provided aspects are Application Input, Compilation Tools, QIR, QEC models, Qubit models, and Analysis. Customer can bring Application Program, Compilation or Optimization Tools, QIR Code, QEC models, Qubit parameters, and Analysis and Visualization Tools.":::
 
 > [!TIP]
 > The Resource Estimator is **free of charge** and only requires an Azure account.
