@@ -5,7 +5,7 @@ ms.author: sonialopez
 ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: reference
+ms.topic: conceptual
 title: Toshiba SQBM+ provider
 uid: microsoft.quantum.providers.optimization.toshiba
 ---

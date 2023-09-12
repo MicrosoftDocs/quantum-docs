@@ -5,7 +5,7 @@ ms.author: sonialopez
 ms.date: 08/15/2023
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: reference
+ms.topic: conceptual
 no-loc: [No control flow, target, targets]
 title: IonQ quantum computing provider
 uid: microsoft.quantum.providers.ionq

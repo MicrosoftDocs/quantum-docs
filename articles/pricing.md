@@ -5,7 +5,7 @@ ms.author: sonialopez
 ms.date: 08/15/2023
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: reference
+ms.topic: conceptual
 no-loc: [target, targets]
 title: Pricing & billing plans
 uid: microsoft.quantum.providers-pricing

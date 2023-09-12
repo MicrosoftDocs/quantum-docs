@@ -5,7 +5,7 @@ ms.author: brbenefield
 ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: reference
+ms.topic: troubleshooting
 title: Understand solver results
 uid: microsoft.quantum.optimization.understand-solver-results
 ---
