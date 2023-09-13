@@ -13,7 +13,7 @@ uid: microsoft.quantum.libraries.overview-chemistry.concepts.installation
 
 # Chemistry library installation
 
-The quantum chemistry library for the Quantum Development Kit is designed to work well with computational chemistry packages, most notably the [**NWChem**](http://www.nwchem-sw.org/) computational chemistry platform developed by the Environmental Molecular Sciences Laboratory (EMSL) at Pacific Northwest National Laboratory.
+The quantum chemistry library for the Quantum Development Kit is designed to work well with computational chemistry packages, most notably the [**NWChem**](https://nwchemgit.github.io) computational chemistry platform developed by the Environmental Molecular Sciences Laboratory (EMSL) at Pacific Northwest National Laboratory.
 In particular, the [**Microsoft.Quantum.Chemistry** package](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) provides tools for loading instances of quantum chemistry simulation problems represented in the [Broombridge schema](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge), also supported for export by recent versions of NWChem.
 
 The Quantum Development Kit chemistry library also provides a command-line tool, `qdk-chem`, for converting between legacy formats and [Broombridge](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge).
