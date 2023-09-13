@@ -29,7 +29,7 @@ h_{pqrs} = h_{qpsr} = h_{srqp} = h_{rspq}=h_{rqps}=h_{psrq}=h_{spqr}=h_{qrsp}.\t
 $$
 
 Given such assumptions hold, you can use these symmetries to reduce the data needed to store the matrix elements of the Hamiltonian by a factor of $8$; although doing so makes importing data in a consistent way slightly more challenging.
-Fortunately, the Hamiltonian simulation library has subroutines that can be used to import integral files from either [LIQUI$|\rangle$](https://www.microsoft.com/research/project/language-integrated-quantum-operations-liqui/) or directly from [NWChem](http://www.nwchem-sw.org/index.php/Main_Page).
+Fortunately, the Hamiltonian simulation library has subroutines that can be used to import integral files from either [LIQUI$|\rangle$](https://www.microsoft.com/research/project/language-integrated-quantum-operations-liqui/) or directly from [NWChem](https://nwchemgit.github.io).
 
 Molecular orbital integrals such as these (for example, the $h\_{pq}$ and $h\_{pqrs}$ terms) are represented using the `OrbitalIntegral` type, which provides a number of helpful functions to express this symmetry.
 

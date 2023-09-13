@@ -59,7 +59,7 @@ From the EMSL page, click the **Instructions** tab, and follow the **Simple Exam
 
 ### Installing NWChem from source
 
-Full instructions on how to install NWChem from source are provided by [PNNL](http://www.nwchem-sw.org/index.php/Compiling_NWChem).
+Full instructions on how to install NWChem from source are provided by [PNNL](https://nwchemgit.github.io/Compiling_NWChem.html).
 
 > [!TIP]
 > If you wish to use NWChem from Windows 10, the Windows Subsystem for Linux is a great option.
