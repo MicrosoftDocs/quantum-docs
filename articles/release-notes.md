@@ -17,6 +17,12 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
+## 2023-09-15
+
+### QDK version 0.28.302313
+
+- You can now generate resource estimation profiles to learn how operations in your quantum program contribute to the overall cost; learn how to use it the [Azure Quantum documentation](xref:microsoft.quantum.overview.resources-estimator).
+
 ## 2023-07-31
 
 ### QDK version 0.28.291394
