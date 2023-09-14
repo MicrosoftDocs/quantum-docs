@@ -22,6 +22,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 ### QDK version 0.28.302313
 
 - You can now generate resource estimation profiles to learn how operations in your quantum program contribute to the overall cost; learn how to use it the [Azure Quantum documentation](xref:microsoft.quantum.overview.resources-estimator).
+- You can now easily access resource estimation results [using the new json property](https://github.com/microsoft/qdk-python/pull/500).
 
 ## 2023-07-31
 
