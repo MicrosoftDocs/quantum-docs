@@ -21,10 +21,10 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 ### QDK version 0.28.302313
 
-- You can now generate resource estimation profiles to learn how operations in your quantum program contribute to the overall cost; learn how to use in the [Azure Quantum documentation](xref:microsoft.quantum.overview.resources-estimator).
+- You can now generate resource estimation profiles to learn how operations in your quantum program contribute to the overall cost; learn how to use in the [Azure Quantum documentation](xref:microsoft.quantum.work-with-resource-estimator#use-profiling-to-analyze-the-structure-of-your-program).
 - You can now easily access resource estimation results [using the new json property](https://github.com/microsoft/qdk-python/pull/500).
-- Updated IonQ cost estimation function for aria-1 to use minimum job pricing of $97.50 (this assumes that error mitigation is enabled by default). Learn more about [IonQ pricing](https://learn.microsoft.com/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-AQcreditsQ%2Ctabid-AQcreditsRigetti%2Ctabid-learndevelop&pivots=ide-computing#ionq) or how to enable/disable [error mitigation](https://learn.microsoft.com/azure/quantum/provider-ionq#error-mitigation).
-- Removed deprecated Quantinuum target names. See full list of Quantinuum [supported targets](https://learn.microsoft.com/azure/quantum/provider-quantinuum?tabs=tabid-mcmr-with-q-provider%2Ctabid-arbitrary-angle-zz-gates-with-q-provider%2Ctabid-emulator-noise-parameters-with-q-provider%2Ctabid-tket-compilation-with-q-provider#targets).
+- Updated IonQ cost estimation function for aria-1 to use minimum job pricing of $97.50 (this assumes that error mitigation is enabled by default). Learn more about [IonQ pricing](xref:microsoft.quantum.providers-pricing#ionq) or how to enable/disable [error mitigation](xref:microsoft.quantum.providers.ionq#error-mitigation).
+- Removed deprecated Quantinuum target names. See full list of Quantinuum [supported targets](xref:microsoft.quantum.providers.quantinuum#targets).
 
 ## 2023-07-31
 
