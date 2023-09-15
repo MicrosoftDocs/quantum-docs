@@ -19,7 +19,7 @@ uid: microsoft.quantum.tutorial-qdk.katas
 
 The Quantum Katas are open-source, self-paced tutorials and programming exercises that teach the elements of quantum computing and the Q# programming language at the same time. Each kata explores a fundamental concept of quantum computing, with some covering the basics and some diving deeper into quantum algorithms and protocols.
 
-You can try the Quantum Katas online in the [Quantum Katas](https://aka.ms/try-quantum-katas) site, or you can download the katas and run them locally on your computer. The katas are available in the [Microsoft/QuantumKatas](
+You can try the Quantum Katas online in the [Quantum Katas](https://aka.ms/try-quantum-katas) site, or you can download the katas and run them locally on your computer.
 
 ## Run the Katas online
 
@@ -38,11 +38,7 @@ Most importantly, with the Quantum Katas you can run and validate your solutions
 
 ## Run the Katas locally
 
-If you prefer a local development, you can check the [Quantum Katas GitHub repository](https://github.com/Microsoft/QuantumKatas/). The repository contains the same tutorials and exercises as the online version
-
-### Prerequisites
-
-* [Install the Microsoft Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview?tabs=tabid-local#install-the-qdk-and-develop-quantum-applications-locally) using your preferred language and development environment.
+If you prefer a local development, you can check the [Quantum Katas GitHub repository](https://github.com/Microsoft/QuantumKatas/).
 
 ### Introduction to quantum computing
 
