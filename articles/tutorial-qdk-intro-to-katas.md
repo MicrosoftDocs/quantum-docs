@@ -31,10 +31,10 @@ Most importantly, with the Quantum Katas you can run and validate your solutions
 
 1. If you need a little help, you can click on **Need a hint?** to get a hint for the exercise.
 2. When you complete the exercise, click on the **Run** button to run the code in the kata. If you get stuck, you can click on **Show solution** to see the correct solution.
-3. At any point, you can ask Copilot
+3. At any point, you can ask Copilot.
 4. You can check your completion rate and progress through the Quantum Katas in the **My progress** section.
 
-    :::image type="content" source="media/quantum-katas-qcom.png" alt-text="Screen shot of the Azure Quantum website showing the Quantum Katas tutorials with Copilot.":::
+:::image type="content" source="media/quantum-katas-qcom.png" alt-text="Screen shot of the Azure Quantum website showing the Quantum Katas tutorials with Copilot.":::
 
 ## Run the Katas locally
 
