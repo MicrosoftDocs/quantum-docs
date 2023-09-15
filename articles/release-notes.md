@@ -1,7 +1,7 @@
 ---
 title: Release notes
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 07/31/2023
+ms.date: 09/15/2023
 author: SoniaLopezBravo
 ms.author: sonialopez
 ms.service: azure-quantum
@@ -16,6 +16,15 @@ uid: microsoft.quantum.relnotes-qdk
 This article outlines updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview).
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
+
+## 2023-09-15
+
+### QDK version 0.28.302812
+
+- You can now generate resource estimation profiles to learn how operations in your quantum program contribute to the overall cost; learn how to use in the [Azure Quantum documentation](xref:microsoft.quantum.work-with-resource-estimator#use-profiling-to-analyze-the-structure-of-your-program).
+- You can now easily access resource estimation results [using the new json property](https://github.com/microsoft/qdk-python/pull/500).
+- Updated IonQ cost estimation function for aria-1 to use minimum job pricing of $97.50 (this assumes that error mitigation is enabled by default). Learn more about [IonQ pricing](xref:microsoft.quantum.providers-pricing#ionq) or how to enable/disable [error mitigation](xref:microsoft.quantum.providers.ionq#error-mitigation).
+- Removed deprecated Quantinuum target names. See full list of Quantinuum [supported targets](xref:microsoft.quantum.providers.quantinuum#targets).
 
 ## 2023-07-31
 
