@@ -14,7 +14,7 @@ uid: microsoft.quantum.install-qdk.overview
 # Set up the Quantum Development Kit
 
 > [!NOTE]
-> Now available - the [Azure Quantum Development Kit (QDK) Preview](https://github.com/microsoft/qsharp/wiki/Overview) is the latest Q# development kit release, and is available as an extension for Visual Studio Code. For more information, see the [Azure QDK Preview](#the-azure-quantum-development-kit-qdk-preview).
+> Now available - the [Azure Quantum Development Kit (QDK) Preview](https://github.com/microsoft/qsharp/wiki/Overview) is the latest Q# development kit release, and is available as an extension for Visual Studio Code. For more information, see the [Modern QDK Preview](#the-azure-quantum-development-kit-qdk-preview).
 
 Learn about the different environment options available to develop quantum computing and optimization applications using the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) service.
 
@@ -24,11 +24,11 @@ Every environment uses the [Quantum Development Kit (QDK)](xref:microsoft.quantu
 
 With the [Azure Quantum website](https://quantum.microsoft.com/), you can run Q# code in your browser with no setup required. For more information, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum). 
 
-## The Azure Quantum Development Kit (QDK) Preview
+## The Azure Quantum Development Kit (Modern QDK) Preview
 
-The [Azure QDK Preview](https://github.com/microsoft/qsharp/wiki/Overview) is the newest release of the Q# language and development tools. With a smaller footprint and faster performance, it is tightly integrated with Visual Studio Code, it features one-step installation, language improvements, integrated Python and Jupyter Notebook support, new syntax highlighting, debugger support, error messages, and integrated Azure connectivity. By eliminating the dependencies of the [Microsoft QDK](#the-microsoft-quantum-development-kit-qdk), it is now truly platform independent, running on Windows, Mac, Linux, and the web. 
+The [Azure Quantum Development Kit (QDK) Preview](https://github.com/microsoft/qsharp/wiki/Overview) is the newest release of the Q# language and development tools. With a smaller footprint and faster performance, it is tightly integrated with Visual Studio Code, it features one-step installation, language improvements, integrated Python and Jupyter Notebook support, new syntax highlighting, debugger support, error messages, and integrated Azure connectivity. By eliminating the dependencies of the [Microsoft QDK](#the-microsoft-quantum-development-kit-qdk), it is now truly platform independent, running on Windows, Mac, Linux, and the web. 
 
-| Microsoft QDK | Azure QDK Preview |
+| Classic QDK | Modern QDK |
 | ---- | ---- |
 | Requires .NET SDK | No .NET dependency |  
 | Azure job integration through Azure CLI  | Azure job integration built-in to VS Code Explorer | 
@@ -39,13 +39,13 @@ The [Azure QDK Preview](https://github.com/microsoft/qsharp/wiki/Overview) is th
 | Python and Jupyter Notebook support  | Integrated Python and Jupyter Notebook support  | 
 
 > [!IMPORTANT]
-> The Azure QDK Preview extension and the Microsoft QDK extension cannot both be enabled in VS Code at the same time. If your programs require the following features, you can keep both extensions installed, but only one extension should be enabled at a time.  
+> The Modern QDK extension and the Classic QDK extension cannot both be enabled in VS Code at the same time. If your programs require the following features, you can keep both extensions installed, but only one extension should be enabled at a time.  
 >
-> - **Multiple files** - The Azure QDK Preview supports single Q# files only.
-> - **Hybrid computing** - Batch, Inteactive, and Integrated computing are not yet supported in the Azure QDK Preview.
-> - **Visual Studio** - The Azure QDK Preview does not support the Visual Studio IDE environment.  
+> - **Multiple files** - The Modern QDK supports single Q# files only.
+> - **Hybrid computing** - The Modern QDK does not yet support Batch, Interactive, and Integrated computing.
+> - **Visual Studio** - The Modern QDKdoes not support the Visual Studio IDE environment.  
 
-To install the Azure QDK Preview and walk through the new features, see the [QSharp GitHub Wiki](https://github.com/microsoft/qsharp/wiki/Overview).
+To install the Modern QDK and walk through the new features, see the [QSharp GitHub Wiki](https://github.com/microsoft/qsharp/wiki/Overview).
 
 ## The Microsoft Quantum Development Kit (QDK)
 
