@@ -15,6 +15,8 @@ uid: microsoft.quantum.work-with-resource-estimator
 
 Once you've learned how to [customize](xref:microsoft.quantum.overview.resources-estimator) and [submit](xref:microsoft.quantum.quickstarts.computing.resources-estimator) jobs to the Resource Estimator, you can learn how to optimize the execution time of resource estimation jobs.
 
+[!INCLUDE [Modern QDK RE banner](includes/new-qdk-resource-estimator-support.md)]
+
 ## Prerequisites
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).

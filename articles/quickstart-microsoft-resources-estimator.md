@@ -17,6 +17,8 @@ Learn how to use the Azure Quantum service to submit quantum programs to the [Az
 
 In this example, you'll run a sample notebook that estimates the costs of a multiplier on a fault-tolerant quantum computer written in Q# and Python.
 
+[!INCLUDE [Modern QDK RE banner](includes/new-qdk-resource-estimator-support.md)]
+
 ## Prerequisites
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).

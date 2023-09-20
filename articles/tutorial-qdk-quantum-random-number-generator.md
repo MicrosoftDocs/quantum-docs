@@ -13,6 +13,8 @@ uid: microsoft.quantum.tutorial-qdk.random-number
 
 # Tutorial: Implement a quantum random number generator in Q\#
 
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+
 Learn to write a basic quantum program in Q# that leverages the nature of quantum mechanics to produce a random number.
 
 In this tutorial, you'll learn how to

@@ -14,6 +14,8 @@ uid: microsoft.quantum.quickstarts.computing.provider.portal
 
 # Quickstart: Submit a circuit with a provider-specific format using an Azure Quantum notebook.
 
+[!INCLUDE [Modern QDK portal banner](includes/new-qdk-portal-support.md)]
+
 Learn how to use the `azure-quantum` Python package to submit provider-specific formatted quantum circuits, (for example, [OpenQASM 2.0](https://github.com/Qiskit/openqasm/tree/OpenQASM2.x) or [IonQ JSON](https://docs.ionq.com/#tag/quantum_programs)), to an IonQ or Quantinuum quantum computing target via the Azure Quantum service. This example uses an Azure Quantum notebook and the built-in *azure-quantum* Python package - no installation or configuration is required. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
 ## Prerequisites

@@ -13,6 +13,8 @@ uid: microsoft.quantum.machines.overview.qc-trace-simulator.depth-counter
 
 # Quantum trace simulator: depth counter
 
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+
 The depth counter is a part of the Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro).
 You can use it to gather counts that represent the lower bound of the depth of every operation invoked in a quantum program. 
 

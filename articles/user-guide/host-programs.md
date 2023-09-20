@@ -13,6 +13,8 @@ uid: microsoft.quantum.user-guide-qdk.overview.host-programs
 
 # Ways to run a Q# program
 
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+
 One of the Quantum Development Kit's greatest strengths is its flexibility across platforms and development environments.
 However, this flexibility also means that new Q# users may find themselves confused or overwhelmed by the numerous options found in the [install guide](xref:microsoft.quantum.install-qdk.overview).
 This page explains the different ways that you can run a quantum program and what happens when the program is run.

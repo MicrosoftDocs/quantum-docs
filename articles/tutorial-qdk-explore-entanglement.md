@@ -14,7 +14,7 @@ zone_pivot_groups: ide-platforms
 
 # Tutorial: Explore quantum entanglement with Q\#
 
-[!INCLUDE [sample qdk support banner](includes/new-qdk-support.md)] 
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
 
 This tutorial shows you how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement. 
 
