@@ -42,7 +42,7 @@ The [Modern QDK](https://github.com/microsoft/qsharp/wiki/Installation) is a pre
 | ---- | ---- |
 | Requires .NET SDK | No .NET dependency |  
 | Azure job integration through Azure CLI  | Azure job integration built-in to VS Code Explorer | 
-| No native debugging  | Integrated Q# debugger:<br>- Breakpoints<br>Stepping into code<br>- Error checking in Q# source files<br>- Auto-completion<br>Go to definition<br>- Function signature help<br>Hover definitions<br>- Inspect values for quantum and classic variables  | 
+| No native debugging  | Integrated Q# debugger:<br>- Breakpoints<br>- Stepping into code<br>- Error checking in Q# source files<br>- Auto-completion<br>- Go to definition<br>- Function signature help<br>- Hover definitions<br>- Inspect values for quantum and classic variables  | 
 | N/A  | Improved compiler error messages |
 | N/A  | Improved language syntax |
 | Multiple in-memory simulators | Integrated sparse state simulator |
