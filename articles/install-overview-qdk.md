@@ -14,7 +14,7 @@ uid: microsoft.quantum.install-qdk.overview
 # Set up the Quantum Development Kit
 
 > [!NOTE]
-> Now available - the [Azure Quantum Development Kit (QDK) Preview](https://github.com/microsoft/qsharp/wiki/Installation) is the latest preview of the Q# development kit, and is available as an extension for Visual Studio Code. For more information, see the [Modern QDK Preview](#the-azure-quantum-development-kit-modern-qdk-preview)).
+> Now available! The [Azure Quantum Development Kit (QDK) Preview](https://github.com/microsoft/qsharp/wiki/Installation) is the latest preview of the Q# development kit, and is available as an extension for Visual Studio Code. For more information, see the [Modern QDK](#the-azure-quantum-development-kit-modern-qdk-preview).
 
 Learn about the different environment options available to develop quantum computing and optimization applications using the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) service.
 
@@ -34,7 +34,9 @@ The [Modern QDK](https://github.com/microsoft/qsharp/wiki/Installation) is a pre
 > To help you get started, a new set of samples specifically for the Modern QDK is available on the [QSharp GitHub samples page](https://github.com/microsoft/qsharp/tree/main/samples).
 
 > [!NOTE]
-> The Modern QDK extension and the Classic QDK extension can both be installed in VS Code at the same time, but cannot both be enabled. If you are working exclusively with the Modern QDK, or if your programs require features not supported yet in the Modern QDK, only enable one extension at a time. 
+> The Modern QDK extension and the Classic QDK extension can both be installed in VS Code at the same time, but cannot be enabled at the same time. If you are working exclusively with the Modern QDK, or if your programs require features not supported yet in the Modern QDK, only enable one extension at a time. 
+
+### What's new 
 
 | Classic QDK | Modern QDK |
 | ---- | ---- |
@@ -49,7 +51,7 @@ The [Modern QDK](https://github.com/microsoft/qsharp/wiki/Installation) is a pre
 | Hybrid computing  | The Modern QDK does not yet support Batch, Interactive, and Integrated computing  |
 | Visual Studio support | The Modern QDK will not support the Visual Studio IDE environment  |
 
-For an updated list of Modern QDK features and changes from the Classic QDK, see the [QSharp GitHub Wiki](https://github.com/microsoft/qsharp/wiki/Installation))
+For an updated list of Modern QDK features and changes from the Classic QDK, see the [QSharp GitHub Wiki](https://github.com/microsoft/qsharp/wiki/Differences-from-the-previous-QDK).
 
 To install the Modern QDK and walk through the new features, see the [Installation page](https://github.com/microsoft/qsharp/wiki/Installation).
 
