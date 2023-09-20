@@ -48,7 +48,7 @@ In a new cell, run:
 
 ```python
 print("This workspace's targets:")
-for target in service.targets():
+for target in workspace.targets():
      print(target)
 ```
 
