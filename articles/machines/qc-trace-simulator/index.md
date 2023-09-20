@@ -13,7 +13,7 @@ uid: microsoft.quantum.machines.overview.qc-trace-simulator.intro
 
 # Microsoft Quantum Development Kit (QDK) quantum trace simulator
 
-[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+[!INCLUDE [Modern QDK banner](~/includes/new-qdk-support.md)]
 
 The QDK <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> class runs a quantum program without actually simulating the state of a quantum computer. For this reason, the quantum trace simulator is able to run quantum programs that use thousands of qubits.  It is useful for two main purposes: 
 

@@ -13,7 +13,7 @@ uid: microsoft.quantum.machines.overview.qc-trace-simulator.distinct-inputs
 
 # Quantum trace simulator: distinct inputs checker
 
-[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+[!INCLUDE [Modern QDK banner](~/includes/new-qdk-support.md)]
 
 The distinct inputs checker is a part of the Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro). You can use it to detect potential bugs in the code caused by conflicts with shared qubits. 
 

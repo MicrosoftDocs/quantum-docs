@@ -13,7 +13,7 @@ uid: microsoft.quantum.machines.overview.toffoli-simulator
 
 # Quantum Development Kit (QDK) Toffoli simulator
 
-[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+[!INCLUDE [Modern QDK banner](~/includes/new-qdk-support.md)]
 
 The QDK Toffoli simulator is a special-purpose simulator with a limited scope and only supports `X`, `CNOT`, and multi-controlled `X` quantum operations. All classical logic and computations are available.
 
