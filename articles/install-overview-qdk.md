@@ -28,8 +28,6 @@ With the [Azure Quantum website](https://quantum.microsoft.com/), you can run Q#
 
 The [Modern QDK](https://github.com/microsoft/qsharp/wiki/Installation) is a preview of the next version of the Q# language and development tools. With a smaller footprint and faster performance, it is tightly integrated with Visual Studio Code, it features one-step installation, language improvements, integrated Python and Jupyter Notebook support, new syntax highlighting, debugger support, error messages, and integrated Azure connectivity. By eliminating the dependencies of the [Microsoft QDK](#the-microsoft-quantum-development-kit-qdk), it is now truly platform independent, running on Windows, Mac, Linux, and the web. 
 
-###  [![download icon.](media/download-install.png) Download the Modern QDK](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode)
-
 > [!WARNING]
 > The Modern QDK preview is not fully backwards-compatible with the Classic QDK. Not all APIs have been ported, and existing project files aren't recognized. Your current programs and projects may require significant changes and updates. 
 >
@@ -37,6 +35,8 @@ The [Modern QDK](https://github.com/microsoft/qsharp/wiki/Installation) is a pre
 
 > [!NOTE]
 > The Modern QDK extension and the Classic QDK extension can both be installed in VS Code at the same time, but cannot be enabled at the same time. If you are working exclusively with the Modern QDK, or if your programs require features not supported yet in the Modern QDK, only enable one extension at a time. 
+
+[![download icon.](media/download-install.png) <br>Download the Modern QDK](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode)
 
 ### What's new 
 
