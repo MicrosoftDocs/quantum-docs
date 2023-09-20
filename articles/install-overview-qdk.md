@@ -34,6 +34,8 @@ The [Modern QDK](https://github.com/microsoft/qsharp/wiki/Installation) is a pre
 > The Modern QDK preview is not fully backwards-compatible with the Classic QDK. Not all APIs have been ported, and existing project files aren't recognized. Your current programs and projects may require significant changes and updates. 
 >
 > To help you get started, a new set of samples specifically for the Modern QDK is available on the [QSharp GitHub samples page](https://github.com/microsoft/qsharp/tree/main/samples).
+>
+> For installation steps and a walkthrough of the new features, see the [Installation page](https://github.com/microsoft/qsharp/wiki/Installation).
 
 > [!NOTE]
 > The Modern QDK extension and the Classic QDK extension can both be installed in VS Code at the same time, but cannot be enabled at the same time. If you are working exclusively with the Modern QDK, or if your programs require features not supported yet in the Modern QDK, only enable one extension at a time. 
@@ -54,8 +56,6 @@ The [Modern QDK](https://github.com/microsoft/qsharp/wiki/Installation) is a pre
 | Visual Studio support | The Modern QDK will not support the Visual Studio IDE environment  |
 
 For an updated list of Modern QDK features and changes from the Classic QDK, see the [QSharp GitHub Wiki](https://github.com/microsoft/qsharp/wiki/Differences-from-the-previous-QDK).
-
-For installation steps and a walkthrough of the new features, see the [Installation page](https://github.com/microsoft/qsharp/wiki/Installation).
 
 ## The Microsoft Quantum Development Kit (QDK)
 
