@@ -129,12 +129,10 @@ The **Period** column indicates the period when your quota is renewed.
 
      {'dimension': 'combined_job_hours', 'scope': 'Workspace', 'provider_id': 'Microsoft', 'utilization': 0.0, 'holds': 0.0, 'limit': 20.0, 'period': 'Monthly'}, 
 
-     {'dimension': 'combined_job_hours', 'scope': 'Subscription', 'provider_id': 'Microsoft', 'utilization': 0.011701412083333333, 'holds': 0.0, 'limit': 1000.0, 'period': 'Monthly'}, 
-
-     {'dimension': 'concurrent_cpu_jobs', 'scope': 'Workspace', 'provider_id': 'Microsoft', 'utilization': 0.0, 'holds': 0.0, 'limit': 5.0, 'period': 'None'}]
+     {'dimension': 'combined_job_hours', 'scope': 'Subscription', 'provider_id': 'Microsoft', 'utilization': 0.011701412083333333, 'holds': 0.0, 'limit': 1000.0, 'period': 'Monthly'}]
     ```
 
-See the above output as an example. In this case, the `qgs` row shows that the account has a limit of `8333334 qgs` with IonQ, of which `33334 qgs` have been used. The account also has a limit of `5` concurrent CPU jobs with Microsoft QIO, of which `0` have been used. The number of concurrent jobs is the number of jobs that can be queued per workspace at any one time.
+See the above output as an example. In this case, the `qgs` row shows that the account has a limit of `8333334 qgs` with IonQ, of which `33334 qgs` have been used. The number of concurrent jobs is the number of jobs that can be queued per workspace at any one time.
 
 The `scope` item indicates whether the quota refers to the current workspace or the subscription.
 

@@ -45,13 +45,13 @@ print(job.details)
 |**Name**|String| The job name. It is not required for the name to be unique. |
 |**Container_uri**|String| The blob container SAS uri, where the host job data is stored.|
 |**Input_data_uri**|String| The input blob SAS uri, where the input data is stored.|
-|**Input_data_format**|String| The format of the input data, for example, _microsoft.qio.v2_.|
+|**Input_data_format**|String| The format of the input data.|
 |**Input_params**|json object| The input parameters for the job. It is expected that the size of this object is small and only used to specify parameters for the execution target, such as beta values, or population size, not the input data.|
-|**Provider_id**|String| The unique identifier for the provider, for example, _microsoft_.|
-|**Target**|String| The name of the target to run the job, for example, _microsoft.substochasticmontecarlo.cpu_.|
+|**Provider_id**|String| The unique identifier for the provider.|
+|**Target**|String| The name of the target to run the job.|
 |**Metadata**|String| The job metadata. Metadata provides client the ability to store client-specific information.|
 |**Output_data_uri**|String| The output blob SAS uri, where the output data is stored. When a job finishes successfully, results will be uploaded to this blob.|
-|**Output_data_format**|String| The format of the output data, for example, _microsoft.qio.v2_.|
+|**Output_data_format**|String| The format of the output data.|
 |**Status**|String| The current status of the job, for example _Succeeded_.|
 |**Creation_time**|Datetime| The time when the job was created.|
 |**Begin_execution_time**|Datetime| The time when the job began the execution.|
