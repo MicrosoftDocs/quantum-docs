@@ -15,6 +15,8 @@ uid: microsoft.quantum.tutorial.resource-estimator.profiling
 
 In this tutorial, you will implement two quantum adders and then inspect them using the [profiling feature](xref:microsoft.quantum.work-with-resource-estimator#use-profiling-to-analyze-the-structure-of-your-program) in the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). The profiling feature allows you to analyze how subroutine operations in the quantum algorithm impact the overall resources.
 
+[!INCLUDE [Modern QDK RE banner](includes/new-qdk-resource-estimator-support.md)]
+
 In this tutorial, you'll learn how to:
 
 > [!div class="checklist"]

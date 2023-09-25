@@ -13,6 +13,8 @@ uid: microsoft.quantum.how-to.csharp-local
 
 # Develop with Q# and .NET program
 
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+
 The Q# programming language is built to work well with .NET languages such as C# and F#. This guide demonstrates how to use Q# with a host program written in a .NET language.
 
 First you will create the Q# application and .NET host, and make a call to Q# from the host.

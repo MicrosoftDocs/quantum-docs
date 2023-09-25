@@ -13,6 +13,8 @@ uid: microsoft.quantum.how-to.python-local
 
 # Develop with Q# and Python
 
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+
 Learn how you can run a Q# program using a Python host program or Jupyter Notebook, which invokes the Q# code and further processes return results. This topic uses [quantum simulators](xref:microsoft.quantum.machines.overview) from Microsoft Quantum Development Kit (QDK) to test and run quantum programs locally.
 
 > [!NOTE]

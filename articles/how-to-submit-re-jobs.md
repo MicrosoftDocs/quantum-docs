@@ -16,6 +16,8 @@ zone_pivot_groups: azurequantum-quantumcomputing-re-ide
 
 In this article, you'll learn to work with the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) using different SDKs and development environments. Each example estimates and analyzes the physical resource estimates of a quantum program targeted on a fault-tolerant quantum computer.
 
+[!INCLUDE [Modern QDK RE banner](includes/new-qdk-resource-estimator-support.md)]
+
 ## Prerequisites
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).

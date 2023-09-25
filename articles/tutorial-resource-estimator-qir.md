@@ -17,6 +17,8 @@ The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources
 
 This tutorial shows how to write and submit a QIR program to the Resource Estimator. This tutorial uses [PyQIR](https://github.com/qir-alliance/pyqir) to generate QIR, however, you can use any other source of QIR.
 
+[!INCLUDE [Modern QDK RE banner](includes/new-qdk-resource-estimator-support.md)]
+
 In this tutorial, you'll learn how to:
 
 > [!div class="checklist"]

@@ -15,6 +15,8 @@ zone_pivot_groups: quantum-computing-platforms-rigetti
 
 # Quickstart: Create a quantum-based random number generator in Azure Quantum
 
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+
 Learn how to use Azure Quantum to create a simple quantum-based random number generator. 
 
 ::: zone pivot="platform-ionq"

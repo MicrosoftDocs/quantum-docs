@@ -14,6 +14,8 @@ zone_pivot_groups: ide-platforms
 
 # Tutorial: Explore quantum entanglement with Q\#
 
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+
 This tutorial shows you how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement. 
 
 * Where classical bits hold a single binary value such as a 0 or 1, the state of a [qubit](xref:microsoft.quantum.glossary-qdk#qubit) can be in a [superposition](xref:microsoft.quantum.glossary-qdk#superposition) of two quantum states, 0 and 1. Each possible quantum state has an associated probability amplitude.
