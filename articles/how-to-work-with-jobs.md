@@ -23,8 +23,8 @@ All jobs have the following properties in common:
 
 |Property |Description|
 |-----|----|
-|**ID**|A unique identifier for the job. It must be unique within the workspace.    |
-|**Provider**|_Who_ you want to run your job. For example, the Microsoft QIO provider, or a third-party provider. |
+|**ID**|A unique identifier for the job. It must be unique within the workspace. |
+|**Provider**| _Who_ you want to run your job.|
 |**Target**| _What_ you want to run your job on. For example, the exact quantum hardware or quantum simulator offered by the provider. |
 |**Name**|A user-defined name to help organize your jobs.|
 |**Parameters**|Optional input parameters for targets. See the documentation for the selected target for a definition of available parameters.|
