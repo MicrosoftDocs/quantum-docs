@@ -17,7 +17,7 @@ uid: microsoft.quantum.overview.resources-estimator-output.data
 
 ## Report data
 
-The Resource Estimator takes the target parameters to evaluate the resource estimates of the requested quantum algorithm. The result of the resource estimation job is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget.
+The Resource Estimator takes a set of [target parameters](xref:microsoft.quantum.overview.resources-estimator) to evaluate the resource estimates of the requested quantum algorithm. The result of the resource estimation job is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget.
 
 The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can visualize this distribution to better understand the estimated space requirements for the algorithm using the [space-time diagrams](xref:microsoft.quantum.submit-resource-estimation-jobs#space-time-diagrams).
 
@@ -25,17 +25,21 @@ For more information, see [How the Resource Estimator works](xref:microsoft.quan
 
 ### Physical qubits
 
-|Output data name|Description|
+The physical qubits report contains the following entries:
+
+|Report data name|Description|
 |---|----|
 |Runtime|This is a runtime estimate in nanoseconds for the execution time of the algorithm. In general, the execution time corresponds to the duration of one logical cycle multiplied by the logical depth, that is, the number of logical cycles to run the algorithm. If however the duration of a single T-factory (T factory runtime) is larger than the algorithm runtime, the number of logical cycles is extended artificially in order to exceed the runtime of a single T-factory.|
 |Quantum operations per second (rQOPS)| The number of reliable quantum operations, that is, operations that are implemented using quantum error correction in order to achieve operational error rates. rQOPS is normalized to seconds to quantify the capability of a machine without being tied to the runtime of any particular algorithm. This number is computed as $\text{Logical qubits}*\text{Clock frequency}$, where $\text{Clock frequency}$ is the number of logical cycles per second.|
 |Physical qubits |Total number of physical qubits, which is the sum of the number of physical qubits to implement the algorithm logic, and the number of physical qubits for running the T factories that are responsible to produce the required T states that are consumed by the algorithm.|
 
-Th quantity rQOPS provides a simple way to capture the overall system capability by combining several aspects of the system. The number of logical qubits captures the size of the largest application that can be run. The clock frequency distills the underlying physical qubit's gate speeds and the performance of the error correction scheme that runs on top of the physical qubits.
+The quantity rQOPS provides a simple way to capture the overall system capability by combining several aspects of the system. The number of logical qubits captures the size of the largest application that can be run. The clock frequency distills the underlying physical qubit's gate speeds and the performance of the error correction scheme that runs on top of the physical qubits.
 
 ### Resource estimates breakdown
 
-|Output data name|Description|
+The breakdown of the resource estimates report contains the following entries:
+
+|Report data name|Description|
 |---|----|
 |Logical algorithmic qubits|Laying out the logical qubits in the presence of nearest-neighbor constraints requires extra logical qubits. In particular, to lay out the number of logical qubits in the input algorithm, we require in total $2 \cdot \text{Logical qubit count (pre-layout)} + \cdot \lceil \sqrt{8 \cdot \text{Logical qubit count (pre-layout)}}\rceil + 1$ logical qubits.|
 |Algorithmic depth |  To execute the algorithm using multi-qubit measurements, one multi-qubit measurement is required for the total single-qubit measurements, the arbitrary single-qubit rotations, and the  T gates in the input quantum program (pre-layout); three multi-qubit measurements for each of the CCZ gates, and CCiX gates in the input program, as well as the number of T gates per rotation for multi-qubit measurements for each of the non-Clifford layers, *Rotation depth*, in which there is at least one single-qubit rotation with an arbitrary angle rotation.|
@@ -47,13 +51,15 @@ Th quantity rQOPS provides a simple way to capture the overall system capability
 |Physical T factory qubits |  Each T factory requires the number of physical qubits described in *T factory parameters* and the total number of T factories are run in parallel, therefore $\text{Physical T factory qubits} = \text{Physical qubits for a single T factory} \cdot \text{Number of T factories}$ qubits are needed.|
 | Required logical qubit error rate | The required logical qubit error rate is obtained by dividing the logical error probability by the product of the number of logical qubits required for the algorithm after layout and the total cycle count, *Logical depth*, required for the algorithm. |
 | Required logical T state error rate | The required T state error rate is obtained by dividing the T distillation error probability by the total number of T states.|
-|Number of T states per rotation| The number of T states required to implement a rotation with an arbitrary angle is $\lceil 0.53 \log_2(\text{Number of rotation gates (pre-layout)} / \text{Rotation synthesis error probability}) + 5.3\rceil$ [[arXiv:2203.10064](https://arxiv.org/abs/2203.10064)]. For simplicity, this formula is used for all single-qubit arbitrary angle rotations, and doesn't distinguish between best, worst, and average cases. | 
+|Number of T states per rotation| The number of T states required to implement a rotation with an arbitrary angle is $\lceil 0.53 \log_2(\text{Number of rotation gates (pre-layout)} / \text{Rotation synthesis error probability}) + 5.3\rceil$ [[arXiv:2203.10064](https://arxiv.org/abs/2203.10064)]. For simplicity, this formula is used for all single-qubit arbitrary angle rotations, and doesn't distinguish between best, worst, and average cases. |
 
 ### Logical qubit parameters
 
-|Output data name|Description|
+The logical qubit parameters report contains the following entries:
+
+|Report data name|Description|
 |---|----|
-|QEC scheme|You can load pre-defined QEC schemes by using the name surface_code or floquet_code. The latter only works with Majorana qubits.
+|QEC scheme|You can load pre-defined QEC schemes by using the name `surface_code` or `floquet_code`. The latter only works with Majorana qubits. |
 |Code distance | The code distance is the smallest odd integer greater or equal to $\dfrac{2\log(\text{Crossing prefactor} / \text{Required logical qubit error rate})}{\log(\text{Error correction threshold}/\text{Single-qubit measurement error rate})} - 1$|
 |Physical qubits| The number of physical qubits per logical qubit are evaluated using the physical qubits formula for the QEC scheme, that can be user-specified.|
 |Logical cycle time | The runtime of one logical cycle in nanoseconds is evaluated using the physical qubits formula for the QEC scheme, that can be user-specified.|
@@ -65,7 +71,9 @@ Th quantity rQOPS provides a simple way to capture the overall system capability
 
 ### T factory parameters
 
-|Output data name|Description|
+The T factory report contains the following entries:
+
+|Report data name|Description|
 |---|----|
 |Physical qubits|This corresponds to the maximum number of physical qubits over all rounds of T distillation units in a T factory. A round of distillation contains of multiple copies of distillation units to achieve the required success probability of producing a T state with the expected logical T state error rate.|
 |Runtime |The runtime of a single T factory is the accumulated runtime of executing each round in a T factory.|
@@ -77,11 +85,13 @@ Th quantity rQOPS provides a simple way to capture the overall system capability
 |Distillation code distances|This is the code distance used for the units in each round. If the code distance is 1, then the distillation unit operates on physical qubits instead of error-corrected logical qubits.|
 |Number of physical qubits per round| The maximum number of physical qubits over all rounds is the number of physical qubits required for the T factory, since qubits are reused by different rounds.|
 |Runtime per round|The runtime of the T factory is the sum of the runtime in all rounds.|
-|Logical T state error rate |  This is the logical T state error rate achieved by the T factory which is equal or smaller than the required error rate physicalCountsFormatted/requiredLogicalTstateErrorRate.|
+|Logical T state error rate |  This is the logical T state error rate achieved by the T factory which is equal or smaller than the required error rate $\frac{\text{physicalCountsFormatted}}{\text{requiredLogicalTstateErrorRate}}$.|
 
 ### Pre-layout logical resources
 
-|Output data name|Description|
+The pre-layout logical resources report contains the following entries:
+
+|Report data name|Description|
 |---|----|
 |Logical qubits (pre-layout)|The number of logical algorithmic qubits is determined from this number by assuming to align them in a 2D grid. Auxiliary qubits are added to allow for sufficient space to execute multi-qubit Pauli measurements on all or a subset of the logical qubits.|
 |T gates |This includes all T gates and adjoint T gates, but not T gates required to implement rotation gates with arbitrary angle, CCZ gates, or CCiX gates.|
@@ -93,17 +103,18 @@ Th quantity rQOPS provides a simple way to capture the overall system capability
 
 ### Assumed error budget
 
-|Output data name|Description|
+The assumed error budget report contains the following entries:
+
+|Report data name|Description|
 |---|----|
 |Total error budget | The total error budget sets the overall tolerated error for the algorithm, that is, the allowed failure probability of the algorithm. Its value must be between 0 and 1. The default value is 0.001 (corresponding to 0.1%), which means that the algorithm is allowed to fail a maximum of once in 1000 executions. If there are no rotation gates in the input algorithm, the error budget is uniformly distributed to logical errors and T state errors.|
 |Logical error probability | Probability of at least one logical error. It's one third of the total error budget if the input algorithm contains rotation gates with arbitrary angles, or one half of it, otherwise.|
 |T distillation error probability | Probability of at least one faulty T distillation, which  is one third of the total error budget if the input algorithm contains rotation with gates with arbitrary angles, or one half of it, otherwise.|
 |Rotation synthesis error probability | Probability of at least one failed rotation synthesis, which is one third of the total error budget.|
 
-
 ## Output data
 
-The following output data constitutes the possible entries that can be access programmatically. 
+The following output data constitutes the possible entries that can be access programmatically.
 
 |Top-level parameter|Data type|Description|
 |---|----|----|
@@ -125,7 +136,7 @@ The `physical_counts` dictionary contains the following entries:
 |---|----|----|
 |`physical_qubits`|number| The total number of physical qubits.|
 |`runtime`|number| The total runtime to execute the algorithm in nanoseconds.|
-|`rqops`| number| The number of reliable quantum operations per second (QOPS). It's computed as the number of logical qubits × instructions per cycle per qubit × clock frequency.|
+|`rqops`| number| The number of reliable quantum operations per second (QOPS).|
 | `breakdown` |dictionary |Breakdown of estimates. For more information, see [Physical counts breakdown](#physical-counts-breakdown).|
 
 #### Physical counts breakdown
@@ -155,7 +166,7 @@ The `physical_counts_formatted` dictionary contains the following entries:
 |Output data name|Data type|Description|
 |---|----|----|
 |`runtime`|string| Total runtime as human friendly string.|
-|`rqops`|string | Reliable QOPS formatted with metric suffix.|
+|`rqops`|string | The number of reliable quantum operations per second (QOPS) formatted with metric suffix.|
 |`physical_qubits`|string| Total number of physical qubits with metric suffix.|
 |`algorithmic_logical_qubits`|string|Algorithmic logical qubits with metric suffix.|
 |`algorithmic_logical_depth`|string| Algorithmic logical depth with metric suffix.|
