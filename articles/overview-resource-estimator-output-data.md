@@ -109,12 +109,12 @@ The following output data constitutes the possible entries that can be access pr
 |---|----|----|
 |`status`|string| The status of the job, it's always `Succeeded`.|
 |`job_params`| dictionary| The target parameters of the job that are passed as input.|
-|`physical_counts`| dictionary| The physical resource estimates.|
-|`physical_counts_formatted`| dictionary| The physical resource estimates formatted for display in report data.|
-|`logical_qubit`| dictionary| The logical qubit properties.|
+|`physical_counts`| dictionary| The physical resource estimates. For more information, see [Physical counts](#physical-counts).|
+|`physical_counts_formatted`| dictionary| The physical resource estimates formatted for display in report data. For more information, see [Physical counts formatted](#physical-counts-formatted).|
+|`logical_qubit`| dictionary| The logical qubit properties. For more information, see [Logical qubit](#logical-qubit).|
 |`tfactory`| dictionary| The T factory properties.|
-|`error_budget`| dictionary| The derived error budget.|
-|`logical_counts`| dictionary| The pre-layout logical resource estimates.|
+|`error_budget`| dictionary| The derived error budget. For more information, see [Error budget](#error-budget).|
+|`logical_counts`| dictionary| The pre-layout logical resource estimates. For more information, see [Logical counts](#logical-counts).|
 |`report_data`| dictionary| Generation data for resource estimation report.|
 
 ### Physical counts
@@ -126,7 +126,7 @@ The `physical_counts` dictionary contains the following entries:
 |`physical_qubits`|number| The total number of physical qubits.|
 |`runtime`|number| The total runtime to execute the algorithm in nanoseconds.|
 |`rqops`| number| The number of reliable quantum operations per second (QOPS). It's computed as the number of logical qubits × instructions per cycle per qubit × clock frequency.|
-| `breakdown` |dictionary |Breakdown of estimates.|
+| `breakdown` |dictionary |Breakdown of estimates. For more information, see [Physical counts breakdown](#physical-counts-breakdown).|
 
 #### Physical counts breakdown
 
