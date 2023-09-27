@@ -97,7 +97,7 @@ The *Estimates with Q# input* program runs a multiplier and analyzes the physica
     |Two-qubit gate time                       |    50 ns |
     |Two-qubit error rate                        |  0.001 |
 
-For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) for the Resource Estimator.
+For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator-output.data) for the Resource Estimator.
 
 
 - **7th and 8th cells**: Displays the distribution of physical qubits used for the algorithm and the [T factories](xref:microsoft.quantum.concepts.tfactories). You can visualize the space and the time requirements of the algorithm. For more information, see [how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works#physical-resource-estimation).

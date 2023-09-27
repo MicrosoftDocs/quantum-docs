@@ -28,8 +28,9 @@ In this article, you'll learn to work with the [Azure Quantum Resource Estimator
 
 The Resource Estimator is a target of the Microsoft Quantum Computing provider. Using the Resource Estimator is exactly the same as submitting a job against other software and hardware provider targets in Azure Quantum - define your program, set a target, and submit your job for computation. The *target_id* for the Resource Estimator is `microsoft.estimator`. 
 
-When you set the target, you can provide additional optional parameters such as the qubit type, one qubit gate time, etc. 
-The Resource Estimator returns detailed output that can be visually rendered or programmatically parsed. For more information about input and output parameters, see [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator).
+When you set the target, you can provide additional optional parameters such as the qubit type, one qubit gate time, etc. For more information, see [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator).
+
+The Resource Estimator returns detailed output that can be visually rendered or programmatically parsed. For more information, see [Understand the result data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data).
 
 - Job type: Simulation (Estimation)
 - Target ID: `microsoft.estimator`
@@ -54,6 +55,7 @@ The Resource Estimator returns detailed output that can be visually rendered or 
 
 ## Next steps
 
+- [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
 - [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
 - [Learn how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works)
 - [Get the most out of the Resource Estimator](xref:microsoft.quantum.work-with-resource-estimator)

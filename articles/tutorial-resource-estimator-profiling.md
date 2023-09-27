@@ -427,7 +427,7 @@ Finally, you can access the profiling data and examine the impact of `PRounds`, 
     results_all[0]['profile']
     ```
 
-3. The profiling data is organized as a tree, with each node corresponding to a subroutine operation. Each node in the tree is assigned a frame with an index, and the profile contains samples organized by calling order, with each sample assigned a weight (for example, runtime). To locate the frame associated with a given round name, for example `PRounds`, the following Python function can be used: it finds the frame, then identifies all samples that contain it, and sums up the corresponding weights.
+4. The profiling data is organized as a tree, with each node corresponding to a subroutine operation. Each node in the tree is assigned a frame with an index, and the profile contains samples organized by calling order, with each sample assigned a weight (for example, runtime). To locate the frame associated with a given round name, for example `PRounds`, the following Python function can be used: it finds the frame, then identifies all samples that contain it, and sums up the corresponding weights.
 
     ```python
     def rounds_runtime(profile, round_name):
@@ -446,7 +446,7 @@ Finally, you can access the profiling data and examine the impact of `PRounds`, 
         return sum(weight for (sample, weight) in zip(samples, weights) if frame_index in sample)
     ```
 
-4. Finally, you extract the profile for each job result item and use the `rounds_runtime` function to obtain the runtime for each round, add it to a data frame together with the total runtime and return a plot.
+5. Finally, you extract the profile for each job result item and use the `rounds_runtime` function to obtain the runtime for each round, add it to a data frame together with the total runtime and return a plot.
 
     ```python
     entries = []
@@ -472,7 +472,7 @@ Finally, you can access the profiling data and examine the impact of `PRounds`, 
 
 Note how the total runtime grows much faster compared to the runtime of the rounds. The reason is that we need $\mathcal{O}(n)$ `AND` gates in the preparation part of `LookAheadAdd` but only $\mathcal{O}(\log n)$ `AND` and `CCNOT` gates in the `ComputeCarries` operation.
 
-Further note that logical depth of a the carry-lookahead adder is also logarithmic in $n$, since on the logical level, all `AND` and `CCNOT` gates, in both the preparation parts and in the rounds can be applied in parallel. However, when mapping to surface code operations using Parallel Synthesis Sequential Pauli Computation (PSSPC), these operations are sequentialized. For more information, see Appendix D in [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/pdf/2211.07629.pdf).
+Further note that logical depth of a the carry-lookahead adder is also logarithmic in $n$, since on the logical level, all `AND` and `CCNOT` gates, in both the preparation parts and in the rounds can be applied in parallel. However, when mapping to surface code operations using Parallel Synthesis Sequential Pauli Computation (PSSPC), these operations are sequenced. For more information, see Appendix D in [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/pdf/2211.07629.pdf).
 
 ## Next steps
 

@@ -49,6 +49,7 @@ The profiling feature creates a resource estimation profile that shows how the s
     job = estimator.submit(program, input_params=params)
     result = job.get_results()
     ```
+
     The `call_stack_depth` variable is a number that indicates the maximum level up to which subroutine operations are tracked. The entry point operation is at level 0. Thus, any operation called from the entry point is at level 1, any operation therein at 2, and so on. The call stack depth is setting a maximum value to an operation's level in the call stack for tracking resources in the profile. Note that a higher value leads to a larger estimation time, the maximum value for the `call_stack_depth` is 30.
 
 2. You can inspect the call graph by calling the `call_graph` property. It displays the call graph with the node corresponding to the entry point operation at the top and aligns other operations top-down according to their level.
@@ -86,7 +87,7 @@ The Azure Quantum Resource Estimator allows you to submit jobs with multiple con
 
 A resource estimation job consist of two types of job parameters:
 
-- [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters): qubit model, QEC schemes, error budget, constraints on the component-level, and profiling parameters.
+- [Target parameters](xref:microsoft.quantum.overview.resources-estimator): qubit model, QEC schemes, error budget, constraints on the component-level, and profiling parameters.
 - Operation arguments: arguments that can be passed to the program (if the QIR entry point contains arguments).
 
 One item consists of one configuration of job parameters, that is one configuration of target parameters and operation arguments. Several items are represented as an array of job parameters.
@@ -279,7 +280,7 @@ The `AccountForEstimates` operation takes as inputs an array of known `estimates
 Some scenarios where you may want to use `AccountForEstimates` operation:
 
 - You want to try a novel algorithm described in a paper to check if it improves the performance of your program. You can take estimates from the paper and incorporated them into the program by calling `AccountForEstimates`.
-- You want to develop [program top-down](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design#Programming), that is, start developing from main function and then implement lower levels. You can use `AccoutForEstimates` at the top level with expected estimates for the entire program. As development process progresses, new components start calling to `AccountForEstimates` and expected estimates are replaced by the actual implementation. In this way, estimates for the entire program are known upfront and get more precise as development progresses.
+- You want to develop [program top-down](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design#Programming), that is, start developing from main function and then implement lower levels. You can use `AccountForEstimates` at the top level with expected estimates for the entire program. As development process progresses, new components start calling to `AccountForEstimates` and expected estimates are replaced by the actual implementation. In this way, estimates for the entire program are known upfront and get more precise as development progresses.
 
 For example, consider the following Q# operation called `AddInPlace`. The operation takes two arrays of qubits as input. Suppose you've read in a paper that  estimating the resources of such $n$-bit in-place adder requires $n-1$ auxiliary qubits, $4n−4$ T gates, and $n−1$ measurements. Then, you want to use `AccountForEstimates` operation to estimate the resources including the number of auxiliary qubits, T gates, and measurements needed. 
 
@@ -344,6 +345,7 @@ In this case, the cache is different for odd and even values of `c`. In other wo
 
 ## Next steps
 
+- [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
 - [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator)
 - [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
 - [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
