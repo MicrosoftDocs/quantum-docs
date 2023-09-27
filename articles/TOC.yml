@@ -109,6 +109,8 @@
     href: how-to-submit-re-jobs.md  
   - name: Customize resource estimates to machine characteristics
     href: overview-resources-estimator.md
+  - name: Understand the results of the Resource Estimator
+    href: overview-resource-estimator-output-data.md
   - name: Learn how the Resource Estimator works
     href: learn-how-the-resource-estimator-works.md
   - name: Get the most out of the Resource Estimator
