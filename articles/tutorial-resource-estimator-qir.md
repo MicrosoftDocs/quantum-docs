@@ -73,7 +73,7 @@ When submitting a resource estimate request for your program, you can specify so
 * `qubitParams` - the physical qubit parameters
 * `constraints` - the constraints on the component-level
 
-For more information about the input parameters, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator#input-parameters).
+For more information about the input parameters, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
 
 For this example, you will implement a generic function that takes as input the `provider` object that connects to your Azure Quantum workspace and the QIR bitcode of the quantum program.  It returns as result an Azure Quantum job. 
 The Resource Estimator target parameters can be passed via keyword arguments to the function.
@@ -128,7 +128,7 @@ qis.t_adj(b)
 qis.cx(a, b)
 ```
   
-You can use the function you defined above together with the `bitcode()` function from PyQIR to generate a resource estimation job. You can also pass Resource Estimator specific arguments. This example uses `errorBudget` to set the error rate to 5%. (For more information about the pre-defined target parameters, see [Input parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator#input-parameters)).
+You can use the function you defined above together with the `bitcode()` function from PyQIR to generate a resource estimation job. You can also pass Resource Estimator specific arguments. This example uses `errorBudget` to set the error rate to 5%. For more information about the target parameters, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
 
 ```python
 job = resource_estimation_job_from_qir(provider, module.bitcode(), errorBudget=0.05)
@@ -137,7 +137,7 @@ result = job.result()
 result
 ```
 
-This function creates a table that shows the overall physical resource counts. You can further inspect cost details by collapsing the groups that have more information. For example, if you collapse the *Logical qubit parameters* group, you can more easily see that the error correction code distance is 15. 
+This function creates a table that shows the overall physical resource counts. You can further inspect cost details by collapsing the groups that have more information. For example, if you collapse the *Logical qubit parameters* group, you can more easily see that the error correction code distance is 15.
 
 |Logical qubit parameter | Value |
 |----|---|
@@ -168,7 +168,7 @@ For example, the time to perform a single-qubit measurement and a single-qubit g
 |Two-qubit error rate                        |  0.001 |
 
 
-For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) for the Resource Estimator.
+For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator-output.data) for the Resource Estimator.
 
 ## Next steps
 

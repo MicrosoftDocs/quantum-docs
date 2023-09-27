@@ -73,7 +73,7 @@ You want to estimate the resources on a fault-tolerant quantum computer and with
 
 A resource estimation job consist of two types of job parameters:
 
-- Target parameters, which consist on four parameters: qubit model, QEC schemes, error budget, and constraints on the component-level (optional). For more information, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
+- Target parameters: qubit model, QEC schemes, error budget, constraints on the component-level, and distillation units. For more information, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
 - Operation arguments, that is arguments that can be passed to the quantum program. In this case, the FCIDUMP files are passed as operation arguments. 
 
 ### Select and pass a FCIDUMP file
@@ -126,7 +126,7 @@ params.items[5].qec_scheme.name = "floquet_code"
 
 ## Estimate the quantum algorithm
 
-The parameters are now all set up, and you're ready to submit the resource estimation job. You can submit multiple configuration of job parameters as a single job to avoid rerunning multiple jobs on the same quantum program. For more information, see [Run multiple configurations as a single job](xref:microsoft.quantum.work-with-resource-estimator).
+The parameters are now all set up, and you're ready to submit the resource estimation job. You can submit multiple configuration of job parameters as a single job to avoid rerunning multiple jobs on the same quantum program. For more information, see [Run multiple configurations as a single job](xref:microsoft.quantum.work-with-resource-estimator#how-to-run-multiple-configurations-as-a-single-job).
 
 As quantum program, you use the double-factorization based quantum chemistry algorithm, which is provided via the `df_chemistry` function. 
 
@@ -157,21 +157,20 @@ results.summary_data_frame(labels=labels)
 |Majorana ns, 10⁻⁴	 |2844 |	4.0e+11	 |5.4e+11	 |17	 |19 |	21.6%	 | 4.65M	 |24 days |
 |Majorana ns, 10⁻⁶	 |2844 |	4.0e+11 |	5.4e+11	 |9 |	19 |	22.3%	 |1.42M |	13 days |
 
-
 1. Each row of the table corresponds to one of the six qubit parameter configurations, where the first column shows a textual description for the model. 
-2. The next three columns show technology-independent resources, which are the number of *logical qubits*, the *logical depth*, which is the number of logical operations performed in sequence, and the number of *T states* that are consumed by the logical operations. 
-4. The *code distance* indicates the error correction overhead to guarantee a sufficient logical error rate for the logical operations. 
-5. The number of *T factories* indicates how many T factories are executed in parallel to produce the total number of T states. 
-6. The *T factory fraction* describes the percentage of the number of qubits that are used to execute T factories, the rest is used to execute the logical operations of the algorithm. 
-7. The last two columns show the total number of *physical qubits* and the *runtime* to execute the quantum algorithm given the assumed qubit parameters.
+1. The next three columns show technology-independent resources, which are the number of *logical qubits*, the *logical depth*, which is the number of logical operations performed in sequence, and the number of *T states* that are consumed by the logical operations. 
+1. The *code distance* indicates the error correction overhead to guarantee a sufficient logical error rate for the logical operations. 
+1. The number of *T factories* indicates how many T factories are executed in parallel to produce the total number of T states. 
+1. The *T factory fraction* describes the percentage of the number of qubits that are used to execute T factories, the rest is used to execute the logical operations of the algorithm.
+1. The last two columns show the total number of *physical qubits* and the *runtime* to execute the quantum algorithm given the assumed qubit parameters.
 
-For more information, see [Output data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator#output-data). If you're interested in the workflow of the Resource Estimator, see [How the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
+For more information, see [Result data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data). If you're interested in the workflow of the Resource Estimator, see [How the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
 
 ### Access the results table
 
 The results of the resource estimation job are displayed in a table with multiple results coming from the list of items. By default the maximum number of items to be displayed is five. To display a list of $N$ items where $N > 5$, use `results[0:N]`.  
 
-You can also access individual results by providing a number as index. For exmample, the last configuration has index 5. You can further inspect more details about the resource estimates by collapsing various groups which have more information. For example, if you collapse the Logical qubit parameters group, you can see how the overhead to represent a logical qubit using physical qubits is derived. The last group shows the physical qubit properties that were assumed for this estimation.
+You can also access individual results by providing a number as index. For example, the last configuration has index 5. You can further inspect more details about the resource estimates by collapsing various groups which have more information. For example, if you collapse the Logical qubit parameters group, you can see how the overhead to represent a logical qubit using physical qubits is derived. The last group shows the physical qubit properties that were assumed for this estimation.
 
 ```python
 results[5]

@@ -1,6 +1,6 @@
 ---
 author: SoniaLopezBravo
-description: Learn about the input and output parameters of the Resource Estimator in Azure Quantum and how to customized them.
+description: This article shows how to interpret the report data of the Resource Estimator and access the output parameters.
 ms.date: 09/26/2023
 ms.author: sonialopez
 ms.service: azure-quantum
@@ -11,17 +11,27 @@ title: Resource Estimator output parameters
 uid: microsoft.quantum.overview.resources-estimator-output.data
 ---
 
-# Resource Estimator output parameters
+# Understand the result data of the Resource Estimator
 
+This article shows how to interpret and retrieve the output data of the Resource Estimator. The output data of the Resource Estimator is a report that is printed in the console and can be accessed programmatically.
 
+For more information, see [How the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
 
 ## Report data
 
-The Resource Estimator takes a set of [target parameters](xref:microsoft.quantum.overview.resources-estimator) to evaluate the resource estimates of the requested quantum algorithm. The result of the resource estimation job is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget.
+You can submit your quantum operation to the Resource Estimator target using the `qsharp.azure.execute` function.
 
-The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can visualize this distribution to better understand the estimated space requirements for the algorithm using the [space-time diagrams](xref:microsoft.quantum.submit-resource-estimation-jobs#space-time-diagrams).
+```python
+result = qsharp.azure.execute(QuantumOperation)
+result
+```
 
-For more information, see [How the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
+The `qsharp.azure.execute` function creates a result object, which can be used to display a table with the results of the resource estimation job. The report table is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget. You can inspect the details by collapsing the groups, which have more information.
+
+> [!TIP]
+> For a more compact version of the report table, you can use `result.summary`.
+
+You can also visualize the distribution of physical qubits used for the algorithm and the T factories to better understand the estimated space requirements for the algorithm. For more information, see the [space-time diagrams](xref:microsoft.quantum.submit-resource-estimation-jobs#space-time-diagrams).
 
 ### Physical qubits
 
@@ -112,11 +122,17 @@ The assumed error budget report contains the following entries:
 |T distillation error probability | Probability of at least one faulty T distillation, which  is one third of the total error budget if the input algorithm contains rotation with gates with arbitrary angles, or one half of it, otherwise.|
 |Rotation synthesis error probability | Probability of at least one failed rotation synthesis, which is one third of the total error budget.|
 
-## Output data
+## Output parameters
+
+You can programmatically access the output data of the resource estimation job. For example, the following code snippet shows how to access the error budget of the resource estimation job:
+
+```python
+result['error_budget']
+```
 
 The following output data constitutes the possible entries that can be access programmatically.
 
-|Top-level parameter|Data type|Description|
+|Top-level output parameter|Data type|Description|
 |---|----|----|
 |`status`|string| The status of the job, it's always `Succeeded`.|
 |`job_params`| dictionary| The target parameters of the job that are passed as input.|
@@ -132,7 +148,7 @@ The following output data constitutes the possible entries that can be access pr
 
 The `physical_counts` dictionary contains the following entries:
 
-|Output data name|Data type|Description|
+|Output parameter|Data type|Description|
 |---|----|----|
 |`physical_qubits`|number| The total number of physical qubits.|
 |`runtime`|number| The total runtime to execute the algorithm in nanoseconds.|
@@ -143,7 +159,7 @@ The `physical_counts` dictionary contains the following entries:
 
 The `breakdown` dictionary of `physical_counts` contains the following entries:
 
-|Output data name|Data type|Description|
+|Output parameter|Data type|Description|
 |---|----|----|
 |`algorithmic_logical_qubits`| number| The logical qubits required for running the algorithm and do not include resources for T factories. |
 |`algorithmic_logical_depth`|  number | The logical cycles required for running the algorithm and do not include resources for T factories. |
@@ -163,7 +179,7 @@ The `breakdown` dictionary of `physical_counts` contains the following entries:
 
 The `physical_counts_formatted` dictionary contains the following entries:
 
-|Output data name|Data type|Description|
+|Output parameter|Data type|Description|
 |---|----|----|
 |`runtime`|string| Total runtime as human friendly string.|
 |`rqops`|string | The number of reliable quantum operations per second (QOPS) formatted with metric suffix.|
@@ -209,7 +225,7 @@ The `physical_counts_formatted` dictionary contains the following entries:
 
 The `logical_qubit` dictionary contains the following entries:
 
-|Output data name|Data type|Description|
+|Output parameter|Data type|Description|
 |---|----|----|
 |`code_distance`|number|The computed code distance for the logical qubit.|
 |`physical_qubits`|number| The number of physical qubits for each logical qubit.|
@@ -220,7 +236,7 @@ The `logical_qubit` dictionary contains the following entries:
 
 The `error_budget` dictionary contains the following entries:
 
-|Output data name|Data type|Description|
+|Output parameter|Data type|Description|
 |---|----|----|
 |`rotations`|number|Probability of at least one failed rotation synthesis.|
 |`logical`|number|Probability of at least one logical error.|
@@ -230,7 +246,7 @@ The `error_budget` dictionary contains the following entries:
 
 The `logical_counts` dictionary contains the following entries:
 
-|Output data name|Data type|Description|
+|Output parameter|Data type|Description|
 |---|----|----|
 |`num_qubits`|number| Pre-layout number of qubits.|
 |`t_count`|number| Pre-layout number of T gates.|
@@ -239,7 +255,6 @@ The `logical_counts` dictionary contains the following entries:
 |`ccz_count`|number| Pre-layout number of CCZ gates.|
 |`ccix_count`|number| Pre-layout number of CCiX gates.|
 |`measurement_count`|number| Pre-layout number of single-qubit measurements.|
-
 
 
 ## Next steps

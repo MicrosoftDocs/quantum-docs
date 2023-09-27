@@ -1,6 +1,6 @@
 ---
 author: SoniaLopezBravo
-description: Learn about the input and output parameters of the Resource Estimator in Azure Quantum and how to customized them.
+description: Learn about the input parameters of the Resource Estimator in Azure Quantum and how to customized them.
 ms.date: 08/07/2023
 ms.author: sonialopez
 ms.service: azure-quantum
@@ -18,6 +18,7 @@ This article shows how to customize the target parameters of the [Azure Quantum 
 ## Target parameters
 
 The Resource Estimator computes the estimation of resources, such the number of qubits and the run time, which would be required to implement a given quantum algorithm using a given qubit technology and with a fixed set of architectural choices.  
+
 Therefore, the Resource Estimator takes a set of inputs, with pre-defined values to easily get you started:
 
 - A [physical qubit model](#physical-qubit-parameters), `qubitParams`, which are the properties of the underlying physical qubits.
@@ -25,6 +26,9 @@ Therefore, the Resource Estimator takes a set of inputs, with pre-defined values
 - An [error budget](#error-budget), `errorBudget`, which is the overall allowed error, that is, the number of times the program is allowed to unsuccess.
 - [Constraints](#constraints) on the component-level, `constraints`, which are the number of logical cycles and the number of T factory copies.
 - [Distillation units](#distillation-units), `distillationUnitSpecifications`, to specify T factories distillation algorithms.
+
+> [!NOTE]
+> In addition to the target parameters, if the quantum program contains arguments the Resource Estimator can take operation arguments as input. For more information, see [Get the most out of the Azure Quantum Resource Estimator](xref:microsoft.quantum.work-with-resource-estimator#how-to-run-multiple-configurations-as-a-single-job).
 
 ## Physical qubit parameters
 
@@ -466,6 +470,7 @@ See the following examples of custom formulas using long and short notation. The
 
 ## Next steps
 
+- [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
 - [Learn how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works)
 - [Get the most out of the Resource Estimator](xref:microsoft.quantum.work-with-resource-estimator)
 - [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator)

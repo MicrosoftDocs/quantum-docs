@@ -15,7 +15,7 @@ uid: microsoft.quantum.learn-how-resource-estimator-works
 
 The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) computes pre- and post-layout estimation of the logical resources. It takes a QIR quantum algorithm, for example a program written in Q#, Qiskit, or a QIR generator as [PyQIR](https://github.com/qir-alliance/pyqir), and a set of [target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) to evaluate the resource estimates of the quantum algorithm. Optionally, the Resource Estimator can take operation arguments, that is arguments that can be passed to the QIR program.
 
-In this article, you'll learn the workflow of the Resource Estimator and how the [output data](xref:microsoft.quantum.overview.resources-estimator#output-data) is extracted at different levels of the evaluation of the quantum program. You'll also learn the assumptions taken into account for the simulation of the resource estimation and the common issues that may prevent the resource estimates job to complete.
+In this article, you'll learn the workflow of the Resource Estimator and how the [output data](xref:microsoft.quantum.overview.resources-estimator-output.data) is extracted at different levels of the evaluation of the quantum program. You'll also learn the assumptions taken into account for the simulation of the resource estimation and the common issues that may prevent the resource estimates job to complete.
 
 ## Workflow of the Resource Estimator
 
@@ -25,7 +25,7 @@ The following diagram shows the workflow of the Resource Estimator. The resource
 
 ### Code distance and T factory estimation
 
-The Resource Estimator takes the target parameters `{qubitParams, qecScheme, errorBudget, constraints}` to compute a resource estimation of qubit technology and architecture. It calculates the QEC code distance, and from it, the number of physical qubits needed to encode one logical qubit and the runtime of one logical depth or cycle.
+The Resource Estimator takes the target parameters `{qubitParams, qecScheme, errorBudget, constraints, distillationUnitSpecifications}` to compute a resource estimation of qubit technology and architecture. It calculates the QEC code distance, and from it, the number of physical qubits needed to encode one logical qubit and the runtime of one logical depth or cycle.
 
 The Resource Estimator uses a logical layer called *planar quantum ISA* that acts as the interface between the software and hardware layers. It abstracts the details of how QEC is implemented in the layer below, retaining only a set of fault-tolerant logical operations as its instruction set. For more information, see [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629).
 
@@ -110,7 +110,7 @@ The following assumptions are taken into account for the simulation of the resou
 - **Negligible Clifford costs for synthesis**: The space overhead for synthesis and space and time overhead for transport of magic states within magic state factories and to synthesis qubits are all negligible.
 - **Smooth magic state consumption rate**: The rate of T state consumption throughout the compiled algorithm is almost constant, or can be made almost constant without significantly impacting the resources.
 
-## Common issues 
+## Common issues
 
  The following scenarios may prevent the resource estimates job to complete. 
 
