@@ -19,7 +19,7 @@ When working with the Azure Quantum service, you may run into these common issue
 
 ### Issue: Missing targets
 
-If the target where you want to run your job is missing from the available target list, you likely need to update to the latest version of the [Quantum Development Kit (Visual Studio 2022)](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or [Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
+If the target where you want to run your job is missing from the available target list, you likely need to update to the latest version of the [Quantum Development Kit (Visual Studio 2022)](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or [Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode). For more information, see [Update the QDK](xref:microsoft.quantum.update-qdk).
 
 The Microsoft QIO and 1QBit optimization solvers are deprecated and are no longer available in the Azure Quantum service from June 2023. When you try to submit an optimization job to any of these targets, you get the following error message:
 
@@ -150,6 +150,35 @@ This may be caused by a dependency conflict with a previous version of *pyqir* o
 ```Shell
 pip install --upgrade azure-quantum[qiskit]
 ```
+
+
+
+
+
+### Issue: Retrieving basic information about failed jobs
+
+%azure.jobs - shows the first 30 jobs, not necessarily your recent one (name, ID, status, target, in/out time)
+%azure.jobs JOB_NAME - same output for a specific job
+https://learn.microsoft.com/en-us/qsharp/api/iqsharp-magic/azure.jobs
+
+%azure.status - same output format as .jobs for the last submitted job
+%azure.status JOB_ID - same output for a specific job
+https://learn.microsoft.com/en-us/qsharp/api/iqsharp-magic/azure.output
+
+%azure.output - shows output from the .execute method for last job (still waiting, target is unavailable, format error, config error, invalid for the platform [with big IR dump])
+%azure.output JOB_ID - same output for a specific job
+https://learn.microsoft.com/en-us/qsharp/api/iqsharp-magic/azure.output
+
+Portal > Workspace > Job management: click on job name, Job Details popup gives you the same info as %azure.output
+
+Portal > Workspace > Providers: expand the provider and see the status of each target. If degraded, your job may be waiting until it times out. 
+
+
+
+
+
+
+
 
 ## Creating an Azure Quantum workspace
 
