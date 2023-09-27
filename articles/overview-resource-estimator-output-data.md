@@ -76,8 +76,8 @@ The logical qubit parameters report contains the following entries:
 |Logical qubit error rate |  The logical qubit error rate is computed as $\text{crossing prefactor} \cdot \left(\dfrac{\text{Single-qubit measurement error rate}}{\text{Error correction threshold}}\right)^\frac{\text{Code distance} + 1}{1}$|
 |Crossing prefactor | The crossing prefactor is extracted numerically from simulations when fitting an exponential curve to model the relationship between logical and physical error rate.|
 |Error correction threshold | The error correction threshold is the physical error rate below which the error rate of the logical qubit is less than the error rate of the physical qubit that constitute it. This value is usually extracted numerically from simulations of the logical error rate.|
-|Logical cycle time formula| This is the formula that is used to compute the logical cycle time.|
-|Physical qubits formula | This is the formula that is used to compute the number of physical qubits per logical qubits.|
+|Logical cycle time formula| The formula that is used to compute the logical cycle time.|
+|Physical qubits formula | The formula that is used to compute the number of physical qubits per logical qubits.|
 
 ### T factory parameters
 
@@ -90,12 +90,12 @@ The T factory report contains the following entries:
 |Number of output T states per run|  The T factory takes as input the number of input T states per run with a T gate error rate set in the physical qubit parameters and produces this number of T states with the error rate described in "logical T state error rate".|
 |Number of input T states per run |  This value includes the physical input T states of all copies of the distillation unit in the first round.|
 |Distillation rounds|This is the number of distillation rounds. In each round one or multiple copies of some distillation unit is executed.|
-|Distillation units per round|  This is the number of copies for the distillation units per round.|
-|Distillation units|These are the types of distillation units that are executed in each round. The units can be either physical or logical, depending on what type of qubit they are operating. Space-efficient units require fewer qubits for the cost of longer runtime compared to Reed-Muller preparation units.|
-|Distillation code distances|This is the code distance used for the units in each round. If the code distance is 1, then the distillation unit operates on physical qubits instead of error-corrected logical qubits.|
+|Distillation units per round|  Te number of copies for the distillation units per round.|
+|Distillation units|The types of distillation units that are executed in each round. The units can be either physical or logical, depending on what type of qubit they are operating. Space-efficient units require fewer qubits for the cost of longer runtime compared to Reed-Muller preparation units.|
+|Distillation code distances|The code distance used for the units in each round. If the code distance is 1, then the distillation unit operates on physical qubits instead of error-corrected logical qubits.|
 |Number of physical qubits per round| The maximum number of physical qubits over all rounds is the number of physical qubits required for the T factory, since qubits are reused by different rounds.|
 |Runtime per round|The runtime of the T factory is the sum of the runtime in all rounds.|
-|Logical T state error rate |  This is the logical T state error rate achieved by the T factory which is equal or smaller than the required error rate $\frac{\text{physicalCountsFormatted}}{\text{requiredLogicalTstateErrorRate}}$.|
+|Logical T state error rate |  The logical T state error rate achieved by the T factory which is equal or smaller than the required error rate $\frac{\text{physicalCountsFormatted}}{\text{requiredLogicalTstateErrorRate}}$.|
 
 ### Pre-layout logical resources
 
