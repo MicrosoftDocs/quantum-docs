@@ -1,6 +1,6 @@
 ---
 author: SoniaLopezBravo
-description: Learn how to work with jobs and sessions.
+description: Learn how to manually manage your jobs using sessions, what are the job failure policies, and how to avoid session timeouts.
 ms.date: 07/18/2023
 ms.author: sonialopez
 ms.service: azure-quantum
@@ -16,7 +16,7 @@ uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 In this article, you learn how to work with sessions. With sessions, you can group one or more jobs against a single target, which allows you to manage jobs effectively. For more information, see [Interactive quantum computing: sessions](xref:microsoft.quantum.hybrid.interactive).
 
 > [!NOTE]
->  Sessions are managed with Python, even when running Q# inline code. For more information, see “Q# + Python” section of [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
+> Sessions are managed with Python, even when running Q# inline code. For more information, see “Q# + Python” section of [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
 
 ## Retrieve sessions, list sessions, and list jobs of sessions
 
@@ -47,57 +47,58 @@ for job in session_jobs[0:10]:
     print(f"Id: {job.id}, Name={job.details.name}")
 ```
 
-
 ## Manual methods of opening/closing sessions
 
-We recommend following the steps in [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions) to create a new session. However,  you can manually create sessions. 
+We recommend following the steps in [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions) to create a new session. However,  you can manually create sessions.
 
-1. First, create a **Session object**. 
+1. First, create a **Session object**.
 
-  ```python
-  from azure.quantum.job.session import Session, SessionDetails, SessionJobFailurePolicy
-  import uuid
+      ```python
+      from azure.quantum.job.session import Session, SessionDetails, SessionJobFailurePolicy
+      import uuid
+    
+      session = Session(
+          workspace=workspace, # required
+          id=f"{uuid.uuid1()}", # optional, if not passed will use uuid.uuid1()
+          name="", # optional, will be blank if not passed
+          provider_id="ionq", # optional, if not passed will try to parse from the target
+          target="ionq.simulator", # required
+          job_failure_policy=SessionJobFailurePolicy.ABORT # optional, defaults to abort
+          )
+    
+      print(f"Session status: {session.details.status}")
+      ```
 
-  session = Session(
-      workspace=workspace, # required
-      id=f"{uuid.uuid1()}", # optional, if not passed will use uuid.uuid1()
-      name="", # optional, will be blank if not passed
-      provider_id="ionq", # optional, if not passed will try to parse from the target
-      target="ionq.simulator", # required
-      job_failure_policy=SessionJobFailurePolicy.ABORT # optional, detaults to abort
-      )
+    At this point, the session only exists on the client, and you can see that the status is **None**. To view the status of the session, you also need to create the session in the service.
 
-  print(f"Session status: {session.details.status}")
-  ```
-  At this point, the session only exists on the client, and you can see that the status is **None**. To view the status of the session, you also need to create the session in the service.
+1. To **create** a session in the service, you can use `workspace.open_session(session)` or `session.open()`.
+1. You can refresh the **status** and the session details with `session.refresh()`, or by getting a new session object from a session ID. 
 
-2. To **create** a session in the service, you can use `workspace.open_session(session)` or `session.open()`.
+      ```python
+      same_session = workspace.get_session(session.id) 
+      print(f"Session: {session.details} \n")
+      print(f"Session: {same_session.details} \n")
+      ```
 
-3. You can refresh the **status** and the session details with `session.refresh()`, or by getting a new session object from a session ID. 
+1. You can **close** a session with `session.close()` or `workspace.close_session(session)`.
+1. To attach a session manually created to a **target**, you can use `target.latest_session` with Python SDK or `backend.latest_session` with Qiskit.
+1. You can **wait** for a session to be completed:
 
-  ```python
-  same_session = workspace.get_session(session.id) 
-  print(f"Session: {session.details} \n")
-  print(f"Session: {same_session.details} \n")
-  ```
+     ```python
+    session_jobs = session.list_jobs()
+    [session_job.id for session_job in session_jobs]
+    
+    import time
+    while (session.details.status != "Succeeded" and session.details.status != "Failed" and session.details.status != "TimedOut"):
+       session.refresh()
+       time.sleep(5)
+      ```
 
-4. You can **close** a session with `session.close()` or `workspace.close_session(session)`.
-   
-5. You can wait for a session to be completed:
- ```python
-session_jobs = session.list_jobs()
-[session_job.id for session_job in session_jobs]
-
-import time
-while (session.details.status != "Succeeded" and session.details.status != "Failed" and session.details.status != "TimedOut"):
-   session.refresh()
-   time.sleep(5)
-  ```
 ## Passing arguments in Q#  
 
-If your Q# operation requires passing arguments, those arguments aren't known until job submission. This leads to some cases when the QIR program generated by the compiler isn't compatible with hardware targets because it makes use of functions that are not known until runtime. Therefore some arguments aren't susceptible to use in sessions. This is the case of passing arrays of unknown size. 
+If your Q# operation requires passing arguments, those arguments aren't known until job submission. This leads to some cases when the QIR program generated by the compiler isn't compatible with hardware targets because it makes use of functions that are not known until runtime. Therefore some arguments aren't susceptible to use in sessions. This is the case of passing arrays of unknown size.
 
-Consider the following Q# program. 
+Consider the following Q# program.
 
 ```qsharp
 open Microsoft.Quantum.Measurement;
@@ -138,6 +139,7 @@ with target.open_session(name="Q# session of three jobs") as session:
         {"name": "angle2", "type": "Double", "value": angle[1]}, 
     ]}) # Third job submission
 ```
+
 ## Session timeouts
 
 A session times out if no new job is submitted within the session for 10 minutes. The session reports a status of **TimedOut**. To avoid this situation, add a `with` block using `backend.open_session(name="Name")`, so the session `close()` is invoked by the service at the end of the code block. 
