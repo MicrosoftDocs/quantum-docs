@@ -173,7 +173,7 @@ The following sample notebooks assess requirements for scaling quantum computers
 - **Factoring**: This sample estimates the resources needed to factorize a 2048-bit number, which could have implications in quantum cryptography.
 
 > [!NOTE]
-> If you have questions or run into any issue using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Time zone (PT).
+> If you have questions or run into any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Next steps
 

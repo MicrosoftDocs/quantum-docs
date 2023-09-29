@@ -55,7 +55,7 @@ If your organization has an Enterprise Agreement (EA) purchasing contract with M
 > [!NOTE]
 > Note that Azure Credits and Azure Quantum Credits are different grants and shouldn't be confused. You can only use general-purpose Azure Credits with the Microsoft quantum providers - third-party providers (providers that aren't owned by Microsoft) aren't eligible.
 
-If you have any questions or run into any issue using Azure Quantum, join our [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) every Thursday 8∶30 AM Pacific Time zone (PT).
+If you have any questions or run into any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Create the workspace
 

@@ -26,5 +26,3 @@ Error message: The target specified does not exist or is not enabled for the wor
 
 For further questions, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
-> [!NOTE]
-> If you have any questions or run into any issue using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Time zone (PT).
