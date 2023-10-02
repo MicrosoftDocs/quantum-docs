@@ -13,6 +13,8 @@ uid: microsoft.quantum.tutorial-qdk.grovers
 
 # Tutorial: Implement Grover's search algorithm in Q\#
 
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+
 In this tutorial, you'll learn to implement Grover's algorithm in Q# to solve search-based problems.
 
 Grover's algorithm is one of the most famous algorithms in quantum computing. The problem it solves is often referred to as "searching a database", but it's more accurate to think of it in terms of the *search problem*.

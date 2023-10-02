@@ -15,6 +15,9 @@ uid: microsoft.quantum.hybrid.integrated
 
 Integrated hybrid computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Using qubit reuse techniques, larger programs can run on machines utilizing a smaller number of qubits.
 
+> [!NOTE]
+> Integrated hybrid quantum computing isn't currently supported by the [Azure Quantum Development Kit (QDK) Preview](https://github.com/microsoft/qsharp/wiki/Installation) extension for Visual Studio Code. To run integrated hybrid jobs, use the [Microsoft Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#the-microsoft-quantum-development-kit-qdk).
+
 For more discussion, see:
 
 - [Granade & Weibe, "Using Random Walks for Iterative Phase Estimation"](https://arxiv.org/pdf/2208.04526.pdf).

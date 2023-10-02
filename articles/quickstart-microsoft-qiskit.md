@@ -14,6 +14,8 @@ uid: microsoft.quantum.quickstarts.computing.qiskit
 
 # Quickstart: Submit a circuit with Qiskit to Azure Quantum
 
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+
 Learn how to use the `azure-quantum` Python package to submit Qiskit quantum circuits to an IonQ, Quantinuum, or Rigetti quantum computing target via the Azure Quantum service. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
 ## Prerequisites

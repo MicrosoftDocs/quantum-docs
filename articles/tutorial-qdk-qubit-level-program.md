@@ -15,6 +15,8 @@ no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 
 # Tutorial: Write and simulate qubit-level programs in Q\#
 
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+
 This tutorial shows you how to write and simulate a basic quantum program that operates on individual qubits.
 
 Although Q# was primarily created as a high-level programming language for large-scale quantum programs, it can also be used to explore the lower level of quantum programming, that is, directly addressing specific qubits. Specifically, this tutorial takes a closer look at the [Quantum Fourier Transform](https://en.wikipedia.org/wiki/Quantum_Fourier_transform) (QFT), a subroutine that is integral to many larger quantum algorithms.

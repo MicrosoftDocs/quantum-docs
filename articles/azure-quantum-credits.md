@@ -25,7 +25,7 @@ The first time you create a new [Azure Quantum workspace](xref:microsoft.quantum
 > [!NOTE]
 > Note that Azure credits and Azure Quantum credits are different grants and shouldn't be confused. When you create a [free trial Azure account](https://azure.microsoft.com/free/), you get $200 (USD) free Azure Credits to use on Azure services. Azure credits aren't eligible to use on quantum hardware providers.
 
-## Are my credits tied to a single workspace? 
+## Are my credits tied to a single workspace?
 
 No, Azure Quantum Credits are shared for all workspaces within a single subscription and region. Your $500 (USD) free Azure Quantum Credits are available when you create your first Azure Quantum workspace, but the following workspaces you create within the same subscription and region share the credits plan.
 
@@ -60,9 +60,9 @@ If your Azure Quantum credits have expired, or you consumed all and need more, y
 3. In the left panel, under **Operations**, go to the **Credits and quotas** blade and select the **Credits** tab. 
 4. See the consumed and the remaining credits for each selected provider. Credits are expressed in US dollars. 
 
- :::image type="content" source="media/portal-credits-blade.png" alt-text="Screenshot of the credits blade in Azure portal.":::
- 
- > [!NOTE]
+     :::image type="content" source="media/portal-credits-blade.png" alt-text="Screenshot of the credits blade in Azure portal.":::
+     
+> [!NOTE]
 > When using Azure Quantum Credits, the cost estimation in the **Job Management** blade within your Azure Quantum workspace is equal to $0. In this case, the estimated cost isn't reflected in the Job details because there’s no effective charge against your Azure bill.
  
 ### [Using the Azure CLI](#tab/tabid-cli)
@@ -88,11 +88,13 @@ If you are using an Azure Quantum Credits plan, and not a billing plan, the quot
    ```azurecli
    az account set -s <Your subscription ID>
    ```
+
 1. Select the **Workspace** that you want to use. Note that you also need to specify the resource group and the location.
 
    ```azurecli
    az quantum workspace set -g MyResourceGroup -w MyWorkspace -l MyLocation -o table
    ```
+
 1. Use the **`az quantum workspace quotas` command** to display quotas information for the selected workspace.
 
     ```azurecli
@@ -114,10 +116,11 @@ The **Scope** column indicates whether the quota refers to the current workspace
 - **Subscription**: tracked together for all workspaces within the same subscription or region.
 
 The **Period** column indicates the period when your quota is renewed. For Azure Quantum Credits, the period is infinite, meaning that your credits are never reset.
+
 ***
 
 > [!NOTE]
-> If you have any questions regarding the workspace creation process, or any issue using Azure Quantum, bookmark the [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday at 8:30am PST.
+> If you have any questions regarding the workspace creation process, or any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Next Steps
 

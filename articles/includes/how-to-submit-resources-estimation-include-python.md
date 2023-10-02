@@ -107,11 +107,11 @@ For example, the time to perform a single-qubit measurement and a single-qubit g
 > [!TIP]
 > You can access the output of the Azure Quantum Resources Estimator as a Python dictionary using the `result.data()` method.
 
-For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) of the Resource Estimator.
+For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator-output.data) of the Resource Estimator.
 
 #### Space-time diagrams
 
-The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can use `result.diagram.space` to visualize this distribution to better understand the estimated space requirements for the algorithm. 
+The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can use `result.diagram.space` to visualize this distribution to better understand the estimated space requirements for the algorithm.
 
 ```python
 result.diagram.space
@@ -162,11 +162,11 @@ result['jobParams']
   'twoQubitGateTime': '50 ns'}}
  ```
 
-These are the target parameters that can be customized: 
+These are the target parameters that can be customized:
 
 * `errorBudget` - the overall allowed error budget
 * `qecScheme` - the quantum error correction (QEC) scheme
-* `qubitParams` - the physical qubit parameters 
+* `qubitParams` - the physical qubit parameters
 * `constraints` - the constraints on the component-level
 * `distillationUnitSpecifications` - the specifications for T factories distillation algorithms
 
@@ -185,30 +185,7 @@ result = qsharp.azure.execute(EstimateMultiplication, bitwidth=8,
 result
 ```
 
-Inspect the physical counts programmatically. For example, you can show all physical resource estimates and its breakdown using the `physicalCounts` field in the result's data. Here you'll learn what logical qubit error and logical T state error rates are required to match the error budget. By default, runtimes are shown in nanoseconds.
-
-```python
-result['physicalCounts']
-```
-
-```output
-{'breakdown': {'adjustedLogicalDepth': 608,
-  'cliffordErrorRate': 1e-06,
-  'logicalDepth': 608,
-  'logicalQubits': 84,
-  'numTfactories': 10,
-  'numTfactoryRuns': 80,
-  'numTsPerRotation': None,
-  'numTstates': 800,
-  'physicalQubitsForAlgorithm': 4200,
-  'physicalQubitsForTfactories': 164160,
-  'requiredLogicalQubitErrorRate': 9.790100250626566e-09,
-  'requiredLogicalTstateErrorRate': 6.25e-07},
- 'physicalQubits': 168360,
- 'runtime': 6080000}
- ```
-
-You can also explore details about the T factory that was created to execute the algorithm.
+Inspect the physical counts programmatically. For example, you can explore details about the T factory that was created to execute the algorithm.
 
 ```python
 result['tfactory']
@@ -229,6 +206,9 @@ result['tfactory']
  'runtime': 72900.0,
  'runtimePerRound': [4500.0, 2400.0, 66000.0]}
 ```
+
+> [!NOTE]
+> By default, runtime is shown in nanoseconds.
 
 You can use this data to produce some explanations of how the T factories produce the required T states.
 
@@ -300,7 +280,7 @@ from matplotlib.colors import hsv_to_rgb   # To automatically find colors for pl
 
 #### Batching with the Resource Estimator
 
-A resource estimation job consist of two types of job parameters: [target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters), that is qubit model, QEC schemes, and error budget; and, optionally, operation arguments, that is, arguments that can be passed to the QIR program. The Azure Quantum Resource Estimator allows you to submit jobs with multiple configuration of job parameters, or multiple *items*, as a single job to avoid rerunning multiple jobs on the same quantum program. For more information about batching, see [Run multiple configurations as a single job](xref:microsoft.quantum.work-with-resource-estimator#run-multiple-configurations-as-a-single-job).
+A resource estimation job consist of two types of job parameters: [target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters), and operation arguments, that is, arguments that can be passed to the QIR program. The Azure Quantum Resource Estimator allows you to submit jobs with multiple configuration of job parameters, or multiple *items*, as a single job to avoid rerunning multiple jobs on the same quantum program. For more information about batching, see [Run multiple configurations as a single job](xref:microsoft.quantum.work-with-resource-estimator#run-multiple-configurations-as-a-single-job).
 
 In the following example, you use two of the six pre-defined qubit parameter models, and one customized model based on the model `"qubit_gate_ns_e3"` (accessed via the constant `QubitParams.GATE_NS_E3`), in which you'll set the error rates to $10^{-3.5}$. As operation arguments, you are choosing bit widths that are powers-of-2, ranging from 8 to 64.
 

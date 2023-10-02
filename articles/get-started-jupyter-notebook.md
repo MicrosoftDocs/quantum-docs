@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to run a Q# and Python sample notebook in an Azure Quantum workspace.
 ms.author: brbenefield
-ms.date: 02/21/2023
+ms.date: 09/19/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -12,6 +12,8 @@ uid: microsoft.quantum.get-started.notebooks
 ---
 
 # Get started with Q# and an Azure Quantum notebook
+
+[!INCLUDE [Modern QDK portal banner](includes/new-qdk-portal-support.md)]
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
@@ -139,7 +141,8 @@ You'll find more sample notebooks in the **Getting started** tab of the sample g
 |Data Management| Python | This sample shows you how to connect to your workspace's linked storage account and upload or download data for persistence. You can use this notebook to upload and download data between your local computer and Azure portal.|
 
 > [!NOTE]
-> If you have any questions or run into any issue using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Time zone (PT).
+> If you have any questions or run into any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
+
 ## Next steps
 
 - [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)

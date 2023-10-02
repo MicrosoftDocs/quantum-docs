@@ -13,6 +13,8 @@ uid: microsoft.quantum.machines.overview.toffoli-simulator
 
 # Quantum Development Kit (QDK) Toffoli simulator
 
+[!INCLUDE [Modern QDK banner](~/includes/new-qdk-support.md)]
+
 The QDK Toffoli simulator is a special-purpose simulator with a limited scope and only supports `X`, `CNOT`, and multi-controlled `X` quantum operations. All classical logic and computations are available.
 
 While the Toffoli simulator is more restricted in functionality than the [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator), it has the advantage of being able to simulate far more qubits. The Toffoli simulator can be used with millions of qubits, while the full state simulator is limited to about 30 qubits. This is useful, for example, with oracles that evaluate Boolean functions - they can be implemented using the limited set of supported algorithms and tested on a large number of qubits.

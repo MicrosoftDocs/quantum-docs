@@ -55,7 +55,7 @@ If your organization has an Enterprise Agreement (EA) purchasing contract with M
 > [!NOTE]
 > Note that Azure Credits and Azure Quantum Credits are different grants and shouldn't be confused. You can only use general-purpose Azure Credits with the Microsoft quantum providers - third-party providers (providers that aren't owned by Microsoft) aren't eligible.
 
-If you have any questions or run into any issue using Azure Quantum, join our [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) every Thursday 8∶30 AM Pacific Time zone (PT).
+If you have any questions or run into any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Create the workspace
 
@@ -73,7 +73,7 @@ To create an Azure Quantum workspace, follow these steps.
 
    |Option | Description |
    |--- | --- |
-   | Quick create | This option is the easiest path to creating a workspace. It automatically creates the necessary resource group and storage account, adds the IonQ, Quantinuum, Rigetti, Microsoft Quantum Computing, and Microsoft QIO providers, and includes free Azure Quantum Credits for IonQ, Quantinuum, and Rigetti hardware ($500 USD each). Your workspace can still be customized after creation, if needed. |
+   | Quick create | This option is the easiest path to creating a workspace. It automatically creates the necessary resource group and storage account, adds the IonQ, Quantinuum, Rigetti, and Microsoft Quantum Computing providers, and includes free Azure Quantum Credits for IonQ, Quantinuum, and Rigetti hardware ($500 USD each). Your workspace can still be customized after creation, if needed. |
    |Advanced create | Use this option to manually configure your resource group and storage account, select other payment options for your providers, and set tags to categorize resources. By default, this option also adds the IonQ, Quantinuum, Rigetti, Microsoft Quantum Computing, and Microsoft QIO providers, and includes free Azure Quantum Credits for IonQ, Quantinuum, and Rigetti hardware ($500 USD each). |
    
 ### [Quick create](#tab/tabid-quick)
@@ -102,7 +102,7 @@ To create an Azure Quantum workspace, follow these steps.
 
 1. Select **Next**.
 
-1. The IonQ, Quantinuum, Rigetti, Microsoft Quantum Computing, and Microsoft QIO providers are automatically added to the workspace. To add another available provider, select **Add** on that provider's tile. To modify the pricing plan for any of the selected providers, select **Modify**.
+1. The IonQ, Quantinuum, Rigetti, and Microsoft Quantum Computing providers are automatically added to the workspace. To add another available provider, select **Add** on that provider's tile. To modify the pricing plan for any of the selected providers, select **Modify**.
 
    > [!NOTE]
    > Pricing for Azure Quantum varies by provider. Please consult the information in the Providers tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information, or visit the [Azure Quantum pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
