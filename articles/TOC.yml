@@ -137,6 +137,10 @@
       href: provider-ionq.md
     - name: IonQ support policy
       href: provider-support-ionq.md
+  - name: Microsoft
+    items:
+    - name: Microsoft provider & targets
+      href: provider-microsoft.md
   - name: Quantinuum
     items:
     - name: Quantinuum provider & targets
