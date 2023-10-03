@@ -22,11 +22,11 @@ In this article, you learn how to work with sessions. With sessions, you can gro
 
 The following table shows the Python commands to get the list of all sessions and all jobs for a given session. 
 
-|Command|Description|
+|Command| Description|
 |---|---|
-|`workspace.list_sessions()`| Retrieve a list of all sessions in a Quantum Workspace.|
-|`workspace.get_session(sessionId)` | Retrieve the session with ID `sessionId`. Each session has a unique ID. |
-|`workspace.list_session_jobs(sessionId)` | Retrieve a list of all jobs in the session with ID `sessionId`. Each session has a unique ID.|
+|`workspace.list_sessions()` or `session.list_sessions()` | Retrieve a list of all sessions in a Quantum Workspace.|
+|`workspace.get_session(sessionId)` or `session.get_session(sessionId)` | Retrieve the session with ID `sessionId`. Each session has a unique ID. |
+|`workspace.list_session_jobs(sessionId)` or `session.list_session_jobs(sessionId)`  | Retrieve a list of all jobs in the session with ID `sessionId`. Each session has a unique ID.|
 
 For example, the following code defines a function that gets a session with a minimum number of jobs. Then, for that session, it lists all the jobs, the total number of jobs, and the first 10 jobs. 
 
@@ -51,6 +51,8 @@ for job in session_jobs[0:10]:
 
 We recommend following the steps in [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions) to create a new session. However,  you can manually create sessions.
 
+### [Q# + Python](#tab/tabid-pythonsdk)
+
 1. First, create a **Session object**.
 
       ```python
@@ -68,8 +70,8 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
     
       print(f"Session status: {session.details.status}")
       ```
-
-    At this point, the session only exists on the client, and you can see that the status is **None**. To view the status of the session, you also need to create the session in the service.
+    > [!NOTE]
+    > At this point, the session only exists on the client, and you can see that the status is **None**. To view the status of the session, you also need to create the session in the service.
 
 1. To **create** a session in the service, you can use `workspace.open_session(session)` or `session.open()`.
 1. You can refresh the **status** and the session details with `session.refresh()`, or by getting a new session object from a session ID. 
@@ -81,7 +83,7 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
       ```
 
 1. You can **close** a session with `session.close()` or `workspace.close_session(session)`.
-1. To attach a session manually created to a **target**, you can use `target.latest_session` with Python SDK or `backend.latest_session` with Qiskit.
+1. To **attach the session** to a target, you can use `target.latest_session`.
 1. You can **wait** for a session to be completed:
 
      ```python
@@ -93,6 +95,61 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
        session.refresh()
        time.sleep(5)
       ```
+### [Qiskit](#tab/tabid-qiskit)
+
+1. First, import the **credentials** of your Azure Quantum workspace.
+
+    ```python
+    import os
+    resource_id = os.environ.get("AZURE_QUANTUM_RESOURCE_ID")
+    location = os.environ.get("AZURE_QUANTUM_LOCATION")
+    ```
+
+1. Next, you create a **Provider object**.
+
+    ```python
+    from azure.quantum.qiskit import AzureQuantumProvider
+    provider = AzureQuantumProvider (
+        resource_id = resource_id,
+        location = location
+    )
+    ```
+
+1. You create a **quantum backend** using the target you want to use. For example, the following code creates a quantum backend for IonQ simulator. For more information, see [Create an Azure Quantum backend](xref:microsoft.quantum.how-to.adapting-qiskit#create-an-azure-quantum-backend).
+
+    ```python
+    ionq_simulator_backend = provider.get_backend("ionq.simulator")
+    provider_backend = ionq_simulator_backend
+    backend_id = provider_backend.name()
+    ```
+
+1. To **create** a session object, you can use the `.open_session` function.
+
+    ```python
+    from azure.quantum.job.session import Session, SessionJobFailurePolicy
+    session = provider_backend.open_session(name="Azure Quantum Session",
+    job_failure_policy=SessionJobFailurePolicy.CONTINUE) # optional, defaults to abort
+    session.open()
+    
+    print("Creating session")
+    ```
+    
+1. To **attach the session** manually created to the quantum backend, you can use `session = provider_backend.latest_session`.
+1. You can **retrieve** the jobs of your session using `session.list(jobs)`.
+1. You can **close** a session with `session.close()`.
+1. You can **wait** for a session to be completed:
+
+    ```python
+    print("Waiting for jobs to complete")
+    
+    import time
+    while (session.details.status != "Succeeded" and session.details.status != "Failed" and session.details.status != "TimedOut"):
+      session.refresh()
+      time.sleep(5)
+    print("Session status: " + session.details.status)
+    ```
+    
+***
 
 ## Passing arguments in Q#  
 
