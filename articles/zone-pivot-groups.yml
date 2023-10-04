@@ -18,16 +18,6 @@ groups:
     title: Quantinuum
   - id: platform-rigetti
     title: Rigetti
-- id: optimization-platforms
-  title: Provider platforms
-  prompt: Choose a provider platform
-  pivots:
-  - id: platform-microsoft
-    title: Microsoft QIO
-  - id: platform-1qbit
-    title: 1QBit
-  - id: platform-toshiba
-    title: Toshiba SQBM+
 - id: azurequantum-ide
   title: IDE for submitting jobs to AQ 
   prompt: Select the option for your development environment

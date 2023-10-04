@@ -5,7 +5,7 @@ description: This document provides details on the support policy for the Rigett
 ms.date: 04/13/2023
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: reference
+ms.topic: troubleshooting
 no-loc: [target, targets]
 title: Support Policy for Rigetti in Azure Quantum
 uid: microsoft.quantum.providers.rigetti.support

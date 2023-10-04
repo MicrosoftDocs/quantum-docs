@@ -2,10 +2,10 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the IonQ quantum computing provider
 ms.author: sonialopez
-ms.date: 08/15/2023
+ms.date: 09/06/2023
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: reference
+ms.topic: conceptual
 no-loc: [No control flow, target, targets]
 title: IonQ quantum computing provider
 uid: microsoft.quantum.providers.ionq
@@ -26,7 +26,8 @@ The following targets are available from this provider:
 |---|---|---|---|
 |[Quantum simulator](#quantum-simulator)	|ionq.simulator|	29 qubits|	IonQ's cloud-based idealized simulator. Free of cost.|
 |[IonQ Harmony](#ionq-harmony-quantum-computer) |	ionq.qpu	|11 qubits	|IonQ's trapped-ion quantum computer.|
-|[IonQ Aria](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
+|[IonQ Aria 1](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
+|[IonQ Aria 2](#ionq-aria-quantum-computer) |	ionq.qpu.aria-2	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
 
 IonQ's targets correspond to a **:::no-loc text="No Control Flow":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
 
@@ -77,14 +78,14 @@ The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigur
 
 ## IonQ Aria quantum computer
 
-IonQ Aria is IonQ's latest generation of trapped-ion quantum computer. With a 25-qubit dynamically reconfigurable system, IonQ Aria is available exclusively on Azure Quantum. For more information, see [IonQ Aria (ionq.com)](https://ionq.com/news/february-23-2022-ionq-aria-furthers-lead).
+IonQ Aria is IonQ's latest generation of trapped-ion quantum computer. With a 25-qubit dynamically reconfigurable system, IonQ Aria is available exclusively on Azure Quantum. For more information, see [IonQ Aria (ionq.com)](https://ionq.com/quantum-systems/aria).
 
 > [!IMPORTANT]
 > *Debiasing* is enabled on the Aria system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
-- Target ID: `ionq.qpu.aria-1`
+- Target ID: `ionq.qpu.aria-1`, `ionq.qpu.aria-2`
 - Target Execution Profile: [:::no-loc text="No Control Flow":::](xref:microsoft.quantum.target-profiles)
 
 | Parameter Name | Type     | Required | Description |

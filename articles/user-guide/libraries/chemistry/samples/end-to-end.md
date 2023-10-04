@@ -13,7 +13,7 @@ uid: microsoft.quantum.libraries.overview-chemistry.examples.overview.endtoend
 
 # End-to-end with NWChem #
 
-In this article, you will walk through an example of getting gate counts for quantum chemistry simulation, starting from an [NWChem](http://www.nwchem-sw.org/index.php/Main_Page) input deck.
+In this article, you will walk through an example of getting gate counts for quantum chemistry simulation, starting from an [NWChem](https://nwchemgit.github.io) input deck.
 Before proceeding with this example, make sure that you've installed Docker, following the [installation and validation guide](xref:microsoft.quantum.libraries.overview-chemistry.concepts.installation).
 
 For more information:

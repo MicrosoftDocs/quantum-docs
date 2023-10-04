@@ -13,6 +13,8 @@ uid: microsoft.quantum.update-qdk
 
 # Update the Quantum Development Kit (QDK) to the latest version
 
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+
 Learn how to update the Quantum Development Kit (QDK) to the latest version.
 
 This article assumes that you already have the QDK installed. If you are installing for the first time, then please refer to the [installation guide](xref:microsoft.quantum.install-qdk.overview).

@@ -15,11 +15,71 @@ uid: microsoft.quantum.work-with-resource-estimator
 
 Once you've learned how to [customize](xref:microsoft.quantum.overview.resources-estimator) and [submit](xref:microsoft.quantum.quickstarts.computing.resources-estimator) jobs to the Resource Estimator, you can learn how to optimize the execution time of resource estimation jobs.
 
+[!INCLUDE [Modern QDK RE banner](includes/new-qdk-resource-estimator-support.md)]
+
 ## Prerequisites
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - The **Microsoft Quantum Computing** provider added to your workspace. For more information, see [Enabling the Resource Estimator target](xref:microsoft.quantum.quickstarts.computing.resources-estimator#enable-the-resources-estimator-in-your-workspace).
+
+## Use profiling to analyze the structure of your program
+
+Quantum programs are complex and sometimes you want to understand how the different parts of the program contribute to the overall resource estimates. The profiling feature allows you to analyze how subroutine operations in the program impact the overall resources.
+
+Some scenarios where you may want to inspect the resource estimation profile or call graph of the program:
+
+- See which parts of the program contribute how much to the total resource estimates.
+- Find bottlenecks of the implementation and starting point for optimizations.
+- Understand the underlying structure of the program.
+
+The profiling feature creates a resource estimation profile that shows how the subroutine operations in the program contribute to the overall costs. There are two important outputs of a resource estimation profile, a call graph and a profile.
+
+- Call graph: The call graph is static representation of the quantum program which informs which operations call which other operations. The call graph contains a node for each operation and a directed edge for each calling relation. The call graph may contain cycles, for example, in the case of recursive operations.
+
+- Profile: The profile is a dynamic tree representation of the program execution in which there are no cycles and for each node there is a clear path from the root node. A node is annotated with a resource cost, e.g., runtime or qubit count. This cost is a fraction of its parent's cost and ultimately a fraction of the cost of the root node, which represents the overall resource cost.
+
+### Enable profiling
+
+1. You can enable profiling by setting the `call_stack_depth` variable in the `profiling` group. 
+
+    ```python
+    params = estimator.make_params()
+    params.profiling.call_stack_depth = 2 # entry point operation is at level 0
+    job = estimator.submit(program, input_params=params)
+    result = job.get_results()
+    ```
+
+    The `call_stack_depth` variable is a number that indicates the maximum level up to which subroutine operations are tracked. The entry point operation is at level 0. Thus, any operation called from the entry point is at level 1, any operation therein at 2, and so on. The call stack depth is setting a maximum value to an operation's level in the call stack for tracking resources in the profile. Note that a higher value leads to a larger estimation time, the maximum value for the `call_stack_depth` is 30.
+
+2. You can inspect the call graph by calling the `call_graph` property. It displays the call graph with the node corresponding to the entry point operation at the top and aligns other operations top-down according to their level.
+
+    ```python
+    result.call_graph
+    ```
+
+3. You can generate and download the resource estimation profile by calling the `profile` property. The profile is a JSON file that contains profile information about the algorithm runtime in wall clock time, the number of logical cycles, and the number of logical qubits.
+
+    ```python
+    result.profile
+    ```
+
+> [!NOTE]
+> To read the resource estimation profile in the JSON file, you can use the [speedscope](https://www.speedscope.app/) interactive online profile viewer.
+
+For more information, you can see an extensive demonstration of how to use the profiling feature in the tutorial [Estimate the resources of a quantum adder using the profiling feature](xref:microsoft.quantum.tutorial.resource-estimator.profiling).
+
+### Inlining functions
+
+Sometimes, QIR generation creates a lot of helper functions that do nothing but calling another function. You can simplify the call graph, and therefore simplify the resource estimation profile by inlining these functions using the `inlineFunctions` job parameter.
+
+```python
+params.profiling.inline_functions = True
+job = estimator.submit(program, input_params=params)
+result = job.get_results()
+
+result.call_graph
+```
 
 ## How to run multiple configurations as a single job
 
@@ -27,7 +87,7 @@ The Azure Quantum Resource Estimator allows you to submit jobs with multiple con
 
 A resource estimation job consist of two types of job parameters:
 
-- [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters): qubit model, QEC schemes, error budget, constraints on the component-level, and profiling parameters.
+- [Target parameters](xref:microsoft.quantum.overview.resources-estimator): qubit model, QEC schemes, error budget, constraints on the component-level, and profiling parameters.
 - Operation arguments: arguments that can be passed to the program (if the QIR entry point contains arguments).
 
 One item consists of one configuration of job parameters, that is one configuration of target parameters and operation arguments. Several items are represented as an array of job parameters.
@@ -211,6 +271,7 @@ You can use the `AccountForEstimates` Q# operation to incorporate known estimate
 ```qsharp
 operation AccountForEstimates(estimates: (Int, Int)[], layout: Int, arguments: Qubit[]): Unit is Adj
 ```
+
 The `AccountForEstimates` operation takes as inputs an array of known `estimates` that need to be incorporated into the final cost of the program, a `layout` scheme  that is used to derive physical estimates, and array of qubits, which the unimplemented operation is using as its `arguments`.
 
 > [!NOTE]
@@ -219,7 +280,7 @@ The `AccountForEstimates` operation takes as inputs an array of known `estimates
 Some scenarios where you may want to use `AccountForEstimates` operation:
 
 - You want to try a novel algorithm described in a paper to check if it improves the performance of your program. You can take estimates from the paper and incorporated them into the program by calling `AccountForEstimates`.
-- You want to develop [program top-down](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design#Programming), that is, start developing from main function and then implement lower levels. You can use `AccoutForEstimates` at the top level with expected estimates for the entire program. As development process progresses, new components start calling to `AccountForEstimates` and expected estimates are replaced by the actual implementation. In this way, estimates for the entire program are known upfront and get more precise as development progresses.
+- You want to develop [program top-down](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design#Programming), that is, start developing from main function and then implement lower levels. You can use `AccountForEstimates` at the top level with expected estimates for the entire program. As development process progresses, new components start calling to `AccountForEstimates` and expected estimates are replaced by the actual implementation. In this way, estimates for the entire program are known upfront and get more precise as development progresses.
 
 For example, consider the following Q# operation called `AddInPlace`. The operation takes two arrays of qubits as input. Suppose you've read in a paper that  estimating the resources of such $n$-bit in-place adder requires $n-1$ auxiliary qubits, $4n−4$ T gates, and $n−1$ measurements. Then, you want to use `AccountForEstimates` operation to estimate the resources including the number of auxiliary qubits, T gates, and measurements needed. 
 
@@ -282,9 +343,9 @@ operation ExpensiveOperation(c: Int, b : Bool): Unit {
 
 In this case, the cache is different for odd and even values of `c`. In other words, data collected for even values of `c` is only reused for even values of `c`, and the same applies for odd values of `c`.
 
-
 ## Next steps
 
+- [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
 - [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator)
 - [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
 - [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)

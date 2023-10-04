@@ -17,6 +17,8 @@ Learn how to use the Azure Quantum service to submit quantum programs to the [Az
 
 In this example, you'll run a sample notebook that estimates the costs of a multiplier on a fault-tolerant quantum computer written in Q# and Python.
 
+[!INCLUDE [Modern QDK RE banner](includes/new-qdk-resource-estimator-support.md)]
+
 ## Prerequisites
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
@@ -95,7 +97,7 @@ The *Estimates with Q# input* program runs a multiplier and analyzes the physica
     |Two-qubit gate time                       |    50 ns |
     |Two-qubit error rate                        |  0.001 |
 
-For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) for the Resource Estimator.
+For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator-output.data) for the Resource Estimator.
 
 
 - **7th and 8th cells**: Displays the distribution of physical qubits used for the algorithm and the [T factories](xref:microsoft.quantum.concepts.tfactories). You can visualize the space and the time requirements of the algorithm. For more information, see [how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works#physical-resource-estimation).
@@ -171,7 +173,7 @@ The following sample notebooks assess requirements for scaling quantum computers
 - **Factoring**: This sample estimates the resources needed to factorize a 2048-bit number, which could have implications in quantum cryptography.
 
 > [!NOTE]
-> If you have questions or run into any issue using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Time zone (PT).
+> If you have questions or run into any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Next steps
 

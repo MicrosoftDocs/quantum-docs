@@ -13,7 +13,7 @@ uid: microsoft.quantum.libraries.overview-chemistry.concepts.installation
 
 # Chemistry library installation
 
-The quantum chemistry library for the Quantum Development Kit is designed to work well with computational chemistry packages, most notably the [**NWChem**](http://www.nwchem-sw.org/) computational chemistry platform developed by the Environmental Molecular Sciences Laboratory (EMSL) at Pacific Northwest National Laboratory.
+The quantum chemistry library for the Quantum Development Kit is designed to work well with computational chemistry packages, most notably the [**NWChem**](https://nwchemgit.github.io) computational chemistry platform developed by the Environmental Molecular Sciences Laboratory (EMSL) at Pacific Northwest National Laboratory.
 In particular, the [**Microsoft.Quantum.Chemistry** package](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) provides tools for loading instances of quantum chemistry simulation problems represented in the [Broombridge schema](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge), also supported for export by recent versions of NWChem.
 
 The Quantum Development Kit chemistry library also provides a command-line tool, `qdk-chem`, for converting between legacy formats and [Broombridge](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge).
@@ -32,7 +32,7 @@ To get up and running using NWChem together with the Quantum Development Kit, us
 - Get started using existing Broombridge files provided with the samples at [IntegralData/YAML](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/IntegralData/YAML).
 - Use the [EMSL Arrows Builder for the Quantum Development Kit](https://arrows.emsl.pnnl.gov/api/qsharp_chem) which is a web-based frontend to NWChem, to generate new Broombridge-formatted molecular input files.  
 - Use the [Docker image](https://hub.docker.com/r/nwchemorg/nwchem-qc/) provided by PNNL to run NWChem, or
-- [Compile NWChem](http://www.nwchem-sw.org/index.php/Compiling_NWChem) for your platform.
+- [Compile NWChem](https://nwchemgit.github.io/Compiling-NWChem.html) for your platform.
 
 See [End-to-end with NWChem](xref:microsoft.quantum.libraries.overview-chemistry.examples.overview.endtoend) for more information on how to work with NWChem to chemical models to analyze with the Quantum Development Kit chemistry library.
 
@@ -59,7 +59,7 @@ From the EMSL page, click the **Instructions** tab, and follow the **Simple Exam
 
 ### Installing NWChem from source
 
-Full instructions on how to install NWChem from source are provided by [PNNL](http://www.nwchem-sw.org/index.php/Compiling_NWChem).
+Full instructions on how to install NWChem from source are provided by [PNNL](https://nwchemgit.github.io/Compiling-NWChem.html).
 
 > [!TIP]
 > If you wish to use NWChem from Windows 10, the Windows Subsystem for Linux is a great option.

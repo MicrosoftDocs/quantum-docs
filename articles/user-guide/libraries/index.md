@@ -39,7 +39,7 @@ Simulation of physical systems has long played a central role in quantum computi
 
 The documentation of the quantum chemistry library for the Quantum Development Kit provides an introduction and several examples to simulating electronic structure problems on quantum computers in order to help the reader understand the role that many aspects of the Hamiltonian simulation library play within the space. For more information, see [Quantum Chemistry Library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview).
 
-The quantum chemistry library for the Quantum Development Kit is designed to work well with computational chemistry packages, most notably the [**NWChem**](http://www.nwchem-sw.org/) computational chemistry platform developed by the Environmental Molecular Sciences Laboratory (EMSL) at Pacific Northwest National Laboratory.
+The quantum chemistry library for the Quantum Development Kit is designed to work well with computational chemistry packages, most notably the [**NWChem**](https://nwchemgit.github.io/) computational chemistry platform developed by the Environmental Molecular Sciences Laboratory (EMSL) at Pacific Northwest National Laboratory.
 For more information, see [Installation of quantum chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.installation).
 
 ## Quantum machine learning library

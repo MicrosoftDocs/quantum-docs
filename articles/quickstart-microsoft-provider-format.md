@@ -14,6 +14,8 @@ uid: microsoft.quantum.quickstarts.computing.provider
 
 # Quickstart: Submit a circuit with a provider-specific format to Azure Quantum
 
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+
 Learn how to use the `azure-quantum` Python package to submit provider-specific formatted quantum circuits, (for example, [OpenQASM 2.0](https://github.com/Qiskit/openqasm/tree/OpenQASM2.x) or [IonQ JSON](https://docs.ionq.com/#tag/quantum_programs)), to an IonQ or Quantinuum quantum computing target via the Azure Quantum service. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
 ## Prerequisites

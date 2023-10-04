@@ -17,6 +17,8 @@ zone_pivot_groups: azurequantum-quantumcomputing-ide
 
 In this article you will find the steps for how to submit quantum computing jobs to Azure Quantum using the Azure portal, Python, Jupyter Notebooks, or the Azure CLI.
 
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+
 ::: zone pivot="ide-portal"
 
 [!INCLUDE [python-procedure](includes/how-to-submit-quantum-include-portal.md)]

@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the resources available on the Azure Quantum website.
 ms.author: brbenefield
-ms.date: 06/21/2023
+ms.date: 09/29/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -19,6 +19,7 @@ Azure Quantum features:
 
 - **Copilot in Azure Quantum** - AI meets the world of quantum. With a built-in code window and Q# compiler, the Copilot in Azure Quantum can not only run your code, but also generate Q# code from your prompts, and engage in conversations about quantum computing.
 - **Quantum Elements** - One of the most important applications of quantum computing will be in the field of chemistry. Currently in private preview, Quantum Elements uses the Copilot in Azure Quantum to design, code, and render molecular models.
+- **Quantum Katas** - Hands-on tutorials that teach quantum computing concepts and the Q# programming language. For more information, see [Learn Q# with the Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas).
 - **Code samples** - The Azure Quantum code library is a rich set of samples using Q#, Python, and Qiskit code to demonstrate quantum scenarios.
 - **Quantum concepts** - From the basics of quantum theory to advanced techniques of quantum computing, the Concepts library is a crash course to bring you up to speed on quantum computing. 
 - **Videos** - Browse the video library for interviews with leading quantum computing researchers and innovators.

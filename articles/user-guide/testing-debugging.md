@@ -7,12 +7,14 @@ ms.author: brbenefield
 ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
-ms.topic: reference
+ms.topic: conceptual
 uid: microsoft.quantum.user-guide-qdk.overview.testingdebugging
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 ---
 
 # Testing and debugging
+
+[!INCLUDE [Modern QDK banner](~/includes/new-qdk-support.md)]
 
 As with classical programming, it is essential to be able to check that quantum programs act as intended, and to be able to diagnose incorrect behavior. Unlike classical programming, though, observing the state of a quantum system and tracking the behavior of a quantum program is not always easy.
 In this section, we cover the tools offered by the Quantum Development Kit for testing and debugging quantum programs.
