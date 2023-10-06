@@ -150,34 +150,28 @@ This may be caused by a dependency conflict with a previous version of *pyqir* o
 ```Shell
 pip install --upgrade azure-quantum[qiskit]
 ```
-
-
-
-
-
 ### Issue: Retrieving basic information about failed jobs
 
-%azure.jobs - shows the first 30 jobs, not necessarily your recent one (name, ID, status, target, in/out time)
-%azure.jobs JOB_NAME - same output for a specific job
-https://learn.microsoft.com/en-us/qsharp/api/iqsharp-magic/azure.jobs
+After submitting a job to a hardware target, your job may sit in the queue for several hours, or even one or two days, before failing. 
 
-%azure.status - same output format as .jobs for the last submitted job
-%azure.status JOB_ID - same output for a specific job
-https://learn.microsoft.com/en-us/qsharp/api/iqsharp-magic/azure.output
+To retrieve more information about the failure:
 
-%azure.output - shows output from the .execute method for last job (still waiting, target is unavailable, format error, config error, invalid for the platform [with big IR dump])
-%azure.output JOB_ID - same output for a specific job
-https://learn.microsoft.com/en-us/qsharp/api/iqsharp-magic/azure.output
+- Use the `%azure.output` magic command with the job ID to view the output or the returned error message:
 
-Portal > Workspace > Job management: click on job name, Job Details popup gives you the same info as %azure.output
+```qsharp
+%azure.output b7238080-6498-11ee-becb-00155d62f8be
+``` 
 
-Portal > Workspace > Providers: expand the provider and see the status of each target. If degraded, your job may be waiting until it times out. 
+- In your Azure Portal workspace, select **Operations > Job Management**, and then select the job **Name** to open a detail pane. 
+- In your Azure Portal workspace, selecd **Operations > Providers**. Verify the availibility of the target machine. Jobs submitted to targets with a status of **Degraded** may stay in the queue longer than usual. Sometimes the jobs get processed, but sometimes they time out and return an error of *target unavailable*.
 
+### Issue: I keep being asked to authenticate when programmatically connecting to my workspace
 
+If you are using the Azure Quantum Python SDK (within Jupyter notebooks for instance) and are connecting to your workspace using the AzureQuantumProvider class, you may experience a pop-up to authenticate to Azure every time you run your script.
 
+This happens because your security token is being reset every time you re-run.
 
-
-
+You can resolve this issue by running `az login` using the Azure CLI. For more information, see [az login](/cli/azure/reference-index?view=azure-cli-latest#az-login()).
 
 
 ## Creating an Azure Quantum workspace
