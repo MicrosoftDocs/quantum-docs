@@ -5,6 +5,7 @@ ms.author: sonialopez
 ms.date: 11/10/2022
 ms.service: azure-quantum
 ms.subservice: computing
+ms.custom: devx-track-azurecli
 ms.topic: how-to
 title: Submit jobs to the Resource Estimator target
 uid: microsoft.quantum.submit-resource-estimation-jobs

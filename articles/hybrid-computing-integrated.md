@@ -5,6 +5,7 @@ ms.date: 03/17/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
+ms.custom: devx-track-azurecli
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', Quantum Development Kit, Basic measurement feedback, target, targets]
 title: Working with integrated hybrid computing

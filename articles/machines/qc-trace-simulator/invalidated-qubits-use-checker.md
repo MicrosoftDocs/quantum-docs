@@ -23,7 +23,7 @@ Consider the following piece of Q# code to illustrate the issues detected by the
 
 ```qsharp
 operation UseReleasedQubit() : Unit {
-    mutable q = []];
+    mutable q = [];
     use ans = Qubit() {
         set q w/= 0 <- ans;
     }
