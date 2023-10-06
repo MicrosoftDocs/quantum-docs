@@ -2,7 +2,7 @@
 author: bradben
 description: Troubleshoot common Azure Quantum issues.
 ms.author: brbenefield
-ms.date: 06/06/2023
+ms.date: 10/06/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
@@ -97,7 +97,7 @@ rx(1.5707963267948966) q[0];
 
 ### Issue: Operation returned an invalid status code 'Forbidden'
 
-When you submit your first job you may get a ‘forbidden’ error code.
+When you submit your first job, you may get a ‘forbidden’ error code.
 
 This issue may originate during the workspace creation: Azure Quantum fails to complete the role assignment linking the new workspace to the storage account that was specified.
 A typical scenario for this situation happens if the tab or web browser window is closed before the workspace creation is completed.
@@ -126,7 +126,7 @@ Some recommendations to avoid those problems are:
 
 * Install the latest version of [.NET 6.0](https://dotnet.microsoft.com/download) even if you have .NETCore 3.1 already. Multiple versions can coexist side-by-side in the same environment, so you don't have to uninstall older ones.
 * If you're upgrading an application or test project to a QDK version equal or greater than `0.24.201332`, update the target framework from `netcoreapp3.1` to `net6.0`. Leave the framework as is if you want to keep using older versions of the QDK.
-* If you're a Visual Studio user, you'll need to upgrade to [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) to develop projects targeting .NET 6.0. We also have a [Q# extension](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) available for this product.
+* If you're a Visual Studio user, you need to upgrade to [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) to develop projects targeting .NET 6.0. We also have a [Q# extension](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) available for this product.
 
 ### Issue: Visual Studio 2019 extension isn't being updated
 
@@ -138,21 +138,21 @@ In order to use newer versions of the QDK for quantum projects with version `0.2
 
 ### Issue: Job fails with error code: QIRPreProcessingFailed
 
-When submitting a job to a Rigetti provider, the job fails and is reported in the Job management console in the Azure portal:
+When you submit a job to a Rigetti provider, the job fails and is reported in the Job management console in the Azure portal:
 
 ```output
 Error code: QIRPreProcessingFailed
 Error message: No match found for output recording set converter from outputrecordingset.v2.labeled to outputrecordingset.v1.nonlabeled
 ```
 
-This may be caused by a dependency conflict with a previous version of *pyqir* or *qiskit-qir*. Uninstall all versions of *pyqir*, *pyqir-*\*, and *qiskit-qir* on your local machine, and then install or update the *azure-quantum* Python package using the [qiskit] parameter:
+This error may be caused by a dependency conflict with a previous version of *pyqir* or *qiskit-qir*. Uninstall all versions of *pyqir*, *pyqir-*\*, and *qiskit-qir* on your local machine, and then install or update the *azure-quantum* Python package using the [qiskit] parameter:
 
 ```Shell
 pip install --upgrade azure-quantum[qiskit]
 ```
 ### Issue: Retrieving basic information about failed jobs
 
-After submitting a job to a hardware target, your job may sit in the queue for several hours, or even one or two days, before failing. 
+After you submit a job to a hardware target, your job may sit in the queue for several hours, or even one or two days, before failing. 
 
 To retrieve more information about the failure:
 
@@ -169,9 +169,9 @@ To retrieve more information about the failure:
 
 If you are using the Azure Quantum Python SDK (within Jupyter notebooks for instance) and are connecting to your workspace using the AzureQuantumProvider class, you may experience a pop-up to authenticate to Azure every time you run your script.
 
-This happens because your security token is being reset every time you re-run.
+This happens because your security token is being reset every time you run the script.
 
-You can resolve this issue by running `az login` using the Azure CLI. For more information, see [az login](/cli/azure/reference-index?view=azure-cli-latest#az-login()).
+You can resolve this issue by running `az login` using the Azure CLI. For more information, see [az login](https://learn.microsoft.com/en-us/cli/azure/reference-index#az-login()).
 
 
 ## Creating an Azure Quantum workspace
@@ -210,7 +210,7 @@ This issue occurs because the provider doesn't support the billing region your s
 
 ### Issue: Workspace creation or adding/removing providers fails with "ResourceDeploymentFailure" or "ProviderDeploymentFailure"
 
-This issue may include more details such as "ResourceDeploymentFailure - The 'AzureAsyncOperationWaiting' resource operation completed with terminal provisioning state 'Failed'.", or "ProviderDeploymentFailure - Failed to create plan for provider: [Name of the provider]".
+This issue may include more details such as "ResourceDeploymentFailure - The 'AzureAsyncOperationWaiting' resource operation completed with terminal provisioning state 'Failed'.", or "ProviderDeploymentFailure - Failed to create plan for provider: \<*Name of the provider*>".
 
 This occurs because the tenant has not enabled Azure Marketplace purchases. Follow the steps in [Enabling Azure Marketplace purchases](/azure/cost-management-billing/manage/ea-azure-marketplace#enabling-azure-marketplace-purchases) to enable Azure Marketplace purchases. 
 
@@ -224,11 +224,11 @@ This can happen for two reasons:
 
 1. If the storage account no longer exists. This can happen if the storage account linked to the workspace was deleted. To verify, select the **Overview** page for the workspace and select the link to the storage account. If the storage account has been deleted, you will see a **404 - Not found** error.
 
-1. If the managed identity of the workspace is not a **Contributor** to the storage account. Please check that the workspace identity (which uses the same name as the workspace) still has the **Contributor** role assignment to the storage account. To verify, select the **Overview** page for the workspace and select the link to the storage account. On the **Overview** page for the storage account, select **Access control (IAM)** and verify that the workspace is listed under **Contributor**.
+1. If the managed identity of the workspace is not a **Contributor** to the storage account. Check that the workspace identity (which uses the same name as the workspace) still has the **Contributor** role assignment to the storage account. To verify, select the **Overview** page for the workspace and select the link to the storage account. On the **Overview** page for the storage account, select **Access control (IAM)** and verify that the workspace is listed under **Contributor**.
 
 ### Issue: "ModuleNotFoundErrorr: No module named 'qiskit_machine_learning'" when runnig Qiskit sample in Azure Quantum notebook
 
-This error can happen if you haven't installed Qiskit when running a Qiskit Machine Learning sample on the Azure Quantum notebooks. To solve this issue add a new cell at the top of the notebook and copy: 
+This error can happen if you haven't installed Qiskit when running a Qiskit Machine Learning sample on the Azure Quantum notebooks. To solve this issue, add a new cell at the top of the notebook and copy: 
 
 ```python
 !pip install qiskit
