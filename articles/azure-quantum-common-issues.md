@@ -171,7 +171,7 @@ If you are using the Azure Quantum Python SDK (within Jupyter notebooks for inst
 
 This happens because your security token is being reset every time you run the script.
 
-You can resolve this issue by running `az login` using the Azure CLI. For more information, see [az login](https://learn.microsoft.com/en-us/cli/azure/reference-index#az-login()).
+You can resolve this issue by running `az login` using the Azure CLI. For more information, see [az login](/cli/azure/reference-index#az-login()).
 
 
 ## Creating an Azure Quantum workspace
