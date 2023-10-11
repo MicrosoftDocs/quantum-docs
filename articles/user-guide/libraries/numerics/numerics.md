@@ -13,7 +13,7 @@ uid: microsoft.quantum.libraries-numerics.usage
 
 # Using the Quantum Numerics library
 
-[!INCLUDE [Copilot in Azure Quantum banner](articles/includes/copilot-banner.md)]
+[!INCLUDE [Copilot in Azure Quantum banner](../../includes/copilot-banner.md)]
 
 ## Overview
 
