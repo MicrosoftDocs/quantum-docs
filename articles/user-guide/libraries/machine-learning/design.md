@@ -21,7 +21,7 @@ As in classical deep learning, there is no general rule for choosing a specific 
 
 - Entangling gates between qubits are essential to capture the correlations between the quantum features.
 
-[!INCLUDE [Copilot in Azure Quantum banner](/articles/includes/copilot-banner.md)]
+[!INCLUDE [Copilot in Azure Quantum banner](../../../includes/copilot-banner.md)]
 
 ## How to build a classifier with Q\#
 
