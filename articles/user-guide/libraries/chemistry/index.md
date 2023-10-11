@@ -19,7 +19,7 @@ In particular, the [**Microsoft.Quantum.Chemistry** package](https://www.nuget.o
 
 For more information about how to use the Quantum Development Kit with either NWChem and Broombridge, see [Installation of the Quantum Chemistry Library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.installation)
 
-[!INCLUDE [Copilot in Azure Quantum banner](../../../includes/copilot-banner.md)]
+[!INCLUDE [Copilot in Azure Quantum banner](../../includes/copilot-banner.md)]
 
 ## Azure Quantum Elements
 
