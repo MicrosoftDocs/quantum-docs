@@ -74,8 +74,14 @@ You can find the sample of **factoring large numbers** in the [Resource estimati
 
 The Resource Estimator can also be used to analyze the impact of quantum computing on classical cryptography. You can estimate the resources needed to break a particular encryption algorithm by using a future scaled quantum computer.
 
-Go to [quantum.microsoft.com](https://quantum.microsoft.com/en-us/experience/quantum-cryptography) and check out the Azure Quantum Resource Estimator for cryptography.
+Go to [quantum.microsoft.com](https://quantum.microsoft.com/experience/quantum-cryptography) and check out the Azure Quantum Resource Estimator for cryptography.
 
-You need to select at least one option from a set of four input parameters: a classical encryption algorithm, a key size, a qubit type, and a qubit error rate. The Resource Estimator estimates the number of qubits and the runtime that a quantum computer with the selected architecture would need to break the encryption. You can select multiple combinations of parameters and compare their security against quantum computers.
+Th Resource Estimator takes a set of four input parameters: a classical encryption algorithm, a key strength, a qubit type, and a qubit error rate. The results are displayed in a plot that shows the number of qubits and the runtime that a quantum computer with the selected architecture would need to break the encryption algorithm.
 
-You can also choose from a selection of preset input parameters in the form of a question. For example, select "Should I increase my current key sizes?" to analyze the impact of increasing the size of the key of an encryption algorithm. See that the fields are populated for you. Click **Ask Copilot**  if you want to know more about the resource estimation data.
+1. Click on the **arrows** to switch between different selections of preset input parameters. See that the fields are populated for you.
+1. Click **Ask Copilot**  if you want to know more about the resource estimation data.
+1. Click **Download** to download the plot of the resource estimation job.
+1. You can also **customize the parameters** of the encryption algorithm. You need to select *at least* one option for each input parameter. You can select multiple combinations of parameters and compare their security against quantum computers.
+1. **Hover over** the points of the plot to see more information about the resource estimates.
+
+:::image type="content" source="media/quantum-cryptography-qcom.png" alt-text="Screenshot of the quantum cryptography experience in Azure Quantum website. The picture displays the input parameters that constitute the encryption algorithm and the resulting plot of the resource estimation job.":::
