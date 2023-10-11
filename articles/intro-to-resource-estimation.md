@@ -83,6 +83,6 @@ Th Resource Estimator takes a set of four input parameters: a classical encrypti
 1. Click **Download** to download the plot of the resource estimation job.
 1. You can also **customize the parameters** of the encryption algorithm. You need to select *at least* one option for each input parameter. You can select multiple combinations of parameters and compare their security against quantum computers.
 1. **Hover over** the points of the plot to see more information about the resource estimates.
-1. At any point, you can ask Copilot a question about cryptography, resource estimation, or quantum computing.
+1. At any point, you can **ask Copilot a question** about cryptography, resource estimation, or quantum computing.
 
     :::image type="content" source="media/quantum-cryptography-qcom.png" alt-text="Screenshot of the quantum cryptography experience in Azure Quantum website. The picture displays the input parameters that constitute the encryption algorithm and the resulting plot of the resource estimation job.":::
