@@ -21,6 +21,8 @@ As in classical deep learning, there is no general rule for choosing a specific 
 
 - Entangling gates between qubits are essential to capture the correlations between the quantum features.
 
+[!INCLUDE [Copilot in Azure Quantum banner](../../../includes/copilot-banner.md)]
+
 ## How to build a classifier with Q\#
 
 To build a classifier, you are going to concatenate parametrized controlled rotations in your circuit model. To do it, you can use the type [`ControlledRotation`](xref:Microsoft.Quantum.MachineLearning.ControlledRotation) defined in the Quantum Machine Learning library. This type accepts four arguments that determine: the index of the target qubit, the array of indices of the control qubits, the axis of rotation, and index of the associated parameter in the array of parameters defining the model.

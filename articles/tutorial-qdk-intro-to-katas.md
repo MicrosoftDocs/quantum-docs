@@ -21,6 +21,8 @@ The Quantum Katas are open-source, self-paced tutorials and programming exercise
 
 You can try the Quantum Katas online in the [Quantum Katas](https://aka.ms/try-quantum-katas) site, or you can download the katas and run them locally on your computer.
 
+[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
+
 ## Run the Katas online
 
 The Quantum Katas are available to run online in the [Quantum Katas](https://aka.ms/try-quantum-katas) site. This environment allows you to run the katas in your browser without installing anything on your computer.

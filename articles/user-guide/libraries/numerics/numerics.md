@@ -13,6 +13,8 @@ uid: microsoft.quantum.libraries-numerics.usage
 
 # Using the Quantum Numerics library
 
+[!INCLUDE [Copilot in Azure Quantum banner](../../../includes/copilot-banner.md)]
+
 ## Overview
 
 The Numerics library consists of three components:

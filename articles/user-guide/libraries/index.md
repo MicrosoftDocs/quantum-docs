@@ -25,6 +25,8 @@ The Quantum Development Kit (QDK) provides additional domain-specific functional
 | [Quantum machine learning library](xref:microsoft.quantum.libraries.overview.machine-learning.intro) | [**Microsoft.Quantum.MachineLearning**](https://www.nuget.org/packages/Microsoft.Quantum.MachineLearning) | |
 | [Quantum numerics library](xref:microsoft.quantum.libraries-numerics.usage) | [**Microsoft.Quantum.Numerics**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) | |
 
+[!INCLUDE [Copilot in Azure Quantum banner](../../includes/copilot-banner.md)]
+
 ## Standard libraries
 
 The [`Microsoft.Quantum.Sdk` NuGet package](https://www.nuget.org/packages/Microsoft.Quantum.Sdk/) installed during [installation and validation](xref:microsoft.quantum.install-qdk.overview) automatically provides the Q# standard library. The standard libraries provide a set of essential and very useful functions and operations that can be used when writing quantum programs in Q#.

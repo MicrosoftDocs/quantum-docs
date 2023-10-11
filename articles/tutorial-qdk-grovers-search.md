@@ -33,6 +33,8 @@ In this tutorial, you'll learn how to:
 > - Build a quantum oracle that implements classical functions on a quantum computer.
 > - Write a Q# program that uses Grover's algorithm to find factors of an integer.
 
+[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
+
 ## Prerequisites 
 
 - [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview?tabs=tabid-local#install-the-qdk-and-develop-quantum-applications-locally) using your preferred language and development environment.

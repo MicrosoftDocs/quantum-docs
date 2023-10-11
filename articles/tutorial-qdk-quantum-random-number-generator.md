@@ -24,6 +24,8 @@ In this tutorial, you'll learn how to
 - Understand how Q# programs are structured.
 - Work with qubits and superposition to build a quantum random number generator.
 
+[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
+
 ## Prerequisites
 
 - To run the code sample in the [Copilot in Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding):
