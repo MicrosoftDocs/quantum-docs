@@ -15,7 +15,7 @@ uid: microsoft.quantum.libraries.overview.machine-learning.basics
 
 In this guide, you learn how to run a quantum sequential classifier written in Q# using the Quantum Machine Learning library of the QDK. To do that, you train a simple sequential model using a classifier structure defined in Q#. The model is trained on a half-moon dataset with training and validation data that you can find in the [code samples](https://github.com/microsoft/Quantum/tree/main/samples/machine-learning/half-moons). You create your Q# project using either a Python or a C# program to load data and call Q# operations from.
 
-[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
+[!INCLUDE [Copilot in Azure Quantum banner](/articles/includes/copilot-banner.md)]
 
 ## Prerequisites
 
