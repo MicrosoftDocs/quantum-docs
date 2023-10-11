@@ -76,7 +76,7 @@ The Resource Estimator can also be used to analyze the impact of quantum computi
 
 Go to [quantum.microsoft.com](https://quantum.microsoft.com/experience/quantum-cryptography) and check out the Azure Quantum Resource Estimator for cryptography.
 
-Th Resource Estimator takes a set of four input parameters: a classical encryption algorithm, a key strength, a qubit type, and a qubit error rate. The results are displayed in a plot that shows the number of qubits and the runtime that a quantum computer with the selected architecture would need to break the encryption algorithm.
+The Resource Estimator takes a set of four input parameters: a classical encryption algorithm, a key strength, a qubit type, and a qubit error rate. The results are displayed in a plot that shows the number of qubits and the runtime that a quantum computer with the selected architecture would need to break the encryption algorithm.
 
 1. Click on the **arrows** to switch between different selections of preset input parameters. See that the fields are populated for you.
 1. Click **Ask Copilot**  if you want to know more about the resource estimation data.
