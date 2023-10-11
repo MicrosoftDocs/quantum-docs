@@ -35,6 +35,8 @@ In this tutorial, you'll learn how to
 > * Simulate a quantum operation from qubit allocation to measurement output
 > * Observe how the quantum system's simulated wavefunction evolves throughout the operation
 
+[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
+
 ## Prerequisites
 
 * [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview?tabs=tabid-local#install-the-qdk-and-develop-quantum-applications-locally) using your preferred language and development environment.

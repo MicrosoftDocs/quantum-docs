@@ -21,7 +21,9 @@ For more information about the beginnings and motivation of quantum computing, s
 
 [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) is an open ecosystem to build quantum computing solutions on a diverse selection of today’s quantum hardware, and it offers flexibility to use your preferred development tools with support for Cirq, Qiskit, and Q#. You can use the familiar and trusted Azure platform to learn how to develop quantum algorithms and how to program and run them on real hardware from multiple providers.
 
-Discover the power of quantum computing with the [Copilot in Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding), a unique feature of the [Azure Quantum website](https://quantum.microsoft.com/). The Copilot in Azure Quantum can help you create and run quantum programs, as well as chat with you about quantum concepts. You can also find blogs, videos, and articles to learn more about quantum computing and the Azure Quantum service.
+[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
+
+The [Azure Quantum website](https://quantum.microsoft.com/) offers the Copilot in Azure Quantum, an AI that can help you create and run quantum programs, as well as chat with you about quantum concepts. You can also find blogs, videos, and articles to learn more about quantum computing and the Azure Quantum service.
 
 Learn how to create an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace) and start submitting your quantum programs on real quantum hardware. First-time users automatically get free Azure Quantum Credits for use with each participating quantum hardware provider (500 USD each) when creating your workspace. If you need more credits, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits).
 

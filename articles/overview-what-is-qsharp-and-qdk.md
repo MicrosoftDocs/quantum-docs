@@ -21,7 +21,7 @@ The QDK offers support for Q#, but also for [Qiskit](xref:microsoft.quantum.quic
 
 The QDK contains components that can be used standalone, independently from the Azure Quantum service:
 - [Q# language](#the-quantum-programming-language-q) and [quantum libraries](#explore-domain-specific-libraries), all open-source. 
--	[Quantum simulators](#run-programs-in-simulators) that simulate current and future quantum machines, so that you can run and debug your quantum algorithms written in Q#.
+- [Quantum simulators](#run-programs-in-simulators) that simulate current and future quantum machines, so that you can run and debug your quantum algorithms written in Q#.
 - [Extensions](#write-your-quantum-program) for Visual Studio 2022 and Visual Studio Code, and integration with Jupyter Notebooks.
 
 ## Get started with Q\# and the Quantum Development Kit
@@ -29,6 +29,8 @@ The QDK contains components that can be used standalone, independently from the 
 To jump right in, you can explore Q# in the Azure Quantum portal with no installation required. For more information, see [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks).
 
 For other development environment options, see [Setup the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+
+[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
 
 ## The quantum programming language Q\#
 

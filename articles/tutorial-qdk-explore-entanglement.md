@@ -22,6 +22,8 @@ This tutorial shows you how to write a Q# program that manipulates and measures 
 * The act of [measuring](xref:microsoft.quantum.glossary-qdk#measurement) a qubit produces a binary result with a certain probability, and changes the state of the qubit out of superposition. 
 * Multiple qubits can be [entangled](xref:microsoft.quantum.glossary-qdk#entanglement) such that they can't be described independently from each other. That is, whatever happens to one qubit in an entangled pair also happens to the other qubit.
 
+[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
+
 In this tutorial, you prepare two qubits in a specific quantum state, learn how to operate on qubits with Q# to change their state, and demonstrate the effects
 of superposition and entanglement. You build your Q# program piece-by-piece to introduce qubit states, operations, and measurements.
 

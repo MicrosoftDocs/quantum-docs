@@ -17,6 +17,7 @@ The [Q# quantum programming language](xref:microsoft.quantum.overview.q-sharp) i
 
 For more information, see [how to configure your quantum development environment](xref:microsoft.quantum.install-qdk.overview) and [how to submit Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs).
 
+[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
 
 The Q# user guide contains:
 

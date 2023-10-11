@@ -18,6 +18,8 @@ The [`Microsoft.Quantum.Sdk` NuGet package](https://www.nuget.org/packages/Micro
 
 The symbols defined by the Q# standard libraries are defined in much greater and more exhaustive detail in the [API documentation](xref:microsoft.quantum.apiref-intro).
 
+[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
+
 This section describes the most salient features of each part of the standard library and how each feature might be used in practice. 
 
 ## Prelude
