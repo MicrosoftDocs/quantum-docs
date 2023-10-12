@@ -70,9 +70,9 @@ Because many of today’s classical cryptographic schemes are based on the diffi
 
 You can find the sample of **factoring large numbers** in the [Resource estimation sample notebooks](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation/estimation-factoring.ipynb), or run it in the notebook gallery sample of your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). 
 
-## Resource estimation for quantum safe planning
+## Resource estimation for quantum-safe planning
 
-The Resource Estimator can also be used to analyze the impact of quantum computing on classical cryptography. You can estimate the resources needed to break a particular encryption algorithm by using a future scaled quantum computer.
+The Resource Estimator can also be used to analyze the impact of quantum computing on classical cryptography. You can estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm..
 
 Go to [quantum.microsoft.com](https://quantum.microsoft.com/experience/quantum-cryptography) and check out the Azure Quantum Resource Estimator for cryptography.
 
