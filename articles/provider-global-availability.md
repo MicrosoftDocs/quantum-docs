@@ -146,7 +146,7 @@ IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program a
 | Thailand     | Yes     |
 | Trinidad and Tobago     | No     |
 | Tunisia     | No     |
-| Turkey     | Yes     |
+| Türkiye     | Yes     |
 | Turkmenistan     | No     |
 | U.S. Virgin Islands     | No     |
 | Uganda     | No     |
@@ -294,7 +294,7 @@ Quantinuum offers five plans through Azure Quantum: the Azure Quantum Credits pr
 | Thailand     | Yes     |
 | Trinidad and Tobago     | No     |
 | Tunisia     | No     |
-| Turkey     | Yes     |
+| Türkiye     | Yes     |
 | Turkmenistan     | No     |
 | U.S. Virgin Islands     | No     |
 | Uganda     | No     |
@@ -442,7 +442,7 @@ Rigetti offers two plans through Azure Quantum: the Azure Quantum Credits progra
 | Thailand     | Yes     |
 | Trinidad and Tobago     | No     |
 | Tunisia     | No     |
-| Turkey     | Yes     |
+| Türkiye     | Yes     |
 | Turkmenistan     | No     |
 | U.S. Virgin Islands     | No     |
 | Uganda     | No     |
