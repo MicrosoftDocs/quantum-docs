@@ -1,8 +1,8 @@
 ---
 author: bradben
 description: Understand the architecture and implementation of integrated hybrid quantum computing.
-ms.date: 03/17/2023
-ms.author: brbenefield
+ms.date: 06/01/2023
+ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.custom: devx-track-azurecli
@@ -28,7 +28,20 @@ For more discussion, see:
 
 ## Supported targets
 
-Currently, the integrated hybrid computing model in Azure Quantum is supported on [Quantinuum](xref:microsoft.quantum.providers.quantinuum) targets.
+Currently, the integrated hybrid computing model in Azure Quantum is supported only on [QCI](xref:microsoft.quantum.machines.overview.backend-simulators#qci) and [Quantinuum](xref:microsoft.quantum.providers.quantinuum) targets.
+
+### QCI
+
+<!-- YOU CAN ALSO ADD ANY CONTENT HERE THAT HELPS DESCRIBE YOUR INTEGRATED HYBRID FEATURES -->
+
+|Supported feature| Notes |
+|---|---|
+| Classical loops | Bounded loops only |
+| Arbitrary control flow | Use of if/else branching  |
+| Mid-circuit measurement | Utilizes classical register resources |
+| Qubit reuse | N/A |
+| Real-time classical compute| 18-bit signed arithmetic on either integer or fix-point registers |
+
 
 ### Quantinuum
 
