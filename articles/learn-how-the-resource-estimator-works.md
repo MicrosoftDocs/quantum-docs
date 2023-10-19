@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
-description: Learn how the Azure Quantum Resource Estimator calculates estimates
-ms.date: 08/07/2023
+description: Learn how the Azure Quantum Resource Estimator calculates estimates, the assumptions and some common issues.
+ms.date: 10/19/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -112,11 +112,47 @@ The following assumptions are taken into account for the simulation of the resou
 
 ## Common issues
 
- The following scenarios may prevent the resource estimates job to complete. 
+The following common scenarios may prevent resource estimation jobs to complete. See how to resolve them.
 
-- Quantum algorithm must contain at least one measurement.
-- Physical T gate error rate is either too low or too high.
-- Invalid values for error rate, it must be a number between 0 and 1. 
+### Quantum algorithm must contain at least one T state or measurement
+
+To account for mapping an arbitrary quantum program to a 2D array of logical qubits, the Resource Estimator assumes that _Parallel Synthesis Sequential Pauli Computation (PSSPC)_ (see [arXiv:2211.07629, Appendix
+D](https://arxiv.org/pdf/2211.07629.pdf#page=25)) is performed on the inputprogram. In that approach, all Clifford operations are commuted through all T gates, rotation gates, and measurement operations, leaving a single Clifford
+operation that can be efficiently evaluated classically. Therefore, a quantum program that contains neither T states, for example from T gates or rotation gates, nor measurement operations does not require any physical quantum computing
+resources.
+
+### Physical T gate error rate is too high
+
+The _logical_ T state error rate depends on the error budget and the number of T states in the quantum program. [T factories](xref:microsoft.quantum.concepts.tfactories) are used to create T states with the
+required logical T state error rate from physical T gates, which have a _physical_ T gate error rate. Typically, the physical T gate error rate is much higher than the required logical T gate error rate. In some scenarios, the
+physical T gate error rate is that much higher compared to the required logical T state error rate, such that no T factory can be found that can produce logical T states of sufficient quality.
+
+Here is what you could do in such a scenario:
+
+* Increase the error budget, either total or the part for T states.
+* Reduce the physical T gate error rate in the qubit parameters.
+* Reduce the number of T states in the quantum program by reducing T gates, rotation gates, and Toffoli gates.
+
+### Physical T gate error rate is too low
+
+There is also the opposite scenario, in which the physical T gate error rate is lower than the required logical T state error rate. In such cases, no T factory is required, because the physical T gate error rate is already of sufficient
+quality. However, this requires a careful consideration of the impact of transfer units that transfer the physical T states from code distance 1 to the code distance of the algorithm (see [arXiv:2211.07629, Appendix
+C](https://arxiv.org/pdf/2211.07629.pdf#page=21)). In general, in the presence of T factories, the cost of transfer units is negligible.
+
+Here is what you could do in such a scenario:
+
+* Increase the physical T gate error rate in the qubit parameters to the required logical T state error rate.
+* Reduce the error budget or just the part for the T states.
+
+### Error rate must be a number between 0 and 1
+
+Error rates should always be values between 0 and 1. In addition, for error correction to be effective, the physical error rate for gates and measurements must be below a value that depends on the properties of the error correction
+code and the required logical error rate.
+
+Here is what you could do in such a scenario:
+
+* Increase the error budget, either total or the part for logical errors.
+* Reduce the physical error rates in the qubit parameters.
 
 ## Next steps
 
