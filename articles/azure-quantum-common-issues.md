@@ -2,7 +2,7 @@
 author: bradben
 description: Troubleshoot common Azure Quantum issues.
 ms.author: brbenefield
-ms.date: 10/06/2023
+ms.date: 10/20/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
@@ -13,7 +13,7 @@ uid: microsoft.quantum.azure.common-issues
 
 # Troubleshoot Azure Quantum
 
-When working with the Azure Quantum service, you may run into these common issues. 
+When working with the Azure Quantum service, you may run into these common issues. See how you can solve them.
 
 ## Submitting jobs
 
@@ -134,8 +134,6 @@ The last released version of the [QDK extension for Visual Studio 2019](https://
 
 In order to use newer versions of the QDK for quantum projects with version `0.24.201332` or higher, you should use either the [extension for Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or the [extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
-
-
 ### Issue: Job fails with error code: QIRPreProcessingFailed
 
 When you submit a job to a Rigetti provider, the job fails and is reported in the Job management console in the Azure portal:
@@ -173,6 +171,65 @@ This happens because your security token is being reset every time you run the s
 
 You can resolve this issue by running `az login` using the Azure CLI. For more information, see [az login](/cli/azure/reference-index#az-login()).
 
+## Azure Quantum Resource Estimator
+
+The following common scenarios may prevent resource estimation jobs to complete. See how to resolve them.
+
+### Issue: Quantum algorithm must contain at least one T state or measurement
+
+To account for mapping an arbitrary quantum program to a 2D array of logical qubits, the Resource Estimator assumes that _Parallel Synthesis Sequential Pauli Computation (PSSPC)_ (see [arXiv:2211.07629, Appendix
+D](https://arxiv.org/pdf/2211.07629.pdf#page=25)) is performed on the inputprogram. In that approach, all Clifford operations are commuted through all T gates, rotation gates, and measurement operations, leaving a single Clifford
+operation that can be efficiently evaluated classically. Therefore, a quantum program that contains neither T states, for example from T gates or rotation gates, nor measurement operations does not require any physical quantum computing
+resources.
+
+```ouput
+Error message: Algorithm requires at least one T state or measurement to estimate resources
+```
+
+### Issue: Physical T gate error rate is too high
+
+The _logical_ T state error rate depends on the error budget and the number of T states in the quantum program. [T factories](xref:microsoft.quantum.concepts.tfactories) are used to create T states with the
+required logical T state error rate from physical T gates, which have a _physical_ T gate error rate. Typically, the physical T gate error rate is much higher than the required logical T gate error rate. In some scenarios, the
+physical T gate error rate is that much higher compared to the required logical T state error rate, such that no T factory can be found that can produce logical T states of sufficient quality.
+
+```ouput
+Error message: No T factory can be found, because the required logical T state error rate is too low
+```
+
+Here is what you could do in such a scenario:
+
+* Increase the error budget, either total or the part for T states.
+* Reduce the physical T gate error rate in the qubit parameters.
+* Reduce the number of T states in the quantum program by reducing T gates, rotation gates, and Toffoli gates.
+
+### Issue: Physical T gate error rate is too low
+
+There is also the opposite scenario, in which the physical T gate error rate is lower than the required logical T state error rate. In such cases, no T factory is required, because the physical T gate error rate is already of sufficient
+quality. However, this requires a careful consideration of the impact of transfer units that transfer the physical T states from code distance 1 to the code distance of the algorithm (see [arXiv:2211.07629, Appendix
+C](https://arxiv.org/pdf/2211.07629.pdf#page=21)). In general, in the presence of T factories, the cost of transfer units is negligible.
+
+```ouput
+Error message: No T factory can be found, because the required logical T state error rate is too high; transfer units are necessary to perform a resource estimation accurately. One possibility to circumvent this problem is to increase the physical T gate error rate of the qubit parameters.
+```
+
+Here is what you could do in such a scenario:
+
+* Increase the physical T gate error rate in the qubit parameters to the required logical T state error rate.
+* Reduce the error budget or just the part for the T states.
+
+### Issue: Error rate must be a number between 0 and 1
+
+Error rates should always be values between 0 and 1. In addition, for error correction to be effective, the physical error rate for gates and measurements must be below a value that depends on the properties of the error correction
+code and the required logical error rate.
+
+```ouput
+Error message: Invalid value for '{variable}', expected value between {min} and {max}
+```
+
+Here is what you could do in such a scenario:
+
+* Increase the error budget, either total or the part for logical errors.
+* Reduce the physical error rates in the qubit parameters.
 
 ## Creating an Azure Quantum workspace
 
@@ -184,7 +241,7 @@ This issue occurs because you don't have an active subscription.
 
 For example, you may have signed up for the [30 day free trial Azure subscription](https://azure.microsoft.com/free/), which includes $200 (USD) free Azure Credits to use on Azure services. Note that these Azure credits aren't the same as [Azure Quantum Credits](xref:microsoft.quantum.credits) and aren't eligible to use on quantum hardware providers. After 30 days of sign-up or once you've consumed the $200 of free Azure credits (whichever occurs first), you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using Azure Quantum services. Once you have an active subscription, the Azure portal will allow you to access the workspace creation form.
 
- To see a list of your subscriptions and associated roles, see [Check your subscriptions](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-subscriptions).
+To see a list of your subscriptions and associated roles, see [Check your subscriptions](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-subscriptions).
 
 ### Issue: The **Quick create** option is unavailable
 
@@ -193,8 +250,6 @@ You must be an **Owner** of the subscription you select in order to use the **Qu
 ### Issue: You're unable to create or select a resource group or storage account
 
 This issue occurs because you don't have the authorization required at the subscription, resource group, or storage account level. For more information on required access levels, see [Role requirements for creating a workspace](xref:microsoft.quantum.how-to.manage-workspace-access#role-requirements-for-creating-a-workspace).
-
-
 
 ### Issue: "Deployment Validation Failed" error message appears after you select **Create**
 
