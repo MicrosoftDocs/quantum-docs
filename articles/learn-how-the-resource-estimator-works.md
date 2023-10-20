@@ -17,6 +17,9 @@ The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-res
 
 In this article, you'll learn the workflow of the Resource Estimator and how the [output data](xref:microsoft.quantum.overview.resources-estimator-output.data) is extracted at different levels of the evaluation of the quantum program. You'll also learn the assumptions taken into account for the simulation of the resource estimation.
 
+> [!NOTE]
+> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
+
 ## Workflow of the Resource Estimator
 
 The following diagram shows the workflow of the Resource Estimator. The resource estimation is done based on the job parameters and quantum program, and the output data is extracted at different levels of the evaluation of the quantum program.
