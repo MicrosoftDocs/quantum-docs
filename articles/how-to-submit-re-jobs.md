@@ -36,6 +36,9 @@ The Resource Estimator returns detailed output that can be visually rendered or 
 - Job type: Simulation (Estimation)
 - Target ID: `microsoft.estimator`
 
+> [!NOTE]
+> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
+
 ::: zone pivot="ide-python-qsharp"
 
 [!INCLUDE [python-qsharp-procedure](includes/how-to-submit-resources-estimation-include-python.md)]
