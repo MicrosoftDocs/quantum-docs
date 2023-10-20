@@ -15,7 +15,7 @@ uid: microsoft.quantum.learn-how-resource-estimator-works
 
 The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) computes pre- and post-layout estimation of the logical resources. It takes a QIR quantum algorithm, for example a program written in Q#, Qiskit, or a QIR generator as [PyQIR](https://github.com/qir-alliance/pyqir), and a set of [target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) to evaluate the resource estimates of the quantum algorithm. Optionally, the Resource Estimator can take operation arguments, that is arguments that can be passed to the QIR program.
 
-In this article, you'll learn the workflow of the Resource Estimator and how the [output data](xref:microsoft.quantum.overview.resources-estimator-output.data) is extracted at different levels of the evaluation of the quantum program. You'll also learn the assumptions taken into account for the simulation of the resource estimation and the common issues that may prevent the resource estimates job to complete.
+In this article, you'll learn the workflow of the Resource Estimator and how the [output data](xref:microsoft.quantum.overview.resources-estimator-output.data) is extracted at different levels of the evaluation of the quantum program. You'll also learn the assumptions taken into account for the simulation of the resource estimation.
 
 ## Workflow of the Resource Estimator
 
@@ -109,66 +109,6 @@ The following assumptions are taken into account for the simulation of the resou
 - **Uniform independent logical noise**: The error rate of a logical operation is approximately equal to its space-time volume (the number of tiles multiplied by the number of logical cycles) multiplied by the error rate of a logical qubit in a standard one-tile patch in one logical cycle.
 - **Negligible Clifford costs for synthesis**: The space overhead for synthesis and space and time overhead for transport of magic states within magic state factories and to synthesis qubits are all negligible.
 - **Smooth magic state consumption rate**: The rate of T state consumption throughout the compiled algorithm is almost constant, or can be made almost constant without significantly impacting the resources.
-
-## Common issues
-
-The following common scenarios may prevent resource estimation jobs to complete. See how to resolve them.
-
-### Quantum algorithm must contain at least one T state or measurement
-
-To account for mapping an arbitrary quantum program to a 2D array of logical qubits, the Resource Estimator assumes that _Parallel Synthesis Sequential Pauli Computation (PSSPC)_ (see [arXiv:2211.07629, Appendix
-D](https://arxiv.org/pdf/2211.07629.pdf#page=25)) is performed on the inputprogram. In that approach, all Clifford operations are commuted through all T gates, rotation gates, and measurement operations, leaving a single Clifford
-operation that can be efficiently evaluated classically. Therefore, a quantum program that contains neither T states, for example from T gates or rotation gates, nor measurement operations does not require any physical quantum computing
-resources.
-
-```ouput
-Error message: Algorithm requires at least one T state or measurement to estimate resources
-```
-
-### Physical T gate error rate is too high
-
-The _logical_ T state error rate depends on the error budget and the number of T states in the quantum program. [T factories](xref:microsoft.quantum.concepts.tfactories) are used to create T states with the
-required logical T state error rate from physical T gates, which have a _physical_ T gate error rate. Typically, the physical T gate error rate is much higher than the required logical T gate error rate. In some scenarios, the
-physical T gate error rate is that much higher compared to the required logical T state error rate, such that no T factory can be found that can produce logical T states of sufficient quality.
-
-```ouput
-Error message: No T factory can be found, because the required logical T state error rate is too low
-```
-
-Here is what you could do in such a scenario:
-
-* Increase the error budget, either total or the part for T states.
-* Reduce the physical T gate error rate in the qubit parameters.
-* Reduce the number of T states in the quantum program by reducing T gates, rotation gates, and Toffoli gates.
-
-### Physical T gate error rate is too low
-
-There is also the opposite scenario, in which the physical T gate error rate is lower than the required logical T state error rate. In such cases, no T factory is required, because the physical T gate error rate is already of sufficient
-quality. However, this requires a careful consideration of the impact of transfer units that transfer the physical T states from code distance 1 to the code distance of the algorithm (see [arXiv:2211.07629, Appendix
-C](https://arxiv.org/pdf/2211.07629.pdf#page=21)). In general, in the presence of T factories, the cost of transfer units is negligible.
-
-```ouput
-Error message: No T factory can be found, because the required logical T state error rate is too high; transfer units are necessary to perform a resource estimation accurately. One possibility to circumvent this problem is to increase the physical T gate error rate of the qubit parameters.
-```
-
-Here is what you could do in such a scenario:
-
-* Increase the physical T gate error rate in the qubit parameters to the required logical T state error rate.
-* Reduce the error budget or just the part for the T states.
-
-### Error rate must be a number between 0 and 1
-
-Error rates should always be values between 0 and 1. In addition, for error correction to be effective, the physical error rate for gates and measurements must be below a value that depends on the properties of the error correction
-code and the required logical error rate.
-
-```ouput
-Error message: Invalid value for '{variable}', expected value between {min} and {max}
-```
-
-Here is what you could do in such a scenario:
-
-* Increase the error budget, either total or the part for logical errors.
-* Reduce the physical error rates in the qubit parameters.
 
 ## Next steps
 
