@@ -222,10 +222,6 @@ Here is what you could do in such a scenario:
 Error rates should always be values between 0 and 1. In addition, for error correction to be effective, the physical error rate for gates and measurements must be below a value that depends on the properties of the error correction
 code and the required logical error rate.
 
-```ouput
-Error message: Invalid value for '{variable}', expected value between {min} and {max}
-```
-
 Here is what you could do in such a scenario:
 
 * Increase the error budget, either total or the part for logical errors.
