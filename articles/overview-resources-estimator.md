@@ -15,6 +15,9 @@ uid: microsoft.quantum.overview.resources-estimator
 
 This article shows how to customize the target parameters of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to match the machine characteristics that you're targeting. The Resource Estimator uses these parameters to estimate the resources required to run a quantum algorithm on a quantum computer.
 
+> [!NOTE]
+> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
+
 ## Target parameters
 
 The Resource Estimator computes the estimation of resources, such the number of qubits and the run time, which would be required to implement a given quantum algorithm using a given qubit technology and with a fixed set of architectural choices.  
