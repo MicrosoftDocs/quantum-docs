@@ -17,7 +17,9 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
-## 2023-09-15 - Latest version
+## Latest QDK version
+
+## 2023-09-15
 
 ### QDK version 0.28.302812
 
@@ -25,6 +27,8 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 - You can now call `result.json` to get the JSON representation of a resource estimation result.
 - Updated IonQ cost estimation function for aria-1 to use minimum job pricing of $97.50 (this assumes that error mitigation is enabled by default). Learn more about [IonQ pricing](xref:microsoft.quantum.providers-pricing#ionq) or how to enable/disable [error mitigation](xref:microsoft.quantum.providers.ionq#error-mitigation).
 - Removed deprecated Quantinuum target names. See full list of Quantinuum [supported targets](xref:microsoft.quantum.providers.quantinuum#targets).
+
+## Previous QDK versions
 
 ## 2023-07-31
 
