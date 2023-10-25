@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn about the input parameters of the Resource Estimator in Azure Quantum and how to customized them.
-ms.date: 08/07/2023
+ms.date: 10/25/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -398,14 +398,19 @@ You can use `constraints` parameters to apply constraints on the [T factory](xre
 {
     "constraints": {
         "logicalDepthFactor": <double>, // control execution time 
-        "maxTFactories": <int> // control number of qubits
+        "maxTFactories": <int>, // control number of T factories
+        "maxDuration": <time string>, // control time
+        "maxPhysicalQubits": <int> // control number of physical qubits
     }
 }
 ```
 
-- Logical depth:  If `logicalDepthFactor` has a value greater than 1, the initial number of logical cycles, also called *logical depth*, is multiplied by this number. By reducing the logical depth, you can increase the number of invocation of the T factory in a given time, resulting in fewer T factory copies needed to produce the same number of T states. When you reduce the number of T factory copies, the algorithm runtime increases accordingly. The scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.
+- **Logical depth:**  If `logicalDepthFactor` has a value greater than 1, the initial number of logical cycles, also called *logical depth*, is multiplied by this number. By reducing the logical depth, you can increase the number of invocation of the T factory in a given time, resulting in fewer T factory copies needed to produce the same number of T states. When you reduce the number of T factory copies, the algorithm runtime increases accordingly. The scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.
 
-- Maximum number of T factory copies: You can set a limit on the number of T factory copies using `maxTFactories`. The Resource Estimator determines the resources required by selecting the optimal number of T factory copies that minimizes the number of physical qubits used, without considering the time overhead. The `maxTFactories` parameter limits the maximum number of copies, and therefore adjust the number of logical cycles accordingly.
+- **Maximum number of T factory copies:** You can set a limit on the number of T factory copies using `maxTFactories`. The Resource Estimator determines the resources required by selecting the optimal number of T factory copies that minimizes the number of physical qubits used, without considering the time overhead. The `maxTFactories` parameter limits the maximum number of copies, and therefore adjust the number of logical cycles accordingly.
+
+- **Maximum runtime:**
+- **Maximum number of physical qubits:** 
 
 For more information, see [T factory physical estimation](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).
 
