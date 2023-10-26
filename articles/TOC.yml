@@ -75,12 +75,10 @@
     items:
     - name: DevOps for quantum computing
       href: /azure/architecture/guide/quantum/devops-for-quantum-computing?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
-    - name: CI/CD for quantum computing jobs
-      href: /azure/architecture/solution-ideas/articles/cicd-for-quantum-computing-jobs?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
     - name: Loosely coupled quantum computing
-      href: /azure/architecture/example-scenario/quantum/loosely-coupled-quantum-computing-job?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
+      href: /azure/architecture/example-scenario/quantum/quantum-computing-integration-with-classical-apps?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
     - name: Tightly coupled quantum computing
-      href: /azure/architecture/example-scenario/quantum/tightly-coupled-quantum-computing-job?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
+      href: /azure/architecture/example-scenario/quantum/quantum-computing-integration-with-classical-apps?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
 - name: Hybrid quantum computing (QC)
   items: 
   - name: An introduction to hybrid QC
