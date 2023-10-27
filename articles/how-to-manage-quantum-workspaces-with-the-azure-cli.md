@@ -18,23 +18,23 @@ In this guide, learn to use the Azure Command-Line Interface (Azure CLI) to crea
 
 ## Prerequisites
 
-To use the Azure Quantum service, you will need:
+To use the Azure Quantum service, you need:
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
-- An Azure resource group where the quantum workspace will live.
+- An Azure resource group where the quantum workspace lives.
 - A storage account in the resource group to be associated with the quantum workspace. Multiple workspaces can be associated with the same account.
 - The [Azure CLI](/cli/azure/install-azure-cli).
 - The [Microsoft Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
 ## Environment setup
 
-1. Install the Azure CLI `quantum` extension. Open a command prompt and run the following command, which will also upgrade the extension if a previous version is already installed:
+1. Install the Azure CLI `quantum` extension. Open a command prompt and run the following command, which also upgrades the extension if a previous version is already installed:
 
     ```azurecli
     az extension add --upgrade -n quantum
     ```
 
-1. Log in to Azure using your credentials. You will see list of subscriptions associated with your account.
+1. Log in to Azure using your credentials. You see a list of subscriptions associated with your account.
 
    ```azurecli
    az login
@@ -55,18 +55,22 @@ To use the Azure Quantum service, you will need:
 
 ## Create an Azure Quantum workspace
 
-To create a new Azure Quantum workspace, you'll need to know:
+To create a new Azure Quantum workspace, you need to know:
 
 - The location or Azure region name where the resource will live. You can use the [list of regions and their resource manager codes](https://github.com/Azure/azure-extensions-cli#regions) supported by the Azure CLI tool, for example, **westus**.
 - The resource group associated with the new workspace, for example, **MyResourceGroup**.
 - A storage account in the same resource group and subscription as the quantum workspace. It's possible to [create a new storage account from the Az CLI tool](/cli/azure/storage/account#az_storage_account_create), for example, **MyStorageAccount**.
 - The name of the quantum workspace to create, for example, **MyQuantumWorkspace**.
-- The list of Azure Quantum providers to use in the workspace. A provider offers a set of plans, each of them representing a plan with associated terms and conditions, costs, and quotas. To create workspaces, you'll need to specify the corresponding plan along with the providers, unless you want to start with the providers that offer free credit – they are automatically added to your workspace.
+- The list of Azure Quantum providers to use in the workspace. A provider offers a set of plans, each of them representing a plan with associated terms and conditions, costs, and quotas. To create workspaces, you need to specify the corresponding plan along with the providers, unless you want to start with the providers that offer free credit – they are automatically added to your workspace.
 
 If you already know the provider and plan names to use in your workspace, you can skip to step four, below. If you want to start with the providers that offer free credit, you can enter the following command:
 
    ```azurecli
-   az quantum workspace create -l MyLocation -g MyResourceGroup -w MyQuantumWorkspace -a MyStorageAccount
+   az quantum workspace create \
+      -l MyLocation \
+      -g MyResourceGroup \
+      -w MyQuantumWorkspace \
+      -a MyStorageAccount
    ```
 You may be prompted to accept terms of use.  Enter `Y` to accept the terms.  Note that the `-r` parameter shown in step four, below, was not required. 
 
@@ -75,7 +79,9 @@ If you need to determine which providers and plans to use, proceed as follows:
 1. To retrieve the list of available quantum providers, use the `list` command (this example uses **westus** as the location):
 
    ```azurecli
-   az quantum offerings list -l westus -o table
+   az quantum offerings list \
+        -l westus \
+        -o table
    ```
 
    > [!TIP]
@@ -86,19 +92,30 @@ If you need to determine which providers and plans to use, proceed as follows:
 1. Once you determine the provider and plan to include in your workspace, you can review terms using the `show-terms` command (adding your **MyProviderID** and **MyPlan** as example values):
 
    ```azurecli
-   az quantum offerings show-terms -l westus -p MyProviderId -k MyPlan
+   az quantum offerings show-terms \
+        -l westus \
+        -p MyProviderId \
+        -k MyPlan
    ```
 
 1. The output of the `show-terms` command includes a Boolean field `accepted` that shows whether the terms for this provider have been accepted already or not, as well as a link to the license terms to review. If you decide to accept those terms, use the `accept-terms` command to record your acceptance.
 
    ```azurecli
-   az quantum offerings accept-terms -l westus -p MyProviderId -k MyPlan
+   az quantum offerings accept-terms \
+        -l westus \
+        -p MyProviderId \
+        -k MyPlan
    ```
 
 1. Once you have reviewed and accepted all required terms and conditions, you can create your workspace using the `create` command, specifying a list of provider and plan combinations separated by commas, as in the following example:
 
    ```azurecli
-   az quantum workspace create -l westus -g MyResourceGroup -w MyQuantumWorkspace -a MyStorageAccount -r "MyProvider1/MyPlan1, MyProvider2/MyPlan2"
+   az quantum workspace create \
+        -l westus \
+        -g MyResourceGroup \
+        -w MyQuantumWorkspace \
+        -a MyStorageAccount \
+        -r "MyProvider1/MyPlan1, MyProvider2/MyPlan2"
    ```
 
 Once you create a workspace, you can still add or remove providers using the Azure Portal.
@@ -117,7 +134,7 @@ If you need to change the default storage account for an existing workspace, you
    ```
 
 > [!IMPORTANT]
-> This procedure actually re-creates the workspace with the new storage account. Ensure that all properties other than the storage account are exactly the same as the original, otherwise a second workspace will be created.
+> This procedure actually re-creates the workspace with the new storage account. Ensure that all properties other than the storage account are exactly the same as the original, otherwise a second workspace is created.
 
 ## Delete a quantum workspace
 
@@ -132,7 +149,7 @@ If you know the name and resource group of a quantum workspace you want to delet
 > [!TIP]
 > If you don't remember the exact name, you can view the entire list of quantum workspaces in your subscription using  `az quantum workspace list -o table`.
 
-After you delete a workspace, you will still see it listed while it's being deleted in the cloud. However, the `provisioningState` property of the workspace changes immediately to indicate that it's being deleted. You can see this information by using the `show` command:
+After you delete a workspace, it is still listed while it's being deleted in the cloud. However, the `provisioningState` property of the workspace changes immediately to indicate that it's being deleted. You can see this information by using the `show` command:
 
    ```azurecli
    az quantum workspace show \

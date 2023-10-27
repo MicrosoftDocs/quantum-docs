@@ -34,7 +34,7 @@ To complete this tutorial, you need
 
 1. You should see two files: **QuantumRNG.csproj**, the project file, and **Program.qs**, which contains starter code.
 
-1. Start by opening the **QuantumRNG.csproj** file and adding the `ExecutionTarget` property, which will give you design-time feedback on the compatibility of your program for IonQ's hardware.
+1. Start by opening the **QuantumRNG.csproj** file and adding the `ExecutionTarget` property, which gives you design-time feedback on the compatibility of your program for IonQ's hardware.
 
     ```xml
     <Project Sdk="Microsoft.Quantum.Sdk">
@@ -68,7 +68,7 @@ To complete this tutorial, you need
 
 ## Prepare the Azure CLI
 
-Next, we'll prepare your environment to run the program against the workspace you created.
+Next, prepare your environment to run the program against the workspace you created.
 
 1. From the Visual Studio Code menu, select **Terminal** > **New Terminal**.
 
@@ -84,7 +84,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
    az account set -s MySubscriptionID
    ```
    
-1. Use `quantum workspace set` to select the workspace you created above
+1. Use `quantum workspace set` to select the workspace you created earlier
    as the default Workspace. Note that you also need to specify the resource
    group and the location you created it in:
 
@@ -104,7 +104,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
    ```
 
     > [!NOTE]
-    > The MyLocation parameter in the example above is the **Region** 
+    > The MyLocation parameter in the example is the **Region** 
     > specified on the **Create Quantum Workspace** page when following 
     > the steps in [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
     > Region and Location are synonymous.  The parameter value may be 
@@ -119,7 +119,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
    az quantum target list -o table
    ```
 
-   Depending on the provider you selected, you will see:
+   Depending on the provider you selected, you see:
 
    ```output
    Provider      Target-id                                            Current Availability    Average Queue Time (seconds)
@@ -160,7 +160,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
    ```
 
    > [!NOTE]
-   > When you submit a job in Azure Quantum it will wait in a queue until the
+   > When you submit a job in Azure Quantum it waits in a queue until the
    > provider is ready to run your program. The **Average Queue Time** column of
    > the target list command shows you how many seconds recently run jobs waited
    > in the queue. This can give you an idea of how long you might have to wait.
@@ -172,7 +172,7 @@ Before you run a program against real hardware, we recommend simulating it first
 > [!NOTE]
 > You can also simulate Q# programs locally using the [:::no-loc text="Full state::: simulator](xref:microsoft.quantum.machines.overview.full-state-simulator).
 
-Run your program with `az quantum execute --target-id ionq.simulator -o table`. This command will compile your program, submit it to Azure Quantum, and wait until IonQ has finished simulating the program. Once it's done it will output a histogram which should look like the one below:
+Run your program with `az quantum execute --target-id ionq.simulator -o table`. This command compiles your program, submit it to Azure Quantum, and wait until IonQ has finished simulating the program. Once it's done, it outputs a histogram which should look like the one below:
 
    ```azurecli
    az quantum execute \
@@ -205,7 +205,7 @@ This shows an equal frequency for each of the 16 possible states for measuring 4
 
 ## Run the program on hardware
 
-To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command, this will compile and submit your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long that may be, you can run `az quantum target list -o table` as described earlier.
+To run the program on hardware, use the asynchronous job submission command `az quantum job submit`. Like the `execute` command, `az quantum job submit` compiles and submits your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long that may be, you can run `az quantum target list -o table` as described earlier.
 
 
    ```azurecli
@@ -234,7 +234,7 @@ The table shows that your job has been submitted and is waiting for its turn to 
     QuantumRNG  5aa8ce7a-25d2-44db-bbc3-87e48a97249c  Waiting   ionq.qpu  2020-10-22T22:41:27.8855301+00:00
    ```
 
-Eventually, you will see the `Status` in the above table change to `Succeeded`. Once that's done you can get the results from the job by running `az quantum job output`:
+Eventually, you see the `Status` in the previous table change to `Succeeded`. Once that's done you can get the results from the job by running `az quantum job output`:
 
    ```azurecli
    az quantum job output \
@@ -263,4 +263,4 @@ Eventually, you will see the `Status` in the above table change to `Succeeded`. 
    [1,1,1,1]  0.07000000   ▐█                      |
    ```
 
-The histogram you receive may be slightly different than the one above, but you should find that the states generally are observed with equal frequency.
+The histogram you receive may be slightly different than the previous one , but you should find that the states generally are observed with equal frequency.
