@@ -31,7 +31,7 @@ The [Modern QDK](https://github.com/microsoft/qsharp/wiki/Installation) is a pre
 [![download icon.](media/download-install.png) <br>**Download the Modern QDK**](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode)
 
 > [!WARNING]
-> The Modern QDK preview is not fully backwards-compatible with the Classic QDK. Not all APIs have been ported, and existing project files aren't recognized. Your current programs and projects coul require significant changes and updates. 
+> The Modern QDK preview is not fully backwards-compatible with the Classic QDK. Not all APIs have been ported, and existing project files aren't recognized. Your current programs and projects could require significant changes and updates. 
 >
 > To help you get started, a new set of samples specifically for the Modern QDK is available on the [QSharp GitHub samples page](https://github.com/microsoft/qsharp/tree/main/samples).
 >
