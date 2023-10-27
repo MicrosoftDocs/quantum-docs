@@ -23,7 +23,7 @@ The Q# user guide contains:
 
 - [**Ways to run a Q# program**](xref:microsoft.quantum.user-guide-qdk.overview.host-programs): A Q# program can be run as a standalone application, or with an additional host program, written in Python or a .NET language.
 
-- [**Testing and debugging Q# programs**](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging): As with classical programming, it is essential to be able to check that quantum programs act as intended, and to be able to diagnose incorrect behavior. The Quantum Development Kit for testing and debugging quantum programs.
+- [**Testing and debugging Q# programs**](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging): As with classical programming, it is essential to be able to check that quantum programs act as intended, and to be able to diagnose incorrect behavior. The Quantum Development Kit is for testing and debugging quantum programs.
 
 - **The Q# language guide**: Q# is a stand-alone language offering a high level of abstraction. There is no notion of a quantum state or a circuit; instead, Q# implements programs in terms of statements and expressions, much like classical programming languages. The Q# language guide provides a full specification and documentation of the Q# quantum programming language. 
 
@@ -157,7 +157,7 @@ In Q#, Pauli measurements are done by applying [`Measure` operation](xref:Micros
 > [!NOTE]
 > If the basis array and qubit array are different lengths, then the `Measure` operation will fail.
 
-To implement a measurement in the computational basis $\ket{0},\ket{1}$, you can also use the [`M` operation](xref:Microsoft.Quantum.Intrinsic.M), wich performs a measurement of a single qubit in the Pauli Z basis. Therefore `M` operation is equivalent to applying `Measure([PauliZ], [qubit])`.
+To implement a measurement in the computational basis $\ket{0},\ket{1}$, you can also use the [`M` operation](xref:Microsoft.Quantum.Intrinsic.M), which performs a measurement of a single qubit in the Pauli Z basis. Therefore `M` operation is equivalent to applying `Measure([PauliZ], [qubit])`.
 
 A simple example is the following program, which allocates one qubit in the $\ket{0}$ state, then applies a Hadamard operation `H` to it and measures the result in the `PauliZ` basis.
 
