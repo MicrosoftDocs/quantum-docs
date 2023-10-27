@@ -90,7 +90,11 @@ Next, we'll prepare your environment to run the program against the workspace yo
    group and the location you created it in:
 
    ```azurecli
-   az quantum workspace set -g MyResourceGroup -w MyWorkspace -l MyLocation -o table
+   az quantum workspace set \
+      -g MyResourceGroup \
+      -w MyWorkspace \
+      -l MyLocation \
+      -o table
    ```
 
    ```output
@@ -104,7 +108,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
     > The MyLocation parameter in the example above is the **Region** 
     > specified on the **Create Quantum Workspace** page when following 
     > the steps in [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-    > Region and Location are synonymous.  The parameter value may be 
+    > Region and Location are synonymous.  The parameter value can be 
     > expressed in mixed case surrounded by quotes, for example, `-l "West US 2"`,
     > or in lower case with no spaces or quotes, such as `-l westus2`.
 
@@ -150,7 +154,9 @@ Before you run a program against real hardware, we recommend running it against 
 To run your program with the Rigetti QVM simulator, submit the following command:
 
 ```azurecli
-az quantum execute --target-id rigetti.sim.qvm -o table
+az quantum execute \
+    --target-id rigetti.sim.qvm \
+    -o table
 ```
 
 This command compiles your program, submits it to the Rigetti QVM simulator, and waits until it has finished simulating the program. Once it's done, it outputs a histogram similar to this:
@@ -177,11 +183,13 @@ Result        Frequency
 
 ## Run the program on hardware
 
-To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command, this will compile and submit your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long that may be, you can run `az quantum target list -o table` as described earlier. 
+To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command, this will compile and submit your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you might need to wait a while for your job to finish. To get an idea of how long that could be, you can run `az quantum target list -o table` as described earlier. 
 
 
    ```azurecli
-   az quantum job submit --target-id rigetti.qpu.aspen-m-3 -o table
+   az quantum job submit \
+      --target-id rigetti.qpu.aspen-m-3 \
+      -o table
    ```
 
    ```output
@@ -193,7 +201,9 @@ To run the program on hardware, we'll use the asynchronous job submission comman
 The table shows that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the ID output by the previous command, for example:
 
    ```azurecli
-    az quantum job show -o table --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
+    az quantum job show \
+      -o table \
+      --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
    ```
 
    ```output
@@ -205,7 +215,9 @@ The table shows that your job has been submitted and is waiting for its turn to 
 Eventually, you'll see `Status` in the above table change to `Succeeded`. Once that's done, you can get the results from the job by running `az quantum job output`:
 
    ```azurecli
-   az quantum job output -o table --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
+   az quantum job output \
+      -o table \
+      --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
    ```
 
    ```output
@@ -229,4 +241,4 @@ Eventually, you'll see `Status` in the above table change to `Succeeded`. Once t
    [1,1,1,1]  0.07000000   ▐█                      |
    ```
 
-The histogram you receive may be slightly different than the one above, but you should find that the states generally are observed with equal frequency.
+The histogram you receive might be slightly different than the one above, but you should find that the states generally are observed with equal frequency.

@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 09/21/2022
+ms.date: 10/26/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.custom: devx-track-azurecli
@@ -37,7 +37,10 @@ In this example, you'll create a multiplier and estimate its costs on a fault-to
 4. Set your **Resource group, workspace name, and location**:
 
     ```azurecli
-    az quantum workspace set -g <resource-group> -w <workspace-name> -l <location> -o table
+    az quantum workspace set \
+        -g <resource-group> \
+        -w <workspace-name> \
+        -l <location> -o table
     ```
 
 ### Create the quantum algorithm
@@ -97,13 +100,18 @@ Create a new project in Visual Studio Code.
 2. Copy the following command to submit a job to the Resource Estimator target.
 
     ```azurecli
-    az quantum job submit --target-id microsoft.estimator -o json --query id
+    az quantum job submit \
+        --target-id microsoft.estimator \
+        -o json \
+        --query id
     ```
 
 3. The output will contain the job ID. Copy the job ID and request the output of the job using `-o table` to display the output in the CLI as a table, or with `-o json` to display the output in JSON format.
 
     ```azurecli
-    az quantum job output -j <job-id> -o table
+    az quantum job output \
+        -j <job-id> \
+        -o table
     ```
 
 4. The resulting table shows the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. For example, if you collapse the *Logical qubit parameters* group, you can more easily see that the error correction code distance is 13.
@@ -167,13 +175,19 @@ Let's estimate the cost for the same algorithm using the Majorana-based qubit pa
 2. You can pass them to the `--job-params` argument like this:
 
     ```azurecli
-    az quantum job submit --target-id microsoft.estimator -o json --query id --job-params "@jobParams.json"
+    az quantum job submit \
+        --target-id microsoft.estimator \
+        -o json \
+        --query id \
+        --job-params "@jobParams.json"
     ```
 
 3. Inspect the table again with `-o table`.
 
     ```azurecli
-    az quantum job output -j <job-id> -o table
+    az quantum job output \
+        -j <job-id> \
+        -o table
     ```
 
 For example, you can explore details about the T factory that was created to execute the algorithm.
@@ -221,13 +235,19 @@ Now rerun the resource estimation job for the same example on the Majorana-based
 2. Pass the input parameters to the `--job-params` argument.
 
     ```azurecli
-    az quantum job submit --target-id microsoft.estimator -o json --query id --job-params "@jobParams.json"
+    az quantum job submit \
+        --target-id microsoft.estimator \
+        -o json \
+        --query id \
+        --job-params "@jobParams.json"
     ```
 
 3. Inspect the result with `-o table`.
 
     ```azurecli
-    az quantum job output -j <job-id> -o table
+    az quantum job output \
+        -j <job-id> \
+        -o table
     ```
 
 #### Change error budget
@@ -251,11 +271,17 @@ Rerun the same quantum circuit with an `errorBudget` of 10%.
 2. Pass the input parameters to the `--job-params` argument.
 
     ```azurecli
-    az quantum job submit --target-id microsoft.estimator -o json --query id --job-params "@jobParams.json"
+    az quantum job submit \
+        --target-id microsoft.estimator \
+        -o json \
+        --query id \
+        --job-params "@jobParams.json"
     ```
 
 3. Inspect the result with `-o table`.
 
     ```azurecli
-    az quantum job output -j <job-id> -o table
+    az quantum job output \
+        -j <job-id> \
+        -o table
     ```

@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand the architecture and implementation of integrated hybrid quantum computing.
-ms.date: 03/17/2023
+ms.date: 10/26/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -71,7 +71,12 @@ qsharp.azure.target_capability("AdaptiveExecution")
 When using the Azure CLI to submit a job, add the `--target-capability` parameter with the value `AdaptiveExecution`.
 
 ```azurecli
-az quantum job submit --target-capability AdaptiveExecution --target-id quantinuum.sim.h1-1e --job-name IterativePhaseEstimation --shots 100 --output table
+az quantum job submit \
+    --target-capability AdaptiveExecution \
+    --target-id quantinuum.sim.h1-1e \
+    --job-name IterativePhaseEstimation \
+    --shots 100 \
+    --output table
 ```
 
 ### Submitting integrated hybrid jobs within a session
@@ -98,7 +103,7 @@ After a successful run on the emulator:
 
 1. In your Azure Quantum workspace, select **Job management**.
 1. Select the job you submitted.
-1. In the **Job details** popup, select **Cost Estimation** to view how many eHQC's (Quantinuum emulator credits) were used. This number translates directly to the number of HQC's (Quantinnum quantum credits) that are needed to run the job on Quantinuum hardware.
+1. In the **Job details** popup, select **Cost Estimation** to view how many eHQCs (Quantinuum emulator credits) were used. This number translates directly to the number of HQCs (Quantinuum quantum credits) that are needed to run the job on Quantinuum hardware.
 
 ![Cost estimation](~/media/hybrid/cost-estimation.png)
 
@@ -120,9 +125,9 @@ The following samples demonstrate the current feature set for integrated hybrid 
 - Ensure that VS Code has latest version of the Quantum Development Kit (0.27.258160).
   - In VS Code, select **Ctrl + Shift + X** and search for "Microsoft Quantum Development Kit".
 
-The samples in this article are set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of these and other samples, login in to your Azure Portal workspace and view the samples from the **Hybrid quantum computing** tab in the Samples gallery. You can either run the notebook in the cloud or download it and run it locally.
+The samples in this article are set up to run on Visual Studio (VS) Code and use the built-in Azure command line interface (CLI) to submit the job to Azure Quantum. To run the Jupyter Notebook version of these and other samples, login in to your Azure portal workspace and view the samples from the **Hybrid quantum computing** tab in the Samples gallery. You can either run the notebook in the cloud or download it and run it locally.
 
-To troubleshooting issues with integrated hybrid programs, see [Troubleshooting integrated hybrid](xref:microsoft.quantum.hybrid.troubleshooting).
+To troubleshoot issues with integrated hybrid programs, see [Troubleshooting integrated hybrid](xref:microsoft.quantum.hybrid.troubleshooting).
 
 ### [Check GHZ state](#tab/tabid-ghz)
 
@@ -192,7 +197,7 @@ Features to note about this sample:
     ```
 
     > [!NOTE]
-    > Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace.
+    > Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure portal on the **Overview** page of your Azure Quantum workspace.
 
     ```azurecli
     az account set --subscription <MySubscriptionID>
@@ -200,12 +205,20 @@ Features to note about this sample:
     az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
     ```
 
-1. Submit the job and view the results. This run uses approximately 10.65 eHQC's (Quantinuum emulator billing units)
+1. Submit the job and view the results. This run uses approximately 10.65 eHQCs (Quantinuum emulator billing units)
 
     ```azurecli
-    az quantum job submit --target-id quantinuum.sim.h1-1e --job-name CheckGHZ --target-capability AdaptiveExecution --shots 50
+    az quantum job submit \
+      --target-id quantinuum.sim.h1-1e \
+      --job-name CheckGHZ \
+      --target-capability AdaptiveExecution \
+      --shots 50
+    ```
 
-    az quantum job output -o table --job-id [job-id]
+    ```azurecli
+    az quantum job output \
+      -o table \
+      --job-id [job-id]
     ```
 
 ![GHZ output](~/media/hybrid/ghz-output.png)
@@ -345,7 +358,7 @@ It leverages integrated hybrid computing features to count the number of times e
     ```
 
     > [!NOTE]
-    > Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace.
+    > Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure portal on the **Overview** page of your Azure Quantum workspace.
 
     ```azurecli
     az account set --subscription <MySubscriptionID>
@@ -353,12 +366,20 @@ It leverages integrated hybrid computing features to count the number of times e
     az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorkspace> --location <MyLocation>
     ```
 
-1. Submit the job and view the results. This run uses approximately 11.31 eHQC's (Quantinuum emulator billing units)
+1. Submit the job and view the results. This run uses approximately 11.31 eHQCs (Quantinuum emulator billing units)
 
     ```azurecli
-    az quantum job submit --target-id quantinuum.sim.h1-1e --job-name ErrorCorrection --target-capability AdaptiveExecution --shots 50
-
-    az quantum job output -o table --job-id [job-id]
+    az quantum job submit \
+        --target-id quantinuum.sim.h1-1e \
+        --job-name ErrorCorrection \
+        --target-capability AdaptiveExecution \
+        --shots 50
+    ```
+    
+    ```azurecli
+    az quantum job output \
+        -o table \
+        --job-id [job-id]
     ```
 
 ### [Iterative phase estimation](#tab/tabid-qml)
@@ -657,7 +678,7 @@ az login
 ```
 
 > [!NOTE]
-> Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure Portal on the **Overview** page of your Azure Quantum workspace.
+> Your Azure *subscription ID*, *resource group*, and *workspace name* can be listed in the terminal window after logging in by running *az quantum workspace list*. Alternately, you can find them in the Azure portal on the **Overview** page of your Azure Quantum workspace.
 
 ```azurecli
 az account set --subscription <MySubscriptionID>
@@ -668,19 +689,25 @@ az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorks
 Submit the job with the following parameters:
 
 ```azurecli
-az quantum job submit --target-id quantinuum.sim.h1-1e --target-capability AdaptiveExecution --shots 50 --job-name IterativePhaseEstimation
+az quantum job submit \
+    --target-id quantinuum.sim.h1-1e \
+    --target-capability AdaptiveExecution \
+    --shots 50 \
+    --job-name IterativePhaseEstimation
 ```
 
 > [!NOTE]
 > The specified target requires a target execution profile that supports [:::no-loc text="Basic Measurement Feedback":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
 
 > [!IMPORTANT]
-> It is not recommended to increase the value of `Measurements` beyond **3** when running on Azure targets as the EHQCs can increase significantly.
+> It is not recommended to increase the value of `Measurements` beyond **3** when running on Azure targets as the eHQCs can increase significantly.
 
 You can view the status of the job with
 
 ```azurecli
-az quantum job output -o table --job-id [job-id]
+az quantum job output \
+    -o table \
+    --job-id [job-id]
 ```
 
 replacing \[job-id\] with the displayed job id. The results show a solution in the state with the majority population. The final inner product from the integer results can be calculated by $\braket {v|c} = -cos(2\pi x / 2^n)$, where n is the number of measurements specified in the job.

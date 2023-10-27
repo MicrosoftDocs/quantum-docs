@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 09/26/2022
+ms.date: 10/26/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.custom: devx-track-azurecli
@@ -88,7 +88,11 @@ Next, we'll prepare your environment to run the program against the workspace yo
    group and the location you created it in:
 
    ```azurecli
-   az quantum workspace set -g MyResourceGroup -w MyWorkspace -l MyLocation -o table
+   az quantum workspace set \
+      -g MyResourceGroup \
+      -w MyWorkspace \
+      -l MyLocation \
+      -o table
    ```
 
    ```output
@@ -171,7 +175,9 @@ Before you run a program against real hardware, we recommend running it against 
 To run your program with the Quantinuum syntax checker, submit the following command:
 
 ```azurecli
-az quantum execute --target-id quantinuum.sim.h1-1sc -o table
+az quantum execute \
+    --target-id quantinuum.sim.h1-1sc \
+    -o table
 ```
 
 This command compiles your program, submits it to the Quantinuum syntax checker, and waits until it has finished simulating the program. Once it's done, it outputs a histogram similar to this:
@@ -190,7 +196,9 @@ To run the program on hardware, we'll use the asynchronous job submission comman
 
 
    ```azurecli
-   az quantum job submit --target-id quantinuum.qpu.h1-1 -o table
+   az quantum job submit \
+      --target-id quantinuum.qpu.h1-1 \
+      -o table
    ```
 
    ```output
@@ -202,7 +210,9 @@ To run the program on hardware, we'll use the asynchronous job submission comman
 The table shows that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the Id output by the previous command, for example:
 
    ```azurecli
-    az quantum job show -o table --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
+    az quantum job show \
+      -o table \
+      --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
    ```
 
    ```output
@@ -214,7 +224,9 @@ The table shows that your job has been submitted and is waiting for its turn to 
 `Status` in the above table changes to `Succeeded`. Once that's done you can get the results from the job by running `az quantum job output`:
 
    ```azurecli
-   az quantum job output -o table --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
+   az quantum job output \
+      -o table \
+      --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
    ```
 
    ```output
