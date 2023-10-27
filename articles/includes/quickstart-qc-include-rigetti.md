@@ -108,7 +108,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
     > The MyLocation parameter in the example above is the **Region** 
     > specified on the **Create Quantum Workspace** page when following 
     > the steps in [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-    > Region and Location are synonymous.  The parameter value may be 
+    > Region and Location are synonymous.  The parameter value can be 
     > expressed in mixed case surrounded by quotes, for example, `-l "West US 2"`,
     > or in lower case with no spaces or quotes, such as `-l westus2`.
 
@@ -183,7 +183,7 @@ Result        Frequency
 
 ## Run the program on hardware
 
-To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command, this will compile and submit your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long that may be, you can run `az quantum target list -o table` as described earlier. 
+To run the program on hardware, we'll use the asynchronous job submission command `az quantum job submit`. Like the `execute` command, this will compile and submit your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you might need to wait a while for your job to finish. To get an idea of how long that could be, you can run `az quantum target list -o table` as described earlier. 
 
 
    ```azurecli
@@ -241,4 +241,4 @@ Eventually, you'll see `Status` in the above table change to `Succeeded`. Once t
    [1,1,1,1]  0.07000000   ▐█                      |
    ```
 
-The histogram you receive may be slightly different than the one above, but you should find that the states generally are observed with equal frequency.
+The histogram you receive might be slightly different than the one above, but you should find that the states generally are observed with equal frequency.

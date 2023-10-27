@@ -39,7 +39,7 @@ The Azure Quantum usage and quotas are measured in terms of each provider's unit
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
 2. Select your **Azure Quantum workspace**.
 3. In the left panel, under **Operations**, go to the **Credits and quotas** blade and select the **Quotas** tab. 
-4. See the consumed and the remaing quotas for each selected provider. Notice that quota information is displayed in three columns.
+4. See the consumed and the remaining quotas for each selected provider. Notice that quota information is displayed in three columns.
   - *Workspace usage*: The usage limit for the current workspace. Each Azure Quantum workspace has a usage limit.
   - *Azure subscription usage*: The usage for all workspaces within the current region and subscription. Not all quotas are tracked at this level. 
   - *Cadence*: The period when your quota is renewed. If monthly, the usage is reset on the 1st of every month. If one-time, usage is never reset.
@@ -99,7 +99,7 @@ The **Scope** column indicates whether the quota refers to the current workspace
 The **Period** column indicates the period when your quota is renewed. 
 
 - *Monthly*: The usage is reset on the 1st of every month.
-- *Infinite*: The usage is never reset (also referred as *one-time* in the [Azure Portal](https://portal.azure.com) view).
+- *Infinite*: The usage is never reset (also referred as *one-time* in the [Azure portal](https://portal.azure.com) view).
 
 ### Track quota using Python SDK
 
@@ -146,7 +146,7 @@ The `scope` item indicates whether the quota refers to the current workspace or 
 The `period` item indicates the period when your quota is renewed. 
 
 - *Monthly*: The usage is reset on the 1st of every month.
-- *Infinite*: The usage is never reset (also referred as *one-time* in the [Azure Portal](https://portal.azure.com) view).
+- *Infinite*: The usage is never reset (also referred as *one-time* in the [Azure portal](https://portal.azure.com) view).
 
 > [!TIP]
 > The `get_quotas` method return the results in the form of a Python dictionary. For a more human-readable format, use the following code samples to print a summary of > the remaining quotas at subscription and workspace level.

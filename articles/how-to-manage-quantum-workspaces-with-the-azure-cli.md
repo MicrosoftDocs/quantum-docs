@@ -72,7 +72,7 @@ If you already know the provider and plan names to use in your workspace, you ca
       -w MyQuantumWorkspace \
       -a MyStorageAccount
    ```
-You may be prompted to accept terms of use.  Enter `Y` to accept the terms.  Note that the `-r` parameter shown in step four, below, was not required. 
+You might be prompted to accept terms of use.  Enter `Y` to accept the terms.  Note that the `-r` parameter shown in step four, below, was not required. 
 
 If you need to determine which providers and plans to use, proceed as follows:
 
@@ -118,7 +118,7 @@ If you need to determine which providers and plans to use, proceed as follows:
         -r "MyProvider1/MyPlan1, MyProvider2/MyPlan2"
    ```
 
-Once you create a workspace, you can still add or remove providers using the Azure Portal.
+Once you create a workspace, you can still add or remove providers using the Azure portal.
 
 ## Change the default storage account for a quantum workspace
 

@@ -31,7 +31,7 @@ The [Modern QDK](https://github.com/microsoft/qsharp/wiki/Installation) is a pre
 [![download icon.](media/download-install.png) <br>**Download the Modern QDK**](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode)
 
 > [!WARNING]
-> The Modern QDK preview is not fully backwards-compatible with the Classic QDK. Not all APIs have been ported, and existing project files aren't recognized. Your current programs and projects may require significant changes and updates. 
+> The Modern QDK preview is not fully backwards-compatible with the Classic QDK. Not all APIs have been ported, and existing project files aren't recognized. Your current programs and projects coul require significant changes and updates. 
 >
 > To help you get started, a new set of samples specifically for the Modern QDK is available on the [QSharp GitHub samples page](https://github.com/microsoft/qsharp/tree/main/samples).
 >
@@ -91,7 +91,7 @@ The Azure Quantum portal provides a built-in development environment where you c
 
 Installing the QDK on your local computer provides support for Jupyter Notebooks, Python, and Q#, along with extensions for Visual Studio Code and Visual Studio. Develop quantum computing applications in your preferred IDE and language and run them on quantum simulators, quantum hardware, or optimization solvers using the Azure Quantum service.
 
-Some scenarios where you may prefer a local environment:
+Some scenarios where you might prefer a local environment:
 
 - You have a customized environment or preferred tools that are not available online. 
 - You require source control on your project.
@@ -189,7 +189,7 @@ To test your environment, see [Create a quantum-based random number generator](x
 
 ### Use Q# and Python with Jupyter Notebooks 
 
-All the necessary components for a Juptyer Notebooks environment can be set up with a single conda installation. 
+All the necessary components for a Jupyter Notebooks environment can be set up with a single conda installation. 
 
 > [!NOTE]
 > While a conda installion is recommended, if you prefer not to install conda, you can also set up your environment using the .NET CLI.
@@ -210,7 +210,7 @@ All the necessary components for a Juptyer Notebooks environment can be set up w
     > Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
     > ```
 
-    **(Linux)** If haven't done so during installation, you can still initialize conda now. Open a terminal and navigate to the `bin` directory inside your selected install location (for example, `/home/ubuntu/miniconda3/bin`). Then run the appropriate command for your shell, for example,`./conda init bash`. Close your terminal for the changes to take effect.
+    **(Linux)** If you haven't done so during installation, you can still initialize conda now. Open a terminal and navigate to the `bin` directory inside your selected install location (for example, `/home/ubuntu/miniconda3/bin`). Then run the appropriate command for your shell, for example,`./conda init bash`. Close your terminal for the changes to take effect.
 
 1. From a new terminal, create and activate a new conda environment named `qsharp-env` with the required packages (including Jupyter Notebook and IQ#) by running the following commands:
 
@@ -310,7 +310,7 @@ You can also use Docker with a Visual Studio Code Remote Development Container t
 
 1. Select **Start commit > Commit directly to the main branch**, then select **Commit new file**. GitHub creates a folder named **.devcontainer** with your new configuration file.
 1. If you want to create your codespace on a branch other than **main**, select that branch.
-1. Select **Code > Codespaces > Create codespace on main** (or your preferred branch). The initial setup may take 5-10 minutes.
+1. Select **Code > Codespaces > Create codespace on main** (or your preferred branch). The initial setup could take 5-10 minutes.
 1. When the setup is complete, the codespace development shell opens. Wait for the *postCreateCommand* to complete.
 1. Enable web-based authentication:
     1. From a command prompt, run **az login --use-device-code**.

@@ -107,7 +107,7 @@ Next, prepare your environment to run the program against the workspace you crea
     > The MyLocation parameter in the example is the **Region** 
     > specified on the **Create Quantum Workspace** page when following 
     > the steps in [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-    > Region and Location are synonymous.  The parameter value may be 
+    > Region and Location are synonymous.  The parameter value can be 
     > expressed in mixed case surrounded by quotes, for example, `-l "West US 2"`,
     > or in lower case with no spaces or quotes, such as `-l westus2`.
 
@@ -205,7 +205,7 @@ This shows an equal frequency for each of the 16 possible states for measuring 4
 
 ## Run the program on hardware
 
-To run the program on hardware, use the asynchronous job submission command `az quantum job submit`. Like the `execute` command, `az quantum job submit` compiles and submits your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you may need to wait a while for your job to finish. To get an idea of how long that may be, you can run `az quantum target list -o table` as described earlier.
+To run the program on hardware, use the asynchronous job submission command `az quantum job submit`. Like the `execute` command, `az quantum job submit` compiles and submits your program, but it won't wait until the execution is complete. We recommend this pattern for running against hardware, because you might need to wait a while for your job to finish. To get an idea of how long that might be, you can run `az quantum target list -o table` as described earlier.
 
 
    ```azurecli
@@ -263,4 +263,4 @@ Eventually, you see the `Status` in the previous table change to `Succeeded`. On
    [1,1,1,1]  0.07000000   ▐█                      |
    ```
 
-The histogram you receive may be slightly different than the previous one , but you should find that the states generally are observed with equal frequency.
+The histogram you receive might be slightly different than the previous one, but you should find that the states generally are observed with equal frequency.

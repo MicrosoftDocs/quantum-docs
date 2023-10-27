@@ -40,7 +40,7 @@ Azure Quantum Credits may be used with any programming language or framework tha
 To use your Azure Quantum Credits with a provider, submit a job in a workspace that uses an Azure Quantum Credits plan for that provider. All jobs submitted from a workspace targeting a provider that uses an Azure Quantum Credits plan will be free. If a job happens to go over the current credit allocation, it will be rejected.
 
 > [!IMPORTANT]
-> There are no costs or charges to use your free Azure Quantum Credits. However, there may be some small storage costs, as the input and output of your jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
+> There are no costs or charges to use your free Azure Quantum Credits. However, there might be some small storage costs, as the input and output of your jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
 > For more information, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ## How is credit consumption calculated?

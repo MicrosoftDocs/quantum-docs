@@ -13,7 +13,7 @@ uid: microsoft.quantum.workspaces-locks
 
 # Protect Azure Quantum resources with Azure Resource Manager (ARM) locks
 
-Microsoft recommends locking all of your Azure Quantum workspaces and linked storage accounts with an Azure Resource Manager (ARM) resource lock to prevent accidental or malicious deletion. For example, professors may want to restrict students from modifying provider SKUs, but still enable them to use notebooks and submit jobs.  
+Microsoft recommends locking all of your Azure Quantum workspaces and linked storage accounts with an Azure Resource Manager (ARM) resource lock to prevent accidental or malicious deletion. For example, professors might want to restrict students from modifying provider SKUs, but still enable them to use notebooks and submit jobs.  
 
 There are two types of ARM resource locks:
 
@@ -60,7 +60,7 @@ You will need either Azure PowerShell or Azure CLI to deploy the lock. If you us
 
 ## Sign in to Azure
 
-After installing either Azure CLI or Azure Powershell, make sure you sign in for the first time. Choose one of the following tabs and run the corresponding command line commands to sign in to Azure:
+After installing either Azure CLI or Azure PowerShell, make sure you sign in for the first time. Choose one of the following tabs and run the corresponding command line commands to sign in to Azure:
 
 # [Azure CLI](#tab/azure-cli)
 
@@ -382,7 +382,7 @@ Remove-AzResourceLock `
     -ResourceType Microsoft.Storage/storageAccounts
 ```
 
-If the deletion is successful, Powershell displays `True`.  To verify the deletion, you can run `Get-AzResourceLock`. 
+If the deletion is successful, PowerShell displays `True`.  To verify the deletion, you can run `Get-AzResourceLock`. 
 
 ---
 
