@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide of what Azure Quantum quotas are, how to review remaining quotas and how to apply to get more. 
 ms.author: sonialopez
-ms.date: 06/08/2023
+ms.date: 10/26/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -72,7 +72,11 @@ You can see your quotas by using the Azure Command-Line Interface (Azure CLI). F
 1. Select the **Workspace** that you want to use. Note that you also need to specify the resource group and the location.
 
    ```azurecli
-   az quantum workspace set -g MyResourceGroup -w MyWorkspace -l MyLocation -o table
+   az quantum workspace set \
+       -g MyResourceGroup \
+       -w MyWorkspace \
+       -l MyLocation \
+       -o table
    ```
 1. Use the **`az quantum workspace quotas` command** to display quotas information for the selected workspace.
 

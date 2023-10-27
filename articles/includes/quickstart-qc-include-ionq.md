@@ -89,7 +89,11 @@ Next, we'll prepare your environment to run the program against the workspace yo
    group and the location you created it in:
 
    ```azurecli
-   az quantum workspace set -g MyResourceGroup -w MyWorkspace -l MyLocation -o table
+   az quantum workspace set \
+      -g MyResourceGroup \
+      -w MyWorkspace \
+      -l MyLocation \
+      -o table
    ```
 
    ```output
@@ -171,7 +175,9 @@ Before you run a program against real hardware, we recommend simulating it first
 Run your program with `az quantum execute --target-id ionq.simulator -o table`. This command will compile your program, submit it to Azure Quantum, and wait until IonQ has finished simulating the program. Once it's done it will output a histogram which should look like the one below:
 
    ```azurecli
-   az quantum execute --target-id ionq.simulator -o table
+   az quantum execute \
+      --target-id ionq.simulator \
+      -o table
    ```
 
    ```output
@@ -203,7 +209,9 @@ To run the program on hardware, we'll use the asynchronous job submission comman
 
 
    ```azurecli
-   az quantum job submit --target-id ionq.qpu -o table
+   az quantum job submit \
+      --target-id ionq.qpu \
+      -o table
    ```
 
    ```output
@@ -215,7 +223,9 @@ To run the program on hardware, we'll use the asynchronous job submission comman
 The table shows that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the ID output by the previous command, for example:
 
    ```azurecli
-    az quantum job show -o table --job-id 5aa8ce7a-25d2-44db-bbc3-87e48a97249c 
+    az quantum job show \
+      -o table \
+      --job-id 5aa8ce7a-25d2-44db-bbc3-87e48a97249c 
    ```
 
    ```output
@@ -227,7 +237,9 @@ The table shows that your job has been submitted and is waiting for its turn to 
 Eventually, you will see the `Status` in the above table change to `Succeeded`. Once that's done you can get the results from the job by running `az quantum job output`:
 
    ```azurecli
-   az quantum job output -o table --job-id 5aa8ce7a-25d2-44db-bbc3-87e48a97249c 
+   az quantum job output \
+      -o table \
+      --job-id 5aa8ce7a-25d2-44db-bbc3-87e48a97249c 
    ```
 
    ```output

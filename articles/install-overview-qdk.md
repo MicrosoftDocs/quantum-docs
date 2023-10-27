@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to set up an Azure Quantum environment for different languages and platforms.
 ms.author: brbenefield
-ms.date: 09/19/2023
+ms.date: 10/26/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -131,7 +131,9 @@ The Azure CLI is the preferred method for submitting quantum jobs using a termin
 - Install the latest Azure CLI `quantum` extension. Open a command prompt and run the following command:
 
     ```azurecli
-    az extension add --upgrade -n quantum
+    az extension add \
+        --upgrade \
+        -n quantum
 
 Configure the QDK for your preferred environment from one of the following options:
 

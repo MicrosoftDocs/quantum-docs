@@ -2,7 +2,7 @@
 author: aviviano
 description: This guide shows you how to create and delete quantum workspaces using the Azure command-line tool.
 ms.author: amvivian
-ms.date: 07/26/2021
+ms.date: 10/26/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.custom: devx-track-azurecli
@@ -108,7 +108,12 @@ Once you create a workspace, you can still add or remove providers using the Azu
 If you need to change the default storage account for an existing workspace, you can use the `create` command, specifying all the current properties along with the new storage account. The following example uses the same settings as the workspace created in the previous example:
 
    ```azurecli
-   az quantum workspace create -l westus -g MyResourceGroup -w MyQuantumWorkspace -a MyNEWStorageAccount -r "MyProvider1/MyPlan1, MyProvider2/MyPlan2"
+   az quantum workspace create \
+      -l westus \
+      -g MyResourceGroup \
+      -w MyQuantumWorkspace \
+      -a MyNEWStorageAccount \
+      -r "MyProvider1/MyPlan1, MyProvider2/MyPlan2"
    ```
 
 > [!IMPORTANT]
@@ -119,7 +124,9 @@ If you need to change the default storage account for an existing workspace, you
 If you know the name and resource group of a quantum workspace you want to delete, you can do it with the `delete` command (using the same names as the previous example):
 
    ```azurecli
-   az quantum workspace delete -g MyResourceGroup -w MyQuantumWorkspace
+   az quantum workspace delete \
+      -g MyResourceGroup \
+      -w MyQuantumWorkspace
    ```
 
 > [!TIP]
@@ -128,7 +135,9 @@ If you know the name and resource group of a quantum workspace you want to delet
 After you delete a workspace, you will still see it listed while it's being deleted in the cloud. However, the `provisioningState` property of the workspace changes immediately to indicate that it's being deleted. You can see this information by using the `show` command:
 
    ```azurecli
-   az quantum workspace show -g MyResourceGroup -w MyQuantumWorkspace
+   az quantum workspace show \
+      -g MyResourceGroup \
+      -w MyQuantumWorkspace
    ```
 
 > [!NOTE]

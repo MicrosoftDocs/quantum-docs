@@ -90,7 +90,11 @@ Next, we'll prepare your environment to run the program against the workspace yo
    group and the location you created it in:
 
    ```azurecli
-   az quantum workspace set -g MyResourceGroup -w MyWorkspace -l MyLocation -o table
+   az quantum workspace set \
+      -g MyResourceGroup \
+      -w MyWorkspace \
+      -l MyLocation \
+      -o table
    ```
 
    ```output
@@ -150,7 +154,9 @@ Before you run a program against real hardware, we recommend running it against 
 To run your program with the Rigetti QVM simulator, submit the following command:
 
 ```azurecli
-az quantum execute --target-id rigetti.sim.qvm -o table
+az quantum execute \
+    --target-id rigetti.sim.qvm \
+    -o table
 ```
 
 This command compiles your program, submits it to the Rigetti QVM simulator, and waits until it has finished simulating the program. Once it's done, it outputs a histogram similar to this:
@@ -181,7 +187,9 @@ To run the program on hardware, we'll use the asynchronous job submission comman
 
 
    ```azurecli
-   az quantum job submit --target-id rigetti.qpu.aspen-m-3 -o table
+   az quantum job submit \
+      --target-id rigetti.qpu.aspen-m-3 \
+      -o table
    ```
 
    ```output
@@ -193,7 +201,9 @@ To run the program on hardware, we'll use the asynchronous job submission comman
 The table shows that your job has been submitted and is waiting for its turn to run. To check on the status, use the `az quantum job show` command, being sure to replace the `job-id` parameter with the ID output by the previous command, for example:
 
    ```azurecli
-    az quantum job show -o table --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
+    az quantum job show \
+      -o table \
+      --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
    ```
 
    ```output
@@ -205,7 +215,9 @@ The table shows that your job has been submitted and is waiting for its turn to 
 Eventually, you'll see `Status` in the above table change to `Succeeded`. Once that's done, you can get the results from the job by running `az quantum job output`:
 
    ```azurecli
-   az quantum job output -o table --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
+   az quantum job output \
+      -o table \
+      --job-id b4d17c63-2119-4d92-91d9-c18d1a07e08f 
    ```
 
    ```output

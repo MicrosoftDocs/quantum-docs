@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand the architecture and implementation of integrated hybrid quantum computing.
-ms.date: 03/17/2023
+ms.date: 10/26/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -71,7 +71,12 @@ qsharp.azure.target_capability("AdaptiveExecution")
 When using the Azure CLI to submit a job, add the `--target-capability` parameter with the value `AdaptiveExecution`.
 
 ```azurecli
-az quantum job submit --target-capability AdaptiveExecution --target-id quantinuum.sim.h1-1e --job-name IterativePhaseEstimation --shots 100 --output table
+az quantum job submit \
+    --target-capability AdaptiveExecution \
+    --target-id quantinuum.sim.h1-1e \
+    --job-name IterativePhaseEstimation \
+    --shots 100 \
+    --output table
 ```
 
 ### Submitting integrated hybrid jobs within a session
@@ -203,9 +208,17 @@ Features to note about this sample:
 1. Submit the job and view the results. This run uses approximately 10.65 eHQC's (Quantinuum emulator billing units)
 
     ```azurecli
-    az quantum job submit --target-id quantinuum.sim.h1-1e --job-name CheckGHZ --target-capability AdaptiveExecution --shots 50
+    az quantum job submit \
+      --target-id quantinuum.sim.h1-1e \
+      --job-name CheckGHZ \
+      --target-capability AdaptiveExecution \
+      --shots 50
+    ```
 
-    az quantum job output -o table --job-id [job-id]
+    ```azurecli
+    az quantum job output \
+      -o table \
+      --job-id [job-id]
     ```
 
 ![GHZ output](~/media/hybrid/ghz-output.png)
@@ -356,9 +369,17 @@ It leverages integrated hybrid computing features to count the number of times e
 1. Submit the job and view the results. This run uses approximately 11.31 eHQC's (Quantinuum emulator billing units)
 
     ```azurecli
-    az quantum job submit --target-id quantinuum.sim.h1-1e --job-name ErrorCorrection --target-capability AdaptiveExecution --shots 50
-
-    az quantum job output -o table --job-id [job-id]
+    az quantum job submit \
+        --target-id quantinuum.sim.h1-1e \
+        --job-name ErrorCorrection \
+        --target-capability AdaptiveExecution \
+        --shots 50
+    ```
+    
+    ```azurecli
+    az quantum job output \
+        -o table \
+        --job-id [job-id]
     ```
 
 ### [Iterative phase estimation](#tab/tabid-qml)
@@ -668,7 +689,11 @@ az quantum workspace set --resource-group <MyResourceGroup> --workspace <MyWorks
 Submit the job with the following parameters:
 
 ```azurecli
-az quantum job submit --target-id quantinuum.sim.h1-1e --target-capability AdaptiveExecution --shots 50 --job-name IterativePhaseEstimation
+az quantum job submit \
+    --target-id quantinuum.sim.h1-1e \
+    --target-capability AdaptiveExecution \
+    --shots 50 \
+    --job-name IterativePhaseEstimation
 ```
 
 > [!NOTE]
@@ -680,7 +705,9 @@ az quantum job submit --target-id quantinuum.sim.h1-1e --target-capability Adapt
 You can view the status of the job with
 
 ```azurecli
-az quantum job output -o table --job-id [job-id]
+az quantum job output \
+    -o table \
+    --job-id [job-id]
 ```
 
 replacing \[job-id\] with the displayed job id. The results show a solution in the state with the majority population. The final inner product from the integer results can be calculated by $\braket {v|c} = -cos(2\pi x / 2^n)$, where n is the number of measurements specified in the job.
