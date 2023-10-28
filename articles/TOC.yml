@@ -129,6 +129,8 @@
     href: qc-target-list.md
   - name: Quantum computing profile targets
     href: quantum-computing-target-profiles.md 
+  - name: Azure Quantum provider global availability
+    href: provider-global-availability.md
   - name: IonQ
     items:
     - name: IonQ provider & targets
@@ -205,8 +207,6 @@
   items:
   - name: Glossary
     href: azure-quantum-glossary.md
-  - name: Azure Quantum provider global availability
-    href: provider-global-availability.md
   - name: Build your skills with Microsoft training >>
     href: /training/paths/quantum-computing-fundamentals/
   - name: Further reading
