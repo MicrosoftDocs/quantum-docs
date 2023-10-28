@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: This document provides a list of the available quantum computing providers on Azure Quantum.
-ms.date: 09/07/2022
+ms.date: 10/27/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -25,6 +25,31 @@ Azure Quantum offers various quantum solutions, such as different quantum hardwa
 > Quantum hardware devices are still an emerging technology. These devices have some limitations and requirements for quantum programs that run on them. For more information, see the [target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles). 
 
 For information on which quantum computing providers are available in your region, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability).
+
+## Qubit availability for quantum computing providers
+
+Microsoft's provider partners offer a wide-range of qubit availability for their hardware processors and simulators. 
+
+|Target name |	Number of qubits|
+|---|---|
+|[IonQ Quantum simulator](xref:microsoft.quantum.providers.ionq#quantum-simulator)	|29 qubits|	
+|[IonQ Harmony](xref:microsoft.quantum.providers.ionq#ionq-harmony-quantum-computer) |11 qubits	|
+|[IonQ Aria 1](xref:microsoft.quantum.providers.ionq#ionq-aria-quantum-computer) |25 qubits	|
+|[IonQ Aria 2](xref:microsoft.quantum.providers.ionq#ionq-aria-quantum-computer) |25 qubits	|
+|[Quantinuum H1-1 Syntax Checker](xref:microsoft.quantum.providers.quantinuum#syntax-checkers) |20 qubits| 
+|[Quantinuum H1-2 Syntax Checker](xref:microsoft.quantum.providers.quantinuum#syntax-checkers) |20 qubits|
+|[Quantinuum H2-1 Syntax Checker](xref:microsoft.quantum.providers.quantinuum#syntax-checkers) |32 qubits|
+|[Quantinuum H1-1 Emulator](xref:microsoft.quantum.providers.quantinuum#system-model-h1-emulators) | 20 qubits| 
+|[Quantinuum H1-2 Emulator](xref:microsoft.quantum.providers.quantinuum#system-model-h1-emulators)| 20 qubits|
+|[Quantinuum H2-1 Emulator](xref:microsoft.quantum.providers.quantinuum#system-model-h2-emulator)| 32 qubits|
+|[Quantinuum H1-1](xref:microsoft.quantum.providers.quantinuum#system-model-h1)|20 qubits|
+|[Quantinuum H1-2](xref:microsoft.quantum.providers.quantinuum#system-model-h1)| 20 qubits|
+|[Quantinuum H2-1](xref:microsoft.quantum.providers.quantinuum#system-model-h2)| 32 qubits|
+|[Rigetti Quantum Virtual Machine (QVM)](xref:microsoft.quantum.providers.rigetti#simulators) |30 qubits| 
+|[Rigetti Aspen-M-2](xref:microsoft.quantum.providers.rigetti#aspen-m-2) |80 qubits| 
+|[Rigetti Aspen-M-3](xref:microsoft.quantum.providers.rigetti#aspen-m-3) |80 qubits| 
+
+
 
 ## Coming soon to Azure Quantum
 
