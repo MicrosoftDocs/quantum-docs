@@ -189,7 +189,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 |Includes access to | <ul><li>Rigetti Aspen-M-3 QPU</li><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
 
 > [!NOTE]
-> Once you have consumed all the credits you need to switch to a different plan to continue using Rigetti. Azure Quantum won’t start charging you once you reach your credit limit. 
+> Once you have consumed all the credits you need to switch to a different plan to continue using Rigetti. Azure Quantum won’t start charging you once you reach your credit limit.
 
 > [!IMPORTANT]
 > There are no costs or charges to using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
@@ -206,47 +206,11 @@ The Pay-as-you-go plan consists of *a la carte* access to the Aspen-M-3 and Aspe
 
 ***
 
-## Toshiba SQBM+
-
-Toshiba SQBM+ offers two plans: Learn & Develop model and Performace at Scale model, both based on the runtime of your optimization problem.
-
-### [Learn & Develop](#tab/tabid-learndevelop)
-
-Learn and develop with SQBM+ (not for operational use).
-
-|Pricing | $0.00 (USD)/month + Azure infrastructure costs  |
-|---|---|
-|Targets available | toshiba.sbm.ising |
-|Plus| 0-0.1 hour: \\$0 (USD)/hour<br />0.1-1 hour: \\ $200 (USD)/hour |
-
-
-### [Performance at Scale](#tab/tabid-perfscale)
-
-Deploy world-class SQBM+ solutions.
-
-|Pricing | $0.00 (USD)/month + Azure infrastructure costs  |
-|---|---|
-|Targets available | toshiba.sbm.ising |
-|Plus| 0-5 hours: \\$1800 (USD)/hour<br />5-25 hours: \\$1600 (USD)/hour<br />25-50 hours: \\$1400 (USD)/hour<br />50-2,500 hours: \\$1000 (USD)/hour |
-
-
-***
-For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
-
-You can find more information about Toshiba's offering on the [Toshiba SQBM+ Provider Page](xref:microsoft.quantum.providers.optimization.toshiba).
-
-
-
 ## Next Steps
 
 - [Azure Quantum Credits](xref:microsoft.quantum.credits)
 - [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq)
 - [Azure Quantum quotas](xref:microsoft.quantum.quotas)
 - [Quantum computing target list](xref:microsoft.quantum.reference.qc-target-list)
-
-
-
-
-
 
  

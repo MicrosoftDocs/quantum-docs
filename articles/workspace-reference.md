@@ -174,19 +174,9 @@ targets
 ```
 
 ```output
-[<Target name="microsoft.paralleltempering-parameterfree.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.simulatedannealing-parameterfree.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.tabu-parameterfree.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.qmc.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.populationannealing.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.substochasticmontecarlo.cpu", avg. queue time=0 s, Available>,
- <Target name="ionq.qpu", avg. queue time=669 s, Available>,
+[<Target name="ionq.qpu", avg. queue time=669 s, Available>,
  <Target name="ionq.simulator", avg. queue time=1 s, Available>,
  <Target name="ionq.qpu.aria-1", avg. queue time=1136774 s, Available>,
- <Target name="1qbit.tabu", avg. queue time=0 s, Available>,
- <Target name="1qbit.pathrelinking", avg. queue time=0 s, Available>,
- <Target name="1qbit.pticm", avg. queue time=0 s, Available>,
- <Target name="toshiba.sbm.ising", avg. queue time=5 s, Available>,
 <Target name="quantinuum.qpu.h1-1", avg. queue time=0 s, Degraded>,
 <Target name="quantinuum.sim.h1-1sc", avg. queue time=1 s, Available>,
 <Target name="quantinuum.qpu.h1-2", avg. queue time=217300 s, Unavailable>,
@@ -198,59 +188,19 @@ targets
 To filter by provider, specify the `provider_id` input argument:
 
 ```py
-targets = workspace.get_targets(provider_id="microsoft")
+targets = workspace.get_targets(provider_id="ionq")
 targets
 ```
 
 ```output
-[<Target name="microsoft.paralleltempering-parameterfree.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.simulatedannealing-parameterfree.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.tabu-parameterfree.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.qmc.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.populationannealing.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.substochasticmontecarlo.cpu", avg. queue time=0 s, Available>]
+[<Target name="ionq.qpu", avg. queue time=669 s, Available>,
+ <Target name="ionq.simulator", avg. queue time=1 s, Available>,
+ <Target name="ionq.qpu.aria-1", avg. queue time=1136774 s, Available>]
 ```
 
-To get a single target, for instance, the Simulated Annealing solver, specify the `name` input argument:
+To get a single target, for instance, the IonQ Aria , specify the `name` input argument:
 
 ```py
-solver = workspace.get_targets(name="microsoft.simulatedannealing.cpu")
+solver = workspace.get_targets(name="ionq.qpu.aria-1")
 solver
-```
-
-Since no keyword arguments were given, the workspace defaults to the parameter-free version:
-
-```output
-<Target name="microsoft.simulatedannealing-parameterfree.cpu", avg. queue time=0 s, Available>
-```
-
-To specify input arguments, use:
-
-```py
-solver = workspace.get_targets(name="microsoft.simulatedannealing.cpu", timeout=100, seed=22)
-solver
-```
-
-```output
-<Target name="microsoft.simulatedannealing.cpu", avg. queue time=0 s, Available>
-```
-
-
-This target can then be used to submit a problem and get the resulting job:
-
-```py
-from azure.quantum.optimization import Problem, ProblemType
-
-problem = Problem(name="MyOptimizationJob", problem_type=ProblemType.ising)
-problem.add_term(c=-9, indices=[0])
-problem.add_term(c=-3, indices=[1,0])
-problem.add_term(c=5, indices=[2,0])
-problem = 
-job = solver.submit(problem)
-results = job.get_results()
-results
-```
-
-```output
-{'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1}, 'cost': -17.0}]}
 ```

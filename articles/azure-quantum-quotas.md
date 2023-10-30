@@ -20,12 +20,10 @@ The usage tracked by quotas is not necessarily tied to a cost or credit, but it 
 
 ## How quotas are calculated
 
-In Azure Quantum, hardware and software providers define and control the quotas of their offerings. For detailed quota information, see each provider reference page. If a provider doesn't appear in the following table, then that provider doesn't define any quotas.  
+In Azure Quantum, hardware and software providers define and control the quotas of their offerings. For detailed quota information, see each provider reference page. If a provider doesn't appear in the following list, then that provider doesn't define any quotas.  
 
-|Quantum Computing providers | Optimization providers|
-|---|---|  
-|[IonQ quota](xref:microsoft.quantum.providers.ionq#limits--quotas) |[Toshiba SQBM+ quota](xref:microsoft.quantum.providers.optimization.toshiba#limits--quotas)|
-|[Quantinuum quota](xref:microsoft.quantum.providers.quantinuum#limits--quotas) ||
+- [IonQ quota](xref:microsoft.quantum.providers.ionq#limits--quotas)
+- [Quantinuum quota](xref:microsoft.quantum.providers.quantinuum#limits--quotas)
 
 ## Viewing remaining quota
 

@@ -191,18 +191,6 @@
     href: azure-quantum-common-issues.md
   - name: Q# compiler messages
     href: qs-compiler-messages/toc.yml
-- name: Optimization
-  items:
-  - name: Deprecation message
-    href: optimization-deprecation-warning.md
-  - name: Toshiba SQBM+
-    items:
-    - name: Toshiba SQBM+ provider & targets
-      href: provider-toshiba.md
-    - name: Toshiba SQBM+ support policy
-      href: provider-support-toshiba.md
-  - name: Run your first optimization job
-    href: quickstart-microsoft-qio-portal.md
 - name: Resources
   items:
   - name: Glossary
