@@ -4,7 +4,6 @@ description: Reference for azure.quantum.Job
 ms.author: sonialopez
 ms.date: 07/17/2023
 ms.service: azure-quantum
-ms.subservice: optimization
 ms.topic: reference
 title: Azure Quantum job reference
 uid: microsoft.quantum.optimization.job-reference

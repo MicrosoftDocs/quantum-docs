@@ -146,5 +146,4 @@ You'll find more sample notebooks in the **Getting started** tab of the sample g
 ## Next steps
 
 - [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
-- [Quickstart: Solve an optimization problem in the Azure Quantum portal](xref:microsoft.quantum.quickstarts.optimization.qio.portal)
 - [Quickstart: Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal)

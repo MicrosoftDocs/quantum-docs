@@ -2,7 +2,7 @@ blank_issues_enabled: false
 contact_links:
   - name: Azure Quantum technical support issues
     url: https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest
-    about: Request technical support for Azure Quantum and optimization issues here. 
+    about: Request technical support for Azure Quantum issues here. 
   - name: Azure Quantum technical Q&A
     url: https://learn.microsoft.com/answers/topics/azure-quantum.html
     about: Post a technical question to the Azure Quantum community.  

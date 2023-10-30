@@ -33,7 +33,7 @@ In this tutorial, you'll learn how to:
 * An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
   > [!NOTE]
   > The Resource Estimator is a target of the Microsoft Quantum Computing provider. If you are using an existing workspace, verify that the Microsoft Quantum Computing provider has been added to your workspace. For more information, see [Enable the Resource Estimator](xref:microsoft.quantum.quickstarts.computing.resources-estimator#enable-the-azure-quantum-resource-estimator-target-in-your-workspace)
-* The latest [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview#use-python-with-qiskit-or-cirq-or-azure-quantum-optimization-solvers) using the \[qiskit\] tag.
+* The latest [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview#use-python-with-qiskit-and-cirq) using the \[qiskit\] tag.
 
 ## Load the required imports
 

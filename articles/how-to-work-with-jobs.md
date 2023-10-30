@@ -13,7 +13,7 @@ uid: microsoft.quantum.work-with-jobs
 
 # Work with Azure Quantum jobs
 
-When you run a quantum program or solve an optimization problem in Azure Quantum,
+When you run a quantum program in Azure Quantum,
 you create and run a **job**. The steps to create and run a job depend on
 the job type and the provider and target that you configure for the workspace.  
 

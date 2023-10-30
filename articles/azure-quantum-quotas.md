@@ -13,7 +13,7 @@ uid: microsoft.quantum.quotas
 
 # Azure Quantum quotas 
 
-Azure Quantum quotas are provider-defined limits on the usage of QPUs and optimization targets. Quotas help prevent accidental cost overages for the user while also preserving the integrity of the provider's systems. Quotas are based on your provider plan selection and can usually be increased with a support ticket.  
+Azure Quantum quotas are provider-defined limits on the usage of QPUs targets. Quotas help prevent accidental cost overages for the user while also preserving the integrity of the provider's systems. Quotas are based on your provider plan selection and can usually be increased with a support ticket.  
 The usage tracked by quotas is not necessarily tied to a cost or credit, but it might be correlated.
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]

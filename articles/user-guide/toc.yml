@@ -36,26 +36,6 @@
       href: ../workspace-reference.md
     - name: Job
       href: ../job-reference.md
-  - name: Azure.Quantum.Optimization
-    items:
-    - name: Problem
-      href: ../optimization-problem.md
-    - name: ProblemType
-      href: ../optimization-problem-type.md
-    - name: StreamingProblem
-      href: ../optimization-streaming-problem.md
-    - name: Term
-      href: ../optimization-term.md
-    - name: RangeSchedule
-      href: ../optimization-rangeschedule.md
-  - name: Usage
-    items:
-    - name: Express a problem
-      href: ../optimization-express-optimization-problem.md
-    - name: Job management
-      href: ../optimization-job-management.md
-    - name: Re-use problem definitions
-      href: ../optimization-reuse-problem-definitions.md
 - name: Q# language guide
   href: language/toc.yml
 - name: Q# libraries

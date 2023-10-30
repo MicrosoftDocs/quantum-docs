@@ -1,19 +1,17 @@
 ---
 author: bradben
-description: This article provides a basic guide to managing jobs submitted for solving optimization problems in Azure Quantum using Python.
+description: This article provides a basic guide to managing jobs submitted in Azure Quantum using Python.
 ms.author: brbenefield
 ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
 no-loc: [target, targets]
-title: Manage optimization jobs
+title: Manage your jobs
 uid: microsoft.quantum.optimization.job-management
 ---
 
 # Job management
-
-[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 When a problem is submitted to a solver, a `Job` is created in Azure Quantum. The `Workspace` object provides the following methods for managing jobs:
 
@@ -36,7 +34,6 @@ print(jobs)
 ['5d2f9cd70f55f149e3ed3aef', '23as12fs5d2f9cd70f55f', '1644428ea8507edb7361']
 ```
 
-
 ## Get jobs
 
 The function `get_job` can be called to get the metadata (including results) for a previously submitted job, using the job `id`:
@@ -50,6 +47,7 @@ print(results)
 ```output
 {'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1}, 'cost': -17.0}]}
 ```
+
 ## Job details
 
 You can get full details about the job submission, such as the name of the job, the date of creation or the current status, using `job.details`:
@@ -79,24 +77,7 @@ print(job.details)
 |**Cancellation_time**|Datetime| The time when the job was cancelled (if applicable).|
 |**Error_data**|String| Error details during job submission (only applicable if job fails).|
 
-If you are only interested in getting the ID of the job, you can use `job.id`. The next piece of code shows how to submit a job asynchronously and obtain its job ID:
-
-```py
-from azure.quantum.optimization import Problem, ProblemType, Term, ParallelTempering, SimulatedAnnealing
-
-problem = Problem(name="MyOptimizationJob", problem_type=ProblemType.ising)
-problem.add_term(c=-9, indices=[0])
-problem.add_term(c=-3, indices=[1,0])
-problem.add_term(c=5, indices=[2,0])
-
-solver = SimulatedAnnealing(workspace)
-job = solver.submit(problem)
-print(job.id)
-```
-
-```output
-5d2f9cd70f55f149e3ed3aef
-```
+If you are only interested in getting the ID of the job, you can use `job.id`. 
 
 ## Cancel a job
 
@@ -112,4 +93,4 @@ print(job.details.status)
 ```output
 Cancelled
 ```
-See [Job Cancellation](xref:microsoft.quantum.azure-quantum-overview#job-cancellation) for more information on how cancellation requests are processed.
+
