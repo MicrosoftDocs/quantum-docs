@@ -42,7 +42,8 @@ The invoices are billed in arrears. For example, the invoice you receive in Janu
 You can view your invoices in the Azure portal. 
 
 1. Sign in to the [Azure portal](https://portal.azure.com/), using the credentials for your Azure subscription.
-1. In the top search bar, type **Cost Management + Billing**.
+1. In the top search bar, type **Cost Management + Billing**. 
+1. If you have more than one billing scope, select the scope you want to view in the **Billing scope** pane. If not, skip this step.
 1. In the left navigation pane, select **Invoices**.
 
 In this view, you can see all your invoices. The invoices from Azure Quantum 3rd party providers are of type **Azure Marketplace and Reservations**.
