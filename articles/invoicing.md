@@ -13,7 +13,7 @@ uid: microsoft.quantum.providers-invoicing
 
 # Invoicing and billing
 
-Azure Quantum partners with 3rd party quantum hardware providers to offer a variety of quantum hardware and software solutions. This article is an overview of the invoicing and billing process for these providers.
+Azure Quantum partners with third party quantum hardware providers to offer a variety of quantum hardware and software solutions. This article is an overview of the invoicing and billing process for these providers.
 
 For more information about the billing plans and pricing offer, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing) page. 
 
@@ -21,7 +21,7 @@ For more information about the billing plans and pricing offer, see [Azure Quant
 
 The invoices are sent to the email address you used to sign up for Azure Quantum. If you need to change the email address, contact [Azure Support](https://azure.microsoft.com/support/create-ticket/).
 
-You receive a separate invoice for each quantum provider you use. The invoices from Azure Quantum 3rd party providers are of type **Azure Marketplace and Reservations**.
+You receive a separate invoice for each quantum provider you use. The invoices from Azure Quantum third party providers are of type **Azure Marketplace and Reservations**.
 
 ## What is included in your Azure Quantum invoice
 
@@ -35,7 +35,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 The invoices are paid using the same payment method you use for the Azure subscription of your Azure Quantum workspace. You may have different payment methods for different subscriptions.
 
-The invoices are billed in arrears. For example, the invoice you receive in January is for the usage you incurred in December.
+The invoices are billed in arrears. For example, the invoice you receive in February is for the usage you incurred in January.
 
 ## How to view your invoices
 
@@ -46,6 +46,6 @@ You can view your invoices in the Azure portal.
 1. If you have more than one billing scope, select the scope you want to view in the **Billing scope** pane. If not, skip this step.
 1. In the left navigation pane, select **Invoices**.
 
-In this view, you can see all your invoices. The invoices from Azure Quantum 3rd party providers are of type **Azure Marketplace and Reservations**.
+In this view, you can see all your invoices. The invoices from Azure Quantum third party providers are of type **Azure Marketplace and Reservations**.
 
-You can filter by date, subscription, and status. You can also download the invoices as PDF files. You can see the invoice date and the billing period. Note that the billing period is not the same as the month in which you receive the invoice.
+You can filter by date, subscription, and status. You can also download the invoices as PDF files. You can see the invoice date and the billing period. The billing period isn't the same as the month in which you receive the invoice.
