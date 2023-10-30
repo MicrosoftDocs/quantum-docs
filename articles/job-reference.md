@@ -12,8 +12,6 @@ uid: microsoft.quantum.optimization.job-reference
 
 # Azure Quantum job reference
 
-[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
-
 ```py
 from azure.quantum import Job
 ```

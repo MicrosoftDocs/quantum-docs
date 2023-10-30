@@ -12,8 +12,6 @@ uid: microsoft.quantum.optimization.workspace
 
 # Azure Quantum workspace reference
 
-[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
-
 ```python
 from azure.quantum import Workspace
 ```
@@ -63,7 +61,6 @@ print(job.details.status)
 Succeeded
 ```
 
-
 ## Workspace.list_jobs
 
 Returns the list of existing jobs in the workspace.
@@ -76,6 +73,7 @@ jobs = workspace.list_jobs()
 for job in jobs:
     print(job.id, job.details.status)
 ```
+
 ```output
 08ea8792-68f2-11ea-acc5-2a16a847b8a3 Succeeded
 0ab1863a-68f2-11ea-82b3-2a16a847b8a3 Succeeded
