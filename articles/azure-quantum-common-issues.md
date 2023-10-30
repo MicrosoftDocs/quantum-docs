@@ -227,7 +227,7 @@ Here is what you could do in such a scenario:
 * Increase the error budget, either total or the part for logical errors.
 * Reduce the physical error rates in the qubit parameters.
 
-### Issue: Contraints maximum runtime and maximum number of physical qubits are mutually exclusive
+### Issue: Constraints maximum runtime and maximum number of physical qubits are mutually exclusive
 
 The Resource Estimator accepts only one of `maxDuration` or `maxPhysicalQubits` constraints at the time but not two. If your provide both `maxDuration` and `maxPhysicalQubits`constraints for a single job, it returns the `BothDurationAndPhysicalQubitsProvided` error.
 
