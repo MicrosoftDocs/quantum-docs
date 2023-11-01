@@ -21,7 +21,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 ### QDK version 0.28.302812
 
-- QDK version 0.28.302812 is the latest release of the QDK.
+- QDK version 0.28.302812 is the latest version of the QDK.
 - You can now generate resource estimation profiles to learn how operations in your quantum program contribute to the overall cost; learn how to use in the [Azure Quantum documentation](xref:microsoft.quantum.work-with-resource-estimator#use-profiling-to-analyze-the-structure-of-your-program).
 - You can now call `result.json` to get the JSON representation of a resource estimation result.
 - Updated IonQ cost estimation function for aria-1 to use minimum job pricing of $97.50 (this assumes that error mitigation is enabled by default). Learn more about [IonQ pricing](xref:microsoft.quantum.providers-pricing#ionq) or how to enable/disable [error mitigation](xref:microsoft.quantum.providers.ionq#error-mitigation).
