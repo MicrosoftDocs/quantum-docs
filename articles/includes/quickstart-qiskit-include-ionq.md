@@ -21,7 +21,7 @@ from azure.quantum.qiskit import AzureQuantumProvider
 
 ## Connect to the Azure Quantum service
 
-To connect to the Azure Quantum service, your program will need the resource ID and the
+To connect to the Azure Quantum service, your need the resource ID and the
 location of your Azure Quantum workspace. Log in to your Azure account,
 <https://portal.azure.com>, navigate to your Azure Quantum workspace, and
 copy the values from the header.
@@ -108,14 +108,14 @@ To get a result back quickly, use `provider.get_backend` to create a
 simulator_backend = provider.get_backend("ionq.simulator")
 ```
 
-IonQ backends support gates from a defined [gateset](https://docs.ionq.com/#section/Supported-Gates), which are compiled to run optimally on the hardware. If your circuit contains gates that are not in this list, you'll need to transpile into the supported gateset using the `transpile` function provided by Qiskit:
+IonQ backends support gates from a defined [gateset](https://docs.ionq.com/#section/Supported-Gates), which are compiled to run optimally on the hardware. If your circuit contains gates that aren't in this list, you need to transpile into the supported gateset using the `transpile` function provided by Qiskit:
 
 ```python
 from qiskit import transpile
 circuit = transpile(circuit, simulator_backend)
 ```
 
-This will return a new circuit object where gates are decomposed into gates that are supported by the specified backend.
+The transpile function returns a new circuit object where gates are decomposed into gates that are supported on the specified backend.
 
 You can now run the program via the Azure Quantum service and get the
 result. The following cell submits a job that runs the circuit with
@@ -132,8 +132,7 @@ Job id 00000000-0000-0000-0000-000000000000
 ```
 
 To monitor job progress, you can use the Qiskit `job_monitor` imported
-earlier to keep track of the Job\'s status. This call will
-block until the job completes:
+earlier to keep track of the job\'s status. This call blocks until the job completes:
 
 ```python
 job_monitor(job)
@@ -188,7 +187,7 @@ plot_histogram(counts)
 
 ## Estimate job cost
 
-Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
+Before running a job on the QPU, you can estimate how much it costs to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
 
 ```python
 backend = provider.get_backend("ionq.qpu")

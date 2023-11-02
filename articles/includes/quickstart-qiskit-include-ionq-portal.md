@@ -21,7 +21,7 @@ simulator_backend = provider.get_backend("ionq.simulator")
 
 ## Run on the IonQ simulator 
 
-To run your circuit on the simulator, add the following code which uses the `run` method of the target to submit your job, and then monitors the job status. 
+To run your circuit on the simulator, add the following code. This example use the `run` method of the target to submit your job, and then monitors the job status. 
 
 ```python
 # Submit the circuit to run on Azure Quantum
@@ -42,7 +42,7 @@ Job status: job is actively running
 Job status: job has successfully run
 ```
 
-When the job has successfully run, get the job results and display them:
+When the job successfully runs, get the job results and display them:
 
 ```python
 # Get the job results:
@@ -75,7 +75,7 @@ plot_histogram(counts)
 
 ## Estimate job cost
 
-Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you can estimate how much it will cost to run. 
+Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you can estimate how much it costs to run. 
 
 First, get the list of available providers again:
 
@@ -121,7 +121,7 @@ For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.
 
 ## Run on IonQ QPU
 
-After running successfully on the IonQ simulator and estimating the QPU cost, it's time to run your circuit on the hardware. 
+After you run your job successfully on the IonQ simulator and estimate the QPU cost, it's time to run your circuit on the hardware. 
 
 > [!NOTE] 
 > The time required to run a circuit on the QPU varies depending on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
@@ -143,7 +143,7 @@ Job id 54e8c740-98d9-11ec-b382-00155d957f5d
 Job Status: job has successfully run
 ```
 
-When the job has successfully run, get the job results as before and display them in a chart:
+When the job finishes, get the job results as before and display them in a chart:
 
 ```python
 result = job.result()
