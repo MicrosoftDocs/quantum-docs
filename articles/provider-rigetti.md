@@ -2,7 +2,7 @@
 author: kalzoo
 ms.author: brbenefield
 description: This document provides the technical details of the Rigetti provider
-ms.date: 03/02/2023
+ms.date: 11/02/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: conceptual
@@ -27,7 +27,6 @@ The Rigetti provider makes the following targets available:
 |Target name|Target ID|Number of qubits|Description|
 |---|---|---|---|
 |[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil, Q\#, and Qiskit programs. Free of cost.|
-|[Aspen-M-2](#aspen-m-2) |rigetti.qpu.aspen-m-2 |80 qubits| Rigetti's multi-chip quantum processor. |
 |[Aspen-M-3](#aspen-m-3) |rigetti.qpu.aspen-m-3 |80 qubits| Rigetti's multi-chip quantum processor. |
 
 > [!NOTE]
@@ -49,15 +48,6 @@ The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.h
 ## Quantum computers
 
 All of Rigetti's publicly available [QPUs](https://qcs.rigetti.com/qpus) are available through Azure Quantum. This list is subject to change without advance notice.
-
-### Aspen-M-2
-
-A multi-chip 80-qubit processor.
-
-- Job Type: `Quantum Program`
-- Data Formats: `rigetti.quil.v1`, `rigetti.qir.v1`
-- Target ID: `rigetti.qpu.aspen-m-2`
-- Target Execution Profile: [:::no-loc text="No Control Flow":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 
 ### Aspen-M-3
 
@@ -115,7 +105,7 @@ from pyquil_for_azure_quantum import get_qpu, get_qvm
 
 # Note that some environment variables must be set to authenticate with Azure Quantum
 qc = get_qvm()  # For simulation
-# qc = get_qpu("Aspen-M-2")  or qc = get_qpu("Aspen-M-3") for submitting to a QPU
+# qc = get_qpu("Aspen-M-3") for submitting to a QPU
 
 program = Program(
     Declare("ro", "BIT", 2),

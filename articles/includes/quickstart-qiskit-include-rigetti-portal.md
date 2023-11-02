@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 02/13/2023
+ms.date: 11/02/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -21,7 +21,7 @@ simulator_backend = provider.get_backend("rigetti.sim.qvm")
 
 ## Run on the Rigetti simulator 
 
-To run your circuit on the simulator, add the following code which uses the `run` method of the target to submit your job, and then monitors the job status. 
+To run your circuit on the simulator, add the following code. This example uses the `run` method of the target to submit your job, and then monitors the job status. 
 
 ```python
 # Submit the circuit to run on Azure Quantum
@@ -42,7 +42,7 @@ Job status: job is actively running
 Job status: job has successfully run
 ```
 
-When the job has successfully run, get the job results and display them:
+When the job successfully runs, get the job results and display them:
 
 ```python
 # Get the job results:
@@ -74,7 +74,7 @@ plot_histogram(counts)
 
 ## Run on Rigetti QPU
 
-After running successfully on the Rigetti simulator, it's time to run your circuit on the hardware. 
+After you run your circuit successfully on the Rigetti simulator, it's time to run your circuit on the hardware. 
 
 > [!NOTE] 
 > The time required to run a circuit on the QPU varies depending on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
@@ -100,7 +100,6 @@ This workspace's targets:
 - quantinuum.sim.h1-1e
 - quantinuum.sim.h1-2e
 - rigetti.sim.qvm
-- rigetti.qpu.aspen-m-2
 - rigetti.qpu.aspen-m-3
 ```
 

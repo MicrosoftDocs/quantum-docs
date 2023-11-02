@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 11/16/2021
+ms.date: 11/02/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.custom: devx-track-azurecli
@@ -144,7 +144,6 @@ Next, prepare your environment to run the program against the workspace you crea
    quantinuum    quantinuum.qpu.h1                                    Unavailable             0
    rigetti       rigetti.sim.qvm                                      Available               5
    rigetti       rigetti.qpu.aspen-11                                 Unavailable             0
-   rigetti       rigetti.qpu.aspen-m-2                                Available               5
    rigetti       rigetti.qpu.aspen-m-3                                Available               5
    Microsoft     microsoft.paralleltempering-parameterfree.cpu        Available               0
    Microsoft     microsoft.paralleltempering.cpu                      Available               0

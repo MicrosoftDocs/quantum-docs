@@ -103,7 +103,6 @@ You will also find a full reference for all commands and features available thro
     quantinuum    quantinuum.sim.h1-2e                                 Available               74
     rigetti       rigetti.sim.qvm                                      Available               5
     rigetti       rigetti.qpu.aspen-11                                 Unavailable             0
-    rigetti       rigetti.qpu.aspen-m-2                                Available               5
     rigetti       rigetti.qpu.aspen-m-3                                Available               5
     Microsoft     microsoft.paralleltempering-parameterfree.cpu        Available               0
     Microsoft     microsoft.paralleltempering.cpu                      Available               0

@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 02/13/2023
+ms.date: 11/02/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -69,7 +69,6 @@ This workspace's targets:
 - quantinuum.sim.h1-2e
 - rigetti.sim.qvm
 - rigetti.qpu.aspen-11
-- rigetti.qpu.aspen-m-2
 - rigetti.qpu.aspen-m-3
 ```
 
