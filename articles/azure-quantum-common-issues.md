@@ -21,16 +21,20 @@ When working with the Azure Quantum service, you may run into these common issue
 
 If the target where you want to run your job is missing from the available target list, you likely need to update to the latest version of the [Quantum Development Kit (Visual Studio 2022)](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or [Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode). For more information, see [Update the QDK](xref:microsoft.quantum.update-qdk).
 
+> [!NOTE]
+> The deprecation of the Toshiba optimization target is effective as of **November 6, 2023**. After November 6, only previous Toshiba customers will be able to continue using Toshiba until full deprecation.
+
 ### Issue: Local Resources Estimator is missing
 
 The QDK ResourcesEstimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace is removed from March 2023. When running a program that uses the QDK ResourcesEstimator class, you encounter the following error message: `Error CS0246: The type or namespace name 'ResourcesEstimator' could not be found (are you missing a using directive or an assembly reference?)`.
 
-Other possible error messages might happen when running local ResourcesEstimator. If you try to use command line option to call the ResourcesEstimator class, you get: 
+Other possible error messages might happen when running local ResourcesEstimator. If you try to use command line option to call the ResourcesEstimator class, you get:
 
 ```
 > -s ResourcesEstimator
 The simulator 'ResourcesEstimator' could not be found.
 ```
+
 If you try to use the `%estimate` magic command from Jupyter notebooks, you encounter the following error messages: `UsageError: Line magic function `%estimate` not found.`, or `No such magic command %estimate.` for Q# kernel.
 
 To compute physical and logical resource estimation and runtime, we recommend using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) tool instead.
