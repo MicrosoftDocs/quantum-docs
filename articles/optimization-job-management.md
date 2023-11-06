@@ -45,7 +45,7 @@ print(results)
 ```
 
 ```output
-{'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1}, 'cost': -17.0}]}
+{"01011": 52, "00111": 48}
 ```
 
 ## Job details

@@ -75,6 +75,7 @@ If you want to go the extra mile, the following publications go deeper into more
 + Farhi, E., Goldstone, J., Gutmann, S., & Sipser, M. (2000). Quantum computation by adiabatic evolution. arXiv preprint quant-ph/0001106.
 
 ### Approaches for synthesizing circuits out of H, T and CNOT gates
+
 + Kliuchnikov, V., Maslov, D., & Mosca, M. (2013). Asymptotically optimal approximation of single qubit unitaries by Cliﬀord and T circuits using a constant number of ancillary qubits. Physical Review Letters, 110(19), 190502.
 + Ross, N. J., & Selinger, P. (2014). Optimal ancilla-free Cliﬀord+ T approximation of z-rotations. arXiv preprint arXiv:1403.2975.
 + Kliuchnikov, V. (2013). Synthesis of unitaries with Cliﬀord+ T circuits. arXiv preprint arXiv:1306.3200.
@@ -101,9 +102,3 @@ If you want to go the extra mile, the following publications go deeper into more
 + Reiher, M., Wiebe, N., Svore, K. M., Wecker, D., & Troyer, M. (2017). Elucidating reaction mechanisms on quantum computers. [Proceedings of the National Academy of Sciences, 201619152](http://doi.org/10.1073/pnas.1619152114).
 + Wiebe, N., Berry, D. W., Høyer, P., & Sanders, B. C. (2011). Simulating quantum dynamics on a quantum computer. [Journal of Physics A: Mathematical and Theoretical, 44(44), 445308](http://doi.org/10.1088/1751-8113/44/44/445308).
 + Peruzzo, A., McClean, J., Shadbolt, P., Yung, M. H., Zhou, X. Q., Love, P. J., ... & Obrien, J. L. (2014). A variational eigenvalue solver on a photonic quantum processor. [Nature communications, 5](http://doi.org/10.1038/ncomms5213).
-
-### Procedures for quantum optimization
-
-+ Durr, C., & Høyer, P. (1996). A quantum algorithm for ﬁnding the minimum. arXiv preprint quantph/9607014.
-+ Farhi, E., Goldstone, J., & Gutmann, S. (2014). A quantum approximate optimization algorithm. arXiv preprint arXiv:1411.4028.
-+ Brandao, F. G., Svore, K. M. (2017). Quantum Speed-ups for Semideﬁnite Programming. In Annual Symposium on Foundations of Computer Science (FOCS 2017).
