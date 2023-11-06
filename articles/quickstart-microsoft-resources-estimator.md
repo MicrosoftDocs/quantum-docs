@@ -2,11 +2,11 @@
 author: SoniaLopezBravo
 description: Learn how to submit a Q# program to the Azure Quantum Resource Estimator
 ms.author: sonialopez
-ms.date: 11/22/2022
+ms.date: 08/07/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: quickstart
-no-loc: ['Python', '$$v']
+no-loc: ['Python', '$$v', Quantum Intermediate Representation, target, targets]
 title: 'Quickstart: Submit a quantum program to the Resource Estimator'
 uid: microsoft.quantum.quickstarts.computing.resources-estimator
 --- 
@@ -16,6 +16,8 @@ uid: microsoft.quantum.quickstarts.computing.resources-estimator
 Learn how to use the Azure Quantum service to submit quantum programs to the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator). This example uses a Jupyter Notebook in Azure Quantum and the built-in *azure-quantum* Python package - no installation or configuration is required. For more information about using Jupyter Notebooks with Azure Quantum, see [Run Jupyter Notebooks in an Azure Quantum workspace](xref:microsoft.quantum.how-to.notebooks).
 
 In this example, you'll run a sample notebook that estimates the costs of a multiplier on a fault-tolerant quantum computer written in Q# and Python.
+
+[!INCLUDE [Modern QDK RE banner](includes/new-qdk-resource-estimator-support.md)]
 
 ## Prerequisites
 
@@ -56,19 +58,15 @@ If you are using an *existing* Azure Quantum workspace:
 
 The *Estimates with Q# input* program runs a multiplier and analyzes the physical resource estimates targeted on a fault-tolerant quantum computer.
 
-- **1st and 2nd cell**: Preloads `qsharp` package and your subscription information to connect to the Azure Quantum service. 
-- **3rd cell**: Selects the Resource Estimator* as the target using the `microsoft.estimator` target ID and loads some required packages.
-- **4th cell**: The Q# code that defines the quantum algorithm. It creates a multiplier using the [MultiplyI](/qsharp/api/qsharp/microsoft.quantum.arithmetic.multiplyi) operation. You can configure the size of the multiplier with a `bitwidth` parameter. The operation will have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`.
+- **1st cell**: Preloads `qsharp` package and your subscription information to connect to the Azure Quantum service. 
+- **2nd cell**: Selects the *Resource Estimator* as the target using the `microsoft.estimator` target ID and loads some required packages.
+- **4th cell**: The Q# code that defines the quantum algorithm. It creates a multiplier using the [MultiplyI](/qsharp/api/qsharp/microsoft.quantum.arithmetic.multiplyi) operation. You can configure the size of the multiplier by passing an operation argument `bitwidth` to the operation. The operation will have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`.
 
     > [!NOTE]
     > The *%%qsharp* magic command allows you to enter Q# code directly into the notebook when using the **Python 3 (ipykernel)**. For more information, see [%%qsharp magic command](xref:microsoft.quantum.how-to.python-local#the-qsharp-magic-command).
 
-- **5th and 6th cells**: Submits the quantum algorithm to the Resource Estimator using the `qsharp.azure.execute` function. You can create a new instance for a specific bit width, for example, `8` in this example.
-
-    > [!IMPORTANT]
-    > To submit an Q# operation to the Resource Estimator, the operation can't take any input arguments and must have a `Unit` return value. 
-   
-- **8th cell**: Retrieves the results of the resource estimation job and shows a table with overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. For example, if you collapse the **Logical qubit parameters** group, you can more easily see that the error correction code distance is 13. 
+- **5th cell**: Submits the quantum algorithm to the Resource Estimator using the `qsharp.azure.execute` function. The function calls the Q# operation `EstimateMultiplication` and passes the operation argument `bitwidth=8`. 
+- **6th cell**: Retrieves the results of the resource estimation job and shows a table with overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. For example, if you collapse the **Logical qubit parameters** group, you can more easily see that the error correction code distance is 13. 
 
     |Logical qubit parameter| Value |
     |----|---|
@@ -99,21 +97,25 @@ The *Estimates with Q# input* program runs a multiplier and analyzes the physica
     |Two-qubit gate time                       |    50 ns |
     |Two-qubit error rate                        |  0.001 |
 
-For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) for the Resource Estimator.
+For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator-output.data) for the Resource Estimator.
 
-- **From 9th cell to the end**: Changes the input parameters of the program and estimates the same quantum algorithm.
 
-### Input parameters
+- **7th and 8th cells**: Displays the distribution of physical qubits used for the algorithm and the [T factories](xref:microsoft.quantum.concepts.tfactories). You can visualize the space and the time requirements of the algorithm. For more information, see [how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works#physical-resource-estimation).
+- **From 10th cell to the end**: Changes the target parameters of the program and estimates the same quantum algorithm.
 
-When submitting a resource estimate request for your program, you can specify some optional parameters. There are three top-level input parameters that can be customized: 
+### Target parameters
+
+When submitting a resource estimate request for your program, you can specify some target parameters.
 
 * `errorBudget` - the overall allowed error budget
 * `qecScheme` - the quantum error correction (QEC) scheme
 * `qubitParams` - the physical qubit parameters 
+* `constraints` - the constraints on the component-level
+* `distillationUnitSpecifications` - the specifications for T factories distillation algorithms
 
-For more information, see [Input parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters) for the Resource Estimator.
+For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the Resource Estimator.
 
- In the **9th cell** of the notebook, you can see the defaults and access all the values that can be passed to a job execution.
+ In the **10th cell** of the notebook, you can see the defaults and access all the values that can be passed to a job execution.
 
 ```python
 result['jobParams']
@@ -138,10 +140,11 @@ result['jobParams']
   'twoQubitGateTime': '50 ns'}}
  ```
     
-The Resource Estimator offers [six pre-defined qubit parameters](xref:microsoft.quantum.overview.resources-estimator#physical-qubit-parameters), four of which have gate-based instruction sets and two that have a Majorana instruction set. In the **10th cell**, you can estimate the cost for the same algorithm using the Majorana-based qubit parameter, `qubitParams`, "qubit_maj_ns_e6".
+The Resource Estimator offers [six pre-defined qubit parameters](xref:microsoft.quantum.overview.resources-estimator#physical-qubit-parameters), four of which have gate-based instruction sets and two that have a Majorana instruction set. In the **11th cell**, you can estimate the cost for the same algorithm using the Majorana-based qubit parameter, `qubitParams`, "qubit_maj_ns_e6".
 
 ```python
-result = qsharp.azure.execute(EstimateMultiplication8,
+result = qsharp.azure.execute(EstimateMultiplication,
+            bitwidth=8,
             jobParams={
                 "qubitParams": {
                     "name": "qubit_maj_ns_e6"
@@ -149,7 +152,7 @@ result = qsharp.azure.execute(EstimateMultiplication8,
 result
 ```
 
-The pre-defined qubit parameters can also be customized by specifying the name and then updating the values of other fields. For more information, see [Custom pre-defined qubit parameters](xref:microsoft.quantum.overview.resources-estimator#custom-pre-defined-qubit-parameters). 
+The pre-defined qubit parameters can also be customized by specifying the name and then updating the values of other fields. For more information, see [Custom pre-defined qubit parameters](xref:microsoft.quantum.overview.resources-estimator#customize-pre-defined-qubit-parameters). 
 
 Run the following cells of the notebook and learn how to customize the quantum error correction code (QED), `qecScheme`, and the error budget, `errorBudget`.
 
@@ -161,16 +164,16 @@ You'll find more sample notebooks in the **Resource estimation** tab of the samp
 
 - **Advanced analysis of estimates**: This sample uses the implementations from the *Estimates with Q#* notebook to compute advance analysis of the results such as computing multiple resource estimates, plot and compare their results. 
 - **Estimates with Qiskit input**: This sample estimates the resources of a quantum circuit for a multiplier written in Qiskit that uses the Quantum Fourier Transform to implement arithmetic.
-- **Estimates with tools producing QIR**: This sample shows how to generate and submit a quantum intermediate representation (QIR) program to the Resource Estimator using the QIR generator [PyQIR](https://github.com/qir-alliance/pyqir). You can also find this sample in the [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir).
+- **Estimates with tools producing QIR**: This sample shows how to generate and submit a Quantum Intermediate Representation (QIR) program to the Resource Estimator using the QIR generator [PyQIR](https://github.com/qir-alliance/pyqir). You can also find this sample in the [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir).
 
 The following sample notebooks assess requirements for scaling quantum computers in real-world scenarios. You can learn about the context of these samples in the paper [Accessing requirements for scaling quantum computers and their applications](https://aka.ms/AQ/RE/Paper).
 
 - **Quantum dynamics**: This sample estimates the resources needed to simulate the quantum spin in a quantum magnet. 
-- **Quantum chemistry**: This sample estimates the resources needed to analyze the activation energy of a ruthenium-based catalyst for carbon fixation, which could have implications for reversing the effects of global warming.
+- **Quantum chemistry**: This sample estimates the resources needed to calculate the energy of a user provided Hamiltonian to chemical accuracy of 1 mHa, to using the so-called double-factorized qubitization algorithm described in [Phys. Rev. Research 3, 033055 (2021)](https://doi.org/10.1103/PhysRevResearch.3.033055). The Hamiltonian is provided in terms of an FCIDUMP file that is accessible via an HTTPS URI.
 - **Factoring**: This sample estimates the resources needed to factorize a 2048-bit number, which could have implications in quantum cryptography.
 
 > [!NOTE]
-> If you have questions or run into any issue using Azure Quantum, bookmark [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday 8∶30 AM Pacific Time zone (PT).
+> If you have questions or run into any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Next steps
 

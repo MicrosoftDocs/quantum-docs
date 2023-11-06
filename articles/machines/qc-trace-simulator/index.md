@@ -2,24 +2,23 @@
 author: SoniaLopezBravo
 description: Learn how to use the Microsoft quantum computer trace simulator to debug classical code and to estimate resource requirements of a Q# program.
 ms.author: sonialopez
-ms.date: 05/11/2022
+ms.date: 02/15/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Quantum trace simulator
 uid: microsoft.quantum.machines.overview.qc-trace-simulator.intro
 ---
 
 # Microsoft Quantum Development Kit (QDK) quantum trace simulator
 
+[!INCLUDE [Modern QDK banner](~/includes/new-qdk-support.md)]
+
 The QDK <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> class runs a quantum program without actually simulating the state of a quantum computer. For this reason, the quantum trace simulator is able to run quantum programs that use thousands of qubits.  It is useful for two main purposes: 
 
 * Debugging classical code that is part of a quantum program. 
 * Estimating the resources required to run a given instance of a quantum program on a quantum computer. 
-
-> [!WARNING]
-> The QDK resources estimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace has been deprecated. Use the <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> to run pre-layout resource estimation.
 
 ## Invoking the quantum trace simulator
 

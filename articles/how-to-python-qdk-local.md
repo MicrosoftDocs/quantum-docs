@@ -2,16 +2,18 @@
 author: bradben
 description: Learn how to develop and run Python host programs that call Q# operations on a simulator.
 ms.author: brbenefield
-ms.date: 09/22/2022
+ms.date: 06/08/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Develop with Q# and Python
 uid: microsoft.quantum.how-to.python-local
 ---
 
 # Develop with Q# and Python
+
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
 
 Learn how you can run a Q# program using a Python host program or Jupyter Notebook, which invokes the Q# code and further processes return results. This topic uses [quantum simulators](xref:microsoft.quantum.machines.overview) from Microsoft Quantum Development Kit (QDK) to test and run quantum programs locally.
 
@@ -234,6 +236,7 @@ The `PrepareBellPair` operation is defined in the `OperationSamples.qs` file, bu
 ```py
 %%qsharp
 open Microsoft.Quantum.Samples;
+open Microsoft.Quantum.Measurement;
 
 operation PrepareAndMeasureBellPair() : (Result, Result) {
     use left = Qubit();

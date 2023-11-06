@@ -1,16 +1,16 @@
 ### YamlMime:Landing
 
 title: Azure Quantum documentation (preview)
-summary: Learn about quantum computing and quantum-inspired optimization with the Azure Quantum service. Use Python and Q#, a language for quantum programming, to create and submit quantum programs in the Azure portal, or set up your own local development environment with the Quantum Development Kit (QDK) to write quantum programs. 
+summary: Learn about quantum computing with the Azure Quantum service. Use Python and Q#, a language for quantum programming, to create and submit quantum programs in the Azure portal, or set up your own local development environment with the Quantum Development Kit (QDK) to write quantum programs. 
 metadata:
   title: Azure Quantum documentation, QDK & Q# API reference
-  description: Learn about quantum computing and quantum-inspired optimization with the Azure Quantum service. Use Python and Q#, a language for quantum programming, to write your first quantum program. 
+  description: Learn about quantum computing with the Azure Quantum service. Use Python and Q#, a language for quantum programming, to write your first quantum program. 
   ms.service: azure-quantum
   ms.topic: landing-page
   ms.collection: collection
   author: bradben
   ms.author: brbenefield
-  ms.date: 07/15/2022
+  ms.date: 06/08/2023
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -26,6 +26,8 @@ landingContent:
             url: overview-azure-quantum.md
       - linkListType: get-started
         links:
+          - text: Explore Azure Quantum and the Copilot in Azure Quantum
+            url: get-started-azure-quantum.md
           - text: Create an Azure Quantum workspace
             url: how-to-create-workspace.md
           - text: Run Q# code in an Azure Quantum notebook
@@ -56,6 +58,8 @@ landingContent:
         links:
           - text: What is quantum computing?
             url: overview-understanding-quantum-computing.md
+          - text: Hybrid quantum computing
+            url: hybrid-computing-overview.md            
       - linkListType: concept
         links:
           - text: Quantum computing history and background
@@ -66,8 +70,6 @@ landingContent:
             url: overview-algebra-for-quantum-computing.md
           - text: Dirac notation
             url: concepts-dirac-notation.md
-          - text: What is optimization?
-            url: optimization-overview-introduction.md
       
   # Learn
   - title: Learn by building

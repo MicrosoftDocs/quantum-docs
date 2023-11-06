@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Reference for azure.quantum.optimization.Term
 ms.author: sonialopez
-ms.date: 03/02/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.term
 ---
 
 # Quantum optimization term
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 ## Term
 

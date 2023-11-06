@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn about eigenvectors, eigenvalues, and matrix exponentials, the fundamental tools used to describe and simulate quantum algorithms.
 ms.author: sonialopez
-ms.date: 02/01/2021
+ms.date: 06/09/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -13,7 +13,7 @@ uid: microsoft.quantum.concepts.matrix-advanced
 
 # Advanced matrix concepts #
 
-This article explores the concepts of [*eigenvalues, eigenvectors*,](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) and [*exponentials*](https://en.wikipedia.org/wiki/Matrix_exponential). These concepts form a fundamental set of matrix tools that are used to describe and implement quantum algorithms.
+This article explores the concepts of [*eigenvalues, eigenvectors*,](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) and [*exponentials*](https://en.wikipedia.org/wiki/Matrix_exponential). These concepts form a fundamental set of matrix tools that are used to describe and implement quantum algorithms. For the basics of vectors and matrices as they apply to quantum computing, see [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra) and [Vectors and matrices](xref:microsoft.quantum.concepts.vectors). 
 
 ## Eigenvalues and eigenvectors ##
 
@@ -39,12 +39,10 @@ are eigenvectors of this matrix with eigenvalues  $d_1$, $d_2$, and $d_3$, respe
 
 Note in the above example that the eigenvectors of $D$ form a basis for $3$-dimensional vectors. A basis is a set of vectors such that any vector can be written as a linear combination of them. More explicitly, $v_1$, $v_2$, and $v_3$ form a basis if any vector $v$ can be written as $v=a_1 v_1 + a_2 v_2 + a_3 v_3$ for some numbers $a_1$, $a_2$, and $a_3$.
 
-In quantum computing, there are essentially only two matrices that you encounter: Hermitian and unitary. Recall that a Hermitian matrix (also called self-adjoint) is a complex square matrix equal to its own complex conjugate transpose, while a unitary matrix is a complex square matrix whose inverse is equal to its adjoint or complex conjugate transpose.
-For Hermitian and unitary matrices, there's a general result known as the [*spectral theorem*](https://en.wikipedia.org/wiki/Spectral_theorem), which asserts the following: for any Hermitian or unitary matrix $M$, there exists a unitary $U$ such that $M=U^\dagger D U$ for some diagonal matrix $D$. Furthermore, the diagonal entries of $D$ will be the eigenvalues of $M$.
+In quantum computing, there are essentially only two matrices that you encounter: Hermitian and unitary. Recall that a Hermitian matrix (also called self-adjoint) is a complex square matrix equal to its own complex conjugate transpose, while a unitary matrix is a complex square matrix whose *inverse* equals its complex conjugate transpose.
 
-Using this theorem to compute the eigenvalues and eigenvectors of a diagonal matrix $D$, if $v$ is an eigenvector of $D$ with eigenvalue $c$, for example, $Dv = cv$, then $U^\dagger v$ will be an eigenvector of $M$ with eigenvalue $c$. This is because
-
-$$M(U^\dagger v) = U^\dagger D U  (U^\dagger v) =U^\dagger D (U  U^\dagger) v = U^\dagger D v = c U^\dagger v.$$
+There's a general result known as the [*spectral theorem*](https://en.wikipedia.org/wiki/Spectral_theorem), which implies the following: for any Hermitian or unitary matrix $M$, there exists a unitary $U$ such that $M=U^\dagger D U$ for some diagonal matrix $D$. Furthermore, the diagonal entries of $D$ will be the eigenvalues of $M$, and columns of $U^\dagger$ will be the corresponding eigenvectors.
+This factorization is known as [*spectral decomposition* or *eigendecomposition*](https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix).
 
 ## Matrix exponentials
 
@@ -65,8 +63,18 @@ $$
 
 In other words, if you transform to the eigenbasis of the matrix $A$, then computing the matrix exponential is equivalent to computing the ordinary exponential of the eigenvalues of the matrix.  As many operations in quantum computing involve performing matrix exponentials, this trick of transforming into the eigenbasis of a matrix to simplify performing the operator exponential appears frequently. It's the basis behind many quantum algorithms such as Trotter–Suzuki-style quantum simulation methods discussed later in this guide.
 
-Another useful property is if $B$ is both unitary and Hermitian, that is, $B=B^{-1}=B^\dagger$ then $B^2=\boldone$. By applying this rule to the above expansion of the matrix exponential, and by grouping the $\boldone$ and the $B$ terms together, for any real value $x$, the identity
+Another useful property holds for [*involutory matrices*](https://en.wikipedia.org/wiki/Involutory_matrix).
+An involutory matrix $B$ is both unitary and Hermitian, that is, $B=B^{-1}=B^\dagger$. Then, an involutory matrix is a  square matrix equal to its own inverse, $B^2=\boldone$.
+By applying this property to the above expansion of the matrix exponential, grouping the $\boldone$ and the $B$ terms together, and applying [Maclaurin's theorem to the cosine and sine functions](https://en.wikibooks.org/wiki/Trigonometry/Power_Series_for_Cosine_and_Sine), the identity
 
 $$e^{iBx}=\boldone \cos(x)+ iB\sin(x)$$
 
-holds. This trick is especially useful because it allows you to reason about the actions that matrix exponentials have, even if the dimension of $B$ is exponentially large, for the special case when $B$ is both unitary and Hermitian.
+holds for any real value $x$. This trick is especially useful because it allows you to reason about the actions that matrix exponentials have, even if the dimension of $B$ is exponentially large, for the special case when $B$ is involutory.
+
+## Next steps
+
+- [The qubit](xref:microsoft.quantum.concepts.qubit)
+- [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)
+- [Dirac notation](xref:microsoft.quantum.concepts.dirac)
+- [Pauli measurements](xref:microsoft.quantum.concepts.pauli)
+- [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)

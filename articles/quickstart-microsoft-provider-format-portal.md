@@ -6,13 +6,15 @@ ms.date: 03/08/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
-no-loc: ['Python', '$$v']
+no-loc: ['Python', '$$v', target, targets]
 title: 'Quickstart: Submit provider-formatted circuits with online notebooks'
 zone_pivot_groups: quantum-computing-platforms
 uid: microsoft.quantum.quickstarts.computing.provider.portal
 --- 
 
 # Quickstart: Submit a circuit with a provider-specific format using an Azure Quantum notebook.
+
+[!INCLUDE [Modern QDK portal banner](includes/new-qdk-portal-support.md)]
 
 Learn how to use the `azure-quantum` Python package to submit provider-specific formatted quantum circuits, (for example, [OpenQASM 2.0](https://github.com/Qiskit/openqasm/tree/OpenQASM2.x) or [IonQ JSON](https://docs.ionq.com/#tag/quantum_programs)), to an IonQ or Quantinuum quantum computing target via the Azure Quantum service. This example uses an Azure Quantum notebook and the built-in *azure-quantum* Python package - no installation or configuration is required. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
@@ -46,39 +48,6 @@ workspace = Workspace (
 > Unless otherwise noted, you should run each cell in order as you create it to avoid any compilation issues. 
 
 Click the triangular "play" icon to the left of the cell to run the code. 
-
-## Load the required imports
-
-First, you'll need to import an additional module. 
-
-Click **+ Code** to add a new cell, then add and run the following code:
-
-```python
-from azure.quantum.cirq import AzureQuantumService
-```
-
-## Connect to the Azure Quantum service
-
-Next, use an `AzureQuantumService` constructor to create a `service` object that connects to your Azure Quantum workspace.  Add a new cell, but don't run it yet, with the following code:
-
-```python
-service = AzureQuantumService(
-  resource_id="",
-  location=""
-)
-```
-
-Before running this cell, your program needs the resource ID and the
-location of your Azure Quantum workspace: 
-
-1. Click **Save** to save your notebook.
-1. Click **Overview** to view the workspace properties.
-1. Hover over the **Resource ID** field and click the **Copy to clipboard** icon. 
-1. Click **Notebooks** and open your OpenQASM notebook. 
-1. Paste the resource ID into the value for *resource_id*, and then add the location string from the first cell to *location*.
-1. Run the cell.
-
- :::image type="content" source="media/azure-quantum-resource-id.png" alt-text="Screenshot of the overview pane showing the details such as resource ID and location of you Azure Quantum workspace.":::
 
 ::: zone pivot="platform-ionq"
 

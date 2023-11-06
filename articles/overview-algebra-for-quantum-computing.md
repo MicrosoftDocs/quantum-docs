@@ -6,7 +6,7 @@ ms.date: 10/10/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: Linear algebra for quantum computing
 uid: microsoft.quantum.overview.algebra
 ---
@@ -20,7 +20,6 @@ Just like being familiar with the [basic concepts of quantum physics](xref:micro
 - [Jupyter notebook tutorial on linear algebra](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/LinearAlgebra)
 - [Jupyter notebook tutorial on complex arithmetic](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/ComplexArithmetic)
 - [Linear Algebra for Quantum Computation](https://cds.cern.ch/record/1522001/files/978-1-4614-6336-8_BookBackMatter.pdf)
-- [Fundamentals of Linear Algebra](https://www.math.ubc.ca/~carrell/NB.pdf)
 - [Quantum Computation Primer](https://www.codeproject.com/Articles/5155638/Quantum-Computation-Primer-Part-1#exploring-quantum-superposition)
 
 ## Vectors and matrices in quantum computing
@@ -29,7 +28,7 @@ A qubit can be in a state of 1 or 0 or a superposition of both. Using linear alg
 
 The elements of the matrix represent the probability of the qubit collapsing one way or the other, with $|a|^2$ being the probability of collapsing to zero, and $|b|^2$ being the probability of collapsing to one. The following matrices all represent valid quantum state vectors:
 
-$$\begin{bmatrix} 1 \\\\  0 \end{bmatrix}, \begin{bmatrix} 0 \\\\  1 \end{bmatrix}, \begin{bmatrix} \frac{1}{\sqrt{2}} \\\\  \frac{1}{\sqrt{2}} \end{bmatrix}, \begin{bmatrix} \frac{1}{\sqrt{2}} \\\\  \frac{-1}{\sqrt{2}} \end{bmatrix}, \text{ and }\begin{bmatrix} \frac{1}{\sqrt{2}} \\\\  \frac{i}{\sqrt{2}} \end{bmatrix}.$$
+$$\begin{bmatrix} 1 \\\\  0 \end{bmatrix}, \begin{bmatrix} 0 \\\\  1 \end{bmatrix}, \begin{bmatrix} \frac{1}{\sqrt{2}} \\\\  \frac{1}{\sqrt{2}} \end{bmatrix}, \begin{bmatrix} \frac{1}{\sqrt{2}} \\\\  \frac{-1}{\sqrt{2}} \end{bmatrix}, \text{ and }\begin{bmatrix} \frac{1}{\sqrt{2}} \\\\  \frac{-i}{\sqrt{2}} \end{bmatrix}.$$
 Quantum operations can also be represented by a matrix. When a quantum operation is applied to a qubit, the two matrices that represent them are multiplied and the resulting answer represents the new state of the qubit after the operation.  
 
 Here are two common quantum operations represented with matrix multiplication.
@@ -80,4 +79,8 @@ Linear algebra is the standard language for describing quantum computing and qua
 
 ## Next steps
 
-- [Install the QDK](xref:microsoft.quantum.install-qdk.overview)
+- [Vectors and matrices](xref:microsoft.quantum.concepts.vectors)
+- [Advanced matrix concepts](xref:microsoft.quantum.concepts.matrix-advanced)
+- [The qubit](xref:microsoft.quantum.concepts.qubit)
+- [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)
+- [Dirac notation](xref:microsoft.quantum.concepts.dirac)

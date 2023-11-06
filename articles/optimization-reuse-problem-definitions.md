@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides a basic guide to reusing a problem definition when solving problems in Azure Quantum using Python.
 ms.author: brbenefield
-ms.date: 10/25/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: how-to
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.reuse-problem-definitions
 ---
 
 # Reusing problem definitions
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 Sometimes it's more efficient to upload a problem definition once and find its solution using different solvers or different parameters. You can upload a problem definition using the `upload` method, which returns a URL, and then provide that URL to a solver using the `submit` or `optimize` methods:
 
@@ -35,6 +37,4 @@ problem = online_problem.download(workspace)
 ## Next steps
 
 - [Understand Solver results](xref:microsoft.quantum.optimization.understand-solver-results)
-- [Solve long-running problems](xref:microsoft.quantum.optimization.solve-long-running-problems)
-- [Solver overview](xref:microsoft.quantum.reference.qio-target-list)
 - [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)

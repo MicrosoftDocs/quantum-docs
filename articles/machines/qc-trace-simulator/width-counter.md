@@ -6,12 +6,14 @@ ms.date: 05/11/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: 'Trace simulator: Width counter' 
 uid: microsoft.quantum.machines.overview.qc-trace-simulator.width-counter
 ---
 
 # Quantum trace simulator: width counter
+
+[!INCLUDE [Modern QDK banner](~/includes/new-qdk-support.md)]
 
 The width counter is a part of the Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro). You can use it to count the number of qubits allocated and borrowed by each operation in a Q# program. Some primitive operations can allocate extra qubits, for example, multiply controlled `X` operations or controlled `T` operations.
 

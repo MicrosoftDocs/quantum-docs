@@ -2,11 +2,11 @@
 author: SoniaLopezBravo
 description: Introduction to resources estimation in quantum computing and the Azure Quantum Resource Estimator
 ms.author: sonialopez
-ms.date: 11/18/2022
+ms.date: 10/11/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: overview
-no-loc: ['Python', '$$v']
+no-loc: ['Python', '$$v', Quantum Intermediate Representation, target, targets]
 title: Introduction to resource estimation
 uid: microsoft.quantum.overview.intro-resource-estimator
 --- 
@@ -29,9 +29,10 @@ Designed specifically for post-NISQ, fault-tolerant quantum systems, the Resourc
 
 The Resource Estimator is built on community supported Quantum Intermediate Representation (QIR), so it's extensible and portable. Because it takes a QIR program as input, it supports any language that translates to QIR. For example, you can use the Resource Estimator with popular quantum SDKs and languages such as Q# and Qiskit. 
 
-:::image type="content" source="media/Resource-Estimation-component-overview.png" alt-text="Diagram showing components provided by Resource Estimator and corresponding customizations. Provided aspects are Application Input, Compilation Tools, QIR, QEC models, Qubit models, and Analysis. Customer can bring Application Program, Compilation or Optimization Tools, QIR Code, QEC models, Qubit parameters, and Analysis and Visualization Tools":::
+:::image type="content" source="media/Resource-Estimation-component-overview.png" alt-text="Diagram showing components provided by Resource Estimator and corresponding customizations. Provided aspects are Application Input, Compilation Tools, QIR, QEC models, Qubit models, and Analysis. Customer can bring Application Program, Compilation or Optimization Tools, QIR Code, QEC models, Qubit parameters, and Analysis and Visualization Tools.":::
 
-The Resource Estimator is **free of charge** and only requires an Azure account.
+> [!TIP]
+> The Resource Estimator is **free of charge** and only requires an Azure account.
 
 To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator) or explore [using the Resource Estimator with different SDKs and IDEs](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
@@ -47,7 +48,7 @@ The Resource Estimator has been used to analyze the required resources of three 
 
 ### Quantum dynamics
 
-One of the applications of quantum algorithms with scientific and commercial interest is the efficient simulation of quantum systems such as complex molecules, and chemical reactions, which often involve many-body quantum interactions. The simulation time of the dynamics of quantum systems scales exponentially with classical algorithms, but has a polynomial scaling for quantum algorithms. 
+One of the applications of quantum algorithms with scientific and commercial interest is the efficient simulation of quantum systems such as complex molecules, and chemical reactions, which often involve many-body quantum interactions. The simulation time of the dynamics of quantum systems scales exponentially with classical algorithms, but has a polynomial scaling for quantum algorithms.
 
 The earliest application of scientific interest may be simulating the dynamics of around one hundred quantum spins in a quantum magnet. Using the Resource Estimator, the Microsoft Quantum research team estimated the resources needed to simulate the quantum spin of a simple quantum magnet, the so-called two-dimensional transverse field Ising model.
 
@@ -55,16 +56,33 @@ You can find the sample of **quantum dynamics** in the [Resource estimation samp
 
 ### Quantum chemistry
 
-Another commercially relevant application of quantum computing might be quantum simulations of chemistry and materials science problems. A mechanism to develop quantum-accelerated catalytic reactions has applications such as fertilizer production and carbon fixation, among many other problems. 
+If we gain the ability to accurately simulate complex, correlated quantum mechanical systems, we could unlock breakthroughs in areas as diverse as carbon capture, food insecurity and designing better fuels and materials to enable a greener future.
 
-In the context of climate change and global warming , finding an efficient catalyst for carbon fixation has become a main issue. Carbon fixation is a natural process by which carbon dioxide is turned into valuable chemicals for storing energy. The most well-known example of carbon fixation is photosynthesis: conversion of carbon dioxide into glucose in plants.
+For example, in the context of climate change and global warming , finding an efficient catalyst for carbon fixation has become a main issue. Carbon fixation is a natural process by which carbon dioxide is turned into valuable chemicals for storing energy. The most well-known example of carbon fixation is photosynthesis: conversion of carbon dioxide into glucose in plants.
 
 The Microsoft Quantum research team developed a [new quantum algorithm to simulate catalytic processes](https://arxiv.org/abs/2007.14460). They focused on a well-known catalytic process, based on the transition metal ruthenium, to convert carbon dioxide into methanol. Using the Resource Estimator, they estimated the resources needed to analyze the activation energy of a ruthenium-based catalyst for carbon fixation.
 
-You can find the sample of **quantum chemistry** in the [Resource estimation sample notebooks](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation/estimation-chemistry.ipynb), or run it in the notebook gallery sample of your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). 
+You can find a sample of **quantum chemistry** in the tutorial [Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry), or run the sample in the notebook gallery sample of your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). This sample represents the first step in the quantum chemistry journey, allowing us to understand in more detail what computational resources would be required to simulate certain quantum mechanical systems.
 
 ### Factoring large numbers
 
-Because many of today’s classical cryptographic schemes are based on the difficulty of factoring large numbers, estimating the resources required to run Shor’s factoring algorithm is important for assessing the vulnerability of current cryptographic schemes. Assuming the fastest quantum hardware operations proposed to date, factoring a 2048-bit integer using Shor’s algorithm would require about 20 minutes on 25,000 perfect, noiseless qubits. However, qubits are noisy and must have error correction to enable long computations. In the paper [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629), the Microsoft Quantum research team estimated the resources needed to factorize a 2048-bit number using the Resource Estimator. 
+Because many of today’s classical cryptographic schemes are based on the difficulty of factoring large numbers, estimating the resources required to run Shor’s factoring algorithm is important for assessing the vulnerability of current cryptographic schemes. Assuming the fastest quantum hardware operations proposed to date, factoring a 2048-bit integer using Shor’s algorithm would require about 20 minutes on 25,000 perfect, noiseless qubits. However, qubits are noisy and must have error correction to enable long computations. In the paper [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629), the Microsoft Quantum research team estimated the resources needed to factorize a 2048-bit number using the Resource Estimator.
 
 You can find the sample of **factoring large numbers** in the [Resource estimation sample notebooks](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation/estimation-factoring.ipynb), or run it in the notebook gallery sample of your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). 
+
+## Resource estimation for quantum-safe planning
+
+The Resource Estimator can also be used to analyze the impact of quantum computing on classical cryptography. You can estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm..
+
+Go to [quantum.microsoft.com](https://quantum.microsoft.com/experience/quantum-cryptography) and check out the Azure Quantum Resource Estimator for cryptography.
+
+The Resource Estimator takes a set of four input parameters: a classical encryption algorithm, a key strength, a qubit type, and a qubit error rate. The results are displayed in a plot that shows the number of qubits and the runtime that a quantum computer with the selected architecture would need to break the encryption algorithm.
+
+1. Click on the **arrows** to switch between different selections of preset input parameters. See that the fields are populated for you.
+1. Click **Ask Copilot**  if you want to know more about the resource estimation data.
+1. Click **Download** to download the plot of the resource estimation job.
+1. You can also **customize the parameters** of the encryption algorithm. You need to select *at least* one option for each input parameter. You can select multiple combinations of parameters and compare their security against quantum computers.
+1. **Hover over** the points of the plot to see more information about the resource estimates.
+1. At any point, you can **ask Copilot a question** about cryptography, resource estimation, or quantum computing.
+
+    :::image type="content" source="media/quantum-cryptography-qcom.png" alt-text="Screenshot of the quantum cryptography experience in Azure Quantum website. The picture displays the input parameters that constitute the encryption algorithm and the resulting plot of the resource estimation job.":::

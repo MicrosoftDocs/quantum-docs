@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Reference for azure.quantum.optimization.Problem
 ms.author: sonialopez
-ms.date: 11/26/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
 ms.topic: reference
@@ -11,6 +11,8 @@ uid: microsoft.quantum.optimization.problem
 ---
 
 # Quantum optimization problem
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 ## Problem
 
@@ -54,39 +56,6 @@ coefficient = 0.13
 problem.add_term(c=coefficient, indices=[2,0])
 ```
 
-### Problem.add_slc_term
-
-Adds a single squared linear combination (SLC) term to
-the problem. It accepts a list of monomial terms that make up the squared linear combination term and a
-lead coefficient. 
-
-```py
-subterms_Term = [
-    Term(c=1, indices=[0]),
-    Term(c=-2, indices=[1]),
-    Term(c=1, indices=[2]),
-    Term(c=-1, indices=[])
-]
-coefficient = 2
-problem.add_slc_term(terms=subterms_Term, c=coefficient)
-```
-In addition to using a list of `Term` objects, a list of tuples, with each
-tuple containing a monomial term coefficient followed by the
-variable index for the monomial (or `None` if a constant) can be used instead. 
-
-```py
-subterms_tuple = [
-    (1, 0),
-    (-2, 1),
-    (1, 2),
-    (-1, None)
-]
-coefficient = 2
-problem.add_slc_term(terms=subterms_tuple, c=coefficient)
-```
-
-For more information, see [SlcTerm](xref:microsoft.quantum.optimization.slc-term).
-
 ### Problem.add_terms
 
 Adds multiple terms to the problem using a list of `Terms`.
@@ -118,36 +87,6 @@ problem.add_terms([
 )
 ```
 
-### Problem.serialize
-
-Serializes a problem to a JSON string or Protobuf. 
-For more information about the usage of Protobuf, see [Handling large input with Protobuf](#handling-large-input-with-protobuf).
-
-```py
-problem = Problem("My Problem", [Term(c=1, indices=[0,1])])
-problem.serialize()
-
-> {"cost_function": {"version": "1.0", "type": "ising", "terms": [{"c": 1, "ids": [0, 1]}]}}
-```
-
-To serialize to Protobuf you need to specify the optional `content_type` parameter. 
-Protobuf is supported on a [subset of optimization solvers](#protobuf-serialization-availability).
-
-```py
-from azure.quantum.job.base_job import ContentType
-
-problem = Problem(name = "protobuf_problem", terms = [Term(c=1, indices=[0,1])], content_type=ContentType.protobuf)
-problem.serialize()
-```
-
-### Problem.deserialize
-
-Deserializes a problem from the uploaded input data to an instance of Problem. 
-
-```py
-
-deserialized_problem = Problem.deserialize(input_problem = "your_problem")
-```
 
 ### Problem.upload
 
@@ -224,43 +163,3 @@ The OnlineProblem class creates a problem from the url of the blob storage where
 It does not support client-side analysis, for example, the `evaluate` and `set_fixed_variables` functions. It allows you to download the problem from the blob storage as an instance of the `Problem` class to do any of the client-side operations.
 For an example of how to use the `OnlineProblem` class, have a look at [reusing problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions).
 
-## Handling large input with Protobuf
-
-Protobuf is Google's Data Interchange Format. It is a binary format with a static schema.
-For a detailed introduction to Protobuf, have a look at Google's [Protocol Buffers](https://developers.google.com/protocol-buffers/) page.
-
-In Azure Quantum, we've added support for Protobuf as it is useful for encoding input problems that are large in size. Using a binary encoding method rather than the default JSON format can reduce payload sizes, improve upload speeds, and reduce processing speeds.
-
-With this feature, you can specify the problem type, terms, initial configuration and problem metadata (for example, problem name) exactly as is supported currently in JSON.
-
-> [!NOTE]
-> This feature is available for a subset of solvers in the Microsoft QIO provider. Usage and availability are detailed below.
-
-### Usage
-
-To submit a problem with Protobuf serialization, specify the optional parameter `content_type` in the `Problem` object definition and set it to `Content.protobuf`.
-If you do not set this parameter explicitly, then it will be set to `ContentType.json`.
-
-```py
-problem = Problem(name = "protobuf_problem", terms = [Term(c=1, indices=[0,1])], content_type=ContentType.protobuf)
-```
-
-For more information on cost functions and how terms relate to a problem definition, see the following topics:
-
-- [Cost functions](xref:microsoft.quantum.optimization.concepts.cost-function)
-- [Term](xref:microsoft.quantum.optimization.term)
-
-### Protobuf serialization availability
-
-Protobuf serialization is currently supported by the following Microsoft QIO solvers:
-
-- [Parallel Tempering (CPU)](xref:microsoft.quantum.optimization.parallel-tempering)
-- [Population Annealing (CPU)](xref:microsoft.quantum.optimization.population-annealing)
-- [Quantum Monte Carlo (CPU)](xref:microsoft.quantum.optimization.quantum-monte-carlo)
-- [Simulated Annealing (CPU)](xref:microsoft.quantum.optimization.simulated-annealing)
-- [Substochastic Monte Carlo (CPU)](xref:microsoft.quantum.optimization.substochastic-monte-carlo)
-- [Tabu Search (CPU)](xref:microsoft.quantum.optimization.tabu)
-
-If you submit problems as Protobuf to a solver that doesn't support them, a client error will appear in the SDK and the submission will fail.
-
-If you discover any bugs or issues while working with Protobuf, please reach out to [Azure Support](https://support.microsoft.com/topic/contact-microsoft-azure-support-2315e669-8b1f-493b-5fb1-d88a8736ffe4).

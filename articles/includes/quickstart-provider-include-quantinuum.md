@@ -1,9 +1,10 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 09/26/2022
+ms.date: 07/17/2023
 ms.service: azure-quantum
 ms.subservice: qdk
+no-loc: [target, targets]
 ms.topic: include
 ---
 
@@ -59,7 +60,7 @@ workspace = Workspace(
         circuit = f.read()
     ```
 
-1. Submit the circuit to the Quantinuum target. The following example uses the Quantinuum API validator, which returns a `Job` object. For more information, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference).
+1. Submit the circuit to the Quantinuum target. The following example uses the Quantinuum API validator, which returns a `Job` object. For more information, see [Azure Quantum job reference](xref:microsoft.quantum.optimization.job-reference).
 
     ```python
     target = workspace.get_targets(name="quantinuum.sim.h1-1sc")

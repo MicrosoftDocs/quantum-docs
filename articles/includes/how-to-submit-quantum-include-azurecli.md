@@ -1,10 +1,12 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 12/13/2022
+ms.date: 10/26/2023
 ms.service: azure-quantum
 ms.subservice: computing
+ms.custom: devx-track-azurecli
 ms.topic: include
+no-loc: [Quantum Development Kit, target, targets]
 ---
 
 ## Prerequisites
@@ -53,7 +55,11 @@ You will also find a full reference for all commands and features available thro
    group and the location:
 
    ```azurecli
-   az quantum workspace set -g MyResourceGroup -w MyWorkspace -l MyLocation -o table
+   az quantum workspace set \
+      -g MyResourceGroup \
+      -w MyWorkspace \
+      -l MyLocation \
+      -o table
    ```
 
    ```ouput
@@ -95,10 +101,8 @@ You will also find a full reference for all commands and features available thro
     quantinuum    quantinuum.sim.h1-2sc                                Available               3
     quantinuum    quantinuum.sim.h1-1e                                 Available               431
     quantinuum    quantinuum.sim.h1-2e                                 Available               74
-    quantinuum    quantinuum.qpu.h1                                    Unavailable             0
     rigetti       rigetti.sim.qvm                                      Available               5
     rigetti       rigetti.qpu.aspen-11                                 Unavailable             0
-    rigetti       rigetti.qpu.aspen-m-2                                Available               5
     rigetti       rigetti.qpu.aspen-m-3                                Available               5
     Microsoft     microsoft.paralleltempering-parameterfree.cpu        Available               0
     Microsoft     microsoft.paralleltempering.cpu                      Available               0
@@ -131,7 +135,9 @@ You will also find a full reference for all commands and features available thro
 1. You can use the job ID to track its status:
 
    ```azurecli
-   az quantum job show --job-id yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
+   az quantum job show \
+      --job-id yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy \
+      -o table
    ```
 
    ```output
@@ -147,7 +153,9 @@ You will also find a full reference for all commands and features available thro
    job output`:
 
    ```azurecli
-    az quantum job output --job-id yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
+    az quantum job output \
+      --job-id yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy \
+      -o table
    ```
 
    ```output
@@ -206,7 +214,10 @@ workspace, use the command `az quantum job submit`:
 > `0.11.2006.403` or higher. If not, it could cause a compilation error.
 
 ```azurecli
-az quantum job submit --target-id ionq.simulator --job-name ExampleJob -o table
+az quantum job submit \
+    --target-id ionq.simulator \
+    --job-name ExampleJob \
+    -o table
 ```
 
 ```output
@@ -220,7 +231,9 @@ Once the job completes (that is, when it's in a **Successful** state), use the c
 job output` to view the results:
 
 ```azurecli
-az quantum job output --job-id yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy -o table
+az quantum job output \
+    --job-id yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy \
+    -o table
 ```
 
 ```output
@@ -237,7 +250,10 @@ Optionally, you can use the command `az quantum execute` as a shortcut for both 
 returning the results of a run.
 
 ```azurecli
-az quantum execute --target-id ionq.simulator --job-name ExampleJob2 -o table
+az quantum execute \
+    --target-id ionq.simulator \
+    --job-name ExampleJob2 \
+    -o table
 ```
 
 ```output

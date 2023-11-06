@@ -6,15 +6,15 @@ ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum machine learning]
 title: Quantum machine learning library glossary
 uid: microsoft.quantum.libraries.overview.machine-learning.training
 ---
 
-# Quantum Machine Learning glossary
+# Quantum machine learning glossary
 
 Training of a circuit-centric quantum classifier is a process with many moving parts that require the same (or slightly larger) amount of
-calibration by trial and error as training of traditional classifiers. Here we define the main concepts and ingredients of this training process.
+calibration by trial and error as training of traditional classifiers. Here you define the main concepts and ingredients of this training process.
 
 ## Training/testing schedules
 
@@ -23,12 +23,11 @@ collection of sample indices.
 
 ## Parameter/bias scores
 
-Given a candidate parameter vector and a classifier bias, their *validation score* is measured relative to a chosen validation schedule S and is expressed by a number of misclassifications
- counted over all the samples in the schedule S.
+Given a candidate parameter vector and a classifier bias, their *validation score* is measured relative to a chosen validation schedule S and is expressed by a number of misclassifications counted over all the samples in the schedule S.
 
 ## Hyperparameters
 
-The model training process is governed by certain pre-set values called *hyperparameters*:
+The model training process is governed by certain pre-set values called *hyperparameters*. Also see [How to modify the hyperparameters](#how-to-modify-the-hyperparameters)
 
 ### Learning rate
 
@@ -42,12 +41,12 @@ Defines how many data samples is used for a single estimation of stochastic grad
 ### Training epochs, tolerance, gridlocks
 
 "Epoch" means one complete pass through the scheduled training data.
-The maximum number of epochs per a training thread (see below) should be capped. 
-The training thread is defined to terminate (with the best known candidate parameters) when the maximum number of epochs has been run. However such training
- would terminate earlier when misclassification rate on validation schedule falls below a chosen tolerance. Suppose, for example, that misclassification tolerance
- is 0.01 (1%); if on validation set of 2000 samples we are seeing fewer than 20 misclassifications, then the tolerance level has been achieved. A training thread
- also terminates prematurely if the validation score of the candidate model has not shown any improvement over several consecutive epochs (a gridlock). The logic
- for the gridlock termination is currently hardcoded.
+The maximum number of epochs per a [training thread](#training-threads) should be capped. 
+The training thread is defined to terminate (with the best known candidate parameters) when the maximum number of epochs has been run. However, such training
+would terminate earlier when misclassification rate on validation schedule falls below a chosen tolerance. Suppose, for example, that misclassification tolerance
+is 0.01 (1%); if on a validation set of 2000 samples you are seeing fewer than 20 misclassifications, then the tolerance level has been achieved. A training thread
+also terminates prematurely if the validation score of the candidate model has not shown any improvement over several consecutive epochs (a gridlock). The logic
+for the gridlock termination is currently hardcoded.
 
 ### Measurements count
 
@@ -61,7 +60,7 @@ The likelihood function which is the training utility for the classifier is very
 
 #### How to modify the hyperparameters
 
-In the QML library, the best way to modify the hyperparameters is by overriding the default values of the UDT [`TrainingOptions`](xref:Microsoft.Quantum.MachineLearning.TrainingOptions). To do this we call it with the function [`DefaultTrainingOptions`](xref:Microsoft.Quantum.MachineLearning.DefaultTrainingOptions) and apply the operator `w/` to override the default values. For example, to use 100,000 measurements and a learning rate of 0.01:
+In the QML library, the best way to modify the hyperparameters is by overriding the default values of the UDT [`TrainingOptions`](xref:Microsoft.Quantum.MachineLearning.TrainingOptions). To do this, you call it with the function [`DefaultTrainingOptions`](xref:Microsoft.Quantum.MachineLearning.DefaultTrainingOptions) and apply the operator `w/` to override the default values. For example, to use 100,000 measurements and a learning rate of 0.01:
 
 ```qsharp
 let options = DefaultTrainingOptions()

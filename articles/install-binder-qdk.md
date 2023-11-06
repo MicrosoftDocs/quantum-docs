@@ -6,12 +6,14 @@ ms.date: 03/30/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: Develop with Q# and Binder
 uid: microsoft.quantum.install-qdk.overview.binder
 ---
 
 # Develop with Q# and Binder
+
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
 
 Learn how to create a Q# application using Binder. You can use Binder to run and share Jupyter Notebooks online, and even run Q# console applications online, which allows you to try Q# without installing the QDK.
 

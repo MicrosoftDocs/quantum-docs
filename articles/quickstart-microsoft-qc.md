@@ -2,17 +2,20 @@
 author: bradben
 description: This document provides a step-by-step guide to get you started with quantum computing on Azure Quantum
 ms.author: brbenefield
-ms.date: 01/27/2022
+ms.date: 01/09/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: quickstart
-ms.custom: mode-api
+no-loc: [target, targets]
+ms.custom: mode-api, devx-track-azurecli
 title: 'Quickstart: Create a quantum random number generator'
 uid: microsoft.quantum.quickstarts.computing
-zone_pivot_groups: quantum-computing-platforms
+zone_pivot_groups: quantum-computing-platforms-rigetti
 ---
 
 # Quickstart: Create a quantum-based random number generator in Azure Quantum
+
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
 
 Learn how to use Azure Quantum to create a simple quantum-based random number generator. 
 
@@ -22,10 +25,15 @@ Learn how to use Azure Quantum to create a simple quantum-based random number ge
 
 ::: zone-end
 
-
 ::: zone pivot="platform-quantinuum"
 
 [!INCLUDE [quantinuum-procedure](includes/quickstart-qc-include-quantinuum.md)]
+
+::: zone-end
+
+::: zone pivot="platform-rigetti"
+
+[!INCLUDE [rigetti-procedure](includes/quickstart-qc-include-rigetti.md)]
 
 ::: zone-end
 

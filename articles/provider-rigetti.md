@@ -2,10 +2,11 @@
 author: kalzoo
 ms.author: brbenefield
 description: This document provides the technical details of the Rigetti provider
-ms.date: 12/01/2022
+ms.date: 11/02/2023
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: reference
+ms.topic: conceptual
+no-loc: [Quantum Intermediate Representation, No control flow, target, targets]
 title: Rigetti provider
 uid: microsoft.quantum.providers.rigetti
 ---
@@ -23,16 +24,16 @@ The Aspen chip topology is octagonal with 3-fold (2-fold for edges) connectivity
 
 The Rigetti provider makes the following targets available:
 
-|Target name|	Target ID|	Number of qubits|	Description|
+|Target name|Target ID|Number of qubits|Description|
 |---|---|---|---|
-|[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil programs. Free of cost.|
-|[Aspen-M-2](#aspen-m-2) |rigetti.qpu.aspen-m-2 |	80 qubits	| Rigetti's multi-chip quantum processor. |
-|[Aspen-M-3](#aspen-m-3) |rigetti.qpu.aspen-m-3 |	80 qubits	| Rigetti's multi-chip quantum processor. |
+|[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil, Q\#, and Qiskit programs. Free of cost.|
+|[Aspen-M-3](#aspen-m-3) |rigetti.qpu.aspen-m-3 |80 qubits| Rigetti's multi-chip quantum processor. |
 
 > [!NOTE]
-> The Aspen-11 QPU has been deprecated.
+> - Rigetti simulators and hardware targets do not support Cirq programs. 
+> - The Aspen-11 QPU has been deprecated.
 
-Rigetti's targets correspond to a **No Control Flow** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
+Rigetti's targets correspond to a **:::no-loc text="No Control Flow":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
 
 ## Simulators
 
@@ -41,21 +42,12 @@ The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.h
 - Job Type: `Simulation`
 - Data Formats: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.sim.qvm`
-- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
+- Target Execution Profile: [:::no-loc text="No Control Flow":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 - Pricing: Free ($0)
 
 ## Quantum computers
 
 All of Rigetti's publicly available [QPUs](https://qcs.rigetti.com/qpus) are available through Azure Quantum. This list is subject to change without advance notice.
-
-### Aspen-M-2
-
-A multi-chip 80-qubit processor.
-
-- Job Type: `Quantum Program`
-- Data Formats: `rigetti.quil.v1`, `rigetti.qir.v1`
-- Target ID: `rigetti.qpu.aspen-m-2`
-- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 
 ### Aspen-M-3
 
@@ -64,7 +56,7 @@ A multi-chip 80-qubit processor offering improved CZ and XY gate performance.
 - Job Type: `Quantum Program`
 - Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.qpu.aspen-m-3`
-- Target Execution Profile: [No Control Flow](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
+- Target Execution Profile: [:::no-loc text="No Control Flow":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 
 ## Pricing
 
@@ -77,23 +69,23 @@ All Rigetti targets currently accept two formats:
 * `rigetti.quil.v1`, which is the text of a [Quil] program. 
 * `rigetti.qir.v1`, which is QIR bitcode.
  
-All targets also take the optional `count` integer parameter for defining the number of shots to run. If omitted, the program will only run once.
+All targets also take the optional `count` integer parameter for defining the number of shots to run. If omitted, the program only runs once.
 
 ### Quil
 
-All Rigetti targets accept the `rigetti.quil.v1` input format, which is the text of a [Quil] program, which stands for Quantum Instruction Language. By default, the program will be compiled using [quilc] before running. However, quilc doesn't support the pulse level control features ([Quil-T]), so if you want to use those features you must provide a [Native Quil] program (also containing Quil-T) as input and specify the input parameter `skipQuilc: true`.
+All Rigetti targets accept the `rigetti.quil.v1` input format, which is the text of a [Quil] program, which stands for Quantum Instruction Language. By default, programs are compiled using [quilc] before running. However, quilc doesn't support the pulse level control features ([Quil-T]), so if you want to use those features you must provide a [Native Quil] program (also containing Quil-T) as input and specify the input parameter `skipQuilc: true`.
 
 To make constructing a Quil program easier, you can use [`pyQuil`] along with the [`pyquil-for-azure-quantum`] package. Without this package, `pyQuil` can be used to _construct_ Quil programs but not to submit them to Azure Quantum.
 
 ### QIR
 
-All Rigetti hardware supports the execution of quantum intermediate representation (QIR) compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`. QIR provides a common interface that supports many quantum languages and target platforms for quantum computation and enables communication between high-level languages and machines. For example, you can submit Q#, Quil, or Qiskit jobs to Rigetti hardware, and Azure Quantum will automatically handle the input for you. For more information, see [Quantum intermediate representation](xref:microsoft.quantum.concepts.qir).
+All Rigetti hardware supports the execution of Quantum Intermediate Representation (QIR) compliant jobs with the [QIR Base Profile, v1](https://github.com/qir-alliance/qir-spec) as `rigetti.qir.v1`. QIR provides a common interface that supports many quantum languages and target platforms for quantum computation and enables communication between high-level languages and machines. For example, you can submit Q#, Quil, or Qiskit jobs to Rigetti hardware, and Azure Quantum automatically handles the input for you. For more information, see [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir).
 
 ### Selecting the right input format
 
 Should you use Quil or another QIR compliant language? It comes down to your end use case. QIR is more accessible for many users, while Quil is more powerful today.
 
-If you're using Qiskit, Q#, or another toolkit that supports QIR generation, and your application works on Rigetti targets via Azure Quantum, then QIR is right for you! QIR has a rapidly evolving specification, and Rigetti will continue to increase support for more advanced QIR programs as time passes - what can't be compiled today may well compile tomorrow.
+If you're using Qiskit, Q#, or another toolkit that supports QIR generation, and your application works on Rigetti targets via Azure Quantum, then QIR is right for you! QIR has a rapidly evolving specification, and Rigetti continues to increase support for more advanced QIR programs as time passes - what can't be compiled today may well compile tomorrow.
 
 On the other hand, Quil programs express the full set of functionality available to users of Rigetti systems from any platform including Azure Quantum. If you're looking to tailor the decomposition of your quantum gates or write programs at the pulse level, then you'll want to work in Quil, because those capabilities aren't yet available through QIR.
 
@@ -113,7 +105,7 @@ from pyquil_for_azure_quantum import get_qpu, get_qvm
 
 # Note that some environment variables must be set to authenticate with Azure Quantum
 qc = get_qvm()  # For simulation
-# qc = get_qpu("Aspen-M-2")  or qc = get_qpu("Aspen-M-3") for submitting to a QPU
+# qc = get_qpu("Aspen-M-3") for submitting to a QPU
 
 program = Program(
     Declare("ro", "BIT", 2),

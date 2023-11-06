@@ -2,15 +2,17 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the Toshiba SQBM+ provider
 ms.author: sonialopez
-ms.date: 05/17/2022
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: reference
+ms.topic: conceptual
 title: Toshiba SQBM+ provider
 uid: microsoft.quantum.providers.optimization.toshiba
 ---
 
 # Toshiba SQBM+ provider
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 - Publisher: [Toshiba Digital Solutions Corporation](https://www.global.toshiba/jp/company/digitalsolution.html)
 - Provider ID: `toshiba`
@@ -24,7 +26,7 @@ The Toshiba SQBM+ Cloud on Azure Quantum (SQBM+) provider makes the following ta
 
 ### Ising Solver
 
-This solver enables users to quickly obtain nearly optimal solutions for large-scale combinatorial optimization problems at high speed. It is based on an [Ising model](xref:microsoft.quantum.optimization.concepts.ising-model) machine which can solve combinatorial optimization problems by simulating adiabatic bifurcations in nonlinear Hamiltonian systems.
+This solver enables users to quickly obtain nearly optimal solutions for large-scale combinatorial optimization problems at high speed. It is based on an Ising model machine which can solve combinatorial optimization problems by simulating adiabatic bifurcations in nonlinear Hamiltonian systems.
 
 For more information about the simulated bifurcation machine (SBM), please see [Goto, Tatsumura and Dixon (Science Advances, 5(4), DOI:10.1126/sciadv.aav2372)](https://pubmed.ncbi.nlm.nih.gov/31016238/).
 
@@ -82,8 +84,7 @@ The auto tuning functionality will help you find a better setting. For detailed 
 > - High-accuracy **Discrete Simulated Bifurcation algorithm (dSB)**, which [finds more accurate solutions at a calculation speed that surpasses that of other machines](https://www.science.org/doi/10.1126/sciadv.abe7953) (both classical and quantum).
 >
 > **When selecting which algorithm to use with the `algo` parameter, `"1.5"` corresponds to the bSB algorithm and `"2.0"` corresponds to dSB.**
->
-> For more information, please refer to the [getting started sample for Toshiba SQBM+](https://github.com/microsoft/qio-samples/tree/main/samples/getting-started/toshiba-sqbm).
+
 
 ### Maximum problem size
 

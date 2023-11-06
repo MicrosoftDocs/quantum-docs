@@ -68,4 +68,4 @@ In some cases, your rejection notice may specify that insufficient information w
 
 If you have an Azure support subscription, we recommend connecting with [Azure support](https://azure.microsoft.com/support/options/#get-support) for the fastest resolution to your question.
 
-If you have any questions regarding the workspace creation process, or any issue using Azure Quantum, bookmark the [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday at 8:30am PST.
+If you have any questions regarding the workspace creation process, or any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).

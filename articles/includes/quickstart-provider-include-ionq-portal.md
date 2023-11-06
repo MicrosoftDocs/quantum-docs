@@ -1,10 +1,11 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 12/07/2022
+ms.date: 07/17/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
+no-loc: [target, targets]
 ---
 
 ## Define a quantum circuit
@@ -47,7 +48,7 @@ In a new cell, run:
 
 ```python
 print("This workspace's targets:")
-for target in service.targets():
+for target in workspace.targets():
      print(target)
 ```
 
@@ -67,7 +68,7 @@ This workspace's targets:
 
 ## Select a target and run your program
 
-To check your circuit before running it on actual quantum hardware, you can use the IonQ simulator, `ionq.simulator`, which returns a `Job` object. For more information, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference).
+To check your circuit before running it on actual quantum hardware, you can use the IonQ simulator, `ionq.simulator`, which returns a `Job` object. For more information, see [Azure Quantum job reference](xref:microsoft.quantum.optimization.job-reference).
 
 Run the following code to set the target to the IonQ simulator and submit your circuit:
 

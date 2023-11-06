@@ -6,12 +6,14 @@ ms.date: 10/11/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Full state quantum simulator 
 uid: microsoft.quantum.machines.overview.full-state-simulator
 ---
 
 # Quantum Development Kit (QDK) full state simulator
+
+[!INCLUDE [Modern QDK banner](~/includes/new-qdk-support.md)]
 
 The QDK provides a full state simulator that simulates a quantum machine on your local computer. You can use the full state simulator to run and debug quantum algorithms written in Q#, utilizing up to 30 qubits. The functionality of the full state simulator is similar to the quantum simulator used in the [LIQ$Ui|\rangle$](http://stationq.github.io/Liquid/) platform from Microsoft Research.
 

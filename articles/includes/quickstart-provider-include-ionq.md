@@ -1,10 +1,11 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 03/21/2022
+ms.date: 07/17/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
+no-loc: [target, targets]
 ---
 
 ## Load the required imports
@@ -60,7 +61,7 @@ workspace = Workspace(
     }
     ```
 
-1. Submit the circuit to the IonQ target. The following example uses the IonQ simulator, which returns a `Job` object. For more information, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference).
+1. Submit the circuit to the IonQ target. The following example uses the IonQ simulator, which returns a `Job` object. For more information, see [Azure Quantum job reference](xref:microsoft.quantum.optimization.job-reference).
 
     ```python
     target = workspace.get_targets(name="ionq.simulator")

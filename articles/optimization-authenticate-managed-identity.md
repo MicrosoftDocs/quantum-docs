@@ -24,9 +24,6 @@ To configure a managed identity:
 1. Via the Azure portal, locate the resource that you wish to give access to. This resource may be a VM, a Function App, or other application.
 2. Select the resource, and view the overview page.
 3. Under **Settings**, select **Identity**.
-
-    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-2.png" alt-text="Screenshot showing how to create a managed identity for the Function App in Azure Portal.":::
-
 4. Configure the **Status** setting to **On**.
 5. Select **Save** to persist your configuration and confirm the opening dialog with **Yes**.
 
@@ -68,6 +65,3 @@ credential=ManagedIdentityCredential())
 
 ```
 
-## Next steps
-
-- Now that you know how to configure a managed identity, see how it can be used to [Publish a QIO job as an Azure Function](xref:microsoft.quantum.publish-qio-as-azure-function).

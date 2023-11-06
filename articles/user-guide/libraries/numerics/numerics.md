@@ -1,21 +1,23 @@
 ---
-author: thomashaener
+author: bradben
 description: Learn about the types and operations available in the Microsoft Quantum Numerics library.
-ms.author: tedhudek
-ms.date: 02/01/2021
+ms.author: brbenefield
+ms.date: 06/02/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: Using the Microsoft Q# Numerics Library
 uid: microsoft.quantum.libraries-numerics.usage
 ---
 
 # Using the Quantum Numerics library
 
+[!INCLUDE [Copilot in Azure Quantum banner](../../../includes/copilot-banner.md)]
+
 ## Overview
 
-The Numerics library consists of three components
+The Numerics library consists of three components:
 
 1. **Basic integer arithmetic** with integer adders and comparators
 1. **High-level integer functionality** that is built on top of the basic 
@@ -25,9 +27,15 @@ The Numerics library consists of three components
     addition, multiplication, reciprocal, polynomial evaluation, and measurement.
 
 All of these components can be accessed using a single `open` statement:
+
 ```qsharp
 open Microsoft.Quantum.Arithmetic;
 ```
+
+## Prerequisites
+
+- The [Microsoft Quantum Development kit](xref:microsoft.quantum.install-qdk.overview) or an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- The `Microsoft.Quantum.Numerics` library. For information on installing additional Q# libraries, see [Q# libraries](xref:microsoft.quantum.libraries.overview#installation).
 
 ## Types
 
@@ -42,7 +50,7 @@ in the same way as `SignedLittleEndian`.
 
 ## Operations
 
-For each of the three types above, a variety of operations is available:
+For each of the three supported types, a variety of operations is available:
 
 1. **`LittleEndian`**
     - Addition
@@ -110,7 +118,7 @@ the input `x : FixedPoint` and the output `y : FixedPoint` (initially zero):
 ```qsharp
 EvaluatePolynomialFxP([1.0, 2.0], x, y);
 ```
-The result, $P(x)=1+2x$, will be stored in `yFxP`.
+The result, $P(x)=1+2x$, is stored in `yFxP`.
 
 The second, `EvaluateEvenPolynomialFxP`, and the third, `EvaluateOddPolynomialFxP`, are specializations
 for the cases of even and odd functions, respectively. That is, for an even/odd function $f(x)$ and

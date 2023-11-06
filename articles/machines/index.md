@@ -6,18 +6,16 @@ ms.date: 10/26/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: overview
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Quantum simulators and Q# programs
 uid: microsoft.quantum.machines.overview
 ---
 
-# Quantum simulators
+# In-memory quantum simulators
 
-Quantum simulators are software programs that run on classical computers and act as the *target machine* for a Q# program, making it possible to run and test quantum programs in an environment that predicts how qubits will react to different operations. 
+Quantum simulators are software programs that run on classical computers and act as the *target machine* for a quantum program, making it possible to run and test quantum programs in an environment that predicts how qubits will react to different operations. The Quantum Development Kit includes multiple *in-memory* quantum simulators that represent different ways of simulating the same quantum algorithm. In-memory simulators have the advantage of being able to run locally and thus faster, as well as running jobs as often as needed free of charge. *Backend quantum simulators*, however, can more accurately simulate specific hardware architecture and capabilities of each manufacturer. For more information, see [Backend simulators](xref:microsoft.quantum.machines.overview.backend-simulators).
 
-The quantum simulator is responsible for providing implementations of quantum operations for an algorithm. This includes primitive operations such as `H`, `CNOT`, and `Measure`, as well as qubit management and tracking. The Quantum Development Kit includes different classes of quantum simulators representing different ways of simulating the same quantum algorithm.
-
-Each type of quantum simulator can provide different implementations of these primitives. For example, the [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) runs the quantum algorithm by fully simulating the [quantum state vector](xref:microsoft.quantum.glossary-qdk#quantum-state), whereas the [quantum computer trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro) doesn't consider the actual quantum state at all. Rather, it tracks gate, qubit, and other resource usage for the algorithm.
+The quantum simulator is responsible for providing implementations of quantum operations for an algorithm. This includes primitive operations such as `H`, `CNOT`, and `Measure`, as well as qubit management and tracking. Each type of quantum simulator can provide different implementations of these primitives. For example, the [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) runs the quantum algorithm by fully simulating the [quantum state vector](xref:microsoft.quantum.glossary-qdk#quantum-state), whereas the [quantum computer trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro) doesn't consider the actual quantum state at all. Rather, it tracks gate, qubit, and other resource usage for the algorithm.
 
 ## Quantum machine classes
 

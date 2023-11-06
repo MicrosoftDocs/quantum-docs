@@ -2,16 +2,18 @@
 author: SoniaLopezBravo
 description: Learn about the Microsoft QDK depth counter, which uses the Quantum trace simulator to gather counts of the depth of every operation invoked in a Q# program.
 ms.author: sonialopez
-ms.date: 05/11/2022
+ms.date: 08/03/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: 'Trace simulator: Depth counter'
 uid: microsoft.quantum.machines.overview.qc-trace-simulator.depth-counter
 ---
 
 # Quantum trace simulator: depth counter
+
+[!INCLUDE [Modern QDK banner](~/includes/new-qdk-support.md)]
 
 The depth counter is a part of the Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro).
 You can use it to gather counts that represent the lower bound of the depth of every operation invoked in a quantum program. 
@@ -40,7 +42,7 @@ The C# example that follows in this section computes the `T` depth of the `CCNOT
 open Microsoft.Quantum.Intrinsic;
 
 operation ApplySampleWithCCNOT() : Unit {
-    use qubits = Qubit[3]);
+    use qubits = Qubit[3];
     CCNOT(qubits[0], qubits[1], qubits[2]);
     T(qubits[0]);
 }

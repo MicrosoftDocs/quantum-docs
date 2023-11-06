@@ -1,10 +1,12 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 09/21/2022
+ms.date: 10/26/2023
 ms.service: azure-quantum
 ms.subservice: computing
+ms.custom: devx-track-azurecli
 ms.topic: include
+no-loc: [Quantum Development Kit, target, targets]
 ---
 
 ## Resource estimation with Q# in Visual Studio Code
@@ -35,7 +37,10 @@ In this example, you'll create a multiplier and estimate its costs on a fault-to
 4. Set your **Resource group, workspace name, and location**:
 
     ```azurecli
-    az quantum workspace set -g <resource-group> -w <workspace-name> -l <location> -o table
+    az quantum workspace set \
+        -g <resource-group> \
+        -w <workspace-name> \
+        -l <location> -o table
     ```
 
 ### Create the quantum algorithm
@@ -86,22 +91,30 @@ Create a new project in Visual Studio Code.
     }
     ```
 
+> [!NOTE]
+> You can submit physical resource estimation jobs for algorithms that have no T states, but that have at least one measurement. 
+
 ### Estimate the quantum algorithm
 
 1. Open a terminal with access to **Azure CLI**. 
 2. Copy the following command to submit a job to the Resource Estimator target.
 
     ```azurecli
-    az quantum job submit --target-id microsoft.estimator -o json --query id
+    az quantum job submit \
+        --target-id microsoft.estimator \
+        -o json \
+        --query id
     ```
 
 3. The output will contain the job ID. Copy the job ID and request the output of the job using `-o table` to display the output in the CLI as a table, or with `-o json` to display the output in JSON format.
 
     ```azurecli
-    az quantum job output -j <job-id> -o table
+    az quantum job output \
+        -j <job-id> \
+        -o table
     ```
 
-4. The resulting table shows the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. For example, if you collapse the *Logical qubit parameters* group, you can more easily see that the error correction code distance is 13. 
+4. The resulting table shows the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. For example, if you collapse the *Logical qubit parameters* group, you can more easily see that the error correction code distance is 13.
 
 |Logical qubit parameter|Value|
 |----|---|
@@ -131,7 +144,7 @@ For example, the time to perform a single-qubit measurement and a single-qubit g
 |Two-qubit gate time                       |    50 ns |
 |Two-qubit error rate                        |  0.001 |
 
-For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) for the Resource Estimator.
+For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator-output.data) for the Resource Estimator.
 
 ### Change the default values and estimate the algorithm
 
@@ -140,8 +153,10 @@ When submitting a resource estimate request for your program, you can specify so
 * `errorBudget` - the overall allowed error budget
 * `qecScheme` - the quantum error correction (QEC) scheme
 * `qubitParams` - the physical qubit parameters 
+* `constraints` - the constraints on the component-level
+* `distillationUnitSpecifications` - the specifications for T factories distillation algorithms
 
-For more information, see [Input parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters) for the Resource Estimator.
+For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the Resource Estimator.
 
 #### Change qubit model
 
@@ -160,33 +175,22 @@ Let's estimate the cost for the same algorithm using the Majorana-based qubit pa
 2. You can pass them to the `--job-params` argument like this:
 
     ```azurecli
-    az quantum job submit --target-id microsoft.estimator -o json --query id --job-params "@jobParams.json"
+    az quantum job submit \
+        --target-id microsoft.estimator \
+        -o json \
+        --query id \
+        --job-params "@jobParams.json"
     ```
 
 3. Inspect the table again with `-o table`.
 
     ```azurecli
-    az quantum job output -j <job-id> -o table
+    az quantum job output \
+        -j <job-id> \
+        -o table
     ```
 
-For example, you can show a breakdown of the estimates by clicking on the **Breakdown** group. Here you see what logical qubit error and logical T state error rates are required to match the error budget. By default, runtimes are shown in nanoseconds.
-
-|Name|Value |
-|-----|-----|
-|Logical algorithmic qubits |	84	|
-|Logical algorithmic depth |	608	|
-|Adjusted logical depth	|608|	
-|Number of T states|	800	|
-|Number of T factories|	10	|
-|Number of T factory invocations	|80|
-|Physical algorithmic qubits|4200	|
-|Physical T factory qubits|	164160	|
-|Physical T factory qubits (fraction)	|97.50 %	|
-|Required logical qubit error rate	|9.79e-9	|
-|Required logical Tstate error rate	|6.25e-7|	
-|Number of T gates per rotation|	No rotations in algorithm|
-
-You can also explore details about the T factory that was created to execute the algorithm.
+For example, you can explore details about the T factory that was created to execute the algorithm.
 
 |T factory parameters| Value|
 |-----|-----|
@@ -201,6 +205,9 @@ You can also explore details about the T factory that was created to execute the
 |Number of physical qubits per round	|12, 31, 558	|
 |Runtime per round|	4us 500ns, 2us 400ns, 66us |
 |Logical T state error rate|	2.52e-07|
+
+> [!NOTE]
+> By default, runtime is shown in nanoseconds.
 
 A single T factory produces one T state. Notice that the logical error rate for an output T state (2.52e-07) is smaller than the required T state error rate in the physical counts breakdown (6.25e-07). The T factory is copied 10 times such that they can run in parallel to produce 10 T states. These copies are run 80 times in sequence, producing in total $10 \cdot 80 = 800$ T states that are required by the algorithm. A single T factory is composed of three rounds of distillation, where:
 
@@ -228,13 +235,19 @@ Now rerun the resource estimation job for the same example on the Majorana-based
 2. Pass the input parameters to the `--job-params` argument.
 
     ```azurecli
-    az quantum job submit --target-id microsoft.estimator -o json --query id --job-params "@jobParams.json"
+    az quantum job submit \
+        --target-id microsoft.estimator \
+        -o json \
+        --query id \
+        --job-params "@jobParams.json"
     ```
 
 3. Inspect the result with `-o table`.
 
     ```azurecli
-    az quantum job output -j <job-id> -o table
+    az quantum job output \
+        -j <job-id> \
+        -o table
     ```
 
 #### Change error budget
@@ -258,11 +271,17 @@ Rerun the same quantum circuit with an `errorBudget` of 10%.
 2. Pass the input parameters to the `--job-params` argument.
 
     ```azurecli
-    az quantum job submit --target-id microsoft.estimator -o json --query id --job-params "@jobParams.json"
+    az quantum job submit \
+        --target-id microsoft.estimator \
+        -o json \
+        --query id \
+        --job-params "@jobParams.json"
     ```
 
 3. Inspect the result with `-o table`.
 
     ```azurecli
-    az quantum job output -j <job-id> -o table
+    az quantum job output \
+        -j <job-id> \
+        -o table
     ```

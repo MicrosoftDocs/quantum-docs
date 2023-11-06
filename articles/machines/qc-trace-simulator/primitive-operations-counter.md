@@ -6,12 +6,14 @@ ms.date: 10/31/2022
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit]
 title: 'Trace simulator: Primitive operation counter'
 uid: microsoft.quantum.machines.overview.qc-trace-simulator.primitive-counter
 ---
 
 # Quantum trace simulator: primitive operations counter
+
+[!INCLUDE [Modern QDK banner](~/includes/new-qdk-support.md)]
 
 The primitive operation counter is a part of the Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro). It counts the number of primitive processes used by every operation invoked in a quantum program. 
 

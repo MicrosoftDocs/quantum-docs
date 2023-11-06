@@ -1,25 +1,27 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 05/09/2022
+ms.date: 06/21/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
+no-loc: [Quantum Development Kit, target, targets]
 ---
 
 ## Prerequisites
 
-* [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview) using your preferred language and development environment.
-* If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update-qdk) to the latest version.
-* Create a Q# project named **Bell** for either a [Q# application](xref:microsoft.quantum.submit-jobs?pivots=ide-azurecli) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local). Alternatively, you can run your Q# code directly in [Juptyer Notebooks](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter) or from a [Python host program](xref:microsoft.quantum.how-to.python-local).
+- To develop and run the code sample in your local development environment:
+  - [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview) using your preferred language and development environment.
+  - If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update-qdk) to the latest version.
+  - Create a Q# project named **Bell** for either a [Q# application](xref:microsoft.quantum.submit-jobs?pivots=ide-azurecli) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local). Alternatively, you can run your Q# code directly in [Juptyer Notebooks](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter) or from a [Python host program](xref:microsoft.quantum.how-to.python-local).
 
 In this tutorial, you'll learn how to
 
 > [!div class="checklist"]
-> * Create Q# operations to measure and initialize a qubit to a desired state.
-> * Create qubits and test your program.
-> * Put a qubit in superposition.
-> * Entangle a pair of qubits. 
+> - Create Q# operations to measure and initialize a qubit to a desired state.
+> - Create qubits and test your program.
+> - Put a qubit in superposition.
+> - Entangle a pair of qubits. 
 
 ## Initialize a qubit using measurement
 
@@ -44,7 +46,7 @@ The code example introduces two standard operations, [`M`](xref:Microsoft.Quantu
 
 The  `SetQubitState` operation:
 
-1. Takes two parameters: a type [`Result`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types), named `desired`, that represents the desired state for the qubit to be in (0 or 1), and a type [`Qubit`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types). 
+1. Takes two parameters: a type [`Result`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types), named `desired`, that represents the desired state for the qubit to be in (`Zero` or `One`), and a type [`Qubit`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types). 
 1. Performs a measurement operation, `M`, which measures the state of the qubit (`Zero` or `One`) and compares the result to the value specified in `desired`.
 1. If the measurement does not match the compared value, it runs an `X` operation, which flips the state of the qubit to where the probabilities of a measurement returning `Zero` and `One` are reversed. This way, `SetQubitState` always puts the target qubit in the desired state. 
 
@@ -69,7 +71,7 @@ operation TestBellState(count : Int, initial : Result) : (Int, Int, Int, Int) {
         let resultQ1 = M(q1);            
         let resultQ2 = M(q2);           
 
-        // Count the number of 'Ones' we saw:
+        // Count the number of 'Ones' returned:
         if resultQ1 == One {
             set numOnesQ1 += 1;
         }
@@ -83,8 +85,11 @@ operation TestBellState(count : Int, initial : Result) : (Int, Int, Int, Int) {
     SetQubitState(Zero, q2);
     
 
-    // Return times we saw |0>, times we saw |1>
-    Message("q1:Zero, One  q2:Zero, One");
+    // Display the times that |0> is returned, and times that |1> is returned
+    Message($"Q1 - Zeros: {count - numOnesQ1}")
+    Message($"Q1 - Ones: {numOnesQ1}")
+    Message($"Q2 - Zeros: {count - numOnesQ2}")
+    Message($"Q2 - Ones: {numOnesQ2}")
     return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
 
 }
@@ -103,7 +108,7 @@ The `TestBellState`operation:
 allocate the qubits in a known state. This is required by the `use` statement. 
 1. Finally, it uses the [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) function to print a message to the console before returning the results.
 
-### Run the code from the command prompt
+## Run the code from the command prompt
 
 Before moving on to the procedures for superposition and entanglement, test the code up to this point to see the initialization and measurement of the qubits. 
 
@@ -140,7 +145,7 @@ namespace Bell {
             let resultQ1 = M(q1);            
             let resultQ2 = M(q2);           
     
-            // Count the number of 'Ones' we saw:
+            // Count the number of 'Ones' returned:
             if resultQ1 == One {
                 set numOnesQ1 += 1;
             }
@@ -154,8 +159,11 @@ namespace Bell {
         SetQubitState(Zero, q2);
         
     
-        // Return times we saw |0>, times we saw |1>
-        Message("q1:Zero, One  q2:Zero, One");
+        // Display the times that |0> is returned, and times that |1> is returned
+        Message($"Q1 - Zeros: {count - numOnesQ1}")
+        Message($"Q1 - Ones: {numOnesQ1}")
+        Message($"Q2 - Zeros: {count - numOnesQ2}")
+        Message($"Q2 - Ones: {numOnesQ2}")
         return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
 
     }
@@ -172,8 +180,10 @@ dotnet run --count 1000 --initial One
 and you should observe the following output:
 
 ```output
-Q1:Zero/One  Q2:Zero/One
-(0, 1000, 1000, 0)
+Q1 - Zeros: 0
+Q1 - Ones: 1000
+Q2 - Zeros: 1000
+Q2 - Ones: 0
 ```
 
 Because the qubits haven't been manipulated yet, they have retained their initial values: the first qubit returns `One` every time, and the second qubit returns `Zero`.
@@ -185,15 +195,17 @@ dotnet run --count 1000 --initial Zero
 ```
 
 ```output
-Q1:Zero/One  Q2:Zero/One
-(1000, 0, 1000, 0)
+Q1 - Zeros: 0
+Q1 - Ones: 1000
+Q2 - Zeros: 0
+Q2 - Ones: 1000
 ```
 
 ## Put a qubit in superposition
 
 Currently, the qubits in the program are all in a **classical state**, that is, they are either 1 or 0. You know this because the program initializes the qubits to a known state, and you haven't added any processes to manipulate them.  Before entangling the qubits, you will put the first qubit into a **superposition state**, where a measurement of the qubit will return `Zero` 50% of the time and `One` 50% of the time. Conceptually, the qubit can be thought of as halfway between the `Zero` and `One`.
 
-To put a qubit in superposition, Q# provides the [`H`](xref:Microsoft.Quantum.Intrinsic.H), or *Hadamard*, operation. Recall the `X` operation from the [Initialize a qubit using measurement](#initialize-a-qubit-using-measurement) procedure earlier, which flipped a qubit from 0 to 1 (or vice versa); the `H` operation flips the qubit *halfway* into a state of equal probabilities of 0 or 1. When measured, a qubit in superposition should return roughly an equal number of `Zero` and `One` results.
+To put a qubit in superposition, Q# provides the [`H`](xref:Microsoft.Quantum.Intrinsic.H), or *Hadamard*, operation. Recall the `X` operation from the [Initialize a qubit using measurement](#initialize-a-qubit-using-measurement) procedure earlier, which flipped a qubit from `Zero` to `One` (or vice versa); the `H` operation flips the qubit *halfway* into a state of equal probabilities of `Zero` or `One`. When measured, a qubit in superposition should return roughly an equal number of `Zero` and `One` results.
 
 Modify the code in the `TestBellState` operation to include the `H` operation:
 
@@ -209,6 +221,7 @@ Modify the code in the `TestBellState` operation to include the `H` operation:
             // measure each qubit
             let resultQ1 = M(q1);            
             let resultQ2 = M(q2); 
+            ...
 ```
 
 Now when you run the program, you can see the results of the first qubit in superposition:
@@ -218,8 +231,10 @@ dotnet run --count 1000 --initial One
 ```
 
 ```output
-Q1:Zero/One  Q2:Zero/One
-(523, 477, 1000, 0)      // results will vary
+Q1 - Zeros: 523            // results will vary
+Q1 - Ones: 477
+Q2 - Zeros: 1000
+Q2 - Ones: 0
 ```
 
 Every time you run the program, the results for the first qubit will vary slightly, but will be close to 50% `One` and 50% `Zero`, while the results for the second qubit will remain `Zero` all the time.
@@ -229,8 +244,10 @@ dotnet run --count 1000 --initial One
 ```
 
 ```output
-Q1:Zero/One  Q2:Zero/One
-(510, 490, 1000, 0)
+Q1 - Zeros: 510           
+Q1 - Ones: 490
+Q2 - Zeros: 1000
+Q2 - Ones: 0
 ```
 
 Initializing the first qubit to `Zero` returns similar results.
@@ -240,8 +257,10 @@ dotnet run --count 1000 --initial Zero
 ```
 
 ```output
-Q1:Zero/One  Q2:Zero/One
-(504, 496, 1000, 0)
+Q1 - Zeros: 504           
+Q1 - Ones: 496
+Q2 - Zeros: 1000
+Q2 - Ones: 0
 ```
 
 ## Entangle two qubits
@@ -281,7 +300,7 @@ namespace Bell {
             let resultQ1 = M(q1);            
             let resultQ2 = M(q2);           
     
-            // Count the number of 'Ones' we saw:
+            // Count the number of 'Ones' returned:
             if resultQ1 == One {
                 set numOnesQ1 += 1;
             }
@@ -295,8 +314,11 @@ namespace Bell {
         SetQubitState(Zero, q2);
         
     
-        // Return times we saw |0>, times we saw |1>
-        Message("q1:Zero, One  q2:Zero, One");
+        // Display the times that |0> is returned, and times that |1> is returned
+        Message($"Q1 - Zeros: {count - numOnesQ1}")
+        Message($"Q1 - Ones: {numOnesQ1}")
+        Message($"Q2 - Zeros: {count - numOnesQ2}")
+        Message($"Q2 - Ones: {numOnesQ2}")
         return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
 
     }
@@ -311,9 +333,10 @@ dotnet run --count 1000 --initial One
 ```
 
 ```output
-Q1:Zero/One  Q2:Zero/One
-(502, 498, 502, 498)
+Q1 - Zeros: 502           
+Q1 - Ones: 498
+Q2 - Zeros: 502
+Q2 - Ones: 498
 ```
 
 The statistics for the first qubit haven't changed (a 50/50 chance of a `Zero` or a `One` after measurement), but the measurement results for the second qubit are **always** the same as the measurement of the first qubit. The `CNOT` operation has entangled the two qubits, so that whatever happens to one of them, happens to the other. 
-

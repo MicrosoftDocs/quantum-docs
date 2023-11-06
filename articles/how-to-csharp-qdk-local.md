@@ -6,12 +6,14 @@ ms.date: 09/23/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Develop with Q# and .NET
 uid: microsoft.quantum.how-to.csharp-local
 ---
 
 # Develop with Q# and .NET program
+
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
 
 The Q# programming language is built to work well with .NET languages such as C# and F#. This guide demonstrates how to use Q# with a host program written in a .NET language.
 
@@ -30,6 +32,11 @@ If you are using an editor other than Visual Studio or VS Code, simply follow th
 
 ### [Visual Studio Code or command prompt](#tab/tabid-cmdline)
 
+- Install the QDK templates package
+
+  ```dotnetcli
+  dotnet new -i Microsoft.Quantum.ProjectTemplates
+  ```
 - Create a new Q# library
 
   ```dotnetcli

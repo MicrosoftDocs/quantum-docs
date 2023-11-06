@@ -6,12 +6,14 @@ ms.date: 12/01/2021
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit,target, targets]
 title: "Tutorial: Implement Grover's algorithm in Q#"
 uid: microsoft.quantum.tutorial-qdk.grovers
 ---
 
 # Tutorial: Implement Grover's search algorithm in Q\#
+
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
 
 In this tutorial, you'll learn to implement Grover's algorithm in Q# to solve search-based problems.
 
@@ -30,6 +32,8 @@ In this tutorial, you'll learn how to:
 > [!div class="checklist"]
 > - Build a quantum oracle that implements classical functions on a quantum computer.
 > - Write a Q# program that uses Grover's algorithm to find factors of an integer.
+
+[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
 
 ## Prerequisites 
 

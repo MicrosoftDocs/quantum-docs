@@ -2,15 +2,17 @@
 author: bradben
 description: This document provides a basic guide to interpreting results of optimization problems solved in Azure Quantum using Python.
 ms.author: brbenefield
-ms.date: 10/25/2021
+ms.date: 05/01/2023
 ms.service: azure-quantum
 ms.subservice: optimization
-ms.topic: reference
+ms.topic: troubleshooting
 title: Understand solver results
 uid: microsoft.quantum.optimization.understand-solver-results
 ---
 
 # Understand solver results
+
+[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 The result of a solver job is a `JobOutput` object which can be examined to obtain useful information. 
 
@@ -48,7 +50,7 @@ In both cases, the result should look like the following:
 >[!IMPORTANT]
 >Currently, the solution appears in both the root of the payload ('configuration' and 'cost') as well as in the 'solutions' field. **However, it is recommended to consume solutions from the 'solutions' field, as the root 'configuration' and 'cost' fields will be deprecated in the future.**
 
-The best solution found by the solver will always appear in index *0* of the 'solutions' list (if multiple solutions are specified).  You can specify the amount of solutions that you would like to receive when [configuring your solver](xref:microsoft.quantum.optimization.apply-solver#returning-multiple-solutions). 
+The best solution found by the solver will always appear in index *0* of the 'solutions' list (if multiple solutions are specified).  
 
 Here is an example of a small problem where two solutions are returned. 
 
@@ -59,7 +61,4 @@ Here is an example of a small problem where two solutions are returned.
 ## Next steps
 
 - [Re-use problem definitions](xref:microsoft.quantum.optimization.reuse-problem-definitions)
-- [Solve long-running problems](xref:microsoft.quantum.optimization.solve-long-running-problems)
-- [Solver overview](xref:microsoft.quantum.reference.qio-target-list)
 - [Expressing problems & supplying terms](xref:microsoft.quantum.optimization.express-problem)
-- [Understand solver results](xref:microsoft.quantum.optimization.understand-solver-results)

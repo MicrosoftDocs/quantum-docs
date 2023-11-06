@@ -9,11 +9,13 @@ ms.service: azure-quantum
 ms.subservice: qdk
 uid: microsoft.quantum.tutorial-qdk.circuit
 ms.topic: tutorial
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 ---
 
 
 # Tutorial: Write and simulate qubit-level programs in Q\#
+
+[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
 
 This tutorial shows you how to write and simulate a basic quantum program that operates on individual qubits.
 
@@ -32,6 +34,8 @@ In this tutorial, you'll learn how to
 > * Call Q# operations directly from the command prompt or using a classical host program
 > * Simulate a quantum operation from qubit allocation to measurement output
 > * Observe how the quantum system's simulated wavefunction evolves throughout the operation
+
+[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
 
 ## Prerequisites
 

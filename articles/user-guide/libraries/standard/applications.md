@@ -2,18 +2,18 @@
 author: bradben
 description: Learn about two fundamental applications in quantum computing - Hamiltonian simulation and Shor's search algorithm.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 06/21/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
-no-loc: ['Q#', '$$v']
+no-loc: ['Q#', '$$v', Variational Quantum Eigensolver, target, targets]
 title: Applications in the Q# standard libraries
 uid: microsoft.quantum.libraries.overview.applications
 ---
 
-# Applications #
+# Applications
 
-## Hamiltonian simulation ##
+## Hamiltonian simulation
 
 The simulation of quantum systems is one of the most exciting applications of quantum computation.
 On a classical computer, the difficulty of simulating quantum mechanics, in general, scales with the dimension $N$ of its state-vector representation.
@@ -30,7 +30,7 @@ Analogously, the time-dependent Hamiltonian simulation problem solves the same e
 
 Hamiltonian simulation is a major component of many other quantum simulation problems, and solutions to Hamiltonian simulation problem are algorithms that describes a sequence of primitive quantum gates for synthesizing an approximating unitary $\tilde{U}$ with error $\\|\tilde{U} - U(t)\\| \le \epsilon$ in the [spectral norm](xref:microsoft.quantum.concepts.matrix-advanced). The complexity of these algorithms depend very strongly on how a description of the Hamiltonian of interest is made accessible by a quantum computer. For instance, in the worst-case, if $H$ acting on $n$ qubits were to be provided as a list of $2^n \times 2^n$ numbers, one for each matrix element, simply reading the data would already require exponential time. In the best case, one could assume access to a black-box unitary that $O\ket{t}\ket{\psi(0)}=\ket{t}U(t)\ket{\psi(0)}$ trivially solves the problem. Neither of these input models are particularly interesting -- the former as it is no better than classical approaches, and the latter as the black-box hides the primitive gate complexity of its implementation, which could be exponential in the number of qubits.
 
-### Descriptions of Hamiltonians ###
+### Descriptions of Hamiltonians
 
 Additional assumptions of the format of the input are therefore required. A fine balance must be struck between input models that are sufficiently descriptive to encompass interesting Hamiltonians, such as those for realistic physical systems or interesting computational problems, and input models that are sufficiently restrictive to be efficiently implementable on a quantum computer. A variety of non-trivial input model may be found in the literature, and they range from quantum to classical. 
 
@@ -54,9 +54,9 @@ $$
 Moreover, it is assumed that each part, a Hamiltonian $H\_j$, is easy to simulate. This means that the unitary $e^{-iH\_j t}$ for any time $t$ may be implemented exactly using $\mathcal{O}(1)$ primitive quantum gates. For instance, this is true in the special case where each $H\_j$ are local Pauli operators, meaning that they are of tensor products of $\mathcal{O}(1)$ non-identity Pauli operators that act on spatially close qubits. This model is particularly applicable to physical systems with bounded and local interaction, as the number of terms is $d=\mathcal{O}(\text{polylog}(N))$, and may clearly be written down, that is, classically described, in polynomial time.
 
 > [!TIP]
-> Hamiltonians that decompose into a sum of parts may be described using the Dynamical Generator Representation library. For more information, see the Dynamical Generator Representation section in [data structures](xref:microsoft.quantum.libraries.overview.data-structures).
+> Hamiltonians that decompose into a sum of parts may be described using the Dynamical Generator Representation library. For more information, see [Dynamical Generator Representation](xref:microsoft.quantum.libraries.overview.data-structures#dynamical-generator-representation).
 
-### Simulation algorithms ###
+### Simulation algorithms
 
 A quantum simulation algorithm converts a given description of a Hamiltonian into a sequence of primitive quantum gates that, as a whole, approximate time-evolution by said Hamiltonian.
 
@@ -74,7 +74,7 @@ using a product of $r d$ terms.
 > For the Ising model using the Trotter-Suzuki library control structure, please see the [**IsingTrotter** sample](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/trotter-evolution).
 > For molecular Hydrogen using the Trotter-Suzuki library control structure, please see the [**H2 simulation** sample](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line).
 
-In many cases, we would like to implement the simulation algorithm, but are not interested in the details of its implementation. For instance, the second-order integrator approximates
+In many cases, you might wish to implement the simulation algorithm, but aren't interested in the details of its implementation. For instance, the second-order integrator approximates
 $$
 \begin{align}
     U(t) & = \left( 
@@ -83,13 +83,13 @@ $$
     \right)^{r} + \mathcal{O}(d^3 \max_j\\|H\_j\\|^3 t^3/r^2),
 \end{align}
 $$ 
-using a product of $2rd$ terms. Larger orders will involve even more terms and optimized variants may require highly non-trivial orderings on the exponentials. Other advanced algorithms may also involve the use of auxiliary qubits in intermediate steps. Thus we package simulation algorithms in the canon as the user-defined type
+using a product of $2rd$ terms. Larger orders involve even more terms, and optimized variants may require highly non-trivial orderings on the exponentials. Other advanced algorithms may also involve the use of auxiliary qubits in intermediate steps. For this reason, Q# packages simulation algorithms as the user-defined type
 
 ```qsharp
 newtype SimulationAlgorithm = ((Double, EvolutionGenerator, Qubit[]) => Unit is Adj + Ctl);
 ```
 
-The first parameter `Double` is the time of simulation, the second parameter `EvolutionGenerator`, covered in the Dynamical Generator Representation section of [data-structures](xref:microsoft.quantum.libraries.overview.data-structures), is a classical description of a time-independent Hamiltonian packaged with instructions on how each term in the Hamiltonian may be simulated by a quantum circuit. Types of this form approximate the unitary operation $e^{-iHt}$ on the third parameter `Qubit[]`, which is the register storing the quantum state of the simulated system. Similarly for the time-dependent case, we define a user-defined type with an `EvolutionSchedule` type instead, which is a classical description of a time-dependent Hamiltonian.
+The first parameter `Double` is the time of simulation, the second parameter `EvolutionGenerator`, covered in [Dynamical Generator Representation](xref:microsoft.quantum.libraries.overview.data-structures#dynamical-generator-representation), is a classical description of a time-independent Hamiltonian packaged with instructions on how each term in the Hamiltonian may be simulated by a quantum circuit. Types of this form approximate the unitary operation $e^{-iHt}$ on the third parameter `Qubit[]`, which is the register storing the quantum state of the simulated system. Similarly for the time-dependent case, you define a user-defined type with an `EvolutionSchedule` type instead, which is a classical description of a time-dependent Hamiltonian.
 
 ```qsharp
 newtype TimeDependentSimulationAlgorithm = ((Double, EvolutionSchedule, Qubit[]) => Unit : Adjoint, Controlled);
@@ -118,16 +118,15 @@ function TimeDependentTrotterSimulationAlgorithm(
 > For phase estimation in the Ising model using `SimulationAlgorithm`, please see the [**IsingPhaseEstimation** sample](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
 > For adiabatic state preparation in the Ising model using `TimeDependentSimulationAlgorithm`, please see the [**AdiabaticIsing** sample](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
 
+### Adiabatic state preparation & phase estimation
 
-### Adiabatic state preparation & phase estimation ###
-
-One common application of Hamiltonian simulation is adiabatic state preparation. Here, one is provided with two Hamiltonians $H\_{\text{start}}$ and $H\_{\text{end}}$, and a quantum state $\ket{\psi(0)}$ that is a ground state of the start Hamiltonian $H\_{\text{start}}$. Typically, $H\_{\text{start}}$ is chosen such that $\ket{\psi(0)}$ is easy to prepare from a computational basis state $\ket{0\cdots 0}$. By interpolating between these Hamiltonians in the time-dependent simulation problem sufficiently slowly, it is possible to end up, with high probability, in a ground state of the final Hamiltonian $H\_{\text{end}}$. Though preparing good approximations to Hamiltonian ground states could proceed in this manner by calling upon on time-dependent Hamiltonian simulation algorithms as a subroutine, other conceptually different approaches such as the variational quantum eigensolver are possible.
+One common application of Hamiltonian simulation is adiabatic state preparation. Here, one is provided with two Hamiltonians $H\_{\text{start}}$ and $H\_{\text{end}}$, and a quantum state $\ket{\psi(0)}$ that is a ground state of the start Hamiltonian $H\_{\text{start}}$. Typically, $H\_{\text{start}}$ is chosen such that $\ket{\psi(0)}$ is easy to prepare from a computational basis state $\ket{0\cdots 0}$. By interpolating between these Hamiltonians in the time-dependent simulation problem sufficiently slowly, it is possible to end up, with high probability, in a ground state of the final Hamiltonian $H\_{\text{end}}$. Though preparing good approximations to Hamiltonian ground states could proceed in this manner by calling upon on time-dependent Hamiltonian simulation algorithms as a subroutine, other conceptually different approaches such as the :::no-loc text="Variational Quantum Eigensolver"::: are possible.
 
 Yet another application ubiquitous in quantum chemistry is estimating the ground state energy of Hamiltonians representing the intermediate steps of chemical reaction. Such a scheme could, for instance, rely on adiabatic state preparation to create the ground state, and then incorporate time-independent Hamiltonian simulation as a subroutine in phase estimation characterization to extract this energy with some finite error and probability of success. 
 
-Abstracting simulation algorithms as the user-defined types `SimulationAlgorithm` and `TimeDependentSimulationAlgorithm` allow us to conveniently incorporate their functionality into more sophisticated quantum algorithms. This motivates us to do the same for these commonly used subroutines.
+Abstracting simulation algorithms as the user-defined types `SimulationAlgorithm` and `TimeDependentSimulationAlgorithm` allow you to conveniently incorporate their functionality into more sophisticated quantum algorithms. 
 
-Thus we define the convenient function
+For example, you can define the convenient function
 
 ```qsharp
 function InterpolatedEvolution(
@@ -141,9 +140,9 @@ function InterpolatedEvolution(
  
 ```
 
-This returns a unitary operation that implements all steps of adiabatic state preparation. The first parameter `interpolatedTime` defines the time over which we linearly interpolate between the start Hamiltonian described by the second parameter `evolutionGeneratorStart` and the end Hamiltonian described by the third parameter `evolutionGeneratorEnd`. The fourth parameter `timeDependentSimulationAlgorithm` is where one makes the choice of simulation algorithm. Note that if `interpolatedTime` is long enough, an initial ground state remains an instantaneous ground state of the Hamiltonian over the entire duration of time-dependent simulation, and thus ends in the ground state of the end Hamiltonian.
+This function returns a unitary operation that implements all steps of adiabatic state preparation. The first parameter `interpolatedTime` defines the time over which you linearly interpolate between the start Hamiltonian described by the second parameter `evolutionGeneratorStart` and the end Hamiltonian described by the third parameter `evolutionGeneratorEnd`. The fourth parameter `timeDependentSimulationAlgorithm` is where one makes the choice of simulation algorithm. Note that if `interpolatedTime` is long enough, an initial ground state remains an instantaneous ground state of the Hamiltonian over the entire duration of time-dependent simulation, and thus ends in the ground state of the end Hamiltonian.
 
-We also define a helpful operation that automatically performs all steps of a typical quantum chemistry experiment. For instance we have the following, which returns an energy estimate of the state produced by adiabatic state preparation:
+You can also define a helpful operation that automatically performs all steps of a typical quantum chemistry experiment. For example, the following operation returns an energy estimate of the state produced by adiabatic state preparation:
 
 ```qsharp
 operation EstimateAdiabaticStateEnergy(
@@ -167,24 +166,24 @@ operation EstimateAdiabaticStateEnergy(
 > [!TIP]
 > The [simulation of molecular Hydrogen](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line) is an interesting and brief sample. The model and experimental results reported in [O'Malley et. al.](https://arxiv.org/abs/1512.06860) only requires Pauli matrices and takes the form $\hat H = g\_{0}I\_0I\_1+g\_1{Z\_0}+g\_2{Z\_1}+g\_3{Z\_0}{Z\_1}+g\_4{Y\_0}{Y\_1}+g\_5{X\_0}{X\_1}$. This is an effective Hamiltonian only requiring only 2 qubits, where the constants $g$ are computed from the distance $R$ between the two Hydrogen atoms. Using canon functions, the Paulis are converted to unitaries and then evolved over short periods of time using the Trotter-Suzuki decomposition. A good approximation to the $H_2$ ground state can be created without using adiabatic state preparation, and so the ground state energy may be found directly by utilizing phase estimation from the canon.
 
-## Shor's algorithm ##
+## Shor's algorithm
+
 Shor's algorithm remains one of the most significant developments in quantum computing because it showed that quantum computers could be used to solve important, currently classically intractable problems.
 Shor's algorithm provides a fast way to factor large numbers using a quantum computer, a problem called *factoring*.
 The security of many present-day cryptosystems is based on the assumption that no fast algorithm exists for factoring.
 Thus Shor's algorithm has had a profound impact on how we think about security in a post-quantum world.
 
 Shor's algorithm can be thought of as a hybrid algorithm.
-The quantum computer is used to perform a computationally hard task known as period finding.
+The quantum computer is used to perform a computationally hard task known as *period finding*.
 The results from period finding are then classically processed to estimate the factors.
-We review these two steps below.
 
-### Period finding ###
+### Period finding
 
-Having seen how the quantum Fourier transform and phase estimation work (see [Quantum algorithms](xref:microsoft.quantum.libraries.overview.standard.algorithms)), we can use these tools to solve a classically hard computational problem called *period finding*.  In the next section, we will see how to apply period finding to factoring.
+Having seen how the quantum Fourier transform and phase estimation work (see [Quantum algorithms](xref:microsoft.quantum.libraries.overview.standard.algorithms)), you can use these tools to solve a classically hard computational problem called *period finding*.  In the next section, you'll see how to apply period finding to factoring.
 
 Given two integers $a$ and $N$, where $a<N$, the goal of period finding, also called order finding, is to find the _order_ $r$ of $a$ modulo $N$, where $r$ is defined to be the least positive integer such that $a^r \equiv 1 \text{ mod } N$.  
 
-To find the order using a quantum computer, we can use the phase estimation algorithm applied to the following unitary operator $U_a$:
+To find the order using a quantum computer, you can use the phase estimation algorithm applied to the following unitary operator $U_a$:
 $$ U_a\ket{x} \equiv \ket{(ax)\text{ mod }N} .$$
 The eigenvectors of $U_a$ are for integer $s$ and $0\leq s \leq r - 1$,
 $$\ket{x_s} \equiv 1 / \sqrt{r} \sum\_{k=0}^{r-1} e^{\frac{-2\pi i sk}{r}} \ket{a^k\text{ mod }N},$$
@@ -199,41 +198,41 @@ The circuit diagram for quantum period finding is:
 ![Circuit diagram for quantum period finding](~/media/QPE.svg)
 
 Here $2n$ qubits are initialized to $\ket{0}$ and $n$ qubits are initialized to $\ket{1}$.
-The reader again may wonder why the quantum register to hold the eigenstates is initialized to $\ket{1}$.
-As one does not know the order $r$ in advance, we cannot actually prepare $\ket{x_s}$ states directly.
-Luckily, it turns out that $1/\sqrt{r} \sum\_{s=0}^{r-1} \ket{x\_s} = \ket{1}$.
-We don't need to actually prepare $\ket{x}$!
-We can just prepare a quantum register of $n$ qubits in state $\ket{1}$. 
+You may wonder why the quantum register to hold the eigenstates is initialized to $\ket{1}$.
+Because you not know the order $r$ in advance, you cannot actually prepare $\ket{x_s}$ states directly.
+Luckily, it turns out that $1/\sqrt{r} \sum\_{s=0}^{r-1} \ket{x\_s} = \ket{1}$ - you don't need to actually prepare $\ket{x}$!
+You can just prepare a quantum register of $n$ qubits in state $\ket{1}$. 
 
 The circuit contains the QFT and several controlled gates.
-The QFT gate has been described [previously](xref:microsoft.quantum.libraries.overview.standard.algorithms).
+(The QFT gate is described in [Quantum algorithms](xref:microsoft.quantum.libraries.overview.standard.algorithms)).
 The controlled-$U_a$ gate maps $\ket{x}$ to $\ket{(ax)\text{ mod } N}$ if the control qubit is $\ket{1}$, and maps $\ket{x}$ to $\ket{x}$ otherwise.
 
-To achieve $(a^nx)\text{ mod } N$,  we can simply apply controlled-$U_{a^n}$, where we calculate $a^n \text{ mod } N$ classically to plug into the quantum circuit.  
-The circuits to achieve such modular arithmetic have been described in the [quantum arithmetic documentation](./algorithms.md#arithmetic), specifically we require a modular exponentiation circuit to implement the controlled-$U\_{a^i}$ operations.
+To achieve $(a^nx)\text{ mod } N$, you can simply apply controlled-$U_{a^n}$, where you calculate $a^n \text{ mod } N$ classically to plug into the quantum circuit.  
+The circuits to achieve such modular arithmetic have been described in the [quantum arithmetic documentation](./algorithms.md#arithmetic), specifically requiring a modular exponentiation circuit to implement the controlled-$U\_{a^i}$ operations.
 
-While the circuit above corresponds to [Quantum Phase Estimation](xref:Microsoft.Quantum.Characterization.QuantumPhaseEstimation) and explicitly enables order finding, we can reduce the number of qubits required. We can either follow Beauregard's method for order finding as described 
+While the circuit here corresponds to [Quantum Phase Estimation](xref:Microsoft.Quantum.Characterization.QuantumPhaseEstimation) and explicitly enables order finding, you can reduce the number of qubits required. You can either follow Beauregard's method for order finding as described 
 [on Page 8 of arXiv:quant-ph/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8), or 
-use one of the phase estimation routines available in Microsoft.Quantum.Characterization. For example, 
+use one of the phase estimation routines available in [Microsoft.Quantum.Characterization](xref:Microsoft.Quantum.Characterization). For example, 
 [Robust Phase Estimation](xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation) also uses one extra qubit.
 
-### Factoring ###
+### Factoring
+
 The goal of factoring is to determine the two prime factors of integer $N$, where $N$ is an $n$-bit number.  
-Factoring consists of the steps described below. The steps are split into three parts: a classical preprocessing routine (1-4); a quantum computing routine to find the order of $a \text{ mod } N$ (5); and a classical postprocessing routine to derive the prime factors from the order (6-9).
+The steps are split into three parts: a classical preprocessing routine (steps 1-4); a quantum computing routine to find the order of $a \text{ mod } N$ (step 5); and a classical postprocessing routine to derive the prime factors from the order (steps 6-9).
 
-The classical preprocessing routine consists of the following steps:
+The end-to-end factoring process is:
+
 1. If $N$ is even, return the prime factor $2$.
-2. If $N=p^q$ for $p\geq1$, $q\geq2$, return the prime factor $p$.  This step is performed classically.
-3. Choose a random number $a$ such that $1 < a < N-1$.
-4. If $\text{gcd}(a,N)>1$, return the prime factor $\text{gcd}(a,N)$. This step is computed using Euclid's algorithm.
-If no prime factor has been returned, we proceed to the quantum routine:
-5. Call the quantum period finding algorithm to calculate the order $r$ of $a \text{ mod } N$. Use $r$ in the classical postprocessing routine to determine the prime factors:
-6. If $r$ is odd, go back to preprocessing step (3).
-7. If $r$ is even and $a^{r/2} = -1\text{ mod }N$, go back to preprocessing step (3).
-8. If $\text{gcd}(a^{r/2}+1, N)$ is a non-trivial factor of $N$, return $\text{gcd}(a^{r/2}+1, N)$.
-9. If $\text{gcd}(a^{r/2}-1, N)$ is a non-trivial factor of $N$, return $\text{gcd}(a^{r/2}-1, N)$.
+1. If $N=p^q$ for $p\geq1$, $q\geq2$, return the prime factor $p$.  This step is performed classically.
+1. Choose a random number $a$ such that $1 < a < N-1$.
+1. If $\text{gcd}(a,N)>1$, return the prime factor $\text{gcd}(a,N)$. This step is computed using Euclid's algorithm.
+If no prime factor has been returned, you proceed to the quantum routine:
+1. Call the quantum period finding algorithm to calculate the order $r$ of $a \text{ mod } N$. Use $r$ in the classical postprocessing routine to determine the prime factors:
+1. If $r$ is odd, go back to preprocessing step (3).
+1. If $r$ is even and $a^{r/2} = -1\text{ mod }N$, go back to preprocessing step (3).
+1. If $\text{gcd}(a^{r/2}+1, N)$ is a non-trivial factor of $N$, return $\text{gcd}(a^{r/2}+1, N)$.
+1. If $\text{gcd}(a^{r/2}-1, N)$ is a non-trivial factor of $N$, return $\text{gcd}(a^{r/2}-1, N)$.
 
-
-The factoring algorithm is probabilistic: it can been shown that with probability at least one half that $r$ will be even and $a^{r/2} \neq -1 \text{ mod }N$, thus producing a prime factor.  (See [Shor's original paper](https://doi.org/10.1109/SFCS.1994.365700) for details, or one of the *Basic quantum computing* texts in [For more information](xref:microsoft.quantum.more-information)).
-If a prime factor is not returned, then we simply repeat the algorithm from step (1).  After $n$ tries, the probability that every attempt has failed is at most $2^{-n}$.
+The factoring algorithm is probabilistic: it can been shown that with probability at least one half that $r$ will be even and $a^{r/2} \neq -1 \text{ mod }N$, thus producing a prime factor.  See [Shor's original paper](https://doi.org/10.1109/SFCS.1994.365700) for details, or one of the *Basic quantum computing* texts in [For more information](xref:microsoft.quantum.more-information).
+If a prime factor is not returned, then you simply repeat the algorithm from step (1).  After $n$ tries, the probability that every attempt has failed is at most $2^{-n}$.
 Thus after repeating the algorithm a small number of times success is virtually assured.

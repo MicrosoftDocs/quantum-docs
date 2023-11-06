@@ -2,17 +2,19 @@
 author: bradben
 description: Learn how to submit Qiskit quantum circuits to the Azure Quantum service using an online notebook.
 ms.author: brbenefield
-ms.date: 12/01/2022
+ms.date: 11/02/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
-no-loc: ['Python', '$$v']
+no-loc: ['Python', '$$v', target, targets]
 title: 'Quickstart: Create Qiskit circuits with online notebooks'
 zone_pivot_groups: quantum-computing-platforms-rigetti
 uid: microsoft.quantum.quickstarts.computing.qiskit.portal
 --- 
 
 # Quickstart: Submit a circuit with Qiskit using an Azure Quantum notebook
+
+[!INCLUDE [Modern QDK portal banner](includes/new-qdk-portal-support.md)]
 
 Learn how to use the Azure Quantum service to submit a Qiskit quantum circuit to an IonQ, Quantinuum, or Rigetti quantum computing target. This example uses an Azure Quantum notebook and the built-in *azure-quantum* Python package - no installation or configuration is required. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
@@ -137,7 +139,6 @@ This workspace's targets:
 - quantinuum.sim.h1-1e
 - quantinuum.sim.h1-2e
 - rigetti.sim.qvm
-- rigetti.qpu.aspen-m-2
 - rigetti.qpu.aspen-m-3
 ```
 
