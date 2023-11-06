@@ -72,6 +72,7 @@ If you already know the provider and plan names to use in your workspace, you ca
       -w MyQuantumWorkspace \
       -a MyStorageAccount
    ```
+
 You might be prompted to accept terms of use.  Enter `Y` to accept the terms.  Note that the `-r` parameter shown in step four, below, was not required. 
 
 If you need to determine which providers and plans to use, proceed as follows:

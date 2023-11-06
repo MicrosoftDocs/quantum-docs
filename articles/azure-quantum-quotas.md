@@ -116,6 +116,7 @@ The **Period** column indicates the period when your quota is renewed.
       location = ""  # Add your workspace location (for example, "westus") 
     )
     ```
+
 1. Use the **`get_quotas`** method to display the quotas information for the selected workspace.
 
     ```python
