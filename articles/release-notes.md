@@ -278,8 +278,8 @@ demonstrating the use of the sparse simulator.
   - You can use the Q# formatter via Visual Studio by clicking on the **Edit -> Advanced -> Format Document** menu item. Via Visual Studio Code, you can format your code by right-clicking on the code you want to format, and clicking on the **Format Document** menu item.
   - Added a build target, UpdateSyntax, for updating deprecated syntax in a Q# project. This target can be used with `dotnet msbuild -t:UpdateSyntax` at a command prompt.
   - Added Code Actions to automatically update deprecated syntax.
-- Added support for submitting problems to a subset of Microsoft targets in [protobuf binary format](xref:microsoft.quantum.optimization.problem#input-problem-serialization-to-protobuf-binary-format). You can use it for encoding larger problems by reducing the payload sizes, and improve upload and processing speeds.
-- **Breaking change:** The [deserialize](xref:microsoft.quantum.optimization.problem#problemserialize) class method of the Problem class has a parameter name change from `problem_as_json` to `input_problem` to support deserialization of protobuf.
+- Added support for submitting problems to a subset of Microsoft targets in protobuf binary format. You can use it for encoding larger problems by reducing the payload sizes, and improve upload and processing speeds.
+- **Breaking change:** The deserialize class method of the Problem class has a parameter name change from `problem_as_json` to `input_problem` to support deserialization of protobuf.
 
 ## 2021-10-26
 
