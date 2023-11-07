@@ -57,11 +57,9 @@ from azure.identity import ManagedIdentityCredential
 
 from azure.quantum import Workspace
 workspace = Workspace (
-subscription_id = "",
-resource_group = "",
-name = "",
-location = "" ,
-credential=ManagedIdentityCredential())
+    resource_id = "",
+    location = "" ,
+    credential=ManagedIdentityCredential()
+)
 
 ```
-

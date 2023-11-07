@@ -110,9 +110,7 @@ The **Period** column indicates the period when your quota is renewed.
 
     # Copy the following settings for your workspace
     workspace = Workspace ( 
-      subscription_id = "", # Add your subscription_id 
-      resource_group = "", # Add your resource_group 
-      name = "", # Add your workspace name 
+      resource_id = "", # Add your resource_id 
       location = ""  # Add your workspace location (for example, "westus") 
     )
     ```

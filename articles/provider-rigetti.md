@@ -138,9 +138,7 @@ from azure.quantum.target.rigetti import Result, Rigetti, RigettiTarget, InputPa
 
 workspace = Workspace(
     # TODO: Fill in your details here
-    subscription_id="",
-    resource_group="",
-    name="",
+    resource_id="",
     location=""
 )
 

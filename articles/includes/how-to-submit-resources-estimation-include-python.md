@@ -24,12 +24,10 @@ When your new notebook opens, it automatically creates the code for the first ce
 
 ```py
 from azure.quantum import Workspace
-workspace = Workspace (
-    subscription_id = <your subscription ID>, 
-    resource_group = <your resource group>,   
-    name = <your workspace name>,          
-    location = <your location>        
-    )
+workspace = Workspace ( 
+    resource_id = "", # Add your resource_id 
+    location = ""  # Add your workspace location (for example, "westus") 
+)
 ```
 
 ### Load the required imports
