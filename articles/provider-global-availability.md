@@ -461,3 +461,155 @@ Rigetti offers two plans through Azure Quantum: the Azure Quantum Credits progra
 - Yemen
 - Zambia
 - Zimbabwe
+
+
+## [PASQAL](#tab/tabid-pasqal)
+
+PASQAL offers . For more information about PASQAL resources on Azure Quantum, see [PASQAL provider and targets](xref:microsoft.quantum.providers.pasqal).
+
+### PASQAL is available in the following countries/regions:
+- Armenia
+- Australia
+- Austria
+- Belarus
+- Belgium
+- Bulgaria
+- Canada
+- Chile
+- Colombia
+- Croatia
+- Cyprus
+- Czechia
+- Denmark
+- Estonia
+- Finland
+- France
+- Germany
+- Greece
+- Hungary
+- Iceland
+- India
+- Indonesia
+- Ireland
+- Israel
+- Italy
+- Kenya
+- Korea
+- Latvia
+- Liechtenstein
+- Lithuania
+- Luxembourg
+- Malaysia
+- Malta
+- Monaco
+- Netherlands
+- New Zealand
+- Nigeria
+- Norway
+- Poland
+- Portugal
+- Puerto Rico
+- Romania
+- Saudi Arabia
+- Serbia
+- Singapore
+- Slovakia
+- Slovenia
+- South Africa
+- Spain
+- Sweden
+- Switzerland
+- Taiwan
+- Thailand
+- Türkiye
+- United Arab Emirates
+- United Kingdom
+- United States
+- Vietnam
+
+### PASQAL is unavailable in the following countries/regions:
+- Afghanistan
+- Albania
+- Algeria
+- Andorra
+- Angola
+- Argentina
+- Azerbaijan
+- Bahrain
+- Bangladesh
+- Barbados
+- Belize
+- Bermuda
+- Bolivia
+- Bosnia and Herzegovina
+- Botswana
+- Brazil
+- Brunei
+- Cabo Verde
+- Cameroon
+- Cayman Islands
+- Costa Rica
+- Côte d'Ivoire
+- Curaçao
+- Dominican Republic
+- Ecuador
+- Egypt
+- El Salvador
+- Ethiopia
+- Faroe Islands
+- Fiji
+- Georgia
+- Ghana
+- Guatemala
+- Honduras
+- Hong Kong SAR
+- Iraq
+- Jamaica
+- Japan
+- Jordan
+- Kazakhstan
+- Kuwait
+- Kyrgyzstan
+- Lebanon
+- Libya
+- Macao SAR
+- Mauritius
+- Mexico
+- Moldova
+- Mongolia
+- Montenegro
+- Morocco
+- Namibia
+- Nepal
+- Nicaragua
+- North Macedonia
+- Oman
+- Pakistan
+- Palestinian Authority
+- Panama
+- Paraguay
+- Peru
+- Philippines
+- Qatar
+- Russia
+- Rwanda
+- Saint Kitts and Nevis
+- Senegal
+- Sri Lanka
+- Tajikistan
+- Tanzania
+- Trinidad and Tobago
+- Tunisia
+- Turkmenistan
+- U.S. Virgin Islands
+- Uganda
+- Ukraine
+- Uruguay
+- Uzbekistan
+- Vatican City
+- Venezuela
+- Yemen
+- Zambia
+- Zimbabwe
+
+***

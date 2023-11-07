@@ -32,7 +32,7 @@ For information on which quantum computing providers are available in your regio
 
 Microsoft's provider partners offer a wide-range of qubit availability for their hardware processors and simulators. 
 
-|Target name |	Number of qubits|
+|Target name | Number of qubits|
 |---|---|
 |[IonQ Quantum simulator](xref:microsoft.quantum.providers.ionq#quantum-simulator)	|29 qubits|	
 |[IonQ Harmony](xref:microsoft.quantum.providers.ionq#ionq-harmony-quantum-computer) |11 qubits	|
@@ -48,7 +48,10 @@ Microsoft's provider partners offer a wide-range of qubit availability for their
 |[Quantinuum H1-2](xref:microsoft.quantum.providers.quantinuum#system-model-h1)| 20 qubits|
 |[Quantinuum H2-1](xref:microsoft.quantum.providers.quantinuum#system-model-h2)| 32 qubits|
 |[Rigetti Quantum Virtual Machine (QVM)](xref:microsoft.quantum.providers.rigetti#simulators) |30 qubits|  
-|[Rigetti Aspen-M-3](xref:microsoft.quantum.providers.rigetti#aspen-m-3) |80 qubits| 
+|[Rigetti Aspen-M-3](xref:microsoft.quantum.providers.rigetti#aspen-m-3) |80 qubits|
+|[PASQAL Emu-free](xref:microsoft.quantum.providers.pasqal#emu-free)|20 qubits|
+|[PASQAL Emu-TN](xref:microsoft.quantum.providers.pasqal#emu-tn)|100 qubits|
+|[PASQAL Fresnel1](xref:microsoft.quantum.providers.pasqal#fresnel1)|100 qubits|
 
 
 
