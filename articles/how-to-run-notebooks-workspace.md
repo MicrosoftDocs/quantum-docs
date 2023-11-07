@@ -107,10 +107,11 @@ You can rename, delete, duplicate, and download existing notebooks.
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Notebooks**.
-1. Select your notebook in **My notebooks** and left-click the context pane (**...**).
+1. Select your notebook in **My notebooks**
+1. Click on the context pane, which is **...** to the right of your notebook's name.
 1. Select **Rename Notebook**, **Delete Notebook**, **Duplicate Notebook**, or **Download Notebook**.
 
-    :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-context-pane.png" alt-text="Screenshot of the notebook context pane in Azure Quantum.":::
+    :::image type="content" source="media/run_or_run_all.png" alt-text="Screenshot of the notebook context pane in Azure Quantum.":::
 
 ## Isolation
 
