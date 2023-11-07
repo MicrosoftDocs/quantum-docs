@@ -91,8 +91,6 @@ To configure Binder automatically to use the Quantum Katas:
 1. Open a browser and navigate to <https://aka.ms/try-quantum-katas>.
 1. On the **Quantum Katas and Tutorials** landing page, select any of the Katas listed in the learning path to open them as Jupyter Notebooks, allowing you to run and interact with a Kata without requiring any installation.
 
-![Quantum Katas overview on Binder](~/media/binder-katas.png)
-
 ## Next steps
 
 Now that you have set up your Binder environment, you can write and run [your first quantum program](xref:microsoft.quantum.tutorial-qdk.random-number).

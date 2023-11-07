@@ -1,18 +1,15 @@
 ---
 author: SoniaLopezBravo
-description: Reference for azure.quantum.Job
+description: Reference for job in azure.quantum
 ms.author: sonialopez
 ms.date: 07/17/2023
 ms.service: azure-quantum
-ms.subservice: optimization
 ms.topic: reference
 title: Azure Quantum job reference
 uid: microsoft.quantum.optimization.job-reference
 ---
 
 # Azure Quantum job reference
-
-[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 ```py
 from azure.quantum import Job
@@ -27,7 +24,7 @@ yet finished, blocks until it has.
 results = job.get_results()
 print(results)
 
-> {'version': '1.0', 'solutions': [{'configuration': {'1': 1, '0': 1, '2': -1, '3': 1}, 'cost': -23.0}]}
+> {"01011": 52, "00111": 48}
 ```
 
 ## Job.details

@@ -26,4 +26,4 @@ The Azure Quantum team has created a set of Jupyter Notebooks on the [azure-quan
 - [What is Azure Quantum?](xref:microsoft.quantum.azure-quantum-overview)
 - [What are the Q# programming language and Quantum Development Kit (QDK)?](xref:microsoft.quantum.overview.q-sharp)
 - [Quickstart: Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal)
-- [Quickstart: Solve an optimization problem using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.optimization.qio.portal)
+

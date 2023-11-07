@@ -70,6 +70,7 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
     
       print(f"Session status: {session.details.status}")
       ```
+
     > [!NOTE]
     > At this point, the session only exists on the client, and you can see that the status is **None**. To view the status of the session, you also need to create the session in the service.
 
@@ -95,6 +96,7 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
        session.refresh()
        time.sleep(5)
       ```
+
 ### [Qiskit](#tab/tabid-qiskit)
 
 1. First, import the **credentials** of your Azure Quantum workspace.

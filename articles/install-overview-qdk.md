@@ -16,7 +16,7 @@ uid: microsoft.quantum.install-qdk.overview
 > [!NOTE]
 > Now available! The [Azure Quantum Development Kit (QDK) Preview](https://github.com/microsoft/qsharp/wiki/Installation) is the latest preview of the Q# development kit, and is available as an extension for Visual Studio Code. For more information, see the [Modern QDK](#the-azure-quantum-development-kit-modern-qdk-preview).
 
-Learn about the different environment options available to develop quantum computing and optimization applications using the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) service.
+Learn about the different environment options available to develop quantum computing using the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) service.
 
 Every environment uses the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp), an open-source set of tools that includes the quantum programming language Q# and accompanying libraries. With the QDK, you can develop quantum computing applications using different IDEs and languages, and run them on quantum simulators or quantum hardware using Azure Quantum. 
 
@@ -83,13 +83,13 @@ Jupyter Notebooks allow running code in-place alongside instructions, notes, and
 
 ## Use a Jupyter Notebook in the Azure Quantum portal and submit jobs to Azure Quantum (recommended)
 
-The Azure Quantum portal provides a built-in development environment where you can create, upload, store, and run your quantum code in Jupyter Notebooks, using both quantum simulators and quantum hardware targets. A gallery of sample Jupyter Notebooks is provided to get you started with quantum programming in Q#, running Qiskit and Cirq circuits, or submitting optimization problems.  From the portal, you can also manage quantum workspaces, jobs, activity, credits and usage, and access control. To get started, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). 
+The Azure Quantum portal provides a built-in development environment where you can create, upload, store, and run your quantum code in Jupyter Notebooks, using both quantum simulators and quantum hardware targets. A gallery of sample Jupyter Notebooks is provided to get you started with quantum programming in Q#, running Qiskit and Cirq circuits.  From the portal, you can also manage quantum workspaces, jobs, activity, credits and usage, and access control. To get started, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). 
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 ## Use your preferred IDE and language locally and submit jobs to Azure Quantum
 
-Installing the QDK on your local computer provides support for Jupyter Notebooks, Python, and Q#, along with extensions for Visual Studio Code and Visual Studio. Develop quantum computing applications in your preferred IDE and language and run them on quantum simulators, quantum hardware, or optimization solvers using the Azure Quantum service.
+Installing the QDK on your local computer provides support for Jupyter Notebooks, Python, and Q#, along with extensions for Visual Studio Code and Visual Studio. Develop quantum computing applications in your preferred IDE and language and run them on quantum simulators and quantum hardware using the Azure Quantum service.
 
 Some scenarios where you might prefer a local environment:
 
@@ -105,7 +105,7 @@ Some scenarios where you might prefer a local environment:
 Select your preferred IDE: 
 
 - [Use Q# and Python with Visual Studio Code or Visual Studio](#use-q-and-python-with-visual-studio-and-visual-studio-code)
-- [Use Python with Qiskit, Cirq, or Azure Quantum optimization solvers](#use-python-with-qiskit-or-cirq-or-azure-quantum-optimization-solvers)
+- [Use Python with Qiskit and Cirq](#use-python-with-qiskit-and-cirq)
 - [Use Q# and Python with Jupyter Notebooks](#use-q-and-python-with-jupyter-notebooks)
 - [Use the QDK with a pre-configured Docker image](#use-the-qdk-with-a-pre-configured-docker-image-advanced)
 
@@ -157,7 +157,7 @@ Configure the QDK for your preferred environment from one of the following optio
 
 To test your environment, see [Submit Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-azurecli).
 
-### Use Python with Qiskit or Cirq, or Azure Quantum optimization solvers
+### Use Python with Qiskit and Cirq
 
 You can use the `azure-quantum` Python package to submit and run Qiskit or Cirq jobs.
 

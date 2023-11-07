@@ -4,15 +4,12 @@ description: Reference for azure.quantum.Workspace
 ms.author: sonialopez
 ms.date: 07/17/2023
 ms.service: azure-quantum
-ms.subservice: optimization
 ms.topic: reference 
 title: Azure Quantum workspace reference
 uid: microsoft.quantum.optimization.workspace
 ---
 
 # Azure Quantum workspace reference
-
-[!INCLUDE [QIO deprecation warning](includes/qio-deprecate-warning.md)]
 
 ```python
 from azure.quantum import Workspace
@@ -23,7 +20,7 @@ from azure.quantum import Workspace
 To create a `Workspace` object, you must supply the following arguments in order
 to connect. If you have not already created a workspace, follow the steps in
 [Creating an Azure Quantum workspace
-guide](xref:microsoft.quantum.quickstarts.optimization.qio.portal) using the following values:
+guide](xref:microsoft.quantum.how-to.workspace) using the following values:
 
 - `subscription_id`: The subscription ID where the workspace is deployed.
 - `resource_group`: The name of the resource group where the workspace is deployed.
@@ -63,7 +60,6 @@ print(job.details.status)
 Succeeded
 ```
 
-
 ## Workspace.list_jobs
 
 Returns the list of existing jobs in the workspace.
@@ -76,6 +72,7 @@ jobs = workspace.list_jobs()
 for job in jobs:
     print(job.id, job.details.status)
 ```
+
 ```output
 08ea8792-68f2-11ea-acc5-2a16a847b8a3 Succeeded
 0ab1863a-68f2-11ea-82b3-2a16a847b8a3 Succeeded
@@ -160,7 +157,7 @@ Succeeded
 
 ## Workspace.get_targets
 
-Lists instances of all targets available on the Workspace and can be filtered by provider ID or target name. This method returns a list or a single instance. This includes all of the QIO Solvers, since Solver is a subclass of Target.
+Lists instances of all targets available on the Workspace and can be filtered by provider ID or target name. This method returns a list or a single instance.
 Each target can be used to submit a job as an alternative to creating a Solver instance directly as described in [Job management](xref:microsoft.quantum.optimization.job-management). `Workspace.get_targets` takes optional keyword parameters. If no keyword parameters are passed, it defaults to using the parameter-free target. Note that there is an exception for the Population Annealing and Substochastic Monte Carlo solvers, as they requrie a `timeout` parameter to resolve to the parameter-free version. The QMC solver does not have a parameter-free option.
 
 The following example shows how to get all targets associated with your workspace:
@@ -174,19 +171,9 @@ targets
 ```
 
 ```output
-[<Target name="microsoft.paralleltempering-parameterfree.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.simulatedannealing-parameterfree.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.tabu-parameterfree.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.qmc.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.populationannealing.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.substochasticmontecarlo.cpu", avg. queue time=0 s, Available>,
- <Target name="ionq.qpu", avg. queue time=669 s, Available>,
+[<Target name="ionq.qpu", avg. queue time=669 s, Available>,
  <Target name="ionq.simulator", avg. queue time=1 s, Available>,
  <Target name="ionq.qpu.aria-1", avg. queue time=1136774 s, Available>,
- <Target name="1qbit.tabu", avg. queue time=0 s, Available>,
- <Target name="1qbit.pathrelinking", avg. queue time=0 s, Available>,
- <Target name="1qbit.pticm", avg. queue time=0 s, Available>,
- <Target name="toshiba.sbm.ising", avg. queue time=5 s, Available>,
 <Target name="quantinuum.qpu.h1-1", avg. queue time=0 s, Degraded>,
 <Target name="quantinuum.sim.h1-1sc", avg. queue time=1 s, Available>,
 <Target name="quantinuum.qpu.h1-2", avg. queue time=217300 s, Unavailable>,
@@ -198,59 +185,19 @@ targets
 To filter by provider, specify the `provider_id` input argument:
 
 ```py
-targets = workspace.get_targets(provider_id="microsoft")
+targets = workspace.get_targets(provider_id="ionq")
 targets
 ```
 
 ```output
-[<Target name="microsoft.paralleltempering-parameterfree.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.simulatedannealing-parameterfree.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.tabu-parameterfree.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.qmc.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.populationannealing.cpu", avg. queue time=0 s, Available>,
- <Target name="microsoft.substochasticmontecarlo.cpu", avg. queue time=0 s, Available>]
+[<Target name="ionq.qpu", avg. queue time=669 s, Available>,
+ <Target name="ionq.simulator", avg. queue time=1 s, Available>,
+ <Target name="ionq.qpu.aria-1", avg. queue time=1136774 s, Available>]
 ```
 
-To get a single target, for instance, the Simulated Annealing solver, specify the `name` input argument:
+To get a single target, for instance, the IonQ Aria , specify the `name` input argument:
 
 ```py
-solver = workspace.get_targets(name="microsoft.simulatedannealing.cpu")
+solver = workspace.get_targets(name="ionq.qpu.aria-1")
 solver
-```
-
-Since no keyword arguments were given, the workspace defaults to the parameter-free version:
-
-```output
-<Target name="microsoft.simulatedannealing-parameterfree.cpu", avg. queue time=0 s, Available>
-```
-
-To specify input arguments, use:
-
-```py
-solver = workspace.get_targets(name="microsoft.simulatedannealing.cpu", timeout=100, seed=22)
-solver
-```
-
-```output
-<Target name="microsoft.simulatedannealing.cpu", avg. queue time=0 s, Available>
-```
-
-
-This target can then be used to submit a problem and get the resulting job:
-
-```py
-from azure.quantum.optimization import Problem, ProblemType
-
-problem = Problem(name="MyOptimizationJob", problem_type=ProblemType.ising)
-problem.add_term(c=-9, indices=[0])
-problem.add_term(c=-3, indices=[1,0])
-problem.add_term(c=5, indices=[2,0])
-problem = 
-job = solver.submit(problem)
-results = job.get_results()
-results
-```
-
-```output
-{'solutions': [{'configuration': {'0': 1, '1': 1, '2': -1}, 'cost': -17.0}]}
 ```

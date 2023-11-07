@@ -40,14 +40,6 @@ groups:
     title: Python
   - id: ide-azurecli
     title: Azure CLI
-- id: azurequantum-providers
-  title: Quantum solutions offered by AQ
-  prompt: Select the type of quantum solution
-  pivots:
-  - id: ide-computing
-    title: Quantum Computing
-  - id: ide-optimization
-    title: Optimization
 - id: ide-platforms
   title: Local or online development environments
   prompt: Select your preferred development environment

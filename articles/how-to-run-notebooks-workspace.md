@@ -144,5 +144,4 @@ The following are limitations with Jupyter Notebooks in an Azure Quantum workspa
 ## Next steps
 
 - [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks)
-- [Quickstart: Solve an optimization problem using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.optimization.qio.portal)
 - [Quickstart: Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal)
