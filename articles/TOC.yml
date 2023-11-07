@@ -155,6 +155,12 @@
       href: provider-rigetti.md
     - name: Rigetti support policy
       href: provider-support-rigetti.md
+  - name: PASQAL
+    items:
+    - name: PASQAL provider & targets
+      href: provider-pasqal.md
+    - name: PASQAL support policy
+      href: provider-support-pasqal.md
 - name: Concepts
   items:
     - name: "Quantum computing history & background"
