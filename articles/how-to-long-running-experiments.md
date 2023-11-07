@@ -68,10 +68,5 @@ To start using Google Colab notebooks to run your quantum programs on Azure Quan
   ```
 
 2. Click **Runtime** and select **Restart runtime**
-
 3. To access to your Azure Quantum workspace, you need to **Authenticate**. For example, you get a prompt like the following one: `WARNING:azure.identity._internal.interactive:InteractiveBrowserCredential.get_token failed: Failed to open a browser`. To sign in, use a **Web browser** to open the page https://microsoft.com/devicelogin and enter the code **ET8BM63F3** to authenticate.
-
 4. Once you went through the authentication process, you should be able to run all the cells as if you were doing it from Azure Quantum hosted notebooks or from a local environment.
-
-
-

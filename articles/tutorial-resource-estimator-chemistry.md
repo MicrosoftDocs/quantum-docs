@@ -63,6 +63,7 @@ workspace = Workspace(
   location=""
 )
 ```
+
 This workspace is then used to create an instance to the Resource Estimator.
 
 ```python

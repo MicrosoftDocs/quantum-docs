@@ -22,9 +22,7 @@ to connect. If you have not already created a workspace, follow the steps in
 [Creating an Azure Quantum workspace
 guide](xref:microsoft.quantum.how-to.workspace) using the following values:
 
-- `subscription_id`: The subscription ID where the workspace is deployed.
-- `resource_group`: The name of the resource group where the workspace is deployed.
-- `name`: The name of the workspace.
+- `resource_id`: The resource ID of the workspace.
 - `location`: The location where the workspace is deployed, for example **West US**,
 with either the `create` or `show` commands.
 - `credential`: (Optional) The credential to use to connect to the Azure Quantum and Storage services.
@@ -36,11 +34,9 @@ You can find these values by viewing your Azure Quantum workspace details throug
 In case you have not specified any credentials, the first time you run a method which interacts with the Azure service, a window might prompt in your default browser asking for your credentials.
 
 ```py
-workspace = Workspace (
-    subscription_id = "",  # Add your subscription_id
-    resource_group = "",   # Add your resource_group
-    name = "",             # Add your workspace name
-    location= ""        # Add the workspace location, for example, westus
+workspace = Workspace ( 
+    resource_id = "", # Add your resource_id 
+    location = ""  # Add your workspace location (for example, "westus") 
 )
 ```
 
