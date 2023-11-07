@@ -47,7 +47,7 @@ To run Q# or Python code in a Jupyter Notebook, follow these steps.
 1. Select your notebook in **My notebooks**.
 1. Select the cell you want to run and select the **run icon** to run the code in the cell, or select **Run all** to run all cells in the notebook.
 
-    :::image type="content" source="media/how-to-run-notebooks-workspace/run-notebook.png" alt-text="Screenshot of a Jupyter notebook showing how to run it.":::
+    :::image type="content" source="media/run_or_run_all.png" alt-text="Screenshot of a Jupyter notebook showing how to run it.":::
     
 
 ## Create a new notebook
@@ -111,7 +111,7 @@ You can rename, delete, duplicate, and download existing notebooks.
 1. Click on the context pane, which is **...** to the right of your notebook's name.
 1. Select **Rename Notebook**, **Delete Notebook**, **Duplicate Notebook**, or **Download Notebook**.
 
-    :::image type="content" source="media/run_or_run_all.png" alt-text="Screenshot of the notebook context pane in Azure Quantum.":::
+    :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-context-pane.png" alt-text="Screenshot of the notebook context pane in Azure Quantum.":::
 
 ## Isolation
 
