@@ -21,7 +21,7 @@ In this article you will find the steps for how to submit quantum computing jobs
 
 ::: zone pivot="ide-portal"
 
-[!INCLUDE [python-procedure](includes/how-to-submit-quantum-include-portal.md)]
+[!INCLUDE [azure-portal-procedure](includes/how-to-submit-quantum-include-portal.md)]
 
 ::: zone-end
 
