@@ -111,7 +111,7 @@ In the Pay-as-you-go plan the usage is charged based on the job execution time o
 
 |Pricing | Includes access to  |
 |---|---|  
-|$3000 (USD)/QPU hour + Azure infrastructure costs| <ul><li>PASQAL Fresnel1 QPU</li><li>PASQAL Emu-TN (free up to 10 hours)</li></ul>|
+|$3000 (USD)/QPU hour + Azure infrastructure costs| <ul><li>PASQAL Fresnel1 QPU</li><li>PASQAL Emu-TN (free up to 100 hours)</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
