@@ -15,7 +15,7 @@ uid: microsoft.quantum.providers-invoicing
 
 Azure Quantum partners with third party quantum hardware providers to offer a variety of quantum hardware and software solutions. This article is an overview of the invoicing and billing process for these providers.
 
-## How to see billing plans
+## How to see the billing plans
 
 To see the different billing plans in your local currency: 
 
