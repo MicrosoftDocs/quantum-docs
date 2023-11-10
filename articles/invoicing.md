@@ -15,6 +15,18 @@ uid: microsoft.quantum.providers-invoicing
 
 Azure Quantum partners with third party quantum hardware providers to offer a variety of quantum hardware and software solutions. This article is an overview of the invoicing and billing process for these providers.
 
+## How to see billing plans
+
+To see the different billing plans in your local currency: 
+
+1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
+2. Create a new [**Azure Quantum workspace**](xref:microsoft.quantum.how-to.workspace). 
+3. Go to the **Providers** tab in your Quantum workspace and click on **Add a Provider**. Then, select the provider you want to add.
+
+ :::image type="content" source="media/add-providers-portal.png" alt-text="Screen shot showing how to select a provider to add to an Azure Quantum workspace.":::
+ 
+4. In the description of the provider pane, you will find the current pricing options in your local currency. 
+
 For more information about the billing plans and pricing offer, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing) page. 
 
 ## How to get your invoices

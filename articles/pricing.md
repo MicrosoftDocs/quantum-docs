@@ -17,16 +17,6 @@ In Azure Quantum, hardware and software providers define and control the pricing
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
  
-To see the different pricing plans in your local currency: 
-
-1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
-2. Create a new [**Azure Quantum workspace**](xref:microsoft.quantum.how-to.workspace). 
-3. Go to the **Providers** tab in your Quantum workspace and click on **Add a Provider**. Then, select the provider you want to add.
-
- :::image type="content" source="media/add-providers-portal.png" alt-text="Screen shot showing how to select a provider to add to an Azure Quantum workspace.":::
- 
-4. In the description of the provider pane, you will find the current pricing options in your local currency. 
-
 ## IonQ 
 
 [IonQ](https://ionq.com/) charges based on the number of gates in your program, the complexity of the gates you use, and the number of shots. These units are called *gate-shots*.
