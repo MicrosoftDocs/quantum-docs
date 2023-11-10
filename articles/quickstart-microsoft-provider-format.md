@@ -46,6 +46,12 @@ Learn how to use the `azure-quantum` Python package to submit provider-specific 
 
 ::: zone pivot="platform-quantinuum"
 
+[!INCLUDE [pasqal-procedure](includes/quickstart-provider-include-pasqal.md)]
+
+::: zone-end
+
+::: zone pivot="platform-quantinuum"
+
 [!INCLUDE [quantinuum-procedure](includes/quickstart-provider-include-quantinuum.md)]
 
 ::: zone-end

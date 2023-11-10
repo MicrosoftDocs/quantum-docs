@@ -96,7 +96,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 
 |Pricing | Includes access to   |
 |---|---|  
-|Use is deducted from the Azure Quantum Credits based on the job execution time only| <ul><li>PASQAL Fresnel1 QPU: $3000 (USD)/PU hour deducted from your credits</li><li>PASQAL Emu-TN (free up to 20 hours)</li></ul>|
+|Use is deducted from the Azure Quantum Credits based on the job execution time only| <ul><li>PASQAL Fresnel1 QPU: $3000 (USD)/QPU hour deducted from your credits</li><li>PASQAL Emu-TN (free up to 20 hours)</li></ul>|
 
 > [!NOTE]
 > Once you have consumed all the credits you need to switch to a different plan to continue using PASQAL. Azure Quantum won’t start charging you once you reach your credit limit.

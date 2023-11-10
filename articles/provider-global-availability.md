@@ -164,6 +164,158 @@ IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program a
 - Zambia
 - Zimbabwe
 
+
+## [PASQAL](#tab/tabid-pasqal)
+
+PASQAL offers two plans through Azure Quantum: the Azure Quantum Credits program and a Pay-As-You-Go plan. For more information about PASQAL resources on Azure Quantum, see [PASQAL provider and targets](xref:microsoft.quantum.providers.pasqal).
+
+### PASQAL is available in the following countries/regions:
+
+- Austria
+- Australia
+- Belgium
+- Canada
+- Switzerland
+- Cyprus
+- Czechia
+- Germany
+- Denmark
+- Estonia
+- Spain
+- Finland
+- France
+- United Kingdom
+ -Greece
+- Hong Kong SAR
+- Croatia
+- Hungary
+- Ireland
+- Italy
+- Japan
+- Korea
+- Lithuania
+- Luxembourg
+- Malta
+- Netherlands
+- Norway
+- New Zealand
+- Poland
+- Portugal
+- Romania
+- Sweden
+- Singapore
+- Slovenia
+- Slovakia
+- United States
+- South Africa
+
+### PASQAL is unavailable in the following countries/regions:
+
+- Andorra
+- Afghanistan
+- Albania
+- Algeria
+- Armenia
+- Angola
+- Argentina
+- Azerbaijan
+- Bosnia and Herzegovina
+- Barbados
+- Bangladesh
+- Bulgaria
+- Bahrain
+- Bermuda
+- Brunei
+- Bolivia
+- Brazil
+- Botswana
+- Belarus
+- Belize
+- Cayman Islands
+- Côte d'Ivoire
+- Chile
+- Cameroon
+- Colombia
+- Costa Rica
+- Cabo Verde
+- Curaçao
+- Dominican Republic
+- Ecuador
+- Egypt
+- Ethiopia
+- Fiji
+- Faroe Islands
+- Georgia
+- Ghana
+- Guatemala
+- Honduras
+- Indonesia
+- Israel
+- India
+- Iraq
+- Iceland
+- Jamaica
+- Jordan
+- Kazakhstan
+- Kenya
+- Kyrgyzstan
+- Saint Kitts and Nevis
+- Kuwait
+- Latvia
+- Lebanon
+- Libya
+- Liechtenstein
+- Macao SAR
+- Monaco
+- Moldova
+- Montenegro
+- Morocco
+- North Macedonia
+- Mongolia
+- Mauritius
+- Mexico
+- Malaysia
+- Namibia
+- Nigeria
+- Nicaragua
+- Nepal
+- Oman
+- Panama
+- Peru
+- Philippines
+- Pakistan
+- Puerto Rico
+- Palestinian Authority
+- Paraguay
+- Qatar
+- Russia
+- Rwanda
+- Saudi Arabia
+- Serbia
+- Sri Lanka
+- Senegal
+- El Salvador
+- Thailand
+- Tajikistan
+- Turkmenistan
+- Tunisia
+- Türkiye
+- Trinidad and Tobago
+- Taiwan
+- Tanzania
+- Ukraine
+- Uganda
+- United Arab Emirates
+- Uruguay
+- Uzbekistan
+- Vatican City
+- Venezuela
+- U.S. Virgin Islands
+- Vietnam
+- Yemen
+- Zambia
+- Zimbabwe
+
 ## [Quantinuum](#tab/tabid-quantinuum)
 
 Quantinuum offers five plans through Azure Quantum: the Azure Quantum Credits program, Standard and Premium plans with access to System Model H1, and Standard and Premium plan with access to System Models H1 and H2. For more information about Quantinuum resources on Azure Quantum, see [Quantinuum provider and targets](xref:microsoft.quantum.providers.quantinuum).
@@ -461,17 +613,4 @@ Rigetti offers two plans through Azure Quantum: the Azure Quantum Credits progra
 - Yemen
 - Zambia
 - Zimbabwe
-
-
-## [PASQAL](#tab/tabid-pasqal)
-
-PASQAL offers . For more information about PASQAL resources on Azure Quantum, see [PASQAL provider and targets](xref:microsoft.quantum.providers.pasqal).
-
-### PASQAL is available in the following countries/regions:
-
-
-
-### PASQAL is unavailable in the following countries/regions:
-
-
 ***

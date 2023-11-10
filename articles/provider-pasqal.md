@@ -49,6 +49,48 @@ Fresnel1 is PASQAL's quantum computer based on neutral atoms. With 100 qubits, c
 - Target ID: `pasqal.qpu.fresnel`
 - Target Execution Profile: N/A
 
+
+## Input data format
+
+//TODO
+
+1. Install the pulser packages:
+
+    ```
+        !pip -q install pulser
+        !pip -q install pulser-core
+    ```
+    
+2. Sequence needs to be deserialized to be sent as a plain text input
+
+    ```python
+    # Convert the sequence to a JSON string
+    def prepare_input_data(seq):
+        input_data = {}
+        input_data["sequence_builder"] = json.loads(seq.to_abstract_repr())
+        to_send = json.dumps(input_data)
+        #print(json.dumps(input_data, indent=4, sort_keys=True))
+        return to_send
+    ```
+
+3. Set proper parameters
+
+    ```python
+    # Submit the job with proper input and output data formats
+    def submit_job(target, seq):
+        job = target.submit(
+            input_data=prepare_input_data(seq),
+            input_data_format="pasqal.pulser.v1",
+            output_data_format="pasqal.pulser-results.v1",
+            content_type="text/plain",
+            name="Pasqal sequence",
+            input_params={
+                "count": 10
+            }
+        )
+    ```
+
+
 ## Pricing
 
 To see the PASQAL billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#pasqal).
