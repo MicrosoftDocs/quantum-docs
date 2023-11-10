@@ -49,8 +49,7 @@ Microsoft's provider partners offer a wide-range of qubit availability for their
 |[Quantinuum H2-1](xref:microsoft.quantum.providers.quantinuum#system-model-h2)| 32 qubits|
 |[Rigetti Quantum Virtual Machine (QVM)](xref:microsoft.quantum.providers.rigetti#simulators) |30 qubits|  
 |[Rigetti Aspen-M-3](xref:microsoft.quantum.providers.rigetti#aspen-m-3) |80 qubits| 
-|[PASQAL Emu-free](xref:microsoft.quantum.providers.pasqal#emu-free)|20 qubits|
-|[PASQAL Emu-TN](xref:microsoft.quantum.providers.pasqal#emu-tn)|100 qubits|
+|[PASQAL Emu-TN](xref:microsoft.quantum.providers.pasqal#emulator)|100 qubits|
 |[PASQAL Fresnel1](xref:microsoft.quantum.providers.pasqal#fresnel1)|100 qubits|
 
 
