@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: [target, targets]
-title: Pricing & billing plans
+title: Pricing plans
 uid: microsoft.quantum.providers-pricing
 ---
 
