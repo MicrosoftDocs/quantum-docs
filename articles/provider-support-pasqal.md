@@ -14,7 +14,9 @@ uid: microsoft.quantum.providers.pasqal.support
 
 This article describes the Microsoft support policy that applies when you use the PASQAL provider in Azure Quantum. The article applies to any of the [targets](xref:microsoft.quantum.providers.pasqal) offered by the PASQAL provider.
 
-If you're using the PASQAL provider and experience unexpected issues, you can contact the Azure Support team for help. In some situations, the Azure Support team will need to redirect you to PASQAL's support team. You may receive a quicker response by reaching out to PASQAL directly. This article details this process and answers some frequently asked questions.
+If you're using the PASQAL provider and experience unexpected issues, you can contact the Azure Support team for help by [creating an Azure support case](/azure/azure-portal/supportability/how-to-create-azure-support-request).. 
+
+In some situations, the Azure Support team will need to redirect you to PASQAL's support team. You may receive a quicker response by reaching out to [PASQAL directly](https://www.pasqal.com/contact-us). This article details this process and answers some frequently asked questions.
 
 ## Support points of contact
 

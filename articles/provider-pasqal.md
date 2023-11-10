@@ -38,7 +38,7 @@ Emu-TN emulator simulates the time-evolution of a quantum state using the Schrod
 - Job Type: `Simulation`
 - Data Format: `json`
 - Target ID: `pasqal.sim.emu_tn`
-- Target Execution Profile: 
+- Target Execution Profile: N/A
 
 ## Fresnel1
 
@@ -47,7 +47,7 @@ Fresnel1 is PASQAL's quantum computer based on neutral atoms. With 100 qubits, c
 - Job Type: `Quantum program`
 - Data Format: `json`
 - Target ID: `pasqal.qpu.fresnel`
-- Target Execution Profile:
+- Target Execution Profile: N/A
 
 ## Pricing
 
