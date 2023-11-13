@@ -46,7 +46,7 @@ except ImportError:
     reg.draw()
     ```
 
-    :::image type="content" source="media/provider-format-pasqal-array.png" alt-text="Plot of a 4x4 square lattice with 16 qubits.":::
+    :::image type="content" source="../media/provider-format-pasqal-array.png" alt-text="Plot of a 4x4 square lattice with 16 qubits.":::
 
 ## Write a pulse sequence
 
@@ -95,7 +95,7 @@ The neutral atoms are controls with laser pulses. The Pulser SDK allows you to c
 
 The image shows the simple and the complex pulse.
 
-:::image type="content" source="media/provider-format-pasqal-pulser.png" alt-text="Plot of the ":::
+:::image type="content" source="../media/provider-format-pasqal-pulser.png" alt-text="Plot of the ":::
 
 ## Convert the sequence to a JSON string
 
@@ -140,7 +140,7 @@ def prepare_input_data(seq):
     > [!NOTE] 
     > The time required to run a circuit on the QPU depends on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
 
-1. Submit the program to the PASQAL quantum provider. For example, add a new cell and submit the program to the PASQAL Emu-TN target.
+1. Submit the program to the PASQAL quantum provider. For example, add a new cell and submit the program to the [PASQAL Emu-TN target](xref:microsoft.quantum.providers.pasqal#emu-tn).
 
     ```python
     target = workspace.get_targets(name="pasqal.sim.emu_tn")

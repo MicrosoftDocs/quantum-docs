@@ -49,14 +49,11 @@ Fresnel1 is PASQAL's quantum computer based on neutral atoms. With 100 qubits, c
 - Target ID: `pasqal.qpu.fresnel`
 - Target Execution Profile: N/A
 
-
 ## Pulser SDK
 
-The QPU of PASQAL is made of neutral atoms controlled by lasers. Individual atoms are trapped at well-defined positions in 1, 2, or 3D lattices. 
+The QPU of PASQAL is made of neutral atoms controlled by lasers. Individual atoms are trapped at well-defined positions in 1, 2, or 3D lattices.[Pulser](https://github.com/pasqal-io/Pulser) is a  framework for composing, simulating and executing pulse sequences for neutral-atom quantum devices. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/latest/).
 
-[Pulser](https://github.com/pasqal-io/Pulser) is a  framework for composing, simulating and executing pulse sequences for neutral-atom quantum devices. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/latest/).
-
-The Pulser SDK allows you to create pulse sequences to apply to the array of atoms. To run quantum circuits on PASQAL's quantum computers, you need to install the Pulser SDK. 
+The Pulser SDK allows you to create pulse sequences to apply to the array of atoms. To run quantum circuits on PASQAL's quantum computers, you need to install the Pulser SDK.
 
 To install Pulser SDK packages, run the following code:
 
@@ -67,7 +64,7 @@ To install Pulser SDK packages, run the following code:
 
 ## Input data format
 
-PASQAL QPU accepts plain text as input formats. To submit the pulse sequences, you need to convert the Pulser objects into a JSON string that can be used as input data.
+PASQAL targets accept plain text as input formats. To submit the pulse sequences, you need to convert the Pulser objects into a JSON string that can be used as input data.
 
 ```python
 # Convert the sequence to a JSON string

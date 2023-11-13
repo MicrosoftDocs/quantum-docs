@@ -2,12 +2,12 @@
 author: bradben
 description: Learn how to submit provider-formatted quantum circuits with OpenQASM and IonQ JSON to the Azure Quantum service.
 ms.author: brbenefield
-ms.date: 01/27/2022
+ms.date: 11/13/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Python', '$$v', target, targets]
-title: Submit provider-formatted quantum circuits to Azure Quantum
+title: Submit provider-formatted quantum circuits
 zone_pivot_groups: quantum-computing-platforms-Pasqal
 uid: microsoft.quantum.quickstarts.computing.provider
 --- 
@@ -16,7 +16,7 @@ uid: microsoft.quantum.quickstarts.computing.provider
 
 [!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
 
-Learn how to use the `azure-quantum` Python package to submit provider-specific formatted quantum circuits, (for example, [OpenQASM 2.0](https://github.com/Qiskit/openqasm/tree/OpenQASM2.x) or [IonQ JSON](https://docs.ionq.com/#tag/quantum_programs)), to an IonQ or Quantinuum quantum computing target via the Azure Quantum service. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
+Learn how to use the `azure-quantum` Python package to submit provider-specific formatted quantum circuits to a quantum computing target via the Azure Quantum service. For more information, see [Quantum computing target list](xref:microsoft.quantum.reference.qc-target-list).
 
 ## Prerequisites
 
@@ -45,7 +45,7 @@ location of your Azure Quantum workspace. Log in to your Azure account,
 <https://portal.azure.com>, navigate to your Azure Quantum workspace, and
 copy the values from the header.
 
-![How to retrieve the resource ID and location from an Azure Quantum workspace](../media/azure-quantum-resource-id.png)
+![How to retrieve the resource ID and location from an Azure Quantum workspace](media/azure-quantum-resource-id.png)
 
 Paste the values into the following `Workspace` constructor to
 create a `workspace` object that connects to your Azure Quantum workspace.
