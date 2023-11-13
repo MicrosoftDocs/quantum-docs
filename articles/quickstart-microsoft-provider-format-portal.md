@@ -23,14 +23,13 @@ Learn how to use the `azure-quantum` Python package to submit provider-specific 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
-
 ## Create a new Notebook in your workspace
 
 1. Log in to the [Azure portal](https://portal.azure.com/) and select the workspace from the previous step.
 1. In the left blade, select **Notebooks**.
 1. Click **My Notebooks** and click **Add New**.
 1. In **Kernel Type**, select **IPython**.
-1. Type a name for the file, for example *OpenQASM.ipynb*, and click **Create file**. 
+1. Type a name for the file, and click **Create file**. 
 
 When your new Notebook opens, it automatically creates the code for the first cell, based on your subscription and workspace information.
 

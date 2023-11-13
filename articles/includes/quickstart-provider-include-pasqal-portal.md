@@ -10,9 +10,9 @@ no-loc: [target, targets]
 
 ## Install the Pulser SDK 
 
-[Pulser](https://github.com/pasqal-io/Pulser) is a framework for composing, simulating and executing pulse sequences for neutral-atom quantum devices. It's designed by PASQAL as a pass-through to submit quantum experiments to their quantum processors. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/latest/).
+[Pulser](https://github.com/pasqal-io/Pulser) is a framework for composing, simulating and executing pulse sequences for neutral-atom quantum devices. To submit the pulse sequences, install the Pulser SDK packages.
 
-To submit the pulse sequences, install the Pulser SDK packages:
+Click **+ Add** to add a new cell to the notebook, and then run the following code to install the Pulser SDK packages:
 
 ```python
 try:
@@ -24,7 +24,7 @@ except ImportError:
 
 ## Create a quantum register
 
-1. First, load the required imports:
+1. First, load the required imports. In a new cell, copy and run the following code:
 
     ```python
     import numpy as np
@@ -93,13 +93,13 @@ The neutral atoms are controls with laser pulses. The Pulser SDK allows you to c
     seq.add(complex_pulse, "ch1") # Add the pulse to channel "ch1"
     ```
 
-The image shows the simpleand the complex pulse.
+The image shows the simple and the complex pulse.
 
 :::image type="content" source="media/provider-format-pasqal-pulser.png" alt-text="Plot of the ":::
 
 ## Convert the sequence to a JSON string
 
-To submit the pulse sequences, you need to convert the Pulser objects into a JSON string that can be used as input data.
+To submit the pulse sequences, you need to convert the Pulser objects into a JSON string that can be used as input data. Add a new cell and run the following code:
 
 ```python
 import json
@@ -137,7 +137,10 @@ def prepare_input_data(seq):
         return result
     ```
 
-1. Submit the program to the PASQAL quantum provider. For example, you can submit the program to the PASQAL Emu-TN target.
+    > [!NOTE] 
+    > The time required to run a circuit on the QPU depends on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
+
+1. Submit the program to the PASQAL quantum provider. For example, add a new cell and submit the program to the PASQAL Emu-TN target.
 
     ```python
     target = workspace.get_targets(name="pasqal.sim.emu_tn")

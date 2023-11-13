@@ -139,6 +139,9 @@ def prepare_input_data(seq):
         return result
     ```
 
+> [!NOTE] 
+> The time required to run a circuit on the QPU depends on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
+
 1. Submit the program to the PASQAL quantum provider. For example, you can submit the program to the PASQAL Emu-TN target.
 
     ```python
