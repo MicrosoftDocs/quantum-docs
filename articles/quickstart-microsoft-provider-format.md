@@ -76,5 +76,3 @@ workspace = Workspace(
 [!INCLUDE [quantinuum-procedure](includes/quickstart-provider-include-quantinuum.md)]
 
 ::: zone-end
-
-
