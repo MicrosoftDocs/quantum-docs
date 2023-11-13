@@ -8,7 +8,7 @@ ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Python', '$$v', target, targets]
 title: Submit provider-formatted quantum circuits to Azure Quantum
-zone_pivot_groups: quantum-computing-platforms
+zone_pivot_groups: quantum-computing-platforms-Pasqal
 uid: microsoft.quantum.quickstarts.computing.provider
 --- 
 
@@ -38,13 +38,34 @@ Learn how to use the `azure-quantum` Python package to submit provider-specific 
 
 - Start your favorite code editor or interactive Python tool, such as [VS Code](https://code.visualstudio.com/docs/python/jupyter-support-py), [Jupyter](https://jupyter.readthedocs.io/en/latest/content-quickstart.html) or [iPython](https://ipython.readthedocs.io/en/stable/interactive/tutorial.html).
 
+## Connect to the Azure Quantum service
+
+To connect to the Azure Quantum service, your program will need the resource ID and the
+location of your Azure Quantum workspace. Log in to your Azure account,
+<https://portal.azure.com>, navigate to your Azure Quantum workspace, and
+copy the values from the header.
+
+![How to retrieve the resource ID and location from an Azure Quantum workspace](../media/azure-quantum-resource-id.png)
+
+Paste the values into the following `Workspace` constructor to
+create a `workspace` object that connects to your Azure Quantum workspace.
+
+```python
+from azure.quantum import Workspace
+
+workspace = Workspace(
+    resource_id="",
+    location=""
+)
+```
+
 ::: zone pivot="platform-ionq"
 
 [!INCLUDE [ionq-procedure](includes/quickstart-provider-include-ionq.md)]
 
 ::: zone-end
 
-::: zone pivot="platform-quantinuum"
+::: zone pivot="platform-pasqal"
 
 [!INCLUDE [pasqal-procedure](includes/quickstart-provider-include-pasqal.md)]
 

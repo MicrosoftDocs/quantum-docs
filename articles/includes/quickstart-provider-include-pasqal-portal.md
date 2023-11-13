@@ -8,8 +8,6 @@ ms.topic: include
 no-loc: [target, targets]
 ---
 
-
-
 ## Install the Pulser SDK 
 
 [Pulser](https://github.com/pasqal-io/Pulser) is a framework for composing, simulating and executing pulse sequences for neutral-atom quantum devices. It's designed by PASQAL as a pass-through to submit quantum experiments to their quantum processors. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/latest/).

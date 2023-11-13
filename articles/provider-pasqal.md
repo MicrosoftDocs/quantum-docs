@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 ms.author: sonialopez
 description: This document provides the technical details of the simulators and QPU of the PASQAL quantum provider.
-ms.date: 11/07/2023
+ms.date: 11/13/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: reference
@@ -50,46 +50,51 @@ Fresnel1 is PASQAL's quantum computer based on neutral atoms. With 100 qubits, c
 - Target Execution Profile: N/A
 
 
+## Pulser SDK
+
+The QPU of PASQAL is made of neutral atoms controlled by lasers. Individual atoms are trapped at well-defined positions in 1, 2, or 3D lattices. 
+
+[Pulser](https://github.com/pasqal-io/Pulser) is a  framework for composing, simulating and executing pulse sequences for neutral-atom quantum devices. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/latest/).
+
+The Pulser SDK allows you to create pulse sequences to apply to the array of atoms. To run quantum circuits on PASQAL's quantum computers, you need to install the Pulser SDK. 
+
+To install Pulser SDK packages, run the following code:
+
+```python
+    !pip -q install pulser
+    !pip -q install pulser-core
+```
+
 ## Input data format
 
-//TODO
+PASQAL QPU accepts plain text as input formats. To submit the pulse sequences, you need to convert the Pulser objects into a JSON string that can be used as input data.
 
-1. Install the pulser packages:
+```python
+# Convert the sequence to a JSON string
+def prepare_input_data(seq):
+    input_data = {}
+    input_data["sequence_builder"] = json.loads(seq.to_abstract_repr())
+    to_send = json.dumps(input_data)
+    #print(json.dumps(input_data, indent=4, sort_keys=True))
+    return to_send
+```
 
-    ```
-        !pip -q install pulser
-        !pip -q install pulser-core
-    ```
-    
-2. Sequence needs to be deserialized to be sent as a plain text input
+Before submitting your quantum job to PASQAL, you need to set proper input and output data format parameters. For example, the following code sets the input data format to `pasqal.pulser.v1` and the output data format to `pasqal.pulser-results.v1`.
 
-    ```python
-    # Convert the sequence to a JSON string
-    def prepare_input_data(seq):
-        input_data = {}
-        input_data["sequence_builder"] = json.loads(seq.to_abstract_repr())
-        to_send = json.dumps(input_data)
-        #print(json.dumps(input_data, indent=4, sort_keys=True))
-        return to_send
-    ```
+```python
+# Submit the job with proper input and output data formats
+def submit_job(target, seq):
+    job = target.submit(
+        input_data=prepare_input_data(seq), # Take the JSON string previously defined as input data
+        input_data_format="pasqal.pulser.v1",
+        output_data_format="pasqal.pulser-results.v1",
+        content_type="text/plain",
+        name="PASQAL sequence",
+        input_params={"count": 10} # Number of shots
+    )
+```
 
-3. Set proper parameters
-
-    ```python
-    # Submit the job with proper input and output data formats
-    def submit_job(target, seq):
-        job = target.submit(
-            input_data=prepare_input_data(seq),
-            input_data_format="pasqal.pulser.v1",
-            output_data_format="pasqal.pulser-results.v1",
-            content_type="text/plain",
-            name="Pasqal sequence",
-            input_params={
-                "count": 10
-            }
-        )
-    ```
-
+For more information about how to submit jobs to the PASQAL provider, see [Submit a circuit with a provider-specific format to PASQAL](xref:microsoft.quantum.quickstarts.computing.provider#platform-pasqal).
 
 ## Pricing
 

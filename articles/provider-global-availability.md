@@ -20,6 +20,7 @@ The availability of the quantum computing providers IonQ, Quantinuum, and Rigett
 IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program and a Pay-As-You-Go plan. For more information about IonQ resources on Azure Quantum, see [IonQ provider and targets](xref:microsoft.quantum.providers.ionq).
 
 ### IonQ is available in the following countries/regions:
+
 - Armenia
 - Australia
 - Austria
@@ -80,6 +81,7 @@ IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program a
 - Vietnam
 
 ### IonQ is unavailable in the following countries/regions:
+
 - Afghanistan
 - Albania
 - Algeria
@@ -164,30 +166,26 @@ IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program a
 - Zambia
 - Zimbabwe
 
-
 ## [PASQAL](#tab/tabid-pasqal)
 
 PASQAL offers two plans through Azure Quantum: the Azure Quantum Credits program and a Pay-As-You-Go plan. For more information about PASQAL resources on Azure Quantum, see [PASQAL provider and targets](xref:microsoft.quantum.providers.pasqal).
 
 ### PASQAL is available in the following countries/regions:
 
-- Austria
 - Australia
+- Austria
 - Belgium
 - Canada
-- Switzerland
+- Croatia
 - Cyprus
 - Czechia
 - Germany
 - Denmark
 - Estonia
-- Spain
 - Finland
 - France
-- United Kingdom
- -Greece
+- Greece
 - Hong Kong SAR
-- Croatia
 - Hungary
 - Ireland
 - Italy
@@ -197,121 +195,125 @@ PASQAL offers two plans through Azure Quantum: the Azure Quantum Credits program
 - Luxembourg
 - Malta
 - Netherlands
-- Norway
 - New Zealand
+- Norway
 - Poland
 - Portugal
 - Romania
-- Sweden
 - Singapore
-- Slovenia
 - Slovakia
-- United States
+- Slovenia
 - South Africa
+- Spain
+- Sweden
+- Switzerland
+- United Kingdom
+- United States
+
 
 ### PASQAL is unavailable in the following countries/regions:
 
-- Andorra
 - Afghanistan
 - Albania
 - Algeria
-- Armenia
+- Andorra
 - Angola
 - Argentina
+- Armenia
 - Azerbaijan
-- Bosnia and Herzegovina
-- Barbados
-- Bangladesh
-- Bulgaria
 - Bahrain
+- Bangladesh
+- Barbados
 - Bermuda
-- Brunei
-- Bolivia
-- Brazil
-- Botswana
 - Belarus
 - Belize
-- Cayman Islands
-- Côte d'Ivoire
-- Chile
+- Bolivia
+- Bosnia and Herzegovina
+- Botswana
+- Brazil
+- Brunei
+- Bulgaria
+- Cabo Verde
 - Cameroon
+- Cayman Islands
+- Chile
+- Côte d'Ivoire
 - Colombia
 - Costa Rica
-- Cabo Verde
 - Curaçao
 - Dominican Republic
 - Ecuador
 - Egypt
 - Ethiopia
-- Fiji
 - Faroe Islands
+- Fiji
 - Georgia
 - Ghana
 - Guatemala
 - Honduras
+- Iceland
+- India
 - Indonesia
 - Israel
-- India
 - Iraq
-- Iceland
 - Jamaica
 - Jordan
 - Kazakhstan
 - Kenya
-- Kyrgyzstan
 - Saint Kitts and Nevis
 - Kuwait
+- Kyrgyzstan
 - Latvia
 - Lebanon
 - Libya
 - Liechtenstein
 - Macao SAR
+- North Macedonia
+- Malaysia
+- Mauritius
+- Mexico
 - Monaco
 - Moldova
 - Montenegro
-- Morocco
-- North Macedonia
 - Mongolia
-- Mauritius
-- Mexico
-- Malaysia
+- Morocco
 - Namibia
-- Nigeria
-- Nicaragua
 - Nepal
+- Nicaragua
+- Nigeria
 - Oman
 - Panama
-- Peru
-- Philippines
 - Pakistan
-- Puerto Rico
 - Palestinian Authority
 - Paraguay
+- Peru
+- Philippines
+- Puerto Rico
 - Qatar
 - Russia
 - Rwanda
+- El Salvador
 - Saudi Arabia
+- Senegal
 - Serbia
 - Sri Lanka
-- Senegal
-- El Salvador
-- Thailand
+- Taiwan
 - Tajikistan
-- Turkmenistan
+- Tanzania
+- Thailand
+- Trinidad and Tobago
 - Tunisia
 - Türkiye
-- Trinidad and Tobago
-- Taiwan
-- Tanzania
-- Ukraine
+- Turkmenistan
 - Uganda
+- Ukraine
 - United Arab Emirates
 - Uruguay
 - Uzbekistan
 - Vatican City
 - Venezuela
-- U.S. Virgin Islands
 - Vietnam
+- U.S. Virgin Islands
 - Yemen
 - Zambia
 - Zimbabwe
@@ -321,6 +323,7 @@ PASQAL offers two plans through Azure Quantum: the Azure Quantum Credits program
 Quantinuum offers five plans through Azure Quantum: the Azure Quantum Credits program, Standard and Premium plans with access to System Model H1, and Standard and Premium plan with access to System Models H1 and H2. For more information about Quantinuum resources on Azure Quantum, see [Quantinuum provider and targets](xref:microsoft.quantum.providers.quantinuum).
 
 ### Quantinuum is available in the following countries/regions:
+
 - Armenia
 - Australia
 - Austria
@@ -379,6 +382,7 @@ Quantinuum offers five plans through Azure Quantum: the Azure Quantum Credits pr
 - United States
 
 ### Quantinuum is unavailable in the following countries/regions:
+
 - Afghanistan
 - Albania
 - Algeria
@@ -470,6 +474,7 @@ Quantinuum offers five plans through Azure Quantum: the Azure Quantum Credits pr
 Rigetti offers two plans through Azure Quantum: the Azure Quantum Credits program and a Pay-As-You-Go plan. For more information about Rigetti resources on Azure Quantum, see [Rigetti provider and targets](xref:microsoft.quantum.providers.rigetti).
 
 ### Rigetti is available in the following countries/regions:
+
 - Armenia
 - Austria
 - Belarus
@@ -526,6 +531,7 @@ Rigetti offers two plans through Azure Quantum: the Azure Quantum Credits progra
 - United States
 
 ### Rigetti is unavailable in the following countries/regions:
+
 - Afghanistan
 - Albania
 - Algeria
@@ -613,4 +619,5 @@ Rigetti offers two plans through Azure Quantum: the Azure Quantum Credits progra
 - Yemen
 - Zambia
 - Zimbabwe
+
 ***
