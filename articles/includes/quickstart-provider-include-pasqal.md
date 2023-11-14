@@ -126,7 +126,6 @@ def prepare_input_data(seq):
             input_data=prepare_input_data(seq), # Take the JSON string previously defined as input data
             input_data_format="pasqal.pulser.v1", 
             output_data_format="pasqal.pulser-results.v1",
-            content_type="text/plain",
             name="PASQAL sequence",
             input_params={"count": 10} # Number of shots
         )
@@ -145,7 +144,7 @@ def prepare_input_data(seq):
 1. Submit the program to the PASQAL quantum provider. For example, you can submit the program to the [PASQAL Emu-TN target](xref:microsoft.quantum.providers.pasqal#emu-tn).
 
     ```python
-    target = workspace.get_targets(name="pasqal.sim.emu_tn")
+    target = workspace.get_targets(name="pasqal.sim.emu-tn")
     submit_job(target, seq)
     ```
 

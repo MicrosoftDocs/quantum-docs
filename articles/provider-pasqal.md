@@ -36,8 +36,8 @@ PASQAL's Emu-TN emulator run on cluster of 10 DGX nodes, each equipped with 8 NV
 Emu-TN emulator simulates the time-evolution of a quantum state using the Schrodinger's equation corresponding to the actions that the lasers perform.
 
 - Job Type: `Simulation`
-- Data Format: `json`
-- Target ID: `pasqal.sim.emu_tn`
+- Data Format: `application/json`
+- Target ID: `pasqal.sim.emu-tn`
 - Target Execution Profile: N/A
 
 ## Fresnel1
@@ -45,7 +45,7 @@ Emu-TN emulator simulates the time-evolution of a quantum state using the Schrod
 Fresnel1 is PASQAL's quantum computer based on neutral atoms. With 100 qubits, control neutral atoms with optimal tweezers and engineer full-stack processor with high connectivity and scalability. 
 
 - Job Type: `Quantum program`
-- Data Format: `json`
+- Data Format: `application/json`
 - Target ID: `pasqal.qpu.fresnel`
 - Target Execution Profile: N/A
 
@@ -64,7 +64,7 @@ To install Pulser SDK packages, run the following code:
 
 ## Input data format
 
-PASQAL targets accept plain text as input formats. To submit the pulse sequences, you need to convert the Pulser objects into a JSON string that can be used as input data.
+PASQAL targets accept JSON files as input data format. To submit the pulse sequences, you need to convert the Pulser objects into a JSON string that can be used as input data.
 
 ```python
 # Convert the sequence to a JSON string
@@ -85,7 +85,6 @@ def submit_job(target, seq):
         input_data=prepare_input_data(seq), # Take the JSON string previously defined as input data
         input_data_format="pasqal.pulser.v1",
         output_data_format="pasqal.pulser-results.v1",
-        content_type="text/plain",
         name="PASQAL sequence",
         input_params={"count": 10} # Number of shots
     )
