@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how the Azure Quantum Resource Estimator calculates estimates, the assumptions and some common issues.
-ms.date: 10/19/2023
+ms.date: 11/14/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -44,15 +44,15 @@ In the previous step, the Resource Estimator has calculated the number of logica
 
 The Resource Estimator also calculates the algorithmic logical depth, that is the number of logical cycles required to run the algorithm. To execute the algorithm using multi-qubit measurements, you need:
 
-- 1 multi-qubit measurement for each of the single-qubit measurements, single-qubit rotations, and T gates in the input program.
-- 3 multi-qubit measurements for each of the CCZ and CCiX gates in the input program.
+- 1 multi-qubit measurement for each single-qubit measurement, single-qubit rotation, and T gate.
+- 3 multi-qubit measurements for each CCZ and CCiX gates.
 - Same number of T gates per rotation in multi-qubit measurements for each of the logical cycle.
 
 Finally, the Resource Estimator calculates the total number of required T states. To execute the algorithm, you need:
 
 - 1 T state for each T gate.
 - 4 T states for each CCZ and CCiX gates.
-- $ 0.53 \log_2(\text{\#rotation gates(pre-layout)} / \text{Rotation synthesis error probability}) + 5.3$ for each single-qubit rotation gates.
+- $ 0.53 \log_2(\text{\#rotation gates(pre-layout)} / \text{Rotation synthesis error probability}) + 5.3$ for each single-qubit rotation gate.
 
 ### Algorithmic physical estimation
 
