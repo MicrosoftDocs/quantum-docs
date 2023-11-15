@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn the basics of how to work with vectors and matrices in quantum computing.
 ms.author: sonialopez
-ms.date: 06/09/2023
+ms.date: 11/15/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -103,18 +103,18 @@ P_{m1} ~~ P_{m2} ~~ \cdots ~~ P_{mp}
 
 where the entries of $P$ are $P_{ik} = \sum_j M_{ij}N_{jk}$. For example, the entry $P_{11}$ is the inner product of the first row of $M$ with the first column of $N$. Note that since a vector is simply a special case of a matrix, this definition extends to matrix-vector multiplication. 
 
-All the matrices we consider will either be square matrices, where the number of rows and columns are equal, or vectors, which corresponds to only $1$ column. One special square matrix is the [*identity matrix*](https://en.wikipedia.org/wiki/Identity_matrix), denoted $\boldone$, which has all its diagonal elements equal to $1$ and the remaining elements equal to $0$:
+All the matrices we consider will either be square matrices, where the number of rows and columns are equal, or vectors, which corresponds to only $1$ column. One special square matrix is the [*identity matrix*](https://en.wikipedia.org/wiki/Identity_matrix), denoted $\mathbb{I}$, which has all its diagonal elements equal to $1$ and the remaining elements equal to $0$:
 
-$$\boldone=\begin{bmatrix}
+$$\mathbb{I}=\begin{bmatrix}
 1 ~~ 0 ~~ \cdots ~~ 0\\\\
 0 ~~ 1 ~~ \cdots ~~ 0\\\\
 ~~ \ddots\\\\
 0 ~~ 0 ~~ \cdots ~~ 1
 \end{bmatrix}.$$
 
-For a square matrix $A$, a matrix $B$ is its [*inverse*](https://en.wikipedia.org/wiki/Invertible_matrix) if $AB = BA = \boldone$. The inverse of a matrix need not exist, but when it exists it is unique and we denote it $A^{-1}$. 
+For a square matrix $A$, a matrix $B$ is its [*inverse*](https://en.wikipedia.org/wiki/Invertible_matrix) if $AB = BA = \mathbb{I}$. The inverse of a matrix need not exist, but when it exists it is unique and we denote it $A^{-1}$. 
 
-For any matrix $M$, the adjoint or conjugate transpose of $M$ is a matrix $N$ such that $N_{ij} = M_{ji}^\*$. The adjoint of $M$ is usually denoted $M^\dagger$. A matrix $U$ is [*unitary*](https://en.wikipedia.org/wiki/Unitary_matrix) if $UU^\dagger = U^\dagger U = \boldone$ or equivalently, $U^{-1} = U^\dagger$. One important property of unitary matrices is that they preserve the norm of a vector. This happens because 
+For any matrix $M$, the adjoint or conjugate transpose of $M$ is a matrix $N$ such that $N_{ij} = M_{ji}^\*$. The adjoint of $M$ is usually denoted $M^\dagger$. A matrix $U$ is [*unitary*](https://en.wikipedia.org/wiki/Unitary_matrix) if $UU^\dagger = U^\dagger U = \mathbb{I}$ or equivalently, $U^{-1} = U^\dagger$. One important property of unitary matrices is that they preserve the norm of a vector. This happens because 
 
 $$\langle v,v \rangle=v^\dagger v = v^\dagger U^{-1} U v = v^\dagger U^\dagger U v = \langle U v, U v\rangle.$$  
 
