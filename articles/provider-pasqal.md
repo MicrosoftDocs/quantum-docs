@@ -95,3 +95,12 @@ For more information about how to submit jobs to the PASQAL provider, see [Submi
 ## Pricing
 
 To see the PASQAL billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#pasqal).
+
+## Limits and quotas
+
+PASQAL quotas are tracked based on the usage of the Emu-TN emulator. Quotas depend on the plan you are using:
+
+- Azure Quantum Credits plan: up to 20 hours
+- Pay-as-you-go plan: up to 100 hours
+
+The quotas are only applied to the Emu-TN emulator. There are no quotas for the Fresnel1 QPU.
