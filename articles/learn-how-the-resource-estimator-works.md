@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how the Azure Quantum Resource Estimator calculates estimates, the assumptions and some common issues.
-ms.date: 10/19/2023
+ms.date: 11/14/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -42,17 +42,25 @@ The Resource Estimator takes the QIR quantum program and computes a pre-layout e
 
 In the previous step, the Resource Estimator has calculated the number of logical qubits in the input algorithm. Laying out the logical qubits in the presence of nearest-neighbor constraints requires extra logical qubits. In this step, the Resource Estimator takes the number of pre-layout logical qubits and calculates the number of logical qubits required for the algorithm after layout.
 
-The Resource Estimator also calculates the algorithmic logical depth, that is the number of logical cycles required to run the algorithm. To execute the algorithm using multi-qubit measurements, you need one multi-qubit Pauli measurement for each single-qubit measurement, the single-qubit rotations, and the T gates, three multi-qubit Pauli measurements for each of the CCZ and CCiX gates in the input program, as well as the same number of T gates per rotation in multi-qubit measurements for each of the logical cycle.
+The Resource Estimator also calculates the algorithmic logical depth, that is the number of logical cycles required to run the algorithm. To execute the algorithm using multi-qubit measurements, you need:
 
-Finally, the Resource Estimator calculates the total number of required T states. To execute the algorithm, you need one T state for each T gate, four T states for each CCZ and CCiX gates, and $ 0.53 \log_2(\text{Number of rotation gates(pre-layout)} / \text{Rotation synthesis error probability}) + 5.3$ for each single-qubit rotation gates.
+- 1 multi-qubit measurement for each single-qubit measurement, single-qubit rotation, and T gate.
+- 3 multi-qubit measurements for each CCZ and CCiX gates.
+- Same number of T gates per rotation in multi-qubit measurements for each of the logical cycle.
+
+Finally, the Resource Estimator calculates the total number of required T states. To execute the algorithm, you need:
+
+- 1 T state for each T gate.
+- 4 T states for each CCZ and CCiX gates.
+- $ 0.53 \log_2(\text{\#rotation gates(pre-layout)} / \text{Rotation synthesis error probability}) + 5.3$ for each single-qubit rotation gate.
 
 ### Algorithmic physical estimation
 
 From the code distance of the QEC, the Resource Estimator has calculated the number of physical qubits required for one logical qubit and the runtime of one logical depth. 
 
-In the previous step, [Algorithmic logical estimation](#algorithmic-logical-estimation), the Resource Estimator has calculated the number of logical qubits required. Then, the number of physical qubits required to run the algorithm after layout is $ \text{Number of logical qubits} \times \text{Number of physical qubits for one logical qubit}$.
+In the previous step, [Algorithmic logical estimation](#algorithmic-logical-estimation), the Resource Estimator has calculated the number of logical qubits required. Then, the number of physical qubits required to run the algorithm after layout is $ \text{\# logical qubits} \times \text{\#physical qubits for one logical qubit}$.
 
-Similarly, the runtime of the algorithm is $\text{Number of algorithmic logical depths} \times \text{Runtime of one logical depth}$.
+Similarly, the runtime of the algorithm is $\text{\# algorithmic logical depths} \times \text{Runtime of one logical depth}$.
 
 ### T factory physical estimation
 
