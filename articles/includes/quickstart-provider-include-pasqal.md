@@ -95,7 +95,7 @@ The neutral atoms are controls with laser pulses. The Pulser SDK allows you to c
     seq.add(complex_pulse, "ch1") # Add the pulse to channel "ch1"
     ```
 
-The image shows the simpleand the complex pulse.
+The image shows the simple and the complex pulse.
 
 :::image type="content" source="../media/provider-format-pasqal-pulser.png" alt-text="Plot of the ":::
 
