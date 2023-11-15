@@ -22,7 +22,7 @@ When working with the Azure Quantum service, you may run into these common issue
 If the target where you want to run your job is missing from the available target list, you likely need to update to the latest version of the [Quantum Development Kit (Visual Studio 2022)](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or [Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode). For more information, see [Update the QDK](xref:microsoft.quantum.update-qdk).
 
 > [!NOTE]
-> The deprecation of the Toshiba optimization target is effective as of November 6, 2023. After that date, only previous Toshiba customers will be able to continue using Toshiba target until full deprecation in **February 6, 2024**.
+> The deprecation of the Toshiba optimization target is effective as of November 6, 2023. After that date, only previous Toshiba customers will be able to continue using Toshiba target until full deprecation on **February 6, 2024**.
 
 ### Issue: Local Resources Estimator is missing
 
