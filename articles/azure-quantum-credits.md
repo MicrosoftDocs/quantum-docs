@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide of what Azure Quantum Credits are, how to use them, and how to review credit balance.
 ms.author: sonialopez
-ms.date: 10/26/2023
+ms.date: 11/16/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
