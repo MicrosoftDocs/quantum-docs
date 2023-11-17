@@ -2,7 +2,7 @@
 author: kalzoo
 ms.author: brbenefield
 description: This document provides the technical details of the Rigetti provider
-ms.date: 11/02/2023
+ms.date: 11/16/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: conceptual
@@ -14,6 +14,9 @@ uid: microsoft.quantum.providers.rigetti
 # Rigetti provider
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
+
+> [!IMPORTANT]
+> The Aspen-M-3 is currently online but in a degraded state, and is only offering a capability of 8 qubits. 
 
 [Rigetti quantum processors](https://qcs.rigetti.com/qpus) are universal, gate-model machines based on tunable superconducting qubits. Rigetti's latest Aspen-M family processor is based on proprietary scalable multi-chip technology. System features and device characteristics include enhanced readout capabilities, a speedup in quantum processing times, fast gate times for multiple entangling gate families, rapid sampling via active register reset, and parametric control.
 
