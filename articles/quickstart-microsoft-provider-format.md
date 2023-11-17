@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to submit provider-formatted quantum circuits with OpenQASM and IonQ JSON to the Azure Quantum service.
 ms.author: brbenefield
-ms.date: 01/27/2022
+ms.date: 11/16/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -25,7 +25,7 @@ Learn how to use the `azure-quantum` Python package to submit provider-specific 
 - Install the latest [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview#use-python-with-qiskit-and-cirq).
 
     > [!TIP]
-    > If you are using [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads), you can optionally create a new environment by downloading [environment.yml](https://github.com/microsoft/qdk-python/blob/main/azure-quantum/environment.yml) and running the following:
+    > If you are using [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads), you can optionally create a new environment by downloading [environment.yml](https://github.com/microsoft/azure-quantum-python/blob/main/azure-quantum/environment.yml) and running the following:
     >
     >```shell
     >conda env create -f environment.yml

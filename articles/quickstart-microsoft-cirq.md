@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to submit Cirq quantum circuits to the Azure Quantum service.
 ms.author: brbenefield
-ms.date: 08/17/2022
+ms.date: 11/16/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -27,7 +27,7 @@ For information on how to submit a circuit with Qiskit, see [Quickstart: Submit 
 - Install the latest [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview#use-python-with-qiskit-and-cirq) using the \[cirq\] tag.
 
     > [!TIP]
-    > If you are using [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads), you can optionally create a new environment by downloading [environment.yml](https://github.com/microsoft/qdk-python/blob/main/azure-quantum/environment.yml) and running the following:
+    > If you are using [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads), you can optionally create a new environment by downloading [environment.yml](https://github.com/microsoft/azure-quantum-python/blob/main/azure-quantum/environment.yml) and running the following:
     >
     >```shell
     >conda env create -f environment.yml
