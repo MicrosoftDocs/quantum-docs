@@ -222,7 +222,7 @@
 - name: Release notes
   items:
   - name: 2023 release notes
-    href: release-notes-2023.md
+    href: release-notes.md
   - name: 2022 release notes
     href: release-notes-2022.md  
   - name: 2021 release notes

@@ -8,7 +8,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', Quantum Development Kit, Quantum machine learning, Quantum Intermediate Representation, Basic measurement feedback, target, targets]
-uid: microsoft.quantum.relnotes-qdk
+uid: microsoft.quantum.relnotes-qdk-2019
 ---
 
 # Release notes for Quantum Development Kit (QDK) and Azure Quantum - 2019
