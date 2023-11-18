@@ -104,9 +104,7 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
   - Fixed a bug in which job submissions in Azure Quantum that emit standard output were reported as failed, even if the job succeeded.
   - Enabled job submissions from a different directory using `--project` parameter.
 
-## Azure Quantum service update
-
-### 2021-07-27
+## Azure Quantum service update 2021-07-27
 
 - Parameter Free Population Annealing solver is now available through the Early Access plan in Azure Quantum. To sign up for early access, see [Apply for Azure Quantum Early Access](https://aka.ms/aq/preview).
 - Terms banner in Review tab in Azure Quantum portal is hidden when only Microsoft provider is being added during workspace creation.
@@ -139,9 +137,7 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 - C# Client: Changed input data format type to "v2" for Quantum Computing.
 - Released Azure CLI quantum extension version 0.5.0: Adapted to 'az' tool version 2.23.0, adding user agent information on calls to Azure Quantum Service.
 
-## Azure Quantum service update
-
-### 2021-05-26
+## Azure Quantum service update 2021-05-26
 
 - Added PA (population annealing) and SSMC (substochastic Monte Carlo) solvers along with preview access via a specialized plan available to a subset of customers.
 - Added support for new regions: Japan East, Japan West, UK South, UK West

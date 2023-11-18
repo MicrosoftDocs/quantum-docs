@@ -51,9 +51,7 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 - Added support for multiple classical registers in Qiskit by addressing issues [microsoft/azure-quantum-python#361](https://github.com/microsoft/azure-quantum-python/issues/361) and [microsoft/azure-quantum-python#375](https://github.com/microsoft/azure-quantum-python/issues/375).
 - Corrected the number of qubits for Quantinuum H1-2 target references by fixing [microsoft/azure-quantum-python#391](https://github.com/microsoft/azure-quantum-python/issues/391).
 
-## Azure Quantum service update
-
-### 2022-09-28
+## Azure Quantum service update 2022-09-28
 
 - Optimizations to reduce job submission time
 
@@ -74,9 +72,7 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 - Fixed Q# project loading for users of .NET 6.0.302 or above by addressing issue [qsharp-compiler/1470](https://github.com/microsoft/qsharp-compiler/issues/1470).
 - Allowed the use of array items as steps of a ranged expression without causing a type-checking error by fixing [qsharp-compiler/1430](https://github.com/microsoft/qsharp-compiler/issues/1430).
 
-## Azure Quantum service update
-
-### 2022-07-26
+## Azure Quantum service update 2022-07-26
 
 - Improved the Azure Quantum Portal experience so that you can easily check how much [Azure Quantum Credits](xref:microsoft.quantum.credits) you have used, how much is remaining, and [quota](xref:microsoft.quantum.quotas) status if applicable.
 - Added a new advanced sample that helps you explore the execution of hidden shift problems on a quantum computer.
@@ -104,9 +100,7 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 - The release has added utility functions to convert between floating-point and fixed-point representation [microsoft/QuantumLibraries#559](https://github.com/microsoft/QuantumLibraries/issues/559).
 - Lastly, we've fixed issue [microsoft/azure-quantum-python#323](https://github.com/microsoft/azure-quantum-python/issues/323), addressing an apparent inconsistency in results returned by `job.result()` on a Qiskit job.
 
-## Azure Quantum service update
-
-### 2022-05-23
+## Azure Quantum service update 2022-05-23
 
 - The latest service update streamlines advanced creation flow for Azure Quantum workspaces in the Azure Portal.
 - We've updated the default storage account type to general-purpose v2 (from general-purpose v1) to support modern storage account offerings and features when managing data.
@@ -126,9 +120,7 @@ demonstrating the use of the sparse simulator.
  - [microsoft/QuantumLibraries#560](https://github.com/microsoft/QuantumLibraries/issues/560) addresses the wrong value being returned in the [MeasureFxP](/qsharp/api/qsharp/microsoft.quantum.arithmetic.measurefxp) operation when the measurement value corresponds to the smallest representable fixed point.
   - [azure/azure-cli-extensions#4697](https://github.com/azure/azure-cli-extensions/issues/4697) in the Azure CLI extension, which allows setting a polling interval when waiting for an Azure Quantum job to complete.
 
-## Azure Quantum service update
-
-### 2022-04-29
+## Azure Quantum service update 2022-04-29
 
 - The Azure portal now includes a [notebook](/azure/quantum/how-to-run-notebooks-workspace) for the [large simulation sample](https://github.com/microsoft/Quantum/blob/main/samples/getting-started/simulation/LargeSimulation.ipynb).
 
@@ -156,9 +148,7 @@ demonstrating the use of the sparse simulator.
   - Fixed GitHub issue [microsoft/QuantumLibraries#270](https://github.com/microsoft/QuantumLibraries/issues/270) where the number of qubits was overestimated in the [machine learning library](xref:microsoft.quantum.libraries.overview.machine-learning.intro).
 
 
-## Azure Quantum service update
-
-### 2022-03-30
+## Azure Quantum service update 2022-03-30
 
 - We have [streamlined](xref:microsoft.quantum.how-to.workspace) workspace creation and the navigation experience in Azure portal and have added a portal [notebook](xref:microsoft.quantum.how-to.notebooks) sample for the hidden shift scenario. 
 
