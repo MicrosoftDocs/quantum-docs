@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to contribute to Azure Quantum, the Azure Quantum documentation, and the quantum development community.
 ms.author: brbenefield
-ms.date: 10/28/2022
+ms.date: 11/16/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: contributor-guide
@@ -52,7 +52,7 @@ Each of these different pieces finds its home in a different GitHub repository, 
 - [**microsoft/qsharp-compiler**](https://github.com/microsoft/qsharp-compiler): The Q# compiler, Visual Studio extension, and Visual Studio Code extension.
 - [**microsoft/qsharp-runtime**](https://github.com/microsoft/qsharp-runtime): Simulation framework, code generation, and simulation target machines for the Quantum Development Kit.
 - [**microsoft/iqsharp**](https://github.com/microsoft/iqsharp): Jupyter kernel and Python host functionality for Q#, as well as Docker images for using IQ# in cloud environments.
-- [**microsoft/qdk-python**](https://github.com/microsoft/qdk-python): Python packages `qdk` and `azure-quantum`.
+- [**microsoft/azure-quantum-python**](https://github.com/microsoft/azure-quantum-python): Python packages `qdk` and `azure-quantum`.
 - [**microsoft/qsharp-language**](https://github.com/microsoft/qsharp-language): This is where new Q# features are developed and specified, and where you can share ideas and suggestions about the future evolution of the Q# language and core libraries.
 - [**MicrosoftDocs/quantum-docs**](https://github.com/MicrosoftDocs/quantum-docs): Source code for [Azure Quantum documentation](xref:microsoft.quantum.azure-quantum-overview).
 
