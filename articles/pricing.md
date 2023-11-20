@@ -38,7 +38,7 @@ All new Azure Quantum customers benefit of a one-time $500 (USD) free Azure Quan
 
 ### [Azure Quantum Credits](#tab/tabid-AQcredits)
 
-Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
+Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credit balance. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
 
 |Pricing | Includes access to  |
 |---|---|  
@@ -47,10 +47,10 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 |IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.000220 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.000975 (USD) deducted from your credits</li><li>Minimum price per program execution:<ul><li>$97.50 (USD) - default setting, error mitigation is on</li><li> $12.4166 (USD) if error mitigation is off</li></ul></ul>|
 
 > [!NOTE]
-> Once you have consumed all the credits you need to switch to a different plan to continue using IonQ. Azure Quantum won’t start charging you once you reach your credit limit. 
+> Once you have consumed all the credits you need to switch to a different plan to continue using IonQ. Azure Quantum won’t charge you when you reach your credit limit.
 
 > [!IMPORTANT]
-> There are no costs or charges to using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
+> There are no costs or charges for using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job.
 > For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
  
 ### [Pay As You Go](#tab/tabid-paygo)
@@ -84,25 +84,25 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ## PASQAL
 
-[PASQAL](https://pasqal.io/) charges for job execution time on its quantum processor, the 100-qubit Fresnel1. There is no added charge per job, per shot, or per gate. The Emu-TN simulator is free of charge for all users.
+[PASQAL](https://pasqal.io/) charges for job execution time on its quantum processor, the 100-qubit Fresnel1. There is no added charge per job or per shot. The Emu-TN simulator is free of charge for all users (subject to limit quotas depending on the plan).
 
 All new Azure Quantum customers benefit from $500 (USD) free Azure Quantum credits to use specifically for PASQAL targets. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
 
-In addition to the Azure Quantum Credits plan, PASQAL offers a pay-as-you-go plan for live quantum processors, so you pay only for what you use.
+In addition to the Azure Quantum Credits plan, PASQAL offers a pay-as-you-go plan for QPUs, so you pay only for what you use.
 
 ### [Azure Quantum Credits](#tab/tabid-AQcreditsPasqal)
 
-Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
+Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credit balance. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
 
 |Pricing | Includes access to   |
 |---|---|  
 |Use is deducted from the Azure Quantum Credits based on the job execution time only| <ul><li>PASQAL Fresnel1 QPU: $3000 (USD)/QPU hour deducted from your credits</li><li>PASQAL Emu-TN (free up to 20 hours)</li></ul>|
 
 > [!NOTE]
-> Once you have consumed all the credits you need to switch to a different plan to continue using PASQAL. Azure Quantum won’t start charging you once you reach your credit limit.
+> Once you have consumed all the credits you need to switch to a different plan to continue using PASQAL. Azure Quantum won’t charge you when you reach your credit limit.
 
 > [!IMPORTANT]
-> There are no costs or charges to using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
+> There are no costs or charges for using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
 > For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
  
 ### [Pay As You Go](#tab/tabid-paygoPasqal)
@@ -143,17 +143,17 @@ All new Azure customers benefit from $500 (USD) in free credits towards the Quan
 
 ### [Azure Quantum Credits](#tab/tabid-AQcreditsQ)
 
-Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
+Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credit balance. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
 
 |Pricing |Includes access to |
 |---|---|  
 |Use is deducted from the Azure Quantum Credits based on the HQC equation described above  | <ul><li> 40 HQCs for use on the System Model H1 hardware</li><li>8000 eHQCs for use on the System H1 Emulator</li></ul>|
 
 > [!NOTE]
-> Once you have consumed all the credits you need to explicitly switch to a different plan to continue using Quantinuum. Azure Quantum won’t start charging you once you reach your credit limit.
+> Once you have consumed all the credits you need to explicitly switch to a different plan to continue using Quantinuum. Azure Quantum won’t charge charging you when you reach your credit limit.
 
 > [!IMPORTANT]
-> There are no costs or charges to use your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job.
+> There are no costs or charges for using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job.
 > For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ### [Standard Subscription](#tab/tabid-standard)
@@ -207,17 +207,17 @@ In addition to the Azure Quantum Credits plan, Rigetti offers a pay-as-you-go pl
 
 ### [Azure Quantum Credits](#tab/tabid-AQcreditsRigetti)
 
-Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
+Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credit balance. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
 
 |Pricing | Includes access to  |
 |---|---|  
 |Use is deducted from the Azure Quantum Credits based on the job execution time only| <ul><li>Rigetti Aspen-M-3 QPU</li><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
 
 > [!NOTE]
-> Once you have consumed all the credits you need to switch to a different plan to continue using Rigetti. Azure Quantum won’t start charging you once you reach your credit limit.
+> Once you have consumed all the credits you need to switch to a different plan to continue using Rigetti. Azure Quantum won’t charge you when you reach your credit limit.
 
 > [!IMPORTANT]
-> There are no costs or charges to using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
+> There are no costs or charges for using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
 > For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
  
 ### [Pay As You Go](#tab/tabid-paygoRigetti)

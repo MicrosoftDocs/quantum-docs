@@ -14,7 +14,7 @@ uid: microsoft.quantum.providers.pasqal
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
-PASQAL's quantum computers control neutral atoms with optical tweezers, using laser light to manipulate quantum registers with up to a few hundred qubits.
+PASQAL's quantum computers control neutral atoms with optical tweezers, using laser light to manipulate quantum registers with up to a hundred qubits.
 
 - Publisher: [PASQAL](https://www.pasqal.com/)
 - Provider ID: `pasqal`
@@ -23,17 +23,17 @@ The following targets available from this provider:
 
 |Target name| Target ID|Number of qubits | Description |
 |---|---|---|---|
-|[Emu-TN](#emulator) | pasqal.sim.emu_tn| 100 qubits 1D network / 30-50 qubits 2D network| Simulates the time-evolution of a quantum state using the Schrodinger equation corresponding to the actions that the lasers perform. |
+|[Emu-TN](#emulator) | pasqal.sim.emu-tn| 100 qubits 1D and 2D networks| Simulates the time-evolution of a quantum state using the Schrödinger equation corresponding to the actions that the lasers perform. |
 |[Fresnel1](#fresnel1) | pasqal.qpu.fresnel | 100 qubits | PASQAL's neutral atoms quantum computer. |
 
 > [!NOTE]
-> PASQAL quantum provider is currently available in Private Preview. You can request access to the Private Preview by following [this link](https://aka.ms/AQ/PrivatePreviewRequest). 
+> PASQAL quantum provider is currently available in Private Preview. You can request access to the Private Preview by following [this link](https://aka.ms/AQ/PrivatePreviewRequest).
 
 ## Emulator
 
-PASQAL's Emu-TN emulator run on cluster of 10 DGX nodes, each equipped with 8 NVIDIA A100 GPUs, allow the emulation of PASQAL’s quantum processors. A key tool to gain flexibility. Up to 100 qubits in 2D and 3D arrays can be emulated to develop industrial applications and to advance scientific discovery.
+PASQAL's Emu-TN emulator simulates the time-evolution of a quantum state using the Schrödinger's equation corresponding to the actions that the lasers perform.
 
-Emu-TN emulator simulates the time-evolution of a quantum state using the Schrodinger's equation corresponding to the actions that the lasers perform.
+Emu-TN emulator runs on a cluster of DGX nodes, each equipped with NVIDIA A100 GPUs, enabling the emulation of PASQAL’s quantum processors. It's a key tool to prototype and validate quantum programs before running them on the QPU . Up to 100 qubits in 2D arrays can be emulated to develop industrial applications and to advance scientific discovery.
 
 - Job Type: `Simulation`
 - Data Format: `application/json`
@@ -42,7 +42,9 @@ Emu-TN emulator simulates the time-evolution of a quantum state using the Schrod
 
 ## Fresnel1
 
-Fresnel1 is PASQAL's quantum computer based on neutral atoms. With 100 qubits, control neutral atoms with optimal tweezers and engineer full-stack processor with high connectivity and scalability. 
+Fresnel1 is PASQAL's quantum computer based on neutral atoms. The neutral atoms, controlled by optical tweezers, compose an array of 100 qubits.
+
+Neutral atoms quantum devices use highly focused lasers, so-called optical tweezers, to trap and manipulate neutral atoms individually to create 1D or 2D  qubit arrays  in arbitrary configurations. Current PASQAL generation of devices use around 100 rubidium atoms for computations. Each qubit is represented by a two-level energy state in a Rubidium atom, usually a ground state and a Rydberg state which is a high energy state.  
 
 - Job Type: `Quantum program`
 - Data Format: `application/json`
@@ -51,14 +53,12 @@ Fresnel1 is PASQAL's quantum computer based on neutral atoms. With 100 qubits, c
 
 ## Pulser SDK
 
-The QPU of PASQAL is made of neutral atoms controlled by lasers. Individual atoms are trapped at well-defined positions in 1, 2, or 3D lattices.[Pulser](https://github.com/pasqal-io/Pulser) is a  framework for composing, simulating and executing pulse sequences for neutral-atom quantum devices. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/latest/).
-
-The Pulser SDK allows you to create pulse sequences to apply to the array of atoms. To run quantum circuits on PASQAL's quantum computers, you need to install the Pulser SDK.
+In PASQAL QPU, individual atoms are trapped at well-defined positions in 1D or 2D lattices. [Pulser](https://github.com/pasqal-io/Pulser) is a  framework for composing, simulating and executing pulse sequences on neutral atoms quantum devices. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/latest/).
 
 To install Pulser SDK packages, run the following code:
 
 ```python
-    !pip -q install pulser
+    !pip -q install pulser-simulation #Only for using the local Qutip emulator included in Pulser
     !pip -q install pulser-core
 ```
 

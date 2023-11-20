@@ -8,13 +8,11 @@ ms.topic: include
 no-loc: [target, targets]
 ---
 
-
-
 ## Install the Pulser SDK 
 
 [Pulser](https://github.com/pasqal-io/Pulser) is a framework for composing, simulating and executing pulse sequences for neutral-atom quantum devices. It's designed by PASQAL as a pass-through to submit quantum experiments to their quantum processors. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/latest/).
 
-To submit the pulse sequences, install the Pulser SDK packages:
+To submit the pulse sequences, first install the Pulser SDK packages:
 
 ```python
 try:
@@ -35,7 +33,7 @@ except ImportError:
     from pulser import Pulse, Sequence, Register
     ```
 
-1. The QPU of PASQAL is made of neutral atoms trapped at well defined positions in a lattice. To define your quantum registers you create an array of qubits on a lattice. For example, the following code creates a 4x4 square lattice of qubits:
+1. PASQAL's QPU is made of neutral atoms trapped at well-defined positions in a lattice. To define your quantum registers you create an array of qubits on a lattice. For example, the following code creates a 4x4 square lattice of qubits:
 
     ```python
     L = 4
@@ -52,7 +50,7 @@ except ImportError:
 
 ## Write a pulse sequence
 
-The neutral atoms are controls with laser pulses. The Pulser SDK allows you to create pulse sequences to apply to the array of atoms.
+The neutral atoms are controlled with laser pulses. The Pulser SDK allows you to create pulse sequences to apply to the quantum register.
 
 1. First, you need to set up a pulse sequence, and declare the channels that will be used to control the atoms. For example, the following code declares two channels: `ch0` and `ch1`.
 
@@ -72,9 +70,9 @@ The neutral atoms are controls with laser pulses. The Pulser SDK allows you to c
 
     A few things to consider:
     - A `Sequence` in Pulser is a series of operations that are to be executed on a quantum register.
-    - The code sets up a sequence of operations to be executed on a `Chadoq2` device. `Chadoq2` is a predefined device in Pulser that represents a specific quantum computer.
+    - The code sets up a sequence of operations to be executed on a `AnalogDevice` device. `AnalogDevice` is a predefined device in Pulser that represents a Fresnel1-equivalent quantum computer.
 
-1. Create a pulser sequence. To do so, you create and add pulses to the channels you declared. For example, the following code creates a simple pulse and adds it to channel `ch0`, and then creates a complex pulse and adds it to channel `ch1`.
+1. Create a pulse sequence. To do so, you create and add pulses to the channels you declared. For example, the following code creates a simple pulse and adds it to channel `ch0`, and then creates a complex pulse and adds it to channel `ch1`.
 
     ```python
     seq.target(1, "ch0") # Target qubit 1 with channel "ch0"
@@ -138,10 +136,10 @@ def prepare_input_data(seq):
         return result
     ```
 
-    > [!NOTE] 
+    > [!NOTE]
     > The time required to run a circuit on the QPU depends on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
 
-1. Submit the program to the PASQAL quantum provider. For example, you can submit the program to the [PASQAL Emu-TN target](xref:microsoft.quantum.providers.pasqal#emu-tn).
+1. Submit the program to PASQAL. For example, you can submit the program to [PASQAL Emu-TN target](xref:microsoft.quantum.providers.pasqal#emu-tn).
 
     ```python
     target = workspace.get_targets(name="pasqal.sim.emu-tn")
