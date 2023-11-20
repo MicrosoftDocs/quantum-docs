@@ -220,4 +220,19 @@
     - name: Q# API design guide for contributors
       href: contributing-api-design-principles.md
 - name: Release notes
-  href: release-notes.md
+  items:
+  - name: 2023 release notes
+    href: release-notes.md
+  - name: 2022 release notes
+    href: release-notes-2022.md  
+  - name: 2021 release notes
+    href: release-notes-2021.md
+  - name: 2020 release notes
+    href: release-notes-2020.md
+  - name: 2019 release notes
+    href: release-notes-2019.md
+  - name: 2018 release notes
+    href: release-notes-2018.md
+  - name: 2017 release notes
+    href: release-notes-2017.md
+
