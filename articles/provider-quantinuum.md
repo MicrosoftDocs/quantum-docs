@@ -89,6 +89,14 @@ More information can be found in the *System Model H1 Product Data Sheet* found 
   - H1-2: `quantinuum.qpu.h1-2`
 - Target Execution Profile: [:::no-loc text="Basic Measurement Feedback":::](xref:microsoft.quantum.target-profiles)
 
+## Quantinuum’s H-Series Emulator in Code with Azure Quantum
+
+Quantinuum’s H-Series Emulator offered in [Code with Azure Quantum] is a statevector based quantum emulator. This emulator uses a realistic physical noise model and generalized error parameters based on the typical performance of a System Model H1 quantum computer. The quantum simulation performed is the same as the System Model H1 Emulator but the classical circuit optimization routine is reduced to increase throughput.
+
+The full System Model H1 Emulator allows user to test and debug circuits design before running on hardware and is available even while the hardware is offline.  
+
+More information on the full System Model H1 Emulator can be found [above](#system-model-h1-emulators) and in the System Model H1 Emulator Product Data Sheet found on the [System Model H1] page.
+
 ## System Model H2 Emulator
 
 After validating the syntax of their code with the H2-1 Syntax Checker, users can take advantage of Quantinuum's System Model H2 Emulator, an emulation tool which contains a detailed physical model and realistic noise model of the actual System Model H2 hardware. More information about the noise model can be found in the *System Model H2 Emulator Product Data Sheet* found on the [System Model H2](https://www.quantinuum.com/hardware/h2) page. The System Model H2 Emulator uses an identical API for job submission as the System Model H2 hardware, enabling seamless transition from emulation to hardware. To help maximize productivity and shorten development time, the H2 Emulator is available even while the hardware is offline.
@@ -495,13 +503,6 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 > [!NOTE]
 > If you are using an [Azure Quantum Credits](xref:microsoft.quantum.credits) plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
 
-## Copilot
-Quantinuum’s H-Series Emulator offered in Copilot is a statevector based quantum emulator. This emulator uses a realistic physical noise model and generalized error parameters based on the typical performance of a System Model H1 quantum computer.  The quantum simulation performed is the same as the System Model H1 Emulator but the classical circuit optimization routine is reduced to increase throughput.
-
-The full System Model H1 Emulator allows user to test and debug circuits design before running on hardware and is available even while the hardware is offline.  
-More information on the full System Model H1 Emulator can be found [above](#system-model-h1-emulators) and in the System Model H1 Emulator Product Data Sheet found on the [System Model H1] page.
-
-
 [Quantinuum]: https://www.quantinuum.com
 [System Model H1]: https://www.quantinuum.com/hardware/h1
 [System Model H2]: https://www.quantinuum.com/hardware/h2
@@ -513,3 +514,4 @@ More information on the full System Model H1 Emulator can be found [above](#syst
 [`pytket-quantinuum` Compilation Passes]: https://cqcl.github.io/pytket-quantinuum/api/#default-compilation
 [`pytket-quantinuum` Examples]: https://github.com/CQCL/pytket-quantinuum/tree/develop/examples
 [Azure portal]: https://portal.azure.com
+[Code with Azure Quantum]: https://quantum.microsoft.com/en-us/experience/quantum-coding
