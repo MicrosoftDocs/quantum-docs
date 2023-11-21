@@ -1,5 +1,5 @@
 ---
-title: Latest release notes for QDK and Azure Quantum 2023
+title: Release notes for QDK and Azure Quantum 2023
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
 ms.date: 11/17/2023
 author: SoniaLopezBravo
@@ -11,13 +11,13 @@ no-loc: ['Q#', '$$v', Quantum Development Kit, Quantum machine learning, Quantum
 uid: microsoft.quantum.relnotes-qdk
 ---
 
-# Latest release notes for Quantum Development Kit (QDK) and Azure Quantum - 2023
+# Release notes for Quantum Development Kit (QDK) and Azure Quantum - 2023
 
 This article outlines updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview).
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
-## Latest QDK version 0.28.302812
+## Latest version - QDK version 0.28.302812
 
 ### 2023-09-15
 
