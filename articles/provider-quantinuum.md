@@ -470,7 +470,7 @@ Current status information may be retrieved from the *Providers* tab of a worksp
 
 To see Quantinuum's billing plans, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
-## Limits & Quotas
+## Limits and quotas
 
 Quantinuum's quotas are tracked based on the QPU usage credit unit, *H-System Quantum Credit (HQC)*, for jobs submitted to Quantinuum quantum computers, and emulator HQCs (eHQCs) for jobs submitted to emulators.
 
