@@ -1,7 +1,7 @@
 ---
 title: Latest release notes for QDK and Azure Quantum 2023
 description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
-ms.date: 11/17/2023
+ms.date: 11/22/2023
 author: SoniaLopezBravo
 ms.author: sonialopez
 ms.service: azure-quantum
@@ -16,6 +16,16 @@ uid: microsoft.quantum.relnotes-qdk
 This article outlines updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview).
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
+
+## Latest azure-quantum python version 0.29.0
+
+### 2023-11-22
+
+- Added two input parameters `maxDuration` and `maxPhysicalQubits` to specify constraints for Resource Estimation solutions.
+- Added support for handling partial success for batch jobs in Resource Estimator, by displaying `No solution found` as an output for job results where there is no solution.
+- The [azure-quantum](https://pypi.org/project/azure-quantum/) python SDK now ships separately from the rest of the Classic QDK. The first version available as a standalone release is 0.29.0.
+- The previous qdk-python GitHub repository has been renamed [azure-quantum-python](https://github.com/microsoft/azure-quantum-python) to better reflect the purpose and content of the repository.
+- The [qdk](https://pypi.org/project/qdk/) python package for qdk.chemistry python interop has been deprecated and it will no longer be maintained or receive further updates.
 
 ## Latest QDK version 0.28.302812
 
