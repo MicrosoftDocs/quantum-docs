@@ -91,7 +91,7 @@ More information can be found in the *System Model H1 Product Data Sheet* found 
 
 ## Quantinuum’s H-Series Emulator in Code with Azure Quantum
 
-Quantinuum’s H-Series Emulator offered in [Code with Azure Quantum] is a statevector based quantum emulator. This emulator uses a realistic physical noise model and generalized error parameters based on the typical performance of a System Model H1 quantum computer. The quantum simulation performed is the same as the System Model H1 Emulator but the classical circuit optimization routine is reduced to increase throughput.
+Quantinuum’s H-Series Emulator offered in [Learn quantum computing with Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding) is a statevector based quantum emulator. This emulator uses a realistic physical noise model and generalized error parameters based on the typical performance of a System Model H1 quantum computer. The quantum simulation performed is the same as the System Model H1 Emulator but the classical circuit optimization routine is reduced to increase throughput.
 
 The full System Model H1 Emulator allows user to test and debug circuits design before running on hardware and is available even while the hardware is offline.  
 
