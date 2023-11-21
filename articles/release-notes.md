@@ -23,7 +23,7 @@ For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.qu
 
 - Added two input parameters `maxDuration` and `maxPhysicalQubits` to [specify constraints for resource estimation solutions](xref:microsoft.quantum.overview.resources-estimator#constraints).
 - Added support for handling partial success in batch jobs in Resource Estimator, by displaying `No solution found` as an output for job results.
-- The [azure-quantum](https://pypi.org/project/azure-quantum/) python SDK now ships separately from the rest of the Classic QDK. The first version available as a standalone release is 0.29.0.
+- The [azure-quantum](https://pypi.org/project/azure-quantum/) python SDK now ships separately from the rest of the QDK. The first version available as a standalone release is 0.29.0.
 - The previous qdk-python GitHub repository has been renamed [azure-quantum-python](https://github.com/microsoft/azure-quantum-python) to better reflect the purpose and content of the repository.
 - The [qdk](https://pypi.org/project/qdk/) python package for qdk.chemistry python interop has been deprecated and it will no longer be maintained or receive further updates.
 
