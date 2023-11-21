@@ -95,7 +95,7 @@ Quantinuum’s H-Series Emulator offered in [Learn quantum computing with Azure 
 
 The full System Model H1 Emulator allows the user to test and debug circuit designs before running on hardware and is available even while the hardware is offline.  
 
-More information on the full System Model H1 Emulator can be found [above](#system-model-h1-emulators) and in the System Model H1 Emulator Product Data Sheet found on the [System Model H1] page.
+More information on the full System Model H1 Emulator can be found in [System Model H1 Emulators](#system-model-h1-emulators) and in the System Model H1 Emulator Product Data Sheet found on the [System Model H1](https://www.quantinuum.com/hardware/h1) page.
 
 ## System Model H2 Emulator
 
