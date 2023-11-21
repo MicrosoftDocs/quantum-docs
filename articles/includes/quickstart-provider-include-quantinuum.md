@@ -8,33 +8,6 @@ no-loc: [target, targets]
 ms.topic: include
 ---
 
-## Load the required imports
-
-First, run the following cell to load the required imports:
-
-```python
-from azure.quantum import Workspace
-```
-
-## Connect to the Azure Quantum service
-
-To connect to the Azure Quantum service, your program will need the resource ID and the
-location of your Azure Quantum workspace. Log in to your Azure account,
-<https://portal.azure.com>, navigate to your Azure Quantum workspace, and
-copy the values from the header.
-
-![How to retrieve the resource ID and location from an Azure Quantum workspace](../media/azure-quantum-resource-id.png)
-
-Paste the values into the following `Workspace` constructor to
-create a `workspace` object that connects to your Azure Quantum workspace.
-
-```python
-workspace = Workspace(
-    resource_id="",
-    location=""
-)
-```
-
 ## Submit a quantum circuit to the Quantinuum API validator
 
 1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For example, the following example creates a Teleportation circuit:

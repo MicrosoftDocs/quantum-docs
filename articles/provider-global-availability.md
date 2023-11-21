@@ -20,6 +20,7 @@ The availability of the quantum computing providers IonQ, Quantinuum, and Rigett
 IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program and a Pay-As-You-Go plan. For more information about IonQ resources on Azure Quantum, see [IonQ provider and targets](xref:microsoft.quantum.providers.ionq).
 
 ### IonQ is available in the following countries/regions:
+
 - Armenia
 - Australia
 - Austria
@@ -80,6 +81,7 @@ IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program a
 - Vietnam
 
 ### IonQ is unavailable in the following countries/regions:
+
 - Afghanistan
 - Albania
 - Algeria
@@ -164,11 +166,164 @@ IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program a
 - Zambia
 - Zimbabwe
 
+## [PASQAL](#tab/tabid-pasqal)
+
+PASQAL offers two plans through Azure Quantum: the Azure Quantum Credits program and a Pay-As-You-Go plan. For more information about PASQAL resources on Azure Quantum, see [PASQAL provider and targets](xref:microsoft.quantum.providers.pasqal).
+
+### PASQAL is available in the following countries/regions:
+
+- Australia
+- Austria
+- Belgium
+- Canada
+- Croatia
+- Cyprus
+- Czechia
+- Germany
+- Denmark
+- Estonia
+- Finland
+- France
+- Greece
+- Hong Kong SAR
+- Hungary
+- Ireland
+- Italy
+- Japan
+- Korea
+- Lithuania
+- Luxembourg
+- Malta
+- Netherlands
+- New Zealand
+- Norway
+- Poland
+- Portugal
+- Romania
+- Singapore
+- Slovakia
+- Slovenia
+- South Africa
+- Spain
+- Sweden
+- Switzerland
+- United Kingdom
+- United States
+
+
+### PASQAL is unavailable in the following countries/regions:
+
+- Afghanistan
+- Albania
+- Algeria
+- Andorra
+- Angola
+- Argentina
+- Armenia
+- Azerbaijan
+- Bahrain
+- Bangladesh
+- Barbados
+- Bermuda
+- Belarus
+- Belize
+- Bolivia
+- Bosnia and Herzegovina
+- Botswana
+- Brazil
+- Brunei
+- Bulgaria
+- Cabo Verde
+- Cameroon
+- Cayman Islands
+- Chile
+- Côte d'Ivoire
+- Colombia
+- Costa Rica
+- Curaçao
+- Dominican Republic
+- Ecuador
+- Egypt
+- Ethiopia
+- Faroe Islands
+- Fiji
+- Georgia
+- Ghana
+- Guatemala
+- Honduras
+- Iceland
+- India
+- Indonesia
+- Israel
+- Iraq
+- Jamaica
+- Jordan
+- Kazakhstan
+- Kenya
+- Saint Kitts and Nevis
+- Kuwait
+- Kyrgyzstan
+- Latvia
+- Lebanon
+- Libya
+- Liechtenstein
+- Macao SAR
+- North Macedonia
+- Malaysia
+- Mauritius
+- Mexico
+- Monaco
+- Moldova
+- Montenegro
+- Mongolia
+- Morocco
+- Namibia
+- Nepal
+- Nicaragua
+- Nigeria
+- Oman
+- Panama
+- Pakistan
+- Palestinian Authority
+- Paraguay
+- Peru
+- Philippines
+- Puerto Rico
+- Qatar
+- Russia
+- Rwanda
+- El Salvador
+- Saudi Arabia
+- Senegal
+- Serbia
+- Sri Lanka
+- Taiwan
+- Tajikistan
+- Tanzania
+- Thailand
+- Trinidad and Tobago
+- Tunisia
+- Türkiye
+- Turkmenistan
+- Uganda
+- Ukraine
+- United Arab Emirates
+- Uruguay
+- Uzbekistan
+- Vatican City
+- Venezuela
+- Vietnam
+- U.S. Virgin Islands
+- Yemen
+- Zambia
+- Zimbabwe
+
 ## [Quantinuum](#tab/tabid-quantinuum)
 
 Quantinuum offers five plans through Azure Quantum: the Azure Quantum Credits program, Standard and Premium plans with access to System Model H1, and Standard and Premium plan with access to System Models H1 and H2. For more information about Quantinuum resources on Azure Quantum, see [Quantinuum provider and targets](xref:microsoft.quantum.providers.quantinuum).
 
 ### Quantinuum is available in the following countries/regions:
+
 - Armenia
 - Australia
 - Austria
@@ -227,6 +382,7 @@ Quantinuum offers five plans through Azure Quantum: the Azure Quantum Credits pr
 - United States
 
 ### Quantinuum is unavailable in the following countries/regions:
+
 - Afghanistan
 - Albania
 - Algeria
@@ -318,6 +474,7 @@ Quantinuum offers five plans through Azure Quantum: the Azure Quantum Credits pr
 Rigetti offers two plans through Azure Quantum: the Azure Quantum Credits program and a Pay-As-You-Go plan. For more information about Rigetti resources on Azure Quantum, see [Rigetti provider and targets](xref:microsoft.quantum.providers.rigetti).
 
 ### Rigetti is available in the following countries/regions:
+
 - Armenia
 - Austria
 - Belarus
@@ -374,6 +531,7 @@ Rigetti offers two plans through Azure Quantum: the Azure Quantum Credits progra
 - United States
 
 ### Rigetti is unavailable in the following countries/regions:
+
 - Afghanistan
 - Albania
 - Algeria
@@ -461,3 +619,5 @@ Rigetti offers two plans through Azure Quantum: the Azure Quantum Credits progra
 - Yemen
 - Zambia
 - Zimbabwe
+
+***

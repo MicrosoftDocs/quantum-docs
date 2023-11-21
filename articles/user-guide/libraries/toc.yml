@@ -3,11 +3,6 @@
 - name: Standard libraries
   topicHref: standard/index.md
   href: standard/toc.yml
-- name: Quantum chemistry library
-  topicHref: chemistry/index.md
-  href: chemistry/toc.yml
-- name: Quantum machine learning library
-  href: machine-learning/toc.yml
 - name: Quantum numerics library
   href: numerics/toc.yml
  

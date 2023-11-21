@@ -18,6 +18,16 @@ groups:
     title: Quantinuum
   - id: platform-rigetti
     title: Rigetti
+- id: quantum-computing-platforms-Pasqal
+  title: Provider platforms
+  prompt: Choose a provider platform
+  pivots:
+  - id: platform-ionq
+    title: IonQ
+  - id: platform-pasqal
+    title: PASQAL
+  - id: platform-quantinuum
+    title: Quantinuum
 - id: azurequantum-ide
   title: IDE for submitting jobs to AQ 
   prompt: Select the option for your development environment

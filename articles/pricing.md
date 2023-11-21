@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: [target, targets]
-title: Pricing & billing plans
+title: Pricing plans
 uid: microsoft.quantum.providers-pricing
 ---
 
@@ -17,16 +17,6 @@ In Azure Quantum, hardware and software providers define and control the pricing
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
  
-To see the different pricing plans in your local currency: 
-
-1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
-2. Create a new [**Azure Quantum workspace**](xref:microsoft.quantum.how-to.workspace). 
-3. Go to the **Providers** tab in your Quantum workspace and click on **Add a Provider**. Then, select the provider you want to add.
-
- :::image type="content" source="media/add-providers-portal.png" alt-text="Screen shot showing how to select a provider to add to an Azure Quantum workspace.":::
- 
-4. In the description of the provider pane, you will find the current pricing options in your local currency. 
-
 ## IonQ 
 
 [IonQ](https://ionq.com/) charges based on the number of gates in your program, the complexity of the gates you use, and the number of shots. These units are called *gate-shots*.
@@ -48,28 +38,28 @@ All new Azure Quantum customers benefit of a one-time $500 (USD) free Azure Quan
 
 ### [Azure Quantum Credits](#tab/tabid-AQcredits)
 
-Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
+Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credit balance. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
 
-|Pricing | Use is deducted from the Azure Quantum Credits based on the number of QGSs executed |
+|Pricing | Includes access to  |
 |---|---|  
-|Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
+|Use is deducted from the Azure Quantum Credits based on the number of QGSs executed| <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
 |IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.0003 (USD) deducted from your credits</li><li>Minimum price per program execution:<ul><li> \$1.00 (USD) if error mitigation is off</li><li>$5.00 (USD) if error mitigation is on</li></ul></ul>|
 |IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.000220 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.000975 (USD) deducted from your credits</li><li>Minimum price per program execution:<ul><li>$97.50 (USD) - default setting, error mitigation is on</li><li> $12.4166 (USD) if error mitigation is off</li></ul></ul>|
 
 > [!NOTE]
-> Once you have consumed all the credits you need to switch to a different plan to continue using IonQ. Azure Quantum won’t start charging you once you reach your credit limit. 
+> Once you have consumed all the credits you need to switch to a different plan to continue using IonQ. Azure Quantum won’t charge you when you reach your credit limit.
 
 > [!IMPORTANT]
-> There are no costs or charges to using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
+> There are no costs or charges for using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job.
 > For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
  
 ### [Pay As You Go](#tab/tabid-paygo)
 
 The Pay-as-you-go plan consists of *a la carte* access to the 11-qubit trapped ion quantum computer and the quantum simulator, charged on a resource-usage model.  
 
-|Pricing | Use is charged based on the number of QGSs executed + Azure infrastructure costs |
+|Pricing | Includes access to|
 |---|---|  
-|Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria 1 QPU</li><li>IonQ Simulator (free)</li></ul>|
+| Use is charged based on the number of QGSs executed + Azure infrastructure costs | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria 1 QPU</li><li>IonQ Simulator (free)</li></ul>|
 |IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD)</li><li>2-Qubit Gate Shot: $0.0003 (USD)</li><li>Minimum price per program execution:<ul><li> \$1.00 (USD) if error mitigation is off</li><li>$5.00 (USD) if error mitigation is on</li></ul></ul>|
 |IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.000220 (USD)</li><li>2-Qubit Gate Shot: $0.000975 (USD)</li><li>Minimum price per program execution:<ul><li>$97.50 (USD) - default setting, error mitigation is on</li><li> $12.4166 (USD) if error mitigation is off</li></ul></ul>|
 
@@ -79,14 +69,49 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 The Aria plan is a monthly subscription plan with access to the IonQ Aria 1 25-qubit quantum computer. The subscription also includes access to the IonQ simulator and IonQ Harmony 11-qubit quantum computer.
 
-|Pricing | $25,000 (USD)/Month + Azure infrastructure costs |
+|Pricing |  Includes access to |
 |---|---|  
-|Includes access to | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
+|$25,000 (USD)/Month + Azure infrastructure costs| <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
 |IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD)</li><li>2-Qubit Gate Shot: $0.0003 (USD)</li><li>Minimum price per program execution:<ul><li> \$1.00 (USD) if error mitigation is off</li><li>$5.00 (USD) if error mitigation is on</li></ul></ul>|
 |IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.000220 (USD)</li><li>2-Qubit Gate Shot: $0.000975 (USD)</li><li>Minimum price per program execution:<ul><li>$97.50 (USD) - default setting, error mitigation is on</li><li> $12.4166 (USD) if error mitigation is off</li></ul></ul>|  
 
 > [!NOTE]
 > Once you have consumed the equivalent cost of the monthly subscription, any overspending is charged as a pay-as-you-go plan.
+
+For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
+
+***
+
+## PASQAL
+
+[PASQAL](https://pasqal.io/) charges for job execution time on its quantum processor, the 100-qubit Fresnel1. There is no added charge per job or per shot. The Emu-TN simulator is free of charge for all users (subject to limit quotas depending on the plan).
+
+All new Azure Quantum customers benefit from $500 (USD) free Azure Quantum credits to use specifically for PASQAL targets. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
+
+In addition to the Azure Quantum Credits plan, PASQAL offers a pay-as-you-go plan for QPUs, so you pay only for what you use.
+
+### [Azure Quantum Credits](#tab/tabid-AQcreditsPasqal)
+
+Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credit balance. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
+
+|Pricing | Includes access to   |
+|---|---|  
+|Use is deducted from the Azure Quantum Credits based on the job execution time only| <ul><li>PASQAL Fresnel1 QPU: $3000 (USD)/QPU hour deducted from your credits</li><li>PASQAL Emu-TN (free up to 20 hours)</li></ul>|
+
+> [!NOTE]
+> Once you have consumed all the credits you need to switch to a different plan to continue using PASQAL. Azure Quantum won’t charge you when you reach your credit limit.
+
+> [!IMPORTANT]
+> There are no costs or charges for using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
+> For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
+ 
+### [Pay As You Go](#tab/tabid-paygoPasqal)
+
+In the Pay-as-you-go plan the usage is charged based on the job execution time only.
+
+|Pricing | Includes access to  |
+|---|---|  
+|$3000 (USD)/QPU hour + Azure infrastructure costs| <ul><li>PASQAL Fresnel1 QPU</li><li>PASQAL Emu-TN (free up to 100 hours)</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -118,26 +143,26 @@ All new Azure customers benefit from $500 (USD) in free credits towards the Quan
 
 ### [Azure Quantum Credits](#tab/tabid-AQcreditsQ)
 
-Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
+Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credit balance. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
 
-|Pricing | Use is deducted from the Azure Quantum Credits based on the HQC equation described above |
+|Pricing |Includes access to |
 |---|---|  
-|Includes access to | <ul><li> 40 HQCs for use on the System Model H1 hardware</li><li>8000 eHQCs for use on the System H1 Emulator</li></ul>|
+|Use is deducted from the Azure Quantum Credits based on the HQC equation described above  | <ul><li> 40 HQCs for use on the System Model H1 hardware</li><li>8000 eHQCs for use on the System H1 Emulator</li></ul>|
 
 > [!NOTE]
-> Once you have consumed all the credits you need to explicitly switch to a different plan to continue using Quantinuum. Azure Quantum won’t start charging you once you reach your credit limit.
+> Once you have consumed all the credits you need to explicitly switch to a different plan to continue using Quantinuum. Azure Quantum won’t charge charging you when you reach your credit limit.
 
 > [!IMPORTANT]
-> There are no costs or charges to use your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job.
+> There are no costs or charges for using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job.
 > For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ### [Standard Subscription](#tab/tabid-standard)
 
 The Standard Subscription is a monthly subscription plan available through queued access.
 
-|Pricing|  $125,000 (USD)/Month + Azure infrastructure costs |
+|Pricing| Includes access to |
 |---|---|
-|Includes access to | <ul><li>10k HQCs for use on the System Model H1 hardware</li><li>100k eHQCs for use on the System Model H1 Emulator</li></ul>|
+|$125,000 (USD)/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on the System Model H1 hardware</li><li>100k eHQCs for use on the System Model H1 Emulator</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -145,17 +170,17 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 The Premium Subscription is a monthly subscription plan available through queued access.
 
-| Pricing | $175,000 (USD)/Month + Azure infrastructure costs |
+| Pricing | Includes access to |
 |---|---|
-|Includes access to | <ul><li>17k HQCs for use on System Model H1 hardware</li><li>170k eHQCs for use on the System Model H1 Emulator</li></ul>|
+|$175,000 (USD)/Month + Azure infrastructure costs | <ul><li>17k HQCs for use on System Model H1 hardware</li><li>170k eHQCs for use on the System Model H1 Emulator</li></ul>|
 
 ### [Standard H1 + H2 Subscription](#tab/tabid-standard-H1+h2)
 
 The Standard H1 + H2 Subscription is a monthly subscription plan available through queued access.
 
-|Pricing|  $135,000 (USD)/Month + Azure infrastructure costs |
+|Pricing|  Includes access to  |
 |---|---|
-|Includes access to | <ul><li>10k HQCs for use on the System Model H1 and H2 hardware</li><li>100k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
+|$135,000 (USD)/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on the System Model H1 and H2 hardware</li><li>100k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -163,9 +188,9 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 The Premium H1 + H2 Subscription is a monthly subscription plan available through queued access.
 
-| Pricing | $185,000 (USD)/Month + Azure infrastructure costs |
+| Pricing | Includes access to  |
 |---|---|
-|Includes access to | <ul><li>17k HQCs for use on System Model H1 and H2 hardware</li><li>170k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
+|$185,000 (USD)/Month + Azure infrastructure costs| <ul><li>17k HQCs for use on System Model H1 and H2 hardware</li><li>170k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 ***
@@ -182,29 +207,29 @@ In addition to the Azure Quantum Credits plan, Rigetti offers a pay-as-you-go pl
 
 ### [Azure Quantum Credits](#tab/tabid-AQcreditsRigetti)
 
-Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credits. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
+Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credit balance. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
 
-|Pricing | Use is deducted from the Azure Quantum Credits based on the job execution time only |
+|Pricing | Includes access to  |
 |---|---|  
-|Includes access to | <ul><li>Rigetti Aspen-M-3 QPU</li><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
+|Use is deducted from the Azure Quantum Credits based on the job execution time only| <ul><li>Rigetti Aspen-M-3 QPU</li><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
 
 > [!NOTE]
-> Once you have consumed all the credits you need to switch to a different plan to continue using Rigetti. Azure Quantum won’t start charging you once you reach your credit limit.
+> Once you have consumed all the credits you need to switch to a different plan to continue using Rigetti. Azure Quantum won’t charge you when you reach your credit limit.
 
 > [!IMPORTANT]
-> There are no costs or charges to using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
+> There are no costs or charges for using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
 > For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
  
 ### [Pay As You Go](#tab/tabid-paygoRigetti)
 
-The Pay-as-you-go plan consists of *a la carte* access to the Aspen-M-3 and Aspen-M-2 quantum processors.
+The Pay-as-you-go plan consists of *a la carte* access to the Aspen-M-3 and Aspen-M-2 quantum processors. The usage is charged based on the job execution time only
 
-|Pricing | Use is charged based on the job execution time only |
+|Pricing | Includes access to   |
 |---|---|  
-|Includes access to | <ul><li>Rigetti Aspen-M-3 QPU</li><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
-|  | $0.02 (USD) per 10-millisecond increment of job execution time|
+|$0.02 (USD) per 10-millisecond increment of job execution time| <ul><li>Rigetti Aspen-M-3 QPU</li><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
 
 ***
+
 
 ## Next Steps
 
