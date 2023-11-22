@@ -85,7 +85,6 @@ def submit_job(target, seq):
         input_data=prepare_input_data(seq), # Take the JSON string previously defined as input data
         input_data_format="pasqal.pulser.v1",
         output_data_format="pasqal.pulser-results.v1",
-        content_type="application/json",
         name="PASQAL sequence",
         input_params={"count": 10} # Number of shots
     )
