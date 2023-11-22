@@ -506,7 +506,7 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 [`rzz`]: https://qiskit.org/documentation/stubs/qiskit.circuit.library.RZZGate.html 
 [`pytket-quantinuum`]: https://github.com/CQCL/pytket-quantinuum
 [`pytket`]: https://cqcl.github.io/tket/pytket/api/#
-[`pytket` User Manual]: https://cqcl.github.io/pytket/manual/index.html
+[`pytket` User Manual]: https://cqcl.github.io/pytket/manual/
 [`pytket-quantinuum` Compilation Passes]: https://cqcl.github.io/pytket-quantinuum/api/#default-compilation
 [`pytket-quantinuum` Examples]: https://github.com/CQCL/pytket-quantinuum/tree/develop/examples
 [Azure portal]: https://portal.azure.com
