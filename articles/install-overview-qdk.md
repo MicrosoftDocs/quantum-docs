@@ -22,7 +22,7 @@ Every environment uses the [Quantum Development Kit (QDK)](xref:microsoft.quantu
 
 ## The Azure Quantum website
 
-With the [Azure Quantum website](https://quantum.microsoft.com/), you can run Q# code in your browser with no setup required. For more information, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum). 
+With the [Azure Quantum website](https://quantum.microsoft.com/), you can write and run Q# code in your browser or in [VS Code on the Web](https://vscode.dev/) with no setup or Azure account required. For more information, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum). 
 
 ## The Azure Quantum Development Kit (Modern QDK) Preview
 

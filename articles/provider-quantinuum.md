@@ -76,7 +76,7 @@ System Model H1 Emulator usage is offered free-of-charge with a hardware subscri
 
 ### H-Series Emulator (cloud based)
 
-The H-Series Emulator is available free-of-charge on the [Azure Quantum website](https://quantum.microsoft.com/experience/quantum-coding), where you can write Q# code and submit your jobs to the Quantinuum H-Series Emulator without an Azure account. The H-Series Emulator is a statevector based quantum emulator that uses a realistic physical noise model and generalized error parameters based on the typical performance of a [System Model H1 quantum computer](#system-model-h1). The quantum simulation performed is the same as the [System Model H1 Emulator](#system-model-h1-emulators) but the classical circuit optimization routine is reduced to increase throughput. 
+The H-Series Emulator is available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding) page on the Azure Quantum website, where you can write Q# code and submit your jobs to the Quantinuum H-Series Emulator without an Azure account. The H-Series Emulator is a statevector based quantum emulator that uses a realistic physical noise model and generalized error parameters based on the typical performance of a [System Model H1 quantum computer](#system-model-h1). The quantum simulation performed is the same as the [System Model H1 Emulator](#system-model-h1-emulators) but the classical circuit optimization routine is reduced to increase throughput. Support for [Integrated Hybrid computing](xref:microsoft.quantum.hybrid.integrated) is planned for a future date. 
 
 ## System Model H1
 
