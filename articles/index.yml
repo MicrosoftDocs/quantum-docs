@@ -24,6 +24,8 @@ landingContent:
         links:
           - text: What is Azure Quantum?
             url: overview-azure-quantum.md
+          - text: Azure Quantum Development Kit (QDK) Preview
+            url: https://github.com/microsoft/qsharp/wiki/Installation
       - linkListType: get-started
         links:
           - text: Explore Azure Quantum and the Copilot in Azure Quantum
