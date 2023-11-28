@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to submit Qiskit quantum circuits to the Azure Quantum service using an online notebook.
 ms.author: brbenefield
-ms.date: 11/02/2023
+ms.date: 11/28/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -132,10 +132,7 @@ This workspace's targets:
 - microsoft.estimator
 - quantinuum.qpu.h1-1
 - quantinuum.sim.h1-1sc
-- quantinuum.qpu.h1-2
-- quantinuum.sim.h1-2sc
 - quantinuum.sim.h1-1e
-- quantinuum.sim.h1-2e
 - rigetti.sim.qvm
 - rigetti.qpu.aspen-m-3
 ```

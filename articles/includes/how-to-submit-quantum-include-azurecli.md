@@ -97,10 +97,7 @@ You will also find a full reference for all commands and features available thro
     quantinuum    quantinuum.hqs-lt                                    Degraded                0
     quantinuum    quantinuum.qpu.h1-1                                  Degraded                0
     quantinuum    quantinuum.sim.h1-1sc                                Available               5
-    quantinuum    quantinuum.qpu.h1-2                                  Unavailable             0
-    quantinuum    quantinuum.sim.h1-2sc                                Available               3
     quantinuum    quantinuum.sim.h1-1e                                 Available               431
-    quantinuum    quantinuum.sim.h1-2e                                 Available               74
     rigetti       rigetti.sim.qvm                                      Available               5
     rigetti       rigetti.qpu.aspen-11                                 Unavailable             0
     rigetti       rigetti.qpu.aspen-m-3                                Available               5

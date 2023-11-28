@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 09/26/2022
+ms.date: 11/28/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -55,10 +55,7 @@ print(service.targets())
 ```output
 [<Target name="quantinuum.qpu.h1-1", avg. queue time=0 s, Degraded>,
 <Target name="quantinuum.sim.h1-1sc", avg. queue time=1 s, Available>,
-<Target name="quantinuum.qpu.h1-2", avg. queue time=217300 s, Unavailable>,
-<Target name="quantinuum.sim.h1-2sc", avg. queue time=0 s, Available>,
 <Target name="quantinuum.sim.h1-1e", avg. queue time=40 s, Available>,
-<Target name="quantinuum.sim.h1-2e", avg. queue time=64 s, Available>,
 <Target name="ionq.qpu", avg. queue time=229 s, Available>,
 <Target name="ionq.simulator", avg. queue time=3 s, Available>,
 <Target name="ionq.qpu.aria-1", avg. queue time=1136774 s, Available>]

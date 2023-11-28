@@ -27,13 +27,10 @@ The following targets are available from this provider:
 |Target name|Target ID|Number of qubits|Description|
 |---|---|---|---|
 |[H1-1 Syntax Checker](#syntax-checkers) |quantinuum.sim.h1-1sc|20 qubits| Use this to validate quantum programs against the H1-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
-|[H1-2 Syntax Checker](#syntax-checkers) |quantinuum.sim.h1-2sc |20 qubits|Use this to validate quantum programs against the H1-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
 |[H2-1 Syntax Checker](#syntax-checkers) |quantinuum.sim.h2-1sc |32 qubits|Use this to validate quantum programs against the H2-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
 |[H1-1 Emulator](#system-model-h1-emulators) |quantinuum.sim.h1-1e | 20 qubits| Uses a realistic physical model and noise model of H1-1.|
-|[H1-2 Emulator](#system-model-h1-emulators)|quantinuum.sim.h1-2e | 20 qubits|Uses a realistic physical model and noise model of H1-2.|
 |[H2-1 Emulator](#system-model-h2-emulator)|quantinuum.sim.h2-1e | 32 qubits|Uses a realistic physical model and noise model of H2-1.|
 |[H1-1](#system-model-h1)|quantinuum.qpu.h1-1 |20 qubits|Quantinuum's H1-1 trapped ion device.|
-|[H1-2](#system-model-h1)|quantinuum.qpu.h1-2| 20 qubits|Quantinuum's H1-2 trapped ion device.|
 |[H2-1](#system-model-h2)|quantinuum.qpu.h2-1| 32 qubits|Quantinuum's H2-1 trapped ion device.|
 
 Quantinuum's targets correspond to a **:::no-loc text="Basic Measurement Feedback":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
@@ -47,13 +44,12 @@ To get started using the Quantinuum provider on Azure Quantum, see [Get started 
 
 ## Syntax Checkers
 
-We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-2 syntax checker uses the same compiler as H1-2. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker returns a `success` status and a result of all 0s. If the code does not compile, the syntax checker returns a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
+We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-1 syntax checker uses the same compiler as H1-1. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker returns a `success` status and a result of all 0s. If the code does not compile, the syntax checker returns a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
 
 - Job type: `Simulation`
 - Data Formats: `honeywell.openqasm.v1`, `honeywell.qir.v1`
 - Target ID:
   - H1-1 Syntax Checker: `quantinuum.sim.h1-1sc`
-  - H1-2 Syntax Checker: `quantinuum.sim.h1-2sc`
   - H2-1 Syntax Checker: `quantinuum.sim.h2-1sc`
 - Target Execution Profile: [Basic Measurement Feedback](xref:microsoft.quantum.target-profiles)
 
@@ -69,7 +65,6 @@ More information can be found in the *System Model H1 Emulator Product Data Shee
 - Data Format: `quantinuum.openqasm.v1`
 - Target ID:
   - H1-1 Emulator: `quantinuum.sim.h1-1e`
-  - H1-2 Emulator: `quantinuum.sim.h1-2e`
 - Target Execution Profile: [:::no-loc text="Basic Measurement Feedback":::](xref:microsoft.quantum.target-profiles)
 
 System Model H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
@@ -80,9 +75,9 @@ The H-Series Emulator is available free-of-charge on the [Code with Azure Quantu
 
 ## System Model H1
 
-The System Model H1 generation of quantum computers, Powered by Honeywell, are comprised of a Quantum charge-coupled device (QCCD) with one linear section and currently includes two machine targets: H1-1 and H1-2. Both quantum computers have fundamentally the same design and both meet a nominal set of technical requirements. However, they may have system-to-system variability in exact performance and features, such as the maximum number of available qubits. Users are encouraged to test compatibility of their code by submitting jobs to a [syntax checker](#syntax-checkers) and [System Model H1 Emulator](#system-model-h1-emulators) prior to submitting them to the target machines.
+The System Model H1 generation of quantum computers, Powered by Honeywell, are comprised of a Quantum charge-coupled device (QCCD) with one linear section and currently includes one machine targets: the H1-1. Users are encouraged to test compatibility of their code with the H1-1 by submitting jobs to a [syntax checker](#syntax-checkers) and [System Model H1 Emulator](#system-model-h1-emulators) prior to submitting them to the target machines.
 
-Both System Model H1 machines, H1-1 and H1-2, are continuously upgraded throughout their product lifecycle. Users are given access to the most up-to-date, advanced, and capable hardware available.
+The System Model H1 machine is continuously upgraded throughout its product lifecycle. Users are given access to the most up-to-date, advanced, and capable hardware available.
 
 More information can be found in the *System Model H1 Product Data Sheet* found on the [System Model H1] page.
 
@@ -90,7 +85,6 @@ More information can be found in the *System Model H1 Product Data Sheet* found 
 - Data Format: `honeywell.openqasm.v1`, `honeywell.qir.v1`
 - Target ID:
   - H1-1: `quantinuum.qpu.h1-1`
-  - H1-2: `quantinuum.qpu.h1-2`
 - Target Execution Profile: [:::no-loc text="Basic Measurement Feedback":::](xref:microsoft.quantum.target-profiles)
 
 ## System Model H2 Emulator
@@ -343,7 +337,7 @@ result = qsharp.azure.execute(GenerateRandomBit,
 
 ```python
 # Specify the emulator backend target to submit to
-backend = provider.get_backend("quantinuum.sim.h1-2e")
+backend = provider.get_backend("quantinuum.sim.1e")
 
 # Update the parameter names desired
 # Note: This is not the full set of options available. 
@@ -433,7 +427,7 @@ result = qsharp.azure.execute(GenerateRandomBit,
 
 ```python
 # Specify the backend target to submit to
-backend = provider.get_backend("quantinuum.sim.h1-2e")
+backend = provider.get_backend("quantinuum.sim.h1-1e")
 
 # Update TKET optimization level desired
 option_params = {
