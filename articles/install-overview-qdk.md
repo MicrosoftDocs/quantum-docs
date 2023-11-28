@@ -13,8 +13,7 @@ uid: microsoft.quantum.install-qdk.overview
 
 # Set up the Quantum Development Kit
 
-> [!NOTE]
-> Now available! The [Azure Quantum Development Kit (QDK) Preview](https://github.com/microsoft/qsharp/wiki/Installation) is the latest preview of the Q# development kit, and is available as an extension for Visual Studio Code. For more information, see the [Modern QDK](#the-azure-quantum-development-kit-modern-qdk-preview).
+[!INCLUDE [Modern QDK preview](includes/modern-qdk-preview-banner.md)]
 
 Learn about the different environment options available to develop quantum computing using the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) service.
 
