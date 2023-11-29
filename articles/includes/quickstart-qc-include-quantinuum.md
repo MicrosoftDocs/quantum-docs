@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 11/02/2023
+ms.date: 11/28/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.custom: devx-track-azurecli
@@ -139,10 +139,7 @@ Next, we'll prepare your environment to run the program against the workspace yo
    quantinuum    quantinuum.hqs-lt                                    Available               0
    quantinuum    quantinuum.qpu.h1-1                                  Available               232817
    quantinuum    quantinuum.sim.h1-1sc                                Available               331
-   quantinuum    quantinuum.qpu.h1-2                                  Unavailable             0
-   quantinuum    quantinuum.sim.h1-2sc                                Available               7
    quantinuum    quantinuum.sim.h1-1e                                 Available               19488
-   quantinuum    quantinuum.sim.h1-2e                                 Available               1577
    quantinuum    quantinuum.qpu.h1                                    Unavailable             0
    rigetti       rigetti.sim.qvm                                      Available               5
    rigetti       rigetti.qpu.aspen-11                                 Unavailable             0

@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to run your Q# programs on the backend simulators from our parnters.
 ms.author: brbenefield
-ms.date: 10/26/2022
+ms.date: 11/28/2023
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -36,22 +36,22 @@ Quantinuum provides two emulator tools:
 - Data Formats: `honeywell.openqasm.v1`, `honeywell.qir.v1`
 - Target ID:
   - H1-1 Syntax Checker: `quantinuum.sim.h1-1sc`
-  - H1-2 Syntax Checker: `quantinuum.sim.h1-2sc`
   - H2-1 Syntax Checker: `quantinuum.sim.h2-1sc`
 - Target Execution Profile: Basic Measurement Feedback
 - Pricing: Free ($0)
 
-**Emulators** - These tools contain a detailed physical model and realistic noise model of the actual System Model H1 and H2 hardware. There are emulators for each machine, H1-1, H1-2, and H2-1.
+**Emulators** - These tools contain a detailed physical model and realistic noise model of the actual System Model H1 and H2 hardware. There are emulators for each machine - the H1-1 and H2-1 - along with cloud-based H-Series Emulator.
  
 - Job type: `Simulation`
 - Data Format: `honeywell.openqasm.v1, honeywell.qir.v1`
 - Target ID:
   - H1-1 Emulator: `quantinuum.sim.h1-1e`
-  - H1-2 Emulator: `quantinuum.sim.h1-2e`
   - H2-1 Emulator: `quantinuum.sim.h2-1e`
 - Target Execution Profile: Basic Measurement Feedback
 
-For more information, see the [Quantinuum provider](xref:microsoft.quantum.providers.quantinuum) page.
+The H-Series Emulator is a System Model H1-based emulator available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding) page. For more information, see the [H-Series Emulator](xref:microsoft.quantum.providers.quantinuum#h-series-emulator-cloud-based) page.
+
+For more information about all the Quantinuum emulators, see the [Quantinuum provider](xref:microsoft.quantum.providers.quantinuum) page.
 
 ## Rigetti
 

@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to set up an Azure Quantum environment for different languages and platforms.
 ms.author: brbenefield
-ms.date: 10/26/2023
+ms.date: 11/22/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -21,7 +21,7 @@ Every environment uses the [Quantum Development Kit (QDK)](xref:microsoft.quantu
 
 ## The Azure Quantum website
 
-With the [Azure Quantum website](https://quantum.microsoft.com/), you can run Q# code in your browser with no setup required. For more information, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum). 
+With the [Azure Quantum website](https://quantum.microsoft.com/), you can write and run Q# code in your browser or in [VS Code on the Web](https://vscode.dev/) with no setup or Azure account required. For more information, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum). 
 
 ## The Azure Quantum Development Kit (Modern QDK) Preview
 
@@ -44,7 +44,7 @@ The [Modern QDK](https://github.com/microsoft/qsharp/wiki/Installation) is a pre
 | Classic QDK | Modern QDK |
 | ---- | ---- |
 | Requires .NET SDK | No .NET dependency |  
-| Azure job integration through Azure CLI  | Azure job integration built-in to VS Code Explorer | 
+| Azure job integration through Azure CLI  | Azure job integration built-in to VS Code Explorer and [vscode.dev](https://vscode.dev/)| 
 | No native debugging  | Integrated Q# debugger:<br>- Breakpoints<br>- Stepping into code<br>- Error checking in Q# source files<br>- Auto-completion<br>- Go to definition<br>- Function signature help<br>- Hover definitions<br>- Inspect values for quantum and classic variables  | 
 | N/A  | Improved compiler error messages |
 | N/A  | Improved language syntax |

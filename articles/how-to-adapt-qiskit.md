@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to adapt any Qiskit sample to run on Azure Quantum service. 
-ms.date: 08/02/2023
+ms.date: 11/28/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -63,8 +63,8 @@ Most samples are configured to run by default against the `aer_simulator`, which
     rigetti_qpu_backend = provider.get_backend("rigetti.qpu.aspen-m-3")
 
     # Create Quantinuum simulator and QPU backends
-    quantinuum_simulator_backend = provider.get_backend("quantinuum.sim.h1-2e")
-    quantinuum_qpu_backend = provider.get_backend("quantinuum.qpu.h1-2")
+    quantinuum_simulator_backend = provider.get_backend("quantinuum.sim.h1-1e")
+    quantinuum_qpu_backend = provider.get_backend("quantinuum.qpu.h1-1")
 
     # Set your backend of choice
     backend = ionq_simulator_backend
