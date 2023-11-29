@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to set up an Azure Quantum environment for different languages and platforms.
 ms.author: brbenefield
-ms.date: 11/22/2023
+ms.date: 11/29/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -25,7 +25,7 @@ With the [Azure Quantum website](https://quantum.microsoft.com/), you can write 
 
 ## The Azure Quantum Development Kit (Modern QDK) Preview
 
-The [Modern QDK](https://github.com/microsoft/qsharp/wiki/Installation) is a preview of the next version of the Q# language and development tools. With a smaller footprint and faster performance, it is tightly integrated with Visual Studio Code, it features one-step installation, language improvements, integrated Python and Jupyter Notebook support, new syntax highlighting, debugger support, error messages, and integrated Azure connectivity. By eliminating the dependencies of the [Microsoft QDK](#the-microsoft-quantum-development-kit-qdk), it is now truly platform independent, running on Windows, Mac, Linux, and the web. 
+The [Modern QDK](https://github.com/microsoft/qsharp/wiki/Installation) is a preview of the next version of the Q# language and development tools. With a smaller footprint and faster performance, it is a one-step Visual Studio Code extension, and features language improvements, integrated Python and Jupyter Notebook support, new syntax highlighting, debugger support, error messages, and integrated Azure connectivity. By eliminating the dependencies of the [Microsoft QDK](#the-microsoft-quantum-development-kit-qdk), it is now truly platform independent, running on Windows, Mac, Linux, and the web. 
 
 [![download icon.](media/download-install.png) <br>**Download the Modern QDK**](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode)
 
