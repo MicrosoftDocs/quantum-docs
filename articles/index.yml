@@ -26,26 +26,16 @@ landingContent:
             url: overview-azure-quantum.md
           - text: Azure Quantum Development Kit (QDK) Preview
             url: install-overview-qdk.md#the-azure-quantum-development-kit-modern-qdk-preview
-      - linkListType: get-started
-        links:
-          - text: Explore Azure Quantum and the Copilot in Azure Quantum
-            url: get-started-azure-quantum.md
           - text: Get started with Q# and an Azure Quantum notebook
             url: get-started-jupyter-notebook.md
 
   # Q# programming
   - title: Q# programming language
     linkLists:
-      - linkListType: overview
-        links:
-          - text: What are Q# and Quantum Development Kit (QDK)?
-            url: overview-what-is-qsharp-and-qdk.md
       - linkListType: quickstart
         links:
           - text: The Q# user guide
             url: user-guide/index.md
-          - text: Set up the Quantum Development Kit
-            url: install-overview-qdk.md
  
   # Computing
   - title: Quantum computing
@@ -60,34 +50,26 @@ landingContent:
         links:
           - text: Linear algebra for quantum computing
             url: overview-algebra-for-quantum-computing.md
-          - text: Quantum computing history and background
-            url: concepts-overview.md
-          - text: Dirac notation
-            url: concepts-dirac-notation.md
       
   # Learn
   - title: Learn by building
-    linkLists:      
+    linkLists:
       - linkListType: learn
         links:
-          - text: Quantum computing foundations
-            url: /training/paths/quantum-computing-fundamentals/
+          - text: Learn quantum computing with Copilot in Azure Quantum 
+            url: https://quantum.microsoft.com/experience/quantum-coding
           - text: Learn Q# with the Quantum Katas
             url: tutorial-qdk-intro-to-katas.md
-          - text: Copilot in Azure Quantum
-            url: https://quantum.microsoft.com/experience/quantum-coding
+          - text: Quantum computing foundations
+            url: /training/paths/quantum-computing-fundamentals/
             
   # Resource Estimator
   - title: Resource Estimator
-    linkLists:      
+    linkLists:   
       - linkListType: overview
         links:
           - text: Introduction to resource estimation
             url: intro-to-resource-estimation.md
-      - linkListType: get-started
-        links:
-          - text: Use different SDKs and IDEs with Resource Estimator
-            url: how-to-submit-re-jobs.md
 
       
 
