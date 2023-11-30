@@ -28,29 +28,19 @@ landingContent:
             url: install-overview-qdk.md#the-azure-quantum-development-kit-modern-qdk-preview
           - text: Get started with Q# and an Azure Quantum notebook
             url: get-started-jupyter-notebook.md
-
-  # Q# programming
-  - title: Q# programming language
-    linkLists:
-      - linkListType: quickstart
-        links:
-          - text: The Q# user guide
-            url: user-guide/index.md
  
   # Computing
   - title: Quantum computing
     linkLists:
       - linkListType: overview
         links:
-          - text: What is quantum computing?
-            url: overview-understanding-quantum-computing.md
+          - text: The Q# user guide
+            url: user-guide/index.md
+          - text: Introduction to resource estimation
+            url: intro-to-resource-estimation.md
           - text: Hybrid quantum computing
-            url: hybrid-computing-overview.md            
-      - linkListType: concept
-        links:
-          - text: Linear algebra for quantum computing
-            url: overview-algebra-for-quantum-computing.md
-      
+            url: hybrid-computing-overview.md
+     
   # Learn
   - title: Learn by building
     linkLists:
@@ -62,15 +52,3 @@ landingContent:
             url: tutorial-qdk-intro-to-katas.md
           - text: Quantum computing foundations
             url: /training/paths/quantum-computing-fundamentals/
-            
-  # Resource Estimator
-  - title: Resource Estimator
-    linkLists:   
-      - linkListType: overview
-        links:
-          - text: Introduction to resource estimation
-            url: intro-to-resource-estimation.md
-
-      
-
-
