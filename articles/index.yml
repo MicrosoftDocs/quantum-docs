@@ -10,7 +10,7 @@ metadata:
   ms.collection: collection
   author: bradben
   ms.author: brbenefield
-  ms.date: 06/08/2023
+  ms.date: 11/27/2023
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -24,83 +24,31 @@ landingContent:
         links:
           - text: What is Azure Quantum?
             url: overview-azure-quantum.md
-      - linkListType: get-started
-        links:
-          - text: Explore Azure Quantum and the Copilot in Azure Quantum
-            url: get-started-azure-quantum.md
-          - text: Create an Azure Quantum workspace
-            url: how-to-create-workspace.md
-          - text: Run Q# code in an Azure Quantum notebook
+          - text: Azure Quantum Development Kit (QDK) Preview
+            url: install-overview-qdk.md#the-azure-quantum-development-kit-modern-qdk-preview
+          - text: Get started with Q# and an Azure Quantum notebook
             url: get-started-jupyter-notebook.md
-          - text: Submit a circuit with Qiskit to Azure Quantum
-            url: quickstart-microsoft-qiskit-portal.md
-
-  # Q# programming
-  - title: Q# programming language
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: What are Q# and Quantum Development Kit (QDK)?
-            url: overview-what-is-qsharp-and-qdk.md
-      - linkListType: quickstart
-        links:
-          - text: The Q# user guide
-            url: user-guide/index.md
-          - text: Set up the Quantum Development Kit
-            url: install-overview-qdk.md
-          - text: Run the QDK in a local development environment
-            url: install-command-line-qdk.md#use-your-preferred-ide-and-language-locally-and-submit-jobs-to-azure-quantum
  
   # Computing
   - title: Quantum computing
     linkLists:
       - linkListType: overview
         links:
-          - text: What is quantum computing?
-            url: overview-understanding-quantum-computing.md
-          - text: Hybrid quantum computing
-            url: hybrid-computing-overview.md            
-      - linkListType: concept
-        links:
-          - text: Quantum computing history and background
-            url: concepts-overview.md
-          - text: The qubit
-            url: concepts-the-qubit.md
-          - text: Linear algebra for quantum computing
-            url: overview-algebra-for-quantum-computing.md
-          - text: Dirac notation
-            url: concepts-dirac-notation.md
-      
-  # Learn
-  - title: Learn by building
-    linkLists:      
-      - linkListType: learn
-        links:
-          - text: Quantum computing foundations
-            url: /training/paths/quantum-computing-fundamentals/
-          - text: Learn Q# with the Quantum Katas
-            url: tutorial-qdk-intro-to-katas.md
-      - linkListType: tutorial
-        links:
-          - text: Explore entanglement with Q#
-            url: tutorial-qdk-explore-entanglement.md
-          - text: Write a quantum random number generator in Q#
-            url: tutorial-qdk-quantum-random-number-generator.md
-            
-  # Resource Estimator
-  - title: Resource Estimator
-    linkLists:      
-      - linkListType: overview
-        links:
+          - text: The Q# user guide
+            url: user-guide/index.md
           - text: Introduction to resource estimation
             url: intro-to-resource-estimation.md
-      - linkListType: get-started
+          - text: Hybrid quantum computing
+            url: hybrid-computing-overview.md
+     
+  # Learn
+  - title: Learn by building
+    linkLists:
+      - linkListType: learn
         links:
-          - text: Run your first resource estimate
-            url: quickstart-microsoft-resources-estimator.md
-          - text: Use different SDKs and IDEs with Resource Estimator
-            url: how-to-submit-re-jobs.md
-
-      
-
-
+          - text: Learn quantum computing with Copilot in Azure Quantum 
+            url: https://quantum.microsoft.com/experience/quantum-coding
+          - text: Learn Q# with the Quantum Katas
+            url: tutorial-qdk-intro-to-katas.md
+          - text: Quantum computing foundations
+            url: /training/paths/quantum-computing-fundamentals/
