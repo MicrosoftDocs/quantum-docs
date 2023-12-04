@@ -456,8 +456,7 @@ You can use `constraints` parameters to apply constraints on the [T factory](xre
 - **Maximum runtime and maximum number of physical qubits :** You can specify the maximum duration of the quantum program runtime or the maximal number of physical qubits to be utilized by the algorithm with `maxDuration` and `maxPhysicalQubits` parameters. The Resource Estimator accepts only one of those constraints at the time but not two. If one of them is specified, the Resource Estimator tries to find the best estimate for the complimentary one among solutions constrained by the maximal number specified. If the value provided is too small to find a feasable solution, the Resource Estimator returns an error. If neither `maxDuration` nor `maxPhysicalQubits` constraints are specified, the Resource Estimator aims to find a solution with the shortest time. 
 
 > [!TIP]
-> You can use `maxDuration` and `maxPhysicalQubits` to influence the solution space, potentially finding solutions with longer runtime but a smaller number of qubits compared to solutions without these constraints. There exists a trade-off between runtime and the number of qubits, and this trade-off can be efficiently managed for some algorithms, with varying effects on different algorithms. Table IV in [[arXiv:2211.07629](https://arxiv.org/abs/2211.07629)] illustrates the effective utilization of the trade-off between the number of qubits and runtime for quantum dynamics algorithms. Algorithms for quantum chemistry and factoring are noted to have small factor ratios, resulting in narrow ranges for both the number of qubits and runtime. Hence, the ranges for both the number of qubits and the runtime in these algorithms are quite narrow.
-
+> You can use `maxDuration` and `maxPhysicalQubits` to influence the solution space, potentially finding solutions with longer runtime but a smaller number of qubits compared to solutions without these constraints. There exists a trade-off between runtime and the number of qubits, and this trade-off can be efficiently managed for some algorithms, with varying effects on different algorithms. Table IV in [[arXiv:2211.07629](https://arxiv.org/abs/2211.07629)] illustrates the effective utilization of the trade-off between the number of qubits and runtime for quantum dynamics algorithms. For more information, see [Quantum resource estimation with time or number of qubits constraints](https://github.com/microsoft/Quantum/blob/main/samples/azure-quantum/resource-estimation/estimation-time-qubits-constraints.ipynb)sample.
 
 The following code shows how to specify the constraints for a quantum algorithm:
 
@@ -470,9 +469,6 @@ from azure.quantum.target.microsoft import MicrosoftEstimatorParams
     params.constraints.logical_depth_factor = 1.5
     params.constraints.max_t_factories = 10
 ```
-
-
-
 
 ## Distillation units
 
