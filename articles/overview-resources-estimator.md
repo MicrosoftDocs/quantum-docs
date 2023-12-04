@@ -218,6 +218,24 @@ A minimum template for Majorana based instruction set with all required values i
 }
 ```
 
+The following code shows how to specify the qubit parameters for a gate-based instruction set:
+
+```python
+from azure.quantum.target.microsoft import MicrosoftEstimatorParams, QubitParams
+
+    params = MicrosoftEstimatorParams()
+
+    params.qubit_params.name = QubitParams.GATE_NS_E3
+    params.qubit_params.instruction_set = "gate_based"
+    params.qubit_params.t_gate_error_rate = 0.03
+    params.qubit_params.t_gate_time = "10 ns"
+    params.qubit_params.idle_error_rate = 0.02
+
+```
+
+When not specified, the values for `twoQubitJointMeasurementTime` and `tGateTime` default to `oneQubitMeasurementTime`, the values for `twoQubitJointMeasurementErrorRate` and `tGateErrorRate` default to `oneQubitMeasurementErrorRate`, and the value for `idleErrorRate` defaults to `oneQubitMeasurementErrorRate`.
+
+
 For `oneQubitMeasurementErrorRate` and `twoQubitJointMeasurementErrorRate`, you can specify the error rates corresponding to measurement readouts, `readout`, and measurement processing, `process`. These values can be either `<double>` numbers or pairs of numbers.
 
 ```json
@@ -335,6 +353,21 @@ You can customize predefined QEC schemes by specifying the name and then updatin
 }
 ```
 
+The following code shows how to specify the QEC scheme parameters for a Majorana-based instruction set:
+
+```python
+from azure.quantum.target.microsoft import MicrosoftEstimatorParams, QubitParams, QECScheme
+
+    params = MicrosoftEstimatorParams()
+    params.qubit_params.name = QubitParams.MAJ_NS_E4
+    params.qec_scheme.name = QECScheme.FLOQUET_CODE
+    params.qec_scheme.error_correction_threshold = 0.005
+    params.qec_scheme.crossing_prefactor = 0.07
+```
+
+When not specified, the values for `logicalCycleTime` and `physicalQubitsPerLogicalQubit` default to `oneQubitMeasurementTime`, the value for `errorCorrectionThreshold` defaults to `0.01`, and the value for `crossingPrefactor` defaults to `0.03`.
+
+
 ### Customize your QEC schemes
 
 The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `crossingPrefactor` $a$ and the `errorCorrectionThreshold` $p^\*$. Further, you need to specify the `logicalCycleTime`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `physicalQubitsPerLogicalQubit`, that is, the number of physical qubits required to encode one logical qubit based on the code distance.
@@ -376,7 +409,7 @@ If no further specified, the error budget $\epsilon$ is uniformly distributed an
 
 Note that for distillation and rotation synthesis, the respective error budgets $\epsilon_{\rm dis}$ and $\epsilon_{\rm syn}$ are uniformly distributed among all required T states and all required rotation gates, respectively. If there aren't rotation gates in the input algorithm, the error budget is uniformly distributed to logical errors and T state errors.
 
-Also, you can individually specify each component of the error bugdet. The sum of all values must be 1. 
+Also, you can individually specify each component of the error budget. The sum of all values must be 1. 
 
 ```JSON
 {
@@ -388,7 +421,18 @@ Also, you can individually specify each component of the error bugdet. The sum o
 }
 ```
 
-If a quantum algorithm doesn't contain T states or rotations, then the values of `tstates` and `rotations` may be 0 respectively. 
+If a quantum algorithm doesn't contain T states or rotations, then the values of `tstates` and `rotations` may be 0 respectively.
+
+The following code shows how to specify the error budget for a quantum algorithm that contains T states and rotations:
+
+```python
+from azure.quantum.target.microsoft import MicrosoftEstimatorParams
+
+    params = MicrosoftEstimatorParams()
+    params.error_budget.logical = 0.01
+    params.error_budget.t_states = 0.02
+    params.error_budget.rotations = 0.03
+```
 
 ## Constraints
 
@@ -413,6 +457,22 @@ You can use `constraints` parameters to apply constraints on the [T factory](xre
 
 > [!TIP]
 > You can use `maxDuration` and `maxPhysicalQubits` to influence the solution space, potentially finding solutions with longer runtime but a smaller number of qubits compared to solutions without these constraints. There exists a trade-off between runtime and the number of qubits, and this trade-off can be efficiently managed for some algorithms, with varying effects on different algorithms. Table IV in [[arXiv:2211.07629](https://arxiv.org/abs/2211.07629)] illustrates the effective utilization of the trade-off between the number of qubits and runtime for quantum dynamics algorithms. Algorithms for quantum chemistry and factoring are noted to have small factor ratios, resulting in narrow ranges for both the number of qubits and runtime. Hence, the ranges for both the number of qubits and the runtime in these algorithms are quite narrow.
+
+
+The following code shows how to specify the constraints for a quantum algorithm:
+
+```python
+from azure.quantum.target.microsoft import MicrosoftEstimatorParams
+
+    params = MicrosoftEstimatorParams()
+
+    params.constraints.max_duration = "1 s"
+    params.constraints.logical_depth_factor = 1.5
+    params.constraints.max_t_factories = 10
+```
+
+
+
 
 ## Distillation units
 
@@ -451,6 +511,27 @@ You can defined your custom distillation units as follows:
 ```
 
 All numeric parameters are expected to be positive. The `displayName` specifies how the distillation unit will be displayed in output results.
+
+
+The following code shows how to specify the distillation unit parameters for a quantum algorithm:
+
+```python
+from azure.quantum.target.microsoft import MicrosoftEstimatorParams
+from azure.quantum.target.microsoft.target import DistillationUnitSpecification, ProtocolSpecificDistillationUnitSpecification
+
+        params = MicrosoftEstimatorParams()
+        unit = DistillationUnitSpecification()
+        unit.display_name = "T"
+        unit.failure_probability_formula = "c"
+        unit.output_error_rate_formula = "r"
+        unit.num_input_ts = 1
+        unit.num_output_ts = 2
+
+        physical_qubit_specification = ProtocolSpecificDistillationUnitSpecification()
+        physical_qubit_specification.num_unit_qubits = 1
+        physical_qubit_specification.duration_in_qubit_cycle_time = 2
+        unit.physical_qubit_specification = physical_qubit_specification
+```
 
 At least one of the parameters `physicalQubitSpecification` or `logicalQubitSpecification` should be provided. If only the former is provided, the distillation unit can be applied to physical qubits. If only the latter is provided, the distillation unit can be applied to logical qubits. If both are provided, the distillation unit can be applied to both types of qubits.
 
