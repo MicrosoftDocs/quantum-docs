@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn about the input parameters of the Resource Estimator in Azure Quantum and how to customized them.
-ms.date: 10/25/2023
+ms.date: 12/04/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -24,9 +24,9 @@ The Resource Estimator computes the estimation of resources, such the number of 
 
 Therefore, the Resource Estimator takes a set of inputs, with pre-defined values to easily get you started:
 
-- A [physical qubit model](#physical-qubit-parameters), `qubitParams`, which are the properties of the underlying physical qubits.
-- A [Quantum Error Correction (QEC) scheme](#quantum-error-correction-schemes), `qecScheme`, which is the assumed quantum error correction scheme.
-- An [error budget](#error-budget), `errorBudget`, which is the overall allowed error, that is, the number of times the program is allowed to unsuccess.
+- A [physical qubit model](#physical-qubit-parameters), `QubitParams`, which are the properties of the underlying physical qubits.
+- A [Quantum Error Correction (QEC) scheme](#quantum-error-correction-schemes), `QECScheme`, which is the assumed quantum error correction scheme.
+- An [error budget](#error-budget), `error_budget`, which is the overall allowed error, that is, the number of times the program is allowed to unsuccess.
 - [Constraints](#constraints) on the component-level, `constraints`, which are the number of logical cycles and the number of T factory copies.
 - [Distillation units](#distillation-units), `distillationUnitSpecifications`, to specify T factories distillation algorithms.
 
@@ -41,20 +41,21 @@ You can choose from six predefined qubit parameters, four of which have gate-bas
 
 |Qubit model|Physical instruction|Description|
 |----|----|-----|
-|`qubit_gate_ns_e3` , `qubit_gate_ns_e4`|gate-based |Operation times and fidelities may correspond to future versions of [superconducting transmon qubits](https://arxiv.org/abs/2003.00024), or [spin qubits](https://arxiv.org/abs/2111.11937), which typically have operation times in the nanosecond regime. For these qubits, gate and measurement operations are assumed to take 50 ns and 100 ns, respectively. Single-qubit and two-qubit gate error rates are assumed to be $10^{-3}$ as a realistic target, and $10^{-4}$ as an optimistic target for a scaled up system.|
-|`qubit_gate_us_e3` , `qubit_gate_us_e4`|gate-based|Operation times and fidelities may correspond to future versions of qubits based on [ions](https://arxiv.org/abs/1701.04195), which typically have operations times in the microsecond regime. Based on typical assumptions for ion qubits, gate and measurement operations are assumed to take 100 µs. Error rate for single-qubit Clifford gates is $10^{-3}$ as a realistic target and $10^{-4}$ as an optimistic target, while the error rate for single-qubit non-Clifford gates (T gate) is $10^{-6}$. For two-qubit gates, the error rate is $10^{-3}$ as a realistic target and $10^{-4}$ as an optimistic target. |
-|`qubit_maj_ns_e4` , `qubit_maj_ns_e6`|Majorana|Operation times and fidelities may correspond to future improved versions of [Majorana qubits](https://arxiv.org/abs/1610.05289). For these qubits, gate and measurement operations are assumed to take 100 ns. To account for topological protection in the hardware, single-qubit and two-qubit joint measurement error rates (Clifford error rates) are assumed to be $10^{-4}$ as a realistic target, and $10^{-6}$ as an optimistic target. Non-Clifford operations in this architecture don't have topological protection, error rate for non-Clifford physical T gates is 5%.|
+|`GATE_NS_E3` , `GATE_NS_E4`|gate-based |Operation times and fidelities may correspond to future versions of [superconducting transmon qubits](https://arxiv.org/abs/2003.00024), or [spin qubits](https://arxiv.org/abs/2111.11937), which typically have operation times in the nanosecond regime. For these qubits, gate and measurement operations are assumed to take 50 ns and 100 ns, respectively. Single-qubit and two-qubit gate error rates are assumed to be $10^{-3}$ as a realistic target, and $10^{-4}$ as an optimistic target for a scaled up system.|
+|`GATE_US_E3` , `GATE_US_E4`|gate-based|Operation times and fidelities may correspond to future versions of qubits based on [ions](https://arxiv.org/abs/1701.04195), which typically have operations times in the microsecond regime. Based on typical assumptions for ion qubits, gate and measurement operations are assumed to take 100 µs. Error rate for single-qubit Clifford gates is $10^{-3}$ as a realistic target and $10^{-4}$ as an optimistic target, while the error rate for single-qubit non-Clifford gates (T gate) is $10^{-6}$. For two-qubit gates, the error rate is $10^{-3}$ as a realistic target and $10^{-4}$ as an optimistic target. |
+|`MAJ_NS_E4` , `MAJ_NS_E6`|Majorana|Operation times and fidelities may correspond to future improved versions of [Majorana qubits](https://arxiv.org/abs/1610.05289). For these qubits, gate and measurement operations are assumed to take 100 ns. To account for topological protection in the hardware, single-qubit and two-qubit joint measurement error rates (Clifford error rates) are assumed to be $10^{-4}$ as a realistic target, and $10^{-6}$ as an optimistic target. Non-Clifford operations in this architecture don't have topological protection, error rate for non-Clifford physical T gates is 5%.|
 
-You can specify predefined qubit parameters by selecting the qubit model name for the `qubitParams` parameter in the top-level parameters, for example: 
+You can specify predefined qubit parameters by selecting the qubit model name for the `QubitParams` class in the top-level parameters, for example: 
 
-```JSON
-{
-    "qubitParams": { "name": "qubit_gate_ns_e3" }
-}
+```python
+from azure.quantum.target.microsoft import MicrosoftEstimatorParams, QubitParams
+
+    params = MicrosoftEstimatorParams()
+    params.qubit_params.name = QubitParams.GATE_NS_E4
 ```
 
 > [!NOTE]
-> If no value is provided for the `qubitParams` parameter, `qubit_gate_ns_e3` is chosen as the default qubit parameters.
+> If no value is provided for the `QubitParams` parameter, `GATE_NS_E3` is chosen as the default qubit parameters.
 
 For reference, the complete predefined qubit parameters are as follows:
 
@@ -148,84 +149,40 @@ For reference, the complete predefined qubit parameters are as follows:
 
 ### Customize predefined qubit parameters
 
-You can customize predefined qubit parameters by specifying the name and then updating any of the other values. For example, to decrease the error rate of two-qubit joint measurement in `qubit_maj_ns_e4`, write:
+You can customize predefined qubit parameters by specifying the name and then updating any of the other values. For example, to decrease the error rate of two-qubit joint measurement in `MAJ_NS_E4`, write:
 
-```JSON
-{
-    "qubitParams": {
-        "name": "qubit_maj_ns_e4",
-        "twoQubitJointMeasurementErrorRate": 1e-5
-    }
-}
+```python
+from azure.quantum.target.microsoft import MicrosoftEstimatorParams, QubitParams
+
+    params = MicrosoftEstimatorParams()
+    params.qubit_params.name = QubitParams.MAJ_NS_E4
+    params.qubit_params.two_qubit_joint_measurement_error_rate = 1e-5
 ```
 
 #### Qubit parameters for Gate-based qubits
 
-| Field                        | Description                                                        |
-|----------------------------- | ------------------------------------------------------------------|
-| `name`                       |  Name for the qubit model                          |
-| `instructionSet`              |  Underlying qubit technology (gate-based or Majorana) |
-| `oneQubitMeasurementTime`     |  Operation time for single-qubit measurement ($t_{\rm meas}$) in ns |
-| `oneQubitGateTime`             |  Operation time for single-qubit gate ($t_{\rm gate}$) in ns        |
-| `twoQubitGateTime`             |  Operation time for two-qubit gate in ns                            |
-| `tGateTime`             |  Operation time for single-qubit non-Clifford gate in ns|
-| `oneQubitMeasurementErrorRate` |Error rate for single-qubit measurement   |
-| `oneQubitGateErrorRate`        |  Error rate for single-qubit Clifford gate ($p$)                    |
-| `twoQubitGateErrorRate`        |  Error rate for two-qubit Clifford gate                             |
-| `tGateErrorRate`              | Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
-| `idleErrorRate`                 | Error rate corresponding to idling                                   |
+| Parameter                     |Data type  | Description                                                        |
+|----------------------------- |----| ------------------------------------------------------------------|
+| `name`                       | string|  Name for the qubit model                          |
+| `instruction_set`              | "gate_based"| Underlying qubit technology |
+| `one_qubit_measurement_time`     | time string|   Operation time for single-qubit measurement ($t_{\rm meas}$) in ns |
+| `one_qubit_gate_time`             | time string|  Operation time for single-qubit gate ($t_{\rm gate}$) in ns        |
+| `two_qubit_gate_time`             | time string|  Operation time for two-qubit gate in ns                            |
+| `t_gate_time`             | time string| Operation time for single-qubit non-Clifford gate in ns|
+| `one_qubit_measurement_error_rate` | float| Error rate for single-qubit measurement   |
+| `one_qubit_gate_error_rate`        | float| Error rate for single-qubit Clifford gate ($p$)                    |
+| `two_qubit_gate_error_rate`        |float|  Error rate for two-qubit Clifford gate                             |
+| `t_gate_error_rate`              | float|Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
+| `idle_error_rate`                 | float|Error rate corresponding to idling                                   |
 
-A minimum template for gate-based instruction set with all required values is:
-
-```json
-{
-    "qubitParams": {
-        "instructionSet": "GateBased",
-        "oneQubitMeasurementTime": <time string>,
-        "oneQubitGateTime": <time string>,
-        "oneQubitMeasurementErrorRate": <double>,
-        "oneQubitGateErrorRate": <double>
-    }
-}
-```
-
-When not specified, the values for `twoQubitGateTime` and `tGateTime` default to `oneQubitGateTime`, the values for `twoQubitGateErrorRate` and `tGateErrorRate` default to `oneQubitGateErrorRate`, and the value for `idleErrorRate` defaults to `oneQubitMeasurementErrorRate`.
-
-#### Qubit parameters for Majorana qubits
-
-| Field                        | Description                                                        |
-|----------------------------- | ------------------------------------------------------------------|
-| `name`                       |  Name for the qubit model                          |
-| `instructionSet`              | Underlying qubit technology (gate-based or Majorana) |
-| `oneQubitMeasurementTime`     | Operation time for single-qubit measurement ($t_{\rm meas}$) in ns |
-| `twoQubitJointMeasurementTime`           | Operation time for two-qubit measurement in ns                     |
-| `tGateTime`       | Operation time for single-qubit non-Clifford gate in ns|
-| `oneQubitMeasurementErrorRate`  | Error rate for single-qubit measurement   |
-| `twoQubitJointMeasurementErrorRate`  | Error rate for two-qubit measurement                               |
-| `tGateErrorRate`              | Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
-| `idleErrorRate`                     | Error rate corresponding to idling                                  |
-
-A minimum template for Majorana based instruction set with all required values is:
-
-```json
-{
-    "qubitParams": {
-        "instructionSet": "Majorana",
-        "oneQubitMeasurementTime": <time string>,
-        "oneQubitMeasurementErrorRate": <double>,
-        "tGateErrorRate": <double>
-    }
-}
-```
-
-The following code shows how to specify the qubit parameters for a gate-based instruction set:
+The following code shows how to specify custom qubit parameters for a gate-based instruction set:
 
 ```python
 from azure.quantum.target.microsoft import MicrosoftEstimatorParams, QubitParams
 
     params = MicrosoftEstimatorParams()
 
-    params.qubit_params.name = QubitParams.GATE_NS_E3
+    params.qubit_params.name = "your_custom_name"
     params.qubit_params.instruction_set = "gate_based"
     params.qubit_params.t_gate_error_rate = 0.03
     params.qubit_params.t_gate_time = "10 ns"
@@ -233,35 +190,46 @@ from azure.quantum.target.microsoft import MicrosoftEstimatorParams, QubitParams
 
 ```
 
-When not specified, the values for `twoQubitJointMeasurementTime` and `tGateTime` default to `oneQubitMeasurementTime`, the values for `twoQubitJointMeasurementErrorRate` and `tGateErrorRate` default to `oneQubitMeasurementErrorRate`, and the value for `idleErrorRate` defaults to `oneQubitMeasurementErrorRate`.
+When not specified, the values for `two_qubit_gate_time` and `t_gate_time` default to `one_qubit_gate_time`, the values for `two_qubit_gate_error_rate` and `t_gate_error_rate` default to `one_qubit_gate_error_rate`, and the value for `idle_error_rate` defaults to `one_qubit_measurement_error_rate`.
 
+#### Qubit parameters for Majorana qubits
 
-For `oneQubitMeasurementErrorRate` and `twoQubitJointMeasurementErrorRate`, you can specify the error rates corresponding to measurement readouts, `readout`, and measurement processing, `process`. These values can be either `<double>` numbers or pairs of numbers.
+| Parameter                    | Data type  | Description                                                        |
+|----------------------------- |----| ------------------------------------------------------------------|
+| `name`                       | string|  Name for the qubit model                          |
+| `instruction_set`            | "majorana"| Underlying qubit technology  |
+| `one_qubit_measurement_time` | time string|  Operation time for single-qubit measurement ($t_{\rm meas}$) in ns |
+| `two-qubit_joint_measurement_time` |time string|  Operation time for two-qubit measurement in ns                     |
+| `t_gate_time`                | time string|  Operation time for single-qubit non-Clifford gate in ns|
+| `one_qubit_measurement_error_rate`  | float| Error rate for single-qubit measurement   |
+| `two_qubit_joint_measurement_error_rate`  | float| Error rate for two-qubit measurement                               |
+| `t_gate_error_rate`           | float| Error rate to prepare single-qubit non-Clifford state ($p_T$)      |
+| `idle_error_rate`             | float| Error rate corresponding to idling                                  |
 
-```json
-{
-    "oneQubitMeasurementErrorRate": {
-        "process": <double>,
-        "readout": <double>
-    }
-}
+A minimum template for Majorana based instruction set with all required values is:
+
+```python
+from azure.quantum.target.microsoft import MicrosoftEstimatorParams, QubitParams
+
+    params = MicrosoftEstimatorParams()
+
+    params.qubit_params.name = "your_custom_name"
+    params.qubit_params.instruction_set = "majorana"
+    params.qubit_params.one_qubit_measurement_time = "10 ns"
+    params.qubit_params.one_qubit_measurement_error_rate = 0.01
 ```
 
-and
+When not specified, the values for `two_qubitJointMeasurementTime` and `t_gate_time` default to `one_qubit_measurement_time`, the values for `two_qubit_joint_measurement_error_rate` and `t_gate_error_rate` default to `one_qubit_measurement_error_rate`, and the value for `idle_error_rate` defaults to `one_qubit_measurement_error_rate`.
 
-```json
-{
-    "twoQubitJointMeasurementErrorRate": {
-        "process": <double>,
-        "readout": <double>
-    }
-}
+For `one_qubit_measurement_error_rate` and `two_qubit_joint_measurement_error_rate`, you can specify the error rates corresponding to measurement readouts, `readout`, and measurement processing, `process`. These values can be either `<double>` numbers or pairs of numbers. For example:
+
+```python
+    params.qubit_params.two_qubit_joint_measurement_error_rate = \
+        MeasurementErrorRate(process=0.00005, readout=0.00007)
 ```
 
 > [|NOTE]
 > If you specify a single numeric value for single-qubit and two-qubit error rates in Majorana qubit measurement, both readout and process error rates may be equal.
-
-When not specified, the values for `twoQubitJointMeasurementTime` and `tGateTime` default to `oneQubitGateTime`, and the value for `twoQubitJointMeasurementErrorRate` (both `readout` and `process`) and `idleErrorRate` default to `oneQubitMeasurementErrorRate`.
 
 > [!IMPORTANT]
 > All values that aren't specified will take a default value, for example, specifying `"qubit": {"oneQubitGateTime":"200 ns"}` will model a gate-based qubit in which both the two-qubit gate time and the one-qubit gate time are 200 ns. For units, you need to specify time strings, which are double-precision floating point numbers, followed by a space and the time unit for such values, where possible time suffixes are `ns`, `µs` (or `us`), `ms`, and `s`.  
@@ -278,23 +246,24 @@ $$ P = a\left(\frac{p}{p^\*}\right)^{\frac{d+1}{2}} $$
 
 where $d$ is the code distance, $p$ is the physical error rate, and $p^\*$ is the quantum error correction threshold. The physical error rate $p$ is extracted from the qubit parameters as the worst-case error rate any physical Clifford operation in the device.
 
-In particular, $p = {}$ max(`oneQubitMeasurementErrorRate`, `oneQubitGateErrorRate`, `twoQubitGateErrorRate`) for qubit parameters with a gate-based instruction set, and $p = {}$ max(`oneQubitMeasurementErrorRate`, `twoQubitJointMeasurementErrorRate`) for qubit parameters with a Majorana instruction set. QEC schemes typically have an error rate threshold $p^\*$ below which error correction suppresses errors.
+In particular, $p = {}$ max(`one_qubit_measurement_error_rate`, `one_qubit_gate_error_rate`, `two_qubit_gate_error_rate`) for qubit parameters with a gate-based instruction set, and $p = {}$ max(`one_qubit_measurement_error_rate`, `two_qubit_joint_measurement_error_rate`) for qubit parameters with a Majorana instruction set. QEC schemes typically have an error rate threshold $p^\*$ below which error correction suppresses errors.
 
 |QEC protocol|Physical qubit instruction|Description|
 |----|----|-----|
-|`surface_code`|GateBased and Majorana| The gate-based surface code is based on [arXiv:1208.0928](https://arxiv.org/abs/1208.0928) and [arXiv:1009.3686](https://arxiv.org/abs/1009.3686). The Majorana surface code is based on [arXiv:1909.03002](https://arxiv.org/abs/1909.03002) and [arXiv:2007.00307](https://arxiv.org/abs/2007.00307).|
-|`floquet_code`| Majorana|The floquet code is based on [arXiv:2202.11829](https://arxiv.org/abs/2202.11829).|
+|`SURFACE_CODE`|GateBased and Majorana| The gate-based surface code is based on [arXiv:1208.0928](https://arxiv.org/abs/1208.0928) and [arXiv:1009.3686](https://arxiv.org/abs/1009.3686). The Majorana surface code is based on [arXiv:1909.03002](https://arxiv.org/abs/1909.03002) and [arXiv:2007.00307](https://arxiv.org/abs/2007.00307).|
+|`FLOQUET_CODE`| Majorana|The floquet code is based on [arXiv:2202.11829](https://arxiv.org/abs/2202.11829).|
 
-You can specify predefined QEC schemes by selecting the QEC scheme name for the `qecScheme` parameter in the top-level parameters, for example:
+You can specify predefined QEC schemes by selecting `qec_scheme.name` for the `QECScheme` class in the top-level parameters, for example:
 
-```JSON
-{
-    "qecScheme": { "name": "surface_code" }
-}
+```python
+from azure.quantum.target.microsoft import MicrosoftEstimatorParams,  QECScheme
+
+    params = MicrosoftEstimatorParams()
+    params.qec_scheme.name = QECScheme.FLOQUET_CODE
 ```
 
 > [!NOTE]
-> If no value is provided for the `qecScheme` parameter, `surface_code` for the gate-based qubit is chosen as the default QEC.
+> If no value is provided for the `qec_scheme.name` parameter, `SURFACE_CODE` for the gate-based qubit is chosen as the default QEC.
 
 The exact parameters for each predefined QEC scheme (including a crossing pre-factor $a$, which can be extracted numerically for simulations) are the following.
 
@@ -343,34 +312,19 @@ The exact parameters for each predefined QEC scheme (including a crossing pre-fa
 
 You can customize predefined QEC schemes by specifying the name and then updating any of the other values. For example, to increase the crossing pre-factor in the floquet code, write:
 
-```JSON
-{
-    "qecScheme": {
-        "name": "floquet_code",
-        // only override this value
-        "crossingPrefactor": 0.08
-    }
-}
-```
-
-The following code shows how to specify the QEC scheme parameters for a Majorana-based instruction set:
-
 ```python
 from azure.quantum.target.microsoft import MicrosoftEstimatorParams, QubitParams, QECScheme
 
     params = MicrosoftEstimatorParams()
-    params.qubit_params.name = QubitParams.MAJ_NS_E4
     params.qec_scheme.name = QECScheme.FLOQUET_CODE
-    params.qec_scheme.error_correction_threshold = 0.005
-    params.qec_scheme.crossing_prefactor = 0.07
+    params.qec_scheme.crossing_prefactor = 0.08
 ```
 
-When not specified, the values for `logicalCycleTime` and `physicalQubitsPerLogicalQubit` default to `oneQubitMeasurementTime`, the value for `errorCorrectionThreshold` defaults to `0.01`, and the value for `crossingPrefactor` defaults to `0.03`.
-
+When not specified, the values for `logical_cycle_time` and `physical_qubits_per_logical_qubit` default to `one_qubit_measurement_time`, the value for `error_correction_threshold` defaults to `0.01`, and the value for `crossing_prefactor` defaults to `0.03`.
 
 ### Customize your QEC schemes
 
-The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `crossingPrefactor` $a$ and the `errorCorrectionThreshold` $p^\*$. Further, you need to specify the `logicalCycleTime`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `physicalQubitsPerLogicalQubit`, that is, the number of physical qubits required to encode one logical qubit based on the code distance.
+The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `crossing_prefactor` $a$ and the `error_correction_threshold` $p^\*$. Further, you need to specify the `logical_cycle_time`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `physical_qubits_per_logical_qubit`, that is, the number of physical qubits required to encode one logical qubit based on the code distance.
 
 You can use the following code as a template for QEC schemes:
 
@@ -385,20 +339,21 @@ You can use the following code as a template for QEC schemes:
 }
 ```
 
-Inside the formulas, you can use the variables `oneQubitGateTime`, `twoQubitGateTime`, `oneQubitMeasurementTime`, and `twoQubitJointMeasurementTime`, whose values are taken from the corresponding field from the [physical qubit parameters](#customize-predefined-qubit-parameters), as well as the variable `eccDistance` for the code distance computed for the logical qubit, based on the physical qubit properties, the error correction threshold, and the crossing prefactor. The time variables and `eccDistance` can be used to describe the `logicalCycleTime` formula. For the formula `physicalQubitsPerLogicalQubit` only the `eccDistance` can be used.
+Inside the formulas, you can use the variables `one_qubit_gate_time`, `two_qubit_gate_time`, `one_qubit_measurement_time`, and `two_qubit_joint_measurement_time`, whose values are taken from the corresponding field from the [physical qubit parameters](#customize-predefined-qubit-parameters), as well as the variable `eccDistance` for the code distance computed for the logical qubit, based on the physical qubit properties, the error correction threshold, and the crossing prefactor. The time variables and `eccDistance` can be used to describe the `logicalCycleTime` formula. For the formula `physicalQubitsPerLogicalQubit` only the `eccDistance` can be used.
 
 ## Error budget
 
-The total error budget $\epsilon$ sets the overall tolerated error for the algorithm, that is, the allowed failure probability of the algorithm. Its global value must be between 0 and 1, and the default value is 0.001, which corresponds to 0.1%. In other words, the algorithm is allowed to fail a maximum of once in 1000 executions. This parameter is highly application specific. 
+The total error budget $\epsilon$ sets the overall tolerated error for the algorithm, that is, the allowed failure probability of the algorithm. Its global value must be between 0 and 1, and the default value is 0.001, which corresponds to 0.1%. In other words, the algorithm is allowed to fail a maximum of once in 1000 executions. This parameter is highly application specific.
 
-For example, if you're running Shor’s algorithm for factoring integers, a large value for the error budget may be tolerated as one can check that the outputs are indeed the prime factors of the input. On the other hand, a smaller error budget may be needed for an algorithm solving a problem with a solution, which can't be efficiently verified. 
+For example, if you're running Shor’s algorithm for factoring integers, a large value for the error budget may be tolerated as one can check that the outputs are indeed the prime factors of the input. On the other hand, a smaller error budget may be needed for an algorithm solving a problem with a solution, which can't be efficiently verified.
 
-You can specify the error budget by setting a number between 0 and 1, for example: 
+You can specify the error budget by setting a number between 0 and 1, for example:
 
-```JSON
-{
-    "errorBudget": 0.1
-}
+```python
+from azure.quantum.target.microsoft import MicrosoftEstimatorParams
+
+    params = MicrosoftEstimatorParams()
+    params.error_budget.logical = 0.1
 ```
 
 The error budget corresponds to the sum of three parts:
@@ -409,21 +364,9 @@ If no further specified, the error budget $\epsilon$ is uniformly distributed an
 
 Note that for distillation and rotation synthesis, the respective error budgets $\epsilon_{\rm dis}$ and $\epsilon_{\rm syn}$ are uniformly distributed among all required T states and all required rotation gates, respectively. If there aren't rotation gates in the input algorithm, the error budget is uniformly distributed to logical errors and T state errors.
 
-Also, you can individually specify each component of the error budget. The sum of all values must be 1. 
+Also, you can individually specify each component of the error budget. The sum of all values must be 1. If a quantum algorithm doesn't contain T states or rotations, then the values of `t_states` and `rotations` may be 0 respectively.
 
-```JSON
-{
-    "errorBudget": {
-        "logical": <double>, // Required
-        "tStates": <double>, // Optional
-        "rotations": <double> // Optional
-    }
-}
-```
-
-If a quantum algorithm doesn't contain T states or rotations, then the values of `tstates` and `rotations` may be 0 respectively.
-
-The following code shows how to specify the error budget for a quantum algorithm that contains T states and rotations:
+The following code shows how to specify the `error_budget` parameter with T states and rotations:
 
 ```python
 from azure.quantum.target.microsoft import MicrosoftEstimatorParams
@@ -436,27 +379,14 @@ from azure.quantum.target.microsoft import MicrosoftEstimatorParams
 
 ## Constraints
 
-You can use `constraints` parameters to apply constraints on the [T factory](xref:microsoft.quantum.concepts.tfactories#t-factories-in-the-azure-quantum-resource-estimator) component-level. By adjusting constraints, you can optimize the estimates toward reducing the number of qubits or toward reducing the runtime.
+You can use the `constraints` class to apply constraints on the [T factory](xref:microsoft.quantum.concepts.tfactories#t-factories-in-the-azure-quantum-resource-estimator) component-level. By adjusting constraints, you can optimize the estimates toward reducing the number of qubits or toward reducing the runtime.
 
-```JSON
-{
-    "constraints": {
-        "logicalDepthFactor": <double>, // control execution time 
-        "maxTFactories": <int>, // control number of T factories
-        "maxDuration": <time string>, // control runtime
-        "maxPhysicalQubits": <int> // control number of physical qubits
-    }
-}
-```
-
-- **Logical depth:**  If `logicalDepthFactor` has a value greater than 1, the initial number of logical cycles, also called *logical depth*, is multiplied by this number. By reducing the logical depth, you can increase the number of invocation of the T factory in a given time, resulting in fewer T factory copies needed to produce the same number of T states. When you reduce the number of T factory copies, the algorithm runtime increases accordingly. The scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.
-
-- **Maximum number of T factory copies:** You can set a limit on the number of T factory copies using `maxTFactories`. The Resource Estimator determines the resources required by selecting the optimal number of T factory copies that minimizes the number of physical qubits used, without considering the time overhead. The `maxTFactories` parameter limits the maximum number of copies, and therefore adjust the number of logical cycles accordingly. For more information, see [T factory physical estimation](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).
-
-- **Maximum runtime and maximum number of physical qubits :** You can specify the maximum duration of the quantum program runtime or the maximal number of physical qubits to be utilized by the algorithm with `maxDuration` and `maxPhysicalQubits` parameters. The Resource Estimator accepts only one of those constraints at the time but not two. If one of them is specified, the Resource Estimator tries to find the best estimate for the complimentary one among solutions constrained by the maximal number specified. If the value provided is too small to find a feasable solution, the Resource Estimator returns an error. If neither `maxDuration` nor `maxPhysicalQubits` constraints are specified, the Resource Estimator aims to find a solution with the shortest time. 
-
-> [!TIP]
-> You can use `maxDuration` and `maxPhysicalQubits` to influence the solution space, potentially finding solutions with longer runtime but a smaller number of qubits compared to solutions without these constraints. There exists a trade-off between runtime and the number of qubits, and this trade-off can be efficiently managed for some algorithms, with varying effects on different algorithms. Table IV in [[arXiv:2211.07629](https://arxiv.org/abs/2211.07629)] illustrates the effective utilization of the trade-off between the number of qubits and runtime for quantum dynamics algorithms. For more information, see [Quantum resource estimation with time or number of qubits constraints](https://github.com/microsoft/Quantum/blob/main/samples/azure-quantum/resource-estimation/estimation-time-qubits-constraints.ipynb)sample.
+|Parameter|Data type|Description|
+|----|----|-----|
+|`logical_depth_factor`|float| Control the execution time. If it has a value greater than 1, the initial number of logical cycles, also called *logical depth*, is multiplied by this number. By reducing `logical_depth_factor`, you can increase the number of invocation of the T factory in a given time, resulting in fewer T factory copies needed to produce the same number of T states. When you reduce the number of T factory copies, the algorithm runtime increases accordingly. The scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.|
+|`max_t_factories`|integer| Maximum number of T factory copies. The Resource Estimator determines the resources required by selecting the optimal number of T factory copies that minimizes the number of physical qubits used, without considering the time overhead. The `max_t_factories` parameter limits the maximum number of copies, and therefore adjust the number of logical cycles accordingly. For more information, see [T factory physical estimation](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).|
+|`max_duration`|time string| Maximum runtime for the algorithm. The Resource Estimator accepts only one of `max_duration` or `max_physical_qubits` constraints at the time but not two. If `max_duration` is specified, the Resource Estimator tries to find the best estimate for `max_physical_qubits` among solutions constrained by the maximal number specified.|
+|`max_physical_qubits`|integer| Maximum number of physical qubits for the algorithm. The Resource Estimator accepts only one of `max_duration` or `max_physical_qubits` constraints at the time but not two. If `max_physical_qubits` is specified, the Resource Estimator tries to find the best estimate for `max_duration` among solutions constrained by the maximal number specified. |
 
 The following code shows how to specify the constraints for a quantum algorithm:
 
@@ -470,21 +400,30 @@ from azure.quantum.target.microsoft import MicrosoftEstimatorParams
     params.constraints.max_t_factories = 10
 ```
 
+> [!NOTE]
+> If the value provided to `max_duration` or `max_physical_qubits` is too small to find a feasible solution, the Resource Estimator returns an error. If neither `max_duration` nor `max_physical_qubits` constraints are specified, the Resource Estimator aims to find a solution with the shortest time.
+
+> [!TIP]
+> You can use `max_duration` and `max_physical_qubits` to influence the solution space, potentially finding solutions with longer runtime but a smaller number of qubits compared to solutions without these constraints. There exists a trade-off between runtime and the number of qubits, and this trade-off can be efficiently managed for some algorithms, with varying effects on different algorithms. Table IV in [[arXiv:2211.07629](https://arxiv.org/abs/2211.07629)] illustrates the effective utilization of the trade-off between the number of qubits and runtime for quantum dynamics algorithms. For more information, see [Quantum resource estimation with time or number of qubits constraints](https://github.com/microsoft/Quantum/blob/main/samples/azure-quantum/resource-estimation/estimation-time-qubits-constraints.ipynb) sample.
+
 ## Distillation units
 
-You can provide custom specifications for T factories distillation algorithms with the `distillationUnitSpecifications` parameter. The specification can be either predefined or custom. You can specify a predefined specification by selecting the distillation unit name: `15-1 RM` or `15-1 space-efficient`.
+You can provide custom specifications for T factories distillation algorithms with the `DistillationUnitSpecification` class. The specification can be either predefined or custom. You can specify a predefined specification by selecting the distillation unit name: `15-1 RM` or `15-1 space-efficient`.
 
-```JSON
-{
-    "distillationUnitSpecifications": [
-        "name": <string>,
-    ]
-}
+```python
+from azure.quantum.target.microsoft import MicrosoftEstimatorParams
+from azure.quantum.target.microsoft.target import DistillationUnitSpecification
+
+    params = MicrosoftEstimatorParams()
+    unit = DistillationUnitSpecification()
+    unit.name = "15-1 RM"
+
+    params.distillation_unit_specifications.append(unit)
 ```
 
 In both cases, notation *15-1* stands for 15 input T states and 1 output T state. The `15-1 space-efficient` distillation unit uses fewer qubits than `15-1 RM` but requires more runtime. For more information, see [Table VI](https://arxiv.org/pdf/2211.07629.pdf#page=24).
 
-> [!NOTE]
+> [!TIP]
 > Using predefined distillation units provides better performance comparing with custom ones.
 
 ### Customize your distillation units
@@ -508,7 +447,6 @@ You can defined your custom distillation units as follows:
 
 All numeric parameters are expected to be positive. The `displayName` specifies how the distillation unit will be displayed in output results.
 
-
 The following code shows how to specify the distillation unit parameters for a quantum algorithm:
 
 ```python
@@ -529,9 +467,22 @@ from azure.quantum.target.microsoft.target import DistillationUnitSpecification,
         unit.physical_qubit_specification = physical_qubit_specification
 ```
 
-At least one of the parameters `physicalQubitSpecification` or `logicalQubitSpecification` should be provided. If only the former is provided, the distillation unit can be applied to physical qubits. If only the latter is provided, the distillation unit can be applied to logical qubits. If both are provided, the distillation unit can be applied to both types of qubits.
+The formulas for `failure_probability_formula` and `output_error_rate_formula` are custom formulas with basic arithmetic operations, constants and only three parameters:
 
-The parameter `logicalQubitSpecificationFirstRoundOverride` can be provided only if `logicalQubitSpecification` is specified. If so, it overrides values of `logicalQubitSpecification` in case if applied at the first round of distillation. The value `<protocol specific parameters> ` that is required for `logicalQubitSpecificationFirstRoundOverride` should follow the scheme:
+- `clifford_error_rate`, also denoted as `c`.
+- `readout_error_rate`, also denoted as `r`.
+- `input_error_rate`, also denoted as `z`.
+  
+See the following examples of custom formulas using long and short notation. These examples illustrate formulas used by default within the standard implementation.
+
+|Parameter|Long formula|Short formula|
+|---|---|---|
+|`failure_probability_formula`| "15.0 * input_error_rate + 356.0 * clifford_error_rate" | "15.0 * z + 356.0 * c" |
+|`output_error_rate_formula`| "35.0 * input_error_rate ^ 3 + 7.1 * clifford_error_rate" | "35.0 * z ^ 3 + 7.1 * c" |
+
+At least one of the parameters `physical_qubit_specification` or `logical_qubit_specification` should be provided. If only the former is provided, the distillation unit can be applied to physical qubits. If only the latter is provided, the distillation unit can be applied to logical qubits. If both are provided, the distillation unit can be applied to both types of qubits.
+
+The parameter `logical_qubit_specification_first_round_override` can be provided only if `logical_qubit_specification` is specified. If so, it overrides values of `logical_qubit_specification` in case if applied at the first round of distillation. The value `<protocol specific parameters> ` that is required for `logical_qubit_specification_first_round_override` should follow the scheme:
 
 ```JSON
 {
@@ -539,19 +490,6 @@ The parameter `logicalQubitSpecificationFirstRoundOverride` can be provided only
     "durationInQubitCycleTime": <double>
 }
 ```
-
-The formulas for `failureProbabilityFormula` and `outputErrorRateFormula` are custom formulas with basic arithmetic operations, constants and only three parameters:
-
-- `cliffordErrorRate`, also denoted as `c`.
-- `readoutErrorRate`, also denoted as `r`.
-- `inputErrorRate`, also denoted as `z`.
-  
-See the following examples of custom formulas using long and short notation. These examples illustrate formulas used by default within the standard implementation.
-
-|Parameter|Long formula|Short formula|
-|---|---|---|
-|`failureProbabilityFormula`| `{"Custom": "15.0 * inputErrorRate + 356.0 * cliffordErrorRate"}` | `{"Custom": "15.0 * z + 356.0 * c"}` |
-|`outputErrorRateFormula`| `{"Custom": "35.0 * inputErrorRate ^ 3 + 7.1 * cliffordErrorRate"}` | `{"Custom": "35.0 * z ^ 3 + 7.1 * c"}` |
 
 ## Next steps
 
