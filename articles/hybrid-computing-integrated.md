@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Understand the architecture and implementation of integrated hybrid quantum computing.
-ms.date: 10/26/2023
+ms.date: 12/07/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -382,9 +382,9 @@ It leverages integrated hybrid computing features to count the number of times e
         --job-id [job-id]
     ```
 
-### [Iterative phase estimation](#tab/tabid-qml)
+### [Iterative phase estimation]
 
-*This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/about/alliances/microsoft/kpmg-and-microsoft-azure-quantum.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of B:::no-loc text="Basic Measurement Feedback"::: targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.*
+*This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/services/advisory/management-consulting/technology-consulting/quantum-technologies.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of B:::no-loc text="Basic Measurement Feedback"::: targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.*
 
 ## Two dimensional inner product calculation using iterative phase estimation on three qubits
 
