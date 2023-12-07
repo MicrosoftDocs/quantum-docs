@@ -13,7 +13,7 @@ uid: microsoft.quantum.contributing-qdk.overview.reporting
 
 # Reporting Azure Quantum bugs #
 
-If you think you've found a bug in a component of Azure Quantum, reporting the issue is very much appreciated.
+If you think you've found a bug in a component of Azure Quantum, report the issue is very much appreciated.
 After all, someone else may be struggling with the same issue as well; reporting the issue helps to get it fixed for everyone.
 The first step in reporting a bug is to start by looking through the existing issues found on each repository, as it's very possible that someone else has reported the same problem. For a list of Azure Quantum repositories and what is stored in each one, see [Contributing to Azure Quantum](xref:microsoft.quantum.contributing-qdk.overview#where-do-contributions-go).
 
