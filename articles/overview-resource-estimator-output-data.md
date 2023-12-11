@@ -256,6 +256,33 @@ The `logical_counts` dictionary contains the following entries:
 |`ccix_count`|number| Pre-layout number of CCiX gates.|
 |`measurement_count`|number| Pre-layout number of single-qubit measurements.|
 
+## Space-time diagrams
+
+The overall physical resource estimation consists of total number of physical qubits and the runtime. You can inspect the distribution of these two using the space-time diagrams. The space-time diagrams show the following:
+
+- Total number of physical qubits: It's the sum the number of physical qubits required by the T factory copies that produce the T states that are consumed by the algorithm, plus the number of physical qubits required to execute the algorithm.
+- Total runtime of the algorithm: It's based on the number of instructions that need to be performed to run the algorithm. It's the runtime calculated in the [Algorithmic physical estimation](xref:microsoft.quantum.learn-how-resource-estimator-works#algorithmic-physical-estimation) step of the Resource Estimator workflow.
+
+The space diagram shows the proportion of the physical qubits used for the algorithm and the [T factories](xref:microsoft.quantum.concepts.tfactories). Note that the number of T factory copies contributes to the number of physical qubits for T factories.
+
+```python
+result.diagram.space
+```
+
+:::image type="content" source="media/resource-estimator-space-diagram.png" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
+
+The time diagram shows the time required to execute the algorithm as it relates to each T factory invocation runtime and the number of T factory invocation (possibly capped if there are too many invocations). The table on the right side lists the most important metrics that are used to compute these numbers, which are described in the [T factory physical estimation](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation) step of the Resource Estimator workflow. Note that the number of T factory invocations is calculated based on the total runtime.
+
+```python
+result.diagram.time
+```
+
+:::image type="content" source="media/resource-estimator-time-diagram.png" alt-text="Diagram showing the number of T factory invocations during the runtime of the algorithm. There's also a table with the breakdown of the number of T factory copies, number of T factory invocations, T states per invocation, etc.":::
+
+For more information about these diagrams, see the sample in [Resource estimation with Q# and Python](xref:microsoft.quantum.submit-resource-estimation-jobs#space-time-diagrams).
+
+> [!NOTE]
+> In the time diagram, each blue arrow represents the total number of copies of the T factory repeatedly invoked.
 
 ## Next steps
 
