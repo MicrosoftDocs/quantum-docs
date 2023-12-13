@@ -142,7 +142,7 @@ Configure the QDK for your preferred environment from one of the following optio
 1. Install the [QDK for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
 > [!NOTE]
-> If you are a Arm-based Mac user, make sure you install [.NET SDK](https://dotnet.microsoft.com/download) 6.0 or greater, as older versions are not supported on this architecture. 
+> If you are an Arm-based Mac user, make sure you install [.NET SDK](https://dotnet.microsoft.com/download) 6.0 or greater, as older versions are not supported on this architecture. 
 
 #### [Visual Studio (Windows only)](#tab/tabid-vs)
 
