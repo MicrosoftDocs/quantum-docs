@@ -61,7 +61,10 @@ Designed specifically for scaled quantum fault-tolerant error-corrected systems,
 
 The Azure Quantum Resource Estimator computes post-layout physical resource estimation by taking a set of inputs such as qubit parameters, the quantum error correction (QEC) code, the error budget, and [other parameters](xref:microsoft.quantum.overview.resources-estimator) into account. It takes a [Quantum Intermediate Representation (QIR)](xref:microsoft.quantum.concepts.qir) program as input and, therefore, supports any language that translates to QIR, for example, you can use the Azure Quantum Resource Estimator with Q# and Qiskit.
 
+:::image type="content" source="media/Resource-Estimation-component-overview.png" alt-text="Diagram showing components provided by Resource Estimator and corresponding customizations. Provided aspects are Application Input, Compilation Tools, QIR, QEC models, Qubit models, and Analysis. Customer can bring Application Program, Compilation or Optimization Tools, QIR Code, QEC models, Qubit parameters, and Analysis and Visualization Tools.":::
+
 For more information, see [How the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
+
 ## What are Q\# and the Quantum Development Kit?
 
 The [Microsoft Quantum Development Kit (QDK)](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode) is the SDK required to interface with the Azure Quantum service. The QDK includes the language Q#, a high-level **open-source** quantum programming language that allows you to focus your work at the algorithm and application level to create quantum programs.
