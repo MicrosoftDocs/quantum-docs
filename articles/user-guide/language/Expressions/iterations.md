@@ -15,4 +15,4 @@ uid: microsoft.quantum.qsharp.iterations
 # Iterations and loops in Q#
 -->
 
-[!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/2_Statements/iterations.md)]
+[!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/3_Expressions/iterations.md)]

@@ -24,6 +24,18 @@
     href: functorapplication.md
   - name: Item access expressions
     href: itemaccessexpressions.md
+- name: Call expressions
+  href: callstatements.md
+- name: Returns and termination 
+  href: returnsandtermination.md
+- name: Iterations 
+  href: iterations.md
+- name: Conditional loops 
+  href: conditionalloops.md
+- name: Conditional branching 
+  href: conditionalbranching.md
+- name: Conjugations 
+  href: conjugations.md
 - name: Closures
   href: closures.md
 - name: Contextual expressions

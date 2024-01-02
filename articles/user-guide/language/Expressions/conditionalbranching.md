@@ -15,4 +15,4 @@ uid: microsoft.quantum.qsharp.conditionalbranching
 # Conditional branching in Q#
 -->
 
-[!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/2_Statements/ConditionalBranching.md)]
+[!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/3_Expressions/ConditionalBranching.md)]

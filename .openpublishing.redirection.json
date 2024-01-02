@@ -236,6 +236,36 @@
 			"redirect_document_id": false
 		},
 		{
+			"source_path": "articles/user-guide/language/statements/callstatements.md",
+			"redirect_url": "/azure/quantum/user-guide/language/expressions/callstatements",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/language/statements/conditionalbranching.md",
+			"redirect_url": "/azure/quantum/user-guide/language/expressions/conditionalbranching",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/language/statements/conditionalloops.md",
+			"redirect_url": "/azure/quantum/user-guide/language/expressions/conditionalloops",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/language/statements/conjugations.md",
+			"redirect_url": "/azure/quantum/user-guide/language/expressions/conjugations",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/language/statements/iterations.md",
+			"redirect_url": "/azure/quantum/user-guide/language/expressions/iterations",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/language/statements/returnsandtermination.md",
+			"redirect_url": "/azure/quantum/user-guide/language/expressions/returnsandtermination",
+			"redirect_document_id": false
+		},
+		{
 			"source_path": "articles/how-to-command-line-local.md",
 			"redirect_url": "/azure/quantum/install-overview-qdk",
 			"redirect_document_id": false
