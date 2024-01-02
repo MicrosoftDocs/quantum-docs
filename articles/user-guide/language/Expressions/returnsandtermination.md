@@ -15,4 +15,4 @@ uid: microsoft.quantum.qsharp.returnsandtermination
 # Returns and termination in Q#
 -->
 
-[!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/2_Statements/ReturnsAndTermination.md)]
+[!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/3_Expressions/ReturnsAndTermination.md)]

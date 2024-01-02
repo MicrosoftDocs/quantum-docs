@@ -15,4 +15,4 @@ uid: microsoft.quantum.qsharp.conditionalloops
 # Conditional loops in Q#
 -->
 
-[!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/2_Statements/ConditionalLoops.md)]
+[!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/3_Expressions/ConditionalLoops.md)]

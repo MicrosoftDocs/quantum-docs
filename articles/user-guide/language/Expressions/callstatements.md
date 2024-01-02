@@ -15,4 +15,4 @@ uid: microsoft.quantum.qsharp.callstatements
 # Call statements in Q#
 -->
 
-[!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/2_Statements/CallStatements.md)]
+[!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/3_Expressions/CallExpressions.md)]

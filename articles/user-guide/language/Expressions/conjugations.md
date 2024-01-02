@@ -15,4 +15,4 @@ uid: microsoft.quantum.qsharp.conjugations
 # Conjugations in Q#
 -->
 
-[!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/2_Statements/Conjugations.md)]
+[!INCLUDE [source link](~/includes/qsharp-language/Specifications/Language/3_Expressions/Conjugations.md)]
