@@ -11,7 +11,7 @@ no-loc: ['Q#', '$$v', Quantum Development Kit, Quantum machine learning, Quantum
 uid: microsoft.quantum.relnotes-qdk
 ---
 
-# Release notes for Quantum Development Kit (QDK) and Azure Quantum - 2023
+# Release notes for the latest versions of Quantum Development Kit (QDK) and Azure Quantum - 2023
 
 This article outlines updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview).
 
