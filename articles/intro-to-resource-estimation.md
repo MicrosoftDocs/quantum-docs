@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: overview
 no-loc: ['Python', '$$v', Quantum Intermediate Representation, target, targets]
-title: Introduction to the Resource Estimation
+title: Introduction to the Resource Estimator
 uid: microsoft.quantum.overview.intro-resource-estimator
 --- 
 
@@ -19,27 +19,20 @@ This article introduces the Azure Quantum Resource Estimator, a powerful tool th
 
 ## What is the Azure Quantum Resource Estimator?
 
-Designed specifically for post-NISQ, fault-tolerant quantum systems, the Azure Quantum Resource Estimator allows you to assess architectural decisions, compare qubit technologies, and determine the resources needed to execute a given quantum algorithm.
+The Azure Quantum Resource Estimator is a powerful tool that allows you to estimate the resources needed to execute a given quantum algorithm on a fault-tolerant quantum computer.
 
-The Azure Quantum Resource Estimator provides the number of physical qubits, wall clock time, and required computational resources for each program submitted, as well as details of the formulas and values used for each estimate.
+It provides the total number of physical and logical qubits, runtime, , as well as details of the formulas and values used for each estimate. This means algorithm development becomes the focus, with the goal of optimizing performance and decreasing cost. With the Azure Quantum Resource Estimator, you can compare qubit technologies, quantum error correction schemes, and other hardware characteristics to understand how they impact the resources needed to run a quantum program.
 
-The Resource Estimator is built on community supported Quantum Intermediate Representation (QIR), so it's extensible and portable. It supports any language that translates to QIR for example, Q# and Qiskit.
-
-
-It breaks down the resources required for a quantum algorithm, including the total number of physical qubits, the computational resources required including wall clock time, and the details of the formulas and values used for each estimate. This means algorithm development becomes the focus, with the goal of optimizing performance and decreasing cost. For the first time, it is possible to compare resource estimates for quantum algorithms at scale across different hardware profiles. Start from well-known, pre-defined qubit parameter settings and quantum error correction (QEC) schemes or configure unique settings across a wide range of machine characteristics such as operation error rates, operation speeds, and error correction schemes and thresholds.
-
-The Azure Quantum Resource Estimator allows you to understand the resources required to run a particular algorithm. By incorporating the Resource Estimator in your development workflow and continuously evaluating your quantum program, you can understand how implementation changes to the program impact resource consumption.
+You can start from well-known, pre-defined qubit parameter settings and quantum error correction (QEC) schemes or configure unique settings across a wide range of machine characteristics such as operation error rates, operation speeds, and error correction schemes and thresholds.
 
 > [!TIP]
-> The Azure Quantum Resource Estimator is **free of charge** and is available to all Azure Quantum users. See how to [Enable the Resource Estimator](xref:microsoft.quantum.quickstarts.computing.resources-estimator#enable-the-azure-quantum-resource-estimator-target-in-your-workspace).
+> The Azure Quantum Resource Estimator is **free of charge** and doesn't require an Azure account.
 
-To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
+The Resource Estimator supports any language that translates to QIR for example, Q# and Qiskit. To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
 
 ## What features make the Resource Estimator unique?
 
-The quantum computin stack can be divided into three levels: the application level, the quantum programming or compilation level, and the hardware or modeling level. The following diagram shows the quantum computing stack components.
-
-The Resource Estimator is a powerful tool that involves different levels of computation.
+The Resource Estimator is a powerful tool that involves all levels of quantum computing stack. The quantum computing stack can be divided into three levels: the application level, the quantum programming or compilation level, and the hardware or modeling level. The Resource Estimator allows you to customize the parameters of each level and analyze how they impact the overall resources needed to run a quantum program.
 
 :::image type="content" source="media/resource-estimator-stack-computing.png" alt-text="Chart showing the levels of the quantum computing stack of the Resource Estimator. .":::
 
@@ -72,7 +65,7 @@ The Resource Estimator allows you to run multiple resource estimation configurat
 
 The Resource Estimator provides a visualization of the results, allowing you to compare the resources needed to run different algorithms on different qubit technologies.
 
-The [space-time diagrams](xref:microsoft.quantum.overview.resources-estimator-output.data#space-time-diagrams) show the total number of qubits and the total runtime of the program, and the contribution of the T factories. 
+The [space-time diagrams](xref:microsoft.quantum.overview.resources-estimator-output.data#space-time-diagrams) show the total number of qubits and the total runtime of the program, and the contribution of the T factories.
 
 ## Why is resource estimation important in the development of quantum computing?
 
@@ -81,8 +74,6 @@ Although quantum computers promise to solve important scientific and commercial 
 Using the Resource Estimator, you can understand the impact of architectural design choices and quantum error correction schemes. The Resource Estimator will help you understand how many qubits are needed to run an application, how long it will take to run, and which qubit technologies are better suited to solving a specific problem. Understanding these requirements will allow you to prepare and refine quantum solutions to run on future, scaled quantum machines. 
 
 ## How to use the Resource Estimator
-
-To use the Resource Estimator you need a QIR quantum program, for example a program written in Q#, Qiskit, or a QIR generator as PyQIR. Then, you specify the target parameters that define the characteristics of the quantum computer that you want to use to run your program. You can either use the predifined target parameters or customize them to your needs.
 
 You submit your program and the target parameters to the Resource Estimator, and it returns the resources needed to run your program in the form of a report data. For more information, see [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data). 
 
@@ -110,7 +101,7 @@ The Resource Estimator in [quantum.microsoft.com](https://quantum.microsoft.com/
 
     :::image type="content" source="media/quantum-cryptography-qcom.png" alt-text="Screenshot of the quantum cryptography experience in Azure Quantum website. The picture displays the input parameters that constitute the encryption algorithm and the resulting plot of the resource estimation job.":::
 
-## Resource estimation for quantum chemistry
+## Resource estimation for large-scale quantum computing
 
 If we gain the ability to accurately simulate complex, correlated quantum mechanical systems, we could unlock breakthroughs in areas as diverse as carbon capture, food insecurity and designing better fuels and materials to enable a greener future.
 
@@ -118,6 +109,6 @@ For example, in the context of climate change and global warming , finding an ef
 
 The Microsoft Quantum research team developed a [new quantum algorithm to simulate catalytic processes](https://arxiv.org/abs/2007.14460). They focused on a well-known catalytic process, based on the transition metal ruthenium, to convert carbon dioxide into methanol. Using the Resource Estimator, they estimated the resources needed to analyze the activation energy of a ruthenium-based catalyst for carbon fixation.
 
-You can find a sample of **quantum chemistry** in the tutorial [Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry), or run the sample in the notebook gallery sample of your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). This sample represents the first step in the quantum chemistry journey, allowing us to understand in more detail what computational resources would be required to simulate certain quantum mechanical systems.
+You can find a sample of **quantum chemistry** in the tutorial [Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry) This sample represents the first step in the quantum chemistry journey, allowing us to understand in more detail what computational resources would be required to simulate certain quantum mechanical systems.
 
 
