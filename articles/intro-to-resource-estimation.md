@@ -32,7 +32,9 @@ The Resource Estimator supports any language that translates to QIR for example,
 
 ## What features make the Resource Estimator unique?
 
-The Resource Estimator is a powerful tool that involves all levels of quantum computing stack. The quantum computing stack can be divided into three levels: the application level, the quantum programming or compilation level, and the hardware or modeling level. The Resource Estimator allows you to customize the parameters of each level and analyze how they impact the overall resources needed to run a quantum program.
+The Resource Estimator is a powerful tool that involves all levels of quantum computing stack. The quantum computing stack can be divided into three levels: the application level, the quantum programming or compilation level, and the hardware or modeling level. 
+
+The Resource Estimator allows you to customize the parameters of each level and analyze how they impact the overall resources needed to run a quantum program.
 
 :::image type="content" source="media/resource-estimator-stack-computing.png" alt-text="Chart showing the levels of the quantum computing stack of the Resource Estimator. .":::
 
