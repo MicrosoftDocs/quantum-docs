@@ -13,9 +13,11 @@ uid: microsoft.quantum.tutorial.resource-estimator.chemistry
 
 # Tutorial: Estimate the resources of a quantum chemistry problem
 
-This tutorial shows how to estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator). The quantum algorithm that calculates the energy of the Hamiltonian is based on *double-factorized qubitization*. The Hamiltonian is described in terms of one- and two-electron integrals in provided FCIDUMP (full configuration interaction) files that are available via an HTTPS URI. 
+This tutorial shows how to estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). The quantum algorithm that calculates the energy of the Hamiltonian is based on *double-factorized qubitization*. The Hamiltonian is described in terms of one- and two-electron integrals in provided FCIDUMP (full configuration interaction) files that are available via an HTTPS URI. 
 
 The *qubitization* approach is based on quantum phase estimation, but instead of constructing the standard $U = \\exp{(-i H/\\alpha)}$ from the Hamiltonian matrix $H$, one takes $U = \\exp{(-i \\sin^{-1} (H/\\alpha))}$, which can typically be implemented with fewer resources. Using *double-factorization*, $H$ is represented compactly through a combination of a judicious choice of orbitals and compression. The tolerated total error budget is $\\epsilon = 0.01$, corresponding to $1\\%$.
+
+This tutorial represents the first step in the quantum chemistry journey, allowing us to understand in more detail what computational resources would be required to simulate certain quantum mechanical systems.
 
 [!INCLUDE [Modern QDK RE banner](includes/new-qdk-resource-estimator-support.md)]
 
@@ -184,12 +186,6 @@ You can also compare different configurations.For example, lets' compare the gat
 ```python
 results[3:5]
 ```
-
-## Why chemistry applications of quantum computing are important? 
-
-This tutorial represents a first step to integrate resource estimation of quantum solutions to electronic structure problems. One of the most important applications of scaled quantum computers is solving quantum chemistry problems. The simulation of complex quantum mechanical systems has the potential to unlock breakthroughs in areas such as carbon capture, food insecurity, and designing better fuels and materials.  
-
-For example, one of the FCIDUMP files provided in this sample, *nitrogenase_54orbital*, describes the nitrogenase enzyme. If you could accurately simulate how this enzyme works at a quantum level, it could help us to understand how to produce it at scale. You could replace the highly energy-intensive process which is used to produce enough fertilizer to feed the planet. This has the potential to reduce the global carbon footprint and also to help address concerns regarding food insecurity in a growing population.
 
 ## Next steps
 
