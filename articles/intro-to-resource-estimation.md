@@ -15,7 +15,7 @@ uid: microsoft.quantum.overview.intro-resource-estimator
 
 In quantum computing, resource estimation is the process used to determine the number of qubits, quantum gates, processing time, and other resources needed to run a quantum program assuming (or taking as parameters) specific hardware characteristics.
 
-This article introduces the Azure Quantum Resource Estimator, a powerful tool that allows you to estimate the resources needed to run a quantum program on a quantum computer. 
+This article introduces the Azure Quantum Resource Estimator, a powerful tool that allows you to estimate the resources needed to run a quantum program on a quantum computer.
 
 ## What is the Azure Quantum Resource Estimator?
 
