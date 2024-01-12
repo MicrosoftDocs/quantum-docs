@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to run experiments with long runtimes on Azure Quantum 
 ms.author: sonialopez
-ms.date: 04/10/2023
+ms.date: 01/02/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
@@ -36,7 +36,7 @@ For more information, see [Get started with Sessions](xref:microsoft.quantum.hyb
 
 ## Local development
 
-Installing the QDK on your local computer provides support for Jupyter Notebooks, Python, and Q#, along with extensions for Visual Studio Code and Visual Studio. You can develop quantum computing applications in your preferred IDE and language and run them on quantum simulators and quantum hardware using the Azure Quantum service.
+Installing the Modern QDK extension for Visual Studio Code on your local computer provides support for Jupyter Notebooks, Python, and Q# files. You can develop quantum computing applications in your preferred IDE and language and run them on quantum simulators and quantum hardware using the Azure Quantum service.
 
 Some scenarios where you may prefer a local environment:
 
@@ -44,15 +44,9 @@ Some scenarios where you may prefer a local environment:
 - You require source control on your project.
 - You are working with a multi-file project.
 
-For more information, see [Set up a local environment with the QDK](xref:microsoft.quantum.install-qdk.overview#use-your-preferred-ide-and-language-locally-and-submit-jobs-to-azure-quantum). 
+For more information, see [Set up a local environment with the Modern QDK](xref:microsoft.quantum.install-qdk.overview).
 
-## Docker image running inside a cloud provider
-
-Docker containers are a great tool that allows you to run your applications across any OS, including cloud platforms, without installing anything. You can use the QDK Docker image in your local Docker installation or in the cloud via any service that supports Docker images, such as ACI.
-
-You can download the IQ# Docker image from <https://github.com/microsoft/iqsharp/#using-iq-as-a-container>. 
-
-You can also use Docker with a Visual Studio Code Remote Development Container to quickly define development environments. For more information about VS Code Development Containers, see <https://github.com/microsoft/Quantum/tree/master/.devcontainer>.
+[!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
 
 ## Jupyter notebooks with Google Colab
 
@@ -67,6 +61,6 @@ To start using Google Colab notebooks to run your quantum programs on Azure Quan
   !pip install -U azure-quantum[qiskit]
   ```
 
-2. Click **Runtime** and select **Restart runtime**
-3. To access to your Azure Quantum workspace, you need to **Authenticate**. For example, you get a prompt like the following one: `WARNING:azure.identity._internal.interactive:InteractiveBrowserCredential.get_token failed: Failed to open a browser`. To sign in, use a **Web browser** to open the page https://microsoft.com/devicelogin and enter the code **ET8BM63F3** to authenticate.
-4. Once you went through the authentication process, you should be able to run all the cells as if you were doing it from Azure Quantum hosted notebooks or from a local environment.
+1. Click **Runtime** and select **Restart runtime**
+1. To access to your Azure Quantum workspace, you need to **Authenticate**. For example, you get a prompt like the following one: `WARNING:azure.identity._internal.interactive:InteractiveBrowserCredential.get_token failed: Failed to open a browser`. To sign in, use a **Web browser** to open the page https://microsoft.com/devicelogin and enter the code **ET8BM63F3** to authenticate.
+1. Once you went through the authentication process, you should be able to run all the cells as if you were doing it from Azure Quantum hosted notebooks or from a local environment.

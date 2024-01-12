@@ -7,16 +7,27 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
 no-loc: ['Q#', '$$v', target, targets]
-title: Resource Estimator target parameters
+title: Resource Estimator Target Parameters
 uid: microsoft.quantum.overview.resources-estimator
 ---
 
-# Customize resource estimates to machine characteristics
+# Customize the target parameters of the Resource Estimator
 
 This article shows how to customize the target parameters of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to match the machine characteristics that you're targeting. The Resource Estimator uses these parameters to estimate the resources required to run a quantum algorithm on a quantum computer.
 
 > [!NOTE]
 > If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
+
+## Prerequisites
+
+- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
+- The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
+- VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
+- The latest Azure Quantum `qsharp` and `qsharp-widgets` packages.  
+
+    ```bash
+    python -m pip install --upgrade qsharp qsharp-widgets 
+    ```
 
 ## Target parameters
 
@@ -24,11 +35,11 @@ The Resource Estimator computes the estimation of resources, such the number of 
 
 Therefore, the Resource Estimator takes a set of inputs, with pre-defined values to easily get you started:
 
-- A [physical qubit model](#physical-qubit-parameters), `qubit_params`, which are the properties of the underlying physical qubits.
-- A [Quantum Error Correction (QEC) scheme](#quantum-error-correction-schemes), `qec_scheme`, which is the assumed quantum error correction scheme.
-- An [error budget](#error-budget), `error_budget`, which is the overall allowed error, that is, the number of times the program is allowed to unsuccess.
-- [Constraints](#constraints) on the component-level, `constraints`, which are the number of logical cycles and the number of T factory copies.
-- [Distillation units](#distillation-units), `DistillationUnitSpecifications`, to specify T factories distillation algorithms.
+- A [physical qubit model](#physical-qubit-parameters), which defines the properties of the underlying physical qubits.
+- A [Quantum Error Correction (QEC) scheme](#quantum-error-correction-schemes), which is the assumed quantum error correction scheme.
+- An [error budget](#error-budget), which is the overall allowed error, that is, the number of times the program is allowed to unsuccess.
+- [Constraints](#constraints) on the component-level, which are the number of logical cycles and the number of T factory copies.
+- [Distillation units](#distillation-units) to specify T factories distillation algorithms.
 
 > [!NOTE]
 > In addition to the target parameters, if the quantum program contains arguments the Resource Estimator can take operation arguments as input. For more information, see [Get the most out of the Azure Quantum Resource Estimator](xref:microsoft.quantum.work-with-resource-estimator#how-to-run-multiple-configurations-as-a-single-job).
@@ -39,27 +50,18 @@ When the Resource Estimator models the physical qubit assumptions, it uses two d
 
 You can choose from six predefined qubit parameters, four of which have gate-based instruction sets and two with a Majorana instruction set. These qubit models cover a range of operation times and error rates, enabling sufficient exploration of the resource costs needed to enable practical quantum applications.
 
-|Qubit model|Physical instruction|Description|
+|Qubit model|Python identifier|Description|
 |----|----|-----|
-|`GATE_NS_E3` , `GATE_NS_E4`|gate-based |Operation times and fidelities may correspond to future versions of [superconducting transmon qubits](https://arxiv.org/abs/2003.00024), or [spin qubits](https://arxiv.org/abs/2111.11937), which typically have operation times in the nanosecond regime. For these qubits, gate and measurement operations are assumed to take 50 ns and 100 ns, respectively. Single-qubit and two-qubit gate error rates are assumed to be $10^{-3}$ as a realistic target, and $10^{-4}$ as an optimistic target for a scaled up system.|
-|`GATE_US_E3` , `GATE_US_E4`|gate-based|Operation times and fidelities may correspond to future versions of qubits based on [ions](https://arxiv.org/abs/1701.04195), which typically have operations times in the microsecond regime. Based on typical assumptions for ion qubits, gate and measurement operations are assumed to take 100 µs. Error rate for single-qubit Clifford gates is $10^{-3}$ as a realistic target and $10^{-4}$ as an optimistic target, while the error rate for single-qubit non-Clifford gates (T gate) is $10^{-6}$. For two-qubit gates, the error rate is $10^{-3}$ as a realistic target and $10^{-4}$ as an optimistic target. |
-|`MAJ_NS_E4` , `MAJ_NS_E6`|Majorana|Operation times and fidelities may correspond to future improved versions of [Majorana qubits](https://arxiv.org/abs/1610.05289). For these qubits, gate and measurement operations are assumed to take 100 ns. To account for topological protection in the hardware, single-qubit and two-qubit joint measurement error rates (Clifford error rates) are assumed to be $10^{-4}$ as a realistic target, and $10^{-6}$ as an optimistic target. Non-Clifford operations in this architecture don't have topological protection, error rate for non-Clifford physical T gates is 5%.|
-
-You can specify predefined qubit parameters by selecting the qubit model name for the `QubitParams` class in the top-level parameters, for example: 
-
-```python
-from azure.quantum.target.microsoft import MicrosoftEstimatorParams, QubitParams
-
-params = MicrosoftEstimatorParams()
-params.qubit_params.name = QubitParams.GATE_NS_E4
-```
+|`"qubit_gate_ns_e3"` , `"qubit_gate_ns_e4"`|`GATE_NS_E3` , `GATE_NS_E4`|Operation times and fidelities may correspond to future versions of [superconducting transmon qubits](https://arxiv.org/abs/2003.00024), or [spin qubits](https://arxiv.org/abs/2111.11937), which typically have operation times in the nanosecond regime. For these qubits, gate and measurement operations are assumed to take 50 ns and 100 ns, respectively. Single-qubit and two-qubit gate error rates are assumed to be $10^{-3}$ as a realistic target, and $10^{-4}$ as an optimistic target for a scaled up system.|
+|`"qubit_gate_us_e3"` , `"qubit_gate_us_e4"`|`GATE_US_E3` , `GATE_US_E4`|Operation times and fidelities may correspond to future versions of qubits based on [ions](https://arxiv.org/abs/1701.04195), which typically have operations times in the microsecond regime. Based on typical assumptions for ion qubits, gate and measurement operations are assumed to take 100 µs. Error rate for single-qubit Clifford gates is $10^{-3}$ as a realistic target and $10^{-4}$ as an optimistic target, while the error rate for single-qubit non-Clifford gates (T gate) is $10^{-6}$. For two-qubit gates, the error rate is $10^{-3}$ as a realistic target and $10^{-4}$ as an optimistic target. |
+|`"qubit_maj_ns_e4"` , `"qubit_maj_ns_e6"`|`MAJ_NS_E4` , `MAJ_NS_E6`|Operation times and fidelities may correspond to future improved versions of [Majorana qubits](https://arxiv.org/abs/1610.05289). For these qubits, gate and measurement operations are assumed to take 100 ns. To account for topological protection in the hardware, single-qubit and two-qubit joint measurement error rates (Clifford error rates) are assumed to be $10^{-4}$ as a realistic target, and $10^{-6}$ as an optimistic target. Non-Clifford operations in this architecture don't have topological protection, error rate for non-Clifford physical T gates is 5%.|
 
 > [!NOTE]
-> If no value is provided for the `QubitParams` parameter, `GATE_NS_E3` is chosen as the default qubit parameters.
+> Unless other value is specified, the default value for the qubit model is `"qubit_gate_ns_e3"`.
 
 For reference, the complete predefined qubit parameters are as follows:
 
-```JSON
+```python
 {
     "qubitParams": {
         "name": "qubit_gate_ns_e3",
@@ -147,12 +149,46 @@ For reference, the complete predefined qubit parameters are as follows:
 }
 ```
 
-### Customize predefined qubit parameters
+### Passing predefined qubit parameters
 
-You can customize predefined qubit parameters by specifying the name and then updating any of the other values. For example, to decrease the error rate of two-qubit joint measurement in `MAJ_NS_E4`, write:
+There are two ways to programmatically specify predefined qubit parameters. You can select the qubit model name for the `qubitParams` class when running `qsharp.estimate`. For example, to select `"qubit_maj_ns_e6"` qubit parameter, write:
 
 ```python
-from azure.quantum.target.microsoft import MicrosoftEstimatorParams, QubitParams
+qsharp.estimate("RunProgram()", params=
+                {"qubitParams": {
+                        "name": "qubit_maj_ns_e6"
+                    },
+                })
+```
+
+You can also pass a list of estimation parameters to the `EstimatorParams` class. For example, to select `MAJ_NS_E6` qubit parameter, write:
+
+```python
+from qsharp.estimator import EstimatorParams, QubitParams
+
+params = EstimatorParams()
+params.qubit_params.name = QubitParams.MAJ_NS_E6 # qubit_maj_ns_e6 qubit parameter
+
+qsharp.estimate("RunProgram()", params=params)
+```
+
+### Customize predefined qubit parameters
+
+You can customize predefined qubit parameters by specifying the name and then updating any of the other values. For example, to decrease the error rate of two-qubit joint measurement in "qubit_maj_ns_e4", write:
+
+```python
+qsharp.estimate("RunProgram()", params=
+                {"qubitParams": {
+                        "name": "qubit_maj_ns_e4",
+                        "twoQubitJointMeasurementErrorRate": 1e-5,
+                    },
+                })
+```
+
+Or, you can pass the instructions in the form of a list.
+
+```python
+from qsharp.estimator import EstimatorParams, QubitParams
 
 params = MicrosoftEstimatorParams()
 params.qubit_params.name = QubitParams.MAJ_NS_E4
@@ -161,7 +197,7 @@ params.qubit_params.two_qubit_joint_measurement_error_rate = 1e-5
 
 #### Qubit parameters for Gate-based qubits
 
-| Parameter                     |Data type  | Description                                                        |
+| Python identifier                   |Data type  | Description                                                        |
 |----------------------------- |----| ------------------------------------------------------------------|
 | `name`                       | string|  Name for the qubit model                          |
 | `instruction_set`              | "gate_based"| Underlying qubit technology |
@@ -178,9 +214,9 @@ params.qubit_params.two_qubit_joint_measurement_error_rate = 1e-5
 The following code shows how to specify custom qubit parameters for a gate-based instruction set:
 
 ```python
-from azure.quantum.target.microsoft import MicrosoftEstimatorParams, QubitParams
+from qsharp.estimator import EstimatorParams, QubitParams,
 
-params = MicrosoftEstimatorParams()
+params = EstimatorParams()
 
 params.qubit_params.name = "your_custom_name"
 params.qubit_params.instruction_set = "gate_based"
@@ -189,11 +225,12 @@ params.qubit_params.t_gate_time = "10 ns"
 params.qubit_params.idle_error_rate = 0.02
 ```
 
-When not specified, the values for `two_qubit_gate_time` and `t_gate_time` default to `one_qubit_gate_time`, the values for `two_qubit_gate_error_rate` and `t_gate_error_rate` default to `one_qubit_gate_error_rate`, and the value for `idle_error_rate` defaults to `one_qubit_measurement_error_rate`.
+> [!NOTE]
+> When not specified, the values for `two_qubit_gate_time` and `t_gate_time` default to `one_qubit_gate_time`, the values for `two_qubit_gate_error_rate` and `t_gate_error_rate` default to `one_qubit_gate_error_rate`, and the value for `idle_error_rate` defaults to `one_qubit_measurement_error_rate`.
 
 #### Qubit parameters for Majorana qubits
 
-| Parameter                    | Data type  | Description                                                        |
+| Python identifier             | Data type  | Description                                                        |
 |----------------------------- |----| ------------------------------------------------------------------|
 | `name`                       | string|  Name for the qubit model                          |
 | `instruction_set`            | "majorana"| Underlying qubit technology  |
@@ -208,9 +245,9 @@ When not specified, the values for `two_qubit_gate_time` and `t_gate_time` defau
 A minimum template for Majorana based instruction set with all required values is:
 
 ```python
-from azure.quantum.target.microsoft import MicrosoftEstimatorParams, QubitParams
+from qsharp.estimator import EstimatorParams, QubitParams,
 
-params = MicrosoftEstimatorParams()
+params = EstimatorParams()
 
 params.qubit_params.name = "your_custom_name"
 params.qubit_params.instruction_set = "majorana"
@@ -218,7 +255,8 @@ params.qubit_params.one_qubit_measurement_time = "10 ns"
 params.qubit_params.one_qubit_measurement_error_rate = 0.01
 ```
 
-When not specified, the values for `two_qubitJointMeasurementTime` and `t_gate_time` default to `one_qubit_measurement_time`, the values for `two_qubit_joint_measurement_error_rate` and `t_gate_error_rate` default to `one_qubit_measurement_error_rate`, and the value for `idle_error_rate` defaults to `one_qubit_measurement_error_rate`.
+> [!NOTE]
+> When not specified, the values for `two_qubitJointMeasurementTime` and `t_gate_time` default to `one_qubit_measurement_time`, the values for `two_qubit_joint_measurement_error_rate` and `t_gate_error_rate` default to `one_qubit_measurement_error_rate`, and the value for `idle_error_rate` defaults to `one_qubit_measurement_error_rate`.
 
 For `one_qubit_measurement_error_rate` and `two_qubit_joint_measurement_error_rate`, you can specify the error rates corresponding to measurement readouts, `readout`, and measurement processing, `process`. These values can be either `<double>` numbers or pairs of numbers. For example:
 
@@ -247,26 +285,17 @@ where $d$ is the code distance, $p$ is the physical error rate, and $p^\*$ is th
 
 In particular, $p = {}$ max(`one_qubit_measurement_error_rate`, `one_qubit_gate_error_rate`, `two_qubit_gate_error_rate`) for qubit parameters with a gate-based instruction set, and $p = {}$ max(`one_qubit_measurement_error_rate`, `two_qubit_joint_measurement_error_rate`) for qubit parameters with a Majorana instruction set. QEC schemes typically have an error rate threshold $p^\*$ below which error correction suppresses errors.
 
-|QEC protocol|Physical qubit instruction|Description|
+|QEC protocol|Python identifier|Description|
 |----|----|-----|
-|`SURFACE_CODE`|GateBased and Majorana| The gate-based surface code is based on [arXiv:1208.0928](https://arxiv.org/abs/1208.0928) and [arXiv:1009.3686](https://arxiv.org/abs/1009.3686). The Majorana surface code is based on [arXiv:1909.03002](https://arxiv.org/abs/1909.03002) and [arXiv:2007.00307](https://arxiv.org/abs/2007.00307).|
-|`FLOQUET_CODE`| Majorana|The floquet code is based on [arXiv:2202.11829](https://arxiv.org/abs/2202.11829).|
-
-You can specify predefined QEC schemes by selecting `qec_scheme.name` for the `QECScheme` class in the top-level parameters, for example:
-
-```python
-from azure.quantum.target.microsoft import MicrosoftEstimatorParams,  QECScheme
-
-params = MicrosoftEstimatorParams()
-params.qec_scheme.name = QECScheme.FLOQUET_CODE
-```
+|"`surface_code`"|`SURFACE_CODE`| The gate-based surface code is based on [arXiv:1208.0928](https://arxiv.org/abs/1208.0928) and [arXiv:1009.3686](https://arxiv.org/abs/1009.3686). The Majorana surface code is based on [arXiv:1909.03002](https://arxiv.org/abs/1909.03002) and [arXiv:2007.00307](https://arxiv.org/abs/2007.00307).|
+|"`floquet_code`"| `FLOQUET_CODE`|Only for Majorana qubits. The floquet code is based on [arXiv:2202.11829](https://arxiv.org/abs/2202.11829).|
 
 > [!NOTE]
-> If no value is provided for the `qec_scheme.name` parameter, `SURFACE_CODE` for the gate-based qubit is chosen as the default QEC.
+> Unless other value is specified, the default value for the QEC scheme is "surface_code".
 
 The exact parameters for each predefined QEC scheme (including a crossing pre-factor $a$, which can be extracted numerically for simulations) are the following.
 
-```JSON
+```python
 {
     "qubitParams": {
         "instructionSet": "GateBased",
@@ -307,35 +336,60 @@ The exact parameters for each predefined QEC scheme (including a crossing pre-fa
 }
 ```
 
+### Passing predefined QEC schemes
+
+There are two ways to specify predefined QEC schemes. You can select the QEC model name for the `"qecScheme"` class when running `qsharp.estimate`. For example, to select the floquet code, write:
+
+```python
+qsharp.estimate("RunProgram()", params=
+                {"qecScheme": {
+                        "name": "floquet_code"
+                    }
+                })
+```
+
+You can also pass a list of estimation parameters to the `EstimatorParams` class. For example, to select the floquet code, write:
+
+```python
+from qsharp.estimator import EstimatorParams, QubitParams, QECScheme,
+
+params = EstimatorParams()
+params.items.qec_scheme.name = QECScheme.FLOQUET_CODE # floquet code QEC scheme
+
+qsharp.estimate("RunProgram()", params=params)
+```
+
 ### Customize predefined QEC schemes
 
 You can customize predefined QEC schemes by specifying the name and then updating any of the other values. For example, to increase the crossing pre-factor in the floquet code, write:
 
 ```python
-from azure.quantum.target.microsoft import MicrosoftEstimatorParams, QubitParams, QECScheme
-
-params = MicrosoftEstimatorParams()
-params.qec_scheme.name = QECScheme.FLOQUET_CODE
-params.qec_scheme.crossing_prefactor = 0.08
+qsharp.estimate("RunProgram()", params=
+                {"qecScheme": {
+                        "name": "floquet_code",
+                        "crossingPrefactor": 0.07,
+                    }
+                })
 ```
 
-When not specified, the values for `logical_cycle_time` and `physical_qubits_per_logical_qubit` default to `one_qubit_measurement_time`, the value for `error_correction_threshold` defaults to `0.01`, and the value for `crossing_prefactor` defaults to `0.03`.
+> [!NOTE]
+> When not specified, the values for `"logicalCycleTime"` and `"physicalQubitsPerLogicalQubit"` default to `"oneQubitMeasurementTime"`, the value for `"errorCorrectionThreshold"` defaults to `0.01`, and the value for `"crossingPrefactor"` defaults to `0.03`.
 
 ### Customize your QEC schemes
 
-The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `crossing_prefactor` $a$ and the `error_correction_threshold` $p^\*$. Further, you need to specify the `logical_cycle_time`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `physical_qubits_per_logical_qubit`, that is, the number of physical qubits required to encode one logical qubit based on the code distance.
+The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `"crossingPrefactor"` $a$ and the `"errorCorrectionThreshold"` $p^\*$. Further, you need to specify the `"logicalCycleTime"`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `"physicalQubitsPerLogicalQubit"`, that is, the number of physical qubits required to encode one logical qubit based on the code distance.
 
 You can use the following code as a template for QEC schemes:
 
-```JSON
-{
-    "qecScheme": {
-        "crossingPrefactor": <double>,
-        "errorCorrectionThreshold": <double>,
-        "logicalCycleTime": <formula string>,
-        "physicalQubitsPerLogicalQubit": <formula string>
-    }
-}
+```python
+qsharp.estimate("RunProgram()", params=
+                {"qecScheme": {
+                        "crossingPrefactor": <double>,
+                        "errorCorrectionThreshold": <double>,
+                        "logicalCycleTime": <formula string>,
+                        "physicalQubitsPerLogicalQubit": <formula string>
+                    }
+                })                
 ```
 
 Inside the formulas, you can use the variables `one_qubit_gate_time`, `two_qubit_gate_time`, `one_qubit_measurement_time`, and `two_qubit_joint_measurement_time`, whose values are taken from the corresponding field from the [physical qubit parameters](#customize-predefined-qubit-parameters), as well as the variable `eccDistance` for the code distance computed for the logical qubit, based on the physical qubit properties, the error correction threshold, and the crossing prefactor. The time variables and `eccDistance` can be used to describe the `logicalCycleTime` formula. For the formula `physicalQubitsPerLogicalQubit` only the `eccDistance` can be used.
@@ -346,15 +400,6 @@ The total error budget $\epsilon$ sets the overall tolerated error for the algor
 
 For example, if you're running Shor’s algorithm for factoring integers, a large value for the error budget may be tolerated as one can check that the outputs are indeed the prime factors of the input. On the other hand, a smaller error budget may be needed for an algorithm solving a problem with a solution, which can't be efficiently verified.
 
-You can specify the error budget by setting a number between 0 and 1, for example:
-
-```python
-from azure.quantum.target.microsoft import MicrosoftEstimatorParams
-
-params = MicrosoftEstimatorParams()
-params.error_budget.logical = 0.1
-```
-
 The error budget corresponds to the sum of three parts:
 
 $$ \epsilon = \epsilon_{\log} + \epsilon_{\rm dis} + \epsilon_{\rm syn} $$
@@ -363,14 +408,35 @@ If no further specified, the error budget $\epsilon$ is uniformly distributed an
 
 Note that for distillation and rotation synthesis, the respective error budgets $\epsilon_{\rm dis}$ and $\epsilon_{\rm syn}$ are uniformly distributed among all required T states and all required rotation gates, respectively. If there aren't rotation gates in the input algorithm, the error budget is uniformly distributed to logical errors and T state errors.
 
-Also, you can individually specify each component of the error budget. The sum of all values must be 1. If a quantum algorithm doesn't contain T states or rotations, then the values of `t_states` and `rotations` may be 0 respectively.
+### Passing error budget
 
-The following code shows how to specify the `error_budget` parameter with T states and rotations:
+There are two ways to specify the error budget by setting a number between 0 and 1. You can pass the error budget when running `qsharp.estimate`. For example, to select an error budget of 1/3, write:
 
 ```python
-from azure.quantum.target.microsoft import MicrosoftEstimatorParams
+qsharp.estimate("RunProgram()", params=
+                {'errorBudget': 0.333
+                })
+```
 
-params = MicrosoftEstimatorParams()
+You can also pass the error budget parameters to the `EstimatorParams` class.
+
+```python
+from qsharp.estimator import EstimatorParams, QubitParams, QECScheme,
+
+params = EstimatorParams()
+params.items.error_budget = 0.333 # error budget of 1/3
+
+qsharp.estimate("RunProgram()", params=params)
+```
+
+Also, you can individually specify each component of the error budget. The sum of all values must be 1. If a quantum algorithm doesn't contain T states or rotations, then the values of `t_states` and `rotations` may be 0 respectively.
+
+The following code shows how to specify the error budget parameter with T states and rotations:
+
+```python
+from qsharp.estimator import EstimatorParams, QubitParams,
+
+params = EstimatorParams()
 params.error_budget.logical = 0.01
 params.error_budget.t_states = 0.02
 params.error_budget.rotations = 0.03
@@ -378,7 +444,7 @@ params.error_budget.rotations = 0.03
 
 ## Constraints
 
-You can use the `constraints` class to apply constraints on the [T factory](xref:microsoft.quantum.concepts.tfactories#t-factories-in-the-azure-quantum-resource-estimator) component-level. By adjusting constraints, you can optimize the estimates toward reducing the number of qubits or toward reducing the runtime.
+You can use the `"constraints"` class to apply constraints on the [T factory](xref:microsoft.quantum.concepts.tfactories#t-factories-in-the-azure-quantum-resource-estimator) component-level. By adjusting constraints, you can optimize the estimates toward reducing the number of qubits or toward reducing the runtime.
 
 |Parameter|Data type|Description|
 |----|----|-----|
@@ -390,9 +456,9 @@ You can use the `constraints` class to apply constraints on the [T factory](xref
 The following code shows how to specify the constraints for a quantum algorithm:
 
 ```python
-from azure.quantum.target.microsoft import MicrosoftEstimatorParams
+from qsharp.estimator import EstimatorParams
 
-params = MicrosoftEstimatorParams()
+params = EstimatorParams()
 
 params.constraints.max_duration = "1 s"
 params.constraints.logical_depth_factor = 1.5
@@ -407,15 +473,14 @@ params.constraints.max_t_factories = 10
 
 ## Distillation units
 
-You can provide custom specifications for T factories distillation algorithms with the `DistillationUnitSpecification` class. The specification can be either predefined or custom. You can specify a predefined specification by selecting the distillation unit name: `15-1 RM` or `15-1 space-efficient`.
+You can provide specifications for T factories distillation algorithms with the `DistillationUnitSpecification` class. The specification can be either predefined or custom. You can specify a predefined specification by selecting the distillation unit name: `15-1 RM` or `15-1 space-efficient`.
 
 ```python
-from azure.quantum.target.microsoft import MicrosoftEstimatorParams
-from azure.quantum.target.microsoft.target import DistillationUnitSpecification
+from qsharp.estimator import EstimatorParams, DistillationUnitSpecification
 
-params = MicrosoftEstimatorParams()
+params = EstimatorParams()
 unit = DistillationUnitSpecification()
-unit.name = "15-1 RM"
+unit.name = "15-1 RM" # predefined distillation unit
 
 params.distillation_unit_specifications.append(unit)
 ```
@@ -427,32 +492,31 @@ In both cases, notation *15-1* stands for 15 input T states and 1 output T state
 
 ### Customize your distillation units
 
-You can defined your custom distillation units as follows:
+You can customize your own distillation units. The exact parameters for the distillation units are the following.
 
-```JSON
-{
-    "distillationUnitSpecifications": [
-        "displayName": <string>, 
-        "numInputTs": <int>,
-        "numOutputTs": <int>,
-        "failureProbabilityFormula": <string>,
-        "outputErrorRateFormula": <string>,
-        "physicalQubitSpecification": <protocol specific parameters>, 
-        "logicalQubitSpecification": <protocol specific parameters>, 
-        "logicalQubitSpecificationFirstRoundOverride": <protocol specific parameters>, // Only if "logicalQubitSpecification"
-    ]
-}
+```python
+qsharp.estimate("RunProgram()", params=
+                    {"distillationUnitSpecifications": {
+                        "displayName": <string>, 
+                        "numInputTs": <int>,
+                        "numOutputTs": <int>,
+                        "failureProbabilityFormula": <string>,
+                        "outputErrorRateFormula": <string>,
+                        "physicalQubitSpecification": <protocol specific parameters>, 
+                        "logicalQubitSpecification": <protocol specific parameters>, 
+                        "logicalQubitSpecificationFirstRoundOverride": <protocol specific parameters>, // Only if "logicalQubitSpecification"
+                        }
+                })
 ```
 
 All numeric parameters are expected to be positive. The `displayName` specifies how the distillation unit will be displayed in output results.
 
-The following code shows how to specify the distillation unit parameters for a quantum algorithm:
+The following code shows how to specify the distillation unit parameters for a quantum algorithm using the `DistillationUnitSpecification` class.
 
 ```python
-from azure.quantum.target.microsoft import MicrosoftEstimatorParams
-from azure.quantum.target.microsoft.target import DistillationUnitSpecification, ProtocolSpecificDistillationUnitSpecification
+from qsharp.estimator import EstimatorParams, DistillationUnitSpecification, ProtocolSpecificDistillationUnitSpecification
 
-params = MicrosoftEstimatorParams()
+params = EstimatorParams()
 unit = DistillationUnitSpecification()
 unit.display_name = "T"
 unit.failure_probability_formula = "c"
@@ -483,7 +547,7 @@ At least one of the parameters `physical_qubit_specification` or `logical_qubit_
 
 The parameter `logical_qubit_specification_first_round_override` can be provided only if `logical_qubit_specification` is specified. If so, it overrides values of `logical_qubit_specification` in case if applied at the first round of distillation. The value `<protocol specific parameters> ` that is required for `logical_qubit_specification_first_round_override` should follow the scheme:
 
-```JSON
+```python
 {
     "numUnitQubits": <int>,
     "durationInQubitCycleTime": <double>
@@ -498,4 +562,3 @@ The parameter `logical_qubit_specification_first_round_override` can be provided
 - [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator)
 - [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
 - [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir)
-- [Sample: Resource estimation with Q# and VS Code](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation/integer-factorization-with-cli)

@@ -16,8 +16,8 @@ uid: microsoft.quantum.hybrid.integrated
 
 Integrated hybrid computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Using qubit reuse techniques, larger programs can run on machines utilizing a smaller number of qubits.
 
-> [!NOTE]
-> Integrated hybrid quantum computing isn't currently supported by the [Azure Quantum Development Kit (QDK) Preview](https://github.com/microsoft/qsharp/wiki/Installation) extension for Visual Studio Code. To run integrated hybrid jobs, use the [Microsoft Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#the-microsoft-quantum-development-kit-qdk).
+> [!IMPORTANT]
+> Integrated hybrid quantum computing isn't currently supported by the Modern Quantum Development Kit (Modern QDK) extension for Visual Studio Code, along with other components in the examples on this page, such as the IQ# kernel, the `%azure` magic command, or the `qsharp.azure` module. To run integrated hybrid jobs, use the Microsoft Quantum Development Kit (Classic QDK). For more information, see [Continue working in the Classic QDK](xref:microsoft.quantum.install-qdk.overview#continue-working-in-the-classic-qdk).
 
 For more discussion, see:
 
@@ -47,6 +47,9 @@ To start exploring integrated hybrid programming, we suggest walking through the
 ## Submitting integrated hybrid jobs
 
 When submitting an integrated hybrid job, you need to add a *target capability* parameter after specifying the target. Other than that, integrated hybrid programs on Azure Quantum are run and managed just as regular quantum jobs. Each job has a single job ID and the result is a single histogram.
+
+> [!IMPORTANT]
+> Integrated hybrid quantum computing isn't currently supported by the Modern Quantum Development Kit (Modern QDK) extension for Visual Studio Code, along with other components in the examples on this page, such as the IQ# kernel, the `%azure` magic command, or the `qsharp.azure` module. To run integrated hybrid jobs, use the Microsoft Quantum Development Kit (Classic QDK). For more information, see [Continue working in the Classic QDK](xref:microsoft.quantum.install-qdk.overview#continue-working-in-the-classic-qdk). 
 
 ### IQ\#
 

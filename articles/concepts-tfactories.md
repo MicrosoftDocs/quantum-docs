@@ -70,6 +70,5 @@ For more information, see Appendix C of [Assessing requirements to scale to prac
 
 - [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
 - [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
-- [Open quantum systems](xref:microsoft.quantum.concepts.opensystems)
 - [Grover's algorithm](xref:microsoft.quantum.concepts.grovers)
 - [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir)

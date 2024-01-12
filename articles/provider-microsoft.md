@@ -30,14 +30,6 @@ For more information, see [An introduction to resource estimation](xref:microsof
 
 ## Quantum simulators
 
-The Quantum Development Kit includes multiple in-memory quantum simulators that represent different ways of simulating the same quantum algorithm. In-memory simulators have the advantage of being able to run locally and thus faster, as well as running jobs as often as needed free of charge.
+The Quantum Development Kit includes an in-memory quantum simulator, the [Sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator). The sparse simulator simulates quantum algorithms with sparse states,that is, small number of states in superposition.
 
-|Simulator |Class| Namespace | Description|
-|-----|------|---|------|
-|[Full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator)| `QuantumSimulator` | `Microsoft.Quantum.Simulation.Simulators`| Runs and debugs quantum algorithms, and is limited to about 30 qubits. |
-|[Sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator)| `SparseSimulator` | `Microsoft.Quantum.Simulation.Simulators`| Simulates quantum algorithms with sparse states, small number of states in superposition.|
-|[Trace-based resource estimator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro)|  `QCTraceSimulator` | `Microsoft.Quantum.Simulation.Simulators`| Runs advanced analysis of resources consumptions for the algorithm's entire call-graph, and supports thousands of qubits.|
-|[Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator)| `ToffoliSimulator` | `Microsoft.Quantum.Simulation.Simulators`|Simulates quantum algorithms that are limited to `X`, `CNOT`, and multi-controlled `X` quantum operations, and supports million of qubits. |
-|[Noise simulator](xref:microsoft.quantum.machines.overview.noise-simulator)| `OpenSystemsSimulator` | `Microsoft.Quantum.Simulation.Simulators`|Simulates quantum algorithms under the presence of noise, and also the *stabilizer representation* (also known as CHP simulation) of quantum algorithms.|
-
-For more information, see [In-memory quantum simulators](xref:microsoft.quantum.machines.overview).
+In-memory simulators have the advantage of being able to run locally and thus faster, as well as running jobs as often as needed free of charge.

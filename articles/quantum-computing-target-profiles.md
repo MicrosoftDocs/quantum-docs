@@ -15,8 +15,6 @@ uid: microsoft.quantum.target-profiles
 
 This article discusses the different type of target profile types available in the quantum computing providers in Azure Quantum. At this time, because of the early development stage of the field, quantum devices have some limitations and requirements for programs that run on them.
 
-[!INCLUDE [Quantinuum target name update](includes/quantinuum-name-change.md)] 
-
 ## Quantum Processing Units (QPU): different profiles and their limitations 
 
 A Quantum Processing Unit (QPU) is a physical or simulated processor that contains a number of interconnected qubits that can be manipulated to compute
@@ -32,12 +30,7 @@ Quantum devices are still an emerging technology, and not all of them can run al
 
 :::no-loc text="Full"::: profile targets can run any Q# program, meaning you can
 write programs without functionality restrictions. Azure Quantum does not provide
-any target with this profile yet, but you can try any Q# program locally using the
-[:::no-loc text="Full state"::: simulator](xref:microsoft.quantum.machines.overview.full-state-simulator). 
-
-If you need help setting up your environment to run Q# programs locally, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview).
-
-You can also explore different [Q# code samples](/samples/browse/?languages=qsharp) to run locally with the QDK.
+any target with this profile yet.
 
 ## Create and run applications for :::no-loc text="No Control Flow"::: profile targets
 

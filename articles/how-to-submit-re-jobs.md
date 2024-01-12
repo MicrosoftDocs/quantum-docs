@@ -1,61 +1,55 @@
 ---
 author: SoniaLopezBravo
-description: This document provides a basic guide to submit jobs to the Azure Quantum Resources Estimator
+description: This document provides a basic guide to run resource estimates both locally and online using different SDKs and IDEs.
 ms.author: sonialopez
-ms.date: 11/10/2022
+ms.date: 01/07/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.custom: devx-track-azurecli
 ms.topic: how-to
-title: Submit jobs to the Resource Estimator target
+title: Run Resource Estimates with Different SDKs and IDEs
 uid: microsoft.quantum.submit-resource-estimation-jobs
 no-loc: [target, targets]
-zone_pivot_groups: azurequantum-quantumcomputing-re-ide
+zone_pivot_groups: ide-local-portal-jupyter
 ---
 
-# Use different SDKs and IDEs with the Resource Estimator
+# How to use different SDKs and IDEs with the Resource Estimator
 
-In this article, you'll learn to work with the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) using different SDKs and development environments. Each example estimates and analyzes the physical resource estimates of a quantum program targeted on a fault-tolerant quantum computer.
+In this article, you'll learn to work with the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). The Resource Estimator is available both in VS Code and online in Azure portal.
 
-[!INCLUDE [Modern QDK RE banner](includes/new-qdk-resource-estimator-support.md)]
+The following table shows the different ways to run the Resource Estimator.
 
-## Prerequisites
+|User scenario|Platform| Tutorial|
+|---|---|---|
+|Estimate the resources of a Q# program|Visual Studio Code| Select **Q# in VS Code** at the top of the page|
+|Estimate the resources of a Q# program (advanced)|Jupyter Notebook in Visual Studio Code| Select **Q# in Jupyter Notebook** at the top of the page|
+|Estimate the resources of a Qiskit program|Azure Quantum portal|Select **Qiskit in Azure portal** at the top of the page|
+|Estimate the resources of a QIR program|Azure Quantum portal| [Submit QIR](xref:microsoft.quantum.tutorial.resource-estimator.qir)|
+|Use FCIDUMP files as argument parameters (advanced)| Azure Quantum portal| [Submit a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)|
 
-- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
-- An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The **Microsoft Quantum Computing** provider added to your workspace. For more information, see [Enabling the Resource Estimator target](xref:microsoft.quantum.quickstarts.computing.resources-estimator#enable-the-resources-estimator-in-your-workspace).
+[!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
 
-## Run the Resource Estimator
+::: zone pivot="platform-local"
 
-The Resource Estimator is a target of the Microsoft Quantum Computing provider. Using the Resource Estimator is exactly the same as submitting a job against other software and hardware provider targets in Azure Quantum - define your program, set a target, and submit your job for computation. The *target_id* for the Resource Estimator is `microsoft.estimator`. 
-
-When you set the target, you can provide additional optional parameters such as the qubit type, one qubit gate time, etc. For more information, see [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator).
-
-The Resource Estimator returns detailed output that can be visually rendered or programmatically parsed. For more information, see [Understand the result data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data).
-
-- Job type: Simulation (Estimation)
-- Target ID: `microsoft.estimator`
-
-> [!NOTE]
-> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
-
-::: zone pivot="ide-python-qsharp"
-
-[!INCLUDE [python-qsharp-procedure](includes/how-to-submit-resources-estimation-include-python.md)]
+[!INCLUDE [local-procedure](includes/how-to-submit-resources-estimation-include-qsharp-local.md)]
 
 ::: zone-end
 
-::: zone pivot="ide-portal-qiskit"
+::: zone pivot="platform-local-jupyter"
+
+[!INCLUDE [local-jupyter-procedure](includes/how-to-submit-resources-estimation-include-jupyter-local.md)]
+
+::: zone-end
+
+::: zone pivot="platform-portal-qiskit"
 
 [!INCLUDE [portal-qiskit-procedure](includes/how-to-submit-resources-estimation-include-qiskit.md)]
 
 ::: zone-end
 
-::: zone pivot="ide-vscode-qsharp"
 
-[!INCLUDE [vscode-qsharp-procedure](includes/how-to-submit-resources-estimation-include-vscode.md)]
-
-::: zone-end
+> [!NOTE]
+> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
 
 ## Next steps
 
@@ -65,4 +59,3 @@ The Resource Estimator returns detailed output that can be visually rendered or 
 - [Get the most out of the Resource Estimator](xref:microsoft.quantum.work-with-resource-estimator)
 - [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator)
 - [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir)
-- [Sample: Resource estimation with Q# and VS Code](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation/integer-factorization-with-cli)

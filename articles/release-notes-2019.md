@@ -86,7 +86,7 @@ This release contains the following:
 
 - New indexing for slicing arrays, for more information, see the [language reference](xref:microsoft.quantum.qsharp.contextualexpressions#contextual-and-omitted-expressions).
 - Added Dockerfile hosted on the [Microsoft Container Registry](https://github.com/microsoft/ContainerRegistry), for more information, see the [IQ# repository](https://github.com/microsoft/iqsharp/blob/main/README.md)
-- Breaking change for [the trace simulator](xref:microsoft.quantum.machines.overview.qc-trace-simulator.intro), update to configuration settings, name changes; see the [.NET API Browser for the updated names](/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulatorconfiguration).
+- Breaking change for the trace simulator, update to configuration settings, name changes; see the [.NET API Browser for the updated names](/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulatorconfiguration).
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed) and [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed).  
 
@@ -117,9 +117,9 @@ This release adds a numerics library: Learn more about how to [use the new numer
 This release reorganizes, extends and updates the chemistry library:
 
 * Improves modularity of components, extensibility, general code cleanup.  [PR #58](https://github.com/microsoft/QuantumLibraries/pull/58).
-* Add support for [multi-reference wavefunctions](xref:microsoft.quantum.libraries.overview-chemistry.concepts.multireference), both sparse multi-reference wavefunctions and unitary coupled cluster.  [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
+* Add support for multi-reference wavefunctions, both sparse multi-reference wavefunctions and unitary coupled cluster.  [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 * (Thank you!) [1QBit](https://1qbit.com) contributor ([@valentinS4t1qbit](https://github.com/ValentinS4t1qbit)): Energy evaluation using variational ansatz. [PR #120](https://github.com/Microsoft/QuantumLibraries/pull/120).
-* Updating [Broombridge](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge) schema to new [version 0.2](xref:microsoft.quantum.libraries.overview.chemistry.schema.spec_v_0_2), adding unitary coupled cluster specification. [Issue #65](https://github.com/microsoft/QuantumLibraries/issues/65).
+* Updating Broombridgeschema to new version 0.2, adding unitary coupled cluster specification. [Issue #65](https://github.com/microsoft/QuantumLibraries/issues/65).
 * Adding Python interoperability to chemistry library functions. Try out this [sample](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/PythonIntegration). [Issue #53](https://github.com/microsoft/QuantumLibraries/issues/53) [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 
 ## QDK version 0.6.1905
@@ -164,7 +164,7 @@ With this change, programs that include a single "open" statement for the namesp
 
 - The Microsoft.Quantum.Arithmetic namespace has been normalized to use the <xref:Microsoft.Quantum.Arithmetic.LittleEndian> user-defined type. Use the function [BigEndianAsLittleEndian](xref:Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian) when needed to convert to little endian.  
 
-- The names of several callables (functions and operations) have been changed to conform to the [Q# Style Guide](xref:microsoft.quantum.contributing-qdk.overview.style).  The old callable names are deprecated.  Programs that use the old callables continue to work with a compile-time warning.
+- The names of several callables (functions and operations) have been changed to conform to the Q# Style Guide.  The old callable names are deprecated.  Programs that use the old callables continue to work with a compile-time warning.
 
 #### New samples
 
@@ -241,5 +241,5 @@ This release contains the following:
 This release contains the following:
 
 - Adds support for a new primitive type, BigInt, which represents a signed integer of arbitrary size.  Learn more about [BigInt](xref:microsoft.quantum.qsharp.valueliterals#bigint-literals).
-- Adds new Toffoli simulator, a special purpose fast simulator that can simulate X, CNOT and multi-controlled X quantum operations with large numbers of qubits.  Learn more about [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator).
-- Adds a simple resource estimator that estimates the resources required to run a given instance of a Q# operation on a quantum computer.  Learn more about the [Resource Estimator](xref:microsoft.quantum.machines.overview).
+- Adds new Toffoli simulator, a special purpose fast simulator that can simulate X, CNOT and multi-controlled X quantum operations with large numbers of qubits. 
+- Adds a simple resource estimator that estimates the resources required to run a given instance of a Q# operation on a quantum computer. 

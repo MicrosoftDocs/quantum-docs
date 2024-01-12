@@ -1,18 +1,31 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 08/08/2023
+ms.date: 01/07/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
 no-loc: [target, targets]
 ---
 
-## Resource estimation with Qiskit in Azure Quantum notebook
+## Prerequisites for Qiskit
 
-In this example, you'll create a quantum circuit for a multiplier based on the construction presented in [Ruiz-Perez and Garcia-Escartin (arXiv:1411.5949)](https://arxiv.org/abs/1411.5949) which uses the Quantum Fourier Transform to implement arithmetic. 
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
+- An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
-### Create a new notebook in your workspace
+## Enable the Azure Quantum Resource Estimator target in your workspace
+
+The Resource Estimator is a target of the Microsoft Quantum Computing provider. If you have created a workspace since the release of the Resource Estimator, the Microsoft Quantum Computing provider was added to your workspace automatically.
+
+If you are using an *existing* Azure Quantum workspace:
+
+1. Open your workspace in the [Azure portal](https://portal.azure.com/).
+2. On the left panel, under **Operations**, select **Providers**.
+3. Select **+ Add a provider**.
+4. Select **+ Add** for **Microsoft Quantum Computing**.
+5. Select **Learn & Develop** and select **Add**.
+
+## Create a new notebook in your workspace
 
 1. Log in to the [Azure portal](https://portal.azure.com/) and select your Azure Quantum workspace.
 1. Under **Operations**, select **Notebooks**
@@ -23,11 +36,17 @@ In this example, you'll create a quantum circuit for a multiplier based on the c
 When your new notebook opens, it automatically creates the code for the first cell, based on your subscription and workspace information.
 
 ```python
-provider = AzureQuantumProvider (
-    resource_id = "",
-    location = ""
+from azure.quantum import Workspace
+workspace = Workspace ( 
+    resource_id = "", # Your resource_id 
+    location = ""  # Your workspace location (for example, "westus") 
 )
 ```
+
+> [!NOTE]
+> Unless otherwise noted, you should run each cell in order as you create it to avoid any compilation issues. 
+
+Click the triangular "play" icon to the left of the cell to run the code. 
 
 ### Load the required imports
 
@@ -42,16 +61,20 @@ from qiskit.circuit.library import RGQFTMultiplier
 from qiskit.tools.monitor import job_monitor
 ```
 
-Create a backend instance and set the Resource Estimator as your target. 
+## Connect to the Azure Quantum service
+
+Next, create an `AzureQuantumProvider` object using the `workspace` object from the previous cell to connect to your Azure Quantum workspace. You create a backend instance and set the Resource Estimator as your target.
 
 ```python
+provider = AzureQuantumProvider(workspace)
 backend = provider.get_backend('microsoft.estimator')
 ```
 
 ### Create the quantum algorithm
 
-You can adjust the size of the multiplier by changing the `bitwidth` variable. The circuit generation is wrapped in a function that can be called with the `bitwidth` value of the multiplier. The operation will have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`.
-The function will also print some logical resource counts for the multiplier extracted directly from the quantum circuit.
+In this example, you create a quantum circuit for a multiplier based on the construction presented in [Ruiz-Perez and Garcia-Escartin (arXiv:1411.5949)](https://arxiv.org/abs/1411.5949) which uses the Quantum Fourier Transform to implement arithmetic. 
+
+You can adjust the size of the multiplier by changing the `bitwidth` variable. The circuit generation is wrapped in a function that can be called with the `bitwidth` value of the multiplier. The operation will have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`. The function will also print some logical resource counts for the multiplier extracted directly from the quantum circuit.
 
 ```python
 def create_algorithm(bitwidth):
@@ -128,7 +151,7 @@ In the *Physical qubit parameters* group you can see the physical qubit properti
 
 For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator-output.data) for the Resource Estimator.
 
-#### Space-time diagrams
+#### Space diagrams
 
 The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can visualize this distribution to better understand the estimated space requirements for the algorithm.
 
@@ -140,19 +163,7 @@ result.diagram.space
 
 The space diagram shows the proportion of algorithm qubits and T factory qubits. Note that the number of T factory copies, 28, contributes to the number of physical qubits for T factories as $\text{T factories} \cdot \text{physical qubit per T factory}= 28 \cdot 18,000 = 504,000$.
 
-You can can also visualize the time required to execute the algorithm, the T factory runtime and how many T factory invocations can run during the runtime of the algorithm. For more information, see [T factory physical estimation](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).
-
-```python
-result.diagram.time
-```
-
-:::image type="content" source="../media/resource-estimator-time-diagram-qiskit.PNG" alt-text="Diagram showing the number of T factory invocations during the runtime of the algorithm. There's also a table with the breakdown of the number of T factory copies, number of T factory invocations, T states per invocation, etc.":::
-
-Since the T factoy runtime is 83 microsecs, the T factory can be invoked a total of 543 times during the runtime of the algorithm. One T factory produces one T state, and to execute the algorihtm you need a total of 15,180 T states. Therefore, you need 28 copies of the T factories executed in parallel. The total number of T factory copies is computed as $ \frac{\text{T states} \cdot \text{T factory duration}}{\text{T states per T factory} \cdot
-\text{algorithm runtime}}=\frac{15,180 \cdot 83,200 \text{ns}}{1 \cdot 45,270,000 \text{ns}}=28$. Note that in the diagram, each blue arrow represents the 28 copies of the T factory repeatedly invoked 543 times.
-
-> [!NOTE]
-> You can't visualize the time and space diagrams in the same cell.
+For more information, see [T factory physical estimation](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).
 
 ### Change the default values and estimate the algorithm
 
@@ -181,7 +192,7 @@ result.data()["jobParams"]
   'twoQubitGateTime': '50 ns'}}
  ```
 
-These are the Target parameters that can be customized: 
+These are the target parameters that can be customized: 
 
 * `errorBudget` - the overall allowed error budget
 * `qecScheme` - the quantum error correction (QEC) scheme
@@ -205,7 +216,7 @@ result = job.result()
 result
 ```
 
-You can nspect the physical counts programmatically. For example, you can explore details about the T factory that was created to execute the algorithm.
+You can inspect the physical counts programmatically. For example, you can explore details about the T factory that was created to execute the algorithm.
 
 ```python
 result.data()["tfactory"]

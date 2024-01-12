@@ -164,9 +164,6 @@ Measuring $X\otimes \id$ lets you look at information that is locally stored in 
 While both types of measurements are equally valuable in quantum computing, the former illuminates the power of quantum computing.
 It reveals that in quantum computing, often the information you wish to learn is not stored in any single qubit but rather stored non-locally in all the qubits at once, and therefore only by looking at it through a joint measurement (e.g. $Z\otimes Z$) does this information become manifest.
 
-For example, in error correction, you often wish to learn what error occurred without learning anything about the state that you're trying to protect.
-The [bit-flip code sample](https://github.com/microsoft/Quantum/tree/main/samples/error-correction/bit-flip-code) shows an example of how you can do that using measurements like $Z \otimes Z \otimes \id$ and $\id \otimes Z \otimes Z$.
-
 Arbitrary Pauli operators such as $X\otimes Y \otimes Z \otimes \boldone$ can also be measured.
 All such tensor products of Pauli operators have only two eigenvalues $\pm 1$ and both eigenspaces constitute half-spaces of the entire vector space.
 Thus they coincide with the requirements stated earlier.
@@ -233,5 +230,4 @@ Each qubit measured gives a single bit of information, and the No-Cloning Theore
 - [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)
 - [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
 - [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
-- [Open quantum systems](xref:microsoft.quantum.concepts.opensystems)
 - [Grover's algorithm](xref:microsoft.quantum.concepts.grovers)

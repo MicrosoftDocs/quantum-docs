@@ -13,8 +13,6 @@ uid: microsoft.quantum.more-information
 
 # Further reading: Quantum computing learning resources
 
-In the [quantum computing concepts](xref:microsoft.quantum.concepts.intro) you'll find foundational concepts for any developer of quantum software. However they don't span the depth or breadth of what is known about quantum computer programming. Since quantum computing remains a rapidly developing field, there is no one resource that has all of the information needed.  
-
 This article compiles some of the most popular resources that you may find useful when learning quantum computing. 
 
 ## Microsoft quantum computing resources 

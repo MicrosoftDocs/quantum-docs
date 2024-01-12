@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to work with Q# or Python in a Jupyter notebook in an Azure Quantum workspace.
 ms.author: brbenefield
-ms.date: 02/21/2023
+ms.date: 12/14/2023
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -35,9 +35,6 @@ To get started, you can use a sample notebook from the sample gallery.
 
 The sample notebook can be found under **My notebooks** and you can now run the notebook.
 
-> [!TIP]
-> The **Data management** notebook shows you how to connect and use Azure Quantum notebooks with external datasources such as Azure Blob Storage. Check this sample to access local files, and upload or download data between your local computer and the Portal.
-
 ## Run a notebook
 
 To run Q# or Python code in a Jupyter Notebook, follow these steps.
@@ -60,17 +57,9 @@ Follow these steps to create a new Jupyter Notebook using Q# or Python.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/create-new-notebook.png" alt-text="Screenshot showing how to create a new Jupyter notebook in Azure portal.":::
 
-1. Select either **IQ#** or **IPython** as the **Kernel Type**, type a **File Name** and select **Create file**.
-
-    :::image type="content" source="media/how-to-run-notebooks-workspace/create-new-notebook-kernel-name.png" alt-text="Screenshot of the kernel type and file name for a new Jypter notebook.":::
+1. Type a **File Name** and select **Create file**.
 
 The first cell of the notebook is populated automatically with the connection string to the Azure Quantum workspace.
-
-For Q#, the first cell looks like this:
-
-:::image type="content" source="media/how-to-run-notebooks-workspace/new-qsharp-notebook-snippet.png" alt-text="Screenshot of the fisrt cell in a new Q# notebook in Azure Quantum.":::
-
-For Python, the first cell looks like this:
 
 :::image type="content" source="media/how-to-run-notebooks-workspace/new-python-notebook-snippet.png" alt-text="Screenshot of the first cell in a new Python notebook in Azure Quantum.":::
 
@@ -144,4 +133,4 @@ The following are limitations with Jupyter Notebooks in an Azure Quantum workspa
 ## Next steps
 
 - [Get started with Q# and an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks)
-- [Quickstart: Submit a circuit with Qiskit using an Azure Quantum notebook](xref:microsoft.quantum.quickstarts.computing.qiskit.portal)
+- [Quickstart: Submit a circuit with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit)

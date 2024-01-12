@@ -7,15 +7,13 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', target, targets]
-title: Learn how the Resource Estimator works
+title: Learn How the Resource Estimator Works
 uid: microsoft.quantum.learn-how-resource-estimator-works
 ---
 
 # Learn how the Resource Estimator works
 
-The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) computes pre- and post-layout estimation of the logical resources. It takes a QIR quantum algorithm, for example a program written in Q#, Qiskit, or a QIR generator as [PyQIR](https://github.com/qir-alliance/pyqir), and a set of [target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) to evaluate the resource estimates of the quantum algorithm. Optionally, the Resource Estimator can take operation arguments, that is arguments that can be passed to the QIR program.
-
-In this article, you'll learn the workflow of the Resource Estimator and how the [output data](xref:microsoft.quantum.overview.resources-estimator-output.data) is extracted at different levels of the evaluation of the quantum program. You'll also learn the assumptions taken into account for the simulation of the resource estimation.
+In this article, you'll learn the workflow of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) and how the [output data](xref:microsoft.quantum.overview.resources-estimator-output.data) is extracted at different levels of the evaluation of the quantum program. You'll also learn the assumptions taken into account for the simulation of the resource estimation.
 
 > [!NOTE]
 > If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
@@ -36,7 +34,7 @@ It is crucial that the quantum gate set of a fault-tolerant quantum computer is 
 
 ### Pre-layout resource estimation
 
-The Resource Estimator takes the QIR quantum program and computes a pre-layout estimation of the logical resources. It calculates the number of logical qubits, T gates, rotation gates, CCZ gates, CCiX gates, and measurements in the input quantum program. The number of T gates includes all T gates and adjoint T gates, but not T gates required to implement rotation gates, CCZ gates, or CCiX gates.
+The Resource Estimator takes the quantum program and computes a pre-layout estimation of the logical resources. It calculates the number of logical qubits, T gates, rotation gates, CCZ gates, CCiX gates, and measurements in the input quantum program. The number of T gates includes all T gates and adjoint T gates, but not T gates required to implement rotation gates, CCZ gates, or CCiX gates.
 
 ### Algorithmic logical estimation
 
@@ -104,4 +102,3 @@ The following assumptions are taken into account for the simulation of the resou
 - [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
 - [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
 - [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir)
-- [Sample: Resource estimation with Q# and VS Code](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation/integer-factorization-with-cli)

@@ -110,11 +110,15 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
 1. Next, you create a **Provider object**.
 
     ```python
+    from azure.quantum import Workspace
     from azure.quantum.qiskit import AzureQuantumProvider
-    provider = AzureQuantumProvider (
+
+    workspace = Workspace (
         resource_id = resource_id,
         location = location
     )
+
+    provider = AzureQuantumProvider(workspace)
     ```
 
 1. You create a **quantum backend** using the target you want to use. For example, the following code creates a quantum backend for IonQ simulator. For more information, see [Create an Azure Quantum backend](xref:microsoft.quantum.how-to.adapting-qiskit#create-an-azure-quantum-backend).
@@ -183,17 +187,17 @@ Currently sessions are managed exclusively with Python. You can use `"arguments"
 
 ```python
 with target.open_session(name="Q# session of three jobs") as session:
-    target.submit(input_data=GenerateRandomBits, name="Job 1", input_params={"count":100,  "arguments":    [
+    target.submit(input_data=GenerateRandomBits, name="Job 1", shots=100, input_params={"arguments":    [
         {"name": "angle1", "type": "Double", "value": angle[0]},
         {"name": "angle2", "type": "Double", "value": angle[1]}, 
     ]}) # First job submission
     angle[0] += 1
-    target.submit(input_data=GenerateRandomBits, name="Job 2", input_params={"count":100,  "arguments":    [
+    target.submit(input_data=GenerateRandomBits, name="Job 2", shots=100, input_params={"arguments":    [
         {"name": "angle1", "type": "Double", "value": angle[0]},
         {"name": "angle2", "type": "Double", "value": angle[1]}, 
     ]}) # Second job submission
     angle[1] += 1
-    target.submit(input_data=GenerateRandomBits, name="Job 3", input_params={"count":100,  "arguments":    [
+    target.submit(input_data=GenerateRandomBits, name="Job 3", shots=100, input_params={"arguments":    [
         {"name": "angle1", "type": "Double", "value": angle[0]},
         {"name": "angle2", "type": "Double", "value": angle[1]}, 
     ]}) # Third job submission

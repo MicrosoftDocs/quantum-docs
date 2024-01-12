@@ -24,8 +24,8 @@ landingContent:
         links:
           - text: What is Azure Quantum?
             url: overview-azure-quantum.md
-          - text: Azure Quantum Development Kit (QDK) Preview
-            url: install-overview-qdk.md#the-azure-quantum-development-kit-modern-qdk-preview
+          - text: Get started with the Quantum Development Kit
+            url: install-overview-qdk.md
           - text: Get started with Q# and an Azure Quantum notebook
             url: get-started-jupyter-notebook.md
  

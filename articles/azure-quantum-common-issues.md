@@ -2,7 +2,7 @@
 author: bradben
 description: Troubleshoot common Azure Quantum issues.
 ms.author: brbenefield
-ms.date: 10/20/2023
+ms.date: 01/04/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
@@ -19,25 +19,7 @@ When working with the Azure Quantum service, you may run into these common issue
 
 ### Issue: Missing targets
 
-If the target where you want to run your job is missing from the available target list, you likely need to update to the latest version of the [Quantum Development Kit (Visual Studio 2022)](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or [Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode). For more information, see [Update the QDK](xref:microsoft.quantum.update-qdk).
-
-> [!NOTE]
-> The deprecation of the Toshiba optimization target is effective as of November 6, 2023. After that date, only previous Toshiba customers will be able to continue using Toshiba target until full deprecation on **February 6, 2024**.
-
-### Issue: Local Resources Estimator is missing
-
-The QDK ResourcesEstimator class of the `Microsoft.Quantum.Simulation.Simulators` namespace is removed from March 2023. When running a program that uses the QDK ResourcesEstimator class, you encounter the following error message: `Error CS0246: The type or namespace name 'ResourcesEstimator' could not be found (are you missing a using directive or an assembly reference?)`.
-
-Other possible error messages might happen when running local ResourcesEstimator. If you try to use command line option to call the ResourcesEstimator class, you get:
-
-```
-> -s ResourcesEstimator
-The simulator 'ResourcesEstimator' could not be found.
-```
-
-If you try to use the `%estimate` magic command from Jupyter notebooks, you encounter the following error messages: `UsageError: Line magic function `%estimate` not found.`, or `No such magic command %estimate.` for Q# kernel.
-
-To compute physical and logical resource estimation and runtime, we recommend using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) tool instead.
+If the target where you want to run your job is missing from the available target list, you likely need to update to the latest version of the [Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode). For more information, see [Update the QDK](xref:microsoft.quantum.update-qdk).
 
 ### Issue: Operation returns an invalid status code 'Unauthorized'
 
@@ -60,7 +42,7 @@ Steps to resolve this issue:
 
 ### Issue: "Failed to compile program" when attempting to submit a Q# program through the CLI
 
-When attempting to submit a job at the command prompt using the  `az quantum submit` command, you may encounter the following error message:
+When attempting to submit a job at the command prompt using the `az quantum submit` command, you may encounter the following error message:
 
 ```
 > az quantum job submit ...
@@ -68,7 +50,7 @@ Failed to compile program.
 Command ran in 21.181 seconds (init: 0.457, invoke: 20.724)
 ```
 
-This error occurs when there's a problem with the Q# program that causes the compilation to fail. To see the specific error that is causing the failure, run `dotnet build` in the same folder. 
+This error occurs when there's a problem with the Q# program that causes the compilation to fail. 
 
 ### Issue: Compiler error "Wrong number of gate parameters"
 
@@ -90,6 +72,21 @@ rx(1.5707963267948966) q[0];
 
 > [!NOTE]
 > This issue does not occur in hosted notebooks in the Azure Quantum portal, only in local development environments. 
+
+
+### Issue: Compiler error "not available for the current compilation configuration"
+
+When you run a Q# code cell in a Jupyter Notebook in VS Code, you may encounter the error:
+
+```
+<function name> not found. Found a matching item `<function name>' that is not available for the current compilation configuration
+```
+
+This error indicates that the QIR target profile is set to **Basic** and the function in question requires the **Unrestricted** target profile. To set the target profile to **Unrestricted**:
+
+1. While in your Q# program in VS Code, select **Q#: QIR base** on the bottom status bar. 
+1. From the options displayed in the top status bar, select **Q#: unrestricted**.
+
 
 ### Issue: Operation returned an invalid status code 'Forbidden'
 
@@ -114,22 +111,6 @@ You can verify that you're running into this role assignment issue by following 
     * Select > [Workspace name]
     * Save
 
-### Issue: .NET SDK version mismatch
-
-In version `0.24.201332` of the Quantum Development Kit (QDK), the target framework was updated from .NETCore 3.1 to .NET 6.0, so it's possible to encounter some issues while going from older to newer versions or when using projects from versions before and after this change.
-
-Some recommendations to avoid those problems are:
-
-* Install the latest version of [.NET 6.0](https://dotnet.microsoft.com/download) even if you have .NETCore 3.1 already. Multiple versions can coexist side-by-side in the same environment, so you don't have to uninstall older ones.
-* If you're upgrading an application or test project to a QDK version equal or greater than `0.24.201332`, update the target framework from `netcoreapp3.1` to `net6.0`. Leave the framework as is if you want to keep using older versions of the QDK.
-* If you're a Visual Studio user, you need to upgrade to [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) to develop projects targeting .NET 6.0. We also have a [Q# extension](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) available for this product.
-
-### Issue: Visual Studio 2019 extension isn't being updated
-
-The last released version of the [QDK extension for Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit) was `0.23.195983`. You can continue using this extension with projects targeting up to that QDK version; however, there are no plans to continue upgrading this extension regularly.
-
-In order to use newer versions of the QDK for quantum projects with version `0.24.201332` or higher, you should use either the [extension for Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64) or the [extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
-
 ### Issue: Job fails with error code: QIRPreProcessingFailed
 
 When you submit a job to a Rigetti provider, the job fails and is reported in the Job management console in the Azure portal:
@@ -150,10 +131,10 @@ After you submit a job to a hardware target, your job may sit in the queue for s
 
 To retrieve more information about the failure:
 
-- Use the `%azure.output` magic command with the job ID to view the output or the returned error message:
+- Use the `get_results()` method with the job object to view the output or the returned error message:
 
-```qsharp
-%azure.output b7238080-6498-11ee-becb-00155d62f8be
+```python
+job.get_results()
 ``` 
 
 - In your Azure Portal workspace, select **Operations > Job Management**, and then select the job **Name** to open a detail pane. 
@@ -276,14 +257,3 @@ This can happen for two reasons:
 1. If the storage account no longer exists. This can happen if the storage account linked to the workspace was deleted. To verify, select the **Overview** page for the workspace and select the link to the storage account. If the storage account has been deleted, you will see a **404 - Not found** error.
 
 1. If the managed identity of the workspace is not a **Contributor** to the storage account. Check that the workspace identity (which uses the same name as the workspace) still has the **Contributor** role assignment to the storage account. To verify, select the **Overview** page for the workspace and select the link to the storage account. On the **Overview** page for the storage account, select **Access control (IAM)** and verify that the workspace is listed under **Contributor**.
-
-### Issue: "ModuleNotFoundErrorr: No module named 'qiskit_machine_learning'" when runnig Qiskit sample in Azure Quantum notebook
-
-This error can happen if you haven't installed Qiskit when running a Qiskit Machine Learning sample on the Azure Quantum notebooks. To solve this issue, add a new cell at the top of the notebook and copy: 
-
-```python
-!pip install qiskit
-!pip install qiskit-machine-learning
-```
- Then click on **Run all** on the top left of the notebook.
-

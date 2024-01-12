@@ -8,47 +8,27 @@ ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Python', '$$v', target, targets]
 title: Submit Cirq quantum circuits to Azure Quantum
-zone_pivot_groups: quantum-computing-platforms
+zone_pivot_groups: ide-local-portal
 uid: microsoft.quantum.quickstarts.computing.cirq
 --- 
 
 # Quickstart: Submit a circuit with Cirq to Azure Quantum
 
-[!INCLUDE [Modern QDK banner](includes/new-qdk-support.md)]
+Learn how to submit a Cirq quantum circuit using the `azure-quantum` Python package. You can submit Cirq circuits to Azure Quantum using the Azure Quantum notebook, which have built-in `azure-quantum` Python package, or from your local machine.
 
-Learn how to use the [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview#use-python-with-qiskit-and-cirq) to submit [Cirq](https://github.com/quantumlib/Cirq) quantum circuits to an IonQ or Quantinuum quantum computing target via the Azure Quantum service. For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
+For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
-For information on how to submit a circuit with Qiskit, see [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit).
+[!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
 
-## Prerequisites
+::: zone pivot="platform-local"
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- Create an Azure Quantum workspace and enable your preferred provider, Quantinuum or IonQ (or both), for this scenario. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- Install the latest [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview#use-python-with-qiskit-and-cirq) using the \[cirq\] tag.
-
-    > [!TIP]
-    > If you are using [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual#Downloads), you can optionally create a new environment by downloading [environment.yml](https://github.com/microsoft/azure-quantum-python/blob/main/azure-quantum/environment.yml) and running the following:
-    >
-    >```shell
-    >conda env create -f environment.yml
-    >```
-    >
-    > This creates a new conda environment that you can activate with the following:
-    >
-    >```shell
-    >conda activate azurequantum
-
-- Start your favorite code editor or interactive Python tool, such as [VS Code](https://code.visualstudio.com/docs/python/jupyter-support-py), [Jupyter](https://jupyter.readthedocs.io/en/latest/content-quickstart.html) or [iPython](https://ipython.readthedocs.io/en/stable/interactive/tutorial.html).
-
-::: zone pivot="platform-ionq"
-
-[!INCLUDE [ionq-procedure](includes/quickstart-cirq-include-ionq.md)]
+[!INCLUDE [local-procedure](includes/quickstart-cirq-include-local.md)]
 
 ::: zone-end
 
-::: zone pivot="platform-quantinuum"
+::: zone pivot="platform-portal"
 
-[!INCLUDE [quantinuum-procedure](includes/quickstart-cirq-include-quantinuum.md)]
+[!INCLUDE [portal-procedure](includes/quickstart-cirq-include-portal.md)]
 
 ::: zone-end
 
@@ -65,3 +45,7 @@ For information on how to submit a circuit with Qiskit, see [Quickstart: Submit 
 >     results.append(job.result())
 >```
 
+## Next steps
+
+- [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit).
+- [Quickstart: Submit a circuit with a provider-specific format to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.provider).

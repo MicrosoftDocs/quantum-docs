@@ -166,7 +166,8 @@ num_shots = 5
 job = target.submit(
     input_data=bell_state_quil, 
     name="bell state", 
-    input_params=InputParams(count=num_shots, skip_quilc=False)
+    shots=100, 
+    input_params=InputParams(skip_quilc=False)
 )
 
 print(f"Queued job: {job.id}")

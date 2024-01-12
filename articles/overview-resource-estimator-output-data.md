@@ -1,13 +1,13 @@
 ---
 author: SoniaLopezBravo
 description: This article shows how to interpret the report data of the Resource Estimator and access the output parameters.
-ms.date: 09/26/2023
+ms.date: 01/12/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
 no-loc: ['Q#', '$$v', target, targets]
-title: Resource Estimator output parameters
+title: Resource Estimator Output Parameters
 uid: microsoft.quantum.overview.resources-estimator-output.data
 ---
 
@@ -17,21 +17,22 @@ This article shows how to interpret and retrieve the output data of the Resource
 
 For more information, see [How the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
 
+## Prerequisites
+
+- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
+- The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
+- VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
+- The latest Azure Quantum `qsharp` and `qsharp-widgets` packages.  
+
+    ```bash
+    python -m pip install --upgrade qsharp qsharp-widgets 
+    ```
+
 ## Report data
 
-You can submit your quantum operation to the Resource Estimator target using the `qsharp.azure.execute` function.
+When you calculate the resource estimates of a Q# operation, the Resource Estimator prints a report of the results in the form of a table.
 
-```python
-result = qsharp.azure.execute(QuantumOperation)
-result
-```
-
-The `qsharp.azure.execute` function creates a result object, which can be used to display a table with the results of the resource estimation job. The report table is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget. You can inspect the details by collapsing the groups, which have more information.
-
-> [!TIP]
-> For a more compact version of the report table, you can use `result.summary`.
-
-You can also visualize the distribution of physical qubits used for the algorithm and the T factories to better understand the estimated space requirements for the algorithm. For more information, see the [space-time diagrams](xref:microsoft.quantum.submit-resource-estimation-jobs#space-time-diagrams).
+The report table is printed in groups of output data: physical qubits, breakdown, logical qubit parameters, T factory parameters, pre-layout logical resources, and assumed error budget. You can inspect the details by collapsing the groups, which have more information.
 
 ### Physical qubits
 
@@ -124,10 +125,10 @@ The assumed error budget report contains the following entries:
 
 ## Output parameters
 
-You can programmatically access the output data of the resource estimation job. For example, the following code snippet shows how to access the error budget of the resource estimation job:
+In Jupyter Notebook in VS Code, you can programmatically access the output data of the resource estimation report. For example, the following code snippet shows how to access the resource estimation parameters.
 
 ```python
-result['error_budget']
+result['job_params']
 ```
 
 The following output data constitutes the possible entries that can be access programmatically.
@@ -140,7 +141,6 @@ The following output data constitutes the possible entries that can be access pr
 |`physical_counts_formatted`| dictionary| The physical resource estimates formatted for display in report data. For more information, see [Physical counts formatted](#physical-counts-formatted).|
 |`logical_qubit`| dictionary| The logical qubit properties. For more information, see [Logical qubit](#logical-qubit).|
 |`tfactory`| dictionary| The T factory properties.|
-|`error_budget`| dictionary| The derived error budget. For more information, see [Error budget](#error-budget).|
 |`logical_counts`| dictionary| The pre-layout logical resource estimates. For more information, see [Logical counts](#logical-counts).|
 |`report_data`| dictionary| Generation data for resource estimation report.|
 
@@ -232,15 +232,6 @@ The `logical_qubit` dictionary contains the following entries:
 |`logical_cycle_time`|number| The time to execute one logical operation.|
 |`logical_error_rate`|number| The logical error rate of the logical qubit.|
 
-### Error budget
-
-The `error_budget` dictionary contains the following entries:
-
-|Output parameter|Data type|Description|
-|---|----|----|
-|`rotations`|number|Probability of at least one failed rotation synthesis.|
-|`logical`|number|Probability of at least one logical error.|
-|`tstates`|number|Probability of at least one faulty T distillation.|
 
 ### Logical counts
 
@@ -284,6 +275,23 @@ For more information about these diagrams, see the sample in [Resource estimatio
 > [!NOTE]
 > In the time diagram, each blue arrow represents the total number of copies of the T factory repeatedly invoked.
 
+## Space diagram
+
+The overall physical resource estimation consists of total number of physical qubits used for both the algorithm and T factory copies. You can inspect the distribution between these two using the space diagram.
+
+The space diagram shows the proportion of the physical qubits used for the algorithm and the [T factories](xref:microsoft.quantum.concepts.tfactories). Note that the number of T factory copies contributes to the number of physical qubits for T factories.
+
+In Jupyter Notebook, you can access the space diagram using the `SpaceChart` widget from the `qsharp-widgets` package.
+
+```python
+import qsharp
+
+from qsharp_widgets import SpaceChart
+SpaceChart(result)
+```
+
+:::image type="content" source="media/resource-estimator-space-diagram.png" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
+
 ## Next steps
 
 - [Learn how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works)
@@ -291,4 +299,3 @@ For more information about these diagrams, see the sample in [Resource estimatio
 - [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator)
 - [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
 - [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir)
-- [Sample: Resource estimation with Q# and VS Code](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation/integer-factorization-with-cli)

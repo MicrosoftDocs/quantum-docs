@@ -72,9 +72,6 @@ Phase estimation for this reason appears within a number of quantum algorithms t
 
 ## Bayesian phase estimation
 
-> [!TIP]
-> For more details on Bayesian phase estimation in practice, please see the [**PhaseEstimation**](https://github.com/microsoft/Quantum/tree/main/samples/characterization/phase-estimation) sample.
-
 The idea of Bayesian phase estimation is simple.
 You collect measurement statistics from the phase estimation protocol and then you process the results using Bayesian inference and provide an estimate of the parameter.
 This processing gives you an estimate of the eigenvalue as well as the uncertainty in that estimate.
@@ -137,11 +134,6 @@ $$
 where the lower bound is reached in the limit of asymptotically large $Q$, and the upper bound is guaranteed even for small sample sizes.  Note that $n$ selected by the `bitsPrecision` input, which implicitly defines $Q$.
 
 Other relevant details include, say, the small space overhead of just $1$ auxiliary qubit, or that the procedure is non-adaptive, meaning the required sequence of quantum experiments is independent of the intermediate measurement outcomes. In this and other examples where the choice of a phase estimation algorithm is important, you should refer to the documentation, for example the [RobustPhaseEstimation](xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation) operation, and the referenced publications therein for more information and for their the implementation.
-
-> [!TIP]
-> There are many samples where robust phase estimation is used. For phase estimation in extracting the ground state energy of various physical system, 
-> please see the [**H2 simulation**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line), [**SimpleIsing**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/simple), 
-> and [**Hubbard model**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard) samples.
 
 ## Continuous oracles
 
