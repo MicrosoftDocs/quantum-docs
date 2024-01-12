@@ -1,6 +1,11 @@
 {
 	"redirections": [
 		{
+			"source_path": "articles/release-notes.md",
+			"redirect_url": "/azure/quantum/release-notes-2024",
+			"redirect_document_id": false
+		},
+		{
 			"source_path": "articles/install-jupyter-qkd.md",
 			"redirect_url": "/azure/quantum/install-overview-qdk",
 			"redirect_document_id": false
@@ -8,6 +13,136 @@
 		{
 			"source_path": "articles/install-jupyter-qdk.md",
 			"redirect_url": "/azure/quantum/install-overview-qdk",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/machine-learning/load.md",
+			"redirect_url": "/azure/quantum/overview-quantum-machine-learning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/machine-learning/intro.md",
+			"redirect_url": "/azure/quantum/overview-quantum-machine-learning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/machine-learning/design.md",
+			"redirect_url": "/azure/quantum/overview-quantum-machine-learning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/machine-learning/glossary-qml.md",
+			"redirect_url": "/azure/quantum/overview-quantum-machine-learning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/machine-learning/basic-classification.md",
+			"redirect_url": "/azure/quantum/overview-quantum-machine-learning",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/index.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/installation.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/schema/spec_v_0_2.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/schema/spec_v_0_1.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/schema/broombridge.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/samples/resource-counts.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/samples/molecular-hydrogen.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/samples/loading-from-file.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/samples/end-to-end.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/concepts/symmetries-molecular.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/concepts/second-quantization.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/concepts/algorithms.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/concepts/hartree-fock.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/concepts/jordan-wigner.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/concepts/multireference.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/concepts/quantum-dynamics.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/chemistry/concepts/quantum-models.md",
+			"redirect_url": "/azure/quantum/user-guide/libraries",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/host-programs.md",
+			"redirect_url": "/azure/quantum/user-guide/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/how-to-python-qdk-local.md",
+			"redirect_url": "/azure/quantum/user-guide/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/job-reference.md",
+			"redirect_url": "/qsharp/api/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/workspace-reference.md",
+			"redirect_url": "/qsharp/api/",
 			"redirect_document_id": false
 		},
 		{
@@ -90,9 +225,20 @@
 			"redirect_url": "/azure/quantum/azure-quantum-glossary",
 			"redirect_document_id": false
 		},
+
 		{
 			"source_path": "articles/concepts-targets-in-azure-quantum.md",
 			"redirect_url": "/azure/quantum/quantum-computing-target-profiles",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/overview-quantum-machine-learning.md",
+			"redirect_url": "/azure/quantum/how-to-adapt-qiskit",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/tutorial-entanglement-portal-include.md",
+			"redirect_url": "/azure/quantum/tutorial-qdk-explore-entanglement",
 			"redirect_document_id": false
 		},
 		{
@@ -113,6 +259,11 @@
 		{
 			"source_path": "articles/optimization-what-is-quantum-optimization.md",
 			"redirect_url": "/azure/quantum/optimization-overview-introduction",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/quickstart-microsoft-qc.md",
+			"redirect_url": "/azure/quantum/how-to-submit-jobs",
 			"redirect_document_id": false
 		},
 		{
@@ -182,7 +333,17 @@
 		},
 		{
 			"source_path": "articles/user-guide/machines/sparse-simulator.md",
-			"redirect_url": "/azure/quantum/machines/sparse-simulator",
+			"redirect_url": "/azure/quantum/sparse-simulator",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/machines/sparse-simulator.md",
+			"redirect_url": "/azure/quantum/sparse-simulator",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/machines/backend-simulators.md",
+			"redirect_url": "/azure/quantum/backend-simulators",
 			"redirect_document_id": false
 		},
 		{
@@ -223,6 +384,11 @@
 		{
 			"source_path": "articles/tutorial-explore-entanglement.md",
 			"redirect_url": "/azure/quantum/tutorial-qdk-explore-entanglement",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/install-binder-qdk.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
 			"redirect_document_id": false
 		},
 		{
@@ -297,7 +463,7 @@
 		},
 		{
 			"source_path": "articles/provider-honeywell-migration-guide.md",
-			"redirect_url": "/azure/quantum/provider-quantinuum.md",
+			"redirect_url": "/azure/quantum/provider-quantinuum",
 			"redirect_document_id": false
 		},
 		{
@@ -307,6 +473,146 @@
 		},
 		{
 			"source_path": "articles/how-to-submit-jobs-optimization.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/contributing-overview.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/contributing-reporting-bugs.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/contributing-docs.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/contributing-code.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/contributing-samples.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/contributing-pull-requests.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/contributing-style-guide.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-cirq-include-ionq-portal.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-cirq",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-cirq-include-ionq.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-cirq",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-cirq-include-quantinuum-portal.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-cirq",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/quickstart-microsoft-cirq-portal.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-cirq",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-cirq-include-quantinuum-portal.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-cirq",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-qiskit-include-ionq-portal.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-qiskit",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-qiskit-include-ionq.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-qiskit",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/quickstart-microsoft-qiskit-portal.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-qiskit",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-qiskit-include-quantinuum-portal.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-qiskit",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-qiskit-include-quantinuum.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-qiskit",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-qiskit-include-rigetti.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-qiskit",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-qiskit-include-rigetti-portal.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-qiskit",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-provider-format-include-ionq-portal.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-provider-format",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-provider-format-include-ionq.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-provider-format",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-provider-format-include-pasqal-portal.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-provider-format",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-provider-format-include-pasqal.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-provider-format",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-provider-format-include-quantinuum-portal.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-provider-format",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-provider-format-include-quantinuum.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-provider-format",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/quickstart-microsoft-provider-format-portal.md ",
+			"redirect_url": "azure/quantum/quickstart-microsoft-provider-format",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/contributing-api-design-principles.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/azure-quantum-glossary.md",
 			"redirect_url": "/azure/quantum/",
 			"redirect_document_id": false
 		},
@@ -367,6 +673,11 @@
 		},
 		{
 			"source_path": "articles/optimization-which-solver-should-you-use.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/how-to-publish-qsharp-job-as-azurefunction.md",
 			"redirect_url": "/azure/quantum/",
 			"redirect_document_id": false
 		},
@@ -518,6 +829,76 @@
 		{
 			"source_path": "articles/optimization-problem.md",
 			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/machines/full-state-simulator.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/machines/index.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/machines/noise-simulator.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/machines/toffoli-simulator.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/machines/qc-trace-simulator/index.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/machines/qc-trace-simulator/depth-counter.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/machines/qc-trace-simulator/distinct-inputs-checker.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/machines/qc-trace-simulator/width-counter.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/concepts-open-systems.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/machines/qc-trace-simulator/primitive-operations-counter.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/concepts-overview.md",
+			"redirect_url": "/azure/quantum/overview-understanding-quantum-computing",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/tutorial-resource-estimator-profiling.md",
+			"redirect_url": "/azure/quantum/intro-to-resource-estimation",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/machines/qc-trace-simulator/invalidated-qubits-use-checker.md",
+			"redirect_url": "/azure/quantum/",
+      "redirect_document_id": false
+    },
+    {
+			"source_path": "articles/how-to-csharp-qdk-local.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
 			"redirect_document_id": false
 		}
 	]

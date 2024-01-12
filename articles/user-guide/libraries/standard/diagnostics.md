@@ -33,11 +33,6 @@ Message($"About to rotate by an angle of {angle}...");
 
 The [DumpMachine](xref:Microsoft.Quantum.Diagnostics.DumpMachine) and [DumpRegister](xref:Microsoft.Quantum.Diagnostics.DumpRegister) functions instruct target machines to provide diagnostic information about all currently allocated qubits or about a specific register of qubits, respectively.
 Each target machine varies in what diagnostic information is provided in response to a dump instruction.
-The [full state simulator](xref:microsoft.quantum.machines.overview.full-state-simulator) target machine, for instance, provides the host program with the state vector that it uses internally to represent a register of qubits.
-By comparison, the [Toffoli simulator](xref:microsoft.quantum.machines.overview.toffoli-simulator) target machine provides a single classical bit for each qubit.
-
- To learn more about the [full state simulator's](xref:microsoft.quantum.machines.overview.full-state-simulator) `DumpMachine` output, see [Dump functions](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging#dump-functions).
-
 
 ## Facts and assertions
 

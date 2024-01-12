@@ -7,15 +7,15 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
 no-loc: ['Q#', '$$v', target, targets]
-title: Azure Quantum
+title: Copilot in Azure Quantum
 uid: microsoft.quantum.get-started.azure-quantum
 ---
 
-# Explore Azure Quantum
+# Explore the Azure Quantum website
 
 Get started with quantum computing, discover the latest quantum breakthroughs, and create and run quantum programs with the help of the Copilot in Azure Quantum on the [Azure Quantum website](https://quantum.microsoft.com/). 
 
-Azure Quantum features:
+Azure Quantum website features:
 
 - **Copilot in Azure Quantum** - AI meets the world of quantum. Copilot in Azure Quantum is a generative AI assistant to help you learn and explore quantum computing.
 - **Code in Azure Quantum** - Explore and run Q# code directly in your browser using the built-in code window and compiler, and submit your jobs to the in-memory simulator or the free [Quantinuum H-Series Emulator](xref:microsoft.quantum.providers.quantinuum#h-series-emulator-cloud-based). Use Copilot in Azure Quantum to explain Q# code and also generate code from your prompts.
@@ -75,6 +75,7 @@ To start exploring the Copilot and coding in Azure Quantum, use one of the sampl
         }
     }
     ```
+
 1. Select **In-Memory Simulator**. 
 1. Select **Run**.
 
@@ -102,7 +103,7 @@ You can prompt the Copilot in Azure Quantum for almost anything quantum related,
 
 ### Open your code sample on VS Code for the Web
 
-To explore the sample code further, you can open the code in [VS Code for the Web](https://vscode.dev) and take advantage of features such as improved error messaging, Q# syntax highlighting, and integrated debugging. If you already have an Azure account set up, you can connect directly to your Azure Quantum workspaces from VS Code. 
+To explore the sample code further, you can open the code in [VS Code for the Web](https://vscode.dev/quantum) with one click and take advantage of features such as improved error messaging, Q# syntax highlighting, and integrated debugging. If you already have an Azure account set up, you can connect directly to your Azure Quantum workspaces from VS Code. 
 
 To open your code in VS Code for the Web:
 

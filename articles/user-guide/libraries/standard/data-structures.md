@@ -152,11 +152,6 @@ This method is indispensable in quantum simulation because for many physical pro
 Every flavor of phase estimation needs an input unitary.
 This unitary is customarily described by one of two types of oracles.
 
-> [!TIP]
-> Both of the oracle types described here are covered in the samples.
-> To learn more about continuous query oracles, please see the [**PhaseEstimation** sample](https://github.com/microsoft/Quantum/tree/main/samples/characterization/phase-estimation).
-> To learn more about discrete query oracles, please see the [**IsingPhaseEstimation** sample](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
-
 The first type of oracle, called a discrete query oracle and represent with the [DiscreteOracle](xref:Microsoft.Quantum.Oracles.DiscreteOracle) user defined type, simply involves a unitary matrix.
 If $U$ is the unitary whose eigenvalues you wish to estimate, then the oracle for $U$ is simply a stand-in for a subroutine that implements $U$.
 For example, you could take $U$ to be the oracle $Q$ defined earlier for amplitude estimation.
@@ -231,11 +226,6 @@ $$
 where the integer $r > 0$ controls the approximation error.
 
 The dynamical generator modeling library provides a framework for systematically encoding complicated generators in terms of simpler generators. Such a description may then be passed to, say, the simulation library to implement time-evolution by a simulation algorithm of choice, with many details automatically taken care of.
-
-> [!TIP]
-> The dynamical generator library described here is covered in the samples. 
-> For an example based on the Ising model, please see the [**IsingGenerators** sample](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/generators).
-> For an example based on molecular Hydrogen, please see the [**H2SimulationCmdLine**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line) and [**H2SimulationGUI**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/gui) samples.
 
 ### Complete description of a generator
 

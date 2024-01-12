@@ -39,7 +39,7 @@ This release disables IntelliSense features for Q# files in Visual Studio and Vi
 
 This release contains the following:
 
-- Resource estimation now emits simultaneously achievable depth and width estimates also to the qubit count. See [here](xref:microsoft.quantum.machines.overview) for details.
+- Resource estimation now emits simultaneously achievable depth and width estimates also to the qubit count.
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22).
 
@@ -76,7 +76,7 @@ This release contains the following:
 - New [Microsoft.Quantum.Random namespace](xref:Microsoft.Quantum.Random), providing a more convenient way to sample random values from within Q# programs. ([QuantumLibraries#311](https://github.com/microsoft/QuantumLibraries/pull/311), [qsharp-runtime#328](https://github.com/microsoft/qsharp-runtime/pull/328))
 - Improved [Microsoft.Quantum.Diagnostics namespace](xref:Microsoft.Quantum.Diagnostics) with new [`DumpOperation` operation](xref:Microsoft.Quantum.Diagnostics.DumpOperation), and new operations for restricting qubit allocation and oracle calls. ([QuantumLibraries#302](https://github.com/microsoft/QuantumLibraries/pull/302))
 - New [`%project` magic command](xref:microsoft.quantum.iqsharp.magic-ref.project) in IQ# and [`qsharp.projects` API](/python/qsharp-core/qsharp.projects.projects) in Python to support references to Q# projects outside the current workspace folder. See [iqsharp#277](https://github.com/microsoft/iqsharp/issues/277) for the current limitations of this feature. 
-- Support for automatically loading `.csproj` files for IQ#/Python hosts, which allows external project or package references to load at initialization time. For more information, see the guide for using [Q# with Python and Jupyter Notebooks](xref:microsoft.quantum.user-guide-qdk.overview.host-programs).
+- Support for automatically loading `.csproj` files for IQ#/Python hosts, which allows external project or package references to load at initialization time. For more information, see the guide for using Q# with Python and Jupyter Notebooks.
 - Added `ErrorCorrection.Syndrome` sample.
 - Added tunable coupling to `SimpleIsing`.
 - Updated `HiddenShift` sample.
@@ -101,7 +101,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 This release contains the following:
 
-- New `qdk-chem` tool for converting legacy electronic structure problem serialization formats (for example, FCIDUMP) to [Broombridge](xref:microsoft.quantum.libraries.overview.chemistry.schema.broombridge)
+- New `qdk-chem` tool for converting legacy electronic structure problem serialization formats (for example, FCIDUMP) to Broombridge.
 - New functions and operations in the [`Microsoft.Quantum.Synthesis`](xref:Microsoft.Quantum.Synthesis) namespace for coherently applying classical oracles using transformation- and decomposition-based synthesis algorithms.
 - IQ# now allows arguments to the `%simulate`, `%estimate`, and other magic commands. For more information, see the [`%simulate` magic command reference](xref:microsoft.quantum.iqsharp.magic-ref.simulate).
 - New phase display options in IQ#. For more information, see the [`%config` magic command reference](xref:microsoft.quantum.iqsharp.magic-ref.config).
@@ -131,7 +131,7 @@ This release contains the following:
 - Q# notebooks and Python host programs no longer fail when a Q# entry point is present.
 - Updates to [Standard library](xref:microsoft.quantum.libraries.overview.standard.intro) to use access modifiers
 - Compiler now allows plug-in of rewrite steps between built-in rewrite steps
-- Several deprecated functions and operations have been removed following the schedule described in our [API principles](xref:microsoft.quantum.contributing-qdk.overview.api-design). Q# programs and libraries that build without warnings in version 0.11.2004.2825 continue to work unmodified.
+- Several deprecated functions and operations have been removed following the schedule described in our API principles. Q# programs and libraries that build without warnings in version 0.11.2004.2825 continue to work unmodified.
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
@@ -150,7 +150,7 @@ This release contains the following:
 
 > [!NOTE]
 > Q# applications using the new [`@EntryPoint()`](xref:Microsoft.Quantum.Core.EntryPoint) attribute currently can't be called from Python or .NET host programs.
-> For more information, see the [Python](xref:microsoft.quantum.install-qdk.overview) and [.NET interoperability](xref:microsoft.quantum.how-to.csharp-local) guides.
+> For more information, see the [Python](xref:microsoft.quantum.install-qdk.overview) guide.
 
 ## QDK version 0.11.2003.3107
 

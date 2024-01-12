@@ -7,15 +7,13 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', target, targets]
-title: Learn how the Resource Estimator works
+title: Learn How the Resource Estimator Works
 uid: microsoft.quantum.learn-how-resource-estimator-works
 ---
 
 # Learn how the Resource Estimator works
 
-The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) computes pre- and post-layout estimation of the logical resources. It takes a QIR quantum algorithm, for example a program written in Q#, Qiskit, or a QIR generator as [PyQIR](https://github.com/qir-alliance/pyqir), and a set of [target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) to evaluate the resource estimates of the quantum algorithm. Optionally, the Resource Estimator can take operation arguments, that is arguments that can be passed to the QIR program.
-
-In this article, you'll learn the workflow of the Resource Estimator and how the [output data](xref:microsoft.quantum.overview.resources-estimator-output.data) is extracted at different levels of the evaluation of the quantum program. You'll also learn the assumptions taken into account for the simulation of the resource estimation.
+In this article, you'll learn the workflow of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) and how the [output data](xref:microsoft.quantum.overview.resources-estimator-output.data) is extracted at different levels of the evaluation of the quantum program. You'll also learn the assumptions taken into account for the simulation of the resource estimation.
 
 > [!NOTE]
 > If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
@@ -36,7 +34,7 @@ It is crucial that the quantum gate set of a fault-tolerant quantum computer is 
 
 ### Pre-layout resource estimation
 
-The Resource Estimator takes the QIR quantum program and computes a pre-layout estimation of the logical resources. It calculates the number of logical qubits, T gates, rotation gates, CCZ gates, CCiX gates, and measurements in the input quantum program. The number of T gates includes all T gates and adjoint T gates, but not T gates required to implement rotation gates, CCZ gates, or CCiX gates.
+The Resource Estimator takes the quantum program and computes a pre-layout estimation of the logical resources. It calculates the number of logical qubits, T gates, rotation gates, CCZ gates, CCiX gates, and measurements in the input quantum program. The number of T gates includes all T gates and adjoint T gates, but not T gates required to implement rotation gates, CCZ gates, or CCiX gates.
 
 ### Algorithmic logical estimation
 
@@ -85,31 +83,6 @@ You can only do full invocations of a T factory. Therefore, there may be situati
 
 For more information, see Appendix C of [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629).
 
-### Space-time diagrams
-
-Finally, the overall physical resource estimation consists of total number of physical qubits and the runtime. The total number of physical qubits is calculated from the sum of the number of physical qubits required by the T factory copies that produce the T states that are consumed by the algorithm, plus the number of physical qubits required to execute the algorithm. The total runtime of the algorithm is decided based on the number of instructions that need to be performed to run the algorithm. It's the runtime calculated in the [Algorithmic physical estimation](#algorithmic-physical-estimation) step.
-
-You can inspect the distribution of physical qubits used for the algorithm and the T factories using the space-time diagrams. The space diagram shows the proportion of these two. Note that the number of T factory copies contributes to the number of physical qubits for T factories.
-
-```python
-result.diagram.space
-```
-
-:::image type="content" source="media/resource-estimator-space-diagram.png" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
-
-The time diagram shows the time required to execute the algorithm as it relates to each T factory invocation runtime and the number of T factory invocation (possibly capped if there are too many invocations). The table on the right side lists the most important metrics that are used to compute these numbers, which are described in the [T factory physical estimation](#t-factory-physical-estimation) previous step. Note that the number of T factory invocations is calculated based on the total runtime.
-
-```python
-result.diagram.time
-```
-
-:::image type="content" source="media/resource-estimator-time-diagram.png" alt-text="Diagram showing the number of T factory invocations during the runtime of the algorithm. There's also a table with the breakdown of the number of T factory copies, number of T factory invocations, T states per invocation, etc.":::
-
-For more information about these diagrams, see the sample in [Resource estimation with Q# and Python](xref:microsoft.quantum.submit-resource-estimation-jobs#space-time-diagrams).
-
-> [!NOTE]
-> In the time diagram, each blue arrow represents the total number of copies of the T factory repeatedly invoked.
-
 ## Assumptions
 
 The following assumptions are taken into account for the simulation of the resource estimation.
@@ -128,4 +101,3 @@ The following assumptions are taken into account for the simulation of the resou
 - [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
 - [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
 - [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir)
-- [Sample: Resource estimation with Q# and VS Code](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation/integer-factorization-with-cli)

@@ -2,12 +2,12 @@
 author: SoniaLopezBravo
 description: In this tutorial, you estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa, using the double-factorized qubitization algorithm.
 ms.author: sonialopez
-ms.date: 07/06/2023
+ms.date: 01/04/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: tutorial
 no-loc: [target, targets]
-title: 'Tutorial: Estimate the resources of a quantum chemistry problem'
+title: 'Tutorial: Estimate the Resources of a Quantum Chemistry Problem'
 uid: microsoft.quantum.tutorial.resource-estimator.chemistry
 ---
 
@@ -17,7 +17,7 @@ This tutorial shows how to estimate the physical resources required to calculate
 
 The *qubitization* approach is based on quantum phase estimation, but instead of constructing the standard $U = \\exp{(-i H/\\alpha)}$ from the Hamiltonian matrix $H$, one takes $U = \\exp{(-i \\sin^{-1} (H/\\alpha))}$, which can typically be implemented with fewer resources. Using *double-factorization*, $H$ is represented compactly through a combination of a judicious choice of orbitals and compression. The tolerated total error budget is $\\epsilon = 0.01$, corresponding to $1\\%$.
 
-[!INCLUDE [Modern QDK RE banner](includes/new-qdk-resource-estimator-support.md)]
+[!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
 
 In this tutorial, you will:
 
@@ -27,17 +27,39 @@ In this tutorial, you will:
 > * Use FCIDUMP files as argument parameters for chemical modelling and simulation applications.
 > * Create a reusable function to display resource estimates in HTML format table. 
 
+> [!NOTE]
+> To run this tutorial, you need to have an **Azure account**. A new quantum chemistry tutorial using the Resource Estimator in VS Code is coming soon.
+
 ## Prerequisites
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The **Microsoft Quantum Computing** provider added to your workspace. For more information, see [Enabling the Resource Estimator target](xref:microsoft.quantum.quickstarts.computing.resources-estimator#enable-the-resources-estimator-in-your-workspace).
+- The **Microsoft Quantum Computing** provider added to your workspace. For more information, see [Enabling the Resource Estimator target](xref:microsoft.quantum.work-with-resource-estimator#enable-the-azure-quantum-resource-estimator-target-in-your-workspace).
 
-## Get started
+## Create a new notebook in your workspace
 
-Using the Resource Estimator is the same as submitting a job against other software and hardware provider targets in Azure Quantum - define your program, set a target, and submit your job for computation.
+1. Log in to the [Azure portal](https://portal.azure.com/) and select your Azure Quantum workspace.
+1. Under **Operations**, select **Notebooks**
+1. Click on **My notebooks** and click **Add New**
+1. In **Kernel Type**, select **IPython**.
+1. Type a name for the file, and click **Create file**.
 
-### Load the required imports
+When your new notebook opens, it automatically creates the code for the first cell, based on your subscription and workspace information.
+
+```python
+from azure.quantum import Workspace
+workspace = Workspace ( 
+    resource_id = "", # Your resource_id 
+    location = ""  # Your workspace location (for example, "westus") 
+)
+```
+
+> [!NOTE]
+> Unless otherwise noted, you should run each cell in order as you create it to avoid any compilation issues. 
+
+Click the triangular "play" icon to the left of the cell to run the code. 
+
+## Load the required imports
 
 First, you need to import some Python classes and functions from `azure.quantum`.
 
@@ -49,28 +71,13 @@ from azure.quantum.target.microsoft import MicrosoftEstimator
 from azure.quantum.chemistry import df_chemistry
 ```
 
-### Connect to the Azure Quantum service
+## Connect to the Azure Quantum service
 
-To connect to the Azure Quantum service, your program need the resource ID and the location of your workspace, which you can obtain from the **Overview** page in your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
-
-:::image type="content" source="media/azure-quantum-resource-id.png" alt-text="Screenshot showing how to retrieve the resource ID and location from an Azure Quantum workspace":::
-
-Paste the values into the following `Workspace` constructor to create a `workspace` object that connects to your Azure Quantum workspace.
-
-```python
-workspace = Workspace(
-  resource_id="",
-  location=""
-)
-```
-
-This workspace is then used to create an instance to the Resource Estimator.
+Next, using the `workspace` object from the previous cell to create an instance to the Resource Estimator.
 
 ```python
 estimator = MicrosoftEstimator(workspace)
 ```
-
-You want to estimate the resources on a fault-tolerant quantum computer and with a chemical accuracy of 1 mHa. 
 
 ## Choose the resource estimation job parameters
 
@@ -106,7 +113,7 @@ params.file_uris["fcidumpUri"] = "https://aka.ms/fcidump/XVIII-cas4-fb-64e-56o"
 
 ### Set the error budget
 
-The quantum algorithms requires a total accuracy if 0.01, that is, 1%, to obtain a chemical accuracy of 1 mHa. For more information, see [Error budget](xref:microsoft.quantum.overview.resources-estimator#error-budget).
+You want to estimate the resources on a fault-tolerant quantum computer and with a chemical accuracy of 1 mHa. The quantum algorithms requires a total accuracy if 0.01, that is, 1%, to obtain a chemical accuracy of 1 mHa. For more information, see [Error budget](xref:microsoft.quantum.overview.resources-estimator#error-budget).
 
 ```python
 params.error_budget = 0.01

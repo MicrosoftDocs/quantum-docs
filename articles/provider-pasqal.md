@@ -86,7 +86,7 @@ def submit_job(target, seq):
         input_data_format="pasqal.pulser.v1",
         output_data_format="pasqal.pulser-results.v1",
         name="PASQAL sequence",
-        input_params={"count": 10} # Number of shots
+        shots=100 # Number of shots
     )
 ```
 

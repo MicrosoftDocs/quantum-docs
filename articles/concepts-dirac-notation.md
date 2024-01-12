@@ -279,4 +279,3 @@ A final point worth raising about quantum notation and the Q# programming langua
 - [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)
 - [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
 - [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
-- [Open quantum systems](xref:microsoft.quantum.concepts.opensystems)

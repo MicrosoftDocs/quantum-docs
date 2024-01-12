@@ -44,7 +44,7 @@ To create a session, you need the following prerequisites:
 
 ### [Q# + Python](#tab/tabid-iqsharp)
 
-This example shows how to create a session with Q# inline code using hosted Notebooks in the Azure portal. You can also create sessions using a [Python host program](xref:microsoft.quantum.user-guide-qdk.overview.host-programs#q-with-host-programs) that invokes an adjacent Q# program. 
+This example shows how to create a session with Q# inline code using hosted Notebooks in the Azure portal. You can also create sessions using a [Python program](xref:microsoft.quantum.submit-jobs?pivots=ide-python) that invokes an adjacent Q# program. 
 
 > [!NOTE]
 >  Sessions are managed with Python, even when running Q# inline code. 
@@ -84,9 +84,9 @@ This example shows how to create a session with Q# inline code using hosted Note
  
     ```python
     with target.open_session(name="Q# Session") as session:
-        target.submit(input_data=GenerateRandomBit, name="Job 1", input_params={"count":100}) # First job submission
-        target.submit(input_data=GenerateRandomBit, name="Job 2", input_params={"count":100}) # Second job submission
-        target.submit(input_data=GenerateRandomBit, name="Job 3", input_params={"count":100}) # Third job submission 
+        target.submit(input_data=GenerateRandomBit, name="Job 1", shots=100) # First job submission
+        target.submit(input_data=GenerateRandomBit, name="Job 2", shots=100) # Second job submission
+        target.submit(input_data=GenerateRandomBit, name="Job 3", shots=100) # Third job submission 
     
     session_jobs = session.list_jobs()
     [session_job.details.name for session_job in session_jobs]
@@ -99,11 +99,14 @@ This example shows how to create a session with Q# inline code using hosted Note
     ```python
     from qiskit import QuantumCircuit
     from qiskit.tools.monitor import job_monitor
+    from azure.quantum import Workspace
     from azure.quantum.qiskit import AzureQuantumProvider
 
-    provider = AzureQuantumProvider(
+    workspace = Workspace(
                 resource_id = "", # add your resource ID
                 location = "") # add your location
+    
+    provider = AzureQuantumProvider(workspace)
     ```
 
 2. Write your quantum circuit. For example, the following circuit generates a random bit. 

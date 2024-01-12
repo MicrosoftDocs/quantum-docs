@@ -124,5 +124,5 @@ Deployment of your workspace may take a few minutes. The status and deployment d
 
 - [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
 - [Get started with Jupyter Notebooks in Azure Quantum](xref:microsoft.quantum.get-started.notebooks)
-- [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit.portal)
-- [Quickstart: Create a quantum random-number generator in a local development environment](xref:microsoft.quantum.quickstarts.computing)
+- [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)
+

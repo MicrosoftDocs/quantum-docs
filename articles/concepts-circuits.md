@@ -15,7 +15,10 @@ uid: microsoft.quantum.concepts.circuits
 
 This article covers conventions for quantum circuit diagrams. Some quantum algorithms are easier to understand in a circuit diagram than in the equivalent written matrix representation once you understand the visual conventions.
 
-With Azure Quantum, you can use the `azure-quantum` Python package to submit quantum circuits with [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit.portal), [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq.portal), and also [provider-specific formatted circuits](xref:microsoft.quantum.quickstarts.computing.provider.portal).
+With Azure Quantum, you can use the `azure-quantum` Python package to submit quantum circuits with [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit), [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq), and also [provider-specific formatted circuits](xref:microsoft.quantum.quickstarts.computing.provider).
+
+> [!TIP]
+> Check out [quantum-viz.js](https://github.com/microsoft/quantum-viz.js/), a configurable tool for rendering quantum circuits. You can integrate the library *quantum-viz.js* (or *qviz*) into any project. It aims to be easily configurable while allowing complex user interactions, such as toggling between different measurement outcomes.
 
 ## Quantum circuit diagram conventions
 
@@ -98,6 +101,7 @@ is Ctl { // Auto-generate the controlled specialization of the operation
 ```
 
 ### Measurement operator
+
 The remaining operation to visualize in circuit diagrams is measurement. Measurement takes a qubit register, measures it, and outputs the result as classical information.
 
 A measurement operation is denoted by a meter symbol and always takes as input a qubit register (denoted by a solid line) and outputs classical information (denoted by a double line).
@@ -129,7 +133,6 @@ The quantum teleportation circuit is shown here along with an annotated version 
 ## Next steps
 
 - [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
-- [Open quantum systems](xref:microsoft.quantum.concepts.opensystems)
 - [Grover's algorithm](xref:microsoft.quantum.concepts.grovers)
 - [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir)
 - [Vectors and matrices](xref:microsoft.quantum.concepts.vectors)

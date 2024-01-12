@@ -21,7 +21,7 @@ In quantum computing, even though the classical and quantum processors are tight
 
 A classical register uses the familiar silicon chip-based architecture and is best suited for operations such as sending instructions to the quantum processor, capturing measurement results, and using those results to determine the next set of instructions. 
  
-A quantum register is a system comprised of multiple [qubits](xref:microsoft.quantum.glossary-qdk#qubit). Quantum computers excel at performing complex calculations by manipulating their qubits within a quantum register.
+A quantum register is a system comprised of multiple qubits. Quantum computers excel at performing complex calculations by manipulating their qubits within a quantum register.
 
 ## Mid-circuit measurement
 

@@ -174,7 +174,6 @@ If you want to continue learning about Grover's algorithm, you can check any of 
 
 ## Next steps
 
-- [Sample code: Grover's search using Q#](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/grover)
 - [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir)
 - [Vectors and matrices](xref:microsoft.quantum.concepts.vectors)
 - [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)

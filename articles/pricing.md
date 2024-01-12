@@ -230,6 +230,8 @@ The Pay-as-you-go plan consists of *a la carte* access to the Aspen-M-3 and Aspe
 
 ***
 
+> [!NOTE]
+> If you have questions or run into any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Next Steps
 

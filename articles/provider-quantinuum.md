@@ -357,7 +357,7 @@ option_params = {
 backend.options.update_options(**option_params)
 
 # Submit the job
-job = backend.run(circuit, count=100)
+job = backend.run(circuit, shots=100)
 print("Job id:", job.id())
 ```
 
@@ -436,7 +436,7 @@ option_params = {
 backend.options.update_options(**option_params)
 
 # Submit the job
-job = backend.run(circuit, count=100)
+job = backend.run(circuit, shots=100)
 print("Job id:", job.id())
 ```
 

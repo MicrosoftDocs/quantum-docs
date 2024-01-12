@@ -1,103 +1,274 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 01/17/2023
+ms.date: 12/11/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
 no-loc: [Quantum Development Kit, target, targets]
 ---
 
+## Submitting Python with Q# jobs to Azure Quantum
+
+Learn how to use VS Code to write a Python program that calls Q# operations, connect to Azure using the Python commands or Azure CLI, and submit your job. 
+
 ## Prerequisites
+
+For installation details, see [Installing the Modern QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-modern-qdk-on-vs-code).
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The latest version of the [Quantum Development Kit for Python](xref:microsoft.quantum.install-qdk.overview#use-q-and-python-with-jupyter-notebooks). This installs the `qsharp` Python package and the IQ# kernel, which powers the Q# Jupyter Notebook and
-Python experiences.
+- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed. 
+- VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension installed.
+- The Azure Quantum `qsharp` and `azure-quantum` packages. 
+- [Azure CLI](xref:microsoft.quantum.install-qdk.overview#add-support-for-azure-cli) with the Azure Quantum extension installed. 
 
-> [!NOTE]
-> When installing Python, the option to **Install using conda** is recommended. The steps in this article assume a conda installation. 
+## Create and import your Q# operations
 
-## Quantum computing with Q# and Python
+With the `qsharp` package, you can store your functions and operations in Q# files and create [Q# projects](xref:microsoft.quantum.qsharp-projects) that let you call into any of them from your Python code. This especially helpful when you need to launch a program that takes input parameters.
 
-1. The Python environment in the conda environment that you created earlier already
-   includes the `qsharp` Python package. Make sure you are running your Python
-   script from a terminal where this conda environment is activated.
-1. Write your Q# operations in a `*.qs` file. When running `import qsharp` in
-   Python, the IQ# kernel automatically detects any .qs files in the same
-   folder, compiles them, and reports any errors. If compilation is successful,
-   the compiled Q# operations will become available for use directly from within
-   Python.
-    - For example, the contents of your .qs file could look something like this:
 
-        ```qsharp
-        namespace Test {
-            open Microsoft.Quantum.Intrinsic;
-            open Microsoft.Quantum.Measurement;
-            open Microsoft.Quantum.Canon;
+1. Follow the steps to create a [Q# project](xref:microsoft.quantum.qsharp-projects#steps-for-creating-a-q-project).
+1. Open a new text file, add the following Q# code that returns a user-specified number of random bits, and save the file to your project as `source.qs`. 
 
-            operation GenerateRandomBits(n : Int) : Result[] {
-                use qubits = Qubit[n];
-                ApplyToEach(H, qubits);
-                return MultiM(qubits);
+    > [!NOTE]
+    > Note that this Q# code doesn't have an `@EntryPoint` function like a Q# program (see [Submitting Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp)), but it does require a namespace, unlike a Jupyter Notebook (see [Submitting Jupyter Notebook jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter)).
+
+    ```qsharp
+   namespace Sample {
+   
+      operation Random() : Result {
+            use q = Qubit();
+            H(q);
+            let result = M(q);
+            Reset(q);
+            return result
+      }
+   
+      operation RandomNBits(N: Int): Result[] {
+            mutable results = [];
+            for i in 0 .. N - 1 {
+               let r = Random();
+               set results += [r];
             }
-        }
-        ```
+            return results
+      }
+   }
+    ```
+1. In the same folder, open another file and save it as `randomNum.py`.
+1. Add the following code to import the `qsharp` and `azure.quantum` modules.
 
-1. Create a Python script in the same folder as your `*.qs` file. Azure Quantum
-   functionality is available by running `import qsharp.azure` and then calling
-   the Python commands to interact with Azure Quantum. For reference, see the
-   [complete list of `qsharp.azure` Python commands](/python/qsharp-core/qsharp.azure).
-   You'll need the resource ID of your Azure Quantum workspace in order to
-   connect. (The resource ID can be found on your workspace
-   page in the Azure portal.)
-
-   If your workspace was created in an Azure region other than \"West US\", you also
-   need to specify the region as the `location` parameter to `qsharp.azure.connect()`.
-
-   For example, your Python script could look like this:
-
-    ```py
+    ```python
     import qsharp
-    import qsharp.azure
-    from Test import GenerateRandomBits
-
-    qsharp.azure.connect(
-       resourceId="/subscriptions/.../Microsoft.Quantum/Workspaces/WORKSPACE_NAME",
-       location="West US")
-    qsharp.azure.target("ionq.simulator")
-    result = qsharp.azure.execute(GenerateRandomBits, n=3, shots=1000, jobName="Generate three random bits")
-    print(result)
+    import azure.quantum
     ```
 
-    where `GenerateRandomBits` is the Q# operation in a namespace `Test` that is
-    defined in your `*.qs` file, `n=3` is the parameter to be passed to
-    that operation, `shots=1000` (optional) specifies the number of repetitions
-    to perform, and `jobName="Generate three random bits"` (optional) is a custom
-    job name to identify the job in the Azure Quantum workspace.
+1. Next, add code to define the Q# project root folder and test run the target operation on the local simulator. The operation is called by *\<namespace>.\<operation_name( )>*, and in this case, you are passing in the number of random bits to return. 
 
-1. Run your Python script by running the command `python test.py`, where `test.py` is
-   the name of your Python file. If successful, you should see your job results
-   displayed to the terminal. For example:
+    ```python
+    qsharp.init(project_root = '/MyProjectRootFolder')
+    print(qsharp.eval("Sample.RandomNBits(4)"))
+    ```
 
-   ```output
-   {'[0,0,0]': 0.125, '[1,0,0]': 0.125, '[0,1,0]': 0.125, '[1,1,0]': 0.125, '[0,0,1]': 0.125, '[1,0,1]': 0.125, '[0,1,1]': 0.125, '[1,1,1]': 0.125}
-   ```
+    ```output
+    [Zero, One, One, Zero]
+    ```
 
-1. To view the details of all jobs in your Azure Quantum workspace, run the command `qsharp.azure.jobs()`:
+1. You can also test the operation with the `run` method, which passes an additional `shots` parameter, and returns the results in a Python list. In `randomNum.py`, replace the previous print statement with the following:
 
-   ```dotnetcli
-   >>> qsharp.azure.jobs()
-   [{'id': 'f4781db6-c41b-4402-8d7c-5cfce7f3cde4', 'name': 'GenerateRandomNumber 3 qubits', 'status': 'Succeeded', 'provider': 'ionq', 'target': 'ionq.simulator', 'creation_time': '2020-07-17T21:45:43.4405253Z', 'begin_execution_time': '2020-07-17T21:45:54.09Z', 'end_execution_time': '2020-07-17T21:45:54.101Z'}, {'id': '1b03cc74-b5d5-4ffa-81db-465f08ae6cd0', 'name': 'GenerateRandomBit', 'status': 'Succeeded', 'provider': 'ionq', 'target': 'ionq.simulator', 'creation_time': '2020-07-21T19:44:17.1065156Z', 'begin_execution_time': '2020-07-21T19:44:25.85Z', 'end_execution_time': '2020-07-21T19:44:25.858Z'}]
-   ```
+    ```python
+    result = qsharp.run("Sample.RandomNBits(4)", shots=10)
+    for x in result:
+        print(x)
+    ```
 
-1. To view the detailed status of a particular job, pass the job ID to `qsharp.azure.status()` or `qsharp.azure.output()`, for example:
+    ```output
+    [[One, One, One, One],
+    [Zero, Zero, One, Zero],
+    [One, Zero, Zero, One],
+    [Zero, One, Zero, Zero],
+    [One, Zero, One, One],
+    [One, Zero, One, Zero],
+    [One, One, One, Zero],
+    [One, One, One, One],
+    [Zero, Zero, Zero, One],
+    [One, Zero, Zero, One]]
+    ```
 
-   ```dotnetcli
-   >>> qsharp.azure.status('1b03cc74-b5d5-4ffa-81db-465f08ae6cd0')
-   {'id': '1b03cc74-b5d5-4ffa-81db-465f08ae6cd0', 'name': 'GenerateRandomBit', 'status': 'Succeeded', 'provider': 'ionq', 'target': 'ionq.simulator', 
-   'creation_time': '2020-07-21T19:44:17.1065156Z', 'begin_execution_time': '2020-07-21T19:44:25.85Z', 'end_execution_time': '2020-07-21T19:44:25.858Z'}
+## Compile your job using the Base profile
 
-   >>> qsharp.azure.output('1b03cc74-b5d5-4ffa-81db-465f08ae6cd0')
-   {'0': 0.5, '1': 0.5}
-   ```
+When you run programs on the local quantum simulator, you can submit any type of Q# program. However, Azure Quantum hardware targets do not yet support the full capabilities required to run all Q# programs. In order to compile and submit Q# programs to Azure Quantum, you need to set your target profile to tell Q# which capabilities that your target hardware supports. Currently, that is the Base profile. For more information, see [Profile types in Azure Quantum](xref:microsoft.quantum.target-profiles).
+    
+   > [!NOTE]
+   > For [Q# only programs in VS Code](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp), VS Code sets the Base profile automatically. 
+
+1. Use the `init` method to set the profile:
+
+    ```python
+    qsharp.init(target_profile=qsharp.TargetProfile.Base)
+    ```
+
+1. Then use the `compile` method to specify the operation or function that is the entry point to your program. The compiled program can then be submitted to any quantum hardware:
+
+    ```python
+    MyProgram = qsharp.compile("Sample.RandomNBits(4)")
+    ```
+
+## Connect to Azure Quantum and submit your job
+
+You can connect to Azure Quantum and submit your job using a Python-created `Workspace` object, or connect and submit your job using Azure CLI. Using Azure CLI requires that you save the compiled program as a text file and submit that using a CLI command. 
+
+
+### [Using Python](#tab/tabid-python)
+
+Now that you have your program compiled into the correct format, create a `azure.quantum.Workspace` object to connect to Azure Quantum. You'll use the Resource ID of your Azure Quantum workspace in order to connect. The Resource ID and location can be copied from your workspace overview page in the Azure portal.
+
+1. Add the following code to `randomNum.py`, filling in your resource ID and location from your Azure Quantum workspace:
+
+    ```python
+    workspace = azure.quantum.Workspace(
+        resource_id = "MyResourceID",
+        location = "MyLocation"
+    )
+    ```
+
+1. Use the `get_targets` method to display the available hardware targets in your workspace:
+
+    ```python
+    MyTargets = workspace.get_targets()
+    print("This workspace's targets:")
+    for x in MyTargets:
+        print(x)
+    ```
+
+1. Select the `rigetti.sim.qvm` target:
+
+    ```python
+    MyTarget = workspace.get_targets("rigetti.sim.qvm")
+    ```
+1. Lastly, use the `submit` method to submit your program with its parameters. The job results are returned as a Python dictionary.
+
+    ```python
+    job = MyTarget.submit(MyProgram, "MyPythonJob", shots=100)
+    results = job.get_results()
+    print("\nResults: ", results)
+    ```
+1. To extract just the values and display them:
+    
+    ```python
+    resultList = results.get("Histogram")
+    for x in resultList:
+        print(x)
+    ```
+
+    ```output
+    [0, 0, 0, 0]
+    0.3
+    [1, 0, 0, 0]
+    0.1
+    [1, 1, 1, 1]
+    0.3
+    [0, 1, 1, 1]
+    0.3
+    ```
+
+1. All the properties of the job are accessible in `job.details`, for example:
+
+    ```python
+    print(job.details)
+    print("\nJob name:", job.details.name)
+    print("Job status:", job.details.status)
+    print("Job ID:", job.details.id)
+    ```
+
+    ```output
+    {'additional_properties': {'isCancelling': False}, 'id': '0fc396d2-97dd-11ee-9958-6ca1004ff31f', 'name': 'MyPythonJob', 'provider_id': 'rigetti'...}
+    Job name: MyPythonJob
+    Job status: Succeeded
+    Job ID: fc396d2-97dd-11ee-9958-6ca1004ff31f
+    ```
+
+### [Using the Azure CLI](#tab/tabid-cli)
+
+To submit a job to Azure Quantum with the Azure CLI, you need to submit a physical file of the program that you just compiled. 
+
+1. Add to following code to your `randomNum.py` file. This opens a text file and writes your compiled program to the proper format. 
+
+    ```python
+    file = open("compiled_output.txt", "w")
+    file.write(MyProgram._ll_str)
+    file.close()
+    ```
+1. To submit the job to Azure Quantum, login with the Azure CLI:
+
+    ```azurecli
+    az login
+    ```
+
+1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in Azure portal.
+
+    ```azurecli
+    az account set -s <MySubscriptionID>
+    ``` 
+
+1. View your available workspaces with:
+
+    ```azurecli
+    az quantum workspace list
+    ```
+
+1. You can use `quantum workspace set` to select a default workspace that you want to use to list and submit jobs. 
+
+    ```azurecli
+    az quantum workspace set \
+       -g <MyResourceGroup> \
+       -w <MyWorkspace> \
+       -l <MyLocation> \
+       -o table
+    ```
+
+1. Display the available targets in your workspace with:
+
+    ```azurecli
+    az quantum target list -o table
+    ```
+
+1. Submit your job using the `job submit` command. 
+    - `--target-id` can be any target. For this example, use the **rigetti.sim.qvm** target.
+    - `--job-name` can be any string.
+    - `--job-input-format` is always **qir.v1**.
+    - `--job-input-file` is the name of the text file you created in step 1.
+    - `--entry-point` is always **ENTRYPOINT__main**
+
+    ```azurecli
+    az quantum job submit \
+        --target-id rigetti.sim.qvm \
+        --job-name MyQuantumJob \
+        --job-input-format qir.v1 \
+        --job-input-file compiled_output.txt \
+        --entry-point ENTRYPOINT__main
+    ```
+1. To check the status of the job, copy the **id** from the output of the last step and use the `job show` command:
+
+    ```azurecli
+    az quantum job show --job-id b0012975-744a-4405-970e-3d8dc4afb2c0 -o table
+    ```
+
+    ```output
+    Name      Id                                    Status     Target           Submission time                   Completion time                  
+    --------  ------------------------------------  ---------  ---------------  --------------------------------  -------------------------------- 
+    MyQuantumJob  b2f07cc4-b49b-40b0-b63b-9a4885e5fef5  Succeeded  rigetti.sim.qvm  2023-12-11T05:33:23.187773+00:00  2023-12-11T05:33:29.252742+00:00 
+    ```
+
+1. To view the output of the job, use the `job output` command:
+
+    ```azurecli
+    az quantum job output --job-id b0012975-744a-4405-970e-3d8dc4afb2c0 -o table
+    ```
+
+    ```output
+    Result        Frequency
+    ------------  -----------  ----------------------
+    [0, 1, 1, 1]  1.00000000   |████████████████████|
+    ```
+***

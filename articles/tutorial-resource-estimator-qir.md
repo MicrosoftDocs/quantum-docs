@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: In this tutorial, learn how to create and submit a QIR program to the Azure Quantum Resource Estimator target.
 ms.author: sonialopez
-ms.date: 02/14/2023
+ms.date: 01/04/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: tutorial
@@ -13,27 +13,48 @@ uid: microsoft.quantum.tutorial.resource-estimator.qir
 
 # Tutorial: Submit a QIR program to the Azure Quantum Resource Estimator
 
-The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator) is build on [Quantum Intermediate Representation (QIR)](xref:microsoft.quantum.concepts.qir), the forward-looking, fully interoperable specification for quantum programs. QIR serves as a common interface between quantum programming languages and frameworks, and targeted quantum computation platforms. Because the Resource Estimator takes a QIR program as input, it supports any language that translates to QIR. For example, it can be used by popular quantum SDKs and languages such as Q# and Qiskit.  
+The Azure Quantum Resource Estimator is built on [Quantum Intermediate Representation (QIR)](xref:microsoft.quantum.concepts.qir), a fully interoperable specification for quantum programs. QIR serves as a common interface between quantum programming languages and frameworks, and targeted quantum computation platforms. Because the Resource Estimator takes a QIR program as input, it supports any language that translates to QIR. For example, it can be used by popular quantum SDKs and languages such as Q# and Qiskit.  
 
 This tutorial shows how to write and submit a QIR program to the Resource Estimator. This tutorial uses [PyQIR](https://github.com/qir-alliance/pyqir) to generate QIR, however, you can use any other source of QIR.
 
-[!INCLUDE [Modern QDK RE banner](includes/new-qdk-resource-estimator-support.md)]
+[!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
 
 In this tutorial, you'll learn how to:
 
 > [!div class="checklist"]
-> * Connect to the Azure Quantum service
+> * Connect to the Azure Quantum service.
 > * Define a function to create a resource estimation job from QIR bitcode
 > * Create a QIR bitcode using PyQIR generator
 > * Submit a QIR job to the Resource Estimator
 
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
-* An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-  > [!NOTE]
-  > The Resource Estimator is a target of the Microsoft Quantum Computing provider. If you are using an existing workspace, verify that the Microsoft Quantum Computing provider has been added to your workspace. For more information, see [Enable the Resource Estimator](xref:microsoft.quantum.quickstarts.computing.resources-estimator#enable-the-azure-quantum-resource-estimator-target-in-your-workspace)
-* The latest [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview#use-python-with-qiskit-and-cirq) using the \[qiskit\] tag.
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
+- An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- The **Microsoft Quantum Computing** provider added to your workspace. For more information, see [Enabling the Resource Estimator target](xref:microsoft.quantum.work-with-resource-estimator#enable-the-azure-quantum-resource-estimator-target-in-your-workspace).
+
+## Create a new notebook in your workspace
+
+1. Log in to the [Azure portal](https://portal.azure.com/) and select your Azure Quantum workspace.
+1. Under **Operations**, select **Notebooks**
+1. Click on **My notebooks** and click **Add New**
+1. In **Kernel Type**, select **IPython**.
+1. Type a name for the file, and click **Create file**.
+
+When your new notebook opens, it automatically creates the code for the first cell, based on your subscription and workspace information.
+
+```python
+from azure.quantum import Workspace
+workspace = Workspace ( 
+    resource_id = "", # Your resource_id 
+    location = ""  # Your workspace location (for example, "westus") 
+)
+```
+
+> [!NOTE]
+> Unless otherwise noted, you should run each cell in order as you create it to avoid any compilation issues. 
+
+Click the triangular "play" icon to the left of the cell to run the code. 
 
 ## Load the required imports
 
@@ -50,18 +71,10 @@ from pyqir.generator import BasicQisBuilder, SimpleModule
 
 ## Connect to the Azure Quantum service
 
-To connect to the Azure Quantum service, your program will need the resource ID and the
-location of your workspace, which you can obtain from the **Overview** page in your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
-
-:::image type="content" source="media/azure-quantum-resource-id.png" alt-text="Screenshot showing how to retrieve the resource ID and location from an Azure Quantum workspace":::
-
-Paste the values into the following `AzureQuantumProvider` constructor to create a `provider` object that connects to your Azure Quantum workspace.
+Next, create an `AzureQuantumProvider` object using the `workspace` object from the previous cell to connect to your Azure Quantum workspace.
 
 ```python
-provider = AzureQuantumProvider(
-  resource_id="",
-  location=""
-)
+provider = AzureQuantumProvider(workspace)
 ```
 
 ## Define a function to create a resource estimation job from QIR
@@ -77,7 +90,7 @@ When submitting a resource estimate request for your program, you can specify so
 
 For more information about the input parameters, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
 
-For this example, you will implement a generic function that takes as input the `provider` object that connects to your Azure Quantum workspace and the QIR bitcode of the quantum program.  It returns as result an Azure Quantum job. 
+For this example, you will implement a generic function that takes as input the `provider` object that connects to your Azure Quantum workspace and the QIR bitcode of the quantum program.  It returns as result an Azure Quantum job.
 The Resource Estimator target parameters can be passed via keyword arguments to the function.
 
 ```python

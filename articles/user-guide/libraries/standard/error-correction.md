@@ -122,7 +122,4 @@ let (decodedData, decodedScratch) = decode(logicalRegister);
 ApplyToEach(Reset, decodedScratch);
 
 ```
-
-This example is explored in more detail in the [bit flip code sample](https://github.com/microsoft/Quantum/tree/main/samples/error-correction/bit-flip-code).
-
-Aside from the bit-flip code, the Q# are libraries are provided with implementations of the [five-qubit perfect code](https://arxiv.org/abs/quant-ph/9602019), and the [seven-qubit code](https://arxiv.org/abs/quant-ph/9705052), both of which can correct an arbitrary single-qubit error.
+Aside from the bit-flip code, the Q# libraries are provided with implementations of the [five-qubit perfect code](https://arxiv.org/abs/quant-ph/9602019), and the [seven-qubit code](https://arxiv.org/abs/quant-ph/9705052), both of which can correct an arbitrary single-qubit error.

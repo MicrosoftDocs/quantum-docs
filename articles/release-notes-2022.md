@@ -141,11 +141,11 @@ demonstrating the use of the sparse simulator.
   -[microsoft/iqsharp#606](https://github.com/microsoft/iqsharp/issues/606) where lambda expressions couldn't be used in Q# programs that are called from Python, including Jupyter notebooks.
   - [microsoft/QuantumLibraries#511](https://github.com/microsoft/QuantumLibraries/issues/511) where the reflection phases for amplitude estimation were calculated incorrectly.
   -[microsoft/QuantumLibraries#527](https://github.com/microsoft/QuantumLibraries/issues/527) where the [RangeAsIntArray](/qsharp/api/qsharp/microsoft.quantum.convert.rangeasintarray) function returned a wrong value for a corner case.
--[microsoft/QuantumLibraries#494](https://github.com/microsoft/QuantumLibraries/issues/494) where the [qdk-chem tool](xref:microsoft.quantum.libraries.overview-chemistry.concepts.installation#using-the-quantum-development-kit-with-qdk-chem) produced invalid Broombridge files.
+-[microsoft/QuantumLibraries#494](https://github.com/microsoft/QuantumLibraries/issues/494) where the qdk-chem tool produced invalid Broombridge files.
   -[microsoft/QuantumLibraries#386](https://github.com/microsoft/QuantumLibraries/issues/386) where the [AllowAtMostNCallsCA](/qsharp/api/qsharp/microsoft.quantum.diagnostics.allowatmostncallsca) operation failed nondeterministically.
   -[microsoft/qsharp-runtime#929](https://github.com/microsoft/qsharp-runtime/issues/929) where the empty quantum program was causing an exception when submitted to Azure Quantum.
 - [microsoft/QuantumLibraries#444](https://github.com/microsoft/QuantumLibraries/issues/444) where tests failed probabilistically.
-  - Fixed GitHub issue [microsoft/QuantumLibraries#270](https://github.com/microsoft/QuantumLibraries/issues/270) where the number of qubits was overestimated in the [machine learning library](xref:microsoft.quantum.libraries.overview.machine-learning.intro).
+  - Fixed GitHub issue [microsoft/QuantumLibraries#270](https://github.com/microsoft/QuantumLibraries/issues/270) where the number of qubits was overestimated in the machine learning library.
 
 
 ## Azure Quantum service update 2022-03-30
@@ -196,7 +196,7 @@ demonstrating the use of the sparse simulator.
 
 - The :::no-loc text="Full state::: Simulator has been migrated from the platform-specific compiler to Clang to fix [GitHub issue #876](https://github.com/microsoft/qsharp-runtime/issues/876). 
 - When submitting a job to Azure Quantum via the CLI, Python, IQ# and other Azure Quantum SDKs, the job details may include the cost estimate of the job (if supported by the provider). The final cost on your bill might be slightly different due to added taxes and currency conversion rates. 
-- You can now estimate the price of your job in azure-quantum package by using [estimate_cost](xref:microsoft.quantum.quickstarts.computing.provider.portal#estimate-job-cost) for the target that you're using with the Qiskit, Cirq and pass-through feature.
+- You can now estimate the price of your job in azure-quantum package by using `estimate_cost` for the target that you're using with the Qiskit, Cirq and pass-through feature.
 - The azure-quantum package now supports submitting Qiskit lists of length 1. 
 - Fixed GitHub issue [microsoft/azure-quantum-python#198](https://github.com/microsoft/azure-quantum-python/issues/198) in the azure-quantum package where the Qiskit jobs were causing incorrect results in circuits with helper qubits.
 - In azure-quantum package, the perform_icm parameter of the 1QBit `PticmSolver` was deprecated, using it now returns a deprecation warning. A `seed` parameter was added to all other 1QBit solvers that specifies a random seed.

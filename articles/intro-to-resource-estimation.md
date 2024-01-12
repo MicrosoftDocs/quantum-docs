@@ -7,15 +7,15 @@ ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: overview
 no-loc: ['Python', '$$v', Quantum Intermediate Representation, target, targets]
-title: Introduction to resource estimation
+title: Introduction to the Resource Estimator
 uid: microsoft.quantum.overview.intro-resource-estimator
 --- 
 
 # An introduction to resource estimation
 
-In quantum computing, resource estimation is the process used to determine the number of qubits, quantum gates, processing time, and other resources needed to run a quantum program assuming (or taking as parameters) specific hardware characteristics. 
+In quantum computing, resource estimation is the process used to determine the number of qubits, quantum gates, processing time, and other resources needed to run a quantum program assuming (or taking as parameters) specific hardware characteristics.
 
-The Azure Quantum Resource Estimator allows you to understand the resources required to run a particular algorithm. By incorporating the Resource Estimator in your development workflow and continuously evaluating your quantum program, you can understand how implementation changes to the program impact resource consumption. 
+The Azure Quantum Resource Estimator allows you to understand the resources required to run a particular algorithm. By incorporating the Resource Estimator in your development workflow and continuously evaluating your quantum program, you can understand how implementation changes to the program impact resource consumption.
 
 ## Why is resource estimation important in the development of quantum computing?
 
@@ -32,7 +32,7 @@ The Resource Estimator is built on community supported Quantum Intermediate Re
 :::image type="content" source="media/Resource-Estimation-component-overview.png" alt-text="Diagram showing components provided by Resource Estimator and corresponding customizations. Provided aspects are Application Input, Compilation Tools, QIR, QEC models, Qubit models, and Analysis. Customer can bring Application Program, Compilation or Optimization Tools, QIR Code, QEC models, Qubit parameters, and Analysis and Visualization Tools.":::
 
 > [!TIP]
-> The Resource Estimator is **free of charge** and only requires an Azure account.
+> The Resource Estimator is **free of charge** and doesn't require an Azure account.
 
 To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator) or explore [using the Resource Estimator with different SDKs and IDEs](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
@@ -52,23 +52,11 @@ One of the applications of quantum algorithms with scientific and commercial int
 
 The earliest application of scientific interest may be simulating the dynamics of around one hundred quantum spins in a quantum magnet. Using the Resource Estimator, the Microsoft Quantum research team estimated the resources needed to simulate the quantum spin of a simple quantum magnet, the so-called two-dimensional transverse field Ising model.
 
-You can find the sample of **quantum dynamics** in the [Resource estimation sample notebooks](https://github.com/microsoft/Quantum/blob/main/samples/azure-quantum/resource-estimation/estimation-dynamics.ipynb), or run it in the notebook gallery sample of your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). 
-
-### Quantum chemistry
-
-If we gain the ability to accurately simulate complex, correlated quantum mechanical systems, we could unlock breakthroughs in areas as diverse as carbon capture, food insecurity and designing better fuels and materials to enable a greener future.
-
-For example, in the context of climate change and global warming , finding an efficient catalyst for carbon fixation has become a main issue. Carbon fixation is a natural process by which carbon dioxide is turned into valuable chemicals for storing energy. The most well-known example of carbon fixation is photosynthesis: conversion of carbon dioxide into glucose in plants.
-
-The Microsoft Quantum research team developed a [new quantum algorithm to simulate catalytic processes](https://arxiv.org/abs/2007.14460). They focused on a well-known catalytic process, based on the transition metal ruthenium, to convert carbon dioxide into methanol. Using the Resource Estimator, they estimated the resources needed to analyze the activation energy of a ruthenium-based catalyst for carbon fixation.
-
-You can find a sample of **quantum chemistry** in the tutorial [Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry), or run the sample in the notebook gallery sample of your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). This sample represents the first step in the quantum chemistry journey, allowing us to understand in more detail what computational resources would be required to simulate certain quantum mechanical systems.
+You can find the sample of **quantum dynamics** in the [Resource estimation code samples](https://github.com/microsoft/qsharp/tree/main/samples/estimation).
 
 ### Factoring large numbers
 
 Because many of today’s classical cryptographic schemes are based on the difficulty of factoring large numbers, estimating the resources required to run Shor’s factoring algorithm is important for assessing the vulnerability of current cryptographic schemes. Assuming the fastest quantum hardware operations proposed to date, factoring a 2048-bit integer using Shor’s algorithm would require about 20 minutes on 25,000 perfect, noiseless qubits. However, qubits are noisy and must have error correction to enable long computations. In the paper [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629), the Microsoft Quantum research team estimated the resources needed to factorize a 2048-bit number using the Resource Estimator.
-
-You can find the sample of **factoring large numbers** in the [Resource estimation sample notebooks](https://github.com/microsoft/Quantum/tree/main/samples/azure-quantum/resource-estimation/estimation-factoring.ipynb), or run it in the notebook gallery sample of your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). 
 
 ## Resource estimation for quantum-safe planning
 

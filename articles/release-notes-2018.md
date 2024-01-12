@@ -66,8 +66,6 @@ This release also includes a new quantum chemistry library:
   - Estimate energy levels of molecules represented by the Broombridge schema.
 - Documentation describes how to use NWChem to generate additional chemical models for quantum simulation with Q#.
 
-Learn more about the [Quantum Development Kit chemistry library](xref:microsoft.quantum.libraries.overview-chemistry.concepts.overview).
-
 With the new chemistry library, we're separating out the libraries into a new GitHub repo, [Microsoft/QuantumLibraries](https://github.com/Microsoft/QuantumLibraries).  The samples remain in the repo [Microsoft/Quantum](https://github.com/Microsoft/Quantum).  We welcome contributions to both!
 
 This release includes bug fixes and features for issues reported by the community.

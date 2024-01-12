@@ -107,7 +107,7 @@ For more information, see the discussion in [Gilyén *et al*. 1711.00465](https:
 
 ## Next steps
 
-- [Open quantum systems](xref:microsoft.quantum.concepts.opensystems)
+
 - [Grover's algorithm](xref:microsoft.quantum.concepts.grovers)
 - [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir)
 - [Vectors and matrices](xref:microsoft.quantum.concepts.vectors)
