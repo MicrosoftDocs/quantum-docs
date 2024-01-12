@@ -59,9 +59,10 @@ Some things to note:
 
 - **1st cell**: Preloads your subscription information to connect to the Azure Quantum service. 
 - **2nd cell**: Retrieves the available targets (quantum computers and simulators) in your workspace. 
-- **3rd and 4th cells**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the notebook cell. 
-- **5th cell**: Sets the target and submits the job. 
-- **6th cell**: Plots and displays the result. The results should be roughly split between 0 and 1. 
+- **3rd cell**: Imports the `qsharp` package and sets the base profile for the compiler. 
+- **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the notebook cell. 
+0 **5th cell**: Compiles the qsharp operation using the base profile to submit to Azure Quantum.
+- **6th and 7th cells**: Sets the target, submits the job, and plots and displays the result. The results should be roughly split between 0 and 1. 
 
 ### [Quantinuum](#tab/tabid-qunatinuum)
 
@@ -79,9 +80,10 @@ Some things to note:
 
 - **1st cell**: Preloads your subscription information to connect to the Azure Quantum service. 
 - **2nd cell**: Retrieves the available targets (quantum computers and simulators) in your workspace. 
-- **3rd and 4th cells**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the notebook cell.
-- **5th cell**: Sets the target and submits the job.
-- **6th cell**: Plots and displays the result.
+- **3rd cell**: Imports the `qsharp` package and sets the base profile for the compiler. 
+- **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the notebook cell. 
+0 **5th cell**: Compiles the qsharp operation using the base profile to submit to Azure Quantum.
+- **6th and 7th cells**: Sets the target, submits the job, and plots and displays the result. The results should be roughly split between 0 and 1. 
 
 Looking at the histogram, you may notice that the program returned 0 every time, which is not very random. This is because the notebook was pre-populated to use the **Quantinuum Syntax Checker**, *quantinuum.sim.h1-1sc*. Using the Syntax Checker ensures that your code will run successfully on Quantinuum hardware, but also returns 0 for every quantum measurement. 
 
@@ -112,25 +114,12 @@ Some things to note:
 
 - **1st cell**: Preloads your subscription information to connect to the Azure Quantum service. 
 - **2nd cell**: Retrieves the available targets (quantum computers and simulators) in your workspace. 
-- **3rd cell**: Sets the target to the Rigetti simulator. 
-- **4th and 5th cells**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the notebook cell. 
-- **6th cell**: Submits the job. 
-- **7th cell**: Plots and displays the results. The results should be roughly split between 0 and 1. 
+- **3rd cell**: Imports the `qsharp` package and sets the base profile for the compiler. 
+- **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the notebook cell. 
+0 **5th cell**: Compiles the qsharp operation using the base profile to submit to Azure Quantum.
+- **6th and 7th cells**: Sets the target, submits the job, and plots and displays the result. The results should be roughly split between 0 and 1. 
 
 ***
-
-## Load and run other sample notebooks
-
-You'll find more sample notebooks in the **Getting started** tab of the sample gallery of your Azure Quantum workspace.
-
-<!-- UPDATE FOR NEW PORTAL -->
-|Notebook| SDK| Description |
-|--------|----|--------|
-|Parallel QRNG|Q#|This sample runs a quantum random number generator that draws several bits with a single measurement. |
-|Grover's Search|Q# | This sample prepares a register of qubits in a state marked by a given quantum operation known as an oracle. Grover's algorithm is a data search algorithm that uses a quantum development technique known as amplitude amplification. | 
-|Quantum Signal Processing| Python + Qiskit| This sample runs the single-qubit quantum circuits used to illustrate quantum signal processing in [arXiv:2110.11327](https://arxiv.org/abs/2110.11327) and [arXiv:2105.02859](https://arxiv.org/abs/2105.02859). Quantum signal processing is a systematic framework to transform quantum systems with respect to almost arbitrary polynomial functions. |
-|Hidden shifts| Python + Qiskit | In this sample you'll learn about quantum deconvolution by solving different *hidden shift* problems.|
-
 
 > [!NOTE]
 > If you have any questions or run into any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
