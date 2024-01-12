@@ -62,7 +62,7 @@ Some scenarios where you may want to submit multiple items as a single job:
 - Easily compare multiple results in a tabular format.
 - Easily compare multiple results in a chart.
 
-### [Batching in VS Code](#tab/tabid-batching-vscode)
+### [Batching with Q#](#tab/tabid-batching-qsharp)
 
 If you are estimating the resources of a Q# program, you can run multiple configurations of target parameters, also known as *batching*. Batching with Q# can be done in a [Jupyter Notebook in VS Code](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
