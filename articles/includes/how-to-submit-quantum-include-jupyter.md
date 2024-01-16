@@ -40,7 +40,7 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
 
 1. Add another cell and enter this Q# code that returns a user-specified number of random bits:
  
-    ```python
+    ```qsharp
     %%qsharp
 
     operation Random() : Result {
@@ -104,7 +104,7 @@ To reinitialize the Q# interpreter and compile your program with the base profil
 
 1. Since you reinitialized the interpreter, you need to run your code again with the new profile:
 
-    ```python
+    ```qsharp
     %%qsharp
 
     operation Random() : Result {
