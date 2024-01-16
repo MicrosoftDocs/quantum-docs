@@ -75,7 +75,8 @@ By default, Q# programs in Jupyter Notebooks use the *ipykernel* Python kernel. 
 ```python
 import qsharp
 ```
-```python
+
+```qsharp
 %%qsharp
 
     operation MeasureOneQubit() : Result {

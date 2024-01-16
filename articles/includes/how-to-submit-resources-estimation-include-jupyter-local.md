@@ -32,9 +32,9 @@ no-loc: [target, targets]
     import qsharp
     ```
 
-1. Add a new cell and copy the following code. 
+1. Add a new cell and copy the following code.
 
-    ```python
+    ```qsharp
     %%qsharp
     open Microsoft.Quantum.Arrays;
     open Microsoft.Quantum.Canon;

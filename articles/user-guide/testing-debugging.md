@@ -62,7 +62,7 @@ The [`fail`](xref:microsoft.quantum.qsharp.returnsandtermination#fail-expression
 
 Consider this simple example that validates a parameter value:
 
-```python 
+```qsharp
 %%qsharp
 
 function PositivityFact(value : Int) : Unit {
@@ -98,7 +98,7 @@ Here, the `fail` expression prevents the program from continuing to run with inv
 
 You can implement the same behavior as the previous example using the [`Fact()`](xref:Microsoft.Quantum.Diagnostics.Fact) function from the <xref:Microsoft.Quantum.Diagnostics>. The `Fact()` function evaluates a given classical condition and throws an exception if it is false. 
 
-```python
+```qsharp
 %%qsharp
 
     function PositivityFact(value : Int) : Unit {
@@ -138,7 +138,7 @@ Qsc.Eval.UserFail
 import qsharp
 ```
 
-```python
+```qsharp
 %%qsharp
 
 open Microsoft.Quantum.Diagnostics;
@@ -181,7 +181,7 @@ Basis State
 import qsharp
 ```
 
-```python
+```qsharp
 %%qsharp
 
 use qubits = Qubit[2];
@@ -203,7 +203,7 @@ Basis State
 ```
 
 
-```python
+```qsharp
 %%qsharp
 R1Frac(1, 2, qubits[0]);
 R1Frac(1, 3, qubits[1]);

@@ -247,7 +247,7 @@ For now, the `Perform3qubitQFT` operation doesn't return any value - the operati
 
 1. Add the Q# program with the `Perform3qubitQFT` operation. To do so, you use the `%%qhsarp` magic command. Copy this code into the second cell. 
 
-    ```python
+    ```qsharp
     %%qsharp
     open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Diagnostics;
@@ -489,7 +489,7 @@ Post-QFT measurement results [qubit0, qubit1, qubit2]:
 
 1. Update the cell with the Q# program to return the measurement results. To do so, copy the following code into the second cell:
 
-```python
+```qsharp
 %%qsharp
 
 open Microsoft.Quantum.Intrinsic;

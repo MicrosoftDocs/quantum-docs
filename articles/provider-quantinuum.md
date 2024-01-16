@@ -144,7 +144,7 @@ For information on MCMR in Quantinuum systems, see the H-series product data she
 
 In Q#, the `MResetZ` function can be used both to measure a qubit and reset it. For more information on this function, see [`MResetZ`] in the Q# documentation.
 
-```python
+```qsharp
 %%qsharp
 open Microsoft.Quantum.Intrinsic;
 open Microsoft.Quantum.Measurement;
@@ -214,7 +214,7 @@ Quantinuum's native gate set includes arbitrary angle ZZ gates. This is benefici
 
 In Q\#, the arbitrary angle ZZ gate is implemented with the [Rzz](xref:Microsoft.Quantum.Intrinsic.Rzz) operation.
 
-```python
+```qsharp
 %%qsharp
 open Microsoft.Quantum.Intrinsic;
 open Microsoft.Quantum.Measurement;
@@ -287,7 +287,7 @@ GenerateRandomBit: any = None
 
 Next, define the function.
 
-```python
+```qsharp
 %%qsharp
 open Microsoft.Quantum.Measurement;
 open Microsoft.Quantum.Arrays;
@@ -388,7 +388,7 @@ GenerateRandomBit: any = None
 
 Next, define the function.
 
-```python
+```qsharp
 %%qsharp
 open Microsoft.Quantum.Measurement;
 open Microsoft.Quantum.Arrays;
