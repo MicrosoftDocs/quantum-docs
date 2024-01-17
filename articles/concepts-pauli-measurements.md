@@ -112,7 +112,7 @@ $$
 
 As before, any unitary transformation of such matrices also describes two half-spaces labeled with $\pm 1$ eigenvalues.
 For example, $X\otimes X = H\otimes H(Z\otimes Z)H\otimes H$  from the identity that $Z=HXH$.
-Similar to the one-qubit case, all two-qubit Pauli-measurements may be written as $U^\dagger (Z\otimes \mathbb{1}) U$ for $4\times 4$ unitary matrices $U$. 
+Similar to the one-qubit case, all two-qubit Pauli-measurements may be written as $U^\dagger (Z\otimes 1) U$ for $4\times 4$ unitary matrices $U$. 
 The transformations are enumerated in the following table.
 
 > [!NOTE]
@@ -160,7 +160,7 @@ As there are four computational basis vectors, performing both measurements redu
 
 ## Correlations between qubits
 Another way of looking at measuring tensor products of Pauli matrices such as $X\otimes X$ or $Z\otimes Z$ is that these measurements let you look at information stored in the correlations between the two qubits.
-Measuring $X\otimes \mathbb{1}$ lets you look at information that is locally stored in the first qubit.
+Measuring $X\otimes 1$ lets you look at information that is locally stored in the first qubit.
 While both types of measurements are equally valuable in quantum computing, the former illuminates the power of quantum computing.
 It reveals that in quantum computing, often the information you wish to learn is not stored in any single qubit but rather stored non-locally in all the qubits at once, and therefore only by looking at it through a joint measurement (e.g. $Z\otimes Z$) does this information become manifest.
 
@@ -169,7 +169,7 @@ All such tensor products of Pauli operators have only two eigenvalues $\pm 1$ an
 Thus they coincide with the requirements stated earlier.
 
 In Q#, such measurements return $j$ if the measurement yields a result in the eigenspace of sign $(-1)^j$.
-Having Pauli measurements as a built-in feature in Q# is helpful because measuring such operators requires long chains of controlled-NOT gates and basis transformations to describe the diagonalizing $U$ gate needed to express the operation as a tensor product of $Z$ and $\mathbb{1}$.
+Having Pauli measurements as a built-in feature in Q# is helpful because measuring such operators requires long chains of controlled-NOT gates and basis transformations to describe the diagonalizing $U$ gate needed to express the operation as a tensor product of $Z$ and $1$.
 By being able to specify that you wish to do one of these pre-defined measurements, you don't need to worry about how to transform your basis such that a computational basis measurement provides the necessary information.
 Q# handles all the necessary basis transformations for you automatically.
 For more information, see the [`Measure`](xref:Microsoft.Quantum.Intrinsic.Measure) and [`MeasurePaulis`](xref:Microsoft.Quantum.Measurement.MeasurePaulis) operations.
