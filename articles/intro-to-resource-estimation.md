@@ -8,7 +8,6 @@ ms.subservice: computing
 ms.topic: overview
 no-loc: ['Python', '$$v', Quantum Intermediate Representation, target, targets]
 title: Introduction to the Resource Estimator
-title: Introduction to the Resource Estimator
 uid: microsoft.quantum.overview.intro-resource-estimator
 --- 
 

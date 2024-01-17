@@ -17,13 +17,7 @@ This tutorial shows how to estimate the physical resources required to calculate
 
 The *qubitization* approach is based on quantum phase estimation, but instead of constructing the standard $U = \\exp{(-i H/\\alpha)}$ from the Hamiltonian matrix $H$, one takes $U = \\exp{(-i \\sin^{-1} (H/\\alpha))}$, which can typically be implemented with fewer resources. Using *double-factorization*, $H$ is represented compactly through a combination of a judicious choice of orbitals and compression. The tolerated total error budget is $\\epsilon = 0.01$, corresponding to $1\\%$.
 
-<<<<<<< HEAD
-This tutorial represents the first step in the quantum chemistry journey, allowing us to understand in more detail what computational resources would be required to simulate certain quantum mechanical systems.
-
-[!INCLUDE [Modern QDK RE banner](includes/new-qdk-resource-estimator-support.md)]
-=======
 [!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
->>>>>>> 72b1b56b02a4513bbee9924c55c0e3f4c20c600e
 
 In this tutorial, you will:
 
