@@ -60,7 +60,7 @@ This example shows how to create a session with Q# inline code using hosted Note
 
 1. Write your Q# program. For example, the following Q# program generates a random bit. 
 
-    ```python
+    ```qsharp
     %%qsharp
     open Microsoft.Quantum.Intrinsic;
 

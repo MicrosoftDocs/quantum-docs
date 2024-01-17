@@ -40,12 +40,12 @@ To see how you can identify that this is the case without measuring the very sta
 
 | Error $E$ | $E\ket{\overline{0}}$ | $E\ket{\overline{1}}$ |
 | --- | --- | --- |
-| $\boldone$ | $\ket{000}$ | $\ket{111}$ |
+| $\mathbf{1}$ | $\ket{000}$ | $\ket{111}$ |
 | $X_0$ | $\ket{100}$ | $\ket{011}$ |
 | $X_1$ | $\ket{010}$ | $\ket{101}$ |
 | $X_2$ | $\ket{001}$ | $\ket{110}$ |
 
-In order to protect the state that you're encoding, you need to be able to distinguish the three errors from each other and from the identity $\boldone$ without distinguishing between $\ket{\overline{0}}$ and $\ket{\overline{1}}$.
+In order to protect the state that you're encoding, you need to be able to distinguish the three errors from each other and from the identity $\mathbf{1}$ without distinguishing between $\ket{\overline{0}}$ and $\ket{\overline{1}}$.
 For example, if you measure $Z_0$, you get a different result for $\ket{\overline{0}}$ and $\ket{\overline{1}}$ in the no-error case, so that collapses the encoded state.
 On the other hand, consider measuring $Z_0 Z_1$, the parity of the first two bits in each computational basis state.
 Recall that each measurement of a Pauli operator checks which eigenvalue  the state being measured corresponds to, so for each state $\ket{\psi}$ in the previous table, you can compute $Z_0 Z_1 \ket{\psi}$ to see if you get $\pm\ket{\psi}$.
@@ -57,7 +57,7 @@ You denote the results of each measurement by the sign of the eigenvalue that is
 
 | Error $E$ | $E\ket{\overline{0}}$ | $E\ket{\overline{1}}$ | Result of $Z_0 Z_1$ | Result of $Z_1 Z_2$ |
 | --- | --- | --- | --- | --- |
-| $\boldone$ | $\ket{000}$ | $\ket{111}$ | $+$ | $+$ |
+| $\mathbf{1}$ | $\ket{000}$ | $\ket{111}$ | $+$ | $+$ |
 | $X_0$ | $\ket{100}$ | $\ket{011}$ | $-$ | $+$ |
 | $X_1$ | $\ket{010}$ | $\ket{101}$ | $-$ | $-$ |
 | $X_2$ | $\ket{001}$ | $\ket{110}$ | $+$ | $-$ |

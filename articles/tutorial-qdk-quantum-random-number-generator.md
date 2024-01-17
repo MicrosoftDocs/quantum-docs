@@ -416,7 +416,7 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
 
 1. Add the quantum random number generator program. To do so, you use the `%%qhsarp` magic command. Copy this code into the second cell. 
 
-    ```python
+    ```qsharp
     %%qsharp
     
     open Microsoft.Quantum.Convert;

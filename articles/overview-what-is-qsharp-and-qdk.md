@@ -69,7 +69,7 @@ If you want to start practicing and writing your Q# programs without installing 
 
 #### Local development environment
 
-If you prefer a local development environment, you can install [the Modern QDK extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode-dev). The Modern QDK extension provides a full-featured development environment for Q#, including syntax highlighting, realtime coding feedback, and debugging.
+If you prefer a local development environment, you can install [the Modern QDK extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). The Modern QDK extension provides a full-featured development environment for Q#, including syntax highlighting, realtime coding feedback, and debugging.
 
 To get started with the Modern QDK extension, see the following [Tutorial](xref:microsoft.quantum.tutorial-qdk.random-number).
 

@@ -6,7 +6,7 @@ ms.date: 06/09/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
-no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, "$$$", '$$$', $$$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
+no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, "$$$", '$$$', $$$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\mathbf{1}', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 title: Advanced matrix concepts
 uid: microsoft.quantum.concepts.matrix-advanced
 ---
@@ -49,7 +49,7 @@ This factorization is known as [*spectral decomposition* or *eigendecomposition*
 A [*matrix exponential*](https://en.wikipedia.org/wiki/Matrix_exponential) can also be defined in exact analogy to the exponential function.  The matrix exponential of a matrix $A$ can be expressed as
 
 $$
-e^A=\boldone + A + \frac{A^2}{2!}+\frac{A^3}{3!}+\cdots
+e^A=\mathbf{1} + A + \frac{A^2}{2!}+\frac{A^3}{3!}+\cdots
 $$
 
 This is important because quantum mechanical time evolution is described by a unitary matrix of the form $e^{iB}$ for Hermitian matrix $B$. For this reason, performing matrix exponentials is a fundamental part of quantum computing and as such Q# offers intrinsic routines for describing these operations.
@@ -58,16 +58,16 @@ There are many ways in practice to compute a matrix exponential on a classical c
 The easiest way to understand how to compute the exponential of a matrix is through the eigenvalues and eigenvectors of that matrix. Specifically, the spectral theorem discussed above says that for every Hermitian or unitary matrix $A$ there exists a unitary matrix $U$ and a diagonal matrix $D$ such that $A=U^\dagger D U$.  Because of the properties of unitarity, $A^2 = U^\dagger D^2 U$ and similarly for any power $p$ $A^p = U^\dagger D^p U$.  If one substitutes this into the operator definition of the operator exponential:
 
 $$
-e^A= U^\dagger \left(\boldone +D +\frac{D^2}{2!}+\cdots \right)U= U^\dagger \begin{bmatrix}\exp(D_{11}) & 0 &\cdots &0\\\\ 0 & \exp(D_{22})&\cdots& 0\\\\ \vdots &\vdots &\ddots &\vdots\\\\ 0&0&\cdots&\exp(D_{NN}) \end{bmatrix} U.
+e^A= U^\dagger \left(\mathbf{1} +D +\frac{D^2}{2!}+\cdots \right)U= U^\dagger \begin{bmatrix}\exp(D_{11}) & 0 &\cdots &0\\\\ 0 & \exp(D_{22})&\cdots& 0\\\\ \vdots &\vdots &\ddots &\vdots\\\\ 0&0&\cdots&\exp(D_{NN}) \end{bmatrix} U.
 $$
 
 In other words, if you transform to the eigenbasis of the matrix $A$, then computing the matrix exponential is equivalent to computing the ordinary exponential of the eigenvalues of the matrix.  As many operations in quantum computing involve performing matrix exponentials, this trick of transforming into the eigenbasis of a matrix to simplify performing the operator exponential appears frequently. It's the basis behind many quantum algorithms such as Trotter–Suzuki-style quantum simulation methods discussed later in this guide.
 
 Another useful property holds for [*involutory matrices*](https://en.wikipedia.org/wiki/Involutory_matrix).
-An involutory matrix $B$ is both unitary and Hermitian, that is, $B=B^{-1}=B^\dagger$. Then, an involutory matrix is a  square matrix equal to its own inverse, $B^2=\boldone$.
-By applying this property to the above expansion of the matrix exponential, grouping the $\boldone$ and the $B$ terms together, and applying [Maclaurin's theorem to the cosine and sine functions](https://en.wikibooks.org/wiki/Trigonometry/Power_Series_for_Cosine_and_Sine), the identity
+An involutory matrix $B$ is both unitary and Hermitian, that is, $B=B^{-1}=B^\dagger$. Then, an involutory matrix is a  square matrix equal to its own inverse, $B^2=\mathbf{1}$.
+By applying this property to the above expansion of the matrix exponential, grouping the $\mathbf{1}$ and the $B$ terms together, and applying [Maclaurin's theorem to the cosine and sine functions](https://en.wikibooks.org/wiki/Trigonometry/Power_Series_for_Cosine_and_Sine), the identity
 
-$$e^{iBx}=\boldone \cos(x)+ iB\sin(x)$$
+$$e^{iBx}=\mathbf{1} \cos(x)+ iB\sin(x)$$
 
 holds for any real value $x$. This trick is especially useful because it allows you to reason about the actions that matrix exponentials have, even if the dimension of $B$ is exponentially large, for the special case when $B$ is involutory.
 

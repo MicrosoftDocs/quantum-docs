@@ -110,7 +110,7 @@ Then for an arbitrary state $\ket{\psi}$,
 \begin{align}
     c(U) c(V) c(U)^\dagger \ket{1} \otimes \ket{\psi}
         & = \ket{1} \otimes (UVU^{\dagger} \ket{\psi}) \\\\
-        & = (\boldone \otimes U) (c(V)) (\boldone \otimes U^\dagger) \ket{1} \otimes \ket{\psi}.
+        & = (\mathbf{1} \otimes U) (c(V)) (\mathbf{1} \otimes U^\dagger) \ket{1} \otimes \ket{\psi}.
 \end{align}
 by the definition of `Controlled`.
 On the other hand,
@@ -118,7 +118,7 @@ On the other hand,
     c(U) c(V) c(U)^\dagger \ket{0} \otimes \ket{\psi}
         & = \ket{0} \otimes \ket{\psi} \\\\
         & = \ket{0} \otimes (UU^\dagger \ket{\psi}) \\\\
-        & = (\boldone \otimes U) (c(V)) (\boldone \otimes U^\dagger) \ket{0} \otimes \ket{\psi}.
+        & = (\mathbf{1} \otimes U) (c(V)) (\mathbf{1} \otimes U^\dagger) \ket{0} \otimes \ket{\psi}.
 \end{align}
 By linearity, you can conclude that you can factor $U$ out in this way for all input states.
 That is, $c(UVU^\dagger) = U c(V) U^\dagger$.

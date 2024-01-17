@@ -50,7 +50,7 @@ The Azure Quantum Resource Estimator allows you to submit jobs with multiple con
 
 A resource estimation job consist of two types of job parameters:
 
-- [Target parameters](xref:microsoft.quantum.overview.resources-estimator): qubit model, QEC schemes, error budget, constraints on the component-level, and profiling parameters.
+- [Target parameters](xref:microsoft.quantum.overview.resources-estimator): qubit model, QEC schemes, error budget, constraints on the component-level, and distillation units.
 - Operation arguments: arguments that can be passed to the program (if the QIR entry point contains arguments).
 
 One item consists of one configuration of job parameters, that is one configuration of target parameters and operation arguments. Several items are represented as an array of job parameters.
@@ -62,7 +62,7 @@ Some scenarios where you may want to submit multiple items as a single job:
 - Easily compare multiple results in a tabular format.
 - Easily compare multiple results in a chart.
 
-### [Batching in VS Code](#tab/tabid-batching-vscode)
+### [Batching with Q#](#tab/tabid-batching-qsharp)
 
 If you are estimating the resources of a Q# program, you can run multiple configurations of target parameters, also known as *batching*. Batching with Q# can be done in a [Jupyter Notebook in VS Code](xref:microsoft.quantum.submit-resource-estimation-jobs).
 

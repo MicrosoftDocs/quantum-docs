@@ -256,7 +256,7 @@ qsharp.init(project_root = '/Teleportation_project')
 If your path is valid, you'll see a confirmation message, `Q# initialized with configuration: {'targetProfile': 'unrestricted'}`
 
 
-```python
+```qsharp
 %%qsharp
 // call the main operation 
 RunTeleport.RunTeleportationExample();
