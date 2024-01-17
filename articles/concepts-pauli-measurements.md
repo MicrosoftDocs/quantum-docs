@@ -6,7 +6,7 @@ ms.date: 06/09/2023
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
-no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
+no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\mathbf', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 title: Pauli measurements
 uid: microsoft.quantum.concepts.pauli
 ---
@@ -52,7 +52,7 @@ These measurements are given here for convenience.
 
 |Pauli Measurement  |Unitary transformation  |
 |-------------------|------------------------|
-| $Z$               | $\boldone$             |
+| $Z$               | $\mathbf{1}$             |
 | $X$               | $H$                    |
 | $Y$               | $HS^{\dagger}$         |
 
@@ -101,7 +101,7 @@ For example,
 
 $$
 \begin{align}
-    Z \otimes \boldone = \begin{bmatrix}
+    Z \otimes \mathbf{1} = \begin{bmatrix}
         1 &  0 &  0 &  0 \\\\
         0 &  1 &  0 &  0 \\\\
         0 &  0 & -1 &  0 \\\\
@@ -132,24 +132,24 @@ The transformations are enumerated in the following table.
 
 |Pauli Measurement     |Unitary transformation  |
 |----------------------|------------------------|
-| $Z\otimes \boldone$ | $\boldone\otimes \boldone$ |
-| $X\otimes \boldone$ | $H\otimes \boldone$ |
-| $Y\otimes \boldone$ | $HS^\dagger\otimes \boldone$ |
-| $\boldone \otimes Z$ | $\operatorname{SWAP}$ |
-| $\boldone \otimes X$ | $(H\otimes \boldone)\operatorname{SWAP}$ |
-| $\boldone \otimes Y$ | $(HS^\dagger\otimes \boldone)\operatorname{SWAP}$ |
+| $Z\otimes \mathbf{1}$ | $\mathbf{1}\otimes \mathbf{1}$ |
+| $X\otimes \mathbf{1}$ | $H\otimes \mathbf{1}$ |
+| $Y\otimes \mathbf{1}$ | $HS^\dagger\otimes \mathbf{1}$ |
+| $\mathbf{1} \otimes Z$ | $\operatorname{SWAP}$ |
+| $\mathbf{1} \otimes X$ | $(H\otimes \mathbf{1})\operatorname{SWAP}$ |
+| $\mathbf{1} \otimes Y$ | $(HS^\dagger\otimes \mathbf{1})\operatorname{SWAP}$ |
 | $Z\otimes Z$ | $\operatorname{CNOT}\_{10}$ |
-| $X\otimes Z$ | $\operatorname{CNOT}\_{10}(H\otimes \boldone)$ |
-| $Y\otimes Z$ | $\operatorname{CNOT}\_{10}(HS^\dagger\otimes \boldone)$ |
-| $Z\otimes X$ | $\operatorname{CNOT}\_{10}(\boldone\otimes H)$ |
+| $X\otimes Z$ | $\operatorname{CNOT}\_{10}(H\otimes \mathbf{1})$ |
+| $Y\otimes Z$ | $\operatorname{CNOT}\_{10}(HS^\dagger\otimes \mathbf{1})$ |
+| $Z\otimes X$ | $\operatorname{CNOT}\_{10}(\mathbf{1}\otimes H)$ |
 | $X\otimes X$ | $\operatorname{CNOT}\_{10}(H\otimes H)$ |
 | $Y\otimes X$ | $\operatorname{CNOT}\_{10}(HS^\dagger\otimes H)$ |
-| $Z\otimes Y$ | $\operatorname{CNOT}\_{10}(\boldone \otimes HS^\dagger)$ |
+| $Z\otimes Y$ | $\operatorname{CNOT}\_{10}(\mathbf{1} \otimes HS^\dagger)$ |
 | $X\otimes Y$ | $\operatorname{CNOT}\_{10}(H\otimes HS^\dagger)$ |
 | $Y\otimes Y$ | $\operatorname{CNOT}\_{10}(HS^\dagger\otimes HS^\dagger)$ |
 
 Here, the [`CNOT`](xref:Microsoft.Quantum.Intrinsic.CNOT) operation appears for the following reason.
-Each Pauli measurement that does not include the $\boldone$ matrix is equivalent up to a unitary to $Z\otimes Z$ by the earlier reasoning.
+Each Pauli measurement that does not include the $\mathbf{1}$ matrix is equivalent up to a unitary to $Z\otimes Z$ by the earlier reasoning.
 The eigenvalues of $Z\otimes Z$ only depend on the parity of the qubits that comprise each computational basis vector, and the controlled-not operations serve to compute this parity and store it in the first bit.
 Then once the first bit is measured, one can recover the identity of the resultant half-space, which is equivalent to measuring the Pauli operator.
 
@@ -164,7 +164,7 @@ Measuring $X\otimes \id$ lets you look at information that is locally stored in 
 While both types of measurements are equally valuable in quantum computing, the former illuminates the power of quantum computing.
 It reveals that in quantum computing, often the information you wish to learn is not stored in any single qubit but rather stored non-locally in all the qubits at once, and therefore only by looking at it through a joint measurement (e.g. $Z\otimes Z$) does this information become manifest.
 
-Arbitrary Pauli operators such as $X\otimes Y \otimes Z \otimes \boldone$ can also be measured.
+Arbitrary Pauli operators such as $X\otimes Y \otimes Z \otimes \mathbf{1}$ can also be measured.
 All such tensor products of Pauli operators have only two eigenvalues $\pm 1$ and both eigenspaces constitute half-spaces of the entire vector space.
 Thus they coincide with the requirements stated earlier.
 
