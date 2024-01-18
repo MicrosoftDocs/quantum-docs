@@ -340,9 +340,9 @@ option_params = {
 ```
 
 ```python
-# Pass in the options when submitting the job
+# Pass in the emulator options when submitting the job
 
-job = MyTarget.submit(MyProgram, "Emulator Noise", shots = 4, jobParams = option_params)
+job = MyTarget.submit(MyProgram, "Emulator Noise", shots = 4, input_params = option_params)
 job.get_results()
 
 ```
