@@ -66,7 +66,7 @@ A multi-chip 84-qubit processor offering a 2.5X performance improvement over oth
 
 ### Ankaa-9q-1
 
-A 9-qubit version o the Ankaa-2 QPU.
+A 9-qubit version of the Ankaa-2 QPU.
 
 - Job Type: `Quantum Program`
 - Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
