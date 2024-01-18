@@ -339,9 +339,9 @@ option_params = {
 
 ```
 
-```python
-# Pass in the emulator options when submitting the job
+Pass in the otimization option when submitting the job:
 
+```python
 job = MyTarget.submit(MyProgram, "Emulator Noise", shots = 10, input_params = option_params)
 job.get_results()
 
@@ -394,6 +394,8 @@ For more information on `pytket`, see the following links:
 
 #### [TKET Compilation with Q# Provider](#tab/tabid-tket-compilation-with-q-provider)
 
+First, import the required packages and initiate the base profile:
+
 ```python
 import qsharp
 import azure.quantum
@@ -441,8 +443,9 @@ option_params = {
 
 ``` 
 
+Pass in the otimization option when submitting the job:
+
 ```python
-# Pass in the otimization option when submitting the job
 job = MyTarget.submit(MyProgram, "TKET example", shots = 10, input_params = option_params)
 job.get_results()
 ```
