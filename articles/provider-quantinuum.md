@@ -342,7 +342,7 @@ option_params = {
 ```python
 # Pass in the emulator options when submitting the job
 
-job = MyTarget.submit(MyProgram, "Emulator Noise", shots = 4, input_params = option_params)
+job = MyTarget.submit(MyProgram, "Emulator Noise", shots = 10, input_params = option_params)
 job.get_results()
 
 ```
@@ -394,10 +394,10 @@ For more information on `pytket`, see the following links:
 
 #### [TKET Compilation with Q# Provider](#tab/tabid-tket-compilation-with-q-provider)
 
-First, declare the function to define in Q# as a callable so that Python recognizes the symbol.
-
 ```python
-GenerateRandomBit: any = None
+import qsharp
+import azure.quantum
+qsharp.init(target_profile=qsharp.TargetProfile.Base)
 ```
 
 Next, define the function.
@@ -418,23 +418,33 @@ operation GenerateRandomBit() : Result {
 
 ```
 
-Now, configure the TKET optimization level parameter and submit the job. 
+and compile the operation:
 
 ```python
-# Set the target to submit to
-qsharp.azure.target("quantinuum.sim.h1-1e")
+MyProgram = qsharp.compile("GenerateRandomBit()")
+```
+
+Connect to Azure Quantum, select the target machine, and configure the noise parameters for the emulator:
+
+```python
+MyWorkspace = azure.quantum.Workspace(
+    resource_id = "",
+    location = ""
+)
+
+MyTarget = MyWorkspace.get_targets("quantinuum.sim.h1-1e")
 
 # Update TKET optimization level desired
 option_params = {
     "tket-opt-level": 1
 }
 
-# Pass in the options when submitting the job
-result = qsharp.azure.execute(GenerateRandomBit, 
-                              shots = 100, 
-                              jobName = "Experiment with TKET Compilation", 
-                              timeout = 240,
-                              jobParams = option_params)
+``` 
+
+```python
+# Pass in the otimization option when submitting the job
+job = MyTarget.submit(MyProgram, "TKET example", shots = 10, input_params = option_params)
+job.get_results()
 ```
 
 #### [TKET Compilation with Qiskit Provider](#tab/tabid-tket-compilation-with-qiskit-provider)
