@@ -279,10 +279,12 @@ For more information on the full set of noise parameters available, see the H-se
 
 #### [Emulator Noise Parameters with Q# Provider](#tab/tabid-emulator-noise-parameters-with-q-provider)
 
-First, declare the function to define in Q# as a callable so that Python recognizes the symbol.
+First, import the required packages and initiate the base profile:
 
 ```python
-GenerateRandomBit: any = None
+import qsharp
+import azure.quantum
+qsharp.init(target_profile=qsharp.TargetProfile.Base)
 ```
 
 Next, define the function.
@@ -303,11 +305,21 @@ operation GenerateRandomBit() : Result {
 
 ```
 
-Now, configure the noise parameters for the emulator and submit the job. 
+and compile the operation:
 
 ```python
-# Set the emulator target to submit to
-qsharp.azure.target("quantinuum.sim.h1-1e")
+MyProgram = qsharp.compile("GenerateRandomBit()")
+```
+
+Connect to Azure Quantum, select the target machine, and configure the noise parameters for the emulator:
+
+```python
+MyWorkspace = azure.quantum.Workspace(
+    resource_id = "",
+    location = ""
+)
+
+MyTarget = MyWorkspace.get_targets("quantinuum.sim.h1-1e")
 
 # Update the parameter names desired
 # Note: This is not the full set of options available. 
@@ -325,12 +337,14 @@ option_params = {
     }
 }
 
+```
+
+```python
 # Pass in the options when submitting the job
-result = qsharp.azure.execute(GenerateRandomBit, 
-                              shots = 100, 
-                              jobName = "Experiment with Emulator Noise Parameters", 
-                              timeout = 240,
-                              jobParams = option_params)
+
+job = MyTarget.submit(MyProgram, "Emulator Noise", shots = 4, jobParams = option_params)
+job.get_results()
+
 ```
 
 #### [Emulator Noise Parameters with Qiskit Provider](#tab/tabid-emulator-noise-parameters-with-qiskit-provider)
