@@ -339,10 +339,10 @@ option_params = {
 
 ```
 
-Pass in the otimization option when submitting the job:
+Pass in the emulator noise options when submitting the job:
 
 ```python
-job = MyTarget.submit(MyProgram, "Emulator Noise", shots = 10, input_params = option_params)
+job = MyTarget.submit(MyProgram, "Experiment with Emulator Noise Parameters", shots = 10, input_params = option_params)
 job.get_results()
 
 ```
@@ -446,7 +446,7 @@ option_params = {
 Pass in the otimization option when submitting the job:
 
 ```python
-job = MyTarget.submit(MyProgram, "TKET example", shots = 10, input_params = option_params)
+job = MyTarget.submit(MyProgram, "Experiment with TKET Compilation", shots = 10, input_params = option_params)
 job.get_results()
 ```
 
