@@ -45,6 +45,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 |Use is deducted from the Azure Quantum Credits based on the number of QGSs executed| <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
 |IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.0003 (USD) deducted from your credits</li><li>Minimum price per program execution:<ul><li> \$1.00 (USD) if error mitigation is off</li><li>$5.00 (USD) if error mitigation is on</li></ul></ul>|
 |IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.000220 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.000975 (USD) deducted from your credits</li><li>Minimum price per program execution:<ul><li>$97.50 (USD) - default setting, error mitigation is on</li><li> $12.4166 (USD) if error mitigation is off</li></ul></ul>|
+|IonQ Forte (Private preview) |<ul><li>1-Qubit Gate Shot: $0.000220 (USD) deducted from your credits</li><li>2-Qubit Gate Shot: $0.000975 (USD) deducted from your credits</li><li>Minimum price per program execution:<ul><li>$97.50 (USD) - default setting, error mitigation is on</li><li> $12.4166 (USD) if error mitigation is off</li></ul></ul>|
 
 > [!NOTE]
 > Once you have consumed all the credits you need to switch to a different plan to continue using IonQ. Azure Quantum won’t charge you when you reach your credit limit.
@@ -62,6 +63,7 @@ The Pay-as-you-go plan consists of *a la carte* access to the 11-qubit trapped i
 | Use is charged based on the number of QGSs executed + Azure infrastructure costs | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria 1 QPU</li><li>IonQ Simulator (free)</li></ul>|
 |IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD)</li><li>2-Qubit Gate Shot: $0.0003 (USD)</li><li>Minimum price per program execution:<ul><li> \$1.00 (USD) if error mitigation is off</li><li>$5.00 (USD) if error mitigation is on</li></ul></ul>|
 |IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.000220 (USD)</li><li>2-Qubit Gate Shot: $0.000975 (USD)</li><li>Minimum price per program execution:<ul><li>$97.50 (USD) - default setting, error mitigation is on</li><li> $12.4166 (USD) if error mitigation is off</li></ul></ul>|
+|IonQ Forte (Private preview)|<ul><li>1-Qubit Gate Shot: $0.000220 (USD)</li><li>2-Qubit Gate Shot: $0.000975 (USD)</li><li>Minimum price per program execution:<ul><li>$97.50 (USD) - default setting, error mitigation is on</li><li> $12.4166 (USD) if error mitigation is off</li></ul></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -74,6 +76,7 @@ The Aria plan is a monthly subscription plan with access to the IonQ Aria 1 25-q
 |$25,000 (USD)/Month + Azure infrastructure costs| <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
 |IonQ Harmony |<ul><li>1-Qubit Gate Shot: $0.00003 (USD)</li><li>2-Qubit Gate Shot: $0.0003 (USD)</li><li>Minimum price per program execution:<ul><li> \$1.00 (USD) if error mitigation is off</li><li>$5.00 (USD) if error mitigation is on</li></ul></ul>|
 |IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: $0.000220 (USD)</li><li>2-Qubit Gate Shot: $0.000975 (USD)</li><li>Minimum price per program execution:<ul><li>$97.50 (USD) - default setting, error mitigation is on</li><li> $12.4166 (USD) if error mitigation is off</li></ul></ul>|  
+|IonQ Forte (Private preview)|<ul><li>1-Qubit Gate Shot: $0.000220 (USD)</li><li>2-Qubit Gate Shot: $0.000975 (USD)</li><li>Minimum price per program execution:<ul><li>$97.50 (USD) - default setting, error mitigation is on</li><li> $12.4166 (USD) if error mitigation is off</li></ul></ul>|  
 
 > [!NOTE]
 > Once you have consumed the equivalent cost of the monthly subscription, any overspending is charged as a pay-as-you-go plan.
@@ -197,7 +200,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ## Rigetti
 
-[Rigetti](https://rigetti.com) charges for job execution time on their quantum processors, the 80-qubit Aspen-M-2 and Aspen-M-3. There is no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.html) simulator is free for all users.
+[Rigetti](https://rigetti.com) charges for job execution time on their quantum processors, the 84-bit Ankaa-2, the 9-bit Ankaa-9q-1, and the 80-qubit Aspen-M-3. There is no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.html) simulator is free for all users.
 
 To learn more about Riggeti, visit the [Rigetti provider page](xref:microsoft.quantum.providers.rigetti).
 
@@ -211,7 +214,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 
 |Pricing | Includes access to  |
 |---|---|  
-|Use is deducted from the Azure Quantum Credits based on the job execution time only| <ul><li>Rigetti Aspen-M-3 QPU</li><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
+|Use is deducted from the Azure Quantum Credits based on the job execution time only| <ul><li>Rigetti 84-bit Ankaa-2</li><li>Rigetti 9-bit Ankaa-9q-1</li><li>Rigetti Aspen-M-3 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
 
 > [!NOTE]
 > Once you have consumed all the credits you need to switch to a different plan to continue using Rigetti. Azure Quantum won’t charge you when you reach your credit limit.
@@ -222,11 +225,12 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
  
 ### [Pay As You Go](#tab/tabid-paygoRigetti)
 
-The Pay-as-you-go plan consists of *a la carte* access to the Aspen-M-3 and Aspen-M-2 quantum processors. The usage is charged based on the job execution time only
+The Pay-as-you-go plan consists of *a la carte* access to the Ankaa-2, the Ankaa-9q-1, and the Aspen-M-3 quantum processor. The usage is charged based on the job execution time only
 
 |Pricing | Includes access to   |
 |---|---|  
-|$0.02 (USD) per 10-millisecond increment of job execution time| <ul><li>Rigetti Aspen-M-3 QPU</li><li>Rigetti Aspen-M-2 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
+|$0.02 (USD) per 10-millisecond increment of job execution time| <ul><li>Rigetti 84-bit Ankaa-2</li><li>Rigetti Aspen-M-3 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
+|$0.013 (USD) per 10-millisecond increment of job execution time| <ul><li>Rigetti 9-bit Ankaa-9q-1</li></ul>|
 
 ***
 

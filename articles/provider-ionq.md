@@ -28,6 +28,7 @@ The following targets are available from this provider:
 |[IonQ Harmony](#ionq-harmony-quantum-computer) |	ionq.qpu	|11 qubits	|IonQ's trapped-ion quantum computer.|
 |[IonQ Aria 1](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
 |[IonQ Aria 2](#ionq-aria-quantum-computer) |	ionq.qpu.aria-2	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
+|[IonQ Forte](#ionq-forte-quantum-computer) |	ionq.qpu.forte	|32 qubits	|IonQ's Forte trapped-ion quantum computer. Available in Private Preview only.|
 
 IonQ's targets correspond to a **:::no-loc text="No Control Flow":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
 
@@ -78,7 +79,7 @@ The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigur
 
 ## IonQ Aria quantum computer
 
-IonQ Aria is IonQ's latest generation of trapped-ion quantum computer. With a 25-qubit dynamically reconfigurable system, IonQ Aria is available exclusively on Azure Quantum. For more information, see [IonQ Aria (ionq.com)](https://ionq.com/quantum-systems/aria).
+IonQ Aria is the flagship of IonQ's trapped-ion quantum computers, with a 25-qubit dynamically reconfigurable system. For more information, see [IonQ Aria (ionq.com)](https://ionq.com/quantum-systems/aria).
 
 > [!IMPORTANT]
 > *Debiasing* is enabled on the Aria system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
@@ -113,9 +114,25 @@ IonQ Aria is IonQ's latest generation of trapped-ion quantum computer. With a 25
 
 IonQ Aria is available through Azure Quantum Credits plan and a separate billing plan. For more information, see [Azure Quantum pricing](/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-AQcreditsQ%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#ionq).
 
+## IonQ Forte quantum computer
+
+IonQ Forte is IonQ's highest-performing, commercially available trapped-ion quantum computer. With a 32-qubit software-configurable system, IonQ Forte is available in Private Preview on Azure Quantum. For more information, see [IonQ Forte (ionq.com)](https://ionq.com/quantum-systems/forte).
+
+> [!IMPORTANT]
+> *Debiasing* is enabled on the Forte system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
+
+- Job type: `Quantum Program`
+- Data Format: `ionq.circuit.v1`
+- Target ID: `ionq.qpu.forte`
+- Target Execution Profile: [:::no-loc text="No Control Flow":::](xref:microsoft.quantum.target-profiles)
+
+| Parameter Name | Type     | Required | Description |
+|----------------|----------|----------|-------------|
+| `shots`   | int    | No | Number of experimental shots.  |
+
 ## Input format
 
-In Q#, the output of a quantum measurement is a value of type `Result`, which can only take the values `Zero` and `One`. When you define a Q# operation, it can only be submitted to IonQ hardware if the return type is a collection of `Result`s, that is, if the output of the operation is the result of a quantum measurement. The reason for this is because IonQ builds a histogram from the returned values, so it restricts the return type to `Result`s to simplify creating this histogram.
+In Q#, the output of a quantum measurement is a value of type `Result`, which can only take the values `Zero` and `One`. When you define a Q# operation, it can only be submitted to IonQ hardware if the return type is a collection of `Result`s, that is, if the output of the operation is the result of a quantum measurement. The reason for this is because IonQ builds a histogram from the returned values, so it restricts the return type to `Result` to simplify creating this histogram.
 
 IonQ's targets correspond to the [:::no-loc text="No Control Flow"::: profile](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). This profile can't run quantum operations that require the use of the results from qubit measurements to control the program flow. 
 
