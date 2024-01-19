@@ -229,7 +229,8 @@ The Pay-as-you-go plan consists of *a la carte* access to the Ankaa-2, the Ankaa
 
 |Pricing | Includes access to   |
 |---|---|  
-|$0.02 (USD) per 10-millisecond increment of job execution time| <ul><li>the 84-bit Ankaa-2</li><li>the 9-bit Ankaa-9q-1</li><li>Rigetti Aspen-M-3 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
+|$0.02 (USD) per 10-millisecond increment of job execution time| <ul><li>Rigetti 84-bit Ankaa-2</li><li>Rigetti Aspen-M-3 QPU</li><li>Rigetti QVM simulator (free)</li></ul>|
+|$0.013 (USD) per 10-millisecond increment of job execution time| <ul><li>Rigetti 9-bit Ankaa-9q-1</li></ul>|
 
 ***
 
