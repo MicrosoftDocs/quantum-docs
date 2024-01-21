@@ -453,7 +453,7 @@ The `EstimatesOverview` function also shows a table with the overall physical re
 
 :::image type="content" source="../media/qubit-time-diagram-jupyter-shorRE-1.png" alt-text="Screenshot showing how to select the estimates you want to display in the results table.":::
 
-In this case, the **Estimate type** is single estimate, thus the Resource Estimator calculates one point in the qubit-time diagram. If you want to see more combinations of $\text{\{number of qubit, runtime\}}$ pairs for the same algorithm, see [Optimal frontier estimation](#optimal-frontier-estimation).
+In this case, the **Estimate type** is single estimate, thus the Resource Estimator calculates one point in the qubit-time diagram. If you want to see more combinations of $\text{\{number of qubits, runtime\}}$ pairs for the same algorithm, see [Optimal frontier estimation](#optimal-frontier-estimation).
 
 :::image type="content" source="../media/qubit-time-diagram-jupyter-shorRE.png" alt-text="Screenshot showing the qubit-time diagram of the Resource Estimator.":::
 
@@ -658,7 +658,7 @@ EstimatesOverview(result, colors=["#1f77b4", "#ff7f0e"], runNames=["e4 Surface C
 > [!NOTE]
 > You can define colors and run names for the qubit-time diagram using the `EstimatesOverview` function. The colors must be in hexadecimal format. 
 
-When running multiple configurations of target parameters using the frontier estimation, you can see the resource estimates for a specific point of the qubit-time diagram, that is for each $\text{\{number of qubit, runtime\}}$ pair. For example, the following code shows the estimate details usage for the second (estimate index=0) run and the fourth (point index=3) shortest runtime.
+When running multiple configurations of target parameters using the frontier estimation, you can see the resource estimates for a specific point of the qubit-time diagram, that is for each $\text{\{number of qubits, runtime\}}$ pair. For example, the following code shows the estimate details usage for the second (estimate index=0) run and the fourth (point index=3) shortest runtime.
 
 ```python
 EstimateDetails(result[1], 4)

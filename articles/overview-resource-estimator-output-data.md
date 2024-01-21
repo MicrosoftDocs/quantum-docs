@@ -276,7 +276,7 @@ In quantum computing, there's a tradeoff between the number of physical qubits a
 
 When estimating the resources of an algorithm, you can use the qubit-time diagram to visualize the tradeoffs between the number of physical qubits and the runtime of the algorithm.
 
-The qubit-time diagram allows you to find the optimal combination of $\text{\{number of qubit, runtime\}}$ pairs that satisfy the constraints of the quantum hardware. The diagram shows the number of physical qubits and the runtime of the algorithm for each $\text{\{number of qubit, runtime\}}$ pair.
+The qubit-time diagram allows you to find the optimal combination of $\text{\{number of qubits, runtime\}}$ pairs that satisfy the constraints of the quantum hardware. The diagram shows the number of physical qubits and the runtime of the algorithm for each $\text{\{number of qubits, runtime\}}$ pair.
 
 ```python
 import qsharp
