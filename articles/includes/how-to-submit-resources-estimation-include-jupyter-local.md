@@ -451,7 +451,7 @@ EstimatesOverview(result)
 
 The `EstimatesOverview` function also shows a table with the overall physical resource counts. Click the icon next to the first row to select the columns you want to display. You can select from run name, estimate type, qubit type, qec scheme, error budget, logical qubits, logical depth, code distance, T states, T factories, T factory fraction, runtime, rQOPS, and physical qubits.
 
-:::image type="content" source="../media/qubit-time-diagram-jupyter-shorRE-1.png" alt-text="Screenshot showing the qubit-time diagram of the Resource Estimator.":::
+:::image type="content" source="../media/qubit-time-diagram-jupyter-shorRE-1.png" alt-text="Screenshot showing how to select the estimates you want to display in the results table.":::
 
 In this case, the **Estimate type** is single estimate, thus the Resource Estimator calculates one point in the qubit-time diagram. If you want to see more combinations of $\text{\{number of qubit, runtime\}}$ pairs for the same algorithm, see [Optimal frontier estimation](#optimal-frontier-estimation).
 
@@ -627,7 +627,7 @@ In the "Estimate type" column of the results table, you can see the number of di
 
 The qubit-time diagram shows the number of physical qubits and the runtime of the algorithm for each $\text{\{number of qubit, runtime\}}$ pair. You can hover over each point to see the details of the resource estimation at that point.
 
-:::image type="content" source="../media/qubit-time-frontier-estimation-jupyter-shorRE.png" alt-text="Screenshot showing the qubit-time diagram of the Resource Estimator.":::
+:::image type="content" source="../media/qubit-time-frontier-estimation-jupyter-shorRE.png" alt-text="Screenshot showing the qubit-time diagram with frontier estimation of the Resource Estimator.":::
 
 ### Batching with optimal frontier estimation
 
