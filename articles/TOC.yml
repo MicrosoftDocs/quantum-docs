@@ -169,8 +169,6 @@
       href: provider-support-rigetti.md
 - name: Concepts
   items:
-    - name: "Quantum computing history & background"
-      href: concepts-overview.md
     - name: Linear algebra for quantum computing
       href: overview-algebra-for-quantum-computing.md
     - name: Vectors and matrices

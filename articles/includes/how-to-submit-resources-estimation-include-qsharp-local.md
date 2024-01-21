@@ -446,7 +446,7 @@ For more information, see [Target parameters](xref:microsoft.quantum.overview.re
 The Azure Quantum Resource Estimator allows you to run with multiple configuration of target parameters and compare the resource estimation results.
 
 1. Select **View -> Command Palette**, or press **Ctrl+Shift+P**, and type `Q#: Calculate Resource Estimates`.
-1. Select **qubit_gate_us_e3**, **qubit_gate_us_e4**, **qubit_gate_ns_e4 + floquet_code**, and **qubit_gate_ns_e6 + floquet_code**, and click **OK**.
+1. Select **qubit_gate_us_e3**, **qubit_gate_us_e4**, **qubit_maj_ns_e4 + floquet_code**, and **qubit_maj_ns_e6 + floquet_code**, and click **OK**.
 1. Accept the default error budget value 0.001 and press **Enter**.
 1. Press **Enter** to accept the input file, in this case, **ShorRE.qs**.
 1. In the case of multiple configurations of parameters, the results are displayed in different rows in the **Results** tab. Click on a result from the table to bring up the corresponding space diagram and report data.
