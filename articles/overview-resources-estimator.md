@@ -561,10 +561,13 @@ When estimating the resources of an algorithm, it's important to consider the tr
 
 The frontier estimation provides multiple estimates for the same algorithm, each with a tradeoffs between the number of qubits and the runtime.
 
+> [!NOTE]
+> If you run the Resource Estimator in Visual Studio Code using the **Q#: Calculate Resource Estimates** option, the frontier estimation is enabled by default.
+
 If you run the Resource Estimator in Python, you need to specify the `"estimateType"` parameter as `"frontier"`.
 
 ```python
-qsharp.estimate("RunProgram()", params=
+result = qsharp.estimate("RunProgram()", params=
                     {"qubitParams": { "name": "qubit_maj_ns_e4" },
                     "qecScheme": { "name": "surface_code" },
                     "estimateType": "frontier", # frontier estimation
@@ -572,10 +575,13 @@ qsharp.estimate("RunProgram()", params=
                 )
 ```
 
-> [!NOTE]
-> If you run the Resource Estimator in Visual Studio Code using the **Q#: Calculate Resource Estimates** option, the frontier estimation is enabled by default.
+To visualize the frontier estimation, you can use the `EstimatesOverview` function. This functions displays the results of frontier estimation in table and a qubit-time diagram. For more information, see [Qubit-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#qubit-time-diagram).
 
-For more information, see [Qubit-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#qubit-time-diagram) for the Resource Estimator.
+```python
+from qsharp_widgets import EstimatesOverview
+
+EstimatesOverview(result)
+```
 
 ## Next steps
 

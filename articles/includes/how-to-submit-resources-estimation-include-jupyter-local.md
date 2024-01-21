@@ -430,13 +430,35 @@ For example, collapse the **Logical qubit parameters** group to see that the cod
 The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can use the `qsharp-widgets` package to visualize this distribution to better understand the estimated space requirements for the algorithm.
 
 ```python
-from qsharp_widgets import SpaceChart, EstimateDetails
+from qsharp_widgets import SpaceChart
 SpaceChart(result)
 ```
 
 In this example, the number of physical qubits required to run the algorithm are 829766, 196686 of which are algorithm qubits and 633080 of which are T factory qubits.
 
 :::image type="content" source="../media/resource-estimator-diagram-jupyter.png" alt-text="Screen shot showing the space diagram of the Resource Estimator.":::
+
+### Qubit-time diagram
+
+The qubit-time diagram shows the tradeoffs between the number of physical qubits and the runtime of the algorithm. For more information, see [Qubit-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#qubit-time-diagram).
+
+You can use the `EstimatesOverview` function to visualize the qubit-time diagram of the Resource Estimator. 
+
+```python
+from qsharp_widgets import EstimatesOverview
+EstimatesOverview(result)
+```
+
+The `EstimatesOverview` function also shows a table with the overall physical resource counts. Click the icon next to the first row to select the columns you want to display. You can select from run name, estimate type, qubit type, qec scheme, error budget, logical qubits, logical depth, code distance, T states, T factories, T factory fraction, runtime, rQOPS, and physical qubits.
+
+:::image type="content" source="../media/qubit-time-diagram-jupyter-shorRE-1.png" alt-text="Screenshot showing the qubit-time diagram of the Resource Estimator.":::
+
+In this case, the **Estimate type** is single estimate, thus the Resource Estimator calculates one point in the qubit-time diagram. If you want to see more combinations of $\text{\{number of qubit, runtime\}}$ pairs for the same algorithm, see [Optimal frontier estimation](#optimal-frontier-estimation).
+
+:::image type="content" source="../media/qubit-time-diagram-jupyter-shorRE.png" alt-text="Screenshot showing the qubit-time diagram of the Resource Estimator.":::
+
+> [!TIP]
+> You can hover over each point in the qubit-time diagram to see the details of the resource estimation at that point.
 
 ## Change the default values and estimate the algorithm
 
@@ -522,7 +544,7 @@ EstimateDetails(result_maj)
 
 ## Batching with the Resource Estimator
 
-The Azure Quantum Resource Estimator allows you to run multiple configuration of target parameters, and compare the results. This is useful when you want to compare the cost of different qubit models, QEC schemes, or error budgets. 
+The Azure Quantum Resource Estimator allows you to run multiple configuration of target parameters, and compare the results. This is useful when you want to compare the cost of different qubit models, QEC schemes, or error budgets.
 
 1. You can perform a batch estimation by passing a list of target parameters to the `params` parameter of the `qsharp.estimate` function. For example, run the same algorithm with the default parameters and the Majorana-based qubit parameters with a floqued QEC scheme.
 
@@ -580,6 +602,70 @@ The Azure Quantum Resource Estimator allows you to run multiple configuration of
 
 ## Optimal frontier estimation
 
+When estimating the resources of an algorithm, it's important to consider the tradeoff between the number of physical qubits and the runtime of the algorithm. You could consider allocation of as many physical qubits as possible to reduce the runtime of the algorithm. However, the number of physical qubits is limited by the number of physical qubits available in the quantum hardware.
 
+The frontier estimation provides multiple estimates for the same algorithm, each with a tradeoffs between the number of qubits and the runtime.
 
+To run the Resource Estimator using frontier estimation, you need to specify the `"estimateType"` target parameter as `"frontier"`. For example, run the same algorithm with the Majorana-based qubit parameters with a surface code using frontier estimation.
 
+```python
+result = qsharp.estimate("RunProgram()", params=
+                    {"qubitParams": { "name": "qubit_maj_ns_e4" },
+                    "qecScheme": { "name": "surface_code" },
+                    "estimateType": "frontier", # frontier estimation
+                    }
+                )
+```
+
+To see the results table and the qubit-time diagram, use the `EstimatesOverview` function.
+
+```python
+EstimatesOverview(result)
+```
+
+In the "Estimate type" column of the results table, you can see the number of different combinations of $\text{\{number of qubit, runtime\}}$ for your algorithm. In this case, the Resource Estimator calculates 22 different combinations.
+
+The qubit-time diagram shows the number of physical qubits and the runtime of the algorithm for each $\text{\{number of qubit, runtime\}}$ pair. You can hover over each point to see the details of the resource estimation at that point.
+
+:::image type="content" source="../media/qubit-time-frontier-estimation-jupyter-shorRE.png" alt-text="Screenshot showing the qubit-time diagram of the Resource Estimator.":::
+
+### Batching with optimal frontier estimation
+
+To estimate and compare multiple configurations of target parameters with frontier estimation, add `"estimateType": "frontier",` to the parameters.
+
+```python
+result = qsharp.estimate(
+    "RunProgram()",
+    [
+        {
+        "qubitParams": { "name": "qubit_maj_ns_e4" },
+        "qecScheme": { "name": "surface_code" },
+        "estimateType": "frontier", # frontier estimation
+        },
+        {
+        "qubitParams": { "name": "qubit_maj_ns_e6" },
+        "qecScheme": { "name": "floquet_code" },
+        "estimateType": "frontier", # frontier estimation
+        },
+    ]
+)
+
+EstimatesOverview(result, colors=["#1f77b4", "#ff7f0e"], runNames=["e4 Surface Code", "e6 Floquet Code"])
+```
+
+:::image type="content" source="../media/qubit-time-frontier-multiple-config-shorRE.png" alt-text="Screenshot showing the qubit-time diagram of the Resource Estimator when using frontier estimation and multiple configurations of parameters.":::
+
+> [!NOTE]
+> You can define colors and run names for the qubit-time diagram using the `EstimatesOverview` function. The colors must be in hexadecimal format. 
+
+When running multiple configurations of target parameters using the frontier estimation, you can see the resource estimates for a specific point of the qubit-time diagram, that is for each $\text{\{number of qubit, runtime\}}$ pair. For example, the following code shows the estimate details usage for the second (estimate index=0) run and the fourth (point index=3) shortest runtime.
+
+```python
+EstimateDetails(result[1], 4)
+```
+
+You can also see the space diagram for a specific point of the qubit-time diagram. For example, the following code shows the space diagram for the first run of combinations (estimate index=0) and the third shortest runtime (point index=2).
+
+```python
+SpaceChart(result[0], 2)
+```

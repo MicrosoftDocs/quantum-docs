@@ -403,15 +403,17 @@ In this example, you run the Resource Estimator using the `qubit_gate_us_e3` qub
 ## View the results
 
 1. The result of the resource estimation is displayed in the **Q# Estimate** window.
-1. The **Results** tab displays a summary of the resource estimation. **Click the icon** next to the first row to select the columns you want to display. You can select from run name, qubit type, qec scheme, error budget, logical qubits, logical depth, code distance, T states, T factories, T factory fraction, runtime, rQOPS, and physical qubits.
+1. The **Results** tab displays a summary of the resource estimation. **Click the icon** next to the first row to select the columns you want to display. You can select from run name, estimate type, qubit type, qec scheme, error budget, logical qubits, logical depth, code distance, T states, T factories, T factory fraction, runtime, rQOPS, and physical qubits.
 
     :::image type="content" source="../media/vscode-estimates-local-results-tab-shorRE.png" alt-text="Screenshot showing how to display the menu to select the resource estimate outputs of your choice.":::
 
-1. The **Qubit-time diagram** shows the tradeoffs between the number of physical qubits and the runtime of the algorithm.. You can hover over each point to see the details of the resource estimation at that point. For more information, see [Qubit-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#qubit-time-diagram).
+1. The **Qubit-time diagram** shows the tradeoffs between the number of physical qubits and the runtime of the algorithm. In the "Estimate type" column of the results table, you can see the number of different combinations of $\text{\{number of qubit, runtime\}}$ for your algorithm algorithm. In this case, the Resource Estimator calculates 17 different combinations.
 
     :::image type="content" source="../media/qubit-time-diagram-shorRE.png" alt-text="Screenshot showing the qubit-time diagram of the Resource Estimator.":::
 
-1. The **Space diagram** tab displays the distribution of physical qubits used for the algorithm and the [T factories](xref:microsoft.quantum.concepts.tfactories). In this example, the number of physical qubits required to run the algorithm are 427726, 196686 of which are algorithm qubits and 231040 of which are T factory qubits. 
+    The qubit-time diagram shows the number of physical qubits and the runtime of the algorithm for each $\text{\{number of qubit, runtime\}}$ pair. You can hover over each point to see the details of the resource estimation at that point. For more information, see [Qubit-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#qubit-time-diagram).
+
+1. The **Space diagram** tab displays the distribution of physical qubits used for the algorithm and the [T factories](xref:microsoft.quantum.concepts.tfactories). In this example, the number of physical qubits required to run the algorithm are 427726, 196686 of which are algorithm qubits and 231040 of which are T factory qubits.
 
     :::image type="content" source="../media/vscode-estimates-local-diagram-shorRE.png" alt-text="Screenshot showing the space diagram of the Resource Estimator.":::
 
