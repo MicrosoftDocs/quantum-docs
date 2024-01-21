@@ -577,3 +577,9 @@ The Azure Quantum Resource Estimator allows you to run multiple configuration of
     |Gate-based ns, 10⁻⁴|	223	3.64M	|4.70M|	9|	14|	43.17 %|	63.57k|	61.94M|	13 secs|
     |Majorana ns, 10⁻⁴|	223	3.64M|	4.70M|	9|	19|	82.75 %	|501.48k|	82.59M	|10 secs|
     |Majorana ns, 10⁻⁶|	223	3.64M|	4.70M|	5|	13|	31.47 %|	42.96k|	148.67M	|5 secs|
+
+## Optimal frontier estimation
+
+
+
+

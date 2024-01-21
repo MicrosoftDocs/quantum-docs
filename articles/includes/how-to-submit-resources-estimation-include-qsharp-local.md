@@ -405,11 +405,15 @@ In this example, you run the Resource Estimator using the `qubit_gate_us_e3` qub
 1. The result of the resource estimation is displayed in the **Q# Estimate** window.
 1. The **Results** tab displays a summary of the resource estimation. **Click the icon** next to the first row to select the columns you want to display. You can select from run name, qubit type, qec scheme, error budget, logical qubits, logical depth, code distance, T states, T factories, T factory fraction, runtime, rQOPS, and physical qubits.
 
-    :::image type="content" source="../media/vscode-estimates-local-results-tab-shorRE.png" alt-text="Screen shot showing how to display the menu to select the resource estimate outputs of your choice.":::
+    :::image type="content" source="../media/vscode-estimates-local-results-tab-shorRE.png" alt-text="Screenshot showing how to display the menu to select the resource estimate outputs of your choice.":::
+
+1. The **Qubit-time diagram** shows the tradeoffs between the number of physical qubits and the runtime of the algorithm.. You can hover over each point to see the details of the resource estimation at that point. For more information, see [Qubit-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#qubit-time-diagram).
+
+    :::image type="content" source="../media/qubit-time-diagram-shorRE.png" alt-text="Screenshot showing the qubit-time diagram of the Resource Estimator.":::
 
 1. The **Space diagram** tab displays the distribution of physical qubits used for the algorithm and the [T factories](xref:microsoft.quantum.concepts.tfactories). In this example, the number of physical qubits required to run the algorithm are 427726, 196686 of which are algorithm qubits and 231040 of which are T factory qubits. 
 
-    :::image type="content" source="../media/vscode-estimates-local-diagram-shorRE.png" alt-text="Screen shot showing the space diagram of the Resource Estimator .":::
+    :::image type="content" source="../media/vscode-estimates-local-diagram-shorRE.png" alt-text="Screenshot showing the space diagram of the Resource Estimator.":::
 
 1. Finally, the **Resource Estimates** tab displays the full list of output data for the Resource Estimator. You can inspect cost details by collapsing the groups, which have more information. For example, collapse the **Logical qubit parameters** group. For more information, see [the full report data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#report-data).
 
@@ -439,13 +443,13 @@ For more information, see [Target parameters](xref:microsoft.quantum.overview.re
 
 ## Run multiple configurations of parameters
 
-The Azure Quantum Resource Estimator allows you to run with multiple configuration of target parameter and compare the resource estimation results. 
+The Azure Quantum Resource Estimator allows you to run with multiple configuration of target parameters and compare the resource estimation results.
 
 1. Select **View -> Command Palette**, or press **Ctrl+Shift+P**, and type `Q#: Calculate Resource Estimates`.
 1. Select **qubit_gate_us_e3**, **qubit_gate_us_e4**, **qubit_gate_ns_e4 + floquet_code**, and **qubit_gate_ns_e6 + floquet_code**, and click **OK**.
 1. Accept the default error budget value 0.001 and press **Enter**.
 1. Press **Enter** to accept the input file, in this case, **ShorRE.qs**.
+1. In the case of multiple configurations of parameters, the results are displayed in different rows in the **Results** tab. Click on a result from the table to bring up the corresponding space diagram and report data.
+1. The **Qubit-time diagram** shows the results for all the configurations of parameters. The first column of the results table displays the legend for each configuration of parameters. You can hover over each point to see the details of the resource estimation at that point.
 
-In the case of multiple configurations of parameters, the results are displayed in different rows in the **Results** tab. Click on a result from the table to bring up the corresponding space diagram and report data.
-
-
+    :::image type="content" source="../media/multiple-configurations-frontier-shorRE.png" alt-text="Screenshot showing the qubit-time diagram and the table of results when running multiple configurations of parameter in the Resource Estimator.":::
