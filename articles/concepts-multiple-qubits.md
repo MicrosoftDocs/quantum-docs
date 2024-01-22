@@ -61,6 +61,8 @@ Such a two-qubit state, which cannot be written as the tensor product of single-
 ### Measuring two-qubit states 
 Measuring two-qubit states is very similar to single-qubit measurements. Measuring the state
 
+<!-- testing localization -->
+
 $$
     \begin{bmatrix}
         \alpha_{00} \\\\ 
