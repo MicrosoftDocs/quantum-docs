@@ -610,11 +610,11 @@ To run the Resource Estimator using frontier estimation, you need to specify the
 
 ```python
 result = qsharp.estimate("RunProgram()", params=
-                    {"qubitParams": { "name": "qubit_maj_ns_e4" },
-                    "qecScheme": { "name": "surface_code" },
-                    "estimateType": "frontier", # frontier estimation
-                    }
-                )
+                            {"qubitParams": { "name": "qubit_maj_ns_e4" },
+                            "qecScheme": { "name": "surface_code" },
+                            "estimateType": "frontier", # frontier estimation
+                            }
+                        )
 ```
 
 To see the results table and the qubit-time diagram, use the `EstimatesOverview` function.
@@ -623,9 +623,9 @@ To see the results table and the qubit-time diagram, use the `EstimatesOverview`
 EstimatesOverview(result)
 ```
 
-In the "Estimate type" column of the results table, you can see the number of different combinations of $\text{\{number of qubit, runtime\}}$ for your algorithm. In this case, the Resource Estimator calculates 22 different combinations.
+In the "Estimate type" column of the results table, you can see the number of different combinations of $\text{\{number of qubits, runtime\}}$ for your algorithm. In this case, the Resource Estimator calculates 22 different combinations.
 
-The qubit-time diagram shows the number of physical qubits and the runtime of the algorithm for each $\text{\{number of qubit, runtime\}}$ pair. You can hover over each point to see the details of the resource estimation at that point.
+The qubit-time diagram shows the number of physical qubits and the runtime of the algorithm for each $\text{\{number of qubits, runtime\}}$ pair. You can hover over each point to see the details of the resource estimation at that point.
 
 :::image type="content" source="../media/qubit-time-frontier-estimation-jupyter-shorRE.png" alt-text="Screenshot showing the qubit-time diagram with frontier estimation of the Resource Estimator.":::
 
