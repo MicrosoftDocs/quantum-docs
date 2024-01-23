@@ -604,7 +604,7 @@ The Azure Quantum Resource Estimator allows you to run multiple configuration of
 
 When estimating the resources of an algorithm, it's important to consider the tradeoff between the number of physical qubits and the runtime of the algorithm. You could consider allocation of as many physical qubits as possible to reduce the runtime of the algorithm. However, the number of physical qubits is limited by the number of physical qubits available in the quantum hardware.
 
-The frontier estimation provides multiple estimates for the same algorithm, each with a tradeoffs between the number of qubits and the runtime.
+The frontier estimation provides multiple estimates for the same algorithm, each with a tradeoff between the number of qubits and the runtime.
 
 To run the Resource Estimator using frontier estimation, you need to specify the `"estimateType"` target parameter as `"frontier"`. For example, run the same algorithm with the Majorana-based qubit parameters with a surface code using frontier estimation.
 
