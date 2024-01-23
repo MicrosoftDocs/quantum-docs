@@ -264,19 +264,22 @@ SpaceChart(result)
 
 :::image type="content" source="media/resource-estimator-space-diagram.png" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
 
-When using the , you can pass . For example, the following code shows how to plot the space diagram for the first run and the third shortest runtime.
+When running multiple configurations of target parameters with the the [Pareto frontier estimation](xref:microsoft.quantum.overview.resources-estimator#pareto-frontier-estimation), you can plot the space diagram for a specific solution of the. For example, the following code shows how to plot the space diagram for the first configuration of parameters and the third shortest runtime.
 
 ```python
 SpaceChart(result[0], 2) # First (estimate index=0) run and third (point index=2) shortest runtime
 ```
 
-## Qubit-time diagram
+## Space-time diagram
 
-In quantum computing, there's a tradeoff between the number of physical qubits and the runtime of the algorithm. You could consider allocation of as many physical qubits as possible to reduce the runtime of the algorithm. However, the number of physical qubits is limited by the number of physical qubits available in the quantum hardware.
+In quantum computing, there's a tradeoff between the number of physical qubits and the runtime of the algorithm. You could consider allocation of as many physical qubits as possible to reduce the runtime of the algorithm. However, the number of physical qubits is limited by the number of physical qubits available in the quantum hardware. Understanding the tradeoff between runtime and system scale is one of the more important aspects of resource estimation. 
 
-When estimating the resources of an algorithm, you can use the qubit-time diagram to visualize the tradeoffs between the number of physical qubits and the runtime of the algorithm.
+When estimating the resources of an algorithm, you can use the space-time diagram to visualize the tradeoffs between the number of physical qubits and the runtime of the algorithm.
 
-The qubit-time diagram allows you to find the optimal combination of $\text{\{number of qubits, runtime\}}$ pairs that satisfy the constraints of the quantum hardware. The diagram shows the number of physical qubits and the runtime of the algorithm for each $\text{\{number of qubits, runtime\}}$ pair.
+> [!NOTE]
+> To see multiple optimal combinations in the space-time diagram, you need to set the estimation type to [Pareto frontier estimation](xref:microsoft.quantum.overview.resources-estimator#pareto-frontier-estimation).
+
+The space-time diagram allows you to find the optimal combination of $\text{\{number of qubits, runtime\}}$ pairs that satisfy the constraints of the quantum hardware. The diagram shows the number of physical qubits and the runtime of the algorithm for each $\text{\{number of qubits, runtime\}}$ pair.
 
 ```python
 import qsharp

@@ -555,14 +555,14 @@ The parameter `logical_qubit_specification_first_round_override` can be provided
 }
 ```
 
-## Frontier estimation
+## Pareto frontier estimation
 
-When estimating the resources of an algorithm, it's important to consider the tradeoff between the number of physical qubits and the runtime of the algorithm. You could consider allocation of as many physical qubits as possible to reduce the runtime of the algorithm. However, the number of physical qubits is limited by the number of physical qubits available in the quantum hardware.
+When estimating the resources of an algorithm, it's important to consider the tradeoff between the number of physical qubits and the runtime of the algorithm. You could consider allocation of as many physical qubits as possible to reduce the runtime of the algorithm. However, the number of physical qubits is limited by the number of physical qubits available in the quantum hardware. Understanding the tradeoff between runtime and system scale is one of the more important aspects of resource estimation. 
 
-The frontier estimation provides multiple estimates for the same algorithm, each showing tradeoffs between the number of qubits and the runtime.
+The Pareto frontier estimation provides multiple estimates for the same algorithm, each showing tradeoffs between the number of qubits and the runtime.
 
 > [!NOTE]
-> If you run the Resource Estimator in Visual Studio Code using the **Q#: Calculate Resource Estimates** option, the frontier estimation is enabled by default.
+> If you run the Resource Estimator in Visual Studio Code using the **Q#: Calculate Resource Estimates** option, the Pareto frontier estimation is enabled by default.
 
 If you run the Resource Estimator in Python, you need to specify the `"estimateType"` parameter as `"frontier"`.
 
@@ -570,12 +570,12 @@ If you run the Resource Estimator in Python, you need to specify the `"estimateT
 result = qsharp.estimate("RunProgram()", params=
                     {"qubitParams": { "name": "qubit_maj_ns_e4" },
                     "qecScheme": { "name": "surface_code" },
-                    "estimateType": "frontier", # frontier estimation
+                    "estimateType": "frontier", # Pareto frontier estimation
                     }
                 )
 ```
 
-To visualize the frontier estimation, you can use the `EstimatesOverview` function. This functions displays the results of frontier estimation in table and a qubit-time diagram. For more information, see [Qubit-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#qubit-time-diagram).
+If you want to visualize the results of Pareto frontier estimation, you can use the `EstimatesOverview` function. This functions displays the results of frontier estimation in table and a space-time diagram. For more information, see [Space-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-time-diagram).
 
 ```python
 from qsharp_widgets import EstimatesOverview
