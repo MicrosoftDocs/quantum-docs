@@ -559,7 +559,7 @@ The parameter `logical_qubit_specification_first_round_override` can be provided
 
 When estimating the resources of an algorithm, it's important to consider the tradeoff between the number of physical qubits and the runtime of the algorithm. You could consider allocation of as many physical qubits as possible to reduce the runtime of the algorithm. However, the number of physical qubits is limited by the number of physical qubits available in the quantum hardware.
 
-The frontier estimation provides multiple estimates for the same algorithm, each with a tradeoffs between the number of qubits and the runtime.
+The frontier estimation provides multiple estimates for the same algorithm, each showing tradeoffs between the number of qubits and the runtime.
 
 > [!NOTE]
 > If you run the Resource Estimator in Visual Studio Code using the **Q#: Calculate Resource Estimates** option, the frontier estimation is enabled by default.
