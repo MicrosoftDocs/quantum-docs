@@ -453,7 +453,7 @@ The `EstimatesOverview` function also shows a table with the overall physical re
 
 :::image type="content" source="../media/qubit-time-diagram-jupyter-shorRE-1.png" alt-text="Screenshot showing how to select the estimates you want to display in the results table.":::
 
-In this case, the **Estimate type** is single estimate, thus the Resource Estimator calculates one point in the qubit-time diagram. If you want to see more combinations of $\text{\{number of qubits, runtime\}}$ pairs for the same algorithm, see [Optimal frontier estimation](#optimal-frontier-estimation).
+In this case, the **Estimate type** is single estimate, thus the Resource Estimator calculates one point in the qubit-time diagram. If you want to see more combinations of $\text{\{number of qubits, runtime\}}$ pairs for the same algorithm, see [Running Pareto frontier estimation](#running-pareto-frontier-estimation).
 
 :::image type="content" source="../media/qubit-time-diagram-jupyter-shorRE.png" alt-text="Screenshot showing the qubit-time diagram of the Resource Estimator.":::
 

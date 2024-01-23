@@ -40,7 +40,7 @@ Therefore, the Resource Estimator takes a set of inputs, with pre-defined values
 - An [error budget](#error-budget), which is the overall allowed error, that is, the number of times the program is allowed to unsuccess.
 - [Constraints](#constraints) on the component-level, which are the number of logical cycles and the number of T factory copies.
 - [Distillation units](#distillation-units) to specify T factories distillation algorithms.
-- [Frontier estimation](#frontier-estimation) to run multiple estimates of number of qubits and runtime for the same algorithm.
+- [Pareto frontier estimation](#pareto-frontier-estimation) to run multiple estimates of number of qubits and runtime for the same algorithm.
 
 > [!NOTE]
 > In addition to the target parameters, if the quantum program contains arguments the Resource Estimator can take operation arguments as input. For more information, see [Get the most out of the Azure Quantum Resource Estimator](xref:microsoft.quantum.work-with-resource-estimator#how-to-run-multiple-configurations-as-a-single-job).
