@@ -445,7 +445,7 @@ For more information, see [Target parameters](xref:microsoft.quantum.overview.re
 
 ## Run multiple configurations of parameters
 
-The Azure Quantum Resource Estimator allows you to run with multiple configuration of target parameters and compare the resource estimation results.
+The Azure Quantum Resource Estimator can run multiple configurations of target parameters and compare the resource estimation results.
 
 1. Select **View -> Command Palette**, or press **Ctrl+Shift+P**, and type `Q#: Calculate Resource Estimates`.
 1. Select **qubit_gate_us_e3**, **qubit_gate_us_e4**, **qubit_maj_ns_e4 + floquet_code**, and **qubit_maj_ns_e6 + floquet_code**, and click **OK**.
