@@ -29,7 +29,11 @@ You can start from well-known, pre-defined qubit parameter settings and quantum 
 > [!TIP]
 > The Azure Quantum Resource Estimator is **free of charge** and doesn't require an Azure account.
 
-The Resource Estimator supports any language that translates to QIR for example, Q# and Qiskit. To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
+## Why is resource estimation important in the development of quantum computing?
+
+Although quantum computers promise to solve important scientific and commercial problems, achieving commercial viability will require large-scale, fault-tolerant quantum computers that have both a large number of qubits in superposition and physical error rates below a certain threshold. Commercial and scientific viability will also require quantum error correction (QEC) schemes to achieve fault tolerance. QEC is both time and space intensive, requiring increased execution time for algorithm or logical-level operations, as well as additional physical qubits to store and compute information. 
+
+Using the Resource Estimator, you can understand the impact of architectural design choices and quantum error correction schemes. The Resource Estimator will help you understand how many qubits are needed to run an application, how long it will take to run, and which qubit technologies are better suited to solving a specific problem. Understanding these requirements will allow you to prepare and refine quantum solutions to run on future, scaled quantum machines. 
 
 ## What features make the Resource Estimator unique?
 
@@ -39,33 +43,40 @@ The Resource Estimator allows you to customize the parameters of each level and 
 
 :::image type="content" source="media/resource-estimator-stack-computing.png" alt-text="Diagram showing the levels of the quantum computing stack of the Resource Estimator.":::
 
-### Customizable
+### Customization
 
-The Resource Estimator takes a set of target parameters and returns the resources needed to run a quantum program. The target parameters are the characteristics of the quantum computer that you want to use to run your program, for example, the properties of the physical qubits, the error budget, or the quantum error correction scheme.
+You can adapt the Resource Estimator and specify the characteristics of your quantum system. You can use the predefined target parameters or customize them to your needs. For more information, see [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator).
 
-You can use the predefined target parameters or customize them to your needs. The advanced options allow you to configure settings across a wide range of machine characteristics such as operation error rates, operation speeds, and error correction schemes and thresholds. For more information about the target parameters, see [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator).
+|Target parameters|Describe your system|
+|---|---|
+|Physical qubit model|For example, specify the instruction set, the qubit measurement time, error rates, or gate times.|
+|Quantum error correction schema|For example, specify the number of physical qubits per logical qubit, the logical cycle time, or the error correction threshold.|
+|Error budget|For example, specify the error budget to implement logical qubits, T states distillation, and synthesis of the rotation gates. |
+|Distillation units| For example, specify the number of T states required for the distillation process, number of T states produced as output from the distillation process, or the probability of failure of the distillation process.|
+|Constraints|For example, specify the maximum number of physical qubits, the maximum runtime, or the maximum number of T factory copies.  |
 
-### Batching
+### Flexibility
 
-Sometimes you want to estimate the resources needed to run the same quantum algorithm for different combinations of input parameters, and compare the results. In this way you can understand how the qubit architecture, QEC scheme, and the rest of the target parameters impact the overall resources.
- 
-The Resource Estimator allows you to run multiple resource estimation configurations as a single job and avoid long running times. For more information, see how to [Run multiple configurations as a single job](xref:microsoft.quantum.work-with-resource-estimator#how-to-run-multiple-configurations-as-a-single-job). 
+You can bring your own code and compilation tools to the Resource Estimator. The Resource Estimator supports any language that translates to QIR, for example, Q# and Qiskit See [How to use the Resource Estimator with different SDKs and IDEs](xref:microsoft.quantum.submit-resource-estimation-jobs).
+
+### Batch multiple estimates
+
+The Resource Estimator allows you to estimate the resources needed to run the same quantum algorithm for [different configurations of target parameters](xref:microsoft.quantum.work-with-resource-estimator#how-to-run-multiple-configurations-as-a-single-job), and compare the results. In this way you can understand how the qubit architecture, QEC scheme, and the rest of the target parameters impact the overall resources.
+
+### Optimization
+
+You can reduce the execution time of the Resource Estimator by incorporating some estimates in the overall cost. For example, if you're working with a large program, you can compute and [cache the cost of subroutines](xref:microsoft.quantum.work-with-resource-estimator#how-to-handle-large-programs), or if you already [known estimates for an operation](xref:microsoft.quantum.work-with-resource-estimator#use-known-estimates-for-an-operation) your can pass them to the Resource Estimator.
 
 ### Visualization of resources
 
-You can inspect the distribution of physical qubits used for the algorithm and the T factories using the space-time diagrams. The [space-time diagrams](xref:microsoft.quantum.overview.resources-estimator-output.data#space-time-diagrams) show the total number of qubits and the total runtime of the program, and the contribution of the T factories.
+You can inspect the distribution of physical qubits used for the algorithm and the T factories using the space diagram. The [space diagrams
+](xref:microsoft.quantum.overview.resources-estimator-output.data#space-diagram) show the total number of qubits and the total runtime of the program, and the contribution of the T factories.
 
 The space diagram shows the proportion of these two. The time diagram shows the time required to execute the algorithm as it relates to each T factory invocation runtime and the number of T factory invocations.
 
-## Why is resource estimation important in the development of quantum computing?
-
-Although quantum computers promise to solve important scientific and commercial problems, achieving commercial viability will require large-scale, fault-tolerant quantum computers that have both a large number of qubits in superposition and physical error rates below a certain threshold. Commercial and scientific viability will also require quantum error correction (QEC) schemes to achieve fault tolerance. QEC is both time and space intensive, requiring increased execution time for algorithm or logical-level operations, as well as additional physical qubits to store and compute information. 
-
-Using the Resource Estimator, you can understand the impact of architectural design choices and quantum error correction schemes. The Resource Estimator will help you understand how many qubits are needed to run an application, how long it will take to run, and which qubit technologies are better suited to solving a specific problem. Understanding these requirements will allow you to prepare and refine quantum solutions to run on future, scaled quantum machines. 
-
 ## Get started with the Resource Estimator
 
-The Resource Estimator is part of the Azure Quantum Development Kit (Modern QDK). It supports any language that translates to QIR, for example you can use the Resource Estimator with Q# and Qiskit. For more information, see [How to use the Resource Estimator with different SDKs and IDEs](xref:microsoft.quantum.submit-resource-estimation-jobs).
+The Resource Estimator is part of the Azure Quantum Development Kit (Modern QDK). To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
 
 The following table shows different user scenarios and the recommended articles to get started with the Resource Estimator.
 
