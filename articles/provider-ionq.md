@@ -82,7 +82,7 @@ The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigur
 IonQ Aria is the flagship of IonQ's trapped-ion quantum computers, with a 25-qubit dynamically reconfigurable system. For more information, see [IonQ Aria (ionq.com)](https://ionq.com/quantum-systems/aria).
 
 > [!IMPORTANT]
-> *Debiasing* is enabled on the Aria system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
+> *Debiasing* is enabled on Aria systems by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
@@ -181,7 +181,7 @@ For more information, see [Debiasing and Sharpening](https://ionq.com/resources/
 #### Enabling error mitigation
 
 > [!NOTE]
-> *Debiasing* is enabled by default on Aria systems, and disabled by default on Harmony systems.
+> *Debiasing* is enabled by default on Aria and Forte systems, and disabled by default on Harmony systems.
 
 On Azure Quantum, error mitigation can be enabled or disabled for jobs submitted with Q# or with Qiskit.
 
@@ -224,12 +224,69 @@ option_params = {
 >
 > For more information, see [Noise model simulation](#noise-model-simulation).
 
-#### Running a job with error mitigation
+#### Running a job on Azure Quantum with error mitigation
 
-In Q#, you pass the optional parameters when you submit the job:
+This example uses a simple random number generator. 
+
+First, import the required packages and initiate the base profile:
 
 ```python
-result = qsharp.azure.execute(GenerateRandomBit, shots=500, jobName="Generate one random bit", timeout=240, jobParams = option_params)
+import qsharp
+import azure.quantum
+qsharp.init(target_profile=qsharp.TargetProfile.Base)
+```
+
+Next, define the function.
+
+```qsharp
+%%qsharp
+open Microsoft.Quantum.Measurement;
+open Microsoft.Quantum.Arrays;
+open Microsoft.Quantum.Convert;
+
+operation GenerateRandomBit() : Result {
+    use target = Qubit();
+
+    // Apply an H-gate and measure.
+    H(target);
+    return M(target);
+}
+
+and compile the operation:
+
+```python
+MyProgram = qsharp.compile("GenerateRandomBit()")
+```
+
+Connect to Azure Quantum, select the target machine, and configure the noise parameters for the emulator:
+
+```python
+MyWorkspace = azure.quantum.Workspace(
+    resource_id = "",
+    location = ""
+)
+
+MyTarget = MyWorkspace.get_targets("ionq.qpu")
+
+```
+
+Specify the `error-mitiation` configuration
+
+```python
+
+option_params = {
+    "error-mitigation": {
+        "debias": True
+    }
+}
+```
+
+Pass in the error mitigation configuration when submitting the job:
+
+```python
+job = MyTarget.submit(MyProgram, "Experiment with error mitigation", shots = 10, input_params = option_params)
+job.get_results()
+
 ```
 
 In Qiskit, you pass the optional parameters to the target machine configuration before submitting the job:
@@ -242,7 +299,7 @@ job = backend.run(circuit, shots=500)
 ```
 
 > [!NOTE]
-> If you do not pass in the `error-mitigation` parameter, the target machine will use its default setting: *enabled* for Aria systems, and *disabled* for Harmony systems.
+> If you do not pass in the `error-mitigation` parameter, the target machine will use its default setting: *enabled* for Aria and Forte systems, and *disabled* for Harmony systems.
 
 <!--
 When you run a job with error mitigation enabled, IonQ makes both aggregate results, Sharpened and Averaged, available. The Average result is returned by default. To view the Sharpened result, pass `sharpen=True` with the `job_result()` call:
@@ -329,10 +386,25 @@ option_params = {
 
 #### Running a job with noise model simulation
 
-In Q#, you pass the optional parameters when you submit the job: 
+You can use the same example program from [error mitigation](#running-a-job-on-azure-quantum-with-error-mitigation) and add the noise model configuration to `option_params`
+
+ ```python
+ option_params = {
+     "error-mitigation": {
+         "debias": True
+     },
+     "noise": {
+     "model": "aria",
+     "seed": 1000
+     }
+ }
+ ```
+
+and pass the optional parameters when you submit the job: 
 
 ```python
-result = qsharp.azure.execute(GenerateRandomBit, shots=500, jobName="Generate one random bit", timeout=240, jobParams = option_params)
+job = MyTarget.submit(MyProgram, "Experiment with noise model simulation", shots = 10, input_params = option_params)
+job.get_results()
 ```
 
 In Qiskit, you pass the optional parameters to the target machine configuration before submitting the job:
