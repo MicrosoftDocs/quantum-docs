@@ -1,11 +1,6 @@
 {
 	"redirections": [
 		{
-			"source_path": "articles/release-notes.md",
-			"redirect_url": "/azure/quantum/release-notes-2024",
-			"redirect_document_id": false
-		},
-		{
 			"source_path": "articles/install-jupyter-qkd.md",
 			"redirect_url": "/azure/quantum/install-overview-qdk",
 			"redirect_document_id": false

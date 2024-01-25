@@ -1,6 +1,6 @@
 ---
-title: Release notes for QDK and Azure Quantum - latest version
-description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum.
+title: Release notes for QDK and Azure Quantum - 2024
+description: Learn about the latest updates to the Microsoft Quantum Development Kit (QDK) and Azure Quantum in 2024
 ms.date: 01/12/2024
 author: SoniaLopezBravo
 ms.author: sonialopez
