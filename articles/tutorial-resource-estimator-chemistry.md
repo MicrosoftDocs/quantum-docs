@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: In this tutorial, you estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa, using the double-factorized qubitization algorithm.
 ms.author: sonialopez
-ms.date: 01/04/2024
+ms.date: 01/24/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: tutorial
@@ -22,13 +22,10 @@ The *qubitization* approach is based on quantum phase estimation, but instead of
 In this tutorial, you will:
 
 > [!div class="checklist"]
-> * Connect to the Azure Quantum service.
 > * Combine and run multiple configurations of parameters as a single job.
 > * Use FCIDUMP files as argument parameters for chemical modelling and simulation applications.
 > * Create a reusable function to display resource estimates in HTML format table. 
 
-> [!NOTE]
-> To run this tutorial, you need to have an **Azure account**. A new quantum chemistry tutorial using the Resource Estimator in VS Code is coming soon.
 
 ## Prerequisites
 
