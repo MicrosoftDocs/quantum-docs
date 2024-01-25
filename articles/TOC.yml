@@ -169,8 +169,6 @@
       href: provider-support-rigetti.md
 - name: Concepts
   items:
-    - name: "Quantum computing history & background"
-      href: concepts-overview.md
     - name: Linear algebra for quantum computing
       href: overview-algebra-for-quantum-computing.md
     - name: Vectors and matrices
@@ -211,20 +209,24 @@
     href: further-reading-qdk.md
 - name: Release notes
   items:
-  - name: 2024 release notes
-    href: release-notes-2024.md
-  - name: 2023 release notes
-    href: release-notes-2023.md
-  - name: 2022 release notes
-    href: release-notes-2022.md  
-  - name: 2021 release notes
-    href: release-notes-2021.md
-  - name: 2020 release notes
-    href: release-notes-2020.md
-  - name: 2019 release notes
-    href: release-notes-2019.md
-  - name: 2018 release notes
-    href: release-notes-2018.md
-  - name: 2017 release notes
-    href: release-notes-2017.md
+  - name: Azure Quantum release notes
+    href: release-notes.md
+  - name: Archived release notes
+    items:
+    - name: 2024 release notes
+      href: release-notes-2024.md
+    - name: 2023 release notes
+      href: release-notes-2023.md
+    - name: 2022 release notes
+      href: release-notes-2022.md  
+    - name: 2021 release notes
+      href: release-notes-2021.md
+    - name: 2020 release notes
+      href: release-notes-2020.md
+    - name: 2019 release notes
+      href: release-notes-2019.md
+    - name: 2018 release notes
+      href: release-notes-2018.md
+    - name: 2017 release notes
+      href: release-notes-2017.md
 
