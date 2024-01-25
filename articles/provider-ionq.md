@@ -270,7 +270,7 @@ MyTarget = MyWorkspace.get_targets("ionq.qpu")
 
 ```
 
-Specify the `error-mitiation` configuration
+Specify the `error-mitigation` configuration
 
 ```python
 
@@ -386,7 +386,7 @@ option_params = {
 
 #### Running a job with noise model simulation
 
-You can use the same example program from [error mitigation](#running-a-job-on-azure-quantum-with-error-mitigation) and add the noise model configuration to `option_params`
+You can use the same example program shown previously in [error mitigation](#running-a-job-on-azure-quantum-with-error-mitigation) and add or replace the noise model configuration in `option_params`;
 
  ```python
  option_params = {
@@ -400,7 +400,7 @@ You can use the same example program from [error mitigation](#running-a-job-on-a
  }
  ```
 
-and pass the optional parameters when you submit the job: 
+Then pass the optional parameters when you submit the job: 
 
 ```python
 job = MyTarget.submit(MyProgram, "Experiment with noise model simulation", shots = 10, input_params = option_params)
