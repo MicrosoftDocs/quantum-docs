@@ -13,9 +13,6 @@ uid: microsoft.quantum.overview.intro-resource-estimator
 
 # Introduction to the Azure Quantum Resource Estimator
 
-In quantum computing, resource estimation is the process used to determine the number of qubits, quantum gates, processing time, and other resources needed to run a quantum program assuming (or taking as parameters) specific hardware characteristics.
-In quantum computing, resource estimation is the process used to determine the number of qubits, quantum gates, processing time, and other resources needed to run a quantum program assuming (or taking as parameters) specific hardware characteristics.
-
 This article introduces the Azure Quantum Resource Estimator, a powerful tool that allows you to estimate the resources needed to run a quantum program on a quantum computer.
 
 ## What is the Azure Quantum Resource Estimator?
@@ -49,11 +46,11 @@ You can adapt the Resource Estimator and specify the characteristics of your qua
 
 |Target parameters|Describe your system|
 |---|---|
-|Physical qubit model|For example, specify the instruction set, the qubit measurement time, error rates, or gate times.|
-|Quantum error correction schema|For example, specify the number of physical qubits per logical qubit, the logical cycle time, or the error correction threshold.|
-|Error budget|For example, specify the error budget to implement logical qubits, T states distillation, and synthesis of the rotation gates. |
-|Distillation units| For example, specify the number of T states required for the distillation process, number of T states produced as output from the distillation process, or the probability of failure of the distillation process.|
-|Constraints|For example, specify the maximum number of physical qubits, the maximum runtime, or the maximum number of T factory copies.  |
+|[Physical qubit model](xref:microsoft.quantum.overview.resources-estimator#Physical-qubit-parameters)|For example, specify the instruction set, the qubit measurement time, error rates, or gate times.|
+|[Quantum error correction scheme](xref:microsoft.quantum.overview.resources-estimator#quantum-error-correction-schemes)|For example, specify the number of physical qubits per logical qubit, the logical cycle time, or the error correction threshold.|
+|[Error budget](xref:microsoft.quantum.overview.resources-estimator#error-budget)|For example, specify the error budget to implement logical qubits, T states distillation, and synthesis of the rotation gates. |
+|[Distillation units](xref:microsoft.quantum.overview.resources-estimator#distillation-units)| For example, specify the number of T states required for the distillation process, number of T states produced as output from the distillation process, or the probability of failure of the distillation process.|
+|[Constraints](xref:microsoft.quantum.overview.resources-estimator#constraints)|For example, specify the maximum number of physical qubits, the maximum runtime, or the maximum number of T factory copies.|
 
 ### Flexibility
 
@@ -69,10 +66,7 @@ You can reduce the execution time of the Resource Estimator by incorporating som
 
 ### Visualization of resources
 
-You can inspect the distribution of physical qubits used for the algorithm and the T factories using the space diagram. The [space diagrams
-](xref:microsoft.quantum.overview.resources-estimator-output.data#space-diagram) show the total number of qubits and the total runtime of the program, and the contribution of the T factories.
-
-The space diagram shows the proportion of these two. The time diagram shows the time required to execute the algorithm as it relates to each T factory invocation runtime and the number of T factory invocations.
+You can inspect the distribution of physical qubits used for the algorithm and the T factories using the [space diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-diagram).
 
 ## Get started with the Resource Estimator
 
