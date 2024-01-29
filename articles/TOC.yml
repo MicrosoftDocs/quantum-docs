@@ -105,7 +105,7 @@
   items:
   - name: Get started
     items: 
-    - name: An introduction to resource estimation
+    - name: Introduction to the Resource Estimator
       href: intro-to-resource-estimation.md
     - name: Run your first resource estimate
       href: quickstart-microsoft-resources-estimator.md

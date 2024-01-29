@@ -83,6 +83,7 @@ You can only do full invocations of a T factory. Therefore, there may be situati
 
 For more information, see Appendix C of [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629).
 
+
 ## Assumptions
 
 The following assumptions are taken into account for the simulation of the resource estimation.
