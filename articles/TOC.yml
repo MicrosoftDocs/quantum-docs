@@ -104,7 +104,7 @@
 - name: Resource Estimation
   items:
   - name: Get started
-  - items: 
+    items: 
     - name: An introduction to resource estimation
       href: intro-to-resource-estimation.md
     - name: Run your first resource estimate
@@ -116,15 +116,15 @@
     - name: Understand the results of the Resource Estimator
       href: overview-resource-estimator-output-data.md
   - name: Work with the Resource Estimator
-  - items: 
+    items: 
     - name: Run multiple configurations
       href: resource-estimator-batching.md
     - name: Use known estimates
-      href: use-known-estimates-with-re.md
+      href: resource-estimator-known-estimates.md
     - name: Handle large programs
-      href: handle-large-programs-with-re.md
+      href: resource-estimator-handle-large-programs.md
     - name: Quantum-safe planning
-      href: quantum-safe-planning-with-re.md
+      href: resource-estimator-quantum-safe-planning.md
   - name: Tutorials with the Resource Estimator
     items:
     - name: Double-factorized chemistry
