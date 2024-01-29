@@ -24,66 +24,18 @@ In this tutorial, you will:
 > [!div class="checklist"]
 > * Combine and run multiple configurations of parameters as a single job.
 > * Use FCIDUMP files as argument parameters for chemical modelling and simulation applications.
-> * Create a reusable function to display resource estimates in HTML format table. 
+> * Create a reusable function to display resource estimates in HTML format table.
 
 
-## Prerequisites
+## Prerequisites for VS Code
 
-- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
-- An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The **Microsoft Quantum Computing** provider added to your workspace. For more information, see [Enabling the Resource Estimator target](xref:microsoft.quantum.work-with-resource-estimator#enable-the-azure-quantum-resource-estimator-target-in-your-workspace).
+- The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
+- The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension. For installation details, see [Installing the Modern QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-modern-qdk-on-vs-code).
 
-## Create a new notebook in your workspace
+> [!TIP]
+> You don't need to have an Azure account to run the local Resource Estimator. 
 
-1. Log in to the [Azure portal](https://portal.azure.com/) and select your Azure Quantum workspace.
-1. Under **Operations**, select **Notebooks**
-1. Click on **My notebooks** and click **Add New**
-1. In **Kernel Type**, select **IPython**.
-1. Type a name for the file, and click **Create file**.
-
-When your new notebook opens, it automatically creates the code for the first cell, based on your subscription and workspace information.
-
-```python
-from azure.quantum import Workspace
-workspace = Workspace ( 
-    resource_id = "", # Your resource_id 
-    location = ""  # Your workspace location (for example, "westus") 
-)
-```
-
-> [!NOTE]
-> Unless otherwise noted, you should run each cell in order as you create it to avoid any compilation issues. 
-
-Click the triangular "play" icon to the left of the cell to run the code. 
-
-## Load the required imports
-
-First, you need to import some Python classes and functions from `azure.quantum`.
-
-Click **+ Code** to add a new cell, then add and run the following code:
-
-```python
-from azure.quantum import Workspace
-from azure.quantum.target.microsoft import MicrosoftEstimator
-from azure.quantum.chemistry import df_chemistry
-```
-
-## Connect to the Azure Quantum service
-
-Next, using the `workspace` object from the previous cell to create an instance to the Resource Estimator.
-
-```python
-estimator = MicrosoftEstimator(workspace)
-```
-
-## Choose the resource estimation job parameters
-
-A resource estimation job consist of two types of job parameters:
-
-- Target parameters: qubit model, QEC schemes, error budget, constraints on the component-level, and distillation units. For more information, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
-- Operation arguments, that is arguments that can be passed to the quantum program. In this case, the FCIDUMP files are passed as operation arguments. 
-
-### Select and pass a FCIDUMP file
+## Select and pass a FCIDUMP file
 
 In this example, the Hamiltonian is described in terms of one- and two-electron integrals in the FCIDUMP format. FCIDUMP files are publicly accessible HTTPS URIs. You can choose one FCIDUMP files from the following table or select your own FCIDUMP file.
 
@@ -102,11 +54,6 @@ In this example, the Hamiltonian is described in terms of one- and two-electron 
 > - [Files in Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) using SAS tokens.
 
 
-The URI is passed to the algorithm as operation arguments with the name `"fcidumpUri"`. For example, let's choose XVIII-cas4-fb-64e56o FCIDUMP file.
-
-```python
-params.file_uris["fcidumpUri"] = "https://aka.ms/fcidump/XVIII-cas4-fb-64e-56o"
-```
 
 ### Set the error budget
 
@@ -129,64 +76,6 @@ params.items[4].qubit_params.name = "qubit_maj_ns_e4"
 params.items[4].qec_scheme.name = "floquet_code"
 params.items[5].qubit_params.name = "qubit_maj_ns_e6"
 params.items[5].qec_scheme.name = "floquet_code"
-```
-
-## Estimate the quantum algorithm
-
-The parameters are now all set up, and you're ready to submit the resource estimation job. You can submit multiple configuration of job parameters as a single job to avoid rerunning multiple jobs on the same quantum program. For more information, see [Run multiple configurations as a single job](xref:microsoft.quantum.work-with-resource-estimator#how-to-run-multiple-configurations-as-a-single-job).
-
-As quantum program, you use the double-factorization based quantum chemistry algorithm, which is provided via the `df_chemistry` function. 
-
-> [!NOTE]
-> The execution of this cell may take a few minutes depending on program size. 
-
-```python
-job = estimator.submit(df_chemistry(), input_params=params)
-results = job.get_results()
-```
-
-## Analyze the results
-
-Now that the results have been computed, you can display them in a summary table using the `summary_data_frame` function. 
-
-```python
-labels = ["Gate-based µs, 10⁻³", "Gate-based µs, 10⁻⁴", "Gate-based ns, 10⁻³", "Gate-based ns, 10⁻⁴", "Majorana ns, 10⁻⁴", "Majorana ns, 10⁻⁶"]
-
-results.summary_data_frame(labels=labels)
-```
-
-|Configuration | Logical qubits |	Logical depth |	T states |	Code distance |	T factories  |	T factory fraction |	Physical qubits |	Physical runtime |
-|--- |--- |--- |--- |--- |--- |--- |--- |--- |
-|Gate-based µs, 10⁻³ |	2844	 |4.0e+11 |	5.4e+11	 |33 |	15	 |6.6% | 	6.63M |	254 years |
-|Gate-based µs, 10⁻⁴	 |2844 |	4.0e+11 |	5.4e+11 |	17 |	14 |	5.4% |	1.74M	 |131 years |
-|Gate-based ns, 10⁻³	 |2844 |	4.0e+11 |	5.4e+11 |	33 |	17 |	13.1% |	7.13M	 |62 days |
-|Gate-based ns, 10⁻⁴	 |2844	 |4.0e+11	 |5.4e+11 |	17 |	17 |	14.2% |	1.92M |	32 days |
-|Majorana ns, 10⁻⁴	 |2844 |	4.0e+11	 |5.4e+11	 |17	 |19 |	21.6%	 | 4.65M	 |24 days |
-|Majorana ns, 10⁻⁶	 |2844 |	4.0e+11 |	5.4e+11	 |9 |	19 |	22.3%	 |1.42M |	13 days |
-
-1. Each row of the table corresponds to one of the six qubit parameter configurations, where the first column shows a textual description for the model. 
-1. The next three columns show technology-independent resources, which are the number of *logical qubits*, the *logical depth*, which is the number of logical operations performed in sequence, and the number of *T states* that are consumed by the logical operations. 
-1. The *code distance* indicates the error correction overhead to guarantee a sufficient logical error rate for the logical operations. 
-1. The number of *T factories* indicates how many T factories are executed in parallel to produce the total number of T states. 
-1. The *T factory fraction* describes the percentage of the number of qubits that are used to execute T factories, the rest is used to execute the logical operations of the algorithm.
-1. The last two columns show the total number of *physical qubits* and the *runtime* to execute the quantum algorithm given the assumed qubit parameters.
-
-For more information, see [Result data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data). If you're interested in the workflow of the Resource Estimator, see [How the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
-
-### Access the results table
-
-The results of the resource estimation job are displayed in a table with multiple results coming from the list of items. By default the maximum number of items to be displayed is five. To display a list of $N$ items where $N > 5$, use `results[0:N]`.  
-
-You can also access individual results by providing a number as index. For example, the last configuration has index 5. You can further inspect more details about the resource estimates by collapsing various groups which have more information. For example, if you collapse the Logical qubit parameters group, you can see how the overhead to represent a logical qubit using physical qubits is derived. The last group shows the physical qubit properties that were assumed for this estimation.
-
-```python
-results[5]
-```
-
-You can also compare different configurations.For example, lets' compare the gate-based nanosecond model with the Majorana based model for an error rate of $10^-4$. These configurations correspond to indices 3 and 4.
-
-```python
-results[3:5]
 ```
 
 ## Why chemistry applications of quantum computing are important? 
