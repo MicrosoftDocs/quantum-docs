@@ -13,9 +13,7 @@ uid: microsoft.quantum.tutorial.resource-estimator.chemistry
 
 # Tutorial: Estimate the resources of a quantum chemistry problem
 
-This tutorial shows how to estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). The quantum algorithm that calculates the energy of the Hamiltonian is based on *double-factorized qubitization*. The Hamiltonian is described in terms of one- and two-electron integrals in provided FCIDUMP (full configuration interaction) files that are available via an HTTPS URI. 
-
-The *qubitization* approach is based on quantum phase estimation, but instead of constructing the standard $U = \\exp{(-i H/\\alpha)}$ from the Hamiltonian matrix $H$, one takes $U = \\exp{(-i \\sin^{-1} (H/\\alpha))}$, which can typically be implemented with fewer resources. Using *double-factorization*, $H$ is represented compactly through a combination of a judicious choice of orbitals and compression. The tolerated total error budget is $\\epsilon = 0.01$, corresponding to $1\\%$.
+This tutorial shows how to estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). 
 
 [!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
 
@@ -24,16 +22,39 @@ In this tutorial, you will:
 > [!div class="checklist"]
 > * Combine and run multiple configurations of parameters as a single job.
 > * Use FCIDUMP files as argument parameters for chemical modelling and simulation applications.
-> * Create a reusable function to display resource estimates in HTML format table.
 
 
-## Prerequisites for VS Code
+## Prerequisites 
 
+- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension. For installation details, see [Installing the Modern QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-modern-qdk-on-vs-code).
+- VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
+- The latest Azure Quantum `qsharp` package, and `numpy` and `scipy` packages.  
+
+    ```bash
+    python -m pip install --upgrade qsharp numpy scipy 
+    ```
 
 > [!TIP]
 > You don't need to have an Azure account to run the local Resource Estimator. 
+
+## Describe the problem
+
+In this tutorial, you evaluate the physical resource estimates of the qubitization algorithm described in [Phys. Rev. Research 3, 033055 (2021)](https://doi.org/10.1103/PhysRevResearch.3.033055) to calculate the energy of a user provided Hamiltonian to chemical accuracy of 1 mHa.
+
+The quantum algorithm that calculates the energy of the Hamiltonian is based on *double-factorized qubitization*. The Hamiltonian is described in terms of one- and two-electron integrals in provided FCIDUMP (full configuration interaction) files that are available via an HTTPS URI. 
+
+The *qubitization* approach is based on quantum phase estimation, but instead of constructing the standard $U = \\exp{(-i H/\\alpha)}$ from the Hamiltonian matrix $H$, one takes $U = \\exp{(-i \\sin^{-1} (H/\\alpha))}$, which can typically be implemented with fewer resources. Using *double-factorization*, $H$ is represented compactly through a combination of a judicious choice of orbitals and compression.
+
+## Load the sample in Visual Studio Code
+
+The code for this tutorial can be found in the [Q# sample repository](https://github.com/microsoft/qsharp), under [estimation/df-chemistry](https://github.com/microsoft/qsharp/tree/main/samples/estimation/df-chemistry). We recommend that you clone the repository in your local machine to run the sample. 
+
+To clone the repository, run the following command from your terminal:
+
+```bash
+git clone https://github.com/microsoft/qsharp.git
+```
 
 ## Select and pass a FCIDUMP file
 
@@ -47,38 +68,56 @@ In this example, the Hamiltonian is described in terms of one- and two-electron 
 |<https://aka.ms/fcidump/polyyne-24e-24o>|polyyne-24e-24o|24 electron, 24 orbital active space of the polyyne molecule.|
 |<https://aka.ms/fcidump/n2-10e-8o>|n2-10e-8o|10 electron, 8 orbital active space of he dissociated nitrogen at 3 Angstrom distance.|
 
-> [!NOTE]
-> You can also pass your own FCIDUMP files via:
-> - [Raw links to files in Github](https://docs.github.com/repositories/working-with-files/using-files/viewing-a-file#viewing-or-copying-the-raw-file-content) repositories (see [how to add files to Github repositories](https://docs.github.com/repositories/working-with-files/managing-files/creating-new-files)).
-> - [Files on Github gists](https://docs.github.com/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists).
-> - [Files in Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) using SAS tokens.
+To pass the FCIDUMP file
 
 
+## Run the chemistry sample
 
-### Set the error budget
+To run the sample, locate. 
 
-You want to estimate the resources on a fault-tolerant quantum computer and with a chemical accuracy of 1 mHa. The quantum algorithms requires a total accuracy if 0.01, that is, 1%, to obtain a chemical accuracy of 1 mHa. For more information, see [Error budget](xref:microsoft.quantum.overview.resources-estimator#error-budget).
+1. **Open** Visual Studio Code.
+1. **Open** the folder where you cloned the Q# sample repository.
+1. **Navigate** to the directory where your Python file is located. For example, if you cloned the Q# sample repository in your local machine, the path to the Python file is `qsharp/samples/estimation/df-chemistry`.
+1. **Run** the chemistry sample and pass the FCIDUMP file For example, the following command will download the FCIDUMP file *n2-10e-8o* to the working folder and run resource estimation for it.
 
-```python
-params.error_budget = 0.01
+```bash
+python chemistry.py -f https://aka.ms/fcidump/n2-10e-8o
 ```
 
-### Set the qubit parameters
+After that, you can pass the path to the downloaded file to the script instead:
 
-Finally, you specify the qubit parameters. You choose six [predefined qubit parameter models](xref:microsoft.quantum.overview.resources-estimator#physical-qubit-parameters), four are gate-based and two are Majorana based models. For the Majorana based models, you assume a Floquet code as QEC scheme. For more information, see [QEC schemes](xref:microsoft.quantum.overview.resources-estimator#quantum-error-correction-schemes).
-
-```python
-params.items[0].qubit_params.name = "qubit_gate_us_e3"
-params.items[1].qubit_params.name = "qubit_gate_us_e4"
-params.items[2].qubit_params.name = "qubit_gate_ns_e3"
-params.items[3].qubit_params.name = "qubit_gate_ns_e4"
-params.items[4].qubit_params.name = "qubit_maj_ns_e4"
-params.items[4].qec_scheme.name = "floquet_code"
-params.items[5].qubit_params.name = "qubit_maj_ns_e6"
-params.items[5].qec_scheme.name = "floquet_code"
+```bash
+python chemistry.py -f n2-10e-8o
 ```
 
+```output
+Algorithm runtime: 19 mins
+Number of physical qubits required: 207.60k
+For more detailed resource counts, see file resource_estimate.json
+```
 
+## Change target parameters
+
+1. Open the **chemistry.py** file in Visual Studio Code.
+1. The target parameters of the resource estimation can be found in **line 471** of the chemistry.py file. The following code snippet shows the parameters used in this tutorial.
+
+```python
+# Get resource estimates
+res = qsharp.estimate(qsharp_string,
+                      params={"errorBudget": 0.01,
+                              "qubitParams": {"name": "qubit_maj_ns_e6"},
+                              "qecScheme": {"name": "floquet_code"}})
+```
+
+If you want to change the target parameters, you can do it by modifying the previous code snippet. For example, the following code snippet shows how to change the error budget to 0.1.
+
+```python
+# Get resource estimates
+res = qsharp.estimate(qsharp_string,
+                      params={"errorBudget": 0.1,
+                              "qubitParams": {"name": "qubit_maj_ns_e6"},
+                              "qecScheme": {"name": "floquet_code"}})
+```
 
 ## Why chemistry applications of quantum computing are important? 
 
