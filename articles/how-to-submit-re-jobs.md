@@ -7,13 +7,13 @@ ms.service: azure-quantum
 ms.subservice: computing
 ms.custom: devx-track-azurecli
 ms.topic: how-to
-title: Run Resource Estimates with Different SDKs and IDEs
+title: Run the Resource Estimates
 uid: microsoft.quantum.submit-resource-estimation-jobs
 no-loc: [target, targets]
 zone_pivot_groups: ide-local-portal-jupyter
 ---
 
-# How to use different SDKs and IDEs with the Resource Estimator
+# Different ways to run the Resource Estimator
 
 In this article, you'll learn to work with the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). The Resource Estimator is available both in VS Code and online in Azure portal.
 
@@ -46,7 +46,6 @@ The following table shows the different ways to run the Resource Estimator.
 [!INCLUDE [portal-qiskit-procedure](includes/how-to-submit-resources-estimation-include-qiskit.md)]
 
 ::: zone-end
-
 
 > [!NOTE]
 > If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
