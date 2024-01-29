@@ -279,10 +279,12 @@ For more information on the full set of noise parameters available, see the H-se
 
 #### [Emulator Noise Parameters with Q# Provider](#tab/tabid-emulator-noise-parameters-with-q-provider)
 
-First, declare the function to define in Q# as a callable so that Python recognizes the symbol.
+First, import the required packages and initiate the base profile:
 
 ```python
-GenerateRandomBit: any = None
+import qsharp
+import azure.quantum
+qsharp.init(target_profile=qsharp.TargetProfile.Base)
 ```
 
 Next, define the function.
@@ -303,11 +305,21 @@ operation GenerateRandomBit() : Result {
 
 ```
 
-Now, configure the noise parameters for the emulator and submit the job. 
+and compile the operation:
 
 ```python
-# Set the emulator target to submit to
-qsharp.azure.target("quantinuum.sim.h1-1e")
+MyProgram = qsharp.compile("GenerateRandomBit()")
+```
+
+Connect to Azure Quantum, select the target machine, and configure the noise parameters for the emulator:
+
+```python
+MyWorkspace = azure.quantum.Workspace(
+    resource_id = "",
+    location = ""
+)
+
+MyTarget = MyWorkspace.get_targets("quantinuum.sim.h1-1e")
 
 # Update the parameter names desired
 # Note: This is not the full set of options available. 
@@ -325,12 +337,14 @@ option_params = {
     }
 }
 
-# Pass in the options when submitting the job
-result = qsharp.azure.execute(GenerateRandomBit, 
-                              shots = 100, 
-                              jobName = "Experiment with Emulator Noise Parameters", 
-                              timeout = 240,
-                              jobParams = option_params)
+```
+
+Pass in the emulator noise options when submitting the job:
+
+```python
+job = MyTarget.submit(MyProgram, "Experiment with Emulator Noise Parameters", shots = 10, input_params = option_params)
+job.get_results()
+
 ```
 
 #### [Emulator Noise Parameters with Qiskit Provider](#tab/tabid-emulator-noise-parameters-with-qiskit-provider)
@@ -380,10 +394,12 @@ For more information on `pytket`, see the following links:
 
 #### [TKET Compilation with Q# Provider](#tab/tabid-tket-compilation-with-q-provider)
 
-First, declare the function to define in Q# as a callable so that Python recognizes the symbol.
+First, import the required packages and initiate the base profile:
 
 ```python
-GenerateRandomBit: any = None
+import qsharp
+import azure.quantum
+qsharp.init(target_profile=qsharp.TargetProfile.Base)
 ```
 
 Next, define the function.
@@ -404,23 +420,34 @@ operation GenerateRandomBit() : Result {
 
 ```
 
-Now, configure the TKET optimization level parameter and submit the job. 
+and compile the operation:
 
 ```python
-# Set the target to submit to
-qsharp.azure.target("quantinuum.sim.h1-1e")
+MyProgram = qsharp.compile("GenerateRandomBit()")
+```
+
+Connect to Azure Quantum, select the target machine, and configure the noise parameters for the emulator:
+
+```python
+MyWorkspace = azure.quantum.Workspace(
+    resource_id = "",
+    location = ""
+)
+
+MyTarget = MyWorkspace.get_targets("quantinuum.sim.h1-1e")
 
 # Update TKET optimization level desired
 option_params = {
     "tket-opt-level": 1
 }
 
-# Pass in the options when submitting the job
-result = qsharp.azure.execute(GenerateRandomBit, 
-                              shots = 100, 
-                              jobName = "Experiment with TKET Compilation", 
-                              timeout = 240,
-                              jobParams = option_params)
+``` 
+
+Pass in the otimization option when submitting the job:
+
+```python
+job = MyTarget.submit(MyProgram, "Experiment with TKET Compilation", shots = 10, input_params = option_params)
+job.get_results()
 ```
 
 #### [TKET Compilation with Qiskit Provider](#tab/tabid-tket-compilation-with-qiskit-provider)
