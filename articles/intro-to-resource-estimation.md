@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Introduction to resources estimation in quantum computing and the Azure Quantum Resource Estimator
 ms.author: sonialopez
-ms.date: 01/04/2024
+ms.date: 01/29/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: overview
@@ -13,13 +13,13 @@ uid: microsoft.quantum.overview.intro-resource-estimator
 
 # Introduction to the Azure Quantum Resource Estimator
 
-This article introduces the Azure Quantum Resource Estimator, a powerful tool that allows you to estimate the resources needed to run a quantum program on a quantum computer.
+This article introduces the Azure Quantum Resource Estimator, a powerful [open-source](https://aka.ms/AQ/RE/OpenSource) tool that allows you to estimate the resources needed to run a quantum program on a quantum computer.
 
 ## What is the Azure Quantum Resource Estimator?
 
-The Azure Quantum Resource Estimator is a tool that allows you to estimate the resources needed to execute a given quantum algorithm on a fault-tolerant quantum computer.
+The Azure Quantum Resource Estimator is an open-source tool that allows you to estimate the resources needed to execute a given quantum algorithm on a fault-tolerant quantum computer.
 
-It provides the total number of physical and logical qubits, runtime, , as well as details of the formulas and values used for each estimate. This means algorithm development becomes the focus, with the goal of optimizing performance and decreasing cost. With the Azure Quantum Resource Estimator, you can compare qubit technologies, quantum error correction schemes, and other hardware characteristics to understand how they impact the resources needed to run a quantum program.
+The Resource Estimator provides the total number of physical and logical qubits, runtime, as well as details of the formulas and values used for each estimate. This means algorithm development becomes the focus, with the goal of optimizing performance and decreasing cost. With the Azure Quantum Resource Estimator, you can compare qubit technologies, quantum error correction schemes, and other hardware characteristics to understand how they impact the resources needed to run a quantum program.
 
 You can start from well-known, pre-defined qubit parameter settings and quantum error correction (QEC) schemes or configure unique settings across a wide range of machine characteristics such as operation error rates, operation speeds, and error correction schemes and thresholds.
 
