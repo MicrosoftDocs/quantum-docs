@@ -22,7 +22,7 @@ In this tutorial, you will:
 > [!div class="checklist"]
 > * Clone a sample repository from GitHub.
 > * Use FCIDUMP files as argument parameters for chemical modelling and simulation applications.
-> * Run resource estimation for large-scale problem, which is a double-factorized chemistry sample.
+> * Run resource estimation for a large-scale problem, which is a double-factorized chemistry sample.
 
 ## Prerequisites 
 
