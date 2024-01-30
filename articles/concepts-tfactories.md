@@ -13,7 +13,7 @@ uid: microsoft.quantum.concepts.tfactories
 
 # T gates and T factories
 
-This article describes the role of T gates and T factories in fault tolerant quantum computing. Giving a quantum algorithm, the estimation of required resources for running the T gates and T factories becomes crucial. For more information, see [how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
+This article describes the role of T gates and T factories in fault tolerant quantum computing. Giving a quantum algorithm, the estimation of required resources for running the T gates and T factories becomes crucial. 
 
 ## Universal set of quantum gates
 

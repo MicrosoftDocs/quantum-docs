@@ -882,7 +882,7 @@
 			"redirect_document_id": false
 		},
 		{
-			"source_path": "articles/how-to-work-with-re.md",
+			"source_path": "articles/learn-how-the-resource-estimator-works.md",
 			"redirect_url": "/azure/quantum/intro-to-resource-estimation",
 			"redirect_document_id": false
 		},

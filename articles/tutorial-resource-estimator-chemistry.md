@@ -34,7 +34,7 @@ In this tutorial, you will:
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The **Microsoft Quantum Computing** provider added to your workspace. For more information, see [Enabling the Resource Estimator target](xref:microsoft.quantum.work-with-resource-estimator#enable-the-azure-quantum-resource-estimator-target-in-your-workspace).
+- The **Microsoft Quantum Computing** provider added to your workspace. 
 
 ## Create a new notebook in your workspace
 
@@ -136,7 +136,7 @@ params.items[5].qec_scheme.name = "floquet_code"
 
 ## Estimate the quantum algorithm
 
-The parameters are now all set up, and you're ready to submit the resource estimation job. You can submit multiple configuration of job parameters as a single job to avoid rerunning multiple jobs on the same quantum program. For more information, see [Run multiple configurations as a single job](xref:microsoft.quantum.work-with-resource-estimator#how-to-run-multiple-configurations-as-a-single-job).
+The parameters are now all set up, and you're ready to submit the resource estimation job. You can submit multiple configuration of job parameters as a single job to avoid rerunning multiple jobs on the same quantum program. 
 
 As quantum program, you use the double-factorization based quantum chemistry algorithm, which is provided via the `df_chemistry` function. 
 
@@ -174,7 +174,6 @@ results.summary_data_frame(labels=labels)
 1. The *T factory fraction* describes the percentage of the number of qubits that are used to execute T factories, the rest is used to execute the logical operations of the algorithm.
 1. The last two columns show the total number of *physical qubits* and the *runtime* to execute the quantum algorithm given the assumed qubit parameters.
 
-For more information, see [Result data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data). If you're interested in the workflow of the Resource Estimator, see [How the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
 
 ### Access the results table
 

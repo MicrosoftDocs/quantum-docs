@@ -58,11 +58,11 @@ You can bring your own code and compilation tools to the Resource Estimator. The
 
 ### Batch multiple estimates
 
-The Resource Estimator allows you to estimate the resources needed to run the same quantum algorithm for [different configurations of target parameters](xref:microsoft.quantum.work-with-resource-estimator#how-to-run-multiple-configurations-as-a-single-job), and compare the results. In this way you can understand how the qubit architecture, QEC scheme, and the rest of the target parameters impact the overall resources.
+The Resource Estimator allows you to estimate the resources needed to run the same quantum algorithm for [different configurations of target parameters](xref:microsoft.quantum.resource-estimator-batching), and compare the results. In this way you can understand how the qubit architecture, QEC scheme, and the rest of the target parameters impact the overall resources.
 
 ### Optimization
 
-You can reduce the execution time of the Resource Estimator by incorporating some estimates in the overall cost. For example, if you're working with a large program, you can compute and [cache the cost of subroutines](xref:microsoft.quantum.work-with-resource-estimator#how-to-handle-large-programs), or if you already [known estimates for an operation](xref:microsoft.quantum.work-with-resource-estimator#use-known-estimates-for-an-operation) your can pass them to the Resource Estimator.
+You can reduce the execution time of the Resource Estimator by incorporating some estimates in the overall cost. For example, if you're working with a large program, you can compute and [cache the cost of subroutines](xref:microsoft.quantum.resource-estimator-caching), or if you already [known estimates for an operation](xref:microsoft.quantum.resource-estimator-known-estimates) your can pass them to the Resource Estimator.
 
 ### Visualization of resources
 
@@ -77,8 +77,8 @@ The following table shows different user scenarios and the recommended articles 
 |User scenario|You want to |
 |---|---|
 |I'm developing QEC codes|You can use the Resource Estimator to custom your QEC codes and compare different combinations of parameters. See [How to customize your QEC schemes](xref:microsoft.quantum.overview.resources-estimator#customize-predefined-qec-schemes). |
-|I'm developing quantum algorithms| By analyzing the impact of different configurations of hardware and software profiles on the resource requirements, you can gain insights into how your quantum algorithm might perform under different hardware and error conditions. This information can help you optimize your algorithm for specific quantum hardware or error rates. See [Running multiple configurations of target parameters](xref:microsoft.quantum.work-with-resource-estimator#how-to-run-multiple-configurations-as-a-single-job). |
-|I want to improve the performance of quantum programs| To learn how to harness the power of the Resource Estimator, see [Get the most out of the Resource Estimator](xref:microsoft.quantum.work-with-resource-estimator). |
+|I'm developing quantum algorithms| By analyzing the impact of different configurations of hardware and software profiles on the resource requirements, you can gain insights into how your quantum algorithm might perform under different hardware and error conditions. This information can help you optimize your algorithm for specific quantum hardware or error rates. See [Running multiple configurations of target parameters](xref:microsoft.quantum.resource-estimator-batching). |
+|I want to improve the performance of quantum programs| To learn how to harness the power of the Resource Estimator, see [Running large programs](xref:microsoft.quantum.resource-estimator-caching) and [Using known estimates](xref:microsoft.quantum.resource-estimator-known-estimates).|
 |I'm interested in large-scale quantum computing| You can use the Resource Estimator to analyze the resources of real-world problems that are expected to be solved by large-scale fault-tolerant quantum computers. See how in [Resource estimation for large-scale quantum computing](#resource-estimation-for-large-scale-quantum-computing). |
 |I'm developing quantum-safe cryptography|You can use the Resource Estimator to compare the performance of different encryption algorithms, key strengths, qubit types, and error rates, and their resilience to quantum attacks. See [Resource estimation and cryptography](xref:microsoft.quantum.resource-estimator-cryptography). |
 
