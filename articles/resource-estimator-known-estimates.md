@@ -1,27 +1,23 @@
 ---
 author: SoniaLopezBravo
-description: Learn how to run 
+description: Learn how to use pre-calculated estimates with the Resource Estimator.
 ms.date: 01/29/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
-title: Use known estimates with the Resource Estimator
-uid: microsoft.quantum.resource-estimator-batching
+title: Use Known Estimates with the Resource Estimator
+uid: microsoft.quantum.resource-estimator-known-estimates
 ---
 
 # How to use known estimates with the Resource Estimator
 
-In this article, you learn how to optimize the execution time when running the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). 
+In this article, you learn how to use pre-calculated estimates and optimize the execution of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator).
 
-For information about how to run the Resource Estimator, see [Use different SDKs and IDEs with the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
+For information about how to run the Resource Estimator, see [Different ways of using the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 ## Prerequisites
-
-### [Q# and Python in VS Code](#tab/tabid-vscode)
-
-To run Q# programs in the Resource Estimator, you need the following:
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
 - The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension. For installation details, see [Installing the Modern QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-modern-qdk-on-vs-code).
@@ -29,20 +25,11 @@ To run Q# programs in the Resource Estimator, you need the following:
 If you want to use Python in VS Code, you also need the following:
 
 - Install the latest version of the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
-- The latest Azure Quantum `qsharp` and `qsharp-widgets` packages.  
+- The latest Azure Quantum `qsharp` package.  
 
     ```bash
-    python -m pip install --upgrade qsharp qsharp-widgets 
+    python -m pip install --upgrade qsharp 
     ```
-
-### [Qiskit in Azure portal](#tab/tabid-portal)
-
-To submit jobs to the Resource Estimator, you need the following:
-
-- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
-- An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-
-***
 
 ## Use known estimates for an operation
 
@@ -109,3 +96,13 @@ logical_counts.estimate(params)
 ```
 
 ***
+
+> [!NOTE]
+> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
+
+## Next steps
+
+- [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
+- [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
+- [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
+- [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)

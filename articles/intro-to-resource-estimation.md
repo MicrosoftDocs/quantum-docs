@@ -80,7 +80,7 @@ The following table shows different user scenarios and the recommended articles 
 |I'm developing quantum algorithms| By analyzing the impact of different configurations of hardware and software profiles on the resource requirements, you can gain insights into how your quantum algorithm might perform under different hardware and error conditions. This information can help you optimize your algorithm for specific quantum hardware or error rates. See [Running multiple configurations of target parameters](xref:microsoft.quantum.work-with-resource-estimator#how-to-run-multiple-configurations-as-a-single-job). |
 |I want to improve the performance of quantum programs| To learn how to harness the power of the Resource Estimator, see [Get the most out of the Resource Estimator](xref:microsoft.quantum.work-with-resource-estimator). |
 |I'm interested in large-scale quantum computing| You can use the Resource Estimator to analyze the resources of real-world problems that are expected to be solved by large-scale fault-tolerant quantum computers. See how in [Resource estimation for large-scale quantum computing](#resource-estimation-for-large-scale-quantum-computing). |
-|I'm developing quantum-safe cryptography|You can use the Resource Estimator to compare the performance of different encryption algorithms, key strengths, qubit types, and error rates, and their resilience to quantum attacks. See [Resource estimation for quantum-safe planning](#resource-estimation-for-quantum-safe-planning). |
+|I'm developing quantum-safe cryptography|You can use the Resource Estimator to compare the performance of different encryption algorithms, key strengths, qubit types, and error rates, and their resilience to quantum attacks. See [Resource estimation and cryptography](xref:microsoft.quantum.resource-estimator-cryptography). |
 
 > [!NOTE]
 > If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
@@ -92,25 +92,3 @@ If you want to develop quantum algorithms for large-scale quantum computers, che
 This tutorial represents a first step to integrate resource estimation of quantum solutions to electronic structure problems. One of the most important applications of scaled quantum computers is solving quantum chemistry problems. The simulation of complex quantum mechanical systems has the potential to unlock breakthroughs in areas such as carbon capture, food insecurity, and designing better fuels and materials.  
 
 For example, one of the Hamiltonians used in this tutorial, the *nitrogenase_54orbital*, describes the nitrogenase enzyme. If you could accurately simulate how this enzyme works at a quantum level, it could help us to understand how to produce it at scale. You could replace the highly energy-intensive process which is used to produce enough fertilizer to feed the planet. This has the potential to reduce the global carbon footprint and also to help address concerns regarding food insecurity in a growing population.
-
-## Resource estimation for quantum-safe planning
-
-With the Azure Quantum Resource Estimator, you can estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm..
-
-The Azure Quantum Resource Estimator is available in [Azure Quantum website (quantum.microsoft.com)](https://quantum.microsoft.com/experience/quantum-cryptography) to analyze the impact of quantum computing on classical cryptography. You only need a Microsoft account to access the experience.
-
-The Resource Estimator in [quantum.microsoft.com](https://quantum.microsoft.com/experience/quantum-cryptography) takes a set of four target parameters: a classical encryption algorithm, a key strength, a qubit type, and a qubit error rate. The results are displayed in a plot that shows the number of qubits and the runtime that a quantum computer with the selected architecture would need to break the encryption algorithm.
-
-1. Click on the **arrows** to switch between different selections of preset input parameters. See that the fields are populated for you.
-1. Click **Ask Copilot**  if you want to know more about the resource estimation data.
-1. Click **Download** to download the plot of the resource estimation job.
-1. You can also **customize the parameters** of the encryption algorithm. You need to select *at least* one option for each input parameter. You can select multiple combinations of parameters and compare their security against quantum computers.
-1. **Hover over** the points of the plot to see more information about the resource estimates.
-1. At any point, you can **ask Copilot a question** about cryptography, resource estimation, or quantum computing.
-
-    :::image type="content" source="media/quantum-cryptography-qcom.png" alt-text="Screenshot of the quantum cryptography experience in Azure Quantum website. The picture displays the input parameters that constitute the encryption algorithm and the resulting plot of the resource estimation job.":::
-
-
-
-
-

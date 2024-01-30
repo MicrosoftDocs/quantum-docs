@@ -13,11 +13,13 @@ uid: microsoft.quantum.resource-estimator-batching
 
 # How to run multiple configurations of target parameters with the Resource Estimator
 
-In this article, you learn how to optimize the execution time when running the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). 
+In this article, you learn how to run multiple configurations of target parameters and compare them using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator).
 
-For information about how to run the Resource Estimator, see [Use different SDKs and IDEs with the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
+For information about how to run the Resource Estimator, see [Different ways to use the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 ## Prerequisites
+
+The following prerequisites are required to run the Resource Estimator:
 
 ### [Q# and Python in VS Code](#tab/tabid-vscode)
 
@@ -29,10 +31,10 @@ To run Q# programs in the Resource Estimator, you need the following:
 If you want to use Python in VS Code, you also need the following:
 
 - Install the latest version of the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
-- The latest Azure Quantum `qsharp` and `qsharp-widgets` packages.  
+- The latest Azure Quantum `qsharp` package.  
 
     ```bash
-    python -m pip install --upgrade qsharp qsharp-widgets 
+    python -m pip install --upgrade qsharp 
     ```
 
 ### [Qiskit in Azure portal](#tab/tabid-portal)
@@ -46,12 +48,12 @@ To submit jobs to the Resource Estimator, you need the following:
 
 ## Batching with the Resource Estimator
 
-The Azure Quantum Resource Estimator allows you to submit jobs with multiple configuration of job parameters, also referred as *items*, as a single job to avoid rerunning multiple jobs on the same quantum program.
+The Azure Quantum Resource Estimator allows you to submit jobs with multiple configurations of job parameters, also referred as *items*, as a single job to avoid rerunning multiple jobs on the same quantum program.
 
 A resource estimation job consist of two types of job parameters:
 
 - [Target parameters](xref:microsoft.quantum.overview.resources-estimator): qubit model, QEC schemes, error budget, constraints on the component-level, and distillation units.
-- Operation arguments: arguments that can be passed to the program (if the QIR entry point contains arguments).
+- **Operation arguments**: arguments that can be passed to the program (if the QIR entry point contains arguments).
 
 One item consists of one configuration of job parameters, that is one configuration of target parameters and operation arguments. Several items are represented as an array of job parameters.
 
@@ -208,3 +210,13 @@ In the same notebook of your PyQIR program, add a new cell and run:
     > ```
 
 ***
+
+> [!NOTE]
+> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
+
+## Next steps
+
+- [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
+- [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
+- [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
+- [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)
