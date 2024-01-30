@@ -82,52 +82,52 @@ options:
 ## Run the chemistry sample
 
 1. In Visual Studio Code, **open** the folder where you cloned the Q# sample repository.
-1. Open a new terminal, **Terminal -> New Terminal** and **navigate** to the directory where the quantum chemistry sample is located. For example, if you cloned the Q# sample repository in your local machine, the path is `qsharp/samples/estimation/df-chemistry`.
+1. Open a new terminal, **Terminal -> New Terminal**, and **navigate** to the directory where the quantum chemistry sample is located. For example, if you clone the Q# sample repository in your local machine, the path is `qsharp/samples/estimation/df-chemistry`.
 1. **Run** the chemistry.py file and **pass** the FCIDUMP file. For example, the following command will download the FCIDUMP file *n2-10e-8o* to the working folder and run resource estimation for it.
 
     ```bash
     python chemistry.py -f https://aka.ms/fcidump/n2-10e-8o
     ```
 
-1. After that, you can pass the path to the downloaded file to the script instead.
+    After that, you can pass the path to the downloaded file to the script instead.
 
     ```bash
     python chemistry.py -f n2-10e-8o
     ```
 
-1. The result of the resource estimation is displayed in the terminal. For example, the following output shows the resource estimation for the *n2-10e-8o* FCIDUMP file.
+1. The **result** of the resource estimation is displayed in the terminal. For example, the following output shows the resource estimation for the *n2-10e-8o* FCIDUMP file.
 
-```output
-Algorithm runtime: 19 mins
-Number of physical qubits required: 207.60k
-For more detailed resource counts, see file resource_estimate.json
-```
+    ```output
+    Algorithm runtime: 19 mins
+    Number of physical qubits required: 207.60k
+    For more detailed resource counts, see file resource_estimate.json
+    ```
 
 > [!NOTE]
-> After running the chemistry.py file, a *resource_estimation.json* file is created in the working folder. The resource_estimation.json file contains the detailed [output of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#output-parameters). This is, the job parameters, physical counts, T factory properties, logical counts, and logical qubit properties.
+> After running the chemistry.py file, a *resource_estimation.json* file is created in the working folder. The resource_estimation.json file contains the detailed [output of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#output-parameters). These are, the job parameters, physical counts, T factory properties, logical counts, and logical qubit properties.
 
 ### Change target parameters
 
 1. Open the **chemistry.py** file.
 1. The target parameters of the resource estimation can be found in **line 471** of the chemistry.py file. The following code snippet shows the parameters used in this tutorial.
 
-```python
-# Get resource estimates
-res = qsharp.estimate(qsharp_string,
-                      params={"errorBudget": 0.01,
-                              "qubitParams": {"name": "qubit_maj_ns_e6"},
-                              "qecScheme": {"name": "floquet_code"}})
-```
+    ```python
+    # Get resource estimates
+    res = qsharp.estimate(qsharp_string,
+                          params={"errorBudget": 0.01,
+                                  "qubitParams": {"name": "qubit_maj_ns_e6"},
+                                  "qecScheme": {"name": "floquet_code"}})
+    ```
 
-If you want to change the target parameters, you can do it by modifying the previous code snippet. For example, the following code snippet shows how to change the error budget to 0.1.
+1. If you want to change the target parameters, you can do it by modifying the previous code snippet. For example, the following code snippet shows how to change the error budget to 0.333. For more information, see [Customize the target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
 
-```python
-# Get resource estimates
-res = qsharp.estimate(qsharp_string,
-                      params={"errorBudget": 0.1,
-                              "qubitParams": {"name": "qubit_maj_ns_e6"},
-                              "qecScheme": {"name": "floquet_code"}})
-```
+    ```python
+    # Get resource estimates
+    res = qsharp.estimate(qsharp_string,
+                          params={"errorBudget": 0.333,
+                                  "qubitParams": {"name": "qubit_maj_ns_e6"},
+                                  "qecScheme": {"name": "floquet_code"}})
+    ```
 
 ## Why chemistry applications of quantum computing are important? 
 
