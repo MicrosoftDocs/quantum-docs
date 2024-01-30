@@ -25,7 +25,7 @@ The following table shows the different ways to run the Resource Estimator.
 |Estimate the resources of a Q# program (advanced)|Jupyter Notebook in Visual Studio Code| Select **Q# in Jupyter Notebook** at the top of the page|
 |Estimate the resources of a Qiskit program|Azure Quantum portal|Select **Qiskit in Azure portal** at the top of the page|
 |Estimate the resources of a QIR program|Azure Quantum portal| [Submit QIR](xref:microsoft.quantum.tutorial.resource-estimator.qir)|
-|Use FCIDUMP files as argument parameters (advanced)| Azure Quantum portal| [Submit a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)|
+|Use FCIDUMP files as argument parameters (advanced)| Visual Studio Code| [Submit a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)|
 
 [!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
 

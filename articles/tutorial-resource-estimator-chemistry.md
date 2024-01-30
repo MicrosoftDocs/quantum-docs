@@ -20,8 +20,9 @@ This tutorial shows how to estimate the physical resources required to calculate
 In this tutorial, you will:
 
 > [!div class="checklist"]
-> * Combine and run multiple configurations of parameters as a single job.
+> * Clone a sample repository from GitHub.
 > * Use FCIDUMP files as argument parameters for chemical modelling and simulation applications.
+
 
 
 ## Prerequisites 
@@ -58,7 +59,7 @@ git clone https://github.com/microsoft/qsharp.git
 
 ## Select and pass a FCIDUMP file
 
-In this example, the Hamiltonian is described in terms of one- and two-electron integrals in the FCIDUMP format. FCIDUMP files are publicly accessible HTTPS URIs. You can choose one FCIDUMP files from the following table or select your own FCIDUMP file.
+In this example, the Hamiltonian is described in terms of one- and two-electron integrals in the FCIDUMP format. FCIDUMP files are publicly accessible HTTPS URIs. You can choose one FCIDUMP files from the following table or select your own FCIDUMP file available on your machine.
 
 |URI|Instance name|Description|
 |---|---|---|
@@ -68,27 +69,33 @@ In this example, the Hamiltonian is described in terms of one- and two-electron 
 |<https://aka.ms/fcidump/polyyne-24e-24o>|polyyne-24e-24o|24 electron, 24 orbital active space of the polyyne molecule.|
 |<https://aka.ms/fcidump/n2-10e-8o>|n2-10e-8o|10 electron, 8 orbital active space of he dissociated nitrogen at 3 Angstrom distance.|
 
-To pass the FCIDUMP file
+To pass the FCIDUMP file, you need to run the chemistry.py file and pass the FCIDUMP file name or URI as an argument using either `-f` or `--fcidumpfile`.
 
+```bash
+usage: chemistry.py [-h] [-f FCIDUMPFILE]
+
+options:
+  -h, --help           
+  -f FCIDUMPFILE, --fcidumpfile FCIDUMPFILE                      
+```
 
 ## Run the chemistry sample
 
-To run the sample, locate. 
+1. In Visual Studio Code, **open** the folder where you cloned the Q# sample repository.
+1. Open a new terminal, **Terminal -> New Terminal** and **navigate** to the directory where the quantum chemistry sample is located. For example, if you cloned the Q# sample repository in your local machine, the path is `qsharp/samples/estimation/df-chemistry`.
+1. **Run** the chemistry.py file and **pass** the FCIDUMP file. For example, the following command will download the FCIDUMP file *n2-10e-8o* to the working folder and run resource estimation for it.
 
-1. **Open** Visual Studio Code.
-1. **Open** the folder where you cloned the Q# sample repository.
-1. **Navigate** to the directory where your Python file is located. For example, if you cloned the Q# sample repository in your local machine, the path to the Python file is `qsharp/samples/estimation/df-chemistry`.
-1. **Run** the chemistry sample and pass the FCIDUMP file For example, the following command will download the FCIDUMP file *n2-10e-8o* to the working folder and run resource estimation for it.
+    ```bash
+    python chemistry.py -f https://aka.ms/fcidump/n2-10e-8o
+    ```
 
-```bash
-python chemistry.py -f https://aka.ms/fcidump/n2-10e-8o
-```
+1. After that, you can pass the path to the downloaded file to the script instead.
 
-After that, you can pass the path to the downloaded file to the script instead:
+    ```bash
+    python chemistry.py -f n2-10e-8o
+    ```
 
-```bash
-python chemistry.py -f n2-10e-8o
-```
+1. The result of the resource estimation is displayed in the terminal. For example, the following output shows the resource estimation for the *n2-10e-8o* FCIDUMP file.
 
 ```output
 Algorithm runtime: 19 mins
@@ -96,9 +103,12 @@ Number of physical qubits required: 207.60k
 For more detailed resource counts, see file resource_estimate.json
 ```
 
-## Change target parameters
+> [!NOTE]
+> After running the chemistry.py file, a *resource_estimation.json* file is created in the working folder. The resource_estimation.json file contains the detailed [output of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#output-parameters). This is, the job parameters, physical counts, T factory properties, logical counts, and logical qubit properties.
 
-1. Open the **chemistry.py** file in Visual Studio Code.
+### Change target parameters
+
+1. Open the **chemistry.py** file.
 1. The target parameters of the resource estimation can be found in **line 471** of the chemistry.py file. The following code snippet shows the parameters used in this tutorial.
 
 ```python
@@ -130,7 +140,6 @@ For example, one of the FCIDUMP files provided in this sample, *nitrogenase_54or
 If you want to deepen your knowledge, here are some experiments you can try:
 
 - Estimate some custom FCIDUMP files.
-- Investigate the details of resource estimation by exploring the detailed resource estimation tables.
 - Modify the assumptions on the target quantum computer by providing custom qubit parameters.
 - Check out the other resource estimation sample notebooks in the Azure Quantum sample gallery.
 
