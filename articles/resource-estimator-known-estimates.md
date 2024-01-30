@@ -15,7 +15,7 @@ uid: microsoft.quantum.resource-estimator-known-estimates
 
 In this article, you learn how to use pre-calculated estimates and optimize the execution of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator).
 
-For information about how to run the Resource Estimator, see [Different ways of using the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
+For information about how to run the Resource Estimator, see [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 ## Prerequisites
 
@@ -98,11 +98,11 @@ logical_counts.estimate(params)
 ***
 
 > [!NOTE]
-> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
+> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Next steps
 
 - [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
-- [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
+- [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
 - [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
 - [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)

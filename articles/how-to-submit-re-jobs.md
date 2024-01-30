@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: computing
 ms.custom: devx-track-azurecli
 ms.topic: how-to
-title: Run the Resource Estimates
+title: Run the Resource Estimator
 uid: microsoft.quantum.submit-resource-estimation-jobs
 no-loc: [target, targets]
 zone_pivot_groups: ide-local-portal-jupyter
@@ -48,13 +48,11 @@ The following table shows the different ways to run the Resource Estimator.
 ::: zone-end
 
 > [!NOTE]
-> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
+> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Next steps
 
 - [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
 - [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
-- [Learn how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works)
-- [Get the most out of the Resource Estimator](xref:microsoft.quantum.work-with-resource-estimator)
-- [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator)
-- [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir)
+- [Handle large programs with the Resource Estimator](xref:microsoft.quantum.resource-estimator-caching)
+- [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)

@@ -41,3 +41,10 @@ The Resource Estimator for quantum-safe planning takes a set of four target para
 
 > [!TIP]
 > At any point, you can **ask Copilot a question** about cryptography, resource estimation, or quantum computing.
+
+## Next steps
+
+- [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
+- [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
+- [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
+- [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)

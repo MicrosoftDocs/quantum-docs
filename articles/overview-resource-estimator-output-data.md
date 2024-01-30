@@ -168,8 +168,14 @@ SpaceChart(result)
 
 :::image type="content" source="media/resource-estimator-space-diagram.png" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
 
+
+> [!NOTE]
+> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
+
 ## Next steps
 
 - [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator)
+- [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
 - [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
-- [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir)
+- [Handle large programs with the Resource Estimator](xref:microsoft.quantum.resource-estimator-caching)
+- [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)

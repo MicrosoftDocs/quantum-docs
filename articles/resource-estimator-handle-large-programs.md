@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
-title: Optimize Running Large Programs with the Resource Estimator
+title: Optimize Large Programs with the Resource Estimator
 uid: microsoft.quantum.resource-estimator-caching
 ---
 
@@ -15,7 +15,7 @@ uid: microsoft.quantum.resource-estimator-caching
 
 In this article, you learn how to optimize the execution time when running large Q# programs with the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator).
 
-For information about how to run the Resource Estimator, see [Different ways of using the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
+For information about how to run the Resource Estimator, see [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 ## Prerequisites
 
@@ -69,12 +69,12 @@ operation ExpensiveOperation(c: Int, b : Bool): Unit {
 In this case, the cache is different for odd and even values of `c`. In other words, data collected for even values of `c` is only reused for even values of `c`, and the same applies for odd values of `c`.
 
 > [!NOTE]
-> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
+> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Next steps
 
 - [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
-- [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
+- [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
 - [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
 - [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)
 

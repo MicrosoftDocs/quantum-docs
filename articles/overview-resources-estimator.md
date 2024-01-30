@@ -41,9 +41,6 @@ Therefore, the Resource Estimator takes a set of inputs, with pre-defined values
 - [Constraints](#constraints) on the component-level, which are the number of logical cycles and the number of T factory copies.
 - [Distillation units](#distillation-units) to specify T factories distillation algorithms.
 
-> [!NOTE]
-> In addition to the target parameters, if the quantum program contains arguments the Resource Estimator can take operation arguments as input. For more information, see [Get the most out of the Azure Quantum Resource Estimator](xref:microsoft.quantum.work-with-resource-estimator#how-to-run-multiple-configurations-as-a-single-job).
-
 ## Physical qubit parameters
 
 When the Resource Estimator models the physical qubit assumptions, it uses two different physical instruction sets to operate the qubits. The physical instruction set can be either *gate-based* or *Majorana*. A gate-based instruction set provides single-qubit measurement, single-qubit gates (including T gates), and two-qubit gates. A Majorana instruction set provides a physical T gate, single-qubit measurement and two-qubit joint measurement operations.
@@ -554,11 +551,14 @@ The parameter `logical_qubit_specification_first_round_override` can be provided
 }
 ```
 
+> [!NOTE]
+> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
+
+
 ## Next steps
 
 - [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
-- [Learn how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works)
-- [Get the most out of the Resource Estimator](xref:microsoft.quantum.work-with-resource-estimator)
 - [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator)
-- [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
-- [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir)
+- [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
+- [Handle large programs with the Resource Estimator](xref:microsoft.quantum.resource-estimator-caching)
+- [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)
