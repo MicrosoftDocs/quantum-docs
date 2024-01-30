@@ -877,6 +877,11 @@
 			"redirect_document_id": false
 		},
 		{
+			"source_path": "articles/how-to-work-with-re.md",
+			"redirect_url": "/azure/quantum/intro-to-resource-estimation",
+			"redirect_document_id": false
+		},
+		{
 			"source_path": "articles/concepts-overview.md",
 			"redirect_url": "/azure/quantum/overview-understanding-quantum-computing",
 			"redirect_document_id": false
