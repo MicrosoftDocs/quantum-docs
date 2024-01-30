@@ -22,14 +22,12 @@ In this tutorial, you will:
 > [!div class="checklist"]
 > * Clone a sample repository from GitHub.
 > * Use FCIDUMP files as argument parameters for chemical modelling and simulation applications.
-
-
+> * Run resource estimation for large-scale problem, which is a double-factorized chemistry sample.
 
 ## Prerequisites 
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
+- The latest version of [Visual Studio Code](https://code.visualstudio.com/download) with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
 - The latest Azure Quantum `qsharp` package, and `numpy` and `scipy` packages.  
 
     ```bash
@@ -109,7 +107,7 @@ options:
 ### Change target parameters
 
 1. Open the **chemistry.py** file.
-1. The target parameters of the resource estimation can be found in **line 471** of the chemistry.py file. The following code snippet shows the parameters used in this tutorial.
+1. The target parameters of the resource estimation can be found in the call to `qsharp.estimate` of the chemistry.py file. The following code snippet shows the parameters used in this tutorial.
 
     ```python
     # Get resource estimates
