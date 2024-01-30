@@ -59,7 +59,7 @@ git clone https://github.com/microsoft/qsharp.git
 
 ## Select and pass a FCIDUMP file
 
-In this example, the Hamiltonian is described in terms of one- and two-electron integrals in the FCIDUMP format. FCIDUMP files are publicly accessible HTTPS URIs. You can choose one FCIDUMP files from the following table or select your own FCIDUMP file available on your machine.
+In this example, the Hamiltonian is described in terms of one- and two-electron integrals in the FCIDUMP format. You can choose one of the FCIDUMP files from the following table or select your own FCIDUMP file available on your machine or online via a publicly accessible HTTPS URI.
 
 |URI|Instance name|Description|
 |---|---|---|
