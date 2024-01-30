@@ -262,7 +262,7 @@ from qsharp_widgets import SpaceChart
 SpaceChart(result)
 ```
 
-:::image type="content" source="media/resource-estimator-space-diagram.png" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
+:::image type="content" source="media/vscode-estimates-local-diagram-shorRE.png" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
 
 When running multiple configurations of target parameters with the the [Pareto frontier estimation](xref:microsoft.quantum.overview.resources-estimator#pareto-frontier-estimation), you can plot the space diagram for a specific solution of the. For example, the following code shows how to plot the space diagram for the first configuration of parameters and the third shortest runtime.
 
@@ -279,7 +279,7 @@ When estimating the resources of an algorithm, you can use the space-time diagra
 > [!NOTE]
 > To see multiple optimal combinations in the space-time diagram, you need to set the estimation type to [Pareto frontier estimation](xref:microsoft.quantum.overview.resources-estimator#pareto-frontier-estimation).
 
-The space-time diagram allows you to find the optimal combination of $\text{\{number of qubits, runtime\}}$ pairs that satisfy the constraints of the quantum hardware. The diagram shows the number of physical qubits and the runtime of the algorithm for each $\text{\{number of qubits, runtime\}}$ pair.
+The space-time diagram allows you to find the optimal combination of {number of qubits, runtime} pairs that satisfy the constraints of the quantum hardware. The diagram shows the number of physical qubits and the runtime of the algorithm for each {number of qubits, runtime} pair.
 
 ```python
 import qsharp

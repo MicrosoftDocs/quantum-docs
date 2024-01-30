@@ -438,9 +438,9 @@ In this example, the number of physical qubits required to run the algorithm are
 
 :::image type="content" source="../media/resource-estimator-diagram-jupyter.png" alt-text="Screen shot showing the space diagram of the Resource Estimator.":::
 
-### Qubit-time diagram
+### Space-time diagram
 
-The qubit-time diagram shows the tradeoffs between the number of physical qubits and the runtime of the algorithm. For more information, see [Qubit-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#qubit-time-diagram).
+The space-time diagram shows the tradeoffs between the number of physical qubits and the runtime of the algorithm. For more information, see [Space-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-time-diagram).
 
 You can use the `EstimatesOverview` function to visualize the qubit-time diagram of the Resource Estimator. 
 
@@ -453,7 +453,7 @@ The `EstimatesOverview` function also shows a table with the overall physical re
 
 :::image type="content" source="../media/qubit-time-diagram-jupyter-shorRE-1.png" alt-text="Screenshot showing how to select the estimates you want to display in the results table.":::
 
-In this case, the **Estimate type** is single estimate, thus the Resource Estimator calculates one point in the qubit-time diagram. If you want to see more combinations of $\text{\{number of qubits, runtime\}}$ pairs for the same algorithm, see [Running Pareto frontier estimation](#running-pareto-frontier-estimation).
+In this case, the **Estimate type** is single estimate, thus the Resource Estimator calculates one point of the space-time diagram. If you want to see more combinations of {number of qubits, runtime} pairs for the same algorithm, see [Running Pareto frontier estimation](#running-pareto-frontier-estimation).
 
 :::image type="content" source="../media/qubit-time-diagram-jupyter-shorRE.png" alt-text="Screenshot showing the qubit-time diagram of the Resource Estimator.":::
 
@@ -606,66 +606,66 @@ When estimating the resources of an algorithm, it's important to consider the tr
 
 The Pareto frontier estimation provides multiple estimates for the same algorithm, each with a tradeoff between the number of qubits and the runtime.
 
-To run the Resource Estimator using Pareto frontier estimation, you need to specify the `"estimateType"` target parameter as `"frontier"`. For example, run the same algorithm with the Majorana-based qubit parameters with a surface code using Pareto frontier estimation.
+1. To run the Resource Estimator using **Pareto frontier estimation**, you need to specify the `"estimateType"` target parameter as `"frontier"`. For example, run the same algorithm with the Majorana-based qubit parameters with a surface code using Pareto frontier estimation.
 
-```python
-result = qsharp.estimate("RunProgram()", params=
-                            {"qubitParams": { "name": "qubit_maj_ns_e4" },
-                            "qecScheme": { "name": "surface_code" },
-                            "estimateType": "frontier", # frontier estimation
-                            }
-                        )
-```
+    ```python
+    result = qsharp.estimate("RunProgram()", params=
+                                {"qubitParams": { "name": "qubit_maj_ns_e4" },
+                                "qecScheme": { "name": "surface_code" },
+                                "estimateType": "frontier", # frontier estimation
+                                }
+                            )
+    ```
 
-To see the results table and the space-time diagram, use the `EstimatesOverview` function.
+1. To see the results table and the space-time diagram, use the `EstimatesOverview` function.
 
-```python
-EstimatesOverview(result)
-```
+    ```python
+    EstimatesOverview(result)
+    ```
 
-In the "Estimate type" column of the results table, you can see the number of different combinations of $\text{\{number of qubits, runtime\}}$ for your algorithm. In this case, the Resource Estimator finds 22 different optimal combinations out of many thousands possible ones.
+1. In the **Estimate type** column of the results table, you can see the number of different combinations of {number of qubits, runtime} for your algorithm. In this case, the Resource Estimator finds 22 different optimal combinations out of many thousands possible ones.
 
-The space-time diagram shows the number of physical qubits and the runtime of the algorithm for each $\text{\{number of qubits, runtime\}}$ pair. You can hover over each point to see the details of the resource estimation at that point.
+1. The **space-time diagram** shows the number of physical qubits and the runtime of the algorithm for each {number of qubits, runtime} pair. You can hover over each point to see the details of the resource estimation at that point.
 
-:::image type="content" source="../media/qubit-time-frontier-estimation-jupyter-shorRE.png" alt-text="Screenshot showing the space-time diagram with frontier estimation of the Resource Estimator.":::
+    :::image type="content" source="../media/qubit-time-frontier-estimation-jupyter-shorRE.png" alt-text="Screenshot showing the space-time diagram with frontier estimation of the Resource Estimator.":::
 
 ### Batching with Pareto frontier estimation
 
-To estimate and compare multiple configurations of target parameters with frontier estimation, add `"estimateType": "frontier",` to the parameters.
+1. To estimate and compare multiple configurations of target parameters with frontier estimation, add `"estimateType": "frontier",` to the parameters.
 
-```python
-result = qsharp.estimate(
-    "RunProgram()",
-    [
-        {
-        "qubitParams": { "name": "qubit_maj_ns_e4" },
-        "qecScheme": { "name": "surface_code" },
-        "estimateType": "frontier", # Pareto frontier estimation
-        },
-        {
-        "qubitParams": { "name": "qubit_maj_ns_e6" },
-        "qecScheme": { "name": "floquet_code" },
-        "estimateType": "frontier", # Pareto frontier estimation
-        },
-    ]
-)
+    ```python
+    result = qsharp.estimate(
+        "RunProgram()",
+        [
+            {
+            "qubitParams": { "name": "qubit_maj_ns_e4" },
+            "qecScheme": { "name": "surface_code" },
+            "estimateType": "frontier", # Pareto frontier estimation
+            },
+            {
+            "qubitParams": { "name": "qubit_maj_ns_e6" },
+            "qecScheme": { "name": "floquet_code" },
+            "estimateType": "frontier", # Pareto frontier estimation
+            },
+        ]
+    )
+    
+    EstimatesOverview(result, colors=["#1f77b4", "#ff7f0e"], runNames=["e4 Surface Code", "e6 Floquet Code"])
+    ```
+    
+    :::image type="content" source="../media/qubit-time-frontier-multiple-config-shorRE.png" alt-text="Screenshot showing the space-time diagram of the Resource Estimator when using Pareto frontier estimation and multiple configurations of parameters.":::
+    
+    > [!NOTE]
+    > You can define colors and run names for the qubit-time diagram using the `EstimatesOverview` function.
 
-EstimatesOverview(result, colors=["#1f77b4", "#ff7f0e"], runNames=["e4 Surface Code", "e6 Floquet Code"])
-```
+1. When running multiple configurations of target parameters using the Pareto frontier estimation, you can see the resource estimates for a specific point of the space-time diagram, that is for each {number of qubits, runtime} pair. For example, the following code shows the estimate details usage for the second (estimate index=0) run and the fourth (point index=3) shortest runtime.
 
-:::image type="content" source="../media/qubit-time-frontier-multiple-config-shorRE.png" alt-text="Screenshot showing the space-time diagram of the Resource Estimator when using Pareto frontier estimation and multiple configurations of parameters.":::
+    ```python
+    EstimateDetails(result[1], 4)
+    ```
 
-> [!NOTE]
-> You can define colors and run names for the qubit-time diagram using the `EstimatesOverview` function.
+1. You can also see the space diagram for a specific point of the space-time diagram. For example, the following code shows the space diagram for the first run of combinations (estimate index=0) and the third shortest runtime (point index=2).
 
-When running multiple configurations of target parameters using the Pareto frontier estimation, you can see the resource estimates for a specific point of the space-time diagram, that is for each $\text{\{number of qubits, runtime\}}$ pair. For example, the following code shows the estimate details usage for the second (estimate index=0) run and the fourth (point index=3) shortest runtime.
-
-```python
-EstimateDetails(result[1], 4)
-```
-
-You can also see the space diagram for a specific point of the space-time diagram. For example, the following code shows the space diagram for the first run of combinations (estimate index=0) and the third shortest runtime (point index=2).
-
-```python
-SpaceChart(result[0], 2)
-```
+    ```python
+    SpaceChart(result[0], 2)
+    ```
