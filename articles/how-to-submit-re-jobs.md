@@ -5,7 +5,7 @@ ms.author: sonialopez
 ms.date: 01/07/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.custom: devx-track-azurecli
+ms.custom:
 ms.topic: how-to
 title: Run Resource Estimates with Different SDKs and IDEs
 uid: microsoft.quantum.submit-resource-estimation-jobs
