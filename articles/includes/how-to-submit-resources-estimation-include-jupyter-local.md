@@ -430,7 +430,7 @@ For example, collapse the **Logical qubit parameters** group to see that the cod
 The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can use the `qsharp-widgets` package to visualize this distribution to better understand the estimated space requirements for the algorithm.
 
 ```python
-from qsharp_widgets import SpaceChart, EstimateDetails
+from qsharp_widgets import SpaceChart
 SpaceChart(result)
 ```
 
@@ -522,7 +522,7 @@ EstimateDetails(result_maj)
 
 ## Batching with the Resource Estimator
 
-The Azure Quantum Resource Estimator allows you to run multiple configuration of target parameters, and compare the results. This is useful when you want to compare the cost of different qubit models, QEC schemes, or error budgets. 
+The Azure Quantum Resource Estimator allows you to run multiple configuration of target parameters, and compare the results. This is useful when you want to compare the cost of different qubit models, QEC schemes, or error budgets.
 
 1. You can perform a batch estimation by passing a list of target parameters to the `params` parameter of the `qsharp.estimate` function. For example, run the same algorithm with the default parameters and the Majorana-based qubit parameters with a floqued QEC scheme.
 
@@ -577,3 +577,78 @@ The Azure Quantum Resource Estimator allows you to run multiple configuration of
     |Gate-based ns, 10⁻⁴|	223	3.64M	|4.70M|	9|	14|	43.17 %|	63.57k|	61.94M|	13 secs|
     |Majorana ns, 10⁻⁴|	223	3.64M|	4.70M|	9|	19|	82.75 %	|501.48k|	82.59M	|10 secs|
     |Majorana ns, 10⁻⁶|	223	3.64M|	4.70M|	5|	13|	31.47 %|	42.96k|	148.67M	|5 secs|
+
+## Running Pareto frontier estimation
+
+When estimating the resources of an algorithm, it's important to consider the tradeoff between the number of physical qubits and the runtime of the algorithm. You could consider allocation of as many physical qubits as possible to reduce the runtime of the algorithm. However, the number of physical qubits is limited by the number of physical qubits available in the quantum hardware.
+
+The **Pareto frontier estimation** provides multiple estimates for the same algorithm, each with a tradeoff between the number of qubits and the runtime.
+
+1. To run the Resource Estimator using Pareto frontier estimation, you need to specify the `"estimateType"` target parameter as `"frontier"`. For example, run the same algorithm with the Majorana-based qubit parameters with a surface code using Pareto frontier estimation.
+
+    ```python
+    result = qsharp.estimate("RunProgram()", params=
+                                {"qubitParams": { "name": "qubit_maj_ns_e4" },
+                                "qecScheme": { "name": "surface_code" },
+                                "estimateType": "frontier", # frontier estimation
+                                }
+                            )
+    ```
+
+1. You can use the `EstimatesOverview` function to display a table with the overall physical resource counts. Click the icon next to the first row to select the columns you want to display. You can select from run name, estimate type, qubit type, qec scheme, error budget, logical qubits, logical depth, code distance, T states, T factories, T factory fraction, runtime, rQOPS, and physical qubits.
+
+    ```python
+    from qsharp_widgets import EstimatesOverview
+    EstimatesOverview(result)
+    ```
+
+In the **Estimate type** column of the results table, you can see the number of different combinations of {number of qubits, runtime} for your algorithm. In this case, the Resource Estimator finds 22 different optimal combinations out of many thousands possible ones.
+
+### Space-time diagram
+
+The `EstimatesOverview` function also displays the [space-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-time-diagram) of the Resource Estimator.
+
+The space-time diagram shows the number of physical qubits and the runtime of the algorithm for each {number of qubits, runtime} pair. You can hover over each point to see the details of the resource estimation at that point.
+
+:::image type="content" source="../media/qubit-time-frontier-estimation-jupyter-shorRE.png" alt-text="Screenshot showing the space-time diagram with frontier estimation of the Resource Estimator.":::
+
+### Batching with Pareto frontier estimation
+
+1. To estimate and compare multiple configurations of target parameters with frontier estimation, add `"estimateType": "frontier",` to the parameters.
+
+    ```python
+    result = qsharp.estimate(
+        "RunProgram()",
+        [
+            {
+            "qubitParams": { "name": "qubit_maj_ns_e4" },
+            "qecScheme": { "name": "surface_code" },
+            "estimateType": "frontier", # Pareto frontier estimation
+            },
+            {
+            "qubitParams": { "name": "qubit_maj_ns_e6" },
+            "qecScheme": { "name": "floquet_code" },
+            "estimateType": "frontier", # Pareto frontier estimation
+            },
+        ]
+    )
+    
+    EstimatesOverview(result, colors=["#1f77b4", "#ff7f0e"], runNames=["e4 Surface Code", "e6 Floquet Code"])
+    ```
+    
+    :::image type="content" source="../media/qubit-time-frontier-multiple-config-shorRE.png" alt-text="Screenshot showing the space-time diagram of the Resource Estimator when using Pareto frontier estimation and multiple configurations of parameters.":::
+    
+    > [!NOTE]
+    > You can define colors and run names for the qubit-time diagram using the `EstimatesOverview` function.
+
+1. When running multiple configurations of target parameters using the Pareto frontier estimation, you can see the resource estimates for a specific point of the space-time diagram, that is for each {number of qubits, runtime} pair. For example, the following code shows the estimate details usage for the second (estimate index=0) run and the fourth (point index=3) shortest runtime.
+
+    ```python
+    EstimateDetails(result[1], 4)
+    ```
+
+1. You can also see the space diagram for a specific point of the space-time diagram. For example, the following code shows the space diagram for the first run of combinations (estimate index=0) and the third shortest runtime (point index=2).
+
+    ```python
+    SpaceChart(result[0], 2)
+    ```
