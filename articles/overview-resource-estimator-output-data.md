@@ -294,6 +294,10 @@ EstimatesOverview(result, colors=["#1f77b4", "#ff7f0e"], runNames=["e4 Surface C
 > [!TIP]
 > To see the estimation details, you can hover over each point in the diagram.
 
+The space-time diagram is specially useful when comparing multiple configurations of target parameters for the same algorithm.
+
+:::image type="content" source="media/multiple-configurations-frontier-shorRE.png" alt-text="Screenshot showing the space-time diagram and the table of results when running multiple configurations of parameter in the Resource Estimator.":::
+
 ## Next steps
 
 - [Learn how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works)
