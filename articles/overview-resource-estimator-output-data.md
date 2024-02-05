@@ -180,9 +180,11 @@ In quantum computing, there's a tradeoff between the number of physical qubits a
 When estimating the resources of an algorithm, you can use the space-time diagram to visualize the tradeoffs between the number of physical qubits and the runtime of the algorithm.
 
 > [!NOTE]
-> To see multiple optimal combinations in the space-time diagram, you need to set the estimation type to [Pareto frontier estimation](xref:microsoft.quantum.overview.resources-estimator#pareto-frontier-estimation).
+> To see multiple optimal combinations in the space-time diagram, you need to set the estimation type to [Pareto frontier estimation](xref:microsoft.quantum.overview.resources-estimator#pareto-frontier-estimation). If you run the Resource Estimator in Visual Studio Code using the **Q#: Calculate Resource Estimates** option, the Pareto frontier estimation is enabled by default.
 
 The space-time diagram allows you to find the optimal combination of {number of qubits, runtime} pairs that satisfy the constraints of the quantum hardware. The diagram shows the number of physical qubits and the runtime of the algorithm for each {number of qubits, runtime} pair.
+
+To run the space-time diagram in Jupyter Notebook, you can use the `EstimatesOverview` widget from the `qsharp-widgets` package.
 
 ```python
 import qsharp
