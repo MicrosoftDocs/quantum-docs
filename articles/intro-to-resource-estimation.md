@@ -66,7 +66,9 @@ You can reduce the execution time of the Resource Estimator by incorporating som
 
 ### Visualization of resources
 
-You can inspect the distribution of physical qubits used for the algorithm and the T factories using the [space diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-diagram).
+You can visualize the tradeoffs between the number of physical qubits and the runtime of the algorithm using the [space-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-time-diagram), which allows you to find the optimal combination of {number of qubits, runtime} pairs.
+
+You can also inspect the distribution of physical qubits used for the algorithm and the T factories using the [space diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-diagram).
 
 ## Get started with the Resource Estimator
 
