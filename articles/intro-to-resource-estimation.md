@@ -17,18 +17,18 @@ This article introduces the Azure Quantum Resource Estimator, a powerful [open-s
 
 ## What is the Azure Quantum Resource Estimator?
 
-The Azure Quantum Resource Estimator is an open-source tool that allows you to estimate the resources needed to execute a given quantum algorithm on a fault-tolerant quantum computer.
+The Azure Quantum Resource Estimator is an **open-source** tool that allows you to estimate the resources needed to execute a given quantum algorithm on a fault-tolerant quantum computer.
+
+> [!TIP]
+> The Azure Quantum Resource Estimator is **free of charge** and doesn't require an Azure account.
 
 The Resource Estimator provides the total number of physical and logical qubits, runtime, as well as details of the formulas and values used for each estimate. This means algorithm development becomes the focus, with the goal of optimizing performance and decreasing cost. With the Azure Quantum Resource Estimator, you can compare qubit technologies, quantum error correction schemes, and other hardware characteristics to understand how they impact the resources needed to run a quantum program.
 
 You can start from well-known, pre-defined qubit parameter settings and quantum error correction (QEC) schemes or configure unique settings across a wide range of machine characteristics such as operation error rates, operation speeds, and error correction schemes and thresholds.
 
-> [!TIP]
-> The Azure Quantum Resource Estimator is **free of charge** and doesn't require an Azure account.
-
 ## Why is resource estimation important in the development of quantum computing?
 
-Although quantum computers promise to solve important scientific and commercial problems, achieving commercial viability will require large-scale, fault-tolerant quantum computers that have both a large number of qubits in superposition and physical error rates below a certain threshold. Commercial and scientific viability will also require quantum error correction (QEC) schemes to achieve fault tolerance. QEC is both time and space intensive, requiring increased execution time for algorithm or logical-level operations, as well as additional physical qubits to store and compute information. 
+Although quantum computers promise to solve important scientific and commercial problems, achieving commercial viability will require large-scale, fault-tolerant quantum computers that have both a large number of qubits in superposition and physical error rates below a certain threshold. Commercial and scientific viability will also require QEC schemes to achieve fault tolerance. QEC is both time and space intensive, requiring increased execution time for algorithm or logical-level operations, as well as additional physical qubits to store and compute information. 
 
 Using the Resource Estimator, you can understand the impact of architectural design choices and quantum error correction schemes. The Resource Estimator will help you understand how many qubits are needed to run an application, how long it will take to run, and which qubit technologies are better suited to solving a specific problem. Understanding these requirements will allow you to prepare and refine quantum solutions to run on future, scaled quantum machines. 
 
@@ -54,7 +54,7 @@ You can adapt the Resource Estimator and specify the characteristics of your qua
 
 ### Flexibility
 
-You can bring your own code and compilation tools to the Resource Estimator. The Resource Estimator supports any language that translates to QIR, for example, Q# and Qiskit See [How to use the Resource Estimator with different SDKs and IDEs](xref:microsoft.quantum.submit-resource-estimation-jobs).
+You can bring your own code and compilation tools to the Resource Estimator. The Resource Estimator supports any language that translates to QIR, for example, Q# and Qiskit. See [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 ### Batch multiple estimates
 
@@ -74,7 +74,7 @@ You can also inspect the distribution of physical qubits used for the algorithm 
 
 The Resource Estimator is part of the Azure Quantum Development Kit (Modern QDK). To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
 
-The following table shows different user scenarios and the recommended articles to get started with the Resource Estimator.
+The following table shows different user scenarios and the recommended articles to start with the Resource Estimator.
 
 |User scenario|You want to |
 |---|---|
