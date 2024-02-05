@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: A reference list with deep coverage of quantum computing topics if you want to learn more about quantum computer programming.
 ms.author: sonialopez
-ms.date: 08/24/2022
+ms.date: 02/05/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: conceptual
@@ -45,9 +45,9 @@ Check out the following quantum computing learning courses.
 + [Introduction to Quantum Computing - LinkedIn Learning](https://www.linkedin.com/learning/introduction-to-quantum-computing):  a 1h25m video introduction to  quantum computing when you'll see some application cases of quantum computing, opportunities and risks. 
 + [Quantum Computing through Comics - HackadayU classes](https://hackaday.io/project/168554-introduction-to-quantum-computing): learn about quantum computing concepts and algorithm programming through classroom discussion and intuitive comics.
 
-## Bibliography for beginners 
+## Bibliography 
 
-### Quantum Computing
+### Quantum Computing for beginners 
 
 If you are a quantum enthusiast and want to start learning the theory behind quantum computing, the following publications will instruct you in topics such as quantum physics, computer science and linear algebra. 
 
@@ -100,3 +100,8 @@ If you want to go the extra mile, the following publications go deeper into more
 + Reiher, M., Wiebe, N., Svore, K. M., Wecker, D., & Troyer, M. (2017). Elucidating reaction mechanisms on quantum computers. [Proceedings of the National Academy of Sciences, 201619152](http://doi.org/10.1073/pnas.1619152114).
 + Wiebe, N., Berry, D. W., Høyer, P., & Sanders, B. C. (2011). Simulating quantum dynamics on a quantum computer. [Journal of Physics A: Mathematical and Theoretical, 44(44), 445308](http://doi.org/10.1088/1751-8113/44/44/445308).
 + Peruzzo, A., McClean, J., Shadbolt, P., Yung, M. H., Zhou, X. Q., Love, P. J., ... & Obrien, J. L. (2014). A variational eigenvalue solver on a photonic quantum processor. [Nature communications, 5](http://doi.org/10.1038/ncomms5213).
+
+
+### Quantum Error Correction
+
+### Resource Estimator
