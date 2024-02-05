@@ -75,13 +75,12 @@ In this example, you run the Resource Estimator using the `qubit_gate_us_e3` qub
 
 The full functionality of the Resource Estimator is beyond the scope of this quickstart. For more information, see [Use the Resource Estimator with different SDKs and IDEs](xref:microsoft.quantum.submit-resource-estimation-jobs#resources-estimation-with-q-and-python).
 
-
 > [!NOTE]
-> If you have questions or run into any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
+> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Next steps
 
+- [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
 - [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
-- [Learn how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works)
-- [Get the most out of the Resource Estimator](xref:microsoft.quantum.work-with-resource-estimator)
-- [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir)
+- [Handle large programs with the Resource Estimator](xref:microsoft.quantum.resource-estimator-caching)
+- [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)

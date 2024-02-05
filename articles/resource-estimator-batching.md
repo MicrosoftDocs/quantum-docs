@@ -1,23 +1,25 @@
 ---
 author: SoniaLopezBravo
-description: Learn how to get the most out of the Resource Estimator and make your job submission more efficient. 
-ms.date: 01/08/2024
+description: Learn how to run multiple configurations of target parameters and compare them using the Resource Estimator.
+ms.date: 01/29/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
-title: Harness the Resource Estimator
-uid: microsoft.quantum.work-with-resource-estimator
+title: Batching with the Resource Estimator
+uid: microsoft.quantum.resource-estimator-batching
 ---
 
-# Get the most out of the Azure Quantum Resource Estimator
+# How to run multiple configurations of target parameters with the Resource Estimator
 
-In this article, you learn how to optimize the execution time when running the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). 
+In this article, you learn how to run multiple configurations of target parameters and compare them using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator).
 
-For information about how to run the Resource Estimator, see [Use different SDKs and IDEs with the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
+For information about how to run the Resource Estimator, see [Different ways to use the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 ## Prerequisites
+
+The following prerequisites are required to run the Resource Estimator:
 
 ### [Q# and Python in VS Code](#tab/tabid-vscode)
 
@@ -29,10 +31,10 @@ To run Q# programs in the Resource Estimator, you need the following:
 If you want to use Python in VS Code, you also need the following:
 
 - Install the latest version of the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
-- The latest Azure Quantum `qsharp` and `qsharp-widgets` packages.  
+- The latest Azure Quantum `qsharp` package.  
 
     ```bash
-    python -m pip install --upgrade qsharp qsharp-widgets 
+    python -m pip install --upgrade qsharp 
     ```
 
 ### [Qiskit in Azure portal](#tab/tabid-portal)
@@ -44,14 +46,14 @@ To submit jobs to the Resource Estimator, you need the following:
 
 ***
 
-## How to run multiple configurations as a single job
+## Batching with the Resource Estimator
 
-The Azure Quantum Resource Estimator allows you to submit jobs with multiple configuration of job parameters, also referred as *items*, as a single job to avoid rerunning multiple jobs on the same quantum program.
+The Azure Quantum Resource Estimator allows you to submit jobs with multiple configurations of job parameters, also referred as *items*, as a single job to avoid rerunning multiple jobs on the same quantum program.
 
 A resource estimation job consist of two types of job parameters:
 
 - [Target parameters](xref:microsoft.quantum.overview.resources-estimator): qubit model, QEC schemes, error budget, constraints on the component-level, and distillation units.
-- Operation arguments: arguments that can be passed to the program (if the QIR entry point contains arguments).
+- **Operation arguments**: arguments that can be passed to the program (if the QIR entry point contains arguments).
 
 One item consists of one configuration of job parameters, that is one configuration of target parameters and operation arguments. Several items are represented as an array of job parameters.
 
@@ -209,117 +211,12 @@ In the same notebook of your PyQIR program, add a new cell and run:
 
 ***
 
-## Use known estimates for an operation
-
-If you already know some estimates for an operation, for example from a published paper, one way to reduce the execution time is taking the known estimates and incorporate them into the overall program cost.
-
-Some scenarios where you may want to perform estimation from pre-calculated estimates:
-
-- You want to try a novel algorithm described in a paper to check if it improves the performance of your program. You can take estimates from the paper and incorporated them into the program.
-- You want to develop [program top-down](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design#Programming), that is, start developing from main function and then implement lower levels. You can use the known estimates at the top level with expected estimates for the entire program. As development process progresses, new components start calling to the known estimates and expected estimates are replaced by the actual implementation. In this way, estimates for the entire program are known upfront and get more precise as development progresses.
-
-### [Use Q#](#tab/tabid-known-estimates-qsharp)
-
-You can use the `AccountForEstimates` Q# operation to pass known estimates to the Resource Estimator.
-
 > [!NOTE]
-> The special operation `AccountForEstimates` is an intrinsic operation for the Resource Estimator. It's not supported by other execution targets.
-
-For example, consider the following Q# operation called `FactoringFromLogicalCounts` that takes a list of known estimates and a list of qubits.
-
-```qsharp
-open Microsoft.Quantum.ResourceEstimation;
-
-operation FactoringFromLogicalCounts() : Unit {
-    use qubits = Qubit[12581];
-
-    AccountForEstimates(
-        [TCount(12), RotationCount(12), RotationDepth(12),
-         CczCount(3731607428), MeasurementCount(1078154040)],
-        PSSPCLayout(), qubits);
-}
-```
-
-The `AccountForEstimates` operation can take the following parameters:
-
-|Functions with `AccountForEstimates`| Description|
-|---|---|
-|`AuxQubitCount(amount : Int)`| Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of auxilliary qubits is equal to the `amount`.|
-|`TCount(amount : Int)`|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of T gates is equal to the `amount`.|
-|`MeasurementCount(amount : Int)`|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of measurements is equal to the `amount`.|
-|`RotationCount(amount : Int)`|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of rotations is equal to the `amount`.|
-|`RotationDepth(amount : Int)`|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the rotation depth is equal to the `amount`.|
-|`CczCount(amount : Int)`|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of CCZ gates is equal to the `amount`.|
-|`PSSPCLayout()`| Indicate Parallel Synthesis Sequential Pauli Computation (PSSPC) layout. For more information, see [arXiv:2211.0769](https://arxiv.org/pdf/2211.07629.pdf).|
-
-### [Use Python](#tab/tabid-known-estimates-python)
-
-You can use the `LogicalCounts` operation to pass known estimates to the Resource Estimator.
-
-> [!NOTE]
-> The special operation `LogicalCounts` is an intrinsic operation for the Resource Estimator. It's not supported by other execution targets.
-
-For example, consider the following code that takes a list of known estimates.
-
-```python
-logical_counts = LogicalCounts({
-    'numQubits': 12581,
-    'tCount': 12,
-    'rotationCount': 12,
-    'rotationDepth': 12,
-    'cczCount': 3731607428,
-    'measurementCount': 1078154040})
-
-logical_counts.estimate(params)
-```
-
-***
-
-## How to handle large programs
-
-When you submit a resource estimation job to the Resource Estimator, the quantum program is evaluated completely to extract the resource estimates. If you want estimate the resources of a Q# operation that is invoked many times, for example, in a loop with many iterations, the execution of the resource estimation job may take a long time. One way to reduce long execution times is to run the operation once, compute and cache its costs, and use the data on subsequent calls. This technique is called manual caching.
-
-The Resource Estimator target supports two Q# functions to perform manual caching: `BeginEstimateCaching(name: String, variant: Int): Bool` and `EndEstimateCaching(): Unit`. `BeginEstimateCaching` function takes as inputs a `name` which is the unique name of the code fragment for which you want to cache costs, and an integer `variant` that distinguishes different variants of cost for the same fragment.
-
-> [!NOTE]
-> The two special operations `BeginEstimateCaching` and `EndEstimateCaching` are intrinsic operations for the Resource Estimator. They're not supported by other execution targets.
-
-For example, let's say you have a Q# operation called `ExpensiveOperation` that is called many times in an iteration. You can use caching to reduce its estimation time:
-
-```qsharp
-operation ExpensiveOperation(c: Int, b : Bool): Unit {
-    if BeginEstimateCaching("MyNamespace.ExpensiveOperation", SingleVariant()) {
-        // Code block to be cached
-        EndEstimateCaching();
-    }
-}
-```
-
-When `ExpensiveOperation` is used repeatedly, `BeginEstimateCaching` is called each time. When `BeginEstimateCaching` is called for the first time, it returns `true`  and begins accumulation of cost data. This causes code to proceed with execution of the expensive code fragment. When `EndEstimateCaching` is called, the cost data is stored for the future use and it's incorporated into overall cost of the program.
-
-When `ExpensiveOperation` is called the second time (and subsequently), the Resource Estimator finds the stored (cached) cost data, incorporates it into overall cost of the program and returns `false`. This causes expensive code fragment to be skipped therefore the Resource Estimator executes program faster. `EndEstimateCaching` should be placed at the end of the condition, and regions enclosed in `BeginEstimateCaching-EndEstimateCaching` can be nested.
-
-`SingleVariant()` indicates that the cost data collected on the first execution can be reused in all subsequent executions of the code fragment. This might be not always the case. For example, if your code have different cost for odd and even values of  a variable 'c', you can provide a `variant` value:
-
-```qsharp
-operation ExpensiveOperation(c: Int, b : Bool): Unit {
-    if BeginEstimateCaching("MyNamespace.ExpensiveOperation", c % 2) {
-        // Some code
-        EndEstimateCaching();
-    }
-}
-```
-
-In this case, the cache is different for odd and even values of `c`. In other words, data collected for even values of `c` is only reused for even values of `c`, and the same applies for odd values of `c`.
-
-> [!NOTE]
-> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
+> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Next steps
 
 - [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
-- [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator)
 - [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
 - [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
-- [Learn how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works)
-- [Tutorial: Submit a QIR program to the Azure Quantum Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir)
+- [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)
