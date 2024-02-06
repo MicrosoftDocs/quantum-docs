@@ -31,7 +31,7 @@ In this tutorial, you'll learn how to:
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The **Microsoft Quantum Computing** provider added to your workspace. For more information, see [Enabling the Resource Estimator target](xref:microsoft.quantum.work-with-resource-estimator#enable-the-azure-quantum-resource-estimator-target-in-your-workspace).
+- The **Microsoft Quantum Computing** provider added to your workspace. 
 
 ## Create a new notebook in your workspace
 
