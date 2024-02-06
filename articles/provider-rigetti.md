@@ -2,7 +2,7 @@
 author: kalzoo
 ms.author: brbenefield
 description: This document provides the technical details of the Rigetti provider
-ms.date: 11/16/2023
+ms.date: 02/06/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: conceptual
@@ -15,12 +15,7 @@ uid: microsoft.quantum.providers.rigetti
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
-> [!IMPORTANT]
-> The Aspen-M-3 is currently online but in a degraded state, and is only offering a capability of 8 qubits. 
-
-[Rigetti quantum processors](https://qcs.rigetti.com/qpus) are universal, gate-model machines based on tunable superconducting qubits. Rigetti's latest Aspen-M family processor is based on proprietary scalable multi-chip technology. System features and device characteristics include enhanced readout capabilities, a speedup in quantum processing times, fast gate times for multiple entangling gate families, rapid sampling via active register reset, and parametric control.
-
-The Aspen chip topology is octagonal with 3-fold (2-fold for edges) connectivity. It features both CPHASE and XY entangling gates that allow developers to optimize programs for performance and minimize circuit depth. Rigetti's optimizing quilc compiler transforms abstract quantum algorithms into a set of native gates and produces optimal circuit implementations to be carried out on a Rigetti QPU. These gates offer fast (40 ns and 180 ns) 1Q and 2Q gate times and program execution rates within qubit coherence times measuring ~20 µs.
+[Rigetti quantum processors](https://qcs.rigetti.com/qpus) are universal, gate-model machines based on tunable superconducting qubits. System features and device characteristics include enhanced readout capabilities, a speedup in quantum processing times, fast gate times for multiple entangling gate families, rapid sampling via active register reset, and parametric control.
 
 - Publisher: [Rigetti](https://rigetti.com)
 - Provider ID: `rigetti`
@@ -32,12 +27,10 @@ The Rigetti provider makes the following targets available:
 |[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil, Q\#, and Qiskit programs. Free of cost.|
 |[Ankaa-2](#ankaa-2) |rigetti.qpu.ankaa-2 |84 qubits| Rigetti's most powerful available quantum processor. |
 |[Ankaa-9q-1](#ankaa-9q-1) |rigetti.qpu.ankaa-9q-1 |9 qubits| Rigetti's 9-bit version of the Ankaa-2 quantum processor. |
-|[Aspen-M-3](#aspen-m-3) |rigetti.qpu.aspen-m-3 |80 qubits| Rigetti's multi-chip quantum processor. |
 
 
 > [!NOTE]
-> - Rigetti simulators and hardware targets do not support Cirq programs. 
-> - The Aspen-11 QPU has been deprecated.
+> Rigetti simulators and hardware targets do not support Cirq programs. 
 
 Rigetti's targets correspond to a **:::no-loc text="No Control Flow":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
 
@@ -71,15 +64,6 @@ A 9-qubit version of the Ankaa-2 QPU.
 - Job Type: `Quantum Program`
 - Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.qpu.ankaa-9q-1`
-- Target Execution Profile: [:::no-loc text="No Control Flow":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
-
-### Aspen-M-3
-
-A multi-chip 80-qubit processor offering improved CZ and XY gate performance.
-
-- Job Type: `Quantum Program`
-- Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
-- Target ID: `rigetti.qpu.aspen-m-3`
 - Target Execution Profile: [:::no-loc text="No Control Flow":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets)
 
 ## Pricing
@@ -129,7 +113,7 @@ from pyquil_for_azure_quantum import get_qpu, get_qvm
 
 # Note that some environment variables must be set to authenticate with Azure Quantum
 qc = get_qvm()  # For simulation
-# qc = get_qpu("Aspen-M-3") for submitting to a QPU
+# qc = get_qpu("Ankaa-2") for submitting to a QPU
 
 program = Program(
     Declare("ro", "BIT", 2),
@@ -168,7 +152,7 @@ workspace = Workspace(
 
 target = Rigetti(
     workspace=workspace,
-    name=RigettiTarget.ASPEN_11,  # Defaults to RigettiTarget.QVM for simulation
+    name=RigettiTarget.ANKAA_2,  # Defaults to RigettiTarget.QVM for simulation
 )
 
 # Any valid Quil program is accepted, but the readout must be named `ro`
