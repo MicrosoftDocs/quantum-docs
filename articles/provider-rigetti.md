@@ -2,7 +2,7 @@
 author: kalzoo
 ms.author: brbenefield
 description: This document provides the technical details of the Rigetti provider
-ms.date: 11/16/2023
+ms.date: 02/06/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: conceptual
@@ -30,7 +30,7 @@ The Rigetti provider makes the following targets available:
 
 
 > [!NOTE]
-> - Rigetti simulators and hardware targets do not support Cirq programs. 
+> Rigetti simulators and hardware targets do not support Cirq programs. 
 
 Rigetti's targets correspond to a **:::no-loc text="No Control Flow":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
 
@@ -113,7 +113,7 @@ from pyquil_for_azure_quantum import get_qpu, get_qvm
 
 # Note that some environment variables must be set to authenticate with Azure Quantum
 qc = get_qvm()  # For simulation
-# qc = get_qpu("Aspen-M-3") for submitting to a QPU
+# qc = get_qpu("Ankaa-2") for submitting to a QPU
 
 program = Program(
     Declare("ro", "BIT", 2),
@@ -152,7 +152,7 @@ workspace = Workspace(
 
 target = Rigetti(
     workspace=workspace,
-    name=RigettiTarget.ASPEN_11,  # Defaults to RigettiTarget.QVM for simulation
+    name=RigettiTarget.ANKAA_2,  # Defaults to RigettiTarget.QVM for simulation
 )
 
 # Any valid Quil program is accepted, but the readout must be named `ro`

@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: This document provides a list of the available quantum computing providers on Azure Quantum.
-ms.date: 11/21/2023
+ms.date: 02/06/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -51,9 +51,8 @@ Microsoft's provider partners offer a wide-range of qubit availability for their
 |[Quantinuum H1-2](xref:microsoft.quantum.providers.quantinuum#system-model-h1)| 20 qubits|
 |[Quantinuum H2-1](xref:microsoft.quantum.providers.quantinuum#system-model-h2)| 32 qubits|
 |[Rigetti Quantum Virtual Machine (QVM)](xref:microsoft.quantum.providers.rigetti#simulators) |30 qubits|  
-|[Rigetti Aspen-M-3](xref:microsoft.quantum.providers.rigetti#aspen-m-3) |80 qubits| 
-
-
+|[Rigetti Ankaa-2](xref:microsoft.quantum.providers.rigetti#ankaa-2) |84 qubits|
+|[Rigetti Ankaa-9q-1](xref:microsoft.quantum.providers.rigetti#ankaa-9q-1) |9 qubits|
 
 ## Coming soon to Azure Quantum
 
