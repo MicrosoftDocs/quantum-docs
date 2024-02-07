@@ -20,7 +20,7 @@ For more information about the Copilot, see [Explore Azure Quantum](xref:microso
 
 The first step is to define a Q# operation that will initialize a qubit to a known state. This can be called to set a qubit to a classical state, meaning that, when measured, it either returns `Zero` 100% of the time or returns `One` 100% of the time. Measuring a qubit returns a Q# type `Result`, which can only have a value of `Zero` or `One`.
 
-Open the [Copilot for Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding) and copy the following code into de code editor window. Don't click **Run** yet; you'll run the code later in the tutorial.
+Open the [Copilot for Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding) and copy the following code into the code editor window. Don't click **Run** yet; you'll run the code later in the tutorial.
 
 ```qsharp
    namespace Bell {
