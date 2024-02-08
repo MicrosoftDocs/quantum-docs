@@ -153,11 +153,11 @@ For instance, if `IntPair` has two items of type `Int`, then `IntPair(2, 3)` cre
 
 ## Operation Literals
 
-No literals exist for values of [operation type](xref:microsoft.quantum.qsharp.typesystem-overview#available-types); operations have to be [declared](xref:microsoft.quantum.qsharp.callabledeclarations#callable-declarations) on a global scope and new operations can be constructed locally using [partial application](xref:microsoft.quantum.qsharp.partialapplication#partial-application).
+No literals exist for values of [operation type](xref:microsoft.quantum.qsharp.typesystem-overview#available-types); operations have to be [declared](xref:microsoft.quantum.qsharp.callabledeclarations#callable-declarations) on a global scope.
 
 ## Function Literals
 
-No literals exist for values of [function type](xref:microsoft.quantum.qsharp.typesystem-overview#available-types); functions have to be [declared](xref:microsoft.quantum.qsharp.callabledeclarations#callable-declarations) on a global scope and new functions can be constructed locally using [partial application](xref:microsoft.quantum.qsharp.partialapplication#partial-application).
+No literals exist for values of [function type](xref:microsoft.quantum.qsharp.typesystem-overview#available-types); functions have to be [declared](xref:microsoft.quantum.qsharp.callabledeclarations#callable-declarations) on a global scope.
 
 
 ## Default Values

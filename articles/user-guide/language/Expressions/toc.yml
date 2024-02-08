@@ -38,8 +38,6 @@
   href: conjugations.md
 - name: Closures
   href: closures.md
-- name: Partial application
-  href: partialapplication.md
 - name: Contextual expressions
   href: contextualexpressions.md
 - name: Value literals and default values

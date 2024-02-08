@@ -26,7 +26,7 @@ function Pow<'T>(op : 'T => Unit, pow : Int) : 'T => Unit {
 }
 ```
 
-They can be instantiated based on a type parametrized definition such as, e.g., the [type parametrized](xref:microsoft.quantum.qsharp.typeparameterizations#type-parameterizations) function `Pow` above, and they can be [partially applied](xref:microsoft.quantum.qsharp.partialapplication#partial-application) as done in Line 2 in the example. 
+They can be instantiated based on a type parametrized definition such as, e.g., the [type parametrized](xref:microsoft.quantum.qsharp.typeparameterizations#type-parameterizations) function `Pow` above, and they can be partially applied as done in Line 2 in the example. 
 
 
 ## Operation Characteristics
