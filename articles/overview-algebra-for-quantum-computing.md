@@ -73,7 +73,7 @@ Just as a single qubit state $\begin{bmatrix} a \\\\  b \end{bmatrix}$ must meet
 
 ## Summary
 
-Linear algebra is the standard language for describing quantum computing and quantum physics. Even though the [libraries](xref:microsoft.quantum.libraries.overview) included with the Microsoft Quantum Development Kit helps you run advanced quantum algorithms without diving into the underlying math, understanding the basics helps you get started quickly and provide a solid foundation to build on.
+Linear algebra is the standard language for describing quantum computing and quantum physics. Even though the standard library included with the Microsoft Quantum Development Kit helps you run advanced quantum algorithms without diving into the underlying math, understanding the basics helps you get started quickly and provide a solid foundation to build on.
 
 ## Next steps
 

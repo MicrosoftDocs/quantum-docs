@@ -109,7 +109,7 @@ Specifically, such a subcircuit looks like:
 
 :::image type="content" source="media\7.svg" alt-text="Symbol representing a measurement operation.":::
 
-Q# implements a [Measure operator](xref:Microsoft.Quantum.Intrinsic.Measure) for this purpose. See the [section on measurements](xref:microsoft.quantum.libraries.overview.standard.prelude#measurements) for more information.
+Q# implements a Measure operator for this purpose. 
 
 Similarly, the subcircuit
 
