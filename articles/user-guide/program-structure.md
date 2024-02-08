@@ -176,7 +176,7 @@ operation SayHelloQ() : Unit {
 }
 ```
 
-The [Q# libraries](xref:microsoft.quantum.libraries.overview) also provide operations that you can use in your programs, for example the Hadamard or the [`H`](xref:Microsoft.Quantum.Intrinsic.H) operation that is used in the example program. Given a qubit in Z-basis, the `H` operation puts the qubit into an *even* superposition. Once in superposition, the qubit has a 50% chance of being measured as zero or one.
+The Q# standard library also provides operations that you can use in your programs, for example the Hadamard or the [`H`](xref:Microsoft.Quantum.Intrinsic.H) operation that is used in the example program. Given a qubit in Z-basis, the `H` operation puts the qubit into an *even* superposition. Once in superposition, the qubit has a 50% chance of being measured as zero or one.
 
 ## Measuring qubits
 

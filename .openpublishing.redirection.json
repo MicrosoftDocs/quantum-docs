@@ -492,6 +492,11 @@
 			"redirect_document_id": false
 		},
 		{
+			"source_path": "articles/user-guide/libraries/index.md",
+			"redirect_url": "https://github.com/microsoft/qsharp/tree/main/library/readme",
+			"redirect_document_id": false
+		},
+		{
 			"source_path": "articles/how-to-command-line-local.md",
 			"redirect_url": "/azure/quantum/install-overview-qdk",
 			"redirect_document_id": false

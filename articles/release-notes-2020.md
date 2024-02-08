@@ -129,7 +129,7 @@ This release fixes a bug-affecting compilation of Q# projects.
 This release contains the following:
 
 - Q# notebooks and Python host programs no longer fail when a Q# entry point is present.
-- Updates to [Standard library](xref:microsoft.quantum.libraries.overview.standard.intro) to use access modifiers
+- Updates to Standard library to use access modifiers
 - Compiler now allows plug-in of rewrite steps between built-in rewrite steps
 - Several deprecated functions and operations have been removed following the schedule described in our API principles. Q# programs and libraries that build without warnings in version 0.11.2004.2825 continue to work unmodified.
 
@@ -175,7 +175,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 This release contains the following:
 
-- New Quantum Machine Learning library, for more information go to our [QML docs page](xref:microsoft.quantum.libraries.overview#quantum-machine-learning-library)
+- New Quantum Machine Learning library.
 - IQ# bug fixes, resulting in up to a 10-20x performance increase when loading NuGet packages
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
