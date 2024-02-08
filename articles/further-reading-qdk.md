@@ -15,13 +15,13 @@ uid: microsoft.quantum.more-information
 
 This article compiles some of the most popular resources that you may find useful when learning quantum computing. 
 
-## Microsoft quantum computing resources 
+## Microsoft quantum computing resources
 
 Learn how to develop and apply quantum computing solutions with the Quantum Development Kit and Azure Quantum services.
 
-* [Azure Quantum training path](/training/paths/quantum-computing-fundamentals/): an interactive, free, hands-on learning path. In these modules you will learn how to use the power of quantum computing and the Azure Quantum service to complete different tasks that are crucial for the space mission.
+* [Azure Quantum training path](/training/paths/quantum-computing-fundamentals/): an interactive, free, hands-on learning path. In these modules, you learn about quantum computing and how to develop quantum solutions using Q# and the Azure Quantum Development Kit.
 * [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas): a collection of self-paced Q# quantum programming tutorials.
-* [Azure Quantum videos](https://quantum.microsoft.com/explore/playlist): a playlist of videos 
+* [Azure Quantum videos](https://quantum.microsoft.com/explore/playlist): a playlist with videos of Azure Quantum announcements, demos, and discussions from *Quantum Innovator Series*.
 * [Q# code samples](https://github.com/microsoft/qsharp/tree/main/samples): start building your first quantum solution with this collection of ready-to-use code samples.
 * [Q# blog](https://devblogs.microsoft.com/qsharp/): a blog written by developers for developers. You can read about the latest QDK and Q# insights, and find out about quantum challenges and hackathons announcements.
 * [Research publications](https://www.microsoft.com/research/research-area/quantum-computing/?facet%5Btax%5D%5Bmsr-content-type%5D[]=3&facet%5Btax%5D%5Bmsr-research-area%5D[]=243138&sort_by=most-recent): read about the latest advancement in quantum hardware and algorithms developed by Microsoft researchers.
@@ -30,7 +30,7 @@ These and more quantum computing resources can be found in the [Microsoft's quan
 
 ## Q# community made content
 
-The following resources have created and developed by the quantum community who is excited about quantum programming.
+The following resources are created and developed by the quantum community who is excited about quantum programming.
 
 ### Books created by the community
 
@@ -53,7 +53,7 @@ The following resources have created and developed by the quantum community who 
 
 Check out the following quantum computing learning courses.
 
-* [Quantum Computing with Microsoft QDK](https://www.manning.com/liveprojectseries/quantum-computing-with-microsoft-qdk): a series of liveProjects that will help you to learn quantum software development by creating end-to-end projects. You’ll explore the full potential of quantum for cryptography, data transmission, data reconstruction, and more. 
+* [Quantum Computing with Microsoft QDK](https://www.manning.com/liveprojectseries/quantum-computing-with-microsoft-qdk): a series of liveProjects that will help you to learn quantum software development by creating end-to-end projects. You explore the full potential of quantum for cryptography, data transmission, data reconstruction, and more. 
 + [Quantum Computing - Brilliant Course](https://brilliant.org/courses/quantum-computing/): learn to build quantum algorithms from the ground up with a quantum computer simulated in your browser in this course, created in collaboration with quantum researchers and practitioners from Microsoft, X, and Caltech's IQIM.
 + [Quantum Computing through Comics - HackadayU classes](https://hackaday.io/project/168554-introduction-to-quantum-computing): learn about quantum computing concepts and algorithm programming through classroom discussion and intuitive comics.
 
