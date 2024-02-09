@@ -31,7 +31,7 @@ By default, everything declared within the same namespace can be accessed withou
 ```qsharp
 namespace Microsoft.Quantum.Samples {
     
-    open Microsoft.Quantum.Diagnostic;s 
+    open Microsoft.Quantum.Diagnostics;
     open Microsoft.Quantum.Arrays as Array; 
 
     // ...
