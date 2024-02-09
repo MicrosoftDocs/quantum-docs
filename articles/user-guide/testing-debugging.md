@@ -47,7 +47,7 @@ namespace Sample {
 1. Set a breakpoint on the line `H(qubit)` by clicking to the left of the line number. 
 1. Select the debugger icon to open the debugger pane and select **Run and Debug**. The debugger controls are displayed at the top of the screen.
 1. Select F5 to start debugging and continue to the breakpoint. In the debugger **Variables** pane, expand the **Quantum State** category. You can see that the qubit has been initialized in the |0> state. 
-1. Step into (F11) the `H` operation and the library code for the `H` operation opens. As you step through the operation, note the quantum value changes as the `H` operation puts the qubit into superposition. 
+1. Step into (F11) the `H` operation and the source code for the `H` operation displays. As you step through the operation, note the quantum value changes as the `H` operation puts the qubit into superposition. 
 1. As you step over (F10) the `M` operation, the quantum value is resolved to either |0> or |1> as a result of the measurement, and the value of the classical variable `result` is displayed.
 1. As you step over the `Reset` operation, the qubit is reset to |0>.
 
@@ -96,7 +96,7 @@ Here, the `fail` expression prevents the program from continuing to run with inv
 
 ### Fact() function
 
-You can implement the same behavior as the previous example using the [`Fact()`](xref:Microsoft.Quantum.Diagnostics.Fact) function from the <xref:Microsoft.Quantum.Diagnostics>. The `Fact()` function evaluates a given classical condition and throws an exception if it is false. 
+You can implement the same behavior as the previous example using the `Fact()` function from the `Microsoft.Quantum.Diagnostics` namespace. The `Fact()` function evaluates a given classical condition and throws an exception if it is false. 
 
 ```qsharp
 %%qsharp
