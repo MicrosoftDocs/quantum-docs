@@ -39,7 +39,7 @@ Open `CreateBellStates.qs` and copy the following code:
    }
 ```
 
-The code example introduces two standard operations, [`M`](xref:Microsoft.Quantum.Intrinsic.M) and [`X`](xref:Microsoft.Quantum.Intrinsic.X), which transform the state of a qubit.
+The code example introduces two standard operations, `M` and `X`, which transform the state of a qubit.
 
 The  `SetQubitState` operation:
 
@@ -107,7 +107,7 @@ The `TestBellState`operation:
     1. Stores the number of measurements for each qubit that return `One`.
 1. After the loop completes, it calls `SetQubitState` again to reset the qubits to a known state (`Zero`) to allow others to
 allocate the qubits in a known state. This is required by the `use` statement. 
-1. Finally, it uses the [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) function to print a message to the console before returning the results.
+1. Finally, it uses the `Message` function to print a message to the console before returning the results.
 
 ## Run the code 
 
@@ -207,7 +207,7 @@ Q2 - Ones: 1000
 
 Currently, the qubits in the program are all in a **classical state**, that is, they are either 1 or 0. You know this because the program initializes the qubits to a known state, and you haven't added any processes to manipulate them.  Before entangling the qubits, you will put the first qubit into a **superposition state**, where a measurement of the qubit will return `Zero` 50% of the time and `One` 50% of the time. Conceptually, the qubit can be thought of as halfway between the `Zero` and `One`.
 
-To put a qubit in superposition, Q# provides the [`H`](xref:Microsoft.Quantum.Intrinsic.H), or *Hadamard*, operation. Recall the `X` operation from the [Initialize a qubit to a known state](#initialize-a-qubit-to-a-known-state) procedure earlier, which flipped a qubit from `Zero` to `One` (or vice versa); the `H` operation flips the qubit *halfway* into a state of equal probabilities of `Zero` or `One`. When measured, a qubit in superposition should return roughly an equal number of `Zero` and `One` results.
+To put a qubit in superposition, Q# provides the `H`, or *Hadamard*, operation. Recall the `X` operation from the [Initialize a qubit to a known state](#initialize-a-qubit-to-a-known-state) procedure earlier, which flipped a qubit from `Zero` to `One` (or vice versa); the `H` operation flips the qubit *halfway* into a state of equal probabilities of `Zero` or `One`. When measured, a qubit in superposition should return roughly an equal number of `Zero` and `One` results.
 
 Modify the code in the `TestBellState` operation to include the `H` operation:
 
