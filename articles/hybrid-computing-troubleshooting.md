@@ -13,6 +13,9 @@ uid: microsoft.quantum.hybrid.troubleshooting
 
 # Troubleshooting integrated hybrid issues
 
+> [!NOTE]
+> This content applies only to the Classic QDK.
+
 Developing and running integrated hybrid algorithms on the latest supported hardware is a new and quickly evolving field. This article outlines the tools and methods currently available, along with known issues, and is updated as new features are supported.
 
 ## Feature limitations and restrictions
