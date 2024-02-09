@@ -32,7 +32,7 @@ Quantum operations can also be represented by a matrix. When a quantum operation
 Here are two common quantum operations represented with matrix multiplication.
 
 
-The [`X` operation](xref:Microsoft.Quantum.Intrinsic.X) is represented by the Pauli matrix $X$,
+The `X` operation is represented by the Pauli matrix $X$,
 
 $$X = \begin{bmatrix}
         0 & 1 \\\\
@@ -43,7 +43,7 @@ and is used to flip the state of a qubit from 0 to 1 (or vice-versa), for exampl
 
 $$\begin{bmatrix}0 &1\\\\ 1 &0\end{bmatrix}\begin{bmatrix} 1 \\\\  0 \end{bmatrix} = \begin{bmatrix} 0 \\\\  1 \end{bmatrix}.$$
 
-The ['H' operation](xref:Microsoft.Quantum.Intrinsic.H) is represented by the Hadamard transformation $H$,
+The `H` operation is represented by the Hadamard transformation $H$,
 
 $$H = \dfrac{1}{\sqrt{2}}\begin{bmatrix}1 &1\\\\ 1 &-1\end{bmatrix},$$
 

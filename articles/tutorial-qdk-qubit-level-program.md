@@ -61,7 +61,7 @@ You can view the [full Q# code](#the-complete-qft-operation) for this section as
 ### Namespaces to access other Q# operations
 
 Inside your Q# file, define the namespace `NamespaceQFT`, which is accessed by the compiler.
-For this operation to make use of existing Q# operations, open the relevant `Microsoft.Quantum.<>` namespaces.
+For this operation to make use of existing Q# operations, open the relevant `Microsoft.Quantum.*` namespaces.
 
 ```qsharp
 namespace NamespaceQFT {
@@ -554,14 +554,14 @@ _However_, besides being inefficient and still imperfect, this would nevertheles
 The latter is not an issue in this example, but you would see relative phases appear if given a more complex input to the QFT than $\ket{000}$.
 
 
-## Use the Q# libraries to simplify the QFT circuit
+## Use the Q# operations to simplify the QFT circuit
 
 As mentioned in the introduction, much of Q#'s power rests in the fact that it allows you to abstract-away the worries of dealing with individual qubits.
 Indeed, if you want to develop full-scale, applicable quantum programs, worrying about whether an `H` operation goes before or after a particular rotation would only slow you down.
 
-The Q# libraries contain the `ApplyQFT` operation, which you can use and apply for any number of qubits.
+The Q# namespace `Microsoft.Quantum.Canon` contains the `ApplyQFT` operation, which you can use and apply for any number of qubits.
 
-1. To access the `ApplyQFT` operation, add `open` statement for the `Microsoft.Quantum.Canon` namespaces at the beginning of the Q# file:
+1. To access the `ApplyQFT` operation, add `open` statement for the `Microsoft.Quantum.Canon` namespace at the beginning of the Q# file:
 
     ```qsharp
     open Microsoft.Quantum.Canon;
@@ -574,7 +574,7 @@ The Q# libraries contain the `ApplyQFT` operation, which you can use and apply f
     ```
 
 1. Run the Q# program again and notice that the output is the same as before.
-1. To see the real benefit of using the Q# library operations, change the number of qubits to something other than `3`:
+1. To see the real benefit of using Q# operations, change the number of qubits to something other than `3`:
 
 ```qsharp
 mutable resultArray = [Zero, size = 4];
