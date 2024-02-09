@@ -78,7 +78,7 @@ The following table shows different user scenarios and the recommended articles 
 
 |User scenario|You want to |
 |---|---|
-|I'm developing QEC codes|You can use the Resource Estimator to custom your QEC codes and compare different combinations of parameters. See [How to customize your QEC schemes](xref:microsoft.quantum.overview.resources-estimator#customize-predefined-qec-schemes). |
+|I'm developing QEC codes|You can use the Resource Estimator to customize your QEC codes and compare different combinations of parameters. See [How to customize your QEC schemes](xref:microsoft.quantum.overview.resources-estimator#customize-predefined-qec-schemes). |
 |I'm developing quantum algorithms| By analyzing the impact of different configurations of hardware and software profiles on the resource requirements, you can gain insights into how your quantum algorithm might perform under different hardware and error conditions. This information can help you optimize your algorithm for specific quantum hardware or error rates. See [Running multiple configurations of target parameters](xref:microsoft.quantum.resource-estimator-batching). |
 |I want to improve the performance of quantum programs| To learn how to harness the power of the Resource Estimator, see [Running large programs](xref:microsoft.quantum.resource-estimator-caching) and [Using known estimates](xref:microsoft.quantum.resource-estimator-known-estimates).|
 |I'm interested in large-scale quantum computing| You can use the Resource Estimator to analyze the resources of real-world problems that are expected to be solved by large-scale fault-tolerant quantum computers. See how in [Resource estimation for large-scale quantum computing](#resource-estimation-for-large-scale-quantum-computing). |
