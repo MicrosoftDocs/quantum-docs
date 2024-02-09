@@ -161,6 +161,11 @@
 			"redirect_document_id": false
 		},
 		{
+			"source_path": "articles/optimization-job-management.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
 			"source_path": "articles/user-guide/language/Expressions/identifiers.md",
 			"redirect_url": "/azure/quantum/user-guide/language/Expressions/",
 			"redirect_document_id": false
