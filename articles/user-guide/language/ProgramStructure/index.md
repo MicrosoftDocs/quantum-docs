@@ -135,7 +135,7 @@ Q# simulation completed.
 
 or run the simulator with a histogram output
 
-:::image type="content" source=".../media/histogram-output.png" alt-text="The output of a quantum program as a histogram.":::
+:::image type="content" source="../../../media/histogram-output.png" alt-text="The output of a quantum program as a histogram.":::
 
 To run the program on quantum hardware, the program first needs to be compiled and submitted to Azure Quantum, all of which can be done from inside VS Code. For the full end-to-end process, see [Get started with Q# programs and Visual Studio Code](xref:microsoft.quantum.submit-jobs).
 
