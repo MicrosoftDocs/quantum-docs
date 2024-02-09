@@ -31,14 +31,14 @@ By default, everything declared within the same namespace can be accessed withou
 ```qsharp
 namespace Microsoft.Quantum.Samples {
     
-    open Microsoft.Quantum.Arithmetic; 
+    open Microsoft.Quantum.Diagnostic;s 
     open Microsoft.Quantum.Arrays as Array; 
 
     // ...
 }
 ```
 
-The example uses an `open` directive to import all types and callables declared in the Microsoft.Quantum.Artithmetic namespace. They can then be referred to by their unqualified name unless that name conflicts with a declaration in the namespace block or another opened namespace. 
+The example uses an `open` directive to import all types and callables declared in the Microsoft.Quantum.Diagnostics namespace. They can then be referred to by their unqualified name unless that name conflicts with a declaration in the namespace block or another opened namespace. 
 
 To avoid typing out the full name while still distinguishing where certain elements come from, you can define an alternative name, or *alias*, which is usually shorter, for a particular namespace. In this case, all types and callables declared in that namespace can be qualified by the defined short name instead. 
 In the previous example, this is the case for the `Microsoft.Quantum.Arrays` namespace. A function `IndexRange` declared in `Microsoft.Quantum.Arrays`, for example, can then be used via `Array.IndexRange` within that namespace block.
