@@ -13,7 +13,7 @@ uid: microsoft.quantum.concepts.oracles
 
 # Work with and define quantum oracles
 
-An [oracle](xref:Microsoft.Quantum.Oracles), $O$, is an unexposed operation that is used as input to another algorithm.
+An oracle, $O$, is an unexposed operation that is used as input to another algorithm.
 Often, such operations are defined using a classical function $f : \\{0, 1\\}^n \to \\{0, 1\\}^m$, which takes an $n$-bit binary input and produces an $m$-bit binary output.
 To do so, consider a particular binary input $x = (x_{0}, x_{1}, \dots, x_{n-1})$.
 You can label qubit states as $\ket{\vec{x}} = \ket{x_{0}} \otimes \ket{x_{1}} \otimes \cdots \otimes \ket{x_{n-1}}$.
