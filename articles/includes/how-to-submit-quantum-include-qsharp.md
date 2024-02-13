@@ -43,11 +43,11 @@ The frequency histogram represents the distribution of results obtained from run
 1. Enter a number of **shots** to execute the program, for example, 100 shots, and press **Enter**. The histogram will display in the Q# histogram window.
 1. Click the top-left **settings icon** to display options.
 
-    :::image type="content" source="../media/histogram-vscode-random-bit-tab.png" alt-text="Screenshot of the credits blade in Azure portal.":::
+    :::image type="content" source="../media/histogram-vscode-random-bit-tab.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code showing how to display settings.":::
 
 1. Click on a bar to display the **percentage** of the total shots. In this case there are two possible outcomes, 0 and 1, and the percentage of each outcome is close to 50%.
 
-    :::image type="content" source="../media/histogram-vscode-random-bit.png" alt-text="Screenshot of the credits blade in Azure portal.":::
+    :::image type="content" source="../media/histogram-vscode-random-bit.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code.":::
 
 > [!TIP]
 > You can zoom the histogram using the mouse scroll wheel or a trackpad gesture. When zoomed in, you can pan the chart by pressing 'Alt' while scrolling.
