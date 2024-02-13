@@ -413,7 +413,7 @@ Let's visualize the distribution of results obtained from running the quantum pr
 1. Enter a number of **shots** to execute the program, for example, 100 shots, and press **Enter**. The histogram will display in the Q# histogram window.
 1. Each bar in the histogram corresponds to a possible outcome, and its height represents the number of times that outcome is observed. The number of different results may differ each time you run the histogram.
 
-    :::image type="content" source="../media/histogram-vscode-qrng.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code.":::
+    :::image type="content" source="media/histogram-vscode-qrng.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code.":::
 
     > [!TIP]
     > You can zoom the histogram using the mouse scroll wheel or a trackpad gesture. When zoomed in, you can pan the chart by pressing 'Alt' while scrolling.
@@ -421,7 +421,7 @@ Let's visualize the distribution of results obtained from running the quantum pr
 1. Click on a bar to display the **percentage** of that outcome.
 1. Click the top-left **settings icon** to display options. You can display top 10 results, top 25 results, or all results. You can also sort the results from high to low, or low to high.
 
-    :::image type="content" source="../media/histogram-vscode-qrng-tab.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code showing how to display settings.":::
+    :::image type="content" source="media/histogram-vscode-qrng-tab.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code showing how to display settings.":::
 
 
 
