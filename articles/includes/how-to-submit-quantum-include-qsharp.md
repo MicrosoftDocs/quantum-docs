@@ -21,17 +21,36 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/).
 - The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension.
 
-## Open and run a Q# file
+## Load a Q# sample program
 
-Open your preferred Q# file, or create a new file from one of the built-in Q# samples. This procedure uses a built-in sample to avoid conflicts with the compiler. If you run an older Q# program and run into errors, see [Testing and debugging](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging) or [Migrating your programs to the Modern QDK](/azure/quantum).
+1. In VS Code, select **File > New Text File** and save the file as **RandomNum.qs**.
+1. Open **RandomNum.qs** and type `sample`, then select **Random Bit sample** from the list of options and save the file.
 
-1. In VS Code, select **File > New Text File** and save the file as **RandomNum.qs**. 
-1. Open **RandomNum.qs** and type `sample`, then select **Random Bit sample** and save the file. 
+> [!NOTE]
+> You can also open your own Q# file. If you run an older Q# program and run into errors, see [Testing and debugging](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging) or [Migrating your programs to the Modern QDK](/azure/quantum).
+
+## Run a Q# program
+
+
 1. To test run your program locally on the built-in simulator, select **Run Q# File** from the play icon drop-down in the top-right, or press **Ctrl+F5**. Your output will appear in the debug console. 
 1. To debug your program before submitting it to Azure Quantum, select **Debug Q# file** from the play icon, or press **F5**. Use the debugging controls at the top to step over, into, and out of the code. For more information about debugging Q# programs, see [Testing and debugging](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging).
 
+## Plot the frequency histogram
+
+The frequency histogram represents the distribution of results obtained from running a quantum program multiple times, or "shots". Each bar in the histogram corresponds to a possible outcome, and its height represents the number of times that outcome is observed. The frequency histogram helps visualize the probability distribution of these outcomes.
+
+1. Select **View -> Command Palette**, or press **Ctrl+Shift+P**, and type “histogram” which should bring up the **Q#: Run file and show histogram** option. Select this option to open the Q# histogram window.
+1. Enter a number of **shots** to execute the program, for example, 100 shots, and press **Enter**. The histogram will display in the Q# histogram window.
+1. Click the top-left **settings icon** to display options.
+
+    :::image type="content" source="../media/histogram-vscode-random-bit-tab.png" alt-text="Screenshot of the credits blade in Azure portal.":::
+
+1. Click on a bar to display the **percentage** of the total shots. In this case there are two possible outcomes, 0 and 1, and the percentage of each outcome is close to 50%.
+
+    :::image type="content" source="../media/histogram-vscode-random-bit.png" alt-text="Screenshot of the credits blade in Azure portal.":::
+
 > [!TIP]
-> The Modern QDK includes a set of built-in Q# samples that you can use to learn more about Q# and quantum computing. To view the samples, open a new Q# file and type `sample`, then select the sample you want to view from the list of options. 
+> You can zoom the histogram using the mouse scroll wheel or a trackpad gesture. When zoomed in, you can pan the chart by pressing 'Alt' while scrolling.
 
 ## Connect to Azure Quantum and submit your job
 
