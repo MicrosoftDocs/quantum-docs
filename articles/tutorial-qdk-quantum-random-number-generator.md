@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Build a Q# project that demonstrates fundamental quantum concepts like superposition by creating a quantum random number generator.
 ms.author: sonialopez
-ms.date: 12/04/2023
+ms.date: 02/13/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -396,7 +396,6 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
         }
     }
     ```
-
 1. Before running the program, you need to set the target profile to **Unrestricted**. Select **View -> Command Palette**, search for QIR, select **Q#: Set the Azure Quantum QIR target profile**, and then select **Q#: unrestricted**. 
 1. To run your program, select **Run Q# File** from the play icon drop-down in the top-right, or press **Ctrl+F5**. The program runs the operation or function marked with the `@EntryPoint()` attribute on the default simulator.
 1. Your output will appear in the debug console.
@@ -404,6 +403,27 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
 
 > [!NOTE]
 > If the target profile is not set to **Unrestricted**, you will get an error when you run the program.
+
+
+#### Plot the frequency histogram
+
+Let's visualize the distribution of results obtained from running the quantum program multiple times. The frequency histogram helps visualize the probability distribution of these outcomes.
+
+1. Select **View -> Command Palette**, or press **Ctrl+Shift+P**, and type “histogram” which should bring up the **Q#: Run file and show histogram** option. Select this option to open the Q# histogram window.
+1. Enter a number of **shots** to execute the program, for example, 100 shots, and press **Enter**. The histogram will display in the Q# histogram window.
+1. Each bar in the histogram corresponds to a possible outcome, and its height represents the number of times that outcome is observed. The number of different results may differ each time you run the histogram.
+
+    :::image type="content" source="../media/histogram-vscode-qrng.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code.":::
+
+    > [!TIP]
+    > You can zoom the histogram using the mouse scroll wheel or a trackpad gesture. When zoomed in, you can pan the chart by pressing 'Alt' while scrolling.
+
+1. Click on a bar to display the **percentage** of that outcome.
+1. Click the top-left **settings icon** to display options. You can display top 10 results, top 25 results, or all results. You can also sort the results from high to low, or low to high.
+
+    :::image type="content" source="../media/histogram-vscode-qrng-tab.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code showing how to display settings.":::
+
+
 
 ### [Jupyter Notebook in VS Code](#tab/tabid-python)
 

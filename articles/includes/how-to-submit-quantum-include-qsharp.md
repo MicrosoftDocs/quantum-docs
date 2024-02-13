@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 12/07/2023
+ms.date: 02/13/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -45,7 +45,7 @@ The frequency histogram represents the distribution of results obtained from run
 
     :::image type="content" source="../media/histogram-vscode-random-bit-tab.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code showing how to display settings.":::
 
-1. Click on a bar to display the **percentage** of the total shots. In this case there are two possible outcomes, 0 and 1, and the percentage of each outcome is close to 50%.
+1. Click on a bar to display the **percentage** of that outcome. In this case there are two possible outcomes, 0 and 1, and the percentage of each outcome is close to 50%.
 
     :::image type="content" source="../media/histogram-vscode-random-bit.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code.":::
 
