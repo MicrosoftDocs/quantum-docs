@@ -55,9 +55,9 @@ The Resource Estimator provides multiple estimates for the same algorithm, each 
     > [!NOTE]
     > If you select more than one qubit parameters and error correction codes in the configuration, the results are displayed in different rows in the **Results** tab. Clicking on a result from the table brings up the corresponding space diagram and report data.
 
-1. The **Space-time diagram** shows the tradeoffs between the number of physical qubits and the runtime of the algorithm. In this case, the Resource Estimator finds 13 different optimal combinations out of many thousands possible ones. You can hover over each {number of qubits, runtime} point to see the details of the resource estimation at that point.  For more information, see [Space-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-time-diagram).
+1. The **Space-time diagram** shows the tradeoffs between the number of physical qubits and the runtime of the algorithm. In this case, the Resource Estimator finds 1  optimal combination out of many thousands possible ones. You can hover over each {number of qubits, runtime} point to see the details of the resource estimation at that point. For more information, see [Space-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-time-diagram).
 
-    :::image type="content" source="media/vscode-estimates-local-diagram-space-time.png" alt-text="Screen shot showing the space diagram of the Resource Estimator .":::
+    :::image type="content" source="media/vscode-estimates-local-diagram-space-time.png" alt-text="Screen shot showing the space-time diagram of the Resource Estimator .":::
 
     > [!NOTE]
     > You need to **click on one point** of the space-time diagram, that is a {number of qubits, runtime} pair, to see the space diagram and the details of the resource estimation corresponding to that point.
