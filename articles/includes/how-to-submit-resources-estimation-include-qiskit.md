@@ -163,7 +163,7 @@ result.diagram.space
 
 The space diagram shows the proportion of algorithm qubits and T factory qubits. Note that the number of T factory copies, 28, contributes to the number of physical qubits for T factories as $\text{T factories} \cdot \text{physical qubit per T factory}= 28 \cdot 18,000 = 504,000$.
 
-For more information, see [T factory physical estimation](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).
+For more information, see [T factory physical estimation](xref:microsoft.quantum.concepts.tfactories#t-factories-in-the-azure-quantum-resource-estimator).
 
 ### Change the default values and estimate the algorithm
 

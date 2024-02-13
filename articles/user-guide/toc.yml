@@ -32,8 +32,6 @@
     href: ../how-to-adapt-qiskit.md
 - name: Q# language reference
   href: language/toc.yml
-- name: Q# libraries
-  href: libraries/toc.yml
 - name: Learn Q# with the Quantum Katas
   href: ../tutorial-qdk-intro-to-katas.md
 

@@ -130,7 +130,7 @@ In the Bloch sphere, the north pole represents the classical value **0** and the
 
 You can use this representation to visualize what the code is doing:
 
-1. First, start with a qubit initialized in the state **0** and apply an `H` operation to create an equal superposition in which the probabilities for **0** and **1** are the ame.
+1. First, start with a qubit initialized in the state **0** and apply an `H` operation to create an equal superposition in which the probabilities for **0** and **1** are the same.
 
     <img src="~/media/qrng-H.png" width="450" alt="A diagram showing the preparation of a qubit in superposition by applying the hadamard gate.">
 
@@ -142,7 +142,7 @@ Since the outcome of the measurement is random and the probabilities of measurin
 
 ### Write a complete random number generator
 
-1. First, you need to add the required Q# libraries to the program. For the complete random number generator, you need to include three Q# libraries: `Microsoft.Quantum.Math`, `Microsoft.Quantum.Intrinsic`, and `Microsoft.Quantum.Convert`.
+1. First, you need to add the required Q# namespaces to the program. For the complete random number generator, you need to include three Q# namespaces: `Microsoft.Quantum.Math`, `Microsoft.Quantum.Intrinsic`, and `Microsoft.Quantum.Convert`.
 
     ```qsharp
     open Microsoft.Quantum.Convert;
@@ -174,10 +174,10 @@ Since the outcome of the measurement is random and the probabilities of measurin
 
     Let's take a moment to review the new code.
 
-    * You need to calculate the number of bits needed to express integers up to `max`. The `BitSizeI` function from the `Microsoft.Quantum.Math` library converts an integer to the number of bits needed to represent it.
+    * You need to calculate the number of bits needed to express integers up to `max`. The `BitSizeI` function from the `Microsoft.Quantum.Math` namespace converts an integer to the number of bits needed to represent it.
     * The `SampleRandomNumberInRange` operation uses a `for` loop to generate random numbers until it generates one that's equal to or less than `max`. The `for` loop works exactly the same as a `for` loop in other programming languages.
     * The variable `bits` is a mutable variable. A mutable variable is one that can change during the computation. You use the `set` directive to change a mutable variable's value.
-    * The `ResultArrayAsInt` function comes from the `Microsoft.Quantum.Convert` library. This function converts the bit string to a positive integer.
+    * The `ResultArrayAsInt` function comes from the `Microsoft.Quantum.Convert` namespace. This function converts the bit string to a positive integer.
 
 1. Finally, you add an entry point. In this example, the `Main` operation is the entry point of the program. It calls the `GenerateRandomNumberInRange` operation to generate a random number between 0 and 100.
 

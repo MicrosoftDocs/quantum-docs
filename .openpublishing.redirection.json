@@ -161,6 +161,11 @@
 			"redirect_document_id": false
 		},
 		{
+			"source_path": "articles/optimization-job-management.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
 			"source_path": "articles/user-guide/language/Expressions/identifiers.md",
 			"redirect_url": "/azure/quantum/user-guide/language/Expressions/",
 			"redirect_document_id": false
@@ -424,6 +429,81 @@
 		{
 			"source_path": "articles/user-guide/language/statements/returnsandtermination.md",
 			"redirect_url": "/azure/quantum/user-guide/language/expressions/returnsandtermination",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/standard/algorithms.md",
+			"redirect_url": "https://github.com/microsoft/qsharp/tree/main/library/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/standard/applications.md",
+			"redirect_url": "https://github.com/microsoft/qsharp/tree/main/library/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/standard/characterization.md",
+			"redirect_url": "https://github.com/microsoft/qsharp/tree/main/library/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/standard/control-flow.md",
+			"redirect_url": "https://github.com/microsoft/qsharp/tree/main/library/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/standard/convert.md",
+			"redirect_url": "https://github.com/microsoft/qsharp/tree/main/library/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/standard/data-structures.md",
+			"redirect_url": "https://github.com/microsoft/qsharp/tree/main/library/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/standard/diagnostics.md",
+			"redirect_url": "https://github.com/microsoft/qsharp/tree/main/library/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/standard/error-correction.md",
+			"redirect_url": "https://github.com/microsoft/qsharp/tree/main/library/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/standard/index.md",
+			"redirect_url": "https://github.com/microsoft/qsharp/tree/main/library/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/standard/licensing.md",
+			"redirect_url": "https://github.com/microsoft/qsharp/tree/main/library/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/standard/math.md",
+			"redirect_url": "https://github.com/microsoft/qsharp/tree/main/library/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/standard/prelude.md",
+			"redirect_url": "https://github.com/microsoft/qsharp/tree/main/library/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/numerics/numerics.md",
+			"redirect_url": "https://github.com/microsoft/qsharp/tree/main/library/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/libraries/index.md",
+			"redirect_url": "https://github.com/microsoft/qsharp/tree/main/library/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/language/grammar.md",
+			"redirect_url": "https://github.com/microsoft/qsharp/tree/main/library/",
 			"redirect_document_id": false
 		},
 		{
@@ -872,8 +952,18 @@
 			"redirect_document_id": false
 		},
 		{
+			"source_path": "articles/how-to-work-with-re.md",
+			"redirect_url": "/azure/quantum/resource-estimator-batching",
+			"redirect_document_id": false
+		},
+		{
 			"source_path": "articles/machines/qc-trace-simulator/primitive-operations-counter.md",
 			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/learn-how-the-resource-estimator-works.md",
+			"redirect_url": "/azure/quantum/intro-to-resource-estimation",
 			"redirect_document_id": false
 		},
 		{
@@ -889,9 +979,9 @@
 		{
 			"source_path": "articles/machines/qc-trace-simulator/invalidated-qubits-use-checker.md",
 			"redirect_url": "/azure/quantum/",
-      "redirect_document_id": false
-    },
-    {
+      		"redirect_document_id": false
+    	},
+    	{
 			"source_path": "articles/how-to-csharp-qdk-local.md",
 			"redirect_url": "/azure/quantum/install-overview-qdk",
 			"redirect_document_id": false

@@ -157,4 +157,3 @@ If you want to learn more, see the tutorial [Exploring quantum entanglement with
 - [What are the Q# programming language and Quantum Development Kit (QDK)?](xref:microsoft.quantum.overview.q-sharp)
 - [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
 - [Tutorial: Implement a quantum random number generator in Q#](xref:microsoft.quantum.tutorial-qdk.random-number)
-- [The Q# libraries](xref:microsoft.quantum.libraries.overview)

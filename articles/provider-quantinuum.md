@@ -212,7 +212,7 @@ Quantinuum's native gate set includes arbitrary angle ZZ gates. This is benefici
 
 #### [Arbitrary Angle ZZ Gates with Q# Provider](#tab/tabid-arbitrary-angle-zz-gates-with-q-provider)
 
-In Q\#, the arbitrary angle ZZ gate is implemented with the [Rzz](xref:Microsoft.Quantum.Intrinsic.Rzz) operation.
+In Q\#, the arbitrary angle ZZ gate is implemented with the `Rzz` operation.
 
 ```qsharp
 %%qsharp
@@ -328,7 +328,7 @@ option_params = {
     "error-params": {
         "p1": 4e-5,
         "p2": 3e-3,
-        "p_meas": 3e-3,
+        "p_meas": [3e-3, 3e-3],
         "p_init": 4e-5,
         "p_crosstalk_meas": 1e-5,
         "p_crosstalk_init": 3e-5,
@@ -342,9 +342,27 @@ option_params = {
 Pass in the emulator noise options when submitting the job:
 
 ```python
-job = MyTarget.submit(MyProgram, "Experiment with Emulator Noise Parameters", shots = 10, input_params = option_params)
+job = MyTarget.submit(MyProgram, "Experiment with Emulator Noise Parameters", 
+                      shots = 10, 
+                      input_params = option_params)
 job.get_results()
 
+```
+
+To turn off the emulator noise model, set the `error-model` option to `False`. By default this is set to `True`.
+
+```python
+option_params = {
+    "error-model": False 
+}
+```
+
+To use the stabilizer emulator, set the `simulator` option to `stabilizer`. By default this is set to `state-vector`.
+
+```python
+option_params = {
+    "simulator": "stabilizer" 
+}
 ```
 
 #### [Emulator Noise Parameters with Qiskit Provider](#tab/tabid-emulator-noise-parameters-with-qiskit-provider)
@@ -360,7 +378,7 @@ option_params = {
     "error-params": {
         "p1": 4e-5,
         "p2": 3e-3,
-        "p_meas": 3e-3,
+        "p_meas": [3e-3, 3e-3],
         "p_init": 4e-5,
         "p_crosstalk_meas": 1e-5,
         "p_crosstalk_init": 3e-5,
@@ -373,6 +391,22 @@ backend.options.update_options(**option_params)
 # Submit the job
 job = backend.run(circuit, shots=100)
 print("Job id:", job.id())
+```
+
+To turn off the emulator noise model, set the `error-model` option to `False`. By default this is set to `True`.
+
+```python
+option_params = {
+    "error-model": False 
+}
+```
+
+To use the stabilizer emulator, set the `simulator` option to `stabilizer`. By default this is set to `state-vector`.
+
+```python
+option_params = {
+    "simulator": "stabilizer" 
+}
 ```
 
 ***
