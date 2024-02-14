@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\mathbf{1}', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
-title: Dirac notation
+title: Dirac Notation
 uid: microsoft.quantum.concepts.dirac
 ---
 
@@ -209,37 +209,45 @@ ket1 = qt.basis(2, 1)
 rho_mixed = (ket0 * ket0.dag() + ket1 * ket1.dag()) / 2
 print(rho_mixed)
 ```
+
 ```output
 Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
 Qobj data =
 [[0.5  0.0]
  [0.0  0.5]]
 ```
+
 The trace of $\rho$ is written as $Tr(\rho)$ and can be calculated using QuTiP's `.tr()` method:
 
 ```python
 print((rho_mixed ** 2).tr())
 ```
+
 ```output
 0.5
 ```
+
 Now, consider the pure quantum state $\rho_{\text{pure}}=\ket{+}\bra{+}$,
+
 ```python
 ket_plus = (1 / np.sqrt(2)) * (ket0 + ket1)
 rho_pure = ket_plus * ket_plus.dag()
 print(rho_pure)
 ```
+
 ```output
 Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
 Qobj data =
 [[0.5  0.5]
  [0.5  0.5]]
 ```
+
 The trace of $\rho_{\text{pure}}^2$ is
 
 ```python
 print((rho_pure ** 2).tr())
 ```
+
 ```output
 0.9999999999999996
 ```
@@ -254,6 +262,7 @@ bloch = qt.bloch.Bloch()
 bloch.add_states([rho_pure], kind='point')
 print(bloch.show())
 ```
+
 :::image type="content" source="media/bloch-rho-pure.png" alt-text="Plot of a pure quantum state in the Bloch sphere, where the quantum state is in the X-axis.":::
 
 ```python
@@ -266,8 +275,6 @@ bloch.show()
 :::image type="content" source="media/bloch-rho-mixed.png" alt-text="Plot of a mixed quantum state in the Bloch sphere, where the quantm state is in the center of the sphere.":::
 
 The state at the center of the Bloch sphere is the *maximally mixed state*. Unlike pure states, the maximally mixed state returns 50/50 outcomes for any ideal Pauli measurement.
-
-If you are interested in learning more about density operators and pure and mixed states, you can read one of the reference books provided in [For more information](xref:microsoft.quantum.more-information).
 
 ## Q# gate sequences equivalent to quantum states
 
