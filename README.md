@@ -1,6 +1,6 @@
 # Azure Quantum documentation
 
-Welcome to Azure Quantum! This is the public repository for the Azure Quantum documentation.
+Welcome to Azure Quantum! This is the repository for the Azure Quantum documentation.
 
 This repository contains open-source documentation articles.  The main folder is **[articles/](./articles)** and contains the Markdown articles and YAML files that constitute the source of the [Azure Quantum documentation](https://learn.microsoft.com/azure/quantum/).
 
