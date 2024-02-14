@@ -213,6 +213,8 @@
   items:
   - name: Build your skills with Microsoft training >>
     href: /training/paths/quantum-computing-fundamentals/
+  - name: Contributing to Azure Quantum
+    href: contributing-overview.md    
   - name: Further reading
     href: further-reading-qdk.md
 - name: Release notes
