@@ -552,38 +552,33 @@
 			"redirect_document_id": false
 		},
 		{
-			"source_path": "articles/contributing-overview.md",
-			"redirect_url": "/azure/quantum/",
-			"redirect_document_id": false
-		},
-		{
 			"source_path": "articles/contributing-reporting-bugs.md",
-			"redirect_url": "/azure/quantum/",
+			"redirect_url": "/azure/quantum/contributing-overview",
 			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/contributing-docs.md",
-			"redirect_url": "/azure/quantum/",
+			"redirect_url": "/azure/quantum/contributing-overview",
 			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/contributing-code.md",
-			"redirect_url": "/azure/quantum/",
+			"redirect_url": "/azure/quantum/contributing-overview",
 			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/contributing-samples.md",
-			"redirect_url": "/azure/quantum/",
+			"redirect_url": "/azure/quantum/contributing-overview",
 			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/contributing-pull-requests.md",
-			"redirect_url": "/azure/quantum/",
+			"redirect_url": "/azure/quantum/contributing-overview",
 			"redirect_document_id": false
 		},
 		{
 			"source_path": "articles/contributing-style-guide.md",
-			"redirect_url": "/azure/quantum/",
+			"redirect_url": "/azure/quantum/contributing-overview",
 			"redirect_document_id": false
 		},
 		{
