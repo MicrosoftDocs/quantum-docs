@@ -13,7 +13,7 @@ uid: microsoft.quantum.contributing-qdk.overview
 
 # Contributing to the Azure Quantum Development Kit
 
-Thanks for being a part of the Quantum Development Kit community, we're excited for your contributions!
+Thanks for being a part of the Azure Quantum community, we're excited for your contributions!
 
-- If you'd like to contribute code to the Azure Quantum Development Kit or report a bug, see [How to contribute code](https://github.com/microsoft/qsharp/blob/main/CONTRIBUTING.md). 
+- If you'd like to contribute code to the Azure Quantum Development Kit or report a bug, see [Contributing to Q#](https://github.com/microsoft/qsharp/blob/main/CONTRIBUTING.md). 
 - If you'd like to contribute documentation to the Azure Quantum Development Kit or report an issue, see [How to contribute documentation](/contribute/content/how-to-write-overview). 
