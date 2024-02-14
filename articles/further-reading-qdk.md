@@ -42,7 +42,7 @@ The following resources are created and developed by the quantum community who i
 ### Blogs created by the community
 
 * [Awesome qsharp](https://github.com/ebraminio/awesome-qsharp/): an open source list of Q# code and resources.
-* [Q# Community](https://github.com/qsharp-community): a GitHub space for community-driven projects and contrib libraries.
+* [Q# Community](https://github.com/qsharp-community): a GitHub space for community-driven projects.
 
 ### Forums and communities for quantum developers
 
