@@ -430,7 +430,7 @@ For example, collapse the **Logical qubit parameters** group to see that the cod
 The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can use the `qsharp-widgets` package to visualize this distribution to better understand the estimated space requirements for the algorithm.
 
 ```python
-from qsharp_widgets import SpaceChart
+from qsharp_widgets import SpaceChart, EstimateDetails
 SpaceChart(result)
 ```
 
@@ -474,6 +474,7 @@ These are the target parameters that can be customized:
 * `qubitParams` - the physical qubit parameters 
 * `constraints` - the constraints on the component-level
 * `distillationUnitSpecifications` - the specifications for T factories distillation algorithms
+* `estimateType` - single or frontier
 
 For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the Resource Estimator.
 
