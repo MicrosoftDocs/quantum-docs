@@ -211,13 +211,7 @@ To submit a job to Azure Quantum with the Azure CLI, you need to submit a physic
 1. Ensure you are running the latest version of the Azure CLI `quantum` extension:
 
     ```azurecli
-    az extension update --name quantum
-    ```
-
-    or
-
-    ```azurecli
-    az extension add --name quantum
+    az extension add --upgrade --name quantum
     ```
 
 1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in Azure portal.
