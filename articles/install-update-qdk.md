@@ -43,11 +43,5 @@ By default, Visual Studio Code updates extensions automatically. After any updat
 1. Update or install the latest Azure CLI `quantum` extension.
 
     ```azurecli
-    az extension update --name quantum
-    ```
-
-    or
-
-    ```azurecli
-    az extension add --name quantum
+    az extension add --upgrade --name quantum
     ```
