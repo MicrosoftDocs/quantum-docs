@@ -1,6 +1,6 @@
 ---
 author: bradben
-description: Understanding the structure and components of a Q# program in Azure Quantum or Juptyer Notebooks, and how they work together. 
+description: This article explains the structure and components of a Q# program in Azure Quantum or Juptyer Notebooks, and how they work together. 
 ms.author: brbenefield
 ms.date: 01/06/2024
 ms.service: azure-quantum
@@ -14,7 +14,7 @@ uid: microsoft.quantum.user-guide-qdk.overview.program-structure
 
 # Structure of a Q# program
 
-This article explores the general components that make up a Q# program. Note that Q# programs written in Jupyter Notebooks will not use some of these components - these differences are described in each section.
+This article explores the general components that make up a Q# program. Note that Q# programs written in Jupyter Notebooks does not use some of these components - these differences are described in each section.
 
 Consider the following Q# program:
 
@@ -40,7 +40,7 @@ namespace Superposition {
 
 By just reading the comments (**//**), you can tell that this program allocates a qubit, applies an operation to put it in superposition, measures the state of the qubit, then resets it and returns the result. 
 
-To run this program in VS Code, see [Get started with Q# programs and VS Code](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp).
+To run this program in Visual Studio Code, see [Get started with Q# programs and VS Code](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp).
 
 ## User namespaces
 
@@ -54,7 +54,7 @@ namespace Superposition {
 
 [Namespaces](xref:microsoft.quantum.qsharp.namespaces) help you organize related functionality. Namespaces are user-named, and there can only be one `namespace` per qsharp (*.qs) file. 
 
-The Q# standard library has pre-defined namespaces that contain functions and operations that you can use in quantum programs. For more details, see [Built-in namespaces](#built-in-namespaces).
+The Q# standard library has predefined namespaces that contain functions and operations that you can use in quantum programs. For more information, see [Built-in namespaces](#built-in-namespaces).
 
 **Jupyter Notebooks** do not use user namespaces.
 
@@ -101,13 +101,13 @@ import qsharp
     MeasureOneQubit();
 ```
 
-Note the absence of a user namespace or an `@EntryPoint()`, which are not needed for Jupyter Notebooks. Instead of an entry point, the operation is called directly in the last line. Also note that a `Message` statement was added to the Jupyter Notebook code to display the result. When running the earlier Q# program in VS Code, the built-in simulator displays the result by default. 
+Note the absence of a user namespace or an `@EntryPoint()`, which are not needed for Jupyter Notebooks. Instead of an entry point, the operation is called directly in the last line. Also note that a `Message` statement was added to the Jupyter Notebook code to display the result. When you run the earlier Q# program in VS Code, the built-in simulator displays the result by default. 
 
 When using the `%%qsharp` command:
 
 - You must run `import qsharp` first to enable the `%%qsharp` command.
 - The `%%qsharp` command is scoped to the entire cell in which it appears.
-- The Q# code that follows the command must adhere to standard Q# coding syntax. For example, comments are denoted by `//` instead of `#` within `%%qsharp` cells, and code lines must end with a semi-colon `;`.
+- The Q# code that follows the command must adhere to standard Q# coding syntax. For example, you denote comments using `//` instead of `#` within `%%qsharp` cells, and code lines must end with a semi-colon `;`.
 - The `%%qsharp` command cannot be preceded by or followed by a Python statement within its cell. 
 
 For an example of working with a Jupyter Notebook program, see [Get started with Q# programs and VS Code](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter).
@@ -204,7 +204,7 @@ Message("Hello quantum world!");
 
 Notice in the example program, there are no `open` statements or calls with full namespaces. That is because the Q# development environment automatically loads two namespaces by default - `Microsoft.Quantum.Core` and `Microsoft.Quantum.Intrinsic` - which contain commonly used functions and operations. 
 
-You can take advantage of the `Microsoft.Quantum.Measurement` namespace and use the `MResetZ` operation to optimize the code in the example program. `MResetZ` combines the measurement and reset operations into one step, as in the following:
+You can take advantage of the `Microsoft.Quantum.Measurement` namespace and use the `MResetZ` operation to optimize the code in the example program. `MResetZ` combines the measurement and reset operations into one step, as in the following example:
 
 
 ```qsharp

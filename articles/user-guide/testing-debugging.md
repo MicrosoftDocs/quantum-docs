@@ -178,7 +178,7 @@ Basis State
 
 ### dump_machine() function
 
-[`dump_machine`](/python/qsharp/qsharp?view=qsharp-py#qsharp-dump-machine) is a Python function that returns the current allocated qubit count and a Python dictionary of sparse state amplitudes that you can parse. Using either of these functions in a Jupyter Notebook allows you to step through your operations much like a debugger. Using the previous example program:
+[`dump_machine`](/python/qsharp/qsharp?view=qsharp-py#qsharp-dump-machine&preserve-view=true) is a Python function that returns the current allocated qubit count and a Python dictionary of sparse state amplitudes that you can parse. Using either of these functions in a Jupyter Notebook allows you to step through your operations much like a debugger. Using the previous example program:
 
 ```python
 import qsharp

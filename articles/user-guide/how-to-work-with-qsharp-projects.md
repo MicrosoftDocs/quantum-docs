@@ -23,7 +23,7 @@ A Q# project contains a Q# manifest file, named *qsharp.json*, and one or more *
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed. 
-- VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension installed.
+- Visual Studio Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension installed.
 - The Azure Quantum `qsharp` and `azure-quantum` packages. 
 
 ## Define a Q# project
@@ -34,7 +34,7 @@ A Q# project is defined by the presence of a *qsharp.json* manifest file, a **sr
 
 ### [Using a Q# program](#tab/tabid-qsharp)
 
-When a \*.qs file is opened in VS Code, the Q# compiler searches upward in the folder structure for a *qsharp.json* manifest file. If it finds a manifest file, the compiler then searches downward through all the subfolders of the **src** directory for *.qs files and caches any operations or functions, and makes those available to all the *.qs files, per the manifest file's exclusion rules. 
+When a \*.qs file is opened in VS Code, the Q# compiler searches upward in the folder structure for a *qsharp.json* manifest file. If it finds a manifest file, the compiler then searches downward through all the subfolders of the **src** directory for *.qs files and caches any operations or functions, and makes those oerations and functions available to all the *.qs files, per the manifest file's exclusion rules. 
 
 For example, given this folder structure:
 
@@ -48,10 +48,10 @@ For example, given this folder structure:
                 * *PrepareState.qs*
 
 when you open the file */src/TeleportOperation/PrepareState/PrepareState.qs*, the Q# compiler: 
-1.	Checks */src/TeleportOperation/PrepareState/* for a *qsharp.json* file
-1.	Checks */src/TeleportOperation* for *qsharp.json*
-1.  Checks */src* for *qsharp.json*
-1.	Checks */* for *qsharp.json* 
+1.	Checks */src/TeleportOperation/PrepareState/* for a *qsharp.json* file.
+1.	Checks */src/TeleportOperation* for *qsharp.json*.
+1.  Checks */src* for *qsharp.json*.
+1.	Checks */* for *qsharp.json*.
 1.	Establishes */* as the root directory of the project, and includes all *.qs files under the root in the project, per the manifest file's exclusion rules.
 
 ### [Using Python or a Jupyter Notebook](#tab/tabid-python)
@@ -111,7 +111,7 @@ For this example, *author* and *license* are specified and all \*.qs files in th
 }
 ```
 
-The *author* and *license* are omitted, and all *.qs files in this directory and all its subdirectories, except for those which end in `.ignore.qs`, are included. 
+The *author* and *license* are omitted, and all *.qs files in this directory and all its subdirectories, except for the `.ignore.qs` file, are included. 
 
 ```json
 {
@@ -139,13 +139,13 @@ MyMathLib.Multiply(x,y);
 **For Q# programs only**
 * Only one *.qs file in a project can have an `@EntryPoint()` defined. 
 * The *.qs file with the `@EntryPoint()` definition can be located at any level below the manifest file.
-* Any operation or function that has been cached from a *.qs file anywhere in the project will display in predictive text in VS Code.
-* If the namespace for a selected operation or function hasn't been added yet, VS Code will automatically add the necessary `open` statement.
+* Any operation or function that is cached from a *.qs file anywhere in the project displays in predictive text in VS Code.
+* If the namespace for a selected operation or function hasn't been added yet, VS Code automatically adds the necessary `open` statement.
 
 
 ## Steps for creating a Q# project
 
-1. Create a *qsharp.json* [manifest file](#creating-a-manifest-file) and save it in the folder you want to be the project root folder.
+1. Create a *qsharp.json* [manifest file](#create-a-manifest-file) and save it in the folder you want to be the project root folder.
 1. Create a folder named **src** in the root folder. 
 1. Add and organize your Q# source files under the **src** folder.
 1. If you are accessing the project from a Python program or Jupyter Notebook, set the root folder path using `qsharp.init`, for example:
@@ -153,13 +153,13 @@ MyMathLib.Multiply(x,y);
     ```python
     qsharp.init(project_root = '/Teleportation_project')
     ```
-1. If you are using only Q# files in VS Code, when you open a Q# file, the compiler will search for the *qsharp.json*, determine the project root folder, and then scan the subfolder for \*.qs files. 
+1. If you are using only Q# files in VS Code, when you open a Q# file, the compiler searches for the *qsharp.json* manifest file, determine the project root folder, and then scan the subfolder for \*.qs files. 
 
 ## Example project
 
 This quantum teleportation program is an example of a Q# project based the folder structure shown earlier, and runs on the local simulator in VS Code. To run the program on Azure Quantum hardware or third-party simulators, see [Get started with Q# programs and VSCode ](xref:microsoft.quantum.submit-jobs) for steps to compile your program and connect to your Azure workspace. 
 
-This is the directory structure:
+The example uses this directory structure:
 
 * **Teleportation_project**
     * *qsharp.json*
@@ -262,7 +262,7 @@ qsharp.init(project_root = '/Teleportation_project')
 
 ```
 
-If your path is valid, you'll see a confirmation message, `Q# initialized with configuration: {'targetProfile': 'unrestricted'}`
+If your path is valid, you see a confirmation message, `Q# initialized with configuration: {'targetProfile': 'unrestricted'}`
 
 
 ```qsharp

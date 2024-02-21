@@ -45,7 +45,7 @@ When writing algorithms, a quantum programming language should meet the followin
 - **Quantum and classical computation.** The ability to perform classical and quantum computations is essential in a universal quantum computer.
 - **Respect laws of physics.** Quantum algorithms follow the rules of quantum physics. For example, they cannot copy or access qubit state directly.
 
-For more information, see [the Q# quantum programming language user guide](xref:microsoft.quantum.user-guide-qdk.overview).
+For more information, see [the Q# quantum programming language user guide](xref:microsoft.quantum.user-guide-qdk.overview.program-structure).
 
 ### Get started with the Azure Quantum Development Kit
 
@@ -124,11 +124,11 @@ The following diagram shows the basic workflow after you submit your job:
 
 :::image type="content" source="~/media/azure-quantum-flow-diagram.png" alt-text="Diagram showing the workflow after a job submission to Azure Quantum.":::
 
-## Next Steps
+## Related content
 
 If you want to learn more, the [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas) provide a good introduction to [quantum computing concepts](xref:microsoft.quantum.tutorial-qdk.katas#introduction-to-quantum-computing-concepts) such as common quantum operations and how to manipulate qubits.
 
 - [QuickStarts](xref:microsoft.quantum.install-qdk.overview)
 - [Understanding quantum computing](xref:microsoft.quantum.overview.understanding)
-- [The Q# User Guide](xref:microsoft.quantum.user-guide-qdk.overview)
+- [The Q# User Guide](xref:microsoft.quantum.user-guide-qdk.overview.program-structure)
 - [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra)

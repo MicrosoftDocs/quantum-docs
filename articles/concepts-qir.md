@@ -102,6 +102,6 @@ Another application is to use the standard LLVM “pass” infrastructure to cre
 
 ## Next steps
 
-- [The Q# programming user guide](xref:microsoft.quantum.user-guide-qdk.overview)
+- [The Q# programming user guide](xref:microsoft.quantum.user-guide-qdk.overview.program-structure)
 - [Introduction to resource estimation](xref:microsoft.quantum.overview.intro-resource-estimator)
 - [Rigetti provider](xref:microsoft.quantum.providers.rigetti)
