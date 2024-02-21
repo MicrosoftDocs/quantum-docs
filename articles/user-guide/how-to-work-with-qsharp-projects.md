@@ -1,27 +1,36 @@
 ---
 author: bradben
-description: Describes how to work with project folders and multiple files in Q# projects. 
+description: This article describes how to define a Q# project that makes use of multiple Q# psource files in a multi-level folder structure. 
 ms.author: brbenefield
 ms.date: 01/09/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
-title: Working With Qsharp Projects
+title: "How to Work With Qsharp Projects"
 uid: microsoft.quantum.qsharp-projects
+#customer intent: As a quantum developer, I want to understand how to use Q# projects
 ---
 
-# Working with Q# projects
+# Work with Q# projects
 
 With the release of the Azure Quantum Development Kit, you can define *Q# projects*, which are folder structures with multiple Q# files that can access each other's resources. Projects are helpful for creating reusable libraries and logically organizing your source code.
 
 A Q# project contains a Q# manifest file, named *qsharp.json*, and one or more *.qs files in a specified folder structure. When a user opens a *.qs file in VS Code, or sets the `project_root` in a Jupyter Notebook or Python file, the compiler searches the surrounding folder hierarchy for the manifest file and determines the project's scope. If no manifest file is found, the compiler operates in a single file mode.  
 
-## Defining a Q# project
+## Prerequisites
+
+- An Azure Quantum workspace in your Azure subscription. To create a workspace,
+  see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed. 
+- VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension installed.
+- The Azure Quantum `qsharp` and `azure-quantum` packages. 
+
+## Define a Q# project
 
 A Q# project is defined by the presence of a *qsharp.json* manifest file, a **src** folder that contains the Q# source files, and the root folder of the project. The process of determining the root folder depends on whether you are working with a Q# program, or with a Python program or Jupyter Notebook. The folder structure for a Q# project, however, remains the same for both types of programs.
 
-:::image type="content" source="../media/multi-file-art.png" alt-text="Folder hierarchy for a Q# project.":::
+:::image type="content" source="../media/multi-file-art.png" alt-text="Picture showing the folder hierarchy for a Q# project.":::
 
 ### [Using a Q# program](#tab/tabid-qsharp)
 
@@ -72,7 +81,7 @@ The Q# compiler verifies there is a valid *qsharp.json* file in the specified ro
 
 ***
 
-## Creating a manifest file
+## Create a manifest file
 
 A manifest file is a simple .json file that can optionally include *author*, *license*, *excludeFiles*, and *excludeRegexes* fields. The minimum viable manifest file is the string `{}`
 

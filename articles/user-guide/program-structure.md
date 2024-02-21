@@ -1,14 +1,15 @@
 ---
 author: bradben
-description: Overview of the structure and components of a Q# program
+description: Understanding the structure and components of a Q# program in Azure Quantum or Juptyer Notebooks, and how they work together. 
 ms.author: brbenefield
 ms.date: 01/06/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
-title: Structure of a Q# Program
+title: Structure of a Q# Program in Azure Quantum
 uid: microsoft.quantum.user-guide-qdk.overview.program-structure
+#customer intent: As a quantum developer, I want to understand the structure of a Q# program so that I can write quantum programs for Azure Quantum
 ---
 
 # Structure of a Q# program
