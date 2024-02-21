@@ -980,6 +980,11 @@
 			"source_path": "articles/how-to-csharp-qdk-local.md",
 			"redirect_url": "/azure/quantum/install-overview-qdk",
 			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/index.md",
+			"redirect_url": "/azure/user-guide/program-structure",
+			"redirect_document_id": false
 		}
 	]
 }
