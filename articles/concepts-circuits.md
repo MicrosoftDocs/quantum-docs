@@ -29,7 +29,7 @@ For example, the symbol
 
 :::image type="content" source="media\2.svg" alt-text="Symbol for a Hadamard operation acting on a single-qubit register.":::
 
-is a [Hadamard](xref:Microsoft.Quantum.Intrinsic.H) operation acting on a single-qubit register.
+is a Hadamard operation acting on a single-qubit register.
 
 In a quantum circuit, time flows from left to right. Quantum gates are ordered in chronological order with the left-most gate as the gate first applied to the qubits.
 In other words, if you picture the wires as holding the quantum state, the wires bring the quantum state through each of the gates in the diagram from left to right.
