@@ -38,7 +38,7 @@ $$
 
 ## Example: Represent the Hadamard operation with Dirac notation
 
-The following notation is often used to describe the states that result from applying the [Hadamard](xref:Microsoft.Quantum.Intrinsic.H) gate to $\ket{0}$ and $\ket{1}$. These states correspond to the unit vectors in the $+x$ and $-x$ directions on the Bloch sphere:
+The following notation is often used to describe the states that result from applying the Hadamard gate to $\ket{0}$ and $\ket{1}$. These states correspond to the unit vectors in the $+x$ and $-x$ directions on the Bloch sphere:
 
 $$
 \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\\\  1 \end{bmatrix}=H\ket{0} = \ket{+},\qquad
