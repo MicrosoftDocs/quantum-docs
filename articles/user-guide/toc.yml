@@ -1,7 +1,5 @@
 - name: The Q# user guide
   items: 
-  - name: The Q# programming language
-    href: index.md
   - name: Structure of a Q# program
     href: program-structure.md
   - name: Working with Q# projects
@@ -32,8 +30,6 @@
     href: ../how-to-adapt-qiskit.md
 - name: Q# language reference
   href: language/toc.yml
-- name: Q# libraries
-  href: libraries/toc.yml
 - name: Learn Q# with the Quantum Katas
   href: ../tutorial-qdk-intro-to-katas.md
 

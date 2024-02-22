@@ -21,7 +21,7 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed. 
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension installed.
 - The Azure Quantum `qsharp` and `azure-quantum` packages. 
-- [Azure CLI](xref:microsoft.quantum.install-qdk.overview#add-support-for-azure-cli) with the Azure Quantum extension installed. 
+- [Azure CLI](xref:microsoft.quantum.install-qdk.overview#add-support-for-azure-cli) with the latest Azure Quantum extension installed. 
 
 ## Create and import your Q# operations
 
@@ -116,7 +116,7 @@ When you run programs on the local quantum simulator, you can submit any type of
 
 ## Connect to Azure Quantum and submit your job
 
-You can connect to Azure Quantum and submit your job using a Python-created `Workspace` object, or connect and submit your job using Azure CLI. Using Azure CLI requires that you save the compiled program as a text file and submit that using a CLI command. 
+You can connect to Azure Quantum and submit your job using a Python-created `Workspace` object, or connect and submit your job using Azure CLI. Using Azure CLI requires that you save the compiled program as a text file and submit that file using a CLI command. 
 
 
 ### [Using Python](#tab/tabid-python)
@@ -146,6 +146,7 @@ Now that you have your program compiled into the correct format, create a `azure
     ```python
     MyTarget = workspace.get_targets("rigetti.sim.qvm")
     ```
+
 1. Lastly, use the `submit` method to submit your program with its parameters. The job results are returned as a Python dictionary.
 
     ```python
@@ -153,8 +154,9 @@ Now that you have your program compiled into the correct format, create a `azure
     results = job.get_results()
     print("\nResults: ", results)
     ```
+
 1. To extract just the values and display them:
-    
+
     ```python
     resultList = results.get("Histogram")
     for x in resultList:
@@ -199,10 +201,17 @@ To submit a job to Azure Quantum with the Azure CLI, you need to submit a physic
     file.write(MyProgram._ll_str)
     file.close()
     ```
+
 1. To submit the job to Azure Quantum, login with the Azure CLI:
 
     ```azurecli
     az login
+    ```
+
+1. Ensure you are running the latest version of the Azure CLI `quantum` extension:
+
+    ```azurecli
+    az extension add --upgrade --name quantum
     ```
 
 1. Specify the subscription you want to use from those associated with your Azure account. You can also find your subscription ID in the overview of your workspace in Azure portal.

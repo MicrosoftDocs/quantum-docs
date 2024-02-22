@@ -145,7 +145,7 @@ Name resolution now incorporates an implicit prelude which is a set of namespace
 
 ### Standard library
 
-The Q# standard library is now hosted in the same repository as the compiler and runtime, and can be found in the [top-level library folder](https://github.com/microsoft/qsharp/tree/main/library). Not all functionality and features have been migrated from the existing Q# libraries, which can still be accessed at https://github.com/microsoft/QuantumLibraries. If an item from the previous library is needed for a program, that item and any dependencies can be copied into the source program. If any library functionality is critical to a workflow and should be considered for inclusion in the new standard library, please file a [GitHub issue](https://github.com/microsoft/qsharp/issues) with the details.
+The Q# standard library is now hosted in the same repository as the compiler and runtime, and can be found in the [top-level library folder](https://github.com/microsoft/qsharp/tree/main/library). Not all functionality and features have been migrated from the Classic Q# libraries, which can still be accessed at https://github.com/microsoft/QuantumLibraries. If an item from the previous library is needed for a program, that item and any dependencies can be copied into the source program. If any library functionality is critical to a workflow and should be considered for inclusion in the new standard library, please file a [GitHub issue](https://github.com/microsoft/qsharp/issues) with the details.
 
 ### Simulation
 

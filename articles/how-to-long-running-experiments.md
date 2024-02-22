@@ -1,14 +1,15 @@
 ---
 author: SoniaLopezBravo
-description: Learn how to run experiments with long runtimes on Azure Quantum 
+description: This articles explains techniques and methods to for how to run experiments with long runtimes on Azure Quantum 
 ms.author: sonialopez
 ms.date: 01/02/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
-title: Performing long running experiments
+title: How to perform long running Q# experiments
 uid: microsoft.quantum.long-running-experiments
+#customer intent: As a quantum programmer, I want to know how to perform long running experiments
 ---
 
 # How to perform long running experiments on Azure Quantum

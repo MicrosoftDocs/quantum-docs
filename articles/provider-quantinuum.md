@@ -212,7 +212,7 @@ Quantinuum's native gate set includes arbitrary angle ZZ gates. This is benefici
 
 #### [Arbitrary Angle ZZ Gates with Q# Provider](#tab/tabid-arbitrary-angle-zz-gates-with-q-provider)
 
-In Q\#, the arbitrary angle ZZ gate is implemented with the [Rzz](xref:Microsoft.Quantum.Intrinsic.Rzz) operation.
+In Q\#, the arbitrary angle ZZ gate is implemented with the `Rzz` operation.
 
 ```qsharp
 %%qsharp

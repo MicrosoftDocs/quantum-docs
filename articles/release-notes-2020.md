@@ -75,7 +75,7 @@ This release contains the following:
 
 - New [Microsoft.Quantum.Random namespace](xref:Microsoft.Quantum.Random), providing a more convenient way to sample random values from within Q# programs. ([QuantumLibraries#311](https://github.com/microsoft/QuantumLibraries/pull/311), [qsharp-runtime#328](https://github.com/microsoft/qsharp-runtime/pull/328))
 - Improved [Microsoft.Quantum.Diagnostics namespace](xref:Microsoft.Quantum.Diagnostics) with new [`DumpOperation` operation](xref:Microsoft.Quantum.Diagnostics.DumpOperation), and new operations for restricting qubit allocation and oracle calls. ([QuantumLibraries#302](https://github.com/microsoft/QuantumLibraries/pull/302))
-- New [`%project` magic command](xref:microsoft.quantum.iqsharp.magic-ref.project) in IQ# and [`qsharp.projects` API](/python/qsharp-core/qsharp.projects.projects) in Python to support references to Q# projects outside the current workspace folder. See [iqsharp#277](https://github.com/microsoft/iqsharp/issues/277) for the current limitations of this feature. 
+- New [`%project` magic command](xref:microsoft.quantum.iqsharp.magic-ref.project) in IQ# and `qsharp.projects` API in Python to support references to Q# projects outside the current workspace folder. See [iqsharp#277](https://github.com/microsoft/iqsharp/issues/277) for the current limitations of this feature. 
 - Support for automatically loading `.csproj` files for IQ#/Python hosts, which allows external project or package references to load at initialization time. For more information, see the guide for using Q# with Python and Jupyter Notebooks.
 - Added `ErrorCorrection.Syndrome` sample.
 - Added tunable coupling to `SimpleIsing`.
@@ -129,7 +129,7 @@ This release fixes a bug-affecting compilation of Q# projects.
 This release contains the following:
 
 - Q# notebooks and Python host programs no longer fail when a Q# entry point is present.
-- Updates to [Standard library](xref:microsoft.quantum.libraries.overview.standard.intro) to use access modifiers
+- Updates to Standard library to use access modifiers
 - Compiler now allows plug-in of rewrite steps between built-in rewrite steps
 - Several deprecated functions and operations have been removed following the schedule described in our API principles. Q# programs and libraries that build without warnings in version 0.11.2004.2825 continue to work unmodified.
 
@@ -175,7 +175,7 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 This release contains the following:
 
-- New Quantum Machine Learning library, for more information go to our [QML docs page](xref:microsoft.quantum.libraries.overview#quantum-machine-learning-library)
+- New Quantum Machine Learning library.
 - IQ# bug fixes, resulting in up to a 10-20x performance increase when loading NuGet packages
 
 See the full list of closed PRs for [libraries](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compiler](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [samples](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) and [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
