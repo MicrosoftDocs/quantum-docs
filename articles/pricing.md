@@ -153,7 +153,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 |Use is deducted from the Azure Quantum Credits based on the HQC equation described above  | <ul><li> 40 HQCs for use on the System Model H1 hardware</li><li>8000 eHQCs for use on the System H1 Emulator</li></ul>|
 
 > [!NOTE]
-> Once you have consumed all the credits you need to explicitly switch to a different plan to continue using Quantinuum. Azure Quantum won’t charge charging you when you reach your credit limit.
+> Once you have consumed all the credits you need to explicitly switch to a different plan to continue using Quantinuum. Azure Quantum won’t charge you when you reach your credit limit.
 
 > [!IMPORTANT]
 > There are no costs or charges for using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job.
