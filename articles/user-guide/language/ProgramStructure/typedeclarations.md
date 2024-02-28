@@ -13,20 +13,20 @@ uid: microsoft.quantum.qsharp.typedeclarations
 
 # Type Declarations
 
-Q# supports user-defined types. User-defined types are similar to record types in F#; they are immutable but support a [copy-and-update](xref:microsoft.quantum.qsharp.copyandupdateexpressions) construct. 
+Q# supports user-defined types. User-defined types are similar to record types in F#; they are immutable but support a [copy-and-update](xref:microsoft.quantum.qsharp.copyandupdateexpressions) construct.
 
 ## User-defined types
 
-User-defined types may contain both named and anonymous items. 
+User-defined types may contain both named and anonymous items.
 The following declaration within a namespace, for example, defines a type `Complex` which has two named items `Real` and `Imaginary`, both of type `Double`:
 
 ```qsharp
     newtype Complex = (Real: Double, Imaginary : Double);
 ```
 
-Any combination of named and unnamed items is supported, and inner items may also be named. 
-For example, the type `Nested`, defined as 
- 
+Any combination of named and unnamed items is supported, and inner items may also be named.
+For example, the type `Nested`, defined as
+
 ```qsharp
 newtype Nested = (Double, (ItemName : Int, String)); 
 ```
@@ -50,14 +50,6 @@ It hence defines two types, `BigEndian` and `LittleEndian`, both of which contai
 ```
 
 These types allow operations to specify whether they are written for big-endian or little-endian representations and leverages the type system to ensure at compile-time that mismatched operands aren't allowed.
-
-Type names must be unique within a namespace and may not conflict with operation and function names. Types may not have circular dependencies in Q#; that is, defining something like a directly or indirectly recursive type is not allowed. For example, the following construct will give a compilation error: 
-
-```qsharp
-    newtype Foo = (Foo, Int); // gives an error
-    newtype Bar = Baz;        // gives an error
-    newtype Baz = Bar;        // gives an error
-```
 
 ## User-defined constructors
 

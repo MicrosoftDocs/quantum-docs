@@ -1,6 +1,6 @@
 ---
 author: bradben
-description: Learn how to run a simple program from the command prompt in Q#.
+description: Learn the components of a simple Q# program and how to run it in VS Code.
 ms.author: brbenefield
 ms.date: 02/08/2024
 ms.service: azure-quantum

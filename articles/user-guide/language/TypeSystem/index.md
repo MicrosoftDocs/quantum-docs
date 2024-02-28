@@ -41,3 +41,5 @@ Type | Description
  Function | Represents a deterministic [callable](xref:microsoft.quantum.qsharp.operationsandfunctions#operations-and-functions) that takes one (possibly tuple-valued) input argument returns one (possibly tuple-valued) output. Calls to function [values](xref:microsoft.quantum.qsharp.valueliterals#function-literals) do not have side effects and the output is will always be the same given the same input. 
 
 
+
+
