@@ -47,7 +47,7 @@ is the unitary matrix $CBA$.
 Consider the unitary transformation $\text{ CNOT}_{01}(H\otimes 1)$.
 This gate sequence is of fundamental significance to quantum computing because it creates a maximally entangled two-qubit state:
 
-$$\mathrm{CNOT}_{01}(H\otimes 1)\ket{00} = \frac{1}{\sqrt{2}} \left(\ket{00} + \ket{11} \right),$$
+$\mathrm{CNOT}_{01}(H\otimes 1)\ket{00} = \frac{1}{\sqrt{2}} \left(\ket{00} + \ket{11} \right),$
 
 Operations with this or greater complexity are ubiquitous in quantum algorithms and quantum error correction.
 
@@ -79,7 +79,7 @@ This means that you can get an intuition about the data flow for a large quantum
 
 The action of a quantum singly controlled gate, denoted $\Lambda(G)$, where a single qubit's value controls the application of $G$, can be understood by looking at the following example of a product state input:
 
-$$\Lambda(G) (\alpha \ket{0} + \beta \ket{1}) \ket{\psi} = \alpha \ket{0} \ket{\psi} + \beta \ket{1} G\ket{\psi}$$
+$\Lambda(G) (\alpha \ket{0} + \beta \ket{1}) \ket{\psi} = \alpha \ket{0} \ket{\psi} + \beta \ket{1} G\ket{\psi}$
 
 That is to say, the controlled gate applies $G$ to the register containing $\psi$ if and only if the control qubit takes the value $1$. In general, such controlled operations are described in circuit diagrams as
 
