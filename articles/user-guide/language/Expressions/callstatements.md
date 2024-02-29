@@ -11,7 +11,7 @@ title: Call statements in Q#
 uid: microsoft.quantum.qsharp.callstatements
 ---
 
-## Call expressions
+# Call expressions
 
 Call expressions are an important part of any programming language. Operation and function calls, much like [partial applications](xref:microsoft.quantum.qsharp.closures#partial-application), can be used as an expression anywhere as long as the returned value is of a suitable type.
 
