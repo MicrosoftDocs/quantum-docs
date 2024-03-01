@@ -5,14 +5,14 @@ ms.author: brbenefield
 ms.date: 11/16/2023
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: quickstart
+ms.topic: how-to
 no-loc: ['Python', '$$v', target, targets]
 title: Submit Qiskit quantum circuits to Azure Quantum
 zone_pivot_groups: ide-local-portal
 uid: microsoft.quantum.quickstarts.computing.qiskit
 --- 
 
-# Quickstart: Submit a circuit with Qiskit to Azure Quantum
+# How to submit a circuit with Qiskit to Azure Quantum
 
 Learn how to submit a Qiskit quantum circuit using the `azure-quantum` Python package. You can submit Qiskit circuits to Azure Quantum using the Azure Quantum notebook, which have built-in `azure-quantum` Python package, or from your local machine.
 
