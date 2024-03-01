@@ -427,7 +427,7 @@ params.items.error_budget = 0.333 # error budget of 1/3
 qsharp.estimate("RunProgram()", params=params)
 ```
 
-Also, you can individually specify each component of the error budget. The sum of all values must be 1. If a quantum algorithm doesn't contain T states or rotations, then the values of `t_states` and `rotations` may be 0 respectively.
+Also, you can individually specify each component of the error budget. The sum of all values is the total error budget and must be between 0 and 1. If a quantum algorithm doesn't contain T states or rotations, then the values of `t_states` and `rotations` may be 0 respectively.
 
 The following code shows how to specify the error budget parameter with T states and rotations:
 
