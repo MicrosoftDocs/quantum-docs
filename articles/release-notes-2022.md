@@ -20,7 +20,7 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 ### 2022-12-07
 
 - Azure Quantum now supports CCX native gates, this fixes GitHub issue [microsoft/qiskit-qir#19](https://github.com/microsoft/qiskit-qir/issues/19).
-- [Submitting](/python/qsharp-core/qsharp.azure#qsharp-azure-submit) a job to Azure Quantum now supports passing arrays from Python to Q#.
+- Submitting a job to Azure Quantum now supports passing arrays from Python to Q#.
 
 ## QDK version 0.27.238334
 
