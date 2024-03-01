@@ -15,8 +15,8 @@ uid: microsoft.quantum.quickstarts.computing.provider
 
 Learn how to use the `azure-quantum` Python package to submit circuits in specific formats to the Azure Quantum service. This article shows you how to submit circuits in the following formats:
 
-- [Submit QIR circuits](#submit-qir-formatted-circuits).
-- [Submit provider-specific circuits](#submit-a-circuit-with-a-provider-specific-format-to-azure-quantum).
+- [Submit QIR circuits](#submit-qir-formatted-circuits)
+- [Submit provider-specific circuits](#submit-a-circuit-with-a-provider-specific-format-to-azure-quantum)
 
 For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
