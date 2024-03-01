@@ -993,7 +993,7 @@
 		},
 		{
 			"source_path": "articles/user-guide/index.md",
-			"redirect_url": "/azure/user-guide/program-structure",
+			"redirect_url": "/azure/quantum/user-guide/program-structure",
 			"redirect_document_id": false
 		}
 	]
