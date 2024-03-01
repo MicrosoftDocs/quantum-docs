@@ -7,8 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Python', '$$v', target, targets]
-title: Submit provider-formatted quantum circuits
-zone_pivot_groups: ide-local-portal
+title: Submit formatted quantum circuits
 uid: microsoft.quantum.quickstarts.computing.provider
 --- 
 
@@ -68,7 +67,7 @@ location of your Azure Quantum workspace. Log in to your Azure account,
 <https://portal.azure.com>, navigate to your Azure Quantum workspace, and
 copy the values from the header.
 
-    ![How to retrieve the resource ID and location from an Azure Quantum workspace](../media/azure-quantum-resource-id.png)
+    ![How to retrieve the resource ID and location from an Azure Quantum workspace](media/azure-quantum-resource-id.png)
 
 1. In the first cell of your notebook, paste the values into the following `Workspace` constructor to
 create a `workspace` object that connects to your Azure Quantum workspace.
