@@ -15,8 +15,8 @@ uid: microsoft.quantum.quickstarts.computing.provider
 
 Learn how to use the `azure-quantum` Python package to submit circuits in specific formats to the Azure Quantum service. This article shows you how to submit circuits in the following formats:
 
-- [Submit QIR circuits](#submit-qir-formatted-circuits): Submit a QIR-formatted circuit to Azure Quantum.
-- [Submit provider-specific circuits](#submit-a-circuit-with-a-provider-specific-format-to-azure-quantum): Submit a circuit with a provider-specific format to Azure Quantum.
+- [Submit QIR circuits](#submit-qir-formatted-circuits).
+- [Submit provider-specific circuits](#submit-a-circuit-with-a-provider-specific-format-to-azure-quantum).
 
 For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
@@ -149,29 +149,29 @@ Quantum Intermediate Representation (QIR) is an intermediate representation whic
 
 1. Create a `submit_qir_job` helper function to submit the QIR circuit to a target. Note that the input and output data formats are specified as `qir.v1` and `microsoft.quantum-results.v1`, respectively.
 
-```python 
-# Submit the job with proper input and output data formats
-def submit_qir_job(target, input, name, count=100):
-    job = target.submit(
-        input_data=input, 
-        input_data_format="qir.v1",
-        output_data_format="microsoft.quantum-results.v1",
-        name=name,
-        input_params = {
-            "entryPoint": "ENTRYPOINT__main",
-            "arguments": [],
-            "count": count
-            }
-    )
-
-    print(f"Queued job: {job.id}")
-    job.wait_until_completed()
-    print(f"Job completed with state: {job.details.status}")
-    #if job.details.status == "Succeeded":
-    result = job.get_results()
-
-    return result
-```
+    ```python 
+    # Submit the job with proper input and output data formats
+    def submit_qir_job(target, input, name, count=100):
+        job = target.submit(
+            input_data=input, 
+            input_data_format="qir.v1",
+            output_data_format="microsoft.quantum-results.v1",
+            name=name,
+            input_params = {
+                "entryPoint": "ENTRYPOINT__main",
+                "arguments": [],
+                "count": count
+                }
+        )
+    
+        print(f"Queued job: {job.id}")
+        job.wait_until_completed()
+        print(f"Job completed with state: {job.details.status}")
+        #if job.details.status == "Succeeded":
+        result = job.get_results()
+    
+        return result
+    ```
 
 1. Select a target and submit the QIR circuit to Azure Quantum. For example, to submit the QIR circuit to the IonQ simulator target:
 
