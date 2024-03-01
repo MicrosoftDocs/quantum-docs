@@ -46,6 +46,16 @@
 			"redirect_document_id": false
 		},
 		{
+			"source_path": "articles/includes/quickstart-provider-include-local.md",
+			"redirect_url": "/azure/quantum/quickstart-microsoft-provider-format",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/includes/quickstart-provider-include-portal.md",
+			"redirect_url": "/azure/quantum/quickstart-microsoft-provider-format",
+			"redirect_document_id": false
+		},
+		{
 			"source_path": "articles/user-guide/libraries/chemistry/schema/spec_v_0_2.md",
 			"redirect_url": "/azure/quantum/user-guide/libraries",
 			"redirect_document_id": false
