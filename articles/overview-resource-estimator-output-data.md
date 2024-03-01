@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: This article shows how to interpret the report data of the Resource Estimator and access the output parameters.
-ms.date: 01/12/2024
+ms.date: 03/01/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -13,7 +13,7 @@ uid: microsoft.quantum.overview.resources-estimator-output.data
 
 # Understand the result data of the Resource Estimator
 
-This article shows how to interpret and retrieve the output data of the Resource Estimator. The output data of the Resource Estimator is a report that is printed in the console and can be accessed programmatically.
+Learn how to interpret and retrieve the output parameters and diagrams of the Resource Estimator. This article explains how to programmatically access the results of the Resource Estimator in Jupyter Notebooks. If you run the Resource Estimator in Visual Studio Code from the command palette, the following commands doesn't apply.
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ This article shows how to interpret and retrieve the output data of the Resource
 
 ## Output parameters
 
-In Jupyter Notebook in VS Code, you can programmatically access the output data of the resource estimation report. For example, the following code snippet shows how to access the resource estimation parameters.
+The output data of the Resource Estimator is a report that is printed in the console and can be accessed programmatically. For example, the following code snippet shows how to access the resource estimation parameters.
 
 ```python
 result['job_params']
