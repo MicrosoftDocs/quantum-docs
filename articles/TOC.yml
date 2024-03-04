@@ -35,6 +35,8 @@
       href: how-to-run-notebooks-workspace.md
     - name: Work with Azure Quantum workspaces
       items:
+      - name: Connect to your Azure Quantum workspace
+        href: how-to-connect-workspace.md
       - name: Understanding Azure Quantum workspace access
         href: manage-workspace-access.md
       - name: Add a group to your Azure Quantum workspace
