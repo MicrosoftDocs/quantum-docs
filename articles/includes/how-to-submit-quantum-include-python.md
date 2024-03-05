@@ -4,6 +4,7 @@ ms.author: brbenefield
 ms.date: 12/11/2023
 ms.service: azure-quantum
 ms.subservice: computing
+ms.custom: devx-track-azurecli
 ms.topic: include
 no-loc: [Quantum Development Kit, target, targets]
 ---

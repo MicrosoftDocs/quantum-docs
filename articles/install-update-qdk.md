@@ -5,6 +5,7 @@ ms.author: brbenefield
 ms.date: 12/12/2022
 ms.service: azure-quantum
 ms.subservice: qdk
+ms.custom: devx-track-azurecli
 ms.topic: how-to
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Update the Quantum Development Kit (QDK)
