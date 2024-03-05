@@ -9,7 +9,8 @@
       "moniker_ranges": [],
       "xref_query_tags": [
         "/qsharp",
-        "/dotnet"
+        "/dotnet",
+        "/python/qsharp"
       ],
       "enable_xrefmap_share": true,
       "open_to_public_contributors": true,
