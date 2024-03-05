@@ -10,7 +10,8 @@
       "xref_query_tags": [
         "/qsharp",
         "/dotnet",
-        "/python/qsharp"
+        "/python/qsharp",
+        "/python/azure-quantum"
       ],
       "enable_xrefmap_share": true,
       "open_to_public_contributors": true,
