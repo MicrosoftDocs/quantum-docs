@@ -1,14 +1,15 @@
 ---
 author: bradben
-description: Learn how to update your Classic QDK Q# programs to run on the Modern QDK. 
+description: Learn how to update your Classic QDK Q# programs to run on the Modern QDK, which platforms are supported, and what functionality has been deprecated. 
 ms.date: 01/04/2024
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: how-to
+ms.topic: whats-new
 no-loc: ['Q#', '$$v']
 title: Migrate Your Q# Programs for the Modern QDK
 uid: microsoft.quantum.how-to.migrate-code
+#customer intent: As a quantum programmer, I want to update my programs that use the old qdk. 
 ---
 
 # Migrate your Q# code to the Modern QDK
