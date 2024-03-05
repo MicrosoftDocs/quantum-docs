@@ -6,7 +6,7 @@ ms.date: 10/10/2022
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
-no-loc: ['Q#', '$$v', Quantum Development Kit]
+no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', target, Quantum Development Kit]
 title: Linear algebra for quantum computing
 uid: microsoft.quantum.overview.algebra
 ---
@@ -32,7 +32,7 @@ Quantum operations can also be represented by a matrix. When a quantum operation
 Here are two common quantum operations represented with matrix multiplication.
 
 
-The [`X` operation](xref:Microsoft.Quantum.Intrinsic.X) is represented by the Pauli matrix $X$,
+The `X` operation is represented by the Pauli matrix $X$,
 
 $$X = \begin{bmatrix}
         0 & 1 \\\\
@@ -43,7 +43,7 @@ and is used to flip the state of a qubit from 0 to 1 (or vice-versa), for exampl
 
 $$\begin{bmatrix}0 &1\\\\ 1 &0\end{bmatrix}\begin{bmatrix} 1 \\\\  0 \end{bmatrix} = \begin{bmatrix} 0 \\\\  1 \end{bmatrix}.$$
 
-The ['H' operation](xref:Microsoft.Quantum.Intrinsic.H) is represented by the Hadamard transformation $H$,
+The `H` operation is represented by the Hadamard transformation $H$,
 
 $$H = \dfrac{1}{\sqrt{2}}\begin{bmatrix}1 &1\\\\ 1 &-1\end{bmatrix},$$
 
@@ -73,7 +73,7 @@ Just as a single qubit state $\begin{bmatrix} a \\\\  b \end{bmatrix}$ must meet
 
 ## Summary
 
-Linear algebra is the standard language for describing quantum computing and quantum physics. Even though the [libraries](xref:microsoft.quantum.libraries.overview) included with the Microsoft Quantum Development Kit helps you run advanced quantum algorithms without diving into the underlying math, understanding the basics helps you get started quickly and provide a solid foundation to build on.
+Linear algebra is the standard language for describing quantum computing and quantum physics. Even though the standard library included with the Microsoft Quantum Development Kit helps you run advanced quantum algorithms without diving into the underlying math, understanding the basics helps you get started quickly and provide a solid foundation to build on.
 
 ## Next steps
 

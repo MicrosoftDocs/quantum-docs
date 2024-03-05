@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '\Bigg' ,'|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', '\rho', '\quad', '\sim', '\left\','\right\', '\%', '%', Quantum Intermediate Representation, target, targets]
-title: Microsoft Quantum intermediate representation
+title: Quantum Intermediate Representation
 uid: microsoft.quantum.concepts.qir
 ---
 
@@ -102,6 +102,6 @@ Another application is to use the standard LLVM “pass” infrastructure to cre
 
 ## Next steps
 
-- [The Q# programming user guide](xref:microsoft.quantum.user-guide-qdk.overview)
+- [The Q# programming user guide](xref:microsoft.quantum.user-guide-qdk.overview.program-structure)
 - [Introduction to resource estimation](xref:microsoft.quantum.overview.intro-resource-estimator)
 - [Rigetti provider](xref:microsoft.quantum.providers.rigetti)

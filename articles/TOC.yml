@@ -102,21 +102,29 @@
   - name: Concepts for hybrid QC
     href: hybrid-computing-concepts.md
 - name: Resource Estimation
-  items: 
-  - name: Introduction to the Resource Estimator
-    href: intro-to-resource-estimation.md
-  - name: Run your first resource estimate
-    href: quickstart-microsoft-resources-estimator.md
-  - name: Use different SDKs and IDEs with Resource Estimator
-    href: how-to-submit-re-jobs.md  
-  - name: Customize the target parameters of the Resource Estimator
-    href: overview-resources-estimator.md
-  - name: Understand the results of the Resource Estimator
-    href: overview-resource-estimator-output-data.md
-  - name: Learn how the Resource Estimator works
-    href: learn-how-the-resource-estimator-works.md
-  - name: Get the most out of the Resource Estimator
-    href: how-to-work-with-re.md
+  items:
+  - name: Get started
+    items: 
+    - name: Introduction to the Resource Estimator
+      href: intro-to-resource-estimation.md
+    - name: Run your first resource estimate
+      href: quickstart-microsoft-resources-estimator.md
+    - name: Different ways to run the Resource Estimator
+      href: how-to-submit-re-jobs.md  
+    - name: Customize the target parameters for the Resource Estimator
+      href: overview-resources-estimator.md
+    - name: Understand the results of the Resource Estimator
+      href: overview-resource-estimator-output-data.md
+  - name: Work with the Resource Estimator
+    items: 
+    - name: Run multiple configurations
+      href: resource-estimator-batching.md
+    - name: Use known estimates
+      href: resource-estimator-known-estimates.md
+    - name: Handle large programs
+      href: resource-estimator-handle-large-programs.md
+    - name: Resource Estimator and cryptography
+      href: resource-estimator-quantum-safe-planning.md
   - name: Tutorials with the Resource Estimator
     items:
     - name: Double-factorized chemistry
@@ -205,6 +213,8 @@
   items:
   - name: Build your skills with Microsoft training >>
     href: /training/paths/quantum-computing-fundamentals/
+  - name: Contributing to Azure Quantum
+    href: contributing-overview.md    
   - name: Further reading
     href: further-reading-qdk.md
 - name: Release notes

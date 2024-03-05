@@ -1,8 +1,0 @@
-- name: Overview
-  href: index.md
-- name: Standard libraries
-  topicHref: standard/index.md
-  href: standard/toc.yml
-- name: Quantum numerics library
-  href: numerics/toc.yml
- 

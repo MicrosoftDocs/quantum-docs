@@ -1,19 +1,20 @@
 ---
-title: Debugging and Testing Quantum Programs
+title: How to Debug and Test Quantum Programs in Azure Quantum
 description: Learn how to use unit tests, facts and assertions, and dump functions to test and debug quantum programs. 
 author: bradben
 ms.author: brbenefield
 ms.date: 01/05/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
-ms.topic: conceptual
+ms.topic: how-to
 uid: microsoft.quantum.user-guide-qdk.overview.testingdebugging
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
+#customer intent: As a quantum developer, I want to understand how to debug and test my quantum programs
 ---
 
 # Debugging and testing your quantum code
 
-As with classical programming, it is essential to be able to check that quantum programs act as intended, and to be able to diagnose incorrect behavior. In this section, we cover the tools offered by the Quantum Development Kit for testing and debugging quantum programs.
+As with classical programming, it is essential to be able to check that quantum programs act as intended, and to be able to diagnose incorrect behavior. This article discusses the tools offered by the Azure Quantum Development Kit for testing and debugging quantum programs.
 
 ## Debugging your Q# program
 
@@ -47,7 +48,7 @@ namespace Sample {
 1. Set a breakpoint on the line `H(qubit)` by clicking to the left of the line number. 
 1. Select the debugger icon to open the debugger pane and select **Run and Debug**. The debugger controls are displayed at the top of the screen.
 1. Select F5 to start debugging and continue to the breakpoint. In the debugger **Variables** pane, expand the **Quantum State** category. You can see that the qubit has been initialized in the |0> state. 
-1. Step into (F11) the `H` operation and the library code for the `H` operation opens. As you step through the operation, note the quantum value changes as the `H` operation puts the qubit into superposition. 
+1. Step into (F11) the `H` operation and the source code for the `H` operation displays. As you step through the operation, note the quantum value changes as the `H` operation puts the qubit into superposition. 
 1. As you step over (F10) the `M` operation, the quantum value is resolved to either |0> or |1> as a result of the measurement, and the value of the classical variable `result` is displayed.
 1. As you step over the `Reset` operation, the qubit is reset to |0>.
 
@@ -96,7 +97,7 @@ Here, the `fail` expression prevents the program from continuing to run with inv
 
 ### Fact() function
 
-You can implement the same behavior as the previous example using the [`Fact()`](xref:Microsoft.Quantum.Diagnostics.Fact) function from the <xref:Microsoft.Quantum.Diagnostics>. The `Fact()` function evaluates a given classical condition and throws an exception if it is false. 
+You can implement the same behavior as the previous example using the `Fact()` function from the `Microsoft.Quantum.Diagnostics` namespace. The `Fact()` function evaluates a given classical condition and throws an exception if it is false. 
 
 ```qsharp
 %%qsharp
@@ -129,7 +130,9 @@ Qsc.Eval.UserFail
 
 ### DumpMachine() function
 
-[`DumpMachine()`](xref:Microsoft.Quantum.Diagnostics.DumpMachine) is a Q# function that allows you to dump information about the current state of the target machine to the console and continue to run your program.
+
+
+`DumpMachine()` is a Q# function that allows you to dump information about the current state of the target machine to the console and continue to run your program.
 
 > [!NOTE]
 > With the release of the Azure Quantum Development Kit, the `DumpMachine()` function now uses big-endian ordering for its output. 
@@ -175,7 +178,7 @@ Basis State
 
 ### dump_machine() function
 
-`dump_machine` is a Python function that returns the current allocated qubit count and a Python dictionary of sparse state amplitudes that you can parse. Using either of these functions in a Jupyter Notebook allows you to step through your operations much like a debugger. Using the previous example program:
+[`dump_machine`](/python/qsharp/qsharp?view=qsharp-py#qsharp-dump-machine&preserve-view=true) is a Python function that returns the current allocated qubit count and a Python dictionary of sparse state amplitudes that you can parse. Using either of these functions in a Jupyter Notebook allows you to step through your operations much like a debugger. Using the previous example program:
 
 ```python
 import qsharp

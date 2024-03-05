@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: A reference list with deep coverage of quantum computing topics if you want to learn more about quantum computer programming.
 ms.author: sonialopez
-ms.date: 08/24/2022
+ms.date: 02/05/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: conceptual
@@ -15,88 +15,98 @@ uid: microsoft.quantum.more-information
 
 This article compiles some of the most popular resources that you may find useful when learning quantum computing. 
 
-## Microsoft quantum computing resources 
+## Microsoft quantum computing resources
 
 Learn how to develop and apply quantum computing solutions with the Quantum Development Kit and Azure Quantum services.
 
-+ [Quantum computing foundations modules](/training/paths/quantum-computing-fundamentals/): an interactive, free, hands-on learning path. In these modules you will learn how to use the power of quantum computing and the Azure Quantum service to complete different tasks that are crucial for the space mission.
-+ [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas): a collection of self-paced Q# quantum programming tutorials.
-+ [Q# code samples](/samples/browse/?languages=qsharp): start building your first quantum solution with this collection of ready-to-use code samples.
-+ [Q# blog](https://devblogs.microsoft.com/qsharp/): a blog written by developers for developers. You can read about the lastest QDK and Q# insights, and quantum challenges and hackathons announcements.
-+ [Research publications](https://www.microsoft.com/research/research-area/quantum-computing/?facet%5Btax%5D%5Bmsr-content-type%5D[]=3&facet%5Btax%5D%5Bmsr-research-area%5D[]=243138&sort_by=most-recent): read about the latest advancement in quantum hardware and algorithms developed by Microsoft researchers.
+* [Azure Quantum training path](/training/paths/quantum-computing-fundamentals/): an interactive, free, hands-on learning path. In these modules, you learn about quantum computing and how to develop quantum solutions using Q# and the Azure Quantum Development Kit.
+* [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas): a collection of self-paced Q# quantum programming tutorials.
+* [Azure Quantum videos](https://quantum.microsoft.com/explore/playlist): a playlist with videos of Azure Quantum announcements, demos, and discussions from *Quantum Innovator Series*.
+* [Q# code samples](https://github.com/microsoft/qsharp/tree/main/samples): start building your first quantum solution with this collection of ready-to-use code samples.
+* [Q# blog](https://devblogs.microsoft.com/qsharp/): a blog written by developers for developers. You can read about the latest QDK and Q# insights, and find out about quantum challenges and hackathons announcements.
+* [Research publications](https://www.microsoft.com/research/research-area/quantum-computing/?facet%5Btax%5D%5Bmsr-content-type%5D[]=3&facet%5Btax%5D%5Bmsr-research-area%5D[]=243138&sort_by=most-recent): read about the latest advancement in quantum hardware and algorithms developed by Microsoft researchers.
 
 These and more quantum computing resources can be found in the [Microsoft's quantum learning page](https://azure.microsoft.com/resources/quantum-computing/).
 
 ## Q# community made content
 
-The following sites are created and developed by the quantum community who is excited about quantum programming. 
+The following resources are created and developed by the quantum community who is excited about quantum programming.
 
-+ [Awesome qsharp](https://github.com/ebraminio/awesome-qsharp/): an open source list of Q# code and resources.
-+ [Quantum computing StackExchange](https://quantumcomputing.stackexchange.com/questions/tagged/q%23): an online community for quantum developers to learn, and share their knowledge.
-+ [Subreddit for the Q# programming language](https://www.reddit.com/r/qsharp/): an online community in Reddit to discuss the latest news and developments of Q#.
+### Books created by the community
+
+* [*Introduction to Quantum Computing with Q# and QDK*](https://link.springer.com/book/10.1007/978-3-030-99379-5), Filip Wojcieszyn, Springer, 2022.
+* [*Q# Pocket Guide*](https://www.oreilly.com/library/view/q-pocket-guide/9781098108854/), Mariia Mykhailova, O'Reilly, 2021.
+* [*Introducing Microsoft Quantum Computing for Developers*](https://link.springer.com/book/10.1007/978-1-4842-7246-6), Johnny Hooyberghs, Springer, 2021.
+* [*Learn Quantum Computing with Python and Q# - A hands-on approach*](https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp), S. Kaiser and C. Granade. Manning Publications, 2021.
+
+### Blogs created by the community
+
+* [Awesome qsharp](https://github.com/ebraminio/awesome-qsharp/): an open source list of Q# code and resources.
+* [Q# Community](https://github.com/qsharp-community): a GitHub space for community-driven projects.
+
+### Forums and communities for quantum developers
+
+* [Quantum computing StackExchange](https://quantumcomputing.stackexchange.com/questions/tagged/q%23): an online community for quantum developers to learn, and share their knowledge.
 + [Subreddit for the quantum computing](https://www.reddit.com/r/quantumcomputing/): an online community in Reddit to discuss the latest news and developments of quantum computing.
-+ [Q# Community](https://github.com/qsharp-community): a GitHub space for community-driven projects and contrib libraries.
 
-## Quantum computing online courses
+## Quantum computing courses
 
 Check out the following quantum computing learning courses.
 
+* [Quantum Computing with Microsoft QDK](https://www.manning.com/liveprojectseries/quantum-computing-with-microsoft-qdk): a series of liveProjects that will help you to learn quantum software development by creating end-to-end projects. You explore the full potential of quantum for cryptography, data transmission, data reconstruction, and more. 
 + [Quantum Computing - Brilliant Course](https://brilliant.org/courses/quantum-computing/): learn to build quantum algorithms from the ground up with a quantum computer simulated in your browser in this course, created in collaboration with quantum researchers and practitioners from Microsoft, X, and Caltech's IQIM.
-+ [Introduction to Quantum Computing - LinkedIn Learning](https://www.linkedin.com/learning/introduction-to-quantum-computing):  a 1h25m video introduction to  quantum computing when you'll see some application cases of quantum computing, opportunities and risks. 
 + [Quantum Computing through Comics - HackadayU classes](https://hackaday.io/project/168554-introduction-to-quantum-computing): learn about quantum computing concepts and algorithm programming through classroom discussion and intuitive comics.
 
-## Bibliography for beginners 
+## Bibliography 
 
-### Quantum Computing
+The following bibliography is a collection of publications that cover a wide range of quantum computing topics.
+
+### Quantum computing for beginners 
 
 If you are a quantum enthusiast and want to start learning the theory behind quantum computing, the following publications will instruct you in topics such as quantum physics, computer science and linear algebra. 
 
-+ Nielsen, M. A. & Chuang, I. L. (2010). Quantum Computation and Quantum Information. Quantum Computation and Quantum Information, UK: Cambridge University Press, 2010.
-+ Kaye, P., Laﬂamme, R., & Mosca, M. (2007). An introduction to quantum computing. Oxford University Press.
-+ Rieﬀel, E. G., & Polak, W. H. (2011). Quantum computing: A gentle introduction. MIT Press.
-+ Sarah C. Kaiser and Christopher E. Granade. [Learn Quantum Computing with Python and Q# - A hands-on approach](https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp).
+* Nielsen, M. A. & Chuang, I. L. *Quantum Computation and Quantum Information. Quantum Computation and Quantum Information.* UK: Cambridge University Press, 2010.
+* Kaye, P., Laﬂamme, R., & Mosca, M. *An introduction to quantum computing.* Oxford University Press, 2007.
+* Rieﬀel, E. G., & Polak, W. H. *Quantum computing: A gentle introduction.* MIT Press, 2011.
 
-## Advanced topics
+### Different types of qubits
 
-If you want to go the extra mile, the following publications go deeper into more specific concepts and at a scientific research level.
+* Sergey Bravyi, Oliver Dial, Jay M. Gambetta, Dario Gil, and Zaira Nazario. *The future of quantum computing with superconducting qubits*, 2022.
+* Microsoft Quantum. *InAs-Al Hybrid Devices Passing the Topological Gap Protocol*, arXiv:2207.02472 [cond-mat.mes-hall], (2022).
+* M Saffman. *Quantum computing with atomic qubits and rydberg interactions: progress and challenges*, Journal of Physics B: Atomic, Molecular and Optical Physics, 49(20):202001, (2016).
+* J. I. Cirac and P. Zoller. *Quantum computations with cold trapped ions*, Phys. Rev. Lett., 74:4091–4094 (1995).
 
-### Elementary techniques for building controlled gates
+### Quantum Error Correction
 
-+ Barenco, A., Bennett, C. H., Cleve, R., DiVincenzo, D. P., Margolus, N., Shor, P., ... & Weinfurter, H. (1995). Elementary gates for quantum computation. Physical Review A, 52(5), 3457.
-+ Jones, C. (2013). Low-overhead constructions for the fault-tolerant Toﬀoli gate. Physical Review A, 87(2), 022328.
+* Michael Beverland, Vadym Kliuchnikov, and Eddie Schoute. *Surface code compilation via edge-disjoint paths*, PRX Quantum, 3:020342, (2022) .
+* Adam Paetznick, Christina Knapp, Nicolas Delfosse, Bela Bauer, Jeongwan Haah, Matthew B. Hastings, and Marcus P. da Silva. *Performance of planar floquet codes with majorana-based qubits*, 2022.
+* Austin G. Fowler, Matteo Mariantoni, John M. Martinis, and Andrew N. Cleland. *Surface codes: Towards practical large-scale quantum computation*, Phys. Rev. A, 86:032324, (2012).
+* Daniel Gottesman. *An introduction to quantum error correction and fault-tolerant quantum computation*. In Quantum information science and its contributions to mathematics, Proceedings of Symposia in Applied Mathematics, volume 68, pages 13–58, (2010).
 
-### Techniques for preparing quantum states
+### Resource Estimation
 
-+ Shende, V. V., Markov, I. L., & Bullock, S. S. (2004). Minimal universal two-qubit controlled-NOT-based circuits. Physical Review A, 69(6), 062321.
-+ Ozols, M., Roetteler, M., & Roland, J. (2013). Quantum rejection sampling. ACM Transactions on Computation Theory (TOCT), 5(3), 11.
-+ Grover, L., & Rudolph, T. (2002). Creating superpositions that correspond to eﬃciently integrable probability distributions. arXiv preprint quant-ph/0208112.
-+ Farhi, E., Goldstone, J., Gutmann, S., & Sipser, M. (2000). Quantum computation by adiabatic evolution. arXiv preprint quant-ph/0001106.
+* M. E. Beverland, P. Murali,1 M. Troyer, K. M. Svore, T. Hoefler, V. Kliuchnikov, G. H. Low, M. Soeken, A. Sundaram, and A. Vaschillo. *Assessing requirements to scale to practical quantum advantage*, arXiv:2211.07629v1, 2022.
+*  Isaac H. Kim, Ye-Hua Liu, Sam Pallister, William Pol, Sam Roberts, and Eunseok Lee. Fault-tolerant
+resource estimate for quantum chemical simulations: Case study on li-ion battery electrolyte molecules.
+Phys. Rev. Research, 4:023019, Apr 2022.
+* Giulia Meuli, Mathias Soeken, Martin Roetteler, and Thomas H¨aner. *Enabling accuracy-aware quantum compilers using symbolic resource estimation*, Proc. ACM Program. Lang., 4(OOPSLA), 2020.
 
-### Approaches for synthesizing circuits out of H, T and CNOT gates
+### Fault-tolerant quantum computing
 
-+ Kliuchnikov, V., Maslov, D., & Mosca, M. (2013). Asymptotically optimal approximation of single qubit unitaries by Cliﬀord and T circuits using a constant number of ancillary qubits. Physical Review Letters, 110(19), 190502.
-+ Ross, N. J., & Selinger, P. (2014). Optimal ancilla-free Cliﬀord+ T approximation of z-rotations. arXiv preprint arXiv:1403.2975.
-+ Kliuchnikov, V. (2013). Synthesis of unitaries with Cliﬀord+ T circuits. arXiv preprint arXiv:1306.3200.
-+ Jones, N. C., Whitﬁeld, J. D., McMahon, P. L., Yung, M. H., Van Meter, R., Aspuru-Guzik, A., & Yamamoto, Y. (2012). Faster quantum chemistry simulation on fault-tolerant quantum computers. New Journal of Physics, 14(11), 115023.
+* Hector Bombin, Chris Dawson, Ryan V. Mishmash, Naomi Nickerson, Fernando Pastawski, and Sam Roberts. *Logical blocks for fault-tolerant topological quantum computation*, 2021.
+* Antonio D. C´orcoles, Abhinav Kandala, Ali Javadi-Abhari, Douglas T. McClure, Andrew W. Cross, Kristan Temme, Paul D. Nation, Matthias Steffen, and Jay M. Gambetta. *Challenges and opportunities of near-term quantum computing systems*, Proceedings of the IEEE, 108(8):1338–1352 (2020).
+*  Michael Edward Beverland. *Toward realizable quantum computers*, PhD thesis, California Institute of Technology, 2016.
+* Peter W Shor. *Fault-tolerant quantum computation*. In Proceedings of 37th conference on foundations of computer science, pages 56–65. IEEE (1996).
 
-### Approaches for quantum arithmetic
+### Quantum chemistry
 
-+ Takahashi, Y., & Kunihiro, N. (2005). A linear-size quantum circuit for addition with no ancillary qubits. Quantum Information & Computation, 5(6), 440-448.
-+ Draper, T. G. (2000). Addition on a quantum computer. arXiv preprint quant-ph/0008033.
-+ Soeken, M., Roetteler, M., Wiebe, N., & De Micheli, G. (2017, March). Design automation and design space exploration for quantum computers. In 2017 Design, Automation & Test in Europe Conference & Exhibition (DATE) (pp. 470-475). IEEE.
+* J. Tilly, Hongxiang Chen, Shuxiang Cao, D. Picozzi, K. Setia, Ying Li, E. Grant, L. Wossnig, I. Rungger, G. Booth, J. Tennyson. *The Variational Quantum Eigensolver: a review of methods and best practices*, arXiv:2111.05176v3 [quant-ph], 2022.
+* V. von Burg, Guang Hao Low, T. Häner, D.S. Steiger, M. Reiher, M. Roetteler, and M. Troyer. *Quantum computing enhanced computational catalysis*. Phys. Rev. Research 3, 033055 (2021).
+* Bela Bauer, Sergey Bravyi, Mario Motta, and Garnet Kin-Lic Chan. *Quantum algorithms for quantum chemistry and quantum materials science*, Chemical Reviews, 120(22):12685–12717 (2020).
 
-### Methods for fast quantum sampling (amplitude amplification) and probability estimation
 
-+ Brassard, G., Hoyer, P., Mosca, M., & Tapp, A. (2002). Quantum amplitude ampliﬁcation and estimation. Contemporary Mathematics, 305, 53-74.
-+ Grover, L. K. (2005). Fixed-point quantum search. Physical Review Letters, 95(15), 150501.
-+ Berry, D. W., Childs, A. M., & Kothari, R. (2015, October). Hamiltonian simulation with nearly optimal dependence on all parameters. In Foundations of Computer Science (FOCS), 2015 IEEE 56th Annual Symposium on (pp. 792-809). IEEE.
 
-### Algorithms for quantum simulation
 
-+ Lloyd, S. (1996). Universal Quantum Simulators. [Science (New York, NY), 273(5278), 1073](http://doi.org/10.1126/science.273.5278.1073).
-+ Berry, D. W., Childs, A. M., Cleve, R., Kothari, R., & Somma, R. D. (2015). Simulating Hamiltonian dynamics with a truncated Taylor series. [Physical Review Letters, 114(9), 090502](http://doi.org/10.1103/PhysRevLett.114.090502).
-+ Low, G. H., & Chuang, I. L. (2017). [Optimal Hamiltonian simulation by quantum signal processing](https://arxiv.org/abs/1606.02685). [Physical Review Letters, 118(1), 010501](http://doi.org/10.1103/PhysRevLett.118.010501).
-+ Low, G. H., & Chuang, I. L. (2016). Hamiltonian simulation by qubitization. [arXiv preprint:1610.06546](https://arxiv.org/abs/1610.06546).
-+ Reiher, M., Wiebe, N., Svore, K. M., Wecker, D., & Troyer, M. (2017). Elucidating reaction mechanisms on quantum computers. [Proceedings of the National Academy of Sciences, 201619152](http://doi.org/10.1073/pnas.1619152114).
-+ Wiebe, N., Berry, D. W., Høyer, P., & Sanders, B. C. (2011). Simulating quantum dynamics on a quantum computer. [Journal of Physics A: Mathematical and Theoretical, 44(44), 445308](http://doi.org/10.1088/1751-8113/44/44/445308).
-+ Peruzzo, A., McClean, J., Shadbolt, P., Yung, M. H., Zhou, X. Q., Love, P. J., ... & Obrien, J. L. (2014). A variational eigenvalue solver on a photonic quantum processor. [Nature communications, 5](http://doi.org/10.1038/ncomms5213).
+
+
+

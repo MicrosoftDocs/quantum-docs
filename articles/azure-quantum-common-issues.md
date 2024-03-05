@@ -2,7 +2,7 @@
 author: bradben
 description: Troubleshoot common Azure Quantum issues.
 ms.author: brbenefield
-ms.date: 01/04/2024
+ms.date: 01/12/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting

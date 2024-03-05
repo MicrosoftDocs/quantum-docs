@@ -40,9 +40,7 @@ Therefore, the Resource Estimator takes a set of inputs, with pre-defined values
 - An [error budget](#error-budget), which is the overall allowed error, that is, the number of times the program is allowed to unsuccess.
 - [Constraints](#constraints) on the component-level, which are the number of logical cycles and the number of T factory copies.
 - [Distillation units](#distillation-units) to specify T factories distillation algorithms.
-
-> [!NOTE]
-> In addition to the target parameters, if the quantum program contains arguments the Resource Estimator can take operation arguments as input. For more information, see [Get the most out of the Azure Quantum Resource Estimator](xref:microsoft.quantum.work-with-resource-estimator#how-to-run-multiple-configurations-as-a-single-job).
+- [Pareto frontier estimation](#pareto-frontier-estimation) to run multiple estimates of number of qubits and runtime for the same algorithm.
 
 ## Physical qubit parameters
 
@@ -429,7 +427,7 @@ params.items.error_budget = 0.333 # error budget of 1/3
 qsharp.estimate("RunProgram()", params=params)
 ```
 
-Also, you can individually specify each component of the error budget. The sum of all values must be 1. If a quantum algorithm doesn't contain T states or rotations, then the values of `t_states` and `rotations` may be 0 respectively.
+Also, you can individually specify each component of the error budget. The sum of all values is the total error budget and must be between 0 and 1. If a quantum algorithm doesn't contain T states or rotations, then the values of `t_states` and `rotations` may be 0 respectively.
 
 The following code shows how to specify the error budget parameter with T states and rotations:
 
@@ -449,7 +447,7 @@ You can use the `"constraints"` class to apply constraints on the [T factory](xr
 |Parameter|Data type|Description|
 |----|----|-----|
 |`logical_depth_factor`|float| Control the execution time. If it has a value greater than 1, the initial number of logical cycles, also called *logical depth*, is multiplied by this number. By reducing `logical_depth_factor`, you can increase the number of invocation of the T factory in a given time, resulting in fewer T factory copies needed to produce the same number of T states. When you reduce the number of T factory copies, the algorithm runtime increases accordingly. The scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.|
-|`max_t_factories`|integer| Maximum number of T factory copies. The Resource Estimator determines the resources required by selecting the optimal number of T factory copies that minimizes the number of physical qubits used, without considering the time overhead. The `max_t_factories` parameter limits the maximum number of copies, and therefore adjust the number of logical cycles accordingly. For more information, see [T factory physical estimation](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).|
+|`max_t_factories`|integer| Maximum number of T factory copies. The Resource Estimator determines the resources required by selecting the optimal number of T factory copies that minimizes the number of physical qubits used, without considering the time overhead. The `max_t_factories` parameter limits the maximum number of copies, and therefore adjust the number of logical cycles accordingly. For more information, see [T factory physical estimation](xref:microsoft.quantum.concepts.tfactories#t-factories-in-the-azure-quantum-resource-estimator).|
 |`max_duration`|time string| Maximum runtime for the algorithm. The Resource Estimator accepts only one of `max_duration` or `max_physical_qubits` constraints at the time but not two. If `max_duration` is specified, the Resource Estimator tries to find the best estimate for `max_physical_qubits` among solutions constrained by the maximal number specified.|
 |`max_physical_qubits`|integer| Maximum number of physical qubits for the algorithm. The Resource Estimator accepts only one of `max_duration` or `max_physical_qubits` constraints at the time but not two. If `max_physical_qubits` is specified, the Resource Estimator tries to find the best estimate for `max_duration` among solutions constrained by the maximal number specified. |
 
@@ -504,7 +502,7 @@ qsharp.estimate("RunProgram()", params=
                         "outputErrorRateFormula": <string>,
                         "physicalQubitSpecification": <protocol specific parameters>, 
                         "logicalQubitSpecification": <protocol specific parameters>, 
-                        "logicalQubitSpecificationFirstRoundOverride": <protocol specific parameters>, // Only if "logicalQubitSpecification"
+                        "logicalQubitSpecificationFirstRoundOverride": <protocol specific parameters>, # Only if "logicalQubitSpecification"
                         }
                 })
 ```
@@ -554,11 +552,42 @@ The parameter `logical_qubit_specification_first_round_override` can be provided
 }
 ```
 
+## Pareto frontier estimation
+
+When estimating the resources of an algorithm, it's important to consider the tradeoff between the number of physical qubits and the runtime of the algorithm. You could consider allocation of as many physical qubits as possible to reduce the runtime of the algorithm. However, the number of physical qubits is limited by the number of physical qubits available in the quantum hardware. Understanding the tradeoff between runtime and system scale is one of the more important aspects of resource estimation. 
+
+The Pareto frontier estimation provides multiple estimates for the same algorithm, each showing tradeoffs between the number of qubits and the runtime.
+
+> [!NOTE]
+> If you run the Resource Estimator in Visual Studio Code using the **Q#: Calculate Resource Estimates** option, the Pareto frontier estimation is enabled by default.
+
+If you run the Resource Estimator in Python, you need to specify the `"estimateType"` parameter as `"frontier"`.
+
+```python
+result = qsharp.estimate("RunProgram()", params=
+                    {"qubitParams": { "name": "qubit_maj_ns_e4" },
+                    "qecScheme": { "name": "surface_code" },
+                    "estimateType": "frontier", # Pareto frontier estimation
+                    }
+                )
+```
+
+If you want to visualize the results of Pareto frontier estimation, you can use the `EstimatesOverview` function. This functions displays the results of frontier estimation in table and a space-time diagram. For more information, see [Space-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-time-diagram).
+
+```python
+from qsharp_widgets import EstimatesOverview
+
+EstimatesOverview(result)
+```
+
+> [!NOTE]
+> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
+
+
 ## Next steps
 
 - [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
-- [Learn how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works)
-- [Get the most out of the Resource Estimator](xref:microsoft.quantum.work-with-resource-estimator)
 - [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator)
-- [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
-- [Tutorial: Submit a QIR program to the Resource Estimator](xref:microsoft.quantum.tutorial.resource-estimator.qir)
+- [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
+- [Handle large programs with the Resource Estimator](xref:microsoft.quantum.resource-estimator-caching)
+- [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)

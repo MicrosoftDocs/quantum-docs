@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Build a Q# project that demonstrates fundamental quantum concepts like superposition by creating a quantum random number generator.
 ms.author: sonialopez
-ms.date: 12/04/2023
+ms.date: 02/13/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -130,7 +130,7 @@ In the Bloch sphere, the north pole represents the classical value **0** and the
 
 You can use this representation to visualize what the code is doing:
 
-1. First, start with a qubit initialized in the state **0** and apply an `H` operation to create an equal superposition in which the probabilities for **0** and **1** are the ame.
+1. First, start with a qubit initialized in the state **0** and apply an `H` operation to create an equal superposition in which the probabilities for **0** and **1** are the same.
 
     <img src="~/media/qrng-H.png" width="450" alt="A diagram showing the preparation of a qubit in superposition by applying the hadamard gate.">
 
@@ -142,7 +142,7 @@ Since the outcome of the measurement is random and the probabilities of measurin
 
 ### Write a complete random number generator
 
-1. First, you need to add the required Q# libraries to the program. For the complete random number generator, you need to include three Q# libraries: `Microsoft.Quantum.Math`, `Microsoft.Quantum.Intrinsic`, and `Microsoft.Quantum.Convert`.
+1. First, you need to add the required Q# namespaces to the program. For the complete random number generator, you need to include three Q# namespaces: `Microsoft.Quantum.Math`, `Microsoft.Quantum.Intrinsic`, and `Microsoft.Quantum.Convert`.
 
     ```qsharp
     open Microsoft.Quantum.Convert;
@@ -174,10 +174,10 @@ Since the outcome of the measurement is random and the probabilities of measurin
 
     Let's take a moment to review the new code.
 
-    * You need to calculate the number of bits needed to express integers up to `max`. The `BitSizeI` function from the `Microsoft.Quantum.Math` library converts an integer to the number of bits needed to represent it.
+    * You need to calculate the number of bits needed to express integers up to `max`. The `BitSizeI` function from the `Microsoft.Quantum.Math` namespace converts an integer to the number of bits needed to represent it.
     * The `SampleRandomNumberInRange` operation uses a `for` loop to generate random numbers until it generates one that's equal to or less than `max`. The `for` loop works exactly the same as a `for` loop in other programming languages.
     * The variable `bits` is a mutable variable. A mutable variable is one that can change during the computation. You use the `set` directive to change a mutable variable's value.
-    * The `ResultArrayAsInt` function comes from the `Microsoft.Quantum.Convert` library. This function converts the bit string to a positive integer.
+    * The `ResultArrayAsInt` function comes from the `Microsoft.Quantum.Convert` namespace. This function converts the bit string to a positive integer.
 
 1. Finally, you add an entry point. In this example, the `Main` operation is the entry point of the program. It calls the `GenerateRandomNumberInRange` operation to generate a random number between 0 and 100.
 
@@ -396,7 +396,6 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
         }
     }
     ```
-
 1. Before running the program, you need to set the target profile to **Unrestricted**. Select **View -> Command Palette**, search for QIR, select **Q#: Set the Azure Quantum QIR target profile**, and then select **Q#: unrestricted**. 
 1. To run your program, select **Run Q# File** from the play icon drop-down in the top-right, or press **Ctrl+F5**. The program runs the operation or function marked with the `@EntryPoint()` attribute on the default simulator.
 1. Your output will appear in the debug console.
@@ -404,6 +403,27 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
 
 > [!NOTE]
 > If the target profile is not set to **Unrestricted**, you will get an error when you run the program.
+
+
+#### Plot the frequency histogram
+
+Let's visualize the distribution of results obtained from running the quantum program multiple times. The frequency histogram helps visualize the probability distribution of these outcomes.
+
+1. Select **View -> Command Palette**, or press **Ctrl+Shift+P**, and type “histogram” which should bring up the **Q#: Run file and show histogram** option. Select this option to open the Q# histogram window.
+1. Enter a number of **shots** to execute the program, for example, 100 shots, and press **Enter**. The histogram will display in the Q# histogram window.
+1. Each bar in the histogram corresponds to a possible outcome, and its height represents the number of times that outcome is observed. The number of different results may differ each time you run the histogram.
+
+    :::image type="content" source="media/histogram-vscode-qrng.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code.":::
+
+    > [!TIP]
+    > You can zoom the histogram using the mouse scroll wheel or a trackpad gesture. When zoomed in, you can pan the chart by pressing 'Alt' while scrolling.
+
+1. Click on a bar to display the **percentage** of that outcome.
+1. Click the top-left **settings icon** to display options. You can display top 10 results, top 25 results, or all results. You can also sort the results from high to low, or low to high.
+
+    :::image type="content" source="media/histogram-vscode-qrng-tab.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code showing how to display settings.":::
+
+
 
 ### [Jupyter Notebook in VS Code](#tab/tabid-python)
 

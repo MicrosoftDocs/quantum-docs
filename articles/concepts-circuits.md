@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', target, targets]
-title: Quantum circuit diagrams
+title: Quantum Circuit Diagrams
 uid: microsoft.quantum.concepts.circuits
 ---
 
@@ -15,7 +15,7 @@ uid: microsoft.quantum.concepts.circuits
 
 This article covers conventions for quantum circuit diagrams. Some quantum algorithms are easier to understand in a circuit diagram than in the equivalent written matrix representation once you understand the visual conventions.
 
-With Azure Quantum, you can use the `azure-quantum` Python package to submit quantum circuits with [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit), [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq), and also [provider-specific formatted circuits](xref:microsoft.quantum.quickstarts.computing.provider).
+With Azure Quantum, you can submit quantum circuits with [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit), [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq), and also [provider-specific formatted circuits](xref:microsoft.quantum.quickstarts.computing.provider).
 
 > [!TIP]
 > Check out [quantum-viz.js](https://github.com/microsoft/quantum-viz.js/), a configurable tool for rendering quantum circuits. You can integrate the library *quantum-viz.js* (or *qviz*) into any project. It aims to be easily configurable while allowing complex user interactions, such as toggling between different measurement outcomes.
@@ -29,26 +29,25 @@ For example, the symbol
 
 :::image type="content" source="media\2.svg" alt-text="Symbol for a Hadamard operation acting on a single-qubit register.":::
 
-is a [Hadamard](xref:Microsoft.Quantum.Intrinsic.H) operation acting on a single-qubit register.
+is a Hadamard operation acting on a single-qubit register.
 
 In a quantum circuit, time flows from left to right. Quantum gates are ordered in chronological order with the left-most gate as the gate first applied to the qubits.
 In other words, if you picture the wires as holding the quantum state, the wires bring the quantum state through each of the gates in the diagram from left to right.
-That is to say 
+That is, the action of the quantum circuit
 
 :::image type="content" source="media\3.svg" alt-text="Diagram of quantum gates being applied left-to-right in a quantum circuit.":::
 
 is the unitary matrix $CBA$.
 
 > [!NOTE]
-> Matrix multiplication obeys the opposite convention: the right-most matrix is applied first. In quantum circuit diagrams, however, the left-most gate is applied first.
->This difference can at times lead to confusion, so it is important to note this significant difference between the linear algebraic notation and quantum circuit diagrams.
+> Matrix multiplication obeys the opposite convention: the right-most matrix is applied first. In quantum circuit diagrams, however, the left-most gate is applied first. This difference can at times lead to confusion, so it is important to note this significant difference between the linear algebraic notation and quantum circuit diagrams.
 
 ### Example: Unitary transformation
 
 Consider the unitary transformation $\text{ CNOT}_{01}(H\otimes 1)$.
 This gate sequence is of fundamental significance to quantum computing because it creates a maximally entangled two-qubit state:
 
-$$\mathrm{CNOT}_{01}(H\otimes 1)\ket{00} = \frac{1}{\sqrt{2}} \left(\ket{00} + \ket{11} \right),$$
+$\mathrm{CNOT}_{01}(H\otimes 1)\ket{00} = \frac{1}{\sqrt{2}} \left(\ket{00} + \ket{11} \right),$
 
 Operations with this or greater complexity are ubiquitous in quantum algorithms and quantum error correction.
 
@@ -56,7 +55,7 @@ The circuit diagram for preparing this maximally entangled quantum state is:
 
 :::image type="content" source="media\1.svg" alt-text="Circuit diagram for a maximally entangled two-qubit state.":::
 
-The symbol behind the Hadamard gate represents a [CNOT gate](xref:Microsoft.Quantum.Intrinsic.CNOT), where the black circle indicates the control qubit and the cross within a circle indicates the target qubit. This quantum circuit is depicted as acting on two qubits (or equivalently two registers consisting of one qubit).
+The symbol behind the Hadamard gate represents a CNOT gate, where the black circle indicates the control qubit and the cross within a circle indicates the target qubit. This quantum circuit is depicted as acting on two qubits (or equivalently two registers consisting of one qubit).
 
 ### Inputs and outputs of quantum circuits
 
@@ -80,14 +79,14 @@ This means that you can get an intuition about the data flow for a large quantum
 
 The action of a quantum singly controlled gate, denoted $\Lambda(G)$, where a single qubit's value controls the application of $G$, can be understood by looking at the following example of a product state input:
 
-$$\Lambda(G) (\alpha \ket{0} + \beta \ket{1}) \ket{\psi} = \alpha \ket{0} \ket{\psi} + \beta \ket{1} G\ket{\psi}$$
+$\Lambda(G) (\alpha \ket{0} + \beta \ket{1}) \ket{\psi} = \alpha \ket{0} \ket{\psi} + \beta \ket{1} G\ket{\psi}$
 
 That is to say, the controlled gate applies $G$ to the register containing $\psi$ if and only if the control qubit takes the value $1$. In general, such controlled operations are described in circuit diagrams as
 
 :::image type="content" source="media\5.svg" alt-text="Circuit diagram of a singly controlled gate.":::
 
 Here the black circle denotes the quantum bit on which the gate is controlled and a vertical wire denotes the unitary that is applied when the control qubit takes the value $1$.
-For the special cases where $G=X$ and $G=Z$, the following notation is used to describe the controlled version of the gates (note that the controlled-X gate is the [CNOT gate](xref:Microsoft.Quantum.Intrinsic.CNOT)):
+For the special cases where $G=X$ and $G=Z$, the following notation is used to describe the controlled version of the gates (note that the controlled-X gate is the CNOT gate):
 
 :::image type="content" source="media\6.svg" alt-text="Circuit diagram for special cases of controlled gates.":::
 
@@ -109,7 +108,7 @@ Specifically, such a subcircuit looks like:
 
 :::image type="content" source="media\7.svg" alt-text="Symbol representing a measurement operation.":::
 
-Q# implements a [Measure operator](xref:Microsoft.Quantum.Intrinsic.Measure) for this purpose. See the [section on measurements](xref:microsoft.quantum.libraries.overview.standard.prelude#measurements) for more information.
+Q# implements a Measure operator for this purpose. 
 
 Similarly, the subcircuit
 
@@ -120,7 +119,6 @@ gives a classically controlled gate, where $G$ is applied conditioned on the cla
 ## Teleportation circuit diagram
 
 Quantum teleportation is perhaps the best quantum algorithm for illustrating these components.
-You can learn hands-on with the corresponding [Quantum Kata](xref:microsoft.quantum.tutorial-qdk.katas).
 
 Quantum teleportation is a method for moving data within a quantum computer (or even between distant quantum computers in a quantum network) through the use of entanglement and measurement.
 Interestingly, it is actually capable of moving a quantum state, say the value in a given qubit, from one qubit to another, without even knowing what the qubit's value is.
