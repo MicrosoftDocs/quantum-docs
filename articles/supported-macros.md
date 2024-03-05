@@ -22,6 +22,6 @@ no-loc: ['Q#', '$$v', Quantum Development Kit]
 <tr><td>variance</td><td>\variance (x)</td><td>$\variance (x)$</td></tr>
 </table>
 
-[Workspace](xref:azure.quantum.workspace) class
+[Workspace](xref:azure.quantum.Workspace) class
 [All](xref:Qdk.Microsoft.Quantum.Arrays.All) function
 [Pauli](xref:qsharp.Pauli) function
