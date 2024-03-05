@@ -24,3 +24,4 @@ no-loc: ['Q#', '$$v', Quantum Development Kit]
 
 [Workspace](xref:azure.quantum.workspace) class
 [All](xref:Qdk.Microsoft.Quantum.Arrays.All) function
+[Pauli](xref:qsharp.Pauli) function
