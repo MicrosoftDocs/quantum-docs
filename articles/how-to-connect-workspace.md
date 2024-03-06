@@ -62,7 +62,7 @@ Once you have created an Azure Quantum workspace, you can connect to it using th
 
 You can also use a connection string to specify the connection parameters to an Azure Quantum Workspace. You might use a connection string in the following scenarios:
 
-- You wan to share the workspace access with others who don't have an azure account.
+- You want to share the workspace access with others who don't have an Azure account.
 - You want to share the workspace access with others for a limited time.
 - You cannot use Azure Active Directory (AAD) due to company policies.
 
