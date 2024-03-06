@@ -23,5 +23,6 @@ no-loc: ['Q#', '$$v', Quantum Development Kit]
 </table>
 
 - [All](xref:Qdk.Microsoft.Quantum.Arrays.All) function (API)
+- [Math](xref:Qdk.Microsoft.Quantum.Unstable.Arithmetic.ApplyIfEqualL) new API
 - [Workspace](xref:azure.quantum.Workspace) Python class (azure-quantum)
 - [Pauli](xref:qsharp.Pauli) Python function (qsharp)
