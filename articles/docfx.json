@@ -42,7 +42,7 @@
       "show_latex": true,
       "ms.service": "azure-quantum",
       "ms.devlang": "qsharp",
-      "ms.topic": "conceptual",
+      "ms.topic": "concept",
       "searchScope": ["q#", "qsharp", "Quantum"],
       "feedback_system": "Standard",
       "feedback_product_url": "https://feedback.azure.com/d365community/forum/8616edd6-9f3b-ec11-8c62-00224825a012",
