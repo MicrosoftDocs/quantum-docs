@@ -78,7 +78,7 @@ print(workspace.get_targets())
 ```
 
 > [!TIP]
-> Every Azure Quantum workspace has a **primary and secondary** keys and connection strings. If you want to allow access to your workspace to others, you can share your secondary key and you use your primary for your own services. This way, if one of your partners would abuse the key you could replace it without having downtime in your own services.
+> Every Azure Quantum workspace has a **primary and secondary** keys and connection strings. If you want to allow access to your workspace to others, you can share your secondary key and you use your primary for your own services. This way, you can replace the secondary key as needed without having downtime in your own services.
 
 ## Manage keys and connection strings
 
