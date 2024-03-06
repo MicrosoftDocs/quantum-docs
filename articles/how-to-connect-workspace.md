@@ -64,7 +64,7 @@ You can also use a connection string to specify the connection parameters to an 
 
 - You want to share the workspace access with others who don't have an Azure account.
 - You want to share the workspace access with others for a limited time.
-- You cannot use Azure Active Directory (AAD) due to company policies.
+- You cannot use Microsoft Entra ID due to company policies.
 
 You can create a `Workspace` object by calling `from_connection_string`.
 
