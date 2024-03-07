@@ -13,9 +13,9 @@ uid: microsoft.quantum.how-to.connect-workspace
 
 # Different ways to connect to your Azure Quantum workspace
 
-Once you have created an Azure Quantum workspace, you can connect to it and submit your code using the `azure-quantum` Python package. The `azure-quantum` package provides a [`Workspace` class](xref:azure.quantum.Workspace) that represents an Azure Quantum workspace.
+Once you have created an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace), you can connect to it and submit your code using the `azure-quantum` Python package. The `azure-quantum` package provides a [`Workspace` class](xref:azure.quantum.Workspace) that represents an Azure Quantum workspace.
 
-For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+For other ways to access to your workspace, see [Authenticate using a service principal](xref:microsoft.quantum.optimization.authenticate-service-principal) or [Authenticate using a managed identity](xref:microsoft.quantum.optimization.authenticate-managed-identity).
 
 ## Prerequisites
 
@@ -33,7 +33,6 @@ For more information, see [Create an Azure Quantum workspace](xref:microsoft.qua
     - [Install Azure CLI on Linux](/cli/azure/install-azure-cli-linux)
     - [Install Azure CLI on macOS](/cli/azure/install-azure-cli-macos)
 
-
 ## Connect with a connection string
 
 You can use a connection string to specify the connection parameters to an Azure Quantum Workspace. You might use a connection string in the following scenarios:
@@ -49,7 +48,7 @@ You can use a connection string to specify the connection parameters to an Azure
 
 1. Log in to the [Azure portal](https://portal.azure.com/) and select your Azure Quantum workspace.
 1. On the left panel, navigate to **Operations > Access keys**.
-1. **Access Keys** have to be enabled. If Access Keys are disabled, you need to enable them first.
+1. **Access Keys** have to be enabled. If Access Keys are disabled, you need to [enable them](xref:microsoft.quantum.how-to.manage-access-keys) first. See how to do it in [Manage your Access Keys](xref:microsoft.quantum.how-to.manage-access-keys).
 1. Click on the **Copy** icon to copy the connection string. You can select either the primary or secondary connection string.
 
     :::image type="content" source="media/connection-string-copy.png" alt-text="Screenshot of Azure portal showing how to copy the connection strings.":::
@@ -59,7 +58,7 @@ You can use a connection string to specify the connection parameters to an Azure
 
 ## Use a connection string to access your Azure Quantum workspace
 
-Create a `Workspace` object to connect to your Azure Quantum workspace. When creating a `Workspace` object, you have two options for identifying your Azure Quantum workspace:
+Create a `Workspace` object to connect to your Azure Quantum workspace. When creating a `Workspace` object, you have two options for identifying your Azure Quantum workspace.
 
 - You can create a `Workspace` object by calling `from_connection_string`.
 
@@ -90,8 +89,10 @@ Create a `Workspace` object to connect to your Azure Quantum workspace. When cre
     print(workspace.get_targets()) 
     ```
 
+For more information, see [Manage your Access Keys](xref:microsoft.quantum.how-to.manage-access-keys).
+
 > [!WARNING]
-> Storing your account access keys or connection string in clear text presents a security risk and is not recommended. Store your account keys in an encrypted format, or migrate your applications to use Microsoft Entra authorization.
+> Storing your account access keys or connection string in clear text presents a security risk and is not recommended. Store your account keys in an encrypted format, or migrate your applications to use Microsoft Entra authorization for access to your Azure Quantum workspace.
 
 ## Connect with workspace parameters
 
@@ -116,31 +117,31 @@ You can find the workspace parameters in the overview of your Azure Quantum work
 
 ### [Python](#tab/tabid-python)
 
-Create a `Workspace` object to connect to your Azure Quantum workspace. When creating a `Workspace` object, you have two options for identifying your Azure Quantum workspace:
+Create a `Workspace` object to connect to your Azure Quantum workspace. When creating a `Workspace` object, you have two options for identifying your Azure Quantum workspace.
 
-- Specify the location and resource ID (recommended): 
+- You can specify the location and resource ID (recommended): 
 
-```python
-from azure.quantum import Workspace 
+    ```python
+    from azure.quantum import Workspace 
+    
+    workspace = Workspace(  
+        resource_id = "", # Add the resource ID of your workspace
+        location = "" # Add the location of your workspace (for example "westus")
+        )
+    ```
 
-workspace = Workspace(  
-    resource_id = "", # Add the resource ID of your workspace
-    location = "" # Add the location of your workspace (for example "westus")
-    )
-```
+- You can specify the location, subscription ID, resource group, and workspace name: 
 
-- Specify the location, subscription ID, resource group, and workspace name: 
-
-```python
-from azure.quantum import Workspace 
-
-workspace = Workspace(  
-    subscription_id = "", # Add the subscription ID of your workspace
-    resource_group = "", # Add the resource group of your workspace
-    workspace_name = "", # Add the name of your workspace
-    location = "" # Add the location of your workspace (for example "westus")
-    )
-```
+    ```python
+    from azure.quantum import Workspace 
+    
+    workspace = Workspace(  
+        subscription_id = "", # Add the subscription ID of your workspace
+        resource_group = "", # Add the resource group of your workspace
+        workspace_name = "", # Add the name of your workspace
+        location = "" # Add the location of your workspace (for example "westus")
+        )
+    ```
 
 ### [Azure CLI](#tab/tabid-azurecli)
 
@@ -167,3 +168,10 @@ You can use the Azure Command-Line Interface (Azure CLI) to connect t your works
 ***
 
 
+## Next steps
+
+- [Manage quantum workspaces with Azure CLI](xref:microsoft.quantum.workspaces-cli)
+- [Share access to your Azure Quantum workspace](xref:microsoft.quantum.how-to.share-access-workspace)
+- [Manage quantum workspaces with the Azure Resource Manager](xref:microsoft.quantum.workspaces-arm)
+- [Authenticate using a service principal](xref:microsoft.quantum.optimization.authenticate-service-principal)
+- [Authenticate using a managed identity](xref:microsoft.quantum.optimization.authenticate-managed-identity)

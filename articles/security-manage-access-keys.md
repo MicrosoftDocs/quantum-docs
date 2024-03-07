@@ -11,12 +11,12 @@ title: Manage Access Keys and Connection Strings
 uid: microsoft.quantum.how-to.manage-access-keys
 ---
 
-# Manage your keys and connection strings
+# Manage your Access Keys 
 
 Access keys are used to authenticate and authorize access to your Azure Quantum workspace. In this article, you learn how to enable or disable the access keys for your Azure Quantum workspace. You can also regenerate new keys to ensure the security of your workspace.
 
 > [!WARNING]
-> Storing your account access keys or connection string in clear text presents a security risk and is not recommended. Store your account keys in an encrypted format, or migrate your applications to use Microsoft Entra authorization
+> Storing your account access keys or connection string in clear text presents a security risk and is not recommended. Store your account keys in an encrypted format, or migrate your applications to use Microsoft Entra authorization for access to your Azure Quantum workspace.
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ Access keys are used to authenticate and authorize access to your Azure Quantum 
     - [Install Azure CLI on Linux](/cli/azure/install-azure-cli-linux)
     - [Install Azure CLI on macOS](/cli/azure/install-azure-cli-macos)
 
-## Manage Access Keys
+## Manage your keys and connection strings
 
 ### [Azure portal](#tab/tabid-portal)
 
