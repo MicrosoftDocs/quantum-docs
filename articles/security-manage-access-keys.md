@@ -50,7 +50,7 @@ You can manage access keys and connection strings for your Azure Quantum workspa
     :::image type="content" source="media/connection-string-enable.png" alt-text="Screenshot of Azure portal showing how to enable Access Keys to use connection strings.":::
 
 > [!IMPORTANT]
-> When Access Keys is disabled, all request using connection strings or access keys are unauthorized. You can still use the workspace parameters to connect to your workspace.
+> When Access Keys are **disabled**, all request using connection strings or access keys are unauthorized. You can still use the workspace parameters to connect to your workspace.
 
 #### Regenerate new access keys
 

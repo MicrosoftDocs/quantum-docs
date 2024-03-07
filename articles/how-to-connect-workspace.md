@@ -48,13 +48,13 @@ You can use a connection string to specify the connection parameters to an Azure
 
 1. Log in to the [Azure portal](https://portal.azure.com/) and select your Azure Quantum workspace.
 1. On the left panel, navigate to **Operations > Access keys**.
-1. **Access Keys** have to be enabled. If Access Keys are disabled, you need to [enable them](xref:microsoft.quantum.how-to.manage-access-keys) first. See how to do it in [Manage your Access Keys](xref:microsoft.quantum.how-to.manage-access-keys).
+1. **Access Keys** have to be enabled. If Access Keys are disabled, you need to enable them first. See how to do it in [Manage your Access Keys](xref:microsoft.quantum.how-to.manage-access-keys).
 1. Click on the **Copy** icon to copy the connection string. You can select either the primary or secondary connection string.
 
     :::image type="content" source="media/connection-string-copy.png" alt-text="Screenshot of Azure portal showing how to copy the connection strings.":::
 
 > [!IMPORTANT]
-> When Access Keys is disabled, all request using connection strings or access keys are unauthorized. You can still use the workspace parameters to connect to your workspace.
+> When Access Keys are disabled, all request using connection strings or access keys are unauthorized. You can still use the workspace parameters to connect to your workspace.
 
 ### Use a connection string to access your Azure Quantum workspace
 
@@ -89,7 +89,8 @@ Create a `Workspace` object to connect to your Azure Quantum workspace. When cre
     print(workspace.get_targets()) 
     ```
 
-For more information, see [Manage your Access Keys](xref:microsoft.quantum.how-to.manage-access-keys).
+For more information about how to enable/disable and regenerate your keys, see [Manage your Access Keys](xref:microsoft.quantum.how-to.manage-access-keys).
+
 
 > [!WARNING]
 > Storing your account access keys or connection string in clear text presents a security risk and is not recommended. Store your account keys in an encrypted format, or migrate your applications to use Microsoft Entra authorization for access to your Azure Quantum workspace.
