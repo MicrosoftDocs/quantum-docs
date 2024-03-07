@@ -24,12 +24,6 @@ In this article, you learn how to enable or disable the access keys for your Azu
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The latest version of the Azure Quantum `azure-quantum` package.
-
-    ```bash
-    python -m pip install --upgrade azure-quantum
-    ```
-
 - If you use Azure CLI, you must have the latest version. For the installation instructions, see:
 
     - [Install Azure CLI on Windows](/cli/azure/install-azure-cli-windows)
