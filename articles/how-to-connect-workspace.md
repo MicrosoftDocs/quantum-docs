@@ -56,7 +56,7 @@ You can use a connection string to specify the connection parameters to an Azure
 > [!IMPORTANT]
 > When Access Keys is disabled, all request using connection strings or access keys are unauthorized. You can still use the workspace parameters to connect to your workspace.
 
-## Use a connection string to access your Azure Quantum workspace
+### Use a connection string to access your Azure Quantum workspace
 
 Create a `Workspace` object to connect to your Azure Quantum workspace. When creating a `Workspace` object, you have two options for identifying your Azure Quantum workspace.
 
@@ -109,13 +109,14 @@ Every Azure Quantum workspace has a unique set of parameters that you can use to
 You can find the workspace parameters in the overview of your Azure Quantum workspace in Azure portal. 
 
 1. Log in to your Azure account, <https://portal.azure.com>,
-1. Select your Azure Quantum workspace, and navigate to **Overview**. Copy the parameters in the fields. 
+1. Select your Azure Quantum workspace, and navigate to **Overview**. 
+1. Copy the parameters in the fields. 
 
     ![How to retrieve the resource ID and location from an Azure Quantum workspace](media/azure-quantum-resource-id.png)
 
-## Use the workspace parameters to connect to your Azure Quantum workspace
+### Use the workspace parameters to connect to your Azure Quantum workspace
 
-### [Python](#tab/tabid-python)
+#### [Python](#tab/tabid-python)
 
 Create a `Workspace` object to connect to your Azure Quantum workspace. When creating a `Workspace` object, you have two options for identifying your Azure Quantum workspace.
 
@@ -143,7 +144,7 @@ Create a `Workspace` object to connect to your Azure Quantum workspace. When cre
         )
     ```
 
-### [Azure CLI](#tab/tabid-azurecli)
+#### [Azure CLI](#tab/tabid-azurecli)
 
 You can use the Azure Command-Line Interface (Azure CLI) to connect t your workspace. For more information, see [Manage quantum workspaces with the Azure CLI](xref:microsoft.quantum.workspaces-cli).
 
