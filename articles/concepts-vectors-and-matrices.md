@@ -38,6 +38,7 @@ Two vectors can be multiplied together through the [*inner product*](https://en.
 
 <!-- the next formula displays "\langleu" in some langs, or "missing \begin{matrix}.." in some others. I added the \left and \right prefixes     -->
 <!--  Portuguese now displays "Missing or unrecognized delimiter for \left" Remove the \left, \right and make a single $, as below -->
+<!-- Portugues now works, fr-fr and zn-ch still show "Missing or unrecognized delimiter for \left" -->
 
 $$
 \left\langle u, v\right\rangle = u^\dagger v= \begin{bmatrix}u_1^* & \cdots & u_n^* \end{bmatrix} \begin{bmatrix}v_1\\\\ \vdots\\\\ v_n \end{bmatrix} =  u\_1^{\*} v_1 + \cdots + \_n^{\*} v\_n.
@@ -124,7 +125,7 @@ where the entries of $P$ are $P_{ik} = \sum_j M_{ij}N_{jk}$. For example, the en
 All the matrices we consider will either be square matrices, where the number of rows and columns are equal, or vectors, which corresponds to only $1$ column. One special square matrix is the [*identity matrix*](https://en.wikipedia.org/wiki/Identity_matrix), denoted $\mathbb{I}$, which has all its diagonal elements equal to $1$ and the remaining elements equal to $0$:
 
 <!-- this displays almost correctly in all langs, but the alignment is off. Set to single $ to test -->
-<!-- Port still out of alignment and doesn't recognize the \mathbb{I} (raw code)-->
+<!-- Port aligns now but doesn't recognize the \mathbb{I} (raw code)-->
 
 $\mathbb{I}=\begin{bmatrix} 1 ~~ 0 ~~ \cdots ~~ 0\\\\ 0 ~~ 1 ~~ \cdots ~~ 0\\\\ ~~ \ddots\\\\ 0 ~~ 0 ~~ \cdots ~~ 1 \end{bmatrix}.$
 
@@ -196,7 +197,7 @@ $$
     \end{align}
 $$
 
-<!-- this works in all langs -->
+<!-- this works in portuguese, not fr-fr or zn-ch  -->
 
 This is better demonstrated with an example:
 $$
@@ -235,7 +236,7 @@ $$
 A final useful notational convention surrounding tensor products is that, for any vector $v$ or matrix $M$, $v^{\otimes n}$ or $M^{\otimes n}$ is short hand for an $n$-fold repeated tensor product. For example:
 
 <!-- all non-english langs show "extra close brace or missing opening brace". zh-cn shows some of the matrices, but each on a separate line -->
-<!-- Compare to tensor product exameple that works, these are the same element types and structure -->
+<!-- Portugues works now, but fr-fr and zn-ch show "extra close brace or missing opening brace" -->
 
 \begin{align}
 &\begin{bmatrix} 1 \\\\ 0 \end{bmatrix}^{\otimes 1} = \begin{bmatrix} 1 \\\\ 0 \end{bmatrix}, \qquad\begin{bmatrix} 1 \\\\ 0 \end{bmatrix}^{\otimes 2} = \begin{bmatrix} 1 \\\\ 0 \\\\0 \\\\0 \end{bmatrix}, \qquad\begin{bmatrix} 1 \\\\ -1 \end{bmatrix}^{\otimes 2} = \begin{bmatrix} 1 \\\\ -1 \\\\-1 \\\\1 \end{bmatrix},
