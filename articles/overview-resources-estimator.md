@@ -48,7 +48,7 @@ When the Resource Estimator models the physical qubit assumptions, it uses two d
 
 You can choose from six predefined qubit parameters, four of which have gate-based instruction sets and two with a Majorana instruction set. These qubit models cover a range of operation times and error rates, enabling sufficient exploration of the resource costs needed to enable practical quantum applications.
 
-|Qubit model|Python identifier|Description|
+|Qubit parameter|Python API class|Description|
 |----|----|-----|
 |`"qubit_gate_ns_e3"` , `"qubit_gate_ns_e4"`|`GATE_NS_E3` , `GATE_NS_E4`|Operation times and fidelities may correspond to future versions of [superconducting transmon qubits](https://arxiv.org/abs/2003.00024), or [spin qubits](https://arxiv.org/abs/2111.11937), which typically have operation times in the nanosecond regime. For these qubits, gate and measurement operations are assumed to take 50 ns and 100 ns, respectively. Single-qubit and two-qubit gate error rates are assumed to be $10^{-3}$ as a realistic target, and $10^{-4}$ as an optimistic target for a scaled up system.|
 |`"qubit_gate_us_e3"` , `"qubit_gate_us_e4"`|`GATE_US_E3` , `GATE_US_E4`|Operation times and fidelities may correspond to future versions of qubits based on [ions](https://arxiv.org/abs/1701.04195), which typically have operations times in the microsecond regime. Based on typical assumptions for ion qubits, gate and measurement operations are assumed to take 100 µs. Error rate for single-qubit Clifford gates is $10^{-3}$ as a realistic target and $10^{-4}$ as an optimistic target, while the error rate for single-qubit non-Clifford gates (T gate) is $10^{-6}$. For two-qubit gates, the error rate is $10^{-3}$ as a realistic target and $10^{-4}$ as an optimistic target. |
@@ -159,7 +159,7 @@ qsharp.estimate("RunProgram()", params=
                 })
 ```
 
-You can also pass a list of estimation parameters to the `EstimatorParams` class. For example, to select `MAJ_NS_E6` qubit parameter, write:
+You can also pass the qubit parameters to the [`EstimatorParams` class](xref:qsharp.estimator.EstimatorParams) using [`QubitParams`](xref:qsharp.estimator.QubitParams). For example, to select `MAJ_NS_E6` qubit parameter, write:
 
 ```python
 from qsharp.estimator import EstimatorParams, QubitParams
@@ -283,7 +283,7 @@ where $d$ is the code distance, $p$ is the physical error rate, and $p^\*$ is th
 
 In particular, $p = {}$ max(`one_qubit_measurement_error_rate`, `one_qubit_gate_error_rate`, `two_qubit_gate_error_rate`) for qubit parameters with a gate-based instruction set, and $p = {}$ max(`one_qubit_measurement_error_rate`, `two_qubit_joint_measurement_error_rate`) for qubit parameters with a Majorana instruction set. QEC schemes typically have an error rate threshold $p^\*$ below which error correction suppresses errors.
 
-|QEC protocol|Python identifier|Description|
+|QEC protocol|Python API class|Description|
 |----|----|-----|
 |"`surface_code`"|`SURFACE_CODE`| The gate-based surface code is based on [arXiv:1208.0928](https://arxiv.org/abs/1208.0928) and [arXiv:1009.3686](https://arxiv.org/abs/1009.3686). The Majorana surface code is based on [arXiv:1909.03002](https://arxiv.org/abs/1909.03002) and [arXiv:2007.00307](https://arxiv.org/abs/2007.00307).|
 |"`floquet_code`"| `FLOQUET_CODE`|Only for Majorana qubits. The floquet code is based on [arXiv:2202.11829](https://arxiv.org/abs/2202.11829).|
@@ -346,7 +346,7 @@ qsharp.estimate("RunProgram()", params=
                 })
 ```
 
-You can also pass a list of estimation parameters to the `EstimatorParams` class. For example, to select the floquet code, write:
+You can also pass a list of estimation parameters to the [`EstimatorParams` class](xref:qsharp.estimator.EstimatorParams) using the [`QECScheme` class](xref:qsharp.estimator.QECScheme). For example, to select the floquet code, write:
 
 ```python
 from qsharp.estimator import EstimatorParams, QubitParams, QECScheme,
@@ -416,7 +416,7 @@ qsharp.estimate("RunProgram()", params=
                 })
 ```
 
-You can also pass the error budget parameters to the `EstimatorParams` class.
+You can also pass the error budget parameters to the [`EstimatorParams` class](xref:qsharp.estimator.EstimatorParams).
 
 ```python
 from qsharp.estimator import EstimatorParams, QubitParams, QECScheme,
@@ -471,7 +471,7 @@ params.constraints.max_t_factories = 10
 
 ## Distillation units
 
-You can provide specifications for T factories distillation algorithms with the `DistillationUnitSpecification` class. The specification can be either predefined or custom. You can specify a predefined specification by selecting the distillation unit name: `15-1 RM` or `15-1 space-efficient`.
+You can provide specifications for T factories distillation algorithms with the [`DistillationUnitSpecification` class](xref:qsharp.estimator.DistillationUnitSpecification). The specification can be either predefined or custom. You can specify a predefined specification by selecting the distillation unit name: `15-1 RM` or `15-1 space-efficient`.
 
 ```python
 from qsharp.estimator import EstimatorParams, DistillationUnitSpecification
@@ -509,7 +509,7 @@ qsharp.estimate("RunProgram()", params=
 
 All numeric parameters are expected to be positive. The `displayName` specifies how the distillation unit will be displayed in output results.
 
-The following code shows how to specify the distillation unit parameters for a quantum algorithm using the `DistillationUnitSpecification` class.
+The following code shows how to specify the distillation unit parameters for a quantum algorithm using the [`DistillationUnitSpecification` class](xref:qsharp.estimator.DistillationUnitSpecification) and the [`ProtocolSpecificDistillationUnitSpecification` class](xref:qsharp.estimator.ProtocolSpecificDistillationUnitSpecification).
 
 ```python
 from qsharp.estimator import EstimatorParams, DistillationUnitSpecification, ProtocolSpecificDistillationUnitSpecification
