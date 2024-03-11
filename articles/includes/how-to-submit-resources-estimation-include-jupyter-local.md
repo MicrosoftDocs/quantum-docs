@@ -547,7 +547,7 @@ The Azure Quantum Resource Estimator allows you to run multiple configuration of
     |Majorana ns, 10⁻⁶	|223	|3.64M	|4.70M	|5	|19|	63.02 %|	79.60k|	148.67M|	5 secs|
 
 
-1. You can also construct a list of estimation parameters using the `EstimatorParams` object.
+1. You can also construct a list of estimation parameters using the [`EstimatorParams` class](xref:qsharp.estimator.EstimatorParams).
 
     ```python
     from qsharp.estimator import EstimatorParams, QubitParams, QECScheme, LogicalCounts

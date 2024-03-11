@@ -86,7 +86,7 @@ result_batch = qsharp.estimate("RunProgram()", params=
 result_batch.summary_data_frame(labels=["Gate-based ns, 10⁻³", "Majorana ns, 10⁻⁶"])
 ```
 
-You can also construct a list of estimation target parameters using the `EstimatorParams` object. The following code shows how to submit six configurations of target parameters as a single job.
+You can also construct a list of estimation target parameters using the [`EstimatorParams` class](xref:qsharp.estimator.EstimatorParams). The following code shows how to submit six configurations of target parameters as a single job.
 
 ```python
 from qsharp.estimator import EstimatorParams, QubitParams, QECScheme
@@ -182,7 +182,7 @@ In the same notebook of your PyQIR program, add a new cell and run:
     params.arguments["eps"] = 0.001
     ```
 
-1. Next, you can pass the qubit parameters for each configuration by specifying the item in `items[]`, and then use `qubit_params.name` or `qec_scheme.name`.
+1. Next, you can pass the qubit parameters for each configuration by specifying the item in `items[]`. Use `qubit_params.name` and specify the [`QubitParams` class](xref:qsharp.estimator.QubitParams), for example `GATE_US_E3`, and use `qec_scheme.name` and then specify the [`QECScheme` class](xref:qsharp.estimator.QECScheme), for example `FLOQUET_CODE`. 
 
     ```python
     params.items[0].qubit_params.name = QubitParams.GATE_US_E3
