@@ -5,7 +5,7 @@ ms.date: 07/17/2023
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: overview
+ms.topic: how-to
 no-loc: ['Q#', '$$v', Variational Quantum Eigensolver, Quantum Approximate Optimization Algorithm, target, targets]
 title: Introduction to sessions
 uid: microsoft.quantum.hybrid.interactive
@@ -98,7 +98,6 @@ This example shows how to create a session with Q# inline code using hosted Note
 
     ```python
     from qiskit import QuantumCircuit
-    from qiskit.tools.monitor import job_monitor
     from azure.quantum import Workspace
     from azure.quantum.qiskit import AzureQuantumProvider
 
@@ -131,11 +130,11 @@ This example shows how to create a session with Q# inline code using hosted Note
     ```python
     with backend.open_session(name="Qiskit Session") as session:
         job1 = backend.run(circuit=circuit, shots=100, job_name="Job 1") # First job submission
-        job_monitor(job1)
+        job1.wait_for_final_state()
         job2 = backend.run(circuit=circuit, shots=100, job_name="Job 2") # Second job submission
-        job_monitor(job2)
+        job2.wait_for_final_state()
         job3 = backend.run(circuit=circuit, shots=100, job_name="Job 3") # Third job submission
-        job_monitor(job3)
+        job3.wait_for_final_state()
 
     session_jobs = session.list_jobs()
     [session_job.details.name for session_job in session_jobs]

@@ -44,7 +44,6 @@ Click **+ Code** to add a new cell, then add and run the following code:
 ```python
 from qiskit import QuantumCircuit
 from qiskit.visualization import plot_histogram
-from qiskit.tools.monitor import job_monitor
 from azure.quantum.qiskit import AzureQuantumProvider
 ```
 
@@ -134,7 +133,7 @@ job_id = job.id()
 print("Job id", job_id)
 
 # Monitor job progress and wait until complete:
-job_monitor(job)
+job.wait_for_final_state()
 ```
 
 The job status is displayed in realtime:
@@ -237,7 +236,7 @@ job_id = job.id()
 print("Job id", job_id)
 
 # Monitor job progress and wait until complete:
-job_monitor(job)
+job.wait_for_final_state()
 ```
 
 ```output
@@ -287,7 +286,7 @@ job_id = job.id()
 print("Job id", job_id)
 
 # Monitor job progress and wait until complete:
-job_monitor(job)
+job.wait_for_final_state()
 ```
 
 The job status is displayed in real time:
@@ -396,7 +395,7 @@ job_id = job.id()
 print("Job id", job_id)
 
 # Monitor job progress and wait until complete:
-job_monitor(job)
+job.wait_for_final_state()
 ```
 
 ```output
@@ -447,7 +446,7 @@ job_id = job.id()
 print("Job id", job_id)
 
 # Monitor job progress and wait until complete:
-job_monitor(job)
+job.wait_for_final_state()
 ```
 
 The job status is displayed in realtime:
@@ -533,7 +532,7 @@ job_id = job.id()
 print("Job id", job_id)
 
 # Monitor job progress and wait until complete:
-job_monitor(job)
+job.wait_for_final_state()
 ```
 
 ```output

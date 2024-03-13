@@ -224,11 +224,11 @@ backend.run(circuit=circuit, shots=100, job_name="Job 1")
 
 with backend.open_session(name="Qiskit circuit session") as session:  # Use a with block to submit multiple jobs within a session
     job1 = backend.run(circuit=circuit, shots=100, job_name="Job 1") # First job submission
-    job_monitor(job1)
+    job1.wait_for_final_state()
     job2 = backend.run(circuit=circuit, shots=100, job_name="Job 2") # Second job submission
-    job_monitor(job2)
+    job2.wait_for_final_state()
     job3 = backend.run(circuit=circuit, shots=100, job_name="Job 3") # Third job submission
-    job_monitor(job3)
+    job3.wait_for_final_state()
 ```
 
 ## Job failure policy within sessions

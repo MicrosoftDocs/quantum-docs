@@ -58,7 +58,6 @@ Click **+ Code** to add a new cell, then add and run the following code:
 from azure.quantum.qiskit import AzureQuantumProvider
 from qiskit import QuantumCircuit, transpile
 from qiskit.circuit.library import RGQFTMultiplier
-from qiskit.tools.monitor import job_monitor
 ```
 
 ## Connect to the Azure Quantum service
@@ -116,11 +115,11 @@ bitwidth = 4
 circ = create_algorithm(bitwidth)
 ```
 
-Estimate the physical resources for this operation using the default assumptions. You can submit the circuit to the Resource Estimator backend using the `run` method, and then run `job_monitor` to await completion.
+Estimate the physical resources for this operation using the default assumptions. You can submit the circuit to the Resource Estimator backend using the `run` method, and then run `wait_for_final_state` to await completion.
 
 ```python
 job = backend.run(circ)
-job_monitor(job)
+job.wait_for_final_state()
 result = job.result()
 result
 ```
@@ -211,7 +210,7 @@ job = backend.run(circ,
     qubitParams={
         "name": "qubit_maj_ns_e6"
     })
-job_monitor(job)
+wait_for_final_state(job)
 result = job.result()
 result
 ```
@@ -277,7 +276,7 @@ job = backend.run(circ,
     qecScheme={
         "name": "floquet_code"
     })
-job_monitor(job)
+job.wait_for_final_state()
 result_maj_floquet = job.result()
 result_maj_floquet
 ```
@@ -295,7 +294,7 @@ job = backend.run(circ,
         "name": "floquet_code"
     },
     errorBudget=0.1)
-job_monitor(job)
+job.wait_for_final_state()
 result_maj_floquet_e1 = job.result()
 result_maj_floquet_e1
 ```

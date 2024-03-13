@@ -37,7 +37,6 @@ In the first cell of your notebook, run the following code to load the required 
 import azure.quantum
 from qiskit import QuantumCircuit
 from qiskit.visualization import plot_histogram
-from qiskit.tools.monitor import job_monitor
 from azure.quantum.qiskit import AzureQuantumProvider
 ```
 
@@ -158,11 +157,10 @@ print("Job id", job_id)
 Job id 00000000-0000-0000-0000-000000000000
 ```
 
-To monitor job progress, you can use the Qiskit `job_monitor` imported
-earlier to keep track of the job\'s status. This call blocks until the job completes:
+To monitor job progress, you can use the `wait_for_final_state` method to keep track of the job\'s status. This call blocks until the job completes:
 
 ```python
-job_monitor(job)
+job.wait_for_final_state()
 ```
 
 ```output
@@ -229,20 +227,20 @@ Submit the circuit to run on Azure Quantum.
 > [!NOTE]
 > The time required to run a circuit on the QPU may vary depending on current queue times.
 
-As before, use `job_monitor` to keep track of the job
+As before, use `wait_for_final_state()` to keep track of the job
 status, and `plot_histogram` to plot the results.
 
 ```python
 # Submit the circuit to run on Azure Quantum
-qpu_job = qpu_backend.run(circuit, shots=1024)
-job_id = qpu_job.id()
+job = qpu_backend.run(circuit, shots=1024)
+job_id = job.id()
 print("Job id", job_id)
 
 # Monitor job progress and wait until complete:
-job_monitor(qpu_job)
+job.wait_for_final_state()
 
 # Get the job results (this method also waits for the Job to complete):
-result = qpu_job.result()
+result = job.result()
 print(result)
 counts = {format(n, "03b"): 0 for n in range(8)}
 counts.update(result.get_counts(circuit))
@@ -281,7 +279,7 @@ job_id = job.id()
 print("Job id", job_id)
 
 # Monitor job progress and wait until complete:
-job_monitor(job)
+job.wait_for_final_state()
 
 # Get the job results (this method also waits for the Job to complete):
 result = job.result()
@@ -339,7 +337,7 @@ job_id = job.id()
 print("Job id", job_id)
 
 # Monitor job progress and wait until complete:
-job_monitor(job)
+job.wait_for_final_state()
 ```
 
 ```output
@@ -387,7 +385,7 @@ job_id = job.id()
 print("Job id", job_id)
 
 # Monitor job progress and wait until complete:
-job_monitor(job)
+job.wait_for_final_state()
 
 # Get the job results (this method also waits for the Job to complete):
 result = job.result()
@@ -426,7 +424,7 @@ job_id = job.id()
 print("Job id", job_id)
 
 # Monitor job progress and wait until complete:
-job_monitor(job)
+job.wait_for_final_state()
 ```
 
 ```output

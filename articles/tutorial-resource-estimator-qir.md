@@ -58,14 +58,11 @@ Click the triangular "play" icon to the left of the cell to run the code.
 
 ## Load the required imports
 
-First, you need to import some Python classes and functions from `azure.quantum`, `qiskit`, and `pyqir`.  You won't use Qiskit to build quantum circuits directly, but you'll use `AzureQuantumJob` and `job_monitor`, which are built on top of the Qiskit ecosystem.
+First, you need to import some Python classes and functions from `azure.quantum`, `qiskit`, and `pyqir`.  You won't use Qiskit to build quantum circuits directly, but you'll use `AzureQuantumJob`, which is built on top of the Qiskit ecosystem.
 
 ```python
 from azure.quantum.qiskit import AzureQuantumProvider
 from azure.quantum.qiskit.job import AzureQuantumJob
-
-from qiskit.tools.monitor import job_monitor
-
 from pyqir.generator import BasicQisBuilder, SimpleModule
 ```
 
@@ -147,7 +144,7 @@ You can use the function you defined above together with the `bitcode()` functio
 
 ```python
 job = resource_estimation_job_from_qir(provider, module.bitcode(), errorBudget=0.05)
-job_monitor(job)
+job.wait_for_final_state()
 result = job.result()
 result
 ```
