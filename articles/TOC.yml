@@ -71,10 +71,10 @@
       href: optimization-authenticate-service-principal.md
     - name: Authenticate using a managed identity
       href: optimization-authenticate-managed-identity.md
+    - name: Authenticate using Access Keys
+      href: security-manage-access-keys.md
     - name: Protect Azure Quantum with resource locks
       href: how-to-set-resource-locks.md
-    - name: Manage your Access Keys
-      href: security-manage-access-keys.md
   - name: Maintenance
     items:  
     - name: Update the QDK
