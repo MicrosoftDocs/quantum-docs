@@ -2,7 +2,7 @@
 author: bradben
 description: Describes how to update your Q# programming language projects and the Quantum Development Kit (QDK) to the current version.
 ms.author: brbenefield
-ms.date: 12/12/2022
+ms.date: 03/14/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.custom: devx-track-azurecli
@@ -29,6 +29,9 @@ By default, Visual Studio Code updates extensions automatically. After any updat
 
 ## Update the Azure Quantum Python packages
 
+> [!IMPORTANT]
+> If you are updating from a previous Qiskit environment, see [Update the azure-quantum package with Qiskit support](xref:microsoft.quantum.update-qdk#update-azure-quantum-with-qiskit-support).
+
 1. Update to the latest `qsharp` and `azure-quantum` Python packages by using the package installer for Python (pip).
   
     ```Bash
@@ -38,7 +41,38 @@ By default, Visual Studio Code updates extensions automatically. After any updat
     ```Bash
     pip install --upgrade azure-quantum
     ```
+### Update the azure-quantum package with Qiskit support
 
+The azure-quantum Python package includes optional support for creating and submitting Qiskit circuits to Azure Quantum. When you install the azure-quantum package with Qiskit support, it installs the latest version of Qiskit , which may cause issues with an existing Qiskit environment. To ensure a stable development environment, we recommend creating a virtual Python environment and installing azure-quantum there. 
+
+To create a virtual Python environment and install azure-quantum with Qiskit support:
+1. Create a local folder, for example *C:\qiskit10-env*.
+1. Run `venv` with the path to the folder
+
+    ```dos
+    python3 -m venv C:\qiskit10-env
+    ```
+
+1. Activate the environment.
+
+    ```dos
+    C:\qiskit10-env\activate.bat
+    ```
+
+1. Run `pip list` and you can see that only the core packages are installed in the new environment.
+1. To install the azure-quantum package, run
+
+    ```dos
+    pip install azure-quantum[qiskit]
+    ```
+1. Install any other packages that you used in your previous environment as needed. You can run `pip list` in each environment to compare packages and versions. 
+
+> [!NOTE]
+> See [Qiskit 1.0 packaging changes](https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-installation#qiskit-10-packaging-changes) for more information on package compatibility. 
+
+> [!NOTE]
+> You can also open your virtual environment in VS Code. From the **View** menu, select **Command Palette** > **Python: Create Environment** > **venv**. In the lower right, select **Open Folder...** and select the environment folder you created earlier.  For more information on using environments in VS Code, see [Python environments in VS Code](https://code.visualstudio.com/docs/python/environments).
+    
 ## Update the Azure CLI quantum extension
 
 1. Update or install the latest Azure CLI `quantum` extension.

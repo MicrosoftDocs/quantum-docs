@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to set up an Azure Quantum environment for different languages and platforms.
 ms.author: brbenefield
-ms.date: 01/12/2024
+ms.date: 03/14/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -92,6 +92,9 @@ To add Python and Jupyter Notebook support:
     ```
 
 1. For Qiskit or Cirq support, install `azure-quantum` using the [qiskit] or [cirq] parameters:
+
+    > [!IMPORTANT]
+    > If you are updating from a previous Qiskit environment, see [Update the azure-quantum package with Qiskit support](xref:microsoft.quantum.update-qdk#update-azure-quantum-with-qiskit-support).
 
     ```bash
     python -m pip install azure-quantum[qiskit]
