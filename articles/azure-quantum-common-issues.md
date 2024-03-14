@@ -2,7 +2,7 @@
 author: bradben
 description: Troubleshoot common Azure Quantum issues.
 ms.author: brbenefield
-ms.date: 01/12/2024
+ms.date: 03/14/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
@@ -147,6 +147,21 @@ If you are using the Azure Quantum Python SDK (within Jupyter notebooks for inst
 This happens because your security token is being reset every time you run the script.
 
 You can resolve this issue by running `az login` using the Azure CLI. For more information, see [az login](/cli/azure/reference-index#az-login()).
+
+### Issue: After updating the azure-quantum package, I get the error \"ModuleNotFoundError: No module named qiskit.tools\" when monitoring a job
+
+As of Qiskit 1.0, the `qiskit.tools` module, which is required for the `job_monitor()` function, has been deprecated. To monitor jobs, use the `wait_for_final_state()` or the `result` functions. 
+
+```python
+job = MyTarget.run(circuit, shots=100)
+
+# to wait until the job is complete
+job.wait_for_final_state() 
+
+# to return the results of the job
+result = job.result()
+```
+
 
 ## Azure Quantum Resource Estimator
 
