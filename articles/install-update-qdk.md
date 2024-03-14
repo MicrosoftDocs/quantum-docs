@@ -41,9 +41,9 @@ By default, Visual Studio Code updates extensions automatically. After any updat
     ```Bash
     pip install --upgrade azure-quantum
     ```
-### Update the azure-quantum package with Qiskit support
+### Update the azure-quantum package with Qiskit support 
 
-The azure-quantum Python package includes optional support for creating and submitting Qiskit circuits to Azure Quantum. When you install the azure-quantum package with Qiskit support, it installs the latest version of Qiskit , which may cause issues with an existing Qiskit environment. To ensure a stable development environment, we recommend creating a virtual Python environment and installing azure-quantum there. 
+The azure-quantum Python package includes optional support for creating and submitting Qiskit circuits to Azure Quantum. When you install the azure-quantum package with Qiskit support, it installs the latest version of Qiskit, which may cause issues with an existing Qiskit environment. To ensure a stable development environment, we recommend creating a virtual Python environment and installing azure-quantum there. 
 
 To create a virtual Python environment and install azure-quantum with Qiskit support:
 1. Create a local folder, for example *C:\qiskit10-env*.
@@ -72,6 +72,22 @@ To create a virtual Python environment and install azure-quantum with Qiskit sup
 
 > [!NOTE]
 > You can also open your virtual environment in VS Code. From the **View** menu, select **Command Palette** > **Python: Create Environment** > **venv**. In the lower right, select **Open Folder...** and select the environment folder you created earlier.  For more information on using environments in VS Code, see [Python environments in VS Code](https://code.visualstudio.com/docs/python/environments).
+
+### (Optional method) Update the azure-quantum package with Qiskit support 
+
+You can also update the azure-quantum package with Qiskit support without using a virtual environment. However, updates to the qiskit packages in an existing environment may cause dependency conflicts with other packages. See [Qiskit 1.0 packaging changes](https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-installation#qiskit-10-packaging-changes) for more information on package compatibility. 
+
+To update the azure-quantum package:
+1. Uninstall the existing azure-quantum and qiskit packages:
+
+    ```dos
+    pip uninstall -y azure-quantum qiskit qiskit-terra qiskit-qr
+    ```
+1. Install azure-quantum using the [qiskit] parameter:
+
+    ```dos
+    pip install azure-quantum[qiskit]
+    ```    
     
 ## Update the Azure CLI quantum extension
 
