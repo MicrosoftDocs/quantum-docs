@@ -80,12 +80,12 @@ You can also update the azure-quantum package with Qiskit support without using 
 To update the azure-quantum package:
 1. Uninstall the existing azure-quantum and qiskit packages:
 
-    ```dos
+    ```cmd
     pip uninstall -y azure-quantum qiskit qiskit-terra qiskit-qr
     ```
 1. Install azure-quantum using the [qiskit] parameter:
 
-    ```dos
+    ```cmd
     pip install azure-quantum[qiskit]
     ```    
     
