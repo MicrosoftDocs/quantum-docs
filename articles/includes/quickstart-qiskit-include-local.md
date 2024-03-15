@@ -17,7 +17,7 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)  extensions installed.
 - The Azure Quantum `azure-quantum` package with the \[qiskit\] tag, and the `qsharp` and the `ipykernel` packages.  
 
-    ```bash
+    ```cmd
     python -m pip install --upgrade azure-quantum[qiskit] qsharp ipykernel 
     ```
 

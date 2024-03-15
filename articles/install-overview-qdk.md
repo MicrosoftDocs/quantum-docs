@@ -87,7 +87,7 @@ To add Python and Jupyter Notebook support:
 1. Install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
 1. Install the `qsharp` and `azure-quantum` packages:
 
-    ```bash
+    ```cmd
     python -m pip install qsharp azure-quantum
     ```
 
@@ -96,7 +96,7 @@ To add Python and Jupyter Notebook support:
     > [!IMPORTANT]
     > If you are updating from a previous Qiskit environment, see [Update the azure-quantum package with Qiskit support](xref:microsoft.quantum.update-qdk#update-azure-quantum-with-qiskit-support).
 
-    ```bash
+    ```cmd
     python -m pip install azure-quantum[qiskit]
     or
     python -m pip install azure-quantum[cirq]
@@ -106,7 +106,7 @@ To add Python and Jupyter Notebook support:
 
 1. Install optional Python packages you may need to display results and work in Jupyter Notebooks:
 
-    ```bash
+    ```cmd
     python -m pip install ipykernel ipympl jupyterlab
     ```
 
@@ -119,7 +119,7 @@ The Azure CLI is an optional method for submitting quantum jobs using a terminal
 1. Install the [Azure CLI](/cli/azure/install-azure-cli). 
 1. Install the latest Azure CLI `quantum` extension. Open a command prompt and run the following command:
 
-    ```bash
+    ```cmd
     az extension add \
         --upgrade \
         -n quantum

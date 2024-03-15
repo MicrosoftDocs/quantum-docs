@@ -44,8 +44,8 @@ Steps to resolve this issue:
 
 When attempting to submit a job at the command prompt using the `az quantum submit` command, you may encounter the following error message:
 
-```
-> az quantum job submit ...
+```azurecli
+az quantum job submit ...
 Failed to compile program.
 Command ran in 21.181 seconds (init: 0.457, invoke: 20.724)
 ```
@@ -56,7 +56,7 @@ This error occurs when there's a problem with the Q# program that causes the com
 
 When submitting a job to Quantinuum from a local Jupyter Notebook or command line environment, and using the legacy QASM translator (OPENQASM 2.0), you may encounter this error:
 
-```
+```cmd
 Job ID <jobId> failed or was cancelled with the message: 1000: Compile error: [<file, line>] Wrong number of gate parameters
 ```
 
@@ -78,7 +78,7 @@ rx(1.5707963267948966) q[0];
 
 When you run a Q# code cell in a Jupyter Notebook in VS Code, you may encounter the error:
 
-```
+```cmd
 <function name> not found. Found a matching item `<function name>' that is not available for the current compilation configuration
 ```
 

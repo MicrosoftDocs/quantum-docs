@@ -34,11 +34,11 @@ By default, Visual Studio Code updates extensions automatically. After any updat
 
 1. Update to the latest `qsharp` and `azure-quantum` Python packages by using the package installer for Python (pip).
   
-    ```Bash
+    ```cmd
     pip install --upgrade qsharp>=1.0
     ```
 
-    ```Bash
+    ```cmd
     pip install --upgrade azure-quantum
     ```
 ### Update the azure-quantum package with Qiskit support 
@@ -49,20 +49,20 @@ To create a virtual Python environment and install azure-quantum with Qiskit sup
 1. Create a local folder, for example *C:\qiskit10-env*.
 1. Run `venv` with the path to the folder
 
-    ```dos
+    ```cmd
     python3 -m venv C:\qiskit10-env
     ```
 
 1. Activate the environment.
 
-    ```dos
+    ```cmd
     C:\qiskit10-env\activate.bat
     ```
 
 1. Run `pip list` and you can see that only the core packages are installed in the new environment.
 1. To install the azure-quantum package, run
 
-    ```dos
+    ```cmd
     pip install azure-quantum[qiskit]
     ```
 1. Install any other packages that you used in your previous environment as needed. You can run `pip list` in each environment to compare packages and versions. 
@@ -80,14 +80,14 @@ You can also update the azure-quantum package with Qiskit support without using 
 To update the azure-quantum package:
 1. Uninstall the existing azure-quantum and qiskit packages:
 
-    ```dos
+    ```cmd
     pip uninstall -y azure-quantum qiskit qiskit-terra qiskit-qr
     ```
 1. Install azure-quantum using the [qiskit] parameter:
 
-    ```dos
+    ```cmd
     pip install azure-quantum[qiskit]
-    ```    
+    ```
     
 ## Update the Azure CLI quantum extension
 
