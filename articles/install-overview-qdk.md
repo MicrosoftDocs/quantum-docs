@@ -1,21 +1,20 @@
 ---
 author: bradben
-description: Learn how to set up an Azure Quantum environment for different languages and platforms.
+description: Learn how to set up the Azure Quantum Development Kit VS Code extension and set up your environment for different languages and platforms.
 ms.author: brbenefield
 ms.date: 03/14/2024
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: quickstart
+ms.topic: get-started
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Get started with the Quantum Development Kit 
 uid: microsoft.quantum.install-qdk.overview
+#customer intent: As a quantum developer, I want to configure my environment with the latest Azure Quantum tools. 
 ---
 
 # Get started with the Azure Quantum Development Kit (Modern QDK)
 
-Learn about the different environment options available to develop quantum computing using the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) service.
-
-Every environment uses the [Azure Quantum Development Kit (Modern QDK)](xref:microsoft.quantum.overview.q-sharp), an open source set of tools that includes the quantum programming language Q# and accompanying libraries. With the QDK, you can develop quantum computing applications using different IDEs and languages and run them on quantum simulators or quantum hardware using Azure Quantum. 
+Learn about the different environment options available to develop quantum computing using the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) service. Every environment uses the [Azure Quantum Development Kit (Modern QDK)](xref:microsoft.quantum.overview.q-sharp), an open source set of tools that includes the quantum programming language Q# and accompanying libraries. With the QDK, you can develop quantum computing applications using different IDEs and languages and run them on quantum simulators or quantum hardware using Azure Quantum. 
 
 ## Running quantum programs
 
@@ -146,7 +145,7 @@ Some features, such as hybrid computing, are not yet supported in the Modern QDK
 1. In VS Code, enable or install the **Microsoft Quantum Development Kit** extension. 
 1. Run `python -m pip install qsharp<1.0`.
 
-## Next steps
+## Related content
 
 Using the Azure portal:
 

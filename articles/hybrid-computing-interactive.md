@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
-description: Understand the architecture of interactive (sessions) quantum computing and learn ho to create a new session.
-ms.date: 07/17/2023
+description: Understand the architecture of interactive (sessions) quantum computing and learn how to create a new session.
+ms.date: 03/15/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -9,6 +9,7 @@ ms.topic: how-to
 no-loc: ['Q#', '$$v', Variational Quantum Eigensolver, Quantum Approximate Optimization Algorithm, target, targets]
 title: Introduction to sessions
 uid: microsoft.quantum.hybrid.interactive
+#customer intent: As a quantum developer, I want to understand the architecture of interactive sessions.
 ---
 
 # Interactive quantum computing: sessions
@@ -212,7 +213,7 @@ Each quantum hardware provider defines their own heuristics to best manage the p
 
 If you choose to submit jobs within a session to a [Quantinuum target](xref:microsoft.quantum.providers.quantinuum), your session will have exclusive access to the hardware as long as you queue jobs within one minute from each other. After that, your jobs will be accepted and handled with the standard queueing and prioritization logic. 
 
-## Next steps
+## Related content
 
 - [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions)
 - [Integrated quantum computing](xref:microsoft.quantum.hybrid.integrated)

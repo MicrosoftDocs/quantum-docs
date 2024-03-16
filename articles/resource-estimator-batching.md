@@ -136,7 +136,6 @@ items = [
 ] # target parameters 
 
 job = backend.run(circ, items=items) 
-job.wait_for_final_state() 
 results = job.result() 
 results 
 ```

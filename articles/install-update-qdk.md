@@ -81,9 +81,9 @@ To update the azure-quantum package:
 1. Uninstall the existing azure-quantum and qiskit packages:
 
     ```cmd
-    pip uninstall -y azure-quantum qiskit qiskit-terra qiskit-qr
+    pip uninstall -y azure-quantum qiskit qiskit-terra qiskit-qir
     ```
-1. Install azure-quantum using the [qiskit] parameter:
+1. Install azure-quantum using the optional [qiskit] parameter:
 
     ```cmd
     pip install azure-quantum[qiskit]

@@ -1,6 +1,6 @@
 ---
 author: bradben
-description: Troubleshoot common Azure Quantum issues.
+description: This article provides troubleshooting steps for common issues encountered when using the Azure Quantum service.
 ms.author: brbenefield
 ms.date: 03/14/2024
 ms.service: azure-quantum
@@ -131,7 +131,7 @@ After you submit a job to a hardware target, your job may sit in the queue for s
 
 To retrieve more information about the failure:
 
-- Use the `get_results()` method with the job object to view the output or the returned error message:
+- Use the [`get_results()`](xref:azure.quantum.job.Job) method with the job object to view the output or the returned error message:
 
 ```python
 job.get_results()
@@ -161,7 +161,6 @@ job.wait_for_final_state()
 # to return the results of the job
 result = job.result()
 ```
-
 
 ## Azure Quantum Resource Estimator
 
@@ -221,7 +220,7 @@ Here is what you could do in such a scenario:
 
 ### Issue: Constraints maximum runtime and maximum number of physical qubits are mutually exclusive
 
-The Resource Estimator accepts only one of `maxDuration` or `maxPhysicalQubits` constraints at the time but not two. If your provide both `maxDuration` and `maxPhysicalQubits`constraints for a single job, it returns the `BothDurationAndPhysicalQubitsProvided` error.
+The Resource Estimator accepts only one of [`maxDuration`]O(xref:qsharp.estimator.EstimatorConstraints) or [`maxPhysicalQubits`](xref:qsharp.estimator.EstimatorConstraints) constraints at the time but not two. If your provide both `maxDuration` and `maxPhysicalQubits`constraints for a single job, it returns the `BothDurationAndPhysicalQubitsProvided` error.
 
 ## Creating an Azure Quantum workspace
 
