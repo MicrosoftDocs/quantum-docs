@@ -83,4 +83,4 @@ Use the built-in **Quantum Workspaces** to connect and submit jobs directly from
 1. Expand **Jobs** and hover over your job, which displays the times and status of your job.
 1. To view the results, select the cloud icon next to the job name to download the results from your workspace storage and display it in VS Code.
 
-    :::image type="content" source="../media/vscode-show-azure-quantum-results.png" alt-text="Screenshot of Visual Studio Code showing how to run Rigetti simulator as target.":::
+    :::image type="content" source="../media/vscode-show-azure-quantum-results.png" alt-text="Screenshot of Visual Studio Code showing how to download and view the results of your quantum job.":::
