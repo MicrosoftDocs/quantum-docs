@@ -51,7 +51,7 @@ The Modern QDK VS Code extension is the latest version of the Q# language and qu
 
 ### Visual Studio Code on the Web
 
-[VS Code on the Web](https://vscode.dev/quantum) is a free resource that offers the same performance, Azure connectivity, and Q# language features (such as syntax highlighting, IntelliSense, and debugging) as the installed version of VS Code, minus some of the extended features (see the [comparison table](#running-quantum-programs) for details). [vscode.dev/quantum](https://vscode.dev/quantum) offers a preconfigured quantum environment, and [vscode.dev/quantum/playground](https://vscode.dev/quantum/playground) offers a preconfigured quantum environment, sample code, and learning content to get you up and running. 
+[VS Code on the Web](https://vscode.dev/quantum) is a free resource that offers the same performance, Azure connectivity, and Q# language features (such as syntax highlighting, IntelliSense, and debugging) as the installed version of VS Code, minus some of the extended features (see the [comparison table](#running-quantum-programs) for details). [vscode.dev/quantum](https://vscode.dev/quantum) offers a preconfigured quantum environment, and [vscode.dev/quantum/playground/](https://vscode.dev/quantum/playground/) offers a preconfigured quantum environment, sample code, and learning content to get you up and running. 
 
 > [!NOTE]
 > If you already have a Python and Jupyter Notebook environment configured on your machine, you can connect to your Jupyter server from VS Code on the Web and run Q# notebooks. For more information, see [Connecting to a remote Jupyter server from vscode.dev](https://github.com/microsoft/vscode-jupyter/wiki/Connecting-to-a-remote-Jupyter-server-from-vscode.dev).
