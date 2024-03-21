@@ -72,7 +72,7 @@ Use the built-in **Quantum Workspaces** to connect and submit jobs directly from
 
    > [!NOTE]
    > If there is an issue connecting to Azure Quantum, a warning icon displays next to the workspace name. Hover over the workspace name to display error information. 
-   > :::image type="content" source="../media/connect-error.png" alt-text="screenshot of Visual Studio Code displaying an Azure Quantum connection error":::
+  <!--> :::image type="content" source="../media/connect-error.png" alt-text="screenshot of Visual Studio Code displaying an Azure Quantum connection error"::: -->
 
 1. Select **rigetti.sim.qvm** as your target.
 
