@@ -83,7 +83,7 @@ The Q# compiler verifies there is a valid *qsharp.json* file in the specified ro
 
 ## Create a manifest file
 
-A manifest file is a simple .json file named *qsharp.json* that can optionally include *author*, *license*, *excludeFiles*, and *excludeRegexes* fields. The minimum viable manifest file is the string `{}`. When you create a Q# project in VS Code, a minimal manifest file is created for you. 
+A manifest file is a simple .json file named *qsharp.json* that can optionally include *author*, *license*, and *.ints* fields. The minimum viable manifest file is the string `{}`. When you create a Q# project in VS Code, a minimal manifest file is created for you. 
 
 ```json
 {}
@@ -101,21 +101,10 @@ In this example, *author* is the only field specified, and therefore all *.qs fi
 }
 ```
 
-For this example, *author* and *license* are specified and all \*.qs files in the directory and subdirectory are included, except any files named *Foo.qs*. 
-
 ```json
 {
     "author":"Microsoft",
     "license":"MIT"
-    "excludeFiles":["Foo.qs"]
-}
-```
-
-The *author* and *license* are omitted, and all *.qs files in this directory and all its subdirectories, except for the `.ignore.qs` file, are included. 
-
-```json
-{
-    "excludeRegexes":[".\.ignore\.qs",*.*myDirectory.*"]
 }
 ```
 
@@ -125,7 +114,7 @@ Within a Q# project, you can also use the manifest file to fine-tune the VS Code
 - `divisionByZero`: default = `warn`
 - `redundantSemicolons`: default = `warn`
 
-Using the manifest file, you can set each rule to `allow`, `warn`, or `error`, for example 
+Using the manifest file, you can set each rule to either `allow`, `warn`, or `error`, for example 
 
 ```json
 {
@@ -173,10 +162,10 @@ MyMathLib.Multiply(x,y);
 
 ## Steps for creating a Q# project
 
-1. In VS Code, open the folder you want to use for the project root folder.
-1. Select **View > Command Palette > Q#: Create a Q# project...**. VS Code creates a minimal *qsharp.json* manifest file at the root, and a `/src` folder with a `main.qs` template file. 
+1. In the VS Code file explorer, right-click the folder you want to use for the project root folder and select **Create Q# project**, or open the folder and select **View > Command Palette > Q#: Create a Q# project...**.
+1. VS Code creates a minimal *qsharp.json* manifest file in the folder, and adds a `/src` folder with a `Main.qs` template file. 
 1. Edit the manifest file as needed. See [Manifest file examples](#manifest-file-examples).
-1. Add and organize your Q# source files under the **src** folder. 
+1. Add and organize your Q# source files under the `/src` folder. 
 1. If you are accessing the project from a Python program or Jupyter Notebook, set the root folder path using `qsharp.init`, for example:
 
     ```python
