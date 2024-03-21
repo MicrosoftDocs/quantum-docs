@@ -2,7 +2,7 @@
 author: bradben
 description: This article describes how to define a Q# project that makes use of multiple Q# psource files in a multi-level folder structure. 
 ms.author: brbenefield
-ms.date: 01/09/2024
+ms.date: 03/21/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -16,7 +16,7 @@ uid: microsoft.quantum.qsharp-projects
 
 With the release of the Azure Quantum Development Kit, you can define *Q# projects*, which are folder structures with multiple Q# files that can access each other's resources. Projects are helpful for creating reusable libraries and logically organizing your source code.
 
-A Q# project contains a Q# manifest file, named *qsharp.json*, and one or more *.qs files in a specified folder structure. When a user opens a *.qs file in VS Code, or sets the `project_root` in a Jupyter Notebook or Python file, the compiler searches the surrounding folder hierarchy for the manifest file and determines the project's scope. If no manifest file is found, the compiler operates in a single file mode.  
+A Q# project contains a Q# manifest file, named *qsharp.json*, and one or more *.qs files in a specified folder structure. When a user opens a *.qs file in VS Code, or sets the `project_root` in a Jupyter Notebook or Python file, the compiler searches the surrounding folder hierarchy for the manifest file and determines the project's scope. If no manifest file is found, the compiler operates in a single file mode.  A Q# project can be created manually or directly in VS Code. 
 
 ## Prerequisites
 
@@ -83,7 +83,7 @@ The Q# compiler verifies there is a valid *qsharp.json* file in the specified ro
 
 ## Create a manifest file
 
-A manifest file is a simple .json file that can optionally include *author*, *license*, *excludeFiles*, and *excludeRegexes* fields. The minimum viable manifest file is the string `{}`
+A manifest file is a simple .json file named *qsharp.json* that can optionally include *author*, *license*, *excludeFiles*, and *excludeRegexes* fields. The minimum viable manifest file is the string `{}`. When you create a Q# project in VS Code, a minimal manifest file is created for you. 
 
 ```json
 {}
@@ -121,8 +121,8 @@ The *author* and *license* are omitted, and all *.qs files in this directory and
 
 ## Q# project requirements and properties
 
-* All *.qs files that you want to be included in the project must be under a folder named **src**, which must be under the project root folder. 
-* The *qsharp.json* manifest file should be at the same level as the **src** folder. 
+* All *.qs files that you want to be included in the project must be under a folder named **src**, which must be under the project root folder. When you create a Q# project in VS Code, the `/src` folder is created automatically. 
+* The *qsharp.json* manifest file should be at the same level as the **src** folder. When you create a Q# project in VS Code, the *qsharp.json* file is created automatically.
 * Operations and functions in available source files can be accessed using `open` statements:
 
 ```qsharp
@@ -145,15 +145,19 @@ MyMathLib.Multiply(x,y);
 
 ## Steps for creating a Q# project
 
-1. Create a *qsharp.json* [manifest file](#create-a-manifest-file) and save it in the folder you want to be the project root folder.
-1. Create a folder named **src** in the root folder. 
-1. Add and organize your Q# source files under the **src** folder.
+1. In VS Code, open the folder you want to use for the project root folder.
+1. Select **View > Command Palette > Q#: Create a Q# project...**. VS Code creates a minimal *qsharp.json* manifest file at the root, and a `/src` folder with a `main.qs` template file. 
+1. Edit the manifest file as needed. See [Manifest file examples](#manifest-file-examples).
+1. Add and organize your Q# source files under the **src** folder. 
 1. If you are accessing the project from a Python program or Jupyter Notebook, set the root folder path using `qsharp.init`, for example:
 
     ```python
     qsharp.init(project_root = '/Teleportation_project')
     ```
 1. If you are using only Q# files in VS Code, when you open a Q# file, the compiler searches for the *qsharp.json* manifest file, determine the project root folder, and then scan the subfolder for \*.qs files. 
+
+> [!NOTE]
+> You can also manually create the manifest file and the `/src` folder in step 2. 
 
 ## Example project
 
