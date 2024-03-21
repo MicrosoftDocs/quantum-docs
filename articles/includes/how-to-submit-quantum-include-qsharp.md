@@ -69,6 +69,11 @@ Use the built-in **Quantum Workspaces** to connect and submit jobs directly from
 
 1. Select **Add an existing workspace** and follow the prompts to connect to your preferred directory, subscription, and workspace.
 1. Once you are connected, expand your workspace and expand the **Rigetti** provider.
+
+   > [!NOTE]
+   > If there is an issue connecting to Azure Quantum, a warning icon displays next to the workspace name. Hover over the workspace name to display error information. 
+   > :::image type="content" source="../media/connect-error.png" alt-text="screenshot of Visual Studio Code displaying an Azure Quantum connection error":::
+
 1. Select **rigetti.sim.qvm** as your target.
 
     :::image type="content" source="../media/vscode-add-rigetti.png" alt-text="Screenshot of Visual Studio Code showing how to select Rigetti simulator as target.":::
