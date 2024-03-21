@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Understand the architecture of interactive (sessions) quantum computing and learn how to create a new session.
-ms.date: 03/15/2024
+ms.date: 03/21/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -115,7 +115,7 @@ This example shows how to create a session with Q# inline code using hosted Note
     circuit = QuantumCircuit(2, 2)
     circuit.name = "GenerateRandomBit"
     circuit.h(0)
-    circuit.cnot(0,1)
+    circuit.cx(0,1)
     circuit.measure([0,1], [0,1])
     circuit.draw()
     ```
