@@ -119,6 +119,34 @@ The *author* and *license* are omitted, and all *.qs files in this directory and
 }
 ```
 
+Within a Q# project, you can also use the manifest file to fine-tune the VS Code Q# Linter settings. By default, the three Linter rules are:
+
+- `needlessParens`: default = `allow`
+- `divisionByZero`: default = `warn`
+- `redundantSemicolons`: default = `warn`
+
+Using the manifest file, you can set each rule to `allow`, `warn`, or `error`, for example 
+
+```json
+{
+    "author":"Microsoft",
+    "lints": [
+        {
+          "lint": "needlessParens",
+          "level": "allow"
+        },
+        {
+          "lint": "redundantSemicolons",
+          "level": "warn"
+        },
+        {
+          "lint": "divisionByZero",
+          "level": "error"
+        }
+      ]
+}
+```
+
 ## Q# project requirements and properties
 
 * All *.qs files that you want to be included in the project must be under a folder named **src**, which must be under the project root folder. When you create a Q# project in VS Code, the `/src` folder is created automatically. 
