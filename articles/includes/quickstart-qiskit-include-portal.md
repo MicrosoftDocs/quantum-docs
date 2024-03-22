@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 01/05/2024
+ms.date: 03/15/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -44,13 +44,12 @@ Click **+ Code** to add a new cell, then add and run the following code:
 ```python
 from qiskit import QuantumCircuit
 from qiskit.visualization import plot_histogram
-from qiskit.tools.monitor import job_monitor
 from azure.quantum.qiskit import AzureQuantumProvider
 ```
 
 ## Connect to the Azure Quantum service
 
-Next, create an `AzureQuantumProvider` object using the `workspace` object from the previous cell to connect to your Azure Quantum workspace.  Add a new cell with the following code:
+Next, create an [`AzureQuantumProvider`](xref:azure.quantum.qiskit.AzureQuantumProvider) object using the [`Workspace`](xref:azure.quantum.Workspace) object from the previous cell to connect to your Azure Quantum workspace.  Add a new cell with the following code:
 
 ```python
 provider = AzureQuantumProvider(workspace)
@@ -132,18 +131,6 @@ To run your circuit on the simulator, add the following code. This example use t
 job = simulator_backend.run(circuit, shots=100)
 job_id = job.id()
 print("Job id", job_id)
-
-# Monitor job progress and wait until complete:
-job_monitor(job)
-```
-
-The job status is displayed in realtime:
-
-```output
-Job id 7d909574-98d4-11ec-b382-00155d957f5d
-Job status: job is queued
-Job status: job is actively running
-Job status: job has successfully run
 ```
 
 When the job successfully runs, get the job results and display them:
@@ -209,7 +196,7 @@ Next, create an object to represent the [IonQ quantum computer](xref:microsoft.q
 qpu_backend = provider.get_backend("ionq.qpu")
 ```
 
-To estimate the cost of running a job on the QPU, add and run a new cell using the `estimate_cost` method of the target:
+To estimate the cost of running a job on the QPU, add and run a new cell using the [`estimate_cost`](xref:azure.quantum.target.IonQ) method of the target:
 
 ```python
 cost = qpu_backend.estimate_cost(circuit, shots=100)
@@ -235,14 +222,6 @@ Use the same `run` method and operations that you used previously with the API V
 job = qpu_backend.run(circuit, shots=1024)
 job_id = job.id()
 print("Job id", job_id)
-
-# Monitor job progress and wait until complete:
-job_monitor(job)
-```
-
-```output
-Job id 54e8c740-98d9-11ec-b382-00155d957f5d
-Job Status: job has successfully run
 ```
 
 When the job finishes, get the job results as before and display them in a chart:
@@ -285,18 +264,6 @@ To run your circuit on the Syntax Checker, add the following code, which uses th
 job = apival_backend.run(circuit, shots=100)
 job_id = job.id()
 print("Job id", job_id)
-
-# Monitor job progress and wait until complete:
-job_monitor(job)
-```
-
-The job status is displayed in real time:
-
-```output
-Job id 89511b08-9691-11ec-be32-00155d00ae89
-Job status: job is queued
-Job status: job is actively running
-Job status: job has successfully run
 ```
 
 When the job has successfully run, get the job results and display them:
@@ -364,7 +331,7 @@ Next, create an object to represent the [Quantinuum System Model H1](xref:micros
 qpu_backend = provider.get_backend("quantinuum.qpu.h1-1")
 ```
 
-To estimate the cost of running a job on the QPU, add and run a new cell using the `estimate_cost` method of the target:
+To estimate the cost of running a job on the QPU, add and run a new cell using the [`estimate_cost`](xref:azure.quantum.target.Quantinuum) method of the target:
 
 ```python
 cost = qpu_backend.estimate_cost(circuit, shots=100)
@@ -394,14 +361,6 @@ Use the same `run` method and operations that you used previously with the Synta
 job = qpu_backend.run(circuit, shots=100)
 job_id = job.id()
 print("Job id", job_id)
-
-# Monitor job progress and wait until complete:
-job_monitor(job)
-```
-
-```output
-Job id 48282d18-9c15-11ec-bfbd-00155d6373ba
-Job Status: job has successfully run
 ```
 
 When the job has successfully run, get the job results as before and display them in a histogram:
@@ -445,18 +404,6 @@ To run your circuit on the simulator, add the following code. This example uses 
 job = simulator_backend.run(circuit, shots=100)
 job_id = job.id()
 print("Job id", job_id)
-
-# Monitor job progress and wait until complete:
-job_monitor(job)
-```
-
-The job status is displayed in realtime:
-
-```output
-Job id 5de5e2a0-39e3-11ed-bd56-00155d76e336
-Job status: job is queued
-Job status: job is actively running
-Job status: job has successfully run
 ```
 
 When the job successfully runs, get the job results and display them:
@@ -531,14 +478,6 @@ Use the same `run` method and operations that you used previously with the Riget
 job = qpu_backend.run(circuit, shots=1024)
 job_id = job.id()
 print("Job id", job_id)
-
-# Monitor job progress and wait until complete:
-job_monitor(job)
-```
-
-```output
-Job id 54e8c740-98d9-11ec-b382-00155d957f5d
-Job Status: job has successfully run
 ```
 
 When the job has successfully run, get the job results as before and display them in a chart:

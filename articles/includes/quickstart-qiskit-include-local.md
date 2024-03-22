@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 01/05/2024
+ms.date: 03/15/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -17,7 +17,7 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)  extensions installed.
 - The Azure Quantum `azure-quantum` package with the \[qiskit\] tag, and the `qsharp` and the `ipykernel` packages.  
 
-    ```bash
+    ```cmd
     python -m pip install --upgrade azure-quantum[qiskit] qsharp ipykernel 
     ```
 
@@ -37,7 +37,6 @@ In the first cell of your notebook, run the following code to load the required 
 import azure.quantum
 from qiskit import QuantumCircuit
 from qiskit.visualization import plot_histogram
-from qiskit.tools.monitor import job_monitor
 from azure.quantum.qiskit import AzureQuantumProvider
 ```
 
@@ -50,7 +49,7 @@ copy the values from the header.
 
 ![How to retrieve the resource ID and location from an Azure Quantum workspace](../media/azure-quantum-resource-id.png)
 
-Add a new cell and use your account information to create `Workspace` and  `AzureQuantumProvider` objects to connect to your Azure Quantum workspace.
+Add a new cell and use your account information to create [`Workspace`](xref:azure.quantum.Workspace) and  [`AzureQuantumProvider`](xref:azure.quantum.qiskit.AzureQuantumProvider) objects to connect to your Azure Quantum workspace.
 
 
 ```python
@@ -129,7 +128,7 @@ c: 3/════════════════╩══╩══╩═
 
 #### Run on the IonQ simulator
 
-Before running on real hardware, let's test the circuit in the simulator. Use `provider.get_backend` to create a `Backend` object to connect to the IonQ Simulator backend:
+Before running on real hardware, let's test the circuit in the simulator. Use [`get_backend`](xref:azure.quantum.qiskit.AzureQuantumProvider) to create a `Backend` object to connect to the IonQ Simulator backend:
 
 ```python
 simulator_backend = provider.get_backend("ionq.simulator")
@@ -156,17 +155,6 @@ print("Job id", job_id)
 
 ```output
 Job id 00000000-0000-0000-0000-000000000000
-```
-
-To monitor job progress, you can use the Qiskit `job_monitor` imported
-earlier to keep track of the job\'s status. This call blocks until the job completes:
-
-```python
-job_monitor(job)
-```
-
-```output
-Job Status: job has successfully run
 ```
 
 To wait until the job is complete and return the results, run:
@@ -201,7 +189,7 @@ plot_histogram(counts)
 
 #### Estimate job cost
 
-Before running a job on the QPU, you can estimate how much it costs to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
+Before running a job on the QPU, you can estimate how much it costs to run. To estimate the cost of running a job on the QPU, you can use the [`estimate_cost`](xref:azure.quantum.target.IonQ) method:
 
 ```python
 backend = provider.get_backend("ionq.qpu")
@@ -218,31 +206,27 @@ For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.
 #### Run on IonQ QPU
 
 To connect to real hardware (a [Quantum Processor Unit](xref:microsoft.quantum.target-profiles#quantum-processing-units-qpu-different-profiles) (QPU)), simply
-provide the name of the target `"ionq.qpu"` to the `provider.get_backend` method:
+provide the name of the target `"ionq.qpu"` to the [`get_backend`](xref:azure.quantum.qiskit.AzureQuantumProvider) method:
 
 ```python
 qpu_backend = provider.get_backend("ionq.qpu")
 ```
 
-Submit the circuit to run on Azure Quantum. 
+Submit the circuit to run on Azure Quantum, get the results, and run `plot_histogram` to plot the results.
 
 > [!NOTE]
 > The time required to run a circuit on the QPU may vary depending on current queue times.
 
-As before, use `job_monitor` to keep track of the job
-status, and `plot_histogram` to plot the results.
+
 
 ```python
 # Submit the circuit to run on Azure Quantum
-qpu_job = qpu_backend.run(circuit, shots=1024)
-job_id = qpu_job.id()
+job = qpu_backend.run(circuit, shots=1024)
+job_id = job.id()
 print("Job id", job_id)
 
-# Monitor job progress and wait until complete:
-job_monitor(qpu_job)
-
-# Get the job results (this method also waits for the Job to complete):
-result = qpu_job.result()
+# Get the job results (this method waits for the Job to complete):
+result = job.result()
 print(result)
 counts = {format(n, "03b"): 0 for n in range(8)}
 counts.update(result.get_counts(circuit))
@@ -263,7 +247,7 @@ Result(backend_name='ionq.simulator', backend_version='1', qobj_id='Qiskit Sampl
 
 #### Run on the syntax checker 
 
-To test the program before running it on the hardware, first run it on the Quantinuum Syntax Checker. Use `provider.get_backend` to create a `Backend` object to connect to the Quantinuum Syntax Checkerbackend:
+To test the program before running it on the hardware, first run it on the Quantinuum Syntax Checker. Use the [`get_backend`](xref:azure.quantum.qiskit.AzureQuantumProvider) method to create a `Backend` object to connect to the Quantinuum Syntax Checkerbackend:
 
 ```python
 # Get Quantinuum's syntax checker backend:
@@ -280,10 +264,7 @@ job = syntax_backend.run(circuit, shots=1024)
 job_id = job.id()
 print("Job id", job_id)
 
-# Monitor job progress and wait until complete:
-job_monitor(job)
-
-# Get the job results (this method also waits for the Job to complete):
+# Get the job results (this method waits for the Job to complete):
 result = job.result()
 print(result)
 counts = {format(n, "03b"): 0 for n in range(8)}
@@ -306,7 +287,7 @@ Result(backend_name='quantinuum.qpu.h1-1sc', backend_version='1', qobj_id='Qiski
 
 #### Estimate job cost
 
-Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
+Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the [`estimate_cost`](xref:azure.quantum.target.Quantinuum) method:
 
 ```python
 qpu_backend = provider.get_backend("quantinuum.qpu.h1-1")
@@ -337,18 +318,10 @@ qpu_backend = provider.get_backend("quantinuum.qpu.h1-1")
 job = qpu_backend.run(circuit, shots=1024)
 job_id = job.id()
 print("Job id", job_id)
-
-# Monitor job progress and wait until complete:
-job_monitor(job)
-```
-
-```output
-Job id 00000000-0000-0000-0000-000000000000
-Job Status: job has successfully run
 ```
 
 ```python
-# Get the job results (this method also waits for the Job to complete):
+# Get the job results (this method waits for the Job to complete):
 result = job.result()
 print(result)
 counts = {format(n, "03b"): 0 for n in range(8)}
@@ -386,10 +359,7 @@ job = qvm_backend.run(circuit, shots=1024)
 job_id = job.id()
 print("Job id", job_id)
 
-# Monitor job progress and wait until complete:
-job_monitor(job)
-
-# Get the job results (this method also waits for the Job to complete):
+# Get the job results (this method waits for the Job to complete):
 result = job.result()
 print(result)
 counts = {format(n, "03b"): 0 for n in range(8)}
@@ -424,18 +394,10 @@ qpu_backend = provider.get_backend("rigetti.qpu.ankaa-2")
 job = qpu_backend.run(circuit, shots=500)
 job_id = job.id()
 print("Job id", job_id)
-
-# Monitor job progress and wait until complete:
-job_monitor(job)
-```
-
-```output
-Job id 00000000-0000-0000-0000-000000000000
-Job Status: job has successfully run
 ```
 
 ```python
-# Get the job results (this method also waits for the Job to complete):
+# Get the job results (this method waits for the Job to complete):
 result = job.result()
 print(result)
 counts = {format(n, "03b"): 0 for n in range(8)}

@@ -21,8 +21,6 @@ For information about how to run the Resource Estimator, see [Different ways to 
 
 The following prerequisites are required to run the Resource Estimator:
 
-### [Q# and Python in VS Code](#tab/tabid-vscode)
-
 To run Q# programs in the Resource Estimator, you need the following:
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
@@ -36,8 +34,6 @@ If you want to use Python in VS Code, you also need the following:
     ```bash
     python -m pip install --upgrade qsharp 
     ```
-
-### [Qiskit in Azure portal](#tab/tabid-portal)
 
 To submit jobs to the Resource Estimator, you need the following:
 
@@ -128,8 +124,7 @@ provider = AzureQuantumProvider(workspace)
 
 backend = provider.get_backend('microsoft.estimator') 
 
-from qiskit import QuantumCircuit 
-from qiskit.tools.monitor import job_monitor 
+from qiskit import QuantumCircuit  
 
 circ = QuantumCircuit(3) 
 circ.ccx(0, 1, 2) 
@@ -141,7 +136,6 @@ items = [
 ] # target parameters 
 
 job = backend.run(circ, items=items) 
-job_monitor(job) 
 results = job.result() 
 results 
 ```
@@ -214,7 +208,7 @@ In the same notebook of your PyQIR program, add a new cell and run:
 > [!NOTE]
 > If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
-## Next steps
+## Related content
 
 - [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
 - [Use different SDKs and IDEs with Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)

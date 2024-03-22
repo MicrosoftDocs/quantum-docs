@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to manually manage your jobs using sessions, what are the job failure policies, and how to avoid session timeouts.
-ms.date: 07/18/2023
+ms.date: 03/15/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -9,6 +9,7 @@ ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
 title: Manage your sessions
 uid: microsoft.quantum.hybrid.interactive.how-to-sessions
+#customer intent: As a quantum developer, I want understand how to work with multiple sessions. 
 ---
 
 # How to manage sessions
@@ -24,9 +25,9 @@ The following table shows the Python commands to get the list of all sessions an
 
 |Command| Description|
 |---|---|
-|`workspace.list_sessions()` or `session.list_sessions()` | Retrieve a list of all sessions in a Quantum Workspace.|
-|`workspace.get_session(sessionId)` or `session.get_session(sessionId)` | Retrieve the session with ID `sessionId`. Each session has a unique ID. |
-|`workspace.list_session_jobs(sessionId)` or `session.list_session_jobs(sessionId)`  | Retrieve a list of all jobs in the session with ID `sessionId`. Each session has a unique ID.|
+|[`workspace.list_sessions()`](xref:azure.quantum.Workspace) or `session.list_sessions()` | Retrieve a list of all sessions in a Quantum Workspace.|
+|[`workspace.get_session(sessionId)`](xref:azure.quantum.Workspace) or `session.get_session(sessionId)` | Retrieve the session with ID `sessionId`. Each session has a unique ID. |
+|[`workspace.list_session_jobs(sessionId)`](xref:azure.quantum.Workspace) or `session.list_session_jobs(sessionId)`  | Retrieve a list of all jobs in the session with ID `sessionId`. Each session has a unique ID.|
 
 For example, the following code defines a function that gets a session with a minimum number of jobs. Then, for that session, it lists all the jobs, the total number of jobs, and the first 10 jobs. 
 
@@ -74,8 +75,8 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
     > [!NOTE]
     > At this point, the session only exists on the client, and you can see that the status is **None**. To view the status of the session, you also need to create the session in the service.
 
-1. To **create** a session in the service, you can use `workspace.open_session(session)` or `session.open()`.
-1. You can refresh the **status** and the session details with `session.refresh()`, or by getting a new session object from a session ID. 
+1. To **create** a session in the service, you can use [`workspace.open_session(session)`](xref:azure.quantum.Workspace) or [`session.open()`](xref:azure.quantum.job.Session).
+1. You can refresh the **status** and the session details with [`session.refresh()`](xref:azure.quantum.job.Session), or by getting a new session object from a session ID. 
 
       ```python
       same_session = workspace.get_session(session.id) 
@@ -83,7 +84,7 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
       print(f"Session: {same_session.details} \n")
       ```
 
-1. You can **close** a session with `session.close()` or `workspace.close_session(session)`.
+1. You can **close** a session with [`session.close()`](xref:azure.quantum.job.Session) or [`workspace.close_session(session)`](xref:azure.quantum.Workspace).
 1. To **attach the session** to a target, you can use `target.latest_session`.
 1. You can **wait** for a session to be completed:
 
@@ -224,11 +225,11 @@ backend.run(circuit=circuit, shots=100, job_name="Job 1")
 
 with backend.open_session(name="Qiskit circuit session") as session:  # Use a with block to submit multiple jobs within a session
     job1 = backend.run(circuit=circuit, shots=100, job_name="Job 1") # First job submission
-    job_monitor(job1)
+    job1.wait_for_final_state()
     job2 = backend.run(circuit=circuit, shots=100, job_name="Job 2") # Second job submission
-    job_monitor(job2)
+    job2.wait_for_final_state()
     job3 = backend.run(circuit=circuit, shots=100, job_name="Job 3") # Third job submission
-    job_monitor(job3)
+    job3.wait_for_final_state()
 ```
 
 ## Job failure policy within sessions
@@ -250,6 +251,7 @@ with target.open_session(name="JobFailurePolicy Continue", job_failure_policy=Se
     target.submit(input_data=quil_program, name="Job 3")
 ```
 
-## Next steps
+## Next step
 
-[Integrated quantum computing](xref:microsoft.quantum.hybrid.integrated)
+> [!div class="nextstepaction"]
+> [Integrated quantum computing](xref:microsoft.quantum.hybrid.integrated)
