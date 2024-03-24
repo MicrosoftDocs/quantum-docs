@@ -7,11 +7,11 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', target, targets]
-title: Quantum Circuit Diagrams Conventions
+title: Quantum Circuit Diagram Conventions
 uid: microsoft.quantum.concepts.circuits
 ---
 
-# Quantum circuit diagrams
+# Quantum circuit diagram conventions
 
 Sometimes quantum algorithms are easier to understand in a circuit diagram than in the equivalent written matrix representation. This article explains how to read quantum circuit diagrams and their conventions.
 
@@ -19,9 +19,9 @@ For more information, see [How to visualize quantum circuits diagrams](xref:micr
 
 ## Quantum circuit diagram conventions
 
-In a circuit diagram, each solid line depicts a qubit, or more generally, a qubit register. By convention, the top line is qubit register $0$ and the remainder are labeled sequentially. 
+In a circuit diagram, each solid line depicts a qubit, or more generally, a qubit register. By convention, the top line is qubit register $0$ and the remainder are labeled sequentially.
 
-3Operations are represented by *quantum gates*. The term quantum gate is analogous to classical logic gates. Gates acting on one or more qubit registers are denoted as a box.
+Operations are represented by *quantum gates*. The term quantum gate is analogous to classical logic gates. Gates acting on one or more qubit registers are denoted as a box.
 For example, the symbol
 
 :::image type="content" source="media\2.svg" alt-text="Symbol for a Hadamard operation acting on a single-qubit register.":::

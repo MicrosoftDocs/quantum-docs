@@ -60,15 +60,20 @@ The frequency histogram represents the distribution of results obtained from run
 
 ## Visualize the quantum circuit
 
+Quantum circuit diagrams are a visual representation of quantum operations. They show the flow of qubits through the quantum program, including the gates and measurements applied to them. 
+
 1. Select **View -> Command Palette** and type “circuit” which should bring up the **Q#: Show circuit** option. You can also click on **Circuit** from the list of commands below `@EntryPoint()`.
 
     :::image type="content" source="../media/codelens-circuit.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens circuit command.":::
 
-1. The circuit is displayed in the Q# circuit window. For more information about quantum circuit diagram conventions, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
+1. The circuit is displayed in the Q# circuit window. The circuit diagram shows one qubit register which it's initialized to the |0⟩ state. Then, a Hadamard gate, **H**, is applied to the qubit, followed by a [measurement operation](xref:microsoft.quantum.concepts.circuits#measurement-operator), which is represented by a meter symbol.
 
-    :::image type="content" source="../media/circuit-vscode-randombit.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens with run and debug commands.":::
+    :::image type="content" source="../media/circuit-vscode-randombit.png" alt-text="Screenshot the Q# circuit window showing the resulting circuit diagram for the random bit operation.":::
 
+For more information about quantum circuit diagram conventions, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
 
+> [!NOTE]
+> If the target profile is `Unrestricted`, you can visualize quantum circuits for any Q# program as long as it isn’t comparing any `Result` values. If the target profile is `Base Profile`, there're no restrictions on the Q# program.
 
 ## Connect to Azure Quantum and submit your job
 
