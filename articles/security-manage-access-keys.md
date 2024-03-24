@@ -5,6 +5,7 @@ ms.author: sonialopez
 ms.date: 03/04/2024
 ms.service: azure-quantum
 ms.subservice: qdk
+ms.custom: devx-track-azurecli
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
 title: Authenticate with Access Keys
@@ -135,5 +136,3 @@ You can use the Azure Command-Line Interface (Azure CLI) to manage access keys. 
     > When Access Keys is disabled, all request using connection strings or access keys are unauthorized. You can still use the workspace parameters to connect to your workspace.
   
 ***
-
-
