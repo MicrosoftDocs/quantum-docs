@@ -1,30 +1,27 @@
 ---
 author: SoniaLopezBravo
-description: Learn how to visually represent simple and complex quantum operations with quantum circuit diagrams.
+description: Learn  and their conventions.
 ms.author: sonialopez
-ms.date: 06/09/2023
+ms.date: 03/24/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', target, targets]
-title: Quantum Circuit Diagrams
+title: Quantum Circuit Diagrams Conventions
 uid: microsoft.quantum.concepts.circuits
 ---
 
-# Quantum circuit diagrams 
+# Quantum circuit diagrams
 
-This article covers conventions for quantum circuit diagrams. Some quantum algorithms are easier to understand in a circuit diagram than in the equivalent written matrix representation once you understand the visual conventions.
+Sometimes quantum algorithms are easier to understand in a circuit diagram than in the equivalent written matrix representation. This article explains how to read quantum circuit diagrams and their conventions.
 
-With Azure Quantum, you can submit quantum circuits with [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit), [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq), and also [provider-specific formatted circuits](xref:microsoft.quantum.quickstarts.computing.provider).
-
-> [!TIP]
-> Check out [quantum-viz.js](https://github.com/microsoft/quantum-viz.js/), a configurable tool for rendering quantum circuits. You can integrate the library *quantum-viz.js* (or *qviz*) into any project. It aims to be easily configurable while allowing complex user interactions, such as toggling between different measurement outcomes.
+For more information, see [How to visualize quantum circuits diagrams](xref:microsoft.quantum.how-to.visualize-circuits).
 
 ## Quantum circuit diagram conventions
 
 In a circuit diagram, each solid line depicts a qubit, or more generally, a qubit register. By convention, the top line is qubit register $0$ and the remainder are labeled sequentially. 
 
-Operations are represented by *quantum gates*. The term quantum gate is analogous to classical logic gates. Gates acting on one or more qubit registers are denoted as a box.
+3Operations are represented by *quantum gates*. The term quantum gate is analogous to classical logic gates. Gates acting on one or more qubit registers are denoted as a box.
 For example, the symbol
 
 :::image type="content" source="media\2.svg" alt-text="Symbol for a Hadamard operation acting on a single-qubit register.":::

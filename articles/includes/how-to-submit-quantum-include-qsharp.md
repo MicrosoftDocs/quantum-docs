@@ -38,8 +38,7 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
 
     :::image type="content" source="../media/codelens-run-debug.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens with run and debug commands.":::
 
-
-## Plot the frequency histogram
+## Visualize the frequency histogram
 
 The frequency histogram represents the distribution of results obtained from running a quantum program multiple times, or "shots". Each bar in the histogram corresponds to a possible outcome, and its height represents the number of times that outcome is observed. The frequency histogram helps visualize the probability distribution of these outcomes.
 
@@ -58,6 +57,18 @@ The frequency histogram represents the distribution of results obtained from run
 
 > [!TIP]
 > You can zoom the histogram using the mouse scroll wheel or a trackpad gesture. When zoomed in, you can pan the chart by pressing 'Alt' while scrolling.
+
+## Visualize the quantum circuit
+
+1. Select **View -> Command Palette** and type “circuit” which should bring up the **Q#: Show circuit** option. You can also click on **Circuit** from the list of commands below `@EntryPoint()`.
+
+    :::image type="content" source="../media/codelens-circuit.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens circuit command.":::
+
+1. The circuit is displayed in the Q# circuit window. For more information about quantum circuit diagram conventions, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
+
+    :::image type="content" source="../media/circuit-vscode-randombit.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens with run and debug commands.":::
+
+
 
 ## Connect to Azure Quantum and submit your job
 
