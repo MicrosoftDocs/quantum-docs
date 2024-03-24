@@ -18,6 +18,8 @@
     href: ../tutorial-qdk-grovers-search.md
   - name: Quantum Fourier Transform
     href: ../tutorial-qdk-qubit-level-program.md
+- name: Visualize quantum circuit diagrams
+  href: ../how-to-visualize-circuits.md
 - name: Run quantum circuits with Python
   items:
   - name: Submit a circuit with Qiskit
