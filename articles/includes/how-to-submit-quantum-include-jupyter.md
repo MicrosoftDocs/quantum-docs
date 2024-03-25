@@ -90,6 +90,7 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
     [One, Zero, Zero, One]]
     ```
 
+1. 
 
 ## Compile your job using the Base profile
 
@@ -125,6 +126,7 @@ To reinitialize the Q# interpreter and compile your program with the base profil
         return results
     }
     ```
+
 1. Next, use the `compile` method to specify the operation or function that is the entry point to your program. This compiles your code into QIR format, which can then be submitted to any quantum hardware:
 
     ```python
@@ -143,6 +145,7 @@ Now that you have your program compiled into the correct format, create an `azur
         location = "MyLocation"
     )
     ```
+
 1. Use the `get_targets` method to see the available hardware targets in your workspace:
 
     ```python
@@ -156,6 +159,7 @@ Now that you have your program compiled into the correct format, create an `azur
     ```python
     MyTarget = MyWorkspace.get_targets("rigetti.sim.qvm")
     ```
+
 1. Lastly, use the `submit` method to submit your program with its parameters and display the results:
 
     ```python
@@ -174,7 +178,6 @@ Now that you have your program compiled into the correct format, create an `azur
       0.3]}
     ```
 
-
 1. All the properties of the job are accessible in `job.details`, for example:
 
     ```python
@@ -190,4 +193,3 @@ Now that you have your program compiled into the correct format, create an `azur
     Job status: Succeeded
     Job ID: 0150202e-9638-11ee-be2f-b16153380354
     ```
-

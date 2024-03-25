@@ -54,9 +54,12 @@ If you want to use Jupyter Notebooks to visualize quantum circuits, you need:
     ```bash
     python -m pip install --upgrade qsharp qsharp-widgets 
     ```
+
 ***
 
 ## Quantum circuits with Visual Studio Code
+
+Follow these steps to visualize quantum circuits of Q# programs in Visual Studio Code:
 
 1. Open a Q# file in Visual Studio Code. 
 1. Select **View -> Command Palette** and type “circuit” which should bring up the **Q#: Show circuit** option. You can also click on **Circuit** from the list of commands below `@EntryPoint()`.
@@ -85,7 +88,76 @@ In Python, there're three distinct ways of generating a circuit:
 
 ## Quantum circuits with Jupyter Notebooks
 
-In a Jupyter Notebook, you can visualize quantum circuits by using the `qsharp-widgets` package.
+On Jupyter Notebooks, you can visualize quantum circuits using the `qsharp-widgets` package. This package provides a widget that renders a quantum circuit diagram as an SVG image.
 
-1. 
+1. In Visual Studio Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
+1. In the first cell of the notebook, run the following code to **import the Q# module**.
 
+    ```python
+    import qsharp
+    ```
+
+1. **Add a new cell** and enter the Q# code. For example, the following code prepares a Bell State.
+
+    ```qsharp
+    %%qsharp
+    
+    // Prepare a Bell State.
+    use register = Qubit[2];
+    H(register[0]);
+    CNOT(register[0], register[1]);
+    ```
+
+1. You can use the `dump_circuit()` function displays a quantum circuit based on the current state of the program..
+
+    ```python
+    qsharp.dump_circuit()
+    ```
+
+1. You can visualize quantum circuits as an **SVG image** by using the `qsharp-widgets` package.
+
+    ```python	
+    from qsharp_widgets import Circuit
+    
+    Circuit(qsharp.dump_circuit())
+    ```
+
+1. You can syntheisize a circuit diagram for any program by calling `qsharp.circuit()` with an **entry expression**.
+
+    ```qsharp
+    %%qsharp
+    
+    open Microsoft.Quantum.Diagnostics;
+    open Microsoft.Quantum.Measurement;
+    
+    operation GHZSample(n: Int) : Result[] {
+        use qs = Qubit[n];
+    
+        H(qs[0]);
+        ApplyToEach(CNOT(qs[0], _), qs[1...]);
+    
+        let results = MeasureEachZ(qs);
+        ResetAll(qs);
+        return results;
+    }
+    ```
+    
+    ```python
+    Circuit(qsharp.circuit("GHZSample(3)"))
+    ```
+
+1. You can generate circuit diagrams for any **operation that takes qubits** or arrays of qubits. The diagram shows as many wires as there are input qubit, plus any additional qubits that are allocated within the operation. When the operation takes an array of qubits `(Qubit[])`, the circuit shows the array as a register of 2 qubits. For example, the following code prepares a cat state.
+
+
+    ```qsharp
+    %%qsharp
+    
+    operation PrepareCatState(register : Qubit[]) : Unit {
+        H(register[0]);
+        ApplyToEach(CNOT(register[0], _), register[1...]);
+    }
+    ```
+    
+    ```python
+    Circuit(qsharp.circuit(operation="PrepareCatState"))
+    ```
