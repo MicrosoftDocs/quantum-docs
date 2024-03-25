@@ -99,9 +99,9 @@ If you're working with a Python environment, you can create a `Workspace` object
 1. Select **View -> Command Palette** and type **Q#: Connect to an Azure Quantum workspace**. Press **Enter**.
 1. Select **Connection string**.
 1. **Paste** the connection string you copied from the Azure portal and press **Enter**.
-1. Your Azure Quantum workspace appears in the **Explorer** pane, under **Quantum Workspaces**.
+1. Your Azure Quantum workspace appears in the **Explorer** pane, under **Quantum Workspaces**. You can expand the workspace to see the targets available in your workspace and the list of jobs.
 
-    :::image type="content" source="media/vscode-add-quantum-workspace.png" alt-text="Screenshot of Visual Studio Code showing how to expand the Quantum Workspace pane.":::
+    :::image type="content" source="media/quantum-workspace-explorer-vscode.png" alt-text="Screenshot of Visual Studio Code showing how to expand the Quantum Workspace pane.":::
 
 ***
 
