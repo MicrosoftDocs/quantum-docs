@@ -90,6 +90,7 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
     [One, Zero, Zero, One]]
     ```
 
+
 ## Compile your job using the Base profile
 
 When you run programs on the local quantum simulator, you can submit any type of Q# program. However, Azure Quantum hardware targets do not yet support the full capabilities required to run all Q# programs. In order to compile and submit Q# programs to Azure Quantum, you need to set your target profile to tell Q# which capabilities your target hardware supports. Currently, that is the Base profile. For more information, see [Profile types in Azure Quantum](xref:microsoft.quantum.target-profiles).

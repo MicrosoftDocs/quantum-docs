@@ -49,10 +49,9 @@ If you want to use Jupyter Notebooks to visualize quantum circuits, you need:
     python -m pip install --upgrade qsharp qsharp-widgets 
     ```
 
-
-
 ## Quantum circuits with Visual Studio Code
 
+1. Open a Q# file in Visual Studio Code. 
 1. Select **View -> Command Palette** and type “circuit” which should bring up the **Q#: Show circuit** option. You can also click on **Circuit** from the list of commands below `@EntryPoint()`.
 
     :::image type="content" source="media/codelens-circuit.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens circuit command.":::
@@ -61,23 +60,21 @@ If you want to use Jupyter Notebooks to visualize quantum circuits, you need:
 
     :::image type="content" source="media/circuit-vscode-randombit.png" alt-text="Screenshot the Q# circuit window showing the resulting circuit diagram for the random bit operation.":::
 
-For more information about quantum circuit diagram conventions, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
+1. When **debugging** a Q# program, you can visualize the quantum circuit based on the current state of the program, even if the program contains a `Result` comparison with an `Unrestricted` target profile. This is because debugging uses the current state of the actual simulator, so the position in the control flow and the result of the measurement are known.
 
+For more information about quantum circuit diagram conventions, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
 ## Quantum circuits with Python
 
 In Python, there're three distinct ways of generating a circuit: 
 
-1. You can use `qsharp.circuit(entry_expr)` to generate a circuit for a given entry expression. This method disregards the current state of the runtime and evaluates a quantum program from scratch.
-1. You can use `qsharp.circuit(operation)` to generate a circuit for a given operation.
-1. You can use `qsharp.get_circuit()` to dump the current state of the program in the form of a circuit. This method it doesn’t run the code from scratch.
+- You can use `qsharp.circuit(entry_expr)` to generate a circuit for a given entry expression. This method disregards the current state of the runtime and evaluates a quantum program from scratch.
+- You can use `qsharp.circuit(operation)` to generate a circuit for a given operation.
+- You can use `qsharp.get_circuit()` to dump the current state of the program in the form of a circuit. When using `qsharp.get_circuit()`, you can visualize the quantum circuit based on the current state of the program, even if the program contains a `Result` comparison with an `Unrestricted` target profile. This is because `qsharp.get_circuit()` uses the current state of the actual simulator, so the position in the control flow and the result of the measurement are known.
 
 ## Quantum circuits with Jupyter Notebooks
 
-In a Jupyter Notebook, you can visualize quantum circuits by using the `qsharp widget` package. 
+In a Jupyter Notebook, you can visualize quantum circuits by using the `qsharp widget` package.
 
-    ```bash
-    python -m pip install --upgrade qsharp qsharp-widgets 
-    ```
-
+1. 
 ***
