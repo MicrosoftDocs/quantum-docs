@@ -56,6 +56,7 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
       }
    }
     ```
+
 1. In the same folder, open another file and save it as `randomNum.py`.
 1. Add the following code to import the `qsharp` and `azure.quantum` modules.
 

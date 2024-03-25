@@ -8,6 +8,8 @@
     href: testing-debugging.md
   - name: Perform long running experiments
     href: ../how-to-long-running-experiments.md
+- name: Visualize quantum circuit diagrams
+  href: ../how-to-visualize-circuits.md
 - name: Tutorials with Q# 
   items:
   - name: Quantum random number generator
@@ -18,8 +20,6 @@
     href: ../tutorial-qdk-grovers-search.md
   - name: Quantum Fourier Transform
     href: ../tutorial-qdk-qubit-level-program.md
-- name: Visualize quantum circuit diagrams
-  href: ../how-to-visualize-circuits.md
 - name: Run quantum circuits with Python
   items:
   - name: Submit a circuit with Qiskit
