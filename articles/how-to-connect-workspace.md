@@ -53,12 +53,16 @@ You can use a connection string to specify the connection parameters to an Azure
 
     :::image type="content" source="media/connection-string-copy.png" alt-text="Screenshot of Azure portal showing how to copy the connection strings.":::
 
-> [!IMPORTANT]
-> When Access Keys are disabled, all request using connection strings or access keys are unauthorized. You can still use the workspace parameters to connect to your workspace.
+> [!WARNING]
+> Storing your account access keys or connection string in clear text presents a security risk and is not recommended. Store your account keys in an encrypted format, or migrate your applications to use Microsoft Entra authorization for access to your Azure Quantum workspace.
 
 ### Use a connection string to access your Azure Quantum workspace
 
-Create a `Workspace` object to connect to your Azure Quantum workspace. When creating a `Workspace` object, you have two options for identifying your Azure Quantum workspace.
+Once you copied the connection string, you can use it to connect to your Azure Quantum workspace. 
+
+#### [Python](#tab/tabid-python1)
+
+If you're working with a Python environment, you can create a `Workspace` object to connect to your Azure Quantum workspace. When creating a `Workspace` object, you have two options for identifying your Azure Quantum workspace.
 
 - You can create a `Workspace` object by calling `from_connection_string`.
 
@@ -89,11 +93,22 @@ Create a `Workspace` object to connect to your Azure Quantum workspace. When cre
     print(workspace.get_targets()) 
     ```
 
+#### [VS Code](#tab/tabid-vscode1)
+
+1. Open Visual Studio Code.
+1. Select **View -> Command Palette** and type **Q#: Connect to an Azure Quantum workspace**. Press **Enter**.
+1. Select **Connection string**.
+1. **Paste** the connection string you copied from the Azure portal and press **Enter**.
+1. Your Azure Quantum workspace appears in the **Explorer** pane, under **Quantum Workspaces**. You can expand the workspace to see the targets available in your workspace and the list of jobs.
+
+    :::image type="content" source="media/quantum-workspace-explorer-vscode.png" alt-text="Screenshot of Visual Studio Code showing how to expand the Quantum Workspace pane.":::
+
+***
+
 For more information about how to enable/disable and regenerate your keys, see [Manage your Access Keys](xref:microsoft.quantum.how-to.manage-access-keys).
 
-
-> [!WARNING]
-> Storing your account access keys or connection string in clear text presents a security risk and is not recommended. Store your account keys in an encrypted format, or migrate your applications to use Microsoft Entra authorization for access to your Azure Quantum workspace.
+> [!IMPORTANT]
+> When Access Keys are disabled, all request using connection strings or access keys are unauthorized. You can still use the workspace parameters to connect to your workspace.
 
 ## Connect with workspace parameters
 
@@ -107,11 +122,11 @@ Every Azure Quantum workspace has a unique set of parameters that you can use to
 |`location`|The Azure region where the Azure Quantum workspace is provisioned. This may be specified as a region name such as "East US" or a location name such as "eastus".|
 |`resource_id`|The Azure resource ID of the Azure Quantum workspace.|
 
-You can find the workspace parameters in the overview of your Azure Quantum workspace in Azure portal. 
+You can find the workspace parameters in the overview of your Azure Quantum workspace in Azure portal.
 
 1. Log in to your Azure account, <https://portal.azure.com>,
-1. Select your Azure Quantum workspace, and navigate to **Overview**. 
-1. Copy the parameters in the fields. 
+1. Select your Azure Quantum workspace, and navigate to **Overview**.
+1. Copy the parameters in the fields.
 
     ![How to retrieve the resource ID and location from an Azure Quantum workspace](media/azure-quantum-resource-id.png)
 

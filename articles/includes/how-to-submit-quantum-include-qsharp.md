@@ -61,14 +61,16 @@ The frequency histogram represents the distribution of results obtained from run
 
 ## Connect to Azure Quantum and submit your job
 
-Use the built-in **Quantum Workspaces** to connect and submit jobs directly from VS Code. For this example, you'll submit a job to the Rigetti simulator. 
+You can connect and submit jobs directly from VS Code. For this example, you'll submit a job to the Rigetti simulator. 
 
-1. In the **Explorer** pane, expand **Quantum Workspaces**.
+1. Select **View -> Command Palette** and type **Q#: Connect to an Azure Quantum workspace**. Press **Enter**.
+1. Select **Azure account**, and follow the prompts to connect to your preferred directory, subscription, and workspace.
 
-    :::image type="content" source="../media/vscode-add-quantum-workspace.png" alt-text="Screenshot of Visual Studio Code showing how to expand the Quantum Workspace pane.":::
+    > [!NOTE]
+    > If you have a connection string, you can select **Connection string** and paste the connection string corresponding to your Azure Quantum workspace.
 
-1. Select **Add an existing workspace** and follow the prompts to connect to your preferred directory, subscription, and workspace.
-1. Once you are connected, expand your workspace and expand the **Rigetti** provider.
+1. Once you are connected, in the **Explorer** pane, expand **Quantum Workspaces**.
+1. Expand your workspace and expand the **Rigetti** provider.
 
    > [!NOTE]
    > If there is an issue connecting to Azure Quantum, a warning icon displays next to the workspace name. Hover over the workspace name to display error information. 
