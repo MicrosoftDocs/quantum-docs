@@ -19,7 +19,6 @@ In this article, you'll learn how to visually represent quantum algorithms with 
 
 For more information about quantum circuit diagram conventions, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
-
 > [!NOTE]
 > If the target profile is `Unrestricted`, you can visualize quantum circuits for any Q# program as long as it isn’t comparing any `Result` values. If the target profile is `Base Profile`, there're no restrictions on the Q# program.
 
@@ -49,10 +48,10 @@ If you want to use Jupyter Notebooks to visualize quantum circuits, you need:
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The latest Azure Quantum `qsharp` and `qsharp-widgets` packages.  
+- The latest Azure Quantum `qsharp` and `qsharp-widgets` packages, and the `ipykernel` package.  
 
     ```bash
-    python -m pip install --upgrade qsharp qsharp-widgets 
+    python -m pip install --upgrade qsharp qsharp-widgets ipykernel
     ```
 
 ***
@@ -122,7 +121,7 @@ On Jupyter Notebooks, you can visualize quantum circuits using the `qsharp-widge
     Circuit(qsharp.dump_circuit())
     ```
 
-1. You can syntheisize a circuit diagram for any program by calling `qsharp.circuit()` with an **entry expression**.
+1. You can generate a circuit diagram for any program with an **entry expression** by calling `qsharp.circuit()`.
 
     ```qsharp
     %%qsharp
