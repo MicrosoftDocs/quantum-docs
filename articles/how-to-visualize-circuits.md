@@ -17,7 +17,7 @@ Quantum circuit diagrams are a visual representation of quantum operations. They
 
 In this article, you'll learn how to visually represent quantum algorithms with quantum circuit diagrams using Visual Studio Code, Python, and Jupyter Notebooks.
 
-For more information about quantum circuit diagram conventions, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
+For more information about quantum circuit diagram conventions, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
 
 > [!NOTE]
 > If the target profile is `Unrestricted`, you can visualize quantum circuits for any Q# program as long as it isn’t comparing any `Result` values. If the target profile is `Base Profile`, there're no restrictions on the Q# program.
@@ -82,7 +82,8 @@ When **debugging** a Q# program, you can visualize the quantum circuit based on 
     :::image type="content" source="media/circuit-codelens-debug.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit while debugging a program.":::
 
 
-1. You can step through the code and set breakpoints in various points to see the circuit update as the program is run.
+1. You can step through the code and set breakpoints in various points to see the circuit update as the program is run. 
+1. The current quantum circuit is shown in the Q# Circuit pane. This circuit diagram represents the current state of the simulator, that is, the gates that have been applied up until the current point of execution.
 
 ### Circuit diagram from operations
 
@@ -207,3 +208,64 @@ You can generate circuit diagrams for any **operation that takes qubits** or arr
     ```python
     Circuit(qsharp.circuit(operation="PrepareCatState"))
     ```
+
+## Conditions that affect circuit synthesis visualization
+
+When visualizing quantum circuits, the following conditions can affect the circuit diagram.
+
+### Measurement result comparisons
+
+Circuit synthesis works by executing all the classical logic within a Q# program and tracing any qubits that have been allocated or gates that have been applied. Loops and conditionals are supported as long as they only deal with classical values.
+
+However, programs that contain loops and conditional expressions that use qubit measurement results are trickier to represent with a circuit diagram. For example, an expression like the following
+
+```qsharp
+if (M(q) == One) {
+   X(q)
+}
+```
+
+cannot be represent with a circuit diagram since the gates are conditional on a measurement result. If you try to show the circuit diagram for such a program, you get an "unsupported" error.
+
+One way to work around this restriction is to run the program in the simulator, and show the resulting circuit for that run. The difference between this and circuit synthesis is that this only captures the measurement outcome, and the consequent gate applications, for that single simulation. In this example, if the measurement outcome is `Zero`, we don't see the `X` gate in the diagram. Another run of the simulation may show a slightly different circuit.
+
+### Target profile
+
+The currently selected target profile (set using qsharp.init() in Python, and the status bar icon in VS Code) influences how the circuit is synthesized.
+
+Specifically, gate decompositions are applied that would make the resulting circuit compatible with the capabilities of the target hardware. These are the same decompositions that would get applied during code (QIR) generation and submission to Azure Quantum.
+
+
+1. For example, consider the following Q# program that measures a qubit and an array of qubits.
+
+    ```qsharp
+    namespace Sample {
+        open Microsoft.Quantum.Measurement;
+    
+        @EntryPoint()
+        operation Main() : (Result, Result[]) {
+            // The `M` operation performs a measurement of a single qubit in the
+            // computational basis, also known as the Pauli Z basis.
+            use q = Qubit();
+            let result = M(q);
+            Reset(q);
+    
+            // The `MeasureEachZ` operation measures each qubit in an array in the
+            // computational basis and returns an array of `Result` values.
+            use qs = Qubit[2];
+            let results = MeasureEachZ(qs);
+    
+            return (result, results);
+        }
+    }
+    ```
+
+1. When target profile is set to **Unrestricted**, the gates displayed on the circuit correspond exactly to the quantum operations that are invoked in the Q# program.
+
+    :::image type="content" source="media/circuits-target-unrestricted.png" alt-text="Screenshot of a Jupyter Notebook showing how to visualize the circuit for a Q# operation.":::
+
+1. When the target profile is **QIR base**, the circuit looks different. Since Base Profile targets don't allow qubit reuse after measurement, the measurement is now performed on an entangled qubit instead. Since `Reset` operation isn't a supported gate in Base Profile, it's dropped. The resulting circuit matches what would be run on hardware if this program is submitted to Azure Quantum with this target profile.
+
+    :::image type="content" source="media/circuits-target-base.png" alt-text="Screenshot of a Jupyter Notebook showing how to visualize the circuit for a Q# operation.":::
+
+
