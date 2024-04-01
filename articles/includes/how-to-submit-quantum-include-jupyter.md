@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 12/08/2023
+ms.date: 04/01/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -20,13 +20,17 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed. 
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)  extensions installed.
-- The Azure Quantum `qsharp` and `azure-quantum` packages, and the `ipykernel` package. 
+- The Azure Quantum `qsharp`, `qsharp-widgets`, and `azure-quantum` packages, and the `ipykernel` package. 
+
+    ```bash
+    python -m pip install --upgrade qsharp qsharp-widgets azure-quantum ipykernel
+    ```
 
 ## Run and test your program in the local simulator
 
 1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**. 
 1. In the top-right, VS Code will detect and display the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, you may need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information. 
-1. In the first cell of the notebook, run 
+1. In the first cell of the notebook, run the following Python code to import the necessary modules:
 
     ```python
     import qsharp
