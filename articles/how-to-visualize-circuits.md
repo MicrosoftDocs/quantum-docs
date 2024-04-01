@@ -58,10 +58,11 @@ If you want to use Jupyter Notebooks to visualize quantum circuits, you need:
 
 ## Quantum circuits with Visual Studio Code
 
-Follow these steps to visualize quantum circuits of Q# programs in Visual Studio Code. For more information about quantum circuit diagram conventions, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
+Follow these steps to visualize quantum circuits of Q# programs in Visual Studio Code. For more information about quantum circuit diagram conventions, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
 
 ### Circuit diagram from entry point
 
+1. Open a Q# file in Visual Studio Code.
 1. To visualize the quantum circuit of the Q# program, select **View -> Command Palette** and type “circuit” which should bring up the **Q#: Show circuit** option. You can also click on **Circuit** from the list of commands below `@EntryPoint()`.
 
     :::image type="content" source="media/codelens-circuit.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens circuit command.":::
@@ -74,9 +75,13 @@ Follow these steps to visualize quantum circuits of Q# programs in Visual Studio
 
 When **debugging** a Q# program, you can visualize the quantum circuit based on the current state of the program, even if the program contains a `Result` comparison with an `Unrestricted` target profile. This is because debugging uses the current state of the actual simulator, so the position in the control flow and the result of the measurement are known.
 
-1. Click on the **Debug** button from the list of code lens commands below `@EntryPoint()`. 
+1. Click on the **Debug** button from the list of code lens commands below `@EntryPoint()`.
 1. In the **Run and debug** view on the left side, expand the **Quantum Circuit** section under **Variables** pane to show the circuit as you step through the program.
 1. Click on **Circuit: See Q# Circuit panel** to open the circuit window.
+
+    :::image type="content" source="media/circuit-codelens-debug.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit while debugging a program.":::
+
+
 1. You can step through the code and set breakpoints in various points to see the circuit update as the program is run.
 
 ### Circuit diagram from operations
@@ -84,8 +89,6 @@ When **debugging** a Q# program, you can visualize the quantum circuit based on 
 You can visualize the quantum circuit for a single Q# operation. To do this, click on the **Circuit** button in the code lens that appears above the operation declaration.
 
 :::image type="content" source="media/circuit-codelens-operation.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit for a single Q# operation.":::
-
-
 
 ## Quantum circuits with Python
 
@@ -101,7 +104,7 @@ In Python, there're three distinct ways of generating a circuit:
 
 ## Quantum circuits with Jupyter Notebooks
 
-On Jupyter Notebooks, you can visualize quantum circuits using the `qsharp-widgets` package. This package provides a widget that renders a quantum circuit diagram as an SVG image.
+In Jupyter Notebooks, you can visualize quantum circuits using the `qsharp-widgets` package. This package provides a widget that renders a quantum circuit diagram as an SVG image.
 
 1. In Visual Studio Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
 1. In the first cell of the notebook, run the following code to **import the Q# module**.
@@ -127,9 +130,14 @@ On Jupyter Notebooks, you can visualize quantum circuits using the `qsharp-widge
     qsharp.dump_circuit()
     ```
 
+    ```output
+    q_0    ── H ──── ● ──
+    q_1    ───────── X ──
+    ```
+
 1. You can visualize quantum circuits as an **SVG image** by using the `qsharp-widgets` package.
 
-    ```python	
+    ```python
     from qsharp_widgets import Circuit
     
     Circuit(qsharp.dump_circuit())

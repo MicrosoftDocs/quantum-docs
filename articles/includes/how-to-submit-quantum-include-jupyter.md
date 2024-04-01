@@ -94,7 +94,17 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
     [One, Zero, Zero, One]]
     ```
 
-1. 
+## Visualize quantum circuits
+
+You can visualize quantum circuits using the `qsharp-widgets` package. This package provides a widget that renders a quantum circuit diagram as an SVG image.
+
+
+    ```python
+    from qsharp_widgets import Circuit
+    
+    Circuit(qsharp.dump_circuit())
+    ```
+
 
 ## Compile your job using the Base profile
 
