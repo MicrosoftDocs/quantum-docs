@@ -95,10 +95,6 @@ You can visualize the quantum circuit for a single Q# operation. To do this, cli
 You can visualize quantum circuits in Python by using the `qsharp` package. The `qsharp` package provides a set of functions to generate quantum circuits for Q# programs.
 
 1. You can use `qsharp.get_circuit()` to dump the current state of the program in the form of a circuit.
-
-
-
-
 1. If you want to visualize a circuit for a specific entry expression, you can use `qsharp.circuit(entry_expr)` and pass the entry expression as an argument. This method disregards the current state of the runtime and evaluates a quantum program from scratch. For example, the `GHZSample` operation takes an integer `n` and prepares a GHZ state with `n` qubits. Then, you can visualize the circuit for this operation by running the following code.
 
     ```python
@@ -111,7 +107,7 @@ You can visualize quantum circuits in Python by using the `qsharp` package. The 
     qsharp.circuit("PrepareCatState")
     ```
 
-For more information about quantum circuit diagram conventions, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
+For more information, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
 
 > [!NOTE]
 > When using `qsharp.get_circuit()`, you can visualize the quantum circuit based on the current state of the program, even if the program contains a `Result` comparison with an `Unrestricted` target profile. This is because `qsharp.get_circuit()` uses the current state of the actual simulator, so the position in the control flow and the result of the measurement are known.

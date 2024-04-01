@@ -97,6 +97,16 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
     [One, Zero, Zero, One]]
     ```
 
+1. You can visualize the quantum circuit byt running `qsharp.circuit(entry_expr)` and pass the entry expression as an argument. For more information, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
+
+    ```python
+    result = qsharp.circuit("Sample.RandomNBits(4)")
+    ```
+
+    :::image type="content" source="../media/circuits-python.png" alt-text="Screenshot of a quantum circuit.":::
+
+
+
 ## Compile your job using the Base profile
 
 When you run programs on the local quantum simulator, you can submit any type of Q# program. However, Azure Quantum hardware targets do not yet support the full capabilities required to run all Q# programs. In order to compile and submit Q# programs to Azure Quantum, you need to set your target profile to tell Q# which capabilities that your target hardware supports. Currently, that is the Base profile. For more information, see [Profile types in Azure Quantum](xref:microsoft.quantum.target-profiles).
