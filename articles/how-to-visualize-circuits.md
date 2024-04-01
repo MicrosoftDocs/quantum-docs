@@ -92,12 +92,26 @@ You can visualize the quantum circuit for a single Q# operation. To do this, cli
 
 ## Quantum circuits with Python
 
-In Python, there're three distinct ways of generating a circuit:
+You can visualize quantum circuits in Python by using the `qsharp` package. The `qsharp` package provides a set of functions to generate quantum circuits for Q# programs.
 
-- You can use `qsharp.circuit(entry_expr)` to generate a circuit for a given entry expression. This method disregards the current state of the runtime and evaluates a quantum program from scratch.
-- You can use `qsharp.circuit(operation)` to generate a circuit for a given operation.
-- You can use `qsharp.get_circuit()` to dump the current state of the program in the form of a circuit. 
+1. You can use `qsharp.get_circuit()` to dump the current state of the program in the form of a circuit.
 
+
+
+
+1. If you want to visualize a circuit for a specific entry expression, you can use `qsharp.circuit(entry_expr)` and pass the entry expression as an argument. This method disregards the current state of the runtime and evaluates a quantum program from scratch. For example, the `GHZSample` operation takes an integer `n` and prepares a GHZ state with `n` qubits. Then, you can visualize the circuit for this operation by running the following code.
+
+    ```python
+    qsharp.circuit("GHZSample(3)")
+    ```
+
+1. If you want to visualize the circuit for a specific operation, you can use `qsharp.circuit(operation)`. For example, the `PrepareCatState` operation prepares a cat state with two qubits. You can visualize the circuit for this operation by running the following code.
+
+    ```python
+    qsharp.circuit("PrepareCatState")
+    ```
+
+For more information about quantum circuit diagram conventions, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
 
 > [!NOTE]
 > When using `qsharp.get_circuit()`, you can visualize the quantum circuit based on the current state of the program, even if the program contains a `Result` comparison with an `Unrestricted` target profile. This is because `qsharp.get_circuit()` uses the current state of the actual simulator, so the position in the control flow and the result of the measurement are known.
@@ -124,7 +138,7 @@ In Jupyter Notebooks, you can visualize quantum circuits using the `qsharp-widge
     CNOT(register[0], register[1]);
     ```
 
-1. You can use the `dump_circuit()` function displays a quantum circuit based on the current state of the program..
+1. You can use the `dump_circuit()` function displays a quantum circuit based on the current state of the program. For example, the circuit diagram shows two qubit registers which are initialized to the |0⟩ state. Then, a Hadamard gate, **H**, is applied to the first qubit. After that, a CNOT gate is applied using the first qubit as control, which is represented as a dot, and the second qubit as target, which is represented as an X.
 
     ```python
     qsharp.dump_circuit()
@@ -135,7 +149,7 @@ In Jupyter Notebooks, you can visualize quantum circuits using the `qsharp-widge
     q_1    ───────── X ──
     ```
 
-1. You can visualize quantum circuits as an **SVG image** by using the `qsharp-widgets` package.
+1. You can visualize quantum circuits as an **SVG image** by using the `qsharp-widgets` package. In this case, the CNOT gate is represented as a line connecting the two qubits, with a dot on the control qubit and a circumscribed cross on the target qubit.
 
     ```python
     from qsharp_widgets import Circuit
@@ -143,7 +157,15 @@ In Jupyter Notebooks, you can visualize quantum circuits using the `qsharp-widge
     Circuit(qsharp.dump_circuit())
     ```
 
-1. You can generate a circuit diagram for any program with an **entry expression** by calling `qsharp.circuit()`.
+    :::image type="content" source="media/circuits-jupyter-notebook-bellstate.png" alt-text="Screenshot of a Jupyter Notebook showing how to visualize the circuit for a Q# operation.":::
+
+For more information, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
+
+### Quantum circuits from entry expressions
+
+You can generate a circuit diagram for any program with an **entry expression** by calling `qsharp.circuit()` and passing the entry expression as an argument. 
+
+1. For example, add a new cell and copy the following code, which prepares a GHZ state. 
 
     ```qsharp
     %%qsharp
@@ -162,13 +184,18 @@ In Jupyter Notebooks, you can visualize quantum circuits using the `qsharp-widge
         return results;
     }
     ```
-    
+
+1. Add a new cell and run the following code to visualize the circuit. For example, prepare a GHZ state with 3 qubits.
+   
     ```python
     Circuit(qsharp.circuit("GHZSample(3)"))
     ```
 
-1. You can generate circuit diagrams for any **operation that takes qubits** or arrays of qubits. The diagram shows as many wires as there are input qubit, plus any additional qubits that are allocated within the operation. When the operation takes an array of qubits `(Qubit[])`, the circuit shows the array as a register of 2 qubits. For example, the following code prepares a cat state.
+### Quantum circuits from operations with qubits
 
+You can generate circuit diagrams for any **operation that takes qubits** or arrays of qubits. The diagram shows as many wires as there are input qubit, plus any additional qubits that are allocated within the operation. When the operation takes an array of qubits `(Qubit[])`, the circuit shows the array as a register of 2 qubits. 
+
+1. Add a new cell and copy the following example. This code prepares a cat state.
 
     ```qsharp
     %%qsharp
@@ -178,7 +205,9 @@ In Jupyter Notebooks, you can visualize quantum circuits using the `qsharp-widge
         ApplyToEach(CNOT(register[0], _), register[1...]);
     }
     ```
-    
+
+1. Add a new cell and run the following code to visualize the circuit of the `PrepareCatState` operation.
+
     ```python
     Circuit(qsharp.circuit(operation="PrepareCatState"))
     ```
