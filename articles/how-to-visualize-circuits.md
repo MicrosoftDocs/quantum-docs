@@ -262,10 +262,10 @@ Specifically, gate decompositions are applied that would make the resulting circ
 
 1. When target profile is set to **Unrestricted**, the gates displayed on the circuit correspond exactly to the quantum operations that are invoked in the Q# program.
 
-    :::image type="content" source="media/circuits-target-unrestricted.png" alt-text="Screenshot of a Jupyter Notebook showing how to visualize the circuit for a Q# operation.":::
+    :::image type="content" source="media/circuits-target-unrestricted.png" alt-text="Screenshot of quantum circuits when target profile is Unrestricted. ":::
 
 1. When the target profile is **QIR base**, the circuit looks different. Since Base Profile targets don't allow qubit reuse after measurement, the measurement is now performed on an entangled qubit instead. Since `Reset` operation isn't a supported gate in Base Profile, it's dropped. The resulting circuit matches what would be run on hardware if this program is submitted to Azure Quantum with this target profile.
 
-    :::image type="content" source="media/circuits-target-base.png" alt-text="Screenshot of a Jupyter Notebook showing how to visualize the circuit for a Q# operation.":::
+    :::image type="content" source="media/circuits-target-base.png" alt-text="Screenshot of quantum circuits when target profile is QIR base.":::
 
 
