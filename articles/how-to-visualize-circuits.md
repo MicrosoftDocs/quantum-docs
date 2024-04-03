@@ -92,7 +92,7 @@ When **debugging** a Q# program, you can visualize the quantum circuit based on 
 
 You can visualize the quantum circuit for a single Q# operation. To do this, click on the **Circuit** button in the code lens that appears above the operation declaration.
 
-:::image type="content" source="media/circuit-codelens-operation.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit for a single Q# operation.":::
+:::image type="content" source="media/circuit-codelens-operation.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuits in the Q# circuits pane after debugging the program.":::
 
 ## Quantum circuits with Python
 
