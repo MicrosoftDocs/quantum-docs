@@ -79,7 +79,7 @@ When **debugging** a Q# program, you can visualize the quantum circuit based on 
 1. In the **Run and debug** view on the left side, expand the **Quantum Circuit** section under **Variables** pane to show the circuit as you step through the program.
 1. Click on **Circuit: See Q# Circuit panel** to open the circuit window.
 
-    :::image type="content" source="media/circuit-codelens-debug.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit while debugging a program.":::
+    :::image type="content" source="media/circuit-codelens-debug.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit while debugging a program." lightbox="media/circuit-codelens-debug.png":::
 
 
 1. You can step through the code and set breakpoints in various points to see the circuit update as the program is run. 
