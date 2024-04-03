@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to how to visually represent quantum algorithms with quantum circuit diagrams using VS Code, Python, and Jupyter Notebooks.
-ms.date: 03/22/2024
+ms.date: 04/03/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -62,7 +62,7 @@ Follow these steps to visualize quantum circuits of Q# programs in Visual Studio
 
 ### Circuit diagram from entry point
 
-1. Open a Q# file in Visual Studio Code.
+1. Open a Q# file in Visual Studio Code, or [load one of the quantum samples](xref:microsoft.quantum.submit-jobs#load-a-q-sample-program). 
 1. To visualize the quantum circuit of the Q# program, select **View -> Command Palette** and type “circuit” which should bring up the **Q#: Show circuit** option. You can also click on **Circuit** from the list of commands below `@EntryPoint()`.
 
     :::image type="content" source="media/codelens-circuit.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens circuit command.":::
@@ -83,7 +83,10 @@ When **debugging** a Q# program, you can visualize the quantum circuit based on 
 
 
 1. You can step through the code and set breakpoints in various points to see the circuit update as the program is run. 
-1. The current quantum circuit is shown in the Q# Circuit pane. This circuit diagram represents the current state of the simulator, that is, the gates that have been applied up until the current point of execution.
+1. The current quantum circuit is shown in the **Q# Circuit panel**. This circuit diagram represents the current state of the simulator, that is, the gates that have been applied up until the current point of execution.
+
+
+    :::image type="content" source="media/codelens-circuits-bellstates.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit for a single Q# operation.":::
 
 ### Circuit diagram from operations
 
@@ -231,10 +234,14 @@ One way to work around this restriction is to run the program in the simulator, 
 
 ### Target profile
 
-The currently selected target profile (set using qsharp.init() in Python, and the status bar icon in VS Code) influences how the circuit is synthesized.
+You can select `Unrestricted` or `QIR Base Profile` as the target profile for the circuit synthesis. The currently selected target profile influences how the circuit is synthesized. When the target profile is set to `Unrestricted`, the circuit synthesis is based on the actual quantum operations in the Q# program. When the target profile is set to `QIR Base Profile`, the circuit synthesis is based on the quantum operations that would be run on hardware if the program is submitted to Azure Quantum with this target profile.
 
-Specifically, gate decompositions are applied that would make the resulting circuit compatible with the capabilities of the target hardware. These are the same decompositions that would get applied during code (QIR) generation and submission to Azure Quantum.
+> [!NOTE]
+> - To select target profile in VS Code, go to **View -> Command Palette** and write **Q#: Set the Azure Quantum QIR target profile**. You can select `Unrestricted` or `QIR Base Profile` from the dropdown list.
+>
+> - To select target profile in Python, write `qsharp.init(target_profile=qsharp.TargetProfile.Unrestricted)` or `qsharp.init(target_profile=qsharp.TargetProfile.Base)`.
 
+Specifically, gate decompositions are applied that would make the resulting circuit compatible with the capabilities of the target hardware. These are the same decompositions that would get applied during code generation and submission to Azure Quantum.
 
 1. For example, consider the following Q# program that measures a qubit and an array of qubits.
 
