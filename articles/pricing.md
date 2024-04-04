@@ -200,7 +200,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ## Rigetti
 
-[Rigetti](https://rigetti.com) charges for job execution time on their quantum processors, the 84-bit Ankaa-2, and the 9-bit Ankaa-9q-1. There is no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.html) simulator is free for all users.
+[Rigetti](https://rigetti.com) charges for job execution time on their quantum processor, the 84-bit Ankaa-2. There is no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.html) simulator is free for all users.
 
 To learn more about Riggeti, visit the [Rigetti provider page](xref:microsoft.quantum.providers.rigetti).
 
@@ -214,7 +214,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 
 |Pricing | Includes access to  |
 |---|---|  
-|Use is deducted from the Azure Quantum Credits based on the job execution time only| <ul><li>Rigetti 84-bit Ankaa-2</li><li>Rigetti 9-bit Ankaa-9q-1</li><li>Rigetti QVM simulator (free)</li></ul>|
+|Use is deducted from the Azure Quantum Credits based on the job execution time only| <ul><li>Rigetti 84-bit Ankaa-2</li><li>Rigetti QVM simulator (free)</li></ul>|
 
 > [!NOTE]
 > Once you have consumed all the credits you need to switch to a different plan to continue using Rigetti. Azure Quantum won’t charge you when you reach your credit limit.
@@ -225,12 +225,11 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
  
 ### [Pay As You Go](#tab/tabid-paygoRigetti)
 
-The Pay-as-you-go plan consists of *a la carte* access to the Ankaa-2, and the Ankaa-9q-1 quantum processors. The usage is charged based on the job execution time only
+The Pay-as-you-go plan consists of *a la carte* access to the Ankaa-2. The usage is charged based on the job execution time only
 
 |Pricing | Includes access to   |
 |---|---|  
 |$0.02 (USD) per 10-millisecond increment of job execution time| <ul><li>Rigetti 84-bit Ankaa-2</li><li>Rigetti QVM simulator (free)</li></ul>|
-|$0.013 (USD) per 10-millisecond increment of job execution time| <ul><li>Rigetti 9-bit Ankaa-9q-1</li></ul>|
 
 ***
 
