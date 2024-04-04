@@ -2,7 +2,7 @@
 author: bradben
 description: Describes how to update your Q# programming language projects and the Quantum Development Kit (QDK) to the current version.
 ms.author: brbenefield
-ms.date: 03/20/2024
+ms.date: 04/04/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.custom: devx-track-azurecli
@@ -49,20 +49,20 @@ To create a virtual Python environment and install azure-quantum with Qiskit sup
 1. Create a local folder, for example *~/qiskit10-env*.
 1. Run `venv` with the path to the folder
 
-    ```cmd
+    ```bash
     python3 -m venv ~/qiskit10-env
     ```
 
 1. Activate the environment.
 
-    ```cmd
+    ```bash
     ~/qiskit10-env/bin/activate
     ```
 
 1. Run `pip list` and you can see that only the core packages are installed in the new environment.
 1. To install the azure-quantum package, run
 
-    ```cmd
+    ```bash
     pip install azure-quantum[qiskit]
     ```
 1. Install any other packages that you used in your previous environment as needed. You can run `pip list` in each environment to compare packages and versions. 
