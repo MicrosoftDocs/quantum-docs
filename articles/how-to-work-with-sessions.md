@@ -1,13 +1,13 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to manually manage your jobs using sessions, what are the job failure policies, and how to avoid session timeouts.
-ms.date: 03/15/2024
+ms.date: 04/09/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
-title: Manage your sessions
+title: Manage your Sessions
 uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 #customer intent: As a quantum developer, I want understand how to work with multiple sessions. 
 ---
