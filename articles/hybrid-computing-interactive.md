@@ -123,7 +123,7 @@ This example shows how to create a session with Q# inline code using a Jupyter N
     ```
 
     > [!IMPORTANT]
-    > When passing arguments as parameters to the job, they are formatted into the Q# expression used when calling `qsharp.compile`. This means that you need to be careful to format your arguments as Q#. In this example, because arrays in Python are already printed as \[<item0>, <item1>, ... \], the input arguments match the Q# formatting. For other Python data structures you might need more handling to get the string values inserted into the Q# in a compatible way.
+    > When passing arguments as parameters to the job, they are formatted into the Q# expression used when calling `qsharp.compile`. This means that you need to be careful to format your arguments as Q#. In this example, because arrays in Python are already printed as \[item0, item1, ...\], the input arguments match the Q# formatting. For other Python data structures you might need more handling to get the string values inserted into the Q# in a compatible way.
 
 1. Once you create a session, you can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
 
