@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Build a Q# project that demonstrates fundamental quantum concepts like superposition by creating a quantum random number generator.
 ms.author: sonialopez
-ms.date: 02/13/2024
+ms.date: 03/25/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -396,8 +396,12 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
         }
     }
     ```
+
 1. Before running the program, you need to set the target profile to **Unrestricted**. Select **View -> Command Palette**, search for QIR, select **Q#: Set the Azure Quantum QIR target profile**, and then select **Q#: unrestricted**. 
-1. To run your program, select **Run Q# File** from the play icon drop-down in the top-right, or press **Ctrl+F5**. The program runs the operation or function marked with the `@EntryPoint()` attribute on the default simulator.
+1. To run your program, select **Run Q# File** from the play icon drop-down in the top-right, click on **Run** from the list of commands below `@EntryPoint()`, or press **Ctrl+F5**. The program runs the operation or function marked with the `@EntryPoint()` attribute on the default simulator.
+
+    :::image type="content" source="media/codelens-run-QRNG.png" alt-text="Screenshot of Visual Studio Code showing where to find the run command in the code lens.":::
+
 1. Your output will appear in the debug console.
 1. Run the program again to see a different result.
 
@@ -409,7 +413,10 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
 
 Let's visualize the distribution of results obtained from running the quantum program multiple times. The frequency histogram helps visualize the probability distribution of these outcomes.
 
-1. Select **View -> Command Palette**, or press **Ctrl+Shift+P**, and type “histogram” which should bring up the **Q#: Run file and show histogram** option. Select this option to open the Q# histogram window.
+1. Select **View -> Command Palette** and type “histogram” which should bring up the **Q#: Run file and show histogram** option. You can also click on **Histogram** from the list of commands below `@EntryPoint()`. Select this option to open the Q# histogram window.
+
+    :::image type="content" source="media/codelens-histogram-QRNG.png" alt-text="Screenshot of Visual Studio Code showing where to find the histogram command in the code lens.":::
+
 1. Enter a number of **shots** to execute the program, for example, 100 shots, and press **Enter**. The histogram will display in the Q# histogram window.
 1. Each bar in the histogram corresponds to a possible outcome, and its height represents the number of times that outcome is observed. The number of different results may differ each time you run the histogram.
 
@@ -423,7 +430,8 @@ Let's visualize the distribution of results obtained from running the quantum pr
 
     :::image type="content" source="media/histogram-vscode-qrng-tab.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code showing how to display settings.":::
 
-
+> [!NOTE]
+> The `RandomNumberGenerator.qs` program doesn't allow quantum circuit visualization because `Unrestricted` target profiles don't support quantum circuit visualization if the program contains a comparison of a `Result` value.
 
 ### [Jupyter Notebook in VS Code](#tab/tabid-python)
 

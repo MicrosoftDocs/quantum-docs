@@ -197,7 +197,7 @@
       href: concepts-pauli-measurements.md
     - name: T gates & T factories
       href: concepts-tfactories.md
-    - name: Quantum circuits
+    - name: Quantum circuits conventions
       href: concepts-circuits.md
     - name: Quantum oracles
       href: concepts-oracles.md
