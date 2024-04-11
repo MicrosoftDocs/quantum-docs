@@ -2,12 +2,12 @@
 author: bradben
 description: This article provides troubleshooting steps for common issues encountered when using the Azure Quantum service.
 ms.author: brbenefield
-ms.date: 03/14/2024
+ms.date: 04/11/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
 no-loc: [Quantum Development Kit, target, targets]
-title: Troubleshoot Azure Quantum
+title: Troubleshoot Issues with Azure Quantum
 uid: microsoft.quantum.azure.common-issues
 ---
 
