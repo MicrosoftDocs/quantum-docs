@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 02/13/2024
+ms.date: 04/09/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -176,7 +176,7 @@ This is done in the Q# file by adding an `@EntryPoint()` directly preceding the 
 1. Before running the program, you need to set the target profile to **Unrestricted**. Select **View -> Command Palette**, search for QIR, select **Q#: Set the Azure Quantum QIR target profile**, and then select **Q#: unrestricted**. 
 
     > [!NOTE]
-> If the target profile is not set to **Unrestricted**, you will get an error when you run the program.
+    > If the target profile isn't set to **Unrestricted**, you will get an error when you run the program.
 
 1. To run the program, select **Run Q# File** from the play icon drop-down in the top-right, click on **Run** from the list of commands below `@EntryPoint()`, or press **Ctrl+F5**. The program runs the operation or function marked with the `@EntryPoint()` attribute on the default simulator.
 1. Your output appear in the debug console.
@@ -192,11 +192,12 @@ This is done in the Q# file by adding an `@EntryPoint()` directly preceding the 
 
 1. If you change the value of `initial` to `Zero` and run the program again, you should observe that the first qubit also returns `Zero` every time.
 
+
     ```output
-    Q1 - Zeros: 0
-    Q1 - Ones: 1000
-    Q2 - Zeros: 0
-    Q2 - Ones: 1000
+    Q1 - Zeros: 1000
+    Q1 - Ones: 0
+    Q2 - Zeros: 1000
+    Q2 - Ones: 0
     ```
 
 > [!TIP]

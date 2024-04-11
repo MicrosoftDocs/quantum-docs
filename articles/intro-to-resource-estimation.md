@@ -50,7 +50,7 @@ You can adapt the Resource Estimator and specify the characteristics of your qua
 |[Quantum error correction scheme](xref:microsoft.quantum.overview.resources-estimator#quantum-error-correction-schemes)|For example, specify the number of physical qubits per logical qubit, the logical cycle time, or the error correction threshold.|
 |[Error budget](xref:microsoft.quantum.overview.resources-estimator#error-budget)|For example, specify the error budget to implement logical qubits, T states distillation, and synthesis of the rotation gates. |
 |[Distillation units](xref:microsoft.quantum.overview.resources-estimator#distillation-units)| For example, specify the number of T states required for the distillation process, number of T states produced as output from the distillation process, or the probability of failure of the distillation process.|
-|[Constraints](xref:microsoft.quantum.overview.resources-estimator#constraints)|For example, specify the maximum number of physical qubits, the maximum runtime, or the maximum number of T factory copies.|
+|[Constraints](xref:microsoft.quantum.overview.resources-estimator#constraints)|For example, specify the maximum number of physical qubits, the maximum runtime, or the maximum number of [T factory copies](xref:microsoft.quantum.concepts.tfactories).|
 
 ### Flexibility
 
@@ -68,7 +68,7 @@ You can reduce the execution time of the Resource Estimator by incorporating som
 
 You can visualize the tradeoffs between the number of physical qubits and the runtime of the algorithm using the [space-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-time-diagram), which allows you to find the optimal combination of {number of qubits, runtime} pairs.
 
-You can also inspect the distribution of physical qubits used for the algorithm and the T factories using the [space diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-diagram).
+You can also inspect the distribution of physical qubits used for the algorithm and the [T factories](xref:microsoft.quantum.concepts.tfactories) using the [space diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-diagram).
 
 ## Get started with the Resource Estimator
 

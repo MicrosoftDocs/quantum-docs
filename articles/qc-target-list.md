@@ -52,7 +52,6 @@ Microsoft's provider partners offer a wide-range of qubit availability for their
 |[Quantinuum H2-1](xref:microsoft.quantum.providers.quantinuum#system-model-h2)| 32 qubits|
 |[Rigetti Quantum Virtual Machine (QVM)](xref:microsoft.quantum.providers.rigetti#simulators) |30 qubits|  
 |[Rigetti Ankaa-2](xref:microsoft.quantum.providers.rigetti#ankaa-2) |84 qubits|
-|[Rigetti Ankaa-9q-1](xref:microsoft.quantum.providers.rigetti#ankaa-9q-1) |9 qubits|
 
 ## Coming soon to Azure Quantum
 

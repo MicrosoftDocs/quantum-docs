@@ -81,7 +81,7 @@ You can connect and submit jobs directly from VS Code. For this example, you'll 
 1. Select **Azure account**, and follow the prompts to connect to your preferred directory, subscription, and workspace.
 
     > [!NOTE]
-    > If you have a connection string, you can select **Connection string** and paste the connection string corresponding to your Azure Quantum workspace.
+    > If you have a connection string, you can select **Connection string** and paste the connection string corresponding to your Azure Quantum workspace. For more information, see [Connect to a Quantum workspace using a connection string](xref:microsoft.quantum.how-to.connect-workspace#connect-with-a-connection-string).
 
 1. Once you are connected, in the **Explorer** pane, expand **Quantum Workspaces**.
 1. Expand your workspace and expand the **Rigetti** provider.
