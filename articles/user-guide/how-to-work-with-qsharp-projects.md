@@ -72,7 +72,7 @@ you would set the `project_root` before making calls to any Q# operations:
 ```python
 import qsharp
 
-qsharp.init(project_root = '/Teleportation_project')
+qsharp.init(project_root = './Teleportation_project')
 ```
 
 The path of the root folder is relative to the file that is setting it, meaning that your program doesn't necessarily have to be in the project. A valid path may also be `'./MyProjects/Teleportation_project'`
@@ -169,7 +169,7 @@ MyMathLib.Multiply(x,y);
 1. If you are accessing the project from a Python program or Jupyter Notebook, set the root folder path using `qsharp.init`, for example:
 
     ```python
-    qsharp.init(project_root = '/Teleportation_project')
+    qsharp.init(project_root = './Teleportation_project')
     ```
 1. If you are using only Q# files in VS Code, when you open a Q# file, the compiler searches for the *qsharp.json* manifest file, determine the project root folder, and then scan the subfolder for \*.qs files. 
 
@@ -279,7 +279,7 @@ import qsharp
 ```python
 # set the root folder for the project
 # make adjustments to the path depending on where your program is saved
-qsharp.init(project_root = '/Teleportation_project')
+qsharp.init(project_root = './Teleportation_project')
 
 ```
 
