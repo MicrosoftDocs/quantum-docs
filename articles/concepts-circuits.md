@@ -19,21 +19,26 @@ For more information, see [How to visualize quantum circuits diagrams](xref:micr
 
 ## Reading quantum circuit diagrams
 
-In a circuit diagram, qubit registers are displayed as horizontal lines, with each line representing a qubit. By convention, the top line is qubit register $0$ and the remainder are labeled sequentially.
-
-Quantum operations are represented by *quantum gates*. The term quantum gate is analogous to classical logic gates. Gates acting on one or more qubit registers are denoted as a box. For example, the following symbol represents a Hadamard operation acting on a single-qubit register.
-
-:::image type="content" source="media\2.svg" alt-text="Symbol for a Hadamard operation acting on a single-qubit register.":::
-
 In a quantum circuit, time flows from left to right. Quantum gates are ordered in chronological order with the left-most gate as the gate first applied to the qubits.
-In other words, if you picture the wires as holding the quantum state, the wires bring the quantum state through each of the gates in the diagram from left to right.
-For example, the action of the following quantum circuit is the unitary matrix $CBA$.
+
+Take the following quantum circuit diagram as an example:
+
+:::image type="content" source="media\annotated-sample-circuit.png" alt-text="Diagram ":::
+
+
+1. **Qubit register**: Qubit registers are displayed as horizontal lines, with each line representing a qubit. The top line is qubit register labeled 0, the second line is qubit register labeled 1, and so on.
+1. **Quantum gate**: Quantum operations are represented by *quantum gates*. The term quantum gate is analogous to classical logic gates. Gates acting on one or more qubit registers are denoted as a box. In this example, the symbol represents a Hadamard operation.
+1. **Controlled gate**: Controlled gates act on two or more qubits. In this example, the symbol represent a CNOT gate. The black circle represents the control qubit, and the cross within a circle represents the target qubit.
+1. **Measurement operation**: The meter symbol represents a measurement operation. The measurement operation takes a qubit register as input and outputs classical information.
+
+### Applying quantum gates
+
+Because time flows from left to right, the left-most gate is applied first For example, the action of the following quantum circuit is the unitary matrix $CBA$.
 
 :::image type="content" source="media\3.svg" alt-text="Diagram of quantum gates being applied left-to-right in a quantum circuit.":::
 
 > [!NOTE]
 > Matrix multiplication obeys the opposite convention: the right-most matrix is applied first. In quantum circuit diagrams, however, the left-most gate is applied first. This difference can at times lead to confusion, so it is important to note this significant difference between the linear algebraic notation and quantum circuit diagrams.
-
 
 ### Inputs and outputs of quantum circuits
 
@@ -42,7 +47,6 @@ In a quantum circuit diagram, the wires entering a quantum gate represent the qu
 The number of inputs of a quantum gate are equal to the number of outputs of a quantum gate. This is because quantum operations are unitary and hence reversible. If a quantum gate had more outputs than inputs, it would not be reversible and hence not unitary, which is a contradiction.
 
 For this reason any box drawn in a circuit diagram must have precisely the same number of wires entering it as exiting it.
-
 
 ## Multi-qubit operations
 
@@ -82,6 +86,14 @@ is Ctl { // Auto-generate the controlled specialization of the operation
 }
 ```
 
+### Classically controlled gates
+
+Quantum gates can also be applied after a measurement, where the result of the measurement acts as a classical control bit.
+
+The following symbol represents a classically controlled gate, where $G$ is applied conditioned on the classical control bit being value $1$:
+
+:::image type="content" source="media\8.svg" alt-text="Circuit diagram representing a controlled operation.":::
+
 ## Measurement operator
 
 Measurement operations take a qubit register, measures it, and outputs the result as classical information.
@@ -92,12 +104,6 @@ Specifically, the symbol of the measurement operation looks like:
 :::image type="content" source="media\7.svg" alt-text="Symbol representing a measurement operation.":::
 
 In Q#, the `Measure` operator implements the measurement operation.
-
-Similarly, the subcircuit
-
-:::image type="content" source="media\8.svg" alt-text="Circuit diagram representing a controlled operation.":::
-
-gives a classically controlled gate, where $G$ is applied conditioned on the classical control bit being value $1$.
 
 ## Example: Unitary transformation
 
@@ -116,15 +122,25 @@ The symbol behind the Hadamard gate represents a CNOT gate, where the black circ
 
 ## Example: Teleportation circuit diagram
 
-Quantum teleportation is perhaps the best quantum algorithm for illustrating these components.
+Quantum teleportation is one of the best quantum algorithm for illustrating circuit components.
 
-Quantum teleportation is a method for moving data within a quantum computer (or even between distant quantum computers in a quantum network) through the use of entanglement and measurement.
-Interestingly, it is actually capable of moving a quantum state, say the value in a given qubit, from one qubit to another, without even knowing what the qubit's value is.
-This is necessary for the protocol to work according to the laws of quantum mechanics.
+Quantum teleportation is a protocol that allows a quantum state to be transmitted from one qubit to another, with the help of a shared entangled state between the sender and receiver, and classical communication between them.
 
-The quantum teleportation circuit is shown here along with an annotated version of the circuit to illustrate how to read the quantum circuit.
+For learning purposes, the sender is called Alice, the receiver is called Bob, and the qubit to be teleported is called the message qubit. Alice and Bob hold one qubit each, and Alice has an extra qubit which is the message qubit.
 
-:::image type="content" source="media\tp2.svg" alt-text="Diagram of a quantum teleportation circuit.":::
+The following circuit diagram illustrates the teleportation protocol:
+
+:::image type="content" source="media\annotated-teleportation-circuit.png" alt-text="Diagram ":::
+
+Let's break down the steps of the teleportation protocol:
+
+1. Qubit register labeled 0 is the message qubit, qubit register labeled 1 is Alice's qubit, and qubit register labeled 2 is Bob's qubit. The message qubit is in an unknown state, and Alice and Bob's qubits are in the $\ket{0}$ state.
+1. A Hadamard gate $H$ is applied to Alice's qubit. Because the qubit is in the $\ket{0}$ state, the resulting state is $\frac{1}{\sqrt{2}}(\ket{0} + \ket{1})$.
+1. A CNOT gate is applied to Alice and Bob's qubits. Alice's qubit is the control qubit, and Bob's qubit is the target qubit. The resulting state is $\frac{1}{\sqrt{2}}(\ket{00} + \ket{11})$. Alice and Bob now share an entangled state.
+1. A CNOT gate is applied to the message qubit and Alice's qubit.  Since Alice's qubit is also entangled with Bob's qubit, the resulting state is a three-qubit entangled state.
+1. A Hadamard gate $H$ is applied to the message qubit.
+1. Alice measures her two qubits and communicates the measurement results to Bob - this isn't reflected in the circuit. The measurement results are two classical bits, which can take the values 00, 01, 10, or 1
+1. Two classically controlled Pauli gates are applied to Bob's qubit, depending on the result bit being value $1$. The resulting state is the original message qubit state.
 
 ## Next steps
 
