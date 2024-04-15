@@ -93,7 +93,7 @@
     href: hybrid-computing-overview.md
   - name: Batch hybrid QC
     href: hybrid-computing-batch.md
-  - name: Interactive hybrid QC
+  - name: Interactive hybrid QC (sessions)
     items:
     - name: Get started with sessions
       href: hybrid-computing-interactive.md
