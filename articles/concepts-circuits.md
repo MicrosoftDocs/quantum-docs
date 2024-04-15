@@ -23,7 +23,7 @@ In a quantum circuit, time flows from left to right. Quantum gates are ordered i
 
 Take the following quantum circuit diagram as an example:
 
-:::image type="content" source="media\annotated-sample-circuit.png" alt-text="Diagram ":::
+:::image type="content" source="media\annotated-sample-circuit.png" alt-text="Diagram of a quantum circuit wiht two registers, one hadamard gate, one controlled gate and one measurement. ":::
 
 
 1. **Qubit register**: Qubit registers are displayed as horizontal lines, with each line representing a qubit. The top line is qubit register labeled 0, the second line is qubit register labeled 1, and so on.
@@ -130,7 +130,7 @@ For learning purposes, the sender is called Alice, the receiver is called Bob, a
 
 The following circuit diagram illustrates the teleportation protocol:
 
-:::image type="content" source="media\annotated-teleportation-circuit.png" alt-text="Diagram ":::
+:::image type="content" source="media\annotated-teleportation-circuit.png" alt-text="Diagram of the quantum circuit of the teleportation protocol.":::
 
 Let's break down the steps of the teleportation protocol:
 
