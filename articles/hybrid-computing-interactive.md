@@ -14,7 +14,9 @@ uid: microsoft.quantum.hybrid.interactive
 
 # Interactive quantum computing: sessions
 
-In this model, the client compute resource may be moved to the cloud, resulting in lower-latency and the ability to repeat execution of the quantum circuit with different parameters. Jobs can be grouped logically into one session, and the jobs in that session can be prioritized over non-session jobs.  Although the qubit states do not persist between jobs, a session allows for shorter queue times for jobs and longer running problems.
+This article explains the architecture of interactive quantum computing, also known as sessions, and how to create a new session.
+
+In this model of hybrid quantum computing, the client compute resource may be moved to the cloud, resulting in lower-latency and the ability to repeat execution of the quantum circuit with different parameters. Jobs can be grouped logically into one session, and the jobs in that session can be prioritized over non-session jobs. Although the qubit states don't persist between jobs, a session allows for shorter queue times for jobs and longer running problems.
 
 ![Interactive quantum computing](~/media/hybrid/interactive.png)
 
@@ -43,11 +45,9 @@ A key user scenario where you may want to combine jobs in a session is *paramete
 
 Sessions are supported on all quantum computing hardware providers, currently [IonQ](xref:microsoft.quantum.providers.ionq), [Quantinuum](xref:microsoft.quantum.providers.quantinuum) and [Rigetti](xref:microsoft.quantum.providers.rigetti). In some cases, jobs submitted within a session are prioritized in the queue of that target. For more information, see [Target behavior](#target-behavior).
 
-**Exception**: IonQ targets (QPU or simulators) currently don't support sessions that use Q# code. IonQ targets will run sessions using Qiskit or Cirq.
-
 ## Get started with sessions
 
-Sessions can be created for quantum programs written in Q# or Python (Qiskit, Cirq etc.) 
+Sessions are managed with Python and can be created for any QIR quantum programs, including Q#, Qiskit, and Cirq programs.
 
 ### [Q# + Python](#tab/tabid-iqsharp)
 
@@ -56,8 +56,8 @@ This example shows how to create a session with Q# inline code using a Jupyter N
 > [!NOTE]
 > Sessions are managed with Python, even when running Q# inline code.
 
-1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**. 
-1. In the top-right, VS Code will detect and display the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, you may need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information. 
+1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
+1. In the top-right, VS Code will detect and display the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, you may need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information.
 1. In the first cell of the notebook, run 
 
     ```python
@@ -107,7 +107,7 @@ This example shows how to create a session with Q# inline code using a Jupyter N
     }
     ```
 
-1. Next, you create a session. Let's say you want to run `GenerateRandomBit` operation three times, so you use `target.submit` to submit the Q# operation with the target data and you repeat the code three times - in a real world scenario, you may want to submit different programs instead of the same code.
+1. Next, you create a session. Let's say you want to run `GenerateRandomBit` operation three times, so you use `target.submit` to submit the Q# operation with the `target` data and you repeat the code three times - in a real world scenario, you may want to submit different programs instead of the same code.
  
     ```python
     angle = [0.0, 0.0]
@@ -123,7 +123,7 @@ This example shows how to create a session with Q# inline code using a Jupyter N
     ```
 
     > [!IMPORTANT]
-    > When passing arguments as parameters to the job, they are formatted into the Q# expression used when calling `qsharp.compile`. This means that you need to be careful to format your arguments as Q#. In this example, because arrays in Python are already printed as \[item0, item1, ...\], the input arguments match the Q# formatting. For other Python data structures you might need more handling to get the string values inserted into the Q# in a compatible way.
+    > When passing arguments as parameters to the job, they are formatted into the Q# expression when calling `qsharp.compile`. This means that you need to be careful to format your arguments as Q# objects. In this example, because arrays in Python are already printed as \[item0, item1, ...\], the input arguments match the Q# formatting. For other Python data structures you might need more handling to get the string values inserted into the Q# in a compatible way.
 
 1. Once you create a session, you can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
 
@@ -204,10 +204,10 @@ This example shows how to create a session with Q# inline code using a Jupyter N
                 location = "") # add your location
     ```
 
-3. Select the [quantum target](xref:microsoft.quantum.reference.qc-target-list) of your choice. In this example, you're using [IonQ simulator](xref:microsoft.quantum.providers.ionq) as target. 
+3. Select the [quantum target](xref:microsoft.quantum.reference.qc-target-list) of your choice. In this example, you're using [IonQ simulator](xref:microsoft.quantum.providers.ionq) as target.
 
     > [!NOTE]
-    > Cirq circuits can only use IonQ or Quantinuum targets. 
+    > Cirq circuits can only use IonQ or Quantinuum targets.
 
     ```python
     target = service.get_target("ionq.simulator")
