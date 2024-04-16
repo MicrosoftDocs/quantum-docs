@@ -8,8 +8,6 @@
     href: testing-debugging.md
   - name: Perform long running experiments
     href: ../how-to-long-running-experiments.md
-- name: Visualize quantum circuit diagrams
-  href: ../how-to-visualize-circuits.md
 - name: Tutorials with Q# 
   items:
   - name: Quantum random number generator
