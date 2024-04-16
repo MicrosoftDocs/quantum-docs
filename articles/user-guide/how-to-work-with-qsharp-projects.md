@@ -78,7 +78,7 @@ Assuming your project folder is at the root of your drive
 ```python
 import qsharp
 
-qsharp.init(project_root = '/Teleportation_project')
+qsharp.init(project_root = './Teleportation_project')
 ```
 
 The path of the root folder is relative to the file that is setting it, meaning that your project folder can be anywhere and the calling program doesn't necessarily have to be in the project. A valid path may also be `'./MyProjects/Teleportation_project'`, or `../../Teleportation_project`.
@@ -177,7 +177,7 @@ MyMathLib.Multiply(x,y);
 1. If you are accessing the project from a Python program or Jupyter Notebook, set the [root folder path](#defining-the-project-folder-python-and-jupyter-notebook-programs) using `qsharp.init`, for example:
 
     ```python
-    qsharp.init(project_root = '/Teleportation_project')
+    qsharp.init(project_root = './Teleportation_project')
     ```
 1. If you are using only Q# files in VS Code, when you open a Q# file, the compiler searches for the *qsharp.json* manifest file, determines the project root folder, and then scans the subfolder for \*.qs files. 
 
@@ -289,8 +289,10 @@ import qsharp
 ```python
 # set the root folder for the project
 # make adjustments to the path depending on where your program is saved
+
 # this example assumes your program is in the same folder as the root folder
 qsharp.init(project_root = './Teleportation_project')
+
 ```
 
 If your path is valid, you see a confirmation message, `Q# initialized with configuration: {'targetProfile': 'unrestricted'}`
