@@ -28,7 +28,7 @@ A Q# project contains a Q# manifest file, named *qsharp.json*, and one or more *
 
 ## Define a Q# project
 
-A Q# project is defined by the presence of a *qsharp.json* manifest file and a **src** folder (that contains the Q# source files), both of which must be in the root folder of the project. For Q# programs, the Q# compiler detects the project folder automatically. For Python programs and Jupyter Notebooks, you must specify the project folder with a `qsharp.init` call. The folder structure for a Q# project, however, remains the same for all types of programs.
+A Q# project is defined by the presence of a *qsharp.json* manifest file and a **src** folder (which contains the Q# source files), both of which must be in the root folder of the project. For Q# programs, the Q# compiler detects the project folder automatically. For Python programs and Jupyter Notebooks, you must specify the project folder with a `qsharp.init` call. The folder structure for a Q# project, however, remains the same for all types of programs.
 
 :::image type="content" source="../media/multi-file-art.png" alt-text="Picture showing the folder hierarchy for a Q# project.":::
 
@@ -144,7 +144,7 @@ Using the manifest file, you can set each rule to either `allow`, `warn`, or `er
 
 ## Q# project requirements and properties
 
-The following requirements and configurations apply to all Q# programs, Python programs, and Jupyter Notebooks.
+The following requirements and configurations apply to all Q# projects.
 
 * All *.qs files that you want to be included in the project must be under a folder named **src**, which must be under the project root folder. When you create a Q# project in VS Code, the `/src` folder is created automatically. 
 * The *qsharp.json* manifest file should be at the same level as the **src** folder. When you create a Q# project in VS Code, the *qsharp.json* file is created automatically.
@@ -174,7 +174,7 @@ MyMathLib.Multiply(x,y);
 1. VS Code creates a minimal *qsharp.json* manifest file in the folder, and adds a `/src` folder with a `Main.qs` template file. 
 1. Edit the manifest file as needed. See [Manifest file examples](#manifest-file-examples).
 1. Add and organize your Q# source files under the `/src` folder. 
-1. If you are accessing the project from a Python program or Jupyter Notebook, set the [root folder path](#defining-the-project-folder-python-and-jupyter-notebook-programs) using `qsharp.init`, for example:
+1. If you are accessing the project from a Python program or Jupyter Notebook, set the [root folder path](#defining-the-project-folder-python-and-jupyter-notebook-programs) using `qsharp.init`. This example assumes your program is in the same folder as the root folder:
 
     ```python
     qsharp.init(project_root = '/Teleportation_project')
@@ -270,6 +270,9 @@ namespace PrepareBell {
     }
 }
 ```
+### Running the programs
+
+Select the tab for the environment in which you are running your program. 
 
 ### [Running a Q# program](#tab/tabid-qsharp-run)
 
@@ -309,7 +312,7 @@ or by using the `qsharp.eval()` statement
 print (qsharp.eval(RunTeleportationExample()));
 ```
 
-### [Using Python](#tab/tabid-python-run)
+### [Running a Python program](#tab/tabid-python-run)
 
 For a Python program, the source files don't require the `@EntryPoint()` attribute. The files function as source libraries only.
 
@@ -322,6 +325,7 @@ import qsharp
 ```python
 # set the root folder for the project
 # make adjustments to the path depending on where your program is saved
+
 # this example assumes your program is in the same folder as the root folder
 qsharp.init(project_root = '/.Teleportation_project')
 ```
