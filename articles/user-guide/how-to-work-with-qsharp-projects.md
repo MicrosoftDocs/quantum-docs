@@ -174,7 +174,7 @@ MyMathLib.Multiply(x,y);
 1. VS Code creates a minimal *qsharp.json* manifest file in the folder, and adds a `/src` folder with a `Main.qs` template file. 
 1. Edit the manifest file as needed. See [Manifest file examples](#manifest-file-examples).
 1. Add and organize your Q# source files under the `/src` folder. 
-1. If you are accessing the project from a Python program or Jupyter Notebook, set the [root folder path](#defining-the-project-folder-python-and-jupyter-notebook-programs) using `qsharp.init`. This example assumes your program is in the same folder as the root folder:
+1. If you are accessing the project from a Python program or Jupyter Notebook, set the [root folder path](#defining-the-project-folder-python-and-jupyter-notebook-programs) using `qsharp.init`. This example assumes your program is in the same folder as the root folder of the Q# project:
 
     ```python
     qsharp.init(project_root = './Teleportation_project')
@@ -311,7 +311,7 @@ RunTeleport.RunTeleportationExample();
 or by using the `qsharp.eval()` statement
 
 ```python
-print (qsharp.eval(RunTeleportationExample()));
+print (qsharp.eval("RunTeleport.RunTeleportationExample()"));
 ```
 
 ### [Running a Python program](#tab/tabid-python-run)
@@ -337,5 +337,5 @@ If your path is valid, you see a confirmation message, `Q# initialized with conf
 Run the program by calling the main operation with `qsharp.eval()`
 
 ```python
-print (qsharp.eval(RunTeleportationExample()));
+print (qsharp.eval("RunTeleport.RunTeleportationExample()"));
 ```
