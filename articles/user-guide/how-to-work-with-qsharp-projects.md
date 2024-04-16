@@ -28,7 +28,7 @@ A Q# project contains a Q# manifest file, named *qsharp.json*, and one or more *
 
 ## Define a Q# project
 
-A Q# project is defined by the presence of a *qsharp.json* manifest file and a **src** folder (which contains the Q# source files), both of which must be in the root folder of the project. For Q# programs, the Q# compiler detects the project folder automatically. For Python programs and Jupyter Notebooks, you must specify the project folder with a `qsharp.init` call. The folder structure for a Q# project, however, remains the same for all types of programs.
+A Q# project is defined by the presence of a *qsharp.json* manifest file and a **src** folder (which contains the Q# source files), both of which must be in the root folder of the project. For Q# programs, the Q# compiler detects the project folder automatically. For Python programs and Jupyter Notebooks, you must specify the Q# project folder with a `qsharp.init` call. The folder structure for a Q# project, however, remains the same for all types of programs.
 
 :::image type="content" source="../media/multi-file-art.png" alt-text="Picture showing the folder hierarchy for a Q# project.":::
 
@@ -65,6 +65,7 @@ When you're using a Python program or Jupyter Notebook cell to access Q# resourc
 * **Teleportation_project**
     * *qsharp.json*
     * **src**
+    * **MyPythonProgram.py**
         *  *RunTeleport.qs*
         *  **TeleportOperations**
             * *Teleport.qs*
@@ -73,7 +74,7 @@ When you're using a Python program or Jupyter Notebook cell to access Q# resourc
 
 you would set the `project_root` before making calls to any Q# operations.
 
-Assuming your project folder is at the root of your drive
+Assuming your Python program is in the Q# project folder
 
 ```python
 import qsharp
@@ -81,7 +82,7 @@ import qsharp
 qsharp.init(project_root = './Teleportation_project')
 ```
 
-The path of the root folder is relative to the file that is setting it, meaning that your project folder can be anywhere and the calling program doesn't necessarily have to be in the project. A valid path may also be `'./MyProjects/Teleportation_project'`, or `../../Teleportation_project`.
+The path of the root folder is relative to the file that is setting it, meaning that your Q# project folder can be anywhere and the calling program doesn't necessarily have to be in the project. A valid path may also be `'./MyProjects/Teleportation_project'`, or `../../Teleportation_project`.
 
 The Q# compiler verifies there is a valid *qsharp.json* file in the specified root folder and makes any \*.qs resources under the **src** folder available for reference, per the manifest file's exclusion rules.
 
@@ -99,7 +100,7 @@ A manifest file is a simple .json file named *qsharp.json* that can optionally i
 
 The following are some examples of how manifest files can define the scope of your Q# project.
 
-In this example, *author* is the only field specified, and therefore all *.qs files in this directory and all its subdirectories are included in the project. 
+In this example, *author* is the only field specified, and therefore all *.qs files in this directory and all its subdirectories are included in the Q# project. 
 
 ```json
 {
@@ -146,7 +147,7 @@ Using the manifest file, you can set each rule to either `allow`, `warn`, or `er
 
 The following requirements and configurations apply to all Q# projects.
 
-* All *.qs files that you want to be included in the project must be under a folder named **src**, which must be under the project root folder. When you create a Q# project in VS Code, the `/src` folder is created automatically. 
+* All *.qs files that you want to be included in the project must be under a folder named **src**, which must be under the Q# project root folder. When you create a Q# project in VS Code, the `/src` folder is created automatically. 
 * The *qsharp.json* manifest file should be at the same level as the **src** folder. When you create a Q# project in VS Code, the *qsharp.json* file is created automatically.
 * Operations and functions in available source files can be accessed using `open` statements:
 
@@ -162,19 +163,19 @@ MyMathLib.Multiply(x,y);
 ```
 
 **For Q# programs only**
-* Only one *.qs file in a project can have an `@EntryPoint()` defined. 
+* Only one *.qs file in a Q# project can have an `@EntryPoint()` defined. 
 * The *.qs file with the `@EntryPoint()` definition can be located at any level below the manifest file.
-* Any operation or function that is cached from a *.qs file anywhere in the project displays in predictive text in VS Code.
+* Any operation or function that is cached from a *.qs file anywhere in the Q# project displays in predictive text in VS Code.
 * If the namespace for a selected operation or function hasn't been added yet, VS Code automatically adds the necessary `open` statement.
 
 
 ## Steps for creating a Q# project
 
-1. In the VS Code file explorer, right-click the folder you want to use for the project root folder and select **Create Q# project**, or open the folder and select **View > Command Palette > Q#: Create a Q# project...**.
+1. In the VS Code file explorer, right-click the folder you want to use for the Q# project root folder and select **Create Q# project**, or open the folder and select **View > Command Palette > Q#: Create a Q# project...**.
 1. VS Code creates a minimal *qsharp.json* manifest file in the folder, and adds a `/src` folder with a `Main.qs` template file. 
 1. Edit the manifest file as needed. See [Manifest file examples](#manifest-file-examples).
 1. Add and organize your Q# source files under the `/src` folder. 
-1. If you are accessing the project from a Python program or Jupyter Notebook, set the [root folder path](#defining-the-project-folder-python-and-jupyter-notebook-programs) using `qsharp.init`. This example assumes your program is in the same folder as the root folder of the Q# project:
+1. If you are accessing the Q# project from a Python program or Jupyter Notebook, set the [root folder path](#defining-the-project-folder-python-and-jupyter-notebook-programs) using `qsharp.init`. This example assumes your program is in the same folder as the root folder of the Q# project:
 
     ```python
     qsharp.init(project_root = './Teleportation_project')
@@ -290,7 +291,7 @@ import qsharp
 ```
 
 ```python
-# set the root folder for the project
+# set the root folder for the Q# project
 # make adjustments to the path depending on where your program is saved
 
 # this example assumes your program is in the same folder as the root folder
@@ -325,7 +326,7 @@ import qsharp
 ```
 
 ```python
-# set the root folder for the project
+# set the root folder for the Q# project
 # make adjustments to the path depending on where your program is saved
 
 # this example assumes your program is in the same folder as the root folder
