@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 04/01/2024
+ms.date: 12/08/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -20,17 +20,13 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed. 
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)  extensions installed.
-- The Azure Quantum `qsharp`, `qsharp-widgets`, and `azure-quantum` packages, and the `ipykernel` package. 
-
-    ```bash
-    python -m pip install --upgrade qsharp qsharp-widgets azure-quantum ipykernel
-    ```
+- The Azure Quantum `qsharp` and `azure-quantum` packages, and the `ipykernel` package. 
 
 ## Run and test your program in the local simulator
 
 1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**. 
 1. In the top-right, VS Code will detect and display the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, you may need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information. 
-1. In the first cell of the notebook, run the following Python code to import the necessary modules:
+1. In the first cell of the notebook, run 
 
     ```python
     import qsharp
@@ -94,24 +90,6 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
     [One, Zero, Zero, One]]
     ```
 
-## Visualize  the quantum circuit
-
-You can visualize quantum circuits using the `qsharp-widgets` package. This package provides a widget that renders a quantum circuit diagram as an SVG image. For more information, see [Quantum circuit diagrams with Jupyter Notebooks](xref:microsoft.quantum.how-to.visualize-circuits#quantum-circuits-with-visual-studio-code).
-
-Add the following code to a new cell to visualize the circuit:
-
-```python
-from qsharp_widgets import Circuit
-
-Circuit(qsharp.circuit("RandomNBits(4)"))
-```
-
-:::image type="content" source="../media/circuit-jupyter-notebook.png" alt-text="Screenshot of Jupyter Notebook showing how to visualize the circuit for a Q# operation.":::
-
-
-For more information, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
-
-
 ## Compile your job using the Base profile
 
 When you run programs on the local quantum simulator, you can submit any type of Q# program. However, Azure Quantum hardware targets do not yet support the full capabilities required to run all Q# programs. In order to compile and submit Q# programs to Azure Quantum, you need to set your target profile to tell Q# which capabilities your target hardware supports. Currently, that is the Base profile. For more information, see [Profile types in Azure Quantum](xref:microsoft.quantum.target-profiles).
@@ -146,7 +124,6 @@ To reinitialize the Q# interpreter and compile your program with the base profil
         return results
     }
     ```
-
 1. Next, use the `compile` method to specify the operation or function that is the entry point to your program. This compiles your code into QIR format, which can then be submitted to any quantum hardware:
 
     ```python
@@ -165,7 +142,6 @@ Now that you have your program compiled into the correct format, create an `azur
         location = "MyLocation"
     )
     ```
-
 1. Use the `get_targets` method to see the available hardware targets in your workspace:
 
     ```python
@@ -179,7 +155,6 @@ Now that you have your program compiled into the correct format, create an `azur
     ```python
     MyTarget = MyWorkspace.get_targets("rigetti.sim.qvm")
     ```
-
 1. Lastly, use the `submit` method to submit your program with its parameters and display the results:
 
     ```python
@@ -198,6 +173,7 @@ Now that you have your program compiled into the correct format, create an `azur
       0.3]}
     ```
 
+
 1. All the properties of the job are accessible in `job.details`, for example:
 
     ```python
@@ -213,3 +189,4 @@ Now that you have your program compiled into the correct format, create an `azur
     Job status: Succeeded
     Job ID: 0150202e-9638-11ee-be2f-b16153380354
     ```
+

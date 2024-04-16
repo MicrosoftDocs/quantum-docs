@@ -395,14 +395,8 @@ The Resource Estimator offers [six predefined qubit parameters](xref:microsoft.q
 
 In this example, you run the Resource Estimator using the `qubit_gate_us_e3` qubit parameter and the `surface_code` quantum error correction code. 
 
-1. Select **View -> Command Palette**, and type “resource” which should bring up the **Q#: Calculate Resource Estimates** option. You can also click on **Estimate** from the list of commands below `@EntryPoint()`. Select this option to open the Resource Estimator window.
-
-    :::image type="content" source="../media/codelens-estimate-shorRE.png" alt-text="Screenshot showing how to select the estimate command from the code lens list.":::
-
+1. Select **View -> Command Palette**, or press **Ctrl+Shift+P**, and type “resource” which should bring up the **Q#: Calculate Resource Estimates** option. Select this option to open the Resource Estimator window.
 1. You can select one or more **Qubit parameter + Error Correction code** types to estimate the resources for. For this example, select **qubit_gate_us_e3** and click **OK**.
-
-    :::image type="content" source="../media/estimate-dropdown-shorRE.png" alt-text="Screenshot showing how to select the qubit parameter from the resource estimate menu.":::
-
 1. Specify the **Error budget** or accept the default value 0.001. For this example, leave the default value and press **Enter**.
 1. Press **Enter** to accept the default result name based on the filename, in this case, **ShorRE**.
 

@@ -56,7 +56,6 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
       }
    }
     ```
-
 1. In the same folder, open another file and save it as `randomNum.py`.
 1. Add the following code to import the `qsharp` and `azure.quantum` modules.
 
@@ -96,16 +95,6 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
     [Zero, Zero, Zero, One],
     [One, Zero, Zero, One]]
     ```
-
-1. You can visualize the quantum circuit byt running `qsharp.circuit(entry_expr)` and pass the entry expression as an argument. For more information, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
-
-    ```python
-    result = qsharp.circuit("Sample.RandomNBits(4)")
-    ```
-
-    :::image type="content" source="../media/circuits-python.png" alt-text="Screenshot of a quantum circuit.":::
-
-
 
 ## Compile your job using the Base profile
 
