@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn about using Dirac notation to represent quantum states and to simulate quantum operations.
 ms.author: sonialopez
-ms.date: 06/09/2023
+ms.date: 04/15/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
@@ -187,9 +187,6 @@ On a Bloch sphere, pure states are represented by a point on the surface of the 
 
 This concept of representing the state as a matrix, rather than a vector, is often convenient because it gives a convenient way of representing probability calculations, and also allows you to describe both statistical uncertainty and quantum uncertainty within the same formalism.
 
->[!TIP]
-> The QuTiP library is a helpful Python library when working with quantum states. You can write quantum states in QuTiP notation, using qt.basis(2, i) to represent $\ket{i}$ on a single qubit. To learn more about QuTiP methods and features, see the [QuTiP user guide](https://qutip.org/docs/latest/guide/guide.html).
-
 A density operator $\rho$ represents a pure state if and only if: 
 
 - $\rho$ can be written as an outer product of a state vector, $\rho=\ket{\psi}\bra{\psi}$
@@ -197,84 +194,6 @@ A density operator $\rho$ represents a pure state if and only if:
 - $tr(\rho^2)=1$
 
 To tell how close a given density operator $\rho$ is to being pure, you can look at the trace (that is, the sum of the diagonal elements) of $\rho^2$. A density operator represents a pure state if and only if $tr(\rho ^{2})=1$.
-
-Consider the mixed state $\rho_{\text{mixed}} = \frac{1}{2}\left( \ket{0}\bra{0} + \ket{1}\bra{1} \right)$,
-
-```python
-import qutip as qt
-
-ket0 = qt.basis(2, 0)
-ket1 = qt.basis(2, 1)
-
-rho_mixed = (ket0 * ket0.dag() + ket1 * ket1.dag()) / 2
-print(rho_mixed)
-```
-
-```output
-Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
-Qobj data =
-[[0.5  0.0]
- [0.0  0.5]]
-```
-
-The trace of $\rho$ is written as $Tr(\rho)$ and can be calculated using QuTiP's `.tr()` method:
-
-```python
-print((rho_mixed ** 2).tr())
-```
-
-```output
-0.5
-```
-
-Now, consider the pure quantum state $\rho_{\text{pure}}=\ket{+}\bra{+}$,
-
-```python
-ket_plus = (1 / np.sqrt(2)) * (ket0 + ket1)
-rho_pure = ket_plus * ket_plus.dag()
-print(rho_pure)
-```
-
-```output
-Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
-Qobj data =
-[[0.5  0.5]
- [0.5  0.5]]
-```
-
-The trace of $\rho_{\text{pure}}^2$ is
-
-```python
-print((rho_pure ** 2).tr())
-```
-
-```output
-0.9999999999999996
-```
-
-For single qubit systems, mixed states can be plotted on the Bloch sphere in the same way as state vectors — doing so, pure states are those states that lie on the surface of the Bloch sphere, while mixed states in general can be "inside" the Bloch sphere.
-
-```python
-import matplotlib.pyplot as plt
-
-plt.figure(figsize=(6, 6))
-bloch = qt.bloch.Bloch()
-bloch.add_states([rho_pure], kind='point')
-print(bloch.show())
-```
-
-:::image type="content" source="media/bloch-rho-pure.png" alt-text="Plot of a pure quantum state in the Bloch sphere, where the quantum state is in the X-axis.":::
-
-```python
-plt.figure(figsize=(6, 6))
-bloch = qt.bloch.Bloch()
-bloch.add_states([rho_mixed], kind='point')
-bloch.show()
-```
-
-:::image type="content" source="media/bloch-rho-mixed.png" alt-text="Plot of a mixed quantum state in the Bloch sphere, where the quantm state is in the center of the sphere.":::
-
-The state at the center of the Bloch sphere is the *maximally mixed state*. Unlike pure states, the maximally mixed state returns 50/50 outcomes for any ideal Pauli measurement.
 
 ## Q# gate sequences equivalent to quantum states
 
