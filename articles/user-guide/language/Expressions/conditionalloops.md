@@ -20,7 +20,7 @@ Like most classical programming languages, Q# supports loops that break based on
 >
 > Loops that break based on a condition are challenging to process on quantum hardware *if the condition depends on measurement outcomes*, since the length of the instruction sequence to run is not known ahead of time.
 >
-> Despite their common presence in particular classes of quantum algorithms, current hardware does not yet provide native support for these kinds of control flow constructs. Running on quantum hardware can potentially be supported in the future by imposing a maximum number of iterations, or as additional hardware support becomes available. Quantum simulators, however, will run any loops based on measurements.
+> Despite their common presence in particular classes of quantum algorithms, current hardware does not yet provide native support for these kinds of control flow constructs. Running these kinds of loops on quantum hardware can potentially be supported in the future by imposing a maximum number of iterations, or as additional hardware support becomes available. Quantum simulators, however, will run any loops based on measurements.
 
 ## Compiling loops
 
