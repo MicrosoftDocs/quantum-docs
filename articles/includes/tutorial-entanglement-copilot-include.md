@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 06/21/2023
+ms.date: 04/18/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -184,10 +184,10 @@ Because the qubits haven't been manipulated yet, they have retained their initia
 If you change the value of `initial` to `Zero` and run the program again, you should observe that the first qubit also returns `Zero` every time.
 
 ```output
-Q1 - Zeros: 0
-Q1 - Ones: 1000
-Q2 - Zeros: 0
-Q2 - Ones: 1000
+Q1 - Zeros: 1000
+Q1 - Ones: 0
+Q2 - Zeros: 1000
+Q2 - Ones: 0
 ```
 
 ## Put a qubit in superposition
