@@ -75,16 +75,14 @@ To illustrate the implications of the assigned precedences, suppose you have a u
 
 ```qsharp
     newtype Algorithm = (
-        Register : LittleEndian,
+        Register : Qubit[],
         Initialize : Transformation,
         Apply : Transformation
     );
 
     newtype Transformation =
-        LittleEndian => Unit is Adj + Ctl;
+        Qubit[] => Unit is Adj + Ctl;
 ```
-
-where `LittleEndian` is defined in [Type declarations](xref:microsoft.quantum.qsharp.typedeclarations#type-declarations).
 
 The following expressions, then, are all valid:
 
