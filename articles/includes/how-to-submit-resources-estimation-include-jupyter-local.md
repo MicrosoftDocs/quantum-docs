@@ -141,7 +141,7 @@ no-loc: [target, targets]
     /// ## power
     /// Power of `generator` by which `target` is multiplied.
     /// ## target
-    /// Register interpreted as LittleEndian which is multiplied by
+    /// Register interpreted as little endian encoded which is multiplied by
     /// given power of the generator. The multiplication is performed modulo
     /// `modulus`.
     internal operation ApplyOrderFindingOracle(
@@ -152,7 +152,7 @@ no-loc: [target, targets]
         // The oracle we use for order finding implements |x⟩ ↦ |x⋅a mod N⟩. We
         // also use `ExpModI` to compute a by which x must be multiplied. Also
         // note that we interpret target as unsigned integer in little-endian
-        // encoding by using the `LittleEndian` type.
+        // encoding.
         ModularMultiplyByConstant(modulus,
                                     ExpModI(generator, power, modulus),
                                     target);
@@ -163,7 +163,7 @@ no-loc: [target, targets]
     ///
     /// # Description
     /// Given the classical constants `c` and `modulus`, and an input
-    /// quantum register (as LittleEndian) |𝑦⟩, this operation
+    /// quantum register |𝑦⟩, this operation
     /// computes `(c*x) % modulus` into |𝑦⟩.
     ///
     /// # Input
@@ -194,7 +194,7 @@ no-loc: [target, targets]
     ///
     /// # Description
     /// Given the classical constants `c` and `modulus`, and an input
-    /// quantum register (as LittleEndian) |𝑦⟩, this operation
+    /// quantum register  |𝑦⟩, this operation
     /// computes `(x+c) % modulus` into |𝑦⟩.
     ///
     /// # Input
