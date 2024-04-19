@@ -9,6 +9,7 @@ ms.topic: how-to
 no-loc: ['Python', '$$v', target, targets]
 title: Submit formatted quantum circuits
 uid: microsoft.quantum.quickstarts.computing.provider
+#customer intent: As quantum developer, I want to learn how to submit QIR, OpenQASM, or Pulser SDK to the Azure Quantum service.
 --- 
 
 # How to submit specific formatted circuits to Azure Quantum
@@ -40,6 +41,8 @@ To develop and run your circuits in Visual Studio Code, you also need:
     ```
 
 ## Create a new Jupyter Notebook
+
+You can create a notebook in VS Code or directly in the Azure Quantum portal. 
 
 ### [Azure Quantum portal](#tab/tabid-portal)
 
@@ -492,7 +495,7 @@ def prepare_input_data(seq):
     This prints the estimated cost in H-System Quantum Credits (HQCs).
 
     > [!NOTE]
-    > To run a cost estimate against a Quantinuum target, you must first reload the *azure-quantum* Python package with the *\[qiskit\]* parameter. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-package).
+    > To run a cost estimate against a Quantinuum target, you must first reload the *azure-quantum* Python package with the *\[qiskit\]* parameter, and ensure that you have the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
 
     > [!NOTE]
     > For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
@@ -636,7 +639,7 @@ You can also construct Quil programs manually and submit them using the `azure-q
 >     results.append(job.result())
 >```
 
-## Next steps
+## Related content
 
 - [Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit).
 - [Submit a circuit with Cirq to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.cirq).
