@@ -2,7 +2,7 @@
 author: bradben
 description: This article provides troubleshooting steps for common issues encountered when using the Azure Quantum service.
 ms.author: brbenefield
-ms.date: 04/11/2024
+ms.date: 04/22/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
@@ -220,7 +220,11 @@ Here is what you could do in such a scenario:
 
 ### Issue: Constraints maximum runtime and maximum number of physical qubits are mutually exclusive
 
-The Resource Estimator accepts only one of [`maxDuration`]O(xref:qsharp.estimator.EstimatorConstraints) or [`maxPhysicalQubits`](xref:qsharp.estimator.EstimatorConstraints) constraints at the time but not two. If your provide both `maxDuration` and `maxPhysicalQubits`constraints for a single job, it returns the `BothDurationAndPhysicalQubitsProvided` error.
+The Resource Estimator accepts only one of [`maxDuration`](xref:qsharp.estimator.EstimatorConstraints) or [`maxPhysicalQubits`](xref:qsharp.estimator.EstimatorConstraints) constraints at the time but not two. If your provide both `maxDuration` and `maxPhysicalQubits`constraints for a single job, it returns the `BothDurationAndPhysicalQubitsProvided` error.
+
+### Issue: Run QIR estimate counts container: undefined symbol __quantum__rt__result_record_output
+
+This error results from generating QIR for Qiskit circuits via the *qiskit_qir* Python package without setting the `record_output` parameter to `False`. We advise using the *azure_quantum* Python package for submitting Qiskit circuits to Azure Quantum.
 
 ## Creating an Azure Quantum workspace
 
