@@ -224,7 +224,12 @@ The Resource Estimator accepts only one of [`maxDuration`](xref:qsharp.estimator
 
 ### Issue: Run QIR estimate counts container: undefined symbol __quantum__rt__result_record_output
 
-This error results from generating QIR for Qiskit circuits via the *qiskit_qir* Python package without setting the `record_output` parameter to `False`. We advise using the *azure_quantum* Python package for submitting Qiskit circuits to Azure Quantum.
+This error results from generating QIR for Qiskit circuits via the *qiskit_qir* Python package without setting the `record_output` parameter to `False`. 
+
+To avoid this error, do one of the following:
+
+- Use the *azure_quantum* Python package for submitting Qiskit circuits to Azure Quantum (recommended)
+- When using the *qiskit_qir* Python package, be sure to the `record_output` parameter to `False` before submitting your circuit.
 
 ## Creating an Azure Quantum workspace
 
