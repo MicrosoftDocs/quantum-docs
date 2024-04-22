@@ -25,12 +25,30 @@ Q# supports two kinds of callables: operations and functions. The topic [Operati
 Q# allows specialized implementations for specific purposes; for example, operations in Q# can implicitly or explicitly define support for certain *functors*, and along with it the specialized implementations to invoke when a specific functor is applied to that callable.
 
 A functor, in a sense, is a factory that defines a new callable implementation that has a specific relation to the callable it was applied to.
-Functors are more than traditional higher-level functions in that they require access to the implementation details of the callable they have been applied to. In that sense, they are similar to other factories, such as templates. Correspondingly, they can be applied not just to callables, but templates as well.
+Functors are more than traditional higher-level functions in that they require access to the implementation details of the callable they have been applied to. In that sense, they are similar to other factories, such as templates. They can be applied to type-parameterized callables as well.
+
+Consider the following operation, `ApplyQFT`:
+
+```qharp
+    operation ApplyQFT(qs : Qubit[]) : Unit is Adj + Ctl {
+        let length = Length(qs);
+        Fact(length >= 1, "ApplyQFT: Length(qs) must be at least 1.");
+        for i in length - 1..-1..0 {
+            H(qs[i]);
+            for j in 0..i - 1 {
+                Controlled R1Frac([qs[i]], (1, j + 1, qs[i - j - 1]));
+            }
+        }
+    }
+```
+
+This operation takes an argument of type `Qubit[]` and returns a value of type `Unit`. The annotation `is Adj + Ctl` in the declaration of `ApplyQFT` indicates that the operation supports both the `Adjoint` and the `Controlled` functor. (For more information, see [Operation characteristics](xref:microsoft.quantum.qsharp.operationsandfunctions#operation-characteristics)). The expression `Adjoint ApplyQFT` accesses the specialization that implements the adjoint of `ApplyQFT`, and `Controlled ApplyQFT` accesses the specialization that implements the controlled version of `ApplyQFT`.
+In addition to the original operation's argument, the controlled version of an operation takes an array of control qubits and applies the original operation on the condition that all of these control qubits are in a |1⟩ state.
 
 In theory, an operation for which an adjoint version can be defined should also have a controlled version and vice versa. In practice, however, it may be hard to develop an implementation for one or the other, especially for probabilistic implementations following a repeat-until-success pattern.
 For that reason, Q# allows you to declare support for each functor individually. However, since the two functors commute, an operation that defines support for both also has to have an implementation (usually implicitly defined, meaning compiler-generated) for when both functors are applied to the operation.
 
-There are no functors that can be applied to functions, such that functions currently have exactly one body implementation and no further specializations. For example, the declaration
+There are no functors that can be applied to functions. Functions currently have exactly one body implementation and no further specializations. For example, the declaration
 
 ```qsharp
     function Hello (name : String) : String {
@@ -50,14 +68,12 @@ is equivalent to
 
 Here, `body` specifies that the given implementation applies to the default body of the function `Hello`, meaning the implementation is invoked when no functors or other factory mechanisms have been applied prior to invocation. The three dots in `body ...` correspond to a compiler directive indicating that the argument items in the function declaration should be copy and pasted into this spot.  
 
-The reasons behind explicitly indicating where the arguments of the parent callable declaration are to be copied and pasted are twofold: one, it is unnecessary to repeat the argument declaration, and two, and more importantly, it ensures that functors that require additional arguments, like the `Controlled` functor, can be introduced in a consistent manner.
+The reasons behind explicitly indicating where the arguments of the parent callable declaration are to be copied and pasted are twofold: one, it is unnecessary to repeat the argument declaration, and two, it ensures that functors that require additional arguments, like the `Controlled` functor, can be introduced in a consistent manner.
 
-The same applies to operations; when there is exactly one specialization defining the implementation of the default body, the additional wrapping of the form `body ... { <implementation> }` may be omitted.
+When there is exactly one specialization defining the implementation of the default body, the additional wrapping of the form `body ... { <implementation> }` may be omitted.
 
 ## Recursion
 
 Q# callables can be directly or indirectly recursive and can be declared in any order; an operation or function may call itself, or it may call another callable that directly or indirectly calls the caller.
 
 When running on quantum hardware, stack space may be limited, and recursions that exceed that stack space limit result in a runtime error.
-
-
