@@ -36,7 +36,7 @@ A Q# project is defined by the presence of a *qsharp.json* manifest file and a *
 
 ### Defining the project folder (Q# programs)
 
-When a \*.qs file is opened in VS Code, the Q# compiler searches upward in the folder structure for a *qsharp.json* manifest file. If it finds a manifest file, the compiler then searches downward through all the subfolders of the **src** directory for *.qs files and caches any operations or functions, and makes those oerations and functions available to all the *.qs files, per the manifest file's exclusion rules. 
+When a \*.qs file is opened in VS Code, the Q# compiler searches upward in the folder structure for a *qsharp.json* manifest file. If it finds a manifest file, the compiler then searches downward through all the subfolders of the **src** directory for *.qs files and caches any operations or functions, and makes those operations and functions available to all the *.qs files, per the manifest file's exclusion rules. 
 
 For example, given this folder structure:
 
