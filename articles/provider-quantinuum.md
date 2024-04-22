@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides the technical details of the Quantinuum quantum provider
 ms.author: brbenefield
-ms.date: 11/29/2023
+ms.date: 03/21/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: conceptual
@@ -187,7 +187,7 @@ circuit.name = "MCMR Example with Conditional Logic"
 
 # Perform Bell Test
 circuit.h(q[0])
-circuit.cnot(q[0], q[1])
+circuit.cx(q[0], q[1])
 
 # Measure and reset Qubit 1
 circuit.measure(q[1], c[1])
@@ -195,7 +195,7 @@ circuit.reset(q[1])
 
 # Continue additional computation, conditioned on Qubit 1's measurement outcome
 circuit.x(q[0]).c_if(c, 1)
-circuit.cnot(q[0], q[1])
+circuit.cx(q[0], q[1])
 
 # Measure all qubits
 circuit.measure(q, c)

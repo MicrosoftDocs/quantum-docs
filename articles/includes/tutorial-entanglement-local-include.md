@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 02/13/2024
+ms.date: 04/09/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -178,7 +178,7 @@ Before running the program, you need to set the target profile to **Unrestricted
 To run the program, select **Run Q# File** from the play icon drop-down in the top-right, or press **Ctrl+F5**. The program runs the operation or function marked with the `@EntryPoint()` attribute on the default simulator.
 
 > [!NOTE]
-> If the target profile is not set to **Unrestricted**, you will get an error when you run the program.
+> If the target profile isn't set to **Unrestricted**, you will get an error when you run the program.
 
 Your output appear in the debug console.
 
@@ -194,10 +194,10 @@ Because the qubits haven't been manipulated yet, they have retained their initia
 If you change the value of `initial` to `Zero` and run the program again, you should observe that the first qubit also returns `Zero` every time.
 
 ```output
-Q1 - Zeros: 0
-Q1 - Ones: 1000
-Q2 - Zeros: 0
-Q2 - Ones: 1000
+Q1 - Zeros: 1000
+Q1 - Ones: 0
+Q2 - Zeros: 1000
+Q2 - Ones: 0
 ```
 
 > [!TIP]

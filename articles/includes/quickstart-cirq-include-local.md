@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 01/05/2024
+ms.date: 04/19/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -267,7 +267,7 @@ Looking at the histogram, you may notice that the random number generator return
 Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method.
 
 > [!NOTE]
-> To run a cost estimate against a Quantinuum target, you must first reload the *azure-quantum* Python package with the *\[qiskit\]* parameter. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-package).
+> To run a cost estimate against a Quantinuum target, you must first reload the *azure-quantum* Python package with the *\[qiskit\]* parameter, and ensure that you have the latest Qiskit version. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
 
 ```python
 cost = service.estimate_cost(

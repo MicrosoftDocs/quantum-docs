@@ -2,22 +2,19 @@
 author: SoniaLopezBravo
 description: In this tutorial, learn how to create and submit a QIR program to the Azure Quantum Resource Estimator target.
 ms.author: sonialopez
-ms.date: 01/04/2024
+ms.date: 04/15/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: tutorial
 no-loc: [Quantum Intermediate Representation, target, targets]
 title: 'Tutorial: Resource Estimation with QIR'
 uid: microsoft.quantum.tutorial.resource-estimator.qir
+#customer intent: As quantum developer, I want to learn how to submit a QIR program to the Azure Quantum Resource Estimator target.
 ---
 
 # Tutorial: Submit a QIR program to the Azure Quantum Resource Estimator
 
-The Azure Quantum Resource Estimator is built on [Quantum Intermediate Representation (QIR)](xref:microsoft.quantum.concepts.qir), a fully interoperable specification for quantum programs. QIR serves as a common interface between quantum programming languages and frameworks, and targeted quantum computation platforms. Because the Resource Estimator takes a QIR program as input, it supports any language that translates to QIR. For example, it can be used by popular quantum SDKs and languages such as Q# and Qiskit.  
-
-This tutorial shows how to write and submit a QIR program to the Resource Estimator. This tutorial uses [PyQIR](https://github.com/qir-alliance/pyqir) to generate QIR, however, you can use any other source of QIR.
-
-[!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
+The Azure Quantum Resource Estimator is built on [Quantum Intermediate Representation (QIR)](xref:microsoft.quantum.concepts.qir), a fully interoperable specification for quantum programs. QIR serves as a common interface between quantum programming languages and frameworks, and targeted quantum computation platforms. Because the Resource Estimator takes a QIR program as input, it supports any language that translates to QIR. For example, it can be used by popular quantum SDKs and languages such as Q# and Qiskit.  In this tutorial, you will write and submit a QIR program to the Resource Estimator. This tutorial uses [PyQIR](https://github.com/qir-alliance/pyqir) to generate QIR, however, you can use any other source of QIR.
 
 In this tutorial, you'll learn how to:
 
@@ -26,6 +23,8 @@ In this tutorial, you'll learn how to:
 > * Define a function to create a resource estimation job from QIR bitcode
 > * Create a QIR bitcode using PyQIR generator
 > * Submit a QIR job to the Resource Estimator
+
+Sign up for a [free Azure trial subscription for 30 days](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 ## Prerequisites
 
@@ -58,14 +57,11 @@ Click the triangular "play" icon to the left of the cell to run the code.
 
 ## Load the required imports
 
-First, you need to import some Python classes and functions from `azure.quantum`, `qiskit`, and `pyqir`.  You won't use Qiskit to build quantum circuits directly, but you'll use `AzureQuantumJob` and `job_monitor`, which are built on top of the Qiskit ecosystem.
+First, you need to import some Python classes and functions from `azure.quantum`, `qiskit`, and `pyqir`.  You won't use Qiskit to build quantum circuits directly, but you'll use `AzureQuantumJob`, which is built on top of the Qiskit ecosystem. Ensure that you are using the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
 
 ```python
 from azure.quantum.qiskit import AzureQuantumProvider
 from azure.quantum.qiskit.job import AzureQuantumJob
-
-from qiskit.tools.monitor import job_monitor
-
 from pyqir.generator import BasicQisBuilder, SimpleModule
 ```
 
@@ -147,7 +143,6 @@ You can use the function you defined above together with the `bitcode()` functio
 
 ```python
 job = resource_estimation_job_from_qir(provider, module.bitcode(), errorBudget=0.05)
-job_monitor(job)
 result = job.result()
 result
 ```
@@ -185,11 +180,10 @@ For example, the time to perform a single-qubit measurement and a single-qubit g
 
 For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator-output.data) for the Resource Estimator.
 
-## Next steps
+## Related content
 
 Continue to explore other quantum algorithms and techniques:
 
-* The tutorial [Implement Grover’s search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm to solve a graph coloring problem.
-* The tutorial [Write and simulate qubit-level programs in Q#](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
-* The tutorial [Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to operate on qubits with Q# to change their state, and demonstrates the effects of superposition and entanglement.
-* The [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas) are Jupyter Notebook-based, self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
+- The tutorial [Implement Grover’s search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm to solve a graph coloring problem.
+- The tutorial [Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to operate on qubits with Q# to change their state, and demonstrates the effects of superposition and entanglement.
+- The [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas) are Jupyter Notebook-based, self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.

@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 01/07/2024
+ms.date: 03/15/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -50,7 +50,7 @@ Click the triangular "play" icon to the left of the cell to run the code.
 
 ### Load the required imports
 
-First, you'll need to import an additional modules from `azure-quantum` and `qiskit`.
+First, you'll need to import an additional modules from [azure-quantum](xref:azure.quantum) and [`qiskit`](xref:azure.quantum.qiskit).
 
 Click **+ Code** to add a new cell, then add and run the following code:
 
@@ -58,12 +58,11 @@ Click **+ Code** to add a new cell, then add and run the following code:
 from azure.quantum.qiskit import AzureQuantumProvider
 from qiskit import QuantumCircuit, transpile
 from qiskit.circuit.library import RGQFTMultiplier
-from qiskit.tools.monitor import job_monitor
 ```
 
 ## Connect to the Azure Quantum service
 
-Next, create an `AzureQuantumProvider` object using the `workspace` object from the previous cell to connect to your Azure Quantum workspace. You create a backend instance and set the Resource Estimator as your target.
+Next, create an [AzureQuantumProvider](xref:azure.quantum.qiskit.AzureQuantumProvider) object using the [`workspace`](xref:azure.quantum.Workspace) object from the previous cell to connect to your Azure Quantum workspace. You create a backend instance and set the Resource Estimator as your target.
 
 ```python
 provider = AzureQuantumProvider(workspace)
@@ -116,11 +115,10 @@ bitwidth = 4
 circ = create_algorithm(bitwidth)
 ```
 
-Estimate the physical resources for this operation using the default assumptions. You can submit the circuit to the Resource Estimator backend using the `run` method, and then run `job_monitor` to await completion.
+Estimate the physical resources for this operation using the default assumptions. You can submit the circuit to the Resource Estimator backend using the `run` method, and then run `job.result()` to wait for the job to complete and return the results.
 
 ```python
 job = backend.run(circ)
-job_monitor(job)
 result = job.result()
 result
 ```
@@ -147,7 +145,7 @@ For example, if you collapse the *Logical qubit parameters* group, you can more 
 In the *Physical qubit parameters* group you can see the physical qubit properties that were assumed for this estimation. For example, the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
 
 > [!TIP]
-> You can also access the output of the Resource Estimator as a Python dictionary using the `result.data()` method.
+> You can also access the output of the Resource Estimator as a Python dictionary using the [result.data()](xref:qsharp.estimator.EstimatorResult)  method.
 
 For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator-output.data) for the Resource Estimator.
 
@@ -195,10 +193,10 @@ result.data()["jobParams"]
 These are the target parameters that can be customized: 
 
 * `errorBudget` - the overall allowed error budget
-* `qecScheme` - the quantum error correction (QEC) scheme
-* `qubitParams` - the physical qubit parameters
-* `constraints` - the constraints on the component-level
-* `distillationUnitSpecifications` - the specifications for T factories distillation algorithms
+* [`qecScheme`](xref:qsharp.estimator.QECScheme) - the quantum error correction (QEC) scheme
+* [`qubitParams`](xref:qsharp.estimator.QubitParams) - the physical qubit parameters
+* [`constraints`](xref:qsharp.estimator.EstimatorConstraints) - the constraints on the component-level
+* [`distillationUnitSpecifications`](xref:qsharp.estimator.DistillationUnitSpecification) - the specifications for T factories distillation algorithms
 
 For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the Resource Estimator.
 
@@ -211,7 +209,6 @@ job = backend.run(circ,
     qubitParams={
         "name": "qubit_maj_ns_e6"
     })
-job_monitor(job)
 result = job.result()
 result
 ```
@@ -267,7 +264,7 @@ A single T factory is composed of 3 rounds of distillation:
 
 #### Change quantum error correction scheme
 
-Now, rerun the resource estimation job for the same example on the Majorana-based qubit parameters with a floqued QEC scheme, `qecScheme`.
+Now, rerun the resource estimation job for the same example on the Majorana-based qubit parameters with a floqued QEC scheme, [`qecScheme`](xref:qsharp.estimator.QECScheme).
 
 ```python
 job = backend.run(circ,
@@ -277,7 +274,6 @@ job = backend.run(circ,
     qecScheme={
         "name": "floquet_code"
     })
-job_monitor(job)
 result_maj_floquet = job.result()
 result_maj_floquet
 ```
@@ -295,7 +291,6 @@ job = backend.run(circ,
         "name": "floquet_code"
     },
     errorBudget=0.1)
-job_monitor(job)
 result_maj_floquet_e1 = job.result()
 result_maj_floquet_e1
 ```

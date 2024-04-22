@@ -162,7 +162,7 @@ With this change, programs that include a single "open" statement for the namesp
 
 - Several namespaces have been deprecated as the operations within have been reorganized to other namespaces. Programs that use these namespaces continue to work, and a compile-time warning denotes the namespace where the operation is defined.  
 
-- The Microsoft.Quantum.Arithmetic namespace has been normalized to use the <xref:Microsoft.Quantum.Arithmetic.LittleEndian> user-defined type. Use the function [BigEndianAsLittleEndian](xref:Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian) when needed to convert to little endian.  
+- The Microsoft.Quantum.Arithmetic namespace has been normalized to use the LittleEndian user-defined type. Use the function BigEndianAsLittleEndian when needed to convert to little endian.  
 
 - The names of several callables (functions and operations) have been changed to conform to the Q# Style Guide.  The old callable names are deprecated.  Programs that use the old callables continue to work with a compile-time warning.
 

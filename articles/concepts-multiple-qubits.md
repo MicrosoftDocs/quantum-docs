@@ -23,7 +23,11 @@ Quantum computing power arises, in part, because the dimension of the vector spa
 
 ## Two-qubit states
 
+
+
 If you are given two separate qubits, one in the state $\psi=\begin{bmatrix} \alpha \\\\  \beta \end{bmatrix}$ and the other in the state  $\phi=\begin{bmatrix} \gamma \\\\  \delta \end{bmatrix}$, the corresponding two-qubit state is given by the tensor product (or [Kronecker product](https://en.wikipedia.org/wiki/Kronecker_product)) of vectors, which is defined as follows 
+
+<!-- works in Port -->
 
 $$
 \psi \otimes \phi = \begin{bmatrix} \alpha \\\\  \beta \end{bmatrix} \otimes \begin{bmatrix} \gamma \\\\  \delta \end{bmatrix} 
@@ -33,17 +37,23 @@ $$
 
 Therefore, given two single-qubit states $\psi$ and $\phi$, each of dimension 2, the corresponding two-qubit state $\psi \otimes \phi$ is 4-dimensional. The vector
 
+<!-- Port is raw code -->
+
 $$
 \begin{bmatrix} \alpha_{00} \\\\  \alpha_{01} \\\\  \alpha_{10} \\\\  \alpha_{11} \end{bmatrix}
 $$
 
 represents a quantum state on two qubits if
 
+<!-- Port is raw code -->
+
 $$|\alpha_{00}|^2+|\alpha_{01}|^2+|\alpha_{10}|^2+|\alpha_{11}|^2=1.$$
 
 More generally, you can see that the quantum state of $n$ qubits is represented by a unit vector $v_1 \otimes v_2 \otimes \cdots \otimes v_n$ of dimension $2 \cdot 2 \cdot 2 \cdots = 2^n$ using this construction. Just as with single qubits, the quantum state vector of multiple qubits holds all the information needed to describe the system's behavior. For more information about vectors and tensor products, see [Vectors and Matrices in Quantum Computing](xref:microsoft.quantum.concepts.vectors).
 
 The computational basis for two-qubit states is formed by the tensor products of one-qubit basis states. For example, you have
+
+<!-- Port renders but all out of whack -->
 
 \begin{align}
 00 \equiv \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} &= \begin{bmatrix}1 \\\\ 0\\\\ 0\\\\ 0 \end{bmatrix},\qquad 01 \equiv \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}0 \\\\ 1 \end{bmatrix} = \begin{bmatrix}0 \\\\ 1\\\\ 0\\\\ 0 \end{bmatrix},\\\\
@@ -52,7 +62,9 @@ The computational basis for two-qubit states is formed by the tensor products of
 
 
 Note that while you can always take the tensor product of two single-qubit states to form a two-qubit state, not all two-qubit quantum states can be written as the tensor product of two single-qubit states.
-For example, there are no states $\psi=\begin{bmatrix} \alpha \\\\  \beta \end{bmatrix}$ and $\phi=\begin{bmatrix} \gamma \\\\  \delta \end{bmatrix}$ such that their tensor product is the state 
+For example, there are no states $\psi=\begin{bmatrix} \alpha \\\\  \beta \end{bmatrix}$ and $\phi=\begin{bmatrix} \gamma \\\\  \delta \end{bmatrix}$ <!-- this works in Port. Compare with earlier, same formula -->such that their tensor product is the state 
+
+<!-- this is just raw code in Port -->
 
 $$\psi\otimes \phi = \begin{bmatrix} 1/\sqrt{2} \\\\  0 \\\\  0 \\\\  1/\sqrt{2} \end{bmatrix}.$$ 
 
@@ -63,6 +75,7 @@ Such a two-qubit state, which cannot be written as the tensor product of single-
 Measuring two-qubit states is very similar to single-qubit measurements. Measuring the state
 
 <!-- testing localization -->
+<!-- Port is raw code -->
 
 $$
     \begin{bmatrix}
@@ -73,7 +86,11 @@ $$
     \end{bmatrix}
 $$
 
-yields $00$ with probability $|\alpha_{00}|^2$, $01$ with probability $|\alpha_{01}|^2$, $10$ with probability $|\alpha_{10}|^2$, and $11$ with probability $|\alpha_{11}|^2$. The variables $\alpha_{00}, \alpha_{01}, \alpha_{10},$ and $\alpha_{11}$ were deliberately named to make this connection clear. After the measurement, if the outcome is $00$ then the quantum state of the two-qubit system has collapsed and is now
+
+
+yields $00$ with probability <!--Port puts everything between $ from here... -->$|\alpha_{00}|^2$, $01$ with probability $|\alpha_{01}|^2$, $10$ with probability $|\alpha_{10}|^2$, and $11$ with probability $|\alpha_{11}|^2$. The variables $\alpha_{00}, \alpha_{01}, \alpha_{10},$ and $\alpha_{11}$ were deliberately named to make this connection clear. After the measurement, if the outcome is $00$ <!-- ... to here. -->then the quantum state of the two-qubit system has collapsed and is now
+
+<!-- works in Port -->
 
 $$
     00 \equiv
@@ -88,12 +105,16 @@ $$
 It's also possible to measure just one qubit of a two-qubit quantum state. When you measure only one qubit of a two-qubit state, the impact of measurement is subtly different than measuring two qubits. This is because the entire state isn't collapsed to a computational basis state, rather it's collapsed to only one subsystem.  In other words, measuring one qubit of a two-qubit state only collapses the related subsystem to a computational basis state. 
 
 To see this, consider measuring the first qubit of the following state, which is formed by applying the Hadamard transform $H$ on two qubits initially set to the "0" state:
+
+<!-- all out of whack in Port -->
 $$
 H^{\otimes 2} \left( \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} \right) = \frac{1}{2}\begin{bmatrix}1 & 1 & 1 & 1 \\\\ 1 & -1 & 1 & -1 \\\\ 1 & 1 & -1 & -1 \\\\ 1 & -1 & -1 & 1 \end{bmatrix}\begin{bmatrix}1\\\\ 0\\\\ 0\\\\ 0\end{bmatrix} = \frac{1}{2}\begin{bmatrix}1\\\\ 1\\\\ 1\\\\ 1\end{bmatrix} \mapsto \begin{cases}\text{outcome }=0 & \frac{1}{\sqrt{2}}\begin{bmatrix}1\\\\ 1\\\\ 0\\\\ 0 \end{bmatrix}\\\\ \text{outcome }=1 & \frac{1}{\sqrt{2}}\begin{bmatrix}0\\\\ 0\\\\ 1\\\\ 1 \end{bmatrix}\\\\  \end{cases}.
 $$
 Both outcomes have a 50% probability of occurring.  That can be intuited from the fact that the quantum state before measurement does not change if $0$ is swapped with $1$ on the first qubit.
 
-The mathematical rule for measuring the first or second qubit is simple.  Let $e_k$ be the $k^{\rm th}$ computational basis vector and $S$ be the set of all $e_k$ such that the qubit in question takes the value $1$ for that value of $k$.  For example, if you are interested in measuring the first qubit then $S$ would consist of $e_1\equiv 10$ and $e_3\equiv 11$.  Similarly, if you are interested in the second qubit $S$ would consist of $e_2\equiv 01$ and $e_3 \equiv 11$.  Then the probability of measuring the chosen qubit to be $1$ is for state vector $\psi$
+The mathematical rule for measuring the first or second qubit is simple.  Let <!-- Port strings all together from here... -->$e_k$ be the $k^{\rm th}$ computational basis vector and $S$ be the set of all $e_k$ such that the qubit in question takes the value $1$ for that value of $k$.  For example, if you are interested in measuring the first qubit then $S$ would consist of $e_1\equiv 10$ and $e_3\equiv 11$.  Similarly, if you are interested in the second qubit $S$ would consist of $e_2\equiv 01$ and $e_3 \equiv 11$.  Then the probability of measuring the chosen qubit to be $1$ is for state vector $\psi$<!-- to here-->
+
+<!-- this works in Port-->
 
 $$
 P(\text{outcome}=1)= \sum_{e_k \text{ in the set } S}\psi^\dagger e_k e_k^\dagger \psi.
@@ -122,11 +143,15 @@ $$
 Note that this is just the sum of the two probabilities that would be expected for measuring the results $10$ and $11$.
 For our example, this evaluates to
 
+<!-- Port is out of whack -->
+
 $$
 \frac{1}{4}\left|\begin{bmatrix}0&0&1&0\end{bmatrix}\begin{bmatrix}1\\\\ 1\\\\ 1\\\\ 1\end{bmatrix} \right|^2+\frac{1}{4}\left|\begin{bmatrix}0&0&0&1\end{bmatrix}\begin{bmatrix}1\\\\ 1\\\\ 1\\\\ 1\end{bmatrix} \right|^2=\frac{1}{2}.
 $$
 
 which perfectly matches our intuition.  Similarly, the state after the first qubit is measured as $1$ can be written as
+
+<!-- Port works fine with this one -->
 
 $$
 \frac{\frac{e_1}{2}+\frac{e_3}{2}}{\sqrt{\frac{1}{2}}}=\frac{1}{\sqrt{2}}\begin{bmatrix} 0\\\\ 0\\\\ 1\\\\ 1\end{bmatrix}
@@ -138,6 +163,8 @@ again in accordance with our intuition.
 
 As in the single-qubit case, any unitary transformation is a valid operation on qubits. In general, a unitary transformation on $n$ qubits is a matrix $U$ of size $2^n \times 2^n$ (so that it acts on vectors of size $2^n$), such that $U^{-1} = U^\dagger$.
 For example, the CNOT (controlled-NOT) gate is a commonly used two-qubit gate and is represented by the following unitary matrix:
+
+<!-- Port works -->
 
 $$
 \operatorname{CNOT} = \begin{bmatrix} 1\ 0\ 0\ 0  \\\\  0\ 1\ 0\ 0 \\\\  0\ 0\ 0\ 1 \\\\  0\ 0\ 1\ 0 \end{bmatrix}
@@ -177,7 +204,9 @@ Thus, you can form two-qubit gates by taking the tensor product of some known si
 
 Note that while any two single-qubit gates define a two-qubit gate by taking their tensor product, the converse is not true. Not all two-qubit gates can be written as the tensor product of single-qubit gates.  Such a gate is called an *entangling* gate. One example of an entangling gate is the CNOT gate.
 
-The intuition behind a controlled-not gate can be generalized to arbitrary gates.  A controlled gate in general is a gate that acts as identity unless a specific qubit is $1$.  You denote a controlled unitary, controlled in this case on the qubit labeled $x$, with a $\Lambda\_x(U)$.  As an example $\Lambda_0(U) e\_{1}\otimes {\psi}=e\_{1}\otimes U{\psi}$ and $\Lambda\_0(U) e\_{0}\otimes {\psi}=e\_{0}\otimes{\psi}$, where $e\_0$ and $e\_1$ are the computational basis vectors for a single qubit corresponding to the values $0$ and $1$.  For example, consider the following controlled-$Z$ gate then you can express this as
+The intuition behind a controlled-not gate can be generalized to arbitrary gates.  A controlled gate in general is a gate that acts as identity unless a specific qubit is $1$.  You denote a controlled unitary, controlled in this case on the qubit labeled $x$, with a $\Lambda\_x(U)$.  As an example $\Lambda_0(U) e\_{1}\otimes {\psi}=e\_{1}\otimes U{\psi}$ and <!-- Port start choking here through.... --> $\Lambda\_0(U) e\_{0}\otimes {\psi}=e\_{0}\otimes{\psi}$, where $e\_0$ and $e\_1$ are the computational basis vectors for a single qubit corresponding to the values $0$ and $1$.  For example, consider the following controlled-$Z$ <!-- to here -->gate then you can express this as
+
+<!-- Port renders this but uses one of the previous $, leaving the correct display with an extra $ at the end -->
 $$
 \Lambda\_0(Z)= \begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&1&0\\\\0&0&0&-1 \end{bmatrix}=(\mathbf{1}\otimes H)\operatorname{CNOT}(\mathbf{1}\otimes H).
 $$
@@ -192,6 +221,8 @@ One example of a universal gate set is the Hadamard gate, the T gate, and the CN
 ## Quantum entanglement 
 
 Consider two qubits $A$ and $B$ in superpositions such that the state of the global system is
+
+<!-- Port is raw code -->
 
 $$\ket{\psi}_{AB}=\frac1{\sqrt2}\ket{00} + \frac1{\sqrt2}\ket{11}$$
 
@@ -208,18 +239,23 @@ For a practical implementation, see the tutorial [exploring quantum entanglement
 
 Pure quantum states are those that are characterized by a single ket vector or wavefunction, and cannot be written as a statistical mixture (or *convex combination*) of other quantum states. On the [Bloch sphere](xref:microsoft.quantum.concepts.qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere), pure states are represented by a point on the surface of the sphere, whereas mixed states are represented by an interior point. 
 
+<!-- Port concantanates most of this sentence -->
+
 A pure state $\ket{\phi}\_{AB}$ is entangled if it cannot be written as a combination of product states of the subsystems, that is $\ket{\phi}\_{AB} = \ket{a}\_A \otimes \ket{b}\_B$. 
 
-For example, consider the state
+For example, consider the state <!-- Port is raw code -->
 $$ \ket{\psi}_{AB} = \frac{1}{2} (\ket{00} + \ket{10} +\ket{01} +\ket{11})$$
 
-At first, the state $\ket{\psi}_{AB}$ doesn't look like a product state, but if we rewrite the state as
+At first, the state $\ket{\psi}_{AB}$ <!-- Port works --> doesn't look like a product state, but if we rewrite the state as
 
+<!-- Port is raw code -->
 $$ \ket{\psi}_{AB} = \frac{1}{\sqrt{2}} (\ket{0}_A +\ket{1}_A) \otimes \frac{1}{\sqrt{2}} (\ket{0}_B +\ket{1}_B)= \ket{+}_A \ket{+}_B$$
 
-the state $\ket{\psi}_{AB}$  is a product state, therefore it's not entangled.  
+the state $\ket{\psi}_{AB}$ <!-- Port works --> is a product state, therefore it's not entangled.  
 
 ### Entanglement in mixed states
+
+<!-- there are more errors below, but I stopped here -->
 
 Mixed quantum states are a statistical ensemble of pure states. A mixed state $\rho$ has neither quantum nor classical correlations if it can be written as a product state $\rho = \rho^{A} \otimes \rho^{B}$ for some [density matrices](xref:microsoft.quantum.concepts.dirac#density-operators) $\rho^{A} \geq 0 , \rho^{B} \geq 0$.
 

@@ -1,14 +1,15 @@
 ---
 author: bradben
-description: Explore the new features and tools in the Azure Quantum Development Kit (Modern QDK)
+description: This article outlines new features of the Modern QDK, supported platforms and environments, updates to the Q# language, and deprecated features.
 ms.author: brbenefield
 ms.date: 01/09/2024
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: whats-new
 no-loc: [target, targets]
 title: What's New in the Modern QDK
 uid: microsoft.quantum.modern-qdk
+#Customer intent: As a quantum programmer, I want to use the latest tools available for Azure Quantum. 
 ---
 
 # What's new in the Azure Quantum Development Kit (Modern QDK)
@@ -16,6 +17,7 @@ uid: microsoft.quantum.modern-qdk
 The [Modern QDK](https://github.com/microsoft/qsharp/wiki/Installation) is the latest version of the Q# language and development tools. With a smaller footprint and faster performance, it is a one-click Visual Studio Code extension, and features language improvements, integrated Python and Jupyter Notebook support, new syntax highlighting, debugger support, multi-file project support, error messages, and integrated Azure connectivity. By eliminating the dependencies of the previous Classic QDK, it is now truly platform independent, running on Windows, Mac, Linux, and the web. 
 
 ## Get started links
+
 - For installation steps, see [Get started with the Azure Quantum Development Kit (Modern QDK)](xref:microsoft.quantum.install-qdk.overview).
 - For tips on migrating your existing quantum programs to the Modern QDK, see [Migrate your Q# code to the Modern QDK](xref:microsoft.quantum.how-to.migrate-code).
 - For examples of how to create and submit Q#, Jupyter Notebook, and Python jobs to Azure Quantum, see [Get started with Q# programs and VS Code](xref:microsoft.quantum.submit-jobs).

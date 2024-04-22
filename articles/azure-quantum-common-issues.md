@@ -1,13 +1,13 @@
 ---
 author: bradben
-description: Troubleshoot common Azure Quantum issues.
+description: This article provides troubleshooting steps for common issues encountered when using the Azure Quantum service.
 ms.author: brbenefield
-ms.date: 01/12/2024
+ms.date: 04/11/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
 no-loc: [Quantum Development Kit, target, targets]
-title: Troubleshoot Azure Quantum
+title: Troubleshoot Issues with Azure Quantum
 uid: microsoft.quantum.azure.common-issues
 ---
 
@@ -44,8 +44,8 @@ Steps to resolve this issue:
 
 When attempting to submit a job at the command prompt using the `az quantum submit` command, you may encounter the following error message:
 
-```
-> az quantum job submit ...
+```azurecli
+az quantum job submit ...
 Failed to compile program.
 Command ran in 21.181 seconds (init: 0.457, invoke: 20.724)
 ```
@@ -56,7 +56,7 @@ This error occurs when there's a problem with the Q# program that causes the com
 
 When submitting a job to Quantinuum from a local Jupyter Notebook or command line environment, and using the legacy QASM translator (OPENQASM 2.0), you may encounter this error:
 
-```
+```cmd
 Job ID <jobId> failed or was cancelled with the message: 1000: Compile error: [<file, line>] Wrong number of gate parameters
 ```
 
@@ -78,7 +78,7 @@ rx(1.5707963267948966) q[0];
 
 When you run a Q# code cell in a Jupyter Notebook in VS Code, you may encounter the error:
 
-```
+```cmd
 <function name> not found. Found a matching item `<function name>' that is not available for the current compilation configuration
 ```
 
@@ -131,7 +131,7 @@ After you submit a job to a hardware target, your job may sit in the queue for s
 
 To retrieve more information about the failure:
 
-- Use the `get_results()` method with the job object to view the output or the returned error message:
+- Use the [`get_results()`](xref:azure.quantum.job.Job) method with the job object to view the output or the returned error message:
 
 ```python
 job.get_results()
@@ -147,6 +147,20 @@ If you are using the Azure Quantum Python SDK (within Jupyter notebooks for inst
 This happens because your security token is being reset every time you run the script.
 
 You can resolve this issue by running `az login` using the Azure CLI. For more information, see [az login](/cli/azure/reference-index#az-login()).
+
+### Issue: After updating the azure-quantum package, I get the error \"ModuleNotFoundError: No module named qiskit.tools\" when monitoring a job
+
+As of Qiskit 1.0, the `qiskit.tools` module, which is required for the `job_monitor()` function, has been deprecated. To monitor jobs, use the `wait_for_final_state()` or the `result` functions. 
+
+```python
+job = MyTarget.run(circuit, shots=100)
+
+# to wait until the job is complete
+job.wait_for_final_state() 
+
+# to return the results of the job
+result = job.result()
+```
 
 ## Azure Quantum Resource Estimator
 
@@ -206,7 +220,7 @@ Here is what you could do in such a scenario:
 
 ### Issue: Constraints maximum runtime and maximum number of physical qubits are mutually exclusive
 
-The Resource Estimator accepts only one of `maxDuration` or `maxPhysicalQubits` constraints at the time but not two. If your provide both `maxDuration` and `maxPhysicalQubits`constraints for a single job, it returns the `BothDurationAndPhysicalQubitsProvided` error.
+The Resource Estimator accepts only one of [`maxDuration`]O(xref:qsharp.estimator.EstimatorConstraints) or [`maxPhysicalQubits`](xref:qsharp.estimator.EstimatorConstraints) constraints at the time but not two. If your provide both `maxDuration` and `maxPhysicalQubits`constraints for a single job, it returns the `BothDurationAndPhysicalQubitsProvided` error.
 
 ## Creating an Azure Quantum workspace
 
