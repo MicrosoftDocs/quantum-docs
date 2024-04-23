@@ -40,8 +40,8 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
 
 1. Add another cell and enter this Q# code that returns a user-specified number of random bits:
 
-> [!NOTE]
-> Notice that as soon as you type in the magic command `%%qsharp`, the notebook cell changes type from *Python* to *Q#*. 
+    > [!NOTE]
+    > Notice that as soon as you type in the magic command `%%qsharp`, the notebook cell changes type from *Python* to *Q#*. 
  
     ```qsharp
     %%qsharp
