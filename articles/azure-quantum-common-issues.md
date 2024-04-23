@@ -228,7 +228,7 @@ This error results from generating QIR for Qiskit circuits via the *qiskit_qir* 
 
 To avoid this error, do one of the following:
 
-- Use the *azure_quantum* Python package for submitting Qiskit circuits to Azure Quantum (recommended)
+- Use the *azure_quantum* Python package to submit Qiskit circuits to Azure Quantum (recommended).
 - When using the *qiskit_qir* Python package, be sure to the `record_output` parameter to `False` before submitting your circuit.
 
 ## Creating an Azure Quantum workspace
