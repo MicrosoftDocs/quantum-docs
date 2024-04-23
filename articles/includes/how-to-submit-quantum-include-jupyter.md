@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 12/08/2023
+ms.date: 04/23/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -39,6 +39,9 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
     > If the Jupyter Python kernel `ipykernel` is not detected, VS Code will prompt you to install it.  
 
 1. Add another cell and enter this Q# code that returns a user-specified number of random bits:
+
+    > [!NOTE]
+    > Notice that as soon as you type in the magic command `%%qsharp`, the notebook cell changes type from *Python* to *Q#*. 
  
     ```qsharp
     %%qsharp

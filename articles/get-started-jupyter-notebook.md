@@ -60,7 +60,7 @@ Some things to note:
 - **1st cell**: Preloads your subscription information to connect to the Azure Quantum service. 
 - **2nd cell**: Retrieves the available targets (quantum computers and simulators) in your workspace. 
 - **3rd cell**: Imports the `qsharp` package and sets the base profile for the compiler. 
-- **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the notebook cell. 
+- **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the Python notebook cell. 
 0 **5th cell**: Compiles the qsharp operation using the base profile to submit to Azure Quantum.
 - **6th and 7th cells**: Sets the target, submits the job, and plots and displays the result. The results should be roughly split between 0 and 1. 
 
@@ -81,7 +81,7 @@ Some things to note:
 - **1st cell**: Preloads your subscription information to connect to the Azure Quantum service. 
 - **2nd cell**: Retrieves the available targets (quantum computers and simulators) in your workspace. 
 - **3rd cell**: Imports the `qsharp` package and sets the base profile for the compiler. 
-- **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the notebook cell. 
+- **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the Python notebook cell. 
 0 **5th cell**: Compiles the qsharp operation using the base profile to submit to Azure Quantum.
 - **6th and 7th cells**: Sets the target, submits the job, and plots and displays the result. The results should be roughly split between 0 and 1. 
 
@@ -115,7 +115,7 @@ Some things to note:
 - **1st cell**: Preloads your subscription information to connect to the Azure Quantum service. 
 - **2nd cell**: Retrieves the available targets (quantum computers and simulators) in your workspace. 
 - **3rd cell**: Imports the `qsharp` package and sets the base profile for the compiler. 
-- **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the notebook cell. 
+- **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the Python notebook cell. 
 0 **5th cell**: Compiles the qsharp operation using the base profile to submit to Azure Quantum.
 - **6th and 7th cells**: Sets the target, submits the job, and plots and displays the result. The results should be roughly split between 0 and 1. 
 
