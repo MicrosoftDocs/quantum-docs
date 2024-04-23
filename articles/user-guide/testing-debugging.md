@@ -63,8 +63,14 @@ The [`fail`](xref:microsoft.quantum.qsharp.returnsandtermination#fail-expression
 
 Consider this simple example that validates a parameter value:
 
+```python
+import qsharp 
+# import qsharp package to acccess the %%qsharp magic command
+```
+
 ```qsharp
-%%qsharp
+%%qsharp 
+// use the %%qsharp magic command to change the cell type from Python to Q#
 
 function PositivityFact(value : Int) : Unit {
 
@@ -99,8 +105,14 @@ Here, the `fail` expression prevents the program from continuing to run with inv
 
 You can implement the same behavior as the previous example using the `Fact()` function from the `Microsoft.Quantum.Diagnostics` namespace. The `Fact()` function evaluates a given classical condition and throws an exception if it is false. 
 
+```python
+import qsharp 
+# import qsharp package to acccess the %%qsharp magic command
+```
+
 ```qsharp
 %%qsharp
+// use the %%qsharp magic command to change the cell type from Python to Q#
 
     function PositivityFact(value : Int) : Unit {
 
@@ -181,11 +193,13 @@ Basis State
 [`dump_machine`](/python/qsharp/qsharp?view=qsharp-py#qsharp-dump-machine&preserve-view=true) is a Python function that returns the current allocated qubit count and a Python dictionary of sparse state amplitudes that you can parse. Using either of these functions in a Jupyter Notebook allows you to step through your operations much like a debugger. Using the previous example program:
 
 ```python
-import qsharp
+import qsharp 
+# import qsharp package to acccess the %%qsharp magic command
 ```
 
 ```qsharp
 %%qsharp
+// use the %%qsharp magic command to change the cell type from Python to Q#
 
 use qubits = Qubit[2];
 X(qubits[0]);
