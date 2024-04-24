@@ -430,8 +430,6 @@ Let's visualize the distribution of results obtained from running the quantum pr
 
     :::image type="content" source="media/histogram-vscode-qrng-tab.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code showing how to display settings.":::
 
-> [!NOTE]
-> The `RandomNumberGenerator.qs` program doesn't allow quantum circuit visualization because `Unrestricted` target profiles don't support quantum circuit visualization if the program contains a comparison of a `Result` value.
 
 ### [Jupyter Notebook in VS Code](#tab/tabid-python)
 

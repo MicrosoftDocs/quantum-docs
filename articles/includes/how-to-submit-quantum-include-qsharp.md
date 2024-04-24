@@ -70,8 +70,6 @@ Quantum circuit diagrams are a visual representation of quantum operations. They
 
     :::image type="content" source="../media/circuit-vscode-randombit.png" alt-text="Screenshot the Q# circuit window showing the resulting circuit diagram for the random bit operation.":::
 
-> [!NOTE]
-> If the target profile is `Unrestricted`, you can visualize quantum circuits for any Q# program as long as it isn’t comparing any `Result` values. If the target profile is `Base Profile`, there're no restrictions on the Q# program.
 
 ## Connect to Azure Quantum and submit your job
 
