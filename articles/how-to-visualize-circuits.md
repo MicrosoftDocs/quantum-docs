@@ -198,7 +198,7 @@ One way to work around this restriction is to run the program in the simulator, 
 
 ### Target profile
 
-You can select `Unrestricted` or `QIR Base Profile` as the target profile for the circuit synthesis. The currently selected target profile influences how the circuit is synthesized. When the target profile is set to `Unrestricted`, the circuit synthesis is based on the actual quantum operations in the Q# program. When the target profile is set to `QIR Base Profile`, the circuit synthesis is based on the quantum operations that would be run on hardware if the program is submitted to Azure Quantum with this target profile.
+The currently selected target profile influences how circuit diagrams are generated. 
 
 > [!NOTE]
 > - To select target profile in VS Code, go to **View -> Command Palette** and write **Q#: Set the Azure Quantum QIR target profile**. You can select `Unrestricted` or `QIR Base Profile` from the dropdown list.
