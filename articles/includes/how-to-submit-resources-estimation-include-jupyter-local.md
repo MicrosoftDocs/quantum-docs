@@ -430,7 +430,7 @@ For example, collapse the **Logical qubit parameters** group to see that the cod
 The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can use the `qsharp-widgets` package to visualize this distribution to better understand the estimated space requirements for the algorithm.
 
 ```python
-from qsharp_widgets import SpaceChart, EstimateDetails
+from qsharp-widgets import SpaceChart, EstimateDetails
 SpaceChart(result)
 ```
 
