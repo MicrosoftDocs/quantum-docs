@@ -102,7 +102,7 @@ In Jupyter Notebooks, you can visualize quantum circuits using the `qsharp-widge
     CNOT(register[0], register[1]);
     ```
 
-1. You can use the `dump_circuit()` function displays a quantum circuit based on the current state of the program. For example, the circuit diagram shows two qubit registers which are initialized to the |0⟩ state. Then, a Hadamard gate, **H**, is applied to the first qubit. After that, a CNOT gate is applied using the first qubit as control, which is represented as a dot, and the second qubit as target, which is represented as an X.
+1. You can use the `dump_circuit()` function to display a quantum circuit based on the current state of the program. For example, the circuit diagram shows two qubit registers which are initialized to the |0⟩ state. Then, a Hadamard gate, **H**, is applied to the first qubit. After that, a CNOT gate is applied using the first qubit as control, which is represented as a dot, and the second qubit as target, which is represented as an X.
 
     ```python
     qsharp.dump_circuit()
