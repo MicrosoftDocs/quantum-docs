@@ -155,7 +155,7 @@ You can generate a circuit diagram for any program with an **entry expression** 
     Circuit(qsharp.circuit("GHZSample(3)"))
     ```
 
-### Viewing circuit diagrams for operations 
+### Viewing circuit diagrams for operations with qubits
 
 You can generate circuit diagrams for any **operation that takes qubits** or arrays of qubits. The diagram shows as many wires as there are input qubit, plus any additional qubits that are allocated within the operation. When the operation takes an array of qubits `(Qubit[])`, the circuit shows the array as a register of 2 qubits. 
 
@@ -178,7 +178,7 @@ You can generate circuit diagrams for any **operation that takes qubits** or arr
 
 ## Conditions that affect circuit diagrams
 
-When visualizing quantum circuits, the following conditions can affect the circuit diagram.
+When visualizing quantum circuits, the following conditions can affect the visualization of the circuit diagram.
 
 ### Dynamic circuits
 
@@ -196,10 +196,17 @@ cannot be represented withed straightforward a circuit diagram, since the gates 
 
 Circuit diagrams can be generated for dynamic circuits by running the program in the quantum simulator, and tracing the gates as they are applied. This is called _trace_ mode, as the qubits and gates are being traced as simulation is being performed.
 
-The downside of traced circuits is that they only capture the measurement outcome, and the consequent gate applications, for a single simulation. In the above example, if the measurement outcome is `Zero`, we don't see the `X` gate in the diagram. Another run of the simulation may show a slightly different circuit.
+The downside of traced circuits is that they only capture the measurement outcome, and the consequent gate applications, for a single simulation. In the above example, if the measurement outcome is `Zero`, you don't see the `X` gate in the diagram. Another run of the simulation may show a slightly different circuit.
+
+
+
+
+
 ### Target profile
 
-The currently selected target profile influences how circuit diagrams are generated. 
+The currently selected target profile influences how circuit diagrams are generated. Target profiles are used to specify the capabilities of the target hardware, and the restrictions that are imposed on the quantum program. 
+
+When the target profile is set to **Unrestricted**, the circuit diagrams show the quantum operations that are invoked in the Q# program. When the target profile is set to **QIR base**, the circuit diagrams show the quantum operations that would be run on hardware if the program is submitted to Azure Quantum with this target profile.
 
 > [!NOTE]
 > - To select target profile in VS Code, go to **View -> Command Palette** and write **Q#: Set the Azure Quantum QIR target profile**. You can select `Unrestricted` or `QIR Base Profile` from the dropdown list.
