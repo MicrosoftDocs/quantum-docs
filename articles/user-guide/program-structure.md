@@ -106,7 +106,7 @@ Note the absence of a user namespace or an `@EntryPoint()`, which are not needed
 When using the `%%qsharp` command:
 
 - You must run `import qsharp` first to enable the `%%qsharp` command.
-- The `%%qsharp` command is scoped to the entire cell in which it appears.
+- The `%%qsharp` command is scoped to the entire cell in which it appears. Note that it changes the notebook cell type from *Python* to *Q#*. 
 - The Q# code that follows the command must adhere to standard Q# coding syntax. For example, you denote comments using `//` instead of `#` within `%%qsharp` cells, and code lines must end with a semi-colon `;`.
 - The `%%qsharp` command cannot be preceded by or followed by a Python statement within its cell. 
 

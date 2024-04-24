@@ -1,15 +1,15 @@
 ---
 author: bradben
-description: This article describes how to define a Q# project that makes use of multiple Q# psource files in a multi-level folder structure. 
+description: This article describes how to define a Q# project that makes use of multiple Q# source files in a multi-level folder structure. 
 ms.author: brbenefield
-ms.date: 03/21/2024
+ms.date: 04/15/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: "How to Work With Qsharp Projects"
 uid: microsoft.quantum.qsharp-projects
-#customer intent: As a quantum developer, I want to understand how to use Q# projects
+#customer intent: As a quantum developer, I want to understand how to use Q# projects to develop quantum programs
 ---
 
 # Work with Q# projects
@@ -28,13 +28,15 @@ A Q# project contains a Q# manifest file, named *qsharp.json*, and one or more *
 
 ## Define a Q# project
 
-A Q# project is defined by the presence of a *qsharp.json* manifest file, a **src** folder that contains the Q# source files, and the root folder of the project. The process of determining the root folder depends on whether you are working with a Q# program, or with a Python program or Jupyter Notebook. The folder structure for a Q# project, however, remains the same for both types of programs.
+A Q# project is defined by the presence of a *qsharp.json* manifest file and a **src** folder (which contains the Q# source files), both of which must be in the root folder of the project. For Q# programs, the Q# compiler detects the project folder automatically. For Python programs and Jupyter Notebooks, you must specify the Q# project folder with a `qsharp.init` call. The folder structure for a Q# project, however, remains the same for all types of programs.
 
 :::image type="content" source="../media/multi-file-art.png" alt-text="Picture showing the folder hierarchy for a Q# project.":::
 
 ### [Using a Q# program](#tab/tabid-qsharp)
 
-When a \*.qs file is opened in VS Code, the Q# compiler searches upward in the folder structure for a *qsharp.json* manifest file. If it finds a manifest file, the compiler then searches downward through all the subfolders of the **src** directory for *.qs files and caches any operations or functions, and makes those oerations and functions available to all the *.qs files, per the manifest file's exclusion rules. 
+### Defining the project folder (Q# programs)
+
+When a \*.qs file is opened in VS Code, the Q# compiler searches upward in the folder structure for a *qsharp.json* manifest file. If it finds a manifest file, the compiler then searches downward through all the subfolders of the **src** directory for *.qs files and caches any operations or functions, and makes those operations and functions available to all the *.qs files, per the manifest file's exclusion rules. 
 
 For example, given this folder structure:
 
@@ -52,22 +54,27 @@ when you open the file */src/TeleportOperation/PrepareState/PrepareState.qs*, th
 1.	Checks */src/TeleportOperation* for *qsharp.json*.
 1.  Checks */src* for *qsharp.json*.
 1.	Checks */* for *qsharp.json*.
-1.	Establishes */* as the root directory of the project, and includes all *.qs files under the root in the project, per the manifest file's exclusion rules.
+1.	Establishes */* as the root directory of the project, and includes all *.qs files under the root in the project, per the manifest file's settings.
 
 ### [Using Python or a Jupyter Notebook](#tab/tabid-python)
 
-When you're using a Python program or Jupyter Notebook cell to access Q# resources, you set the root directory of the project directly with a `qsharp.init` statement. Using the example folder structure:
+### Defining the project folder (Python and Jupyter Notebook programs) 
+
+When you're using a Python program or Jupyter Notebook cell to access Q# resources, you need to set the root directory of the project directly with a `qsharp.init` statement. Using the same folder structure from the previous example
 
 * **Teleportation_project**
     * *qsharp.json*
     * **src**
+    * **MyPythonProgram.py**
         *  *RunTeleport.qs*
         *  **TeleportOperations**
             * *Teleport.qs*
             * **PrepareState**
                 * *PrepareState.qs*
 
-you would set the `project_root` before making calls to any Q# operations:
+you would set the `project_root` before making calls to any Q# operations.
+
+Assuming your Python program is in the Q# project folder
 
 ```python
 import qsharp
@@ -75,7 +82,7 @@ import qsharp
 qsharp.init(project_root = './Teleportation_project')
 ```
 
-The path of the root folder is relative to the file that is setting it, meaning that your program doesn't necessarily have to be in the project. A valid path may also be `'./MyProjects/Teleportation_project'`
+The path of the root folder is relative to the file that is setting it, meaning that your Q# project folder can be anywhere and the calling program doesn't necessarily have to be in the project. A valid path may also be `'./MyProjects/Teleportation_project'`, or `../../Teleportation_project`.
 
 The Q# compiler verifies there is a valid *qsharp.json* file in the specified root folder and makes any \*.qs resources under the **src** folder available for reference, per the manifest file's exclusion rules.
 
@@ -93,7 +100,7 @@ A manifest file is a simple .json file named *qsharp.json* that can optionally i
 
 The following are some examples of how manifest files can define the scope of your Q# project.
 
-In this example, *author* is the only field specified, and therefore all *.qs files in this directory and all its subdirectories are included in the project. 
+In this example, *author* is the only field specified, and therefore all *.qs files in this directory and all its subdirectories are included in the Q# project. 
 
 ```json
 {
@@ -138,7 +145,9 @@ Using the manifest file, you can set each rule to either `allow`, `warn`, or `er
 
 ## Q# project requirements and properties
 
-* All *.qs files that you want to be included in the project must be under a folder named **src**, which must be under the project root folder. When you create a Q# project in VS Code, the `/src` folder is created automatically. 
+The following requirements and configurations apply to all Q# projects.
+
+* All *.qs files that you want to be included in the project must be under a folder named **src**, which must be under the Q# project root folder. When you create a Q# project in VS Code, the `/src` folder is created automatically. 
 * The *qsharp.json* manifest file should be at the same level as the **src** folder. When you create a Q# project in VS Code, the *qsharp.json* file is created automatically.
 * Operations and functions in available source files can be accessed using `open` statements:
 
@@ -154,24 +163,24 @@ MyMathLib.Multiply(x,y);
 ```
 
 **For Q# programs only**
-* Only one *.qs file in a project can have an `@EntryPoint()` defined. 
+* Only one *.qs file in a Q# project can have an `@EntryPoint()` defined. 
 * The *.qs file with the `@EntryPoint()` definition can be located at any level below the manifest file.
-* Any operation or function that is cached from a *.qs file anywhere in the project displays in predictive text in VS Code.
+* Any operation or function that is cached from a *.qs file anywhere in the Q# project displays in predictive text in VS Code.
 * If the namespace for a selected operation or function hasn't been added yet, VS Code automatically adds the necessary `open` statement.
 
 
 ## Steps for creating a Q# project
 
-1. In the VS Code file explorer, right-click the folder you want to use for the project root folder and select **Create Q# project**, or open the folder and select **View > Command Palette > Q#: Create a Q# project...**.
+1. In the VS Code file explorer, right-click the folder you want to use for the Q# project root folder and select **Create Q# project**, or open the folder and select **View > Command Palette > Q#: Create a Q# project...**.
 1. VS Code creates a minimal *qsharp.json* manifest file in the folder, and adds a `/src` folder with a `Main.qs` template file. 
 1. Edit the manifest file as needed. See [Manifest file examples](#manifest-file-examples).
 1. Add and organize your Q# source files under the `/src` folder. 
-1. If you are accessing the project from a Python program or Jupyter Notebook, set the root folder path using `qsharp.init`, for example:
+1. If you are accessing the Q# project from a Python program or Jupyter Notebook, set the [root folder path](#defining-the-project-folder-python-and-jupyter-notebook-programs) using `qsharp.init`. This example assumes your program is in the same folder as the root folder of the Q# project:
 
     ```python
     qsharp.init(project_root = './Teleportation_project')
     ```
-1. If you are using only Q# files in VS Code, when you open a Q# file, the compiler searches for the *qsharp.json* manifest file, determine the project root folder, and then scan the subfolder for \*.qs files. 
+1. If you are using only Q# files in VS Code, when you open a Q# file, the compiler searches for the *qsharp.json* manifest file, determines the project root folder, and then scans the subfolder for \*.qs files. 
 
 > [!NOTE]
 > You can also manually create the manifest file and the `/src` folder in step 2. 
@@ -200,10 +209,9 @@ The *qsharp.json* manifest file contains the *author* and *license* fields:
 }
 ```
 
-While the source files are the same for a Q# program and a Python program or Jupyter Notebook, there are some implementation differences. 
+### Q\# source files
 
-### [Using Q# ](#tab/tabid-qsharp-run)
-
+With one minor difference - the `@EntryPoint()` statement - the source files are the same for a Q# program, a Python program, or a Jupyter Notebook. 
 
 The main file, *RunTeleport.qs*, contains the entry point and references the `TeleportLib` namespace in *Teleport.qs*.
 
@@ -212,7 +220,7 @@ namespace RunTeleport {
 
     open TeleportLib;   // references the TeleportLib namespace in Teleport.qs
 
-    @EntryPoint()
+    @EntryPoint()       // @EntryPoint() not necessary for Python or Jupyter Notebook programs
     operation RunTeleportationExample() : Unit {
         use msg = Qubit();
         use target = Qubit();
@@ -237,7 +245,7 @@ namespace RunTeleport {
 namespace TeleportLib {
 
     open PrepareBell;     // references the PrepareBell namespace in PrepareState.qs
-
+ 
     operation Teleport(msg : Qubit, target : Qubit) : Unit {
         use here = Qubit();
 
@@ -263,12 +271,18 @@ namespace PrepareBell {
     }
 }
 ```
+### Running the programs
 
-### [Using Python or a Jupyter Notebook](#tab/tabid-python-run)
+Select the tab for the environment in which you are running your program. 
 
-For a Python or Jupyter Notebook driver program, the main file, *RunTeleport.qs*, doesn't require an entry point, because it won't actually be run. It is there as a source library only.
+### [Running a Q# program](#tab/tabid-qsharp-run)
 
-For variety, these \*.qs files reference the function and operation calls using the full namespace - otherwise they are the same as the Q# program version.  
+To run this program, open the *RunTeleport.qs* file in VS Code and select **Run**. 
+
+
+### [Running a Jupyter Notebook](#tab/tabid-notebook-run)
+
+For a Jupyter Notebook program, the source files don't require the `@EntryPoint()` attribute. The files function as source libraries only.
 
 To run this program in a Juptyer Notebook, open a new notebook and run the following cells:
 
@@ -277,72 +291,52 @@ import qsharp
 ```
 
 ```python
-# set the root folder for the project
+# set the root folder for the Q# project
 # make adjustments to the path depending on where your program is saved
+
+# this example assumes your program is in the same folder as the root folder
 qsharp.init(project_root = './Teleportation_project')
 
 ```
 
 If your path is valid, you see a confirmation message, `Q# initialized with configuration: {'targetProfile': 'unrestricted'}`
 
+Run the program by calling the main operation using the `%%qsharp` magic command
 
 ```qsharp
 %%qsharp
-// call the main operation 
+// call the main operation
 RunTeleport.RunTeleportationExample();
 ```
 
-**Q# source files**
+or by using the `qsharp.eval()` statement
 
-
-```qsharp
-namespace RunTeleport {
-
-    operation RunTeleportationExample() : Unit {
-        use msg = Qubit();
-        use target = Qubit();
-
-        H(msg);
-        TeleportLib.Teleport(msg, target);    // calls the Teleport() operation with its full namespace
-        H(target);
-
-        if M(target) == Zero {
-            Message("Teleported successfully!");
-        
-        Reset(msg);
-        Reset(target);
-        }
-    }
-}
+```python
+print (qsharp.eval("RunTeleport.RunTeleportationExample()"));
 ```
 
-*Teleport.qs* defines the `Teleport()` operation and calls the `PrepareBellPair()` operation from *PrepareState.qs*.
+### [Running a Python program](#tab/tabid-python-run)
 
-```qsharp
-namespace TeleportLib {
+For a Python program, the source files don't require the `@EntryPoint()` attribute. The files function as source libraries only.
 
-    operation Teleport(msg : Qubit, target : Qubit) : Unit {
-        use here = Qubit();
+To run this program, run the following commands:
 
-        PrepareBell.PrepareBellPair(here, target);      // calls the PrepareBellPair() operation 
-        Adjoint PrepareBell.PrepareBellPair(msg, here);
-
-        if M(msg) == One { Z(target); }
-        if M(here) == One { X(target); }
-
-        Reset(here);
-    }
-}
+```python
+import qsharp
 ```
 
-The *PrepareState.qs* file contains a standard reusable operation to create a Bell pair. 
+```python
+# set the root folder for the Q# project
+# make adjustments to the path depending on where your program is saved
 
-```qsharp
-namespace PrepareBell {    
-    
-    operation PrepareBellPair(left : Qubit, right : Qubit) : Unit is Adj + Ctl {
-        H(left);
-        CNOT(left, right);
-    }
-}
+# this example assumes your program is in the same folder as the root folder
+qsharp.init(project_root = '/.Teleportation_project')
+```
+
+If your path is valid, you see a confirmation message, `Q# initialized with configuration: {'targetProfile': 'unrestricted'}`
+
+Run the program by calling the main operation with `qsharp.eval()`
+
+```python
+print (qsharp.eval("RunTeleport.RunTeleportationExample()"));
 ```

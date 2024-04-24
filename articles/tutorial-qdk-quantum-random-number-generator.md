@@ -440,7 +440,7 @@ Let's visualize the distribution of results obtained from running the quantum pr
     import qsharp
     ```
 
-1. Add the quantum random number generator program. To do so, you use the `%%qhsarp` magic command. Copy this code into the second cell. 
+1. Add the Q# code for the quantum random number generator program. To do so, you use the `%%qhsarp` magic command. Note that the `%%qsharp` command changes the notebook cell from type `Python` to type `Q#`.  Copy this code into the second cell. 
 
     ```qsharp
     %%qsharp

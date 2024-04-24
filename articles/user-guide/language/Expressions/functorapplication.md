@@ -39,7 +39,6 @@ It takes an argument of type `(Qubit[], <TIn>)`, where `<TIn>` should be replace
 | --- | --- | --- |
 | X | `Qubit` | `(Qubit[], Qubit)` |
 | SWAP | `(Qubit, Qubit)` | `(Qubit[], (Qubit, Qubit))` |
-| ApplyQFT | `LittleEndian` | `(Qubit[], LittleEndian)` |
 
 Concretely, if `cs` contains an array of qubits, `q1` and `q2` are two qubits, and the operation `SWAP` is as defined [here](xref:microsoft.quantum.qsharp.specializationdeclarations#specialization-declarations), then the following expression exchanges the state of `q1` and `q2` if all qubits in `cs` are in the |1⟩ state:
 
