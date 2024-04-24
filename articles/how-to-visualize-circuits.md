@@ -192,10 +192,11 @@ if (M(q) == One) {
 }
 ```
 
-cannot be represent with a circuit diagram since the gates are conditional on a measurement result. If you try to show the circuit diagram for such a program, you get an "unsupported" error.
+cannot be represented withed straightforward a circuit diagram, since the gates are conditional on a measurement result. Such a circuit is called a _dynamic_ circuit.
 
-One way to work around this restriction is to run the program in the simulator, and show the resulting circuit for that run. The difference between this and circuit synthesis is that this only captures the measurement outcome, and the consequent gate applications, for that single simulation. In this example, if the measurement outcome is `Zero`, we don't see the `X` gate in the diagram. Another run of the simulation may show a slightly different circuit.
+Circuit diagrams can be generated for dynamic circuits by running the program in the quantum simulator, and tracing the gates as they are applied. This is called _trace_ mode, as the qubits and gates are being traced as simulation is being performed.
 
+The downside of traced circuits is that they only capture the measurement outcome, and the consequent gate applications, for a single simulation. In the above example, if the measurement outcome is `Zero`, we don't see the `X` gate in the diagram. Another run of the simulation may show a slightly different circuit.
 ### Target profile
 
 The currently selected target profile influences how circuit diagrams are generated. 
