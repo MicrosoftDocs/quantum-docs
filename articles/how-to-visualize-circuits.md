@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to how to visually represent quantum algorithms with quantum circuit diagrams using VS Code, Python, and Jupyter Notebooks.
-ms.date: 04/03/2024
+ms.date: 04/25/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -15,7 +15,7 @@ uid: microsoft.quantum.how-to.visualize-circuits
 
 Quantum circuit diagrams are a visual representation of quantum operations. They show the flow of qubits through the quantum program, including the gates and measurements applied to them.
 
-In this article, you'll learn how to visually represent quantum algorithms with quantum circuit diagrams using Visual Studio Code, Python, and Jupyter Notebooks.
+In this article, you'll learn how to visually represent quantum algorithms with quantum circuit diagrams using Visual Studio Code, and Jupyter Notebooks.
 
 For more information about quantum circuit diagram conventions, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
 
@@ -113,7 +113,7 @@ In Jupyter Notebooks, you can visualize quantum circuits using the `qsharp-widge
     q_1    ───────── X ──
     ```
 
-1. You can visualize quantum circuits as an **SVG image** by using the `qsharp-widgets` package. In this case, the CNOT gate is represented as a line connecting the two qubits, with a dot on the control qubit and a circumscribed cross on the target qubit.
+1. You can visualize quantum circuits as an **SVG image** by using the `qsharp-widgets` package. In this case, the CNOT gate is represented as a line connecting the two qubits, with a dot on the control qubit and a circumscribed cross on the target qubit. For more information, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
 
     ```python
     from qsharp_widgets import Circuit
@@ -122,8 +122,6 @@ In Jupyter Notebooks, you can visualize quantum circuits using the `qsharp-widge
     ```
 
     :::image type="content" source="media/circuits-jupyter-notebook-bellstate.png" alt-text="Screenshot of a Jupyter Notebook showing how to visualize the circuit for a Q# operation.":::
-
-For more information, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
 
 ### Viewing circuit diagrams for an entry expression
 
@@ -197,10 +195,6 @@ cannot be represented withed straightforward a circuit diagram, since the gates 
 Circuit diagrams can be generated for dynamic circuits by running the program in the quantum simulator, and tracing the gates as they are applied. This is called _trace_ mode, as the qubits and gates are being traced as simulation is being performed.
 
 The downside of traced circuits is that they only capture the measurement outcome, and the consequent gate applications, for a single simulation. In the above example, if the measurement outcome is `Zero`, you don't see the `X` gate in the diagram. Another run of the simulation may show a slightly different circuit.
-
-
-
-
 
 ### Target profile
 
