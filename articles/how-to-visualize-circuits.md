@@ -77,7 +77,7 @@ When **debugging** a Q# program, you can visualize the quantum circuit based on 
 1. The current quantum circuit is shown in the **Q# Circuit panel**. This circuit diagram represents the current state of the simulator, that is, the gates that have been applied up until the current point of execution.
 
 
-    :::image type="content" source="media/codelens-circuits-bellstates.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit for a single Q# operation. lightbox="media/codelens-circuits-bellstates.png":::
+    :::image type="content" source="media/codelens-circuits-bellstates.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit for a single Q# operation." lightbox="media/codelens-circuits-bellstates.png":::
 
 
 ## Quantum circuits with Jupyter Notebooks
