@@ -77,7 +77,7 @@ When **debugging** a Q# program, you can visualize the quantum circuit based on 
 1. The current quantum circuit is shown in the **Q# Circuit panel**. This circuit diagram represents the current state of the simulator, that is, the gates that have been applied up until the current point of execution.
 
 
-    :::image type="content" source="media/codelens-circuits-bellstates.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit for a single Q# operation.":::
+    :::image type="content" source="media/codelens-circuits-bellstates.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit for a single Q# operation." lightbox="media/codelens-circuits-bellstates.png":::
 
 
 ## Quantum circuits with Jupyter Notebooks
@@ -235,10 +235,10 @@ Specifically, gate decompositions are applied that would make the resulting circ
 
 1. When target profile is set to **Unrestricted**, the gates displayed on the circuit correspond exactly to the quantum operations that are invoked in the Q# program.
 
-    :::image type="content" source="media/circuits-target-unrestricted.png" alt-text="Screenshot of quantum circuits when target profile is Unrestricted. ":::
+    :::image type="content" source="media/circuits-target-unrestricted.png" alt-text="Screenshot of quantum circuits when target profile is Unrestricted." lightbox="media/circuits-target-unrestricted.png":::
 
 1. When the target profile is **QIR base**, the circuit looks different. Since Base Profile targets don't allow qubit reuse after measurement, the measurement is now performed on an entangled qubit instead. Since `Reset` operation isn't a supported gate in Base Profile, it's dropped. The resulting circuit matches what would be run on hardware if this program is submitted to Azure Quantum with this target profile.
 
-    :::image type="content" source="media/circuits-target-base.png" alt-text="Screenshot of quantum circuits when target profile is QIR base.":::
+    :::image type="content" source="media/circuits-target-base.png" alt-text="Screenshot of quantum circuits when target profile is QIR base." lightbox="media/circuits-target-base.png":::
 
 
