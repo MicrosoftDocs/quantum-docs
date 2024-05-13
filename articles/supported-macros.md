@@ -22,6 +22,12 @@ no-loc: ['Q#', '$$v', Quantum Development Kit]
 <tr><td>variance</td><td>\variance (x)</td><td>$$\variance (x)$$</td></tr>
 </table>
 
+
+- This is a bold one - $\boldone$
+- This is an id - $\id$
+- This is an expect - $\expect$
+- This is a variance - $\variance (3)$
+
 - [All](xref:Qdk.Microsoft.Quantum.Arrays.All) function (API)
 - [Math](xref:Qdk.Microsoft.Quantum.Unstable.Arithmetic.ApplyIfEqualL) new API
 - [Workspace](xref:azure.quantum.Workspace) Python class (azure-quantum)
