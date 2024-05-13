@@ -79,6 +79,8 @@ To monitor jobs in the Azure portal:
 1. A list of jobs that you have permission to access is displayed. 
 1. Select the job **Name** to view additional details, such as the input parameters, and the job input and output. 
 
+***
+
 ## Job counts
 
 To get counts that result from a large number of jobs, you may want to perform a [local install of the Quantum Development Kit tools](xref:microsoft.quantum.install-qdk.overview). With a local install, you can store the job IDs locally. 
