@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 03/15/2024
+ms.date: 05/13/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -15,7 +15,10 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)  extensions installed.
-- The Azure Quantum `azure-quantum` Python package with the \[qiskit\] tag. Ensure that you have the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
+- The latest version of the Azure Quantum `azure-quantum` Python package with the \[qiskit\] tag.
+
+    > [!NOTE]
+    > Ensure that you have the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
 - The `qsharp` and the `ipykernel` Python packages.
 
     ```cmd
