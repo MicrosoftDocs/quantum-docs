@@ -1,13 +1,13 @@
 schedules:
-- cron: "0 10 * * 1-5"
-  displayName: "Scheduled run at 10 AM on weekdays"
+- cron: "0 17 * * 1-5"
+  displayName: "Scheduled run at 10 AM PT on weekdays"
   branches:
     include:
     - main
   always: false # This ensures the pipeline only runs if there have been changes since the last successful run.
 
-- cron: "0 15 * * 1-5"
-  displayName: "Afternoon run at 3:00 PM M-F"
+- cron: "0 22 * * 1-5"
+  displayName: "Afternoon run at 3:00 PM PT M-F"
   branches:
     include:
     - main
