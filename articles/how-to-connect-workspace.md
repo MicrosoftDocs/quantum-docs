@@ -128,7 +128,8 @@ You can find the workspace parameters in the overview of your Azure Quantum work
 1. Select your Azure Quantum workspace, and navigate to **Overview**.
 1. Copy the parameters in the fields.
 
-    ![How to retrieve the resource ID and location from an Azure Quantum workspace](media/azure-quantum-resource-id.png)
+    :::image type="content" source="media/azure-portal-workspace-overview.png" alt-text="Screenshot of Visual Studio Code showing how to expand the overview pane of your Quantum Workspace.":::
+
 
 ### Use the workspace parameters to connect to your Azure Quantum workspace
 

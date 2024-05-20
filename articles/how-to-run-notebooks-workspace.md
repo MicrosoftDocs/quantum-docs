@@ -31,9 +31,9 @@ To get started, you can use a sample notebook from the sample gallery.
 1. Select **Sample gallery**.
 1. Select the sample you want to use, and select **Copy to my notebooks**.
 
-    :::image type="content" source="media/create_notebook_steps.png" alt-text="Screenshot of the sample Jupyter Notebook gallery showing how to copy a notebook in your gallery.":::
+    :::image type="content" source="media/azure-portal-sample-gallery.png" alt-text="Screenshot of the sample Jupyter Notebook gallery showing how to copy a notebook in your gallery.":::
 
-The sample notebook can be found under **My notebooks** and you can now run the notebook.
+1. The sample notebook can be found under **My notebooks** and you can now run the notebook.
 
 ## Run a notebook
 
@@ -46,7 +46,6 @@ To run Q# or Python code in a Jupyter Notebook, follow these steps.
 
     :::image type="content" source="media/run_or_run_all.png" alt-text="Screenshot of a Jupyter notebook showing how to run it.":::
     
-
 ## Create a new notebook
 
 Follow these steps to create a new Jupyter Notebook using Q# or Python.
@@ -58,12 +57,11 @@ Follow these steps to create a new Jupyter Notebook using Q# or Python.
     :::image type="content" source="media/how-to-run-notebooks-workspace/create-new-notebook.png" alt-text="Screenshot showing how to create a new Jupyter notebook in Azure portal.":::
 
 1. Type a **File Name** and select **Create file**.
+1. The first cell of the notebook is populated automatically with the connection string to the Azure Quantum workspace.
 
-The first cell of the notebook is populated automatically with the connection string to the Azure Quantum workspace.
+    :::image type="content" source="media/how-to-run-notebooks-workspace/new-python-notebook-snippet.png" alt-text="Screenshot of the first cell in a new Python notebook in Azure Quantum.":::
 
-:::image type="content" source="media/how-to-run-notebooks-workspace/new-python-notebook-snippet.png" alt-text="Screenshot of the first cell in a new Python notebook in Azure Quantum.":::
-
-Select **+ Code** or **+ Markdown** to add a code or markdown text cell.
+1. Select **+ Code** or **+ Markdown** to add a code or markdown text cell.
 
 > [!TIP]
 > A notebook auto-saves every 30 seconds. You can also manually save by pressing **CTRL + S**.
@@ -97,7 +95,7 @@ You can rename, delete, duplicate, and download existing notebooks.
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Notebooks**.
 1. Select your notebook in **My notebooks**
-1. Click on the context pane, which is **...** to the right of your notebook's name.
+1. Click on the context pane, which is the **three dots** to the right of your notebook's name.
 1. Select **Rename Notebook**, **Delete Notebook**, **Duplicate Notebook**, or **Download Notebook**.
 
     :::image type="content" source="media/how-to-run-notebooks-workspace/notebook-context-pane.png" alt-text="Screenshot of the notebook context pane in Azure Quantum.":::

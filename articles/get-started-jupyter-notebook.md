@@ -35,9 +35,10 @@ To get started, copy a sample notebook from the notebook gallery.
 1. Log in to the [Azure portal](https://portal.azure.com) and select your Azure Quantum workspace.
 1. Select **Notebooks**.
 1. In the **Sample gallery**, locate the **Hello, world: Q#** notebook tile, select either the **IonQ**, **Quantinuum**, or **Rigetti** provider (the sample code is identical) and select **Copy to my notebooks**.
-1. The sample notebook can be found under **My notebooks** and you can now run the notebook.
 
-    :::image type="content" source="media/create_notebook_steps.png" alt-text="Screenshot of the sample Jupyter Notebook gallery showing how to copy a notebook in your gallery.":::
+    :::image type="content" source="media/azure-portal-sample-gallery.png" alt-text="Screenshot of the sample Jupyter Notebook gallery showing how to copy a notebook in your gallery." lightbox="media/azure-portal-sample-gallery.png" :::
+
+1. The sample notebook can be found under **My notebooks** and you can now run the notebook.
 
 ## Run the notebook
 

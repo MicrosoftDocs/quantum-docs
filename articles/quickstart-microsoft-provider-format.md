@@ -66,11 +66,13 @@ workspace = Workspace (
 
 1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
 1. To connect to the Azure Quantum service, your program will need the resource ID and the
-location of your Azure Quantum workspace. Log in to your Azure account,
-<https://portal.azure.com>, navigate to your Azure Quantum workspace, and
-copy the values from the header.
+location of your Azure Quantum workspace. 
+    1. Log in to your Azure account, <https://portal.azure.com>,
+    1. Select your Azure Quantum workspace, and navigate to **Overview**.
+    1. Copy the parameters in the fields.
+    
+        :::image type="content" source="media/azure-portal-workspace-overview.png" alt-text="Screenshot of Visual Studio Code showing how to expand the overview pane of your Quantum Workspace." lightbox="media/azure-portal-workspace-overview.png":::
 
-    ![How to retrieve the resource ID and location from an Azure Quantum workspace](media/azure-quantum-resource-id.png)
 
 1. In the first cell of your notebook, paste the values into the following `Workspace` constructor to
 create a `workspace` object that connects to your Azure Quantum workspace.
