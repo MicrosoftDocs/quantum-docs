@@ -20,14 +20,14 @@ Azure Quantum partners with third party quantum hardware providers to offer a va
 To see the different billing plans in your local currency: 
 
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
-2. Create a new [**Azure Quantum workspace**](xref:microsoft.quantum.how-to.workspace). 
-3. Go to the **Providers** tab in your Quantum workspace and click on **Add a Provider**. Then, select the provider you want to add.
+1. Select your **Azure Quantum workspace**.
+1. In the left panel, under **Operations**, go to the **Providers** tab. 
+1. You can check the current billing plan for each provider under **Plan** column.
+1. Click on **Modify** to see and modify the different billing plans available for that provider in your local currency.
 
- :::image type="content" source="media/add-providers-portal.png" alt-text="Screen shot showing how to select a provider to add to an Azure Quantum workspace.":::
- 
-4. In the description of the provider pane, you will find the current pricing options in your local currency. 
+ :::image type="content" source="media/azure-portal-billing-plans.png" alt-text="Screen shot showing how to select a provider to add to an Azure Quantum workspace." lightbox="media/azure-portal-billing-plans.png":::
 
-For more information about the billing plans and pricing offer, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing) page. 
+The billing plans are set by the quantum hardware providers. For more information about the billing plans and pricing offer, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing) page. 
 
 ## How to get your invoices
 
@@ -60,7 +60,7 @@ You can view your invoices in the Azure portal.
 1. If you have more than one billing scope, select the scope you want to view in the **Billing scope** pane. If not, skip this step.
 1. In the left navigation pane, select **Invoices**.
 
- :::image type="content" source="media/cost-management-invoice-portal.png" alt-text="Screen shot of Azure prtal showing the Invoices view and how to select and download the invoices.":::
+ :::image type="content" source="media/cost-management-invoice-portal.png" alt-text="Screen shot of Azure portal showing the Invoices view and how to select and download the invoices." lightbox="media/cost-management-invoice-portal.png":::
 
 In the Invoices view, you can see all your invoices. The invoices from Azure Quantum third party providers are of type **Azure Marketplace and Reservations**.
 

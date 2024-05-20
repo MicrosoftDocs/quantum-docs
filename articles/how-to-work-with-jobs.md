@@ -44,12 +44,7 @@ First, Azure Quantum uploads the job to the Azure Storage account that you confi
 
 ## Monitoring jobs
 
-You can monitor jobs using the command line or through the Azure portal.
-
-### [Command line](#tab/tabid-mdline)
-
-Once you submit a job, you must poll for the status of the job. Jobs have
-the following possible states:
+Once you submit a job, you can monitor the status of the job. Jobs have the following possible states:
 
 |Status|Description|
 |---|---|
@@ -65,19 +60,57 @@ This diagram shows the possible job state transitions:
 
 :::image type="content" source="./media/aq-diagram.png" alt-text="Diagram showing the workflow of a job submission to Azure Qauntum.":::
 
-
 After a job completes successfully, it displays a link to the output data in your Azure Storage account. How you access this data depends on the SDK or tool you used to [submit the job](xref:microsoft.quantum.submit-jobs).
 
-### [Azure portal](#tab/tabid-portal)
+### How to monitor jobs
 
-You can view job status in the Azure portal, including the job ID, target, status, submission time, and cost estimate, if applicable.
+You can monitor jobs through Python, the Azure portal, and Azure CLI.
+
+#### [Python](#tab/tabid-python)
+
+All the properties of the job are accessible in `job.details`. For example, you can access the job name, status, and ID as follows:
+
+```python
+print(job.details)
+print("\nJob name:", job.details.name)
+print("Job status:", job.details.status)
+print("Job ID:", job.details.id)
+```
+
+```output
+{'additional_properties': {'isCancelling': False}, 'id': '0fc396d2-97dd-11ee-9958-6ca1004ff31f', 'name': 'MyPythonJob', 'provider_id': 'rigetti'...}
+Job name: MyPythonJob
+Job status: Succeeded
+Job ID: fc396d2-97dd-11ee-9958-6ca1004ff31f
+```
+
+#### [Azure portal](#tab/tabid-portal)
+
+You can view your job status in the Azure portal, including the job ID, target, status, submission time, and cost estimate, if applicable.
 
 To monitor jobs in the Azure portal:
 
 1. Log in to the [Azure portal](https://portal.azure).
 1. In your Azure Quantum workspace, select **Operations > Job Management**.
-1. A list of jobs that you have permission to access is displayed. 
-1. Select the job **Name** to view additional details, such as the input parameters, and the job input and output. 
+1. A list of jobs that you have permission to access is displayed. You can check the job ID, type, target, status, submission time, and cost estimate, if applicable.
+
+    :::image type="content" source="./media/azure-portal-job-list.png" alt-text="Screenshot of Azure portal showing how to retrieve the list of jobs.":::
+
+1. Click on the job **Name** to view additional details, such as the input parameters, and the job input and output. 
+
+#### [Azure CLI](#tab/tabid-azcli)
+
+You can check the status of the job, by copying the **id** of your job and using the `job show` command. For example:
+
+```azurecli
+az quantum job show --job-id b0012975-744a-4405-970e-3d8dc4afb2c0 -o table
+```
+
+```output
+Name      Id                                    Status     Target           Submission time                   Completion time                  
+--------  ------------------------------------  ---------  ---------------  --------------------------------  -------------------------------- 
+MyQuantumJob  b2f07cc4-b49b-40b0-b63b-9a4885e5fef5  Succeeded  rigetti.sim.qvm  2023-12-11T05:33:23.187773+00:00  2023-12-11T05:33:29.252742+00:00 
+```
 
 ***
 
