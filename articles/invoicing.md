@@ -25,7 +25,7 @@ To see the different billing plans in your local currency:
 1. You can check the current billing plan for each provider under **Plan** column.
 1. Click on **Modify** to see and modify the different billing plans available for that provider in your local currency.
 
- :::image type="content" source="media/azure-portal-billing plans.png" alt-text="Screen shot showing how to select a provider to add to an Azure Quantum workspace." lightbox="media/azure-portal-billing plans.png":::
+ :::image type="content" source="media/azure-portal-billing-plans.png" alt-text="Screen shot showing how to select a provider to add to an Azure Quantum workspace." lightbox="media/azure-portal-billing-plans.png":::
 
 The billing plans are set by the quantum hardware providers. For more information about the billing plans and pricing offer, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing) page. 
 
