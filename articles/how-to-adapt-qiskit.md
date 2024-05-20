@@ -68,7 +68,8 @@ Most samples are configured to run by default against the `aer_simulator`, which
 
     > [!NOTE]
     > The location and resource ID of your workspace can be found in the **Overview** tab of your Azure Quantum workspace. 
-    >  :::image type="content" source="media/azure-quantum-resource-id.png" alt-text="Screenshot of the overview blade of a workspace in Azure portal. Location and resource ID are marked inside a red rectangle.":::
+    >  :::image type="content" source="media/azure-portal-workspace-overview.png" alt-text="Screenshot of the overview blade of a workspace in Azure portal. Location and resource ID are marked inside a red rectangle.":::
+
 
 ## Verify the update
 

@@ -56,11 +56,11 @@ If your Azure Quantum credits have expired, or you consumed all and need more, y
 ### [Using the Azure portal](#tab/tabid-portal)
 
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
-2. Select your **Azure Quantum workspace**.
-3. In the left panel, under **Operations**, go to the **Credits and quotas** blade and select the **Credits** tab. 
-4. See the consumed and the remaining credits for each selected provider. Credits are expressed in US dollars. 
+1. Select your **Azure Quantum workspace**.
+1. In the left panel, under **Operations**, go to the **Credits and quotas** tab and select the **Credits** blade. 
+1. See the consumed and the remaining credits for each selected provider. Credits are expressed in US dollars. 
 
-     :::image type="content" source="media/portal-credits-blade.png" alt-text="Screenshot of the credits blade in Azure portal.":::
+     :::image type="content" source="media/portal-credits-blade.png" alt-text="Screenshot of the credits blade in Azure portal." lightbox="media/portal-credits-blade.png":::
      
 > [!NOTE]
 > When using Azure Quantum Credits, the cost estimation in the **Job Management** blade within your Azure Quantum workspace is equal to $0. In this case, the estimated cost isn't reflected in the Job details because there’s no effective charge against your Azure bill.
