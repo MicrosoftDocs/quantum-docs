@@ -31,7 +31,7 @@ Bit flip errors occur when a qubit changes from $\ket{0}$ to $\ket{1}$ or vice v
 
 Phase flip errors occur when a qubit changes its phase. They are also known as $\sigma_z$-errors, because they map the qubit states $\sigma_z \ket{0} = \ket{0}$ and $\sigma_z \ket{1} = -\ket{1}$. This type of error has no classical analog.
 
-In quantum computing, quantum errors can manifest as bit flips, phase flips, and a combination of both.
+In quantum computing, quantum errors can manifest as bit flips, phase flips, or a combination of both.
 
 ## How does quantum error correction work?
 
