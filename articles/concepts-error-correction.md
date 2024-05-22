@@ -15,7 +15,7 @@ uid: microsoft.quantum.concepts.qec
 
 Quantum error correction (QEC) is a technique that allows us to protect quantum information from errors. Error correction is especially important in quantum computers, because efficient quantum algorithms make use of large-scale quantum computers, which are sensitive to noise. This makes large scale quantum computation difficult, and practically impossible unless we use quantum error correction methods.
 
-The error rates for quantum computers are typically higher than classical computers's errors due to the nature of quantum mechanics and the challenges associated with building and operating quantum systems. Noise, decoherence, and imperfections in quantum gates can cause errors in quantum computations. Current quantum computers have error rates in the range of 1% to 0.1%. In other words, this means that on average one out of every 100 to 1000 quantum gate operations will result in an error. 
+The error rates for quantum computers are typically higher than classical computer's errors due to the challenges associated with building and operating quantum systems. Noise, decoherence, and imperfections in quantum gates can cause errors in quantum computations. Current quantum computers have error rates in the range of 1% to 0.1%. In other words, this means that on average one out of every 100 to 1000 quantum gate operations result in an error. 
 
 ## Types of errors
 
@@ -23,7 +23,7 @@ There are two fundamental types of quantum errors:
 
 - Bit flip: Bit flip errors occur when a qubit changes from $\ket{0}$ to $\ket{1}$ or vice versa. Bit flip errors are also known as $\sigma_x$-errors, because they map the qubit states $\sigma_x \ket{0} = \ket{1}$ and $\sigma_x \ket{1} = \ket{0}$. This error is analogous to a classical bit flip error.
 
-- Phase  flip: Phase flip errors occur when a qubit changes its phase. They are also known as $\sigma_z$-errors, because they map the qubit states $\sigma_z \ket{0} = \ket{0}$ and $\sigma_z \ket{1} = -\ket{1}$. This type of error has no classical analogue.
+- Phase  flip: Phase flip errors occur when a qubit changes its phase. They are also known as $\sigma_z$-errors, because they map the qubit states $\sigma_z \ket{0} = \ket{0}$ and $\sigma_z \ket{1} = -\ket{1}$. This type of error has no classical analog.
 
 In quantum computing, quantum errors can manifest as bit flips, phase flips, and a combination of both.
 
@@ -33,9 +33,9 @@ The basic principle behind error correction is that the number of bits used to e
 
 Quantum error correction codes work by encoding the quantum information, called *logical qubit*, into a larger set of qubits, called *physical qubits*. The physical qubits are then sent through a noisy channel, where they are subject to errors. The code is designed so that errors can be detected and corrected by measuring some of the qubits in the code.
 
-For example, imagine you want to send a single-qubit message $\ket{0}$. You could use three physical qubits to encode the message, sending $\ket{000}$, which is the logical qubit. This error-correcting code is a *repetition code*, because the message is repeated three times. 
+For example, imagine you want to send a single-qubit message $\ket{0}$. You could use three physical qubits to encode the message, sending $\ket{000}$, which is the logical qubit. This error-correcting code is a *repetition code*, because the message is repeated three times.
 
-Now, imagine that a single bit-flip error occurs during transmission so that what the recipient receives is ‘010’. In this scenario, the recipient may be able to infer that the intended message is ‘000’. However, if the message is subject to two bit-flip errors, the recipient may infer an incorrect codeword. Finally, if all three bits are flipped so that the original message ‘000’ becomes ‘111’, the recipient has no way of knowing an error has occurred. 
+Now, imagine that a single bit-flip error occurs during transmission so that what the recipient receives is ‘010’. In this scenario, the recipient may be able to infer that the intended message is ‘000’. However, if the message is subject to two bit-flip errors, the recipient may infer an incorrect codeword. Finally, if all three bits are flipped so that the original message ‘000’ becomes ‘111’, the recipient has no way of knowing an error occurred.
 
 The code distance of a QEC code is the minimum number of errors that change one codeword for another, that is, the number of errors that can't be detected. The code distance $d$ can be defined as
 
@@ -51,9 +51,9 @@ There are many different types of QEC codes, each with its own properties and ad
 
 - **Repetition code:** The simplest quantum error correction code, where a single qubit is encoded into multiple qubits by repeating it multiple times. The repetition code can correct bit flip errors, but not phase flip errors.
 
-- **Shor code:**  The first quantum error correction code, developed by Peter Shor. It encodes one logical qubit into nine physical qubits. Shor code can correct one bit flip error or one phase flip error, but it can't correct both types of errors at the same time.
+- **Shor code:**  The first quantum error correction code, developed by Peter Shor. It encodes one logical qubit into nine physical qubits. Shor code can correct one-bit flip error or one phase flip error, but it can't correct both types of errors at the same time.
 
-- **Steane code:** This is a seven-qubit code that can correct both bit flip and phase flip errors. It has the advantage of being fault-tolerant, meaning that the error correction process itself doesn't introduce additional errors.
+- **Steane code:** This is a seven-qubit code that can correct both bit flip and phase flip errors. It has the advantage of being fault-tolerant, meaning that the error correction process itself doesn't introduce extra errors.
 
 - **Surface code:** This is a topological error correction code that uses a two-dimensional lattice of qubits to encode logical qubits. It has a high error correction threshold and is considered one of the most promising techniques for large-scale, fault-tolerant quantum computing. The surface code is used by the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator#quantum-error-correction-schemes).
 
@@ -81,7 +81,7 @@ You encode the single qubit into a joint state of three qubits, by applying two 
 
 ### Sending the qubits
 
-You send all three qubits down the channel. Assuming the channel can only produce one bit flip error, the received qubits are in one of the following states:
+You send all three qubits down the channel. Assuming the channel can only produce one-bit flip errors, the received qubits are in one of the following states:
 
 |State | Error |
 |---|---|
@@ -109,7 +109,7 @@ You measure the two *ancilla* qubits in the computational basis states $\ket{0}$
 
 Now you know which of the four possible states the three received qubits are in. You can correct the error by applying the correction operation. In this case you're dealing with bit flip errors, so the correction is a $\sigma_x$ operation applied to one (or none) of the qubits. 
 
-For example, if the error syndrome is $\ket{00}$, then the received qubits are in the state $\alpha \ket{000} + \beta\ket{111}$, which is the state you originally sent. If the error syndrome is $\ket{11}$, then the received qubits are in the state $\alpha \ket{100} + b\ket{011}$. Note that there's a bit flip error on the first qubit, which you can correct by applying a $\sigma_x$ operation to the first qubit.
+For example, if the error syndrome is $\ket{00}$, then the received qubits are in the state $\alpha \ket{000} + \beta\ket{111}$, which is the state you originally sent. If the error syndrome is $\ket{11}$, then the received qubits are in the state $\alpha \ket{100} + b\ket{011}$. There's a bit flip error on the first qubit, which you can correct by applying a $\sigma_x$ operation to the first qubit.
 
 |Error syndrome| Collapse state| Correction|
 |---|---|---|
