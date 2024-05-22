@@ -11,31 +11,37 @@ title: Quantum Error Correction Codes
 uid: microsoft.quantum.concepts.qec
 ---
 
-# What is quantum error correction?
+# Introduction to quantum error correction codes
 
-Quantum error correction (QEC) is a technique that allows us to protect quantum information from errors. Error correction is especially important in quantum computers, because efficient quantum algorithms make use of large-scale quantum computers, which are sensitive to noise. This makes large scale quantum computation difficult, and practically impossible unless we use quantum error correction methods.
+This article explains the basics of quantum error correction, the types of quantum errors, and some common quantum error correction codes. It also provides an example of how to correct errors using the three-qubit code.
 
-The error rates for quantum computers are typically higher than classical computer's errors due to the challenges associated with building and operating quantum systems. Noise, decoherence, and imperfections in quantum gates can cause errors in quantum computations. Current quantum computers have error rates in the range of 1% to 0.1%. In other words, this means that on average one out of every 100 to 1000 quantum gate operations result in an error. 
+## What is quantum error correction?
 
-## Types of errors
+Quantum error correction (QEC) is a technique that allows us to protect quantum information from errors. Error correction is especially important in quantum computers, because efficient quantum algorithms make use of large-scale quantum computers, which are sensitive to noise.
 
-There are two fundamental types of quantum errors:
+The basic principle behind quantum error correction is that the number of bits used to encode a given amount of information is increased. This redundancy allows the code to detect and correct errors.
 
-- Bit flip: Bit flip errors occur when a qubit changes from $\ket{0}$ to $\ket{1}$ or vice versa. Bit flip errors are also known as $\sigma_x$-errors, because they map the qubit states $\sigma_x \ket{0} = \ket{1}$ and $\sigma_x \ket{1} = \ket{0}$. This error is analogous to a classical bit flip error.
+The error rates for quantum computers are typically higher than classical computer's errors due to the challenges associated with building and operating quantum systems. Noise, decoherence, and imperfections in quantum gates can cause errors in quantum computations. Current quantum computers have error rates in the range of 1% to 0.1%. In other words, this means that on average one out of every 100 to 1000 quantum gate operations result in an error.
 
-- Phase  flip: Phase flip errors occur when a qubit changes its phase. They are also known as $\sigma_z$-errors, because they map the qubit states $\sigma_z \ket{0} = \ket{0}$ and $\sigma_z \ket{1} = -\ket{1}$. This type of error has no classical analog.
+## Types of quantum errors
+
+There are two fundamental types of quantum errors: bit flips and phase flips.
+
+Bit flip errors occur when a qubit changes from $\ket{0}$ to $\ket{1}$ or vice versa. Bit flip errors are also known as $\sigma_x$-errors, because they map the qubit states $\sigma_x \ket{0} = \ket{1}$ and $\sigma_x \ket{1} = \ket{0}$. This error is analogous to a classical bit flip error.
+
+Phase flip errors occur when a qubit changes its phase. They are also known as $\sigma_z$-errors, because they map the qubit states $\sigma_z \ket{0} = \ket{0}$ and $\sigma_z \ket{1} = -\ket{1}$. This type of error has no classical analog.
 
 In quantum computing, quantum errors can manifest as bit flips, phase flips, and a combination of both.
 
-## How does QEC work?
+## How does quantum error correction work?
 
-The basic principle behind error correction is that the number of bits used to encode a given amount of information is increased. This redundancy allows the code to detect and correct errors.
+Quantum error correction codes work by encoding the quantum information into a larger set of qubits, called the *physical qubits*. The joint state of the physical qubits represents a *logical qubit*.
 
-Quantum error correction codes work by encoding the quantum information, called *logical qubit*, into a larger set of qubits, called *physical qubits*. The physical qubits are then sent through a noisy channel, where they are subject to errors. The code is designed so that errors can be detected and corrected by measuring some of the qubits in the code.
+The physical qubits are then sent through a noisy channel, where they are subject to errors. The code is designed so that errors can be detected and corrected by measuring some of the qubits in the code.
 
-For example, imagine you want to send a single-qubit message $\ket{0}$. You could use three physical qubits to encode the message, sending $\ket{000}$, which is the logical qubit. This error-correcting code is a *repetition code*, because the message is repeated three times.
+For example, imagine you want to send the single-qubit message $\ket{0}$. You could use three physical qubits to encode the message, sending $\ket{000}$. This error-correcting code is a *repetition code*, because the message is repeated three times.
 
-Now, imagine that a single bit-flip error occurs during transmission so that what the recipient receives is ‘010’. In this scenario, the recipient may be able to infer that the intended message is ‘000’. However, if the message is subject to two bit-flip errors, the recipient may infer an incorrect codeword. Finally, if all three bits are flipped so that the original message ‘000’ becomes ‘111’, the recipient has no way of knowing an error occurred.
+Now, imagine that a single bit-flip error occurs during transmission so that what the recipient receives is the state $\ket{010}$. In this scenario, the recipient may be able to infer that the intended message is $\ket{000}$. However, if the message is subject to two bit-flip errors, the recipient may infer an incorrect message. Finally, if all three bits are flipped so that the original message $\ket{000}$ becomes $\ket{111}$, the recipient has no way of knowing an error occurred.
 
 The code distance of a QEC code is the minimum number of errors that change one codeword for another, that is, the number of errors that can't be detected. The code distance $d$ can be defined as
 
@@ -43,7 +49,7 @@ $$d = 2t + 1$$
 
 where $t$ is the number of errors the code can correct. For example, for the three-bit code $t = 1$ and $d = 3$, because the code can detect and correct one error. 
 
-Note that the three-bit code used in this example can only correct bit-flip errors, but not phase flip errors. This is because repetition codes aren't designed to correct phase flip errors. To correct both types of errors, more sophisticated quantum error correction codes are needed.
+Note that the three-bit code used in this example can only correct bit-flip errors, but not phase flip errors. Repetition codes aren't designed to correct phase flip errors. To correct both types of errors, more sophisticated quantum error correction codes are needed.
 
 ## Types of QEC codes
 
