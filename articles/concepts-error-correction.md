@@ -37,7 +37,7 @@ In quantum computing, quantum errors can manifest as bit flips, phase flips, or 
 
 Quantum error correction codes work by encoding the quantum information into a larger set of qubits, called the *physical qubits*. The joint state of the physical qubits represents a *logical qubit*.
 
-The physical qubits are then sent through a noisy channel, where they are subject to errors. The code is designed so that errors can be detected and corrected by measuring some of the qubits in the code.
+The physical qubits are subject to errors due to decoherence and imperfections in quantum gates. The code is designed so that errors can be detected and corrected by measuring some of the qubits in the code.
 
 For example, imagine you want to send the single-qubit message $\ket{0}$. You could use three physical qubits to encode the message, sending $\ket{000}$. This error-correcting code is a *repetition code*, because the message is repeated three times.
 
@@ -47,9 +47,9 @@ The code distance of a QEC code is the minimum number of errors that change one 
 
 $$d = 2t + 1$$
 
-where $t$ is the number of errors the code can correct. For example, for the three-bit code $t = 1$ and $d = 3$, because the code can detect and correct one error. 
+where $t$ is the number of errors the code can correct. For example, the three-bit code can detect and correct one bit-flip error, so $t = 1$, and thus the code distance is $d = 3$.
 
-Note that repetition codes, such as the three-bit code used in this example, can only correct bit-flip errors, and not phase flip errors.  To correct both types of errors, more sophisticated quantum error correction codes are needed.
+Note that repetition codes, such as the three-bit code used in this example, can only correct bit-flip errors, and not phase flip errors. To correct both types of errors, more sophisticated quantum error correction codes are needed.
 
 ## Types of QEC codes
 
@@ -81,13 +81,13 @@ Let's break down the steps of the three-qubit code.
 
 First, you encode your single qubit $\ket{\phi}=\alpha\ket{0} +\beta\ket{1}$ into a joint state of three qubits.
 
-You prepare two further qubits in the state $\ket{0}$. So, the global state of all three qubits is $(\alpha\ket{0} +\beta\ket{1})\ket{0}\ket{0}= \alpha\ket{000} + \beta\ket{100} $.
+Next, you prepare two further qubits in the state $\ket{0}$. So, the global state of all three qubits is $(\alpha\ket{0} +\beta\ket{1})\ket{0}\ket{0}= \alpha\ket{000} + \beta\ket{100} $.
 
-You encode the single qubit into a joint state of three qubits, by applying two CNOT operations. The first CNOT uses the first qubit as control and acts on the second qubit, producing $\alpha \ket{000} + \beta \ket{110}$. The second CNOT uses the first qubit as control and acts on the third qubit. The state of the three qubits is now $\alpha\ket{000} + \beta\ket{111}$.
+Lastly, you encode the single qubit into a joint state of three qubits, by applying two CNOT operations. The first CNOT uses the first qubit as control and acts on the second qubit, producing $\alpha \ket{000} + \beta \ket{110}$. The second CNOT uses the first qubit as control and acts on the third qubit. The state of the three qubits is now $\alpha\ket{000} + \beta\ket{111}$.
 
 ### Sending the qubits
 
-You send all three qubits down the channel. Assuming the channel can only produce one-bit flip errors, the received qubits are in one of the following states:
+You send all three qubits. Assuming only one-bit flip errors can occur, the received qubits are in one of the following states:
 
 |State | Error |
 |---|---|
@@ -96,11 +96,11 @@ You send all three qubits down the channel. Assuming the channel can only produc
 |$\alpha \ket{010} + \beta\ket{101}$ | Qubit 2|
 |$\alpha \ket{001} + \beta\ket{110}$ | Qubit 3|
 
-### Adding *ancilla* qubits
+### Adding auxiliary qubits
 
-You introduce two more qubits, prepared in the state $\ket{00}$. This extra pair of qubits, referred to as an *ancilla*, are used to extract information of the error without directly measuring or obtaining information about the logical state. 
+First, you introduce two more qubits, prepared in the state $\ket{00}$. This auxiliary pair of qubits are used to extract information of the error without directly measuring or obtaining information about the logical state.
 
-Next, you carry out four CNOT operations: the first two operations use the first and second received qubits as control and act on the first ancilla qubit, and last two operations use the first and third received qubits as control and act on the second ancilla bit. The total state of all five qubits is now:
+Next, you carry out four CNOT operations: the first two operations use the first and second received qubits as control and act on the first auxiliary qubit, and last two operations use the first and third received qubits as control and act on the second auxiliary bit. The total state of all five qubits is now:
 
 |State | Error |
 |---|---|
@@ -111,7 +111,7 @@ Next, you carry out four CNOT operations: the first two operations use the first
 
 ### Retrieving the error syndrome
 
-To retrieve the error information, you measure the two ancilla qubits in the computational basis states $\ket{0}$ and $\ket{1}$. By doing this, you recover the joint state, which is called the *error syndrome* because it helps to diagnose the errors in the received qubits.
+To retrieve the error information, you measure the two auxiliary qubits in the computational basis states $\ket{0}$ and $\ket{1}$. By doing this, you recover the joint state, which is called the *error syndrome* because it helps to diagnose the errors in the received qubits.
 
 Now you know which of the four possible states the three received qubits are in. You can correct the error by applying the correction operation. In this case you're dealing with bit flip errors, so the correction is a $\sigma_x$ operation applied to one (or none) of the qubits. 
 
