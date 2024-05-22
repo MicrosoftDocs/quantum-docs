@@ -49,7 +49,7 @@ $$d = 2t + 1$$
 
 where $t$ is the number of errors the code can correct. For example, for the three-bit code $t = 1$ and $d = 3$, because the code can detect and correct one error. 
 
-Note that the three-bit code used in this example can only correct bit-flip errors, but not phase flip errors. Repetition codes aren't designed to correct phase flip errors. To correct both types of errors, more sophisticated quantum error correction codes are needed.
+Note that repetition codes, such as the three-bit code used in this example, can only correct bit-flip errors, and not phase flip errors.  To correct both types of errors, more sophisticated quantum error correction codes are needed.
 
 ## Types of QEC codes
 
