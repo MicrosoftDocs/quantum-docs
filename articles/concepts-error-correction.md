@@ -100,7 +100,7 @@ You send all three qubits down the channel. Assuming the channel can only produc
 
 You introduce two more qubits, prepared in the state $\ket{00}$. This extra pair of qubits, referred to as an *ancilla*, are used to extract information of the error without directly measuring or obtaining information about the logical state. 
 
-Now, you carry out four CNOT operations: two uses the first and second received qubits as control and act on the first ancilla qubit, and two uses the first and third received qubits as control and act on the second ancilla bit. The total state of all five qubits is now:
+Next, you carry out four CNOT operations: the first two operations use the first and second received qubits as control and act on the first ancilla qubit, and last two operations use the first and third received qubits as control and act on the second ancilla bit. The total state of all five qubits is now:
 
 |State | Error |
 |---|---|
