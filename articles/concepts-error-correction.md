@@ -126,7 +126,7 @@ For example, if the error syndrome is $\ket{00}$, then the received qubits are i
 
 ### Extracting the original qubit
 
-Finally, to extract the single qubit you wanted to transmit in the first place, you apply two CNOT operations: one uses the first qubit as control and acts on the second qubit, and other uses the first qubit as control and acts on the third one. 
+Finally, to extract the single qubit you wanted to transmit originally, you apply two CNOT operations: one uses the first qubit as control and acts on the second qubit, and other uses the first qubit as control and acts on the third one. 
 
 The state of the first qubit is now $\alpha \ket{0} + \beta \ket{1}$, which is the original qubit you wanted to transmit.
 
