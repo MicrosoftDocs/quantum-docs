@@ -11,7 +11,7 @@ title: Quantum Error Correction Codes
 uid: microsoft.quantum.concepts.qec
 ---
 
-# Introduction to quantum error correction codes
+# Introduction to quantum error correction
 
 This article explains the basics of quantum error correction, the types of quantum errors, and some common quantum error correction codes. It also provides an example of how to correct errors using the three-qubit code.
 
