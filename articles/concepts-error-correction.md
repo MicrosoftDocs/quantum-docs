@@ -21,7 +21,7 @@ Quantum error correction (QEC) is a technique that allows us to protect quantum 
 
 The basic principle behind quantum error correction is that the number of bits used to encode a given amount of information is increased. This redundancy allows the code to detect and correct errors.
 
-The error rates for quantum computers are typically higher than classical computer's errors due to the challenges associated with building and operating quantum systems. Noise, decoherence, and imperfections in quantum gates can cause errors in quantum computations. Current quantum computers have error rates in the range of 1% to 0.1%. In other words, this means that on average one out of every 100 to 1000 quantum gate operations result in an error.
+The error rates for quantum computers are typically higher than classical computer's errors due to the challenges associated with building and operating quantum systems. Noise, decoherence, and imperfections in quantum gates can cause errors in quantum computations. Current quantum computers have error rates in the range of 1% to 0.1%. In other words, this means that on average one out of every 100 to 1000 quantum gate operations results in an error.
 
 ## Types of quantum errors
 
