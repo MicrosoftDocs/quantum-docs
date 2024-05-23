@@ -131,4 +131,4 @@ Finally, to extract the single qubit you wanted to transmit originally, you appl
 The state of the first qubit is now $\alpha \ket{0} + \beta \ket{1}$, which is the original qubit you wanted to transmit.
 
 > [!IMPORTANT]
-> The QEC code doesn't gain any information regarding the coefficients $\alpha$ and $\beta$, hence superpositions of the computational state remain in-tact during correction.
+> The QEC code doesn't gain any information regarding the coefficients $\alpha$ and $\beta$, hence superpositions of the computational state remain intact during correction.
