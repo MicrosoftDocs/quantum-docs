@@ -39,11 +39,11 @@ Quantum error correction codes work by encoding the quantum information into a l
 
 The physical qubits are subject to errors due to decoherence and imperfections in quantum gates. The code is designed so that errors can be detected and corrected by measuring some of the qubits in the code.
 
-For example, imagine you want to send the single-qubit message $\ket{0}$. You could use three physical qubits to encode the message, sending $\ket{000}$. This error-correcting code is a *repetition code*, because the message is repeated three times.
+For example, imagine you want to send the single-qubit message $\ket{0}$. You could use three physical qubits to encode the message, sending $\ket{000}$, which is known as a *codeword*. This error-correcting code is a *repetition code*, because the message is repeated three times.
 
 Now, imagine that a single bit-flip error occurs during transmission so that what the recipient receives is the state $\ket{010}$. In this scenario, the recipient may be able to infer that the intended message is $\ket{000}$. However, if the message is subject to two bit-flip errors, the recipient may infer an incorrect message. Finally, if all three bits are flipped so that the original message $\ket{000}$ becomes $\ket{111}$, the recipient has no way of knowing an error occurred.
 
-The code distance of a QEC code is the minimum number of errors that change one codeword for another, that is, the number of errors that can't be detected. The code distance $d$ can be defined as
+The code distance of a QEC code is the minimum number of errors that change one codeword into another, that is, the number of errors that can't be detected. The code distance $d$ can be defined as
 
 $$d = 2t + 1$$
 
