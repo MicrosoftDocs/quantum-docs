@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how quantum error correction works, the types of quantum errors and codes, and how to correct errors using the three-qubit code as an example. 
 ms.author: sonialopez
-ms.date: 05/22/2024
+ms.date: 05/23/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: concept
