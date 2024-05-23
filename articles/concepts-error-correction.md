@@ -111,7 +111,7 @@ Next, you carry out four CNOT operations: the first two operations use the first
 
 ### Retrieving the error syndrome
 
-To retrieve the error information, you measure the two auxiliary qubits in the computational basis states $\ket{0}$ and $\ket{1}$. By doing this, you recover the joint state, which is called the *error syndrome* because it helps to diagnose the errors in the received qubits.
+To retrieve the error information, you measure the two auxiliary qubits in the computational basis states $\ket{0}$ and $\ket{1}$. By doing this, you recover the joint state, which is called the *error syndrome* because it helps diagnose the errors in the received qubits.
 
 Now you know which of the four possible states the three received qubits are in. You can correct the error by applying the correction operation. In this case you're dealing with bit flip errors, so the correction is a $\sigma_x$ operation applied to one (or none) of the qubits. 
 
