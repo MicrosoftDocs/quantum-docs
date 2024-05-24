@@ -65,7 +65,7 @@ Consider this simple example that validates a parameter value:
 
 ```python
 import qsharp 
-# import qsharp package to acccess the %%qsharp magic command
+# import qsharp package to access the %%qsharp magic command
 ```
 
 ```qsharp
@@ -107,7 +107,7 @@ You can implement the same behavior as the previous example using the `Fact()` f
 
 ```python
 import qsharp 
-# import qsharp package to acccess the %%qsharp magic command
+# import qsharp package to access the %%qsharp magic command
 ```
 
 ```qsharp
@@ -194,7 +194,7 @@ Basis State
 
 ```python
 import qsharp 
-# import qsharp package to acccess the %%qsharp magic command
+# import qsharp package to access the %%qsharp magic command
 ```
 
 ```qsharp

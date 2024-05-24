@@ -23,7 +23,7 @@ In a quantum circuit, time flows from left to right. Quantum gates are ordered i
 
 Take the following quantum circuit diagram as an example:
 
-:::image type="content" source="media\annotated-sample-circuit.png" alt-text="Diagram of a quantum circuit wiht two registers, one hadamard gate, one controlled gate and one measurement. ":::
+:::image type="content" source="media\annotated-sample-circuit.png" alt-text="Diagram of a quantum circuit with two registers, one hadamard gate, one controlled gate and one measurement. ":::
 
 1. **Qubit register**: Qubit registers are displayed as horizontal lines, with each line representing a qubit. The top line is qubit register labeled 0, the second line is qubit register labeled 1, and so on.
 1. **Quantum gate**: Quantum operations are represented by *quantum gates*. The term quantum gate is analogous to classical logic gates. Gates acting on one or more qubit registers are denoted as a box. In this example, the symbol represents a Hadamard operation.
