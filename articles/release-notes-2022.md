@@ -137,7 +137,7 @@ demonstrating the use of the sparse simulator.
     - Extended error message in failed jobs to include details originated from the provider.
     - Support during workspace creation for all storage account types allowed in the Azure Quantum service.
 - This release addresses the following GitHub issues:
-  - [microsoft/qsharp-runtime#967](https://github.com/microsoft/qsharp-runtime/issues/967) where decomposition of the [Exp operation](/qsharp/api/qsharp/microsoft.quantum.intrinsic.exp)in Q# programs submitted to IonQ targets would use the incorrect angle convention resulting in incorrect rotation.
+  - [microsoft/qsharp-runtime#967](https://github.com/microsoft/qsharp-runtime/issues/967) where decomposition of the [Exp operation](/qsharp/api/qsharp/microsoft.quantum.intrinsic.exp) in Q# programs submitted to IonQ targets would use the incorrect angle convention resulting in incorrect rotation.
   -[microsoft/iqsharp#606](https://github.com/microsoft/iqsharp/issues/606) where lambda expressions couldn't be used in Q# programs that are called from Python, including Jupyter notebooks.
   - [microsoft/QuantumLibraries#511](https://github.com/microsoft/QuantumLibraries/issues/511) where the reflection phases for amplitude estimation were calculated incorrectly.
   -[microsoft/QuantumLibraries#527](https://github.com/microsoft/QuantumLibraries/issues/527) where the [RangeAsIntArray](/qsharp/api/qsharp/microsoft.quantum.convert.rangeasintarray) function returned a wrong value for a corner case.

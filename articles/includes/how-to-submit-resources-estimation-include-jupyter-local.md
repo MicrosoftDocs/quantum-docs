@@ -415,7 +415,7 @@ For example, collapse the **Logical qubit parameters** group to see that the cod
 |QEC scheme                                                |                           surface_code |
 |Code distance                                                                       |            21 |
 |Physical qubits                                                                   |            882 |
-|Logical cycle time                                                                   |   8 milisecs |
+|Logical cycle time                                                                   |   8 millisecs |
 |Logical qubit error rate                                                            |     3.00E-13 |
 |Crossing prefactor                                                                    |       0.03|
 |Error correction threshold                                                             |      0.01|
@@ -525,7 +525,7 @@ EstimateDetails(result_maj)
 
 The Azure Quantum Resource Estimator allows you to run multiple configuration of target parameters, and compare the results. This is useful when you want to compare the cost of different qubit models, QEC schemes, or error budgets.
 
-1. You can perform a batch estimation by passing a list of target parameters to the `params` parameter of the `qsharp.estimate` function. For example, run the same algorithm with the default parameters and the Majorana-based qubit parameters with a floqued QEC scheme.
+1. You can perform a batch estimation by passing a list of target parameters to the `params` parameter of the `qsharp.estimate` function. For example, run the same algorithm with the default parameters and the Majorana-based qubit parameters with a floquet QEC scheme.
 
     ```python
     result_batch = qsharp.estimate("RunProgram()", params=

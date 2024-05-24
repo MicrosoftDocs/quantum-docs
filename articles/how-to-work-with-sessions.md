@@ -198,7 +198,7 @@ session_jobs = session.list_jobs()
 [session_job.details.name for session_job in session_jobs]
 ```
 
-In this example, because arrays in Python are already printed as \[item0, item1, ...\], the input arguments match the Q# formatting. For other Python data structures you might need more handling to get the string values inserted into the Q# in a compatible way. For example, a Q# tuple has to be in parenthesis with comma separated values.
+In this example, because arrays in Python are already printed as \[item0, item1, ...\], the input arguments match the Q# formatting. For other Python data structures you might need more handling to get the string values inserted into the Q# in a compatible way. For example, a Q# tuple has to be in parentheses with comma separated values.
 
 ## Session timeouts
 
@@ -243,7 +243,7 @@ For example, the following program creates a session with three jobs. The first 
 
 with target.open_session(name="JobFailurePolicy Continue", job_failure_policy=SessionJobFailurePolicy.CONTINUE) as session:
     target.submit(input_data="garbage", name="Job 1") #Input data is missing, this job fails
-    target.submit(input_data=quil_program, name="Job 2") #Subsequent jobs are accepted beacuse of CONTINUE policy
+    target.submit(input_data=quil_program, name="Job 2") #Subsequent jobs are accepted because of CONTINUE policy
     target.submit(input_data=quil_program, name="Job 3")
 ```
 

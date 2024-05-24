@@ -33,7 +33,7 @@ The billing plans are set by the quantum hardware providers. For more informatio
 
 The invoices are sent to the email address you used to sign up for Azure. If you need to change the email address, contact [Azure Support](https://azure.microsoft.com/support/create-ticket/).
 
-If you're using a custom subscription, invoices might be sent to the the email address of the person who setup the subscription.
+If you're using a custom subscription, invoices might be sent to the email address of the person who setup the subscription.
 
 The invoices from Azure Quantum third party providers are of type **Azure Marketplace and Reservations**. You receive a single invoice from Azure Marketplace and Reservation, which provides a breakdown of the charges from each quantum provider.
 

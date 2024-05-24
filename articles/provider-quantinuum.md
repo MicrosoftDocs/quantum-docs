@@ -477,7 +477,7 @@ option_params = {
 
 ``` 
 
-Pass in the otimization option when submitting the job:
+Pass in the optimization option when submitting the job:
 
 ```python
 job = MyTarget.submit(MyProgram, "Experiment with TKET Compilation", shots = 10, input_params = option_params)

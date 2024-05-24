@@ -138,7 +138,7 @@ job.get_results()
 ``` 
 
 - In your Azure Portal workspace, select **Operations > Job Management**, and then select the job **Name** to open a detail pane. 
-- In your Azure Portal workspace, selecd **Operations > Providers**. Verify the availibility of the target machine. Jobs submitted to targets with a status of **Degraded** may stay in the queue longer than usual. Sometimes the jobs get processed, but sometimes they time out and return an error of *target unavailable*.
+- In your Azure Portal workspace, select **Operations > Providers**. Verify the availability of the target machine. Jobs submitted to targets with a status of **Degraded** may stay in the queue longer than usual. Sometimes the jobs get processed, but sometimes they time out and return an error of *target unavailable*.
 
 ### Issue: I keep being asked to authenticate when programmatically connecting to my workspace
 
