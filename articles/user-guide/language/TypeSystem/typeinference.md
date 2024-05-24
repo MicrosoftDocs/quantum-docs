@@ -33,7 +33,7 @@ It is not required to write these types explicitly.
 
 ## Ambiguous types
 
-Sometimes there is not one single principal type that can be inferred for a type variable.
+Sometimes there is not a single principal type that can be inferred for a type variable.
 In these cases, type inference fails with an error referring to an ambiguous type.
 For example, change the previous example slightly:
 

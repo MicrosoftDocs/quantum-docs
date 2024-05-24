@@ -55,7 +55,7 @@ To clone the repository, run the following command from your terminal:
 git clone https://github.com/microsoft/qsharp.git
 ```
 
-## Select and pass a FCIDUMP file
+## Select and pass an FCIDUMP file
 
 In this example, the Hamiltonian is described in terms of one- and two-electron integrals in the FCIDUMP format. You can choose one of the FCIDUMP files from the following table or select your own FCIDUMP file available on your machine or online via a publicly accessible HTTPS URI.
 

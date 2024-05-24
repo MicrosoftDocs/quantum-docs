@@ -41,7 +41,7 @@ namespace Shors {
     operation RunProgram() : Unit {
         let bitsize = 31;
 
-        // When chooseing parameters for `EstimateFrequency`, make sure that
+        // When choosing parameters for `EstimateFrequency`, make sure that
         // generator and modules are not co-prime
         let _ = EstimateFrequency(11, 2^bitsize - 1, bitsize);
     }
@@ -438,7 +438,7 @@ The result of the resource estimation is displayed in the **Q# Estimate** window
     |QEC scheme                                                |                           surface_code |
     |Code distance                                                                       |            21 |
     |Physical qubits                                                                   |            882 |
-    |Logical cycle time                                                                   |   13 milisecs |
+    |Logical cycle time                                                                   |   13 millisecs |
     |Logical qubit error rate                                                            |     3.00E-13 |
     |Crossing prefactor                                                                    |       0.03|
     |Error correction threshold                                                             |      0.01|

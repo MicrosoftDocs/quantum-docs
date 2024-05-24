@@ -284,7 +284,7 @@ To run this program, open the *RunTeleport.qs* file in VS Code and select **Run*
 
 For a Jupyter Notebook program, the source files don't require the `@EntryPoint()` attribute. The files function as source libraries only.
 
-To run this program in a Juptyer Notebook, open a new notebook and run the following cells:
+To run this program in a Jupyter Notebook, open a new notebook and run the following cells:
 
 ```python
 import qsharp

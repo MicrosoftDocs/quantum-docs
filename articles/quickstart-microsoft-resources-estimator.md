@@ -73,7 +73,7 @@ The Resource Estimator provides multiple estimates for the same algorithm, each 
     |QEC scheme                                                |                           surface_code |
     |Code distance                                                                       |            5 |
     |Physical qubits                                                                   |            50 |
-    |Logical cycle time                                                                   |   3 milisecs |
+    |Logical cycle time                                                                   |   3 millisecs |
     |Logical qubit error rate                                                            |     3.00E-5 |
     |Crossing prefactor                                                                    |       0.03|
     |Error correction threshold                                                             |      0.01|

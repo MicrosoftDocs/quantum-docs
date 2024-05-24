@@ -154,7 +154,7 @@ The `period` item indicates the period when your quota is renewed.
 > 
 > ```python
 > # This gathers usage against quota for the various providers (quota is set at the subscription level).
-> # Note that a provider may have mutiple quotas, such as Quantinuum that limits usage of their Emulator.
+> # Note that a provider may have multiple quotas, such as Quantinuum that limits usage of their Emulator.
 > 
 > rigetti_quota = 0
 > ionq_quota = 0
