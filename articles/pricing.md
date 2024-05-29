@@ -43,7 +43,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 |Pricing | Includes access to  |
 |---|---|  
 |Use is deducted from the Azure Quantum Credits based on the number of QGSs executed| <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
-|IonQ Harmony |<ul><li>1-Qubit Gate Shot: USD0.00003 deducted from your credits</li><li>2-Qubit Gate Shot: USD0.0003 deducted from your credits</li><li>Minimum price per program execution:<ul><li> \USD1.00 if error mitigation is off</li><li>USD5.00 if error mitigation is on</li></ul></ul>|
+|IonQ Harmony |<ul><li>1-Qubit Gate Shot: USD0.00003 deducted from your credits</li><li>2-Qubit Gate Shot: USD0.0003 deducted from your credits</li><li>Minimum price per program execution:<ul><li> USD1.00 if error mitigation is off</li><li>USD5.00 if error mitigation is on</li></ul></ul>|
 |IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: USD0.000220 deducted from your credits</li><li>2-Qubit Gate Shot: USD0.000975 deducted from your credits</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
 |IonQ Forte (Private preview) |<ul><li>1-Qubit Gate Shot: USD0.000220 deducted from your credits</li><li>2-Qubit Gate Shot: USD0.000975 deducted from your credits</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
 
@@ -61,7 +61,7 @@ The Pay-as-you-go plan consists of *a la carte* access to the 11-qubit trapped i
 |Pricing | Includes access to|
 |---|---|  
 | Use is charged based on the number of QGSs executed + Azure infrastructure costs | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria 1 QPU</li><li>IonQ Simulator (free)</li></ul>|
-|IonQ Harmony |<ul><li>1-Qubit Gate Shot: USD0.00003</li><li>2-Qubit Gate Shot: USD0.0003</li><li>Minimum price per program execution:<ul><li> \USD1.00 if error mitigation is off</li><li>USD5.00 if error mitigation is on</li></ul></ul>|
+|IonQ Harmony |<ul><li>1-Qubit Gate Shot: USD0.00003</li><li>2-Qubit Gate Shot: USD0.0003</li><li>Minimum price per program execution:<ul><li> USD1.00 if error mitigation is off</li><li>USD5.00 if error mitigation is on</li></ul></ul>|
 |IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
 |IonQ Forte (Private preview)|<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
 
@@ -74,7 +74,7 @@ The Aria plan is a monthly subscription plan with access to the IonQ Aria 1 25-q
 |Pricing |  Includes access to |
 |---|---|  
 |USD25,000/Month + Azure infrastructure costs| <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
-|IonQ Harmony |<ul><li>1-Qubit Gate Shot: USD0.00003</li><li>2-Qubit Gate Shot: USD0.0003</li><li>Minimum price per program execution:<ul><li> \USD1.00 if error mitigation is off</li><li>USD5.00 if error mitigation is on</li></ul></ul>|
+|IonQ Harmony |<ul><li>1-Qubit Gate Shot: USD0.00003</li><li>2-Qubit Gate Shot: USD0.0003</li><li>Minimum price per program execution:<ul><li> USD1.00 if error mitigation is off</li><li>USD5.00 if error mitigation is on</li></ul></ul>|
 |IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|  
 |IonQ Forte (Private preview)|<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|  
 
