@@ -165,7 +165,7 @@ The Standard Subscription is a monthly subscription plan available through queue
 
 |Pricing| Includes access to |
 |---|---|
-|$125,000 (USD)/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on the System Model H1 hardware</li><li>100k eHQCs for use on the System Model H1 Emulator</li></ul>|
+|USD125,000/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on the System Model H1 hardware</li><li>100k eHQCs for use on the System Model H1 Emulator</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -175,7 +175,7 @@ The Premium Subscription is a monthly subscription plan available through queued
 
 | Pricing | Includes access to |
 |---|---|
-|$175,000 (USD)/Month + Azure infrastructure costs | <ul><li>17k HQCs for use on System Model H1 hardware</li><li>170k eHQCs for use on the System Model H1 Emulator</li></ul>|
+|USD175,000/Month + Azure infrastructure costs | <ul><li>17k HQCs for use on System Model H1 hardware</li><li>170k eHQCs for use on the System Model H1 Emulator</li></ul>|
 
 ### [Standard H1 + H2 Subscription](#tab/tabid-standard-H1+h2)
 
@@ -183,7 +183,7 @@ The Standard H1 + H2 Subscription is a monthly subscription plan available throu
 
 |Pricing|  Includes access to  |
 |---|---|
-|$135,000 (USD)/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on the System Model H1 and H2 hardware</li><li>100k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
+|USD135,000/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on the System Model H1 and H2 hardware</li><li>100k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -193,7 +193,7 @@ The Premium H1 + H2 Subscription is a monthly subscription plan available throug
 
 | Pricing | Includes access to  |
 |---|---|
-|$185,000 (USD)/Month + Azure infrastructure costs| <ul><li>17k HQCs for use on System Model H1 and H2 hardware</li><li>170k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
+|USD185,000/Month + Azure infrastructure costs| <ul><li>17k HQCs for use on System Model H1 and H2 hardware</li><li>170k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 ***
@@ -229,7 +229,7 @@ The Pay-as-you-go plan consists of *a la carte* access to the Ankaa-2. The usage
 
 |Pricing | Includes access to   |
 |---|---|  
-|$0.02 (USD) per 10-millisecond increment of job execution time| <ul><li>Rigetti 84-bit Ankaa-2</li><li>Rigetti QVM simulator (free)</li></ul>|
+|USD0.02 per 10-millisecond increment of job execution time| <ul><li>Rigetti 84-bit Ankaa-2</li><li>Rigetti QVM simulator (free)</li></ul>|
 
 ***
 
