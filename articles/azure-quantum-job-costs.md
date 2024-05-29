@@ -65,7 +65,7 @@ _Prices below are shown for example purposes only._
 > If you're using an Azure Quantum Credits plan, you'll see cost estimate equal to $0. In this case, the estimated cost isn't reflected in the Job details because there’s no effective charge against your Azure bill.
 
 > [!NOTE]
-> IonQ has $1 (USD) minimum cost to run a job on the IonQ QPU. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
+> IonQ has USD1.00 minimum cost to run a job on the IonQ QPU. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
 
 
 
