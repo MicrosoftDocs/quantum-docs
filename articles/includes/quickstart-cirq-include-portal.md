@@ -161,7 +161,7 @@ print(f"Estimated cost: {cost.estimated_total}")
 Estimated cost: 1
 ```
 
-This prints the estimated cost in USD.
+This prints the estimated cost in US dollars.
 
 For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or view pricing options in the **Providers** blade of your workspace. To see your current credit status and usage, select **Credits and quotas**.
 
