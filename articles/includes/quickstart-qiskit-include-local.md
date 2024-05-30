@@ -203,7 +203,7 @@ cost = backend.estimate_cost(circuit, shots=1024)
 print(f"Estimated cost: {cost.estimated_total}")
 ```
 
-This prints the estimated cost in USD.
+This prints the estimated cost in US dollars.
 
 For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 

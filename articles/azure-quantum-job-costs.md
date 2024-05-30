@@ -22,9 +22,9 @@ Azure Quantum makes hardware and solutions available from Microsoft and from our
 
 |Plan|Description|
 |---|---|
-|Free Azure Credits| When you create a [new Azure account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), you get $200 (USD) free **Azure Credits** to use on Microsoft services. You can only use general-purpose Azure Credits with the Microsoft providers. 3rd-party providers (providers that aren't owned by Microsoft) aren't eligible.|
-|Free Azure Quantum Credits| When you create a new Azure Quantum workspace, you get $500 (USD) free **Azure Quantum credits** for use with each participating quantum hardware provider. For more information, see [Azure Quantum credits](xref:microsoft.quantum.credits)|
-|Azure Quantum Credits program| If you have consumed all the credits and you need more, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits). Microsoft offers up to $10,000 (USD) extra Azure Quantum Credits for use on quantum hardware. For more information,see [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq).|
+|Free Azure Credits| When you create a [new Azure account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), you get USD200 free **Azure Credits** to use on Microsoft services. You can only use general-purpose Azure Credits with the Microsoft providers. 3rd-party providers (providers that aren't owned by Microsoft) aren't eligible.|
+|Free Azure Quantum Credits| When you create a new Azure Quantum workspace, you get USD500 free **Azure Quantum credits** for use with each participating quantum hardware provider. For more information, see [Azure Quantum credits](xref:microsoft.quantum.credits)|
+|Azure Quantum Credits program| If you have consumed all the credits and you need more, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits). Microsoft offers up to USD10,000 extra Azure Quantum Credits for use on quantum hardware. For more information,see [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq).|
 |Billing plans| When you consumed all your Azure Quantum credits, you have to switch to a billing plan. Most providers bill based on the resources you consume by running a job (pay-as-you-go), though some also offer subscription plans. For more information about how each provider charges, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).|
 
 ## Before you run: Estimate job cost
@@ -65,7 +65,7 @@ _Prices below are shown for example purposes only._
 > If you're using an Azure Quantum Credits plan, you'll see cost estimate equal to $0. In this case, the estimated cost isn't reflected in the Job details because there’s no effective charge against your Azure bill.
 
 > [!NOTE]
-> IonQ has $1 (USD) minimum cost to run a job on the IonQ QPU. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
+> IonQ has USD1.00 minimum cost to run a job on the IonQ QPU. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
 
 
 
