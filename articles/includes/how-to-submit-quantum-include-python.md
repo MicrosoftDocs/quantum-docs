@@ -30,7 +30,7 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
 
 
 1. Follow the steps to create a [Q# project](xref:microsoft.quantum.qsharp-projects#steps-for-creating-a-q-project).
-1. Open a new text file, add the following Q# code that returns a user-specified number of random bits, and save the file to the *src* directory in your project as `source.qs`. 
+1. Open a new text file, add the following Q# code that returns a user-specified number of random bits, and save the file to the */src* directory in your project as `source.qs`. 
 
     > [!NOTE]
     > Note that this Q# code doesn't have an `@EntryPoint` function like a Q# program (see [Submitting Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp)), but it does require a namespace, unlike a Jupyter Notebook (see [Submitting Jupyter Notebook jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter)).
