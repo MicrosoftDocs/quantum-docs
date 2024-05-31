@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 12/11/2023
+ms.date: 05/31/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.custom: devx-track-azurecli
@@ -30,7 +30,7 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
 
 
 1. Follow the steps to create a [Q# project](xref:microsoft.quantum.qsharp-projects#steps-for-creating-a-q-project).
-1. Open a new text file, add the following Q# code that returns a user-specified number of random bits, and save the file to your project as `source.qs`. 
+1. Open a new text file, add the following Q# code that returns a user-specified number of random bits, and save the file to the *src* directory in your project as `source.qs`. 
 
     > [!NOTE]
     > Note that this Q# code doesn't have an `@EntryPoint` function like a Q# program (see [Submitting Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp)), but it does require a namespace, unlike a Jupyter Notebook (see [Submitting Jupyter Notebook jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter)).
@@ -57,7 +57,7 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
    }
     ```
 
-1. In the same folder, open another file and save it as `randomNum.py`.
+1. In the project root folder (with the *qsharp.json* file), open another file and save it as `randomNum.py`.
 1. Add the following code to import the `qsharp` and `azure.quantum` modules.
 
     ```python
@@ -68,7 +68,7 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
 1. Next, add code to define the Q# project root folder and test run the target operation on the local simulator. The operation is called by *\<namespace>.\<operation_name( )>*, and in this case, you are passing in the number of random bits to return. 
 
     ```python
-    qsharp.init(project_root = '/MyProjectRootFolder')
+    qsharp.init(project_root = '../MyProjectRootFolder')
     print(qsharp.eval("Sample.RandomNBits(4)"))
     ```
 
