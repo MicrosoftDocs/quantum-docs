@@ -205,6 +205,8 @@
       href: concepts-grovers.md
     - name: Quantum Intermediate Representation
       href: concepts-qir.md
+    - name: Quantum error correction 
+      href: concepts-error-correction.md
 - name: Troubleshooting
   items:
   - name: Troubleshooting integrated hybrid QC
