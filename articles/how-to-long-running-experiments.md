@@ -37,7 +37,7 @@ For more information, see [Get started with Sessions](xref:microsoft.quantum.hyb
 
 ## Local development
 
-Installing the Modern QDK extension for Visual Studio Code on your local computer provides support for Jupyter Notebooks, Python, and Q# files. You can develop quantum computing applications in your preferred IDE and language and run them on quantum simulators and quantum hardware using the Azure Quantum service.
+Installing the Azure Quantum Development Kit (QDK) extension for Visual Studio Code on your local computer provides support for Jupyter Notebooks, Python, and Q# files. You can develop quantum computing applications in your preferred IDE and language and run them on quantum simulators and quantum hardware using the Azure Quantum service.
 
 Some scenarios where you may prefer a local environment:
 
@@ -45,9 +45,7 @@ Some scenarios where you may prefer a local environment:
 - You require source control on your project.
 - You are working with a multi-file project.
 
-For more information, see [Set up a local environment with the Modern QDK](xref:microsoft.quantum.install-qdk.overview).
-
-[!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
+For more information, see [Get started with the QDK](xref:microsoft.quantum.install-qdk.overview).
 
 ## Jupyter notebooks with Google Colab
 

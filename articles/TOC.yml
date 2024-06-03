@@ -13,7 +13,7 @@
 - name: Get started
   expanded: true
   items:
-  - name: What's new in the Modern QDK
+  - name: What's new in QDK 1.0
     href: whats-new-modern-qdk.md
   - name: Explore Azure Quantum
     href: get-started-azure-quantum.md
@@ -25,8 +25,6 @@
     href: install-overview-qdk.md
   - name: Get started with Q# and VS Code
     href: how-to-submit-jobs.md
-  - name: Migrate your code to the Modern QDK
-    href: how-to-migrate-to-modern.md
 - name: Manage Azure Quantum
   items:
   - name: Users and workspaces

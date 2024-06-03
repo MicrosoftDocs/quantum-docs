@@ -995,6 +995,16 @@
 			"source_path": "articles/user-guide/index.md",
 			"redirect_url": "/azure/quantum/user-guide/program-structure",
 			"redirect_document_id": false
+		},
+    	{
+			"source_path": "articles/how-to-migrate-to-modern.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
+			"redirect_document_id": false
+		},
+    	{
+			"source_path": "articles/classic-qdk-deprecation.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
+			"redirect_document_id": false
 		}
 	]
 }

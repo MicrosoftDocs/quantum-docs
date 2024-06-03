@@ -2,19 +2,19 @@
 author: bradben
 description: Learn how to set up the Azure Quantum Development Kit VS Code extension and set up your environment for different languages and platforms.
 ms.author: brbenefield
-ms.date: 03/14/2024
+ms.date: 05/31/2024
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: get-started
+ms.topic: concept
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Get started with the Quantum Development Kit 
 uid: microsoft.quantum.install-qdk.overview
 #customer intent: As a quantum developer, I want to configure my environment with the latest Azure Quantum tools. 
 ---
 
-# Get started with the Azure Quantum Development Kit (Modern QDK)
+# Get started with the Azure Quantum Development Kit (QDK)
 
-Learn about the different environment options available to develop quantum computing using the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) service. Every environment uses the [Azure Quantum Development Kit (Modern QDK)](xref:microsoft.quantum.overview.q-sharp), an open source set of tools that includes the quantum programming language Q# and accompanying libraries. With the QDK, you can develop quantum computing applications using different IDEs and languages and run them on quantum simulators or quantum hardware using Azure Quantum. 
+Learn about the different environment options available to develop quantum computing using the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) service. Every environment uses the [Azure Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp), an open source set of tools that includes the quantum programming language Q# and accompanying libraries. With the QDK, you can develop quantum computing applications using different IDEs and languages and run them on quantum simulators or quantum hardware using Azure Quantum. 
 
 ## Running quantum programs
 
@@ -28,7 +28,7 @@ Azure Quantum offers several environments to start exploring quantum programming
 | QPU access  | &nbsp; |  &#10004;<br>(with Azure subscription)  |  &#10004;<br>(with Azure subscription)  |  &#10004;<br>(with Azure subscription)  |
 | Python support  | &nbsp; |  &nbsp;  |  &#10004;  |  &#10004;  |
 | Qiskit and Cirq support  | &nbsp; |  &nbsp;  |  &#10004;  |  &#10004;  |
-| Integrated Hybrid  | &nbsp; |  &nbsp;  |  &nbsp;  |  &#10004;<br>(with Classic QDK)  |
+| Integrated Hybrid  | &nbsp; |  &nbsp;  |  &#10004;  |  &#10004;  |
 | Local setup  | &nbsp; |  &nbsp;  |  &nbsp;  |  &#10004;  |
 
 **\*** VS Code and VS Code (Web) provide rich Q# language support such as IntelliSense and debugging. 
@@ -46,7 +46,7 @@ The [Azure Quantum portal](https://portal.azure.com) provides a no-install devel
 
 ### Visual Studio Code
 
-The Modern QDK VS Code extension is the latest version of the Q# language and quantum development tools. With a smaller footprint and faster performance, it features a streamlined installation, language improvements, integrated Python, Jupyter Notebook, and Qiskit support, integrated Azure connectivity for submitting jobs to quantum hardware, debugger support, and improved syntax highlighting and error messages. The Modern QDK is platform independent, running on Windows, Mac, Linux, and the web. For set up information, see [Installing the Modern QDK](#installing-the-modern-qdk-on-vs-code).
+The QDK VS Code extension is the latest version of the Q# language and quantum development tools. With a smaller footprint and faster performance, it features a streamlined installation, language improvements, integrated Python, Jupyter Notebook, and Qiskit support, integrated Azure connectivity for submitting jobs to quantum hardware, debugger support, and improved syntax highlighting and error messages. The QDK is platform independent, running on Windows, Mac, Linux, and the web. For set up information, see [Installing the QDK](#installing-the-modern-qdk-on-vs-code).
 
 ### Visual Studio Code on the Web
 
@@ -55,12 +55,12 @@ The Modern QDK VS Code extension is the latest version of the Q# language and qu
 > [!NOTE]
 > If you already have a Python and Jupyter Notebook environment configured on your machine, you can connect to your Jupyter server from VS Code on the Web and run Q# notebooks. For more information, see [Connecting to a remote Jupyter server from vscode.dev](https://github.com/microsoft/vscode-jupyter/wiki/Connecting-to-a-remote-Jupyter-server-from-vscode.dev).
 
-## Installing the Modern QDK on VS Code
+## Installing the QDK on VS Code
 
 > [!NOTE]
 > To avoid possible conflicts of package version, be sure to follow the uninstall instructions in step 2.
 
-To install the Modern QDK:
+To install the QDK:
 
 1. In VS Code, disable or uninstall the **Microsoft Quantum Development Kit** extension. 
 1. Run `python -m pip uninstall qsharp qsharp-core qsharp-chemistry azure-quantum`
@@ -78,7 +78,7 @@ With added Python support, you can embed or call Q# code from your Python progra
 **Prerequisites**
 
 - A Python environment  (3.9 or greater, 3.11 recommended) with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed. 
-- VS Code with the Modern QDK extension installed.
+- VS Code with the QDK extension installed.
 
 
 To add Python and Jupyter Notebook support:
@@ -125,25 +125,6 @@ The Azure CLI is an optional method for submitting quantum jobs using a terminal
     ```
     
 To test your setup, see [Submit Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-python).
-
-
-## Compatibility with the Classic QDK
-
-For more information, see [What's new in the Modern QDK](xref:microsoft.quantum.modern-qdk).
-
- - The Modern QDK is not fully backwards compatible with the previous Classic QDK. Not all APIs have been ported, and existing project files aren't recognized. Your current programs and projects could require significant changes and updates. For more information, see [Migrating your code to the Modern QDK](xref:microsoft.quantum.how-to.migrate-code) and [What's new in the Modern QDK](xref:microsoft.quantum.modern-qdk).
- - The Modern QDK extension and the previous Classic QDK extension can be installed in VS Code at the same time, but both cannot be enabled at the same time. If you are working exclusively with the Modern QDK, or if your programs require features not yet supported in the Modern QDK (such as hybrid quantum computing), only enable one extension at a time. For more information, see [Continue working in the Classic QDK](#continue-working-in-the-classic-qdk).
- - The [Azure Quantum website](https://quantum.microsoft.com/) and [Azure Quantum portal](https://portal.azure.com) environments use the Modern QDK exclusively. 
-
-### Continue working in the Classic QDK
-
-Some features, such as hybrid computing, are not yet supported in the Modern QDK. To continue using the Classic QDK environment for this functionality:
-
-1. If you have installed any of the Modern QDK components:
-    1. In VS Code, disable or uninstall the **Azure Quantum Development Kit** extension. 
-    2. Run `python -m pip uninstall qsharp`
-1. In VS Code, enable or install the **Microsoft Quantum Development Kit** extension. 
-1. Run `python -m pip install qsharp<1.0`.
 
 ## Related content
 
