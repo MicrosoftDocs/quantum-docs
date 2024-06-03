@@ -1,12 +1,12 @@
 ---
 author: SoniaLopezBravo
-description: This document provides an overview of target profile types in Azure Quantum and their limitations
-ms.date: 11/27/2023
+description: This document provides an overview of target profile types available in Azure Quantum and their limitations. 
+ms.date: 05/29/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
-no-loc: [No control flow, Basic measurement feedback, target, targets, full]
+ms.topic: overview
+no-loc: [Base QIR, QIR Adaptative RI, target, targets, full]
 title: Understanding target profile types in Azure Quantum
 uid: microsoft.quantum.target-profiles
 ---
@@ -22,24 +22,21 @@ quantum algorithms. It's the central component of a quantum computer or quantum 
 
 Quantum devices are still an emerging technology, and not all of them can run all Q# code. As such, you need to keep some restrictions in mind when developing programs for different targets. Currently, Azure Quantum and the QDK manage three different profiles for QPUs:
 
-- **:::no-loc text="Full":::**: This profile can run any Q# program within the limits of memory for simulators or the number of qubits for physical quantum computers.
-- **:::no-loc text="No Control Flow":::**: This profile can run any Q# program that doesn't require the use of the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, values of type `Result` don't support equality comparison.
-- **:::no-loc text="Basic Measurement Feedback":::**: This profile has limited ability to use the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, you can compare values of type `Result` as part of conditions within `if` statements in operations, allowing mid-circuit measurement. The corresponding conditional blocks might not contain `return` or `set` statements.
+- **:::no-loc text="Unrestricted":::**: This profile can run any Q# program within the limits of memory for simulators or the number of qubits for physical quantum computers.
+- **:::no-loc text="QIR base":::**: This profile can run any Q# program that doesn't require the use of the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, values of type `Result` don't support equality comparison.
+- **:::no-loc text="QIR Adaptative RI":::**: This profile has limited ability to use the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, you can compare values of type `Result` as part of conditions within `if` statements in operations, allowing mid-circuit measurement. The corresponding conditional blocks might not contain `return` or `set` statements.
 
-## Create and run applications for :::no-loc text="Full"::: profile targets
+## Create and run applications for :::no-loc text="Unrestricted"::: profile targets
 
-:::no-loc text="Full"::: profile targets can run any Q# program, meaning you can
-write programs without functionality restrictions. Azure Quantum does not provide
-any target with this profile yet.
+:::no-loc text="Unrestricted"::: profile targets can run any Q# program, meaning you can write programs without functionality restrictions. Azure Quantum doesn't provide
+any target with this profile yet. However, you can run :::no-loc text="Unrestricted"::: Q# programs on simulators provided by the QDK. 
 
-## Create and run applications for :::no-loc text="No Control Flow"::: profile targets
+## Create and run applications for :::no-loc text="Base QIR"::: profile targets
 
-:::no-loc text="No Control Flow"::: profile targets can run a wide variety of Q# applications, with
-the constraint that they can't use results from qubit measurements to control
-the program flow. More specifically, values of type `Result` do not support
-equality comparison.
+:::no-loc text="Base QIR"::: profile targets can run a wide variety of Q# applications, with the constraint that they can't use results from qubit measurements to control
+the program flow. More specifically, values of type `Result` don't support equality comparison.
 
-For example, this operation can **not** be run on a :::no-loc text="No Control Flow"::: target:
+For example, this operation can **not** be run on a :::no-loc text="Base QIR"::: target:
 
 ```qsharp
     operation SetQubitState(desired : Result, q : Qubit) : Result {
@@ -49,14 +46,15 @@ For example, this operation can **not** be run on a :::no-loc text="No Control F
     }
 ```
 
-Trying to run this operation on a :::no-loc text="No Control Flow"::: target will fail because it evaluates a comparison between two results (`desired != M(q)`)
+Trying to run this operation on a :::no-loc text="Base QIR"::: target will fail because it evaluates a comparison between two results (`desired != M(q)`)
 to control the computation flow with an `if` statement. This will be applicable to any type of [conditional branching](xref:microsoft.quantum.qsharp.conditionalbranching), such as `elif` and `else` statements. 
 
 > [!NOTE]
-> Currently, you can't submit quantum programs that apply operations on qubits that have been measured in :::no-loc text="No Control Flow"::: targets, even
-> if you don't use the results to control the program flow. That is, :::no-loc text="No Control Flow"::: targets don't allow mid-circuit measurements.
+> Currently, you can't submit quantum programs that apply operations on qubits that have been measured in :::no-loc text="Base QIR"::: targets, even
+> if you don't use the results to control the program flow. That is, :::no-loc text="Base QIR"::: targets don't allow mid-circuit measurements.
 >
-> For example, the following code can **not** be run on a :::no-loc text="No Control Flow"::: target:
+> For example, the following code can **not** be run on a :::no-loc text="Base QIR"::: target:
+>
 > ```qsharp
 > operation MeasureQubit(q : Qubit) : Result { 
 >    return M(q); 
@@ -68,7 +66,7 @@ to control the computation flow with an `if` statement. This will be applicable 
 > }
 > ```
 
-Presently, these :::no-loc text="No Control Flow"::: targets are available for Azure Quantum:
+Currently, these :::no-loc text="Base QIR"::: targets are available for Azure Quantum:
 
 - **Provider:** IonQ
   - [IonQ simulator](xref:microsoft.quantum.providers.ionq#quantum-simulator) (`ionq.simulator`)
@@ -78,15 +76,15 @@ Presently, these :::no-loc text="No Control Flow"::: targets are available for A
   - [Rigetti Simulator](xref:microsoft.quantum.providers.rigetti#simulators) (`rigetti.sim.*`)
   - [Rigetti QPU](xref:microsoft.quantum.providers.rigetti#quantum-computers) (`rigetti.qpu.*`)
 
-## Create and run applications for :::no-loc text="Basic Measurement Feedback"::: profile targets
+## Create and run applications for :::no-loc text="QIR Adaptative RI"::: profile targets
 
-:::no-loc text="Basic Measurement Feedback"::: profile targets can run a wide variety of Q# applications, with the constraint that you can only compare values of type `Result` as part of conditions within `if` statements in operations. This profile type supposes an improvement over :::no-loc text="No Control Flow"::: profiles, but still is subject to some limitations.
+:::no-loc text="QIR Adaptative RI"::: profile targets can run a wide variety of Q# applications, with the constraint that you can only compare values of type `Result` as part of conditions within `if` statements in operations. This profile type supposes an improvement over :::no-loc text="Base QIR"::: profiles, but still is subject to some limitations.
 
-:::no-loc text="Basic Measurement Feedback"::: profile targets allow measurement-based conditional operations and **mid-circuit measurements**, meaning that qubits can be selectively measured at a point other than the final statement of a quantum program, and the output of the measurement can be used in other operations. Mid-circuit measurement enables multiple measurements at any point throughout the quantum program. The quantum information of the measured qubits collapses to a classical state (zero or one), but the non-measured qubits retain their quantum state.
+:::no-loc text="QIR Adaptative RI"::: profile targets allow measurement-based conditional operations and **mid-circuit measurements**, meaning that qubits can be selectively measured at a point other than the final statement of a quantum program, and the output of the measurement can be used in other operations. Mid-circuit measurement enables multiple measurements at any point throughout the quantum program. The quantum information of the measured qubits collapses to a classical state (zero or one), but the non-measured qubits retain their quantum state.
 
 In Q# when measuring a qubit, a value of type `Result` is returned. If you want to use this result in a conditional statement, you have to directly compare in the conditional statement. The corresponding conditional blocks may not contain `return` or `set` statements. 
 
-For example, the following Q# code would be allowed in a :::no-loc text="Basic Measurement Feedback"::: target:
+For example, the following Q# code would be allowed in a :::no-loc text="QIR Adaptative RI"::: target:
 
 ```qsharp
 operation MeasureQubit(q : Qubit) : Result { 
@@ -110,7 +108,7 @@ operation SetToZeroUsingBeOne(q : Qubit) : Unit {
 }
 ```
 
-The `SetQubitState `operation in :::no-loc text="No Control Flow"::: can be used in a :::no-loc text="Basic Measurement Feedback"::: target as long as you don't include any `return` or `set` statement within the `if` statement. This will be applicable to any type of [conditional branching](xref:microsoft.quantum.qsharp.conditionalbranching), such as `elif` and `else` statements.  For example, the following operation can **not** be used in a :::no-loc text="Basic Measurement Feedback"::: target:
+The `SetQubitState `operation in :::no-loc text="Base QIR"::: can be used in a :::no-loc text="QIR Adaptative RI"::: target as long as you don't include any `return` or `set` statement within the `if` statement. This will be applicable to any type of [conditional branching](xref:microsoft.quantum.qsharp.conditionalbranching), such as `elif` and `else` statements.  For example, the following operation can **not** be used in a :::no-loc text="QIR Adaptative RI"::: target:
 
 ```qsharp
     operation SetQubitState(desired : Result, q : Qubit) : Result {
@@ -121,7 +119,7 @@ The `SetQubitState `operation in :::no-loc text="No Control Flow"::: can be used
 }
 ```
 
-Presently, these :::no-loc text="Basic Measurement Feedback"::: targets are available for Azure Quantum:
+Presently, these :::no-loc text="QIR Adaptative RI"::: targets are available for Azure Quantum:
 
 - **Provider:** Quantinuum
   - [Quantinuum Emulators](xref:microsoft.quantum.providers.quantinuum) (`quantinuum.sim.h1-1e`, `quantinuum.sim.h2-1e`)
