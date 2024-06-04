@@ -40,7 +40,7 @@ For more information, see the [QIR Specification](https://github.com/qir-allianc
 
 ### What is the QIR Alliance?
 
-The [QIR Alliance](https://qir-alliance.org) is a joint effort to develop a forward-looking quantum intermediate representation with the goal to enable full interoperability within the quantum ecosystem, reduce development effort from all parties, and provide a representation suitable for current and future heterogenous quantum processors.
+The [QIR Alliance](https://qir-alliance.org) is a joint effort to develop a forward-looking quantum intermediate representation with the goal to enable full interoperability within the quantum ecosystem, reduce development effort from all parties, and provide a representation suitable for current and future heterogeneous quantum processors.
 
 Quantum SDKs and languages appear and evolve at a fast pace, along with new quantum processors with unique and distinct capabilities from each other. To provide interoperability between new languages and new hardware capabilities it is imperative for the ecosystem to develop and share an intermediate representation that works with present and future quantum hardware.
 

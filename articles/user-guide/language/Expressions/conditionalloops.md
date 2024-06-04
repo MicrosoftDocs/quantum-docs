@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about conditional loops in the Q# programming language.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 04/18/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
@@ -15,14 +15,25 @@ uid: microsoft.quantum.qsharp.conditionalloops
 
 Like most classical programming languages, Q# supports loops that break based on a condition: loops for which the number of iterations is unknown and may vary from run to run. Since the instruction sequence is unknown at compile-time, the compiler handles these conditional loops in a particular way in a quantum runtime.
 
-As long as the condition does not depend on quantum measurements, conditional loops are processed with a just-in-time compilation before sending the instruction sequence to the quantum processor.
-In particular, using conditional loops within functions is unproblematic since code within functions can always run on conventional (non-quantum) hardware. Q#, therefore, supports the use of traditional `while` loops within functions.
+> [!IMPORTANT]
+> **Quantum hardware restrictions**
+>
+> Loops that break based on a condition are challenging to process on quantum hardware *if the condition depends on measurement outcomes*, since the length of the instruction sequence to run is not known ahead of time.
+>
+> Despite their common presence in particular classes of quantum algorithms, current hardware does not yet provide native support for these kinds of control flow constructs. Running these kinds of loops on quantum hardware can potentially be supported in the future by imposing a maximum number of iterations, or as additional hardware support becomes available. Quantum simulators, however, will run any loops based on measurements.
 
-Q# also allows you to express control flow that depends on the results of quantum measurements.
+## Compiling loops
+
+As long as the condition does not depend on quantum measurements, conditional loops are processed with a just-in-time compilation before sending the instruction sequence to the quantum processor. In particular, using conditional loops within functions is unproblematic since code within functions can always run on conventional (non-quantum) hardware. Q#, therefore, supports the use of traditional `while` loops within functions.
+
+
+## Repeat expression
+
+When running programs on quantum simulators, Q# allows you to express control flow that depends on the results of quantum measurements.
 This capability enables probabilistic implementations that can significantly reduce computational costs.
 A common example is the *repeat-until-success* pattern, which repeats a computation until a certain condition - which usually depends on a measurement - is satisfied. Such `repeat` loops are widely used in particular classes of quantum algorithms.  Q# hence has a dedicated language construct to express them, despite that they still pose a challenge for execution on quantum hardware.
 
-## Repeat expression
+
 
 The `repeat` expression takes the following form
 
@@ -48,12 +59,6 @@ until condition;
 where `condition` is an arbitrary expression of type `Bool`.
 
 The `repeat` loop runs a block of statements before evaluating a condition. If the condition evaluates to true, the loop exits. If the condition evaluates to false, an additional block of statements defined as part of an optional `fixup` block, if present, is run prior to entering the next loop iteration.
-
-### Target-specific restrictions
-
-Loops that break based on a condition are challenging to process on quantum hardware if the condition depends on measurement outcomes since the length of the instruction sequence to run is not known ahead of time.
-
-Despite their common presence in particular classes of quantum algorithms, current hardware does not yet provide native support for these kinds of control flow constructs. Running on quantum hardware can potentially be supported in the future by imposing a maximum number of iterations, or as additional hardware support becomes available.
 
 ## While loop
 

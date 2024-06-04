@@ -36,14 +36,15 @@ The Azure Quantum usage and quotas are measured in terms of each provider's unit
 ### Track quota using Azure portal
 
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
-2. Select your **Azure Quantum workspace**.
-3. In the left panel, under **Operations**, go to the **Credits and quotas** blade and select the **Quotas** tab. 
-4. See the consumed and the remaining quotas for each selected provider. Notice that quota information is displayed in three columns.
+1. Select your **Azure Quantum workspace**.
+1. In the left panel, under **Operations**, go to the **Credits and quotas** tab and select the **Quotas** blade. 
+1. See the consumed and the remaining quotas for each selected provider. Notice that quota information is displayed in three columns.
+
   - *Workspace usage*: The usage limit for the current workspace. Each Azure Quantum workspace has a usage limit.
   - *Azure subscription usage*: The usage for all workspaces within the current region and subscription. Not all quotas are tracked at this level. 
   - *Cadence*: The period when your quota is renewed. If monthly, the usage is reset on the 1st of every month. If one-time, usage is never reset.
 
- :::image type="content" source="media/portal-quotas-blade.png" alt-text="Quotas blade in Azure portal":::
+ :::image type="content" source="media/portal-quotas-blade.png" alt-text="Screenshot of the quotas blade in Azure portal." lightbox="media/portal-quotas-blade.png":::
 
 In this view, [Azure Quantum Credits](xref:microsoft.quantum.credits) are included as quotas. This enables the user to see the credit information expressed in terms of the units that the provider tracks, as well as the interval associated.
 
@@ -153,7 +154,7 @@ The `period` item indicates the period when your quota is renewed.
 > 
 > ```python
 > # This gathers usage against quota for the various providers (quota is set at the subscription level).
-> # Note that a provider may have mutiple quotas, such as Quantinuum that limits usage of their Emulator.
+> # Note that a provider may have multiple quotas, such as Quantinuum that limits usage of their Emulator.
 > 
 > rigetti_quota = 0
 > ionq_quota = 0

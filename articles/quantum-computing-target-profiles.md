@@ -94,7 +94,7 @@ operation MeasureQubit(q : Qubit) : Result {
 }
 
 operation SetToZero(q : Qubit) : Unit {
-     if MeasureQubit(q) == One { X(q); )
+     if MeasureQubit(q) == One { X(q); }
 }
 ```
  

@@ -167,7 +167,7 @@ SpaceChart(result)
 
 :::image type="content" source="media/vscode-estimates-local-diagram-shorRE.png" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
 
-When running multiple configurations of target parameters with the the [Pareto frontier estimation](xref:microsoft.quantum.overview.resources-estimator#pareto-frontier-estimation), you can plot the space diagram for a specific solution of the. For example, the following code shows how to plot the space diagram for the first configuration of parameters and the third shortest runtime.
+When running multiple configurations of target parameters with the [Pareto frontier estimation](xref:microsoft.quantum.overview.resources-estimator#pareto-frontier-estimation), you can plot the space diagram for a specific solution of the. For example, the following code shows how to plot the space diagram for the first configuration of parameters and the third shortest runtime.
 
 ```python
 SpaceChart(result[0], 2) # First (estimate index=0) run and third (point index=2) shortest runtime

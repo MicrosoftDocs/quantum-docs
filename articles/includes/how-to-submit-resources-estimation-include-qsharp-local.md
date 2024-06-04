@@ -41,7 +41,7 @@ namespace Shors {
     operation RunProgram() : Unit {
         let bitsize = 31;
 
-        // When chooseing parameters for `EstimateFrequency`, make sure that
+        // When choosing parameters for `EstimateFrequency`, make sure that
         // generator and modules are not co-prime
         let _ = EstimateFrequency(11, 2^bitsize - 1, bitsize);
     }
@@ -132,7 +132,7 @@ namespace Shors {
     /// ## power
     /// Power of `generator` by which `target` is multiplied.
     /// ## target
-    /// Register interpreted as LittleEndian which is multiplied by
+    /// Register interpreted as little endian encoded which is multiplied by
     /// given power of the generator. The multiplication is performed modulo
     /// `modulus`.
     internal operation ApplyOrderFindingOracle(
@@ -143,7 +143,7 @@ namespace Shors {
         // The oracle we use for order finding implements |x⟩ ↦ |x⋅a mod N⟩. We
         // also use `ExpModI` to compute a by which x must be multiplied. Also
         // note that we interpret target as unsigned integer in little-endian
-        // encoding by using the `LittleEndian` type.
+        // encoding.
         ModularMultiplyByConstant(modulus,
                                     ExpModI(generator, power, modulus),
                                     target);
@@ -154,7 +154,7 @@ namespace Shors {
     ///
     /// # Description
     /// Given the classical constants `c` and `modulus`, and an input
-    /// quantum register (as LittleEndian) |𝑦⟩, this operation
+    /// quantum register  |𝑦⟩, this operation
     /// computes `(c*x) % modulus` into |𝑦⟩.
     ///
     /// # Input
@@ -185,7 +185,7 @@ namespace Shors {
     ///
     /// # Description
     /// Given the classical constants `c` and `modulus`, and an input
-    /// quantum register (as LittleEndian) |𝑦⟩, this operation
+    /// quantum register  |𝑦⟩, this operation
     /// computes `(x+c) % modulus` into |𝑦⟩.
     ///
     /// # Input
@@ -395,8 +395,14 @@ The Resource Estimator offers [six predefined qubit parameters](xref:microsoft.q
 
 In this example, you run the Resource Estimator using the `qubit_gate_us_e3` qubit parameter and the `surface_code` quantum error correction code. 
 
-1. Select **View -> Command Palette**, or press **Ctrl+Shift+P**, and type “resource” which should bring up the **Q#: Calculate Resource Estimates** option. Select this option to open the Resource Estimator window.
+1. Select **View -> Command Palette**, and type “resource” which should bring up the **Q#: Calculate Resource Estimates** option. You can also click on **Estimate** from the list of commands below `@EntryPoint()`. Select this option to open the Resource Estimator window.
+
+    :::image type="content" source="../media/codelens-estimate-shorRE.png" alt-text="Screenshot showing how to select the estimate command from the code lens list.":::
+
 1. You can select one or more **Qubit parameter + Error Correction code** types to estimate the resources for. For this example, select **qubit_gate_us_e3** and click **OK**.
+
+    :::image type="content" source="../media/estimate-dropdown-shorRE.png" alt-text="Screenshot showing how to select the qubit parameter from the resource estimate menu.":::
+
 1. Specify the **Error budget** or accept the default value 0.001. For this example, leave the default value and press **Enter**.
 1. Press **Enter** to accept the default result name based on the filename, in this case, **ShorRE**.
 
@@ -432,7 +438,7 @@ The result of the resource estimation is displayed in the **Q# Estimate** window
     |QEC scheme                                                |                           surface_code |
     |Code distance                                                                       |            21 |
     |Physical qubits                                                                   |            882 |
-    |Logical cycle time                                                                   |   13 milisecs |
+    |Logical cycle time                                                                   |   13 millisecs |
     |Logical qubit error rate                                                            |     3.00E-13 |
     |Crossing prefactor                                                                    |       0.03|
     |Error correction threshold                                                             |      0.01|

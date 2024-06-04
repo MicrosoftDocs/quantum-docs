@@ -106,7 +106,6 @@ This workspace's targets:
 - quantinuum.sim.h1-1e
 - rigetti.sim.qvm
 - rigetti.qpu.ankaa-2
-- rigetti.qpu.ankaa-9q-1
 ```
 
 ## Select a target to run your program
@@ -187,7 +186,6 @@ This workspace's targets:
 - quantinuum.sim.h1-1e
 - rigetti.sim.qvm
 - rigetti.qpu.ankaa-2
-- rigetti.qpu.ankaa-9q-1
 ```
 
 Next, create an object to represent the [IonQ quantum computer](xref:microsoft.quantum.providers.ionq#quantum-computer):
@@ -204,7 +202,7 @@ cost = qpu_backend.estimate_cost(circuit, shots=100)
 print(f"Estimated cost: {cost.estimated_total}")
 ```
 
-This displays the estimated cost in USD.
+This displays the estimated cost in US dollars.
 
 For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers-pricing#ionq), or find your workspace and view pricing options in the **Providers** blade of your workspace.
 
@@ -321,7 +319,6 @@ This workspace's targets:
 - quantinuum.sim.h1-1e
 - rigetti.sim.qvm
 - rigetti.qpu.ankaa-2
-- rigetti.qpu.ankaa-9q-1
 ```
 
 
@@ -462,7 +459,6 @@ This workspace's targets:
 - quantinuum.sim.h1-1e
 - rigetti.sim.qvm
 - rigetti.qpu.ankaa-2
-- rigetti.qpu.ankaa-9q-1
 ```
 
 Next, create an object to represent the [Rigetti quantum computer](xref:microsoft.quantum.providers.rigetti#quantum-computers):

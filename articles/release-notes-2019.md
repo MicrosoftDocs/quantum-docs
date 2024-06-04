@@ -119,7 +119,7 @@ This release reorganizes, extends and updates the chemistry library:
 * Improves modularity of components, extensibility, general code cleanup.  [PR #58](https://github.com/microsoft/QuantumLibraries/pull/58).
 * Add support for multi-reference wavefunctions, both sparse multi-reference wavefunctions and unitary coupled cluster.  [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 * (Thank you!) [1QBit](https://1qbit.com) contributor ([@valentinS4t1qbit](https://github.com/ValentinS4t1qbit)): Energy evaluation using variational ansatz. [PR #120](https://github.com/Microsoft/QuantumLibraries/pull/120).
-* Updating Broombridgeschema to new version 0.2, adding unitary coupled cluster specification. [Issue #65](https://github.com/microsoft/QuantumLibraries/issues/65).
+* Updating Broombridge schema to new version 0.2, adding unitary coupled cluster specification. [Issue #65](https://github.com/microsoft/QuantumLibraries/issues/65).
 * Adding Python interoperability to chemistry library functions. Try out this [sample](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/PythonIntegration). [Issue #53](https://github.com/microsoft/QuantumLibraries/issues/53) [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 
 ## QDK version 0.6.1905
@@ -162,7 +162,7 @@ With this change, programs that include a single "open" statement for the namesp
 
 - Several namespaces have been deprecated as the operations within have been reorganized to other namespaces. Programs that use these namespaces continue to work, and a compile-time warning denotes the namespace where the operation is defined.  
 
-- The Microsoft.Quantum.Arithmetic namespace has been normalized to use the <xref:Microsoft.Quantum.Arithmetic.LittleEndian> user-defined type. Use the function [BigEndianAsLittleEndian](xref:Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian) when needed to convert to little endian.  
+- The Microsoft.Quantum.Arithmetic namespace has been normalized to use the LittleEndian user-defined type. Use the function BigEndianAsLittleEndian when needed to convert to little endian.  
 
 - The names of several callables (functions and operations) have been changed to conform to the Q# Style Guide.  The old callable names are deprecated.  Programs that use the old callables continue to work with a compile-time warning.
 

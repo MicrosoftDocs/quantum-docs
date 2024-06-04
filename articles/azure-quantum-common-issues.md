@@ -2,12 +2,12 @@
 author: bradben
 description: This article provides troubleshooting steps for common issues encountered when using the Azure Quantum service.
 ms.author: brbenefield
-ms.date: 03/14/2024
+ms.date: 04/22/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
 no-loc: [Quantum Development Kit, target, targets]
-title: Troubleshoot Azure Quantum
+title: Troubleshoot Issues with Azure Quantum
 uid: microsoft.quantum.azure.common-issues
 ---
 
@@ -138,7 +138,7 @@ job.get_results()
 ``` 
 
 - In your Azure Portal workspace, select **Operations > Job Management**, and then select the job **Name** to open a detail pane. 
-- In your Azure Portal workspace, selecd **Operations > Providers**. Verify the availibility of the target machine. Jobs submitted to targets with a status of **Degraded** may stay in the queue longer than usual. Sometimes the jobs get processed, but sometimes they time out and return an error of *target unavailable*.
+- In your Azure Portal workspace, select **Operations > Providers**. Verify the availability of the target machine. Jobs submitted to targets with a status of **Degraded** may stay in the queue longer than usual. Sometimes the jobs get processed, but sometimes they time out and return an error of *target unavailable*.
 
 ### Issue: I keep being asked to authenticate when programmatically connecting to my workspace
 
@@ -220,7 +220,16 @@ Here is what you could do in such a scenario:
 
 ### Issue: Constraints maximum runtime and maximum number of physical qubits are mutually exclusive
 
-The Resource Estimator accepts only one of [`maxDuration`]O(xref:qsharp.estimator.EstimatorConstraints) or [`maxPhysicalQubits`](xref:qsharp.estimator.EstimatorConstraints) constraints at the time but not two. If your provide both `maxDuration` and `maxPhysicalQubits`constraints for a single job, it returns the `BothDurationAndPhysicalQubitsProvided` error.
+The Resource Estimator accepts only one of [`maxDuration`](xref:qsharp.estimator.EstimatorConstraints) or [`maxPhysicalQubits`](xref:qsharp.estimator.EstimatorConstraints) constraints at the time but not two. If your provide both `maxDuration` and `maxPhysicalQubits`constraints for a single job, it returns the `BothDurationAndPhysicalQubitsProvided` error.
+
+### Issue: Run QIR estimate counts container: undefined symbol __quantum__rt__result_record_output
+
+This error results from generating QIR for Qiskit circuits via the *qiskit_qir* Python package without setting the `record_output` parameter to `False`. 
+
+To avoid this error, do one of the following:
+
+- Use the *azure_quantum* Python package to submit Qiskit circuits to Azure Quantum (recommended).
+- When using the *qiskit_qir* Python package, be sure to set the `record_output` parameter to `False` before submitting your circuit.
 
 ## Creating an Azure Quantum workspace
 
@@ -230,7 +239,7 @@ The following issues may occur when you use the Azure portal to create a workspa
 
 This issue occurs because you don't have an active subscription.
 
-For example, you may have signed up for the [30 day free trial Azure subscription](https://azure.microsoft.com/free/), which includes $200 (USD) free Azure Credits to use on Azure services. Note that these Azure credits aren't the same as [Azure Quantum Credits](xref:microsoft.quantum.credits) and aren't eligible to use on quantum hardware providers. After 30 days of sign-up or once you've consumed the $200 of free Azure credits (whichever occurs first), you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using Azure Quantum services. Once you have an active subscription, the Azure portal will allow you to access the workspace creation form.
+For example, you may have signed up for the [30 day free trial Azure subscription](https://azure.microsoft.com/free/), which includes USD200 free Azure Credits to use on Azure services. Note that these Azure credits aren't the same as [Azure Quantum Credits](xref:microsoft.quantum.credits) and aren't eligible to use on quantum hardware providers. After 30 days of sign-up or once you've consumed the $200 of free Azure credits (whichever occurs first), you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using Azure Quantum services. Once you have an active subscription, the Azure portal will allow you to access the workspace creation form.
 
 To see a list of your subscriptions and associated roles, see [Check your subscriptions](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-subscriptions).
 

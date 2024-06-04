@@ -146,7 +146,7 @@ Features to note about this sample:
 ### Create a VS Code project
 
 1. In VS Code, create a new Q# standalone console application project named **CheckGHZ**.
-    1. Select **View > Command Pallete > Q#: Create new project > Standalone console application**
+    1. Select **View > Command Palette > Q#: Create new project > Standalone console application**
 1. Replace the configuration in **CheckGHZ.csproj** with the following:
 
     ```xml
@@ -462,7 +462,7 @@ Add the following operation to the **Program.qs** file.
 operation StateInitialisation(TargetReg : Qubit, AncilReg : Qubit, theta_1 : Double, theta_2 : Double) : Unit is Adj + Ctl {
     H(AncilReg);
 
-    // Arbitray controlled rotation based on theta. This is vector v.
+    // Arbitrary controlled rotation based on theta. This is vector v.
     Controlled R([AncilReg], (PauliY, theta_1, TargetReg));
 
     // X gate on ancilla to change from |+> to |->

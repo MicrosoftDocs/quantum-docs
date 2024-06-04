@@ -9,6 +9,7 @@ ms.topic: how-to
 no-loc: ['Python', '$$v', target, targets]
 title: Submit formatted quantum circuits
 uid: microsoft.quantum.quickstarts.computing.provider
+#customer intent: As quantum developer, I want to learn how to submit QIR, OpenQASM, or Pulser SDK to the Azure Quantum service.
 --- 
 
 # How to submit specific formatted circuits to Azure Quantum
@@ -41,6 +42,8 @@ To develop and run your circuits in Visual Studio Code, you also need:
 
 ## Create a new Jupyter Notebook
 
+You can create a notebook in VS Code or directly in the Azure Quantum portal. 
+
 ### [Azure Quantum portal](#tab/tabid-portal)
 
 1. Log in to the [Azure portal](https://portal.azure.com/) and select the workspace from the previous step.
@@ -63,11 +66,13 @@ workspace = Workspace (
 
 1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
 1. To connect to the Azure Quantum service, your program will need the resource ID and the
-location of your Azure Quantum workspace. Log in to your Azure account,
-<https://portal.azure.com>, navigate to your Azure Quantum workspace, and
-copy the values from the header.
+location of your Azure Quantum workspace. 
+    1. Log in to your Azure account, <https://portal.azure.com>,
+    1. Select your Azure Quantum workspace, and navigate to **Overview**.
+    1. Copy the parameters in the fields.
+    
+        :::image type="content" source="media/azure-portal-workspace-overview.png" alt-text="Screenshot of Visual Studio Code showing how to expand the overview pane of your Quantum Workspace." lightbox="media/azure-portal-workspace-overview.png":::
 
-    ![How to retrieve the resource ID and location from an Azure Quantum workspace](media/azure-quantum-resource-id.png)
 
 1. In the first cell of your notebook, paste the values into the following `Workspace` constructor to
 create a `workspace` object that connects to your Azure Quantum workspace.
@@ -196,7 +201,7 @@ Besides QIR languages, such as Q# or Qiskit, you can submit quantum circuits in 
 
 ### Submit a circuit to IonQ using JSON format
 
-1. Create a quantum circuit using the the language-agnostic JSON format supported by the [IonQ targets](xref:microsoft.quantum.providers.ionq), as described in the [IonQ API documentation](https://docs.ionq.com/#tag/quantum_programs). For example, the following sample creates a superposition between three qubits:
+1. Create a quantum circuit using the language-agnostic JSON format supported by the [IonQ targets](xref:microsoft.quantum.providers.ionq), as described in the [IonQ API documentation](https://docs.ionq.com/#tag/quantum_programs). For example, the following sample creates a superposition between three qubits:
 
     ```python
     circuit = {
@@ -261,7 +266,7 @@ Besides QIR languages, such as Q# or Qiskit, you can submit quantum circuits in 
     print(f"Estimated cost: {cost.estimated_total}")
     ```
 
-    This prints the estimated cost in USD.
+    This prints the estimated cost in US dollars.
 
     > [!NOTE]
     > For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
@@ -332,7 +337,7 @@ The neutral atoms are controlled with laser pulses. The Pulser SDK allows you to
 
     A few things to consider:
     - A `Sequence` in Pulser is a series of operations that are to be executed on a quantum register.
-    - The code sets up a sequence of operations to be executed on a `AnalogDevice` device. `AnalogDevice` is a predefined device in Pulser that represents a Fresnel1-equivalent quantum computer.
+    - The code sets up a sequence of operations to be executed on an `AnalogDevice` device. `AnalogDevice` is a predefined device in Pulser that represents a Fresnel1-equivalent quantum computer.
 
 1. Create a pulse sequence. To do so, you create and add pulses to the channels you declared. For example, the following code creates a simple pulse and adds it to channel `ch0`, and then creates a complex pulse and adds it to channel `ch1`.
 
@@ -492,7 +497,7 @@ def prepare_input_data(seq):
     This prints the estimated cost in H-System Quantum Credits (HQCs).
 
     > [!NOTE]
-    > To run a cost estimate against a Quantinuum target, you must first reload the *azure-quantum* Python package with the *\[qiskit\]* parameter. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-package).
+    > To run a cost estimate against a Quantinuum target, you must first reload the *azure-quantum* Python package with the *\[qiskit\]* parameter, and ensure that you have the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
 
     > [!NOTE]
     > For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
@@ -636,7 +641,7 @@ You can also construct Quil programs manually and submit them using the `azure-q
 >     results.append(job.result())
 >```
 
-## Next steps
+## Related content
 
 - [Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit).
 - [Submit a circuit with Cirq to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.cirq).

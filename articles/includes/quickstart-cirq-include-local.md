@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 01/05/2024
+ms.date: 04/19/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -41,11 +41,13 @@ from azure.quantum.cirq import AzureQuantumService
 ## Connect to the Azure Quantum service
 
 To connect to the Azure Quantum service, your program will need the resource ID and the
-location of your Azure Quantum workspace. Log in to your Azure account,
-<https://portal.azure.com>, navigate to your Azure Quantum workspace, and
-copy the values from the header.
+location of your Azure Quantum workspace. 
 
-![How to retrieve the resource ID and location from an Azure Quantum workspace](../media/azure-quantum-resource-id.png)
+1. Log in to your Azure account, <https://portal.azure.com>,
+1. Select your Azure Quantum workspace, and navigate to **Overview**.
+1. Copy the parameters in the fields.
+
+    :::image type="content" source="../media/azure-portal-workspace-overview.png" alt-text="Screenshot of Visual Studio Code showing how to expand the overview pane of your Quantum Workspace.":::
 
 Add a new cell and use your account information to create `Workspace` and  `AzureQuantumService` objects to connect to your Azure Quantum workspace.
 
@@ -140,7 +142,7 @@ cost = service.estimate_cost(
 print(f"Estimated cost: {cost.estimated_total}")
 ```
 
-This prints the estimated cost in USD.
+This prints the estimated cost in US dollars.
 
 For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
@@ -267,7 +269,7 @@ Looking at the histogram, you may notice that the random number generator return
 Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method.
 
 > [!NOTE]
-> To run a cost estimate against a Quantinuum target, you must first reload the *azure-quantum* Python package with the *\[qiskit\]* parameter. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-package).
+> To run a cost estimate against a Quantinuum target, you must first reload the *azure-quantum* Python package with the *\[qiskit\]* parameter, and ensure that you have the latest Qiskit version. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
 
 ```python
 cost = service.estimate_cost(

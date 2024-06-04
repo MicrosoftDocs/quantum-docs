@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn about the input parameters of the Resource Estimator in Azure Quantum and how to customized them.
-ms.date: 12/04/2023
+ms.date: 05/22/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -56,6 +56,8 @@ You can choose from six predefined qubit parameters, four of which have gate-bas
 
 > [!NOTE]
 > Unless other value is specified, the default value for the qubit model is `"qubit_gate_ns_e3"`.
+
+### Parameters for predefined qubit parameters
 
 For reference, the complete predefined qubit parameters are as follows:
 
@@ -273,15 +275,17 @@ params.qubit_params.two_qubit_joint_measurement_error_rate = \
 
 To execute practical-scale quantum applications, quantum operations should have low error rates. These error rate targets are typically beyond the capabilities of raw physical qubits. To overcome this limitation, quantum error correction (QEC) and fault-tolerant computation are two crucial techniques that form the building blocks of large-scale quantum computers. First, QEC allows us to compose multiple error-prone physical qubits and build a more reliable logical qubit that preserves quantum information better than the underlying physical qubits.
 
-The error correction code distance (or just code distance for short) is a parameter that controls the number of errors that can be corrected. Thus, the error rate of the logical qubits and the number of physical qubits that are required to encode them. Both accuracy and the number of physical qubits increase with code distance. The goal is to find the minimum code distance that can achieve the required error rate set for a particular application.
-
 The Resource Estimator uses the following formula for modeling logical error rates using an exponential model,
 
 $$ P = a\left(\frac{p}{p^\*}\right)^{\frac{d+1}{2}} $$
 
-where $d$ is the code distance, $p$ is the physical error rate, and $p^\*$ is the quantum error correction threshold. The physical error rate $p$ is extracted from the qubit parameters as the worst-case error rate any physical Clifford operation in the device.
+where $a$ is a crossing pre-factor, $d$ is the code distance, $p$ is the physical error rate, and $p^\*$ is the quantum error correction threshold. The crossing pre-factor $a$ can be extracted numerically for simulations.
 
-In particular, $p = {}$ max(`one_qubit_measurement_error_rate`, `one_qubit_gate_error_rate`, `two_qubit_gate_error_rate`) for qubit parameters with a gate-based instruction set, and $p = {}$ max(`one_qubit_measurement_error_rate`, `two_qubit_joint_measurement_error_rate`) for qubit parameters with a Majorana instruction set. QEC schemes typically have an error rate threshold $p^\*$ below which error correction suppresses errors.
+The code distance $d$ is a parameter that controls the number of errors that can be corrected. Thus, code distance defines the error rate of the logical qubits and the number of physical qubits that are required to encode them. Both accuracy and the number of physical qubits increase with code distance. The goal of a QEC scheme is to find the minimum code distance that can achieve the required error rate set for a particular application.
+
+The physical error rate $p$ is extracted from the qubit parameters as the worst-case error rate of any physical Clifford operation performed in the device. In particular, $p = {}$ max(`one_qubit_measurement_error_rate`, `one_qubit_gate_error_rate`, `two_qubit_gate_error_rate`) for qubit parameters with a gate-based instruction set, and $p = {}$ max(`one_qubit_measurement_error_rate`, `two_qubit_joint_measurement_error_rate`) for qubit parameters with a Majorana instruction set. QEC schemes typically have an error rate threshold $p^\*$ below which error correction suppresses errors.
+
+The Azure Quantum Resource Estimator supports two predefined QEC schemes: a surface code and a floquet code. 
 
 |QEC protocol|Python API class|Description|
 |----|----|-----|
@@ -291,7 +295,9 @@ In particular, $p = {}$ max(`one_qubit_measurement_error_rate`, `one_qubit_gate_
 > [!NOTE]
 > Unless other value is specified, the default value for the QEC scheme is "surface_code".
 
-The exact parameters for each predefined QEC scheme (including a crossing pre-factor $a$, which can be extracted numerically for simulations) are the following.
+### Parameters for predefined QEC schemes
+
+The exact parameters for each predefined QEC scheme are the following.
 
 ```python
 {
@@ -402,7 +408,10 @@ The error budget corresponds to the sum of three parts:
 
 $$ \epsilon = \epsilon_{\log} + \epsilon_{\rm dis} + \epsilon_{\rm syn} $$
 
-If no further specified, the error budget $\epsilon$ is uniformly distributed and applies to errors $\epsilon_{\log}$ to implement logical qubits, the error budget $\epsilon_{\rm dis}$ produces T states through distillation, and an error budget $\epsilon_{\rm syn}$ to synthesize rotation gates with arbitrary angles.
+The logical errors $\epsilon_{\log}$ is the error of implementing logical qubits, the T state error $\epsilon_{\rm dis}$ is the error of producing T states through distillation, and the rotation gate error $\epsilon_{\rm syn}$ is the error of synthesizing rotation gates with arbitrary angles.
+
+> [!NOTE]
+> Unless other value is specified, the error budget $\epsilon$ is uniformly distributed among the logical error, T state error, and rotation gate error.
 
 Note that for distillation and rotation synthesis, the respective error budgets $\epsilon_{\rm dis}$ and $\epsilon_{\rm syn}$ are uniformly distributed among all required T states and all required rotation gates, respectively. If there aren't rotation gates in the input algorithm, the error budget is uniformly distributed to logical errors and T state errors.
 

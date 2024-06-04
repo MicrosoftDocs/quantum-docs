@@ -18,8 +18,8 @@ no-loc: ['Q#', '$$v', Quantum Development Kit]
 <tr><td>braket</td><td>\braket{\phi|\psi}</td><td>$\braket{\phi|\psi}$</td></tr>
 <tr><td>id</td><td>\id</td><td>$\id$</td></tr>
 <tr><td>boldone</td><td>\boldone</td><td>$\mathbf{1}$</td></tr>
-<tr><td>expect</td><td>\expect</td><td>$$\expect$$</td></tr>
-<tr><td>variance</td><td>\variance (x)</td><td>$$\variance (x)$$</td></tr>
+<tr><td>expect</td><td>\expect</td><td>$\expect$</td></tr>
+<tr><td>variance</td><td>\variance (x)</td><td>$\variance (x)$</td></tr>
 </table>
 
 - [All](xref:Qdk.Microsoft.Quantum.Arrays.All) function (API)

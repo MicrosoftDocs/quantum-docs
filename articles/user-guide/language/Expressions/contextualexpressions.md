@@ -17,7 +17,7 @@ Contextual expressions are expressions that are only valid in certain contexts, 
 
 Expressions can be *omitted* when they can be inferred and automatically inserted by the compiler, for example, in the case of [evaluate-and-reassign statements](xref:microsoft.quantum.qsharp.variabledeclarationsandreassignments#evaluate-and-reassign-statements).
 
-Open-ended ranges are another example that apply to both contextual and omitted expressions. They are are valid only within a certain context, and the compiler translates them into normal `Range` expressions during compilation by inferring suitable boundaries.
+Open-ended ranges are another example that apply to both contextual and omitted expressions. They are valid only within a certain context, and the compiler translates them into normal `Range` expressions during compilation by inferring suitable boundaries.
 
 A value of type `Range` generates a sequence of integers, specified by a start value, a step value (optional), and an end value. For example, the `Range` literal expression `1..3` generates the sequence 1,2,3. Likewise, the expression `3..-1..1` generates the sequence 3,2,1. You can also use ranges to create a new array from an existing one by slicing, for example:
 

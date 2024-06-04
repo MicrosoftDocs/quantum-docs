@@ -15,7 +15,11 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)  extensions installed.
-- The Azure Quantum `azure-quantum` package with the \[qiskit\] tag, and the `qsharp` and the `ipykernel` packages.  
+- The Azure Quantum `azure-quantum` Python package with the \[qiskit\] tag. Ensure that you have the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
+- The latest version of the Azure Quantum `azure-quantum` Python package with the \[qiskit\] tag.
+
+    > [!NOTE]
+    > Ensure that you have the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
 
     ```cmd
     python -m pip install --upgrade azure-quantum[qiskit] qsharp ipykernel 
@@ -43,13 +47,15 @@ from azure.quantum.qiskit import AzureQuantumProvider
 ## Connect to the Azure Quantum service
 
 To connect to the Azure Quantum service, your need the resource ID and the
-location of your Azure Quantum workspace. Log in to your Azure account,
-<https://portal.azure.com>, navigate to your Azure Quantum workspace, and
-copy the values from the header.
+location of your Azure Quantum workspace. 
 
-![How to retrieve the resource ID and location from an Azure Quantum workspace](../media/azure-quantum-resource-id.png)
+1. Log in to your Azure account, <https://portal.azure.com>,
+1. Select your Azure Quantum workspace, and navigate to **Overview**.
+1. Copy the parameters in the fields.
 
-Add a new cell and use your account information to create [`Workspace`](xref:azure.quantum.Workspace) and  [`AzureQuantumProvider`](xref:azure.quantum.qiskit.AzureQuantumProvider) objects to connect to your Azure Quantum workspace.
+    :::image type="content" source="../media/azure-portal-workspace-overview.png" alt-text="Screenshot of Visual Studio Code showing how to expand the overview pane of your Quantum Workspace.":::
+
+Add a new cell in your notebook and use your account information to create [`Workspace`](xref:azure.quantum.Workspace) and  [`AzureQuantumProvider`](xref:azure.quantum.qiskit.AzureQuantumProvider) objects to connect to your Azure Quantum workspace.
 
 
 ```python
@@ -89,7 +95,6 @@ This workspace's targets:
 - quantinuum.sim.h1-1e
 - rigetti.sim.qvm
 - rigetti.qpu.ankaa-2
-- rigetti.qpu.ankaa-9q-1
 ```
 
 ## Run a simple circuit
@@ -198,7 +203,7 @@ cost = backend.estimate_cost(circuit, shots=1024)
 print(f"Estimated cost: {cost.estimated_total}")
 ```
 
-This prints the estimated cost in USD.
+This prints the estimated cost in US dollars.
 
 For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 

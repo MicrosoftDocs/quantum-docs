@@ -2,10 +2,10 @@
 author: SoniaLopezBravo
 description: Learn about eigenvectors, eigenvalues, and matrix exponentials, the fundamental tools used to describe and simulate quantum algorithms.
 ms.author: sonialopez
-ms.date: 06/09/2023
+ms.date: 05/23/2024
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: concept
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, "$$$", '$$$', $$$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\mathbf{1}', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 title: Advanced Matrix Concepts
 uid: microsoft.quantum.concepts.matrix-advanced

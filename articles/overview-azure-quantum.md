@@ -113,5 +113,7 @@ For more information on the specifications of each provider, see the full [Quant
 Start using Azure Quantum:
 
 - [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace)
-- [Get started with a Jupyter Notebook and Qiskit in Azure Quantum](xref:microsoft.quantum.get-started.notebooks)
-- [Set up a local development environment for Azure Quantum](xref:microsoft.quantum.install-qdk.overview)
+- [Get started with Q# and Visual Studio Code](xref:microsoft.quantum.submit-jobs)
+- [Get started with Q# and Azure Quantum notebooks](xref:microsoft.quantum.get-started.notebooks)
+- [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)ç
+- [Run a Qiskit circuit in Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)

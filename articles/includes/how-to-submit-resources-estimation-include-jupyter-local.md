@@ -141,7 +141,7 @@ no-loc: [target, targets]
     /// ## power
     /// Power of `generator` by which `target` is multiplied.
     /// ## target
-    /// Register interpreted as LittleEndian which is multiplied by
+    /// Register interpreted as little endian encoded which is multiplied by
     /// given power of the generator. The multiplication is performed modulo
     /// `modulus`.
     internal operation ApplyOrderFindingOracle(
@@ -152,7 +152,7 @@ no-loc: [target, targets]
         // The oracle we use for order finding implements |x⟩ ↦ |x⋅a mod N⟩. We
         // also use `ExpModI` to compute a by which x must be multiplied. Also
         // note that we interpret target as unsigned integer in little-endian
-        // encoding by using the `LittleEndian` type.
+        // encoding.
         ModularMultiplyByConstant(modulus,
                                     ExpModI(generator, power, modulus),
                                     target);
@@ -163,7 +163,7 @@ no-loc: [target, targets]
     ///
     /// # Description
     /// Given the classical constants `c` and `modulus`, and an input
-    /// quantum register (as LittleEndian) |𝑦⟩, this operation
+    /// quantum register |𝑦⟩, this operation
     /// computes `(c*x) % modulus` into |𝑦⟩.
     ///
     /// # Input
@@ -194,7 +194,7 @@ no-loc: [target, targets]
     ///
     /// # Description
     /// Given the classical constants `c` and `modulus`, and an input
-    /// quantum register (as LittleEndian) |𝑦⟩, this operation
+    /// quantum register  |𝑦⟩, this operation
     /// computes `(x+c) % modulus` into |𝑦⟩.
     ///
     /// # Input
@@ -415,7 +415,7 @@ For example, collapse the **Logical qubit parameters** group to see that the cod
 |QEC scheme                                                |                           surface_code |
 |Code distance                                                                       |            21 |
 |Physical qubits                                                                   |            882 |
-|Logical cycle time                                                                   |   8 milisecs |
+|Logical cycle time                                                                   |   8 millisecs |
 |Logical qubit error rate                                                            |     3.00E-13 |
 |Crossing prefactor                                                                    |       0.03|
 |Error correction threshold                                                             |      0.01|
@@ -430,7 +430,7 @@ For example, collapse the **Logical qubit parameters** group to see that the cod
 The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can use the `qsharp-widgets` package to visualize this distribution to better understand the estimated space requirements for the algorithm.
 
 ```python
-from qsharp_widgets import SpaceChart, EstimateDetails
+from qsharp-widgets import SpaceChart, EstimateDetails
 SpaceChart(result)
 ```
 
@@ -525,7 +525,7 @@ EstimateDetails(result_maj)
 
 The Azure Quantum Resource Estimator allows you to run multiple configuration of target parameters, and compare the results. This is useful when you want to compare the cost of different qubit models, QEC schemes, or error budgets.
 
-1. You can perform a batch estimation by passing a list of target parameters to the `params` parameter of the `qsharp.estimate` function. For example, run the same algorithm with the default parameters and the Majorana-based qubit parameters with a floqued QEC scheme.
+1. You can perform a batch estimation by passing a list of target parameters to the `params` parameter of the `qsharp.estimate` function. For example, run the same algorithm with the default parameters and the Majorana-based qubit parameters with a floquet QEC scheme.
 
     ```python
     result_batch = qsharp.estimate("RunProgram()", params=

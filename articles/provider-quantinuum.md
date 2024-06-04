@@ -415,11 +415,13 @@ option_params = {
 
 Circuits submitted to Quantinuum H-Series systems, **except for integrated hybrid submissions**, are automatically run through TKET compilation passes for H-Series hardware. This enables circuits to be automatically optimized for H-Series systems and run more efficiently.
 
-More information on the specific compilation passes applied can be found in the [`pytket-quantinuum`] documentation, specifically the [`pytket-quantinuum` Compilation Passes] section. 
+More information on the specific compilation passes applied can be found in the [`pytket-quantinuum`] documentation, specifically the [`pytket-quantinuum` Compilation Passes] section.
 
 In the H-Series software stack, the optimization level applied is set with the `tket-opt-level` parameter. *The default compilation setting for all circuits submitted to H-Series systems is optimization level 2.*
 
 Users who would like to experiment with the TKET compilation passes and see what optimizations would apply to their circuits *before* submitting any jobs can see the *Quantinuum_compile_without_api.ipynb* notebook in the [`pytket-quantinuum` Examples] folder.
+
+To turn TKET compilation in the stack off, a different option, `no-opt`, can be set to `True` inside `option_params`. For example, `"no-opt": True`.
 
 For more information on `pytket`, see the following links:
 
@@ -477,7 +479,7 @@ option_params = {
 
 ``` 
 
-Pass in the otimization option when submitting the job:
+Pass in the optimization option when submitting the job:
 
 ```python
 job = MyTarget.submit(MyProgram, "Experiment with TKET Compilation", shots = 10, input_params = option_params)
