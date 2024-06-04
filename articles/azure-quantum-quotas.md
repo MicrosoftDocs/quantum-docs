@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
 no-loc: [target, targets]
-title: Azure Quantum Limits and Quotas
+title: Using Limits & Quotas
 uid: microsoft.quantum.quotas
 #customer intent: As a quantum programmer, 
 ---

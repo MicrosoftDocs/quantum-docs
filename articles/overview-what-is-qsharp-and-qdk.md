@@ -32,7 +32,7 @@ The Azure QDK is the only development kit ready for Fault-Tolerant Quantum Compu
 
 ## The quantum programming language Q\#
 
-The  QDK includes the quantum programming language Q#, a high-level, **open-source** programming language that allows you to focus your work at the algorithm level to create quantum programs.
+The QDK includes the quantum programming language Q#, a high-level, **open-source** programming language that allows you to focus your work at the algorithm level to create quantum programs.
 
 Q# is an **open-source**, high-level, programming language for developing and running quantum algorithms. It’s part of the Quantum Development Kit (QDK) and it's designed to be hardware agnostic, scale to the full range of quantum applications, and to optimize execution. 
 
