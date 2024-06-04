@@ -14,7 +14,7 @@ uid: microsoft.quantum.credits.credits-faq
 
 In this article you'll find the answer to the most common questions about the Azure Quantum Credits program.
 
-When you create a new Azure Quantum workspace, you automatically get [$500 (USD) free Azure Quantum Credits](xref:microsoft.quantum.credits) for use on quantum hardware. In addition, Microsoft offers up to **$10,000 (USD) extra Azure Quantum Credits**. To receive this credit, you can apply for the [Azure Quantum Credits program](https://aka.ms/aq/credits). 
+When you create a new Azure Quantum workspace, you automatically get [USD500 free Azure Quantum Credits](xref:microsoft.quantum.credits) for use on quantum hardware. In addition, Microsoft offers up to **USD10,000 extra Azure Quantum Credits**. To receive this credit, you can apply for the [Azure Quantum Credits program](https://aka.ms/aq/credits). 
 
 The Azure Quantum Credits program provides sponsored access to quantum hardware through Azure. You will not be charged for usage created under the credits program, up to the limit of your credit grant.
 

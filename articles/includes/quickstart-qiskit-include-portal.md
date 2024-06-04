@@ -202,7 +202,7 @@ cost = qpu_backend.estimate_cost(circuit, shots=100)
 print(f"Estimated cost: {cost.estimated_total}")
 ```
 
-This displays the estimated cost in USD.
+This displays the estimated cost in US dollars.
 
 For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers-pricing#ionq), or find your workspace and view pricing options in the **Providers** blade of your workspace.
 
