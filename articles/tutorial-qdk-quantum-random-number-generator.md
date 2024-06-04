@@ -2,20 +2,19 @@
 author: SoniaLopezBravo
 description: Build a Q# project that demonstrates fundamental quantum concepts like superposition by creating a quantum random number generator.
 ms.author: sonialopez
-ms.date: 03/25/2024
+ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: 'Tutorial: Create a Quantum Random Number Generator'
 uid: microsoft.quantum.tutorial-qdk.random-number
+#customer intent: As a quantum programmer, 
 ---
 
 # Tutorial: Implement a quantum random number generator in Q\#
 
-[!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
-
-Learn to write a basic quantum program in Q# that leverages the nature of quantum mechanics to produce a random number.
+In this tutorial, you learn to write a basic quantum program in Q# that leverages the nature of quantum mechanics to produce a random number.
 
 In this tutorial, you will:
 
@@ -35,7 +34,7 @@ In this tutorial, you will:
 
 - To develop and run the code sample in Visual Studio Code:
     - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-    - The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension. For installation details, see [Installing the Modern QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-modern-qdk-on-vs-code).
+    - The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension. For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
     - If you want to use Jupyter Notebooks, you also need to install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions, and the latest `qsharp` Python package. To do so, open a terminal and run the following command:
 
         ```bash
@@ -514,7 +513,7 @@ Let's visualize the distribution of results obtained from running the quantum pr
 > [!NOTE]
 > This code snippet does not currently run on any available Azure Quantum hardware targets, as the callable `ResultArrayAsInt` requires a QPU with [full computation profile](/azure/quantum/concepts-targets-in-azure-quantum#quantum-processing-units-qpu-different-profiles).
 
-## Next steps
+## Related content
 
 Explore other Q# tutorials:
 

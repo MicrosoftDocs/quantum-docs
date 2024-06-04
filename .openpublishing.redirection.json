@@ -1005,6 +1005,11 @@
 			"source_path": "articles/classic-qdk-deprecation.md",
 			"redirect_url": "/azure/quantum/install-overview-qdk",
 			"redirect_document_id": false
+		},
+    	{
+			"source_path": "articles/whats-new-modern-qdk.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
+			"redirect_document_id": false
 		}
 	]
 }
