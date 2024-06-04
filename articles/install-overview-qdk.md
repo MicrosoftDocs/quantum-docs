@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to set up the Azure Quantum Development Kit VS Code extension and set up your environment for different languages and platforms.
 ms.author: brbenefield
-ms.date: 05/31/2024
+ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: concept
@@ -46,7 +46,7 @@ The [Azure Quantum portal](https://portal.azure.com) provides a no-install devel
 
 ### Visual Studio Code
 
-The QDK VS Code extension is the latest version of the Q# language and quantum development tools. With a smaller footprint and faster performance, it features a streamlined installation, language improvements, integrated Python, Jupyter Notebook, and Qiskit support, integrated Azure connectivity for submitting jobs to quantum hardware, debugger support, and improved syntax highlighting and error messages. The QDK is platform independent, running on Windows, Mac, Linux, and the web. For set up information, see [Installing the QDK](#installing-the-modern-qdk-on-vs-code).
+The QDK VS Code extension is the latest version of the Q# language and quantum development tools. With a smaller footprint and faster performance, it features a streamlined installation, language improvements, integrated Python, Jupyter Notebook, and Qiskit support, integrated Azure connectivity for submitting jobs to quantum hardware, debugger support, and improved syntax highlighting and error messages. The QDK is platform independent, running on Windows, Mac, Linux, and the web. For set up information, see [Installing the QDK](#installing-the-qdk-on-vs-code).
 
 ### Visual Studio Code on the Web
 

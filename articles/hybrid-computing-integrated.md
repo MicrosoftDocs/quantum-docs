@@ -1,23 +1,21 @@
 ---
 author: bradben
-description: Understand the architecture and implementation of integrated hybrid quantum computing.
-ms.date: 12/07/2023
+description: Understand the architecture and implementation of integrated hybrid quantum computing in Azure Quantum.
+ms.date: 06/03/2024
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.custom: devx-track-azurecli
-ms.topic: conceptual
+ms.topic: concept
 no-loc: ['Q#', '$$v', Quantum Development Kit, Basic measurement feedback, target, targets]
 title: Working with integrated hybrid computing
 uid: microsoft.quantum.hybrid.integrated
+#customer intent: As a quantum programmer, I want to understand integrated hybrid computing.
 ---
 
 # Integrated hybrid computing
 
 Integrated hybrid computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Using qubit reuse techniques, larger programs can run on machines utilizing a smaller number of qubits.
-
-> [!IMPORTANT]
-> Integrated hybrid quantum computing isn't currently supported by the Modern Quantum Development Kit (Modern QDK) extension for Visual Studio Code, along with other components in the examples on this page, such as the IQ# kernel, the `%azure` magic command, or the `qsharp.azure` module. To run integrated hybrid jobs, use the Microsoft Quantum Development Kit (Classic QDK). For more information, see [Continue working in the Classic QDK](xref:microsoft.quantum.install-qdk.overview#continue-working-in-the-classic-qdk).
 
 For more discussion, see:
 
@@ -47,18 +45,6 @@ To start exploring integrated hybrid programming, we suggest walking through the
 ## Submitting integrated hybrid jobs
 
 When submitting an integrated hybrid job, you need to add a *target capability* parameter after specifying the target. Other than that, integrated hybrid programs on Azure Quantum are run and managed just as regular quantum jobs. Each job has a single job ID and the result is a single histogram.
-
-> [!IMPORTANT]
-> Integrated hybrid quantum computing isn't currently supported by the Modern Quantum Development Kit (Modern QDK) extension for Visual Studio Code, along with other components in the examples on this page, such as the IQ# kernel, the `%azure` magic command, or the `qsharp.azure` module. To run integrated hybrid jobs, use the Microsoft Quantum Development Kit (Classic QDK). For more information, see [Continue working in the Classic QDK](xref:microsoft.quantum.install-qdk.overview#continue-working-in-the-classic-qdk). 
-
-### IQ\#
-
-When using the IQ# kernel in a Jupyter Notebook, use the [%azure.target-capability](xref:microsoft.quantum.iqsharp.magic-ref.azure.target-capability) magic command with the `AdaptiveExecution` parameter.
-
-```qsharp
-%azure.target quantinuum.sim.h1-1e
-%azure.target-capability AdaptiveExecution
-```
 
 ### Python + Q\#
 
@@ -124,7 +110,7 @@ The following samples demonstrate the current feature set for integrated hybrid 
 ### Prerequisites
 
 - If you are new to Azure Quantum, you will need an Azure subscription and an Azure Quantum workspace to run the samples against quantum hardware. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- VS Code and the Quantum Development Kit set up in your local environment. For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#use-q-and-python-with-visual-studio-and-visual-studio-code).
+- VS Code and the Quantum Development Kit set up in your local environment. For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#installing-the-modern-qdk-on-vs-code).
 - Ensure that VS Code has latest version of the Quantum Development Kit (0.27.258160).
   - In VS Code, select **Ctrl + Shift + X** and search for "Microsoft Quantum Development Kit".
 

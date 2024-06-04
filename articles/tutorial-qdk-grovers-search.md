@@ -2,27 +2,25 @@
 author: SoniaLopezBravo
 description: In this tutorial, you will build a Q# project that demonstrates Grover's search algorithm, one of the canonical quantum algorithms.
 ms.author: sonialopez
-ms.date: 12/28/2023
+ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
 no-loc: ['Q#', '$$v', Quantum Development Kit,target, targets]
 title: "Tutorial: Implement Grover's Algorithm in Q#"
 uid: microsoft.quantum.tutorial-qdk.grovers
+#customer intent: As a quantum programmer, I want to learn how to demonstrate Grover's algorithm in a Q# program.
 ---
 
 # Tutorial: Implement Grover's search algorithm in Q\#
 
-[!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
-
 In this tutorial, you implement Grover's algorithm in Q# to solve search-based problems. For an in-depth explanation of the theory behind Grover's algorithm, see the [Theory of Grover's algorithm](xref:microsoft.quantum.concepts.grovers).
 
-In this tutorial, you'll:
+In this tutorial, you:
 
 > [!div class="checklist"]
-> * Define the Grover's algorithm for a search problem.
-> * Implement Grover's algorithm in Q#.
-
+> * Define the Grover's algorithm for a search problem
+> * Implement Grover's algorithm in Q#
 
 [!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
 
@@ -33,7 +31,7 @@ In this tutorial, you'll:
 
 - To develop and run the code sample in Visual Studio Code:
     - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-    - The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension. For installation details, see [Installing the Modern QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-modern-qdk-on-vs-code).
+    - The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension. For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
 
 
 ## Define the problem
@@ -204,6 +202,8 @@ return results;
 
 
 ## Run the program
+
+Select the desired platform to run your program. 
 
 ### [Copilot in Azure Quantum](#tab/tabid-copilot)
 
@@ -432,7 +432,7 @@ You can also submit your program to the free [Quantinuum H-Series Emulator](xref
 
 ***
 
-## Next steps
+## Related content
 
 Explore other Q# tutorials:
 
