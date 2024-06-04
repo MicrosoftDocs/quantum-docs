@@ -6,7 +6,7 @@ ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.custom: devx-track-azurecli
-ms.topic: concept
+ms.topic: how-to
 no-loc: ['Q#', '$$v', Quantum Development Kit, Basic measurement feedback, target, targets]
 title: Working with integrated hybrid computing
 uid: microsoft.quantum.hybrid.integrated
@@ -706,6 +706,6 @@ replacing \[job-id\] with the displayed job id. The results show a solution in t
 
 ***
 
-## Next steps
+## Next step
 
 [Distributed hybrid computing](xref:microsoft.quantum.hybrid.distributed)

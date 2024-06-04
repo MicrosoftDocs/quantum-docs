@@ -5,10 +5,11 @@ ms.author: sonialopez
 ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: concept
+ms.topic: how-to
 no-loc: [target, targets]
 title: Azure Quantum Limits and Quotas
 uid: microsoft.quantum.quotas
+#customer intent: As a quantum programmer, 
 ---
 
 # Azure Quantum quotas 
@@ -248,7 +249,7 @@ If you are not using an Azure Quantum Credits plan, then you can request quota i
       - Any justification for why you are increasing your quota can help us to decide in some cases. 
 
 
-## Next Steps
+## Related content
 
 - [Azure Quantum Credits](xref:microsoft.quantum.credits)
 - [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq)

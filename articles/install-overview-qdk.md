@@ -5,7 +5,7 @@ ms.author: brbenefield
 ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: concept
+ms.topic: concept-article
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Get started with the Quantum Development Kit 
 uid: microsoft.quantum.install-qdk.overview

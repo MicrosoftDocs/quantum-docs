@@ -5,10 +5,11 @@ ms.author: sonialopez
 ms.date: 05/31/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: concept
+ms.topic: concept-article
 no-loc: ['Q#', '$$v', Quantum Approximate Optimization Algorithm, Quantum Development Kit]
 title: Quantum computing learning resources
 uid: microsoft.quantum.more-information
+#customer intent: As a quantum programmer, 
 ---
 
 # Further reading: Quantum computing learning resources
