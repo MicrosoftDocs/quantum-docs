@@ -110,7 +110,7 @@ The following samples demonstrate the current feature set for integrated hybrid 
 ### Prerequisites
 
 - If you are new to Azure Quantum, you will need an Azure subscription and an Azure Quantum workspace to run the samples against quantum hardware. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- VS Code and the Quantum Development Kit set up in your local environment. For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#installing-the-modern-qdk-on-vs-code).
+- VS Code and the Quantum Development Kit set up in your local environment. For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
 - Ensure that VS Code has latest version of the Quantum Development Kit (0.27.258160).
   - In VS Code, select **Ctrl + Shift + X** and search for "Microsoft Quantum Development Kit".
 
