@@ -30,7 +30,7 @@ The following targets are available from this provider:
 |[IonQ Aria 2](#ionq-aria-quantum-computer) |	ionq.qpu.aria-2	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
 |[IonQ Forte](#ionq-forte-quantum-computer) |	ionq.qpu.forte	|32 qubits	|IonQ's Forte trapped-ion quantum computer. Available in Private Preview only.|
 
-IonQ's targets correspond to a **:::no-loc text="Base QIR":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
+IonQ's targets correspond to a **:::no-loc text="Base QIR":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets). 
 
 ## Quantum simulator
 

@@ -5,33 +5,43 @@ ms.date: 05/29/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: overview
+ms.topic: how-to
 no-loc: [Base QIR, QIR Adaptative RI, target, targets, full]
-title: Understanding target profile types in Azure Quantum
+title: QIR Target Profile Types 
 uid: microsoft.quantum.target-profiles
 ---
 
-# Target profile types in Azure Quantum
+# QIR target profile types in Azure Quantum
 
-This article discusses the different type of target profile types available in the quantum computing providers in Azure Quantum. At this time, because of the early development stage of the field, quantum devices have some limitations and requirements for programs that run on them.
+This article discusses the different type of QIR target profile types available in the quantum computing providers in Azure Quantum. At this time, because of the early development stage of the field, quantum devices have some limitations and requirements for programs that run on them.
 
-## Quantum Processing Units (QPU): different profiles and their limitations 
+## Target profiles and their limitations 
 
-A Quantum Processing Unit (QPU) is a physical or simulated processor that contains a number of interconnected qubits that can be manipulated to compute
-quantum algorithms. It's the central component of a quantum computer or quantum simulator.
+Quantum devices are still an emerging technology, and not all of them can run all Q# code. As such, you need to keep some restrictions in mind when developing programs for different targets. Currently, Azure Quantum and the QDK manage three different target profiles:
 
-Quantum devices are still an emerging technology, and not all of them can run all Q# code. As such, you need to keep some restrictions in mind when developing programs for different targets. Currently, Azure Quantum and the QDK manage three different profiles for QPUs:
-
-- **:::no-loc text="Unrestricted":::**: This profile can run any Q# program within the limits of memory for simulators or the number of qubits for physical quantum computers.
+- **:::no-loc text="Unrestricted":::**: This profile can run any QIR program within the limits of memory for simulators or the number of qubits for physical quantum computers.
 - **:::no-loc text="QIR base":::**: This profile can run any Q# program that doesn't require the use of the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, values of type `Result` don't support equality comparison.
 - **:::no-loc text="QIR Adaptative RI":::**: This profile has limited ability to use the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, you can compare values of type `Result` as part of conditions within `if` statements in operations, allowing mid-circuit measurement. The corresponding conditional blocks might not contain `return` or `set` statements.
 
-## Create and run applications for :::no-loc text="Unrestricted"::: profile targets
+## Create and run applications for :::no-loc text="Unrestricted"::: target profile
 
-:::no-loc text="Unrestricted"::: profile targets can run any Q# program, meaning you can write programs without functionality restrictions. Azure Quantum doesn't provide
-any target with this profile yet. However, you can run :::no-loc text="Unrestricted"::: Q# programs on simulators provided by the QDK. 
+:::no-loc text="Unrestricted"::: target profiles can run any QIR program, meaning you can write Q# programs without functionality restrictions. Azure Quantum doesn't provide
+any target with this profile yet. However, you can run :::no-loc text="Unrestricted"::: Q# programs on simulators provided by the QDK.
 
-## Create and run applications for :::no-loc text="Base QIR"::: profile targets
+### Configure :::no-loc text="Unrestricted"::: target profile
+
+In Visual Studio Code:
+
+1. Select **View -> Command Palette** and type **Q#: Set the Azure Quantum QIR target profile**. Press **Enter**.
+1. Select **Unrestricted**.
+
+In Python, you can set the target profile using the `qsharp.init` method.
+
+```python
+qsharp.init(target_profile=qsharp.TargetProfile.Unrestricted) 
+```
+
+## Create and run applications for :::no-loc text="Base QIR"::: target profile
 
 :::no-loc text="Base QIR"::: profile targets can run a wide variety of Q# applications, with the constraint that they can't use results from qubit measurements to control
 the program flow. More specifically, values of type `Result` don't support equality comparison.
@@ -65,6 +75,21 @@ to control the computation flow with an `if` statement. This will be applicable 
 >     return M(MeasureQubit(q));
 > }
 > ```
+
+### Configure :::no-loc text="Base QIR"::: target profile
+
+In Visual Studio Code:
+
+1. Select **View -> Command Palette** and type **Q#: Set the Azure Quantum QIR target profile**. Press **Enter**.
+1. Select **QIR base**.
+
+In Python, you can set the target profile using the `qsharp.init` method.
+
+```python
+qsharp.init(target_profile=qsharp.TargetProfile.Base) 
+```
+
+### Supported targets
 
 Currently, these :::no-loc text="Base QIR"::: targets are available for Azure Quantum:
 
@@ -119,8 +144,28 @@ The `SetQubitState `operation in :::no-loc text="Base QIR"::: can be used in a :
 }
 ```
 
-Presently, these :::no-loc text="QIR Adaptative RI"::: targets are available for Azure Quantum:
+### Configure :::no-loc text="QIR Adaptative RI"::: target profile
+
+In Visual Studio Code:
+
+1. Select **View -> Command Palette** and type **Q#: Set the Azure Quantum QIR target profile**. Press **Enter**.
+1. Select **QIR Adaptative RI**.
+
+In Python, you can set the target profile using the `qsharp.init` method.
+
+```python
+qsharp.init(target_profile=qsharp.TargetProfile.Adaptive_RI) 
+```
+
+### Supported targets
+
+Currently, these :::no-loc text="QIR Adaptative RI"::: targets are available for Azure Quantum:
 
 - **Provider:** Quantinuum
   - [Quantinuum Emulators](xref:microsoft.quantum.providers.quantinuum) (`quantinuum.sim.h1-1e`, `quantinuum.sim.h2-1e`)
   - [Quantinuum QPUs](xref:microsoft.quantum.providers.quantinuum) (`quantinuum.qpu.h1-1`, `quantinuum.qpu.h2-1`)
+
+
+## Configure the target profile
+
+When submitting a job to Azure Quantum, you need to configure the target profile. The target profile specifies the type of QPU that will run your program. 

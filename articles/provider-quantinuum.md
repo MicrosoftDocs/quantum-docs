@@ -33,7 +33,7 @@ The following targets are available from this provider:
 |[H1-1](#system-model-h1)|quantinuum.qpu.h1-1 |20 qubits|Quantinuum's H1-1 trapped ion device.|
 |[H2-1](#system-model-h2)|quantinuum.qpu.h2-1| 32 qubits|Quantinuum's H2-1 trapped ion device.|
 
-Quantinuum's targets correspond to a **:::no-loc text="QIR Adaptative RI":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-basic-measurement-feedback-profile-targets).
+Quantinuum's targets correspond to a **:::no-loc text="QIR Adaptative RI":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-qir-adaptative-ri-profile-targets).
 
 All of Quantinuum's targets now support Integrated hybrid circuits. For more information about submitting integrated hybrid jobs, see [Integrated hybrid computing](xref:microsoft.quantum.hybrid.integrated).
 
