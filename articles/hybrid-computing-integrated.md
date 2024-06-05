@@ -1,20 +1,23 @@
 ---
 author: bradben
-description: Understand the implementation of integrated hybrid quantum computing, and how to submit jobs to Azure Quantum using the Adaptative RI target profile.
+description: Understand the implementation of integrated hybrid quantum computing, and how to submit jobs to Azure Quantum using the Adaptive RI target profile.
 ms.date: 06/03/2024
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.custom: devx-track-azurecli
 ms.topic: how-to
-no-loc: ['Q#', '$$v', Quantum Development Kit, QIR Adaptative RI, target, targets]
-title: Working with integrated hybrid computing
+no-loc: ['Q#', '$$v', Quantum Development Kit, QIR Adaptive RI, target, targets]
+title: Working with Integrated Hybrid Computing
 uid: microsoft.quantum.hybrid.integrated
 ---
 
 # Integrated hybrid computing
 
 Integrated hybrid computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Using qubit reuse techniques, larger programs can run on machines utilizing a smaller number of qubits.
+
+In this article, 
+
 
 For more discussion, see:
 
@@ -27,7 +30,7 @@ Currently, the integrated hybrid computing model in Azure Quantum is supported o
 
 ## Submitting integrated hybrid jobs
 
-When submitting an integrated hybrid job, you need to configure the [target profile](xref:microsoft.quantum.target-profiles) as :::no-loc text="QIR Adaptative RI":::. The :::no-loc text="QIR Adaptative RI"::: target profile offers support for mid-circuit measurements, measurement-based control flow, and classical integer computation.
+When submitting an integrated hybrid job, you need to configure the [target profile](xref:microsoft.quantum.target-profiles) as :::no-loc text="QIR Adaptive RI":::. The :::no-loc text="QIR Adaptive RI"::: target profile offers support for mid-circuit measurements, measurement-based control flow, and classical integer computation.
 
 You can submit integrated hybrid Q# standalone programs or Python + Q# programs to Azure Quantum. To configure the target profile for integrated hybrid jobs, follow the instructions below.
 
@@ -35,7 +38,7 @@ You can submit integrated hybrid Q# standalone programs or Python + Q# programs 
 
 1. Open a Q# program in Visual Studio Code.
 1. Select **View -> Command Palette** and type **Q#: Set the Azure Quantum QIR target profile**. Press **Enter**.
-1. Select **QIR Adaptative RI**.
+1. Select **QIR Adaptive RI**.
 
 
 ### [Q# + Python](#tab/tabid-python)
@@ -71,7 +74,7 @@ The following table lists the supported features for integrated hybrid computing
 If your Q# program contains unsupported features when running integrated hybrid jobs, you will receive a warning message in real-time.
 
 > [!NOTE]
-> You need to select the appropriate **QIR Adaptative RI** target profile to realize the correct error messages and warnings when using unsupported features.
+> You need to select the appropriate **QIR Adaptive RI** target profile to realize the correct error messages and warnings when using unsupported features.
 
 Copy the following code into a Q# file, and add the subsequent code snippets to see the supported features in action.
 
@@ -193,7 +196,7 @@ After a successful run on the emulator:
 
 ## Integrated hybrid samples
 
-The following samples can be found [Q# code samples](https://github.com/microsoft/qsharp/blob/main/samples/algorithms/). demonstrate the current feature set for integrated hybrid computing.
+The following samples can be found [Q# code samples](https://github.com/microsoft/qsharp/blob/main/samples/). demonstrate the current feature set for integrated hybrid computing.
 
 ### GHZ state
 
@@ -206,12 +209,12 @@ Features to note about this sample:
 - You do not need to learn to program for specialized high-performance hardware running next to the QPU (such as FPGAs).
 - Running an equivalent program without the integrated hybrid features would require returning every intermediate measurement result and then running post-processing on the data.
 
-You can find the code sample [here](//TODO). 
+You can find the code sample [here](https://github.com/microsoft/qsharp/blob/main/samples/algorithms/GHZ.qs). 
 
 
 ### Three-qubit repetition code
 
-This sample demonstrates how to create a [three-qubit repetition code]() that can be used to detect and correct bit flip errors.
+This sample demonstrates how to create a [three-qubit repetition code](xref:microsoft.quantum.concepts.qec#example-the-three-qubit-code) that can be used to detect and correct bit flip errors.
 
 It leverages integrated hybrid computing features to count the number of times error correction was performed while the state of a logical qubit register is coherent.
 
@@ -223,11 +226,12 @@ This sample* program demonstrates an iterative phase estimation within Q#. It us
 
 The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit, which is set up in the $\ket +$ state. The controlled Oracle operator generates a phase on the $\ket 1$ state of the control qubit. This can then be read by applying an H gate to the control qubit to make the phase observable when measuring.
 
-You can find the code sample [here](//TODO). 
+You can find the code sample [here](https://github.com/microsoft/qsharp/blob/main/samples/algorithms/DotProductViaPhaseEstimation.qs). 
 
-**This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/services/advisory/management-consulting/technology-consulting/quantum-technologies.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of :::no-loc text="QIR Adaptative RI"::: targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.*
+**This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/services/advisory/management-consulting/technology-consulting/quantum-technologies.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of :::no-loc text="QIR Adaptive RI"::: targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.*
 
 
 ## Related content
 
-[Distributed hybrid computing](xref:microsoft.quantum.hybrid.distributed)
+- [Distributed hybrid computing](xref:microsoft.quantum.hybrid.distributed).
+- [Interactive quantum computing: sessions](xref:microsoft.quantum.hybrid.interactive)
