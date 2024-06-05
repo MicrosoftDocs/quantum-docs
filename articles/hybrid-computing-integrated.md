@@ -25,6 +25,36 @@ For more discussion, see:
 
 Currently, the integrated hybrid computing model in Azure Quantum is supported on [Quantinuum](xref:microsoft.quantum.providers.quantinuum) targets.
 
+## Submitting integrated hybrid jobs
+
+When submitting an integrated hybrid job, you need to configure the [target profile](xref:microsoft.quantum.target-profiles) as :::no-loc text="QIR Adaptative RI":::. The :::no-loc text="QIR Adaptative RI"::: target profile offers support for mid-circuit measurements, measurement-based control flow, and classical integer computation.
+
+You can submit integrated hybrid Q# standalone programs or Python + Q# programs to Azure Quantum. To configure the target profile for integrated hybrid jobs, follow the instructions below.
+
+### [Q# in Visual Studio Code](#tab/tabid-vscode)
+
+1. Open a Q# program in Visual Studio Code.
+1. Select **View -> Command Palette** and type **Q#: Set the Azure Quantum QIR target profile**. Press **Enter**.
+1. Select **QIR Adaptative RI**.
+
+
+### [Q# + Python](#tab/tabid-python)
+
+When using the *qsharp* Python package, use the `qsharp.init` function and set the `target_profile` parameter to `Adaptive_RI`.
+
+```python
+import qsharp
+
+qsharp.init(target_profile=qsharp.TargetProfile.Adaptive_RI)
+```
+
+You can combine multiple integrated hybrid jobs within a [session](xref:microsoft.quantum.hybrid.interactive) using the `target.open_session` function. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
+
+> [!NOTE]
+> Although sessions are available for all quantum computing hardware providers, notice that `Adaptive_RI` target profile jobs are currently supported on Quantinuum targets.
+
+***
+
 ## Supported features
 
 The following table lists the supported features for integrated hybrid computing with Quantinuum in Azure Quantum.
@@ -38,12 +68,10 @@ The following table lists the supported features for integrated hybrid computing
 | Qubit reuse | N/A |
 | Real-time classical compute| 32-bit unsigned integer arithmetic <br>Utilizes classical register resources |
 
-
-If your Q# program contains unsupported features when running integrated hybrid jobs, you will receive an warning message.
+If your Q# program contains unsupported features when running integrated hybrid jobs, you will receive a warning message in real-time.
 
 > [!NOTE]
 > You need to select the appropriate **QIR Adaptative RI** target profile to realize the correct error messages and warnings when using unsupported features.
-
 
 Copy the following code into a Q# file, and add the subsequent code snippets to see the supported features in action.
 
@@ -55,14 +83,22 @@ namespace HybridIntegrated {
 
     @EntryPoint()
     operation Main() : Result {
-        // A minimal adaptive (aka integrated hybrid) program.
         use (q0, q1) = (Qubit(), Qubit());
         H(q0);
         let r0 = MResetZ(q0);
 
-        // Copy the code snippets below to see the supported features in action.
-        // Supported features include dynamic values, classical loops, arbitrary control flow, and mid-circuit measurement.
+        //Copy here the code snippets below to see the supported features 
+        //in action.
+        //Supported features include dynamic values, classical loops, 
+        //arbitrary control flow, and mid-circuit measurement.
+
         r0
+    }
+
+    operation ApplyNPiXRotations(n : Int, q : Qubit) : Unit {
+        for _ in 0..n-1 {
+            Rx(PI(), q);
+        }
     }
 }
 ```
@@ -75,13 +111,13 @@ Quantinuum supports dynamic bools and integers, which means bools and integers t
         let dynamicInt = dynamicBool ? 0 | 1; 
 ```
 
-Even though Quantinuum supports dynamic bools and integers, it doesn't support dynamic doubles. Copy the following code to see the 
+Even though Quantinuum supports dynamic bools and integers, it doesn't support dynamic doubles. Copy the following code to see the limitations of dynamic values.
 
 ```qsharp
-        //let dynamicDouble = r0 == One ? 1. | 0.; // cannot use a dynamic double value
-        //let dynamicDouble = IntAsDouble(dynamicInt); // cannot use a dynamic double value
-        //let dynamicRoot = Sqrt(dynamicDouble); // cannot use a dynamic double value
-        //let staticRoot = Sqrt(4.0); // RELEVANT!
+        let dynamicDouble = r0 == One ? 1. | 0.; // cannot use a dynamic double value
+        let dynamicDouble = IntAsDouble(dynamicInt); // cannot use a dynamic double value
+        let dynamicRoot = Sqrt(dynamicDouble); // cannot use a dynamic double value
+        let staticRoot = Sqrt(4.0); // RELEVANT!
 ```
 
 Dynamic values can't be used in certain situations. For example, Quantinuum doesn't support dynamic arrays and loop, that is, arrays and loops whose size depends on a measurement result. Copy the following code to see the limitations of dynamic values.
@@ -108,7 +144,7 @@ Quantinuum supports classical control flow, including `if/else` branching.
         }
 ```
 
-Quantinuum supports loops with classical conditions and including `if` expressions. 
+Quantinuum supports loops with classical conditions and including `if` expressions.
 
 ```qsharp
         for idx in 0..3 {
@@ -137,54 +173,8 @@ Quantinuum supports mid-circuit measurement, that is, branching based on measure
         }
 ```
 
-
-
-
-
-## Submitting integrated hybrid jobs
-
-When submitting an integrated hybrid job, you need to configure the [target profile](xref:microsoft.quantum.target-profiles) as :::no-loc text="QIR Adaptative RI":::. The :::no-loc text="QIR Adaptative RI"::: target profile offers support for mid-circuit measurements, measurement-based control flow, and classical integer computation.
-
-You can submit integrated hybrid Q# standalone programs or Python + Q# programs to Azure Quantum. To configure the target profile for integrated hybrid jobs, follow the instructions below.
-
-### [Q# in Visual Studio Code](#tab/tabid-vscode)
-
-1. Open a Q# program in Visual Studio Code.
-1. Select **View -> Command Palette** and type **Q#: Set the Azure Quantum QIR target profile**. Press **Enter**.
-1. Select **QIR Adaptative RI**.
-
-
-### [Q# + Python](#tab/tabid-python)
-
-When using the *qsharp* Python package, use the `qsharp.init` function and set the `target_profile` parameter to `Adaptive_RI`.
-
-```python
-import qsharp
-
-qsharp.init(target_profile=qsharp.TargetProfile.Adaptive_RI)
-```
-
-```python
-import azure.quantum
-
-workspace = azure.quantum.Workspace(
-    resource_id = "", # add your resource ID
-    location = "", # add your location, for example "westus"
-)
-```
-
-```python
-target = workspace.get_targets("quantinuum.sim.h1-1e")
-```	
-
-
-
-You can combine multiple integrated hybrid jobs within a [session](xref:microsoft.quantum.hybrid.interactive) using the `target.open_session` function. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
-
 > [!NOTE]
-> Although sessions are available for all quantum computing hardware providers, notice that `Adaptive_RI` target profile jobs are currently supported on Quantinuum targets.
-
-***
+> To troubleshoot issues with integrated hybrid programs, see [Troubleshooting integrated hybrid](xref:microsoft.quantum.hybrid.troubleshooting).
 
 ## Estimating the cost of an integrated hybrid job
 
@@ -201,15 +191,9 @@ After a successful run on the emulator:
 > [!NOTE]
 > Quantinuum unrolls the entire circuit and calculates the cost on all code paths, whether they are conditionally executed or not.
 
-
-
-
 ## Integrated hybrid samples
 
-The following samples demonstrate the current feature set for integrated hybrid computing.
-
-> [!NOTE]
-> To troubleshoot issues with integrated hybrid programs, see [Troubleshooting integrated hybrid](xref:microsoft.quantum.hybrid.troubleshooting).
+The following samples can be found [Q# code samples](https://github.com/microsoft/qsharp/blob/main/samples/algorithms/). demonstrate the current feature set for integrated hybrid computing.
 
 ### GHZ state
 
@@ -222,26 +206,26 @@ Features to note about this sample:
 - You do not need to learn to program for specialized high-performance hardware running next to the QPU (such as FPGAs).
 - Running an equivalent program without the integrated hybrid features would require returning every intermediate measurement result and then running post-processing on the data.
 
+You can find the code sample [here](//TODO). 
+
+
 ### Three-qubit repetition code
 
-This sample demonstrates how to create a 3-qubit repetition code that can be used to detect and correct bit flip errors.
+This sample demonstrates how to create a [three-qubit repetition code]() that can be used to detect and correct bit flip errors.
 
 It leverages integrated hybrid computing features to count the number of times error correction was performed while the state of a logical qubit register is coherent.
 
+You can find the code sample [here](https://github.com/microsoft/qsharp/blob/main/samples/algorithms/ThreeQubitRepetitionCode.qs). 
 
 ### Iterative phase estimation
 
-
-*This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/services/advisory/management-consulting/technology-consulting/quantum-technologies.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of :::no-loc text="QIR Adaptative RI"::: targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.*
-
-
-
-This sample program demonstrates an iterative phase estimation within Q#. It uses iterative phase estimation to calculate an inner product between two 2-dimensional vectors encoded on a target qubit and an ancilla qubit. An additional control qubit is also initialized which will be the only qubit used for measurement.
+This sample* program demonstrates an iterative phase estimation within Q#. It uses iterative phase estimation to calculate an inner product between two 2-dimensional vectors encoded on a target qubit and an ancilla qubit. An additional control qubit is also initialized which will be the only qubit used for measurement.
 
 The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit, which is set up in the $\ket +$ state. The controlled Oracle operator generates a phase on the $\ket 1$ state of the control qubit. This can then be read by applying an H gate to the control qubit to make the phase observable when measuring.
 
+You can find the code sample [here](//TODO). 
 
-
+**This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/services/advisory/management-consulting/technology-consulting/quantum-technologies.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of :::no-loc text="QIR Adaptative RI"::: targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.*
 
 
 ## Related content

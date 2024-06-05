@@ -43,10 +43,10 @@ qsharp.init(target_profile=qsharp.TargetProfile.Unrestricted)
 
 ## Create and run applications for :::no-loc text="Base QIR"::: target profile
 
-:::no-loc text="Base QIR"::: profile targets can run a wide variety of Q# applications, with the constraint that they can't use results from qubit measurements to control
+:::no-loc text="Base QIR"::: target profiles can run a wide variety of Q# applications, with the constraint that they can't use results from qubit measurements to control
 the program flow. More specifically, values of type `Result` don't support equality comparison.
 
-For example, this operation can **not** be run on a :::no-loc text="Base QIR"::: target:
+For example, this operation **can't** be run on a :::no-loc text="Base QIR"::: target:
 
 ```qsharp
     operation SetQubitState(desired : Result, q : Qubit) : Result {
@@ -56,14 +56,14 @@ For example, this operation can **not** be run on a :::no-loc text="Base QIR":::
     }
 ```
 
-Trying to run this operation on a :::no-loc text="Base QIR"::: target will fail because it evaluates a comparison between two results (`desired != M(q)`)
-to control the computation flow with an `if` statement. This will be applicable to any type of [conditional branching](xref:microsoft.quantum.qsharp.conditionalbranching), such as `elif` and `else` statements. 
+If you try to run this operation on a :::no-loc text="Base QIR"::: target, the operation will fail because it evaluates a comparison between two results (`desired != M(q)`)
+to control the computation flow with an `if` statement. The same is applicable to any type of [conditional branching](xref:microsoft.quantum.qsharp.conditionalbranching), such as `elif` and `else` statements. 
 
 > [!NOTE]
 > Currently, you can't submit quantum programs that apply operations on qubits that have been measured in :::no-loc text="Base QIR"::: targets, even
 > if you don't use the results to control the program flow. That is, :::no-loc text="Base QIR"::: targets don't allow mid-circuit measurements.
 >
-> For example, the following code can **not** be run on a :::no-loc text="Base QIR"::: target:
+> For example, the following code **can't** be run on a :::no-loc text="Base QIR"::: target:
 >
 > ```qsharp
 > operation MeasureQubit(q : Qubit) : Result { 
@@ -164,8 +164,3 @@ Currently, these :::no-loc text="QIR Adaptative RI"::: targets are available for
 - **Provider:** Quantinuum
   - [Quantinuum Emulators](xref:microsoft.quantum.providers.quantinuum) (`quantinuum.sim.h1-1e`, `quantinuum.sim.h2-1e`)
   - [Quantinuum QPUs](xref:microsoft.quantum.providers.quantinuum) (`quantinuum.qpu.h1-1`, `quantinuum.qpu.h2-1`)
-
-
-## Configure the target profile
-
-When submitting a job to Azure Quantum, you need to configure the target profile. The target profile specifies the type of QPU that will run your program. 
