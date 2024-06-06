@@ -159,7 +159,7 @@ Quantinuum supports dynamic bools and integers, which means bools and integers t
         let dynamicInt = dynamicBool ? 0 | 1; 
 ```
 
-Even though Quantinuum supports dynamic bools and integers, it doesn't support dynamic doubles. Copy the following code to see the limitations of dynamic values.
+Even though Quantinuum supports dynamic bools and integers, it doesn't support dynamic values for other data types, such as double. Copy the following code to see feedback about the limitations of dynamic values.
 
 ```qsharp
         let dynamicDouble = r0 == One ? 1. | 0.; // cannot use a dynamic double value
