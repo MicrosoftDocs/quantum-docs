@@ -84,7 +84,7 @@ This example shows how to create a session with Q# inline code using a Jupyter N
 1. Select the configurations of the [target profile](xref:microsoft.quantum.target-profiles), either `Base`, `Adaptive_RI`, or `Unrestricted`.
 
     ```python
-    qsharp.init(target_profile=qsharp.TargetProfile.Base) # or qsharp.TargetProfile.Unrestricted , qsharp.TargetProfile.Adaptive_RI
+    qsharp.init(target_profile=qsharp.TargetProfile.Base) # or qsharp.TargetProfile.Adaptive_RI, qsharp.TargetProfile.Unrestricted
     ```
 
     > [!NOTE]
