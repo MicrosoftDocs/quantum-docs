@@ -135,10 +135,10 @@ namespace HybridIntegrated {
         H(q0);
         let r0 = MResetZ(q0);
 
-        //Copy here the code snippets below to see the supported features 
-        //in action.
-        //Supported features include dynamic values, classical loops, 
-        //arbitrary control flow, and mid-circuit measurement.
+        // Copy here the code snippets below to see the supported features 
+        // in action.
+        // Supported features include dynamic values, classically-bounded loops, 
+        // arbitrary control flow, and mid-circuit measurement.
 
         r0
     }
