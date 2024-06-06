@@ -145,9 +145,9 @@
     href: backend-simulators.md
 - name: Quantum providers
   items:
-  - name: Quantum computing providers
+  - name: Quantum computing providers list
     href: qc-target-list.md
-  - name: Quantum computing profile targets
+  - name: QIR target profiles
     href: quantum-computing-target-profiles.md 
   - name: Azure Quantum provider global availability
     href: provider-global-availability.md
