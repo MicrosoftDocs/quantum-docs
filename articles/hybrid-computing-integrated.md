@@ -176,8 +176,12 @@ Even dynamic values of supported typed can't be used in certain situations. For 
         for _ in 0..dynamicInt {
             Rx(PI(), q1);
         }
+        
+        // Loops with a static condition are supported.
         let staticInt = 3;
-        ApplyNPiXRotations(staticInt, q1);
+        for _ in 0..staticInt {  
+            Rx(PI(), q1);  
+        }
 ```
 
 Quantinuum supports classical control flow, including `if/else` branching. 
