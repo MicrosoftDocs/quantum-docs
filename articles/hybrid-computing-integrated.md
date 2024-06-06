@@ -99,7 +99,7 @@ Once you set QIR Adaptive RI as target profile, you can submit your Q# program a
 You can combine multiple integrated hybrid jobs within a [session](xref:microsoft.quantum.hybrid.interactive) using the `target.open_session` function. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
 
 > [!NOTE]
-> Although sessions are available for all quantum computing hardware providers, notice that `Adaptive_RI` target profile jobs are currently supported on Quantinuum targets.
+> Although sessions are available for all quantum computing hardware providers, notice that `Adaptive_RI` target profile jobs are currently supported only on Quantinuum targets.
 
 ***
 
