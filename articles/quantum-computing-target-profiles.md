@@ -103,7 +103,7 @@ Currently, these :::no-loc text="Base QIR"::: targets are available for Azure Qu
 
 ## Create and run applications for :::no-loc text="QIR Adaptive RI"::: profile targets
 
-:::no-loc text="QIR Adaptive RI"::: profile targets can run a wide variety of Q# applications, with the constraint that you can only compare values of type `Result` as part of conditions within `if` statements in operations. This profile type supposes an improvement over :::no-loc text="Base QIR"::: profiles, but still is subject to some limitations.
+:::no-loc text="QIR Adaptive RI"::: profile targets can run a wide variety of Q# applications, with some constraints. This profile type supposes an improvement over :::no-loc text="Base QIR"::: profiles, but still is subject to some limitations.
 
 :::no-loc text="QIR Adaptive RI"::: profile targets allow measurement-based conditional operations and **mid-circuit measurements**, meaning that qubits can be selectively measured at a point other than the final statement of a quantum program, and the output of the measurement can be used in other operations. Mid-circuit measurement enables multiple measurements at any point throughout the quantum program. The quantum information of the measured qubits collapses to a classical state (zero or one), but the non-measured qubits retain their quantum state.
 
