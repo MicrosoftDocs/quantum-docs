@@ -45,7 +45,7 @@ Currently, the integrated hybrid computing model in Azure Quantum is supported o
 
 ## Submitting integrated hybrid jobs
 
-When submitting an integrated hybrid job, you need to configure the [target profile](xref:microsoft.quantum.target-profiles) as :::no-loc text="QIR Adaptive RI":::. The :::no-loc text="QIR Adaptive RI"::: target profile offers support for mid-circuit measurements, measurement-based control flow, and classical integer computation.
+When submitting an integrated hybrid job, you need to configure the [target profile](xref:microsoft.quantum.target-profiles) as :::no-loc text="QIR Adaptive RI":::. The :::no-loc text="QIR Adaptive RI"::: target profile offers support for mid-circuit measurements, measurement-based control flow, qubit reset, and classical integer computation.
 
 You can submit integrated hybrid Q# standalone programs or Python + Q# programs to Azure Quantum. To configure the target profile for integrated hybrid jobs, follow the instructions below.
 
