@@ -25,8 +25,8 @@ Quantum devices are still an emerging technology, and not all of them can run al
 
 ## Create and run applications for :::no-loc text="Unrestricted"::: target profile
 
-:::no-loc text="Unrestricted"::: target profiles can run any QIR program, meaning you can write Q# programs without functionality restrictions. Azure Quantum doesn't provide
-any target with this profile yet. However, you can run :::no-loc text="Unrestricted"::: Q# programs on simulators provided by the QDK.
+:::no-loc text="Unrestricted"::: target profiles can run any program, meaning you can write Q# programs without functionality restrictions. Azure Quantum doesn't provide
+any target with this profile. However, you can run :::no-loc text="Unrestricted"::: Q# programs on simulators provided by the QDK.
 
 ### Configure :::no-loc text="Unrestricted"::: target profile
 
