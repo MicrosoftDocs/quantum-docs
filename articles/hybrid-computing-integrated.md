@@ -36,9 +36,6 @@ For more discussion, see:
         pip install --upgrade azure-quantum qsharp
         ```
 
-
-
-
 ## Supported targets
 
 Currently, the integrated hybrid computing model in Azure Quantum is supported on [Quantinuum](xref:microsoft.quantum.providers.quantinuum) targets.
@@ -66,7 +63,7 @@ Once you set QIR Adaptive RI as target profile, you can submit your Q# program a
 1. Select any Quantinuum available target, for example **quantinuum.sim.h1-1e**. 
 1. Select the play icon to the right of the target name to start submitting the current Q# program.
 1. Add a name to identify the job, and the number of shots.
-1. Press **Enter** to submit the job. The job status will display at the bottom of the screen.
+1. Press **Enter** to submit the job. The job status displays at the bottom of the screen.
 1. Expand **Jobs** and hover over your job, which displays the times and status of your job.
 
 ### [Q# + Python](#tab/tabid-python)
@@ -116,7 +113,7 @@ The following table lists the supported features for integrated hybrid computing
 | Qubit reuse | N/A |
 | Real-time classical compute| 64-bit unsigned integer arithmetic <br>Utilizes classical register resources |
 
-If your Q# program contains unsupported features when running integrated hybrid jobs, you will receive an error message at design-time.
+If your Q# program contains unsupported features when running integrated hybrid jobs, you receive an error message at design-time.
 
 > [!NOTE]
 > You need to select the appropriate **QIR Adaptive RI** target profile to obtain appropriate feedback when using Q# features that the target does not support.
@@ -250,11 +247,11 @@ After a successful run on the emulator:
 
 ## Integrated hybrid samples
 
-The following samples can be found [Q# code samples](https://github.com/microsoft/qsharp/blob/main/samples/). demonstrate the current feature set for integrated hybrid computing.
+The following samples can be found in [Q# code samples repository](https://github.com/microsoft/qsharp/blob/main/samples/). They demonstrate the current feature set for integrated hybrid computing.
 
 ### GHZ state
 
-In this sample, you will discover how to blend classical and quantum instructions in the same program, all fully processed by the quantum computing backend.
+In this sample, you discover how to blend classical and quantum instructions in the same program, all fully processed by the quantum computing backend.
 
 Features to note about this sample:
 
@@ -264,7 +261,6 @@ Features to note about this sample:
 - Running an equivalent program without the integrated hybrid features would require returning every intermediate measurement result and then running post-processing on the data.
 
 You can find the code sample [here](https://github.com/microsoft/qsharp/blob/main/samples/algorithms/GHZ.qs). 
-
 
 ### Three-qubit repetition code
 
@@ -276,7 +272,7 @@ You can find the code sample [here](https://github.com/microsoft/qsharp/blob/mai
 
 ### Iterative phase estimation
 
-This sample* program demonstrates an iterative phase estimation within Q#. It uses iterative phase estimation to calculate an inner product between two 2-dimensional vectors encoded on a target qubit and an ancilla qubit. An additional control qubit is also initialized which will be the only qubit used for measurement.
+This sample* program demonstrates an iterative phase estimation within Q#. It uses iterative phase estimation to calculate an inner product between two 2-dimensional vectors encoded on a target qubit and an ancilla qubit. An additional control qubit is also initialized which is the only qubit used for measurement.
 
 The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit, which is set up in the $\ket +$ state. The controlled Oracle operator generates a phase on the $\ket 1$ state of the control qubit. This can then be read by applying an H gate to the control qubit to make the phase observable when measuring.
 
