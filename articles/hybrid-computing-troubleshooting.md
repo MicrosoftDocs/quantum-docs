@@ -1,11 +1,11 @@
 ---
 author: bradben
 description: Understand the known issues of integrated hybrid programs with Q# and the QDK and supported hardware.
-ms.date: 03/23/2023
+ms.date: 06/06/2024
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: conceptual
+ms.topic: troubleshooting
 no-loc: ['Q#', '$$v', Quantum Intermediate Representation, target, targets]
 title: Known issues for integrated hybrid computing
 uid: microsoft.quantum.hybrid.troubleshooting
@@ -24,16 +24,8 @@ The following table lists the currently known limitations and restrictions of th
 
 | Item | Notes |
 | --- | --- |
-| **Supported libraries** | As of this release, not all libraries in the QDK support integrated hybrid programs. |
-| **Compiler warnings** | By default, target-specific compiler errors are converted to warnings.  Be sure to validate your code on the simulator, emulator, or validator provided by the targeted hardware provider to detect issues prior to running on quantum hardware. |
-| **Composite data types** | The use of composite data types, such as structure types, tuples, and sequential types, including arrays, isn't currently supported with integrated hybrid programs. This limitation also precludes the use of such data structures for callable values. Additionally, integrated programs can't use subroutines as first class values, and the use of function types is limited to globally declared [LLVM](https://llvm.org/) functions that may be called as part of program execution. |
-| **Unbounded loops or recursions** | Unbounded loops, and direct or indirect function recursions are out of scope for this release. |
-| **Dynamic qubit allocations and access** | Runtime functions for qubit allocation and release are not available, and the lack of support for local variables and composite data types prevents any qubit aliasing. |
-| **Partial applications** | Using a partial application to define a callable visible at a namespace scope is not supported. |
-| **Arrays** | Use ranges rather than arrays, when possible. For small loops where performance isn't a concern, the user may prefer to use ranges (contiguous memory) to avoid going outside of allocated memory. |
-| **Integer support** | Current Quantinuum hardware support for integers is limited to 32-bit unsigned values, even though Q# integers are treated as 64-bit signed in the code. This limitation can affect some bitwise operations and comparisons. It's recommended to use positive integer values for integrated hybrid programs. |
-| **Returning constant values** | Programs that return constant `Result` values (i.e., `Zero` or `One`) are not supported. |
-| **Classical register limitations** | Each supported target has hardware-specific classical register counts, and your compilation may fail if the underlying program uses more classical registers than are available. These failures usually occur with loop structures. |
+| **Target-specific feedback** | The QDK will provide feedback when Q# language features are not supported for the selected target. If you want to know more details about the target-specific errors you might encounter, please visit the [QIR wiki page](https://github.com/microsoft/qsharp/wiki/QIR).|
+| **Classical register limitations** | Each supported target has hardware-specific classical register counts, and your compilation may fail if the underlying program uses more classical registers than are available. These failures usually occur with loop structures.|
 
 ## Error messages and troubleshooting
 

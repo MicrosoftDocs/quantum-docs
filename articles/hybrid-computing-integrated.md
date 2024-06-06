@@ -21,6 +21,7 @@ For more discussion, see:
 - [Granade & Weibe, "Using Random Walks for Iterative Phase Estimation"](https://arxiv.org/pdf/2208.04526.pdf).
 - [Lubinski, et al., "Advancing Hybrid Quantum–Classical Computation with Real-Time Execution"](https://arxiv.org/pdf/2206.12950.pdf)
 
+
 ## Prerequisites
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
@@ -113,7 +114,7 @@ The following table lists the supported features for integrated hybrid computing
 | Qubit reuse | N/A |
 | Real-time classical compute| 64-bit unsigned integer arithmetic <br>Utilizes classical register resources |
 
-If your Q# program contains unsupported features when running integrated hybrid jobs, you receive an error message at design-time.
+The QDK provides target-specific feedback when Q# language features aren't supported for the selected target. If your Q# program contains unsupported features when running integrated hybrid jobs, you receive an error message at design-time. For more information, see the [QIR wiki page](https://github.com/microsoft/qsharp/wiki/QIR). 
 
 > [!NOTE]
 > You need to select the appropriate **QIR Adaptive RI** target profile to obtain appropriate feedback when using Q# features that the target does not support.
