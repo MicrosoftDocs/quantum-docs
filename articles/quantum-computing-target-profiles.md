@@ -60,18 +60,6 @@ For example, this operation **can't** be run on a :::no-loc text="QIR Base"::: t
 If you try to run this operation on a :::no-loc text="QIR Base"::: target, the operation will fail because it does a comparison using a measurement result (`M(q) == Zero`)
 to control the computation flow with an `if` statement. The same is applicable to any type of [conditional branching](xref:microsoft.quantum.qsharp.conditionalbranching), such as `elif` and `else` statements. 
 
-> [!NOTE]
-> Currently, you can't submit quantum programs that apply operations on qubits that have been measured in :::no-loc text="QIR Base"::: targets, even
-> if you don't use the results to control the program flow. That is, :::no-loc text="QIR Base"::: targets don't allow mid-circuit measurements.
->
-> For example, the following code **can't** be run on a :::no-loc text="QIR Base"::: target:
->
-> ```qsharp
->    operation AllocateMeasureAndCompare() : Bool {
->        use q = Qubit();
->        return M(q) == Zero;
->    }
-> ```
 
 ### Configure :::no-loc text="QIR Base"::: target profile
 

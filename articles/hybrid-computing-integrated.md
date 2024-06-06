@@ -111,7 +111,7 @@ The following table lists the supported features for integrated hybrid computing
 | Loops | Classically-bounded loops only |
 | Arbitrary control flow | Use of if/else branching  |
 | Mid-circuit measurement | Utilizes classical register resources |
-| Qubit reuse | N/A |
+| Qubit reuse | Supported |
 | Real-time classical compute| 64-bit unsigned integer arithmetic <br>Utilizes classical register resources |
 
 The QDK provides target-specific feedback when Q# language features aren't supported for the selected target. If your Q# program contains unsupported features when running integrated hybrid jobs, you receive an error message at design-time. For more information, see the [QIR wiki page](https://github.com/microsoft/qsharp/wiki/QIR). 
@@ -252,18 +252,6 @@ After a successful run on the emulator:
 
 The following samples can be found in [Q# code samples repository](https://github.com/microsoft/qsharp/blob/main/samples/). They demonstrate the current feature set for integrated hybrid computing.
 
-### GHZ state
-
-In this sample, you discover how to blend classical and quantum instructions in the same program, all fully processed by the quantum computing backend.
-
-Features to note about this sample:
-
-- The loop and qubit measurements happen while the qubits remain coherent.
-- The routine mixes classical and quantum compute operations.
-- You do not need to learn to program for specialized high-performance hardware running next to the QPU (such as FPGAs).
-- Running an equivalent program without the integrated hybrid features would require returning every intermediate measurement result and then running post-processing on the data.
-
-You can find the code sample [here](https://github.com/microsoft/qsharp/blob/main/samples/algorithms/GHZ.qs). 
 
 ### Three-qubit repetition code
 
