@@ -67,7 +67,7 @@ There are many different types of QEC codes, each with its own properties and ad
 
 ## Example: The three-qubit code
 
-The three-qubit error correction code is a simple repetition code that can detect and correct one bit flip errors. It encodes a single logical qubit into three physical qubits by repeating the qubit three times.
+The three-qubit error correction code is a simple repetition code that can detect and correct one bit flip error. It encodes a single logical qubit into three physical qubits by repeating the qubit three times.
 
 > [!TIP]
 > Check out the [Q# code sample for the three-qubit code](https://github.com/microsoft/qsharp/blob/main/samples/algorithms/ThreeQubitRepetitionCode.qs).
