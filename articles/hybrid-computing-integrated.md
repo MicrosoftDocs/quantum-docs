@@ -119,7 +119,7 @@ The following table lists the supported features for integrated hybrid computing
 If your Q# program contains unsupported features when running integrated hybrid jobs, you will receive an error message at design-time.
 
 > [!NOTE]
-> You need to select the appropriate **QIR Adaptive RI** target profile to realize the correct error messages and warnings when using unsupported features.
+> You need to select the appropriate **QIR Adaptive RI** target profile to obtain appropriate feedback when using Q# features that the target does not support.
 
 Copy the following code into a Q# file, and add the subsequent code snippets to see the supported features in action.
 
