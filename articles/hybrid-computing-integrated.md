@@ -158,6 +158,7 @@ Quantinuum supports dynamic bools and integers, however, it doesn't support dyna
 
 ```qsharp
         let dynamicDouble = r0 == One ? 1. | 0.; // cannot use a dynamic double value
+        let dynamicInt = r0 == One ? 1 | 0;
         let dynamicDouble = IntAsDouble(dynamicInt); // cannot use a dynamic double value
         let dynamicRoot = Sqrt(dynamicDouble); // cannot use a dynamic double value
 ```
