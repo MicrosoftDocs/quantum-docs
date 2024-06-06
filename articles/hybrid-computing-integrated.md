@@ -151,7 +151,7 @@ namespace HybridIntegrated {
 }
 ```
 
-Quantinuum supports dynamic bools and integers, which means bools and integers that depend on measurement results. Note that `r0` is a `Result` type that can be used as a dynamic bool.
+Quantinuum supports dynamic bools and integers, which means bools and integers that depend on measurement results. Note that `r0` is a `Result` type that can be used to generate dynamic bool and integer values.
 
 ```qsharp
         let dynamicBool = r0 != Zero; 
