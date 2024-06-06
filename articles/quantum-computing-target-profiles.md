@@ -21,7 +21,7 @@ Quantum devices are still an emerging technology, and not all of them can run al
 
 - **:::no-loc text="Unrestricted":::**: This profile can run any QIR program within the limits of memory for simulators or the number of qubits for physical quantum computers.
 - **:::no-loc text="QIR base":::**: This profile can run any Q# program that doesn't require the use of the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, values of type `Result` don't support equality comparison.
-- **:::no-loc text="QIR Adaptive RI":::**: This profile has limited ability to use the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, you can compare values of type `Result` as part of conditions within `if` statements in operations, allowing mid-circuit measurement. The corresponding conditional blocks might not contain `return` or `set` statements.
+- **:::no-loc text="QIR Adaptive RI":::**: This profile has limited ability to use the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, you can compare values of type `Result` as part of conditions within `if` statements in operations, allowing mid-circuit measurement.
 
 ## Create and run applications for :::no-loc text="Unrestricted"::: target profile
 
