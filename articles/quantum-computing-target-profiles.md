@@ -56,7 +56,7 @@ For example, this operation **can't** be run on a :::no-loc text="Base QIR"::: t
     }
 ```
 
-If you try to run this operation on a :::no-loc text="Base QIR"::: target, the operation will fail because it evaluates a comparison between two results (`desired != M(q)`)
+If you try to run this operation on a :::no-loc text="Base QIR"::: target, the operation will fail because it does a comparison using a measurement result (`M(q) == Zero`)
 to control the computation flow with an `if` statement. The same is applicable to any type of [conditional branching](xref:microsoft.quantum.qsharp.conditionalbranching), such as `elif` and `else` statements. 
 
 > [!NOTE]
