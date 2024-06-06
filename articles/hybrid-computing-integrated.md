@@ -114,7 +114,7 @@ The following table lists the supported features for integrated hybrid computing
 | Arbitrary control flow | Use of if/else branching  |
 | Mid-circuit measurement | Utilizes classical register resources |
 | Qubit reuse | N/A |
-| Real-time classical compute| 32-bit unsigned integer arithmetic <br>Utilizes classical register resources |
+| Real-time classical compute| 64-bit unsigned integer arithmetic <br>Utilizes classical register resources |
 
 If your Q# program contains unsupported features when running integrated hybrid jobs, you will receive an error message at design-time.
 
