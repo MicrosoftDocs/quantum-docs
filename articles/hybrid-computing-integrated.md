@@ -173,6 +173,7 @@ Even though dynamic values are not supported for some data types, those data typ
 Even dynamic values of supported typed can't be used in certain situations. For example, Quantinuum doesn't support dynamic arrays, that is, arrays whose size depends on a measurement result. Quantinuum doesn't support dynamically-bounded loops either. Copy the following code to see the limitations of dynamic values.
 
 ```qsharp
+        let dynamicInt = r0 == Zero ? 2 | 4;
         let dynamicallySizedArray = [0, size = dynamicInt]; // cannot use a dynamically-sized array
         let staticallySizedArray = [0, size = 10];
         // Loops with a dynamic condition are not supported by Quantinuum.
