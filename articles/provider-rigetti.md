@@ -6,7 +6,7 @@ ms.date: 02/06/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: conceptual
-no-loc: [Quantum Intermediate Representation, Base QIR, target, targets]
+no-loc: [Quantum Intermediate Representation, QIR Base, target, targets]
 title: Rigetti provider
 uid: microsoft.quantum.providers.rigetti
 ---
@@ -30,7 +30,7 @@ The Rigetti provider makes the following targets available:
 > [!NOTE]
 > Rigetti simulators and hardware targets do not support Cirq programs. 
 
-Rigetti's targets correspond to a **:::no-loc text="Base QIR":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets). 
+Rigetti's targets correspond to a **:::no-loc text="QIR Base":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets). 
 
 ## Simulators
 
@@ -39,7 +39,7 @@ The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.h
 - Job Type: `Simulation`
 - Data Formats: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.sim.qvm`
-- Target Execution Profile: [:::no-loc text="Base QIR":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets)
+- Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets)
 - Pricing: Free ($0)
 
 ## Quantum computers
@@ -53,7 +53,7 @@ A multi-chip 84-qubit processor offering a 2.5X performance improvement over oth
 - Job Type: `Quantum Program`
 - Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.qpu.ankaa-2`
-- Target Execution Profile: [:::no-loc text="Base QIR":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets)
+- Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets)
 
 ## Pricing
 

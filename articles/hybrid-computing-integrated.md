@@ -16,13 +16,28 @@ uid: microsoft.quantum.hybrid.integrated
 
 Integrated hybrid computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Using qubit reuse techniques, larger programs can run on machines utilizing a smaller number of qubits.
 
-In this article, 
-
-
 For more discussion, see:
 
 - [Granade & Weibe, "Using Random Walks for Iterative Phase Estimation"](https://arxiv.org/pdf/2208.04526.pdf).
 - [Lubinski, et al., "Advancing Hybrid Quantum–Classical Computation with Real-Time Execution"](https://arxiv.org/pdf/2206.12950.pdf)
+
+## Prerequisites
+
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
+- An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- If you want to submit Q# standalone programs, you need the following prerequisites:
+    - [Visual Studio Code](https://code.visualstudio.com/download) with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension installed.
+    - The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension.
+- If you wan to submit Python + Q# programs, you need the following prerequisites:
+    - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
+    - The Azure Quantum `azure-quantum` and `qsharp` packages.
+    
+        ```bash
+        pip install --upgrade azure-quantum qsharp
+        ```
+
+
+
 
 ## Supported targets
 
@@ -36,21 +51,51 @@ You can submit integrated hybrid Q# standalone programs or Python + Q# programs 
 
 ### [Q# in Visual Studio Code](#tab/tabid-vscode)
 
+To configure the target profile for integrated hybrid jobs in Visual Studio Code, follow these steps:
+
 1. Open a Q# program in Visual Studio Code.
 1. Select **View -> Command Palette** and type **Q#: Set the Azure Quantum QIR target profile**. Press **Enter**.
 1. Select **QIR Adaptive RI**.
 
+Once you set QIR Adaptive RI as target profile, you can submit your Q# program as integrated hybrid job to Quantinuum.
+
+1. Select **View -> Command Palette** and type **Q#: Connect to an Azure Quantum workspace**. Press **Enter**.
+1. Select **Azure account**, and follow the prompts to connect to your preferred directory, subscription, and workspace.
+1. Once you are connected, in the **Explorer** pane, expand **Quantum Workspaces**.
+1. Expand your workspace and expand the **Quantinuum** provider.
+1. Select any Quantinuum available target, for example **quantinuum.sim.h1-1e**. 
+1. Select the play icon to the right of the target name to start submitting the current Q# program.
+1. Add a name to identify the job, and the number of shots.
+1. Press **Enter** to submit the job. The job status will display at the bottom of the screen.
+1. Expand **Jobs** and hover over your job, which displays the times and status of your job.
 
 ### [Q# + Python](#tab/tabid-python)
 
-When using the *qsharp* Python package, use the `qsharp.init` function and set the `target_profile` parameter to `Adaptive_RI`.
+1. When using the *qsharp* Python package, use the `qsharp.init` function and set the `target_profile` parameter to `Adaptive_RI`.
 
-```python
-import qsharp
+    ```python
+    import qsharp
+    
+    qsharp.init(target_profile=qsharp.TargetProfile.Adaptive_RI)
+    ```
 
-qsharp.init(target_profile=qsharp.TargetProfile.Adaptive_RI)
-```
+1. Connect to your Azure Quantum workspace.
 
+    ```python
+    import azure.quantum
+    
+    workspace = azure.quantum.Workspace(
+        resource_id = "", # add your resource ID
+        location = "", # add your location, for example "westus"
+    )
+    ```
+
+1. Set the `target` parameter to the Quantinuum target you want to use. For example, to use the `quantinuum.sim.h1-1e` target: 
+
+    ```python
+    target = workspace.get_targets("quantinuum.sim.h1-1e")
+    ```
+    
 You can combine multiple integrated hybrid jobs within a [session](xref:microsoft.quantum.hybrid.interactive) using the `target.open_session` function. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
 
 > [!NOTE]
