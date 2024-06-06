@@ -22,7 +22,7 @@ IonQ provides a GPU-accelerated idealized simulator supporting up to 29 qubits, 
 - Job type: `Simulation`
 - Data Format: `ionq.circuit.v1`
 - Target ID: `ionq.simulator`
-- Target Execution Profile: Base QIR
+- Target Execution Profile: QIR Base
 
 For more information, see the [IonQ provider](xref:microsoft.quantum.providers.ionq) page.
 
