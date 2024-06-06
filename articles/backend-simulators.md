@@ -73,7 +73,7 @@ Riggeti provides their Quantum Virtual Machine (QVM), an open-source simulator f
 - Job Type: `Simulation`
 - Data Formats: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.sim.qvm`
-- Target Execution Profile: Base QIR
+- Target Execution Profile: QIR Base
 - Pricing: Free ($0)
 
 For more information, see the [Rigetti provider](xref:microsoft.quantum.providers.rigetti) page.
