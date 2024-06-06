@@ -6,7 +6,7 @@ ms.date: 09/06/2023
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: conceptual
-no-loc: [No control flow, target, targets]
+no-loc: [QIR Base, target, targets]
 title: IonQ quantum computing provider
 uid: microsoft.quantum.providers.ionq
 ---
@@ -30,7 +30,7 @@ The following targets are available from this provider:
 |[IonQ Aria 2](#ionq-aria-quantum-computer) |	ionq.qpu.aria-2	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
 |[IonQ Forte](#ionq-forte-quantum-computer) |	ionq.qpu.forte	|32 qubits	|IonQ's Forte trapped-ion quantum computer. Available in Private Preview only.|
 
-IonQ's targets correspond to a **:::no-loc text="No Control Flow":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). 
+IonQ's targets correspond to a **:::no-loc text="QIR Base":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets). 
 
 ## Quantum simulator
 
@@ -39,7 +39,7 @@ GPU-accelerated idealized simulator supporting up to 29 qubits, using the same s
 - Job type: `Simulation`
 - Data Format: `ionq.circuit.v1`
 - Target ID: `ionq.simulator`
-- Target Execution Profile: [:::no-loc text="No Control Flow":::](xref:microsoft.quantum.target-profiles)
+- Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles)
 
 ## IonQ Harmony quantum computer
 
@@ -48,7 +48,7 @@ The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigur
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
 - Target ID: `ionq.qpu`
-- Target Execution Profile: [:::no-loc text="No Control Flow":::](xref:microsoft.quantum.target-profiles)
+- Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles)
 
 | Parameter Name | Type     | Required | Description |
 |----------------|----------|----------|-------------|
@@ -87,7 +87,7 @@ IonQ Aria is the flagship of IonQ's trapped-ion quantum computers, with a 25-qub
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
 - Target ID: `ionq.qpu.aria-1`, `ionq.qpu.aria-2`
-- Target Execution Profile: [:::no-loc text="No Control Flow":::](xref:microsoft.quantum.target-profiles)
+- Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles)
 
 | Parameter Name | Type     | Required | Description |
 |----------------|----------|----------|-------------|
@@ -124,7 +124,7 @@ IonQ Forte is IonQ's highest-performing, commercially available trapped-ion quan
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
 - Target ID: `ionq.qpu.forte`
-- Target Execution Profile: [:::no-loc text="No Control Flow":::](xref:microsoft.quantum.target-profiles)
+- Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles)
 
 | Parameter Name | Type     | Required | Description |
 |----------------|----------|----------|-------------|
@@ -134,23 +134,7 @@ IonQ Forte is IonQ's highest-performing, commercially available trapped-ion quan
 
 In Q#, the output of a quantum measurement is a value of type `Result`, which can only take the values `Zero` and `One`. When you define a Q# operation, it can only be submitted to IonQ hardware if the return type is a collection of `Result`s, that is, if the output of the operation is the result of a quantum measurement. The reason for this is because IonQ builds a histogram from the returned values, so it restricts the return type to `Result` to simplify creating this histogram.
 
-IonQ's targets correspond to the [:::no-loc text="No Control Flow"::: profile](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). This profile can't run quantum operations that require the use of the results from qubit measurements to control the program flow. 
-
-> [!NOTE]
-> Currently, you can't submit quantum programs that apply operations on qubits that have been measured in :::no-loc text="No Control Flow"::: targets, even
-> if you don't use the results to control the program flow. That is, :::no-loc text="No Control Flow"::: targets don't allow mid-circuit measurements.
->
-> For example, the following code can **not** be run on a :::no-loc text="No Control Flow"::: target:
-> ```qsharp
-> operation MeasureQubit(q : Qubit) : Result { 
->    return M(q); 
-> }
->
-> operation SampleMeasuredQubit(q : Qubit) : Result {
->     H(MeasureQubit(q));
->     return M(MeasureQubit(q));
-> }
-> ```
+IonQ's targets correspond to the [:::no-loc text="QIR Base"::: profile](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). This profile can't run quantum operations that require the use of the results from qubit measurements to control the program flow. 
 
 ## Output format
 

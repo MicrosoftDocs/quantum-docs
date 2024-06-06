@@ -81,11 +81,14 @@ This example shows how to create a session with Q# inline code using a Jupyter N
     target = workspace.get_targets("ionq.simulator")
     ```	
 
-1. Select the configurations of your target profile, either `Base` or `Unrestricted`.
+1. Select the configurations of the [target profile](xref:microsoft.quantum.target-profiles), either `Base`, `Adaptive_RI`, or `Unrestricted`.
 
     ```python
-    qsharp.init(target_profile=qsharp.TargetProfile.Base) # or qsharp.TargetProfile.Unrestricted
+    qsharp.init(target_profile=qsharp.TargetProfile.Base) # or qsharp.TargetProfile.Adaptive_RI, qsharp.TargetProfile.Unrestricted
     ```
+
+    > [!NOTE]
+    > `Adaptive_RI` target profile jobs are currently supported on Quantinuum targets. For more information, see [Integrated hybrid quantum computing](xref:microsoft.quantum.hybrid.integrated).
 
 1. Write your Q# program. For example, the following Q# program generates a random bit. To illustrate the use of input arguments, this program takes an integer, `n`, and an array of angles, `angle`, as input.
 
