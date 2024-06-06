@@ -22,7 +22,7 @@ IonQ provides a GPU-accelerated idealized simulator supporting up to 29 qubits, 
 - Job type: `Simulation`
 - Data Format: `ionq.circuit.v1`
 - Target ID: `ionq.simulator`
-- Target Execution Profile: No Control Flow
+- Target Execution Profile: QIR Base
 
 For more information, see the [IonQ provider](xref:microsoft.quantum.providers.ionq) page.
 
@@ -50,7 +50,7 @@ Quantinuum provides two emulator tools:
 - Target ID:
   - H1-1 Syntax Checker: `quantinuum.sim.h1-1sc`
   - H2-1 Syntax Checker: `quantinuum.sim.h2-1sc`
-- Target Execution Profile: Basic Measurement Feedback
+- Target Execution Profile: QIR Adaptive RI
 - Pricing: Free ($0)
 
 **Emulators** - These tools contain a detailed physical model and realistic noise model of the actual System Model H1 and H2 hardware. There are emulators for each machine - the H1-1 and H2-1 - along with cloud-based H-Series Emulator.
@@ -60,7 +60,7 @@ Quantinuum provides two emulator tools:
 - Target ID:
   - H1-1 Emulator: `quantinuum.sim.h1-1e`
   - H2-1 Emulator: `quantinuum.sim.h2-1e`
-- Target Execution Profile: Basic Measurement Feedback
+- Target Execution Profile: QIR Adaptive RI
 
 The H-Series Emulator is a System Model H1-based emulator available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding) page. For more information, see the [H-Series Emulator](xref:microsoft.quantum.providers.quantinuum#h-series-emulator-cloud-based) page.
 
@@ -73,7 +73,7 @@ Riggeti provides their Quantum Virtual Machine (QVM), an open-source simulator f
 - Job Type: `Simulation`
 - Data Formats: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.sim.qvm`
-- Target Execution Profile: No Control Flow
+- Target Execution Profile: QIR Base
 - Pricing: Free ($0)
 
 For more information, see the [Rigetti provider](xref:microsoft.quantum.providers.rigetti) page.
