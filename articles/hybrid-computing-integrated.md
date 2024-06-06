@@ -172,7 +172,10 @@ Even dynamic values of supported typed can't be used in certain situations. For 
 ```qsharp
         let dynamicallySizedArray = [0, size = dynamicInt]; // cannot use a dynamically-sized array
         let staticallySizedArray = [0, size = 10];
-        ApplyNPiXRotations(dynamicInt, q1); // cannot have a loop with a dynamic condition
+        // Loops with a dynamic condition are not supported by Quantinuum.
+        for _ in 0..dynamicInt {
+            Rx(PI(), q1);
+        }
         let staticInt = 3;
         ApplyNPiXRotations(staticInt, q1);
 ```
