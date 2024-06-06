@@ -109,7 +109,7 @@ The following table lists the supported features for integrated hybrid computing
 
 |Supported feature| Notes |
 |---|---|
-| Dynamics values| Bools and integers only|
+| Dynamics values| Bools and integers whose value depend on a measurement result|
 | Classical loops | Bounded loops only |
 | Arbitrary control flow | Use of if/else branching  |
 | Mid-circuit measurement | Utilizes classical register resources |
