@@ -116,7 +116,7 @@ The following table lists the supported features for integrated hybrid computing
 | Qubit reuse | N/A |
 | Real-time classical compute| 32-bit unsigned integer arithmetic <br>Utilizes classical register resources |
 
-If your Q# program contains unsupported features when running integrated hybrid jobs, you will receive a warning message in real-time.
+If your Q# program contains unsupported features when running integrated hybrid jobs, you will receive an error message at design-time.
 
 > [!NOTE]
 > You need to select the appropriate **QIR Adaptive RI** target profile to realize the correct error messages and warnings when using unsupported features.
