@@ -184,7 +184,7 @@ Even dynamic values of supported typed can't be used in certain situations. For 
         }
 ```
 
-Quantinuum supports classical control flow, including `if/else` branching. 
+Quantinuum supports control flow, including `if/else` branching, using both static and dynamic conditions. Branching on dynamic conditions is also known as branching based on measurement results.
 
 ```qsharp
         let i = 5;
