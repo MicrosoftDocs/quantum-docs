@@ -143,11 +143,6 @@ namespace HybridIntegrated {
         r0
     }
 
-    operation ApplyNPiXRotations(n : Int, q : Qubit) : Unit {
-        for _ in 0..n-1 {
-            Rx(PI(), q);
-        }
-    }
 }
 ```
 
@@ -159,12 +154,19 @@ Quantinuum supports dynamic bools and integers, which means bools and integers t
         let dynamicInt = dynamicBool ? 0 | 1; 
 ```
 
-Even though Quantinuum supports dynamic bools and integers, it doesn't support dynamic values for other data types, such as double. Copy the following code to see feedback about the limitations of dynamic values.
+Quantinuum supports dynamic bools and integers, however, it doesn't support dynamic values for other data types, such as double. Copy the following code to see feedback about the limitations of dynamic values.
 
 ```qsharp
         let dynamicDouble = r0 == One ? 1. | 0.; // cannot use a dynamic double value
         let dynamicDouble = IntAsDouble(dynamicInt); // cannot use a dynamic double value
         let dynamicRoot = Sqrt(dynamicDouble); // cannot use a dynamic double value
+```
+
+Even though dynamic values are not supported for some data types, those data types can still be used with static values.
+
+```qsharp
+    let staticRoot = Sqrt(4.0);
+    let staticBigInt = IntAsBigInt(2);
 ```
 
 Even dynamic values of supported typed can't be used in certain situations. For example, Quantinuum doesn't support dynamic arrays, that is, arrays whose size depends on a measurement result. Quantinuum doesn't support dynamically-bounded loops either. Copy the following code to see the limitations of dynamic values.
@@ -187,11 +189,12 @@ Even dynamic values of supported typed can't be used in certain situations. For 
 Quantinuum supports control flow, including `if/else` branching, using both static and dynamic conditions. Branching on dynamic conditions is also known as branching based on measurement results.
 
 ```qsharp
-        let i = 5;
-        if i > 0 {
+        let dynamicInt = r0 == Zero ? 0 | 1; 
+        if dynamicInt > 0 {
             X(q1);
         }
-        if i > 5 {
+        let staticInt = 1;
+        if staticInt > 5 {
             Y(q1);
         } else {
             Z(q1);
