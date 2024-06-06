@@ -165,7 +165,6 @@ Even though Quantinuum supports dynamic bools and integers, it doesn't support d
         let dynamicDouble = r0 == One ? 1. | 0.; // cannot use a dynamic double value
         let dynamicDouble = IntAsDouble(dynamicInt); // cannot use a dynamic double value
         let dynamicRoot = Sqrt(dynamicDouble); // cannot use a dynamic double value
-        let staticRoot = Sqrt(4.0); // RELEVANT!
 ```
 
 Dynamic values can't be used in certain situations. For example, Quantinuum doesn't support dynamic arrays and loop, that is, arrays and loops whose size depends on a measurement result. Copy the following code to see the limitations of dynamic values.
