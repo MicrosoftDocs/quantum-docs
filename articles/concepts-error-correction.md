@@ -5,7 +5,7 @@ ms.author: sonialopez
 ms.date: 05/23/2024
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: concept
+ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 title: Quantum Error Correction Codes
 uid: microsoft.quantum.concepts.qec
@@ -67,7 +67,10 @@ There are many different types of QEC codes, each with its own properties and ad
 
 ## Example: The three-qubit code
 
-The three-qubit error correction code is a simple repetition code that can correct bit flips errors. It encodes a single logical qubit into three physical qubits by repeating the qubit three times.
+The three-qubit error correction code is a simple repetition code that can detect and correct one bit flip error. It encodes a single logical qubit into three physical qubits by repeating the qubit three times.
+
+> [!TIP]
+> Check out the [Q# code sample for the three-qubit code](https://github.com/microsoft/qsharp/blob/main/samples/algorithms/ThreeQubitRepetitionCode.qs).
 
 Imagine you want to send an arbitrary single qubit $\ket{\phi}= \alpha\ket{0} + \beta \ket{1}$. To avoid errors, you encode the basis states $\ket{0}$ and $\ket{1}$ into a joint state of three qubits. The two logical basis states are $\ket{0_L} = \ket{000}$ and $\ket{1_L} = \ket{111}$.
 
