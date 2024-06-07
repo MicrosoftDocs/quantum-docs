@@ -5,21 +5,18 @@ ms.date: 05/20/2024
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: concept
+ms.topic: reference
 title: Q# features in Visual Studio Code
-uid: microsoft.quantum.how-to.migrate-code
+uid: microsoft.quantum.reference.vscode
 #customer intent: As a quantum programmer, I want to know how to access the Q# related features in VS Code.  
 ---
 
 # Quick reference for the Azure Quantum Development Kit extension for Visual Studio Code
 
-The Azure Quantum Development Kit leverages all the standard functionality of Visual Studio Code, along with Q#-specific features when working with *.qs* files. This article is a task-based quick reference guide with links to additional content as needed. For general VS Code guidance, see the [VS Code documentation](https://code.visualstudio.com/docs).
+The Azure Quantum Development Kit leverages all the standard functionality of Visual Studio Code, along with Q#-specific features when working with *.qs* files. This article is a quick reference guide to all Q# related settings and features, with links to additional content as needed. For general VS Code guidance, see the [VS Code documentation](https://code.visualstudio.com/docs).
 
 > [!TIP]
-> Most Q# related commands are located in the **View > Command Palette** menu. While in a *.qs* file, select **Ctrl-Shift-P** and type **Q#** to view a filtered list of commands. 
-
-
-
+> Most Q# related commands can be accessed from the **View > Command Palette** menu. While in a *.qs* file, select **Ctrl-Shift-P** and type **Q#** to view a filtered list of commands. 
 
 ## Q# settings
 
