@@ -5,7 +5,7 @@ ms.date: 03/06/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: overview
+ms.topic: conceptual
 no-loc: ['Q#', '$$v']
 title: Overview of distributed hybrid computing
 uid: microsoft.quantum.hybrid.distributed

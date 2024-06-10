@@ -5,7 +5,7 @@ ms.author: amvivian
 ms.date: 08/11/2023
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: how-to
+ms.topic: overview
 no-loc: ['Q#', '$$v']
 title: Understanding workspace access
 uid: microsoft.quantum.how-to.manage-workspace-access
