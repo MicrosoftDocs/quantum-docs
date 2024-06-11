@@ -5,7 +5,7 @@ ms.author: brbenefield
 ms.date: 03/21/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: conceptual
+ms.topic: overview
 no-loc: [QIR Adaptive RI, target, targets]
 title: Quantinuum provider
 uid: microsoft.quantum.providers.quantinuum

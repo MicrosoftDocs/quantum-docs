@@ -5,7 +5,7 @@ ms.author: sonialopez
 ms.date: 10/31/2023
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: overview
 no-loc: [target, targets]
 title: Invoicing & Billing
 uid: microsoft.quantum.providers-invoicing
