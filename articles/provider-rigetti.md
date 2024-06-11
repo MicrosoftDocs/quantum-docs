@@ -5,7 +5,7 @@ description: This document provides the technical details of the Rigetti provide
 ms.date: 02/06/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: conceptual
+ms.topic: overview
 no-loc: [Quantum Intermediate Representation, QIR Base, target, targets]
 title: Rigetti provider
 uid: microsoft.quantum.providers.rigetti

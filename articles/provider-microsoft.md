@@ -5,7 +5,7 @@ ms.author: brbenefield
 ms.date: 10/01/2023
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: conceptual
+ms.topic: overview
 no-loc: [QIR Base, target, targets]
 title: Microsoft quantum computing provider
 uid: microsoft.quantum.providers.microsoft

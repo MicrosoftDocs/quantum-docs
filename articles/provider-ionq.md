@@ -5,7 +5,7 @@ ms.author: sonialopez
 ms.date: 09/06/2023
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: conceptual
+ms.topic: overview
 no-loc: [QIR Base, target, targets]
 title: IonQ quantum computing provider
 uid: microsoft.quantum.providers.ionq
