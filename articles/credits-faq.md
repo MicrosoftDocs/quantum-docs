@@ -5,7 +5,7 @@ ms.author: sonialopez
 ms.date: 11/21/2022
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: troubleshooting
+ms.topic: faq
 title: 'FAQ: Azure Quantum Credits program'
 uid: microsoft.quantum.credits.credits-faq
 ---
