@@ -205,12 +205,8 @@
       href: concepts-error-correction.md
 - name: Troubleshooting
   items:
-  - name: Troubleshooting integrated hybrid QC
-    href: hybrid-computing-troubleshooting.md
   - name: Troubleshooting issues
     href: azure-quantum-common-issues.md
-  - name: Q# compiler messages
-    href: qs-compiler-messages/toc.yml
 - name: Resources
   items:
   - name: Build your skills with Microsoft training >>
