@@ -5,7 +5,7 @@ ms.author: sonialopez
 ms.date: 11/16/2023
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: faq
 no-loc: [target, targets]
 title: Azure Quantum Credits
 uid: microsoft.quantum.credits
