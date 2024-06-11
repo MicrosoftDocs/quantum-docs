@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Learn about the features that are included with the Azure Quantum Development Kit extension for VS Code. 
-ms.date: 05/20/2024
+ms.date: 06/12/2024
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: core
@@ -25,53 +25,43 @@ To open the VS Code configuration settings, select **File > Preferences > Settin
 
 | Setting | ID | Action  | Notes |
 |--------------| ---|-----------|----------------| 
-|  Qir: Enable Adaptive Profile| Enables the adaptive profile as the target. | Q#.qir.targetProfile | This setting enables programs to take advantage of the latest capabilities of quantum hardware, such as the ability to perform mid-circuit measurement of qubits, branch based on the results, and perform some classical computations at runtime. For more information, see [QIR target profile types](xref:microsoft.quantum.target-profiles) in the documentation and [QIR](https://github.com/microsoft/qsharp/wiki/QIR) in the developer Wiki.<br><br> This setting is also configurable in the Command Palette. |   
-|  Qir: Experimental Code Generation | Q#.qir.experimentalCodeGeneration |Enables the QIR code generation functionality. | This is required if you are generating code targeting the Adaptive Profile.  | 
-|  Qir: Target profile | Q#.qir.targetProfile |Enables the selected target profile for your program. | Select `unrestricted`, `base`, or `adaptive_ri`, depending on the processing requirements of your program. For more information, see  [Target profiles](xref:microsoft.quantum.target-profiles#target-profiles-and-their-limitations). | 
+|  **Qir: Enable Adaptive Profile**| *Q#.qir.targetProfile* | Enables the adaptive profile as the target. | This setting enables programs to take advantage of the latest capabilities of quantum hardware, such as the ability to perform mid-circuit measurement of qubits, branch based on the results, and perform some classical computations at runtime. For more information, see [QIR target profile types](xref:microsoft.quantum.target-profiles) in the documentation and [QIR](https://github.com/microsoft/qsharp/wiki/QIR) in the developer Wiki.<br><br> This setting is also configurable in the Command Palette. |   
+|  **Qir: Experimental Code Generation** | *Q#.qir.experimentalCodeGeneration*|Enables the QIR code generation functionality. | This is required if you are generating code targeting the Adaptive Profile.  | 
+|  **Qir: Target profile** | *Q#.qir.targetProfile* | Enables the selected target profile for your program. | Select `unrestricted`, `base`, or `adaptive_ri`, depending on the processing requirements of your program. For more information, see  [Target profiles](xref:microsoft.quantum.target-profiles#target-profiles-and-their-limitations). | 
 
-## Other helpful settings
+### Other helpful settings
 
 These settings may also be useful when configuring your VS Code environment for Q#.
 
 | Setting | ID | Action  | Notes |
-|-----------------|-----------|----------------| 
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-Also helpful, `User > Text Editor > Files: Default Language = qsharp` [files.defaultLanguage] Sets new text file language to qsharp - type `sample` or any q# code and it recognizes it. Still have to save file as .qs, though. 
-|  editor.defaultFormatter |   | | optional - set to AQDK 
-|  editor.defaultFoldingRangeProvider | | | no idea what this does, AQDK is in the dropdown, though.
-|  files.defaultLanguage | | | sets default language for new text file
-
+|----------| -------|-----------|----------------| 
+| **User > Text Editor > Files: Default Language** | *files.defaultLanguage* | Sets the default language that is assigned to new files. | Optional value: **qsharp** |
+| **User > Text Editor > Default Formatter** | *editor.defaultFormatter* | Defines a default formatter which takes precedence over all other formatter settings. | Optional value: **Azure Quantum Developement Kit (QDK)** | 
+| **User > Text Editor > Default Folding Range Provider** | *editor.defaultFoldingRangeProvider* | Defines a default folding range provider which takes precedence over all other folding range providers. | Optional value: **Azure Quantum Developement Kit (QDK)** | 
 
 ## Commands
 
-Most Q# related commands can be accessed from the **View > Command Palette** menu. While in a *.qs* file, select **Ctrl-Shift-P** and type **Q#** to view a filtered list of commands. 
+Most Q# related commands can be accessed from the **View > Command Palette** menu. Select **Ctrl-Shift-P** and type **Q#** to view a filtered list of commands. Note that some commands are only available when a *.qs* file is open. 
+ 
+| Command | Action | Notes  |
+|---------|--------|--------|
+|Q#: Create Q# Project | Creates a Q# project in the active folder, including:<br>- a *qsharp.json* manifest file<br>- a *src* subfolder with a default *main.qs* file.  | For more information about Q# projects, see [Working with Q# projects](xref:microsoft.quantum.qsharp-projects).  |
+|Q#: Create an Azure Quantum notebook   | Opens a sample Jupyter Notebook that runs a Q# + Python program and submits a job to Azure Quantum.  | For more information about Azure Quantum notebooks, see [Work with Azure Quantum notebooks](xref:microsoft.quantum.how-to.notebooks).  |
+|Q#: Connect to an Azure Quantum workspace | Connect to an Azure Quantum workspace using your Azure account or a connection string. Once you are authenticated, your workspace appears in **Explorer > Quantum Workspaces**.    | For more information about Azure Quantum connections, see [Connect to your Azure Quantum workspace](xref:microsoft.quantum.how-to.connect-workspace).  |
+|Q#: Show circuit |    |   |
+|Q#: Run file and show histogram |   |   |
+|Q#: Get QIR for current Q# program |   |   |
+|Debug: Debug Q# file |   |   |
+|Debug: Run Q# file |   |   |
+| Q#: Calculate Resource Estimates |   |   |
+| Q#: Help |   |   |
+| Q#: Open Q# Playground |   |   |
+| Q#: Refresh Azure Quantum workspaces |   |   |
+| Q#: Run file and show circuit diagram |   |   |
+| Q#: Set the Azure Quantum QIR target profile |   | (unrestricted or Adaptive RI [qubit **R**eset and **I**nteger support])   |
 
-View > Command Palette (Ctrl + Shift + P)
-Note: full list only seen when you're in a q# file
-
-Add parameters for each
-
-Q#: Create Q# Project
-Q#: Create an Azure Quantum notebook
-Q#: Show circuit
-Q#: Connect to an Azure Quantum workspace
-Q#: Run file and show histogram
-Q#: Get QIR for current Q# program
-Debug: Debug Q# file
-Debug: Run Q# file
-Q#: Calculate Resourece Estimates
-Q#: Help 
-Q#: Open Q# Playground
-Q#: Refresh Azure Quantum workspaces
-Q#: Run file and show circuit diagram
-Q#: Set the Azure Quantum QIR target profile (unrestricted or Adaptive RI [qubit **R**eset and **I**nteger support])
-Q#: Show API documentation (opens in the preview window, not scoped to anything)
-Explorer: Focus on Quantum workspaces view
-
-
+| Q#: Show API documentation (opens in the preview window, not scoped to anything) |  |  |
+| Explorer: Focus on Quantum workspaces view |  |  |
 
 ## Working with Q# files and projects
 
