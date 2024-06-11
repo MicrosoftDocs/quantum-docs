@@ -231,9 +231,6 @@ Quantinuum supports mid-circuit measurement, that is, branching based on measure
         }
 ```
 
-> [!NOTE]
-> To troubleshoot issues with integrated hybrid programs, see [Troubleshooting integrated hybrid](xref:microsoft.quantum.hybrid.troubleshooting).
-
 ## Estimating the cost of an integrated hybrid job
 
 You can estimate the cost of running an integrated hybrid job on Quantinuum hardware by running it on an emulator first.
