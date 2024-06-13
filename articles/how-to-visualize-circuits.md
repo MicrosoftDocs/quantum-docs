@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to how to visually represent quantum algorithms with quantum circuit diagrams using VS Code, Python, and Jupyter Notebooks.
-ms.date: 04/25/2024
+ms.date: 06/13/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -9,28 +9,30 @@ ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
 title: Visualize Quantum Circuits with Q#
 uid: microsoft.quantum.how-to.visualize-circuits
+#customer intent: As a quantum programmer, I want to ivsually represent my quantum algorithms.
 ---
 
 # Visualize quantum circuit diagrams with Q#
 
-Quantum circuit diagrams are a visual representation of quantum operations. They show the flow of qubits through the quantum program, including the gates and measurements applied to them.
+Quantum circuit diagrams are a visual representation of quantum operations. They show the flow of qubits through the quantum program, including the gates and measurements applied to them. 
 
-In this article, you'll learn how to visually represent quantum algorithms with quantum circuit diagrams using Visual Studio Code, and Jupyter Notebooks.
+In this article, you'll learn how to visually represent quantum algorithms with quantum circuit diagrams using Visual Studio Code or Jupyter Notebooks.
 
 For more information about quantum circuit diagram conventions, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
 
 ## Prerequisites
 
-### [VS Code](#tab/tabid-vscode)
-
-If you want to use Visual Studio Code to visualize quantum circuits, you need:
+**VS Code**
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/).
 - The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension.
+- The latest Azure Quantum `qsharp` and `azure-quantum` Python packages.
 
-### [Jupyter Notebooks](#tab/tabid-notebooks)
+    ```bash
+    python -m pip install --upgrade qsharp azure-quantum
+    ```
 
-If you want to use Jupyter Notebooks to visualize quantum circuits, you need:
+**Jupyter Notebooks**
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
@@ -39,8 +41,6 @@ If you want to use Jupyter Notebooks to visualize quantum circuits, you need:
     ```bash
     python -m pip install --upgrade qsharp qsharp-widgets ipykernel
     ```
-
-***
 
 ## Quantum circuits with Visual Studio Code
 
@@ -67,7 +67,7 @@ You can visualize the quantum circuit for a single Q# operation. To do this, cli
 
 When **debugging** a Q# program, you can visualize the quantum circuit based on the current state of the program.
 
-1. Click on the **Debug** button from the list of code lens commands below `@EntryPoint()`.
+1. Selectd the **Debug** button from the list of code lens commands below `@EntryPoint()`.
 1. In the **Run and debug** view on the left side, expand the **Quantum Circuit** section under **Variables** pane to show the circuit as you step through the program.
 
     :::image type="content" source="media/circuit-codelens-debug.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit while debugging a program." lightbox="media/circuit-codelens-debug.png":::
@@ -190,7 +190,7 @@ if (M(q) == One) {
 }
 ```
 
-cannot be represented withed straightforward a circuit diagram, since the gates are conditional on a measurement result. Such a circuit is called a _dynamic_ circuit.
+cannot be represented with a straightforward circuit diagram, since the gates are conditional on a measurement result. Such a circuit is called a _dynamic_ circuit.
 
 Circuit diagrams can be generated for dynamic circuits by running the program in the quantum simulator, and tracing the gates as they are applied. This is called _trace_ mode, as the qubits and gates are being traced as simulation is being performed.
 
@@ -200,12 +200,12 @@ The downside of traced circuits is that they only capture the measurement outcom
 
 The currently selected target profile influences how circuit diagrams are generated. Target profiles are used to specify the capabilities of the target hardware, and the restrictions that are imposed on the quantum program. 
 
-When the target profile is set to **Unrestricted**, the circuit diagrams show the quantum operations that are invoked in the Q# program. When the target profile is set to **QIR base**, the circuit diagrams show the quantum operations that would be run on hardware if the program is submitted to Azure Quantum with this target profile.
+When the target profile is set to **Unrestricted** or **QIR Adaptive RI**, the circuit diagrams show the quantum operations that are invoked in the Q# program. When the target profile is set to **QIR base**, the circuit diagrams show the quantum operations that would be run on hardware if the program is submitted to Azure Quantum with this target profile.
 
 > [!NOTE]
-> - To select target profile in VS Code, go to **View -> Command Palette** and write **Q#: Set the Azure Quantum QIR target profile**. You can select `Unrestricted` or `QIR Base Profile` from the dropdown list.
+> - To select the target profile in VS Code, select **View -> Command Palette** and select **Q#: Set the Azure Quantum QIR target profile**. You can select `QIR base`, `QIR Adaptive RI`, or `unrestricted` from the dropdown list.
 >
-> - To select target profile in Python, write `qsharp.init(target_profile=qsharp.TargetProfile.Unrestricted)` or `qsharp.init(target_profile=qsharp.TargetProfile.Base)`.
+> - To select the target profile in Python, call `qsharp.init(target_profile=qsharp.TargetProfile.Base)`, `qsharp.init(target_profile=qsharp.TargetProfile.Adaptive_RI)`or `qsharp.init(target_profile=qsharp.TargetProfile.Unrestricted)`.
 
 Specifically, gate decompositions are applied that would make the resulting circuit compatible with the capabilities of the target hardware. These are the same decompositions that would get applied during code generation and submission to Azure Quantum.
 
@@ -233,11 +233,11 @@ Specifically, gate decompositions are applied that would make the resulting circ
     }
     ```
 
-1. When target profile is set to **Unrestricted**, the gates displayed on the circuit correspond exactly to the quantum operations that are invoked in the Q# program.
+1. When target profile is set to **Unrestricted** or **QIR Adaptive RI**, the gates displayed on the circuit correspond exactly to the quantum operations that are invoked in the Q# program.
 
     :::image type="content" source="media/circuits-target-unrestricted.png" alt-text="Screenshot of quantum circuits when target profile is Unrestricted." lightbox="media/circuits-target-unrestricted.png":::
 
-1. When the target profile is **QIR base**, the circuit looks different. Since Base Profile targets don't allow qubit reuse after measurement, the measurement is now performed on an entangled qubit instead. Since `Reset` operation isn't a supported gate in Base Profile, it's dropped. The resulting circuit matches what would be run on hardware if this program is submitted to Azure Quantum with this target profile.
+1. When the target profile is **QIR base**, the circuit looks different. Since Base profile targets don't allow qubit reuse after measurement, the measurement is now performed on an entangled qubit instead. Since `Reset` operation isn't a supported gate in Base Profile, it's dropped. The resulting circuit matches what would be run on hardware if this program is submitted to Azure Quantum with this target profile.
 
     :::image type="content" source="media/circuits-target-base.png" alt-text="Screenshot of quantum circuits when target profile is QIR base." lightbox="media/circuits-target-base.png":::
 
