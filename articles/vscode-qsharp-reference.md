@@ -11,7 +11,7 @@ uid: microsoft.quantum.reference.vscode
 #customer intent: As a quantum programmer, I want to know how to access the Q# related features in VS Code.  
 ---
 
-# Command and setting reference for the Azure Quantum Development Kit extension for Visual Studio Code
+# Reference: Azure Quantum Development Kit extension for Visual Studio Code
 
 The Azure Quantum Development Kit leverages all the standard functionality of Visual Studio Code, along with Q#-specific features when working with *.qs* files. This article is a reference guide to all Q# related settings and features, with links to additional content as needed. For general VS Code guidance, see the [VS Code documentation](https://code.visualstudio.com/docs).
 
@@ -20,12 +20,12 @@ The Azure Quantum Development Kit leverages all the standard functionality of Vi
 
 ## Q# settings
 
-To open the VS Code configuration settings, select **File > Preferences > Settings** or **Ctrl** + **,**. All of the Q# related settings are under **User > Extensions > Q#**. 
+To open the VS Code configuration settings, select **File > Preferences > Settings**. All of the Q# related settings are under **User > Extensions > Q#**. 
 
 
 | Setting | ID | Action  | Notes |
 |--------------| ---|-----------|----------------| 
-|  **Qir: Enable Adaptive Profile**| *Q#.qir.targetProfile* | Enables the adaptive profile as the target. | This setting enables programs to take advantage of the latest capabilities of quantum hardware, such as the ability to perform mid-circuit measurement of qubits, branch based on the results, and perform some classical computations at runtime. For more information, see [QIR target profile types](xref:microsoft.quantum.target-profiles) in the documentation and [QIR](https://github.com/microsoft/qsharp/wiki/QIR) in the developer Wiki.<br><br> This setting is also configurable in the Command Palette or from the bottom task bar in VS Code. |   
+|  **Qir: Enable Adaptive Profile**| *Q#.qir.targetProfile* | Enables the Adaptive RI profile as the target. | This setting enables programs to take advantage of the latest capabilities of quantum hardware, such as the ability to perform mid-circuit measurement of qubits, branch based on the results, and perform some classical computations at runtime. For more information, see [QIR target profile types](xref:microsoft.quantum.target-profiles) in the documentation and [QIR](https://github.com/microsoft/qsharp/wiki/QIR) in the developer Wiki.<br><br> This setting is also configurable in the command palette or from the bottom task bar in VS Code. |   
 |  **Qir: Experimental Code Generation** | *Q#.qir.experimentalCodeGeneration*|Enables the QIR code generation functionality. | This is required if you are generating code targeting the Adaptive Profile.  | 
 |  **Qir: Target profile** | *Q#.qir.targetProfile* | Enables the selected target profile for your program. | Select `unrestricted`, `base`, or `adaptive_ri`, depending on the processing requirements of your program. For more information, see  [Target profiles](xref:microsoft.quantum.target-profiles#target-profiles-and-their-limitations). | 
 
@@ -35,7 +35,7 @@ These settings may also be useful when configuring your VS Code environment for 
 
 | Setting | ID | Action  | Notes |
 |----------| -------|-----------|----------------| 
-| **User > Text Editor > Code Lens** | editor.codeLens | Enables the code lens options for your Q# program. The code lens options appear after the `@EntryPoint()` in each program and provide quick access to run or debug your program, display a histogram, show resource estimates, or display the circuit diagram for program. The circuit diagram option is also available for every user-defined operation in the program. | For more info, see [visualization].  |
+| **User > Text Editor > Code Lens** | *editor.codeLens* | Enables the code lens options for your Q# program. The code lens options appear after the `@EntryPoint()` in each program and provide quick access to run or debug your program, display a histogram, show resource estimates, or display the circuit diagram for program. The circuit diagram option is also available for every user-defined operation in the program. | For more info, see [Visualize quantum circuit diagrams](xref:microsoft.quantum.how-to.visualize-circuits).  |
 | **User > Text Editor > Files: Default Language** | *files.defaultLanguage* | Sets the default language that is assigned to new files. | Optional value: **qsharp** |
 | **User > Text Editor > Default Formatter** | *editor.defaultFormatter* | Defines a default formatter which takes precedence over all other formatter settings. | Optional value: **Azure Quantum Developement Kit (QDK)** | 
 | **User > Text Editor > Default Folding Range Provider** | *editor.defaultFoldingRangeProvider* | Defines a default folding range provider which takes precedence over all other folding range providers. | Optional value: **Azure Quantum Developement Kit (QDK)** | 
@@ -44,7 +44,7 @@ These settings may also be useful when configuring your VS Code environment for 
 
 Most Q# related commands can be accessed from the **View > Command Palette** menu. Select **Ctrl-Shift-P** and type **Q#** to view a filtered list of commands. Note that some commands are only available when a *.qs* file is open. 
 
-Add column for alternate method...
+TBD - Add column for alternate method...
  
 | Command | Action | Notes  |  
 |---------|--------|--------|
@@ -52,7 +52,7 @@ Add column for alternate method...
 | **Q#: Create an Azure Quantum notebook**   | Opens a sample Jupyter Notebook that runs a Q# + Python program and submits a job to Azure Quantum.  | For more information about Azure Quantum notebooks, see [Work with Azure Quantum notebooks](xref:microsoft.quantum.how-to.notebooks).  |
 | **Q#: Connect to an Azure Quantum workspace** | Connect to an Azure Quantum workspace using your Azure account or a connection string. Once you are authenticated, your workspace appears in **Explorer > Quantum Workspaces**.    | For more information about Azure Quantum connections, see [Connect to your Azure Quantum workspace](xref:microsoft.quantum.how-to.connect-workspace). ALSO FROM THE QUANTUM WORKSPACES IN EXPLORER "+"|
 | **Q#: Open Q# playground** | Opens an online folder of Q# sample programs in the File Explorer. You can edit and run the programs in the local quantum simulator, and also set breakpoints and step through the code with the built-in debugger.   | For more information, see the *README* file in the sample folder.  |
-| **Q#: Refresh Azure Quantum workspaces** | Syncs the latest changes from your connected quantum workspaces. ALSO FROM THE QUANTUM WORKSPACES IN EXPLORER - REFRESH SWIRL |   |
+| **Q#: Refresh Azure Quantum workspaces** | Syncs the latest changes from your connected quantum workspaces. ALSO FROM THE QUANTUM WORKSPACES IN EXPLORER |   |
 | **Explorer: Focus on Quantum Workspaces View** | Opens File Explorer and focuses on your connected quantum workspaces, if configured. If no workspaces are configured, you are prompted to add an existing workspace. | For more information about Azure Quantum connections, see [Connect to your Azure Quantum workspace](xref:microsoft.quantum.how-to.connect-workspace).  |
 
 
@@ -82,14 +82,6 @@ Q# programs make use of two terminals in VS Code:
 | Problems | Displays pre-compile error checks |   
 
 
-## Working with Q# files and projects
-
-
-| Task | Action  | Notes |
-|-----------------|-----------|----------------| 
-| **New Q# file**    | Select **File > New file > Text file**. Save the file with a *.qs* extension. | If you set `Files: Default Language = qsharp`, a new file defaults to Q# formatting automatically. 
-| **Create a Q# project** | From an open folder in File Explorer, select **Create Q# Project** from the command palette, or right-click the folder in File Explorer and select **Create Q# project**.| For more information about Q# projects, see [Working with Q# projects](xref:microsoft.quantum.  |
-| **Sample files**  | In a blank *.qs* file, type **samples** and select a sample program from the list.| You can also select **Open Q# playground** in the command palette to open an online folder of Q# sample programs in the File Explorer. |
 
 <!--- 
 1. Text to "Select a language" can be turned on/off with `Workbench.editor.empty:hint`. If Copilot extension is installed, it overwrites this. Turn off with `github.copilot.chat.welcomeMessage = Never`, but you have to refresh with *Reload window*. Also, see `Files: Default Language = qsharp` for opening a new q# file by default. 
@@ -110,20 +102,33 @@ Most of the common code editing features in VS Code are available when working w
 
 
 
-<!--   
+----------- **(TBD - Task based alternate views?)** -----------------
+
+## Working with Q# files and projects
+
+
+| Task | Action  | Notes |
+|-----------------|-----------|----------------| 
+| **New Q# file**    | Select **File > New file > Text file**. Save the file with a *.qs* extension. | If you set `Files: Default Language = qsharp`, a new file defaults to Q# formatting automatically. 
+| **Create a Q# project** | From an open folder in File Explorer, select **Create Q# Project** from the command palette, or right-click the folder in File Explorer and select **Create Q# project**.| For more information about Q# projects, see [Working with Q# projects](xref:microsoft.quantum.qsharp-projects).  |
+| **Sample files**  | In a blank *.qs* file, type **samples** and select a sample program from the list.| You can also select **Open Q# playground** in the command palette to open an online folder of Q# sample programs in File Explorer. |
+
 ## Connecting to Azure Quantum 
+
+**(TBD)**
 
 | Task | Action  | Notes |
 |-----------------|-----------|----------------|
 | Explorer -> Quantum workspaces |  |  |  
 
-Explorer > workspace : open workspace in the Azure portal
-Right-click <workspace-name> to a) copy connection info in Python, b)remove the workspace (from the view)
-Hover <workspace-name>, select box with arrow to open the workspace in the Azure Portal. 
+- Explorer > workspace : open workspace in the Azure portal
+- Right-click workspace-name to a) copy connection info in Python, b)remove the workspace (from the view)
+- Hover workspace-name, select box with arrow to open the workspace in the Azure Portal. 
 
-FUNCTIONALITY WHILE RUNNING/DEBUGGING
 
 ## Running programs
+
+**(TBD)**
 
 | Task | Action  | Notes |
 |-----------------|-----------|----------------|
@@ -132,27 +137,3 @@ FUNCTIONALITY WHILE RUNNING/DEBUGGING
 | Viewing providers | | | 
 | Submit a job to Azure Quantum |  |  |   
 | View results |  |  |          
-
-
- 
-      
-
-
-## Azure Quantum workspaces
-
-| Task | Action  | Notes |
-|-----------------|-----------|----------------|
-| Submit a job |  |  |   
-| View providers |  |  |   
-| View job results |  |  |  
-
-## Explorer (duplicate stuff? Do we need it?)
-
-| Task | Action  | Notes |
-|-----------------|-----------|----------------|
-| Open folder |  |  |  
-| New project |  |  | 
-| Workspace |  |  |  
-
--->
- 
