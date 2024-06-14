@@ -51,8 +51,8 @@ TBD - Add column for alternate method...
 | **Q#: Create Q# Project** | Creates a Q# project in the active folder, including:<br>- a *qsharp.json* manifest file<br>- a *src* subfolder with a default *main.qs* file.  | For more information about Q# projects, see [Working with Q# projects](xref:microsoft.quantum.qsharp-projects). ALSO FROM FOLDER RIGHT CLICK |
 | **Q#: Create an Azure Quantum notebook**   | Opens a sample Jupyter Notebook that runs a Q# + Python program and submits a job to Azure Quantum.  | For more information about Azure Quantum notebooks, see [Work with Azure Quantum notebooks](xref:microsoft.quantum.how-to.notebooks).  |
 | **Q#: Connect to an Azure Quantum workspace** | Connect to an Azure Quantum workspace using your Azure account or a connection string. Once you are authenticated, your workspace appears in **Explorer > Quantum Workspaces**.    | For more information about Azure Quantum connections, see [Connect to your Azure Quantum workspace](xref:microsoft.quantum.how-to.connect-workspace). ALSO FROM THE QUANTUM WORKSPACES IN EXPLORER "+"|
-| **Q#: Open Q# playground** | Opens an online folder of Q# sample programs in the File Explorer. You can edit and run the programs in the local quantum simulator, and also set breakpoints and step through the code with the built-in debugger.   | For more information, see the *README* file in the sample folder.  |
-| **Q#: Refresh Azure Quantum workspaces** | Syncs the latest changes from your connected quantum workspaces. ALSO FROM THE QUANTUM WORKSPACES IN EXPLORER |   |
+| **Q#: Open Q# playground** | Opens an online folder of Q# sample programs in File Explorer. You can edit and run the programs in the local quantum simulator, and also set breakpoints and step through the code with the built-in debugger.   | For more information, see the *README* file in the sample folder.  |
+| **Q#: Refresh Azure Quantum workspaces** | Syncs the latest changes from your connected quantum workspaces.  | ALSO FROM THE QUANTUM WORKSPACES IN EXPLORER  |
 | **Explorer: Focus on Quantum Workspaces View** | Opens File Explorer and focuses on your connected quantum workspaces, if configured. If no workspaces are configured, you are prompted to add an existing workspace. | For more information about Azure Quantum connections, see [Connect to your Azure Quantum workspace](xref:microsoft.quantum.how-to.connect-workspace).  |
 
 
@@ -82,7 +82,7 @@ Q# programs make use of two terminal windows in VS Code:
 
 ## Editing Q# code
 
-Most of the common code editing features in VS Code are available when working with Q# programs. For more information, see [Intellisense](https://code.visualstudio.com/docs/editor/intellisense).
+Most of the common code editing features in VS Code are available when working with Q# programs. For more information, see [Intellisense](https://code.visualstudio.com/docs/editor/intellisense) in the VS Code documentation.
 
 - Precompile error checking
 - Go-to definition
@@ -107,7 +107,7 @@ Most of the common code editing features in VS Code are available when working w
 
 | Task | Action  | Notes |
 |-----------------|-----------|----------------|
-| **Connect to an Azure Quantum workspace** | Open **File Explorer**, expand **Quantum workspaces** and select **Add an existing workspace**. Follow the prompts to select a subscription and workspace. | * You can also connect using **Command palette > Connect to an Azure Quantum workspace**.<br> * You can connect to multiple workspaces. Select **+** next to **Quantum workspaces** to connect another workspace.<br>Workspace connections will persist between your VS Code sessions.<br>* To remove a workspace connection, right-click the workspace and select **Remove workspace connection**.  |  
+| **Connect to an Azure Quantum workspace** | Open **File Explorer**, expand **Quantum workspaces** and select **Add an existing workspace**. Follow the prompts to select a subscription and workspace. | - You can also connect using **Command palette > Connect to an Azure Quantum workspace**.<br> - You can connect to multiple workspaces. Select **"+"** next to **Quantum workspaces** to connect another workspace.<br>Workspace connections will persist between your VS Code sessions.<br>* To remove a workspace connection, right-click the workspace and select **Remove workspace connection**.  |  
 | **Connect programmatically with a Python program** | Right-click an existing workspace connection and select **Copy Python code to connect to workspace**. Paste the resulting code into your Python program. | For more information, see [Submitting Python with Q# jobs to Azure Quantum](/azure/quantum/how-to-submit-jobs?tabs=tabid-python&pivots=ide-python#submitting-python-with-q-jobs-to-azure-quantum).  |
 
 
@@ -115,8 +115,8 @@ Most of the common code editing features in VS Code are available when working w
 
 | Task | Action  | Notes |
 |-----------------|-----------|----------------|
-| **Run a Q# program on the local quantum simulator** | In a Q# program, select the **Run** icon in the upper right, and select **Run Q# file**, or select **Ctrl-F5**.  | Optionally, from the Command palette, select:<br>* **Q#: Run file and show histogram**<br>**Q#: Run file and show circuit diagram** | 
-| **Debug a program** | In a Q# program, select the **Run** icon in the upper right, and select **Debug Q# file**, or select **F5**. | For more information about the Q# debugger in VS Code, see [Debugging and testing your quantum code](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging). |  
+| **Run a Q# program on the local quantum simulator** | In a Q# program, select the **Run** icon in the upper right, and select **Run Q# file** (**Ctrl-F5**).  | Optionally, from the Command palette, select:<br>* **Q#: Run file and show histogram**<br>* **Q#: Run file and show circuit diagram** | 
+| **Debug a program** | In a Q# program, select the **Run** icon in the upper right, and select **Debug Q# file** (**F5**). | For more information about the Q# debugger in VS Code, see [Debugging and testing your quantum code](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging). |  
 | **View providers and targets in your workspaces** | In **File Explorer > Quantum workspaces**, expand the workspace and then expand **Providers** to see the avalable providers in the workspace. Expand an individual provider to view the available targets. | **Note**: Hover over a target name to view its **Status** and **Queue time** before submitting a job.| 
 | **Submit a job to Azure Quantum** | In a Q# program, select a workspace, provider, and target. Select the arrow next to the target to submit the current Q# program.  | For more information, see [Submitting  Q# jobs to Azure Quantum](/azure/quantum/how-to-submit-jobs#submitting-q-jobs-to-azure-quantum). |   
 | **View job results** | Expand the workspace and then expand **Jobs**.  Select the cloud icon next to the job name to open the job output from Azure Storage. | Jobs are listed with the most recent on top.  |          
