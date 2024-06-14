@@ -9,7 +9,7 @@
   - name: Perform long running experiments
     href: ../how-to-long-running-experiments.md
   - name: VS Code reference for Q#
-    href: vscode-qsharp-reference.md
+    href: ../vscode-qsharp-reference.md
 - name: Visualize quantum circuit diagrams
   href: ../how-to-visualize-circuits.md
 - name: Tutorials with Q# 
