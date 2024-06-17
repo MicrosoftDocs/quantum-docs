@@ -12,11 +12,11 @@ no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 #customer intent: As a quantum developer, I want to understand how to debug and test my quantum programs
 ---
 
-# Debugging and testing your quantum code
+# How to debug and test your quantum code
 
 As with classical programming, it is essential to be able to check that quantum programs act as intended, and to be able to diagnose incorrect behavior. This article discusses the tools offered by the Azure Quantum Development Kit for testing and debugging quantum programs.
 
-## Debugging your Q# program
+## Debug your Q# program
 
 The Azure Quantum Development Kit (Modern QDK) Visual Studio Code extension includes a debugger for Q# programs. You can set breakpoints, step through your code and into each function or operation, and track not only the local variables, but the quantum state of the qubits as well. 
 
@@ -52,7 +52,7 @@ namespace Sample {
 1. As you step over (F10) the `M` operation, the quantum value is resolved to either |0> or |1> as a result of the measurement, and the value of the classical variable `result` is displayed.
 1. As you step over the `Reset` operation, the qubit is reset to |0>.
 
-## Testing your code
+## Test your code
 
 Although the VS Code Q# debugger is not available for Q# cells in a Jupyter Notebook, the Modern QDK provides some expressions and functions that can help troubleshoot your code.
 

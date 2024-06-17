@@ -11,7 +11,7 @@ title: Visualize Quantum Circuits with Q#
 uid: microsoft.quantum.how-to.visualize-circuits
 ---
 
-# Visualize quantum circuit diagrams with Q#
+# How to visualize quantum circuit diagrams with Q#
 
 Quantum circuit diagrams are a visual representation of quantum operations. They show the flow of qubits through the quantum program, including the gates and measurements applied to them.
 

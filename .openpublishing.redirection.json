@@ -995,6 +995,11 @@
 			"source_path": "articles/user-guide/index.md",
 			"redirect_url": "/azure/quantum/user-guide/program-structure",
 			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/tutorial-qdk-intro-to-katas.md",
+			"redirect_url": "/azure/quantum/qsharp-ways-to-work",
+			"redirect_document_id": false
 		}
 	]
 }

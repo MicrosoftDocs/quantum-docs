@@ -11,7 +11,7 @@ title: Adapting Qiskit samples
 uid: microsoft.quantum.how-to.adapting-qiskit
 ---
 
-# Adapting Qiskit samples to run on Azure Quantum
+# How to adapt Qiskit samples to run on Azure Quantum
 
 
 If you have some experience with quantum computing or are just starting, it is likely that you use some samples from [Qiskit.org](https://qiskit.org/). This article shows you how to adapt a Qiskit sample to run against any of the Azure Quantum backends. You can either download the sample or copy the code to a new notebook. 
