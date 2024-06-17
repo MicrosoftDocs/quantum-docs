@@ -9,7 +9,7 @@ ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
 title: Visualize Quantum Circuits with Q#
 uid: microsoft.quantum.how-to.visualize-circuits
-#customer intent: As a quantum programmer, I want to ivsually represent my quantum algorithms.
+#customer intent: As a quantum programmer, I want to visually represent my quantum algorithms.
 ---
 
 # Visualize quantum circuit diagrams with Q#
