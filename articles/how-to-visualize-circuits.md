@@ -67,7 +67,7 @@ You can visualize the quantum circuit for a single Q# operation. To do this, cli
 
 When **debugging** a Q# program, you can visualize the quantum circuit based on the current state of the program.
 
-1. Selectd the **Debug** button from the list of code lens commands below `@EntryPoint()`.
+1. Select the **Debug** button from the list of code lens commands below `@EntryPoint()`.
 1. In the **Run and debug** view on the left side, expand the **Quantum Circuit** section under **Variables** pane to show the circuit as you step through the program.
 
     :::image type="content" source="media/circuit-codelens-debug.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit while debugging a program." lightbox="media/circuit-codelens-debug.png":::
