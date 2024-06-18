@@ -1,13 +1,13 @@
 ---
 author: SoniaLopezBravo
-description: Learn how to adapt any Qiskit sample to run on Azure Quantum service. 
+description: Learn how to adapt any Qiskit sample to run on the Azure Quantum service. 
 ms.date: 01/05/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Adapting Qiskit samples
+title: Adapt Qiskit samples
 uid: microsoft.quantum.how-to.adapting-qiskit
 ---
 

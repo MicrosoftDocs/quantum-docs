@@ -7,12 +7,12 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
-title: How to perform long running Q# experiments
+title: Perform long-running Q# experiments
 uid: microsoft.quantum.long-running-experiments
-#customer intent: As a quantum programmer, I want to know how to perform long running experiments
+#customer intent: As a quantum programmer, I want to know how to perform long-running experiments
 ---
 
-# How to perform long running experiments on Azure Quantum
+# How to perform long-running experiments on Azure Quantum
 
 When you submit a quantum program to Azure Quantum, the job is uploaded to the Azure Storage account that you configured in the workspace waiting to be executed in the QPU provider you've selected. When your quantum program is next on the queue for the corresponding provider, Azure Quantum downloads your program and submits it to the provider, going from *waiting* to *executing* state. For more information about the state of Azure Quantum jobs, see [Monitoring jobs](xref:microsoft.quantum.work-with-jobs#monitoring-jobs).
 
@@ -21,7 +21,7 @@ If your quantum program requires many iterations, each one is submitted as a sin
 > [!IMPORTANT]
 > Azure Quantum hosted notebooks offer a free no-installation experience to run small scale experiments lasting less than one hour. 
 
-See the following suggestion to run long runtime experiments in Azure Quantum.
+See the following suggestion to run long-runtime experiments in Azure Quantum.
 
 ## Program with few loops
 

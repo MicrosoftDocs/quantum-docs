@@ -139,13 +139,13 @@
   items: 
   - name: Get started with Q#
     items: 
-    - name: Introduction to Q#
-      href: ../qsharp-intro.md
+    - name: What is Q#?
+      href: ../qsharp-overview.md
     - name: Ways to work with Q#
       href: ../qsharp-ways-to-work.md
     - name: Create your first Q# program
-      href: ../qsharp-create-program.md
-  - name: Q# tutorials
+      href: ../qsharp-quickstart.md
+  - name: Tutorials for Q#
     items:
     - name: Quantum random number generator
       href: ../tutorial-qdk-quantum-random-number-generator.md

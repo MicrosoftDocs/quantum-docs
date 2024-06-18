@@ -8,11 +8,11 @@ ms.subservice: qdk
 ms.topic: quickstart
 no-loc: []
 title: 'Quickstart: Create a Q# Program'
-uid: microsoft.quantum.qsharp-create-program
-# Customer intent: As a new quantum programmer, I want to quickly create a Q# program so that I can begin expressing quantum algorithms in my own programs.
+uid: microsoft.quantum.qsharp-quickstart
+# Customer intent: As a new quantum programmer, I want to quickly create my first Q# program so that I can begin developing and running quantum algorithms.
 ---
 
-# Quickstart: Create a Q# program
+# Quickstart: Create your first Q# program
 
 In this quickstart, you...
 
