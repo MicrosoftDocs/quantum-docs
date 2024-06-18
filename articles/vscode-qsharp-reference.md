@@ -20,13 +20,11 @@ The Azure Quantum Development Kit (QDK) uses all the standard functionality of V
 
 ## Q# settings
 
-To open the VS Code configuration settings, select **File > Preferences > Settings**. All of the Q# related settings are under **User > Extensions > Q#**. 
+To open the VS Code configuration settings, select **File > Preferences > Settings**. There is only one Q#-specific setting, located under the **User** tab in **Extensions > Q#**. 
 
 
 | Setting | ID | Action  | Notes |
 |--------------| ---|-----------|----------------| 
-|  **Qir: Enable Adaptive Profile**| *Q#.qir.targetProfile* | Enables the Adaptive RI profile as the target. | This setting enables programs to take advantage of the latest capabilities of quantum hardware, such as the ability to perform mid-circuit measurement of qubits, branch based on the results, and perform some classical computations at runtime. For more information, see [QIR target profile types](xref:microsoft.quantum.target-profiles) in the documentation and [QIR](https://github.com/microsoft/qsharp/wiki/QIR) in the developer Wiki.<br><br> This setting is also configurable in the Command Palette or from the bottom task bar in VS Code. |   
-|  **Qir: Experimental Code Generation** | *Q#.qir.experimentalCodeGeneration*|Enables the QIR code generation functionality. | This setting is required if you're generating code targeting the Adaptive Profile.  | 
 |  **Qir: Target profile** | *Q#.qir.targetProfile* | Enables the selected target profile for your program. | Select `unrestricted`, `base`, or `adaptive_ri`, depending on the processing requirements of your program. For more information, see  [Target profiles](xref:microsoft.quantum.target-profiles#target-profiles-and-their-limitations). | 
 
 ### Other helpful settings
