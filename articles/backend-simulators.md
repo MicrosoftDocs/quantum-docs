@@ -1,17 +1,19 @@
 ---
 author: bradben
-description: Learn how to run your Q# programs on the backend simulators from Azure Quantum partners.
+description: Learn how to run your Q# programs on the backend simulators available from quantum providers, such as IonQ, PASQAL, Quantinuum, and Rigetti.
 ms.author: brbenefield
-ms.date: 11/28/2023
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', Quantum Development Kit]
-title: Simulators from our partners
+title: Simulators from Quantum Providers
 uid: microsoft.quantum.machines.overview.backend-simulators
+
+#customer intent: As a quantum developer, I want to understand the backend simulators available from quantum providers, so that I can test my Q# programs before running them on a real quantum computer.
 ---
 
-# Backend quantum simulators
+# Backend quantum simulators from quantum providers
 
 This article describes the backend simulators available from quantum providers. These simulators are available to all Azure Quantum users, and are a great way to test your Q# programs before running them on a real quantum computer.
 

@@ -1,16 +1,18 @@
 ---
 author: SoniaLopezBravo
-description: This document provides instructions on how to authenticate using a service principal.
+description: This document provides instructions on how to authenticate in your Azure Quantum workspace using a service principal.
 ms.author: sonialopez
-ms.date: 11/22/2021
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
-title: Using a service principal to authenticate
+title: Authenticate Using a Service Principal
 uid: microsoft.quantum.optimization.authenticate-service-principal
+
+#customer intent: As a quantum developer, I want to understand how to authenticate using a service principal to submit jobs to Azure Quantum.
 ---
 
-# Using a service principal to authenticate
+# How to use a service principal to authenticate in your Azure Quantum workspace
 
 Sometimes it's unsuitable to use interactive authentication or to authenticate
 as a user account. These cases may arise when you want to submit jobs from a

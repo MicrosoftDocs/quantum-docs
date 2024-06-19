@@ -1,19 +1,20 @@
 ---
 author: bradben
-description: A list of Azure Quantum hardware providers and their availability by country/region.
-ms.author: brbenefield
-ms.date: 07/12/2023
+description: Check out the list of countries and regions where each of the Azure Quantum providers are available.
+ms.date: 06/12/2024
 ms.service: azure-quantum
 ms.subservice: core  
 ms.topic: feature-availability
 no-loc: [target, targets]
 title: Global availability of Azure Quantum providers
 uid: microsoft.quantum.provider-availability
+
+#customer intent: As a quantum developer, I want to know which quantum hardware providers are available in my country/region so that I can choose the best provider for my quantum computing needs.
 ---
 
 # Global availability of Azure Quantum providers
 
-The availability of the quantum computing providers IonQ, Quantinuum, and Rigetti varies based on the country/region where your billing account is registered. Select the tab for each provider to view its availability by country/region.
+The availability of the quantum computing providers IonQ, Pasqal, Quantinuum, and Rigetti varies based on the country/region where your billing account is registered. Select the tab for each provider to view its availability by country/region.
 
 ## [IonQ](#tab/tabid-ionq)
 
