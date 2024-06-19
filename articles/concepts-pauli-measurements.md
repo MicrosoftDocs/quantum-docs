@@ -1,17 +1,19 @@
 ---
 author: SoniaLopezBravo
-description: Learn how to work with single- and multi-qubit Pauli measurement operations.
+description: Learn how to work with single-qubit and multi-qubit Pauli measurement operations in quantum computing.
 ms.author: sonialopez
-ms.date: 06/09/2023
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\mathbf', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 title: Pauli Measurements in Quantum Computing
 uid: microsoft.quantum.concepts.pauli
+
+#customer intent: As a quantum computing student, I want to learn how to work with single-qubit and multi-qubit Pauli measurement operations in quantum computing.
 ---
 
-# Single- and multi-qubit Pauli measurement operations
+# Single-qubit and multi-qubit Pauli measurements
 
 As you work with Q#, you find that *Pauli measurements* are a common type of measurement. Pauli measurements generalize computational basis measurements to include measurements in other bases and of parity between different qubits. In such cases, it is common to discuss measuring a Pauli operator, which is an operator such as $X,Y,Z$ or $Z\otimes Z, X\otimes X, X\otimes Y$, and so forth. For the basics of quantum measurement, see [The qubit](xref:microsoft.quantum.concepts.qubit) and [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits).
 
@@ -159,6 +161,7 @@ Measuring $Z\otimes \mathbb{1}$ and then $\mathbb{1} \otimes Z$ projects the qua
 As there are four computational basis vectors, performing both measurements reduces the state to a quarter-space and hence reduces it to a single computational basis vector.
 
 ## Correlations between qubits
+
 Another way of looking at measuring tensor products of Pauli matrices such as $X\otimes X$ or $Z\otimes Z$ is that these measurements let you look at information stored in the correlations between the two qubits.
 Measuring $X\otimes 1$ lets you look at information that is locally stored in the first qubit.
 While both types of measurements are equally valuable in quantum computing, the former illuminates the power of quantum computing.
@@ -224,7 +227,7 @@ Similarly, without prior information one cannot perfectly clone a quantum state 
 Information is not free in quantum computing.
 Each qubit measured gives a single bit of information, and the No-Cloning Theorem shows that there is no backdoor that can be exploited to get around the fundamental tradeoff between information gained about the system and the disturbance invoked upon it.
 
-## Next steps
+## Related content
 
 - [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)
 - [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
