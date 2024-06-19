@@ -1,19 +1,21 @@
 ---
 author: aviviano
-description: Learn how to manage access to your Azure Quantum workspace.
+description: Learn about the different security principals and roles you can use to manage access to your Azure Quantum workspace.
 ms.author: amvivian
-ms.date: 08/11/2023
+ms.date: 06/11/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
 no-loc: ['Q#', '$$v']
 title: Understanding workspace access
 uid: microsoft.quantum.how-to.manage-workspace-access
+
+#customer intent: As a quantum developer, I want to understand the roles and access to my Azure Quantum workspace.
 ---
 
-# Understanding Azure Quantum workspace access
+# Understanding role-based access to your Azure Quantum workspace
 
-Learn how to manage access (authorization) to an Azure Quantum workspace.
+Learn about the different security principals and roles you can use to manage access to your Azure Quantum workspace.
 
 ## Azure role-based access control
 
@@ -53,11 +55,12 @@ Roles are assigned at a particular scope. Scope is the set of resources that the
 |[Resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal)|A container that holds related resources for an Azure solution. The resource group includes those resources that you want to manage as a group. For example, the following resources are required to run applications in Azure Quantum:<br><ul><li>[Azure storage account](/azure/storage/blobs/): stores input and output data for quantum jobs.</li><li>[Azure Quantum workspace](/azure/quantum/how-to-create-workspace): a collection of assets associated with running quantum applications.</li></ul> These resources live in a single resource group.|
 |Resource|An instance of a service that you can create, such as a workspace or storage account.|
 
-**Note:** Because access can be scoped to multiple levels in Azure, a user may have different roles at each level. For example, someone with owner access to a workspace may not have owner access to the resource group that contains the workspace.
+> [!NOTE]
+> Because access can be scoped to multiple levels in Azure, a user may have different roles at each level. For example, someone with owner access to a workspace may not have owner access to the resource group that contains the workspace.
 
 ## Role requirements for creating a workspace
 
-When you [create a workspace](xref:microsoft.quantum.how-to.workspace), you first select a subscription, resource group, and storage account to associate with the workspace. Your ability to create a workspace depends on the levels of access you have, starting at the subscription scope. To view your authorization for various resources, see [Check your role assignments](#check-your-role-assignments). 
+When you [create a new workspace](xref:microsoft.quantum.how-to.workspace), you first select a subscription, resource group, and storage account to associate with the workspace. Your ability to create a workspace depends on the levels of access you have, starting at the subscription scope. To view your authorization for various resources, see [Check your role assignments](#check-your-role-assignments). 
 
 ### Subscription Owner
 

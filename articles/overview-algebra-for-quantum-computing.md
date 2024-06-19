@@ -1,14 +1,16 @@
 ---
 author: SoniaLopezBravo
-description: Learn what basic linear algebra concepts are needed to understand quantum computing
+description: Learn about the basic concepts in linear algebra that are needed to understand the principles of quantum computing
 ms.author: sonialopez
-ms.date: 10/10/2022
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', target, Quantum Development Kit]
-title: Linear algebra for quantum computing
+title: Linear Algebra for Quantum Computing
 uid: microsoft.quantum.overview.algebra
+
+#customer intent: As a quantum developer, I want to understand the basic concepts in linear algebra so I can understand quantum computing.
 ---
 
 # Linear algebra for quantum computing
@@ -75,7 +77,7 @@ Just as a single qubit state $\begin{bmatrix} a \\\\  b \end{bmatrix}$ must meet
 
 Linear algebra is the standard language for describing quantum computing and quantum physics. Even though the standard library included with the Microsoft Quantum Development Kit helps you run advanced quantum algorithms without diving into the underlying math, understanding the basics helps you get started quickly and provide a solid foundation to build on.
 
-## Next steps
+## Related content
 
 - [Vectors and matrices](xref:microsoft.quantum.concepts.vectors)
 - [Advanced matrix concepts](xref:microsoft.quantum.concepts.matrix-advanced)

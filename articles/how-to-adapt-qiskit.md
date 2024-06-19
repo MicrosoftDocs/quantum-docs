@@ -1,20 +1,21 @@
 ---
 author: SoniaLopezBravo
-description: Learn how to adapt any Qiskit sample to run on Azure Quantum service. 
-ms.date: 01/05/2024
+description: Learn how to adapt any Qiskit sample so you can run your quantum programs on the Azure Quantum service.
+ms.date: 06/18/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Adapting Qiskit samples
+title: Adapting Qiskit Samples
 uid: microsoft.quantum.how-to.adapting-qiskit
+
+#customer intent: As a quantum developer, I want to adapt a my own Qiskit samples so I can run my quantum programs on the Azure Quantum service.
 ---
 
-# Adapting Qiskit samples to run on Azure Quantum
+# How to adapt Qiskit samples to run on Azure Quantum
 
-
-If you have some experience with quantum computing or are just starting, it is likely that you use some samples from [Qiskit.org](https://qiskit.org/). This article shows you how to adapt a Qiskit sample to run against any of the Azure Quantum backends. You can either download the sample or copy the code to a new notebook. 
+If you have some experience with quantum computing or are just starting, it is likely that you use some samples from [Qiskit.org](https://qiskit.org/). This article shows you how to adapt any Qiskit sample to run against any of the Azure Quantum backends. You can either download the sample or copy the code to a new notebook.
 
 ## Prerequisites
 
