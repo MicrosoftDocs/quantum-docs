@@ -1,19 +1,20 @@
 ---
 author: SoniaLopezBravo
-description: Learn about eigenvectors, eigenvalues, and matrix exponentials, the fundamental tools used to describe and simulate quantum algorithms.
+description: Learn about eigenvectors, eigenvalues, and exponential matrices , the fundamental tools used to describe and simulate quantum algorithms.
 ms.author: sonialopez
-ms.date: 05/23/2024
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, "$$$", '$$$', $$$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\mathbf{1}', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 title: Advanced Matrix Concepts
 uid: microsoft.quantum.concepts.matrix-advanced
+#customer intent: As a quantum computing student, I want to learn about eigenvectors, eigenvalues, and exponential matrices so that I can understand how to describe and simulate quantum algorithms.
 ---
 
 # Advanced matrix concepts in quantum computing
 
-This article explores the concepts of [*eigenvalues, eigenvectors*,](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) and [*exponentials*](https://en.wikipedia.org/wiki/Matrix_exponential). These concepts form a fundamental set of matrix tools that are used to describe and implement quantum algorithms. For the basics of vectors and matrices as they apply to quantum computing, see [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra) and [Vectors and matrices](xref:microsoft.quantum.concepts.vectors). 
+This article explores the concepts of [*eigenvalues, eigenvectors*,](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) and [*exponentials*](https://en.wikipedia.org/wiki/Matrix_exponential). These concepts form a fundamental set of matrix tools that are used to describe and implement quantum algorithms. For the basics of vectors and matrices as they apply to quantum computing, see [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra) and [Vectors and matrices](xref:microsoft.quantum.concepts.vectors).
 
 ## Eigenvalues and eigenvectors 
 

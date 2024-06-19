@@ -2,16 +2,18 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide of what Azure Quantum Credits are, how to use them, and how to review credit balance.
 ms.author: sonialopez
-ms.date: 11/16/2023
+ms.date: 06/16/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: faq
 no-loc: [target, targets]
 title: Azure Quantum Credits
 uid: microsoft.quantum.credits
+
+#customer intent: As a quantum developer, I want to understand what Azure Quantum Credits are, how to get them, and how to review my credit balance.
 ---
 
-# Azure Quantum Credits
+# Understanding Azure Quantum Credits 
 
 In this article, you'll find the guidelines to understand Azure Quantum Credits and how to use them to run your programs on quantum hardware.
 
@@ -126,7 +128,7 @@ The **Period** column indicates the period when your quota is renewed. For Azure
 > [!NOTE]
 > If you have any questions regarding the workspace creation process, or any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
-## Next Steps
+## Related content
 
 - [FAQ: Applications to the Azure Quantum Credits program](xref:microsoft.quantum.credits.credits-faq)
 - [Azure Quantum quotas](xref:microsoft.quantum.quotas)

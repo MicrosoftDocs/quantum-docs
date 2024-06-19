@@ -1,19 +1,22 @@
 ---
 author: SoniaLopezBravo
 description: Learn how quantum computing works, how it compares to classical computing, and how it uses the principles of quantum mechanics.
-ms.date: 11/27/2023
+ms.date: 06/18/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', Quantum Development Kit, Quantum machine learning, Quantum Intermediate Representation, target, targets]
-title: Understanding quantum computing
+title: Understanding Quantum Computing
 uid: microsoft.quantum.overview.understanding
+#customer intent: As a quantum developer, I want to know how quantum computing works
 ---
 
-# Understanding quantum computing
+# What is quantum computing?
 
-Quantum computing holds the promise of solving some of our planet's biggest challenges - in the areas of environment, agriculture, health, energy, climate, materials science, and more. For some of these problems, classical computing is increasingly challenged as the size of the system grows. When designed to scale, quantum systems will likely have capabilities that exceed those of today's most powerful supercomputers. As the global community of quantum researchers, scientists, engineers, and business leaders collaborate to advance the quantum ecosystem, we expect to see quantum impact accelerate across every industry.
+Quantum computing holds the promise of solving some of our planet's biggest challenges - in the areas of environment, agriculture, health, energy, climate, materials science, and more. For some of these problems, classical computing is increasingly challenged as the size of the system grows. When designed to scale, quantum systems will likely have capabilities that exceed those of today's most powerful supercomputers.
+
+This article explains the principles of quantum computing, how it compares to classical computing, and how it uses the principles of quantum mechanics.
 
 [!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
 
@@ -83,11 +86,9 @@ For the latest information about Microsoft's quantum computing research, see the
 
 The quantum computers available today are enabling interesting experimentation and research but they are unable to accelerate computations necessary to solve real-world problems. While the industry awaits hardware advances, quantum software innovators are eager to make progress and prepare for a quantum future. Creating algorithms today that will eventually run on tomorrow's fault-tolerant scaled quantum computers is a daunting task. These innovators are faced with questions such as what hardware resources are required? How many physical and logical qubits are needed and what type? How long is the run time?
 
-You can use the Azure Quantum Resource Estimator to help answer these questions. As a result, you'll be able to refine your algorithms and build solutions that take advantage of scaled quantum computers when they become available.
+You can use the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to help answer these questions. As a result, you'll be able to refine your algorithms and build solutions that take advantage of scaled quantum computers when they become available.
 
 To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
-
-Learn more about assessing requirements to scale to practical quantum advantage using the Azure Quantum Resource Estimator in [arXiv:2211.07629](https://aka.ms/AQ/RE/Paper).
 
 ### Quantum simulation
 
@@ -101,8 +102,6 @@ One of the goals of quantum computing research is to study which problems can be
 
 Shor's algorithm running on a quantum computer could break classical cryptographic schemes such as the Rivest–Shamir–Adleman (RSA) scheme, which is widely used in e-commerce for secure data transmission. This scheme is based on the practical difficulty of factoring prime numbers by using classical algorithms. Quantum cryptography promises information security by harnessing basic physics rather than complexity assumptions. 
 
-Like Shor's algorithm for factoring, the hidden shift problem is a natural source of problems for which a quantum computer has an exponential advantage over the best known classical algorithms. This may eventually help in solving deconvolution problems and enable us to efficiently find patterns in complex data sets. It turns out that a quantum computer can in principle compute convolutions at high speed, which in turn is based on the quantum computer's ability to compute Fourier transforms extremely rapidly. In the sample gallery of your Azure Quantum workspace you will find a [Hidden Shifts Jupyter notebook sample](xref:microsoft.quantum.get-started.notebooks) (an Azure account is required). 
-
 [Grover's algorithm](xref:microsoft.quantum.concepts.grovers) speeds up the solution to unstructured data searches, running the search in fewer steps than any classical algorithm could. Indeed, any problem that allows you to check whether a given value $x$ is a valid solution (a "yes or no problem") can be formulated in terms of the search problem. The following are some examples:
 
 - Boolean satisfiability problem: Is the set of Boolean values $x$ an interpretation (an assignment of values to variables) that satisfies the given Boolean formula?
@@ -111,7 +110,6 @@ Like Shor's algorithm for factoring, the hidden shift problem is a natural sourc
 - Integer factorization problem: Is the fixed number $N$ divisible by the number $x$?
 
 For a more in-depth examination of Grover's algorithm, see the tutorial [Implement Grover's algorithm in Q#](xref:microsoft.quantum.tutorial-qdk.grovers).
-
 
 ## How does quantum computing solve problems?
 
@@ -151,9 +149,3 @@ Entangled quantum systems maintain this correlation even when separated over lar
 
 If you want to learn more, see the tutorial [Exploring quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement).
 
-## Next Steps
-
-- [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
-- [What are the Q# programming language and Quantum Development Kit (QDK)?](xref:microsoft.quantum.overview.q-sharp)
-- [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
-- [Tutorial: Implement a quantum random number generator in Q#](xref:microsoft.quantum.tutorial-qdk.random-number)

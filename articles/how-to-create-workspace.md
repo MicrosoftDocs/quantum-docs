@@ -1,14 +1,16 @@
 ---
 author: bradben
-description: Learn how to create an Azure Quantum workspace.
+description: Learn about the different subscription plans available in Azure and how to create an Azure Quantum workspace.
 ms.author: brbenefield
-ms.date: 06/06/2023
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
 title: Create an Azure Quantum workspace
 uid: microsoft.quantum.how-to.workspace
+
+#customer intent: As a quantum developer, I want to create an Azure Quantum workspace so that I can run quantum programs on quantum hardware.
 ---
 
 # Create an Azure Quantum workspace

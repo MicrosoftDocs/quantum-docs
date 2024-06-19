@@ -1,14 +1,15 @@
 ---
 author: SoniaLopezBravo
-description: Learn about quantum circuit diagrams and their conventions.
+description: Learn how to read a quantum circuit diagram and how to represent quantum operations and measurements in a circuit diagram.
 ms.author: sonialopez
-ms.date: 03/24/2024
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', target, targets]
 title: Quantum Circuit Diagram Conventions
 uid: microsoft.quantum.concepts.circuits
+#customer intent: As a quantum developer, I want to understand how to read quantum circuit diagrams so that I can understand quantum algorithms more easily.
 ---
 
 # Quantum circuit diagram conventions
@@ -141,7 +142,7 @@ Let's break down the steps of the teleportation protocol:
 1. Alice measures her two qubits and communicates the measurement results to Bob - this isn't reflected in the circuit. The measurement results are two classical bits, which can take the values 00, 01, 10, or 1
 1. Two classically controlled Pauli gates are applied to Bob's qubit, depending on the result bit being value $1$. The resulting state is the original message qubit state.
 
-## Next steps
+## Related content
 
 - [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
 - [Grover's algorithm](xref:microsoft.quantum.concepts.grovers)
