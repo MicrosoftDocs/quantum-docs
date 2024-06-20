@@ -1,13 +1,15 @@
 ---
 author: sonialopezbravo
-description: Frequently Asked Questions regarding the Azure Quantum Credits program
+description: Learn about the Azure Quantum Credits program, how to apply for it, and how long credits are valid for.
 ms.author: sonialopez
-ms.date: 11/21/2022
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: faq
 title: 'FAQ: Azure Quantum Credits program'
 uid: microsoft.quantum.credits.credits-faq
+
+#customer intent: As a quantum developer, I want to get information about the Azure Quantum Credits program, how to apply for it, and how long credits are valid for.
 ---
 
 # FAQ: Applications to the Azure Quantum Credits program

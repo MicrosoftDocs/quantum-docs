@@ -10,7 +10,7 @@ metadata:
   ms.collection: collection
   author: bradben
   ms.author: brbenefield
-  ms.date: 11/27/2023
+  ms.date: 06/18/2024
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -26,8 +26,8 @@ landingContent:
             url: overview-azure-quantum.md
           - text: Get started with the Quantum Development Kit
             url: install-overview-qdk.md
-          - text: Get started with Q# and an Azure Quantum notebook
-            url: get-started-jupyter-notebook.md
+          - text: Get started with Q# and an the Quantum Development Kit
+            url: how-to-submit-jobs.md
  
   # Computing
   - title: Quantum computing
@@ -46,9 +46,10 @@ landingContent:
     linkLists:
       - linkListType: learn
         links:
+          - text: Training path - Get started with Azure Quantum
+            url: /training/paths/quantum-computing-fundamentals/
           - text: Learn quantum computing with Copilot in Azure Quantum 
             url: https://quantum.microsoft.com/experience/quantum-coding
           - text: Learn Q# with the Quantum Katas
-            url: tutorial-qdk-intro-to-katas.md
-          - text: Quantum computing foundations
-            url: /training/paths/quantum-computing-fundamentals/
+            url: https://quantum.microsoft.com/experience/quantum-katas
+

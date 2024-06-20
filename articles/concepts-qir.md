@@ -1,14 +1,16 @@
 ---
 author: SoniaLopezBravo
-description: This article describes the Quantum intermediate representation developed by the QIR Alliance for quantum computing, its relevance, and use cases
+description: This article describes the quantum intermediate representation developed by the QIR Alliance for quantum computing, its relevance, and use cases.
 ms.author: sonialopez
-ms.date: 06/09/2023
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '\Bigg' ,'|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', '\rho', '\quad', '\sim', '\left\','\right\', '\%', '%', Quantum Intermediate Representation, target, targets]
 title: Quantum Intermediate Representation
 uid: microsoft.quantum.concepts.qir
+
+#customer intent: As a quantum developer, I want to understand what Quantum Intermediate Representation is and why it is important so that I can use it to develop quantum algorithms and optimize my code.
 ---
 
 # Quantum intermediate representation
@@ -100,7 +102,7 @@ In terms of code optimization, there are optimization steps that can be performe
 
 Another application is to use the standard LLVM “pass” infrastructure to create quantum code optimizers that operate on QIR. The language- and hardware-independent approach of QIR enables reusing those optimizers for different computation languages and computing platforms with almost no effort. 
 
-## Next steps
+## Related content
 
 - [The Q# programming user guide](xref:microsoft.quantum.user-guide-qdk.overview.program-structure)
 - [Introduction to resource estimation](xref:microsoft.quantum.overview.intro-resource-estimator)

@@ -1,19 +1,22 @@
 ---
 author: SoniaLopezBravo
-description: Learn about the role of T gates and T factories in quantum computing and in the Resource Estimator.
+description: Learn about the role of T gates and T factories in quantum computing and in the Azure Quantum Resource Estimator.
 ms.author: sonialopez
-ms.date: 01/30/2024
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 title: T gates & T factories
 uid: microsoft.quantum.concepts.tfactories
+
+#customer intent: As a quantum computing student, I want to learn about the role of T gates and T factories in in the Azure Quantum Resource Estimator.
+
 ---
 
-# T gates and T factories
+# The role of T gates and T factories in quantum computing
 
-This article describes the role of T gates and T factories in fault tolerant quantum computing. Giving a quantum algorithm, the estimation of required resources for running the T gates and T factories becomes crucial. 
+This article describes the role of T gates and T factories in fault tolerant quantum computing. Giving a quantum algorithm, the estimation of required resources for running the T gates and T factories becomes crucial to determine the feasibility of the algorithm. The Azure Quantum Resource Estimator calculates the number of T states needed to run the algorithm, the number of physical qubits for a single T factory, and the runtime of the T factory.
 
 ## Universal set of quantum gates
 
@@ -84,7 +87,7 @@ You can only do full invocations of a T factory. Therefore, there may be situati
 
 For more information, see Appendix C of [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629).
 
-## Next steps
+## Related content
 
 - [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
 - [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
