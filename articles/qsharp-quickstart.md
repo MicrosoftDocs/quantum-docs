@@ -21,9 +21,15 @@ In this quickstart, you...
 - Visual Studio Code
 - Azure QDK
 
-## Create a Q# program
+## Create a Q# file
+
+## Write your Q# code
 
 1. ...
+
+Maybe use another H2: ## Run your Q# program
+
+To learn more about entanglement, see ...
 
 ## Next steps
 
