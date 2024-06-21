@@ -88,7 +88,7 @@ Use this option to manually configure your resource group and storage account, s
    - To have Azure automatically create a storage account, select **Create a new storage account with default settings**.
    - To use an existing storage account in your subscription or to create a new one manually, select **Customize storage account settings**. 
    > [!NOTE]
-   >The storage account you select must be enabled for public internet access. For more information, see [Authorization failure](#issue-authorizationfailure---this-request-is-not-authorized-to-perform-this-operation).
+   >The storage account you select must be enabled for public internet access. For more information, see [Authorization failure](xref:microsoft.quantum.azure.common-issues#issue-authorizationfailure---this-request-is-not-authorized-to-perform-this-operation).
 
 1. Select **Next**.
 
