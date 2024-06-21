@@ -276,9 +276,9 @@ This occurs because the tenant has not enabled Azure Marketplace purchases. Foll
 - **Workspace**: "The resource write operation failed to complete successfully, because it reached terminal provisioning state 'Failed'".
 - **Storage account**: "The template deployment failed because of policy violation".
 
-This issue may occur if the your subscription security policy blocks creation of storage accounts with public access enabled. The Azure Quantum service only supports storage accounts via public internet access.
+This issue may occur if your subscription security policy blocks the creation of storage accounts that have public access enabled. The Azure Quantum service only supports storage accounts via public internet access.
 
-To resolve this, work with your subscription admin to get an exception for the storage account that you want to use.
+To resolve this, work with your subscription administrator to get an exception for the storage account that you want to use.
 
 ## Azure Quantum portal
 
