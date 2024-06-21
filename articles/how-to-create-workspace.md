@@ -61,18 +61,21 @@ To create an Azure Quantum workspace, follow these steps.
 This option is the easiest path to creating a workspace. It automatically creates the necessary resource group and storage account, adds the IonQ, Quantinuum, Rigetti, and Microsoft Quantum Computing providers, and includes free Azure Quantum Credits for IonQ, Quantinuum, and Rigetti hardware (USD500 each). Your workspace can still be customized after creation, if needed. 
 
 > [!NOTE]
-> To use **Quick create**, you must be an **Owner** of the subscription you selected in the previous step. To see a list of your subscriptions and access, see [Check your role assignments](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-role-assignments).
+> To use **Quick create**, you must be an **Owner** of the subscription you selected in the previous step. To see a list of your subscriptions and access, see [Check your role assignments](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-role-assignments). 
 
 1. Enter a name for the workspace.
 1. Select the region for the workspace.
 1. Select **Create**.
+
+> [!NOTE]
+> If you encounter issues during deployment, see [Azure Quantum common issues: Creating an Azure Quantum workspace](xref:microsoft.quantum.azure.common-issues#creating-an-azure-quantum-workspace).
 
 ### [Advanced create](#tab/tabid-advanced)
 
 Use this option to manually configure your resource group and storage account, select other payment options for your providers, and set tags to categorize resources. By default, this option also adds the IonQ, Quantinuum, Rigetti, and Microsoft Quantum Computing, and includes free Azure Quantum Credits for IonQ, Quantinuum, and Rigetti hardware (USD500 each). 
 
 > [!NOTE]
-> If you're unable to create or select a resource group or storage account as described in the following steps, you don't have the access required at the subscription, resource group, or storage account level. For more information on authorization, see [Role requirements for creating a workspace](xref:microsoft.quantum.how-to.manage-workspace-access#role-requirements-for-creating-a-workspace).
+> If you're unable to create or select a resource group or storage account as described in the following steps, then you may not have the access required at the subscription, resource group, or storage account level. For more information on authorization, see [Role requirements for creating a workspace](xref:microsoft.quantum.how-to.manage-workspace-access#role-requirements-for-creating-a-workspace).
 
 1. Select an existing [resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) or create a new one.
 
@@ -83,7 +86,9 @@ Use this option to manually configure your resource group and storage account, s
 1. Select or create a storage account for the workspace:
 
    - To have Azure automatically create a storage account, select **Create a new storage account with default settings**.
-   - To use an existing storage account in your subscription or to create a new one manually, select **Customize storage account settings**.
+   - To use an existing storage account in your subscription or to create a new one manually, select **Customize storage account settings**. 
+   > [!NOTE]
+   >The storage account you select must be enabled for public internet access. For more information, see [Authorization failure](xref:microsoft.quantum.azure.common-issues#issue-authorizationfailure---this-request-is-not-authorized-to-perform-this-operation).
 
 1. Select **Next**.
 
