@@ -16,7 +16,7 @@ uid: microsoft.quantum.reference.vscode
 The Azure Quantum Development Kit (QDK) uses all the standard functionality of Visual Studio (VS) Code, along with Q#-specific features when working with *.qs* files. This article is a reference guide to all Q# related commands and features, with links to additional content as needed. For general VS Code guidance, see the [VS Code documentation](https://code.visualstudio.com/docs).
 
 > [!TIP]
-> Most Q# related commands can be accessed from the **View > Command Palette** menu. While in a *.qs* file, select **Ctrl-Shift-P** (**Cmd-Shift-P** on macOS)and enter **Q#** to view a filtered list of commands. 
+> Most Q# related commands can be accessed from the **View > Command Palette** menu. While in a *.qs* file, select **Ctrl-Shift-P** (**Cmd-Shift-P** on macOS) and enter **Q#** to view a filtered list of commands. 
 >
 > For all macOS keyboard shortcuts, see [Keyboard shortcuts for macOS](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf).
 
