@@ -1,17 +1,19 @@
 ---
 author: SoniaLopezBravo
-description: Azure Quantum providers pricing and billing plans
+description: Learn about the different pricing plans for Azure Quantum providers, including IonQ, PASQAL, Quantinuum, and Rigetti.
 ms.author: sonialopez
-ms.date: 10/03/2023
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: overview
 no-loc: [target, targets]
-title: Pricing plans
+title: Pricing Plans for Azure Quantum Providers
 uid: microsoft.quantum.providers-pricing
+
+#customer intent: As a quantum developer, I want to understand the pricing plans for Azure Quantum providers, so that I can choose the best plan for my needs.
 ---
 
-# Azure Quantum pricing 
+# Pricing plans for Azure Quantum providers
 
 In Azure Quantum, hardware and software providers define and control the pricing of their offerings. The information below is subject to change by providers and some delays in reflecting latest pricing information may exist. Be sure to verify the latest pricing information from the Azure Quantum workspace you are using. 
 
@@ -236,7 +238,7 @@ The Pay-as-you-go plan consists of *a la carte* access to the Ankaa-2. The usage
 > [!NOTE]
 > If you have questions or run into any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
-## Next Steps
+## Related content
 
 - [Azure Quantum Credits](xref:microsoft.quantum.credits)
 - [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq)

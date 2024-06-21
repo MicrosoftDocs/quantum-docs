@@ -1,19 +1,23 @@
 ---
 author: SoniaLopezBravo
-description: Learn about using Dirac notation to represent quantum states and to simulate quantum operations.
+description: Learn about Dirac notation and how to use it to represent quantum states and to simulate quantum operations.
 ms.author: sonialopez
-ms.date: 04/15/2024
+ms.date: 06/15/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\mathbf{1}', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
-title: Dirac Notation
+title: Dirac Notation in Quantum Computing
 uid: microsoft.quantum.concepts.dirac
+
+#customer intent: As a quantum computing student, I want to learn about Dirac notation and how to use it to represent quantum states and to simulate quantum operations.
 ---
 
-# Dirac notation
+# Dirac notation in quantum computing
 
-[*Dirac notation*](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation) is a language designed to fit the precise needs of expressing states in quantum mechanics.  The examples in this article are suggestions that can be used to concisely express quantum ideas.
+[*Dirac notation*](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation) is designed to fit the precise needs of expressing states and linear algebra in quantum mechanics. It's named after the physicist Paul Dirac, who developed the notation in the 1930s.  Dirac notation is a concise and powerful way to describe quantum states and operations. It's used in quantum computing to describe quantum states, quantum operations, and quantum measurements.  
+
+This article introduce you to Dirac notation and show you how to use it to describe quantum states and operations.
 
 ## Limitations of column vector notation
 

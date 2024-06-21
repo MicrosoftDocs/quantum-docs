@@ -2,16 +2,18 @@
 author: SoniaLopezBravo
 description: Learn how to work with and define quantum oracles, black box operations that are used as input to another algorithm.
 ms.author: sonialopez
-ms.date: 06/09/2023
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\mathbf{1}', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
-title: Quantum Oracles
+title: Define Quantum Oracles 
 uid: microsoft.quantum.concepts.oracles
+
+#customer intent: As a quantum computing student, I want to learn how to work with and define quantum oracles, so that I can understand how to use them in quantum algorithms.
 ---
 
-# Work with and define quantum oracles
+# Understanding quantum oracles
 
 An oracle, $O$, is an unexposed operation that is used as input to another algorithm.
 Often, such operations are defined using a classical function $f : \\{0, 1\\}^n \to \\{0, 1\\}^m$, which takes an $n$-bit binary input and produces an $m$-bit binary output.
@@ -105,8 +107,7 @@ For example, [Deutsch-Jozsa algorithm](https://en.wikipedia.org/wiki/Deutsch%E2%
 
 For more information, see the discussion in [Gilyén *et al*. 1711.00465](https://arxiv.org/abs/1711.00465).
 
-## Next steps
-
+## Related content
 
 - [Grover's algorithm](xref:microsoft.quantum.concepts.grovers)
 - [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir)

@@ -113,7 +113,7 @@ The following table lists the supported features for integrated hybrid computing
 | Arbitrary control flow | Use of if/else branching  |
 | Mid-circuit measurement | Utilizes classical register resources |
 | Qubit reuse | Supported |
-| Real-time classical compute| 64-bit unsigned integer arithmetic <br>Utilizes classical register resources |
+| Real-time classical compute| 64-bit signed integer arithmetic <br>Utilizes classical register resources |
 
 The QDK provides target-specific feedback when Q# language features aren't supported for the selected target. If your Q# program contains unsupported features when running integrated hybrid jobs, you receive an error message at design-time. For more information, see the [QIR wiki page](https://github.com/microsoft/qsharp/wiki/QIR). 
 

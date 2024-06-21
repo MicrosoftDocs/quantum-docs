@@ -1,16 +1,18 @@
 ---
 author: SoniaLopezBravo
-description: This document provides instructions on how to authenticate using a managed identity.
+description: This document provides instructions on how to authenticate in your Azure Quantum workspace using a managed identity.
 ms.author: sonialopez
-ms.date: 11/23/2022
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
-title: Using a managed identity to authenticate
+title: Authenticate Using a Managed Identity 
 uid: microsoft.quantum.optimization.authenticate-managed-identity
+
+#customer intent: As a quantum developer, I want to understand how to authenticate using a managed identity to submit jobs to Azure Quantum.
 ---
 
-# Using a managed identity to authenticate
+# How to use a managed identity to authenticate in your Azure Quantum workspace
 
 There are several scenarios where it is unsuitable to use interactive authentication or to authenticate
 as a user account. For example, you may want to submit jobs from a virtual machine (VM), or from a Function App. One option is to [authenticate using a service principal](xref:microsoft.quantum.optimization.authenticate-service-principal), another option is to configure a managed identity, which this article will explain.
@@ -27,7 +29,7 @@ To configure a managed identity:
 4. Configure the **Status** setting to **On**.
 5. Select **Save** to persist your configuration and confirm the opening dialog with **Yes**.
 
-## Grant access to your Quantum workspace
+## Grant access to your Azure Quantum workspace
 
 In order to allow the resource to access your Azure Quantum workspace:
 
@@ -45,7 +47,7 @@ In order to allow the resource to access your Azure Quantum workspace:
 
 1. Select **Next** and then select **Review and assign**.
 
-## Logging in to your workspace
+## Logging in to your Azure Quantum workspace
 
 You should now be able to use your quantum workspace from your chosen resource. For example when using your workspace from within a VM, you will no longer need to authenticate each time. 
 

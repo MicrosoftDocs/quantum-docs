@@ -2,17 +2,18 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide of what Azure Quantum quotas are, how to review remaining quotas and how to apply to get more. 
 ms.author: sonialopez
-ms.date: 06/03/2024
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
 no-loc: [target, targets]
-title: Using Limits & Quotas
+title: Manage Limits & Quotas
 uid: microsoft.quantum.quotas
-#customer intent: As a quantum programmer, 
+
+#customer intent: As a quantum developer, I want to understand the limits and quotas of Azure Quantum, how to review my remaining quotas, and how to apply to get more.
 ---
 
-# Azure Quantum quotas 
+# How to manage quotas in Azure Quantum
 
 Azure Quantum quotas are provider-defined limits on the usage of QPUs targets. Quotas help prevent accidental cost overages for the user while also preserving the integrity of the provider's systems. Quotas are based on your provider plan selection and can usually be increased with a support ticket.  
 The usage tracked by quotas is not necessarily tied to a cost or credit, but it might be correlated.
