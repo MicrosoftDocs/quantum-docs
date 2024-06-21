@@ -271,6 +271,15 @@ This issue may include more details such as "ResourceDeploymentFailure - The 'Az
 
 This occurs because the tenant has not enabled Azure Marketplace purchases. Follow the steps in [Enabling Azure Marketplace purchases](/azure/cost-management-billing/manage/ea-azure-marketplace#enabling-azure-marketplace-purchases) to enable Azure Marketplace purchases. 
 
+### Issue: Deploying a quantum workspace or deploying a storage account fails with one of the following errors:
+
+- **Workspace**: "The resource write operation failed to complete successfully, because it reached terminal provisioning state 'Failed'".
+- **Storage account**: "The template deployment failed because of policy violation".
+
+This issue may occur if your subscription security policy blocks the creation of storage accounts that have public access enabled. The Azure Quantum service only supports storage accounts via public internet access.
+
+To resolve this, work with your subscription administrator to get an exception for the storage account that you want to use.
+
 ## Azure Quantum portal
 
 ### Issue: Saved notebooks don't load
