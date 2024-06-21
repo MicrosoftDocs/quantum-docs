@@ -13,30 +13,12 @@ uid: microsoft.quantum.reference.vscode
 
 # Reference: Azure Quantum Development Kit extension for Visual Studio Code
 
-The Azure Quantum Development Kit (QDK) uses all the standard functionality of Visual Studio (VS) Code, along with Q#-specific features when working with *.qs* files. This article is a reference guide to all Q# related settings and features, with links to additional content as needed. For general VS Code guidance, see the [VS Code documentation](https://code.visualstudio.com/docs).
+The Azure Quantum Development Kit (QDK) uses all the standard functionality of Visual Studio (VS) Code, along with Q#-specific features when working with *.qs* files. This article is a reference guide to all Q# related commands and features, with links to additional content as needed. For general VS Code guidance, see the [VS Code documentation](https://code.visualstudio.com/docs).
 
 > [!TIP]
-> Most Q# related commands can be accessed from the **View > Command Palette** menu. While in a *.qs* file, select **Ctrl-Shift-P** and enter **Q#** to view a filtered list of commands. 
-
-## Q# settings
-
-To open the VS Code configuration settings, select **File > Preferences > Settings**. There is only one Q#-specific setting, located under the **User** tab in **Extensions > Q#**. 
-
-
-| Setting | ID | Action  | Notes |
-|--------------| ---|-----------|----------------| 
-|  **Qir: Target profile** | *Q#.qir.targetProfile* | Enables the selected target profile for your program. | Select `unrestricted`, `base`, or `adaptive_ri`, depending on the processing requirements of your program. For more information, see  [Target profiles](xref:microsoft.quantum.target-profiles#target-profiles-and-their-limitations). | 
-
-### Other helpful settings
-
-These settings may also be useful when configuring your VS Code environment for Q#.
-
-| Setting | ID | Action  | Notes |
-|----------| -------|-----------|----------------| 
-| **User > Text Editor > Code Lens** | *editor.codeLens* | Enables the code lens options for your Q# program. The code lens options appear after the `@EntryPoint()` in each Q# program and provide quick access to run or debug your program, display a histogram, show resource estimates, or display the circuit diagram for the program. The circuit diagram option is also available for individual user-defined operations in the program. | For more info, see [Visualize quantum circuit diagrams](xref:microsoft.quantum.how-to.visualize-circuits).  |
-| **User > Text Editor > Files: Default Language** | *files.defaultLanguage* | Sets the default language that is assigned to new files. | Optional value: **qsharp** |
-| **User > Text Editor > Default Formatter** | *editor.defaultFormatter* | Defines a default formatter that takes precedence over all other formatter settings. | Optional value: **Azure Quantum Development Kit (QDK)** | 
-| **User > Text Editor > Default Folding Range Provider** | *editor.defaultFoldingRangeProvider* | Defines a default folding range provider that takes precedence over all other folding range providers. | Optional value: **Azure Quantum Development Kit (QDK)** | 
+> Most Q# related commands can be accessed from the **View > Command Palette** menu. While in a *.qs* file, select **Ctrl-Shift-P** (**Cmd-Shift-P** on macOS)and enter **Q#** to view a filtered list of commands. 
+>
+> For all macOS keyboard shortcuts, see [Keyboard shortcuts for macOS](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf).
 
 ## Commands
 
