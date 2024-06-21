@@ -1005,6 +1005,11 @@
 			"source_path": "articles/overview-what-is-qsharp-and-qdk.md",
 			"redirect_url": "/azure/quantum/qsharp-overview",
 			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/program-structure.md",
+			"redirect_url": "/azure/quantum/qsharp-overview#structure-of-a-q-program",
+			"redirect_document_id": false
 		}
 	]
 }

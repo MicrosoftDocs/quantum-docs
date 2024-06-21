@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
-title: "How to Work With Qsharp Projects"
+title: "How to Work With Q# Projects"
 uid: microsoft.quantum.qsharp-projects
 #customer intent: As a quantum developer, I want to understand how to use Q# projects to develop quantum programs
 ---
