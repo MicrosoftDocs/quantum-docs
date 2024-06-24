@@ -74,11 +74,13 @@ When using the `%%qsharp` command:
 
 For an example of working with a Jupyter Notebook program, see [Get started with Q# programs and VS Code](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter).
 
-## Azure Portal
+## Azure Quantum
+
+### Azure portal
 
 Azure notebook: Notebook tab in Azure portal. They're basically Jupyter Notebooks in the browser, you don't need to install anything extra. See Run a Q# and Python notebook - Azure Quantum | Microsoft Learn
 
-## Azure Quantum website (Copilot)
+### Azure Quantum website (Copilot)
 
 Running a Q# file in the browser, but you cannot save the file and the functionality is limited to Run, you cannot do all the things available in VS Code.
 
@@ -89,7 +91,3 @@ To learn Q#, use the following resources:
 - **Quantum Katas:** Interactive coding exercises ...
 - **Training modules:** 
 - **Q# code samples:**
-
-## Next steps
-
-- ...
