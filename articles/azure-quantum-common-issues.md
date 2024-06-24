@@ -42,6 +42,15 @@ Steps to resolve this issue:
 9. You should now see your account set configured with either the **Owner** or **Contributor** role.
 10. Create your Azure Quantum workspace again and then submit a job against this new Workspace.
 
+### Issue: "AuthorizationFailure - This request is not authorized to perform this operation"
+
+If a job submission fails with this message even though you have a valid connection to the Azure Quantum service, the storage account may be configured to block public network access. The Azure Quantum service only supports storage accounts via public internet access.
+
+To check the storage account:
+- On the quantum workspace page in the Azure Portal, select **Overview** and select the storage account.
+- On the storage account page, in **Security + networking**, select **Networking**.
+- In the **Firewalls and virtual networks** tab in **Public network access**, ensure that **Enable all networks** is selected. 
+
 ### Issue: "Failed to compile program" when attempting to submit a Q# program through the CLI
 
 When attempting to submit a job at the command prompt using the `az quantum submit` command, you may encounter the following error message:
@@ -271,14 +280,25 @@ This issue may include more details such as "ResourceDeploymentFailure - The 'Az
 
 This occurs because the tenant has not enabled Azure Marketplace purchases. Follow the steps in [Enabling Azure Marketplace purchases](/azure/cost-management-billing/manage/ea-azure-marketplace#enabling-azure-marketplace-purchases) to enable Azure Marketplace purchases. 
 
+### Issue: Deploying a quantum workspace or deploying a storage account fails with one of the following errors:
+
+- **Workspace**: "The resource write operation failed to complete successfully, because it reached terminal provisioning state 'Failed'".
+- **Storage account**: "The template deployment failed because of policy violation".
+
+This issue may occur if your subscription security policy blocks the creation of storage accounts that have public access enabled. The Azure Quantum service only supports storage accounts via public internet access.
+
+To resolve this, work with your subscription administrator to get an exception for the storage account that you want to use.
+
 ## Azure Quantum portal
 
 ### Issue: Saved notebooks don't load
 
 After selecting **Notebooks** in your workspace, the list of your saved notebooks displays a progress bar but never loads.
 
-This can happen for two reasons:
+This can happen for three reasons:
 
 1. If the storage account no longer exists. This can happen if the storage account linked to the workspace was deleted. To verify, select the **Overview** page for the workspace and select the link to the storage account. If the storage account has been deleted, you will see a **404 - Not found** error.
+
+1. If the storage account is not enabled for public internet access. See [Authorization failure](#issue-authorizationfailure---this-request-is-not-authorized-to-perform-this-operation) for more information. 
 
 1. If the managed identity of the workspace is not a **Contributor** to the storage account. Check that the workspace identity (which uses the same name as the workspace) still has the **Contributor** role assignment to the storage account. To verify, select the **Overview** page for the workspace and select the link to the storage account. On the **Overview** page for the storage account, select **Access control (IAM)** and verify that the workspace is listed under **Contributor**.
