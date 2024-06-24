@@ -76,9 +76,9 @@ The `@EntryPoint()` attribute tells the Q# compiler where to start executing the
 
 ### Types
 
-Q# provides built-in [types](ref:microsoft.quantum.qsharp.typesystem-overview) that are common to most languages, including `Int`, `Double`, `Bool`, and `String`, and types that are specific to quantum computing. For example, the `Result` type represents the result of a qubit measurement and can have one of two values: `Zero` or `One`.
+Q# provides [built-in types](ref:microsoft.quantum.qsharp.typesystem-overview) that are common to most languages, including `Int`, `Double`, `Bool`, and `String`, and types that are specific to quantum computing. For example, the `Result` type represents the result of a qubit measurement and can have one of two values: `Zero` or `One`.
 
-In the `Superposition` program, the `MeasureOneQubit()` operation expects a return type of `Result`, and the `M` operation measures the qubit and returns the `Result`.
+In the `Superposition` program, the `MeasureOneQubit()` operation expects a return type of `Result`, and the `M` operation measures the qubit and returns the `Result`:
 
 ```qsharp
 // The operation definition expects a return type of Result.
@@ -87,7 +87,6 @@ operation MeasureOneQubit() : Result {
     // Measure the qubit in the Z basis, returning a Result type.
     let result = M(q);
     ...
-}
 ```
 
 Q# also provides types that define ranges, arrays, and tuples. You can even define your own [custom types](xref:microsoft.quantum.qsharp.typedeclarations).
@@ -126,7 +125,7 @@ operation MeasureOneQubit() : Result {
 }
 ```
 
-Here's a basic example that takes no parameters and expects no return value. The `Unit` value is equivalent to `NULL` in other languages.
+Here's a basic example that takes no parameters and expects no return value. The `Unit` value is equivalent to `NULL` in other languages:
 
 ```qsharp
 operation SayHelloQ() : Unit {
@@ -134,13 +133,7 @@ operation SayHelloQ() : Unit {
 }
 ```
 
-The Q# standard library also provides operations you can use in quantum programs, such as the Hadamard operation, `H`, in the `Superposition` program. Given a qubit in the Z basis, `H` puts it into an *even* superposition, where the qubit has a 50% chance of being measured as zero or one.
-
-```qsharp
-// Apply the Hadamard operation, H, to the qubit state.
-// It now has a 50% chance of being measured as 0 or 1.
-H(q);  
-```
+The Q# standard library also provides operations you can use in quantum programs, such as the Hadamard operation, `H`, in the `Superposition` program. `H` puts a qubit in the Z basis into an *even* superposition, where it has a 50% chance of being measured as zero or one.
 
 ### Measuring qubits
 
@@ -169,7 +162,7 @@ The Q# standard library has built-in namespaces that contain functions and opera
 To call a function or operation, you can specify the full namespace or use an `open` statement to make all the functions and operations for that namespace available and make your code easier to read. Both of these examples call the same operation:
 
 ```qsharp
- Microsoft.Quantum.Intrinsic.Message("Hello quantum world!");
+Microsoft.Quantum.Intrinsic.Message("Hello quantum world!");
 ```
 
 ```qsharp
