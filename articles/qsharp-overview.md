@@ -14,7 +14,7 @@ uid: microsoft.quantum.qsharp-overview
 
 # What is Q#?
 
-Q# is a high-level, open-source programming language for developing and running quantum algorithms. As part of the Quantum Development Kit (QDK), Q# is designed to work with any quantum hardware, scale to all quantum applications, and optimize execution. For more information about the QDK, see ...
+Q# is a high-level, open-source programming language for developing and running quantum algorithms. As part of the Quantum Development Kit (QDK), Q# is designed to be hardware agnostic, scale to all quantum applications, and optimize execution. For more information about the QDK, see ...
 
 When writing algorithms, a quantum programming language should meet the following language, compiler, and runtime requirements:
 
@@ -46,9 +46,6 @@ namespace Superposition {
 ```
 
 Based on the comments (`//`), the `Superposition` program allocates a qubit, applies an operation to put the qubit in superposition, measures the qubit state, resets the qubit, and then returns the result. Let's break this program down into its components.
-
-> [!NOTE]
-> You can use Q# as a standalone program or with Python. For more information, see [Different ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work).
 
 ### User namespaces
 
@@ -170,7 +167,7 @@ open Microsoft.Quantum.Intrinsic;
 Message("Hello quantum world!");
 ```
 
-In the `Superposition` program, there are no `open` statements or calls with full namespaces. That's because the Q# development environment loads two namespaces by default: `Microsoft.Quantum.Core` and `Microsoft.Quantum.Intrinsic`, which contain commonly used functions and operations. 
+In the `Superposition` program, there are no `open` statements or calls with full namespaces. That's because the Q# development environment loads two namespaces by default: `Microsoft.Quantum.Core` and `Microsoft.Quantum.Intrinsic`, which contain commonly used functions and operations.
 
 You can take advantage of the `Microsoft.Quantum.Measurement` namespace by using the `MResetZ` operation to optimize the code in the `Superposition` program. `MResetZ` combines the measurement and reset operations into one step, as in the following example:
 
@@ -193,7 +190,6 @@ namespace Superposition {
 }
 ```
 
-## Next steps
+## How to access Q#
 
-- [Different ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work)
-- [Quickstart: Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart)
+Q# offers flexibility in how you write quantum programs. You can use it as a standalone language or with Python in various IDEs. For more information, see [Different ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work).

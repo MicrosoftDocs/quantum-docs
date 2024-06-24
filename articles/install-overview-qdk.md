@@ -7,23 +7,23 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: get-started
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
-title: Get started with the Quantum Development Kit 
+title: Set up the Quantum Development Kit 
 uid: microsoft.quantum.install-qdk.overview
 #customer intent: As a quantum developer, I want to configure my environment with the latest Azure Quantum tools. 
 ---
 
-# Get started with the Azure Quantum Development Kit (Modern QDK)
+# Set up the Azure Quantum Development Kit (Modern QDK)
 
-Learn about the different environment options available to develop quantum computing using the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) service. Every environment uses the [Azure Quantum Development Kit (Modern QDK)](xref:microsoft.quantum.overview.q-sharp), an open source set of tools that includes the quantum programming language Q# and accompanying libraries. With the QDK, you can develop quantum computing applications using different IDEs and languages and run them on quantum simulators or quantum hardware using Azure Quantum. 
+Learn about the different environment options available to develop quantum computing using the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) service. Every environment uses the [Azure Quantum Development Kit (Modern QDK)](xref:microsoft.quantum.overview.q-sharp), an open source set of tools that includes the quantum programming language Q# and accompanying libraries. With the QDK, you can develop quantum computing applications using different IDEs and languages and run them on quantum simulators or quantum hardware using Azure Quantum.
 
 ## Running quantum programs
 
-Azure Quantum offers several environments to start exploring quantum programming.
+Azure Quantum offers several environments to start exploring quantum programming:
 
 | &nbsp;  | [Azure Quantum Website](#the-azure-quantum-website) | [Visual Studio Code (Web)](#visual-studio-code-on-the-web) | [Azure portal](#the-azure-quantum-portal) | [Visual Studio Code](#visual-studio-code) |
 |-----|:-----:|:-----:|:-----:|:-----:|
 | Built-in Q# support * | &#10004; |  &#10004;  |  &#10004;  |  &#10004;  |
-| Jupyter  notebooks  |&nbsp; |  &#10004;  |  &#10004;  |  &#10004;  |
+| Jupyter  Notebooks  |&nbsp; |  &#10004;  |  &#10004;  |  &#10004;  |
 | Resource Estimator  | &nbsp; |  &#10004;  |  &#10004;  |  &#10004;  |
 | QPU access  | &nbsp; |  &#10004;<br>(with Azure subscription)  |  &#10004;<br>(with Azure subscription)  |  &#10004;<br>(with Azure subscription)  |
 | Python support  | &nbsp; |  &nbsp;  |  &#10004;  |  &#10004;  |
