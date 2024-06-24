@@ -14,13 +14,13 @@ uid: microsoft.quantum.qsharp-ways-to-work
 
 # Different ways to work with Q#
 
-Learn about the environment options for quantum programming with Q#. Each environment uses the Quantum Development Kit (QDK), a set of open-source tools that includes Q# and accompanying libraries. With the QDK, you can develop quantum computing applications using multiple IDEs and languages and run them on quantum simulators or quantum hardware using Azure Quantum. For more information, see [Set up the QDK](xref:microsoft.quantum.install-qdk.overview).
+Learn about the environment options for quantum programming with Q#. Each environment uses the Quantum Development Kit (QDK), a set of open-source tools that includes Q# and accompanying libraries. With the QDK, you can develop quantum computing applications in multiple IDEs and languages and run them on quantum simulators or quantum hardware using Azure Quantum. For more information, see [Set up the QDK](xref:microsoft.quantum.install-qdk.overview).
 
 The following table lists the pros and cons of each Q# environment:
 
 ## Visual Studio Code
 
-In VS Code, you can either use Q# as a standalone program or with Python.
+In VS Code, you can use Q# on its own or with Python.
 
 ### Standalone Q# programs
 
@@ -28,7 +28,7 @@ In VS Code, you can either use Q# as a standalone program or with Python.
 
 ### Q# and Python
 
-1 .qs + 1 .py files. The Python program is a host program that at some point in its routine calls the Q# program and use the results. To use Python and Q#, you need to install the qsharp and azure-quantum Python packages. Usually this is for very complex projects, users who have more experience and background. 
+1 .qs + 1 .py files. The Python program is a host program that at some point in its routine calls the Q# program and use the results. To use Python and Q#, you need to install the qsharp and azure-quantum Python packages. Usually this is for very complex projects, users who have more experience and background.
 
 ### Jupyter Notebook in VS Code
 
