@@ -51,7 +51,7 @@ A quantum program can be seen as a particular set of classical subroutines which
 
 Q# is a standalone language offering a high level of abstraction. There is no notion of a quantum state or a circuit; instead, Q# implements programs in terms of statements and expressions, much like classical programming languages. Thus, the Q# language supports the integration of rich classical and quantum computing.
 
-For more information, see [The quantum programming language Q#](xref:microsoft.quantum.overview.q-sharp#the-quantum-programming-language-q).
+For more information, see [What is Q#?](xref:microsoft.quantum.qsharp-overview).
 
 ## How can I write Q# quantum programs?
 
@@ -108,6 +108,54 @@ For more information on the specifications of each provider, see the full [Quant
 
 - [Quantum Circuits, Inc](https://quantumcircuits.com/): Full-stack superconducting circuits, with real-time feedback that enables error correction, encoding-agnostic entangling gates.
 
+## Quantum development workflow
+
+The following diagram shows the stages through which a quantum program goes from idea to complete implementation on Azure Quantum, and the tools offered for each stage.
+
+:::image type="content" source="~/media/quantum-development-kit-flow-diagram.svg" alt-text="Diagram showing the workflow of quantum programming development.":::
+
+### Choose your development environment
+
+Run your quantum programs in your preferred development environment. You can use the [online code editor](https://quantum.microsoft.com/experience/quantum-coding) in the Azure Quantum website, the [hosted Jupyter Notebooks](xref:microsoft.quantum.get-started.notebooks) available in your Azure Quantum workspace in the Azure portal, or your own local development environment.
+
+### Write your quantum program
+
+The QDK offers support for Q#, but also for [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit), and [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq) languages for quantum computing.
+
+To get started, you can follow the Q# tutorials and explore quantum concepts such as [superposition](xref:microsoft.quantum.tutorial-qdk.random-number), [entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement), [Grover's quantum algorithm](xref:microsoft.quantum.tutorial-qdk.grovers), and other quantum phenomena.
+
+### Integrate with Python
+
+The QDK allows you to integrate Q# programs with Python. You can use a [Python program](xref:microsoft.quantum.submit-jobs?pivots=ide-python) to call Q# operations. 
+
+### Estimate resources
+
+Before running on quantum hardware, you’ll need to figure out whether your program can run on existing hardware, and how many resources it will consume.
+
+The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator) allows you to assess architectural decisions, compare qubit technologies, and determine the resources needed to execute a given quantum algorithm. You can choose from pre-defined fault-tolerant protocols and specify assumptions of the underlying physical qubit model.
+
+For more information, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
+
+> [!NOTE]
+> The Azure Quantum Resources Estimator is free of charge and doesn't require an Azure account.
+
+### Run program in simulator
+
+When you compile and run a quantum program, the QDK creates an instance of the quantum simulator and passes the Q# code to it. The simulator uses the Q# code to create qubits (simulations of quantum particles) and apply transformations to modify their state. The results of the quantum operations in the simulator are then returned to the program. Isolating the Q# code in the simulator ensures that the algorithms follow the laws of quantum physics and can run correctly on quantum computers.
+
+### Submit jobs to the Azure Quantum service
+
+You can submit your Q# programs (also known as jobs) to Azure Quantum through your preferred development environment, both locally and online. For more information, see [how to submit Q# jobs](xref:microsoft.quantum.submit-jobs). You can also run and submit quantum circuits written in Qiskit and Cirq languages.
+
+Azure Quantum offers some of the most compelling and diverse quantum hardware available today from industry leaders. See [Quantum computing providers](xref:microsoft.quantum.reference.qc-target-list) for the current list of supported hardware providers.
+
+> [!NOTE]
+> The cloud-based [Quantinuum H-Series Emulator](xref:microsoft.quantum.providers.quantinuum#h-series-emulator-cloud-based) target is available without an Azure account. To submit a job to the rest of the Azure Quantum providers, you need an Azure account and quantum workspace. If you don't have a quantum workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+
+The following diagram shows the basic workflow after you submit your job:
+
+:::image type="content" source="~/media/azure-quantum-flow-diagram.png" alt-text="Diagram showing the workflow after a job submission to Azure Quantum.":::
+
 ## Next steps
 
 Start using Azure Quantum:
@@ -115,5 +163,5 @@ Start using Azure Quantum:
 - [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace)
 - [Get started with Q# and Visual Studio Code](xref:microsoft.quantum.submit-jobs)
 - [Get started with Q# and Azure Quantum notebooks](xref:microsoft.quantum.get-started.notebooks)
-- [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)ç
+- [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
 - [Run a Qiskit circuit in Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)

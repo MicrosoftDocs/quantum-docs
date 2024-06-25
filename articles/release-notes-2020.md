@@ -13,7 +13,7 @@ uid: microsoft.quantum.relnotes-qdk-2020
 
 # Release notes for Quantum Development Kit (QDK) and Azure Quantum - 2020
 
-This article outlines updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview) in 2020.
+This article outlines updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview) in 2020.
 
 ## QDK version 0.14.2011120240
 

@@ -14,13 +14,16 @@ uid: microsoft.quantum.qsharp-overview
 
 # What is Q#?
 
-Q# is a high-level, open-source programming language for developing and running quantum algorithms. As part of the Quantum Development Kit (QDK), Q# is designed to be hardware agnostic, scale to all quantum applications, and optimize execution. For more information about the QDK, see ...
+Q# is a high-level, open-source programming language for developing and running quantum algorithms. As part of the Quantum Development Kit (QDK), Q# is designed to be hardware agnostic, scale to all quantum applications, and optimize execution. For more information about the QDK, see [Set up the QDK](xref:microsoft.quantum.install-qdk.overview).
 
 When writing algorithms, a quantum programming language should meet the following language, compiler, and runtime requirements:
 
 - **Abstract qubits:** Quantum algorithms use qubits that aren't tied to specific hardware or layout. The compiler and runtime handle the mapping from program qubits to physical qubits.
 - **Quantum and classical computing:** The ability to perform classical and quantum computations is essential in a universal quantum computer.
 - **Respect the laws of physics:** Quantum algorithms follow the rules of quantum physics. For example, they cannot directly copy or access the qubit state.
+
+> [!NOTE]
+> You can use Q# as a standalone language or with Python in various IDEs. For more information, see [Different ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work).
 
 ## Structure of a Q# program
 
@@ -35,7 +38,7 @@ namespace Superposition {
         // Apply the Hadamard operation, H, to the state.
         // It now has a 50% chance of being measured as 0 or 1.
         H(q);      
-        // Measure the qubit in the Z basis.
+        // Measure the qubit in the Z-basis.
         let result = M(q);
         // Reset the qubit before releasing it.
         Reset(q);
@@ -81,7 +84,7 @@ In the `Superposition` program, the `MeasureOneQubit()` operation expects a retu
 // The operation definition expects a return type of Result.
 operation MeasureOneQubit() : Result {
     ...
-    // Measure the qubit in the Z basis, returning a Result type.
+    // Measure the qubit in the Z-basis, returning a Result type.
     let result = M(q);
     ...
 ```
@@ -130,16 +133,16 @@ operation SayHelloQ() : Unit {
 }
 ```
 
-The Q# standard library also provides operations you can use in quantum programs, such as the Hadamard operation, `H`, in the `Superposition` program. Given a qubit in the Z basis, `H` puts it into an *even* superposition, where the qubit has a 50% chance of being measured as zero or one.
+The Q# standard library also provides operations you can use in quantum programs, such as the Hadamard operation, `H`, in the `Superposition` program. Given a qubit in the Z-basis, `H` puts it into an even superposition, where the qubit has a 50% chance of being measured as zero or one.
 
 ### Measuring qubits
 
 While there are many types of quantum measurements, Q# focuses on projective measurements on single qubits, also known as [Pauli measurements](xref:microsoft.quantum.concepts.pauli). After being measured in a given basis, such as the computational basis $\ket{0},\ket{1}$, the qubit state is projected onto whichever basis state was measured, destroying any superposition between the two.
 
-The `Superposition` program uses the `M` operation, which measures a single qubit in the Pauli Z basis and returns a `Result` type:
+The `Superposition` program uses the `M` operation, which measures a single qubit in the Pauli Z-basis and returns a `Result` type:
 
 ```qsharp
-// Measure the qubit in the Z basis.
+// Measure the qubit in the Z-basis.
 let result = M(q);
 ```
 
@@ -189,6 +192,8 @@ namespace Superposition {
 }
 ```
 
-## How to access Q#
+## Related content
 
-Q# offers flexibility in how you write quantum programs. You can use it as a standalone language or with Python in various IDEs. For more information, see [Different ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work).
+- [Different ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work)
+- [Set up the Azure Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
+- [Quickstart: Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart)

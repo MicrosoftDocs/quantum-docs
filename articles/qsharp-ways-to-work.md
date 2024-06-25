@@ -88,6 +88,6 @@ Running a Q# file in the browser, but you cannot save the file and the functiona
 
 To learn Q#, use the following resources:
 
-- **Quantum Katas:** Interactive coding exercises ...
+- **Quantum Katas:** Self-paced Q# tutorials.
 - **Training modules:** 
 - **Q# code samples:**

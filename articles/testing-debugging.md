@@ -21,7 +21,7 @@ As with classical programming, it is essential to be able to check that quantum 
 The Azure Quantum Development Kit (Modern QDK) Visual Studio Code extension includes a debugger for Q# programs. You can set breakpoints, step through your code and into each function or operation, and track not only the local variables, but the quantum state of the qubits as well. 
 
 > [!NOTE]
-> The VS Code debugger only works with Q# (.qs) files, and doesn't work with Q# cells in a Jupyter Notebook. For testing Jupyter Notebook cells, see [Testing your code](#testing-your-code).
+> The VS Code debugger only works with Q# (.qs) files and doesn't work with Q# cells in a Jupyter Notebook. For testing Jupyter Notebook cells, see [Test your code](#test-your-code).
 
 The following example demonstrates the basic features of the debugger. For complete information about using VS Code debuggers, see [Debugging](https://code.visualstudio.com/docs/editor/debugging).
 

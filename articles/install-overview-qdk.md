@@ -14,7 +14,7 @@ uid: microsoft.quantum.install-qdk.overview
 
 # Set up the Azure Quantum Development Kit (Modern QDK)
 
-Learn about the different environment options available to develop quantum computing using the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) service. Every environment uses the [Azure Quantum Development Kit (Modern QDK)](xref:microsoft.quantum.overview.q-sharp), an open source set of tools that includes the quantum programming language Q# and accompanying libraries. With the QDK, you can develop quantum computing applications using different IDEs and languages and run them on quantum simulators or quantum hardware using Azure Quantum.
+Learn about the different environment options available to develop quantum computing using the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) service. Every environment uses the Quantum Development Kit (Modern QDK), an open source set of tools that includes the quantum programming language Q# and accompanying libraries. With the QDK, you can develop quantum computing applications using different IDEs and languages and run them on quantum simulators or quantum hardware using Azure Quantum.
 
 ## Running quantum programs
 
@@ -151,4 +151,3 @@ Using the Azure portal:
 
 - [Work with Jupyter notebooks on Azure Quantum](xref:microsoft.quantum.how-to.notebooks)
 - [Create and submit a Qiskit circuit](xref:microsoft.quantum.quickstarts.computing.qiskit) to quantum hardware.
-- [Learn quantum computing with the Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas)
