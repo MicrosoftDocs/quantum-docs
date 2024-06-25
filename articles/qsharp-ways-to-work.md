@@ -18,6 +18,12 @@ Learn about the environment options for quantum programming with Q#. Each enviro
 
 The following table lists the pros and cons of each Q# environment:
 
+| Evironment | Pros | Cons |
+|---------|---------|---------|
+| Visual Studio Code | Built-in Q# support, Python support, Jupyter Notebooks | |
+| Azure portal | Built-in Q# support, Python support, No installation required | |
+| Azure Quantum website | Built-in Q# support, No installation required | No Python support |
+
 ## Visual Studio Code
 
 In VS Code, you can use Q# on its own or with Python.
@@ -74,9 +80,7 @@ When using the `%%qsharp` command:
 
 For an example of working with a Jupyter Notebook program, see [Get started with Q# programs and VS Code](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter).
 
-## Azure Quantum
-
-### Azure portal
+## Azure portal
 
 Azure notebook: Notebook tab in Azure portal. They're basically Jupyter Notebooks in the browser, you don't need to install anything extra. See Run a Q# and Python notebook - Azure Quantum | Microsoft Learn
 
