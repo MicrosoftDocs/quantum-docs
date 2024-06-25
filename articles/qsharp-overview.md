@@ -171,7 +171,6 @@ In the `Superposition` program, there are no `open` statements or calls with ful
 
 You can take advantage of the `Microsoft.Quantum.Measurement` namespace by using the `MResetZ` operation to optimize the `Superposition` program. `MResetZ` combines the measurement and reset operations into one step, as in the following example:
 
-
 ```qsharp
 namespace Superposition {
     // Open the namespace for the MResetZ operation.
