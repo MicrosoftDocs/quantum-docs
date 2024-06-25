@@ -1010,6 +1010,11 @@
 			"source_path": "articles/program-structure.md",
 			"redirect_url": "/azure/quantum/qsharp-overview#structure-of-a-q-program",
 			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/how-to-work-with-qsharp-projects.md",
+			"redirect_url": "/azure/quantum/how-to-work-with-qsharp-projects",
+			"redirect_document_id": false
 		}
 	]
 }
