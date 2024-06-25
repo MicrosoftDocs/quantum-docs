@@ -76,7 +76,7 @@ The `@EntryPoint()` attribute tells the Q# compiler where to start executing the
 
 ### Types
 
-Q# provides [built-in types](ref:microsoft.quantum.qsharp.typesystem-overview) that are common to most languages, including `Int`, `Double`, `Bool`, and `String`, and types that are specific to quantum computing. For example, the `Result` type represents the result of a qubit measurement and can have one of two values: `Zero` or `One`.
+Q# provides [built-in types](xref:microsoft.quantum.qsharp.typesystem-overview) that are common to most languages, including `Int`, `Double`, `Bool`, and `String`, and types that are specific to quantum computing. For example, the `Result` type represents the result of a qubit measurement and can have one of two values: `Zero` or `One`.
 
 In the `Superposition` program, the `MeasureOneQubit()` operation expects a return type of `Result`, and the `M` operation measures the qubit and returns the `Result`:
 

@@ -4,7 +4,7 @@ description: List of all supported LaTeX macros for formulas used in the Microso
 author: bradben
 ms.author: brbenefield
 ms.date: 09/04/2019
-ms.topic: concept
+ms.topic: conceptual
 uid: microsoft.quantum.contribute.macros
 no-loc: ['Q#', '$$v', Quantum Development Kit]
 ---
