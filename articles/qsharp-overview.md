@@ -64,7 +64,7 @@ Namespaces help you organize related functionality. Each Q# program can have onl
 
 The Q# standard library has predefined namespaces that contain functions and operations you can use in quantum programs. For more information, see [Built-in namespaces](#built-in-namespaces).
 
-### EntryPoint()
+### Entry points
 
 The `@EntryPoint()` attribute tells the Q# compiler where to start executing the program. In a program with multiple functions and operations, you can place `@EntryPoint()` before any of them to make the program start there and continue sequentially.
 
@@ -159,7 +159,7 @@ Reset(q);
 
 The Q# standard library has built-in namespaces that contain functions and operations you can use in quantum programs. For example, the `Microsoft.Quantum.Intrinsic` namespace contains commonly used operations and functions, such as `M` to measure results and `Message` to display user messages anywhere in the program.  
 
-To call a function or operation, you can specify the full namespace or use an `open` statement to make all the functions and operations for that namespace available and make your code more readable. Both of these examples call the same operation:
+To call a function or operation, you can specify the full namespace or use an `open` statement, which makes all the functions and operations for that namespace available and makes your code more readable. The following examples call the same operation:
 
 ```qsharp
 Microsoft.Quantum.Intrinsic.Message("Hello quantum world!");
