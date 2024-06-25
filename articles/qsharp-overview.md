@@ -63,7 +63,7 @@ The Q# standard library has predefined namespaces that contain functions and ope
 
 ### EntryPoint()
 
-The `@EntryPoint()` attribute tells the Q# compiler where to start executing the program. In a program with multiple functions and operations, you can place `@EntryPoint()` before any of them to have the program start there and continue sequentially.
+The `@EntryPoint()` attribute tells the Q# compiler where to start executing the program. In a program with multiple functions and operations, you can place `@EntryPoint()` before any of them to make the program start there and continue sequentially.
 
 ```qsharp
     @EntryPoint()
@@ -114,7 +114,7 @@ For more information, see [Use statement](xref:microsoft.quantum.qsharp.quantumm
 
 After allocating a qubit, you can pass it to operations and functions, also known as [callables](xref:microsoft.quantum.qsharp.callabledeclarations). [Operations](xref:microsoft.quantum.qsharp.operationsandfunctions) are the basic building blocks of a Q# program. A Q# operation is a quantum subroutine, or a callable routine that contains quantum operations that change the state of the qubit register.
 
-To define a Q# operation, you specify a name for the operation, its inputs, and its output. In the `Superposition` program, the `MeasureOneQubit()` operation is essentially the entire program. It takes no parameters and expects a return type of `Result`:
+To define a Q# operation, specify a name for the operation, its inputs, and its output. In the `Superposition` program, the `MeasureOneQubit()` operation is essentially the entire program. It takes no parameters and expects a return type of `Result`:
 
 ```qsharp
 operation MeasureOneQubit() : Result {
@@ -130,11 +130,11 @@ operation SayHelloQ() : Unit {
 }
 ```
 
-The Q# standard library also provides operations you can use in quantum programs, such as the Hadamard operation, `H`, in the `Superposition` program. `H` puts a qubit in the Z basis into an *even* superposition, where it has a 50% chance of being measured as zero or one.
+The Q# standard library also provides operations you can use in quantum programs, such as the Hadamard operation, `H`, in the `Superposition` program. Given a qubit in the Z basis, `H` puts it into an *even* superposition, where the qubit has a 50% chance of being measured as zero or one.
 
 ### Measuring qubits
 
-While there are many types of quantum measurements, Q# focuses on projective measurements on single qubits, also known as [Pauli measurements](xref:microsoft.quantum.concepts.pauli). Upon measurement in a given basis, such as the computational basis $\ket{0},\ket{1}$, the qubit state is projected onto whichever basis state was measured, destroying any superposition between the two.
+While there are many types of quantum measurements, Q# focuses on projective measurements on single qubits, also known as [Pauli measurements](xref:microsoft.quantum.concepts.pauli). After being measured in a given basis, such as the computational basis $\ket{0},\ket{1}$, the qubit state is projected onto whichever basis state was measured, destroying any superposition between the two.
 
 The `Superposition` program uses the `M` operation, which measures a single qubit in the Pauli Z basis and returns a `Result` type:
 
@@ -156,7 +156,7 @@ Reset(q);
 
 The Q# standard library has built-in namespaces that contain functions and operations you can use in quantum programs. For example, the `Microsoft.Quantum.Intrinsic` namespace contains commonly used operations and functions, such as `M` to measure results and `Message` to display user messages anywhere in the program.  
 
-To call a function or operation, you can specify the full namespace or use an `open` statement to make all the functions and operations for that namespace available and make your code easier to read. Both of these examples call the same operation:
+To call a function or operation, you can specify the full namespace or use an `open` statement to make all the functions and operations for that namespace available and make your code more readable. Both of these examples call the same operation:
 
 ```qsharp
 Microsoft.Quantum.Intrinsic.Message("Hello quantum world!");
@@ -169,7 +169,7 @@ Message("Hello quantum world!");
 
 In the `Superposition` program, there are no `open` statements or calls with full namespaces. That's because the Q# development environment loads two namespaces by default: `Microsoft.Quantum.Core` and `Microsoft.Quantum.Intrinsic`, which contain commonly used functions and operations.
 
-You can take advantage of the `Microsoft.Quantum.Measurement` namespace by using the `MResetZ` operation to optimize the code in the `Superposition` program. `MResetZ` combines the measurement and reset operations into one step, as in the following example:
+You can take advantage of the `Microsoft.Quantum.Measurement` namespace by using the `MResetZ` operation to optimize the `Superposition` program. `MResetZ` combines the measurement and reset operations into one step, as in the following example:
 
 
 ```qsharp
