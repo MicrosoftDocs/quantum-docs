@@ -27,7 +27,7 @@ As a quantum programming language, Q# meets the following language, compiler, an
 
 ## Structure of a Q# program
 
-Consider the following Q# program:
+Before you start writing quantum programs, it's important to understand the structure and components of a Q# program. As an example, consider the following Q# program which creates a superposition state: 
 
 ```qsharp
 namespace Superposition {
