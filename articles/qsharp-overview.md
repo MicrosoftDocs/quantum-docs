@@ -20,7 +20,7 @@ As a quantum programming language, Q# meets the following language, compiler, an
 
 - **Hardware agnostic:** Qubits in quantum algorithms aren't tied to a specific quantum hardware or layout. The Q# compiler and runtime handle the mapping from program qubits to physical qubits.
 - **Integration of quantum and classical computing:** The ability to perform classical and quantum computations is essential in a universal quantum computer.
-- **Respect the laws of physics:** Quantum algorithms follow the rules of quantum physics. For example, they cannot directly copy or access the qubit state.
+- **Respect the laws of physics:** Q# and quantum algorithms follow the rules of quantum physics. For example, in Q# you can't directly copy or access the qubit state.
 
 > [!NOTE]
 > You can use Q# as a standalone language or with Python in various IDEs. For more information, see [Different ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work).
