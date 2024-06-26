@@ -174,7 +174,7 @@
     - name: Submit a circuit in provider-specific format
       href: quickstart-microsoft-provider-format.md
   - name: Q# language reference
-    href: language/toc.yml
+    href: user-guide/language/toc.yml
 - name: Quantum simulators
   items:
   - name: Sparse simulator
