@@ -142,7 +142,7 @@ In Q#, the `Measure` operation measures one or more qubits in the specified Paul
 
 To implement a measurement in the computational basis $\lbrace\ket{0},\ket{1}\rbrace$ you can also use the `M` operation, which measures a qubit in the Pauli Z-basis. Thus, the `M` operation is equivalent to applying `Measure([PauliZ], [qubit])`.
 
-The `Superposition` program uses the `M` operation, which measures a single qubit in the Pauli Z-basis and returns a `Result` type:
+The `Superposition` program uses the `M` operation:
 
 ```qsharp
 // Measure the qubit in the Z-basis.
