@@ -136,7 +136,11 @@ The Q# standard library also provides operations you can use in quantum programs
 
 ### Measuring qubits
 
-While there are many types of quantum measurements, Q# focuses on projective measurements on single qubits, also known as [Pauli measurements](xref:microsoft.quantum.concepts.pauli). After being measured in a given basis, such as the computational basis $\ket{0},\ket{1}$, the qubit state is projected onto whichever basis state was measured, destroying any superposition between the two.
+While there are many types of quantum measurements, Q# focuses on projective measurements on single qubits, also known as [Pauli measurements](xref:microsoft.quantum.concepts.pauli). 
+
+In Q#, the `Measure` operation measures one or more qubits in the specified Pauli basis, which can be `PauliX`, `PauliY`, or `PauliZ`. The `Measure` operation returns a `Result` type that is either `One` or `Zero`.
+
+To implement a measurement in the computational basis $\lbrace\ket{0},\ket{1}\rbrace$ you can also use the `M` operation, which measures a qubit in the Pauli Z-basis. Thus, the `M` operation is equivalent to applying `Measure([PauliZ], [qubit])`.
 
 The `Superposition` program uses the `M` operation, which measures a single qubit in the Pauli Z-basis and returns a `Result` type:
 
