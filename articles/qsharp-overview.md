@@ -107,7 +107,7 @@ You can also allocate multiple qubits and access each one through its index:
 ```qsharp
 // Allocate multiple qubits.
 use qubits = Qubit[2];
-X(qubits[1]);
+X(qubits[1]); // Apply X to second qubit
 H(qubits[0]);
 ```
 
