@@ -48,7 +48,7 @@ namespace Superposition {
 }
 ```
 
-Based on the comments (`//`), the `Superposition` program allocates a qubit, applies an operation to put the qubit in superposition, measures the qubit state, resets the qubit, and then returns the result. Let's break this program down into its components.
+Based on the comments (`//`), the `Superposition` program first allocates a qubit, applies an operation to put the qubit in superposition, measures the qubit state, resets the qubit, and finally returns the result. Let's break this program down into its components.
 
 ### User namespaces
 
