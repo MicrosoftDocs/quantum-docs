@@ -23,7 +23,7 @@ As a quantum programming language, Q# meets the following language, compiler, an
 - **Respect the laws of physics:** Q# and quantum algorithms follow the rules of quantum physics. For example, in Q# you can't directly copy or access the qubit state.
 
 > [!NOTE]
-> You can use Q# as a standalone language or with Python in various IDEs. For more information, see [Different ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work).
+> You can use Q# as a standalone program or with Python in various IDEs. For more information, see [Different ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work).
 
 ## Structure of a Q# program
 
