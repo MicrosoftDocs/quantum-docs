@@ -90,7 +90,7 @@ Running a Q# file in the browser, but you cannot save the file and the functiona
 
 ## Q# learning resources
 
-To learn Q#, use the following resources:
+To learn how to write Q# programs, use the following resources:
 
 - **Quantum Katas:** Self-paced Q# tutorials.
 - **Training modules:** 

@@ -14,20 +14,20 @@ uid: microsoft.quantum.qsharp-overview
 
 # What is Q#?
 
-Q# is a high-level, [open-source](https://github.com/microsoft/qsharp) programming language for developing and running quantum algorithms. The Q# programming language is included in the Quantum Development Kit (QDK). For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+Q# is a high-level, [open-source](https://github.com/microsoft/qsharp) programming language for developing and running quantum algorithms. Q# is included in the Quantum Development Kit (QDK). For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
 As a quantum programming language, Q# meets the following language, compiler, and runtime requirements:
 
 - **Hardware agnostic:** Qubits in quantum algorithms aren't tied to a specific quantum hardware or layout. The Q# compiler and runtime handle the mapping from program qubits to physical qubits.
 - **Integration of quantum and classical computing:** The ability to perform classical and quantum computations is essential in a universal quantum computer.
-- **Respect the laws of physics:** Q# and quantum algorithms follow the rules of quantum physics. For example, in Q# you can't directly copy or access the qubit state.
+- **Respect the laws of physics:** Q# and quantum algorithms follow the rules of quantum physics. For example, you can't directly copy or access the qubit state in Q#.
 
 > [!NOTE]
 > You can use Q# as a standalone program or with Python in various IDEs. For more information, see [Different ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work).
 
 ## Structure of a Q# program
 
-Before you start writing quantum programs, it's important to understand the structure and components of a Q# program. As an example, consider the following Q# program which creates a superposition state: 
+Before you start writing quantum programs, it's important to understand the structure and components of a Q# program. Consider the following Q# program that creates a superposition state:
 
 ```qsharp
 namespace Superposition {
@@ -78,7 +78,7 @@ The `@EntryPoint()` attribute tells the Q# compiler where to start executing the
 
 Q# provides [built-in types](xref:microsoft.quantum.qsharp.typesystem-overview) that are common to most languages, including `Int`, `Double`, `Bool`, and `String`, and types that are specific to quantum computing. For example, the `Result` type represents the result of a qubit measurement and can have one of two values: `Zero` or `One`.
 
-In the `Superposition` program, the `MeasureOneQubit()` operation expects a return type of `Result`, which corresponds to the result type of the `M` operation:
+In the `Superposition` program, the `MeasureOneQubit()` operation expects a return type of `Result`, which corresponds to the return type of the `M` operation:
 
 ```qsharp
 // The operation definition expects a return type of Result.
@@ -105,9 +105,9 @@ use q = Qubit();
 You can also allocate multiple qubits and access each one through its index:
 
 ```qsharp
-use qubits = Qubit[2]; // Allocate 2 qubits
-X(qubits[1]); // Apply X to second qubit
-H(qubits[0]); // Apply H to first qubit
+use qubits = Qubit[2]; // Allocate 2 qubits.
+H(qubits[0]); // Apply H to the first qubit.
+X(qubits[1]); // Apply X to the second qubit.
 ```
 
 For more information, see [Use statement](xref:microsoft.quantum.qsharp.quantummemorymanagement#use-statement).
@@ -136,11 +136,11 @@ The Q# standard library also provides operations you can use in quantum programs
 
 ### Measuring qubits
 
-While there are many types of quantum measurements, Q# focuses on projective measurements on single qubits, also known as [Pauli measurements](xref:microsoft.quantum.concepts.pauli). 
+While there are many types of quantum measurements, Q# focuses on projective measurements on single qubits, also known as [Pauli measurements](xref:microsoft.quantum.concepts.pauli).
 
-In Q#, the `Measure` operation measures one or more qubits in the specified Pauli basis, which can be `PauliX`, `PauliY`, or `PauliZ`. The `Measure` operation returns a `Result` type that is either `One` or `Zero`.
+In Q#, the `Measure` operation measures one or more qubits in the specified Pauli basis, which can be `PauliX`, `PauliY`, or `PauliZ`. `Measure` returns a `Result` type of either `Zero` or `One`.
 
-To implement a measurement in the computational basis $\lbrace\ket{0},\ket{1}\rbrace$ you can also use the `M` operation, which measures a qubit in the Pauli Z-basis. Thus, the `M` operation is equivalent to applying `Measure([PauliZ], [qubit])`.
+To implement a measurement in the computational basis $\lbrace\ket{0},\ket{1}\rbrace$, you can also use the `M` operation, which measures a qubit in the Pauli Z-basis. This makes `M` equivalent to `Measure([PauliZ], [qubit])`.
 
 The `Superposition` program uses the `M` operation:
 
