@@ -5,7 +5,6 @@ ms.date: 06/03/2024
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.custom: devx-track-azurecli
 ms.topic: how-to
 no-loc: ['Q#', '$$v', Quantum Development Kit, QIR Adaptive RI, target, targets]
 title: Working with Integrated Hybrid Computing
