@@ -48,7 +48,7 @@ Each environment has different features and functionality. Typically, you use di
 On the [Azure Quantum website](https://quantum.microsoft.com/), you can write and run Q# code in an online code editor and open your code in [VS Code for the Web](https://vscode.dev/quantum) with one click—no installation or Azure account required. Write your own Q# code, explore the built-in samples, or prompt Copilot in Azure Quantum to create Q# code. For more information, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
 ### Is the Azure Quantum website right for me?
-
+The Azure Quantum website allows you to run Q# programs in your browser and provides multiple learning resources. If you are a quantum enthusiast and want to learn by doing, the Azure Quantum website is for you.
 The following table shows what you can and can't do on the Azure Quantum website:
 
 | You can: | You can't: | You need: |
