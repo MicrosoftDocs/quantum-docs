@@ -18,7 +18,9 @@ Learn about the environment options for quantum programming with Q#. Each enviro
 
 ## Options for running quantum programs
 
-You can run quantum programs in three environments:
+Azure Quantum offers a variety of tools to help you learn about quantum programming and develop your quantum solutions with Q#. Depending on your level of coding, quantum knowledge, and objectives, you may prefer different tools for running your quantum programs. 
+
+You can run quantum programs in three development environments:
 
 - **Azure Quantum website:** Use Copilot to write, run, and explain Q# code in your browser. No installation or Azure account required.
 - **Azure portal:** Manage your Azure subscription and quantum workspace, where you can write and run Q# and Python programs in Jupyter Notebooks. No installation required.
