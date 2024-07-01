@@ -96,6 +96,7 @@ Jupyter Notebooks don't require a `namespace` or `@EntryPoint()`. Instead, you c
 For an example of quantum programming with Q# and Python in Jupyter Notebooks, see [Get started with Q# programs and VS Code](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter).
 
 ### Is the Azure portal right for me?
+ With Azure portal you can grant a group of users, like your team members or students, access to your Azure Quantum workspace. If you want to manage your subscriptions, review your invoices, or add a new quantum provider, the Azure portal is for you.
 
 The following table shows what you can and can't do in the Azure portal:
 
