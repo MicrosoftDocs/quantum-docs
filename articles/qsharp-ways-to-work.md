@@ -57,7 +57,9 @@ The following table shows what you can and can't do on the Azure Quantum website
 
 ## Azure portal
 
-Use Jupyter Notebooks in the [Azure portal](https://portal.azure.com) to create, upload, store, and run quantum code on quantum simulators or hardware targets. Sample Jupyter Notebooks are provided to help you get started with quantum programming in Q# and Python and with running Qiskit and Cirq circuits. From the portal, you can also manage quantum workspaces, jobs, activity, credits, and access control. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace) to get started.
+The [Azure portal](https://portal.azure.com) also allows you to run your quantum programs in an Azure Quantum notebook. An Azure notebook is a web-based environment for running Jupyter Notebooks.
+
+You can use Azure notebooks to create, upload, store, and run quantum programs on quantum simulators or hardware targets. You can also find sample notebooks to help you get started with quantum programming. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace) to get started.
 
 ### The %%qsharp command
 
