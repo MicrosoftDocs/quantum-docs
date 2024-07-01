@@ -103,7 +103,13 @@ The following table shows what you can and can't do in the Azure portal:
 
 ## Visual Studio Code
 
-The QDK VS Code extension is the latest version of the Q# language and quantum development tools. With a smaller footprint and faster performance, it features a streamlined installation, language improvements, integrated Python, Jupyter Notebook, and Qiskit support, integrated Azure connectivity for submitting jobs to quantum hardware, debugger support, and improved syntax highlighting and error messages. The Modern QDK is platform independent, running on Windows, Mac, Linux, and the web. See [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) to get started.
+With the QDK extension for Visual Studio Code, you can create Q# programs, load pre-installed Q# samples, and take advantage of features such as improved error messaging, Q# syntax highlighting, circuit diagram visualization, and integrated debugging in a local development environment.
+
+You can also estimate the resources of your Q# programs using the Azure Quantum Resource Estimator. The Resource Estimator is a tool that allows you to estimate the number of qubits and the number of operations required to run your Q# programs on quantum computers.
+
+You don't need an Azure account to use the QDK in Visual Studio Code, but if you already have an Azure account set up, you can connect directly to your Azure Quantum workspaces from VS Code. This allows you to run your Q# programs on the quantum computers and simulators of the providers you selected for your workspace.
+
+See [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) to get started.
 
 Mention that VS Code is available in the web.
 
