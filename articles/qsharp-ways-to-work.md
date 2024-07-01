@@ -53,7 +53,7 @@ The following table shows what you can and can't do on the Azure Quantum website
 
 | You can: | You can't: | You need: |
 | --- | --- | --- |
-| <ul><li>Learn quantum programming using tutorials in Quantum Katas</li><li>Read about quantum computing concepts</li><li>Run Q# programs online and simulate them in Quantinuum H-Series Emulator</li><li> Ask Copilot to explain quantum computing concepts or generate Q# programs </li><li> Open your quantum programs in VS Code for the Web</li></ul> | <ul><li> Save your programs and results</li><li> Select quantum computing provider </li><li>Run Python code </li><li>Manage your quantum jobs</li><li>Debug your programs</li></ul> | <ul><li>No installation required</li><li>No Azure account required</li><ul> |
+| <ul><li>Learn quantum programming using tutorials in Quantum Katas</li><li>Run Q# programs online and simulate them in Quantinuum H-Series Emulator</li><li> Ask Copilot to explain quantum computing concepts or generate Q# programs </li></ul> | <ul><li> Save your programs and results</li><li> Select any quantum computing provider </li><li>Run Python code </li><li>Manage your quantum jobs</li><li>Debug your programs</li></ul> | <ul><li>No installation required</li><li>No Azure account required</li><ul> |
 
 ## Azure portal
 
