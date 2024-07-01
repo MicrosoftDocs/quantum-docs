@@ -14,14 +14,14 @@ uid: microsoft.quantum.qsharp-ways-to-work
 
 # Different ways to work with Q#
 
-Learn about the environment options for quantum programming. Each environment uses the Quantum Development Kit (QDK), a set of open-source tools that includes Q# and accompanying libraries. With the QDK, you can develop quantum programs in various IDEs and languages and run them on quantum simulators or hardware using Azure Quantum. For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+Learn about the environment options for quantum programming with Q#. Each environment uses the Quantum Development Kit (QDK), a set of open-source tools that includes Q# and accompanying libraries. With the QDK, you can develop quantum programs in various IDEs and languages and run them on quantum simulators or hardware using Azure Quantum. For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
 ## Options for running quantum programs
 
 You can run quantum programs in three environments:
 
 - **Azure Quantum website:** Use Copilot to write, run, and explain Q# code in your browser. No installation or Azure account required.
-- **Azure portal:** Manage your Azure subscription and quantum workspace, where you can create and run Q# and Python programs in Jupyter Notebooks. No installation required.
+- **Azure portal:** Manage your Azure subscription and quantum workspace, where you can write and run Q# and Python programs in Jupyter Notebooks. No installation required.
 - **Visual Studio Code:** Write, run, and debug quantum code in a local IDE, using Q# as a standalone program or with Python. Installation required.
 
 Each environment has different features and functionality. For more information, see the following table:
@@ -37,7 +37,7 @@ Each environment has different features and functionality. For more information,
 | Integrated hybrid  | &nbsp; |  &nbsp;  |  &#10004;  |
 | Local setup  | &nbsp; |  &nbsp;  |  &#10004;  |
 
-**\*** VS Code provides rich Q# support, such as IntelliSense and debugging.
+**\*** VS Code has rich Q# support, such as IntelliSense and debugging.
 
 **\*\*** QPU access in VS Code requires an Azure subscription.
 
@@ -55,7 +55,7 @@ The following table shows what you can and can't do on the Azure Quantum website
 
 ## Azure portal
 
-Use Jupyter Notebooks in the [Azure Quantum portal](https://portal.azure.com) to create, upload, store, and run quantum code on quantum simulators or hardware targets. Sample Jupyter Notebooks are provided to help you get started with quantum programming in Q# and Python and with running Qiskit and Cirq circuits. From the portal, you can also manage quantum workspaces, jobs, activity, credits, and access control. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace) to get started.
+Use Jupyter Notebooks in the [Azure portal](https://portal.azure.com) to create, upload, store, and run quantum code on quantum simulators or hardware targets. Sample Jupyter Notebooks are provided to help you get started with quantum programming in Q# and Python and with running Qiskit and Cirq circuits. From the portal, you can also manage quantum workspaces, jobs, activity, credits, and access control. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace) to get started.
 
 ### The %%qsharp command
 
@@ -66,7 +66,7 @@ When using `%%qsharp`, keep the following in mind:
 - You must first run `import qsharp` to enable `%%qsharp`.
 - `%%qsharp` scopes to the notebook cell in which it appears and changes the cell type from Python to Q#.
 - You can't put a Python statement before or after `%%qsharp`.
-- The Q# code that follows `%%qsharp` must follow Q# syntax. For example, use `//` instead of `#` to denote comments and `;` to end code lines.
+- Q# code that follows `%%qsharp` must adhere to Q# syntax. For example, use `//` instead of `#` to denote comments and `;` to conclude code lines.
 
 Here's an example of using `%%qsharp` in a Jupyter Notebook:
 
@@ -87,7 +87,7 @@ import qsharp
     MeasureOneQubit();
 ```
 
-In Jupyter Notebooks, you don't need to use a `namespace` or `@EntryPoint()`. You can instead call an operation or function directly, as in the last line of this Q# program. And unlike VS Code, Jupyter Notebooks don't display program results by default, so the `Message` statement is necessary.
+Jupyter Notebooks don't require a `namespace` or `@EntryPoint()`. Instead, you can call an operation or function directly, as in the last line of this Q# program. And unlike VS Code, Jupyter Notebooks don't display program results by default, so the `Message` statement is necessary.
 
 For an example of quantum programming with Q# and Python in Jupyter Notebooks, see [Get started with Q# programs and VS Code](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter).
 
