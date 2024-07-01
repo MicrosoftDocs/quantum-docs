@@ -26,7 +26,7 @@ You can run quantum programs in three development environments:
 - **Azure portal:** Manage your Azure subscription and quantum workspace, where you can write and run Q# and Python programs in Jupyter Notebooks. No installation required.
 - **Visual Studio Code:** Write, run, and debug quantum code in a local IDE, using Q# as a standalone program or with Python. Installation required.
 
-Each environment has different features and functionality. For more information, see the following table:
+Each environment has different features and functionality. Typically, you use different Azure Quantum options together, such as writing Q# in Visual Studio Code with the QDK while managing your quantum workspace in the Azure portal. For more information, see the following table:
 
 | &nbsp;  | [Azure Quantum website](#azure-quantum-website) | [Azure portal](#azure-portal) | [Visual Studio Code](#visual-studio-code) |
 |-----|:-----:|:-----:|:-----:|
