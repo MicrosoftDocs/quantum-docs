@@ -1,8 +1,8 @@
 ---
 author: SoniaLopezBravo
-description: Introduction to resources estimation in quantum computing and the Azure Quantum Resource Estimator
+description: Learn about the Resource Estimator, an open-source tool that allows you to estimate the resources needed to run a quantum program on a quantum computer.
 ms.author: sonialopez
-ms.date: 01/29/2024
+ms.date: 07/01/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: overview
@@ -11,26 +11,14 @@ title: Introduction to the Resource Estimator
 uid: microsoft.quantum.overview.intro-resource-estimator
 --- 
 
-# Introduction to the Azure Quantum Resource Estimator
+# What is the Azure Quantum Resource Estimator?
 
-This article introduces the Azure Quantum Resource Estimator, a powerful [open-source](https://aka.ms/AQ/RE/OpenSource) tool that allows you to estimate the resources needed to run a quantum program on a quantum computer.
+The Azure Quantum Resource Estimator is an [open-source](https://aka.ms/AQ/RE/OpenSource) tool that allows you to estimate the resources needed to run a  quantum program on a fault-tolerant quantum computer. 
 
-## What is the Azure Quantum Resource Estimator?
-
-The Azure Quantum Resource Estimator is an **open-source** tool that allows you to estimate the resources needed to execute a given quantum algorithm on a fault-tolerant quantum computer.
+The Resource Estimator calculates the total number of physical and logical qubits, the runtime, and details of the formulas and values used for each estimate. With the Azure Quantum Resource Estimator, you can compare qubit technologies, quantum error correction schemes, and other hardware characteristics to understand how they impact the resources needed to run a quantum program.
 
 > [!TIP]
 > The Azure Quantum Resource Estimator is **free of charge** and doesn't require an Azure account.
-
-The Resource Estimator provides the total number of physical and logical qubits, runtime, as well as details of the formulas and values used for each estimate. This means algorithm development becomes the focus, with the goal of optimizing performance and decreasing cost. With the Azure Quantum Resource Estimator, you can compare qubit technologies, quantum error correction schemes, and other hardware characteristics to understand how they impact the resources needed to run a quantum program.
-
-You can start from well-known, pre-defined qubit parameter settings and quantum error correction (QEC) schemes or configure unique settings across a wide range of machine characteristics such as operation error rates, operation speeds, and error correction schemes and thresholds.
-
-## Why is resource estimation important in the development of quantum computing?
-
-Although quantum computers promise to solve important scientific and commercial problems, achieving commercial viability will require large-scale, fault-tolerant quantum computers that have both a large number of qubits in superposition and physical error rates below a certain threshold. Commercial and scientific viability will also require QEC schemes to achieve fault tolerance. QEC is both time and space intensive, requiring increased execution time for algorithm or logical-level operations, as well as additional physical qubits to store and compute information. 
-
-Using the Resource Estimator, you can understand the impact of architectural design choices and quantum error correction schemes. The Resource Estimator will help you understand how many qubits are needed to run an application, how long it will take to run, and which qubit technologies are better suited to solving a specific problem. Understanding these requirements will allow you to prepare and refine quantum solutions to run on future, scaled quantum machines. 
 
 ## What features make the Resource Estimator unique?
 
@@ -42,7 +30,9 @@ The Resource Estimator allows you to customize the parameters of each level and 
 
 ### Customization
 
-You can adapt the Resource Estimator and specify the characteristics of your quantum system. You can use the predefined target parameters or customize them to your needs. For more information, see [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator).
+The Resource Estimator has an extensibility API to model any quantum architecture and to modify all assumptions. You can adapt the Resource Estimator and specify the characteristics of your quantum system.
+
+You can use pre-defined qubit parameters and quantum error correction (QEC) schemes or configure unique settings across a wide range of machine characteristics. For more information, see [Customize the target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
 
 |Target parameters|Describe your system|
 |---|---|
@@ -51,6 +41,9 @@ You can adapt the Resource Estimator and specify the characteristics of your qua
 |[Error budget](xref:microsoft.quantum.overview.resources-estimator#error-budget)|For example, specify the error budget to implement logical qubits, T states distillation, and synthesis of the rotation gates. |
 |[Distillation units](xref:microsoft.quantum.overview.resources-estimator#distillation-units)| For example, specify the number of T states required for the distillation process, number of T states produced as output from the distillation process, or the probability of failure of the distillation process.|
 |[Constraints](xref:microsoft.quantum.overview.resources-estimator#constraints)|For example, specify the maximum number of physical qubits, the maximum runtime, or the maximum number of [T factory copies](xref:microsoft.quantum.concepts.tfactories).|
+
+> [!TIP]
+> With the Resource Estimator, you can model any quantum architecture. For example, the startup [Alice & Bob's](https://alice-bob.com/) uses the Resource Estimator to evaluate their architecture, which uses cat qubits and repetition error correction code. For more information, see this [post in Q# blog](https://devblogs.microsoft.com/qsharp/evaluating-cat-qubits-for-fault-tolerant-quantum-computing-using-azure-quantum-resource-estimator/)
 
 ### Flexibility
 
@@ -94,3 +87,9 @@ If you want to develop quantum algorithms for large-scale quantum computers, che
 This tutorial represents a first step to integrate resource estimation of quantum solutions to electronic structure problems. One of the most important applications of scaled quantum computers is solving quantum chemistry problems. The simulation of complex quantum mechanical systems has the potential to unlock breakthroughs in areas such as carbon capture, food insecurity, and designing better fuels and materials.  
 
 For example, one of the Hamiltonians used in this tutorial, the *nitrogenase_54orbital*, describes the nitrogenase enzyme. If you could accurately simulate how this enzyme works at a quantum level, it could help us to understand how to produce it at scale. You could replace the highly energy-intensive process which is used to produce enough fertilizer to feed the planet. This has the potential to reduce the global carbon footprint and also to help address concerns regarding food insecurity in a growing population.
+
+## Why is resource estimation important in the development of quantum computing?
+
+Although quantum computers promise to solve important scientific and commercial problems, achieving commercial viability will require large-scale, fault-tolerant quantum computers that have both a large number of qubits in superposition and physical error rates below a certain threshold. Commercial and scientific viability will also require QEC schemes to achieve fault tolerance. QEC is both time and space intensive, requiring increased execution time for algorithm or logical-level operations, as well as additional physical qubits to store and compute information. 
+
+Using the Resource Estimator, you can understand the impact of architectural design choices and quantum error correction schemes. The Resource Estimator will help you understand how many qubits are needed to run an application, how long it will take to run, and which qubit technologies are better suited to solving a specific problem. Understanding these requirements will allow you to prepare and refine quantum solutions to run on future, scaled quantum machines. 
