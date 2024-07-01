@@ -42,8 +42,8 @@ You can use pre-defined qubit parameters and quantum error correction (QEC) sche
 |[Distillation units](xref:microsoft.quantum.overview.resources-estimator#distillation-units)| For example, specify the number of T states required for the distillation process, number of T states produced as output from the distillation process, or the probability of failure of the distillation process.|
 |[Constraints](xref:microsoft.quantum.overview.resources-estimator#constraints)|For example, specify the maximum number of physical qubits, the maximum runtime, or the maximum number of [T factory copies](xref:microsoft.quantum.concepts.tfactories).|
 
-> [!TIP]
-> With the Resource Estimator, you can model any quantum architecture. For example, the startup [Alice & Bob's](https://alice-bob.com/) uses the Resource Estimator to evaluate their architecture, which uses cat qubits and repetition error correction code. For more information, see this [post in Q# blog](https://devblogs.microsoft.com/qsharp/evaluating-cat-qubits-for-fault-tolerant-quantum-computing-using-azure-quantum-resource-estimator/)
+> [!NOTE]
+> With the Resource Estimator, you can model any quantum architecture. For example, the startup [Alice & Bob's](https://alice-bob.com/) uses the Resource Estimator to evaluate their architecture, which uses cat qubits and repetition error correction code. For more information, see this [post in the Q# blog](https://devblogs.microsoft.com/qsharp/evaluating-cat-qubits-for-fault-tolerant-quantum-computing-using-azure-quantum-resource-estimator/)
 
 ### Flexibility
 
