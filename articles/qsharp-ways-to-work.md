@@ -39,7 +39,7 @@ Each tool has different features and functionality. Typically, you use different
 | Integrated hybrid  | &nbsp; |  &nbsp;  |  &#10004;  |
 | Local setup  | &nbsp; |  &nbsp;  |  &#10004;  |
 
-**\*** VS Code has rich Q# support, such as IntelliSense and debugging.
+**\*** VS Code provides rich Q# support, such as IntelliSense and debugging.
 
 **\*\*** QPU access in VS Code requires an Azure subscription.
 
@@ -113,12 +113,12 @@ The following table shows what you can and can't do in the Azure portal:
 
 ## Visual Studio Code
 
-With the QDK extension for VS Code, you can create Q# programs, load pre-installed Q# samples, and use features like improved error messaging, Q# syntax highlighting, circuit diagram visualization, and integrated debugging. You can also use the [Azure Quantum Resource Estimator](microsoft.quantum.overview.intro-resource-estimator) to estimate the number of qubits and operations required to run your Q# programs on quantum computers.
+[VS Code](https://code.visualstudio.com/) is a free, open-source code editor from Microsoft. With the QDK extension for VS Code, you can create Q# programs, load pre-installed Q# samples, and use features like improved error messaging, Q# syntax highlighting, circuit diagram visualization, and integrated debugging. You can also use the [Azure Quantum Resource Estimator](microsoft.quantum.overview.intro-resource-estimator) to estimate the number of qubits and operations required to run your Q# programs on quantum computers.
 
 You don't need an Azure account to use the QDK in VS Code. However, if you have an Azure account, you can connect to your Azure Quantum workspace from VS Code. This allows you to run Q# programs on the quantum computers and simulators of your selected providers. See [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) to get started.
 
 > [!NOTE]
-> VS Code on the Web is a free resource that offers the same performance, Azure connectivity, and Q# language features (such as syntax highlighting, IntelliSense, and debugging) as the installed version of VS Code, minus some of the extended features (see the comparison table for details). vscode.dev/quantum offers a preconfigured quantum environment, and vscode.dev/quantum/playground/ offers a preconfigured quantum environment, sample code, and learning content to get you up and running.
+> You can also use the QDK in [VS Code for the Web](https://vscode.dev/quantum), which provides the same Azure connectivity and Q# language features (such as debugging, syntax highlighting, and IntelliSense) as the installed version. However, it doesn't support Python, Qiskit, or Cirq.
 
 In VS Code, you can write the following standalone or hybrid quantum programs:
 
@@ -147,6 +147,7 @@ To learn how to write Q# programs, use the following resources:
 - **Quantum Katas:** Self-paced Q# tutorials.
 - **Training modules:** 
 - **Q# code samples:**
+- https://vscode.dev/quantum/playground/
 
 ## Related content
 
