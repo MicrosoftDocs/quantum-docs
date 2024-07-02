@@ -175,7 +175,7 @@
       href: provider-rigetti.md
     - name: Rigetti support policy
       href: provider-support-rigetti.md
-- name: Concepts
+- name: Key concepts of quantum computing
   items:
     - name: Linear algebra for quantum computing
       href: overview-algebra-for-quantum-computing.md
