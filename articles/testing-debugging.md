@@ -3,7 +3,7 @@ title: How to Debug and Test Quantum Programs in Azure Quantum
 description: Learn how to use unit tests, facts and assertions, and dump functions to test and debug quantum programs. 
 author: bradben
 ms.author: brbenefield
-ms.date: 01/05/2024
+ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: how-to
@@ -18,7 +18,7 @@ As with classical programming, it is essential to be able to check that quantum 
 
 ## Debug your Q# program
 
-The Azure Quantum Development Kit (Modern QDK) Visual Studio Code extension includes a debugger for Q# programs. You can set breakpoints, step through your code and into each function or operation, and track not only the local variables, but the quantum state of the qubits as well. 
+The Azure Quantum Development Kit (QDK) Visual Studio Code extension includes a debugger for Q# programs. You can set breakpoints, step through your code and into each function or operation, and track not only the local variables, but the quantum state of the qubits as well. 
 
 > [!NOTE]
 > The VS Code debugger only works with Q# (.qs) files and doesn't work with Q# cells in a Jupyter Notebook. For testing Jupyter Notebook cells, see [Test your code](#test-your-code).
@@ -54,7 +54,7 @@ namespace Sample {
 
 ## Test your code
 
-Although the VS Code Q# debugger is not available for Q# cells in a Jupyter Notebook, the Modern QDK provides some expressions and functions that can help troubleshoot your code.
+Although the VS Code Q# debugger is not available for Q# cells in a Jupyter Notebook, the Azure QDK provides some expressions and functions that can help troubleshoot your code.
 
 
 ### Fail expression

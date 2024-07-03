@@ -5,11 +5,11 @@ ms.date: 06/03/2024
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.custom: devx-track-azurecli
 ms.topic: how-to
 no-loc: ['Q#', '$$v', Quantum Development Kit, QIR Adaptive RI, target, targets]
 title: Working with Integrated Hybrid Computing
 uid: microsoft.quantum.hybrid.integrated
+#customer intent: As a quantum programmer, I want to understand integrated hybrid computing.
 ---
 
 # Integrated hybrid computing
@@ -229,9 +229,6 @@ Quantinuum supports mid-circuit measurement, that is, branching based on measure
             Rxx(PI() + PI() + 2.0 * PI() * Sin(PI()/2.0), q1, q0);
         }
 ```
-
-> [!NOTE]
-> To troubleshoot issues with integrated hybrid programs, see [Troubleshooting integrated hybrid](xref:microsoft.quantum.hybrid.troubleshooting).
 
 ## Estimating the cost of an integrated hybrid job
 

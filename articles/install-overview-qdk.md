@@ -2,10 +2,10 @@
 author: bradben
 description: Learn how to set up the Azure Quantum Development Kit VS Code extension and set up your environment for different languages and platforms.
 ms.author: brbenefield
-ms.date: 03/14/2024
+ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: get-started
+ms.topic: concept-article
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Set up the Quantum Development Kit 
 uid: microsoft.quantum.install-qdk.overview
@@ -21,7 +21,7 @@ Learn about the different environment options available to develop quantum compu
 > [!NOTE]
 > To avoid package version conflicts, follow the uninstall instructions in step 2.
 
-To install the Modern QDK:
+To install the QDK:
 
 1. In VS Code, disable or uninstall the **Microsoft Quantum Development Kit** extension.
 1. Run `python -m pip uninstall qsharp qsharp-core qsharp-chemistry azure-quantum`.
@@ -39,7 +39,7 @@ With added Python support, you can embed or call Q# code from your Python progra
 **Prerequisites**
 
 - A Python environment  (3.9 or greater, 3.11 recommended) with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed. 
-- VS Code with the Modern QDK extension installed.
+- VS Code with the QDK extension installed.
 
 
 To add Python and Jupyter Notebook support:

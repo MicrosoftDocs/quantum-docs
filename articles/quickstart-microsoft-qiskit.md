@@ -18,8 +18,6 @@ Learn how to submit a Qiskit quantum circuit using the `azure-quantum` Python pa
 
 For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
-[!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
-
 ::: zone pivot="platform-local"
 
 [!INCLUDE [local-procedure](includes/quickstart-qiskit-include-local.md)]

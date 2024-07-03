@@ -3,18 +3,16 @@ title: 'Tutorial: Quantum Fourier Transform in Q\#'
 description: In this tutorial, learn how to write and simulate a quantum program that operates at the individual qubit level.
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 12/27/2023
+ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 uid: microsoft.quantum.tutorial-qdk.circuit
 ms.topic: tutorial
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
+#customer intent: As a quantum programmer, 
 ---
 
 # Tutorial: Implement the Quantum Fourier Transform in Q\#
-
-
-[!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
 
 This tutorial shows you how to write and simulate a basic quantum program that operates on individual qubits.
 
@@ -37,7 +35,7 @@ In this tutorial, you'll learn how to:
 ## Prerequisites
 
 * The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-* The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension. For installation details, see [Installing the Modern QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-modern-qdk-on-vs-code).
+* The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension. For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
 * If you want to use Jupyter Notebooks, you also need to install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions, and the latest `qsharp` Python package. To do so, open a terminal and run the following command:
 
     ```bash
@@ -586,7 +584,7 @@ use qs = Qubit[4];
 
 You can thus apply the proper QFT for any given number of qubits, without having to worry about the mess of new `H` operations and rotations on each qubit.
 
-## Next steps
+## Related content
 
 Explore other Q# tutorials:
 

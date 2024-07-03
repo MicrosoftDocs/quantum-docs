@@ -1,21 +1,20 @@
 ---
 author: SoniaLopezBravo
-description: In this tutorial, you estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa, using the double-factorized qubitization algorithm.
+description: In this tutorial, you estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa.
 ms.author: sonialopez
-ms.date: 01/24/2024
+ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: tutorial
 no-loc: [target, targets]
-title: 'Tutorial: Estimate the Resources of a Quantum Chemistry Problem'
+title: 'Tutorial: Estimate Resources of a Quantum Chemistry Problem'
 uid: microsoft.quantum.tutorial.resource-estimator.chemistry
+#customer intent: As a quantum programmer, 
 ---
 
 # Tutorial: Estimate the resources of a quantum chemistry problem
 
-This tutorial shows how to estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). 
-
-[!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
+In this tutorial, you estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). 
 
 In this tutorial, you will:
 
@@ -133,15 +132,13 @@ This tutorial represents a first step to integrate resource estimation of quantu
 
 For example, one of the FCIDUMP files provided in this sample, *nitrogenase_54orbital*, describes the nitrogenase enzyme. If you could accurately simulate how this enzyme works at a quantum level, it could help us to understand how to produce it at scale. You could replace the highly energy-intensive process which is used to produce enough fertilizer to feed the planet. This has the potential to reduce the global carbon footprint and also to help address concerns regarding food insecurity in a growing population.
 
-## Next steps
-
 If you want to deepen your knowledge, here are some experiments you can try:
 
 - Estimate some custom FCIDUMP files.
 - Modify the assumptions on the target quantum computer by providing custom qubit parameters.
 - Check out the other resource estimation sample notebooks in the Azure Quantum sample gallery.
 
-Continue to explore other quantum algorithms and techniques:
+## Related content
 
 - The tutorial [Implement Grover’s search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm to solve a graph coloring problem.
 - The tutorial [Write and simulate qubit-level programs in Q#](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.

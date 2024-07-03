@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 04/23/2024
+ms.date: 05/31/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -14,7 +14,7 @@ Learn how to use VS Code to run, debug, and submit a Q# Jupyter Notebook to Azur
 
 ## Prerequisites
 
-For installation details, see [Installing the Modern QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-modern-qdk-on-vs-code).
+For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).

@@ -996,6 +996,36 @@
 			"redirect_url": "/azure/quantum/user-guide/program-structure",
 			"redirect_document_id": false
 		},
+    	{
+			"source_path": "articles/how-to-migrate-to-modern.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
+			"redirect_document_id": false
+		},
+    	{
+			"source_path": "articles/classic-qdk-deprecation.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
+			"redirect_document_id": false
+		},
+    	{
+			"source_path": "articles/whats-new-modern-qdk.md",
+			"redirect_url": "/azure/quantum/install-overview-qdk",
+			"redirect_document_id": false
+		},
+    	{
+			"source_path": "articles/hybrid-computing-troubleshooting.md",
+			"redirect_url": "/azure/quantum/hybrid-computing-overview",
+			"redirect_document_id": false
+		},
+    	{
+			"source_path": "articles/qs-compiler-messages/qs3308.md",
+			"redirect_url": "/azure/quantum/azure-quantum-common-issues",
+			"redirect_document_id": false
+		},
+    	{
+			"source_path": "articles/qs-compiler-messages/qs6307.md",
+			"redirect_url": "/azure/quantum/azure-quantum-common-issues",
+			"redirect_document_id": false
+		},
 		{
 			"source_path": "articles/tutorial-qdk-intro-to-katas.md",
 			"redirect_url": "/azure/quantum/qsharp-ways-to-work#q-learning-resources",
