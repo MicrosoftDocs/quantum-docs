@@ -130,7 +130,7 @@ To get started, see [Set up the Quantum Development Kit](xref:microsoft.quantum.
 
 ### Integration of Q# and Python
 
-In VS Code, you can use Q# by itself or with Python, which requires the `qsharp` and `azure-quantum` Python packages. To install these packagaes, see [Add support for Python and Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview#add-support-for-python-and-jupyter-notebooks).
+In VS Code, you can use Q# by itself or with Python, which requires the `qsharp` and `azure-quantum` Python packages. To install these packages, see [Add support for Python and Jupyter Notebooks](xref:microsoft.quantum.install-qdk.overview#add-support-for-python-and-jupyter-notebooks).
 
 The following table shows how to use Q# with and without Python in VS Code:
 
