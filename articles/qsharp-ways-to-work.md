@@ -103,7 +103,7 @@ import qsharp
 
 Jupyter Notebooks don't require a `namespace` or `@EntryPoint()`. Instead, you call an operation or function directly, as in the last line of this Q# program. And unlike VS Code, Jupyter Notebooks don't display program results by default, so you must use the `Message` statement.
 
-For more information, see [Get started with Q# and Azure Quantum notebooks](xref:microsoft.quantum.submit-jobs).
+For more information, see [Get started with Q# and Azure Quantum notebooks](xref:microsoft.quantum.get-started.notebooks).
 
 ### Is the Azure portal right for me?
 
