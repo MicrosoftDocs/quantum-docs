@@ -9,6 +9,7 @@ ms.topic: overview
 no-loc: ['Python', '$$v', Quantum Intermediate Representation, target, targets]
 title: Introduction to the Resource Estimator
 uid: microsoft.quantum.overview.intro-resource-estimator
+#customer intent: As a quantum programmer, I want to learn about resource estimation with Azure Quantum.
 --- 
 
 # What is the Azure Quantum Resource Estimator?
@@ -65,7 +66,7 @@ You can also inspect the distribution of physical qubits used for the algorithm 
 
 ## Get started with the Resource Estimator
 
-The Resource Estimator is part of the Azure Quantum Development Kit (Modern QDK). To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
+The Resource Estimator is part of the Azure Quantum Development Kit (QDK). To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
 
 The following table shows different user scenarios and the recommended articles to start with the Resource Estimator.
 

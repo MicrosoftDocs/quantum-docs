@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to submit specific formatted quantum circuits with QIR, OpenQASM, or Pulser SDK to the Azure Quantum service.
 ms.author: brbenefield
-ms.date: 03/01/2024
+ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -20,8 +20,6 @@ Learn how to use the `azure-quantum` Python package to submit circuits in specif
 - [Submit provider-specific circuits](#submit-a-circuit-with-a-provider-specific-format-to-azure-quantum)
 
 For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
-
-[!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
 
 ## Prerequisites
 

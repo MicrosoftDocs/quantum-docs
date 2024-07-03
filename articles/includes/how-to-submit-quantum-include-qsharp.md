@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 03/18/2024
+ms.date: 05/31/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -14,7 +14,7 @@ Learn how to use VS Code to run, debug, and submit a Q# program to Azure Quantum
 
 ## Prerequisites
 
-For installation details, see [Installing the Modern QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-modern-qdk-on-vs-code).
+For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
@@ -29,7 +29,7 @@ For installation details, see [Installing the Modern QDK on VS Code](xref:micros
     :::image type="content" source="../media/sample-list-vscode.png" alt-text="Screenshot the Q# file in Visual Studio Code showing the list of code samples when writing the word sample in the file.":::
 
 > [!NOTE]
-> You can also open your own Q# file. If you run an older Q# program and run into errors, see [Testing and debugging](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging) or [Migrating your programs to the Modern QDK](/azure/quantum).
+> You can also open your own Q# file. If you run an older Q# program and run into errors, see [Testing and debugging](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging).
 
 ## Run a Q# program
 

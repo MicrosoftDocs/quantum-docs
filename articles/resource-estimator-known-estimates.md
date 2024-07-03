@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
-description: Learn how to use pre-calculated estimates with the Resource Estimator.
-ms.date: 01/29/2024
+description: Learn how to use pre-calculated estimates for your Q# programs with the Azure Quantum Resource Estimator.
+ms.date: 06/03/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -9,6 +9,7 @@ ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
 title: Use Known Estimates with the Resource Estimator
 uid: microsoft.quantum.resource-estimator-known-estimates
+#customer intent: As a quantum programmer, I want to use pre-calculated estimates. 
 ---
 
 # How to use known estimates with the Resource Estimator
@@ -20,7 +21,7 @@ For information about how to run the Resource Estimator, see [Different ways to 
 ## Prerequisites
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension. For installation details, see [Installing the Modern QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-modern-qdk-on-vs-code).
+- The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension. For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
 
 If you want to use Python in VS Code, you also need the following:
 
@@ -100,7 +101,7 @@ logical_counts.estimate(params)
 > [!NOTE]
 > If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
-## Next steps
+## Related content
 
 - [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
 - [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)

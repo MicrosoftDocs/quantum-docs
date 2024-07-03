@@ -2,13 +2,14 @@
 author: SoniaLopezBravo
 description: A reference list with deep coverage of quantum computing topics if you want to learn more about quantum computer programming.
 ms.author: sonialopez
-ms.date: 04/29/2024
+ms.date: 05/31/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: conceptual
+ms.topic: concept-article
 no-loc: ['Q#', '$$v', Quantum Approximate Optimization Algorithm, Quantum Development Kit]
 title: Quantum computing learning resources
 uid: microsoft.quantum.more-information
+#customer intent: As a quantum programmer, 
 ---
 
 # Further reading: Quantum computing learning resources
@@ -35,7 +36,7 @@ The following resources are created and developed by the quantum community who i
 ### Books created by the community
 
 * [*Introduction to Quantum Computing with Q# and QDK*](https://link.springer.com/book/10.1007/978-3-030-99379-5), Filip Wojcieszyn, Springer, 2022.
-* [*Q# Pocket Guide*](https://www.oreilly.com/library/view/q-pocket-guide/9781098108854/), Mariia Mykhailova, O'Reilly, 2021. Q# samples updated to Modern QDK are [here](https://github.com/tcNickolas/q-sharp-pocket-guide-samples/tree/qdk1.0?tab=readme-ov-file).
+* [*Q# Pocket Guide*](https://www.oreilly.com/library/view/q-pocket-guide/9781098108854/), Mariia Mykhailova, O'Reilly, 2021. Q# samples updated are [here](https://github.com/tcNickolas/q-sharp-pocket-guide-samples/tree/qdk1.0?tab=readme-ov-file).
 * [*Introducing Microsoft Quantum Computing for Developers*](https://link.springer.com/book/10.1007/978-1-4842-7246-6), Johnny Hooyberghs, Springer, 2021.
 * [*Learn Quantum Computing with Python and Q# - A hands-on approach*](https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp), S. Kaiser and C. Granade. Manning Publications, 2021.
 

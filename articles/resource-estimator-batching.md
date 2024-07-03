@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to run multiple configurations of target parameters and compare them using the Resource Estimator.
-ms.date: 01/29/2024
+ms.date: 06/03/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -9,6 +9,7 @@ ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
 title: Batching with the Resource Estimator
 uid: microsoft.quantum.resource-estimator-batching
+#customer intent: As a quantum programmer, I want to compare target parameters using the resource esitmator.
 ---
 
 # How to run multiple configurations of target parameters with the Resource Estimator
@@ -24,7 +25,7 @@ The following prerequisites are required to run the Resource Estimator:
 To run Q# programs in the Resource Estimator, you need the following:
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension. For installation details, see [Installing the Modern QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-modern-qdk-on-vs-code).
+- The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension. For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
 
 If you want to use Python in VS Code, you also need the following:
 
@@ -59,6 +60,10 @@ Some scenarios where you may want to submit multiple items as a single job:
 - Submit multiple target parameters with *different* operation arguments in all items.
 - Easily compare multiple results in a tabular format.
 - Easily compare multiple results in a chart.
+
+## Batching jobs using different languages
+
+Select the desired tabs for examples of Resource Estimator batching. 
 
 ### [Batching with Q#](#tab/tabid-batching-qsharp)
 

@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: In this tutorial, write a quantum program in Q# that demonstrates the superposition and entanglement of qubits.
 ms.author: sonialopez
-ms.date: 12/21/2023
+ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -10,14 +10,13 @@ no-loc: ['Q#', '$$v']
 title: 'Tutorial: Quantum Entanglement with Q#'
 uid: microsoft.quantum.tutorial-qdk.entanglement
 zone_pivot_groups: ide-platforms-copilot-vscode
+#customer intent: As a quantum programmer, 
 ---
 
 # Tutorial: Explore quantum entanglement with Q\#
 
-This tutorial shows you how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement. You prepare two qubits in a specific quantum state, learn how to operate on qubits with Q# to change their state, and demonstrate the effects
+In this tutorial, you write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement. You prepare two qubits in a specific quantum state, learn how to operate on qubits with Q# to change their state, and demonstrate the effects
 of superposition and entanglement. You build your Q# program piece-by-piece to introduce qubit states, operations, and measurements.
-
-[!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
 
 Here are some key concepts to understand before you begin:
 
@@ -49,11 +48,10 @@ In this tutorial, you'll learn how to:
 
 ::: zone-end
 
-## Next steps
+## Related content
 
 Explore other Q# tutorials:
 
-* [Quantum random number generator](xref:microsoft.quantum.tutorial-qdk.random-number) shows how to write a Q# program that generates random numbers out of qubits in superposition.
 * [Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm.
 * [Quantum Fourier Transform](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
 * The [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
