@@ -67,7 +67,7 @@ The [Azure portal](https://portal.azure.com) is the main interface of the Micros
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
-Workspaces provide access to [Azure Quantum notebooks](xref:microsoft.quantum.get-started.notebooks), which are web-based Jupyter Notebooks in the Azure portal. Use notebooks to create, upload, store, and run Q# and Python programs on quantum simulators or hardware targets. You can also use the sample notebooks to get started with quantum programming. For more information, see [Work with Jupyter Notebooks in an Azure Quantum workspace](xref:microsoft.quantum.how-to.notebooks).
+Workspaces provide access to [Azure Quantum notebooks](xref:microsoft.quantum.get-started.notebooks), which are web-based Jupyter Notebooks in the Azure portal. Use Azure notebooks to create, upload, store, and run Q# and Python programs on quantum simulators or hardware targets. The portal provides sample notebooks to help you get started with quantum programming. For more information, see [Work with Jupyter Notebooks in an Azure Quantum workspace](xref:microsoft.quantum.how-to.notebooks).
 
 You can also use the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to estimate the physical resources required to run your Qiskit and QIR programs on quantum computers. For more information, see [Run the Resource Estimator in the Azure portal](xref:microsoft.quantum.submit-resource-estimation-jobs?pivots=platform-portal-qiskit).
 
@@ -80,7 +80,7 @@ When using `%%qsharp`, keep the following in mind:
 - You must first run `import qsharp` to enable `%%qsharp`.
 - `%%qsharp` scopes to the notebook cell in which it appears and changes the cell type from Python to Q#.
 - You can't put a Python statement before or after `%%qsharp`.
-- Q# code that follows `%%qsharp` must adhere to Q# syntax. For example, use `//` instead of `#` to denote comments and `;` to conclude code lines.
+- Q# code that follows `%%qsharp` must adhere to Q# syntax. For example, use `//` instead of `#` to denote comments and `;` to end code lines.
 
 Here's an example of using `%%qsharp` in a Jupyter Notebook:
 
