@@ -15,7 +15,11 @@ zone_pivot_groups: ide-local-portal-jupyter
 
 # Different ways to run the Resource Estimator
 
-In this article, you'll learn to work with the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). The Resource Estimator is available both in VS Code and online in Azure portal.
+In this article, you learn to work with the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). The Resource Estimator is part of the Quantum Development Kit and is available in different platforms and IDEs. 
+
+If you run a Q# program, the Resource Estimator is available in Visual Studio Code with the [Quantum Development Kit extension](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code). You don't neet to have an Azure subscription to use the Resource Estimator in Visual Studio Code. 
+
+If you run a Qiskit or QIR program, the Resource Estimator is available in the Azure portal, and you need an Azure subscription to use it.
 
 The following table shows the different ways to run the Resource Estimator.
 
@@ -23,8 +27,8 @@ The following table shows the different ways to run the Resource Estimator.
 |---|---|---|
 |Estimate the resources of a Q# program|Visual Studio Code| Select **Q# in VS Code** at the top of the page|
 |Estimate the resources of a Q# program (advanced)|Jupyter Notebook in Visual Studio Code| Select **Q# in Jupyter Notebook** at the top of the page|
-|Estimate the resources of a Qiskit program|Azure Quantum portal|Select **Qiskit in Azure portal** at the top of the page|
-|Estimate the resources of a QIR program|Azure Quantum portal| [Submit QIR](xref:microsoft.quantum.tutorial.resource-estimator.qir)|
+|Estimate the resources of a Qiskit program|Azure portal|Select **Qiskit in Azure portal** at the top of the page|
+|Estimate the resources of a QIR program|Azure portal| [Submit QIR](xref:microsoft.quantum.tutorial.resource-estimator.qir)|
 |Use FCIDUMP files as argument parameters (advanced)| Visual Studio Code| [Submit a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)|
 
 
