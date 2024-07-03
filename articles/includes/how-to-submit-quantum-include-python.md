@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 05/31/2024
+ms.date: 07/03/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.custom: devx-track-azurecli
@@ -99,16 +99,19 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
     
 ## Compile your job using the Base profile
 
-When you run programs on the local quantum simulator, you can submit any type of Q# program. However, Azure Quantum hardware targets do not yet support the full capabilities required to run all Q# programs. In order to compile and submit Q# programs to Azure Quantum, you need to set your target profile to tell Q# which capabilities that your target hardware supports. Currently, that is the Base profile. For more information, see [Profile types in Azure Quantum](xref:microsoft.quantum.target-profiles).
+When you run programs on the local quantum simulator, you can submit any type of Q# program. However, Azure Quantum hardware targets do not yet support the full capabilities required to run all Q# programs. In order to compile and submit Q# programs to Azure Quantum, you need to set your target profile to tell Q# which capabilities that your target hardware supports. Currently, that is either the `Base` or `Adpative_RI` profile. For more information, see [Profile types in Azure Quantum](xref:microsoft.quantum.target-profiles).
     
    > [!NOTE]
-   > For [Q# only programs in VS Code](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp), VS Code sets the Base profile automatically. 
+   > For [Q# only programs in VS Code](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp), VS Code sets the `Base` profile automatically. 
 
 1. Use the `init` method to set the profile:
 
     ```python
-    qsharp.init(target_profile=qsharp.TargetProfile.Base)
+    qsharp.init(project_root = '../MyProjectRootFolder', target_profile=qsharp.TargetProfile.Base)
     ```
+    > [!NOTE]
+    > Because you are reinitializing your qsharp state, you need to set the `project_root` parameter again so the compiler knows where to find the `RandomNBits` operation. This could also have been done in step 5 of the previous procedure. 
+
 
 1. Then use the `compile` method to specify the operation or function that is the entry point to your program. The compiled program can then be submitted to any quantum hardware:
 
