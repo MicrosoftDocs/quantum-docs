@@ -250,7 +250,7 @@ If you are not using an Azure Quantum Credits plan, then you can request quota i
       - Any justification for why you are increasing your quota can help us to decide in some cases. 
 
 
-## Next Steps
+## Related content
 
 - [Azure Quantum Credits](xref:microsoft.quantum.credits)
 - [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq)

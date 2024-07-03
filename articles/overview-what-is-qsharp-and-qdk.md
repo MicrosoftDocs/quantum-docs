@@ -1,27 +1,26 @@
 ---
 author: SoniaLopezBravo
-description: Learn about the Q# programming language, the Quantum Development Kit (QDK), `and how you can create quantum programs.
+description: Learn about the Q# programming language, the Quantum Development Kit (QDK), and how you can create quantum programs.
 ms.author: sonialopez
-ms.date: 12/31/2023
+ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
 no-loc: ['Q#', '$$v', Quantum Development Kit, Quantum machine learning, target, targets]
 title: Introduction to Q# & Quantum Development Kit
 uid: microsoft.quantum.overview.q-sharp
+#customer intent: As a quantum programmer, I want to know how Azure Quantum can help me develop quantum programs
 ---
 
 # What are Q# and the Azure Quantum Development Kit?
 
-The Azure Quantum Development Kit (Modern QDK) is the SDK required to interface with the Azure Quantum service. With the Quantum Development Kit, you can build quantum programs that run on quantum hardware in Azure Quantum.
+The Azure Quantum Development Kit (QDK) is the SDK required to interface with the Azure Quantum service. With the Quantum Development Kit, you can build quantum programs that run on quantum hardware in Azure Quantum.
 
-[!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
-
-The Modern QDK is the only development kit ready for Fault-Tolerant Quantum Computing (FTQC). With the Modern QDK, you can:
+The Azure QDK is the only development kit ready for Fault-Tolerant Quantum Computing (FTQC). With the QDK, you can:
 
 - **Debug your code:** It offers a quantum computing debugger that can step through classical and quantum code. Paired with its sparse in-memory simulator it provides fast simulation of up to thousands of logical qubits.
 
-- **Choose your platform:** The Modern QDK runs in your web browser with no installation necessary, and with its VS Code extension on your PC, Mac or Linux machine.
+- **Choose your platform:** The QDK runs in your web browser with no installation necessary, and use the VS Code extension on your PC, Mac or Linux machine.
 
 - **Write your code faster:** Syntax highlighting and intelligent code completion with IntelliSense and write entire blocks of code assisted with Copilot.
 
@@ -33,7 +32,7 @@ The Modern QDK is the only development kit ready for Fault-Tolerant Quantum Comp
 
 ## The quantum programming language Q\#
 
-The Modern QDK includes the quantum programming language Q#, a high-level, **open-source** programming language that allows you to focus your work at the algorithm level to create quantum programs.
+The QDK includes the quantum programming language Q#, a high-level, **open-source** programming language that allows you to focus your work at the algorithm level to create quantum programs.
 
 Q# is an **open-source**, high-level, programming language for developing and running quantum algorithms. It’s part of the Quantum Development Kit (QDK) and it's designed to be hardware agnostic, scale to the full range of quantum applications, and to optimize execution. 
 
@@ -69,12 +68,12 @@ If you want to start practicing and writing your Q# programs without installing 
 
 #### Local development environment
 
-If you prefer a local development environment, you can install [the Modern QDK extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). The Modern QDK extension provides a full-featured development environment for Q#, including syntax highlighting, realtime coding feedback, and debugging.
+If you prefer a local development environment, you can install [the Azure QDK extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). The Azure QDK extension provides a full-featured development environment for Q#, including syntax highlighting, realtime coding feedback, and debugging.
 
-To get started with the Modern QDK extension, see the following [Tutorial](xref:microsoft.quantum.tutorial-qdk.random-number).
+To get started with the Azure QDK extension, see the following [Tutorial](xref:microsoft.quantum.tutorial-qdk.random-number).
 
 > [!TIP]
-> The Modern QDK includes a set of built-in Q# samples that you can use to learn more about Q# and quantum computing. To view the samples, open a new Q# file and type `sample`, then select the sample you want to view from the list of options. 
+> The QDK includes a set of built-in Q# samples that you can use to learn more about Q# and quantum computing. To view the samples, open a new Q# file and type `sample`, then select the sample you want to view from the list of options. 
 
 ## Quantum development workflow
 

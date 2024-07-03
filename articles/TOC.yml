@@ -13,8 +13,6 @@
 - name: Get started
   expanded: true
   items:
-  - name: What's new in the Modern QDK
-    href: whats-new-modern-qdk.md
   - name: Explore Azure Quantum
     href: get-started-azure-quantum.md
   - name: Create an Azure Quantum workspace
@@ -25,8 +23,6 @@
     href: install-overview-qdk.md
   - name: Get started with Q# and VS Code
     href: how-to-submit-jobs.md
-  - name: Migrate your code to the Modern QDK
-    href: how-to-migrate-to-modern.md
 - name: Manage Azure Quantum
   items:
   - name: Users and workspaces
@@ -209,12 +205,8 @@
       href: concepts-error-correction.md
 - name: Troubleshooting
   items:
-  - name: Troubleshooting integrated hybrid QC
-    href: hybrid-computing-troubleshooting.md
   - name: Troubleshooting issues
     href: azure-quantum-common-issues.md
-  - name: Q# compiler messages
-    href: qs-compiler-messages/toc.yml
 - name: Resources
   items:
   - name: Build your skills with Microsoft training >>

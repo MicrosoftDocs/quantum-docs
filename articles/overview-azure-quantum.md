@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs problems in the cloud.
-ms.date: 12/04/2023
+ms.date: 06/03/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -9,6 +9,7 @@ ms.topic: overview
 no-loc: [Quantum Development Kit, Quantum Intermediate Representation, target, targets]
 title: What is Azure Quantum?
 uid: microsoft.quantum.azure-quantum-overview
+#customer intent: As a quantum programmer, I want to know how I can use Azure Quantum. 
 ---
 
 # What is Azure Quantum?
@@ -37,9 +38,9 @@ The Azure Quantum website is **free** of charge and **doesn't require** an Azure
 
 Start using Azure Quantum is very easy and free of cost for new users. To submit your quantum programs to Azure Quantum you only need two things:
 
-1. **Azure account**: If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). If you are a student, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
+- **An Azure account**: If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). If you are a student, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
 
-1. **Azure Quantum workspace**: An Azure Quantum workspace is a collection of assets associated with running quantum. To create an Azure Quantum workspace, go to the [Azure portal](https://ms.portal.azure.com/#create/Microsoft.AzureQuantum), select **Quick create** and it automatically creates the workspace and adds the default providers. Or select **Advance create**, and enter the details of your workspace and choose the providers.
+- **An Azure Quantum workspace**: An Azure Quantum workspace is a collection of assets associated with running quantum. To create an Azure Quantum workspace, go to the [Azure portal](https://ms.portal.azure.com/#create/Microsoft.AzureQuantum), select **Quick create** and it automatically creates the workspace and adds the default providers. Or select **Advance create**, and enter the details of your workspace and choose the providers.
 
 For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
@@ -55,16 +56,14 @@ For more information, see [The quantum programming language Q#](xref:microsoft.q
 
 ## How can I write Q# quantum programs?
 
-Azure Quantum offers the **Azure Quantum Development Kit (Modern QDK)**. With the Modern QDK, you can write Q# quantum programs, debug your code, get real-time code feedback, and choose your target machine. The Modern QDK is the only development kit ready for Fault-Tolerant Quantum Computing (FTQC). 
+Azure Quantum offers the **Azure Quantum Development Kit (QDK)**. With the QDK, you can write Q# quantum programs, debug your code, get real-time code feedback, and choose your target machine. The QDK is the only development kit ready for Fault-Tolerant Quantum Computing (FTQC). 
 
-[!INCLUDE [Classic QDK banner](includes/classic-qdk-deprecation.md)]
-
-The Modern QDK offer two ways to run your quantum programs on Azure Quantum:
+The QDK offers two ways to run your quantum programs on Azure Quantum:
 
 - Online development: Write your quantum code in the [online code editor](https://quantum.microsoft.com/experience/quantum-coding), and in [Visual Studio Code for the Web](https://vscode.dev/quantum).
-- Local development: Install the Modern QDK extension for Visual Studio Code and write your quantum code locally. For more information, see how to install the [Modern QDK](xref:microsoft.quantum.install-qdk.overview).
+- Local development: Install the  QDK extension for Visual Studio Code and write your quantum code locally. For more information, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
 
-Besides supporting for Q#, the QDKs offer support for Qiskit and Cirq for quantum computing, so if you are already working in other development languages, you can also run your circuits on Azure Quantum.
+Besides supporting for Q#, the QDK offers support for Qiskit and Cirq for quantum computing, so if you are already working in other development languages, you can also run your circuits on Azure Quantum.
 
 > [!NOTE]
 > An Azure Quantum workspace is required to run your local quantum programs on Azure Quantum providers. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
@@ -88,8 +87,7 @@ Designed specifically for scaled quantum fault-tolerant error-corrected systems,
 
 The Azure Quantum Resource Estimator computes post-layout physical resource estimation by taking a set of inputs such as qubit parameters, the quantum error correction (QEC) code, the error budget, and [other parameters](xref:microsoft.quantum.overview.resources-estimator) into account. It takes a [Quantum Intermediate Representation (QIR)](xref:microsoft.quantum.concepts.qir) program as input and, therefore, supports any language that translates to QIR, for example, you can use the Azure Quantum Resource Estimator with Q# and Qiskit.
 
-:::image type="content" source="media/Resource-Estimation-component-overview.png" alt-text="Diagram showing components provided by Resource Estimator and corresponding customizations. Provided aspects are Application Input, Compilation Tools, QIR, QEC models, Qubit models, and Analysis. Customer can bring Application Program, Compilation or Optimization Tools, QIR Code, QEC models, Qubit parameters, and Analysis and Visualization Tools.":::
-
+:::image type="content" source="media/Resource-Estimation-component-overview.png" alt-text="Diagram showing components provided by Resource Estimator and corresponding customizations.":::
 
 ## Providers available on Azure Quantum
 
@@ -108,7 +106,7 @@ For more information on the specifications of each provider, see the full [Quant
 
 - [Quantum Circuits, Inc](https://quantumcircuits.com/): Full-stack superconducting circuits, with real-time feedback that enables error correction, encoding-agnostic entangling gates.
 
-## Next steps
+## Related content
 
 Start using Azure Quantum:
 
