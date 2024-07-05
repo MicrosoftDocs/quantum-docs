@@ -84,6 +84,8 @@ When using `%%qsharp`, keep the following in mind:
 - `%%qsharp` scopes to the notebook cell in which it appears and changes the cell type from Python to Q#.
 - You can't put a Python statement before or after `%%qsharp`.
 - Q# code that follows `%%qsharp` must adhere to Q# syntax. For example, use `//` instead of `#` to denote comments and `;` to end code lines.
+> [!NOTE]
+> The Azure Quantum notebooks in Azure portal already include the last version of `qsharp` and `azure-quantum` Python packages, so you don't need to install anything.
 
 Here's an example of using `%%qsharp` in a Jupyter Notebook:
 
