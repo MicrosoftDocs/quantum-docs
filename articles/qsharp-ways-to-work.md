@@ -20,7 +20,7 @@ In this article you learn the differences between each option, and how to choose
 
 ## Options for running Q# programs
 
-Azure Quantum offers several options to help you learn quantum programming and develop quantum solutions with Q#. Depending on your coding experience, quantum knowledge, and goals, you might prefer different options for running Q# programs.
+Azure Quantum is available through three different development environments: the Azure Quantum website, the Azure portal, and the Azure Quantum Development Kit (QDK) extension for Visual Studio Code. Depending on your coding experience, quantum knowledge, and goals, you might prefer different options for running Q# programs.
 
 You can run Q# programs in three environments:
 
