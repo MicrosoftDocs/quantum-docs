@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: get-started
 no-loc: []
-title: Environment Options for Quantum Programming with Q#
+title: Development Options for Quantum Programming with Q#
 uid: microsoft.quantum.qsharp-ways-to-work
 # Customer intent: As a new quantum programmer, I want to understand the pros and cons of each Q# environment so that I can choose the best one for my needs.
 ---
