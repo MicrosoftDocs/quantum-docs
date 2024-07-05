@@ -40,6 +40,7 @@ Each option has different features and functionality. Typically, you use differe
 | Cirq and Qiskit support  |  &nbsp;  |  &#10004;  |  &#10004;  |
 | Integrated hybrid  | &nbsp; |  &nbsp;  |  &#10004;  |
 | Local setup  | &nbsp; |  &nbsp;  |  &#10004;  |
+| Quantum workspace creation  | &nbsp; |  &#10004;  |  &nbsp;  |
 
 **\*** VS Code provides rich Q# support, such as CodeLens, IntelliSense, and debugging.
 
