@@ -5,7 +5,7 @@ ms.author: brbenefield
 ms.date: 07/05/2024
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: concept-article
+ms.topic: how-to
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Set up the Quantum Development Kit Extension
 uid: microsoft.quantum.install-qdk.overview
@@ -14,25 +14,23 @@ uid: microsoft.quantum.install-qdk.overview
 
 # Set up the Quantum Development Kit extension
 
-The Quantum Development Kit (QDK).
+In this article, you learn how to install the Quantum Development Kit (QDK) extension for Visual Studio Code and add support for Python, Jupyter Notebooks, and the Azure CLI.
 
 ## Prerequisites
 
-To set up the QDK, you need:
-
-- Install [VS Code](https://code.visualstudio.com/download).
-- To submit jobs to Azure Quantum, you need an Azure account and a quantum workspace. For more information, see Create an Azure Quantum workspace. 
+- The latest version of [VS Code](https://code.visualstudio.com/download).
+- To submit jobs to Azure Quantum, you also need an Azure account with a quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Install the QDK extension
 
-Install the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension. You can also run the QDK in [VS Code for the Web](https://vscode.dev/quantum) without installing the extension.
+To use the QDK in VS Code, install the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). You can also use the QDK in [VS Code for the Web](https://vscode.dev/quantum) without installing the extension, but you won't have all the features of VS Code Desktop. For more information, see [Ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work).
 
 > [!NOTE]
 > If you used previous versions of the QDK, run `python -m pip uninstall qsharp qsharp-core qsharp-chemistry azure-quantum` to avoid package version conflicts.
 
-That's it. You can now write, debug, and run Q# programs against the built-in quantum simulator, or if you already have an Azure account, connect and submit Q# programs to quantum hardware, all from VS Code.
+You can now write, debug, and run Q# programs against the built-in quantum simulator or, if you already have an Azure account, connect and submit Q# programs to quantum hardware, all from VS Code.
 
-To test your setup, see [Submit Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp)
+To test your setup, see [Submit Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp).
 
 ### Add support for Python and Jupyter Notebooks
 
@@ -94,4 +92,4 @@ To test your setup, see [Submit Q# jobs to Azure Quantum](xref:microsoft.quantum
 Using the Azure portal:
 
 - [Work with Jupyter notebooks on Azure Quantum](xref:microsoft.quantum.how-to.notebooks)
-- [Create and submit a Qiskit circuit](xref:microsoft.quantum.quickstarts.computing.qiskit) to quantum hardware.
+- [Submit a Qiskit circuit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)
