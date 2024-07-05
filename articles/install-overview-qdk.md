@@ -7,28 +7,30 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: concept-article
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
-title: Set up the Quantum Development Kit 
+title: Set up the Quantum Development Kit Extension
 uid: microsoft.quantum.install-qdk.overview
 #customer intent: As a quantum developer, I want to configure my environment with the latest Azure Quantum tools. 
 ---
 
-# Set up the Quantum Development Kit (Modern QDK)
+# Set up the Quantum Development Kit extension
 
-Learn about the different environment options available to develop quantum computing using the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) service. Every environment uses the Quantum Development Kit (Modern QDK), an open source set of tools that includes the quantum programming language Q# and accompanying libraries. With the QDK, you can develop quantum computing applications using different IDEs and languages and run them on quantum simulators or quantum hardware using Azure Quantum.
+The Quantum Development Kit (QDK).
 
-## Install the Modern QDK in VS Code
+## Prerequisites
+
+Before you begin, you need the following prerequisites to use Jupyter Notebooks in an Azure Quantum workspace.
+
+- Install [VS Code](https://code.visualstudio.com/download).
+- To submit jobs to Azure Quantum, you need an Azure account and a quantum workspace. For more information, see Create an Azure Quantum workspace. 
+
+## Install the QDK extension
+
+Install the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension. You can also run the QDK in [VS Code for the Web](https://vscode.dev/quantum) without installing the extension.
 
 > [!NOTE]
-> To avoid package version conflicts, follow the uninstall instructions in step 2.
+> If you used previous versions of the QDK, run `python -m pip uninstall qsharp qsharp-core qsharp-chemistry azure-quantum` to avoid package version conflicts.
 
-To install the QDK:
-
-1. In VS Code, disable or uninstall the **Microsoft Quantum Development Kit** extension.
-1. Run `python -m pip uninstall qsharp qsharp-core qsharp-chemistry azure-quantum`.
-1. If needed, install the latest version of [VS Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/).
-1. Install the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension.
-
-That's it. You can now write, debug, and run Q# programs against the built-in quantum simulator, or if you already have an Azure account, connect and submit Q# programs to quantum hardware, all from VS Code. 
+That's it. You can now write, debug, and run Q# programs against the built-in quantum simulator, or if you already have an Azure account, connect and submit Q# programs to quantum hardware, all from VS Code.
 
 To test your setup, see [Submit Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp)
 

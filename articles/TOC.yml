@@ -169,6 +169,8 @@
       href: quickstart-microsoft-cirq.md
     - name: Submit a circuit in provider-specific format
       href: quickstart-microsoft-provider-format.md
+  - name: VS Code reference for Q#
+    href: vscode-qsharp-reference.md
   - name: Q# language reference
     href: user-guide/language/toc.yml
 - name: Quantum simulators
