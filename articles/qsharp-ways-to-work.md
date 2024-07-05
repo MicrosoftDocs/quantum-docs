@@ -72,7 +72,7 @@ The [Azure portal](https://portal.azure.com) is the main interface of the Micros
 
 Quantum workspaces provide access to [Azure Quantum notebooks](xref:microsoft.quantum.get-started.notebooks), which are web-based Jupyter Notebooks in the Azure portal. Use Azure notebooks to create, upload, store, and run Q# and Python programs on quantum simulators or hardware targets. From your quantum workspace you can access sample notebooks to help you get started with quantum programming.
 
-You can also use the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to estimate the physical resources required to run your Qiskit and QIR programs on quantum computers. For more information, see [Run the Resource Estimator in the Azure portal](xref:microsoft.quantum.submit-resource-estimation-jobs).
+You can also use the  [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) in Azure Quantum notebooks to estimate the physical resources required to run your Qiskit and QIR programs. For more information, see [Run the Resource Estimator in the Azure portal](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 ### The %%qsharp command
 
