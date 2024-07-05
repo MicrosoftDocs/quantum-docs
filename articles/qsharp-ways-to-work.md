@@ -76,7 +76,7 @@ You can also use the  [Azure Quantum Resource Estimator](xref:microsoft.quantum.
 
 ### The %%qsharp command
 
-By default, Q# programs in Jupyter Notebooks use the `ipykernel` Python package. To add Q# code to a notebook cell, use the `%%qsharp` command, which is enabled with the `qsharp` Python package.
+By default, Q# programs in Jupyter Notebooks use the `ipykernel` Python package. To add Q# code to a notebook cell, use the `%%qsharp` command, which is enabled with the `qsharp` Python package, followed by your Q# code.
 
 When using `%%qsharp`, keep the following in mind:
 
