@@ -14,23 +14,26 @@ uid: microsoft.quantum.qsharp-quickstart
 
 # Quickstart: Create your first Q# program
 
-In this quickstart, you...
+In this quickstart, you learn how to create a Q# program that ...
+
+
 
 ## Prerequisites
 
-- Visual Studio Code
-- Azure QDK
+- The latest version of [Visual Studio Code](https://code.visualstudio.com/download).
+- The [Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum).
 
 ## Create a Q# file
+
+1. In VS Code, select **File** > **New Text File**.
+1. Save the file as `Entanglement.qs`. The .qs extension denotes a Q# program.
 
 ## Write your Q# code
 
 1. ...
 
-Maybe use another H2: ## Run your Q# program
+## Run your Q# program
 
-To learn more about entanglement, see ...
-
-## Next steps
+## Next steps or Related content
 
 - ...
