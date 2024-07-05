@@ -54,7 +54,7 @@ For more information, see [Explore Azure Quantum](xref:microsoft.quantum.get-sta
 
 ### Is the Azure Quantum website right for me?
 
-On the Azure Quantum website, you can run Q# programs in your browser and find multiple learning resources. If you're a quantum enthusiast who wants to learn by doing, the Azure Quantum website is for you.
+The Azure Quantum website lets you run Q# programs in your browser and access various learning resources. If you're a quantum enthusiast who wants to learn by doing, the Azure Quantum website is for you.
 
 The following table shows what you can and can't do on the Azure Quantum website:
 
