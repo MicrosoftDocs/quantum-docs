@@ -83,10 +83,9 @@ When using `%%qsharp`, keep the following in mind:
 - You can't put a Python statement before or after `%%qsharp`.
 - Q# code that follows `%%qsharp` must adhere to Q# syntax. For example, use `//` instead of `#` to denote comments and `;` to end code lines.
 > [!NOTE]
-> The Azure Quantum notebooks in Azure portal already include the last version of `qsharp` and `azure-quantum` Python packages, so you don't need to install anything.
+> Azure notebooks in the Azure portal include the latest versions of the `qsharp` and `azure-quantum` Python packages, so you don't need to install anything.
 
-> [!NOTE]
-> Jupyter Notebooks don't require a `namespace` or `@EntryPoint()`. Instead, you call an operation or function directly. And unlike VS Code, Jupyter Notebooks don't display program results by default, so you must use the `Message` statement.
+Jupyter Notebooks don't require a `namespace` or `@EntryPoint()`. Instead, you call an operation or function directly. And unlike VS Code, Jupyter Notebooks don't display program results by default, so you must use the `Message` statement.
 
 For more information, see [Get started with Q# and Azure Quantum notebooks](xref:microsoft.quantum.get-started.notebooks).
 

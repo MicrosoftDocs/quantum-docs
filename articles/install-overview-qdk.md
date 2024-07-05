@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to set up the Azure Quantum Development Kit VS Code extension and set up your environment for different languages and platforms.
 ms.author: brbenefield
-ms.date: 06/03/2024
+ms.date: 07/05/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: concept-article
@@ -18,7 +18,7 @@ The Quantum Development Kit (QDK).
 
 ## Prerequisites
 
-Before you begin, you need the following prerequisites to use Jupyter Notebooks in an Azure Quantum workspace.
+To set up the QDK, you need:
 
 - Install [VS Code](https://code.visualstudio.com/download).
 - To submit jobs to Azure Quantum, you need an Azure account and a quantum workspace. For more information, see Create an Azure Quantum workspace. 
