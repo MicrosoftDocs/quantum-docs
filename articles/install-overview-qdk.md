@@ -39,7 +39,7 @@ With added Python support, you can embed or call Q# code from your Python progra
 **Prerequisites**
 
 - A Python environment (3.9 or greater, 3.11 recommended) with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- Visual Studio Code with the QDK extension installed.
+- VS Code with the QDK extension installed.
 
 To add Python and Jupyter Notebook support:
 
