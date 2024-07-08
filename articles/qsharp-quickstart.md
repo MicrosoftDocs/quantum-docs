@@ -34,6 +34,6 @@ In this quickstart, you learn how to create a Q# program that ...
 
 ## Run your Q# program
 
-## Next steps or Related content
+## Next step
 
-- ...
+- Tutorial

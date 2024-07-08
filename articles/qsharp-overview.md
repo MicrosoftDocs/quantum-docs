@@ -14,7 +14,7 @@ uid: microsoft.quantum.qsharp-overview
 
 # What is Q#?
 
-Q# is a high-level, [open-source](https://github.com/microsoft/qsharp) programming language for developing and running quantum algorithms. Q# is included in the Quantum Development Kit (QDK). For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+Q# is a high-level, [open-source](https://github.com/microsoft/qsharp) programming language for developing and running quantum algorithms. Q# is included in the Quantum Development Kit (QDK). For more information, see [Set up the Quantum Development Kit extension](xref:microsoft.quantum.install-qdk.overview).
 
 As a quantum programming language, Q# meets the following language, compiler, and runtime requirements:
 
@@ -173,7 +173,7 @@ open Microsoft.Quantum.Intrinsic;
 Message("Hello quantum world!");
 ```
 
-The `Superposition` program doesn't have any `open` statements or calls with full namespaces. That's because the Q# development environment loads two namespaces by default: `Microsoft.Quantum.Core` and `Microsoft.Quantum.Intrinsic`, which contain commonly used functions and operations.
+The `Superposition` program doesn't have any `open` statements or calls with full namespaces. That's because the Q# development environment automatically loads two namespaces: `Microsoft.Quantum.Core` and `Microsoft.Quantum.Intrinsic`, which contain commonly used functions and operations.
 
 You can take advantage of the `Microsoft.Quantum.Measurement` namespace by using the `MResetZ` operation to optimize the `Superposition` program. `MResetZ` combines the measurement and reset operations into one step, as in the following example:
 

@@ -18,8 +18,8 @@ In this article, you learn how to install the Quantum Development Kit (QDK) exte
 
 ## Prerequisites
 
-- The latest version of [VS Code](https://code.visualstudio.com/download).
-- To submit jobs to Azure Quantum, you also need an Azure account with a quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- The latest version of [Visual Studio Code](https://code.visualstudio.com/download).
+- If you want to submit jobs to Azure Quantum, you also need an Azure account with a quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ## Install the QDK extension
 
@@ -32,15 +32,14 @@ You can now write, debug, and run Q# programs against the built-in quantum simul
 
 To test your setup, see [Submit Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp).
 
-### Add support for Python and Jupyter Notebooks
+## Add support for Python and Jupyter Notebooks
 
 With added Python support, you can embed or call Q# code from your Python programs or Jupyter Notebooks and run them on the built-in quantum simulator, or connect to your Azure workspace and submit your jobs to quantum hardware, all from VS Code.
 
 **Prerequisites**
 
-- A Python environment  (3.9 or greater, 3.11 recommended) with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed. 
-- VS Code with the QDK extension installed.
-
+- A Python environment (3.9 or greater, 3.11 recommended) with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
+- Visual Studio Code with the QDK extension installed.
 
 To add Python and Jupyter Notebook support:
 
@@ -72,11 +71,11 @@ To add Python and Jupyter Notebook support:
 
 To test your setup, see [Submit Q# jobs with Python](xref:microsoft.quantum.submit-jobs?pivots=ide-python) or [Submit Q# jobs with Jupyter Notebooks](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter).
 
-### Add support for Azure CLI
+## Add support for the Azure CLI
 
-The Azure CLI is an optional method for submitting quantum jobs using a terminal window in VS Code. 
+The Azure CLI is an optional method for submitting quantum jobs using a terminal window in VS Code.
 
-1. Install the [Azure CLI](/cli/azure/install-azure-cli). 
+1. Install the [Azure CLI](/cli/azure/install-azure-cli).
 1. Install the latest Azure CLI `quantum` extension. Open a command prompt and run the following command:
 
     ```cmd
@@ -84,12 +83,11 @@ The Azure CLI is an optional method for submitting quantum jobs using a terminal
         --upgrade \
         -n quantum
     ```
-    
+
 To test your setup, see [Submit Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-python).
 
 ## Related content
 
-Using the Azure portal:
-
-- [Work with Jupyter notebooks on Azure Quantum](xref:microsoft.quantum.how-to.notebooks)
-- [Submit a Qiskit circuit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)
+- [Different ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work)
+- [Quickstart: Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart)
+- [Update the QDK to the latest version](xref:microsoft.quantum.update-qdk)
