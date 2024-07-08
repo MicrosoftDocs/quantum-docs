@@ -151,7 +151,7 @@ let result = M(q);
 
 ### Resetting qubits
 
-By default, qubits allocated with the `use` keyword start in the zero state. You **must** reset each qubit to the zero state before releasing it at the end of the program. Failure to reset a qubit results in a runtime error.
+In Q#, qubits must be in the $\ket{0}$ state by the time they are released. You **must** reset each qubit to the zero state before releasing it at the end of the program with the `Reset` operation. Failure to reset a qubit results in a runtime error.
 
 ```qsharp
 // Reset a qubit.
