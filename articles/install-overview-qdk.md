@@ -14,7 +14,7 @@ uid: microsoft.quantum.install-qdk.overview
 
 # Set up the Quantum Development Kit extension
 
-In this article, you learn how to install the Quantum Development Kit (QDK) extension for Visual Studio Code and add support for Python, Jupyter Notebooks, and the Azure CLI.
+In this article, you learn how to install the Azure Quantum Development Kit (QDK) extension for Visual Studio Code and add support for Python, Jupyter Notebooks, and the Azure CLI.
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ To use the QDK in VS Code, install the [QDK extension](https://marketplace.visua
 > [!NOTE]
 > If you used previous versions of the QDK, run `python -m pip uninstall qsharp qsharp-core qsharp-chemistry azure-quantum` to avoid package version conflicts.
 
-You can now write, debug, and run Q# programs against the built-in quantum simulator or, if you already have an Azure account, connect and submit Q# programs to quantum hardware, all from VS Code.
+You can now write, debug, and run Q# programs against the built-in quantum simulator or, if you have an Azure account, connect and submit Q# programs to quantum hardware, all from VS Code.
 
 To test your setup, see [Submit Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp).
 
