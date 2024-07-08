@@ -2,7 +2,7 @@
 author: bradben
 description: This article provides troubleshooting steps for common issues encountered when using the Azure Quantum service.
 ms.author: brbenefield
-ms.date: 06/19/2024
+ms.date: 07/08/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting
@@ -21,7 +21,7 @@ When working with the Azure Quantum service, you may run into these common issue
 
 ### Issue: Missing targets
 
-If the target where you want to run your job is missing from the available target list, you likely need to update to the latest version of the [Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode). For more information, see [Update the QDK](xref:microsoft.quantum.update-qdk).
+If the target where you want to run your job is missing from the available target list, you likely need to update to the latest version of the [Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For more information, see [Update the QDK](xref:microsoft.quantum.update-qdk).
 
 ### Issue: Operation returns an invalid status code 'Unauthorized'
 
