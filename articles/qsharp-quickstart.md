@@ -14,9 +14,13 @@ uid: microsoft.quantum.qsharp-quickstart
 
 # Quickstart: Create your first Q# program
 
-In this quickstart, you learn how to create a Q# program that ...
+In this quickstart, you create a basic Q# program that demonstrates quantum entanglement.
 
+Entangles two qubits, also known as a Bell pair.
 
+Quantum entanglement occurs when two qubits are interconnected . In other words, if one qubit is in a certain state, the other will also be in that state.
+
+For more information about quantum entanglement, see [Tutorial: Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement).
 
 ## Prerequisites
 
@@ -30,10 +34,13 @@ In this quickstart, you learn how to create a Q# program that ...
 
 ## Write your Q# code
 
-1. ...
+1. Declare your namespace.
+1. 
+1. 
+1. 
 
 ## Run your Q# program
 
 ## Next step
 
-- Tutorial
+- [Tutorial: Implement a quantum random number generator in Q#](xref:microsoft.quantum.tutorial-qdk.random-number)

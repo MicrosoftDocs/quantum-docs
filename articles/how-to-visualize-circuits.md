@@ -14,7 +14,7 @@ uid: microsoft.quantum.how-to.visualize-circuits
 
 # How to visualize quantum circuit diagrams with Q#
 
-Quantum circuit diagrams are a visual representation of quantum operations. They show the flow of qubits through the quantum program, including the gates and measurements applied to them. 
+Quantum circuit diagrams are a visual representation of quantum operations. They show the flow of qubits through the quantum program, including the gates and measurements applied to them.
 
 In this article, you'll learn how to visually represent quantum algorithms with quantum circuit diagrams using Visual Studio Code or Jupyter Notebooks.
 
@@ -25,7 +25,7 @@ For more information about quantum circuit diagram conventions, see [Quantum cir
 **VS Code**
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/).
-- The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension.
+- The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 - The latest Azure Quantum `qsharp` and `azure-quantum` Python packages.
 
     ```bash
