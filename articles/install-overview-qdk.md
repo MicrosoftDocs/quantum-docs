@@ -23,7 +23,7 @@ In this article, you learn how to install the Azure Quantum Development Kit (QDK
 
 ## Install the QDK extension
 
-To use the QDK in VS Code, install the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). You can also use the QDK in [VS Code for the Web](https://vscode.dev/quantum) without installing the extension, but you won't have all the features of VS Code Desktop. For more information, see [Ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work).
+To use the QDK in Visual Studio Code, install the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). You can also use the QDK in [VS Code for the Web](https://vscode.dev/quantum) without installing the extension, but you won't have all the features of VS Code Desktop. For more information, see [Different ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work).
 
 > [!NOTE]
 > If you used previous versions of the QDK, run `python -m pip uninstall qsharp qsharp-core qsharp-chemistry azure-quantum` to avoid package version conflicts.
@@ -34,16 +34,19 @@ To test your setup, see [Submit Q# jobs to Azure Quantum](xref:microsoft.quantum
 
 ## Add support for Python and Jupyter Notebooks
 
-With added Python support, you can embed or call Q# code from your Python programs or Jupyter Notebooks and run them on the built-in quantum simulator, or connect to your Azure workspace and submit your jobs to quantum hardware, all from VS Code.
+With Python support in Visual Studio Code, you can embed or call Q# code from your Python programs or Jupyter Notebooks and run them on the built-in quantum simulator, or connect to your Azure workspace and submit your jobs to quantum hardware.
 
-**Prerequisites**
+### Prerequisites
 
 - A Python environment (3.9 or greater, 3.11 recommended) with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the QDK extension installed.
 
+### Install the required packages
+
 To add Python and Jupyter Notebook support:
 
 1. Install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
+1. Open the command line.
 1. Install the `qsharp` and `azure-quantum` packages:
 
     ```cmd
@@ -63,7 +66,7 @@ To add Python and Jupyter Notebook support:
     python -m pip install azure-quantum[qiskit, cirq]
     ```
 
-1. Install optional Python packages you may need to display results and work in Jupyter Notebooks:
+1. Install optional Python packages you might need to display results and work in Jupyter Notebooks:
 
     ```cmd
     python -m pip install ipykernel ipympl jupyterlab
@@ -73,10 +76,11 @@ To test your setup, see [Submit Q# jobs with Python](xref:microsoft.quantum.subm
 
 ## Add support for the Azure CLI
 
-The Azure CLI is an optional method for submitting quantum jobs using a terminal window in VS Code.
+The Azure CLI is an optional method for submitting quantum jobs using a terminal window in Visual Studio Code.
 
 1. Install the [Azure CLI](/cli/azure/install-azure-cli).
-1. Install the latest Azure CLI `quantum` extension. Open a command prompt and run the following command:
+1. Open the command line.
+1. Install the latest Azure CLI `quantum` extension:
 
     ```cmd
     az extension add \

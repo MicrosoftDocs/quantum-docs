@@ -18,6 +18,12 @@ In this quickstart, you write a basic Q# program that demonstrates entanglement,
 
 Entangles two qubits, also known as a Bell pair. Quantum entanglement occurs when two qubits are interconnected. In other words, if one qubit is in a certain state, the other is also in that state. For more information about quantum entanglement, see [Tutorial: Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement).
 
+In this quickstart, you will:
+
+- Create a Q# file.
+- Allocate two qubits.
+- Apply operations to entangle them.
+
 ## Prerequisites
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download).
@@ -30,7 +36,9 @@ Entangles two qubits, also known as a Bell pair. Quantum entanglement occurs whe
 
 ## Write your Q# code
 
-1. Declare a namespace to organize your code. User namespaces in Q# can have any name, but for this quickstart, name it `Bell`.
+Write introductory text
+
+1. First, you declare a namespace to organize your code. User namespaces in Q# can have any name, but for this quickstart, name it `BellStates`.
 
     ```qsharp
     namespace Bell {
@@ -70,7 +78,7 @@ Entangles two qubits, also known as a Bell pair. Quantum entanglement occurs whe
     }
     ```
 
-1. Apply the Hadamard gate, `H`, to the first qubit. This operation puts `q1` in an even superposition, where it has a 50% chance of being measured as zero or one.
+1. Apply the Hadamard gate, `H`, to the first qubit. This operation puts `q1` in an even superposition, where it has a 50% chance of being measured as 0 or 1.
 
     ```qsharp
     namespace Bell {
@@ -174,7 +182,9 @@ Entangles two qubits, also known as a Bell pair. Quantum entanglement occurs whe
 
 ## Run your Q# code
 
-You've now written a Q# program that entangles two qubits and creates a Bell pair. Before running it, use the `@EntryPoint()` attribute to tell the Q# compiler where to start executing the program. In this case, place it before the `EntangleQubits` operation:
+You've now written a Q# program that entangles two qubits and creates a Bell pair. Before running it, use the `@EntryPoint()` attribute to tell the Q# compiler where to start executing the program. In this case, place `@EntryPoint()` before the `EntangleQubits` operation.
+
+Your final Q# code should look like this:
 
 ```qsharp
 namespace Bell {
@@ -197,9 +207,6 @@ namespace Bell {
 ```
 
 Under `@EntryPoint()`, select **Run** to see the initialization and measurement of the qubits. You can run the program several times, each with a different output in the debug console.
-
-> [!NOTE]
-> `@EntryPoint()` is only required for standalone Q# programs. When running a Q# program in Jupyter Notebooks or calling a Q# program from a Python host file, it's not required and will throw an error if included.
 
 ## Next step
 

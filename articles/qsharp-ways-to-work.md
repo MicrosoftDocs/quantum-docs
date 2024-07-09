@@ -85,8 +85,6 @@ When using `%%qsharp`, keep the following in mind:
 > [!NOTE]
 > Azure notebooks in the Azure portal include the latest versions of the `qsharp` and `azure-quantum` Python packages, so you don't need to install anything.
 
-Jupyter Notebooks don't require a `namespace` or `@EntryPoint()`. Instead, you call an operation or function directly. And unlike VS Code, Jupyter Notebooks don't display program results by default, so you must use the `Message` statement.
-
 For more information, see [Get started with Q# and Azure Quantum notebooks](xref:microsoft.quantum.get-started.notebooks).
 
 ### Is the Azure portal right for me?
