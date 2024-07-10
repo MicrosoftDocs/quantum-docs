@@ -224,3 +224,43 @@ Now that you have your program compiled into the correct format, create an `azur
     Job status: Succeeded
     Job ID: 0150202e-9638-11ee-be2f-b16153380354
     ```
+### Additional job details
+
+The `azure.quantum` Python package includes additional methods to display more detailed job data.
+
+- `job.get_results_histogram()`: This method returns a dictionary of the outcomes and shot count for each unique measurement. For example, the results for the previous job would be
+
+```python
+print(job.get_results_histogram()) 
+```
+
+```output
+{   
+    '[0, 1, 1, 1]' : {'Outcome' : [0, 1, 1, 1], 'Count' : 8},  
+    '[1, 1, 0, 0]' : {'Outcome' : [1, 1, 0, 0], 'Count' : 10},
+    '[0, 0, 1, 0]' : {'Outcome' : [0, 0, 1, 0], 'Count' : 4},
+    '[0, 1, 0, 0]' : {'Outcome' : [0, 1, 0, 0], 'Count' : 5},
+    '[1, 0, 1, 0]' : {'Outcome' : [1, 0, 1, 0], 'Count' : 5},  
+    '[1, 0, 0, 0]' : {'Outcome' : [1, 0, 0, 0], 'Count' : 7},
+    '[0, 1, 0, 1]' : {'Outcome' : [0, 1, 0, 1], 'Count' : 7},
+    '[1, 0, 1, 1]' : {'Outcome' : [1, 0, 1, 1], 'Count' : 7},
+    '[0, 0, 0, 0]' : {'Outcome' : [0, 0, 0, 0], 'Count' : 8},  
+    '[1, 1, 1, 0]' : {'Outcome' : [1, 1, 1, 0], 'Count' : 5},
+    '[0, 0, 0, 1]' : {'Outcome' : [0, 0, 0, 1], 'Count' : 10},
+    '[0, 0, 1, 1]' : {'Outcome' : [0, 0, 1, 1], 'Count' : 4},
+    '[0, 1, 1, 0]' : {'Outcome' : [0, 1, 1, 0], 'Count' : 9},  
+    '[1, 0, 0, 1]' : {'Outcome' : [1, 0, 0, 1], 'Count' : 4},
+    '[1, 1, 1, 1]' : {'Outcome' : [1, 1, 1, 1], 'Count' : 5},
+    '[1, 1, 0, 1]' : {'Outcome' : [1, 1, 0, 1], 'Count' : 2}
+}
+```
+
+- `job.get_results_shots()` : This method returns a list of each shot result. For example, the results for the previous job would be
+
+```python
+print(job.get_results_shots()) 
+```
+
+```output
+[ [0, 1, 1, 1], [1, 0, 1, 1], [0, 0, 1, 1], [1, 1, 0, 1], [1, 0, 0, 0], [1, 0, 1, 1], [1, 1, 0, 1], ...]
+```
