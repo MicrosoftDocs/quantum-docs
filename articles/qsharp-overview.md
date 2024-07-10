@@ -132,7 +132,7 @@ operation SayHelloQ() : Unit {
 }
 ```
 
-The Q# standard library also provides operations you can use in quantum programs, such as the Hadamard operation, `H`, in the `Superposition` program. Given a qubit in the Z-basis, `H` puts it into an even superposition, where the qubit has a 50% chance of being measured as zero or one.
+The Q# standard library also provides operations you can use in quantum programs, such as the Hadamard operation, `H`, in the `Superposition` program. Given a qubit in the Z-basis, `H` puts it in an even superposition, where the qubit has a 50% chance of being measured as zero or one.
 
 ### Measuring qubits
 

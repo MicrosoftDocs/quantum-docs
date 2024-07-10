@@ -14,15 +14,16 @@ uid: microsoft.quantum.qsharp-quickstart
 
 # Quickstart: Create your first Q# program
 
-In this quickstart, you write a basic Q# program that demonstrates entanglement, a fundamental concept of quantum computing.
+Learn how to write a basic Q# program that demonstrates entanglement, a key concept of quantum computing, by creating a Bell pair.
 
-Entangles two qubits, also known as a Bell pair. Quantum entanglement occurs when two qubits are interconnected. In other words, if one qubit is in a certain state, the other is also in that state. For more information about quantum entanglement, see [Tutorial: Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement).
+Two or more [qubits](xref:microsoft.quantum.concepts.qubit) can be entangled such that whatever happens to one qubit also happens to the other. This means if you measure one qubit in the |0⟩ state, the other qubit is also in the |0⟩ state, and vice versa. For more information, see [Sonia's upcoming entanglement article](xref:).
 
-In this quickstart, you will:
+In this quickstart, you:
 
-- Create a Q# file.
-- Allocate two qubits.
-- Apply operations to entangle them.
+> [!div class="checklist"]
+> - Create a Q# file.
+> - Allocate a pair of qubits.
+> - Entangle the qubits.
 
 ## Prerequisites
 
@@ -31,160 +32,121 @@ In this quickstart, you will:
 
 ## Create a Q# file
 
-1. In VS Code, select **File** > **New Text File**.
+1. Open Visual Studio Code.
+1. Select **File** > **New Text File**.
 1. Save the file as `Entanglement.qs`. The .qs extension denotes a Q# program.
 
 ## Write your Q# code
 
-Write introductory text
+In your `Entanglement.qs` file, follow these steps to entangle and measure a pair of qubits.
 
-1. First, you declare a namespace to organize your code. User namespaces in Q# can have any name, but for this quickstart, name it `BellStates`.
+> [!TIP]
+> If you want to learn more about a Q# function or operation, hover over it.
 
-    ```qsharp
-    namespace Bell {
-        // Your code goes here.
-    }
-    ```
+### Define a namespace
 
-1. Use an `open` statement to import the `Microsoft.Quantum.Diagnostic` namespace, which provides functions and operations for checking the status of your Q# programs, such as `DumpMachine` in step seven.
+Every Q# program starts with a user-defined namespace. For this quickstart, your namespace is `BellStates`.
 
-    ```qsharp
-    namespace Bell {
-        open Microsoft.Quantum.Diagnostics;
-    }
-    ```
+```qsharp
+namespace BellStates {
+    // Your code goes here.
+}
+```
 
-1. Define an operation named `EntangleQubits` that takes no parameters and returns a tuple of two `Result` values, which will be the qubit measurements.
+### Open a Q# library
 
-    ```qsharp
-    namespace Bell {
-        open Microsoft.Quantum.Diagnostics;
+The Q# standard library includes predefined functions and operations for your quantum programs. To use them, you must first open the relevant library.
 
-        operation EntangleQubits() : (Result, Result) {  
-            // Your code goes here.
-        }
-    }
-    ```
+In your `BellStates` namespace, use an `open` statement to import the `Microsoft.Quantum.Diagnostics` library. This gives you access to all of its functions and operations, including `DumpMachine()`, which you'll later call to observe the entangled state of two qubits.
 
-1. Allocate two qubits, `q1` and `q2`, for use within the `EntangleQubits` operation. In Q#, qubits allocated with the `use` statement always start in the $\ket{0}$ state.
+```qsharp
+    open Microsoft.Quantum.Diagnostics;
+```
 
-    ```qsharp
-    namespace Bell {
-        open Microsoft.Quantum.Diagnostics;
+### Define an operation
 
-        operation EntangleQubits() : (Result, Result) {  
-            use (q1, q2) = (Qubit(), Qubit());
-        }
-    }
-    ```
+After opening the `Microsoft.Quantum.Diagnostics` library, define an operation named `EntangleQubits`. This is where you'll write the Q# code to allocate, manipulate, and measure two qubits.
 
-1. Apply the Hadamard gate, `H`, to the first qubit. This operation puts `q1` in an even superposition, where it has a 50% chance of being measured as 0 or 1.
+Because you want to entangle two qubits and observe their correlated measurements, `EntangleQubits` takes no parameters and returns two `Result` values:
 
-    ```qsharp
-    namespace Bell {
-        open Microsoft.Quantum.Diagnostics;
+```qsharp
+    operation EntangleQubits() : (Result, Result) {
+        // Your entanglement code goes here.
+}
+```
 
-        operation EntangleQubits() : (Result, Result) {  
-            use (q1, q2) = (Qubit(), Qubit());
-            H(q1);
-        }
-    }
-    ```
+### Allocate two qubits
 
-1. Apply the controlled-NOT gate, `CNOT`, to both qubits, with `q1` as the control qubit and `q2` as the target qubit. This operation entangles the qubits, creating a Bell pair. The state of `q2` now depends on the state of `q1`.
+Right now, your Q# program doesn't have any qubits, so the next step is to allocate them with the `use` keyword.
 
-    ```qsharp
-    namespace Bell {
-        open Microsoft.Quantum.Diagnostics;
+In your `EntangleQubits` operation, bind two qubits to the variables `q1` and `q2`:
 
-        operation EntangleQubits() : (Result, Result) {  
-            use (q1, q2) = (Qubit(), Qubit());
-            H(q1);
-            CNOT(q1, q2);
-        }
-    }
-    ```
+```qsharp
+        // Allocate two qubits.
+        use (q1, q2) = (Qubit(), Qubit());
+```
 
-1. Use the `DumpMachine` operation, which is enabled with the `Microsoft.Quantum.Diagnostic` namespace, to output the current state of the quantum machine. This is useful for debugging and understanding the state of qubits at any point in your Q# programs.
+> [!NOTE]
+> In Q#, qubits are always allocated in the $\ket{0}$ state.
 
-    ```qsharp
-    namespace Bell {
-        open Microsoft.Quantum.Diagnostics;
+### Put the first qubit in superposition
 
-        operation EntangleQubits() : (Result, Result) {  
-            use (q1, q2) = (Qubit(), Qubit());
-            H(q1);
-            CNOT(q1, q2);
+To prepare the qubits for entanglement, you must put one of them into an even superposition. This gives the qubit a 50% chance of being measured as either $\ket{0}$ or $\ket{1}$. In Q#, you achieve superposition with the Hadamard operation, `H`.
 
-            DumpMachine();
-        }
-    }
-    ```
+Apply `H` to the first qubit, `q1`:
 
-1. Use the `M` operation to measure both qubits in the Pauli-Z basis. To store the results, use the `let` keyword to declare two variables, `m1` and `m2`. Due to entanglement, these results are correlated: if `q1` is measured as zero, `q2` is also zero, and vice versa.
+```qsharp
+    // Put q1 into an even superposition.
+    H(q1);
+```
 
-    ```qsharp
-    namespace Bell {
-        open Microsoft.Quantum.Diagnostics;
+### Entangle the qubits
 
-        operation EntangleQubits() : (Result, Result) {  
-            use (q1, q2) = (Qubit(), Qubit());
-            H(q1);
-            CNOT(q1, q2);
+You're now ready to entangle the qubits. Do this by applying the controlled-NOT operation, `CNOT`, to both qubits, with `q1` as the control qubit and `q2` as the target qubit. The state of `q2` now depends on the state of `q1`.
 
-            DumpMachine();
+```qsharp
+        // Entangle the qubits.
+        CNOT(q1, q2);
+```
 
-            let (m1, m2) = (M(q1), M(q2));
-        }
-    }
-    ```
+### Display the quantum state
 
-1. Reset `q1` and `q2` to the $\ket{0}$ state. This ensures that the qubits are ready for future operations and that no residual state remains.
+Use the `DumpMachine` operation, which is enabled with the `Microsoft.Quantum.Diagnostic` namespace, to output the current state of the quantum machine. This is useful for debugging and understanding the state of qubits at any point in your Q# programs.
 
-    ```qsharp
-    namespace Bell {
-        open Microsoft.Quantum.Diagnostics;
+```qsharp
+        DumpMachine();
+```
 
-        operation EntangleQubits() : (Result, Result) {  
-            use (q1, q2) = (Qubit(), Qubit());
-            H(q1);
-            CNOT(q1, q2);
+### Measure the qubits
 
-            DumpMachine();
+Use the `M` operation to measure both qubits in the Pauli-Z basis. To store the results, use the `let` keyword to declare two variables, `m1` and `m2`. Due to entanglement, these results are correlated: if `q1` is measured as zero, `q2` is also zero, and vice versa.
 
-            let (m1, m2) = (M(q1), M(q2));
-            Reset(q1);
-            Reset(q2);
-        }
-    }
-    ```
+```qsharp
+        let (m1, m2) = (M(q1), M(q2));
+```
 
-1. Return the measurement results of `q1` and `q2` as a tuple, which allows you to observe their entangled states.
+### Reset the qubits
 
-    ```qsharp
-    namespace Bell {
-        open Microsoft.Quantum.Diagnostics;
+In Q#, you must reset qubits to the $\ket{0}$ state. This prepares `q1` and `q2` for future operations and ensures that no residual state remains.
 
-        operation EntangleQubits() : (Result, Result) {  
-            use (q1, q2) = (Qubit(), Qubit());
-            H(q1);
-            CNOT(q1, q2);
+```qsharp
+        Reset(q1);
+        Reset(q2);
+```
 
-            DumpMachine();
+### Return the measurement results
 
-            let (m1, m2) = (M(q1), M(q2));
-            Reset(q1);
-            Reset(q2);
-            return (m1, m2);
-        }
-    }
-    ```
+Finally, return the measurement results of `q1` and `q2` as a tuple, which allows you to observe their entangled states.
+
+```qsharp
+        return (m1, m2);
+```
 
 ## Run your Q# code
 
 You've now written a Q# program that entangles two qubits and creates a Bell pair. Before running it, use the `@EntryPoint()` attribute to tell the Q# compiler where to start executing the program. In this case, place `@EntryPoint()` before the `EntangleQubits` operation.
 
-Your final Q# code should look like this:
+Your final Q# program should look like this:
 
 ```qsharp
 namespace Bell {
@@ -206,8 +168,10 @@ namespace Bell {
 }
 ```
 
-Under `@EntryPoint()`, select **Run** to see the initialization and measurement of the qubits. You can run the program several times, each with a different output in the debug console.
+Under `@EntryPoint()`, select **Run** to see the result of both qubits. You can run the program several times, each with a different result in the debug console. This demonstrates the probabilistic nature of quantum measurements and the entanglement of the qubits.
+
+// insert screenshot of running the program: 
 
 ## Next step
 
-- [Tutorial: Implement a quantum random number generator in Q#](xref:microsoft.quantum.tutorial-qdk.random-number)
+To write a more complex Q# program involving quantum entanglement, see [Tutorial: Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement).
