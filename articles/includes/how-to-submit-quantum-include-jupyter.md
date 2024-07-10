@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 05/31/2024
+ms.date: 07/10/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -191,14 +191,22 @@ Now that you have your program compiled into the correct format, create an `azur
     ```
 
     ```output
-    {'Histogram': ['[0, 0, 0, 0]',
-      0.3,
-      '[1, 0, 0, 0]',
-      0.1,
-      '[1, 1, 1, 1]',
-      0.3,
-      '[0, 1, 1, 1]',
-      0.3]}
+    {'[0, 1, 1, 1]': 0.08,
+     '[1, 1, 0, 0]': 0.1,
+     '[0, 0, 1, 0]': 0.04,
+     '[0, 1, 0, 0]': 0.05,
+     '[1, 0, 1, 0]': 0.05,
+     '[1, 0, 0, 0]': 0.07,
+     '[0, 1, 0, 1]': 0.07,
+     '[1, 0, 1, 1]': 0.07,
+     '[0, 0, 0, 0]': 0.08,
+     '[1, 1, 1, 0]': 0.05,
+     '[0, 0, 0, 1]': 0.1,
+     '[0, 0, 1, 1]': 0.04,
+     '[0, 1, 1, 0]': 0.09,
+     '[1, 0, 0, 1]': 0.04,
+     '[1, 1, 1, 1]': 0.05,
+     '[1, 1, 0, 1]': 0.02}
     ```
 
 1. All the properties of the job are accessible in `job.details`, for example:
