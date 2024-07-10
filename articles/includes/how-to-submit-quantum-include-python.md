@@ -163,7 +163,7 @@ Now that you have your program compiled into the correct format, create an `azur
 1. To extract just the values and display them:
 
     ```python
-    for x in resultList:
+    for x in results:
         print(x)
     ```
 
