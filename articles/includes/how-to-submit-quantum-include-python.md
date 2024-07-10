@@ -200,28 +200,28 @@ The `azure.quantum` Python package includes additional methods to display more d
 
 - `job.get_results_histogram()`: This method returns a dictionary of the outcomes and shot count for each unique measurement. For example, the results for the previous job would be
 
-```python
-print(job.get_results_histogram()) 
-```
+    ```python
+    print(job.get_results_histogram()) 
+    ```
 
-```output
-{   
-    '[0, 0, 0, 0]' : {'Outcome' : [0, 0, 0, 0], 'Count' : 30},  
-    '[1, 0, 0, 0]' : {'Outcome' : [1, 0, 0, 0], 'Count' : 10},
-    '[1, 1, 1, 1]' : {'Outcome' : [1, 1, 1, 1], 'Count' : 30},
-    '[0, 1, 1, 1]' : {'Outcome' : [0, 1, 1, 1], 'Count' : 30}
-}
-```
+    ```output
+    {   
+        '[0, 0, 0, 0]' : {'Outcome' : [0, 0, 0, 0], 'Count' : 30},  
+        '[1, 0, 0, 0]' : {'Outcome' : [1, 0, 0, 0], 'Count' : 10},
+        '[1, 1, 1, 1]' : {'Outcome' : [1, 1, 1, 1], 'Count' : 30},
+        '[0, 1, 1, 1]' : {'Outcome' : [0, 1, 1, 1], 'Count' : 30}
+    }
+    ```
 
 - `job.get_results_shots()` : This method returns a list of each shot result. For example, the results for the previous job would be
 
-```python
-print(job.get_results_shots()) 
-```
+    ```python
+    print(job.get_results_shots()) 
+    ```
 
-```output
-[ [0, 0, 0, 0], [1, 1, 1, 1], [0, 1, 1, 1], [1, 1, 1, 1], [1, 0, 0, 0], [0, 1, 1, 1], [0, 0, 0, 0], ...]
-```
+    ```output
+    [ [0, 0, 0, 0], [1, 1, 1, 1], [0, 1, 1, 1], [1, 1, 1, 1], [1, 0, 0, 0], [0, 1, 1, 1], [0, 0, 0, 0], ...]
+    ```
 
 ### [Using the Azure CLI](#tab/tabid-cli)
 
