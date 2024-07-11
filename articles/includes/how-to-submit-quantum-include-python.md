@@ -201,7 +201,9 @@ The `azure.quantum` Python package includes additional methods to display more d
 - `job.get_results_histogram()`: This method returns a dictionary of the outcomes and shot count for each unique measurement. For example, the results for the previous job would be
 
     ```python
-    print(job.get_results_histogram()) 
+    results = job.get_results_histogram()
+    for x in results.items():
+        print(x)
     ```
 
     ```output
