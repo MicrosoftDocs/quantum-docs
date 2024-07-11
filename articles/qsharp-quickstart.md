@@ -59,7 +59,7 @@ namespace BellPair {
 
 The Q# standard library includes predefined functions and operations for your quantum programs. To use them, you must first open the relevant library.
 
-In your `BellPair` namespace, use an `open` statement to import the `Microsoft.Quantum.Diagnostics` library. This gives you access to all its functions and operations, including `DumpMachine()`, which you later use to display the state of your entangled qubits.
+In your `BellPair` namespace, use an `open` statement to import the `Microsoft.Quantum.Diagnostics` library. This gives you access to all its functions and operations, including `DumpMachine()`, which you later use to display the entangled state.
 
 ```qsharp
     open Microsoft.Quantum.Diagnostics;
@@ -69,7 +69,7 @@ In your `BellPair` namespace, use an `open` statement to import the `Microsoft.Q
 
 After opening the `Microsoft.Quantum.Diagnostics` library, define an operation named `EntangleQubits`. This is where you'll write the remaining Q# code to allocate, manipulate, and measure two qubits.
 
-Because you want to entangle two qubits and observe their correlated measurements, `EntangleQubits` takes no parameters and returns two `Result` values:
+`EntangleQubits` takes no parameters and returns two `Result` values, which represent the qubit measurements:
 
 ```qsharp
     operation EntangleQubits() : (Result, Result) {
@@ -79,7 +79,7 @@ Because you want to entangle two qubits and observe their correlated measurement
 
 ### Allocate two qubits
 
-The `EntangleQubits` operation is currently empty, so the next step is to allocate two qubits with the `use` keyword:
+The `EntangleQubits` operation is currently empty, so the next step is to allocate two qubits, `q1` and `q2`, with the `use` keyword:
 
 ```qsharp
         // Allocate two qubits, q1 and q2.
