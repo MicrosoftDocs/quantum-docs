@@ -105,7 +105,7 @@ use q = Qubit();
 You can also allocate multiple qubits and access each one through its index:
 
 ```qsharp
-use qubits = Qubit[2]; // Allocate 2 qubits.
+use qubits = Qubit[2]; // Allocate two qubits.
 H(qubits[0]); // Apply H to the first qubit.
 X(qubits[1]); // Apply X to the second qubit.
 ```
@@ -151,7 +151,7 @@ let result = M(q);
 
 ### Resetting qubits
 
-In Q#, qubits must be in the $\ket{0}$ state by the time they are released. You **must** reset each qubit to the $\ket{0}$ state before releasing it at the end of the program with the `Reset` operation. Failure to reset a qubit results in a runtime error.
+In Q#, qubits **must** be in the $\ket{0}$ state by the time they're released. You must reset each qubit to the $\ket{0}$ state before releasing it at the end of the program with the `Reset` operation. Failure to reset a qubit results in a runtime error.
 
 ```qsharp
 // Reset a qubit.
