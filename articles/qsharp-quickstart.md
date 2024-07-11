@@ -16,7 +16,7 @@ uid: microsoft.quantum.qsharp-quickstart
 
 Learn how to write a basic Q# program that demonstrates entanglement, a key concept of quantum computing, by creating a Bell pair.
 
-Two or more [qubits](xref:microsoft.quantum.concepts.qubit) can be entangled such that whatever happens to one qubit also happens to the other. This means if you measure one qubit in the |0⟩ state, the other qubit is also in the |0⟩ state, and vice versa. For more information, see [Sonia's upcoming entanglement article](xref:).
+Two or more qubits can be entangled such that whatever happens to one qubit also happens to the other. This means if you measure one qubit in the |0⟩ state, the other qubit is also in the |0⟩ state, and vice versa. For more information, see [Sonia's upcoming entanglement article](xref:).
 
 In this quickstart, you:
 
@@ -42,6 +42,8 @@ In your `Entanglement.qs` file, follow these steps to entangle and measure a pai
 
 > [!TIP]
 > If you want to learn more about a Q# function or operation, hover over it.
+>
+>![Screenshot of the details that appear when you hover the "H" operation in Visual Studio Code.](media/qsharp-quickstart-hover.png)
 
 ### Define a namespace
 
@@ -77,7 +79,7 @@ Because you want to entangle two qubits and observe their correlated measurement
 
 ### Allocate two qubits
 
-Right now, your `EntangleQubits` operation has no qubits, so the next step is to allocate two of them. In Q#, you do this with the `use` keyword:
+Right now, the `EntangleQubits` operation has no qubits, so the next step is to allocate two of them. In Q#, you do this with the `use` keyword:
 
 ```qsharp
         // Allocate two qubits, q1 and q2.
@@ -137,7 +139,7 @@ Before being released at the end of each Q# program, qubits must be in the $\ket
 
 ### Return the measurement results
 
-Finally, to complete the `EntangleQubits` operation and observe the entangled state, return the measurement results `m1` and `m2`:
+Finally, to complete the `EntangleQubits` operation and observe the entangled state, return the measurement results of `m1` and `m2`:
 
 ```qsharp
         // Return the classical results.
@@ -184,8 +186,8 @@ namespace BellPair {
 
 Under `@EntryPoint()`, select **Run** to view the result of both qubits. You can run the program several times, each with a different result in the debug console. This demonstrates the probabilistic nature of quantum measurements and the entanglement of the qubits.
 
-![Screenshot of the Q# file in Visual Studio Code showing where to find the "Run" command.](image.png)
+![Screenshot of the Q# file in Visual Studio Code showing where to find the "Run" command.](media/qsharp-quickstart-run.png)
 
 ## Next step
 
-To write a more complex entanglement program, see [Tutorial: Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement).
+To extend this Q# program and learn more about quantum entanglement, see [Tutorial: Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement).
