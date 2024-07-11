@@ -57,7 +57,7 @@ namespace BellPair {
 
 The Q# standard library includes predefined functions and operations for your quantum programs. To use them, you must first open the relevant library.
 
-In your `BellStates` namespace, use an `open` statement to import the `Microsoft.Quantum.Diagnostics` library. This gives you access to all its functions and operations, including `DumpMachine()`, which you'll later use to display the entangled state of two qubits.
+In your `BellPair` namespace, use an `open` statement to import the `Microsoft.Quantum.Diagnostics` library. This gives you access to all its functions and operations, including `DumpMachine()`, which you'll later use to display the entangled state of two qubits.
 
 ```qsharp
     open Microsoft.Quantum.Diagnostics;
@@ -67,7 +67,7 @@ In your `BellStates` namespace, use an `open` statement to import the `Microsoft
 
 After opening the `Microsoft.Quantum.Diagnostics` library, define an operation named `EntangleQubits`. This is where you'll write the remaining Q# code to allocate, manipulate, and measure two qubits.
 
-Because you want to entangle two qubits and observe their correlated measurements, `EntangleQubits` takes no parameters and returns two `Result` values, which represent the qubit measurements:
+Because you want to entangle two qubits and observe their correlated measurements, `EntangleQubits` takes no parameters and returns two `Result` values, which represent the measurements:
 
 ```qsharp
     operation EntangleQubits() : (Result, Result) {
@@ -118,7 +118,7 @@ Before measuring the qubits, it's important to verify that they're entangled. Yo
 
 ### Measure the qubits
 
-Now that you've verified the qubits are entangled, you can use the `M` operation to measure their states. Measuring `q1` and `q2` collapses their quantum states into classical results that you store in the variables `m1` and `m2`, respectively:
+Now that you've verified the qubits are entangled, you can use the `M` operation to measure them. Measuring `q1` and `q2` collapses their quantum states into classical results that you store in the variables `m1` and `m2`, respectively:
 
 ```qsharp
         // Measure q1 and q2 and store the results in m1 and m2.
@@ -182,10 +182,10 @@ namespace BellPair {
 }
 ```
 
-Under `@EntryPoint()`, select **Run** to see the result of both qubits. You can run the program several times, each with a different result in the debug console. This demonstrates the probabilistic nature of quantum measurements and the entanglement of the qubits.
+Under `@EntryPoint()`, select **Run** to view the result of both qubits. You can run the program several times, each with a different result in the debug console. This demonstrates the probabilistic nature of quantum measurements and the entanglement of the qubits.
 
 ![Screenshot of the Q# file in Visual Studio Code showing where to find the "Run" command.](image.png)
 
 ## Next step
 
-To write a more complex Q# program involving quantum entanglement, see [Tutorial: Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement).
+To write a more complex entanglement program, see [Tutorial: Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement).
