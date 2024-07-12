@@ -14,13 +14,13 @@ uid: microsoft.quantum.concepts.matrix-advanced
 
 # Advanced matrix concepts in quantum computing
 
-This article explores the concepts of *eigenvalues, eigenvectors* and *exponentials*. These concepts form a fundamental set of matrix tools that are used to describe and implement quantum algorithms. For the basics of vectors and matrices in quantum computing, see [Vectors and matrices](xref:microsoft.quantum.concepts.vectors).
+This article explores the concepts of *eigenvalues, eigenvectors*, and *exponentials*. These concepts form a fundamental set of matrix tools that are used to describe and implement quantum algorithms. For the basics of vectors and matrices in quantum computing, see [Vectors and matrices](xref:microsoft.quantum.concepts.vectors).
 
 ## Eigenvalues and eigenvectors 
 
 Consider a square matrix $M$ and a vector $v$. The vector $v$ is an [*eigenvector*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) of $M$ if $Mv = cv$ for some number $c$. The integer $c$ is the [*eigenvalue*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) corresponding to the eigenvector $v$. 
 
-In general, a matrix $M$ may transform a vector into any other vector. However, an eigenvector is special because it's left unchanged except for being multiplied by a number. Note that, if $v$ is an eigenvector with eigenvalue $c$, then $av$ is also an eigenvector (for any nonzero $a$) with the same eigenvalue. For example, for the identity matrix, every vector $v$ is an eigenvector with eigenvalue $1$.
+In general, a matrix $M$ may transform a vector into any other vector. An eigenvector is special because it's unchanged except for being multiplied by a number. If $v$ is an eigenvector with eigenvalue $c$, then $av$ is also an eigenvector (for any nonzero $a$) with the same eigenvalue. For example, for the identity matrix, every vector $v$ is an eigenvector with eigenvalue $1$.
 
 As another example, consider a *diagonal matrix* $D$, which only has non-zero entries on the diagonal:
 
@@ -38,16 +38,13 @@ are eigenvectors of this matrix with eigenvalues  $d_1$, $d_2$, and $d_3$, respe
  
 In general, for a diagonal matrix it's easy to read off the eigenvalues and eigenvectors. The eigenvalues are all the numbers appearing on the diagonal, and their respective eigenvectors are the unit vectors with one entry equal to $1$ and the remaining entries equal to $0$.
 
-Note in the above example that the eigenvectors of $D$ form a basis for $3$-dimensional vectors. A basis is a set of vectors such that any vector can be written as a linear combination of them. More explicitly, $v_1$, $v_2$, and $v_3$ form a basis if any vector $v$ can be written as $v=a_1 v_1 + a_2 v_2 + a_3 v_3$ for some numbers $a_1$, $a_2$, and $a_3$.
+Note in the example that the eigenvectors of $D$ form a basis for $3$-dimensional vectors. A basis is a set of vectors such that any vector can be written as a linear combination of them. More explicitly, $v_1$, $v_2$, and $v_3$ form a basis if any vector $v$ can be written as $v=a_1 v_1 + a_2 v_2 + a_3 v_3$ for some numbers $a_1$, $a_2$, and $a_3$.
 
 ### Spectral theorem
 
-In quantum computing, there are essentially only two matrices that you encounter: Hermitian and unitary. Recall that a Hermitian matrix (also called self-adjoint) is a complex square matrix equal to its own complex conjugate transpose, while a unitary matrix is a complex square matrix whose *inverse* equals its complex conjugate transpose.
+In quantum computing, there are only two matrices that you encounter: Hermitian and unitary. Recall that a Hermitian matrix (also called self-adjoint) is a complex square matrix equal to its own complex conjugate transpose, while a unitary matrix is a complex square matrix whose *inverse* equals its complex conjugate transpose.
 
-There's a general result known as the [*spectral theorem*](https://en.wikipedia.org/wiki/Spectral_theorem), which implies the following:
-
-For any Hermitian or unitary matrix $M$, there exists a unitary $U$ such that $M=U^\dagger D U$ for some diagonal matrix $D$. Furthermore, the diagonal entries of $D$ will be the eigenvalues of $M$, and columns of $U^\dagger$ will be the corresponding eigenvectors.
-
+There's a general result known as the [*spectral theorem*](https://en.wikipedia.org/wiki/Spectral_theorem), which implies that for any Hermitian or unitary matrix $M$, there exists a unitary $U$ such that $M=U^\dagger D U$ for some diagonal matrix $D$. Furthermore, the diagonal entries of $D$ are the eigenvalues of $M$, and columns of $U^\dagger$ are the corresponding eigenvectors.
 
 This factorization is known as [*spectral decomposition* or *eigendecomposition*](https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix).
 
@@ -60,7 +57,6 @@ e^A=\mathbf{1} + A + \frac{A^2}{2!}+\frac{A^3}{3!}+\cdots
 $$
 
 Matrix exponentials are important because quantum mechanical time evolution is described by a unitary matrix of the form $e^{iB}$ for Hermitian matrix $B$. For this reason, performing matrix exponentials is a fundamental part of quantum computing and as such Q# offers intrinsic routines for describing these operations.
-
 
 The easiest way to understand how to compute the exponential of a matrix is through the eigenvalues and eigenvectors of that matrix. Specifically, the spectral theorem discussed above says that for every Hermitian or unitary matrix $A$ there exists a unitary matrix $U$ and a diagonal matrix $D$ such that $A=U^\dagger D U$.  Because of the properties of unitarity, $A^2 = U^\dagger D^2 U$ and similarly for any power $p$ $A^p = U^\dagger D^p U$.  If one substitutes this into the operator definition of the operator exponential:
 
