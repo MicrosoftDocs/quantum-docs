@@ -81,7 +81,7 @@ Here's how it works:
     $$= \frac{1}{\sqrt2}(\ket{0_c 0_t}+\ket{1_c 1_t})$$
 
 > [!TIP]
-> To learn how to entangle two qubits with Q#, see the tutorial [Exploring quantum entanglement with Q# and Azure Quantum](xref:microsoft.quantum.tutorial-qdk.entanglement).
+> To learn how to entangle two qubits with Q#, see [Quickstart: Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart).
 
 ## Separability and quantum entanglement
 
