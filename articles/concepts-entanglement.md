@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\mathbf{1}', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
-title: Entanglement & Quantum Correlations 
+title: Entanglement & Correlations 
 uid: microsoft.quantum.concepts.entanglement
 
 #customer intent: As a quantum student, I want to learn about entanglement, so that I can understand how qubits can be correlated in ways that classical bits can't.
@@ -49,7 +49,6 @@ But what happens if you measure only one qubit? When two particles are entangled
 
 If you measure only the qubit $A$ and you get the $|0\rangle$ state, this means that the global system collapses to the state $\ket{00}$. This is the only possible outcome, since the probability of measuring $|01\rangle$ is zero. So, without measuring the qubit $B$ you can be sure that the second qubit is also in $|0\rangle$ state. The measurement outcomes are correlated because the qubits are entangled.
 
-
 The quantum state $\ket{\phi}$ is called a **Bell state**. There are four Bell states:  
 
 $$\ket{\phi^{+}}=\frac1{\sqrt2}\ket{00} + \frac1{\sqrt2}\ket{11}$$
@@ -57,10 +56,6 @@ $$\ket{\phi^{-}}=\frac1{\sqrt2}\ket{00} - \frac1{\sqrt2}\ket{11} $$
 $$ \ket{\psi^{+}}=\frac1{\sqrt2}\ket{01} + \frac1{\sqrt2}\ket{10} $$
 $$\ket{\psi^{-}}=\frac1{\sqrt2}\ket{01} - \frac1{\sqrt2}\ket{10} $$
 
-
-
-
-The Bell states are *maximally* entangled 
 
 > [!NOTE]
 > This example uses two qubits, but quantum entanglement isn't limited to two qubits. In general it's possible that multiple-qubit systems share entanglement.
