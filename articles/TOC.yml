@@ -189,10 +189,12 @@
       href: concepts-dirac-notation.md
     - name: Pauli measurements
       href: concepts-pauli-measurements.md
-    - name: Theory of Grover's algorithm
+    - name: Grover's algorithm
       href: concepts-grovers.md
     - name: Quantum circuits conventions
       href: concepts-circuits.md
+    - name: Quantum entanglement
+      href: concepts-entanglement.md
     - name: Quantum error correction 
       href: concepts-error-correction.md
     - name: Quantum Intermediate Representation
