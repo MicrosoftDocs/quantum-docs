@@ -86,7 +86,7 @@ The `EntangleQubits` operation is currently empty, so the next step is to alloca
 
 ### Put the first qubit into superposition
 
-To prepare the qubits for entanglement, you must use put one of them into an even superposition, where it has a 50% chance of being measured as $\ket{0}$ or $\ket{1}$. This creates the uncertainty needed for the entangled state.
+To prepare the qubits for entanglement, you must put one of them into an even superposition, where it has a 50% chance of being measured as $\ket{0}$ or $\ket{1}$. This creates the uncertainty needed for the entangled state.
 
 In Q#, you put a qubit into superposition using the `H` operation:
 
