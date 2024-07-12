@@ -14,9 +14,9 @@ uid: microsoft.quantum.qsharp-quickstart
 
 # Quickstart: Create your first Q# program
 
-Learn how to write a basic Q# program that demonstrates entanglement, a key concept of quantum computing, by creating a Bell pair.
+Learn how to write a basic Q# program that demonstrates [entanglement](xref:microsoft.quantum.overview.understanding#entanglement), a key concept of quantum computing, by creating a Bell pair.
 
-Two or more qubits can be entangled such that whatever happens to one qubit also happens to the other. This means if you measure one qubit in the |0⟩ state, the other qubit is also in the |0⟩ state, and vice versa. For more information, see [Sonia's upcoming entanglement article](xref:).
+Two or more [qubits](xref:microsoft.quantum.concepts.qubit) can be entangled such that whatever happens to one qubit also happens to the other. This means if you measure one qubit in the |0⟩ state, the other qubit is also in the |0⟩ state, and vice versa. For more information, see [Sonia's upcoming entanglement article](xref:).
 
 In this quickstart, you:
 
@@ -34,16 +34,11 @@ In this quickstart, you:
 
 1. Open Visual Studio Code.
 1. Select **File** > **New Text File**.
-1. Save the file as `Entanglement.qs`. The `.qs` extension denotes a Q# program.
+1. Save the file as `Entanglement.qs`. The .qs extension denotes a Q# program.
 
 ## Write your Q# code
 
 In your `Entanglement.qs` file, follow these steps to entangle and measure a pair of qubits.
-
-> [!TIP]
-> If you want to learn more about a Q# function or operation, hover over it.
->
->![Screenshot of the details that appear when you hover the "H" operation in Visual Studio Code.](media/qsharp-quickstart-hover.png)
 
 ### Define a namespace
 
@@ -145,6 +140,11 @@ Finally, to complete the `EntangleQubits` operation and observe the entangled st
         // Return the classical results.
         return (m1, m2);
 ```
+
+> [!TIP]
+> If you want to learn more about a Q# function or operation, hover over it.
+>
+>![Screenshot of the details that appear when you hover the "H" operation in Visual Studio Code.](media/qsharp-quickstart-hover.png)
 
 ## Run your Q# code
 
