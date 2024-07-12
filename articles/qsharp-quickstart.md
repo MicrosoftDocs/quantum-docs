@@ -190,4 +190,4 @@ Under `@EntryPoint()`, select **Run** to view the result of both qubits. You can
 
 ## Next step
 
-To extend this Q# program and learn more about quantum entanglement, see [Tutorial: Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement).
+To learn more about quantum entanglement with Q#, see [Tutorial: Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement). This tutorial expands on the concepts covered in this quickstart and helps you write a more advanced entanglement program.
