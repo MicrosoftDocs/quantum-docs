@@ -177,8 +177,6 @@
       href: provider-support-rigetti.md
 - name: Key concepts of quantum computing
   items:
-    - name: Linear algebra for quantum computing
-      href: overview-algebra-for-quantum-computing.md
     - name: Vectors and matrices
       href: concepts-vectors-and-matrices.md
     - name: Advanced matrix concepts
@@ -191,18 +189,18 @@
       href: concepts-dirac-notation.md
     - name: Pauli measurements
       href: concepts-pauli-measurements.md
-    - name: T gates & T factories
-      href: concepts-tfactories.md
-    - name: Quantum circuits conventions
-      href: concepts-circuits.md
-    - name: Quantum oracles
-      href: concepts-oracles.md
     - name: Theory of Grover's algorithm
       href: concepts-grovers.md
-    - name: Quantum Intermediate Representation
-      href: concepts-qir.md
+    - name: Quantum circuits conventions
+      href: concepts-circuits.md
     - name: Quantum error correction 
       href: concepts-error-correction.md
+    - name: Quantum Intermediate Representation
+      href: concepts-qir.md
+    - name: Quantum oracles
+      href: concepts-oracles.md
+    - name: T gates & T factories
+      href: concepts-tfactories.md
 - name: Troubleshooting
   items:
   - name: Troubleshooting issues

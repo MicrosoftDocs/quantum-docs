@@ -55,11 +55,12 @@ The computational basis for two-qubit states is formed by the tensor products of
 
 <!-- Port renders but all out of whack -->
 
+$$
 \begin{align}
 00 \equiv \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} &= \begin{bmatrix}1 \\\\ 0\\\\ 0\\\\ 0 \end{bmatrix},\qquad 01 \equiv \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}0 \\\\ 1 \end{bmatrix} = \begin{bmatrix}0 \\\\ 1\\\\ 0\\\\ 0 \end{bmatrix},\\\\
 10 \equiv \begin{bmatrix}0 \\\\ 1 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} &= \begin{bmatrix}0 \\\\ 0\\\\ 1\\\\ 0 \end{bmatrix},\qquad 11 \equiv \begin{bmatrix}0 \\\\ 1 \end{bmatrix}\otimes \begin{bmatrix}0 \\\\ 1 \end{bmatrix} = \begin{bmatrix}0 \\\\ 0\\\\ 0\\\\ 1 \end{bmatrix}.
 \end{align}
-
+$$
 
 Note that while you can always take the tensor product of two single-qubit states to form a two-qubit state, not all two-qubit quantum states can be written as the tensor product of two single-qubit states.
 For example, there are no states $\psi=\begin{bmatrix} \alpha \\\\  \beta \end{bmatrix}$ and $\phi=\begin{bmatrix} \gamma \\\\  \delta \end{bmatrix}$ <!-- this works in Port. Compare with earlier, same formula -->such that their tensor product is the state 
@@ -217,87 +218,6 @@ Gates can also be controlled using classical information.  A classically control
 
 As in the single-qubit case, a two-qubit gate set is universal if any $4\times 4$ unitary matrix can be approximated by a product of gates from this set to arbitrary precision.
 One example of a universal gate set is the Hadamard gate, the T gate, and the CNOT gate. By taking products of these gates, you can approximate any unitary matrix on two qubits.
-
-## Quantum entanglement 
-
-Consider two qubits $A$ and $B$ in superpositions such that the state of the global system is
-
-<!-- Port is raw code -->
-
-$$\ket{\psi}_{AB}=\frac1{\sqrt2}\ket{00} + \frac1{\sqrt2}\ket{11}$$
-
-In such a state, only two outcomes are possible when you measure the state of both qubits in the standard basis: $|00\rangle$ and $|11\rangle$. Notice that each outcome has the same probability of $\frac{1}{2}$. There's zero probability of obtaining $|01\rangle$ and $|10\rangle$. If you measure the first qubit and you get that it is in $|0\rangle$ state, then you can be positive that the second qubit is also in $|0\rangle$ state, even without measuring it. The measurement outcomes are correlated, and the qubits are *entangled*.
-
-> [!NOTE]
-> This examples uses two qubits, but quantum entanglement is not limited to two qubits. In general it's possible that multiple-qubit systems share entanglement.
-
-Entangled qubits are correlated such that they cannot be described independently from each other. That is, whatever operation happens to the state of one qubit in an entangled pair, also affects to the state of the other qubit.
-
-For a practical implementation, see the tutorial [exploring quantum entanglement with Q# and Azure Quantum](xref:microsoft.quantum.tutorial-qdk.entanglement).
-
-### Entanglement in pure states
-
-Pure quantum states are those that are characterized by a single ket vector or wavefunction, and cannot be written as a statistical mixture (or *convex combination*) of other quantum states. On the [Bloch sphere](xref:microsoft.quantum.concepts.qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere), pure states are represented by a point on the surface of the sphere, whereas mixed states are represented by an interior point. 
-
-<!-- Port concantanates most of this sentence -->
-
-A pure state $\ket{\phi}\_{AB}$ is entangled if it cannot be written as a combination of product states of the subsystems, that is $\ket{\phi}\_{AB} = \ket{a}\_A \otimes \ket{b}\_B$. 
-
-For example, consider the state <!-- Port is raw code -->
-$$ \ket{\psi}_{AB} = \frac{1}{2} (\ket{00} + \ket{10} +\ket{01} +\ket{11})$$
-
-At first, the state $\ket{\psi}_{AB}$ <!-- Port works --> doesn't look like a product state, but if we rewrite the state as
-
-<!-- Port is raw code -->
-$$ \ket{\psi}_{AB} = \frac{1}{\sqrt{2}} (\ket{0}_A +\ket{1}_A) \otimes \frac{1}{\sqrt{2}} (\ket{0}_B +\ket{1}_B)= \ket{+}_A \ket{+}_B$$
-
-the state $\ket{\psi}_{AB}$ <!-- Port works --> is a product state, therefore it's not entangled.  
-
-### Entanglement in mixed states
-
-<!-- there are more errors below, but I stopped here -->
-
-Mixed quantum states are a statistical ensemble of pure states. A mixed state $\rho$ has neither quantum nor classical correlations if it can be written as a product state $\rho = \rho^{A} \otimes \rho^{B}$ for some [density matrices](xref:microsoft.quantum.concepts.dirac#density-operators) $\rho^{A} \geq 0 , \rho^{B} \geq 0$.
-
-A mixed state $\rho$ is separable if it can be written as a convex combination of product states of the subsystems, such as 
-
-$$\rho = \sum_j p_j \rho^{A}\_{j} \otimes \rho^{B}\_{j}$$ 
-
-where $p_j \geq 0, \sum p_j = 1$ and $\rho^{A}\_{j} \geq 0, \rho^{B}\_{j} \geq 0$.
-
-A mixed state $\rho$ is entangled if it's not separable, that is, it cannot be written as a convex combination of product states. 
-
-> [!TIP]
-> A separable state contains only classical correlations.
-
-### Understanding classical correlations
-
-Classical correlations are due to our lack of knowledge of the state of the system. That is, there's some randomness associated to classical correlation, but it can be eliminated by gaining knowledge. 
-
-For example, consider two boxes, each containing one ball. We know that both balls are the same color, either blue or red. If we open one box and find out that the ball inside is blue, then we know that the other ball is blue too. Therefore, they are correlated. However, the uncertainty that we have when opening the box is due to our lack of knowledge, it's not fundamental. The ball was blue before we opened the box. Thus, this is a classical correlation, not a quantum correlation. 
-
-The mixed quantum state of the system formed by the two boxes $\rho_{boxes}$ can be written as
-
-$$ \rho_{boxes} = \frac{1}{2} (\ket{red}\bra{red}_{A} \otimes \ket{red}\bra{red}_B) +\frac{1}{2} (\ket{blue}\bra{blue}_A \otimes \ket{blue}\bra{blue}_B) $$
-
-Notice that the state $\rho_{boxes}$ is separable, where $p_1 = p_2 = \frac{1}{2}$ then it contains only classical correlations. Another example of a mixed separable state is
-
-$$ \rho = \frac{1}{2} (\ket{0}\bra{0}_A \otimes \ket{0}\bra{0}_B) +\frac{1}{2} (\ket{1}\bra{1}_A \otimes \ket{1}\bra{1}_B) $$
-
-Now, consider the following state:
-
-$$ \rho = \frac{1}{4} (\ket{00}\bra{00} + \ket{00}\bra{11} + \ket{11}\bra{00} + \ket{11}\bra{11}) = \ket{\phi^+}\bra{\phi^+} $$
-
-In this case, our knowledge of the state is perfect, we know with maximal certainty that the system $AB$ is in the Bell state $\ket{\phi^+}$ and $\rho$ is a pure state. Therefore, there aren't classical correlations. But if we measure an observable on subsystem $A$, we obtain a random result which gives us information about the state of the subsystem $B$. This randomness is fundamental, namely these are quantum correlations. 
-
-An example of a quantum state that contains both classical and quantum correlations is
-
-$$ \rho = \frac{1}{2} (\ket{\phi^+}\bra{\phi^+} + \ket{\phi^-}\bra{\phi^-})$$
-
-> [!TIP]
-> - If an entangled state $\rho$ is pure, then it contains only quantum correlations. 
-> - If an entangled state $\rho$ is mixed, then it contains both classical and quantum correlations. 
-
 
 ## Many-qubit systems
 
