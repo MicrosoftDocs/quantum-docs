@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 07/03/2024
+ms.date: 07/10/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.custom: devx-track-azurecli
@@ -163,8 +163,7 @@ Now that you have your program compiled into the correct format, create an `azur
 1. To extract just the values and display them:
 
     ```python
-    resultList = results.get("Histogram")
-    for x in resultList:
+    for x in results:
         print(x)
     ```
 
