@@ -21,7 +21,7 @@ This article introduce you to Dirac notation and show you how to use it to descr
 
 ## Limitations of column vector notation
 
-While column vector notation is common in [linear algebra](xref:microsoft.quantum.overview.algebra), it's often cumbersome in quantum computing, especially when dealing with multiple qubits.  For example, when you define $\psi$ to be a vector it's not explicitly clear whether $\psi$ is a row or a column vector.  Thus, if $\phi$ and $\psi$ are vectors, then it's equally unclear if $\phi \psi$ is even defined, because the shapes of $\phi$ and $\psi$ may be unclear in the context.  Beyond the ambiguity about the shapes of vectors, expressing even simple vectors using linear algebraic notation can be cumbersome. For example, if you wish to describe an $n$-qubit state where each qubit takes the value $0$, then you would formally express the state as 
+While [column vector notation](xref:microsoft.quantum.concepts.vectors) is common in linear algebra, it's often used in quantum computing, especially when dealing with multiple qubits. For example, when you define $\psi$ to be a vector it's not explicitly clear whether $\psi$ is a row or a column vector.  Thus, if $\phi$ and $\psi$ are vectors, then it's equally unclear if $\phi \psi$ is even defined, because the shapes of $\phi$ and $\psi$ may be unclear in the context.  Beyond the ambiguity about the shapes of vectors, expressing even simple vectors using linear algebraic notation can be cumbersome. For example, if you wish to describe an $n$-qubit state where each qubit takes the value $0$, then you would formally express the state as 
 
 $$\begin{bmatrix}1 \\\\  0 \end{bmatrix}\otimes \cdots \otimes\begin{bmatrix}1 \\\\  0 \end{bmatrix}. $$  
 

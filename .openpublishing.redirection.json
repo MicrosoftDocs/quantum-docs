@@ -56,7 +56,7 @@
 			"redirect_document_id": false
 		},
 		{
-			"source_path": "articles/includes/overview-algebra-for-quantum-computing.md",
+			"source_path": "articles/overview-algebra-for-quantum-computing.md",
 			"redirect_url": "/azure/quantum/concepts-vectors-and-matrices",
 			"redirect_document_id": false
 		},

@@ -130,4 +130,4 @@ If you want to learn more, the [Quantum Katas](xref:microsoft.quantum.tutorial-q
 - [QuickStarts](xref:microsoft.quantum.install-qdk.overview)
 - [Understanding quantum computing](xref:microsoft.quantum.overview.understanding)
 - [The Q# User Guide](xref:microsoft.quantum.user-guide-qdk.overview.program-structure)
-- [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra)
+
