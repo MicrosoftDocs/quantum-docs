@@ -97,7 +97,7 @@ In Q#, you put a qubit into superposition using the `H` operation:
 
 ### Entangle the qubits
 
-You're now ready to entangle the qubits, which is enabled by the `CNOT` operation. For this quickstart, you set `q1` as the control qubit and `q2` as the target qubit. This makes the state of `q2` depend on the state of `q1`.
+You're now ready to entangle the qubits using the `CNOT` operation. For this quickstart, you set `q1` as the control qubit and `q2` as the target qubit. This makes the state of `q2` depend on the state of `q1`.
 
 ```qsharp
         // Entangle q1 and q2, making q2 depend on q1.
@@ -106,7 +106,7 @@ You're now ready to entangle the qubits, which is enabled by the `CNOT` operatio
 
 ### Display the entangled state
 
-Before measuring the qubits, it's important to verify that your previous code succesfully entangles them. You can use the `DumpMachine` operation, which is part of the `Microsoft.Quantum.Diagnostics` library, to output the current state of your Q# program:
+Before measuring the qubits, it's important to verify that your previous code successfully entangles them. You can use the `DumpMachine` operation, which is part of the `Microsoft.Quantum.Diagnostics` library, to output the current state of your Q# program:
 
 ```qsharp
         // Show the entangled state of the qubits.
