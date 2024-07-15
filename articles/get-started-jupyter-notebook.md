@@ -45,7 +45,7 @@ To get started, copy a sample notebook from the notebook gallery.
 To run the sample notebook, follow these steps for your selected provider.
 
 > [!NOTE]
-> Q# code in Jupyter Notebooks don't require a `namespace` or `@EntryPoint()`. Instead, you call an operation or function directly. Jupyter Notebooks also don't display program results by default, so you must use the `Message` statement. For more information, see [Structure of a Q# program](xref:microsoft.quantum.qsharp-overview#structure-of-a-q-program).
+> Q# programs in Jupyter Notebooks don't require a `namespace` or `@EntryPoint()`. Instead, you call an operation or function directly. Jupyter Notebooks also don't display program results by default, so you must use the `Message` statement. For more information, see [Structure of a Q# program](xref:microsoft.quantum.qsharp-overview#structure-of-a-q-program).
 
 ### [IonQ](#tab/tabid-ionq)
 
