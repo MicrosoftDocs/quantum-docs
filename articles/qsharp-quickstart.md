@@ -95,6 +95,7 @@ You put a qubit into superposition by applying the Hadamard, `H`, operation:
         H(q1);
 ```
 
+The resulting state of `q1` is $\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})$, which is an even superposition of $\ket{0}$ and $\ket{1}$.
 ### Entangle the qubits
 
 You're now ready to entangle the qubits using the controlled-NOT, `CNOT`, operation. The `CNOT` is a control operation that takes two qubits, one acts as control qubit and the other is the target qubit. For this quickstart, you set `q1` as the control qubit and `q2` as the target qubit. 
