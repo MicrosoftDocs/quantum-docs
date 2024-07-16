@@ -19,8 +19,8 @@ Q# is a high-level, [open-source](https://github.com/microsoft/qsharp) programmi
 As a quantum programming language, Q# meets the following language, compiler, and runtime requirements:
 
 - **Hardware agnostic:** Qubits in quantum algorithms aren't tied to a specific quantum hardware or layout. The Q# compiler and runtime handle the mapping from program qubits to physical qubits.
-- **Integration of quantum and classical computing:** The ability to perform classical and quantum computations is essential in a universal quantum computer.
-- **Respect the laws of physics:** Q# and quantum algorithms follow the rules of quantum physics. For example, you can't directly copy or access the qubit state in Q#.
+- **Integrates quantum and classical computing:** The ability to perform classical and quantum computations is essential in a universal quantum computer.
+- **Respects the laws of physics:** Q# and quantum algorithms follow the rules of quantum physics. For example, you can't directly copy or access the qubit state in Q#.
 
 > [!NOTE]
 > You can use Q# as a standalone program or with Python in various IDEs. For more information, see [Different ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work).
@@ -52,7 +52,7 @@ Based on the comments (`//`), the `Superposition` program first allocates a qubi
 
 ### User namespaces
 
-Q# programs start with a user-named [namespace](xref:microsoft.quantum.qsharp.namespaces), such as:
+Q# programs start with a user-defined [namespace](xref:microsoft.quantum.qsharp.namespaces), such as:
 
 ```qsharp
 namespace Superposition {
@@ -69,9 +69,9 @@ The Q# standard library has predefined namespaces that contain functions and ope
 The `@EntryPoint()` attribute tells the Q# compiler where to start executing the program. In a program with multiple functions and operations, you can place `@EntryPoint()` before any of them to make the program start there and continue sequentially.
 
 ```qsharp
-    @EntryPoint()
-    operation MeasureOneQubit() : Result {
-        ...
+@EntryPoint()
+operation MeasureOneQubit() : Result {
+    ...
 ```
 
 ### Types
@@ -116,7 +116,7 @@ For more information, see [Use statement](xref:microsoft.quantum.qsharp.quantumm
 
 After allocating a qubit, you can pass it to operations and functions, also known as [callables](xref:microsoft.quantum.qsharp.callabledeclarations). [Operations](xref:microsoft.quantum.qsharp.operationsandfunctions) are the basic building blocks of a Q# program. A Q# operation is a quantum subroutine, or a callable routine that contains quantum operations that change the state of the qubit register.
 
-To define a Q# operation, specify a name for the operation, its inputs, and its output. In the `Superposition` program, the `MeasureOneQubit()` operation is essentially the entire program. It takes no parameters and expects a return type of `Result`:
+To define a Q# operation, you specify a name for the operation, its inputs, and its output. In the `Superposition` program, the `MeasureOneQubit()` operation is essentially the entire program. It takes no parameters and expects a return type of `Result`:
 
 ```qsharp
 operation MeasureOneQubit() : Result {
@@ -132,7 +132,7 @@ operation SayHelloQ() : Unit {
 }
 ```
 
-The Q# standard library also provides operations you can use in quantum programs, such as the Hadamard operation, `H`, in the `Superposition` program. Given a qubit in the Z-basis, `H` puts it in an even superposition, where the qubit has a 50% chance of being measured as zero or one.
+The Q# standard library also provides operations you can use in quantum programs, such as the Hadamard operation, `H`, in the `Superposition` program. Given a qubit in the Z-basis, `H` puts the qubit into an even superposition, where it has a 50% chance of being measured as `Zero` or `One`.
 
 ### Measuring qubits
 
@@ -151,7 +151,7 @@ let result = M(q);
 
 ### Resetting qubits
 
-In Q#, qubits **must** be in the $\ket{0}$ state by the time they're released. You must reset each qubit to the $\ket{0}$ state before releasing it at the end of the program using the `Reset` operation. Failure to reset a qubit results in a runtime error.
+In Q#, qubits must be in the $\ket{0}$ state when they're released. Use the `Reset` operation to reset each qubit to the $\ket{0}$ state before releasing it at the end of the program. Failure to reset a qubit results in a runtime error.
 
 ```qsharp
 // Reset a qubit.

@@ -28,7 +28,7 @@ In this quickstart, you:
 ## Prerequisites
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download).
-- The [Azure Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK](xref:microsoft.quantum.install-qdk.overview).
+- The [Azure Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
 ## Create a Q# file
 
