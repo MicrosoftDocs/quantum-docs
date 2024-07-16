@@ -16,7 +16,7 @@ uid: microsoft.quantum.qsharp-quickstart
 
 Learn how to write a basic Q# program that demonstrates entanglement, a key concept of quantum computing.
 
-Two or more [qubits](xref:microsoft.quantum.concepts.qubit) can be entangled such that whatever happens to one qubit also happens to the other. This means if you measure one qubit in the |0⟩ state, the other qubit is also in the |0⟩ state, and vice versa. For more information, see [Quantum entanglement](xref:microsoft.quantum.concepts.entanglement).
+When two or more [qubits](xref:microsoft.quantum.concepts.qubit) are entangled they're sharing quantum information, which means that whatever happens to one qubit also happens to the other. In this Quickstart, you'll create a particular entangled pair of qubits called a Bell pair. In the Bell pair, if you measure one of the qubits in the $\ket{0}$ state, you know that the other qubit is also in the $\ket{0}$ state without measuring it. For more information, see [Quantum entanglement](xref:microsoft.quantum.concepts.entanglement).
 
 In this quickstart, you:
 
