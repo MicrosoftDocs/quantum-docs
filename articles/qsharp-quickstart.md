@@ -150,7 +150,7 @@ Finally, to complete the `EntangleQubits` operation and observe the entangled st
 > [!TIP]
 > If you want to learn more about a Q# function or operation, hover over it.
 >
->![Screenshot of the details that appear when you hover the "H" operation in Visual Studio Code.](media/qsharp-quickstart-hover.png)
+>:::image type="content" source="media/qsharp-quickstart-hover.png" alt-text="Screenshot of the details that appear when you hover the "H" operation in Visual Studio Code.":::
 
 ## Run your Q# code
 
