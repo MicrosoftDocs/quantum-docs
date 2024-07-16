@@ -120,7 +120,7 @@ Before measuring the qubits, it's important to verify that your previous code su
 
 ### Measure the qubits
 
-Now that you verified the qubits are entangled, you can use the `M` operation to measure them. Measuring `q1` and `q2` collapses their quantum states into classical results that you store in the variables `m1` and `m2`, respectively:
+Now that you verified the qubits are entangled, you can use the `M` operation to measure them. Measuring `q1` and `q2` collapses their quantum states into `zero` or `one` with even probability.
 
 ```qsharp
         // Measure q1 and q2 and store the results in m1 and m2.
