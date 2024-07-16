@@ -16,7 +16,7 @@ uid: microsoft.quantum.qsharp-quickstart
 
 Learn how to write a basic Q# program that demonstrates entanglement, a key concept of quantum computing.
 
-When two or more [qubits](xref:microsoft.quantum.concepts.qubit) are entangled, they share quantum information, which means that whatever happens to one qubit also happens to the other. In this quickstart, you create a particular pair of entangled qubits called a Bell pair. In the Bell pair, if you measure one of the qubits in the $\ket{0}$ state, you know the other qubit is also in the $\ket{0}$ state without measuring it. For more information, see [Quantum entanglement](xref:microsoft.quantum.concepts.entanglement).
+When two or more [qubits](xref:microsoft.quantum.concepts.qubit) are entangled, they share quantum information, which means whatever happens to one qubit also happens to the other. In this quickstart, you create a particular two-qubit entangled state called a Bell pair. In a Bell pair, if you measure one qubit in the $\ket{0}$ state, you know the other qubit is also in the $\ket{0}$ state without measuring it. For more information, see [Quantum entanglement](xref:microsoft.quantum.concepts.entanglement).
 
 In this quickstart, you:
 
@@ -126,7 +126,7 @@ Before measuring the qubits, it's important to verify that your previous code su
 
 Now that you verified the qubits are entangled, you can use the `M` operation to measure them. Measuring `q1` and `q2` collapses their quantum states into `Zero` or `One` with even probability.
 
-In Q#, you use the `let` keyword to declare a new variable. To store the results of measuring `q1` and `q2`, declare the variables `m1` and `m2`, respectively:
+In Q#, you use the `let` keyword to declare a new variable. To store the measurement results of `q1` and `q2`, declare the variables `m1` and `m2`, respectively:
 
 ```qsharp
         // Measure q1 and q2 and store the results in m1 and m2.

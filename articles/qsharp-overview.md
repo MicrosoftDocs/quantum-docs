@@ -151,7 +151,7 @@ let result = M(q);
 
 ### Resetting qubits
 
-In Q#, qubits must be in the $\ket{0}$ state when they're released. Use the `Reset` operation to reset each qubit to the $\ket{0}$ state before releasing it at the end of the program. Failure to reset a qubit results in a runtime error.
+In Q#, qubits **must** be in the $\ket{0}$ state when they're released. Use the `Reset` operation to reset each qubit to the $\ket{0}$ state before releasing it at the end of the program. Failure to reset a qubit results in a runtime error.
 
 ```qsharp
 // Reset a qubit.
