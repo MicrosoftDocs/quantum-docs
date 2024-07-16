@@ -77,7 +77,7 @@ After opening the `Microsoft.Quantum.Diagnostics` library, define an operation n
 The `EntangleQubits` operation is currently empty, so the next step is to allocate two qubits, `q1` and `q2`. In Q#, to allocate a qubit you use the `use` keyword:
 
 ```qsharp
-        // Allocate two qubits, q1 and q2.
+        // Allocate two qubits, q1 and q2, in the zero state
         use (q1, q2) = (Qubit(), Qubit());
 ```
 
