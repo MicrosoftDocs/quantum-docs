@@ -99,9 +99,9 @@ The following table shows what you can and can't do in the Azure portal:
 
 ## Visual Studio Code
 
-[VS Code](https://code.visualstudio.com/) is a free, open-source code editor from Microsoft. With the QDK extension for VS Code, you can create Q# programs, load built-in Q# samples, and use features like error messaging, syntax highlighting, debugging, circuit diagram visualization, CodeLens, and IntelliSense—all in your local development environment.
+[Visual Studio Code](https://code.visualstudio.com/) is a free, open-source code editor from Microsoft. With the QDK extension for VS Code, you can create Q# programs, load built-in Q# samples, and use features like error messaging, syntax highlighting, debugging, circuit diagram visualization, CodeLens, and IntelliSense—all in your local development environment.
 
-You can also use the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to estimate the physical resources required to run your Q# programs on quantum computers. The Resource Estimator is part of the QDK, so you don't need an Azure subscription to use it. For more information, see [Run the Resource Estimator in VS Code](xref:microsoft.quantum.submit-resource-estimation-jobs).
+You can also use the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to estimate the physical resources required to run your Q# programs on quantum computers. The Resource Estimator is part of the QDK, so you don't need an Azure subscription to use it. For more information, see [Run the Resource Estimator in Visual Studio Code](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 You don't need an Azure account to use the QDK in VS Code. However, if you have an Azure account, you can connect to your Azure Quantum workspace from VS Code and run Q# programs on the quantum computers and simulators of your selected providers.
 
@@ -145,5 +145,4 @@ To learn and explore the Q# programming language, use the following resources:
 
 - [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
 - [Quickstart: Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart)
-- [Tutorial: Quantum random number generator](xref:microsoft.quantum.tutorial-qdk.random-number)
-- [VS Code reference for Q#](xref:microsoft.quantum.reference.vscode)
+- [Reference: QDK extension for Visual Studio Code](xref:microsoft.quantum.reference.vscode)
