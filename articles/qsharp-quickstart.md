@@ -104,6 +104,10 @@ The `CNOT` operation flips the state of  `q2`, the target qubit, if the state of
         // Entangle q1 and q2, making q2 depend on q1.
         CNOT(q1, q2);
 ```
+The resulting state of both qubits is the Bell pair $\frac{1}{\sqrt{2}}(\ket{00}+\ket{11})$.
+
+>[!TIP]
+> If you want to learn how the Hadamard and CNOT operations transform the state of the qubits, see [Creating entanglement with quantum operations](xref:microsoft.quantum.concepts.entanglement#creating-entanglement-with-quantum-operations).
 
 ### Display the entangled state
 
