@@ -155,7 +155,7 @@ Finally, to complete the `EntangleQubits` operation and observe the entangled st
 > [!TIP]
 > If you want to learn more about a Q# function or operation, hover over it.
 >
-> :::image type="content" source="media/qsharp-quickstart-hover.png" alt-text="Screenshot of the details that appear when you hover the "H" operation in Visual Studio Code.":::
+> :::image type="content" source="media/qsharp-quickstart-hover.png" alt-text="Screenshot of the details that appear when you hover the 'H' operation in Visual Studio Code.":::
 
 ## Run your Q# code
 
@@ -197,7 +197,7 @@ namespace BellPair {
 
 To run your program and view the result of both qubits, select **Run** under `@EntryPoint()` or press **Ctrl+F5.** You can run the program several times, each with a different result in the debug console. This demonstrates the probabilistic nature of quantum measurements and the entanglement of the qubits.
 
-:::image type="content" source="media/qsharp-quickstart-run.png" alt-text="Screenshot of the Q# file in Visual Studio Code showing where to find the "Run" command.":::
+:::image type="content" source="media/qsharp-quickstart-run.png" alt-text="Screenshot of the Q# file in Visual Studio Code showing where to find the 'Run' command.":::
 
 ## Next step
 
