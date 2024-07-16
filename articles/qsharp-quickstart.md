@@ -64,7 +64,7 @@ In your `BellPair` namespace, use an `open` statement to import the `Microsoft.Q
 
 After opening the `Microsoft.Quantum.Diagnostics` library, define an operation named `EntangleQubits`. This is where you'll write the remaining Q# code to allocate, manipulate, and measure two qubits.
 
-`EntangleQubits` takes no parameters and returns two `Result` values, which represent the qubit measurements:
+`EntangleQubits` takes no parameters and returns two `Result` values, `zero` or `one`, which represent the result of the qubit measurements:
 
 ```qsharp
     operation EntangleQubits() : (Result, Result) {
