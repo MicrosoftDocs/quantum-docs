@@ -97,7 +97,7 @@ You put a qubit into superposition by applying the Hadamard, `H`, operation:
 
 ### Entangle the qubits
 
-You're now ready to entangle the qubits using the `CNOT` operation. For this quickstart, you set `q1` as the control qubit and `q2` as the target qubit. This makes the state of `q2` depend on the state of `q1`.
+You're now ready to entangle the qubits using the controlled-NOT, `CNOT`, operation. The `CNOT` is a control operation that takes two qubits, one acts as control qubit and the other is the target qubit. For this quickstart, you set `q1` as the control qubit and `q2` as the target qubit. 
 
 ```qsharp
         // Entangle q1 and q2, making q2 depend on q1.
