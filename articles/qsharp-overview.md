@@ -93,7 +93,7 @@ Q# also provides types that define ranges, arrays, and tuples. You can even defi
 
 ### Allocating qubits
 
-In Q#, you allocate qubits with the `use` keyword. Qubits are always allocated in the $\ket{0}$ state.
+In Q#, you allocate qubits using the `use` keyword. Qubits are always allocated in the $\ket{0}$ state.
 
 The `Superposition` program defines a single qubit:
 
@@ -151,7 +151,7 @@ let result = M(q);
 
 ### Resetting qubits
 
-In Q#, qubits **must** be in the $\ket{0}$ state by the time they're released. You must reset each qubit to the $\ket{0}$ state before releasing it at the end of the program with the `Reset` operation. Failure to reset a qubit results in a runtime error.
+In Q#, qubits **must** be in the $\ket{0}$ state by the time they're released. You must reset each qubit to the $\ket{0}$ state before releasing it at the end of the program using the `Reset` operation. Failure to reset a qubit results in a runtime error.
 
 ```qsharp
 // Reset a qubit.

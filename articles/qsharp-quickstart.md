@@ -16,7 +16,7 @@ uid: microsoft.quantum.qsharp-quickstart
 
 Learn how to write a basic Q# program that demonstrates entanglement, a key concept of quantum computing.
 
-When two or more [qubits](xref:microsoft.quantum.concepts.qubit) are entangled they're sharing quantum information, which means that whatever happens to one qubit also happens to the other. In this Quickstart, you'll create a particular entangled pair of qubits called a Bell pair. In the Bell pair, if you measure one of the qubits in the $\ket{0}$ state, you know that the other qubit is also in the $\ket{0}$ state without measuring it. For more information, see [Quantum entanglement](xref:microsoft.quantum.concepts.entanglement).
+When two or more [qubits](xref:microsoft.quantum.concepts.qubit) are entangled, they share quantum information, which means that whatever happens to one qubit also happens to the other. In this quickstart, you create a particular pair of entangled qubits called a Bell pair. In the Bell pair, if you measure one of the qubits in the $\ket{0}$ state, you know the other qubit is also in the $\ket{0}$ state without measuring it. For more information, see [Quantum entanglement](xref:microsoft.quantum.concepts.entanglement).
 
 In this quickstart, you:
 
@@ -62,9 +62,9 @@ In your `BellPair` namespace, use an `open` statement to import the `Microsoft.Q
 
 ### Define an operation
 
-Once you opened the relevant libraries, you define your quantum operation and their input and output values. In this example, your operation is named `EntangleQubits`. This is where you'll write the remaining Q# code to allocate, manipulate, and measure two qubits.
+After opening the relevant libraries, define your quantum operation and its input and output values. For this quickstart, your operation is `EntangleQubits`. This is where you'll write the remaining Q# code to allocate, manipulate, and measure two qubits.
 
-`EntangleQubits` takes no parameters and returns two `Result` values, `zero` or `one`, which represent the result of the qubit measurements:
+`EntangleQubits` takes no parameters and returns two `Result` values, `Zero` or `One`, which represent the results of the qubit measurements:
 
 ```qsharp
     operation EntangleQubits() : (Result, Result) {
@@ -74,10 +74,10 @@ Once you opened the relevant libraries, you define your quantum operation and th
 
 ### Allocate two qubits
 
-The `EntangleQubits` operation is currently empty, so the next step is to allocate two qubits, `q1` and `q2`. In Q#, to allocate a qubit you use the `use` keyword:
+The `EntangleQubits` operation is currently empty, so the next step is to allocate two qubits, `q1` and `q2`. In Q#, you allocate qubits using the `use` keyword:
 
 ```qsharp
-        // Allocate two qubits, q1 and q2, in the zero state
+        // Allocate two qubits, q1 and q2, in the 0 state.
         use (q1, q2) = (Qubit(), Qubit());
 ```
 
@@ -86,7 +86,7 @@ The `EntangleQubits` operation is currently empty, so the next step is to alloca
 
 ### Put the first qubit into superposition
 
-Qubits `q1` and `q2` are both in the $\ket{0}$ state. To prepare the qubits for entanglement, you must put one of them into an even superposition, where it has a 50% chance of being measured as $\ket{0}$ or $\ket{1}$. 
+The qubits `q1` and `q2` are in the $\ket{0}$ state. To prepare the qubits for entanglement, you must put one of them into an even superposition, where it has a 50% chance of being measured as $\ket{0}$ or $\ket{1}$. 
 
 You put a qubit into superposition by applying the Hadamard, `H`, operation:
 
@@ -96,18 +96,21 @@ You put a qubit into superposition by applying the Hadamard, `H`, operation:
 ```
 
 The resulting state of `q1` is $\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})$, which is an even superposition of $\ket{0}$ and $\ket{1}$.
+
 ### Entangle the qubits
 
-You're now ready to entangle the qubits using the controlled-NOT, `CNOT`, operation. The `CNOT` is a control operation that takes two qubits, one acts as control qubit and the other is the target qubit. For this quickstart, you set `q1` as the control qubit and `q2` as the target qubit. 
-The `CNOT` operation flips the state of  `q2`, the target qubit, if the state of `q1`, the control qubit, is $\ket{1}$.
+You're now ready to entangle the qubits using the controlled-NOT, `CNOT`, operation. `CNOT` is a control operation that takes two qubits, one acting as the control and the other as the target.
+
+For this quickstart, you set `q1` as the control qubit and `q2` as the target qubit. This means `CNOT` flips the state of `q2` when the state of `q1` is $\ket{1}$.
 
 ```qsharp
         // Entangle q1 and q2, making q2 depend on q1.
         CNOT(q1, q2);
 ```
+
 The resulting state of both qubits is the Bell pair $\frac{1}{\sqrt{2}}(\ket{00}+\ket{11})$.
 
->[!TIP]
+> [!TIP]
 > If you want to learn how the Hadamard and CNOT operations transform the state of the qubits, see [Creating entanglement with quantum operations](xref:microsoft.quantum.concepts.entanglement#creating-entanglement-with-quantum-operations).
 
 ### Display the entangled state
@@ -121,8 +124,10 @@ Before measuring the qubits, it's important to verify that your previous code su
 
 ### Measure the qubits
 
-Now that you verified the qubits are entangled, you can use the `M` operation to measure them. Measuring `q1` and `q2` collapses their quantum states into `zero` or `one` with even probability.
-In Q# you use the `let` keyword to declare a new variable. To store the results of measuring `q1` and `q2`, you declare a the variables `m1` and `m2`, respectively:
+Now that you verified the qubits are entangled, you can use the `M` operation to measure them. Measuring `q1` and `q2` collapses their quantum states into `Zero` or `One` with even probability.
+
+In Q#, you use the `let` keyword to declare a new variable. To store the results of measuring `q1` and `q2`, declare the variables `m1` and `m2`, respectively:
+
 ```qsharp
         // Measure q1 and q2 and store the results in m1 and m2.
         let (m1, m2) = (M(q1), M(q2));
@@ -143,18 +148,18 @@ Before being released at the end of each Q# program, qubits must be in the $\ket
 Finally, to complete the `EntangleQubits` operation and observe the entangled state, return the measurement results of `m1` and `m2`:
 
 ```qsharp
-        // Return the classical results.
+        // Return the measurement results.
         return (m1, m2);
 ```
 
 > [!TIP]
 > If you want to learn more about a Q# function or operation, hover over it.
 >
->:::image type="content" source="media/qsharp-quickstart-hover.png" alt-text="Screenshot of the details that appear when you hover the "H" operation in Visual Studio Code.":::
+> :::image type="content" source="media/qsharp-quickstart-hover.png" alt-text="Screenshot of the details that appear when you hover the "H" operation in Visual Studio Code.":::
 
 ## Run your Q# code
 
-You've written a Q# program that entangles two qubits and creates a Bell pair. Before running your program, use the `@EntryPoint()` attribute to tell the Q# compiler where to start executing the program. Every Q# program must contain one `@EntryPoint()` attribute. In this case, place `@EntryPoint()` before the `EntangleQubits` operation.
+You've written a Q# program that entangles two qubits and creates a Bell pair. Before running your program, use the `@EntryPoint()` attribute to tell the Q# compiler where to start executing the program. Every Q# program must contain one `@EntryPoint()`. In this case, place `@EntryPoint()` before the `EntangleQubits` operation.
 
 Your final Q# program should look like this:
 
@@ -164,7 +169,7 @@ namespace BellPair {
         
     @EntryPoint()
     operation EntangleQubits() : (Result, Result) {  
-        // Allocate two qubits, q1 and q2.
+        // Allocate two qubits, q1 and q2, in the 0 state.
         use (q1, q2) = (Qubit(), Qubit());
 
         // Put q1 into an even superposition.
@@ -177,14 +182,14 @@ namespace BellPair {
         // Show the entangled state of the qubits.
         DumpMachine();
 
-        // Measure q1 and q2 and store the classical results in m1 and m2.
+        // Measure q1 and q2 and store the results in m1 and m2.
         let (m1, m2) = (M(q1), M(q2));
 
         // Reset q1 and q2 to the 0 state.
         Reset(q1);
         Reset(q2);
 
-        // Return the classical results.
+        // Return the measurement results.
         return (m1, m2);
     }
 }
@@ -193,8 +198,6 @@ namespace BellPair {
 To run your program and view the result of both qubits, select **Run** under `@EntryPoint()` or press **Ctrl+F5.** You can run the program several times, each with a different result in the debug console. This demonstrates the probabilistic nature of quantum measurements and the entanglement of the qubits.
 
 :::image type="content" source="media/qsharp-quickstart-run.png" alt-text="Screenshot of the Q# file in Visual Studio Code showing where to find the "Run" command.":::
-
-![Screenshot of the Q# file in Visual Studio Code showing where to find the "Run" command.](media/qsharp-quickstart-run.png)
 
 ## Next step
 
