@@ -115,7 +115,7 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 - You can now configure how many solutions you want returned from a solver run.
 - A new NuGet package [Microsoft.Quantum.AutoSubstitution](https://www.nuget.org/packages/Microsoft.Quantum.AutoSubstitution/), which when added to a Q# project, allows you to annotate operations with the `SubstitutableOnTarget(AltOp, Sim)` attribute. It then calls `AltOp` instead of the annotated operation, whenever it's executed using `Sim`.
-- Integration with Azure-Identity provides more mechanisms to [authenticate](xref:microsoft.quantum.iqsharp.magic-ref.azure.connect) with Azure.
+- Integration with Azure-Identity provides more mechanisms to authenticate with Azure.
 - The .NET [Microsoft.Azure.Management.Quantum](https://www.nuget.org/packages/Microsoft.Azure.Management.Quantum) now returns the Restricted Access URL so you can know more/apply for a restricted access plan.
 - Preview support for noisy simulation in open systems and stabilizer representations [qsharp-runtime#714](https://github.com/microsoft/qsharp-runtime/issues/714). See [here](https://github.com/microsoft/qsharp-runtime/blob/0826903c0842ba99a923e79be9f072054fe44a43/documentation/preview-simulators.md) for documentation on preview simulators.
 - Using [quantum-viz.js](https://github.com/microsoft/quantum-viz.js) as the engine to render the output from the jupyter notebook %trace magic.
@@ -173,7 +173,7 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 - Released QIR emission as experimental feature (https://github.com/microsoft/qsharp-compiler/tree/main/src/QsCompiler/QirGeneration#qir-emission---preview-feature). The inclusion of the necessary LLVM packages, and in particular LlvmLibs, causes an increase in package size of the Microsoft.Quantum.Sdk and the Microsoft.Quantum.Compiler, and correspondingly to longer download times the first time the new versions are used. We're working on reducing that again in the future.
 - Loosen restriction on AllowAtMostNCallsCA operation (https://github.com/microsoft/QuantumLibraries/pull/431).
 - Added missing APIs for Math Library (https://github.com/microsoft/QuantumLibraries/issues/413).
-- Removed <xref:Microsoft.Quantum.Environment.GetQubitsAvailableToBorrow> and <xref:Microsoft.Quantum.Environment.GetQubitsAvailableToUse> (https://github.com/microsoft/QuantumLibraries/issues/418).
+- Removed GetQubitsAvailableToBorrow and GetQubitsAvailableToUse (https://github.com/microsoft/QuantumLibraries/issues/418).
 - Fixed Q# Language Server fails during initialization in Visual Studio caused by JsonReaderException (https://github.com/microsoft/qsharp-compiler/issues/885).
 - Added support for multiple entry points.
 - Released Az CLI quantum extension version 0.3.0: Updated command 'az quantum workspace create' to require an explicit list of Quantum providers and remove a default. Fixed issue with incorrect location parameter during job submission.

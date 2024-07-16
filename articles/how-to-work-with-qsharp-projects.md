@@ -30,7 +30,7 @@ A Q# project contains a Q# manifest file, named *qsharp.json*, and one or more *
 
 A Q# project is defined by the presence of a *qsharp.json* manifest file and a **src** folder (which contains the Q# source files), both of which must be in the root folder of the project. For Q# programs, the Q# compiler detects the project folder automatically. For Python programs and Jupyter Notebooks, you must specify the Q# project folder with a `qsharp.init` call. The folder structure for a Q# project, however, remains the same for all types of programs.
 
-:::image type="content" source="../media/multi-file-art.png" alt-text="Picture showing the folder hierarchy for a Q# project.":::
+:::image type="content" source="media/multi-file-art.png" alt-text="Picture showing the folder hierarchy for a Q# project.":::
 
 ### [Using a Q# program](#tab/tabid-qsharp)
 

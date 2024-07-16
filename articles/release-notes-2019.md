@@ -21,7 +21,7 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 This release contains the following:
 
-- New Test attribute for Q# unit testing, see updated API documentation [here](xref:Microsoft.Quantum.Diagnostics.Test) and updated testing & debugging guide [here](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging)
+- New Test attribute for Q# unit testing, see updated API documentation [here](xref:microsoft.quantum.apiref-intro) and updated testing & debugging guide [here](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging)
 - Added stack trace if there's a Q# program run error
 - Support for breakpoints in Visual Studio Code because of an update in the [OmniSharp C# Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 
@@ -70,7 +70,7 @@ This release contains the following:
 - New support for [conjugation statements](xref:microsoft.quantum.qsharp.conjugations#conjugations) in Q#
 - New code actions in the compiler, such as: "replace with", "add documentation", and simple array item update
 - Added install template and new project commands to Visual Studio Code extension
-- Added new variants of ApplyIf combinator such as [Microsoft.Quantum.Canon.ApplyIfOne](xref:Microsoft.Quantum.Canon.ApplyIfOne)
+- Added new variants of ApplyIf combinator such as Microsoft.Quantum.Canon.ApplyIfOne
 - Additional [Quantum Katas](https://github.com/Microsoft/QuantumKatas) converted to Jupyter Notebooks
 - Visual Studio Extension now requires Visual Studio 2019
 

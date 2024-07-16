@@ -47,8 +47,7 @@ The following resources are created and developed by the quantum community who i
 
 ### Forums and communities for quantum developers
 
-* [Quantum computing StackExchange](https://quantumcomputing.stackexchange.com/questions/tagged/q%23): an online community for quantum developers to learn, and share their knowledge.
-+ [Subreddit for the quantum computing](https://www.reddit.com/r/quantumcomputing/): an online community in Reddit to discuss the latest news and developments of quantum computing.
+[Quantum computing StackExchange](https://quantumcomputing.stackexchange.com/questions/tagged/q%23): an online community for quantum developers to learn, and share their knowledge.
 
 ## Quantum computing courses
 
