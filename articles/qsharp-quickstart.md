@@ -52,7 +52,7 @@ namespace BellPair {
 
 ### Open a quantum library
 
-The Q# standard library includes predefined functions and operations for your quantum programs. To use them, you must first open the relevant library.
+The QDK includes the Q# standard library with predefined functions and operations for your quantum programs. To use them, you must first open the relevant library.
 
 In your `BellPair` namespace, use an `open` statement to import the `Microsoft.Quantum.Diagnostics` library. This gives you access to all its functions and operations, including `DumpMachine()`, which you later use to display the entangled state.
 
