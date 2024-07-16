@@ -88,7 +88,7 @@ The `EntangleQubits` operation is currently empty, so the next step is to alloca
 
 Qubits `q1` and `q2` are both in the $\ket{0}$ state. To prepare the qubits for entanglement, you must put one of them into an even superposition, where it has a 50% chance of being measured as $\ket{0}$ or $\ket{1}$. 
 
-In Q#, you put a qubit into superposition using the `H` operation:
+You put a qubit into superposition by applying the Hadamard, `H`, operation:
 
 ```qsharp
         // Put q1 into an even superposition.
