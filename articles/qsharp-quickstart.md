@@ -191,6 +191,8 @@ namespace BellPair {
 
 Under `@EntryPoint()`, select **Run** to view the result of both qubits. You can run the program several times, each with a different result in the debug console. This demonstrates the probabilistic nature of quantum measurements and the entanglement of the qubits.
 
+:::image type="content" source="media/qsharp-quickstart-run.png" alt-text="Screenshot of the Q# file in Visual Studio Code showing where to find the "Run" command.":::
+
 ![Screenshot of the Q# file in Visual Studio Code showing where to find the "Run" command.](media/qsharp-quickstart-run.png)
 
 ## Next step
