@@ -84,7 +84,7 @@ The `EntangleQubits` operation is currently empty, so the next step is to alloca
 > [!NOTE]
 > In Q#, qubits are always allocated in the $\ket{0}$ state.
 
-### Put the first qubit into superposition
+### Put one qubit into superposition
 
 The qubits `q1` and `q2` are in the $\ket{0}$ state. To prepare the qubits for entanglement, you must put one of them into an even superposition, where it has a 50% chance of being measured as $\ket{0}$ or $\ket{1}$.
 
@@ -159,7 +159,7 @@ Finally, to complete the `EntangleQubits` operation and observe the entangled st
 
 ## Run your Q# code
 
-You've written a Q# program that entangles two qubits and creates a Bell pair. Before running your program, use the `@EntryPoint()` attribute to tell the Q# compiler where to start executing the program. Every Q# program must contain one `@EntryPoint()`. In this case, place `@EntryPoint()` before the `EntangleQubits` operation.
+Congratulations! You wrote a Q# program that entangles two qubits and creates a Bell pair. Before running your program, use the `@EntryPoint()` attribute to tell the Q# compiler where to start executing the program. Every Q# program must contain one `@EntryPoint()`. In this case, place `@EntryPoint()` before the `EntangleQubits` operation.
 
 Your final Q# program should look like this:
 
@@ -195,9 +195,24 @@ namespace BellPair {
 }
 ```
 
-To run your program and view the result of both qubits, select **Run** under `@EntryPoint()` or press **Ctrl+F5.** You can run the program several times, each with a different result in the debug console. This demonstrates the probabilistic nature of quantum measurements and the entanglement of the qubits.
+To run your program and view the result of both qubits, select **Run** under `@EntryPoint()` or press **Ctrl+F5**:
 
 :::image type="content" source="media/qsharp-quickstart-run.png" alt-text="Screenshot of the Q# file in Visual Studio Code showing where to find the 'Run' command.":::
+
+You can run the program several times, each with a different result in the debug console. This demonstrates the probabilistic nature of quantum measurements and the entanglement of the qubits.
+
+For example, if the result is `Zero`, your debug console should look like this:
+
+```result
+DumpMachine:
+
+ Basis | Amplitude      | Probability | Phase
+ -----------------------------------------------
+  |00⟩ |  0.7071+0.0000𝑖 |    50.0000% |   0.0000
+  |11⟩ |  0.7071+0.0000𝑖 |    50.0000% |   0.0000
+
+Result: "(Zero, Zero)"
+```
 
 ## Next step
 
