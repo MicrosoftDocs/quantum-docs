@@ -203,7 +203,7 @@ You can run the program several times, each with a different result in the debug
 
 For example, if the result is `Zero`, your debug console should look like this:
 
-```result
+```Result
 DumpMachine:
 
  Basis | Amplitude      | Probability | Phase
