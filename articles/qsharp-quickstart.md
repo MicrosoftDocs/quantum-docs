@@ -86,7 +86,7 @@ The `EntangleQubits` operation is currently empty, so the next step is to alloca
 
 ### Put the first qubit into superposition
 
-The qubits `q1` and `q2` are in the $\ket{0}$ state. To prepare the qubits for entanglement, you must put one of them into an even superposition, where it has a 50% chance of being measured as $\ket{0}$ or $\ket{1}$. 
+The qubits `q1` and `q2` are in the $\ket{0}$ state. To prepare the qubits for entanglement, you must put one of them into an even superposition, where it has a 50% chance of being measured as $\ket{0}$ or $\ket{1}$.
 
 You put a qubit into superposition by applying the Hadamard, `H`, operation:
 
