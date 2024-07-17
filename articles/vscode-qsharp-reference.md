@@ -13,16 +13,16 @@ uid: microsoft.quantum.reference.vscode
 
 # Reference: Azure Quantum Development Kit extension for Visual Studio Code
 
-The Azure Quantum Development Kit (QDK) uses all the standard functionality of Visual Studio (VS) Code, along with Q#-specific features when working with *.qs* files. This article is a reference guide to all Q# related commands and features, with links to additional content as needed. For general VS Code guidance, see the [VS Code documentation](https://code.visualstudio.com/docs).
+The Azure Quantum Development Kit (QDK) uses all the standard functionality of Visual Studio (VS) Code, along with Q#-specific features when working with .qs files. This article is a reference guide to all Q# related commands and features, with links to additional content as needed. For general VS Code guidance, see the [VS Code documentation](https://code.visualstudio.com/docs).
 
 > [!TIP]
-> Most Q# related commands can be accessed from the **View > Command Palette** menu. While in a *.qs* file, select **Ctrl-Shift-P** (**Cmd-Shift-P** on macOS) and enter **Q#** to view a filtered list of commands. 
+> Most Q# related commands can be accessed from the **View > Command Palette** menu. While in a .qs file, select **Ctrl-Shift-P** (**Cmd-Shift-P** on macOS) and enter **Q#** to view a filtered list of commands. 
 >
 > For all macOS keyboard shortcuts, see [Keyboard shortcuts for macOS](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf).
 
 ## Commands
 
-Most Q# related commands can be accessed from the **View > Command Palette** menu. Select **Ctrl-Shift-P** and enter **Q#** to view a filtered list of commands. Some commands are only available when a *.qs* file is active. 
+Most Q# related commands can be accessed from the **View > Command Palette** menu. Select **Ctrl-Shift-P** and enter **Q#** to view a filtered list of commands. Some commands are only available when a .qs file is active. 
 
 > [!TIP] 
 > You can create custom keyboard shortcuts for any VS Code command using **Keyboard Shortcuts**, or **Ctrl+K+S**. For more information, see [Key Bindings for VS Code](https://code.visualstudio.com/docs/getstarted/keybindings).
@@ -30,7 +30,7 @@ Most Q# related commands can be accessed from the **View > Command Palette** men
  
 | Command | Action | Notes  | Alternate user action |
 |---------|--------|--------|--------------|
-| **Q#: Create Q# Project** | Creates a Q# project in the active folder, including:<br>* a *qsharp.json* manifest file<br>* a *src* subfolder with a default *main.qs* file.  | For more information about Q# projects, see [Working with Q# projects](xref:microsoft.quantum.qsharp-projects).  | In File Explorer, right-click the target folder and select **Create Q# project**.  |
+| **Q#: Create Q# Project** | Creates a Q# project in the active folder, including:<br>* a qsharp.json manifest file<br>* a src subfolder with a default main.qs file.  | For more information about Q# projects, see [Working with Q# projects](xref:microsoft.quantum.qsharp-projects).  | In File Explorer, right-click the target folder and select **Create Q# project**.  |
 | **Q#: Create an Azure Quantum notebook**   | Opens a sample Jupyter Notebook that runs a Q# + Python program and submits a job to Azure Quantum.  | For more information about Azure Quantum notebooks, see [Work with Azure Quantum notebooks](xref:microsoft.quantum.how-to.notebooks).  | N/A  |
 | **Q#: Connect to an Azure Quantum workspace** | Connect to an Azure Quantum workspace using your Azure account or a connection string. Once you're authenticated, your workspace appears in File Explorer in  **Quantum Workspaces**.    | For more information about Azure Quantum connections, see [Connect to your Azure Quantum workspace](xref:microsoft.quantum.how-to.connect-workspace). | In File Explorer, hover over **Quantum workspaces** and select the **"+"** icon.   |
 | **Q#: Open Q# playground** | Opens an online folder of Q# sample programs in File Explorer. You can edit and run the programs in the local quantum simulator, and also set breakpoints and step through the code with the built-in debugger.   | For more information, see the **README** file in the sample folder.  | N/A  |
@@ -38,7 +38,7 @@ Most Q# related commands can be accessed from the **View > Command Palette** men
 | **Explorer: Focus on Quantum Workspaces View** | Opens File Explorer and focuses on your connected quantum workspaces, if configured. If no workspaces are configured, you're prompted to add an existing workspace. | For more information about Azure Quantum connections, see [Connect to your Azure Quantum workspace](xref:microsoft.quantum.how-to.connect-workspace).  | N/A  |
 
 
-The following commands are available when a *.qs* file is active.
+The following commands are available when a .qs file is active.
 
 | Command | Action | Notes  | Alternate user action |
 |---------|--------|--------|--------------|
@@ -81,9 +81,9 @@ Most of the common code editing features in VS Code are available when working w
 
 | Task | Action  | Notes |
 |-----------------|-----------|----------------|
-| **New Q# file**    | Select **File > New file > Text file**. Save the file with a *.qs* extension. | If you set `Files: Default Language = qsharp`, a new file defaults to Q# formatting automatically. |
+| **New Q# file**    | Select **File > New file > Text file**. Save the file with a .qs extension. | If you set `Files: Default Language = qsharp`, a new file defaults to Q# formatting automatically. |
 | **Create a Q# project** | From an open folder in File Explorer, select **Create Q# Project** from the Command Palette, or right-click the folder in File Explorer and select **Create Q# project**.| For more information about Q# projects, see [Working with Q# projects](xref:microsoft.quantum.qsharp-projects).  | 
-| **Sample files**  | In a blank *.qs* file, enter **samples**, then select a sample program from the list.| You can also select **Open Q# playground** in the Command Palette to open an online folder of Q# sample programs in File Explorer. | 
+| **Sample files**  | In a blank .qs file, enter **samples**, then select a sample program from the list.| You can also select **Open Q# playground** in the Command Palette to open an online folder of Q# sample programs in File Explorer. | 
 
 ### Connecting to Azure Quantum 
 
