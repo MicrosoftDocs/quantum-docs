@@ -54,7 +54,7 @@ You can use a connection string to specify the connection parameters to an Azure
     :::image type="content" source="media/connection-string-copy.png" alt-text="Screenshot of Azure portal showing how to copy the connection strings.":::
 
 > [!WARNING]
-> Storing your account access keys or connection string in clear text presents a security risk and is not recommended. Store your account keys in an encrypted format, or migrate your applications to use Microsoft Entra authorization for access to your Azure Quantum workspace.
+> Storing your account access keys or connection string in clear text presents a security risk and is **not** recommended. Store your account keys in an encrypted format, or migrate your applications to use Microsoft Entra authorization for access to your Azure Quantum workspace.
 
 ### Use a connection string to access your Azure Quantum workspace
 
