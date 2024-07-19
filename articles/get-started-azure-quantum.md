@@ -13,9 +13,9 @@ uid: microsoft.quantum.get-started.azure-quantum
 
 # Explore the Azure Quantum website
 
-Get started with quantum computing, discover the latest quantum breakthroughs, and create and run quantum programs with the help of the Copilot in Azure Quantum on the [Azure Quantum website](https://quantum.microsoft.com/). 
+Get started with quantum computing, discover the latest quantum breakthroughs, and create and run quantum programs with the help of the Copilot in Azure Quantum on the [Azure Quantum website](https://quantum.microsoft.com/).
 
-Azure Quantum website features:
+The Azure Quantum website features:
 
 - **Copilot in Azure Quantum** - AI meets the world of quantum. Copilot in Azure Quantum is a generative AI assistant to help you learn and explore quantum computing.
 - **Code in Azure Quantum** - Explore and run Q# code directly in your browser using the built-in code window and compiler, and submit your jobs to the in-memory simulator or the free [Quantinuum H-Series Emulator](xref:microsoft.quantum.providers.quantinuum#h-series-emulator-cloud-based). Use Copilot in Azure Quantum to explain Q# code and also generate code from your prompts.
