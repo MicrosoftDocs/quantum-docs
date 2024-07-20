@@ -198,5 +198,5 @@ namespace Superposition {
 ## Related content
 
 - [Different ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work)
-- [Set up the Azure Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
+- [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
 - [Quickstart: Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart)
