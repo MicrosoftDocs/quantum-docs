@@ -137,7 +137,7 @@ The following table shows what you can and can't do in VS Code:
 To learn and explore the Q# programming language, use the following resources:
 
 - [**Azure Quantum learning path**](/training/paths/quantum-computing-fundamentals)**:** If you're interested in quantum computing but don't know where to start, take this learning path. Through a series of interactive modules, you learn about quantum computing and how to develop quantum solutions using Q# and the QDK.
-- [**Quantum Katas**](https://quantum.microsoft.com/en-us/experience/quantum-katas)**:** Learn quantum computing and programming simultaneously with these self-paced tutorials, each with relevant theory and Q# exercises to test your knowledge.
+- [**Quantum Katas**](https://quantum.microsoft.com/experience/quantum-katas)**:** Learn quantum computing and programming simultaneously with these self-paced tutorials, each with relevant theory and Q# exercises to test your knowledge.
 - [**Q# code samples**](https://github.com/microsoft/qsharp/tree/main/samples)**:** Build your first quantum solution with these ready-to-use Q# samples. They cover four areas: quantum algorithms, resource estimation, language constructs, and Jupyter Notebooks.
 - [**QDK playground**](https://vscode.dev/quantum/playground/)**:** Explore common quantum algorithms written in Q#. The playground is hosted on VS Code for the Web and comes preconfigured with the QDK, so you don't need to install anything.
 

@@ -133,7 +133,7 @@
   items: 
   - name: Get started with Q#
     items: 
-    - name: What is Q#?
+    - name: Introduction to Q#
       href: qsharp-overview.md
     - name: Ways to work with Q#
       href: qsharp-ways-to-work.md

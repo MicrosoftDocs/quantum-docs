@@ -12,7 +12,7 @@ uid: microsoft.quantum.qsharp-overview
 # Customer intent: As a new quantum programmer, I want to learn what Q# is and how a Q# program is structured so that I can begin writing my own quantum programs.
 ---
 
-# What is Q#?
+# Introduction to the quantum programming language Q#
 
 Q# is a high-level, [open-source](https://github.com/microsoft/qsharp) programming language for developing and running quantum algorithms. Q# is included in the Quantum Development Kit (QDK). For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
@@ -78,10 +78,10 @@ operation MeasureOneQubit() : Result {
 
 Q# provides [built-in types](xref:microsoft.quantum.qsharp.typesystem-overview) that are common to most languages, including `Int`, `Double`, `Bool`, and `String`, and types that are specific to quantum computing. For example, the `Result` type represents the result of a qubit measurement and can have one of two values: `Zero` or `One`.
 
-In the `Superposition` program, the `MeasureOneQubit()` operation expects a return type of `Result`, which corresponds to the return type of the `M` operation:
+In the `Superposition` program, the `MeasureOneQubit()` operation returns a `Result` type, which corresponds to the return type of the `M` operation. The measurement result is stored in a new variable that's defined using the `let` statement:
 
 ```qsharp
-// The operation definition expects a return type of Result.
+// The operation definition returns a Result type.
 operation MeasureOneQubit() : Result {
     ...
     // Measure the qubit in the Z-basis, returning a Result type.
@@ -116,7 +116,7 @@ For more information, see [Use statement](xref:microsoft.quantum.qsharp.quantumm
 
 After allocating a qubit, you can pass it to operations and functions, also known as [callables](xref:microsoft.quantum.qsharp.callabledeclarations). [Operations](xref:microsoft.quantum.qsharp.operationsandfunctions) are the basic building blocks of a Q# program. A Q# operation is a quantum subroutine, or a callable routine that contains quantum operations that change the state of the qubit register.
 
-To define a Q# operation, you specify a name for the operation, its inputs, and its output. In the `Superposition` program, the `MeasureOneQubit()` operation is essentially the entire program. It takes no parameters and expects a return type of `Result`:
+To define a Q# operation, you specify a name for the operation, its inputs, and its output. In the `Superposition` program, the `MeasureOneQubit()` operation is essentially the entire program. It takes no parameters and returns a `Result` type:
 
 ```qsharp
 operation MeasureOneQubit() : Result {
