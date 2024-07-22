@@ -7,19 +7,14 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', Quantum Development Kit, QIR Adaptive RI, target, targets]
-title: Working with Integrated Hybrid Computing
+title: Submit hybrid quantum computing jobs
 uid: microsoft.quantum.hybrid.integrated
 #customer intent: As a quantum programmer, I want to understand integrated hybrid computing.
 ---
 
-# Integrated hybrid computing
+# Submit hybrid quantum computing jobs with adaptive target profile
 
-Integrated hybrid computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Using qubit reuse techniques, larger programs can run on machines utilizing a smaller number of qubits.
-
-For more discussion, see:
-
-- [Granade & Weibe, "Using Random Walks for Iterative Phase Estimation"](https://arxiv.org/pdf/2208.04526.pdf).
-- [Lubinski, et al., "Advancing Hybrid Quantum–Classical Computation with Real-Time Execution"](https://arxiv.org/pdf/2206.12950.pdf)
+Hybrid computing combines classical and quantum computing processes to solve complex problems. 
 
 
 ## Prerequisites
@@ -37,19 +32,29 @@ For more discussion, see:
         pip install --upgrade azure-quantum qsharp
         ```
 
+## What is adaptive RI?
+
+Hybrid computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Using qubit reuse techniques, larger programs can run on machines utilizing a smaller number of qubits.
+
+For more discussion, see:
+
+- [Granade & Weibe, "Using Random Walks for Iterative Phase Estimation"](https://arxiv.org/pdf/2208.04526.pdf).
+- [Lubinski, et al., "Advancing Hybrid Quantum–Classical Computation with Real-Time Execution"](https://arxiv.org/pdf/2206.12950.pdf)
+
+
 ## Supported targets
 
-Currently, the integrated hybrid computing model in Azure Quantum is supported on [Quantinuum](xref:microsoft.quantum.providers.quantinuum) targets.
+Currently, adaptive target profile in Azure Quantum is supported on [Quantinuum](xref:microsoft.quantum.providers.quantinuum) targets.
 
-## Submitting integrated hybrid jobs
+## Submitting adaptive RI jobs
 
-When submitting an integrated hybrid job, you need to configure the [target profile](xref:microsoft.quantum.target-profiles) as :::no-loc text="QIR Adaptive RI":::. The :::no-loc text="QIR Adaptive RI"::: target profile offers support for mid-circuit measurements, measurement-based control flow, qubit reset, and classical integer computation.
+When submitting job, you need to configure the [target profile](xref:microsoft.quantum.target-profiles) as :::no-loc text="QIR Adaptive RI":::. The :::no-loc text="QIR Adaptive RI"::: target profile offers support for mid-circuit measurements, measurement-based control flow, qubit reset, and classical integer computation.
 
-You can submit integrated hybrid Q# standalone programs or Python + Q# programs to Azure Quantum. To configure the target profile for integrated hybrid jobs, follow the instructions below.
+You can submit hybrid Q# standalone programs or Python + Q# programs to Azure Quantum. To configure the target profile for integrated hybrid jobs, follow the instructions below.
 
 ### [Q# in Visual Studio Code](#tab/tabid-vscode)
 
-To configure the target profile for integrated hybrid jobs in Visual Studio Code, follow these steps:
+To configure the target profile for  hybrid jobs in Visual Studio Code, follow these steps:
 
 1. Open a Q# program in Visual Studio Code.
 1. Select **View -> Command Palette** and type **Q#: Set the Azure Quantum QIR target profile**. Press **Enter**.

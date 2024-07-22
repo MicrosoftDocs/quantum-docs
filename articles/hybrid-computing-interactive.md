@@ -1,24 +1,22 @@
 ---
 author: SoniaLopezBravo
-description: Understand the architecture of interactive (sessions) quantum computing and learn how to create a new session.
-ms.date: 04/09/2024
+description: Understand the architecture of sessions in hybrid quantum computing and learn how to create a new session.
+ms.date: 07/22/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: how-to
+ms.topic: get-started
 no-loc: ['Q#', '$$v', Variational Quantum Eigensolver, Quantum Approximate Optimization Algorithm, target, targets]
 title: Introduction to Sessions
 uid: microsoft.quantum.hybrid.interactive
 #customer intent: As a quantum developer, I want to understand the architecture of interactive sessions.
 ---
 
-# Interactive quantum computing: sessions
+# Get started with sessions
 
-This article explains the architecture of interactive quantum computing, also known as sessions, and how to create a new session.
+Sessions are a key feature of hybrid quantum computing that allow you to group multiple quantum computing jobs together.
 
-In this model of hybrid quantum computing, the client compute resource may be moved to the cloud, resulting in lower-latency and the ability to repeat execution of the quantum circuit with different parameters. Jobs can be grouped logically into one session, and the jobs in that session can be prioritized over non-session jobs. Although the qubit states don't persist between jobs, a session allows for shorter queue times for jobs and longer running problems.
-
-![Interactive quantum computing](~/media/hybrid/interactive.png)
+This article explains the architecture of sessions in hybrid quantum computing and how to create a new session.
 
 ## Prerequisites
 
@@ -37,13 +35,17 @@ To create a session, you need the following prerequisites:
 
 A session is a logical grouping of one or more jobs submitted to a single target. Each session has a unique ID attached to each job in that session. 
 
+In sessions, the client compute resource may be moved to the cloud, resulting in lower-latency and the ability to repeat execution of the quantum circuit with different parameters. Jobs can be grouped logically into one session, and the jobs in that session can be prioritized over non-session jobs. Although the qubit states don't persist between jobs, a session allows for shorter queue times for jobs and longer running problems.
+
+![Interactive quantum computing](~/media/hybrid/interactive.png)
+
 Sessions allow you to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. You'll be able to run complex algorithms to better organize and track your individual quantum computing jobs.
 
 A key user scenario where you may want to combine jobs in a session is *parameterized* quantum algorithms where the output of one quantum computing job informs the parameters of the next quantum computing job. The most common examples of this type of algorithm are :::no-loc text="Variational Quantum Eigensolvers"::: (VQE) and :::no-loc text="Quantum Approximate Optimization Algorithms":::  (QAOA).
 
 ## Supported hardware
 
-Sessions are supported on all quantum computing hardware providers, currently [IonQ](xref:microsoft.quantum.providers.ionq), [Quantinuum](xref:microsoft.quantum.providers.quantinuum) and [Rigetti](xref:microsoft.quantum.providers.rigetti). In some cases, jobs submitted within a session are prioritized in the queue of that target. For more information, see [Target behavior](#target-behavior).
+Sessions are supported on all quantum computing hardware providers. In some cases, jobs submitted within a session are prioritized in the queue of that target. For more information, see [Target behavior](#target-behavior).
 
 ## Get started with sessions
 
@@ -229,19 +231,6 @@ This example shows how to create a session with Q# inline code using a Jupyter N
     ```
 
 ***
-
-## Monitoring sessions
-
-You can use the **Job management** blade in your Quantum workspace to view all top-level submitted items, including sessions and individual jobs that aren't associated with any session.
-
-1. Select the **Job management** blade in your Quantum workspace.
-1. Identify the jobs of type **Session**. In this view you can see the Unique ID of a Session in column **Id** and monitor its **Status**. The states of a session are: 
-   - **Waiting**: Jobs within the session are being executed. 
-   - **Succeeded**: Session has ended successfully. 
-   - **TimeOut**: If no new job is submitted within the session for 10 minutes, that session times out. For more information, see [Session timeouts](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#session-timeouts).
-   - **Failed**: If a job within a session fails, that session ends and reports a status of *Failed*. For more information, see [Job failure policy within sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#job-failure-policy-within-sessions).
-1. Click on a session's name for more details.
-1. You can see the list of **All jobs** within the session and monitor their status.
 
 ## Target behavior 
 
