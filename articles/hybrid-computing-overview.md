@@ -52,4 +52,6 @@ For more information, see  [**Integrated quantum computing**](xref:microsoft.qua
 
 In this architecture, classical computation is working alongside logical qubits. The long coherence time provided by logical qubits enables complex and distributed computation across heterogeneous cloud resources. Paired with a QPU composed of a large number of qubits, you can expect this architecture to be used to solve problems such as evaluation of full catalytic reactions that can benefit commercial applications and the hardest problems facing humanity including carbon capture and discovery of new drugs. 
 
+With fully integrated classical control and longer lived logical qubits, the distributed quantum computing model enables real-time computations across quantum and distributed resources. The classical controls are longer be limited to loops, and allow for scenarios such as complex materials modeling or the evaluation of full catalytic reactions.
 
+![Distributed quantum computing](~/media/hybrid/distributed.png)
