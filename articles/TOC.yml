@@ -85,7 +85,7 @@
       href: /azure/architecture/example-scenario/quantum/quantum-computing-integration-with-classical-apps?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
 - name: Hybrid quantum computing (QC)
   items: 
-  - name: An introduction to hybrid QC
+  - name: Introduction to hybrid QC
     href: hybrid-computing-overview.md
   - name: Sessions
     items:
@@ -93,7 +93,7 @@
       href: hybrid-computing-interactive.md
     - name: Manage sessions
       href: how-to-work-with-sessions.md    
-  - name: Submit hybrid QC jobs
+  - name: Run hybrid QC jobs
     href: hybrid-computing-integrated.md
   - name: Concepts for hybrid QC
     href: hybrid-computing-concepts.md
