@@ -43,7 +43,7 @@ Currently, adaptive target profile in Azure Quantum is supported on [Quantinuum]
 
 ## Submitting adaptive RI jobs
 
-To submit hybrid quantum computing jobs, you need to configure the [target profile](xref:microsoft.quantum.target-profiles) as **:::no-loc text="QIR Adaptive RI":::**, where RI stands for :::no-loc text="qubit Reset"::: and :::no-loc text="Integer computations":::.
+To submit hybrid quantum computing jobs, you need to configure the [target profile](xref:microsoft.quantum.target-profiles) as **:::no-loc text="QIR Adaptive RI":::**, where RI stands for ":::no-loc text="qubit Reset"::: and :::no-loc text="Integer computations":::".
 
 The :::no-loc text="QIR Adaptive RI"::: target profile offers support for mid-circuit measurements, measurement-based control flow, qubit reset, and classical integer computation.
 
