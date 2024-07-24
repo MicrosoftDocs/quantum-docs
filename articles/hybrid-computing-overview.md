@@ -47,7 +47,7 @@ Sessions allow you to organize multiple quantum computing jobs with the ability 
 
 In this model, the client compute resource is moved to the cloud, resulting in lower latency and repeated execution of the quantum circuit with different parameters.   Although sessions allow for shorter queue times and longer running problems, the qubit states don't persist between each iteration. Examples of problems that can use this approach are :::no-loc text="Variational Quantum Eigensolvers"::: (VQE) and :::no-loc text="Quantum Approximate Optimization Algorithms":::  (QAOA).
 
-For more information, see [**Get started with sessions)**](xref:microsoft.quantum.hybrid.interacive).
+For more information, see [**Get started with sessions)**](xref:microsoft.quantum.hybrid.interactive).
 
 ### Running hybrid quantum computing
 

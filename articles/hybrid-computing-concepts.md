@@ -1,6 +1,6 @@
 ---
 author: bradben
-description: Understand the concepts of hybrid quantum computing, including classical and quantum registers, mid-circuit measurement, qubit reuse, error mitigation, error correction, fault tolerance, and hybrid algorithms.
+description: Learn about classical and quantum registers, mid-circuit measurement, qubit reuse, error mitigation, error correction, and fault tolerance.
 ms.date: 03/06/2023
 ms.author: brbenefield
 ms.service: azure-quantum
@@ -43,7 +43,7 @@ In addition to using logical qubits, errors in quantum computations can be mitig
 
 ## Error correction and fault tolerance
 
-Error correction and fault tolerance are critical aspects of quantum computing, as qubits are more prone to errors than classical bits due to the delicate nature of quantum states, and highly fault tolerant systems are needed to achieve the full benefits of [distributed hybrid quantum computing](xref:microsoft.quantum.hybrid.distributed). In classical computing, errors can be corrected by adding redundancy to the computation and using error-correction codes. However, traditional error-correction techniques aren't directly applicable to quantum computing, as they rely on being able to repeat the computation multiple times, which isn't possible in quantum computing due to the [no-cloning theorem](xref:microsoft.quantum.concepts.pauli#the-no-cloning-theorem).
+Error correction and fault tolerance are critical aspects of quantum computing, as qubits are more prone to errors than classical bits due to the delicate nature of quantum states, and highly fault tolerant systems are needed to achieve the full benefits of [distributed hybrid quantum computing](xref:microsoft.quantum.overview.hybrid#running-distributed-quantum-computing). In classical computing, errors can be corrected by adding redundancy to the computation and using error-correction codes. However, traditional error-correction techniques aren't directly applicable to quantum computing, as they rely on being able to repeat the computation multiple times, which isn't possible in quantum computing due to the [no-cloning theorem](xref:microsoft.quantum.concepts.pauli#the-no-cloning-theorem).
 
 *Floquet codes* are a new class of error correction codes that respond to noise and errors dynamically, instead of traditional correction codes that protect against static errors. For more information, see [Error correction with Floquet codes](https://www.microsoft.com/research/blog/azure-quantum-innovation-efficient-error-correction-of-topological-qubits-with-floquet-codes/).
 
