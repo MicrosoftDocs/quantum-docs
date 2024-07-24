@@ -44,7 +44,7 @@ A key user scenario where you may want to combine jobs in a session is *paramete
 
 ## Supported hardware
 
-Sessions are supported on all quantum computing hardware providers. In some cases, jobs submitted within a session are prioritized in the queue of that target. For more information, see [Target behavior](#target-behavior).
+Sessions are supported on **all** quantum computing hardware providers. In some cases, jobs submitted within a session are prioritized in the queue of that target. For more information, see [Target behavior](#target-behavior).
 
 ## How to create a session
 
