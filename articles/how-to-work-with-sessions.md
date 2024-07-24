@@ -12,12 +12,24 @@ uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 #customer intent: As a quantum developer, I want understand how to work with multiple sessions. 
 ---
 
-# How to manage sessions
+# How to manage sessions in Azure Quantum
 
-In this article, you learn how to manage your sessions. With sessions, you can group one or more jobs against a single target, which allows you to manage jobs effectively. For more information, see [Interactive quantum computing: sessions](xref:microsoft.quantum.hybrid.interactive).
+In this article, you learn how to manage your sessions. With sessions, you can group one or more jobs against a single target, which allows you to manage jobs effectively. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive).
+
+## Prerequisites
+
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
+- An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
+- The Azure Quantum `azure-quantum` package. If you want to use Qiskit or Cirq, you need to install the `azure-quantum` package with the \[qiskit\] or \[cirq\] tags. 
+
+    ```bash
+    pip install --upgrade azure-quantum[qiskit] 
+    ```
 
 > [!NOTE]
-> Sessions are managed with Python, even when running Q# inline code. For more information, see “Q# + Python” section of [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
+> Sessions are managed with Python, even when running Q# inline code.
+
 
 ## Monitoring sessions
 
@@ -63,7 +75,7 @@ for job in session_jobs[0:10]:
 
 ## Manual methods of opening/closing sessions
 
-We recommend following the steps in [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions) to create a new session. However,  you can manually create sessions.
+We recommend following the steps in [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions) to create a new session. You can also manually create sessions.
 
 ### [Q# + Python](#tab/tabid-pythonsdk)
 
@@ -262,5 +274,5 @@ with target.open_session(name="JobFailurePolicy Continue", job_failure_policy=Se
 
 ## Related content
 
-- [Submit adaptive profile jobs](xref:microsoft.quantum.hybrid.integrated)
+- [Running hybrid quantum computing](xref:microsoft.quantum.hybrid.integrated)
 - [Get started with sessions](xref:microsoft.quantum.hybrid.interactive)

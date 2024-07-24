@@ -1,14 +1,16 @@
 ---
 author: bradben
-description: Understand the concepts and techniques used in hybrid quantum computing.
+description: Understand the concepts of hybrid quantum computing, including classical and quantum registers, mid-circuit measurement, qubit reuse, error mitigation, error correction, fault tolerance, and hybrid algorithms.
 ms.date: 03/06/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', Variational Quantum Eigensolver, Quantum Approximate Optimization Algorithm]
-title: Hybrid quantum computing concepts
+title: Hybrid Quantum Computing Concepts
 uid: microsoft.quantum.concepts.hybrid
+
+#customer intent: As a quantum developer, I want to understand the concepts of hybrid quantum computing so that I can design and implement quantum algorithms that take advantage of both classical and quantum processors.
 ---
 
 # Hybrid quantum computing concepts

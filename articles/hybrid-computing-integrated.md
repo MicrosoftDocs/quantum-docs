@@ -7,15 +7,18 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', Quantum Development Kit, QIR Adaptive RI, target, targets]
-title: Submit hybrid quantum computing jobs
+title: Run Hybrid Quantum Computing 
 uid: microsoft.quantum.hybrid.integrated
 #customer intent: As a quantum programmer, I want to understand integrated hybrid computing.
 ---
 
-# Submit hybrid quantum computing jobs with adaptive target profile
+# Run hybrid quantum computing jobs with adaptive target profile
 
-Hybrid computing combines classical and quantum computing processes to solve complex problems. 
+Hybrid computing combines classical and quantum computing processes to solve complex problems.
 
+In hybrid computing, the classical code controls the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. You can use common programming techniques, such as nested conditionals, loops, and function calls, in a single quantum program to run complex problems, reducing the number of shots needed. With qubit reuse techniques, larger programs can run on machines using a smaller number of qubits.
+
+This article explains how to submit hybrid jobs to Azure Quantum using the [QIR Adaptive RI](xref:microsoft.quantum.target-profiles) target profile. The Adaptive RI target profile offers support for mid-circuit measurements, measurement-based control flow, qubit reset, and classical integer computation.
 
 ## Prerequisites
 
@@ -32,41 +35,35 @@ Hybrid computing combines classical and quantum computing processes to solve com
         pip install --upgrade azure-quantum qsharp
         ```
 
-## What is adaptive RI?
-
-Hybrid computing brings the classical and quantum processes together, allowing classical code to control the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. Using common programming techniques, such as nested conditionals, loops, and function calls, a single quantum program can run complex problems, reducing the number of shots needed. Using qubit reuse techniques, larger programs can run on machines utilizing a smaller number of qubits.
-
-For more discussion, see:
-
-- [Granade & Weibe, "Using Random Walks for Iterative Phase Estimation"](https://arxiv.org/pdf/2208.04526.pdf).
-- [Lubinski, et al., "Advancing Hybrid Quantum–Classical Computation with Real-Time Execution"](https://arxiv.org/pdf/2206.12950.pdf)
-
-
 ## Supported targets
+
+To run hybrid quantum computing jobs, you need to select a quantum provider that supports the [Adaptive RI target profile](xref:microsoft.quantum.target-profiles).
 
 Currently, adaptive target profile in Azure Quantum is supported on [Quantinuum](xref:microsoft.quantum.providers.quantinuum) targets.
 
 ## Submitting adaptive RI jobs
 
-When submitting job, you need to configure the [target profile](xref:microsoft.quantum.target-profiles) as :::no-loc text="QIR Adaptive RI":::. The :::no-loc text="QIR Adaptive RI"::: target profile offers support for mid-circuit measurements, measurement-based control flow, qubit reset, and classical integer computation.
+To submit hybrid quantum computing jobs, you need to configure the [target profile](xref:microsoft.quantum.target-profiles) as **:::no-loc text="QIR Adaptive RI":::**, where RI stands for :::no-loc text="qubit Reset"::: and :::no-loc text="Integer computations":::.
 
-You can submit hybrid Q# standalone programs or Python + Q# programs to Azure Quantum. To configure the target profile for integrated hybrid jobs, follow the instructions below.
+The :::no-loc text="QIR Adaptive RI"::: target profile offers support for mid-circuit measurements, measurement-based control flow, qubit reset, and classical integer computation.
+
+You can submit hybrid quantum jobs to Azure Quantum as Q# standalone programs or Python + Q# programs. To configure the target profile for hybrid quantum jobs, see the following sections.
 
 ### [Q# in Visual Studio Code](#tab/tabid-vscode)
 
-To configure the target profile for  hybrid jobs in Visual Studio Code, follow these steps:
+To configure the target profile for hybrid jobs in Visual Studio Code, follow these steps:
 
 1. Open a Q# program in Visual Studio Code.
 1. Select **View -> Command Palette** and type **Q#: Set the Azure Quantum QIR target profile**. Press **Enter**.
 1. Select **QIR Adaptive RI**.
 
-Once you set QIR Adaptive RI as target profile, you can submit your Q# program as integrated hybrid job to Quantinuum.
+Once you set QIR Adaptive RI as target profile, you can submit your Q# program as a hybrid quantum job to Quantinuum.
 
 1. Select **View -> Command Palette** and type **Q#: Connect to an Azure Quantum workspace**. Press **Enter**.
 1. Select **Azure account**, and follow the prompts to connect to your preferred directory, subscription, and workspace.
 1. Once you are connected, in the **Explorer** pane, expand **Quantum Workspaces**.
 1. Expand your workspace and expand the **Quantinuum** provider.
-1. Select any Quantinuum available target, for example **quantinuum.sim.h1-1e**. 
+1. Select any Quantinuum available target, for example **quantinuum.sim.h1-1e**.
 1. Select the play icon to the right of the target name to start submitting the current Q# program.
 1. Add a name to identify the job, and the number of shots.
 1. Press **Enter** to submit the job. The job status displays at the bottom of the screen.
@@ -98,8 +95,8 @@ Once you set QIR Adaptive RI as target profile, you can submit your Q# program a
     ```python
     target = workspace.get_targets("quantinuum.sim.h1-1e")
     ```
-    
-You can combine multiple integrated hybrid jobs within a [session](xref:microsoft.quantum.hybrid.interactive) using the `target.open_session` function. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
+
+You can combine multiple hybrid quantum jobs within a [session](xref:microsoft.quantum.hybrid.interactive) using the `target.open_session` function. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
 
 > [!NOTE]
 > Although sessions are available for all quantum computing hardware providers, notice that `Adaptive_RI` target profile jobs are currently supported only on Quantinuum targets.
@@ -108,7 +105,7 @@ You can combine multiple integrated hybrid jobs within a [session](xref:microsof
 
 ## Supported features
 
-The following table lists the supported features for integrated hybrid computing with Quantinuum in Azure Quantum.
+The following table lists the supported features for hybrid quantum computing with Quantinuum in Azure Quantum.
 
 |Supported feature| Notes |
 |---|---|
@@ -119,12 +116,12 @@ The following table lists the supported features for integrated hybrid computing
 | Qubit reuse | Supported |
 | Real-time classical compute| 64-bit signed integer arithmetic <br>Utilizes classical register resources |
 
-The QDK provides target-specific feedback when Q# language features aren't supported for the selected target. If your Q# program contains unsupported features when running integrated hybrid jobs, you receive an error message at design-time. For more information, see the [QIR wiki page](https://github.com/microsoft/qsharp/wiki/QIR). 
+The QDK provides target-specific feedback when Q# language features aren't supported for the selected target. If your Q# program contains unsupported features when running hybrid quantum jobs, you'll receive an error message at design-time. For more information, see the [QIR wiki page](https://github.com/microsoft/qsharp/wiki/QIR).
 
 > [!NOTE]
-> You need to select the appropriate **QIR Adaptive RI** target profile to obtain appropriate feedback when using Q# features that the target does not support.
+> You need to select the appropriate **QIR Adaptive RI** target profile to obtain appropriate feedback when using Q# features that the target doesn't support.
 
-Copy the following code into a Q# file, and add the subsequent code snippets to see the supported features in action.
+To see the supported features in action, copy the following code into a Q# file and add the subsequent code snippets.
 
 ```qsharp
 namespace HybridIntegrated {
@@ -235,9 +232,9 @@ Quantinuum supports mid-circuit measurement, that is, branching based on measure
         }
 ```
 
-## Estimating the cost of an integrated hybrid job
+## Estimating the cost of a hybrid quantum computing job
 
-You can estimate the cost of running an integrated hybrid job on Quantinuum hardware by running it on an emulator first.
+You can estimate the cost of running a hybrid quantum computing job on Quantinuum hardware by running it on an emulator first.
 
 After a successful run on the emulator:
 
@@ -248,12 +245,11 @@ After a successful run on the emulator:
 ![Cost estimation](~/media/hybrid/cost-estimation.png)
 
 > [!NOTE]
-> Quantinuum unrolls the entire circuit and calculates the cost on all code paths, whether they are conditionally executed or not.
+> Quantinuum unrolls the entire circuit and calculates the cost on all code paths, whether they're conditionally executed or not.
 
-## Integrated hybrid samples
+## Hybrid quantum computing samples
 
-The following samples can be found in [Q# code samples repository](https://github.com/microsoft/qsharp/blob/main/samples/). They demonstrate the current feature set for integrated hybrid computing.
-
+The following samples can be found in [Q# code samples repository](https://github.com/microsoft/qsharp/blob/main/samples/). They demonstrate the current feature set for hybrid quantum computing.
 
 ### Three-qubit repetition code
 
@@ -265,16 +261,16 @@ You can find the code sample [here](https://github.com/microsoft/qsharp/blob/mai
 
 ### Iterative phase estimation
 
-This sample* program demonstrates an iterative phase estimation within Q#. It uses iterative phase estimation to calculate an inner product between two 2-dimensional vectors encoded on a target qubit and an ancilla qubit. An additional control qubit is also initialized which is the only qubit used for measurement.
+This sample program demonstrates an iterative phase estimation within Q#. It uses iterative phase estimation to calculate an inner product between two 2-dimensional vectors encoded on a target qubit and an ancilla qubit. An additional control qubit is also initialized which is the only qubit used for measurement.
 
 The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit, which is set up in the $\ket +$ state. The controlled Oracle operator generates a phase on the $\ket 1$ state of the control qubit. This can then be read by applying an H gate to the control qubit to make the phase observable when measuring.
 
 You can find the code sample [here](https://github.com/microsoft/qsharp/blob/main/samples/algorithms/DotProductViaPhaseEstimation.qs). 
 
-**This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/services/advisory/management-consulting/technology-consulting/quantum-technologies.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of :::no-loc text="QIR Adaptive RI"::: targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.*
+> [!NOTE]
+> This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/services/advisory/management-consulting/technology-consulting/quantum-technologies.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of :::no-loc text="QIR Adaptive RI"::: targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.
 
 
 ## Related content
 
-- [Distributed hybrid computing](xref:microsoft.quantum.hybrid.distributed).
-- [Interactive quantum computing: sessions](xref:microsoft.quantum.hybrid.interactive)
+- [Get started with sessions](xref:microsoft.quantum.hybrid.interactive)

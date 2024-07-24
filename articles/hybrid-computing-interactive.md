@@ -7,8 +7,9 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: get-started
 no-loc: ['Q#', '$$v', Variational Quantum Eigensolver, Quantum Approximate Optimization Algorithm, target, targets]
-title: Introduction to Sessions
+title: Get Started with Sessions
 uid: microsoft.quantum.hybrid.interactive
+
 #customer intent: As a quantum developer, I want to understand the architecture of interactive sessions.
 ---
 
@@ -37,8 +38,6 @@ A session is a logical grouping of one or more jobs submitted to a single target
 
 In sessions, the client compute resource may be moved to the cloud, resulting in lower-latency and the ability to repeat execution of the quantum circuit with different parameters. Jobs can be grouped logically into one session, and the jobs in that session can be prioritized over non-session jobs. Although the qubit states don't persist between jobs, a session allows for shorter queue times for jobs and longer running problems.
 
-![Interactive quantum computing](~/media/hybrid/interactive.png)
-
 Sessions allow you to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. You'll be able to run complex algorithms to better organize and track your individual quantum computing jobs.
 
 A key user scenario where you may want to combine jobs in a session is *parameterized* quantum algorithms where the output of one quantum computing job informs the parameters of the next quantum computing job. The most common examples of this type of algorithm are :::no-loc text="Variational Quantum Eigensolvers"::: (VQE) and :::no-loc text="Quantum Approximate Optimization Algorithms":::  (QAOA).
@@ -47,9 +46,9 @@ A key user scenario where you may want to combine jobs in a session is *paramete
 
 Sessions are supported on all quantum computing hardware providers. In some cases, jobs submitted within a session are prioritized in the queue of that target. For more information, see [Target behavior](#target-behavior).
 
-## Get started with sessions
+## How to create a session
 
-Sessions are managed with Python and can be created for any QIR quantum programs, including Q#, Qiskit, and Cirq programs.
+To create a session, you need to follow these steps:
 
 ### [Q# + Python](#tab/tabid-iqsharp)
 
@@ -242,5 +241,5 @@ If you choose to submit jobs within a session to a [Quantinuum target](xref:micr
 
 ## Related content
 
-- [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions)
-- [Integrated quantum computing](xref:microsoft.quantum.hybrid.integrated)
+- [How to manage your sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions)
+- [Run hybrid quantum computing](xref:microsoft.quantum.hybrid.integrated)
