@@ -28,7 +28,7 @@ Azure Quantum is available through three development environments:
 
 The option you choose for running Q# programs depends on your coding experience, quantum knowledge, and goals. Because each option has different features and functionality, you typically use them together, such as writing Q# programs with the QDK extension in VS Code while managing your quantum workspace in the Azure portal. For more information, see the following table:
 
-| &nbsp;  | [Azure Quantum website](#azure-quantum-website) | [Azure portal](#azure-portal) | [Visual Studio Code](#visual-studio-code) |
+| &nbsp;  | Azure Quantum website | Azure portal | Visual Studio Code |
 |-----|:-----:|:-----:|:-----:|
 | Built-in Q# support | &#10004; |  &#10004;  |  &nbsp; &#10004; * |
 | QPU access | &#10004; |  &#10004;  |  &nbsp; &nbsp; &#10004; **  |
