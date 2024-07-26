@@ -22,7 +22,7 @@ In this article, you learn the differences between each option and how to choose
 
 Azure Quantum is available through three development environments:
 
-- **Azure Quantum website:** Use Copilot to write, run, and explain Q# code in your browser. No installation or Azure account required.
+- [**Azure Quantum website:**](#azure-quantum-website) Use Copilot to write, run, and explain Q# code in your browser. No installation or Azure account required.
 - **Azure portal:** Manage your Azure subscription and Azure Quantum workspace, where you can write and run Q# and Python programs in Jupyter Notebooks. No installation required.
 - **Visual Studio Code:** Write, run, and debug quantum code in your local environment, using Q# as a standalone program or with Python. Installation required.
 
