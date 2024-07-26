@@ -11,7 +11,7 @@ title: Copilot in Azure Quantum
 uid: microsoft.quantum.get-started.azure-quantum
 ---
 
-# Explore the Azure Quantum website
+# Copilot in Azure Quantum 
 
 Get started with quantum computing, discover the latest quantum breakthroughs, and create and run quantum programs with the help of the Copilot in Azure Quantum on the [Azure Quantum website](https://quantum.microsoft.com/).
 
