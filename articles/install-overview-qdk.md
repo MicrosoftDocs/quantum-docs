@@ -23,7 +23,7 @@ In this article, you learn how to install the Azure Quantum Development Kit (QDK
 
 ## Install the QDK extension
 
-To use the QDK in Visual Studio Code, install the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). You can also use the QDK in [VS Code for the Web](https://vscode.dev/quantum) without installing the extension, but you won't have all the features of VS Code Desktop. For more information, see [Different ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work).
+To use the QDK in Visual Studio Code, install the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). You can also use the QDK in [VS Code for the Web](https://vscode.dev/quantum) without installing the extension, but you won't have all the features of VS Code Desktop. For more information, see [Different ways to run Q# programs](xref:microsoft.quantum.qsharp-ways-to-work).
 
 > [!NOTE]
 > If you used previous versions of the QDK, run `python -m pip uninstall qsharp qsharp-core qsharp-chemistry azure-quantum` to avoid package version conflicts.
@@ -92,6 +92,6 @@ To test your setup, see [Submit Q# jobs to Azure Quantum](xref:microsoft.quantum
 
 ## Related content
 
-- [Different ways to work with Q#](xref:microsoft.quantum.qsharp-ways-to-work)
+- [Different ways to run Q# programs](xref:microsoft.quantum.qsharp-ways-to-work)
 - [Quickstart: Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart)
 - [Update the QDK to the latest version](xref:microsoft.quantum.update-qdk)

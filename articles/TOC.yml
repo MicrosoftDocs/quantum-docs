@@ -11,7 +11,7 @@
 - name: Get started
   expanded: true
   items:
-  - name: Copilot in Azure Quantum
+  - name: Explore Copilot in Azure Quantum
     href: get-started-azure-quantum.md
   - name: Create an Azure Quantum workspace
     href: how-to-create-workspace.md
@@ -87,7 +87,7 @@
     items: 
     - name: Introduction to Q#
       href: qsharp-overview.md
-    - name: Ways to work with Q#
+    - name: Ways to run Q# programs
       href: qsharp-ways-to-work.md
     - name: Create your first Q# program
       href: qsharp-quickstart.md

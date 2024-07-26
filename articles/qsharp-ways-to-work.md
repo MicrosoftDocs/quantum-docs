@@ -12,7 +12,7 @@ uid: microsoft.quantum.qsharp-ways-to-work
 # Customer intent: As a new quantum programmer, I want to understand the pros and cons of each Q# environment so that I can choose the best one for my needs.
 ---
 
-# Different ways to work with Q#
+# Different ways to run Q# programs
 
 Azure Quantum offers different development options for writing and running quantum programs. Each environment uses the Quantum Development Kit (QDK), a set of open-source tools that includes the Q# programming language. For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
