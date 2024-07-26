@@ -81,6 +81,52 @@
       href: /azure/architecture/guide/quantum/devops-for-quantum-computing?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
     - name: Quantum computing integration with classical apps
       href: /azure/architecture/example-scenario/quantum/quantum-computing-integration-with-classical-apps?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
+- name: Quantum programming
+  items: 
+  - name: Get started with Q#
+    items: 
+    - name: Introduction to Q#
+      href: qsharp-overview.md
+    - name: Ways to work with Q#
+      href: qsharp-ways-to-work.md
+    - name: Create your first Q# program
+      href: qsharp-quickstart.md
+  - name: Tutorials for Q#
+    items:
+    - name: Quantum random number generator
+      href: tutorial-qdk-quantum-random-number-generator.md
+    - name: Quantum entanglement
+      href: tutorial-qdk-explore-entanglement.md
+    - name: Grover's algorithm
+      href: tutorial-qdk-grovers-search.md
+    - name: Quantum Fourier Transform
+      href: tutorial-qdk-qubit-level-program.md
+  - name: How-to guides
+    items:
+    - name: Work with Q# projects
+      href: how-to-work-with-qsharp-projects.md
+    - name: Debug and test your Q# code
+      href: testing-debugging.md
+    - name: Visualize Q# circuit diagrams
+      href: how-to-visualize-circuits.md
+    - name: Perform long-running experiments
+      href: how-to-long-running-experiments.md
+    - name: Adapt Qiskit samples to Azure Quantum
+      href: how-to-adapt-qiskit.md
+  - name: Run quantum programs with QIR languages
+    items:
+    - name: Submit a circuit with Qiskit
+      href: quickstart-microsoft-qiskit.md
+    - name: Submit a circuit with Cirq
+      href: quickstart-microsoft-cirq.md
+    - name: Submit a circuit in provider-specific format
+      href: quickstart-microsoft-provider-format.md
+  - name: Reference guides for Q#
+    items:
+    - name: VS Code reference for Q# programs
+      href: vscode-qsharp-reference.md
+    - name: Language reference for Q#
+      href: user-guide/language/toc.yml
 - name: Hybrid quantum computing (QC)
   items: 
   - name: An introduction to hybrid QC
@@ -129,52 +175,6 @@
       href: tutorial-resource-estimator-chemistry.md
     - name: Resource estimation with QIR
       href: tutorial-resource-estimator-qir.md
-- name: Quantum programming
-  items: 
-  - name: Get started with Q#
-    items: 
-    - name: Introduction to Q#
-      href: qsharp-overview.md
-    - name: Ways to work with Q#
-      href: qsharp-ways-to-work.md
-    - name: Create your first Q# program
-      href: qsharp-quickstart.md
-  - name: Tutorials for Q#
-    items:
-    - name: Quantum random number generator
-      href: tutorial-qdk-quantum-random-number-generator.md
-    - name: Quantum entanglement
-      href: tutorial-qdk-explore-entanglement.md
-    - name: Grover's algorithm
-      href: tutorial-qdk-grovers-search.md
-    - name: Quantum Fourier Transform
-      href: tutorial-qdk-qubit-level-program.md
-  - name: How-to guides
-    items:
-    - name: Work with Q# projects
-      href: how-to-work-with-qsharp-projects.md
-    - name: Debug and test your Q# code
-      href: testing-debugging.md
-    - name: Visualize Q# circuit diagrams
-      href: how-to-visualize-circuits.md
-    - name: Perform long-running experiments
-      href: how-to-long-running-experiments.md
-    - name: Adapt Qiskit samples to Azure Quantum
-      href: how-to-adapt-qiskit.md
-  - name: Run quantum programs with QIR languages
-    items:
-    - name: Submit a circuit with Qiskit
-      href: quickstart-microsoft-qiskit.md
-    - name: Submit a circuit with Cirq
-      href: quickstart-microsoft-cirq.md
-    - name: Submit a circuit in provider-specific format
-      href: quickstart-microsoft-provider-format.md
-  - name: Reference guides for Q#
-    items:
-    - name: VS Code reference for Q# programs
-      href: vscode-qsharp-reference.md
-    - name: Language reference for Q#
-      href: user-guide/language/toc.yml
 - name: Quantum simulators
   items:
   - name: Sparse simulator
