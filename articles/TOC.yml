@@ -11,7 +11,7 @@
 - name: Get started
   expanded: true
   items:
-  - name: Explore Azure Quantum
+  - name: Copilot in Azure Quantum
     href: get-started-azure-quantum.md
   - name: Create an Azure Quantum workspace
     href: how-to-create-workspace.md
