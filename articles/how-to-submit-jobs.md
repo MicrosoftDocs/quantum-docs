@@ -15,7 +15,7 @@ zone_pivot_groups: azurequantum-quantumcomputing-ide
 
 # Get started with Q# programs and Visual Studio Code
 
-Learn how to use VS Code to create and submit Q#, Jupyter Notebook, or Python quantum computing jobs to Azure Quantum.
+Learn how to use Visual Studio Code to create and submit Q# programs. You can submit quantum computing jobs to Azure Quantum as a standalone Q# program, combine Q# with Python in a Q# project, and run a Jupyter Notebook.```
 
 
 ::: zone pivot="ide-qsharp"
