@@ -217,11 +217,11 @@ The *qsharp.json* manifest file contains the *author* and *license* fields:
 
 ### Q\# source files
 
-The main file, Main.qs, contains the entry point and references the `TeleportationOperations.TeleportLib` namespace from TeleportLib.qs.
+The main file, Main.qs, contains the entry point and references the `TeleportOperations.TeleportLib` namespace from TeleportLib.qs.
 
 ```qsharp
 
-    open TeleportationOperations.TeleportLib;   // references the namespace from TeleportLib.qs
+    open TeleportOperations.TeleportLib;   // references the namespace from TeleportLib.qs
 
     operation Main() : Unit {
         use msg = Qubit();
@@ -244,7 +244,7 @@ The main file, Main.qs, contains the entry point and references the `Teleportati
 
 ```qsharp
 
-    open TeleportationOperations.PrepareState.PrepareStateLib;     // references the namespace in PrepareStateLib.qs
+    open TeleportOperations.PrepareState.PrepareStateLib;     // references the namespace in PrepareStateLib.qs
  
     operation Teleport(msg : Qubit, target : Qubit) : Unit {
         use here = Qubit();
