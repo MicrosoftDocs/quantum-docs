@@ -22,12 +22,9 @@ As a quantum programming language, Q# meets the following language, compiler, an
 - **Integrates quantum and classical computing:** The ability to perform classical and quantum computations is essential in a universal quantum computer.
 - **Respects the laws of physics:** Q# and quantum algorithms follow the rules of quantum physics. For example, you can't directly copy or access the qubit state in Q#.
 
-> [!NOTE]
-> You can use Q# by itself or with Python in various IDEs. For more information, see [Different ways to run Q# programs](xref:microsoft.quantum.qsharp-ways-to-work).
-
 ## Structure of a Q# program
 
-Before you start writing quantum programs, it's important to understand their structure and components. Consider the following Q# program that creates a superposition state:
+Before you start writing quantum programs, it's important to understand their structure and components. As an example, consider the following Q# program that creates a superposition state:
 
 ```qsharp
 namespace Superposition {
@@ -197,25 +194,45 @@ namespace Superposition {
 
 ## Develop quantum programs with Q# and Azure Quantum
 
-The following diagram shows the stages through which a quantum program goes from idea to complete implementation on Azure Quantum, and the tools offered for each stage.
+Q# and Azure Quantum are a powerful combination for developing and running quantum programs. With Q# and Azure Quantum, you can write quantum programs, simulate their behavior, estimate resource requirements, and run them on real quantum hardware. This integration allows you to explore the potential of quantum computing and develop innovative solutions for complex problems. Whether you are a beginner or an experienced quantum developer, Q# and Azure Quantum provide the tools and resources you need to unlock the power of quantum computing.
 
-:::image type="content" source="~/media/quantum-development-kit-flow-diagram.svg" alt-text="Diagram showing the workflow of quantum programming development.":::
+The following diagram shows the stages through which a quantum program passes when you develop it with Q# and Azure Quantum. Your program starts with the development environment and ends with the submission of the job to real quantum hardware. 
+
+:::image type="content" source="media/quantum-development-kit-flow-diagram.svg" alt-text="Diagram showing the workflow of quantum programming development.":::
+
+Let's break down the steps in the diagram.
 
 ### Choose your development environment
 
-Run your quantum programs in your preferred development environment. You can use the online code editor in the Azure Quantum website, the hosted Jupyter Notebooks in your Azure Quantum workspace in the Azure portal, or your own local development environment. For more information, see [Different ways to run Q# programs](xref:microsoft.quantum.qsharp-ways-to-work).
+Run your quantum programs in your preferred development environment. You can use the online code editor in the Azure Quantum website, the hosted Jupyter Notebooks in your Azure Quantum workspace in the Azure portal, or a local development environment with Visual Studio Code. For more information, see [Different ways to run Q# programs](xref:microsoft.quantum.qsharp-ways-to-work).
 
 ### Write your quantum program
 
-The QDK offers support for the Q#, [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit), and [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq) languages for quantum computing. To get started, see [Quickstart: Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart).
+You can write quantum programs in Q# using the Quantum Development Kit (QDK). To get started, see [Quickstart: Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart).
+
+Besides Q#, the QDK offers support for other languages for quantum computing, such as [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) and [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq).
 
 ### Integrate with Python
 
-The QDK allows you to integrate Q# programs with Python. You can use a [Python program](xref:microsoft.quantum.submit-jobs?pivots=ide-python) to call Q# operations. 
+You can use Q# by itself or together with Python in various IDEs. For example, you can use a Q# project with a [Python host program](xref:microsoft.quantum.submit-jobs?pivots=ide-python) to call Q# operations. You can also integrate Q# with Python in Jupyter Notebooks. For more information, see [Different ways to run Q# programs](xref:microsoft.quantum.qsharp-ways-to-work#integration-of-q-and-python).
+
+#### The %%qsharp command
+
+By default, Q# programs in Jupyter Notebooks use the `ipykernel` Python package. To add Q# code to a notebook cell, use the `%%qsharp` command, which is enabled with the `qsharp` Python package, followed by your Q# code.
+
+When using `%%qsharp`, keep the following in mind:
+
+- You must first run `import qsharp` to enable `%%qsharp`.
+- `%%qsharp` scopes to the notebook cell in which it appears and changes the cell type from Python to Q#.
+- You can't put a Python statement before or after `%%qsharp`.
+- Q# code that follows `%%qsharp` must adhere to Q# syntax. For example, use `//` instead of `#` to denote comments and `;` to end code lines.
+
+> [!NOTE]
+> Azure notebooks in the Azure portal include the latest versions of the `qsharp` and `azure-quantum` Python packages, so you don't need to install anything. For more information, see [Get started with Q# and Azure Quantum notebooks](xref:microsoft.quantum.get-started.notebooks).
 
 ### Estimate resources
 
-Before running on quantum hardware, you’ll need to figure out whether your program can run on existing hardware, and how many resources it will consume.
+Before running on real quantum hardware, you’ll need to figure out whether your program can run on existing hardware, and how many resources it'll consume.
 
 The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator) allows you to assess architectural decisions, compare qubit technologies, and determine the resources needed to execute a given quantum algorithm. You can choose from pre-defined fault-tolerant protocols and specify assumptions of the underlying physical qubit model.
 
@@ -224,11 +241,11 @@ For more information, see [Run your first resource estimate](xref:microsoft.quan
 > [!NOTE]
 > The Azure Quantum Resources Estimator is free of charge and doesn't require an Azure account.
 
-### Run program in simulator
+### Run your program in simulation
 
 When you compile and run a quantum program, the QDK creates an instance of the quantum simulator and passes the Q# code to it. The simulator uses the Q# code to create qubits (simulations of quantum particles) and apply transformations to modify their state. The results of the quantum operations in the simulator are then returned to the program. Isolating the Q# code in the simulator ensures that the algorithms follow the laws of quantum physics and can run correctly on quantum computers.
 
-### Submit jobs to the Azure Quantum service
+### Submit your program to real quantum hardware
 
 You can submit your Q# programs (also known as jobs) to Azure Quantum through your preferred development environment, both locally and online. For more information, see [how to submit Q# jobs](xref:microsoft.quantum.submit-jobs). You can also run and submit quantum circuits written in Qiskit and Cirq languages.
 

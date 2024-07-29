@@ -72,21 +72,6 @@ Quantum workspaces include [Azure Quantum notebooks](xref:microsoft.quantum.get-
 
 You can also use the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) in Azure notebooks to estimate the physical resources required to run your Qiskit and QIR programs. For more information, see [Run the Resource Estimator in the Azure portal](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
-### The %%qsharp command
-
-By default, Q# programs in Jupyter Notebooks use the `ipykernel` Python package. To add Q# code to a notebook cell, use the `%%qsharp` command, which is enabled with the `qsharp` Python package, followed by your Q# code.
-
-When using `%%qsharp`, keep the following in mind:
-
-- You must first run `import qsharp` to enable `%%qsharp`.
-- `%%qsharp` scopes to the notebook cell in which it appears and changes the cell type from Python to Q#.
-- You can't put a Python statement before or after `%%qsharp`.
-- Q# code that follows `%%qsharp` must adhere to Q# syntax. For example, use `//` instead of `#` to denote comments and `;` to end code lines.
-> [!NOTE]
-> Azure notebooks in the Azure portal include the latest versions of the `qsharp` and `azure-quantum` Python packages, so you don't need to install anything.
-
-For more information, see [Get started with Q# and Azure Quantum notebooks](xref:microsoft.quantum.get-started.notebooks).
-
 ### Is the Azure portal right for me?
 
 From the Azure portal, you can grant a group of users, like your team members or students, access to your quantum workspace. If you want to manage your subscriptions, review your invoices, or add quantum providers, the Azure portal is for you.
@@ -120,7 +105,7 @@ The following table shows how to use Q# with and without Python in VS Code:
 | --- | --- | --- |
 | Q# | .qs | A Q# program that contains only Q# code. |
 | Q# and Python | .qs and .py | The Python program is a host program that, at some point in its routine, calls and uses the results of the Q# program. This is typically for complex projects. |
-| Jupyter Notebook | .ipynb | The Python kernel supports both code and text cells. By default, code cells use Python, but you can change them to Q# with the `%%qsharp` command. This means you can have Python code, Q# code, and explanatory text in one file. For more information, see [The %%qsharp command](#the-qsharp-command). |
+| Jupyter Notebook | .ipynb | The Python kernel supports both code and text cells. By default, code cells use Python, but you can change them to Q# with the `%%qsharp` command. This means you can have Python code, Q# code, and explanatory text in one file. For more information, see [The %%qsharp command](xref:microsoft.quantum.qsharp-overview#the-qsharp-command). |
 
 ### Is Visual Studio Code right for me?
 

@@ -4,13 +4,15 @@
   items:
   - name: What is Azure Quantum?
     href: overview-azure-quantum.md
-  - name: Understanding quantum computing
+  - name: Understand quantum computing
     href: overview-understanding-quantum-computing.md
   - name: Microsoft's quantum machine
     href: overview-microsoft-quantum-machine.md
 - name: Get started
   expanded: true
   items:
+  - name: Ways to run Q# programs
+    href: qsharp-ways-to-work.md
   - name: Explore Copilot in Azure Quantum
     href: get-started-azure-quantum.md
   - name: Create an Azure Quantum workspace
@@ -19,8 +21,6 @@
     href: get-started-jupyter-notebook.md
   - name: Set up the Quantum Development Kit
     href: install-overview-qdk.md
-  - name: Get started with Q# and VS Code
-    href: how-to-submit-jobs.md
 - name: Manage Azure Quantum
   items:
   - name: Users and workspaces
@@ -87,8 +87,6 @@
     items: 
     - name: Introduction to Q#
       href: qsharp-overview.md
-    - name: Ways to run Q# programs
-      href: qsharp-ways-to-work.md
     - name: Create your first Q# program
       href: qsharp-quickstart.md
   - name: Tutorials for Q#
@@ -103,6 +101,8 @@
       href: tutorial-qdk-qubit-level-program.md
   - name: How-to guides
     items:
+    - name: Submit jobs with Q# and VS Code
+      href: how-to-submit-jobs.md
     - name: Work with Q# projects
       href: how-to-work-with-qsharp-projects.md
     - name: Debug and test your Q# code
