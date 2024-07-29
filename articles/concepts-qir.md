@@ -104,6 +104,6 @@ Another application is to use the standard LLVM “pass” infrastructure to cre
 
 ## Related content
 
-- [What is Q#?](xref:microsoft.quantum.qsharp-overview)
+- [Introduction to Q#](xref:microsoft.quantum.qsharp-overview)
 - [Introduction to resource estimation](xref:microsoft.quantum.overview.intro-resource-estimator)
 - [Rigetti provider](xref:microsoft.quantum.providers.rigetti)

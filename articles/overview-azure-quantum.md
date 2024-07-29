@@ -52,7 +52,7 @@ A quantum program can be seen as a particular set of classical subroutines which
 
 Q# is a standalone language offering a high level of abstraction. There is no notion of a quantum state or a circuit; instead, Q# implements programs in terms of statements and expressions, much like classical programming languages. Thus, the Q# language supports the integration of rich classical and quantum computing.
 
-For more information, see [What is Q#?](xref:microsoft.quantum.qsharp-overview).
+For more information, see [Introduction to Q#](xref:microsoft.quantum.qsharp-overview).
 
 ## How can I write Q# quantum programs?
 

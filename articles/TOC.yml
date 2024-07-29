@@ -11,8 +11,6 @@
 - name: Get started
   expanded: true
   items:
-  - name: Ways to run Q# programs
-    href: qsharp-ways-to-work.md
   - name: Explore Copilot in Azure Quantum
     href: get-started-azure-quantum.md
   - name: Create an Azure Quantum workspace
@@ -21,6 +19,8 @@
     href: get-started-jupyter-notebook.md
   - name: Set up the Quantum Development Kit
     href: install-overview-qdk.md
+  - name: Ways to run Q# programs
+    href: qsharp-ways-to-work.md
 - name: Manage Azure Quantum
   items:
   - name: Users and workspaces
