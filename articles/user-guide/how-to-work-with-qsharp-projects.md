@@ -79,16 +79,16 @@ When you're using a Python program or Jupyter Notebook cell to access Q# resourc
 
 you would set the `project_root` before making calls to any Q# operations.
 
-Assuming your Python program is in the Q# project folder, 
+Assuming your Python program is in the /src folder, 
 
 ```python
 import qsharp
 
-qsharp.init(project_root = './Teleportation_project')
+qsharp.init(project_root = '..\Teleportation_project')
 ```
 
 > [!NOTE]
-> If you are planning to compile your program to submit to the Azure Quantum service, you should also add your `target_profile` parameter to the `qsharp.init` statement. By default, `qsharp.init` sets the profile to `Unrestricted` so that you can test any quantum code in the local simulator. However, to submit a job to Azure Quantum, you may need to set the profile to `Base` or `Adaptive_RI`, for example, `qsharp.init(project_root = './Teleportation_project', target_profile = qsharp.TargeProfile.Base)`. For more information about target profiles, see [QIR target profiles](xref:microsoft.quantum.target-profiles). 
+> If you are planning to compile your program to submit to the Azure Quantum service, you should also add your `target_profile` parameter to the `qsharp.init` statement. By default, `qsharp.init` sets the profile to `Unrestricted` so that you can test any quantum code in the local simulator. However, to submit a job to Azure Quantum, you may need to set the profile to `Base` or `Adaptive_RI`, for example, `qsharp.init(project_root = '..\Teleportation_project', target_profile = qsharp.TargeProfile.Base)`. For more information about target profiles, see [QIR target profiles](xref:microsoft.quantum.target-profiles). 
 
 The path of the root folder is relative to the file that is setting it, meaning that your Q# project folder can be anywhere and the calling program doesn't necessarily have to be in the project. A valid path may also be `'./MyProjects/Teleportation_project'`, or `../../Teleportation_project`.
 
@@ -181,10 +181,10 @@ These steps apply to all Q# projects.
 1. VS Code creates a minimal qsharp.json manifest file in the folder, and adds a `/src` folder with a `Main.qs` template file. 
 1. Edit the manifest file as needed. See [Manifest file examples](#manifest-file-examples).
 1. Add and organize your Q# source files under the `/src` folder. 
-1. If you are accessing the Q# project from a Python program or Jupyter Notebook, set the [root folder path](#defining-the-project-folder-python-and-jupyter-notebook-programs) using `qsharp.init`. This example assumes your program is in the same folder as the root folder of the Q# project:
+1. If you are accessing the Q# project from a Python program or Jupyter Notebook, set the [root folder path](#defining-the-project-folder-python-and-jupyter-notebook-programs) using `qsharp.init`. This example assumes your program is in the /src folder of the Q# project:
 
     ```python
-    qsharp.init(project_root = './Teleportation_project')
+    qsharp.init(project_root = '..\Teleportation_project')
     ```
 1. If you are using only Q# files in VS Code, when you open a Q# file, the compiler searches for the qsharp.json manifest file, determines the project root folder, and then scans the subfolder for \*.qs files. 
 
@@ -289,8 +289,8 @@ import qsharp
 # set the root folder for the Q# project
 # make adjustments to the path depending on where your program is saved
 
-# this example assumes your program is in the same folder as the root folder
-qsharp.init(project_root = './Teleportation_project')
+# this example assumes your program is in the /src folder
+qsharp.init(project_root = '..\Teleportation_project')
 
 ```
 
@@ -307,7 +307,7 @@ Main.Main();
 or by using the `qsharp.eval()` statement
 
 ```python
-print (qsharp.eval("Main.Main()"));
+print (qsharp.eval("Main.Main()"))
 ```
 
 ### [Running a Python program](#tab/tabid-python-run)
@@ -324,10 +324,8 @@ import qsharp
 # make adjustments to the path depending on where your program is saved
 
 # this example assumes your program is in the same folder as the root folder
-qsharp.init(project_root = '/.Teleportation_project')
+qsharp.init(project_root = '..\Teleportation_project')
 ```
-
-If your path is valid, you see a confirmation message, `Q# initialized with configuration: {'targetProfile': 'unrestricted'}`
 
 Run the program by calling the main operation with `qsharp.eval()`
 
