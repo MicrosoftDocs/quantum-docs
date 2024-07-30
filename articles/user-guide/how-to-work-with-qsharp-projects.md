@@ -2,7 +2,7 @@
 author: bradben
 description: This article describes how to define a Q# project that makes use of multiple Q# source files, and create an externally available custom library.  
 ms.author: brbenefield
-ms.date: 07/23/2024
+ms.date: 07/30/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -85,11 +85,11 @@ Assuming your Python program is in the /src folder,
 ```python
 import qsharp
 
-qsharp.init(project_root = '..\Teleportation_project')
+qsharp.init(project_root = '../Teleportation_project')
 ```
 
 > [!NOTE]
-> If you are planning to compile your program to submit to the Azure Quantum service, you should also add your `target_profile` parameter to the `qsharp.init` statement. By default, `qsharp.init` sets the profile to `Unrestricted` so that you can test any quantum code in the local simulator. However, to submit a job to Azure Quantum, you may need to set the profile to `Base` or `Adaptive_RI`, for example, `qsharp.init(project_root = '..\Teleportation_project', target_profile = qsharp.TargeProfile.Base)`. For more information about target profiles, see [QIR target profiles](xref:microsoft.quantum.target-profiles). 
+> If you are planning to compile your program to submit to the Azure Quantum service, you should also add your `target_profile` parameter to the `qsharp.init` statement. By default, `qsharp.init` sets the profile to `Unrestricted` so that you can test any quantum code in the local simulator. However, to submit a job to Azure Quantum, you may need to set the profile to `Base` or `Adaptive_RI`, for example, `qsharp.init(project_root = '../Teleportation_project', target_profile = qsharp.TargeProfile.Base)`. For more information about target profiles, see [QIR target profiles](xref:microsoft.quantum.target-profiles). 
 
 The path of the root folder is relative to the file that is setting it, meaning that your Q# project folder can be anywhere and the calling program doesn't necessarily have to be in the project. A valid path may also be `'./MyProjects/Teleportation_project'`, or `../../Teleportation_project`.
 
@@ -185,7 +185,7 @@ These steps apply to all Q# projects.
 1. If you are accessing the Q# project from a Python program or Jupyter Notebook, set the [root folder path](#defining-the-project-folder-python-and-jupyter-notebook-programs) using `qsharp.init`. This example assumes your program is in the /src folder of the Q# project:
 
     ```python
-    qsharp.init(project_root = '..\Teleportation_project')
+    qsharp.init(project_root = '../Teleportation_project')
     ```
 1. If you are using only Q# files in VS Code, when you open a Q# file, the compiler searches for a manifest file, determines the project root folder, and then scans the subfolder for \*.qs files. 
 
@@ -291,7 +291,7 @@ import qsharp
 # make adjustments to the path depending on where your program is saved
 
 # this example assumes your program is in the /src folder
-qsharp.init(project_root = '..\Teleportation_project')
+qsharp.init(project_root = '../Teleportation_project')
 
 ```
 
@@ -325,7 +325,7 @@ import qsharp
 # make adjustments to the path depending on where your program is saved
 
 # this example assumes your program is in the same folder as the root folder
-qsharp.init(project_root = '..\Teleportation_project')
+qsharp.init(project_root = '../Teleportation_project')
 ```
 
 Run the program by calling the main operation with `qsharp.eval()`
