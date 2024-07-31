@@ -18,7 +18,7 @@ With the Azure Quantum Development Kit, you can define *Q# projects*, which are 
 
 A Q# project contains a Q# manifest file, named qsharp.json, and one or more *.qs files in a specified folder structure. When a user opens a *.qs file in VS Code, or sets the `project_root` in a Jupyter Notebook or Python file, the compiler searches the surrounding folder hierarchy for the manifest file and determines the project's scope. If no manifest file is found, the compiler operates in a single file mode.  A Q# project can be created manually or directly in VS Code. 
 
-An external Q# project is a standard Q# project that resides in another directory or on a public GitHub repository and uses `export` statements to define which functions and operations can be accessed by external programs. Programs define the external project as a dependency in their manifest file, and use `import` statements to access the items (operations, functions, newtypes, structs, and namespaces) in the external project. For more information, see [Using projects as external dependencies](#configuring-q-projects-as-external-dependencies). 
+An external Q# project is a standard Q# project that resides in another directory or on a public GitHub repository and uses `export` statements to define which functions and operations can be accessed by external programs. Programs define the external project as a dependency in their manifest file, and use `import` statements to access the items (operations, functions, structs, and namespaces) in the external project. For more information, see [Using projects as external dependencies](#configuring-q-projects-as-external-dependencies). 
 
 ## Prerequisites
 
@@ -337,17 +337,18 @@ print (qsharp.eval("Main.Main()"))
 
 ## Configuring Q# projects as external dependencies
 
-A Q# project can also be configured as an external dependency for other projects, acting much like a library, where the functions and operations in the external Q# project are made available to multiple Q# projects. An external dependency can reside on a drive share or in a GitHub repository. 
+A Q# project can also be configured as an external dependency for other projects, acting much like a library, where the functions and operations in the external Q# project are made available to multiple Q# projects. An external dependency can reside on a drive share or published to a public GitHub repository. 
 
 To use a Q# project as an external dependency, you need to:
 
 - Add the external project as a dependency in the manifest file of the calling project.
+- If the external project is published to GitHub, add the "files" property to the manifest file of the external project. 
 - Add `export` statements to the external project. 
 - Add `import` statements to the calling project.
 
-### Adding dependencies to the manifest files
+### Configuring the manifest files
 
-External Q# projects can reside on a drive share or in a GitHub repository.
+External Q# projects can reside on a local or network drive share, or published to a public GitHub repository.
 
 #### The calling project manifest file
 
@@ -398,7 +399,7 @@ If your external Q# project is published to a public GitHub repository, you **mu
 }
 ```
 
-The "files" property is optional for an external project on a drive share. 
+The "files" property is optional for an external project being imported via `"path"` (that is, a local filepath-based import). It is only required for projects published to GitHub.
 
 
 ### Using the export statement
