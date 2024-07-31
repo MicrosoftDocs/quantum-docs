@@ -345,11 +345,13 @@ To use a Q# project as an external dependency, you need to:
 - Add `export` statements to the external project. 
 - Add `import` statements to the calling project.
 
-### Adding dependencies to the manifest file
+### Adding dependencies to the manifest files
 
 External Q# projects can reside on a drive share or in a GitHub repository.
 
-To add a dependency to an external project on a drive share
+#### The calling project manifest file
+
+To add a dependency to an external project on a drive share, define the dependency in the manifest file of the calling project.
 
 ```json
 {
@@ -365,7 +367,7 @@ To add a dependency to an external project on a drive share
 
 where "MyDependency" is a user defined string that identifies the namespace when calling an operation. For example, if you create a dependency named "MyMathFunctions", you would call a function from that dependency with `MyMathFunctions.MyFunction()`.
 
-To add a dependency to a project in a GitHub repository
+To add a dependency to a project that is published to a public GitHub repository
 
 ```json
 {
@@ -383,6 +385,21 @@ To add a dependency to a project in a GitHub repository
 ```
 
 - For GitHub dependencies, "ref" refers to a GitHub [refspec](https://git-scm.com/book/en/v2/Git-Internals-The-Refspec). Microsoft recommends always using a commit hash, so you can rely on a specific version of your dependency.
+ 
+#### The external project manifest file
+
+If your external Q# project is published to a public GitHub repository, you **must** add the *files* property to the manifest file of the external project, including all files used in the project.
+
+```json
+{
+    "author": "Microsoft",
+    "license": "MIT",
+    "files": [ "src/MyMathFunctions.qs", "src/Strings/MyStringFunctions.qs" ]
+}
+```
+
+The "files" property is optional for an external project on a drive share. 
+
 
 ### Using the export statement
 
