@@ -97,7 +97,7 @@ Here's how it works:
 Entanglement can be seen as the lack of separability: a
 state is entangled when it isn't separable.
 
-A quantum state is separable if it can be written as a product state of the subsystems. That is, a state $\ket{\phi}_{AB}$ is separable if it can be written as a combination of product states of the subsystems, that is $\ket{\phi}_{AB} = \ket{a}_A \otimes \ket{b}_B$.
+A quantum state is separable if it can be written as a product state of the subsystems. That is, a state $\ket{\phi}_{\text{AB}}$ is separable if it can be written as a combination of product states of the subsystems, that is $\ket{\phi}_{\text{AB}} = \ket{a}_A \otimes \ket{b}_B$.
 
 ### Entanglement in pure states
 
@@ -119,7 +119,7 @@ At first, the state $\ket{\psi}_{AB}$ <!-- Port works --> doesn't look like a pr
 <!-- Port is raw code -->
 $$ \ket{\psi}_{AB} = \frac{1}{\sqrt{2}} (\ket{0}_A +\ket{1}_A) \otimes \frac{1}{\sqrt{2}} (\ket{0}_B +\ket{1}_B)= \ket{+}_A \ket{+}_B$$
 
-the state $\ket{\psi}_{AB}$ <!-- Port works --> is a product state, therefore it's not entangled.  
+the state $\ket{\psi}_{\text{AB}}$ <!-- Port works --> is a product state, therefore it's not entangled.  
 
 ### Entanglement in mixed states
 

@@ -42,6 +42,9 @@ Therefore, the Resource Estimator takes a set of inputs, with pre-defined values
 - [Distillation units](#distillation-units) to specify T factories distillation algorithms.
 - [Pareto frontier estimation](#pareto-frontier-estimation) to run multiple estimates of number of qubits and runtime for the same algorithm.
 
+> [!TIP]
+> If you already know some pre-calculated estimates for an operation, you can also incorporate them and optimize the execution of the Resource Estimator. For more information, see [How to use known estimates with the Resource Estimator](xref:microsoft.quantum.resource-estimator-known-estimates).
+
 ## Physical qubit parameters
 
 When the Resource Estimator models the physical qubit assumptions, it uses two different physical instruction sets to operate the qubits. The physical instruction set can be either *gate-based* or *Majorana*. A gate-based instruction set provides single-qubit measurement, single-qubit gates (including T gates), and two-qubit gates. A Majorana instruction set provides a physical T gate, single-qubit measurement and two-qubit joint measurement operations.

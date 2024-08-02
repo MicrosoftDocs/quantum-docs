@@ -167,7 +167,7 @@
       href: resource-estimator-known-estimates.md
     - name: Handle large programs
       href: resource-estimator-handle-large-programs.md
-    - name: Resource Estimator and cryptography
+    - name: Analyze cryptographic protocols 
       href: resource-estimator-quantum-safe-planning.md
   - name: Tutorials with the Resource Estimator
     items:
