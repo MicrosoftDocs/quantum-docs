@@ -554,7 +554,7 @@ import MyTeleportLib.MyFunction;        // "Main" namespace is implied
 import MyTeleportLib.MathFunctions.MyFunction;   // "Math" namespace must be explicit 
 ```
 
-For more information about namespace behavior, see [User namespaces](xref:microsoft.quantum.user-guide-qdk.overview.program-structure#user-namespces).
+For more information about namespace behavior, see [User namespaces](xref:microsoft.quantum.qsharp-overview#user-namespaces).
 
 
 
