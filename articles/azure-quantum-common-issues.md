@@ -17,6 +17,27 @@ uid: microsoft.quantum.azure.common-issues
 
 When working with the Azure Quantum service, you may run into these common issues. See how you can solve them.
 
+## Connecting to your workspace
+
+### Issue: Unable to authenticate to Azure Quantum via pytket-azure CI
+
+When trying to authenticate to Azure Quantum via the `pytket-azure` package in a CI environment using the environment variables "AZURE_TENANT_ID", "AZURE_CLIENT_ID", and "AZURE_CLIENT_SECRET", you may encounter the error:
+
+```cmd
+Code: InsufficientPermissions
+Message: There are not enough permissions to perform this operation.
+```
+
+To resolve this issue, try to authenticate using a connection string and the environment variable "AZURE_QUANTUM_CONNECTION_STRING" instead. For more information, see [Connect with a connection string](xref:microsoft.quantum.how-to.connect-workspace#connect-with-a-connection-string).
+
+```python
+connection_string = "[Copy connection string]" 
+
+import os 
+
+os.environ["AZURE_QUANTUM_CONNECTION_STRING"] = connection_string 
+```
+
 ## Submitting jobs
 
 ### Issue: Missing targets
@@ -136,6 +157,7 @@ This error may be caused by a dependency conflict with a previous version of *py
 ```Shell
 pip install --upgrade azure-quantum[qiskit]
 ```
+
 ### Issue: Retrieving basic information about failed jobs
 
 After you submit a job to a hardware target, your job may sit in the queue for several hours, or even one or two days, before failing. 

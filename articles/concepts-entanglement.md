@@ -64,6 +64,15 @@ $$\ket{\psi^{-}}=\frac1{\sqrt2}\ket{01} - \frac1{\sqrt2}\ket{10} $$
 
 You can use quantum operations to create quantum entanglement. One of the most common ways to create entanglement to two qubits in the state $|00\rangle$ is by applying the Hadamard operation $H$ and the controlled-NOT operation $CNOT$ to transform them into the Bell state $\ket{\phi^+}=\frac1{\sqrt2}(|00\rangle+|11\rangle)$.
 
+The $CNOT$ operation takes two qubits as input, one acts as control qubit and the other is the target qubit. The `CNOT` operation flips the state of the target qubit if, and only if, the state of the control qubit is $|1\rangle$. 
+
+|Input|Output|
+|-|-|
+|$\ket{00}$|$\ket{00}$|
+|$\ket{01}$|$\ket{01}$|
+|$\ket{10}$|$\ket{11}$|
+|$\ket{11}$|$\ket{10}$|
+
 Here's how it works:
 
 1. Take two qubits in the state $|00\rangle$. The first qubit is the control qubit and the second qubit is the target qubit.
