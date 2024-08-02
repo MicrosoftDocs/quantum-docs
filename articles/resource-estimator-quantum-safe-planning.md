@@ -1,19 +1,21 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to use the Resource Estimator to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm.
-ms.date: 01/29/2024
+ms.date: 08/01/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
-title: Resource Estimation and Cryptography
+title: Resource Estimator for Analyzing Cryptography
 uid: microsoft.quantum.resource-estimator-cryptography
+
+#customer intent: As a quantum developer, I want to use the Resource Estimator to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm, so that I can analyze the impact of quantum computing on the security of some classical encryption methods and prepare for a quantum-safe future.
 ---
 
-# Resource estimation and Cryptography
+# Analyze cryptographic protocols with the Resource Estimator
 
-The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) is available in [quantum.microsoft.com](https://quantum.microsoft.com/experience/quantum-cryptography)  to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm. This tool helps you to analyze the impact of quantum computing on the security of some classical encryption methods, and prepare for a quantum-safe future.
+The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) is available in [quantum.microsoft.com](https://quantum.microsoft.com/experience/quantum-cryptography) to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm. This tool helps you to analyze the impact of quantum computing on the security of some classical encryption methods, and prepare for a quantum-safe future.
 
 > [!NOTE]
 > To access the Resource Estimator in [quantum.microsoft.com](https://quantum.microsoft.com/experience/quantum-cryptography) you only need a Microsoft account.
