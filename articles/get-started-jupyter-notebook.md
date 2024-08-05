@@ -44,6 +44,9 @@ To get started, copy a sample notebook from the notebook gallery.
 
 To run the sample notebook, follow these steps for your selected provider.
 
+> [!NOTE]
+> Q# programs in Jupyter Notebooks don't require a `namespace` or `@EntryPoint()`. Instead, you call an operation or function directly. Jupyter Notebooks also don't display program results by default, so you must use the `Message` statement. For more information, see [Structure of a Q# program](xref:microsoft.quantum.qsharp-overview#structure-of-a-q-program).
+
 ### [IonQ](#tab/tabid-ionq)
 
 1. In **My notebooks**, select the **hello-world-qsharp-ionq** notebook. 
@@ -62,7 +65,7 @@ Some things to note:
 - **2nd cell**: Retrieves the available targets (quantum computers and simulators) in your workspace. 
 - **3rd cell**: Imports the `qsharp` package and sets the base profile for the compiler. 
 - **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the Python notebook cell. 
-0 **5th cell**: Compiles the qsharp operation using the base profile to submit to Azure Quantum.
+- **5th cell**: Compiles the qsharp operation using the base profile to submit to Azure Quantum.
 - **6th and 7th cells**: Sets the target, submits the job, and plots and displays the result. The results should be roughly split between 0 and 1. 
 
 ### [Quantinuum](#tab/tabid-qunatinuum)
@@ -83,7 +86,7 @@ Some things to note:
 - **2nd cell**: Retrieves the available targets (quantum computers and simulators) in your workspace. 
 - **3rd cell**: Imports the `qsharp` package and sets the base profile for the compiler. 
 - **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the Python notebook cell. 
-0 **5th cell**: Compiles the qsharp operation using the base profile to submit to Azure Quantum.
+- **5th cell**: Compiles the qsharp operation using the base profile to submit to Azure Quantum.
 - **6th and 7th cells**: Sets the target, submits the job, and plots and displays the result. The results should be roughly split between 0 and 1. 
 
 Looking at the histogram, you may notice that the program returned 0 every time, which is not very random. This is because the notebook was pre-populated to use the **Quantinuum Syntax Checker**, *quantinuum.sim.h1-1sc*. Using the Syntax Checker ensures that your code will run successfully on Quantinuum hardware, but also returns 0 for every quantum measurement. 
@@ -117,7 +120,7 @@ Some things to note:
 - **2nd cell**: Retrieves the available targets (quantum computers and simulators) in your workspace. 
 - **3rd cell**: Imports the `qsharp` package and sets the base profile for the compiler. 
 - **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the Python notebook cell. 
-0 **5th cell**: Compiles the qsharp operation using the base profile to submit to Azure Quantum.
+- **5th cell**: Compiles the qsharp operation using the base profile to submit to Azure Quantum.
 - **6th and 7th cells**: Sets the target, submits the job, and plots and displays the result. The results should be roughly split between 0 and 1. 
 
 ***

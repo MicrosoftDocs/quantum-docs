@@ -13,7 +13,7 @@ uid: microsoft.quantum.relnotes-qdk-2023
 
 # Release notes for the Quantum Development Kit (QDK) and Azure Quantum - 2023
 
-This article outlines updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview).
+This article outlines updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview).
 
 For 'getting started' instructions, see [Set up Azure Quantum](xref:microsoft.quantum.install-qdk.overview). For instructions on how to update your QDK to the latest version, see [Update the Quantum Development Kit (QDK) to the latest version](xref:microsoft.quantum.update-qdk).
 
