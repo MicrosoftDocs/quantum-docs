@@ -5,7 +5,7 @@ ms.author: amvivian
 ms.date: 05/13/2024
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: overwiew
+ms.topic: overview
 no-loc: [Quantum Development Kit, target, targets]
 title: Introduction to jobs
 uid: microsoft.quantum.work-with-jobs

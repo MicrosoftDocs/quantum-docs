@@ -7,15 +7,15 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.custom: devx-track-azurecli
 ms.topic: how-to
-title: Get Started with Q# Programs and VS Code 
+title: Submit Q# Programs with VS Code
 no-loc: [target, targets]
 uid: microsoft.quantum.submit-jobs
 zone_pivot_groups: azurequantum-quantumcomputing-ide
 ---
 
-# Get started with Q# programs and Visual Studio Code
+# How to submit Q# programs with Visual Studio Code
 
-In this article you will find the steps to use VC Code to create and submit Q#, Jupyter Notebook, or Python quantum computing jobs to Azure Quantum using VS Code.
+Learn how to use Visual Studio Code to create and submit Q# programs to real quantum hardware. You can submit quantum computing jobs to Azure Quantum as a standalone Q# program, combine Q# with Python in a Q# project, and run a Jupyter Notebook.
 
 
 ::: zone pivot="ide-qsharp"
@@ -36,7 +36,7 @@ In this article you will find the steps to use VC Code to create and submit Q#, 
 
 ::: zone-end
 
-## Next steps
+## Related content
 
-- [Work with Azure Quantum Jobs](xref:microsoft.quantum.work-with-jobs)
+- [Work with Azure Quantum jobs](xref:microsoft.quantum.work-with-jobs)
 - [Quantum computing providers](xref:microsoft.quantum.reference.qc-target-list)

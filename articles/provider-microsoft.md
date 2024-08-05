@@ -15,7 +15,7 @@ uid: microsoft.quantum.providers.microsoft
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
-Microsoft provides the Azure Quantum Resource Estimator target, along with several in-memory quantum simulators, as part of the [Quantum Development Kit](xref:microsoft.quantum.overview.q-sharp).
+Microsoft provides the Azure Quantum Resource Estimator target, along with several in-memory quantum simulators, as part of the [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
 ## Resource estimator
 

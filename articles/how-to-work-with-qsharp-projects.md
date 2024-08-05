@@ -7,12 +7,12 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
-title: "How to Work With Qsharp Projects"
+title: "How to Work With Q# Projects"
 uid: microsoft.quantum.qsharp-projects
 #customer intent: As a quantum developer, I want to understand how to use Q# projects to develop quantum programs and custom libraries
 ---
 
-# Work with Q# projects
+# How to work with Q# projects
 
 With the Azure Quantum Development Kit, you can define *Q# projects*, which are folder structures with multiple Q# files that can access each other's operations and functions. Projects are helpful for logically organizing your source code. You can also use projects as external dependencies, or custom libraries, that can be accessed from external sources.
 
@@ -35,7 +35,7 @@ For running Python programs, you will also need:
 
 A Q# project is defined by the presence of a manifest file, named qsharp.json, and a **src** folder (which contains the Q# source files), both of which must be in the root folder of the project. For Q# programs and external projects, the Q# compiler detects the project folder automatically. For Python programs and Jupyter Notebooks, you must specify the Q# project folder with a `qsharp.init` call. The folder structure for a Q# project, however, remains the same for all types of programs.
 
-:::image type="content" source="../media/multi-file-art.png" alt-text="Picture showing the folder hierarchy for a Q# project.":::
+:::image type="content" source="media/multi-file-art.png" alt-text="Picture showing the folder hierarchy for a Q# project.":::
 
 ### [Using a Q# program](#tab/tabid-qsharp)
 
@@ -554,7 +554,7 @@ import MyTeleportLib.MyFunction;        // "Main" namespace is implied
 import MyTeleportLib.MathFunctions.MyFunction;   // "Math" namespace must be explicit 
 ```
 
-For more information about namespace behavior, see [User namespaces](xref:microsoft.quantum.user-guide-qdk.overview.program-structure#user-namespces).
+For more information about namespace behavior, see [User namespaces](xref:microsoft.quantum.qsharp-overview#user-namespaces).
 
 
 

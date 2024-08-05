@@ -52,7 +52,7 @@ A quantum program can be seen as a particular set of classical subroutines which
 
 Q# is a standalone language offering a high level of abstraction. There is no notion of a quantum state or a circuit; instead, Q# implements programs in terms of statements and expressions, much like classical programming languages. Thus, the Q# language supports the integration of rich classical and quantum computing.
 
-For more information, see [The quantum programming language Q#](xref:microsoft.quantum.overview.q-sharp#the-quantum-programming-language-q).
+For more information, see [Introduction to Q#](xref:microsoft.quantum.qsharp-overview).
 
 ## How can I write Q# quantum programs?
 
@@ -113,5 +113,5 @@ Start using Azure Quantum:
 - [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace)
 - [Get started with Q# and Visual Studio Code](xref:microsoft.quantum.submit-jobs)
 - [Get started with Q# and Azure Quantum notebooks](xref:microsoft.quantum.get-started.notebooks)
-- [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)ç
+- [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
 - [Run a Qiskit circuit in Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)
