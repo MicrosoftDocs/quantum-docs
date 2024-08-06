@@ -12,7 +12,7 @@ uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 #customer intent: As a quantum developer, I want understand how to work with multiple sessions. 
 ---
 
-# How to manage you sessions 
+# How to manage your sessions 
 
 In this article, you learn how to manage your sessions. With sessions, you can group one or more jobs against a single target, which allows you to manage jobs effectively. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive).
 
