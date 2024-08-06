@@ -48,7 +48,7 @@ Sessions are supported on **all** quantum computing hardware providers. In some 
 
 ## How to create a session
 
-To create a session, you need to follow these steps:
+To create a session, follow these steps:
 
 ### [Q# + Python](#tab/tabid-iqsharp)
 
