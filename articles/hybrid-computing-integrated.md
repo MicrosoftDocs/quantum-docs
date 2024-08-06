@@ -274,5 +274,4 @@ You can find the code sample [here](https://github.com/microsoft/qsharp/blob/mai
 ## Related content
 
 - [Get started with sessions](xref:microsoft.quantum.hybrid.interactive)
-- [Distributed hybrid computing](xref:microsoft.quantum.hybrid.distributed)
 
