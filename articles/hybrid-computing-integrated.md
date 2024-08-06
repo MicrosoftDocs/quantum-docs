@@ -268,7 +268,7 @@ The circuit begins by encoding the pair of vectors on the target qubit and the a
 You can find the code sample [here](https://github.com/microsoft/qsharp/blob/main/samples/algorithms/DotProductViaPhaseEstimation.qs). 
 
 > [!NOTE]
-> This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/services/advisory/management-consulting/technology-consulting/quantum-technologies.html) Quantum team in Australia and falls under an MIT License. It aims to demonstrate expanded capabilities of :::no-loc text="QIR Adaptive RI"::: targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.
+> This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/services/advisory/management-consulting/technology-consulting/quantum-technologies.html) Quantum team in Australia and falls under an MIT License. It demonstrates expanded capabilities of :::no-loc text="QIR Adaptive RI"::: targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.
 
 
 ## Related content
