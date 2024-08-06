@@ -16,7 +16,7 @@ uid: microsoft.quantum.hybrid.integrated
 
 Hybrid computing combines classical and quantum computing processes to solve complex problems.
 
-In hybrid computing, the classical code controls the execution of quantum operations based on mid-circuit measurements while the physical qubits remain alive. You can use common programming techniques, such as nested conditionals, loops, and function calls, in a single quantum program to run complex problems, reducing the number of shots needed. With qubit reuse techniques, larger programs can run on machines using a smaller number of qubits.
+In hybrid computing, the classical code controls the execution of quantum operations based on mid-circuit measurements while the physical qubits remain active. You can use common programming techniques, such as nested conditionals, loops, and function calls, in a single quantum program to run complex problems, reducing the number of shots needed. With qubit reuse techniques, larger programs can run on machines using a smaller number of qubits.
 
 This article explains how to submit hybrid jobs to Azure Quantum using the [QIR Adaptive RI](xref:microsoft.quantum.target-profiles) target profile. The Adaptive RI target profile offers support for mid-circuit measurements, measurement-based control flow, qubit reset, and classical integer computation.
 
