@@ -15,11 +15,9 @@ uid: microsoft.quantum.overview.hybrid
 
 # What is hybrid quantum computing?
 
-*Hybrid quantum computing* refers to the processes and architecture of a classical computer and a quantum computer working together to solve a problem. Classical computers have always been used in quantum computing to define quantum gates, control configuration of the quantum computer, submit jobs, and process results from the quantum computer. 
+*Hybrid quantum computing* refers to the processes and architecture of a classical computer and a quantum computer working together to solve a problem. With the latest generation of hybrid quantum computing architecture available in Azure Quantum you can start programming quantum computers by mixing classical and quantum instructions together.
 
-Azure Quantum embodies a forward-looking vision for hybrid quantum computing, where certain architectures are already operational, while others are actively being developed. This approach underscores a commitment to advancing quantum computing by integrating classical and quantum computing capabilities, and by providing a platform that supports a variety of hybrid quantum computing architectures.
-
-With the latest generation of hybrid quantum computing architecture available in Azure Quantum you can start programming quantum computers by mixing classical and quantum instructions together.
+Azure Quantum embodies a forward-looking vision for hybrid quantum computing, where certain architectures are already operational, while others are actively being developed. This article describes the different approaches to hybrid quantum computing and how they can be used to optimize certain problems. 
 
 ## Grouping circuits with batch quantum computing
 
@@ -50,8 +48,7 @@ For more information, see  [Integrated quantum computing](xref:microsoft.quantum
 
 ## Running distributed quantum computing
 
-In this architecture, classical computation is working alongside logical qubits. With fully integrated classical control and longer lived logical qubits, the distributed quantum computing model enables real-time computations across quantum and distributed resources. The classical controls are longer be limited to loops, and allow for scenarios such as complex materials modeling or the evaluation of full catalytic reactions.
-
+In this architecture, classical computation is working alongside logical qubits. With fully integrated classical control and longer lived logical qubits, the distributed quantum computing model enables real-time computations across quantum and distributed resources. The classical controls are no longer limited to loops, and allow for scenarios such as complex materials modeling or the evaluation of full catalytic reactions.
 
 > [!NOTE]
 > Azure Quantum currently doesn't support distributed quantum computing.
