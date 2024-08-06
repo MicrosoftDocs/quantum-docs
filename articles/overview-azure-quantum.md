@@ -72,11 +72,6 @@ Besides supporting for Q#, the QDK offers support for Qiskit and Cirq for quantu
 
 Hybrid quantum computing refers to the processes and architecture of a classical computer and a quantum computer working together to solve a problem. With the latest generation of hybrid quantum computing architecture available in Azure Quantum you can start programming quantum computers by mixing classical and quantum instructions together. 
 
-- [Batch quantum computing](xref:microsoft.quantum.hybrid.batch): Batching multiple circuits into one job eliminates the wait between job submissions, allowing you to run multiple jobs faster. Examples of problems that can take advantage of batch quantum computing include Shor's algorithm and simple quantum phase estimation.
-- [Interactive quantum computing (Sessions)](xref:microsoft.quantum.hybrid.interactive): Jobs can be grouped logically into one session and prioritized over non-session jobs. Examples of problems that can use this approach are Variational Quantum Eigensolvers (VQE) and Quantum Approximate Optimization Algorithms (QAOA).
-- [Integrated quantum computing](xref:microsoft.quantum.hybrid.integrated): By integrating quantum and classical computing, quantum programs can move away from just circuits. Programs can now use common programming constructs to perform mid-circuit measurements, optimize and reuse qubits, and adapt in real-time to the QPU. Examples of scenarios that can take advantage of this model are adaptive phase estimation and machine learning.
-- [Distributed quantum computing](xref:microsoft.quantum.hybrid.distributed): The distributed quantum computing model enables real-time computations across quantum and distributed resources. Examples of scenarios that can take advantage of this model are complex materials modeling or the evaluation of full catalytic reactions.
-
 For more information, see [Hybrid quantum computing](xref:microsoft.quantum.overview.hybrid).
 
 ## Resource estimation in quantum computing

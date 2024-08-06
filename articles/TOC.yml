@@ -129,20 +129,16 @@
       href: user-guide/language/toc.yml
 - name: Hybrid quantum computing (QC)
   items: 
-  - name: An introduction to hybrid QC
+  - name: Introduction to hybrid QC
     href: hybrid-computing-overview.md
-  - name: Batch hybrid QC
-    href: hybrid-computing-batch.md
-  - name: Interactive hybrid QC (sessions)
+  - name: Sessions
     items:
     - name: Get started with sessions
       href: hybrid-computing-interactive.md
     - name: Manage sessions
       href: how-to-work-with-sessions.md    
-  - name: Integrated hybrid QC
+  - name: Run hybrid QC jobs
     href: hybrid-computing-integrated.md
-  - name: Distributed hybrid QC
-    href: hybrid-computing-distributed.md
   - name: Concepts for hybrid QC
     href: hybrid-computing-concepts.md
 - name: Resource Estimation

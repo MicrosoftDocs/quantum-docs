@@ -557,6 +557,16 @@
 			"redirect_document_id": false
 		},
 		{
+			"source_path": "articles/hybrid-computing-batch.md",
+			"redirect_url": "/azure/quantum/hybrid-computing-overview",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/hybrid-computing-distributed.md",
+			"redirect_url": "/azure/quantum/hybrid-computing-overview",
+			"redirect_document_id": false
+		},
+		{
 			"source_path": "articles/machines/resources-estimator.md",
 			"redirect_url": "/azure/quantum/intro-to-resource-estimation",
 			"redirect_document_id": false
