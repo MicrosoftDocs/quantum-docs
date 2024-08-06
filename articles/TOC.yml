@@ -4,25 +4,23 @@
   items:
   - name: What is Azure Quantum?
     href: overview-azure-quantum.md
-  - name: Understanding quantum computing
+  - name: Understand quantum computing
     href: overview-understanding-quantum-computing.md
-  - name: What are Q# and the Quantum Development Kit
-    href: overview-what-is-qsharp-and-qdk.md
   - name: Microsoft's quantum machine
     href: overview-microsoft-quantum-machine.md
 - name: Get started
   expanded: true
   items:
-  - name: Explore Azure Quantum
+  - name: Explore Copilot in Azure Quantum
     href: get-started-azure-quantum.md
   - name: Create an Azure Quantum workspace
     href: how-to-create-workspace.md
   - name: Get started with Azure Quantum notebooks 
     href: get-started-jupyter-notebook.md
-  - name: Get started with the Quantum Development Kit
+  - name: Set up the Quantum Development Kit
     href: install-overview-qdk.md
-  - name: Get started with Q# and VS Code
-    href: how-to-submit-jobs.md
+  - name: Ways to run Q# programs
+    href: qsharp-ways-to-work.md
 - name: Manage Azure Quantum
   items:
   - name: Users and workspaces
@@ -83,6 +81,52 @@
       href: /azure/architecture/guide/quantum/devops-for-quantum-computing?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
     - name: Quantum computing integration with classical apps
       href: /azure/architecture/example-scenario/quantum/quantum-computing-integration-with-classical-apps?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
+- name: Quantum programming
+  items: 
+  - name: Get started with Q#
+    items: 
+    - name: Introduction to Q#
+      href: qsharp-overview.md
+    - name: Create your first Q# program
+      href: qsharp-quickstart.md
+  - name: Tutorials for Q#
+    items:
+    - name: Quantum random number generator
+      href: tutorial-qdk-quantum-random-number-generator.md
+    - name: Quantum entanglement
+      href: tutorial-qdk-explore-entanglement.md
+    - name: Grover's algorithm
+      href: tutorial-qdk-grovers-search.md
+    - name: Quantum Fourier Transform
+      href: tutorial-qdk-qubit-level-program.md
+  - name: How-to guides
+    items:
+    - name: Submit jobs with Q# and VS Code
+      href: how-to-submit-jobs.md
+    - name: Work with Q# projects
+      href: how-to-work-with-qsharp-projects.md
+    - name: Debug and test your Q# code
+      href: testing-debugging.md
+    - name: Visualize Q# circuit diagrams
+      href: how-to-visualize-circuits.md
+    - name: Perform long-running experiments
+      href: how-to-long-running-experiments.md
+    - name: Adapt Qiskit samples to Azure Quantum
+      href: how-to-adapt-qiskit.md
+  - name: Run quantum programs with QIR languages
+    items:
+    - name: Submit a circuit with Qiskit
+      href: quickstart-microsoft-qiskit.md
+    - name: Submit a circuit with Cirq
+      href: quickstart-microsoft-cirq.md
+    - name: Submit a circuit in provider-specific format
+      href: quickstart-microsoft-provider-format.md
+  - name: Reference guides for Q#
+    items:
+    - name: VS Code reference for Q# programs
+      href: vscode-qsharp-reference.md
+    - name: Language reference for Q#
+      href: user-guide/language/toc.yml
 - name: Hybrid quantum computing (QC)
   items: 
   - name: Introduction to hybrid QC
@@ -119,7 +163,7 @@
       href: resource-estimator-known-estimates.md
     - name: Handle large programs
       href: resource-estimator-handle-large-programs.md
-    - name: Resource Estimator and cryptography
+    - name: Analyze cryptographic protocols 
       href: resource-estimator-quantum-safe-planning.md
   - name: Tutorials with the Resource Estimator
     items:
@@ -127,8 +171,6 @@
       href: tutorial-resource-estimator-chemistry.md
     - name: Resource estimation with QIR
       href: tutorial-resource-estimator-qir.md
-- name: Quantum programming
-  href: user-guide/toc.yml
 - name: Quantum simulators
   items:
   - name: Sparse simulator

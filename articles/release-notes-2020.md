@@ -13,7 +13,7 @@ uid: microsoft.quantum.relnotes-qdk-2020
 
 # Release notes for Quantum Development Kit (QDK) and Azure Quantum - 2020
 
-This article outlines updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.overview.q-sharp) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview) in 2020.
+This article outlines updates to the [Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview) and the [Azure Quantum service](xref:microsoft.quantum.azure-quantum-overview) in 2020.
 
 ## QDK version 0.14.2011120240
 
@@ -21,7 +21,7 @@ This article outlines updates to the [Quantum Development Kit (QDK)](xref:micros
 
 - Improved compiler performance with faster reference loading.
 - Added an [ANTLR grammar for Q#](https://github.com/microsoft/qsharp-language/tree/main/Specifications/Language/5_Grammar) to the Q# language specification.
-- Updated the [`Microsoft.Quantum.Preparation` namespace](xref:Microsoft.Quantum.Preparation) so it is more consistent with style guide and API design principles, and to support purified mixed states with more data (see [proposal](https://github.com/microsoft/QuantumLibraries/issues/344), [review notes](https://github.com/microsoft/QuantumLibraries/blob/main/Design/meetings/2020/api-design-2020-11-05.md), and PRs [#212](https://github.com/microsoft/QuantumLibraries/pull/212), [#322](https://github.com/microsoft/QuantumLibraries/pull/322), [#375](https://github.com/microsoft/QuantumLibraries/pull/375), [#376](https://github.com/microsoft/QuantumLibraries/pull/376)).
+- Updated the `Microsoft.Quantum.Preparation` namespace so it is more consistent with style guide and API design principles, and to support purified mixed states with more data (see [proposal](https://github.com/microsoft/QuantumLibraries/issues/344), [review notes](https://github.com/microsoft/QuantumLibraries/blob/main/Design/meetings/2020/api-design-2020-11-05.md), and PRs [#212](https://github.com/microsoft/QuantumLibraries/pull/212), [#322](https://github.com/microsoft/QuantumLibraries/pull/322), [#375](https://github.com/microsoft/QuantumLibraries/pull/375), [#376](https://github.com/microsoft/QuantumLibraries/pull/376)).
 - Parentheses around repeated call expressions are now optional: `(Foo(x))(y)` may be written as `Foo(x)(y)`.
 - Users of the Visual Studio or Visual Studio Code extensions who have installed .NET 5 or Visual Studio 16.8 may be prompted to install .NET Core 3.1 to continue to work with the extensions.
 
@@ -73,9 +73,9 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 
 This release contains the following:
 
-- New [Microsoft.Quantum.Random namespace](xref:Microsoft.Quantum.Random), providing a more convenient way to sample random values from within Q# programs. ([QuantumLibraries#311](https://github.com/microsoft/QuantumLibraries/pull/311), [qsharp-runtime#328](https://github.com/microsoft/qsharp-runtime/pull/328))
-- Improved [Microsoft.Quantum.Diagnostics namespace](xref:Microsoft.Quantum.Diagnostics) with new [`DumpOperation` operation](xref:Microsoft.Quantum.Diagnostics.DumpOperation), and new operations for restricting qubit allocation and oracle calls. ([QuantumLibraries#302](https://github.com/microsoft/QuantumLibraries/pull/302))
-- New [`%project` magic command](xref:microsoft.quantum.iqsharp.magic-ref.project) in IQ# and `qsharp.projects` API in Python to support references to Q# projects outside the current workspace folder. See [iqsharp#277](https://github.com/microsoft/iqsharp/issues/277) for the current limitations of this feature. 
+- New Microsoft.Quantum.Random namespace, providing a more convenient way to sample random values from within Q# programs. ([QuantumLibraries#311](https://github.com/microsoft/QuantumLibraries/pull/311), [qsharp-runtime#328](https://github.com/microsoft/qsharp-runtime/pull/328))
+- Improved Microsoft.Quantum.Diagnostics namespace with new `DumpOperation` operation, and new operations for restricting qubit allocation and oracle calls. ([QuantumLibraries#302](https://github.com/microsoft/QuantumLibraries/pull/302))
+- New `%project` magic command in Q# and `qsharp.projects` API in Python to support references to Q# projects outside the current workspace folder. See [iqsharp#277](https://github.com/microsoft/iqsharp/issues/277) for the current limitations of this feature.
 - Support for automatically loading `.csproj` files for IQ#/Python hosts, which allows external project or package references to load at initialization time. For more information, see the guide for using Q# with Python and Jupyter Notebooks.
 - Added `ErrorCorrection.Syndrome` sample.
 - Added tunable coupling to `SimpleIsing`.
@@ -102,9 +102,9 @@ See the full list of closed PRs for [libraries](https://github.com/Microsoft/Qua
 This release contains the following:
 
 - New `qdk-chem` tool for converting legacy electronic structure problem serialization formats (for example, FCIDUMP) to Broombridge.
-- New functions and operations in the [`Microsoft.Quantum.Synthesis`](xref:Microsoft.Quantum.Synthesis) namespace for coherently applying classical oracles using transformation- and decomposition-based synthesis algorithms.
-- IQ# now allows arguments to the `%simulate`, `%estimate`, and other magic commands. For more information, see the [`%simulate` magic command reference](xref:microsoft.quantum.iqsharp.magic-ref.simulate).
-- New phase display options in IQ#. For more information, see the [`%config` magic command reference](xref:microsoft.quantum.iqsharp.magic-ref.config).
+- New functions and operations in the `Microsoft.Quantum.Synthesis` namespace for coherently applying classical oracles using transformation- and decomposition-based synthesis algorithms.
+- IQ# now allows arguments to the `%simulate`, `%estimate`, and other magic commands.
+- New phase display options in IQ#.
 - IQ# and the `qsharp` Python package are now provided via conda packages ([qsharp](https://anaconda.org/quantum-engineering/qsharp) and [iqsharp](https://anaconda.org/quantum-engineering/iqsharp)) to simplify local installation of Q# Jupyter and Python functionality to a conda environment. For more information, see the [Q# with Python](xref:microsoft.quantum.install-qdk.overview) installation guides.
 - When using the simulator, qubits no longer need to be in the |0⟩ state upon release, but can be automatically reset if they were measured immediately before releasing.
 - Updates to make it easier for IQ# users to consume library packages with different QDK versions, requiring only major & minor version numbers match rather than the exact same version
@@ -149,7 +149,7 @@ This release contains the following:
 - Performance improvements to IQ# Docker images
 
 > [!NOTE]
-> Q# applications using the new [`@EntryPoint()`](xref:Microsoft.Quantum.Core.EntryPoint) attribute currently can't be called from Python or .NET host programs.
+> Q# applications using the new `@EntryPoint()` attribute currently can't be called from Python or .NET host programs.
 > For more information, see the [Python](xref:microsoft.quantum.install-qdk.overview) guide.
 
 ## QDK version 0.11.2003.3107

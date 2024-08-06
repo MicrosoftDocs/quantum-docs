@@ -1040,6 +1040,31 @@
 			"source_path": "articles/qs-compiler-messages/qs6307.md",
 			"redirect_url": "/azure/quantum/azure-quantum-common-issues",
 			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/tutorial-qdk-intro-to-katas.md",
+			"redirect_url": "/azure/quantum/qsharp-ways-to-work#q-learning-resources",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/overview-what-is-qsharp-and-qdk.md",
+			"redirect_url": "/azure/quantum/qsharp-overview",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/program-structure.md",
+			"redirect_url": "/azure/quantum/qsharp-overview#structure-of-a-q-program",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/how-to-work-with-qsharp-projects.md",
+			"redirect_url": "/azure/quantum/how-to-work-with-qsharp-projects",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/user-guide/testing-debugging.md",
+			"redirect_url": "/azure/quantum/testing-debugging.md",
+			"redirect_document_id": false
 		}
 	]
 }

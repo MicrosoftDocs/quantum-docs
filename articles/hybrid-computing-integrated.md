@@ -25,8 +25,8 @@ This article explains how to submit hybrid jobs to Azure Quantum using the [QIR 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - If you want to submit Q# standalone programs, you need the following prerequisites:
-    - [Visual Studio Code](https://code.visualstudio.com/download) with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension installed.
-    - The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension.
+    - [Visual Studio Code](https://code.visualstudio.com/download) with the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) installed.
+    - The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 - If you wan to submit Python + Q# programs, you need the following prerequisites:
     - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
     - The Azure Quantum `azure-quantum` and `qsharp` packages.
@@ -274,3 +274,5 @@ You can find the code sample [here](https://github.com/microsoft/qsharp/blob/mai
 ## Related content
 
 - [Get started with sessions](xref:microsoft.quantum.hybrid.interactive)
+- [Distributed hybrid computing](xref:microsoft.quantum.hybrid.distributed)
+
