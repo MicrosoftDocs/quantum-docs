@@ -3,7 +3,7 @@ title: How to Debug and Test Quantum Programs in Azure Quantum
 description: Learn how to use unit tests, facts and assertions, and dump functions to test and debug quantum programs. 
 author: bradben
 ms.author: brbenefield
-ms.date: 08/06/2024
+ms.date: 08/07/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: how-to
@@ -152,7 +152,7 @@ import qsharp
 ```qsharp
 %%qsharp
 
-open Microsoft.Quantum.Diagnostics;
+import Microsoft.Quantum.Diagnostics.*;
 
 operation MultiQubitDumpMachineDemo() : Unit {
     use qubits = Qubit[2];
