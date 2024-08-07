@@ -28,20 +28,16 @@ The following example demonstrates the basic features of the debugger. For compl
 In VS Code, create and save a new .qs file with the following code:
 
 ```qsharp
-namespace Sample {
+import Microsoft.Quantum.Arrays.*;
+import Microsoft.Quantum.Convert.*;
 
-    open Microsoft.Quantum.Arrays;
-    open Microsoft.Quantum.Convert;
+operation Main() : Result {
 
-    @EntryPoint()
-    operation Superposition() : Result {
-
-        use qubit = Qubit();
-        H(qubit);
-        let result = M(qubit);
-        Reset(qubit);
-        return result;
-    }
+    use qubit = Qubit();
+    H(qubit);
+    let result = M(qubit);
+    Reset(qubit);
+    return result;
 }
 ```
 
@@ -277,7 +273,7 @@ dump[3]
 
 ### CheckZero() and CheckAllZero() operations
 
-`CheckZero()` and `CheckAllZero()` are boolean operations that can verify the expected state of a qubit or qubit array. `CheckZero()` returns `true` if the value of the qubit is `Zero`, and `false` if it is `One`. `CheckAllZero()` returns `true` if all values in the array are `Zero` and `false` if at least one value is `One`. 
+`CheckZero()` and `CheckAllZero()` are Q# boolean operations that can verify the expected state of a qubit or qubit array. `CheckZero()` returns `true` if the value of the qubit is `Zero`, and `false` if it is `One`. `CheckAllZero()` returns `true` if all values in the array are `Zero` and `false` if at least one value is `One`. 
 
 ```qsharp
 import Microsoft.Quantum.Diagnostics.*;
@@ -325,6 +321,12 @@ This example represents the default state of a single qubit.
 res = dump_operation("qs => ()", 1)
 print(res)
 ```
+
+```output
+res = dump_operation("qs => ()", 1) 
+print(res)
+```
+
 This example represents the default state of a single qubit and the effect of the Hadamard operation
 
 ```python
@@ -334,7 +336,12 @@ res = dump_operation("qs => H(qs[0])", 1)
 print(res)
 ```
 
-You can define a function or operation using `qsharp.eval()` and then reference it from `dump_operation`. The single qubit represented earlier can also be represented as
+```output
+[[(1+0j), 0j], [0j, (1+0j)]]
+[[(0.707107+0j), (0.707107+0j)], [(0.707107+0j), (-0.707107-0j)]]
+```
+
+You can also define a function or operation using `qsharp.eval()` and then reference it from `dump_operation`. The single qubit represented earlier can also be represented as
 
 ```python
 qsharp.eval(
@@ -343,6 +350,10 @@ qsharp.eval(
 
 res = dump_operation("SingleQ", 1)
 print(res)
+```
+
+```output
+[[(1+0j), 0j], [0j, (1+0j)]]
 ```
 
 The following user defined operation `ApplySWAP` uses the Q# `SWAP` operation and compares it to the default state of a two qubit array. 
@@ -356,6 +367,11 @@ res = dump_operation("qs => ()", 2)
 print(res)
 res = dump_operation("ApplySWAP", 2)
 print(res)
+```
+
+```output
+[[(1+0j), 0j, 0j, 0j], [0j, (1+0j), 0j, 0j], [0j, 0j, (1+0j), 0j], [0j, 0j, 0j, (1+0j)]]
+[[(1+0j), 0j, 0j, 0j], [0j, 0j, (1+0j), 0j], [0j, (1+0j), 0j, 0j], [0j, 0j, 0j, (1+0j)]]
 ```
 
 More examples of testing operations using `dump_operation()` can be found on the samples page [Testing Operations in the QDK](https://github.com/microsoft/qsharp/tree/main/samples/testing/operations).
