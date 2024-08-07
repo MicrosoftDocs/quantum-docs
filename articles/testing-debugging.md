@@ -3,7 +3,7 @@ title: How to Debug and Test Quantum Programs in Azure Quantum
 description: Learn how to use unit tests, facts and assertions, and dump functions to test and debug quantum programs. 
 author: bradben
 ms.author: brbenefield
-ms.date: 06/03/2024
+ms.date: 08/06/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: how-to
@@ -259,7 +259,7 @@ dump.qubit_count
 ```
 
 ```python
-# you can access individal states by their index
+# you can access individual states by their index
 dump[1]
 ```
 
@@ -274,3 +274,92 @@ dump[3]
 ```output
 (0.5879378012096794, 0.3928474791935511)
 ```
+
+### CheckZero() and CheckAllZero() operations
+
+`CheckZero()` and `CheckAllZero()` are boolean operations that can verify the expected state of a qubit or qubit array. `CheckZero()` returns `true` if the value of the qubit is `Zero`, and `false` if it is `One`. `CheckAllZero()` returns `true` if all values in the array are `Zero` and `false` if at least one value is `One`. 
+
+```qsharp
+import Microsoft.Quantum.Diagnostics.*;
+
+operation Main() : Unit {
+    
+    use qs = Qubit[2];
+   
+    X(qs[0]); 
+    
+    if CheckZero(qs[0]) {
+        Message("X operation failed");
+    }
+    else {
+        Message("X operation succeeded");
+    }
+
+    DumpMachine();
+
+    ResetAll(qs);
+
+    if CheckAllZero(qs) {
+        Message("Reset operation succeeded");
+    }
+    else {
+        Message("Reset operation failed");
+    }
+    DumpMachine();
+}
+```
+
+### dump_operation() function
+
+`dump_operation` is a Python function that takes an operation, or operation definition, and a number of qubits to use, and returns a square matrix of complex numbers representing the output of the operation. 
+
+You import `dump_operation` from `qsharp.utils`.
+
+```python
+import qsharp
+from qsharp.utils import dump_operation
+```
+This example represents the default state of a single qubit.
+
+```python
+res = dump_operation("qs => ()", 1)
+print(res)
+```
+This example represents the default state of a single qubit and the effect of the Hadamard operation
+
+```python
+res = dump_operation("qs => ()", 1)
+print(res)
+res = dump_operation("qs => H(qs[0])", 1)
+print(res)
+```
+
+You can define a function or operation using `qsharp.eval()` and then reference it from `dump_operation`. The single qubit represented earlier can also be represented as
+
+```python
+qsharp.eval(
+    "operation SingleQ(qs : Qubit[]) : Unit { qs[0]; }"
+)
+
+res = dump_operation("SingleQ", 1)
+print(res)
+```
+
+The following user defined operation `ApplySWAP` uses the Q# `SWAP` operation and compares it to the default state of a two qubit array. 
+
+```python
+qsharp.eval(
+    "operation ApplySWAP(qs : Qubit[]) : Unit is Ctl + Adj { SWAP(qs[0], qs[1]); }"
+)
+
+res = dump_operation("qs => ()", 2)
+print(res)
+res = dump_operation("ApplySWAP", 2)
+print(res)
+```
+
+More examples of testing operations using `dump_operation()` can be found on the samples page [Testing Operations in the QDK](https://github.com/microsoft/qsharp/tree/main/samples/testing/operations).
+
+
+
+
