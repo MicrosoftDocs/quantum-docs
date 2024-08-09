@@ -157,7 +157,7 @@ The following requirements and configurations apply to all Q# projects.
 - Operations and functions from source files in the project can be accessed by other files in the project by using `import` statements
 
     ```qsharp
-    open MyMathLib;  //opens all the callables in the MyMathLib namespace
+    import MyMathLib.*;  //imports all the callables in the MyMathLib namespace
     ...
         Multiply(x,y);
     ```
@@ -489,7 +489,7 @@ For this example, you'll use the same teleportation program as the earlier examp
 1. In Project_A, copy the following code into Main.qs
 
     ```qsharp
-    import MyTeleportLib.Teleport;   // opens the Teleport operation from the MyTeleportLib namespace defined in the manifest file
+    import MyTeleportLib.Teleport;   // imports the Teleport operation from the MyTeleportLib namespace defined in the manifest file
 
     operation Main() : Unit {
         use msg = Qubit();
