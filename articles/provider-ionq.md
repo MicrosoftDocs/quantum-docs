@@ -216,7 +216,7 @@ MyWorkspace = azure.quantum.Workspace(
     location = ""
 )
 
-MyTarget = MyWorkspace.get_targets("ionq.qpu")
+MyTarget = MyWorkspace.get_targets("ionq.qpu.aria-1")
 
 ```
 
@@ -270,7 +270,7 @@ In order to use the native gate set when submitting Qiskit jobs to Azure Quantum
 
 ```python
 # Here 'provider' is an instance of AzureQuantumProvider
-backend = provider.get_backend("ionq.qpu", gateset="native")
+backend = provider.get_backend("ionq.qpu.aria-1", gateset="native")
 ```
 
 | Parameter Name | Type     | Required | Description |
