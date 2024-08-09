@@ -14,7 +14,7 @@ uid: microsoft.quantum.providers.ionq
 # IonQ provider
 
 > [!IMPORTANT]
-> IonQ is retiring their Harmony quantum computer effective September 1, 2024. They will stop taking job submissions for the Harmony platform from the Azure Quantum service on August 15, 2024. Any jobs in the queue as of August 15th will be processed by September 1st. 
+> IonQ is retiring their Harmony-2 quantum computer effective September 1, 2024. They will stop taking job submissions for the Harmony-2 platform from the Azure Quantum service on August 15, 2024. Any jobs in the queue as of August 15th will be processed by September 1st. 
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
