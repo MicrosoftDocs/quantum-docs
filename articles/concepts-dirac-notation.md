@@ -1,23 +1,27 @@
 ---
 author: SoniaLopezBravo
-description: Learn about using Dirac notation to represent quantum states and to simulate quantum operations.
+description: Learn about Dirac notation and how to use it to represent quantum states and to simulate quantum operations.
 ms.author: sonialopez
-ms.date: 11/18/2021
+ms.date: 06/15/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
-no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
-title: Dirac notation
+no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\mathbf{1}', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
+title: Dirac Notation in Quantum Computing
 uid: microsoft.quantum.concepts.dirac
+
+#customer intent: As a quantum computing student, I want to learn about Dirac notation and how to use it to represent quantum states and to simulate quantum operations.
 ---
 
-# Dirac notation
+# Dirac notation in quantum computing
 
-[*Dirac notation*](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation) is a language designed to fit the precise needs of expressing states in quantum mechanics.  The examples in this article are suggestions that can be used to concisely express quantum ideas.
+[*Dirac notation*](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation) is designed to fit the precise needs of expressing states and linear algebra in quantum mechanics. It's named after the physicist Paul Dirac, who developed the notation in the 1930s.  Dirac notation is a concise and powerful way to describe quantum states and operations. It's used in quantum computing to describe quantum states, quantum operations, and quantum measurements.  
+
+This article introduce you to Dirac notation and show you how to use it to describe quantum states and operations.
 
 ## Limitations of column vector notation
 
-While column vector notation is common in linear algebra, it's often cumbersome in quantum computing, especially when dealing with multiple qubits.  For example, when you define $\psi$ to be a vector it's not explicitly clear whether $\psi$ is a row or a column vector.  Thus, if $\phi$ and $\psi$ are vectors, then it's equally unclear if $\phi \psi$ is even defined, because the shapes of $\phi$ and $\psi$ may be unclear in the context.  Beyond the ambiguity about the shapes of vectors, expressing even simple vectors using linear algebraic notation can be cumbersome. For example, if you wish to describe an $n$-qubit state where each qubit takes the value $0$, then you would formally express the state as 
+While [column vector notation](xref:microsoft.quantum.concepts.vectors) is common in linear algebra, it's often used in quantum computing, especially when dealing with multiple qubits. For example, when you define $\psi$ to be a vector it's not explicitly clear whether $\psi$ is a row or a column vector.  Thus, if $\phi$ and $\psi$ are vectors, then it's equally unclear if $\phi \psi$ is even defined, because the shapes of $\phi$ and $\psi$ may be unclear in the context.  Beyond the ambiguity about the shapes of vectors, expressing even simple vectors using linear algebraic notation can be cumbersome. For example, if you wish to describe an $n$-qubit state where each qubit takes the value $0$, then you would formally express the state as 
 
 $$\begin{bmatrix}1 \\\\  0 \end{bmatrix}\otimes \cdots \otimes\begin{bmatrix}1 \\\\  0 \end{bmatrix}. $$  
 
@@ -67,7 +71,7 @@ $$
 
 This example says that $\ket{0}$ and $\ket{1}$ are orthogonal vectors, meaning that $\braket{0 | 1} = \braket{1 | 0} =0$.  Also, by definition $\braket{0 | 0} = \braket{1 | 1}=1$, which means that the two computational basis vectors can also be called *orthonormal*.
 
-These orthonormal properties will be useful in the following example. If you have a state $\ket{\psi} = {\frac{3}{5}} \ket{1} + {\frac{4}{5}} \ket{0}$, then because $\braket{1 | 0} =0$ the probability of measuring $1$ is 
+These orthonormal properties are used in the following example. If you have a state $\ket{\psi} = {\frac{3}{5}} \ket{1} + {\frac{4}{5}} \ket{0}$, then because $\braket{1 | 0} =0$ the probability of measuring $1$ is 
 
 $$
 \big|\braket{1 | \psi}\big|^2= \left|\frac{3}{5}\braket{1 | 1} +\frac{4}{5}\braket{1 | 0}\right|^2=\frac{9}{25}.
@@ -75,7 +79,7 @@ $$
 
 ## Tensor product notation
 
-Dirac notation also includes an implicit tensor product structure.  This structure is important because in quantum computing, the state vector described by two uncorrelated quantum registers is the tensor products of the two state vectors.  Concisely describing the tensor product structure, or lack thereof, is vital if you want to explain a quantum computation.  The tensor product structure implies that you can write $\psi \otimes \phi$ for any two quantum state vectors $\phi$ and $\psi$ as $\ket{\psi} \otimes \ket{\phi}$. However, by convention writing $\otimes$ in between the vectors is unnecessary, and you can write $\ket{\psi} \ket{\phi} = \ket{\psi \phi} $. For more information about vectors and tensor products, see [Vectors and Matrices in Quantum Computing](xref:microsoft.quantum.concepts.vectors). For example, the state with two qubits initialized to the zero state is given by
+Dirac notation also includes an implicit [tensor product](xref:microsoft.quantum.concepts.vectors#tensor-product) structure.  This structure is important because in quantum computing, the state vector described by two uncorrelated quantum registers is the tensor products of the two state vectors.  Concisely describing the tensor product structure, or lack thereof, is vital if you want to explain a quantum computation.  The tensor product structure implies that you can write $\psi \otimes \phi$ for any two quantum state vectors $\phi$ and $\psi$ as $\ket{\psi} \otimes \ket{\phi}$. However, by convention writing $\otimes$ in between the vectors is unnecessary, and you can write $\ket{\psi} \ket{\phi} = \ket{\psi \phi} $. For more information about vectors and tensor products, see [Vectors and Matrices in Quantum Computing](xref:microsoft.quantum.concepts.vectors). For example, the state with two qubits initialized to the zero state is:
 
 $$
 \ket{0} \otimes \ket{0} = \ket{0} \ket{0} = \ket{00} = \begin{bmatrix} 1 \\\\  0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\  0 \end{bmatrix} = \begin{bmatrix} 1 \\\\  0 \\\\  0 \\\\  0 \end{bmatrix}.
@@ -87,7 +91,7 @@ $$
 \ket{1}\ket{0}\ket{1} = \ket{101} = \ket{5}.
 $$
 
-Within this notation, $\ket{0}$ need not refer to a single-qubit state but rather to a *qubit register* that stores a binary encoding of $0$.  The differences between these two notations is usually clear from the context.  This convention is useful for simplifying the first example which can be written in any of the following ways:
+Within this notation, $\ket{0}$ need not refer to a single-qubit state but rather to a *qubit register* that stores a binary encoding of $0$.  The differences between these two notations are clear from the context.  This convention is useful for simplifying the first example, which can be written in any of the following ways:
 
 $$
 \begin{bmatrix}1 \\\\  0 \end{bmatrix}\otimes \cdots \otimes\begin{bmatrix}1 \\\\  0 \end{bmatrix} = \ket{0} \otimes \cdots \otimes \ket{0}= |0\cdots 0\rangle = \ket{0}^{\otimes n}
@@ -97,14 +101,14 @@ where $\ket{0}^{\otimes n}$ represents the tensor product of $n$ $\ket{0}$ quant
 
 ## Example: Describe superposition with Dirac notation
 
-As another example of how you can use Dirac notation to describe a quantum state, consider the following equivalent ways of writing a quantum state that is an equal superposition over every possible bit string of length $n$
+As another example of how you can use Dirac notation to describe a quantum state, consider the following equivalent ways of writing a quantum state that is an equal [superposition](xref:microsoft.quantum.overview.understanding#superposition) over every possible bit string of length $n$
 
 $$
 H^{\otimes n} \ket{0} = \frac{1}{2^{n/2}} \sum_{j=0}^{2^n-1} \ket{j} = \ket{+}^{\otimes n}.
 $$
 
 Here you may wonder why the sum goes from $0$ to $2^{n}-1$ for $n$ bits.  First, note that there are $2^{n}$ different configurations that $n$ bits can take.  You can see this by noting that one bit can take $2$ values but two bits can take $4$ values and so forth. In general, this means that there are $2^n$ different possible bit strings but the largest value encoded in any of them $1\cdots 1=2^n-1$ and hence it is the upper limit for the sum.
-As a side note, in this example you did not use $\ket{+}^{\otimes n}=\ket{+}$ in analogy to $\ket{0}^{\otimes n} = \ket{0}$. This notational convention is usually reserved for the computational basis state with every qubit initialized to zero.  While such a convention would be sensible in this case, it's not employed in the quantum computing literature.
+As a side note, in this example you did not use $\ket{+}^{\otimes n}=\ket{+}$ in analogy to $\ket{0}^{\otimes n} = \ket{0}$. This notational convention is reserved for the computational basis state with every qubit initialized to zero.  While such a convention is sensible in this case, it's not employed in the quantum computing literature.
 
 ## Express linearity with Dirac notation
 
@@ -134,7 +138,7 @@ Ketbras are often called projectors because they project a quantum state onto a 
 
   $$\ket{\psi} \rightarrow \frac{(\ket{0} \bra{0})\ket{\psi}}{|\braket{0 | \psi}|}= \ket{0},$$
 
-as you would expect if you were to measure the state and find it to be $\ket{0}$.  To reiterate, such projectors cannot be applied on a state in a quantum computer deterministically.  Instead, they can at best be applied randomly with the result $\ket{0}$ appearing with some fixed probability.  The probability of such a measurement succeeding can be written as the expectation value of the quantum projector in the state
+as you would expect if you measured the state and found it to be $\ket{0}$.  To reiterate, such projectors cannot be applied on a state in a quantum computer deterministically.  Instead, they can at best be applied randomly with the result $\ket{0}$ appearing with some fixed probability.  The probability of such a measurement succeeding can be written as the expectation value of the quantum projector in the state
 
 $$
 \bra{\psi} (\ket{0} \bra{0})\ket{\psi} = |\braket{\psi | 0}|^2,
@@ -145,50 +149,47 @@ which illustrates that projectors give a new way of expressing the measurement p
 If instead you consider measuring the first qubit of a multi-qubit state to be $1$, then you can also describe this process conveniently using projectors and Dirac notation:
 
 $$
-P(\text{first qubit = 1})= \bra{\psi}\left(\ket{1}\bra{1}\otimes \boldone^{\otimes n-1}\right) \ket{\psi}.
+P(\text{first qubit = 1})= \bra{\psi}\left(\ket{1}\bra{1}\otimes \mathbf{1}^{\otimes n-1}\right) \ket{\psi}.
 $$
 
 Here the identity matrix can be conveniently written in Dirac notation as
 
 $$
-\boldone = \ket{0} \bra{0}+\ket{1} \bra{1}= \begin{bmatrix}1&0\\\\ 0&1 \end{bmatrix}.
+\mathbb{I} = \ket{0} \bra{0}+\ket{1} \bra{1}= \begin{bmatrix}1&0\\\\ 0&1 \end{bmatrix}.
 $$
 
 For the case where there are two-qubits the projector can be expanded as 
 
 $$
-\ket{1} \bra{1} \otimes \id = \ket{1}\bra{1} \otimes (\ket{0} \bra{0}+\ket{1} \bra{1})= \ket{10}\bra{10} + \ket{11}\bra{11}.
+\ket{1} \bra{1} \otimes \mathbb{I} = \ket{1}\bra{1} \otimes (\ket{0} \bra{0}+\ket{1} \bra{1})= \ket{10}\bra{10} + \ket{11}\bra{11}.
 $$
 
 you can then see that this is consistent with the discussion about measurement likelihoods for multiqubit states using column-vector notation:
 
 $$
-P(\text{first qubit = 1})= \psi^\dagger (e\_{10}e\_{10}^\dagger + e\_{11}e\_{11}^\dagger)\psi = |e\_{10}^\dagger \psi|^2 + |e\_{11}^\dagger \psi|^2,
+P(\text{first qubit = 1})= \psi^\dagger (e_{10}e_{10}^\dagger + e_{11}e_{11}^\dagger)\psi = |e_{10}^\dagger \psi|^2 + |e_{11}^\dagger \psi|^2,
 $$
 
 which matches the multi-qubit measurement discussion.  The generalization of this result to the multi-qubit case, however, is slightly more straightforward to express using Dirac notation than column-vector notation, and is entirely equivalent to the previous treatment.
 
 ## Density operators
 
-Another useful operator to express using Dirac notation is the *density operator*, sometimes also known as a *state operator*. As the quantum state vector, the density operator describes the quantum state of a system. However, while quantum state vectors can only represent *pure states*, density operators can also represent *mixed states*.
+Another useful operator to express using Dirac notation is the *density operator*, sometimes also known as a *state operator*. As the quantum state vector, the density operator describes the quantum state of a system. While quantum state vectors can only represent *pure states*, density operators can also represent *mixed states*.
 
 More generally, a given matrix $\rho$ is a valid density operator if the following conditions are fulfilled:
 
 - $\rho$ is a matrix of complex numbers
 - $\rho = \rho^{\dagger}$ (that is, $\rho$ is Hermitian)
-- Every eigenvalue $p$ of $\rho$ is $0 &lt;= p &lt;= 1$
+- Every eigenvalue $p$ of $\rho$ is non-negative
 - All the eigenvalues of $\rho$ sum to 1
 
 Together, these conditions guarantee that $\rho$ can be thought of as an ensemble. A density operator for a quantum state vector $\ket{\psi}$ takes the form $\rho = \sum_i p_i \ket{\psi_i} \bra{\psi_i}$ is an eigenvalue decomposition of $\rho$, then $\rho$ describes the ensemble $\rho = \{ \ket{\psi_i} \text{with probability} p_i \}$.
 
 Pure quantum states are those that are characterized by a single ket vector or wavefunction, and cannot be written as a statistical mixture (or *convex combination*) of other quantum states. A mixed quantum state is a statistical ensemble of pure states. 
 
-On a Bloch sphere, pure states are represented by a point on the surface of the sphere, whereas mixed states are represented by an interior point. The completely mixed state of a single qubit is represented by the center of the sphere, by symmetry. The purity of a state can be visualized as the degree in which it is close to the surface of the sphere.
+On a Bloch sphere, pure states are represented by a point on the surface of the sphere, whereas mixed states are represented by an interior point. The mixed state of a single qubit is represented by the center of the sphere, by symmetry. The purity of a state can be visualized as the degree in which it is close to the surface of the sphere.
 
-This concept of representing the state as a matrix, rather than a vector, is often convenient because it gives a convenient way of representing probability calculations, and also allows one to describe both statistical uncertainty as well as quantum uncertainty within the same formalism.
-
->[!TIP]
-> The QuTiP library is a helpful Python library when working with quantum states. You can write quantum states in QuTiP notation, using qt.basis(2, i) to represent $\ket{i}$ on a single qubit. To learn more about QuTiP methods and features, see the [QuTiP user guide](https://qutip.org/docs/latest/guide/guide.html).
+This concept of representing the state as a matrix, rather than a vector, is often convenient because it gives a convenient way of representing probability calculations, and also allows you to describe both statistical uncertainty and quantum uncertainty within the same formalism.
 
 A density operator $\rho$ represents a pure state if and only if: 
 
@@ -198,77 +199,13 @@ A density operator $\rho$ represents a pure state if and only if:
 
 To tell how close a given density operator $\rho$ is to being pure, you can look at the trace (that is, the sum of the diagonal elements) of $\rho^2$. A density operator represents a pure state if and only if $tr(\rho ^{2})=1$.
 
-Consider the mixed state $\rho_{\text{mixed}} = \frac{1}{2}\left( \ket{0}\bra{0} + \ket{1}\bra{1} \right)$,
-
-```python
-import qutip as qt
-
-ket0 = qt.basis(2, 0)
-ket1 = qt.basis(2, 1)
-
-rho_mixed = (ket0 * ket0.dag() + ket1 * ket1.dag()) / 2
-print(rho_mixed)
-```
-```output
-Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
-Qobj data =
-[[0.5  0.0]
- [0.0  0.5]]
-```
-The trace of $\rho$ is written as $Tr(\rho)$ and can be calculated using QuTiP's `.tr()` method:
-
-```python
-print((rho_mixed ** 2).tr())
-```
-```output
-0.5
-```
-Now, consider the pure quantum state $\rho_{\text{pure}}=\ket{+}\bra{+}$,
-```python
-ket_plus = (1 / np.sqrt(2)) * (ket0 + ket1)
-rho_pure = ket_plus * ket_plus.dag()
-print(rho_pure)
-```
-```output
-Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
-Qobj data =
-[[0.5  0.5]
- [0.5  0.5]]
-```
-The trace of $\rho_{\text{pure}}^2$ is
-
-```python
-print((rho_pure ** 2).tr())
-```
-```output
-0.9999999999999996
-```
-
-For single qubit systems, mixed states can be plotted on the Bloch sphere in the same way as state vectors — doing so, pure states are those states that lie on the surface of the Bloch sphere, while mixed states in general can be "inside" the Bloch sphere.
-
-```python
-import matplotlib.pyplot as plt
-
-plt.figure(figsize=(6, 6))
-bloch = qt.bloch.Bloch()
-bloch.add_states([rho_pure], kind='point')
-print(bloch.show())
-```
-:::image type="content" source="media/bloch-rho-pure.png" alt-text="Plot of a pure quantum state in the Bloch sphere, where the quantum state is in the X-axis.":::
-
-```python
-plt.figure(figsize=(6, 6))
-bloch = qt.bloch.Bloch()
-bloch.add_states([rho_mixed], kind='point')
-bloch.show()
-```
-
-:::image type="content" source="media/bloch-rho-mixed.png" alt-text="Plot of a mixed quantum state in the Bloch sphere, where the quantm state is in the center of the sphere.":::
-
-The state at the center of the Bloch sphere is the *maximally mixed state*. Unlike pure states, the maximally mixed state returns 50/50 outcomes for any ideal Pauli measurement.
-
-If you are interested in learning more about density operators and pure and mixed states, you can read one of the reference books provided in [For more information](xref:microsoft.quantum.more-information).
-
 ## Q# gate sequences equivalent to quantum states
 
 A final point worth raising about quantum notation and the Q# programming language: the beginning of this document mentioned that the quantum state is the fundamental object of information in quantum computing.  It may then come as a surprise that in Q# there is no notion of a quantum state.  Instead, all states are described only by the operations used to prepare them.  The previous example is an excellent illustration of this.  Rather than expressing a uniform superposition over every quantum bit string in a register, you can represent the result as $H^{\otimes n} \ket{0}$.  This exponentially shorter description of the state not only has the advantage that you can classically reason about it, but it also concisely defines the operations needed to be propagated through the software stack to implement the algorithm.  For this reason, Q# is designed to emit gate sequences rather than quantum states; however, at a theoretical level the two perspectives are equivalent.
+
+## Next steps
+
+- [Pauli measurements](xref:microsoft.quantum.concepts.pauli)
+- [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)
+- [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
+- [Quantum oracles](xref:microsoft.quantum.concepts.oracles)

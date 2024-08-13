@@ -2,30 +2,31 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide of what Azure Quantum quotas are, how to review remaining quotas and how to apply to get more. 
 ms.author: sonialopez
-ms.date: 01/15/2023
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 no-loc: [target, targets]
-title: Limits & quotas
+title: Manage Limits & Quotas
 uid: microsoft.quantum.quotas
+
+#customer intent: As a quantum developer, I want to understand the limits and quotas of Azure Quantum, how to review my remaining quotas, and how to apply to get more.
 ---
 
-# Azure Quantum quotas 
+# How to manage quotas in Azure Quantum
 
-Azure Quantum quotas are provider-defined limits on the usage of QPUs and optimization targets. Quotas help prevent accidental cost overages for the user while also preserving the integrity of the provider's systems. Quotas are based on your provider plan selection and can usually be increased with a support ticket.  
+Azure Quantum quotas are provider-defined limits on the usage of QPUs targets. Quotas help prevent accidental cost overages for the user while also preserving the integrity of the provider's systems. Quotas are based on your provider plan selection and can usually be increased with a support ticket.  
 The usage tracked by quotas is not necessarily tied to a cost or credit, but it might be correlated.
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 ## How quotas are calculated
 
-In Azure Quantum, hardware and software providers define and control the quotas of their offerings. For detailed quota information, see each provider reference page. If a provider doesn't appear in the following table, then that provider doesn't define any quotas.  
+In Azure Quantum, hardware and software providers define and control the quotas of their offerings. For detailed quota information, see each provider reference page. If a provider doesn't appear in the following list, then that provider doesn't define any quotas.  
 
-|Quantum Computing providers | Optimization providers|
-|---|---|  
-|[IonQ quota](xref:microsoft.quantum.providers.ionq#limits--quotas) | [Microsoft QIO quota](xref:microsoft.quantum.optimization.providers.microsoft.qio#limits--quotas)|
-|[Quantinuum quota](xref:microsoft.quantum.providers.quantinuum#limits--quotas) |[Toshiba SQBM+ quota](xref:microsoft.quantum.providers.optimization.toshiba#limits--quotas)|
+- [IonQ quota](xref:microsoft.quantum.providers.ionq#limits-and-quotas)
+- [PASQAL quota](xref:microsoft.quantum.providers.pasqal#limits-and-quotas)
+- [Quantinuum quota](xref:microsoft.quantum.providers.quantinuum#limits-and-quotas)
 
 ## Viewing remaining quota
 
@@ -37,14 +38,15 @@ The Azure Quantum usage and quotas are measured in terms of each provider's unit
 ### Track quota using Azure portal
 
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
-2. Select your **Azure Quantum workspace**.
-3. In the left panel, under **Operations**, go to the **Credits and quotas** blade and select the **Quotas** tab. 
-4. See the consumed and the remaing quotas for each selected provider. Notice that quota information is displayed in three columns.
+1. Select your **Azure Quantum workspace**.
+1. In the left panel, under **Operations**, go to the **Credits and quotas** tab and select the **Quotas** blade. 
+1. See the consumed and the remaining quotas for each selected provider. Notice that quota information is displayed in three columns.
+
   - *Workspace usage*: The usage limit for the current workspace. Each Azure Quantum workspace has a usage limit.
   - *Azure subscription usage*: The usage for all workspaces within the current region and subscription. Not all quotas are tracked at this level. 
   - *Cadence*: The period when your quota is renewed. If monthly, the usage is reset on the 1st of every month. If one-time, usage is never reset.
 
- :::image type="content" source="media/portal-quotas-blade.png" alt-text="Quotas blade in Azure portal":::
+ :::image type="content" source="media/portal-quotas-blade.png" alt-text="Screenshot of the quotas blade in Azure portal." lightbox="media/portal-quotas-blade.png":::
 
 In this view, [Azure Quantum Credits](xref:microsoft.quantum.credits) are included as quotas. This enables the user to see the credit information expressed in terms of the units that the provider tracks, as well as the interval associated.
 
@@ -72,7 +74,11 @@ You can see your quotas by using the Azure Command-Line Interface (Azure CLI). F
 1. Select the **Workspace** that you want to use. Note that you also need to specify the resource group and the location.
 
    ```azurecli
-   az quantum workspace set -g MyResourceGroup -w MyWorkspace -l MyLocation -o table
+   az quantum workspace set \
+       -g MyResourceGroup \
+       -w MyWorkspace \
+       -l MyLocation \
+       -o table
    ```
 1. Use the **`az quantum workspace quotas` command** to display quotas information for the selected workspace.
 
@@ -95,7 +101,7 @@ The **Scope** column indicates whether the quota refers to the current workspace
 The **Period** column indicates the period when your quota is renewed. 
 
 - *Monthly*: The usage is reset on the 1st of every month.
-- *Infinite*: The usage is never reset (also referred as *one-time* in the [Azure Portal](https://portal.azure.com) view).
+- *Infinite*: The usage is never reset (also referred as *one-time* in the [Azure portal](https://portal.azure.com) view).
 
 ### Track quota using Python SDK
 
@@ -108,12 +114,11 @@ The **Period** column indicates the period when your quota is renewed.
 
     # Copy the following settings for your workspace
     workspace = Workspace ( 
-      subscription_id = "", # Add your subscription_id 
-      resource_group = "", # Add your resource_group 
-      name = "", # Add your workspace name 
+      resource_id = "", # Add your resource_id 
       location = ""  # Add your workspace location (for example, "westus") 
     )
     ```
+
 1. Use the **`get_quotas`** method to display the quotas information for the selected workspace.
 
     ```python
@@ -129,12 +134,10 @@ The **Period** column indicates the period when your quota is renewed.
 
      {'dimension': 'combined_job_hours', 'scope': 'Workspace', 'provider_id': 'Microsoft', 'utilization': 0.0, 'holds': 0.0, 'limit': 20.0, 'period': 'Monthly'}, 
 
-     {'dimension': 'combined_job_hours', 'scope': 'Subscription', 'provider_id': 'Microsoft', 'utilization': 0.011701412083333333, 'holds': 0.0, 'limit': 1000.0, 'period': 'Monthly'}, 
-
-     {'dimension': 'concurrent_cpu_jobs', 'scope': 'Workspace', 'provider_id': 'Microsoft', 'utilization': 0.0, 'holds': 0.0, 'limit': 5.0, 'period': 'None'}]
+     {'dimension': 'combined_job_hours', 'scope': 'Subscription', 'provider_id': 'Microsoft', 'utilization': 0.011701412083333333, 'holds': 0.0, 'limit': 1000.0, 'period': 'Monthly'}]
     ```
 
-See the above output as an example. In this case, the `qgs` row shows that the account has a limit of `8333334 qgs` with IonQ, of which `33334 qgs` have been used. The account also has a limit of `5` concurrent CPU jobs with Microsoft QIO, of which `0` have been used. The number of concurrent jobs is the number of jobs that can be queued per workspace at any one time.
+See the above output as an example. In this case, the `qgs` row shows that the account has a limit of `8333334 qgs` with IonQ, of which `33334 qgs` have been used. The number of concurrent jobs is the number of jobs that can be queued per workspace at any one time.
 
 The `scope` item indicates whether the quota refers to the current workspace or the subscription.
 
@@ -144,7 +147,7 @@ The `scope` item indicates whether the quota refers to the current workspace or 
 The `period` item indicates the period when your quota is renewed. 
 
 - *Monthly*: The usage is reset on the 1st of every month.
-- *Infinite*: The usage is never reset (also referred as *one-time* in the [Azure Portal](https://portal.azure.com) view).
+- *Infinite*: The usage is never reset (also referred as *one-time* in the [Azure portal](https://portal.azure.com) view).
 
 > [!TIP]
 > The `get_quotas` method return the results in the form of a Python dictionary. For a more human-readable format, use the following code samples to print a summary of > the remaining quotas at subscription and workspace level.
@@ -153,7 +156,7 @@ The `period` item indicates the period when your quota is renewed.
 > 
 > ```python
 > # This gathers usage against quota for the various providers (quota is set at the subscription level).
-> # Note that a provider may have mutiple quotas, such as Quantinuum that limits usage of their Emulator.
+> # Note that a provider may have multiple quotas, such as Quantinuum that limits usage of their Emulator.
 > 
 > rigetti_quota = 0
 > ionq_quota = 0
@@ -247,7 +250,7 @@ If you are not using an Azure Quantum Credits plan, then you can request quota i
       - Any justification for why you are increasing your quota can help us to decide in some cases. 
 
 
-## Next Steps
+## Related content
 
 - [Azure Quantum Credits](xref:microsoft.quantum.credits)
 - [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq)

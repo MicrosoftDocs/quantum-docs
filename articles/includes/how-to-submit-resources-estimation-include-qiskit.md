@@ -1,40 +1,56 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 10/21/2022
+ms.date: 03/15/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
 no-loc: [target, targets]
 ---
 
-## Resource estimation with Qiskit in Azure Quantum notebook
+## Prerequisites for Qiskit
 
-In this example, you'll create a quantum circuit for a multiplier based on the construction presented in [Ruiz-Perez and Garcia-Escartin (arXiv:1411.5949)](https://arxiv.org/abs/1411.5949) which uses the Quantum Fourier Transform to implement arithmetic. 
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
+- An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
-### Create a new notebook in your workspace
+## Enable the Azure Quantum Resource Estimator target in your workspace
+
+The Resource Estimator is a target of the Microsoft Quantum Computing provider. If you have created a workspace since the release of the Resource Estimator, the Microsoft Quantum Computing provider was added to your workspace automatically.
+
+If you are using an *existing* Azure Quantum workspace:
+
+1. Open your workspace in the [Azure portal](https://portal.azure.com/).
+2. On the left panel, under **Operations**, select **Providers**.
+3. Select **+ Add a provider**.
+4. Select **+ Add** for **Microsoft Quantum Computing**.
+5. Select **Learn & Develop** and select **Add**.
+
+## Create a new notebook in your workspace
 
 1. Log in to the [Azure portal](https://portal.azure.com/) and select your Azure Quantum workspace.
 1. Under **Operations**, select **Notebooks**
-2. Click on **My notebooks** and click **Add New**
-3. In **Kernel Type**, select **IPython**.
-4. Type a name for the file, and click **Create file**.
+1. Click on **My notebooks** and click **Add New**
+1. In **Kernel Type**, select **IPython**.
+1. Type a name for the file, and click **Create file**.
 
 When your new notebook opens, it automatically creates the code for the first cell, based on your subscription and workspace information.
 
 ```python
 from azure.quantum import Workspace
-workspace = Workspace (
-    subscription_id = <your subscription ID>, 
-    resource_group = <your resource group>,   
-    name = <your workspace name>,          
-    location = <your location>        
-    )
+workspace = Workspace ( 
+    resource_id = "", # Your resource_id 
+    location = ""  # Your workspace location (for example, "westus") 
+)
 ```
+
+> [!NOTE]
+> Unless otherwise noted, you should run each cell in order as you create it to avoid any compilation issues. 
+
+Click the triangular "play" icon to the left of the cell to run the code. 
 
 ### Load the required imports
 
-First, you'll need to import an additional modules from `azure-quantum` and `qiskit`.
+First, you'll need to import an additional modules from [azure-quantum](xref:azure.quantum) and [`qiskit`](xref:azure.quantum.qiskit).
 
 Click **+ Code** to add a new cell, then add and run the following code:
 
@@ -42,20 +58,22 @@ Click **+ Code** to add a new cell, then add and run the following code:
 from azure.quantum.qiskit import AzureQuantumProvider
 from qiskit import QuantumCircuit, transpile
 from qiskit.circuit.library import RGQFTMultiplier
-from qiskit.tools.monitor import job_monitor
-from qiskit_qir import SUPPORTED_INSTRUCTIONS
 ```
 
-Create a backend instance and set the Resource Estimator as your target. 
+## Connect to the Azure Quantum service
+
+Next, create an [AzureQuantumProvider](xref:azure.quantum.qiskit.AzureQuantumProvider) object using the [`workspace`](xref:azure.quantum.Workspace) object from the previous cell to connect to your Azure Quantum workspace. You create a backend instance and set the Resource Estimator as your target.
 
 ```python
+provider = AzureQuantumProvider(workspace)
 backend = provider.get_backend('microsoft.estimator')
 ```
 
 ### Create the quantum algorithm
 
-You can adjust the size of the multiplier by changing the `bitwidth` variable. The circuit generation is wrapped in a function that can be called with the `bitwidth` value of the multiplier. The operation will have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`.
-The function will also print some logical resource counts for the multiplier extracted directly from the quantum circuit.
+In this example, you create a quantum circuit for a multiplier based on the construction presented in [Ruiz-Perez and Garcia-Escartin (arXiv:1411.5949)](https://arxiv.org/abs/1411.5949) which uses the Quantum Fourier Transform to implement arithmetic. 
+
+You can adjust the size of the multiplier by changing the `bitwidth` variable. The circuit generation is wrapped in a function that can be called with the `bitwidth` value of the multiplier. The operation will have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`. The function will also print some logical resource counts for the multiplier extracted directly from the quantum circuit.
 
 ```python
 def create_algorithm(bitwidth):
@@ -97,16 +115,20 @@ bitwidth = 4
 circ = create_algorithm(bitwidth)
 ```
 
-Estimate the physical resources for this operation using the default assumptions. You can submit the circuit to the Resource Estimator backend using the `run` method, and then run `job_monitor` to await completion.
+Estimate the physical resources for this operation using the default assumptions. You can submit the circuit to the Resource Estimator backend using the `run` method, and then run `job.result()` to wait for the job to complete and return the results.
 
 ```python
 job = backend.run(circ)
-job_monitor(job)
 result = job.result()
 result
 ```
 
-This creates a table that shows the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. For example, if you collapse the *Logical qubit parameters* group, you can more easily see that the error correction code distance is 15. 
+This creates a table that shows the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. 
+
+> [!TIP]
+> For a more compact version of the output table, you can use `result.summary`.
+
+For example, if you collapse the *Logical qubit parameters* group, you can more easily see that the error correction code distance is 15. 
 
 |Logical qubit parameter | Value |
 |----|---|
@@ -120,31 +142,26 @@ This creates a table that shows the overall physical resource counts. You can in
 |Logical cycle time formula | (4 * `twoQubitGateTime` + 2 * `oneQubitMeasurementTime`) * `codeDistance`|
 |Physical qubits formula	      | 2 * `codeDistance` * `codeDistance`|
 
-In the *Physical qubit parameters* group you can see the physical qubit properties that were assumed for this estimation. 
-For example, the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
+In the *Physical qubit parameters* group you can see the physical qubit properties that were assumed for this estimation. For example, the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
 
-|Physical qubit parameter | Value |
-|---|---|
-|Qubit name     |                    qubit_gate_ns_e3 |
-|Instruction set                      |     GateBased  |
-|Single-qubit measurement time         |       100 ns |
-|T gate time	                            |      50 ns|
-|T gate error rate                       |      0.001 |
-|Single-qubit measurement error rate      |     0.001 |
-|Single-qubit gate time                    |    50 ns |
-|Single-qubit error rate                   |    0.001 |
-|Two-qubit gate time                       |    50 ns |
-|Two-qubit error rate                        |  0.001 |
+> [!TIP]
+> You can also access the output of the Resource Estimator as a Python dictionary using the [result.data()](xref:qsharp.estimator.EstimatorResult)  method.
 
+For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator-output.data) for the Resource Estimator.
 
-> [!NOTE]
-> You can also access the output of the Resource Estimator in JSON format using the `result.data()` method.
-> 
-> ```python
-> result.data()
-> ```
+#### Space diagrams
 
-For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) for the Resource Estimator.
+The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can visualize this distribution to better understand the estimated space requirements for the algorithm.
+
+```python
+result.diagram.space
+```
+
+:::image type="content" source="../media/resource-estimator-space-diagram-qiskit.PNG" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
+
+The space diagram shows the proportion of algorithm qubits and T factory qubits. Note that the number of T factory copies, 28, contributes to the number of physical qubits for T factories as $\text{T factories} \cdot \text{physical qubit per T factory}= 28 \cdot 18,000 = 504,000$.
+
+For more information, see [T factory physical estimation](xref:microsoft.quantum.concepts.tfactories#t-factories-in-the-azure-quantum-resource-estimator).
 
 ### Change the default values and estimate the algorithm
 
@@ -173,13 +190,15 @@ result.data()["jobParams"]
   'twoQubitGateTime': '50 ns'}}
  ```
 
-There are three top-level input parameters that can be customized: 
+These are the target parameters that can be customized: 
 
 * `errorBudget` - the overall allowed error budget
-* `qecScheme` - the quantum error correction (QEC) scheme
-* `qubitParams` - the physical qubit parameters 
+* [`qecScheme`](xref:qsharp.estimator.QECScheme) - the quantum error correction (QEC) scheme
+* [`qubitParams`](xref:qsharp.estimator.QubitParams) - the physical qubit parameters
+* [`constraints`](xref:qsharp.estimator.EstimatorConstraints) - the constraints on the component-level
+* [`distillationUnitSpecifications`](xref:qsharp.estimator.DistillationUnitSpecification) - the specifications for T factories distillation algorithms
 
-For more information, see [Input parameters](xref:microsoft.quantum.overview.resources-estimator#input-parameters) for the Resource Estimator.
+For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the Resource Estimator.
 
 #### Change qubit model
 
@@ -190,36 +209,11 @@ job = backend.run(circ,
     qubitParams={
         "name": "qubit_maj_ns_e6"
     })
-job_monitor(job)
 result = job.result()
 result
 ```
 
-You can nspect the physical counts programmatically. For example, you can show all physical resource estimates and their breakdown using the `physicalCounts` field 
-in the result data. This will show the logical qubit error and logical T state error rates required to match the error budget. By default, runtimes are shown in nanoseconds.
-
-```python
-result.data()["physicalCounts"]
-```
-
-```output
-{'breakdown': {'adjustedLogicalDepth': 6168,
-  'cliffordErrorRate': 1e-06,
-  'logicalDepth': 6168,
-  'logicalQubits': 45,
-  'numTfactories': 23,
-  'numTfactoryRuns': 523,
-  'numTsPerRotation': 17,
-  'numTstates': 12017,
-  'physicalQubitsForAlgorithm': 2250,
-  'physicalQubitsForTfactories': 377568,
-  'requiredLogicalQubitErrorRate': 1.200941538165922e-09,
-  'requiredLogicalTstateErrorRate': 2.773848159551746e-08},
- 'physicalQubits': 379818,
- 'runtime': 61680000}
- ```
-
-You can also explore details about the T factory that was created to execute the algorithm.
+You can inspect the physical counts programmatically. For example, you can explore details about the T factory that was created to execute the algorithm.
 
 ```python
 result.data()["tfactory"]
@@ -240,6 +234,9 @@ result.data()["tfactory"]
  'runtime': 116900.0,
  'runtimePerRound': [4500.0, 2400.0, 110000.0]}
  ```
+
+> [!NOTE]
+> By default, runtime is shown in nanoseconds.
 
 You can use this data to produce some explanations of how the T factories produce the required T states.
 
@@ -267,7 +264,7 @@ A single T factory is composed of 3 rounds of distillation:
 
 #### Change quantum error correction scheme
 
-Now, rerun the resource estimation job for the same example on the Majorana-based qubit parameters with a floqued QEC scheme, `qecScheme`.
+Now, rerun the resource estimation job for the same example on the Majorana-based qubit parameters with a floqued QEC scheme, [`qecScheme`](xref:qsharp.estimator.QECScheme).
 
 ```python
 job = backend.run(circ,
@@ -277,7 +274,6 @@ job = backend.run(circ,
     qecScheme={
         "name": "floquet_code"
     })
-job_monitor(job)
 result_maj_floquet = job.result()
 result_maj_floquet
 ```
@@ -295,7 +291,6 @@ job = backend.run(circ,
         "name": "floquet_code"
     },
     errorBudget=0.1)
-job_monitor(job)
 result_maj_floquet_e1 = job.result()
 result_maj_floquet_e1
 ```

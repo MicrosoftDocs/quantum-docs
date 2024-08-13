@@ -24,10 +24,9 @@ You need the following prerequisites to share access to your Azure Quantum works
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
-
 ## Azure Active Directory
 
-Each user must have an account in your organization's Azure Active Directory before you can grant them access to your workspace. To add new users, you must be a **User Administrator** or **Global Administrator**. For instructions, see [Add a new user](/azure/active-directory/fundamentals/add-users-azure-active-directory#add-a-new-user).
+Each user must have an account in your organization's Azure Active Directory before you can grant them access to your workspace. To add new users, you must be at least a **User Administrator**. For instructions, see [Add a new user](/azure/active-directory/fundamentals/add-users-azure-active-directory#add-a-new-user).
 
 ## Add users as contributors to your Azure Quantum workspace
 
@@ -47,3 +46,9 @@ Each user must have an account in your organization's Azure Active Directory bef
 1. A list of your users will appear under **Members**. Select **Review + assign**. On the **Review + assign** pane, Select **Review + assign** again. You should get a notification that your users were added to your workspace.
 
     :::image type="content" source="media/assign-contributors.png" alt-text="Screen shot showing how to assign your users as a contributor to your Azure Quantum workspace.":::
+
+## Share access using a connection string 
+
+You can share the access to your Azure Quantum workspace using a [connection string](xref:microsoft.quantum.how-to.connect-workspace#connect-with-connection-string). The connection string contains the information needed to connect to your workspace, including the subscription ID, resource group, workspace name, and location.
+
+Every Azure Quantum workspace has **primary and secondary** keys, and their corresponding connection strings. If you want to allow access to your workspace to others, you can share your secondary key and you use your primary for your own services. This way, you can replace the secondary key as needed without having downtime in your own services.

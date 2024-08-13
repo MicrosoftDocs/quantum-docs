@@ -1,19 +1,22 @@
 ---
 author: SoniaLopezBravo
-description: Learn about the role of T gates and T factories in quantum computing
+description: Learn about the role of T gates and T factories in quantum computing and in the Azure Quantum Resource Estimator.
 ms.author: sonialopez
-ms.date: 12/26/2022
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 title: T gates & T factories
 uid: microsoft.quantum.concepts.tfactories
+
+#customer intent: As a quantum computing student, I want to learn about the role of T gates and T factories in in the Azure Quantum Resource Estimator.
+
 ---
 
-# T gates and T factories
+# The role of T gates and T factories in quantum computing
 
-This article describes the role of T gates and T factories in fault tolerant quantum computing. Giving a quantum algorithm, the estimation of required resources for running the T gates and T factories becomes crucial. For more information, see [how the Resource Estimator works](xref:microsoft.quantum.learn-how-resource-estimator-works).
+This article describes the role of T gates and T factories in fault tolerant quantum computing. Giving a quantum algorithm, the estimation of required resources for running the T gates and T factories becomes crucial to determine the feasibility of the algorithm. The Azure Quantum Resource Estimator calculates the number of T states needed to run the algorithm, the number of physical qubits for a single T factory, and the runtime of the T factory.
 
 ## Universal set of quantum gates
 
@@ -39,7 +42,7 @@ $$
 
 In a quantum computer, quantum gates can be classified into two categories: Clifford gates and non-Clifford gates, in this case, the T gate. Quantum programs made from only Clifford gates can be simulated efficiently using a classical computer, and therefore, non-Clifford gates are required to obtain quantum advantage. In many quantum error correction (QEC) schemes the so-called Clifford gates are easy to implement, that is they require very few resources in terms of operations and qubits to implement fault tolerantly, whereas non-Clifford gates are quite costly when requiring fault tolerance. In a universal quantum gate set, the T gate is commonly used as the non-Clifford gate.
 
-The standard set of single-qubit Clifford gates, [included by default in Q#](xref:microsoft.quantum.libraries.overview.standard.prelude), include
+The standard set of single-qubit Clifford gates, included by default in Q#, include
 
 $$
 H=\frac{1}{\sqrt{2}}\begin{bmatrix} 1 & 1 \\\\  1 &-1  \end{bmatrix} , \qquad S =\begin{bmatrix} 1 & 0 \\\\  0 & i \end{bmatrix}= T^2, \qquad X=\begin{bmatrix} 0 &1 \\\\  1& 0 \end{bmatrix}= HT^4H,
@@ -51,15 +54,42 @@ $$
 
 Together with the non-Clifford gate (the T gate), these operations can be composed to approximate any unitary transformation on a single qubit.
 
-## T factories in the Azure Quantum Resource Estimator 
+## T factories in the Azure Quantum Resource Estimator
 
 The non-Clifford T gate preparation is crucial because the other quantum gates are not sufficient for universal quantum computation. To implement non-Clifford operations for practical-scale algorithms, low error rate T gates (or T states) is required. However, they can be difficult to directly implement on logical qubits, and can also be difficult for some physical qubits.
 
 In a fault tolerant quantum computer, the required low error rate T states are produced using a T state distillation factory, or T factory for short. These T factories typically involve a sequence of rounds of distillation, where each round takes in many noisy T states encoded in a smaller distance code, processes them using a distillation unit, and outputs fewer less noisy T states encoded in a larger distance code, with the number of rounds, distillation units, and distances all being parameters which can be varied. This procedure is iterated, where the output T states of one round are fed into the next round as inputs. 
 
-The T state distillation factories are implemented in a sequence of rounds, where each round consists of a set of identical distillation units run in parallel. The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) calculates how many physical qubits are needed to run one T factory and for how long the T factory runs, among other required parameters. For more details, see [physical estimation of the T factories](xref:microsoft.quantum.learn-how-resource-estimator-works#t-factory-physical-estimation).
+Based on the duration of the T factory, the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) determines how often a T factory can be invoked before it exceeds the total runtime of the algorithm, and thus how many T states can be produced during the algorithm runtime. Usually, more T states are required than what can be produced within the invocations of a single T factory during the algorithm runtime. In order to produce more T states, the Resource Estimator uses copies of the T factories.
+
+### T factory physical estimation
+
+The Resource Estimator calculates the total number of T states needed to run the algorithm, and the number of physical qubits for a single T factory and its runtime. 
+
+The goal is to produce all T states within the algorithm runtime with as few T factory copies as possible. The following diagram shows an example of the runtime of the algorithm and the runtime of one T factory. You can see that the runtime of the T factory is shorter than the runtime of the algorithm. In this example, one T factory can distill one T state. Two questions arise:
+
+- How often can the T factory be invoked before the end of the algorithm?
+- How many copies of the T factory distillation round are necessary to create the number of T states required during the algorithm's runtime?
+
+<img src="~/media/resource-estimator-tfactory-plot.png" width="400" alt="Diagram showing the runtime of the algorithm (red) versus the runtime of one T factory (blue). Before the end of the algorithm, the T factory can run 8 times. If we need 30 T states, and T factory can run 8 times during runtime, then we need 4 copies of the T factories running in parallel to distill 30 T states.">
+
+Before the end of the algorithm, the T factory can be invoked eight times, which is called a distillation round. For example, if you need 30 T states, a single T factory is invoked eight times during runtime of the algorithm and thus, it creates eight T states. Then you need four copies of the T factory distillation round running in parallel to distill the 30 T states needed.
 
 > [!NOTE]
-> If the physical T gate error rate is lower than the required logical T state error rate, the Resource Estimator cannot perform a good resource estimation. When you submit a resource estimation job, you may encounter that the T factory cannot be found because the required logical T state error rate is either too low or too high. 
+> Note that T factory copies and T factory invocations aren't the same.
+
+The T state distillation factories are implemented in a sequence of rounds, where each round consists of a set of copies of distillation units running in parallel. The Resource Estimator calculates how many physical qubits are needed to run one T factory and for how long the T factory runs, among other required parameters.
+
+You can only do full invocations of a T factory. Therefore, there may be situations in which the accumulated runtime of all T factory invocations is less than the algorithm runtime. Since qubits are reused by different rounds, the number of physical qubits for one T factory is the maximum number of physical qubits used for one round. The runtime of the T factory is the sum of the runtime in all rounds.
+
+> [!NOTE]
+> If the physical T gate error rate is lower than the required logical T state error rate, the Resource Estimator cannot perform a good resource estimation. When you submit a resource estimation job, you may encounter that the T factory cannot be found because the required logical T state error rate is either too low or too high.
 
 For more information, see Appendix C of [Assessing requirements to scale to practical quantum advantage](https://arxiv.org/abs/2211.07629).
+
+## Related content
+
+- [Quantum circuits](xref:microsoft.quantum.concepts.circuits)
+- [Quantum oracles](xref:microsoft.quantum.concepts.oracles)
+- [Grover's algorithm](xref:microsoft.quantum.concepts.grovers)
+- [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir)

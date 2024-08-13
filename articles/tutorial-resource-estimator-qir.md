@@ -2,79 +2,91 @@
 author: SoniaLopezBravo
 description: In this tutorial, learn how to create and submit a QIR program to the Azure Quantum Resource Estimator target.
 ms.author: sonialopez
-ms.date: 02/14/2023
+ms.date: 04/15/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: tutorial
 no-loc: [Quantum Intermediate Representation, target, targets]
 title: 'Tutorial: Resource Estimation with QIR'
 uid: microsoft.quantum.tutorial.resource-estimator.qir
+#customer intent: As quantum developer, I want to learn how to submit a QIR program to the Azure Quantum Resource Estimator target.
 ---
 
 # Tutorial: Submit a QIR program to the Azure Quantum Resource Estimator
 
-The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator) is build on [Quantum Intermediate Representation (QIR)](xref:microsoft.quantum.concepts.qir), the forward-looking, fully interoperable specification for quantum programs. QIR serves as a common interface between quantum programming languages and frameworks, and targeted quantum computation platforms. Because the Resource Estimator takes a QIR program as input, it supports any language that translates to QIR. For example, it can be used by popular quantum SDKs and languages such as Q# and Qiskit.  
-
-This tutorial shows how to write and submit a QIR program to the Resource Estimator. This tutorial uses [PyQIR](https://github.com/qir-alliance/pyqir) to generate QIR, however, you can use any other source of QIR.
+The Azure Quantum Resource Estimator is built on [Quantum Intermediate Representation (QIR)](xref:microsoft.quantum.concepts.qir), a fully interoperable specification for quantum programs. QIR serves as a common interface between quantum programming languages and frameworks, and targeted quantum computation platforms. Because the Resource Estimator takes a QIR program as input, it supports any language that translates to QIR. For example, it can be used by popular quantum SDKs and languages such as Q# and Qiskit.  In this tutorial, you will write and submit a QIR program to the Resource Estimator. This tutorial uses [PyQIR](https://github.com/qir-alliance/pyqir) to generate QIR, however, you can use any other source of QIR.
 
 In this tutorial, you'll learn how to:
 
 > [!div class="checklist"]
-> * Connect to the Azure Quantum service
+> * Connect to the Azure Quantum service.
 > * Define a function to create a resource estimation job from QIR bitcode
 > * Create a QIR bitcode using PyQIR generator
 > * Submit a QIR job to the Resource Estimator
 
+Sign up for a [free Azure trial subscription for 30 days](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
-* An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-  > [!NOTE]
-  > The Resource Estimator is a target of the Microsoft Quantum Computing provider. If you are using an existing workspace, verify that the Microsoft Quantum Computing provider has been added to your workspace. For more information, see [Enable the Resource Estimator](xref:microsoft.quantum.quickstarts.computing.resources-estimator#enable-the-azure-quantum-resource-estimator-target-in-your-workspace)
-* The latest [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview#use-python-with-qiskit-or-cirq-or-azure-quantum-optimization-solvers) using the \[qiskit\] tag.
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
+- An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- The **Microsoft Quantum Computing** provider added to your workspace. 
+
+## Create a new notebook in your workspace
+
+1. Log in to the [Azure portal](https://portal.azure.com/) and select your Azure Quantum workspace.
+1. Under **Operations**, select **Notebooks**
+1. Click on **My notebooks** and click **Add New**
+1. In **Kernel Type**, select **IPython**.
+1. Type a name for the file, and click **Create file**.
+
+When your new notebook opens, it automatically creates the code for the first cell, based on your subscription and workspace information.
+
+```python
+from azure.quantum import Workspace
+workspace = Workspace ( 
+    resource_id = "", # Your resource_id 
+    location = ""  # Your workspace location (for example, "westus") 
+)
+```
+
+> [!NOTE]
+> Unless otherwise noted, you should run each cell in order as you create it to avoid any compilation issues. 
+
+Click the triangular "play" icon to the left of the cell to run the code. 
 
 ## Load the required imports
 
-First, you need to import some Python classes and functions from `azure.quantum`, `qiskit`, and `pyqir`.  You won't use Qiskit to build quantum circuits directly, but you'll use `AzureQuantumJob` and `job_monitor`, which are built on top of the Qiskit ecosystem.
+First, you need to import some Python classes and functions from `azure.quantum`, `qiskit`, and `pyqir`.  You won't use Qiskit to build quantum circuits directly, but you'll use `AzureQuantumJob`, which is built on top of the Qiskit ecosystem. Ensure that you are using the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
 
 ```python
 from azure.quantum.qiskit import AzureQuantumProvider
 from azure.quantum.qiskit.job import AzureQuantumJob
-
-from qiskit.tools.monitor import job_monitor
-
 from pyqir.generator import BasicQisBuilder, SimpleModule
 ```
 
 ## Connect to the Azure Quantum service
 
-To connect to the Azure Quantum service, your program will need the resource ID and the
-location of your workspace, which you can obtain from the **Overview** page in your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
-
-:::image type="content" source="media/azure-quantum-resource-id.png" alt-text="Screenshot showing how to retrieve the resource ID and location from an Azure Quantum workspace":::
-
-Paste the values into the following `AzureQuantumProvider` constructor to create a `provider` object that connects to your Azure Quantum workspace.
+Next, create an `AzureQuantumProvider` object using the `workspace` object from the previous cell to connect to your Azure Quantum workspace.
 
 ```python
-provider = AzureQuantumProvider(
-  resource_id="",
-  location=""
-)
+provider = AzureQuantumProvider(workspace)
 ```
 
 ## Define a function to create a resource estimation job from QIR
 
 The Resource Estimator is a target of the Microsoft Quantum Computing provider. Using the Resource Estimator is exactly the same as submitting a job against other software and hardware provider targets in Azure Quantum - define your program, set a target, and submit your job for computation. 
 
-When submitting a resource estimate request for your program, you can specify some optional parameters. There are three top-level target parameters that can be customized: 
+When submitting a resource estimate request for your program, you can specify some target parameters.
 
 * `errorBudget` - the overall allowed error budget
 * `qecScheme` - the quantum error correction (QEC) scheme
 * `qubitParams` - the physical qubit parameters
+* `constraints` - the constraints on the component-level
 
-For more information about the pre-defined input parameters, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator#input-parameters).
+For more information about the input parameters, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
 
-For this example, you will implement a generic function that takes as input the `provider` object that connects to your Azure Quantum workspace and the QIR bitcode of the quantum program.  It returns as result an Azure Quantum job. 
+For this example, you will implement a generic function that takes as input the `provider` object that connects to your Azure Quantum workspace and the QIR bitcode of the quantum program.  It returns as result an Azure Quantum job.
 The Resource Estimator target parameters can be passed via keyword arguments to the function.
 
 ```python
@@ -127,16 +139,15 @@ qis.t_adj(b)
 qis.cx(a, b)
 ```
   
-You can use the function you defined above together with the `bitcode()` function from PyQIR to generate a resource estimation job. You can also pass Resource Estimator specific arguments. This example uses `errorBudget` to set the error rate to 5%. (For more information about the pre-defined target parameters, see [Input parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator#input-parameters)).
+You can use the function you defined above together with the `bitcode()` function from PyQIR to generate a resource estimation job. You can also pass Resource Estimator specific arguments. This example uses `errorBudget` to set the error rate to 5%. For more information about the target parameters, see [Target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
 
 ```python
 job = resource_estimation_job_from_qir(provider, module.bitcode(), errorBudget=0.05)
-job_monitor(job)
 result = job.result()
 result
 ```
 
-This function creates a table that shows the overall physical resource counts. You can further inspect cost details by collapsing the groups that have more information. For example, if you collapse the *Logical qubit parameters* group, you can more easily see that the error correction code distance is 15. 
+This function creates a table that shows the overall physical resource counts. You can further inspect cost details by collapsing the groups that have more information. For example, if you collapse the *Logical qubit parameters* group, you can more easily see that the error correction code distance is 15.
 
 |Logical qubit parameter | Value |
 |----|---|
@@ -167,13 +178,12 @@ For example, the time to perform a single-qubit measurement and a single-qubit g
 |Two-qubit error rate                        |  0.001 |
 
 
-For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator#output-data) for the Resource Estimator.
+For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator-output.data) for the Resource Estimator.
 
-## Next steps
+## Related content
 
 Continue to explore other quantum algorithms and techniques:
 
-* The tutorial [Implement Grover’s search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm to solve a graph coloring problem.
-* The tutorial [Write and simulate qubit-level programs in Q#](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
-* The tutorial [Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to operate on qubits with Q# to change their state, and demonstrates the effects of superposition and entanglement.
-* The [Quantum Katas](xref:microsoft.quantum.tutorial-qdk.katas) are Jupyter Notebook-based, self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
+- The tutorial [Implement Grover’s search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm to solve a graph coloring problem.
+- The tutorial [Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to operate on qubits with Q# to change their state, and demonstrates the effects of superposition and entanglement.
+- The [Quantum Katas](https://quantum.microsoft.com/en-us/experience/quantum-katas) are Jupyter Notebook-based, self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.

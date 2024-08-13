@@ -2,56 +2,53 @@
 author: SoniaLopezBravo
 description: In this tutorial, you will build a Q# project that demonstrates Grover's search algorithm, one of the canonical quantum algorithms.
 ms.author: sonialopez
-ms.date: 12/01/2021
+ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
 no-loc: ['Q#', '$$v', Quantum Development Kit,target, targets]
-title: "Tutorial: Implement Grover's algorithm in Q#"
+title: "Tutorial: Implement Grover's Algorithm in Q#"
 uid: microsoft.quantum.tutorial-qdk.grovers
+#customer intent: As a quantum programmer, I want to learn how to demonstrate Grover's algorithm in a Q# program.
 ---
 
 # Tutorial: Implement Grover's search algorithm in Q\#
 
-In this tutorial, you'll learn to implement Grover's algorithm in Q# to solve search-based problems.
+In this tutorial, you implement Grover's algorithm in Q# to solve search-based problems. For an in-depth explanation of the theory behind Grover's algorithm, see the [Theory of Grover's algorithm](xref:microsoft.quantum.concepts.grovers).
 
-Grover's algorithm is one of the most famous algorithms in quantum computing. The problem it solves is often referred to as "searching a database", but it's more accurate to think of it in terms of the *search problem*.
+In this tutorial, you:
+
+> [!div class="checklist"]
+> * Define the Grover's algorithm for a search problem
+> * Implement Grover's algorithm in Q#
+
+[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
+
+## Prerequisites
+
+- To run the code sample in the [Copilot in Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding):
+  - A Microsoft (MSA) email account.
+
+- To develop and run the code sample in Visual Studio Code:
+    - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
+    - The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
+
+
+## Define the problem
+
+Grover's algorithm is one of the most famous algorithms in quantum computing. The type of problem it solves is often referred to as "searching a database", but it's more accurate to think of it in terms of the *search problem*.
 
 Any search problem can be mathematically formulated with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution to the search problem, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The search problem consists of finding any item $x_0$ such that $f(x_0)=1$.
 
-> [!NOTE]
-> This tutorial is intended for people who are already familiar with
-> Grover's algorithm and want to learn how to implement it in Q#. For a more
-> introductory tutorial, see the Learn module [Solve graphcoloring problems by using Grover's search](/training/modules/solve-graph-coloring-problems-grovers-search/).
-> For an in-depth explanation of the theory behind Grover's algorithm, see the [Theory of Grover's algorithm](xref:microsoft.quantum.concepts.grovers).
+Thus, you can formulate the any search problem as: given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, where $n$ is the bit-size of the search space, find an input $x_0$ for which $f(x_0)=1$.
 
-In this tutorial, you'll learn how to:
-
-> [!div class="checklist"]
-> - Build a quantum oracle that implements classical functions on a quantum computer.
-> - Write a Q# program that uses Grover's algorithm to find factors of an integer.
-
-## Prerequisites 
-
-- [Install the Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview?tabs=tabid-local#install-the-qdk-and-develop-quantum-applications-locally) using your preferred language and development environment.
-- If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update-qdk) to the latest version.
-- This tutorial requires the Microsoft.Quantum.Numerics library. For more information, follow the steps to [install additional quantum libraries](xref:microsoft.quantum.libraries.overview#installation).
-- Create a Q# project for a [Q# standalone application](xref:microsoft.quantum.submit-jobs?pivots=ide-azurecli) or a [C# host program](xref:microsoft.quantum.how-to.csharp-local), or use a [Python host program](xref:microsoft.quantum.install-qdk.overview) in your preferred Python environment.
-
-> [!NOTE]
-> To use the optional procedure [Extra: verify the statistics with Python](#extra-verify-the-statistics-with-python), you will need a Python development environment for Q# set up. For more information, see [Set up a Q# and Python environment](xref:microsoft.quantum.install-qdk.overview).
-
-## Grover's algorithm task and background
-
-Given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, where $n$ is the bit-size of the search space, find an input $x_0$ for which $f(x_0)=1$.
-
-To implement Grover's algorithm to solve a problem, you need to:
+To implement Grover's algorithm to solve a search problem, you need to:
 
 1. Transform the problem to the form of a **Grover's task**. For example, suppose you want to find the factors of an integer $M$ using Grover's algorithm. You can transform the integer factorization problem to a Grover's task by creating a function $$f_M(x)=1[r],$$ where $1[r]=1$ if $r=0$ and $1[r]=0$ if $r\neq0$ and $r$ is the remainder of $M/x$. This way, the integers $x_i$ that make $f_M(x_i)=1$ are the factors of $M$ and you have transformed the problem to a Grover's task.
 1. Implement the function of the Grover's task as a quantum oracle. To implement Grover's algorithm, you need to implement the function $f(x)$ of your Grover's task as a [quantum oracle](xref:microsoft.quantum.concepts.oracles).
 1. Use Grover's algorithm with your oracle to solve the task. Once you have a quantum oracle, you can plug it into your Grover's algorithm implementation to solve the problem and interpret the output.
 
-### Quick review of Grover's algorithm
+## The Grover's algorithm
 
 Suppose there are $N=2^n$ eligible items for the search problem and they are indexed by assigning each item an integer from $0$ to $N-1$. The steps of the algorithm are:
 
@@ -66,424 +63,380 @@ Suppose there are $N=2^n$ eligible items for the search problem and they are ind
 1. Measure the register to obtain the index of an item that's a solution with very high probability.
 1. Check the item to see if it's a valid solution. If not, start again.
 
-## Write the code for Grover's algorithm
+## Write the code for Grover's algorithm in Q\#
 
-This section discusses how to implement the algorithm in Q#.
+This section discusses how to implement the algorithm in Q#. There are few things to consider when implementing Grover's algorithm. You need to define what is your marked state, how to reflect about it, and how many iterations to run the algorithm for. You also need to define the oracle that implements the function of the Grover's task.
 
-### Grover's diffusion operator
+### Define the marked state
 
-First, write an operation that applies the steps **b**, **c** and **d** from the loop above. Together, these steps are also known as the Grover diffusion operator $-H^{\otimes n} O_0 H^{\otimes n}$
+First, you define what input you are trying to find in the search. To do so, write an operation that applies the steps **b**, **c** and **d** from the [Grover's algorithm](#the-grovers-algorithm).
+
+Together, these steps are also known as the **Grover'S diffusion operator** $-H^{\otimes n} O_0 H^{\otimes n}$.
 
 ```qsharp
-operation ReflectAboutUniform(inputQubits : Qubit[]) : Unit {
-
+operation ReflectAboutMarked(inputQubits : Qubit[]) : Unit {
+    Message("Reflecting about marked state...");
+    use outputQubit = Qubit();
     within {
-        ApplyToEachA(H, inputQubits);
-        ApplyToEachA(X, inputQubits);
+        // We initialize the outputQubit to (|0⟩ - |1⟩) / √2, so that
+        // toggling it results in a (-1) phase.
+        X(outputQubit);
+        H(outputQubit);
+        // Flip the outputQubit for marked states.
+        // Here, we get the state with alternating 0s and 1s by using the X
+        // operation on every other qubit.
+        for q in inputQubits[...2...] {
+            X(q);
+        }
     } apply {
-        Controlled Z(Most(inputQubits), Tail(inputQubits));
+        Controlled X(inputQubits, outputQubit);
     }
-
 }
 ```
 
-This operation uses the [within-apply](xref:microsoft.quantum.qsharp.conjugations) statement that implements the automatic conjugation of operations that occur in Grover's diffusion operator.
+The `ReflectAboutMarked` operation reflects about the basis state marked by alternating zeros and ones. It does so by applying the Grover's diffusion operator to the input qubits. The operation uses an auxiliary qubit, `outputQubit`, which is initialized in the state $\ket{-}=\frac{1}{\sqrt{2}}(\ket{0}-\ket{1})$ by applying the $X$ and $H$ gates. The operation then applies the $X$ gate to every other qubit in the register, which flips the state of the qubit. Finally, it applies the controlled $X$ gate to the auxiliary qubit and the input qubits. This operation flips the auxiliary qubit if and only if all the input qubits are in the state $\ket{1}$, which is the marked state.
 
-> [!NOTE]
-> To learn more about conjugations in Q#, see [Conjugations](xref:microsoft.quantum.qsharp.conjugations) in the Q# language guide.
-
-A good exercise to understand the code and the operations is to check with pen and paper that the operation `ReflectAboutUniform` applies Grover's diffusion operator. To see it note that the operation `Controlled Z(Most(inputQubits),Tail(inputQubits))` only has an effect different than the identity if and only if all qubits are in the state $\ket{1}$.
-
-The operation is called `ReflectAboutUniform` because it can be geometrically interpreted as a reflection in the vector space about the uniform superposition state.
-
-### Number of iterations
+### Define the number of optimal iterations
 
 Grover's search has an optimal number of iterations that yields the highest probability of measuring a valid output. If the problem has $N=2^n$ possible eligible items, and $M$ of them are solutions to the problem, the optimal number of iterations is:
 
 $$N_{\text{optimal}}\approx\frac{\pi}{4}\sqrt{\frac{N}{M}}$$
 
-Continuing to iterate past that number starts reducing that probability until you reach nearly-zero success probability on iteration $2 N_{\text{optimal}}$. After that, the probability grows again until $3 N_{\text{optimal}}$, and so on.
+Continuing to iterate past the optimal number of iterations starts reducing that probability until you reach nearly-zero success probability on iteration $2 N_{\text{optimal}}$. After that, the probability grows again until $3 N_{\text{optimal}}$, and so on.
 
 In practical applications, you don't usually know how many solutions your problem has before you solve it. An efficient strategy to handle this issue is to "guess" the number of solutions $M$ by progressively increasing the guess in powers of two (i.e. $1, 2, 4, 8, 16, ..., 2^n$). One of these guesses will be close enough that the algorithm will still find the solution with an average number of iterations around $\sqrt{\frac{N}{M}}$.
 
-### Complete Grover's operation
-
-Now you are ready to write a Q# operation for Grover's search algorithm. It will have three inputs:
-
-- A qubit array `register : Qubit[]` that should be initialized in the all `Zero` state. This register will encode the tentative solution to the search problem. After the operation it will be measured.
-- An operation `phaseOracle : (Qubit[]) => Unit is Adj` that represents the phase oracle for the Grover's task. This operation applies an unitary transformation over a generic qubit register.
-- An integer `iterations : Int` to represent the iterations of the algorithm.
+The following Q# function calculates the optimal number of iterations for a given number of qubits in a register.
 
 ```qsharp
-operation RunGroversSearch(register : Qubit[], phaseOracle : (Qubit[]) => Unit is Adj, iterations : Int) : Unit {
-    // Prepare register into uniform superposition.
-    ApplyToEach(H, register);
-    // Start Grover's loop.
-    for _ in 1 .. iterations {
-        // Apply phase oracle for the task.
-        phaseOracle(register);
-        // Apply Grover's diffusion operator.
-        ReflectAboutUniform(register);
+function CalculateOptimalIterations(nQubits : Int) : Int {
+    if nQubits > 63 {
+        fail "This sample supports at most 63 qubits.";
+    }
+    let nItems = 1 <<< nQubits; // 2^nQubits
+    let angle = ArcSin(1. / Sqrt(IntAsDouble(nItems)));
+    let iterations = Round(0.25 * PI() / angle - 0.5);
+    return iterations;
+}
+```
+
+The `CalculateOptimalIterations` function uses the formula above to calculate the number of iterations, and then rounds it to the nearest integer.
+
+### Define the Grover's operation
+
+The Q# operation for Grover's search algorithm has three inputs:
+
+* The number of qubits, `nQubits : Int`, in the qubit register. This register will encode the tentative solution to the search problem. After the operation, it will be measured.
+* The number of optimal iterations, `iterations : Int`.
+* An operation, `phaseOracle : Qubit[] => Unit) : Result[]`, that represents the phase oracle for the Grover's task. This operation applies an unitary transformation over a generic qubit register.
+
+```qsharp
+operation GroverSearch( nQubits : Int, iterations : Int, phaseOracle : Qubit[] => Unit) : Result[] {
+
+    use qubits = Qubit[nQubits];
+    PrepareUniform(qubits);
+
+    for _ in 1..iterations {
+        phaseOracle(qubits);
+        ReflectAboutUniform(qubits);
+    }
+
+    // Measure and return the answer.
+    return MResetEachZ(qubits);
+}
+```
+
+The `GroverSearch` operation initializes a register of $n$ qubits in the state $\ket{0}$, prepares the register into a uniform superposition, and then applies the Grover's algorithm for the specified number of iterations.  The search itself consists of repeatedly reflecting about the marked state and the start state, which you can write out in Q# as a for loop. Finally, it measures the register and returns the result.
+
+The code makes use of three helper operations: `PrepareUniform`, `ReflectAboutUniform`, and `ReflectAboutAllOnes`.
+
+Given a register in the all-zeros state, the `PrepareUniform` operation prepares a uniform superposition over all basis states.
+
+```qsharp
+operation PrepareUniform(inputQubits : Qubit[]) : Unit is Adj + Ctl {
+    for q in inputQubits {
+        H(q);
     }
 }
 ```
 
-> [!TIP]
-> This code is generic, that is, it can be used to solve any search problem. You pass the quantum oracle - the only operation that relies on the knowledge of the problem instance you want to solve - as a parameter to the search code.
-
-## Write the code to implement the oracle
-
-One of the key properties that makes Grover's algorithm faster is the ability of quantum computers to perform calculations not only on individual inputs but also on superpositions of inputs. You need to compute the function $f(x)$ that describes the instance of a search problem using only quantum operations. This way it can be computed over a superposition of inputs.
-
-Unfortunately there isn't an automatic way to translate classical functions to quantum operations. It's an open field of research in computer science called *reversible computing*.
-
-However, there are some guidelines that might help you to translate your function $f(x)$ into a quantum oracle:
-
-1. **Break down the classical function into small building blocks that are easy to implement.** For example, you can try to decompose your function $f(x)$ into a series of arithmetic operations or Boolean logic gates.
-1. **Use the higher-level building blocks of the Q# library to implement the intermediate operations.** For instance, if you decomposed your function into a combination of simple arithmetic operations, you can use the [Numerics library](xref:microsoft.quantum.libraries-numerics.usage) to implement the intermediate operations.
-
-The following equivalence table might prove useful when implementing Boolean functions in Q#.
-
-| Classical logic gate | Q# operation        |
-|----------------|--------------------------|
-| $NOT$          | `X`                      |
-| $XOR$          | `CNOT`                   |
-| $AND$          | `CCNOT` with an auxiliary qubit|
-
-### Create a quantum operation to check if a number is a divisor
-
-> [!IMPORTANT]
-> This tutorial factorizes a number using Grover's search algorithm as a didactic example to show how to translate a simple mathematical problem into a Grover's task. However, Grover's algorithm is **not** an efficient algorithm to solve the integer factorization problem. To explore a quantum algorithm that **does** solve the integer factorization problem faster than any classical algorithm, see the [**Shor's algorithm** sample](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/integer-factorization).
-
-The following example shows how you would express the function $f_M(x)=1[r]$ of the factoring problem as a quantum operation in Q#.
-
-Classically, you would compute the remainder of the division $M/x$ and see if it's equal to zero. If it is, the program outputs `1`, and if it's not, the program outputs `0`. You need to:
-
-- Compute the remainder of the division.
-- Apply a controlled operation over the output bit so that it's `1` if the remainder is `0`.
-
-You need to calculate a division of two numbers with a quantum operation. Fortunately, you don't need to write the circuit implementing the division from scratch, you can use the [`DivideI`](xref:Microsoft.Quantum.Arithmetic.DivideI) operation from the Numerics library instead.
-
-Looking into the description of `DivideI`, it says that it needs three qubit registers: the $n$-bit dividend `xs`, the $n$-bit divisor `ys`, and the $n$-bit `result` that must be initialized in the state `Zero`. The operation is `Adj + Ctl`, so you can conjugate it and use it in *within-apply* statements. Also, in the description it says that the dividend in the input register `xs` is replaced by the remainder. This is perfect, since you are interested exclusively in the remainder and not in the result of the operation.
-
-You can then build a quantum operation that does the following:
-
-1. Takes three inputs:
-   - The dividend, `number : Int`. This is the $M$ in $f_M(x)$.
-   - A qubit array encoding the divisor, `divisorRegister : Qubit[]`. This is the $x$ in $f_M(x)$, possibly in a superposition state.
-   - A target qubit, `target : Qubit`, that flips if the output of $f_M(x)$ is $1$.
-1. Calculates the division $M/x$ using only reversible quantum operations, and flips the state of `target` if and only if the remainder is zero.
-1. Reverts all operations except the flipping of `target`, so as to return the used auxiliary qubits to the zero state without introducing irreversible operations, such as measurement. This step is important in order to preserve entanglement and superposition during the process.
-
-The code to implement this quantum operation is:
+The ``ReflectAboutAllOnes` operation reflects about the all-ones state.
 
 ```qsharp
-operation MarkDivisor (
-    dividend : Int,
-    divisorRegister : Qubit[],
-    target : Qubit
-) : Unit is Adj + Ctl {
-    // Calculate the bit-size of the dividend.
-    let size = BitSizeI(dividend);
-    // Allocate two new qubit registers for the dividend and the result.
-    use dividendQubits = Qubit[size];
-    use resultQubits = Qubit[size];
-    // Create new LittleEndian instances from the registers to use DivideI
-    let xs = LittleEndian(dividendQubits);
-    let ys = LittleEndian(divisorRegister);
-    let result = LittleEndian(resultQubits);
+operation ReflectAboutAllOnes(inputQubits : Qubit[]) : Unit {
+    Controlled Z(Most(inputQubits), Tail(inputQubits));
+}
+```
 
-    // Start a within-apply statement to perform the operation.
+The operation `ReflectAboutUniform` reflects about the uniform superposition state. First, it transforms the uniform superposition to all-zero. Then, it transforms the all-zero state to all-ones. Finally, it reflects about the all-ones state. The operation is called `ReflectAboutUniform` because it can be geometrically interpreted as a reflection in the vector space about the uniform superposition state.
+
+```qsharp
+operation ReflectAboutUniform(inputQubits : Qubit[]) : Unit {
     within {
-        // Encode the dividend in the register.
-        ApplyXorInPlace(dividend, xs);
-        // Apply the division operation.
-        DivideI(xs, ys, result);
-        // Flip all the qubits from the remainder.
-        ApplyToEachA(X, xs!);
+        Adjoint PrepareUniform(inputQubits);
+        // Transform the all-zero state to all-ones
+        for q in inputQubits {
+            X(q);
+        }
     } apply {
-        // Apply a controlled NOT over the flipped remainder.
-        Controlled X(xs!, target);
-        // The target flips if and only if the remainder is 0.
+        ReflectAboutAllOnes(inputQubits);
     }
 }
 ```
-
-> [!NOTE]
-> The program takes advantage of the statement *within-apply* to achieve step 3. Alternatively, one could explicitly write the adjoints of each of the operations inside the `within` block after the controlled flipping of `target`. The *within-apply* statement does it for us, making the code shorter and more readable. One of the main goals of Q# is to make quantum programs easy to write and read.
-
-### Transform the operation into a phase oracle
-
-The operation `MarkDivisor` is what's known as a *marking oracle*, since it marks the valid items with an entangled auxiliary qubit (`target`). However, Grover's algorithm needs a *phase oracle*, that is, an oracle that applies a conditional phase shift of $-1$ for the solution items. But don't panic, the operation above wasn't written in vain. It's very easy to switch from one oracle type to the other in Q#.
-
-You can apply any marking oracle as a phase oracle with the following operation:
-
-```qsharp
-operation ApplyMarkingOracleAsPhaseOracle(
-    markingOracle : (Qubit[], Qubit) => Unit is Adj,
-    register : Qubit[]
-) : Unit is Adj {
-    use target = Qubit();
-    within {
-        X(target);
-        H(target);
-    } apply {
-        markingOracle(register, target);
-    }
-}
-```
-
-This famous transformation is often known as the *phase kickback* and it's widely used in many quantum computing algorithms. You can find a detailed explanation of this technique in this [Learn module](/training/modules/solve-graph-coloring-problems-grovers-search/4-implement-quantum-oracle).
 
 ## Run the final code
 
-Now you have all the ingredients to implement a particular instance of Grover's search algorithm and solve the factoring problem. Your final code should look like this:
+Now you have all the ingredients to implement a particular instance of Grover's search algorithm and solve the factoring problem. To finish, the `Main` operation sets up the problem by specifying the number of qubits and the number of iterations
 
 ```qsharp
-namespace GroversTutorial {
-    open Microsoft.Quantum.Canon;
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Measurement;
-    open Microsoft.Quantum.Math;
-    open Microsoft.Quantum.Convert;
-    open Microsoft.Quantum.Arithmetic;
-    open Microsoft.Quantum.Arrays;
-    open Microsoft.Quantum.Preparation;
+operation Main() : Result[] {
+let nQubits = 5;
+let iterations = CalculateOptimalIterations(nQubits);
+Message($"Number of iterations: {iterations}");
 
-    @EntryPoint()
-    operation FactorizeWithGrovers(number : Int) : Unit {
-
-        // Define the oracle that for the factoring problem.
-        let markingOracle = MarkDivisor(number, _, _);
-        let phaseOracle = ApplyMarkingOracleAsPhaseOracle(markingOracle, _);
-        // Bit-size of the number to factorize.
-        let size = BitSizeI(number);
-        // Estimate of the number of solutions.
-        let nSolutions = 4;
-        // The number of iterations can be computed using the formula.
-        let nIterations = Round(PI() / 4.0 * Sqrt(IntAsDouble(size) / IntAsDouble(nSolutions)));
-
-        // Initialize the register to run the algorithm
-        use (register, output) = (Qubit[size], Qubit());
-        mutable isCorrect = false;
-        mutable answer = 0;
-        // Use a Repeat-Until-Succeed loop to iterate until the solution is valid.
-        repeat {
-            RunGroversSearch(register, phaseOracle, nIterations);
-            let res = MultiM(register);
-            set answer = BoolArrayAsInt(ResultArrayAsBoolArray(res));
-            // See if the result is a solution with the oracle.
-            markingOracle(register, output);
-            if MResetZ(output) == One and answer != 1 and answer != number {
-                set isCorrect = true;
-            }
-            ResetAll(register);
-        } until isCorrect;
-
-        // Print out the answer.
-        Message($"The number {answer} is a factor of {number}.");
-
-    }
-
-    operation MarkDivisor (
-        dividend : Int,
-        divisorRegister : Qubit[],
-        target : Qubit
-    ) : Unit is Adj+Ctl {
-        let size = BitSizeI(dividend);
-        use (dividendQubits, resultQubits) = (Qubit[size], Qubit[size]);
-        let xs = LittleEndian(dividendQubits);
-        let ys = LittleEndian(divisorRegister);
-        let result = LittleEndian(resultQubits);
-        within{
-            ApplyXorInPlace(dividend, xs);
-            DivideI(xs, ys, result);
-            ApplyToEachA(X, xs!);
-        }
-        apply{
-            Controlled X(xs!, target);
-        }
-    }
-
-    operation PrepareUniformSuperpositionOverDigits(digitReg : Qubit[]) : Unit is Adj + Ctl {
-        PrepareArbitraryStateCP(ConstantArray(10, ComplexPolar(1.0, 0.0)), LittleEndian(digitReg));
-    }
-
-    operation ApplyMarkingOracleAsPhaseOracle(
-        markingOracle : (Qubit[], Qubit) => Unit is Adj,
-        register : Qubit[]
-    ) : Unit is Adj {
-        use target = Qubit();
-        within {
-            X(target);
-            H(target);
-        } apply {
-            markingOracle(register, target);
-        }
-    }
-
-    operation RunGroversSearch(register : Qubit[], phaseOracle : ((Qubit[]) => Unit is Adj), iterations : Int) : Unit {
-        ApplyToEach(H, register);
-        for _ in 1 .. iterations {
-            phaseOracle(register);
-            ReflectAboutUniform(register);
-        }
-    }
-
-    operation ReflectAboutUniform(inputQubits : Qubit[]) : Unit {
-        within {
-            ApplyToEachA(H, inputQubits);
-            ApplyToEachA(X, inputQubits);
-        } apply {
-            Controlled Z(Most(inputQubits), Tail(inputQubits));
-        }
-    }
+// Use Grover's algorithm to find a particular marked state.
+let results = GroverSearch(nQubits, iterations, ReflectAboutMarked);
+return results;
 }
 ```
 
-Use the program to find a factor of 21. To simplify the code, assume that you know the number of valid items, $M$. In this case, $M=4$, since there are two factors, 3 and 7, plus 1 and 21 itself.
 
-### Run the program with Visual Studio or Visual Studio Code
+## Run the program
 
-The program above will run the operation or function marked with the `@EntryPoint()` attribute on a simulator or resource estimator, depending on the project configuration and command-line options.
+Select the desired platform to run your program. 
 
-#### [Visual Studio](#tab/tabid-visualstudio)
+### [Copilot in Azure Quantum](#tab/tabid-copilot)
 
-This tutorial requires the Microsoft.Quantum.Numerics library. For more information, follow the steps to [install additional quantum libraries](xref:microsoft.quantum.libraries.overview#installation) to your project.
+You can test your Q# code with the Copilot in Azure Quantum free of charge - all you need is a Microsoft (MSA) email account. For more information about the Copilot in Azure Quantum, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
-In general, running a Q# program in Visual Studio is as simple as pressing `Ctrl + F5`. But first, you need to provide the right command-line arguments to your program.
+1. Open the [Copilot in Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding) in your browser.
+1. Copy and paste the following code into the code editor.
 
-Command-line arguments can be configured via the debug page of your project properties. You can visit the [Visual Studio reference guide](/visualstudio/ide/reference/debug-page-project-designer) for more information about this, or follow the steps below:
+    ```qsharp
+    namespace GroversTutorial {
+        open Microsoft.Quantum.Convert;
+        open Microsoft.Quantum.Math;
+        open Microsoft.Quantum.Arrays;
+        open Microsoft.Quantum.Measurement;
+        open Microsoft.Quantum.Diagnostics;
+    
+        @EntryPoint()
+        operation Main() : Result[] {
+        let nQubits = 5;
+        let iterations = CalculateOptimalIterations(nQubits);
+        Message($"Number of iterations: {iterations}");
+    
+        // Use Grover's algorithm to find a particular marked state.
+        let results = GroverSearch(nQubits, iterations, ReflectAboutMarked);
+        return results;
+        }
+    
+        operation GroverSearch(
+            nQubits : Int,
+            iterations : Int,
+            phaseOracle : Qubit[] => Unit) : Result[] {
+    
+            use qubits = Qubit[nQubits];
+    
+            PrepareUniform(qubits);
+    
+            for _ in 1..iterations {
+                phaseOracle(qubits);
+                ReflectAboutUniform(qubits);
+            }
+    
+            // Measure and return the answer.
+            return MResetEachZ(qubits);
+        }
+    
+        function CalculateOptimalIterations(nQubits : Int) : Int {
+            if nQubits > 63 {
+                fail "This sample supports at most 63 qubits.";
+            }
+            let nItems = 1 <<< nQubits; // 2^nQubits
+            let angle = ArcSin(1. / Sqrt(IntAsDouble(nItems)));
+            let iterations = Round(0.25 * PI() / angle - 0.5);
+            return iterations;
+        }
+    
+        operation ReflectAboutMarked(inputQubits : Qubit[]) : Unit {
+            Message("Reflecting about marked state...");
+            use outputQubit = Qubit();
+            within {
+                // We initialize the outputQubit to (|0⟩ - |1⟩) / √2, so that
+                // toggling it results in a (-1) phase.
+                X(outputQubit);
+                H(outputQubit);
+                // Flip the outputQubit for marked states.
+                // Here, we get the state with alternating 0s and 1s by using the X
+                // operation on every other qubit.
+                for q in inputQubits[...2...] {
+                    X(q);
+                }
+            } apply {
+                Controlled X(inputQubits, outputQubit);
+            }
+        }
+    
+        operation PrepareUniform(inputQubits : Qubit[]) : Unit is Adj + Ctl {
+            for q in inputQubits {
+                H(q);
+            }
+        }
+    
+        operation ReflectAboutAllOnes(inputQubits : Qubit[]) : Unit {
+            Controlled Z(Most(inputQubits), Tail(inputQubits));
+        }
+    
+        operation ReflectAboutUniform(inputQubits : Qubit[]) : Unit {
+            within {
+                // Transform the uniform superposition to all-zero.
+                Adjoint PrepareUniform(inputQubits);
+                // Transform the all-zero state to all-ones
+                for q in inputQubits {
+                    X(q);
+                }
+            } apply {
+                // Now that we've transformed the uniform superposition to the
+                // all-ones state, reflect about the all-ones state, then let the
+                // within/apply block transform us back.
+                ReflectAboutAllOnes(inputQubits);
+            }
+        }
+    }
+    ```
 
-1. In the solution explorer on the right, right-click the name of your project (the project node, one level below the solution) and select **Properties**.
+> [!TIP]
+> From Copilot in Azure Quantum, you can open your program in [VS Code for the Web](https://vscode.dev/quantum) by clicking on the VS Code logo button in the right-hand corner of the code editor.
 
-1. From the new window that opens, navigate to the **Debug** tab.
+### Run the program using the in-memory simulator
 
-1. In the field **Application arguments**, you can enter any arguments you wish to pass to the entry point of your program. Enter `--number 21` in the arguments field.
+1. Select **In-memory Simulator**.
+1. Select the number of shots to run, and click **Run**.
+1. The results are displayed in the histogram and in the **Results** fields.
+1. Click **Explain code** to prompt Copilot to explain the code to you.
 
-Now press `Ctrl + F5` to run the program.
+### Run the program using the Quantinuum H-Series Emulator
 
-#### [VS Code](#tab/tabid-vscode)
+You can also submit your program to the free [Quantinuum H-Series Emulator](xref:microsoft.quantum.providers.quantinuum#h-series-emulator-cloud-based). The emulator simulates a quantum computer with 20 qubits.
 
-This tutorial requires the Microsoft.Quantum.Numerics library. For more information, follow the steps to [install additional quantum libraries](xref:microsoft.quantum.libraries.overview#installation) to your project.
+1. Select the **In-Memory Simulator** dropdown and select **Quantinuum H-Series Emulator**.
+1. Select the number of shots (currently limited to 20) and select Run.
 
-In VS Code, first build your project by executing following command in the terminal:
+### [Visual Studio Code](#tab/tabid-vscode)
 
-```Command line
-dotnet build
-```
+1. Open Visual Studio Code and select **File > New Text File** to create a new file.
+1. Save the file as `GroversAlgorithm.qs`. This file will contain the Q# code for your program.
+1. Copy the following code in the `GroversAlgorithm.qs` file.
 
-When running your program, you can now save time by skipping the build phase via the `--no-build` flag. Arguments to pass to the entry point of your program can also be specified at this stage. To run Grover's algorithm on the number 21, type the following command and press enter:
+    ```qsharp
+    namespace GroversTutorial {
+        open Microsoft.Quantum.Convert;
+        open Microsoft.Quantum.Math;
+        open Microsoft.Quantum.Arrays;
+        open Microsoft.Quantum.Measurement;
+        open Microsoft.Quantum.Diagnostics;
+    
+        @EntryPoint()
+        operation Main() : Result[] {
+        let nQubits = 5;
+        let iterations = CalculateOptimalIterations(nQubits);
+        Message($"Number of iterations: {iterations}");
+    
+        // Use Grover's algorithm to find a particular marked state.
+        let results = GroverSearch(nQubits, iterations, ReflectAboutMarked);
+        return results;
+        }
+    
+        operation GroverSearch(
+            nQubits : Int,
+            iterations : Int,
+            phaseOracle : Qubit[] => Unit) : Result[] {
+    
+            use qubits = Qubit[nQubits];
+    
+            PrepareUniform(qubits);
+    
+            for _ in 1..iterations {
+                phaseOracle(qubits);
+                ReflectAboutUniform(qubits);
+            }
+    
+            // Measure and return the answer.
+            return MResetEachZ(qubits);
+        }
+    
+        function CalculateOptimalIterations(nQubits : Int) : Int {
+            if nQubits > 63 {
+                fail "This sample supports at most 63 qubits.";
+            }
+            let nItems = 1 <<< nQubits; // 2^nQubits
+            let angle = ArcSin(1. / Sqrt(IntAsDouble(nItems)));
+            let iterations = Round(0.25 * PI() / angle - 0.5);
+            return iterations;
+        }
+    
+        operation ReflectAboutMarked(inputQubits : Qubit[]) : Unit {
+            Message("Reflecting about marked state...");
+            use outputQubit = Qubit();
+            within {
+                // We initialize the outputQubit to (|0⟩ - |1⟩) / √2, so that
+                // toggling it results in a (-1) phase.
+                X(outputQubit);
+                H(outputQubit);
+                // Flip the outputQubit for marked states.
+                // Here, we get the state with alternating 0s and 1s by using the X
+                // operation on every other qubit.
+                for q in inputQubits[...2...] {
+                    X(q);
+                }
+            } apply {
+                Controlled X(inputQubits, outputQubit);
+            }
+        }
+    
+        operation PrepareUniform(inputQubits : Qubit[]) : Unit is Adj + Ctl {
+            for q in inputQubits {
+                H(q);
+            }
+        }
+    
+        operation ReflectAboutAllOnes(inputQubits : Qubit[]) : Unit {
+            Controlled Z(Most(inputQubits), Tail(inputQubits));
+        }
+    
+        operation ReflectAboutUniform(inputQubits : Qubit[]) : Unit {
+            within {
+                // Transform the uniform superposition to all-zero.
+                Adjoint PrepareUniform(inputQubits);
+                // Transform the all-zero state to all-ones
+                for q in inputQubits {
+                    X(q);
+                }
+            } apply {
+                // Now that we've transformed the uniform superposition to the
+                // all-ones state, reflect about the all-ones state, then let the
+                // within/apply block transform us back.
+                ReflectAboutAllOnes(inputQubits);
+            }
+        }
+    }
+    ```
 
-```Command line
-dotnet run --no-build --number 21
-```
+1. Before running the program, you need to set the target profile to **Unrestricted**. Select **View -> Command Palette**, search for QIR, select **Q#: Set the Azure Quantum QIR target profile**, and then select **Q#: unrestricted**. 
+1. To run your program, click on **Run** from the list of commands below `@EntryPoint()`, or press **Ctrl+F5**. The program runs the operation or function marked with the `@EntryPoint()` attribute on the default simulator.
+1. Your output will appear in the debug console.
+
+> [!NOTE]
+> If the target profile is not set to **Unrestricted**, you will get an error when you run the program.
 
 ***
 
-With either environment, you should now see the following message displayed in the terminal:
+## Related content
 
-```Command line
-The number 7 is a factor of 21.
-```
+Explore other Q# tutorials:
 
-## Extra: Verify the statistics with Python
-
-How can you verify that the algorithm is behaving correctly? For example, if you substitute Grover's search with a random number generator in the previous code example, it will eventually find a factor as well (after ~$N$ attempts).
-
-This example shows how to write a short Python script to verify that the program is working as it should.
-
-> [!TIP]
-> If you need help running Q# applications with Python, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview) and [Develop with Q# and Python](xref:microsoft.quantum.how-to.python-local).
-
-First, replace your main operation, `FactorizeWithGrovers`, with the following operation, `FactorizeWithGrovers2`:
-
-```qsharp
-@EntryPoint()
-operation FactorizeWithGrovers2(number : Int) : Int {
-
-    let markingOracle = MarkDivisor(number, _, _);
-    let phaseOracle = ApplyMarkingOracleAsPhaseOracle(markingOracle, _);
-    let size = BitSizeI(number);
-    let nSolutions = 4;
-    let nIterations = Round(PI() / 4.0 * Sqrt(IntAsDouble(size) / IntAsDouble(nSolutions)));
-
-    use register = Qubit[size] {
-        RunGroversSearch(register, phaseOracle, nIterations);
-        let res = MultiM(register);
-        return ResultArrayAsInt(res);
-        // Verify whether the result is correct.
-    }
-
-}
-```
-
-Note the changes from the original operation:
-
-- The output type has changed from `Unit` to `Int`, which is more useful for the Python program.
-- The repeat-until-success loop has been removed. Instead, you output the first measurement result after running Grover's search. 
-
-The Python program is very simple; it just calls the operation `FactorizeWithGrovers2` several times and plots the results in a histogram.
-
-Save the following code as a Python file in your project folder:
-
-```python
-import qsharp
-qsharp.packages.add("Microsoft.Quantum.Numerics")
-qsharp.reload()
-from GroversTutorial import FactorizeWithGrovers2
-import matplotlib.pyplot as plt
-import numpy as np
-
-def main():
-
-    # Instantiate variables
-    frequency =  {}
-    N_Experiments = 1000
-    results = []
-    number = 21
-
-    # Run N_Experiments times the Q# operation.
-    for i in range(N_Experiments):
-        print(f'Experiment: {i} of {N_Experiments}')
-        results.append(FactorizeWithGrovers2.simulate(number = number))
-
-    # Store the results in a dictionary
-    for i in results:
-        if i in frequency:
-            frequency[i]=frequency[i]+1
-        else:
-            frequency[i]=1
-
-    # Sort and print the results
-    frequency = dict(reversed(sorted(frequency.items(), key=lambda item: item[1])))
-    print('Output,  Frequency' )
-    for k, v in frequency.items():
-        print(f'{k:<8} {v}')
-
-    # Plot an histogram with the results
-    plt.bar(frequency.keys(), frequency.values())
-    plt.xlabel("Output")
-    plt.ylabel("Frequency of the outputs")
-    plt.title("Outputs for Grover's factoring. N=21, 1000 iterations")
-    plt.xticks(np.arange(1, 33, 2.0))
-    plt.show()
-
-if __name__ == "__main__":
-    main()
-
-```
-
-> [!NOTE]
-> The line `from GroversTutorial import FactorizeWithGrovers2` in the Python program imports the Q# code you previously wrote. Note that the Python module name (`GroversTutorial`) needs to be identical to the Namespace of the operation you want to import (in this case, `FactorizeWithGrovers2`).
-> You will need the Matplotlib package to display the histogram. For more information, see [Matploblib](https://matplotlib.org/stable/users/installing/index.html).
-
-The program generates the following histogram:
-
-:::image type="content" source="~/media/grovers-histogram.png" alt-text="Histogram with the results of running several times the Grover's algorithm." :::
-
-As you can see in the histogram, the algorithm outputs the solutions to the search problem (1, 3, 7 and 21) with much higher probability than the non-solutions. You can think of Grover's algorithm as a quantum random generator that is purposefully biased towards those indices that are solutions to the search problem.
-
-## Next steps
-
-For more Q# code samples that use Grover's algorithm, see the [Samples Browser](/samples/browse/?languages=qsharp&terms=grovers), or try to transform a mathematical problem of your own into a search problem and solve it with Q# and Grover's algorithm.
+* [Quantum entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
+* [Quantum random number generator](xref:microsoft.quantum.tutorial-qdk.random-number) shows how to write a Q# program that generates random numbers out of qubits in superposition.
+* [Quantum Fourier Transform](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
+* The [Quantum Katas](https://quantum.microsoft.com/en-us/experience/quantum-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.

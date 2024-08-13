@@ -1,14 +1,16 @@
 ---
-title: Theory of Grover's search algorithm 
-description: Learn about the theory behind Grover's algorithm.
+title: Theory of Grover Search Algorithm 
+description: Learn about the theory behind Grover algorithm, a quantum algorithm that provides a quadratic speedup for searching unsorted databases.
 author: SoniaLopezBravo
 uid: microsoft.quantum.concepts.grovers
 ms.author: sonialopez
-ms.date: 10/11/2022
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
+
+#customer intent: As a quantum computing student, I want to learn about Grover's algorithm.
 ---
 
 # Theory of Grover's search algorithm
@@ -171,3 +173,10 @@ If you want to continue learning about Grover's algorithm, you can check any of 
 - [Original paper by Lov K. Grover](https://arxiv.org/abs/quant-ph/9605043)
 - Quantum search algorithms section of Nielsen, M. A. & Chuang, I. L. (2010). Quantum Computation and Quantum Information.
 - [Grover's algorithm on Arxiv.org](https://arxiv.org/search/?searchtype=all&query=Grover%27s+algorithm&abstracts=show&size=50&order=announced_date_first)
+
+## Related content
+
+- [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir)
+- [Vectors and matrices](xref:microsoft.quantum.concepts.vectors)
+- [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)
+- [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)

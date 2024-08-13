@@ -19,5 +19,6 @@
         "qubits",
         "Quickstart",
         "qutip"
-    ]
+    ],
+    "npm.fetchOnlinePackageInfo": true
 }

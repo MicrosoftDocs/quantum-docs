@@ -1,20 +1,22 @@
 ---
 author: sonialopezbravo
-description: Frequently Asked Questions regarding the Azure Quantum Credits program
+description: Learn about the Azure Quantum Credits program, how to apply for it, and how long credits are valid for.
 ms.author: sonialopez
-ms.date: 11/21/2022
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: troubleshooting
+ms.topic: faq
 title: 'FAQ: Azure Quantum Credits program'
 uid: microsoft.quantum.credits.credits-faq
+
+#customer intent: As a quantum developer, I want to get information about the Azure Quantum Credits program, how to apply for it, and how long credits are valid for.
 ---
 
 # FAQ: Applications to the Azure Quantum Credits program
 
 In this article you'll find the answer to the most common questions about the Azure Quantum Credits program.
 
-When you create a new Azure Quantum workspace, you automatically get [$500 (USD) free Azure Quantum Credits](xref:microsoft.quantum.credits) for use on quantum hardware. In addition, Microsoft offers up to **$10,000 (USD) extra Azure Quantum Credits**. To receive this credit, you can apply for the [Azure Quantum Credits program](https://aka.ms/aq/credits). 
+When you create a new Azure Quantum workspace, you automatically get [USD500 free Azure Quantum Credits](xref:microsoft.quantum.credits) for use on quantum hardware. In addition, Microsoft offers up to **USD10,000 extra Azure Quantum Credits**. To receive this credit, you can apply for the [Azure Quantum Credits program](https://aka.ms/aq/credits). 
 
 The Azure Quantum Credits program provides sponsored access to quantum hardware through Azure. You will not be charged for usage created under the credits program, up to the limit of your credit grant.
 
@@ -68,4 +70,4 @@ In some cases, your rejection notice may specify that insufficient information w
 
 If you have an Azure support subscription, we recommend connecting with [Azure support](https://azure.microsoft.com/support/options/#get-support) for the fastest resolution to your question.
 
-If you have any questions regarding the workspace creation process, or any issue using Azure Quantum, bookmark the [Azure Quantum office hours](https://aka.ms/AQ/OfficeHours) and join our open office hours every Thursday at 8:30am PST.
+If you have any questions regarding the workspace creation process, or any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).

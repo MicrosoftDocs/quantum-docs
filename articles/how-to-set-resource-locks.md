@@ -5,7 +5,7 @@ author: bradben
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.topic: how-to
-ms.date: 04/27/2022
+ms.date: 10/26/2023
 no-loc: [target, targets]
 ms.custom: lock-how-to, devx-track-azurecli, devx-track-azurepowershell, devx-track-arm-template
 uid: microsoft.quantum.workspaces-locks
@@ -13,7 +13,7 @@ uid: microsoft.quantum.workspaces-locks
 
 # Protect Azure Quantum resources with Azure Resource Manager (ARM) locks
 
-Microsoft recommends locking all of your Azure Quantum workspaces and linked storage accounts with an Azure Resource Manager (ARM) resource lock to prevent accidental or malicious deletion. For example, professors may want to restrict students from modifying provider SKUs, but still enable them to use notebooks and submit jobs.  
+Microsoft recommends locking all of your Azure Quantum workspaces and linked storage accounts with an Azure Resource Manager (ARM) resource lock to prevent accidental or malicious deletion. For example, professors might want to restrict students from modifying provider SKUs, but still enable them to use notebooks and submit jobs.  
 
 There are two types of ARM resource locks:
 
@@ -60,7 +60,7 @@ You will need either Azure PowerShell or Azure CLI to deploy the lock. If you us
 
 ## Sign in to Azure
 
-After installing either Azure CLI or Azure Powershell, make sure you sign in for the first time. Choose one of the following tabs and run the corresponding command line commands to sign in to Azure:
+After installing either Azure CLI or Azure PowerShell, make sure you sign in for the first time. Choose one of the following tabs and run the corresponding command line commands to sign in to Azure:
 
 # [Azure CLI](#tab/azure-cli)
 
@@ -113,7 +113,12 @@ az lock create \
 For example, to create a **CanNotDelete** lock on a workspace:
 
 ```azurecli
-az lock create --name ArmLockWkspDelete --resource-group armlocks-resgrp --resource armlocks-wksp --lock-type CanNotDelete --resource-type Microsoft.Quantum/workspaces
+az lock create \
+    --name ArmLockWkspDelete \
+    --resource-group armlocks-resgrp \
+    --resource armlocks-wksp \
+    --lock-type CanNotDelete \
+    --resource-type Microsoft.Quantum/workspaces
 ```
 
 If successful, Azure returns the lock configuration in JSON format:
@@ -133,7 +138,12 @@ If successful, Azure returns the lock configuration in JSON format:
 To create a **ReadOnly** lock on a workspace:
 
 ```azurecli
-az lock create --name ArmLockWkspRead --resource-group armlocks-resgrp --resource armlocks-wksp --lock-type ReadOnly --resource-type Microsoft.Quantum/workspaces
+az lock create \
+    --name ArmLockWkspRead \
+    --resource-group armlocks-resgrp \
+    --resource armlocks-wksp \
+    --lock-type ReadOnly \
+    --resource-type Microsoft.Quantum/workspaces
 ```
 
 ```json
@@ -151,7 +161,11 @@ az lock create --name ArmLockWkspRead --resource-group armlocks-resgrp --resourc
 To create a **CanNotDelete** lock on a storage account:
 
 ```azurecli
-az lock create --name ArmLockStoreDelete --resource-group armlocks-resgrp --resource armlocksstorage --lock-type CanNotDelete --resource-type Microsoft.Storage/storageAccounts
+az lock create \
+    --name ArmLockStoreDelete \
+    --resource-group armlocks-resgrp \
+    --resource armlocksstorage \--lock-type CanNotDelete \
+    --resource-type Microsoft.Storage/storageAccounts
 ```
 
 ```json
@@ -186,7 +200,12 @@ New-AzResourceLock -LockLevel CanNotDelete `
 For example, to create a **CanNotDelete** lock on a workspace:
 
 ```azurepowershell
-New-AzResourceLock -LockLevel CanNotDelete -LockName ArmLockWkspDelete -ResourceName armlocks-wksp -ResourceType Microsoft.Quantum/workspaces -ResourceGroupName armlocks-resgrp
+New-AzResourceLock `
+    -LockLevel CanNotDelete `
+    -LockName ArmLockWkspDelete `
+    -ResourceName armlocks-wksp `
+    -ResourceType Microsoft.Quantum/workspaces `
+    -ResourceGroupName armlocks-resgrp
 ```
 
 If successful, Azure returns the lock configuration properties
@@ -211,7 +230,11 @@ LockId                : /subscriptions/<ID>/resourceGroups/armlocks-resgrp/provi
 To create a **ReadOnly** lock on a workspace:
 
 ```azurepowershell
-New-AzResourceLock -LockLevel ReadOnly -LockName ArmLockWkspRead -ResourceName armlocks-wksp -ResourceType Microsoft.Quantum/workspaces -ResourceGroupName armlocks-resgrp
+New-AzResourceLock -LockLevel ReadOnly `
+    -LockName ArmLockWkspRead `
+    -ResourceName armlocks-wksp `
+    -ResourceType Microsoft.Quantum/workspaces `
+    -ResourceGroupName armlocks-resgrp
 ```
 
 ```output
@@ -234,7 +257,11 @@ LockId                : /subscriptions/<ID>/resourceGroups/armlocks-resgrp/provi
 To create a **CanNotDelete** lock on a storage account:
 
 ```azurepowershell
-New-AzResourceLock -LockLevel CanNotDelete -LockName ArmLockStoreDelete -ResourceName armlocksstorage -ResourceType Microsoft.Storage/storageAccounts -ResourceGroupName armlocks-resgrp 
+New-AzResourceLock -LockLevel CanNotDelete `
+    -LockName ArmLockStoreDelete `
+    -ResourceName armlocksstorage `
+    -ResourceType Microsoft.Storage/storageAccounts `
+    -ResourceGroupName armlocks-resgrp 
 ```
 
 ```output
@@ -273,7 +300,10 @@ az lock list
 View all locks in a workspace
 
 ```azurecli
-az lock list --resource-group armlocks-resgrp --resource-name armlocks-wksp  --resource-type Microsoft.Quantum/workspaces
+az lock list \
+    --resource-group armlocks-resgrp \
+    --resource-name armlocks-wksp  \
+    --resource-type Microsoft.Quantum/workspaces
 ```
 
 View all locks for all resources in a resource group
@@ -285,13 +315,21 @@ az lock list --resource-group armlocks-resgrp
 View the properties of a single lock
 
 ```azcli
-az lock show --name ArmLockStoreDelete --resource-group armlocks-resgrp --resource-name armlocksstorage --resource-type  Microsoft.Storage/storageAccounts
+az lock show \
+    --name ArmLockStoreDelete \
+    --resource-group armlocks-resgrp \
+    --resource-name armlocksstorage \
+    --resource-type  Microsoft.Storage/storageAccounts
 ```
 
 Delete a lock
 
 ```azcli
-az lock delete --name ArmLockStoreDelete --resource-group armlocks-resgrp --resource armlocksstorage --resource-type  Microsoft.Storage/storageAccounts
+az lock delete \
+    --name ArmLockStoreDelete \
+    --resource-group armlocks-resgrp \
+    --resource-name armlocksstorage \
+    --resource-type  Microsoft.Storage/storageAccounts
 ```
 
 If the deletion is successful, Azure does not return a message. To verify the deletion, you can run `az lock list`. 
@@ -310,7 +348,10 @@ Get-AzResourceLock
 View all locks in a workspace
 
 ```azurepowershell
-Get-AzResourceLock -ResourceName armlocks-wksp -ResourceType Microsoft.Quantum/workspaces -ResourceGroupName armlocks-resgrp
+Get-AzResourceLock `
+    -ResourceName armlocks-wksp `
+    -ResourceType Microsoft.Quantum/workspaces `
+    -ResourceGroupName armlocks-resgrp
 ```
 
 View all locks for all resources in a resource group
@@ -322,7 +363,11 @@ Get-AzResourceLock -ResourceGroupName armlocks-resgrp
 View the properties of a single lock
 
 ```azurepowershell
-Get-AzResourceLock -ResourceName armlocksstorage -ResourceGroupName armlocks-resgrp -ResourceType Microsoft.Storage/storageAccounts -LockName ArmLockStoreDelete
+Get-AzResourceLock `
+    -ResourceName armlocksstorage `
+    -ResourceGroupName armlocks-resgrp `
+    -ResourceType Microsoft.Storage/storageAccounts `
+    -LockName ArmLockStoreDelete
 ```
 
 Delete a lock
@@ -330,10 +375,14 @@ Delete a lock
 To delete a lock, use the `Remove-AzResourceLock` command. For more information, see the [Remove-AzResourceLock](/powershell/module/az.resources/remove-azresourcelock) reference. 
 
 ```azurepowershell
-Remove-AzResourceLock -LockName ArmLockStoreDelete -ResourceGroupName armlocks-resgrp -ResourceName armlocksstorage -ResourceType Microsoft.Storage/storageAccounts
+Remove-AzResourceLock `
+    -LockName ArmLockStoreDelete `
+    -ResourceGroupName armlocks-resgrp `
+    -ResourceName armlocksstorage `
+    -ResourceType Microsoft.Storage/storageAccounts
 ```
 
-If the deletion is successful, Powershell displays `True`.  To verify the deletion, you can run `Get-AzResourceLock`. 
+If the deletion is successful, PowerShell displays `True`.  To verify the deletion, you can run `Get-AzResourceLock`. 
 
 ---
 

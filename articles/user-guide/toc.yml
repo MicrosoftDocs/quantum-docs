@@ -1,30 +1,41 @@
-- name: The Q# programming language
-  href: index.md
-- name: Ways to run a Q# program
-  href: host-programs.md
-- name: Testing and debugging
-  href: testing-debugging.md
-- name: Q# language guide
-  href: language/toc.yml
-- name: Q# libraries
-  href: libraries/toc.yml
-- name: Develop in a local environment
+- name: The Q# user guide
+  items: 
+  - name: Structure of a Q# program
+    href: program-structure.md
+  - name: Working with Q# projects
+    href: how-to-work-with-qsharp-projects.md
+  - name: Debugging and testing
+    href: testing-debugging.md
+  - name: Perform long running experiments
+    href: ../how-to-long-running-experiments.md
+  - name: VS Code reference for Q#
+    href: ../vscode-qsharp-reference.md
+- name: Visualize quantum circuit diagrams
+  href: ../how-to-visualize-circuits.md
+- name: Tutorials with Q# 
   items:
-  - name: Develop with Q# and Python
-    href: ../how-to-python-qdk-local.md
-  - name: Develop with Q# and .NET
-    href: ../how-to-csharp-qdk-local.md
-  - name: Develop with Q# and Binder
-    href: ../install-binder-qdk.md
-  - name: Quickstarts
-    items:
-    - name: Create a quantum-based random number generator
-      href: ../quickstart-microsoft-qc.md
-    - name: Solve a simple optimization problem
-      href: ../quickstart-microsoft-qio.md
-    - name: Submit a circuit with Qiskit
-      href: ../quickstart-microsoft-qiskit.md
-    - name: Submit a circuit with Cirq
-      href: ../quickstart-microsoft-cirq.md
-    - name: Submit a circuit in a provider-specific format
-      href: ../quickstart-microsoft-provider-format.md
+  - name: Quantum random number generator
+    href: ../tutorial-qdk-quantum-random-number-generator.md
+  - name: Quantum entanglement
+    href: ../tutorial-qdk-explore-entanglement.md
+  - name: Grover's algorithm
+    href: ../tutorial-qdk-grovers-search.md
+  - name: Quantum Fourier Transform
+    href: ../tutorial-qdk-qubit-level-program.md
+- name: Run quantum circuits with Python
+  items:
+  - name: Submit a circuit with Qiskit
+    href: ../quickstart-microsoft-qiskit.md
+  - name: Submit a circuit with Cirq
+    href: ../quickstart-microsoft-cirq.md
+  - name: Submit a circuit in provider-specific format
+    href: ../quickstart-microsoft-provider-format.md
+  - name: Adapt Qiskit samples to Azure Quantum
+    href: ../how-to-adapt-qiskit.md
+- name: Q# language reference
+  href: language/toc.yml
+- name: Learn Q# with the Quantum Katas
+  href: ../tutorial-qdk-intro-to-katas.md
+
+
+

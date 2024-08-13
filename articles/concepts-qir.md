@@ -1,14 +1,16 @@
 ---
 author: SoniaLopezBravo
-description: This article describes the Quantum intermediate representation developed by the QIR Alliance for quantum computing, its relevance, and use cases
+description: This article describes the quantum intermediate representation developed by the QIR Alliance for quantum computing, its relevance, and use cases.
 ms.author: sonialopez
-ms.date: 08/24/2022
+ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '\Bigg' ,'|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', '\rho', '\quad', '\sim', '\left\','\right\', '\%', '%', Quantum Intermediate Representation, target, targets]
-title: Microsoft Quantum intermediate representation
+title: Quantum Intermediate Representation
 uid: microsoft.quantum.concepts.qir
+
+#customer intent: As a quantum developer, I want to understand what Quantum Intermediate Representation is and why it is important so that I can use it to develop quantum algorithms and optimize my code.
 ---
 
 # Quantum intermediate representation
@@ -40,7 +42,7 @@ For more information, see the [QIR Specification](https://github.com/qir-allianc
 
 ### What is the QIR Alliance?
 
-The [QIR Alliance](https://qir-alliance.org) is a joint effort to develop a forward-looking quantum intermediate representation with the goal to enable full interoperability within the quantum ecosystem, reduce development effort from all parties, and provide a representation suitable for current and future heterogenous quantum processors.
+The [QIR Alliance](https://qir-alliance.org) is a joint effort to develop a forward-looking quantum intermediate representation with the goal to enable full interoperability within the quantum ecosystem, reduce development effort from all parties, and provide a representation suitable for current and future heterogeneous quantum processors.
 
 Quantum SDKs and languages appear and evolve at a fast pace, along with new quantum processors with unique and distinct capabilities from each other. To provide interoperability between new languages and new hardware capabilities it is imperative for the ecosystem to develop and share an intermediate representation that works with present and future quantum hardware.
 
@@ -98,4 +100,10 @@ Moreover, you could use the intermediate representation to generate code that is
 
 In terms of code optimization, there are optimization steps that can be performed at the intermediate level that can make the overall algorithm implementation more efficient. Investigating this optimization of your input code can help you get a better understanding of where to make algorithms more efficient and how to improve the quantum programming languages.
 
-Another application is to use the standard LLVM “pass” infrastructure to create quantum code optimizers that operate on QIR. The language- and hardware-independent approach of QIR enables reusing those optimizers for different computation languages and computing platforms with almost no effort. 
+Another application is to use the standard LLVM “pass” infrastructure to create quantum code optimizers that operate on QIR. The language- and hardware-independent approach of QIR enables reusing those optimizers for different computation languages and computing platforms with almost no effort.
+
+## Related content
+
+- [Introduction to Q#](xref:microsoft.quantum.qsharp-overview)
+- [Introduction to resource estimation](xref:microsoft.quantum.overview.intro-resource-estimator)
+- [Rigetti provider](xref:microsoft.quantum.providers.rigetti)

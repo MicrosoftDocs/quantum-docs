@@ -9,7 +9,8 @@
       "moniker_ranges": [],
       "xref_query_tags": [
         "/qsharp",
-        "/dotnet"
+        "/dotnet",
+        "/python"
       ],
       "enable_xrefmap_share": true,
       "open_to_public_contributors": true,
@@ -43,12 +44,6 @@
       "path_to_root": "articles/quantum",
       "url": "https://github.com/microsoft/quantum",
       "branch": "main",
-      "branch_mapping": {}
-    },
-    {
-      "path_to_root": "articles/includes/qsharp-language",
-      "url": "https://github.com/microsoft/qsharp-language",
-      "branch": "⭐Docs",
       "branch_mapping": {}
     },
     {

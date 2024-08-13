@@ -1,14 +1,16 @@
 ---
 author: bradben
-description: Understand the concepts and techniques used in hybrid quantum computing.
+description: Learn about classical and quantum registers, mid-circuit measurement, qubit reuse, error mitigation, error correction, and fault tolerance.
 ms.date: 03/06/2023
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: concepts
+ms.topic: conceptual
 no-loc: ['Q#', '$$v', Variational Quantum Eigensolver, Quantum Approximate Optimization Algorithm]
-title: Hybrid quantum computing concepts
+title: Hybrid Quantum Computing Concepts
 uid: microsoft.quantum.concepts.hybrid
+
+#customer intent: As a quantum developer, I want to understand the concepts of hybrid quantum computing so that I can design and implement quantum algorithms that take advantage of both classical and quantum processors.
 ---
 
 # Hybrid quantum computing concepts
@@ -21,7 +23,7 @@ In quantum computing, even though the classical and quantum processors are tight
 
 A classical register uses the familiar silicon chip-based architecture and is best suited for operations such as sending instructions to the quantum processor, capturing measurement results, and using those results to determine the next set of instructions. 
  
-A quantum register is a system comprised of multiple [qubits](xref:microsoft.quantum.glossary-qdk#qubit). Quantum computers excel at performing complex calculations by manipulating their qubits within a quantum register.
+A quantum register is a system comprised of multiple qubits. Quantum computers excel at performing complex calculations by manipulating their qubits within a quantum register.
 
 ## Mid-circuit measurement
 
@@ -41,7 +43,7 @@ In addition to using logical qubits, errors in quantum computations can be mitig
 
 ## Error correction and fault tolerance
 
-Error correction and fault tolerance are critical aspects of quantum computing, as qubits are more prone to errors than classical bits due to the delicate nature of quantum states, and highly fault tolerant systems are needed to achieve the full benefits of [distributed hybrid quantum computing](xref:microsoft.quantum.hybrid.distributed). In classical computing, errors can be corrected by adding redundancy to the computation and using error-correction codes. However, traditional error-correction techniques aren't directly applicable to quantum computing, as they rely on being able to repeat the computation multiple times, which isn't possible in quantum computing due to the [no-cloning theorem](xref:microsoft.quantum.concepts.pauli#the-no-cloning-theorem).
+Error correction and fault tolerance are critical aspects of quantum computing, as qubits are more prone to errors than classical bits due to the delicate nature of quantum states, and highly fault tolerant systems are needed to achieve the full benefits of [distributed hybrid quantum computing](xref:microsoft.quantum.overview.hybrid#running-distributed-quantum-computing). In classical computing, errors can be corrected by adding redundancy to the computation and using error-correction codes. However, traditional error-correction techniques aren't directly applicable to quantum computing, as they rely on being able to repeat the computation multiple times, which isn't possible in quantum computing due to the [no-cloning theorem](xref:microsoft.quantum.concepts.pauli#the-no-cloning-theorem).
 
 *Floquet codes* are a new class of error correction codes that respond to noise and errors dynamically, instead of traditional correction codes that protect against static errors. For more information, see [Error correction with Floquet codes](https://www.microsoft.com/research/blog/azure-quantum-innovation-efficient-error-correction-of-topological-qubits-with-floquet-codes/).
 
@@ -51,4 +53,4 @@ Error correction and fault tolerance are critical aspects of quantum computing, 
 - **:::no-loc text="Quantum Approximate Optimization Algorithm"::: (QAOA)** - also a variational quantum algorithm, it is used for finding approximate solutions to combinatorial optimization problems - problems where the number of possible solutions grows extremely large with the size of the problem. It is an active field of research to identify its applicability for applications such as air traffic control, shipping or delivery routes, or financial optimizations.
 - **Iterative phase estimation** - is another method of performing *quantum phase estimation*, which estimates the phase of a unitary operator, and is used in many other quantum algorithms. Both methods use a series of rotation gates to determine the phase, however iterative phase estimation utilizes the classical register to store information and calculations about gate measurements. This reduces the number of qubits required and minimizes noise and errors. 
 
-For more information about quantum algorithms, see [Quantum algorithms](xref:microsoft.quantum.libraries.overview.standard.algorithms) or visit the [Quantum Algorithm Zoo](https://quantumalgorithmzoo.org/).
+For more information about quantum algorithms, visit the [Quantum Algorithm Zoo](https://quantumalgorithmzoo.org/).

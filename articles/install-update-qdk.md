@@ -2,332 +2,95 @@
 author: bradben
 description: Describes how to update your Q# programming language projects and the Quantum Development Kit (QDK) to the current version.
 ms.author: brbenefield
-ms.date: 03/30/2022
+ms.date: 07/09/2024
 ms.service: azure-quantum
 ms.subservice: qdk
+ms.custom: devx-track-azurecli
 ms.topic: how-to
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Update the Quantum Development Kit (QDK)
 uid: microsoft.quantum.update-qdk
+#customer intent: as an admin, I want to install the latest components of Azure Quantum
 ---
 
-# Update the Quantum Development Kit (QDK) to the latest version
+# Update the Azure Quantum Development Kit (QDK) to the latest version
 
-Learn how to update the Quantum Development Kit (QDK) to the latest version.
+Learn how to update the Azure QDK to the latest version.
 
-This article assumes that you already have the QDK installed. If you are installing for the first time, then please refer to the [installation guide](xref:microsoft.quantum.install-qdk.overview).
+## Prerequisites
 
-We recommend keeping up to date with the latest QDK release. Follow this update guide to upgrade to the most recent QDK version. 
-The process consists of two parts:
+- This article assumes that you already have the Azure QDK extension installed on Visual Studio Code. If you are installing for the first time, then please refer to the [installation guide](xref:microsoft.quantum.install-qdk.overview).
 
-1. Updating your existing Q# files and projects to align your code with any updated syntax.
-2. Updating the QDK itself for your chosen development environment.
+## Update the Visual Studio Code extension
 
-## Update Q# projects 
+By default, Visual Studio Code updates extensions automatically. After any updates, you are prompted to reload VS Code. If you prefer to disable auto-updates and update extensions manually, see [Extension auto-update](https://code.visualstudio.com/docs/editor/extension-marketplace#_extension-autoupdate) in the VS Code documentation.
 
-Regardless of whether you are using C# or Python to host Q# operations, follow these instructions to update your Q# projects.
+## Update the Azure Quantum Python packages
 
-1. First, check that you have the latest version of the [.NET SDK 6.0](https://dotnet.microsoft.com/download). Run the following command in the command prompt:
+> [!IMPORTANT]
+> If you are updating from a previous Qiskit environment, see [Update the azure-quantum package with Qiskit support in a virtual Python environment (recommended)](#update-the-azure-quantum-package-with-qiskit-support-in-a-virtual-python-environment-recommended).
 
-    ```dotnetcli
-    dotnet --version
+1. Update to the latest `qsharp` and `azure-quantum` Python packages by using the package installer for Python (pip).
+  
+    ```cmd
+    pip install --upgrade qsharp>=1.0
     ```
 
-    Verify the output is `6.0.100` or higher. If not, install the [latest version](https://dotnet.microsoft.com/download) and check again. Then follow the instructions below depending on your setup (Visual Studio, Visual Studio Code, or directly from the command prompt).
+    ```cmd
+    pip install --upgrade azure-quantum
+    ```
+### Update the azure-quantum package with Qiskit support in a virtual Python environment (recommended)
 
-### Update Q# projects in Visual Studio
- 
-1. Update to the latest version of Visual Studio 2022, see [here](/visualstudio/install/update-visual-studio) for instructions.
-2. Open your solution in Visual Studio.
-3. From the menu, select **Build** -> **Clean Solution**.
-4. In each of your .csproj files, update the target framework to `net6.0` (or `netstandard2.1` if it is a library project).
-    That is, edit lines of the form:
+The azure-quantum Python package includes optional support for creating and submitting Qiskit circuits to Azure Quantum. When you install the azure-quantum package with Qiskit support, it installs the latest version of Qiskit, which may cause issues with an existing Qiskit environment. To ensure a stable development environment, we recommend creating a virtual Python environment and installing azure-quantum there. 
 
-    ```xml
-    <TargetFramework>net6.0</TargetFramework>
+To create a virtual Python environment and install azure-quantum with Qiskit support:
+1. Create a local folder, for example *~/qiskit10-env*.
+1. Run `venv` with the path to the folder
+
+    ```bash
+    python3 -m venv ~/qiskit10-env
     ```
 
-    You can find more details on specifying target frameworks [here](/dotnet/standard/frameworks#how-to-specify-target-frameworks).
+1. Activate the environment.
 
-5. In each of the .csproj files, set the SDK to `Microsoft.Quantum.Sdk`, as indicated in the line below. Please notice that the version number should be the latest available, and you can determine it by reviewing the [release notes](xref:microsoft.quantum.relnotes-qdk).
-
-    ```xml
-    <Project Sdk="Microsoft.Quantum.Sdk/0.24.201332">
+    ```bash
+    ~/qiskit10-env/bin/activate
     ```
 
-6. Save and close all files in your solution.
+1. Run `pip list` and you can see that only the core packages are installed in the new environment.
+1. To install the azure-quantum package, run
 
-7. Select **Tools** -> **Command Line** -> **Developer Command Prompt**. Alternatively, you can use the package management console in Visual Studio.
-
-8. For each project in the solution, run the following command to **remove** this package:
-
-    ```dotnetcli
-    dotnet remove [project_name].csproj package Microsoft.Quantum.Development.Kit
+    ```bash
+    pip install azure-quantum[qiskit]
     ```
+1. Install any other packages that you used in your previous environment as needed. You can run `pip list` in each environment to compare packages and versions. 
 
-   If your projects use any other Microsoft.Quantum or Microsoft.Azure.Quantum packages (for example, Microsoft.Quantum.Numerics), run the `add` command for these to update the version used.
+> [!NOTE]
+> See [Qiskit 1.0 packaging changes](https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-installation#qiskit-10-packaging-changes) for more information on package compatibility. 
 
-    ```dotnetcli
-    dotnet add [project_name].csproj package [package_name]
+> [!NOTE]
+> You can also open your virtual environment in VS Code. From the **View** menu, select **Command Palette** > **Python: Create Environment** > **venv**. In the lower right, select **Open Folder...** and select the environment folder you created earlier.  For more information on using environments in VS Code, see [Python environments in VS Code](https://code.visualstudio.com/docs/python/environments).
+
+### Update the azure-quantum package with Qiskit support in the current environment 
+
+You can also update the azure-quantum package with Qiskit support without using a virtual environment. However, updates to the qiskit packages in an existing environment may cause dependency conflicts with other packages. See [Qiskit 1.0 packaging changes](https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-installation#qiskit-10-packaging-changes) for more information on package compatibility. 
+
+To update the azure-quantum package:
+1. Uninstall the existing azure-quantum and qiskit packages:
+
+    ```cmd
+    pip uninstall -y azure-quantum qiskit qiskit-terra qiskit-qir
     ```
+1. Install azure-quantum using the optional [qiskit] parameter:
 
-9. Close the command prompt and select **Build** -> **Build Solution** (do *not* select Rebuild Solution).
-
-You can now skip ahead to [update your Visual Studio QDK extension](#update-the-qdk-for-visual-studio-extension).
-
-
-### Update Q# projects in Visual Studio Code
-
-1. In Visual Studio Code, open the folder containing the project to update.
-2. Select **Terminal** -> **New Terminal**.
-3. Follow the instructions for updating using the command prompt (directly below).
-
-### Update Q# projects using the command prompt
-
-1. Navigate to the folder containing your main project file.
-
-2. Run the following command:
-
-    ```dotnetcli
-    dotnet clean [project_name].csproj
+    ```cmd
+    pip install azure-quantum[qiskit]
     ```
-
-3. Determine the current version of the QDK. To find it, you can review the [release notes](xref:microsoft.quantum.relnotes-qdk). The version will be in a format similar to `0.24.201332`.
-
-4. In each of your `.csproj` files, go through the following steps:
-
-    - Update the target framework to `net6.0` (or `netstandard2.1` if it is a library project). That is, edit lines of the form:
-
-        ```xml
-        <TargetFramework>net6.0</TargetFramework>
-        ```
-
-        You can find more details on specifying target frameworks [here](/dotnet/standard/frameworks#how-to-specify-target-frameworks).
-
-    - Replace the reference to the SDK in the project definition. Make sure that the version number corresponds to the value determined in **step 3**.
-
-        ```xml
-        <Project Sdk="Microsoft.Quantum.Sdk/0.24.201332">
-        ```
-
-    - Remove the reference to package `Microsoft.Quantum.Development.Kit` if present, which will be specified in the following entry:
-
-        ```xml
-        <PackageReference Include="Microsoft.Quantum.Development.Kit" Version="0.24.201332" />
-        ```
-
-    - Update the version of the all the Microsoft Quantum packages to the most recently released version of the QDK (determined in **step 3**). Those packages are named with the following patterns:
-
-        ```
-        Microsoft.Quantum.*
-        Microsoft.Azure.Quantum.*
-        ```
     
-        References to packages have the following format:
+## Update the Azure CLI quantum extension
 
-        ```xml
-        <PackageReference Include="Microsoft.Quantum.Compiler" Version="0.24.201332" />
-        ```
+1. Update or install the latest Azure CLI `quantum` extension. From a Windows command prompt, run
 
-    - Save the updated file.
-
-    - Restore the dependencies of the project, by doing the following:
-
-        ```dotnetcli
-        dotnet restore [project_name].csproj
-        ```
-
-    > [!NOTE]
-    > For versions `0.24.201332` and above, the target framework was upgraded from `netcoreapp3.1` to `net6.0` (except for libraries). If using an older QDK, you should keep this value as is.
-
-5. Navigate back to the folder containing your main project and run:
-
-    ```dotnetcli
-    dotnet build [project_name].csproj
+    ```azurecli
+    az extension add --upgrade --name quantum
     ```
-
-With your Q# projects now updated, follow the instructions below to update the QDK itself.
-
-## Update the QDK
-
-The process to update the QDK varies depending on your development language and environment.
-Select your development environment below.
-
-* [Python: update the `qsharp` package](#update-the-qsharp-python-package)
-* [Jupyter Notebooks: update the IQ# kernel](#update-the-iq-jupyter-kernel)
-* [Visual Studio: update the QDK extension](#update-the-qdk-for-visual-studio-extension)
-* [VS Code: update the QDK extension](#update-the-qdk-for-vs-code-extension)
-* [Command line and C#: update project templates](#c-using-the-dotnet-command-line-tool)
-* [Python: Update the *azure-quantum* Python package](#update-the-azure-quantum-python-package)
-
-
-## Update the `qsharp` Python package
-
-The update procedure depends on whether you originally installed using conda or using the .NET CLI and pip.
-
-### [Update using conda (recommended)](#tab/tabid-conda)
-
-1. Activate the conda environment where you installed the `qsharp` package, and then run this command to update it:
-
-    ```
-    conda update -c microsoft qsharp
-    ```
-
-1. Run the following command from the location of your `.qs` files:
-
-    ```
-    python -c "import qsharp; qsharp.reload()"
-    ```
-
-### [Update using .NET CLI and pip (advanced)](#tab/tabid-dotnetcli)
-
-1. Update the `iqsharp` kernel 
-
-    ```dotnetcli
-    dotnet tool update -g Microsoft.Quantum.IQSharp
-    dotnet iqsharp install
-    ```
-
-1. Verify the `iqsharp` version
-
-    ```dotnetcli
-    dotnet iqsharp --version
-    ```
-
-    You should see the following output:
-
-    ```
-    iqsharp: 0.24.201332
-    Jupyter Core: 1.5.0.0
-    ```
-
-    Don't worry if your `iqsharp` version is higher. It should match the [latest release](xref:microsoft.quantum.relnotes-qdk).
-
-1. Update the `qsharp` package:
-
-    ```
-    pip install --upgrade qsharp
-    ```
-
-1. Verify the `qsharp` version:
-
-    ```
-    pip show qsharp
-    ```
-
-    You should see the following output:
-
-    ```
-    Name: qsharp
-    Version: 0.24.201332
-    Summary: Python client for Q#, a domain-specific quantum programming language
-    ...
-    ```
-
-1. Run the following command from the location of your `.qs` files:
-
-    ```
-    python -c "import qsharp; qsharp.reload()"
-    ```
-
-***
-
-You can now use the updated `qsharp` Python package to run your existing Python quantum programs.
-
-## Update the IQ# Jupyter kernel
-
-The update procedure depends on whether you originally installed using conda or using the .NET CLI and pip.
-
-### [Update using conda (recommended)](#tab/tabid-conda)
-
-1. Activate the conda environment where you installed the `qsharp` package, and then run this command to update it:
-
-    ```
-    conda update -c microsoft qsharp
-    ```
-
-1. Run the following command from a cell in each of your existing Q# Jupyter Notebooks:
-
-    ```
-    %workspace reload
-    ```
-
-### [Update using .NET CLI and pip (advanced)](#tab/tabid-dotnetcli)
-
-1. Update the `Microsoft.Quantum.IQSharp` package:
-
-    ```dotnetcli
-    dotnet tool update -g Microsoft.Quantum.IQSharp
-    dotnet iqsharp install
-    ```
-
-1. Verify the `iqsharp` version:
-
-    ```dotnetcli
-    dotnet iqsharp --version
-    ```
-
-    Your output should be similar to the following:
-
-    ```
-    iqsharp: 0.24.201332
-    Jupyter Core: 1.5.0.0
-    ```
-
-    Don't worry if your `iqsharp` version is higher. It should match the [latest release](xref:microsoft.quantum.relnotes-qdk).
-
-1. Run the following command from a cell in each of your existing Q# Jupyter Notebooks:
-
-    ```
-    %workspace reload
-    ```
-
-***
-
-You can now use the updated IQ# kernel to run your existing Q# Jupyter Notebooks.
-
-## Update the QDK for Visual Studio extension
-
-1. Update the QDK for Visual Studio extension
-
-    - Visual Studio prompts you to accept updates to the [QDK for Visual Studio extension](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit64)
-    - Accept the update
-
-    > [!NOTE]
-    > The project templates are updated with the extension. The updated templates apply to newly created projects only. The code for your existing projects is not updated when the extension is updated.
-
-## Update the QDK for VS Code extension
-
-1. Update the QDK for VS Code extension
-
-    - Restart VS Code
-    - Navigate to the **Extensions** tab
-    - Select the **Microsoft Quantum Development Kit for Visual Studio Code** extension
-    - Reload the extension
-
-## C# using the `dotnet` command-line tool
-
-1. Update the QDK project templates for .NET
-
-    From the command prompt:
-
-    ```dotnetcli
-    dotnet new install Microsoft.Quantum.ProjectTemplates
-    ```
-
-   Alternatively, if you intend to use the command-line templates, and already have the QDK extension for VS Code installed, you can update the project templates from the extension itself:
-
-   - [Update the QDK for VS Code extension](#update-the-qdk-for-vs-code-extension)
-   - In VS Code, go to **View** -> **Command Palette**
-   - Select **Q#: Install command line project templates**
-   - After a few seconds you should get a popup confirming "project templates installed successfully"
-
-## Update the azure-quantum Python package
-
-1. Update to the latest `azure-quantum` Python package by using the package installer for Python (pip)
-
-   ```Shell
-   pip install --upgrade azure-quantum
-   ```
-   
-1. If you encounter any issues please ensure that Python and pip are up to date. For information on the latest version requirements, [Install the azure-quantum Python package](xref:microsoft.quantum.install-qdk.overview)

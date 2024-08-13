@@ -278,7 +278,7 @@ output tenant_id string = subscription().tenantId
 The following Azure resources are created by both templates:
 
 + [**Azure Storage Account**](/azure/storage/blobs/): storage account for storing input and output data for quantum jobs.
-+ [**Azure Quantum workspace**](/azure/quantum/how-to-create-workspace): a collection of assets associated with running quantum or optimization applications.
++ [**Azure Quantum workspace**](/azure/quantum/how-to-create-workspace): a collection of assets associated with running quantum applications.
 
 The templates also grant the quantum workspace **Contributor**-permissions to the storage account. This step is needed so that the workspace can read and write job data.
 
@@ -358,5 +358,5 @@ Remove-AzResourceGroup -Name myResourceGroup
 
 ## Next steps
 
-Now that you can create and delete workspaces, learn about the different [targets to run quantum algorithms in Azure Quantum](xref:microsoft.quantum.reference.qio-target-list).
+Now that you can create and delete workspaces, learn about the different [targets to run quantum algorithms in Azure Quantum](xref:microsoft.quantum.reference.qc-target-list).
 You now also have the tools to do workspace deployments from within [Azure Pipelines](/azure/azure-resource-manager/templates/add-template-to-azure-pipelines) or [GitHub Actions](/azure/azure-resource-manager/templates/deploy-github-actions).

@@ -8,26 +8,14 @@ groups:
     title: IonQ
   - id: platform-quantinuum
     title: Quantinuum
-- id: quantum-computing-platforms-rigetti
-  title: Provider platforms
-  prompt: Choose a provider platform
+- id: ide-local-portal
+  title: Local or online development environments
+  prompt: Select your preferred development environment
   pivots:
-  - id: platform-ionq
-    title: IonQ
-  - id: platform-quantinuum
-    title: Quantinuum
-  - id: platform-rigetti
-    title: Rigetti
-- id: optimization-platforms
-  title: Provider platforms
-  prompt: Choose a provider platform
-  pivots:
-  - id: platform-microsoft
-    title: Microsoft QIO
-  - id: platform-1qbit
-    title: 1QBit
-  - id: platform-toshiba
-    title: Toshiba SQBM+
+  - id: platform-portal
+    title: Azure Quantum portal
+  - id: platform-local
+    title: Local computer
 - id: azurequantum-ide
   title: IDE for submitting jobs to AQ 
   prompt: Select the option for your development environment
@@ -40,30 +28,30 @@ groups:
     title: Python
 - id: azurequantum-quantumcomputing-ide
   title: IDE for submitting quantum computing jobs to AQ 
-  prompt: Select the option for your development environment
+  prompt: Select the type of program you are submitting
   pivots:
-  - id: ide-portal
-    title: Azure portal
+  - id: ide-qsharp
+    title: Q# programs
   - id: ide-jupyter
     title: Jupyter Notebooks
   - id: ide-python
-    title: Python
-  - id: ide-azurecli
-    title: Azure CLI
-- id: azurequantum-providers
-  title: Quantum solutions offered by AQ
-  prompt: Select the type of quantum solution
-  pivots:
-  - id: ide-computing
-    title: Quantum Computing
-  - id: ide-optimization
-    title: Optimization
+    title: Python programs
 - id: ide-platforms
   title: Local or online development environments
   prompt: Select your preferred development environment
   pivots:
   - id: ide-azure-portal
     title: Azure Quantum portal
+  - id: ide-azure-copilot
+    title: Copilot for Azure Quantum
+  - id: ide-local
+    title: Local computer
+- id: ide-platforms-copilot-vscode
+  title: Local or online development environments
+  prompt: Select your preferred development environment
+  pivots:
+  - id: ide-azure-copilot
+    title: Copilot for Azure Quantum
   - id: ide-local
     title: Local computer
 - id: azurequantum-quantumcomputing-re-ide
@@ -76,3 +64,13 @@ groups:
     title: Qiskit in Azure Portal
   - id: ide-vscode-qsharp
     title: Q# in VS Code
+- id: ide-local-portal-jupyter
+  title: Local or online development environments
+  prompt: Select your preferred development environment
+  pivots:
+  - id: platform-local
+    title: Q# in VS Code
+  - id: platform-local-jupyter
+    title: Q# in Jupyter Notebook
+  - id: platform-portal-qiskit
+    title: Qiskit in Azure portal
