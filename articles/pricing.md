@@ -161,45 +161,47 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 > There are no costs or charges for using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job.
 > For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
-### [Standard Subscription](#tab/tabid-standard)
+### [H1 Subscriptions](#tab/tabid-standard)
 
-The Standard Subscription is a monthly subscription plan available through queued access.
+The H1 Subscriptions are a monthly subscription plan available through queued access providing access to the H1-1 quantum computer.
 
-|Pricing| Includes access to |
+|Standard Pricing| Includes access to |
 |---|---|
 |USD125,000/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on the System Model H1 hardware</li><li>100k eHQCs for use on the System Model H1 Emulator</li></ul>|
 
+|Premium Pricing| Includes access to |
+|---|---|
+|USD175,000/Month + Azure infrastructure costs | <ul><li>17k HQCs for use on the System Model H1 hardware</li><li>170k eHQCs for use on the System Model H1 Emulator</li></ul>|
+
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
-### [Premium Subscription](#tab/tabid-premium)
+### [H1 + H2 Subscriptions](#tab/tabid-standard-H1+h2)
 
-The Premium Subscription is a monthly subscription plan available through queued access.
+The Standard H1 + H2 Subscriptions are a monthly subscription plan available through queued access.
 
-| Pricing | Includes access to |
-|---|---|
-|USD175,000/Month + Azure infrastructure costs | <ul><li>17k HQCs for use on System Model H1 hardware</li><li>170k eHQCs for use on the System Model H1 Emulator</li></ul>|
-
-### [Standard H1 + H2 Subscription](#tab/tabid-standard-H1+h2)
-
-The Standard H1 + H2 Subscription is a monthly subscription plan available through queued access.
-
-|Pricing|  Includes access to  |
+|Standard Pricing|  Includes access to  |
 |---|---|
 |USD135,000/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on the System Model H1 and H2 hardware</li><li>100k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
 
-For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
-
-### [Premium H1 + H2 Subscription](#tab/tabid-premium-H1+H2)
-
-The Premium H1 + H2 Subscription is a monthly subscription plan available through queued access.
-
-| Pricing | Includes access to  |
+|Premium Pricing | Includes access to  |
 |---|---|
 |USD185,000/Month + Azure infrastructure costs| <ul><li>17k HQCs for use on System Model H1 and H2 hardware</li><li>170k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
-***
 
+### [Pay as You Go](#tab/tabid-standard)
+
+The Pay as You Go pricing provides queued access to either the H1 series quantum computers or H2 series quantum computers at a fixed credit cost per.
+
+|H1 Pricing| Includes access to |
+|---|---|
+|Per credit cost + Azure infrastructure costs | <ul><li>H1 series quantum computers and emulator|
+
+|H2 Pricing| Includes access to |
+|---|---|
+|Per credit cost + Azure infrastructure costs | <ul><li>H2 series quantum computers and emulator|
+
+For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 ## Rigetti
 
 [Rigetti](https://rigetti.com) charges for job execution time on their quantum processor, the 84-bit Ankaa-2. There is no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.html) simulator is free for all users.
