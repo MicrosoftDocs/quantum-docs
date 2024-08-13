@@ -29,7 +29,7 @@ landingContent:
           - text: Get started with Q# and Visual Studio Code
             url: how-to-submit-jobs.md
           - text: Get started with the Q# libraries
-            url: /qsharp/api/index.md
+            url: /qsharp/api/
  
   # Computing
   - title: Quantum computing
