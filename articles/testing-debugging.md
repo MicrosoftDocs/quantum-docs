@@ -260,7 +260,7 @@ dump[1]
 ```
 
 ```output
-(0.6935199226610738, 0.1379496896414715)
+(0.6935199226610738 + 0.1379496896414715)
 ```
 
 ```python
@@ -268,7 +268,7 @@ dump[3]
 ```
 
 ```output
-(0.5879378012096794, 0.3928474791935511)
+(0.5879378012096794 + 0.3928474791935511)
 ```
 
 ### CheckZero() and CheckAllZero() operations
@@ -279,9 +279,7 @@ dump[3]
 import Microsoft.Quantum.Diagnostics.*;
 
 operation Main() : Unit {
-    
     use qs = Qubit[2];
-   
     X(qs[0]); 
     
     if CheckZero(qs[0]) {
@@ -291,17 +289,13 @@ operation Main() : Unit {
         Message("X operation succeeded");
     }
 
-    DumpMachine();
-
     ResetAll(qs);
-
     if CheckAllZero(qs) {
         Message("Reset operation succeeded");
     }
     else {
         Message("Reset operation failed");
     }
-    DumpMachine();
 }
 ```
 
@@ -315,17 +309,14 @@ You import `dump_operation` from `qsharp.utils`.
 import qsharp
 from qsharp.utils import dump_operation
 ```
-This example represents the default state of a single qubit.
 
-```python
-res = dump_operation("qs => ()", 1)
-print(res)
-```
 
-```output
-res = dump_operation("qs => ()", 1) 
-print(res)
-```
+============
+MARIIA: add a two-qubit example with asymmetrical matrix, for example, Controlled Ry gate, to illustrate the endianness of indices used in the matrix
+=============
+
+
+
 
 This example represents the default state of a single qubit and the effect of the Hadamard operation
 
