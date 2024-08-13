@@ -26,8 +26,10 @@ landingContent:
             url: overview-azure-quantum.md
           - text: Get started with the Quantum Development Kit
             url: install-overview-qdk.md
-          - text: Get started with Q# and an the Quantum Development Kit
+          - text: Get started with Q# and Visual Studio Code
             url: how-to-submit-jobs.md
+          - text: Get started with the Q# libraries
+            url: /qsharp/api/
  
   # Computing
   - title: Quantum computing
