@@ -273,7 +273,7 @@ dump[3]
 
 ### CheckZero() and CheckAllZero() operations
 
-`CheckZero()` and `CheckAllZero()` are Q# boolean operations that can verify the expected state of a qubit or qubit array. `CheckZero()` returns `true` if the value of the qubit is `Zero`, and `false` if it is `One`. `CheckAllZero()` returns `true` if all values in the array are `Zero` and `false` if at least one value is `One`. 
+`CheckZero()` and `CheckAllZero()` are Q# operations that can check whether the current state of a qubit or qubit array is $\ket{0}$. `CheckZero()` returns `true` if the qubit is in the $\ket{0}$ state, and `false` if it is in any other state. `CheckAllZero()` returns `true` if all qubits in the array are in the $\ket{0}$ state, and `false` if the qubits are in any other state. 
 
 ```qsharp
 import Microsoft.Quantum.Diagnostics.*;
@@ -318,7 +318,7 @@ MARIIA: add a two-qubit example with asymmetrical matrix, for example, Controlle
 
 
 
-This example represents the default state of a single qubit and the effect of the Hadamard operation
+This example prints the matrix of a single-qubit identity gate and the Hadamard gate.
 
 ```python
 res = dump_operation("qs => ()", 1)
@@ -336,7 +336,7 @@ You can also define a function or operation using `qsharp.eval()` and then refer
 
 ```python
 qsharp.eval(
-    "operation SingleQ(qs : Qubit[]) : Unit { qs[0]; }"
+    "operation SingleQ(qs : Qubit[]) : Unit { }"
 )
 
 res = dump_operation("SingleQ", 1)
@@ -347,7 +347,7 @@ print(res)
 [[(1+0j), 0j], [0j, (1+0j)]]
 ```
 
-The following user defined operation `ApplySWAP` uses the Q# `SWAP` operation and compares it to the default state of a two qubit array. 
+The following code defines Q# operation `ApplySWAP` and prints its matrix alongside that of the two-qubit identity operation. 
 
 ```python
 qsharp.eval(
