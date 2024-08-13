@@ -13,7 +13,7 @@ uid: microsoft.quantum.credits
 #customer intent: As a quantum developer, I want to understand what Azure Quantum Credits are, how to get them, and how to review my credit balance.
 ---
 
-# Understanding Azure Quantum Credits 
+# FAQ: Understanding Azure Quantum Credits 
 
 In this article, you'll find the guidelines to understand Azure Quantum Credits and how to use them to run your programs on quantum hardware.
 
