@@ -161,7 +161,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 > There are no costs or charges for using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job.
 > For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
-### [H1 Subscriptions](#tab/tabid-standard)
+### [H1 Subscriptions](#tab/tabid-H1)
 
 The H1 Subscriptions are a monthly subscription plan available through queued access providing access to the H1-1 quantum computer.
 
@@ -175,7 +175,7 @@ The H1 Subscriptions are a monthly subscription plan available through queued ac
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
-### [H1 + H2 Subscriptions](#tab/tabid-standard-H1+h2)
+### [H1 + H2 Subscriptions](#tab/tabid-H2)
 
 The Standard H1 + H2 Subscriptions are a monthly subscription plan available through queued access.
 
@@ -189,7 +189,7 @@ The Standard H1 + H2 Subscriptions are a monthly subscription plan available thr
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
-### [Pay as You Go](#tab/tabid-standard)
+### [Pay as You Go](#tab/tabid-PAYG)
 
 The Pay as You Go pricing provides queued access to either the H1 series quantum computers or H2 series quantum computers at a fixed credit cost per.
 
