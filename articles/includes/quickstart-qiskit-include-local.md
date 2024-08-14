@@ -424,7 +424,7 @@ qpu_backend = provider.get_backend("rigetti.qpu.ankaa-2")
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = qpu_backend.run(circuit, shots=500)
+job = qpu_backend.run(circuit, shots=100)
 job_id = job.id()
 print("Job id", job_id)
 ```
@@ -440,8 +440,8 @@ plot_histogram(counts)
 ```
 
 ```output
-Result(backend_name='rigetti.qpu.ankaa-2', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'011': 16, '010': 5, '001': 1, '000': 500, '111': 471, '101': 6, '100': 17, '110': 8}, probabilities={'011': 0.015625, '010': 0.0048828125, '001': 0.0009765625, '000': 0.48828125, '111': 0.4599609375, '101': 0.005859375, '100': 0.0166015625, '110': 0.0078125}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
-{'000': 500, '001': 1, '010': 5, '011': 16, '100': 17, '101': 6, '110': 8, '111': 471}
+.....Result(backend_name='rigetti.qpu.ankaa-2', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='dd72c9c7-5a88-11ef-a183-a91b61633c2f', success=True, results=[ExperimentResult(shots=100, success=True, meas_level=2, data=ExperimentResultData(counts={'001': 5, '100': 6, '111': 30, '000': 51, '110': 4, '101': 1, '010': 1, '011': 2}, memory=['001', '100', '111', '000', '000', '000', '001', '000', '000', '110', '000', '111', '111', '111', '000', '000', '000', '000', '101', '111', '111', '010', '000', '000', '000', '000', '000', '000', '001', '011', '111', '000', '000', '111', '000', '111', '000', '000', '111', '111', '110', '111', '000', '000', '111', '111', '111', '100', '111', '000', '111', '000', '000', '000', '111', '000', '000', '001', '000', '100', '111', '000', '011', '000', '111', '000', '111', '111', '111', '000', '111', '111', '000', '111', '111', '000', '111', '000', '000', '000', '000', '000', '110', '000', '000', '110', '111', '100', '000', '111', '000', '100', '001', '000', '000', '000', '000', '100', '000', '000'], probabilities={'001': 0.05, '100': 0.06, '111': 0.3, '000': 0.51, '110': 0.04, '101': 0.01, '010': 0.01, '011': 0.02}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits=3, metadata={}), status=JobStatus.DONE, name='Qiskit Sample - 3-qubit GHZ circuit')], date=None, status=None, header=None, error_data=None)
+
 ```
 
 ![Qiskit circuit result on Rigetti QPU](../media/azure-quantum-qiskit-rigetti-result-2.png)
