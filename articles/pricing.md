@@ -177,7 +177,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ### [H1 + H2 Subscriptions](#tab/tabid-H2)
 
-The Standard H1 + H2 Subscriptions are a monthly subscription plan available through queued access.
+The Standard H1 + H2 Subscriptions are monthly subscription plans available through queued access.
 
 |Standard Pricing|  Includes access to  |
 |---|---|
