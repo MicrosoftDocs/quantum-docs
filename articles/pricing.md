@@ -195,7 +195,7 @@ The Pay as You Go plan provides queued access to either the H1 series quantum co
 
 |H1 Pricing| Includes access to |
 |---|---|
-|Per credit cost + Azure infrastructure costs | <ul><li>H1 series quantum computers and emulator|
+|Per HQC usage + Azure infrastructure costs | <ul><li>H1 series quantum computers and emulator|
 
 |H2 Pricing| Includes access to |
 |---|---|
