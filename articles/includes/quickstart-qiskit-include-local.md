@@ -398,7 +398,7 @@ Result(backend_name='rigetti.sim.qvm', backend_version='1', qobj_id='Qiskit Samp
 
 ```
 
-![Qiskit circuit result on Rigetti QVM simulator](../media/azure-quantum-qiskit-rigetti-qvm-result.png)
+![Qiskit circuit result on Rigetti QVM simulator](../media/azure-quantum-qiskit-rigetti-result-1.png)
 
 You can also use the `get_memory()` function to display individual shot data from the job
 
@@ -444,7 +444,7 @@ Result(backend_name='rigetti.qpu.ankaa-2', backend_version='1', qobj_id='Qiskit 
 {'000': 500, '001': 1, '010': 5, '011': 16, '100': 17, '101': 6, '110': 8, '111': 471}
 ```
 
-![Qiskit circuit result on Rigetti QPU](../media/azure-quantum-qiskit-rigetti-result-1.png)
+![Qiskit circuit result on Rigetti QPU](../media/azure-quantum-qiskit-rigetti-result-2.png)
 
 ***
 
