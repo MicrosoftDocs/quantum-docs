@@ -209,7 +209,7 @@ Before running a job on the QPU, you can estimate how much it costs to run. To e
 
 ```python
 backend = provider.get_backend("ionq.qpu")
-cost = backend.estimate_cost(circuit, shots=1024)
+cost = backend.estimate_cost(circuit, shots=100)
 
 print(f"Estimated cost: {cost.estimated_total}")
 ```
@@ -237,7 +237,7 @@ Submit the circuit to run on Azure Quantum, get the results, and run `plot_histo
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = qpu_backend.run(circuit, shots=1024)
+job = qpu_backend.run(circuit, shots=100)
 job_id = job.id()
 print("Job id", job_id)
 
@@ -263,7 +263,7 @@ Result(backend_name='ionq.qpu.aria-1', backend_version='1', qobj_id='Qiskit Samp
 
 #### Run on the syntax checker 
 
-To test the program before running it on the hardware, first run it on the Quantinuum Syntax Checker. Use the [`get_backend`](xref:azure.quantum.qiskit.AzureQuantumProvider) method to create a `Backend` object to connect to the Quantinuum Syntax Checkerbackend:
+To test the program before running it on the hardware, first run it on the Quantinuum Syntax Checker. Use the [`get_backend`](xref:azure.quantum.qiskit.AzureQuantumProvider) method to create a `Backend` object to connect to the Quantinuum Syntax Checker backend:
 
 ```python
 # Get Quantinuum's syntax checker backend:
@@ -315,7 +315,7 @@ Before running a job on the QPU, you can estimate how much it will cost to run. 
 
 ```python
 qpu_backend = provider.get_backend("quantinuum.qpu.h1-1")
-cost = qpu_backend.estimate_cost(circuit, shots=1024)
+cost = qpu_backend.estimate_cost(circuit, shots=100)
 
 print(f"Estimated cost: {cost.estimated_total}")
 ```
@@ -339,7 +339,7 @@ qpu_backend = provider.get_backend("quantinuum.qpu.h1-1")
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = qpu_backend.run(circuit, shots=1024)
+job = qpu_backend.run(circuit, shots=100)
 job_id = job.id()
 print("Job id", job_id)
 ```
