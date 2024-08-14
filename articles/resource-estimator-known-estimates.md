@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to use pre-calculated estimates for your Q# programs with the Azure Quantum Resource Estimator.
-ms.date: 06/03/2024
+ms.date: 08/13/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -67,13 +67,13 @@ The `AccountForEstimates` operation can take the following parameters:
 
 |Functions with `AccountForEstimates`| Description|
 |---|---|
-|`AuxQubitCount(amount : Int)`| Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of auxiliary qubits is equal to the `amount`.|
-|`TCount(amount : Int)`|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of T gates is equal to the `amount`.|
-|`MeasurementCount(amount : Int)`|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of measurements is equal to the `amount`.|
-|`RotationCount(amount : Int)`|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of rotations is equal to the `amount`.|
-|`RotationDepth(amount : Int)`|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the rotation depth is equal to the `amount`.|
-|`CczCount(amount : Int)`|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of CCZ gates is equal to the `amount`.|
-|`PSSPCLayout()`| Indicate Parallel Synthesis Sequential Pauli Computation (PSSPC) layout. For more information, see [arXiv:2211.0769](https://arxiv.org/pdf/2211.07629.pdf).|
+|[`AuxQubitCount(amount : Int)`](xref:Qdk.Microsoft.Quantum.ResourceEstimation.AuxQubitCount)| Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of auxiliary qubits is equal to the `amount`.|
+|[`TCount(amount : Int)`](xref:Qdk.Microsoft.Quantum.ResourceEstimation.TCount)|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of T gates is equal to the `amount`.|
+|[`MeasurementCount(amount : Int)`](xref:Qdk.Microsoft.Quantum.ResourceEstimation.MeasurementCount)|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of measurements is equal to the `amount`.|
+|[`RotationCount(amount : Int)`](xref:Qdk.Microsoft.Quantum.ResourceEstimation.RotationCount)|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of rotations is equal to the `amount`.|
+|[`RotationDepth(amount : Int)`](xref:Qdk.Microsoft.Quantum.ResourceEstimation.RotationDepth)|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the rotation depth is equal to the `amount`.|
+|[`CczCount(amount : Int)`](xref:Qdk.Microsoft.Quantum.ResourceEstimation.CczCount)|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of CCZ gates is equal to the `amount`.|
+|[`PSSPCLayout()`](xref:Qdk.Microsoft.Quantum.ResourceEstimation.PSSPCLayout)| Indicate Parallel Synthesis Sequential Pauli Computation (PSSPC) layout. For more information, see [arXiv:2211.0769](https://arxiv.org/pdf/2211.07629.pdf).|
 
 ### [Use Python](#tab/tabid-known-estimates-python)
 

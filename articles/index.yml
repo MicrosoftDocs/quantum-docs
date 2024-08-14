@@ -10,7 +10,7 @@ metadata:
   ms.collection: collection
   author: bradben
   ms.author: brbenefield
-  ms.date: 06/18/2024
+  ms.date: 08/13/2024
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -24,23 +24,45 @@ landingContent:
         links:
           - text: What is Azure Quantum?
             url: overview-azure-quantum.md
-          - text: Get started with the Quantum Development Kit
-            url: install-overview-qdk.md
-          - text: Get started with Q# and an the Quantum Development Kit
-            url: how-to-submit-jobs.md
- 
-  # Computing
-  - title: Quantum computing
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: The Q# user guide
-            url: user-guide/index.md
-          - text: Introduction to resource estimation
+          - text: Introduction to the quantum programming language Q#
+            url: qsharp-overview.md
+          - text: Azure Quantum Resource Estimator
             url: intro-to-resource-estimation.md
           - text: Hybrid quantum computing
             url: hybrid-computing-overview.md
-     
+          - text: List of quantum hardware providers
+            url: qc-target-list.md
+
+ 
+  # Computing
+  - title: Develop your quantum programs with Q# 
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Set up the Quantum Development Kit
+            url: install-overview-qdk.md
+          - text: Create your first Q# program 
+            url: qsharp-quickstart.md
+          - text: Get started with Q# and Visual Studio Code
+            url: how-to-submit-jobs.md
+          - text: Get started with the Q# libraries
+            url: /qsharp/api/
+
+  # Management
+  - title: Manage Azure Quantum resources
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Create a quantum workspace
+            url: how-to-create-workspace.md
+          - text: Connect to your quantum workspace
+            url: how-to-connect-workspace.md
+          - text: Share access to your quantum workspace
+            url: how-to-share-access-quantum-workspace.md
+          - text: Manage your Azure Quantum Credits
+            url: azure-quantum-credits.md
+
+
   # Learn
   - title: Learn by building
     linkLists:
