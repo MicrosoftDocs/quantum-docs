@@ -202,6 +202,8 @@ The Pay as You Go plan provides queued access to either the H1 series quantum co
 |Per HQC usage + Azure infrastructure costs | <ul><li>H2 series quantum computers and emulator|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
+
+***
 ## Rigetti
 
 [Rigetti](https://rigetti.com) charges for job execution time on their quantum processor, the 84-bit Ankaa-2. There is no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.html) simulator is free for all users.
