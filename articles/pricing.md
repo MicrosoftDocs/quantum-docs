@@ -191,7 +191,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ### [Pay as You Go](#tab/tabid-PAYG)
 
-The Pay as You Go pricing provides queued access to either the H1 series quantum computers or H2 series quantum computers at a fixed credit cost per.
+The Pay as You Go plan provides queued access to either the H1 series quantum computers or H2 series quantum computers and is charged per HQC usage.
 
 |H1 Pricing| Includes access to |
 |---|---|
