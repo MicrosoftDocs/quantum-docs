@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to adapt any Qiskit sample so you can run your quantum programs on the Azure Quantum service.
-ms.date: 06/18/2024
+ms.date: 08/14/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -66,6 +66,10 @@ Most samples are configured to run by default against the `aer_simulator`, which
     # Set your backend of choice
     backend = ionq_simulator_backend
     ```
+
+    > [!NOTE]
+    > Azure Quantum defaults to QIR for the backends. To specify a passthrough backend, use the `is_passthrough` parameter when calling `get_backend`. For example, `ionq_qpu_backend = provider.get_backend("ionq.qpu.aria-1", is_passthrough=True)`.
+
 
     > [!NOTE]
     > The location and resource ID of your workspace can be found in the **Overview** tab of your Azure Quantum workspace. 
