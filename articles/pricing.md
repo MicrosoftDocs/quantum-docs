@@ -199,7 +199,7 @@ The Pay as You Go plan provides queued access to either the H1 series quantum co
 
 |H2 Pricing| Includes access to |
 |---|---|
-|Per credit cost + Azure infrastructure costs | <ul><li>H2 series quantum computers and emulator|
+|Per HQC usage + Azure infrastructure costs | <ul><li>H2 series quantum computers and emulator|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 ## Rigetti
