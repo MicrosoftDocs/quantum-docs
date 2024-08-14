@@ -444,7 +444,7 @@ Result(backend_name='rigetti.qpu.ankaa-2', backend_version='1', qobj_id='Qiskit 
 {'000': 500, '001': 1, '010': 5, '011': 16, '100': 17, '101': 6, '110': 8, '111': 471}
 ```
 
-![Qiskit circuit result on Rigetti QPU](../media/azure-quantum-qiskit-hw-result-2.png)
+![Qiskit circuit result on Rigetti QPU](../media/azure-quantum-qiskit-rigetti-result-1.png)
 
 ***
 
