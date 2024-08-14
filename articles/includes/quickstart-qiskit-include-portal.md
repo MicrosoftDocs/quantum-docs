@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 03/15/2024
+ms.date: 08/14/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -127,7 +127,7 @@ To run your circuit on the simulator, add the following code. This example use t
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = simulator_backend.run(circuit, shots=100)
+job = simulator_backend.run(circuit, shots=8)
 job_id = job.id()
 print("Job id", job_id)
 ```
@@ -157,10 +157,23 @@ plot_histogram(counts)
 ```
 
 ```output
-{'000': 50, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 50}
+{'000': 4, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 4}
 ```
 
 ![Qiskit circuit result on IonQ Simulator](../media/azure-quantum-qiskit-ionq-result-1.png)
+
+You can also use the `get_memory()` function to display individual shot data from the job
+
+```python
+result.get_memory(circuit)
+```
+
+```output
+['000', '000', '000', '000', '111', '111', '111', '111']
+```
+
+> [!NOTE]
+> On IonQ targets, if you submit a job with an odd number of shots, the results will be rounded down to the next even number. For example, if you specify 9 shots, the results will display data for 8 shots. 
 
 
 #### Estimate job cost
@@ -289,12 +302,22 @@ plot_histogram(counts)
 ```
 
 ```output
-{'000': 100, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
+{'000': 8, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
 ```
 
 ![Qiskit circuit result on Quantinuum Syntax Checker](../media/azure-quantum-qiskit-hw-result-1.png)
 
 Looking at the histogram, you may notice that the random number generator returned 0 every time, which isn't very random. This is because that, while the Syntax Checker ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
+
+You can also use the `get_memory()` function to display individual shot data from the job
+
+```python
+result.get_memory(circuit)
+```
+
+```output
+['000', '000', '000', '000', '000', '000', '000', '000']
+```
 
 #### Estimate job cost
 
@@ -398,7 +421,7 @@ To run your circuit on the simulator, add the following code. This example uses 
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = simulator_backend.run(circuit, shots=100)
+job = simulator_backend.run(circuit, shots=8)
 job_id = job.id()
 print("Job id", job_id)
 ```
@@ -428,10 +451,20 @@ plot_histogram(counts)
 ```
 
 ```output
-{'000': 50, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 50}
+{'000': 4, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 4}
 ```
 
 ![Qiskit circuit result on Rigetti Simulator](../media/azure-quantum-qiskit-rigetti-result-1.png)
+
+You can also use the `get_memory()` function to display individual shot data from the job
+
+```python
+result.get_memory(circuit)
+```
+
+```output
+['000', '000', '000', '000', '111', '111', '111', '111']
+```
 
 #### Run on Rigetti QPU
 

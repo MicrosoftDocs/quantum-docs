@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 06/03/2024
+ms.date: 08/14/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -189,6 +189,18 @@ plot_histogram(counts)
 
 ![Qiskit circuit result on IonQ Simulator](../media/azure-quantum-qiskit-ionq-result-1.png)
 
+You can also use the `get_memory()` function to display individual shot data from the job
+
+```python
+result.get_memory(circuit)
+```
+
+```output
+['000', '000', '000', '000', '111', '111', '111', '111']
+```
+
+> [!NOTE]
+> On IonQ targets, if you submit a job with an odd number of shots, the results will be rounded down to the next even number. For example, if you specify 9 shots, the results will display data for 8 shots. 
 
 #### Estimate job cost
 
@@ -263,7 +275,7 @@ result. The following cell submits a job that runs the circuit with
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = syntax_backend.run(circuit, shots=1024)
+job = syntax_backend.run(circuit, shots=8)
 job_id = job.id()
 print("Job id", job_id)
 
@@ -280,13 +292,23 @@ plot_histogram(counts)
 Job id 00000000-0000-0000-0000-000000000000
 Job Status: job has successfully run
 Result(backend_name='quantinuum.qpu.h1-1sc', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 1024}, probabilities={'000': 1.0}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
-{'000': 1024, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
+{'000': 8, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
 ```
 
 ![Qiskit circuit result on Quantinuum API validator](../media/azure-quantum-qiskit-hw-result-1.png)
 
 > [!NOTE]
 > While the [Quantinuum syntax checker](xref:microsoft.quantum.providers.quantinuum#api-validator) ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true quantum measurement, you need to run your circuit on quantum hardware.
+
+You can also use the `get_memory()` function to display individual shot data from the job
+
+```python
+result.get_memory(circuit)
+```
+
+```output
+['000', '000', '000', '000', '000', '000', '000', '000']
+```
 
 #### Estimate job cost
 
@@ -358,7 +380,7 @@ result. The following cell submits a job that runs the circuit with
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = qvm_backend.run(circuit, shots=1024)
+job = qvm_backend.run(circuit, shots=8)
 job_id = job.id()
 print("Job id", job_id)
 
@@ -375,10 +397,20 @@ plot_histogram(counts)
 Job id 00000000-0000-0000-0000-000000000000
 Job Status: job has successfully run
 Result(backend_name='rigetti.sim.qvm"', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 1024}, probabilities={'000': 1.0}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
-{'000': 1024, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
+{'000': 8, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
 ```
 
 ![Qiskit circuit result on Rigetti QVM simulator](../media/azure-quantum-qiskit-rigetti-qvm-result.png)
+
+You can also use the `get_memory()` function to display individual shot data from the job
+
+```python
+result.get_memory(circuit)
+```
+
+```output
+['000', '000', '000', '000', '000', '000', '000', '000']
+```
 
 #### Run on a Rigetti QPU 
 
