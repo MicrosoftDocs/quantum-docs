@@ -163,7 +163,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 
 ### [H1 Subscriptions](#tab/tabid-H1)
 
-The H1 Subscriptions are a monthly subscription plan available through queued access providing access to the H1-1 quantum computer.
+The H1 Subscriptions are monthly subscription plans available through queued access providing access to the H1-1 quantum computer.
 
 |Standard Pricing| Includes access to |
 |---|---|
