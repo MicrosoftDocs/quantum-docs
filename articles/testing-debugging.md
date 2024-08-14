@@ -32,7 +32,6 @@ import Microsoft.Quantum.Arrays.*;
 import Microsoft.Quantum.Convert.*;
 
 operation Main() : Result {
-
     use qubit = Qubit();
     H(qubit);
     let result = M(qubit);
@@ -60,19 +59,16 @@ The [`fail`](xref:microsoft.quantum.qsharp.returnsandtermination#fail-expression
 Consider this simple example that validates a parameter value:
 
 ```python
-import qsharp 
 # import qsharp package to access the %%qsharp magic command
+import qsharp 
 ```
 
 ```qsharp
-%%qsharp 
 // use the %%qsharp magic command to change the cell type from Python to Q#
-
+%%qsharp 
 function PositivityFact(value : Int) : Unit {
-
     if value <= 0 {
-
-            fail $"{value} isn't a positive number.";
+        fail $"{value} isn't a positive number.";
     }   
 }
 PositivityFact(0);
@@ -103,19 +99,14 @@ You can implement the same behavior as the previous example using the `Fact()` f
 
 ```python
 import qsharp 
-# import qsharp package to access the %%qsharp magic command
 ```
 
 ```qsharp
 %%qsharp
-// use the %%qsharp magic command to change the cell type from Python to Q#
-
-    function PositivityFact(value : Int) : Unit {
-
+function PositivityFact(value : Int) : Unit {
     Fact(value > 0, "Expected a positive number."); 
-
-    }
-    PositivityFact(4);
+}
+PositivityFact(4);
 ```
 
 ```output
@@ -151,24 +142,19 @@ import qsharp
 
 ```qsharp
 %%qsharp
-
 import Microsoft.Quantum.Diagnostics.*;
-
 operation MultiQubitDumpMachineDemo() : Unit {
     use qubits = Qubit[2];
     X(qubits[1]);
     H(qubits[1]);
-    
     DumpMachine();
 
     R1Frac(1, 2, qubits[0]);
     R1Frac(1, 3, qubits[1]);
-    
     DumpMachine();
     
     ResetAll(qubits);
-      }
-
+}
 MultiQubitDumpMachineDemo();
 ```
 
@@ -190,13 +176,10 @@ Basis State
 
 ```python
 import qsharp 
-# import qsharp package to access the %%qsharp magic command
 ```
 
 ```qsharp
 %%qsharp
-// use the %%qsharp magic command to change the cell type from Python to Q#
-
 use qubits = Qubit[2];
 X(qubits[0]);
 H(qubits[1]);
@@ -281,14 +264,12 @@ import Microsoft.Quantum.Diagnostics.*;
 operation Main() : Unit {
     use qs = Qubit[2];
     X(qs[0]); 
-    
     if CheckZero(qs[0]) {
         Message("X operation failed");
     }
     else {
         Message("X operation succeeded");
     }
-
     ResetAll(qs);
     if CheckAllZero(qs) {
         Message("Reset operation succeeded");
@@ -311,9 +292,9 @@ from qsharp.utils import dump_operation
 ```
 
 
-============
+
 MARIIA: add a two-qubit example with asymmetrical matrix, for example, Controlled Ry gate, to illustrate the endianness of indices used in the matrix
-=============
+
 
 
 
@@ -335,9 +316,7 @@ print(res)
 You can also define a function or operation using `qsharp.eval()` and then reference it from `dump_operation`. The single qubit represented earlier can also be represented as
 
 ```python
-qsharp.eval(
-    "operation SingleQ(qs : Qubit[]) : Unit { }"
-)
+qsharp.eval("operation SingleQ(qs : Qubit[]) : Unit { }")
 
 res = dump_operation("SingleQ", 1)
 print(res)
@@ -350,9 +329,7 @@ print(res)
 The following code defines Q# operation `ApplySWAP` and prints its matrix alongside that of the two-qubit identity operation. 
 
 ```python
-qsharp.eval(
-    "operation ApplySWAP(qs : Qubit[]) : Unit is Ctl + Adj { SWAP(qs[0], qs[1]); }"
-)
+qsharp.eval("operation ApplySWAP(qs : Qubit[]) : Unit is Ctl + Adj { SWAP(qs[0], qs[1]); }")
 
 res = dump_operation("qs => ()", 2)
 print(res)
