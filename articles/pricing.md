@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn about the different pricing plans for Azure Quantum providers, including IonQ, PASQAL, Quantinuum, and Rigetti.
 ms.author: sonialopez
-ms.date: 06/18/2024
+ms.date: 08/09/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
@@ -36,7 +36,7 @@ where:
 
 Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with three controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. One-qubit gates are billed as 0.225 of a two-qubit gate (rounded down). To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
 
-All new Azure Quantum customers benefit of a one-time USD500 free Azure Quantum credits toward IonQ provider to use in IonQ QPUs Harmony and Aria, and quantum simulator. Besides the Azure Quantum Credits plan, IonQ offers a **pay-as-you-go** plan with access to the quantum simulator and the IonQ Harmony 11-qubit quantum computer, and a **monthly subscription** plan which expands the access to the IonQ Aria 1 25-qubit quantum computer. 
+New Azure Quantum customers can benefit from a one-time USD500 free Azure Quantum credit toward the IonQ provider to use on IonQ's Aria QPU and their quantum simulator. Besides the Azure Quantum Credits plan, IonQ offers a **pay-as-you-go** plan with access to the quantum simulator and a **monthly subscription** plan which expands the access to the IonQ Aria 1 25-qubit quantum computer. 
 
 ### [Azure Quantum Credits](#tab/tabid-AQcredits)
 
@@ -44,8 +44,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 
 |Pricing | Includes access to  |
 |---|---|  
-|Use is deducted from the Azure Quantum Credits based on the number of QGSs executed| <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
-|IonQ Harmony |<ul><li>1-Qubit Gate Shot: USD0.00003 deducted from your credits</li><li>2-Qubit Gate Shot: USD0.0003 deducted from your credits</li><li>Minimum price per program execution:<ul><li> USD1.00 if error mitigation is off</li><li>USD5.00 if error mitigation is on</li></ul></ul>|
+|Use is deducted from the Azure Quantum Credits based on the number of QGSs executed| <ul><li>IonQ Aria 1 QPU</li><li>IonQ Simulator (free)</li></ul>|
 |IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: USD0.000220 deducted from your credits</li><li>2-Qubit Gate Shot: USD0.000975 deducted from your credits</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
 |IonQ Forte (Private preview) |<ul><li>1-Qubit Gate Shot: USD0.000220 deducted from your credits</li><li>2-Qubit Gate Shot: USD0.000975 deducted from your credits</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
 
@@ -58,12 +57,11 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
  
 ### [Pay As You Go](#tab/tabid-paygo)
 
-The Pay-as-you-go plan consists of *a la carte* access to the 11-qubit trapped ion quantum computer and the quantum simulator, charged on a resource-usage model.  
+The Pay-as-you-go plan consists of *a la carte* access to the IonQ Aria 1 25-qubit quantum computer and the IonQ simulator, charged on a resource-usage model.  
 
 |Pricing | Includes access to|
 |---|---|  
-| Use is charged based on the number of QGSs executed + Azure infrastructure costs | <ul><li>IonQ Harmony QPU</li><li>IonQ Aria 1 QPU</li><li>IonQ Simulator (free)</li></ul>|
-|IonQ Harmony |<ul><li>1-Qubit Gate Shot: USD0.00003</li><li>2-Qubit Gate Shot: USD0.0003</li><li>Minimum price per program execution:<ul><li> USD1.00 if error mitigation is off</li><li>USD5.00 if error mitigation is on</li></ul></ul>|
+| Use is charged based on the number of QGSs executed + Azure infrastructure costs | <ul><li>IonQ Aria 1 QPU</li><li>IonQ Simulator (free)</li></ul>|
 |IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
 |IonQ Forte (Private preview)|<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
 
@@ -71,12 +69,11 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ### [Aria plan](#tab/tabid-aria)
 
-The Aria plan is a monthly subscription plan with access to the IonQ Aria 1 25-qubit quantum computer. The subscription also includes access to the IonQ simulator and IonQ Harmony 11-qubit quantum computer.
+The Aria plan is a monthly subscription plan with access to the IonQ Aria 1 25-qubit quantum computer, as well as access to the IonQ simulator.
 
 |Pricing |  Includes access to |
 |---|---|  
-|USD25,000/Month + Azure infrastructure costs| <ul><li>IonQ Harmony QPU</li><li>IonQ Aria QPU</li><li>IonQ Simulator (free)</li></ul>|
-|IonQ Harmony |<ul><li>1-Qubit Gate Shot: USD0.00003</li><li>2-Qubit Gate Shot: USD0.0003</li><li>Minimum price per program execution:<ul><li> USD1.00 if error mitigation is off</li><li>USD5.00 if error mitigation is on</li></ul></ul>|
+|USD25,000/Month + Azure infrastructure costs| <ul><li>IonQ Aria 1 QPU</li><li>IonQ Simulator (free)</li></ul>|
 |IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|  
 |IonQ Forte (Private preview)|<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|  
 

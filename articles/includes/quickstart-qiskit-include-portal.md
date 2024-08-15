@@ -97,7 +97,6 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
-- ionq.qpu
 - ionq.simulator
 - ionq.qpu.aria-1
 - microsoft.estimator
@@ -190,7 +189,6 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
-- ionq.qpu
 - ionq.simulator
 - ionq.qpu.aria-1
 - microsoft.estimator
@@ -334,7 +332,6 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
-- ionq.qpu
 - ionq.simulator
 - ionq.qpu.aria-1
 - microsoft.estimator
@@ -485,7 +482,6 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
-- ionq.qpu
 - ionq.simulator
 - ionq.qpu.aria-1
 - microsoft.estimator
