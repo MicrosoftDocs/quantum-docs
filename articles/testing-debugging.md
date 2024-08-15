@@ -291,14 +291,6 @@ import qsharp
 from qsharp.utils import dump_operation
 ```
 
-
-
-MARIIA: add a two-qubit example with asymmetrical matrix, for example, Controlled Ry gate, to illustrate the endianness of indices used in the matrix
-
-
-
-
-
 This example prints the matrix of a single-qubit identity gate and the Hadamard gate.
 
 ```python
@@ -324,6 +316,15 @@ print(res)
 
 ```output
 [[(1+0j), 0j], [0j, (1+0j)]]
+```
+
+This example uses a `Controlled Ry` gate to apply a rotation to the second qubit
+
+```python
+qsharp.eval ("operation ControlRy(qs : Qubit[]) : Unit { H(qs[0]); Controlled Ry([qs[0]], (0.5, qs[1]));}")
+
+res = dump_operation("ControlRy", 2)
+print(res)
 ```
 
 The following code defines Q# operation `ApplySWAP` and prints its matrix alongside that of the two-qubit identity operation. 
